@@ -32,27 +32,20 @@ portal's *Java virtual machine* (*JVM*).
 This chapter covers the following topics:
 
 - *Invoking the API locally:* Using Liferay services locally, from the same JVM
-as the portal.
-	
+  as the portal.
 - *Invoking the API remotely:* Using Liferay services in a *remote* manner. This
-can involve invoking the API from outside of the portal's JVM, from machines
-other than the portal host, or even from the portal host itself.
-
+  can involve invoking the API from outside of the portal's JVM, from machines
+  other than the portal host, or even from the portal host itself.
 - *Service Security:* Leveraging the service security layers provided in
-Liferay's service oriented architecture (SOA).
-
+  Liferay's service oriented architecture (SOA).
 - *SOAP Web Services:* Consuming services via Liferay's SOAP interface.
-
 - *JSON Web Services:* Consuming services via Liferay's JSON service interface.
-
 - *Service Context:* Understanding what the service context is, how it can be
-used in services, and how to use it in calling services.
-
+  used in services, and how to use it in calling services.
 - *Using Message Bus:* Exchanging string messages within Liferay using the
-Message Bus.
-
+  Message Bus.
 - *Device Detection:* Detecting the capabilities of a device that is making
-requests to a portal.
+  requests to a portal.
 
 First, let's consider invoking Liferay's services locally.
 
@@ -62,10 +55,9 @@ Each service provides a local interface to clients running in the same JVM as
 the portal. There are two ways to invoke the methods of a service API:
 
 - By using Spring injection, if your app is using Spring and has access to the
-portal context.
-
+  portal context.
 - By using `-ServiceUtil` classes. These classes hide complexity of the service
-implementations and may be a good option if you are not familiar with Spring.
+  implementations and may be a good option if you are not familiar with Spring.
 
 We'll demonstrate invoking a service via its `-ServiceUtil`. But first, how do
 we find services? ... By looking them up in the Liferay Portal Javadocs.
@@ -73,15 +65,15 @@ we find services? ... By looking them up in the Liferay Portal Javadocs.
 For example, here is how you look up the Organization services:
 
 1. In your browser, open up the Javadocs at
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
 2. Click on the link for the `com.liferay.portal.service` package in the
-*Packages* frame, since the services for the Organization entity belong to the
-*portal*.
+   *Packages* frame, since the services for the Organization entity belong to
+   the *portal*.
 
 3. Find and click on the `-ServiceUtil` class (in this case
-`OrganizationLocalServiceUtil`) in the class summary table or the list of
-classes.
+   `OrganizationLocalServiceUtil`) in the class summary table or the list of
+   classes.
 
 It's just that easy!
 
@@ -95,14 +87,14 @@ with the actual name of the portlet.
 For example, here is how you look up services for user blogs statistics:
 
 1. In your browser, open up the Javadocs at
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
 2. Click on the link for the `com.liferay.portlet.blogs.service` package in the
-*Packages* frame, since the services are a part of the *blogs portlet*.
+   *Packages* frame, since the services are a part of the *blogs portlet*.
 
 3. Find and click on the `-ServiceUtil` class (in this case
-`BlogsStatsUserLocalServiceUtil`) in the class summary table or the list of
-classes.
+   `BlogsStatsUserLocalServiceUtil`) in the class summary table or the list of
+   classes.
 
 So, now that you know how to look up the service classes, let's look at the
 following JSP code snippet that demonstrates how to get a list of the most
@@ -510,15 +502,13 @@ UserGroup does not yet exist.
 Some things to note about the URL:
 
 - It is *secure* (authenticated) URL for the service. Authentication is done
-using HTTP Basic Authentication, which of course is not appropriate for a
-production environment, since the password is unencrypted, but is used for
-convenience in this example.
-
--	The screen name and password are passed in as credentials.
-
+   using HTTP Basic Authentication, which of course is not appropriate for a
+   production environment, since the password is unencrypted, but is used for
+   convenience in this example.
+- The screen name and password are passed in as credentials.
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
-end of the URL. Remember, the service name can be found in the web service
-listing like the one we looked at previously.
+   end of the URL. Remember, the service name can be found in the web service
+   listing like the one we looked at previously.
 
 The operations `getCompanyByVirtualHost()`, `getUserIdByScreenName()`,
 `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
@@ -1164,7 +1154,7 @@ create a UserGroup as we did in our previous SOAP web service client examples.
 To make it easy, we'll use the test form provided with the JSON web service in
 our browser.
 
-1.	Open your browser to the JSON web service method that adds a UserGroup:
+1. Open your browser to the JSON web service method that adds a UserGroup:
 
 		http://127.0.0.1:8080/api/jsonws?signature=/usergroup/add-user-group-2-name-description
 		
@@ -1172,9 +1162,9 @@ our browser.
 	scrolling down to the section for *UserGroup* and clicking *add-user-group*.
 
 2. Fill in the *name* field to "MyUserGroup3" and the *description* to some
-arbitrary value string like "Created using JSON WS".
+   arbitrary value string like "Created using JSON WS".
 
-3.	Click *Invoke* to get a result similar to the following:
+3. Click *Invoke* to get a result similar to the following:
 
 		{"addedByLDAPImport":false,"companyId":10154,"description":"Created using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
 
@@ -1393,11 +1383,9 @@ categorization, etc.
 
 This section covers:
 
--	The Service Context fields
-
--	Creating and populating a Service Context
-
--	Accessing Service Context data
+- The Service Context fields
+- Creating and populating a Service Context
+- Accessing Service Context data
 
 First, we'll take a look at the fields of the `ServiceContext` class.
 
@@ -1409,56 +1397,48 @@ corresponding *getter* methods found at
 [http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html).
 But what may also be helpful is the following categorical listing of the fields:
 
--	Actions:
-	-	`_command`
-	-	`_workflowAction`
-
--	Attributes:
-	-	`_attributes`
-	-	`_expandoBridgeAttributes`
-
--	Classification:	
-	-	`_assetCategoryIds`
-	-	`_assetTagNames`
-
--	IDs and Scope:
-	-	`_companyId`
-	-	`_portletPreferencesIds`
-	-	`_plid`
-	-	`_scopeGroupId`
-	-	`_userId`
-	-	`_uuid`
-
--	Language:
-	-	`_languageId`
-
--	Miscellaneous:
-	-	`_headers`
-	-	`_signedIn`
-
--	Permissions:
-	-	`_addGroupPermissions`
-	-	`_addGuestPermissions`
-	-	`_deriveDefaultPermissions`
-	-	`_groupPermissions`
-	-	`_guestPermissions`
-
--	Resources:
-	-	`_assetEntryVisible`
-	-	`_assetLinkEntryIds`
-	-	`_createDate`
-	-	`_indexingEnabled`
-	-	`_modifiedDate`
-
--	URLs, paths and addresses:
-	-	`_currentURL`
-	-	`_layoutFullURL`
-	-	`_layoutURL`
-	-	`_pathMain`
-	-	`_portalURL`
-	-	`_remoteAddr`
-	-	`_remoteHost`
-	-	`_userDisplayURL`
+- Actions:
+	- `_command`
+	- `_workflowAction`
+- Attributes:
+	- `_attributes`
+	- `_expandoBridgeAttributes`
+- Classification:	
+	- `_assetCategoryIds`
+	- `_assetTagNames`
+- IDs and Scope:
+	- `_companyId`
+	- `_portletPreferencesIds`
+	- `_plid`
+	- `_scopeGroupId`
+	- `_userId`
+	- `_uuid`
+- Language:
+	- `_languageId`
+- Miscellaneous:
+	- `_headers`
+	- `_signedIn`
+- Permissions:
+	- `_addGroupPermissions`
+	- `_addGuestPermissions`
+	- `_deriveDefaultPermissions`
+	- `_groupPermissions`
+	- `_guestPermissions`
+- Resources:
+	- `_assetEntryVisible`
+	- `_assetLinkEntryIds`
+	- `_createDate`
+	- `_indexingEnabled`
+	- `_modifiedDate`
+- URLs, paths and addresses:
+	- `_currentURL`
+	- `_layoutFullURL`
+	- `_layoutURL`
+	- `_pathMain`
+	- `_portalURL`
+	- `_remoteAddr`
+	- `_remoteHost`
+	- `_userDisplayURL`
 
 In case you are wondering how the `ServiceContext` fields get populated, we're
 going to look at that next.
@@ -1565,9 +1545,9 @@ scope group ID provides the scope of the blogs entry (the entity being
 persisted). In the case of adding a blogs entry, the scope group ID is used in
 the following manner:
 
--	Used as the groupId for the `BlogsEntry` entity
--	Used in generating a unique URL for the blog entry
--	Setting the scope for comments on the blog entry
+- Used as the groupId for the `BlogsEntry` entity
+- Used in generating a unique URL for the blog entry
+- Setting the scope for comments on the blog entry
 
 Here are the corresponding code snippets:
 
@@ -1672,10 +1652,10 @@ plugins.
 
 In this section, you will learn about
 
--	the Message Bus System
--	Synchronous and Asynchronous messaging
--	Dispatching messages *serially* and *in-parallel* to multiple listeners
--	Java and JSON style message formats
+- the Message Bus System
+- Synchronous and Asynchronous messaging
+- Dispatching messages *serially* and *in-parallel* to multiple listeners
+- Java and JSON style message formats
 
 For starters, let's get a handle on the architecture of Liferay's Message Bus
 System.
@@ -1685,15 +1665,12 @@ System.
 The Message Bus system is comprised of the following:
 
 - **Message Bus** - Manages transfer of messages from message *senders* to
-message *listeners*
-
+  message *listeners*
 - **Destinations** - Are addresses or endpoints to which *listeners* register to
-receive messages
-
+  receive messages
 - **Listeners** - Consume messages received at destinations. They receive all
-messages sent to their registered destinations.
-
--	**Senders** - Invoke the Message Bus to send messages to destinations
+  messages sent to their registered destinations.
+- **Senders** - Invoke the Message Bus to send messages to destinations
 
 Your services can *send* messages to one or more destinations. And your services
 can *listen* to one or more destinations.
@@ -1708,20 +1685,17 @@ both a message sender and a message listener. In this figure, for example, both
 The Message Bus supports synchronous and asynchronous messaging:
 
 - **Synchronous messaging** - After sending a message, the sender blocks waiting
-for a response from a recipient
-
+  for a response from a recipient
 - **Asynchronous messaging** - After sending a message, the sender is free to
-continue processing. The sender can be configured to receive a call-back or can
-simply "send and forget." We'll cover both synchronous and asynchronous
-messaging implementations in this section.
-
-	- **Call-back** - The sender can include a call-back destination key as the
-	*response destination* for the message. The recipient (listener) can then
-	send a *response* message back to the sender via this *response
-	destination*.
-
-	- **"Send-and-Forget"** - The sender includes no call-back information in
-	the message sent and simply continues with processing
+  continue processing. The sender can be configured to receive a call-back or
+  can simply "send and forget." We'll cover both synchronous and asynchronous
+  messaging implementations in this section.
+    - **Call-back** - The sender can include a call-back destination key as the
+      *response destination* for the message. The recipient (listener) can then
+      send a *response* message back to the sender via this *response
+      destination*.
+    - **"Send-and-Forget"** - The sender includes no call-back information in
+      the message sent and simply continues with processing
 
 What's great is your destinations, listeners, and mappings between them are all
 configurable via Spring in your plugin's `messaging-spring.xml` file.
@@ -1729,11 +1703,10 @@ configurable via Spring in your plugin's `messaging-spring.xml` file.
 **Configuration** of Message Bus is done using the following files:
 
 - `WEB-INF/src/META-INF/messaging-spring.xml` - Specifies your destinations,
-listeners, and their mappings to each other
-
+  listeners, and their mappings to each other
 - `WEB-INF/web.xml` - Holds a listing of deployment descriptors for your plugin.
-Be sure to add `messaging-spring.xml` to your list of Spring configurations in
-this file.
+  Be sure to add `messaging-spring.xml` to your list of Spring configurations in
+  this file.
 
 ---
 
@@ -1765,19 +1738,15 @@ Jungle Gyms R-Us (Jungle Gyms) involves the following departments in their
 procurement process:
 
 - *Procurement Department* - Scouts out the latest equipment deals of
-manufacturers
-
+  manufacturers
 - *Finance Department* - Determines whether the equipment can be purchased based
-on budget
-
+  on budget
 - *Legal Department* - Determines whether the equipment's safety ratings are
-acceptable
-
+  acceptable
 - *Warehouse Department* - Recieves the equipment, stores it, and prepares it
-for shipping
-
+  for shipping
 - *Sales Department* - Builds relationships with prospective customers to sell
-them products
+  them products
 
 The departments currently use email to exchange comments about new equipment
 purchases. But someone always seems to be left out of "the loop." For example,
@@ -1870,13 +1839,13 @@ sending the message.
 
 Note, the following about this *sender*:
 
-1.	Creates the message using Liferay's `Message` class
-2.	Stuffs the message with key/value pairs
+1. Creates the message using Liferay's `Message` class
+2. Stuffs the message with key/value pairs
 3. Sets a response ID and response destination for listeners to use in replying
-back
+   back
 4. Sends the message to the destination with a timeout value of 10,000
-milliseconds
-5.	Blocks waiting for the response
+   milliseconds
+5. Blocks waiting for the response
 
 **Finance Department *listens* for purchase approval requests and *replies*
 back:**
@@ -1919,16 +1888,16 @@ back:**
 Note the following about this *listener*:
 
 1. Implements the `receive(Message message)` method of the
-`com.liferay.portal.kernel.messaging.MessageListener` interface
+   `com.liferay.portal.kernel.messaging.MessageListener` interface
 2. Extracts values from the `Message` parameter by *getting* values associated
-with known keys
+   with known keys
 3. Creates a `Message` based on the message received via
-`MessageBusUtil.createResponseMessage(message)`. Method
-`MessageBusUtil.createResponseMessage(message)` accesses the response
-destination name from the `message` variable and sets the destination of the
-response message.
-4.	Sets the *payload* of the response message
-5.	Sends the response `Message` to the response destination.
+   `MessageBusUtil.createResponseMessage(message)`. Method
+   `MessageBusUtil.createResponseMessage(message)` accesses the response
+   destination name from the `message` variable and sets the destination of the
+   response message.
+4. Sets the *payload* of the response message
+5. Sends the response `Message` to the response destination.
 
 The listener for the Legal Department could be implemented in a similar manner.
 So, we'll account for Legal Department related classes in our configuration.
@@ -2014,10 +1983,10 @@ have this file in your plugin then create it. Here is the configuration:
 
 The configuration specifies the following:
 
--	*Listener beans* - Specify classes to handle messages
+- *Listener beans* - Specify classes to handle messages
 - *Destination beans* - Specify the class *type* and *key* names of the
-destinations
--	*Configurator bean* - Maps listeners to their destinations
+  destinations
+- *Configurator bean* - Maps listeners to their destinations
 
 Upon Finance sending its purchase approval request message for a new three-story
 spiral slide, the console reports Finance receiving the message, Procurement
@@ -2121,15 +2090,15 @@ messages like this ...
 This *listener* deserializes the `JSONObject` from the message in the following
 manner:
 
-1.	Gets the message *payload* and casts it to a `String`
-2.	Creates a `JSONObject` from the payload string
-3.	Gets values from the `JSONObject` using its *getter* methods
+1. Gets the message *payload* and casts it to a `String`
+2. Creates a `JSONObject` from the payload string
+3. Gets values from the `JSONObject` using its *getter* methods
 
 Furthermore, this class demonstrates the Warehouse Department packaging up a
 response message and sending it back to the Procurement Department by:
 
-1.	Creating a `JSONObject`
-2.	Stuffing it with name/value pairs
+1. Creating a `JSONObject`
+2. Stuffing it with name/value pairs
 3. Sending the response message to the response destination of the original
 message
 
@@ -2197,7 +2166,7 @@ the previous section:
 		<bean id="messageListener.sales_listener" class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl" />
 
 - Destination beans - The purchase notifications will be sent to a *serial*
-destination and the responses will be sent to a *synchronous* destination.
+  destination and the responses will be sent to a *synchronous* destination.
 
 		<bean id="destination.purchase" class="com.liferay.portal.kernel.messaging.SerialDestination">
 			<property name="name" value="jungle/purchase" />
@@ -2208,8 +2177,8 @@ destination and the responses will be sent to a *synchronous* destination.
 		</bean>
 
 - Configuration bean listener map entries - Warehouse and Sales are registered
-to listen for the notifications from Procurement. All three of these departments
-are registered to listen for the inter-departmental responses.
+  to listen for the notifications from Procurement. All three of these
+  departments are registered to listen for the inter-departmental responses.
 
 		<entry key="jungle/purchase">
 			<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
@@ -2275,10 +2244,10 @@ Congratulations! You've implemented inter-departmental communications for the
 procurement process of Jungle Gyms R-Us. Along the way you've exercised the
 following from Message Bus:
 
--	Sender, listener, and destination components
--	Synchronous and Asynchronous messaging schemes
--	*Serial* and *in-parallel* message dispatching
--	Java and JSON message types
+- Sender, listener, and destination components
+- Synchronous and Asynchronous messaging schemes
+- *Serial* and *in-parallel* message dispatching
+- Java and JSON message types
 
 In the next section, you'll explore the Device Detection API and its capabilities. 
 

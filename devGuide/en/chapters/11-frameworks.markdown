@@ -143,68 +143,44 @@ The service has been generated successfully when you see BUILD SUCCESSFUL in the
 terminal window, you should see that a large number of files have been
 generated. An overview of these files is provided below:
 
--   Persistence
-
-    -   `BookPersistence` - book persistence interface `@generated`
-
-    -   `BookPersistenceImpl` - book persistence `@generated`
-
+- Persistence
+    - `BookPersistence` - book persistence interface `@generated`
+    - `BookPersistenceImpl` - book persistence `@generated`
     - `BookUtil` - book persistence util, instances BookPersistenceImpl
-    `@generated`
-
--   Local Service
-
+      `@generated`
+- Local Service
     - **`BookLocalServiceImpl`** - local service implementation. This is the
-    only class within the local service that you will be able to modify
-    manually. Your business logic will be here.
-
-    -   `BookLocalService` - local service interface `@generated`
-
-    -   `BookLocalServiceBaseImpl` - local service base `@generated` `@abstract`
-
+      only class within the local service that you will be able to modify
+      manually. Your business logic will be here.
+    - `BookLocalService` - local service interface `@generated`
+    - `BookLocalServiceBaseImpl` - local service base `@generated` `@abstract`
     - `BookLocalServiceUtil` - local service util, instances
-    `BookLocalServiceImpl` `@generated`
-
+      `BookLocalServiceImpl` `@generated`
     - `BookLocalServiceWrapper` - local service wrapper, wraps
-    `BookLocalServiceImpl` `@generated`
-
--   Remote Service
-
+      `BookLocalServiceImpl` `@generated`
+- Remote Service
     - **`BookServiceImpl`** - remove service implementation. Put here the code
-    that adds additional security checks and invokes the local service.
-
-    -   `BookService` - remote service interface `@generated`
-
+      that adds additional security checks and invokes the local service.
+    - `BookService` - remote service interface `@generated`
     - `BookServiceBaseImpl` - remote service base `@generated` `@abstract`
-
     - `BookServiceUtil` - remote service util, instances `BookServiceImpl`
-    `@generated`
-
+      `@generated`
     - `BookServiceWrapper` - remote service wrapper, wraps `BookServiceImpl`
-    `@generated`
-
+      `@generated`
     - `BookServiceSoap` - soap remote service, proxies `BookServiceUtil`
-    `@generated`
-
+      `@generated`
     - `BookSoap` - soap book model, similar to `BookModelImpl`, does not
-    implement Book `@generated`
-
+      implement Book `@generated`
     - `BookServiceHttp` - http remote service, proxies `BookServiceUtil`
-    `@generated`
-
--   Model
-
-    -   `BookModel` - book base model interface `@generated`
-
-    -   `BookModelImpl` - book base model `@generated`
-
-    -   `Book` - book model interface `@generated`
-
+      `@generated`
+- Model
+    - `BookModel` - book base model interface `@generated`
+    - `BookModelImpl` - book base model `@generated`
+    - `Book` - book model interface `@generated`
     - **`BookImpl`** - book model implementation. You can use this class to add
-    additional methods to your model other than the auto-generated field getters
-    and setters.
-
-    -   `BookWrapper` - book wrapper, wraps `Book` `@generated`
+      additional methods to your model other than the auto-generated field
+      getters and setters.
+    - `BookWrapper` - book wrapper, wraps `Book` `@generated`
 
 Out of all of these classes only three can be manually modified:
 `BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`.
@@ -285,21 +261,13 @@ also access a variety of services built into Liferay. These include the
 following:
 
 - `UserService`
-
 - `OrganizationService`
-
 - `GroupService`
-
 - `CompanyService`
-
 - `ImageService`
-
 - `LayoutService`
-
 - `PermissionService`
-
 - `UserGroupService`
-
 - `RoleService`
 
 For more information on these services, see Liferay's Javadocs at
@@ -392,9 +360,7 @@ In your portlet's code, you can then use methods as defined in portlet
 specification:
 
 - `getRemoteUser()`
-
 - `isUserInRole()`
-
 - `getUserPrincipal()`
 
 For example, the following code could be used to check if the current user has
@@ -415,14 +381,14 @@ which option fits your needs best.
 Adding permissions to custom portlets consists of four main steps (also known as
 DRAC):
 
-1.  **D**efine all resources and their permissions.
+1. **D**efine all resources and their permissions.
 
 2. **R**egister all the resources defined in step 1 in the permissions system.
-This is also known as *adding resources.*
+   This is also known as *adding resources.*
 
-3.  **A**ssociate the necessary permissions with resources.
+3. **A**ssociate the necessary permissions with resources.
 
-4.  **C**heck permission before returning resources.
+4. **C**heck permission before returning resources.
 
 ### Implementing Permissions [](id=lp-6-1-dgen09-implementing-permissions-0)
 
@@ -430,12 +396,12 @@ Before you can add permissions to a portlet, let's get an understanding of the
 following two critical terms used throughout this section:
 
 - **Resource** - A generic term for any object represented in the portal.
-Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
-Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files (e.g.
-documents, images, etc.)
-
+  Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
+  Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files
+  (e.g., documents, images, etc.)
 - **Permission** - An action on a resource. For example, the *view* action with
-respect to *viewing the calendar portlet* is defined as a permission in Liferay.
+  respect to *viewing the calendar portlet* is defined as a permission in
+  Liferay.
 
 Keep in mind that permissions for a *portlet* resource are implemented a little
 differently from other resources such as Java classes and files. In each of the
@@ -817,15 +783,15 @@ permissions. Otherwise, it checks for user permissions. Let's do a quick review
 of the parameters of this method:
 
 - `groupId`: represents the scope in which the permission check is being
-performed. In Liferay, the scopes can be a specific site, an organization, a
-personal site of a user, etc. This is important because a user may be allowed to
-add blog entries in a given site but not in another. For resources that do not
-belong to an scope like those mentioned, the value of this parameter should be
-`0`. There are several ways to obtain the `groupId` of the current scope:
+  performed. In Liferay, the scopes can be a specific site, an organization, a
+  personal site of a user, etc. This is important because a user may be allowed
+  to add blog entries in a given site but not in another. For resources that do
+  not belong to an scope like those mentioned, the value of this parameter
+  should be `0`. There are several ways to obtain the `groupId` of the current
+  scope:
 
     - JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
     variable called `scopeGroupId`.
-
     - Business logic class: When using the ServiceContext pattern, it can be
     obtained using `serviceContext.getScopeGroupId()`. - Other cases: it can be
     obtained from the theme display request object:
@@ -835,16 +801,14 @@ belong to an scope like those mentioned, the value of this parameter should be
             long scopeGroupId = themeDisplay.getScopeGroupId();
 
 - `name`: The name of the resource as specified in the XML file of the previous
-sections.
-
+  sections.
 - `primKey`: The primary key of the resource. In this example, since the
-resource doesn't exist as an entry in the database we use the groupId again. If
-we were checking for a permission on a given blog entry, we would use the
-primary key of that blog entry instead.
-
+  resource doesn't exist as an entry in the database we use the groupId again.
+  If we were checking for a permission on a given blog entry, we would use the
+  primary key of that blog entry instead.
 - `actionId`: The name of the action as entered in the XML file. It is a common
-practice to create a helper class with constants for all the actions defined, so
-that it's easier to search usages.
+   practice to create a helper class with constants for all the actions defined,
+   so that it's easier to search usages.
 
 In the examples above, we are assuming that there is a variable called
 `permissionChecker` already available. Liferay automatically creates a
@@ -853,11 +817,9 @@ information from the user and caches the security checks to ensure good
 performance. There are several ways to obtain this instance:
 
 - In a JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
-variable called `permissionChecker`.
-
+  variable called `permissionChecker`.
 - When using ServiceBuilder, every service implementation class can access the
-`PermissionChecker` instance by using the method `getPermissionChecker()`.
-
+  `PermissionChecker` instance by using the method `getPermissionChecker()`.
 - Other cases: it can be obtained from the theme display request object:
 
         ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
@@ -948,33 +910,21 @@ Here are the main functionalities that you will be able to reuse thanks to the
 asset framework:
 
 - Associate tags to custom content types (new tags will be created automatically
-when the author assigns them to the content)
-
+  when the author assigns them to the content)
 - Associate categories to custom content types (authors will only be allowed to
-select from predefined categories within several predefined vocabularies)
-
+  select from predefined categories within several predefined vocabularies)
 - Manage tags from the control panel (including merging tags)
-
 - Manage categories from the control panel (including creating complex
-hierarchies).
-
+  hierarchies).
 - Associate comments with assets
-
 - Rate of assets on a five star rating system
-
 - Assign social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
-to assets
-
--	Add custom fields to assets
-
--	Relate assets to one another
-
--	Flag asset content as inappropriate
-
--   Keep track of the number of visualizations of an asset
-
--	Integrate workflow with assets
-
+  to assets
+- Add custom fields to assets
+- Relate assets to one another
+- Flag asset content as inappropriate
+- Keep track of the number of visualizations of an asset
+- Integrate workflow with assets
 - Publish your content using the Asset Publisher portlet. Asset Publisher is
 able to publish dynamic lists of assets or manually selected lists of assets. It
 is also able to show a summary view of an asset and offer a link to the full
@@ -1036,39 +986,31 @@ that comes bundled with Liferay:
 
 Here is a quick summary of the most important parameters of this method:
 
--   *userId*: is the identifier of the user who created the content
-
+- *userId*: is the identifier of the user who created the content
 - *groupId*: identifies the scope in which the content has been created. If your
-content does not support scopes, you can just pass `0` as the value.
-
+  content does not support scopes, you can just pass `0` as the value.
 - *className*: identifies the type of asset. By convention we recommend that it
-is the name of the Java class that represents your content type, but you can
-actually use any String you want as long as you are sure that it is unique.
-
+  is the name of the Java class that represents your content type, but you can
+  actually use any String you want as long as you are sure that it is unique.
 - *classPK*: identifies the specific content being created among any other of
-the same type. It is usually the primary key of the table where the custom
-content is stored. The *classUuid* parameter can optionally be used to specify a
-secondary identifier that is guaranteed to be universally unique. This type of
-identifier is especially useful if your contents will be exported and imported
-across separate portals.
-
+  the same type. It is usually the primary key of the table where the custom
+  content is stored. The *classUuid* parameter can optionally be used to specify
+  a secondary identifier that is guaranteed to be universally unique. This type
+  of identifier is especially useful if your contents will be exported and
+  imported across separate portals.
 - *assetCategoryIds* and *assetTagNames*: represent the categories and tags that
-have been selected by the author of the content. The asset framework will sotre
-them for you.
-
+  have been selected by the author of the content. The asset framework will
+  sort them for you.
 - *visible*: specifies whether this content should be shown at all by Asset
-Publisher.
-
+  Publisher.
 - *title,* *description* and *summary:* are descriptive fields that will be used
-by the Asset Publisher when displaying entries of your content type.
-
+  by the Asset Publisher when displaying entries of your content type.
 - *publishDate* and *expirationDate:* can optionally be specified to let the
-Asset Publisher know that it should not show the content before a given
-publication date of after a given expiration date.
-
+  Asset Publisher know that it should not show the content before a given
+  publication date of after a given expiration date.
 - All other fields are optional and might not make sense to include in some
-cases. The *sync* parameter should always be false unless you are doing
-something very advanced (look at the code if you are really curious).
+  cases. The *sync* parameter should always be false unless you are doing
+  something very advanced (look at the code if you are really curious).
 
 When one of your custom content is deleted you should also let the Asset
 Framework know, to clean up the information stored and also to make sure that
@@ -1154,17 +1096,12 @@ In addition to using tags and categories, there are even more features that the
 asset framework provides you. These features allow users to do the following
 with your assets:
 
--	Add comments
-
--	Rate comments of other users
-
--	Rate assets
-
--	Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
-
--	Relate assets to one another
-
--	Flag content as inappropriate to notify the portal administrator
+- Add comments
+- Rate comments of other users
+- Rate assets
+- Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
+- Relate assets to one another
+- Flag content as inappropriate to notify the portal administrator
 
 There are JSP tags, called *Liferay UI* tags, associated with each of these
 feartures. You can find these tags used throughout the JSPs for Liferay's
@@ -1173,7 +1110,7 @@ built-in portlets (e.g. `edit_entry.jsp` of the Blogs portlet).
 Here are some examples of the JSP tags from the Blogs portlet so that you can
 become familiar with them:
 
--	**Comments and comment ratings:**
+- **Comments and comment ratings:**
 
 		<portlet:actionURL var="discussionURL">
 			<portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
@@ -1190,14 +1127,14 @@ become familiar with them:
 			userId="<%= entry.getUserId() %>"
 		/>
 
--	**Rate assets:**
+- **Rate assets:**
 
 		<liferay-ui:ratings
 			className="<%= BlogsEntry.class.getName() %>"
 			classPK="<%= entry.getEntryId() %>"
 		/>
 
--	**Social Bookmarks:**
+- **Social Bookmarks:**
 
 		<liferay-ui:social-bookmarks
 			displayStyle="<%= socialBookmarksDisplayStyle %>"
@@ -1206,14 +1143,14 @@ become familiar with them:
 			url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
 		/>
 
--	**Related assets:**
+- **Related assets:**
 
 		<liferay-ui:input-asset-links
 			className="<%= BlogsEntry.class.getName() %>"
 			classPK="<%= entryId %>"
 		/>
 
--	**Flag as inappropriate:**
+- **Flag as inappropriate:**
 
 		<liferay-ui:flags
 			className="<%= BlogsEntry.class.getName() %>"
@@ -1242,29 +1179,28 @@ You can provide all this to the Asset Publisher by implementing the following
 pair of interfaces - AssetRendererFactory and AssetRenderer:
 
 - **AssetRendererFactory:** this class knows how to retrieve specific assets
-from the persistent storage via the class `classPK`. The `classPK` is typically
-the asset's primary key, but can be anything you have specified to the
-`updateAsset` method used to add or update the asset. Your factory
-implementation should be able to grab the asset from a `groupId` (identifies a
-scope of data) and a `urlTitle` (a title that can be used in friendly URLs to
-refer uniquely to the asset within a given scope). Finally, the asset renderer
-factory can provide a URL for the Asset Publisher to use when a user wants to
-add a new asset of your custom type. This URL should point to your own portlet.
-There are other less important methods of the interface, but you can avoid
-implementing them by extending **BaseAssetRendererFactory**. Extending this
-*base* class, instead of implementing the interface directly, will make your
-code more robust to possible interface changes in future versions of Liferay,
-since the base implementation will already be updated to accommodate the
-interface changes.
-
+  from the persistent storage via the class `classPK`. The `classPK` is
+  typically the asset's primary key, but can be anything you have specified to
+  the `updateAsset` method used to add or update the asset. Your factory
+  implementation should be able to grab the asset from a `groupId` (identifies a
+  scope of data) and a `urlTitle` (a title that can be used in friendly URLs to
+  refer uniquely to the asset within a given scope). Finally, the asset renderer
+  factory can provide a URL for the Asset Publisher to use when a user wants to
+  add a new asset of your custom type. This URL should point to your own
+  portlet. There are other less important methods of the interface, but you can
+  avoid implementing them by extending **BaseAssetRendererFactory**. Extending
+  this *base* class, instead of implementing the interface directly, will make
+  your code more robust to possible interface changes in future versions of
+  Liferay, since the base implementation will already be updated to accommodate
+  the interface changes.
 - **AssetRenderer:** this is the class that provides metadata information about
-one specific asset. It verifies whether the current user has permission to edit
-or view the asset. And this class is responsible for rendering the asset for the
-different templates (e.g. abstract and full content view) by forwarding to a
-specific an appropriate JSP. It is recommended that you extend the
-**BaseAssetRenderer** class rather than directly implementing the interface. The
-*base* class provides nice defaults and robustness for methods that could be
-added to the interface in the future.
+  one specific asset. It verifies whether the current user has permission to
+  edit or view the asset. And this class is responsible for rendering the asset
+  for the different templates (e.g. abstract and full content view) by
+  forwarding to a specific an appropriate JSP. It is recommended that you extend
+  the **BaseAssetRenderer** class rather than directly implementing the
+  interface. The *base* class provides nice defaults and robustness for methods
+  that could be added to the interface in the future.
 
 Let's see an example of these two classes. Again we will pick Liferay's Blogs
 portlet. Lets start with the implementation for the `AssetRendererFactory`:
@@ -1547,32 +1483,30 @@ sections will evolve into its own chapter as we add more information and
 detailed instructions on how to use them over time.
 
 - Workflow Framework: Allows adding Workflow functionality to your own portlets.
-One great benefit of using this framework is that you will be able to reuse all
-of the workflow management UIs provided by Liferay. Also you will be able to
-abstract your code from the specific workflow engine that will be used (JBPM,
-Liferay Kaleo, ...). Many Liferay portlets use this framework. If you want a
-simple example to learn how to use it, the blogs portlet is a good start.
-
+  One great benefit of using this framework is that you will be able to reuse
+  all of the workflow management UIs provided by Liferay. Also you will be able
+  to abstract your code from the specific workflow engine that will be used
+  (JBPM, Liferay Kaleo, ...). Many Liferay portlets use this framework. If you
+  want a simple example to learn how to use it, the blogs portlet is a good
+  start. 
 - Custom fields: A portlet that uses custom fields will allow the end user to
-extend the fields of its data entries with custom ones defined by the end user.
-To see a list of data types in Liferay that support this functionality just go
-to the Control Panel &rarr; Custom Fields.
-
+  extend the fields of its data entries with custom ones defined by the end
+  user. To see a list of data types in Liferay that support this functionality
+  just go to the Control Panel &rarr; Custom Fields.
 - Inline permissions Framework: Allows enhancing your SQL queries so that the
-database takes care of checking for view permissions. This is particularly
-useful when doing queries for data entries that could result in a large number
-of items (and thus checking of permissions afterward would be very inefficient)
-or when you want to implement pagination (which would not work fine if
-permissions are checked afterward and an item is removed). The Document Library
-or the Message Boards of Liferay are examples of portlets that use this
-functionality.
-
+  database takes care of checking for view permissions. This is particularly
+  useful when doing queries for data entries that could result in a large number
+  of items (and thus checking of permissions afterward would be very
+  inefficient) or when you want to implement pagination (which would not work
+  fine if permissions are checked afterward and an item is removed). The
+  Document Library or the Message Boards of Liferay are examples of portlets
+  that use this functionality.
 - Faceted Search: A new API was introduced which allows for simple creation of
-new facet configurations and searches. This API uses a JSON based configuration
-to define the details of facets used for the search. To find out more, see the
-[Faceted
-Search](http://www.liferay.com/community/wiki/-/wiki/1071674/Faceted+Search)
-wiki by Ray Aug&#233;)
+  new facet configurations and searches. This API uses a JSON based
+  configuration to define the details of facets used for the search. To find out
+  more, see the [Faceted 
+  Search](http://www.liferay.com/community/wiki/-/wiki/1071674/Faceted+Search)
+  wiki by Ray Aug&#233;)
 
 Check in the near future for new editions of the Developer's Guide for extended
 information on each of these frameworks.

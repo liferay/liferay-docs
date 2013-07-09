@@ -19,13 +19,11 @@ your plugins.
 This chapter covers the following: 
 
 - **Developing applications for Liferay:** Ways to develop new applications and
-reuse existing applications 
-
+  reuse existing applications 
 - **Extending and customizing Liferay:** Options for extending functionality and
-customizing your portal applications, themes, and templates 
-
+  customizing your portal applications, themes, and templates 
 - **Choosing your development tools:** Comparison of tools available for
-developing applications for Liferay 
+  developing applications for Liferay 
 
 Let's talk about developing applications for Liferay. 
 
@@ -77,14 +75,13 @@ profile, his activities, and his friends.
 An OpenSocial gadget is deployed in Liferay as one of the following types: 
 
 - **Remote gadget:** is executed in a remote server but presented in a given
-page as if it were another platform application. Remote gadget deployment is
-simple, but the portal depends on the remote server for the gadget to work.
-Deployment as a remote gadget is not a viable option in some Intranet
-environments that lack full access to the Internet.
-
+  page as if it were another platform application. Remote gadget deployment is
+  simple, but the portal depends on the remote server for the gadget to work.
+  Deployment as a remote gadget is not a viable option in some Intranet
+  environments that lack full access to the Internet.
 - **Local gadget:** is deployed in the Liferay server in a similar manner to
-portlets. Since a gadget is defined in an XML file, uploading this file is all
-that's necessary to deploy the gadget.
+  portlets. Since a gadget is defined in an XML file, uploading this file is all
+  that's necessary to deploy the gadget.
 
 Once you've saved your new gadget, it appears as an application that
 administrators can add to their site's pages. 
@@ -99,20 +96,15 @@ What if you already have an existing application that has not been implemented
 as a portlet or OpenSocial gadget? You have many options, including:
 
 - Rewrite the application as a portlet. 
-
 - Create simple portlets that interact with the application (possibly using Web
-Services) and offer that functionality to end-users. 
-
+  Services) and offer that functionality to end-users. 
 - Create an OpenSocial gadget as a wrapper for the application. The gadget can
-use an IFrame to show part of the application in the portal page. 
-
+  use an IFrame to show part of the application in the portal page. 
 - Create a portlet that integrates the remote application either using an IFrame
-or an HTTP proxy (e.g., using Liferay's WebProxy portlet). This requires
-implementing single sign-on between the portal and the application. 
-
+  or an HTTP proxy (e.g., using Liferay's WebProxy portlet). This requires
+  implementing single sign-on between the portal and the application. 
 - If the application is implemented using Struts 1.x, it can be converted to a
   portlet application with only a few changes. 
-
 - If the application is implemented using JSF, it can be converted to a portlet
   application with only a few changes. 
 
@@ -135,17 +127,18 @@ Since the choice of available frameworks and technologies is very broad,
 choosing the appropriate one can be daunting. We'll provide some advice to help
 you choose the best frameworks for your needs, summarized as follows:
 
-1. *Use what you know:* If you already know a framework, that can be your
-first option (Struts 2, Spring MVC, PHP, Ruby, etc). 
+1.  *Use what you know:* If you already know a framework, that can be your
+    first option (Struts 2, Spring MVC, PHP, Ruby, etc). 
 
-2. *Adapt to your real needs:* Component-based frameworks, such as
-JavaServer&trade; Faces (JSF), Vaadin, and Google Web Toolkit (GWT), are
-especially good for desktop-like applications. MVC frameworks, on the other
-hand, provide more flexibility. 
+2.  *Adapt to your real needs:* Component-based frameworks, such as
+    JavaServer&trade; Faces (JSF), Vaadin, and Google Web Toolkit (GWT), are
+    especially good for desktop-like applications. MVC frameworks, on the other
+    hand, provide more flexibility. 
 
-3. *When in doubt, pick the simpler solution:* Portlet applications are often
-more simple to implement than standalone web applications. When in
-doubt, use the simpler framework (e.g. Liferay's MVC Portlet or Alloy Portlet).  
+3.  *When in doubt, pick the simpler solution:* Portlet applications are often
+    more simple to implement than standalone web applications. When in
+    doubt, use the simpler framework (e.g., Liferay's MVC Portlet or Alloy
+    Portlet).  
 
 Some of the frameworks mentioned above include their own JavaScript code to
 provide a high degree of interaction. That is the case with GWT, Vaadin,
