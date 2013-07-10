@@ -77,16 +77,6 @@ the *Organization* services:
    package, since the services for the Organization entity belong to the
    *Portal* scope. 
 
-<!--I changed this based on navigating to the link specified and looking for the
-link. There was no Packages frame, but there was a Portal Services frame
-with the com.liferay.portal.service link Russ -->
-
-<!-- The Packages frame is the top left frame, but it's much easier to do it
-from the main frame, so I've left it. -Rich -->
-
-<!--Jim I left these comments in from me and Rich so you can see what I did and
-whether you think it's appropriate.-->
-
 3. Find and click on the `-ServiceUtil` class (in this case,
    `OrganizationLocalServiceUtil`) in the *Class Summary* table or the
 *Classes* list at the bottom of the page. 
@@ -2010,14 +2000,13 @@ to resolve the communication breakdown, but we'll resolve the Jungle Gym's
 communication woes using Message Bus, to show you how it works. 
 Here are the inter-department message exchanges we'll accommodate:
 
-| Message | Sender | Listener | Response | Response Listeners |
---------- | ------ | -------- | -------- | ------------------ |
-  Request permission to proceed with purchase | Procurement | Finance | required | Procurement |
-  Request permission to proceed with purchase | Procurement | Legal | required | Procurement |
-  Notify and solicit feedback on new purchase | Procurement | Warehouse | optional | Procurement, Sales |
-  Notify and solicit feedback on new purchase | Procurement | Sales | optional | Procurement, Warehouse |
-  Broadcast equipment news | Procurement | Employees | none | none |
----
+ Message | Sender | Listener | Response | Response Listeners |
+-------- | ------ | -------- | -------- | ------------------ |
+ Request permission to proceed with purchase | Procurement | Finance | required | Procurement |
+ Request permission to proceed with purchase | Procurement | Legal | required | Procurement |
+ Notify and solicit feedback on new purchase | Procurement | Warehouse | optional | Procurement, Sales |
+ Notify and solicit feedback on new purchase | Procurement | Sales | optional | Procurement, Warehouse |
+ Broadcast equipment news | Procurement | Employees | none | none |
 
 Let's implement Procurement's request to Finance first. 
 
@@ -2033,14 +2022,12 @@ makes the most sense.
 
 The following table describes how we'll set things up: 
 
-| Destination |       |        |                                           |
-  Key         | Type  | Sender | Receivers                                 |
-------------- | ----- | ------ | ----------------------------------------- |
-  `jungle/finance/purchase`          | synchronous | Procurement | Finance |
-  `jungle/finance/purchase/response` | synchronous | Finance | Procurement |
-  `jungle/legal/purchase`            | synchronous | Procurement | Legal   |
-  `jungle/legal/purchase/response`   | synchronous | Legal | Procurement   |
----
+ Destination Key | Type  | Sender | Receivers                                 |
+---------------- | ----- | ------ | ----------------------------------------- |
+ `jungle/finance/purchase`          | synchronous | Procurement | Finance |
+ `jungle/finance/purchase/response` | synchronous | Finance | Procurement |
+ `jungle/legal/purchase`            | synchronous | Procurement | Legal   |
+ `jungle/legal/purchase/response`   | synchronous | Legal | Procurement   |
 
 We've set it up so Finance sends its response messages to a destination on which
 Procurement will listen. That way a full-bodied response message is sent back to
@@ -2296,12 +2283,10 @@ the Sales or Warehouse departments are posted to a shared destination.
 
 The following table describes how we'll set things up: 
 
-| Destination              |       |        |                               |
-  Key                      | Type  | Sender | Receivers                     |
+| Destination Key          | Type  | Sender | Receivers                     |
 -------------------------- | ----- | ------ | ----------------------------- |
   jungle/purchase          | async serial | Procurement |  Sales, Warehouse |
   jungle/purchase/response | synchronous  | Sales, Warehouse | Procurement  |
----
 
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
