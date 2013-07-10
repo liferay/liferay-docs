@@ -28,8 +28,6 @@ doesn't make you have to write yourself.
 
 Here's what we've got in store for you: 
 
-- Service Builder 
-
 - Security and Permissions 
 
 - Asset Framework 
@@ -624,7 +622,6 @@ users. For example, a food site could have one blog open to posts from any site
 member, but also have a separate informational blog about the site itself
 restricted to posts from administrators. 
 
-
 After defining the portlet and portlet instance as resources, we need to define
 permissions on the models in the portlet. The model resource is surrounded by
 the `<model-resource>` tag. Inside the tag, we first define the model name; the
@@ -872,6 +869,9 @@ resources that don't belong to a scope (extremely rare and unlikely), set the
 value of this parameter to `0`. There are several ways you can obtain the
 `groupId` of the current scope: 
 
+<!--I think the two bullets below should be nested, right? Rich's changes seem
+to have removed the nesting, probably unintentionally. -->
+
 -   JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
     variable called `scopeGroupId`.
 -   Business logic class: If you're using the ServiceContext pattern, you can
@@ -1061,6 +1061,11 @@ We'll describe the first two briefly here before we dive in head first:
 -Russ -->
 
 <!-- It was confusingly written; hopefully I fixed it. -Rich -->
+
+<!--It's still confusing to me, as it says taglibs provide widgets that allow
+authors to enter comments, tags and categories, as well as how to...I wasn't
+expecting a how to here and it doesn't work, does it? since it's originally
+saying taglibs provide widgets that allow...-->
 
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
