@@ -512,11 +512,6 @@ project from a Plugins SDK project:
     imported. If you don't have a Liferay Portal Runtime, use the *New...*
     button to create one now. 
 
-<!--Three figures were deleted here. One figure could be created to replace
-them if desirable. One figure to rule them all. This comment should be deleted
-once this is seen and decision is made; otherwise it ruins the numbering in
-this list. -Russ -->
-
 5.  Click *Finish* to perform the import. 
 
 Remember to verify that your project was configured correctly as a Liferay IDE
@@ -851,15 +846,13 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 Adapter section. Maybe it should go in the introduction or at the end of the
 Liferay IDE section? -Russ-->
 
-### Using the Service Builder Graphical Editor 
+<!--### Using the Service Builder Graphical Editor -->
 
 <!--Add content-->
 
-### Using Tag Library Snippets 
+<!--### Using Tag Library Snippets -->
 
 <!--Add content-->
-
-
 
 ## The Plugins SDK 
 
