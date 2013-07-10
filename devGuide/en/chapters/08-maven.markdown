@@ -177,8 +177,11 @@ To create a repository using Nexus, follow these steps:
     repository property values: 
 
     *Repository ID:* `liferay-releases`
+
     *Repository Name:* `Liferay Release Repository`
+
     *Provider:* `Maven2`
+
     *Repository Policy:* `Release`
 
 4.  Click *Save*.
@@ -201,8 +204,11 @@ know. -->
 3.  Specify repository properties like the following:
 
     *Repository ID:* `liferay-snapshots`
+
     *Repository Name:* `Liferay Snapshot Repository`
+
     *Provider:* `Maven2`
+
     *Repository Policy:* `Snapshot`
 
 4.  Click *Save*.
