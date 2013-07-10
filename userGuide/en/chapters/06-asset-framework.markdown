@@ -583,7 +583,8 @@ implementation operates on the `entryClassName` indexed field.
 
 **Note:** You can identify available indexed fields by enabling the Search
 portlet's *Display Results in Document Form* configuration setting and then
-expanding individual results by clicking the [+] to the left of their titles. 
+expanding individual results by clicking the *+* symbol to the left of their
+titles. 
 
 **"label":** This field takes a string value and represents the language key that
 is used for localizing the title of the facet when it's rendered.
@@ -687,19 +688,40 @@ control what and how content is displayed from one location, the Asset Publisher
 helps you to "bubble up" the most relevant content to your users.
 
 To get to all the portlet's options, click the *Configuration* link in the
-portlet's menu (the wrench icon).
+portlet's menu (the wrench icon). On the Setup tab, you can configure the Asset
+Publisher's settings from the following three areas:
 
-The ability to configure how content is displayed and selected by your users
-further demonstrates the flexibility of the Asset Publisher. You get to choose
-how content is displayed. You can select it manually for display in a similar
-way to the Web Content Display portlet or you can set up predefined queries and
-filters and let the portal select the content for you, based on its type or its
-tags and categories.
+* Asset Selection
+* Display Settings
+* Subscriptions
 
-Let's first look at how we might select content manually. You'll see that it's
-very similar to the Web Content Display portlet.
+Asset Selection allows you to configure which assets are displayed. You can set
+asset selection to either *dynamic* or *manual*. With dynamic asset selection,
+assets are automatically displayed based on certain rules or filters. For
+example, you can set the Asset Publisher to display only assets of a certain
+type or assets to which certain tags or categories have been applied. With
+manual asset selection, the Asset Publisher only displays assets that have been
+explicitly selected by an administrator.
 
-#### Selecting assets manually  
+The Asset Publisher supports a scope that restricts both manual and dynamic
+asset selection. The Asset Publisher can only display assets from its configured
+scope. By default, the Asset Publisher portlet is scoped to the site of the page
+to which it was added. However, you can customize the scope from the Asset
+Selection section of the Asset Publisher configuration window. To extend your
+Asset Publisher's scope, click *Select* under Scope and choose either *Global*
+to add the global scope or *Other Site...* to add the scope of anther site.
+
+The Display Settings section of the Asset Publisher configuration window lets
+administrators customize many details that determine how content is displayed.
+The Subscription section allows administrators to enable, disable, or configure
+email subscriptions and RSS subscriptions. In the following sections, we'll
+explore the available configurations for the Asset Selection, Display Settings,
+and Subscriptions sections of the Asset Publisher's configuration window. Let's
+start by learning how select content manually. You'll see that it's very similar
+to using the Web Content Display portlet except that you can select assets of
+any type, not just web content articles.
+
+#### Selecting Assets Manually  
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
@@ -725,7 +747,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-#### Selecting assets dynamically  
+#### Selecting Assets Dynamically  
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
@@ -770,7 +792,7 @@ control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
 
-### Setting up Display Pages  
+### Configuring Display Settings  
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -879,7 +901,7 @@ to your `portal-ext.properties` file and change the number:
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-### Display Pages
+### Content Display Pages
 
 If you've been using Liferay for a while, or you've just spent a little bit of
 time with this guide, you might have noticed something about how Liferay handles
@@ -912,8 +934,7 @@ page, add a Web Content Display portlet. Click the *Add Web Content* button,
 enter a title and some content, click on *Display Page* at the right, and select
 the Display Page you just created. Then click *Publish*.
 
-![Figure 6.15: Selecting a Display
-Page](../../images/04-web-content-display-page.png)
+![Figure 6.15: Selecting a Display Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click
 the *Read More* link to display the content. Notice that the canonical URL for
@@ -929,7 +950,7 @@ relevant content.
 
 Let's move on to another new featured introduced by Liferay 6.1.
 
-## Defining content relationships  
+## Defining Content Relationships  
 
 Related Assets is a new feature in Liferay 6.1 that enables you to connect any
 number of assets within a site or across the portal, even if they don't share
