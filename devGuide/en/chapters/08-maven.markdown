@@ -1266,7 +1266,7 @@ She's going to cook just like the original Lenore if we don't do something!
 But it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
 "Tell this soul with sorrow laden if, within the distant Aidenn,
-It shall clasp a sainted kittenen whom the angels named Lenore II--"
+It shall clasp a sainted kitten whom the angels named Lenore II--"
 
 In memory of the late, now cripsy Lenore II, let's create a layout template
 plugin with Maven. 
@@ -1388,7 +1388,6 @@ at Liferay IDE in the next chapter.
  Maven, "Probably." 
 
 ---
-
 <!-- I thought Lenore II did make it through the chapter. Did you forget to kill
 her off? --> 
 

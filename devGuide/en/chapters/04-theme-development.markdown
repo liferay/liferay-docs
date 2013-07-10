@@ -223,7 +223,7 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-## Developer Mode 
+## Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
@@ -308,7 +308,7 @@ there, along with the *Classic* theme's thumbnail.
  
 Let's talk about Liferay's JavaScript library next. 
 
-## JavaScript 
+## JavaScript
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
@@ -527,7 +527,7 @@ file.
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 
 
-### Portlet Borders 
+### Portlet Borders
 
 The theme turns on portlet borders, by default. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false` in your theme's
@@ -549,7 +549,7 @@ the borders as the default:
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
-### Bullet Styles 
+### Bullet Styles
 
 Liferay's Navigation portlet can be configured to use any bullet styles
 inherited by your theme or implementated in your theme. For example, if your
@@ -659,7 +659,7 @@ flexibility Liferay offers.
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
 
-## Importing resources with your themes 
+## Importing resources with your themes
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.

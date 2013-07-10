@@ -101,7 +101,7 @@ Let's see what each of the template files does:
 
 Let's move on to Liferay configuration files.
 
-### Liferay configuration files  
+### Liferay configuration files 
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -132,9 +132,9 @@ plugin was read, registered, and is now available for use.
 
 Example server output:
 
-	Reading plugin package for columns-1-4-1-layouttpl
-	Registering layout templates for columns-1-4-1-layouttpl
-	1 layout template for columns-1-4-1-layouttpl is available for use
+    Reading plugin package for columns-1-4-1-layouttpl
+    Registering layout templates for columns-1-4-1-layouttpl
+    1 layout template for columns-1-4-1-layouttpl is available for use
 
 Wait a minute! We can deploy the template, but we still haven't designed it.
 We'll need to add content to the TPL files that were generated when we created

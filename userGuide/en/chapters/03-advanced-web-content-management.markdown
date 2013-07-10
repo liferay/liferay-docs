@@ -7,6 +7,7 @@ complex web content management techniques. But don't be alarmed, it's not too
 intense. We'll cover the following topics:
 
 - Web content structures and templates
+- RSS Feeds
 - Leveraging Liferay's multi-site capabilities
 - Using page templates and site templates
 - Allowing users to customize site pages
@@ -84,12 +85,14 @@ Structures interface.
 
 #### Editing structures
 
-Go back to the Control Panel and select *Web Content* from the content section.
-The first way to access the Manage Structures interface is simply by clicking
-*Manage* &rarr; *Structures*. This opens a popup showing all the web content
-structures that exist in your currently selected scope. Here, you can add new
-web content structures, edit existing ones, manage the templates associated with
-a structure, edit the permissions of a structure, and copy or delete structures.
+Go back to the Site Administration page and select *Web Content* from the
+content section. The first way to access the Manage Structures interface is
+simply by clicking *Manage* &rarr; *Structures*. This opens a popup showing all
+the web content structures that exist in your currently selected scope. Here,
+you can add new web content structures, edit existing ones, manage the templates
+associated with a structure, edit the permissions of a structure, and copy or
+delete structures.
+
 Copying web content structures can be useful if you'd like to create a new web
 content structure that's similar to an existing one, but you don't want to start
 from scratch. Liferay generates a unique portal ID for the copied structure, but
@@ -98,10 +101,10 @@ as that of the original. Once you've copied a web content structure, you should
 enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
-detail templates and list templates, please refer to chapter 9 on Dynamic Data
-Lists.
+detail templates and list templates, please refer to chapter 9 on [Dynamic Data
+Lists](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-liferay).
 
-![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page.](../../images/manage-structures.png)
 
 The second way to access the Manage Structures interface is directly from the
 web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
@@ -119,6 +122,16 @@ the elements. To remove it from the structure, simply select the *Delete* icon
 duplicate the element, which can be done by selecting the *Duplicate* button.
 We'll explain the *Edit* button later.
 
+Web content structures also have the capability of inheriting characteristics
+from other structures. When a parent structure is configured, the child
+structure inherits the parent's fields and settings. Using this feature is
+helpful when you want to make a similar structure to one that already exists.
+For example, if you'd like to create an in-depth Nose-ster sports article in
+addition to a regular Nose-ster sports article, you can simply inherit the
+characteristics of the regular article and only add additional fields to the
+more in-depth article. When the in-depth article is configured, it will display
+its parent's fields in addition to its own fields.
+
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
 *View* mode is selected. Click the *Source* tab to switch to Source mode. This
@@ -128,29 +141,31 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
+<!-- Needs to be replaced for 6.2. -->
+<!-- Icons not appearing at the present time for WC structure editor -->
+
 Liferay supports the following fields in structures:
 
-**Boolean:** Allows you to add a checkbox onto your structure, which stores
-either `true` (checked) or `false` (unchecked). Template developers can use this
-as a display rule.
+**Boolean:** Adds a checkbox onto your structure, which stores either `true`
+(checked) or `false` (unchecked). Template developers can use this as a display
+rule.
 
-**Date:** a preformatted text field that displays a convenient date picker to
-assist in selecting the desired data. The format for the date is governed by the
-current locale.
+**Date:** Adds a preformatted text field that displays a convenient date picker
+to assist in selecting the desired data. The format for the date is governed by
+the current locale.
 
 **Decimal:** Similar to *Number*, except that it required a decimal point (.) be
 present.
 
-**Documents and Media:** Allows you to add the Documents and Media folder
-hierarchy to your structure.
+**Documents and Media:** Adds the Documents and Media folder hierarchy to your
+structure.
 
 **File Upload:** Uploads a document to attach. Uploads are stored in Documents
 and Media, in an existing folder or in the user's default upload action.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
-**Image:** Allows you to add the browse image application into your
-structure.
+**Image:** Adds the browse image application into your structure.
 
 **Integer:** Similar to *Number*, except that it constrains user input to
 non-fractional numbers.
@@ -163,8 +178,8 @@ constraints on the kind of number entered.
 **Radio:** Presents the user with a list of options to choose from using radio
 button inputs.
 
-**Select:** Allows you to add a select box (single or multi-selection) onto your
-structure.
+**Select:** Presents a selection of options for the user to choose from using a
+combo box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text:** Used for items such as titles and headings.
 
@@ -240,12 +255,15 @@ extensions, including the character ., and Liferay checks the extension before
 the file can be uploaded. To allow all file types, input an asterisk: "\*" (only
 available for File Upload).
 
-**Options:** Changes the options available for radio selection. You're able to
-add and remove options as well as edit each individual option's display name and
-value (only available for Radio and Select).
-
-**Multiple:** Select *Yes* to enable a multi-selection list. (only available for
+**Multiple:** Select *Yes* to enable a multi-selection list (only available for
 Select).
+
+**Options:** Changes the options available for selection. You're able to add and
+remove options as well as edit each individual option's display name and value
+(only available for Radio and Select).
+
+**Read Only:** Select *Yes* to disable the ability to modify or delete uploaded
+files (only available for File Upload).
 
 For the Nose-ster structure, type something in the *Tip* field that helps users
 know what to put into the Body element (example: *This is an HTML text area for
@@ -265,16 +283,16 @@ characteristics once for every sports article by creating default values for the
 structure. Creating default values is not part of creating a new structure, so
 make sure you have an existing structure.
 
-To edit a structure's default values, go to *Web Content* in the Control Panel
-and click *Manage* &rarr; *Structures* to see the structures list. Find the
-*Actions* button for the desired structure and select *Edit Default Values* from
-the menu to view a window like the one below. This form allows you to manage the
-structure settings.
+To edit a structure's default values, go to *Web Content* on the Site
+Administration page and click *Manage* &rarr; *Structures* to see the structures
+list. Find the *Actions* button for the desired structure and select *Edit
+Default Values* from the menu to view a window like the one below. This form
+allows you to manage the structure settings.
 
 ![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
 Every new web content you create with this structure is preloaded with the
-data you inserted.
+data you inserted. Next, let's demonstrate assigning permissions.
 
 #### Assigning permissions  
 
@@ -286,7 +304,7 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 3.4: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.4: You're able to assign structure permissions via the *Actions* button.](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -319,8 +337,8 @@ understand.
 
 **FTL** (FreeMarker Template Language): Freemarker is a templating language
 which could be considered a successor to Velocity. It has some advantages over
-Velocity for which it sacrifices some simplicity, yet it is still easy to use. If
-you haven't used any of the template languages before, we recommend using
+Velocity for which it sacrifices some simplicity, yet it is still easy to use.
+If you haven't used any of the template languages before, we recommend using
 FreeMarker: you'll get up to speed the fastest.
 
 **VM** (Velocity Macro): Velocity is a scripting language that lets you mix
@@ -349,10 +367,8 @@ structure, link it to a template and then create content using them both. We'll
 use FreeMarker for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.5: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
-
-1. Go back to the Web Content section of the Control Panel and click *Add*
-&rarr; *Basic Web Content*.
+1. Go back to the Web Content section of the Site Administration page and click
+*Add* &rarr; *Basic Web Content*.
 2. Click *Select* next to the Structures heading to access the Manage Structures
 interface.
 3. Click on the *Add* button.
@@ -416,12 +432,33 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.6: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
+![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.7: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
+For cases where you're creating your template within Liferay, you can use the
+template editor. On the left side of the template editor, you'll notice a
+palette of common variables used for making web content templates. This is a
+great reference when creating your template. To place one of the variables onto
+the template editor, simply position your cursor where you want the variable
+placed, and click the variable name. If the variable name doesn't give you
+sufficient information on the variable's functionality, you can hover your
+pointer over it for a more detailed description.
 
-Now that you've created a handsome template, it's time to decide who the lucky
-people are that get to use it.
+![Figure 3.6: You can hover your pointer over a variable for a more detailed description.](../../images/04-web-content-templates-create.png)
+
+The interactive template editor is available for the FreeMarker and Velocity
+languages. Depending on which language you select, the variable content changes
+so you're always adding content in the language you've chosen. Another cool
+feature for the template editor is the autocomplete feature. It can be invoked
+by typing *${* which opens a drop-down menu of available variables. By clicking
+one of the variables, the editor inserts the variable into the template editor.
+
+<!-- Will need to check if XSL or CSS is supported by template editor.
+Currently, XSL is only available for selecting a pre-made template from your
+local machine. CSS is currently not supported at all. -->
+
+Now that you've created a handsome template and know how to use the template
+editor, it's time to decide who the lucky people are that get to use your new
+template.
 
 ### Assigning template permissions  
 
@@ -439,7 +476,168 @@ both update and delete. Liferay Portal makes it possible to assign permissions
 based on the roles and responsibilities within your organization.
 
 Now that you understand the role structures and templates play in creating web
-content, let's look at how you can use Liferay to manage multiple sites.
+content, let's look at how to create RSS feeds in Liferay.
+
+## Managing RSS feeds in Liferay
+
+RSS is a family of web feed formats used to publish frequently updated works
+such as blog entries and news articles. RSS allows users to stay up-to-date with
+your site's content without actually having to visit your site! Instead, they
+can subscribe to your site's RSS feed with an RSS feed reader. Their RSS reader
+reads your site's RSS feed and displays information about all the web content
+that's published on your site, such as each article's title and publication
+date. If one of your site's web content articles grabs their attention, then
+they can follow their RSS reader's link to the article's full content on your
+site. Many RSS readers are available today, including web-based readers, ones
+for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
+see how to create RSS feeds in Liferay.
+
+### Managing RSS feeds from the Control Panel
+
+To manage a Liferay site's RSS feeds, navigate to the Site Administration page
+of your site and click *Web Content*. Site administrators can use this Web
+Content administration portlet to manage their site's web content, including web
+content structures and templates, which we examined above. Site administrators
+can also use the Web Content administration portlet to manage their site's RSS
+feeds. Click *Manage* &rarr; *Feeds* if you'd like to add, edit, or delete RSS
+feeds.
+
+![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
+
+<!-- Needs to be replaced for 6.2. -->
+
+Click the *Add Feed* button to add a new feed. You need to enter a name and
+select a target page for the feed. A feed's target page serves two purposes:
+
+1. The site to which the target page belongs determines which web content
+   articles appear in the feed. For example, if the target page belongs to the
+   Marketing site, only web content articles belong to the Marketing site will
+   appear in the feed. 
+
+2. The target page is the page where "orphaned" web content articles will be
+   displayed. "Orphaned" web content articles are articles that have been
+   published in your site but have not been configured to be displayed in
+   specific Web Content Display portlets. Liferay RSS feeds can provide links to
+   any published web content articles, both "orphaned" articles and articles
+   that have been configured to be displayed in specific Web Content Display
+   portlets. For articles that have been configured to be displayed in a
+   specific portlet, the RSS feeds' links point to the portal page of that
+   portlet. For "orphaned" articles, the RSS feeds' links point to the feed's
+   target page. When users click on such links for "orphaned" articles, the full
+   content of the "orphaned" article is displayed on the target page.
+
+![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+
+<!-- Needs to be replaced for 6.2. -->
+
+To specify a target page, you need to enter the target page's friendly URL. Note
+that friendly URLs do not include the host name. For example, the friendly URL
+of a public page called *Welcome* belonging to a site called *Marketing* might
+look like this: `/web/marketing/welcome`. Optionally, you can specify a target
+portlet ID. This would be the portlet ID of a Web Content Display portlet on the
+target page in which "orphaned" web content should be displayed. The portlet
+must exist or else the content will not displayed. The URL field contains the
+address of your RSS feed. It appears after you've actually created the feed by
+clicking *Save*.
+
+The final two sections of the *Add Feed* form allow you customize which web
+content articles appear in your feed.
+
+1. The Web Content Constraints section allows you to select a web content type
+   and a structure with which to filter the articles that appear in your feed.
+   You can select a particular type of web content such as *Announcements*,
+   *News*, or *Press Release*. Only articles of the type you select will appear
+   in your feed. You can also choose for only web content articles that have a
+   particular structure to appear in your feed. This is useful since customized
+   kinds of web content articles are often created using web content structures.
+
+2. The Presentation Settings section allows you to customize additional details
+   about your feed and how articles are displayed in your feed. Leave the
+   Feed Item Content set to *Web Content Description* if you'd just like a
+   description of each article to appear in your feed. Set it to *Rendered Web
+   Content: Use Default Template* if you'd like the full content of each article
+   to appear in the feed. Customizing the Feed Type allows you to choose which
+   web feed language to use for your feed. You can choose *Atom 1.0* (the
+   default), *RSS 1.0*, or *RSS 2.0*. Customize the *Maximum Items to Display*
+   to choose the maximum number of articles should appear in your feed at one
+   time. Leave the Order By Column set to *Modified Date* to have articles
+   arranged in order from the last time they were published or modified. You can
+   set the Order by Column to *Display Date* if you want to have articles
+   arranged in order from the time they were configured to be displayed in a
+   specific Web Content Display portlet. Lastly, you can leave the Order by Type
+   set to *Ascending* to have the oldest articles at the top of the feed or you
+   can set it to *Descending* to have the newest articles at the top of the
+   feed.
+
+When you're done configuring your RSS feed, you can click *Preview* to see how
+your feed looks. If you're satisfied, click *Save* to create your feed.
+
+Once one or more feeds have been created, they'll appear in a list in the Feeds
+popup window when you click *Manage* &rarr; *Feeds*. You can edit existing feeds
+using the same form used for creating them. The main difference is that when you
+edit an existing feed, the URL field is populated. Copy this URL into a new
+browser tab or window to test your feed. From the Feeds popup window, you can
+also customize the permissions of feeds or delete feeds.
+
+It's possible to completely disable RSS feeds at the portal level. You can do
+this by setting the `rss.feeds.enabled` property to `false`. By default, it's
+set to `true`. If you keep the default, RSS enabled, you can make several other
+RSS property customizations. Please refer to the RSS section of your
+`portal.properties` file for details.
+
+### Using the RSS portlet
+
+The RSS portlet allows you to display any number of RSS feeds and configure how
+they are displayed. If you're looking for a web-based RSS reader, look no
+further: just add the RSS portlet to one your personal site's private pages, and
+voila! You have your own personal RSS reader. Open the portlet's Configuration
+popup to select the feeds to be displayed and customize the display. The RSS
+portlet can also be placed on sites' public or private pages to make feeds
+available to guests or site members, respectively. In these cases, make sure
+that only site administrators have permission to customize the RSS portlet and
+select feeds to be displayed.
+
+Once you've added the RSS portlet to a page, open the portlet's Configuration
+popup window by clicking on the wrench icon at the top right corner of the
+portlet and selecting *Configuration*.
+
+![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
+
+<!-- Needs to be replaced for 6.2. -->
+
+By default, the RSS portlet displays two feeds. In the Feeds section, click on
+the green plus sign to add a new feed or on the red minus sign to remove a feed.
+Enter the URL of the RSS feed to display into the URL field. If you leave the
+Title field blank, the feed's title appears in the RSS portlet. If you enter a
+custom title into the Title field, the custom title appears instead of the
+feed's title.
+
+In the Display Settings section, use the following checkboxes to select the feed
+details that should be displayed:
+
+- Show Feed Title
+- Show Feed Published Date
+- Show Feed Description
+- Show Feed Image
+- Show Feed Item Author
+
+You can also select the number of entries and expanded entries that should be
+displayed per feed. Expanded entries show more of an article's actual content
+than regular entries. By default, each feed shows eight entries per feed but
+only one expanded entry per feed. You can set the feed image alignment to
+control whether feed images appear to the right or left of the text. By default,
+the feed image alignment is set to *Right*. Finally, you can select a header web
+content and/or a footer web content. These are web content articles that appear
+in the RSS portlet either above all of the feeds or below all of the feeds. You
+can use these to provide an introduction, description, or footnotes about the
+feeds that you've selected to be displayed.
+
+![Figure 3.10: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
+
+<!-- Needs to be replaced for 6.2. -->
+
+Now that you understand how to create, manage, and use RSS feeds, let's look at
+how you can use Liferay to manage multiple sites.
 
 ## Leveraging Liferay's multi-site capabilities  
 
@@ -521,7 +719,7 @@ many different purposes besides communities.
 ---
 
 Sites can be created through the Control Panel by a portal administrator. To add
-a site, click on *Sites* under the Portal section of the Control Panel and then
+a site, click on *Sites* under the Sites section of the Control Panel and then
 click *Add*. If there is at least one site template available, a dropdown menu
 appears. Site templates provide a preconfigured set of pages, portlet
 applications, and content that can be used as the basis of a site's public or
@@ -533,7 +731,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.8: Adding a Site](../../images/01-add-site-screen.png)
+![Figure 3.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -551,9 +749,10 @@ inaccessible but can be activated whenever a site administrator wishes.
 
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
-three categories: Basic Information, Search Engine Optimization and Advanced.
+three categories: Basic Information, Search Engine Optimization, Advanced, and
+Miscellaneous.
 
-![Figure 3.9: Editing a Site](../../images/01-site-editor.png)
+![Figure 3.12: On the right panel, you are given a plethora of options for your site's settings.](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -581,6 +780,10 @@ site is available for crawling.
 you don't want to be indexed by search engines. You need to set a virtual host
 before you set a `robots.txt` file.
 
+<!--
+**Default User Associations:**
+-->
+
 **Staging:** lets you turn on either Local Live staging or Remote Live staging.
 To enable staging, the *Enable propagation of changes from the site template*
 box on the Details tab must be unchecked. With staging enabled, changes to the
@@ -589,14 +792,20 @@ site. The changes still must be approved before the site is published to live.
 
 **Analytics:** lets you set a Google Analytics ID that is used for your site.
 
+<!--
+**Content Sharing:**
+
+**Recycle Bin:**
+
+**Custom Fields:**
+-->
+
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
 public pages or as private pages. By default, the site is linked to the site
 template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
-
-![Figure 3.10: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are a powerful tool for managing many similar sites. Let's
 examine how they work.
@@ -614,7 +823,7 @@ can be modified by site administrators. Using site templates can save site
 administrators a lot of work even if each site that was created from a given
 site template ends up being very different.
 
-To get started, click on *Site Templates* in the Portal section of the Control
+To get started, click on *Site Templates* in the Sites section of the Control
 Panel. Here, you can add, manage, or delete site templates. You can also
 configure the permissions of site templates. As long as a site is linked to the
 site template it was created from, changes to the site template's pages,
@@ -651,10 +860,10 @@ site.
 By default, the following site templates are provided:
 
 - **Community Site:** Provides a preconfigured site for building online
-  communities. The home of a *community site* provides message boards, search, a
-  display of a poll and statistics of the activity of community members. The
-  site will also be created with a page for a community calendar and a page for
-  a wiki.
+  communities. The Home page of a *community site* provides message boards,
+  search, a display of a poll and statistics of the activity of community
+  members. The site will also be created with a page for a community calendar
+  and a page for a wiki.
 
 - **Intranet Site:** Provides a preconfigured site for an intranet. The Home
   page displays the activities of the members of the site, search, a language
@@ -665,7 +874,7 @@ By default, the following site templates are provided:
 The following figure displays the form shown when editing the *Community Site*
 template:
 
-![Figure 3.11: Site Templates](../../images/01-site-templates.png)
+![Figure 3.13: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
@@ -704,7 +913,9 @@ window that opened when you clicked *Open site template*. Changes to site
 templates are automatically saved as you make them, so you don't need to return
 to the Site Templates page of the Control Panel and select *Save*.
 
-![Figure 3.12: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+![Figure 3.14: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+
+<!-- Needs to be replaced for 6.2. -->
 
 Next, let's use our site template to create our Engineering, Marketing and Legal
 sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
@@ -717,7 +928,7 @@ be used immediately. Select the *Copy as Private Pages* option since our
 Engineering site is intended for internal use only. Leave the *Enable
 propagation of changes from the site template* box checked so that the
 Engineering site receives updates if the Department site template is modified.
-Finally, click *Save* to create your the Engineering site.
+Finally, click *Save* to create your Engineering site.
 
 Repeat these steps to create the Marketing and Legal sites. The new sites have
 all the pages and portlets you created in the site template. To view the pages
@@ -736,16 +947,14 @@ site from the others.
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose
-pages sets are linked to the site template. Such a link is created when you
+page sets are linked to the site template. Such a link is created when you
 create a site based on a site template and leave the *Enable propagation of
 changes from the site template* box checked. To disable or re-enable this link
-for a site, select the site in the Control Panel's context menu selector. Then
-click on *Site Settings* and uncheck or recheck the *Enable propagation of
-changes from the site template* checkbox. You can can also access the Site
-Settings interface via the Dockbar by clicking *Manage* &rarr; *Site Settings*.
-In this section, we explain the propagation of changes from site templates to
-sites and discuss the options available to site administrators and site template
-administrators.
+for a site, select the site in the Control Panel's *Sites*. Then click on *Site
+Settings* and uncheck or recheck the *Enable propagation of changes from the
+site template* checkbox. In this section, we explain the propagation of changes
+from site templates to sites and discuss the options available to site
+administrators and site template administrators.
 
 If a site's page set has been created from a site template and the propagation
 of changes from the site template is enabled, site administrators can add new
@@ -790,7 +999,7 @@ that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
 from the site template's scope to the site's scope and site's Wiki portlet is
 updated with the IDs of the copied wiki articles. Portlet data is only copied
 from a site template to a site when the site is first created; data is not
-copied copied during a site reset.
+copied during a site reset.
 
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
@@ -804,10 +1013,10 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.13: Page Templates](../../images/server-configuration-page-templates.png)
+![Figure 3.15: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
-add new page templates. By default three sample page templates are provided:
+add new page templates. By default, three sample page templates are provided:
 
 - **Blog:** provides a page with three applications related to blogging. It has
   two columns, the main left column contains the blogs portlet and the small
@@ -848,17 +1057,22 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.14: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/control-panel-selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
 Dockbar. You'll be able to select a page template and type a name for the new
-page. Alternatively, you can use the Control Panel. First, in the context
-selector menu, select the site to which you'd like to add a page and then click
-on the *Site Pages* link. Then click the *Add Page* button, type a name, select
-your template from the drop down menu and click *Add Page* to finish.
+page. Alternatively, you can use the Site Administration page.
+First, make sure you're on your desired site and navigate to *Admin* &rarr; *Site Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name, select your template from the drop down menu, and click *Add
+Page* to finish.
 
-![Figure 3.15: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+![Figure 3.17: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+
+<!-- Needs to be replaced for 6.2. -->
+<!-- At the current time, Site Pages does not have the *Automatically apply
+changes done to the page template* checkbox. I'm not sure if this still needs to
+be added so I left off on the image for now. If this feature has been removed,
+the text needs to be changed to reflect this. -->
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -881,30 +1095,32 @@ at importing and exporting templates.
 
 ### Exporting and importing site templates and page templates  
 
-If you want to export a site that uses site or page Templates to a different
-environment (through a LAR file or remote publication), the Templates must be
+If you want to export a site that uses site or page templates to a different
+environment (through a LAR file or remote publication), the templates must be
 exported and imported manually in advance or the import will fail.
 
 To export a Site using a Site Template, use the following process:
-1. Go to Control Panel &rarr; Site Templates and click Actions &rarr; Manage
-Pages for the Site Template your site is using.
+
+1. Go to *Control Panel* &rarr; *Site Templates* and click *Actions* &rarr;
+*Manage Pages* for the Site Template your site is using.
 2. Click *Export* to obtain a LAR file with the content of the Site Template. Be
 sure to choose the applications and data you want exported.
-3. In your target environment, go to Control Panel &rarr; Site Templates and
+3. In your target environment, go to *Control Panel* &rarr; *Site Templates* and
 create a new Site Template.
-4. Click Actions &rarr; Manage Pages for that Site Template and then click
+4. Click *Actions* &rarr; *Manage Pages* for that Site Template and then click
 *Import*.
-5.  Upload the LAR file containing your site template's content.
+5. Upload the LAR file containing your site template's content.
 
 Now the site can be exported and imported normally to this new environment.
 
 For page templates, the process very similar:
-1.  Go to Control Panel &rarr; Page Templates.
-2. Next to the page template you would like to export, click Actions &rarr;
-Export. This produces a LAR file you can import later.
-3. On the target environment, go to Control Panel &rarr; Page Templates and
+
+1.  Go to *Control Panel* &rarr; *Page Templates*.
+2. Next to the page template you would like to export, click *Actions* &rarr;
+*Export*. This produces a LAR file you can import later.
+3. On the target environment, go to *Control Panel* &rarr; *Page Templates* and
 create a new Page Template.
-4.  Next to the new template, click Actions &rarr; Import.
+4.  Next to the new template, click *Actions* &rarr; *Import*.
 5.  Upload the LAR file containing the exported page template from step 3.
 
 The page template can now be imported normally to this new environment.
@@ -914,7 +1130,7 @@ Next, let's examine the tools Liferay provides for handling translations.
 ## Localization  
 
 Previous versions of Liferay had the ability to create and manage different
-translations of your web content but with Liferay 6.1 we've added several
+translations of your web content but with Liferay 6.2 we've added several
 improvements.
 
 When you create a new piece of Web Content, you have the ability to choose a
@@ -924,7 +1140,10 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.18: Adding a translation](../../images/04-web-content-content-translation.png)
+
+<!-- Needs to be replaced for 6.2 -->
+<!-- Very few translation options available at present time (6) -->
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
@@ -933,7 +1152,10 @@ you to easily compare the original with the new translation. Once you are done
 with the translation, click *Save* and the translation is added to the list of
 *Available Translations*.
 
-![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.19: Adding a translation](../../images/04-web-content-content-translation-2.png)
+
+<!-- Needs to be replaced for 6.2 -->
+<!-- Unable to compare translations at this time -- window sizing issues -->
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -978,9 +1200,10 @@ Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way
 to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
-web content, in the same column as the structure and template selectors.
+web content. Specifically, it can be found in the right panel listed with
+several other configurable settings.
 
-![Figure 3.18: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.20: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1050,7 +1273,7 @@ separate staging server.
 
 Liferay 6.1 added a feature to staging called Page Versioning. This feature
 works with both Local Live and Remote Live staging and allows site
-administrators to create multiple variations of staged pages. This allows to
+administrators to create multiple variations of staged pages. This allows
 several different versions of sites and pages to be developed at the same time.
 Variations can be created, merged, and published using a Git-like versioning
 system. Let's jump in to see how to use staging.
@@ -1058,9 +1281,9 @@ system. Let's jump in to see how to use staging.
 ### Enabling Local Live staging
 
 Site administrators can enable Staging for a site via the Site Settings UI. To
-reach this interface via the Control Panel, select a site in the context menu
-selector, click on *Site Settings* in the Control Panel menu, then click on
-*Staging* at the left. Under Staging Type, select either *Local Live* or *Remote
+reach this interface, navigate to the Site Administration page of your site,
+click on *Site Settings* in the left menu, then click on *Staging* listed under
+the Advanced tab. Under Staging Type, select either *Local Live* or *Remote
 Live* and additional options appear. Staging allows changes to be made in a
 staging environment so that work can be reviewed, possibly using a workflow,
 before it's published to a live site. Enabling Local Live staging is easy. Just
@@ -1097,14 +1320,16 @@ Then add the following lines to your remote Liferay server's
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay portal instance as
-a site administrator. Then navigate to the Control Panel and choose a site in
-the context menu selector. Then click on *Site Settings* in the Control Panel
-menu and then on *Staging* in the menu at the left. Select *Remote Live* under
-Staging Type and additional options appear.
+a site administrator. Then navigate to the Site Administration page for your
+site. Then click on *Site Settings* in the left menu and then on *Staging*
+listed under the Advanced tab. Select *Remote Live* under Staging Type and
+additional options appear.
 
-![Figure 3.19: After your remote Liferay server and local Liferay server have
-been configured to communicate with each other, you have to specify a few Remote
-Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.21: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
+
+<!-- Needs to be replaced for 6.2 -->
+<!-- Skipping Staging images at present time. Still a lot of development work to
+be merged into trunk for this topic. -->
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -1144,10 +1369,10 @@ to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
 ### Example: Enabling Local Live staging
 
 Let's create a Local Live staging environment for Nose-ster's home page. Before
-we begin, let's add a new page. Click *Add &rarr; Page* from the toolbar in the
-default site and name the new page *News and Events*. Next, click the *View
-Pages* button to navigate to the pages. Then add the Alerts and Announcements
-portlets to the News and Events page.
+we begin, let's add a new page. Click *Add &rarr; Page* from the Dockbar in the
+default site and name the new page *News and Events*. Next, click *News and
+Events* to view the page. Then add the Alerts and Announcements portlets to the
+News and Events page.
 
 When you activate staging Local Live staging, Liferay creates a clone of your
 site. This clone became the staging environment. Because of this, we recommend
@@ -1160,14 +1385,14 @@ possible, *before* your site has many pages and lots of content. Your site's
 update history won't be saved until you enable page versioning. Page versioning
 requires staging (either Local Live or Remote Live) to be enabled.
 
-Now we're ready to activate staging for this site. Go to the Control Panel then
-to *Site Settings* and select *Staging* from under the *Advanced* heading. We'll
-assume we don't have a separate staging server so we'll select the *Local Live*
-staging type. If you do have a separate server to use for staging, follow the
-instructions in the previous section for configuring it and your local server
-for remote staging. Either way, once you make a selection (either *Local Live*
-or *Remote Live*), more options become available for page versioning and staged
-portlets.
+Now we're ready to activate staging for this site. Go to *Admin* &rarr; *Site
+Administration* &rarr; *Site Settings* and select *Staging* from under the
+*Advanced* heading. We'll assume we don't have a separate staging server so
+we'll select the *Local Live* staging type. If you do have a separate server to
+use for staging, follow the instructions in the previous section for configuring
+it and your local server for remote staging. Either way, once you make a
+selection (either *Local Live* or *Remote Live*), more options become available
+for page versioning and staged portlets.
 
 ### Enabling page versioning and staged portlets
 
@@ -1178,9 +1403,11 @@ enabled. Site administrators can revert to a previous version of the site at any
 time. This flexibility is very important in cases where a mistake is found and
 it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
-Nose-ste site and then click *Save*.
+Nose-ster site and then click *Save*.
 
-![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.22: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
@@ -1210,13 +1437,15 @@ options are restored and you can access some new options related to staging. If
 you're following along with the Nose-ster example, navigate back to the News and
 Events page and click on *Staging* to get your page editing capabilities back.
 
-![Figure 3.21: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.23: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
 the Calendar portlet isn't there. That's because you've staged a change to the
 page but haven't published that change yet to the live site. Go back to the
 staged page and look at the options you have available. From here you can *Undo*
-changes, view a *History* of changes, *Mark as Ready for Publication* and
+changes, view a *History* of changes, *Mark as Ready for Publication*, and
 *Manage Page Variations*.
 
 **Undo/Redo:** allows you to step back/forward through recent changes to a page,
@@ -1257,7 +1486,9 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
@@ -1271,7 +1502,9 @@ displayed in a Web Content Display portlet on one of your pages and then click
 popup, expand the Applications heading and scroll down until you see the section
 for Web Content.
 
-![Figure 3.23: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.25: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
@@ -1344,10 +1577,10 @@ Publication* when you are finished with your changes).
 When you delete a page, it is deleted only in the current variation. The same
 happens when you add a new page. If you try to access a page which was deleted
 in the current variation, Liferay informs you this page is not *enabled* in this
-variation and you must enable it. To enable it, navigate to the *Manage* &rarr;
-*Site Pages* screen. Here all the existing pages for all the variations are
-shown in a tree. Pages not enabled for the current variation are shown in a
-lighter color.
+variation and you must enable it. To enable it, navigate to the *Site
+Administration* &rarr; *Site Pages* screen. Here all the existing pages for all
+the variations are shown in a tree. Pages not enabled for the current variation
+are shown in a lighter color.
 
 To publish a variation to the live site, click on *Publish to Live now* in the
 dropdown next to the variation name. Publications can also be scheduled
@@ -1371,13 +1604,13 @@ variations toolbar. When you decide which page variation should be published,
 mark it as *Ready for Publication*. Only one page variation can be marked as
 ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.24: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
-
 For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.25: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.26: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Variations
@@ -1425,11 +1658,11 @@ site. Furthermore, team members, unlike user group members, are guaranteed to be
 members of the desired site.
 
 To create a team within a site, first navigate to the *Control Panel &rarr;
-Sites* page then and then select *Actions &rarr; Manage Memberships* for the
-site within which you want to create a team. Finally, click *View &rarr; Teams*
-and click the Add Team button.
+Sites* page and then select *Actions &rarr; Manage Memberships* for the site
+within which you want to create a team. Finally, click *View Teams* and
+click the *Add Team* button.
 
-![Figure 3.26: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.27: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1440,8 +1673,6 @@ using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet
 itself. Remember the portlet options link is the wrench symbol at the top of a
 portlet. This enables users who wouldn't have access to all of the necessary
 options in the Control Panel to manage permissions through teams.
-
-![Figure 3.27: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions*
 tab of a portlet residing on a page, check the boxes corresponding to
@@ -1479,13 +1710,16 @@ Recognition Provider plugin. This plugin provides out of the box integration
 with WURFL, an open source database licensed with the AGPLv3 license. Commercial
 licenses are also available. It's also possible to develop plugins that
 integrate with other device databases. Even if you don't have a device database,
-you can still set up mobile device rules. They won't, however, be effective until
-a database is deployed, because the portal won't have enough information about
-the devices being used to make page requests. 
+you can still set up mobile device rules. They won't, however, be effective
+until a database is deployed, because the portal won't have enough information
+about the devices being used to make page requests.
 
-To configure mobile device rules, you must install the Device Recognition Provider
-plugin. This plugin uses the WURFL database to enable Liferay to detect which
-mobile device or operating system is being used for any given request. To
+<!-- Marketplace info below needs to be updated when Marketplace is available
+for 6.2 testing. -->
+
+To configure mobile device rules, you must install the Device Recognition
+Provider plugin. This plugin uses the WURFL database to enable Liferay to detect
+which mobile device or operating system is being used for any given request. To
 install the plugin, navigate to the Store section of the Control Panel, located
 under the Marketplace heading. Click on the *Utility* section and then on *See
 All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
@@ -1514,8 +1748,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.28: You can manage device rules from the Mobile Device Rules
-administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.28: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
 selected for a particular site or page, determine which rule group's actions are
@@ -1527,39 +1760,39 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.29: You need to install the Device Recognition Provider plugin to
-populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+
+<!-- Needs to be updated for 6.2 -->
+<!-- Unable to deploy Device Recognition plugin at time of image updating. -->
 
 Once you've created some mobile device rule groups and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a rule group
 determine what happens to a particular request when the device is detected
 and the rule group has been found to apply.
 
-You can add actions to a rule group from the Site Pages page of the Control
-Panel. Select either the public or private pages and then look for the *Mobile
-Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to
-select rule groups to be applied either to a site or to a single page. If you
-select the page group itself from the left-hand menu, the selected rule group
-applies to all the pages of the site by default. If, however, you select an
-individual page and then click the *Select Rule Group* button, the rule groups
-apply only to that page. You can select multiple rule groups for a particular
-site or page and order them by priority. The rule groups are checked in
-decreasing order of priority: the actions defined by the first rule group that
-applies are executed.
+You can add actions to a rule group from the Site Pages page of Site
+Administration. Select either the public or private pages and then look for the
+*Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group*
+button to select rule groups to be applied either to a site or to a single page.
+If you select the page group itself from the left-hand menu, the selected rule
+group applies to all the pages of the site by default. If, however, you select
+an individual page and then click the *Select Rule Group* button, the rule
+groups apply only to that page. You can select multiple rule groups for a
+particular site or page and order them by priority. The rule groups are checked
+in decreasing order of priority: the actions defined by the first rule group
+that applies are executed.
 
-![Figure 3.30: You can select a mobile device rule group to apply for a site or
-page from the Site Pages section of the Control
-Panel.](../../images/mobile-device-selection.png)
+![Figure 3.30: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
 actions that can be configured for mobile rule groups: layout template
-modifications, theme modifications, simple redirects, and site redirects. Layout
+modifications, theme modifications, URL redirects, and site redirects. Layout
 template modifications let you change the way portlets are arranged on pages
 delivered to mobile devices, and themes modifications let you select a specific
 look and feel. If it makes more sense for you to create separate mobile versions
 of certain sites or pages, you can use a redirect to make sure mobile device
-users get to the right page. To define a simple redirect, you need to specify a
+users get to the right page. To define a URL redirect, you need to specify a
 URL. To define a site redirect, you need only specify the site name and page
 name of the page to which you're redirecting. Like mobile device rules, mobile
 device actions are designed to be extensible. Your developers can define custom
@@ -1591,17 +1824,13 @@ Panel and click *Add* &rarr; *Blank Site*. Enter the name *Android/Bada Liferay*
 and click *Save*. Then, with Android/Bada selected in the context menu selector,
 click on *Site Pages*. By default, the newly created site doesn't have any
 pages, so click on *Add Page*, enter the name *Welcome*, and click the *Add
-Page* button.  Now our Android/Bada Liferay site has a public Welcome page just
+Page* button. Now our Android/Bada Liferay site has a public Welcome page just
 like our default Liferay site.
 
-Next, select *Liferay* in the context menu selector and go to the Mobile Device
-Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
-*Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
-rules are configured for this rule group.*
-
-![Figure 3.31: After adding a new rule, you'll see a message indicating that no
-rules have been configured for the rule
-group.](../../images/no-rule-groups-configured.png)
+Next, select *Liferay* in the *My Sites* tab of the Dockbar, navigate to Site
+Administration, and click on *Mobile Device Rules*. Click on *Add Rule Group*,
+enter the name *Android and Bada Mobile Phones*, and click *Save*. You'll see
+the message, *No rules are configured for this rule group*.
 
 Click the *Manage Rules* link and we'll configure our rule group to apply only
 to mobile phones running Android or Bada. Click *Add Rule*, enter *Rule 1* for
@@ -1610,13 +1839,10 @@ the rule to edit it or click *Actions* &rarr; *Edit*. Under OS, select *Android*
 and *Bada OS* (hold down Control to make multiple selections), select *False*
 under Tablet since we want our rule group to apply only to mobile phones, and
 click *Save*. Now we just need to define the redirect action for our rule group.
-Make sure Liferay is still selected in the context menu selector and click on
-*Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
+Navigate back to *Site Administration* &rarr; *Site Pages* and click on *Mobile
+Device Rules* in the navigation menu to the right.
 
-![Figure 3.32: To apply a mobile device rule group to a page set of a site,
-select the site in the context menu selector, click on *Mobile Rule Groups*,
-click *Select Rule Group*, and select the desired rule
-group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.31: To apply a mobile device rule group to a page set of a site, click on *Mobile Device Rules*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Rule Group* and then click the *Android and Bada Mobile Phones*
 rule group that you configured. Once you've selected your rule group, click 
@@ -1631,29 +1857,29 @@ users are redirected to the Android/Bada Liferay site from the Liferay site.
 Let's look at one more example of using mobile device rules before we move on.
 Suppose you'd like to create another rule so that when a site is accessed by an
 Android or iOS tablet, a different layout is used. To set this up, we need to
-follow the same four steps described above. First, make sure that the Liferay
-site is selected in the Control Panel's context menu selector and navigate to
-the Mobile Device Rules page of the Control Panel. Add a new rule group called
+follow the same four steps described above. First, make sure you're on the
+Liferay site by checking in the My Sites tab of the Dockbar. Then navigate to
+the Mobile Device Rules page of Site Administration. Add a new rule group called
 *Android and iOS Tablets*. Add a simple rule called *Rule 1* to this rule group.
 As with the previous example, we only need one rule to describe our device
 family. Edit *Rule 1* and select *Android and iPhone OS* under the OS heading
 and *True* under the Tablet heading, then click *Save*.
 
-Next, click on *Site Pages* in the Control Panel, select *Mobile Rule Groups*,
-and select the *Android and iOS Tablets* rule group. Notice that you've now
-selected two rule groups for the Liferay site's public pages and they've been
-assigned priorities. If a device making a request belongs to both of the device
-families represented by the rule groups, the priority of the rule groups
+Next, click on *Site Pages* in Site Administration, select *Mobile Device
+Rules*, and select the *Android and iOS Tablets* rule group. Notice that you've
+now selected two rule groups for the Liferay site's public pages and they've
+been assigned priorities. If a device making a request belongs to both of the
+device families represented by the rule groups, the priority of the rule groups
 determines which rule group's actions are executed. Note that in our example,
 the first rule group contains only mobile phones and the second rule group
 contains only tablets, so no devices can belong to both rule groups. Now we just
 need to define an action for our Android and iOS Tablets rule group to use a
-different layout: On the Site Pages page of the Control Panel, click on *Mobile
-Rule Groups*, and then on *Actions* &rarr; *Manage Actions* next to Android and
-iOS Tablets. Click on *Add Action*, enter the name *Layout Template
+different layout: On the Site Pages page of Site Administration, click on
+*Mobile Device rules*, and then on *Actions* &rarr; *Manage Actions* next to
+Android and iOS Tablets. Click on *Add Action*, enter the name *Layout Template
 Modification*, and select the *Layout Template Modification* action type.
 Lastly, select the *1 Column* layout template (or whichever one you like) and
-click *Save*. Good job!  Now the Liferay site's pages are presented to Android
+click *Save*. Good job! Now the Liferay site's pages are presented to Android
 and iOS tablet users with the 1 Column layout template.
 
 ## Summary  

@@ -335,7 +335,7 @@ Here's how we do it:
 
 6.  Navigate back to your site's Navigation portlet, and make sure that the
     modification message from your Application Adapter hook plugin's `view.jsp`
-    file is displayed there. 
+    file is displayed there.
 
 7.  Navigate to a different site's Navigation portlet to verify that only the
     content of the portlet's *original* `view.jsp` file displays. 
@@ -760,7 +760,7 @@ Liferay to use your service class instead of the original.
     ![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
     (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's class
     loader. That means it will have access to any other class included in the
-    same WAR file, but *not* the *internal* classes of Liferay. 
+    same WAR file, but *not* the *internal* classes of Liferay.
 
     ---
 
