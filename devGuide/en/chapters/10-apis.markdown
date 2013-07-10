@@ -2283,10 +2283,10 @@ the Sales or Warehouse departments are posted to a shared destination.
 
 The following table describes how we'll set things up: 
 
-| Destination Key          | Type  | Sender | Receivers                     |
--------------------------- | ----- | ------ | ----------------------------- |
-  jungle/purchase          | async serial | Procurement |  Sales, Warehouse |
-  jungle/purchase/response | synchronous  | Sales, Warehouse | Procurement  |
+| Destination Key            | Type  | Sender | Receivers                     |
+---------------------------- | ----- | ------ | ----------------------------- |
+  `jungle/purchase`          | async serial | Procurement |  Sales, Warehouse |
+  `jungle/purchase/response` | synchronous  | Sales, Warehouse | Procurement  |
 
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
