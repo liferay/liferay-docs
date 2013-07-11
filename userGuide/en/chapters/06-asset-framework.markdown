@@ -802,6 +802,18 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
+---
+
+ ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
+ content articles that have an associated small image, the small image becomes a
+ link to the full article. To use this feature, add or edit a web content
+ article that the Asset Publisher should display. Before clicking *Publish*,
+ click on *Abstracts*, flag *Small Image*, and upload an image. Then click
+ *Publish*. Once your web content article appears in the Asset Publisher's list,
+ clicking the small image takes you to the full article.
+
+---
+
 #### Display Style  
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the
