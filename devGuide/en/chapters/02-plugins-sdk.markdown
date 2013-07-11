@@ -134,7 +134,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 8.  After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
     IDE icon badge as in the screenshot below, it's properly installed. 
 
-![Figure 8.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
+![Figure 2.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 Next we'll show you how to install Liferay IDE without specifying an Eclipse
 update URL. 
@@ -244,7 +244,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
 
-    ![Figure 8.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
+    ![Figure 2.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
 2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
     under the *Liferay, Inc.* category and click *Next*.
@@ -256,7 +256,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
     is present, then you must select the JRE to use for launch by clicking
     *Installed JREs...*. 
 
-    ![Figure 8.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
+    ![Figure 2.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
     *Preferences* &rarr; *Server Runtime Environments*.
@@ -266,7 +266,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 7.  If you haven't created a server, create one now from the *Servers*
     view in Liferay IDE; then you can test the server. 
 
-    ![Figure 8.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
+    ![Figure 2.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
 
 8.  Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*.
     Choose the *Liferay v6...* runtime environment that you just created. 
@@ -423,7 +423,7 @@ under *Sample* by default), and add it to the *Control Panel* of your Liferay
 Portal. Click *Next*. 
 
 4. The last step is to specify modifiers, interfaces, and method stubs to
-   generate in the Portlet class. Once you're done, click *Finish*,  
+   generate in the Portlet class. Once you're done, click *Finish*, 
 
 By default, new portlets use the MVCPortlet framework, a light framework that
 hides part of the complexity of portlets and makes the most common operations
@@ -728,7 +728,7 @@ configure the Remote Server Adapter, use the following steps:
     into the *Server's host name* field. For the *Server name*, enter
     *Liferay@[IP address]*, then click *Next*. 
 
-    ![Figure 9.x: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
+    ![Figure 2.12: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
 
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
@@ -738,7 +738,7 @@ configure the Remote Server Adapter, use the following steps:
     directory*, and click *Next*. 
 
 5.  On the next page of the wizard, configure your connection to your remote
-    Liferay instance:  
+    Liferay instance: 
 
     *Hostname*: Enter the IP address of your remote Liferay Portal instance's
     machine. 
@@ -766,7 +766,7 @@ configure the Remote Server Adapter, use the following steps:
     Once you've purchased the application, navigate to the *Purchased* page of
     the Control Panel's Marketplace interface. 
 
-    ![Figure 9.x: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
+    ![Figure 2.13: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
     Find your application in the list of purchased products. Then click on the
     buttons to download and install the application. Once it's been installed on
@@ -827,7 +827,7 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
     automatically publish after a build event, or never to publish
     automatically. To manually invoke the publishing operation after having
     modified project files, right click on the server in the Servers view and
-    select *Publish*.  
+    select *Publish*. 
 
 Have you noticed that there's a lot of depth to Liferay IDE? You can easily come
 across difficult questions and run into very specific problems, but someone else
@@ -961,7 +961,7 @@ properties:
 
 7.  Click *OK* to close all system property windows. 
 
-8.  Open a new command prompt for your new environment variables to take affect.  
+8.  Open a new command prompt for your new environment variables to take affect. 
 
 To verify Ant is in your path, execute `ant -version` from your terminal to make
 sure your output looks similar to this: 
@@ -1251,7 +1251,7 @@ To create a repository using Nexus, follow these steps:
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-    ![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
+    ![Figure 2.14: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
     ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
@@ -1328,7 +1328,7 @@ server, do the following:
 
 1.  Navigate to your `${USER_HOME}/.m2/` directory.
 
-2.  Open your `settings.xml` file. If it doesn't yet exist, create it.  
+2.  Open your `settings.xml` file. If it doesn't yet exist, create it. 
 
 3.  Provide settings for your repository servers. Here are contents from a
     `settings.xml` file that has `liferay-releases` and `liferay-snapshots`
@@ -1411,7 +1411,7 @@ Portal. Just follow these steps:
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
     field and select the *Development* value in the second field.
 
-    ![Figure 8.2: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
+    ![Figure 2.15: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
@@ -1426,7 +1426,7 @@ Get the artifacts for Liferay CE from SourceForge by following these steps:
     if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
     *6.1.1 GA2*. 
 
-    ![Figure 8.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
+    ![Figure 2.16: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3.  Select the appropriate zip file. The zip files use naming convention
     `liferay-portal-maven-[version]-[date].zip`. 
@@ -1643,12 +1643,12 @@ Here's how you do it:
     To verify your artifacts are deployed, navigate to the *Repositories* page
     of your Nexus OSS server and select your repository.
 
-    ![Figure 8.4: You can easily navigate to your Liferay release repository in Nexus.](../../images/maven-select-repository2.png)
+    ![Figure 2.17: You can easily navigate to your Liferay release repository in Nexus.](../../images/maven-select-repository2.png)
 
     Notice a window appears below displaying the Liferay artifacts now deployed
     to your repository.
 
-![Figure 8.5: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
+![Figure 2.18: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
@@ -1772,7 +1772,7 @@ Let's create a parent project named `sample-parent-project`:
     of Liferay applicable to the plugins you're developing. 
 
     <!--Change to 6.2 after release -->
-    
+ 
 3.  Modify the values of the *properties* to match your Liferay environment.
 
     Fill in the `<liferay.auto.deploy.dir>...</liferay.auto.deploy.dir>` tags
@@ -1903,7 +1903,7 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 
     The snapshot below illustrates choosing the archetype version: 
 
-    ![Figure 8.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
+    ![Figure 2.19: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
 
 6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
     coordinates (properties) of your project. Here are some examples: 
@@ -1915,11 +1915,11 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 8.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.20: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
-    
+
 7.  Enter the letter *Y* to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
@@ -1934,8 +1934,8 @@ configured the mirror pointing to your public repository on Nexus, the
 plugin is installed there. 
 
 ---
-    
-![Figure 8.8: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
+
+![Figure 2.21: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
 
 Following these steps, you can use Archetype to generate all your Liferay
 plugins! 
@@ -2037,7 +2037,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 8.9: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.22: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
