@@ -104,7 +104,7 @@ current locale.
 be present.
 
 **Documents and Media:** select an existing uploaded document to attach to the
-data record.
+data record. Also has the ability upload documents into the Document Library.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
