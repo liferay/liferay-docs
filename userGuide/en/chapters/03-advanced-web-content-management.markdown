@@ -158,7 +158,7 @@ the current locale.
 present.
 
 **Documents and Media:** Adds an existing uploaded document to attach to the
-structure. Also has the ability upload documents into the Document Library.
+structure. Also has the ability to upload documents into the Document Library.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
