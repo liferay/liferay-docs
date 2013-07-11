@@ -69,11 +69,21 @@ Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
 for your site, you can find them in the content section of the control panel,
 selecting *Go To &rarr; Control Panel &rarr; Content &rarr; Dynamic Data Lists*
-or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*. Within the dynamic
-data lists section, you can either create a new data type (*Manage Data
-Definitions*) or a new list from an existing data type.
+or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*.
 
 ![Figure 10.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
+
+Within the dynamic data lists section, you can either create a new data type
+(*Manage Data Definitions*) or a new list from an existing data type. Also, a
+new feature introduced in Liferay 6.2 is the *Copy* button. This copies the DDM
+templates associated with an existing data definition. You can access the Copy
+button by navigating to *Manage Data Definitions* and clicking *Actions* &rarr;
+*Copy*. The Copy menu gives options to copy the form and display templates
+associated with the data definition. We'll discuss how to manage and create form
+and display templates later in the chapter. When you're finished, the copied
+data definition can be accessed in the *Manage Data Definitions* menu. Now when
+you'd like to create a data definition based on an already existing one, you can
+use the copied version as a checkpoint and work off of it.
 
 If you have a new data type, you need to create a definition for it first. Click
 *Manage Data Definitions* and click the *Add* button. The first thing you should
