@@ -435,15 +435,26 @@ When this template is rendered, it looks something like this:
 ![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
 
 For cases where you're creating your template within Liferay, you can use the
-template editor. On the left side of the template editor, you'll notice a menu
-of common variables used for making web content templates. This is a great
-reference when creating your template. To place one of the variables into the
-template editor, simply position your cursor where you want it placed, and click
-the variable name. If the variable name doesn't give you enough information on
-the variable's functionality, you can hover your pointer over it for a more
-detailed description.
+template editor. On the left side of the template editor, you'll notice a
+palette of common variables used for making web content templates. This is a
+great reference when creating your template. To place one of the variables onto
+the template editor, simply position your cursor where you want the variable
+placed, and click the variable name. If the variable name doesn't give you
+sufficient information on the variable's functionality, you can hover your
+pointer over it for a more detailed description.
 
-![Figure 3.6: You can create a new Web Content template in the script editor.](../../images/04-web-content-templates-create.png)
+![Figure 3.6: You can hover your pointer over a variable for a more detailed description.](../../images/04-web-content-templates-create.png)
+
+The interactive template editor is available for the FreeMarker and Velocity
+languages. Depending on which language you select, the variable content changes
+so you're always adding content in the language you've chosen. Another cool
+feature for the template editor is the autocomplete feature. It can be invoked
+by typing *${* which opens a drop-down menu of available variables. By clicking
+one of the variables, the editor inserts the variable into the template editor.
+
+<!-- Will need to check if XSL or CSS is supported by template editor.
+Currently, XSL is only available for selecting a pre-made template from your
+local machine. CSS is currently not supported at all. -->
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new

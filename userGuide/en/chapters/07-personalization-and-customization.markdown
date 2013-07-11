@@ -254,7 +254,7 @@ based on portlet type. Then enter the name, description, and optional small
 image you'd like to use. You can select the language type for your template (FTL
 or VM). Lastly, the *Script* option lets you browse your file system for a
 template on your file system, or you can launch the editor and create one
-directly. On the left side of the template editor, you'll notice a menu of
+directly. On the left side of the template editor, you'll notice a palette of
 common variables used for making templates. This is a great reference when
 creating your template. To place one of the variables into the template editor,
 simply position your cursor where you want it placed, and click the variable
@@ -265,13 +265,15 @@ you enough information on the variable's functionality, you can hover your
 pointer over it for a more detailed description. Because there are multiple
 kinds of ADTs, there are also different variables for each ADT. Thus, each
 template has a different set of variables only applicable for that specific
-template. For more information on how to create a custom template, visit the
-*Liferay Developer's Guide*.
-
-<!-- TODO: When the Dev Guide section for templates is complete, add the exact
-link above -->
+template. 
 
 ![Figure 7.6: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
+
+You can also use the autocomplete feature to add variables to your template. It
+can be invoked by typing *${* which opens a drop-down menu of available
+variables. By clicking one of the variables, the editor inserts the variable
+into the editor. For more information on how to create a custom template, visit
+the *Liferay Developer's Guide*.
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
