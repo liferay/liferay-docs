@@ -95,7 +95,7 @@ can execute the exact same code from our Java example without any changes.
 		System.out.println("User Name: " + user.getFullName());
 	} 
 	
-Of course, we could make this somewhat Groovier by simplyfing the program as
+Of course, we could make this somewhat Groovier by simplifying the program as
 follows: 
 
 	import com.liferay.portal.service.UserLocalServiceUtil
@@ -129,7 +129,7 @@ You can see the Javascript example is compact. Ruby is even more compact.
 
 ### Ruby  
 
-Ruby is supported throgh the use of JRuby and our previous example could be
+Ruby is supported through the use of JRuby and our previous example could be
 implemented in Ruby as follows: 
 
 	userCount = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount();
@@ -158,8 +158,8 @@ Let's look at some practical examples of how you'd use this.
 ## Running scripts from the control panel  
 
 To see a very simple example of the script console in action, log into the
-portal as an administrator and navigate to the control panel &rarr; Server
-Administration &rarr; Script. Change the script type to Groovy and modify the
+portal as an administrator and navigate to the *Control Panel* &rarr; *Server
+Administration* &rarr; *Script*. Change the script type to Groovy and modify the
 current code to look like the following: 
 
     number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
@@ -192,7 +192,7 @@ Now we'll actually update each user in the system to set his or her
 `agreedToTermsOfUse` attribute to false. We'll be sure to skip the default user
 as the default user is not required to agree to the Terms of Use. We'll also
 skip the admin user that's currently logged in and running the script. If you're
-logged in as somoene other than test@liferay.com, be sure to update the
+logged in as someone other than test@liferay.com, be sure to update the
 following script before running it. 
 	
 	import com.liferay.portal.service.UserLocalServiceUtil
@@ -244,7 +244,7 @@ brings it to the next level.
 The default workflow definition included with Kaleo gives you a quick look into
 how the feature works. The final step in the workflow runs a script that makes
 content available for use. As you can see in the snippet below, it uses
-Javascript to access the Java class associated with the workflow to set the
+JavaScript to access the Java class associated with the workflow to set the
 status of the content to *approved*.
 
 	<script>
@@ -482,7 +482,7 @@ You should see the results of your script displayed right under the script.
 ## Summary  
 
 In this chapter we saw how Liferay's script engine opens up many exciting
-posibilities for working with Liferay regardless of your language of choice. We
+possibilities for working with Liferay regardless of your language of choice. We
 learned how you can leverage Liferay's Services Oriented Architecture (SOA) from
 any of the popular scripting languages Liferay supports. We then saw how those
 scripts could be used to simplify administrative tasks by leveraging the
@@ -491,5 +491,5 @@ by using the power of scripts. Lastly, we saw how you could overcome some of the
 limitations of running scripts in Liferay by creating custom Java utilities that
 could be executed from within your scripts. 
 
-As you can see, Liferay's script engine opens up many exciting posibilities for
+As you can see, Liferay's script engine opens up many exciting possibilities for
 working with Liferay regardless of your language of choice.

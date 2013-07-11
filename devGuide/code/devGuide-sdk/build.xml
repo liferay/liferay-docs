@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="plugins" basedir="." default="all" xmlns:antelope="antlib:ise.antelope.tasks">
+	<import file="build-common.xml" />
+
+	<target name="all">
+		<antcall target="clean" />
+		<antcall target="deploy" />
+	</target>
+
+	<target name="build-service">
+		<ant dir="hooks" target="build-service" inheritAll="false" />
+		<ant dir="portlets" target="build-service" inheritAll="false" />
+		<ant dir="webs" target="build-service" inheritAll="false" />
+	</target>
+
+	<target name="build-summary">
+		<java
+			classname="com.liferay.portal.tools.PluginsSummaryBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+			<jvmarg value="-Dplugins.dir=${sdk.dir}" />
+		</java>
+
+		<java
+			classname="com.liferay.portal.tools.XSLTBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+			<arg value="${sdk.dir}/summary.xml" />
+			<arg value="${sdk.dir}/summary.xsl" />
+			<arg value="${sdk.dir}/summary.html" />
+		</java>
+	</target>
+
+	<target name="clean">
+		<ant dir="hooks" target="clean" inheritAll="false" />
+		<ant dir="layouttpl" target="clean" inheritAll="false" />
+		<ant dir="portlets" target="clean" inheritAll="false" />
+		<ant dir="shared" target="clean" inheritAll="false" />
+		<ant dir="themes" target="clean" inheritAll="false" />
+		<ant dir="webs" target="clean" inheritAll="false" />
+	</target>
+
+	<target name="compile">
+		<ant dir="hooks" target="compile" inheritAll="false" />
+		<ant dir="layouttpl" target="compile" inheritAll="false" />
+		<ant dir="portlets" target="compile" inheritAll="false" />
+		<ant dir="shared" target="compile" inheritAll="false" />
+		<ant dir="themes" target="compile" inheritAll="false" />
+		<ant dir="webs" target="compile" inheritAll="false" />
+	</target>
+
+	<target name="deploy">
+		<ant dir="hooks" target="deploy" inheritAll="false" />
+		<ant dir="layouttpl" target="deploy" inheritAll="false" />
+		<ant dir="portlets" target="deploy" inheritAll="false" />
+		<ant dir="shared" target="deploy" inheritAll="false" />
+		<ant dir="themes" target="deploy" inheritAll="false" />
+		<ant dir="webs" target="deploy" inheritAll="false" />
+	</target>
+
+	<target name="direct-deploy">
+		<ant dir="hooks" target="direct-deploy" inheritAll="false" />
+		<ant dir="layouttpl" target="direct-deploy" inheritAll="false" />
+		<ant dir="portlets" target="direct-deploy" inheritAll="false" />
+		<ant dir="themes" target="direct-deploy" inheritAll="false" />
+		<ant dir="webs" target="direct-deploy" inheritAll="false" />
+	</target>
+
+	<target name="ear">
+		<delete dir="dist/liferay-portal.ear" />
+		<delete dir="dist/modules" />
+
+		<copy todir="dist" overwrite="yes">
+			<fileset
+				dir="${sdk.dir}/tools/ear_tmpl"
+			/>
+		</copy>
+
+		<copy todir="dist/modules/APP-INF/lib">
+			<fileset dir="${app.server.lib.global.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+
+		<fileset dir="dist/modules" id="ear.dependency.libraries">
+			<include name="APP-INF/lib/*.jar" />
+		</fileset>
+
+		<pathconvert pathsep=" " property="ear.dependency.libraries.converted" refid="ear.dependency.libraries">
+			<mapper>
+				<chainedmapper>
+					<flattenmapper />
+					<globmapper from="*.jar" to="APP-INF/lib/*.jar" />
+				</chainedmapper>
+			</mapper>
+		</pathconvert>
+
+		<war
+			basedir="${app.server.portal.dir}"
+			destfile="dist/modules/liferay-portal.war"
+		>
+			<manifest>
+				<attribute name="Class-Path" value="${ear.dependency.libraries.converted}" />
+			</manifest>
+		</war>
+
+		<for param="module.full.path">
+			<path>
+				<dirset
+					dir="${app.server.deploy.dir}"
+					excludes="${plugins.ear.excludes}"
+					includes="${plugins.ear.includes}"
+				/>
+			</path>
+			<sequential>
+				<antelope:stringutil string="@{module.full.path}" property="module.full.path.unix">
+					<antelope:replace regex="\\" replacement="/" />
+				</antelope:stringutil>
+
+				<antelope:grep in="${module.full.path.unix}" regex="(.*/)(.*)" group="2" property="module.name" />
+
+				<war
+					basedir="@{module.full.path}"
+					destfile="dist/modules/${module.name}.war"
+				/>
+			</sequential>
+		</for>
+
+		<fileset dir="dist/modules" id="ear.modules">
+			<include name="*.war" />
+		</fileset>
+
+		<pathconvert pathsep="," property="ear.modules.converted" refid="ear.modules">
+			<mapper>
+				<chainedmapper>
+					<flattenmapper />
+				</chainedmapper>
+			</mapper>
+		</pathconvert>
+
+		<java
+			classname="com.liferay.portal.tools.EARBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+			<arg value="${basedir}/dist/modules/META-INF/application.xml" />
+			<arg value="${ear.modules.converted}" />
+			<arg value="${plugins.ear.portal.context.path}" />
+		</java>
+
+		<ear
+			appxml="dist/modules/META-INF/application.xml"
+			basedir="dist/modules"
+			destfile="dist/liferay-portal.ear"
+			excludes="META-INF/application.xml"
+			includes="**/*.jar,*.war,META-INF/*.xml"
+		/>
+
+		<delete dir="dist/modules" />
+	</target>
+
+	<target name="extract-plugins-sdk">
+		<mkdir dir="dist" />
+
+		<delete file="dist/liferay-plugins-sdk-${lp.version}.zip" />
+
+		<ant dir="webs/resources-importer-web" target="clean" inheritAll="false" />
+
+		<zip destfile="dist/liferay-plugins-sdk-${lp.version}.zip">
+			<zipfileset
+				dir="."
+				excludes="*.iml,.git/**,.ivy/**,build.*.properties,dist/**,ext/*-ext/**,hooks/*-hook/**,lib/**,ivy.xml.MD5,layouttpl/*-layouttpl/**,portlets/*-portlet/**,private-plugins.txt,shared/*-shared/**,source_formatter_*,summary.*,themes/*-theme/**,webs/*-web/**"
+				prefix="liferay-plugins-sdk-${lp.version}"
+			/>
+			<zipfileset
+				dir="."
+				excludes="**/releng/**"
+				includes="webs/resources-importer-web/**"
+				prefix="liferay-plugins-sdk-${lp.version}"
+			/>
+			<zipfileset
+				dir="."
+				includes="lib/ant-contrib.jar,lib/antelopetasks.jar,lib/bcpg-jdk16.jar,lib/bcprov-jdk16.jar"
+				prefix="liferay-plugins-sdk-${lp.version}"
+			/>
+		</zip>
+	</target>
+
+	<target name="format-javadoc">
+		<ant dir="hooks" target="format-javadoc" inheritAll="false" />
+		<ant dir="layouttpl" target="format-javadoc" inheritAll="false" />
+		<ant dir="portlets" target="format-javadoc" inheritAll="false" />
+		<ant dir="themes" target="format-javadoc" inheritAll="false" />
+		<ant dir="webs" target="format-javadoc" inheritAll="false" />
+	</target>
+
+	<target name="setup-eclipse">
+		<ant dir="hooks" target="clean" inheritAll="false" />
+		<ant dir="portlets" target="clean" inheritAll="false" />
+		<ant dir="webs" target="clean" inheritAll="false" />
+
+		<ant dir="hooks" target="compile" inheritAll="false" />
+		<ant dir="portlets" target="compile" inheritAll="false" />
+		<ant dir="webs" target="compile" inheritAll="false" />
+
+		<ant dir="hooks" target="setup-eclipse" inheritAll="false" />
+		<ant dir="portlets" target="setup-eclipse" inheritAll="false" />
+		<ant dir="webs" target="setup-eclipse" inheritAll="false" />
+	</target>
+
+	<target name="war">
+		<ant dir="hooks" target="war" inheritAll="false" />
+		<ant dir="layouttpl" target="war" inheritAll="false" />
+		<ant dir="portlets" target="war" inheritAll="false" />
+		<ant dir="themes" target="war" inheritAll="false" />
+		<ant dir="webs" target="war" inheritAll="false" />
+	</target>
+
+	<target name="zip-portal">
+		<if>
+			<not>
+				<equals arg1="${app.server.type}" arg2="tomcat" />
+			</not>
+			<then>
+				<fail>
+.
+
+This task only works when the property "app.server.type" is "tomcat". However,
+the outputted files will work in any supported application server.
+				</fail>
+			</then>
+		</if>
+
+		<tstamp>
+			<format property="tstamp.value" pattern="yyyyMMddkkmmssSSS" />
+		</tstamp>
+
+		<zip destfile="dist/liferay-portal-dependencies-${tstamp.value}.zip">
+			<zipfileset
+				dir="${app.server.lib.global.dir}"
+				prefix="liferay-portal-dependencies-${tstamp.value}"
+			/>
+		</zip>
+
+		<delete file="dist/liferay-portal-${lp.version}.war" failonerror="false" />
+
+		<zip
+			basedir="${app.server.portal.dir}"
+			destfile="dist/liferay-portal-${tstamp.value}.war"
+			excludes="html/js/editor/_fckeditor/**,html/js/editor/fckeditor/_samples/**"
+		/>
+
+		<copy todir="${tstamp.value}/WEB-INF/lib">
+			<fileset
+				dir="lib"
+				includes="ccpp.jar"
+			/>
+		</copy>
+
+		<zip
+			basedir="${tstamp.value}"
+			destfile="dist/liferay-portal-${tstamp.value}.war"
+			update="yes"
+		/>
+
+		<delete dir="${tstamp.value}" />
+	</target>
+</project>

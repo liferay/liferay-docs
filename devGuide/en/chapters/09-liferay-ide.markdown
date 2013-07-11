@@ -23,19 +23,12 @@ those tools you can add to your toolbox. We think you'll be glad you did.
 In this chapter we'll cover the following topics:
 
 - Installation 
-
 - Setting Up Liferay IDE 
-
 - Testing/Launching Liferay Tomcat Server 
-
-- Creating New Liferay Projects 
-
-- Deploying Liferay Projects 
-
+- Creating New Liferay Projects
+- Deploying Liferay Projects
 - Importing Existing Projects into Liferay IDE 
-
 - Using Liferay IDE's Remote Server Adapter
-
 - Designing workflows with Kaleo Designer for Java 
 
 To install and set up Liferay IDE, follow the instructions below. If you're
@@ -78,15 +71,15 @@ Make sure you have a supported Java JRE and Eclipse release:
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1. Install Eclipse Juno, Indigo, or Helios from the
-   [Eclipse](http://www.eclipse.org) website. 
+1.  Install Eclipse Juno, Indigo, or Helios from the
+    [Eclipse](http://www.eclipse.org) website.
 
-2. Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
-3. When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-4. In the *Work with* field, enter the update site URL for your Eclipse release
-and press *Enter*. Your update site URL is one of the following: 
+4.  In the *Work with* field, enter the update site URL for your Eclipse release
+    and press *Enter*. Your update site URL is one of the following:
 
     Eclipse Juno Update Site: 
     [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
@@ -97,44 +90,44 @@ and press *Enter*. Your update site URL is one of the following:
     Eclipse Helios Update Site:
     [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
-5. Liferay IDE features should be detected. Select them and click *Next*. 
+5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-6. After calculating dependencies, click *Next* to complete the installation.
+6.  After calculating dependencies, click *Next* to complete the installation.
 
-7. Restart Eclipse to verify that Liferay IDE is properly installed.
+7.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
-8. After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
-IDE icon badge as in the screenshot below, it's properly installed. 
+8.  After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
+    IDE icon badge as in the screenshot below, it's properly installed. 
 
 ![Figure 9.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 To install Liferay IDE without specifying an update URL for Eclipse, follow
 these steps: 
 
-1. Install Eclipse Juno, Indigo, or Helios from the
-   [Eclipse](http://www.eclipse.org) website.
+1.  Install Eclipse Juno, Indigo, or Helios from the
+    [Eclipse](http://www.eclipse.org) website.
 
-2. Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
-3. When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-4. Instead of entering a URL in the *Work with* field, download the latest
-version of Liferay IDE from the releases page: 
+4.  Instead of entering a URL in the *Work with* field, download the latest
+    version of Liferay IDE from the releases page: 
 
     [Liferay IDE Downloads
     Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
 
-5. In the *Add Site* dialog, click the *Archive* button and browse to the location of
-   the downloaded zip file.
+5.  In the *Add Site* dialog, click the *Archive* button and browse to the location of
+    the downloaded zip file.
 
-6. Liferay IDE features should be detected. Select them and click *Next*. 
+6.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-7. After calculating dependencies, click *Next* to complete the installation.
+7.  After calculating dependencies, click *Next* to complete the installation.
 
-8. Restart Eclipse to verify that Liferay IDE is properly installed.
+8.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
-9. After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
-IDE icon badge as in the screenshot below, it's properly installed. 
+9.  After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
+    IDE icon badge as in the screenshot below, it's properly installed. 
 
 <!-- This whole section needed some help, as we now provide a bundled version
 that wasn't covered at all. Additionally, all the links were wrong, so I rewrote
@@ -149,9 +142,9 @@ runtime to code against, as well as a Plugins SDK to store your projects. Both
 of these must be registered in Liferay IDE, and this is easy to do. To get
 started, make sure you've downloaded and unzipped the following two items: 
 
-1. Liferay Portal 6.0.5 or greater
+1.  Liferay Portal 6.0.5 or greater
 
-2. Liferay Plugins SDK 6.0.5 or greater
+2.  Liferay Plugins SDK 6.0.5 or greater
 
  ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
  (e.g., 5.2.x) are not supported by Liferay IDE. 
@@ -164,16 +157,16 @@ Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and Liferay Portal must be installed and configured in your Liferay
 IDE. 
 
-1. In Eclipse, click *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr;
-   *Installed Plugin SDKs*.
+1.  In Eclipse, click *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr;
+    *Installed Plugin SDKs*.
 
 2.  Click *Add* to bring up the *Add SDK* Dialog. 
 
-3. Browse to your Plugins SDK installation. The default name is the directory
-   name; you can change it if you want. 
+3.  Browse to your Plugins SDK installation. The default name is the directory
+    name; you can change it if you want. 
 
-4. Select *OK* and verify that your SDK was added to the list of *Installed
-   Liferay Plugin SDKs*. 
+4.  Select *OK* and verify that your SDK was added to the list of *Installed
+    Liferay Plugin SDKs*. 
 
  ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
  your preferences. Set one as the default SDK by checking its box in the list of
@@ -183,35 +176,35 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 
 ### Liferay Portal Tomcat Runtime and Server Setup 
 
-1. In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
-   *Runtime Environments*. 
+1.  In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
+    *Runtime Environments*.
 
     ![Figure 9.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
-2. Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
-   under the *Liferay, Inc.* category and click *Next*.
+2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
+    under the *Liferay, Inc.* category and click *Next*.
 
-3. Click *Browse* and select your `liferay-portal-6.1.x directory`. 
+3.  Click *Browse* and select your `liferay-portal-6.1.x directory`. 
 
-4. If you've selected the Liferay portal directory and a bundle JRE is present,
-   it is automatically selected as the server's launch JRE. If no JRE bundle
-   is present, then you must select the JRE to use for launch by clicking
-   *Installed JREs...*. 
+4.  If you've selected the Liferay portal directory and a bundle JRE is present,
+    it is automatically selected as the server's launch JRE. If no JRE bundle
+    is present, then you must select the JRE to use for launch by clicking
+    *Installed JREs...*.
 
     ![Figure 9.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
-5. Click *Finish*; you should see your Liferay portal runtime listed in
-*Preferences* &rarr; *Server Runtime Environments*.
+5.  Click *Finish*; you should see your Liferay portal runtime listed in
+    *Preferences* &rarr; *Server Runtime Environments*.
 
-6. Click *OK* to save your runtime preferences. 
+6.  Click *OK* to save your runtime preferences. 
 
-7. If you haven't created a server, create one now from the *Servers*
-view in Liferay IDE; then you can test the server. 
+7.  If you haven't created a server, create one now from the *Servers*
+    view in Liferay IDE; then you can test the server. 
 
     ![Figure 9.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
 
-8. Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*. Choose
-the *Liferay v6...* runtime environment that you just created. 
+8.  Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*.
+    Choose the *Liferay v6...* runtime environment that you just created. 
 
 Now your server is set up.  Let's launch it and perform some tests! 
 
@@ -224,12 +217,9 @@ once it's selected in the Servers tab.
 From the *Servers* tab: 
 
 - Click on the green *Start the Server* button to launch it (or use Ctrl+Alt+R). 
-
 - Click on the red *Stop the Server* button to stop it (or use Ctrl+Alt+S).
   You'll only see this button if the server is running.
-
 - Right click the server and select *Start*. 
-
 - Right click on the server and select *Stop*. 
 
 From Eclipse's *Run* menu:
@@ -277,14 +267,14 @@ plugin is deployed.
 
 Alternatively, you can use the following procedure: 
 
-1. Select your new plugin project then right click the Liferay Server in
-the *Servers* tab; 
+1.  Select your new plugin project then right click the Liferay Server in
+    the *Servers* tab; 
 
-2. Select *Add and Remove...*. 
+2.  Select *Add and Remove...*. 
 
-3. Select your plugin project and click *Add* to deploy it to the server. 
+3.  Select your plugin project and click *Add* to deploy it to the server. 
 
-4. Click *Finish*. 
+4.  Click *Finish*. 
 
 You should see the project get deployed to Liferay Tomcat server; in the console
 is a message indicating your new portlet is available for use. 
@@ -310,13 +300,13 @@ Liferay IDE's developer tools.
 
 We'll cover the following import scenarios: 
 
-1. Importing existing Liferay projects from the Plugins SDK. 
+1.  Importing existing Liferay projects from the Plugins SDK. 
 
-2. Importing Eclipse projects that aren't in Liferay IDE (i.e., don't have
-   the Liferay facet or target runtime).
+2.  Importing Eclipse projects that aren't in Liferay IDE (i.e., don't have
+    the Liferay facet or target runtime).
 
-3. Importing existing Liferay IDE projects from another Liferay IDE version or
-   workspace. 
+3.  Importing existing Liferay IDE projects from another Liferay IDE version or
+    workspace.
 
 Let's start by learning how to import existing Liferay projects from Liferay
 Plugins SDK. 
@@ -337,30 +327,30 @@ procedure to import them.
 First let's look at the import process for creating a single Liferay IDE project
 from a Plugins SDK project. Follow these steps:
 
-1. In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
-   *Liferay* &rarr; *Liferay Project from Existing Source*. 
+1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
+    *Liferay* &rarr; *Liferay Project from Existing Source*.
 
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
 
     ![Figure 9.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
-2. Browse to your project folder. It should be a subdirectory of one of the
-   plugin types (e.g., portlets, hooks, themes, etc) or it won't import
-   correctly. Once you select the plugin project folder, its type and SDK
-   version values are updated to the correct values. If the SDK isn't recent enough
-   or the project type is incorrect, it gets marked with an error. 
+2.  Browse to your project folder. It should be a subdirectory of one of the
+    plugin types (e.g., portlets, hooks, themes, etc) or it won't import
+    correctly. Once you select the plugin project folder, its type and SDK
+    version values are updated to the correct values. If the SDK isn't recent
+    enough or the project type is incorrect, it gets marked with an error. 
 
-3. After you select the plugin project folder, the *Liferay plugin type* and
-   *Liferay plugin SDK version* values are updated. If your Plugins SDK is
-   outdated or you entered an incorrect project type, its field gets marked with an
-   error. 
+3.  After you select the plugin project folder, the *Liferay plugin type* and
+    *Liferay plugin SDK version* values are updated. If your Plugins SDK is
+    outdated or you entered an incorrect project type, its field gets marked
+    with an error. 
 
-4. Select the *Liferay target runtime* to configure on the project once it's
-   imported. If you don't have a Liferay Portal Runtime, use the *New...* button
-   to create one now.  
+4.  Select the *Liferay target runtime* to configure on the project once it's
+    imported. If you don't have a Liferay Portal Runtime, use the *New...*
+    button to create one now.  
 
-5. Click *Finish* to perform the import. 
+5.  Click *Finish* to perform the import.
 
 Remember to verify that your project was configured correctly as a Liferay IDE
 project. Verification is described right after our next topic, which is making
@@ -374,13 +364,13 @@ IDE.
 Does your Plugins SDK contain multiple plugins? You can easily batch import each
 plugin in your Plugins SDK as its own Liferay IDE project. 
 
-1. In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
-Projects from Plugin SDK*. 
+1.  In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
+    Projects from Plugin SDK*.
 
     ![Figure 9.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
-2. In the *Import Projects* window, use the combo box to select the *Liferay
-Plugins SDK* you're importing plugins from. 
+2.  In the *Import Projects* window, use the combo box to select the *Liferay
+    Plugins SDK* you're importing plugins from. 
 
     ---
 
@@ -392,20 +382,20 @@ Plugins SDK* you're importing plugins from.
 
     ---
 
-3. Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
-Location* and *Liferay Plugin SDK Version* fields are automatically filled in,
-as long as they're valid. Invalid entries are marked with an error. 
+3.  Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
+    Location* and *Liferay Plugin SDK Version* fields are automatically filled
+    in, as long as they're valid. Invalid entries are marked with an error. 
 
-4. The list of projects that are available for import are displayed in a table.
-Any projects already in the workspace are disabled. Projects available for
-import have an empty check box; select each project you'd like to import. 
+4.  The list of projects that are available for import are displayed in a table.
+    Any projects already in the workspace are disabled. Projects available for
+    import have an empty check box; select each project you'd like to import.
 
-5. Select the Liferay runtime you want to set up for the imported projects. 
+5.  Select the Liferay runtime you want to set up for the imported projects. 
 
-6. If you don't have a Liferay runtime, can add one now with the *New...*
-button. 
+6.  If you don't have a Liferay runtime, can add one now with the *New...*
+    button. 
 
-7. Click *Finish*. 
+7.  Click *Finish*. 
 
 Your plugins are imported! Next, we'll talk about importing existing Eclipse
 projects into Liferay IDE. 
@@ -417,8 +407,8 @@ in Eclipse. If you've been using Eclipse without Liferay IDE, you may already
 have a project in your Eclipse workspace. Follow the import steps below to
 convert your project. 
 
-1. In Eclipse, right-click the project in your Project Explorer, and select
-*Liferay* &rarr; *Convert to Liferay plugin project*. 
+1.  In Eclipse, right-click the project in your Project Explorer, and select
+    *Liferay* &rarr; *Convert to Liferay plugin project*.
 
     ---
 
@@ -429,14 +419,14 @@ convert your project.
 
     ---
 
-2. In the *Convert Project* wizard, your project should be selected and the SDK
-location and SDK version should be detected automatically. If they aren't valid,
-an error message is displayed. 
+2.  In the *Convert Project* wizard, your project should be selected and the SDK
+    location and SDK version should be detected automatically. If they aren't
+    valid, an error message is displayed. 
 
     ![Figure 9.9: Converting a project](../../images/ide-convert-plugin-project.png)
 
-3. Select the Liferay runtime to use for the project. If you don't have a
-   Liferay Runtime defined, do so now by clicking *New...*. 
+3.  Select the Liferay runtime to use for the project. If you don't have a
+    Liferay Runtime defined, do so now by clicking *New...*.
 
 4.  Click *Finish*. 
 
@@ -449,16 +439,16 @@ to cover--importing existing Liferay IDE projects into your Liferay IDE.
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
 
-1. Open Liferay IDE, go to *File* &rarr; *Import* ... &rarr; *General* &rarr;
-*Existing Projects into Workspace*. 
+1.  Open Liferay IDE, go to *File* &rarr; *Import* ... &rarr; *General* &rarr;
+    *Existing Projects into Workspace*. 
 
-2. Choose the option *Select root directory*, then click *Browse...*. 
+2.  Choose the option *Select root directory*, then click *Browse...*. 
 
-3. Select the directory of the Liferay IDE project to import. 
+3.  Select the directory of the Liferay IDE project to import. 
 
-4. In the *Projects:* list you should see your Liferay IDE project. 
+4.  In the *Projects:* list you should see your Liferay IDE project. 
 
-5. Click *Finish*. 
+5.  Click *Finish*. 
 
 ---
 
@@ -484,19 +474,19 @@ After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE
 projects. Here's how you verify that your imports were successful: 
 
-1. Once the project is imported, you should see a new project inside Eclipse and
-it should have an "L" overlay image; the "L" is for Liferay! 
+1.  Once the project is imported, you should see a new project inside Eclipse
+    and it should have an "L" overlay image; the "L" is for Liferay! 
 
     ![Figure 9.10: Verifying that the import succeeded](../../images/ide-liferay-project-w-overlay-image.png)
 
-2. Let's check the project's target runtime and facets to make sure it's
-configured as a *Liferay IDE* project:
+2.  Let's check the project's target runtime and facets to make sure it's
+    configured as a *Liferay IDE* project:
 
     2.1. In the *Package Explorer*, right click *<project-name>* &rarr;
-    *Properties* &rarr; *Targeted Runtimes*. 
+         *Properties* &rarr; *Targeted Runtimes*. 
 
     2.2. In the *Properties* window, click *Project Facets* and make sure both
-    Liferay runtime and Liferay plugin facets are properly configured. 
+         Liferay runtime and Liferay plugin facets are properly configured. 
 
     ![Figure 9.11: Project Facets](../../images/ide-project-facets.png)
 
@@ -513,7 +503,6 @@ server adapter is your solution. Your remote Liferay Portal instance must
 satisfy two requirements to use a Remote Server Adapter: 
 
 - It is version 6.1 or later. 
-
 - It has the Remote IDE Connector application installed from Liferay
 Marketplace. Remote IDE Connector contains the `server-manager-web` plugin that
 provides an API for Liferay IDE's Remote Server Adapter to use for all its
@@ -532,8 +521,7 @@ following resources on your local development machine:
 - [Liferay
   IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
   Liferay's downloads page or download Liferay Developer Studio 1.6.1 from
-  the Customer Portal. 
-
+  the Customer Portal.
 - [Liferay Portal CE or
   EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to
   your local development machine. 
@@ -567,68 +555,69 @@ Alternatively, you can install the Remote IDE Connector to your Liferay instance
 before configuring Liferay IDE's Remote Server Adapter. To configure the Remote
 Server Adapter, use the following steps:
 
-1. Start your remote Liferay Portal instance--verify that you can log in as an
-administrator. 
+1.  Start your remote Liferay Portal instance--verify that you can log in as an
+    administrator. 
 
-2. Launch Liferay IDE and open the new server wizard by clicking *File* &rarr;
-*New* &rarr; *Other*; select *Server* in the Server category and click *Next*.
-Select *Remote Liferay Server (Liferay 6.1)* in the Liferay, Inc. category.
+2.  Launch Liferay IDE and open the new server wizard by clicking *File* &rarr;
+    *New* &rarr; *Other*; select *Server* in the Server category and click
+    *Next*. Select *Remote Liferay Server (Liferay 6.1)* in the Liferay, Inc.
+    category.
 
-3. Enter the IP address of the machine with the remote Liferay Portal instance
-into the *Server's host name* field. For the *Server name*, enter *Liferay@[IP
-address]*, then click *Next*. 
+3.  Enter the IP address of the machine with the remote Liferay Portal instance
+    into the *Server's host name* field. For the *Server name*, enter
+    *Liferay@[IP address]*, then click *Next*. 
 
     ![Figure 9.12: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
 
-4. The New Server wizard's next page directs you to define the Liferay
-Portal runtime stub. Doing so allows projects created for your remote server to
-use the runtime stub for satisfying JAR dependencies needed to compile various
-Liferay projects. Select the *Liferay bundle type* based on the version of your
-local Liferay bundle, browse to the *Liferay bundle directory*, and click
-*Next*. 
+4.  The New Server wizard's next page directs you to define the Liferay
+    Portal runtime stub. Doing so allows projects created for your remote server
+    to use the runtime stub for satisfying JAR dependencies needed to compile
+    various Liferay projects. Select the *Liferay bundle type* based on the
+    version of your local Liferay bundle, browse to the *Liferay bundle
+    directory*, and click *Next*.
 
-5. On the next page of the wizard, you'll configure your connection to your
-remote Liferay instance. 
+5.  On the next page of the wizard, configure your connection to your remote
+    Liferay instance:  
 
-    5.1. *Hostname*: Enter the IP address of your remote Liferay Portal
-    instance's machine.
+    *Hostname*: Enter the IP address of your remote Liferay Portal instance's
+    machine. 
 
-    5.2. *HTTP Port*: Enter the port it runs on (default: 8080). 
+    *HTTP Port*: Enter the port it runs on (default: 8080). 
 
-    5.3. *Username* and *Password*: Enter your administrator credentials for the
-    remote Liferay Portal instance. 
+    *Username* and *Password*: Enter your administrator credentials for the
+    remote Liferay Portal instance.  
 
-    5.4. Leave the *Liferay Portal Context Path* and *Server Manager Context
-    Path* set to the defaults unless these values were changed for your remote
-    Liferay Portal instance. 
+    Leave the *Liferay Portal Context Path* and *Server Manager Context Path*
+    set to the defaults unless these values were changed for your remote Liferay
+    Portal instance.  
 
-6. Your remote Liferay Portal instance needs the Remote IDE Connector
-application installed; otherwise, Liferay IDE can't connect to it. If you
-haven't installed Liferay IDE Connector yet, click the *Remote IDE Connector*
-link in the wizard. If you already downloaded the Remote IDE Connector
-application and installed it to your remote portal, skip to the next step and
-validate your connection. 
+6.  Your remote Liferay Portal instance needs the Remote IDE Connector
+    application installed; otherwise, Liferay IDE can't connect to it. If you
+    haven't installed Liferay IDE Connector yet, click the *Remote IDE Connector*
+    link in the wizard. If you already downloaded the Remote IDE Connector
+    application and installed it to your remote portal, skip to the next step and
+    validate your connection. 
 
-    6.1. Browse [Liferay Marketplace](http://www.liferay.com/marketplace) for
-    the Remote IDE Connector application. When you've found it, click *Free* to
-    purchase it. Follow the on-screen prompts.
+    Browse [Liferay Marketplace](http://www.liferay.com/marketplace) for the
+    Remote IDE Connector application. When you've found it, click *Free* to
+    purchase it. Follow the on-screen prompts. 
 
-    6.2. Once you've purchased the application, navigate to the *Purchased* page
-    of the Control Panel's Marketplace interface.
+    Once you've purchased the application, navigate to the *Purchased* page of
+    the Control Panel's Marketplace interface. 
 
     ![Figure 9.13: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
-    6.3. Find your application in the list of purchased products. Then click on
-    the buttons to download and install the application. Once it's been
-    installed on your remote portal, return to the Remote Liferay Server
-    configuration wizard in Liferay IDE.
+    Find your application in the list of purchased products. Then click on the
+    buttons to download and install the application. Once it's been installed on
+    your remote portal, return to the Remote Liferay Server configuration wizard
+    in Liferay IDE. 
 
-7. Click the *Validate Connection* button; if no warnings or errors appear.
-your connection works! If you get any warning or error messages in the
-configuration wizard, check your connection settings. 
+7.  Click the *Validate Connection* button; if no warnings or errors appear.
+    your connection works! If you get any warning or error messages in the
+    configuration wizard, check your connection settings. 
 
-8. Once Liferay IDE is connected to your remote Liferay Portal instance,
-click *Finish* in the Remote Liferay Server configuration wizard. 
+8.  Once Liferay IDE is connected to your remote Liferay Portal instance,
+    click *Finish* in the Remote Liferay Server configuration wizard.
    
     After you click *Finish*, the new remote server appears in Liferay IDE's
     *Servers* tab. This tab appears in the bottom left corner of the Eclipse
@@ -638,9 +627,9 @@ click *Finish* in the Remote Liferay Server configuration wizard.
     remote server is in debug mode, the Eclipse Java debugger is attached to the
     remote process automatically.
 
-9. You can change the remote server settings at any time. Double-click on your
-remote server instance in the *Servers* tab to open the configuration editor,
-where you can modify the settings. 
+9.  You can change the remote server settings at any time. Double-click on your
+    remote server instance in the *Servers* tab to open the configuration
+    editor, where you can modify the settings. 
 
 Now that your remote Liferay Portal server is configured, let's test the remote
 server adapter!
@@ -653,7 +642,7 @@ would a local Liferay Portal server.
 
 Here's how to publish plugin projects to your remote server in Liferay IDE: 
 
-1. Right click on the server and choose *Add and Remove...*. 
+1.  Right click on the server and choose *Add and Remove...*. 
 
     ---
 
@@ -663,20 +652,21 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
     ---
 
-2. Select the Liferay projects to publish to your remote server; click *Add* to
-add them to your remote server, then click *Finish*. Deployment begins
-immediately. 
+2.  Select the Liferay projects to publish to your remote server; click *Add* to
+    add them to your remote server, then click *Finish*. Deployment begins
+    immediately. 
 
     Your console displays a message that the plugin was successfully
     deployed if publication to the remote server was successful.
 
-3. As you make changes to your plugin project, republish them so they take
-effect on the remote server. To set your remote server's publication behavior,
-double click your remote server in the *Servers* tab. You can choose to
-automatically publish resources after changes are made, automatically publish
-after a build event, or never to publish automatically. To manually invoke the
-publishing operation after having modified project files, right click on the
-server in the Servers view and select *Publish*. 
+3.  As you make changes to your plugin project, republish them so they take
+    effect on the remote server. To set your remote server's publication
+    behavior, double click your remote server in the *Servers* tab. You can
+    choose to automatically publish resources after changes are made,
+    automatically publish after a build event, or never to publish
+    automatically. To manually invoke the publishing operation after having
+    modified project files, right click on the server in the Servers view and
+    select *Publish*.
 
 Now that you've seen how you can deploy projects in Liferay IDE and Liferay
 Developer Studio, we can begin delving into the features it offers. Next, we'll
@@ -774,11 +764,13 @@ Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
 
 Here's how to download and install *Kaleo Forms EE*:
 
-1. Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
-2. Click on [EE
-Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in the
-left navigation area.
-3. Download and install the *Kaleo Forms EE* app.
+1.  Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
+
+2.  Click on [EE
+    Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in
+    the left navigation area.
+
+3.  Download and install the *Kaleo Forms EE* app.
 
 After downloading and installing the Kaleo Forms EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
@@ -819,17 +811,17 @@ software ticketing process. Are you ready to roll? Let's get started!
 
 ![Figure 9.16: Check out the adventures of Liferay's mascots, Ray and Alloy, found at http://www.liferay.com/ray.](../../images/kaleo-15.png)
 
-1. Create your new workflow definition by going to *File* &rarr; *New* &rarr;
-*Liferay Kaleo Workflow*. Alternatively, you can select *Liferay Kaleo Workflow*
-from the toolbar button shown in the figure below. 
+1.  Create your new workflow definition by going to *File* &rarr; *New* &rarr;
+    *Liferay Kaleo Workflow*. Alternatively, you can select *Liferay Kaleo
+    Workflow* from the toolbar button shown in the figure below. 
 
     ![Figure 9.17: Create a new workflow definition locally by selecting *Liferay Kaleo Workflow* from the toolbar button.](../../images/kaleo-3.png)
 
-2. The *Create New Kaleo Workflow File* wizard will guide you through the steps
-necessary to complete the initial setup of your new workflow definition. 
+2.  The *Create New Kaleo Workflow File* wizard will guide you through the steps
+    necessary to complete the initial setup of your new workflow definition. 
 
-    2.1. The first window you'll see is the *Create Kaleo Workflow* form. There
-    are several fields here: 
+    The first window you'll see is the *Create Kaleo Workflow* form. There are
+    several fields here:  
 
     *Project*: Specify an existing Liferay project to house your workflow definition. 
 
@@ -853,9 +845,9 @@ necessary to complete the initial setup of your new workflow definition.
 
     When you're finished in this window click *Next*. 
 
-    2.2. You'll be directed to the *Choose Assignment Type* window next.
-    Here you'll provide an *Initial task name*, then choose an assignment type
-    from the list of options. 
+    You'll be directed to the *Choose Assignment Type* window next. Here you'll
+    provide an *Initial task name*, then choose an assignment type from the list
+    of options.  
     
     For our workflow example, select *Assign to asset creator* and name the task
     `Developer`. When our workflow's `Developer` task is invoked, the creator of
@@ -872,7 +864,7 @@ necessary to complete the initial setup of your new workflow definition.
 
     ---
 
-3. Click *Finish* to complete the initial setup of our workflow definition. 
+3.  Click *Finish* to complete the initial setup of our workflow definition. 
 
 <!--This type of instruction, in step 2, with heirarchical steps actually looks
 bad in my Markdown plugin for Jedit; very crammed -->
@@ -893,11 +885,10 @@ pointer.
 Here are your pointer options: 
 
 - *Select*: The default pointer setting used for selecting options on the
-workflow diagram by clicking the icon. 
-
+  workflow diagram by clicking the icon. 
 - *Marquee*: Used for drawing an invisible selection box around multiple icons.
-This is useful when you want to manipulate multiple nodes and/or transitions on
-the workflow diagram. 
+  This is useful when you want to manipulate multiple nodes and/or transitions
+  on the workflow diagram. 
 
 Transitions connect one node to another. On exiting the first node, processing
 follows the transition to the node it points to. Selecting a *Transition* turns
@@ -908,14 +899,10 @@ In addition to *Start* and *End* node types, there are five node types you can
 use in your workflow: 
 
 - *Condition*: Directs workflow execution to an appropriate transition based on
-conditional logic of the node's script. 
-
+  conditional logic of the node's script. 
 - *Fork*: Forks the workflow execution into two parallel threads. 
-
 - *Join*: Joins parallel workflow threads. 
-
 - *State*: Represents a workflow state. 
-
 - *Task*: Represents a task that can be assigned. 
 
 Drag and drop any nodes you need onto your workflow diagram. Each node type
@@ -962,26 +949,20 @@ quick, convenient customizations to a node.
 The floating palette has several features you can use: 
 
 - *Add* (green cross): Add an action or notification on the node. To edit the
-added action or notification, bring up Designer's *Properties* view. 
-
+  added action or notification, bring up Designer's *Properties* view. 
 - *Edit Actions* (paper with arrow): Edit the node's existing actions. 
-
 - *Edit Notifications* (envelope): Edit existing notifications on the node. 
-
 - *Edit Script* (pencil): Edit the script of the condition node. This feature
-only applies to the condition node. 
-
+  only applies to the condition node. 
 - *Change Assignments* (person): Assign or reassign a task. This feature only
-applies to the *Task* node type. 
-
+  applies to the *Task* node type. 
 - *Delete* (red "X"): Delete the node. 
-
 - *Show in Source* (paper with folded corner and arrow): Show the node specified
-as as a model element in the workflow definition's XML source and switches the
-main editor to *Source* mode. 
-
+  as as a model element in the workflow definition's XML source and switches the
+  main editor to *Source* mode. 
 - *Start Transition* (black arrow): Change the pointer to transition mode
-letting you create a workflow transition from the current node to another node.
+  letting you create a workflow transition from the current node to another
+  node.
 
 Obviously, there is still work to be done in our workflow definition. We have
 multiple error markings and the fork and join nodes aren't connected to
@@ -1025,31 +1006,23 @@ diagram. Below we list some of these features; they can greatly enhance your
 workflow designing experience. 
 
 - *Workflow Diagram Actions* are available via the toolbar in the upper right
-corner of the Workflow Diagram: 
-
+  corner of the Workflow Diagram: 
     - *Zoom In*
-
     - *Zoom Out*
-
     - *Zoom Actual*
-
     - *Save as Image*
-
     - *Print*
 
 	These toolbar icons are shown in the figure below.
 
 - *More Workflow Diagram Actions* are accessible by right clicking on the
-Workflow Diagram's canvas:
-
+  Workflow Diagram's canvas:
     - The *Layout* feature lets you arrange nodes vertically or horizontally, so
-    it's easy to organize your workflow quickly without having to touch a node. 
-
+      it's easy to organize your workflow quickly without having to touch a node. 
     - The *Rename* feature lets you rename a node or transition; select by
-    double clicking its current name and typing in a new name.
-    
+      double clicking its current name and typing in a new name.
     - The *Surveyor's Level* feature helps you center a node, vertically or
-    horizontally, with respect to another node.
+      horizontally, with respect to another node.
 
 You've probably noticed the *Properties* and *Outline* views below your workflow
 diagram. Let's explore them next. 
@@ -1068,25 +1041,20 @@ individual node, its properties appear.
 Node properties are grouped as follows:
 
 - *Actions*: Execute scripts with respect to your node. Each action has a
-*Name*, *Script Language*, *Execution Type*, and a *Priority* (optional).
-Clicking *Edit Script* brings up the script in the default editor for the
-*Script Language* you specified. 
-
+  *Name*, *Script Language*, *Execution Type*, and a *Priority* (optional).
+  Clicking *Edit Script* brings up the script in the default editor for the
+  *Script Language* you specified. 
 - *Notifications*: Notify users with respect to your node. Each notification has
-a *Name*, *Template Language*, *Execution Type*, and one or more *Notification
-Types*. 
-
+  a *Name*, *Template Language*, *Execution Type*, and one or more *Notification
+  Types*. 
 - *Assignments*: Assign tasks to users or roles. Click *Change Task Assignments*
-to specify or change the assignment. 
-
+  to specify or change the assignment. 
 - *Task Timers*: Name timers for a task and whether the timers are blocking.
-Each task timer has a *Name* and *Blocking* indicator. 
-
+  Each task timer has a *Name* and *Blocking* indicator. 
 - *Script*: Edit a script for your condition node. Clicking *Edit Script* brings
-up the script in the default editor for the *Script Language* you specified. 
-
+  up the script in the default editor for the *Script Language* you specified. 
 - *Other*: Edit miscellaneous properties like *Name* and *Description*,
-applicable to your node's type. 
+  applicable to your node's type. 
 
 Here's what the Properties view looks like in Developer Studio: 
 
@@ -1115,15 +1083,10 @@ business logic in your workflows.
 Developer Studio supports several script languages: 
 
 - Beanshell 
-
 - Drl 
-
 - Groovy 
-
 - JavaScript 
-
 - Python 
-
 - Ruby 
 
 Let's dive back into our `software ticket` workflow definition and create a
@@ -1139,30 +1102,32 @@ condition node to handle the ticket based on the DDL record.
 To set up the workflow process we described above, we'll need to add a
 *Condition* node and two transitions. 
 
-1. Drag and drop a *Condition* node onto your workflow diagram. A *Create New
-Condition Node* menu should appear. 
+1.  Drag and drop a *Condition* node onto your workflow diagram. A *Create New
+    Condition Node* menu should appear.
 
-2. Name the node *Resolution*. 
+2.  Name the node *Resolution*.
 
-3. Choose a script language for the condition node. Select *Groovy* and you'll
-see how easy it is to embed Java code. In our Groovy script, we'll access the
-DDL record to determine whether the ticket warrants a modification to the
-product. If it does, we'll assign it to a developer via the Developer task node.
-Otherwise we'll end the workflow by transitioning to the workflow's EndNode. 
+3.  Choose a script language for the condition node. Select *Groovy* and you'll
+    see how easy it is to embed Java code. In our Groovy script, we'll access
+    the DDL record to determine whether the ticket warrants a modification to
+    the product. If it does, we'll assign it to a developer via the Developer
+    task node. Otherwise we'll end the workflow by transitioning to the
+    workflow's EndNode.  
 
-4. From the *Create New Condition Node* menu, add two transitions--one to the
-*Developer* node and the other to the *EndNode* state. Here's how you add these
-transitions: 
+4.  From the *Create New Condition Node* menu, add two transitions--one to the
+    *Developer* node and the other to the *EndNode* state. We'll add the
+    transition to the *Developer* node first. 
 
-    4.1. Click the green plus sign and select the transition icon from its menu.
-    An entry for the transition appears in the named list of *Condition
-    transitions*.
+    Click the green plus sign and select the transition icon from its menu. An
+    entry for the transition appears in the named list of *Condition
+    transitions*. 
 
-    4.2. Click the browse icon in the entry and select the *Developer* node.
+    Click the browse icon in the entry and select the *Developer* node.
 
-    4.3. Repeat steps 1 and 2 to add a transition to the *EndNode* state.
+5.  Add a transition to the *EndNode* state in the same manner that added the
+    transition to the *Developer* node in the previous step.
 
-    4.4. Click *Finish*. 
+6.  Click *Finish*. 
 
 <!--When I select the green plus sign I get a list to choose from; Existing
 Node, New Condition, New Fork, New Join, New State, New Task. I do not see a
@@ -1177,27 +1142,25 @@ Before adding a script to our condition node, let's make some changes to our
 workflow transitions: 
 
 - Add a transition from the *Developer* task node to the *Pass To QA* fork node.
-
 - Add a transition from the *StartNode* state node to the *Resolution* condition
-node.
-
+  node.
 - Delete the transition that currently connects the *StartNode* state node to
-the *Developer* task node.
+  the *Developer* task node.
 
 To add a transition from one node to another, do the following:
 
-1. Click the transition icon from the palette. Your pointer's icon shows as a
-plug indicating you are in *connector* mode.
+1.  Click the transition icon from the palette. Your pointer's icon shows as a
+    plug indicating you are in *connector* mode.
 
-2. Select a node on your workflow diagram from which the transition will start.
-A dotted line appears with one end connected to the selected node and the other
-end following your pointer.
+2.  Select a node on your workflow diagram from which the transition will start.
+    A dotted line appears with one end connected to the selected node and the
+    other end following your pointer.
 
-3. Select a node to which the transition will end. The dotted line changes into
-a fixed ray with the arrow pointing to the transition's end node.
+3.  Select a node to which the transition will end. The dotted line changes into
+    a fixed ray with the arrow pointing to the transition's end node.
 
-4. To exit connector mode, hit *Escape* on your keyboard and click your pointer
-at empty space in your workflow diagram.
+4.  To exit connector mode, hit *Escape* on your keyboard and click your pointer
+    at empty space in your workflow diagram.
 
 You may notice the error marking on the condition node. When you hover over
 the marking, a hint indicates a script must be specified for the node.
@@ -1206,10 +1169,8 @@ Open the script editor for your *Resolution* condition node by doing one of the
 following: 
 
 - Select the node and click *Edit Script* from the *Script* tab of the
-Properties view. 
-
+  Properties view. 
 - Click the *Edit Script* tool from the node's floating palette. 
-
 - Right-click the node and select *Edit Script*. 
 
 We set our default script language to Groovy, so the Java/Groovy editor appears.
@@ -1235,13 +1196,9 @@ diagram; it's associated with your Java/Groovy script editor now and includes
 folders containing the following entities for your script: 
 
 - Context Variables 
-
 - Dynamic Data Lists 
-
 - Roles 
-
 - Scripts 
-
 - Status Updates 
 
 You can expand and collapse a folder by clicking its name bar. 
@@ -1265,13 +1222,14 @@ section of this guide.
 Let's use Designer's palette features in conjunction with our Java/Groovy editor
 to implement our condition: 
 
-1. Drag and drop the *serviceContext* entity from the *Context Variables* folder
-in your palette onto the script editor. This grabs the Service Context.
+1.  Drag and drop the *serviceContext* entity from the *Context Variables*
+    folder in your palette onto the script editor. This grabs the Service
+    Context. 
 
-2. Drag and drop the *ddlRecord* entity from the *Dynamic Data Lists* folder in
-your palette onto the script editor. We get the `ddlRecordId` from the Service
-Context and use that ID to look up the DDL record via Liferay service utility
-`DDLRecordLocalServiceUtil`.
+2.  Drag and drop the *ddlRecord* entity from the *Dynamic Data Lists* folder in
+    your palette onto the script editor. We get the `ddlRecordId` from the
+    Service Context and use that ID to look up the DDL record via Liferay
+    service utility `DDLRecordLocalServiceUtil`.
 
 Append the following Java code to the `DDLRecordLocalServiceUtil` script: 
 
@@ -1339,26 +1297,26 @@ navigate to the *Add-on: Install Velocity Editor Support* section, and download
 the Liferay Developer Studio Velocity update site zip file and install it. You
 can follow these steps: 
 
-1. From Liferay Developer Studio, Click *Help* &rarr; *Install New Software...*
+1.  From Liferay Developer Studio, Click *Help* &rarr; *Install New Software...*
 
-2. Click *Add...*
+2.  Click *Add...*
 
-3. Click *Archive*.
+3.  Click *Archive*.
 
-4. Browse to the downloaded update site zip file and select it.
+4.  Browse to the downloaded update site zip file and select it.
 
-5. Click *OK* to close the *Add Repository* dialog.
+5.  Click *OK* to close the *Add Repository* dialog.
 
-6. Expand the added repository and check the *Liferay Developer Studio Velocity*
-feature.
+6.  Expand the added repository and check the *Liferay Developer Studio
+    Velocity* feature.
 
-7. Uncheck the option *Contact all update sites...*
+7.  Uncheck the option *Contact all update sites...*
 
-8. Click *Next* to progress through the wizard.
+8.  Click *Next* to progress through the wizard.
 
-9. After reading and accepting the license agreement, click *Finish*.
+9.  After reading and accepting the license agreement, click *Finish*.
 
-9. Restart Liferay Developer Studio to complete the install.
+10. Restart Liferay Developer Studio to complete the install.
 
 When you edit a notification template set to the Velocity type, the template
 opens in the Velocity editor (a small "v" icon is in the left side of the
@@ -1375,15 +1333,10 @@ clicking the green "plus" symbol.
 There are several fields to fill in for your notification: 
 
 - **Name**
-
 - **Template Language**
-
 - **Execution Type**
-
 - **Notification Type**
-
 - **Notification Transports**
-
 - **Addresses**
 
 <!--This is a field list, so bold, right? -->
@@ -1421,16 +1374,16 @@ for both purposes. As mentioned previously, you can specify an existing user
 that has an email or create a user with screen name "joe" having your email
 address. This process is similar to how we assigned our previous task nodes. 
 
-1. Drag a new *Task* node onto your workflow diagram. 
+1.  Drag a new *Task* node onto your workflow diagram. 
 
-2. Name the new node *Project Management* and select *Assign to a specific
-user*. 
+2.  Name the new node *Project Management* and select *Assign to a specific
+    user*. 
 
-3. Click *Next*. 
+3.  Click *Next*. 
 
-3. Enter *Screen name* "joe". 
+4.  Enter *Screen name* "joe". 
 
-4. Click *Finish*. 
+5.  Click *Finish*. 
 
 Now we just need to incorporate the Project Management node into our
 workflow process. Add a transition named *Passed QA* from our join node to the
@@ -1446,15 +1399,15 @@ Properties window.
 
 To create the email notification, follow these steps: 
 
-1. Click the green "plus" symbol to create a new notification. 
+1.  Click the green "plus" symbol to create a new notification. 
 
-2. In the **Name** text field, enter "ticket process email".
+2.  In the **Name** text field, enter "ticket process email".
 
-3. Select *FreeMarker* from the **Template Language** drop-down menu.
+3.  Select *FreeMarker* from the **Template Language** drop-down menu.
 
-4. Select *On entry* from the **Execution type** drop-down menu.
+4.  Select *On entry* from the **Execution type** drop-down menu.
 
-5. Select *email* under **Notification transports**.
+5.  Select *email* under **Notification transports**.
 
 <!--Bolded field items. -->
 
@@ -1645,15 +1598,14 @@ takes you to the XML, and you can easily switch contexts as you need.
 *Source* mode offers you its own cool features: 
 
 - *Section Highlighting*: Shows XML source code for the node or transition
-currently selected in the workflow diagram. Click the document icon in an
-entity's floating palette or right click the entity and select *Show in source*. 
-
+  currently selected in the workflow diagram. Click the document icon in an
+  entity's floating palette or right click the entity and select *Show in
+  source*.  
 - *Editor Validation*: Displays an error marking in the editor's gutter if your
-code is invalid. Click the error marking to see hint for resolving the error. 
-
+  code is invalid. Click the error marking to see hint for resolving the error. 
 - *Content Assist*: Suggests language specific functions and variables as you
-edit code. When you're inserting variables, it also lists all available
-variables that are a part of the Kaleo workflow. 
+  edit code. When you're inserting variables, it also lists all available
+  variables that are a part of the Kaleo workflow. 
 
 ---
 
@@ -1677,12 +1629,12 @@ publish the `ticket process` workflow definition onto your Liferay server.
 
 To publish your `ticket process` workflow definition: 
 
-1. Right-click the *Kaleo Workflows* folder listed under your Liferay server in
-the *Servers* view. 
+1.  Right-click the *Kaleo Workflows* folder listed under your Liferay server in
+    the *Servers* view. 
 
-2. Select *Upload new workflow...* to bring up the *workspace files* browser. 
+2.  Select *Upload new workflow...* to bring up the *workspace files* browser. 
 
-3. Browse for your workflow definition file and select it for publishing. 
+3.  Browse for your workflow definition file and select it for publishing. 
 
 Alternatively, you can publish your new workflow XML file by dragging it from
 your *Package Explorer* view onto your Liferay server in your *Servers* view. 
@@ -1742,21 +1694,21 @@ in *Using Liferay Portal*.
 
 First we'll create a data definition that lets the user select a status value. 
 
-1. In Liferay Portal, go to *Control Panel* &rarr; *Dynamic Data Lists*.
+1.  In Liferay Portal, go to *Control Panel* &rarr; *Dynamic Data Lists*.
 
-2. Click the *Manage Data Definitions* link, then *Add* a new data definition.
+2.  Click the *Manage Data Definitions* link, then *Add* a new data definition.
 
-3. In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
+3.  In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
 
     ![Figure 9.31: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
-4. In the *Settings* tab, double click the *Name* property to open the property
-editor--enter *status* as the value. 
+4.  In the *Settings* tab, double click the *Name* property to open the property
+    editor--enter *status* as the value. 
 
-5. Edit the *Options* setting; give your *status* field option values of `fix`
-with label "Fix" and `not` with label "Do not fix". 
+5.  Edit the *Options* setting; give your *status* field option values of `fix`
+    with label "Fix" and `not` with label "Do not fix". 
 
-6. Click *Save*. 
+6.  Click *Save*. 
 
 Recall the code we inserted for our condition node:
 
@@ -1790,15 +1742,15 @@ Forms](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/
 section of *Using Liferay Portal*; we'll demonstrate its use here by using it
 with our ticket process workflow. 
 
-1. Create a new *Process* in Kaleo Forms; name it *Ticket Process*. 
+1.  Create a new *Process* in Kaleo Forms; name it *Ticket Process*. 
 
-2. Select the *status* data definition we created earlier. 
+2.  Select the *status* data definition we created earlier. 
 
-3. Add an *Initial Form* based on our *status* data definition. 
+3.  Add an *Initial Form* based on our *status* data definition. 
 
-4. Select our ticket process workflow. 
+4.  Select our ticket process workflow. 
 
-5. Leave *Workflow Task Forms* unassigned for our demonstration. 
+5.  Leave *Workflow Task Forms* unassigned for our demonstration. 
 
 ![Figure 9.32: To test the ticket process workflow, create a new Kaleo Forms *Process*--provide a name, entry definition, and workflow.](../../images/kaleo-41.png)
 

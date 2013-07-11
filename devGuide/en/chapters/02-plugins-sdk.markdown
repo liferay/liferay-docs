@@ -1,3 +1,4 @@
+
 # Liferay Developer Tools 
 
 If you're anything like Liferay Portal's developers, you don't want to be
@@ -321,11 +322,6 @@ htis guide, and we'll call it *event-listing-portlet* in the *Project Name*
 field. It should have a *Display Name* of *Event Listing*. Click *Finish*. 
 
     ![Figure 2.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
-
-<!--replace above image with 6.2 image. i created it but it has the wrong
-portlet name (doesn't match Jesse's from the service builder chapter). i'll be
-making all image commits at once so it's easier for backporting to 6.1x (can
-just skip that commit).-->
 
 Our *event-listing-portlet* plugin project should appear in the package
 explorer. Here's the project's directory structure: 
@@ -699,7 +695,7 @@ Our demonstration uses the Remote Server Adapter on Liferay Portal bundled with
 Apache Tomcat, but you can use the adapter with Liferay Portal running on any
 application server Liferay Portal supports. Install Liferay Portal locally to
 compile the plugins you develop. Install Liferay Portal on your remote test
-server to for host the plugins you'll deploy to it. 
+server to host the plugins you'll deploy to it. 
 
 ---
 
@@ -966,7 +962,7 @@ properties:
 7.  Click *OK* to close all system property windows. 
 
 8.  Open a new command prompt for your new environment variables to take affect.  
-     
+
 To verify Ant is in your path, execute `ant -version` from your terminal to make
 sure your output looks similar to this: 
 
@@ -1017,6 +1013,7 @@ type. Here is the directory structure of the Plugins SDK:
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
     - `ext/` - Ext plugins directory. See chapter 7 on Ext plugins. 
+
     - `hooks/` - hook plugins directory. See chapter 6 on hooks. 
     - `layouttpl/` - layout templates directory. See chapter 4 on creating
       Liferay Themes. 
