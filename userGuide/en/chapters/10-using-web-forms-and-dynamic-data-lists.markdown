@@ -106,10 +106,6 @@ be present.
 **Documents and Media:** select an existing uploaded document to attach to the
 data record.
 
-**File Upload:** upload a document to attach to the data record. Uploads are
-stored in Documents and Media, in an existing folder or in the user's default
-upload location.
-
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
 **Integer:** similar to *Number*, except that it constrains user input to
@@ -136,10 +132,10 @@ Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
 tasks your friends and family can volunteer to do for you, use *Select*
 (obviously set to allow multiple options). Finally, you don't want to forget a
-*File Upload* so they can upload images of themselves. After all, how much more
-official-feeling and fun is it if you can print out some nifty badges? To add
-these fields, drag them from the palette on the left to the work area on the
-right. 
+*Documents and Media* so they can upload images of themselves. After all, how
+much more official-feeling and fun is it if you can print out some nifty badges?
+To add these fields, drag them from the palette on the left to the work area on
+the right.
 
 When creating data definitions, you can also customize the appearance of the
 input fields and provide helpful tips and hints for those entering data. Some
@@ -166,7 +162,7 @@ should give a more memorable name here.
 
 **Predefined Value:** If you would like example data or a default value for the
 user to start with, enter it here. The field's value defaults to this when
-adding a new entry (not available for File Upload).
+adding a new entry.
 
 **Tip:** Each field can have a small help icon, with a tooltip attached that
 displays helpful information. If you would like to provide text for the tooltip
@@ -180,12 +176,7 @@ add as many copies of this field as they like.
 
 **Width:** Sets the visual width of the form on the page. It does not affect the
 values that are stored. Possible values are *Small*, *Medium* and *Large* (not
-available for Boolean, Documents and Media, File Upload, Radio, and Select).
-
-**Allowed File Extensions:** By default, form validation accepts
-any file type to be submitted. Set this value to a comma-delimited list of
-extensions, including the character `.`, and Liferay checks the extension before
-the file can be uploaded (only available for File Upload).
+available for Boolean, Documents and Media, Radio, and Select).
 
 **Multiple:** When set to *Yes*, allows the user to select more than
 one option. This defaults to no (only available for Select).
@@ -193,9 +184,6 @@ one option. This defaults to no (only available for Select).
 **Options:** Changes the options available for selection. You're able to add and
 remove options as well as edit each individual option's display name and value
 (only available for Radio and Select).
-
-**Read Only:** When set to *Yes*, uploaded files are unable to be deleted or
-modified by the user (only available for File Upload).
 
 ![Figure 10.3: Data field properties.](../../images/05-data-definition-field-properties.png)
 
