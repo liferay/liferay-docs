@@ -64,17 +64,6 @@ description; check it out, we think you'll be impressed. how to develop
 in-depth then develop some plugins with Liferay IDE. Last we'll discuss Liferay
 IDE's Remote Server Adapter. 
 
----
-
-![note](../../images/tip-pen-paper.png) **Note:** Our *Service Builder* code
-generation tool isn't like code generators that take away some of your ability
-to control your own code. With Service Builder, you can customize the generated
-code as you see fit. 
-
----
-
-<!--The above seemed important from our discussion so I stuck it in here.-->
-
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
 of Liferay's development tools), which comes with Liferay Portal Enterprise
@@ -838,13 +827,40 @@ On the *Forums* page, you can look up resolutions to specific errors and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
 
-<!--This feels too broad to be stuck in the ## Using the Remote Server
-Adapter section. Maybe it should go in the introduction or at the end of the
-Liferay IDE section? -Russ-->
+<!--This last paragraph feels too broad to be stuck in the ## Using the Remote
+Server Adapter section. Maybe it should go in the introduction or at the end of
+the Liferay IDE section? -Russ-->
 
-<!--### Using the Service Builder Graphical Editor -->
+Next let's talk about Liferay's Service Builder code generation tool,
 
-<!--Add content-->
+### Using the Service Builder Graphical Editor 
+
+Service Builder is a code generation tool. It's a model-based tool that lets
+you define custom object models called entities. Service Builder reads the
+contents of a file you create called `service.xml` and automatically creates your
+application's model, persistence, and service layers, freeing you to focus on
+the higher level aspects of your applications code. 
+
+Why should you use Service Builder? Because it lets different portlets access
+the same data and application logic, creating an underlying framework that
+supports a portal environment. If your database access code is buried in a
+single application's code, it can't readily be shared with other applications,
+and your efforts will be duplicated with each application you write. Service
+Builder puts the generated code in a service `JAR` file inside of one plugin,
+but it can be easily shared among all portlets. 
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Our *Service Builder* code
+generation tool doesn't take away any of your ability to control your own
+code. With Service Builder, you can customize the generated code as you see
+fit. 
+
+---
+
+As a conceptual example, consider the Nose-ster organization and the Events
+Listing Portlet project we created earlier. Mr. Schnozz also wants us to create
+an events listing portlet. 
 
 <!--### Using Tag Library Snippets -->
 
