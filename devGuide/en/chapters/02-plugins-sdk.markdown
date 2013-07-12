@@ -1,4 +1,4 @@
-# The Plugins SDK
+# The Plugins SDK 
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -19,13 +19,9 @@ for Eclipse that simplifies development for Liferay.
 
 We discuss the following topics in this chapter: 
 
-- **Initial Setup:** Install the Plugins SDK and configure it to use with your
-Liferay Portal server. 
-
-- **Structure of the SDK:** Where to develop your plugin within the SDK and what
-Apache Ant targets are available. 
-
-- **Best Practices:** Helpful ways for organizing your plugin projects. 
+- Initial Setup
+- Structure of the SDK
+- Best Practices
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
@@ -52,19 +48,19 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
 Installation steps:
 
-1. Download The Plugins SDK from our web site at
-[http://www.liferay.com](http://www.liferay.com). 
+1.   Download The Plugins SDK from our web site at
+     [http://www.liferay.com](http://www.liferay.com). 
 
-    1.1. Click the *Downloads* link at the top of the page. 
+     Click the *Downloads* link at the top of the page. 
 
-    1.2. From the *Liferay Portal 6.1 Community Edition* section, select the
-    *Plugins SDK* option. 
+     From the *Liferay Portal 6.1 Community Edition* section, select the
+     *Plugins SDK* option. 
 
-    1.3. Click *Download*. 
+     Click *Download*. 
 
-2. Unzip the archive to a folder of your choosing. Because some operating
-systems have trouble running Java applications from folders with names
-containing spaces, avoid using spaces when naming your folder.
+2.  Unzip the archive to a folder of your choosing. Because some operating
+    systems have trouble running Java applications from folders with names
+    containing spaces, avoid using spaces when naming your folder.
 
 ---
 
@@ -102,29 +98,29 @@ On Windows, if your Ant installation folder is `C:\Java\apache-ant-<version>`,
 set your `ANT_HOME` and path environment variables appropriately in your system
 properties: 
 
-1. Select *Start*, then right-select *Computer* &rarr; *Properties*. 
+1.  Select *Start*, then right-select *Computer* &rarr; *Properties*. 
 
-2. In the *Advanced* tab, click *Environment Variables...*. 
+2.  In the *Advanced* tab, click *Environment Variables...*. 
 
-3. In the *System variables* section, click *New...*. 
+3.  In the *System variables* section, click *New...*. 
 
-4. Set the `ANT_HOME` variable:
+4.  Set the `ANT_HOME` variable:
 
-    4.1. **Variable name:** `ANT_HOME`. 
+    **Variable name:** `ANT_HOME`. 
 
-    4.2. **Variable value:** *<Ant installation path>* (e.g.,
+    **Variable value:** *<Ant installation path>* (e.g.,
     `C:\Java\apache-ant-<version>`). 
 
-    4.3. Click *OK*. 
+    Click *OK*. 
 
-5. Also in the *System variables* section, select your path variable and click
-*Edit...*. 
+5.  Also in the *System variables* section, select your path variable and click
+    *Edit...*. 
 
-6. Insert `%ANT_HOME%\bin;` after `%JAVA_HOME%\bin;` and click *OK*. 
+6.  Insert `%ANT_HOME%\bin;` after `%JAVA_HOME%\bin;` and click *OK*. 
 
-7. Click *OK* to close all system property windows. 
+7.  Click *OK* to close all system property windows. 
 
-8. Open a new command prompt for your new environment variables to take affect. 
+8.  Open a new command prompt for your new environment variables to take affect. 
      
 To verify Ant is in your path, execute `ant -version` from your terminal to make
 sure your output looks similar to this: 
@@ -173,47 +169,30 @@ Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
 
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
-
     - `clients/` - client applications directory. 
-
     - `dist/` - archived plugins for distribution and deployment. 
-
     - `ext/` - Ext plugins directory. See chapter 7 on Ext plugins. 
-
-    - `hooks/` - hook plugins directory. See chapter 6 on hooks. 
-
+    - `hooks/` - hook plugins directory. See chapter 6 on hooks.
     - `layouttpl/` - layout templates directory. See chapter 4 on creating
-    Liferay Themes. 
-
+      Liferay Themes. 
     - `lib/` - commonly referenced libraries. 
-
     - `misc/` - development configuration files. Example, a source code
-    formatting specification file. 
-
+      formatting specification file. 
     - `portlets/` - portlet plugins directory. See chapter 3 on portlet
-    development. 
-
+      development. 
     - `themes/` - themes plugins directory. See Chapter 4 on creating Liferay
-    themes. 
-
+      themes. 
     - `tools/` - plugin templates and utilities. 
-
     - `webs/` - web plugins directory. 
-
     - `build.properties` - default SDK properties. 
-
     - `build.<username>.properties` - (optional) override SDK properties. 
-
     - `build.xml` - contains targets to invoke in the SDK. 
-
     - `build-common.xml` - contains common targets and properties referenced
-    throughout the SDK. 
-
+      throughout the SDK. 
     - `build-common-plugin.xml` - contains common targets and properties
-    referenced by each plugin. 
-
+      referenced by each plugin. 
     - `build-common-plugins.xml` - contains common targets and properties
-    referenced by each plugin type. 
+      referenced by each plugin type. 
 
 New plugins are placed in their own subdirectory of the appropriate plugin type.
 For instance, a new portlet called "greeting-portlet" would reside in
@@ -223,23 +202,18 @@ There's an Ant build file (`build.xml`) in each of the plugins directories. Here
 are some Ant targets you'll commonly use in developing your plugins:
 
 - `build-service` - builds the service layer for a plugin, using Liferay Service
-Builder. 
-
+  Builder. 
 - `clean` - cleans the residual files created by the invocations of the
-compilation, archiving, and deployment targets. 
-
+  compilation, archiving, and deployment targets. 
 - `compile` - compiles the plugin source code. 
-
 - `deploy` - builds and deploys the plugin to your application server. 
-
 - `format-source` - formats the source code per Liferay's source code
-guidelines, informing you of violations that must be addressed. See the
-[Development Sytle](http://www.liferay.com/community/wiki/-/wiki/Main/Development+Style#section-Development+Style-Format+Source)
-community wiki page for details. 
-
+  guidelines, informing you of violations that must be addressed. See the
+  [Development Sytle](http://www.liferay.com/community/wiki/-/wiki/Main/Development+Style#section-Development+Style-Format+Source)
+  community wiki page for details. 
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
-the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
-community wiki page for details.
+  the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
+  community wiki page for details.
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 

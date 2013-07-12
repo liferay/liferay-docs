@@ -17,23 +17,20 @@ while developing and the more interesting applications and customizations you
 will create. Here are some suggestions to learn more after reading this guide:
 
 - Read the "[Liferay in
-Action](http://affiliate.manning.com/idevaffiliate.php?id=1133&url=7&tid1=liferaywebsite)"
-book. This book, written by Rich Sezov, Liferay's Knowledge Manager, provides a
-very extensive step by step guide of Liferay's development technologies.
-
+  Action](http://affiliate.manning.com/idevaffiliate.php?id=1133&url=7&tid1=liferaywebsite)"
+  book. This book, written by Rich Sezov, Liferay's Knowledge Manager, provides
+  a very extensive step by step guide of Liferay's development technologies.
 - Use [Liferay's Community Forums](http://forum.liferay.com/), not only to ask
-questions but also to to answer them. You will be surprised how much you can
-learn while trying to help others.
-
+  questions but also to to answer them. You will be surprised how much you can
+  learn while trying to help others.
 - Read the source. Liferay is Open Source, and you can leverage that to learn as
-much as you want about it. Download the code if you haven't done it yet and read
-it. Link it within your IDE so that you can enter Liferay's code while debugging
-your own code. It will give you a great opportunity to learn as much as the
-greatest expert of Liferay in the world.
-
+  much as you want about it. Download the code if you haven't done it yet and read
+  it. Link it within your IDE so that you can enter Liferay's code while debugging
+  your own code. It will give you a great opportunity to learn as much as the
+  greatest expert of Liferay in the world.
 - Go to the websites of the standards and libraries that Liferay is based on and
-read their documentation. Some examples are:
-[Spring](http://www.springsource.org/), [Hibernate](http://www.hibernate.org/),
-[Portlet Specification](http://jcp.org/en/jsr/detail?id=286), etc.
+  read their documentation. Some examples are:
+  [Spring](http://www.springsource.org/), [Hibernate](http://www.hibernate.org/),
+  [Portlet Specification](http://jcp.org/en/jsr/detail?id=286), etc.
 
 
