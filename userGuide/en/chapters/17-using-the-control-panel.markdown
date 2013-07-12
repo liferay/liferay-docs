@@ -62,8 +62,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 17.3: Server Configuration Miscellaneous Display
-Settings](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 17.3: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
 themes, you can choose whether or not to display the logo. Be careful to choose
@@ -111,8 +110,7 @@ To add a custom field, click on the *Custom Fields* link in the control panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 17.4: Custom Fields Resource
-List](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 17.4: Custom Fields Resource List](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you need to add the custom field key. The key appears as the label for
 the field on the form. For some portal resources (like the User), custom fields
@@ -121,8 +119,7 @@ fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 17.5: Custom Fields Integrated with the Rest of the Fields on the Wiki
-Form](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 17.5: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
@@ -448,8 +445,7 @@ Xuggler for audio and video files.
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
 including JavaScript, Groovy, Python, Ruby and Beanshell. For further
-information about Liferay's APIs, see the JavaDoc or [*Liferay in
-Action*](http://manning.com/sezov).
+information about Liferay's APIs, see the JavaDoc or [*Liferay in Action*](http://manning.com/sezov).
 
 ### Shutdown  
 
