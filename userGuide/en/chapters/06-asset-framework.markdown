@@ -239,17 +239,31 @@ collection of *facets* on the left.
 
 ![Figure 6.7: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search-1.png)
 
-A facet is a combination of the information about a specific indexed field, its
-terms, and their frequency. Facets are typically named by the field in question.
-The default facets are asset types (pictured above), asset tags, asset
-categories, and modified time range. 
+Facets allow users of the Search portlet to select criteria with which to filter
+search results. A facet is a combination of the information about a specific
+indexed field, its terms, and their frequency. Facets are typically named by the
+field in question. From the Search portlet's Configuration window,
+administrators can configure the facets available to users for filtering search
+results. The default facets include the following:
 
-The frequency in which the term was found for each facet is listed in
-parentheses after the facet. It may jog your memory to see that the term you
-searched for appears in a blog entry, and that may be all you need to find what
-you were looking for. If, however, your memory is more foggy than that, or
-you're searching for something you're not sure is actually there, then the asset
-tags or asset categories facets may be more helpful to you. 
+* Site
+* Asset type (pictured above)
+* Asset tag
+* Asset category
+* Folder
+* User
+* Modified time range
+
+For example, after searching for a certain term in the Search portlet, clicking
+on a specific site filters the search results to only display assets within the
+specified site. Clicking on a specific user filters the search results to only
+display assets added by the specified user. The frequency in which the term was
+found for each facet is listed in parentheses after the facet. It may jog your
+memory to see that the term you searched for appears in a blog entry, and that
+may be all you need to find what you were looking for. If, however, your memory
+is more foggy than that, or you're searching for something you're not sure is
+actually there, then the asset tags or asset categories facets may be more
+helpful to you. 
 
 ![Figure 6.8: Asset tag facets provide you with more information about content that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
