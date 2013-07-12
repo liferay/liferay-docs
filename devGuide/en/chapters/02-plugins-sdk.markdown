@@ -381,7 +381,7 @@ existing projects into Liferay IDE.
 
 Now your Liferay IDE contains a plugin project with the skeleton of the Event
 Listing portlet.  Along with the Event Listing portlet, let's create a Location
-Listing porlet insdie the same project: 
+Listing porlet inside the same project: 
 
 1. Go to File &rarr; New  &rarr; Liferay Portlet. 
 
@@ -390,29 +390,31 @@ Listing porlet insdie the same project:
     Portlet*. 
 
 2. The *New Liferay Portlet* dialog box will appear, with your newly created
-   plugin project *event-listing-portlet* selected as the *Portlet plugin
-project* by default. We recommend naming your *Portlet class* after the name of
-your portlet. We'll name the class *LocationListingPorlet* in this example.
-We'll name our *Java package* after the plugin project, so it will be
-*com.liferay.eventlistingportlet.portlets* for our example. You can deviate
-from the conventions we used here if you like. 
+plugin project *event-listing-portlet* selected as the *Portlet plugin project*
+by default. We recommend naming your *Portlet class* after the name of your
+portlet. We'll name the class *LocationListingPorlet* in this example.  We'll
+name our *Java package* after the plugin's parent project, so it will be
+*com.nosester.portlet.eventListing* for our example. You can deviate from the
+conventions we used here if you like. 
 
     Click *Next*.
 
 3. In the Next window of the *New Liferay Portlet* wizard, you'll specify
-   deployment descriptor dsetails for your portlet. First enter the *Name* of
-your portlet--in our example this will be *location-listing-portlet*.
-Subsequently enter the portlet's *Display name* and *Title*. Also in this
-window you can specify which portlet modes youd like your portlet to have.
-*View* mode is automatically selected. Click *Next*.
+deployment descriptor details for your portlet. First enter the *Name* of your
+portlet--in our example this will be *locationlisting*.  Subsequently enter the
+portlet's *Display name* and *Title*, which we'll specify as *Location Listing
+Portlet*. Also in this window you can specify which portlet modes youd like
+your portlet to have.  *View* mode is automatically selected. Click *Next*.
 
-    In the next window, set the location for your portlets custom icon, CSS, and
-JavaScript. You can also choose the category for your portlet (it's categorized
-under *Sample* by default), and add it to the *Control Panel* of your Liferay
-Portal. Click *Next*. 
+4. In the next window, set the location for your portlets custom icon, CSS,
+and JavaScript. You can also choose the category for your portlet (it's
+categorized under *Sample* by default), and add it to the *Control Panel* of
+your Liferay Portal. Click *Next*. 
 
-4. The last step is to specify modifiers, interfaces, and method stubs to
-   generate in the Portlet class. Once you're done, click *Finish*, 
+5. The last step is to specify modifiers, interfaces, and method stubs to
+   generate in the Portlet class. Once you're done, click *Finish*. 
+
+![Figure 2.7: Liferay IDE's portlet creation wizard.](../../images/ide-portlet-plugin-wizard-1.png)
 
 By default, new portlets use the MVCPortlet framework, a light framework that
 hides part of the complexity of portlets and makes the most common operations
