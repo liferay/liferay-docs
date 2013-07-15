@@ -57,36 +57,36 @@ without it.
 Liferay's WCM has a host of features the makes managing the content of your site
 easier.
 
--   **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts,
-    add color, insert images and much more.
+- **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts, add
+  color, insert images and much more.
 
--   **Structure Editor:** Easily add and remove fields you want available to
-    content creators and then dynamically move them around. This editor includes
-an entire suite of form controls you can drag and drop onto your structure.
+- **Structure Editor:** Easily add and remove fields you want available to
+  content creators and then dynamically move them around. This editor includes
+  an entire suite of form controls you can drag and drop onto your structure.
 
--   **Template Editor:** Import template script files that inform the system how
-    to display the content within the fields determined by the structure.
+- **Template Editor:** Import template script files that inform the system how
+  to display the content within the fields determined by the structure.
 
--   **Web Content Display:** A portlet that allows you place web content on a
-    page in your portal.
+- **Web Content Display:** A portlet that allows you place web content on a page
+  in your portal.
 
--   **Asset Publisher:** A portlet which can aggregate different types of
-    content together in one view.
+- **Asset Publisher:** A portlet which can aggregate different types of content
+  together in one view.
 
--   **Scheduler:** Lets you schedule when content is reviewed, displayed and
-    removed.
+- **Scheduler:** Lets you schedule when content is reviewed, displayed and
+  removed.
 
--   **Workflow Integration:** Run your content through an approval or review
-    process.
+- **Workflow Integration:** Run your content through an approval or review
+  process.
 
--   **Staging:** Use a separate staging server or stage your content locally so
-    you can keep your changes separate from the live site. 
+- **Staging:** Use a separate staging server or stage your content locally so
+  you can keep your changes separate from the live site. 
 
 Liferay's Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. Let's begin by examining some basic
 concepts involving sites and pages.
 
-## Creating sites and managing pages  
+## Creating Sites and Managing Pages  
 
 With most products, you would learn what the software can do in terms of setting
 up your users and security model and then start building your system. You'd
@@ -135,7 +135,8 @@ You can also customize the logo in the top left corner of every page by
 selecting *Display Settings* under the *Miscellaneous* tab on the panel to the
 right. Once you've made the changes, we can begin creating pages.
 
-### Creating and managing pages  
+### Creating and Managing Pages  
+
 You have a few options for accessing and configuring the page creation
 interface. There are two interfaces to be aware of: *Site Pages* and *Page*.
 Although both interfaces deal with your portal's pages, their settings are
@@ -146,7 +147,9 @@ configured. If you're already on your desired site, you can reach the Site
 Administration page by navigating to the *Admin* tab in the Dockbar and
 selecting *Site Administration*. If you're not currently on the site you'd like
 to edit, go to *Control Panel* &rarr; *Sites* and select your desired site. This
-will also bring you to the site's Site Administration page. Once you're on the Site Administration page, select *Site Pages* under the Main tab from the left panel.
+will also bring you to the site's Site Administration page. Once you're on the
+Site Administration page, select *Site Pages* under the Main tab from the left
+panel.
 
 To manage the specific page of the site you've navigated to, click *Edit* from
 the Dockbar and select *Page*. This will only edit the specific page you're
@@ -314,7 +317,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-##### Using a custom logo for a site
+##### Using a Custom Logo for a Site
 
 If you want to use your own logo for a specific site, use the Logo tab. Adding a
 custom logo is easy: select the Logo tab and browse to the location of your
@@ -331,7 +334,7 @@ option is disabled in *Portal Settings*. It is also not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display.
 
-#### Changing options for individual pages  
+#### Changing Options for Individual Pages  
 
 When you select a single page, some different options appear. Let's look at what
 these do. 
@@ -351,16 +354,16 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible
-that a single page could be indexed multiple times. In Liferay 6.1, all URLs
-that direct to the same page will only create one entry in the index.
-Previously, the simple URL
-*http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions
-of the URL which provided additional information about the referring page had
-different entries in the index. As of Liferay 6.1, each asset (web content
-article, blog entry, etc.) has a unique URL. From the search engine's point of
-view, this will make your pages rank higher since any references to variations
-of a specific URL will all be considered references to the same page.] 
+ ![Tip](../../images/01-tip.png) In previous versions of Liferay, it was
+ possible that a single page could be indexed multiple times. In Liferay 6.1,
+ all URLs that direct to the same page will only create one entry in the index.
+ Previously, the simple URL
+ *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions
+ of the URL which provided additional information about the referring page had
+ different entries in the index. As of Liferay 6.1, each asset (web content
+ article, blog entry, etc.) has a unique URL. From the search engine's point of
+ view, this will make your pages rank higher since any references to variations
+ of a specific URL will all be considered references to the same page.] 
 
 ---
 
@@ -369,8 +372,7 @@ of a specific URL will all be considered references to the same page.]
 **Layout:** lets you specify how portlets are arranged on a page. Choose from
 the available installed templates to modify the layout. It's very easy for
 developers to define custom layouts and add them to the list. This is covered
-more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in
-Action*](http://manning.com/sezov). 
+more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in Action*](http://manning.com/sezov). 
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
 executed on this page. 
@@ -407,20 +409,20 @@ page.
 
 ---
 
-![tip](../../images/01-tip.png) Usually, you don't want the web content display
-portlet that you're using to embed a portlet to be visible. To make the web
-content display portlet invisible, click on the wrench icon of the web content
-display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
-*Save*. Once you've refreshed the page, only the embedded portlet will be
-visible.
+ ![Tip](../../images/01-tip.png) Usually, you don't want the web content display
+ portlet that you're using to embed a portlet to be visible. To make the web
+ content display portlet invisible, click on the wrench icon of the web content
+ display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
+ *Save*. Once you've refreshed the page, only the embedded portlet will be
+ visible.
 
 ---
 
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
-Note that the *Edit &rarr; Page Layout* menu directs you to the same Layout
-tab that's in *Edit &rarr; Page*. 
+Note that the *Edit* &rarr; *Page Layout* menu directs you to the same Layout
+tab that's in *Edit* &rarr; *Page*. 
 
 #### Modifying Page Layouts  
 
@@ -429,7 +431,7 @@ want it to. Liferay comes with many layouts already defined. Developers can
 create more and they can be deployed to your portal for your use.
 
 To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select *Edit &rarr; Page Layout* from
+Collaboration page. To access layouts, select *Edit* &rarr; *Page Layout* from
 the Dockbar.
 
 Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
@@ -596,7 +598,7 @@ a full explanation of Page Templates and Site Templates, see chapter 3.
 #### Site Content  
 
 Liferay 6.2 separates Web Content management from the Control Panel by placing
-it on the *Admin &rarr; Site Administration* page. From Site Administration,
+it on the *Admin* &rarr; *Site Administration* page. From Site Administration,
 you'll notice the Content heading where all your portal's content can be
 managed, including web content. 
 
@@ -604,14 +606,14 @@ managed, including web content.
 
 For details about Liferay's social collaboration suite, see chapter 10. Next, let's learn more details about creating pages.
 
-### Creating pages  
+### Creating Pages  
 
 There are a lot of other things you can do beyond placing portlets on a page. So
 let's start working on the Nose-ster site. You can do this by going up to the
-Dockbar and clicking *My Sites &rarr; Nose-ster*.
+Dockbar and clicking *My Sites* &rarr; *Nose-ster*.
 
 We'll use the *Community* page you created earlier in the chapter. Navigate to
-the *Community* page and select *Manage &rarr; Page* from the Dockbar.
+the *Community* page and select *Manage* &rarr; *Page* from the Dockbar.
 
 This screen should now be familiar to you but let's recap. 
 
@@ -683,7 +685,7 @@ users can view them.
 Let's say we wanted to create a page only for administrators to see. We can do
 this with the following procedure:
 
-1.  Go to the Dockbar and select *Admin &rarr; Site Administration*.
+1.  Go to the Dockbar and select *Admin* &rarr; *Site Administration*.
 3.  Click the *Site Pages* link.
 4.  Click the *Private Pages* tab to switch to the Private Pages. Remember,
     these pages by default are viewable only by members of the site.
@@ -725,7 +727,7 @@ templates to define how content is to be displayed, set up a workflow for
 content to be approved, schedule when content is to be published and much, much
 more.
 
-## Authoring (basic) content  
+## Authoring (Basic) Content  
 
 You've been assigned the task to build a web site for an innovative new social
 networking site called Nose-ster. You've decided to take advantage of Liferay
@@ -739,7 +741,7 @@ We'll then take advantage of Liferay's robust structure editor. We'll use
 templates to display the content and then explore some of the advanced
 publishing features such as the built-in workflow and Asset Publisher.
 
-### Creating content the simple way  
+### Creating Content the Simple Way  
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has
 made it easier than ever to get content published to your site. Because Liferay
@@ -869,7 +871,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-##### Creating a display page  
+##### Creating a Display Page  
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -937,12 +939,12 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-## Publishing (basic) content  
+## Publishing (Basic) Content  
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
-to our Welcome page by selecting *Add &rarr; Content and Applications &rarr;
-Applications* from the Dockbar.
+to our Welcome page by selecting *Add* &rarr; *Content and Applications* &rarr;
+*Applications* from the Dockbar.
 
 ![Figure 2.17: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
 
@@ -1037,7 +1039,7 @@ Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
 workflow. 
 
-## Using Liferay's workflow with WCM  
+## Using Liferay's Workflow with WCM  
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
