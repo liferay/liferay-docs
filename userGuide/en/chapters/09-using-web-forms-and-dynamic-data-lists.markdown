@@ -104,8 +104,7 @@ be present.
 data record.
 
 **File Upload:** upload a document to attach to the data record. Uploads are
-stored in Documents and Media, in an existing folder or in the user's default
-upload location.
+stored in Documents and Media.
 
 **Radio:** presents the user with a list of options to choose from using radio
 button inputs. Values are stored as `String`s. Similar to `Select`.
@@ -167,10 +166,6 @@ one option. This defaults to no.
 any file type to be submitted. Set this value to a comma-delimited list of
 extensions, including the character `.`, and Liferay checks the extension before
 the file can be uploaded.
-
-**Folder (File Upload):** Set the location the document is uploaded to in
-Documents and Media. You can choose from an existing folder, create one or
-default to Documents and Media's home location.
 
 **Width (Text, Text Box, Decimal, Integer, Number):** Sets the visual width of
 the form on the page. It does not affect the values that are stored. Possible
