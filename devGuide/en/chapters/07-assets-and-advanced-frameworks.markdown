@@ -30,7 +30,7 @@ Here's what we've got in store for you:
 
 - Asset Framework 
 
-- File Storage Framework 
+<!--- File Storage Framework -->
 
 - Other Frameworks 
 
