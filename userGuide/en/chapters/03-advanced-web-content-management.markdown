@@ -157,11 +157,8 @@ the current locale.
 **Decimal:** Similar to *Number*, except that it required a decimal point (.) be
 present.
 
-**Documents and Media:** Adds the Documents and Media folder hierarchy to your
-structure.
-
-**File Upload:** Uploads a document to attach. Uploads are stored in Documents
-and Media, in an existing folder or in the user's default upload action.
+**Documents and Media:** Adds an existing uploaded document to attach to the
+structure. Also has the ability to upload documents into the Document Library.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
@@ -249,21 +246,12 @@ have multiple authors for a particular article.
 *medium*, or *large* (not available for Boolean, Documents and Media, Image,
 Radio, and Select.
 
-**Allowed File Extensions:** Specifies the file types allowed for upload (e.g.
-*pdf*, *html*, *txt*, etc.). Set this value to a comma-delimited list of
-extensions, including the character ., and Liferay checks the extension before
-the file can be uploaded. To allow all file types, input an asterisk: "\*" (only
-available for File Upload).
-
 **Multiple:** Select *Yes* to enable a multi-selection list (only available for
 Select).
 
 **Options:** Changes the options available for selection. You're able to add and
 remove options as well as edit each individual option's display name and value
 (only available for Radio and Select).
-
-**Read Only:** Select *Yes* to disable the ability to modify or delete uploaded
-files (only available for File Upload).
 
 For the Nose-ster structure, type something in the *Tip* field that helps users
 know what to put into the Body element (example: *This is an HTML text area for

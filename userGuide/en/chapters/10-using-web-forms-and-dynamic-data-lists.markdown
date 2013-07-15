@@ -69,11 +69,21 @@ Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
 for your site, you can find them in the content section of the control panel,
 selecting *Go To &rarr; Control Panel &rarr; Content &rarr; Dynamic Data Lists*
-or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*. Within the dynamic
-data lists section, you can either create a new data type (*Manage Data
-Definitions*) or a new list from an existing data type.
+or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*.
 
 ![Figure 10.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
+
+Within the dynamic data lists section, you can either create a new data type
+(*Manage Data Definitions*) or a new list from an existing data type. Also, a
+new feature introduced in Liferay 6.2 is the *Copy* button. This copies the DDM
+templates associated with an existing data definition. You can access the Copy
+button by navigating to *Manage Data Definitions* and clicking *Actions* &rarr;
+*Copy*. The Copy menu gives options to copy the form and display templates
+associated with the data definition. We'll discuss how to manage and create form
+and display templates later in the chapter. When you're finished, the copied
+data definition can be accessed in the *Manage Data Definitions* menu. Now when
+you'd like to create a data definition based on an already existing one, you can
+use the copied version as a checkpoint and work off of it.
 
 If you have a new data type, you need to create a definition for it first. Click
 *Manage Data Definitions* and click the *Add* button. The first thing you should
@@ -94,11 +104,7 @@ current locale.
 be present.
 
 **Documents and Media:** select an existing uploaded document to attach to the
-data record.
-
-**File Upload:** upload a document to attach to the data record. Uploads are
-stored in Documents and Media, in an existing folder or in the user's default
-upload location.
+data record. Also has the ability to upload documents into the Document Library.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
@@ -126,10 +132,10 @@ Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
 tasks your friends and family can volunteer to do for you, use *Select*
 (obviously set to allow multiple options). Finally, you don't want to forget a
-*File Upload* so they can upload images of themselves. After all, how much more
-official-feeling and fun is it if you can print out some nifty badges? To add
-these fields, drag them from the palette on the left to the work area on the
-right. 
+*Documents and Media* so they can upload images of themselves. After all, how
+much more official-feeling and fun is it if you can print out some nifty badges?
+To add these fields, drag them from the palette on the left to the work area on
+the right.
 
 When creating data definitions, you can also customize the appearance of the
 input fields and provide helpful tips and hints for those entering data. Some
@@ -156,7 +162,7 @@ should give a more memorable name here.
 
 **Predefined Value:** If you would like example data or a default value for the
 user to start with, enter it here. The field's value defaults to this when
-adding a new entry (not available for File Upload).
+adding a new entry.
 
 **Tip:** Each field can have a small help icon, with a tooltip attached that
 displays helpful information. If you would like to provide text for the tooltip
@@ -170,12 +176,7 @@ add as many copies of this field as they like.
 
 **Width:** Sets the visual width of the form on the page. It does not affect the
 values that are stored. Possible values are *Small*, *Medium* and *Large* (not
-available for Boolean, Documents and Media, File Upload, Radio, and Select).
-
-**Allowed File Extensions:** By default, form validation accepts
-any file type to be submitted. Set this value to a comma-delimited list of
-extensions, including the character `.`, and Liferay checks the extension before
-the file can be uploaded (only available for File Upload).
+available for Boolean, Documents and Media, Radio, and Select).
 
 **Multiple:** When set to *Yes*, allows the user to select more than
 one option. This defaults to no (only available for Select).
@@ -183,9 +184,6 @@ one option. This defaults to no (only available for Select).
 **Options:** Changes the options available for selection. You're able to add and
 remove options as well as edit each individual option's display name and value
 (only available for Radio and Select).
-
-**Read Only:** When set to *Yes*, uploaded files are unable to be deleted or
-modified by the user (only available for File Upload).
 
 ![Figure 10.3: Data field properties.](../../images/05-data-definition-field-properties.png)
 
