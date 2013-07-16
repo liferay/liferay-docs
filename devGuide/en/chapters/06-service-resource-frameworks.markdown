@@ -954,7 +954,7 @@ portlet consists of four main steps:
 3.  Provide an interface for the user to configure permission. 
 
 4.  Implement code to check permission before returning resources or showing
-    custom features.  
+    custom features. 
 
 The two major resources are portlets and entities. Liferay does most of the work
 for you by providing a configuration file and a system of resources that let you

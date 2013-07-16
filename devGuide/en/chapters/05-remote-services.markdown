@@ -125,7 +125,7 @@ If the IP address of the machine on which the batch job is running is listed
 as an authorized host for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-![Figure 10.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
+![Figure 5.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
 ---
 
@@ -153,7 +153,7 @@ using a user ID of a member of this group (or the user ID of a user with
 individual rights to add documents to this folder). If you don't, Liferay denies
 you access to the Web Service. 
 
-![Figure 10.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
+![Figure 5.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
 With remote services, you can specify the user credentials using HTTP Basic
 authentication. Since those credentials are specified unencrypted; it's
@@ -316,7 +316,7 @@ For each client you create, you're prompted to enter the service definition
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 10.6: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 5.3: Service Definition](../../images/api-web-svc-wsdl.png)
 
 <!-- Again, too many screenshots. -Rich -->
 <!--Jim I removed three screenshots that were too close otgether to respond to
