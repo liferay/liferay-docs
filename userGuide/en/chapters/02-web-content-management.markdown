@@ -121,6 +121,30 @@ within the site to different members. This can be done through *site roles*
 which are defined equally for all sites or *teams* which are unique for each
 site.
 
+As of Liferay 6.2, site can be organized hierarchically, just like
+organizations. The difference between sites and organizations, of course, is
+that sites are used to organize pages, content, application data, and users (via
+site memberships) whereas organizations are only used to group users. Please
+refer to the Sites Admin Portlet section of Liferay's `portal.properties` file
+for a list of relevant configurable properties. For example, the
+`sites.content.sharing.with.children` property determines allows to disable
+content sharing between sites and subsites, disable it by default while allowing
+site administrators to enable it per site, or to enable it by default while
+allowing administrators to disable it per site.
+
+The Sites Directory portlet is a configurable portlet that can allow users to
+view a hierarchy of sites and subsites. It enables users to navigate to any of
+the displayed sites. To use this portlet to display site hierarchies, add it to
+a page, open its Configuration window, and under Display Style, select *List
+Hierarchy*. The Site Map portlet is another configurable portlet that's intended
+to help users navigate among pages within a site. When configuring this portlet,
+a site administrator can select a root page and a display depth. Just as sites
+can be organized hierarchically, so can the pages within a site. The display
+depth of the Site Map portlet determines how many levels of nested pages to
+display.
+
+![Figure 2.x: The Site Directory portlet can allow users to navigate between sites organized hierarchically. The Site Map portlet can allow users to navigate among pages of site organized hierarchically.](../../images/site-directory-site-map.png)
+
 Liferay's sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
 pages, only private pages or both. Private pages can only be accessed by site
@@ -130,28 +154,14 @@ the level of individual pages through the permission system. Public pages and
 private pages have different URLs and can have different content, applications,
 themes, and layouts.
 
-Building a corporate Intranet provides a typical use case for Liferay sites. A
-corporate Intranet could have sites for all the organizations in the company:
+Building a corporate intranet is a typical use case for Liferay sites. A
+corporate intranet could have sites for all the organizations in the company:
 Sales, Marketing, Information Technology, Human Resources and so on. But what
 about the corporate health and fitness center? That's something everybody in the
 company, regardless of organization, may want to join. This makes it a good
 candidate for an open and independent site. Similarly, the home page for a
 corporate intranet should probably be placed in an open independent site so any
 member of the portal can access it.
-
-For other kinds of web sites, you may want to use independent sites to bring
-people together who share a common interest. If you were building a photo
-sharing web site, you might have independent sites based on the types of photos
-people want to share. For example, those who enjoy taking pictures of landscapes
-could join a Landscapes site and those who enjoy taking pictures of sunsets
-could join a Sunsets site.
-
-Liferay always provides one default site, which is also known as the main site
-of the portal. This site does not have its own name but rather takes the name of
-the portal. By default the portal name is *liferay.com* but this value can be
-changed through the simple configuration of the setup wizard. The portal name
-can also be changed at any time through the Control Panel within *Portal
-Settings*.
 
 ---
 
@@ -164,6 +174,22 @@ Settings*.
  many different purposes besides communities.
 
 ---
+
+For other kinds of web sites, you may want to use independent sites to bring
+users together who share a common interest. If you were building a photo sharing
+web site, you might have independent sites based on the types of photos people
+want to share. For example, those who enjoy taking pictures of landscapes could
+join a Landscapes site and those who enjoy taking pictures of sunsets could join
+a Sunsets site.
+
+Liferay always provides one default site, which is also known as the main site
+of the portal. This site does not have its own name but rather takes the name of
+the portal. By default the portal name is *liferay.com* but this value can be
+changed through the simple configuration of the setup wizard. The portal name
+can also be changed at any time through the Control Panel within *Portal
+Settings*.
+
+### Creating and Managing Sites
 
 Sites can be created through the Control Panel by a portal administrator. To add
 a site, click on *Sites* under the Sites section of the Control Panel and then
@@ -178,7 +204,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
+![Figure 2.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -194,12 +220,18 @@ it manually by a site administrator.
 **Active:** determines whether a site is active or inactive. Inactive sites are
 inaccessible but can be activated whenever a site administrator wishes.
 
+**Parent Site:** lets you select a parent site for the site that's being
+created. As of Liferay 6.2, sites can be organized hierarchically. Using
+hierarchical sites provides a simplified way to manage site memberships and site
+content sharing. For organizations that have attached sites, the organization
+hierarchy should match the site hierarchy. 
+
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization, Advanced, and
 Miscellaneous.
 
-![Figure 3.12: On the right panel, you can customize a wide selection of site configuration options.](../../images/01-site-editor.png)
+![Figure 2.12: On the right panel, you can customize a wide selection of site configuration options.](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -1286,12 +1318,13 @@ detail in chapter 6.
 ## Summary  
 
 This chapter has provided an introduction to Liferay site management and web
-content management. We've seen how easy it is to create and manage sites and to
-create and manage pages within a site in Liferay. We've also seen how easy it is
-to create and edit web content using Liferay's rich WYSIWYG editor. This
-powerful tool enables users who don't have much experience with HTML and CSS to
-easily create and style web content of any type that you'd like to publish on
-the web. 
+content management. We've learned how you can use Liferay to create multiple
+sites with different membership types. We've seen how easy it is to create and
+manage sites and to create and manage pages within a site in Liferay. We've also
+seen how easy it is to create and edit web content using Liferay's rich WYSIWYG
+editor. This powerful tool enables users who don't have much experience with
+HTML and CSS to easily create and style web content of any type that you'd like
+to publish on the web. 
 
 Liferay WCM also includes a powerful workflow engine, allowing you to set up
 custom publishing rules to fit your organization. You can set up custom approval
