@@ -14,17 +14,11 @@ create and manage every aspect of Liferay's configuration.
 This chapter explains how to use the control panel to manage the following:
 
 - Users
-
 - Organizations
-
 - User Groups
-
 - Roles
-
 - Password Policies
-
 - Authentication Policies
-
 - Global User Settings
 
 Let's begin our examination of Liferay's control panel by looking at how to
@@ -699,6 +693,26 @@ browse the portal's entire list of users when assigning users to a user group.
 Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
+
+### Note about permissions for deleting containers 
+
+Liferay Portal contains many types of portal resources upon which permissions
+can be defined. These include both assets and asset containers. The term *asset*
+refers to any kind of content in Liferay such as a web content article, blog
+entry, wiki article, message board post, or Documents and Media document. Asset
+containers are portal resources used for grouping specific kinds of assets. For
+example, web content folders, wiki nodes, message board categories, and
+Documents and Media folders are asset containers.
+
+When configuring permissions for assets and asset containers, it's important to
+note that the permission to delete an asset container includes the permission to
+indirectly delete any assets in the container. This means that if a user has
+permission to delete an asset container, the user can delete all of the assets
+in that container even the user lacks permission to delete any of the assets in
+the container individually. Granting permission to delete a folder but not any
+of the contained assets is *not* a common use case. Nevertheless, it's important
+to note that assets in a container can be indirectly deleted if their asset
+container is deleted.
 
 ### Special note about the power users role [](id=lp-6-1-ugen15-special-note-about-the-power-users-role-0)
 
