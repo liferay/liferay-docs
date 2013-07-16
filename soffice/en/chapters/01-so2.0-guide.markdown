@@ -480,9 +480,14 @@ you need to manually revert the friendly URL of the Welcome page.
 
 ![Figure 1.9: After uninstalling Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page.](../../images/site_pages_welcome_sologin.png)
 
-Otherwise, the portal will always be looking for the `/so/login` page which no
-longer exists since the hook is gone. This will produce a number of errors in
-the log and once you log out, you won't be able to log in again.
+Also, you need to set the application adapter for the guest site to *none*
+instead of *so-hook*. You can access this option from the Site Settings page of
+the Control Panel.
+
+If you don't manually revert the friendly URL of the Welcome page and the
+application adapter of the guest site, the portal will look for the `/so/login`
+page which no longer exists since the hook is gone. This will produce a number
+of errors in the log and once you log out, you won't be able to log in again.
 
 Uninstalling Social Office reverts users' Profile and Dashboard pages to the
 default Liferay public and private pages and reverts Social Office sites to
