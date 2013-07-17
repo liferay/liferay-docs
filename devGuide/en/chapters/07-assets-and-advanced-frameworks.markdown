@@ -1,5 +1,7 @@
 
-# Liferay Frameworks 
+# Assets and Advanced Frameworks 
+
+<!--As with chapter 6, I renmaed the chapter based on its file name.-->
 
 Picture a hot, summer day. You're on vacation, and you're just coming back from
 the beach after a day of frolicking on the sand and in the water. After all that
@@ -38,8 +40,7 @@ Here's what we've got in store for you:
 
 - Using Message Bus
 
-Let's get started with a framework that nobody relishes having to write
-themselves: security. 
+Let's get started by looking at our Asset Framework. 
 
 <!-- I took out the Service Builder section as it is superceded by the work
 Jesse is doing. -Rich -->
@@ -120,6 +121,11 @@ We'll describe the first two briefly here before we dive in head first:
 authors to enter comments, tags and categories, as well as how to...I wasn't
 expecting a how to here and it doesn't work, does it? since it's originally
 saying taglibs provide widgets that allow...-->
+
+<!--Not to add to the confusion here, but in the wordsmithing it looks like
+something got messed up, or something was lost between the question of how a
+developer would leverage asset framework and the steps required to do so. -Russ
+--> 
 
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
@@ -794,7 +800,7 @@ making request to your portal and render content accordingly; so your grandma's
 gnarly tablet and your cousin's awesome new mobile phone can make requests to
 your portal and receive identical content. This will make everyone happy! 
 
-You're really getting the hang of Liferay's APIs. Way to go! 
+Next let's look at Message Bus, another of Liferay's APIs. 
 
 ## Using Message Bus 
 
@@ -1448,12 +1454,10 @@ Along the way you used Message Bus to implement the following:
 
 <!--Next we'll show you the Device Detection API and its capabilities. -->
 
-
-
 ## Summary 
 
 With Liferay's frameworks, implementing complex functionality in your custom
-portlets becomes easy. We covered security and permissions and the 
-Asset Framework. Make sure  you check back regularly to find more detailed
+portlets becomes easy. We covered the Asset Framework, Device Detection, and
+Message Bus. Make sure  you check back regularly to find more detailed
 descriptions of current frameworks and discover brand new frameworks that'll
 knock your socks off, or at least simplify your custom portlet development. 
