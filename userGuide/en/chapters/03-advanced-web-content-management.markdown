@@ -131,6 +131,15 @@ characteristics of the regular article and only add additional fields to the
 more in-depth article. When the in-depth article is configured, it will display
 its parent's fields in addition to its own fields.
 
+For Liferay 6.2, the WebDAV URL feature was introduced for web content
+structures and templates so users could upload and organize resources from both
+a web interface and the file explorer of their desktop operating system. With
+the WebDAV URL, site administrators are capable of adding, browsing, editing,
+and deleting structures and templates on a remote server. After you complete
+your structure, you can access the WebDAV URL by re-opening the structure or
+template and clicking the *Details* section. If you'd like the see WebDAV in
+action, visit the *Document Management* chapter's *WebDAV access* chapter.
+
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
 *View* mode is selected. Click the *Source* tab to switch to Source mode. This
@@ -438,6 +447,12 @@ so you're always adding content in the language you've chosen. Another cool
 feature for the template editor is the autocomplete feature. It can be invoked
 by typing *${* which opens a drop-down menu of available variables. By clicking
 one of the variables, the editor inserts the variable into the template editor.
+
+After you've saved you template, Liferay provides a WebDAV URL and static URL.
+These values access the XML source of your structure. You can find these URLs by
+returning to your template after it's been saved and expanding the *Details*
+section. For more information on WebDAV and the uses of the WebDAV URL,
+reference the *WebDAV access* section in the *Document Management* chapter.
 
 <!-- Will need to check if XSL or CSS is supported by template editor.
 Currently, XSL is only available for selecting a pre-made template from your
