@@ -298,7 +298,7 @@ tools for managing blog entries, your best bet is to use the Blogs portlet.
 Next, let's look at Liferay's improved Calendar portlet, released with Liferay
 6.2 and available from Liferay Marketplace.
 
-## Managing Events and Calendar Resources with Liferay's New Calendar Portlet 
+## Managing Events and Calendar Resources with Liferay's Calendar Portlet 
 
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
@@ -318,9 +318,9 @@ resources, and event invitations.
 that it's available from Marketplace. Briefly describe the differences between
 the CE and EE versions of the new Calendar portlet. -->
 
-### Configuring the new Calendar portlet 
+### Configuring the Calendar Portlet 
 
-Once you've added the new Calendar portlet to page, open its configuration
+Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
@@ -333,7 +333,7 @@ view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
 displayed. With the *24 Hour* time format, these times are displayed as 08:00
 and 21:00. *Default Duration* refers to event duration. When you add a new event
 to the calendar, the time you set here specifies how long events last by
-default.  You can set the *Default View* to *Day*, *Week*, or *Month*. You can
+default. You can set the *Default View* to *Day*, *Week*, or *Month*. You can
 set *Week Starts On* to *Sunday*, *Monday*, or *Saturday*. For *Time Zone*, you
 can either specify a particular time zone like *Pacific Standard Time* or *China
 Standard Time* or you can check the *Use Global Time Zone* box. If you check
@@ -359,7 +359,7 @@ that's used to send the automatic emails for event reminders and invitations.
 
 Next, let's look at how to use the new Calendar portlet.
 
-### Using the new Calendar portlet 
+### Using the Calendar Portlet 
 
 The first thing you'll notice about Liferay's new Calendar portlet is its
 revamped look and feel. There's a monthly mini-calendar which provides you with
@@ -429,12 +429,24 @@ Under *Calendar*, you can select the calendar to which you'd like to add your
 event. Remember that sites and users can have multiple calendars. Under
 *Description*, you can explain the purpose of your event and add any details
 that you think might be useful. Use the *Location* field to specify where your
-event takes place. The Reminders collapsible section lets you specify up to two
-times when event reminder notifications will be sent via email. For example, you
-might like event reminders to be send one day and one hour before your event.
-Email is currently the only supported event reminder type.
+event takes place.
 
 ![Figure 8.33: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
+
+The Reminders collapsible section lets you specify up to two
+times when event reminder notifications will be sent via email. For example, you
+might like event notifications to be send one day and one hour before your
+event. Email is currently the only supported event notification type.
+
+---
+
+ ![Tip](../../images/tip.png) Tip: The default time zone for users is UTC. It's
+ important to set users' time zones correctly so that event notification emails
+ are sent and received properly. If users' time zones don't match the portal's
+ time zone, the dates in the contents of the notification emails won't match the
+ dates of the events.
+
+---
 
 You can also invite users, organizations, or other calendar resources to your
 event. To invite a user, group, or resource, start typing the name of the entity
