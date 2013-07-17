@@ -292,6 +292,13 @@ your ADT through its *Actions* button. This provides several options:
 - *Copy*: creates a copy of the ADT.
 - *Delete*: deletes the ADT.
 
+In addition, your ADT generates a static URL and WebDAV URL. These values access
+the XML source of your template. You can find these URLs by clicking the ADT
+from the menu and expanding the *Details* section. With the WebDAV URL, site
+administrators are capable of adding, browsing, editing, and deleting ADTs on a
+remote server. If you'd like to learn more about what the WebDAV URL can do,
+visit the *Document Management* chapter's *WebDAV access* chapter.
+
 To enable your ADT for a portlet, navigate to the portlet you want to modify and
 open its *Configuration* menu. In the *Display Settings* sub-tab located within
 the *Setup* tab, select your ADT from the *Display Template* drop-down menu.
