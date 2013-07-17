@@ -1,4 +1,7 @@
-# Liferay APIs 
+# Service Resource Frameworks  
+
+<!--I realize the chapter title might not match the file name but I figured for
+now it's likely better than calling this chapter Liferay APIs-->
 
 An *Application Programing Interface* (API) is a protocol that, when invoked,
 performs an action or set of actions. You can invoke an API from your own code
@@ -35,11 +38,7 @@ This chapter covers the following topics:
 
 - Security and Permissions
 
-Before learning to invoke an API, you need to know where to find Liferay APIs. 
-
-<!--I know it's more than wordsmithing and formatting, but it seems important to
-elevate the Findining Services content since it's ncessary whether you'll
-invoke locally or remotely. Russ -->
+Let's take a look at the `ServiceContext` class. 
 
 ## Service Context 
 
@@ -314,7 +313,7 @@ set on the added blogs entry like this:
 You can see that the `ServiceContext` can be used to transfer lots of useful
 information for your services. 
 
-Let's look at Message Bus next. 
+Let's look at Liferay's permissions system next. 
 
 ## Security and Permissions 
 
@@ -964,14 +963,10 @@ You're now equipped to implement security in your custom Liferay portlets!
 
 Next, let's learn how to use the Asset Framework. 
 
-
-
 ## Summary  
 
-We've covered a lot of ground here. You've learned how to use Liferay's remote
-APIs, how to enable and disable remote services and access to them, and how to
-leverage `ServiceContext` objects in your use of Liferay services. You've
-really tested your neural net processor in working with Message Bus, and you've
-detected your grandma's tablet with Liferay's device detection API. Well done!
-Next we'll take a look at some of the powerful frameworks of Liferay Portal,
-learn how they work and how you can leverage them. 
+You've learned how to leverage `ServiceContext` objects in your use of Liferay
+services and how Liferay's permissions and JSR portal security work. 
+
+<!--This and other summaries from the reorganized chapters (and introductions
+for some) will need to be reworked after the reorg. is complete.-->
