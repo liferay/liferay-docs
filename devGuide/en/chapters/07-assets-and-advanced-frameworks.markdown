@@ -1,5 +1,8 @@
 
-# Liferay Frameworks 
+# Assets and advanced frameworks
+
+<!-- We'll rename this chapter eventually. Most of this content was from the
+former "Liferay APIs" and "Liferay Frameworks" chapters - Jim --> 
 
 Picture a hot, summer day. You're on vacation, and you're just coming back from
 the beach after a day of frolicking on the sand and in the water. After all that
