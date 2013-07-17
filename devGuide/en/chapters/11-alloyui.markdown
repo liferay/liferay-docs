@@ -26,7 +26,7 @@ incorporates Twitter Bootstrap to make styling components a snap.
 
 AlloyUI was built on YUI for several reasons. First, YUI facilitates building
 high quality production-level widgets quickly. YUI has a flexible, elegant
-architecture that easy to extend. It is useful in both small and large scale
+architecture that is easy to extend. It is useful in both small and large scale
 projects. Lastly, YUI is documented well at
 [http://yuilibrary.com/yui/docs/](http://yuilibrary.com/yui/docs/). As you use
 YUI through AlloyUI, you'll realize these benefits. 
@@ -43,27 +43,11 @@ don't have a benchmark to cite, we should remove this sidebar. As it is, we
 shouldn't have a sidebar in the introduction if we can help it. -Rich
 -->
  
-You can use jQuery in Liferay Portal, but we strongly recommend you use
-AlloyUI. AlloyUI is always loaded and available to you. If you use something
-else, your page must load your library and AlloyUI, which 
+You can use jQuery in Liferay Portal, but we strongly recommend you use AlloyUI.
+AlloyUI is always loaded and available to you. If you use something else, your
+page must load your library and AlloyUI, which slows down performance. 
 
 ---
-
-For consistent powerful styling, AlloyUI includes Twitter Bootstrap. If you've
-been working with AlloyUI, you're probably already leveraging the Sass extension
-to CSS. Great! Even though Twitter Bootstrap uses the Less extension, AlloyUI
-still uses Sass. Its framework leverages a 1-to-1 mapping of LESS to Sass so you
-can continue using Sass. How's that for convenience! 
-
-<!-- This paragraph is confusing. We already mentioned Twitter Bootstrap above.
-Then it's mentioned again here, so as a reader, I assume you're going to talk
-about it. Instead, you then say something about Sass, and then Less. If I don't
-know what those things are, it makes my head spin with a whole bunch of terms
-that haven't been defined, and that really aren't germane to introducing the
-technology we're trying to introduce. Developers don't need to know (yet) about
-SASS and Less. In fact, if we don't plan to cover issues around using them in
-this chapter, we shouldn't mention it at all. I recommend deleting the above
-paragraph. -Rich -->
 
 By reading this chapter and following along with its exercises, you'll learn
 what AlloyUI is and how to use it in Liferay Portal. For further details on the
@@ -71,11 +55,8 @@ AlloyUI project, tutorials, examples, and API documentation, be sure to visit
 [http://alloyui.com](http://alloyui.com). We'll show you around AlloyUI in this
 chapter by exploring the following topics: 
 
-- Traversing the DOM with AlloyUI
-- Using AlloyUI taglibs
-- AlloyUI's extensions to the YUI language
-- Styling your components with Twitter Bootstrap
-- Creating your own UI component modules
+- A simple AlloyUI example
+- Working with the AlloyUI project
 
 To start things off right, let's go over a simple example using AlloyUI.
 
@@ -121,13 +102,13 @@ HTML file.
 
         </html>
 
-2. Navigate to this HTML in your browser.
+2. Navigate to this HTML file in your browser.
 3. Click *Try me now!*
 
 The button transitions from its original width to 500 pixels, as specified in
 your script.
 
-<!-- TODO Add screenshot of demo -->
+![Figure 11.x: It's easy to set and reset dimensions of AlloyUI components, such as this `aui-btn` component. Clicking the *Try me now!* button on our page, triggers our function to expand the button's width to 500 pixels.](../../images/alloyui-simple-example-try-me.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
 displays a button using AlloyUI's `aui-btn` module.
@@ -150,6 +131,7 @@ YUI.
 
 Lastly, our script selects the first element of class `aui-btn` found on the
 page and sets a callback to change its width to 500 pixels when it is clicked.
+How's that for dynamic content!
 
 This script uses YUI and AlloyUI in what is commonly referred to as a "sandbox."
 Code is sandboxed when elements of the code are set off in their own namespaces.
@@ -157,9 +139,6 @@ Why do this? Because JavaScript, like many programming languages, has both a
 local and a global scope. Code placed in a JavaScript function is locally
 scoped, which means that nothing inside that function can be seen outside that
 function. Another way to describe this code is that it has been sandboxed. 
-
-<!-- I changed the above paragraph because when you're defining a term (such as
-the concept of sandboxing), you can't use the term in the definition. -Rich -->
 
 This reminds me of the countless hours I spent as a child using my die-cast
 metal toy tractor to plant imaginary crops in my toy sandbox. It was a wonderful
@@ -226,43 +205,10 @@ JSP looks like this:
 
 Voila! You're using AlloyUI in Liferay!
 
-You'll get plenty of practice using AlloyUI as you go through its fundamentals
-in this chapter. Next we'll give you a real workout by traversing a document
-object model (DOM).
+Let's go over setting up the AlloyUI project for creating your own AlloyUI
+components. 
 
-<!-- Add Section - Traversing the DOM with AlloyUI -->
-
-<!-- insert content -->
-
-<!--
-- Select Node based on element ID
-A.one('#someId')
-
-- Set Node's value
-shippingFirstnameNode.val(billingFirstnameNode.val() );
--->
-
-<!-- insert transition -->
-
-<!-- Add Section - Using AlloyUI taglibs -->
-
-<!-- insert content -->
-
-<!-- insert transition -->
-
-<!-- Add Section - Styling your components with Twitter Bootstrap -->
-
-<!-- insert content -->
-
-<!-- insert transition -->
-
-<!-- Add Section - Creating your own UI component modules -->
-
-<!-- Explain the benefits of building UI components in the AlloyUI project -->
-
-Before we create components, let's go over setting up the AlloyUI project. 
-
-### Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-en)
+## Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-en)
 
 Liferay Portal comes bundled with AlloyUI, as it's used throughout the portal
 and core portlets. Conveniently, you can use AlloyUI in any project--it doesn't
@@ -305,15 +251,18 @@ pre-built from the `.zip` file or cloned from the repository on Github,
 AlloyUI's modules are available in the `alloy-[version]/build/` folder. You can
 access these modules from your local web pages. 
 
+<!-- Consider adding back the following tip
+ ![tip](../../images/tip-pen-paper.png) **Tip:** You may find it
+ convenient to extract the AlloyUI installation into your web server installation, or
+ create symbolic links from your AlloyUI installation to your web server. 
+- Jim -->
+
 As you did in the initial example, the first thing you'll call is AlloyUI's
 `aui-min.js` seed file, in your `alloy-[version]/build/aui/` folder. For
 example, if your AlloyUI project root directory is
 `/home/joe.bloggs/alloy-2.0.0/`, you'll refer to the seed file like this: 
 
     <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
-
-<!-- Note that the above call doesn't use a web server; it's using the local
-file system. -Rich --> 
 
 Now that you've specified your local seed file, you can use AlloyUI throughout
 your web page. 
@@ -340,21 +289,34 @@ go directly to the project. -Rich
 Before we go on to creating your own AlloyUI components, let's build AlloyUI. If
 you are not interested, feel free to skip these build instructions. 
 
-As we mentioned earlier, the AlloyUI project repository is available at
-[https://github.com/liferay/alloy-ui](https://github.com/liferay/alloy-ui).
-You can fork the repository and clone it to your local machine. 
+If you've cloned the `alloy-ui` project repository, make sure to check out
+its`2.0.x` branch. Liferay Portal 6.2 requires AlloyUI 2.0. 
 
-<!-- We should mention the URLs only once, and in the appropriate place. -Rich
--->
-
-AlloyUI uses Yogi Alloy
+AlloyUI 2.0 uses Yogi Alloy
 ([https://github.com/liferay/yogi-alloy](https://github.com/liferay/yogi-alloy))
 to build its modules. For instructions on installing Yogi Alloy and its
 dependencies, follow the instructions in Yogi Alloy's `README.md` file at
 [https://github.com/liferay/yogi-alloy/blob/master/README.md](https://github.com/liferay/yogi-alloy/blob/master/README.md).
 
-<!-- If we need Yogi Alloy to build AlloyUI, we should document how to install
-and use it here. -Rich -->
+Yogi Alloy depends on the following:
+- [Node.js](nodejs.org) v0.8 Node.js is platform for building applications. Yogi
+Alloy requires Node.js version 0.8.
+- [Compass](http://compass-style.org) is an open-source CSS authoring framework.
+
+Node.js version 0.9 is available at [http://nodejs.org/dist/v0.8.2/](http://nodejs.org/dist/v0.8.2/).
+
+On Windows you can download the `.msi` installation file and run it.
+
+On Linux, MacOS, or UNIX, you can download the `.tar.gz` file, unzip it, and
+un-tar it. Then follow the instructions in its `README.md` file to build it. 
+
+To install Compass, follow its installation instructions at
+[http://compass-style.org/install/](http://compass-style.org/install/).
+
+Now that you've installed Yogi Alloy's dependencies, you can use the Node.js
+package manager (`npm`) to install Yogi Alloy. Execute the following command:  
+
+    npm -g install yogi yogi-alloy yuidocjs docpad shifter
 
 To build the AlloyUI project and its dependencies, execute: 
 
@@ -367,9 +329,20 @@ done.`
 Congratulations on building AlloyUI! Now it's time to create your own UI
 components in AlloyUI. 
 
-<!-- Add Section - Creating components is easy with AlloyUI -->
+## Summary
 
-<!-- Explain how to create components and modules in AlloyUI -->
+In this chapter, we've only scratched the surface of showing you what AlloyUI
+has to offer you in designing user interfaces in Liferay. We've introduced you
+to AlloyUI to show you what it is and to explain how it integrates so well with
+Liferay. We've provided a simple example that demonstrates using AlloyUI
+components and we've shown you how to set up the AlloyUI project environment so
+that you can build your own AlloyUI components. You should visit AlloyUI's
+official website, [http://alloyui.com/](http://alloyui.com/), regularly to get
+the latest information on the AlloyUI framework. But, we'll continue to add
+examples to this chapter to demonstrate more ways you can use AlloyUI in your
+portal. So, make sure to periodically check back with this guide. 
 
-<!-- Add Summary -->
+Now that you know how to use AlloyUI components to build snazzy UIs, why not
+boost your portal's social appeal with OpenSocial gadgets? In the next chapter,
+we'll show you how to incorporate OpenSocial gadgets in your portal. 
 
