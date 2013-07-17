@@ -694,6 +694,25 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
+### Permission for Delegating Social Activities Configuration
+
+Liferay 6.2 added a new permission that allows site administrators to delegate
+responsibility for configuring social activities to other users. To assign this
+permission to a role, first navigate to the Control Panel and click on *Roles*.
+If you'd like to add a new role, do so. Then click *Actions* next to the role
+to which you'd like to add social activities configuration permissions and
+select *Define Permissions*. Next, expand the *Site Administration* section,
+then the *Configuration* section, and then click on *Social Activity*. Flag all
+of the permissions and then click *Save*:
+
+- Access in Site Administration
+- Configuration
+- Permissions
+- View
+
+Once these permissions have been assigned to the chosen role, any users assigned
+to the role will be able to manage your site's Social Activities configuration.
+
 ### Note About Permissions for Deleting Containers 
 
 Liferay Portal contains many types of portal resources upon which permissions
