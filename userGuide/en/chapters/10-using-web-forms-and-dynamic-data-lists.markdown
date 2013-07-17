@@ -211,7 +211,9 @@ parent's fields in addition to its own fields.
 
 After you've saved your data definition, Liferay provides a WebDAV URL and a
 static URL. These values access the XML source of your data definition. To
-obtain these values, return to your data definition after it has been saved.
+obtain these values, return to your data definition after it has been saved. To
+learn more about WebDAV or if you'd like to see WebDAV in action, visit the
+*Document Management* chapter's *WebDAV access* chapter.
 
 That really covers the basic tools that users of `list.it` need to get rolling
 with an unlimited array of custom types. Plus, you can always come back and
