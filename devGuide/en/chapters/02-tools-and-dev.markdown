@@ -16,8 +16,12 @@ Portal, then  we'll look at developing your plugins with other tools. Here are
 the topics we'll cover along the way: 
 
 - Liferay IDE 
+
 - The Plugins SDK 
-- Maven 
+
+- Developing PLugins using Maven 
+
+- Liferay's Deprecation Policy 
 
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
