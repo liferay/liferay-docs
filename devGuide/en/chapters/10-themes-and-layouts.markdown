@@ -1,4 +1,6 @@
-# Creating Liferay Themes 
+# Creating Liferay Themes and Layout Templates
+
+## Creating Liferay Themes 
 
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Themes are hot deployable plugins unique to a site served by
@@ -45,7 +47,7 @@ line or the Liferay IDE.
 
 Let's create a theme! 
 
-## Creating a Theme 
+### Creating a Theme 
 
 The theme creation process is nearly identical to the portlet creation process
 that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
@@ -88,7 +90,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-### Setting a base Theme 
+#### Setting a base Theme 
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -106,7 +108,7 @@ To specify a base theme, edit the `build.xml` file for your theme and change
 existing theme that's installed or in your Plugins SDK. Now that your base theme
 is set, let's deploy the theme to your portal instance.
 
-### Deploying the Theme 
+#### Deploying the Theme 
 
 If you're already familiar with portlet deployment from reading Chapter 3, theme
 deployment will be a piece of cake! You can deploy your theme in Developer
@@ -144,7 +146,7 @@ Let's apply your theme to a page:
 
 Now that you've built and deployed a theme, let's study theme anatomy.
 
-## Anatomy of a Theme 
+### Anatomy of a Theme 
 
 Custom themes are created by layering your customizations on top of one of
 Liferay's built-in themes. 
@@ -223,7 +225,7 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-## Developer Mode
+### Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
@@ -290,7 +292,7 @@ when you redeploy your theme.
 
 Let's add a thumbnail image for our theme now. 
 
-## Thumbnails 
+### Thumbnails 
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
@@ -308,7 +310,7 @@ there, along with the *Classic* theme's thumbnail.
  
 Let's talk about Liferay's JavaScript library next. 
 
-## JavaScript
+### JavaScript
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
@@ -328,7 +330,7 @@ callbacks:
 
 Now let's make your theme configurable by defining settings. 
 
-## Settings 
+### Settings 
 
 You can define settings to make your theme configurable. Create a file named
 `liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
@@ -454,7 +456,7 @@ footer, including the slogan.
 
 Next, let's customize your theme's color scheme. 
 
-## Color Schemes 
+### Color Schemes 
 
 Specify color schemes with a CSS class name, which of course also lets you
 choose different background images, different border colors, and more. 
@@ -508,7 +510,7 @@ section above.
 
 Let's review the predefined settings available for your theme. 
 
-## Portal Predefined Settings 
+### Portal Predefined Settings 
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
@@ -527,7 +529,7 @@ file.
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 
 
-### Portlet Borders
+#### Portlet Borders
 
 The theme turns on portlet borders, by default. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false` in your theme's
@@ -549,7 +551,7 @@ the borders as the default:
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
-### Bullet Styles
+#### Bullet Styles
 
 Liferay's Navigation portlet can be configured to use any bullet styles
 inherited by your theme or implementated in your theme. For example, if your
@@ -594,7 +596,7 @@ Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want it. Next, let's take a look at how to
 configure display your site's name. 
 
-### Site Names 
+#### Site Names 
 
 The site name settings let site administrators decide whether to display a
 site's name (i.e., title). But, if you are using using logo, that mentions your
@@ -636,7 +638,7 @@ display from the each site's *Look and Feel* control page.
 
 Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
 
-## Theme inheritance 
+### Theme inheritance 
 
 By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
@@ -659,7 +661,7 @@ flexibility Liferay offers.
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
 
-## Importing resources with your themes
+### Importing resources with your themes
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -1068,7 +1070,7 @@ please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
 
-# Creating Liferay Layout Templates 
+## Creating Liferay Layout Templates 
 
 By now, you've likely added portlets to a page by dragging them from the *Add*
 menu and dropping them into place. Are there times, though, when you find
@@ -1091,7 +1093,7 @@ templates:
 
 Let's create a custom layout template!
 
-## Creating a Layout Template 
+### Creating a Layout Template 
 
 With the Plugins SDK you can deploy layout templates as plugins, and creating
 layout templates with Liferay Developer Studio is easier than ever. Let's call
@@ -1129,7 +1131,7 @@ the *create* script, followed by operating system-specific commands:
 Developer Studio's *New Project* wizard and the *create* scripts in terminal
 generate layout template projects in your Plugin SDK's `layouttpl` folder. 
 
-## Anatomy of a Layout Template Project 
+### Anatomy of a Layout Template Project 
 
 Let's look at the directory structure of a layout template project and learn
 about its various files:  
@@ -1153,7 +1155,7 @@ and `.wap.tpl` file for each layout template in the `docroot/` folder. The
 Now that you're well-versed on the anatomy of a layout template, let's begin
 exploring layout template files. 
 
-### Layout template files 
+#### Layout template files 
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each of the template files does: 
@@ -1171,7 +1173,7 @@ Let's see what each of the template files does:
 
 Let's move on to Liferay configuration files.
 
-### Liferay configuration files 
+#### Liferay configuration files 
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -1184,7 +1186,7 @@ has two Liferay configuration files:
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
 
-### Deploying Layout Templates 
+#### Deploying Layout Templates 
 
 If you've ever deployed a theme or portlet, you already know how to deploy
 layout templates! Use Developer Studio or the terminal to deploy your layout
@@ -1210,7 +1212,7 @@ Wait a minute! We can deploy the template, but we still haven't designed it.
 We'll need to add content to the TPL files that were generated when we created
 our layout template. 
 
-## Designing a layout template 
+### Designing a layout template 
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
@@ -1266,7 +1268,7 @@ arranged and sized evenly.
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
 
-## Embedding portlets in a layout template 
+### Embedding portlets in a layout template 
 
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting
@@ -1361,7 +1363,7 @@ See how simple it is to embed portlets in your pages?
 Wouldn't it be nice to have an organized reference of available layout template
 variables? You're in luck! We'll dive into available variables next!
 
-## Available variables 
+### Available variables 
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
