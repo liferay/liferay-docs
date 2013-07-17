@@ -14,23 +14,17 @@ create and manage every aspect of Liferay's configuration.
 This chapter explains how to use the control panel to manage the following:
 
 - Users
-
 - Organizations
-
 - User Groups
-
 - Roles
-
 - Password Policies
-
 - Authentication Policies
-
 - Global User Settings
 
 Let's begin our examination of Liferay's control panel by looking at how to
 manage users in Liferay Portal.
 
-## The Portal section of the control panel
+## The Portal Section of the Control Panel
 
 The Portal section of the control panel is used for most administrative tasks.
 You'll find there an interface for the creation and maintenance of the following
@@ -55,7 +49,7 @@ only users with the administrator role, which is a portal scoped role, have
 permission to view this section of the control panel. You can, of course, grant
 permissions to one or more sections to custom roles.
 
-## Adding users  
+## Adding Users  
 
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the
@@ -100,7 +94,7 @@ the portal. Log out of the portal and then log back in with your own user ID.
 
 We'll next look at some aspects of user management. 
 
-## User management  
+## User Management  
 
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
@@ -315,7 +309,7 @@ can be assigned to organizations when they fit into a hierarchical structure.
 Users groups provide a more ad hoc way to group users than sites and
 organizations. Let's look at them next.
 
-## User groups  
+## User Groups  
 
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create
@@ -392,7 +386,7 @@ group's Actions menu. Clicking one of these links opens the user group's site in
 a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
-### Creating and editing a user group  
+### Creating and Editing a User Group  
 
 A user group's site can be administered from the control panel. Select *User
 Groups* from the control panel to see a list of existing user groups. To edit a
@@ -411,7 +405,7 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-### Assigning members to a user group  
+### Assigning Members to a User Group  
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the control panel and click *Actions*
@@ -437,7 +431,7 @@ assigning a role to users from the roles management UI.
 The next section describes a more advanced usage of user groups: User Group
 Sites.
 
-### User group sites  
+### User Group Sites  
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their
@@ -537,7 +531,7 @@ group. You will see how all of the pages in the user group appear as part of the
 user site, including the ones copied from the site template and the ones added
 afterwards.
 
-## Roles and permissions  
+## Roles and Permissions  
 
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to
@@ -604,7 +598,7 @@ role.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-### Defining permissions on a role  
+### Defining Permissions on a Role  
 
 Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
@@ -658,7 +652,7 @@ The list of permissions that you can define for a role may seem overwhelming.
 However, these permissions ensure that you can customize exactly which areas of
 your portal you'd like different collections of users to be able to access.
 Sometimes you might find that a certain permission grants more or less access
-than what you expected--always test the permissions yourself! 
+than what you expected--always test your permissions configurations! 
 
 For example, suppose that you created a role called User Group Manager. You'd
 like to define the permissions for the User Group Manager role so that users
@@ -700,7 +694,27 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-### Special note about the power users role  
+### Note About Permissions for Deleting Containers 
+
+Liferay Portal contains many types of portal resources upon which permissions
+can be defined. These include both assets and asset containers. The term *asset*
+refers to any kind of content in Liferay such as a web content article, blog
+entry, wiki article, message board post, or Documents and Media document. Asset
+containers are portal resources used for grouping specific kinds of assets. For
+example, web content folders, wiki nodes, message board categories, and
+Documents and Media folders are asset containers.
+
+When configuring permissions for assets and asset containers, it's important to
+note that the permission to delete an asset container includes the permission to
+indirectly delete any assets in the container. This means that if a user has
+permission to delete an asset container, the user can delete all of the assets
+in that container even the user lacks permission to delete any of the assets in
+the container individually. Granting permission to delete a folder but not any
+of the contained assets is *not* a common use case. Nevertheless, it's important
+to note that assets in a container can be indirectly deleted if their asset
+container is deleted.
+
+### Note About the Power Users Role  
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -711,14 +725,14 @@ permissions for the role.
 
 ---
 
-![tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users
-and Users did *not* have the same default permissions. So if are using Liferay
-5.2 or a previous version, it's dangerous to remove the Power Users role from
-the default user associations: this could remove certain permissions you expect
-to apply to all users. If you decide to remove the Power Users role from the
-default user associations anyway, you will probably want to modify the
-permissions on certain portlets to make them accessible to all users. To do
-this, see the section on Plugins Configuration below.
+ ![Tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users
+ and Users did *not* have the same default permissions. So if are using Liferay
+ 5.2 or a previous version, it's dangerous to remove the Power Users role from
+ the default user associations: this could remove certain permissions you expect
+ to apply to all users. If you decide to remove the Power Users role from the
+ default user associations anyway, you will probably want to modify the
+ permissions on certain portlets to make them accessible to all users. To do
+ this, see the section on Plugins Configuration below.
 
 ---
 
@@ -726,7 +740,7 @@ Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal
 settings you can configure.
 
-## Managing portal settings  
+## Managing Portal Settings  
 
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
@@ -745,7 +759,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-### Password policies  
+### Password Policies  
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration and more.
@@ -812,7 +826,7 @@ policy. You cannot delete the default policy.
 
 Next, let's examine Liferay's Portal Settings.
 
-### Portal settings  
+### Portal Settings  
 
 Most global portal settings can be configured from the Portal Settings section
 of the control panel. The Configuration heading contains the following links:
@@ -917,7 +931,7 @@ email address is an important default for the following reasons:
 
 We'll examine how to set up LDAP authentication next.
 
-## Integrating Liferay users into your enterprise  
+## Integrating Liferay Users into your Enterprise  
 
 ### LDAP  
 
@@ -991,7 +1005,7 @@ for setting this. See below for instructions describing how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-#### Adding LDAP servers  
+#### Adding LDAP Servers  
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
 If you have more than one, you can arrange the servers by order of preference
@@ -1155,7 +1169,7 @@ Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-#### LDAP options not available in the GUI  
+#### LDAP Options Not Available in the GUI  
 
 Although most of the LDAP configuration can be done from the control panel,
 there are several configuration parameters that are only available by editing
