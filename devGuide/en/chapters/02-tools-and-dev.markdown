@@ -19,7 +19,7 @@ the topics we'll cover along the way:
 
 - The Plugins SDK 
 
-- Developing PLugins using Maven 
+- Developing Plugins using Maven 
 
 - Liferay's Deprecation Policy 
 
@@ -111,12 +111,14 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 4.  In the *Work with* field, enter the update site URL for your Eclipse release
     and press *Enter*. Your update site URL is one of the following: 
 
-    - Eclipse Juno Update Site: 
-      [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-    - Eclipse Indigo Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-    - Eclipse Helios Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    Eclipse Juno Update Site: 
+    [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
+
+    Eclipse Indigo Update Site:
+    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
+
+    Eclipse Helios Update Site:
+    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
@@ -1282,10 +1284,13 @@ To create a repository using Nexus, follow these steps:
     so specify *Release* as the repository policy. Below are examples of
     repository property values: 
 
-    - *Repository ID:* `liferay-releases`
-    - *Repository Name:* `Liferay Release Repository`
-    - *Provider:* `Maven2`
-    - *Repository Policy:* `Release`
+    *Repository ID:* `liferay-releases`
+
+    *Repository Name:* `Liferay Release Repository`
+
+    *Provider:* `Maven2`
+
+    *Repository Policy:* `Release`
 
 4.  Click *Save*.
 
@@ -1306,10 +1311,13 @@ know. -->
 
 3.  Specify repository properties like the following:
 
-    - *Repository ID:* `liferay-snapshots`
-    - *Repository Name:* `Liferay Snapshot Repository`
-    - *Provider:* `Maven2`
-    - *Repository Policy:* `Snapshot`
+    *Repository ID:* `liferay-snapshots`
+
+    *Repository Name:* `Liferay Snapshot Repository`
+
+    *Provider:* `Maven2`
+
+    *Repository Policy:* `Snapshot`
 
 4.  Click *Save*.
 
