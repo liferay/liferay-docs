@@ -10,7 +10,7 @@ text editors like Notepad, Vim, or Emacs. You can write your persistence layer
 directly using SQL and JDBC, or use advanced object-relational mapping
 libraries like Hibernate or iBatis. You get the idea. 
 
-In this chaper we'll introduce and show you how to set up a streamlined
+In this chapter we'll introduce and show you how to set up a streamlined
 development environment specifically designed for developing your Liferay
 Portal, then  we'll look at developing your plugins with other tools. Here are
 the topics we'll cover along the way: 
@@ -2492,6 +2492,11 @@ Maven, "Probably."
 
 <!-- I'm not sure this Maven conclusion works stuck in here and I'm not sure
 what to do with it.  -->
+
+No matter which tool you use to develop your custom plugins, you'll need to
+understand Liferay's deprecation policy. That way you'll know when methods from
+our API's are deprecated, and you can make any necessary changes. We'll
+describe the deprecation policy next. 
 
 ## Liferay's Deprecation Policy
 
