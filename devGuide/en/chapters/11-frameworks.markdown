@@ -119,7 +119,7 @@ generated for these attributes.
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** We recommend you always add two
+![tip](../../images/tip-pen-paper.png) **Tip:** We recommend you always add two
 `long` fields called *groupId* and *companyId* to your data models. They let
 your portlet support the multi-tenancy features of Liferay so that each
 organization (for each portal instance) can have its own data. 
@@ -134,7 +134,7 @@ Now let's use our `service.xml` to build a service. You can use Liferay
 Developer Studio or your terminal to build your sevice layer. FIrst let's do it
 using Developer Studio. 
 
-#### Using Developer Studio to Generate a Service 
+#### Using Developer Studio to Generate a Service  [](id=liferay-portal-6-1-en-using-developer-studio-to-generate-a-service)
 
 From the *Package Explorer*, open your `service.xml` file; it should be in your
 `my-greeting-portlet/docroot/WEB-INF` folder. By default, the file opens up in
@@ -166,7 +166,7 @@ interfaces and classes for your database persistence and service layers.
 
 Next let's generate a service from the terminal. 
 
-#### Using the Terminal to Generate a Service 
+#### Using the Terminal to Generate a Service  [](id=liferay-portal-6-1-en-using-the-terminal-to-generate-a-service)
 
 To generate a service in your terminal window, navigate to your
 `portlets/my-greeting-portlet` directory and enter this command: 
@@ -179,7 +179,7 @@ generated.
 
 Next let's look at the files generated when we built the service.
 
-#### Generated files 
+#### Generated files  [](id=lp-6-1-dgen11-generated-files--0)
 
 Whenever you build a service, there are a number of files automatically
 generated for you. Let's look at them briefly: 
@@ -395,7 +395,7 @@ are from different portlets (e.g. portlets from different developers).
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Each role named in a portlet's
+![note](../../images/tip-pen-paper.png) **Note:** Each role named in a portlet's
 `<security-role-ref>` element is given permission to add the portlet to a page. 
 
 ---
@@ -1672,7 +1672,7 @@ extended information on each of these frameworks.
 <!-- The above section should also be removed. All of these are implemented and
 documented in *Liferay in Action*. -Rich -->
 
-## Summary 
+## Summary  [](id=lp-6-1-dgen11-summary--0)
 
 With Liferay's frameworks, implementing complex functionality in your custom
 portlets becomes easy. We covered security and permissions and the 
