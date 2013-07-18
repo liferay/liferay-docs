@@ -28,6 +28,8 @@ doesn't make you have to write yourself.
 
 Here's what we've got in store for you: 
 
+- Service Builder
+
 - Security and Permissions 
 
 - Asset Framework 
