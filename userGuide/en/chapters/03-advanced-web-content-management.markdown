@@ -316,9 +316,12 @@ is generated consistently by the template when structured content is displayed.
 In essence, templates are scripts that tell Liferay how to display content in
 the structure. Any changes to the structure require corresponding changes to the
 template, because new or deleted fields produce errors on the page. If users
-enter content into a structure, it *must* have a matching template. Without a
-template, the portal has no idea how to display content which has been created
-using a custom structure.
+enter content into a structure, it *must* have a matching template. However, you
+have options for whether you want your template to be permanently linked to your
+structure. Generic templates are templates that are not tied to a structure,
+which allows for reusable code that can be imported into other templates.
+Without a template, the portal has no idea how to display content which has been
+created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
@@ -430,6 +433,24 @@ When this template is rendered, it looks something like this:
 
 ![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
 
+New for Liferay 6.2 is the ability to create generic templates that aren't
+connected to a specific structure. In previous versions of Liferay, each
+template had to be associated with a structure. Now, you have options for
+whether to permanently assign a template to a structure or create a generic
+template and reuse its code for any structure. In other words, generic templates
+can be embedded in other templates, which allows for reusable code, JS library
+imports, or macros which will be imported by Velocity or FreeMarker templates in
+the system.
+
+Suppose you have three different Nosester web content articles and structures
+with similar aesthetics. Instead of creating three different templates from
+scratch, you can use the same generic template for all three and build off of
+it. This creates a smarter and more efficient process when creating a multitude
+of similar web content articles. Generic templates are created the same way as
+regular, structure-based templates. The only setting that differs is the
+*Structure* option, which you'll need to leave blank to create a generic
+template.
+
 For cases where you're creating your template within Liferay, you can use the
 template editor. On the left side of the template editor, you'll notice a
 palette of common variables used for making web content templates. This is a
@@ -448,15 +469,11 @@ feature for the template editor is the autocomplete feature. It can be invoked
 by typing *${* which opens a drop-down menu of available variables. By clicking
 one of the variables, the editor inserts the variable into the template editor.
 
-After you've saved you template, Liferay provides a WebDAV URL and static URL.
+After you've saved your template, Liferay provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
 reference the *WebDAV access* section in the *Document Management* chapter.
-
-<!-- Will need to check if XSL or CSS is supported by template editor.
-Currently, XSL is only available for selecting a pre-made template from your
-local machine. CSS is currently not supported at all. -->
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
