@@ -1043,21 +1043,17 @@ Replace the contents of your `EventListingPortlet.java` file with the following:
 
     }
 
-<!-- Remove eventFromRequest method reference in following paragraph. -Jim -->
-
 Your Event Listing portlet's `addEvent`, `updateEvent`, and `deleteEvent`
-methods now call the appropriate methods of `EventLocalServiceUtil`. <!-- The
-`eventFromRequest` method is a convenience method that returns an event from a
-portlet request, e.g., from the HTML form fields of the `edit_event.jsp`
-page.--> The getter methods of Liferay's ParamUtil class such as `getLong` and
-`getString` return default values like `0` or `""` if the specified request
-parameter is not available from the portlet request. When adding a new event,
-for example, no event ID is available so `ParamUtil.getLong("request",
-"eventId")` returns `0`. The Event portlet's `addEvent` method calls
-`EventLocalServiceUtil`'s `addEvent` method. The event ID for the new event is
-generated at the service layer in the `addEvent` method that we added to the
-`EventLocalServiceImpl` class. The `EventLocalServiceUtil` generated for us by
-Service Builder contains various CRUD methods including the following:
+methods now call the appropriate methods of `EventLocalServiceUtil`. The getter
+methods of Liferay's ParamUtil class such as `getLong` and `getString` return
+default values like `0` or `""` if the specified request parameter is not
+available from the portlet request. When adding a new event, for example, no
+event ID is available so `ParamUtil.getLong("request", "eventId")` returns `0`.
+The Event portlet's `addEvent` method calls `EventLocalServiceUtil`'s `addEvent`
+method. The event ID for the new event is generated at the service layer in the
+`addEvent` method that we added to the `EventLocalServiceImpl` class. The
+`EventLocalServiceUtil` generated for us by Service Builder contains various
+CRUD methods including the following:
 
 - `createEvent`
 - `addEvent`
