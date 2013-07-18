@@ -57,7 +57,7 @@ Before learning to invoke an API, you need to know where to find Liferay APIs.
 elevate the Findining Services content since it's ncessary whether you'll
 invoke locally or remotely. Russ -->
 
-## Finding Services 
+## Finding Services  [](id=liferay-portal-6-1-dev-guide-10-en-finding-services)
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
@@ -65,7 +65,7 @@ Below we'll show you how to search for portal services and portlet services.
 
 Let's start by finding a portal service. 
 
-### Finding Portal Services
+### Finding Portal Services [](id=liferay-portal-6-1-dev-guide-10-en-finding-portal-services)
 
 Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 
@@ -83,7 +83,7 @@ the *Organization* services:
 
 That was easy! What if you want to find portlet services? 
 
-### Finding Portlet Services
+### Finding Portlet Services [](id=liferay-portal-6-1-dev-guide-10-en-finding-portlet-services)
 
 Searching for one of Liferay's built-in portlet services is also easy. Instead
 of clicking the link for the service package of the *portal*, click the link for
@@ -403,7 +403,7 @@ For each client you create, you're prompted to enter the service definition
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 10.6: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 10.3: Service Definition](../../images/api-web-svc-wsdl.png)
 
 <!-- Again, too many screenshots. -Rich -->
 <!--Jim I removed three screenshots that were too close otgether to respond to
@@ -974,7 +974,7 @@ methods. We'll show you how next.
 <!--This needed a transition, and I got tired of saying, "next let's...". Check
 for acuracy. -Russ-->
 
-#### Disabling HTTP methods [](id=lp-6-1-dgen08-strict-http-methods-0)
+#### Disabling HTTP methods [](id=lp-6-1-dgen08-disabling-http-methods-0)
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, you can set the portal JSON
@@ -1906,7 +1906,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 10.7: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 10.4: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -2018,7 +2018,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 10.8: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 10.5: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2291,7 +2291,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
 
-![Figure 10.9: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 10.6: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -2468,7 +2468,7 @@ there's no need for the company-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 10.10: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 10.7: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a parallel destination type in our `messaging-spring.xml`:
 
