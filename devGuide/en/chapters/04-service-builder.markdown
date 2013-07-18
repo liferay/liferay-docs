@@ -1093,6 +1093,8 @@ via dependency injection. So all the methods of `EventLocalServiceUtil`
 internally call corresponding methods of `EventLocalServiceImpl` at runtime to
 perform CRUD operations.
 
+<!-- Consider removing this or moving it. - Jim
+
 ## Invoking the API Locally 
 
 Each service provides a local interface to clients running in the same JVM as
@@ -1128,12 +1130,14 @@ remote variant of the API, even from a local context.
 
 ---
 
+-->
+
 <!-- I don't believe the above tip is true anymore. If the -ServiceUtil class
 uses the filterFindBy implementation, permission checks are performed. -Rich --> 
 
-Next, find out how you can invoke Liferay's service APIs remotely. 
-
-
+<!--
+Next, find out how you can invoke Liferay's service APIs remotely.
+-->
 
 ## Writing the Remote Service Class
 
