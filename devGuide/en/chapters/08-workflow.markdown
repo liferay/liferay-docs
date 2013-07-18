@@ -1,4 +1,4 @@
-# Liferay IDE and Liferay Developer Studio
+# Designing Workflows with Kaleo Designer for Java 
 
 If you've been writing software for a while, you probably have a set of tools
 that you regularly use. This set of tools has been carefully collected over the
