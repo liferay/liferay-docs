@@ -19,7 +19,7 @@ the topics we'll cover along the way:
 
 - The Plugins SDK 
 
-- Developing Plugins using Maven 
+- Developing PLugins using Maven 
 
 - Liferay's Deprecation Policy 
 
@@ -1088,8 +1088,6 @@ The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
 an internal Intranet using Liferay with some custom portlets, you can keep those
 portlets and themes in their own Plugins SDK project in your source code
-repository. If you also have an external instance of Liferay for your public
-Internet web site, you can have a separate Plugins SDK that also has those
 projects. Or, you can further separate your projects by having a different
 Plugins SDK project for each portlet or theme project. 
 
@@ -1172,6 +1170,8 @@ Maven features:
 Maven's core installation is lightweight; there are core plugins for compiling
 source code and creating distributions, and there is an abundance of non-core
 plugins, letting you extend Maven easily for your customizations. 
+
+Many developers are switching from Ant to Maven because it offers a common
 
 Many developers are switching from Ant to Maven because it offers a common
 interface for project builds. Maven's universal directory structure makes it
@@ -2539,14 +2539,6 @@ development haven't been deprecated.
 <!--I updated it based on the user guide. Please review -Russ -->
 
 ## Summary
-
-Now you know all about two Liferay-specific development tools. Our Eclipse
-based Liferay IDE is more robust and complete, so your development process is
-as straightforward as can be. If you don't want to use Eclipse, you can still
-leverage some of the same functionality by using the Plugins SDK to develop in
-Liferay. Over the next several chapters we'll apply the knowledge you learned
-here to developing various plugins using Liferay IDE and the PLugins SDK,
-starting with custom portlets! 
 
 You also learned all about developing Liferay plugins with the Maven build
 framework. You configured Maven locally, downloaded and installed the required
