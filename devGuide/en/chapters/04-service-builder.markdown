@@ -1211,25 +1211,7 @@ services in the next section; it's much more efficient to pass an event ID as a
 parameter over web services than to pass an entire event object.
 
 After you finish adding imports to `EventServiceImpl`, save the class, and run
-Service Builder again.
-
-In addition to updating the Java classes and interfaces,
-Service Builder updates the your project's `/docroot/js/service.js` file so your
-custom services can be registered with Liferay. This allows them to be called by custom taglibs and be made available as JSON web services:
-
-    Liferay.Service.register("Liferay.Service.Event", 
-    "com.nosester.portlet.eventlisting.service", "event-listing-portlet");
-
-    Liferay.Service.registerClass(
-        Liferay.Service.Event, "Event",
-        {
-                addEvent: true,
-                update: true,
-                updateEvent: true,
-                delete: true
-                deleteEvent: true
-        }
-    )
+Service Builder again. 
 
 Liferay uses Apache Axis to make SOAP web services available. Axis requires a
 Web Service Deployment Descriptor (WSDD) to be generated in order to make the
