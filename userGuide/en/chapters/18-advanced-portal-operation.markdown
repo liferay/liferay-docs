@@ -818,6 +818,14 @@ development team, they'll need to build, test, and optionally modify them to
 work with the new release of Liferay. Don't attempt an upgrade without
 collecting all the plugins you'll need first. 
 
+For Liferay 6.2, the Web Content List portlet is deprecated. During the
+deprecation period, the code will still be part of the product, but will be
+disabled by default. To enable Web Content List, you'll need to modify the
+`liferay-portlet.xml` file by setting the `<include>false</include>` tag to
+`true`. However, all the functionality of this portlet is provided by the Asset
+Publisher portlet. The Web Content List portlet is expected to be removed in the
+next release.
+
 Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
@@ -909,7 +917,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
       the .war, restart) your application server. Watch the console as Liferay
       starts: it should upgrade the database automatically. Verify your portal
       is operating normally, and then install any plugins you were using in your
-      old version of Liferay. Make sure you use the versions of theose plugins
+      old version of Liferay. Make sure you use the versions of those plugins
       designed for Liferay 6.1. If you have your own plugins, your development
       team will need to migrate the code in these ahead of time and provide .war
       files to you. 
@@ -980,7 +988,7 @@ Spring Remoting Servlet, the JSON Tunnel Servlet, and the WebDAV servlet.
 
 By default, a user connecting from the same machine Liferay is running on can
 access remote services so long as that user has the permission to use those
-services in Liferay's permissions system. Of course, you are not really “remote”
+services in Liferay's permissions system. Of course, you are not really "remote"
 unless you are accessing services from a different machine. Liferay has two
 layers of security when it comes to accessing its services remotely. Without
 explicit rights to both layers, a remote exception will be thrown and access to

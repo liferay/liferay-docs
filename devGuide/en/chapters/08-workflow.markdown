@@ -1,698 +1,5 @@
-# Designing Workflows with Kaleo Designer for Java 
 
-If you've been writing software for a while, you probably have a set of tools
-that you regularly use. This set of tools has been carefully collected over the
-years, and every tool is there for one reason: to contribute to your
-productivity. 
-
-Many of us at Liferay are like that, which is why our SDKs are designed to work
-with any text editor or IDE. You can be productive on the Liferay platform using
-any tool you want. To jumpstart your efforts, however, we also provide an IDE
-environment fully integrated with Eclipse. We've designed this carefully,
-so that it integrates well with our existing SDKs and other tools that are out
-there. Liferay IDE helps you manage many features of Liferay's platform, making
-them easier to use. There are editors for Service Builder files, workflow
-definitions, layout templates, and more. You'll find wizards for creating every
-kind of Liferay project there is, snippets for tag libraries, and
-auto-deploy of changes to plugins. 
-
-Whether you've been using Liferay for a long time or are just getting started,
-it's worth your time to check out Liferay IDE and see whether it's another of
-those tools you can add to your toolbox. We think you'll be glad you did. 
-
-In this chapter we'll cover the following topics:
-
-- Installation 
-- Setting Up Liferay IDE 
-- Testing/Launching Liferay Tomcat Server 
-- Creating New Liferay Projects
-- Deploying Liferay Projects
-- Importing Existing Projects into Liferay IDE 
-- Using Liferay IDE's Remote Server Adapter
-- Designing workflows with Kaleo Designer for Java 
-
-To install and set up Liferay IDE, follow the instructions below. If you're
-using Liferay Developer Studio (which comes with Liferay Portal Enterprise
-Edition), skip to the section titled *Testing/Launching Liferay Tomcat
-Server*--Liferay IDE is already configured in Developer Studio. 
-
-## Installation 
-
-Liferay IDE is a plugin for Eclipse. You can install it in two ways: bundled
-with Eclipse (this is the easiest way) or into an existing Eclipse installation. 
-
-If you want to install the bundled version, a prerequisite is a 
-version of Java supported by Eclipse. As of this writing, the bundled version
-requires JDK 6 or above. 
-
-Once you've satisfied the prerequisite, it's an easy matter to install Liferay
-IDE. Go to Liferay's [downloads page](http://www.liferay.com/downloads) and
-choose the *Liferay IDE* option. There's a separate download for each of the
-32-bit and 64-bit variants of Windows, Linux, and Mac OS X. Choose the one that
-matches your system and click the *Download* button. You'll receive a `.zip`
-file. To install Liferay IDE on your system, all you need to do is unzip it to
-the folder of your choice. 
-
-If you already have Eclipse installed, you can add Liferay IDE to it. You can
-do this in one of two ways: install Liferay IDE via a URL to the update site
-or install from a `.zip` file. 
-
-Make sure you have a supported Java JRE and Eclipse release: 
-
-- Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
-
-- Liferay IDE supports the following Eclipse releases: 
-
-    Eclipse Juno Java EE (4.2.x)
-
-    Eclipse Indigo Java EE (3.7.x)
-
-    Eclipse Helios Java EE (3.6.x)
-
-To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
-
-1.  Install Eclipse Juno, Indigo, or Helios from the
-    [Eclipse](http://www.eclipse.org) website.
-
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
-
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
-
-4.  In the *Work with* field, enter the update site URL for your Eclipse release
-    and press *Enter*. Your update site URL is one of the following:
-
-    Eclipse Juno Update Site: 
-    [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-
-    Eclipse Indigo Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-
-    Eclipse Helios Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
-
-5.  Liferay IDE features should be detected. Select them and click *Next*. 
-
-6.  After calculating dependencies, click *Next* to complete the installation.
-
-7.  Restart Eclipse to verify that Liferay IDE is properly installed.
-
-8.  After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
-    IDE icon badge as in the screenshot below, it's properly installed. 
-
-![Figure 8.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
-
-To install Liferay IDE without specifying an update URL for Eclipse, follow
-these steps: 
-
-1.  Install Eclipse Juno, Indigo, or Helios from the
-    [Eclipse](http://www.eclipse.org) website.
-
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
-
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
-
-4.  Instead of entering a URL in the *Work with* field, download the latest
-    version of Liferay IDE from the releases page: 
-
-    [Liferay IDE Downloads
-    Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
-
-5.  In the *Add Site* dialog, click the *Archive* button and browse to the location of
-    the downloaded zip file.
-
-6.  Liferay IDE features should be detected. Select them and click *Next*. 
-
-7.  After calculating dependencies, click *Next* to complete the installation.
-
-8.  Restart Eclipse to verify that Liferay IDE is properly installed.
-
-9.  After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
-    IDE icon badge as in the screenshot below, it's properly installed. 
-
-<!-- This whole section needed some help, as we now provide a bundled version
-that wasn't covered at all. Additionally, all the links were wrong, so I rewrote
-it in a more maintainable way. --> 
-
-Let's set up Liferay IDE now that you have it installed. 
-
-## Setting Up Liferay IDE 
-
-In order to start writing code with Liferay IDE, you need to have a Liferay
-runtime to code against, as well as a Plugins SDK to store your projects. Both
-of these must be registered in Liferay IDE, and this is easy to do. To get
-started, make sure you've downloaded and unzipped the following two items: 
-
-1.  Liferay Portal 6.0.5 or greater
-
-2.  Liferay Plugins SDK 6.0.5 or greater
-
- ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
- (e.g., 5.2.x) are not supported by Liferay IDE. 
-
-Let's set up your Liferay Plugins SDK. 
-
-### Registering the Liferay Plugins SDK with Liferay IDE
-
-Before you begin creating new Liferay plugin projects, a supported Liferay
-Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. 
-
-1.  In Eclipse, click *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr;
-    *Installed Plugin SDKs*.
-
-2.  Click *Add* to bring up the *Add SDK* Dialog. 
-
-3.  Browse to your Plugins SDK installation. The default name is the directory
-    name; you can change it if you want. 
-
-4.  Select *OK* and verify that your SDK was added to the list of *Installed
-    Liferay Plugin SDKs*. 
-
- ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
- your preferences. Set one as the default SDK by checking its box in the list of
- *Installed Liferay Plugin SDKs*. 
-
-Let's set up your Liferay Portal Tomcat runtime and server. 
-
-### Liferay Portal Tomcat Runtime and Server Setup 
-
-1.  In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
-    *Runtime Environments*.
-
-    ![Figure 8.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
-
-2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
-    under the *Liferay, Inc.* category and click *Next*.
-
-3.  Click *Browse* and select your `liferay-portal-6.1.x directory`. 
-
-4.  If you've selected the Liferay portal directory and a bundle JRE is present,
-    it is automatically selected as the server's launch JRE. If no JRE bundle
-    is present, then you must select the JRE to use for launch by clicking
-    *Installed JREs...*.
-
-    ![Figure 8.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
-
-5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server Runtime Environments*.
-
-6.  Click *OK* to save your runtime preferences. 
-
-7.  If you haven't created a server, create one now from the *Servers*
-    view in Liferay IDE; then you can test the server. 
-
-    ![Figure 8.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
-
-8.  Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*.
-    Choose the *Liferay v6...* runtime environment that you just created. 
-
-Now your server is set up.  Let's launch it and perform some tests! 
-
-## Testing and Launching Liferay Tomcat Server 
-
-Once your Liferay Portal Server is set up, you can launch it from the Servers
-tab in Eclipse. You have a few options for launching and stopping the server
-once it's selected in the Servers tab. 
-
-From the *Servers* tab: 
-
-- Click on the green *Start the Server* button to launch it (or use Ctrl+Alt+R). 
-- Click on the red *Stop the Server* button to stop it (or use Ctrl+Alt+S).
-  You'll only see this button if the server is running.
-- Right click the server and select *Start*. 
-- Right click on the server and select *Stop*. 
-
-From Eclipse's *Run* menu:
-
-- Select *Run* to start the server.
-
-<!--Did I get that wrong? The *Terminate* option is grayed out in my LDS's Run
-menu though the server is running. -Russ -->
-
-<!-- You should never terminate the server. That kills the process without
-closing everything (transactions, database connections, etc.) correctly. -Rich--> 
-
-<!-- We should explain how to properly shutdown a server -Jim -->
-
-Once the server is launched, you can open Liferay portal home from the *Servers*
-tab by right clicking your Liferay Tomcat server and selecting *Open Liferay
-Portal Home*. 
-
-Next you'll learn to create new Liferay projects in Liferay IDE. 
-
-## Creating New Liferay Projects 
-
-Creating Liferay projects is a straightforward process, similar to creating
-other Eclipse project types. 
-
-Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plugin Project. 
-
-In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
-Liferay Runtime should be selected. The plugin type *portlet* is the default
-plugin type. Type a project name and corresponding display name, then click
-*Finish*. 
-
-![Figure 8.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
-
-Your new plugin project appears in the package explorer. 
-
-Now you need to deploy your new plugin project to your Liferay Server. 
-
-## Deploying New Liferay Projects to Liferay Server 
-
-You have a plugin project, but you need to deploy it onto your Liferay
-Server. Let's do it now. There are two ways to do it, and the first is very
-easy. Select your project, drag it down, and drop it on your server. Voila! Your
-plugin is deployed. 
-
-Alternatively, you can use the following procedure: 
-
-1.  Select your new plugin project then right click the Liferay Server in
-    the *Servers* tab; 
-
-2.  Select *Add and Remove...*. 
-
-3.  Select your plugin project and click *Add* to deploy it to the server. 
-
-4.  Click *Finish*. 
-
-You should see the project get deployed to Liferay Tomcat server; in the console
-is a message indicating your new portlet is available for use. 
-
-![Figure 8.6: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
-
-If you've never started this instance of Liferay before, open *Liferay Portal
-Home* (`http://localhost:8080/` in most cases) and follow the instructions in
-the setup wizard. 
-
-Once you're logged in, click *Add* &rarr; *More*, expand the *Sample* category,
-and click the *Add* link next to your demo application. Your portlet then
-appears on the page. 
-
-Now you can create projects in Liferay IDE! Let's find out how to import
-existing projects into Liferay IDE. 
-
-## Importing Existing Projects into Liferay IDE 
-
-What if you have existing projects that you want to work on in Liferay IDE?
-You can import your existing projects into Liferay IDE to take advantage of
-Liferay IDE's developer tools. 
-
-We'll cover the following import scenarios: 
-
-1.  Importing existing Liferay projects from the Plugins SDK. 
-
-2.  Importing Eclipse projects that aren't in Liferay IDE (i.e., don't have
-    the Liferay facet or target runtime).
-
-3.  Importing existing Liferay IDE projects from another Liferay IDE version or
-    workspace.
-
-Let's start by learning how to import existing Liferay projects from Liferay
-Plugins SDK. 
-
-You can import Liferay projects you created with the Plugins SDK, but aren't yet
-in your Liferay IDE Eclipse workspace. These projects might already have
-`.project` or `.classpath` files in them; regardless, we'll use the same
-procedure to import them.
-
----
-
- ![note](../../images/tip-pen-paper.png) **Note:** The next two sections assume
- that you've created projects with the Plugins SDK and are familiar with the
- directory structure used by the Plugins SDK. 
-
----
-
-First let's look at the import process for creating a single Liferay IDE project
-from a Plugins SDK project. Follow these steps:
-
-1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
-    *Liferay* &rarr; *Liferay Project from Existing Source*.
-
-    You can invoke the same wizard from the Liferay shortcut bar; just click
-    the *Create a New Liferay Project* button.
-
-    ![Figure 8.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
-
-2.  Browse to your project folder. It should be a subdirectory of one of the
-    plugin types (e.g., portlets, hooks, themes, etc) or it won't import
-    correctly. Once you select the plugin project folder, its type and SDK
-    version values are updated to the correct values. If the SDK isn't recent
-    enough or the project type is incorrect, it gets marked with an error. 
-
-3.  After you select the plugin project folder, the *Liferay plugin type* and
-    *Liferay plugin SDK version* values are updated. If your Plugins SDK is
-    outdated or you entered an incorrect project type, its field gets marked
-    with an error. 
-
-4.  Select the *Liferay target runtime* to configure on the project once it's
-    imported. If you don't have a Liferay Portal Runtime, use the *New...*
-    button to create one now. 
-
-5.  Click *Finish* to perform the import.
-
-Remember to verify that your project was configured correctly as a Liferay IDE
-project. Verification is described right after our next topic, which is making
-multiple Liferay IDE projects from a single Plugins SDK. 
-
-Next we'll show you how to import all your Plugins SDK projects into Liferay
-IDE. 
-
-### Batch Importing Multiple Projects into Liferay IDE
-
-Does your Plugins SDK contain multiple plugins? You can easily batch import each
-plugin in your Plugins SDK as its own Liferay IDE project. 
-
-1.  In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
-    Projects from Plugin SDK*.
-
-    ![Figure 8.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
-
-2.  In the *Import Projects* window, use the combo box to select the *Liferay
-    Plugins SDK* you're importing plugins from. 
-
-    ---
-
-    ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
-    configured in Liferay IDE (i.e., it's not in the dropdown list of the
-    *Import Projects* window), use the *Configure* link to add one. To
-    configure a Plugins SDK on the Installed SDKs on the pref page just click
-    *Add* and then Browse to the directory of the Plugins SDK root directory.
-
-    ---
-
-3.  Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
-    Location* and *Liferay Plugin SDK Version* fields are automatically filled
-    in, as long as they're valid. Invalid entries are marked with an error. 
-
-4.  The list of projects that are available for import are displayed in a table.
-    Any projects already in the workspace are disabled. Projects available for
-    import have an empty check box; select each project you'd like to import.
-
-5.  Select the Liferay runtime you want to set up for the imported projects. 
-
-6.  If you don't have a Liferay runtime, can add one now with the *New...*
-    button. 
-
-7.  Click *Finish*. 
-
-Your plugins are imported! Next, we'll talk about importing existing Eclipse
-projects into Liferay IDE. 
-
-### Importing Existing Eclipse Projects into Liferay IDE 
-
-The steps we outlined above let you import projects that have never been opened
-in Eclipse. If you've been using Eclipse without Liferay IDE, you may already
-have a project in your Eclipse workspace. Follow the import steps below to
-convert your project. 
-
-1.  In Eclipse, right-click the project in your Project Explorer, and select
-    *Liferay* &rarr; *Convert to Liferay plugin project*.
-
-    ---
-
-    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
-    action available it means either that the project is already a Liferay IDE
-    project, or that it is not faceted (i.e., Java and Dynamic Web project facets
-    are not yet configured). Configure accordingly before moving on. 
-
-    ---
-
-2.  In the *Convert Project* wizard, your project should be selected and the SDK
-    location and SDK version should be detected automatically. If they aren't
-    valid, an error message is displayed. 
-
-    ![Figure 8.9: Converting a project](../../images/ide-convert-plugin-project.png)
-
-3.  Select the Liferay runtime to use for the project. If you don't have a
-    Liferay Runtime defined, do so now by clicking *New...*.
-
-4.  Click *Finish*. 
-
-Remember to verify that your import was successful and that your project was
-configured correctly as a Liferay IDE project. We have one more import scenario
-to cover--importing existing Liferay IDE projects into your Liferay IDE. 
-
-### Importing an existing Liferay IDE project 
-
-What if you had a Liferay IDE project in your workspace, but it's not there
-anymore? Here's how you can import it into your current workspace: 
-
-1.  Open Liferay IDE, go to *File* &rarr; *Import* ... &rarr; *General* &rarr;
-    *Existing Projects into Workspace*. 
-
-2.  Choose the option *Select root directory*, then click *Browse...*. 
-
-3.  Select the directory of the Liferay IDE project to import. 
-
-4.  In the *Projects:* list you should see your Liferay IDE project. 
-
-5.  Click *Finish*. 
-
----
-
-![note](../../images/tip-pen-paper.png) **Note:** There are two common errors
-that occur when importing existing Liferay IDE projects into your workspace:
-
-- The SDK name used in that project doesn't exist in your new workspace. 
-
-- The runtime id used doesn't exist in your new workspace. 
-
-You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
-window; you can modify the targeted runtime in the *Project properties* &rarr;
-*Targeted Runtimes* dialog window. 
-
----
-
-Let's verify the success of your imports and ensure that they're properly
-configured as Liferay IDE projects. 
-
-### Verifying that the import has succeeded 
-
-After importing projects into Liferay IDE, you'll want to verify that they
-imported successfully, and that they're properly configured as Liferay IDE
-projects. Here's how you verify that your imports were successful: 
-
-1.  Once the project is imported, you should see a new project inside Eclipse
-    and it should have an "L" overlay image; the "L" is for Liferay! 
-
-    ![Figure 8.10: Verifying that the import succeeded](../../images/ide-liferay-project-w-overlay-image.png)
-
-2.  Let's check the project's target runtime and facets to make sure it's
-    configured as a *Liferay IDE* project:
-
-    2.1. In the *Package Explorer*, right click *<project-name>* &rarr;
-         *Properties* &rarr; *Targeted Runtimes*. 
-
-    2.2. In the *Properties* window, click *Project Facets* and make sure both
-         Liferay runtime and Liferay plugin facets are properly configured. 
-
-    ![Figure 8.11: Project Facets](../../images/ide-project-facets.png)
-
-Great! You've confirmed that your import was successful; you can now make
-revisions to your configured Liferay IDE project. Next, let's explore Liferay
-IDE's Remote Server Adapter feature. 
-
-## Using Liferay IDE's Remote Server Adapter 
-
-The Remote Server Adapter is a feature that lets you deploy your Liferay
-projects to a remote Liferay Portal server. If you need to work with a 
-development instance of Liferay that's on another machine, then the remote
-server adapter is your solution. Your remote Liferay Portal instance must
-satisfy two requirements to use a Remote Server Adapter: 
-
-- It is version 6.1 or later. 
-- It has the Remote IDE Connector application installed from Liferay
-Marketplace. Remote IDE Connector contains the `server-manager-web` plugin that
-provides an API for Liferay IDE's Remote Server Adapter to use for all its
-remote operations. 
-
-The Remote Server Adapter lets developers deploy local projects to a remote
-development server for testing purposes. If you're using Liferay IDE and want to
-deploy projects to a remote server, the Remote IDE Connector application must be
-installed on this server. Do not install the Remote IDE Connector
-application on a production server: it creates an unnecessary security risk.
-It is meant for use on development servers only. 
-
-To start deploying projects to a remote server, download and install the
-following resources on your local development machine:
-
-- [Liferay
-  IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
-  Liferay's downloads page or download Liferay Developer Studio 1.6.1 from
-  the Customer Portal.
-- [Liferay Portal CE or
-  EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to
-  your local development machine. 
-
-Of course, we're assuming you have a development server up and running. Our
-demonstration uses the Remote Server Adapter on Liferay Portal bundled with
-Apache Tomcat, but you can use the adapter with Liferay Portal on any
-application server Liferay Portal supports. 
-
-You still need to install a full Liferay development environment locally on your
-machine before using the Remote Server Adapter, so that you can compile plugins
-for deployment. Follow the instructions earlier in the chapter to get your
-Liferay IDE or Liferay Developer Studio environment up and running. 
-
----
-
-![important](../../images/tip-pen-paper.png) **Important:** Keep a record of
-your portal administrator login credentials (e.g., username/password) for your
-remote Liferay server; you'll need them to configure your connection from
-Liferay IDE to the remote Liferay server. 
-
----
-
-Let's start by configuring the Remote Server Adapter. 
-
-### Configuring the Remote Server Adapter 
-
-You can use Liferay IDE's Remote Server wizard to configure the Remote
-Server Adapter and install the Remote IDE Connector to your Liferay instance.
-Alternatively, you can install the Remote IDE Connector to your Liferay instance
-before configuring Liferay IDE's Remote Server Adapter. To configure the Remote
-Server Adapter, use the following steps:
-
-1.  Start your remote Liferay Portal instance--verify that you can log in as an
-    administrator. 
-
-2.  Launch Liferay IDE and open the new server wizard by clicking *File* &rarr;
-    *New* &rarr; *Other*; select *Server* in the Server category and click
-    *Next*. Select *Remote Liferay Server (Liferay 6.1)* in the Liferay, Inc.
-    category.
-
-3.  Enter the IP address of the machine with the remote Liferay Portal instance
-    into the *Server's host name* field. For the *Server name*, enter
-    *Liferay@[IP address]*, then click *Next*. 
-
-    ![Figure 8.12: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
-
-4.  The New Server wizard's next page directs you to define the Liferay
-    Portal runtime stub. Doing so allows projects created for your remote server
-    to use the runtime stub for satisfying JAR dependencies needed to compile
-    various Liferay projects. Select the *Liferay bundle type* based on the
-    version of your local Liferay bundle, browse to the *Liferay bundle
-    directory*, and click *Next*.
-
-5.  On the next page of the wizard, configure your connection to your remote
-    Liferay instance: 
-
-    *Hostname*: Enter the IP address of your remote Liferay Portal instance's
-    machine. 
-
-    *HTTP Port*: Enter the port it runs on (default: 8080). 
-
-    *Username* and *Password*: Enter your administrator credentials for the
-    remote Liferay Portal instance.  
-
-    Leave the *Liferay Portal Context Path* and *Server Manager Context Path*
-    set to the defaults unless these values were changed for your remote Liferay
-    Portal instance.  
-
-6.  Your remote Liferay Portal instance needs the Remote IDE Connector
-    application installed; otherwise, Liferay IDE can't connect to it. If you
-    haven't installed Liferay IDE Connector yet, click the *Remote IDE Connector*
-    link in the wizard. If you already downloaded the Remote IDE Connector
-    application and installed it to your remote portal, skip to the next step and
-    validate your connection. 
-
-    Browse [Liferay Marketplace](http://www.liferay.com/marketplace) for the
-    Remote IDE Connector application. When you've found it, click *Free* to
-    purchase it. Follow the on-screen prompts. 
-
-    Once you've purchased the application, navigate to the *Purchased* page of
-    the Control Panel's Marketplace interface. 
-
-    ![Figure 8.13: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
-
-    Find your application in the list of purchased products. Then click on the
-    buttons to download and install the application. Once it's been installed on
-    your remote portal, return to the Remote Liferay Server configuration wizard
-    in Liferay IDE. 
-
-7.  Click the *Validate Connection* button; if no warnings or errors appear.
-    your connection works! If you get any warning or error messages in the
-    configuration wizard, check your connection settings. 
-
-8.  Once Liferay IDE is connected to your remote Liferay Portal instance,
-    click *Finish* in the Remote Liferay Server configuration wizard.
-   
-    After you click *Finish*, the new remote server appears in Liferay IDE's
-    *Servers* tab. This tab appears in the bottom left corner of the Eclipse
-    window if you're using the Liferay perspective. If you entered your
-    connection settings correctly, Eclipse connects to your remote server and
-    displays the remote Liferay Portal instance's logs in the console. If your
-    remote server is in debug mode, the Eclipse Java debugger is attached to the
-    remote process automatically.
-
-9.  You can change the remote server settings at any time. Double-click on your
-    remote server instance in the *Servers* tab to open the configuration
-    editor, where you can modify the settings. 
-
-Now that your remote Liferay Portal server is configured, let's test the remote
-server adapter!
-
-### Using the Remote Server Adapter
-
-Once your remote Liferay Portal server is correctly configured and Liferay IDE
-is connected to it, you can begin publishing projects to it and using it as you
-would a local Liferay Portal server. 
-
-Here's how to publish plugin projects to your remote server in Liferay IDE: 
-
-1.  Right click on the server and choose *Add and Remove...*. 
-
-    ---
-
-    ![note](../../images/tip-pen-paper.png) **Note:** Make sure you have available
-    projects configured in Liferay IDE. If not, you'll get an error message
-    indicating there are no available resources to add or remove from the server. 
-
-    ---
-
-2.  Select the Liferay projects to publish to your remote server; click *Add* to
-    add them to your remote server, then click *Finish*. Deployment begins
-    immediately. 
-
-    Your console displays a message that the plugin was successfully
-    deployed if publication to the remote server was successful.
-
-3.  As you make changes to your plugin project, republish them so they take
-    effect on the remote server. To set your remote server's publication
-    behavior, double click your remote server in the *Servers* tab. You can
-    choose to automatically publish resources after changes are made,
-    automatically publish after a build event, or never to publish
-    automatically. To manually invoke the publishing operation after having
-    modified project files, right click on the server in the Servers view and
-    select *Publish*.
-
-Now that you've seen how you can deploy projects in Liferay IDE and Liferay
-Developer Studio, we can begin delving into the features it offers. Next, we'll
-explain Developer Studio's Kaleo Designer for Java and how you can design
-workflows for enhanced business logic.
-
-<!-- The rest of this chapter all has to do with Kaleo Designer. It's like we
-completely skipped the features for which Liferay IDE was mainly designed: to
-make writing Liferay plugins easier. We need to add the following topics to this
-chapter: 
-
-- Coverage of each plugin type: portlets, themes, hooks, Ext
-- The Service Builder graphical editor
-- The Layout Template graphial editor
-- The tag library snippets
-- JSF portlet projects
-- Vaadin portlet projects
-
-(those last two are lower priority, and JSF is a higher priority than Vaadin,
-because LiferayFaces is a Liferay project.) 
-
-I'd like to see the above topics added to this chapter, and then have the Kaleo
-Designer broken out into its own chapter or included with the Workflow coverage,
-since it's also mostly about creating workflows. -Rich -->
-
-## Designing workflows with Kaleo Designer for Java 
+# Designing workflows with Kaleo Designer for Java 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -800,7 +107,7 @@ including the palette toolbar, properties view, and outline view.
 Next, let's get into the flow (pun intended) by creating our own workflow using
 the Kaleo Workflow Designer for Java. 
 
-### Creating a workflow 
+## Creating a workflow 
 
 Developer Studio makes it easy for you to write custom business logic that
 enhances Kaleo workflows. Let's create our own workflow in Developer Studio and
@@ -874,7 +181,7 @@ workflow graphically. Graphical features and toolbars allow you to customize
 your workflow definition. The *Palette* view is one of Designer's most commonly
 used tools. Let's explore it next. 
 
-#### Palette and Floating Palette 
+### Palette and Floating Palette 
 
 The *Palette* lets you graphically customize your workflow with nodes and
 transitions. In addition, you can choose different behaviors for your mouse
@@ -999,7 +306,7 @@ the join node to another task.
 While we're using Designer's Workflow Diagram, let's go over some of its
 features. 
 
-#### Workflow Diagram Features 
+### Workflow Diagram Features 
 
 Developer Studio provides you with additional features within the workflow
 diagram. Below we list some of these features; they can greatly enhance your
@@ -1027,7 +334,7 @@ workflow designing experience.
 You've probably noticed the *Properties* and *Outline* views below your workflow
 diagram. Let's explore them next. 
 
-#### Properties View and Outline View 
+### Properties View and Outline View 
 
 The *Properties* and *Outline* views contain more cool features you can use to
 customize your workflow; they're located on the bottom and bottom right of
@@ -1073,7 +380,7 @@ Developer Studio's *Properties* and *Outline* views make customizing your
 workflow easier than ever! Developer Studio also offers a convenient way to edit
 your workflow scripts, which is our next topic. 
 
-### Using Workflow Scripts 
+## Using Workflow Scripts 
 
 You can use Developer Studio to edit workflow scripts; it recognizes multiple
 script languages, so you can choose one you're comfortable with. Developer
@@ -1280,14 +587,14 @@ DDLs soon in the *Configuring a DDL record* section of this chapter.
 Next let's create a custom notification and write a template for it using a
 template editor. 
 
-### Leveraging Template Editors for Notifications 
+## Leveraging Template Editors for Notifications 
 
 Designer lets you leverage FreeMarker and Velocity editors to customize
 templates for your workflow notifications. A FreeMarker editor comes bundled
 with Developer Studio. To edit Velocity templates, you'll need to install an
 editor. Don't worry, Developer Studio makes it easy, and we'll show you how. 
 
-#### Add-on: Install Velocity Editor Support 
+### Add-on: Install Velocity Editor Support 
 
 Liferay Developer Studio comes with additional add-on support for editing
 Velocity template notifications in the Kaleo Designer for Java. To use this
@@ -1322,7 +629,7 @@ When you edit a notification template set to the Velocity type, the template
 opens in the Velocity editor (a small "v" icon is in the left side of the
 editor's tab). 
 
-#### Creating Notifications 
+### Creating Notifications 
 
 To access the template editors, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
@@ -1452,7 +759,7 @@ the Velocity editor you installed.
 In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-#### Workflow Context and Service Context Variables 
+### Workflow Context and Service Context Variables 
 
 A context variable provides a uniform variable to insert into your templates and
 scripts. When executed, a context variable is automatically deleted and replaced
@@ -1586,7 +893,7 @@ workflow activity.
 Next you'll learn how to view your workflow definition XML file in Developer
 Studio. 
 
-### Viewing workflow definition XML source 
+## Viewing workflow definition XML source 
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.
@@ -1621,7 +928,7 @@ Studio's powerful graphical features.
 
 Let's save your workflow definition and publish it to your Liferay server. 
 
-### Publishing workflows to the server 
+## Publishing workflows to the server 
 
 After you create a new workflow or modify an existing one, you'll have to
 publish it onto your Liferay server before your site's members can use it. Let's
@@ -1670,7 +977,7 @@ Are you ready for our *Kaleo Designer for Java* finale? You just have to
 activate the workflow in your Liferay Portal, then we'll set up the DDL record
 and try out our new workflow. Let's activate! 
 
-### Using workflows in Liferay Portal 
+## Using workflows in Liferay Portal 
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
@@ -1685,7 +992,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
-### Using DDLs with workflows 
+## Using DDLs with workflows 
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
@@ -1733,7 +1040,7 @@ workflow for our new Kaleo Forms process to use. *Save* the DDL.
 Now our DDL is set for use inside our ticket process workflow! Let's use the
 Kaleo Forms portlet to test our new workflow definition! 
 
-#### Using Kaleo Forms to run workflows 
+### Using Kaleo Forms to run workflows 
 
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
@@ -1777,17 +1084,11 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 
 ## Summary 
 
-In this chapter we explored Liferay IDE, an extension of Eclipse IDE. You
-learned to to install and set up Liferay IDE, then to create and deploy Liferay
-projects, as well as import existing projects into Liferay IDE. Admit it--it's a
-slick set of tools! We hope you take advantage of it in using Liferay Portal and
-developing your Liferay plugins. 
-
-After learning all about Liferay IDE we looked at managing workflows using Kaleo
-Designer for Java in Liferay Developer Studio. With Developer Studio's dynamic
-workflow diagram, you can visualize your workflow and create steps to ensure a
-successful business process. The script and template editors give you a
-convenient workspace to further enhance your workflow development environment.
+In this chapter we looked at managing workflows using Kaleo Designer for Java in
+Liferay Developer Studio. With Developer Studio's dynamic workflow diagram, you
+can visualize your workflow and create steps to ensure a successful business
+process. The script and template editors give you a convenient workspace to
+further enhance your workflow development environment. 
 
 Because Developer Studio has access to your custom business logic APIs and
 Liferay Portal APIs, it's simple to customize your workflow definition. To get
@@ -1796,6 +1097,5 @@ Liferay server; the configuration process is quick and easy. With all of its
 features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
 
-Next, let's get up-close and personal with Liferay's APIs!
-<!-- Please leave the newline below this line -->
+
 

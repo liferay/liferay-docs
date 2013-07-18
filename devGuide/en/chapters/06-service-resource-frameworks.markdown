@@ -1,7 +1,7 @@
-# Service Resource Frameworks  
+# Service resource frameworks
 
-<!--I realize the chapter title might not match the file name but I figured for
-now it's likely better than calling this chapter Liferay APIs-->
+<!-- We'll rename this chapter eventually. Most of this content was from the
+former "Liferay APIs" and "Liferay Frameworks" chapters - Jim --> 
 
 An *Application Programing Interface* (API) is a protocol that, when invoked,
 performs an action or set of actions. You can invoke an API from your own code

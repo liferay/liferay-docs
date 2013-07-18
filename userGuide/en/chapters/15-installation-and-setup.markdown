@@ -2021,12 +2021,12 @@ files, it's time to deploy Liferay.
    `$JBOSS_HOME/../server/default/ROOT.war/WEB-INF` directory and add the
    following contents to it:
 
-	<classloading xmlns="urn:jboss:classloading:1.0"
-		parent-first="false"
-		domain="LiferayDomain"
-		export-all="NON_EMPTY" 
-		import-all="true">
-	</classloading>
+            <classloading xmlns="urn:jboss:classloading:1.0"
+                    parent-first="false"
+                    domain="LiferayDomain"
+                    export-all="NON_EMPTY" 
+                    import-all="true">
+            </classloading>
 
    This configuration file defines a domain that does not allow parent classes
    to load first. Instead, Liferay Portal's classes are exported. Since JBoss
