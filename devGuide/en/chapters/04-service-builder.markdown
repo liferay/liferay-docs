@@ -691,17 +691,17 @@ the package path that you specified in `service.xml`:
 - `docroot/WEB-INF/src/com/nosester/portlet/eventlisting`
 
 The `docroot/WEB-INF/service/com/nosester/portlet/eventlisting/` package
-contains utility classes and interfaces for the Event Listing project.
-All of the classes and interfaces in the service folder are packaged in a `.jar`
-file called `event-listing-project-portlet-service.jar` in your
-`docroot/WEB-INF/lib` folder. This `.jar` file is generated each time you run
-Service Builder. It's possible to place this `.jar` file on your application
-server's global classpath to make your project's services available to other
-projects. This allows a portlets in a different project, for example, to
-create, update, and delete Events and Locations. Of course, you should consider
-the security implications of placing your project's service `.jar` on your
-application server's global classpath: do you *really* want to allow other
-plugins to access your project's services? 
+contains utility classes and interfaces for the Event Listing project.  All of
+the classes and interfaces in the service folder are packaged in a `.jar` file
+called `event-listing-project-portlet-service.jar` in your `docroot/WEB-INF/lib`
+folder. This `.jar` file is generated each time you run Service Builder. It's
+possible to place this `.jar` file on your application server's global classpath
+to make your project's services available to other projects. This allows
+portlets in different project, for example, to create, update, and delete Events
+and Locations. Of course, you should consider the security implications of
+placing your project's service `.jar` on your application server's global
+classpath: do you *really* want to allow other plugins to access your project's
+services? 
 
 The `docroot/WEB-INF/src/com/nosester/portlet/eventlisting` package contains the
 implementation of the interfaces defined in the
@@ -806,7 +806,7 @@ some remote service methods to `EventServiceImpl` and learn how to invoke them.
 
 ## Writing the Local Service Class 
 
-The heart of your service is it's `-LocalServiceImpl` class. Within it, you put
+The heart of your service is its `-LocalServiceImpl` class. Within it, you put
 core business logic for working with your model. Throughout this chapter, we've
 been constructing services for the Nose-ster Event Listing portlet. We'll start
 by examining the initial service classes we generated for it using Service
@@ -870,12 +870,12 @@ Remember to import the required classes. These include the following:
     java.util.List
 
 In order to add an Event to the database, we need an ID for the Event. Liferay
-provides a counter service which we call to obtain unique ID for adding a new
+provides a counter service which we call to obtain a unique ID for adding a new
 entities. It's possible to use the `increment` method of Liferay's
 `CounterLocalServiceUtil` class but Service Builder already makes a
 `CounterLocalService` instance available to `EventLocalServiceBaseImpl` by
 Spring via dependency injection. Since our `EventLocalServiceImpl` class extends
-`EventLocalServiceBaseImpl` we can access this `CounterLocalService` instance.
+`EventLocalServiceBaseImpl`, we can access this `CounterLocalService` instance.
 See `EventLocalServiceBaseImpl` for a list of all the beans that Spring makes
 available for use. These include the following:
 
@@ -892,10 +892,10 @@ available for use. These include the following:
 - `userPersistence`
 
 It's a best practice to use the injected class's `increment` method rather than
-calling Liferay's `CounterLocalService`'s `increment` method, since using the
-injected class does not require an extra database transaction; whereas calling
-Liferay's `CounterLocalServiceUtil` class does require an extra database
-transaction. 
+calling Liferay's `CounterLocalService`'s `increment` method since using the
+injected class does not require an extra database transaction. Calling Liferay's
+`CounterLocalServiceUtil` class, on the other hand, does require an extra
+database transaction. 
 
     long eventId = counterLocalService.increment(Event.class.getName());
 
@@ -910,7 +910,7 @@ Lastly, we return the Event created by the generated `addEvent` method of
 Note: Our `addEvent` method only sets the creation data and modified date of the
 Event. It doesn't populate its name and description, or associate a location with
 it. We could overload `addEvent` by creating another `addEvent` method that
-takes name, description, and a location ID as parameters. In this method we
+takes name, description, and a location ID as parameters. In this method, we
 could call the `eventPersistence` object's `create` method to create a new
 Event. Then we could use the method's parameters to populate the new Event's
 name, description, and a location ID fields and return the Event.
@@ -1239,7 +1239,7 @@ your Event service takes you to the following URL:
     http://localhost:8080/event-listing-portlet/api/axis/Plugin_Event_EventService?wsdl 
 
 This WSDL document lists all of the Event entity's SOAP web services. Once your
-SOAP web service's WSDL is available any SOAP web service client can access it.
+SOAP web service's WSDL is available, any SOAP web service client can access it.
 In production, make sure to integrate your applications with Liferay's
 permissions system to perform security checks for all your remote service
 methods.
@@ -1250,14 +1250,14 @@ Event Listing plugin, visit the following URL:
 
     http://localhost:8080/event-listing-portlet/api/jsonws
 
-Each entity's available operations are listed on the plugin's JSON web service
+Each entity's available operations are listed on the plugin's JSON web services
 API page. You can invoke JSON web services directly from your browser. For
 example, bring up a test form for your Event entity's *delete-event* operation
 and click on its link. 
 
 ![Figure 4.8: You'll see a page displaying the name of the service method, its required parameters, its return type, possible exceptions it can throw, and a form for entering its parameters.](../../images/invoking-sb-generated-json-ws.png)
 
-The only parameter required for the *delete-event* operation is a event ID.
+The only parameter required for the `delete-event` operation is a event ID.
 Since we haven't covered creating the UI for adding our Event entities, you
 probably don't have any events in your database. But if you did, you could check
 for an event's ID in your `Event_Event` database table. Then you could enter the
