@@ -34,7 +34,7 @@ portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics: 
 
-- Service Context
+- ServiceContext
 
 - Security and Permissions
 
@@ -46,7 +46,7 @@ This chapter covers the following topics:
 
 - Device Detection
 
-<!-- - Other Frameworks -->
+<!-- - Other frameworks -->
 
 Let's take a look at the `ServiceContext` class. 
 

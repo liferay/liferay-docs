@@ -1,4 +1,4 @@
-# Introduction 
+# Realizing the Benefits of Liferay's Development Platform 
 
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing

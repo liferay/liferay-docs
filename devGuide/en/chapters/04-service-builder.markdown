@@ -1,4 +1,4 @@
-# Service Builder 
+# Generating Your Service Layer 
 
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
@@ -23,7 +23,7 @@ accessible from anywhere over the Internet or your local network. Service
 Builder automatically generates the code necessary to allow access to the remote
 services using SOAP, JSON, and Java RMI.
 
-## Benefits of Using Service Builder
+<!-- ## Benefits of Using Service Builder -->
 
 Service Builder solves an important portal problem. In a standalone web
 application, the database access code can be bundled with the rest of the
@@ -647,7 +647,7 @@ Now that you've specified the service for the event listing portlet, let's build
 the service by running Service Builder. Then we'll take a closer look at the
 code it generates.
 
-## Generating the Services
+## Generating Services
 
 To build a service using our `service.xml`, you can either use *Liferay IDE* or
 *Liferay Developer Studio* or use a terminal window.
@@ -828,7 +828,9 @@ next time Service Builder runs. Next, let's add some local service methods to
 `EventLocalServiceImpl` and learn how they can be called. After that, we'll add
 some remote service methods to `EventServiceImpl` and learn how to use them.
 
-## Writing the Local Service Class 
+## Implementing and Invoking Local Services 
+
+### Writing the Local Service Class 
 
 In the file overview above, notice that `EventLocalService` is the interface for
 the local service. It contains the signatures of every method in
@@ -960,7 +962,7 @@ reason to replace or overload the addEvent(...) we added to
 of the Java classes, Service Builder also generates a `service.properties` file.
 Let's examine that next.
 
-## Calling Local Liferay Services
+### Calling Local Liferay Services
 
 Once Service Builder has generated our portlet project's services, we can call
 them in our portlet classes. We can call any methods of `EventLocalServiceUtil`
@@ -1093,7 +1095,7 @@ via dependency injection. So all the methods of `EventLocalServiceUtil`
 internally call corresponding methods of `EventLocalServiceImpl` at runtime to
 perform CRUD operations.
 
-## Invoking the API Locally 
+### Invoking the API Locally 
 
 Each service provides a local interface to clients running in the same JVM as
 Liferay Portal. There are two ways to invoke a service API's methods: 
@@ -1133,7 +1135,9 @@ uses the filterFindBy implementation, permission checks are performed. -Rich -->
 
 <!--Next, find out how you can invoke Liferay's service APIs remotely.--> 
 
-## Writing the Remote Service Class
+## Implementing and Invoking Remote Services 
+
+### Writing the Remote Service Class
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -1244,7 +1248,7 @@ generates the WSDD. In Liferay IDE or Developer Studio, when viewing
 the screen that's a shortcut for calling the Build WSDD target. Once the WSDD
 has been generated and your portlet project has been deployed, a Web Services Definition Language will be available. 
 
-## Calling Remote Liferay Services
+### Calling Remote Liferay Services
 
 To access the WSDL document produced by the `build-wsdd` Ant target in the
 previous section, visit the following URL:
@@ -1280,7 +1284,7 @@ the eventId into the eventId field under the Execute heading and then click
 call: the event that was deleted. You can also examine alternate equivalent
 methods of calling the same remote service via JavaScript, curl, and URL.
 
-## Custom SQL Queries
+## Developing Custom SQL Queries
 
 Service Builder allows searching for entities via custom SQL queries. For
 example, consider our Nose-ster Event Listing portlet project. Suppose we'd like
@@ -1431,7 +1435,7 @@ this finder method available in `EventLocalServiceUtil`. Now we can indirectly
 call this finder method from our portlet class or from a JSP by calling
 `EventLocalServiceUtil.findByEventNameEventDescriptionLocationName(...)`.
 
-## Overview of `portlet-model-hints.xml`
+## Using Model Hints
 
 Service Builder generates a number of XML configuration files in your project's
 `docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
@@ -1574,7 +1578,11 @@ your Event model's date field by using a hint-collection element:
 Remember to run Service Builder and redeploy your project after updating your
 `portlet-model-hints.xml` file.
 
-## Overview of `service.properties`
+## Leveraging Dynamic Query 
+
+## Creating Custom Finders 
+
+## Overview of `service.properties` 
 
 Service Builder generates the properties file `service.properties` in the `src`
 directory of your service. Liferay Portal uses the properties in this file to

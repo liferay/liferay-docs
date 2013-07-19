@@ -1,5 +1,5 @@
 
-# Liferay Developer Tools 
+# Working with Liferay's Developer Tools 
 
 If you're anything like Liferay Portal's developers, you don't want to be
 forced to work with one development technology. Our developers build Liferay
@@ -15,11 +15,11 @@ development environment specifically designed for developing your Liferay
 Portal, then  we'll look at developing your plugins with other tools. Here are
 the topics we'll cover along the way: 
 
-- Liferay IDE 
+- Developing Apps with Liferay IDE 
 
-- The Plugins SDK 
+- Leveraging the Plugins SDK 
 
-- Developing PLugins using Maven 
+- Developing PLugins Using Maven 
 
 - Liferay's Deprecation Policy 
 
@@ -40,7 +40,7 @@ archetypes you can use to develop your plugins.
 First let's consider the most robust tool for Liferay development, Liferay
 IDE. 
 
-## Liferay IDE 
+## Developing apps with Liferay IDE 
 
 Even if you're a grizzled veteran of Java development, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
@@ -872,7 +872,7 @@ Serivce Builder.
 
 <!--Add content-->
 
-## The Plugins SDK 
+## Leveraging the Plugins SDK 
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -1104,7 +1104,7 @@ you, consider using Liferay's Apache Maven archetypes to build your custom
 Liferay plugins. We'll look at Maven next, and we'll have some fun with classic
 poetry while doing it. 
 
-## Developing Plugins Using Maven 
+## Developing plugins Using Maven 
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
@@ -2506,7 +2506,7 @@ understand Liferay's deprecation policy. That way you'll know when methods from
 our API's are deprecated, and you can make any necessary changes. We'll
 describe the deprecation policy next. 
 
-## Liferay's Deprecation Policy
+## Liferay's deprecation policy
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major releases of Liferay.

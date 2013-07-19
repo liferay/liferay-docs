@@ -547,7 +547,7 @@ the borders as the default:
         />
         ...
     </settings>
-    
+
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
@@ -1401,7 +1401,7 @@ furniture!
 If you're up for it, let's learn how to customize core Liferay portlets using
 hooks--sounds "catchy", right?! 
 
-## Summary 
+<!-- ## Summary  -->
 
 In this chapter, you learned how to customize the look and feel of your Liferay
 Portal by creating custom themes. During this process, you created your own

@@ -1,4 +1,4 @@
-# Portlet Development
+# Developing Portlet Applications 
 
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
@@ -47,8 +47,8 @@ Liferay Developer Studio first, then by using the terminal.
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
 2.  Fill in the *Project* and *Display* names with *my-greeting-portlet* and *My
-    Greeting*, respectively.  
-    
+    Greeting*, respectively. 
+
 3.  Select the Liferay Plugins SDK and Portal Runtime that you've configured. 
 
 4.  Select *Portlet* as your Plugin type. 

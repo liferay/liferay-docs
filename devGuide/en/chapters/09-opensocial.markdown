@@ -22,7 +22,7 @@ In this chapter, we'll cover the following topics:
 Let's first look at the structure of an OpenSocial gadget and consider the
 concepts involved with OpenSocial gadgets.
 
-## OpenSocial gadget basics 
+## OpenSocial Gadget Basics 
 
 An OpenSocial Gadget is specified in an XML document that has two parts. The
 first part of the document specifies *meta-data* declaring gadget dependencies,
@@ -599,7 +599,7 @@ users' experience.
 
 We will now switch gears and dive into Liferay's gadget editor!
 
-## Using the gadget editor 
+## Using the Gadget Editor 
 
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development

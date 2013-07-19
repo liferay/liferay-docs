@@ -1,4 +1,4 @@
-# Hooks 
+# Customizing and Extending Functionality with Hooks 
 
 Liferay Hooks are the best plugin for customizing Liferay's core features.  If
 possible, use hooks whenever you need to override Liferay's core functionality.

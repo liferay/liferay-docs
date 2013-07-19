@@ -716,7 +716,7 @@ Liferay instances. When a Liferay Administrator installs your app via the
 Liferay Administration console (Control Panel), an *Install* is recorded for
 your app.
 
-## Plugin Security Management 
+## Plugin security management 
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
@@ -1473,8 +1473,7 @@ to function.
 Next, we'll show you what it takes to develop apps for publishing to *Liferay
 Marketplace*. 
 
-
-## Summary 
+<!-- ## Summary -->
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,

@@ -1,5 +1,5 @@
 
-# Designing workflows with Kaleo Designer for Java 
+# Designing Workflows with Kaleo Designer for Java 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -107,7 +107,7 @@ including the palette toolbar, properties view, and outline view.
 Next, let's get into the flow (pun intended) by creating our own workflow using
 the Kaleo Workflow Designer for Java. 
 
-## Creating a workflow 
+## Creating a Workflow 
 
 Developer Studio makes it easy for you to write custom business logic that
 enhances Kaleo workflows. Let's create our own workflow in Developer Studio and
@@ -893,7 +893,7 @@ workflow activity.
 Next you'll learn how to view your workflow definition XML file in Developer
 Studio. 
 
-## Viewing workflow definition XML source 
+## Viewing Workflow Definition XML source 
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.
@@ -928,7 +928,7 @@ Studio's powerful graphical features.
 
 Let's save your workflow definition and publish it to your Liferay server. 
 
-## Publishing workflows to the server 
+## Publishing Workflows to the Server 
 
 After you create a new workflow or modify an existing one, you'll have to
 publish it onto your Liferay server before your site's members can use it. Let's
@@ -977,7 +977,7 @@ Are you ready for our *Kaleo Designer for Java* finale? You just have to
 activate the workflow in your Liferay Portal, then we'll set up the DDL record
 and try out our new workflow. Let's activate! 
 
-## Using workflows in Liferay Portal 
+## Using Workflows in Liferay Portal 
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
@@ -992,7 +992,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
-## Using DDLs with workflows 
+## Using DDLs with Workflows 
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
@@ -1096,6 +1096,4 @@ your workflows running in Liferay, you can publish directly to your existing
 Liferay server; the configuration process is quick and easy. With all of its
 features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
-
-
 

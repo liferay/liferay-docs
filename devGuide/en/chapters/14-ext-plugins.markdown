@@ -1,4 +1,4 @@
-# Ext plugins 
+# Advanced Customization with Ext Plugins 
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
