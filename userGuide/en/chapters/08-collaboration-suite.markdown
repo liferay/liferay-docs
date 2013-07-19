@@ -456,11 +456,30 @@ event. Email is currently the only supported event notification type.
 
 ---
 
-You can also invite users, organizations, or other calendar resources to your
-event. To invite a user, group, or resource, start typing the name of the entity
-you'd like to invite and a list of matches will appear. Select the one you want
-or hit *Enter* if the entity you'd like to invite is at the top of the list. All
-the entities you've invited to your event appear as a list under the *Pending*
+Calendar administrators can customize the email notification templates for event
+invitation and event reminder emails. To customize a calendar's email templates,
+open the calendar's Calendar Settings window by clicking on the small arrow next
+to the calendar's name in the default view of the calendar portlet and selecting
+*Calendar Settings*. By default, the General tab of the Calendar Settings
+appears, where you can edit the calendar's name, description, color, default
+calendar status, and whether or not calendar events and ratings are enabled or
+disabled. Click on *Notification Templates* at the top of the screen to view a
+new tab. Then click on either *Invite Email* or *Reminder Email* to customize
+event invitation or event reminder emails. You can customize the name that
+appears on the sent emails, the address from which to send the email, the
+subject, and the body of the email. As with Liferay's other other email
+notification templates (e.g., the Message Boards' notification email templates),
+a definition of terms appears below the email body editor. This definition of
+terms list specifies variables that you can you can use when customizing the
+email template. For example, `[$EVENT_LOCATION$]` represents the event location,
+`[$EVENT_START_DATE$]` represents the event start date, and `[$EVENT_TITLE$]`
+specifies the event title.
+
+You can invite users, organizations, or other calendar resources to an event.
+To invite a user, group, or resource, start typing the name of the entity you'd
+like to invite and a list of matches will appear. Select the one you want or hit
+*Enter* if the entity you'd like to invite is at the top of the list. All the
+entities you've invited to your event appear as a list under the *Pending*
 heading, which shows how many pending invitations there are. If you accidentally
 invited the wrong entity, mouse over its name in the *Pending* list, click on
 the arrow icon that appears, and click *Remove*. If you'd just like to check the
