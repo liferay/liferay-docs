@@ -40,7 +40,7 @@ archetypes you can use to develop your plugins.
 First let's consider the most robust tool for Liferay development, Liferay
 IDE. 
 
-## Developing apps with Liferay IDE 
+## Developing Apps with Liferay IDE 
 
 Even if you're a grizzled veteran of Java development, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
@@ -97,7 +97,7 @@ Make sure you have a supported Java JRE and Eclipse release:
 
 Next we'll show you how to install Liferay IDE. 
 
-#### Installation steps 
+#### Installation Steps 
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
@@ -134,7 +134,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 Next we'll show you how to install Liferay IDE without specifying an Eclipse
 update URL. 
 
-#### Alternative installation 
+#### Alternative Installation 
 
 To install Liferay IDE without specifying an update URL for Eclipse, follow
 these steps: 
@@ -587,7 +587,7 @@ configured correctly as a Liferay IDE project; the last subsection in this topic
 will show you how. We have one more import scenario to cover--importing existing
 Liferay IDE projects into your Liferay IDE. 
 
-#### Importing an existing Liferay IDE project 
+#### Importing an Existing Liferay IDE Project 
 
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
@@ -620,7 +620,7 @@ window; you can modify the targeted runtime in the *Project properties* &rarr;
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-### Verifying that the import has succeeded 
+### Verifying That the Import has Succeeded 
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE
@@ -1104,7 +1104,7 @@ you, consider using Liferay's Apache Maven archetypes to build your custom
 Liferay plugins. We'll look at Maven next, and we'll have some fun with classic
 poetry while doing it. 
 
-## Developing plugins Using Maven 
+## Developing Plugins Using Maven 
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
@@ -2506,7 +2506,7 @@ understand Liferay's deprecation policy. That way you'll know when methods from
 our API's are deprecated, and you can make any necessary changes. We'll
 describe the deprecation policy next. 
 
-## Liferay's deprecation policy
+## Liferay's Deprecation Policy
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major releases of Liferay.

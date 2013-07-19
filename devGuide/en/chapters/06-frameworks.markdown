@@ -50,7 +50,7 @@ This chapter covers the following topics:
 
 Let's take a look at the `ServiceContext` class. 
 
-## Service Context 
+## ServiceContext 
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -226,7 +226,7 @@ point to some file in Liferay. -Rich -->
 
 Next let's see an example of accessing information from a `ServiceContext`. 
 
-### Accessing Service Context data 
+### Accessing Service Context Data 
 
 We'll use code snippets from `BlogsEntryLocalServiceImpl.addEntry(...,
 ServiceContext)` to show you how to access information from a `ServiceContext`
@@ -1059,7 +1059,7 @@ developer would leverage asset framework and the steps required to do so. -Russ
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
 
-#### Adding, updating and deleting assets 
+#### Adding, Updating and Deleting Assets 
 
 Whenever you create a new entity, you need to let the Asset Framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -1157,7 +1157,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create and modify assets, consider tagging and categorizing
 them. Let's tackle that next. 
 
-#### Entering and displaying tags and categories 
+#### Entering and displaying Tags and Categories 
 
 In the last section we let Asset Framework know about the tags and categories
 that we associated with a given asset; but how does a content author specify
@@ -1220,7 +1220,7 @@ Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
 tags you can use to leverage Asset Framework's features. 
 
-#### More JSP tags for assets 
+#### More JSP Tags for Assets 
 
 In addition to tags and categories, there are more features that Asset Framework
 provides. These features allow users to do the following with your assets: 
@@ -1298,7 +1298,7 @@ don't need to do this now, but we should do it later, for the 6.2 release. -Rich
 With Liferay's taglib tags, you can easily apply these features to your assets.
 No problemo, right? So let's get the assets published in your portal. 
 
-#### Publishing assets with Asset Publisher 
+#### Publishing Assets with Asset Publisher 
 
 A huge benefit of using the asset framework is that you can leverage the Asset
 Publisher portlet to publish lists of your custom asset types. You can choose
@@ -1701,7 +1701,7 @@ destinations, senders, listeners, and approaches to sending messages. Next we'll
 show you how easy it is to create your destinations, register listeners, and
 send your messages. To demonstrate, we'll implement a business use case.
 
-### Example Use Case--Procurement process 
+### Example Use Case--Procurement Process 
 
 Our use case will consider Jungle Gyms R-Us and its distribution of playground
 equipment, buying the equipment from manufacturers and selling the equipment to
@@ -1757,7 +1757,7 @@ Here are the inter-department message exchanges we'll accommodate:
 
 Let's implement Procurement's request to Finance first. 
 
-### Synchronous messaging 
+### Synchronous Messaging 
 
 In our example, equipment purchases can't proceed without approval from Finance
 and Legal departments. Since special offers from the manufacturers often only
@@ -2016,7 +2016,7 @@ about the slide's safety ratings!
 Next let's have Procurement notify the Sales and Warehouse departments and
 solicit their feedback.
 
-### Asynchronous messaging with callbacks  
+### Asynchronous Messaging with Callbacks  
 
 Asynchronous messaging consists of sending a message and then continuing with
 processing without blocking waiting for an immediate response. This allows the
@@ -2310,7 +2310,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. You can refer to the Device Javadocs mentioned
 above for assistance.  Let's look at some device capabilities next.
 
-### Device capabilities
+### Device Capabilities
 
 Most of the capabilities of a device can be detected, depending on the device
 detection implementation you're using. The Device Recognition plugin's device
@@ -2375,8 +2375,6 @@ extended information on each of these frameworks.  -->
 
 <!-- The above section should also be removed. All of these are implemented and
 documented in *Liferay in Action*. -Rich -->
-
-
 
 ## Summary  
 

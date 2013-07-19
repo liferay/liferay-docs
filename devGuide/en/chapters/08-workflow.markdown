@@ -419,7 +419,7 @@ To set up the workflow process we described above, we'll need to add a
     the DDL record to determine whether the ticket warrants a modification to
     the product. If it does, we'll assign it to a developer via the Developer
     task node. Otherwise we'll end the workflow by transitioning to the
-    workflow's EndNode.  
+    workflow's EndNode. 
 
 4.  From the *Create New Condition Node* menu, add two transitions--one to the
     *Developer* node and the other to the *EndNode* state. We'll add the
@@ -893,7 +893,7 @@ workflow activity.
 Next you'll learn how to view your workflow definition XML file in Developer
 Studio. 
 
-## Viewing Workflow Definition XML source 
+## Viewing Workflow Definition XML Source 
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.
@@ -907,7 +907,7 @@ takes you to the XML, and you can easily switch contexts as you need.
 - *Section Highlighting*: Shows XML source code for the node or transition
   currently selected in the workflow diagram. Click the document icon in an
   entity's floating palette or right click the entity and select *Show in
-  source*.  
+  source*. 
 - *Editor Validation*: Displays an error marking in the editor's gutter if your
   code is invalid. Click the error marking to see hint for resolving the error. 
 - *Content Assist*: Suggests language specific functions and variables as you
