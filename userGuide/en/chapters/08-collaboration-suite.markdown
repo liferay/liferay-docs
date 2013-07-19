@@ -371,6 +371,8 @@ divided into hours and half-hours. The month view displays a traditional
 calendar view with days represented as boxes. In the previous section, we saw
 how to configure the default display view of the calendar.
 
+#### Adding New Calendars
+
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To manage your
 personal or site calendars, mouse over *My Calendars* or *Current Site
@@ -389,23 +391,26 @@ from the default calendar are displayed. You can customize the events that
 appear in the main area of the calendar portlet by clicking on the colored boxes
 corresponding to the calendars. When you click on a colored box, its color
 disappears and the events of that calendar are no longer displayed. Click on an
-uncolored box to view the events of the corresponding calendar. When adding a
-calendar, you can also specify whether or not to enable comments and ratings for
-your calendar's events. Comments and ratings can be enabled/disabled on a per
-calendar basis. They are disabled by default. Additionally, you can specify a
-color for your calendar. Events created in the new calendar will default to the
-color you choose.
+uncolored box to view the events of the corresponding calendar.
+
+![Figure 8.29: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
+
+When adding a calendar, you can also specify whether or not to enable comments
+and ratings for your calendar's events. Comments and ratings can be
+enabled/disabled on a per calendar basis. They are disabled by default.
+Additionally, you can specify a color for your calendar. Events created in the
+new calendar will default to the color you choose.
 
 ![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
 
 You can edit a calendar to change its name, description, or color. You can also
 change the calendar's default calendar status and flag or unflag the *Enable
-Comments* and *Enable Ratings* checkboxes to enable or diable comments and
-ratings for a calendar's events. 
+Comments* and *Enable Ratings* checkboxes to enable or disable comments and
+ratings for a calendar's events.
 
-![Figure 8.29: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
+#### Adding Events to a Calendar
 
-It's very easy to add events to the calendar: just click on any day of the
+It's very easy to add events to a calendar: just click on any day of the
 calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
@@ -499,6 +504,24 @@ you click on *Check Availability* for a calendar resource, its schedule is
 displayed in this calendar view. If you like to overview the availability of all
 the invited entities, just click on *Resources Availability*. When you're done
 specifying event details, click *Save*.
+
+When editing an event, you can also configure the event's permissions. To
+configure an event's permissions, click on the *Permissions* button that appears
+next to the Save button. A list of roles for which you can permission appears in
+the left column. The other columns represent permissions which can be configured
+for the event:
+
+- Add Discussion
+- Delete Discussion
+- Permissions
+- Update Discussion
+
+*Discussions* refers to comments on the event. So the Add Discussion, Delete
+Discuss, and Update Discussion permissions determine whether a role can add,
+delete, or update a comment on an event. The Permissions permission determines
+whether a role can update an event's permissions.
+
+#### Adding and Using Calendar Resources
 
 You might be wondering, "It makes sense to invite users and organizations to an
 event, but what about other calendar resources? What are they used for? How can
