@@ -439,6 +439,16 @@ event. Remember that sites and users can have multiple calendars. Under
 that you think might be useful. Use the *Location* field to specify where your
 event takes place.
 
+Liferay's Calendar portlet supports social activities. Whenever a calendar event
+is added or updated, a corresponding social activity notification is created. If
+the event was added or updated in a calendar that the current user has
+permission to view, the social activity will be viewable in the Activities
+portlet. If the Social Networking portlets have been installed (they're
+available as an app on Liferay Marketplace; search for *Social Networking CE* or
+*Social Networking EE*), the social networking notifications will also appear in
+all the appropriate portlets, such as the Friends' Activities or Members'
+Activities portlets.
+
 ![Figure 8.33: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
 
 The Reminders collapsible section lets you specify up to two
