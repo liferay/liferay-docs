@@ -563,7 +563,7 @@ hope this flexible system meets the needs of your organization. Next, let's look
 at one of the most widely used applications provided by Liferay: its message
 boards.
 
-## Discuss, Ask and Answer using the Message Boards  
+## Discuss, Ask, and Answer Using the Message Boards  
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
