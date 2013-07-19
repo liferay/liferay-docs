@@ -374,26 +374,34 @@ how to configure the default display view of the calendar.
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To manage your
 personal or site calendars, mouse over *My Calendars* or *Current Site
-Calendars*, click on the arrow icon, and select *Manage Calendars*. Any user can
-manage their personal calendars. By default, only site administrators can manage
-site calendars.
+Calendars*, click on the arrow icon, and select *Manage Calendars*. All users
+can manage their personal calendars. By default, only site administrators can
+manage site calendars.
 
 ![Figure 8.27: Click on *Manage Calendars* to see a list of calendars.](../../images/new-calendar-manage-calendars.png)
 
-On the Manage Calendars, screen you can click *Add Calendar* to create a new
+On the Manage Calendars screen, you can click *Add Calendar* to create a new
 calendar. As usual, you can enter a name and description for the calendar and
-configure its permissions. Also, you can specify a color for your calendar.
-Events created in the new calendar will default to the color you choose.
-
-![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize its color and specify whether or not it's the default calendar.](../../images/new-calendar-edit-calendar.png)
-
-You can edit a calendar to change its color. You can also specify whether or not
-the calendar should be the default calendar. Each site, including personal
+configure its permissions. Flag the *Default Calendar* checkbox if you'd like
+the new calendar to be the default calendar. All sites, including personal
 sites, have a default calendar. When a calendar is first visited, the events
 from the default calendar are displayed. You can customize the events that
 appear in the main area of the calendar portlet by clicking on the colored boxes
-corresponding to the calendars. Once you've clicked on a box, its color
-disappears and the events of that calendar are no longer displayed.
+corresponding to the calendars. When you click on a colored box, its color
+disappears and the events of that calendar are no longer displayed. Click on an
+uncolored box to view the events of the corresponding calendar. When adding a
+calendar, you can also specify whether or not to enable comments and ratings for
+your calendar's events. Comments and ratings can be enabled/disabled on a per
+calendar basis. They are disabled by default. Additionally, you can specify a
+color for your calendar. Events created in the new calendar will default to the
+color you choose.
+
+![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
+
+You can edit a calendar to change its name, description, or color. You can also
+change the calendar's default calendar status and flag or unflag the *Enable
+Comments* and *Enable Ratings* checkboxes to enable or diable comments and
+ratings for a calendar's events. 
 
 ![Figure 8.29: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
 
