@@ -464,11 +464,11 @@ the invited entities, just click on *Resources Availability*. When you're done
 specifying event details, click *Save*.
 
 You might be wondering, "It makes sense to invite users and organizations to an
-event, but what about other calendar resources? What are they? Why are they
-useful? And how can you add them?" Good question. Calendar resources can
-represent just about anything that you think might be important to an event. For
-example, your department might have a limited number of rooms and projectors to
-use for presentations. You can add the various rooms and projectors as calendar
+event, but what about other calendar resources? What are they used for? How can
+you add them?" Good questions. Calendar resources can represent just about
+anything that you think might be important to an event. For example, your
+department might have a limited number of rooms and projectors to use for
+presentations. You can add the various rooms and projectors as calendar
 resources and add them to events. This way, when new events are added, the event
 organizer can check the availability of important resources against events that
 have already been planned. So, how can you add new calendar resources? You might
@@ -480,11 +480,7 @@ view, edit, add, or delete resources.
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
 able to enter a name and description for your resource, specify whether or not
-it should be active, and configure its permissions. You'll also be able to
-select a specific resource type. The resource types that appear in the list are
-specified in the new Calendar portlet's `portlet.properties` file. Remember that
-it's a best practice not to edit `portlet.properties` directly, but to create a
-separate `portlet-ext.properties` file containing the properties to override.
+it should be active, apply tags and categories, and configure its permissions.
 
 ![Figure 8.35: To manage a calendar resource and view the calendars on which it appears, use the Actions button.](../../images/new-calendar-resource-calendars.png)
 
