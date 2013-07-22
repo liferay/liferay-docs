@@ -28,7 +28,7 @@ In this chapter you'll learn all about Liferay themes:
 - Color Schemes
 - Portal Predefined Settings
 - Theme Inheritance
-- Importing resources with themes
+- Importing Resources with Themes
 
 Liferay themes are easy to create. You can start by making changes only in the
 CSS files. When you need to customize themes more extensively, you can change
@@ -50,7 +50,7 @@ Let's create a theme!
 ### Creating a Theme 
 
 The theme creation process is nearly identical to the portlet creation process
-that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
+that we covered in Chapter 3. Our theme will be named *Deep Blue*, so the
 project name (without spaces) is *deep-blue*, and the display name (which can
 have spaces) is *Deep Blue*. Let's create the theme using Liferay Developer
 Studio first, and then with the terminal. 
@@ -1082,7 +1082,7 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn everything you need to know about layout
+In this section, you'll learn everything you need to know about layout
 templates:
 
 - Creating a layout template project 

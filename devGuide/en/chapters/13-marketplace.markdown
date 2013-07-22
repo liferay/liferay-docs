@@ -11,10 +11,10 @@ including:
 
 - Marketplace Basics
 - Requirements for Publishing to the Marketplace
-- Developing and Testing apps for the Marketplace
-- Publishing apps to the Marketplace
-- Maintaining and Updating apps
-- Tracking app Performance
+- Developing and Testing Apps for the Marketplace
+- Publishing Apps to the Marketplace
+- Maintaining and Updating Apps
+- Tracking App Performance
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
 highly recommended that you first read the [Liferay Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
@@ -31,7 +31,7 @@ will use over and over again as a Marketplace developer.
 ### What is an App? 
 
 As a Liferay Developer, you will undoubtedly already be familiar with the
-concept of plugins (portlets, hooks, themes, etc). If not, review chapter 1 of
+concept of plugins (portlets, hooks, themes, etc). If not, review Chapter 1 of
 this guide. A *Liferay App* (sometimes just called an *app*) is a collection of
 one or more of these plugins, packaged together to represent the full
 functionality of an application on the Liferay platform. In addition to the
@@ -131,17 +131,16 @@ requirements to keep in mind.
 - *liferay-plugin-package.properties file*:
     - Property `recommended.deployment.context` must not be set.
     - Property `security-manager-enabled` must be set to `true`.  This enables
-      Liferay's Plugin Security Manager.  Read the [Plugin Security Management
-      Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0)
-      in this guide for information on developing secure apps.  Every
-      app you submit on the Marketplace must use this framework.
+      Liferay's Plugin Security Manager.  Read the section on Plugin Security
+      Management later in this chapter for information on developing secure
+      apps.  Every app you submit on the Marketplace must use this framework.
 - *Deployment contexts*:
     - Liferay reserves the right to deny an application if any of its plugin
       deployment contexts is the same as another plugin in the Marketplace.
     - Liferay reserves the right to replace WAR files of app plugins that have
       the same deployment context as plugins built by Liferay.
 
-### Things you Need Before you can Publish 
+### Things You Need Before You Can Publish 
 
 You must first develop your app using your preferred development tool (for
 example, using Liferay Developer Studio or the Plugins SDK). Your app will
@@ -579,7 +578,7 @@ or more of these kinds of changes during the life of the app:
 
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing your App Details 
+### Editing Your App Details 
 
 App details include the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
@@ -599,7 +598,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-### Adding Support for new Versions of Liferay Portal 
+### Adding Support for New Versions of Liferay Portal 
 
 If you need to add files in support of another Liferay release, the process is
 similar. Navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the
@@ -661,7 +660,7 @@ with the new version of the app. For a new version of the app, you must upload
 all files for all supported Liferay versions again, even if they have not
 changed since the last version.
 
-### Deactivating your App 
+### Deactivating Your App 
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app causes the app to no longer be downloadable from the Marketplace for new
@@ -789,7 +788,7 @@ Here is the suggested plugin development approach:
 
 Let's go over each part of this approach. 
 
-#### Develop your Plugin
+#### Develop Your Plugin
 
 First, create your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
@@ -802,7 +801,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
 PACL. 
 
-#### Build your Plugin's PACL
+#### Build Your Plugin's PACL
 
 Rather than tediously figuring out all of the resources your plugin accesses, on
 your own, let Liferay's PACL Policy Generation tool to give you a head start.
@@ -1455,6 +1454,7 @@ executor for the plugin to access.
 <!--Right now summaries from both chapters (plugins security was its own
 chapter previously) are left here. They should be combined and the chapter
 rewqorked for flow. --> 
+
 ## Summary 
 
 In this chapter, we've discussed the reasons for plugin security management, how

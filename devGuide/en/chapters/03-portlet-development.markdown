@@ -19,14 +19,14 @@ examples, check out the liferay-plugins repository from
 We'll discuss the following topics as we learn about developing portlets for
 Liferay:
 
-- Creating a Portlet project 
-- Anatomy of a Portlet project
+- Creating a Portlet Project 
+- Anatomy of a Portlet Project
 - Writing the My Greeting Portlet
-- Understanding the two phases of Portlet Execution 
+- Understanding the Two Phases of Portlet Execution 
 - Passing Information from the Action Phase to the Render Phase
 - Developing a Portlet with Multiple Actions 
 - Adding Friendly URL Mapping to the Portlet 
-- Localizing your Portlet 
+- Localizing Your Portlet 
 
 First, let's create the portlet that we'll use throughout this chapter. 
 
@@ -994,7 +994,7 @@ For more information on friendly URL mapping, there's a detailed discussion in
 [*Liferay in Action*](http://manning.com/sezov). Our next step here is to
 explore localization of the portlet's user interface. 
 
-## Localizing your Portlet
+## Localizing Your Portlet
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
@@ -1281,10 +1281,10 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 ### Overriding Liferay Portal Translations
 
 If you want your translations available throughout the portal, or if you want to
-override an existing translation, refer to Chapter 6 of this guide, specifically
-the *Overriding a Language.properties File* section. It describes how to use a
-hook to override existing Liferay translations. You can share your keys with
-other portlets, as well as override existing Liferay translations.  
+override an existing translation, refer to Chapter 12 of this guide,
+specifically the *Overriding a Language.properties File* section. It describes
+how to use a hook to override existing Liferay translations. You can share your
+keys with other portlets, as well as override existing Liferay translations.  
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 

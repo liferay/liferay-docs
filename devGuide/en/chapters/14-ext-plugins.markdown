@@ -2,10 +2,10 @@
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
-sure you can't accomplish your goal using a different tool. Check out Chapter 6,
-Hooks for the available alternatives. If a hook won't suffice, keep reading to
-discover the use cases for Ext plugins and how to set one up. First let's talk
-about why you should avoid Ext plugins when possible. 
+sure you can't accomplish your goal using a different tool. Check out Chapter
+12, Hooks for the available alternatives. If a hook won't suffice, keep reading
+to discover the use cases for Ext plugins and how to set one up. First let's
+talk about why you should avoid Ext plugins when possible. 
 
 As someone once said, "With great power comes great responsibility" (okay, many
 people have said that many times).  Before deciding to use an Ext plugin, weigh
@@ -36,8 +36,8 @@ With these use cases in mind, we'll discuss the following topics:
 
 - Creating an Ext plugin 
 - Developing an Ext plugin 
-- Deploying in production 
-- Migrating old extension environments 
+- Deploying in Production 
+- Migrating Old Extension Environments 
 
 Let's create an Ext plugin. 
 
@@ -45,7 +45,7 @@ Let's create an Ext plugin.
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
-(see Chapter 2, The Plugins SDK). 
+(see Chapter 2, on the Plugins SDK). 
 
 ### Using Developer Studio
 
@@ -211,7 +211,7 @@ customization techniques.
 
 Now let's look at each step of the development proces in more detail. 
 
-### Set up 
+### Set Up 
 
 Before deploying an Ext plugin, you must edit the `build.[username].properties`
 file in the root folder of your Plugins SDK. If the file doesn't yet exist,
@@ -892,7 +892,7 @@ small and easy to transport. Execute these steps on the server:
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
 
-### Method 2: Generate an Aggregated WAR file 
+### Method 2: Generate an Aggregated WAR File 
 
 Some application servers don't support auto-deploy; WebSphere and Weblogic are
 two examples. With an aggregated WAR file, all Ext plugins are merged before

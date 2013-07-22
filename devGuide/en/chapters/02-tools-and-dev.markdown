@@ -16,11 +16,8 @@ Portal, then  we'll look at developing your plugins with other tools. Here are
 the topics we'll cover along the way: 
 
 - Developing Apps with Liferay IDE 
-
 - Leveraging the Plugins SDK 
-
-- Developing PLugins Using Maven 
-
+- Developing Plugins Using Maven 
 - Liferay's Deprecation Policy 
 
 Liferay's tool-agnosticism is great for experienced developers who understand
@@ -1034,17 +1031,17 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See chapter 7 on Ext plugins. 
+    - `ext/` - Ext plugins directory. See Chapter 14 on Ext plugins. 
 
-    - `hooks/` - hook plugins directory. See chapter 6 on hooks. 
-    - `layouttpl/` - layout templates directory. See chapter 4 on creating
+    - `hooks/` - hook plugins directory. See Chapter 12 on hooks. 
+    - `layouttpl/` - layout templates directory. See Chapter 10 on creating
       Liferay Themes. 
     - `lib/` - commonly referenced libraries. 
     - `misc/` - development configuration files. Example, a source code
       formatting specification file. 
-    - `portlets/` - portlet plugins directory. See chapter 3 on portlet
+    - `portlets/` - portlet plugins directory. See Chapter 3 on portlet
       development. 
-    - `themes/` - themes plugins directory. See Chapter 4 on creating Liferay
+    - `themes/` - themes plugins directory. See Chapter 10 on creating Liferay
       themes. 
     - `tools/` - plugin templates and utilities. 
     - `webs/` - web plugins directory. 
@@ -2294,9 +2291,9 @@ placed in the *target* directory. Its path is
 
 ##### More Information 
 
-For more information on Liferay themes and its settings, see Chapter 4,
-[Creating Liferay
-Themes](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7).
+For more information on Liferay themes and its settings, see Chapter 10,
+[Creating Liferay Themes and Layout
+Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7). 
 
 You successfully developed a Liferay theme using Maven. Find out about
 developing hook plugins next. 
@@ -2445,8 +2442,8 @@ the *Deploying Liferay Plugins with Maven* section.
 
 ##### More Information 
 
-For detailed information on creating layout templates, see Chapter 5, [Creating
-Liferay Layout
+For detailed information on creating layout templates, see Chapter 9, [Creating
+Liferay Themes and Layout
 Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0). 
 
 You've passed your trial by fire (the cat thanks you), developing yet another

@@ -522,9 +522,8 @@ editor you can invoke code-assist and access built in Kaleo workflow variables.
 
 Let's get the DDL record that's being worked on in our workflow process. We'll
 need the `serviceContext` entity, under `Context Variables` in the palette. To
-learn more about Service Context and its parameters, see the [Service
-Context](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
-section of this guide.
+learn more about Service Context and its parameters, see the [ServiceContext](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
+section of Chapter 6.
 
 Let's use Designer's palette features in conjunction with our Java/Groovy editor
 to implement our condition: 

@@ -14,10 +14,9 @@ simple, widely available, and easy to deploy.
 
 In this chapter, we'll cover the following topics:
 
-- OpenSocial gadget basics.
-- Using PubSub to allow gadgets to communicate with each other and with
-  portlets.
-- Liferay's gadget editing environment.
+- OpenSocial Gadget Basics
+- Gadget/Portlet Communication with PubSub
+- Liferay's Gadget Editing Environment
 
 Let's first look at the structure of an OpenSocial gadget and consider the
 concepts involved with OpenSocial gadgets.
@@ -217,7 +216,7 @@ preferences.
 Now that you're fundamentally sound on the gadget basics, let's explore what
 gadgets offer you in Liferay Portal.
 
-## Accessing Third-Party Applications from your Gadget 
+## Accessing Third-Party Applications from Your Gadget 
 
 Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket,
 Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd

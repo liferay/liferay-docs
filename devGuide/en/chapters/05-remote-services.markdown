@@ -276,8 +276,7 @@ Here's the list of *secure* web services for `UserGroup`:
 
 ![note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use a tool
 called *Service Builder* to expose their services via SOAP automatically. If
-you're interested in using Service Builder, check out the *Service Builder*
-chapter in this guide. 
+you're interested in using Service Builder, read Chapter 4. 
 
 ---
 
@@ -964,7 +963,7 @@ In this example, `param2` will automatically be set to `null`.
 
 Find out how to pass parameters as part of the URL path next. 
 
-#### Passing Parameters as Part of URL path 
+#### Passing Parameters as Part of a URL Path 
 
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
@@ -982,7 +981,7 @@ you.
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
-#### Passing Parameters as URL Query 
+#### Passing Parameters as a URL Query 
 
 You can pass in parameters as request parameters. Parameter names are specified
 as is (e.g. camelCase) and are set equal to their argument values, like this: 
@@ -1196,7 +1195,7 @@ Find out how next.
 
 When you pass in an object paramter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
-`ServiceContext` (see the *Service Context* section in this chapter to find out
+`ServiceContext` (see the *ServiceContext* section in this chapter to find out
 more about this type). To make an appropriate call to JSONWS, you might need to
 set the `serviceContext` parameter's fields `addGroupPermissions` and
 `scopeGroupId`. 
@@ -1258,7 +1257,7 @@ by Igor Spasi&#263;.
 
 Let's check out some common JSON WebService errors. 
 
-### Common JSON WebService Errors 
+### Common JSON Web Service Errors 
 
 While working with JSON Web Services, you may encounter errors. Let's look at
 the most common errors in the following subsections. 
@@ -1341,7 +1340,7 @@ that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-#### A simple Invoker Call 
+#### A Simple Invoker Call 
 
 The Invoker is accessible from the following fixed address:
 

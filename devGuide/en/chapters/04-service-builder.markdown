@@ -381,7 +381,7 @@ entities, we'll set both local service and remote service to `true`.
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity columns. 
 
-### Step 4: Define the Columns (Attributes) for each Service Entity
+### Step 4: Define the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent attributes. For our
 example, we'll add attributes for both our Event and Location entities. To add
