@@ -40,6 +40,7 @@ This chapter covers the following topics:
 - Service Context
 - Using Message Bus
 - Device Detection
+- Liferay's Deprecation Policy
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
@@ -763,15 +764,15 @@ Let's look at the last two bracketed items more closely:
 Let's demonstrate by mapping a service method's URL using the above naming
 conventions: 
 
-- First, here's the service method we want to map: 
+-   First, here's the service method we want to map: 
 
-    @JSONWebService
-    public interface UserService {
-        public com.liferay.portal.model.User getUserById(long userId) {...}
+        @JSONWebService
+        public interface UserService {
+            public com.liferay.portal.model.User getUserById(long userId) {...}
 
-- Here's what the service method's URL looks like: 
+-   Here's what the service method's URL looks like: 
 
-    http://localhost:8080/api/jsonws/user-service/get-user-by-id
+        http://localhost:8080/api/jsonws/user-service/get-user-by-id
 
 Each service method is bound to one HTTP method type. Any method name starting
 with `get`, `is` or `has` are assumed to be read-only methods and are mapped as
@@ -1259,7 +1260,7 @@ and are ignored during matching.
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object
+![tip](../../images/tip-pen-paper.png) **Tip:** Use inner parameters with object
 parameters to set inner content of created parameter instances! 
 
 ---
@@ -1317,41 +1318,46 @@ transition" problems above would be to combine some of the sections. -Rich -->
 
 <!--I just added the transitions for now. -Russ -->
 
-- Missing value for parameter 
-        If you see this error, you didn't pass a parameter value along with the
-        parameter name in your URL path. The parameter value must follow the
-        parameter name, like in this example: 
+-   Missing value for parameter 
 
-    /api/jsonws/user/get-user-by-id/userId
 
-        The path above specifies a parameter named `userId`, but doesn't specify
-        the parameter's value. You can resolve this error by providing the
-        parameter value after the parameter name: 
+    If you see this error, you didn't pass a parameter value along with the
+    parameter name in your URL path. The parameter value must follow the
+    parameter name, like in this example: 
 
-    /api/jsonws/user/get-user-by-id/userId/173
+        /api/jsonws/user/get-user-by-id/userId
 
-- No JSON web service action associated 
-        This is error means no service method could be matched with the provided
-        data (method name and argument names). This can be due to various reasons:
-        arguments may be misspelled, the method name may be formatted incorrectly, etc.
-        Since JSON web services reflect the underlying Java API, any changes in the
-        respective Java API will automatically be propagated to the JSON web services.
-        For example, if a new argument is added to a method or an existing argument is
-        removed from a method, the parameter data must match that of the new method
-        signature.
+    The path above specifies a parameter named `userId`, but doesn't specify
+    the parameter's value. You can resolve this error by providing the
+    parameter value after the parameter name: 
 
-- Unmatched argument type 
-        This error appears when you try to instantiate a method argument using an
-        incompatible argument type.
+        /api/jsonws/user/get-user-by-id/userId/173
 
-- Judgment Day
-        We hope you never see this error. It means that Skynet has initiated a nuclear
-        war and most of humanity will be wiped out; survivors will need to battle
-        *Terminator* cyborgs. If you see this error and survive *Judgment Day*, we
-        recommend joining the resistance--they'll likely need good developers to
-        support the cause, especially those familiar with time travel. 
+-   No JSON web service action associated 
 
-        Had you going there, didn't we? 
+    This is error means no service method could be matched with the provided
+    data (method name and argument names). This can be due to various reasons:
+    arguments may be misspelled, the method name may be formatted incorrectly,
+    etc. Since JSON web services reflect the underlying Java API, any changes in
+    the respective Java API will automatically be propagated to the JSON web
+    services. For example, if a new argument is added to a method or an existing
+    argument is removed from a method, the parameter data must match that of the
+    new method signature.
+
+-   Unmatched argument type 
+
+    This error appears when you try to instantiate a method argument using an
+    incompatible argument type.
+
+-   Judgment Day
+
+    We hope you never see this error. It means that Skynet has initiated a
+    nuclear war and most of humanity will be wiped out; survivors will need to
+    battle *Terminator* cyborgs. If you see this error and survive *Judgment
+    Day*, we recommend joining the resistance--they'll likely need good
+    developers to support the cause, especially those familiar with time travel. 
+
+    Had you going there, didn't we? 
 
 <!-- Too much?-->
 
@@ -1564,15 +1570,12 @@ Here we'll give you a helpful categorical listing of the fields:
 - Actions:
     - `_command`
     - `_workflowAction`
-
 - Attributes:
     - `_attributes`
     - `_expandoBridgeAttributes`
-
 - Classification: 
     - `_assetCategoryIds`
     - `_assetTagNames`
-
 - IDs and Scope:
     - `_companyId`
     - `_portletPreferencesIds`
@@ -1580,28 +1583,23 @@ Here we'll give you a helpful categorical listing of the fields:
     - `_scopeGroupId`
     - `_userId`
     - `_uuid`
-
 - Language:
     - `_languageId`
-
 - Miscellaneous:
     - `_headers`
     - `_signedIn`
-
 - Permissions:
     - `_addGroupPermissions`
     - `_addGuestPermissions`
     - `_deriveDefaultPermissions`
     - `_groupPermissions`
     - `_guestPermissions`
-
 - Resources:
     - `_assetEntryVisible`
     - `_assetLinkEntryIds`
     - `_createDate`
     - `_indexingEnabled`
     - `_modifiedDate`
-
 - URLs, paths and addresses:
     - `_currentURL`
     - `_layoutFullURL`
