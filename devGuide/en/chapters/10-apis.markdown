@@ -32,21 +32,13 @@ portal's *Java virtual machine* (*JVM*).
 This chapter covers the following topics: 
 
 - Finding Services
-
 - Invoking the API Locally
-
 - Invoking the API Remotely
-
 - Service Security Layers
-
 - SOAP Web Services
-
 - JSON Web Services
-
 - Service Context
-
 - Using Message Bus
-
 - Device Detection
 
 You can find Liferay's services by searching for them in the Javadocs:
@@ -61,7 +53,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 
 
 1. In your browser, open up the Javadocs:
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/) 
+   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/) 
 
 2. Under *Portal Services*, click the link for the `com.liferay.portal.service`
    package, since the services for the Organization entity belong to the
@@ -270,8 +262,7 @@ To summarize, accessing Liferay remotely requires you to pass two layers of
 security checks:
 
 - *First layer*: The IP address must be pre-configured in the server's portal
-properties. 
-
+  properties. 
 - *Second layer*: The user needs permission to access the related resources. 
 
 Next let's talk about Liferay's SOAP web services. 
@@ -314,10 +305,10 @@ You can see a list of the services deployed on your portal by opening your
 browser to a URL following one of these formats: 
 
 - For your secure services (i.e., serevices requiring authentication) use
-`http://[host]:[port]/api/secure/axis`. 
+  `http://[host]:[port]/api/secure/axis`. 
 
 - For your sevices that don't require authentication, use
-`http://[host]:[port]/api/axis`. 
+  `http://[host]:[port]/api/axis`. 
 
 Here's the list of *secure* web services for `UserGroup`: 
 
@@ -542,10 +533,9 @@ environment, since the password is unencrypted. It's simply used for convenience
 in this example. 
 
 - The screen name and password are passed in as credentials. 
-
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
-end of the URL. Remember that the service name can be found in the web service
-listing.
+  end of the URL. Remember that the service name can be found in the web
+  service listing.
 
 The operations `getCompanyByVirtualHost()`, `getUserIdByScreenName()`,
 `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
@@ -617,11 +607,8 @@ both from JavaScript within the portal and from any JSON-speaking client.
 We'll cover the following topics as we explore JSON Web Service functionality:
 
 - Registration
-
 - Configuration
-
 - Invocation 
-
 - Results
 
 Let's talk about registering JSON Web Services next. 
@@ -768,11 +755,10 @@ to the service? -->
 Let's look at the last two bracketed items more closely: 
 
 - `service-class-name` is generated from the service's class name by removing
-the `Service` or `ServiceImpl` suffix and making it lower case. 
-
+  the `Service` or `ServiceImpl` suffix and making it lower case. 
 - `service-method-name` is generated from the service's method name by
-converting its camel case to lower case and using dashes (`-`) to separate
-words. 
+  converting its camel case to lower case and using dashes (`-`) to separate
+  words. 
 
 Let's demonstrate by mapping a service method's URL using the above naming
 conventions: 
@@ -795,8 +781,8 @@ methods.
 There are two ways to access a plugin's JSON Web Services. We'll call them,
 ingeniously, *Option 1* and *Option 2*. 
 
-- *Option 1*: Access the plugin service via the plugin context (e.g. your custom
-portlet's context):
+-   *Option 1*: Access the plugin service via the plugin context (e.g. your
+    custom portlet's context):
 
         http://[server]:[port]/[plugin-context]/api/jsonws/[service-class-name]/[service-method-name]
 
@@ -805,7 +791,7 @@ portlet's context):
     the service in this manner requires additional authentication. You might use
     this for batch services or other requests that don't require context. 
 
-- *Option 2*: Accessing the plugin service via the portal context:
+-   *Option 2*: Accessing the plugin service via the portal context:
 
         http://[server]:[port]/[portal-context]/api/jsonws/[plugin-context].[service-class-name]/[service-method-name]
 
@@ -1076,23 +1062,22 @@ pass a `List` argument, send a JSON array. To pass a `Map` argument, send a JSON
 object. The conversion of these is done in two steps, ingeniously referred to
 below as *Step 1* and *Step 2*:
 
-- *Step 1--JSON deserialization*: JSON arrays are converted into `List<String>`
-and JSON objects are converted to `Map<String, String>`. For security reasons,
-it is forbidden to instantiate any type within JSON deserialization. 
-
+- *Step 1--JSON deserialization*: JSON arrays are converted into
+  `List<String>` and JSON objects are converted to `Map<String, String>`. For
+  security reasons, it is forbidden to instantiate any type within JSON
+  deserialization.  
 - *Step 2--Generification*: Each `String` element of the `List` and `Map` is
-converted to its target type (the argument's generic Java type specified in the
-method signature). This step is only executed if the Java argument type uses
-generics. 
+  converted to its target type (the argument's generic Java type specified in
+  the method signature). This step is only executed if the Java argument type
+  uses generics. 
 
 As an example, let's consider the conversion of `String` array `[en,fr]` as JSON
 web service parameters for a `List<Locale>` Java method argument type: 
 
 - *Step 1--JSON deserialization*: The JSON array is deserialized to a
-`List<String>` containing `String`s `en` and `fr`. 
-
+  `List<String>` containing `String`s `en` and `fr`. 
 - *Step 2--Generification*: Each `String` is converted to the `Locale` (the
-generic type), resulting in the `List<Locale>` Java argument type. 
+  generic type), resulting in the `List<Locale>` Java argument type. 
 
 Now let's see how to specify an argument as `null`. 
 
@@ -1291,7 +1276,7 @@ Let's look at some values returned from service calls. We'll create a
 `UserGroup` as we did in our SOAP web service client examples. To make it easy,
 we'll use the test form provided with the JSON web service in our browser. 
 
-1. Open your browser to the JSON web service method that adds a `UserGroup`:
+1.  Open your browser to the JSON web service method that adds a `UserGroup`:
 
         http://127.0.0.1:8080/api/jsonws?signature=/usergroup/add-user-group-2-name-description
 
@@ -1299,10 +1284,10 @@ we'll use the test form provided with the JSON web service in our browser.
     `http://127.0.0.1:8080/api/jsonws` then scrolling down to the section for
     *UserGroup*; click *add-user-group*. 
 
-2. In the *name* field enter *UserGroup3* and set the description to an
-arbitrary value like *Created using JSON WS*.
+2.  In the *name* field enter *UserGroup3* and set the description to an
+    arbitrary value like *Created using JSON WS*.
 
-3. Click *Invoke* and you'll get a result similar to the following: 
+3.  Click *Invoke* and you'll get a result similar to the following: 
 
         {"addedByLDAPImport":false,"companyId":10154,"description":"Created
         using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
@@ -1478,20 +1463,15 @@ Let's see what the Invoker did in the background when we used a single HTTP
 request to make the above nested service call: 
 
 - First, the Invoker called the Java service mapped to `/user/get-user-by-id`,
-passing in a value for the `userId` parameter. 
-
+  passing in a value for the `userId` parameter. 
 - Next, the resulting user object was assigned to the variable `$user`. 
-
 - The nested service calls were invoked. 
-
-- The Invoker called the Java service mapped to `/contact/get-contact-by-id` by 
-using the `contactId` parameter, with the `$user.contactId` value from the object
-`$user`. 
-
+- The Invoker called the Java service mapped to `/contact/get-contact-by-id`
+  by using the `contactId` parameter, with the `$user.contactId` value from
+  the object `$user`. 
 - The resulting contact object was assigned to the variable `$contact`. 
-
-- Lastly, the Invoker injected the contact object referenced by `$contact` into
-the user object's property named `contact`. 
+- Lastly, the Invoker injected the contact object referenced by `$contact`
+  into the user object's property named `contact`. 
 
 ---
 
@@ -1865,14 +1845,11 @@ a paragraph. Russ-->
 The Message Bus system contains the following components: 
 
 - **Message Bus**: Manages transfer of messages from message *senders* to message
-*listeners*. 
-
+  *listeners*. 
 - **Destinations**: Addresses or endpoints to which *listeners* register to
-receive messages. 
-
+  receive messages. 
 - **Listeners**: Consume messages received at destinations. They receive all
-messages sent to their registered destinations.
-
+  messages sent to their registered destinations.
 - **Senders**: Invoke the Message Bus to send messages to destinations. 
 
 Your services can send messages to one or more destinations, and can listen
@@ -1886,29 +1863,24 @@ listen for messages.
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
 - **Synchronous messaging**: After it sends a message, the sender blocks waiting
-for a response from a recipient. 
-
+  for a response from a recipient. 
 - **Asynchronous messaging**: After it sends a message, the sender is free to
-continue processing. The sender can be configured to receive a call-back or can
-simply send and forget. We'll show you how to implement both synchronous and
-asynchronous messaging in this section. 
-
+  continue processing. The sender can be configured to receive a call-back or
+  can simply send and forget. We'll show you how to implement both synchronous
+  and asynchronous messaging in this section. 
     - **Call-back**: The sender can include a call-back destination key as the
-    response destination for the message. The recipient (listener) can then
-    send a response message back to the sender via this response
-    destination. 
-
+      response destination for the message. The recipient (listener) can then
+      send a response message back to the sender via this response destination. 
     - **Send-and-Forget**: The sender includes no call-back information in the
-    message sent and continues with processing.
+      message sent and continues with processing.
 
 Configuration of Message Bus is done using the following files:
 
 - `WEB-INF/src/META-INF/messaging-spring.xml`: Specifies your destinations,
-listeners, and their mappings to each other. 
-
+  listeners, and their mappings to each other. 
 - `WEB-INF/web.xml`: Holds a listing of deployment descriptors for your plugin.
-Make sure you add `messaging-spring.xml` to your list of Spring configurations
-in this file.
+  Make sure you add `messaging-spring.xml` to your list of Spring configurations
+  in this file.
 
 ---
 
@@ -1939,19 +1911,15 @@ equipment. Let's lay out this process now.
 Jungle Gyms R-Us employs the following departments in their procurement process: 
 
 - *Procurement Department*: Scouts out the latest equipment deals of
-manufacturers.
-
+  manufacturers.
 - *Finance Department*: Determines whether the equipment can be purchased based
-on budget.
-
+  on budget.
 - *Legal Department*: Determines whether the equipment's safety ratings are
-acceptable.
-
+  acceptable.
 - *Warehouse Department*: Recieves the equipment, stores it, and prepares it for
-shipping.
-
+  shipping.
 - *Sales Department*: Builds relationships with prospective customers to sell
-them products.
+  them products.
 
 The departments currently use email to exchange comments about new equipment
 purchases, but someone always seems to be left out of the loop. One time, Sales
@@ -2058,10 +2026,10 @@ This sender takes the following steps:
 2. Stuffs the message with key/value pairs.
 
 3. Sets a response ID and response destination for listeners to use in replying
-back.
+   back.
 
 4. Sends the message to the destination with a timeout value of 10,000
-milliseconds.
+   milliseconds.
 
 5. Blocks waiting for the response.
 
@@ -2105,15 +2073,15 @@ milliseconds.
 This listener executes the following steps: 
 
 1. Implements the `receive(Message message)` method of the
-`com.liferay.portal.kernel.messaging.MessageListener` interface. 
+   `com.liferay.portal.kernel.messaging.MessageListener` interface. 
 
 2. Extracts values from the `Message` parameter by getting values associated
-with known keys. 
+   with known keys. 
 
 3. Creates a `Message` based on the message received via the
-`MessageBusUtil.createResponseMessage(message)` method, which accesses the
-response destination name from the `message` variable and sets the destination
-of the response message. 
+   `MessageBusUtil.createResponseMessage(message)` method, which accesses the
+   response destination name from the `message` variable and sets the
+   destination of the response message. 
 
 4. Sets the response message's payload. 
 
@@ -2217,7 +2185,7 @@ The configuration above specifies the following beans:
 
 - *Listener beans*: Specify classes to handle messages.
 - *Destination beans*: Specify the class *type* and *key* names of the
-destinations.
+  destinations.
 - *Configurator bean*: Maps listeners to their destinations.
 
 When Finance sends its purchase approval request message for a new three-story
@@ -2564,21 +2532,19 @@ where you were using Liferay 6.0.2, and Liferay 6.0.3 has just been released:
 
 - Digit 1 (**6**.0.3): The first digit represents the major release version,
   which is a *feature release*. Along with changes to Liferay's architecture,
-internal schema, and the introduction of new functionality, API methods get
-deprecated during feature releases. In our example, this number hasn't changed,
-so any API methods we use in our custom development are intact. 
-
+  internal schema, and the introduction of new functionality, API methods get
+  deprecated during feature releases. In our example, this number hasn't
+  changed, so any API methods we use in our custom development are intact. 
 - Digit 2 (6.**0**.3): The second digit indicates the minor release. Minor
   releases involve the introduction of new features and bug fixes. While
-customization might be affected when installing, API methods don't get
-deprecated. For our example, this didn't change.  feature release. It also did
-not change in our example. 
-
+  customization might be affected when installing, API methods don't get
+  deprecated. For our example, this didn't change.  feature release. It also did
+  not change in our example. 
 - Digit 3 (6.0.**3**): The third digit represents the maintenance release, or
   fix pack release. In our case, the third digit changed from *2* to *3*, so we
-discovered a maintenance release. In terms of API method deprecation, you're in
-the clear; in acoordince with our policy, methods you used in your custom
-development haven't been deprecated. 
+  discovered a maintenance release. In terms of API method deprecation, you're
+  in the clear; in acoordince with our policy, methods you used in your custom
+  development haven't been deprecated. 
 
 <!-- I think this whole section is incorrect. It should be synced with this
 (focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/editions-of-lifer-4 -->
