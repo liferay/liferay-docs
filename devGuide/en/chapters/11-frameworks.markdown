@@ -29,13 +29,9 @@ doesn't make you have to write yourself.
 Here's what we've got in store for you: 
 
 - Service Builder
-
 - Security and Permissions 
-
 - Asset Framework 
-
 - File Storage Framework 
-
 - Other Frameworks 
 
 Let's get cooking with Liferay's Service Builder.
@@ -104,18 +100,15 @@ Let's look a little more closely at the contents of our `service.xml` file:
 
 - `<service-builder package-path="com.sample.portlet.library">`: Here we
   specified the package path where the class will be generated. In this
-example, classes will generate to `WEB-INF/src/com/sample/portlet/library/`. 
-
+  example, classes will generate to `WEB-INF/src/com/sample/portlet/library/`. 
 - `<namespace>Library</namespace>`: The `namespace` element must be a unique
   namespace for this component. Table names will be prepended with this value. 
-
 - `<entity name="Book" local-service="true" remote-service="false">`: The
   `entity name` is the database table you want to create. 
-
 - `<column name="title" type="String" />`: Columns specified in `service.xml`
   will be created in the database with an appropriate data type for the
-specified Java type. Accessors in the model class will automatically be
-generated for these attributes. 
+  specified Java type. Accessors in the model class will automatically be
+  generated for these attributes. 
 
 ---
 
@@ -185,67 +178,43 @@ Whenever you build a service, there are a number of files automatically
 generated for you. Let's look at them briefly: 
 
 - Persistence
-
     - `BookPersistence`: book persistence interface `@generated`
-
     - `BookPersistenceImpl`: book persistence `@generated`
-
     - `BookUtil`: book persistence util, instances BookPersistenceImpl
       `@generated`
-
 - Local Service
-
     - *`BookLocalServiceImpl`*: local service implementation. This is the only
-      class within the local service that you can modify manually. Your
-business logic will be here. 
-
+      class within the local service that you can modify manually. Your business
+      logic will be here. 
     - `BookLocalService`: local service interface `@generated`
-
     - `BookLocalServiceBaseImpl`: local service base `@generated` `@abstract`
-
     - `BookLocalServiceUtil`: local service util, instances
       `BookLocalServiceImpl` `@generated`
-
     - `BookLocalServiceWrapper`: local service wrapper, wraps
       `BookLocalServiceImpl` `@generated`
-
 - Remote Service
-
     - *`BookServiceImpl`*: remove service implementation. This is where you
       should put the code that adds additional security checks and invokes the
-local service. 
-
+      local service. 
     - `BookService`: remote service interface `@generated`
-
     - `BookServiceBaseImpl`: remote service base `@generated` `@abstract`
-
     - `BookServiceUtil`: remote service util, instances `BookServiceImpl`
       `@generated`
-
     - `BookServiceWrapper`: remote service wrapper, wraps `BookServiceImpl`
       `@generated`
-
     - `BookServiceSoap`: soap remote service, proxies `BookServiceUtil`
       `@generated`
-
     - `BookSoap`: soap book model, similar to `BookModelImpl`, does not
       implement Book `@generated`
-
     - `BookServiceHttp`: http remote service, proxies `BookServiceUtil`
       `@generated`
-
 - Model
-
     - `BookModel`: book base model interface `@generated`
-
     - `BookModelImpl`: book base model `@generated`
-
     - `Book`: book model interface `@generated`
-
     - *`BookImpl`*: book model implementation. You can use this class to add
       methods to your model other than the auto-generated field getters and
-setters. 
-
+      setters. 
     - `BookWrapper`: book wrapper, wraps `Book` `@generated`
 
 Only three classes from the above list can be manually modified:
@@ -288,7 +257,6 @@ Let's review the procedure:
 
 - *Using Developer Studio:* Open your `service.xml` file, make sure you're in
   *Overview* mode, then select *Build Services*. 
-
 - *Using the terminal:* Navigate to the root directory of your portlet in the
   terminal and run `ant build-service`. 
 
@@ -633,13 +601,9 @@ permission check. For a blog entry, users must belong to appropriate roles for
 permission to do the following: 
 
 - *Add comments* to an entry 
-
 - *Delete* an entry 
-
 - *Change the permission* setting of an entry 
-
 - *Update* an entry 
-
 - *View* an entry 
 
 As with a portlet resource, the `<site-member-defaults>` tag, `<guest-defaults>`
@@ -727,14 +691,11 @@ remaining parameters:
 
 - The `name` parameter is the fully qualified Java class name for the 
   entity being added. 
-
 - The `primKey` parameter is the primary key of the entity. 
-
 - The `portletActions` parameter should be set to `true` if you're adding
   portlet action permissions. In our example, it's `false` because we're adding
   a model resource, which should be associated with permissions related to the
   model action defined in `blogs.xml`. 
-
 - The `addGroupPermissions` and the `addGuestPermissions` parameters are inputs
   from the user. If set to `true`, `ResourceLocalService` adds the default
   permissions to the current group and the guest group for this resource,
@@ -793,15 +754,15 @@ This example demonstrates the use of both tags; it comes from the
 
 For the first tag, specify the following attributes: 
 
--   `modelResource`: The fully qualified Java object class name. This class name
-    gets translated into its more readable name as specified in
-    `Language.properties`. 
--   `modelResourceDescription`: You can pass in anything that best describes this
-    model instance. In this example, the blogs title was passed in. 
--   `resourcePrimKey`: The primary key of your model instance. 
--   `var`: Specifies the name of the variable to be assigned the resulting URL
-    String. The variable is then passed to the `<liferay-ui:icon>` tag so the
-    permission icon has the proper URL link. 
+- `modelResource`: The fully qualified Java object class name. This class name
+  gets translated into its more readable name as specified in
+  `Language.properties`. 
+- `modelResourceDescription`: You can pass in anything that best describes
+  this model instance. In this example, the blogs title was passed in. 
+- `resourcePrimKey`: The primary key of your model instance. 
+- `var`: Specifies the name of the variable to be assigned the resulting URL
+  String. The variable is then passed to the `<liferay-ui:icon>` tag so the
+  permission icon has the proper URL link. 
 
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
@@ -1003,32 +964,20 @@ Here are the features you can reuse thanks to the asset framework:
 
 -   Associate tags to custom content types. New tags are created automatically
     when the author assigns them to the content. 
-
 -   Associate categories to custom content types. Authors are only allowed to
     select from predefined categories within several predefined vocabularies. 
-
 -   Manage tags from the control panel, including merging tags. 
-
 -   Manage categories from the control panel, including creating complex
     hierarchies. 
-
 -   Associate comments with assets. 
-
 -   Rate assets using a five star rating system. 
-
 -   Assign social bookmarks to assets, including via tweet, Facebook like, or +1
     (Google Plus). 
-
 -   Add custom fields to assets. 
-
 -   Relate assets to one another. 
-
 -   Flag asset content as inappropriate. 
-
 -   Keep track of the number of visualizations of an asset. 
-
 -   Integrate workflow with assets. 
-
 -   Publish your content using the Asset Publisher portlet. Asset Publisher can
     publish dynamic asset lists or manually selected asset lists. It can also
     show an asset summary view with a link to the full view. This saves you time,
@@ -1043,7 +992,6 @@ We'll describe the first two briefly here before we dive in head first:
 
 -   The first step is mandatory; you must let the framework know whenever one of
     your custom content entries is added, updated or deleted. 
-
 -   The second step enables the asset framework in the UI: you can use a
     set of taglibs to provide widgets that allow authors to enter comments, tags
     and categories, as well as how to show the entered tags and categories along
@@ -1109,34 +1057,26 @@ blogs portlet:
 Here's a quick summary of the most important parameters of this method: 
 
 -   `userId` is the identifier of the user who created the content. 
-
 -   `groupId` identifies the scope of the created content. If your content
     doesn't support scopes (extremely rare), just pass `0` as the value. 
-
 -   `className` identifies the type of asset. The recommended convention is to
     use the name of the Java class that represents your content type, but you can
     actually use any String you want as long as you are sure that it is unique. 
-
 -   `classPK` identifies the specific content being created among others of the
     same type. It's usually the primary key of the table where the custom content
     is stored. If you want, you can use the *classUuid* parameter to specify a
     secondary identifier; it's guaranteed to be universally unique. It's especially
     useful if your content will be exported and imported across separate portals. 
-
 -   `assetCategoryIds` and `assetTagNames` represent the categories and tags
     selected by the author of the content. The Asset Framework will store them
     for you. 
-
 -   `visible` specifies whether the content should be shown at all by Asset
     Publisher. 
-
 -   `title,` `description` and `summary` are descriptive fields used by the Asset
     Publisher when displaying entries of your content type. 
-
 -   `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
     shouldn't show the content before a given publication date or after a given
     expiration date, respectively. 
-
 -   All other fields are optional; it won't always make sense to include them.
     The `sync` parameter should always be *false* unless you're doing something
     very advanced (feel free to look at the code if you're really curious). 
@@ -1229,15 +1169,10 @@ In addition to tags and categories, there are more features that Asset Framework
 provides. These features allow users to do the following with your assets: 
 
 -   Add comments
-
 -   Rate comments of other users
-
 -   Rate assets
-
 -   Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
-
 -   Relate assets to one another
-
 -   Flag content as inappropriate and notify the portal administrator
 
 There are JSP tags, called *Liferay UI* tags, associated with each feature. You
@@ -1636,12 +1571,10 @@ workflow management UIs Liferay provides. You can also abstract your code from
 the specific workflow engine that will be used (e.g., JBPM or Liferay Kaleo).
 Many Liferay portlets use this framework; to see a simple example and learn how
 you can use it, the blogs portlet is a good start. 
-
 - *Custom Fields*: A portlet that uses custom fields lets the end user extend
   the fields of its data entries with custom fields defined by the end user.
 To see a list of data types that support this functionality go to Liferay's
 Control Panel &rarr; Custom Fields. 
-
 - *Inline Permissions Framework*: Lets you enhance your SQL queries so the
   database checks for view permissions. This is particularly useful when doing
 queries for data entries that might result in many of items, making the
@@ -1649,7 +1582,6 @@ checking of permissions afterward inefficient. It's also useful when you want
 to implement pagination (which wouldn't work if permissions are checked
 afterward and an item is removed). Liferay's *Document Library* and *Message
 Boards* portlets both use this functionality. 
-
 - *Faceted Search*: A new API that simplifies the creation new facet
   configurations and searches. It uses a JSON based configuration to define the
 details of facets used for the search. To find out more, see the [Faceted
