@@ -857,9 +857,9 @@ performance. There are several ways to obtain a permission checker:
 -   If you're not using Service Builder, `PermissionChecker` can be obtained from
     the theme display request object: 
 
-    ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
-        PermissionChecker permissionChecker =
-            themeDisplay.getPermissionChecker();
+        ThemeDisplay themeDisplay = (ThemeDisplay)
+            request.getAttribute(WebKeys.THEME_DISPLAY);
+        PermissionChecker permissionChecker = themeDisplay.getPermissionChecker();
 
 Next you'll optimize permission checking by creating helper classes to do most
 of the heavy lifting.
@@ -1261,7 +1261,6 @@ two interfaces:
     implementing the interface directly, your code will be more robust to possible
     interface changes in future versions of Liferay, since the base implementation
     will be updated to accommodate the interface changes. 
-
 -   `AssetRenderer`: This is an interface that provides metadata information
     about one specific asset. It checks whether the current user has permission
     to edit or view the asset and renders the asset for the different templates
