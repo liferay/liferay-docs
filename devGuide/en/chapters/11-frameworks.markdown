@@ -815,36 +815,34 @@ If the user isn't signed in (guest user), it checks for guest permissions.
 Otherwise, it checks for user permissions. Let's quickly review the parameters
 of this method: 
 
-- `groupId`: Represents the scope where the permission check is performed. In
-  Liferay, many scopes are available, including a specific site, organization,
-personal site of a user, or a page in a site. This is important because a user
-may be allowed to add blog entries in one site, but not in another. For
-resources that don't belong to a scope (extremely rare and unlikely), set the
-value of this parameter to `0`. There are several ways you can obtain the
-`groupId` of the current scope: 
-<!--I think the two bullets below should be nested, right? Rich's changes seem
-to have removed the nesting, probably unintentionally. -->
+-   `groupId`: Represents the scope where the permission check is performed. In
+    Liferay, many scopes are available, including a specific site, organization,
+    personal site of a user, or a page in a site. This is important because a
+    user may be allowed to add blog entries in one site, but not in another. For
+    resources that don't belong to a scope (extremely rare and unlikely), set
+    the value of this parameter to `0`. There are several ways you can obtain
+    the `groupId` of the current scope: 
 
--   JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
-    variable called `scopeGroupId`.
--   Business logic class: If you're using the ServiceContext pattern, you can
-    obtain the `groupId` by using `serviceContext.getScopeGroupId()`. If you're not
-    using the `ServiceContext` pattern, your can obtain `groupId` from the theme
-    display request object: 
+    -   JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
+        variable called `scopeGroupId`.
+    -   Business logic class: If you're using the ServiceContext pattern, you
+        can obtain the `groupId` by using `serviceContext.getScopeGroupId()`. If
+        you're not using the `ServiceContext` pattern, your can obtain `groupId`
+        from the theme display request object: 
 
-    ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-        WebKeys.THEME_DISPLAY);
-        long scopeGroupId = themeDisplay.getScopeGroupId();
+            ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+            WebKeys.THEME_DISPLAY);
+            long scopeGroupId = themeDisplay.getScopeGroupId();
 
--   `name`: The name of the resource as specified in the XML file of the previous
-    sections. 
--   `primKey`: The primary key of the resource. In this example the resource
-    doesn't exist as an entry in the database, so we use the `groupId` again. If
-    we were checking for a permission on a given blog entry, we'd use the primary
-    key of that blog entry instead. 
--   `actionId`: The name of the action as it appears in the XML file. To simplify
-    searching for usages, consider creating a helper class that has constants for
-    all the actions defined. 
+    -   `name`: The name of the resource as specified in the XML file of the
+        previous sections. 
+    -   `primKey`: The primary key of the resource. In this example the resource
+        doesn't exist as an entry in the database, so we use the `groupId`
+        again. If we were checking for a permission on a given blog entry, we'd
+        use the primary key of that blog entry instead. 
+    -   `actionId`: The name of the action as it appears in the XML file. To
+        simplify searching for usages, consider creating a helper class that has
+        constants for all the actions defined. 
 
 In the examples above, we're assuming there's a variable called
 `permissionChecker` already available. Liferay automatically creates a
