@@ -1,4 +1,6 @@
-# Remote Services
+# Accessing Services Remotely 
+
+<!--We need a chapter introduction-->
 
 - Finding Services 
 
@@ -564,7 +566,7 @@ We'll cover the following topics as we explore JSON Web Service functionality:
 
 Let's talk about registering JSON Web Services next. 
 
-### Registering JSON Web Services
+### Registering JSON Web Services 
 
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
@@ -689,7 +691,7 @@ declaration in web.xml), then we should explain why it's necessary. -->
 
 Let's see how to form a mapped URL of the service next. 
 
-#### Mapping and naming conventions 
+#### Mapping and Naming Conventions 
 
 You can form a mapped URL of an exposed service using the following naming
 convention: 
@@ -753,7 +755,7 @@ portlet's context):
 
 NExt we'll learn to available JSON Web Services. 
 
-#### Listing available JSON Web Services 
+#### Listing Available JSON Web Services 
 
 To see which service methods are registered and available for use, open your
 browser to the following address: 
@@ -782,7 +784,7 @@ level.
 
 Let's find out how to ignore a specific method. 
 
-#### Ignoring a method 
+#### Ignoring a Method 
 
 To keep a method from being exposed as a service, annotate the method with the
 following option:
@@ -793,7 +795,7 @@ Methods with this annotation don't become part of the JSON Web Service API.
 
 Let's learn to define custom HTTP method names and URL names. 
 
-#### HTTP method name and URL 
+#### HTTP Method Name and URL 
 
 At the method level, you can define custom HTTP method names and URL names. Just
 use an annotation like this one: 
@@ -829,7 +831,7 @@ Service Builder chapter. We're also missing a transition here. -Rich -->
 Next we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
-#### Manual registration mode 
+#### Manual Registration Mode 
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
@@ -865,7 +867,7 @@ disable them, specify this portal property setting:
 
 Now let's look at strict HTTP methods. 
 
-#### Strict HTTP methods 
+#### Strict HTTP Methods 
 
 All JSON Web Services are mapped to either GET or POST HTTP methods. If a
 service method name starts with `get`, `is` or `has`, the service is assumed to
@@ -887,7 +889,7 @@ methods. We'll show you how next.
 <!--This needed a transition, and I got tired of saying, "next let's...". Check
 for acuracy. -Russ-->
 
-#### Disabling HTTP methods 
+#### Disabling HTTP Methods 
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, you can set the portal JSON
@@ -900,7 +902,7 @@ Now all requests that use HTTP methods from the list above are ignored.
 
 Next we'll show you how to restrict public access to exposed JSON APIs. 
 
-#### Controlling public access 
+#### Controlling Public Access 
 
 Each service method knows if it can be executed by unauthenticated users and
 if a user has adequate permission for the chosen action. Most of the portal's
@@ -939,7 +941,7 @@ Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required--when using numeric *hints* to match methods. Let's look
 at using hints next. 
 
-#### Using hints 
+#### Using Hints 
 
 Adding numeric hints lets you specify how many method arguments a service has.
 If you don't specify an argument for a parameter, it's automatically
@@ -962,7 +964,7 @@ In this example, `param2` will automatically be set to `null`.
 
 Find out how to pass parameters as part of the URL path next. 
 
-#### Passing parameters as part of URL path 
+#### Passing Parameters as Part of URL path 
 
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
@@ -980,7 +982,7 @@ you.
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
-#### Passing parameters as URL query 
+#### Passing Parameters as URL Query 
 
 You can pass in parameters as request parameters. Parameter names are specified
 as is (e.g. camelCase) and are set equal to their argument values, like this: 
@@ -1034,7 +1036,7 @@ generic type), resulting in the `List<Locale>` Java argument type.
 
 Now let's see how to specify an argument as `null`. 
 
-#### Sending NULL values 
+#### Sending NULL Values 
 
 To pass a `null` value for an argument, prefix the parameter name with a dash.
 Here's an example: 
@@ -1081,7 +1083,7 @@ received, this value is first going to be translated to an array of 10 bytes
 
 Did you know you can send files as arguments? Find out how next. 
 
-#### Sending files as arguments 
+#### Sending Files as Arguments 
 
 Files can be uploaded using multipart forms and requests. Here's an example: 
 
@@ -1121,7 +1123,7 @@ Here's an example of invoking a JSON web service using JSON RPC:
 Let's talk about paramteters that are made available to secure JSON web
 services by default. 
 
-#### Default parameters 
+#### Default Parameters 
 
 When accessing *secure* JSON web services (i.e., the user has to be
 authenticated), some parameters are made available to the web services by
@@ -1137,7 +1139,7 @@ Here are the default parameters:
 
 Let's find out about object parameters next. 
 
-#### Object parameters 
+#### Object Parameters 
 
 Most services accept simple parameters like numbers and strings. However,
 sometimes you might need to provide an object (a non-simple type) as a service
@@ -1219,7 +1221,7 @@ parameters to set inner content of created parameter instances!
 
 Next let's see what values are returned when a JSON seb service is invoked. 
 
-### Returned values 
+### Returned Values 
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
@@ -1256,7 +1258,7 @@ by Igor Spasi&#263;.
 
 Let's check out some common JSON WebService errors. 
 
-### Common JSON WebService errors 
+### Common JSON WebService Errors 
 
 While working with JSON Web Services, you may encounter errors. Let's look at
 the most common errors in the following subsections. 
@@ -1339,7 +1341,7 @@ that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-#### A simple Invoker call 
+#### A simple Invoker Call 
 
 The Invoker is accessible from the following fixed address:
 
@@ -1391,7 +1393,7 @@ user's contact ID using the syntax `$user.contactId`.
 NExt see how you can use nested service calls to join information from two
 related objects. 
 
-#### Nesting service calls 
+#### Nesting Service Calls 
 
 With nested service calls, you can magically bind information from related
 objects together in a JSON object. You can call other services within the same
@@ -1442,7 +1444,7 @@ before the parameter name.
 Next let's talk about filtering object properties so only those you
 need are returned when you invoke a service. 
 
-#### Filtering results 
+#### Filtering Results 
 
 Many of Liferay Portal's model objects are rich with properties. If you only
 need a handful of an object's properties for your business logic, making a web
@@ -1468,7 +1470,7 @@ white-list properties, you simply place the properties in square brackets (e.g.,
 
 Let's talk about batching calls next. 
 
-#### Batching calls 
+#### Batching Calls 
 
 When we nested service calls earlier, the intent was to invoke multiple services
 with a single HTTP request. Using a single request for multiple service calls is

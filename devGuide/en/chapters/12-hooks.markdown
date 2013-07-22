@@ -1,4 +1,4 @@
-# Hooks 
+# Customizing and Extending Functionality with Hooks 
 
 Liferay Hooks are the best plugin for customizing Liferay's core features.  If
 possible, use hooks whenever you need to override Liferay's core functionality.
@@ -116,7 +116,7 @@ The particular files you'll work on depend on what Liferay feature you're
 overriding with your hook. Let's start making hooks for the features developers
 override the most; web resources are a good place to start. 
 
-## Overriding web resources
+## Overriding Web Resources
 
 Hooks are commonly used to override web resources, found in `portal-web` in the
 Liferay source. You can use a hook to override JSP files, JSPF files, JavaScript
@@ -261,7 +261,7 @@ becomes available to sites and site templates under the name *Foo Hook*.
 
 Now, let's discuss the perks of including the original JSP when overriding it.
 
-### Including an original JSP
+### Including an Original JSP
 
 If you override a JSP from the portal, we recommend you include the original
 JSP (when possible). 
@@ -823,7 +823,7 @@ XML and the specified order for those elements.
 Great! You now know how to customize language keys. Next, let's consider some
 other types of hooks that may interest you.
 
-## Other hooks
+## Other Hooks
 
 Since hooks are the preferred plugin type for customizing Liferay's core
 features, the Liferay team is happy to keep providing you new hooks. This

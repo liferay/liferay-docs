@@ -1,4 +1,4 @@
-# Portlet Development
+# Developing Portlet Applications 
 
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
@@ -47,8 +47,8 @@ Liferay Developer Studio first, then by using the terminal.
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
 2.  Fill in the *Project* and *Display* names with *my-greeting-portlet* and *My
-    Greeting*, respectively.  
-    
+    Greeting*, respectively. 
+
 3.  Select the Liferay Plugins SDK and Portal Runtime that you've configured. 
 
 4.  Select *Portlet* as your Plugin type. 
@@ -567,7 +567,7 @@ doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
 they're explained in the next section. 
 
-## Understanding the Two phases of Portlet Execution
+## Understanding the Two Phases of Portlet Execution
 
 Our portlet needs two execution phases, the action phase and the render phase.
 Multiple execution phases can be confusing to developers used to regular servlet
@@ -939,12 +939,12 @@ looks like this:
     http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet
         &p_p_lifecycle=0&p_p_state=normal&p_p_mode=view\&p_p_col_id=column-1&_my
         greeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
-    
+
 Since Liferay 6, there's a built-in feature that can easily change the ugly URL
 above to this:
 
     http://localhost:8080/web/guest/home/-/my-greeting/edit
-    
+
 The feature is called friendly URL mapping. It takes unnecessary parameters out
 of the URL and allows you to place the important parameters in the URL path,
 rather than in the query string. To add this functionality, first edit
@@ -1204,7 +1204,7 @@ Production environment.
 
 Next, let's localize titles and descriptions of our various fictitious portlets. 
 
-### Portlet Title and Description In Control Panel
+### Portlet Title and Description in Control Panel
 
 You may have noticed that your Control Panel-enabled portlets are missing that
 super-fancy must-have portlet title and description in Control Panel. To make
@@ -1278,7 +1278,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 
 ---
 
-### Overriding Liferay portal translations
+### Overriding Liferay Portal Translations
 
 If you want your translations available throughout the portal, or if you want to
 override an existing translation, refer to Chapter 6 of this guide, specifically
@@ -1288,7 +1288,7 @@ other portlets, as well as override existing Liferay translations.
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
-## Creating Plugins to extend Plugins
+## Creating Plugins to Extend Plugins
 
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while

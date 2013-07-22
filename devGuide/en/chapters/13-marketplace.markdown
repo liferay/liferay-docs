@@ -21,14 +21,14 @@ highly recommended that you first read the [Liferay Marketplace](http://www.life
 chapter of *Using Liferay Portal*, where you will find detailed information about the
 Marketplace from an end user's perspective.
  
-## Marketplace basics 
+## Marketplace Basics 
 
 Before diving into the details of developing for the Marketplace, it is
 important to have a good grasp of new concepts introduced in the Marketplace.
 The following list of questions will help in understanding the concepts that you
 will use over and over again as a Marketplace developer.
 
-### What is an app? 
+### What is an App? 
 
 As a Liferay Developer, you will undoubtedly already be familiar with the
 concept of plugins (portlets, hooks, themes, etc). If not, review chapter 1 of
@@ -50,7 +50,7 @@ your app's individual plugins (`.war` files) are uploaded as part of the publish
 process, along with identifying information (name, description, version, icon,
 etc). This is described in detail later on in this chapter.
 
-### What is a version? 
+### What is a Version? 
 
 The concept of versioning is well known in software, and it is no different
 here. A version of an app represents the functionality of the app at a given
@@ -75,7 +75,7 @@ the Liferay versioning scheme. See the *Specify App Packaging Directives*
 section below for details on how to specify the releases of Liferay for which
 your app is designed.
 
-### What is a package? 
+### What is a Package? 
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you wish to publish version 1.0 of your app, which you're
@@ -89,7 +89,7 @@ packages that you can upload in support of different versions of Liferay, as you
 will see in a later section. In this guide, packages are sometimes referred to
 as files that make up your app.
 
-### How do apps relate to users and companies? 
+### How do Apps Relate to Users and Companies? 
 
 When publishing an app, it is possible to publish it *on behalf of* yourself (an
 individual) or a *company* with which you are associated. The selection you make
@@ -97,7 +97,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, admin, and company, and the ramifications of choosing one
 vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
 
-### What are the requirements for publishing apps? 
+### What are the Requirements for Publishing Apps? 
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -141,7 +141,7 @@ requirements to keep in mind.
     - Liferay reserves the right to replace WAR files of app plugins that have
       the same deployment context as plugins built by Liferay.
 
-### Things you need before you can publish 
+### Things you Need Before you can Publish 
 
 You must first develop your app using your preferred development tool (for
 example, using Liferay Developer Studio or the Plugins SDK). Your app will
@@ -184,7 +184,7 @@ Above and beyond these basics of creating apps in the form of Liferay plugins,
 there are additional considerations to take into account when designing and
 publishing apps.
 
-### What kind of validations are performed by Liferay? 
+### What Kind of Validations are Performed by Liferay? 
 
 Liferay will ensure that apps meet a minimum set of requirements, such as:
 
@@ -198,7 +198,7 @@ the Marketplace. For details regarding this, consult the *Liferay Marketplace
 User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
 *End User License Agreements* associated with each app.
  
-### What versions of Liferay should I target? 
+### What Versions of Liferay Should I Target? 
 
 Of course, targeting the widest possible range of versions will ensure you a
 larger audience. However, there are certain features in specific versions of
@@ -229,14 +229,14 @@ Now that we have covered the basics, you're armed with enough knowledge to start
 creating apps on the Marketplace, so let's see what that looks like in the next
 section.
 
-## Developing and publishing apps 
+## Developing and Publishing Apps 
 
 Let's jump right in with an example. In this section, we'll walk you through the
 creation and publication steps (but we won't actually publish the app on the
 Marketplace, since this example app isn't very useful!). After walking through
 this, you should understand how Marketplace App development typically occurs.
 
-### Develop a sample app 
+### Develop a Sample App 
 
 Before you can publish anything, you first have to create (develop) an app! Apps
 are nothing more than collections of individual plugins, so the first step in
@@ -396,12 +396,12 @@ that have been purchased on behalf of companies you are associated with.
 Since you have not purchased or published any apps, the first two tabs are
 likely empty. Let's get publishing!
 
-### Upload (Publish) your app 
+### Upload (Publish) your App 
 
 To begin the process of publishing your app, click *Add an App*. A form appears,
 allowing you to fill in your app's details.
 
-#### Initial app details 
+#### Initial App Details 
 
 The first step is to enter the basic details about your app. 
 
@@ -488,7 +488,7 @@ the *What is a version* section in this chapter to choose a good version
 specifier and enter it here. For our example, since this is the first version,
 enter `1.0`. Click *Next*.
 
-#### Upload files (plugins) for your app 
+#### Upload Files (Plugins) for your App 
 
 This screen allows you to upload different sets of plugin files (variations) to
 support different Liferay versions. You must upload at least one plugin file
@@ -516,7 +516,7 @@ portlet plugin was automatically copied for use in both the EE and CE
 variations, even though you only uploaded the portlet plugin once. Click *Next*
 to advance to the final screen.
 
-#### Preview and submit the app 
+#### Preview and Submit the App 
 
 Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
@@ -532,7 +532,7 @@ this example on Liferay's Marketplace, don't do it, since this is only an
 example app. The next section describes what happens when you submit apps or app
 changes.
 
-### The review process 
+### The Review Process 
 
 When you submit apps to the Marketplace, they are reviewed by Liferay
 Marketplace staff to ensure that your app meets the minimum standards described
@@ -567,7 +567,7 @@ kinds of feedback from users and yourself about what's right and wrong with it.
 In the next section, we'll explore how to make changes once you have published
 your app.
 
-## Making changes to published apps 
+## Making Changes to Published Apps 
 
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
@@ -579,7 +579,7 @@ or more of these kinds of changes during the life of the app:
 
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing your app details 
+### Editing your App Details 
 
 App details include the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
@@ -599,7 +599,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-### Adding support for new versions of Liferay Portal 
+### Adding Support for new Versions of Liferay Portal 
 
 If you need to add files in support of another Liferay release, the process is
 similar. Navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the
@@ -624,7 +624,7 @@ bottom of the preview screen. Click *Submit for Review* to submit your requested
 change (adding of files). The files will be reviewed by Liferay, and once
 approved, the new package is available for download in the Marketplace.
 
-### Releasing a new version of your app 
+### Releasing a New Version of your App 
 
 After time passes, you may wish to add new functionality to your app or fix a
 batch of bugs. This can be accomplished by releasing a new version of your app.
@@ -661,7 +661,7 @@ with the new version of the app. For a new version of the app, you must upload
 all files for all supported Liferay versions again, even if they have not
 changed since the last version.
 
-### Deactivating your app 
+### Deactivating your App 
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app causes the app to no longer be downloadable from the Marketplace for new
@@ -676,7 +676,7 @@ To deactivate your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*,
 click on the *Actions* button next to the app for which you want deactivate, and
 select the *Deactivate* action.
 
-## Tracking app performance 
+## Tracking App Performance 
 
 One of the main reasons for developing and publishing apps into the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
@@ -751,7 +751,7 @@ These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
 in protecting your portal, system and network.
 
-### How plugin security works
+### How Plugin Security Works
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
@@ -772,7 +772,7 @@ Before we dive into the intricacies of these properties, let's consider a plugin
 development approach that involves designing an app for the security manager
 from the ground up. 
 
-### Developing plugins with security in mind
+### Developing Plugins with Security in Mind
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
@@ -789,7 +789,7 @@ Here is the suggested plugin development approach:
 
 Let's go over each part of this approach. 
 
-#### Develop your plugin
+#### Develop your Plugin
 
 First, create your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
@@ -802,7 +802,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
 PACL. 
 
-#### Build your plugin's PACL
+#### Build your Plugin's PACL
 
 Rather than tediously figuring out all of the resources your plugin accesses, on
 your own, let Liferay's PACL Policy Generation tool to give you a head start.
@@ -926,7 +926,7 @@ codebase uses properties that Liferay sets for the plugin that say, in effect,
 "If a file originates within the plugin, then this plugin can perform the
 `specifyStreamHandler` operation on it". The codebase narrows the scope for the
 permission. This plugin is permitted to perform the definited operation,
-`specifyStreamHandler`, as long as it is done within the scope the plugin.  
+`specifyStreamHandler`, as long as it is done within the scope the plugin. 
 
 How do you add more permissions to a codebase? Just define them on separate
 lines in the grant entry: 
@@ -1364,7 +1364,7 @@ perform the applicable operations. These property names use the following
 convention:
 
 	security-manager-sql-tables-[operation]    
-    
+ 
 Specify tables on which the plugin can do any and all operations.
 
 *Example:*
@@ -1473,8 +1473,7 @@ to function.
 Next, we'll show you what it takes to develop apps for publishing to *Liferay
 Marketplace*. 
 
-
-## Summary 
+<!-- ## Summary -->
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,

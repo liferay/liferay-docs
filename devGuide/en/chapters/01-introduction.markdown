@@ -1,4 +1,4 @@
-# Introduction 
+# Realizing the Benefits of Liferay's Development Platform 
 
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
@@ -138,7 +138,7 @@ you choose the best frameworks for your needs, summarized as follows:
 3.  *When in doubt, pick the simpler solution:* Portlet applications are often
     more simple to implement than standalone web applications. When in
     doubt, use the simpler framework (e.g., Liferay's MVC Portlet or Alloy
-    Portlet).  
+    Portlet). 
 
 Some of the frameworks mentioned above include their own JavaScript code to
 provide a high degree of interaction. That is the case with GWT, Vaadin,

@@ -1,4 +1,5 @@
-# Designing workflows with Kaleo Designer for Java 
+
+# Designing Workflows with Kaleo Designer for Java 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -106,7 +107,7 @@ including the palette toolbar, properties view, and outline view.
 Next, let's get into the flow (pun intended) by creating our own workflow using
 the Kaleo Workflow Designer for Java. 
 
-## Creating a workflow 
+## Creating a Workflow 
 
 Developer Studio makes it easy for you to write custom business logic that
 enhances Kaleo workflows. Let's create our own workflow in Developer Studio and
@@ -418,7 +419,7 @@ To set up the workflow process we described above, we'll need to add a
     the DDL record to determine whether the ticket warrants a modification to
     the product. If it does, we'll assign it to a developer via the Developer
     task node. Otherwise we'll end the workflow by transitioning to the
-    workflow's EndNode.  
+    workflow's EndNode. 
 
 4.  From the *Create New Condition Node* menu, add two transitions--one to the
     *Developer* node and the other to the *EndNode* state. We'll add the
@@ -892,7 +893,7 @@ workflow activity.
 Next you'll learn how to view your workflow definition XML file in Developer
 Studio. 
 
-## Viewing workflow definition XML source 
+## Viewing Workflow Definition XML Source 
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.
@@ -906,7 +907,7 @@ takes you to the XML, and you can easily switch contexts as you need.
 - *Section Highlighting*: Shows XML source code for the node or transition
   currently selected in the workflow diagram. Click the document icon in an
   entity's floating palette or right click the entity and select *Show in
-  source*.  
+  source*. 
 - *Editor Validation*: Displays an error marking in the editor's gutter if your
   code is invalid. Click the error marking to see hint for resolving the error. 
 - *Content Assist*: Suggests language specific functions and variables as you
@@ -927,7 +928,7 @@ Studio's powerful graphical features.
 
 Let's save your workflow definition and publish it to your Liferay server. 
 
-## Publishing workflows to the server 
+## Publishing Workflows to the Server 
 
 After you create a new workflow or modify an existing one, you'll have to
 publish it onto your Liferay server before your site's members can use it. Let's
@@ -976,7 +977,7 @@ Are you ready for our *Kaleo Designer for Java* finale? You just have to
 activate the workflow in your Liferay Portal, then we'll set up the DDL record
 and try out our new workflow. Let's activate! 
 
-## Using workflows in Liferay Portal 
+## Using Workflows in Liferay Portal 
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
@@ -991,7 +992,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
-## Using DDLs with workflows 
+## Using DDLs with Workflows 
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
@@ -1095,6 +1096,4 @@ your workflows running in Liferay, you can publish directly to your existing
 Liferay server; the configuration process is quick and easy. With all of its
 features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
-
-
 

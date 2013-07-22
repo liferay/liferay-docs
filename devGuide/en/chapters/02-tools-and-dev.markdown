@@ -1,5 +1,5 @@
 
-# Liferay Developer Tools 
+# Working with Liferay's Developer Tools 
 
 If you're anything like Liferay Portal's developers, you don't want to be
 forced to work with one development technology. Our developers build Liferay
@@ -10,16 +10,16 @@ text editors like Notepad, Vim, or Emacs. You can write your persistence layer
 directly using SQL and JDBC, or use advanced object-relational mapping
 libraries like Hibernate or iBatis. You get the idea. 
 
-In this chaper we'll introduce and show you how to set up a streamlined
+In this chapter we'll introduce and show you how to set up a streamlined
 development environment specifically designed for developing your Liferay
 Portal, then  we'll look at developing your plugins with other tools. Here are
 the topics we'll cover along the way: 
 
-- Liferay IDE 
+- Developing Apps with Liferay IDE 
 
-- The Plugins SDK 
+- Leveraging the Plugins SDK 
 
-- Developing Plugins using Maven 
+- Developing PLugins Using Maven 
 
 - Liferay's Deprecation Policy 
 
@@ -40,7 +40,7 @@ archetypes you can use to develop your plugins.
 First let's consider the most robust tool for Liferay development, Liferay
 IDE. 
 
-## Liferay IDE 
+## Developing Apps with Liferay IDE 
 
 Even if you're a grizzled veteran of Java development, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
@@ -97,7 +97,7 @@ Make sure you have a supported Java JRE and Eclipse release:
 
 Next we'll show you how to install Liferay IDE. 
 
-#### Installation steps 
+#### Installation Steps 
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
@@ -134,7 +134,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 Next we'll show you how to install Liferay IDE without specifying an Eclipse
 update URL. 
 
-#### Alternative installation 
+#### Alternative Installation 
 
 To install Liferay IDE without specifying an update URL for Eclipse, follow
 these steps: 
@@ -587,7 +587,7 @@ configured correctly as a Liferay IDE project; the last subsection in this topic
 will show you how. We have one more import scenario to cover--importing existing
 Liferay IDE projects into your Liferay IDE. 
 
-#### Importing an existing Liferay IDE project 
+#### Importing an Existing Liferay IDE Project 
 
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
@@ -620,7 +620,7 @@ window; you can modify the targeted runtime in the *Project properties* &rarr;
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-### Verifying that the import has succeeded 
+### Verifying That the Import has Succeeded 
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE
@@ -872,7 +872,7 @@ Serivce Builder.
 
 <!--Add content-->
 
-## The Plugins SDK 
+## Leveraging the Plugins SDK 
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -1088,8 +1088,6 @@ The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
 an internal Intranet using Liferay with some custom portlets, you can keep those
 portlets and themes in their own Plugins SDK project in your source code
-repository. If you also have an external instance of Liferay for your public
-Internet web site, you can have a separate Plugins SDK that also has those
 projects. Or, you can further separate your projects by having a different
 Plugins SDK project for each portlet or theme project. 
 
@@ -1172,6 +1170,8 @@ Maven features:
 Maven's core installation is lightweight; there are core plugins for compiling
 source code and creating distributions, and there is an abundance of non-core
 plugins, letting you extend Maven easily for your customizations. 
+
+Many developers are switching from Ant to Maven because it offers a common
 
 Many developers are switching from Ant to Maven because it offers a common
 interface for project builds. Maven's universal directory structure makes it
@@ -2501,6 +2501,11 @@ Maven, "Probably."
 <!-- I'm not sure this Maven conclusion works stuck in here and I'm not sure
 what to do with it.  -->
 
+No matter which tool you use to develop your custom plugins, you'll need to
+understand Liferay's deprecation policy. That way you'll know when methods from
+our API's are deprecated, and you can make any necessary changes. We'll
+describe the deprecation policy next. 
+
 ## Liferay's Deprecation Policy
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
@@ -2534,14 +2539,6 @@ development haven't been deprecated.
 <!--I updated it based on the user guide. Please review -Russ -->
 
 ## Summary
-
-Now you know all about two Liferay-specific development tools. Our Eclipse
-based Liferay IDE is more robust and complete, so your development process is
-as straightforward as can be. If you don't want to use Eclipse, you can still
-leverage some of the same functionality by using the Plugins SDK to develop in
-Liferay. Over the next several chapters we'll apply the knowledge you learned
-here to developing various plugins using Liferay IDE and the PLugins SDK,
-starting with custom portlets! 
 
 You also learned all about developing Liferay plugins with the Maven build
 framework. You configured Maven locally, downloaded and installed the required

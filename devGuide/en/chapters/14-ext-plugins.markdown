@@ -1,4 +1,4 @@
-# Ext plugins 
+# Advanced Customization with Ext Plugins 
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
@@ -41,7 +41,7 @@ With these use cases in mind, we'll discuss the following topics:
 
 Let's create an Ext plugin. 
 
-## Creating an Ext plugin 
+## Creating an Ext Plugin 
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
@@ -65,7 +65,7 @@ The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create
 a completely new plugin or add a new plugin to an existing plugin project. 
 
-### Using the terminal 
+### Using the Terminal 
 
 Navigate to the *ext* directory in the Liferay Plugins SDK and enter the
 appropriate command for your operating system to create a new Ext plugin: 
@@ -140,7 +140,7 @@ significant:
 
 - `build.xml`: The Ant build file for the Ext plugin project. 
 - `docroot/WEB-INF/liferay-plugin-package.properties`: Contains properties of
-  the plugin, including display name, version, author, and license type.  
+  the plugin, including display name, version, author, and license type. 
 - `docroot/WEB-INF/ext-impl/src/portal-ext.properties`: Overrides Liferay's
   configuration properties--use a hook plugin to override properties whenever
   it's possible. An example where an Ext plugin is necessary to override a
@@ -257,7 +257,7 @@ property value.
 
 Next we'll change our newly created Ext plugin and deploy it. 
 
-### Initial deployment 
+### Initial Deployment 
 
 Our environment is set up and we're ready to start customizing. First let's look
 at a simple example that customizes the sections of a user profile. The
@@ -274,7 +274,7 @@ our portal.
 
 Now we're ready to deploy. 
 
-#### Deploy the plugin
+#### Deploy the Plugin
 
 You can deploy your plugin from Liferay Developer Studio or the terminal. 
 
@@ -319,7 +319,7 @@ appropriate destinations inside the deployed and running Liferay application.
 Restart your application server, and let's find out about *publishing* your
 changes. 
 
-#### Publish the plugin 
+#### Publish the Plugin 
 
 To complete the deployment process, your Ext plugin must be published to the
 Liferay server. As with deployment, you can publish using Liferay Developer
@@ -636,7 +636,7 @@ Now that you've learned the basics of Ext plugin development have covered this
 requirement for JBoss customizations, let's look at some advanced customizations
 that you can do.
 
-### Advanced customization techniques 
+### Advanced Customization Techniques 
 
 With Ext plugins, you can change almost everything in Liferay. Let's look at
 some additional customization techniques made possible by Ext plugins. As
@@ -658,7 +658,7 @@ In the following subsections, we'll cover these topics:
 
 Let's learn to use advanced configuration files next. 
 
-#### Using advanced configuration files 
+#### Using Advanced Configuration Files 
 
 Liferay uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks Liferay
@@ -793,7 +793,7 @@ You can define custom analyzers for any fields, including custom fields.
 
 Let's learn to change the API of a core service next. 
 
-#### Changing the API of a core service 
+#### Changing the API of a Core Service 
 
 Sometimes you might need to change the API of a method provided by one of
 Liferay's services (e.g., `UserLocalService`). This is an advanced customization
@@ -825,7 +825,7 @@ bean: your new implementation.
 You can also replace core classes in `portal-impl`. Keep reading to find out
 how. 
 
-#### Replacing core classes in portal-impl 
+#### Replacing Core Classes in `portal-impl` 
 
 If you're sure you need to change a core portal-impl class, and certain it can't
 be replaced in a configuration file, here's the best way to do it while avoiding
@@ -859,7 +859,7 @@ version of Liferay is released.
 That's it for advanced customization techniques. Let's talk about deploying in
 porudction next. 
 
-## Deploying in production 
+## Deploying in Production 
 
 Often times you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
@@ -867,7 +867,7 @@ WebSphere or Weblogic have their own deployment tools, and Liferay's autodeploy
 process won't work. Let's look at two methods for deploying and redeploying Ext
 plugins in these scenarios. 
 
-### Method 1: Redeploying Liferay's web application 
+### Method 1: Redeploying Liferay's Web Application 
 
 You can use this method in any application server that supports auto-deploy;
 Tomcat and Glassfish are two examples. What's the benefit? The only artifact
@@ -892,7 +892,7 @@ small and easy to transport. Execute these steps on the server:
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
 
-### Method 2: Generate an aggregated WAR file 
+### Method 2: Generate an Aggregated WAR file 
 
 Some application servers don't support auto-deploy; WebSphere and Weblogic are
 two examples. With an aggregated WAR file, all Ext plugins are merged before
@@ -929,7 +929,7 @@ want to send. I think we need to change this and get Tomcat out of it. -->
 Next we'll show you how to migrate your extension environment (from older
 verisons of Liferay) into Ext plugins. 
 
-## Migrating old extension environments 
+## Migrating Old Extension Environments 
 
 Because Ext plugins are an evolution of the extension environment provided in
 Liferay 5.2 and earlier, you might need to migrate your extension environment

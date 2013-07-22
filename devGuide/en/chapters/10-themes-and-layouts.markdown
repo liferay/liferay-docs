@@ -90,7 +90,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-#### Setting a base Theme 
+#### Setting a Base Theme 
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -547,7 +547,7 @@ the borders as the default:
         />
         ...
     </settings>
-    
+
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
@@ -638,7 +638,7 @@ display from the each site's *Look and Feel* control page.
 
 Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
 
-### Theme inheritance 
+### Theme Inheritance 
 
 By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
@@ -661,7 +661,7 @@ flexibility Liferay offers.
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
 
-### Importing resources with your themes
+### Importing Resources with Your Themes
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -1155,7 +1155,7 @@ and `.wap.tpl` file for each layout template in the `docroot/` folder. The
 Now that you're well-versed on the anatomy of a layout template, let's begin
 exploring layout template files. 
 
-#### Layout template files 
+#### Layout Template Files 
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each of the template files does: 
@@ -1173,7 +1173,7 @@ Let's see what each of the template files does:
 
 Let's move on to Liferay configuration files.
 
-#### Liferay configuration files 
+#### Liferay Configuration Files 
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -1212,7 +1212,7 @@ Wait a minute! We can deploy the template, but we still haven't designed it.
 We'll need to add content to the TPL files that were generated when we created
 our layout template. 
 
-### Designing a layout template 
+### Designing a Layout Template 
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
@@ -1268,7 +1268,7 @@ arranged and sized evenly.
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
 
-### Embedding portlets in a layout template 
+### Embedding Portlets in a Layout Template 
 
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting
@@ -1363,7 +1363,7 @@ See how simple it is to embed portlets in your pages?
 Wouldn't it be nice to have an organized reference of available layout template
 variables? You're in luck! We'll dive into available variables next!
 
-### Available variables 
+### Available Variables 
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
@@ -1401,7 +1401,7 @@ furniture!
 If you're up for it, let's learn how to customize core Liferay portlets using
 hooks--sounds "catchy", right?! 
 
-## Summary 
+<!-- ## Summary  -->
 
 In this chapter, you learned how to customize the look and feel of your Liferay
 Portal by creating custom themes. During this process, you created your own
