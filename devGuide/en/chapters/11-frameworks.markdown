@@ -66,11 +66,11 @@ although it should really be placed inside a new portlet. Create a file named
 Plugins SDK and add the following content: 
 
     <?xml version="1.0"?> <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD
-Service Builder 6.1.0//EN"
-"http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
-<service-builder package-path="com.sample.portlet.library">
-<namespace>Library</namespace> <entity name="Book" local-service="true"
-remote-service="true">
+    Service Builder 6.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+    <service-builder package-path="com.sample.portlet.library">
+        <namespace>Library</namespace>
+        <entity name="Book" local-service="true" remote-service="true">
 
             <!-- PK fields -->
 
@@ -82,9 +82,11 @@ remote-service="true">
 
             <!-- Audit fields -->
 
-            <column name="companyId" type="long" /> <column name="userId"
-type="long" /> <column name="userName" type="String" /> <column
-name="createDate" type="Date" /> <column name="modifiedDate" type="Date" />
+            <column name="companyId" type="long" />
+            <column name="userId" type="long" />
+            <column name="userName" type="String" />
+            <column name="createDate" type="Date" />
+            <column name="modifiedDate" type="Date" />
 
             <!-- Other fields -->
 
@@ -429,7 +431,6 @@ these two critical terms used throughout this section:
   Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
 Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files
 (e.g.  documents, images, etc.). 
-
 - *Permission*: An action on a resource. For example, the *view* action with
 respect to *viewing the calendar portlet* is defined as a permission in Liferay.
 
@@ -821,7 +822,6 @@ may be allowed to add blog entries in one site, but not in another. For
 resources that don't belong to a scope (extremely rare and unlikely), set the
 value of this parameter to `0`. There are several ways you can obtain the
 `groupId` of the current scope: 
-
 <!--I think the two bullets below should be nested, right? Rich's changes seem
 to have removed the nesting, probably unintentionally. -->
 
