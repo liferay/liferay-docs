@@ -320,21 +320,13 @@ access a variety of services built into Liferay. These include the
 following: 
 
 - `UserService`
-
 - `OrganizationService`
-
 - `GroupService`
-
 - `CompanyService`
-
 - `ImageService`
-
 - `LayoutService`
-
 - `PermissionService`
-
 - `UserGroupService`
-
 - `RoleService`
 
 For more information on these services, see Liferay's Javadocs at
@@ -431,9 +423,7 @@ Once roles are mapped to the portal, you can use methods as defined in portlet
 specification: 
 
 - `getRemoteUser()`
-
 - `isUserInRole()`
-
 - `getUserPrincipal()`
 
 For example, you can use the following code to check if the current user has
@@ -460,7 +450,7 @@ known as DRAC):
 2. **R**egister all defined resources in the permissions system. This is also
    known as *adding resources*. 
 
-3. **A**ssociate the necessary permissions with resources. 
+3. **A**ssociate the necessary permissions with resources.
 
 4. **C**heck permission before returning resources. 
 
@@ -473,7 +463,7 @@ Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files
 (e.g.  documents, images, etc.). 
 
 - *Permission*: An action on a resource. For example, the *view* action with
-respect to *viewing the calendar portlet* is defined as a permission in Liferay. 
+respect to *viewing the calendar portlet* is defined as a permission in Liferay.
 
 It's important to know that permissions for *portlet* resources are implemented
 a little differently than for other resources like Java classes and files.
@@ -913,7 +903,7 @@ performance. There are several ways to obtain a permission checker:
             themeDisplay.getPermissionChecker();
 
 Next you'll optimize permission checking by creating helper classes to do most
-of the heavy lifting. 
+of the heavy lifting.
 
 ### Creating Helper Classes for Permission Checking [](id=lp-6-1-dgen09-creating-helper-classes-for-permission-checking-0)
 
@@ -968,7 +958,7 @@ Likewise, you're encouraged to use custom portlet action keys.
 
 <!-- We're not ready for review yet. We haven't covered how to create the helper
 class, which is what the reader is expecting out of this section. Certainly I
-was. We've only seen how to use a helper class that already exists. -Rich --> 
+was. We've only seen how to use a helper class that already exists. -Rich -->
 
 Let's review what we've just covered. Implementing permission into your custom
 portlet consists of four main steps: 
@@ -1348,7 +1338,7 @@ two interfaces:
     contains methods that get added to the interface in the future. 
 
 Let's look at an example of these two classes. We'll use Liferay's Blogs
-portlet again, and we'll start by implementing `AssetRendererFactory`: 
+portlet again, and we'll start by implementing `AssetRendererFactory`:
 
     public class BlogsEntryAssetRendererFactory extends BaseAssetRendererFactory {
 

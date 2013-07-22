@@ -102,7 +102,6 @@ configuration, and we encourage you to keep your projects in the Plugins SDK.
 
 ---
 
-
 ### Deploying the Portlet [](id=lp-6-1-dgen03-deploying-the-portlet-0)
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets
@@ -1321,8 +1320,7 @@ To create a plugin which extends another, follow these steps:
     compiled. All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.x
-            ml
+        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
         
         compile:
         

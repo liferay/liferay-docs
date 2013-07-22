@@ -1179,110 +1179,7 @@ placed in the *target* directory. Its path is
 
 ---
 
-**Workaround for known issue: [https://issues.liferay.com/browse/MAVEN-48](https://issues.liferay.com/browse/MAVEN-48)**
-
-This is a known issue that affects the Liferay Maven theme plugin for CE 6.1.1
-GA2 and EE 6.1.20 GA2. The bug is that the content of a Maven theme's
-`src/main/webapp` isn't being copied to the target folder until the `package`
-phase. Since the `build-css` goal belongs to the `generate-sources` phase, no
-SASS processing is done and the target theme's CSS is built incorrectly. In
-order to work around this issue, you must configure Maven to copy the files from
-`src/main/webapp` to the target folder before the CSS is built. Follow these
-steps to implement this workaround:
-
-1. Edit your theme's `pom.xml` file.
-
-2. Find the `<executions>` tag containing the `generate-sources` execution
-   phase. It should look like this:
-
-        <executions>
-            <execution>
-        	<phase>generate-sources</phase>
-        	<goals>
-        	    <goal>theme-merge</goal>
-        	    <goal>build-css</goal>
-        	    <goal>build-thumbnail</goal>
-        	</goals>
-            </execution>
-        </executions>
-
-3. Move the `build-css` goal into a separate execution phase within the
-   `<executions>` tag, as shown below:
-
-        <executions>
-            <execution>
-        	<id>generate-sources</id>
-        	<phase>generate-sources</phase>
-        	<goals>
-        	    <goal>theme-merge</goal>
-        	</goals>
-            </execution>
-            <execution>
-        	<id>process-sources</id>
-        	<phase>process-sources</phase>
-        	<goals>
-        	    <goal>build-css</goal>
-        	    <goal>build-thumbnail</goal>
-        	</goals>
-            </execution>
-        </executions>
-
-4. Find the `<plugin>` tag for the `maven-resources-plugin`. It should look this
-   this:
-
-        <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>2.5</version>
-            <configuration>
-        	<encoding>UTF-8</encoding>
-            </configuration>
-        </plugin>
-
-5. After the the plugin's `</configuration>`, add an execution phase that
-includes the `copy-resources` goal, so that your `<plugin>` tag looks like this:
-
-        <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>2.5</version>
-            <configuration>
-        	<encoding>UTF-8</encoding>
-            </configuration>
-            <executions>
-        	<execution>
-        	    <id>copy-css</id>
-        	    <phase>generate-sources</phase>
-        	    <goals>
-        		<goal>copy-resources</goal>
-        	    </goals>
-        	    <configuration>
-        		<outputDirectory>${project.build.directory}/${project.build.finalName}/css</outputDirectory>
-        		<resources>
-        		    <resource>
-        			<directory>src/main/webapp/css</directory>
-        			<filtering>false</filtering>
-        		    </resource>
-        		</resources>
-        	    </configuration>
-        	</execution>
-            </executions>
-        </plugin>
-
-6. To prevent unnessary copying of the `/css` folder during packaging, add
-   the following plugin configuration within your `<plugins>` tag:
-
-        <plugin>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.3</version>
-            <configuration>
-        	<warSourceExcludes>css/**</warSourceExcludes>
-            </configuration>
-        </plugin>
-
-7. Save these `pom.xml` file changes.
-
-Your theme's CSS should now build correctly.
-
-#### More Information [](id=liferay-6-1-maven-theme-more-info)
+#### More Information 
 
 For more information on Liferay themes and its settings, see Chapter 4,
 [Creating Liferay
@@ -1497,6 +1394,7 @@ at Liferay IDE in the next chapter.
  Maven, "Probably." 
 
 ---
+
 <!-- I thought Lenore II did make it through the chapter. Did you forget to kill
 her off? --> 
 

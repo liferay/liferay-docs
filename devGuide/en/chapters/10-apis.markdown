@@ -8,9 +8,9 @@ in developing your Liferay Portal.
 
 Liferay comes with a host of APIs that provide powerful portal and portlet
 services. The following table shows you the entities for which services are
-available: 
+available:
 
-Portal Services      | Portlet Services              |
+ Portal Services      | Portlet Services              |
 --------------------- | ----------------------------- |
  *User*               | *Documents and Media Library* |
  *Organization*       | *Blogs*                       |
@@ -49,16 +49,6 @@ This chapter covers the following topics:
 
 - Device Detection
 
-- LIferay's Deprecation Policy
-
-Before learning to invoke an API, you need to know where to find Liferay APIs. 
-
-<!--I know it's more than wordsmithing and formatting, but it seems important to
-elevate the Findining Services content since it's ncessary whether you'll
-invoke locally or remotely. Russ -->
-
-## Finding Services  [](id=liferay-portal-6-1-dev-guide-10-en-finding-services)
-
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 Below we'll show you how to search for portal services and portlet services.
@@ -77,32 +67,17 @@ the *Organization* services:
    package, since the services for the Organization entity belong to the
    *Portal* scope. 
 
-3. Find and click on the `-ServiceUtil` class (in this case,
-   `OrganizationLocalServiceUtil`) in the *Class Summary* table or the
-*Classes* list at the bottom of the page. 
-
-That was easy! What if you want to find portlet services? 
-
-### Finding Portlet Services [](id=liferay-portal-6-1-dev-guide-10-en-finding-portlet-services)
-
-Searching for one of Liferay's built-in portlet services is also easy. Instead
-of clicking the link for the service package of the *portal*, click the link for
-the service package of the *portlet*. The portlet service packages use the
-naming convention `com.liferay.portlet.[portlet-name].service`, where
-`[portlet-name]` is replaced with the actual name of the portlet. 
-
-Here's how you find services for a user's blogs statistics:
-
-1. In your browser, open the Javadocs:
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
-
-2. Under *Portlet Services*, click the link for the
-`com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
-services are a part of the *blogs portlet*. 
-
 3. Find and click on the `-ServiceUtil` class (in this case
-`BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the *Classes*
-list. 
+   `OrganizationLocalServiceUtil`) in the class summary table or the list of
+   classes.
+
+It's just that easy!
+
+Similarly, if you want to search for one of Liferay's built-in portlet services,
+no problem. But, when looking up the package, instead of clicking on the link
+for the service package of the *portal*, click on the link for the service
+package of the *portlet*. The portlet service packages use the naming convention
+`com.liferay.portlet.[portlet-name].service`, where `[portlet-name]` is replaced
 
 Now you're ready to invoke Liferay services.
 
@@ -570,7 +545,7 @@ in this example.
 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
 end of the URL. Remember that the service name can be found in the web service
-listing. 
+listing.
 
 The operations `getCompanyByVirtualHost()`, `getUserIdByScreenName()`,
 `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
@@ -1316,7 +1291,7 @@ Let's look at some values returned from service calls. We'll create a
 `UserGroup` as we did in our SOAP web service client examples. To make it easy,
 we'll use the test form provided with the JSON web service in our browser. 
 
-1. Open your browser to the JSON web service method that adds a `UserGroup`: 
+1. Open your browser to the JSON web service method that adds a `UserGroup`:
 
         http://127.0.0.1:8080/api/jsonws?signature=/usergroup/add-user-group-2-name-description
 
@@ -1595,7 +1570,7 @@ thinking we shouldn't just use it like this without explaining what it is. -Rich
 In this section we'll look at the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data.
 
-First we'll look at the fields of the `ServiceContext` class. 
+First we'll look at the fields of the `ServiceContext` class.
 
 ### Service Context Fields [](id=lp-6-1-dgen08-service-context-fields-0)
 
@@ -1658,7 +1633,7 @@ Here we'll give you a helpful categorical listing of the fields:
     - `_userDisplayURL`
 
 Are you wondering how the `ServiceContext` fields get populated? Good! We'll
-show you that next. 
+show you that next.
 
 ### Creating and Populating a Service Context  [](id=lp-6-1-dgen08-creating-and-populating-a-service-context--0)
 
@@ -1768,7 +1743,7 @@ blogs entry, the scope group ID is used in the following way:
 
 - It's used as the groupId for the `BlogsEntry` entity.
 - It's used to generate a unique URL for the blog entry.
-- It's used to set the scope for comments on the blog entry. 
+- It's used to set the scope for comments on the blog entry.
 
 Here are the corresponding code snippets:
 
@@ -1896,7 +1871,7 @@ The Message Bus system contains the following components:
 receive messages. 
 
 - **Listeners**: Consume messages received at destinations. They receive all
-messages sent to their registered destinations. 
+messages sent to their registered destinations.
 
 - **Senders**: Invoke the Message Bus to send messages to destinations. 
 
@@ -1924,7 +1899,7 @@ asynchronous messaging in this section.
     destination. 
 
     - **Send-and-Forget**: The sender includes no call-back information in the
-    message sent and continues with processing. 
+    message sent and continues with processing.
 
 Configuration of Message Bus is done using the following files:
 
@@ -1933,7 +1908,7 @@ listeners, and their mappings to each other.
 
 - `WEB-INF/web.xml`: Holds a listing of deployment descriptors for your plugin.
 Make sure you add `messaging-spring.xml` to your list of Spring configurations
-in this file. 
+in this file.
 
 ---
 
@@ -2345,14 +2320,14 @@ Here's how this listener deserializes the `JSONObject` from the message:
 
 1. Gets the message payload and casts it to a `String`. 
 2. Creates a `JSONObject` from the payload string. 
-3. Gets values from the `JSONObject` using its getter methods. 
+3. Gets values from the `JSONObject` using its getter methods.
 
 The class also demonstrates how the Warehouse Department packages a response
 message and sends it back to the Procurement Department, using these steps: 
 
 1. Create a `JSONObject`.  
 2. Stuff it with name-value pairs. 
-3. Send the response message to the original message's response destination. 
+3. Send the response message to the original message's response destination.
 
 The Sales department listener can be implemented the same way, substituting
 *Sales* as the department value; the comment would likely be different, too. 
@@ -2502,7 +2477,7 @@ Along the way you used Message Bus to implement the following:
 - Sender, listener, and destination components. 
 - Synchronous and Asynchronous messaging schemes. 
 - *Serial* and *parallel* message dispatching. 
-- Java and JSON message types. 
+- Java and JSON message types.
 
 Next we'll show you the Device Detection API and its capabilities. 
 

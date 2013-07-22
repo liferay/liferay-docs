@@ -25,8 +25,8 @@ In this chapter we'll cover the following topics:
 - Installation 
 - Setting Up Liferay IDE 
 - Testing/Launching Liferay Tomcat Server 
-- Creating New Liferay Projects
-- Deploying Liferay Projects
+- Creating New Liferay Projects 
+- Deploying Liferay Projects 
 - Importing Existing Projects into Liferay IDE 
 - Using Liferay IDE's Remote Server Adapter
 - Designing workflows with Kaleo Designer for Java 
@@ -60,7 +60,6 @@ or install from a `.zip` file.
 Make sure you have a supported Java JRE and Eclipse release: 
 
 - Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
-
 - Liferay IDE supports the following Eclipse releases: 
 
     Eclipse Juno Java EE (4.2.x)
@@ -72,23 +71,21 @@ Make sure you have a supported Java JRE and Eclipse release:
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
 1.  Install Eclipse Juno, Indigo, or Helios from the
-    [Eclipse](http://www.eclipse.org) website.
+    [Eclipse](http://www.eclipse.org) website. 
 
 2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
 3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
 4.  In the *Work with* field, enter the update site URL for your Eclipse release
-    and press *Enter*. Your update site URL is one of the following:
+    and press *Enter*. Your update site URL is one of the following: 
 
-    Eclipse Juno Update Site: 
-    [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-
-    Eclipse Indigo Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-
-    Eclipse Helios Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    - Eclipse Juno Update Site: 
+      [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
+    - Eclipse Indigo Update Site:
+      [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
+    - Eclipse Helios Update Site:
+      [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
@@ -177,7 +174,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 ### Liferay Portal Tomcat Runtime and Server Setup [](id=lp-6-1-dgen07-liferay-portal-tomcat-runtime--server-setup-0)
 
 1.  In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
-    *Runtime Environments*.
+    *Runtime Environments*. 
 
     ![Figure 9.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
@@ -189,7 +186,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 4.  If you've selected the Liferay portal directory and a bundle JRE is present,
     it is automatically selected as the server's launch JRE. If no JRE bundle
     is present, then you must select the JRE to use for launch by clicking
-    *Installed JREs...*.
+    *Installed JREs...*. 
 
     ![Figure 9.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
@@ -306,7 +303,7 @@ We'll cover the following import scenarios:
     the Liferay facet or target runtime).
 
 3.  Importing existing Liferay IDE projects from another Liferay IDE version or
-    workspace.
+    workspace. 
 
 Let's start by learning how to import existing Liferay projects from Liferay
 Plugins SDK. 
@@ -328,7 +325,7 @@ First let's look at the import process for creating a single Liferay IDE project
 from a Plugins SDK project. Follow these steps:
 
 1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
-    *Liferay* &rarr; *Liferay Project from Existing Source*.
+    *Liferay* &rarr; *Liferay Project from Existing Source*. 
 
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
@@ -350,7 +347,7 @@ from a Plugins SDK project. Follow these steps:
     imported. If you don't have a Liferay Portal Runtime, use the *New...*
     button to create one now.  
 
-5.  Click *Finish* to perform the import.
+5.  Click *Finish* to perform the import. 
 
 Remember to verify that your project was configured correctly as a Liferay IDE
 project. Verification is described right after our next topic, which is making
@@ -365,7 +362,7 @@ Does your Plugins SDK contain multiple plugins? You can easily batch import each
 plugin in your Plugins SDK as its own Liferay IDE project. 
 
 1.  In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
-    Projects from Plugin SDK*.
+    Projects from Plugin SDK*. 
 
     ![Figure 9.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
@@ -388,7 +385,7 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 
 4.  The list of projects that are available for import are displayed in a table.
     Any projects already in the workspace are disabled. Projects available for
-    import have an empty check box; select each project you'd like to import.
+    import have an empty check box; select each project you'd like to import. 
 
 5.  Select the Liferay runtime you want to set up for the imported projects. 
 
@@ -408,7 +405,7 @@ have a project in your Eclipse workspace. Follow the import steps below to
 convert your project. 
 
 1.  In Eclipse, right-click the project in your Project Explorer, and select
-    *Liferay* &rarr; *Convert to Liferay plugin project*.
+    *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
     ---
 
@@ -426,7 +423,7 @@ convert your project.
     ![Figure 9.9: Converting a project](../../images/ide-convert-plugin-project.png)
 
 3.  Select the Liferay runtime to use for the project. If you don't have a
-    Liferay Runtime defined, do so now by clicking *New...*.
+    Liferay Runtime defined, do so now by clicking *New...*. 
 
 4.  Click *Finish*. 
 
@@ -521,7 +518,7 @@ following resources on your local development machine:
 - [Liferay
   IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
   Liferay's downloads page or download Liferay Developer Studio 1.6.1 from
-  the Customer Portal.
+  the Customer Portal. 
 - [Liferay Portal CE or
   EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to
   your local development machine. 
@@ -574,7 +571,7 @@ Server Adapter, use the following steps:
     to use the runtime stub for satisfying JAR dependencies needed to compile
     various Liferay projects. Select the *Liferay bundle type* based on the
     version of your local Liferay bundle, browse to the *Liferay bundle
-    directory*, and click *Next*.
+    directory*, and click *Next*. 
 
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance:  
@@ -617,7 +614,7 @@ Server Adapter, use the following steps:
     configuration wizard, check your connection settings. 
 
 8.  Once Liferay IDE is connected to your remote Liferay Portal instance,
-    click *Finish* in the Remote Liferay Server configuration wizard.
+    click *Finish* in the Remote Liferay Server configuration wizard. 
    
     After you click *Finish*, the new remote server appears in Liferay IDE's
     *Servers* tab. This tab appears in the bottom left corner of the Eclipse
@@ -666,7 +663,7 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
     automatically publish after a build event, or never to publish
     automatically. To manually invoke the publishing operation after having
     modified project files, right click on the server in the Servers view and
-    select *Publish*.
+    select *Publish*. 
 
 Now that you've seen how you can deploy projects in Liferay IDE and Liferay
 Developer Studio, we can begin delving into the features it offers. Next, we'll
