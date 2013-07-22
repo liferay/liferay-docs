@@ -499,11 +499,11 @@ development instance of Liferay that's on another machine, then the remote
 server adapter is your solution. Your remote Liferay Portal instance must
 satisfy two requirements to use a Remote Server Adapter: 
 
--   It is version 6.1 or later. 
--   It has the Remote IDE Connector application installed from Liferay
-    Marketplace. Remote IDE Connector contains the `server-manager-web` plugin
-    that provides an API for Liferay IDE's Remote Server Adapter to use for all
-    its remote operations. 
+- It is version 6.1 or later. 
+- It has the Remote IDE Connector application installed from Liferay
+  Marketplace. Remote IDE Connector contains the `server-manager-web` plugin
+  that provides an API for Liferay IDE's Remote Server Adapter to use for all
+  its remote operations. 
 
 The Remote Server Adapter lets developers deploy local projects to a remote
 development server for testing purposes. If you're using Liferay IDE and want to
