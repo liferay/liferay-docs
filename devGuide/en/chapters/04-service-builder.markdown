@@ -1632,3 +1632,17 @@ following:
 
 For more information on these services, see Liferay's Javadocs at
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+
+<!--
+Missing summary ...
+
+## Summary
+
+(Summarize what's been covered in the chapter.)
+-->
+
+In this chapter, we've only scratched the surface of remote services. In the
+next chapter, we'll show you how to find other services and invoke them. We'll
+take an in-depth look at Liferay's service security layer. And last but not
+least we'll dive deep into SOAP web services and JSON web services. So hold on
+tight, you're about to get served a big helping of Liferay services. 

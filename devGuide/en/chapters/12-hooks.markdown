@@ -855,6 +855,7 @@ but aren't yet fully documented. Here's a summary of these hooks:
 In this chapter we discussed some of the many uses of the versatile hook plugin,
 the preferred tool for customizing Liferay. You learned how to perform custom
 portal actions, override and extend custom portal JSPs, modify portal
-properties, and replace portal services. Next, we'll talk about using Ext
-plugins to make customizations that you can't make with any other Liferay plugin
-type. 
+properties, and replace portal services. 
+
+Next, we'll show you what it takes to develop apps for publishing to *Liferay
+Marketplace*. 

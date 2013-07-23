@@ -30,7 +30,7 @@ Liferay:
 
 First, let's create the portlet that we'll use throughout this chapter. 
 
-## Creating a Portlet
+## Creating a Portlet Project
 
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
@@ -152,7 +152,7 @@ page below.
 
 Congratulations, you've just created your first portlet! 
 
-## Anatomy of a Portlet
+## Anatomy of a Portlet Project
 
 A portlet project is made up of at least three components:
 
@@ -1367,5 +1367,13 @@ information between them in a portlet. You've enhanced a portlet with multiple
 actions and have mapped a friendly URL to it. Lastly, you've found how easy it
 is to start localizing your portlets. You're really on a roll! 
 
-What better way to keep things rolling than to focus on your portal's overall
-look and feel using Liferay Themes! We'll cover Themes next. 
+Now that you know how to create portlets, you'll need to consider a few things,
+such as persisting your objects to a database, maintaining separatation between
+your persistence layer, business logic, and presentation layer, and allowing for
+flexible implementations. Lastly, you'll want the ability to publish your
+portlet's operations as services. So how do you address all of this? Hibernate
+probably comes to mind for persisting your data model, and Spring probably comes
+to mind with regards to supporting implementation flexibility. Sounds
+complicated, right? No need to worry! Liferay's Service Builder helps you build
+portlet services while hiding the complexities of using Spring and Hibernate
+under the hood. We'll cover Service Builder next. 

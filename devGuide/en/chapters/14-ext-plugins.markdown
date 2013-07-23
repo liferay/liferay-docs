@@ -1098,4 +1098,5 @@ that's inherent with Ext plugins. If you need to use an Ext plugin, make it as
 small as possible and follow the instructions in this guide carefully to avoid
 issues.
 
-Next we'll learn how to develop Liferay using the Maven build framework. 
+Next, we'll take a look at some helpful plugin developer references. So get
+ready to bookmark plenty of links! 

@@ -46,9 +46,36 @@ Studio to complete these tasks. As you can see, Kaleo Designer for Java is a
 powerful application for creating, modifying, and publishing workflows in
 Liferay Developer Studio. 
 
+We'll cover the following topics as we design workflows:
+
+- Installing Kaleo Designer for Java
+- Creating a Workflow
+- Using Workflow Scripts
+- Leveraging Template Editors for Notifications
+- Viewing Workflow Definition XML Source
+- Publishing Workflows to the Server
+- Using Workflows in Liferay Portal
+- Using Dynamic Data Lists (DDLs) with Workflows
+
 <!--I only lightly edited the introduction to Kaleo. I don't think I understand
 enough about how it works from a development perspective; The above might be
 perfectly clear to a developer, but it's not to me. -Russ -->
+
+## Installing Kaleo Designer for Java
+
+To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
+Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
+`kaleo-designer-portlet`, and `kaleo-web` plugins.
+
+Here's how to download and install *Kaleo Forms EE*:
+
+1.  Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
+
+2.  Click on [EE
+    Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in
+    the left navigation area.
+
+3.  Download and install the *Kaleo Forms EE* app.
 
 ---
 
@@ -64,20 +91,6 @@ workflow concepts or want to know how to design your workflow within Liferay
 Portal. 
 
 ---
-
-To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
-Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
-`kaleo-designer-portlet`, and `kaleo-web` plugins.
-
-Here's how to download and install *Kaleo Forms EE*:
-
-1.  Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
-
-2.  Click on [EE
-    Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in
-    the left navigation area.
-
-3.  Download and install the *Kaleo Forms EE* app.
 
 After downloading and installing the Kaleo Forms EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
@@ -992,7 +1005,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
-## Using DDLs with Workflows 
+## Using Dynamic Data Lists (DDLs) with Workflows
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
@@ -1096,4 +1109,10 @@ your workflows running in Liferay, you can publish directly to your existing
 Liferay server; the configuration process is quick and easy. With all of its
 features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
+
+Similar to how workflows use human input and can be used to disseminate
+information to users, there is a breed of social applications called OpenSocial
+gadgets that lend themselves well to humans sharing information and application
+functionality within defined networks. They are light-weight and easy to write
+and distribute. We'll get into OpenSocial gadgets next. 
 

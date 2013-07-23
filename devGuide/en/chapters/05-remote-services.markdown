@@ -1509,7 +1509,14 @@ commands are collectively invoked in a single HTTP request, one after another.
 By learning to leverage JSON Web Services in Liferay, you've added some powerful
 tools to your toolbox. Good job! 
 
-Next let's consider the `ServiceContext` class that's used by many Liferay
-services.
+## Summary
 
+In this chapter, we showed you how easy it is to find and invoke services. We
+also explained how Liferay's service security layers are used to protect your
+data. Then, we dove into SOAP web services and showed you how to invoke them.
+Lastly, we jumped into JSON web services to register them and invoke them in a
+myriad of ways. You see, here at Liferay, we aim to give you terrific service! 
+
+Next, we’ll take a look at some of the powerful frameworks of Liferay Portal,
+learn how they work and how you can leverage them. 
 

@@ -15,6 +15,7 @@ simple, widely available, and easy to deploy.
 In this chapter, we'll cover the following topics:
 
 - OpenSocial Gadget Basics
+- Accessing Third-Party Applications from Your Gadget
 - Gadget/Portlet Communication with PubSub
 - Liferay's Gadget Editing Environment
 
@@ -723,7 +724,8 @@ opportunities for your portal customization. You've learned the anatomy of a
 gadget, how to access third-party applications from a gadget, and gadget
 communication with PubSub. Also, you learned that Liferay's gadget editor makes
 editing and customizing your gadgets easier than ever. Take a deep breath and
-give yourself a pat on the back; you're now a trained gadget guru!
+give yourself a pat on the back; you're now a trained gadget guru! 
 
-Next, we'll explore the seemingly mysterious world of plugin security
-management. 
+What better way to keep things rolling than to focus on your portal's overall
+look and feel using Liferay Themes! While we're at it, let's learn how to
+develop Layout Templates too. We'll cover both of these topics next. 
