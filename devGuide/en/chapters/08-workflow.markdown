@@ -130,7 +130,8 @@ software ticketing process. Are you ready to roll? Let's get started!
     The first window you'll see is the *Create Kaleo Workflow* form. There are
     several fields here:  
 
-    *Project*: Specify an existing Liferay project to house your workflow definition. 
+    *Project*: Specify an existing Liferay project to house your workflow
+    definition.  
 
     *Folder*: Specify where in the project the workflow definition XML file will
     be stored.
@@ -228,8 +229,8 @@ We want a developer to approve his fix and send it for quality assurance to
 Management*, where it must be approved by a QA manager. Let's use a *Fork* node
 to accurately depict these parallel approval tasks. 
 
-Drag and drop a *Fork* node onto your workflow diagram. A wizard helps you create
-your node. Click the green plus symbol to select new or
+Drag and drop a *Fork* node onto your workflow diagram. A wizard helps you
+create your node. Click the green plus symbol to select new or
 existing nodes to process in parallel threads. A drop-down menu gives you
 options to select tasks to be done in your fork threads. In addition, a checkbox
 lets you indicate whether to automatically add a corresponding join node to your
@@ -245,8 +246,8 @@ ticket process workflow now looks something like this:
 ![Figure 8.8: After creating the fork and join nodes, you can reposition them to your liking.](../../images/kaleo-8.png)
 
 Why is there a red "X" in the bottom left of multiple nodes within our workflow?
-These are error markers! Errors indicate something is specified incorrectly or is
-missing from your nodes. Hover your pointer over each error marker; Developer
+These are error markers! Errors indicate something is specified incorrectly or
+is missing from your nodes. Hover your pointer over each error marker; Developer
 Studio displays hints on resolving each problem. Don't worry, we'll address
 these error markers momentarily. 
 

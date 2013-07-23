@@ -94,7 +94,7 @@ configuration, and we encourage you to keep your projects in the Plugins SDK.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: If you are using a source
+ ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
  control system such as Subversion, CVS, Mercurial, Git, etc., this might be
  a good moment to do an initial check-in of your changes. After building the
  plugin for deployment, several additional files will be generated that should
@@ -112,7 +112,7 @@ is a method of deployment used throughout this guide.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide
+ ![note](../../images/tip-pen-paper.png) **Note:** Liferay supports a wide
  variety of application servers. Many, such as Tomcat and Jboss, provide a
  simple way to deploy web applications by just copying a file into a folder and
  Liferay's auto-deploy mechanism takes advantage of that ability. You should be
@@ -476,7 +476,7 @@ a custom greeting.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If your portlet deployed
  successfully, but you don't see any changes in your browser after refreshing
  the page, Tomcat may have failed to rebuild your JSPs. To fix this, delete the
 `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh
@@ -760,7 +760,7 @@ phase you must read them from the `actionRequest` and then invoke the
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Liferay offers a convenient
  extension to the portlet specification through the `MVCPortlet` class to copy
  all action parameters directly as render parameters. You can achieve this by
  setting the following `init-param` in your `portlet.xml`:
@@ -1069,9 +1069,7 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 When you refesh your page, your "My Greeting" portlet greets you by your screen
 name!
 
-![Figure 3.11: By passing the user's screen name as an argument to Liferay's
-`welcome-x` language key, we were able to display a personalized
-greeting.](../../images/portlets-welcome-user-screenname.png)
+![Figure 3.11: By passing the user's screen name as an argument to Liferay's `welcome-x` language key, we were able to display a personalized greeting.](../../images/portlets-welcome-user-screenname.png)
 
 Other message tags you'll want to use are the `<liferay-ui:success />` and
 `<liferay-ui:error />` tags. The `<liferay-ui:success />` helps you give
@@ -1258,7 +1256,7 @@ our title and description keys in `Language.properties` would be:
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Do you know how your portlet
  title is processed? If your portlet doesn't define a resource bundle or
  `javax.portlet.title`, the portal container next checks the `<portlet-info>`
 and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
@@ -1268,7 +1266,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Be aware that using Struts
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Be aware that using Struts
  portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
  engages a different title and description algorithm. Titles and long titles are
  pulled using two different keys:
@@ -1319,27 +1317,31 @@ To create a plugin which extends another, follow these steps:
     compiled. All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.x
-            ml
+        Buildfile:
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
         
         compile:
         
         merge:
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/classes 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/lib 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        classes 
+        [mkdir] Created dir:
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        lib 
         
         merge-unzip:
         [unzip] Expanding:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/social-networking-portlet-
-        6.1.10.1-ee-ga1.war into /home/dsanz/sdk/portlets/my-social-networking-portlet/t
-        mp 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/social-
+        networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/
+        portlets/my-social-networking-portlet/tmp 
         [copy] Copying 2 files to
         /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp 
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/WEB-INF/classes
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/
+        WEB-INF/classes
         
         ...
 

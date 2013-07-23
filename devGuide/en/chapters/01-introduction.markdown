@@ -225,7 +225,7 @@ effect.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you have developed for
+ ![note](../../images/tip-pen-paper.png) **Note:** If you have developed for
  Liferay 5.2 or prior releases, you may be familiar with what was known as the
  *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
  the extension environment in order to simplify development. For instructions on

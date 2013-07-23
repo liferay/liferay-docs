@@ -671,8 +671,8 @@ That's it for overriding the Struts actions! Now Let's get our new Struts
 path working. 
 
 1.  Create `sample.jsp` in the
-    `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert the
-    following code:
+    `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert
+    the following code:
 
         <%
         String name = (String)request.getAttribute("name");
@@ -758,9 +758,9 @@ Liferay to use your service class instead of the original.
     ---
 
     ![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
-    (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's class
-    loader. That means it will have access to any other class included in the
-    same WAR file, but *not* the *internal* classes of Liferay.
+    (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's
+    class loader. That means it will have access to any other class included in
+    the same WAR file, but *not* the *internal* classes of Liferay.
 
     ---
 
@@ -768,8 +768,13 @@ Liferay to use your service class instead of the original.
     directory, by adding the following after `</custom-jsp-dir>`:
 
         <service>
-            <service-type>com.liferay.portal.service.UserLocalService</service-type>
-            <service-impl>com.liferay.sample.hook.MyUserLocalServiceImpl</service-impl>
+            <service-type>
+            com.liferay.portal.service.UserLocalService
+            </service-type>
+
+            <service-impl>
+            com.liferay.sample.hook.MyUserLocalServiceImpl
+            </service-impl>
         </service>
 
 Redeploy your hook and refresh your browser. In the terminal window running

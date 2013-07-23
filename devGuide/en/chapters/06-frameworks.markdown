@@ -168,10 +168,10 @@ store any type of content need the scope group ID specified, at least. Here's a
 simple example of creating a `ServiceContext` instance and passing it as a
 parameter to a service API using Java: 
 
-        ServiceContext serviceContext = new ServiceContext();
-        serviceContext.setScopeGroupId(myGroupId);
-        ...
-        BlogsEntryServiceUtil.addEntry(...., serviceContext);
+    ServiceContext serviceContext = new ServiceContext();
+    serviceContext.setScopeGroupId(myGroupId);
+    ...
+    BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
 If you invoke the service from a servlet, a Struts action or any other front
 end class which has access to the `PortletRequest`, use one of the
@@ -179,10 +179,9 @@ end class which has access to the `PortletRequest`, use one of the
 `ServiceContext` object and automatically fill it with all necessary values.
 The above example looks different if you invoke the service from a servlet: 
 
-        ServiceContext serviceContext =
-                ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
-                portletRequest);
-        BlogsEntryServiceUtil.addEntry(..., serviceContext);
+    ServiceContext serviceContext =
+        ServiceContextFactory.getInstance(BlogsEntry.class.getName(),portletRequest);
+    BlogsEntryServiceUtil.addEntry(..., serviceContext);
 
 You can see an example of populating a `ServiceContext` with information from a
 request object in the code of the `ServiceContextFactory.getInstance(...)`
@@ -223,7 +222,8 @@ using `ServiceContext` in calling the `updateStructure` method of the
             structureId: structureId,
             parentStructureId: parentStructureId || '',
             nameMap: '{' + defaultLocale + ':' + name + '}',
-            descriptionMap: '{' + defaultLocale + ':' + (description == '' ? null : description ) + '}',
+            descriptionMap: '{' + defaultLocale + ':' +
+                (description == '' ? null : description ) + '}',
             xsd: xsd,
             serviceContext: A.JSON.stringify(
                 {
@@ -273,74 +273,74 @@ blogs entry, the scope group ID is used in the following way:
 
 Here are the corresponding code snippets:
 
-        long groupId = serviceContext.getScopeGroupId();
-        ...
-        entry.setGroupId(groupId);
-        ...
-        entry.setUrlTitle(getUniqueUrlTitle(entryId, groupId, title));
-        ...
+    long groupId = serviceContext.getScopeGroupId();
+    ...
+    entry.setGroupId(groupId);
+    ...
+    entry.setUrlTitle(getUniqueUrlTitle(entryId, groupId, title));
+    ...
 
-        // Message boards
+    // Message boards
 
-        if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
-            mbMessageLocalService.addDiscussionMessage(
-                userId, entry.getUserName(), groupId,
-                BlogsEntry.class.getName(), entryId,
-                WorkflowConstants.ACTION_PUBLISH);
-        }
+    if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
+        mbMessageLocalService.addDiscussionMessage(
+            userId, entry.getUserName(), groupId,
+            BlogsEntry.class.getName(), entryId,
+            WorkflowConstants.ACTION_PUBLISH);
+    }
 
 Can `ServiceContext` be used to access the UUID of the blog entry? Absolutely!
 Can you use `ServiceContext` to set the time the blog entry was added? Sure you
 can. See here: 
 
-        entry.setUuid(serviceContext.getUuid());
-        ...
-        entry.setCreateDate(serviceContext.getCreateDate(now));
+    entry.setUuid(serviceContext.getUuid());
+    ...
+    entry.setCreateDate(serviceContext.getCreateDate(now));
 
 Can `ServiceContext` be used in setting permissions on resources? You bet! When
 adding a blog entry, you can add new permissions or apply existing permissions
 for the entry, like this: 
 
-        // Resources
+    // Resources
 
-        if (serviceContext.isAddGroupPermissions() ||
-            serviceContext.isAddGuestPermissions()) {
+    if (serviceContext.isAddGroupPermissions() ||
+        serviceContext.isAddGuestPermissions()) {
 
-            addEntryResources(
-                entry, serviceContext.isAddGroupPermissions(),
-                serviceContext.isAddGuestPermissions());
-        }
-        else {
-            addEntryResources(
-                entry, serviceContext.getGroupPermissions(),
-                serviceContext.getGuestPermissions());
-        }
+        addEntryResources(
+            entry, serviceContext.isAddGroupPermissions(),
+            serviceContext.isAddGuestPermissions());
+    }
+    else {
+        addEntryResources(
+            entry, serviceContext.getGroupPermissions(),
+            serviceContext.getGuestPermissions());
+    }
 
 `ServiceContext` helps apply categories, tag names, and the link entry IDs to
 asset entries too. 
 
-        // Asset
+    // Asset
 
-        updateAsset(
-            userId, entry, serviceContext.getAssetCategoryIds(),
-            serviceContext.getAssetTagNames(),
-            serviceContext.getAssetLinkEntryIds());
+    updateAsset(
+        userId, entry, serviceContext.getAssetCategoryIds(),
+        serviceContext.getAssetTagNames(),
+        serviceContext.getAssetLinkEntryIds());
 
 Does `ServiceContext` also play a role in starting a workflow instance for the
 blogs entry? Must you Ask? 
 
-        // Workflow
+    // Workflow
 
-        if ((trackbacks != null) && (trackbacks.length > 0)) {
-            serviceContext.setAttribute("trackbacks", trackbacks);
-        }
-        else {
-            serviceContext.setAttribute("trackbacks", null);
-        }
+    if ((trackbacks != null) && (trackbacks.length > 0)) {
+        serviceContext.setAttribute("trackbacks", trackbacks);
+    }
+    else {
+        serviceContext.setAttribute("trackbacks", null);
+    }
 
-        WorkflowHandlerRegistryUtil.startWorkflowInstance(
-            user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
-            entry.getEntryId(), entry, serviceContext);
+    WorkflowHandlerRegistryUtil.startWorkflowInstance(
+        user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
+        entry.getEntryId(), entry, serviceContext);
 
 The snippet above also demonstrates the `trackbacks` attribute, a standard
 attribute for the blogs entry service. There may be cases where you need to pass
@@ -348,7 +348,7 @@ in custom attributes to your blogs entry service. Use Expando attributes to
 carry custom attributes along in your `ServiceContext`. Expando attributes are
 set on the added blogs entry like this: 
 
-        entry.setExpandoBridgeAttributes(serviceContext);
+    entry.setExpandoBridgeAttributes(serviceContext);
 
 You can see that the `ServiceContext` can be used to transfer lots of useful
 information for your services. 
@@ -397,8 +397,12 @@ role names. For example, the Liferay Blogs portlet definition references the
         <security-role-ref>
             <role-name>user</role-name>
         </security-role-ref>
-        <supported-public-render-parameter>categoryId</supported-public-render-parameter>
-        <supported-public-render-parameter>tag</supported-public-render-parameter>
+        <supported-public-render-parameter>
+        categoryId
+        </supported-public-render-parameter>
+        <supported-public-render-parameter>
+        tag
+        </supported-public-render-parameter>
     </portlet>
 
 Your `portlet.xml` roles need to be mapped to specific roles in the portal.
@@ -407,7 +411,7 @@ are from different portlets (e.g. portlets from different developers).
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Each role named in a portlet's
+![note](../../images/tip-pen-paper.png) **Note:** Each role named in a portlet's
 `<security-role-ref>` element is given permission to add the portlet to a page. 
 
 ---
@@ -504,7 +508,9 @@ on them. Let's use the Blogs portlet to demonstrate. Open the `blogs.xml` file i
 resources to actions: 
 
     <?xml version="1.0"?>
-    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+    <!DOCTYPE resource-action-mapping PUBLIC
+     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
 
     <resource-action-mapping>
         <portlet-resource>
@@ -677,7 +683,9 @@ excerpt from `default.xml` references the resource permission definition files
 for all built-in Liferay portlets (including the blogs portlet): 
 
     <?xml version="1.0"?>
-    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+    <!DOCTYPE resource-action-mapping PUBLIC
+     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
     
     <resource-action-mapping>
         <resource file="resource-actions/portal.xml" />
@@ -818,8 +826,8 @@ For the first tag, specify the following attributes:
 -   `modelResource`: The fully qualified Java object class name. This class name
     gets translated into its more readable name as specified in
     `Language.properties`. 
--   `modelResourceDescription`: You can pass in anything that best describes this
-    model instance. In this example, the blogs title was passed in. 
+-   `modelResourceDescription`: You can pass in anything that best describes
+    this model instance. In this example, the blogs title was passed in. 
 -   `resourcePrimKey`: The primary key of your model instance. 
 -   `var`: Specifies the name of the variable to be assigned the resulting URL
     String. The variable is then passed to the `<liferay-ui:icon>` tag so the
@@ -875,37 +883,34 @@ If the user isn't signed in (guest user), it checks for guest permissions.
 Otherwise, it checks for user permissions. Let's quickly review the parameters
 of this method: 
 
-- `groupId`: Represents the scope where the permission check is performed. In
-  Liferay, many scopes are available, including a specific site, organization,
-personal site of a user, or a page in a site. This is important because a user
-may be allowed to add blog entries in one site, but not in another. For
-resources that don't belong to a scope (extremely rare and unlikely), set the
-value of this parameter to `0`. There are several ways you can obtain the
-`groupId` of the current scope: 
+-   `groupId`: Represents the scope where the permission check is performed. In
+    Liferay, many scopes are available, including a specific site, organization,
+    personal site of a user, or a page in a site. This is important because a
+    user may be allowed to add blog entries in one site, but not in another. For
+    resources that don't belong to a scope (extremely rare and unlikely), set
+    the value of this parameter to `0`. There are several ways you can obtain
+    the `groupId` of the current scope: 
 
-<!--I think the two bullets below should be nested, right? Rich's changes seem
-to have removed the nesting, probably unintentionally. -->
+    -   JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
+        variable called `scopeGroupId`. 
+    -   Business logic class: If you're using the ServiceContext pattern, you
+        can obtain the `groupId` by using `serviceContext.getScopeGroupId()`. If
+        you're not using the `ServiceContext` pattern, your can obtain `groupId`
+        from the theme display request object: 
 
--   JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
-    variable called `scopeGroupId`.
--   Business logic class: If you're using the ServiceContext pattern, you can
-    obtain the `groupId` by using `serviceContext.getScopeGroupId()`. If you're not
-    using the `ServiceContext` pattern, your can obtain `groupId` from the theme
-    display request object: 
+            ThemeDisplay themeDisplay = (ThemeDisplay)
+                request.getAttribute(WebKeys.THEME_DISPLAY);
+            long scopeGroupId = themeDisplay.getScopeGroupId();
 
-    ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-        WebKeys.THEME_DISPLAY);
-        long scopeGroupId = themeDisplay.getScopeGroupId();
-
--   `name`: The name of the resource as specified in the XML file of the previous
-    sections. 
--   `primKey`: The primary key of the resource. In this example the resource
-    doesn't exist as an entry in the database, so we use the `groupId` again. If
-    we were checking for a permission on a given blog entry, we'd use the primary
-    key of that blog entry instead. 
--   `actionId`: The name of the action as it appears in the XML file. To simplify
-    searching for usages, consider creating a helper class that has constants for
-    all the actions defined. 
+    -   `name`: The name of the resource as specified in the XML file of the
+        previous sections. 
+    -   `primKey`: The primary key of the resource. In this example the resource
+        doesn't exist as an entry in the database, so we use the `groupId`
+        again. If we were checking for a permission on a given blog entry, we'd
+        use the primary key of that blog entry instead. 
+    -   `actionId`: The name of the action as it appears in the XML file. To
+        simplify searching for usages, consider creating a helper class that has
+        constants for all the actions defined. 
 
 In the examples above, we're assuming there's a variable called
 `permissionChecker` already available. Liferay automatically creates a
@@ -917,10 +922,11 @@ performance. There are several ways to obtain a permission checker:
     variable called `permissionChecker`. 
 -   With Service Builder, every service implementation class can access the
     `PermissionChecker` instance by using the method `getPermissionChecker()`. 
--   If you're not using Service Builder, `PermissionChecker` can be obtained from
-    the theme display request object: 
+-   If you're not using Service Builder, `PermissionChecker` can be obtained
+    from the theme display request object: 
 
-    ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
+        ThemeDisplay themeDisplay = (ThemeDisplay)
+            request.getAttribute(WebKeys.THEME_DISPLAY);
         PermissionChecker permissionChecker =
             themeDisplay.getPermissionChecker();
 
@@ -1053,9 +1059,9 @@ Here are the features you can reuse thanks to the asset framework:
 
 -   Publish your content using the Asset Publisher portlet. Asset Publisher can
     publish dynamic asset lists or manually selected asset lists. It can also
-    show an asset summary view with a link to the full view. This saves you time,
-    since it likely won't be necessary to develop custom portlets for your custom
-    content types. 
+    show an asset summary view with a link to the full view. This saves you
+    time, since it likely won't be necessary to develop custom portlets for your
+    custom content types. 
 
 At this point you might be saying, "Asset Framework sounds great; but how do I
 leverage all these awesome functions?" Excellent question, young padawan, and
@@ -1141,14 +1147,16 @@ Here's a quick summary of the most important parameters of this method:
     doesn't support scopes (extremely rare), just pass `0` as the value. 
 
 -   `className` identifies the type of asset. The recommended convention is to
-    use the name of the Java class that represents your content type, but you can
-    actually use any String you want as long as you are sure that it is unique. 
+    use the name of the Java class that represents your content type, but you
+    can actually use any String you want as long as you are sure that it is
+    unique.  
 
 -   `classPK` identifies the specific content being created among others of the
-    same type. It's usually the primary key of the table where the custom content
-    is stored. If you want, you can use the *classUuid* parameter to specify a
-    secondary identifier; it's guaranteed to be universally unique. It's especially
-    useful if your content will be exported and imported across separate portals. 
+    same type. It's usually the primary key of the table where the custom
+    content is stored. If you want, you can use the *classUuid* parameter to
+    specify a secondary identifier; it's guaranteed to be universally unique.
+    It's especially useful if your content will be exported and imported across
+    separate portals.  
 
 -   `assetCategoryIds` and `assetTagNames` represent the categories and tags
     selected by the author of the content. The Asset Framework will store them
@@ -1157,8 +1165,8 @@ Here's a quick summary of the most important parameters of this method:
 -   `visible` specifies whether the content should be shown at all by Asset
     Publisher. 
 
--   `title,` `description` and `summary` are descriptive fields used by the Asset
-    Publisher when displaying entries of your content type. 
+-   `title,` `description` and `summary` are descriptive fields used by the
+    Asset Publisher when displaying entries of your content type. 
 
 -   `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
     shouldn't show the content before a given publication date or after a given
@@ -1275,7 +1283,10 @@ from the Blogs portlet:
 -   *Comments and comment ratings:* 
 
         <portlet:actionURL var="discussionURL">
-            <portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
+            <portlet:param
+               name="struts_action"
+               value="/blogs/edit_entry_discussion"
+            />
         </portlet:actionURL>
 
         <liferay-ui:discussion
@@ -1302,7 +1313,8 @@ from the Blogs portlet:
             displayStyle="<%= socialBookmarksDisplayStyle %>"
             target="_blank"
             title="<%= entry.getTitle() %>"
-            url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
+            url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(),
+                themeDisplay) %>"
         />
 
 -   *Related assets:* 
@@ -1344,17 +1356,18 @@ two interfaces:
 -   `AssetRendererFactory`: A class that knows how to retrieve specific assets
     from persistent storage using the `classPK`. The `classPK` is typically the
     asset's primary key, but can be anything you specified to the `updateAsset`
-    method, which you use to add or update the asset. Your factory implementation
-    can grab the asset from a `groupId` (identifies a scope of data) and a
-    `urlTitle` (a title that can be used in friendly URLs to refer uniquely to the
-    asset within a given scope). Finally, the asset renderer factory can provide a
-    URL for the Asset Publisher to use when a user wants to add a new asset of your
-    custom type. This URL should point to your own portlet.  There are other less
-    important methods of the interface, but you can avoid implementing them by
-    extending `BaseAssetRendererFactory`. By extending this base class instead of
-    implementing the interface directly, your code will be more robust to possible
-    interface changes in future versions of Liferay, since the base implementation
-    will be updated to accommodate the interface changes. 
+    method, which you use to add or update the asset. Your factory
+    implementation can grab the asset from a `groupId` (identifies a scope of
+    data) and a `urlTitle` (a title that can be used in friendly URLs to refer
+    uniquely to the asset within a given scope). Finally, the asset renderer
+    factory can provide a URL for the Asset Publisher to use when a user wants
+    to add a new asset of your custom type. This URL should point to your own
+    portlet.  There are other less important methods of the interface, but you
+    can avoid implementing them by extending `BaseAssetRendererFactory`. By
+    extending this base class instead of implementing the interface directly,
+    your code will be more robust to possible interface changes in future
+    versions of Liferay, since the base implementation will be updated to
+    accommodate the interface changes.  
 
 -   `AssetRenderer`: This is an interface that provides metadata information
     about one specific asset. It checks whether the current user has permission
@@ -1606,13 +1619,17 @@ provided. Here's how it looks for blogs entries:
 
     <%= entry.getContent() %>
 
-    <liferay-ui:custom-attributes-available className="<%= BlogsEntry.class.getName() %>">
+    <liferay-ui:custom-attributes-available
+        className="<%= BlogsEntry.class.getName() %>"
+    >
+
         <liferay-ui:custom-attribute-list
             className="<%= BlogsEntry.class.getName() %>"
             classPK="<%= (entry != null) ? entry.getEntryId() : 0 %>"
             editable="<%= false %>"
             label="<%= true %>"
         />
+
     </liferay-ui:custom-attributes-available>
 
 That's about it. It wasn't that hard, right? Now it's time to get really fancy;
@@ -1666,8 +1683,8 @@ a paragraph. Russ-->
 
 The Message Bus system contains the following components: 
 
-- **Message Bus**: Manages transfer of messages from message *senders* to message
-*listeners*. 
+- **Message Bus**: Manages transfer of messages from message *senders* to
+  message *listeners*. 
 
 - **Destinations**: Addresses or endpoints to which *listeners* register to
 receive messages. 
@@ -1760,9 +1777,9 @@ purchases, but someone always seems to be left out of the loop. One time, Sales
 was gung-ho about getting their hands on the latest and greatest spring rider
 animals from Boingo-Boingo Industries, but they didn't consider the failing
 safety reviews discovered by the Legal department, because the Legal department
-forgot to copy the Sales department in their email to Procurement.  Tempers flew,
-feelings were hurt, and everybody avoided hanging out in the company breakroom
-for the next couple of weeks. 
+forgot to copy the Sales department in their email to Procurement.  Tempers
+flew, feelings were hurt, and everybody avoided hanging out in the company
+breakroom for the next couple of weeks. 
 
 <!-- Now that I see that this example is not a functional or even a potential
 real-world example, I think we need to scrap the whole thing and come up with
@@ -1950,55 +1967,93 @@ up. -Rich -->
         default-init-method="afterPropertiesSet"
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
     >
 
         <!-- Listeners -->
 
-        <bean id="messageListener.finance_listener" class="com.liferay.training.parts.messaging.impl.FinanceMessagingImpl" />
-        <bean id="messageListener.legal_listener" class="com.liferay.training.parts.messaging.impl.LegalMessagingImpl" />
-        <bean id="messageListener.procurement_listener" class="com.liferay.training.parts.messaging.impl.ProcurementMessagingImpl" />
+        <bean
+            id="messageListener.finance_listener"
+            class="com.liferay.training.parts.messaging.impl.FinanceMessagingImpl"
+        /> 
+        <bean
+            id="messageListener.legal_listener"
+            class="com.liferay.training.parts.messaging.impl.LegalMessagingImpl"
+        />
+        <bean
+            id="messageListener.procurement_listener"
+            class="com.liferay.training.parts.messaging.impl.ProcurementMessagingImpl"
+        />
 
         <!-- Destinations -->
 
-        <bean id="destination.finance.purchase" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+        <bean
+            id="destination.finance.purchase"
+            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
+        >
             <property name="name" value="jungle/finance/purchase" />
         </bean>
 
-        <bean id="destination.finance.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+        <bean
+            id="destination.finance.purchase.response"
+            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
+        >
             <property name="name" value="jungle/finance/purchase/response" />
         </bean>
 
-        <bean id="destination.legal.purchase" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+        <bean
+            id="destination.legal.purchase"
+            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
+        >
             <property name="name" value="jungle/legal/purchase" />
         </bean>
 
-        <bean id="destination.legal.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+        <bean
+            id="destination.legal.purchase.response"
+            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
+        >
             <property name="name" value="jungle/legal/purchase/response" />
         </bean>
 
         <!-- Configurator -->
 
-        <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+        <bean
+            id="messagingConfigurator"
+            class=
+                "com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator"
+        >
             <property name="messageListeners">
                 <map key-type="java.lang.String" value-type="java.util.List">
                     <entry key="jungle/finance/purchase">
-                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                        <list
+                            value-type=
+                                "com.liferay.portal.kernel.messaging.MessageListener"
+                        >
                             <ref bean="messageListener.finance_listener" />
                         </list>
                     </entry>
                     <entry key="jungle/finance/purchase/response">
-                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                        <list
+                            value-type=
+                                "com.liferay.portal.kernel.messaging.MessageListener"
+                        >
                             <ref bean="messageListener.procurement_listener" />
                         </list>
                     </entry>
                     <entry key="jungle/legal/purchase">
-                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                        <list
+                            value-type=
+                                "com.liferay.portal.kernel.messaging.MessageListener"
+                        >
                             <ref bean="messageListener.legal_listener" />
                         </list>
                     </entry>
                     <entry key="jungle/legal/purchase/response">
-                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                        <list
+                            value-type=
+                                "com.liferay.portal.kernel.messaging.MessageListener"
+                        >
                             <ref bean="messageListener.procurement_listener" />
                         </list>
                     </entry>
@@ -2103,7 +2158,7 @@ Here's how the Warehouse Department listens for and handles messages:
         String department = jsonObject.getString("department");
         String partName = jsonObject.getString("partName");
         String responseDestinationName = jsonObject.getString(
-                        "responseDestinationName");
+            "responseDestinationName");
 
         System.out.println("Warehouse received purchase notification for " +
             partName + " from " + department);
@@ -2147,13 +2202,12 @@ Here's how the Warehouse might handle messages it receives:
     public void receive(Message message) {
 
         try {
-            if (message.getDestinationName().equals(
-                    "jungle/purchase"))
+            if (message.getDestinationName().equals("jungle/purchase"))
             {
                 doReceive(message);
             }
-            else if (message.getDestinationName().equals(
-                    "jungle/purchase/response"))
+            else if (
+                message.getDestinationName().equals("jungle/purchase/response"))
             {
                 doReceiveResponse(message);
             }
@@ -2192,42 +2246,54 @@ the previous section:
 
 *Listener beans*: 
 
-        <bean id="messageListener.warehouse_listener" class="com.liferay.training.parts.messaging.impl.WarehouseMessagingImpl" />
-        <bean id="messageListener.sales_listener" class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl" />
+    <bean
+        id="messageListener.warehouse_listener"
+        class="com.liferay.training.parts.messaging.impl.WarehouseMessagingImpl"
+    />
+    <bean
+        id="messageListener.sales_listener"
+        class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl"
+    />
 
 *Destination beans*: The purchase notifications will be sent to a *serial*
   destination and the responses will be sent to a *synchronous* destination. 
 
-        <bean id="destination.purchase" class="com.liferay.portal.kernel.messaging.SerialDestination">
-            <property name="name" value="jungle/purchase" />
-        </bean>
+    <bean
+        id="destination.purchase"
+        class="com.liferay.portal.kernel.messaging.SerialDestination"
+    >
+        <property name="name" value="jungle/purchase" />
+    </bean>
 
-        <bean id="destination.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
-            <property name="name" value="jungle/purchase/response" />
-        </bean>
+    <bean
+        id="destination.purchase.response"
+        class="com.liferay.portal.kernel.messaging.SynchronousDestination"
+    >
+        <property name="name" value="jungle/purchase/response" />
+    </bean>
 
 *Configuration bean listener map entry*: Warehouse and Sales are registered
   to listen for the notifications from Procurement. All three departments are
 registered to listen for inter-departmental responses.
 
-        <entry key="jungle/purchase">
-            <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-                <ref bean="messageListener.warehouse_listener" />
-                <ref bean="messageListener.sales_listener" />
-            </list>
-        </entry>
-        <entry key="jungle/purchase/response">
-            <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-                <ref bean="messageListener.procurement_listener" />
-                <ref bean="messageListener.warehouse_listener" />
-                <ref bean="messageListener.sales_listener" />
-            </list>
-        </entry>
+    <entry key="jungle/purchase">
+        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+            <ref bean="messageListener.warehouse_listener" />
+            <ref bean="messageListener.sales_listener" />
+        </list>
+    </entry>
+    <entry key="jungle/purchase/response">
+        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+            <ref bean="messageListener.procurement_listener" />
+            <ref bean="messageListener.warehouse_listener" />
+            <ref bean="messageListener.sales_listener" />
+        </list>
+    </entry>
 
 *Configuration bean destination list references*:
 
-        <ref bean="destination.purchase"/>
-        <ref bean="destination.purchase.response"/>
+    <ref bean="destination.purchase"/>
+    <ref bean="destination.purchase.response"/>
 
 Don't forget to send news of these new products to *all* Jungle Gyms R-Us
 employees.
@@ -2251,25 +2317,31 @@ We'll specify a parallel destination type in our `messaging-spring.xml`:
 
 *Destination bean*:
 
-        <bean id="destination.employee.news" class="com.liferay.portal.kernel.messaging.ParallelDestination">
-                <property name="name" value="jungle/employee/news" />
-        </bean>
+    <bean
+        id="destination.employee.news"
+        class="com.liferay.portal.kernel.messaging.ParallelDestination"
+    >
+            <property name="name" value="jungle/employee/news" />
+    </bean>
 
 *Listener bean*:
 
-        <bean id="messageListener.employee_listener" class="com.liferay.training.parts.messaging.impl.EmployeeMessagingImpl" />
+    <bean
+        id="messageListener.employee_listener"
+        class="com.liferay.training.parts.messaging.impl.EmployeeMessagingImpl"
+    />
 
 *Configuration bean listener map entry*: 
 
-        <entry key="jungle/employee/news">
-            <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-                <ref bean="messageListener.employee_listener" />
-            </list>
-        </entry>
+    <entry key="jungle/employee/news">
+        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+            <ref bean="messageListener.employee_listener" />
+        </list>
+    </entry>
 
 *Configuration bean destination list reference*: 
 
-        <ref bean="destination.employee.news"/>
+    <ref bean="destination.employee.news"/>
 
 Congratulations! You implemented inter-departmental communications for the
 procurement process at Jungle Gyms R-Us.

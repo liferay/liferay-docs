@@ -105,7 +105,7 @@ step-by-step using Liferay IDE/Developer Studio.
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png)**Note:** If you're actually looking for
+ ![Tip](../../images/tip-pen-paper.png) **Note:** If you're actually looking for
  a portlet application that can manage events, please consider using Liferay's
  Calendar portlet. The example described in this section is only intended to
  demonstrate how to use Service Builder. The Calendar portlet provides many more

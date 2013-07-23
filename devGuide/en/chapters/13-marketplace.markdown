@@ -218,7 +218,7 @@ which versions of Liferay your app works with.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be
+ ![note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so, be
  sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
  chapter of *Using Liferay Portal*! 
 
@@ -286,10 +286,10 @@ using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
 are replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
- ![note](../../images/tip-pen-paper.png)**Note:** If your app is compatible with
- both CE and EE, you must specify a set of versions for both CE and EE releases.
- If you only specify compatibility with CE, then your app will not be compatible
- with (and will fail to deploy to) any EE release.
+ ![note](../../images/tip-pen-paper.png) **Note:** If your app is compatible
+ with both CE and EE, you must specify a set of versions for both CE and EE
+ releases. If you only specify compatibility with CE, then your app will not be
+ compatible with (and will fail to deploy to) any EE release.
 
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA2 (and later), and 6.1 EE GA2 (and later), add this line to
@@ -302,7 +302,7 @@ and 6.1 EE release starting with EE GA2. Marketplace will create two packages,
 one that is compatible with the 6.1 CE GA2 release and *later*, and another that
 is compatible with 6.1 EE GA2 release and *later*.
 
- ![note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
+ ![note](../../images/tip-pen-paper.png) **Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
  the `+` symbol.  This ensures that your app will be deployable onto future
  versions of Liferay (but does not guarantee your app will work in future
@@ -726,25 +726,25 @@ In its quest for peace within your portal, the Plugin Security Manager pledges
 to:
 
 - Protect your portal and host system from unwanted side affects and malicious
-software introduced by plugins.
+  software introduced by plugins.
 - Control plugin access to your portal, host system, and network by requiring
-that plugins specify ahead of time the portal resources they intend to access.
+  that plugins specify ahead of time the portal resources they intend to access.
 
 Let's go over some scenarios that could apply to you with regard to trying new
 plugins, and then maybe the importance of this will be clear.
 
 - A flashy new plugin has arrived on Liferay Marketplace and you want to give it
-a whirl. But naturally, you want to know the parts of your system it will
-access.
+  a whirl. But naturally, you want to know the parts of your system it will
+  access.
 - A colleague finds an interesting plugin after scouring the web for something
-that can help streamline processes at your workplace. Of course, you don't know
-whether you can truly trust the plugin creator--this plugin was found outside
-the Liferay Marketplace. If the plugin isn't open source, you have no way of
-knowing if it does anything nefarious.
+  that can help streamline processes at your workplace. Of course, you don't
+  know whether you can truly trust the plugin creator--this plugin was found
+  outside the Liferay Marketplace. If the plugin isn't open source, you have no
+  way of knowing if it does anything nefarious.
 - Upper management requests your corporate branch and other branches use a
-standard set of plugins on your portal instances. This set of plugins, however,
-was written by an outside firm, and you need to know there will be no tampering
-with your proprietary files.
+  standard set of plugins on your portal instances. This set of plugins,
+  however, was written by an outside firm, and you need to know there will be no
+  tampering with your proprietary files.
 
 These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
@@ -910,14 +910,11 @@ This `grant` entry defines permission for the plugin's code to access the
 The `codebase` value, in this example, specifies the following:
 
 - `file:` indicates the code resides on the server's file system. 
-
 - `${my-supercool-portlet}` represents the context path of a plugin named "My
-Supercool Portlet". The context path is a system property Liferay generates for
-the plugin. It maps the context path name to the plugin's fully qualified
-deployment path. 
-
+  Supercool Portlet". The context path is a system property Liferay generates
+  for the plugin. It maps the context path name to the plugin's fully qualified
+  deployment path. 
 - `${/}` represents the system's path separator. 
-
 - `-` matches files and folders, in this folder and below. 
 
 On reading this plugin's `.jar` file, the JVM creates a codebase for it. The
@@ -930,10 +927,10 @@ permission. This plugin is permitted to perform the definited operation,
 How do you add more permissions to a codebase? Just define them on separate
 lines in the grant entry: 
 
-        grant codeBase "file:${my-supercool-portlet}${/}-" {
-	        permission java.lang.RuntimePermission "loadLibrary.test_b";
-	        permission java.net.NetPermission "specifyStreamHandler";
-        };
+    grant codeBase "file:${my-supercool-portlet}${/}-" {
+	    permission java.lang.RuntimePermission "loadLibrary.test_b";
+	    permission java.net.NetPermission "specifyStreamHandler";
+    };
 
 In this example, we've granted the plugin permission to invoke native code
 that's in some library (`test_b.so`). This is another type of operation which
@@ -956,9 +953,9 @@ final step after testing the generated PACL, you must massage the generated file
 paths into appropriate relative file paths. For example, you can specify paths
 relative to your Liferay web portal directory:
 
-        security-manager-files-read=\
-            ${liferay.web.portal.dir}/WEB-INF/tld/-,\
-            ${liferay.web.portal.dir}/html/themes/-
+    security-manager-files-read=\
+        ${liferay.web.portal.dir}/WEB-INF/tld/-,\
+        ${liferay.web.portal.dir}/html/themes/-
 
 In this example, we used a dash (`-`) character at the end of the paths. We use
 this as a wildcard character. Oracle defines wildcards for for use with Java
@@ -968,34 +965,33 @@ you can use in PACL properties and Java Security policies.
 For files and file paths, you can leverage the following wildcard characters:
 
 - Dash (`-`) matches everything in the current folder and below, like you might
-expect with the normal GLOB operation in UNIX. The current folder isn't included
-in the match.
-
+  expect with the normal GLOB operation in UNIX. The current folder isn't
+  included in the match.
 - Star (`*`) matches every file (*not* folder) in the current folder. The
-current folder and subfolders are excluded from the match.
+  current folder and subfolders are excluded from the match.
 
 Let's say you want to match all of your theme files and folders, specify ...
 
 this:
 
-        security-manager-files-read=\
-            ${liferay.web.portal.dir}/html/themes/-
+    security-manager-files-read=\
+        ${liferay.web.portal.dir}/html/themes/-
 
 NOT this:
 
-       security-manager-files-read=\
-            ${liferay.web.portal.dir}/html/themes/*
+    security-manager-files-read=\
+        ${liferay.web.portal.dir}/html/themes/*
 
 The star means "every file in this single directory." The dash, however, matches
 everything in this folder and below. 
 
 One more note. This: 
                                             
-        ${liferay.web.portal.dir}/html/themes/-
+    ${liferay.web.portal.dir}/html/themes/-
 
 does not include this: 
 
-        ${liferay.web.portal.dir}/html/themes
+    ${liferay.web.portal.dir}/html/themes
 
 The dash lets you read the *contents* of the folder, but not the folder itself.
 Also, when defining the folder, do not include a trailing slash, otherwise
