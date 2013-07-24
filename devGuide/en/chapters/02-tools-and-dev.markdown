@@ -2537,9 +2537,13 @@ development haven't been deprecated.
 
 ## Summary
 
+<!-- Summary needs to include Liferay IDE and Plugins SDK -->
+
 You also learned all about developing Liferay plugins with the Maven build
 framework. You configured Maven locally, downloaded and installed the required
 Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
+
+<!-- Missing transition into portlets chapter -->
 
