@@ -68,6 +68,7 @@ This chapter covers the following topics:
 - Assets Framework
 - Using Message Bus
 - Device Detection
+
 <!-- - Social Activities (Add this above Device Detection) -->
 
 <!-- - Other frameworks -->
