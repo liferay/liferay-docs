@@ -1279,7 +1279,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 ### Overriding Liferay Portal Translations
 
 If you want your translations available throughout the portal, or if you want to
-override an existing translation, refer to Chapter 12 of this guide,
+override an existing translation, refer to Chapter 10 of this guide,
 specifically the *Overriding a Language.properties File* section. It describes
 how to use a hook to override existing Liferay translations. You can share your
 keys with other portlets, as well as override existing Liferay translations.  

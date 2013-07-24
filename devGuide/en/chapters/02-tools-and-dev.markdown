@@ -1031,17 +1031,17 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See Chapter 14 on Ext plugins. 
+    - `ext/` - Ext plugins directory. See Chapter 12 on Ext plugins. 
 
-    - `hooks/` - hook plugins directory. See Chapter 12 on hooks. 
-    - `layouttpl/` - layout templates directory. See Chapter 10 on creating
-      Liferay Themes. 
+    - `hooks/` - hook plugins directory. See Chapter 10 on hooks. 
+    - `layouttpl/` - layout templates directory. See Chapter 9 on creating
+      Liferay Themes and Layout Templates. 
     - `lib/` - commonly referenced libraries. 
     - `misc/` - development configuration files. Example, a source code
       formatting specification file. 
     - `portlets/` - portlet plugins directory. See Chapter 3 on portlet
       development. 
-    - `themes/` - themes plugins directory. See Chapter 10 on creating Liferay
+    - `themes/` - themes plugins directory. See Chapter 9 on creating Liferay
       themes. 
     - `tools/` - plugin templates and utilities. 
     - `webs/` - web plugins directory. 
@@ -2291,7 +2291,7 @@ placed in the *target* directory. Its path is
 
 ##### More Information 
 
-For more information on Liferay themes and its settings, see Chapter 10,
+For more information on Liferay themes and its settings, see Chapter 9,
 [Creating Liferay Themes and Layout
 Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7). 
 
