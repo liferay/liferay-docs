@@ -778,6 +778,16 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
+---
+
+ ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments and
+ ratings to a page is through the *Page Comments* and *Page Ratings* portlets.
+ Just add the portlets in the appropriate location near the asset you'd like to
+ have feedback for. Note that starting in Liferay 6.2, these portlets can no
+ longer be exported.
+ 
+---
+
 You can display the content returned by the filters above in order by title,
 create date, modified date, view count and more in ascending or descending
 order. For instance, you may have a series of "How To" articles that you want

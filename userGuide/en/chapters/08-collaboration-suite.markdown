@@ -298,7 +298,7 @@ tools for managing blog entries, your best bet is to use the Blogs portlet.
 Next, let's look at Liferay's improved Calendar portlet, released with Liferay
 6.2 and available from Liferay Marketplace.
 
-## Managing Events and Calendar Resources with Liferay's New Calendar Portlet 
+## Managing Events and Calendar Resources with Liferay's Calendar Portlet 
 
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
@@ -318,9 +318,9 @@ resources, and event invitations.
 that it's available from Marketplace. Briefly describe the differences between
 the CE and EE versions of the new Calendar portlet. -->
 
-### Configuring the new Calendar portlet 
+### Configuring the Calendar Portlet 
 
-Once you've added the new Calendar portlet to page, open its configuration
+Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
@@ -333,7 +333,7 @@ view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
 displayed. With the *24 Hour* time format, these times are displayed as 08:00
 and 21:00. *Default Duration* refers to event duration. When you add a new event
 to the calendar, the time you set here specifies how long events last by
-default.  You can set the *Default View* to *Day*, *Week*, or *Month*. You can
+default. You can set the *Default View* to *Day*, *Week*, or *Month*. You can
 set *Week Starts On* to *Sunday*, *Monday*, or *Saturday*. For *Time Zone*, you
 can either specify a particular time zone like *Pacific Standard Time* or *China
 Standard Time* or you can check the *Use Global Time Zone* box. If you check
@@ -359,7 +359,7 @@ that's used to send the automatic emails for event reminders and invitations.
 
 Next, let's look at how to use the new Calendar portlet.
 
-### Using the new Calendar portlet 
+### Using the Calendar Portlet 
 
 The first thing you'll notice about Liferay's new Calendar portlet is its
 revamped look and feel. There's a monthly mini-calendar which provides you with
@@ -371,33 +371,46 @@ divided into hours and half-hours. The month view displays a traditional
 calendar view with days represented as boxes. In the previous section, we saw
 how to configure the default display view of the calendar.
 
+#### Adding New Calendars
+
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To manage your
 personal or site calendars, mouse over *My Calendars* or *Current Site
-Calendars*, click on the arrow icon, and select *Manage Calendars*. Any user can
-manage their personal calendars. By default, only site administrators can manage
-site calendars.
+Calendars*, click on the arrow icon, and select *Manage Calendars*. All users
+can manage their personal calendars. By default, only site administrators can
+manage site calendars.
 
 ![Figure 8.27: Click on *Manage Calendars* to see a list of calendars.](../../images/new-calendar-manage-calendars.png)
 
-On the Manage Calendars, screen you can click *Add Calendar* to create a new
+On the Manage Calendars screen, you can click *Add Calendar* to create a new
 calendar. As usual, you can enter a name and description for the calendar and
-configure its permissions. Also, you can specify a color for your calendar.
-Events created in the new calendar will default to the color you choose.
-
-![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize its color and specify whether or not it's the default calendar.](../../images/new-calendar-edit-calendar.png)
-
-You can edit a calendar to change its color. You can also specify whether or not
-the calendar should be the default calendar. Each site, including personal
+configure its permissions. Flag the *Default Calendar* checkbox if you'd like
+the new calendar to be the default calendar. All sites, including personal
 sites, have a default calendar. When a calendar is first visited, the events
 from the default calendar are displayed. You can customize the events that
 appear in the main area of the calendar portlet by clicking on the colored boxes
-corresponding to the calendars. Once you've clicked on a box, its color
-disappears and the events of that calendar are no longer displayed.
+corresponding to the calendars. When you click on a colored box, its color
+disappears and the events of that calendar are no longer displayed. Click on an
+uncolored box to view the events of the corresponding calendar.
 
 ![Figure 8.29: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
 
-It's very easy to add events to the calendar: just click on any day of the
+When adding a calendar, you can also specify whether or not to enable comments
+and ratings for your calendar's events. Comments and ratings can be
+enabled/disabled on a per calendar basis. They are disabled by default.
+Additionally, you can specify a color for your calendar. Events created in the
+new calendar will default to the color you choose.
+
+![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
+
+You can edit a calendar to change its name, description, or color. You can also
+change the calendar's default calendar status and flag or unflag the *Enable
+Comments* and *Enable Ratings* checkboxes to enable or disable comments and
+ratings for a calendar's events.
+
+#### Adding Events to a Calendar
+
+It's very easy to add events to a calendar: just click on any day of the
 calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
@@ -429,18 +442,59 @@ Under *Calendar*, you can select the calendar to which you'd like to add your
 event. Remember that sites and users can have multiple calendars. Under
 *Description*, you can explain the purpose of your event and add any details
 that you think might be useful. Use the *Location* field to specify where your
-event takes place. The Reminders collapsible section lets you specify up to two
-times when event reminder notifications will be sent via email. For example, you
-might like event reminders to be send one day and one hour before your event.
-Email is currently the only supported event reminder type.
+event takes place.
+
+Liferay's Calendar portlet supports social activities. Whenever a calendar event
+is added or updated, a corresponding social activity notification is created. If
+the event was added or updated in a calendar that the current user has
+permission to view, the social activity will be viewable in the Activities
+portlet. If the Social Networking portlets have been installed (they're
+available as an app on Liferay Marketplace; search for *Social Networking CE* or
+*Social Networking EE*), the social networking notifications will also appear in
+all the appropriate portlets, such as the Friends' Activities or Members'
+Activities portlets.
 
 ![Figure 8.33: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
 
-You can also invite users, organizations, or other calendar resources to your
-event. To invite a user, group, or resource, start typing the name of the entity
-you'd like to invite and a list of matches will appear. Select the one you want
-or hit *Enter* if the entity you'd like to invite is at the top of the list. All
-the entities you've invited to your event appear as a list under the *Pending*
+The Reminders collapsible section lets you specify up to two
+times when event reminder notifications will be sent via email. For example, you
+might like event notifications to be send one day and one hour before your
+event. Email is currently the only supported event notification type.
+
+---
+
+ ![Tip](../../images/tip.png) Tip: The default time zone for users is UTC. It's
+ important to set users' time zones correctly so that event notification emails
+ are sent and received properly. If users' time zones don't match the portal's
+ time zone, the dates in the contents of the notification emails won't match the
+ dates of the events.
+
+---
+
+Calendar administrators can customize the email notification templates for event
+invitation and event reminder emails. To customize a calendar's email templates,
+open the calendar's Calendar Settings window by clicking on the small arrow next
+to the calendar's name in the default view of the calendar portlet and selecting
+*Calendar Settings*. By default, the General tab of the Calendar Settings
+appears, where you can edit the calendar's name, description, color, default
+calendar status, and whether or not calendar events and ratings are enabled or
+disabled. Click on *Notification Templates* at the top of the screen to view a
+new tab. Then click on either *Invite Email* or *Reminder Email* to customize
+event invitation or event reminder emails. You can customize the name that
+appears on the sent emails, the address from which to send the email, the
+subject, and the body of the email. As with Liferay's other other email
+notification templates (e.g., the Message Boards' notification email templates),
+a definition of terms appears below the email body editor. This definition of
+terms list specifies variables that you can you can use when customizing the
+email template. For example, `[$EVENT_LOCATION$]` represents the event location,
+`[$EVENT_START_DATE$]` represents the event start date, and `[$EVENT_TITLE$]`
+specifies the event title.
+
+You can invite users, organizations, or other calendar resources to an event.
+To invite a user, group, or resource, start typing the name of the entity you'd
+like to invite and a list of matches will appear. Select the one you want or hit
+*Enter* if the entity you'd like to invite is at the top of the list. All the
+entities you've invited to your event appear as a list under the *Pending*
 heading, which shows how many pending invitations there are. If you accidentally
 invited the wrong entity, mouse over its name in the *Pending* list, click on
 the arrow icon that appears, and click *Remove*. If you'd just like to check the
@@ -451,12 +505,30 @@ displayed in this calendar view. If you like to overview the availability of all
 the invited entities, just click on *Resources Availability*. When you're done
 specifying event details, click *Save*.
 
+When editing an event, you can also configure the event's permissions. To
+configure an event's permissions, click on the *Permissions* button that appears
+next to the Save button. A list of roles for which you can permission appears in
+the left column. The other columns represent permissions which can be configured
+for the event:
+
+- Add Discussion
+- Delete Discussion
+- Permissions
+- Update Discussion
+
+*Discussions* refers to comments on the event. So the Add Discussion, Delete
+Discuss, and Update Discussion permissions determine whether a role can add,
+delete, or update a comment on an event. The Permissions permission determines
+whether a role can update an event's permissions.
+
+#### Adding and Using Calendar Resources
+
 You might be wondering, "It makes sense to invite users and organizations to an
-event, but what about other calendar resources? What are they? Why are they
-useful? And how can you add them?" Good question. Calendar resources can
-represent just about anything that you think might be important to an event. For
-example, your department might have a limited number of rooms and projectors to
-use for presentations. You can add the various rooms and projectors as calendar
+event, but what about other calendar resources? What are they used for? How can
+you add them?" Good questions. Calendar resources can represent just about
+anything that you think might be important to an event. For example, your
+department might have a limited number of rooms and projectors to use for
+presentations. You can add the various rooms and projectors as calendar
 resources and add them to events. This way, when new events are added, the event
 organizer can check the availability of important resources against events that
 have already been planned. So, how can you add new calendar resources? You might
@@ -468,11 +540,7 @@ view, edit, add, or delete resources.
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
 able to enter a name and description for your resource, specify whether or not
-it should be active, and configure its permissions. You'll also be able to
-select a specific resource type. The resource types that appear in the list are
-specified in the new Calendar portlet's `portlet.properties` file. Remember that
-it's a best practice not to edit `portlet.properties` directly, but to create a
-separate `portlet-ext.properties` file containing the properties to override.
+it should be active, apply tags and categories, and configure its permissions.
 
 ![Figure 8.35: To manage a calendar resource and view the calendars on which it appears, use the Actions button.](../../images/new-calendar-resource-calendars.png)
 
@@ -495,7 +563,7 @@ hope this flexible system meets the needs of your organization. Next, let's look
 at one of the most widely used applications provided by Liferay: its message
 boards.
 
-## Discuss, Ask and Answer using the Message Boards  
+## Discuss, Ask, and Answer Using the Message Boards  
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of

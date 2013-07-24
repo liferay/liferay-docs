@@ -404,9 +404,15 @@ section of a data definition. With display templates you can customize the
 display of a list in precisely the same way as you can customize web content.
 Display templates can be written in FreeMarker or Velocity, pulling data from
 the data definition in the same way that web content templates pull data from
-their structures. We'll look at a simple example, but for more information on
-using template scripts to pull data from a backing structure, see web content
-templates in chapter 3.
+their structures. Also similar to web content templates, display templates can
+be embedded in other display templates. This allows for reusable code, JS
+library imports, or macros which will be imported by Velocity or FreeMarker
+templates in the system. Embedding display templates provides a more efficient
+process when you have a multitude of similar data definitions. Just import an
+embedded display template and work off of it for your new display template.
+We'll look at a simple example, but for more information on using template
+scripts to pull data from a backing structure, see web content templates in
+chapter 3.
 
 The first thing we need to do is create a new display template for our
 "Volunteer Sign-Up" data definition. Like other features in Liferay, there are
