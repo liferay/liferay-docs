@@ -121,7 +121,7 @@ within the site to different members. This can be done through *site roles*
 which are defined equally for all sites or *teams* which are unique for each
 site.
 
-As of Liferay 6.2, site can be organized hierarchically, just like
+As of Liferay 6.2, sites can be organized hierarchically, just like
 organizations. The difference between sites and organizations, of course, is
 that sites are used to organize pages, content, application data, and users (via
 site memberships) whereas organizations are only used to group users. Please
@@ -204,11 +204,14 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 2.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
+![Figure 2.11: The New Site window aids in your new site development.](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
 **Description:** describes the site's intended function.
+
+**Active:** determines whether a site is active or inactive. Inactive sites are
+inaccessible but can be activated whenever a site administrator wishes.
 
 **Membership Type:** can be open, restricted or private. An open site appears in
 the My Sites portlet and users can join and leave the site whenever they want. A
@@ -217,8 +220,11 @@ administrator must then explicitly grant or deny users' requests to join. A
 private site does not appear in the My Sites portlet and users must be added to
 it manually by a site administrator.
 
-**Active:** determines whether a site is active or inactive. Inactive sites are
-inaccessible but can be activated whenever a site administrator wishes.
+**Allow Manual Membership Management:** determines whether Site Membership
+Policy Management is enabled or disabled. Some portal administrators may want to
+have membership policies be handled automatically without having to manually add
+or remove site members of their site. When disabled, the Site Membership section
+as well as various other options to manually assign/remove members are hidden.
 
 **Parent Site:** lets you select a parent site for the site that's being
 created. As of Liferay 6.2, sites can be organized hierarchically. Using
