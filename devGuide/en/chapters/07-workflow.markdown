@@ -1053,7 +1053,7 @@ workflow for our new Kaleo Forms process to use. *Save* the DDL.
 Now our DDL is set for use inside our ticket process workflow! Let's use the
 Kaleo Forms portlet to test our new workflow definition! 
 
-### Using Kaleo Forms to run workflows 
+### Using Kaleo Forms to Run Workflows 
 
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.

@@ -617,7 +617,7 @@ window; you can modify the targeted runtime in the *Project properties* &rarr;
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-### Verifying That the Import has Succeeded 
+### Verifying That the Import Has Succeeded 
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE

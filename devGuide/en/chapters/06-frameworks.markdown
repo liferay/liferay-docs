@@ -1058,7 +1058,7 @@ developer would leverage asset framework and the steps required to do so. -Russ
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
 
-#### Adding, Updating and Deleting Assets 
+#### Adding, Updating, and Deleting Assets 
 
 Whenever you create a new entity, you need to let the Asset Framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -1150,7 +1150,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create and modify assets, consider tagging and categorizing
 them. Let's tackle that next. 
 
-#### Entering and displaying Tags and Categories 
+#### Entering and Displaying Tags and Categories 
 
 In the last section we let Asset Framework know about the tags and categories
 that we associated with a given asset; but how does a content author specify

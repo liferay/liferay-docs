@@ -89,7 +89,7 @@ packages that you can upload in support of different versions of Liferay, as you
 will see in a later section. In this guide, packages are sometimes referred to
 as files that make up your app.
 
-### How do Apps Relate to Users and Companies? 
+### How Do Apps Relate to Users and Companies? 
 
 When publishing an app, it is possible to publish it *on behalf of* yourself (an
 individual) or a *company* with which you are associated. The selection you make
@@ -97,7 +97,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, admin, and company, and the ramifications of choosing one
 vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
 
-### What are the Requirements for Publishing Apps? 
+### What Are the Requirements for Publishing Apps? 
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -183,7 +183,7 @@ Above and beyond these basics of creating apps in the form of Liferay plugins,
 there are additional considerations to take into account when designing and
 publishing apps.
 
-### What Kind of Validations are Performed by Liferay? 
+### What Kind of Validations Are Performed by Liferay? 
 
 Liferay will ensure that apps meet a minimum set of requirements, such as:
 
@@ -515,7 +515,7 @@ portlet plugin was automatically copied for use in both the EE and CE
 variations, even though you only uploaded the portlet plugin once. Click *Next*
 to advance to the final screen.
 
-#### Preview and Submit the App 
+#### Preview and Submit Your App 
 
 Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
