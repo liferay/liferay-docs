@@ -1,6 +1,14 @@
 # Accessing Services Remotely 
 
-<!--We need a chapter introduction-->
+You've created your portlet and built some terrific services. You're happy to
+brag to your colleagues about the awesome things your portlet does. And you've
+started to prick their interest; they want to call your portlet's services. You
+wonder whether this will be difficult and you start asking yourself questions.
+How do publish my services? How do my clients find my services? How can
+consumers call my services efficiently? No worries. We'll answer all of these
+questions on accessing remote services. 
+
+Here are the topics we'll cover in this chapter:
 
 - Finding Services 
 - Invoking the API Remotely 
@@ -890,9 +898,6 @@ methods.
 When strict HTTP mode is enabled, you still might have need to disable HTTP
 methods. We'll show you how next. 
 
-<!--This needed a transition, and I got tired of saying, "next let's...". Check
-for acuracy. -Russ-->
-
 #### Disabling HTTP Methods 
 
 When strict HTTP method mode is enabled, you can filter web service access based
@@ -1289,8 +1294,6 @@ for now. Which is preferred?  Are they long enough to warrant subsections? -->
 chapter. I removed some sections already. One way to fix some of the "missing
 transition" problems above would be to combine some of the sections. -Rich -->
 
-<!--I just added the transitions for now. -Russ -->
-
 -   Missing value for parameter 
     
     If you see this error, you didn't pass a parameter value along with the
@@ -1330,15 +1333,6 @@ transition" problems above would be to combine some of the sections. -Rich -->
     developers to support the cause, especially those familiar with time travel. 
 
     Had you going there, didn't we? 
-
-<!-- Too much?-->
-
-<!-- I actually took all the other ones out except for this one. This turns it
-from a chapter-long thing into a random, unexpected insertion, which may be
-funnier (YMMV), and doesn't make Liferay out to be a part of an evil,
-computer-generated, apocalypse-causing, malevolent force. --> 
-
-<!--Wait, we aren't?-->
 
 Next we'll show you how to optimize your use of JSON Web Services by using the
 *JSON Web Services Invoker*. 
@@ -1412,7 +1406,6 @@ call returned a user object you can assign to a variable:
 The `$user` variable holds the returned user object. You can reference the
 user's contact ID using the syntax `$user.contactId`. 
 
-<!-- Missing transition. --> 
 Next see how you can use nested service calls to join information from two
 related objects. 
 
