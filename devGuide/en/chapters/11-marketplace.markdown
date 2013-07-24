@@ -4,10 +4,17 @@ The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
 build and enhance their existing platforms, developers and software vendors are
 searching for new avenues to reach this market. Marketplace leverages the entire
-Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
+Liferay ecosystem to release and share apps in a user-friendly, one-stop site. 
 
-This chapter covers topics related to developing for the Liferay Marketplace,
-including:
+In addition to providing application consumers with Marketplace, Liferay
+provides a Plugin Security Manager to help protect a consumer's portal from bad
+side-affects that a Marketplace app may produce. The Plugin Security Manager's
+job is to only allow an app to use resources that the app has specified up-front
+in its Portal Access Control List (PACL). As such, we'll explain how you create
+a PACLs for the apps you develop. 
+
+This chapter covers to following topics related to developing apps for the
+Liferay Marketplace: 
 
 - Marketplace Basics
 - Requirements for Publishing to the Marketplace
@@ -15,11 +22,16 @@ including:
 - Publishing Apps to the Marketplace
 - Maintaining and Updating Apps
 - Tracking App Performance
+- Understanding Plugin Security Management
+- Developing Plugins with Security in Mind
+- Enabling the Security Manager
+- Portal Access Control List (PACL) Properties
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
-highly recommended that you first read the [Liferay Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
-chapter of *Using Liferay Portal*, where you will find detailed information about the
-Marketplace from an end user's perspective.
+highly recommended that you first read the [Liferay
+Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+chapter of *Using Liferay Portal*, where you will find detailed information
+about the Marketplace from an end user's perspective.
  
 ## Marketplace Basics 
 
@@ -713,9 +725,13 @@ user is unlimited.
 The Marketplace does a best effort in recording installations of your app on
 Liferay instances. When a Liferay Administrator installs your app via the
 Liferay Administration console (Control Panel), an *Install* is recorded for
-your app.
+your app. 
 
-## Plugin Security Management 
+Now that you understand how to publish your app and track its performance, let's
+get a good understanding of Liferay Portal's Plugin Security Manager and the
+security information you'll need to provide with your app. 
+
+## Understanding Plugin Security Management 
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
@@ -750,8 +766,6 @@ These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
 in protecting your portal, system and network.
 
-### How Plugin Security Works
-
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
 plugin accesses, so people deploying the plugin can review what it does without
@@ -771,7 +785,7 @@ Before we dive into the intricacies of these properties, let's consider a plugin
 development approach that involves designing an app for the security manager
 from the ground up. 
 
-### Developing Plugins with Security in Mind
+## Developing Plugins with Security in Mind
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
@@ -788,7 +802,7 @@ Here is the suggested plugin development approach:
 
 Let's go over each part of this approach. 
 
-#### Develop Your Plugin
+### Develop Your Plugin
 
 First, create your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
@@ -801,7 +815,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
 PACL. 
 
-#### Build Your Plugin's PACL
+### Build Your Plugin's PACL
 
 Rather than tediously figuring out all of the resources your plugin accesses, on
 your own, let Liferay's PACL Policy Generation tool to give you a head start.
@@ -842,7 +856,7 @@ Now that your plugin has a thoroughly specified list of resources it accesses,
 let's enable the security manager and do final testing of your PACL properties.
 We cover enabling the security manager in the next section. 
 
-#### Test the Plugin with the Security Manager Enabled
+### Test the Plugin with the Security Manager Enabled
 
 If you want to distribute plugins, either through the Liferay Marketplace or
 through your web site, you have to assume potential users will insist the
@@ -876,7 +890,7 @@ plugins.
 In case you need it for your plugin, let's get familiar with the Java Security
 Policy file. 
 
-#### Using a Java Security Policy File
+### Using a Java Security Policy File
 
 If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -942,7 +956,7 @@ specify all of the resources your plugin needs to access! Next, let's revisit
 the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-#### Convert PACL Absolute File Paths into Relative Paths
+### Convert PACL Absolute File Paths into Relative Paths
 
 As mentioned earlier in this chapter, we recommend using the PACL generation
 tool to give you a head start on specifying your plugin's security rules. But
@@ -1021,7 +1035,7 @@ Security Manager.
 The sections that follow demonstrated how to enable the Security Manager (which
 you've already done) and provide descriptions for each type of PACL property. 
 
-### Enabling the Security Manager
+## Enabling the Security Manager
 
 If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume users will insist the Security Manager is
@@ -1036,7 +1050,7 @@ It's very easy to activate the security manager. Set the following
 Next, we'll look at exactly what APIs the Security Manager protects, and how you
 can declare whether your application uses any of these properties. 
 
-### Portal Access Control List (PACL) Properties 
+## Portal Access Control List (PACL) Properties 
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the security manager properties specified in your plugin's
