@@ -59,7 +59,7 @@ environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 
 5.  Click *Finish*. 
 
-![Figure 14.1: Creating an Ext plugin](../../images/07-ext-plugins-1.png)
+![Figure 12.1: Creating an Ext plugin](../../images/07-ext-plugins-1.png)
 
 The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create
@@ -105,7 +105,7 @@ The structure of your new `example-ext` folder looks like this:
             - `ext-web/`
                 - `docroot/`
 
-![Figure 14.2: Here's the directory structure in the Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
+![Figure 12.2: Here's the directory structure in the Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
 
 Let's look at a few of the `/docroot/WEB-INF/` subdirectories in more detail: 
 
@@ -282,7 +282,7 @@ You can deploy your plugin from Liferay Developer Studio or the terminal.
 **Deploying In Developer Studio:** Drag your `example-ext` project from
 your Package Explorer onto your server. 
 
-![Figure 14.3: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
+![Figure 12.3: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
 **Deploying In the terminal:** Open a terminal window in your `ext/example-ext`
 directory and enter one of these commands:
@@ -332,7 +332,7 @@ Studio or your terminal.
 
 2.  Select the server's *Publish* option. 
 
-![Figure 14.4: How to publish the Ext Plugin](../../images/07-ext-plugins-3.png)
+![Figure 12.4: How to publish the Ext Plugin](../../images/07-ext-plugins-3.png)
 
 **Publishing in the terminal:** Restart the Liferay server. 
 
@@ -342,7 +342,7 @@ Organizations. Edit an existing user and verify that the right navigation menu
 only shows the five sections that we referenced from the
 `users.form.update.main` property. 
 
-![Figure 14.5: You should see these five sections under the User Information heading](../../images/ext-plugin-five-sections.png)
+![Figure 12.5: You should see these five sections under the User Information heading](../../images/ext-plugin-five-sections.png)
 
 That was a simple application of an Ext plugin. Let's proceed with a more
 complex customization that illustrates the proper way to *redeploy* an Ext
@@ -594,26 +594,26 @@ Liferay Developer Studio or your terminal:
 1.  Remove the plugin from the server. While selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 
 
-    ![Figure 14.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
+    ![Figure 12.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
 
 2.  Clean the application server--while selecting the Ext plugin project in
     the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App
     Server...* option. 
 
-    ![Figure 14.7: How to clean app server](../../images/07-ext-plugins-5.png)
+    ![Figure 12.7: How to clean app server](../../images/07-ext-plugins-5.png)
 
 3.  Start the Liferay server. 
 
-    ![Figure 14.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
+    ![Figure 12.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
 
 4.  Drag the Ext plugin and drop it into the Liferay server. 
 
-    ![Figure 14.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
+    ![Figure 12.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
 5.  While selecting the Liferay server in the *Servers* view, click the
     *Publish* option. 
 
-    ![Figure 14.10: Publish your server](../../images/07-ext-plugins-8.png)
+    ![Figure 12.10: Publish your server](../../images/07-ext-plugins-8.png)
 
 <!-- Way too many images here. 1 image per 500 words, please. --> 
 
@@ -636,7 +636,7 @@ steps:
 - **Using Developer Studio:** Right-click your plugin located underneath your
   server and select *Redeploy*. 
 
-    ![Figure 14.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
+    ![Figure 12.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
 - **Using the terminal:** Redeploy in the terminal using the same procedure as
   for initial deployment. Open a terminal window in your `ext/example-ext`
@@ -648,7 +648,7 @@ to use.
 After your `example-ext` plugin is published to Liferay Portal, check out your
 *basic* details page by choosing to add a user or view an existing user. 
 
-![Figure 14.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
+![Figure 12.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
 
 That completes the development process. Let's learn how you can package your Ext
 plugin for distribution and production. 
@@ -662,7 +662,7 @@ for distribution and production deployment.
 *Package Explorer* view, select the project's *Liferay* &rarr; *SDK* &rarr;
 *war* option. 
 
-![Figure 14.13: Accessing the *war* option](../../images/07-ext-plugins-10.png)
+![Figure 12.13: Accessing the *war* option](../../images/07-ext-plugins-10.png)
 
 **Using the terminal:** From your Ext plugin's directory (e.g.,
 `ext/example-ext`), enter
