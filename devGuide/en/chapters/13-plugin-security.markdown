@@ -378,7 +378,7 @@ that the plugin is permitted to access.
         java.version,\
         java.vm.v.*
 
-## Expando Bridge [](id=lp-6-1-dgen11-expando-bridge-0)
+## Expando Bridge Security [](id=lp-6-1-dgen11-expando-bridge-0)
 
 Specify models having Expando Bridge attributes the plugin is permitted to
 access. The plugin can also access Expando Bridge attributes via the
