@@ -297,7 +297,7 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 ### Creating New Liferay Projects 
 
 Let's create a project to illustrate the process; have you heard of the hip new
-social networking site for noses, *Nose-ster*? Well, the site's founder, Harry
+social networking site for noses, *Nose-ster*? Well, the site's founder, Harold
 Schnozz, wants us to develop some plugins for him, so let's create an
 *event-listing-portlet* project to hold the site's portlet plugins. 
 
@@ -1076,6 +1076,67 @@ plugins:
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
+
+Next, let's create a plugin using Liferay SDK from a terminal environment. 
+
+### Creating Plugins with Liferay SDK
+
+You saw how easy it is to create and deploy Liferay plugin projects using
+Liferay IDE with an installed Liferay SDK. If you don't want to use Eclipse,
+you can still leverage the SDK to create your Liferay plugins. 
+
+Let's pretend that Harold Schnozz, Nose-ster's founder, despises Eclipse. We may not
+agree with his objections, but since he's paying us good money to create an
+*event-listing-portlet* project, we'll do it without the benefit of Liferay
+IDE. 
+
+Navigate to the `portlets` folder of your Plugins SDK and follow these steps: 
+
+1.  In Linux and Mac OS X, enter
+
+        ./create.sh event-listing "Event Listing"
+
+2.  In Windows, enter
+
+        create.bat event-listing "Event Listing"
+
+Your terminal will display a BUILD SUCCESSFUL message from Ant, and a new
+folder with your portlet plugin's directory structure will be created inside of
+the `portlets` folder in your Plugins SDK. This is where you'll work to
+implement your own functionality. Notice that the Plugins SDK automatically
+appends "-portlet" to the project name when creating its directory.
+
+![Figure 2.13: Creating the Event Listing Portlet.](../../images/02-terminal-build-success-plugins-sdk-project-create.png)
+
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+ control system such as Subversion, CVS, Mercurial, Git, etc., this might be
+ a good moment to do an initial check-in of your changes. After building the
+ plugin for deployment, several additional files will be generated that should
+ *not* be handled by the source control system. 
+
+---
+
+Now you have a Liferay portlet project for our Event Listing portlet. We still
+need to deploy the project to our Liferay Server. With Liferay IDE you had
+multiple options: drag and drop your project onto the server, or right click
+the served and select *Add and Remove...*.  It's almost as easy using an ant
+target. Simply open a terminal window in your `portlets/event-listing-portlet`
+directory and enter
+
+    ant deploy
+
+A BUILD SUCCESSFUL message indicates your portlet is now being deployed. If you
+switch to the terminal window running Liferay, within a few seconds you should
+see the message `1 portlet for my-greeting-portlet is available for use`. If
+not, double-check your configuration. 
+
+In your web browser, log in to the portal as explained earlier. Hover over
+*Add* at the top of the page and click on *More*. Select the *Sample* category,
+and then click *Add* next to *My Greeting*. Your portlet appears in the
+page below. 
+
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 
