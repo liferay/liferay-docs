@@ -316,40 +316,40 @@ prepopulated with portlets from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
 available. To view the pages once you add them, click the *View Pages* button.
 This is how you'd populate your pages with content and applications. This is
-covered in succeeding chapters. Page types include **Portlet Pages**, **Panel
-Pages**, **Embedded Pages**, **URL Pages** and **Link to Page**. By default, all
-pages are created as portlet pages but in some situations you might want to use
-one of the other options. 
+covered in succeeding chapters. Page types include **Layout**, **Panel**,
+**Embedded**, **Link to URL**, and **Link to a Page of This Site**. By default,
+all pages are created as portlet pages but in some situations you might want to
+use one of the other options. 
 
-**Portlet Pages** are the pages we're usually talking about. They have a layout
+**Layout:** the pages we're usually talking about. They have a layout
 which you can drag and drop portlets into. Most of the pages you create will be
-portlet pages.
+layout pages.
 
-**Panel Pages** can have any number of portlets on them, as selected by an
+**Panel:** can have any number of portlets on them, as selected by an
 administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
 selected portlet takes up the entire page. 
 
-**Embedded Pages** display content from another website inside of your portal.
+**Embedded:** display content from another website inside of your portal.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
 portal.
 
-**URL Pages** are just redirects to any URL specified by an administrator. You
-can use URL pages to create links to pages belonging to other sites of your
+**Link to URL:** are just redirects to any URL specified by an administrator.
+You can use URL pages to create links to pages belonging to other sites of your
 portal or to pages of an external site. Use URL pages cautiously since blind
 redirects create a poor user experience.
 
-**Link to Page** creates a portal page which functions as an immediate redirect
-to another page within the same site. You can select which page to link to from
-a dropdown in the page management interface. You could use a *Link to Page* to
-place a deeply nested page in the primary navigation menu of your site, for
-example.
+**Link to a Page of This Site:** creates a portal page which functions as an
+immediate redirect to another page within the same site. You can select which
+page to link to from a dropdown in the page management interface. You could use
+a *Link to a Page of This Site* to place a deeply nested page in the primary
+navigation menu of your site, for example.
 
-To use the Manage Page interface to create a page, navigate to *Edit* on the
-Dockbar and select *Page*. Notice that it's not possible to add a new page.
-This is because you're only managing the current page, so your only option is to
-add a child page. 
+To use the Edit Page interface to modify an existing page, navigate to the left
+palette and select the Edit Page button (pencil icon). Notice that it's not
+possible to add a new page. This is because you're only managing the current
+page.
 
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
