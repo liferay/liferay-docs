@@ -298,33 +298,33 @@ permission to do so.
 
 ### Creating and Managing Pages
 
-You have a few options for accessing and configuring the page creation
-interface. There are two interfaces to be aware of: *Site Pages* and *Page*.
-Although both interfaces deal with your portal's pages, their settings are
-configurable in different places.
+You have a few options for accessing and configuring your site's page editing
+interface. There are three interfaces to be aware of: *Site Pages*, *Page*, and
+*Edit Page*. These interfaces all deal with your site's pages, however, each
+interface is configurable in a different place and completes different
+objectives. 
 
 From the Site Administration page, your site pages can be accessed and
 configured. If you're already on your desired site, you can reach the Site
 Administration page by navigating to the *Admin* tab in the Dockbar and
 selecting *Site Administration*. If you're not currently on the site you'd like
-to edit, go to *Control Panel* &rarr; *Sites* and select your desired site. This
-will also bring you to the site's Site Administration page. Once you're on the
-Site Administration page, select *Site Pages* under the Main tab from the left
-panel.
+to edit, go to *My Sites* in the Dockbar and select your desired site. Once
+you're on the Site Administration page, select *Site Pages* (if necessary) under
+the Pages tab from the left panel. You can also use the *Pages* shortcut which
+is also listed under the Admin tab.
 
-To manage the specific page of the site you've navigated to, click *Edit* from
-the Dockbar and select *Page*. This will only edit the specific page you're
-currently on.
+![Figure 2.2: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
 
-![Figure 2.2: The *Page* interface allows you to edit specific pages.](../../images/04-web-content-managing-single-page.png)
+To add new pages to your site, click the *Add* button (plus sign) from the left
+palette and select the *Page* tab. This is the *Page* interface, which offers a
+plethora of options for your new page including name, site layout, and site
+template.
 
-For convenience, you can also navigate to the Sites page under the Sites section
-of the Control Panel and click *Actions* &rarr; *Manage Pages*. To quickly add a
-single page while to the site you're browsing, click *Add* from the Dockbar and
-select *Page*. Just enter a name for the page and it's added immediately. Click
-the name of the page in the navigation menu to visit it and start working on it.
+To manage the specific page of the site you've navigated to, click the *Edit
+Page* button (pencil icon) from the left palette. This will only edit the
+specific page you're currently on.
 
-![Figure 2.3: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
+![Figure 2.3: The *Edit Page* interface allows you to edit the current page you're on.](../../images/04-web-content-managing-single-page.png)
 
 *Site Pages* is an interface to view existing pages, create new pages, view
 pages and export or import pages using Liferay Archive (LAR) files. Note that
