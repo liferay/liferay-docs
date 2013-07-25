@@ -235,59 +235,8 @@ hierarchy should match the site hierarchy.
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization, Advanced, and
-Miscellaneous.
-
-![Figure 2.12: On the right panel, you can customize a wide selection of site configuration options.](../../images/01-site-editor.png)
-
-**Details:** lets you edit the information you entered when you created the site
-and allows you to choose a site template for the public or private pages of your
-site. If you select a site template, leave the *Enable propagation of changes
-from the site template* box checked to automatically update your site if the
-associated site template changes. The update will only be done to pages which
-have not been changed within the specific site. If you uncheck this box but
-recheck it later, the template pages are then reapplied to your site,
-overwriting any changes that may have been made. Only users who have the
-permission "Unlink Site Template" will be able to disable the propagation of
-changes. When the propagation is enabled, the site template might prevent
-modification of some or all pages to ensure the propagation occurs.
-
-**Categorization:** allows you to apply categories and tags to the site.
-
-**Site URL:** lets you set friendly URLs and virtual hosts for your web site.
-
-**Site Template:** provides additional information about the site template
-associated to the pages of the site (if any).
-
-**Sitemap:** lets you use the sitemap protocol to notify search engines your web
-site is available for crawling.
-
-**Robots:** lets you use a `robots.txt` file to specify certain pages and links
-you don't want to be indexed by search engines. You need to set a virtual host
-before you set a `robots.txt` file.
-
-**Default User Associations:** lets you configure site roles and teams that
-newly assigned site members will have by default.
-
-**Staging:** lets you turn on either Local Live staging or Remote Live staging.
-To enable staging, the *Enable propagation of changes from the site template*
-box on the Details tab must be unchecked. With staging enabled, changes to the
-site template are automatically propagated to the staged site, not to the live
-site. The changes still must be approved before the site is published to live.
-
-**Analytics:** lets you set a Google Analytics ID that is used for your site.
-
-**Content Sharing:** lets you configure whether sub-sites can display content
-from this site.
-
-**Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
-site. You can also regulate the age (in days) for which content is able to be
-stored in the Recycle Bin until it is permanently deleted.
-
-**Custom Fields:** lets you edit the custom fields you already have configured
-for the *Site* resource.
-
-**Display Settings:** lets you configure the language options for your site.
-
+Miscellaneous. We'll go into more detail for your site's settings in the *Site
+Settings* section later in the chapter.
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
@@ -295,6 +244,8 @@ public pages or as private pages. By default, the site is linked to the site
 template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
+
+Now that our new site is created, lets learn how to create and manage its pages.
 
 ### Creating and Managing Pages
 
@@ -732,9 +683,14 @@ the *Preview* link to see the generated XML.
 configure your `robots.txt` for both public and private pages on a site. If you
 don't have Virtual Hosting set up, this tab is rather boring. 
 
+**Default User Associations:** lets you configure site roles and teams that
+newly assigned site members will have by default. If you'd like to learn more
+about creating roles and/or teams, visit the *Advanced Web Content Management*
+chapter. 
+
 **Staging:** enables you to edit and revise a page behind the scenes, then
 publish changes to your site once they have been completed and reviewed. For a
-full explanation of Staging, see chapter 3: Advanced web content management.
+full explanation of Staging, see chapter 3: *Advanced Web Content Management*.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay
 provides seamless integration with Google Analytics, allowing you to place your
@@ -744,6 +700,23 @@ code everywhere. Google Analytics is a free service which lets you do all kinds
 of traffic analysis on your site so you can see who visits, where visitors are
 from and what pages they most often visit. This helps you tweak your site so you
 can provide the most relevant content to your users.
+
+**Content Sharing:** lets you configure whether sub-sites can display content
+from this site.
+
+**Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
+site. You can also regulate the age (in days) for which content is able to be
+stored in the Recycle Bin until it is permanently deleted. For a full explantion
+of the Recycle Bin, see the *Configuring Liferay Applications* chapter.
+
+**Custom Fields:** lets you edit the custom fields you already have configured
+for the *Site* resource. If you don't have any custom fields configured for the
+Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
+located under the *Configuration* tab.
+
+**Display Settings:** lets you configure the language options for your site. You
+have options to use the default language options or define a new default
+language.
 
 Now that you know how to configure sites, let's look at page templates and site
 templates.
