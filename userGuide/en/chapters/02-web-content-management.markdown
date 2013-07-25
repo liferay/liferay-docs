@@ -729,6 +729,14 @@ already exist, links are provided to view them. You can also change the site's
 application adapter, which is a special type of hook plugin that customizes out
 of the box functionality for specific sites.
 
+**Site Hierarchy:** New to Liferay 6.2 is the ability to organize sites into
+hierarchies. At the bottom of the Site Settings page is the *Parent Site*
+section. This feature allows you to select the parent site for the site you're
+currently on. After selecting a parent site, you have a checkbox option to limit
+membership to members of the parent site. For more information on site
+hierarchies, navigate to the *Leveraging Liferay's Multi-site Capabilities*
+section.
+
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
