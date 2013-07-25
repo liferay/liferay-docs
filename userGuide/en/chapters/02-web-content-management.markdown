@@ -458,12 +458,16 @@ the name display. Let's take a look at how to edit individual pages.
 
 #### Changing Options for Individual Pages
 
-When you select a single page, some different options appear. Let's look at what
-these do. 
+When you use the *Edit Page* interface for a single page, some different options
+appear. Let's look at what these do. 
 
-**Details:** lets you name the page for any localizations you need. You can also
-set the HTML title that appears in the browser window for the page. Plus you can
-set an easy to remember, friendly URL for the page. 
+**Details:** lets you name the page for any localizations you need, set whether
+the page is hidden on the navigation menu, set an easy to remember, friendly URL
+for the page, and select the page type. Plus you can specify how portlets are
+arranged on a page. Choose from the available installed templates to modify the
+layout. It's very easy for developers to define custom layouts and add them to
+the list. This is covered more thoroughly in both the *Liferay Developer's
+Guide* and in [*Liferay in Action*](http://manning.com/sezov).
 
 **SEO:** provides several means of optimizing the data the page provides to an
 indexer that's crawling the page. You can set the various meta tags for
@@ -489,17 +493,12 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-**Look and Feel:** lets you set a page-specific theme. 
-
-**Layout:** lets you specify how portlets are arranged on a page. Choose from
-the available installed templates to modify the layout. It's very easy for
-developers to define custom layouts and add them to the list. This is covered
-more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in Action*](http://manning.com/sezov). 
+**Look and Feel:** lets you set a page-specific theme.  
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
 executed on this page. 
 
-**Custom fields:** If custom fields have been defined for pages (which can be
+**Custom Fields:** If custom fields have been defined for pages (which can be
 done from the *Custom Fields* page of the Control Panel), they appear here.
 These are metadata about the page and can be anything you like, such as author
 or creation date. 
@@ -543,8 +542,7 @@ page.
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
-Note that the *Edit* &rarr; *Page Layout* menu directs you to the same Layout
-tab that's in *Edit* &rarr; *Page*. 
+Next, we'll run practice modifying page layouts!
 
 #### Modifying Page Layouts
 
@@ -553,8 +551,8 @@ want it to. Liferay comes with many layouts already defined. Developers can
 create more and they can be deployed to your portal for your use.
 
 To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select *Edit* &rarr; *Page Layout* from
-the Dockbar.
+Collaboration page. To access layouts, select the *Edit Page* button from the
+left palette (pencil icon) and click the *Details* tab (if necessary).
 
 Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
 return to the page and it'll seem as though nothing has happened. Once we start
@@ -569,20 +567,23 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Edit* menu is page customizations. 
+The next option we'll explore is page customizations. 
 
 #### Page Customizations
 
-Page Customizations are a new feature in Liferay 6.1. With page customizations,
-any user with the appropriate permissions can create personalized versions of
-any public page. Before users can create personalized versions of pages,
-customizations must first be enabled by an administrator. Administrators can
-activate or deactivate customizations for any row or column on any page. When
-users customize a page, they have the option to use either their version or the
-default version of a page. Users can't see alternate versions of pages other
-than their own.
+With page customizations, any user with the appropriate permissions can create
+personalized versions of any public page. Before users can create personalized
+versions of pages, customizations must first be enabled by an administrator.
+Administrators can activate or deactivate customizations for any row or column
+on any page. When users customize a page, they have the option to use either
+their version or the default version of a page. Users can't see alternate
+versions of pages other than their own.
 
 ![Figure 2.6: During page customization, individual columns change colors to indicate whether they are selected or not.](../../images/04-web-content-personal-customization.png)
+
+To activate page customizations, click the *Edit Page* button from the left
+palette and select the *Customization Settings* tab. Then select *Show
+Customizable Sections* to view and modify sections on your page.
 
 When an administrator activates page customizations for a page, any portlets
 that are in a *Customizable* row or column can be moved around the page or
@@ -600,7 +601,8 @@ for the site as a whole.
 
 As with Site Pages, you can access Site Settings by navigating to Site
 Administration and clicking *Site Settings* from the Configuration section on
-the left panel. 
+the left panel. You can also select the Site Administration sub-tab
+*Configuration* from the *Admin* drop-down.
 
 ![Figure 2.7: The Site Settings window offers a plethora of options for your site.](../../images/web-content-site-settings.png)
 
@@ -618,12 +620,7 @@ also request to be added through the Sites section of the Control Panel. A
 private site is like a restricted site but doesn't appear in the Sites section
 of the Control Panel for users who aren't members. 
 
-**Pages:** From Site Settings, click on *Pages* to manage some basic features of
-the pages on a site. If no pages have been defined yet, you can set site
-templates for the public or private pages. If pages already exist, links are
-provided to view them. You can also change the site's application adapter, which
-is a special type of hook plugin that customizes out of the box functionality
-for specific sites. 
+**Categorization:** allows you to apply categories and tags to the site.
 
 **Site URL:** Set a friendly URL and/or a virtual host for your site here. The
 *Friendly URL* option lets you manage the path to your site in the portal's URL.
@@ -724,6 +721,13 @@ located under the *Configuration* tab.
 **Display Settings:** lets you configure the language options for your site. You
 have options to use the default language options or define a new default
 language.
+
+**Pages:** From Site Settings, click on *Public Pages* or *Private Pages* to
+manage some basic features of the pages on a site. If no pages have been defined
+yet, you can set site templates for the public or private pages. If pages
+already exist, links are provided to view them. You can also change the site's
+application adapter, which is a special type of hook plugin that customizes out
+of the box functionality for specific sites.
 
 Now that you know how to configure sites, let's look at page templates and site
 templates.
