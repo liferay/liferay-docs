@@ -14,10 +14,10 @@ simple, widely available, and easy to deploy.
 
 In this chapter, we'll cover the following topics:
 
-- OpenSocial gadget basics.
-- Using PubSub to allow gadgets to communicate with each other and with
-  portlets.
-- Liferay's gadget editing environment.
+- OpenSocial Gadget Basics
+- Accessing Third-Party Applications from Your Gadget
+- Gadget/Portlet Communication with PubSub
+- Liferay's Gadget Editing Environment
 
 Let's first look at the structure of an OpenSocial gadget and consider the
 concepts involved with OpenSocial gadgets.
@@ -32,7 +32,7 @@ The second part of the document contains the gadget *content*, defining the
 gadget's user interface and business logic. We'll spend time going over all
 these facets of gadget XML.
 
-![Figure 9.1: An OpenSocial gadget's XML consists of elements specifying gadget
+![Figure 8.1: An OpenSocial gadget's XML consists of elements specifying gadget
 preferences, user preferences, and content.](../../images/opensocial-22.png)
 
 Below is an example OpenSocial gadget XML file for a map gadget:
@@ -46,7 +46,8 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 			display_name="Location" required="true" /> 
 		<Content type="html">
 		<![CDATA[ 
-			<script src="http://maps.google.com/maps?file=js" type="text/javascript"></script>
+			<script src="http://maps.google.com/maps?file=js" type="text/javascript">
+			</script>
 			<div id="map" style="width: 100%; height: 100%;"></div>
 			<script type="text/javascript">
 			var prefs = new gadgets.Prefs();
@@ -82,9 +83,9 @@ Gadget meta-data specifies characteristics of the overall gadget and specifies
 controls for the user to customize the gadget. Here is a simple breakdown of
 these two types of meta-data:
 
-**Gadget Preferences (required):** Define characteristics of the gadget. They are
-specified as attributes of and nested elements in the gadget's `<ModulePrefs/>`
-element.
+**Gadget Preferences (required):** Define characteristics of the gadget. They
+are specified as attributes of and nested elements in the gadget's
+`<ModulePrefs/>` element.
 
 **User Preferences (optional):** Store user configuration values and allow users
 to give input to the application. They are specified in `<UserPref/>` elements.
@@ -146,7 +147,7 @@ facilitate taking in this information, storing it, and processing it to present
 gadget user interfaces customized to the user. Here is the UserPref for our
 current map gadget:
  
-		<UserPref name="loc" display_name="Location" required="true" />
+    <UserPref name="loc" display_name="Location" required="true" />
 
 Notice the UserPref `loc` of the map gadget. This user preference takes in the
 user's location preference, stores it, and displays it on the mapping interface.
@@ -155,8 +156,7 @@ Lastly, we'll look at what a user sees in the gadget's user interface when
 setting the *Location* user preference. Here is a snapshot of what this window
 looks like on Liferay Portal:
 
-![Figure 9.2: Here, the map gadget's user preference is made
-available for user input.](../../images/opensocial-21.png)
+![Figure 8.2: Here, the map gadget's user preference is made available for user input.](../../images/opensocial-21.png)
 
 UserPrefs can be displayed in many different ways and help your gadget become
 more adaptable to your users' ever changing expectations. And, there is an
@@ -217,7 +217,7 @@ preferences.
 Now that you're fundamentally sound on the gadget basics, let's explore what
 gadgets offer you in Liferay Portal.
 
-## Accessing Third-Party Applications from your Gadget 
+## Accessing Third-Party Applications from Your Gadget 
 
 Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket,
 Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd
@@ -290,7 +290,8 @@ steps below:
 1.  Navigate to the Control Panel and select *OpenSocial Gadget Publisher* from
     under the *Portal* heading.
 
-2.  Select *Publish Gadget* and, for each gadget, enter the URL and click *Save*. 
+2.  Select *Publish Gadget* and, for each gadget, enter the URL and click
+    *Save*. 
 
     *Sample PubSub Publisher URL*:
     `http://svn.apache.org/repos/asf/shindig/trunk/content/container/sample-pubsub-2-publisher.xml`
@@ -305,16 +306,14 @@ steps below:
     it publishes a number; but the PubSub Subscriber gadget does not receive the
     number.
 
-    ![Figure 9.3: The subscriber cannot receive any messages from the publisher
-    without being subscribed to the channel.](../../images/opensocial-23.png)
+    ![Figure 8.3: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/opensocial-23.png)
 
 5.  Select *Subscribe* on the subscriber gadget.
 
 6.  Click *Publish a random number* again from the publisher gadget. You now see
     the random number received by the subscriber.
 
-    ![Figure 9.4: When the subscriber is subscribed to the publisher's channel,
-    the subscriber is able to receive messages.](../../images/opensocial-24.png)
+    ![Figure 8.4: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/opensocial-24.png)
 
 7.  Select *Unsubscribe* on the subscriber gadget.
 
@@ -358,7 +357,7 @@ below:
 
 2.  Add both gadgets to a page.
 
-    ![Figure 9.5: Gadgets are easy to publish and some gadgets, like Google's
+    ![Figure 8.5: Gadgets are easy to publish and some gadgets, like Google's
     *Address* and *Map* gadgets, are automatically synced to communicate with
     each other.](../../images/opensocial-25.png)
 
@@ -370,7 +369,7 @@ below:
     now be able to see that address location displayed in the *Google Map*
     gadget.
 
-    ![Figure 9.6: After inputting a custom address in the *Google Address*
+    ![Figure 8.6: After inputting a custom address in the *Google Address*
     gadget, you are able to see its physical location in the *Google Map*
     gadget.](../../images/opensocial-26.png)
 
@@ -389,7 +388,10 @@ First, we'll look at the contents of the *Google Maps* XML file
 			<Require feature="pubsub-2">
 				<Param name="topics">
 					<![CDATA[ 
-					<Topic title="Google Maps" name="com.liferay.opensocial.gmapsdemo" publish="true"/>
+					<Topic
+					    title="Google Maps"
+					    name="com.liferay.opensocial.gmapsdemo" publish="true"
+					/>
 					]]>
 				</Param>
 			</Require>
@@ -402,10 +404,20 @@ First, we'll look at the contents of the *Google Maps* XML file
 				<tr>
 					<td>Address:</td>
 					<td>
-						<input type="text" id="address" name="address" size="40" value="1400 Montefino Ave, Diamond Bar, CA 91765">
+						<input
+						    type="text"
+						    id="address"
+						    name="address"
+						    size="40"
+						    value="1400 Montefino Ave, Diamond Bar, CA 91765"
+						>
 					</td>
 					<td>
-						<input type="button" value="Update" onclick="updateLoc()">
+						<input
+						    type="button"
+						    value="Update"
+						    onclick="updateLoc()"
+						>
 					</td>
 				</tr>
 			</table>
@@ -413,7 +425,8 @@ First, we'll look at the contents of the *Google Maps* XML file
 			<script type="text/javascript">
 				function updateLoc() {
 					var address = _gel("address").value;
-					gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
+					gadgets.Hub.publish(
+					    "com.liferay.opensocial.gmapsdemo", address);
 				}
 
 				gadgets.window.adjustHeight();
@@ -428,7 +441,11 @@ PubSub and specifies the channel (topic) to which the gadget publishes:
 	<Require feature="pubsub-2">
 		<Param name="topics">
 			<![CDATA[ 
-			<Topic title="Google Maps" name="com.liferay.opensocial.gmapsdemo" publish="true"/>
+			<Topic
+			    title="Google Maps"
+			    name="com.liferay.opensocial.gmapsdemo"
+			    publish="true"
+			/>
 			]]>
 		</Param>
 	</Require>
@@ -462,7 +479,11 @@ in  *GoogleMapsViewer.xml*:
 			<Require feature="pubsub-2">
 				<Param name="topics">
 					<![CDATA[ 
-					<Topic title="Google Maps" name="com.liferay.opensocial.gmapsdemo" subscribe="true"/>
+					<Topic
+					    title="Google Maps"
+					    name="com.liferay.opensocial.gmapsdemo"
+					    subscribe="true"
+					/>
 					]]>
 				</Param>
 			</Require>
@@ -471,7 +492,10 @@ in  *GoogleMapsViewer.xml*:
 
 		<Content type="html">
 			<![CDATA[ 
-			<script src="http://maps.google.com/maps?file=api&amp;v=2.x" type="text/javascript"></script>
+			<script
+			    src="http://maps.google.com/maps?file=api&amp;v=2.x"
+			    type="text/javascript">
+			</script>
 
 			<div id="map" style="width:100%;height:100%"></div>
 
@@ -479,7 +503,8 @@ in  *GoogleMapsViewer.xml*:
 				var geocoder = new GClientGeocoder();
 
 				gadgets.HubSettings.onConnect = function(hub, suc, err) {
-					gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
+					gadgets.Hub.subscribe(
+					    "com.liferay.opensocial.gmapsdemo", callback);
 				}
 
 				function callback(topic, data, subscriberData) {			
@@ -489,7 +514,8 @@ in  *GoogleMapsViewer.xml*:
 				function showAddress(response) {
 					map.clearOverlays();
 					place = response.Placemark[0];
-					point = newGLatLng(place.Point.coordinates[1],place.Point.coordinates[0]);
+					point = newGLatLng(
+					    place.Point.coordinates[1],place.Point.coordinates[0]);
 					marker = new GMarker(point);
 					map.addOverlay(marker);
 					marker.openInfoWindowHtml(place.address);
@@ -518,6 +544,7 @@ The following JavaScript from the gadget's *content* registers a callback on the
 
 	gadgets.HubSettings.onConnect = function(hub, suc, err) {
             gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
+        }
 
 The `gadgets.HubSettings.onConnect` function is called by the OpenSocial
 container once the gadget connects to the PubSub messaging hub. In our example, 
@@ -572,13 +599,14 @@ click on the *Show in Google Maps* link. The function invokes the
 message and the user's address as the message. One thing to note is that when a
 portlet sends data to a gadget, there must be a `gadget:` prefix before the
 channel declaration. This distinguishes who the messages are intended for when
-they are broadcast across a channel. Notice that you don't need to change anything
-for your *Google Map* gadget, since it's already subscribed to that channel. You
-only needed to define the *Directory* portlet as a publisher to that channel.
+they are broadcast across a channel. Notice that you don't need to change
+anything for your *Google Map* gadget, since it's already subscribed to that
+channel. You only needed to define the *Directory* portlet as a publisher to
+that channel. 
 
 ---
 
-![Note](../../images/tip-pen-paper.png)**Note:** If you would like to broadcast
+![Note](../../images/tip-pen-paper.png) **Note:** If you would like to broadcast
 messages to portlets, follow the same guidelines, but don't use the `gadget:`
 prefix in your topic parameter value for the call to the `Liferay.fire()`
 function.
@@ -589,9 +617,7 @@ After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the
 interaction would look like:
 
-![Figure 9.7: Your modified *Directory* portlet sends a user address to the
-*Google Map* gadget to display the address location in its
-map.](../../images/opensocial-27.png)
+![Figure 8.7: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
@@ -618,8 +644,7 @@ through the editor are stored in the site's Document and Media Library. The
 sites. These options offer a user-friendly and easy to use testing station for
 enhancing the gadgets on your sites.
 
-![Figure 9.8: The wrench icon can be easily found to the right of your XML
-file.](../../images/opensocial-39.png)
+![Figure 8.8: The wrench icon can be easily found to the right of your XML file.](../../images/opensocial-39.png)
 
 **Note:** When you publish a new gadget,
 remember that your Liferay Portal installation is the new host when specifying
@@ -645,9 +670,7 @@ address entirely from our gadget's text window.
 4.  Click the floppy disk button to save your new gadget XML, naming your gadget
     *GoogleMapsPublisher.xml*. Press the green check button to save the file.
 
-    ![Figure 9.9: It is easy to insert gadget content into Liferay's
-    *OpenSocial Gadget Editor* and save it as an OpenSocial
-    gadget.](../../images/opensocial-31.png)
+    ![Figure 8.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/opensocial-31.png)
 
     **Note:** Liferay will not allow you to publish your new gadget without
     attaching `.xml` to the end of your file name. 
@@ -655,8 +678,7 @@ address entirely from our gadget's text window.
 5.  Select the *Preview* tab from the toolbar and a preview of your gadget
     appears.
 
-    ![Figure 9.10: The *Preview* tab displays what your gadget would look like
-    if it was added to a Liferay page.](../../images/opensocial-32.png)
+    ![Figure 8.10: The *Preview* tab displays what your gadget would look like if it was added to a Liferay page.](../../images/opensocial-32.png)
 
 6.  Locate the following element in the gadget XML:
 
@@ -668,27 +690,21 @@ address entirely from our gadget's text window.
 
 7.  Select the editor's *Preview* mode and click the refresh button.
 
-    ![Figure 9.11: The refresh button is easy to find in the upper right corner
-    of the editor's *Preview* pane.](../../images/opensocial-34.png)
+    ![Figure 8.11: The refresh button is easy to find in the upper right corner of the editor's *Preview* pane.](../../images/opensocial-34.png)
 
     As you would expect, the gadget's default address is now blank.
 
-    ![Figure 9.12: Your updated gadget now has a blank text window, thanks to
-    the editing you've done in Liferay's gadget
-    editor.](../../images/opensocial-33.png)
+    ![Figure 8.12: Your updated gadget now has a blank text window, thanks to the editing you've done in Liferay's gadget editor.](../../images/opensocial-33.png)
 
 8.  Publish your gadget for portal-wide use by selecting the wrench icon next to
     the *GoogleMapsPublisher.xml* file and clicking *Publish*.
 
-    ![Figure 9.13: You can publish your OpenSocial gadgets directly from
-    Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
+    ![Figure 8.13: You can publish your OpenSocial gadgets directly from Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
 
     A *Publish Gadget* screen opens up, showing your gadget's URL and categories
     to select for your gadget.
 
-    ![Figure 9.14: A *Publish Gadget* window displays your gadget's URL and a
-    host of categories for you to consider for your
-    gadget.](../../images/opensocial-36.png)
+    ![Figure 8.14: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
 
 9.  Choose a category and click *Save*.
 
@@ -708,6 +724,8 @@ opportunities for your portal customization. You've learned the anatomy of a
 gadget, how to access third-party applications from a gadget, and gadget
 communication with PubSub. Also, you learned that Liferay's gadget editor makes
 editing and customizing your gadgets easier than ever. Take a deep breath and
-give yourself a pat on the back; you're now a trained gadget guru!
+give yourself a pat on the back; you're now a trained gadget guru! 
 
-Next, we'll explore the seemingly mysterious world of plugin security management.
+What better way to keep things rolling than to focus on your portal's overall
+look and feel using Liferay Themes! While we're at it, let's learn how to
+develop Layout Templates too. We'll cover both of these topics next. 

@@ -42,7 +42,7 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 5.  Click *Finish*. 
 
-![Figure 12.1: Creating your hook plugin](../../images/06-hooks-1.png)
+![Figure 10.1: Creating your hook plugin](../../images/06-hooks-1.png)
 
 The Plugins SDK automatically named the hook by appending "-hook" to the project
 name. With Developer Studio, you can create a completely new plugin or add a new
@@ -110,7 +110,7 @@ plugin is built to contain this:
 In Developer Studio's *Package Explorer*, here's what the hook structure looks
 like:
 
-![Figure 12.2: Package Explorer view of hook plugin](../../images/06-hooks-3.png)
+![Figure 10.2: Package Explorer view of hook plugin](../../images/06-hooks-3.png)
 
 The particular files you'll work on depend on what Liferay feature you're
 overriding with your hook. Let's start making hooks for the features developers
@@ -231,7 +231,7 @@ changes to a JSP.
 
 Your custom string is now displayed at the bottom of the Search portlet.
 
-![Figure 12.3: After customizing the JSP file, your custom string is displayed.](../../images/jsp-search-string.png)
+![Figure 10.3: After customizing the JSP file, your custom string is displayed.](../../images/jsp-search-string.png)
 
 Next, we'll explore application adapters and what they can do for your sites and
 site templates.
@@ -331,7 +331,7 @@ Here's how we do it:
 5.  Select *Manage* &rarr; *Site Settings*. From the *Application Adapter*
     field's drop-down menu, select *example*. Then click *Save*. 
 
-    ![Figure 12.4: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 10.4: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
 
 6.  Navigate back to your site's Navigation portlet, and make sure that the
     modification message from your Application Adapter hook plugin's `view.jsp`
@@ -441,7 +441,7 @@ specific list of predefined properties. This list is found in
 source code. In addition to defining custom actions, hooks can override portal
 properties to define model listeners, validators, generators, and
 content sanitizers. If you want to customize a property that's not found in this
-list, you must use an Ext plugin (chapter 7). 
+list, you must use an Ext plugin (chapter 14). 
 
 ---
 
@@ -671,8 +671,8 @@ That's it for overriding the Struts actions! Now Let's get our new Struts
 path working. 
 
 1.  Create `sample.jsp` in the
-    `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert the
-    following code:
+    `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert
+    the following code:
 
         <%
         String name = (String)request.getAttribute("name");
@@ -708,7 +708,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 12.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 10.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
@@ -758,9 +758,9 @@ Liferay to use your service class instead of the original.
     ---
 
     ![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
-    (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's class
-    loader. That means it will have access to any other class included in the
-    same WAR file, but *not* the *internal* classes of Liferay.
+    (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's
+    class loader. That means it will have access to any other class included in
+    the same WAR file, but *not* the *internal* classes of Liferay.
 
     ---
 
@@ -768,8 +768,13 @@ Liferay to use your service class instead of the original.
     directory, by adding the following after `</custom-jsp-dir>`:
 
         <service>
-            <service-type>com.liferay.portal.service.UserLocalService</service-type>
-            <service-impl>com.liferay.sample.hook.MyUserLocalServiceImpl</service-impl>
+            <service-type>
+            com.liferay.portal.service.UserLocalService
+            </service-type>
+
+            <service-impl>
+            com.liferay.sample.hook.MyUserLocalServiceImpl
+            </service-impl>
         </service>
 
 Redeploy your hook and refresh your browser. In the terminal window running
@@ -850,6 +855,7 @@ but aren't yet fully documented. Here's a summary of these hooks:
 In this chapter we discussed some of the many uses of the versatile hook plugin,
 the preferred tool for customizing Liferay. You learned how to perform custom
 portal actions, override and extend custom portal JSPs, modify portal
-properties, and replace portal services. Next, we'll talk about using Ext
-plugins to make customizations that you can't make with any other Liferay plugin
-type. 
+properties, and replace portal services. 
+
+Next, we'll show you what it takes to develop apps for publishing to *Liferay
+Marketplace*. 

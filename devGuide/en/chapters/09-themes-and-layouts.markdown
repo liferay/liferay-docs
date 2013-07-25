@@ -1,9 +1,27 @@
 # Creating Liferay Themes and Layout Templates
 
-## Creating Liferay Themes 
-
 Do you want to transform the look and feel of your Liferay Portal? Create your
-own Liferay Theme! Themes are hot deployable plugins unique to a site served by
+own Liferay Theme! Do you want arrange your pages' portlets differently than
+what Liferay's templates support out-of-the-box? Create your own Layout
+Template! In this chapter, we'll show you how do do both.
+
+We'll go over the following topics in this chapter:
+
+- Creating Liferay Themes
+- Using Developer Mode with Themes
+- Creating a Theme Thumbnail
+- Designing a Look and Feel
+- Understanding Your Theme's JavaScript Callbacks in `main.js`
+- Importing Resources with Your Themes
+- Creating Liferay Layout Templates
+- Embedding Portlets in a Layout Template
+- Variables Available to a Layout Template
+
+Let's get started creating Liferay themes.
+
+## Creating Liferay Themes
+
+Themes are hot deployable plugins unique to a site served by
 the portal. With themes, you can alter the user interface so completely that
 it's difficult or impossible to tell that the site is running on Liferay. 
 
@@ -16,19 +34,6 @@ and templates from any of the built in themes. This saves you time and keeps
 your themes smaller and less cluttered, because your theme contains only its own
 resources, using defaults for the rest, like emoticon graphics for the message
 boards portlet. 
-
-In this chapter you'll learn all about Liferay themes:
-
-- Creating a Theme
-- Anatomy of a Theme
-- Developer Mode
-- Thumbnails
-- JavaScript
-- Settings
-- Color Schemes
-- Portal Predefined Settings
-- Theme Inheritance
-- Importing resources with themes
 
 Liferay themes are easy to create. You can start by making changes only in the
 CSS files. When you need to customize themes more extensively, you can change
@@ -47,10 +52,10 @@ line or the Liferay IDE.
 
 Let's create a theme! 
 
-### Creating a Theme 
+### Creating a Theme Project
 
 The theme creation process is nearly identical to the portlet creation process
-that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
+that we covered in Chapter 3. Our theme will be named *Deep Blue*, so the
 project name (without spaces) is *deep-blue*, and the display name (which can
 have spaces) is *Deep Blue*. Let's create the theme using Liferay Developer
 Studio first, and then with the terminal. 
@@ -68,7 +73,7 @@ Studio first, and then with the terminal.
 
 5.  Click *Finish*. 
 
- ![Figure 10.1: Creating your theme plugin](../../images/05-themes-1.png)
+![Figure 9.1: Creating your theme plugin](../../images/05-themes-1.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -90,7 +95,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-#### Setting a Base Theme 
+### Setting a Base Theme 
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -103,12 +108,31 @@ different base theme, it's added on top of *_styled* and overrides the default
 styling wherever there are differences. After the base themes are added, your
 own custom styling is added on top.
 
+By default, themes are based on the *_styled* theme, which provides only basic
+styling of portlets. If you open the `build.xml` file in your theme's directory
+using the Build Application Configuration Editor, you see the following code:
+
+![Figure 9.2: Content of build.xml](../../images/05-themes-5.png)
+
+The `theme.parent` property determines the theme your theme inherits its styling
+from. In addition to the *_styled* theme, you can choose to inherit from the
+*_unstyled* theme, which contains no styling. This makes more work for you, but
+offers full flexibility to design your CSS files from scratch. 
+
+You can also use the default Liferay theme **Classic** as a parent theme. You'll
+start with a look and feel that's already smooth and works well. But since so
+much is already done for you, there's less flexibility when building your
+design. It's a compromise between creating a theme as quickly as possible versus
+having full control of the result. It's your choice, and another example of the
+flexibility Liferay offers.
+
 To specify a base theme, edit the `build.xml` file for your theme and change
 *_styled* in `<property name="theme.parent" value="_styled>` to the name of any
-existing theme that's installed or in your Plugins SDK. Now that your base theme
-is set, let's deploy the theme to your portal instance.
+existing theme that's installed or in your Plugins SDK.
 
-#### Deploying the Theme 
+Now that your base theme is set, let's deploy the theme to your portal instance.
+
+### Deploying the Theme 
 
 If you're already familiar with portlet deployment from reading Chapter 3, theme
 deployment will be a piece of cake! You can deploy your theme in Developer
@@ -117,7 +141,7 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
- ![Figure 10.2: Drag and drop your theme onto the server](../../images/05-themes-6.png)
+![Figure 9.3: Drag and drop your theme onto the server](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
@@ -146,7 +170,7 @@ Let's apply your theme to a page:
 
 Now that you've built and deployed a theme, let's study theme anatomy.
 
-### Anatomy of a Theme 
+### Anatomy of a Theme Project
 
 Custom themes are created by layering your customizations on top of one of
 Liferay's built-in themes. 
@@ -212,7 +236,7 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
- ![Figure 10.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
+![Figure 9.4: How to redeploy your theme plugin](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
@@ -225,7 +249,7 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-### Developer Mode
+## Using Developer Mode with Themes
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
@@ -292,7 +316,7 @@ when you redeploy your theme.
 
 Let's add a thumbnail image for our theme now. 
 
-### Thumbnails 
+## Creating a Theme Thumbnail 
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
@@ -307,30 +331,17 @@ automatically displays as your theme's thumbnail.
 
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
- 
-Let's talk about Liferay's JavaScript library next. 
 
-### JavaScript
+Let's learn how to design a theme's look and feel next. 
 
-Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
-YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
-your theme's `main.js` file, you'll find definitions for three JavaScript
-callbacks:
+## Designing a Look and Feel
 
-- **AUI().ready(fn):** Executed after the HTML in the page has finished loading
-  (minus any portlets loaded via AJAX). 
-- **Liferay.Portlet.ready(fn):** Executed after each portlet on the page has
-  loaded. The callback receives two parameters: `portletId` and `node`.
-  `portletId` is the ID of the portlet that was just loaded. `node` is the Alloy
-  Node object of the same portlet. 
-- **Liferay.on('allPortletsReady', fn):** Executed after everything else
-  (including AJAX portlets) has finished loading. 
+You define a theme's look and feel via a file named `liferay-look-and-feel.xml`
+in the `WEB-INF` directory. 
 
- ![Figure 10.4: Content of main.js](../../images/05-themes-4.png)
+Let's consider how make your theme configurable to administrative users.
 
-Now let's make your theme configurable by defining settings. 
-
-### Settings 
+### Making Themes Configurable with Settings 
 
 You can define settings to make your theme configurable. Create a file named
 `liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
@@ -436,12 +447,12 @@ the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
 Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
- ![Figure 10.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+![Figure 9.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
- ![Figure 10.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+![Figure 9.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 ---
 
@@ -456,7 +467,7 @@ footer, including the slogan.
 
 Next, let's customize your theme's color scheme. 
 
-### Color Schemes 
+### Specifying Color Schemes
 
 Specify color schemes with a CSS class name, which of course also lets you
 choose different background images, different border colors, and more. 
@@ -510,7 +521,7 @@ section above.
 
 Let's review the predefined settings available for your theme. 
 
-### Portal Predefined Settings 
+### Leveraging Portal Predefined Settings 
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
@@ -603,7 +614,7 @@ site's name (i.e., title). But, if you are using using logo, that mentions your
 company or site, on each site page, you may find the default site name display
 distracting.
 
- ![Figure 10.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+![Figure 9.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
 
 Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
 as a base theme, you have the following settings available for configuring site
@@ -635,33 +646,31 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
 
 With these settings configurable, site administrators can control site name
 display from the each site's *Look and Feel* control page.
+ 
+Let's talk about Liferay's JavaScript library next. 
 
-Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
+## Understanding Your Theme's JavaScript Callbacks in `main.js`
 
-### Theme Inheritance 
+Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
+YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
+your theme's `main.js` file, you'll find definitions for three JavaScript
+callbacks:
 
-By default, themes are based on the *_styled* theme, which provides only basic
-styling of portlets. If you open the `build.xml` file in your theme's directory
-using the Build Application Configuration Editor, you see the following code:
+- **AUI().ready(fn):** Executed after the HTML in the page has finished loading
+  (minus any portlets loaded via AJAX). 
+- **Liferay.Portlet.ready(fn):** Executed after each portlet on the page has
+  loaded. The callback receives two parameters: `portletId` and `node`.
+  `portletId` is the ID of the portlet that was just loaded. `node` is the Alloy
+  Node object of the same portlet. 
+- **Liferay.on('allPortletsReady', fn):** Executed after everything else
+  (including AJAX portlets) has finished loading. 
 
- ![Figure 10.8: Content of build.xml](../../images/05-themes-5.png)
-
-The `theme.parent` property determines the theme your theme inherits its styling
-from. In addition to the *_styled* theme, you can choose to inherit from the
-*_unstyled* theme, which contains no styling. This makes more work for you, but
-offers full flexibility to design your CSS files from scratch. 
-
-You can also use the default Liferay theme **Classic** as a parent theme. You'll
-start with a look and feel that's already smooth and works well. But since so
-much is already done for you, there's less flexibility when building your
-design. It's a compromise between creating a theme as quickly as possible versus
-having full control of the result. It's your choice, and another example of the
-flexibility Liferay offers.
+![Figure 9.8: Content of main.js](../../images/05-themes-4.png)
 
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
 
-### Importing Resources with Your Themes
+## Importing Resources with Your Themes
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -686,9 +695,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
- ![Figure 10.9: The welcome theme uses the resources importer to import pages and
- content to the default site of a fresh Liferay
- installation.](../../images/welcome-theme.png)
+![Figure 9.9: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
 
 If it's not already installed, you can download the resources importer
 application from Liferay Marketplace. Search for either *Resources Importer CE*
@@ -1070,6 +1077,8 @@ please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
 
+As promised, we'll show you how to create Layout Templates next. 
+
 ## Creating Liferay Layout Templates 
 
 By now, you've likely added portlets to a page by dragging them from the *Add*
@@ -1082,18 +1091,9 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn everything you need to know about layout
-templates:
-
-- Creating a layout template project 
-- Anatomy of a layout template project 
-- Designing a layout template 
-- Embedding portlets in a layout template 
-- Available variables 
-
 Let's create a custom layout template!
 
-### Creating a Layout Template 
+### Creating a Layout Template Project
 
 With the Plugins SDK you can deploy layout templates as plugins, and creating
 layout templates with Liferay Developer Studio is easier than ever. Let's call
@@ -1112,7 +1112,7 @@ our layout template called "Columns 1 4 1".
 
 5.  Click *Finish*. 
 
-![Figure 10.10: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
+![Figure 9.10: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -1155,7 +1155,7 @@ and `.wap.tpl` file for each layout template in the `docroot/` folder. The
 Now that you're well-versed on the anatomy of a layout template, let's begin
 exploring layout template files. 
 
-#### Layout Template Files 
+### Layout Template Files 
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each of the template files does: 
@@ -1169,11 +1169,11 @@ Let's see what each of the template files does:
   image, but you can use the default PNG for layout templates as a starting
   point. 
 
-![Figure 10.11: Default layout template thumbnail](../../images/blank_columns.png)
+![Figure 9.11: Default layout template thumbnail](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
-#### Liferay Configuration Files 
+### Liferay Configuration Files 
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -1186,7 +1186,7 @@ has two Liferay configuration files:
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
 
-#### Deploying Layout Templates 
+### Deploying Layout Templates 
 
 If you've ever deployed a theme or portlet, you already know how to deploy
 layout templates! Use Developer Studio or the terminal to deploy your layout
@@ -1235,12 +1235,12 @@ designing templates becomes fun! Let's try it:
     layout template whenever you need by using *Visual (Experimental)* mode in
     Developer Studio. 
 
-    ![Figure 10.12: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
+    ![Figure 9.12: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
 
 5.  To finely tune your design's dimensions, switch to *Source* view and edit
     your TPL files as necessary. 
 
-![Figure 10.13: Source view of the template](../../images/layout-template-tpl-src-almost.png)
+![Figure 9.13: Source view of the template](../../images/layout-template-tpl-src-almost.png)
 
 For example, if you want each second-row column of the above template to be 25%
 of the page width, adjust that row's first column (`column-2`) from 20% to 25%. 
@@ -1268,7 +1268,7 @@ arranged and sized evenly.
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
 
-### Embedding Portlets in a Layout Template 
+## Embedding Portlets in a Layout Template 
 
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting
@@ -1298,7 +1298,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 10.14: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 9.14: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1356,14 +1356,14 @@ What would a page using our "Columns 1 4 1" layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 10.15: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
+![Figure 9.15: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
 Wouldn't it be nice to have an organized reference of available layout template
 variables? You're in luck! We'll dive into available variables next!
 
-### Available Variables 
+## Variables Available to Layout a Template
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
@@ -1390,18 +1390,7 @@ your convenience, we've listed all of them in the following table.
 
 Now your layout template toolbox is complete. 
 
-## Summary  
-
-In this chapter we created layout templates, arranged their rows and columns,
-and embedded portlets in them. Congratulations on mastering the fundamentals of
-Liferay's layout templates, but be careful. If your Feng Shui skills become
-widely known, your friends may ask you to re-arrange their living room
-furniture! 
-
-If you're up for it, let's learn how to customize core Liferay portlets using
-hooks--sounds "catchy", right?! 
-
-<!-- ## Summary  -->
+## Summary
 
 In this chapter, you learned how to customize the look and feel of your Liferay
 Portal by creating custom themes. During this process, you created your own
@@ -1411,3 +1400,11 @@ library, AlloyUI, and how to make your theme configurable by adding settings
 that portal administrators can manage within Liferay. Your CSS options,
 including color schemes, and predefined settings for your theme, were discussed
 to round out your understanding of theme development. 
+
+We also created layout templates, arranged their rows and columns, and embedded
+portlets in them. Congratulations on mastering the fundamentals of Liferay's
+layout templates, but be careful. If your Feng Shui skills become widely known,
+your friends may ask you to re-arrange their living room furniture! 
+
+If you're up for it, let's learn how to customize core Liferay portlets using
+hooks--sounds "catchy", right?! 

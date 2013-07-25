@@ -19,18 +19,18 @@ examples, check out the liferay-plugins repository from
 We'll discuss the following topics as we learn about developing portlets for
 Liferay:
 
-- Creating a Portlet project 
-- Anatomy of a Portlet project
+- Creating a Portlet Project 
+- Anatomy of a Portlet Project
 - Writing the My Greeting Portlet
-- Understanding the two phases of Portlet Execution 
+- Understanding the Two Phases of Portlet Execution 
 - Passing Information from the Action Phase to the Render Phase
 - Developing a Portlet with Multiple Actions 
 - Adding Friendly URL Mapping to the Portlet 
-- Localizing your Portlet 
+- Localizing Your Portlet 
 
 First, let's create the portlet that we'll use throughout this chapter. 
 
-## Creating a Portlet
+## Creating a Portlet Project
 
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
@@ -94,7 +94,7 @@ configuration, and we encourage you to keep your projects in the Plugins SDK.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: If you are using a source
+ ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
  control system such as Subversion, CVS, Mercurial, Git, etc., this might be
  a good moment to do an initial check-in of your changes. After building the
  plugin for deployment, several additional files will be generated that should
@@ -112,7 +112,7 @@ is a method of deployment used throughout this guide.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide
+ ![note](../../images/tip-pen-paper.png) **Note:** Liferay supports a wide
  variety of application servers. Many, such as Tomcat and Jboss, provide a
  simple way to deploy web applications by just copying a file into a folder and
  Liferay's auto-deploy mechanism takes advantage of that ability. You should be
@@ -152,7 +152,7 @@ page below.
 
 Congratulations, you've just created your first portlet! 
 
-## Anatomy of a Portlet
+## Anatomy of a Portlet Project
 
 A portlet project is made up of at least three components:
 
@@ -476,7 +476,7 @@ a custom greeting.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If your portlet deployed
  successfully, but you don't see any changes in your browser after refreshing
  the page, Tomcat may have failed to rebuild your JSPs. To fix this, delete the
 `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh
@@ -760,7 +760,7 @@ phase you must read them from the `actionRequest` and then invoke the
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Liferay offers a convenient
  extension to the portlet specification through the `MVCPortlet` class to copy
  all action parameters directly as render parameters. You can achieve this by
  setting the following `init-param` in your `portlet.xml`:
@@ -994,7 +994,7 @@ For more information on friendly URL mapping, there's a detailed discussion in
 [*Liferay in Action*](http://manning.com/sezov). Our next step here is to
 explore localization of the portlet's user interface. 
 
-## Localizing your Portlet
+## Localizing Your Portlet
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
@@ -1069,9 +1069,7 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 When you refesh your page, your "My Greeting" portlet greets you by your screen
 name!
 
-![Figure 3.11: By passing the user's screen name as an argument to Liferay's
-`welcome-x` language key, we were able to display a personalized
-greeting.](../../images/portlets-welcome-user-screenname.png)
+![Figure 3.11: By passing the user's screen name as an argument to Liferay's `welcome-x` language key, we were able to display a personalized greeting.](../../images/portlets-welcome-user-screenname.png)
 
 Other message tags you'll want to use are the `<liferay-ui:success />` and
 `<liferay-ui:error />` tags. The `<liferay-ui:success />` helps you give
@@ -1258,7 +1256,7 @@ our title and description keys in `Language.properties` would be:
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Do you know how your portlet
  title is processed? If your portlet doesn't define a resource bundle or
  `javax.portlet.title`, the portal container next checks the `<portlet-info>`
 and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
@@ -1268,7 +1266,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Be aware that using Struts
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Be aware that using Struts
  portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
  engages a different title and description algorithm. Titles and long titles are
  pulled using two different keys:
@@ -1281,10 +1279,10 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 ### Overriding Liferay Portal Translations
 
 If you want your translations available throughout the portal, or if you want to
-override an existing translation, refer to Chapter 6 of this guide, specifically
-the *Overriding a Language.properties File* section. It describes how to use a
-hook to override existing Liferay translations. You can share your keys with
-other portlets, as well as override existing Liferay translations.  
+override an existing translation, refer to Chapter 10 of this guide,
+specifically the *Overriding a Language.properties File* section. It describes
+how to use a hook to override existing Liferay translations. You can share your
+keys with other portlets, as well as override existing Liferay translations.  
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
@@ -1319,27 +1317,31 @@ To create a plugin which extends another, follow these steps:
     compiled. All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.x
-            ml
+        Buildfile:
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
         
         compile:
         
         merge:
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/classes 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/lib 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        classes 
+        [mkdir] Created dir:
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        lib 
         
         merge-unzip:
         [unzip] Expanding:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/social-networking-portlet-
-        6.1.10.1-ee-ga1.war into /home/dsanz/sdk/portlets/my-social-networking-portlet/t
-        mp 
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/social-
+        networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/
+        portlets/my-social-networking-portlet/tmp 
         [copy] Copying 2 files to
         /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp 
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/WEB-INF/classes
+        /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/
+        WEB-INF/classes
         
         ...
 
@@ -1365,5 +1367,13 @@ information between them in a portlet. You've enhanced a portlet with multiple
 actions and have mapped a friendly URL to it. Lastly, you've found how easy it
 is to start localizing your portlets. You're really on a roll! 
 
-What better way to keep things rolling than to focus on your portal's overall
-look and feel using Liferay Themes! We'll cover Themes next. 
+Now that you know how to create portlets, you'll need to consider a few things,
+such as persisting your objects to a database, maintaining separatation between
+your persistence layer, business logic, and presentation layer, and allowing for
+flexible implementations. Lastly, you'll want the ability to publish your
+portlet's operations as services. So how do you address all of this? Hibernate
+probably comes to mind for persisting your data model, and Spring probably comes
+to mind with regards to supporting implementation flexibility. Sounds
+complicated, right? No need to worry! Liferay's Service Builder helps you build
+portlet services while hiding the complexities of using Spring and Hibernate
+under the hood. We'll cover Service Builder next. 

@@ -105,7 +105,7 @@ step-by-step using Liferay IDE/Developer Studio.
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png)**Note:** If you're actually looking for
+ ![Tip](../../images/tip-pen-paper.png) **Note:** If you're actually looking for
  a portlet application that can manage events, please consider using Liferay's
  Calendar portlet. The example described in this section is only intended to
  demonstrate how to use Service Builder. The Calendar portlet provides many more
@@ -381,7 +381,7 @@ entities, we'll set both local service and remote service to `true`.
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity columns. 
 
-### Step 4: Define the Columns (Attributes) for each Service Entity
+### Step 4: Define the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent attributes. For our
 example, we'll add attributes for both our Event and Location entities. To add
@@ -1632,3 +1632,17 @@ following:
 
 For more information on these services, see Liferay's Javadocs at
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+
+<!--
+Missing summary ...
+
+## Summary
+
+(Summarize what's been covered in the chapter.)
+-->
+
+In this chapter, we've only scratched the surface of remote services. In the
+next chapter, we'll show you how to find other services and invoke them. We'll
+take an in-depth look at Liferay's service security layer. And last but not
+least we'll dive deep into SOAP web services and JSON web services. So hold on
+tight, you're about to get served a big helping of Liferay services. 
