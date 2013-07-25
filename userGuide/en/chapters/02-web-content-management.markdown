@@ -265,9 +265,8 @@ site is available for crawling.
 you don't want to be indexed by search engines. You need to set a virtual host
 before you set a `robots.txt` file.
 
-<!--
-**Default User Associations:**
--->
+**Default User Associations:** lets you configure site roles and teams that
+newly assigned site members will have by default.
 
 **Staging:** lets you turn on either Local Live staging or Remote Live staging.
 To enable staging, the *Enable propagation of changes from the site template*
@@ -277,13 +276,18 @@ site. The changes still must be approved before the site is published to live.
 
 **Analytics:** lets you set a Google Analytics ID that is used for your site.
 
-<!--
-**Content Sharing:**
+**Content Sharing:** lets you configure whether sub-sites can display content
+from this site.
 
-**Recycle Bin:**
+**Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
+site. You can also regulate the age (in days) for which content is able to be
+stored in the Recycle Bin until it is permanently deleted.
 
-**Custom Fields:**
--->
+**Custom Fields:** lets you edit the custom fields you already have configured
+for the *Site* resource.
+
+**Display Settings:** lets you configure the language options for your site.
+
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
