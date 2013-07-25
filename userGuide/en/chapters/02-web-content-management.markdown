@@ -356,13 +356,13 @@ way for you to back them up to separate files. Let's see how that works.
 
 ##### Backing up and Restoring Pages
 
-Next to the *Add Page* button in the Manage Site Pages screen, there are two
-buttons labeled *Export* and *Import*. The Export button exports the pages you
-create into a single file, called a LAR (Liferay Archive). You can then import
-this file into any server running Liferay to re-create the pages. If you have a
-LAR you would like to import, use the *Import* button. Exporting and Importing
-LARs is a great way to take content from one environment (say, a development or
-QA environment) and move it all in one shot to your production server. Note that
+Next to the *Add Page* button on the Site Pages screen, there are two buttons
+labeled *Export* and *Import*. The Export button exports the pages you create
+into a single file, called a LAR (Liferay Archive). You can then import this
+file into any server running Liferay to re-create the pages. If you have a LAR
+you would like to import, use the *Import* button. Exporting and Importing LARs
+is a great way to take content from one environment (say, a development or QA
+environment) and move it all in one shot to your production server. Note that
 you should not make this a regular occurrence. If you want to regularly move
 pages from one server to another, you should use Liferay's staging environment,
 which is covered in chapter 3.
@@ -377,16 +377,17 @@ version.
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `nosesterv1.lar`. Use the check boxes
 to determine what you'd like to export. For this initial export, select
-everything. Note that if you select the *More Options* link, the list expands to
-include data from many of Liferay's applications, including the Documents and
-Media Library, Message Boards and Web Content. You can also export the theme
-you're using.
+everything. Note that if you select one of the *Choose* radio selectors or
+*Change* links, you're given checkboxes for options to choose. The applications'
+content can also be selcted for export, including the Documents and Media
+Library, Message Boards, and Web Content assets. You can even export the theme
+you're using!
 
 Once you click *Export*, your browser prompts you to save the file. Once you
 have the file, you can copy it to a backup location for safekeeping or import it
 into another installation of Liferay Portal. If you must rebuild or wish to
 revert back to this version of your site, you can import this file by clicking
-the *Import* button from the Manage Site Pages dialog box, browsing to it and
+the *Import* button from the Site Pages dialog box, browsing to it and
 selecting it. 
 
 Next, we'll look at the options on the right side menu, starting with Look and
@@ -405,15 +406,16 @@ installed yet, we'll use the default theme for our pages.
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. Change the
-color scheme from blue to green by selecting *Green* under *Color Schemes*. If
-you now go back to the site (by clicking *Back to nosester.com* in the top left
+color scheme from blue to green by selecting *Dark* under *Color Schemes*. If
+you now go back to the site (by clicking the left arrow in the top left
 corner of the Dockbar), you'll see some parts of the page are now tinged
-in a greenish hue. 
+with a darker hue. 
 
 If you apply a color scheme to a set of public or private pages, it is, by
-default, applied to each page in the set. If, however, you click *Edit* &rarr;
-*Page*, you can select *Define a specific look and feel for this page* to make
-the color scheme apply to this page only. You can use this feature to choose a
+default, applied to each page in the set. If, however, you click the *Edit Page*
+button from the left palette of a specific page, you can select *Define a
+specific look and feel for this page* from the *Look and Feel* tab to make the
+color scheme apply to this page only. You can use this feature to choose a
 different color scheme for a particular page than the one defined for the set of
 public or private pages to which it belongs.
 
@@ -426,6 +428,10 @@ create another site for mobile users attached to the
 [http://m.nosester.com](http://m.nosester.com) address and serve up a page
 designed for the smaller screens on phones.
 
+<!-- Noticed the *Regular Browsers* and *Mobile Devices* tabs aren't present
+anymore for Site Pages. Need to check on how to modify a specific page to look
+different on mobile device and regular browser. 7/25/13 -->
+
 The *CSS* section allows you to enter custom CSS that will also be served up by
 your theme. In this way, you can tweak a theme in real time by adding new styles
 or overriding existing ones. 
@@ -434,20 +440,21 @@ The next option configures the logo that appears for your site.
 
 ##### Using a Custom Logo for a Site
 
-If you want to use your own logo for a specific site, use the Logo tab. Adding a
-custom logo is easy: select the Logo tab and browse to the location of your
-logo. Make sure your logo fits the space in the top left corner of the theme
-you're using for your web site. If you don't, you could wind up with a site
-that's difficult to navigate, as other page elements are pushed aside to make
-way for the logo.
+By default, the Liferay logo is used for your site pages' logo. If you want to
+use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
+is easy: select the Logo tab from the Site Pages interface and browse to the
+location of your logo. Make sure your logo fits the space in the top left corner
+of the theme you're using for your web site. If you don't, you could wind up
+with a site that's difficult to navigate, as other page elements are pushed
+aside to make way for the logo.
 
 In the logo tab, you can also choose whether or not to display the site name on
 the site. If you check the box labeled *Show Site Name* the site name will
-appear in the top right corner of the page. This option is enabled by default
-and cannot be disabled if the *Allow Site Administrators to set their own logo*
-option is disabled in *Portal Settings*. It is also not available for the
+appear next to the logo. This option is enabled by default and cannot be
+disabled if the *Allow Site Administrators to set their own logo* option is
+disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
-the name display.
+the name display. Let's take a look at how to edit individual pages.
 
 #### Changing Options for Individual Pages
 
