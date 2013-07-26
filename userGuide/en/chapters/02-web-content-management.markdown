@@ -810,17 +810,16 @@ Liferay at this point so let's look at what you'd put on a page.
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets. Even
 static web content can be displayed through Web Content Display portlets. To add
-a portlet to a page, just click *Add* &rrar; *Content and Applications* &rarr;
-*Applications* from the Dockbar. You can either browse through the categories of
+a portlet to a page, just click the *Add* button from the left palette and
+select the *Applications* tab. You can either browse through the categories of
 available portlets until you find the one you're looking for or you can search
 for portlets by name. Once you've found a portlet, click the *Add* button to add
 it the current page. Once it's been added to the page, you can drag it to a new
-position. Alternatively, you can drag the portlet directly from the Dockbar's
-Add menu to a specific location on the page. Let's add some portlets to the
+position. Alternatively, you can drag the portlet directly from the Applications
+menu to a specific location on the page. Let's add some portlets to the
 Collaboration page of the Nose-ster site.
 
-1. From the Dockbar, select *Add* &rarr; *Content and Applications* &rarr;
-*Applications*.
+1. From the left palette, select *Add* &rarr; *Applications*.
 2. In the menu that appears, expand the *Collaboration* category.
 3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
    right column of our page.
@@ -849,14 +848,14 @@ Let's say we wanted to create a page only for administrators to see. We can do
 this with the following procedure:
 
 1. Go to the Dockbar and select *Admin* &rarr; *Site Administration*.
-3. Click the *Site Pages* link.
-4. Click the *Private Pages* tab to switch to the Private Pages. Remember,
+2. Click the *Site Pages* link (if necessary).
+3. Click the *Private Pages* tab to switch to the Private Pages. Remember,
    these pages by default are viewable only by members of the site.
-5. Create a page called *Admin Tips*.
-6. Click on the page in the tree on the left and then click *Permissions*.
-7. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
+4. Create a page called *Admin Tips*.
+5. Click on the page in the tree on the left and then click *Permissions*.
+6. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
    role.
-8. Click the *Save* button.
+7. Click the *Save* button.
 
 ![Figure 2.10: The Permissions offer a plethora of options for each role.](../../images/04-web-content-page-permissions.png)
 
@@ -1044,9 +1043,9 @@ these categories are defined by a property in the properties file; see the
 expires.
 
 **Display Page:** lets you determine where the web contents are displayed when
-linked from other pages. The concept of the Canonical URL is new to Liferay 6.1.
-The Canonical URL is unique for articles that redirect the visitor to the
-article's default display page. 
+linked from other pages. The Canonical URL can be used here. The Canonical URL
+is unique for articles that redirect the visitor to the article's default
+display page.
 
 Imagine you have a newspaper with a sports section and a technology section. You
 add a Sports page and a Tech page to your site, each one with a specific banner
@@ -1135,8 +1134,8 @@ it works.
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
-to our Welcome page by selecting *Add* &rarr; *Content and Applications* &rarr;
-*Applications* from the Dockbar.
+to our Welcome page by selecting the *Add* button from the left palette and
+selecting the *Applications* tab.
 
 ![Figure 2.17: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
 
@@ -1220,10 +1219,11 @@ When you publish your content this way, it becomes available immediately
 happens whether you edit it in place or in Site Administration.
 
 Note: if you want to view your page the way your users will see it (i.e.,
-without all those portlet controls and icons), go up to the Dockbar and select
-*Edit Controls*. This makes all those extra controls you see as a portal
-administrator disappear. If you need to use those controls again, just select
-*Edit Controls* again. 
+without all those portlet controls and icons), go up to the left palette and
+select the check mark. This makes all those extra controls you see as a portal
+administrator disappear. You'll also notice the check mark transforms into an
+**X**. If you need to use those controls again, just select the **X** to return
+to the original format.
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -1275,6 +1275,9 @@ organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content  
+
+<!-- Still need to check that instructions match with 6.2. Kaleo workflow plugin
+was not compatible when testing. -->
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
