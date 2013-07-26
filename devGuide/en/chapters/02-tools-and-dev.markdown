@@ -1211,6 +1211,9 @@ appends "-portlet" to the project name when creating its directory.
 
 ![Figure 2.13: Creating the Event Listing Portlet.](../../images/02-terminal-build-success-plugins-sdk-project-create.png)
 
+<!--New image. If it stays we'll need to fix the figure numbers throughout the
+chapter. -->
+
 ---
 
  ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
