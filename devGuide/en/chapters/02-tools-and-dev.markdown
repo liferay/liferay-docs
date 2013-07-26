@@ -311,8 +311,8 @@ Schnozz, wants us to develop some plugins for him, so let's create an
 *event-listing-portlet* project to hold the site's portlet plugins. 
 
 <!-- For additional context, please borrow from service builder chapter
-description of event listing portlet in the Configuring Service Builder and
-Defining Portlet Data section. - Jim
+description of event-listing-portlet project in the Configuring Service Builder
+and Defining Portlet Data section. - Jim
 -->
 
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
@@ -330,16 +330,30 @@ field. It should have a *Display Name* of *Event Listing*. Click *Finish*.
     ![Figure 2.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
 <!-- 
-Please explain the purpose Project Name and Display Name. Also, please point out
-the Plugins SDK and Portal Runtime options. The IDE lists the Plugins SDK(s) and
-Server(s) that are currently configured. Either they came setup with Developer
-Studio and/or the reader set them up following the previous sections.
-    
-Instead of clicking Finish, have the reader click Next as we'll want them to
-create the Event Listing portlet as they create the project with this wizard. It
-allows us to point out the portlet project options (MVC, Vaadin, JSF) too.
+Hold off on creating the Event Listing and Location Listing portlets until the
+section on creating plugins. For now we want to point out what the plugin
+project wizard creates.
 
-Please update the image so that the Next button is selected.
+Please explain the purpose of the Project Name and Display Name. Also, please
+point out the Plugins SDK and Portal Runtime options. The IDE lists the Plugins
+SDK(s) and Server(s) that are currently configured (Either they came setup with
+Developer Studio and/or the reader set them up following the previous
+sections). The display name and the plugins SDK version affect the plugin
+package's name. This name is used as the app's name when you publish to
+Marketplace. The plugins SDK version is used in generating the Liferay version
+for which the application is intended. See the Marketplace chapter for
+background on this.   
+
+Instead of clicking Finish, have the reader click Next as we'll want them to
+select a portlet framework for the project. The framework he chooses is used
+in providing the default portlet type used in creating portlet plugins in the
+project. So please point out the portlet project options (MVC, Vaadin, JSF). And
+explain that we'll go into more details about them later in the next chapter on
+portlets.
+
+Please update the image so that the Next button is selected, so they select a
+default portlet framework. They should click finish after selecting the
+framework. 
     
 Here's something you can start with as part of step 2:
     
@@ -351,27 +365,10 @@ Here's something you can start with as part of step 2:
     But for demonstration purposes, we'll create a Portlet project that we'll
     use as an example throughout this guide. 
 
-    (Explain the Nosester Event Listing portlet project. It will need an
-    Event Listing portlet and a Location Listing portlet.) 
-
-    If you're creating a portlet plugin in this project, as we're creating an
-    Even Listing portlet for our example, be sure to select Portlet as your
-    project's Type. Then, after clicking Next, the wizard displays the Liferay
-    Portlet Plugin Project screen from which you can select one of the following
-    portlet frameworks to use in your project:
-
-        - Liferay's Model View Controller (MVC) – (describe)
-        - JavaServer Faces (JSF) - (describe)
-        - Vaadin – (describe)
-    
-This example portlet is required to have certain values; so we'll need to
-provide those values for the reader to enter here. See Chapter 4's Configuring
-Service Builder and Defining Portlet Data section. The section gives the wizard
-field values briskly, but comprehensively. Let's make sure the reader enters
-those values here too. Present them in a manner that seems best to you.
-
-We can express to the reader that we'll go into more detail on these portlet
-fields in Chapter 3. - Jim -->
+    (Explain the Nose-ster Event Listing portlet project. Explain that for now
+    we'll just create the project so we can highlight what the IDE does in
+    creating projects. We'll add portlets in the section on creating plugins.)
+-->
 
 Our *event-listing-portlet* plugin project should appear in the package
 explorer. Here's the project's directory structure: 
@@ -393,10 +390,13 @@ explorer. Here's the project's directory structure:
         - `view.jsp`
 
 <!-- Inform the reader that the project is created to the Liferay Plugins SDK
-that you specified in the wizard. Explain that each project, regardless of type,
+that he specified in the wizard. Explain that each project, regardless of type,
 is created with an Ant build file called `build.xml`. The build file provides
 the means to compile the project and deploy it to a Liferay Portal runtime
-server. Liferay IDE leverages the build file to perform these operations. - Jim
+server. Liferay IDE leverages the build file to perform these operations.
+
+Also draw their attention to the liferay-plugin-package.properties. This is
+created for all plugin projects, regardless of type. - Jim
 --> 
         
 <!--I pulled the above structure from the portlets chapter. In IDE when I
@@ -406,9 +406,9 @@ v6.2CE(Tomcat7), and Lifeay Portlet Plugin API. Should those be included here
 for completeness? I added docroot/WEB-INF/src already. - Russ -->
 
 <!-- With regards to the project's file structure, no need to mention the JRE
-and Liferay v6.2CE Tomcat7. But, when you create the project with a portlet as
-I'm suggesting, you'll get a bunch of other files/folders. Please list all of
-them in this unordered list. - Jim --> 
+and Liferay v6.2CE Tomcat7. But, when you create the project you'll get a bunch
+of other files/folders. Please list all of them in this unordered list.
+- Jim --> 
 
 Now you need to deploy your new plugin project to your Liferay Server. 
 
@@ -456,12 +456,26 @@ Now your Liferay IDE contains a plugin project with the skeleton of the Event
 Listing portlet.  Along with the Event Listing portlet, let's create a Location
 Listing porlet inside the same project: 
 
-<!-- Please give context for creating the Location Listing portlet. You can move
-any helpful content from the Service Builder chapter on creating the Location
-Listing portlet. (See Configuring Service Builder and
-Defining Portlet Data section from "Next, we'll create a second portlet in the
-event-listing-portlet project" through the the summary listing of the values for
-that portlet.) - Jim -->
+<!-- Mention the event-listing-portlet-project we created in the section on 
+creating new Liferay projects.
+
+Explain the purpose of the Event Listing and Location Listing portlets. You can
+move any helpful content from the Service Builder chapter on these portlets.
+(See Configuring Service Builder and Defining Portlet Data section) 
+
+Create the Event Listing portlet first and use it to point out all of the
+wizard's features and the end results it produces. The example portlets are
+required to have certain values; so we'll need to provide those values for the
+reader to enter. 
+
+See Chapter 4's Configuring Service Builder and Defining Portlet Data section.
+The section gives the wizard field values briskly, but comprehensively. Let's
+make sure the reader enters those values here too. Present them in a manner that
+seems best to you. 
+
+We can express to the reader that we'll go into more detail on the portlet
+fields in Chapter 3. - Jim -->
+-->
 
 1. Go to File &rarr; New  &rarr; Liferay Portlet. 
 
