@@ -749,7 +749,8 @@ enable you to preconfigure a single page and then apply it to any new page you
 create. Site templates allow you to do the same thing but on the scale of a
 site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
-more information on page templates and site templates, see chapter 3. 
+more information on page templates and site templates, see the *Advanced Web
+Content Management* chapter. 
 
 #### Site Content
 
@@ -769,34 +770,40 @@ let's start working on the Nose-ster site. You can do this by going up to the
 Dockbar and clicking *My Sites* &rarr; *Nose-ster*.
 
 We'll use the *Community* page you created earlier in the chapter. Navigate to
-the *Community* page and select *Manage* &rarr; *Page* from the Dockbar.
+the *Community* page and select the *Add* button from the left palette and then
+the *Page* tab.
 
-This screen should now be familiar to you but let's recap. 
+This screen's options should look familiar to you from previous sections, but
+let's briefly go through how to create a new page: 
 
-The Page tab allows you to:
+The Page interface allows you to:
 
-- Change the name of the page
-- Enter HTML code for the title
-- Choose the page type
+- Give the name of the page
 - Hide the page from the theme navigation
-- Define a friendly URL to the page
-- Choose an icon to be displayed
-- Choose a frame target for the page
+- Choose the page template
+- Link to another website
+- Link to another page in the current site
 - Copy an existing page
 
-You can also enter custom meta tags or JavaScript to the page if you're a web
-developer. Additionally, if you click the *Permissions* button, you can define
-which users, groups, roles or organizations can view or edit the page.
+When you select *Add Page* at the bottom of the menu, your new page will
+appear on the navigation menu of your site. You can drag the page names to their
+correct order as you see fit.
 
-The Children tab lets you create child pages underneath the page you've
+You can also create new pages from the Site Pages interface. Navigate to Site
+Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
+*Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
+which we discussed earlier in the chapter. If you navigate to a specific site,
+you'll notice the *Add Child Page* button.
+
+The *Add Child Page* lets you create child pages underneath the page you've
 selected. You can nest pages as deep as you like but for every page below the
 top level hierarchy you must provide navigation to it via a Navigation or
 Breadcrumb portlet, at least with most themes (including the default).
 Developers can create themes which have cascading menu bars which show the full
 hierarchy. Some examples of that are in Liferay's plugin repositories.
 
-For now, click *Return to full page*. You should be able to define and manage
-pages in Liferay at this point so let's look at what you'd put on a page. 
+For now, click the back arrow. You should be able to define and manage pages in
+Liferay at this point so let's look at what you'd put on a page.
 
 #### Adding Portlets to a Page
 
