@@ -121,7 +121,7 @@ within the site to different members. This can be done through *site roles*
 which are defined equally for all sites or *teams* which are unique for each
 site.
 
-As of Liferay 6.2, site can be organized hierarchically, just like
+As of Liferay 6.2, sites can be organized hierarchically, just like
 organizations. The difference between sites and organizations, of course, is
 that sites are used to organize pages, content, application data, and users (via
 site memberships) whereas organizations are only used to group users. Please
@@ -204,11 +204,14 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 2.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
+![Figure 2.11: The New Site window aids in your new site development.](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
 **Description:** describes the site's intended function.
+
+**Active:** determines whether a site is active or inactive. Inactive sites are
+inaccessible but can be activated whenever a site administrator wishes.
 
 **Membership Type:** can be open, restricted or private. An open site appears in
 the My Sites portlet and users can join and leave the site whenever they want. A
@@ -217,8 +220,11 @@ administrator must then explicitly grant or deny users' requests to join. A
 private site does not appear in the My Sites portlet and users must be added to
 it manually by a site administrator.
 
-**Active:** determines whether a site is active or inactive. Inactive sites are
-inaccessible but can be activated whenever a site administrator wishes.
+**Allow Manual Membership Management:** determines whether Site Membership
+Policy Management is enabled or disabled. Some portal administrators may want to
+have membership policies be handled automatically without having to manually add
+or remove site members of their site. When disabled, the Site Membership section
+as well as various other options to manually assign/remove members are hidden.
 
 **Parent Site:** lets you select a parent site for the site that's being
 created. As of Liferay 6.2, sites can be organized hierarchically. Using
@@ -229,55 +235,8 @@ hierarchy should match the site hierarchy.
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization, Advanced, and
-Miscellaneous.
-
-![Figure 2.12: On the right panel, you can customize a wide selection of site configuration options.](../../images/01-site-editor.png)
-
-**Details:** lets you edit the information you entered when you created the site
-and allows you to choose a site template for the public or private pages of your
-site. If you select a site template, leave the *Enable propagation of changes
-from the site template* box checked to automatically update your site if the
-associated site template changes. The update will only be done to pages which
-have not been changed within the specific site. If you uncheck this box but
-recheck it later, the template pages are then reapplied to your site,
-overwriting any changes that may have been made. Only users who have the
-permission "Unlink Site Template" will be able to disable the propagation of
-changes. When the propagation is enabled, the site template might prevent
-modification of some or all pages to ensure the propagation occurs.
-
-**Categorization:** allows you to apply categories and tags to the site.
-
-**Site URL:** lets you set friendly URLs and virtual hosts for your web site.
-
-**Site Template:** provides additional information about the site template
-associated to the pages of the site (if any).
-
-**Sitemap:** lets you use the sitemap protocol to notify search engines your web
-site is available for crawling.
-
-**Robots:** lets you use a `robots.txt` file to specify certain pages and links
-you don't want to be indexed by search engines. You need to set a virtual host
-before you set a `robots.txt` file.
-
-<!--
-**Default User Associations:**
--->
-
-**Staging:** lets you turn on either Local Live staging or Remote Live staging.
-To enable staging, the *Enable propagation of changes from the site template*
-box on the Details tab must be unchecked. With staging enabled, changes to the
-site template are automatically propagated to the staged site, not to the live
-site. The changes still must be approved before the site is published to live.
-
-**Analytics:** lets you set a Google Analytics ID that is used for your site.
-
-<!--
-**Content Sharing:**
-
-**Recycle Bin:**
-
-**Custom Fields:**
--->
+Miscellaneous. We'll go into more detail for your site's settings in the *Site
+Settings* section later in the chapter.
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
@@ -286,35 +245,37 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
 
+Now that our new site is created, lets learn how to create and manage its pages.
+
 ### Creating and Managing Pages
 
-You have a few options for accessing and configuring the page creation
-interface. There are two interfaces to be aware of: *Site Pages* and *Page*.
-Although both interfaces deal with your portal's pages, their settings are
-configurable in different places.
+You have a few options for accessing and configuring your site's page editing
+interface. There are three interfaces to be aware of: *Site Pages*, *Page*, and
+*Edit Page*. These interfaces all deal with your site's pages, however, each
+interface is configurable in a different place and completes different
+objectives. 
 
 From the Site Administration page, your site pages can be accessed and
 configured. If you're already on your desired site, you can reach the Site
 Administration page by navigating to the *Admin* tab in the Dockbar and
 selecting *Site Administration*. If you're not currently on the site you'd like
-to edit, go to *Control Panel* &rarr; *Sites* and select your desired site. This
-will also bring you to the site's Site Administration page. Once you're on the
-Site Administration page, select *Site Pages* under the Main tab from the left
-panel.
+to edit, go to *My Sites* in the Dockbar and select your desired site. Once
+you're on the Site Administration page, select *Site Pages* (if necessary) under
+the Pages tab from the left panel. You can also use the *Pages* shortcut which
+is also listed under the Admin tab.
 
-To manage the specific page of the site you've navigated to, click *Edit* from
-the Dockbar and select *Page*. This will only edit the specific page you're
-currently on.
+![Figure 2.2: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
 
-![Figure 2.2: The *Page* interface allows you to edit specific pages.](../../images/04-web-content-managing-single-page.png)
+To add new pages to your site, click the *Add* button (plus sign) from the left
+palette and select the *Page* tab. This is the *Page* interface, which offers a
+plethora of options for your new page including name, site layout, and site
+template.
 
-For convenience, you can also navigate to the Sites page under the Sites section
-of the Control Panel and click *Actions* &rarr; *Manage Pages*. To quickly add a
-single page while to the site you're browsing, click *Add* from the Dockbar and
-select *Page*. Just enter a name for the page and it's added immediately. Click
-the name of the page in the navigation menu to visit it and start working on it.
+To manage the specific page of the site you've navigated to, click the *Edit
+Page* button (pencil icon) from the left palette. This will only edit the
+specific page you're currently on.
 
-![Figure 2.3: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
+![Figure 2.3: The *Edit Page* interface allows you to edit the current page you're on.](../../images/04-web-content-managing-single-page.png)
 
 *Site Pages* is an interface to view existing pages, create new pages, view
 pages and export or import pages using Liferay Archive (LAR) files. Note that
@@ -355,53 +316,53 @@ prepopulated with portlets from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
 available. To view the pages once you add them, click the *View Pages* button.
 This is how you'd populate your pages with content and applications. This is
-covered in succeeding chapters. Page types include **Portlet Pages**, **Panel
-Pages**, **Embedded Pages**, **URL Pages** and **Link to Page**. By default, all
-pages are created as portlet pages but in some situations you might want to use
-one of the other options. 
+covered in succeeding chapters. Page types include **Layout**, **Panel**,
+**Embedded**, **Link to URL**, and **Link to a Page of This Site**. By default,
+all pages are created as portlet pages but in some situations you might want to
+use one of the other options. 
 
-**Portlet Pages** are the pages we're usually talking about. They have a layout
+**Layout:** the pages we're usually talking about. They have a layout
 which you can drag and drop portlets into. Most of the pages you create will be
-portlet pages.
+layout pages.
 
-**Panel Pages** can have any number of portlets on them, as selected by an
+**Panel:** can have any number of portlets on them, as selected by an
 administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
 selected portlet takes up the entire page. 
 
-**Embedded Pages** display content from another website inside of your portal.
+**Embedded:** display content from another website inside of your portal.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
 portal.
 
-**URL Pages** are just redirects to any URL specified by an administrator. You
-can use URL pages to create links to pages belonging to other sites of your
+**Link to URL:** are just redirects to any URL specified by an administrator.
+You can use URL pages to create links to pages belonging to other sites of your
 portal or to pages of an external site. Use URL pages cautiously since blind
 redirects create a poor user experience.
 
-**Link to Page** creates a portal page which functions as an immediate redirect
-to another page within the same site. You can select which page to link to from
-a dropdown in the page management interface. You could use a *Link to Page* to
-place a deeply nested page in the primary navigation menu of your site, for
-example.
+**Link to a Page of This Site:** creates a portal page which functions as an
+immediate redirect to another page within the same site. You can select which
+page to link to from a dropdown in the page management interface. You could use
+a *Link to a Page of This Site* to place a deeply nested page in the primary
+navigation menu of your site, for example.
 
-To use the Manage Page interface to create a page, navigate to *Edit* on the
-Dockbar and select *Page*. Notice that it's not possible to add a new page.
-This is because you're only managing the current page, so your only option is to
-add a child page. 
+To use the Edit Page interface to modify an existing page, navigate to the left
+palette and select the Edit Page button (pencil icon). Notice that it's not
+possible to add a new page. This is because you're only managing the current
+page.
 
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
 ##### Backing up and Restoring Pages
 
-Next to the *Add Page* button in the Manage Site Pages screen, there are two
-buttons labeled *Export* and *Import*. The Export button exports the pages you
-create into a single file, called a LAR (Liferay Archive). You can then import
-this file into any server running Liferay to re-create the pages. If you have a
-LAR you would like to import, use the *Import* button. Exporting and Importing
-LARs is a great way to take content from one environment (say, a development or
-QA environment) and move it all in one shot to your production server. Note that
+Next to the *Add Page* button on the Site Pages screen, there are two buttons
+labeled *Export* and *Import*. The Export button exports the pages you create
+into a single file, called a LAR (Liferay Archive). You can then import this
+file into any server running Liferay to re-create the pages. If you have a LAR
+you would like to import, use the *Import* button. Exporting and Importing LARs
+is a great way to take content from one environment (say, a development or QA
+environment) and move it all in one shot to your production server. Note that
 you should not make this a regular occurrence. If you want to regularly move
 pages from one server to another, you should use Liferay's staging environment,
 which is covered in chapter 3.
@@ -416,16 +377,17 @@ version.
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `nosesterv1.lar`. Use the check boxes
 to determine what you'd like to export. For this initial export, select
-everything. Note that if you select the *More Options* link, the list expands to
-include data from many of Liferay's applications, including the Documents and
-Media Library, Message Boards and Web Content. You can also export the theme
-you're using.
+everything. Note that if you select one of the *Choose* radio selectors or
+*Change* links, you're given checkboxes for options to choose. The applications'
+content can also be selcted for export, including the Documents and Media
+Library, Message Boards, and Web Content assets. You can even export the theme
+you're using!
 
 Once you click *Export*, your browser prompts you to save the file. Once you
 have the file, you can copy it to a backup location for safekeeping or import it
 into another installation of Liferay Portal. If you must rebuild or wish to
 revert back to this version of your site, you can import this file by clicking
-the *Import* button from the Manage Site Pages dialog box, browsing to it and
+the *Import* button from the Site Pages dialog box, browsing to it and
 selecting it. 
 
 Next, we'll look at the options on the right side menu, starting with Look and
@@ -444,15 +406,16 @@ installed yet, we'll use the default theme for our pages.
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. Change the
-color scheme from blue to green by selecting *Green* under *Color Schemes*. If
-you now go back to the site (by clicking *Back to nosester.com* in the top left
+color scheme from blue to green by selecting *Dark* under *Color Schemes*. If
+you now go back to the site (by clicking the left arrow in the top left
 corner of the Dockbar), you'll see some parts of the page are now tinged
-in a greenish hue. 
+with a darker hue. 
 
 If you apply a color scheme to a set of public or private pages, it is, by
-default, applied to each page in the set. If, however, you click *Edit* &rarr;
-*Page*, you can select *Define a specific look and feel for this page* to make
-the color scheme apply to this page only. You can use this feature to choose a
+default, applied to each page in the set. If, however, you click the *Edit Page*
+button from the left palette of a specific page, you can select *Define a
+specific look and feel for this page* from the *Look and Feel* tab to make the
+color scheme apply to this page only. You can use this feature to choose a
 different color scheme for a particular page than the one defined for the set of
 public or private pages to which it belongs.
 
@@ -465,6 +428,10 @@ create another site for mobile users attached to the
 [http://m.nosester.com](http://m.nosester.com) address and serve up a page
 designed for the smaller screens on phones.
 
+<!-- Noticed the *Regular Browsers* and *Mobile Devices* tabs aren't present
+anymore for Site Pages. Need to check on how to modify a specific page to look
+different on mobile device and regular browser. 7/25/13 -->
+
 The *CSS* section allows you to enter custom CSS that will also be served up by
 your theme. In this way, you can tweak a theme in real time by adding new styles
 or overriding existing ones. 
@@ -473,29 +440,34 @@ The next option configures the logo that appears for your site.
 
 ##### Using a Custom Logo for a Site
 
-If you want to use your own logo for a specific site, use the Logo tab. Adding a
-custom logo is easy: select the Logo tab and browse to the location of your
-logo. Make sure your logo fits the space in the top left corner of the theme
-you're using for your web site. If you don't, you could wind up with a site
-that's difficult to navigate, as other page elements are pushed aside to make
-way for the logo.
+By default, the Liferay logo is used for your site pages' logo. If you want to
+use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
+is easy: select the Logo tab from the Site Pages interface and browse to the
+location of your logo. Make sure your logo fits the space in the top left corner
+of the theme you're using for your web site. If you don't, you could wind up
+with a site that's difficult to navigate, as other page elements are pushed
+aside to make way for the logo.
 
 In the logo tab, you can also choose whether or not to display the site name on
 the site. If you check the box labeled *Show Site Name* the site name will
-appear in the top right corner of the page. This option is enabled by default
-and cannot be disabled if the *Allow Site Administrators to set their own logo*
-option is disabled in *Portal Settings*. It is also not available for the
+appear next to the logo. This option is enabled by default and cannot be
+disabled if the *Allow Site Administrators to set their own logo* option is
+disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
-the name display.
+the name display. Let's take a look at how to edit individual pages.
 
 #### Changing Options for Individual Pages
 
-When you select a single page, some different options appear. Let's look at what
-these do. 
+When you use the *Edit Page* interface for a single page, some different options
+appear. Let's look at what these do. 
 
-**Details:** lets you name the page for any localizations you need. You can also
-set the HTML title that appears in the browser window for the page. Plus you can
-set an easy to remember, friendly URL for the page. 
+**Details:** lets you name the page for any localizations you need, set whether
+the page is hidden on the navigation menu, set an easy to remember, friendly URL
+for the page, and select the page type. Plus you can specify how portlets are
+arranged on a page. Choose from the available installed templates to modify the
+layout. It's very easy for developers to define custom layouts and add them to
+the list. This is covered more thoroughly in both the *Liferay Developer's
+Guide* and in [*Liferay in Action*](http://manning.com/sezov).
 
 **SEO:** provides several means of optimizing the data the page provides to an
 indexer that's crawling the page. You can set the various meta tags for
@@ -521,17 +493,12 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-**Look and Feel:** lets you set a page-specific theme. 
-
-**Layout:** lets you specify how portlets are arranged on a page. Choose from
-the available installed templates to modify the layout. It's very easy for
-developers to define custom layouts and add them to the list. This is covered
-more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in Action*](http://manning.com/sezov). 
+**Look and Feel:** lets you set a page-specific theme.  
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
 executed on this page. 
 
-**Custom fields:** If custom fields have been defined for pages (which can be
+**Custom Fields:** If custom fields have been defined for pages (which can be
 done from the *Custom Fields* page of the Control Panel), they appear here.
 These are metadata about the page and can be anything you like, such as author
 or creation date. 
@@ -575,8 +542,7 @@ page.
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
-Note that the *Edit* &rarr; *Page Layout* menu directs you to the same Layout
-tab that's in *Edit* &rarr; *Page*. 
+Next, we'll run practice modifying page layouts!
 
 #### Modifying Page Layouts
 
@@ -585,8 +551,8 @@ want it to. Liferay comes with many layouts already defined. Developers can
 create more and they can be deployed to your portal for your use.
 
 To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select *Edit* &rarr; *Page Layout* from
-the Dockbar.
+Collaboration page. To access layouts, select the *Edit Page* button from the
+left palette (pencil icon) and click the *Details* tab (if necessary).
 
 Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
 return to the page and it'll seem as though nothing has happened. Once we start
@@ -601,20 +567,23 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Edit* menu is page customizations. 
+The next option we'll explore is page customizations. 
 
 #### Page Customizations
 
-Page Customizations are a new feature in Liferay 6.1. With page customizations,
-any user with the appropriate permissions can create personalized versions of
-any public page. Before users can create personalized versions of pages,
-customizations must first be enabled by an administrator. Administrators can
-activate or deactivate customizations for any row or column on any page. When
-users customize a page, they have the option to use either their version or the
-default version of a page. Users can't see alternate versions of pages other
-than their own.
+With page customizations, any user with the appropriate permissions can create
+personalized versions of any public page. Before users can create personalized
+versions of pages, customizations must first be enabled by an administrator.
+Administrators can activate or deactivate customizations for any row or column
+on any page. When users customize a page, they have the option to use either
+their version or the default version of a page. Users can't see alternate
+versions of pages other than their own.
 
 ![Figure 2.6: During page customization, individual columns change colors to indicate whether they are selected or not.](../../images/04-web-content-personal-customization.png)
+
+To activate page customizations, click the *Edit Page* button from the left
+palette and select the *Customization Settings* tab. Then select *Show
+Customizable Sections* to view and modify sections on your page.
 
 When an administrator activates page customizations for a page, any portlets
 that are in a *Customizable* row or column can be moved around the page or
@@ -632,7 +601,8 @@ for the site as a whole.
 
 As with Site Pages, you can access Site Settings by navigating to Site
 Administration and clicking *Site Settings* from the Configuration section on
-the left panel. 
+the left panel. You can also select the Site Administration sub-tab
+*Configuration* from the *Admin* drop-down.
 
 ![Figure 2.7: The Site Settings window offers a plethora of options for your site.](../../images/web-content-site-settings.png)
 
@@ -650,12 +620,7 @@ also request to be added through the Sites section of the Control Panel. A
 private site is like a restricted site but doesn't appear in the Sites section
 of the Control Panel for users who aren't members. 
 
-**Pages:** From Site Settings, click on *Pages* to manage some basic features of
-the pages on a site. If no pages have been defined yet, you can set site
-templates for the public or private pages. If pages already exist, links are
-provided to view them. You can also change the site's application adapter, which
-is a special type of hook plugin that customizes out of the box functionality
-for specific sites. 
+**Categorization:** allows you to apply categories and tags to the site.
 
 **Site URL:** Set a friendly URL and/or a virtual host for your site here. The
 *Friendly URL* option lets you manage the path to your site in the portal's URL.
@@ -722,9 +687,14 @@ the *Preview* link to see the generated XML.
 configure your `robots.txt` for both public and private pages on a site. If you
 don't have Virtual Hosting set up, this tab is rather boring. 
 
+**Default User Associations:** lets you configure site roles and teams that
+newly assigned site members will have by default. If you'd like to learn more
+about creating roles and/or teams, visit the *Advanced Web Content Management*
+chapter. 
+
 **Staging:** enables you to edit and revise a page behind the scenes, then
 publish changes to your site once they have been completed and reviewed. For a
-full explanation of Staging, see chapter 3: Advanced web content management.
+full explanation of Staging, see chapter 3: *Advanced Web Content Management*.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay
 provides seamless integration with Google Analytics, allowing you to place your
@@ -734,6 +704,38 @@ code everywhere. Google Analytics is a free service which lets you do all kinds
 of traffic analysis on your site so you can see who visits, where visitors are
 from and what pages they most often visit. This helps you tweak your site so you
 can provide the most relevant content to your users.
+
+**Content Sharing:** lets you configure whether sub-sites can display content
+from this site.
+
+**Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
+site. You can also regulate the age (in days) for which content is able to be
+stored in the Recycle Bin until it is permanently deleted. For a full explantion
+of the Recycle Bin, see the *Configuring Liferay Applications* chapter.
+
+**Custom Fields:** lets you edit the custom fields you already have configured
+for the *Site* resource. If you don't have any custom fields configured for the
+Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
+located under the *Configuration* tab.
+
+**Display Settings:** lets you configure the language options for your site. You
+have options to use the default language options or define a new default
+language.
+
+**Pages:** From Site Settings, click on *Public Pages* or *Private Pages* to
+manage some basic features of the pages on a site. If no pages have been defined
+yet, you can set site templates for the public or private pages. If pages
+already exist, links are provided to view them. You can also change the site's
+application adapter, which is a special type of hook plugin that customizes out
+of the box functionality for specific sites.
+
+**Site Hierarchy:** New to Liferay 6.2 is the ability to organize sites into
+hierarchies. At the bottom of the Site Settings page is the *Parent Site*
+section. This feature allows you to select the parent site for the site you're
+currently on. After selecting a parent site, you have a checkbox option to limit
+membership to members of the parent site. For more information on site
+hierarchies, navigate to the *Leveraging Liferay's Multi-site Capabilities*
+section.
 
 Now that you know how to configure sites, let's look at page templates and site
 templates.
@@ -747,7 +749,8 @@ enable you to preconfigure a single page and then apply it to any new page you
 create. Site templates allow you to do the same thing but on the scale of a
 site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
-more information on page templates and site templates, see chapter 3. 
+more information on page templates and site templates, see the *Advanced Web
+Content Management* chapter. 
 
 #### Site Content
 
@@ -767,51 +770,56 @@ let's start working on the Nose-ster site. You can do this by going up to the
 Dockbar and clicking *My Sites* &rarr; *Nose-ster*.
 
 We'll use the *Community* page you created earlier in the chapter. Navigate to
-the *Community* page and select *Manage* &rarr; *Page* from the Dockbar.
+the *Community* page and select the *Add* button from the left palette and then
+the *Page* tab.
 
-This screen should now be familiar to you but let's recap. 
+This screen's options should look familiar to you from previous sections, but
+let's briefly go through how to create a new page: 
 
-The Page tab allows you to:
+The Page interface allows you to:
 
-- Change the name of the page
-- Enter HTML code for the title
-- Choose the page type
+- Give the name of the page
 - Hide the page from the theme navigation
-- Define a friendly URL to the page
-- Choose an icon to be displayed
-- Choose a frame target for the page
+- Choose the page template
+- Link to another website
+- Link to another page in the current site
 - Copy an existing page
 
-You can also enter custom meta tags or JavaScript to the page if you're a web
-developer. Additionally, if you click the *Permissions* button, you can define
-which users, groups, roles or organizations can view or edit the page.
+When you select *Add Page* at the bottom of the menu, your new page will
+appear on the navigation menu of your site. You can drag the page names to their
+correct order as you see fit.
 
-The Children tab lets you create child pages underneath the page you've
+You can also create new pages from the Site Pages interface. Navigate to Site
+Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
+*Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
+which we discussed earlier in the chapter. If you navigate to a specific site,
+you'll notice the *Add Child Page* button.
+
+The *Add Child Page* lets you create child pages underneath the page you've
 selected. You can nest pages as deep as you like but for every page below the
 top level hierarchy you must provide navigation to it via a Navigation or
 Breadcrumb portlet, at least with most themes (including the default).
 Developers can create themes which have cascading menu bars which show the full
 hierarchy. Some examples of that are in Liferay's plugin repositories.
 
-For now, click *Return to full page*. You should be able to define and manage
-pages in Liferay at this point so let's look at what you'd put on a page. 
+For now, click the back arrow. You should be able to define and manage pages in
+Liferay at this point so let's look at what you'd put on a page.
 
 #### Adding Portlets to a Page
 
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets. Even
 static web content can be displayed through Web Content Display portlets. To add
-a portlet to a page, just click *Add* &rrar; *Content and Applications* &rarr;
-*Applications* from the Dockbar. You can either browse through the categories of
+a portlet to a page, just click the *Add* button from the left palette and
+select the *Applications* tab. You can either browse through the categories of
 available portlets until you find the one you're looking for or you can search
 for portlets by name. Once you've found a portlet, click the *Add* button to add
 it the current page. Once it's been added to the page, you can drag it to a new
-position. Alternatively, you can drag the portlet directly from the Dockbar's
-Add menu to a specific location on the page. Let's add some portlets to the
+position. Alternatively, you can drag the portlet directly from the Applications
+menu to a specific location on the page. Let's add some portlets to the
 Collaboration page of the Nose-ster site.
 
-1. From the Dockbar, select *Add* &rarr; *Content and Applications* &rarr;
-*Applications*.
+1. From the left palette, select *Add* &rarr; *Applications*.
 2. In the menu that appears, expand the *Collaboration* category.
 3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
    right column of our page.
@@ -840,14 +848,14 @@ Let's say we wanted to create a page only for administrators to see. We can do
 this with the following procedure:
 
 1. Go to the Dockbar and select *Admin* &rarr; *Site Administration*.
-3. Click the *Site Pages* link.
-4. Click the *Private Pages* tab to switch to the Private Pages. Remember,
+2. Click the *Site Pages* link (if necessary).
+3. Click the *Private Pages* tab to switch to the Private Pages. Remember,
    these pages by default are viewable only by members of the site.
-5. Create a page called *Admin Tips*.
-6. Click on the page in the tree on the left and then click *Permissions*.
-7. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
+4. Create a page called *Admin Tips*.
+5. Click on the page in the tree on the left and then click *Permissions*.
+6. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
    role.
-8. Click the *Save* button.
+7. Click the *Save* button.
 
 ![Figure 2.10: The Permissions offer a plethora of options for each role.](../../images/04-web-content-page-permissions.png)
 
@@ -1035,9 +1043,9 @@ these categories are defined by a property in the properties file; see the
 expires.
 
 **Display Page:** lets you determine where the web contents are displayed when
-linked from other pages. The concept of the Canonical URL is new to Liferay 6.1.
-The Canonical URL is unique for articles that redirect the visitor to the
-article's default display page. 
+linked from other pages. The Canonical URL can be used here. The Canonical URL
+is unique for articles that redirect the visitor to the article's default
+display page.
 
 Imagine you have a newspaper with a sports section and a technology section. You
 add a Sports page and a Tech page to your site, each one with a specific banner
@@ -1126,8 +1134,8 @@ it works.
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
-to our Welcome page by selecting *Add* &rarr; *Content and Applications* &rarr;
-*Applications* from the Dockbar.
+to our Welcome page by selecting the *Add* button from the left palette and
+selecting the *Applications* tab.
 
 ![Figure 2.17: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
 
@@ -1211,10 +1219,11 @@ When you publish your content this way, it becomes available immediately
 happens whether you edit it in place or in Site Administration.
 
 Note: if you want to view your page the way your users will see it (i.e.,
-without all those portlet controls and icons), go up to the Dockbar and select
-*Edit Controls*. This makes all those extra controls you see as a portal
-administrator disappear. If you need to use those controls again, just select
-*Edit Controls* again. 
+without all those portlet controls and icons), go up to the left palette and
+select the check mark. This makes all those extra controls you see as a portal
+administrator disappear. You'll also notice the check mark transforms into an
+**X**. If you need to use those controls again, just select the **X** to return
+to the original format.
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -1266,6 +1275,9 @@ organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content  
+
+<!-- Still need to check that instructions match with 6.2. Kaleo workflow plugin
+was not compatible when testing. -->
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear

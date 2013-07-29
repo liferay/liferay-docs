@@ -164,8 +164,7 @@ site, either manually or on a schedule.
 ![Figure 1.2: Staging supports publishing manually or on a schedule.](../../images/04-web-content-staging-publish.png)
 
 <!-- Need to replace image for 6.2 -->
-<!-- Still a lot of changes planned to go in for 6.2 Staging at this point. Not
-going to update at this point. -->
+<!-- There are a few UI changes that still need to be made to staging. -->
 
 Liferay Portal's web content creation tools are easy and intuitive to use at all
 levels. If you need only basic content management capabilities for your site,
