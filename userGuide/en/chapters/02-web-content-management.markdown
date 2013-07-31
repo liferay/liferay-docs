@@ -266,14 +266,13 @@ is also listed under the Admin tab.
 
 ![Figure 2.2: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
 
-To add new pages to your site, click the *Add* button (plus sign) from the left
-palette and select the *Page* tab. This is the *Page* interface, which offers a
-plethora of options for your new page including name, site layout, and site
-template.
+To add new pages to your site, click the *Add* icon from the left palette and
+select the *Page* tab. This is the *Page* interface, which offers a plethora of
+options for your new page including name, site layout, and site template.
 
-To manage the specific page of the site you've navigated to, click the *Edit
-Page* button (pencil icon) from the left palette. This will only edit the
-specific page you're currently on.
+To manage the specific page of the site you've navigated to, click the *Edit*
+icon from the left palette. This will only edit the specific page you're
+currently on.
 
 ![Figure 2.3: The *Edit Page* interface allows you to edit the current page you're on.](../../images/04-web-content-managing-single-page.png)
 
@@ -347,9 +346,8 @@ a *Link to a Page of This Site* to place a deeply nested page in the primary
 navigation menu of your site, for example.
 
 To use the Edit Page interface to modify an existing page, navigate to the left
-palette and select the Edit Page button (pencil icon). Notice that it's not
-possible to add a new page. This is because you're only managing the current
-page.
+palette and select the *Edit* icon. Notice that it's not possible to add a new
+page. This is because you're only managing the current page.
 
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
@@ -423,14 +421,21 @@ There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
 portlet borders by default.
 
+<!--
 Also notice themes can apply to regular browsers or mobile devices. You could
 create another site for mobile users attached to the
 [http://m.nosester.com](http://m.nosester.com) address and serve up a page
 designed for the smaller screens on phones.
+-->
 
 <!-- Noticed the *Regular Browsers* and *Mobile Devices* tabs aren't present
 anymore for Site Pages. Need to check on how to modify a specific page to look
-different on mobile device and regular browser. 7/25/13 -->
+different on mobile device and regular browser. We have the new *Preview* button
+on the left palette, but these options don't appear to allow different
+modifications based on device. We also have the *Mobile Device Rules* feature,
+but this doesn't allow an admin to give a page two different themes based on
+device like the previous feature. Commenting out above paragraph, for now, since
+feature isn't available anymore. 7/31/13 -->
 
 The *CSS* section allows you to enter custom CSS that will also be served up by
 your theme. In this way, you can tweak a theme in real time by adding new styles
@@ -551,8 +556,8 @@ want it to. Liferay comes with many layouts already defined. Developers can
 create more and they can be deployed to your portal for your use.
 
 To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select the *Edit Page* button from the
-left palette (pencil icon) and click the *Details* tab (if necessary).
+Collaboration page. To access layouts, select the *Edit* icon from the left
+palette and click the *Details* tab (if necessary).
 
 Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
 return to the page and it'll seem as though nothing has happened. Once we start
@@ -761,7 +766,12 @@ managed, including web content.
 
 ![Figure 2.8: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
-For details about Liferay's social collaboration suite, see chapter 10. Next, let's learn more details about creating pages.
+<!-- May need to update above snapshot of Site Administration menu. It has
+changed multiple times over the last week, so I'm leaving it "as is" for now.
+7/31/13 -->
+
+For details about Liferay's social collaboration suite, see chapter 10. Next,
+let's learn more details about creating pages.
 
 ### Creating Pages
 
@@ -1220,10 +1230,10 @@ happens whether you edit it in place or in Site Administration.
 
 Note: if you want to view your page the way your users will see it (i.e.,
 without all those portlet controls and icons), go up to the left palette and
-select the check mark. This makes all those extra controls you see as a portal
-administrator disappear. You'll also notice the check mark transforms into an
-**X**. If you need to use those controls again, just select the **X** to return
-to the original format.
+select the *Edit Controls* icon. This makes all those extra controls you see as
+a portal administrator disappear. You'll also notice the green "eye" transforms
+into an orange "eye". If you need to use those controls again, just select *Edit
+Controls* to return to the original format.
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -1264,11 +1274,7 @@ To enable workflow for Web Content, navigate to the Control Panel and select
 *Workflow Configuration*. From there, select a workflow that has been deployed
 to Liferay.
 
-![Figure 2.20: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
-
-<!-- Need to replace image for 6.2. -->
-<!-- Kaleo Workflow CE plugin was not compatible with 6.2 during snapshot
-changes. -->
+![Figure 2.20: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
@@ -1276,16 +1282,13 @@ organization's approval process. For Nose-ster's implementation we'll use the
 
 #### Defining Workflows for Web Content  
 
-<!-- Still need to check that instructions match with 6.2. Kaleo workflow plugin
-was not compatible when testing. -->
-
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
 in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of
 Liferay. For installation instructions for Liferay EE, please see chapter 10.
 
 1. Go to the Site Administration page and select *Workflow Configuration* from
-the left panel.
+the *Configuration* section.
 
 2. From the select box, choose *Single Approver* for Web Content. Click *Save*.
 Note that you can add workflow to many of Liferay's portlets.
