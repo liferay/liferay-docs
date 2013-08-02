@@ -270,15 +270,15 @@ To create the `service.xml` file using Liferay IDE, select your
 `event-listing-portlet` project in the Package Explorer and then select *File*
 &rarr; *New* &rarr; *Liferay Service Builder*. Service Builder creates a
 `service.xml` file in your `docroot/WEB-INF/src` folder and displays the file in
-overview mode.
+*Overview* mode.
 
-Liferay IDE also provides a diagram mode and a source mode to give you different
-perspectives of the service information in your `service.xml` file. Diagram mode
-is helpful for creating and visualizing relationships between service entities.
-Source mode brings up the `service.xml` file's raw XML content in the editor.
-You can switch between these modes as you wish. Since overview mode facilitates
-creating service elements, we'll use it throughout most of the steps in creating
-our service.
+Liferay IDE also provides a *Diagram* mode and a *Source* mode to give you
+different perspectives of the service information in your `service.xml` file.
+Diagram mode is helpful for creating and visualizing relationships between
+service entities. Source mode brings up the `service.xml` file's raw XML content
+in the editor. You can switch between these modes as you wish. Since *Overview*
+mode facilitates creating service elements, we'll use it throughout most of the
+steps in creating our service.
 
 Let's start filling out the global information for our service. 
 
@@ -286,7 +286,7 @@ Let's start filling out the global information for our service.
 
 A service's global information applies to all of its entities. So, let's specify
 this information first. Select the *Service Builder* node in the upper left
-corner of the overview mode of for your `service.xml` file. The main section of
+corner of the Overview mode of for your `service.xml` file. The main section of
 our view now shows the Service Builder form in which we can enter our service's
 global information. The fields include the service's package path, author, and
 namespace options. Here are the values we'll use for our example service:
@@ -352,7 +352,7 @@ And here's what we'll enter for the Location entity:
 
 To create these entities, select the *Entities* node from under the Service
 Builder node in the outline on the left side of the `service.xml` editor in
-overview mode. In the main part of the view, notice that the Entities table is
+Overview mode. In the main part of the view, notice that the Entities table is
 empty. Create an entity by clicking on the *Add Entity* icon (a green plus sign)
 to the right of the table. Enter *Event* for your entity's name and select both
 the *Local Service* and the *Remote Service* options. Create a second entity
@@ -401,7 +401,7 @@ attributes using entity *columns*.
 Each entity is described by its columns, which represent an entity's attributes.
 For our example, we'll add attributes for both our Event and Location entities.
 To add attributes for our Event entity, we need to drill down to its columns in
-the overview mode outline of our `service.xml` file. From the outline, expand
+the Overview mode outline of our `service.xml` file. From the outline, expand
 the *Entities* node and expand the new *Event* entity node. Then, select the
 *Columns* node. Liferay IDE displays a table of the Event entity's columns. 
 
@@ -492,8 +492,8 @@ this in our example Event Listing Portlet project.
 
 As we mentioned earlier for our example, each of our events must have a
 location. Therefore, each Event entity must relate to a Location entity. The
-good news is that Liferay IDE's *Diagram* mode for `service.xml` makes relating
-entities very easy. First, select *Diagram* mode for our `service.xml` file.
+good news is that Liferay IDE's Diagram mode for `service.xml` makes relating
+entities very easy. First, select Diagram mode for our `service.xml` file.
 Then, select the *Relationship* option under *Connections* in the palette on the
 right side of the view. This relationship tool, helps you draw relationships
 between entities in the diagram. Click the Event entity and move your cursor
@@ -503,7 +503,7 @@ Liferay IDE turns the dashed line into a solid line, with an arrow pointing to
 the Location entity. Save the `service.xml` file. 
 
 Congratulations! You've related the entities. Their relationship should display
-in diagram mode and look similar to that of the figure below. 
+in Diagram mode and look similar to that of the figure below. 
 
 ![Figure 4.3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
 
@@ -549,7 +549,7 @@ based on each finder you create for an entity. It creates methods to fetch,
 find, remove, and count entity instances based on the finder's parameters. 
 
 For our example, we want to find Event and Location entities per site. We'll
-specify these finders using Liferay IDE's overview mode of `service.xml`. Select
+specify these finders using Liferay IDE's Overview mode of `service.xml`. Select
 the *Finders* node under the Event entity node in the outline on the left side
 of the screen. The IDE displays an empty *Finders* table in the main part of the
 view. Create a new finder by clicking the *add icon* (a green plus sign) to the
