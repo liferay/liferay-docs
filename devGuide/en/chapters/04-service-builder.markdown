@@ -1769,26 +1769,26 @@ collections of hints to apply at either of those scopes. Looks like you've
 picked up on the "hints" of how your portlets can benefit from Liferay's model
 hints! 
 
+<!--
 ## Leveraging Dynamic Query 
-
-## Creating Custom Finders 
+-->
 
 ## Overview of `service.properties` 
 
-Service Builder generates the properties file `service.properties` in the `src`
-directory of your service. Liferay Portal uses the properties in this file to
-alter your service's database schema and load Spring configuration files to
-support deployment of your service. You should not modify this file, but rather
-make any necessary overrides in a `service-ext.properties` file in the `src`
-folder.
+Service Builder generates the properties file `service.properties` in your
+project's `docroot/WEB-INF/src` folder. Liferay Portal uses the properties in
+this file to alter your service's database schema and load Spring configuration
+files to support deployment of your service. You should not modify this file,
+but rather make any necessary overrides in a `service-ext.properties` file in
+that same folder.
 
 The only property that you may need to override from this file is
 `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your
-`service-ext.properties` prevents Liferay from trying to automatically apply any
-changes to the database model when a new version of the plugin is deployed. This
-is needed in projects in which it is preferred to manually manage the changes to
-the database or in which the SQL schema has been modified manually after
-generation by Service Builder.
+`service-ext.properties` file prevents Liferay from trying to automatically
+apply any changes to the database model when a new version of the plugin is
+deployed. This is needed in projects in which it is preferred to manually manage
+the changes to the database or in which the SQL schema has intentionally been
+modified manually after generation by Service Builder.
 
 Other properties included in the `service.properties` file include the
 following:
@@ -1801,7 +1801,7 @@ following:
   increments this number.
 - `build.date`: This is the time of the latest build of your plugin.
 - `spring.configs`: This is a comma-delimited list of Spring configurations. If
-  you'd like to alter this list or the any of the values in
+  you'd like to alter this list or any of the values in
   `service.properties`, don't edit `service.properties` directly. Instead,
   create a `service-ext.properties`. The values for the properties that you
   define there will override the ones in `service.properties`.
@@ -1814,26 +1814,26 @@ In addition to the services you create using Service Builder, your portlets may
 also access a variety of services built into Liferay. These include the
 following:
 
-- `UserService`
+- `UserService` - for accessing, adding, authenticating, deleting, and updating
+  users. 
+- `OrganizationService` - for accessing, adding, deleting, and updating
+  organizations. 
+- `GroupService` - for accessing, adding, deleting, and updating groups.
+- `CompanyService` - for accessing, adding, checking, and updating companies.
+- `ImageService` - for accessing images.
+- `LayoutService` - for accessing, adding, deleting, exporting, importing, and
+  updating layouts. 
+- `PermissionService` - for checking permissions.
+- `UserGroupService` - for accessing, adding, deleting, and updating user
+  groups. 
+- `RoleService` - for accessing, adding, unassigning, checking, deleting, and
+  updating roles. 
 
-- `OrganizationService`
-
-- `GroupService`
-
-- `CompanyService`
-
-- `ImageService`
-
-- `LayoutService`
-
-- `PermissionService`
-
-- `UserGroupService`
-
-- `RoleService`
-
-For more information on these services, see Liferay's Javadocs at
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+For more information on these services, see the Liferay Portal CE Javadocs at
+[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
+or the Liferay Portal EE Javadocs included in the Liferay Portal EE
+Documentation `.zip` file that you can download from the Customer Portal on
+[http://www.liferay.com](http://www.liferay.com). 
 
 <!--
 Missing summary ...
