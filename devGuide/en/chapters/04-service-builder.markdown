@@ -89,19 +89,27 @@ how to use Service Builder.
 
 ## Configuring Service Builder and Defining Portlet Data
 
-In order to demonstrate how to use Service Builder, let's create an example
-portlet project that the Nose-ster organization can use to schedule social
-events. For our example, we'll create a new Liferay portlet project for managing
-and listing events. We'll define two entities called *events* and *locations*,
-representing events that can be scheduled and locations at which the events can
-take place. Since events take place at specific locations, an event entity
-should be able to take a location entity as an attribute. If you'd like to
-examine the finished example project, you can view the code on Github
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
-or download the `.war` file from
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/dist/event-listing-portlet-6.2.0.1.war](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/dist/event-listing-portlet-6.2.0.1.war).
-But we'll guide you through creating the project, its portlets, and its entities
-step-by-step using Liferay IDE/Developer Studio. 
+To demonstrate Service Builder, we'll create an example portlet project that
+Nose-ster, a fictitious organization, can use to schedule social events. For our
+example, we'll create a new Liferay portlet project for managing and listing
+these events. We'll define two entities: *events* and *locations*. The event
+entity represents a social event that can be scheduled for Nose-ster, while the
+location entity represents a location at which social events can take place.
+Since an event must have a location, the event entity will reference a location
+entity as one of its attributes.
+
+If you'd like to examine the finished example project, it is a part of our *Dev
+Guide SDK* which you can download as a `.zip` file from our Developer's Guide
+page at
+[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
+The Event Listing portlet project is located at the
+`devGuide-sdk/portlets/event-listing-portlet` folder in the `.zip` file. But in
+this section, we'll guide you step-by-step in creating the project, its
+portlets, and its entities using Liferay IDE/Developer Studio. 
+
+<!-- I took out the link to the WAR file because it was a very long URL. We'd
+have to wrap it onto the next line, which I'd rather avoid. I think providing
+the ZIP file is sufficient. - Jim -->
 
 ---
 
@@ -560,8 +568,10 @@ Event and Location entities:
 Terrific! You've created the service and its event and location entities for the
 event listing portlet.
 
-We've posted the source code for the service to
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/service.xml](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/service.xml).
+We've made the source code for the service, and the Event Listing portlet,
+available in the *Dev Guide SDK* which you can download from our Developer's
+Guide page at
+[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
 But we've also listed it here for your convenience. Note, we've added some
 comments to highlight the service's various elements. But your `service.xml`
 should look similar to this one: 
@@ -918,8 +928,9 @@ Event. Then we could use the method's parameters to populate the new Event's
 name, description, and a location ID fields and return the Event.
 (`eventPersistence` is one of the Spring beans injected into
 `EventLocalServiceBaseImpl` by Service Builder.) To see this implementation of`
-addEvent`, please examine the complete `EventListingServiceImpl` class
-on [Github](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/EventLocalServiceImpl.java).
+addEvent`, please examine the complete `EventListingServiceImpl` class included
+in the *Dev Guide SDK* which you can download from our Developer's Guide page at
+[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add its signature to the `EventLocalService` interface by
