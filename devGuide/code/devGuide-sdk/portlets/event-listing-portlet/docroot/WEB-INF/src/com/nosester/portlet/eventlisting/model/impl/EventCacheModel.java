@@ -20,7 +20,10 @@ import com.liferay.portal.model.CacheModel;
 
 import com.nosester.portlet.eventlisting.model.Event;
 
-import java.io.Serializable;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 import java.util.Date;
 
@@ -31,7 +34,7 @@ import java.util.Date;
  * @see Event
  * @generated
  */
-public class EventCacheModel implements CacheModel<Event>, Serializable {
+public class EventCacheModel implements CacheModel<Event>, Externalizable {
 	@Override
 	public String toString() {
 		StringBundler sb = new StringBundler(21);
@@ -61,6 +64,7 @@ public class EventCacheModel implements CacheModel<Event>, Serializable {
 		return sb.toString();
 	}
 
+	@Override
 	public Event toEntityModel() {
 		EventImpl eventImpl = new EventImpl();
 
@@ -109,6 +113,48 @@ public class EventCacheModel implements CacheModel<Event>, Serializable {
 		eventImpl.resetOriginalValues();
 
 		return eventImpl;
+	}
+
+	@Override
+	public void readExternal(ObjectInput objectInput) throws IOException {
+		eventId = objectInput.readLong();
+		companyId = objectInput.readLong();
+		groupId = objectInput.readLong();
+		userId = objectInput.readLong();
+		createDate = objectInput.readLong();
+		modifiedDate = objectInput.readLong();
+		name = objectInput.readUTF();
+		description = objectInput.readUTF();
+		date = objectInput.readLong();
+		locationId = objectInput.readLong();
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput objectOutput)
+		throws IOException {
+		objectOutput.writeLong(eventId);
+		objectOutput.writeLong(companyId);
+		objectOutput.writeLong(groupId);
+		objectOutput.writeLong(userId);
+		objectOutput.writeLong(createDate);
+		objectOutput.writeLong(modifiedDate);
+
+		if (name == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(name);
+		}
+
+		if (description == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(description);
+		}
+
+		objectOutput.writeLong(date);
+		objectOutput.writeLong(locationId);
 	}
 
 	public long eventId;

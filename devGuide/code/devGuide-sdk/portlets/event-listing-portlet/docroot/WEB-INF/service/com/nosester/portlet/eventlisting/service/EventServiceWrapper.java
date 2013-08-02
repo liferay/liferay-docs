@@ -17,12 +17,10 @@ package com.nosester.portlet.eventlisting.service;
 import com.liferay.portal.service.ServiceWrapper;
 
 /**
- * <p>
- * This class is a wrapper for {@link EventService}.
- * </p>
+ * Provides a wrapper for {@link EventService}.
  *
- * @author    Joe Bloggs
- * @see       EventService
+ * @author Joe Bloggs
+ * @see EventService
  * @generated
  */
 public class EventServiceWrapper implements EventService,
@@ -36,6 +34,7 @@ public class EventServiceWrapper implements EventService,
 	*
 	* @return the Spring bean ID for this bean
 	*/
+	@Override
 	public java.lang.String getBeanIdentifier() {
 		return _eventService.getBeanIdentifier();
 	}
@@ -45,22 +44,26 @@ public class EventServiceWrapper implements EventService,
 	*
 	* @param beanIdentifier the Spring bean ID for this bean
 	*/
+	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		_eventService.setBeanIdentifier(beanIdentifier);
 	}
 
+	@Override
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return _eventService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.addEvent(event);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		java.lang.String name, java.lang.String description,
 		java.util.Date date, long locationId,
@@ -69,12 +72,14 @@ public class EventServiceWrapper implements EventService,
 			serviceContext);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event update(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.update(event);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
 		java.util.Date date, long locationId,
@@ -83,12 +88,14 @@ public class EventServiceWrapper implements EventService,
 			locationId, serviceContext);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event delete(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.delete(event);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -97,23 +104,25 @@ public class EventServiceWrapper implements EventService,
 	}
 
 	/**
-	 * @deprecated Renamed to {@link #getWrappedService}
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
 	public EventService getWrappedEventService() {
 		return _eventService;
 	}
 
 	/**
-	 * @deprecated Renamed to {@link #setWrappedService}
+	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
 	 */
 	public void setWrappedEventService(EventService eventService) {
 		_eventService = eventService;
 	}
 
+	@Override
 	public EventService getWrappedService() {
 		return _eventService;
 	}
 
+	@Override
 	public void setWrappedService(EventService eventService) {
 		_eventService = eventService;
 	}
