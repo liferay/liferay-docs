@@ -27,14 +27,14 @@ import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
  * @author Joe Bloggs
  */
 public class EventImpl extends EventBaseImpl {
-	/*
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. All methods that expect a event model instance should use the {@link com.nosester.portlet.eventlisting.model.Event} interface instead.
 	 */
 	public EventImpl() {
 	}
-	
+
 	public Location getLocation() {
 
 		try {
@@ -44,5 +44,5 @@ public class EventImpl extends EventBaseImpl {
 			return null;
 		}
 	}
-	
+
 }

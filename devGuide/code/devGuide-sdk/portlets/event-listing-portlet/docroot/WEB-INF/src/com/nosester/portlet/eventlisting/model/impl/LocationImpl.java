@@ -24,7 +24,7 @@ package com.nosester.portlet.eventlisting.model.impl;
  * @author Joe Bloggs
  */
 public class LocationImpl extends LocationBaseImpl {
-	/*
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. All methods that expect a location model instance should use the {@link com.nosester.portlet.eventlisting.model.Location} interface instead.
