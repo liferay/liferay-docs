@@ -1696,7 +1696,7 @@ hints available to you. The following table describes the portlet model hints.
 **Model Hint Values and Descriptions**
 
 Name                | Value Type | Description | Default
-:------------------ | :--------: | :---------- | :-----:
+:-----------------: | :--------: | :---------- | :-----:
 `auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
 `autoSize`          | boolean | displays the field in a for scrollable text area | false
 `day-nullable`      | boolean | allows the day to be null in a date field | false
