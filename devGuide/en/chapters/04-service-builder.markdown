@@ -1661,24 +1661,26 @@ all of these elements for you, based on your `service.xml` file.
 To add hints to a field, add a `hint` tag inside of its `field` tag. For
 example, you can add a `display-width hint` to specify the pixel width that
 should be used in displaying the field. The default pixel width for a field is
-350. To display our Event model's `name` field with a 50 pixels, we could nest a
+350. To display a String field with 50 pixels, we could nest a
 `hint` element named `display-width` in it and give it a value of `50` for 50
-pixels. To make this change, replace the `<field name="name" type="String" />`
-line with the following `field` element:
+pixels. Here's an example of using the `display-width` hint in a `field`
+element: 
 
     <field name="name" type="String">
         <hint name="display-width">50</hint>
     </field>
 
-In order to see the effect of the `display-width` hint on the Event model's name
-field, you have to run Service Builder again and redeploy your portlet project.
-Changing the `display-width` doesn't actually limit the number of characters
-that can be entered into the `name` field; it's just a way to control the width
-of the field in the AlloyUI input form. To configure the maximum size of a model
+In order to see the effect of a hint on a field, you have to run Service Builder
+again and redeploy your portlet project. Changing the `display-width` doesn't
+actually limit the number of characters that can be entered into the `name`
+field; it's just a way to control the width of the field in the AlloyUI input
+form. 
+
+To configure the maximum size of a model
 field's database column (i.e., the maximum number of characters that can be
 saved for the field), use the `max-length` hint. The default `max-length` value
-is 75 characters. If you'd like to allow Event names of up to 100 characters to
-be saved, add another hint element inside of your `name` field element:
+is 75 characters. If you wanted the `name` field to be able to persist up to 100
+characters, you could add a `max-length` hint to that field: 
 
     <field name="name" type="String">
         <hint name="display-width">50</hint>
@@ -1686,8 +1688,7 @@ be saved, add another hint element inside of your `name` field element:
     </field>
 
 Remember to run Service Builder and redeploy your portlet project after updating
-your `portlet-model-hints.xml` file. To test your max length setting, add a new
-event with a name consisting of between 75 to 100 characters. See what happens. 
+your `portlet-model-hints.xml` file. 
 
 So, we've mentioned a few different hints. It's about time we listed the portlet
 hints available to you. The following table describes the portlet model hints.
