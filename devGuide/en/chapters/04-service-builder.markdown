@@ -1521,23 +1521,52 @@ portlet's view.
 
 ## Using Model Hints 
 
-Service Builder generates a number of XML configuration files in your project's
+Now that you've created your model entities and implemented your business logic
+to create and modify those entities, I'm sure you have some ideas on how to help
+users input valid model entity data. For example, considering the Nose-ster
+project we've been working on throughout this chapter, you want users to create
+social events for the future, not for the past. And you probably want to limit
+the location's postal code to an appropriate number of characters (e.g., five
+digits, optionally followed by a dash and four more digits). Wouldn't it be
+great to specify these fundamental limitations from a single place in your
+portal project? Good news! Service Builder lets you specify this information as
+*model hints* in a single file called `portlet-model-hints.xml` found in your
+project's `docroot/WEB-INF/src/META-INF` folder. Liferay calls them *model
+hints* because they suggest how the entities should be presented to the users
+and the size of the database columns that should be used to store the entities. 
+
+<!-- Commenting this out for now. It's good information to know, but I found it
+distracting in the first paragraph and thought it was more important to focus on
+introducing model hints. Perhaps this can be moved somewhere else in this
+section or the chapter. - Jim
+
+Service Builder generates a
+number of XML configuration files in your project's
 `docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
 to manage Spring and Hibernate configurations. Don't modify the Spring or
 Hibernate configuration files; your changes will be overwritten the next time
-Service Builder runs. However, there's one configuration file that you can
-safely edit which allows you to customize details of your Service Builder
-generated models: `portlet-model-hints.xml`. This file allows you to configure
-how model fields are displayed using the `aui` taglib. It also allows you to
-adjust the size of the columns of database tables. Liferay has its own model
-hints XML configuration file called `portal-model-hints.xml` which you can find
-in Liferay's `portal-impl/classes/META-INF` folder. Liferay's model hints
-configuration file contains many hint examples so you can refer to it for
-reference when customizing your `portlet-model-hints.xml`.
+Service Builder runs. However, you can safely edit the
+`portlet-model-hints.xml` file. 
+-->
 
+Model hints let you to configure how model fields are displayed by the AlloyUI
+taglib called `aui`. As Liferay Portal displays forms in your portlet for users
+to input values for model entities, portal first checks the model hints you
+specified to customize your form's input fields appropriately. For example, if
+you want to limit users to selecting dates in the future, you'd set a
+`year-range-past` hint to `false` for your that field your
+`portlet-model-hints.xml` file:
+
+    <field name="date" type="Date">
+        <hint name="year-range-past">false</hint>
+    </field>
+
+Let's take a look at the model hints file that Service Builder generated for
+your Event Listing portlet example we've been working on in this chapter.
 Examine your project's `docroot/WEB-INF/src/META-INF/portlet-model-hints.xml`
-file. If you're following the Event Listing portlet example, Service Builder
-should have created the file with the following contents:
+file. If you've been following along in the previous sections, Service Builder
+should have created the `portlet-model-hints.xml` file with the following
+contents:
 
     <?xml version="1.0"?>
 
@@ -1570,30 +1599,38 @@ should have created the file with the following contents:
         </model>
     </model-hints>
 
-Your `portlet-model-hints.xml` file has a root-level model-hints tag that
-contains model tags. Each model tag must have a name attribute specifying the
-full package name of the model class. Each model tag must also contain a field
-name for attribute of the model specifying the field name and type as
-attributes. To add hints to a field, add a hint tag inside of a field tag,
-specify the hint's name as an attribute and the value of the hint within in the
-hint tag. For example, the display-width hint allows you to specify the width of
-a model's field as it appears on an AUI form. The default is 350. To specify a
-display-width of 50 pixels for the Event model's name field, replace the `<field
-name="name" type="String" />` line with the following:
+<!-- Should the above model elements include the uuid String field? - Jim -->
+
+The a root-level element is `model-hints`. Within it are all of your model
+entities represented by `model` elements. Each `model` element must have a
+`name` attribute specifying the full package name of its model class. Each model
+has `field` elements that represent their model entity's columns. And lastly
+each `field` element must have a name and a type. The names and types of each
+`field` element correspond to the names and types specified for each entity's
+columns in your project's `serivce.xml` file. Service Builder generated all of
+these elements for you, based on your `service.xml` file. 
+
+To add hints to a field, add a `hint` tag inside of its `field` tag. For
+example, you can add a `display-width hint` to specify the pixel width that
+should be used in displaying the field. The default pixel width for a field is
+350. To display our Event model's `name` field with a 50 pixels, we'll nest a
+`hint` element named `display-width` in it and give it a value of `50` for 50
+pixels. To make this change, replace the `<field name="name" type="String" />`
+line with the following `field` element:
 
     <field name="name" type="String">
         <hint name="display-width">50</hint>
     </field>
 
-In order to see the effect of the display-width hint on the Event model's name
+In order to see the effect of the `display-width` hint on the Event model's name
 field, you have to run Service Builder again and redeploy your portlet project.
-Changing the display-width doesn't actually limit the number of characters that
-can be entered into the name field; it's just a way to control the width of the
-AUI input form field. To configure the maximum size of a model field's database
-column (i.e., the maximum number of characters that can be saved in the field),
-use the max-length hint. The default max-length is 75. If you'd like to allow
-Event names of up to 100 characters to be saved, add another hint element inside
-of your name field element:
+Changing the `display-width` doesn't actually limit the number of characters
+that can be entered into the `name` field; it's just a way to control the width
+of the field in the AlloyUI input form. To configure the maximum size of a model
+field's database column (i.e., the maximum number of characters that can be
+saved for the field), use the `max-length` hint. The default `max-length` value
+is 75 characters. If you'd like to allow Event names of up to 100 characters to
+be saved, add another hint element inside of your `name` field element:
 
     <field name="name" type="String">
         <hint name="display-width">50</hint>
@@ -1601,37 +1638,60 @@ of your name field element:
     </field>
 
 Remember to run Service Builder and redeploy your portlet project after updating
-`portlet-model-hints.xml`. To test your max length setting, add a new event with
-a name consisting of between 75 and 100 characters. The following table
-describes some commonly used model hints.
+your `portlet-model-hints.xml` file. To test your max length setting, add a new
+event with a name consisting of between 75 to 100 characters. See what happens. 
+
+So, we've mentioned a few different hints. It's about time we listed the portlet
+hints available to you. The following table describes the portlet model hints.
 
 **Model Hint Values and Descriptions**
 
-Name | Value Type | Description | Default
-:--: | :--------: | :---------: | :-----:
-auto-escape | boolean | sets whether text values should be escaped via HtmlUtil.escape | true
-day-nullable | boolean | allows the day to be null in a date field | false
-default-value | String | sets the default value for a field | (empty String)
-display-height | integer | sets the display height of the form field rendered using the aui taglib | 15
-display-width | integer | sets the display width of the form field rendered using the aui taglib | 350
-max-length | integer | sets the maximum column size for SQL file generation | 75
-month-nullable | boolean | allows the month to be null in a date field | false
-upper-case | boolean | converts all characters to upper case | false
-year-nullable | boolean | allows the year to be null in a date field | false
-year-range-delta | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
+Name                | Value Type | Description | Default
+:------------------ | :--------: | :---------- | :-----:
+`auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
+`autoSize`          | boolean | displays the field in a for scrollable text area | false
+`day-nullable`      | boolean | allows the day to be null in a date field | false
+`default-value`     | String  | sets the default value for a field | (empty String)
+`display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
+`display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
+`editor`            | boolean | sets whether to provide an editor for the input | false
+`max-length`        | integer | sets the maximum column size for SQL file generation | 75
+`month-nullable`    | boolean | allows the month to be null in a date field | false
+`secret`            | boolean | sets whether hide the characters input by the user | false | false
+`show-time`         | boolean | sets whether to show inlcude time along with the date | true
+`upper-case`        | boolean | converts all characters to upper case | false
+`year-nullable`     | boolean | allows the year to be null in a date field | false
+`year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
+`year-range-future` | boolean | sets whether to include future dates | true
+`year-range-past`   | boolean | sets whether to include past dates | true
 
-You can use the default-hints element to define a list of hints to be applied to
+<!--
+I wanted to get a complete list of model hints used in portal. I found the
+ModelHints interface and then searched for where (*.java, *.js, *.jsp) it was
+referenced. It led me to portal-web/docroot/html/taglib/ui/input_field/page.jsp.
+I found some more hints and added them to the table above.
+
+I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
+
+- Jim -->
+
+Liferay Portal has its own model hints XML configuration file called
+`portal-model-hints.xml` which you can find in Liferay's
+`portal-impl/classes/META-INF` folder. Liferay's model hints configuration file
+contains many hint examples so you can refer to it for reference when
+customizing your `portlet-model-hints.xml`. 
+
+You can use the `default-hints` element to define a list of hints to be applied to
 every field of a model. For example, adding the following element inside of a
-model element applies a display-width of 300 to each element of the model:
+model element applies a `display-width` of 300 to each element of the model:
 
     <default-hints>
         <hint name="display-width">300</hint>
     </default-hints>
 
-You can define hint-collection elements inside of the model-hints element to
-define a list of hints that can applied together. A hint collection must be
-specified with a name. Model fields can apply a hint collection by referring to
-the hint collection's name. For example, Liferay's `portal-model-hints.xml`
+You can define `hint-collection` elements inside of the `model-hints` root-level
+element to define a list of hints that can applied together. A hint collection
+must be specified with a name. For example, Liferay's `portal-model-hints.xml`
 defines the following hint collections:
 
     <hint-collection name="CLOB">
@@ -1652,15 +1712,62 @@ defines the following hint collections:
         <hint name="show-time">false</hint>
     </hint-collection>
 
-If you define the same SEARCHABLE-DATE collection as above, you can apply it to
-your Event model's date field by using a hint-collection element:
+You can apply a hint collection to a model field by referring to the hint
+collection's name. For example, if you define a the `SEARCHABLE-DATE`
+collection, as written above, in your `model-hints` element, you can apply it to
+your Event model's date field by using a `hint-collection` element that
+references the collection by it's name:
 
     <field name="date" type="Date">
         <hint-collection name="SEARCHABLE-DATE" />
     </field>
 
-Remember to run Service Builder and redeploy your project after updating your
-`portlet-model-hints.xml` file.
+As always, remember to run Service Builder and redeploy your project after
+updating your `portlet-model-hints.xml` file.
+
+Let's use a couple of model hints in our Event Listing portlet and Location
+Listing portlet. We'll start by giving the user an editor for filling in their
+description fields. Since we want to apply the same hint to both the event and
+location entities, we'll define a hint collection for the hints we want to add
+to the description fields. Then we'll reference the hint collection in them.
+
+Define the following hint collection just below your `model-hints` root element
+in your `portlet-model-hints.xml` file:
+
+	<hint-collection name="DESCRIPTION-TEXTAREA">
+		<hint name="editor">true</hint>
+		<hint name="max-length">250</hint>
+	</hint-collection>
+
+Then replace the description fields of your event and location entities with the
+each description field referencing the hint collection, as demonstrated below:
+
+	<field name="description" type="String">
+		<hint-collection name="DESCRIPTION-TEXTAREA" />
+	</field>
+
+The last hint we'll introduce for our Event Listing portlet is one that makes
+sure the user has no option to select a year from the past. Replace the event
+entity's date field with the following date field as specified below:
+
+	<field name="date" type="Date">
+		<hint name="year-range-past">false</hint>
+	</field>
+
+Great! Now rebuild your service using Service Builder, redeploy your portlet
+project, and add or edit an event using the portlet. The following figure shows
+the portlet displaying these input fields using the limitations we specified.
+	
+![Figure 4.10: Customize input fields to use editors and filter out past years from date selectors, by using model hints.](../../images/service-builder-edit-event.png)
+
+Well you've learned the art of persuasion through Liferay's model hints. Now
+you can not only influence how your model's input fields are displayed but you
+can also set their database table column sizes. And you have your choice of how
+to apply hints. You can insert indivicual hints directly into your fields, you
+can apply a set of default hints to all of a model's fields, and you can define
+collections of hints to apply at either of those scopes. Looks like you've
+picked up on the "hints" of how your portlets can benefit from Liferay's model
+hints! 
 
 ## Leveraging Dynamic Query 
 
