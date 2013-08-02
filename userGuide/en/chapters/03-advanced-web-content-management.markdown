@@ -85,7 +85,7 @@ Structures interface.
 #### Editing Structures
 
 Go back to the Site Administration page and select *Web Content* from the
-content section. The first way to access the Manage Structures interface is
+Content section. The first way to access the Manage Structures interface is
 simply by clicking *Manage* &rarr; *Structures*. This opens a popup showing all
 the web content structures that exist in your currently selected scope. Here,
 you can add new web content structures, edit existing ones, manage the templates
@@ -117,9 +117,9 @@ It's very easy to create and edit structures: all you have to do is drag
 elements into the structure and then give them names. For instance, select the
 *Text* element and drag it onto the structure. You can do the same with any of
 the elements. To remove it from the structure, simply select the *Delete* icon
-(red X) in the upper right corner of the element. You also have the ability to
-duplicate the element, which can be done by selecting the *Duplicate* button.
-We'll explain the *Edit* button later.
+(trash can) in the upper right corner of the element. You also have the ability
+to duplicate the element, which can be done by selecting the *Duplicate*
+(addition sign) button. We'll explain the *Configuration* button later.
 
 Web content structures also have the capability of inheriting characteristics
 from other structures. When a parent structure is configured, the child
@@ -211,8 +211,8 @@ Author when they're all named randomly?
 To solve this problem, all you need to do is set a variable name for each field
 as you add it to your structure. Let's do this now. In your structure, add an
 element *HTML*. To change its field label and variable name, you'll need to
-access the field's settings. Click on the field and select the gear icon that
-appears in the upper right corner. Change the *Field Label* value to
+access the field's settings. Hover over the field and select the wrench icon
+that appears in the upper right corner. Change the *Field Label* value to
 *Instructions* and the *Name* value (variable name) to `Steps`. Now your
 template writer has a variable by which he or she can refer to this field.
 
@@ -279,11 +279,11 @@ characteristics once for every sports article by creating default values for the
 structure. Creating default values is not part of creating a new structure, so
 make sure you have an existing structure.
 
-To edit a structure's default values, go to *Web Content* on the Site
-Administration page and click *Manage* &rarr; *Structures* to see the structures
-list. Find the *Actions* button for the desired structure and select *Edit
-Default Values* from the menu to view a window like the one below. This form
-allows you to manage the structure settings.
+To edit a structure's default values, go to *Web Content* in the Content section
+of the Site Administration page and click *Manage* &rarr; *Structures* to see
+the structures list. Find the *Actions* button for the desired structure and
+select *Edit Default Values* from the menu to view a window like the one below.
+This form allows you to manage the structure settings.
 
 ![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
@@ -355,8 +355,8 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-<!-- CSS was not available during testing of 6.2 feature. Need to find out if
-this is planned or if CSS category is still being developed. -->
+<!-- CSS was not available during testing of 6.2 feature. Notified Juan
+Fernandez of missing template language. Bug filed for fix: LPS-37934 -->
 
 #### Adding Templates
 
@@ -377,7 +377,7 @@ interface.
 --------- | ---------- | ---------- |
  Text  | &nbsp;Title | &nbsp;`title` |
  Text Box | &nbsp;Abstract | &nbsp;`abstract` |
- Documents and Media | &nbsp;Image | &nbsp;`image` |
+ Image | &nbsp;Image | &nbsp;`image` |
  HTML | &nbsp;Body | &nbsp;`body` |
 
 5. Click *Save*.
@@ -403,7 +403,7 @@ Below is the template script for this structure. It is written in FreeMarker:
 
     <#assign renderUrlMax = request["render-url-maximized"]>
     <#assign namespace = request["portlet-namespace"]>
-    <#assign readmore = request.parameters.read_more?exists>
+    <#assign readmore = request.parameters?is_hash && getterUtil.getBoolean(request.parameters.read_more, false)>
     <h1>${title.getData()}</h1>
     <#if readmore>
     <p>${abstract.getData()}</p>
