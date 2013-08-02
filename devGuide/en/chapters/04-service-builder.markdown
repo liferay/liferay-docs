@@ -125,20 +125,24 @@ the ZIP file is sufficient. - Jim -->
 ---
 
 Liferay portlet projects can contain multiple portlets. We'll create two
-portlets in our event-listing-portlet project: an Event Listing portlet and a
-Location Listing portlet. These portlets will allow users to add, edit, or
+portlets in our Event Listing portlet project: Event Listing Portlet and 
+Location Listing Portlet. These portlets will allow users to add, edit, or
 remove events or locations, display lists of events or locations, search for
 particular events or locations, and view the details of individual events or
-locations. We'll start by creating the Event Listing portlet in a new portlet
-plugin project. 
+locations. See how the Event Listing Portlet displays Nose-ster events in the
+figure below.
 
-To follow this example, create a new Liferay portlet project in your Liferay
-Plugins SDK using Liferay IDE or Developer Studio. Go to *File* &rarr; *New
-Liferay Project* and a wizard will appear. We'll use this wizard to create both
-the event-listing-portlet project and the Event Listing portlet. After we finish
-with the first wizard, we'll use a second wizard to create a second portlet in
-this project, the Location Listing portlet. Here's some key information
-to specify for the event-listing-portlet project in the first wizard:
+![Figure 4.1: The Event Listing Portlet lets you add and modify Nose-ster social events, relying on event and location entities specified in its `service.xml` and constructed using Liferay Service Builder.](../../images/service-builder-view-events.png)
+
+We'll start by creating the Event Listing portlet in a new portlet plugin
+project. To follow this example, create a new Liferay portlet project in your
+Liferay Plugins SDK using Liferay IDE or Developer Studio. Go to *File* &rarr;
+*New Liferay Project* to bring up the Liferay project wizard. We'll use this
+wizard to create both the Event Listing portlet project and the Event Listing
+portlet. After we finish with the first wizard, we'll use a Liferay portlet
+wizard to create a second portlet in this project, the Location Listing portlet.
+Here's some key information to specify for the Event Listing portlet project in
+the first wizard:
 
 - Project name: *event-listing-portlet*
 - Display name: *Event Listing*
@@ -352,7 +356,7 @@ right of the table. Enter *Event* for your entity's name and select both the
 `Location`, and select the *Local Service* and the *Remote Service* options
 for it too. 
 
-![Figure 4.1: Adding service entities is easy with Liferay IDE's *Overview* mode of `service.xml`](../../images/service-add-entity.png)
+![Figure 4.2: Adding service entities is easy with Liferay IDE's *Overview* mode of `service.xml`](../../images/service-add-entity.png)
 
 An entity's name is used in naming the database table for persisting instances
 of it. The actual name of the database table is prefixed with the namespace; so
@@ -493,7 +497,7 @@ cursor. Click the Location entity to complete drawing the relationship. Liferay
 IDE turns the dashed line into a solid line, with an arrow pointing to the
 Location entity. Save the `service.xml` file. 
 
-![Figure 4.2: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
+![Figure 4.3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
 
 Switch to *Source* mode in `service.xml` and note that Liferay IDE created a
 column element for a location ID in the Event entity:
@@ -675,7 +679,7 @@ you'll be wondering where all the generated files are for your service. For
 information about WSDDs (web service deployment descriptors), please refer to
 the section on remote Liferay services later in this chapter. 
 
-![Figure 4.3: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
+![Figure 4.4: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
 
 After running Service Builder, your Plugins SDK prints messages listing the
 generated files and a message stating `BUILD SUCCESSFUL`. We'll discuss these
@@ -736,7 +740,7 @@ generated for Locations are similar.
       portlet classes, use `EventLocalServiceUtil` or `EventServiceUtil`
       instead. `@generated`
 
-    ![Figure 4.4: Service Builder generates these persistence classes and interfaces. You shouldn't (and won't need to) customize any of these classes or interfaces.](../../images/service-builder-persistence-diagram.uml.png)
+    ![Figure 4.5: Service Builder generates these persistence classes and interfaces. You shouldn't (and won't need to) customize any of these classes or interfaces.](../../images/service-builder-persistence-diagram.uml.png)
 
 -   Local Service (only generated for an entity if an entity's `local-service`
     attribute is set to `true` in `service.xml`)
@@ -758,7 +762,7 @@ generated for Locations are similar.
       developers to customize the local Event services. Customizing services
       should be done via a hook plugin. `@generated` 
 
-    ![Figure 4.5: Service Builder generates these service classes and interfaces. Only EventLocalServiceImpl allows custom methods to be added to the service layer.](../../images/service-builder-service-diagram.uml.png)
+    ![Figure 4.6: Service Builder generates these service classes and interfaces. Only EventLocalServiceImpl allows custom methods to be added to the service layer.](../../images/service-builder-service-diagram.uml.png)
 
 -   Remote Service (only generated for an entity if an entity's `remote-service`
     attribute is set to `true` in `service.xml`)
@@ -798,7 +802,7 @@ generated for Locations are similar.
       the next time you run it.
     - `EventWrapper`: Event wrapper, wraps `Event`. `@generated`
 
-    ![Figure 4.6: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../images/service-builder-model-diagram.uml.png)
+    ![Figure 4.7: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../images/service-builder-model-diagram.uml.png)
 
 Each file that Service Builder generates is assembled from an associated
 Freemarker template. You can find Service Builder's Freemarker templates in the
@@ -1078,7 +1082,7 @@ CRUD methods including the following:
 The methods listed in the following figure are all generated by Service Builder
 and are available to be called by our Event Listing portlet class.
 
-![Figure 4.7: Our Event Listing portlet class can access these methods of `EventLocalServiceUtil`, many of which enable CRUD operations.](../../images/local-service-util-outline.png)
+![Figure 4.8: Our Event Listing portlet class can access these methods of `EventLocalServiceUtil`, many of which enable CRUD operations.](../../images/local-service-util-outline.png)
 
 Portlet classes should only have access to the `-LocalServiceUtil` classes.
 `-LocalServiceUtil` classes, in turn, call their injected `-LocalServiceImpl` classes.
@@ -1267,7 +1271,7 @@ API page. You can invoke JSON web services directly from your browser. For
 example, bring up a test form for your Event entity's *delete-event* operation
 and click on its link. 
 
-![Figure 4.8: You'll see a page displaying the name of the service method, its required parameters, its return type, possible exceptions it can throw, and a form for entering its parameters.](../../images/invoking-sb-generated-json-ws.png)
+![Figure 4.9: You'll see a page displaying the name of the service method, its required parameters, its return type, possible exceptions it can throw, and a form for entering its parameters.](../../images/invoking-sb-generated-json-ws.png)
 
 The only parameter required for the `delete-event` operation is a event ID.
 Since we haven't covered creating the UI for adding our Event entities, you
