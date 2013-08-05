@@ -68,11 +68,14 @@ IDE's Remote Server Adapter.
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
 of Liferay's development tools), which comes with Liferay Portal Enterprise
-Edition, skip to the section titled *Testing/Launching Liferay Tomcat
+Edition, skip to the section titled *Testing and Launching your Liferay
 Server*--Liferay IDE comes preconfigured in Developer Studio. 
 
 <!-- Update section title Testing/Launching Liferay Tomcat
 Server to Testing/Launching Liferay Runtime Server - Jim -->
+
+<!-- I changed it as above to match the name of the section. We can change both
+if need be. -->
 
 ### Installing Liferay IDE 
 
@@ -236,11 +239,14 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 
 #### Liferay Portal Runtime and Server Setup
 
-<!-- 
-Please explain that we're creating a Tomcat Runtime Server for demonstration
-purposes. 
-- Jim
--->
+You can run Liferay on any application server suppoorted by Liferay Portal.
+Here we'll set up our Liferay runtime on the Tomcat application server, but the
+steps you'll follow will be very similar with any supported application
+server.
+ <!-- Please explain that we're creating a Tomcat Runtime Server for
+demonstration purposes. - Jim --> 
+<!--Did I word the above paragraph appropriately? I struggle with the
+runtime/application server concept. -Russ -->
 
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
@@ -306,9 +312,14 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 ### Creating New Liferay Projects 
 
 Let's create a project to illustrate the process; have you heard of the hip new
-social networking site for noses, *Nose-ster*? Well, the site's founder, Harold
-Schnozz, wants us to develop some plugins for him, so let's create an
-*event-listing-portlet* project to hold the site's portlet plugins. 
+social networking site for noses, *Nose-ster*? Harold Schnozz, the site's
+founder, wants to capitalize on the site's popularity by providing users with
+the ability to organize local meetings and events. For instance, there's a
+really active group of noses in Minneapolis who'd like to schedule a regional
+dance in January, which they're calling the Frozen Boogie. Why does that
+concern us? Mr. Schnozz has hired us to develop the necessary plugins for his
+Liferay Portal. Let's create an *event-listing-portlet* project to hold the
+site's portlet plugins. 
 
 <!-- For additional context, please borrow from service builder chapter
 description of event-listing-portlet project in the Configuring Service Builder
@@ -318,31 +329,53 @@ and Defining Portlet Data section. - Jim
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
 a new Liferay plugin project in Liferay IDE. 
 
-1. Go to File &rarr; New Project...  &rarr; Liferay &rarr; Liferay Plugin
-   Project. 
+1. Go to File &rarr; New &rarr; Liferay Project. 
 
-2. In the *New Liferay Plugin Project* dialog box, your newly configured SDK
-   and Liferay Runtime should be selected. The plugin type *portlet* is the
-default plugin type. Here we'll create a portlet that will be used throughout
-htis guide, and we'll call it *event-listing-portlet* in the *Project Name*
-field. It should have a *Display Name* of *Event Listing*. Click *Finish*. 
+2. Here we'll create a portlet that will be used throughout htis guide, and
+we'll call it *event-listing-portlet* in the *Project Name* field.  It should
+have a *Display Name* of *Event Listing*. Click *Next*. 
 
-    ![Figure 2.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+    In the *Liferay Plugin Project* dialog box, your newly configured SDK and
+    Liferay Runtime should already be selected. If you haven't yet pointed
+    Liferay IDE to a Plugins SDK, click *Configure* to open the *Installed Plugin
+    SDK* management wizard. You can also access the *New Server Runtime
+    Environment* wizard if you need to set up your runtime server: just click the
+    *New* button next to the *Liferay Portal Runtime* dropdown menu. 
+
+    Under *Plugin Type*, indicate which plugin type your project will hold by
+    selecting one from the list.  You'll choose from *Portlet*, *Hook*, *Ext*,
+    *Layout*, or *Theme*. Our demonstration project will hold portlets for the
+    Nose-ster organization, so make sure *Portlet* is selected before clicking
+    *Next*.
+
+<!--Add tip or note that explains that other plugin types do not have subsequent
+windows, you simply click finishg after naming the project and selecting youre
+runtime and sdk? --> 
+ 
+The wizard's next window let's you choose a portlet framework to base your
+portlet on. Other plugin types.
+
+    ![Figure 2.5: Entering the information for the new
+    project](../../images/ide-new-liferay-project.png)
 
 <!-- 
 Hold off on creating the Event Listing and Location Listing portlets until the
 section on creating plugins. For now we want to point out what the plugin
 project wizard creates.
+-->
+<!--If we're creating a plugin project, isn't it best to create the project
+that will house the plugins we'll need? We'll just then create the Location
+Listing portlet in "Creating Plugins". -Russ --> 
 
-Please explain the purpose of the Project Name and Display Name. Also, please
-point out the Plugins SDK and Portal Runtime options. The IDE lists the Plugins
-SDK(s) and Server(s) that are currently configured (Either they came setup with
-Developer Studio and/or the reader set them up following the previous
-sections). The display name and the plugins SDK version affect the plugin
-package's name. This name is used as the app's name when you publish to
-Marketplace. The plugins SDK version is used in generating the Liferay version
-for which the application is intended. See the Marketplace chapter for
-background on this.   
+<!--Please explain the purpose of the Project Name and
+Display Name. Also, please point out the Plugins SDK and Portal Runtime
+options. The IDE lists the Plugins SDK(s) and Server(s) that are currently
+configured (Either they came setup with Developer Studio and/or the reader set
+them up following the previous sections). The display name and the plugins SDK
+version affect the plugin package's name. This name is used as the app's name
+when you publish to Marketplace. The plugins SDK version is used in generating
+the Liferay version for which the application is intended. See the Marketplace
+chapter for background on this.   
 
 Instead of clicking Finish, have the reader click Next as we'll want them to
 select a portlet framework for the project. The framework he chooses is used
