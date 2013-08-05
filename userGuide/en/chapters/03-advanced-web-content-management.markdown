@@ -916,22 +916,17 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/control-panel-selecting-page-template.png)
+![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
-Dockbar. You'll be able to select a page template and type a name for the new
-page. Alternatively, you can use the Site Administration page.
-First, make sure you're on your desired site and navigate to *Admin* &rarr; *Site Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name, select your template from the drop down menu, and click *Add
-Page* to finish.
+left menu. You'll be able to select a page template and type a name for the new
+page. Alternatively, you can use the Site Administration page. First, make sure
+you're on your desired site and navigate to *Admin* &rarr; *Site
+Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name,
+select your template from the drop down menu, and click *Add Page* to finish.
 
-![Figure 3.17: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
-
-<!-- Needs to be replaced for 6.2. -->
-<!-- At the current time, Site Pages does not have the *Automatically apply
-changes done to the page template* checkbox. I'm not sure if this still needs to
-be added so I left off on the image for now. If this feature has been removed,
-the text needs to be changed to reflect this. -->
+![Figure 3.17: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -961,7 +956,7 @@ exported and imported manually in advance or the import will fail.
 To export a Site using a Site Template, use the following process:
 
 1. Go to *Control Panel* &rarr; *Site Templates* and click *Actions* &rarr;
-*Manage Pages* for the Site Template your site is using.
+*Manage* for the Site Template your site is using.
 2. Click *Export* to obtain a LAR file with the content of the Site Template. Be
 sure to choose the applications and data you want exported.
 3. In your target environment, go to *Control Panel* &rarr; *Site Templates* and
@@ -974,7 +969,7 @@ Now the site can be exported and imported normally to this new environment.
 
 For page templates, the process very similar:
 
-1.  Go to *Control Panel* &rarr; *Page Templates*.
+1. Go to *Control Panel* &rarr; *Page Templates*.
 2. Next to the page template you would like to export, click *Actions* &rarr;
 *Export*. This produces a LAR file you can import later.
 3. On the target environment, go to *Control Panel* &rarr; *Page Templates* and
