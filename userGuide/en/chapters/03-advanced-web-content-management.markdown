@@ -497,6 +497,9 @@ based on the roles and responsibilities within your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how to create RSS feeds in Liferay.
 
+<!-- Skipping RSS Feeds for now. I was unable to add feeds during testing
+(LPS-38500). Need to return to this section for 6.2 editing. -->
+
 ## Managing RSS Feeds in Liferay
 
 RSS is a family of web feed formats used to publish frequently updated works
@@ -513,17 +516,15 @@ see how to create RSS feeds in Liferay.
 
 ### Managing RSS Feeds from the Control Panel
 
-To manage a Liferay site's RSS feeds, navigate to the Site Administration page
-of your site and click *Web Content*. Site administrators can use this Web
-Content administration portlet to manage their site's web content, including web
-content structures and templates, which we examined above. Site administrators
-can also use the Web Content administration portlet to manage their site's RSS
-feeds. Click *Manage* &rarr; *Feeds* if you'd like to add, edit, or delete RSS
-feeds.
+To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
+Content page of your site and click *Web Content*. Site administrators can use
+this Web Content administration portlet to manage their site's web content,
+including web content structures and templates, which we examined above. Site
+administrators can also use the Web Content administration portlet to manage
+their site's RSS feeds. Click *Manage* &rarr; *Feeds* if you'd like to add,
+edit, or delete RSS feeds.
 
 ![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
-
-<!-- Needs to be replaced for 6.2. -->
 
 Click the *Add Feed* button to add a new feed. You need to enter a name and
 select a target page for the feed. A feed's target page serves two purposes:
@@ -546,8 +547,6 @@ select a target page for the feed. A feed's target page serves two purposes:
    content of the "orphaned" article is displayed on the target page.
 
 ![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
-
-<!-- Needs to be replaced for 6.2. -->
 
 To specify a target page, you need to enter the target page's friendly URL. Note
 that friendly URLs do not include the host name. For example, the friendly URL
@@ -622,8 +621,6 @@ portlet and selecting *Configuration*.
 
 ![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
 
-<!-- Needs to be replaced for 6.2. -->
-
 By default, the RSS portlet displays two feeds. In the Feeds section, click on
 the green plus sign to add a new feed or on the red minus sign to remove a feed.
 Enter the URL of the RSS feed to display into the URL field. If you leave the
@@ -652,8 +649,6 @@ can use these to provide an introduction, description, or footnotes about the
 feeds that you've selected to be displayed.
 
 ![Figure 3.10: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
-
-<!-- Needs to be replaced for 6.2. -->
 
 Now that we've discussed how to create, manage, and use RSS feeds, let's examine
 site templates and page templates. Site templates are a powerful tool for
@@ -684,18 +679,20 @@ templates and sites in more detail in the section on site templates use cases
 below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
-Panel and then click *Actions* &rarr; *Manage Pages*. From here, you can add or
-remove pages from a site template or select themes and layout templates to apply
-to the site template. Click on a specific page if you'd like to select a
-different theme or layout template for that page. To edit the pages themselves,
-click *Actions* &rarr; *View Pages*. You can add specific portlets to each page
-of a site template and configure the preferences of each portlet. Each page can
-have any theme, any layout template, and any number of portlet applications,
-just like a page of a regular site. As with site pages, you can organize the
-pages of a site template into hierarchies. When you create a site using a site
-template, the configuration of pages and portlets is copied from the template to
-the site.  By default, all changes made to the site template are automatically
-copied to sites based on that template.
+Panel and then click *Actions* &rarr; *Manage*. You're provided a left menu
+which contains the *Pages*, *Content*, and *Configuration* sections for each
+site. By default, the Manage Interface begins with the template's *Site Pages*.
+From here, you can add or remove pages from a site template or select themes and
+layout templates to apply to the site template. Click on a specific page if
+you'd like to select a different theme or layout template for that page. To edit
+the pages themselves, click *Actions* &rarr; *View Pages*. You can add specific
+portlets to each page of a site template and configure the preferences of each
+portlet. Each page can have any theme, any layout template, and any number of
+portlet applications, just like a page of a regular site. As with site pages,
+you can organize the pages of a site template into hierarchies. When you create
+a site using a site template, the configuration of pages and portlets is copied
+from the template to the site. By default, all changes made to the site template
+are automatically copied to sites based on that template.
 
 ---
 
@@ -706,6 +703,24 @@ scope and then reference it from a *Web Content Display* application in each
 site.
 
 ---
+
+The Content section offers separate repositories for content related portlets
+based on your site template. For instance, by clicking *Polls* from the Content
+section, you can create a poll question that is only available for that specific
+site template. Assets created within your template's Content section can
+only be accessed by sites using the template.
+
+Lastly, the Configuration section includes Application Display Template and
+Mobile Device configuration options for your site template. Also, nested in the
+Configuration section is the *Site Template Settings*. This option allows you to
+edit the template's name and description while also offering boolean options for
+activating your site template and allowing site administrators to modify pages
+associated with your template.
+
+The following figure displays the form shown when editing the *Community Site*
+template's settings:
+
+![Figure 3.13: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
 
 By default, the following site templates are provided:
 
@@ -721,14 +736,8 @@ By default, the following site templates are provided:
   provides 3 additional pages for *Documents and Media*, *Calendar* and external
   *News* obtained through public feeds.
 
-The following figure displays the form shown when editing the *Community Site*
-template:
-
-![Figure 3.13: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
-
-To view and manage the pages of a site template, click the *Open site template*
-link. This opens the template in a new browser window (or tab) and it can be
-navigated or managed like a regular site.
+Now that you know the basics for creating and managing your site templates,
+let's put your knowledge to the test by completing an example.
 
 ### Site Templates Example
 
@@ -747,25 +756,24 @@ still a work in progress, you can uncheck it to ensure that no one uses it until
 it's ready. Checking *Allow Site Administrators to Modify the Pages Associated
 with This Site Template* allows site administrators to modify or remove the
 pages and portlets that the template introduces to their sites--if you want the
-templates to be completely static, you should uncheck this.
+templates to be completely static, you should uncheck this. Click *Save* to
+create your site template.
 
-From the list of site templates, click on the *Department* site template that
-you created. Then click on the *Open site template* link to begin adding pages
-and portlets and configuring the layouts. When you click this link, the site
-template opens in a new browser tab or window. For our example, we would like
-our site template to include four pages. First, we'd like a Home page with the
-Activities, Announcements, and Calendar portlets. Next, we'd like a Documents
-and Media page with the Documents and Media portlet. Finally, we should create a
-Wiki page with the Wiki and Tag Cloud portlets and a Message Boards page with
-the Message Boards and Tag Cloud portlets. When you're done creating and
-configuring the pages of your site template, just close the browser tab or
-window that opened when you clicked *Open site template*. Changes to site
-templates are automatically saved as you make them, so you don't need to return
-to the Site Templates page of the Control Panel and select *Save*.
+From the left menu, select the *Pages* section and click *Site Pages*. Then
+click on the *View Pages* button to begin adding pages and portlets and
+configuring the layouts. When you click this button, the site template opens in
+a new browser tab or window. For our example, we would like our site template to
+include four pages. First, we'd like a Home page with the Activities,
+Announcements, and Calendar portlets. Next, we'd like a Documents and Media page
+with the Documents and Media portlet. Finally, we should create a Wiki page with
+the Wiki and Tag Cloud portlets and a Message Boards page with the Message
+Boards and Tag Cloud portlets. When you're done creating and configuring the
+pages of your site template, just close the browser tab or window that opened
+when you clicked *View Pages*. Changes to site templates are automatically saved
+as you make them, so you don't need to return to the Site Templates page of the
+Control Panel and select *Save*.
 
-![Figure 3.14: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
-
-<!-- Needs to be replaced for 6.2. -->
+![Figure 3.14: You can see the name of the site template you're currently editing.](../../images/editing-site-template.png)
 
 Next, let's use our site template to create our Engineering, Marketing and Legal
 sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
@@ -800,11 +808,12 @@ template pages. Changes made to a site template can be propagated to sites whose
 page sets are linked to the site template. Such a link is created when you
 create a site based on a site template and leave the *Enable propagation of
 changes from the site template* box checked. To disable or re-enable this link
-for a site, select the site in the Control Panel's *Sites*. Then click on *Site
-Settings* and uncheck or recheck the *Enable propagation of changes from the
-site template* checkbox. In this section, we explain the propagation of changes
-from site templates to sites and discuss the options available to site
-administrators and site template administrators.
+for a site, select the site from *My Sites* in the Dockbar. Navigate to *Admin*
+&rarr; *Configuration* to open the *Site Settings* page and uncheck or recheck
+the *Enable propagation of changes from the site template* checkbox. In this
+section, we explain the propagation of changes from site templates to sites and
+discuss the options available to site administrators and site template
+administrators.
 
 If a site's page set has been created from a site template and the propagation
 of changes from the site template is enabled, site administrators can add new
@@ -907,22 +916,17 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/control-panel-selecting-page-template.png)
+![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
-Dockbar. You'll be able to select a page template and type a name for the new
-page. Alternatively, you can use the Site Administration page.
-First, make sure you're on your desired site and navigate to *Admin* &rarr; *Site Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name, select your template from the drop down menu, and click *Add
-Page* to finish.
+left menu. You'll be able to select a page template and type a name for the new
+page. Alternatively, you can use the Site Administration page. First, make sure
+you're on your desired site and navigate to *Admin* &rarr; *Site
+Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name,
+select your template from the drop down menu, and click *Add Page* to finish.
 
-![Figure 3.17: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
-
-<!-- Needs to be replaced for 6.2. -->
-<!-- At the current time, Site Pages does not have the *Automatically apply
-changes done to the page template* checkbox. I'm not sure if this still needs to
-be added so I left off on the image for now. If this feature has been removed,
-the text needs to be changed to reflect this. -->
+![Figure 3.17: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -952,7 +956,7 @@ exported and imported manually in advance or the import will fail.
 To export a Site using a Site Template, use the following process:
 
 1. Go to *Control Panel* &rarr; *Site Templates* and click *Actions* &rarr;
-*Manage Pages* for the Site Template your site is using.
+*Manage* for the Site Template your site is using.
 2. Click *Export* to obtain a LAR file with the content of the Site Template. Be
 sure to choose the applications and data you want exported.
 3. In your target environment, go to *Control Panel* &rarr; *Site Templates* and
@@ -965,7 +969,7 @@ Now the site can be exported and imported normally to this new environment.
 
 For page templates, the process very similar:
 
-1.  Go to *Control Panel* &rarr; *Page Templates*.
+1. Go to *Control Panel* &rarr; *Page Templates*.
 2. Next to the page template you would like to export, click *Actions* &rarr;
 *Export*. This produces a LAR file you can import later.
 3. On the target environment, go to *Control Panel* &rarr; *Page Templates* and
