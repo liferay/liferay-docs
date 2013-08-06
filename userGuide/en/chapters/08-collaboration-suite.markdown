@@ -521,6 +521,12 @@ Discuss, and Update Discussion permissions determine whether a role can add,
 delete, or update a comment on an event. The Permissions permission determines
 whether a role can update an event's permissions.
 
+To respond to an event invitation, you can click *Accept*, *Maybe*, or *Decline*
+when viewing the event in the Calendar portlet. The default event invitation
+notification emails contain links to their corresponding events. This allows
+users easy access to events in the Calendar portlet so they can respond to event
+invitations.
+
 #### Adding and Using Calendar Resources
 
 You might be wondering, "It makes sense to invite users and organizations to an
