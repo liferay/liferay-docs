@@ -16,7 +16,7 @@ An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
 and selecting *Look and Feel*. The location of the wrench icon and other
 portlet icons (minimize, maximize, and remove) may vary, depending on your
-theme. Liferay portlets' look and feel dialog boxes contain seven tabs:
+theme. Liferay portlets' look and feel dialog boxes contain six tabs:
 
 - Portlet Configuration
 - Text Styles
@@ -24,7 +24,6 @@ theme. Liferay portlets' look and feel dialog boxes contain seven tabs:
 - Border Styles
 - Margin and Padding
 - Advanced Styling
-- WAP Styling
 
 After making customizations on any tab, remember to click the *Save* button to
 apply your changes. To see the effect of your changes, you may have to refresh
@@ -111,12 +110,13 @@ your custom CSS text box. If you check the *Update my styles as I type* box,
 your CSS code will be dynamically applied to your portlet so you can see the
 effects of your edits.
 
-The WAP Styling tab allows you to specify a custom portlet title that will be
-displayed when mobile devices using the Wireless Application Protocol make page
-requests. You can also set the initial window state to normal or minimized.
-Normal is the default.
-
-![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be displayed to devices making page requests via WAP; it also allows you to specify an initial window state.](../../images/look-and-feel-wap-styling.png)
+For Liferay 6.2, the WAP Styling functionality has been deprecated. Liferay
+Portal uses a new responsive design making WAP Styling configuration unnecessary
+for your portlet's look and feel. You can enable the WAP functionality for your
+portal's Look and Feel section by opening/creating your `portal-ext.properties`
+file in your ${LIFERAY_HOME} directory and setting
+`mobile.device.styling.wap.enabled=true`. WAP functionality will be completely
+removed from Liferay in the next release.
 
 Next, let's discuss exporting and importing portlet data.
 
