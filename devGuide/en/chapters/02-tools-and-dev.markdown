@@ -246,7 +246,9 @@ server.
  <!-- Please explain that we're creating a Tomcat Runtime Server for
 demonstration purposes. - Jim --> 
 <!--Did I word the above paragraph appropriately? I struggle with the
-runtime/application server concept. -Russ -->
+runtime/application server concept. Also, is there somewhere we can point the
+reader to learrn about all the app servers we support? Are they simnply the
+ones Liferay comes bundled with on our customer portal? -Russ -->
 
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
@@ -318,8 +320,8 @@ the ability to organize local meetings and events. For instance, there's a
 really active group of noses in Minneapolis who'd like to schedule a regional
 dance in January, which they're calling the Frozen Boogie. Why does that
 concern us? Mr. Schnozz has hired us to develop the necessary plugins for his
-Liferay Portal. Let's create an *event-listing-portlet* project to hold the
-site's portlet plugins. 
+Liferay Portal. Let's create a plugin project to hold the site's portlet
+plugins. 
 
 <!-- For additional context, please borrow from service builder chapter
 description of event-listing-portlet project in the Configuring Service Builder
@@ -331,9 +333,11 @@ a new Liferay plugin project in Liferay IDE.
 
 1. Go to File &rarr; New &rarr; Liferay Project. 
 
-2. Here we'll create a portlet that will be used throughout htis guide, and
-we'll call it *event-listing-portlet* in the *Project Name* field.  It should
-have a *Display Name* of *Event Listing*. Click *Next*. 
+2. Here we'll create a project to hold plugins that will be used throughout
+this guide. You'll need to provide both a *Project Name*, which is used to name
+the projects directory, and a *Display Name*, which is used to fand we'll call
+it *event-listing-portlet* in the *Project Name* field. It should have a
+*Display Name* of *Event Listing*. Click *Next*. 
 
     In the *Liferay Plugin Project* dialog box, your newly configured SDK and
     Liferay Runtime should already be selected. If you haven't yet pointed
@@ -344,16 +348,20 @@ have a *Display Name* of *Event Listing*. Click *Next*.
 
     Under *Plugin Type*, indicate which plugin type your project will hold by
     selecting one from the list.  You'll choose from *Portlet*, *Hook*, *Ext*,
-    *Layout*, or *Theme*. Our demonstration project will hold portlets for the
-    Nose-ster organization, so make sure *Portlet* is selected before clicking
-    *Next*.
+    *Layout*, or *Theme*. Portlets are the only plugin type whose creation spans
+    multiple windows in the wizard; all other plugin types are created once you
+    click *Finish* from this window. Our demonstration project will hold portlets
+    for the Nose-ster organization, so make sure *Portlet* is selected before
+    clicking *Next*.
 
-<!--Add tip or note that explains that other plugin types do not have subsequent
-windows, you simply click finishg after naming the project and selecting youre
-runtime and sdk? --> 
- 
-The wizard's next window let's you choose a portlet framework to base your
-portlet on. Other plugin types.
+    The wizard's next window let's you choose a portlet framework to base your
+    portlet on. If you would like to use one of the listed frameworks (*Liferay
+    MVC*, *JSF 2.x*, or *Vaadin*), select it and click *Finish*. Alternatively,
+    you can select the *Create custom portlet class* option and click *Next*.
+
+    If you chose to create a custom portlet class, you'll be directed to a new
+    window where you'll specify the name of your *Portlet class*,  name the *Java
+    package*, and identify the *Superclass*. 
 
     ![Figure 2.5: Entering the information for the new
     project](../../images/ide-new-liferay-project.png)
