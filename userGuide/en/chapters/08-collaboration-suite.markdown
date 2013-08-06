@@ -521,6 +521,12 @@ Discuss, and Update Discussion permissions determine whether a role can add,
 delete, or update a comment on an event. The Permissions permission determines
 whether a role can update an event's permissions.
 
+To respond to an event invitation, you can click *Accept*, *Maybe*, or *Decline*
+when viewing the event in the Calendar portlet. The default event invitation
+notification emails contain links to their corresponding events. This allows
+users easy access to events in the Calendar portlet so they can respond to event
+invitations.
+
 #### Adding and Using Calendar Resources
 
 You might be wondering, "It makes sense to invite users and organizations to an
@@ -559,9 +565,67 @@ in which the selected calendar resource appears.
 Liferay's new Calendar portlet provides an easy-to-use scheduling tool. Sites
 and users can have multiple calendars, calendar events can include calendar
 resources and calendar resources have their own schedules of availability. We
-hope this flexible system meets the needs of your organization. Next, let's look
-at one of the most widely used applications provided by Liferay: its message
-boards.
+hope this flexible system meets the needs of your organization.
+
+#### Exporting and Importing Calendar Data
+
+Liferay's Calendar portlet allows to data to be exported or imported as LAR
+files. Both calendar events and resources can be exported or imported. As with
+all LAR files, data can only be imported into a version of Liferay that's the
+same as the one from which it was exported. To access the interface for
+exporting or importing calendar data, click on the *wrench* icon in the portlet
+header and select *Export / Import*. By default, the Export tab appears which
+allows you to define a new export process or use an existing one to export
+calendar data. If you'd like to import data, click on *Import*. You'll be able
+to define a new import process by selecting an existing LAR file or by using an
+existing import process.
+
+To define a new export process, you first have to choose a name for the LAR file
+to be generated. `Calendar-201308061558.portlet.lar` is an example of a typical
+Calendar portlet LAR filename. Notice that by default, a timestamp is included
+in the LAR filename. Next, you have to define a data range. You can select *All*
+to export calendar data regardless of when it was created or last modified.
+Alternatively, you can specify a data range. In this case, only calendar data
+which was created or modified at or after the start date and before the end date
+will be exported. Next, you can choose which kinds of calendar data to export:
+calendar events, resources, or both. For each selected kind of calendar data,
+you can choose to export associated comments, ratings, or both. Finally, you can
+choose whether or not to export the permissions defined for the specific
+Calendar portlet window from which you're exporting data. Click *Export* to
+export your data into a LAR file. You should see a message stating *Your request
+completed successfully* and you'll be able to click on the LAR file's name to
+download it.
+
+To define a new import process, click on *Import* from the Export / Import
+window. Then either drop a LAR file into the box outlined by the dashed lines or
+click on the button to browse to and select the LAR file to import. Once
+selected, you'll be able to choose whether to import calendar events, resources,
+or both and whether to import the comments and ratings associated with these
+calendar events and resources. You'll also be able to choose whether or not to
+import the permissions for the Calendar portlet window from the LAR file. Once
+you've made these selections, click *Continue* and you'll be able to choose a
+strategy for updating data:
+
+- The *Mirror* strategy means that all data and content inside the imported LAR
+  will be created as new the first time while maintaining a reference to source.
+  Subsequent imports from the same source will update the entries instead of
+  creating new entries.
+- The *Mirror with Overwriting* is the same as the Mirror strategy except that
+  if an entry with the same name is found, it is overwritten.
+- The *Copy as New* strategy means that all data and content inside the imported
+  LAR will be created as new entries within the current site every time the LAR
+  is imported.
+
+You must also specify an option for assigning ownership of the imported data:
+
+- *Use the Original Author* means that authorship of imported content will be
+  preserved, if possible. If the original author of the imported content is not
+  found, the current user will be assigned as the author.
+- *Use the Current User as Author* means that the current user will be assigned
+  as the author of the imported content regardless of the original author.
+
+Next, let's look at one of the most widely used applications provided by
+Liferay: its message boards.
 
 ## Discuss, Ask, and Answer Using the Message Boards  
 
