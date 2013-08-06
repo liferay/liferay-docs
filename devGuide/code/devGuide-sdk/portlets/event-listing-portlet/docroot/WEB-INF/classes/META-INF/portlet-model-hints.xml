@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 
 <model-hints>
+	<hint-collection name="DESCRIPTION-TEXTAREA">
+		<hint name="editor">true</hint>
+		<hint name="max-length">250</hint>
+	</hint-collection>
 	<model name="com.nosester.portlet.eventlisting.model.Event">
 		<field name="eventId" type="long" />
 		<field name="companyId" type="long" />
@@ -9,8 +13,13 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 		<field name="name" type="String" />
-		<field name="description" type="String" />
-		<field name="date" type="Date" />
+		<field name="description" type="String">
+			<hint-collection name="DESCRIPTION-TEXTAREA" />
+		</field>
+		<field name="date" type="Date">
+			<hint name="show-time">true</hint>
+			<hint name="year-range-past">false</hint>
+		</field>
 		<field name="locationId" type="long" />
 	</model>
 	<model name="com.nosester.portlet.eventlisting.model.Location">
@@ -21,7 +30,9 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 		<field name="name" type="String" />
-		<field name="description" type="String" />
+		<field name="description" type="String">
+			<hint-collection name="DESCRIPTION-TEXTAREA" />
+		</field>
 		<field name="streetAddress" type="String" />
 		<field name="city" type="String" />
 		<field name="stateOrProvince" type="String" />

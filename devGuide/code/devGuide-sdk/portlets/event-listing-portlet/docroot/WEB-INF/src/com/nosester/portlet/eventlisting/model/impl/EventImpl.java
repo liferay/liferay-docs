@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -24,17 +24,17 @@ import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
  * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.model.Event} interface.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  */
 public class EventImpl extends EventBaseImpl {
-	/*
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. All methods that expect a event model instance should use the {@link com.nosester.portlet.eventlisting.model.Event} interface instead.
 	 */
 	public EventImpl() {
 	}
-	
+
 	public Location getLocation() {
 
 		try {
@@ -44,5 +44,5 @@ public class EventImpl extends EventBaseImpl {
 			return null;
 		}
 	}
-	
+
 }

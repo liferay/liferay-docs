@@ -8,11 +8,11 @@
 	if (eventId > 0) {
 		event = EventLocalServiceUtil.getEvent(eventId);
 	}
-	
-	ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY); 
-	
+
+	ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+
 	long scopeGroupId = themeDisplay.getScopeGroupId();
-	
+
 	List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId);
 
 	String redirect = ParamUtil.getString(request, "redirect");
@@ -29,26 +29,28 @@
 
 <aui:form action="<%= editEventURL %>" method="POST" name="fm">
 	<aui:fieldset>
-		<aui:input type="hidden" name="redirect" value="<%= redirect %>" />
+		<aui:input name="redirect" type="hidden" value="<%= redirect %>" />
 
-		<aui:input type="hidden" name="eventId" value='<%= event == null ? "" : event.getEventId() %>'/>
+		<aui:input name="eventId" type="hidden" value='<%= event == null ? "" : event.getEventId() %>'/>
 
 		<aui:input name="name" />
 
 		<aui:input name="description" />
-		
-		<aui:select name="locationId" showEmptyOption="<%= true %>" label="Location">
+
+		<aui:select label="Location" name="locationId" showEmptyOption="<%= true %>">
 
 	 		<%
-				for (Location location : locations){
+				for (Location location : locations) {
 			%>
-			<aui:option value="<%= location.getLocationId() %>" selected="<%= event != null && location.getLocationId() == event.getLocationId() %>"><%=location.getName()%></aui:option>
+
+			<aui:option selected="<%= event != null && location.getLocationId() == event.getLocationId() %>" value="<%= location.getLocationId() %>"><%=location.getName() %></aui:option>
+
 			<%
 				}
 			%>
 
 		</aui:select>
-		
+
 		<aui:input name="date" />
 
 	</aui:fieldset>
@@ -56,6 +58,6 @@
 	<aui:button-row>
 		<aui:button type="submit" />
 
-		<aui:button type="cancel"  onClick="<%= viewEventURL %>" />
+		<aui:button onClick="<%= viewEventURL %>"  type="cancel" />
 	</aui:button-row>
 </aui:form>
