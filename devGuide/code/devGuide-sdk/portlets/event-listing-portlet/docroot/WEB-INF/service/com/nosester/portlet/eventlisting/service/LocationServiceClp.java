@@ -18,6 +18,7 @@ import com.liferay.portal.service.InvokableService;
 
 /**
  * @author Joe Bloggs
+ * @generated
  */
 public class LocationServiceClp implements LocationService {
 	public LocationServiceClp(InvokableService invokableService) {
@@ -70,6 +71,7 @@ public class LocationServiceClp implements LocationService {
 		_methodParameterTypes8 = new String[] { "long" };
 	}
 
+	@Override
 	public java.lang.String getBeanIdentifier() {
 		Object returnObj = null;
 
@@ -92,6 +94,7 @@ public class LocationServiceClp implements LocationService {
 		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		try {
 			_invokableService.invokeMethod(_methodName1,
@@ -111,12 +114,14 @@ public class LocationServiceClp implements LocationService {
 		}
 	}
 
+	@Override
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -146,6 +151,7 @@ public class LocationServiceClp implements LocationService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -189,6 +195,7 @@ public class LocationServiceClp implements LocationService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location update(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -218,6 +225,7 @@ public class LocationServiceClp implements LocationService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -261,6 +269,7 @@ public class LocationServiceClp implements LocationService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location delete(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -290,6 +299,7 @@ public class LocationServiceClp implements LocationService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		long locationId)
 		throws com.liferay.portal.kernel.exception.PortalException,

@@ -17,16 +17,18 @@ package com.nosester.portlet.eventlisting.model;
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.DateUtil;
+import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.util.PortalUtil;
 
+import com.nosester.portlet.eventlisting.service.ClpSerializer;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 
 import java.io.Serializable;
 
-import java.lang.reflect.Proxy;
+import java.lang.reflect.Method;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -39,26 +41,32 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 	public EventClp() {
 	}
 
+	@Override
 	public Class<?> getModelClass() {
 		return Event.class;
 	}
 
+	@Override
 	public String getModelClassName() {
 		return Event.class.getName();
 	}
 
+	@Override
 	public long getPrimaryKey() {
 		return _eventId;
 	}
 
+	@Override
 	public void setPrimaryKey(long primaryKey) {
 		setEventId(primaryKey);
 	}
 
+	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new Long(_eventId);
+		return _eventId;
 	}
 
+	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		setPrimaryKey(((Long)primaryKeyObj).longValue());
 	}
@@ -144,96 +152,263 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 		}
 	}
 
+	@Override
 	public long getEventId() {
 		return _eventId;
 	}
 
+	@Override
 	public void setEventId(long eventId) {
 		_eventId = eventId;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEventId", long.class);
+
+				method.invoke(_eventRemoteModel, eventId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public long getCompanyId() {
 		return _companyId;
 	}
 
+	@Override
 	public void setCompanyId(long companyId) {
 		_companyId = companyId;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCompanyId", long.class);
+
+				method.invoke(_eventRemoteModel, companyId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public long getGroupId() {
 		return _groupId;
 	}
 
+	@Override
 	public void setGroupId(long groupId) {
 		_groupId = groupId;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setGroupId", long.class);
+
+				method.invoke(_eventRemoteModel, groupId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public long getUserId() {
 		return _userId;
 	}
 
+	@Override
 	public void setUserId(long userId) {
 		_userId = userId;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUserId", long.class);
+
+				method.invoke(_eventRemoteModel, userId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public String getUserUuid() throws SystemException {
 		return PortalUtil.getUserValue(getUserId(), "uuid", _userUuid);
 	}
 
+	@Override
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
 	}
 
+	@Override
 	public Date getCreateDate() {
 		return _createDate;
 	}
 
+	@Override
 	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCreateDate", Date.class);
+
+				method.invoke(_eventRemoteModel, createDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
+	@Override
 	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setModifiedDate", Date.class);
+
+				method.invoke(_eventRemoteModel, modifiedDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public String getName() {
 		return _name;
 	}
 
+	@Override
 	public void setName(String name) {
 		_name = name;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setName", String.class);
+
+				method.invoke(_eventRemoteModel, name);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public String getDescription() {
 		return _description;
 	}
 
+	@Override
 	public void setDescription(String description) {
 		_description = description;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setDescription", String.class);
+
+				method.invoke(_eventRemoteModel, description);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public Date getDate() {
 		return _date;
 	}
 
+	@Override
 	public void setDate(Date date) {
 		_date = date;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setDate", Date.class);
+
+				method.invoke(_eventRemoteModel, date);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public long getLocationId() {
 		return _locationId;
 	}
 
+	@Override
 	public void setLocationId(long locationId) {
 		_locationId = locationId;
+
+		if (_eventRemoteModel != null) {
+			try {
+				Class<?> clazz = _eventRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setLocationId", long.class);
+
+				method.invoke(_eventRemoteModel, locationId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location getLocation() {
-		throw new UnsupportedOperationException();
+		try {
+			String methodName = "getLocation";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			com.nosester.portlet.eventlisting.model.Location returnObj = (com.nosester.portlet.eventlisting.model.Location)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
 	}
 
 	public BaseModel<?> getEventRemoteModel() {
@@ -244,6 +419,48 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 		_eventRemoteModel = eventRemoteModel;
 	}
 
+	public Object invokeOnRemoteModel(String methodName,
+		Class<?>[] parameterTypes, Object[] parameterValues)
+		throws Exception {
+		Object[] remoteParameterValues = new Object[parameterValues.length];
+
+		for (int i = 0; i < parameterValues.length; i++) {
+			if (parameterValues[i] != null) {
+				remoteParameterValues[i] = ClpSerializer.translateInput(parameterValues[i]);
+			}
+		}
+
+		Class<?> remoteModelClass = _eventRemoteModel.getClass();
+
+		ClassLoader remoteModelClassLoader = remoteModelClass.getClassLoader();
+
+		Class<?>[] remoteParameterTypes = new Class[parameterTypes.length];
+
+		for (int i = 0; i < parameterTypes.length; i++) {
+			if (parameterTypes[i].isPrimitive()) {
+				remoteParameterTypes[i] = parameterTypes[i];
+			}
+			else {
+				String parameterTypeName = parameterTypes[i].getName();
+
+				remoteParameterTypes[i] = remoteModelClassLoader.loadClass(parameterTypeName);
+			}
+		}
+
+		Method method = remoteModelClass.getMethod(methodName,
+				remoteParameterTypes);
+
+		Object returnValue = method.invoke(_eventRemoteModel,
+				remoteParameterValues);
+
+		if (returnValue != null) {
+			returnValue = ClpSerializer.translateOutput(returnValue);
+		}
+
+		return returnValue;
+	}
+
+	@Override
 	public void persist() throws SystemException {
 		if (this.isNew()) {
 			EventLocalServiceUtil.addEvent(this);
@@ -255,7 +472,7 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 
 	@Override
 	public Event toEscapedModel() {
-		return (Event)Proxy.newProxyInstance(Event.class.getClassLoader(),
+		return (Event)ProxyUtil.newProxyInstance(Event.class.getClassLoader(),
 			new Class[] { Event.class }, new AutoEscapeBeanHandler(this));
 	}
 
@@ -277,6 +494,7 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 		return clone;
 	}
 
+	@Override
 	public int compareTo(Event event) {
 		int value = 0;
 
@@ -291,18 +509,15 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof EventClp)) {
 			return false;
 		}
 
-		EventClp event = null;
-
-		try {
-			event = (EventClp)obj;
-		}
-		catch (ClassCastException cce) {
-			return false;
-		}
+		EventClp event = (EventClp)obj;
 
 		long primaryKey = event.getPrimaryKey();
 
@@ -348,6 +563,7 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 		return sb.toString();
 	}
 
+	@Override
 	public String toXmlString() {
 		StringBundler sb = new StringBundler(34);
 

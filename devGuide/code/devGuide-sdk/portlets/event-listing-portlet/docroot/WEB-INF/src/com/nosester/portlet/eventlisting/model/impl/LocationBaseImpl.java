@@ -38,6 +38,7 @@ public abstract class LocationBaseImpl extends LocationModelImpl
 	 *
 	 * Never modify or reference this class directly. All methods that expect a location model instance should use the {@link Location} interface instead.
 	 */
+	@Override
 	public void persist() throws SystemException {
 		if (this.isNew()) {
 			LocationLocalServiceUtil.addLocation(this);

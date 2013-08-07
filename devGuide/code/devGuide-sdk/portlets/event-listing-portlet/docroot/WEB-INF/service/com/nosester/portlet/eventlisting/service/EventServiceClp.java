@@ -18,6 +18,7 @@ import com.liferay.portal.service.InvokableService;
 
 /**
  * @author Joe Bloggs
+ * @generated
  */
 public class EventServiceClp implements EventService {
 	public EventServiceClp(InvokableService invokableService) {
@@ -68,6 +69,7 @@ public class EventServiceClp implements EventService {
 		_methodParameterTypes8 = new String[] { "long" };
 	}
 
+	@Override
 	public java.lang.String getBeanIdentifier() {
 		Object returnObj = null;
 
@@ -90,6 +92,7 @@ public class EventServiceClp implements EventService {
 		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		try {
 			_invokableService.invokeMethod(_methodName1,
@@ -109,12 +112,14 @@ public class EventServiceClp implements EventService {
 		}
 	}
 
+	@Override
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -144,6 +149,7 @@ public class EventServiceClp implements EventService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		java.lang.String name, java.lang.String description,
 		java.util.Date date, long locationId,
@@ -180,6 +186,7 @@ public class EventServiceClp implements EventService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event update(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -209,6 +216,7 @@ public class EventServiceClp implements EventService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
 		java.util.Date date, long locationId,
@@ -247,6 +255,7 @@ public class EventServiceClp implements EventService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event delete(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -276,6 +285,7 @@ public class EventServiceClp implements EventService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,

@@ -14,6 +14,7 @@
 
 package com.nosester.portlet.eventlisting.model;
 
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
 import java.util.Date;
@@ -25,8 +26,8 @@ import java.util.Map;
  * This class is a wrapper for {@link Event}.
  * </p>
  *
- * @author    Joe Bloggs
- * @see       Event
+ * @author Joe Bloggs
+ * @see Event
  * @generated
  */
 public class EventWrapper implements Event, ModelWrapper<Event> {
@@ -34,14 +35,17 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		_event = event;
 	}
 
+	@Override
 	public Class<?> getModelClass() {
 		return Event.class;
 	}
 
+	@Override
 	public String getModelClassName() {
 		return Event.class.getName();
 	}
 
+	@Override
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
@@ -59,6 +63,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		return attributes;
 	}
 
+	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
 		Long eventId = (Long)attributes.get("eventId");
 
@@ -126,6 +131,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the primary key of this event
 	*/
+	@Override
 	public long getPrimaryKey() {
 		return _event.getPrimaryKey();
 	}
@@ -135,6 +141,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param primaryKey the primary key of this event
 	*/
+	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_event.setPrimaryKey(primaryKey);
 	}
@@ -144,6 +151,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the event ID of this event
 	*/
+	@Override
 	public long getEventId() {
 		return _event.getEventId();
 	}
@@ -153,6 +161,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param eventId the event ID of this event
 	*/
+	@Override
 	public void setEventId(long eventId) {
 		_event.setEventId(eventId);
 	}
@@ -162,6 +171,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the company ID of this event
 	*/
+	@Override
 	public long getCompanyId() {
 		return _event.getCompanyId();
 	}
@@ -171,6 +181,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param companyId the company ID of this event
 	*/
+	@Override
 	public void setCompanyId(long companyId) {
 		_event.setCompanyId(companyId);
 	}
@@ -180,6 +191,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the group ID of this event
 	*/
+	@Override
 	public long getGroupId() {
 		return _event.getGroupId();
 	}
@@ -189,6 +201,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param groupId the group ID of this event
 	*/
+	@Override
 	public void setGroupId(long groupId) {
 		_event.setGroupId(groupId);
 	}
@@ -198,6 +211,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the user ID of this event
 	*/
+	@Override
 	public long getUserId() {
 		return _event.getUserId();
 	}
@@ -207,6 +221,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param userId the user ID of this event
 	*/
+	@Override
 	public void setUserId(long userId) {
 		_event.setUserId(userId);
 	}
@@ -217,6 +232,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	* @return the user uuid of this event
 	* @throws SystemException if a system exception occurred
 	*/
+	@Override
 	public java.lang.String getUserUuid()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _event.getUserUuid();
@@ -227,6 +243,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param userUuid the user uuid of this event
 	*/
+	@Override
 	public void setUserUuid(java.lang.String userUuid) {
 		_event.setUserUuid(userUuid);
 	}
@@ -236,6 +253,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the create date of this event
 	*/
+	@Override
 	public java.util.Date getCreateDate() {
 		return _event.getCreateDate();
 	}
@@ -245,6 +263,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param createDate the create date of this event
 	*/
+	@Override
 	public void setCreateDate(java.util.Date createDate) {
 		_event.setCreateDate(createDate);
 	}
@@ -254,6 +273,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the modified date of this event
 	*/
+	@Override
 	public java.util.Date getModifiedDate() {
 		return _event.getModifiedDate();
 	}
@@ -263,6 +283,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param modifiedDate the modified date of this event
 	*/
+	@Override
 	public void setModifiedDate(java.util.Date modifiedDate) {
 		_event.setModifiedDate(modifiedDate);
 	}
@@ -272,6 +293,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the name of this event
 	*/
+	@Override
 	public java.lang.String getName() {
 		return _event.getName();
 	}
@@ -281,6 +303,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param name the name of this event
 	*/
+	@Override
 	public void setName(java.lang.String name) {
 		_event.setName(name);
 	}
@@ -290,6 +313,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the description of this event
 	*/
+	@Override
 	public java.lang.String getDescription() {
 		return _event.getDescription();
 	}
@@ -299,6 +323,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param description the description of this event
 	*/
+	@Override
 	public void setDescription(java.lang.String description) {
 		_event.setDescription(description);
 	}
@@ -308,6 +333,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the date of this event
 	*/
+	@Override
 	public java.util.Date getDate() {
 		return _event.getDate();
 	}
@@ -317,6 +343,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param date the date of this event
 	*/
+	@Override
 	public void setDate(java.util.Date date) {
 		_event.setDate(date);
 	}
@@ -326,6 +353,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the location ID of this event
 	*/
+	@Override
 	public long getLocationId() {
 		return _event.getLocationId();
 	}
@@ -335,42 +363,64 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param locationId the location ID of this event
 	*/
+	@Override
 	public void setLocationId(long locationId) {
 		_event.setLocationId(locationId);
 	}
 
+	@Override
 	public boolean isNew() {
 		return _event.isNew();
 	}
 
+	@Override
 	public void setNew(boolean n) {
 		_event.setNew(n);
 	}
 
+	@Override
 	public boolean isCachedModel() {
 		return _event.isCachedModel();
 	}
 
+	@Override
 	public void setCachedModel(boolean cachedModel) {
 		_event.setCachedModel(cachedModel);
 	}
 
+	@Override
 	public boolean isEscapedModel() {
 		return _event.isEscapedModel();
 	}
 
+	@Override
 	public java.io.Serializable getPrimaryKeyObj() {
 		return _event.getPrimaryKeyObj();
 	}
 
+	@Override
 	public void setPrimaryKeyObj(java.io.Serializable primaryKeyObj) {
 		_event.setPrimaryKeyObj(primaryKeyObj);
 	}
 
+	@Override
 	public com.liferay.portlet.expando.model.ExpandoBridge getExpandoBridge() {
 		return _event.getExpandoBridge();
 	}
 
+	@Override
+	public void setExpandoBridgeAttributes(
+		com.liferay.portal.model.BaseModel<?> baseModel) {
+		_event.setExpandoBridgeAttributes(baseModel);
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(
+		com.liferay.portlet.expando.model.ExpandoBridge expandoBridge) {
+		_event.setExpandoBridgeAttributes(expandoBridge);
+	}
+
+	@Override
 	public void setExpandoBridgeAttributes(
 		com.liferay.portal.service.ServiceContext serviceContext) {
 		_event.setExpandoBridgeAttributes(serviceContext);
@@ -381,6 +431,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		return new EventWrapper((Event)_event.clone());
 	}
 
+	@Override
 	public int compareTo(com.nosester.portlet.eventlisting.model.Event event) {
 		return _event.compareTo(event);
 	}
@@ -390,12 +441,19 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		return _event.hashCode();
 	}
 
+	@Override
 	public com.liferay.portal.model.CacheModel<com.nosester.portlet.eventlisting.model.Event> toCacheModel() {
 		return _event.toCacheModel();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event toEscapedModel() {
 		return new EventWrapper(_event.toEscapedModel());
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event toUnescapedModel() {
+		return new EventWrapper(_event.toUnescapedModel());
 	}
 
 	@Override
@@ -403,30 +461,54 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		return _event.toString();
 	}
 
+	@Override
 	public java.lang.String toXmlString() {
 		return _event.toXmlString();
 	}
 
+	@Override
 	public void persist()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_event.persist();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location getLocation() {
 		return _event.getLocation();
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof EventWrapper)) {
+			return false;
+		}
+
+		EventWrapper eventWrapper = (EventWrapper)obj;
+
+		if (Validator.equals(_event, eventWrapper._event)) {
+			return true;
+		}
+
+		return false;
+	}
+
 	/**
-	 * @deprecated Renamed to {@link #getWrappedModel}
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedModel}
 	 */
 	public Event getWrappedEvent() {
 		return _event;
 	}
 
+	@Override
 	public Event getWrappedModel() {
 		return _event;
 	}
 
+	@Override
 	public void resetOriginalValues() {
 		_event.resetOriginalValues();
 	}

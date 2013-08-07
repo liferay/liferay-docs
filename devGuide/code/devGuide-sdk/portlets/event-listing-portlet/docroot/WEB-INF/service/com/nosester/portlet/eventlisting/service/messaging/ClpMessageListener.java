@@ -24,7 +24,7 @@ import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.LocationServiceUtil;
 
 /**
- * @author Brian Wing Shun Chan
+ * @author Joe Bloggs
  */
 public class ClpMessageListener extends BaseMessageListener {
 	public static String getServletContextName() {
