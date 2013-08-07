@@ -313,40 +313,47 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 
 ### Creating New Liferay Projects 
 
-Let's create a project to illustrate the process; have you heard of the hip new
-social networking site for noses, *Nose-ster*? Harold Schnozz, the site's
-founder, wants to capitalize on the site's popularity by providing users with
-the ability to organize local meetings and events. For instance, there's a
-really active group of noses in Minneapolis who'd like to schedule a regional
-dance in January, which they're calling the Frozen Boogie. Why does that
-concern us? Mr. Schnozz has hired us to develop the necessary plugins for his
-Liferay Portal. Let's create a plugin project to hold the site's portlet
-plugins. 
+When you create plugins for your Liferay Portal, they need to be held inside of
+a project, which is essentailly a root directory with a standardized structure
+containing the project's (and each of its plugins) necessary files. Since each
+plugin type has slightly different files Let's create a project to illustrate
+the process; have you heard of the hip new social networking site for noses,
+*Nose-ster*? Harold Schnozz, the site's founder, wants to capitalize on the
+site's popularity by providing users with the ability to organize local
+meetings and events. For instance, there's a really active group of noses in
+Minneapolis, MN, who'd like to schedule a regional dance in January, which
+they're calling the Frozen Boogie. Why does that concern us? Mr. Schnozz has
+hired us to develop the necessary plugins for his Liferay Portal. 
 
 <!-- For additional context, please borrow from service builder chapter
 description of event-listing-portlet project in the Configuring Service Builder
 and Defining Portlet Data section. - Jim
 -->
 
-Your Plugins SDK and portal server are configured in Liferay IDE--let's create
-a new Liferay plugin project in Liferay IDE. 
+If you've been following along, your Plugins SDK and portal server are
+configured in Liferay IDE--let's create a new Liferay plugin project in Liferay
+IDE. 
 
 1. Go to File &rarr; New &rarr; Liferay Project. 
 
-2. Here we'll create a project to hold plugins that will be used throughout
-this guide. You'll need to provide both a *Project Name*, which is used to name
-the projects directory, and a *Display Name*, which is used to fand we'll call
-it *event-listing-portlet* in the *Project Name* field. It should have a
-*Display Name* of *Event Listing*. Click *Next*. 
+2. In the project creation wizard's first window, you'll name your project and
+select the type of plugins it will hold.
 
-    In the *Liferay Plugin Project* dialog box, your newly configured SDK and
+    2.1. We'll create a project to hold plugins that will be used throughout
+    this guide.  You'll need to provide both a *Project Name*, which is used to
+    name the project's directory, and a *Display Name*, which is used to identify
+    the plugin when adding it to a page in Liferay Portal. Our demonstration
+    project will have a project name *event-listing-portlet* and a display namr of
+    *Event Listing*.  Click *Next*. 
+
+    2.2. In the *Liferay Plugin Project* dialog box, your newly configured SDK and
     Liferay Runtime should already be selected. If you haven't yet pointed
     Liferay IDE to a Plugins SDK, click *Configure* to open the *Installed Plugin
     SDK* management wizard. You can also access the *New Server Runtime
-    Environment* wizard if you need to set up your runtime server: just click the
+    Environment* wizard if you need to set up your runtime server; just click the
     *New* button next to the *Liferay Portal Runtime* dropdown menu. 
 
-    Under *Plugin Type*, indicate which plugin type your project will hold by
+    2.3. Under *Plugin Type*, indicate which plugin type your project will hold by
     selecting one from the list.  You'll choose from *Portlet*, *Hook*, *Ext*,
     *Layout*, or *Theme*. Portlets are the only plugin type whose creation spans
     multiple windows in the wizard; all other plugin types are created once you
@@ -354,14 +361,12 @@ it *event-listing-portlet* in the *Project Name* field. It should have a
     for the Nose-ster organization, so make sure *Portlet* is selected before
     clicking *Next*.
 
-    The wizard's next window let's you choose a portlet framework to base your
-    portlet on. If you would like to use one of the listed frameworks (*Liferay
-    MVC*, *JSF 2.x*, or *Vaadin*), select it and click *Finish*. Alternatively,
-    you can select the *Create custom portlet class* option and click *Next*.
-
-    If you chose to create a custom portlet class, you'll be directed to a new
-    window where you'll specify the name of your *Portlet class*,  name the *Java
-    package*, and identify the *Superclass*. 
+3. The wizard's next window let's you choose a portlet framework to base your
+portlet on. If you want to use one of the listed frameworks (*Liferay MVC*,
+*JSF 2.x*, or *Vaadin*), select it and click *Finish*. Alternatively, you can
+select the *Create custom portlet class* option and click *Next*.  You can find
+more information about these frameworks and creating custom portlet classes in
+the chapter on portlet development.
 
     ![Figure 2.5: Entering the information for the new
     project](../../images/ide-new-liferay-project.png)
@@ -371,10 +376,6 @@ Hold off on creating the Event Listing and Location Listing portlets until the
 section on creating plugins. For now we want to point out what the plugin
 project wizard creates.
 -->
-<!--If we're creating a plugin project, isn't it best to create the project
-that will house the plugins we'll need? We'll just then create the Location
-Listing portlet in "Creating Plugins". -Russ --> 
-
 <!--Please explain the purpose of the Project Name and
 Display Name. Also, please point out the Plugins SDK and Portal Runtime
 options. The IDE lists the Plugins SDK(s) and Server(s) that are currently
@@ -411,8 +412,10 @@ Here's something you can start with as part of step 2:
     creating projects. We'll add portlets in the section on creating plugins.)
 -->
 
-Our *event-listing-portlet* plugin project should appear in the package
-explorer. Here's the project's directory structure: 
+Our *event-listing-portlet* plugin project should appear in the Eclipse package
+explorer. The project was placed in ythe Plugins SDK you selected, underr the
+directory corresponding to the plugin type the project will contain. Here's the
+project's directory structure: 
 
 - `PORTLET-NAME/`
     - `docroot/WEB-INF/src`
@@ -439,7 +442,7 @@ server. Liferay IDE leverages the build file to perform these operations.
 Also draw their attention to the liferay-plugin-package.properties. This is
 created for all plugin projects, regardless of type. - Jim
 --> 
-        
+
 <!--I pulled the above structure from the portlets chapter. In IDE when I
 created the project though, there's also the docroot/WEB-INF/src folder and
 three libraries (is that the right word):JRE System Library, Liferay
@@ -493,6 +496,14 @@ existing projects into Liferay IDE.
 
 ### Creating Plugins 
 
+Liferay projects can contain multiple plugins. We already created the skeleton
+Event Listing portlet project earlier in the chapter. We'll also need a
+Location Listing portlet, which we'll put it in the same project. These
+portlets will allow users to add, edit, or remove events or locations, display
+lists of events or locations, search for particular events or locations, and
+view the details of individual events or locations. We'll start by creating the
+Event Listing portlet in a new portlet plugin project. 
+
 Now your Liferay IDE contains a plugin project with the skeleton of the Event
 Listing portlet.  Along with the Event Listing portlet, let's create a Location
 Listing porlet inside the same project: 
@@ -529,7 +540,10 @@ plugin project *event-listing-portlet* selected as the *Portlet plugin project*
 by default. We recommend naming your *Portlet class* after the name of your
 portlet. We'll name the class *LocationListingPorlet* in this example.  We'll
 name our *Java package* after the plugin's parent project, so it will be
-*com.nosester.portlet.eventListing* for our example. You can deviate from the
+*com.nosester.portlet.eventListing* for our example. We'll leave the
+*Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you
+could have selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
+*javax.portlet.GenericPortlet* for your superclass. You can deviate from the
 conventions we used here if you like. 
 
     Click *Next*.
