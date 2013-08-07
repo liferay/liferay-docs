@@ -77,7 +77,7 @@ document.
 
 **Delete:** lets you remove the document from the Documents and Media library.
 
-If comments are enabled, you can also view comments, add comments or subscribe
+If comments are enabled, you can also view comments, add comments, or subscribe
 to comments about documents. Comments are enabled by default.
 
 ![Figure 5.2: Viewing a Document](../../images/05-doclib-document-view.png)
@@ -90,6 +90,12 @@ you're looking for. If your portlet contains more documents than it can display
 at once, you can use the navigation tool at the bottom of the portlet window to
 either switch your view to another page or configure the page to display more
 documents per page. 
+
+When navigating among Documents and Media folders, look for the *Subscribe* link
+at the top right corner of the folder view. Clicking the *Subscribe* link
+subscribes you to the folder you're currently viewing so that you'll receive
+email notifications. You'll be notified about any actions that take place in the
+folder such as file additions, edits, or deletions.
 
 #### Actions  
 
