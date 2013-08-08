@@ -23,8 +23,8 @@ import java.util.List;
 /**
  * This class is used by SOAP remote services, specifically {@link com.nosester.portlet.eventlisting.service.http.LocationServiceSoap}.
  *
- * @author    Joe Bloggs
- * @see       com.nosester.portlet.eventlisting.service.http.LocationServiceSoap
+ * @author Joe Bloggs
+ * @see com.nosester.portlet.eventlisting.service.http.LocationServiceSoap
  * @generated
  */
 public class LocationSoap implements Serializable {

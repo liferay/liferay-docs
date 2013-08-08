@@ -20,7 +20,10 @@ import com.liferay.portal.model.CacheModel;
 
 import com.nosester.portlet.eventlisting.model.Location;
 
-import java.io.Serializable;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 import java.util.Date;
 
@@ -31,7 +34,7 @@ import java.util.Date;
  * @see Location
  * @generated
  */
-public class LocationCacheModel implements CacheModel<Location>, Serializable {
+public class LocationCacheModel implements CacheModel<Location>, Externalizable {
 	@Override
 	public String toString() {
 		StringBundler sb = new StringBundler(25);
@@ -65,6 +68,7 @@ public class LocationCacheModel implements CacheModel<Location>, Serializable {
 		return sb.toString();
 	}
 
+	@Override
 	public Location toEntityModel() {
 		LocationImpl locationImpl = new LocationImpl();
 
@@ -132,6 +136,75 @@ public class LocationCacheModel implements CacheModel<Location>, Serializable {
 		locationImpl.resetOriginalValues();
 
 		return locationImpl;
+	}
+
+	@Override
+	public void readExternal(ObjectInput objectInput) throws IOException {
+		locationId = objectInput.readLong();
+		companyId = objectInput.readLong();
+		groupId = objectInput.readLong();
+		userId = objectInput.readLong();
+		createDate = objectInput.readLong();
+		modifiedDate = objectInput.readLong();
+		name = objectInput.readUTF();
+		description = objectInput.readUTF();
+		streetAddress = objectInput.readUTF();
+		city = objectInput.readUTF();
+		stateOrProvince = objectInput.readUTF();
+		country = objectInput.readUTF();
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput objectOutput)
+		throws IOException {
+		objectOutput.writeLong(locationId);
+		objectOutput.writeLong(companyId);
+		objectOutput.writeLong(groupId);
+		objectOutput.writeLong(userId);
+		objectOutput.writeLong(createDate);
+		objectOutput.writeLong(modifiedDate);
+
+		if (name == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(name);
+		}
+
+		if (description == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(description);
+		}
+
+		if (streetAddress == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(streetAddress);
+		}
+
+		if (city == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(city);
+		}
+
+		if (stateOrProvince == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(stateOrProvince);
+		}
+
+		if (country == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(country);
+		}
 	}
 
 	public long locationId;

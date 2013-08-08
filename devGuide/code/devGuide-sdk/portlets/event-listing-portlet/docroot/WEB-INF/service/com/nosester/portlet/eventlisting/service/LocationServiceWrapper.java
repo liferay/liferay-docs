@@ -17,12 +17,10 @@ package com.nosester.portlet.eventlisting.service;
 import com.liferay.portal.service.ServiceWrapper;
 
 /**
- * <p>
- * This class is a wrapper for {@link LocationService}.
- * </p>
+ * Provides a wrapper for {@link LocationService}.
  *
- * @author    Joe Bloggs
- * @see       LocationService
+ * @author Joe Bloggs
+ * @see LocationService
  * @generated
  */
 public class LocationServiceWrapper implements LocationService,
@@ -36,6 +34,7 @@ public class LocationServiceWrapper implements LocationService,
 	*
 	* @return the Spring bean ID for this bean
 	*/
+	@Override
 	public java.lang.String getBeanIdentifier() {
 		return _locationService.getBeanIdentifier();
 	}
@@ -45,22 +44,31 @@ public class LocationServiceWrapper implements LocationService,
 	*
 	* @param beanIdentifier the Spring bean ID for this bean
 	*/
+	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		_locationService.setBeanIdentifier(beanIdentifier);
 	}
 
+	@Override
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return _locationService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.addLocation(location);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -70,12 +78,29 @@ public class LocationServiceWrapper implements LocationService,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location delete(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.delete(location);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.deleteLocation(locationId);
+	}
+
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location update(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.update(location);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -85,37 +110,26 @@ public class LocationServiceWrapper implements LocationService,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.delete(location);
-	}
-
-	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.deleteLocation(locationId);
-	}
-
 	/**
-	 * @deprecated Renamed to {@link #getWrappedService}
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
 	public LocationService getWrappedLocationService() {
 		return _locationService;
 	}
 
 	/**
-	 * @deprecated Renamed to {@link #setWrappedService}
+	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
 	 */
 	public void setWrappedLocationService(LocationService locationService) {
 		_locationService = locationService;
 	}
 
+	@Override
 	public LocationService getWrappedService() {
 		return _locationService;
 	}
 
+	@Override
 	public void setWrappedService(LocationService locationService) {
 		_locationService = locationService;
 	}

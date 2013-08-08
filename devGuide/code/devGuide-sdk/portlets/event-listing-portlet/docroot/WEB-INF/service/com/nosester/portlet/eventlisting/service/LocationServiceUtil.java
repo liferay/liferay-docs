@@ -19,11 +19,12 @@ import com.liferay.portal.kernel.util.ReferenceRegistry;
 import com.liferay.portal.service.InvokableService;
 
 /**
- * The utility for the location remote service. This utility wraps {@link com.nosester.portlet.eventlisting.service.impl.LocationServiceImpl} and is the primary access point for service operations in application layer code running on a remote server.
- *
- * <p>
- * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
- * </p>
+ * Provides the remote service utility for Location. This utility wraps
+ * {@link com.nosester.portlet.eventlisting.service.impl.LocationServiceImpl} and is the
+ * primary access point for service operations in application layer code running
+ * on a remote server. Methods of this service are expected to have security
+ * checks based on the propagated JAAS credentials because this service can be
+ * accessed remotely.
  *
  * @author Joe Bloggs
  * @see LocationService
@@ -62,6 +63,11 @@ public class LocationServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
 	public static com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -78,6 +84,19 @@ public class LocationServiceUtil {
 			city, stateOrProvince, country, serviceContext);
 	}
 
+	public static com.nosester.portlet.eventlisting.model.Location delete(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().delete(location);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().deleteLocation(locationId);
+	}
+
 	public static com.nosester.portlet.eventlisting.model.Location update(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -92,19 +111,6 @@ public class LocationServiceUtil {
 		return getService()
 				   .updateLocation(locationId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().delete(location);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Location deleteLocation(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return getService().deleteLocation(locationId);
 	}
 
 	public static void clearService() {
@@ -131,7 +137,7 @@ public class LocationServiceUtil {
 	}
 
 	/**
-	 * @deprecated
+	 * @deprecated As of 6.2.0
 	 */
 	public void setService(LocationService service) {
 	}

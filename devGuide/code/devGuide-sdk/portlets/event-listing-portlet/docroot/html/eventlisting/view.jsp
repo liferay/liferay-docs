@@ -3,7 +3,7 @@
 This is the <b>Event Listing Portlet</b> portlet in View mode.
 
 <%
-	String redirect = PortalUtil.getCurrentURL(renderRequest);	
+	String redirect = PortalUtil.getCurrentURL(renderRequest);
 	ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
 	long scopeGroupId = themeDisplay.getScopeGroupId();
 %>
@@ -14,7 +14,7 @@ This is the <b>Event Listing Portlet</b> portlet in View mode.
 		<portlet:param name="redirect" value="<%= redirect %>" />
 	</portlet:renderURL>
 
-	<aui:button value="add-event" onClick="<%= addEventURL.toString() %>"/>
+	<aui:button onClick="<%= addEventURL.toString() %>" value="add-event" />
 </aui:button-row>
 
 <liferay-ui:search-container emptyResultsMessage="event-empty-results-message">
@@ -37,7 +37,7 @@ This is the <b>Event Listing Portlet</b> portlet in View mode.
 			name="description"
 			property="description"
 		/>
-		
+
 		<%
 			String locationName = "";
 
@@ -46,19 +46,22 @@ This is the <b>Event Listing Portlet</b> portlet in View mode.
 						(event.getLocationId()).getName();
 			} catch (Exception e) {
 			}
-					
 		%>
 
 		<liferay-ui:search-container-column-text
 			name="location"
 			value="<%= locationName %>"
-		/>	
+		/>
+
+		<%
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
+		%>
 
 		<liferay-ui:search-container-column-text
 			name="date"
-			property="date"
+			value="<%= sdf.format(event.getDate()) %>"
 		/>
-		
+
 		<liferay-ui:search-container-column-jsp
 			align="right"
 			path="/html/eventlisting/event_actions.jsp"

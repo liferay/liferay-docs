@@ -2,7 +2,7 @@
 <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.1.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_1_0.dtd">
 
 <liferay-portlet-app>
-	
+
 	<portlet>
 		<portlet-name>eventlisting</portlet-name>
 		<icon>/icon.png</icon>

@@ -95,99 +95,18 @@ public class LocationUtil {
 	}
 
 	/**
-	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel, boolean)
+	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel)
 	 */
-	public static Location update(Location location, boolean merge)
-		throws SystemException {
-		return getPersistence().update(location, merge);
+	public static Location update(Location location) throws SystemException {
+		return getPersistence().update(location);
 	}
 
 	/**
-	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel, boolean, ServiceContext)
+	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel, ServiceContext)
 	 */
-	public static Location update(Location location, boolean merge,
+	public static Location update(Location location,
 		ServiceContext serviceContext) throws SystemException {
-		return getPersistence().update(location, merge, serviceContext);
-	}
-
-	/**
-	* Caches the location in the entity cache if it is enabled.
-	*
-	* @param location the location
-	*/
-	public static void cacheResult(
-		com.nosester.portlet.eventlisting.model.Location location) {
-		getPersistence().cacheResult(location);
-	}
-
-	/**
-	* Caches the locations in the entity cache if it is enabled.
-	*
-	* @param locations the locations
-	*/
-	public static void cacheResult(
-		java.util.List<com.nosester.portlet.eventlisting.model.Location> locations) {
-		getPersistence().cacheResult(locations);
-	}
-
-	/**
-	* Creates a new location with the primary key. Does not add the location to the database.
-	*
-	* @param locationId the primary key for the new location
-	* @return the new location
-	*/
-	public static com.nosester.portlet.eventlisting.model.Location create(
-		long locationId) {
-		return getPersistence().create(locationId);
-	}
-
-	/**
-	* Removes the location with the primary key from the database. Also notifies the appropriate model listeners.
-	*
-	* @param locationId the primary key of the location
-	* @return the location that was removed
-	* @throws com.nosester.portlet.eventlisting.NoSuchLocationException if a location with the primary key could not be found
-	* @throws SystemException if a system exception occurred
-	*/
-	public static com.nosester.portlet.eventlisting.model.Location remove(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			com.nosester.portlet.eventlisting.NoSuchLocationException {
-		return getPersistence().remove(locationId);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Location updateImpl(
-		com.nosester.portlet.eventlisting.model.Location location, boolean merge)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getPersistence().updateImpl(location, merge);
-	}
-
-	/**
-	* Returns the location with the primary key or throws a {@link com.nosester.portlet.eventlisting.NoSuchLocationException} if it could not be found.
-	*
-	* @param locationId the primary key of the location
-	* @return the location
-	* @throws com.nosester.portlet.eventlisting.NoSuchLocationException if a location with the primary key could not be found
-	* @throws SystemException if a system exception occurred
-	*/
-	public static com.nosester.portlet.eventlisting.model.Location findByPrimaryKey(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			com.nosester.portlet.eventlisting.NoSuchLocationException {
-		return getPersistence().findByPrimaryKey(locationId);
-	}
-
-	/**
-	* Returns the location with the primary key or returns <code>null</code> if it could not be found.
-	*
-	* @param locationId the primary key of the location
-	* @return the location, or <code>null</code> if a location with the primary key could not be found
-	* @throws SystemException if a system exception occurred
-	*/
-	public static com.nosester.portlet.eventlisting.model.Location fetchByPrimaryKey(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getPersistence().fetchByPrimaryKey(locationId);
+		return getPersistence().update(location, serviceContext);
 	}
 
 	/**
@@ -207,7 +126,7 @@ public class LocationUtil {
 	* Returns a range of all the locations where groupId = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.LocationModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
@@ -226,7 +145,7 @@ public class LocationUtil {
 	* Returns an ordered range of all the locations where groupId = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.LocationModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
@@ -329,6 +248,109 @@ public class LocationUtil {
 	}
 
 	/**
+	* Removes all the locations where groupId = &#63; from the database.
+	*
+	* @param groupId the group ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByGroupId(groupId);
+	}
+
+	/**
+	* Returns the number of locations where groupId = &#63;.
+	*
+	* @param groupId the group ID
+	* @return the number of matching locations
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByGroupId(groupId);
+	}
+
+	/**
+	* Caches the location in the entity cache if it is enabled.
+	*
+	* @param location the location
+	*/
+	public static void cacheResult(
+		com.nosester.portlet.eventlisting.model.Location location) {
+		getPersistence().cacheResult(location);
+	}
+
+	/**
+	* Caches the locations in the entity cache if it is enabled.
+	*
+	* @param locations the locations
+	*/
+	public static void cacheResult(
+		java.util.List<com.nosester.portlet.eventlisting.model.Location> locations) {
+		getPersistence().cacheResult(locations);
+	}
+
+	/**
+	* Creates a new location with the primary key. Does not add the location to the database.
+	*
+	* @param locationId the primary key for the new location
+	* @return the new location
+	*/
+	public static com.nosester.portlet.eventlisting.model.Location create(
+		long locationId) {
+		return getPersistence().create(locationId);
+	}
+
+	/**
+	* Removes the location with the primary key from the database. Also notifies the appropriate model listeners.
+	*
+	* @param locationId the primary key of the location
+	* @return the location that was removed
+	* @throws com.nosester.portlet.eventlisting.NoSuchLocationException if a location with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.nosester.portlet.eventlisting.model.Location remove(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchLocationException {
+		return getPersistence().remove(locationId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location updateImpl(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().updateImpl(location);
+	}
+
+	/**
+	* Returns the location with the primary key or throws a {@link com.nosester.portlet.eventlisting.NoSuchLocationException} if it could not be found.
+	*
+	* @param locationId the primary key of the location
+	* @return the location
+	* @throws com.nosester.portlet.eventlisting.NoSuchLocationException if a location with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.nosester.portlet.eventlisting.model.Location findByPrimaryKey(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchLocationException {
+		return getPersistence().findByPrimaryKey(locationId);
+	}
+
+	/**
+	* Returns the location with the primary key or returns <code>null</code> if it could not be found.
+	*
+	* @param locationId the primary key of the location
+	* @return the location, or <code>null</code> if a location with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.nosester.portlet.eventlisting.model.Location fetchByPrimaryKey(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByPrimaryKey(locationId);
+	}
+
+	/**
 	* Returns all the locations.
 	*
 	* @return the locations
@@ -343,7 +365,7 @@ public class LocationUtil {
 	* Returns a range of all the locations.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.LocationModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of locations
@@ -361,7 +383,7 @@ public class LocationUtil {
 	* Returns an ordered range of all the locations.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.LocationModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of locations
@@ -378,17 +400,6 @@ public class LocationUtil {
 	}
 
 	/**
-	* Removes all the locations where groupId = &#63; from the database.
-	*
-	* @param groupId the group ID
-	* @throws SystemException if a system exception occurred
-	*/
-	public static void removeByGroupId(long groupId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		getPersistence().removeByGroupId(groupId);
-	}
-
-	/**
 	* Removes all the locations from the database.
 	*
 	* @throws SystemException if a system exception occurred
@@ -396,18 +407,6 @@ public class LocationUtil {
 	public static void removeAll()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeAll();
-	}
-
-	/**
-	* Returns the number of locations where groupId = &#63;.
-	*
-	* @param groupId the group ID
-	* @return the number of matching locations
-	* @throws SystemException if a system exception occurred
-	*/
-	public static int countByGroupId(long groupId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getPersistence().countByGroupId(groupId);
 	}
 
 	/**
@@ -434,7 +433,7 @@ public class LocationUtil {
 	}
 
 	/**
-	 * @deprecated
+	 * @deprecated As of 6.2.0
 	 */
 	public void setPersistence(LocationPersistence persistence) {
 	}

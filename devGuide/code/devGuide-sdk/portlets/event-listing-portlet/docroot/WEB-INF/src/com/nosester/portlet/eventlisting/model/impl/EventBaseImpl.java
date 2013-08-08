@@ -37,6 +37,7 @@ public abstract class EventBaseImpl extends EventModelImpl implements Event {
 	 *
 	 * Never modify or reference this class directly. All methods that expect a event model instance should use the {@link Event} interface instead.
 	 */
+	@Override
 	public void persist() throws SystemException {
 		if (this.isNew()) {
 			EventLocalServiceUtil.addEvent(this);
