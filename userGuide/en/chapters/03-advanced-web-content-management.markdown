@@ -696,7 +696,7 @@ are automatically copied to sites based on that template.
 
 ---
 
-![tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web
+![Tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web
 content to many sites and ensure modifications are applied to all, don't use
 site template content for that purpose. Instead, place the content in the global
 scope and then reference it from a *Web Content Display* application in each
@@ -1078,7 +1078,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging Page Publication  
+## Staging Page Publication
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -1201,6 +1201,19 @@ your local Liferay server. You can find any site's ID by selecting *Actions
 Finally, check the *Use a Secure Network Connection* field to secure the
 publication of pages from your local (staging) Liferay server to your remote
 (live) Liferay server.
+
+---
+
+![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
+enabled for a site as early as possible. It's generally *not* a good idea to add
+gigabytes of data into Liferay's CMS and then decide to turn on remote staging.
+There's an existing issue that limits Liferay to less than 2G of data for
+publishing data to a remote staging server:
+[http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
+You can check this issue to see if it's been resolved and to find out which
+versions of Liferay it affects.
+
+---
 
 That's all you need to do to enable Remote Live Staging! However, when a user
 attempts to publish changes from the local (staging) server to the remote (live)
