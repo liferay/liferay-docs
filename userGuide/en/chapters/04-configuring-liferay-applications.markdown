@@ -236,11 +236,11 @@ site if you wish. Most portlets, however, default to the "native"
 configuration, and have their scopes set to the site where they are placed.
 
 Unless otherwise noted, all the portlets in this chapter support scoping by
-portal (global), site (default), or page (select layout &rarr; current page).
-This grants you some flexibility in how you want to set up your portal. You can
-configure the scope of a portlet with just a few simple steps.
+portal (global), site (default), or page . This grants you some flexibility in
+how you want to set up your portal. You can configure the scope of a portlet
+with just a few simple steps.
 
-1.  Click the *Menu* icon in the portlet window (the wrench).
+1.  Click the *Options* icon in the portlet window (the wrench).
 
 2.  Select *Configuration*.
 
@@ -248,12 +248,10 @@ configure the scope of a portlet with just a few simple steps.
 
 4.  Use the drop-down menu to set the scope.
 
-5.  Click *Save*.
-
 ![Figure 4.10: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
-setting the scope to *Current Page*, you can add as many of these portlets to a
+setting the scope to the current page, you can add as many of these portlets to a
 site as you want, provided they are all added to separate pages. 
 
 Another useful feature of Liferay's portlets is Archived Setups.  
@@ -291,7 +289,7 @@ of the portlet configuration dialog box. You can grant roles permission to add
 the portlet to a page, configure the portlet, or view the portlet. To set these
 permissions, go to the *Configuration* menu and click on *Permissions*. This
 shows you a table of roles defined in the portal. Use the check boxes to grant
-certain permissions to different roles. Click *Submit* after you've made your
+certain permissions to different roles. Click *Save* after you've made your
 selections. 
 
 Beyond this, specific permissions are generally defined for specific
@@ -449,15 +447,15 @@ explore the UI and see what the Recycle Bin can do.
 
 First, let's configure the Recycle Bin for site-specific scoping. Choose the
 site you'd like configure for the Recycle Bin from *My Sites* in the Dockbar.
-Then click *Admin* &rarr; *Site Administration* and select *Site Settings* from
-the Configuration heading. Next, click *Recycle Bin* on the right-side menu
-under the Advanced heading. You'll notice a few configurable options:
+Then click *Admin* &rarr; *Configuration* to navigate to the *Site Settings*
+page. Next, click *Recycle Bin* on the right-side menu under the Advanced
+heading. You'll notice a few configurable options:
 
 **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
 site-specific scope.
 
 **Trash Entries Max Age:** customize the number of days a file is kept in the
-Recycle Bin until its deletion (default is 30 days).
+Recycle Bin until its permanent deletion (default is 30 days).
 
 ![Figure 4.14: The Recycle Bin offers several configurable options for your site.](../../images/recycle-bin-site-settings.png)
 
@@ -535,7 +533,7 @@ For a quick example to show how easy the Recycle Bin is to use, let's send a web
 content article to the Recycle Bin and then restore it. We'll run through two
 different methods of restoring the file.
 
-1. Navigate to *Site Administration* &rarr; *Web Content*.
+1. Navigate to *Site Administration* &rarr; *Content* &rarr; *Web Content*.
 
 2. Select the *Add* button and click *Basic Web Content*.
 
