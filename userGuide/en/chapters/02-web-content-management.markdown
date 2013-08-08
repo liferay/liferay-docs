@@ -220,11 +220,27 @@ administrator must then explicitly grant or deny users' requests to join. A
 private site does not appear in the My Sites portlet and users must be added to
 it manually by a site administrator.
 
-**Allow Manual Membership Management:** determines whether Site Membership
-Policy Management is enabled or disabled. Some portal administrators may want to
-have membership policies be handled automatically without having to manually add
-or remove site members of their site. When disabled, the Site Membership section
-as well as various other options to manually assign/remove members are hidden.
+**Allow Manual Membership Management:** determines whether to allow or disallow
+users to be manually added or removed from the site. By default, manual site
+membership management is enabled. This allows administrators to manually assign
+users to the site. It also allows users to join open sites or request membership
+from restricted sites using the My Sites portlet.
+
+---
+
+ [Tip](../../images/tip.png) It's possible for site memberships to be handled
+ automatically by a membership policy. The membership policy can check various
+ pieces of information from each user, such as their first names, last names,
+ birthdays, job titles, organizations, and user groups. Using this information,
+ the site membership policy can automatically assign members to the site. If
+ your site will implement a membership policy, your site administrators can
+ disallow manual membership management for their site. <!--See the TBD chapter
+ of the Developer's Guide for information about creating site membership
+ policies. -JR -->When the Allow Manual Membership Management option is disabled,
+ the Site Memberships section as well as various other options to manually
+ assign/remove members are hidden, even from administrators.
+
+---
 
 **Directory Indexing Enabled:** allows site administrators to browse the site's
 documents and media files and folders. For example, a site administrator of a
@@ -235,7 +251,11 @@ site called Nose-ster could can browse documents at
 created. As of Liferay 6.2, sites can be organized hierarchically. Using
 hierarchical sites provides a simplified way to manage site memberships and site
 content sharing. For organizations that have attached sites, the organization
-hierarchy should match the site hierarchy. 
+hierarchy should match the site hierarchy. When you select a parent site, an
+additional option appears: *Limit membership to members of the parent site*. If
+this option is enabled, the site's membership policy performs a check so that
+you can only assign members to the current site if they're already members of
+the parent site.
 
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
@@ -662,7 +682,7 @@ Nose-ster's network administrators created the domain name and pointed it to the
 Liferay server.
 
 To set this up, the DNS name *developers.nosester.com* should point to your
-portal's IP address first. Then enter *http://developers.noseter.com* in the
+portal's IP address first. Then enter *http://developers.nosester.com* in the
 Virtual Host tab for the Developers site. This helps users quickly access their
 site without having to recall an extended URL.
 
