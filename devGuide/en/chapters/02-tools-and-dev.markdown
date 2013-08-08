@@ -432,8 +432,12 @@ project's directory structure:
             - `web.xml` - this file is not created by default.
         - `icon.png`
         - `view.jsp`
+    - `build.xml`
 
-<!-- Inform the reader that the project is created to the Liferay Plugins SDK
+All projects, regardless of type, are created with a `build.xml` file. This
+file provides the means for compilation ansd deployment of your plugins. 
+<!--
+Inform the reader that the project is created to the Liferay Plugins SDK
 that he specified in the wizard. Explain that each project, regardless of type,
 is created with an Ant build file called `build.xml`. The build file provides
 the means to compile the project and deploy it to a Liferay Portal runtime
@@ -531,7 +535,7 @@ fields in Chapter 3. - Jim -->
 
 1. Go to File &rarr; New  &rarr; Liferay Portlet. 
 
-    Alternatively, right click on your `events-listing-portlet` project in
+    Alternatively, right click on your `event-listing-portlet` project in
     Liferay IDE's *Package Explorer*, and select *New* &rarr; *Liferay
     Portlet*. 
 
