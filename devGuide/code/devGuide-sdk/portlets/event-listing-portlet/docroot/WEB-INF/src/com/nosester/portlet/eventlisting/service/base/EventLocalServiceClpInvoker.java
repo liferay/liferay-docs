@@ -127,37 +127,37 @@ public class EventLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName50 = "updateEvent";
+		_methodName50 = "findByEventNameEventDescriptionLocationName";
 
 		_methodParameterTypes50 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
-
-		_methodName51 = "updateEvent";
-
-		_methodParameterTypes51 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName52 = "findByEventNameEventDescriptionLocationName";
-
-		_methodParameterTypes52 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName53 = "getEventsByGroupId";
+		_methodName51 = "getEventsByGroupId";
+
+		_methodParameterTypes51 = new String[] { "long" };
+
+		_methodName52 = "getEventsByGroupId";
+
+		_methodParameterTypes52 = new String[] { "long", "int", "int" };
+
+		_methodName53 = "getEventsCountByGroupId";
 
 		_methodParameterTypes53 = new String[] { "long" };
 
-		_methodName54 = "getEventsByGroupId";
+		_methodName54 = "updateEvent";
 
-		_methodParameterTypes54 = new String[] { "long", "int", "int" };
+		_methodParameterTypes54 = new String[] {
+				"com.nosester.portlet.eventlisting.model.Event"
+			};
 
-		_methodName55 = "getEventsCountByGroupId";
+		_methodName55 = "updateEvent";
 
-		_methodParameterTypes55 = new String[] { "long" };
+		_methodParameterTypes55 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "java.util.Date",
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -276,40 +276,40 @@ public class EventLocalServiceClpInvoker {
 
 		if (_methodName50.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes50, parameterTypes)) {
-			return EventLocalServiceUtil.updateEvent((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
-		}
-
-		if (_methodName51.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes51, parameterTypes)) {
-			return EventLocalServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.util.Date)arguments[3], ((Long)arguments[4]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[5]);
-		}
-
-		if (_methodName52.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
 			return EventLocalServiceUtil.findByEventNameEventDescriptionLocationName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName53.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+		if (_methodName51.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes51, parameterTypes)) {
 			return EventLocalServiceUtil.getEventsByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName54.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
+		if (_methodName52.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
 			return EventLocalServiceUtil.getEventsByGroupId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+		if (_methodName53.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+			return EventLocalServiceUtil.getEventsCountByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName54.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
+			return EventLocalServiceUtil.updateEvent((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+		}
+
 		if (_methodName55.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
-			return EventLocalServiceUtil.getEventsCountByGroupId(((Long)arguments[0]).longValue());
+			return EventLocalServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.util.Date)arguments[3], ((Long)arguments[4]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
 		throw new UnsupportedOperationException();

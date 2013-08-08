@@ -293,15 +293,6 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	}
 
 	@Override
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _eventLocalService.updateEvent(eventId, name, description, date,
-			locationId, serviceContext);
-	}
-
-	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
 		java.lang.String locationName, int begin, int end)
@@ -328,6 +319,15 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	public int getEventsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventLocalService.getEventsCountByGroupId(groupId);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _eventLocalService.updateEvent(eventId, name, description, date,
+			locationId, serviceContext);
 	}
 
 	/**

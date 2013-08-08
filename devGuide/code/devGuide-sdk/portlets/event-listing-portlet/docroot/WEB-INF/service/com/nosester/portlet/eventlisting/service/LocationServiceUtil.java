@@ -63,6 +63,11 @@ public class LocationServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
 	public static com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -79,6 +84,19 @@ public class LocationServiceUtil {
 			city, stateOrProvince, country, serviceContext);
 	}
 
+	public static com.nosester.portlet.eventlisting.model.Location delete(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().delete(location);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().deleteLocation(locationId);
+	}
+
 	public static com.nosester.portlet.eventlisting.model.Location update(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -93,19 +111,6 @@ public class LocationServiceUtil {
 		return getService()
 				   .updateLocation(locationId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().delete(location);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Location deleteLocation(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return getService().deleteLocation(locationId);
 	}
 
 	public static void clearService() {

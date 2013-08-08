@@ -285,16 +285,6 @@ public class LocationLocalServiceUtil {
 			stateOrProvince, country, serviceContext);
 	}
 
-	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return getService()
-				   .updateLocation(locationId, name, description,
-			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -310,6 +300,16 @@ public class LocationLocalServiceUtil {
 	public static int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getLocationsCountByGroupId(groupId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	public static void clearService() {

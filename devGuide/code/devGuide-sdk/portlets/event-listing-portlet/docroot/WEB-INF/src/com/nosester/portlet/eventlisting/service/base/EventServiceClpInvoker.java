@@ -45,28 +45,28 @@ public class EventServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName34 = "update";
+		_methodName34 = "delete";
 
 		_methodParameterTypes34 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Event"
 			};
 
-		_methodName35 = "updateEvent";
+		_methodName35 = "deleteEvent";
 
-		_methodParameterTypes35 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
+		_methodParameterTypes35 = new String[] { "long" };
 
-		_methodName36 = "delete";
+		_methodName36 = "update";
 
 		_methodParameterTypes36 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Event"
 			};
 
-		_methodName37 = "deleteEvent";
+		_methodName37 = "updateEvent";
 
-		_methodParameterTypes37 = new String[] { "long" };
+		_methodParameterTypes37 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "java.util.Date",
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -98,25 +98,25 @@ public class EventServiceClpInvoker {
 
 		if (_methodName34.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
-			return EventServiceUtil.update((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+			return EventServiceUtil.delete((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
 		}
 
 		if (_methodName35.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
-			return EventServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.util.Date)arguments[3], ((Long)arguments[4]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[5]);
+			return EventServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName36.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
-			return EventServiceUtil.delete((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+			return EventServiceUtil.update((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
 		}
 
 		if (_methodName37.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
-			return EventServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
+			return EventServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.util.Date)arguments[3], ((Long)arguments[4]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
 		throw new UnsupportedOperationException();

@@ -260,8 +260,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		}
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getEventId() {
 		return _eventId;
 	}
@@ -271,8 +271,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_eventId = eventId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getCompanyId() {
 		return _companyId;
 	}
@@ -282,8 +282,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_companyId = companyId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getGroupId() {
 		return _groupId;
 	}
@@ -305,8 +305,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		return _originalGroupId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getUserId() {
 		return _userId;
 	}
@@ -326,8 +326,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_userUuid = userUuid;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public Date getCreateDate() {
 		return _createDate;
 	}
@@ -337,8 +337,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_createDate = createDate;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
@@ -348,8 +348,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_modifiedDate = modifiedDate;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getName() {
 		if (_name == null) {
 			return StringPool.BLANK;
@@ -364,8 +364,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_name = name;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getDescription() {
 		if (_description == null) {
 			return StringPool.BLANK;
@@ -380,8 +380,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_description = description;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public Date getDate() {
 		return _date;
 	}
@@ -393,8 +393,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		_date = date;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getLocationId() {
 		return _locationId;
 	}

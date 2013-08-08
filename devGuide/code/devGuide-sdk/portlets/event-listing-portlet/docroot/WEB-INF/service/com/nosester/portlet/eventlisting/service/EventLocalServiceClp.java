@@ -121,31 +121,31 @@ public class EventLocalServiceClp implements EventLocalService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName20 = "updateEvent";
+		_methodName20 = "findByEventNameEventDescriptionLocationName";
 
 		_methodParameterTypes20 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName21 = "findByEventNameEventDescriptionLocationName";
-
-		_methodParameterTypes21 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
+		_methodName21 = "getEventsByGroupId";
+
+		_methodParameterTypes21 = new String[] { "long" };
+
 		_methodName22 = "getEventsByGroupId";
 
-		_methodParameterTypes22 = new String[] { "long" };
+		_methodParameterTypes22 = new String[] { "long", "int", "int" };
 
-		_methodName23 = "getEventsByGroupId";
+		_methodName23 = "getEventsCountByGroupId";
 
-		_methodParameterTypes23 = new String[] { "long", "int", "int" };
+		_methodParameterTypes23 = new String[] { "long" };
 
-		_methodName24 = "getEventsCountByGroupId";
+		_methodName24 = "updateEvent";
 
-		_methodParameterTypes24 = new String[] { "long" };
+		_methodParameterTypes24 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "java.util.Date",
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	@Override
@@ -735,45 +735,6 @@ public class EventLocalServiceClp implements EventLocalService {
 	}
 
 	@Override
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20,
-					new Object[] {
-						eventId,
-						
-					ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(description),
-						
-					ClpSerializer.translateInput(date),
-						
-					locationId,
-						
-					ClpSerializer.translateInput(serviceContext)
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
 		java.lang.String locationName, int begin, int end)
@@ -781,8 +742,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21,
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
 					new Object[] {
 						ClpSerializer.translateInput(eventName),
 						
@@ -821,8 +782,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName22,
-					_methodParameterTypes22, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -850,8 +811,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23,
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
 					new Object[] { groupId, start, end });
 		}
 		catch (Throwable t) {
@@ -879,8 +840,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -899,6 +860,45 @@ public class EventLocalServiceClp implements EventLocalService {
 		}
 
 		return ((Integer)returnObj).intValue();
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
+					new Object[] {
+						eventId,
+						
+					ClpSerializer.translateInput(name),
+						
+					ClpSerializer.translateInput(description),
+						
+					ClpSerializer.translateInput(date),
+						
+					locationId,
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
 	private InvokableLocalService _invokableLocalService;

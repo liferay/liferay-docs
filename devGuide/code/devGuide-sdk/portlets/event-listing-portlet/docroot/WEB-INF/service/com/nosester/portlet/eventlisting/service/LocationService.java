@@ -64,21 +64,16 @@ public interface LocationService extends BaseService, InvokableService {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
-
-	public com.nosester.portlet.eventlisting.model.Location update(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException;
-
-	public com.nosester.portlet.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
@@ -92,4 +87,14 @@ public interface LocationService extends BaseService, InvokableService {
 		long locationId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Location update(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext);
 }

@@ -62,6 +62,11 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class LocationServiceSoap {
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
 	public static com.nosester.portlet.eventlisting.model.LocationSoap addLocation(
 		com.nosester.portlet.eventlisting.model.LocationSoap location)
 		throws RemoteException {
@@ -98,6 +103,36 @@ public class LocationServiceSoap {
 		}
 	}
 
+	public static com.nosester.portlet.eventlisting.model.LocationSoap delete(
+		com.nosester.portlet.eventlisting.model.LocationSoap location)
+		throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.delete(com.nosester.portlet.eventlisting.model.impl.LocationModelImpl.toModel(
+						location));
+
+			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.nosester.portlet.eventlisting.model.LocationSoap deleteLocation(
+		long locationId) throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.deleteLocation(locationId);
+
+			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static com.nosester.portlet.eventlisting.model.LocationSoap update(
 		com.nosester.portlet.eventlisting.model.LocationSoap location)
 		throws RemoteException {
@@ -124,36 +159,6 @@ public class LocationServiceSoap {
 			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.updateLocation(locationId,
 					name, description, streetAddress, city, stateOrProvince,
 					country, serviceContext);
-
-			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static com.nosester.portlet.eventlisting.model.LocationSoap delete(
-		com.nosester.portlet.eventlisting.model.LocationSoap location)
-		throws RemoteException {
-		try {
-			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.delete(com.nosester.portlet.eventlisting.model.impl.LocationModelImpl.toModel(
-						location));
-
-			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static com.nosester.portlet.eventlisting.model.LocationSoap deleteLocation(
-		long locationId) throws RemoteException {
-		try {
-			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.deleteLocation(locationId);
 
 			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
 		}

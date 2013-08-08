@@ -283,15 +283,6 @@ public class EventLocalServiceUtil {
 				   .addEvent(name, description, date, locationId, serviceContext);
 	}
 
-	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return getService()
-				   .updateEvent(eventId, name, description, date, locationId,
-			serviceContext);
-	}
-
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
 		java.lang.String locationName, int begin, int end)
@@ -316,6 +307,15 @@ public class EventLocalServiceUtil {
 	public static int getEventsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getEventsCountByGroupId(groupId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .updateEvent(eventId, name, description, date, locationId,
+			serviceContext);
 	}
 
 	public static void clearService() {

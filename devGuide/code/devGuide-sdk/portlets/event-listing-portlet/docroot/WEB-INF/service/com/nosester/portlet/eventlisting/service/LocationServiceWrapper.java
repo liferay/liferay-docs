@@ -56,6 +56,11 @@ public class LocationServiceWrapper implements LocationService,
 		return _locationService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	*/
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
@@ -74,6 +79,21 @@ public class LocationServiceWrapper implements LocationService,
 	}
 
 	@Override
+	public com.nosester.portlet.eventlisting.model.Location delete(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.delete(location);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.deleteLocation(locationId);
+	}
+
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location update(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -88,21 +108,6 @@ public class LocationServiceWrapper implements LocationService,
 		com.liferay.portal.service.ServiceContext serviceContext) {
 		return _locationService.updateLocation(locationId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.delete(location);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.deleteLocation(locationId);
 	}
 
 	/**

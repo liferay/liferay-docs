@@ -253,11 +253,6 @@ public interface EventLocalService extends BaseLocalService,
 		java.util.Date date, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext);
 
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext);
-
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
 		java.lang.String locationName, int begin, int end)
@@ -276,4 +271,9 @@ public interface EventLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getEventsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext);
 }

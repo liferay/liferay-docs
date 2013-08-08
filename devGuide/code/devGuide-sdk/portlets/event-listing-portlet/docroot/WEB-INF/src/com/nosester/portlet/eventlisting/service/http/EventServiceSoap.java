@@ -62,6 +62,11 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class EventServiceSoap {
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
+	*/
 	public static com.nosester.portlet.eventlisting.model.EventSoap addEvent(
 		com.nosester.portlet.eventlisting.model.EventSoap event)
 		throws RemoteException {
@@ -96,6 +101,36 @@ public class EventServiceSoap {
 		}
 	}
 
+	public static com.nosester.portlet.eventlisting.model.EventSoap delete(
+		com.nosester.portlet.eventlisting.model.EventSoap event)
+		throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.delete(com.nosester.portlet.eventlisting.model.impl.EventModelImpl.toModel(
+						event));
+
+			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.nosester.portlet.eventlisting.model.EventSoap deleteEvent(
+		long eventId) throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.deleteEvent(eventId);
+
+			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static com.nosester.portlet.eventlisting.model.EventSoap update(
 		com.nosester.portlet.eventlisting.model.EventSoap event)
 		throws RemoteException {
@@ -120,36 +155,6 @@ public class EventServiceSoap {
 		try {
 			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.updateEvent(eventId,
 					name, description, date, locationId, serviceContext);
-
-			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static com.nosester.portlet.eventlisting.model.EventSoap delete(
-		com.nosester.portlet.eventlisting.model.EventSoap event)
-		throws RemoteException {
-		try {
-			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.delete(com.nosester.portlet.eventlisting.model.impl.EventModelImpl.toModel(
-						event));
-
-			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static com.nosester.portlet.eventlisting.model.EventSoap deleteEvent(
-		long eventId) throws RemoteException {
-		try {
-			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.deleteEvent(eventId);
 
 			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
 		}

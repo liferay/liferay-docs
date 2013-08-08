@@ -46,29 +46,29 @@ public class LocationServiceClp implements LocationService {
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName5 = "update";
+		_methodName5 = "delete";
 
 		_methodParameterTypes5 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Location"
 			};
 
-		_methodName6 = "updateLocation";
+		_methodName6 = "deleteLocation";
 
-		_methodParameterTypes6 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
+		_methodParameterTypes6 = new String[] { "long" };
 
-		_methodName7 = "delete";
+		_methodName7 = "update";
 
 		_methodParameterTypes7 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Location"
 			};
 
-		_methodName8 = "deleteLocation";
+		_methodName8 = "updateLocation";
 
-		_methodParameterTypes8 = new String[] { "long" };
+		_methodParameterTypes8 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	@Override
@@ -196,7 +196,7 @@ public class LocationServiceClp implements LocationService {
 	}
 
 	@Override
-	public com.nosester.portlet.eventlisting.model.Location update(
+	public com.nosester.portlet.eventlisting.model.Location delete(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -204,6 +204,70 @@ public class LocationServiceClp implements LocationService {
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName5,
 					_methodParameterTypes5,
+					new Object[] { ClpSerializer.translateInput(location) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName6,
+					_methodParameterTypes6, new Object[] { locationId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location update(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName7,
+					_methodParameterTypes7,
 					new Object[] { ClpSerializer.translateInput(location) });
 		}
 		catch (Throwable t) {
@@ -234,8 +298,8 @@ public class LocationServiceClp implements LocationService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName6,
-					_methodParameterTypes6,
+			returnObj = _invokableService.invokeMethod(_methodName8,
+					_methodParameterTypes8,
 					new Object[] {
 						locationId,
 						
@@ -256,70 +320,6 @@ public class LocationServiceClp implements LocationService {
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName7,
-					_methodParameterTypes7,
-					new Object[] { ClpSerializer.translateInput(location) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
-		long locationId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName8,
-					_methodParameterTypes8, new Object[] { locationId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
 
 			if (t instanceof RuntimeException) {
 				throw (RuntimeException)t;

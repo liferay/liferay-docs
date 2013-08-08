@@ -56,6 +56,11 @@ public class EventServiceWrapper implements EventService,
 		return _eventService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
+	*/
 	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		com.nosester.portlet.eventlisting.model.Event event)
@@ -73,6 +78,21 @@ public class EventServiceWrapper implements EventService,
 	}
 
 	@Override
+	public com.nosester.portlet.eventlisting.model.Event delete(
+		com.nosester.portlet.eventlisting.model.Event event)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.delete(event);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
+		long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.deleteEvent(eventId);
+	}
+
+	@Override
 	public com.nosester.portlet.eventlisting.model.Event update(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -86,21 +106,6 @@ public class EventServiceWrapper implements EventService,
 		com.liferay.portal.service.ServiceContext serviceContext) {
 		return _eventService.updateEvent(eventId, name, description, date,
 			locationId, serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event delete(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.delete(event);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
-		long eventId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.deleteEvent(eventId);
 	}
 
 	/**
