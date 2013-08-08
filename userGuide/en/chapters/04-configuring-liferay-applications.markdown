@@ -39,6 +39,15 @@ displayed in the selected language.
 
 ![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
 
+<!-- For every window in the look and feel section, we are given *Title* and
+*Initial Window State*. I don't think these are correctly placed and these need
+to be monitored closely. Both features are originally from the WAP Styling tab,
+which has been deprecated for 6.2. I'm not going to describe these two features
+for now, and will wait for confirmation on whether or not this is correct. A
+ticket has been filed for these repetitive features: LPS-38624. Note that the
+screenshots will need to be retaken if these features are incorrectly placed.
+-->
+
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
@@ -57,7 +66,7 @@ Roman, Tahoma, Trebuchet MS, and Verdana. Arial is the default. You can set the
 text to bold, italics, or both. You can set the font size anywhere from 0.1 em
 to 12 em, with 0.1 em increments. 1 em is the default. You can set the text
 color to any six digit hex color code. If you'd like help choosing a color,
-click on the pencil icon to open the color palette. You can set the text
+click on the text box to open the color palette. You can set the text
 alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
@@ -114,7 +123,7 @@ For Liferay 6.2, the WAP Styling functionality has been deprecated. Liferay
 Portal uses a new responsive design making WAP Styling configuration unnecessary
 for your portlet's look and feel. You can enable the WAP functionality for your
 portal's Look and Feel section by opening/creating your `portal-ext.properties`
-file in your ${LIFERAY_HOME} directory and setting
+file in your `${LIFERAY_HOME}` directory and setting
 `mobile.device.styling.wap.enabled=true`. WAP functionality will be completely
 removed from Liferay in the next release.
 
@@ -126,47 +135,66 @@ Next, let's discuss exporting and importing portlet data.
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
-Message Boards portlets. To export or import portlet data, right-click on the
-wrench icon of your portlet and select *Export/Import*. Exporting portlet data
-produces a `.lar` file that you can save and import into another portlet
-application of the same type. To import portlet data, you must select a `.lar`
-file. Be careful not to confuse portlet-specific `.lar` files with
-site-specific `.lar` files. See the Backing up and Restoring Pages section of
-chapter 2 for a discussion of exporting and importing data across an entire
-site.
+Message Boards portlets. To export or import portlet data, click on the wrench
+icon of your portlet and select *Export/Import*. Exporting portlet data produces
+a `.lar` file that you can save and import into another portlet application of
+the same type. To import portlet data, you must select a `.lar` file. Be careful
+not to confuse portlet-specific `.lar` files with site-specific `.lar` files.
+See the Backing up and Restoring Pages section of chapter 2 for a discussion of
+exporting and importing data across an entire site. Let's explore the export
+process first.
 
-![Figure 4.8: When exporting portlet data, you can choose which categories of information to include.](../../images/portlet-export.png)
+![Figure 4.8: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
 
-<!-- Needs to be replaced for 6.2 -->
+First, you can select a *Date Range* of content that you'd like to export.
+Content that has been added to your portlet within your specified date range is
+included in the `.lar` file. You also have options of choosing *All* dates or
+just the most recently added content, or *Last*.
 
-Each portlet has different configuration options. Checking the *Setup* box
-selects the portlet's saved configuration for export. Checking the *User
-Preferences* box selects saved portlet configurations of specific users. The
-*Data* box is the most important one--check this to select your portlet's data
-(like blog entries, message board posts, or wiki articles, for example) for
-export. When you check the *Data* box, more options appear, allowing you to
-choose specific kinds of metadata to include and to select a data range. Check
-the *Permissions* box if you'd like to export your the permissions defined for
-your portlet. When you check this box, a sub-box called *Permissions Assigned to
-Roles* appears. If you wish, you can export your portlet's permissions but not
-the permissions assigned to roles. Finally, you can check the *Categories* box
-to include categories for export. When selected, all categories referenced by
-portlet data will be exported or imported, keeping their hierarchy.
+Next, by checking the *Content* box, you can choose specific content you'd like
+to export. When you check the *Content* box, more options appear, allowing you
+to choose specific kinds of metadata to include. For example, if you have a wiki
+page with referenced content that you don't wish to include, you can simply
+check the *Wiki Pages* checkbox and uncheck the *Referenced Content* checkbox.
+Another option in the Content section of the Export/Import window is the
+selection of content types. Two familiar content types in your portal is
+*Comments* and *Ratings*. If you wish to include these entities in your `.lar`
+file, select *Change* and select them from the checklist.
 
-![Figure 4.9: When importing portlet data, you can choose which categories of information to use.](../../images/portlet-import.png)
+Lastly, you can choose whether to include permissions for your exported content.
+The permissions assigned for the exported portlet window will be included if the
+*Permissions* option is checked. When you check this box, a sub-box called
+*Permissions Assigned to Roles* appears. If you wish, you can export your
+portlet's permissions but not the permissions assigned to roles. After you've
+exported your portlet's data, switch to the *Current and Previous* tab to view
+ongoing export processes and the history of past exports.
 
-<!-- Needs to be replaced for 6.2 -->
+![Figure 4.9: When importing portlet data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../images/portlet-import.png)
 
-When you import portlet data, only the data types you select will be
-overwritten. If you'd like to import portlet data, you have to select a `.lar`
-file. You can import any items that were included when your `.lar` file was
-created. Note that user preferences can only be successfully imported when the
-user UUIDs match. Additionally, you can import any archived setups into your
-portlet, if any. Archived setups provide a means to save multiple portlet
-configurations and to switch between them. We discuss archived setups below. If
-you check the *Delete portlet data before importing* box, *all* data created by
-the portlets will be deleted just before the import process. Be careful, some
-portlets on others pages may be referencing this data.
+To import portlet data, you can select the LAR using your file explorer or by
+dragging and dropping the file between the dotted lines. After selecting the LAR
+file, you're given a similar screen to what you'd be offered during export.
+Select the appropriate content and permissions, and click *Continue*.
+
+The next screen offers options split into two sections -- *Update Data* and
+*Authorship of the Content*. Here's options and decriptions for each section:
+
+**Update Data**
+
+* *Mirror*: All data and content inside the imported LAR will be created as new
+the first time while maintaining a reference to the source. Subsequent imports
+from the same source will update entries instead of creating new entries.
+* *Mirror with overwriting*: Same behavior as the mirror strategy, but if a
+document or an image with the same name is found, it is overwritten.
+* *Copy as New*: All data and content inside the imported LAR will be created as
+new entries within the current site every time the LAR is imported.
+
+**Authorship of the Content**
+
+* *Use the Original Author*: Keep authorship of imported content whenever
+possible. Use the current user as author if the original one is not found.
+* *Use the Current User as Author*: Assign the current user as the author of all
+imported content.
 
 Next, let's discuss the concept of a portlet's scope.
 
@@ -208,11 +236,11 @@ site if you wish. Most portlets, however, default to the "native"
 configuration, and have their scopes set to the site where they are placed.
 
 Unless otherwise noted, all the portlets in this chapter support scoping by
-portal (global), site (default), or page (select layout &rarr; current page).
-This grants you some flexibility in how you want to set up your portal. You can
-configure the scope of a portlet with just a few simple steps.
+portal (global), site (default), or page . This grants you some flexibility in
+how you want to set up your portal. You can configure the scope of a portlet
+with just a few simple steps.
 
-1.  Click the *Menu* icon in the portlet window (the wrench).
+1.  Click the *Options* icon in the portlet window (the wrench).
 
 2.  Select *Configuration*.
 
@@ -220,12 +248,10 @@ configure the scope of a portlet with just a few simple steps.
 
 4.  Use the drop-down menu to set the scope.
 
-5.  Click *Save*.
-
 ![Figure 4.10: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
-setting the scope to *Current Page*, you can add as many of these portlets to a
+setting the scope to the current page, you can add as many of these portlets to a
 site as you want, provided they are all added to separate pages. 
 
 Another useful feature of Liferay's portlets is Archived Setups.  
@@ -263,7 +289,7 @@ of the portlet configuration dialog box. You can grant roles permission to add
 the portlet to a page, configure the portlet, or view the portlet. To set these
 permissions, go to the *Configuration* menu and click on *Permissions*. This
 shows you a table of roles defined in the portal. Use the check boxes to grant
-certain permissions to different roles. Click *Submit* after you've made your
+certain permissions to different roles. Click *Save* after you've made your
 selections. 
 
 Beyond this, specific permissions are generally defined for specific
@@ -421,15 +447,15 @@ explore the UI and see what the Recycle Bin can do.
 
 First, let's configure the Recycle Bin for site-specific scoping. Choose the
 site you'd like configure for the Recycle Bin from *My Sites* in the Dockbar.
-Then click *Admin* &rarr; *Site Administration* and select *Site Settings* from
-the Configuration heading. Next, click *Recycle Bin* on the right-side menu
-under the Advanced heading. You'll notice a few configurable options:
+Then click *Admin* &rarr; *Configuration* to navigate to the *Site Settings*
+page. Next, click *Recycle Bin* on the right-side menu under the Advanced
+heading. You'll notice a few configurable options:
 
 **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
 site-specific scope.
 
 **Trash Entries Max Age:** customize the number of days a file is kept in the
-Recycle Bin until its deletion (default is 30 days).
+Recycle Bin until its permanent deletion (default is 30 days).
 
 ![Figure 4.14: The Recycle Bin offers several configurable options for your site.](../../images/recycle-bin-site-settings.png)
 
@@ -507,7 +533,7 @@ For a quick example to show how easy the Recycle Bin is to use, let's send a web
 content article to the Recycle Bin and then restore it. We'll run through two
 different methods of restoring the file.
 
-1. Navigate to *Site Administration* &rarr; *Web Content*.
+1. Navigate to *Site Administration* &rarr; *Content* &rarr; *Web Content*.
 
 2. Select the *Add* button and click *Basic Web Content*.
 
