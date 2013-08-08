@@ -1,5 +1,50 @@
 # Generating Your Service Layer 
 
+The word *service* can mean many specific things, but the general dictionary
+definition states that it's "an act of helpful activity." Everyone has
+experienced this in some way. Whether it's an act of kindness from a
+friend or stranger or a service you pay for, in all instances, you have a need,
+and the service provides for that need. 
+
+Data-driven applications by their nature need access to a service for storing
+and retrieving their data. In a well-designed application, the application asks
+for data, and the service fetches it. The application can then display this data
+to the user, who reads it or modifies it. If the data is modified, the
+application passes it back to the service, and the service stores it. The
+application doesn't need to know anything about *how* the service does what it
+does. It trusts the service to handle storing and retrieving the data, freeing
+the application to be as robust as it needs to be. 
+
+This is what is called *loose coupling*, and it's a hallmark of good application
+design. If your application's service layer is self-contained, then you can
+swap it out for a better service layer when something more robust comes along,
+and you won't have to modify the application to take advantage of it. 
+
+Well, something more robust has come along, and it's called Service Builder.
+Using the Object-Relational Mapping engine provided by Hibernate along with a
+sophisticated code generator, Service Builder can help you implement your
+service layer in a fraction of the time it would normally take. But this isn't
+just any ordinary service layer: Service Builder also optionally helps you with
+remote services in multiple protocols, such as JSON and SOAP. And if you need to
+do something really funky with the database, it gets out of your way and lets
+you use whatever SQL queries you want. 
+
+Intrigued? We hope so. We'll cover the following topics: 
+
+- What is Service Builder? 
+- Defining Your Object-Relational Map
+- Writing the Local Service Class
+- Calling Local Services
+- Using Model Hints
+- Enabling Remote Services
+- Developing Custom SQL Queries
+- Configuring `service.properties`
+
+As you can see, there is a lot to cover, so let's start by describing Service
+Builder in more detail. 
+
+## What is Service Builder?
+
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
 Builder generates a service layer through Object-Relational Mapping (ORM)
@@ -85,7 +130,7 @@ have automatically generated for you. You'll also have to manually keep your
 interfaces and implementation classes in sync. Next, let's roll up our sleeves
 and learn how to use Service Builder. 
 
-## Configuring Service Builder and Defining Portlet Data
+## Defining Your Object-Relational Map
 
 In order to demonstrate how to use Service Builder, let's create an example
 portlet project that Nose-ster, a fictitious organization, can use to schedule
@@ -192,9 +237,10 @@ Service Builder to create a service layer for our event and location entities.
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file in your project's `docroot/WEB-INF`
 folder. In Service Builder terminology, your model classes (events and
-locations) are called entities. We've kept the requirements for our event and
-location entities fairly simple. Events should have the attributes specified in
-the following table:
+locations) are called entities. <!-- Actually, this is not Service Builder
+terminology. See https://en.wikipedia.org/wiki/Entity_class. -Rich -->We've kept
+the requirements for our event and location entities fairly simple. Events
+should have the attributes specified in the following table:
 
 **Event Attributes**
 
@@ -218,10 +264,10 @@ Attribute | Attribute Type | Attribute Description
 `stateOrProvince` | String | The state or province of the location
 `country` | String | The country of the location
 
-Let's create a `service.xml` file for our project and specify our services and
-their entities. Liferay IDE makes it easy.
-
-To create a `service.xml` file for your project, use the following steps: 
+Service Builder defines a single file called `service.xml` for describing
+entities. Once you create the file, you can then define your entities. We'll
+walk you through the whole process for the entities we've defined above, using
+Liferay IDE, which makes it easy. It'll only take seven steps to do it: 
 
 1.  Create the `service.xml` file in your project's `docroot/WEB-INF` folder.
 
@@ -239,15 +285,10 @@ To create a `service.xml` file for your project, use the following steps:
 7.  Define finder methods that retrieve objects from the database based on
     specified parameters.
 
-<!--
-8.  Provide the means to associate an asset and tags. //AssetEntry and AssetTag
-See sample-service-builder-portlet. - Jim
--->
-
-Let's start creating our service by using Liferay IDE to create our
+Let's start creating our service by using Liferay IDE to create your
 `service.xml` file. 
 
-### Step 1: Create the `service.xml` File
+### Create the `service.xml` File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -274,7 +315,7 @@ steps in creating our service.
 
 Let's start filling out the global information for our service. 
 
-### Step 2: Define Global Service Information
+### Define Global Service Information
 
 A service's global information applies to all of its entities. So, let's specify
 this information first. Select the *Service Builder* node in the upper left
@@ -324,7 +365,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, we'll
 add entities for your service's events and locations. 
 
-### Step 3: Define Service Entities
+### Define Service Entities
 
 Entities are the heart and soul of a service. Entities represent the models
 created, modified, and persisted for the service. For our example, we'll create
@@ -388,7 +429,7 @@ entities, we'll set both local service and remote service to `true`.
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity *columns*. 
 
-### Step 4: Define the Columns (Attributes) for Each Service Entity
+### Define the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent an entity's attributes.
 For our example, we'll add attributes for both our Event and Location entities.
@@ -476,7 +517,7 @@ Great! Our entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, we'll
 specify the relationship between our Event entity and Location entity. 
 
-### Step 5: Define Relationships Between Service Entities
+### Define Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
@@ -508,7 +549,7 @@ instance related to the Event:
 Now that our entity columns are in place, let's specify a default order for the
 entity instances to be retrieved from the database. 
 
-### Step 6: Define Ordering of Service Entity Instances
+### Define Ordering of Service Entity Instances
 
 Often, you'll want to list multiple instances of a given entity and list them in
 a particular order. Liferay lets you specify a default ordering for each entity
@@ -532,7 +573,7 @@ and *asc* as the *select by* value.
 The last thing do for our service entities is define the finder methods for
 retrieving their instances from the database. 
 
-### Step 7: Define Service Entity Finder Methods
+### Define Service Entity Finder Methods
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -1122,7 +1163,7 @@ methods of the `EventLocalServiceImpl` class at runtime.
 
 <!-- Consider removing or moving the section below. - Jim -->
 
-## Invoking the API Locally 
+## Calling Liferay Services
 
 Each service provides a local interface to clients running in the same JVM as
 Liferay Portal. There are two ways to invoke a service API's methods: 
@@ -1147,6 +1188,282 @@ organization.
 
 This JSP code invokes the static method `getOrganizationStatsUsers()` from the
 `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`. 
+
+In addition to the services you create using Service Builder, your portlets can
+also access a variety of services built into Liferay. These include the
+following services:
+
+- `UserService` - for accessing, adding, authenticating, deleting, and updating
+  users. 
+- `OrganizationService` - for accessing, adding, deleting, and updating
+  organizations. 
+- `GroupService` - for accessing, adding, deleting, and updating groups.
+- `CompanyService` - for accessing, adding, checking, and updating companies.
+- `ImageService` - for accessing images.
+- `LayoutService` - for accessing, adding, deleting, exporting, importing, and
+  updating layouts. 
+- `PermissionService` - for checking permissions.
+- `UserGroupService` - for accessing, adding, deleting, and updating user
+  groups. 
+- `RoleService` - for accessing, adding, unassigning, checking, deleting, and
+  updating roles. 
+
+For more information on these services, see the Liferay Portal CE Javadocs at
+[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
+or the Liferay Portal EE Javadocs included in the Liferay Portal EE
+Documentation `.zip` file that you can download from the Customer Portal on
+[http://www.liferay.com](http://www.liferay.com). 
+
+Next, we'll show you how to give Liferay portal instructions, or *hints*, on how
+to present your entity models in your portlet's view. 
+
+## Using Model Hints 
+
+Now that you've created your model entities and implemented your business logic
+to create and modify those entities, I'm sure you have some ideas on how to help
+users input valid model entity data. For example, considering the Nose-ster
+project we've been working on throughout this chapter, you'd want users to
+create social events for the future, not for the past. And it would be nice to
+give the user a nice text area and editor to fill in their description. Wouldn't
+it be great to specify these customizations from a single place in your portal
+project? Good news! Service Builder lets you specify this information as *model
+hints* in a single file called `portlet-model-hints.xml` found in your project's
+`docroot/WEB-INF/src/META-INF` folder. Liferay calls them *model hints* because
+they suggest how the entities should be presented to the users and the size of
+the database columns that should be used to store the entities. 
+
+<!-- Commenting this out for now. It's good information to know, but I found it
+distracting in the first paragraph and thought it was more important to focus on
+introducing model hints. Perhaps this can be moved somewhere else in this
+section or the chapter. - Jim
+
+Service Builder generates a
+number of XML configuration files in your project's
+`docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
+to manage Spring and Hibernate configurations. Don't modify the Spring or
+Hibernate configuration files; your changes will be overwritten the next time
+Service Builder runs. However, you can safely edit the
+`portlet-model-hints.xml` file. 
+-->
+
+Model hints let you to configure how model fields are displayed by the AlloyUI
+taglib called `aui`. As Liferay Portal displays forms in your portlet for users
+to input values for model entities, portal first checks the model hints you
+specified and customizes your form's input fields based on these hints. For
+example, if you want to limit users to selecting dates in the future, you'd set
+a `year-range-past` hint to `false` for that field in your
+`portlet-model-hints.xml` file. It would look like the following tag:
+
+    <field name="date" type="Date">
+        <hint name="year-range-past">false</hint>
+    </field>
+
+Let's take a look at the model hints file that Service Builder generated for
+your Event Listing portlet. Examine your project's
+`docroot/WEB-INF/src/META-INF/portlet-model-hints.xml` file. If you've been
+following along in the previous sections, Service Builder should have created
+the `portlet-model-hints.xml` file with the following contents:
+
+    <?xml version="1.0"?>
+
+    <model-hints>
+        <model name="com.nosester.portlet.eventlisting.model.Event">
+            <field name="eventId" type="long" />
+            <field name="companyId" type="long" />
+            <field name="groupId" type="long" />
+            <field name="userId" type="long" />
+            <field name="createDate" type="long" />
+            <field name="modifiedDate" type="long" />
+            <field name="name" type="String" />
+            <field name="description" type="String" />
+            <field name="date" type="Date />
+            <field name="locationId" type="long" />
+        </model>
+        <model name="com.nosester.portlet.eventlisting.model.Location">
+            <field name="locationId" type="long" />
+            <field name="companyId" type="long" />
+            <field name="groupId" type="long" />
+            <field name="userId" type="long" />
+            <field name="createDate" type="long" />
+            <field name="modifiedDate" type="long" />
+            <field name="name" type="String" />
+            <field name="description" type="String" />
+            <field name="streetAddress" type="String" />
+            <field name="city" type="String" />
+            <field name="stateOrProvince" type="String" />
+            <field name="country" type="String" />
+        </model>
+    </model-hints>
+
+<!-- Should the above model elements include the uuid String field? - Jim -->
+
+The root-level element is `model-hints`. Within it are all of your model
+entities represented by `model` elements. Each `model` element must have a
+`name` attribute specifying the full-qualified class name of the model class.
+Each model has `field` elements that represent their model entity's columns. 
+Lastly, each `field` element must have a name and a type. The names and types of
+each `field` element correspond to the names and types specified for each
+entity's columns in your project's `service.xml` file. Service Builder generates
+all of these elements for you, based on your `service.xml` file. 
+
+To add hints to a field, add a `hint` tag inside of its `field` tag. For
+example, you can add a `display-width hint` to specify the pixel width that
+should be used in displaying the field. The default pixel width for a field is
+350. To display a String field with 50 pixels, we could nest a
+`hint` element named `display-width` in it and give it a value of `50` for 50
+pixels. Here's an example of using the `display-width` hint in a `field`
+element: 
+
+    <field name="name" type="String">
+        <hint name="display-width">50</hint>
+    </field>
+
+In order to see the effect of a hint on a field, you have to run Service Builder
+again and redeploy your portlet project. Changing the `display-width` doesn't
+actually limit the number of characters that can be entered into the `name`
+field; it's just a way to control the width of the field in the AlloyUI input
+form. 
+
+To configure the maximum size of a model
+field's database column (i.e., the maximum number of characters that can be
+saved for the field), use the `max-length` hint. The default `max-length` value
+is 75 characters. If you wanted the `name` field to be able to persist up to 100
+characters, you could add a `max-length` hint to that field: 
+
+    <field name="name" type="String">
+        <hint name="display-width">50</hint>
+        <hint name="max-length">100</hint>
+    </field>
+
+Remember to run Service Builder and redeploy your portlet project after updating
+your `portlet-model-hints.xml` file. 
+
+So, we've mentioned a few different hints. It's about time we listed the portlet
+hints available to you. The following table describes the portlet model hints.
+
+**Model Hint Values and Descriptions**
+
+Name                | Value Type | Description | Default
+:-----------------: | :--------: | :---------- | :-----:
+`auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
+`autoSize`          | boolean | displays the field in a for scrollable text area | false
+`day-nullable`      | boolean | allows the day to be null in a date field | false
+`default-value`     | String  | sets the default value for a field | (empty String)
+`display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
+`display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
+`editor`            | boolean | sets whether to provide an editor for the input | false
+`max-length`        | integer | sets the maximum column size for SQL file generation | 75
+`month-nullable`    | boolean | allows the month to be null in a date field | false
+`secret`            | boolean | sets whether hide the characters input by the user | false | false
+`show-time`         | boolean | sets whether to show inlcude time along with the date | true
+`upper-case`        | boolean | converts all characters to upper case | false
+`year-nullable`     | boolean | allows the year to be null in a date field | false
+`year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
+`year-range-future` | boolean | sets whether to include future dates | true
+`year-range-past`   | boolean | sets whether to include past dates | true
+
+<!--
+I wanted to get a complete list of model hints used in portal. I found the
+ModelHints interface and then searched for where (*.java, *.js, *.jsp) it was
+referenced. It led me to portal-web/docroot/html/taglib/ui/input_field/page.jsp.
+I found some more hints and added them to the table above.
+
+I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
+
+- Jim -->
+
+Liferay Portal has its own model hints XML configuration file called
+`portal-model-hints.xml` which you can find in Liferay's
+`portal-impl/classes/META-INF` folder. Liferay's model hints configuration file
+contains many hint examples so you can refer to it for reference when
+customizing your `portlet-model-hints.xml` file. 
+
+You can use the `default-hints` element to define a list of hints to be applied
+to every field of a model. For example, adding the following element inside of a
+model element applies a `display-width` of 300 to each element of the model:
+
+    <default-hints>
+        <hint name="display-width">300</hint>
+    </default-hints>
+
+You can define `hint-collection` elements inside of the `model-hints` root-level
+element to define a list of hints to be applied together. A hint collection
+must be specified with a name. For example, Liferay's `portal-model-hints.xml`
+defines the following hint collections:
+
+    <hint-collection name="CLOB">
+        <hint name="max-length">2000000</hint>
+    </hint-collection>
+    <hint-collection name="URL">
+        <hint name="max-length">4000</hint>
+    </hint-collection>
+    <hint-collection name="TEXTAREA">
+        <hint name="display-height">105</hint>
+        <hint name="display-width">500</hint>
+        <hint name="max-length">4000</hint>
+    </hint-collection>
+    <hint-collection name="SEARCHABLE-DATE">
+        <hint name="month-nullable">true</hint>
+        <hint name="day-nullable">true</hint>
+        <hint name="year-nullable">true</hint>
+        <hint name="show-time">false</hint>
+    </hint-collection>
+
+You can apply a hint collection to a model field by referring to the hint
+collection's name. For example, if you define a `SEARCHABLE-DATE` collection
+like the one above in your `model-hints` element, you can apply it to your Event
+model's date field by using a `hint-collection` element that references the
+collection by its name:
+
+    <field name="date" type="Date">
+        <hint-collection name="SEARCHABLE-DATE" />
+    </field>
+
+As always, remember to run Service Builder and redeploy your project after
+updating your `portlet-model-hints.xml` file.
+
+Let's use a couple of model hints in our Event Listing portlet and Location
+Listing Portlet. We'll start by giving the user an editor for filling in their
+description fields. Since we want to apply the same hint to both the event and
+location entities, we'll define it as a hint collection. Then we'll reference
+the hint collection in them. 
+
+Define the following hint collection just below your `model-hints` root element
+in your `portlet-model-hints.xml` file:
+
+	<hint-collection name="DESCRIPTION-TEXTAREA">
+		<hint name="editor">true</hint>
+		<hint name="max-length">250</hint>
+	</hint-collection>
+
+Then replace the description fields of your event and location entities with the
+each description field referencing the hint collection, as demonstrated below:
+
+	<field name="description" type="String">
+		<hint-collection name="DESCRIPTION-TEXTAREA" />
+	</field>
+
+The last hint we'll introduce for our Event Listing portlet is one that makes
+sure the user has no option to select a year from the past. Replace the event
+entity's date field with the following date field as specified below:
+
+	<field name="date" type="Date">
+		<hint name="year-range-past">false</hint>
+	</field>
+
+Great! Now rebuild your service using Service Builder, redeploy your portlet
+project, and add or edit an event using the portlet. The following figure shows
+the portlet displaying the input fields as we specified.
+	
+![Figure 4.10: Customizing string input fields to use editors and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+
+Well, you've learned the art of persuasion through Liferay's model hints. Now,
+you can not only influence how your model's input fields are displayed but you
+can also set their database table column sizes. You can also choose how to apply
+hints. You can insert individual hints directly into your fields, you can apply
+a set of default hints to all of a model's fields, or you can define collections
+of hints to apply at either of those scopes. Looks like you've picked up on the
+"hints" on how Liferay model hints help portlet data! 
 
 Next, let's find out how you can invoke Liferay's service APIs remotely. 
 
@@ -1540,257 +1857,7 @@ EventLocalServiceUtil.findByEventNameEventDescriptionLocationName(...). We may
 want to include this in the solution. - Jim --> 
 
 Congratulations on following the 3 step process in developing a custom SQL query
-and custom finder for your portlet! Next, we'll show you how to give Liferay
-portal instructions, or *hints*, on how to present your entity models in your
-portlet's view. 
-
-## Using Model Hints 
-
-Now that you've created your model entities and implemented your business logic
-to create and modify those entities, I'm sure you have some ideas on how to help
-users input valid model entity data. For example, considering the Nose-ster
-project we've been working on throughout this chapter, you'd want users to
-create social events for the future, not for the past. And it would be nice to
-give the user a nice text area and editor to fill in their description. Wouldn't
-it be great to specify these customizations from a single place in your portal
-project? Good news! Service Builder lets you specify this information as *model
-hints* in a single file called `portlet-model-hints.xml` found in your project's
-`docroot/WEB-INF/src/META-INF` folder. Liferay calls them *model hints* because
-they suggest how the entities should be presented to the users and the size of
-the database columns that should be used to store the entities. 
-
-<!-- Commenting this out for now. It's good information to know, but I found it
-distracting in the first paragraph and thought it was more important to focus on
-introducing model hints. Perhaps this can be moved somewhere else in this
-section or the chapter. - Jim
-
-Service Builder generates a
-number of XML configuration files in your project's
-`docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
-to manage Spring and Hibernate configurations. Don't modify the Spring or
-Hibernate configuration files; your changes will be overwritten the next time
-Service Builder runs. However, you can safely edit the
-`portlet-model-hints.xml` file. 
--->
-
-Model hints let you to configure how model fields are displayed by the AlloyUI
-taglib called `aui`. As Liferay Portal displays forms in your portlet for users
-to input values for model entities, portal first checks the model hints you
-specified and customizes your form's input fields based on these hints. For
-example, if you want to limit users to selecting dates in the future, you'd set
-a `year-range-past` hint to `false` for that field in your
-`portlet-model-hints.xml` file. It would look like the following tag:
-
-    <field name="date" type="Date">
-        <hint name="year-range-past">false</hint>
-    </field>
-
-Let's take a look at the model hints file that Service Builder generated for
-your Event Listing portlet. Examine your project's
-`docroot/WEB-INF/src/META-INF/portlet-model-hints.xml` file. If you've been
-following along in the previous sections, Service Builder should have created
-the `portlet-model-hints.xml` file with the following contents:
-
-    <?xml version="1.0"?>
-
-    <model-hints>
-        <model name="com.nosester.portlet.eventlisting.model.Event">
-            <field name="eventId" type="long" />
-            <field name="companyId" type="long" />
-            <field name="groupId" type="long" />
-            <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
-            <field name="name" type="String" />
-            <field name="description" type="String" />
-            <field name="date" type="Date />
-            <field name="locationId" type="long" />
-        </model>
-        <model name="com.nosester.portlet.eventlisting.model.Location">
-            <field name="locationId" type="long" />
-            <field name="companyId" type="long" />
-            <field name="groupId" type="long" />
-            <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
-            <field name="name" type="String" />
-            <field name="description" type="String" />
-            <field name="streetAddress" type="String" />
-            <field name="city" type="String" />
-            <field name="stateOrProvince" type="String" />
-            <field name="country" type="String" />
-        </model>
-    </model-hints>
-
-<!-- Should the above model elements include the uuid String field? - Jim -->
-
-The root-level element is `model-hints`. Within it are all of your model
-entities represented by `model` elements. Each `model` element must have a
-`name` attribute specifying the full-qualified class name of the model class.
-Each model has `field` elements that represent their model entity's columns. 
-Lastly, each `field` element must have a name and a type. The names and types of
-each `field` element correspond to the names and types specified for each
-entity's columns in your project's `service.xml` file. Service Builder generates
-all of these elements for you, based on your `service.xml` file. 
-
-To add hints to a field, add a `hint` tag inside of its `field` tag. For
-example, you can add a `display-width hint` to specify the pixel width that
-should be used in displaying the field. The default pixel width for a field is
-350. To display a String field with 50 pixels, we could nest a
-`hint` element named `display-width` in it and give it a value of `50` for 50
-pixels. Here's an example of using the `display-width` hint in a `field`
-element: 
-
-    <field name="name" type="String">
-        <hint name="display-width">50</hint>
-    </field>
-
-In order to see the effect of a hint on a field, you have to run Service Builder
-again and redeploy your portlet project. Changing the `display-width` doesn't
-actually limit the number of characters that can be entered into the `name`
-field; it's just a way to control the width of the field in the AlloyUI input
-form. 
-
-To configure the maximum size of a model
-field's database column (i.e., the maximum number of characters that can be
-saved for the field), use the `max-length` hint. The default `max-length` value
-is 75 characters. If you wanted the `name` field to be able to persist up to 100
-characters, you could add a `max-length` hint to that field: 
-
-    <field name="name" type="String">
-        <hint name="display-width">50</hint>
-        <hint name="max-length">100</hint>
-    </field>
-
-Remember to run Service Builder and redeploy your portlet project after updating
-your `portlet-model-hints.xml` file. 
-
-So, we've mentioned a few different hints. It's about time we listed the portlet
-hints available to you. The following table describes the portlet model hints.
-
-**Model Hint Values and Descriptions**
-
-Name                | Value Type | Description | Default
-:-----------------: | :--------: | :---------- | :-----:
-`auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
-`autoSize`          | boolean | displays the field in a for scrollable text area | false
-`day-nullable`      | boolean | allows the day to be null in a date field | false
-`default-value`     | String  | sets the default value for a field | (empty String)
-`display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
-`display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
-`editor`            | boolean | sets whether to provide an editor for the input | false
-`max-length`        | integer | sets the maximum column size for SQL file generation | 75
-`month-nullable`    | boolean | allows the month to be null in a date field | false
-`secret`            | boolean | sets whether hide the characters input by the user | false | false
-`show-time`         | boolean | sets whether to show inlcude time along with the date | true
-`upper-case`        | boolean | converts all characters to upper case | false
-`year-nullable`     | boolean | allows the year to be null in a date field | false
-`year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
-`year-range-future` | boolean | sets whether to include future dates | true
-`year-range-past`   | boolean | sets whether to include past dates | true
-
-<!--
-I wanted to get a complete list of model hints used in portal. I found the
-ModelHints interface and then searched for where (*.java, *.js, *.jsp) it was
-referenced. It led me to portal-web/docroot/html/taglib/ui/input_field/page.jsp.
-I found some more hints and added them to the table above.
-
-I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
-
-- Jim -->
-
-Liferay Portal has its own model hints XML configuration file called
-`portal-model-hints.xml` which you can find in Liferay's
-`portal-impl/classes/META-INF` folder. Liferay's model hints configuration file
-contains many hint examples so you can refer to it for reference when
-customizing your `portlet-model-hints.xml` file. 
-
-You can use the `default-hints` element to define a list of hints to be applied
-to every field of a model. For example, adding the following element inside of a
-model element applies a `display-width` of 300 to each element of the model:
-
-    <default-hints>
-        <hint name="display-width">300</hint>
-    </default-hints>
-
-You can define `hint-collection` elements inside of the `model-hints` root-level
-element to define a list of hints to be applied together. A hint collection
-must be specified with a name. For example, Liferay's `portal-model-hints.xml`
-defines the following hint collections:
-
-    <hint-collection name="CLOB">
-        <hint name="max-length">2000000</hint>
-    </hint-collection>
-    <hint-collection name="URL">
-        <hint name="max-length">4000</hint>
-    </hint-collection>
-    <hint-collection name="TEXTAREA">
-        <hint name="display-height">105</hint>
-        <hint name="display-width">500</hint>
-        <hint name="max-length">4000</hint>
-    </hint-collection>
-    <hint-collection name="SEARCHABLE-DATE">
-        <hint name="month-nullable">true</hint>
-        <hint name="day-nullable">true</hint>
-        <hint name="year-nullable">true</hint>
-        <hint name="show-time">false</hint>
-    </hint-collection>
-
-You can apply a hint collection to a model field by referring to the hint
-collection's name. For example, if you define a `SEARCHABLE-DATE` collection
-like the one above in your `model-hints` element, you can apply it to your Event
-model's date field by using a `hint-collection` element that references the
-collection by its name:
-
-    <field name="date" type="Date">
-        <hint-collection name="SEARCHABLE-DATE" />
-    </field>
-
-As always, remember to run Service Builder and redeploy your project after
-updating your `portlet-model-hints.xml` file.
-
-Let's use a couple of model hints in our Event Listing portlet and Location
-Listing Portlet. We'll start by giving the user an editor for filling in their
-description fields. Since we want to apply the same hint to both the event and
-location entities, we'll define it as a hint collection. Then we'll reference
-the hint collection in them. 
-
-Define the following hint collection just below your `model-hints` root element
-in your `portlet-model-hints.xml` file:
-
-	<hint-collection name="DESCRIPTION-TEXTAREA">
-		<hint name="editor">true</hint>
-		<hint name="max-length">250</hint>
-	</hint-collection>
-
-Then replace the description fields of your event and location entities with the
-each description field referencing the hint collection, as demonstrated below:
-
-	<field name="description" type="String">
-		<hint-collection name="DESCRIPTION-TEXTAREA" />
-	</field>
-
-The last hint we'll introduce for our Event Listing portlet is one that makes
-sure the user has no option to select a year from the past. Replace the event
-entity's date field with the following date field as specified below:
-
-	<field name="date" type="Date">
-		<hint name="year-range-past">false</hint>
-	</field>
-
-Great! Now rebuild your service using Service Builder, redeploy your portlet
-project, and add or edit an event using the portlet. The following figure shows
-the portlet displaying the input fields as we specified.
-	
-![Figure 4.10: Customizing string input fields to use editors and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
-
-Well, you've learned the art of persuasion through Liferay's model hints. Now,
-you can not only influence how your model's input fields are displayed but you
-can also set their database table column sizes. You can also choose how to apply
-hints. You can insert individual hints directly into your fields, you can apply
-a set of default hints to all of a model's fields, or you can define collections
-of hints to apply at either of those scopes. Looks like you've picked up on the
-"hints" on how Liferay model hints help portlet data! 
+and custom finder for your portlet! 
 
 Next we'll take a tour through the `service.properties` file that Service
 Builder generates. We'll explain the significance of its properties and how you
@@ -1800,7 +1867,7 @@ can override them, as necessary.
 ## Leveraging Dynamic Query 
 -->
 
-## Overview of `service.properties` 
+## Configuring `service.properties` 
 
 Service Builder generates a `service.properties` file in your project's
 `docroot/WEB-INF/src` folder. Liferay Portal uses the properties in this file to
@@ -1830,32 +1897,7 @@ Here are the other properties included in the `service.properties` file:
 - `include-and-override`: The default value of this property defines
   `service-ext.properties` as an override file for `service.properties`.
 
-## Built-In Liferay Services 
-
-In addition to the services you create using Service Builder, your portlets can
-also access a variety of services built into Liferay. These include the
-following:
-
-- `UserService` - for accessing, adding, authenticating, deleting, and updating
-  users. 
-- `OrganizationService` - for accessing, adding, deleting, and updating
-  organizations. 
-- `GroupService` - for accessing, adding, deleting, and updating groups.
-- `CompanyService` - for accessing, adding, checking, and updating companies.
-- `ImageService` - for accessing images.
-- `LayoutService` - for accessing, adding, deleting, exporting, importing, and
-  updating layouts. 
-- `PermissionService` - for checking permissions.
-- `UserGroupService` - for accessing, adding, deleting, and updating user
-  groups. 
-- `RoleService` - for accessing, adding, unassigning, checking, deleting, and
-  updating roles. 
-
-For more information on these services, see the Liferay Portal CE Javadocs at
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
-or the Liferay Portal EE Javadocs included in the Liferay Portal EE
-Documentation `.zip` file that you can download from the Customer Portal on
-[http://www.liferay.com](http://www.liferay.com). 
+<!-- Missing transition. --> 
 
 ## Summary
 
