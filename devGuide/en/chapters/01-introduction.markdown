@@ -1,4 +1,4 @@
-# Introduction
+# Realizing the Benefits of Liferay's Development Platform 
 
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
@@ -18,18 +18,16 @@ your plugins.
 
 This chapter covers the following: 
 
-- **Developing applications for Liferay:** Ways to develop new applications and
-reuse existing applications 
-
-- **Extending and customizing Liferay:** Options for extending functionality and
-customizing your portal applications, themes, and templates 
-
-- **Choosing your development tools:** Comparison of tools available for
-developing applications for Liferay 
+- **Developing Applications for Liferay:** Ways to develop new applications and
+  reuse existing applications 
+- **Extending and Customizing Liferay:** Options for extending functionality and
+  customizing your portal applications, themes, and templates 
+- **Choosing Your Development Tools:** Comparison of tools available for
+  developing applications for Liferay 
 
 Let's talk about developing applications for Liferay. 
 
-## Developing applications for Liferay
+## Developing Applications for Liferay 
 
 According to Wikipedia "A web application is an application that is accessed
 over a network such as the Internet or an intranet." A portal application is a
@@ -42,7 +40,7 @@ you probably want to know *what's the best and quickest way to do it?* Liferay
 supports two main, standards-based technologies for incorporating your
 applications into Liferay: **Portlets** and **OpenSocial gadgets**. 
 
-### Portlets
+### Portlets 
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they
@@ -60,7 +58,7 @@ frameworks: MVC Portlet and Alloy Portlet. Portlets can be used to build complex
 applications since they can leverage the full suite of technologies and
 libraries for the Java platform.
 
-### OpenSocial gadgets
+### OpenSocial Gadgets
 
 OpenSocial gadgets are usually small applications, written using browser-side
 technologies such as HTML and JavaScript. Like portlets, OpenSocial gadgets
@@ -77,14 +75,13 @@ profile, his activities, and his friends.
 An OpenSocial gadget is deployed in Liferay as one of the following types: 
 
 - **Remote gadget:** is executed in a remote server but presented in a given
-page as if it were another platform application. Remote gadget deployment is
-simple, but the portal depends on the remote server for the gadget to work.
-Deployment as a remote gadget is not a viable option in some Intranet
-environments that lack full access to the Internet.
-
+  page as if it were another platform application. Remote gadget deployment is
+  simple, but the portal depends on the remote server for the gadget to work.
+  Deployment as a remote gadget is not a viable option in some Intranet
+  environments that lack full access to the Internet.
 - **Local gadget:** is deployed in the Liferay server in a similar manner to
-portlets. Since a gadget is defined in an XML file, uploading this file is all
-that's necessary to deploy the gadget.
+  portlets. Since a gadget is defined in an XML file, uploading this file is all
+  that's necessary to deploy the gadget.
 
 Once you've saved your new gadget, it appears as an application that
 administrators can add to their site's pages. 
@@ -93,26 +90,21 @@ Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
-### Reusing existing web applications
+### Reusing Existing Web Applications 
 
 What if you already have an existing application that has not been implemented
 as a portlet or OpenSocial gadget? You have many options, including:
 
 - Rewrite the application as a portlet. 
-
 - Create simple portlets that interact with the application (possibly using Web
-Services) and offer that functionality to end-users. 
-
+  Services) and offer that functionality to end-users. 
 - Create an OpenSocial gadget as a wrapper for the application. The gadget can
-use an IFrame to show part of the application in the portal page. 
-
+  use an IFrame to show part of the application in the portal page. 
 - Create a portlet that integrates the remote application either using an IFrame
-or an HTTP proxy (e.g., using Liferay's WebProxy portlet). This requires
-implementing single sign-on between the portal and the application. 
-
+  or an HTTP proxy (e.g., using Liferay's WebProxy portlet). This requires
+  implementing single sign-on between the portal and the application. 
 - If the application is implemented using Struts 1.x, it can be converted to a
   portlet application with only a few changes. 
-
 - If the application is implemented using JSF, it can be converted to a portlet
   application with only a few changes. 
 
@@ -121,7 +113,7 @@ of the scope of this guide; however, the above options are worth considering.
 
 Next let's consider some of the technology frameworks Liferay supports. 
 
-### Supported technology frameworks
+### Supported Technology Frameworks 
 
 Liferay, as a platform, strives to provide compatibility with any Java
 technology you may want to use to develop your applications. Thanks to the
@@ -135,17 +127,18 @@ Since the choice of available frameworks and technologies is very broad,
 choosing the appropriate one can be daunting. We'll provide some advice to help
 you choose the best frameworks for your needs, summarized as follows:
 
-1. *Use what you know:* If you already know a framework, that can be your
-first option (Struts 2, Spring MVC, PHP, Ruby, etc). 
+1.  *Use what you know:* If you already know a framework, that can be your
+    first option (Struts 2, Spring MVC, PHP, Ruby, etc). 
 
-2. *Adapt to your real needs:* Component-based frameworks, such as
-JavaServer&trade; Faces (JSF), Vaadin, and Google Web Toolkit (GWT), are
-especially good for desktop-like applications. MVC frameworks, on the other
-hand, provide more flexibility. 
+2.  *Adapt to your real needs:* Component-based frameworks, such as
+    JavaServer&trade; Faces (JSF), Vaadin, and Google Web Toolkit (GWT), are
+    especially good for desktop-like applications. MVC frameworks, on the other
+    hand, provide more flexibility. 
 
-3. *When in doubt, pick the simpler solution:* Portlet applications are often
-more simple to implement than standalone web applications. When in
-doubt, use the simpler framework (e.g. Liferay's MVC Portlet or Alloy Portlet).  
+3.  *When in doubt, pick the simpler solution:* Portlet applications are often
+    more simple to implement than standalone web applications. When in
+    doubt, use the simpler framework (e.g., Liferay's MVC Portlet or Alloy
+    Portlet). 
 
 Some of the frameworks mentioned above include their own JavaScript code to
 provide a high degree of interaction. That is the case with GWT, Vaadin,
@@ -175,7 +168,7 @@ remote services, and much more. Liferay does not impose specific requirements on
 the use of any of those frameworks. You, the portal developer, choose the best
 tools for your projects. 
 
-## Extending and customizing Liferay
+## Extending and Customizing Liferay 
 
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
@@ -187,7 +180,7 @@ Liferay is designed to be customized. Multiple plugins and plugin types can be
 combined into a single WAR file. Let's take a look at these plugin types and how
 they can be used. 
 
-### Customizing the look and feel: Themes
+### Customizing the Look and Feel: Themes 
 
 Themes let you dictate your site's look and feel. You can specify color schemes
 and commonly used images. You'll apply styling for UI elements such as fonts,
@@ -199,7 +192,7 @@ widths of your users' desktop, tablet, and mobile devices. Most importantly,
 themes let you focus on designing your site's UI, while leaving its
 functionality to the portlets. 
 
-### Adding new predefined page layouts: Layout Templates
+### Adding New Predefined Page Layouts: Layout Templates  
 
 Layouts are similar to themes, except they specify the *arrangement* of portlets
 on a page rather than their look and feel. You can create custom layout
@@ -207,7 +200,7 @@ templates to arrange portlets just the way you like them. And you can even embed
 commonly used portlets. Like themes, layout templates are also written in
 Velocity and are hot-deployable. 
 
-### Customizing or extending the out-of-box functionality: Hook plugins
+### Customizing or Extending the Out-of-Box Functionality: Hook Plugins 
 
 Hook plugins are how you customize the core functionality of Liferay at many
 predefined extension points. Hook plugins are used to modify portal properties
@@ -217,7 +210,7 @@ replace any of the core Liferay services with a custom implementation. Hook
 plugins can also replace the JSP templates used by any of the default portlets.
 Best of all, hooks are hot-deployable plugins just like portlets. 
 
-### Advanced customization: Ext plugins
+### Advanced Customization: Ext Plugins  
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay
 core, allowing you to replace essentially any class with a custom
@@ -232,12 +225,12 @@ effect.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you have developed for
+ ![note](../../images/tip-pen-paper.png) **Note:** If you have developed for
  Liferay 5.2 or prior releases, you may be familiar with what was known as the
  *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
  the extension environment in order to simplify development. For instructions on
  converting an existing Extension Environment into a plugin, see the section
- on migrating old extension environments in chapter 8.
+ on migrating old extension environments in chapter 12.
 
 ---
 
@@ -245,7 +238,7 @@ Now that you're familiar with the best options for developing applications on
 Liferay and customizing Liferay, let's consider some of the tools you'll be
 using.
 
-## Choosing your development tools
+## Choosing Your Development Tools 
 
 The Java ecosystem is known for providing a variety of options for almost any
 type of software development. This is advantageous because you can find the tool
@@ -265,7 +258,7 @@ a set of predefined commands (known as *targets*, in Ant's nomenclature). You
 can use the Plugins SDK directly from the command-line and use file editors like
 Emacs, Vim, EditPlus, or even Notepad. You can also integrate the Plugins SDK
 with your favorite IDE, since most IDEs provide support for Apache Ant. The next
-chapter describes how to use the Plugins SDK. 
+chapter includes a section on how to use the Plugins SDK. 
 
 **Eclipse and the Liferay IDE:** Eclipse is the most popular and well known
 Java IDE and it provides a wide variety of features. *Liferay IDE* is a plugin
@@ -278,15 +271,15 @@ additional integration plugins such as the Kaleo Designer for Java.
 
 This guide shows you how to develop for Liferay using both the Plugins SDK and
 Liferay IDE, to benefit you and other developers even if you don't like IDEs or
-don't use Eclipse. If you use Eclipse, you may want to start reading about
-Liferay IDE in chapter 10 first and then go back to reading about the Plugins
-SDK.
+don't use Eclipse. If you use Eclipse, you'll be happy to know that we'll show
+you how to develop apps using Liferay IDE in the next chapter.  
 
 **What about if I don't like Apache Ant and I prefer to use Maven?** Many
 developers prefer other command-line alternatives to Apache Ant. The most
 popular of these alternatives is Maven. To support developers that want to use
 Maven we have *mavenized* Liferay artifacts for referencing in your Maven
-projects. See chapter 8 for an in-depth look at developing plugins in Maven. 
+projects. See the next chapter for an in-depth look at developing plugins in
+Maven. 
 
 **What if I don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA or
 other another IDE?** There are many IDEs available, and each one has its

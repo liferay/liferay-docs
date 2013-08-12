@@ -272,8 +272,15 @@ template.
 You can also use the autocomplete feature to add variables to your template. It
 can be invoked by typing *${* which opens a drop-down menu of available
 variables. By clicking one of the variables, the editor inserts the variable
-into the editor. For more information on how to create a custom template, visit
-the *Liferay Developer's Guide*.
+into the editor.
+
+You also have the ability to embed same-type templates into other templates. For
+example, suppose you have an existing Wiki ADT and would like to create another
+similar Wiki ADT. Instead of starting from scratch, you can import the existing
+Wiki ADT into your new one and build off of it. In other words, you can utilize
+ADTs as generic templates which allow for reusable code to be imported by
+Velocity or FreeMarker templates in the system. For more information on how to
+create a custom template, visit the *Liferay Developer's Guide*.
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
@@ -291,6 +298,13 @@ your ADT through its *Actions* button. This provides several options:
   *Update*, and *View* for the ADT.
 - *Copy*: creates a copy of the ADT.
 - *Delete*: deletes the ADT.
+
+In addition, your ADT generates a static URL and WebDAV URL. These values access
+the XML source of your template. You can find these URLs by clicking the ADT
+from the menu and expanding the *Details* section. With the WebDAV URL, site
+administrators are capable of adding, browsing, editing, and deleting ADTs on a
+remote server. If you'd like to learn more about what the WebDAV URL can do,
+visit the *Document Management* chapter's *WebDAV access* chapter.
 
 To enable your ADT for a portlet, navigate to the portlet you want to modify and
 open its *Configuration* menu. In the *Display Settings* sub-tab located within
