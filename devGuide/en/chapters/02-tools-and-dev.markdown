@@ -413,18 +413,18 @@ Here's something you can start with as part of step 2:
 -->
 
 Our *event-listing-portlet* plugin project should appear in the Eclipse package
-explorer. The project was placed in ythe Plugins SDK you selected, underr the
-directory corresponding to the plugin type the project will contain. Here's the
-project's directory structure: 
+explorer. The project was placed in the Plugins SDK you selected, under the
+directory corresponding to the plugin type the project contains. Here's the
+generalized directory structure for portlet projects you create in Liferay
+IDE/Developer Studio: 
 
-- `PORTLET-NAME/`
+- `PROJECT-NAME/`
     - `docroot/WEB-INF/src`
     - `build.xml`
     - `docroot/`
         - `css/`
         - `js/`
         - `WEB-INF/`
-            - `src/` - this folder is not created by default.
             - `liferay-display.xml`
             - `liferay-plugin-package.properties`
             - `liferay-portlet.xml`
@@ -432,10 +432,18 @@ project's directory structure:
             - `web.xml` - this file is not created by default.
         - `icon.png`
         - `view.jsp`
-    - `build.xml`
 
 All projects, regardless of type, are created with a `build.xml` file. This
-file provides the means for compilation ansd deployment of your plugins. 
+file provides the means for compilation and deployment of your plugins.
+Another default file is `liferay-plugin-package.properties`. This file contains
+important metadata on your project. Liferay IDE's *properties* view gives you a
+simple interface to inspect or specify the file's fields, including your
+project's dependencies and deployment context, display name, and Liferay
+version.
+
+<!--I was unsure whether we wanted to document every field in thie
+liferay-plugin-package.properties file here? How much detail is desired? -->
+ 
 <!--
 Inform the reader that the project is created to the Liferay Plugins SDK
 that he specified in the wizard. Explain that each project, regardless of type,
@@ -547,8 +555,7 @@ name our *Java package* after the plugin's parent project, so it will be
 *com.nosester.portlet.eventListing* for our example. We'll leave the
 *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you
 could have selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
-*javax.portlet.GenericPortlet* for your superclass. You can deviate from the
-conventions we used here if you like. 
+*javax.portlet.GenericPortlet* for your superclass. 
 
     Click *Next*.
 
