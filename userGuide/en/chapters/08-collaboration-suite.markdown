@@ -630,19 +630,27 @@ You must also specify an option for assigning ownership of the imported data:
 ### Upgrading the Calendar Portlet
 
 In Liferay 6.1 and previous versions, an older version of the Calendar portlet
-was included as one of the core portlets. If you're upgrading from Liferay 6.2
+was included as one of the core portlets. If you're upgrading from Liferay 6.1
 or a previous version to Liferay 6.2 or a later version, all the calendar events
-that existed prior to 6.2 will still be available after your upgrade.
+that existed prior to 6.2 will still be available after your upgrade. After
+following
+[these](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-5)
+steps for upgrading Liferay, all you need to do to access previously added
+events is deploy the new Calendar portlet and add it to a page. You can browse
+through the new Calendar to confirm that the upgrade succeeded: you should be
+able to view and edit calendar events that were added via the old calendar
+portlet.
 
 The old Calendar portlet included certain calendar event types such as
 appointments, birthdays, holidays, and meetings. The new Calendar portlet
-doesn't include this explicit notion of event types. However, you can preserve
-the functionality provided by the old notion of event types by using categories
-instead. When upgrading, the old calendar event types are migrated to
-categories. The upgrade creates a vocabulary called *Calendar Event Types* and
-adds the old event types as categories in this vocabulary. Upon upgrading, any
-calendar events that had one of the old event types receives the corresponding
-category from the Calendar Event Types vocabulary instead.
+doesn't include this explicit notion of event types. However, by using
+categories, the upgrade process preserves the functionality provided by the old
+Calendar portlet's notion of event types. When upgrading, the old calendar event
+types are migrated to categories. The upgrade creates a vocabulary called
+*Calendar Event Types* and adds the old event types as categories in this
+vocabulary. Upon upgrading, any calendar events that had one of the old event
+types receive the corresponding category from the Calendar Event Types
+vocabulary instead.
 
 Next, let's look at one of the most widely used applications provided by
 Liferay: its message boards.
