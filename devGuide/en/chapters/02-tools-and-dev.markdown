@@ -241,14 +241,15 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 
 You can run Liferay on any application server suppoorted by Liferay Portal.
 Here we'll set up our Liferay runtime on the Tomcat application server, but the
-steps you'll follow will be very similar with any supported application
-server.
- <!-- Please explain that we're creating a Tomcat Runtime Server for
+steps you'll follow will be very similar with any supported application server.
+
+<!-- Please explain that we're creating a Tomcat Runtime Server for
 demonstration purposes. - Jim --> 
 <!--Did I word the above paragraph appropriately? I struggle with the
 runtime/application server concept. Also, is there somewhere we can point the
 reader to learrn about all the app servers we support? Are they simnply the
-ones Liferay comes bundled with on our customer portal? -Russ -->
+ones Liferay comes bundled with on our customer
+portal(https://www.liferay.com/group/customer/downloads/portal)? -Russ -->
 
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
@@ -330,9 +331,9 @@ description of event-listing-portlet project in the Configuring Service Builder
 and Defining Portlet Data section. - Jim
 -->
 
-If you've been following along, your Plugins SDK and portal server are
-configured in Liferay IDE--let's create a new Liferay plugin project in Liferay
-IDE. 
+If you've been following our Liferay IDE configuration instructions, your
+Plugins SDK and portal server are configured in Liferay IDE--let's create a new
+Liferay plugin project in Liferay IDE. 
 
 1. Go to File &rarr; New &rarr; Liferay Project. 
 
@@ -356,7 +357,7 @@ select the type of plugins it will hold.
     2.3. Under *Plugin Type*, indicate which plugin type your project will hold by
     selecting one from the list.  You'll choose from *Portlet*, *Hook*, *Ext*,
     *Layout*, or *Theme*. Portlets are the only plugin type whose creation spans
-    multiple windows in the wizard; all other plugin types are created once you
+    multiple windows in the wizard; all other plugin project types are created once you
     click *Finish* from this window. Our demonstration project will hold portlets
     for the Nose-ster organization, so make sure *Portlet* is selected before
     clicking *Next*.
@@ -366,7 +367,8 @@ portlet on. If you want to use one of the listed frameworks (*Liferay MVC*,
 *JSF 2.x*, or *Vaadin*), select it and click *Finish*. Alternatively, you can
 select the *Create custom portlet class* option and click *Next*.  You can find
 more information about these frameworks and creating custom portlet classes in
-the chapter on portlet development.
+the chapter on portlet development. Below we'll discuss the plugin creation
+wizard in more detail.
 
     ![Figure 2.5: Entering the information for the new
     project](../../images/ide-new-liferay-project.png)
@@ -413,7 +415,7 @@ Here's something you can start with as part of step 2:
 -->
 
 Our *event-listing-portlet* plugin project should appear in the Eclipse package
-explorer. The project was placed in the Plugins SDK you selected, under the
+explorer. The project was placed in the Plugins SDK you configured, under the
 directory corresponding to the plugin type the project contains. Here's the
 generalized directory structure for portlet projects you create in Liferay
 IDE/Developer Studio: 
@@ -434,15 +436,16 @@ IDE/Developer Studio:
         - `view.jsp`
 
 All projects, regardless of type, are created with a `build.xml` file. This
-file provides the means for compilation and deployment of your plugins.
-Another default file is `liferay-plugin-package.properties`. This file contains
-important metadata on your project. Liferay IDE's *properties* view gives you a
-simple interface to inspect or specify the file's fields, including your
-project's dependencies and deployment context, display name, and Liferay
-version.
+file gives Liferay IDE the means for compilation and deployment of your
+plugins.  Another default file is `liferay-plugin-package.properties`. This
+file contains important metadata on your project. Liferay IDE's *properties*
+view gives you a simple interface to inspect or specify the file's fields,
+including your project's dependencies and deployment context, display name, and
+Liferay version.
 
 <!--I was unsure whether we wanted to document every field in thie
-liferay-plugin-package.properties file here? How much detail is desired? -->
+liferay-plugin-package.properties file here? How much detail is desired? I
+couldn't fiund any other documentation of the file on liferay.com. -->
  
 <!--
 Inform the reader that the project is created to the Liferay Plugins SDK
@@ -508,9 +511,12 @@ existing projects into Liferay IDE.
 
 ### Creating Plugins 
 
-Liferay projects can contain multiple plugins. We already created the skeleton
-Event Listing portlet project earlier in the chapter. We'll also need a
-Location Listing portlet, which we'll put it in the same project. These
+Liferay projects can contain multiple plugins. When you specify that your
+project is a portlet plugin project, the wizard guides you through the creation
+of a portlet to put inside the project. Here, though, we'll describe the
+process as if you have an empty plugin project. We'll illustrate the
+generalized process for creating plugins inside a project, and then we'll
+create the Event Listing portlet and the Location Listing portlet.  These
 portlets will allow users to add, edit, or remove events or locations, display
 lists of events or locations, search for particular events or locations, and
 view the details of individual events or locations. We'll start by creating the
@@ -550,7 +556,7 @@ fields in Chapter 3. - Jim -->
 2. The *New Liferay Portlet* dialog box will appear, with your newly created
 plugin project *event-listing-portlet* selected as the *Portlet plugin project*
 by default. We recommend naming your *Portlet class* after the name of your
-portlet. We'll name the class *LocationListingPorlet* in this example.  We'll
+portlet. We'll name the class *EventListingPortlet* in this example. We'll
 name our *Java package* after the plugin's parent project, so it will be
 *com.nosester.portlet.eventListing* for our example. We'll leave the
 *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you
@@ -561,10 +567,10 @@ could have selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
 
 3. In the Next window of the *New Liferay Portlet* wizard, you'll specify
 deployment descriptor details for your portlet. First enter the *Name* of your
-portlet--in our example this will be *locationlisting*.  Subsequently enter the
-portlet's *Display name* and *Title*, which we'll specify as *Location Listing
+portlet--in our example this will be *eventlisting*. Subsequently enter the
+portlet's *Display name* and *Title*; we'll specify both as *Location Listing
 Portlet*. Also in this window you can specify which portlet modes youd like
-your portlet to have.  *View* mode is automatically selected. Click *Next*.
+your portlet to have. *View* mode is automatically selected. Click *Next*.
 
 4. In the next window, set the location for your portlets custom icon, CSS,
 and JavaScript. You can also choose the category for your portlet (it's
@@ -572,7 +578,7 @@ categorized under *Sample* by default), and add it to the *Control Panel* of
 your Liferay Portal. Click *Next*. 
 
 5. The last step is to specify modifiers, interfaces, and method stubs to
-   generate in the Portlet class. Once you're done, click *Finish*. 
+generate in the Portlet class. Once you're done, click *Finish*. 
 
 ![Figure 2.7: Liferay IDE's portlet creation wizard.](../../images/ide-portlet-plugin-wizard-1.png)
 
@@ -583,11 +589,103 @@ mode: each of the registered portlet modes has a corresponding JSP with the
 same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
 is for help mode. 
 
-To finish, we'll redeploy the plugin project. In the *Servers* tab, simply
-right click the *event-listing-portlet* project, then click *Redeploy*. 
+To finish creating our Event Listing portlet, we'll redeploy the plugin
+project. In the *Servers* tab, simply right click the *event-listing-portlet*
+project, then click *Redeploy*. 
 
-Now you've created and deployed the *Location Listing* portlet. Next we'll show
-you how to import existing projects into Liferay IDE. 
+Now you've created and deployed the *Event Listing* portlet. We still need the
+Location Listing portlet to allow users to enter viable event locations.
+Here's a brief description of how you can create this portlet in the
+`event-listing-portlet` plugin project:
+
+1. Right click the `event-listing-portlet` project in Liferay IDE's package
+explorer. Select New  &rarr; Liferay Portlet.
+
+2. Use the plugin creation wizard to specify these values:
+- **Portlet class**: *LocationListingPortlet*
+- **Java package**: *com.nosester.portlet.eventlisting*
+- **Superclass**: *com.liferay.util.bridges.mvc.MVCPortlet*
+- **Portlet name**: *locationlisting*
+- **Display name**: *Location Listing Portlet*
+- **Title**: *Location Listing Portlet*
+- **Portlet modes**: *View*
+- **Create JSP files**: *yes*
+- **Create resources bundle file**: *yes*
+- **Category**: *Sample*
+
+<!--I just stole the above from Service Builder chapter. -->
+
+3. Click Finish and deploy the Location Listing portlet to your Liferay Portal.
+
+Next we'll show you how our Service Builder tool helps you generate your model,
+persistence, and serivce layers. 
+
+### Using the Service Builder Graphical Editor 
+
+<!-- Please move this section just after Creating Plugins. It's an exciting
+feature that would dovetail nicely after creating your plugin. - Jim -->
+
+*Loose coupling* is a great principle to use when developing your applications.
+By keeping all of your code for fetching data self contained in a service
+layer, separate from the business logic of your application, you can more
+easily swap your service layer and your application will still function as it's
+supposed to.
+
+Service Builder is a model-driven code generation tool that lets you define
+custom object models called entities.  Service Builder reads the contents of a
+file you create called `service.xml` and automatically creates your
+application's model, persistence, and service layers, freeing you to focus on
+the higher level aspects of your application's code. 
+
+Why should you use Service Builder? Because it lets different portlets access
+the same data and application logic, creating an underlying framework that
+supports a portal environment. If your database access code is buried in a
+single application's code, it can't readily be shared with other applications,
+and your efforts will be duplicated with each application you write. Service
+Builder puts the generated code in a service `JAR` file inside of one plugin,
+but it can be easily shared among all portlets. 
+
+<!--I think my intro bneeds work. I'm trying to distill Ricsh's work on the
+service builder chapter and need to continue the process. -->
+
+To allow you more than one way to view and edit the `service.xml file`, Service
+Builder gives you three modes to work in: 
+
+- Overview mode gives you an easy to use graphical interface in Liferay IDE
+  where you can add to and edit the `service.xml` file.
+
+- Diagram mode gives you a visualization of the relationships between service
+  entities, and it's often helpful to create your entities using diagram mode.
+
+- Source mode displays the raw XML content of the `service.xml` file.
+ 
+![Figure 2.x: Service Builder's overview mode and *Build Services* button.](../../images/service-xml-entities-overivew.png)
+
+<!--
+Please describe Overview, Diagram, and Source modes of the graphical editor.
+
+Let's add a good svc builder screenshot maximizing stuff you can talk to.
+Here's one from Overview mode that shows entities and highlihghts the Build
+Services button (which I've highlighted in red). The image is at
+images/service-xml-entities-overivew.png
+
+Also, please include (if we can take another image, maybe at bottom of section),
+show Diagram mode - see images/service-builder-relate-entities.png
+
+-Jim
+-->
+
+In the Service Builder chapter of this guide we'll show you how two custom
+portlets, the Events Listing Portlet and the Location Listing Portlet, can be
+developed more efficiently and modularly by using Service Builder. We'll
+describe the contents of `service.xml` in detail, and get you started using
+Service Builder to develop your custom applications using our code generation
+tool. And if *code generator* is a bad word to you, let us assure you that
+Liferay always gives you full control over your code, even code generated by
+Serivce Builder. 
+
+<!-- Need to add a screenshot and talk to it. - Jim -->
+
 
 ### Importing Existing Projects into Liferay IDE 
 
@@ -998,51 +1096,7 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 Server Adapter section. Maybe it should go in the introduction or at the end of
 the Liferay IDE section? -Russ-->
 
-Next let's talk about Liferay's Service Builder code generation tool,
-
-### Using the Service Builder Graphical Editor 
-
-<!-- Please move this section just after Creating Plugins. It's an exciting
-feature that would dovetail nicely after creating your plugin. - Jim -->
-
-Service Builder is a model-based code generation tool that lets you define
-custom object models called entities. Service Builder reads the contents of a
-file you create called `service.xml` and automatically creates your
-application's model, persistence, and service layers, freeing you to focus on
-the higher level aspects of your applications code. 
-
-Why should you use Service Builder? Because it lets different portlets access
-the same data and application logic, creating an underlying framework that
-supports a portal environment. If your database access code is buried in a
-single application's code, it can't readily be shared with other applications,
-and your efforts will be duplicated with each application you write. Service
-Builder puts the generated code in a service `JAR` file inside of one plugin,
-but it can be easily shared among all portlets. 
-
-<!--
-Please describe Overview, Diagram, and Source modes of the graphical editor.
-
-Let's add a good svc builder screenshot maximizing stuff you can talk to.
-Here's one from Overview mode that shows entities and highlihghts the Build
-Services button (which I've highlighted in red). The image is at
-images/service-xml-entities-overivew.png
-
-Also, please include (if we can take another image, maybe at bottom of section),
-show Diagram mode - see images/service-builder-relate-entities.png
-
--Jim
--->
-
-In the Service Builder chapter of this guide we'll show you how two custom
-portlets, the Events Listing Portlet and the Location Listing Portlet, can be
-developed more efficiently and modularly by using Service Builder. We'll
-describe the contents of `service.xml` in detail, and get you started using
-Service Builder to develop your custom applications using our code generation
-tool. And if *code generator* is a bad word to you, let us assure you that
-Liferay always gives you full control over your code, even code generated by
-Serivce Builder. 
-
-<!-- Need to add a screenshot and talk to it. - Jim -->
+<!--Next let's talk about Liferay's Service Builder code generation tool. -->
 
 <!--Next we'll show you how to use Tag Libraery Snippets in Liferay IDE. -->
 
