@@ -62,7 +62,11 @@ aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address plugin security
 afterwards. 
 
-Here is the suggested plugin development approach: 
+If you're developing a plugin as part of a free app, writing a PACL for your
+plugin and enabling the security manager are optional, and you can skip this
+chapter. Otherwise, read on. 
+
+Here is the suggested approach for developing secure plugins: 
 
 - Develop your plugin. 
 - Build your plugin's PACL using Liferay's PACL Policy Generation tool. 
