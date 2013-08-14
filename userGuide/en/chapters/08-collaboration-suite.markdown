@@ -627,6 +627,50 @@ You must also specify an option for assigning ownership of the imported data:
 - *Use the Current User as Author* means that the current user will be assigned
   as the author of the imported content regardless of the original author.
 
+### Upgrading the Calendar Portlet
+
+In Liferay 6.1 and previous versions, an older version of the Calendar portlet
+was included as one of the core portlets. If you're upgrading from Liferay 6.1
+or a previous version to Liferay 6.2 or a later version, all the calendar events
+that existed prior to 6.2 will still be available after your upgrade. After
+following
+[these](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-5)
+steps for upgrading Liferay, all you need to do to access previously added
+events is deploy the new Calendar portlet and add it to a page. You can browse
+through the new Calendar to confirm that the upgrade succeeded: you should be
+able to view and edit calendar events that were added via the old calendar
+portlet. Previously existing site-scoped calendar events appear in each site's
+default calendar.
+
+When you deploy the new Calendar portlet, you should see a message similar to
+the following one in the Liferay log:
+
+    Calendar events synchronization takes 7535 ms. Set the property
+    "calendar.sync.calevents.on.startup" to "false" to disable calendar events
+    synchronization.
+
+The old Calendar portlet stores its data in the `CalEvent` table of Liferay's
+database while the new Calendar portlet data stores its data in the
+`CalendarBooking` table. Since it's *possible* (but not recommended) to have
+both the old and new Calendar portlets deployed at the same, the default
+`calendar.sync.calevents.on.startup=true` property in the new Calendar portlet's
+`portlet.properties` file ensures that calendar events are synchronized between
+the `CalEvent` and `CalendarBooking` tables upon server startup. If, for some
+reason, you *don't* want calendar events to be synchronized between the old and
+new Calendar portlets, you can set `calendar.sync.calevents.on.startup=false` in
+the new Calendar portlet's `portlet.properties` file.
+
+The old Calendar portlet included certain calendar event types such as
+appointments, birthdays, holidays, and meetings. The new Calendar portlet
+doesn't include this explicit notion of event types. However, by using
+categories, the upgrade process preserves the functionality provided by the old
+Calendar portlet's notion of event types. When upgrading, the old calendar event
+types are migrated to categories. The upgrade creates a vocabulary called
+*Calendar Event Types* and adds the old event types as categories in this
+vocabulary. Upon upgrading, any calendar events that had one of the old event
+types receive the corresponding category from the Calendar Event Types
+vocabulary instead.
+
 Next, let's look at one of the most widely used applications provided by
 Liferay: its message boards.
 
