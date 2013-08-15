@@ -77,7 +77,7 @@ Here is the suggested approach for developing secure plugins:
 
 Let's go over each part of this approach. 
 
-### Consider Common Security Pitfalls
+### Consider Common Security Pitfalls [](id=common-security-issues-liferay-portal-6-1-dev-guide-en)
 
 As you develop your plugin, you need to anticipate your plugin's actions in
 light of Liferay's secured environment. The security manager leverages the Java
