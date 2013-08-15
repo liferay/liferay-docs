@@ -137,11 +137,11 @@ requirements to keep in mind.
 - *liferay-plugin-package.properties file*:
     - Property `recommended.deployment.context` must not be set.
     - Setting property `security-manager-enabled` to `true` is mandatory for all
-      paid apps on 6.1 CE GA3 and later, but is optional for free apps. Setting
-      this property to `true` enables Liferay's Plugin Security Manager. If
-      you're enabling the security manager, you'll also need to define
-      your Portal Access Control List (PACL) in this file. Read the [Plugin
-      Security Management 
+      paid apps on 6.1 CE GA3, 6.1 EE GA3, and later, but is optional for free
+      apps. Setting this property to `true` enables Liferay's Plugin Security
+      Manager. If you're enabling the security manager, you'll also need to
+      define your Portal Access Control List (PACL) in this file. Read the
+      [Plugin Security Management 
       Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0) 
       in this guide for information on developing secure apps. 
 - *Deployment contexts*:
