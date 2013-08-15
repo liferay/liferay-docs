@@ -1396,6 +1396,19 @@ our `EventFinderImpl` class:
 
     public static final String FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME = EventFinder.class.getName() + ".findByEventNameEventDescriptionLocationName";
 
+Remember to import the required classes. These include the following:
+
+    java.util.List;
+    com.liferay.portal.kernel.dao.orm.QueryPos;
+    com.liferay.portal.kernel.dao.orm.QueryUtil;
+    com.liferay.portal.kernel.dao.orm.SQLQuery;
+    com.liferay.portal.kernel.dao.orm.Session;
+    com.liferay.portal.kernel.exception.SystemException;
+    com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
+    com.liferay.util.dao.orm.CustomSQLUtil;
+    com.nosester.portlet.eventlisting.model.Event;
+    com.nosester.portlet.eventlisting.model.impl.EventImpl;
+
 In this custom finder method, we open a new Hibernate session and use Liferay's
 `CustomSQLUtil`'s `get(String id)` method to get the custom SQL to use for the
 database query. The `FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` string
