@@ -1,4 +1,3 @@
-
 # Working with Liferay's Developer Tools 
 
 If you're anything like Liferay Portal's developers, you don't want to be
@@ -1088,7 +1087,7 @@ portlets and themes in their own Plugins SDK project in your source code
 projects. Or, you can further separate your projects by having a different
 Plugins SDK project for each portlet or theme project. 
 
-It's also possible to use use the Plugins SDK as a simple cross-platform project
+It's also possible to use the Plugins SDK as a simple cross-platform project
 generator. Create a plugin project using the Plugins SDK and then copy the
 resulting project folder to your IDE of choice. You'll have to manually modify
 the Ant scripts, but this process makes it possible to create plugins with the
