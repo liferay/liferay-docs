@@ -99,7 +99,7 @@ surprised at how easily you can make them if you're not being careful. We'll
 consider scenarios that illustrate both of these mistakes and explain how to
 avoid making them with your plugin. Let's consider security exceptions first. 
 
-When you are running in Liferay Portal with the security manager enabled, you
+When you're running on Liferay Portal with the security manager enabled, you
 must only access authorized resources. If you invoke a method declared as
 throwing a security exception (i.e., `java.lang.SecurityException`) and you're
 not authorized to access the resources the method uses, the method throws the
@@ -114,13 +114,13 @@ also need to handle the security exceptions of the underlying methods your
 plugin invokes *indirectly*.   
 
 For example, you may be using a file utility that calls `java.io.File`'s
-`canRead` method. Since the `canRead` method can throw a `SecurityException`
+`canRead` method. Since the `canRead` method can throw a `SecurityException`,
 your plugin will violate secuirty if it invokes the utility on a file that
 you're not authorized to access. So, be aware of all security exceptions thrown
 by methods your plugin calls directly and indirectly.
 
 Operations involving reflection, and similar activities, typically throw
-security exceptions. The Java SE Security documentation explains how to do deal
+security exceptions. The Java SE Security documentation explains how to deal
 with them. In many cases, you can declare your plugin's permissions to avoid
 running into these exceptions. We'll go over your plugin's permissions and
 security policies later in this chapter. 
@@ -135,13 +135,13 @@ following Spring configuration from a plugin:
     />
 
 It declares a factory bean that calls a method on a Liferay class. This seems
-reasonable, right? Unfortunately, for whatever reason, Spring tries to get the
-classloader for the factory class. Since the factory class does not belong to
-the plugin, the security manager balks at the plugin's attempt to access the
-classloader for the factory class. The security manager doesn't allow
-applications to get arbitrary class loaders because the classloaders can add,
-access, and modify classes that you're plugin is unauthorized to access. Using
-Spring in this manner violates the secured environment. 
+reasonable, right? Unfortunately, Spring tries to grab the classloader for the
+factory class. Since the factory class does not belong to the plugin, the
+security manager balks at the plugin's attempt to access the classloader for the
+factory class. The security manager doesn't allow applications to get arbitrary
+class loaders because the classloaders can add, access, and modify classes that
+your plugin is unauthorized to access. Using Spring in this manner violates the
+secured environment.
 
 How do you get around this issue? You could simply invoke the method directly
 like this: 
@@ -202,8 +202,9 @@ Your new Spring factory bean would look like the following configuration:
         factory-method="getUserLocalService"
     />
 
-Great! Now know a couple alternatives to using the troublesome Spring factory
-bean that was using a classloader that didn't belong to the plugin. 
+Great! Now you know a couple alternatives to using the troublesome Spring
+factory bean configuration that was using a classloader that didn't belong to
+the plugin. 
 
 With regards to both of the use cases we've illustrated, the main point we're
 emphasizing is that you must be aware of the how the libraries you use behave

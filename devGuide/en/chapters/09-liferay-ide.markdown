@@ -59,8 +59,8 @@ or install from a `.zip` file.
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
-- Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
-- Liferay IDE supports the following Eclipse releases: 
+-   Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
+-   Liferay IDE supports the following Eclipse releases: 
 
     Eclipse Juno Java EE (4.2.x)
 
@@ -501,9 +501,9 @@ satisfy two requirements to use a Remote Server Adapter:
 
 - It is version 6.1 or later. 
 - It has the Remote IDE Connector application installed from Liferay
-Marketplace. Remote IDE Connector contains the `server-manager-web` plugin that
-provides an API for Liferay IDE's Remote Server Adapter to use for all its
-remote operations. 
+  Marketplace. Remote IDE Connector contains the `server-manager-web` plugin
+  that provides an API for Liferay IDE's Remote Server Adapter to use for all
+  its remote operations. 
 
 The Remote Server Adapter lets developers deploy local projects to a remote
 development server for testing purposes. If you're using Liferay IDE and want to
@@ -663,7 +663,7 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
     automatically publish after a build event, or never to publish
     automatically. To manually invoke the publishing operation after having
     modified project files, right click on the server in the Servers view and
-    select *Publish*.  
+    select *Publish*. 
 
 Now that you've seen how you can deploy projects in Liferay IDE and Liferay
 Developer Studio, we can begin delving into the features it offers. Next, we'll
@@ -820,7 +820,8 @@ software ticketing process. Are you ready to roll? Let's get started!
     The first window you'll see is the *Create Kaleo Workflow* form. There are
     several fields here:  
 
-    *Project*: Specify an existing Liferay project to house your workflow definition. 
+    *Project*: Specify an existing Liferay project to house your workflow
+    definition. 
 
     *Folder*: Specify where in the project the workflow definition XML file will
     be stored.

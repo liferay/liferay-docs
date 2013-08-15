@@ -176,10 +176,13 @@ To create a repository using Nexus, follow these steps:
     so specify *Release* as the repository policy. Below are examples of
     repository property values: 
 
-    - *Repository ID:* `liferay-releases`
-    - *Repository Name:* `Liferay Release Repository`
-    - *Provider:* `Maven2`
-    - *Repository Policy:* `Release`
+    *Repository ID:* `liferay-releases`
+
+    *Repository Name:* `Liferay Release Repository`
+
+    *Provider:* `Maven2`
+
+    *Repository Policy:* `Release`
 
 4.  Click *Save*.
 
@@ -200,10 +203,13 @@ know. -->
 
 3.  Specify repository properties like the following:
 
-    - *Repository ID:* `liferay-snapshots`
-    - *Repository Name:* `Liferay Snapshot Repository`
-    - *Provider:* `Maven2`
-    - *Repository Policy:* `Snapshot`
+    *Repository ID:* `liferay-snapshots`
+
+    *Repository Name:* `Liferay Snapshot Repository`
+
+    *Provider:* `Maven2`
+
+    *Repository Policy:* `Snapshot`
 
 4.  Click *Save*.
 
@@ -829,7 +835,7 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
     
-6.  Enter the letter `Y` to confirm your coordinates.
+7.  Enter the letter `Y` to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
@@ -1144,11 +1150,11 @@ section in this guide.
 
 The theme plugin project POM has two additional properties: 
 
-- `liferay.theme.parent`: Sets the parent theme. You can define almost any WAR
-  artifact as the parent using the syntax `groupId:artifactId:version`, or use
-  the core themes by specifying `_unstyled`, `_styled`, `classic`, or
-  `control_panel`. 
-- `liferay.theme.type`: Sets the template theme language. 
+-   `liferay.theme.parent`: Sets the parent theme. You can define almost any WAR
+    artifact as the parent using the syntax `groupId:artifactId:version`, or use
+    the core themes by specifying `_unstyled`, `_styled`, `classic`, or
+    `control_panel`. 
+-   `liferay.theme.type`: Sets the template theme language. 
 
     The default settings for the two theme properties look like this:
         
