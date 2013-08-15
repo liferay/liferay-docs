@@ -352,26 +352,32 @@ Here are some additional examples:
     liferay-versions=6.1.20+
 
 You may find it advantageous to implement one of your app's plugins in multiple
-ways so that the plugin can use different Liferay releases in different ways.
-We'll illustrate this with an example.
+ways, customizing it for different Liferay releases. We'll illustrate this with
+an example. 
+
+#### Example App: Using Different Versions of a Hook [](using-different-versions-of-a-hook-liferay-portal-6-1-dev-guide-en)
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
-other hand, needs to interact with EE differently than it does with CE, because
-you want the hook to take advantage of an exclusive EE feature that doesn't
-exist in CE. How do you provide two different versions of your hook plugin in
-the same app?
+other hand, needs to interact with EE GA2 differently than it does with CE GA2,
+because you want the hook to take advantage of an exclusive EE feature that
+doesn't exist in the CE release. How do you provide two different versions of
+your hook plugin in the same app?
 
 It's easy. In this case, you'd specify versions
 `liferay-versions=6.1.1+,6.1.20+` for your portlet plugin, indicating that it is
-compatible with CE GA2 and later, and EE GA2 and later. As far as your hook
-plugin, you'd create and build *two* versions of it, one to leverage Liferay
-EE's API and the other to use Liferay CE's API. You'd specify
-`liferay-versions=6.1.20+` for the EE version of your hook plugin, indicating
-that it works with EE GA2 and later, but not CE. And you'd specify
-`liferay-versions=6.1.1+` for the CE version of your hook plugin, indicating
-that it works with CE GA2 and later, but not EE. Marketplace takes care of
-packaging each of the app's plugins based on its version information.
+compatible with CE GA2 and later, and EE GA2 and later. As for your hook plugin,
+you'd create and build *two* versions of it, one version of the hook to use with
+Liferay EE and the other version of the hook to use with Liferay CE. You'd
+specify `liferay-versions=6.1.20+` for your EE hook and
+`liferay-versions=6.1.1+` for your CE hook. The EE hook would work exclusively
+with EE GA2 and later, while the CE hook would work exclusively with CE GA2 and
+later. You might think that it's difficult to arrange the packaging for an app
+that has plugins targeted to different Liferay releases, but it's easy.
+Marketplace takes care of it based on the `liferay-versions` values you
+specified for each plugin. We'll talk about that next.  
+
+#### Marketplace Packages Your App's Plugins [](marketplace-packages-your-app-plugins-liferay-portal-6-1-dev-guide-en)
 
 When you upload your app's plugins, as demonstrated later on in this chapter,
 you'll notice that Marketplace groups them into separate packages based on the
