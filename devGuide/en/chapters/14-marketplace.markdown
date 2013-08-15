@@ -351,30 +351,41 @@ Here are some additional examples:
     # works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
     liferay-versions=6.1.20+
 
-If some plugins within your app must be built for multiple releases, ensure that
-the respective plugins have appropriate versioning information in them. For
-example: suppose your app consists of two plugins: a portlet and a hook. The
-portlet is simple, and uses standard API calls that work on all Liferay 6.1
-releases. However, the hook is different for CE vs. EE because it takes
-advantage of some feature of EE.
+You may find it advantageous to implement one of your app's plugins in multiple
+ways so that the plugin can use different Liferay releases in different ways.
+We'll illustrate this with an example.
 
-In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.20+`,
-indicating that it is compatible with CE and EE. However, because the hook must
-be built against a different API for Liferay EE, you'd built *two* hook plugins.
-The first one would specify `liferay-versions=6.1.1+` (indicating it works with
-CE GA2 and later, but not EE), and the second hook plugin would specify
-`liferay-versions=6.1.20+` (indicating it works with EE GA2 and later, but not
-CE GA2). As you upload these plugins later on in this example, you will notice
-that they are grouped into separate packages of plugins for each supported
-release. In some cases, if a plugin is compatible with multiple releases, it
-will be automatically copied for use in all of the releases for which your app
-supports. Also, in some cases, if Marketplace cannot determine the appropriate
-package into which to place your plugin, it may reject it. For example, if you
-specified `liferay-versions=1.0.0+`, because you are confident your plugin
-works with any Liferay release, Marketplace likely will reject it as `1.0` is
-not a known Liferay release.
+Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
+standard API calls that work on all Liferay 6.1 releases. Your hook, on the
+other hand, needs to interact with EE differently than it does with CE, because
+you want the hook to take advantage of an exclusive EE feature that doesn't
+exist in CE. How do you provide two different versions of your hook plugin in
+the same app?
 
-Now that you have developed your app, it's time to get started with Marketplace!
+It's easy. In this case, you'd specify versions
+`liferay-versions=6.1.1+,6.1.20+` for your portlet plugin, indicating that it is
+compatible with CE GA2 and later, and EE GA2 and later. As far as your hook
+plugin, you'd create and build *two* versions of it, one to leverage Liferay
+EE's API and the other to use Liferay CE's API. You'd specify
+`liferay-versions=6.1.20+` for the EE version of your hook plugin, indicating
+that it works with EE GA2 and later, but not CE. And you'd specify
+`liferay-versions=6.1.1+` for the CE version of your hook plugin, indicating
+that it works with CE GA2 and later, but not EE. Marketplace takes care of
+packaging each of the app's plugins based on its version information.
+
+When you upload your app's plugins, as demonstrated later on in this chapter,
+you'll notice that Marketplace groups them into separate packages based on the
+respective releases each plugin supports. Marketplace copies a plugin into each
+of the release packages corresponding to its list of `liferay-versions` values.
+If Marketplace cannot verify the version of Liferay the plugin supports, it
+rejects the plugin. For example, if you specify `liferay-versions=1.0.0+` for
+your plugin--perhaps because you are confident it can work on any Liferay
+release--Marketplace will likely reject it, because it doesn't know of a `1.0`
+release of Liferay. So take care in specifying the Liferay version information
+for each your app's plugins. 
+
+Now that you've developed your app and specified its packaging directives, it's
+time to get it to the Marketplace! 
 
 ### Establish a Marketplace Account [](id=lp-6-1-dgen10-establish-a-marketplace-account-0)
 
