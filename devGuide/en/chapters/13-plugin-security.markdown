@@ -139,7 +139,7 @@ reasonable, right? Unfortunately, Spring tries to grab the classloader for the
 factory class. Since the factory class does not belong to the plugin, the
 security manager balks at the plugin's attempt to access the classloader for the
 factory class. The security manager doesn't allow applications to get arbitrary
-class loaders because the classloaders can add, access, and modify classes that
+classloaders because the classloaders can add, access, and modify classes that
 your plugin is unauthorized to access. Using Spring in this manner violates the
 secured environment.
 
@@ -203,8 +203,8 @@ Your new Spring factory bean would look like the following configuration:
     />
 
 Great! Now you know a couple alternatives to using the troublesome Spring
-factory bean configuration that was using a classloader that didn't belong to
-the plugin. 
+factory bean configuration that was accessing a classloader that didn't belong
+to the plugin. 
 
 With regards to both of the use cases we've illustrated, the main point we're
 emphasizing is that you must be aware of the how the libraries you use behave
