@@ -82,7 +82,7 @@ Let's go over each part of this approach.
 As you develop your plugin, you need to anticipate your plugin's actions in
 light of Liferay's secured environment. The security manager leverages the Java
 SE Security Architecture. So understanding Java SE Security and learning the few
-requirements that Liferay's security manager adds on top of it, will benefit you
+requirements that Liferay's security manager adds on top of it will benefit you
 as you develop plugins. The extensive Java SE Security Architecture
 documentation is available for you to read at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
@@ -94,10 +94,10 @@ Liferay's secured environment:
 - Using external libraries or frameworks that access classloaders outside of
   your plugin.  
 
-We know you wouldn't intentionally make these kinds of mistakes, but you'd be
-surprised at how easily you can make them if you're not being careful. We'll
+You wouldn't intentionally make these kinds of mistakes, but you'd be surprised
+at how easily you can make them if you're not being careful enough. We'll
 consider scenarios that illustrate both of these mistakes and explain how to
-avoid making them with your plugin. Let's consider security exceptions first. 
+avoid making them in your plugin. Let's consider security exceptions first. 
 
 When you're running on Liferay Portal with the security manager enabled, you
 must only access authorized resources. If you invoke a method declared as
@@ -115,11 +115,11 @@ plugin invokes *indirectly*.
 
 For example, you may be using a file utility that calls `java.io.File`'s
 `canRead` method. Since the `canRead` method can throw a `SecurityException`,
-your plugin will violate secuirty if it invokes the utility on a file that
+your plugin will violate security if it invokes the utility on a file that
 you're not authorized to access. So, be aware of all security exceptions thrown
 by methods your plugin calls directly and indirectly.
 
-Operations involving reflection, and similar activities, typically throw
+Operations involving reflection, and similar activities, typically can throw
 security exceptions. The Java SE Security documentation explains how to deal
 with them. In many cases, you can declare your plugin's permissions to avoid
 running into these exceptions. We'll go over your plugin's permissions and
@@ -204,7 +204,7 @@ Your new Spring factory bean would look like the following configuration:
 
 Great! Now you know a couple alternatives to using the troublesome Spring
 factory bean configuration that was accessing a classloader that didn't belong
-to the plugin. 
+to your plugin. 
 
 With regards to both of the use cases we've illustrated, the main point we're
 emphasizing is that you must be aware of the how the libraries you use behave
