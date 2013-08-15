@@ -105,6 +105,12 @@ other Liferay plugins that are detailed in the *Portlet Development* chapter of
 this guide. In addition to those, there are some Marketplace-specific
 requirements to keep in mind.
 
+- *Target the Java 6 JRE*: Your app's byte code must be compatible with Java 6
+  (i.e., Java 1.6). Liferay's Plugins SDK already targets Java 6 via the
+  `build.properties` setting `ant.build.javac.target=1.6`; so don't override
+  this setting. Your app will be rejected if its byte code is not compatible
+  with Java 6. 
+
 - *WAR (`.war`) files*:
     - WARs must contain a `WEB-INF/liferay-plugin-package.properties` file.
     - WARs must not contain any `WEB-INF/liferay-plugin-package.xml` file.
