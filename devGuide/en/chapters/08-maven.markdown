@@ -1179,7 +1179,7 @@ placed in the *target* directory. Its path is
 
 ---
 
-#### More Information 
+#### More Information  [](id=lp-6-1-dgen08-more-information--0)
 
 For more information on Liferay themes and its settings, see Chapter 4,
 [Creating Liferay
