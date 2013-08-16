@@ -655,9 +655,13 @@ Use the setup wizard if you're using the built-in connection pool. If you want
 to use your application server's pool, continue with this procedure.
 
 If you want to use your application server's connection pool, you will have to
-create one in your application server that points to your database. It should be
-called `jdbc/LiferayPool`. To cause Liferay to use this connection pool, add the
-following directive to your `portal-ext.properties` file:
+create one in your application server that points to your database. The
+connection pool should be called `jdbc/LiferayPool`. Your database must use the
+UTF-8 character set since Liferay is an internationalized application. It needs
+the UTF-8 character set to display text in many different languages. Check the
+documentation for your database to see how to do this. To direct Liferay to use
+your `jdbc/LiferayPool` connection pool, add the following directive to your
+`portal-ext.properties` file:
 
 	jdbc.default.jndi.name=jdbc/LiferayPool
 
