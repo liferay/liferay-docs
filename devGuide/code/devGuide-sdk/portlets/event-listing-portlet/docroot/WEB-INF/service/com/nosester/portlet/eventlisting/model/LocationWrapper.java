@@ -14,8 +14,10 @@
 
 package com.nosester.portlet.eventlisting.model;
 
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +26,7 @@ import java.util.Map;
  * This class is a wrapper for {@link Location}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       Location
  * @generated
  */
@@ -85,13 +87,13 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 			setUserId(userId);
 		}
 
-		Long createDate = (Long)attributes.get("createDate");
+		Date createDate = (Date)attributes.get("createDate");
 
 		if (createDate != null) {
 			setCreateDate(createDate);
 		}
 
-		Long modifiedDate = (Long)attributes.get("modifiedDate");
+		Date modifiedDate = (Date)attributes.get("modifiedDate");
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
@@ -249,7 +251,7 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	*
 	* @return the create date of this location
 	*/
-	public long getCreateDate() {
+	public java.util.Date getCreateDate() {
 		return _location.getCreateDate();
 	}
 
@@ -258,7 +260,7 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	*
 	* @param createDate the create date of this location
 	*/
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(java.util.Date createDate) {
 		_location.setCreateDate(createDate);
 	}
 
@@ -267,7 +269,7 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	*
 	* @return the modified date of this location
 	*/
-	public long getModifiedDate() {
+	public java.util.Date getModifiedDate() {
 		return _location.getModifiedDate();
 	}
 
@@ -276,7 +278,7 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	*
 	* @param modifiedDate the modified date of this location
 	*/
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(java.util.Date modifiedDate) {
 		_location.setModifiedDate(modifiedDate);
 	}
 
@@ -448,6 +450,10 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 		return new LocationWrapper(_location.toEscapedModel());
 	}
 
+	public com.nosester.portlet.eventlisting.model.Location toUnescapedModel() {
+		return new LocationWrapper(_location.toUnescapedModel());
+	}
+
 	@Override
 	public java.lang.String toString() {
 		return _location.toString();
@@ -460,6 +466,25 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	public void persist()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_location.persist();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof LocationWrapper)) {
+			return false;
+		}
+
+		LocationWrapper locationWrapper = (LocationWrapper)obj;
+
+		if (Validator.equals(_location, locationWrapper._location)) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

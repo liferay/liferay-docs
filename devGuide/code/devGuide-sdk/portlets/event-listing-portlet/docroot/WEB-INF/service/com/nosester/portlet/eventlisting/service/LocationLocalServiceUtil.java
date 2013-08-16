@@ -25,7 +25,7 @@ import com.liferay.portal.service.InvokableLocalService;
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see LocationLocalService
  * @see com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
  * @see com.nosester.portlet.eventlisting.service.impl.LocationLocalServiceImpl
@@ -273,6 +273,16 @@ public class LocationLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static com.nosester.portlet.eventlisting.model.Location addLocation(
+		java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .addLocation(name, description, streetAddress, city,
+			stateOrProvince, country, serviceContext);
+	}
+
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -288,6 +298,16 @@ public class LocationLocalServiceUtil {
 	public static int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getLocationsCountByGroupId(groupId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	public static void clearService() {

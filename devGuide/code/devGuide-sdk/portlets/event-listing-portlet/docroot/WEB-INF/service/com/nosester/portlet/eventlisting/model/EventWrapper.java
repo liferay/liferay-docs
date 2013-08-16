@@ -14,6 +14,7 @@
 
 package com.nosester.portlet.eventlisting.model;
 
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
 import java.util.Date;
@@ -25,7 +26,7 @@ import java.util.Map;
  * This class is a wrapper for {@link Event}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       Event
  * @generated
  */
@@ -84,13 +85,13 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 			setUserId(userId);
 		}
 
-		Long createDate = (Long)attributes.get("createDate");
+		Date createDate = (Date)attributes.get("createDate");
 
 		if (createDate != null) {
 			setCreateDate(createDate);
 		}
 
-		Long modifiedDate = (Long)attributes.get("modifiedDate");
+		Date modifiedDate = (Date)attributes.get("modifiedDate");
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
@@ -236,7 +237,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the create date of this event
 	*/
-	public long getCreateDate() {
+	public java.util.Date getCreateDate() {
 		return _event.getCreateDate();
 	}
 
@@ -245,7 +246,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param createDate the create date of this event
 	*/
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(java.util.Date createDate) {
 		_event.setCreateDate(createDate);
 	}
 
@@ -254,7 +255,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the modified date of this event
 	*/
-	public long getModifiedDate() {
+	public java.util.Date getModifiedDate() {
 		return _event.getModifiedDate();
 	}
 
@@ -263,7 +264,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param modifiedDate the modified date of this event
 	*/
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(java.util.Date modifiedDate) {
 		_event.setModifiedDate(modifiedDate);
 	}
 
@@ -398,6 +399,10 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 		return new EventWrapper(_event.toEscapedModel());
 	}
 
+	public com.nosester.portlet.eventlisting.model.Event toUnescapedModel() {
+		return new EventWrapper(_event.toUnescapedModel());
+	}
+
 	@Override
 	public java.lang.String toString() {
 		return _event.toString();
@@ -410,6 +415,25 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	public void persist()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_event.persist();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof EventWrapper)) {
+			return false;
+		}
+
+		EventWrapper eventWrapper = (EventWrapper)obj;
+
+		if (Validator.equals(_event, eventWrapper._event)) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

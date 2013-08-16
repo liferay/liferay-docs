@@ -19,7 +19,7 @@ import com.liferay.portal.model.PersistedModel;
 /**
  * The extended model interface for the Location service. Represents a row in the &quot;Event_Location&quot; database table, with each column mapped to a property of this class.
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see LocationModel
  * @see com.nosester.portlet.eventlisting.model.impl.LocationImpl
  * @see com.nosester.portlet.eventlisting.model.impl.LocationModelImpl

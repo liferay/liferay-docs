@@ -25,7 +25,7 @@ import com.liferay.portal.service.InvokableService;
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventService
  * @see com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl
  * @see com.nosester.portlet.eventlisting.service.impl.EventServiceImpl
@@ -62,16 +62,23 @@ public class EventServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
+	*/
 	public static com.nosester.portlet.eventlisting.model.Event addEvent(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().addEvent(event);
 	}
 
-	public static com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().update(event);
+	public static com.nosester.portlet.eventlisting.model.Event addEvent(
+		java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .addEvent(name, description, date, locationId, serviceContext);
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Event delete(
@@ -85,6 +92,21 @@ public class EventServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService().deleteEvent(eventId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Event update(
+		com.nosester.portlet.eventlisting.model.Event event)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().update(event);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .updateEvent(eventId, name, description, date, locationId,
+			serviceContext);
 	}
 
 	public static void clearService() {

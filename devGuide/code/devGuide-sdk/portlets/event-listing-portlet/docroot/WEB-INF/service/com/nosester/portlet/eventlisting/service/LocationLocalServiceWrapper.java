@@ -21,7 +21,7 @@ import com.liferay.portal.service.ServiceWrapper;
  * This class is a wrapper for {@link LocationLocalService}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       LocationLocalService
  * @generated
  */
@@ -268,6 +268,15 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 			arguments);
 	}
 
+	public com.nosester.portlet.eventlisting.model.Location addLocation(
+		java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _locationLocalService.addLocation(name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+
 	public java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -283,6 +292,16 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 	public int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _locationLocalService.getLocationsCountByGroupId(groupId);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _locationLocalService.updateLocation(locationId, name,
+			description, streetAddress, city, stateOrProvince, country,
+			serviceContext);
 	}
 
 	/**
