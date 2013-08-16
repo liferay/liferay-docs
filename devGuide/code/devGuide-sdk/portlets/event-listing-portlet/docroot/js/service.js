@@ -4,8 +4,20 @@ Liferay.Service.registerClass(
 	Liferay.Service.Event, "Event",
 	{
 		addEvent: true,
-		update: true,
 		delete: true,
-		deleteEvent: true
+		deleteEvent: true,
+		update: true,
+		updateEvent: true
+	}
+);
+
+Liferay.Service.registerClass(
+	Liferay.Service.Event, "Location",
+	{
+		addLocation: true,
+		delete: true,
+		deleteLocation: true,
+		update: true,
+		updateLocation: true
 	}
 );
