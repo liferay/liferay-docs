@@ -1464,12 +1464,10 @@ hints available to you. The following table describes the portlet model hints.
 Name                | Value Type | Description | Default
 :-----------------: | :--------: | :---------- | :-----:
 `auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
-`autoSize`          | boolean | displays the field in a for scrollable text area | false
 `day-nullable`      | boolean | allows the day to be null in a date field | false
 `default-value`     | String  | sets the default value for a field | (empty String)
 `display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
 `display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
-`editor`            | boolean | sets whether to provide an editor for the input | false
 `max-length`        | integer | sets the maximum column size for SQL file generation | 75
 `month-nullable`    | boolean | allows the month to be null in a date field | false
 `secret`            | boolean | sets whether hide the characters input by the user | false | false
@@ -1479,6 +1477,18 @@ Name                | Value Type | Description | Default
 `year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
 `year-range-future` | boolean | sets whether to include future dates | true
 `year-range-past`   | boolean | sets whether to include past dates | true
+
+<!-- 
+Do NOT add the following hints as they are NOT a part of 6.1:
+    autoSize
+    editor
+
+TODO - Add the following hints exclusive to 6.1:
+    default-year-delta
+    default-month-delta
+    default-day-delta
+
+- Jim -->
 
 <!--
 I wanted to get a complete list of model hints used in portal. I found the
@@ -1541,17 +1551,18 @@ As always, remember to run Service Builder and redeploy your project after
 updating your `portlet-model-hints.xml` file.
 
 Let's use a couple of model hints in our Event Listing portlet and Location
-Listing Portlet. We'll start by giving the user an editor for filling in their
-description fields. Since we want to apply the same hint to both the event and
-location entities, we'll define it as a hint collection. Then we'll reference
-the hint collection in them. 
+Listing Portlet. We'll start by giving the user a spacious resizable text area
+for filling in their description fields. Since we want to apply the same hint to
+both the event and location entities, we'll define it as a hint collection. Then
+we'll reference the hint collection in them. 
 
 Define the following hint collection just below your `model-hints` root element
 in your `portlet-model-hints.xml` file:
 
 	<hint-collection name="DESCRIPTION-TEXTAREA">
-		<hint name="editor">true</hint>
-		<hint name="max-length">250</hint>
+        <hint name="display-height">105</hint>
+        <hint name="display-width">500</hint>
+        <hint name="max-length">4000</hint>
 	</hint-collection>
 
 Then replace the description fields of your event and location entities with the
@@ -1573,7 +1584,7 @@ Great! Now rebuild your service using Service Builder, redeploy your portlet
 project, and add or edit an event using the portlet. The following figure shows
 the portlet displaying the input fields as we specified.
 	
-![Figure 4.9: Customizing string input fields to use editors and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+![Figure 4.9: Customizing string input fields to use text areas and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
 you can not only influence how your model's input fields are displayed but you
