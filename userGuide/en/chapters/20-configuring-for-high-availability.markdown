@@ -87,13 +87,13 @@ copy the relevant section you want to modify from `portal.properties` into your
 
 ---
 
-![Tip](../../images/01-tip.png)**Note:** This chapter documents a
-Liferay-specific cluster configuration, without getting into specific
-implementations of third party software, such as Java EE application servers,
-HTTP servers, and load balancers. Please consult your documentation for those
-components of your cluster for specific details of those components. Before
-configuring Liferay in a cluster configuration, make sure your OS is not
-defining the hostname of your box to the local network at 127.0.0.1.
+ ![Tip](../../images/01-tip.png)**Note:** This chapter documents a
+ Liferay-specific cluster configuration, without getting into specific
+ implementations of third party software, such as Java EE application servers,
+ HTTP servers, and load balancers. Please consult your documentation for those
+ components of your cluster for specific details of those components. Before
+ configuring Liferay in a cluster configuration, make sure your OS is not
+ defining the hostname of your box to the local network at 127.0.0.1.
 
 ---
 
@@ -325,23 +325,38 @@ course, you can change this path to anything you want by using the
 This store creates a folder structure based on primary keys in the Liferay
 database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
-folder structure which looks like figure 19.3. 
+folder structure which looks like the figure below. 
 
-![Figure 20.3: Liferay's file system store creates a folder structure based on
-primary keys in Liferay's database.
-](../../images/enterprise-file-system-store.png)
+![Figure 20.3: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
-The first folder is the company ID to which the site belongs. The second folder
-is the group ID of the site where the document resides. The third is the ID of
-the document itself, and finally the file name of the document is renamed to a
-version number for storing multiple versions of the document. 
+The actual folder path that is used by Liferay for storing documents is this:
 
-As you can see, this binds your documents very closely to Liferay, and may not
-be exactly what you want. But if you've been using the default settings for a
-while and need to migrate your documents, Liferay provides a migration utility
-in the control panel in *Server Administration* &rarr; *Data Migration*. Using
-this utility, you can move your documents very easily from one store
-implementation to another. 
+    /companyId/folderId/numericFileEntryName/versionNumber
+
+The first folder name is the company ID to which the site belongs. The second
+folder name is the ID of the Documents and Media folder within which the
+document resides. The third folder name is the numeric file entry name of the
+document itself. Finally, the fourth name is a version number which is used for
+storing multiple versions of the document.
+
+---
+
+ ![Tip](../../images/01-tip.png)**Note:** The numeric file entry name of a
+ document is distinct from the document ID; be careful not to confuse the two!
+ Each has an independent counter. The numeric file entry name of a document is
+ used in the folder path for storing the document but the document ID is not.
+ The numeric file entry name of document can be found in the `name` column of
+ the `DLFileEntry` table in Liferay's database; the document ID can be found in
+ the `fileEntryId` column of the same table.
+
+---
+
+As you can see, the File System Store binds your documents very closely to
+Liferay, and may not be exactly what you want. But if you've been using the
+default settings for a while and need to migrate your documents, Liferay
+provides a migration utility in the control panel in *Server Administration*
+&rarr; *Data Migration*. Using this utility, you can move your documents very
+easily from one store implementation to another. 
 
 Speaking of other store implementations, let's look at some others Liferay
 provides. 
@@ -353,9 +368,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 20.4: The advanced file system store creates a more nested folder
-structure than the file system store.
-](../../images/enterprise-adv-file-system-store.png)
+![Figure 20.4: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
