@@ -170,7 +170,7 @@ You must first develop your app using your preferred development tool (for
 example, using Liferay Developer Studio or the Plugins SDK). Your app will
 consist of one or more Liferay plugins. Ensure your app is designed to work with
 Liferay 6.1 or later. If you wish to target multiple versions of Liferay (for
-example, you may wish to support both 6.1 CE GA2 and 6.1 EE GA1), ensure you
+example, you may wish to support both 6.1 CE GA3 and 6.1 EE GA3), ensure you
 have built binary images of your app for each supported minor family release, if
 necessary. If a single set of files will work across all supported Liferay
 versions, you do not need to build multiple plugins. Liferay guarantees
@@ -296,7 +296,7 @@ Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Polic
 Accordingly, Liferay 6.1 CE GA1 is designated as version `6.1.0`. CE GA2 is then
 `6.1.1`, and so on. Liferay 6.1 EE GA1 is designated as `6.1.10`. EE versioning
 follows a slightly different policy given then presence of fix packs and service
-packs, so 6.1 EE GA2 is `6.1.20`.
+packs, so 6.1 EE GA3 is `6.1.30`.
 
 For each plugin that makes up your app, packaging directives must be placed in
 the `liferay-plugin-package.properties` file (located in the `WEB-INF/`
@@ -316,15 +316,15 @@ compatible).
  with (and will fail to deploy to) any EE release.
 
 For example, to specify that a particular plugin in your app is compatible with
-Liferay 6.1 CE GA2 (and later), and 6.1 EE GA2 (and later), add this line to
+Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
 your `liferay-plugin-packages.properties` file:
 
-    liferay-versions=6.1.1+,6.1.20+
+    liferay-versions=6.1.2+,6.1.30+
 
-This means that the app works with any 6.1 CE release starting with CE GA2, and
-and 6.1 EE release starting with EE GA2. Marketplace will create two packages,
-one that is compatible with the 6.1 CE GA2 release and *later*, and another that
-is compatible with 6.1 EE GA2 release and *later*.
+This means that the app works with any 6.1 CE release starting with CE GA3, and
+and 6.1 EE release starting with EE GA3. Marketplace will create two packages,
+one that is compatible with the 6.1 CE GA3 release and *later*, and another that
+is compatible with 6.1 EE GA3 release and *later*.
 
  ![note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
@@ -332,23 +332,23 @@ is compatible with 6.1 EE GA2 release and *later*.
  versions of Liferay (but does not guarantee your app will work in future
  versions).  So, `liferay-versions=6.1.1,6.1.2` will not work, but
  `liferay-versions=6.1.1,6.1.2+` will work.  Similarly,
- `liferay-versions=6.1.1+,6.1.20,6.1.21` will not work (as the EE versions are
- not properly terminated), but `liferay=versions=6.1.1+,6.1.20,6.1.21+` will
+ `liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
+ not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
  work.
 
 
 Here are some additional examples:
 
-    # works with Liferay 6.1 CE and EE GA2 and later (NOT compatible with 6.1
-    # CE or EE GA1).  This is most likely what you want to use.
-    liferay-versions=6.1.1+,6.1.20+
+    # works with Liferay 6.1 CE and EE GA3 and later (NOT compatible with 6.1
+    # CE or EE GA2).  This is most likely what you want to use.
+    liferay-versions=6.1.2+,6.1.30+
 
     # works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4), and EE GA2
     # and later
     liferay-versions=6.1.1,6.1.2,6.1.4+,6.1.20+
     
-    # works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
-    liferay-versions=6.1.20+
+    # works with Liferay 6.1 EE GA3 and later (NOT compatible with CE)
+    liferay-versions=6.1.30+
 
 You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. We'll illustrate
@@ -358,19 +358,19 @@ this with an example.
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
-other hand, needs to interact with EE GA2 differently than it does with CE GA2,
+other hand, needs to interact with EE GA3 differently than it does with CE GA3,
 because you want the hook to take advantage of an exclusive EE feature. For your
 app, how do you provide one version of your hook plugin for EE and another
 version of it for CE, while applying your portlet plugin to both EE and CE? 
 
 It's easy. In this case, you'd specify versions
-`liferay-versions=6.1.1+,6.1.20+` for your portlet plugin, indicating that it is
-compatible with CE GA2 and later, and EE GA2 and later. As for your hook plugin,
+`liferay-versions=6.1.2+,6.1.30+` for your portlet plugin, indicating that it is
+compatible with CE GA3 and later, and EE GA3 and later. As for your hook plugin,
 you'd create and build *two* versions of it, one version of the hook to use with
 Liferay EE and the other version of the hook to use with Liferay CE. You'd
-specify `liferay-versions=6.1.20+` for your EE hook and
-`liferay-versions=6.1.1+` for your CE hook. The EE hook would work exclusively
-with EE GA2 and later, while the CE hook would work exclusively with CE GA2 and
+specify `liferay-versions=6.1.30+` for your EE hook and
+`liferay-versions=6.1.2+` for your CE hook. The EE hook would work exclusively
+with EE GA3 and later, while the CE hook would work exclusively with CE GA3 and
 later. You might think that it's difficult to arrange the packaging for an app
 that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you

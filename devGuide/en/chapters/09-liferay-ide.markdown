@@ -517,7 +517,7 @@ following resources on your local development machine:
 
 - [Liferay
   IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
-  Liferay's downloads page or download Liferay Developer Studio 1.6.1 from
+  Liferay's downloads page or download Liferay Developer Studio from
   the Customer Portal. 
 - [Liferay Portal CE or
   EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to

@@ -222,9 +222,9 @@ system:
 
     ext.work.dir=[work]
 
-    app.server.dir=[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23
+    app.server.dir=[work]/liferay-portal-[version]/[app server]
 
-    app.server.zip.name=[...]/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip
+    app.server.zip.name=[...]/liferay-portal-[app server].zip
 
 Your `app.server.zip.name` property should specify the path to your Liferay
 bundle `.zip` file. Your `work` directory, specified by the `ext.work.dir`
@@ -236,11 +236,11 @@ application server directory to determine the value to use for your
 
 For example, `C:/work` could be your `ext.work.dir` value. If we have a Liferay
 bundle `.zip` file
-`C:/downloads/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip` which we
+`C:/downloads/liferay-portal-tomcat-6.1.2-ce-ga3.zip` which we
 set as the value for our `app.server.zip.name` property, the *relative path* to
 the application server *within* our Liferay bundle `.zip` file is
-`liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23`. We'd then specify
-`C:/work/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23` as our `app.server.dir`
+`liferay-portal-6.1.2-ce-ga3\tomcat-7.0.40`. We'd then specify
+`C:/work/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40` as our `app.server.dir`
 property value. 
 
 ---
@@ -250,7 +250,7 @@ property value.
  Liferay, but if you removed it, you likely don't want it reinstalled each time
  your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip your
  bundle, delete the
- `[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.27/webapps/welcome-theme`
+ `[work]/liferay-portal-[version]/[app-server]-[version]/webapps/welcome-theme`
  folder, then re-zip your bundle. 
 
 ---
@@ -887,7 +887,7 @@ small and easy to transport. Execute these steps on the server:
 
 2.  Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
     Liferay distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-portal-6.1.0-ce-ga1/`).
+    your bundle (e.g., `liferay-portal-6.1.2-ce-ga3/`).
 
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
