@@ -343,8 +343,8 @@ Get the artifacts for Liferay CE from SourceForge by following these steps:
     [http://sourceforge.net/projects/lportal/files/Liferay%20Portal/](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
 2.  Select the Liferay version for which you need Maven artifacts. For example,
-    if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
-    *6.1.1 GA2*. 
+    if you need Maven artifacts for Liferay Portal 6.1.2 CE GA3, select version
+    *6.1.2 GA3*. 
 
     ![Figure 8.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
@@ -389,13 +389,13 @@ Maven artifacts from source, follow these steps:
     signs. Also, replace `[app server name]` with the name of your application
     server. Note that your `app.server.[app server name].dir` directory doesn't
     need to exist yet; you can create it by invoking an Ant target in the next
-    step. For example, if you're running Apache Tomcat 7.0.27 and your
+    step. For example, if you're running Apache Tomcat and your
     Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
     the following properties:
 
         app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x
 
-        app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27
+        app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/[tomcat version]
 
 3.  If an application server doesn't already exist at the directory specified by
     your `app.server.[app server name].dir` property, run `ant -f build-dist.xml
@@ -643,41 +643,41 @@ Let's create a parent project named `sample-parent-project`:
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-client</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-impl</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-service</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-web</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                     <type>war</type>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-bridges</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-java</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-taglib</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.1.30</version>
                 </dependency>
             </dependencies>
 
@@ -701,8 +701,8 @@ Let's create a parent project named `sample-parent-project`:
     Your POM's *properties* should look similar to the following:
     
         <properties>
-            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.20-ee-ga2\deploy</liferay.auto.deploy.dir>
-            <liferay.version>6.1.20</liferay.version>
+            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.30-ee-ga3\deploy</liferay.auto.deploy.dir>
+            <liferay.version>6.1.30</liferay.version>
         </properties>
 
 By specifying your Liferay instance's deploy directory in the POM, you're
@@ -874,12 +874,12 @@ these steps:
 1.  Make sure your parent POM's Liferay-specific properties specify the correct
     Liferay version and your Liferay Portal's deploy directory path. 
 
-    Here's an example of these properties using Liferay 6.1.20 and a deploy
-    directory path of `E:\liferay-portal-6.1.20-ee-ga2\deploy`: 
+    Here's an example of these properties using Liferay 6.1.30 and a deploy
+    directory path of `E:\liferay-portal-6.1.30-ee-ga3\deploy`: 
 
         <properties>
-            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.20-ee-ga2\deploy</liferay.auto.deploy.dir>
-            <liferay.version>6.1.20</liferay.version>
+            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.30-ee-ga3\deploy</liferay.auto.deploy.dir>
+            <liferay.version>6.1.30</liferay.version>
         </properties>
 
     If you haven't already created a parent plugin project, see *Using a Parent
@@ -1179,7 +1179,7 @@ placed in the *target* directory. Its path is
 
 ---
 
-#### More Information 
+#### More Information  [](id=lp-6-1-dgen08-more-information--0)
 
 For more information on Liferay themes and its settings, see Chapter 4,
 [Creating Liferay
