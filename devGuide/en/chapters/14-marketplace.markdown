@@ -354,7 +354,7 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing it for different Liferay releases. We'll illustrate this with
 an example. 
 
-#### Example App: Using Different Versions of a Hook [](using-different-versions-of-a-hook-liferay-portal-6-1-dev-guide-en) [](id=lp-6-1-dgen14-example-app-using-different-versions-of-a-hook-using-differ-0)
+#### Example App: Using Different Versions of a Hook [](id=using-different-versions-of-a-hook-liferay-portal-6-1-dev-guide-en)
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
@@ -376,7 +376,7 @@ that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
 specified for each plugin. We'll talk about that next.  
 
-#### Marketplace Packages Your App's Plugins [](marketplace-packages-your-app-plugins-liferay-portal-6-1-dev-guide-en) [](id=lp-6-1-dgen14-marketplace-packages-your-apps-plugins-marketplace-packages-0)
+#### Marketplace Packages Your App's Plugins [](id=marketplace-packages-your-app-plugins-liferay-portal-6-1-dev-guide-en)
 
 When you upload your app's plugins, as demonstrated later on in this chapter,
 you'll notice that Marketplace groups them into separate packages based on the
