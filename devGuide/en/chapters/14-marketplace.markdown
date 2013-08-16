@@ -351,17 +351,17 @@ Here are some additional examples:
     liferay-versions=6.1.20+
 
 You may find it advantageous to implement one of your app's plugins in multiple
-ways, customizing it for different Liferay releases. We'll illustrate this with
-an example. 
+ways, customizing that plugin for different Liferay releases. We'll illustrate
+this with an example. 
 
 #### Example App: Using Different Versions of a Hook [](id=using-different-versions-of-a-hook-liferay-portal-6-1-dev-guide-en)
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
 other hand, needs to interact with EE GA2 differently than it does with CE GA2,
-because you want the hook to take advantage of an exclusive EE feature that
-doesn't exist in the CE release. How do you provide two different versions of
-your hook plugin in the same app?
+because you want the hook to take advantage of an exclusive EE feature. For your
+app, how do you provide one version of your hook plugin for EE and another
+version of it for CE, while applying your portlet plugin to both EE and CE? 
 
 It's easy. In this case, you'd specify versions
 `liferay-versions=6.1.1+,6.1.20+` for your portlet plugin, indicating that it is
