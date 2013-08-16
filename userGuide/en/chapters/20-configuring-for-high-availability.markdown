@@ -342,18 +342,21 @@ storing multiple versions of the document.
 ---
 
  ![Tip](../../images/01-tip.png)**Note:** The numeric file entry name of a
- document is distinct from the document ID. Each has is an independent counter.
- The numeric file entry name of a document is used in the folder path for
- storing the document but the document ID is not used.
+ document is distinct from the document ID; be careful not to confuse the two!
+ Each has an independent counter. The numeric file entry name of a document is
+ used in the folder path for storing the document but the document ID is not.
+ The numeric file entry name of document can be found in the `name` column of
+ the `DLFileEntry` table in Liferay's database; the document ID can be found in
+ the `fileEntryId` column of the same table.
 
 ---
 
-As you can see, this binds your documents very closely to Liferay, and may not
-be exactly what you want. But if you've been using the default settings for a
-while and need to migrate your documents, Liferay provides a migration utility
-in the control panel in *Server Administration* &rarr; *Data Migration*. Using
-this utility, you can move your documents very easily from one store
-implementation to another. 
+As you can see, the File System Store binds your documents very closely to
+Liferay, and may not be exactly what you want. But if you've been using the
+default settings for a while and need to migrate your documents, Liferay
+provides a migration utility in the control panel in *Server Administration*
+&rarr; *Data Migration*. Using this utility, you can move your documents very
+easily from one store implementation to another. 
 
 Speaking of other store implementations, let's look at some others Liferay
 provides. 
