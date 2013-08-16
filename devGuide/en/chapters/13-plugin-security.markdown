@@ -59,8 +59,12 @@ from the ground up.
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
-suggest you go ahead and develop your plugin first and address plugin security
-afterwards. 
+suggest you go ahead and develop your plugin first and address your plugin's
+PACL later. But, as you develop your plugin there are some common security
+pitfalls, highlighted in the next section, that we'll show you how to avoid.
+After you develop your plugin you'll dig whole-heartedly into security
+management by generating and fine-tuning you plugin's PACL. Don't worry, we'll
+guide you through it. 
 
 If you're developing a plugin as part of a free app, writing a PACL for your
 plugin and enabling the security manager are optional, and you can skip this
@@ -89,8 +93,8 @@ documentation is available for you to read at
 But we'll highlight a couple common mistakes developers make that violate
 Liferay's secured environment: 
 
-- Directly or indirectly invoking a method without considering that it throws
-  a security exception.
+- Invoking a method, irectly or indirectly, without considering whether it can
+  throw a security exception.
 - Using external libraries or frameworks that access classloaders outside of
   your plugin.  
 
