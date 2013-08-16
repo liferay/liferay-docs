@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
-	
 	<portlet>
 		<portlet-name>eventlisting</portlet-name>
 		<display-name>Event Listing Portlet</display-name>
-		<portlet-class>
-			com.nosester.portlet.eventlisting.EventListingPortlet
-		</portlet-class>
+		<portlet-class>com.nosester.portlet.eventlisting.EventListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/eventlisting/view.jsp</value>
@@ -21,7 +18,7 @@
 		<portlet-info>
 			<title>Event Listing Portlet</title>
 			<short-title>Event Listing Portlet</short-title>
-			<keywords></keywords>
+			<keywords/>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -39,9 +36,7 @@
 	<portlet>
 		<portlet-name>locationlisting</portlet-name>
 		<display-name>Location Listing Portlet</display-name>
-		<portlet-class>
-			com.nosester.portlet.eventlisting.LocationListingPortlet
-		</portlet-class>
+		<portlet-class>com.nosester.portlet.eventlisting.LocationListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/locationlisting/view.jsp</value>
@@ -54,7 +49,7 @@
 		<portlet-info>
 			<title>Location Listing Portlet</title>
 			<short-title>Location Listing Portlet</short-title>
-			<keywords></keywords>
+			<keywords/>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>

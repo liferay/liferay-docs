@@ -18,6 +18,7 @@ import com.liferay.portal.service.InvokableLocalService;
 
 /**
  * @author Joe Bloggs
+ * @generated
  */
 public class LocationLocalServiceClp implements LocationLocalService {
 	public LocationLocalServiceClp(InvokableLocalService invokableLocalService) {
@@ -72,36 +73,37 @@ public class LocationLocalServiceClp implements LocationLocalService {
 				"com.liferay.portal.kernel.dao.orm.DynamicQuery"
 			};
 
-		_methodName9 = "fetchLocation";
+		_methodName9 = "dynamicQueryCount";
 
-		_methodParameterTypes9 = new String[] { "long" };
+		_methodParameterTypes9 = new String[] {
+				"com.liferay.portal.kernel.dao.orm.DynamicQuery",
+				"com.liferay.portal.kernel.dao.orm.Projection"
+			};
 
-		_methodName10 = "getLocation";
+		_methodName10 = "fetchLocation";
 
 		_methodParameterTypes10 = new String[] { "long" };
 
-		_methodName11 = "getPersistedModel";
+		_methodName11 = "getLocation";
 
-		_methodParameterTypes11 = new String[] { "java.io.Serializable" };
+		_methodParameterTypes11 = new String[] { "long" };
 
-		_methodName12 = "getLocations";
+		_methodName12 = "getPersistedModel";
 
-		_methodParameterTypes12 = new String[] { "int", "int" };
+		_methodParameterTypes12 = new String[] { "java.io.Serializable" };
 
-		_methodName13 = "getLocationsCount";
+		_methodName13 = "getLocations";
 
-		_methodParameterTypes13 = new String[] {  };
+		_methodParameterTypes13 = new String[] { "int", "int" };
 
-		_methodName14 = "updateLocation";
+		_methodName14 = "getLocationsCount";
 
-		_methodParameterTypes14 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
+		_methodParameterTypes14 = new String[] {  };
 
 		_methodName15 = "updateLocation";
 
 		_methodParameterTypes15 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location", "boolean"
+				"com.nosester.portlet.eventlisting.model.Location"
 			};
 
 		_methodName16 = "getBeanIdentifier";
@@ -141,6 +143,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		_methodParameterTypes23 = new String[] { "long" };
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -170,6 +173,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location createLocation(
 		long locationId) {
 		Object returnObj = null;
@@ -193,6 +197,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		long locationId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -226,6 +231,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -255,6 +261,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery() {
 		Object returnObj = null;
 
@@ -277,6 +284,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.liferay.portal.kernel.dao.orm.DynamicQuery)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	@SuppressWarnings("rawtypes")
 	public java.util.List dynamicQuery(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
@@ -307,6 +315,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	@SuppressWarnings("rawtypes")
 	public java.util.List dynamicQuery(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
@@ -343,6 +352,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	@SuppressWarnings("rawtypes")
 	public java.util.List dynamicQuery(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
@@ -383,6 +393,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public long dynamicQueryCount(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -412,14 +423,50 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return ((Long)returnObj).longValue();
 	}
 
+	@Override
+	public long dynamicQueryCount(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery,
+		com.liferay.portal.kernel.dao.orm.Projection projection)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName9,
+					_methodParameterTypes9,
+					new Object[] {
+						ClpSerializer.translateInput(dynamicQuery),
+						
+					ClpSerializer.translateInput(projection)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Long)returnObj).longValue();
+	}
+
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location fetchLocation(
 		long locationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName9,
-					_methodParameterTypes9, new Object[] { locationId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName10,
+					_methodParameterTypes10, new Object[] { locationId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -440,6 +487,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location getLocation(
 		long locationId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -447,8 +495,8 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName10,
-					_methodParameterTypes10, new Object[] { locationId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName11,
+					_methodParameterTypes11, new Object[] { locationId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -473,6 +521,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.liferay.portal.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -480,8 +529,8 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName11,
-					_methodParameterTypes11,
+			returnObj = _invokableLocalService.invokeMethod(_methodName12,
+					_methodParameterTypes12,
 					new Object[] { ClpSerializer.translateInput(primaryKeyObj) });
 		}
 		catch (Throwable t) {
@@ -507,14 +556,15 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.liferay.portal.model.PersistedModel)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocations(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName12,
-					_methodParameterTypes12, new Object[] { start, end });
+			returnObj = _invokableLocalService.invokeMethod(_methodName13,
+					_methodParameterTypes13, new Object[] { start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -535,13 +585,14 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List<com.nosester.portlet.eventlisting.model.Location>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public int getLocationsCount()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName13,
-					_methodParameterTypes13, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName14,
+					_methodParameterTypes14, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -562,14 +613,15 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return ((Integer)returnObj).intValue();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
 		com.nosester.portlet.eventlisting.model.Location location)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName14,
-					_methodParameterTypes14,
+			returnObj = _invokableLocalService.invokeMethod(_methodName15,
+					_methodParameterTypes15,
 					new Object[] { ClpSerializer.translateInput(location) });
 		}
 		catch (Throwable t) {
@@ -591,35 +643,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		com.nosester.portlet.eventlisting.model.Location location, boolean merge)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName15,
-					_methodParameterTypes15,
-					new Object[] { ClpSerializer.translateInput(location), merge });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
+	@Override
 	public java.lang.String getBeanIdentifier() {
 		Object returnObj = null;
 
@@ -642,6 +666,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		try {
 			_invokableLocalService.invokeMethod(_methodName17,
@@ -661,12 +686,14 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		}
 	}
 
+	@Override
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -708,6 +735,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -751,6 +779,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -779,6 +808,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List<com.nosester.portlet.eventlisting.model.Location>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
 		long groupId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -808,6 +838,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		return (java.util.List<com.nosester.portlet.eventlisting.model.Location>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
 	public int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;

@@ -77,7 +77,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 			{ "date_", Types.TIMESTAMP },
 			{ "locationId", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Event_Event (eventId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(75) null,date_ DATE null,locationId LONG)";
+	public static final String TABLE_SQL_CREATE = "create table Event_Event (eventId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(250) null,date_ DATE null,locationId LONG)";
 	public static final String TABLE_SQL_DROP = "drop table Event_Event";
 	public static final String ORDER_BY_JPQL = " ORDER BY event.date ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY Event_Event.date_ ASC";
@@ -94,6 +94,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 				"value.object.column.bitmask.enabled.com.nosester.portlet.eventlisting.model.Event"),
 			true);
 	public static long GROUPID_COLUMN_BITMASK = 1L;
+	public static long DATE_COLUMN_BITMASK = 2L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -148,26 +149,32 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	public EventModelImpl() {
 	}
 
+	@Override
 	public long getPrimaryKey() {
 		return _eventId;
 	}
 
+	@Override
 	public void setPrimaryKey(long primaryKey) {
 		setEventId(primaryKey);
 	}
 
+	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new Long(_eventId);
+		return _eventId;
 	}
 
+	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		setPrimaryKey(((Long)primaryKeyObj).longValue());
 	}
 
+	@Override
 	public Class<?> getModelClass() {
 		return Event.class;
 	}
 
+	@Override
 	public String getModelClassName() {
 		return Event.class.getName();
 	}
@@ -253,29 +260,35 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		}
 	}
 
+	@Override
 	@JSON
 	public long getEventId() {
 		return _eventId;
 	}
 
+	@Override
 	public void setEventId(long eventId) {
 		_eventId = eventId;
 	}
 
+	@Override
 	@JSON
 	public long getCompanyId() {
 		return _companyId;
 	}
 
+	@Override
 	public void setCompanyId(long companyId) {
 		_companyId = companyId;
 	}
 
+	@Override
 	@JSON
 	public long getGroupId() {
 		return _groupId;
 	}
 
+	@Override
 	public void setGroupId(long groupId) {
 		_columnBitmask |= GROUPID_COLUMN_BITMASK;
 
@@ -292,41 +305,50 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		return _originalGroupId;
 	}
 
+	@Override
 	@JSON
 	public long getUserId() {
 		return _userId;
 	}
 
+	@Override
 	public void setUserId(long userId) {
 		_userId = userId;
 	}
 
+	@Override
 	public String getUserUuid() throws SystemException {
 		return PortalUtil.getUserValue(getUserId(), "uuid", _userUuid);
 	}
 
+	@Override
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
 	}
 
+	@Override
 	@JSON
 	public Date getCreateDate() {
 		return _createDate;
 	}
 
+	@Override
 	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
 	}
 
+	@Override
 	@JSON
 	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
+	@Override
 	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
 	}
 
+	@Override
 	@JSON
 	public String getName() {
 		if (_name == null) {
@@ -337,10 +359,12 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		}
 	}
 
+	@Override
 	public void setName(String name) {
 		_name = name;
 	}
 
+	@Override
 	@JSON
 	public String getDescription() {
 		if (_description == null) {
@@ -351,26 +375,31 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		}
 	}
 
+	@Override
 	public void setDescription(String description) {
 		_description = description;
 	}
 
+	@Override
 	@JSON
 	public Date getDate() {
 		return _date;
 	}
 
+	@Override
 	public void setDate(Date date) {
 		_columnBitmask = -1L;
 
 		_date = date;
 	}
 
+	@Override
 	@JSON
 	public long getLocationId() {
 		return _locationId;
 	}
 
+	@Override
 	public void setLocationId(long locationId) {
 		_locationId = locationId;
 	}
@@ -394,13 +423,12 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 
 	@Override
 	public Event toEscapedModel() {
-		if (_escapedModelProxy == null) {
-			_escapedModelProxy = (Event)ProxyUtil.newProxyInstance(_classLoader,
-					_escapedModelProxyInterfaces,
-					new AutoEscapeBeanHandler(this));
+		if (_escapedModel == null) {
+			_escapedModel = (Event)ProxyUtil.newProxyInstance(_classLoader,
+					_escapedModelInterfaces, new AutoEscapeBeanHandler(this));
 		}
 
-		return _escapedModelProxy;
+		return _escapedModel;
 	}
 
 	@Override
@@ -423,6 +451,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		return eventImpl;
 	}
 
+	@Override
 	public int compareTo(Event event) {
 		int value = 0;
 
@@ -437,18 +466,15 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof Event)) {
 			return false;
 		}
 
-		Event event = null;
-
-		try {
-			event = (Event)obj;
-		}
-		catch (ClassCastException cce) {
-			return false;
-		}
+		Event event = (Event)obj;
 
 		long primaryKey = event.getPrimaryKey();
 
@@ -565,6 +591,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		return sb.toString();
 	}
 
+	@Override
 	public String toXmlString() {
 		StringBundler sb = new StringBundler(34);
 
@@ -619,9 +646,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	}
 
 	private static ClassLoader _classLoader = Event.class.getClassLoader();
-	private static Class<?>[] _escapedModelProxyInterfaces = new Class[] {
-			Event.class
-		};
+	private static Class<?>[] _escapedModelInterfaces = new Class[] { Event.class };
 	private long _eventId;
 	private long _companyId;
 	private long _groupId;
@@ -636,5 +661,5 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	private Date _date;
 	private long _locationId;
 	private long _columnBitmask;
-	private Event _escapedModelProxy;
+	private Event _escapedModel;
 }

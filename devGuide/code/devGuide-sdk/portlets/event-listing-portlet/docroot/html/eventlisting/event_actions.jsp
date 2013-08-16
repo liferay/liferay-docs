@@ -15,16 +15,16 @@
 <liferay-ui:icon-menu>
 	<portlet:renderURL var="editURL">
 		<portlet:param name="mvcPath" value="/html/eventlisting/edit_event.jsp" />
-		<portlet:param name="eventId" value="<%= String.valueOf(eventId) %>"/>
-		<portlet:param name="redirect" value="<%= redirect %>"/>
+		<portlet:param name="eventId" value="<%= String.valueOf(eventId) %>" />
+		<portlet:param name="redirect" value="<%= redirect %>" />
 	</portlet:renderURL>
-	
-	<liferay-ui:icon image="edit" url="<%=editURL.toString() %>" />
+
+	<liferay-ui:icon image="edit" url="<%= editURL.toString() %>" />
 
 	<portlet:actionURL name="deleteEvent" var="deleteURL">
 		<portlet:param name="eventId" value="<%= String.valueOf(eventId) %>" />
-		<portlet:param name="redirect" value="<%= redirect %>"/>
+		<portlet:param name="redirect" value="<%= redirect %>" />
 	</portlet:actionURL>
-		
-	<liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+
+	<liferay-ui:icon-delete url="<%= deleteURL.toString() %>" />
 </liferay-ui:icon-menu>

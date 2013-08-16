@@ -79,7 +79,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 			{ "stateOrProvince", Types.VARCHAR },
 			{ "country", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Event_Location (locationId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(75) null,streetAddress VARCHAR(75) null,city VARCHAR(75) null,stateOrProvince VARCHAR(75) null,country VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table Event_Location (locationId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(250) null,streetAddress VARCHAR(75) null,city VARCHAR(75) null,stateOrProvince VARCHAR(75) null,country VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table Event_Location";
 	public static final String ORDER_BY_JPQL = " ORDER BY location.name ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY Event_Location.name ASC";
@@ -96,6 +96,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 				"value.object.column.bitmask.enabled.com.nosester.portlet.eventlisting.model.Location"),
 			true);
 	public static long GROUPID_COLUMN_BITMASK = 1L;
+	public static long NAME_COLUMN_BITMASK = 2L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -152,26 +153,32 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 	public LocationModelImpl() {
 	}
 
+	@Override
 	public long getPrimaryKey() {
 		return _locationId;
 	}
 
+	@Override
 	public void setPrimaryKey(long primaryKey) {
 		setLocationId(primaryKey);
 	}
 
+	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new Long(_locationId);
+		return _locationId;
 	}
 
+	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		setPrimaryKey(((Long)primaryKeyObj).longValue());
 	}
 
+	@Override
 	public Class<?> getModelClass() {
 		return Location.class;
 	}
 
+	@Override
 	public String getModelClassName() {
 		return Location.class.getName();
 	}
@@ -271,29 +278,35 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	@JSON
 	public long getLocationId() {
 		return _locationId;
 	}
 
+	@Override
 	public void setLocationId(long locationId) {
 		_locationId = locationId;
 	}
 
+	@Override
 	@JSON
 	public long getCompanyId() {
 		return _companyId;
 	}
 
+	@Override
 	public void setCompanyId(long companyId) {
 		_companyId = companyId;
 	}
 
+	@Override
 	@JSON
 	public long getGroupId() {
 		return _groupId;
 	}
 
+	@Override
 	public void setGroupId(long groupId) {
 		_columnBitmask |= GROUPID_COLUMN_BITMASK;
 
@@ -310,41 +323,50 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		return _originalGroupId;
 	}
 
+	@Override
 	@JSON
 	public long getUserId() {
 		return _userId;
 	}
 
+	@Override
 	public void setUserId(long userId) {
 		_userId = userId;
 	}
 
+	@Override
 	public String getUserUuid() throws SystemException {
 		return PortalUtil.getUserValue(getUserId(), "uuid", _userUuid);
 	}
 
+	@Override
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
 	}
 
+	@Override
 	@JSON
 	public Date getCreateDate() {
 		return _createDate;
 	}
 
+	@Override
 	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
 	}
 
+	@Override
 	@JSON
 	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
+	@Override
 	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
 	}
 
+	@Override
 	@JSON
 	public String getName() {
 		if (_name == null) {
@@ -355,12 +377,14 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setName(String name) {
 		_columnBitmask = -1L;
 
 		_name = name;
 	}
 
+	@Override
 	@JSON
 	public String getDescription() {
 		if (_description == null) {
@@ -371,10 +395,12 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setDescription(String description) {
 		_description = description;
 	}
 
+	@Override
 	@JSON
 	public String getStreetAddress() {
 		if (_streetAddress == null) {
@@ -385,10 +411,12 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setStreetAddress(String streetAddress) {
 		_streetAddress = streetAddress;
 	}
 
+	@Override
 	@JSON
 	public String getCity() {
 		if (_city == null) {
@@ -399,10 +427,12 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setCity(String city) {
 		_city = city;
 	}
 
+	@Override
 	@JSON
 	public String getStateOrProvince() {
 		if (_stateOrProvince == null) {
@@ -413,10 +443,12 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setStateOrProvince(String stateOrProvince) {
 		_stateOrProvince = stateOrProvince;
 	}
 
+	@Override
 	@JSON
 	public String getCountry() {
 		if (_country == null) {
@@ -427,6 +459,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
+	@Override
 	public void setCountry(String country) {
 		_country = country;
 	}
@@ -450,13 +483,12 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 
 	@Override
 	public Location toEscapedModel() {
-		if (_escapedModelProxy == null) {
-			_escapedModelProxy = (Location)ProxyUtil.newProxyInstance(_classLoader,
-					_escapedModelProxyInterfaces,
-					new AutoEscapeBeanHandler(this));
+		if (_escapedModel == null) {
+			_escapedModel = (Location)ProxyUtil.newProxyInstance(_classLoader,
+					_escapedModelInterfaces, new AutoEscapeBeanHandler(this));
 		}
 
-		return _escapedModelProxy;
+		return _escapedModel;
 	}
 
 	@Override
@@ -481,6 +513,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		return locationImpl;
 	}
 
+	@Override
 	public int compareTo(Location location) {
 		int value = 0;
 
@@ -495,18 +528,15 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof Location)) {
 			return false;
 		}
 
-		Location location = null;
-
-		try {
-			location = (Location)obj;
-		}
-		catch (ClassCastException cce) {
-			return false;
-		}
+		Location location = (Location)obj;
 
 		long primaryKey = location.getPrimaryKey();
 
@@ -648,6 +678,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		return sb.toString();
 	}
 
+	@Override
 	public String toXmlString() {
 		StringBundler sb = new StringBundler(40);
 
@@ -710,7 +741,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 	}
 
 	private static ClassLoader _classLoader = Location.class.getClassLoader();
-	private static Class<?>[] _escapedModelProxyInterfaces = new Class[] {
+	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			Location.class
 		};
 	private long _locationId;
@@ -729,5 +760,5 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 	private String _stateOrProvince;
 	private String _country;
 	private long _columnBitmask;
-	private Location _escapedModelProxy;
+	private Location _escapedModel;
 }

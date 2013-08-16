@@ -3,7 +3,7 @@
 This is the <b>Location Listing Portlet</b> portlet in View mode.
 
 <%
-	String redirect = PortalUtil.getCurrentURL(renderRequest);	
+	String redirect = PortalUtil.getCurrentURL(renderRequest);
 	ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
 	long scopeGroupId = themeDisplay.getScopeGroupId();
 %>
@@ -14,7 +14,7 @@ This is the <b>Location Listing Portlet</b> portlet in View mode.
 		<portlet:param name="redirect" value="<%= redirect %>" />
 	</portlet:renderURL>
 
-	<aui:button value="add-location" onClick="<%= addLocationURL.toString() %>"/>
+	<aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
 </aui:button-row>
 
 <liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
@@ -37,27 +37,27 @@ This is the <b>Location Listing Portlet</b> portlet in View mode.
 			name="description"
 			property="description"
 		/>
-		
+
 		<liferay-ui:search-container-column-text
 			name="street-address"
 			property="streetAddress"
 		/>
-		
+
 		<liferay-ui:search-container-column-text
 			name="city"
 			property="city"
 		/>
-		
+
 		<liferay-ui:search-container-column-text
 			name="state-province"
 			property="stateOrProvince"
 		/>
-		
+
 		<liferay-ui:search-container-column-text
 			name="country"
 			property="country"
 		/>
-		
+
 		<liferay-ui:search-container-column-jsp
 			align="right"
 			path="/html/locationlisting/location_actions.jsp"
