@@ -2,6 +2,7 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
 
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>

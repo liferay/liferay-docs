@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
 <service-builder package-path="com.nosester.portlet.eventlisting">
-	<author>jbloggs</author>
+	<author>Joe Bloggs</author>
 	<namespace>Event</namespace>
 
 	<entity name="Event" local-service="true" remote-service="true">
@@ -15,8 +15,8 @@
 		<column name="companyId" type="long" />
 		<column name="groupId" type="long" />
 		<column name="userId" type="long" />
-		<column name="createDate" type="long" />
-		<column name="modifiedDate" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
 
@@ -37,7 +37,7 @@
 			<finder-column name="groupId" />
 		</finder>
 	</entity>
-	
+
 	<entity name="Location" local-service="true" remote-service="true">
 
 		<!-- PK fields -->
@@ -49,8 +49,8 @@
 		<column name="companyId" type="long" />
 		<column name="groupId" type="long" />
 		<column name="userId" type="long" />
-		<column name="createDate" type="long" />
-		<column name="modifiedDate" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
 
@@ -60,7 +60,7 @@
 		<column name="city" type="String" />
 		<column name="stateOrProvince" type="String" />
 		<column name="country" type="String" />
-		
+
 		<!-- Order -->
 
 		<order by="asc">
