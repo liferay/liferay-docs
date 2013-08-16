@@ -66,7 +66,7 @@ Studio first, and then with the terminal.
 
 5.  Click *Finish*. 
 
- ![Figure 4.1: Creating your theme plugin](../../images/05-themes-1.png)
+ ![Figure 5.1: Creating your theme plugin](../../images/05-themes-1.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -115,7 +115,7 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
- ![Figure 4.2: Drag and drop your theme onto the server](../../images/05-themes-6.png)
+ ![Figure 5.2: Drag and drop your theme onto the server](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
@@ -210,7 +210,7 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
- ![Figure 4.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
+ ![Figure 5.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
@@ -335,7 +335,7 @@ callbacks:
 - **Liferay.on('allPortletsReady', fn):** Executed after everything else
   (including AJAX portlets) has finished loading. 
 
- ![Figure 4.4: Content of main.js](../../images/05-themes-4.png)
+ ![Figure 5.4: Content of main.js](../../images/05-themes-4.png)
 
 Now let's make your theme configurable by defining settings. 
 
@@ -445,12 +445,12 @@ the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
 Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
- ![Figure 4.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+ ![Figure 5.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
- ![Figure 4.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+ ![Figure 5.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 ---
 
@@ -612,7 +612,7 @@ site's name (i.e., title). But, if you are using using logo, that mentions your
 company or site, on each site page, you may find the default site name display
 distracting.
 
- ![Figure 4.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+ ![Figure 5.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
 
 Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
 as a base theme, you have the following settings available for configuring site
@@ -653,7 +653,7 @@ By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
 using the Build Application Configuration Editor, you see the following code:
 
- ![Figure 4.8: Content of build.xml](../../images/05-themes-5.png)
+ ![Figure 5.8: Content of build.xml](../../images/05-themes-5.png)
 
 The `theme.parent` property determines the theme your theme inherits its styling
 from. In addition to the *_styled* theme, you can choose to inherit from the
@@ -695,7 +695,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
- ![Figure 4.9: The welcome theme uses the resources importer to import pages and
+ ![Figure 5.9: The welcome theme uses the resources importer to import pages and
  content to the default site of a fresh Liferay
  installation.](../../images/welcome-theme.png)
 

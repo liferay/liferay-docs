@@ -180,7 +180,7 @@ If the IP address of the machine on which the batch job is running is listed
 as an authorized host for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-![Figure 10.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
+![Figure 11.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
 ---
 
@@ -208,7 +208,7 @@ using a user ID of a member of this group (or the user ID of a user with
 individual rights to add documents to this folder). If you don't, Liferay denies
 you access to the Web Service. 
 
-![Figure 10.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
+![Figure 11.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
 With remote services, you can specify the user credentials using HTTP Basic
 authentication. Since those credentials are specified unencrypted; it's
@@ -370,7 +370,7 @@ For each client you create, you're prompted to enter the service definition
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 10.3: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 11.3: Service Definition](../../images/api-web-svc-wsdl.png)
 
 <!-- Again, too many screenshots. -Rich -->
 <!--Jim I removed three screenshots that were too close otgether to respond to
@@ -1856,7 +1856,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 10.4: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 11.4: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -1959,7 +1959,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 10.5: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 11.5: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2232,7 +2232,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
 
-![Figure 10.6: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 11.6: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -2409,7 +2409,7 @@ there's no need for the company-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 10.7: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 11.7: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a parallel destination type in our `messaging-spring.xml`:
 

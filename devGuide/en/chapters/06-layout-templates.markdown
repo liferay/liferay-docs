@@ -40,7 +40,7 @@ our layout template called "Columns 1 4 1".
 
 5.  Click *Finish*. 
 
-![Figure 5.1: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
+![Figure 6.1: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -97,7 +97,7 @@ Let's see what each of the template files does:
   image, but you can use the default PNG for layout templates as a starting
   point. 
 
-![Figure 5.2: Default layout template thumbnail](../../images/blank_columns.png)
+![Figure 6.2: Default layout template thumbnail](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
@@ -163,12 +163,12 @@ designing templates becomes fun! Let's try it:
     layout template whenever you need by using *Visual (Experimental)* mode in
     Developer Studio. 
 
-    ![Figure 5.3: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
+    ![Figure 6.3: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
 
 5.  To finely tune your design's dimensions, switch to *Source* view and edit
     your TPL files as necessary. 
 
-![Figure 5.4: Source view of the template](../../images/layout-template-tpl-src-almost.png)
+![Figure 6.4: Source view of the template](../../images/layout-template-tpl-src-almost.png)
 
 For example, if you want each second-row column of the above template to be 25%
 of the page width, adjust that row's first column (`column-2`) from 20% to 25%. 
@@ -224,7 +224,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 5.5: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 6.5: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -273,7 +273,7 @@ What would a page using our "Columns 1 4 1" layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 5.6: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
+![Figure 6.6: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 

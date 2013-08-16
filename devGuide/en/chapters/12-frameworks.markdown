@@ -136,7 +136,7 @@ From the *Package Explorer*, open your `service.xml` file; it should be in your
 the *Service Builder Editor*. Make sure you're in *Overview* mode, then select
 *Build Services*. 
 
-![Figure 10.1: *Overview* mode in editor](../../images/10-frameworks-1.png)
+![Figure 12.1: *Overview* mode in editor](../../images/10-frameworks-1.png)
 
 You should see a BUILD SUCCESSFUL message in your console, along with a list of
 generated files. Don't worry about these files for now; we'll talk about them
@@ -149,12 +149,12 @@ select *Diagram*, you're given a graph structured background; the *Palette* on
 the right hand side of the editor lets you add entities and relationships .
 Here's a view of the editor in *Diagram* mode: 
 
-![Figure 10.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
+![Figure 12.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
 
 *Source* mode lets you edit the XML source directly. Here's an example
 `service.xml` shown in the editor's *Source* mode: 
 
-![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
+![Figure 12.3: *Source* mode in editor](../../images/10-frameworks-3.png)
 
 With Developer Studio, you have lots of tools to help automate the creation of
 interfaces and classes for your database persistence and service layers. 
