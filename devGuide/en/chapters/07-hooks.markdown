@@ -441,7 +441,7 @@ specific list of predefined properties. This list is found in
 source code. In addition to defining custom actions, hooks can override portal
 properties to define model listeners, validators, generators, and
 content sanitizers. If you want to customize a property that's not found in this
-list, you must use an Ext plugin (chapter 7). 
+list, you must use an Ext plugin (Chapter 8). 
 
 ---
 

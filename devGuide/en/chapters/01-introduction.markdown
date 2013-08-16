@@ -230,7 +230,7 @@ effect.
  *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
  the extension environment in order to simplify development. For instructions on
  converting an existing Extension Environment into a plugin, see the section
- on migrating old extension environments in chapter 8.
+ on migrating old extension environments in Chapter 8.
 
 ---
 
@@ -272,14 +272,14 @@ additional integration plugins such as the Kaleo Designer for Java.
 This guide shows you how to develop for Liferay using both the Plugins SDK and
 Liferay IDE, to benefit you and other developers even if you don't like IDEs or
 don't use Eclipse. If you use Eclipse, you may want to start reading about
-Liferay IDE in chapter 10 first and then go back to reading about the Plugins
+Liferay IDE in Chapter 10 first and then go back to reading about the Plugins
 SDK.
 
 **What about if I don't like Apache Ant and I prefer to use Maven?** Many
 developers prefer other command-line alternatives to Apache Ant. The most
 popular of these alternatives is Maven. To support developers that want to use
 Maven we have *mavenized* Liferay artifacts for referencing in your Maven
-projects. See chapter 8 for an in-depth look at developing plugins in Maven. 
+projects. See Chapter 9 for an in-depth look at developing plugins in Maven. 
 
 **What if I don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA or
 other another IDE?** There are many IDEs available, and each one has its

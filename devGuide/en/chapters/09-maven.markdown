@@ -1181,7 +1181,7 @@ placed in the *target* directory. Its path is
 
 #### More Information  [](id=lp-6-1-dgen08-more-information--0)
 
-For more information on Liferay themes and its settings, see Chapter 4,
+For more information on Liferay themes and its settings, see Chapter 5,
 [Creating Liferay
 Themes](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7).
 
@@ -1251,7 +1251,7 @@ Plugins with Maven* section.
 
 #### More Information [](id=liferay-6-1-maven-hook-more-info)
 
-For detailed information on creating hooks, see Chapter 6,
+For detailed information on creating hooks, see Chapter 7,
 [Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4). 
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
@@ -1331,7 +1331,7 @@ the *Deploying Liferay Plugins with Maven* section.
 
 #### More Information [](id=liferay-6-1-maven-layout-template-more-info)
 
-For detailed information on creating layout templates, see Chapter 5, [Creating
+For detailed information on creating layout templates, see Chapter 6, [Creating
 Liferay Layout
 Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0). 
 

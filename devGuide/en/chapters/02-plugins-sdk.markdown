@@ -6,13 +6,13 @@ that work best for you. To that end, we provide a Plugins Software Development
 Kit (SDK) based on Apache Ant that can be used along with any editor or
 Integrated Development Environment (IDE). Much of this guide uses the Plugins
 SDK and a text editor, but use whatever tool you're most comfortable with. As an
-alternative to the Plugins SDK, in Chapter 9 we discuss Liferay IDE, a plugin
+alternative to the Plugins SDK, in Chapter 10 we discuss Liferay IDE, a plugin
 for Eclipse that simplifies development for Liferay. 
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: If you use Eclipse and intend to
- use it from the very beginning, you might want to check out Chapter 9 first
+ use it from the very beginning, you might want to check out Chapter 10 first
  before reading this chapter.
 
 ---
@@ -173,16 +173,16 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See chapter 7 on Ext plugins. 
-    - `hooks/` - hook plugins directory. See chapter 6 on hooks. 
-    - `layouttpl/` - layout templates directory. See chapter 4 on creating
-      Liferay Themes. 
+    - `ext/` - Ext plugins directory. See Chapter 8 on Ext plugins. 
+    - `hooks/` - hook plugins directory. See Chapter 7 on hooks. 
+    - `layouttpl/` - layout templates directory. See Chapter 6 on creating
+      Liferay Layout Templates. 
     - `lib/` - commonly referenced libraries. 
     - `misc/` - development configuration files. Example, a source code
       formatting specification file. 
-    - `portlets/` - portlet plugins directory. See chapter 3 on portlet
+    - `portlets/` - portlet plugins directory. See Chapter 3 on portlet
       development. 
-    - `themes/` - themes plugins directory. See Chapter 4 on creating Liferay
+    - `themes/` - themes plugins directory. See Chapter 5 on creating Liferay
       themes. 
     - `tools/` - plugin templates and utilities. 
     - `webs/` - web plugins directory. 
@@ -245,7 +245,7 @@ Apache Maven build management framework. You'll be happy to know that we have
 archetypes to help you build various types of plugins including Liferay
 portlets, themes, and layout templates. 
 
-To learn more about developing plugins using Maven, see Chapter 8. 
+To learn more about developing plugins using Maven, see Chapter 9. 
 
 ## Summary [](id=lp-6-1-dgen02-summary-0)
 

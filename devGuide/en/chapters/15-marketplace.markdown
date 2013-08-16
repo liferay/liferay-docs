@@ -139,10 +139,9 @@ requirements to keep in mind.
       paid apps on 6.1 CE GA3, 6.1 EE GA3, and later, but is optional for free
       apps. Setting this property to `true` enables Liferay's Plugin Security
       Manager. If you're enabling the security manager, you'll also need to
-      define your Portal Access Control List (PACL) in this file. Read the
-      [Plugin Security Management 
-      Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0) 
-      in this guide for information on developing secure apps. 
+      define your Portal Access Control List (PACL) in this file. Read 
+      Chapter 13 on Plugin Security Management for information on developing
+      secure apps. 
 - *Deployment contexts*:
     - Liferay reserves the right to deny an application if any of its plugin
       deployment contexts is the same as another plugin in the Marketplace.
@@ -153,10 +152,9 @@ requirements to keep in mind.
 
  ![note](../../images/tip-pen-paper.png) **Important:** If you're developing a
  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
- read the [Plugin Security Management
- Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0)  
- in this guide. Give yourself adequate time to develop your app's PACL and time
- to test your app thoroughly with the security manager enabled. 
+ Chapter 13 on Plugin Security Management for details. Give yourself adequate
+ time to develop your app's PACL and time to test your app thoroughly with the
+ security manager enabled. 
 
 ---
 
