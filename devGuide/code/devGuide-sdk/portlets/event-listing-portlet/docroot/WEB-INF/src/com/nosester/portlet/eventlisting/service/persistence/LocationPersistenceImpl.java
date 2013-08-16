@@ -60,7 +60,7 @@ import java.util.List;
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see LocationPersistence
  * @see LocationUtil
  * @generated
@@ -1076,8 +1076,10 @@ public class LocationPersistenceImpl extends BasePersistenceImpl<Location>
 				List<ModelListener<Location>> listenersList = new ArrayList<ModelListener<Location>>();
 
 				for (String listenerClassName : listenerClassNames) {
+					Class<?> clazz = getClass();
+
 					listenersList.add((ModelListener<Location>)InstanceFactory.newInstance(
-							listenerClassName));
+							clazz.getClassLoader(), listenerClassName));
 				}
 
 				listeners = listenersList.toArray(new ModelListener[listenersList.size()]);

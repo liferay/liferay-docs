@@ -60,7 +60,7 @@ import java.util.List;
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventPersistence
  * @see EventUtil
  * @generated
@@ -1069,8 +1069,10 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 				List<ModelListener<Event>> listenersList = new ArrayList<ModelListener<Event>>();
 
 				for (String listenerClassName : listenerClassNames) {
+					Class<?> clazz = getClass();
+
 					listenersList.add((ModelListener<Event>)InstanceFactory.newInstance(
-							listenerClassName));
+							clazz.getClassLoader(), listenerClassName));
 				}
 
 				listeners = listenersList.toArray(new ModelListener[listenersList.size()]);
