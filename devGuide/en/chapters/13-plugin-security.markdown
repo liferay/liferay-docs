@@ -156,8 +156,8 @@ But if you insist on using a Spring factory bean, you can do the following:
 
 1. Write a class *inside* your plugin to act as a factory. Your factory class
    should declare a class that wraps the type of instance your factory returns.
-   The factory should also implement a method that returns the instance, wrapped
-   in the class you declared. 
+   Your factory should also implement a method that returns the instance,
+   wrapped in the class you declared. 
 
 2. Configure a Spring factory bean that uses your plugin's factory class. 
     
@@ -197,7 +197,9 @@ class. Note, `UserLocalServiceWrapper` in turn wraps `UserLocalService`--the
 class you want the factory to return. Lastly, the `getUserLocalService()` method
 uses the original factory method, `UserLocalServiceUtil.getService()`, to get
 the `UserLocalService` instance. This instance is wrapped up in your factory's
-`TestUserLocalServiceWrapper` class. That wasn't so difficult, was it? 
+`TestUserLocalServiceWrapper` class. In your plugin, you've implemented a
+factory class to access the instances you want. That wasn't so difficult, was
+it? 
 
 Your new Spring factory bean would look like the following configuration:
 
@@ -215,7 +217,7 @@ emphasizing is that you must be aware of the how the libraries you use behave
 with respect to your secured environment. The better you understand Java SE
 Security and Liferay's Plugin Security Management, the easier it will be for you
 to write security-aware plugins. Keeping this in mind, you can proceed
-confidently with creating your plugin.
+confidently creating your plugin.
 
 ### Develop your plugin [](id=lp-6-1-dgen11-develop-your-plugin-0) 
 
