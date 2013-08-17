@@ -226,9 +226,15 @@ event can take place. Since an event must have a location, the event entity will
 reference a location entity as one of its attributes.
 
 If you'd like to examine the finished example project, it's a part of our *Dev
-Guide SDK* which you can download as a `.zip` file from our Developer's Guide
+Guide SDK* which you can browse at
+[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk). 
+The project is in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
+folder.
+<!-- download as a `.zip` file from our Developer's Guide
 page. 
 [http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development)
+-->
 
 ---
 
@@ -704,9 +710,15 @@ Terrific! You've created the example service and its Event and Location entities
 for the Event Listing portlet project.
 
 We've made the source code for the service and the entire Event Listing portlet
-project available in the *Dev Guide SDK* which you can download from our
+project available in the *Dev Guide SDK* which you can browse at
+[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk). 
+The project is in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
+folder.
+<!-- download from our
 Developer's Guide page at
 [http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
+-->
 We've also listed the `service.xml` content here for your convenience. We've
 added some comments to highlight the service's various elements. Other than
 that, your `service.xml` file's contents should look similar to this: 
@@ -806,7 +818,8 @@ To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. We'll demonstrate
 generating the service for the example Event Listing portlet project we've been
 developing throughout this chapter. The project resides in the
-`portlets/event-listing-portlet` folder of your Plugins SDK. 
+`portlets/event-listing-portlet` folder of our *Dev Guide SDK* that you can browse at
+[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk). 
 
 ***Using Liferay IDE or Developer Studio:*** From the *Package Explorer*, open
 the `service.xml` file found in your `event-listing-portlet/docroot/WEB-INF`
@@ -1074,8 +1087,11 @@ name, description, and a location ID fields and return the Event.
 (`eventPersistence` is one of the Spring beans injected into
 `EventLocalServiceBaseImpl` by Service Builder.) To see this implementation of
 `addEvent`, please examine the complete `EventListingServiceImpl` class included
-in the *Dev Guide SDK* which you can download from our Developer's Guide page at
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
+in the `portlets/event-listing-portlet` folder of the *Dev Guide SDK* which you
+can browse at 
+[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk).
+<!-- download from our Developer's Guide page at
+[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development). -->
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add their signatures to the `EventLocalService` interface by
