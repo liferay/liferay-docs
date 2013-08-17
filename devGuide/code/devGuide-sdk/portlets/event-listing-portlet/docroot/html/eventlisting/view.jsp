@@ -1,11 +1,12 @@
+
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+
 <%@include file="/html/init.jsp" %>
 
 This is the <b>Event Listing Portlet</b> portlet in View mode.
 
 <%
 	String redirect = PortalUtil.getCurrentURL(renderRequest);
-	ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
-	long scopeGroupId = themeDisplay.getScopeGroupId();
 %>
 
 <aui:button-row>
