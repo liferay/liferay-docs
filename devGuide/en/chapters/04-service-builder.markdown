@@ -1,4 +1,4 @@
-# Generating Your Service Layer [](id=service-build-5)
+# Generating Your Service Layer [](id=service-builder-liferay-portal-6-1-dev-guide-en)
 
 The word *service* can mean many specific things, but the general dictionary
 definition states that it's "an act of helpful activity." Everyone has
