@@ -1471,7 +1471,7 @@ Name                | Value Type | Description | Default
 `display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
 `max-length`        | integer | sets the maximum column size for SQL file generation | 75
 `month-nullable`    | boolean | allows the month to be null in a date field | false
-`secret`            | boolean | sets whether hide the characters input by the user | false | false
+`secret`            | boolean | sets whether hide the characters input by the user | false
 `show-time`         | boolean | sets whether to show inlcude time along with the date | true
 `upper-case`        | boolean | converts all characters to upper case | false
 `year-nullable`     | boolean | allows the year to be null in a date field | false
