@@ -19,7 +19,7 @@ import com.liferay.portal.model.PersistedModel;
 /**
  * The extended model interface for the Event service. Represents a row in the &quot;Event_Event&quot; database table, with each column mapped to a property of this class.
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventModel
  * @see com.nosester.portlet.eventlisting.model.impl.EventImpl
  * @see com.nosester.portlet.eventlisting.model.impl.EventModelImpl

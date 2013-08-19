@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Event_EventService" provider="java:RPC" style="rpc" use="encoded">
+		<typeMapping xmlns:ns="http://model.eventlisting.portlet.nosester.com" qname="ns:EventSoap" type="java:com.nosester.portlet.eventlisting.model.EventSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="addEvent" qname="operNS:addEvent" returnQName="addEventReturn" returnType="rtns:EventSoap" soapAction="">
+			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="event" type="tns:EventSoap"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="deleteEvent" qname="operNS:deleteEvent" returnQName="deleteEventReturn" returnType="rtns:EventSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="eventId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="delete" qname="operNS:delete" returnQName="deleteReturn" returnType="rtns:EventSoap" soapAction="">
+			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="event" type="tns:EventSoap"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="update" qname="operNS:update" returnQName="updateReturn" returnType="rtns:EventSoap" soapAction="">
+			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="event" type="tns:EventSoap"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addEvent delete deleteEvent update" />
+		<parameter name="className" value="com.nosester.portlet.eventlisting.service.http.EventServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.eventlisting.portlet.nosester.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EventServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EventServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Event_EventService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.eventlisting.portlet.nosester.com" />
+	</service>
+</deployment>

@@ -22,10 +22,12 @@ import com.nosester.portlet.eventlisting.model.Location;
 
 import java.io.Serializable;
 
+import java.util.Date;
+
 /**
  * The cache model class for representing Location in entity cache.
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see Location
  * @generated
  */
@@ -70,8 +72,20 @@ public class LocationCacheModel implements CacheModel<Location>, Serializable {
 		locationImpl.setCompanyId(companyId);
 		locationImpl.setGroupId(groupId);
 		locationImpl.setUserId(userId);
-		locationImpl.setCreateDate(createDate);
-		locationImpl.setModifiedDate(modifiedDate);
+
+		if (createDate == Long.MIN_VALUE) {
+			locationImpl.setCreateDate(null);
+		}
+		else {
+			locationImpl.setCreateDate(new Date(createDate));
+		}
+
+		if (modifiedDate == Long.MIN_VALUE) {
+			locationImpl.setModifiedDate(null);
+		}
+		else {
+			locationImpl.setModifiedDate(new Date(modifiedDate));
+		}
 
 		if (name == null) {
 			locationImpl.setName(StringPool.BLANK);

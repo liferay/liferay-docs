@@ -21,7 +21,7 @@ import com.liferay.portal.service.ServiceWrapper;
  * This class is a wrapper for {@link EventLocalService}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       EventLocalService
  * @generated
  */
@@ -265,6 +265,22 @@ public class EventLocalServiceWrapper implements EventLocalService,
 		return _eventLocalService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public com.nosester.portlet.eventlisting.model.Event addEvent(
+		java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _eventLocalService.addEvent(name, description, date, locationId,
+			serviceContext);
+	}
+
+	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
+		java.lang.String eventName, java.lang.String eventDescription,
+		java.lang.String locationName, int begin, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.findByEventNameEventDescriptionLocationName(eventName,
+			eventDescription, locationName, begin, end);
+	}
+
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> getEventsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
@@ -280,6 +296,14 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	public int getEventsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventLocalService.getEventsCountByGroupId(groupId);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _eventLocalService.updateEvent(eventId, name, description, date,
+			locationId, serviceContext);
 	}
 
 	/**

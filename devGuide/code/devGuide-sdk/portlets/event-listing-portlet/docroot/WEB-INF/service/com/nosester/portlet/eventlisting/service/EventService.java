@@ -29,7 +29,7 @@ import com.liferay.portal.service.InvokableService;
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventServiceUtil
  * @see com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl
  * @see com.nosester.portlet.eventlisting.service.impl.EventServiceImpl
@@ -63,13 +63,19 @@ public interface EventService extends BaseService, InvokableService {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
+	*/
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException;
+	public com.nosester.portlet.eventlisting.model.Event addEvent(
+		java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext);
 
 	public com.nosester.portlet.eventlisting.model.Event delete(
 		com.nosester.portlet.eventlisting.model.Event event)
@@ -79,4 +85,13 @@ public interface EventService extends BaseService, InvokableService {
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Event update(
+		com.nosester.portlet.eventlisting.model.Event event)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext);
 }

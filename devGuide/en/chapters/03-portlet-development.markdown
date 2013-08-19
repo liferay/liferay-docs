@@ -1282,7 +1282,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 ### Overriding Liferay portal translations [](id=lp-6-1-dgen03-overriding-liferay-portal-translations-0)
 
 If you want your translations available throughout the portal, or if you want to
-override an existing translation, refer to Chapter 6 of this guide, specifically
+override an existing translation, refer to Chapter 7 of this guide, specifically
 the *Overriding a Language.properties File* section. It describes how to use a
 hook to override existing Liferay translations. You can share your keys with
 other portlets, as well as override existing Liferay translations.  
@@ -1365,5 +1365,13 @@ information between them in a portlet. You've enhanced a portlet with multiple
 actions and have mapped a friendly URL to it. Lastly, you've found how easy it
 is to start localizing your portlets. You're really on a roll! 
 
-What better way to keep things rolling than to focus on your portal's overall
-look and feel using Liferay Themes! We'll cover Themes next. 
+Now that you know how to create portlets, you'll need to consider a few things,
+such as persisting your objects to a database, maintaining separatation between
+your persistence layer, business logic, and presentation layer, and allowing for
+flexible implementations. Lastly, you'll want the ability to publish your
+portlet's operations as services. So how do you address all of this? Hibernate
+probably comes to mind for persisting your data model, and Spring probably comes
+to mind with regards to supporting implementation flexibility. Sounds
+complicated, right? No need to worry! Liferay's Service Builder helps you build
+portlet services while hiding the complexities of using Spring and Hibernate
+under the hood. We'll cover Service Builder next. 

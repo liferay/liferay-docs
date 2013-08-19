@@ -13,8 +13,12 @@
 			<basic name="companyId" />
 			<basic name="groupId" />
 			<basic name="userId" />
-			<basic name="createDate" />
-			<basic name="modifiedDate" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
 			<basic name="name" />
 			<basic name="description" />
 			<basic name="date">
@@ -34,8 +38,12 @@
 			<basic name="companyId" />
 			<basic name="groupId" />
 			<basic name="userId" />
-			<basic name="createDate" />
-			<basic name="modifiedDate" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
 			<basic name="name" />
 			<basic name="description" />
 			<basic name="streetAddress" />

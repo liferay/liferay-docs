@@ -16,22 +16,25 @@ package com.nosester.portlet.eventlisting.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.util.PortalUtil;
 
+import com.nosester.portlet.eventlisting.service.ClpSerializer;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 
 import java.io.Serializable;
 
-import java.lang.reflect.Proxy;
+import java.lang.reflect.Method;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author jbloggs
+ * @author Joe Bloggs
  */
 public class LocationClp extends BaseModelImpl<Location> implements Location {
 	public LocationClp() {
@@ -107,13 +110,13 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 			setUserId(userId);
 		}
 
-		Long createDate = (Long)attributes.get("createDate");
+		Date createDate = (Date)attributes.get("createDate");
 
 		if (createDate != null) {
 			setCreateDate(createDate);
 		}
 
-		Long modifiedDate = (Long)attributes.get("modifiedDate");
+		Date modifiedDate = (Date)attributes.get("modifiedDate");
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
@@ -162,6 +165,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setLocationId(long locationId) {
 		_locationId = locationId;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setLocationId", long.class);
+
+				method.invoke(_locationRemoteModel, locationId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public long getCompanyId() {
@@ -170,6 +186,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setCompanyId(long companyId) {
 		_companyId = companyId;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCompanyId", long.class);
+
+				method.invoke(_locationRemoteModel, companyId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public long getGroupId() {
@@ -178,6 +207,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setGroupId(long groupId) {
 		_groupId = groupId;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setGroupId", long.class);
+
+				method.invoke(_locationRemoteModel, groupId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public long getUserId() {
@@ -186,6 +228,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setUserId(long userId) {
 		_userId = userId;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUserId", long.class);
+
+				method.invoke(_locationRemoteModel, userId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getUserUuid() throws SystemException {
@@ -196,20 +251,46 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 		_userUuid = userUuid;
 	}
 
-	public long getCreateDate() {
+	public Date getCreateDate() {
 		return _createDate;
 	}
 
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCreateDate", Date.class);
+
+				method.invoke(_locationRemoteModel, createDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
-	public long getModifiedDate() {
+	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setModifiedDate", Date.class);
+
+				method.invoke(_locationRemoteModel, modifiedDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getName() {
@@ -218,6 +299,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setName(String name) {
 		_name = name;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setName", String.class);
+
+				method.invoke(_locationRemoteModel, name);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getDescription() {
@@ -226,6 +320,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setDescription(String description) {
 		_description = description;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setDescription", String.class);
+
+				method.invoke(_locationRemoteModel, description);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getStreetAddress() {
@@ -234,6 +341,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setStreetAddress(String streetAddress) {
 		_streetAddress = streetAddress;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setStreetAddress", String.class);
+
+				method.invoke(_locationRemoteModel, streetAddress);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getCity() {
@@ -242,6 +362,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setCity(String city) {
 		_city = city;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCity", String.class);
+
+				method.invoke(_locationRemoteModel, city);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getStateOrProvince() {
@@ -250,6 +383,20 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setStateOrProvince(String stateOrProvince) {
 		_stateOrProvince = stateOrProvince;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setStateOrProvince",
+						String.class);
+
+				method.invoke(_locationRemoteModel, stateOrProvince);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public String getCountry() {
@@ -258,6 +405,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setCountry(String country) {
 		_country = country;
+
+		if (_locationRemoteModel != null) {
+			try {
+				Class<?> clazz = _locationRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCountry", String.class);
+
+				method.invoke(_locationRemoteModel, country);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
 	}
 
 	public BaseModel<?> getLocationRemoteModel() {
@@ -266,6 +426,47 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	public void setLocationRemoteModel(BaseModel<?> locationRemoteModel) {
 		_locationRemoteModel = locationRemoteModel;
+	}
+
+	public Object invokeOnRemoteModel(String methodName,
+		Class<?>[] parameterTypes, Object[] parameterValues)
+		throws Exception {
+		Object[] remoteParameterValues = new Object[parameterValues.length];
+
+		for (int i = 0; i < parameterValues.length; i++) {
+			if (parameterValues[i] != null) {
+				remoteParameterValues[i] = ClpSerializer.translateInput(parameterValues[i]);
+			}
+		}
+
+		Class<?> remoteModelClass = _locationRemoteModel.getClass();
+
+		ClassLoader remoteModelClassLoader = remoteModelClass.getClassLoader();
+
+		Class<?>[] remoteParameterTypes = new Class[parameterTypes.length];
+
+		for (int i = 0; i < parameterTypes.length; i++) {
+			if (parameterTypes[i].isPrimitive()) {
+				remoteParameterTypes[i] = parameterTypes[i];
+			}
+			else {
+				String parameterTypeName = parameterTypes[i].getName();
+
+				remoteParameterTypes[i] = remoteModelClassLoader.loadClass(parameterTypeName);
+			}
+		}
+
+		Method method = remoteModelClass.getMethod(methodName,
+				remoteParameterTypes);
+
+		Object returnValue = method.invoke(_locationRemoteModel,
+				remoteParameterValues);
+
+		if (returnValue != null) {
+			returnValue = ClpSerializer.translateOutput(returnValue);
+		}
+
+		return returnValue;
 	}
 
 	public void persist() throws SystemException {
@@ -279,8 +480,12 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	@Override
 	public Location toEscapedModel() {
-		return (Location)Proxy.newProxyInstance(Location.class.getClassLoader(),
+		return (Location)ProxyUtil.newProxyInstance(Location.class.getClassLoader(),
 			new Class[] { Location.class }, new AutoEscapeBeanHandler(this));
+	}
+
+	public Location toUnescapedModel() {
+		return this;
 	}
 
 	@Override
@@ -317,18 +522,15 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof LocationClp)) {
 			return false;
 		}
 
-		LocationClp location = null;
-
-		try {
-			location = (LocationClp)obj;
-		}
-		catch (ClassCastException cce) {
-			return false;
-		}
+		LocationClp location = (LocationClp)obj;
 
 		long primaryKey = location.getPrimaryKey();
 
@@ -444,8 +646,8 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 	private long _groupId;
 	private long _userId;
 	private String _userUuid;
-	private long _createDate;
-	private long _modifiedDate;
+	private Date _createDate;
+	private Date _modifiedDate;
 	private String _name;
 	private String _description;
 	private String _streetAddress;

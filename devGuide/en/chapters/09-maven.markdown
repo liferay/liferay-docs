@@ -165,7 +165,7 @@ To create a repository using Nexus, follow these steps:
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-    ![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
+    ![Figure 9.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
     ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
@@ -331,7 +331,7 @@ Portal. Just follow these steps:
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
     field and select the *Development* value in the second field.
 
-    ![Figure 8.2: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
+    ![Figure 9.2: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
@@ -346,7 +346,7 @@ Get the artifacts for Liferay CE from SourceForge by following these steps:
     if you need Maven artifacts for Liferay Portal 6.1.2 CE GA3, select version
     *6.1.2 GA3*. 
 
-    ![Figure 8.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
+    ![Figure 9.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3.  Select the appropriate zip file. The zip files use naming convention
     `liferay-portal-maven-[version]-[date].zip`. 
@@ -558,12 +558,12 @@ Here's how you do it:
     To verify your artifacts are deployed, navigate to the *Repositories* page
     of your Nexus OSS server and select your repository.
 
-    ![Figure 8.4: You can easily navigate to your Liferay release repository in Nexus.](../../images/maven-select-repository2.png)
+    ![Figure 9.4: You can easily navigate to your Liferay release repository in Nexus.](../../images/maven-select-repository2.png)
 
     Notice a window appears below displaying the Liferay artifacts now deployed
     to your repository.
 
-![Figure 8.5: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
+![Figure 9.5: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
@@ -818,7 +818,7 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 
     The snapshot below illustrates choosing the archetype version: 
 
-    ![Figure 8.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
+    ![Figure 9.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
 
 6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
     coordinates (properties) of your project. Here are some examples: 
@@ -830,7 +830,7 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 8.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 9.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -850,7 +850,7 @@ plugin is installed there.
 
 ---
     
-![Figure 8.8: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
+![Figure 9.8: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
 
 Following these steps, you can use Archetype to generate all your Liferay
 plugins! 
@@ -952,7 +952,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 8.9: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 9.9: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
@@ -1181,7 +1181,7 @@ placed in the *target* directory. Its path is
 
 #### More Information  [](id=lp-6-1-dgen08-more-information--0)
 
-For more information on Liferay themes and its settings, see Chapter 4,
+For more information on Liferay themes and its settings, see Chapter 5,
 [Creating Liferay
 Themes](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7).
 
@@ -1251,7 +1251,7 @@ Plugins with Maven* section.
 
 #### More Information [](id=liferay-6-1-maven-hook-more-info)
 
-For detailed information on creating hooks, see Chapter 6,
+For detailed information on creating hooks, see Chapter 7,
 [Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4). 
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
@@ -1331,7 +1331,7 @@ the *Deploying Liferay Plugins with Maven* section.
 
 #### More Information [](id=liferay-6-1-maven-layout-template-more-info)
 
-For detailed information on creating layout templates, see Chapter 5, [Creating
+For detailed information on creating layout templates, see Chapter 6, [Creating
 Liferay Layout
 Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0). 
 

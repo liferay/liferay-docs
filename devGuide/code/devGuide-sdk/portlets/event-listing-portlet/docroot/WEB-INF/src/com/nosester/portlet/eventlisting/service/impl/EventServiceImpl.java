@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -14,12 +14,15 @@
 
 package com.nosester.portlet.eventlisting.service.impl;
 
-import java.util.Date;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
+
 import com.nosester.portlet.eventlisting.model.Event;
+import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl;
+
+import java.util.Date;
 
 /**
  * The implementation of the event remote service.
@@ -36,40 +39,50 @@ import com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl;
  * @see com.nosester.portlet.eventlisting.service.EventServiceUtil
  */
 public class EventServiceImpl extends EventServiceBaseImpl {
-	/*
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
 	 */
-	
+
 	public Event addEvent(Event event) throws SystemException {
-		
+
 		long eventId = counterLocalService.increment(Event.class.getName());
 		event.setEventId(eventId);
-		
+
 		Date now = new Date();
-		event.setCreateDate(now.getTime());
-		event.setModifiedDate(now.getTime());
-		
+		event.setCreateDate(now);
+		event.setModifiedDate(now);
+
 		return eventLocalService.addEvent(event);
 	}
-	
-	public Event update(Event event) throws SystemException {
-		
-		Date now = new Date();
-		event.setModifiedDate(now.getTime());
-		
-		return eventLocalService.updateEvent(event);
-	}	
-	
+
+	public Event addEvent(String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+
+		return EventLocalServiceUtil.addEvent(name, description, date, locationId, serviceContext);
+	}
+
 	public Event delete(Event event) throws SystemException {
-		
+
 		return eventLocalService.deleteEvent(event);
 	}
-	
+
 	public Event deleteEvent(long eventId) throws PortalException, SystemException {
-		
+
 		return eventLocalService.deleteEvent(eventId);
 	}
-	
+
+	public Event update(Event event) throws SystemException {
+
+		Date now = new Date();
+		event.setModifiedDate(now);
+
+		return eventLocalService.updateEvent(event);
+	}
+
+	public Event updateEvent(long eventId, String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+
+		return EventLocalServiceUtil.updateEvent(eventId, name, description, date, locationId, serviceContext);
+	}
+
 }
