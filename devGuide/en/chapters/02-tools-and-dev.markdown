@@ -632,7 +632,7 @@ easily swap your service layer and your application will still function as it's
 supposed to.
 
 Service Builder is a model-driven code generation tool that lets you define
-custom object models called entities.  Service Builder reads the contents of a
+custom object models called entities. Service Builder reads the contents of a
 file you create called `service.xml` and automatically creates your
 application's model, persistence, and service layers, freeing you to focus on
 the higher level aspects of your application's code. 
@@ -645,17 +645,18 @@ and your efforts will be duplicated with each application you write. Service
 Builder puts the generated code in a service `JAR` file inside of one plugin,
 but it can be easily shared among all portlets. 
 
-<!--I think my intro bneeds work. I'm trying to distill Ricsh's work on the
+<!--I think my intro needs work. I'm trying to distill Rich's work on the
 service builder chapter and need to continue the process. -->
 
 To allow you more than one way to view and edit the `service.xml file`, Service
 Builder gives you three modes to work in: 
 
-- Overview mode gives you an easy to use graphical interface in Liferay IDE
-  where you can add to and edit the `service.xml` file.
+- Overview mode provides an easy to use graphical interface in Liferay IDE
+  where you can add to and edit the `service.xml` file. Overview mode also
+gives you a *Build Services* button to generate the service layer. 
 
 - Diagram mode gives you a visualization of the relationships between service
-  entities, and it's often helpful to create your entities using diagram mode.
+  entities; it's often helpful to create your entities using diagram mode.
 
 - Source mode displays the raw XML content of the `service.xml` file.
  
@@ -675,6 +676,22 @@ show Diagram mode - see images/service-builder-relate-entities.png
 -Jim
 -->
 
+With Liferay IDE, generating your service layer is easy. First you'll create
+`service.xml`, by selecting your project (`event-listing-portlet` if you're
+following along) in the Package Explorer and then select *File* &rarr; *New*
+&rarr; *Liferay Service Builder*. Service Builder creates a `service.xml` file
+in your `docroot/WEB-INF/src` folder and displays the file in overview mode.
+
+Our Service Builder chapter of this guide will lead you through filling out
+`service.xml` to define the following:
+
+- Global service information
+- Service entities
+- The attriubtes for each service entity
+- Relationships between service entities
+- Ordering of service entities instances
+- Service entity finder methods
+
 In the Service Builder chapter of this guide we'll show you how two custom
 portlets, the Events Listing Portlet and the Location Listing Portlet, can be
 developed more efficiently and modularly by using Service Builder. We'll
@@ -686,9 +703,20 @@ Serivce Builder.
 
 ![Figure 2.x: Service Builder's overview mode and *Build Services* button.](../../images/service-builder-relate-entities.png)
 
+Once you've generated your `service.xml`, you can build services. In Overview
+mode of `service.xml`, there's a button available at the top right hand corner
+of the window. The button looks like a document with the numerical sequence
+*010* in front of it. Alternatively, right click on your project and select
+*Liferay* &rarr; *Build Services*. You'll see a plethora of new Java classes
+under`docroot/WEB-INF/src` inyour project that Service Builder generated for
+you. Now get out there and write your business logic, but do checkout o9ur
+Service Builder chapter for a thoruough description of its capabilities. 
 
 <!-- Need to add a screenshot and talk to it. - Jim -->
 
+Now you know how to create projects and plugins from scratch, and you know
+about Service Builder's nearly-magical time-saving capabilities. Let's learn
+how to import existing projects into Liferay IDE.
 
 ### Importing Existing Projects into Liferay IDE 
 
