@@ -696,7 +696,7 @@ are automatically copied to sites based on that template.
 
 ---
 
-![Tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web
+![tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web
 content to many sites and ensure modifications are applied to all, don't use
 site template content for that purpose. Instead, place the content in the global
 scope and then reference it from a *Web Content Display* application in each
@@ -720,7 +720,7 @@ associated with your template.
 The following figure displays the form shown when editing the *Community Site*
 template's settings:
 
-![Figure 3.13: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
+![Figure 3.11: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
 
 By default, the following site templates are provided:
 
@@ -773,7 +773,7 @@ when you clicked *View Pages*. Changes to site templates are automatically saved
 as you make them, so you don't need to return to the Site Templates page of the
 Control Panel and select *Save*.
 
-![Figure 3.14: You can see the name of the site template you're currently editing.](../../images/editing-site-template.png)
+![Figure 3.12: You can see the name of the site template you're currently editing.](../../images/editing-site-template.png)
 
 Next, let's use our site template to create our Engineering, Marketing and Legal
 sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
@@ -872,7 +872,7 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.15: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
+![Figure 3.13: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
 add new page templates. By default, three sample page templates are provided:
@@ -916,7 +916,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
+![Figure 3.14: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
@@ -926,7 +926,7 @@ you're on your desired site and navigate to *Admin* &rarr; *Site
 Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name,
 select your template from the drop down menu, and click *Add Page* to finish.
 
-![Figure 3.17: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
+![Figure 3.15: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -994,7 +994,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.18: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Very few translation options available at present time (6) -->
@@ -1006,7 +1006,7 @@ you to easily compare the original with the new translation. Once you are done
 with the translation, click *Save* and the translation is added to the list of
 *Available Translations*.
 
-![Figure 3.19: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Unable to compare translations at this time -- window sizing issues -->
@@ -1057,7 +1057,7 @@ information. The scheduler is built right into the form your users access to add
 web content. Specifically, it can be found in the right panel listed with
 several other configurable settings.
 
-![Figure 3.20: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
+![Figure 3.18: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1078,7 +1078,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging Page Publication
+## Staging Page Publication  
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -1179,7 +1179,7 @@ site. Then click on *Site Settings* in the left menu and then on *Staging*
 listed under the Advanced tab. Select *Remote Live* under Staging Type and
 additional options appear.
 
-![Figure 3.21: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.19: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Skipping Staging images at present time. Still a lot of development work to
@@ -1272,7 +1272,7 @@ it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ster site and then click *Save*.
 
-![Figure 3.22: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1304,7 +1304,7 @@ options are restored and you can access some new options related to staging. If
 you're following along with the Nose-ster example, navigate back to the News and
 Events page and click on *Staging* to get your page editing capabilities back.
 
-![Figure 3.23: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.21: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1353,7 +1353,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1369,7 +1369,7 @@ displayed in a Web Content Display portlet on one of your pages and then click
 popup, expand the Applications heading and scroll down until you see the section
 for Web Content.
 
-![Figure 3.25: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.23: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1475,7 +1475,7 @@ For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.26: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.24: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1506,13 +1506,11 @@ while opening things up for individual sites that don't need such strict
 controls. Liferay's staging environment is extremely easy to use and makes
 maintaining a content-rich web site a snap.
 
-Liferay 6.0 introduced a new feature to the permissions system called teams.
 Let's examine teams next.
 
 ## Creating Teams for Advanced Site Membership Management  
 
-Teams don't appear as a link in the Control Panel because they exist *within*
-sites. Teams allow site administrators a greater degree of flexibility than was
+Teams allow site administrators a greater degree of flexibility than was
 possible using just user groups and roles. They allow site administrators to
 create various sets of users and permissions for site-specific functions. Teams
 are the preferred method for collecting permissions within a single site.
@@ -1524,45 +1522,43 @@ permissions defined by it would only apply within the scope of a designated
 site. Furthermore, team members, unlike user group members, are guaranteed to be
 members of the desired site.
 
-To create a team within a site, first navigate to the *Control Panel &rarr;
-Sites* page and then select *Actions &rarr; Manage Memberships* for the site
-within which you want to create a team. Finally, click *View Teams* and
-click the *Add Team* button.
+To create a team within a site, first navigate to the Site Administration page
+of your site and select *Users* &rarr; *Site Teams*. It's important to note that
+configuring other site membership groupings, such as *Users*, *Organizations*,
+and *User Groups* can be found in the *Site Memberships* portlet, which is also
+located in the Users tab. You can visit the *Management* chapter for more
+information on how these site memberships. Finally, click the *Add Team* button.
 
-![Figure 3.27: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
+![Figure 3.25: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
 click on *Actions &rarr; Assign Members*.
 
-Permission management for teams is handled at the individual portlet level,
-using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet
-itself. Remember the portlet options link is the wrench symbol at the top of a
-portlet. This enables users who wouldn't have access to all of the necessary
-options in the Control Panel to manage permissions through teams.
+Permission management for teams is configured by navigating to *Actions* &rarr;
+*Permissions* for your individual site. Setting permissions for the team assigns
+every member of the team with equal permissions. Only administrators with the
+ability to edit/manage the team have the ability to manage team permissions.
 
-To give a team access to a particular portlet function, access the *Permissions*
-tab of a portlet residing on a page, check the boxes corresponding to
-permissions you want to assign to the teams, then click *Save*. That's it! Now
-your team is ready to perform their functions. Next, let's look at how to
-configure Liferay for mobile devices.
+That's it! Now your team is ready to perform their functions. Next, let's look
+at how to configure Liferay for mobile devices.
 
 ## Displaying Site Pages to Mobile Devices  
 
-Mobile device rules allow you to configure sets of rules to alter the behavior
-of the portal based on the device being used to access Liferay. The proportion
-of mobile device users browsing the web has been steadily increasing, so it's
-important to be able to handle different kinds of devices appropriately. For
-instance, you can configure the look and feel of Liferay pages accessed by
+Mobile device families allow you to configure sets of rules to alter the
+behavior of the portal based on the device being used to access Liferay. The
+proportion of mobile device users browsing the web has been steadily increasing,
+so it's important to be able to handle different kinds of devices appropriately.
+For instance, you can configure the look and feel of Liferay pages accessed by
 smartphone or tablet users differently from those accessed by PC users.
 
-Both sites and individual pages can be configured with any number of rule
-groups. A rule group is designed to describe a group of devices; think of a rule
-group as a mobile device family. It can contain one or more rules that describe
-a category of devices, such as all Android devices or all iOS tablets. You can
-define as many rules in a rule group as you need to classify all the devices for
-which you'd like to define actions. Rule groups can be prioritized to determine
-which one applies to a given page request. 
+Both sites and individual pages can be configured with any number of mobile
+device families. A family is designed to describe a group of devices. It can
+contain one or more rules that describe a category of devices, such as all
+Android devices or all iOS tablets. You can define as many rules in a family as
+you need to classify all the devices for which you'd like to define actions.
+Families can be prioritized to determine which one applies to a given page
+request.
 
 In order to configure mobile device rules, you need a way to find out the
 characteristics of the device. While some of the characteristics are provided by
@@ -1581,9 +1577,6 @@ you can still set up mobile device rules. They won't, however, be effective
 until a database is deployed, because the portal won't have enough information
 about the devices being used to make page requests.
 
-<!-- Marketplace info below needs to be updated when Marketplace is available
-for 6.2 testing. -->
-
 To configure mobile device rules, you must install the Device Recognition
 Provider plugin. This plugin uses the WURFL database to enable Liferay to detect
 which mobile device or operating system is being used for any given request. To
@@ -1601,59 +1594,57 @@ Internet, an error appears in your log: `SLF4J: Failed to load class
 downloads device information from the web. You can provide the same information
 to WURFL manually by downloading the SLF4J distribution from
 [http://www.slf4j.org/download.html](http://www.slf4j.org/download.html),
-unzipping the resulting file, copying `slf4j-log4j12.jar` to
+unzipping the resulting file, copying `slf4j-log4j12-<version>.jar` to
 `[WEB_APP_HOME]/wurfl-web/WEB-INF/lib` folder, and restarting your Liferay
 instance. On some application servers, you'll need to add this .jar file to the
 `wurfl-web.war` file first (in the directory noted above) before deploying the
 file to your server. 
 
-You can access the Mobile Device Rules administrative page from the Content
-section of the Control Panel. Select the appropriate scope using the context
-menu selector so your rule groups are available where you expect them to be. The
-Mobile Device Rules administrative page displays a list of defined rule groups
-and lets you add more. To add rules to a rule group, select *Actions*
-&rarr; *Manage Rules*, or click on a rule group to edit it, and then click
-the *Manage Rules* link.
+You can access the Mobile Device Families administrative page from the
+Configuration section of Site Administration. Make sure you're on the
+appropriate site before adding mobile device families via Site Administration.
+You can also add families for all sites by navigating to the Control Panel
+&rarr; *Sites* &rarr; *Global*. The Mobile Device Families administrative page
+displays a list of defined families and lets you add more. To add rules to a
+family, select *Actions* &rarr; *Manage Classification Rules*, or click on a
+family to edit it, and then click the *Manage Classification Rules* link.
 
-![Figure 3.28: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.26: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
 
-The rules defined for a rule group, along with the priorities of the rule groups
-selected for a particular site or page, determine which rule group's actions are
-applied to a given request. From the Manage Rules page for a specific rule set,
-you can add a rule by specifying a rule type. Remember that you can add as many
-rules to a rule group as you need in order to classify the devices on which
-you'd like to take actions. Note that, by default, only the Simple Rule type is
-available.  The rules are designed, however, to be extensible, and additional
-rule types can be added by your developers. Once added, you can edit the rule to
-specify a device type and operating system.
+The rules defined for a family, along with the priorities of the families
+selected for a particular site or page, determine which family's actions are
+applied to a given request. From the Manage Classification Rules page for a
+specific rule set, you can add a rule by specifying an operating system, rule
+type, physical screen size, and screen resolution. Remember that you can add as
+many rules to a family as you need in order to classify the devices on which
+you'd like to take actions. You'll notice after saving the classification rule
+that it's characterized as a *Simple Rule*. By default, only the Simple Rule
+type is available. The rules are designed to be extensible, and additional rule
+types can be added by your developers.
 
-![Figure 3.29: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.27: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
-<!-- Needs to be updated for 6.2 -->
-<!-- Unable to deploy Device Recognition plugin at time of image updating. -->
+Once you've created some mobile device families and added some rules to them,
+you'll be ready to set up some actions. The actions defined for a family
+determine what happens to a particular request when the device is detected and
+the family has been found to apply.
 
-Once you've created some mobile device rule groups and added some rules to them,
-you'll be ready to set up some actions. The actions defined for a rule group
-determine what happens to a particular request when the device is detected
-and the rule group has been found to apply.
+You can add actions to a family from the Site Pages page of Site Administration.
+Select either the public or private pages and then look for the *Mobile Device
+Rules* link in the right-hand menu. Use the *Select Device Family* button to
+select families to be applied either to a site or to a single page. If you
+select the page group itself from the left-hand menu, the selected family
+applies to all the pages of the site by default. If, however, you select an
+individual page and then click the *Select Device Family* button, the families
+apply only to that page. You can select multiple families for a particular site
+or page and order them by priority. The families are checked in decreasing order
+of priority: the actions defined by the first family that applies are executed.
 
-You can add actions to a rule group from the Site Pages page of Site
-Administration. Select either the public or private pages and then look for the
-*Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group*
-button to select rule groups to be applied either to a site or to a single page.
-If you select the page group itself from the left-hand menu, the selected rule
-group applies to all the pages of the site by default. If, however, you select
-an individual page and then click the *Select Rule Group* button, the rule
-groups apply only to that page. You can select multiple rule groups for a
-particular site or page and order them by priority. The rule groups are checked
-in decreasing order of priority: the actions defined by the first rule group
-that applies are executed.
-
-![Figure 3.30: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
+![Figure 3.28: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
-actions that can be configured for mobile rule groups: layout template
+actions that can be configured for mobile families: layout template
 modifications, theme modifications, URL redirects, and site redirects. Layout
 template modifications let you change the way portlets are arranged on pages
 delivered to mobile devices, and themes modifications let you select a specific
@@ -1668,17 +1659,17 @@ actions in addition to the four actions provided by default.
 To review, if you'd like to configure an action or actions that take place when
 mobile device requests are received, take the following steps:
 
-1. Create a mobile device rule group to represent the family of devices for
-   which to define an action or actions.
+1. Create a mobile device family to represent the group of devices for which to
+   define an action or actions.
 
-2. Define one or more rules for your rule group that describe the family of
-   devices represented by your rule group.
+2. Define one or more rules for your family that describe the group of
+   devices represented by your family.
 
-3. Apply your rule group to an entire page set of a site (all the public pages
-   of a site or all the private pages) or to a single page.
+3. Apply your family to an entire page set of a site (all the public pages of a
+   site or all the private pages) or to a single page.
 
-4. Define one or more actions for your rule group that describe how requests
-   should be handled.
+4. Define one or more actions for your family that describe how requests should
+   be handled.
 
 To see how this might work in practice, let's discuss a few examples of how you
 can use mobile device rules. First, suppose you have a separate version of a
@@ -1695,54 +1686,54 @@ Page* button. Now our Android/Bada Liferay site has a public Welcome page just
 like our default Liferay site.
 
 Next, select *Liferay* in the *My Sites* tab of the Dockbar, navigate to Site
-Administration, and click on *Mobile Device Rules*. Click on *Add Rule Group*,
-enter the name *Android and Bada Mobile Phones*, and click *Save*. You'll see
-the message, *No rules are configured for this rule group*.
+Administration &rarr; Configuration, and click on *Mobile Device Families*.
+Click on *Add Device Family*, enter the name *Android and Bada Mobile Phones*, and
+click *Save*. You'll see the message, *No rules are configured for this rule
+group*.
 
-Click the *Manage Rules* link and we'll configure our rule group to apply only
-to mobile phones running Android or Bada. Click *Add Rule*, enter *Rule 1* for
-the name and select *Simple Rule* for the type, then click *Save*. Then click on
-the rule to edit it or click *Actions* &rarr; *Edit*. Under OS, select *Android*
-and *Bada OS* (hold down Control to make multiple selections), select *False*
-under Tablet since we want our rule group to apply only to mobile phones, and
-click *Save*. Now we just need to define the redirect action for our rule group.
-Navigate back to *Site Administration* &rarr; *Site Pages* and click on *Mobile
+Click the *Manage Classification Rules* link and we'll configure our rule group
+to apply only to mobile phones running Android or Bada. Click *Add
+Classification Rule*, enter *Rule 1* for the name. Under Operating System,
+select *Android* and *Bada OS* (hold down Control to make multiple selections),
+select *Other Devices* under Tablet since we want our family to apply only to
+mobile phones, and click *Save*. Now we just need to define the redirect action
+for our family. Navigate to *Pages* &rarr; *Site Pages* and click on *Mobile
 Device Rules* in the navigation menu to the right.
 
-![Figure 3.31: To apply a mobile device rule group to a page set of a site, click on *Mobile Device Rules*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.29: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
-Click *Select Rule Group* and then click the *Android and Bada Mobile Phones*
-rule group that you configured. Once you've selected your rule group, click 
-*Mobile Rule Groups* again and click either on your rule group or *Actions*
-&rarr; *Manage Actions* next to it. Then click *Add Action*, enter the name
-*Android/Bada Liferay Redirect*, and select *Site Redirect* under Type.  Under
-the Site dropdown menu that appears, select *Android/Bada Liferay* and under the
-Page dropdown menu that appears, select the *Welcome* page that you created
-earlier. Lastly, click *Save*. That's it! Now Android and Bada mobile phone
-users are redirected to the Android/Bada Liferay site from the Liferay site. 
+Click *Select Device Family* and then click the *Android and Bada Mobile Phones*
+device family that you configured. Once you've selected your device family,
+click on your device family or *Actions* &rarr; *Manage Actions* next to it.
+Then click *Add Action*, enter the name *Android/Bada Liferay Redirect*, and
+select *Redirect to Site* under Type. Under the Site dropdown menu that appears,
+select *Android/Bada Liferay* and under the Page dropdown menu that appears,
+select the *Welcome* page that you created earlier. Lastly, click *Save*. That's
+it! Now Android and Bada mobile phone users are redirected to the Android/Bada
+Liferay site from the Liferay site. 
 
 Let's look at one more example of using mobile device rules before we move on.
 Suppose you'd like to create another rule so that when a site is accessed by an
 Android or iOS tablet, a different layout is used. To set this up, we need to
 follow the same four steps described above. First, make sure you're on the
 Liferay site by checking in the My Sites tab of the Dockbar. Then navigate to
-the Mobile Device Rules page of Site Administration. Add a new rule group called
-*Android and iOS Tablets*. Add a simple rule called *Rule 1* to this rule group.
-As with the previous example, we only need one rule to describe our device
-family. Edit *Rule 1* and select *Android and iPhone OS* under the OS heading
-and *True* under the Tablet heading, then click *Save*.
+the Mobile Device Families page of Site Administration. Add a new device family
+called *Android and iOS Tablets*. Add a classification rule called *Rule 1*,
+select *Android and iPhone OS* under the *Operating System heading*, select
+*Tablets* under the *Device Type* heading, then click *Save*. As with the
+previous example, we only need one rule to describe our device family.
 
 Next, click on *Site Pages* in Site Administration, select *Mobile Device
-Rules*, and select the *Android and iOS Tablets* rule group. Notice that you've
-now selected two rule groups for the Liferay site's public pages and they've
-been assigned priorities. If a device making a request belongs to both of the
-device families represented by the rule groups, the priority of the rule groups
-determines which rule group's actions are executed. Note that in our example,
-the first rule group contains only mobile phones and the second rule group
-contains only tablets, so no devices can belong to both rule groups. Now we just
-need to define an action for our Android and iOS Tablets rule group to use a
-different layout: On the Site Pages page of Site Administration, click on
-*Mobile Device rules*, and then on *Actions* &rarr; *Manage Actions* next to
+Rules*, and select the *Android and iOS Tablets* device family. Notice that
+you've now selected two rule groups for the Liferay site's public pages and
+they've been assigned priorities. If a device making a request belongs to both
+of the device families represented by the rule groups, the priority of the rule
+groups determines which rule group's actions are executed. Note that in our
+example, the first rule group contains only mobile phones and the second rule
+group contains only tablets, so no devices can belong to both rule groups. Now
+we just need to define an action for our Android and iOS Tablets rule group to
+use a different layout: On the Site Pages page of Site Administration, click on
+*Mobile Device Rules*, and then on *Actions* &rarr; *Manage Actions* next to
 Android and iOS Tablets. Click on *Add Action*, enter the name *Layout Template
 Modification*, and select the *Layout Template Modification* action type.
 Lastly, select the *1 Column* layout template (or whichever one you like) and
