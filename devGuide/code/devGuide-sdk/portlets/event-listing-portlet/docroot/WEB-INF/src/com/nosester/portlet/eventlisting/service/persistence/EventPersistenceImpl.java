@@ -14,8 +14,6 @@
 
 package com.nosester.portlet.eventlisting.service.persistence;
 
-import com.liferay.portal.NoSuchModelException;
-import com.liferay.portal.kernel.bean.BeanReference;
 import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
@@ -32,14 +30,13 @@ import com.liferay.portal.kernel.util.InstanceFactory;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.PropsKeys;
 import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.kernel.util.SetUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
+import com.liferay.portal.kernel.util.UnmodifiableList;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.ModelListener;
-import com.liferay.portal.service.persistence.BatchSessionUtil;
-import com.liferay.portal.service.persistence.ResourcePersistence;
-import com.liferay.portal.service.persistence.UserPersistence;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 
 import com.nosester.portlet.eventlisting.NoSuchEventException;
@@ -52,6 +49,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The persistence implementation for the event service.
@@ -77,25 +75,6 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 		".List1";
 	public static final String FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List2";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GROUPID = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByGroupId",
-			new String[] {
-				Long.class.getName(),
-				
-			"java.lang.Integer", "java.lang.Integer",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID =
-		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByGroupId",
-			new String[] { Long.class.getName() },
-			EventModelImpl.GROUPID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_GROUPID = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByGroupId",
-			new String[] { Long.class.getName() });
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
 			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
@@ -105,352 +84,26 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
 			EventModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
-
-	/**
-	 * Caches the event in the entity cache if it is enabled.
-	 *
-	 * @param event the event
-	 */
-	public void cacheResult(Event event) {
-		EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventImpl.class, event.getPrimaryKey(), event);
-
-		event.resetOriginalValues();
-	}
-
-	/**
-	 * Caches the events in the entity cache if it is enabled.
-	 *
-	 * @param events the events
-	 */
-	public void cacheResult(List<Event> events) {
-		for (Event event : events) {
-			if (EntityCacheUtil.getResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-						EventImpl.class, event.getPrimaryKey()) == null) {
-				cacheResult(event);
-			}
-			else {
-				event.resetOriginalValues();
-			}
-		}
-	}
-
-	/**
-	 * Clears the cache for all events.
-	 *
-	 * <p>
-	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
-	 * </p>
-	 */
-	@Override
-	public void clearCache() {
-		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(EventImpl.class.getName());
-		}
-
-		EntityCacheUtil.clearCache(EventImpl.class.getName());
-
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
-	}
-
-	/**
-	 * Clears the cache for the event.
-	 *
-	 * <p>
-	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
-	 * </p>
-	 */
-	@Override
-	public void clearCache(Event event) {
-		EntityCacheUtil.removeResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventImpl.class, event.getPrimaryKey());
-
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
-	}
-
-	@Override
-	public void clearCache(List<Event> events) {
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
-
-		for (Event event : events) {
-			EntityCacheUtil.removeResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-				EventImpl.class, event.getPrimaryKey());
-		}
-	}
-
-	/**
-	 * Creates a new event with the primary key. Does not add the event to the database.
-	 *
-	 * @param eventId the primary key for the new event
-	 * @return the new event
-	 */
-	public Event create(long eventId) {
-		Event event = new EventImpl();
-
-		event.setNew(true);
-		event.setPrimaryKey(eventId);
-
-		return event;
-	}
-
-	/**
-	 * Removes the event with the primary key from the database. Also notifies the appropriate model listeners.
-	 *
-	 * @param eventId the primary key of the event
-	 * @return the event that was removed
-	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Event remove(long eventId)
-		throws NoSuchEventException, SystemException {
-		return remove(Long.valueOf(eventId));
-	}
-
-	/**
-	 * Removes the event with the primary key from the database. Also notifies the appropriate model listeners.
-	 *
-	 * @param primaryKey the primary key of the event
-	 * @return the event that was removed
-	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public Event remove(Serializable primaryKey)
-		throws NoSuchEventException, SystemException {
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			Event event = (Event)session.get(EventImpl.class, primaryKey);
-
-			if (event == null) {
-				if (_log.isWarnEnabled()) {
-					_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
-				}
-
-				throw new NoSuchEventException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
-					primaryKey);
-			}
-
-			return remove(event);
-		}
-		catch (NoSuchEventException nsee) {
-			throw nsee;
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-	}
-
-	@Override
-	protected Event removeImpl(Event event) throws SystemException {
-		event = toUnwrappedModel(event);
-
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			BatchSessionUtil.delete(session, event);
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-
-		clearCache(event);
-
-		return event;
-	}
-
-	@Override
-	public Event updateImpl(
-		com.nosester.portlet.eventlisting.model.Event event, boolean merge)
-		throws SystemException {
-		event = toUnwrappedModel(event);
-
-		boolean isNew = event.isNew();
-
-		EventModelImpl eventModelImpl = (EventModelImpl)event;
-
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			BatchSessionUtil.update(session, event, merge);
-
-			event.setNew(false);
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-
-		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
-
-		if (isNew || !EventModelImpl.COLUMN_BITMASK_ENABLED) {
-			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
-		}
-
-		else {
-			if ((eventModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID.getColumnBitmask()) != 0) {
-				Object[] args = new Object[] {
-						Long.valueOf(eventModelImpl.getOriginalGroupId())
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GROUPID, args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID,
-					args);
-
-				args = new Object[] { Long.valueOf(eventModelImpl.getGroupId()) };
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GROUPID, args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID,
-					args);
-			}
-		}
-
-		EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-			EventImpl.class, event.getPrimaryKey(), event);
-
-		return event;
-	}
-
-	protected Event toUnwrappedModel(Event event) {
-		if (event instanceof EventImpl) {
-			return event;
-		}
-
-		EventImpl eventImpl = new EventImpl();
-
-		eventImpl.setNew(event.isNew());
-		eventImpl.setPrimaryKey(event.getPrimaryKey());
-
-		eventImpl.setEventId(event.getEventId());
-		eventImpl.setCompanyId(event.getCompanyId());
-		eventImpl.setGroupId(event.getGroupId());
-		eventImpl.setUserId(event.getUserId());
-		eventImpl.setCreateDate(event.getCreateDate());
-		eventImpl.setModifiedDate(event.getModifiedDate());
-		eventImpl.setName(event.getName());
-		eventImpl.setDescription(event.getDescription());
-		eventImpl.setDate(event.getDate());
-		eventImpl.setLocationId(event.getLocationId());
-
-		return eventImpl;
-	}
-
-	/**
-	 * Returns the event with the primary key or throws a {@link com.liferay.portal.NoSuchModelException} if it could not be found.
-	 *
-	 * @param primaryKey the primary key of the event
-	 * @return the event
-	 * @throws com.liferay.portal.NoSuchModelException if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public Event findByPrimaryKey(Serializable primaryKey)
-		throws NoSuchModelException, SystemException {
-		return findByPrimaryKey(((Long)primaryKey).longValue());
-	}
-
-	/**
-	 * Returns the event with the primary key or throws a {@link com.nosester.portlet.eventlisting.NoSuchEventException} if it could not be found.
-	 *
-	 * @param eventId the primary key of the event
-	 * @return the event
-	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Event findByPrimaryKey(long eventId)
-		throws NoSuchEventException, SystemException {
-		Event event = fetchByPrimaryKey(eventId);
-
-		if (event == null) {
-			if (_log.isWarnEnabled()) {
-				_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + eventId);
-			}
-
-			throw new NoSuchEventException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
-				eventId);
-		}
-
-		return event;
-	}
-
-	/**
-	 * Returns the event with the primary key or returns <code>null</code> if it could not be found.
-	 *
-	 * @param primaryKey the primary key of the event
-	 * @return the event, or <code>null</code> if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public Event fetchByPrimaryKey(Serializable primaryKey)
-		throws SystemException {
-		return fetchByPrimaryKey(((Long)primaryKey).longValue());
-	}
-
-	/**
-	 * Returns the event with the primary key or returns <code>null</code> if it could not be found.
-	 *
-	 * @param eventId the primary key of the event
-	 * @return the event, or <code>null</code> if a event with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Event fetchByPrimaryKey(long eventId) throws SystemException {
-		Event event = (Event)EntityCacheUtil.getResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-				EventImpl.class, eventId);
-
-		if (event == _nullEvent) {
-			return null;
-		}
-
-		if (event == null) {
-			Session session = null;
-
-			boolean hasException = false;
-
-			try {
-				session = openSession();
-
-				event = (Event)session.get(EventImpl.class,
-						Long.valueOf(eventId));
-			}
-			catch (Exception e) {
-				hasException = true;
-
-				throw processException(e);
-			}
-			finally {
-				if (event != null) {
-					cacheResult(event);
-				}
-				else if (!hasException) {
-					EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
-						EventImpl.class, eventId, _nullEvent);
-				}
-
-				closeSession(session);
-			}
-		}
-
-		return event;
-	}
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GROUPID = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByGroupId",
+			new String[] {
+				Long.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID =
+		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByGroupId",
+			new String[] { Long.class.getName() },
+			EventModelImpl.GROUPID_COLUMN_BITMASK |
+			EventModelImpl.DATE_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_GROUPID = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByGroupId",
+			new String[] { Long.class.getName() });
 
 	/**
 	 * Returns all the events where groupId = &#63;.
@@ -459,6 +112,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the matching events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findByGroupId(long groupId) throws SystemException {
 		return findByGroupId(groupId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
@@ -467,7 +121,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * Returns a range of all the events where groupId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param groupId the group ID
@@ -476,6 +130,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the range of matching events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findByGroupId(long groupId, int start, int end)
 		throws SystemException {
 		return findByGroupId(groupId, start, end, null);
@@ -485,7 +140,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * Returns an ordered range of all the events where groupId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param groupId the group ID
@@ -495,13 +150,16 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the ordered range of matching events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findByGroupId(long groupId, int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
 		FinderPath finderPath = null;
 		Object[] finderArgs = null;
 
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
+			pagination = false;
 			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID;
 			finderArgs = new Object[] { groupId };
 		}
@@ -542,8 +200,8 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
 					orderByComparator);
 			}
-
-			else {
+			else
+			 if (pagination) {
 				query.append(EventModelImpl.ORDER_BY_JPQL);
 			}
 
@@ -560,21 +218,29 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 
 				qPos.add(groupId);
 
-				list = (List<Event>)QueryUtil.list(q, getDialect(), start, end);
+				if (!pagination) {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<Event>(list);
+				}
+				else {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
 			}
 			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
 				throw processException(e);
 			}
 			finally {
-				if (list == null) {
-					FinderCacheUtil.removeResult(finderPath, finderArgs);
-				}
-				else {
-					cacheResult(list);
-
-					FinderCacheUtil.putResult(finderPath, finderArgs, list);
-				}
-
 				closeSession(session);
 			}
 		}
@@ -591,6 +257,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a matching event could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public Event findByGroupId_First(long groupId,
 		OrderByComparator orderByComparator)
 		throws NoSuchEventException, SystemException {
@@ -620,6 +287,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the first matching event, or <code>null</code> if a matching event could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public Event fetchByGroupId_First(long groupId,
 		OrderByComparator orderByComparator) throws SystemException {
 		List<Event> list = findByGroupId(groupId, 0, 1, orderByComparator);
@@ -640,6 +308,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a matching event could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public Event findByGroupId_Last(long groupId,
 		OrderByComparator orderByComparator)
 		throws NoSuchEventException, SystemException {
@@ -669,6 +338,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the last matching event, or <code>null</code> if a matching event could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public Event fetchByGroupId_Last(long groupId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByGroupId(groupId);
@@ -693,6 +363,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public Event[] findByGroupId_PrevAndNext(long eventId, long groupId,
 		OrderByComparator orderByComparator)
 		throws NoSuchEventException, SystemException {
@@ -794,7 +465,6 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 				}
 			}
 		}
-
 		else {
 			query.append(EventModelImpl.ORDER_BY_JPQL);
 		}
@@ -829,11 +499,442 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	}
 
 	/**
+	 * Removes all the events where groupId = &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByGroupId(long groupId) throws SystemException {
+		for (Event event : findByGroupId(groupId, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, null)) {
+			remove(event);
+		}
+	}
+
+	/**
+	 * Returns the number of events where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByGroupId(long groupId) throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_GROUPID;
+
+		Object[] finderArgs = new Object[] { groupId };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(2);
+
+			query.append(_SQL_COUNT_EVENT_WHERE);
+
+			query.append(_FINDER_COLUMN_GROUPID_GROUPID_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(groupId);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "event.groupId = ?";
+
+	/**
+	 * Caches the event in the entity cache if it is enabled.
+	 *
+	 * @param event the event
+	 */
+	@Override
+	public void cacheResult(Event event) {
+		EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventImpl.class, event.getPrimaryKey(), event);
+
+		event.resetOriginalValues();
+	}
+
+	/**
+	 * Caches the events in the entity cache if it is enabled.
+	 *
+	 * @param events the events
+	 */
+	@Override
+	public void cacheResult(List<Event> events) {
+		for (Event event : events) {
+			if (EntityCacheUtil.getResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+						EventImpl.class, event.getPrimaryKey()) == null) {
+				cacheResult(event);
+			}
+			else {
+				event.resetOriginalValues();
+			}
+		}
+	}
+
+	/**
+	 * Clears the cache for all events.
+	 *
+	 * <p>
+	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
+	 * </p>
+	 */
+	@Override
+	public void clearCache() {
+		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
+			CacheRegistryUtil.clear(EventImpl.class.getName());
+		}
+
+		EntityCacheUtil.clearCache(EventImpl.class.getName());
+
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+	}
+
+	/**
+	 * Clears the cache for the event.
+	 *
+	 * <p>
+	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
+	 * </p>
+	 */
+	@Override
+	public void clearCache(Event event) {
+		EntityCacheUtil.removeResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventImpl.class, event.getPrimaryKey());
+
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+	}
+
+	@Override
+	public void clearCache(List<Event> events) {
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+
+		for (Event event : events) {
+			EntityCacheUtil.removeResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+				EventImpl.class, event.getPrimaryKey());
+		}
+	}
+
+	/**
+	 * Creates a new event with the primary key. Does not add the event to the database.
+	 *
+	 * @param eventId the primary key for the new event
+	 * @return the new event
+	 */
+	@Override
+	public Event create(long eventId) {
+		Event event = new EventImpl();
+
+		event.setNew(true);
+		event.setPrimaryKey(eventId);
+
+		return event;
+	}
+
+	/**
+	 * Removes the event with the primary key from the database. Also notifies the appropriate model listeners.
+	 *
+	 * @param eventId the primary key of the event
+	 * @return the event that was removed
+	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event remove(long eventId)
+		throws NoSuchEventException, SystemException {
+		return remove((Serializable)eventId);
+	}
+
+	/**
+	 * Removes the event with the primary key from the database. Also notifies the appropriate model listeners.
+	 *
+	 * @param primaryKey the primary key of the event
+	 * @return the event that was removed
+	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event remove(Serializable primaryKey)
+		throws NoSuchEventException, SystemException {
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			Event event = (Event)session.get(EventImpl.class, primaryKey);
+
+			if (event == null) {
+				if (_log.isWarnEnabled()) {
+					_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+				}
+
+				throw new NoSuchEventException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+					primaryKey);
+			}
+
+			return remove(event);
+		}
+		catch (NoSuchEventException nsee) {
+			throw nsee;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	@Override
+	protected Event removeImpl(Event event) throws SystemException {
+		event = toUnwrappedModel(event);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			if (!session.contains(event)) {
+				event = (Event)session.get(EventImpl.class,
+						event.getPrimaryKeyObj());
+			}
+
+			if (event != null) {
+				session.delete(event);
+			}
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+
+		if (event != null) {
+			clearCache(event);
+		}
+
+		return event;
+	}
+
+	@Override
+	public Event updateImpl(com.nosester.portlet.eventlisting.model.Event event)
+		throws SystemException {
+		event = toUnwrappedModel(event);
+
+		boolean isNew = event.isNew();
+
+		EventModelImpl eventModelImpl = (EventModelImpl)event;
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			if (event.isNew()) {
+				session.save(event);
+
+				event.setNew(false);
+			}
+			else {
+				session.merge(event);
+			}
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+
+		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
+
+		if (isNew || !EventModelImpl.COLUMN_BITMASK_ENABLED) {
+			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+		}
+
+		else {
+			if ((eventModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] { eventModelImpl.getOriginalGroupId() };
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GROUPID, args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID,
+					args);
+
+				args = new Object[] { eventModelImpl.getGroupId() };
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GROUPID, args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID,
+					args);
+			}
+		}
+
+		EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventImpl.class, event.getPrimaryKey(), event);
+
+		return event;
+	}
+
+	protected Event toUnwrappedModel(Event event) {
+		if (event instanceof EventImpl) {
+			return event;
+		}
+
+		EventImpl eventImpl = new EventImpl();
+
+		eventImpl.setNew(event.isNew());
+		eventImpl.setPrimaryKey(event.getPrimaryKey());
+
+		eventImpl.setEventId(event.getEventId());
+		eventImpl.setCompanyId(event.getCompanyId());
+		eventImpl.setGroupId(event.getGroupId());
+		eventImpl.setUserId(event.getUserId());
+		eventImpl.setCreateDate(event.getCreateDate());
+		eventImpl.setModifiedDate(event.getModifiedDate());
+		eventImpl.setName(event.getName());
+		eventImpl.setDescription(event.getDescription());
+		eventImpl.setDate(event.getDate());
+		eventImpl.setLocationId(event.getLocationId());
+
+		return eventImpl;
+	}
+
+	/**
+	 * Returns the event with the primary key or throws a {@link com.liferay.portal.NoSuchModelException} if it could not be found.
+	 *
+	 * @param primaryKey the primary key of the event
+	 * @return the event
+	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByPrimaryKey(Serializable primaryKey)
+		throws NoSuchEventException, SystemException {
+		Event event = fetchByPrimaryKey(primaryKey);
+
+		if (event == null) {
+			if (_log.isWarnEnabled()) {
+				_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+			}
+
+			throw new NoSuchEventException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+				primaryKey);
+		}
+
+		return event;
+	}
+
+	/**
+	 * Returns the event with the primary key or throws a {@link com.nosester.portlet.eventlisting.NoSuchEventException} if it could not be found.
+	 *
+	 * @param eventId the primary key of the event
+	 * @return the event
+	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByPrimaryKey(long eventId)
+		throws NoSuchEventException, SystemException {
+		return findByPrimaryKey((Serializable)eventId);
+	}
+
+	/**
+	 * Returns the event with the primary key or returns <code>null</code> if it could not be found.
+	 *
+	 * @param primaryKey the primary key of the event
+	 * @return the event, or <code>null</code> if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByPrimaryKey(Serializable primaryKey)
+		throws SystemException {
+		Event event = (Event)EntityCacheUtil.getResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+				EventImpl.class, primaryKey);
+
+		if (event == _nullEvent) {
+			return null;
+		}
+
+		if (event == null) {
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				event = (Event)session.get(EventImpl.class, primaryKey);
+
+				if (event != null) {
+					cacheResult(event);
+				}
+				else {
+					EntityCacheUtil.putResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+						EventImpl.class, primaryKey, _nullEvent);
+				}
+			}
+			catch (Exception e) {
+				EntityCacheUtil.removeResult(EventModelImpl.ENTITY_CACHE_ENABLED,
+					EventImpl.class, primaryKey);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return event;
+	}
+
+	/**
+	 * Returns the event with the primary key or returns <code>null</code> if it could not be found.
+	 *
+	 * @param eventId the primary key of the event
+	 * @return the event, or <code>null</code> if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByPrimaryKey(long eventId) throws SystemException {
+		return fetchByPrimaryKey((Serializable)eventId);
+	}
+
+	/**
 	 * Returns all the events.
 	 *
 	 * @return the events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findAll() throws SystemException {
 		return findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
@@ -842,7 +943,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * Returns a range of all the events.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of events
@@ -850,6 +951,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the range of events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findAll(int start, int end) throws SystemException {
 		return findAll(start, end, null);
 	}
@@ -858,7 +960,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * Returns an ordered range of all the events.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.nosester.portlet.eventlisting.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of events
@@ -867,13 +969,16 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the ordered range of events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public List<Event> findAll(int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
 		FinderPath finderPath = null;
-		Object[] finderArgs = new Object[] { start, end, orderByComparator };
+		Object[] finderArgs = null;
 
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
+			pagination = false;
 			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL;
 			finderArgs = FINDER_ARGS_EMPTY;
 		}
@@ -901,7 +1006,11 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 				sql = query.toString();
 			}
 			else {
-				sql = _SQL_SELECT_EVENT.concat(EventModelImpl.ORDER_BY_JPQL);
+				sql = _SQL_SELECT_EVENT;
+
+				if (pagination) {
+					sql = sql.concat(EventModelImpl.ORDER_BY_JPQL);
+				}
 			}
 
 			Session session = null;
@@ -911,30 +1020,29 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 
 				Query q = session.createQuery(sql);
 
-				if (orderByComparator == null) {
+				if (!pagination) {
 					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
 							end, false);
 
 					Collections.sort(list);
+
+					list = new UnmodifiableList<Event>(list);
 				}
 				else {
 					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
 							end);
 				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
 			}
 			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
 				throw processException(e);
 			}
 			finally {
-				if (list == null) {
-					FinderCacheUtil.removeResult(finderPath, finderArgs);
-				}
-				else {
-					cacheResult(list);
-
-					FinderCacheUtil.putResult(finderPath, finderArgs, list);
-				}
-
 				closeSession(session);
 			}
 		}
@@ -943,79 +1051,15 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	}
 
 	/**
-	 * Removes all the events where groupId = &#63; from the database.
-	 *
-	 * @param groupId the group ID
-	 * @throws SystemException if a system exception occurred
-	 */
-	public void removeByGroupId(long groupId) throws SystemException {
-		for (Event event : findByGroupId(groupId)) {
-			remove(event);
-		}
-	}
-
-	/**
 	 * Removes all the events from the database.
 	 *
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public void removeAll() throws SystemException {
 		for (Event event : findAll()) {
 			remove(event);
 		}
-	}
-
-	/**
-	 * Returns the number of events where groupId = &#63;.
-	 *
-	 * @param groupId the group ID
-	 * @return the number of matching events
-	 * @throws SystemException if a system exception occurred
-	 */
-	public int countByGroupId(long groupId) throws SystemException {
-		Object[] finderArgs = new Object[] { groupId };
-
-		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_BY_GROUPID,
-				finderArgs, this);
-
-		if (count == null) {
-			StringBundler query = new StringBundler(2);
-
-			query.append(_SQL_COUNT_EVENT_WHERE);
-
-			query.append(_FINDER_COLUMN_GROUPID_GROUPID_2);
-
-			String sql = query.toString();
-
-			Session session = null;
-
-			try {
-				session = openSession();
-
-				Query q = session.createQuery(sql);
-
-				QueryPos qPos = QueryPos.getInstance(q);
-
-				qPos.add(groupId);
-
-				count = (Long)q.uniqueResult();
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (count == null) {
-					count = Long.valueOf(0);
-				}
-
-				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_GROUPID,
-					finderArgs, count);
-
-				closeSession(session);
-			}
-		}
-
-		return count.intValue();
 	}
 
 	/**
@@ -1024,6 +1068,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	 * @return the number of events
 	 * @throws SystemException if a system exception occurred
 	 */
+	@Override
 	public int countAll() throws SystemException {
 		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_ALL,
 				FINDER_ARGS_EMPTY, this);
@@ -1037,23 +1082,27 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 				Query q = session.createQuery(_SQL_COUNT_EVENT);
 
 				count = (Long)q.uniqueResult();
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (count == null) {
-					count = Long.valueOf(0);
-				}
 
 				FinderCacheUtil.putResult(FINDER_PATH_COUNT_ALL,
 					FINDER_ARGS_EMPTY, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_ALL,
+					FINDER_ARGS_EMPTY);
 
+				throw processException(e);
+			}
+			finally {
 				closeSession(session);
 			}
 		}
 
 		return count.intValue();
+	}
+
+	@Override
+	protected Set<String> getBadColumnNames() {
+		return _badColumnNames;
 	}
 
 	/**
@@ -1070,7 +1119,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 
 				for (String listenerClassName : listenerClassNames) {
 					listenersList.add((ModelListener<Event>)InstanceFactory.newInstance(
-							listenerClassName));
+							getClassLoader(), listenerClassName));
 				}
 
 				listeners = listenersList.toArray(new ModelListener[listenersList.size()]);
@@ -1084,28 +1133,23 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	public void destroy() {
 		EntityCacheUtil.removeCache(EventImpl.class.getName());
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_ENTITY);
+		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
-	@BeanReference(type = EventPersistence.class)
-	protected EventPersistence eventPersistence;
-	@BeanReference(type = LocationPersistence.class)
-	protected LocationPersistence locationPersistence;
-	@BeanReference(type = ResourcePersistence.class)
-	protected ResourcePersistence resourcePersistence;
-	@BeanReference(type = UserPersistence.class)
-	protected UserPersistence userPersistence;
 	private static final String _SQL_SELECT_EVENT = "SELECT event FROM Event event";
 	private static final String _SQL_SELECT_EVENT_WHERE = "SELECT event FROM Event event WHERE ";
 	private static final String _SQL_COUNT_EVENT = "SELECT COUNT(event) FROM Event event";
 	private static final String _SQL_COUNT_EVENT_WHERE = "SELECT COUNT(event) FROM Event event WHERE ";
-	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "event.groupId = ?";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "event.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Event exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Event exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static Log _log = LogFactoryUtil.getLog(EventPersistenceImpl.class);
+	private static Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
+				"date"
+			});
 	private static Event _nullEvent = new EventImpl() {
 			@Override
 			public Object clone() {
@@ -1119,6 +1163,7 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 		};
 
 	private static CacheModel<Event> _nullEventCacheModel = new CacheModel<Event>() {
+			@Override
 			public Event toEntityModel() {
 				return _nullEvent;
 			}

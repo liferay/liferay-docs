@@ -15,8 +15,8 @@
 		<column name="companyId" type="long" />
 		<column name="groupId" type="long" />
 		<column name="userId" type="long" />
-        <column name="createDate" type="Date" />
-        <column name="modifiedDate" type="Date" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
 
@@ -37,7 +37,7 @@
 			<finder-column name="groupId" />
 		</finder>
 	</entity>
-	
+
 	<entity name="Location" local-service="true" remote-service="true">
 
 		<!-- PK fields -->
@@ -49,8 +49,8 @@
 		<column name="companyId" type="long" />
 		<column name="groupId" type="long" />
 		<column name="userId" type="long" />
-        <column name="createDate" type="Date" />
-        <column name="modifiedDate" type="Date" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
 
@@ -60,7 +60,7 @@
 		<column name="city" type="String" />
 		<column name="stateOrProvince" type="String" />
 		<column name="country" type="String" />
-		
+
 		<!-- Order -->
 
 		<order by="asc">
