@@ -55,17 +55,6 @@ public class LocationServiceWrapper implements LocationService,
 		return _locationService.invokeMethod(name, parameterTypes, arguments);
 	}
 
-	/**
-	* NOTE FOR DEVELOPERS:
-	*
-	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
-	*/
-	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.addLocation(location);
-	}
-
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
@@ -75,23 +64,11 @@ public class LocationServiceWrapper implements LocationService,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.delete(location);
-	}
-
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		long locationId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.deleteLocation(locationId);
-	}
-
-	public com.nosester.portlet.eventlisting.model.Location update(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.update(location);
 	}
 
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
