@@ -115,7 +115,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		_methodName19 = "addEvent";
 
 		_methodParameterTypes19 = new String[] {
-				"java.lang.String", "java.lang.String", "java.util.Date", "long",
+				"java.lang.String", "java.lang.String", "int", "int", "int",
+				"int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -141,8 +142,9 @@ public class EventLocalServiceClp implements EventLocalService {
 		_methodName24 = "updateEvent";
 
 		_methodParameterTypes24 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
+				"com.liferay.portal.service.ServiceContext"
 			};
 	}
 
@@ -201,7 +203,8 @@ public class EventLocalServiceClp implements EventLocalService {
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
+			com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchEventException {
 		Object returnObj = null;
 
 		try {
@@ -217,6 +220,10 @@ public class EventLocalServiceClp implements EventLocalService {
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.nosester.portlet.eventlisting.NoSuchEventException) {
+				throw (com.nosester.portlet.eventlisting.NoSuchEventException)t;
 			}
 
 			if (t instanceof RuntimeException) {
@@ -672,9 +679,10 @@ public class EventLocalServiceClp implements EventLocalService {
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		java.lang.String name, java.lang.String description, int month,
+		int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
@@ -685,7 +693,15 @@ public class EventLocalServiceClp implements EventLocalService {
 						
 					ClpSerializer.translateInput(description),
 						
-					ClpSerializer.translateInput(date),
+					month,
+						
+					day,
+						
+					year,
+						
+					hour,
+						
+					minute,
 						
 					locationId,
 						
@@ -694,6 +710,10 @@ public class EventLocalServiceClp implements EventLocalService {
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
 
 			if (t instanceof RuntimeException) {
 				throw (RuntimeException)t;
@@ -833,8 +853,9 @@ public class EventLocalServiceClp implements EventLocalService {
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
@@ -847,7 +868,15 @@ public class EventLocalServiceClp implements EventLocalService {
 						
 					ClpSerializer.translateInput(description),
 						
-					ClpSerializer.translateInput(date),
+					month,
+						
+					day,
+						
+					year,
+						
+					hour,
+						
+					minute,
 						
 					locationId,
 						
@@ -856,6 +885,10 @@ public class EventLocalServiceClp implements EventLocalService {
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
 
 			if (t instanceof RuntimeException) {
 				throw (RuntimeException)t;

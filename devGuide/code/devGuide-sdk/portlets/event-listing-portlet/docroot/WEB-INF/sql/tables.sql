@@ -6,7 +6,7 @@ create table Event_Event (
 	createDate DATE null,
 	modifiedDate DATE null,
 	name VARCHAR(75) null,
-	description VARCHAR(250) null,
+	description STRING null,
 	date_ DATE null,
 	locationId LONG
 );
@@ -19,7 +19,7 @@ create table Event_Location (
 	createDate DATE null,
 	modifiedDate DATE null,
 	name VARCHAR(75) null,
-	description VARCHAR(250) null,
+	description STRING null,
 	streetAddress VARCHAR(75) null,
 	city VARCHAR(75) null,
 	stateOrProvince VARCHAR(75) null,

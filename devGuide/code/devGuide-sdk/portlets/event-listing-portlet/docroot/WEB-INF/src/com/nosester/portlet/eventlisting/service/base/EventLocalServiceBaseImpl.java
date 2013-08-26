@@ -103,10 +103,12 @@ public abstract class EventLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 * @return the event that was removed
 	 * @throws PortalException if a event with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
+	 * @throws com.nosester.portlet.eventlisting.NoSuchEventException
 	 */
 	@Indexable(type = IndexableType.DELETE)
 	public Event deleteEvent(long eventId)
-		throws PortalException, SystemException {
+		throws PortalException, SystemException,
+			com.nosester.portlet.eventlisting.NoSuchEventException {
 		return eventPersistence.remove(eventId);
 	}
 

@@ -77,7 +77,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 			{ "date_", Types.TIMESTAMP },
 			{ "locationId", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Event_Event (eventId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(250) null,date_ DATE null,locationId LONG)";
+	public static final String TABLE_SQL_CREATE = "create table Event_Event (eventId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description STRING null,date_ DATE null,locationId LONG)";
 	public static final String TABLE_SQL_DROP = "drop table Event_Event";
 	public static final String ORDER_BY_JPQL = " ORDER BY event.date ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY Event_Event.date_ ASC";

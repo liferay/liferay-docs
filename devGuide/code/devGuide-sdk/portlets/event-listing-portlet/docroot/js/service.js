@@ -4,9 +4,8 @@ Liferay.Service.registerClass(
 	Liferay.Service.Event, "Event",
 	{
 		addEvent: true,
-		delete: true,
 		deleteEvent: true,
-		update: true,
+		getEvent: true,
 		updateEvent: true
 	}
 );
