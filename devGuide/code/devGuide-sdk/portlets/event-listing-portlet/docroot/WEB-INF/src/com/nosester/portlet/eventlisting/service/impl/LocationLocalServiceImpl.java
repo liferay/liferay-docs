@@ -166,7 +166,7 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setModifiedDate(now);
 
 		try {
-			return super.addLocation(location);
+			return super.updateLocation(location);
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}
