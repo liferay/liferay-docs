@@ -39,13 +39,12 @@ import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
  */
 public class LocationServiceImpl extends LocationServiceBaseImpl {
 	
-	public Location addLocation(String name, String description,
+	public Location addLocation(long groupId, String name, String description,
 			String streetAddress, String city, String stateOrProvince,
-			String country, long groupId, ServiceContext serviceContext) {
+			String country, ServiceContext serviceContext) {
 
-		return LocationLocalServiceUtil.addLocation(name, description,
-				streetAddress, city, stateOrProvince, country, groupId,
-				serviceContext);
+		return LocationLocalServiceUtil.addLocation(groupId, name, description,
+				streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	public Location deleteLocation(long locationId) throws PortalException,

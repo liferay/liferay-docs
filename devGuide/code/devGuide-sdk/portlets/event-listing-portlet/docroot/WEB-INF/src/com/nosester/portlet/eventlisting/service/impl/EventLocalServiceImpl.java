@@ -47,8 +47,8 @@ import com.nosester.portlet.eventlisting.service.persistence.EventFinderUtil;
 public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 
 	public Event addEvent(
-			String name, String description, int month, int day, int year,
-			int hour, int minute, long groupId, long locationId,
+			long groupId, String name, String description, int month, int day,
+			int year, int hour, int minute, long locationId,
 			ServiceContext serviceContext)
 		throws SystemException {
 

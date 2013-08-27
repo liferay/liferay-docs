@@ -69,9 +69,9 @@ public class LocationListingPortlet extends MVCPortlet {
 					.getAttribute(WebKeys.THEME_DISPLAY);
 			long groupId = themeDisplay.getScopeGroupId();
 				
-			location = LocationServiceUtil.addLocation(name, description,
-					streetAddress, city, stateOrProvince, country, groupId,
-					serviceContext);
+			location = LocationServiceUtil.addLocation(groupId, name,
+				description, streetAddress, city, stateOrProvince, country, 
+				serviceContext);
 
 		}
 		else {

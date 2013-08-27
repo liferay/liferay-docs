@@ -66,13 +66,13 @@ import java.rmi.RemoteException;
  */
 public class EventServiceSoap {
 	public static com.nosester.portlet.eventlisting.model.EventSoap addEvent(
-		java.lang.String name, java.lang.String description, int month,
-		int day, int year, int hour, int minute, long groupId, long locationId,
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
-			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.addEvent(name,
-					description, month, day, year, hour, minute, groupId,
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.addEvent(groupId,
+					name, description, month, day, year, hour, minute,
 					locationId, serviceContext);
 
 			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);

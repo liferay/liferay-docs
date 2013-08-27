@@ -115,8 +115,8 @@ public class EventLocalServiceClpInvoker {
 		_methodName52 = "addEvent";
 
 		_methodParameterTypes52 = new String[] {
-				"java.lang.String", "java.lang.String", "int", "int", "int",
-				"int", "int", "long", "long",
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -265,14 +265,13 @@ public class EventLocalServiceClpInvoker {
 
 		if (_methodName52.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
-			return EventLocalServiceUtil.addEvent((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1],
-				((Integer)arguments[2]).intValue(),
+			return EventLocalServiceUtil.addEvent(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue(),
 				((Integer)arguments[5]).intValue(),
 				((Integer)arguments[6]).intValue(),
-				((Long)arguments[7]).longValue(),
+				((Integer)arguments[7]).intValue(),
 				((Long)arguments[8]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}

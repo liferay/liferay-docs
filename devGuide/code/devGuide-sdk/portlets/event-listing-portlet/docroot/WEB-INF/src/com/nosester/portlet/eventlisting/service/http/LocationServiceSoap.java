@@ -66,15 +66,15 @@ import java.rmi.RemoteException;
  */
 public class LocationServiceSoap {
 	public static com.nosester.portlet.eventlisting.model.LocationSoap addLocation(
-		java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		long groupId, com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
-			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.addLocation(name,
-					description, streetAddress, city, stateOrProvince, country,
-					groupId, serviceContext);
+			com.nosester.portlet.eventlisting.model.Location returnValue = LocationServiceUtil.addLocation(groupId,
+					name, description, streetAddress, city, stateOrProvince,
+					country, serviceContext);
 
 			return com.nosester.portlet.eventlisting.model.LocationSoap.toSoapModel(returnValue);
 		}

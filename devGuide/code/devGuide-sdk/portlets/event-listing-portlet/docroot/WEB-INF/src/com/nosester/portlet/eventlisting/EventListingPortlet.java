@@ -79,8 +79,8 @@ public class EventListingPortlet extends MVCPortlet {
 					.getAttribute(WebKeys.THEME_DISPLAY);
 			long groupId = themeDisplay.getScopeGroupId();
 			
-			event = EventServiceUtil.addEvent(name, description, month, day,
-				year, hour, minute, groupId, locationId, serviceContext);
+			event = EventServiceUtil.addEvent(groupId, name, description, month,
+				day, year, hour, minute, locationId, serviceContext);
 		}
 		else {
 			event = EventServiceUtil.getEvent(eventId);

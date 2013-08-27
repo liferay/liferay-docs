@@ -39,12 +39,12 @@ import com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl;
  */
 public class EventServiceImpl extends EventServiceBaseImpl {
 
-	public Event addEvent(String name, String description, int month, int day,
-			int year, int hour, int minute, long groupId, long locationId,
+	public Event addEvent(long groupId, String name, String description,
+			int month, int day, int year, int hour, int minute, long locationId,
 			ServiceContext serviceContext) throws SystemException {
 
-		return EventLocalServiceUtil.addEvent(name, description, month, day,
-			year, hour, minute, groupId, locationId, serviceContext);
+		return EventLocalServiceUtil.addEvent(groupId, name, description, month,
+			day, year, hour, minute, locationId, serviceContext);
 	}
 
 	public Event deleteEvent(long eventId)

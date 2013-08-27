@@ -249,8 +249,8 @@ public interface EventLocalService extends BaseLocalService,
 		throws java.lang.Throwable;
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description, int month,
-		int day, int year, int hour, int minute, long groupId, long locationId,
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException;
 

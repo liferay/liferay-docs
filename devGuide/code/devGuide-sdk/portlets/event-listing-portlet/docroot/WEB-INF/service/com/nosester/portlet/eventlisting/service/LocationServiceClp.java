@@ -34,9 +34,9 @@ public class LocationServiceClp implements LocationService {
 		_methodName3 = "addLocation";
 
 		_methodParameterTypes3 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "com.liferay.portal.service.ServiceContext"
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName4 = "deleteLocation";
@@ -100,17 +100,19 @@ public class LocationServiceClp implements LocationService {
 	}
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		long groupId, com.liferay.portal.service.ServiceContext serviceContext) {
+		com.liferay.portal.service.ServiceContext serviceContext) {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName3,
 					_methodParameterTypes3,
 					new Object[] {
-						ClpSerializer.translateInput(name),
+						groupId,
+						
+					ClpSerializer.translateInput(name),
 						
 					ClpSerializer.translateInput(description),
 						
@@ -121,8 +123,6 @@ public class LocationServiceClp implements LocationService {
 					ClpSerializer.translateInput(stateOrProvince),
 						
 					ClpSerializer.translateInput(country),
-						
-					groupId,
 						
 					ClpSerializer.translateInput(serviceContext)
 					});

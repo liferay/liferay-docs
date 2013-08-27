@@ -55,9 +55,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.addLocation(location);
 	}
 
-	public Location addLocation(String name, String description,
+	public Location addLocation(long groupId, String name, String description,
 			String streetAddress, String city, String stateOrProvince,
-			String country, long groupId, ServiceContext serviceContext) {
+			String country, ServiceContext serviceContext) {
 
 		long locationId = 0;
 		try {
@@ -127,7 +127,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.updateLocation(location);
 	}
 
-	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	public Location updateLocation(long locationId, String name,
+		String description, String streetAddress, String city,
+		String stateOrProvince, String country, ServiceContext serviceContext) {
 
 		Location location = null;
 		try {

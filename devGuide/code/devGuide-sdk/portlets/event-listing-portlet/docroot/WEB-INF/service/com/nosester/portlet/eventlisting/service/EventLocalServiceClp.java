@@ -115,8 +115,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		_methodName19 = "addEvent";
 
 		_methodParameterTypes19 = new String[] {
-				"java.lang.String", "java.lang.String", "int", "int", "int",
-				"int", "int", "long", "long",
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -679,8 +679,8 @@ public class EventLocalServiceClp implements EventLocalService {
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description, int month,
-		int day, int year, int hour, int minute, long groupId, long locationId,
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -689,7 +689,9 @@ public class EventLocalServiceClp implements EventLocalService {
 			returnObj = _invokableLocalService.invokeMethod(_methodName19,
 					_methodParameterTypes19,
 					new Object[] {
-						ClpSerializer.translateInput(name),
+						groupId,
+						
+					ClpSerializer.translateInput(name),
 						
 					ClpSerializer.translateInput(description),
 						
@@ -702,8 +704,6 @@ public class EventLocalServiceClp implements EventLocalService {
 					hour,
 						
 					minute,
-						
-					groupId,
 						
 					locationId,
 						
