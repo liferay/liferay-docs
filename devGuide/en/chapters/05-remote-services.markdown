@@ -1510,6 +1510,6 @@ data. Then, we dove into SOAP web services and showed you how to invoke them.
 Lastly, we jumped into JSON web services to register them and invoke them in a
 myriad of ways. You see, here at Liferay, we aim to give you terrific service! 
 
-Next, we’ll take a look at some of the powerful frameworks of Liferay Portal,
+Next, we'll take a look at some of the powerful frameworks of Liferay Portal,
 learn how they work and how you can leverage them. 
 
