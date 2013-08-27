@@ -222,10 +222,9 @@ system:
 
     ext.work.dir=[work]
 
-    app.server.dir=[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23
+    app.server.dir=[work]/liferay-portal-[version]/[app server]
 
-    app.server.zip.name=
-        [...]/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip
+    app.server.zip.name=[...]/liferay-portal-[app server].zip
 
 Your `app.server.zip.name` property should specify the path to your Liferay
 bundle `.zip` file. Your `work` directory, specified by the `ext.work.dir`
@@ -251,7 +250,7 @@ property value.
  Liferay, but if you removed it, you likely don't want it reinstalled each time
  your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip your
  bundle, delete the
- `[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.27/webapps/welcome-theme`
+ `[work]/liferay-portal-[version]/[app server]/webapps/welcome-theme`
  folder, then re-zip your bundle. 
 
 ---
