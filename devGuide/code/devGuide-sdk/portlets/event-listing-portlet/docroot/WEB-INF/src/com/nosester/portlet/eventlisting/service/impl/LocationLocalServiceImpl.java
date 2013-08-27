@@ -29,22 +29,19 @@ import java.util.List;
  * The implementation of the location local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
- *
- * <p>
- * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the {@link
+ * com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
+ * <p> This is a local service. Methods of this service will not have security
+ * checks based on the propagated JAAS credentials because this service can only
+ * be accessed from within the same VM.
  * </p>
  *
- * @author jbloggs
- * @see com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
- * @see com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
+ * @author Joe Bloggs
+ * @see    com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
+ * @see    com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
  */
 public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
-	/**
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil} to access the location local service.
-	 */
 
 	public Location addLocation(Location location) throws SystemException {
 
@@ -58,7 +55,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.addLocation(location);
 	}
 
-	public Location addLocation(String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	public Location addLocation(long groupId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext) {
 
 		long locationId = 0;
 		try {
@@ -79,7 +78,6 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		long companyId = serviceContext.getCompanyId();
 		location.setCompanyId(companyId);
 
-		long groupId = serviceContext.getScopeGroupId();
 		location.setGroupId(groupId);
 
 		long userId = 0;
@@ -129,7 +127,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.updateLocation(location);
 	}
 
-	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	public Location updateLocation(long locationId, String name,
+		String description, String streetAddress, String city,
+		String stateOrProvince, String country, ServiceContext serviceContext) {
 
 		Location location = null;
 		try {
@@ -166,7 +166,7 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setModifiedDate(now);
 
 		try {
-			return super.addLocation(location);
+			return super.updateLocation(location);
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}

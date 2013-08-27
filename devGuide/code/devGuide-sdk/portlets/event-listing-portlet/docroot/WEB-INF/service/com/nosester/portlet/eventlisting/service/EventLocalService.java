@@ -73,11 +73,13 @@ public interface EventLocalService extends BaseLocalService,
 	* @return the event that was removed
 	* @throws PortalException if a event with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @throws com.nosester.portlet.eventlisting.NoSuchEventException
 	*/
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+			com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchEventException;
 
 	/**
 	* Deletes the event from the database. Also notifies the appropriate model listeners.
@@ -247,9 +249,10 @@ public interface EventLocalService extends BaseLocalService,
 		throws java.lang.Throwable;
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
@@ -272,6 +275,7 @@ public interface EventLocalService extends BaseLocalService,
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

@@ -115,9 +115,9 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		_methodName19 = "addLocation";
 
 		_methodParameterTypes19 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName20 = "getLocationsByGroupId";
@@ -668,7 +668,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 	}
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
 		com.liferay.portal.service.ServiceContext serviceContext) {
@@ -678,7 +678,9 @@ public class LocationLocalServiceClp implements LocationLocalService {
 			returnObj = _invokableLocalService.invokeMethod(_methodName19,
 					_methodParameterTypes19,
 					new Object[] {
-						ClpSerializer.translateInput(name),
+						groupId,
+						
+					ClpSerializer.translateInput(name),
 						
 					ClpSerializer.translateInput(description),
 						

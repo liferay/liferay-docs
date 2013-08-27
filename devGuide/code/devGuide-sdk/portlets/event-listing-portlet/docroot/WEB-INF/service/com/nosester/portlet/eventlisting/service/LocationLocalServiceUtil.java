@@ -274,13 +274,13 @@ public class LocationLocalServiceUtil {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
 		com.liferay.portal.service.ServiceContext serviceContext) {
 		return getService()
-				   .addLocation(name, description, streetAddress, city,
-			stateOrProvince, country, serviceContext);
+				   .addLocation(groupId, name, description, streetAddress,
+			city, stateOrProvince, country, serviceContext);
 	}
 
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(

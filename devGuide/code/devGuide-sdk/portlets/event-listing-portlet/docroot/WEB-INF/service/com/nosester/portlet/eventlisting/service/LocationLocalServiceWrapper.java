@@ -269,11 +269,11 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 	}
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
 		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _locationLocalService.addLocation(name, description,
+		return _locationLocalService.addLocation(groupId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 

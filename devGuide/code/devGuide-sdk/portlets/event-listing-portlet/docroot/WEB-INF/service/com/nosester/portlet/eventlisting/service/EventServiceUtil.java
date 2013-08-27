@@ -62,29 +62,14 @@ public class EventServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	/**
-	* NOTE FOR DEVELOPERS:
-	*
-	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventServiceUtil} to access the event remote service.
-	*/
 	public static com.nosester.portlet.eventlisting.model.Event addEvent(
-		com.nosester.portlet.eventlisting.model.Event event)
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().addEvent(event);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
 		return getService()
-				   .addEvent(name, description, date, locationId, serviceContext);
-	}
-
-	public static com.nosester.portlet.eventlisting.model.Event delete(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().delete(event);
+				   .addEvent(groupId, name, description, month, day, year,
+			hour, minute, locationId, serviceContext);
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Event deleteEvent(
@@ -94,19 +79,21 @@ public class EventServiceUtil {
 		return getService().deleteEvent(eventId);
 	}
 
-	public static com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().update(event);
+	public static com.nosester.portlet.eventlisting.model.Event getEvent(
+		long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEvent(eventId);
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updateEvent(eventId, name, description, date, locationId,
-			serviceContext);
+				   .updateEvent(eventId, name, description, month, day, year,
+			hour, minute, locationId, serviceContext);
 	}
 
 	public static void clearService() {

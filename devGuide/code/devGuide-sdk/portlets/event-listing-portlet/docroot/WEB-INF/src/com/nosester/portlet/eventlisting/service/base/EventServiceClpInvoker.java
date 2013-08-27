@@ -34,37 +34,25 @@ public class EventServiceClpInvoker {
 		_methodName36 = "addEvent";
 
 		_methodParameterTypes36 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
-
-		_methodName37 = "addEvent";
-
-		_methodParameterTypes37 = new String[] {
-				"java.lang.String", "java.lang.String", "java.util.Date", "long",
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName38 = "delete";
+		_methodName37 = "deleteEvent";
 
-		_methodParameterTypes38 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
+		_methodParameterTypes37 = new String[] { "long" };
 
-		_methodName39 = "deleteEvent";
+		_methodName38 = "getEvent";
 
-		_methodParameterTypes39 = new String[] { "long" };
+		_methodParameterTypes38 = new String[] { "long" };
 
-		_methodName40 = "update";
+		_methodName39 = "updateEvent";
 
-		_methodParameterTypes40 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
-
-		_methodName41 = "updateEvent";
-
-		_methodParameterTypes41 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
+		_methodParameterTypes39 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
+				"com.liferay.portal.service.ServiceContext"
 			};
 	}
 
@@ -84,38 +72,38 @@ public class EventServiceClpInvoker {
 
 		if (_methodName36.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
-			return EventServiceUtil.addEvent((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+			return EventServiceUtil.addEvent(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue(),
+				((Integer)arguments[6]).intValue(),
+				((Integer)arguments[7]).intValue(),
+				((Long)arguments[8]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
 		if (_methodName37.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
-			return EventServiceUtil.addEvent((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], (java.util.Date)arguments[2],
-				((Long)arguments[3]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[4]);
+			return EventServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName38.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes38, parameterTypes)) {
-			return EventServiceUtil.delete((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+			return EventServiceUtil.getEvent(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName39.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes39, parameterTypes)) {
-			return EventServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName40.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
-			return EventServiceUtil.update((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
-		}
-
-		if (_methodName41.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
 			return EventServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.util.Date)arguments[3], ((Long)arguments[4]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[5]);
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue(),
+				((Integer)arguments[6]).intValue(),
+				((Integer)arguments[7]).intValue(),
+				((Long)arguments[8]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -133,8 +121,4 @@ public class EventServiceClpInvoker {
 	private String[] _methodParameterTypes38;
 	private String _methodName39;
 	private String[] _methodParameterTypes39;
-	private String _methodName40;
-	private String[] _methodParameterTypes40;
-	private String _methodName41;
-	private String[] _methodParameterTypes41;
 }

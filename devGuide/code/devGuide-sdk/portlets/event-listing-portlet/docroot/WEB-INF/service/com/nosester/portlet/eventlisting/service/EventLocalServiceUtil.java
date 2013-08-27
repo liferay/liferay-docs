@@ -69,11 +69,13 @@ public class EventLocalServiceUtil {
 	* @return the event that was removed
 	* @throws PortalException if a event with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @throws com.nosester.portlet.eventlisting.NoSuchEventException
 	*/
 	public static com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
+			com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchEventException {
 		return getService().deleteEvent(eventId);
 	}
 
@@ -274,11 +276,13 @@ public class EventLocalServiceUtil {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addEvent(name, description, date, locationId, serviceContext);
+				   .addEvent(groupId, name, description, month, day, year,
+			hour, minute, locationId, serviceContext);
 	}
 
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
@@ -309,11 +313,12 @@ public class EventLocalServiceUtil {
 
 	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
 		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updateEvent(eventId, name, description, date, locationId,
-			serviceContext);
+				   .updateEvent(eventId, name, description, month, day, year,
+			hour, minute, locationId, serviceContext);
 	}
 
 	public static void clearService() {

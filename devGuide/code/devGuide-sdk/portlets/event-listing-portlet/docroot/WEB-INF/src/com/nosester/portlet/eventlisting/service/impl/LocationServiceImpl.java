@@ -17,72 +17,50 @@ package com.nosester.portlet.eventlisting.service.impl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
-
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
-
-import java.util.Date;
 
 /**
  * The implementation of the location remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationService} interface.
- *
- * <p>
- * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the {@link
+ * com.nosester.portlet.eventlisting.service.LocationService} interface.  <p>
+ * This is a remote service. Methods of this service are expected to have
+ * security checks based on the propagated JAAS credentials because this service
+ * can be accessed remotely.
  * </p>
  *
- * @author jbloggs
- * @see com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl
- * @see com.nosester.portlet.eventlisting.service.LocationServiceUtil
+ * @author Joe Bloggs
+ * @see    com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl
+ * @see    com.nosester.portlet.eventlisting.service.LocationServiceUtil
  */
 public class LocationServiceImpl extends LocationServiceBaseImpl {
-	/**
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
-	 */
+	
+	public Location addLocation(long groupId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext) {
 
-	public Location addLocation(Location location) throws SystemException {
-
-		long locationId = counterLocalService.increment(Location.class.getName());
-		location.setLocationId(locationId);
-
-		Date now = new Date();
-		location.setCreateDate(now);
-		location.setModifiedDate(now);
-
-		return locationLocalService.addLocation(location);
+		return LocationLocalServiceUtil.addLocation(groupId, name, description,
+				streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
-	public Location addLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
-
-		return LocationLocalServiceUtil.addLocation(name, description, streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	public Location delete(Location location) throws SystemException {
-
-		return locationLocalService.deleteLocation(location);
-	}
-
-	public Location deleteLocation(long locationId) throws PortalException, SystemException {
+	public Location deleteLocation(long locationId) throws PortalException,
+			SystemException {
 
 		return locationLocalService.deleteLocation(locationId);
 	}
 
-	public Location update(Location location) throws SystemException {
+	public Location updateLocation(long locationId, String name,
+			String description, String streetAddress, String city,
+			String stateOrProvince, String country,
+			ServiceContext serviceContext) {
 
-		Date now = new Date();
-		location.setModifiedDate(now);
-
-		return locationLocalService.updateLocation(location);
-	}
-
-	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
-
-		return LocationLocalServiceUtil.updateLocation(locationId, name, description, streetAddress, city, stateOrProvince, country, serviceContext);
+		return LocationLocalServiceUtil.updateLocation(locationId, name,
+				description, streetAddress, city, stateOrProvince, country,
+				serviceContext);
 	}
 
 }
