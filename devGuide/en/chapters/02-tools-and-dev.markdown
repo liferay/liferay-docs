@@ -671,14 +671,14 @@ to apply plugin updates and fixes.
 To start deploying projects to a remote server, you'll need to download and
 install the following resources on your local development machine:
 
-- Download [Liferay IDE
-  1.6.2](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
-  Liferay's downloads page or download [Liferay Developer Studio
-  1.6.1](http://www.liferay.com/group/customer/products/developer-studio/1.6) from
-  the Customer Portal.
+- Download [Liferay
+  IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
+  Liferay's downloads page or download [Liferay Developer
+  Studio](http://www.liferay.com/group/customer/products/developer-studio/1.6)
+  from the Customer Portal.
 - Download [Liferay Portal CE or
-  EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to your
-  local development machine. 
+  EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to
+  your local development machine. 
 
 You'll need to download [Liferay Portal CE or
 EE](http://www.liferay.com/downloads/liferay-portal/available-releases) to your
@@ -1493,13 +1493,14 @@ Maven artifacts from source, follow these steps:
     signs. Also, replace `[app server name]` with the name of your application
     server. Note that your `app.server.[app server name].dir` directory doesn't
     need to exist yet; you can create it by invoking an Ant target in the next
-    step. For example, if you're running Apache Tomcat 7.0.27 and your
+    step. For example, if you're running Apache Tomcat and your
     Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
     the following properties:
 
         app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x
 
-        app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27
+        app.server.tomcat.dir=
+            /home/jbloggs/liferay/bundles/ce-6.1.x/[tomcat version]
 
 3.  If an application server doesn't already exist at the directory specified by
     your `app.server.[app server name].dir` property, run `ant -f build-dist.xml
