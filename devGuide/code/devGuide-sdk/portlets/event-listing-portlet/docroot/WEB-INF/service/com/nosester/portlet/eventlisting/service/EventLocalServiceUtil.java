@@ -277,12 +277,12 @@ public class EventLocalServiceUtil {
 
 	public static com.nosester.portlet.eventlisting.model.Event addEvent(
 		java.lang.String name, java.lang.String description, int month,
-		int day, int year, int hour, int minute, long locationId,
+		int day, int year, int hour, int minute, long groupId, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addEvent(name, description, month, day, year, hour, minute,
-			locationId, serviceContext);
+			groupId, locationId, serviceContext);
 	}
 
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(

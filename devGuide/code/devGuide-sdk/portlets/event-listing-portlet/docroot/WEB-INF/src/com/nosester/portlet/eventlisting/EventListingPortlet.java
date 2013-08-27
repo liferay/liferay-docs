@@ -10,8 +10,10 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
@@ -73,8 +75,12 @@ public class EventListingPortlet extends MVCPortlet {
 		Event event = null;
 
 		if (eventId <= 0) {
+			ThemeDisplay themeDisplay = (ThemeDisplay) request
+					.getAttribute(WebKeys.THEME_DISPLAY);
+			long groupId = themeDisplay.getScopeGroupId();
+			
 			event = EventServiceUtil.addEvent(name, description, month, day,
-				year, hour, minute, locationId, serviceContext);
+				year, hour, minute, groupId, locationId, serviceContext);
 		}
 		else {
 			event = EventServiceUtil.getEvent(eventId);

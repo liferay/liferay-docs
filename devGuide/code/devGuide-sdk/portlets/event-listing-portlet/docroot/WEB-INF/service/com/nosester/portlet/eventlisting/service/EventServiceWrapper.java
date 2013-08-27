@@ -57,11 +57,11 @@ public class EventServiceWrapper implements EventService,
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
 		java.lang.String name, java.lang.String description, int month,
-		int day, int year, int hour, int minute, long locationId,
+		int day, int year, int hour, int minute, long groupId, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.addEvent(name, description, month, day, year,
-			hour, minute, locationId, serviceContext);
+			hour, minute, groupId, locationId, serviceContext);
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(

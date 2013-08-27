@@ -35,7 +35,7 @@ public class EventServiceClpInvoker {
 
 		_methodParameterTypes36 = new String[] {
 				"java.lang.String", "java.lang.String", "int", "int", "int",
-				"int", "int", "long",
+				"int", "int", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -80,7 +80,8 @@ public class EventServiceClpInvoker {
 				((Integer)arguments[5]).intValue(),
 				((Integer)arguments[6]).intValue(),
 				((Long)arguments[7]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[8]);
+				((Long)arguments[8]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
 		if (_methodName37.equals(name) &&

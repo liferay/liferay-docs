@@ -48,7 +48,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 
 	public Event addEvent(
 			String name, String description, int month, int day, int year,
-			int hour, int minute, long locationId,
+			int hour, int minute, long groupId, long locationId,
 			ServiceContext serviceContext)
 		throws SystemException {
 
@@ -79,7 +79,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 
 		event.setUserId(userId);
 		event.setCompanyId(serviceContext.getCompanyId());
-		event.setGroupId(serviceContext.getScopeGroupId());
+		event.setGroupId(groupId);
 		event.setCreateDate(now);
 		event.setModifiedDate(now);
 
