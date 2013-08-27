@@ -117,7 +117,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		_methodParameterTypes19 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName20 = "getLocationsByGroupId";
@@ -671,7 +671,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		long groupId, com.liferay.portal.service.ServiceContext serviceContext) {
 		Object returnObj = null;
 
 		try {
@@ -689,6 +689,8 @@ public class LocationLocalServiceClp implements LocationLocalService {
 					ClpSerializer.translateInput(stateOrProvince),
 						
 					ClpSerializer.translateInput(country),
+						
+					groupId,
 						
 					ClpSerializer.translateInput(serviceContext)
 					});

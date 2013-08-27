@@ -34,9 +34,9 @@ public class LocationServiceClpInvoker {
 		_methodName36 = "addLocation";
 
 		_methodParameterTypes36 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName37 = "deleteLocation";
@@ -68,10 +68,11 @@ public class LocationServiceClpInvoker {
 
 		if (_methodName36.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
-			return LocationServiceUtil.addLocation(((Long)arguments[0]).longValue(),
+			return LocationServiceUtil.addLocation((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
-				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
+				(java.lang.String)arguments[5],
+				((Long)arguments[6]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 

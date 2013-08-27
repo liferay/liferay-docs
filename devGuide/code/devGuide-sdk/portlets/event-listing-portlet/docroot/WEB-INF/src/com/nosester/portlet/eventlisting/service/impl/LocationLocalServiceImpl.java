@@ -55,7 +55,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.addLocation(location);
 	}
 
-	public Location addLocation(String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	public Location addLocation(String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, long groupId, ServiceContext serviceContext) {
 
 		long locationId = 0;
 		try {
@@ -76,7 +78,6 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		long companyId = serviceContext.getCompanyId();
 		location.setCompanyId(companyId);
 
-		long groupId = serviceContext.getScopeGroupId();
 		location.setGroupId(groupId);
 
 		long userId = 0;

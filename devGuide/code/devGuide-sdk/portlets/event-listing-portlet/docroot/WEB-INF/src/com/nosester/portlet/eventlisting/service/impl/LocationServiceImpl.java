@@ -38,19 +38,30 @@ import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
  * @see    com.nosester.portlet.eventlisting.service.LocationServiceUtil
  */
 public class LocationServiceImpl extends LocationServiceBaseImpl {
-	public Location addLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	
+	public Location addLocation(String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, long groupId, ServiceContext serviceContext) {
 
-		return LocationLocalServiceUtil.addLocation(name, description, streetAddress, city, stateOrProvince, country, serviceContext);
+		return LocationLocalServiceUtil.addLocation(name, description,
+				streetAddress, city, stateOrProvince, country, groupId,
+				serviceContext);
 	}
 
-	public Location deleteLocation(long locationId) throws PortalException, SystemException {
+	public Location deleteLocation(long locationId) throws PortalException,
+			SystemException {
 
 		return locationLocalService.deleteLocation(locationId);
 	}
 
-	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+	public Location updateLocation(long locationId, String name,
+			String description, String streetAddress, String city,
+			String stateOrProvince, String country,
+			ServiceContext serviceContext) {
 
-		return LocationLocalServiceUtil.updateLocation(locationId, name, description, streetAddress, city, stateOrProvince, country, serviceContext);
+		return LocationLocalServiceUtil.updateLocation(locationId, name,
+				description, streetAddress, city, stateOrProvince, country,
+				serviceContext);
 	}
 
 }

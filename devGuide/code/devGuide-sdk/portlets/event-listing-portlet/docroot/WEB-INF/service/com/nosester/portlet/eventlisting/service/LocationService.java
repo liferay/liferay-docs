@@ -64,10 +64,10 @@ public interface LocationService extends BaseService, InvokableService {
 		throws java.lang.Throwable;
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		long groupId, com.liferay.portal.service.ServiceContext serviceContext);
 
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		long locationId)

@@ -63,13 +63,13 @@ public class LocationServiceUtil {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Location addLocation(
-		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		long groupId, com.liferay.portal.service.ServiceContext serviceContext) {
 		return getService()
-				   .addLocation(locationId, name, description, streetAddress,
-			city, stateOrProvince, country, serviceContext);
+				   .addLocation(name, description, streetAddress, city,
+			stateOrProvince, country, groupId, serviceContext);
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Location deleteLocation(

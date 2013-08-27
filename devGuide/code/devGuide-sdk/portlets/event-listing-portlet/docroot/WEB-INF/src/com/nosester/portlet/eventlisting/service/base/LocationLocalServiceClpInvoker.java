@@ -123,7 +123,7 @@ public class LocationLocalServiceClpInvoker {
 		_methodParameterTypes53 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName54 = "getLocationsByGroupId";
@@ -265,7 +265,8 @@ public class LocationLocalServiceClpInvoker {
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
 				(java.lang.String)arguments[5],
-				(com.liferay.portal.service.ServiceContext)arguments[6]);
+				((Long)arguments[6]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
 		if (_methodName54.equals(name) &&
