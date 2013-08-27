@@ -29,22 +29,19 @@ import java.util.List;
  * The implementation of the location local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
- *
- * <p>
- * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the {@link
+ * com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
+ * <p> This is a local service. Methods of this service will not have security
+ * checks based on the propagated JAAS credentials because this service can only
+ * be accessed from within the same VM.
  * </p>
  *
- * @author jbloggs
- * @see com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
- * @see com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
+ * @author Joe Bloggs
+ * @see    com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
+ * @see    com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
  */
 public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
-	/**
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil} to access the location local service.
-	 */
 
 	public Location addLocation(Location location) throws SystemException {
 

@@ -16,6 +16,9 @@ import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.model.impl.LocationImpl;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 
+/**
+ * @author Joe Bloggs
+ */
 public class LocationListingPortlet extends MVCPortlet {
 
 	public void addLocation(ActionRequest request, ActionResponse response)

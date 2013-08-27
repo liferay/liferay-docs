@@ -275,11 +275,6 @@ public class EventLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	/**
-	* NOTE FOR DEVELOPERS:
-	*
-	* Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventLocalServiceUtil} to access the event local service.
-	*/
 	public static com.nosester.portlet.eventlisting.model.Event addEvent(
 		java.lang.String name, java.lang.String description, int month,
 		int day, int year, int hour, int minute, long locationId,

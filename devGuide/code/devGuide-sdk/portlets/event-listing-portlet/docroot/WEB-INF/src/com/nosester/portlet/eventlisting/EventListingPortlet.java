@@ -17,6 +17,9 @@ import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.EventServiceUtil;
 
+/**
+ * @author Joe Bloggs
+ */
 public class EventListingPortlet extends MVCPortlet {
 
 	public void addEvent(ActionRequest request, ActionResponse response)
