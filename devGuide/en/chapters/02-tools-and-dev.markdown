@@ -1493,13 +1493,14 @@ Maven artifacts from source, follow these steps:
     signs. Also, replace `[app server name]` with the name of your application
     server. Note that your `app.server.[app server name].dir` directory doesn't
     need to exist yet; you can create it by invoking an Ant target in the next
-    step. For example, if you're running Apache Tomcat 7.0.27 and your
+    step. For example, if you're running Apache Tomcat and your
     Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
     the following properties:
 
         app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x
 
-        app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27
+        app.server.tomcat.dir=
+            /home/jbloggs/liferay/bundles/ce-6.1.x/[tomcat version]
 
 3.  If an application server doesn't already exist at the directory specified by
     your `app.server.[app server name].dir` property, run `ant -f build-dist.xml
