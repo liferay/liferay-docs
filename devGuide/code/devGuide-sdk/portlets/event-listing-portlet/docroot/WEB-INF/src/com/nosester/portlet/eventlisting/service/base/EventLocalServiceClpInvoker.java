@@ -115,49 +115,73 @@ public class EventLocalServiceClpInvoker {
 		_methodName52 = "addEvent";
 
 		_methodParameterTypes52 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "int", "int",
-				"int", "int", "int", "long",
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName53 = "deleteEvent";
+		_methodName53 = "addEventResources";
 
 		_methodParameterTypes53 = new String[] {
+				"com.nosester.portlet.eventlisting.model.Event", "boolean",
+				"boolean"
+			};
+
+		_methodName54 = "addEventResources";
+
+		_methodParameterTypes54 = new String[] {
+				"com.nosester.portlet.eventlisting.model.Event",
+				"java.lang.String[][]", "java.lang.String[][]"
+			};
+
+		_methodName55 = "addEventResources";
+
+		_methodParameterTypes55 = new String[] { "long", "boolean", "boolean" };
+
+		_methodName56 = "addEventResources";
+
+		_methodParameterTypes56 = new String[] {
+				"long", "java.lang.String[][]", "java.lang.String[][]"
+			};
+
+		_methodName57 = "deleteEvent";
+
+		_methodParameterTypes57 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Event"
 			};
 
-		_methodName54 = "deleteEvent";
+		_methodName58 = "deleteEvent";
 
-		_methodParameterTypes54 = new String[] { "long" };
+		_methodParameterTypes58 = new String[] { "long" };
 
-		_methodName55 = "findByEventNameEventDescriptionLocationName";
+		_methodName59 = "findByEventNameEventDescriptionLocationName";
 
-		_methodParameterTypes55 = new String[] {
+		_methodParameterTypes59 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName56 = "getEvent";
+		_methodName60 = "getEvent";
 
-		_methodParameterTypes56 = new String[] { "long" };
+		_methodParameterTypes60 = new String[] { "long" };
 
-		_methodName57 = "getEventsByGroupId";
+		_methodName61 = "getEventsByGroupId";
 
-		_methodParameterTypes57 = new String[] { "long" };
+		_methodParameterTypes61 = new String[] { "long" };
 
-		_methodName58 = "getEventsByGroupId";
+		_methodName62 = "getEventsByGroupId";
 
-		_methodParameterTypes58 = new String[] { "long", "int", "int" };
+		_methodParameterTypes62 = new String[] { "long", "int", "int" };
 
-		_methodName59 = "getEventsCountByGroupId";
+		_methodName63 = "getEventsCountByGroupId";
 
-		_methodParameterTypes59 = new String[] { "long" };
+		_methodParameterTypes63 = new String[] { "long" };
 
-		_methodName60 = "updateEvent";
+		_methodName64 = "updateEvent";
 
-		_methodParameterTypes60 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "int", "int",
-				"int", "int", "int", "long",
+		_methodParameterTypes64 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -266,67 +290,105 @@ public class EventLocalServiceClpInvoker {
 		if (_methodName52.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
 			return EventLocalServiceUtil.addEvent(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Integer)arguments[3]).intValue(),
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
 				((Integer)arguments[4]).intValue(),
 				((Integer)arguments[5]).intValue(),
 				((Integer)arguments[6]).intValue(),
 				((Integer)arguments[7]).intValue(),
-				((Long)arguments[8]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[9]);
+				((Integer)arguments[8]).intValue(),
+				((Long)arguments[9]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[10]);
 		}
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
-			return EventLocalServiceUtil.deleteEvent((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+			EventLocalServiceUtil.addEventResources((com.nosester.portlet.eventlisting.model.Event)arguments[0],
+				((Boolean)arguments[1]).booleanValue(),
+				((Boolean)arguments[2]).booleanValue());
+
+			return null;
 		}
 
 		if (_methodName54.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
-			return EventLocalServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
+			EventLocalServiceUtil.addEventResources((com.nosester.portlet.eventlisting.model.Event)arguments[0],
+				(java.lang.String[])arguments[1],
+				(java.lang.String[])arguments[2]);
+
+			return null;
 		}
 
 		if (_methodName55.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
+			EventLocalServiceUtil.addEventResources(((Long)arguments[0]).longValue(),
+				((Boolean)arguments[1]).booleanValue(),
+				((Boolean)arguments[2]).booleanValue());
+
+			return null;
+		}
+
+		if (_methodName56.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+			EventLocalServiceUtil.addEventResources(((Long)arguments[0]).longValue(),
+				(java.lang.String[])arguments[1],
+				(java.lang.String[])arguments[2]);
+
+			return null;
+		}
+
+		if (_methodName57.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+			return EventLocalServiceUtil.deleteEvent((com.nosester.portlet.eventlisting.model.Event)arguments[0]);
+		}
+
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
+			return EventLocalServiceUtil.deleteEvent(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName59.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
 			return EventLocalServiceUtil.findByEventNameEventDescriptionLocationName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName56.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+		if (_methodName60.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
 			return EventLocalServiceUtil.getEvent(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName57.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+		if (_methodName61.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes61, parameterTypes)) {
 			return EventLocalServiceUtil.getEventsByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName58.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
+		if (_methodName62.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
 			return EventLocalServiceUtil.getEventsByGroupId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName59.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
+		if (_methodName63.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes63, parameterTypes)) {
 			return EventLocalServiceUtil.getEventsCountByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName60.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
+		if (_methodName64.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
 			return EventLocalServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Integer)arguments[3]).intValue(),
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
 				((Integer)arguments[4]).intValue(),
 				((Integer)arguments[5]).intValue(),
 				((Integer)arguments[6]).intValue(),
 				((Integer)arguments[7]).intValue(),
-				((Long)arguments[8]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[9]);
+				((Integer)arguments[8]).intValue(),
+				((Long)arguments[9]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[10]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -386,4 +448,12 @@ public class EventLocalServiceClpInvoker {
 	private String[] _methodParameterTypes59;
 	private String _methodName60;
 	private String[] _methodParameterTypes60;
+	private String _methodName61;
+	private String[] _methodParameterTypes61;
+	private String _methodName62;
+	private String[] _methodParameterTypes62;
+	private String _methodName63;
+	private String[] _methodParameterTypes63;
+	private String _methodName64;
+	private String[] _methodParameterTypes64;
 }

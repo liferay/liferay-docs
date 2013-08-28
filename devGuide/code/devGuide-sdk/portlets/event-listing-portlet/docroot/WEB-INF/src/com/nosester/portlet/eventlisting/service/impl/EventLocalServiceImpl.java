@@ -21,8 +21,8 @@ import java.util.List;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.CalendarFactoryUtil;
+import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
-import com.nosester.portlet.eventlisting.NoSuchEventException;
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventLocalServiceBaseImpl;
@@ -47,10 +47,12 @@ import com.nosester.portlet.eventlisting.service.persistence.EventFinderUtil;
 public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 
 	public Event addEvent(
-			long groupId, String name, String description, int month, int day,
-			int year, int hour, int minute, long locationId,
+			long userId, long groupId, String name, String description,
+			int month, int day, int year, int hour, int minute, long locationId,
 			ServiceContext serviceContext)
-		throws SystemException {
+		throws PortalException, SystemException {
+
+		User user = userPersistence.findByPrimaryKey(userId);
 
 		Date now = new Date();
 
@@ -61,31 +63,80 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		event.setName(name);
 		event.setDescription(description);
 
-		Calendar dateCal = CalendarFactoryUtil.getCalendar();
+		Calendar dateCal = CalendarFactoryUtil.getCalendar(
+			user.getTimeZone());
 		dateCal.set(year, month, day, hour, minute);
 		Date date = dateCal.getTime();
 		event.setDate(date);
 
 		event.setLocationId(locationId);
 
-		long userId = 0;
-		try {
-			userId = serviceContext.getGuestOrUserId();
-		} catch (PortalException pe) {
-			pe.printStackTrace();
-		} catch (SystemException se) {
-			se.printStackTrace();
-		}
-
-		event.setUserId(userId);
-		event.setCompanyId(serviceContext.getCompanyId());
 		event.setGroupId(groupId);
-		event.setCreateDate(now);
-		event.setModifiedDate(now);
+		event.setCompanyId(user.getCompanyId());
+		event.setUserId(user.getUserId());
+		event.setCreateDate(serviceContext.getCreateDate(now));
+		event.setModifiedDate(serviceContext.getModifiedDate(now));
 
 		super.addEvent(event);
 
+		// Resources
+
+		if (serviceContext.isAddGroupPermissions() ||
+			serviceContext.isAddGuestPermissions()) {
+
+			addEventResources(
+				event, serviceContext.isAddGroupPermissions(),
+				serviceContext.isAddGuestPermissions());
+		}
+		else {
+			addEventResources(
+				event, serviceContext.getGroupPermissions(),
+				serviceContext.getGuestPermissions());
+		}
+
 		return event;
+	}
+
+	public void addEventResources(
+			Event event, boolean addGroupPermissions,
+			boolean addGuestPermissions)
+		throws PortalException, SystemException {
+
+		resourceLocalService.addResources(
+			event.getCompanyId(), event.getGroupId(), event.getUserId(),
+			Event.class.getName(), event.getEventId(), false,
+			addGroupPermissions, addGuestPermissions);
+	}
+
+	public void addEventResources(
+			Event event, String[] groupPermissions,
+			String[] guestPermissions)
+		throws PortalException, SystemException {
+
+		resourceLocalService.addModelResources(
+			event.getCompanyId(), event.getGroupId(), event.getUserId(),
+			Event.class.getName(), event.getEventId(), groupPermissions,
+			guestPermissions);
+	}
+
+	public void addEventResources(
+			long eventId, boolean addGroupPermissions,
+			boolean addGuestPermissions)
+		throws PortalException, SystemException {
+
+		Event event = eventPersistence.findByPrimaryKey(eventId);
+
+		addEventResources(event, addGroupPermissions, addGuestPermissions);
+	}
+
+	public void addEventResources(
+			long eventId, String[] groupPermissions,
+			String[] guestPermissions)
+		throws PortalException, SystemException {
+
+		Event event = eventPersistence.findByPrimaryKey(eventId);
+
+		addEventResources(event, groupPermissions, guestPermissions);
 	}
 
 	public Event deleteEvent(Event event) throws SystemException {
@@ -94,20 +145,24 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	}
 
 	public Event deleteEvent(long eventId)
-		throws NoSuchEventException, SystemException {
+		throws PortalException, SystemException {
 
 		Event event = eventPersistence.findByPrimaryKey(eventId);
 
 		return deleteEvent(event);
 	}
 
-	public List<Event> findByEventNameEventDescriptionLocationName(String eventName, String eventDescription, String locationName,
-	int begin, int end) throws SystemException {
+	public List<Event> findByEventNameEventDescriptionLocationName(
+			String eventName, String eventDescription, String locationName,
+			int begin, int end)
+		throws SystemException {
 
-	return EventFinderUtil.findByEventNameEventDescriptionLocationName(eventName, eventDescription, locationName, begin, end);
+		return EventFinderUtil.findByEventNameEventDescriptionLocationName(
+			eventName, eventDescription, locationName, begin, end);
 	}
 
-	public Event getEvent(long eventId) throws SystemException, PortalException {
+	public Event getEvent(long eventId)
+		throws SystemException, PortalException {
 
 		return eventPersistence.findByPrimaryKey(eventId);
 	}
@@ -117,7 +172,8 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		return eventPersistence.findByGroupId(groupId);
 	}
 
-	public List<Event> getEventsByGroupId(long groupId, int start, int end) throws SystemException {
+	public List<Event> getEventsByGroupId(long groupId, int start, int end)
+		throws SystemException {
 
 		return eventPersistence.findByGroupId(groupId, start, end);
 	}
@@ -128,23 +184,23 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	}
 
 	public Event updateEvent(
-			long eventId, String name, String description, int month, int day,
-			int year, int hour, int minute, long locationId,
-			ServiceContext serviceContext)
-		throws SystemException {
+			long userId, long eventId, String name, String description,
+			int month, int day, int year, int hour, int minute,
+			long locationId, ServiceContext serviceContext)
+		throws PortalException, SystemException {
 
-		Event event = null;
-		try {
-			event = EventLocalServiceUtil.fetchEvent(eventId);
-		} catch (SystemException e) {
-			e.printStackTrace();
-		}
+		User user = userPersistence.findByPrimaryKey(userId);
 
-		event.setModifiedDate(serviceContext.getModifiedDate(null));
+		Date now = new Date();
+
+		Event event = EventLocalServiceUtil.fetchEvent(eventId);
+
+		event.setModifiedDate(serviceContext.getModifiedDate(now));
 		event.setName(name);
 		event.setDescription(description);
 
-		Calendar dateCal = CalendarFactoryUtil.getCalendar();
+		Calendar dateCal = CalendarFactoryUtil.getCalendar(
+			user.getTimeZone());
 		dateCal.set(year, month, day, hour, minute);
 		Date date = dateCal.getTime();
 		event.setDate(date);

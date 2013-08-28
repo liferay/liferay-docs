@@ -72,21 +72,22 @@ public class EventListingPortlet extends MVCPortlet {
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 			Event.class.getName(), request);
 
+		ThemeDisplay themeDisplay = (ThemeDisplay) request
+				.getAttribute(WebKeys.THEME_DISPLAY);
+
 		Event event = null;
 
 		if (eventId <= 0) {
-			ThemeDisplay themeDisplay = (ThemeDisplay) request
-					.getAttribute(WebKeys.THEME_DISPLAY);
-			long groupId = themeDisplay.getScopeGroupId();
-			
-			event = EventServiceUtil.addEvent(groupId, name, description, month,
-				day, year, hour, minute, locationId, serviceContext);
+			event = EventServiceUtil.addEvent(
+				themeDisplay.getScopeGroupId(), name, description, month, day,
+				year, hour, minute, locationId, serviceContext);
 		}
 		else {
 			event = EventServiceUtil.getEvent(eventId);
 
-			event = EventServiceUtil.updateEvent(eventId, name, description,
-				month, day, year, hour, minute, locationId, serviceContext);
+			event = EventServiceUtil.updateEvent(
+				themeDisplay.getUserId(), eventId, name, description, month,
+				day, year, hour, minute, locationId, serviceContext);
 		}
 		
 		return event;

@@ -66,7 +66,8 @@ public class EventServiceUtil {
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addEvent(groupId, name, description, month, day, year,
 			hour, minute, locationId, serviceContext);
@@ -87,13 +88,15 @@ public class EventServiceUtil {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updateEvent(eventId, name, description, month, day, year,
-			hour, minute, locationId, serviceContext);
+				   .updateEvent(userId, eventId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
 	}
 
 	public static void clearService() {

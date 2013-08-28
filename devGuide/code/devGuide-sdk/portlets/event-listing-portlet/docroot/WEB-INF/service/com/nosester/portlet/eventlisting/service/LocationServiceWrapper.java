@@ -59,7 +59,9 @@ public class LocationServiceWrapper implements LocationService,
 		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.addLocation(groupId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
@@ -75,7 +77,9 @@ public class LocationServiceWrapper implements LocationService,
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.updateLocation(locationId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
