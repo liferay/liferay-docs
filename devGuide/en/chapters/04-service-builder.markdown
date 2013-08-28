@@ -912,7 +912,7 @@ Event. Then we could use the method's parameters to populate the new Event's
 name, description, and a location ID fields and return the Event.
 (`eventPersistence` is one of the Spring beans injected into
 `EventLocalServiceBaseImpl` by Service Builder.) To see this implementation of
-`addEvent`, please examine the complete `EventListingServiceImpl` class included
+`addEvent`, please examine the complete `EventLocalServiceImpl` class included
 in the *Dev Guide SDK* which you can download from our Developer's Guide page at
 [http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
 
@@ -959,102 +959,91 @@ operations on Locations. To this end, you'll create the following methods for
 Replace the contents of `EventListingPortlet.java` with the following code:
 
     package com.nosester.portlet.eventlisting;
-
-	import com.liferay.portal.kernel.util.CalendarFactoryUtil;
-    import com.liferay.portal.kernel.util.ParamUtil;
-    import com.liferay.portal.kernel.util.WebKeys;
-    import com.liferay.portal.theme.ThemeDisplay;
-    import com.liferay.util.bridges.mvc.MVCPortlet;
-
-    import com.nosester.portlet.eventlisting.model.Event;
-    import com.nosester.portlet.eventlisting.model.impl.EventImpl;
-    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
-
+    
     import java.util.Calendar;
-    import java.util.Date;
-
+    
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
+    
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.log.Log;
+    import com.liferay.portal.kernel.log.LogFactoryUtil;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+    import com.nosester.portlet.eventlisting.model.Event;
+    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
+    import com.nosester.portlet.eventlisting.service.EventServiceUtil;
+    
     public class EventListingPortlet extends MVCPortlet {
-
+    
         public void addEvent(ActionRequest request, ActionResponse response)
                 throws Exception {
-
-            EventImpl event = new EventImpl();
-
-            event.setName(ParamUtil.getString(request, "name"));
-            event.setDescription(ParamUtil.getString(request, "description"));
-            event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-            event.setDate(_extractDate(request));
-
-            ThemeDisplay themeDisplay = (ThemeDisplay)request
-                    .getAttribute(WebKeys.THEME_DISPLAY);
-
-            event.setUserId(themeDisplay.getUserId());
-            event.setCompanyId(themeDisplay.getCompanyId());
-            event.setGroupId(themeDisplay.getScopeGroupId());
-
-            EventLocalServiceUtil.addEvent(event);
-
+    
+            _updateEvent(request);
+    
             sendRedirect(request, response);
         }
-
+    
         public void deleteEvent(ActionRequest request, ActionResponse response)
             throws Exception {
-
+    
             long eventId = ParamUtil.getLong(request, "eventId");
-
+    
             EventLocalServiceUtil.deleteEvent(eventId);
-
+    
             sendRedirect(request, response);
         }
-
+    
         public void updateEvent(ActionRequest request, ActionResponse response)
             throws Exception {
-
-            long eventId = ParamUtil.getLong(request, "eventId");
-
-            Event event = EventLocalServiceUtil.fetchEvent(eventId);
-
-            event.setEventId(ParamUtil.getLong(request, "eventId"));
-            event.setName(ParamUtil.getString(request, "name"));
-            event.setDescription(ParamUtil.getString(request, "description"));
-            event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-            event.setDate(_extractDate(request));
-
-            ThemeDisplay themeDisplay = (ThemeDisplay)request
-                    .getAttribute(WebKeys.THEME_DISPLAY);
-
-            event.setUserId(themeDisplay.getUserId());
-            event.setCompanyId(themeDisplay.getCompanyId());
-            event.setGroupId(themeDisplay.getScopeGroupId());
-
-            EventLocalServiceUtil.updateEvent(event);
-
+    
+            _updateEvent(request);
+    
             sendRedirect(request, response);
         }
-
-        private Date _extractDate(ActionRequest request) {
+    
+        private Event _updateEvent(ActionRequest request)
+            throws PortalException, SystemException {
+    
+            long eventId = ParamUtil.getLong(request, "eventId");
+            String name = ParamUtil.getString(request, "name");
+            String description = ParamUtil.getString(request, "description");
+            long locationId = ParamUtil.getLong(request, "locationId");
+    
             int year = ParamUtil.getInteger(request, "dateYear");
             int month = ParamUtil.getInteger(request, "dateMonth");
             int day = ParamUtil.getInteger(request, "dateDay");
             int hour = ParamUtil.getInteger(request, "dateHour");
             int minute = ParamUtil.getInteger(request, "dateMinute");
             int amPm = ParamUtil.getInteger(request, "dateAmPm");
-
+    
             if (amPm == Calendar.PM) {
                 hour += 12;
             }
-
-            Calendar dateCal = CalendarFactoryUtil.getCalendar();
-            dateCal.set(year, month, day, hour, minute);
-            Date date = dateCal.getTime();
-            return date;
+    
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                Event.class.getName(), request);
+    
+            Event event = null;
+    
+            if (eventId <= 0) {
+                event = EventServiceUtil.addEvent(
+                    serviceContext.getScopeGroupId(), name, description, month, day,
+                    year, hour, minute, locationId, serviceContext);
+            }
+            else {
+                event = EventServiceUtil.getEvent(eventId);
+    
+                event = EventServiceUtil.updateEvent(
+                    serviceContext.getUserId(), eventId, name, description, month,
+                    day, year, hour, minute, locationId, serviceContext);
+            }
+            
+            return event;
         }
-
-    }
 
 The Event Listing portlet's `addEvent`, `updateEvent`, and `deleteEvent`
 methods now call the appropriate methods from `EventLocalServiceUtil`. Liferay's
@@ -1512,7 +1501,7 @@ Great! Now rebuild your service using Service Builder, redeploy your portlet
 project, and add or edit an event using the portlet. The following figure shows
 the portlet displaying the input fields as we specified.
 	
-![Figure 4.10: Customizing string input fields to use editors and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+![Figure 4.10: Customizing string input fields to use spacious text areas and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
 not only can you influence how your model's input fields are displayed but also
@@ -1553,58 +1542,61 @@ Remember: local service methods are implemented in `EventLocalServiceImpl`.
 Similarly, you'll implement remote service methods in `EventServiceImpl`. Add
 the following methods to the `EventServiceImpl` class:
 
-    public Event addEvent(Event event) throws SystemException {
-        
-        long eventId = counterLocalService.increment(Event.class.getName());
-        event.setEventId(eventId);
-        
-        Date now = new Date();
-        event.setCreateDate(now);
-        event.setModifiedDate(now);
-        
-        return eventLocalService.addEvent(event);
-    }
-    
-    public Event update(Event event) throws SystemException {
-        
-        Date now = new Date();
-        event.setModifiedDate(now);
-        
-        return eventLocalService.updateEvent(event);
-    }	
-    
-    public Event delete(Event event) throws SystemException {
-        
-        return eventLocalService.deleteEvent(event);
-    }	
+	public Event addEvent(
+			long groupId, String name, String description,
+			int month, int day, int year, int hour, int minute, long locationId,
+			ServiceContext serviceContext)
+		throws PortalException, SystemException {
 
-    public Event deleteEvent(long eventId) throws PortalException, SystemException {
-            
-        return eventLocalService.deleteEvent(eventId);
-    }
+		EventListingPermission.check(
+			getPermissionChecker(), groupId, EventListingActionKeys.ADD_EVENT);
 
-<!-- The above code must be changed as quick as we can. AFAIK, you can't pass
-complex objects like Event into remote services, especially the SOAP ones. One
-of the reasons for reimplementing the methods for the remote services is to
-change the method signatures so that you'd have something like: 
+		return EventLocalServiceUtil.addEvent(
+			getUserId(), groupId, name, description, month, day, year, hour,
+			minute, locationId, serviceContext);
+	}
 
-public Event addEvent(String name, String dateString) {
-    Date eventDate = [parse String date into Date object];
-    Event event = new EventImpl();
-    event.setDate(eventDate);
-    (etc)
-    return eventLocalService.addEvent(event);
-}
+	public Event deleteEvent(long eventId)
+		throws PortalException, SystemException {
 
-The other important thing to implement is security checks. Remote services have
-to do implicit security checks to determine whether the caller has permission to
-add/update/delete events. This implementation, if it were properly written to
-use primitives, would allow anyone on the Internet to remotely manage events. 
+		EventPermission.check(getPermissionChecker(), eventId,
+			EventListingActionKeys.DELETE_EVENT);
 
-Since we don't have these two things, we don't have a valid implementation of
-remote services in the documentation, and I'm sure we'll get comments and
-questions about it. -Rich -->
+		return eventLocalService.deleteEvent(eventId);
+	}
 
+	public Event getEvent(long eventId)
+		throws PortalException, SystemException {
+
+		EventPermission.check(getPermissionChecker(), eventId,
+			EventListingActionKeys.VIEW);
+
+		return EventLocalServiceUtil.getEvent(eventId);
+	}
+
+	public Event updateEvent(
+			long userId, long eventId, String name, String description,
+			int month, int day, int year, int hour, int minute, long locationId,
+			ServiceContext serviceContext)
+		throws PortalException, SystemException {
+
+		EventPermission.check(getPermissionChecker(), eventId,
+			EventListingActionKeys.UPDATE_EVENT);
+
+		return EventLocalServiceUtil.updateEvent(
+			userId, eventId, name, description, month, day, year, hour, minute,
+			locationId, serviceContext);
+	}
+
+Each remote service method performs security checks to determine whether the
+caller has permission to add/update/delete events. We cover Liferay's security
+and permissions system in Chapter 6. To see how the Event Listing portlet is
+integrated with Liferay's permissions system, browse the Event Listing portlet
+project available in the *Dev Guide SDK* at
+[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk). 
+The project is in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
+folder. 
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,
 and `deleteEvent` methods. The `eventLocalService` field holds a Spring bean of
@@ -1626,12 +1618,9 @@ beans available in `EventServiceImpl`. These include the following:
 - `userPersistence`
 - `userService`
 
-Notice also that we overloaded the `deleteEvent` method of the
-`EventServiceImpl` class. We did this to simplify our example of calling remote
-web services in the next section; it's much more efficient to pass an event ID
-as a parameter over web services than to pass an entire event object.
-
-<!-- Actually, this is how all the methods should be implemented. -Rich -->
+Notice also that we modified the `deleteEvent` method of the
+`EventServiceImpl` class passing it an event ID as a parameter instead of an
+entire event object. The method is now ready to call as a remote web service. 
 
 After you finish adding imports to `EventServiceImpl`, save the class and run
 Service Builder again. 
@@ -1703,12 +1692,7 @@ takes you to the following URL:
     http://localhost:8080/event-listing-portlet/api/axis/Plugin_Event_EventService?wsdl 
 
 This WSDL document lists the Event entity's SOAP web services. Once the web
-service's WSDL is available, any SOAP web service client can access it. In
-production, make sure to integrate your applications with Liferay's permissions
-system to perform security checks for all your remote service methods.
-
-<!-- Okay, security checks are mentioned here. But this is so important, it
-should be modeled in the code examples. Otherwise, it's easily missed. -Rich -->
+service's WSDL is available, any SOAP web service client can access it. 
 
 ## Developing Custom SQL Queries 
 
