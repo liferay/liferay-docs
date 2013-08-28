@@ -1,41 +1,33 @@
 package com.nosester.portlet.eventlisting;
 
-import com.liferay.portal.kernel.util.CalendarFactoryUtil;
-import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.theme.ThemeDisplay;
-import com.liferay.util.bridges.mvc.MVCPortlet;
-
-import com.nosester.portlet.eventlisting.model.Event;
-import com.nosester.portlet.eventlisting.model.impl.EventImpl;
-import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
-
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.service.ServiceContextFactory;
+import com.liferay.portal.theme.ThemeDisplay;
+import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.nosester.portlet.eventlisting.model.Event;
+import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
+import com.nosester.portlet.eventlisting.service.EventServiceUtil;
+
+/**
+ * @author Joe Bloggs
+ */
 public class EventListingPortlet extends MVCPortlet {
 
 	public void addEvent(ActionRequest request, ActionResponse response)
 			throws Exception {
 
-		EventImpl event = new EventImpl();
-
-		event.setName(ParamUtil.getString(request, "name"));
-		event.setDescription(ParamUtil.getString(request, "description"));
-		event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-		event.setDate(_extractDate(request));
-
-		ThemeDisplay themeDisplay = (ThemeDisplay)request
-				.getAttribute(WebKeys.THEME_DISPLAY);
-
-		event.setUserId(themeDisplay.getUserId());
-		event.setCompanyId(themeDisplay.getCompanyId());
-		event.setGroupId(themeDisplay.getScopeGroupId());
-
-		EventLocalServiceUtil.addEvent(event);
+		_updateEvent(request);
 
 		sendRedirect(request, response);
 	}
@@ -53,30 +45,19 @@ public class EventListingPortlet extends MVCPortlet {
 	public void updateEvent(ActionRequest request, ActionResponse response)
 		throws Exception {
 
-		long eventId = ParamUtil.getLong(request, "eventId");
-
-		Event event = EventLocalServiceUtil.fetchEvent(eventId);
-
-		event.setEventId(ParamUtil.getLong(request, "eventId"));
-		event.setName(ParamUtil.getString(request, "name"));
-		event.setDescription(ParamUtil.getString(request, "description"));
-		event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-		event.setDate(_extractDate(request));
-
-		ThemeDisplay themeDisplay = (ThemeDisplay)request
-				.getAttribute(WebKeys.THEME_DISPLAY);
-
-		event.setUserId(themeDisplay.getUserId());
-		event.setCompanyId(themeDisplay.getCompanyId());
-		event.setGroupId(themeDisplay.getScopeGroupId());
-
-		EventLocalServiceUtil.updateEvent(event);
+		_updateEvent(request);
 
 		sendRedirect(request, response);
 	}
 
-	private Date _extractDate(ActionRequest request) {
+	private Event _updateEvent(ActionRequest request)
+		throws PortalException, SystemException {
+
+		long eventId = ParamUtil.getLong(request, "eventId");
+		String name = ParamUtil.getString(request, "name");
+		String description = ParamUtil.getString(request, "description");
+		long locationId = ParamUtil.getLong(request, "locationId");
+
 		int year = ParamUtil.getInteger(request, "dateYear");
 		int month = ParamUtil.getInteger(request, "dateMonth");
 		int day = ParamUtil.getInteger(request, "dateDay");
@@ -88,10 +69,26 @@ public class EventListingPortlet extends MVCPortlet {
 			hour += 12;
 		}
 
-		Calendar dateCal = CalendarFactoryUtil.getCalendar();
-		dateCal.set(year, month, day, hour, minute);
-		Date date = dateCal.getTime();
-		return date;
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+			Event.class.getName(), request);
+
+		Event event = null;
+
+		if (eventId <= 0) {
+			event = EventServiceUtil.addEvent(
+				serviceContext.getScopeGroupId(), name, description, month, day,
+				year, hour, minute, locationId, serviceContext);
+		}
+		else {
+			event = EventServiceUtil.getEvent(eventId);
+
+			event = EventServiceUtil.updateEvent(
+				serviceContext.getUserId(), eventId, name, description, month,
+				day, year, hour, minute, locationId, serviceContext);
+		}
+		
+		return event;
 	}
 
+	private static Log _log = LogFactoryUtil.getLog(EventListingPortlet.class);
 }

@@ -35,38 +35,26 @@ public class EventServiceClp implements EventService {
 		_methodName3 = "addEvent";
 
 		_methodParameterTypes3 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
-
-		_methodName4 = "addEvent";
-
-		_methodParameterTypes4 = new String[] {
-				"java.lang.String", "java.lang.String", "java.util.Date", "long",
+				"long", "java.lang.String", "java.lang.String", "int", "int",
+				"int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName5 = "update";
+		_methodName4 = "deleteEvent";
 
-		_methodParameterTypes5 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
+		_methodParameterTypes4 = new String[] { "long" };
+
+		_methodName5 = "getEvent";
+
+		_methodParameterTypes5 = new String[] { "long" };
 
 		_methodName6 = "updateEvent";
 
 		_methodParameterTypes6 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "java.util.Date",
-				"long", "com.liferay.portal.service.ServiceContext"
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
+				"com.liferay.portal.service.ServiceContext"
 			};
-
-		_methodName7 = "delete";
-
-		_methodParameterTypes7 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Event"
-			};
-
-		_methodName8 = "deleteEvent";
-
-		_methodParameterTypes8 = new String[] { "long" };
 	}
 
 	@Override
@@ -121,119 +109,32 @@ public class EventServiceClp implements EventService {
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName3,
 					_methodParameterTypes3,
-					new Object[] { ClpSerializer.translateInput(event) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName4,
-					_methodParameterTypes4,
 					new Object[] {
-						ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(description),
-						
-					ClpSerializer.translateInput(date),
-						
-					locationId,
-						
-					ClpSerializer.translateInput(serviceContext)
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName5,
-					_methodParameterTypes5,
-					new Object[] { ClpSerializer.translateInput(event) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName6,
-					_methodParameterTypes6,
-					new Object[] {
-						eventId,
+						groupId,
 						
 					ClpSerializer.translateInput(name),
 						
 					ClpSerializer.translateInput(description),
 						
-					ClpSerializer.translateInput(date),
+					month,
+						
+					day,
+						
+					year,
+						
+					hour,
+						
+					minute,
 						
 					locationId,
 						
@@ -243,31 +144,9 @@ public class EventServiceClp implements EventService {
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
 
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
 			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event delete(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName7,
-					_methodParameterTypes7,
-					new Object[] { ClpSerializer.translateInput(event) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
@@ -293,8 +172,101 @@ public class EventServiceClp implements EventService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName8,
-					_methodParameterTypes8, new Object[] { eventId });
+			returnObj = _invokableService.invokeMethod(_methodName4,
+					_methodParameterTypes4, new Object[] { eventId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event getEvent(long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName5,
+					_methodParameterTypes5, new Object[] { eventId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName6,
+					_methodParameterTypes6,
+					new Object[] {
+						userId,
+						
+					eventId,
+						
+					ClpSerializer.translateInput(name),
+						
+					ClpSerializer.translateInput(description),
+						
+					month,
+						
+					day,
+						
+					year,
+						
+					hour,
+						
+					minute,
+						
+					locationId,
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -332,8 +304,4 @@ public class EventServiceClp implements EventService {
 	private String[] _methodParameterTypes5;
 	private String _methodName6;
 	private String[] _methodParameterTypes6;
-	private String _methodName7;
-	private String[] _methodParameterTypes7;
-	private String _methodName8;
-	private String[] _methodParameterTypes8;
 }

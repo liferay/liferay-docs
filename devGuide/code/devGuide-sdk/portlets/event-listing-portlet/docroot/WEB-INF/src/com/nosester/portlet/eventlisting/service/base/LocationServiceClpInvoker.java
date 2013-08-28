@@ -35,40 +35,22 @@ public class LocationServiceClpInvoker {
 		_methodName32 = "addLocation";
 
 		_methodParameterTypes32 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName33 = "addLocation";
-
-		_methodParameterTypes33 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName34 = "update";
+		_methodName33 = "deleteLocation";
+
+		_methodParameterTypes33 = new String[] { "long" };
+
+		_methodName34 = "updateLocation";
 
 		_methodParameterTypes34 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName35 = "updateLocation";
-
-		_methodParameterTypes35 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
-
-		_methodName36 = "delete";
-
-		_methodParameterTypes36 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName37 = "deleteLocation";
-
-		_methodParameterTypes37 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -87,11 +69,6 @@ public class LocationServiceClpInvoker {
 
 		if (_methodName32.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes32, parameterTypes)) {
-			return LocationServiceUtil.addLocation((com.nosester.portlet.eventlisting.model.Location)arguments[0]);
-		}
-
-		if (_methodName33.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes33, parameterTypes)) {
 			return LocationServiceUtil.addLocation(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
@@ -99,28 +76,18 @@ public class LocationServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-		if (_methodName34.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
-			return LocationServiceUtil.update((com.nosester.portlet.eventlisting.model.Location)arguments[0]);
+		if (_methodName33.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes33, parameterTypes)) {
+			return LocationServiceUtil.deleteLocation(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName35.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
+		if (_methodName34.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
 			return LocationServiceUtil.updateLocation(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
 				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
-		}
-
-		if (_methodName36.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
-			return LocationServiceUtil.delete((com.nosester.portlet.eventlisting.model.Location)arguments[0]);
-		}
-
-		if (_methodName37.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
-			return LocationServiceUtil.deleteLocation(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
@@ -136,10 +103,4 @@ public class LocationServiceClpInvoker {
 	private String[] _methodParameterTypes33;
 	private String _methodName34;
 	private String[] _methodParameterTypes34;
-	private String _methodName35;
-	private String[] _methodParameterTypes35;
-	private String _methodName36;
-	private String[] _methodParameterTypes36;
-	private String _methodName37;
-	private String[] _methodParameterTypes37;
 }

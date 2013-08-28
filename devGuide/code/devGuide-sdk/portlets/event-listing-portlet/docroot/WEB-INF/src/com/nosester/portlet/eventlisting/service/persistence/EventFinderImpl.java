@@ -12,6 +12,10 @@ import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.model.impl.EventImpl;
 
 import java.util.List;
+
+/**
+ * @author Joe Bloggs
+ */
 public class EventFinderImpl extends BasePersistenceImpl<Event> implements EventFinder {
 
 	public List<Event> findByEventNameEventDescriptionLocationName(String eventName, String eventDescription, String locationName, int begin, int end) {
