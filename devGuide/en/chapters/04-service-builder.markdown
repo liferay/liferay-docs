@@ -1114,7 +1114,7 @@ Liferay's local services.
 <!-- The above paragraph would be much more clear if we delineate the various
 layers of the app as recommended above. -Rich -->
 
-## Understanding the Service Builder-generated Code
+## Understanding the Service Builder-generated Code [](id=service-builder-generated-code-liferay-portal-6-1-dev-guide-en)
 
 Now let's examine the files Service Builder generated for your Event entity.
 Note that the files listed under Local Service and Remote Service below are only
