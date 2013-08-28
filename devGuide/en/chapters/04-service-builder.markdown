@@ -222,25 +222,25 @@ we'll use the new Liferay portlet wizard to create a second portlet in this
 project: the Location Listing portlet. Here's some key information to specify
 for the Event Listing portlet project in the first wizard: 
 
-**Project name:** *event-listing-portlet*
-**Display name:** *Event Listing*
-**Project type:** *Portlet*
-**Portlet framework:** *Liferay MVC*
-**Create custom portlet class:** *yes*
+- **Project name:** *event-listing-portlet*
+- **Display name:** *Event Listing*
+- **Project type:** *Portlet*
+- **Portlet framework:** *Liferay MVC*
+- **Create custom portlet class:** *yes*
 
 After you select *Create custom portlet class*, the rest of the wizard lets you
 specify details about the Event Listing portlet class:
 
-**Portlet class:** *EventListingPortlet*
-**Java package:** *com.nosester.portlet.eventlisting*
-**Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
-**Portlet name:** *eventlisting*
-**Display name:** *Event Listing Portlet*
-**Title:** *Event Listing Portlet*
-**Portlet modes:** *View*
-**Create JSP files:** yes
-**Create resources bundle file:** *yes*
-**Category:** *Sample*
+- **Portlet class:** *EventListingPortlet*
+- **Java package:** *com.nosester.portlet.eventlisting*
+- **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
+- **Portlet name:** *eventlisting*
+- **Display name:** *Event Listing Portlet*
+- **Title:** *Event Listing Portlet*
+- **Portlet modes:** *View*
+- **Create JSP files:** yes
+- **Create resources bundle file:** *yes*
+- **Category:** *Sample*
 
 Selecting *Create resources bundle file* lets you add different language
 translations for your portlet's textual display values. Click *Finish* to
@@ -255,16 +255,16 @@ portlet class name and a few other name values will be different.
 Here is a summary of the values to specify for creating the Location Listing
 portlet via the Liferay portlet wizard: 
 
-**Portlet class:** *LocationListingPortlet*
-**Java package:** *com.nosester.portlet.eventlisting*
-**Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
-**Portlet name:** *locationlisting*
-**Display name:** *Location Listing Portlet*
-**Title:** *Location Listing Portlet*
-**Portlet modes:** *View*
-**Create JSP files:** *yes*
-**Create resources bundle file:** *yes*
-**Category:** *Sample*
+- **Portlet class:** *LocationListingPortlet*
+- **Java package:** *com.nosester.portlet.eventlisting*
+- **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
+- **Portlet name:** *locationlisting*
+- **Display name:** *Location Listing Portlet*
+- **Title:** *Location Listing Portlet*
+- **Portlet modes:** *View*
+- **Create JSP files:** *yes*
+- **Create resources bundle file:** *yes*
+- **Category:** *Sample*
 
 After you've finished using the Liferay portlet wizard to create the Location
 Listing portlet, expand your project's `docroot/WEB-INF/src` folder and the
@@ -361,10 +361,10 @@ view now shows the Service Builder form in which we can enter our service's
 global information. The fields include the service's package path, author, and
 namespace options. Here are the values we'll use for our example service:
 
-**Package path:** *com.nosester.portlet.eventlisting*
-**Auto namespace tables:** *no*
-**Author:** [your name]
-**Namespace:** *Event*
+- **Package path:** *com.nosester.portlet.eventlisting*
+- **Auto namespace tables:** *no*
+- **Author:** [your name]
+- **Namespace:** *Event*
 
 The *package path* specifies the package in which the service and persistence
 classes are generated. The package path we defined above ensures that the
@@ -411,15 +411,15 @@ you'll create two entities--one for events and one for locations.
 
 Here's a summary of the information we'll enter for the Event entity:
 
-**Name:** *Event*
-**Local service:** *yes*
-**Remote service:** *yes* 
+- **Name:** *Event*
+- **Local service:** *yes*
+- **Remote service:** *yes* 
 
 And here's what we'll enter for the Location entity:
 
-**Name:** *Location*
-**Local service:** *yes*
-**Remote service:** *yes* 
+- **Name:** *Location*
+- **Local service:** *yes*
+- **Remote service:** *yes* 
 
 To create these entities, select the *Entities* node under the Service
 Builder node in the outline on the left side of the `service.xml` editor in
