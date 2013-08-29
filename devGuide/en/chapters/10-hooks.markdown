@@ -464,7 +464,7 @@ for similar Struts actions, but from portlets.
 Struts actions are defined as classes, and they're all connected in a
 `struts-config.xml` file. A `struts-config.xml` for Liferay portal running on
 Apache Tomcat is in the
-`liferay-portal-<version>/tomcat-<version>/webapps/ROOT/WEB-INF` directory. The
+`liferay-portal-[version]/tomcat-[version]/webapps/ROOT/WEB-INF` directory. The
 `struts-config.xml` file links actions to specific JSP pages. Each action
 performs a specific task and then returns a *forward*, an object containing a
 name and path. The forward defines what page the user goes to after the action
