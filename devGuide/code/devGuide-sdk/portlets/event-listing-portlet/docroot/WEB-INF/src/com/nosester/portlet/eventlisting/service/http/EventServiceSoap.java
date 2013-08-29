@@ -113,13 +113,14 @@ public class EventServiceSoap {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.EventSoap updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
-			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.updateEvent(eventId,
-					name, description, month, day, year, hour, minute,
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.updateEvent(userId,
+					eventId, name, description, month, day, year, hour, minute,
 					locationId, serviceContext);
 
 			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);

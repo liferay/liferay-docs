@@ -27,6 +27,7 @@
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="eventId" type="tns:long"></parameter>
 		</operation>
 		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="updateEvent" qname="operNS:updateEvent" returnQName="updateEventReturn" returnType="rtns:EventSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="eventId" type="tns:long"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>

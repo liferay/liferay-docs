@@ -59,7 +59,8 @@ public class EventServiceWrapper implements EventService,
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.addEvent(groupId, name, description, month, day,
 			year, hour, minute, locationId, serviceContext);
 	}
@@ -78,12 +79,14 @@ public class EventServiceWrapper implements EventService,
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.updateEvent(eventId, name, description, month,
-			day, year, hour, minute, locationId, serviceContext);
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.updateEvent(userId, eventId, name, description,
+			month, day, year, hour, minute, locationId, serviceContext);
 	}
 
 	/**

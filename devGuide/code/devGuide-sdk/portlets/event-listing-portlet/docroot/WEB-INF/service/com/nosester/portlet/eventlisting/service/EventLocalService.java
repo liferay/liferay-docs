@@ -73,13 +73,11 @@ public interface EventLocalService extends BaseLocalService,
 	* @return the event that was removed
 	* @throws PortalException if a event with the primary key could not be found
 	* @throws SystemException if a system exception occurred
-	* @throws com.nosester.portlet.eventlisting.NoSuchEventException
 	*/
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException,
-			com.nosester.portlet.eventlisting.NoSuchEventException;
+			com.liferay.portal.kernel.exception.SystemException;
 
 	/**
 	* Deletes the event from the database. Also notifies the appropriate model listeners.
@@ -248,11 +246,34 @@ public interface EventLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
+	public com.nosester.portlet.eventlisting.model.Event addEvent(long userId,
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addEventResources(long eventId, boolean addGroupPermissions,
+		boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addEventResources(long eventId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
@@ -274,8 +295,10 @@ public interface EventLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

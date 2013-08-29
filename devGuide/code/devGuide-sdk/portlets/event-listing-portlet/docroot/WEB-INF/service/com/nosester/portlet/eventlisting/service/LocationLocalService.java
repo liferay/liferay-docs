@@ -248,10 +248,35 @@ public interface LocationLocalService extends BaseLocalService,
 		throws java.lang.Throwable;
 
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		long groupId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		long userId, long groupId, java.lang.String name,
+		java.lang.String description, java.lang.String streetAddress,
+		java.lang.String city, java.lang.String stateOrProvince,
+		java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addLocationResources(long locationId,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void addLocationResources(long locationId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
@@ -271,5 +296,7 @@ public interface LocationLocalService extends BaseLocalService,
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

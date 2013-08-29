@@ -62,13 +62,11 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	* @return the event that was removed
 	* @throws PortalException if a event with the primary key could not be found
 	* @throws SystemException if a system exception occurred
-	* @throws com.nosester.portlet.eventlisting.NoSuchEventException
 	*/
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException,
-			com.nosester.portlet.eventlisting.NoSuchEventException {
+			com.liferay.portal.kernel.exception.SystemException {
 		return _eventLocalService.deleteEvent(eventId);
 	}
 
@@ -267,13 +265,48 @@ public class EventLocalServiceWrapper implements EventLocalService,
 		return _eventLocalService.invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
+	public com.nosester.portlet.eventlisting.model.Event addEvent(long userId,
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventLocalService.addEvent(groupId, name, description, month,
-			day, year, hour, minute, locationId, serviceContext);
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.addEvent(userId, groupId, name, description,
+			month, day, year, hour, minute, locationId, serviceContext);
+	}
+
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(event, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(event, groupPermissions,
+			guestPermissions);
+	}
+
+	public void addEventResources(long eventId, boolean addGroupPermissions,
+		boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(eventId, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	public void addEventResources(long eventId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(eventId, groupPermissions,
+			guestPermissions);
 	}
 
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
@@ -302,12 +335,15 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventLocalService.updateEvent(eventId, name, description,
-			month, day, year, hour, minute, locationId, serviceContext);
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.updateEvent(userId, eventId, name,
+			description, month, day, year, hour, minute, locationId,
+			serviceContext);
 	}
 
 	/**

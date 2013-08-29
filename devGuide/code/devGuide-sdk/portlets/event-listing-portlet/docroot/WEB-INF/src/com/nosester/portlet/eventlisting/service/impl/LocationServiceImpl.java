@@ -20,6 +20,9 @@ import com.liferay.portal.service.ServiceContext;
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
+import com.nosester.portlet.eventlisting.service.permission.EventListingPermission;
+import com.nosester.portlet.eventlisting.service.permission.LocationPermission;
+import com.nosester.portlet.eventlisting.util.EventListingActionKeys;
 
 /**
  * The implementation of the location remote service.
@@ -41,26 +44,38 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 	
 	public Location addLocation(long groupId, String name, String description,
 			String streetAddress, String city, String stateOrProvince,
-			String country, ServiceContext serviceContext) {
+			String country, ServiceContext serviceContext)
+		throws PortalException, SystemException {
 
-		return LocationLocalServiceUtil.addLocation(groupId, name, description,
-				streetAddress, city, stateOrProvince, country, serviceContext);
+		EventListingPermission.check(getPermissionChecker(), groupId,
+			EventListingActionKeys.ADD_LOCATION);
+
+		return LocationLocalServiceUtil.addLocation(
+			getUserId(), groupId, name, description, streetAddress, city,
+			stateOrProvince, country, serviceContext);
 	}
 
-	public Location deleteLocation(long locationId) throws PortalException,
-			SystemException {
+	public Location deleteLocation(long locationId)
+		throws PortalException, SystemException {
+
+		LocationPermission.check(getPermissionChecker(), locationId,
+			EventListingActionKeys.DELETE_LOCATION);
 
 		return locationLocalService.deleteLocation(locationId);
 	}
 
-	public Location updateLocation(long locationId, String name,
-			String description, String streetAddress, String city,
-			String stateOrProvince, String country,
-			ServiceContext serviceContext) {
+	public Location updateLocation(
+			long locationId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext)
+		throws PortalException, SystemException {
 
-		return LocationLocalServiceUtil.updateLocation(locationId, name,
-				description, streetAddress, city, stateOrProvince, country,
-				serviceContext);
+		LocationPermission.check(getPermissionChecker(), locationId,
+			EventListingActionKeys.VIEW);
+
+		return LocationLocalServiceUtil.updateLocation(
+			locationId, name, description, streetAddress, city, stateOrProvince,
+			country, serviceContext);
 	}
 
 }

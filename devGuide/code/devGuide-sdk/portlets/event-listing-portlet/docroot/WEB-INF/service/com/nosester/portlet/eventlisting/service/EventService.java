@@ -68,7 +68,8 @@ public interface EventService extends BaseService, InvokableService {
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
@@ -81,8 +82,10 @@ public interface EventService extends BaseService, InvokableService {
 			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

@@ -66,7 +66,9 @@ public class LocationServiceUtil {
 		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addLocation(groupId, name, description, streetAddress,
 			city, stateOrProvince, country, serviceContext);
@@ -83,7 +85,9 @@ public class LocationServiceUtil {
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .updateLocation(locationId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);

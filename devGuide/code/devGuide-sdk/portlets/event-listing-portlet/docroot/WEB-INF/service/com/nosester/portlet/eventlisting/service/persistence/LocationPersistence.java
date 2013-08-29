@@ -223,6 +223,69 @@ public interface LocationPersistence extends BasePersistence<Location> {
 			com.nosester.portlet.eventlisting.NoSuchLocationException;
 
 	/**
+	* Returns all the locations that the user has permission to view where groupId = &#63;.
+	*
+	* @param groupId the group ID
+	* @return the matching locations that the user has permission to view
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.nosester.portlet.eventlisting.model.Location> filterFindByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns a range of all the locations that the user has permission to view where groupId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param groupId the group ID
+	* @param start the lower bound of the range of locations
+	* @param end the upper bound of the range of locations (not inclusive)
+	* @return the range of matching locations that the user has permission to view
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.nosester.portlet.eventlisting.model.Location> filterFindByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns an ordered range of all the locations that the user has permissions to view where groupId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param groupId the group ID
+	* @param start the lower bound of the range of locations
+	* @param end the upper bound of the range of locations (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching locations that the user has permission to view
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.nosester.portlet.eventlisting.model.Location> filterFindByGroupId(
+		long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the locations before and after the current location in the ordered set of locations that the user has permission to view where groupId = &#63;.
+	*
+	* @param locationId the primary key of the current location
+	* @param groupId the group ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next location
+	* @throws com.nosester.portlet.eventlisting.NoSuchLocationException if a location with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public com.nosester.portlet.eventlisting.model.Location[] filterFindByGroupId_PrevAndNext(
+		long locationId, long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.nosester.portlet.eventlisting.NoSuchLocationException;
+
+	/**
 	* Returns all the locations.
 	*
 	* @return the locations
@@ -290,6 +353,16 @@ public interface LocationPersistence extends BasePersistence<Location> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public int countByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the number of locations that the user has permission to view where groupId = &#63;.
+	*
+	* @param groupId the group ID
+	* @return the number of matching locations that the user has permission to view
+	* @throws SystemException if a system exception occurred
+	*/
+	public int filterCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

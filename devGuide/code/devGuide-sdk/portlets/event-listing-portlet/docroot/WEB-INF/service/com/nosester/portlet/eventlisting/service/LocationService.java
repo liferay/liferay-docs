@@ -67,7 +67,9 @@ public interface LocationService extends BaseService, InvokableService {
 		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
 		long locationId)
@@ -78,5 +80,7 @@ public interface LocationService extends BaseService, InvokableService {
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext);
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

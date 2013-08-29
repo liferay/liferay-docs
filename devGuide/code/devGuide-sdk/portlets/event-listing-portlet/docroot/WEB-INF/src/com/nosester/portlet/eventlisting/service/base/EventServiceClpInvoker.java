@@ -50,8 +50,8 @@ public class EventServiceClpInvoker {
 		_methodName39 = "updateEvent";
 
 		_methodParameterTypes39 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "int", "int",
-				"int", "int", "int", "long",
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -96,14 +96,15 @@ public class EventServiceClpInvoker {
 		if (_methodName39.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes39, parameterTypes)) {
 			return EventServiceUtil.updateEvent(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Integer)arguments[3]).intValue(),
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
 				((Integer)arguments[4]).intValue(),
 				((Integer)arguments[5]).intValue(),
 				((Integer)arguments[6]).intValue(),
 				((Integer)arguments[7]).intValue(),
-				((Long)arguments[8]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[9]);
+				((Integer)arguments[8]).intValue(),
+				((Long)arguments[9]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[10]);
 		}
 
 		throw new UnsupportedOperationException();

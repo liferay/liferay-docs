@@ -115,35 +115,59 @@ public class EventLocalServiceClp implements EventLocalService {
 		_methodName19 = "addEvent";
 
 		_methodParameterTypes19 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "int", "int",
-				"int", "int", "int", "long",
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName20 = "findByEventNameEventDescriptionLocationName";
+		_methodName20 = "addEventResources";
 
 		_methodParameterTypes20 = new String[] {
+				"com.nosester.portlet.eventlisting.model.Event", "boolean",
+				"boolean"
+			};
+
+		_methodName21 = "addEventResources";
+
+		_methodParameterTypes21 = new String[] {
+				"com.nosester.portlet.eventlisting.model.Event",
+				"java.lang.String[][]", "java.lang.String[][]"
+			};
+
+		_methodName22 = "addEventResources";
+
+		_methodParameterTypes22 = new String[] { "long", "boolean", "boolean" };
+
+		_methodName23 = "addEventResources";
+
+		_methodParameterTypes23 = new String[] {
+				"long", "java.lang.String[][]", "java.lang.String[][]"
+			};
+
+		_methodName24 = "findByEventNameEventDescriptionLocationName";
+
+		_methodParameterTypes24 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName21 = "getEventsByGroupId";
+		_methodName25 = "getEventsByGroupId";
 
-		_methodParameterTypes21 = new String[] { "long" };
+		_methodParameterTypes25 = new String[] { "long" };
 
-		_methodName22 = "getEventsByGroupId";
+		_methodName26 = "getEventsByGroupId";
 
-		_methodParameterTypes22 = new String[] { "long", "int", "int" };
+		_methodParameterTypes26 = new String[] { "long", "int", "int" };
 
-		_methodName23 = "getEventsCountByGroupId";
+		_methodName27 = "getEventsCountByGroupId";
 
-		_methodParameterTypes23 = new String[] { "long" };
+		_methodParameterTypes27 = new String[] { "long" };
 
-		_methodName24 = "updateEvent";
+		_methodName28 = "updateEvent";
 
-		_methodParameterTypes24 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "int", "int",
-				"int", "int", "int", "long",
+		_methodParameterTypes28 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String", "int",
+				"int", "int", "int", "int", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -203,8 +227,7 @@ public class EventLocalServiceClp implements EventLocalService {
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
 		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException,
-			com.nosester.portlet.eventlisting.NoSuchEventException {
+			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
@@ -220,10 +243,6 @@ public class EventLocalServiceClp implements EventLocalService {
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof com.nosester.portlet.eventlisting.NoSuchEventException) {
-				throw (com.nosester.portlet.eventlisting.NoSuchEventException)t;
 			}
 
 			if (t instanceof RuntimeException) {
@@ -678,18 +697,21 @@ public class EventLocalServiceClp implements EventLocalService {
 		throw new UnsupportedOperationException();
 	}
 
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
+	public com.nosester.portlet.eventlisting.model.Event addEvent(long userId,
 		long groupId, java.lang.String name, java.lang.String description,
 		int month, int day, int year, int hour, int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName19,
 					_methodParameterTypes19,
 					new Object[] {
-						groupId,
+						userId,
+						
+					groupId,
 						
 					ClpSerializer.translateInput(name),
 						
@@ -713,6 +735,10 @@ public class EventLocalServiceClp implements EventLocalService {
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
 
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
 			}
@@ -729,6 +755,146 @@ public class EventLocalServiceClp implements EventLocalService {
 		return (com.nosester.portlet.eventlisting.model.Event)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName20,
+				_methodParameterTypes20,
+				new Object[] {
+					ClpSerializer.translateInput(event),
+					
+				addGroupPermissions,
+					
+				addGuestPermissions
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	public void addEventResources(
+		com.nosester.portlet.eventlisting.model.Event event,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName21,
+				_methodParameterTypes21,
+				new Object[] {
+					ClpSerializer.translateInput(event),
+					
+				ClpSerializer.translateInput(groupPermissions),
+					
+				ClpSerializer.translateInput(guestPermissions)
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	public void addEventResources(long eventId, boolean addGroupPermissions,
+		boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName22,
+				_methodParameterTypes22,
+				new Object[] { eventId, addGroupPermissions, addGuestPermissions });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	public void addEventResources(long eventId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName23,
+				_methodParameterTypes23,
+				new Object[] {
+					eventId,
+					
+				ClpSerializer.translateInput(groupPermissions),
+					
+				ClpSerializer.translateInput(guestPermissions)
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
 		java.lang.String eventName, java.lang.String eventDescription,
 		java.lang.String locationName, int begin, int end)
@@ -736,8 +902,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20,
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
 					new Object[] {
 						ClpSerializer.translateInput(eventName),
 						
@@ -775,8 +941,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -803,8 +969,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName22,
-					_methodParameterTypes22,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] { groupId, start, end });
 		}
 		catch (Throwable t) {
@@ -831,8 +997,8 @@ public class EventLocalServiceClp implements EventLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -854,17 +1020,21 @@ public class EventLocalServiceClp implements EventLocalService {
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		int month, int day, int year, int hour, int minute, long locationId,
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
 		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
 					new Object[] {
-						eventId,
+						userId,
+						
+					eventId,
 						
 					ClpSerializer.translateInput(name),
 						
@@ -887,6 +1057,10 @@ public class EventLocalServiceClp implements EventLocalService {
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
@@ -953,4 +1127,12 @@ public class EventLocalServiceClp implements EventLocalService {
 	private String[] _methodParameterTypes23;
 	private String _methodName24;
 	private String[] _methodParameterTypes24;
+	private String _methodName25;
+	private String[] _methodParameterTypes25;
+	private String _methodName26;
+	private String[] _methodParameterTypes26;
+	private String _methodName27;
+	private String[] _methodParameterTypes27;
+	private String _methodName28;
+	private String[] _methodParameterTypes28;
 }
