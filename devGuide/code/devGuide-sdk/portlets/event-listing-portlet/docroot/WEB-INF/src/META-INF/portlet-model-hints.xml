@@ -2,8 +2,9 @@
 
 <model-hints>
 	<hint-collection name="DESCRIPTION-TEXTAREA">
-		<hint name="editor">true</hint>
-		<hint name="max-length">250</hint>
+		<hint name="display-height">105</hint>
+		<hint name="display-width">500</hint>
+		<hint name="max-length">4000</hint>
 	</hint-collection>
 	<model name="com.nosester.portlet.eventlisting.model.Event">
 		<field name="eventId" type="long" />

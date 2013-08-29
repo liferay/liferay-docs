@@ -35,40 +35,22 @@ public class LocationServiceClp implements LocationService {
 		_methodName3 = "addLocation";
 
 		_methodParameterTypes3 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName4 = "addLocation";
-
-		_methodParameterTypes4 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName5 = "update";
+		_methodName4 = "deleteLocation";
+
+		_methodParameterTypes4 = new String[] { "long" };
+
+		_methodName5 = "updateLocation";
 
 		_methodParameterTypes5 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName6 = "updateLocation";
-
-		_methodParameterTypes6 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
-
-		_methodName7 = "delete";
-
-		_methodParameterTypes7 = new String[] {
-				"com.nosester.portlet.eventlisting.model.Location"
-			};
-
-		_methodName8 = "deleteLocation";
-
-		_methodParameterTypes8 = new String[] { "long" };
 	}
 
 	@Override
@@ -123,47 +105,19 @@ public class LocationServiceClp implements LocationService {
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		long groupId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName3,
 					_methodParameterTypes3,
-					new Object[] { ClpSerializer.translateInput(location) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName4,
-					_methodParameterTypes4,
 					new Object[] {
-						locationId,
+						groupId,
 						
 					ClpSerializer.translateInput(name),
 						
@@ -183,105 +137,9 @@ public class LocationServiceClp implements LocationService {
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
 
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
 			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location update(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName5,
-					_methodParameterTypes5,
-					new Object[] { ClpSerializer.translateInput(location) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName6,
-					_methodParameterTypes6,
-					new Object[] {
-						locationId,
-						
-					ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(description),
-						
-					ClpSerializer.translateInput(streetAddress),
-						
-					ClpSerializer.translateInput(city),
-						
-					ClpSerializer.translateInput(stateOrProvince),
-						
-					ClpSerializer.translateInput(country),
-						
-					ClpSerializer.translateInput(serviceContext)
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName7,
-					_methodParameterTypes7,
-					new Object[] { ClpSerializer.translateInput(location) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
@@ -307,8 +165,62 @@ public class LocationServiceClp implements LocationService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName8,
-					_methodParameterTypes8, new Object[] { locationId });
+			returnObj = _invokableService.invokeMethod(_methodName4,
+					_methodParameterTypes4, new Object[] { locationId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.nosester.portlet.eventlisting.model.Location)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName5,
+					_methodParameterTypes5,
+					new Object[] {
+						locationId,
+						
+					ClpSerializer.translateInput(name),
+						
+					ClpSerializer.translateInput(description),
+						
+					ClpSerializer.translateInput(streetAddress),
+						
+					ClpSerializer.translateInput(city),
+						
+					ClpSerializer.translateInput(stateOrProvince),
+						
+					ClpSerializer.translateInput(country),
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -344,10 +256,4 @@ public class LocationServiceClp implements LocationService {
 	private String[] _methodParameterTypes4;
 	private String _methodName5;
 	private String[] _methodParameterTypes5;
-	private String _methodName6;
-	private String[] _methodParameterTypes6;
-	private String _methodName7;
-	private String[] _methodParameterTypes7;
-	private String _methodName8;
-	private String[] _methodParameterTypes8;
 }

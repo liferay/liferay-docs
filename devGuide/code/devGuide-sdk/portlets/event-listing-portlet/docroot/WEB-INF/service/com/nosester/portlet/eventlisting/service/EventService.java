@@ -18,6 +18,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
 import com.liferay.portal.security.ac.AccessControlled;
 import com.liferay.portal.service.BaseService;
@@ -65,29 +66,27 @@ public interface EventService extends BaseService, InvokableService {
 		throws java.lang.Throwable;
 
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException;
-
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext);
-
-	public com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException;
-
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext);
-
-	public com.nosester.portlet.eventlisting.model.Event delete(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.nosester.portlet.eventlisting.model.Event deleteEvent(
 		long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.nosester.portlet.eventlisting.model.Event getEvent(long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 }

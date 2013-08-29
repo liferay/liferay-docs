@@ -13,10 +13,7 @@
 		<typeMapping xmlns:ns="http://util.kernel.portal.liferay.com" qname="ns:StringBundler" type="java:com.liferay.portal.kernel.util.StringBundler" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
 		<typeMapping xmlns:ns="http://xml.apache.org/xml-soap" qname="ns:mapItem" type="java:org.apache.xml.xml_soap.MapItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
 		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="addLocation" qname="operNS:addLocation" returnQName="addLocationReturn" returnType="rtns:LocationSoap" soapAction="">
-			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="location" type="tns:LocationSoap"></parameter>
-		</operation>
-		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="addLocation" qname="operNS:addLocation" returnQName="addLocationReturn" returnType="rtns:LocationSoap" soapAction="">
-			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="streetAddress" type="tns:string"></parameter>
@@ -28,9 +25,6 @@
 		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="deleteLocation" qname="operNS:deleteLocation" returnQName="deleteLocationReturn" returnType="rtns:LocationSoap" soapAction="">
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:long"></parameter>
 		</operation>
-		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="delete" qname="operNS:delete" returnQName="deleteReturn" returnType="rtns:LocationSoap" soapAction="">
-			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="location" type="tns:LocationSoap"></parameter>
-		</operation>
 		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="updateLocation" qname="operNS:updateLocation" returnQName="updateLocationReturn" returnType="rtns:LocationSoap" soapAction="">
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:long"></parameter>
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
@@ -41,10 +35,7 @@
 			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="country" type="tns:string"></parameter>
 			<parameter xmlns:tns="http://service.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
 		</operation>
-		<operation xmlns:operNS="urn:http.service.eventlisting.portlet.nosester.com" xmlns:rtns="http://model.eventlisting.portlet.nosester.com" name="update" qname="operNS:update" returnQName="updateReturn" returnType="rtns:LocationSoap" soapAction="">
-			<parameter xmlns:tns="http://model.eventlisting.portlet.nosester.com" qname="location" type="tns:LocationSoap"></parameter>
-		</operation>
-		<parameter name="allowedMethods" value="addLocation delete deleteLocation update updateLocation" />
+		<parameter name="allowedMethods" value="addLocation deleteLocation updateLocation" />
 		<parameter name="className" value="com.nosester.portlet.eventlisting.service.http.LocationServiceSoap" />
 		<parameter name="schemaUnqualified" value="http://model.eventlisting.portlet.nosester.com,http://model.portal.liferay.com,http://service.portal.liferay.com,http://theme.portal.liferay.com,http://util.kernel.portal.liferay.com,http://xml.apache.org/xml-soap,urn:http.service.eventlisting.portlet.nosester.com" />
 		<parameter name="typeMappingVersion" value="1.2" />

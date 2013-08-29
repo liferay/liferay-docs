@@ -288,23 +288,54 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _locationLocalService.addLocation(name, description,
-			streetAddress, city, stateOrProvince, country, serviceContext);
+		long userId, long groupId, java.lang.String name,
+		java.lang.String description, java.lang.String streetAddress,
+		java.lang.String city, java.lang.String stateOrProvince,
+		java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationLocalService.addLocation(userId, groupId, name,
+			description, streetAddress, city, stateOrProvince, country,
+			serviceContext);
 	}
 
 	@Override
-	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _locationLocalService.updateLocation(locationId, name,
-			description, streetAddress, city, stateOrProvince, country,
-			serviceContext);
+	public void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_locationLocalService.addLocationResources(location,
+			addGroupPermissions, addGuestPermissions);
+	}
+
+	@Override
+	public void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_locationLocalService.addLocationResources(location, groupPermissions,
+			guestPermissions);
+	}
+
+	@Override
+	public void addLocationResources(long locationId,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_locationLocalService.addLocationResources(locationId,
+			addGroupPermissions, addGuestPermissions);
+	}
+
+	@Override
+	public void addLocationResources(long locationId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_locationLocalService.addLocationResources(locationId,
+			groupPermissions, guestPermissions);
 	}
 
 	@Override
@@ -325,6 +356,19 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 	public int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _locationLocalService.getLocationsCountByGroupId(groupId);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationLocalService.updateLocation(locationId, name,
+			description, streetAddress, city, stateOrProvince, country,
+			serviceContext);
 	}
 
 	/**
