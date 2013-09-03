@@ -392,11 +392,16 @@ The `MVCPortlet` class handles the rendering of our JSPs, so for this example,
 we won't write a single Java class. 
 
 First, since we don't want multiple greetings on the same page, let's make the
-My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`, changing
-the value of the element `instanceable` from `true` to `false`. Here's what it
-looks like:
+My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`. If your
+`portlet` element already has an `instanceable` element, change its value from
+`true` to `false`. If you don't already have an `instanceable` element for your
+portlet, add it. Here's what it looks like: 
 
-    <instanceable>false</instanceable>
+    <portlet>
+        ...
+        <instanceable>false</instanceable>
+        ....
+    </portlet>
 
 Now we'll create our JSP templates. Start by editing `view.jsp`, found in your
 portlet's `docroot` directory. Replace its current contents with the following:
