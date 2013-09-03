@@ -2916,20 +2916,20 @@ you want to use Liferay's built-in data source, you can skip this section.
 2. Add your data source as a resource in the context of your web application
    specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
 
-	<Context...>
-		<Resource
-			name="jdbc/LiferayPool"
-			auth="Container"
-			type="javax.sql.DataSource"
-			driverClassName="com.mysql.jdbc.Driver"
-			url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-			username="root"
-			password="root"
-			maxActive="100"
-			maxIdle="30"
-			maxWait="10000"
-		/>
-	</Context>
+		<Context...>
+			<Resource
+				name="jdbc/LiferayPool"
+				auth="Container"
+				type="javax.sql.DataSource"
+				driverClassName="com.mysql.jdbc.Driver"
+				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+				username="root"
+				password="root"
+				maxActive="100"
+				maxIdle="30"
+				maxWait="10000"
+			/>
+		</Context>
 	
 Note the above resource definition assumes your database name is *lportal* and
 your MySQL username and password are both *root*. You'll have to update these
