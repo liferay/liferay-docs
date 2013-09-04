@@ -729,8 +729,8 @@ that, your `service.xml` file's contents should look similar to this:
             <column name="companyId" type="long" />
             <column name="groupId" type="long" />
             <column name="userId" type="long" />
-            <column name="createDate" type="long" />
-            <column name="modifiedDate" type="long" />
+            <column name="createDate" type="Date" />
+            <column name="modifiedDate" type="Date" />
 
             <!-- Other fields -->
 
