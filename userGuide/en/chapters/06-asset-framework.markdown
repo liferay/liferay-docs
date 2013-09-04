@@ -1,8 +1,8 @@
 # Leveraging the Asset Framework  
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
-already examined Liferay's most common type of asset: web content. Other types
-of assets include blog posts, wiki articles, message board posts, bookmarks, and
+examined Liferay's most common type of asset: web content. Other types of assets
+include blog posts, wiki articles, message board posts, bookmarks, and
 documents. It's possible for developers to define custom asset types that
 utilize Liferay's asset framework. Originally, the asset framework was created
 to provide a mechanism for adding tags to blog entries, wiki articles, and web
@@ -14,7 +14,7 @@ This chapter covers the following topics:
 
 - Tagging and categorizing content
 - Using targeted, single value, and multi-value vocabularies
-- Using Faceted Search
+- Using faceted search
 - Using the Asset Publisher
 - Setting up display pages
 - Adding relationships between assets
@@ -35,13 +35,15 @@ this.
 ## Tagging and Categorizing Content  
 
 Tags and categories are two important tools you can use to help organize
-information on your portal and make it easier for your users to find the content
-they're looking for through search or navigation. Tagging and categorizing web
-content is easy. You can do it at the bottom of the same form you use to add
-content. If you open the *Categorization* section of the form, you'll be
-presented with an interface for adding tags and categories.
+information on your portal. These tools help users to easily find the content
+they're looking for through search or navigation. Tagging and categorizing
+assets is easy. You can do it when creating or editing an asset. If you click on
+the *Categorization* section of the form for creating or editing an asset,
+you'll find an interface for adding tags and categories. If no categories are
+available to be added to the asset (e.g., if no categories have been created),
+the Categories heading won't appear.
 
-![Figure 6.1: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+![Figure 6.1: You can tag or categorize an asset at creation time or when editing an existing asset. This is the Web Content Display portlet's form for categorizing a new web content article.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
 each site in the portal. This interface can be used to manage all your tags and
