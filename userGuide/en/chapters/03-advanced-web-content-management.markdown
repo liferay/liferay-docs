@@ -981,10 +981,6 @@ Next, let's examine the tools Liferay provides for handling translations.
 
 ## Localization  
 
-Previous versions of Liferay had the ability to create and manage different
-translations of your web content but with Liferay 6.2 we've added several
-improvements.
-
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
 from a large number of languages Liferay supports. Before you can create a
@@ -992,22 +988,16 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
-
-<!-- Needs to be replaced for 6.2 -->
-<!-- Very few translation options available at present time (6) -->
+![Figure 3.16: You have many translation languages to choose from for your web content.](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
-When you select a language, a lightbox opens within your browser window enabling
-you to easily compare the original with the new translation. Once you are done
-with the translation, click *Save* and the translation is added to the list of
-*Available Translations*.
+When you select a language, a new window opens within your browser enabling you
+to translate the original web content into the selected language. Once you are
+done with the translation, click *Save* and the translation is added to the list
+of *Available Translations*.
 
-![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
-
-<!-- Needs to be replaced for 6.2 -->
-<!-- Unable to compare translations at this time -- window sizing issues -->
+![Figure 3.17: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
