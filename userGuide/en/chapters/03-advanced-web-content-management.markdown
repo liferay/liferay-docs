@@ -150,7 +150,8 @@ Take a moment to add, delete, and rearrange different elements.
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
 <!-- Needs to be replaced for 6.2. -->
-<!-- Icons not appearing at the present time for WC structure editor -->
+<!-- Icons not appearing at the present time for WC structure editor (LPS-35338)
+-->
 
 Liferay supports the following fields in structures:
 
@@ -497,9 +498,6 @@ based on the roles and responsibilities within your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how to create RSS feeds in Liferay.
 
-<!-- Skipping RSS Feeds for now. I was unable to add feeds during testing
-(LPS-38500). Need to return to this section for 6.2 editing. -->
-
 ## Managing RSS Feeds in Liferay
 
 RSS is a family of web feed formats used to publish frequently updated works
@@ -546,7 +544,7 @@ select a target page for the feed. A feed's target page serves two purposes:
    target page. When users click on such links for "orphaned" articles, the full
    content of the "orphaned" article is displayed on the target page.
 
-![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
 
 To specify a target page, you need to enter the target page's friendly URL. Note
 that friendly URLs do not include the host name. For example, the friendly URL
@@ -648,7 +646,7 @@ in the RSS portlet either above all of the feeds or below all of the feeds. You
 can use these to provide an introduction, description, or footnotes about the
 feeds that you've selected to be displayed.
 
-![Figure 3.10: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
+![Figure 3.10: By default, the RSS portlet is configured to display feeds from Liferay Community Blogs, Yahoo News, and the New York Times. This image displays what the Liferay Community Blogs feed looks like in the RSS portlet.](../../images/rss-portlet-default-view.png)
 
 Now that we've discussed how to create, manage, and use RSS feeds, let's examine
 site templates and page templates. Site templates are a powerful tool for
