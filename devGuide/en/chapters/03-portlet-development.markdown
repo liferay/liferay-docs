@@ -971,7 +971,7 @@ Next, create the file (remove the line break):
     -greeting-friendly-url-routes.xml
 
 Create new directories as necessary. Place the following content into the new
-file:
+file (remove the line break after `{mvcPathName}.jsp`):
 
     <?xml version="1.0"?>
     <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" 
@@ -980,8 +980,7 @@ file:
     <routes>
         <route>
             <pattern>/{mvcPathName}</pattern>
-            <generated-parameter name="mvcPath">
-                /{mvcPathName}.jsp
+            <generated-parameter name="mvcPath">/{mvcPathName}.jsp\
             </generated-parameter>
         </route>
     </routes>
