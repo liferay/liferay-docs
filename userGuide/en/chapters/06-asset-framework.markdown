@@ -59,6 +59,8 @@ content makes your search results more accurate and enables you to use tools
 like the Asset Publisher to display content in an organized fashion on a web
 page. There are two ways to create tags: you can do it through the
 administrative console in the Control Panel or on the fly as content is created.
+By default, tags can be created by regular users and users can apply them to any
+assets which they have permission to create or edit.
 
 ![Figure 6.2: When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
 
@@ -73,10 +75,12 @@ tag, or edit the tag's permissions. You can also add properties to a tag.
 Properties are a way to add information to specific tags. You can think of tag
 properties as tags for your tags. Structurally, tag properties are key-value
 pairs associated with specific tags that provide information about the tags.
-Site administrators can edit existing site tags from the *Tags* portlet in the
-Content section of the Site Administration section of the Control Panel. They
-can change tag names, change the tags' permissions, delete tags, or add tag
-properties.
+While regular users can, by default, create new tags by applying them to any
+assets that they have permission to create or edit, only site administrators can
+access the *Tags* portlet in the Content section of the Site Administration area
+of the Control Panel. Here, site administrators can create new tags and edit any
+existing site tags. They can also change tag names, change the tags'
+permissions, delete tags, and add or edit tag properties.
 
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
