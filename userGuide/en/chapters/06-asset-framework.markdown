@@ -469,8 +469,8 @@ developers are encouraged to re-design their search code as described in
 *Liferay in Action*, and then custom assets are aggregated with native portal
 assets seamlessly. 
 
-These are the basic options, but surely you didn't miss the fact that there are
-also advanced options. 
+These are the basic options. But you didn't miss the fact that there are also
+advanced options, did you?
 
 Configuring advanced search requires a bit more technical acumen than you might
 expect, because there are so many properties to tweak. Thankfully, in most
@@ -767,27 +767,41 @@ any type, not just web content articles.
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
-what you want to be published within the portlet, or you can create new content
-from within the Asset Publisher.
+multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.12: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet, except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
-Clicking *Add New* gives you a menu of options, enabling you to create the
-content right where you are. You can create blogs, bookmarks, calendar entries,
-documents, images, and of course, web content. Anything you create here is added
-to the list below of assets that are displayed by the portlet.
+When selecting assets manually, you'll see a list of configured scopes under the
+Scope heading. Click the red "X" button at the right to remove a scope from the
+list. Click the *Select* button to add additional scopes to the Asset
+Publisher's configuration. After you've added a scope, a new Select button
+appears under the Asset Entries heading. Under the Asset Entries heading appears
+a list of assets selected for display. You can select assets to be displayed by
+clicking on the appropriate *Select* button. One button appears for each
+configured scope. By default, the available asset types include the following:
 
-Clicking *Select Existing* gives you a similar menu, except this time you can
-pick from existing content in the portal that either you or your users have
-created. Has someone written an excellent wiki page that you want to highlight?
-Select it here, and it will be displayed.
+- Documents Folder
+- Bookmarks Folder
+- Blogs Entry
+- Message Boards Message
+- Web Content Article
+- Bookmarks Entry
+- Wiki Page
+- Document
+- Web Content Folder
 
-The Asset Publisher enables you to mix and match different content types in the
-same interface. Once you have your content selected, you can move on to the
+You can select any number of assets to be displayed. However, note that there's
+a display setting called *Number of Items to Display* that determines how the
+maximum number of items to display (or maximum number of items to display per
+page if pagination is enabled). We'll discuss the display settings in more
+detail below. The Asset Publisher enables you to mix and match different content
+types in the same interface. When you're done selecting items to display, click
+*Save*. Any selected assets are added to the list of assets that are displayed
+by the portlet. Once you have your content selected, you can configure the
 display types to configure how the content appears.
 
-Most of the time, however, you'll likely be using the Asset Publisher to select
-content dynamically.
+However, it's often more convenient to use the Asset Publisher to select content
+dynamically.
 
 #### Selecting Assets Dynamically  
 
