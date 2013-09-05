@@ -170,9 +170,9 @@ icon to the right. Select the icon to reveal a dialog box like the one below.
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
 of the vocabulary to specific assets. In the screenshot above, notice that the
-vocabulary `Famous Noses` is configured to be available for Web Content articles
-and Blog entries, but it is not required. It is mandatory, however, for
-Documents and Media files.
+vocabulary is configured to be available for Web Content articles and Blog
+entries, but it is not required. It is mandatory, however, for Documents and
+Media files.
 
 #### Single and Multi-valued Vocabularies 
 
