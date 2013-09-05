@@ -143,7 +143,7 @@ dragging if you can add it to the selected parent category; if you see a red *x*
 that means that you cannot add that category as a subcategory of parent category
 that you have selected.
 
-Once you have created a hierarchy of categories, your content creators will have
+After you have created a hierarchy of categories, your content creators will have
 them available to apply to content that they create. Click on *Web Content* in
 the Content section of the Site Administration area the Control Panel and click
 *Add* &rrar; *Basic Web Content*. Click on *Categorization* from the right-side
@@ -203,18 +203,18 @@ of tags and categories: searching for content.
 
 ## Searching for Content in Liferay
 
-To stay organized, I (RS) used to use a paper-based planner. It had various
+To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a
 commercial company, but over the years I tweaked it into something that worked
 for me. This final version (before I went digital) had different tabs for
 different areas of my life that I wanted to keep track of: daily items like
 tasks, notes, a spiritual section, and agenda pages that kept track of things I
-needed to go over with specific people. A Planning section had tabs for
+needed to go over with specific people. A planning section had tabs for
 projects, family, future items, and reference. 
 
 Of course, since this was paper-based, it had its limitations. It was kind of
 hard to find stuff. Did I put the note I'd written about that new toy my
-daughter wanted in the Notes section or in the Family section? Or maybe it was
+daughter wanted in the notes section or in the family section? Or maybe it was
 on my *While Out* list, so I would remember to buy it before her birthday? 
 
 Liferay content can be like this. That important information you remember
@@ -235,14 +235,14 @@ placed a page to allow users to search for assets of any type. We'll learn how
 to use the Search portlet when we discuss Liferay's faceted search feature in
 the next section. There's also a Web Content Search portlet. This portlet can be
 placed on a page to allow users to search for web content articles. Users can't
-use the Web Content Search portlet to search for other kinds of content. The
-Blogs, Wiki, Message Boards, Documents and Media, and Web Content portlets all
-provide search bars that allow users to search among the specific types of
-assets with which these portlets allow users to interact. Note that all of these
-portlets are accessible from the Control Panel. They can also, except for the
-Web Content portlet, be placed on portal pages for end-users to use. The Web
-Content portlet is not designed for end users; it's intended for administrative
-use only.
+use the Web Content Search portlet to search for other kinds of content.
+However, the Blogs, Wiki, Message Boards, Documents and Media, and Web Content
+portlets all provide search bars that allow users to search among the specific
+types of assets with which these portlets allow users to interact. Note that all
+of these portlets are accessible from the Control Panel. They can also, except
+for the Web Content portlet, be placed on portal pages for end-users to use. The
+Web Content portlet is not designed for end users; it's intended for
+administrative use only.
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
@@ -288,7 +288,7 @@ administrators can configure the facets available to users for filtering search
 results. The default facets include the following:
 
 * Site
-* Asset type (pictured above)
+* Asset type
 * Asset tag
 * Asset category
 * Folder
@@ -298,43 +298,43 @@ results. The default facets include the following:
 For example, after searching for a certain term in the Search portlet, clicking
 on a specific site filters the search results to only display assets within the
 specified site. Clicking on a specific user filters the search results to only
-display assets added by the specified user. The frequency in which the term was
-found for each facet is listed in parentheses after the facet. It may jog your
-memory to see that the term you searched for appears in a blog entry, and that
-may be all you need to find what you were looking for. If, however, your memory
-is more foggy than that, or you're searching for something you're not sure is
-actually there, then the asset tags or asset categories facets may be more
-helpful to you. 
+display assets added by the specified user. The frequency with which the term
+was found for each facet is listed in parentheses after the facet. It may jog
+your memory to see that the term you searched for appears in a blog entry, and
+that may be all you need to find what you were looking for. If, however, your
+memory is more foggy than that, or you're searching for something you're not
+sure is actually there, then the asset tags or asset categories facets may be
+more helpful to you. 
 
-![Figure 6.8: Asset tag facets provide you with more information about content that contains the terms for which you searched.](../../images/faceted-search-2.png)
+![Figure 6.8: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-2.png)
 
-In this case, if you searched for a wireless phone, you may be more interested
-in content that has your search terms in it and has also been tagged by users.
-One or more of the tags may help you to find what you're looking for. Note that
-the number of tags that appear is configurable: by default it's 10, but there
-could be many more as a result of a particular search. We'll look at the
-configuration options later in the chapter. For now, let's see how drilling down
-works. 
+For example, if you searched for a wireless phone, you might be more interested
+in content that has your search terms in it *and* has also been tagged by users.
+One or more tags might help you to find what you're looking for. Note that the
+number of tags that appear is configurable: by default it's 10, but there could
+be many more as a result of a particular search. We'll look at the configuration
+options later in the chapter. For now, let's learn how to drill down to narrow
+search results. 
 
-To drill down into the search, click a facet to add it to the filter list, and
-the results to the right are refined by the facet you selected. 
+To drill down into the search, click on a facet to add it to the filter list.
+The results to the right are refined by the selected facets. 
 
 ![Figure 6.9: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
 
-Here we can see that we've selected one of the tags, *liferay*, to further
-refine the search. The tag appears in a list at the top, and there's a red X
-next to it that lets us remove it from our filter as we work to increase the
-relevancy of our search. But maybe selecting only the tag isn't enough to filter
-our search into something small enough to sort through. In this case, we can
-further refine the search by selecting another facet, as below. 
+Here, we've refined the search to only show documents. We've also selected one
+of the tags, *cool*, to refine the search. The facets we've selected, *Document*
+and *cool*, appear in a list at the top, and there's a red "X" next to it that
+lets us remove it from our filter as we work to refile our search.  Suppose that
+the two facets we selected weren't enough to filter our search into a small
+enough list to sort through. In this case, we could further refine the search by
+selecting another facet, as below. 
 
 ![Figure 6.10: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
 
-Now we've selected web content, which is one particular content type within
-Liferay, and the list of potential hits on our search terms has been
-dramatically reduced. In this way, you can interactively tweak the search
-results to narrow them down, making it easier to find that proverbial needle
-within the haystack. 
+Now we've also selected the *Music* category, which reduces the list of search
+hits on the right. In this way, you can interactively tweak the search results
+to narrow them down, making it easier to find that proverbial needle within the
+haystack. 
 
 #### Asset Types 
 
