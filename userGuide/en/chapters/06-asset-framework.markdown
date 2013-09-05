@@ -37,13 +37,13 @@ this.
 Tags and categories are two important tools you can use to help organize
 information on your portal. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing
-assets is easy. You can do it when creating or editing an asset. If you click on
-the *Categorization* section of the form for creating or editing an asset,
-you'll find an interface for adding tags and categories. If no categories are
-available to be added to the asset (e.g., if no categories have been created),
-the Categories heading won't appear.
+assets is easy. You can tag or categorize an asset at creation time or when
+editing an existing asset. If you click on the *Categorization* section of the
+form for creating or editing an asset, you'll find an interface for adding tags
+and categories. If no categories are available to be added to the asset (e.g.,
+if no categories have been created), the Categories heading won't appear.
 
-![Figure 6.1: You can tag or categorize an asset at creation time or when editing an existing asset. This is the Web Content Display portlet's form for categorizing a new web content article.](../../images/04-web-content-categorization.png)
+![Figure 6.1: Here, the Web Content Display portlet's form for categorizing a new web content article doesn't include a Categories heading since no categories have been created.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
 each site in the portal. This interface can be used to manage all your tags and
@@ -52,27 +52,31 @@ content when you enter it. Let's take a closer look at tags and categories.
 
 ### Tags  
 
-Tags are an important tool that you can use to help organize information on your
-portal and make it easier for your users to find content that they're looking
-for. Tags are words or phrases that you can attach to any content on the
-website. Tagging content will make your search results more accurate, and enable
-you to use tools like the Asset Publisher to display content in an organized
-fashion on a web page. There are two ways to create tags: you can do it through
-the administrative console in the Control Panel, or on the fly as content is
-created.
+Tags are an important tool that can help organize information on your portal and
+make it easier for users to find the content that they're interested in. Tags
+are words or phrases that you can attach to any content on the website. Tagging
+content makes your search results more accurate and enables you to use tools
+like the Asset Publisher to display content in an organized fashion on a web
+page. There are two ways to create tags: you can do it through the
+administrative console in the Control Panel or on the fly as content is created.
 
-![Figure 6.2: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 6.2: When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
 
-To create tags in the Control Panel, select the site that you want to create
-tags for, and select *Tags*. From this screen, you will be able to view any
-existing tags and make new ones. To create a new tag, simply click *Add Tag*.
-You'll then be asked for the name of the tag, and you'll have the ability to set
-permissions for viewing or managing the tag. You can also add properties to a
-tag. Properties basically act like tags for your tags. Structurally, properties
-are key-value pairs associated with specific tags that provide information about
-your tags. You can edit existing tags from the *Tags* window of on the Control
-Panel. You can change the tag name, change the tag's permissions, delete the
-tag, or add properties.
+To create tags in the Control Panel, visit the site for which you want to create
+tags and then click on *Admin* &rarr; *Content*. Then click on *Tags* in the
+Content section on the left. From this screen, you can view existing tags and
+create new ones. To create a new tag, simply click *Add Tag* and enter a name
+for the tag. You can also customize a tag's permissions. For example, you can
+make the tag viewable by guests, site members, or owner. You can assign other
+permissions for managing tags, including permission to delete the tag, edit the
+tag, or edit the tag's permissions. You can also add properties to a tag.
+Properties are a way to add information to specific tags. You can think of tag
+properties as tags for your tags. Structurally, tag properties are key-value
+pairs associated with specific tags that provide information about the tags.
+Site administrators can edit existing site tags from the *Tags* portlet in the
+Content section of the Site Administration section of the Control Panel. They
+can change tag names, change the tags' permissions, delete tags, or add tag
+properties.
 
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
