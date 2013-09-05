@@ -1,1 +1,4 @@
+/.ivy
+/dist
 /build.*.properties
+/*.xml.MD5
