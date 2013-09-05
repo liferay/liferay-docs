@@ -341,15 +341,16 @@ haystack.
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
 searched. Under the hood, this means that these entities use Liferay's Asset API
-and have an Indexer defined. 
+and have an Indexer class defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
-For this reason, you may have additional asset types defined in your portal
-beyond the ones that Liferay ships with by default. If this is the case, you may
-wish to tweak the `frequency threshold` and the `max terms` settings to increase
-the number of asset types displayed past the default of 10. This is covered in
-the section below on search options. 
+described in the [Developer's
+Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/asset-framewo-4).
+For this reason, you can have additional asset types defined in your portal
+beyond the ones that Liferay ships with by default. If this is the case, you
+might want to tweak the `frequencyThreshold` and the `maxTerms` settings to
+increase the number of asset types displayed past the default of 10. This is
+covered in the section below on search options. 
 
 #### Asset Tags 
 
@@ -358,14 +359,14 @@ be displayed in the Asset Tag facet. Tags are handled in a similar way to how
 asset types are handled: not all tags may appear. There may be many more than
 the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
-setting `max terms` property.
+setting the `max terms` property.
 
 #### Asset Categories 
 
 If categories have been applied to any asset that appears in the result set,
-they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
-thing as the two sections above. That last sentence was written to check if
-you're still reading. 
+they may be displayed in the Asset Categories facet. Asset categories work just
+like asset tags. As with asset tags, you can modify the number of categories
+listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
