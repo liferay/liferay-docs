@@ -800,8 +800,10 @@ types in the same interface. When you're done selecting items to display, click
 by the portlet. Once you have your content selected, you can configure the
 display types to configure how the content appears.
 
-However, it's often more convenient to use the Asset Publisher to select content
-dynamically.
+While manually Asset selection allows you to select assets of various types
+from different scopes, it can be time-consuming to periodically update the
+assets that should be displayed. It's often more convenient to use the Asset
+Publisher to select content dynamically.
 
 #### Selecting Assets Dynamically  
 
@@ -810,29 +812,22 @@ to rules that you give it. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You have the following options for creating these rules:
 
-**Scope:** Choose the sites or organizations from which the content should be
-selected.
+**Scope:** Choose the sites from which the content should be selected. This
+works the same way as with manual asset selection: assets can only be displayed
+if they belong to a configured scope.
 
-**Asset Type:** Choose whether you'll display any asset or only assets of a
-specific type, such as only web content, only wiki entries, or any combinations
+**Asset Type:** Choose whether you'll display any assets or only assets of a
+specific type, such as only web content, only wiki entries, or any combination
 of multiple types.
 
 ![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can
-choose whether the content contains or does not contain any or all categories or
-tags that you enter.
+choose whether the content contains or does not contain any or all the tags or
+categories that you enter.
 
 Once you've set up your filter rules for dynamically selecting your content, you
 can then decide how the content will be displayed.
-
-The Display Settings section gives you precise control over the display of your
-assets. There are a multitude of options available to configure how you want
-your content to appear. You can configure the style, length of abstracts,
-behavior of the asset link, maximum items to display, pagination type and file
-conversions. Additionally, you can enable printing, flags, ratings, comments and
-comment ratings, and these work the same way they do in the Web Content Display
-portlet.
 
 ---
 
@@ -843,6 +838,9 @@ portlet.
  longer be exported.
  
 ---
+
+<!-- TODO: Discuss how to use the CUSTOM USER ATTRIBUTES section of the dynamic
+asset selection configuration window of the Asset Publisher. -->
 
 You can display the content returned by the filters above in order by title,
 create date, modified date, view count and more in ascending or descending
