@@ -2033,12 +2033,6 @@ and custom finder for your portlet!
 Next you'll tour through the `service.properties` file that Service Builder
 generates. 
 
-<!--
-## Leveraging Dynamic Query 
--->
-
-<!-- Uh, what happened to Dynamic query? -Rich -->
-
 ## Configuring `service.properties`[](id=configuring-serviceproperties-liferay-portal-6-1-dev-guide-en)
 
 Service Builder generates a `service.properties` file in your project's
