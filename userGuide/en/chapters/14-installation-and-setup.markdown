@@ -1348,48 +1348,43 @@ configure your domain.
 There are a couple of modifications you need to make in your domain to use
 Liferay Portal.
 
-1. Before starting GlassFish, modify your domain's configuration to do the
-   following: 
+Before starting GlassFish, modify your domain's configuration to do the
+following: 
+- Set the file encoding
+- Set the user time-zone
+- Set the preferred protocol stack
+- Prevent the application server from setting static fields (final or non-final)
+  to `null`
+- Increase the default amount of memory available.
 
-    - Set the file encoding
+Modify
+`/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml` 
+merging in the following JVM options into the current list of JVM options within
+your `<java-config>` element: 
 
-    - Set the user time-zone
+    <jvm-options>-Dfile.encoding=UTF8</jvm-options> 
+    <jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
+    <jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
+    <jvm-options>-Duser.timezone=GMT</jvm-options>
+    <jvm-options>-Xmx1024m</jvm-options>
+    <jvm-options>-XX:MaxPermSize=512m</jvm-options>
 
-    - Set the preferred protocol stack
+Be sure that any existing options with values such as `-Dfile.encoding`,
+`-Djava.net.preferIPv4Stack`,
+`-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`,
+`-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed
+above.
 
-    - Prevent the application server from setting static fields (final or non-final)
-    to `null`
+For example, replace: 
 
-    - Increase the default amount of memory available.
-
-	Modify
-    `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml`
-    merging in the following JVM options into the current list of JVM options
-    within your `<java-config>` element:
-
-		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 
-		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
-		<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
-		<jvm-options>-Duser.timezone=GMT</jvm-options>
-		<jvm-options>-Xmx1024m</jvm-options>
-		<jvm-options>-XX:MaxPermSize=512m</jvm-options>
-
-    Be sure that any existing options with values such as `-Dfile.encoding`,
-    `-Djava.net.preferIPv4Stack`,
-    `-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`,
-    `-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed
-    above.
-
-    For example, replace: 
-
-		<jvm-options>-Xmx256m</jvm-options>
+    <jvm-options>-Xmx256m</jvm-options>
 	
-    with this: 
+with this: 
 	
-		<jvm-options>-Xmx1024m</jvm-options>
+    <jvm-options>-Xmx1024m</jvm-options>
 
-2. Delete, rename, or move the `domain1/docroot/index.html` file to another
-   location to allow your Liferay Portal default page to be displayed.
+Delete, rename, or move the `domain1/docroot/index.html` file to another
+location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
@@ -1427,7 +1422,7 @@ your data source, you can skip this section.
 
 8. Replace or add the following properties ...
 
-    - **URL:** the URL of your connection pool.
+    **URL:** the URL of your connection pool.
 
     For example,
 
@@ -1439,9 +1434,9 @@ your data source, you can skip this section.
     place of `localhost`. Lastly, specify your database type in place of
     `jdbc:mysql`.
 
-    - **user:** the name of your database user.
+    **user:** the name of your database user.
 
-    - **password:** your database user's password.
+    **password:** your database user's password.
 
 9. Click *Finish*.
 
@@ -1617,14 +1612,10 @@ Let's work with the Liferay depenency jar files first.
 
     Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
     `$JETTY_HOME/lib/ext/liferay` folder:
-	
-    - `activation.jar`
-
-    - `jta.jar`
-
-    - `mail.jar`
-
-    - `persistence.jar`
+	- activation.jar
+    - jta.jar
+    - mail.jar
+    - persistence.jar
 
 4. Make sure the JDBC driver for your database is accessible to Jetty. Obtain
    the JDBC driver for your version of the database server. In the case of
@@ -1659,7 +1650,7 @@ scripts.
     and run scripts that invoke these configuration directives during Jetty's
     startup process.
 
-2. Create initialization file: `$JETTY_HOME/bin/start.ini`
+2.  Create initialization file: `$JETTY_HOME/bin/start.ini`
 
         START=../etc/start.config
         OPTIONS=Server,jsp,resources
@@ -1671,63 +1662,60 @@ scripts.
         ../etc/jetty-testrealm.xml
 
     This initialization file does the following:
-	
     - Sets `$JETTY_HOME/etc/start.config` as your starting configuration file.
     - Sets your server options.
-    - Specifies a sequence of deployment descriptor files to be processed.
+    - Specifies a sequence of deployment descriptor files to be processed. 
 
-3. Create a run script appropriate to your operating system:
+3.  Create a run script appropriate to your operating system:
 
-    - On Windows, create: `$JETTY_HOME/bin/run.bat`
+    On Windows, create: `$JETTY_HOME/bin/run.bat`
 
-			@echo off
+        @echo off
 
-			if "" == "%JAVA_HOME%" goto errorJavaHome
+        if "" == "%JAVA_HOME%" goto errorJavaHome
 
-			set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-			"%JAVA_HOME%/bin/java" %JAVA_OPTS% -jar ../start.jar
+        "%JAVA_HOME%/bin/java" %JAVA_OPTS% -jar ../start.jar
 
-			goto end
+        goto end
 
-			:errorJavaHome
-				echo JAVA_HOME not defined.
+        :errorJavaHome
+            echo JAVA_HOME not defined.
 
-				goto end
+            goto end
 
-			:end
+        :end
 
-    - On Unix/Linux, create: `$JETTY_HOME/bin/run.sh`
+    On Unix/Linux, create: `$JETTY_HOME/bin/run.sh`
 
-			#!/bin/sh
+        #!/bin/sh
 
-			if [ ! $JAVA_HOME ]
-			then
-				echo JAVA_HOME not defined.
-				exit
-			fi
+        if [ ! $JAVA_HOME ]
+        then
+            echo JAVA_HOME not defined.
+            exit
+        fi
 
-			export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-			$JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
+        $JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
 
-4. Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context,
-   classpath and resource base of your web application:
+4.  Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context,
+    classpath and resource base of your web application:
 
-		<?xml version="1.0"?>
-		<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+        <?xml version="1.0"?>
+        <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
 
-		<Configure class="org.eclipse.jetty.webapp.WebAppContext">
-			<Set name="contextPath">/</Set>
-			<Set name="extraClasspath"><SystemProperty name="jetty.home" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-util-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-webapp-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar</Set>
-			<Set name="resourceBase"><SystemProperty name="jetty.home" />/webapps/root</Set>
-		</Configure>
+        <Configure class="org.eclipse.jetty.webapp.WebAppContext">
+            <Set name="contextPath">/</Set>
+            <Set name="extraClasspath"><SystemProperty name="jetty.home" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-util-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-webapp-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar</Set>
+            <Set name="resourceBase"><SystemProperty name="jetty.home" />/webapps/root</Set>
+        </Configure>
 
-5. Lastly, create the following folders:
-
-    - `$JETTY_HOME/logs` - for log files
-
-    - `$JETTY_HOME/temp` - for temporary files. Note, this folder is specified to
+5.  Lastly, create the following folders:
+    - $JETTY_HOME/logs - for log files
+    - $JETTY_HOME/temp - for temporary files. Note, this folder is specified to
     our JVM as a temporary folder in the run script you created previously.
 
 Now that your general Jetty startup files are set in place, let's consider how
@@ -1848,18 +1836,18 @@ Let's start your server and deploy Liferay Portal!
 
 Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
-1. If you already have an application folder `$JETTY_HOME/webapps/root`, delete
-   it or move it to a location outside of `$JETTY_HOME/webapps`.
+1.  If you already have an application folder `$JETTY_HOME/webapps/root`, delete
+    it or move it to a location outside of `$JETTY_HOME/webapps`.
 
-2. Then extract the contents of the Liferay portal `.war` file into
-   `$JETTY_HOME/webapps/root`.
+2.  Then extract the contents of the Liferay portal `.war` file into
+    `$JETTY_HOME/webapps/root`.
 
-3. Before you start Liferay Portal, let's consider whether you want to also
-   start the setup wizard.
+3.  Before you start Liferay Portal, let's consider whether you want to also
+    start the setup wizard.
 
-    - **Start the setup wizard along with Liferay Portal** - Do this if you want
-      to configure your portal, setup your site's administrative account and/or
-      manage your database within Liferay.
+    **Start the setup wizard along with Liferay Portal** - Do this if you want
+    to configure your portal, setup your site's administrative account and/or
+    manage your database within Liferay.
 		
     If this is your first time starting Liferay Portal 6.1, the setup wizard is
     invoked on server startup. If you want to re-run the wizard, specify
@@ -1870,7 +1858,7 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
     The setup wizard is invoked during server startup.
 
-    - **Start Liferay Portal without invoking the setup wizard** - Do this if want
+    **Start Liferay Portal without invoking the setup wizard** - Do this if want
     to preserve your current portal settings.
 
     To start the server without triggering the setup wizard, specify
@@ -1892,12 +1880,10 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
     Now its time to launch Liferay Portal!
 
-4. Start Liferay Portal by executing `run.bat` (Windows) or `run.sh`
-   (Unix/Linux) script from `$JETTY_HOME/bin`.
-
+4.  Start Liferay Portal by executing `run.bat` (Windows) or `run.sh`
+    (Unix/Linux) script from `$JETTY_HOME/bin`.
     - If the setup wizard was disabled, your site's home page opens in your
       browser at [http://localhost:8080](http://localhost:8080).
-
     - Otherwise, the setup wizard opens in your browser.
 
 See the section on the setup wizard above for more information about the setup
@@ -2001,20 +1987,19 @@ files, it's time to deploy Liferay.
     necessary to add a `jboss-classloading.xml` file to the `WEB-INF` folder of
     each Liferay plugin; see the *Deploying plugins* section below.
 
-4. Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
-   `$JBOSS_HOME`) and add the following properties:
+4.  Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
+    `$JBOSS_HOME`) and add the following properties:
 
-		hibernate.validator.apply_to_ddl=false
-		hibernate.validator.autoregister_listeners=false
+        hibernate.validator.apply_to_ddl=false
+        hibernate.validator.autoregister_listeners=false
 
-5. Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
-	
-        jaxrpc.jar
-        stax.jar
-        xercesImpl.jar
-        xml-apis.jar
+5.  Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
+    - jaxrpc.jar
+    - stax.jar
+    - xercesImpl.jar
+    - xml-apis.jar
 
-6. Add the following lines to your `portal-ext.properties` file:
+6.  Add the following lines to your `portal-ext.properties` file:
 
 	NOTE: The autodeploy folder must be set with the full name of the folder;
 	you can't use any variables to define the location.
@@ -2174,13 +2159,9 @@ script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
 
 These modifications change the following options: 
-
 - Set the file encoding
-
 - Set the user time-zone
-
 - Set the preferred protocol stack
-
 - Increase the default amount of memory available.
 
 Make the following edits as applicable to your operating system:
@@ -2349,48 +2330,50 @@ Now you're ready to deploy Liferay Portal.
    [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944)
    in determining which persistence provider to use.
 
-5. Before you start Liferay Portal, let's consider whether you want to also
-   start the setup wizard.
+5.  Before you start Liferay Portal, let's consider whether you want to also
+    start the setup wizard.
 
-    - **Start the setup wizard along with Liferay Portal** - Do this if you want to
-    configure your portal, set up your site's administrative account and/or manage
-    your database within Liferay.
+    **Start the setup wizard along with Liferay Portal** - Do this if you want
+    to configure your portal, setup your site's administrative account and/or
+    manage your database within Liferay.
 		
     If this is your first time starting Liferay Portal 6.1, the setup wizard is
     invoked on server startup. If you want to re-run the wizard, specify
     `setup.wizard.enabled=true` in your properties file (e.g.
     `portal-setup-wizard.properties`).
 
-	    setup.wizard.enabled=true
+        setup.wizard.enabled=true
 
     The setup wizard is invoked during server startup.
 
-    - **Start Liferay Portal without invoking the setup wizard** - Do this if want
+    **Start Liferay Portal without invoking the setup wizard** - Do this if want
     to preserve your current portal settings.
 
     To start the server without triggering the setup wizard, specify
     `setup.wizard.enabled=false` in your properties (e.g.
     `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
-	    setup.wizard.enabled=false
+        setup.wizard.enabled=false
 
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
     ---
 
-    ![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+    ![Note](../../images/tip.png) Property values in
+    `portal-setup-wizard.properties` override property values in
+    `portal-ext.properties`.
 
     ---
-	
+
     Now it's time to start Liferay Portal on JBoss!
 
-6. Start the JBoss application server.
+6.  Start the JBoss application server.
 
-    - If the setup wizard was disabled, your site's home page opens automatically in
-    your browser at [http://localhost:8080](http://localhost:8080).
+    If the setup wizard was disabled, your site's home page opens automatically
+    in your browser at [http://localhost:8080](http://localhost:8080).
 
-    - Otherwise, the setup wizard opens in your browser.
+    Otherwise, the setup wizard opens in your browser.
 
     See the section on the setup wizard above for how to use Liferay's setup
     wizard.
@@ -2456,51 +2439,47 @@ The primary file used in configuring your domain is
 support Liferay Portal. You'll also create a run script and add a folder to hold
 Resin's logs. But let's start with the changes to `resin.xml`.
 
-1. Make the following modifications to your `resin.xml`. These modifications to
-   your application cluster make the following configuration changes:
-
-    - Set the file encoding.
-
-    - Set the preferred protocol stack.
-
-    - Set the user time-zone.
-
-    - Increase the default amount of memory available.
+1.  Make the following modifications to your `resin.xml`. These modifications to
+    your application cluster make the following configuration changes:
+    - Set the file encoding
+    - Set the preferred protocol stack
+    - Set the user time-zon
+    - Increase the default amount of memory available. 
 
     To accomplish this, insert the following `<jvm-arg>` elements as server
     defaults for your main application cluster. Please see the following
     example:
 
         <cluster id="app-tier">
-		    ...
-		    <server-default>
-			    ...
-			    <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
-			    <jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
-			    <jvm-arg>-Duser.timezone=GMT</jvm-arg>
-			    <jvm-arg>-Xmx1024m</jvm-arg>
-			    <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
-			    ...
-			</server-default>
+            ...
+            <server-default>
+                ...
+                <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
+                <jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
+                <jvm-arg>-Duser.timezone=GMT</jvm-arg>
+                <jvm-arg>-Xmx1024m</jvm-arg>
+                <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
+                ...
+            </server-default>
         </cluster>
 
-2. Create an appropriate script in `$RESIN_HOME/bin` to help you start Resin.
+2.  Create an appropriate script in `$RESIN_HOME/bin` to help you start Resin.
 
-    - If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
+    If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
     insert the following text in the script:
 
         ..\resin.exe console
 
-    - If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
+    If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
     insert the following text in the script:
 
         #!/bin/sh
 
         ./resin.sh $
 
-3. Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
-   Resin, the server generates log files `access`, `jvm-default` and
-   `watchdog-manager` in this folder.
+3.  Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
+    Resin, the server generates log files `access`, `jvm-default` and
+    `watchdog-manager` in this folder.
 
 Now that you've completed some important common configuration tasks to support
 Liferay, let's consider database configuration. 
@@ -2619,32 +2598,24 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 2. Extract the contents of the Liferay portal `.war` file into
    `RESIN_HOME/webapps/ROOT`. The following files should now exist in your
    `RESIN_HOME/webapps/ROOT` folder:
-
     - dtd (folder)
-
     - errors (folder)
-
     - html (folder)
-
     - layouttpl (folder)
-
     - META-INF (folder)
-
     - wap (folder)
-
     - WEB-INF (folder)
-
     - index.jsp
 
-3. Before you start Liferay Portal, consider whether you want to also start the
-   setup wizard.
+3.  Before you start Liferay Portal, let's consider whether you want to also
+    start the setup wizard.
 
-    - **Start the setup wizard along with Liferay Portal** - Do this if you want to
-    configure your portal, set up your site's administrative account and/or manage
-    your database within Liferay.
+    **Start the setup wizard along with Liferay Portal** - Do this if you want
+    to configure your portal, setup your site's administrative account and/or
+    manage your database within Liferay.
 		
     If this is your first time starting Liferay Portal 6.1, the setup wizard is
-    invoked on server start up. If you want to re-run the wizard, specify
+    invoked on server startup. If you want to re-run the wizard, specify
     `setup.wizard.enabled=true` in your properties file (e.g.
     `portal-setup-wizard.properties`).
 
@@ -2652,7 +2623,7 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
     The setup wizard is invoked during server startup.
 
-    - **Start Liferay Portal without invoking the setup wizard** - Do this if want
+    **Start Liferay Portal without invoking the setup wizard** - Do this if want
     to preserve your current portal settings.
 
     To start the server without triggering the setup wizard, specify
@@ -2672,12 +2643,12 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
     ---
 
-4. Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh`
-(Unix/Linux) script from `$RESIN_HOME/bin`.
+    Now its time to launch Liferay Portal on Resin!
 
-    - If the setup wizard was disabled, your site's home page opens in your browser
-    at [http://localhost:8080](http://localhost:8080).
-
+4.  Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh`
+    (Unix/Linux) script from `$RESIN_HOME/bin`.
+    - If the setup wizard was disabled, your site's home page opens in your
+    browser at [http://localhost:8080](http://localhost:8080).
     - Otherwise, the setup wizard opens in your browser.
 
     Please see the section above describing how to use the setup wizard. 
@@ -2960,32 +2931,32 @@ We'll deploy Liferay as an exploded web archive within your
    default Tomcat home page. Then extract the Liferay `.war` file to
    `$TOMCAT_HOME/webapps/ROOT`.
 
-2. Before you start Liferay Portal, consider whether you want to use the setup
-   wizard.
+2.  Before you start Liferay Portal, let's consider whether you want to also
+    start the setup wizard.
 
-    - **Start the setup wizard along with Liferay Portal** - Do this if you want to
-    configure your portal, set up your site's administrative account and/or manage
-    your database within Liferay.
+    **Start the setup wizard along with Liferay Portal** - Do this if you want
+    to configure your portal, setup your site's administrative account and/or
+    manage your database within Liferay.
 		
     If this is your first time starting Liferay Portal 6.1, the setup wizard is
     invoked on server startup. If you want to re-run the wizard, specify
     `setup.wizard.enabled=true` in your properties file (e.g.
     `portal-setup-wizard.properties`).
 
-		setup.wizard.enabled=true
+        setup.wizard.enabled=true
 
     The setup wizard is invoked during server startup.
 
-    - **Start Liferay Portal without invoking the setup wizard** - Do this if you
-    want to preserve your current portal settings.
+    **Start Liferay Portal without invoking the setup wizard** - Do this if want
+    to preserve your current portal settings.
 
     To start the server without triggering the setup wizard, specify
     `setup.wizard.enabled=false` in your properties (e.g.
     `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
-	    setup.wizard.enabled=false
+        setup.wizard.enabled=false
 
-    The `portal-setup-wizard.properties` file the setup wizard creates should have
+    The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
     ---
@@ -2996,7 +2967,7 @@ We'll deploy Liferay as an exploded web archive within your
 
     ---
 
-    I bet you can't wait to start Liferay Portal - let's do it!
+    Now its time to launch Liferay Portal on Tomcat!
 
 3. Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or
    `$TOMCAT_HOME/bin/startup.sh`.
@@ -3041,14 +3012,13 @@ similar) is referred to as `$JONAS_ROOT`. This allows a unique, clean separation
 between application and configuration. 
 
 The structure of `$JONAS_BASE` is:
-
-    /conf    -    configuration files
-    /deploy    -    main deployment directory (Liferay is deployed here)
-    /lib    -    used for extending the main server classloaders
-    +----/ext    -    extensions for unbundled applications
-    /logs    -    logs for the running instance
-    /work    -    the working directory, used by containers such as Tomcat
-    /repositories    -    contains OSGi bundles for deployment; not used for Liferay installation
+- /conf    -    configuration files
+- /deploy    -    main deployment directory (Liferay is deployed here)
+- /lib    -    used for extending the main server classloaders
+- /lib/ext    -    extensions for unbundled applications
+- /logs    -    logs for the running instance
+- /work    -    the working directory, used by containers such as Tomcat
+- /repositories    -    contains OSGi bundles for deployment; not used for Liferay installation
     
 By default, the `$JONAS_BASE` directory is the same as `$JONAS_ROOT`. Creating a
 new `$JONAS_BASE` is a simple process, outlined in the JOnAS Configuration
@@ -3057,49 +3027,33 @@ Guide, found at
 
 To remove sample files and unneeded configuration:
 
-1. Navigate to the directory you unpackaged *JOnAS* into, `$JONAS_BASE`.
+1.  Navigate to the directory you unpackaged *JOnAS* into, `$JONAS_BASE`.
 
-2. Find the following sample directories and remove them:
+2.  Find the following sample directories and remove them:
+    - /examples
+    - /tutorial
 
-    -    /examples
-
-    -    /tutorial
-
-3. Navigate to `$JONAS_BASE/conf` and remove the following files:
-
+3.  Navigate to `$JONAS_BASE/conf` and remove the following files:
     - db2.properties
-
     - FirebirdSQL.properties
-
     - HSQL1.properties
-
-    - `jetty\*.xml`
-
+    - jetty\*.xml
     - InstantDB1.properties
-
     - InterBase1.properties
-
     - MailMimePartDS1.properties
-
     - MailSession1.properties
-
     - McKoi1.properties
-
     - MySQL.properties
-
     - Oracle1.properties
-
     - PostgreSQL1.properties
-
     - spy.properties
-
     - Sybase1.properties
 		
     This disables the default settings for the databases available in JOnAS, as
     well as removing configuration for Jetty as a container to use for the
     webapp.
       
-4. To remove the default application installed on the root context:
+4.  To remove the default application installed on the root context:
 
     1. Go to the `$JONAS_BASE/deploy` directory and remove:
         - ctxroot.xml
