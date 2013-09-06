@@ -1938,20 +1938,19 @@ We'll also delete some other files that can cause conflicts with Liferay when
 it's deployed.
 
 1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
-
-        /messaging
-	    ejb2-container-jboss-beans.xml
-        ejb2-timer-service.xml
-        ejb3-connections-jboss-beans.xml
-        ejb3-container-jboss-beans.xml
-        ejb3-interceptors-aop.xml
-        ejb3-timerservice-jboss-beans.xml
-        hsqldb-ds.xml
-        jms-ra.rar
-        mail-ra.rar
-        mail-service.xml
-        profile-service-secured.jar
-        uuid-key-generator.sar
+    - /messaging
+	- ejb2-container-jboss-beans.xml
+    - ejb2-timer-service.xml
+    - ejb3-connections-jboss-beans.xml
+    - ejb3-container-jboss-beans.xml
+    - ejb3-interceptors-aop.xml
+    - ejb3-timerservice-jboss-beans.xml
+    - hsqldb-ds.xml
+    - jms-ra.rar
+    - mail-ra.rar
+    - mail-service.xml
+    - profile-service-secured.jar
+    - uuid-key-generator.sar
 
 2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
 
@@ -2369,11 +2368,10 @@ Now you're ready to deploy Liferay Portal.
     Now it's time to start Liferay Portal on JBoss!
 
 6.  Start the JBoss application server.
-
-    If the setup wizard was disabled, your site's home page opens automatically
-    in your browser at [http://localhost:8080](http://localhost:8080).
-
-    Otherwise, the setup wizard opens in your browser.
+    - If the setup wizard was disabled, your site's home page opens
+      automatically in your browser at
+      [http://localhost:8080](http://localhost:8080). 
+    - Otherwise, the setup wizard opens in your browser.
 
     See the section on the setup wizard above for how to use Liferay's setup
     wizard.
