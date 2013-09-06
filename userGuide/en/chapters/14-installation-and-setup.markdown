@@ -2724,35 +2724,25 @@ JDBC driver and a few other JARs installed.
    temporary folder. We'll refer to the location of the Liferay source as
    `$LIFERAY_SOURCE`.
 
-   1. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
+    1. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
+	   `$TOMCAT_HOME/lib/ext` folder:
+        - `activation.jar`
+        - `jms.jar`
+        - `jta.jar`
+        - `jutf7.jar`
+        - `mail.jar`
+        - `persistence.jar`
+    2. Copy the following jar from `$LIFERAY_SOURCE/lib/portal` to your
 	  `$TOMCAT_HOME/lib/ext` folder:
-
-   - `activation.jar`
-
-   - `jms.jar`
-
-   - `jta.jar`
-
-   - `jutf7.jar`
-
-   - `mail.jar`
-
-   - `persistence.jar`
-
-   2. Copy the following jar from `$LIFERAY_SOURCE/lib/portal` to your
-	  `$TOMCAT_HOME/lib/ext` folder:
-
-   - `ccpp.jar`
-
-*Note:* Tomcat 6 users should *not* copy the `ccpp.jar` file into their
-`$TOMCAT_HOME/lib/ext` folder and should delete it from this folder if it
-already exists.
-
-   3. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
-	  `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies` folder:
-
-   - `resin.jar`
-   - `script-10.jar`
+        - `ccpp.jar`
+        - *Note:* Tomcat 6 users should *not* copy the `ccpp.jar` file into
+        their `$TOMCAT_HOME/lib/ext` folder and should delete it from this
+        folder if it already exists.
+    3. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
+	   `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies`
+        folder:
+        - `resin.jar`
+        - `script-10.jar`
 
 4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
    the JDBC driver for your version of the database server. In the case of
@@ -2789,7 +2779,7 @@ Let's get started with our configuration tasks.
    `setenv.bat` or `setenv.sh`. Edit the file and populate it with following
    contents:
 
-   setenv.bat:
+    setenv.bat:
 
 		if exist "%CATALINA_HOME%/jre@java.version@/win" (
 			if not "%JAVA_HOME%" == "" (
@@ -2801,52 +2791,52 @@ Let's get started with our configuration tasks.
 
 		set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-	setenv.sh:
+    setenv.sh:
 
 		JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean
-Time and allocates memory to the Java virtual machine.
+    This sets the character encoding to UTF-8, sets the time zone to Greenwich
+    Mean Time and allocates memory to the Java virtual machine.
 
 2. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a
    `ROOT.xml` file in it. Edit this file and populate it with the following
    contents to set up a portal web application:
 
-	<Context path="" crossContext="true">
+		<Context path="" crossContext="true">
 
-		<!-- JAAS -->
+			<!-- JAAS -->
 
-		<!--<Realm
-			className="org.apache.catalina.realm.JAASRealm"
-			appName="PortalRealm"
-			userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-			roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-		/>-->
+			<!--<Realm
+				className="org.apache.catalina.realm.JAASRealm"
+				appName="PortalRealm"
+				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+			/>-->
 
-		<!--
-		Uncomment the following to disable persistent sessions across reboots.
-		-->
+			<!--
+			Uncomment the following to disable persistent sessions across reboots.
+			-->
 
-		<!--<Manager pathname="" />-->
+			<!--<Manager pathname="" />-->
 
-		<!--
-		Uncomment the following to not use sessions. See the property
-		"session.disabled" in portal.properties.
-		-->
+			<!--
+			Uncomment the following to not use sessions. See the property
+			"session.disabled" in portal.properties.
+			-->
 
-		<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
-	</Context>
+			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+		</Context>
 		
-Setting `crossContext="true"` allows multiple web apps to use the same class
-loader. In the content above you will also find commented instructions and tags
-for configuring a JAAS realm, disabling persistent sessions and disabling
-sessions in general.
+    Setting `crossContext="true"` allows multiple web apps to use the same class
+    loader. In the content above you will also find commented instructions and
+    tags for configuring a JAAS realm, disabling persistent sessions and
+    disabling sessions in general.
 
 3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
-   with:
+    with:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
 		
@@ -2876,24 +2866,24 @@ you want to use Liferay's built-in data source, you can skip this section.
 2. Add your data source as a resource in the context of your web application
    specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
 
-	<Context...>
-		<Resource
-			name="jdbc/LiferayPool"
-			auth="Container"
-			type="javax.sql.DataSource"
-			driverClassName="com.mysql.jdbc.Driver"
-			url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-			username="root"
-			password="root"
-			maxActive="100"
-			maxIdle="30"
-			maxWait="10000"
-		/>
-	</Context>
+		<Context...>
+			<Resource
+				name="jdbc/LiferayPool"
+				auth="Container"
+				type="javax.sql.DataSource"
+				driverClassName="com.mysql.jdbc.Driver"
+				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+				username="root"
+				password="root"
+				maxActive="100"
+				maxIdle="30"
+				maxWait="10000"
+			/>
+		</Context>
 	
-Note the above resource definition assumes your database name is *lportal* and
-your MySQL username and password are both *root*. You'll have to update these
-values with your own database name and credentials.
+    Note the above resource definition assumes your database name is *lportal*
+    and your MySQL username and password are both *root*. You'll have to update
+    these values with your own database name and credentials.
 
 Your Tomcat managed data source is now configured. Let's move on to your mail
 session.
@@ -2943,8 +2933,8 @@ connecting to your database and mail session.
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-the instructions in the *Deploy Liferay* section for using the setup wizard.
+    Otherwise, if you are using *Liferay Portal* to manage your data source, follow
+    the instructions in the *Deploy Liferay* section for using the setup wizard.
 
 2. If want to use *Liferay Portal* to manage your mail session, you can
    configure the mail session within Liferay Portal. That is, after starting
@@ -2952,10 +2942,10 @@ the instructions in the *Deploy Liferay* section for using the setup wizard.
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-Otherwise, if you are using *Tomcat* to manage your mail session, add the
-following to your `portal-ext.properties` file to reference that mail session:
+    Otherwise, if you are using *Tomcat* to manage your mail session, add the
+    following to your `portal-ext.properties` file to reference that mail session:
 
-	mail.session.jndi.name=mail/MailSession
+		mail.session.jndi.name=mail/MailSession
 
 It's just that easy! Now it's time to deploy Liferay Portal on your Tomcat
 server. 
@@ -2973,50 +2963,50 @@ We'll deploy Liferay as an exploded web archive within your
 2. Before you start Liferay Portal, consider whether you want to use the setup
    wizard.
 
-- **Start the setup wizard along with Liferay Portal** - Do this if you want to
-  configure your portal, set up your site's administrative account and/or manage
-  your database within Liferay.
+    - **Start the setup wizard along with Liferay Portal** - Do this if you want to
+    configure your portal, set up your site's administrative account and/or manage
+    your database within Liferay.
 		
-If this is your first time starting Liferay Portal 6.1, the setup wizard is
-invoked on server startup. If you want to re-run the wizard, specify
-`setup.wizard.enabled=true` in your properties file (e.g.
-`portal-setup-wizard.properties`).
+    If this is your first time starting Liferay Portal 6.1, the setup wizard is
+    invoked on server startup. If you want to re-run the wizard, specify
+    `setup.wizard.enabled=true` in your properties file (e.g.
+    `portal-setup-wizard.properties`).
 
-	setup.wizard.enabled=true
+		setup.wizard.enabled=true
 
-The setup wizard is invoked during server startup.
+    The setup wizard is invoked during server startup.
 
-- **Start Liferay Portal without invoking the setup wizard** - Do this if you
-  want to preserve your current portal settings.
+    - **Start Liferay Portal without invoking the setup wizard** - Do this if you
+    want to preserve your current portal settings.
 
-To start the server without triggering the setup wizard, specify
-`setup.wizard.enabled=false` in your properties (e.g.
-`portal-setup-wizard.properties` or `portal-ext.properties` file).
+    To start the server without triggering the setup wizard, specify
+    `setup.wizard.enabled=false` in your properties (e.g.
+    `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
-	setup.wizard.enabled=false
+	    setup.wizard.enabled=false
 
-The `portal-setup-wizard.properties` file the setup wizard creates should have
-`setup.wizard.enabled=false` conveniently specified for you.
+    The `portal-setup-wizard.properties` file the setup wizard creates should have
+    `setup.wizard.enabled=false` conveniently specified for you.
 
----
+    ---
 
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
+    ![Note](../../images/tip.png) Property values in
+    `portal-setup-wizard.properties` override property values in
+    `portal-ext.properties`.
 
----
+    ---
 
-I bet you can't wait to start Liferay Portal - let's do it!
+    I bet you can't wait to start Liferay Portal - let's do it!
 
 3. Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or
    `$TOMCAT_HOME/bin/startup.sh`.
 
-- If the setup wizard was disabled, your site's home page opens in your browser
-  at [http://localhost:8080](http://localhost:8080).
+    - If the setup wizard was disabled, your site's home page opens in your
+    browser at [http://localhost:8080](http://localhost:8080).
 
-- Otherwise, the setup wizard opens in your browser.
+    - Otherwise, the setup wizard opens in your browser.
 
-To use the setup wizard, please see the section above. 
+    To use the setup wizard, please see the section above. 
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
@@ -3071,69 +3061,61 @@ To remove sample files and unneeded configuration:
 
 2. Find the following sample directories and remove them:
 
-  -    /examples
+    -    /examples
 
-  -    /tutorial
+    -    /tutorial
 
 3. Navigate to `$JONAS_BASE/conf` and remove the following files:
 
- - db2.properties
+    - db2.properties
 
- - FirebirdSQL.properties
+    - FirebirdSQL.properties
 
- - HSQL1.properties
+    - HSQL1.properties
 
- - `jetty\*.xml`
+    - `jetty\*.xml`
 
- - InstantDB1.properties
+    - InstantDB1.properties
 
- - InterBase1.properties
+    - InterBase1.properties
 
- - MailMimePartDS1.properties
+    - MailMimePartDS1.properties
 
- - MailSession1.properties
+    - MailSession1.properties
 
- - McKoi1.properties
+    - McKoi1.properties
 
- - MySQL.properties
+    - MySQL.properties
 
- - Oracle1.properties
+    - Oracle1.properties
 
- - PostgreSQL1.properties
+    - PostgreSQL1.properties
 
- - spy.properties
+    - spy.properties
 
- - Sybase1.properties
+    - Sybase1.properties
 		
-This disables the default settings for the databases available in JOnAS, as well
-as removing configuration for Jetty as a container to use for the webapp.
+    This disables the default settings for the databases available in JOnAS, as
+    well as removing configuration for Jetty as a container to use for the
+    webapp.
       
 4. To remove the default application installed on the root context:
 
-   a. Go to the `$JONAS_BASE/deploy` directory and remove:
-	 
-   - ctxroot.xml
-
-   - doc.xml
-
-   - jdbc-ds.xml
-
-   - jonasAdmin.xml
-	 
-   b. Go to the `$JONAS_ROOT/repositories` directory to remove the application
-   by removing:
-	 
-   - org/mortbay/
-
-   - org/ow2/jonas/documentation/
-
-   - org/ow2/jonas/jonas-admin/
-
-   - org/ow2/jonas/jonas-ctxroot/
+    1. Go to the `$JONAS_BASE/deploy` directory and remove:
+        - ctxroot.xml
+        - doc.xml
+        - jdbc-ds.xml
+        - jonasAdmin.xml
+    2. Go to the `$JONAS_ROOT/repositories` directory to remove the application
+    by removing:
+        - org/mortbay/
+        - org/ow2/jonas/documentation/
+        - org/ow2/jonas/jonas-admin/
+        - org/ow2/jonas/jonas-ctxroot/
 	     
-This will fully remove the Maven deployment plan and artifact for the JOnAS
-default application, as well as the administration console from loading on the
-root context.
+    This will fully remove the Maven deployment plan and artifact for the
+    JOnAS default application, as well as the administration console from
+    loading on the root context.
       
 Now that JOnAS is prepared for configuring Liferay to run on the server as its
 root application, you can begin tuning the settings for Liferay. By default,
@@ -3148,18 +3130,18 @@ To turn of HSQL and other JOnAS-level services:
 2. Find the configuration section for the JOnAS database manager, starting
    around line 340:
 
-            #
-            ###################### JOnAS DBM Database service configuration
+        #
+        ###################### JOnAS DBM Database service configuration
         
-	    ...
+        ...
 	
-	    jonas.service.dbm.datasources    hsql
+        jonas.service.dbm.datasources    hsql
 	    
 3. Change the datasources definition around line 353 to read: 
 
             jonas.service.dbm.datasources    
 	    
-Thereby preventing the HSQL database from being used internally.
+    Thereby preventing the HSQL database from being used internally.
        
 4. Find the services configuration around line 82:
 
@@ -3169,15 +3151,15 @@ Thereby preventing the HSQL database from being used internally.
 
             jonas.services    jtm,resource,ejb3,jaxws,web,ear,validation,depmonitor
 	    
-This prevents the internal `db` and `security` services from interfering with
-Liferay.
+    This prevents the internal `db` and `security` services from interfering
+    with Liferay.
       
 6. To put JOnAS into production mode for proper deployment of Liferay, find the
    property around line 71:
 
             jonas.development    true      
 	    
-   And change it to `false`:
+    And change it to `false`:
 
             jonas.development    false
 
@@ -3193,13 +3175,14 @@ different HTTP port and HTTPS port than Liferay uses by default.
 To change the Tomcat ports for Liferay's use:
 
 1. Open the file `tomcat6-server.xml` inside of `$JONAS_BASE/conf`.
+
 2. Find the `Connector` definition around line 69:
 
             <Connector port="9000" protocol="HTTP/1.1"
                            connectionTimeout="20000"
                            redirectPort="9043" />
 			   
-   Change it to reflect the default ports:
+    Change it to reflect the default ports:
 
             <Connector port="8080" protocol="HTTP/1.1"
                            connectionTimeout="20000"
@@ -3216,13 +3199,13 @@ the loader:
 
 2. Find the declaration for `javase-packages` around line 93:
 
-     javase-packages ${javase-${javase.version}}
+        javase-packages ${javase-${javase.version}}
 	    
-      And add the following packages to make it read:
+     And add the following packages to make it read:
       
-     javase-packages ${javase-${javase.version}}, com.sun.jmx.mbeanserver, com.sun.crypto.provider, org.apache.felix.framework
+        javase-packages ${javase-${javase.version}}, com.sun.jmx.mbeanserver, com.sun.crypto.provider, org.apache.felix.framework
 	      
-   To ensure the required packages are loaded.
+    To ensure the required packages are loaded.
       
 ### Starting JOnAS [](id=lp-6-1-ugen11-starting-jonas-0)
 
@@ -3391,10 +3374,11 @@ data source and mail session from Liferay Portal.
    following to your `portal-ext.properties` file in your *Liferay Home* to
    refer to your data source:
 
-	jdbc.default.jndi.name=jdbc/LiferayPool
+        jdbc.default.jndi.name=jdbc/LiferayPool
 
-Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-the instructions in the *Deploy Liferay* section for using the setup wizard.
+    Otherwise, if you are using *Liferay Portal* to manage your data source,
+    follow the instructions in the *Deploy Liferay* section for using the setup
+    wizard.
 
 3. If want to use *Liferay Portal* to manage your mail session, you can
    configure the mail session within Liferay Portal. That is, after starting
@@ -3402,10 +3386,11 @@ the instructions in the *Deploy Liferay* section for using the setup wizard.
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-Otherwise, if you are using *WebLogic* to manage your mail session, add the
-following to your `portal-ext.properties` file to reference that mail session:
+    Otherwise, if you are using *WebLogic* to manage your mail session, add the
+    following to your `portal-ext.properties` file to reference that mail
+    session:
 
-	mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
 Liferay can now communicate with your data source and mail session. It's now
 time to deploy Liferay!
@@ -3481,10 +3466,10 @@ deployment of Liferay Portal.
 
 10. Click *Yes* to continue on the next screen to launch Liferay Portal.
 
-   - If the setup wizard was disabled, your site's home page opens in your
-     browser at [http://localhost:7001](http://localhost:7001).
+    - If the setup wizard was disabled, your site's home page opens in your
+    browser at [http://localhost:7001](http://localhost:7001).
 
-   - Otherwise, the setup wizard opens in your browser.
+    - Otherwise, the setup wizard opens in your browser.
 
 For more information on how to use the setup wizard, please see the section
 above. 
@@ -3561,7 +3546,7 @@ you want to use Liferay's built-in data source, you can skip this section.
    see we have chosen MySQL. The database driver class is selected
    automatically.
 
-![Figure 14.45: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
+    ![Figure 14.45: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
 
 4. Click *Next* three times. You should be on the *Connection Properties*
    screen. Enter the database name, the host name, the port, the database user
@@ -3609,23 +3594,23 @@ data source and mail session from Liferay Portal.
 1. Create a `portal-ext.properties` file in the Liferay Home folder, which is
    one folder up from your domain's home folder.
 
-   If you are using *WebLogic* to manage your data source, add the following to
-   your `portal-ext.properties` file in *Liferay Home* to refer to your data
-   source:
+    If you are using *WebLogic* to manage your data source, add the following to
+    your `portal-ext.properties` file in *Liferay Home* to refer to your data
+    source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-   If you are using *Liferay Portal* to manage your data source, follow the
-   instructions in the *Deploy Liferay* section for using the setup wizard.
+    If you are using *Liferay Portal* to manage your data source, follow the
+    instructions in the *Deploy Liferay* section for using the setup wizard.
 
-   If want to use *Liferay Portal* to manage your mail session, you can
-   configure the mail session in the Control Panel. After starting your portal
-   as described in the *Deploy Liferay* section, go to *Control Panel &rarr;
-   Server Administration &rarr; Mail* and enter the settings for your mail
-   session.
+    If want to use *Liferay Portal* to manage your mail session, you can
+    configure the mail session in the Control Panel. After starting your portal
+    as described in the *Deploy Liferay* section, go to *Control Panel &rarr;
+    Server Administration &rarr; Mail* and enter the settings for your mail
+    session.
 
-   If you are using *WebLogic* to manage your mail session, add the following
-   to your `portal-ext.properties` file to reference that mail session:
+    If you are using *WebLogic* to manage your mail session, add the following
+    to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
@@ -3692,7 +3677,7 @@ Now, let's deploy Liferay Portal.
    from WebLogic's common files directory and select *Install this deployment as
    a library.*
 
-![Figure 14.47: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
+    ![Figure 14.47: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
 
 3. After installing the JSF libraries, go back to deployments and select the
    Liferay `.war` file from the file system or click the *Upload Your File(s)*
@@ -3707,10 +3692,10 @@ Now, let's deploy Liferay Portal.
 
 	Liferay launches in one of the following manners:
 
-   - If the setup wizard was disabled, your site's home page opens in your
-		browser at [http://localhost:7001](http://localhost:7001).
+    - If the setup wizard was disabled, your site's home page opens in your
+	browser at [http://localhost:7001](http://localhost:7001).
 
-   - Otherwise, the setup wizard opens in your browser.
+    - Otherwise, the setup wizard opens in your browser.
 
 Please see the section above for how to use the setup wizard. 
 
@@ -3753,7 +3738,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-![Figure 14.48: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
+    ![Figure 14.48: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
 
 3. Check the box *Deploy administrative console*. This gives you a web-based UI
    for working with your application server. Skip the default applications.
@@ -3763,19 +3748,19 @@ Management Tool** to create a profile appropriate for Liferay.
    setting other than *Development*, since you're installing a server for
    production use. Click *Next*. 
 
-![Figure 14.49: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
+    ![Figure 14.49: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
 
 5. Choose node and host names for your server. These will be specific to your
    environment. Click *Next*. 
 
-![Figure 14.50: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
+    ![Figure 14.50: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
 
 6. Administrative security in WebSphere is a way to restrict who has access to
    the administrative tools. For simplicity, we've disabled it but you may want
    to have it enabled in your environment. Please see WebSphere's documentation
    for further information. Click *Next*. 
 
-![Figure 14.51: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
+    ![Figure 14.51: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
 
 7. Each profile needs a security certificate, which comes next in the wizard. If
    you don't have certificates already, choose the option to generate a personal
@@ -3784,14 +3769,14 @@ Management Tool** to create a profile appropriate for Liferay.
 8. Once the certificates are generated, set a password for your keystore. Click
    *Next*. 
 
-![Figure 14.52: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
+    ![Figure 14.52: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
 
 9. Next, you can customize the ports this server profile uses. Be sure to choose
    ports that are open on your machine. When choosing ports, installation
    detects existing WebSphere installations and if it finds activity, it
    increments ports by one. 
 
-![Figure 14.53: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
+    ![Figure 14.53: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
 
 10. If you want WebSphere to start automatically when the machine is booted, you
 	configure it next. This differs by operating system. When you're finished
@@ -3837,7 +3822,7 @@ install.
 
 6. For Implementation class name, enter:
 
-    com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
+        com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
 
 7. Click *Next*.
 
@@ -3864,7 +3849,7 @@ install.
 
 17. Type *user* into the search terms and click *Go*.
 
-![Figure 14.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 14.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
 	database. Click *OK* and save to master configuration.
@@ -3926,18 +3911,18 @@ Great! Now you're ready to deploy Liferay.
    `portal-ext.properties` in your Liferay Home folder. Place the following text
    in the file: 
 
-    jdbc.default.jndi.name=jdbc/LiferayPool
-    mail.session.jndi.name=mail/MailSession
-    setup.wizard.enabled=false
+        jdbc.default.jndi.name=jdbc/LiferayPool
+        mail.session.jndi.name=mail/MailSession
+        setup.wizard.enabled=false
 
 2. Select the Liferay application and click *Start*. 
 
-![Figure 14.56: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
+    ![Figure 14.56: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
 
-Liferay then creates the tables it needs in the database. 
+    Liferay then creates the tables it needs in the database. 
 
 Congratulations! You've installed Liferay on WebSphere! 
 
@@ -3966,10 +3951,10 @@ There are two steps to modifying this behavior:
 2. Modify the `portal-ext.properties` file to tell Liferay the context to which
    it has been deployed.
 
-To change the file, open it in a text editor. Place the `portal.ctx` property at
-the top of the file:
+    To change the file, open it in a text editor. Place the `portal.ctx`
+    property at the top of the file:
 
-    portal.ctx=/
+        portal.ctx=/
 
 This default setting defines Liferay Portal as the application that sits at the
 root context. If you change it to something else, say `/portal`, for example,
