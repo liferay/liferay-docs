@@ -983,58 +983,132 @@ Open the `EventLocalServiceImpl.java` file found in your
 Add the following database interaction methods to the `EventLocalServiceImpl`
 class:
 
-    public Event addEvent(Event event) throws SystemException {
-        
-        long eventId = counterLocalService.increment(Event.class.getName());
-        event.setEventId(eventId);
-        
+    public Event addEvent(
+            long userId, long groupId, String name, String description,
+            int month, int day, int year, int hour, int minute, long locationId,
+            ServiceContext serviceContext)
+        throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
         Date now = new Date();
-        event.setCreateDate(now);
-        event.setModifiedDate(now);
-        
-        return super.addEvent(event);
+
+        long eventId = counterLocalService.increment(Event.class.getName());
+
+        Event event = eventPersistence.create(eventId);
+
+        event.setName(name);
+        event.setDescription(description);
+
+        Calendar dateCal = CalendarFactoryUtil.getCalendar(
+            user.getTimeZone());
+        dateCal.set(year, month, day, hour, minute);
+        Date date = dateCal.getTime();
+        event.setDate(date);
+
+        event.setLocationId(locationId);
+
+        event.setGroupId(groupId);
+        event.setCompanyId(user.getCompanyId());
+        event.setUserId(user.getUserId());
+        event.setCreateDate(serviceContext.getCreateDate(now));
+        event.setModifiedDate(serviceContext.getModifiedDate(now));
+
+        super.addEvent(event);
+
+        // Resources
+
+        resourceLocalService.addResources(
+            event.getCompanyId(), event.getGroupId(), event.getUserId(),
+            Event.class.getName(), event.getEventId(), false,
+            true, true);
+
+        return event;
     }
 
-    public Event updateEvent(Event event) throws SystemException {
-        
-        Date now = new Date();
-        event.setModifiedDate(now);
-        
-        return super.updateEvent(event);
+    public Event deleteEvent(Event event) throws SystemException {
+
+        return eventPersistence.remove(event);
+    }
+
+    public Event deleteEvent(long eventId)
+        throws PortalException, SystemException {
+
+        Event event = eventPersistence.findByPrimaryKey(eventId);
+
+        return deleteEvent(event);
+    }
+
+    public Event getEvent(long eventId)
+        throws SystemException, PortalException {
+
+        return eventPersistence.findByPrimaryKey(eventId);
     }
 
     public List<Event> getEventsByGroupId(long groupId) throws SystemException {
-        
+
         return eventPersistence.findByGroupId(groupId);
     }
 
     public List<Event> getEventsByGroupId(long groupId, int start, int end)
-    throws SystemException {
-        
+        throws SystemException {
+
         return eventPersistence.findByGroupId(groupId, start, end);
     }
 
     public int getEventsCountByGroupId(long groupId) throws SystemException {
-        
+
         return eventPersistence.countByGroupId(groupId);
+    }
+
+    public Event updateEvent(
+            long userId, long eventId, String name, String description,
+            int month, int day, int year, int hour, int minute,
+            long locationId, ServiceContext serviceContext)
+        throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
+        Date now = new Date();
+
+        Event event = EventLocalServiceUtil.fetchEvent(eventId);
+
+        event.setModifiedDate(serviceContext.getModifiedDate(now));
+        event.setName(name);
+        event.setDescription(description);
+
+        Calendar dateCal = CalendarFactoryUtil.getCalendar(
+            user.getTimeZone());
+        dateCal.set(year, month, day, hour, minute);
+        Date date = dateCal.getTime();
+        event.setDate(date);
+
+        event.setLocationId(locationId);
+
+        super.updateEvent(event);
+
+        return event;
     }	
 
 Remember to import the required classes. These include the following:
 
     com.nosester.portlet.eventlisting.model.Event
+    com.liferay.portal.kernel.exception.PortalException
     com.liferay.portal.kernel.exception.SystemException
+    com.liferay.portal.model.User
+    com.liferay.portal.service.ServiceContext
     java.util.Date
     java.util.List
 
-In order to add an Event to the database, we need an ID for the Event. Liferay
-provides a counter service which we call to obtain a unique ID for each new
+In order to add an Event to the database, you need an ID for the Event. Liferay
+provides a counter service which you call to obtain a unique ID for each new
 Event entity. It's possible to use the `increment` method of Liferay's
 `CounterLocalServiceUtil` class but Service Builder already makes a
-`CounterLocalService` instance available to `EventLocalServiceBaseImpl` by
-Spring via dependency injection. Since our `EventLocalServiceImpl` class extends
-`EventLocalServiceBaseImpl`, we can access this `CounterLocalService` instance.
+`CounterLocalService` instance available to `EventLocalServiceBaseImpl` via
+Spring by dependency injection. Since your `EventLocalServiceImpl` class extends
+`EventLocalServiceBaseImpl`, you can access this `CounterLocalService` instance.
 See `EventLocalServiceBaseImpl` for a list of all the beans that Spring makes
-available for use. These include the following:
+available for use. These include the following beans:
 
 - `eventLocalService`
 - `eventPersistence`
@@ -1058,24 +1132,22 @@ database transaction.
 
 We use the generated `eventId` as the ID for the new Event:
 
-    event.setEventId(eventId);
+    Event event = eventPersistence.create(eventId);
 
-Next, we set the `createDate` and `modifiedDate` of our Event to the current
-time. Lastly, we return the Event created by the generated `addEvent` method of
-`EventLocalServiceBaseImpl`.
+`eventPersistence` is one of the Spring beans injected into
+`EventLocalServiceBaseImpl` by Service Builder. 
 
-Note: Our `addEvent` method only sets the creation date and modified date of the
-Event. It doesn't populate its name and description, or associate a location
-with it. We could overload `addEvent` by creating another `addEvent` method that
-takes name, description, and a location ID as parameters. In this method, we
-could call the `eventPersistence` object's `create` method to create a new
-Event. Then we could use the method's parameters to populate the new Event's
-name, description, and a location ID fields and return the Event.
-(`eventPersistence` is one of the Spring beans injected into
-`EventLocalServiceBaseImpl` by Service Builder.) To see this implementation of
-`addEvent`, please examine the complete `EventListingServiceImpl` class included
-in the *Dev Guide SDK* which you can download from our Developer's Guide page at
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
+Next, we set the attribute fields that we specified for the Event. First, we set
+the name and description of the Event. Then we use the date and time values to
+construct the Event's date. Lastly, we associate a location with the Event. 
+
+Then we assign values to the audit fields. First, we set the group, or scope, of
+the entity. In this case the group is the site. Then we set the company and
+user. The company represents the portal instance. We set the `createDate` and
+`modifiedDate` of our Event to the current time. After that, we call the
+generated `addEvent` method of `EventLocalServiceBaseImpl` with our Event.
+Lastly, we add the Event as a resource so that we can apply permissions to it
+later. We'll cover the details of adding resources in Chapter 12. 
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add their signatures to the `EventLocalService` interface by
@@ -1095,12 +1167,12 @@ the database by making the following call:
 
     EventLocalServiceUtil.addEvent(event);
 
-Of course, we need to create an event before we can make this call. This is one
-reason to replace or overload the `addEvent` method we added to
-`EventLocalServiceImpl`, which we noted as an option above. In addition to all
-of the Java classes, Service Builder also generates a `service.properties` file
-which we'll examine later in this chapter. Next, let's call our newly
-implemented local service. 
+Service Builder looks through `EventLocalServiceImpl` and automatically copies
+the signatures of each method into the interface. You can now add a new Event to
+the database by invoking the static `addEvent` method that Service Builder
+generated in the `EventLocalServiceUtil` utility class. In addition to all the
+Java classes, Service Builder also generates a `service.properties` file which
+will be covered later. Next, let's call our newly implemented local service. 
 
 ## Calling Local Liferay Services
 
@@ -1118,117 +1190,109 @@ ones for our `LocationListingPortlet` class:
 - `updateEvent`
 - `deleteEvent`
 
-Replace the contents of your `EventListingPortlet.java` file with the following:
+Replace the contents of `EventListingPortlet.java` with the following code:
 
     package com.nosester.portlet.eventlisting;
-
-	import com.liferay.portal.kernel.util.CalendarFactoryUtil;
-    import com.liferay.portal.kernel.util.ParamUtil;
-    import com.liferay.portal.kernel.util.WebKeys;
-    import com.liferay.portal.theme.ThemeDisplay;
-    import com.liferay.util.bridges.mvc.MVCPortlet;
-
-    import com.nosester.portlet.eventlisting.model.Event;
-    import com.nosester.portlet.eventlisting.model.impl.EventImpl;
-    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
-
+    
     import java.util.Calendar;
-    import java.util.Date;
-
+    
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
+    
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.log.Log;
+    import com.liferay.portal.kernel.log.LogFactoryUtil;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+    import com.nosester.portlet.eventlisting.model.Event;
+    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
+    
     public class EventListingPortlet extends MVCPortlet {
-
+    
         public void addEvent(ActionRequest request, ActionResponse response)
                 throws Exception {
-
-            EventImpl event = new EventImpl();
-
-            event.setName(ParamUtil.getString(request, "name"));
-            event.setDescription(ParamUtil.getString(request, "description"));
-            event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-            event.setDate(_extractDate(request));
-
-            ThemeDisplay themeDisplay = (ThemeDisplay)request
-                    .getAttribute(WebKeys.THEME_DISPLAY);
-
-            event.setUserId(themeDisplay.getUserId());
-            event.setCompanyId(themeDisplay.getCompanyId());
-            event.setGroupId(themeDisplay.getScopeGroupId());
-
-            EventLocalServiceUtil.addEvent(event);
-
+    
+            _updateEvent(request);
+    
             sendRedirect(request, response);
         }
-
+    
         public void deleteEvent(ActionRequest request, ActionResponse response)
             throws Exception {
-
+    
             long eventId = ParamUtil.getLong(request, "eventId");
-
+    
             EventLocalServiceUtil.deleteEvent(eventId);
-
+    
             sendRedirect(request, response);
         }
-
+    
         public void updateEvent(ActionRequest request, ActionResponse response)
             throws Exception {
-
-            long eventId = ParamUtil.getLong(request, "eventId");
-
-            Event event = EventLocalServiceUtil.fetchEvent(eventId);
-
-            event.setEventId(ParamUtil.getLong(request, "eventId"));
-            event.setName(ParamUtil.getString(request, "name"));
-            event.setDescription(ParamUtil.getString(request, "description"));
-            event.setLocationId(ParamUtil.getLong(request, "locationId"));
-
-            event.setDate(_extractDate(request));
-
-            ThemeDisplay themeDisplay = (ThemeDisplay)request
-                    .getAttribute(WebKeys.THEME_DISPLAY);
-
-            event.setUserId(themeDisplay.getUserId());
-            event.setCompanyId(themeDisplay.getCompanyId());
-            event.setGroupId(themeDisplay.getScopeGroupId());
-
-            EventLocalServiceUtil.updateEvent(event);
-
+    
+            _updateEvent(request);
+    
             sendRedirect(request, response);
         }
-
-        private Date _extractDate(ActionRequest request) {
+    
+        private Event _updateEvent(ActionRequest request)
+            throws PortalException, SystemException {
+    
+            long eventId = ParamUtil.getLong(request, "eventId");
+            String name = ParamUtil.getString(request, "name");
+            String description = ParamUtil.getString(request, "description");
+            long locationId = ParamUtil.getLong(request, "locationId");
+    
             int year = ParamUtil.getInteger(request, "dateYear");
             int month = ParamUtil.getInteger(request, "dateMonth");
             int day = ParamUtil.getInteger(request, "dateDay");
             int hour = ParamUtil.getInteger(request, "dateHour");
             int minute = ParamUtil.getInteger(request, "dateMinute");
             int amPm = ParamUtil.getInteger(request, "dateAmPm");
-
+    
             if (amPm == Calendar.PM) {
                 hour += 12;
             }
-
-            Calendar dateCal = CalendarFactoryUtil.getCalendar();
-            dateCal.set(year, month, day, hour, minute);
-            Date date = dateCal.getTime();
-            return date;
+    
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                Event.class.getName(), request);
+    
+            Event event = null;
+    
+            if (eventId <= 0) {
+                event = EventLocalServiceUtil.addEvent(
+                    serviceContext.getUserId(), serviceContext.getScopeGroupId(),
+                    name, description, month, day, year, hour, minute, locationId,
+                    serviceContext);
+            }
+            else {
+                event = EventLocalServiceUtil.getEvent(eventId);
+    
+                event = EventLocalServiceUtil.updateEvent(
+                    serviceContext.getUserId(), eventId, name, description, month,
+                    day, year, hour, minute, locationId, serviceContext);
+            }
+            
+            return event;
         }
 
+        private static Log _log = LogFactoryUtil.getLog(EventListingPortlet.class);
     }
 
-Your Event Listing portlet's `addEvent`, `updateEvent`, and `deleteEvent`
-methods now call the appropriate methods of `EventLocalServiceUtil`. The getter
-methods of Liferay's `ParamUtil` class such as `getLong` and `getString` return
-default values like `0` or `""` if the specified request parameter is not
-available from the portlet request. When adding a new event, for example, no
-event ID is available so `ParamUtil.getLong("request", "eventId")` returns `0`.
-The Event portlet's `addEvent` method calls `EventLocalServiceUtil`'s `addEvent`
-method. The event ID for the new event is generated at the service layer in the
-`addEvent` method that we added to the `EventLocalServiceImpl` class. The
+The Event Listing portlet's `addEvent`, `updateEvent`, and `deleteEvent`
+methods now call the appropriate methods from `EventLocalServiceUtil`. Liferay's
+`ParamUtil` getter methods such as `getLong` and `getString` return default
+values like `0` or `""` if the specified request parameter is not available from
+the portlet request. When adding a new event, for example, no event ID is
+available so `ParamUtil.getLong("request", "eventId")` returns `0`. The Event
+portlet's `addEvent` method calls `EventLocalServiceUtil`'s `addEvent` method.
+The event ID for the new event is generated at the service layer in the
+`addEvent` method that you added to the `EventLocalServiceImpl` class. The
 `EventLocalServiceUtil` generated for us by Service Builder contains various
-CRUD methods including the following:
+CRUD methods:
 
 - `createEvent`
 - `addEvent`
@@ -1242,14 +1306,18 @@ and are available to be called by our `EventListingPortlet` class.
 
 ![Figure 4.8: Our `EventListingPortlet` class can access these methods of `EventLocalServiceUtil`, many of which are CRUD operations.](../../images/local-service-util-outline.png)
 
-Portlet classes should only have access to the `-LocalServiceUtil` classes. The
+Portlet classes should have access only to the `-LocalServiceUtil` classes. The
 `-LocalServiceUtil` classes, in turn, call their injected `-LocalServiceImpl`
 classes. Notice in the figure above that the `EventLocalServiceUtil` utility
 class has a private instance variable called `_service`. The `_service` instance
-variable, of type `EventLocalService`, gets an instance of
+variable of type `EventLocalService` gets an instance of
 `EventLocalServiceImpl` at runtime via dependency injection. So all the methods
 of the `EventLocalServiceUtil` utility class internally call corresponding
 methods of the `EventLocalServiceImpl` class at runtime.
+
+We've demonstrated how to call the local services generated by Service Builder
+in our project's `-Portlet` classes. Next, let's learn how to how to call
+Liferay's local services.
 
 <!-- Consider removing or moving the section below. - Jim -->
 
