@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -28,13 +28,6 @@ package com.nosester.portlet.eventlisting.model.impl;
  * @author Joe Bloggs
  */
 public class LocationImpl extends LocationBaseImpl {
-	/**
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this class directly. All methods that expect a location
-	 * model instance should use the {@link
-	 * com.nosester.portlet.eventlisting.model.Location} interface instead.
-	 */
 	public LocationImpl() {
 	}
 }

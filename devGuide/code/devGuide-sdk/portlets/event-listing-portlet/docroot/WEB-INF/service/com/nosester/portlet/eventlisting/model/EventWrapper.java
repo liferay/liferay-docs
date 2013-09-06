@@ -473,11 +473,6 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	}
 
 	@Override
-	public com.nosester.portlet.eventlisting.model.Location getLocation() {
-		return _event.getLocation();
-	}
-
-	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

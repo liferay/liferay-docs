@@ -392,25 +392,6 @@ public class EventClp extends BaseModelImpl<Event> implements Event {
 		}
 	}
 
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location getLocation() {
-		try {
-			String methodName = "getLocation";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			com.nosester.portlet.eventlisting.model.Location returnObj = (com.nosester.portlet.eventlisting.model.Location)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
 	public BaseModel<?> getEventRemoteModel() {
 		return _eventRemoteModel;
 	}

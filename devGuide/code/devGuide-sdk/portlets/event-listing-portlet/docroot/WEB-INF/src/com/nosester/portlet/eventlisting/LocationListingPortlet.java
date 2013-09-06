@@ -8,10 +8,8 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
-import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
@@ -65,12 +63,10 @@ public class LocationListingPortlet extends MVCPortlet {
 		Location location = null;
 
 		if (locationId <= 0) {
-			long groupId = serviceContext.getScopeGroupId();
-				
-			location = LocationServiceUtil.addLocation(groupId, name,
-				description, streetAddress, city, stateOrProvince, country, 
-				serviceContext);
 
+			location = LocationServiceUtil.addLocation(
+				serviceContext.getScopeGroupId(), name, description,
+				streetAddress, city, stateOrProvince, country, serviceContext);
 		}
 		else {
 			location = LocationLocalServiceUtil.getLocation(locationId);
