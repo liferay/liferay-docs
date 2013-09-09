@@ -1013,10 +1013,13 @@ do in the Web Content Display portlet.
 
 - **Display Position**: <!-- TODO -->
 
-- **Show Metadata:** Allows you to select from the available metadata types (see
-  below).
+- **Show Metadata:** Allows you to select various metadata types to be
+  displayed (see below). For example, you can select tags and categories for
+  display. Upon saving your configuration, the Asset Publisher displays tags and
+  categories for each displayed asset. Then users can click on the tags and
+  categories to manually filter the displayed assets.
 
-    ![Figure 6.14: Available metadata types](../../images/available-metadata-fields.png)
+![Figure 6.14: Available metadata types](../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
