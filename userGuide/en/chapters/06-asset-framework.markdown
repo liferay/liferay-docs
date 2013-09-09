@@ -766,17 +766,21 @@ any type, not just web content articles.
 #### Selecting Assets Manually  
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
-the Asset Publisher that you want to select content manually. You can select
+the Asset Publisher that you want to select content manually. You can configure
 multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet, except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to
+selecting assets in the Web Content Display portlet, except that you can select
+assets of any type, not just web content. You can also add scopes to expand the
+list of assets that available to be displayed in the Asset
+Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
 Scope heading. Click the red "X" button at the right to remove a scope from the
 list. Click the *Select* button to add additional scopes to the Asset
 Publisher's configuration. After you've added a scope, a new Select button
-appears under the Asset Entries heading. Under the Asset Entries heading appears
-a list of assets selected for display. You can select assets to be displayed by
+appears under the Asset Entries heading. A list of assets selected for display
+appears in the Asset Entries section. You can select assets to be displayed by
 clicking on the appropriate *Select* button. One button appears for each
 configured scope. By default, the available asset types include the following:
 
@@ -790,15 +794,16 @@ configured scope. By default, the available asset types include the following:
 - Document
 - Web Content Folder
 
-You can select any number of assets to be displayed. However, note that there's
-a display setting called *Number of Items to Display* that determines how the
-maximum number of items to display (or maximum number of items to display per
-page if pagination is enabled). We'll discuss the display settings in more
-detail below. The Asset Publisher enables you to mix and match different content
-types in the same interface. When you're done selecting items to display, click
-*Save*. Any selected assets are added to the list of assets that are displayed
-by the portlet. Once you have your content selected, you can configure the
-display types to configure how the content appears.
+You can select any number of assets to be displayed. Note, however, that there's
+a display setting called *Number of Items to Display* that determines the
+maximum number of items to display (or, if pagination is enabled, the maximum
+number of items to display per page). The Asset Publisher enables you to mix and
+match different asset types in the same interface. When you're done selecting
+items to display, click *Save*. Any selected assets are added to the list of
+assets that are displayed by the portlet. Once you have your content selected,
+you can configure the display types to configure how the content appears. We'll
+discuss the display settings in more detail after we finish discussing how to
+select assets for display. 
 
 While manually Asset selection allows you to select assets of various types
 from different scopes, it can be time-consuming to periodically update the
@@ -808,7 +813,7 @@ Publisher to select content dynamically.
 #### Selecting Assets Dynamically  
 
 The Asset Publisher's default behavior is to select assets dynamically according
-to rules that you give it. These rules can be stacked on top of each other so
+a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You have the following options for creating these rules:
 
@@ -823,21 +828,11 @@ of multiple types.
 ![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can
-choose whether the content contains or does not contain any or all the tags or
-categories that you enter.
+choose whether the content must contain or must not contain any or all of the
+tags or categories that you enter.
 
 Once you've set up your filter rules for dynamically selecting your content, you
-can then decide how the content will be displayed.
-
----
-
- ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments and
- ratings to a page is through the *Page Comments* and *Page Ratings* portlets.
- Just add the portlets in the appropriate location near the asset you'd like to
- have feedback for. Note that starting in Liferay 6.2, these portlets can no
- longer be exported.
- 
----
+can decide how the content will be displayed.
 
 <!-- TODO: Discuss how to use the CUSTOM USER ATTRIBUTES section of the dynamic
 asset selection configuration window of the Asset Publisher. -->
@@ -851,10 +846,32 @@ ascending order based on a category called *birds*. You can also group by
 *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined
 by administrators in the *Categories* section of the Control Panel.
 
-In the *Ordering and Grouping* section of the Asset Publisher, you have great
-control over how content is ordered and grouped in the list, but this is only
-one aspect of how your content will be displayed. You can refine the display
-through many other display settings.
+In the *Ordering and Grouping* section of the Asset Publisher, you can precisely
+control how content is ordered and grouped when displayed. You can order the
+assets displayed by Asset Publisher in ascending or descending order by the
+following attributes:
+
+- Title
+- Create Date
+- Modified Date
+- Publish Date
+- Expiration Date
+- Priority
+
+You can also configure a second ordering. The second ordering would be applied
+to any assets for which the first ordering wasn't sufficient. For example,
+suppose you chose to order assets by title and there are multiple assets with
+the same title. Then the second ordering would take effect. For example, you
+could order all the assets that had the same title by their publication dates.
+
+You can establish grouping rules as well as ordering rules. You can group assets
+by type or by vocabulary. Grouping rules are applied before any ordering rules.
+They're a way to divide up the displayed assets into separate lists. The
+ordering rules are applied separately to each group of assets.
+
+Note that grouping and ordering rules are only one mechanism to control how your
+content will be displayed. You can refine the display through many other display
+settings which we'll examine next.
 
 ### Configuring Display Settings  
 
@@ -868,15 +885,21 @@ portlet.
 
 ---
 
- ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
- content articles that have an associated small image, the small image becomes a
- link to the full article. To use this feature, add or edit a web content
- article that the Asset Publisher should display. Before clicking *Publish*,
- click on *Abstracts*, flag *Small Image*, and upload an image. Then click
- *Publish*. Once your web content article appears in the Asset Publisher's list,
- clicking the small image takes you to the full article.
-
+ ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments and
+ ratings to a page is through the *Page Comments* and *Page Ratings* portlets.
+ Just add the portlets in the appropriate location near the asset you'd like to
+ have feedback for. Note that starting in Liferay 6.2, these portlets can no
+ longer be exported.
+ 
 ---
+
+When the Asset Publisher displays web content articles that have an associated
+small image, the small image becomes a link to the full article. To use this
+feature, add or edit a web content article that the Asset Publisher should
+display. Before clicking *Publish*, click on *Abstracts*, flag *Small Image*,
+and upload an image. Then click *Publish*. Once your web content article appears
+in the Asset Publisher's list, clicking the small image takes you to the full
+article.
 
 #### Display Style  
 
