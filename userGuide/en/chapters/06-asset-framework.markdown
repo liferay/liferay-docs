@@ -714,13 +714,12 @@ use of Liferay's asset framework to bring relevant content to users.
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
-This allows you to publish your web content using Liferay's Asset Publisher.
-
-You can use the Asset Publisher to publish a mixed group of various kinds of
-assets such as images, documents, blogs, and of course, web content. This helps
-in creating a more dynamic web site: you can place user-created wiki entries,
-blog posts or message board messages in context with your content. Let's look at
-some of its features.
+This allows you to publish different kinds of content using Liferay's Asset
+Publisher. You can use the Asset Publisher to publish a mixed group of various
+kinds of assets such as images, documents, blogs, and of course, web content.
+This helps in creating a more dynamic web site: you can place user-created wiki
+entries, blog posts, or message board messages in context with your content.
+Let's examine some of its features.
 
 ### Querying for Content  
 
@@ -769,11 +768,7 @@ By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can configure
 multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to
-selecting assets in the Web Content Display portlet, except that you can select
-assets of any type, not just web content. You can also add scopes to expand the
-list of assets that available to be displayed in the Asset
-Publisher.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
 Scope heading. Click the red "X" button at the right to remove a scope from the
@@ -805,10 +800,10 @@ you can configure the display types to configure how the content appears. We'll
 discuss the display settings in more detail after we finish discussing how to
 select assets for display. 
 
-While manually Asset selection allows you to select assets of various types
-from different scopes, it can be time-consuming to periodically update the
-assets that should be displayed. It's often more convenient to use the Asset
-Publisher to select content dynamically.
+While manual Asset selection allows you to select assets of various types from
+different scopes, it can be time-consuming to periodically update the assets
+that should be displayed. It's often more convenient to use the Asset Publisher
+to select content dynamically.
 
 #### Selecting Assets Dynamically  
 
@@ -825,31 +820,32 @@ if they belong to a configured scope.
 specific type, such as only web content, only wiki entries, or any combination
 of multiple types.
 
-![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
-
 **Filter Rules:** Add as many filters on tags or categories as you like. You can
 choose whether the content must contain or must not contain any or all of the
 tags or categories that you enter.
 
-Once you've set up your filter rules for dynamically selecting your content, you
-can decide how the content will be displayed.
+![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+
+Once you've set up your filter rules for dynamically selecting content, you can
+decide how the content will be displayed.
 
 <!-- TODO: Discuss how to use the CUSTOM USER ATTRIBUTES section of the dynamic
 asset selection configuration window of the Asset Publisher. -->
 
-You can display the content returned by the filters above in order by title,
-create date, modified date, view count and more in ascending or descending
-order. For instance, you may have a series of "How To" articles that you want
-displayed in descending order based on whether the article was tagged with the
-*hammer* tag. Or, you may want a series of video captures to display in
-ascending order based on a category called *birds*. You can also group by
-*Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined
-by administrators in the *Categories* section of the Control Panel.
+You can order the content returned by the filters by title, create date,
+modified date, publication date, etc. in ascending or descending order. For
+instance, suppose you have a series of "How To" articles that you want displayed
+in descending order based on whether the article was tagged with the *hammer*
+tag. Or, suppose you want a series of video captures to display in ascending
+order based on a category called *birds*. For these use cases, you can configure
+the ordering and grouping settings. You can also group by *Asset*, *Type* or
+*Vocabularies*. Vocabularies are groups of categories defined by administrators
+in the *Categories* section of the Control Panel.
 
-In the *Ordering and Grouping* section of the Asset Publisher, you can precisely
-control how content is ordered and grouped when displayed. You can order the
-assets displayed by Asset Publisher in ascending or descending order by the
-following attributes:
+The *Ordering and Grouping* section of the Asset Publisher allows you to
+precisely control how content is ordered and grouped when displayed. You can
+order the assets displayed by Asset Publisher in ascending or descending order
+by the following attributes:
 
 - Title
 - Create Date
@@ -899,7 +895,8 @@ do in the Web Content Display portlet.
   the default site:
 
     - Abstracts: This display template shows the first 200-500 characters of the
-      content, defined by the **Abstract Length** field.
+      content, defined by the **Abstract Length** field. This is the default
+      display template of the Asset Publisher.
     - Table: This display template displays the content in an HTML table which
       can be styled by a theme developer.
     - Title List: This display template displays the content's title as defined
@@ -922,9 +919,9 @@ do in the Web Content Display portlet.
   asset to be displayed in the portlet to which the asset belongs. For example,
   a blog entry would be displayed in the Blogs portlet where it was created.
   Likewise, a forum post would be displayed in the Message Boards portlet where
-  it was created.  Similarly, a generic Web Content article would be displayed
-  in the Asset Publisher of its configured Display Page. See the section below
-  on Display Pages for more information.
+  it was created. Similarly, a generic web content article would be displayed in
+  the Asset Publisher of its configured display page. See the section below on
+  display pages for more information.
 
     ---
 
@@ -946,7 +943,7 @@ do in the Web Content Display portlet.
 
 - **Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
   pagination set to *None*, the Asset Publisher displays at most the number of
-  assets specified in the Number of Items to Display property. Setting the
+  assets specified in the **Number of Items to Display** property. Setting the
   pagination type to *Simple* adds *Previous* and *Next* buttons that enable the
   user to browse through "pages" of assets in the Asset Publisher. Setting the
   pagination type to *Regular* adds more options and information including
@@ -977,9 +974,9 @@ do in the Web Content Display portlet.
     - SXW
     - TXT
 
-    Please refer to the User Guide's section on the Server Administration of the
-    Control Panel for information on setting up Liferay's OpenOffice/LibreOffice
-    document conversion functionality.
+    Please refer to the User Guide's section on [Liferay Server Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
+    for information on setting up Liferay's OpenOffice/LibreOffice document
+    conversion functionality.
 
 - **Enable ...**: The Asset Publisher's Display Settings allow you to
   enable/disable the following options for displayed assets:
@@ -1001,11 +998,11 @@ do in the Web Content Display portlet.
 
     ---
 
-     ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments and
-     ratings to a page is through the *Page Comments* and *Page Ratings* portlets.
-     Just add the portlets in the appropriate location near the asset you'd like to
-     have feedback for. Note that starting in Liferay 6.2, these portlets can no
-     longer be exported.
+     ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments
+     and ratings to a page is through the *Page Comments* and *Page Ratings*
+     portlets.  Just add the portlets in the appropriate location near the asset
+     you'd like to have feedback for. Note that starting in Liferay 6.2, these
+     portlets can no longer be exported.
      
     ---
 
@@ -1019,7 +1016,7 @@ do in the Web Content Display portlet.
   categories for each displayed asset. Then users can click on the tags and
   categories to manually filter the displayed assets.
 
-![Figure 6.14: Available metadata types](../../images/available-metadata-fields.png)
+![Figure 6.14: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
