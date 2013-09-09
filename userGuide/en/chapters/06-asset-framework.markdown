@@ -898,25 +898,18 @@ do in the Web Content Display portlet.
   creates the following display templates for each newly created site, including
   the default site:
 
-    - Abstracts
-    - Table
-    - Title List
-    - Full Content
+    - Abstracts: This display template shows the first 200-500 characters of the
+      content, defined by the **Abstract Length** field.
+    - Table: This display template displays the content in an HTML table which
+      can be styled by a theme developer.
+    - Title List: This display template displays the content's title as defined
+      by the user who entered it.
+    - Full Content: This display template displays the entire content of the
+      entry.
 
-        - The Abstracts display template shows the first 200-500 characters of
-          the content, defined by the **Abstract Length** field.
-
-        - The Table display template displays the content in an HTML table which
-          can be styled by a theme developer.
-
-        - The Title List display template displays the content's title as
-          defined by the user who entered it.
-
-        - The Full Content display template displays the entire content of the
-          entry.
-
-        - There's also a Rich Summary display template that belongs to the
-          global scope.
+    There's also a Rich Summary display template that belongs to the global
+    scope. This template provides a summary view of each asset along with a
+    *Read More* link to the article's full content.
 
 - **Abstract Length**: Here, you can select the number of characters to display
   for abstracts. The default is `200`.
