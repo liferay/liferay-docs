@@ -1069,22 +1069,22 @@ by Liferay 6.1.
 
 ### Content Display Pages
 
-If you've been using Liferay for a while, or you've just spent a little bit of
-time with this guide, you might have noticed something about how Liferay handles
-web content--content is never tied directly to a page. While this can be useful
-(because it means that you don't have to recreate content if you want to display
-the same thing on multiple pages), it also means that you don't have a static
-URL for any web content, which is bad for search engine optimization.
+If you've been using Liferay for a while, you might have noticed something about
+how Liferay handles web content--content is never tied directly to a page. While
+this can be useful (because it means that you don't have to recreate content if
+you want to display the same thing on multiple pages), it also means that you
+don't have a static URL for any web content, which is bad for search engine
+optimization.
 
-As an improvement, Liferay has introduced the concept of Display Pages and
-Canonical URLs. Each web content entry on the portal has a canonical URL, which
-is the official location of the content that is referenced any time the content
-is displayed. A Display Page can be any page with an asset publisher configured
-to display any content associated with the page. When adding or editing web
-content articles, you can select a Display Page, but only pages with a
-configured asset publisher are available for selection.
+As an improvement, Liferay introduced the concept of *display pages* and
+*canonical URLs*. Each web content entry on the portal has a canonical URL,
+which is the official location of the content that is referenced any time the
+content is displayed. A display page can be any page with an asset publisher
+configured to display any content associated with the page. When adding or
+editing web content articles, you can select a display page, but only pages with
+a configured asset publisher are available for selection.
 
-To create a Display Page, you can create a page yourself, add an Asset Publisher
+To create a display page, you can create a page yourself, add an Asset Publisher
 portlet and configure it yourself. Alternatively, you can use the *Content
 Display Page* page template included with Liferay. If you're creating a Display
 Page manually, once you've added an Asset Publisher portlet to the page, open
@@ -1093,28 +1093,28 @@ This Page* box.
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole
-bunch of content on the same page?" Yes. That's exactly what I said. Just
-watch--create a display page called *My Web Content Display Page* somewhere on
-your portal, using the *Content Display Page* template. Now, on a different
-page, add a Web Content Display portlet. Click the *Add Web Content* button,
-enter a title and some content, click on *Display Page* at the right, and select
-the Display Page you just created. Then click *Publish*.
+bunch of content on the same page?" That's right. Just watch--create a display
+page called *My Web Content Display Page* somewhere on your portal, using the
+*Content Display Page* template. Now, on a different page, add a Web Content
+Display portlet. Click the *Add Web Content* button, enter a title and some
+content, click on *Display Page* at the right, and select the Display Page you
+just created. Then click *Publish*.
 
-![Figure 6.15: Selecting a Display Page](../../images/04-web-content-display-page.png)
+![Figure 6.15: You can select a display page for a web content article when creating or editing one.](../../images/04-web-content-display-page.png)
 
-In the Asset Publisher of the *My Web Content Display Page*, you can now click
-the *Read More* link to display the content. Notice that the canonical URL for
+In the Asset Publisher of the *My Web Content Display Page*, click the *Read
+More* link to display the full content. Notice that the canonical URL for
 content appears in your browser's address bar. If you create your own custom
 display page, any additional portlets that you place on the page are displayed
 along with the content when you access it via the canonical URL. If you used the
-*Content Display Page* page template for your Display page, it not only features
+*Content Display Page* page template for your display page, it not only features
 a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
 ![Figure 6.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
-Let's move on to another new featured introduced by Liferay 6.1.
+Next, let's learn about another new feature introduced by Liferay 6.1.
 
 ## Defining Content Relationships  
 
@@ -1134,12 +1134,12 @@ currently published on the page where it is placed. Let's take a look at the
 Related Assets portlet.
 
 As a prerequisite for the Related Assets portlet to display related assets, you
-configure it to show the content you want displayed. To do this, go to the Asset
-Publisher portlet and select the *wrench* icon in the upper right corner of the
-portlet. Under the *Setup* tab, set type of asset(s) to display using the
-*Asset Type* menu. The default value is set to *Any*. You can narrow the scope
-of the portlet to display any single category of asset type or select multiple
-assets from the menu.
+have to configure it to show the content you want displayed. To do this, go to
+the Asset Publisher portlet and select the *wrench* icon in the upper right
+corner of the portlet. Under the *Setup* tab, set type of asset(s) to display
+using the *Asset Type* menu. The default value is set to *Any*. You can narrow
+the scope of the portlet to display any single category of asset type or select
+multiple assets from the menu.
 
 Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
@@ -1156,10 +1156,10 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet.](../../images/related-assets-portlet-after.png)
+![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../images/related-assets-portlet-after.png)
 
-Once you select an asset, its related assets will display in the Related Assets
-portlet, similar to the image above.
+Once you select an asset, its related assets are displayed in the Related Assets
+portlet, as in the image above.
 
 ## Summary  
 
