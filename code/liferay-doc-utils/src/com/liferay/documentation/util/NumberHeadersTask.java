@@ -185,6 +185,17 @@ public class NumberHeadersTask extends Task {
 			if (idStartIndex > 0 && idEndIndex > (idStartIndex + 1)) {
 				id = line.substring(idStartIndex + 1, idEndIndex);
 			}
+
+			if (id.length() > MAX_ID_LEN) {
+				StringBuilder sb =
+					new StringBuilder("FAILURE - ID longer than ");
+				sb.append(MAX_ID_LEN);
+				sb.append(" chars in ");
+				sb.append(filename);
+				sb.append(" - ");
+				sb.append(id);
+				throw new BuildException(sb.toString());
+			}
 			
 			// Check if the ID is already in use
 
