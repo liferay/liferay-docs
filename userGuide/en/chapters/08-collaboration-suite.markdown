@@ -6,7 +6,7 @@ you can use to build communities of users for your site. These applications
 provide all the features that you would expect of standalone versions outside
 of a portal setting. The difference with Liferay's collaboration suite,
 however, is that all of the applications share a common look and feel, security
-model and architecture. They inherit the strengths of being part of Liferay's
+model, and architecture. They inherit the strengths of being part of Liferay's
 development platform so you can use them in combination with Liferay's user
 management and content management features to build a well-integrated,
 feature-rich web site.
@@ -45,30 +45,32 @@ that they would not otherwise have, and the ubiquity and wide reach of the
 Internet ensures that if you have something important and interesting to say,
 somebody will read it.
 
-![Figure 8.14: Slashdot, one of the first blogs on the Internet](../../images/05-slashdot.jpg)
+![Figure 8.1: Slashdot was one of the first blogs on the Internet.](../../images/05-slashdot.jpg)
 
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
 service to users of your web site. In fact, Liferay extensively uses the Blogs
-portlet on [http://www.liferay.com](http://www.liferay.com) to provide
-employees with blogs of their own. In addition to the Blogs portlet, there's
-also a Blogs Aggregator portlet which can take entries from multiple users'
-blogs and put them all in one larger list. We will go over how to use both of
-these portlets to create a blogging site for your users.
+portlet on
+[http://www.liferay.com/community/blogs](http://www.liferay.com/community/blogs)
+to provide community members and employees with blogs of their own. In addition
+to the Blogs portlet, there's also a Blogs Aggregator portlet which can take
+entries from multiple users' blogs and put them all in one larger list. We will
+go over how to use both of these portlets to create a blogging site for your
+users.
 
 ### The Blogs Portlet  
 
 The Blogs portlet is available from the *Collaboration* section of the *Add
-&rarr; More* menu. Notice that it is an instanceable portlet, meaning that it
-supports scopes. This allows you to use the Blogs portlet to create a shared
-blog to build a site like Slashdot or to create multiple personal blogs to
-build a site like [http://blogger.com](http://blogger.com). What's the
+&rarr; Applications* menu. Notice that it is an instanceable portlet, meaning
+that it supports scopes. This allows you to use the Blogs portlet to create a
+shared blog to build a site like Slashdot or to create multiple personal blogs
+to build a site like [http://blogger.com](http://blogger.com). What's the
 difference? Adding the Blogs portlet to a site page creates a shared blog for
 members of the site that the page belongs to. Adding the Blogs portlet to a
 user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
 
-![Figure 8.15: Initial View of the Blogs Portlet](../../images/05-initial-view-blogs-portlet.jpg)
+![Figure 8.2: The initial view of the Blogs portlet.](../../images/05-initial-view-blogs-portlet.png)
 
 By default, the Blogs portlet displays the latest entry in its entirety. When
 you first add the portlet to a page, it has no entries, so the portlet is
@@ -78,9 +80,50 @@ portlet so that it displays entries the way you want them.
 
 #### Configuring the Blogs Portlet  
 
-The Blogs portlet is easy to configure. Click on the *Menu* icon in the
+The Blogs portlet is easy to configure. Click on the *Options* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
 another row of options.
+
+**Display Settings:** changes various display options for the Blogs portlet. To
+choose the right settings, you should think about the best way to display your
+entries as well as how you want users to interact with bloggers.
+
+- *Maximum Items to Display:* choose the total number of blog entries to display
+on the initial page. You can select up to one hundred to be displayed.
+
+- *Display Template:* choose between *Full Content*, *Abstract*, or *Title*.
+Setting this to Abstract shows the abstract, or if there isn't one, only the
+first 30 words of your blog entries, with a Read More link at the bottom of
+each that expands to the whole entry. To learn how to customize your own display
+templates visit the *Using application display templates* section of the
+*Personalization and Customization* chapter.
+
+- *Enable Flags:* flag content as inappropriate and send an email to the
+administrators.
+
+- *Enable Related Assets:* select related content from other portlets to pull
+into their blog entry for readers to view.
+
+- *Enable Ratings:* lets readers rate your blog entries from one to five stars.
+
+- *Enable Comments:* lets readers comment on your blog entries.
+
+- *Enable Comment Ratings:* lets readers rate the comments which are posted to
+your blog entries.
+
+- *Enable Social Bookmarks:* lets users tweet, Facebook like, or +1 (Google
+Plus) about blog posts. You can edit which social bookmarks are available in the
+*Social Bookmarks* section of the Configuration menu.
+
+- *Display Style:* select a simple, vertical, or horizontal display style for
+your blog posts.
+
+- *Display Position:* choose a top or bottom position for your blog posts.
+
+- *Social Bookmarks:* choose social bookmarks to enable for blog posts, which
+includes Twitter, Facebook, and plusone (Google Plus).
+
+![Figure 8.3: The Blogs portlet's *Configuration* menu offers a plethora of display settings.](../../images/05-blogs-configuration.png)
 
 **Email From:** defines the *From* field in the email messages that users
 receive from the Blogs portlet.
@@ -91,58 +134,18 @@ a new Blog entry has been added.
 **Entry Updated Email:** defines a subject and body for the emails sent out
 when a new Blog entry has been updated.
 
-**Display Settings:** changes various display options for the Blogs portlet. To
-choose the right settings, you should think about the best way to display your
-entries as well as how you want users to interact with bloggers.
-
-![Figure 8.16: Blogs Configuration](../../images/05-blogs-configuration.png)
-
-*Maximum Items to Display:* choose the total number of blog entries to display
-on the initial page. You can select up to one hundred to be displayed.
-
-*Display Style:* choose between full Content, abstract, or just the title.
-Setting this to Abstract shows the abstract, or if there isn't one, only the
-first 30 words of your blog entries, with a Read More link at the bottom of
-each that expands to the whole entry.
-
-*Enable Flags:* flag content as inappropriate and send an email to the
-administrators.
-
-*Enable Related Assets:* select related content from other portlets to pull
-into their blog entry for readers to view.
-
-![Figure 8.17: Related Assets](../../images/05-related-assets.png)
-
-*Enable Ratings:* lets readers rate your blog entries from one to five stars.
-
-*Enable Comments:* lets readers comment on your blog entries.
-
-*Enable Comment Ratings:* lets readers rate the comments which are posted to
-your blog entries.
-
-*Enable Social Bookmarks:* lets users tweet, Facebook like, or +1 (Google Plus)
-about blog posts.
-
-*Maximum Items to Display:* determine how many blog entries will be displayed
-at once. The default is set to twenty.
-
-*Display Style:* select a simple, vertical, or horizontal display style for
-your blog posts.
-
-*Display Position:* choose a top or a bottom position for your blog posts.
-
 **RSS:** choose how blogs are displayed to RSS readers. Here, you can choose
 how you want your blog entries to be published as feeds to readers and outside
 web sites.
 
-*Maximum Items to Display:* choose the total number of RSS feeds to display on
+- *Maximum Items to Display:* choose the total number of RSS feeds to display on
 the initial page. You can choose up to one hundred to be displayed.
 
-*Display Style:* choose between full content, abstract, and title. These
+- *Display Style:* choose between *Full Content*, *Abstract*, and *Title*. These
 options work just like the ones above for blog entries.
 
-*Format:* choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0,
-or Atom 1.0.
+- *Format:* choose which format you want to deliver your blogs: Atom 1.0, RSS
+1.0, or RSS 2.0.
 
 Now that you have the Blogs portlet looking the way you want it, you'll want to
 review permissions for it--especially if you're working on a shared blog. 
@@ -157,7 +160,7 @@ portlet has been added to a user's personal pages, but doesn't work so well for
 a shared blog. But don't worry: it's easy to share a blog with multiple users.
 
 First, create a role for your bloggers and add them to the role (roles are
-covered in chapter 12 of Part 2). Next, click the *Permissions* button on the
+covered in chapter 13). Next, click the *Permissions* button on the
 Blogs portlet. A list of both portal and site roles is displayed, and currently
 only the owner is checked. Check off any other role or team that should have
 the ability to add blog entries, and then click *Save*. Once this is done,
@@ -171,7 +174,7 @@ Now that everyone's able to post, let's look at how posts work.
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
 
-![Figure 8.18: Adding a Blog Entry](../../images/05-new-blog-entry.png)
+![Figure 8.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
 within Liferay Portal. You get a title, a way of scheduling when the entry is
@@ -224,7 +227,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display style is set to *Full Content* and the number of entries is
 set to ten:
 
-![Figure 8.19: First Blog Entry Added](../../images/05-first-blog-entry-added.png)
+![Figure 8.5: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
 
 You can see that in the summary view, you don't see the trackback/pingback
 link, and you only see the number of comments that have been added. If you were
@@ -250,14 +253,14 @@ and highlight them on your site. Let's look next at how that works.
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator portlet allows you to publish entries from multiple bloggers on one
 page, giving further visibility to blog entries. This portlet is also very
-straightforward to set up. You can add it to a page from the Collaboration
-category in the Dockbar's *Add &rarr; More* menu.
+straightforward to set up. You can add it to a page from the *Collaboration*
+category in the *Add &rarr; Applications* menu.
 
-If you click *Configuration* from the menu button in the title bar of the
+If you click *Configuration* from the options button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 8.20: Blogs Aggregator Configuration](../../images/05-blogs-aggregator-configuration.png)
+![Figure 8.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* wrench from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
 Blogs Aggregator aggregates the entries of every blogger on your system. If you
@@ -269,13 +272,21 @@ members of the site where the Blogs Aggregator portlet resides.
 **Organization:** select which organization's blogs you want to aggregate.
 
 **Display Style:** select from several different styles for displaying blog
-entries: title, abstract, body, image, or quote.
+entries: *Body and Image*, *Body*, *Abstract*, *Abstract without Title*,
+*Quote*, *Quote without Title*, and *Title*.
 
 **Maximum Items to Display:** select maximum number of entries the portlet
 displays.
 
 **Enable RSS Subscription:** creates an RSS feed out of the aggregated entries.
-This lets users subscribe to an aggregate feed of all your bloggers. 
+This lets users subscribe to an aggregate feed of all your bloggers. Below this
+checkbox, you can configure how you want the RSS Feed displayed:
+
+- **Maximum Items to Display:** select maximum number of RSS items to display.
+- **Display Style:** select from several different styles for displaying RSS
+feeds: *Abstract*, *Full Content*, and *Title*.
+- **Format:** select which web feed language to use for your feed, which
+includes *Atom 1.0*, *RSS 1.0*, or *RSS 2.0*.
 
 **Show Tags:** for each entry, displays all the tags associated with the blogs.
 
@@ -291,12 +302,12 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 8.21: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
+![Figure 8.7: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of
 tools for managing blog entries, your best bet is to use the Blogs portlet.
-Next, let's look at Liferay's improved Calendar portlet, released with Liferay
-6.2 and available from Liferay Marketplace.
+Next, let's look at Liferay's improved Calendar portlet available from Liferay
+Marketplace.
 
 ## Managing Events and Calendar Resources with Liferay's Calendar Portlet 
 
@@ -325,7 +336,7 @@ dialog box by clicking on the wrench icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
 
-![Figure 8.23: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
+![Figure 8.9: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
 
 **User Settings:** On this screen, you can customize your calendar's default
 view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
@@ -341,7 +352,7 @@ Standard Time* or you can check the *Use Global Time Zone* box. If you check
 administrator can set via *Control Panel* &rarr; *Portal Settings* &rarr;
 *Display Settings* &rarr; *Time Zone*.
 
-![Figure 8.24: The Setup &rarr; Templates tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
+![Figure 8.10: The Setup &rarr; Templates tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
 
 **Templates:** On this screen, you can configure email templates for event
 reminders or invitations. Currently, there's only one option for the
@@ -350,12 +361,12 @@ select *Reminder* or *Invitation*. For the *Subject* and *Body* of your email,
 you can enter whatever information you'd like to be automatically sent. Remember
 that you can use the following variables in your email templates:
 
-![Figure 8.25: You can use these variables in your email templates.](../../images/new-calendar-configuration3.png)
+![Figure 8.11: You can use these variables in your email templates.](../../images/new-calendar-configuration3.png)
 
 **Email From:** This screen allows you to specify the name and email address
 that's used to send the automatic emails for event reminders and invitations. 
 
-![Figure 8.26: The *Email From* Screen allows you to specify the name and email address that's used to send the automatic emails for event reminders and invitations.](../../images/new-calendar-configuration4.png)
+![Figure 8.12: The *Email From* Screen allows you to specify the name and email address that's used to send the automatic emails for event reminders and invitations.](../../images/new-calendar-configuration4.png)
 
 Next, let's look at how to use the new Calendar portlet.
 
@@ -380,7 +391,7 @@ Calendars*, click on the arrow icon, and select *Manage Calendars*. All users
 can manage their personal calendars. By default, only site administrators can
 manage site calendars.
 
-![Figure 8.27: Click on *Manage Calendars* to see a list of calendars.](../../images/new-calendar-manage-calendars.png)
+![Figure 8.13: Click on *Manage Calendars* to see a list of calendars.](../../images/new-calendar-manage-calendars.png)
 
 On the Manage Calendars screen, you can click *Add Calendar* to create a new
 calendar. As usual, you can enter a name and description for the calendar and
@@ -393,7 +404,7 @@ corresponding to the calendars. When you click on a colored box, its color
 disappears and the events of that calendar are no longer displayed. Click on an
 uncolored box to view the events of the corresponding calendar.
 
-![Figure 8.29: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
+![Figure 8.14: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
 
 When adding a calendar, you can also specify whether or not to enable comments
 and ratings for your calendar's events. Comments and ratings can be
@@ -401,7 +412,7 @@ enabled/disabled on a per calendar basis. They are disabled by default.
 Additionally, you can specify a color for your calendar. Events created in the
 new calendar will default to the color you choose.
 
-![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
+![Figure 8.15: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
 
 You can edit a calendar to change its name, description, or color. You can also
 change the calendar's default calendar status and flag or unflag the *Enable
@@ -415,14 +426,14 @@ calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
 
-![Figure 8.30: When you click anywhere on the calendar, you'll see the event creation popup appear. Click on *Edit Details* to specify details for your event.](../../images/new-calendar-event-popup.png)
+![Figure 8.16: When you click anywhere on the calendar, you'll see the event creation popup appear. Click on *Edit Details* to specify details for your event.](../../images/new-calendar-event-popup.png)
 
 In the new event popup, you can select the calendar in which you'd like to
 create the new event. This is useful since sites and users can have multiple
 calendars. You can click *Save* to create the event right away or you can click
 *Edit Details* to specify more event information.
 
-![Figure 8.31: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
+![Figure 8.17: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
 
 The *Title* you enter determines the name of the event as it's displayed on the
 calendar. The *Start Date* and *End Date* times determine when your event takes
@@ -435,7 +446,7 @@ to specify whatever start times and end times you like, such as 11:37am and
 the *Repeat* box if your event takes place over multiple days. Checking this box
 opens another popup.
 
-![Figure 8.32: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
+![Figure 8.18: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
 
 In the Details collapsible section, you can specify three pieces of information.
 Under *Calendar*, you can select the calendar to which you'd like to add your
@@ -454,7 +465,7 @@ available as an app on Liferay Marketplace; search for *Social Networking CE* or
 all the appropriate portlets, such as the Friends' Activities or Members'
 Activities portlets.
 
-![Figure 8.33: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
+![Figure 8.19: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
 
 The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
@@ -542,13 +553,13 @@ have noticed that the new Calendar portlet has two tabs in the main portlet
 window: Calendar and Resources. Click on the *Resources* tab of the portlet to
 view, edit, add, or delete resources.
 
-![Figure 8.34: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
+![Figure 8.20: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
 able to enter a name and description for your resource, specify whether or not
 it should be active, apply tags and categories, and configure its permissions.
 
-![Figure 8.35: To manage a calendar resource and view the calendars on which it appears, use the Actions button.](../../images/new-calendar-resource-calendars.png)
+![Figure 8.21: To manage a calendar resource and view the calendars on which it appears, use the Actions button.](../../images/new-calendar-resource-calendars.png)
 
 Once you've created a calendar resource, you can click on the *Actions* button
 next to it and select one of the following four options: *Edit*, *Permissions*,
@@ -560,7 +571,7 @@ representing the rooms and projectors helps prevent conflicts. Click *Actions*
 &rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
 in which the selected calendar resource appears.
 
-![Figure 8.36: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
+![Figure 8.22: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
 
 Liferay's new Calendar portlet provides an easy-to-use scheduling tool. Sites
 and users can have multiple calendars, calendar events can include calendar
@@ -823,7 +834,7 @@ easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 8.37: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
+![Figure 8.23: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
 
 You can add as many categories to your message boards as you wish. As we saw
 above, categories can have subcategories. You can add any number of top-level
@@ -1019,7 +1030,7 @@ select the correct version when downloading and installing the app. Once
 installed, the Message Boards Subscription Manager appears in the site section
 of the Control Panel.
 
-![Figure 8.x: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the site section of the Control Panel.](../../images/message-boards-subscription-manager-control-panel.png)
+![Figure 8.24: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the site section of the Control Panel.](../../images/message-boards-subscription-manager-control-panel.png)
 
 The subscription manager allows managing the subscriptions of both the
 site-scoped message board and the subscriptions of any page-scoped message
@@ -1034,7 +1045,7 @@ the category's threads in a new browser tab. Click *Actions* &rarr; *Manage
 Subscriptions* to view a list of users which can be subscribed or unsubscribed
 from the message board category.
 
-![Figure 8.x: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
+![Figure 8.25: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
 
 Click on the *Subscribe* or *Unsubscribe* links next to a user's name to
 subscribe or unsubscribe the user from the selected message board category.
@@ -1087,14 +1098,14 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 8.38: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
+![Figure 8.26: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 8.39: Emoticons Available in the Editor](../../images/05-emoticons.png)
+![Figure 8.27: Emoticons Available in the Editor](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you are
@@ -1144,7 +1155,7 @@ Browse the list until you find the Message Boards portlet under the Site
 Content section and then click on it. You will then see a screen which allows
 you to configure the various permissions on the portlet.
 
-![Figure 8.40: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
+![Figure 8.28: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and
 then click *Save*. You can add users to this role and they will inherit the
@@ -1260,7 +1271,7 @@ application with websites, Facebook, Google Gadgets, etc. You will also notice
 that the communication tab has some additional options not seen in the other
 portlets.
 
-![Figure 8.41: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
+![Figure 8.29: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
 communication across portlets, using predefined public render parameters. From
@@ -1360,7 +1371,7 @@ By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link at the top right of the
 portlet. You will be brought to a blank editing page.
 
-![Figure 8.42: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
+![Figure 8.30: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
 
 You can now begin to add content to the page. Notice that there is a very
 convenient "cheat sheet"? which can help with the wiki syntax. You can use this
@@ -1387,7 +1398,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 8.43: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
+![Figure 8.31: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
 Since the pages behind these links have not been created yet, clicking one of
@@ -1532,7 +1543,7 @@ In the Control Panel, navigate to the *Polls* link under Content. Click the
 *Add Question* button. A form appears that allows you to fill out all the
 information for your poll. 
 
-![Figure 8.44: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
+![Figure 8.32: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
 **Title:** Enter the name of the poll question. 
 
@@ -1581,7 +1592,7 @@ poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users*, and a dialog box like
 the one below appears.
 
-![Figure 8.45: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
+![Figure 8.33: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
 
 Under the Setup tab is a menu option labeled *Question*. Selecting this option
 displays the name of the poll you created. Choose it, click *Save*, and it is
@@ -1599,7 +1610,7 @@ perform other tasks by using the icons in the lower left corner of the portlet.
 Besides adding questions, you can also edit the currently selected question or
 select existing questions.
 
-![Figure 8.46: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
+![Figure 8.34: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
 
 **Edit Question:** Displays a similar dialog box to the one used to create the
 poll. 
@@ -1621,13 +1632,13 @@ name and the question, as well as a breakdown of the poll results appears,
 including percentages and total number of votes per answer and the total number
 of votes cast.
 
-![Figure 8.47: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
+![Figure 8.35: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie* and *Vertical Bar*.
 
-![Figure 8.48: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
+![Figure 8.36: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are
@@ -1645,7 +1656,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 8.49: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
+![Figure 8.37: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
@@ -1715,7 +1726,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.50: Openfire Administration Web Tool](../../images/jabber-service-name.png)
+![Figure 8.38: Openfire Administration Web Tool](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
@@ -1765,7 +1776,7 @@ install the Mail portlet by going to the Control Panel, clicking *Plugins
 Installation*, and then clicking the *Install More Portlets* button. Find the
 *Mail* portlet in the list, click on it, and then click *Install*.
 
-![Figure 8.51: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 8.39: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add a New Email
 Account* link. From there, you are given a choice between a Custom email
