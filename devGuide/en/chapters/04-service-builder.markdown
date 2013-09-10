@@ -1982,6 +1982,19 @@ the following finder method and static field to the `EventFinderImpl` class:
         EventFinder.class.getName() +
             ".findByEventNameEventDescriptionLocationName";
 
+Remember to import the required classes. These include the following:
+
+    java.util.List;
+    com.liferay.portal.kernel.dao.orm.QueryPos;
+    com.liferay.portal.kernel.dao.orm.QueryUtil;
+    com.liferay.portal.kernel.dao.orm.SQLQuery;
+    com.liferay.portal.kernel.dao.orm.Session;
+    com.liferay.portal.kernel.exception.SystemException;
+    com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
+    com.liferay.util.dao.orm.CustomSQLUtil;
+    com.nosester.portlet.eventlisting.model.Event;
+    com.nosester.portlet.eventlisting.model.impl.EventImpl;
+
 The custom finder method opens a new Hibernate session and uses Liferay's
 `CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
 database query. The `FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` static
