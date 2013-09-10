@@ -572,7 +572,7 @@ doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
 they're explained in the next section. 
 
-## Understanding the Two Phases of Portlet Execution [](id=understanding-the-two-phases-of-portlet--liferay-portal-6-2-dev-guide-03-en)
+## Understanding the Two Phases of Portlet Execution [](id=understand-portlet-execution-phases-liferay-portal-6-2-dev-guide-03-en)
 
 Our portlet needs two execution phases, the action phase and the render phase.
 Multiple execution phases can be confusing to developers used to regular servlet
@@ -744,7 +744,7 @@ information must pass from the action phase to the render phase, so that the JSP
 knows that the preference has just been saved and can show a message to the
 user. 
 
-## Passing Information from the Action Phase to the Render Phase [](id=passing-information-from-the-action-phas-liferay-portal-6-2-dev-guide-03-en)
+## Passing Information from the Action Phase to the Render Phase [](id=passing-info-from-action-to-render-phase-liferay-portal-6-2-dev-guide-en)
 
 There are two ways to pass information from the action phase to the render
 phase. The first way is through render parameters. In the `processAction` method
@@ -877,7 +877,7 @@ If an error occurred, you'd see this in your portlet:
 The first message is automatically added by Liferay. The second one is the one
 you added in your JSP. 
 
-## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actio-liferay-portal-6-2-dev-guide-03-en)
+## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions-liferay-portal-6-2-dev-guide-en)
 
 Right now our portlet only has two views: the default view and edit view. Adding
 more views is easy, and you can link to them using the `mvcPath` parameter in
@@ -936,7 +936,7 @@ finishing touches on your portlet by first learning about an extension to
 Liferay's portlet specification that generates more elegant URLs for your
 portlets. 
 
-## Adding Friendly URL Mapping to the Portlet [](id=adding-friendly-url-mapping-to-the-portl-liferay-portal-6-2-dev-guide-03-en)
+## Adding Friendly URL Mapping to the Portlet [](id=portlet-friendly-url-mapping-liferay-portal-6-2-dev-guide-03-en)
 
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
@@ -1116,7 +1116,7 @@ localization:
 
 Let's proceed, assuming you answered "yes" to all of the above questions. 
 
-### Create Resource Bundles [](id=create-resource-bundles-liferay-portal-6-2-dev-guide-03-en)
+### Create Resource Bundles [](id=creating-a-portlet-resource-bundle-liferay-portal-6-2-dev-guide-03-en)
 
 First, let's create resource bundles files for translating the fictional
 portlets My Finances, Asset Ticker and Portfolio Manager. All three portlets
@@ -1206,7 +1206,7 @@ Production environment.
 
 Next, let's localize titles and descriptions of our various fictitious portlets. 
 
-### Portlet Title and Description in Control Panel [](id=portlet-title-and-description-in-control-liferay-portal-6-2-dev-guide-03-en)
+### Portlet Title and Description in Control Panel [](id=portlet-title-description-in-control-panel-liferay-portal-6-2-dev-guide-en)
 
 You may have noticed that your Control Panel-enabled portlets are missing that
 super-fancy must-have portlet title and description in Control Panel. To make

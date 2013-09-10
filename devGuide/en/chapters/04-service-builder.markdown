@@ -517,7 +517,7 @@ http://java-source.net/open-source/persistence
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity *columns*. 
 
-### Define the Columns (Attributes) for Each Service Entity [](id=define-the-columns-attributes-for-each-s-liferay-portal-6-2-dev-guide-04-en)
+### Define the Columns (Attributes) for Each Service Entity [](id=defining-columns-for-entity-liferay-portal-6-2-dev-guide-en)
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -607,7 +607,7 @@ Great! Our entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, we'll
 specify the relationship between our Event entity and Location entity. 
 
-### Define Relationships Between Service Entities [](id=define-relationships-between-service-ent-liferay-portal-6-2-dev-guide-04-en)
+### Define Relationships Between Service Entities [](id=relating-service-entities-liferay-portal-6-2-dev-guide-en)
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
@@ -639,7 +639,7 @@ instance related to the Event:
 Now that our entity columns are in place, let's specify the default order in
 which the entity instances are retrieved from the database. 
 
-### Define Ordering of Service Entity Instances [](id=define-ordering-of-service-entity-instan-liferay-portal-6-2-dev-guide-04-en)
+### Define Ordering of Service Entity Instances [](id=define-ordering-of-service-entities-liferay-portal-6-2-dev-guide-04-en)
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -1820,7 +1820,7 @@ it is following these steps:
 Let's follow these steps to create and invoke custom SQL in our Event Listing
 portlet. 
 
-### Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql-liferay-portal-6-2-dev-guide-04-en)
+### Step 1: Specify Your Custom SQL [](id=specifying-custom-sql-liferay-portal-6-2-dev-guide-04-en)
 
 After you've tested your SQL, you must specify it in a place in a particular
 file for Liferay to access it. Liferay's `CustomSQLUtil` class looks up custom
@@ -1892,7 +1892,7 @@ follows the package path specified below:
 Now that we've specified our custom SQL, let's implement the finder method.
 We'll use the method name of the ID we just specified for our `sql` element. 
 
-### Step 2: Implement Your Finder Method [](id=step-2-implement-your-finder-method-liferay-portal-6-2-dev-guide-04-en)
+### Step 2: Implement Your Finder Method [](id=implementing-finder-methods-liferay-portal-6-2-dev-guide-en)
 
 Let's implement our *finder method* to invoke our custom SQL query. Since our
 finder method will invoke our query on the database, we'll implement the method
@@ -1991,7 +1991,7 @@ the name of our finder method (`findByEventNameEventDescriptionLocationName`).
 Awesome! Our custom SQL is in place and our finder method is implemented. Next,
 we'll access our finder method from our service.  
 
-### Step 3: Access Your Finder Method from Your Service [](id=step-3-access-your-finder-method-from-yo-liferay-portal-6-2-dev-guide-04-en)
+### Step 3: Access Your Finder Method from Your Service [](id=accessing-finder-methods-from-services-liferay-portal-6-2-dev-guide-en)
 
 So far, we have created a `-FinderImpl` class and generated a `-FinderUtil`
 utility class. However, our portlet class should not use the finder utility

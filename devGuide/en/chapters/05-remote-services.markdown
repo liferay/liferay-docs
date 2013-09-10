@@ -796,7 +796,7 @@ level.
 
 Let's find out how to ignore a specific method. 
 
-#### Ignoring a Method [](id=ignoring-a-method-liferay-portal-6-2-dev-guide-05-en)
+#### Ignoring a Method [](id=ignoring-a-method-from-json-webservices-liferay-portal-6-2-dev-guide-en)
 
 To keep a method from being exposed as a service, annotate the method with the
 following option:
@@ -807,7 +807,7 @@ Methods with this annotation don't become part of the JSON Web Service API.
 
 Let's learn to define custom HTTP method names and URL names. 
 
-#### HTTP Method Name and URL [](id=http-method-name-and-url-liferay-portal-6-2-dev-guide-05-en)
+#### HTTP Method Name and URL [](id=http-method-name-and-url-json-liferay-portal-6-2-dev-guide-05-en)
 
 At the method level, you can define custom HTTP method names and URL names. Just
 use an annotation like this one: 
@@ -843,7 +843,7 @@ Service Builder chapter. We're also missing a transition here. -Rich -->
 Next we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
-#### Manual Registration Mode [](id=manual-registration-mode-liferay-portal-6-2-dev-guide-05-en)
+#### Manual Registration Mode [](id=json-manual-registration-mode-liferay-portal-6-2-dev-guide-05-en)
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
@@ -879,7 +879,7 @@ disable them, specify this portal property setting:
 
 Now let's look at strict HTTP methods. 
 
-#### Strict HTTP Methods [](id=strict-http-methods-liferay-portal-6-2-dev-guide-05-en)
+#### Strict HTTP Methods [](id=json-strict-http-methods-liferay-portal-6-2-dev-guide-05-en)
 
 All JSON Web Services are mapped to either GET or POST HTTP methods. If a
 service method name starts with `get`, `is` or `has`, the service is assumed to
@@ -898,7 +898,7 @@ methods.
 When strict HTTP mode is enabled, you still might have need to disable HTTP
 methods. We'll show you how next. 
 
-#### Disabling HTTP Methods [](id=disabling-http-methods-liferay-portal-6-2-dev-guide-05-en)
+#### Disabling HTTP Methods [](id=disabling-http-methods-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, you can set the portal JSON
@@ -911,7 +911,7 @@ Now all requests that use HTTP methods from the list above are ignored.
 
 Next we'll show you how to restrict public access to exposed JSON APIs. 
 
-#### Controlling Public Access [](id=controlling-public-access-liferay-portal-6-2-dev-guide-05-en)
+#### Controlling Public Access [](id=json-controlling-public-access-liferay-portal-6-2-dev-guide-05-en)
 
 Each service method knows if it can be executed by unauthenticated users and
 if a user has adequate permission for the chosen action. Most of the portal's
@@ -950,7 +950,7 @@ Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required--when using numeric *hints* to match methods. Let's look
 at using hints next. 
 
-#### Using Hints [](id=using-hints-liferay-portal-6-2-dev-guide-05-en)
+#### Using Hints [](id=using-hints-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Adding numeric hints lets you specify how many method arguments a service has.
 If you don't specify an argument for a parameter, it's automatically
@@ -973,7 +973,7 @@ In this example, `param2` will automatically be set to `null`.
 
 Find out how to pass parameters as part of the URL path next. 
 
-#### Passing Parameters as Part of a URL Path [](id=passing-parameters-as-part-of-a-url-path-liferay-portal-6-2-dev-guide-05-en)
+#### Passing Parameters as Part of a URL Path [](id=passing-parameters-as-part-of-a-url-path-liferay-portal-6-2-dev-guide-en)
 
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
@@ -995,7 +995,7 @@ you.
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
-#### Passing Parameters as a URL Query [](id=passing-parameters-as-a-url-query-liferay-portal-6-2-dev-guide-05-en)
+#### Passing Parameters as a URL Query [](id=passing-parameters-as-a-url-query-json-liferay-portal-6-2-dev-guide-en)
 
 You can pass in parameters as request parameters. Parameter names are specified
 as is (e.g. camelCase) and are set equal to their argument values, like this: 
@@ -1052,7 +1052,7 @@ web service parameters for a `List<Locale>` Java method argument type:
 
 Now let's see how to specify an argument as `null`. 
 
-#### Sending NULL Values [](id=sending-null-values-liferay-portal-6-2-dev-guide-05-en)
+#### Sending NULL Values [](id=json-sending-null-values-liferay-portal-6-2-dev-guide-05-en)
 
 To pass a `null` value for an argument, prefix the parameter name with a dash.
 Here's an example: 
@@ -1074,7 +1074,7 @@ without a prefix. Here's an example:
 
 Now let's learn about encoding parameters. 
 
-#### Encoding Parameters [](id=encoding-parameters-liferay-portal-6-2-dev-guide-05-en)
+#### Encoding Parameters [](id=encoding-parameters-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 There's a difference between URL encoding and query (i.e. request parameters)
 encoding. The difference lies in how the space character is encoded. When the
@@ -1099,7 +1099,7 @@ received, this value is first going to be translated to an array of 10 bytes
 
 Did you know you can send files as arguments? Find out how next. 
 
-#### Sending Files as Arguments [](id=sending-files-as-arguments-liferay-portal-6-2-dev-guide-05-en)
+#### Sending Files as Arguments [](id=sending-files-as-arguments-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Files can be uploaded using multipart forms and requests. Here's an example: 
 
@@ -1142,7 +1142,7 @@ Here's an example of invoking a JSON web service using JSON RPC:
 Let's talk about paramteters that are made available to secure JSON web
 services by default. 
 
-#### Default Parameters [](id=default-parameters-liferay-portal-6-2-dev-guide-05-en)
+#### Default Parameters [](id=default-json-web-service-parameters-liferay-portal-6-2-dev-guide-en)
 
 When accessing *secure* JSON web services (i.e., the user has to be
 authenticated), some parameters are made available to the web services by
@@ -1158,7 +1158,7 @@ Here are the default parameters:
 
 Let's find out about object parameters next. 
 
-#### Object Parameters [](id=object-parameters-liferay-portal-6-2-dev-guide-05-en)
+#### Object Parameters [](id=object-parameters-json-web-services-liferay-portal-6-2-dev-guide-en)
 
 Most services accept simple parameters like numbers and strings. However,
 sometimes you might need to provide an object (a non-simple type) as a service
@@ -1211,7 +1211,7 @@ method parameter.
 Once you pass in an object parameter, you might want to populate the object.
 Find out how next. 
 
-#### Inner Parameters [](id=inner-parameters-liferay-portal-6-2-dev-guide-05-en)
+#### Inner Parameters [](id=inner-parameters-json-web-services-liferay-portal-6-2-dev-guide-en)
 
 When you pass in an object paramter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
@@ -1240,7 +1240,7 @@ parameters to set inner content of created parameter instances!
 
 Next let's see what values are returned when a JSON seb service is invoked. 
 
-### Returned Values [](id=returned-values-liferay-portal-6-2-dev-guide-05-en)
+### Returned Values [](id=returned-values-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
@@ -1358,7 +1358,7 @@ that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-#### A Simple Invoker Call [](id=a-simple-invoker-call-liferay-portal-6-2-dev-guide-05-en)
+#### A Simple Invoker Call [](id=a-simple-invoker-call-json-liferay-portal-6-2-dev-guide-05-en)
 
 The Invoker is accessible from the following fixed address:
 
@@ -1409,7 +1409,7 @@ user's contact ID using the syntax `$user.contactId`.
 Next see how you can use nested service calls to join information from two
 related objects. 
 
-#### Nesting Service Calls [](id=nesting-service-calls-liferay-portal-6-2-dev-guide-05-en)
+#### Nesting Service Calls [](id=nesting-service-calls-in-json-liferay-portal-6-2-dev-guide-en)
 
 With nested service calls, you can magically bind information from related
 objects together in a JSON object. You can call other services within the same
@@ -1455,7 +1455,7 @@ prefix before the parameter name.
 Next let's talk about filtering object properties so only those you
 need are returned when you invoke a service. 
 
-#### Filtering Results [](id=filtering-results-liferay-portal-6-2-dev-guide-05-en)
+#### Filtering Results [](id=filtering-results-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Many of Liferay Portal's model objects are rich with properties. If you only
 need a handful of an object's properties for your business logic, making a web
@@ -1481,7 +1481,7 @@ white-list properties, you simply place the properties in square brackets (e.g.,
 
 Let's talk about batching calls next. 
 
-#### Batching Calls [](id=batching-calls-liferay-portal-6-2-dev-guide-05-en)
+#### Batching Calls [](id=batching-calls-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 When we nested service calls earlier, the intent was to invoke multiple services
 with a single HTTP request. Using a single request for multiple service calls is
