@@ -1,4 +1,4 @@
-# Designing User Interfaces with AlloyUI
+# Designing User Interfaces with AlloyUI [](id=designing-user-interfaces-with-alloyui-liferay-portal-6-2-dev-guide-11-en)
 
 Liferay's User Interface (UI) Team continually strives to provide stylish,
 lightning-fast components that are extensible and built to last. I liken the
@@ -72,7 +72,7 @@ chapter by exploring the following topics:
 
 To start things off right, let's go over a simple example using AlloyUI.
 
-## A simple AlloyUI example
+## A simple AlloyUI example [](id=a-simple-alloyui-example-liferay-portal-6-2-dev-guide-11-en)
 
 AlloyUI is easy to use. Let's demonstrate by using Alloy's `node` module in an
 HTML file.
@@ -222,7 +222,7 @@ You'll get plenty of practice using AlloyUI as you go through its fundamentals
 in this chapter. Next we'll give you a real workout by traversing a document
 object model (DOM).
 
-## Traversing the DOM with AlloyUI
+## Traversing the DOM with AlloyUI [](id=traversing-the-dom-with-alloyui-liferay-portal-6-2-dev-guide-11-en)
 
 <!-- insert content -->
 
@@ -234,25 +234,25 @@ shippingFirstnameNode.val(billingFirstnameNode.val() );
 
 <!-- insert transition -->
 
-## Using AlloyUI taglibs
+## Using AlloyUI taglibs [](id=using-alloyui-taglibs-liferay-portal-6-2-dev-guide-11-en)
 
 <!-- insert content -->
 
 <!-- insert transition -->
 
-## Styling your components with Twitter Bootstrap
+## Styling your components with Twitter Bootstrap [](id=styling-your-components-with-twitter-boo-liferay-portal-6-2-dev-guide-11-en)
 
 <!-- insert content -->
 
 <!-- insert transition -->
 
-## Creating your own UI component modules
+## Creating your own UI component modules [](id=creating-your-own-ui-component-modules-liferay-portal-6-2-dev-guide-11-en)
 
 <!-- Explain the benefits of building UI components in the AlloyUI project -->
 
 Before we create components, let's go over setting up the AlloyUI project. 
 
-### Working with the AlloyUI project
+### Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-11-en)
 
 Liferay Portal comes bundled with AlloyUI, as it's used throughout the portal
 and core portlets. Conveniently, you can use AlloyUI in any project--it doesn't
@@ -357,9 +357,9 @@ done.`
 Congratulations on building AlloyUI! Now it's time to create your own UI
 components in AlloyUI. 
 
-### Creating components is easy with AlloyUI
+### Creating components is easy with AlloyUI [](id=creating-components-is-easy-with-alloyui-liferay-portal-6-2-dev-guide-11-en)
 
 <!-- Explain how to create components and modules in AlloyUI -->
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en)
 

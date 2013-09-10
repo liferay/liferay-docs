@@ -1,4 +1,4 @@
-# Realizing the Benefits of Liferay's Development Platform 
+# Realizing the Benefits of Liferay's Development Platform [](id=realizing-the-benefits-of-liferays-devel-liferay-portal-6-2-dev-guide-01-en)
 
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
@@ -27,7 +27,7 @@ This chapter covers the following:
 
 Let's talk about developing applications for Liferay. 
 
-## Developing Applications for Liferay 
+## Developing Applications for Liferay [](id=developing-applications-for-liferay-liferay-portal-6-2-dev-guide-01-en)
 
 According to Wikipedia "A web application is an application that is accessed
 over a network such as the Internet or an intranet." A portal application is a
@@ -40,7 +40,7 @@ you probably want to know *what's the best and quickest way to do it?* Liferay
 supports two main, standards-based technologies for incorporating your
 applications into Liferay: **Portlets** and **OpenSocial gadgets**. 
 
-### Portlets 
+### Portlets [](id=portlets-liferay-portal-6-2-dev-guide-01-en)
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they
@@ -58,7 +58,7 @@ frameworks: MVC Portlet and Alloy Portlet. Portlets can be used to build complex
 applications since they can leverage the full suite of technologies and
 libraries for the Java platform.
 
-### OpenSocial Gadgets
+### OpenSocial Gadgets [](id=opensocial-gadgets-liferay-portal-6-2-dev-guide-01-en)
 
 OpenSocial gadgets are usually small applications, written using browser-side
 technologies such as HTML and JavaScript. Like portlets, OpenSocial gadgets
@@ -90,7 +90,7 @@ Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
-### Reusing Existing Web Applications 
+### Reusing Existing Web Applications [](id=reusing-existing-web-applications-liferay-portal-6-2-dev-guide-01-en)
 
 What if you already have an existing application that has not been implemented
 as a portlet or OpenSocial gadget? You have many options, including:
@@ -113,7 +113,7 @@ of the scope of this guide; however, the above options are worth considering.
 
 Next let's consider some of the technology frameworks Liferay supports. 
 
-### Supported Technology Frameworks 
+### Supported Technology Frameworks [](id=supported-technology-frameworks-liferay-portal-6-2-dev-guide-01-en)
 
 Liferay, as a platform, strives to provide compatibility with any Java
 technology you may want to use to develop your applications. Thanks to the
@@ -168,7 +168,7 @@ remote services, and much more. Liferay does not impose specific requirements on
 the use of any of those frameworks. You, the portal developer, choose the best
 tools for your projects. 
 
-## Extending and Customizing Liferay 
+## Extending and Customizing Liferay [](id=extending-and-customizing-liferay-liferay-portal-6-2-dev-guide-01-en)
 
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
@@ -180,7 +180,7 @@ Liferay is designed to be customized. Multiple plugins and plugin types can be
 combined into a single WAR file. Let's take a look at these plugin types and how
 they can be used. 
 
-### Customizing the Look and Feel: Themes 
+### Customizing the Look and Feel: Themes [](id=customizing-the-look-and-feel-themes-liferay-portal-6-2-dev-guide-01-en)
 
 Themes let you dictate your site's look and feel. You can specify color schemes
 and commonly used images. You'll apply styling for UI elements such as fonts,
@@ -192,7 +192,7 @@ widths of your users' desktop, tablet, and mobile devices. Most importantly,
 themes let you focus on designing your site's UI, while leaving its
 functionality to the portlets. 
 
-### Adding New Predefined Page Layouts: Layout Templates  
+### Adding New Predefined Page Layouts: Layout Templates [](id=adding-new-predefined-page-layouts-layou-liferay-portal-6-2-dev-guide-01-en)
 
 Layouts are similar to themes, except they specify the *arrangement* of portlets
 on a page rather than their look and feel. You can create custom layout
@@ -200,7 +200,7 @@ templates to arrange portlets just the way you like them. And you can even embed
 commonly used portlets. Like themes, layout templates are also written in
 Velocity and are hot-deployable. 
 
-### Customizing or Extending the Out-of-Box Functionality: Hook Plugins 
+### Customizing or Extending the Out-of-Box Functionality: Hook Plugins [](id=customizing-or-extending-the-out-of-box--liferay-portal-6-2-dev-guide-01-en)
 
 Hook plugins are how you customize the core functionality of Liferay at many
 predefined extension points. Hook plugins are used to modify portal properties
@@ -210,7 +210,7 @@ replace any of the core Liferay services with a custom implementation. Hook
 plugins can also replace the JSP templates used by any of the default portlets.
 Best of all, hooks are hot-deployable plugins just like portlets. 
 
-### Advanced Customization: Ext Plugins  
+### Advanced Customization: Ext Plugins [](id=advanced-customization-ext-plugins-liferay-portal-6-2-dev-guide-01-en)
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay
 core, allowing you to replace essentially any class with a custom
@@ -238,7 +238,7 @@ Now that you're familiar with the best options for developing applications on
 Liferay and customizing Liferay, let's consider some of the tools you'll be
 using.
 
-## Choosing Your Development Tools 
+## Choosing Your Development Tools [](id=choosing-your-development-tools-liferay-portal-6-2-dev-guide-01-en)
 
 The Java ecosystem is known for providing a variety of options for almost any
 type of software development. This is advantageous because you can find the tool

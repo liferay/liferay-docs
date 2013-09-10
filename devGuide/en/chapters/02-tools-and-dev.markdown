@@ -1,4 +1,4 @@
-# Working with Liferay's Developer Tools 
+# Working with Liferay's Developer Tools [](id=working-with-liferays-developer-tools-liferay-portal-6-2-dev-guide-02-en)
 
 If you're anything like Liferay Portal's developers, you don't want to be
 forced to work with one development technology. Our developers build Liferay
@@ -38,7 +38,7 @@ archetypes you can use to develop your plugins.
 First let's consider the most robust tool for Liferay development, Liferay
 IDE. 
 
-## Developing Apps with Liferay IDE 
+## Developing Apps with Liferay IDE [](id=developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
 Even if you're a grizzled veteran Java developer, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
@@ -84,7 +84,7 @@ Server to Testing/Launching Liferay Runtime Server - Jim -->
 <!-- I changed it as above to match the name of the section. We can change both
 if need be. -->
 
-### Installing Liferay IDE 
+### Installing Liferay IDE [](id=installing-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay IDE is an extension of Eclipse IDE; before you install Liferay IDE,
 let's make sure your Eclipse release can run Liferay IDE, and that you're using
@@ -92,7 +92,7 @@ a supported version of Java. Then we'll show you the installation process--we
 give you two choices, depending on whether you want to enter an update site URL
 for your Eclipse release. 
 
-#### Requirements 
+#### Requirements [](id=requirements-liferay-portal-6-2-dev-guide-02-en)
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
@@ -107,7 +107,7 @@ Make sure you have a supported Java JRE and Eclipse release:
 
 Next we'll show you how to install Liferay IDE. 
 
-#### Installation Steps 
+#### Installation Steps [](id=installation-steps-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
@@ -144,7 +144,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 Next we'll show you how to install Liferay IDE without specifying an Eclipse
 update URL. 
 
-#### Alternative Installation 
+#### Alternative Installation [](id=alternative-installation-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE without specifying an update URL for Eclipse, follow
 these steps: 
@@ -179,7 +179,7 @@ shot. It was confusing to me so I thought it needed to be beefed up. -->
 
 Let's set up Liferay IDE now that you have it installed. 
 
-### Setting Up Liferay IDE 
+### Setting Up Liferay IDE [](id=setting-up-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
 Now that you have Liferay IDE installed, either from a downloaded zip file or
 from the update site appropriate for your Eclipse version, you need to perform
@@ -189,7 +189,7 @@ develop your Liferay portal and test your customizations.
 Before setting up Liferay IDE, let's make sure you have all the appropriate
 software packages installed. 
 
-#### Requirements 
+#### Requirements [](id=requirements-liferay-portal-6-2-dev-guide-02-en-0)
 
 Before setting up Liferay IDE, you need to have appropriate versions of Liferay
 Portal, Liferay Plugins SDK, and Eclipse. Make sure you satisfy these
@@ -212,7 +212,7 @@ requirements before proceeding:
 
 Let's set up your Liferay Plugins SDK. 
 
-#### Setting Up Liferay Plugins SDK 
+#### Setting Up Liferay Plugins SDK [](id=setting-up-liferay-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and Liferay Portal must be installed and configured in your Liferay
@@ -244,7 +244,7 @@ your preferences--set one as the default SDK by checking its box in the list of
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 
-#### Liferay Portal Runtime and Server Setup
+#### Liferay Portal Runtime and Server Setup [](id=liferay-portal-runtime-and-server-setup-liferay-portal-6-2-dev-guide-02-en)
 
 You can run Liferay on any application server suppoorted by Liferay Portal.
 Here we'll set up our Liferay runtime on the Tomcat application server, but the
@@ -290,7 +290,7 @@ portal(https://www.liferay.com/group/customer/downloads/portal)? -Russ -->
 
 Now your server is set up. Let's launch it and perform some tests! 
 
-### Testing and Launching Your Liferay Server 
+### Testing and Launching Your Liferay Server [](id=testing-and-launching-your-liferay-serve-liferay-portal-6-2-dev-guide-02-en)
 
 Once your Liferay Portal Server is set up, you can launch it from the servers
 tab in Eclipse. You have a few options for launching and stopping the server
@@ -319,7 +319,7 @@ Portal Home*.
 
 Next you'll learn to create new Liferay projects in Lioferay IDE. 
 
-### Creating New Liferay Projects 
+### Creating New Liferay Projects [](id=creating-new-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
 
 When you create plugins for your Liferay Portal, they need to be held inside of
 a project, which is essentailly a root directory with a standardized structure
@@ -478,7 +478,7 @@ of other files/folders. Please list all of them in this unordered list.
 
 Now you need to deploy your new plugin project to your Liferay Server. 
 
-### Deploying New Liferay Projects to a Liferay Server 
+### Deploying New Liferay Projects to a Liferay Server [](id=deploying-new-liferay-projects-to-a-life-liferay-portal-6-2-dev-guide-02-en)
 
 You have a plugin project, but you need to deploy it onto your Liferay
 Server. Let's do it now: 
@@ -516,7 +516,7 @@ the correctly deployed portlet on the page.
 Great, you can create projects in Liferay IDE! Let's find out how to import
 existing projects into Liferay IDE. 
 
-### Creating Plugins 
+### Creating Plugins [](id=creating-plugins-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay projects can contain multiple plugins. When you specify that your
 project is a portlet plugin project, the wizard guides you through the creation
@@ -627,7 +627,7 @@ explorer. Select New  &rarr; Liferay Portlet.
 Next we'll show you how our Service Builder tool helps you generate your model,
 persistence, and serivce layers. 
 
-### Using the Service Builder Graphical Editor 
+### Using the Service Builder Graphical Editor [](id=using-the-service-builder-graphical-edit-liferay-portal-6-2-dev-guide-02-en)
 
 <!-- Please move this section just after Creating Plugins. It's an exciting
 feature that would dovetail nicely after creating your plugin. - Jim -->
@@ -732,7 +732,7 @@ Now you know how to create projects and plugins from scratch, and you know
 about Service Builder's nearly-magical time-saving capabilities. Let's learn
 how to import existing projects into Liferay IDE.
 
-### Importing Existing Projects into Liferay IDE 
+### Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-liferay-portal-6-2-dev-guide-02-en)
 
 What if you have existing projects that you want to work on in Liferay IDE?
 This section shows you how to import your existing projects so you don't have
@@ -753,7 +753,7 @@ We'll cover the following import scenarios:
 Let's start by learning how to import existing Liferay projects from Liferay
 PLugins SDK. 
 
-#### Importing Existing Liferay Projects from the Plugins SDK 
+#### Importing Existing Liferay Projects from the Plugins SDK [](id=importing-existing-liferay-projects-from-liferay-portal-6-2-dev-guide-02-en)
 
 You can import Liferay projects you created with the Plugins SDK, but aren't
 yet in your Liferay IDE Eclipse workspace. These projects might already have
@@ -849,7 +849,7 @@ they were configured correctly as Liferay IDE projects. We'll talk about a
 different import scenario next; importing existing eclipse projects into Liferay
 IDE. 
 
-#### Importing Existing Eclipse Projects into Liferay IDE 
+#### Importing Existing Eclipse Projects into Liferay IDE [](id=importing-existing-eclipse-projects-into-liferay-portal-6-2-dev-guide-02-en)
 
 The steps we outlined above let you import projects not already in an Eclipse
 workspace. If you have a project in your Eclipse workspace (i.e., you can see it
@@ -884,7 +884,7 @@ configured correctly as a Liferay IDE project; the last subsection in this topic
 will show you how. We have one more import scenario to cover--importing existing
 Liferay IDE projects into your Liferay IDE. 
 
-#### Importing an Existing Liferay IDE Project 
+#### Importing an Existing Liferay IDE Project [](id=importing-an-existing-liferay-ide-projec-liferay-portal-6-2-dev-guide-02-en)
 
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
@@ -917,7 +917,7 @@ window; you can modify the targeted runtime in the *Project properties* &rarr;
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-### Verifying Successful Project Import 
+### Verifying Successful Project Import [](id=verifying-successful-project-import-liferay-portal-6-2-dev-guide-02-en)
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE
@@ -948,7 +948,7 @@ Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
 IDE's Remote Server Adapter feature. 
 
-### Using Liferay IDE's Remote Server Adapter 
+### Using Liferay IDE's Remote Server Adapter [](id=using-liferay-ides-remote-server-adapter-liferay-portal-6-2-dev-guide-02-en)
 
 The *Remote Server Adapter* is a feature that lets you deploy your Liferay
 projects to a remote Liferay Portal server; it first became available in Liferay
@@ -1007,7 +1007,7 @@ Liferay IDE to the remote Liferay server.
 
 Let's start by configuring the Remote Server Adapter. 
 
-#### Configuring the Remote Server Adapter 
+#### Configuring the Remote Server Adapter [](id=configuring-the-remote-server-adapter-liferay-portal-6-2-dev-guide-02-en)
 
 You can use Liferay IDE's Remote Server wizard to configure the Remote
 Server Adapter and install the Remote IDE Connector to your remote Liferay
@@ -1094,7 +1094,7 @@ configure the Remote Server Adapter, use the following steps:
 Now that your remote Liferay Portal server is configured, let's test the remote
 server adapter!
 
-#### Using the Remote Server Adapter
+#### Using the Remote Server Adapter [](id=using-the-remote-server-adapter-liferay-portal-6-2-dev-guide-02-en)
 
 Once your remote Liferay Portal server is correctly configured and your local
 Liferay IDE is connected to it, you can begin publishing projects to it and
@@ -1151,7 +1151,7 @@ the Liferay IDE section? -Russ-->
 
 <!-- Missing transition -->
 
-## Leveraging the Plugins SDK 
+## Leveraging the Plugins SDK [](id=leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -1166,7 +1166,7 @@ get the most out of the Plugins SDK.
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
-### Installing the SDK
+### Installing the SDK [](id=installing-the-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
@@ -1217,7 +1217,7 @@ all its subdirectories except for `ROOT` and `tunnel-web`.
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
-#### Ant Configuration
+#### Ant Configuration [](id=ant-configuration-liferay-portal-6-2-dev-guide-02-en)
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -1274,7 +1274,7 @@ referenced in your path.
 
 Now that Ant is configured, let's set up your Plugins SDK environment. 
 
-#### Plugins SDK Configuration
+#### Plugins SDK Configuration [](id=plugins-sdk-configuration-liferay-portal-6-2-dev-guide-02-en)
 
 Now we have the proper tools, but we need to configure the Plugins SDK to deploy
 into your Liferay instance. The Plugins SDK contains a `build.properties` file
@@ -1309,7 +1309,7 @@ Save the file.
 
 Next, let's consider the structure of the Plugins SDK. 
 
-### Structure of the SDK
+### Structure of the SDK [](id=structure-of-the-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
@@ -1365,7 +1365,7 @@ plugins:
 
 Next, let's create a plugin using Liferay SDK from a terminal environment. 
 
-### Creating Plugins with Liferay SDK
+### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 You saw how easy it is to create and deploy Liferay plugin projects using
 Liferay IDE with an installed Liferay SDK. If you don't want to use Eclipse,
@@ -1428,7 +1428,7 @@ page below.
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 
-### Best Practices
+### Best Practices [](id=best-practices-liferay-portal-6-2-dev-guide-02-en)
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
@@ -1450,7 +1450,7 @@ you, consider using Liferay's Apache Maven archetypes to build your custom
 Liferay plugins. We'll look at Maven next, and we'll have some fun with classic
 poetry while doing it. 
 
-## Developing Plugins Using Maven 
+## Developing Plugins Using Maven [](id=developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
@@ -1559,7 +1559,7 @@ We'll dive into all these topics in this chapter.
 "Straight I wheeled a cushioned seat in front of computer desk once more;
 Then, upon the velvet falling, I betook to Maven installing..."
 
-### Installing Maven 
+### Installing Maven [](id=installing-maven-liferay-portal-6-2-dev-guide-02-en)
 
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
@@ -1569,7 +1569,7 @@ prompt.
 
 Let's learn about the types of repositories you can use with Maven projects. 
 
-### Using Maven Repositories 
+### Using Maven Repositories [](id=using-maven-repositories-liferay-portal-6-2-dev-guide-02-en)
 
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts to your machine's
@@ -1594,7 +1594,7 @@ Now that you've been introduced to Maven repositories and proxy servers, let's
 consider using a repository management server to create and manage your Maven
 repositories. 
 
-#### Managing Maven Repositories 
+#### Managing Maven Repositories [](id=managing-maven-repositories-liferay-portal-6-2-dev-guide-02-en)
 
 You'll frequently want to share Liferay artifacts and plugins with teammates, or
 manage your repositories using a GUI. For this, you'll want Nexus OSS. It's a
@@ -1672,7 +1672,7 @@ snapshots (i.e., `liferay-snapshots`).
 Let's configure your new repository servers in your Maven environment so you can
 install artifacts to the them. 
 
-#### Configuring Local Maven Settings 
+#### Configuring Local Maven Settings [](id=configuring-local-maven-settings-liferay-portal-6-2-dev-guide-02-en)
 
 Before using your repository servers and/or any repository mirrors, you must
 specify them in your Maven environment settings. Your repository settings enable
@@ -1737,7 +1737,7 @@ create!
 
 Now, let's install the Liferay artifacts you'll need to create your plugins.
 
-###  Installing Required Liferay Artifacts 
+###  Installing Required Liferay Artifacts [](id=installing-required-liferay-artifacts-liferay-portal-6-2-dev-guide-02-en)
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
@@ -1765,7 +1765,7 @@ installation options.
 Let's look at the manual process first, by downloading and installing Liferay
 artifacts from a zip file. 
 
-#### Installing EE/CE Artifacts from a Zip File 
+#### Installing EE/CE Artifacts from a Zip File [](id=installing-ee-ce-artifacts-from-a-zip-fi-liferay-portal-6-2-dev-guide-02-en)
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file. Let's download the
@@ -1814,7 +1814,7 @@ the Liferay CE source repository, you can get them--but you'll have to build
 them yourself. Don't worry, it's easy. We'll show you how to build the artifacts
 from Liferay's source code next. 
 
-#### Building CE Maven Artifacts from Source
+#### Building CE Maven Artifacts from Source [](id=building-ce-maven-artifacts-from-source-liferay-portal-6-2-dev-guide-02-en)
 
 Downloading the Liferay Maven artifacts from Liferay's customer portal (EE) or
 from SourceForge (CE) is useful if you're interested in using the artifacts for
@@ -1932,7 +1932,7 @@ your repositories. These steps are applicable for installing artifacts that you
 downloaded and extracted from a zip file, and for installing artifacts that you
 built from source. 
 
-##### Installing Artifacts to a Repository
+##### Installing Artifacts to a Repository [](id=installing-artifacts-to-a-repository-liferay-portal-6-2-dev-guide-02-en)
 
 Let's install the Liferay release artifacts to your local Maven repository for
 sharing with your team.
@@ -1958,7 +1958,7 @@ Liferay plugins. Wasn't that easy?
 If you want to share your Liferay artifacts with teammates, you'll have to
 deploy them to a release repository server. 
 
-##### Deploying Artifacts to a Repository 
+##### Deploying Artifacts to a Repository [](id=deploying-artifacts-to-a-repository-liferay-portal-6-2-dev-guide-02-en)
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -2031,7 +2031,7 @@ If you're working with Liferay CE, there's an alternative method of obtaining
 the necessary Liferay Maven artifacts: you can let Maven download them
 automatically. Let's see how. 
 
-#### Installing CE Artifacts from the Central Repository 
+#### Installing CE Artifacts from the Central Repository [](id=installing-ce-artifacts-from-the-central-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay offers an option for automatic download and installation of Liferay CE
 Maven artifacts. They're publicly available on the *Central Repository*, located
@@ -2047,7 +2047,7 @@ Liferay CE plugins.
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
 
-### Using a Parent Plugin Project 
+### Using a Parent Plugin Project [](id=using-a-parent-plugin-project-liferay-portal-6-2-dev-guide-02-en)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties child projects have in common, and *child* projects
@@ -2182,7 +2182,7 @@ through inheritance.
 Now you're able to specify dependencies on required Liferay artifacts; let's
 create a Liferay plugin project using the archetypes provided by Liferay. 
 
-### Creating Liferay Plugins with Maven 
+### Creating Liferay Plugins with Maven [](id=creating-liferay-plugins-with-maven-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types, including portlet, theme, hook, and layout template plugins. We provide
@@ -2324,7 +2324,7 @@ plugin to a remote repository.
 Next we'll go through some brief examples to demonstrate deploying your plugins
 to Liferay Portal using Maven. 
 
-### Deploying Liferay Plugins with Maven 
+### Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven-liferay-portal-6-2-dev-guide-02-en)
 
 With Maven it's easy to deploy plugins to a Liferay Portal instance. Just follow
 these steps: 
@@ -2438,7 +2438,7 @@ you'll use when developing plugins with Maven:
 Now that you've deployed a plugin using Maven, let's consider the types of
 Liferay plugins you can develop with Liferay Maven archetypes. 
 
-### Liferay Plugin Types to Develop with Maven 
+### Liferay Plugin Types to Develop with Maven [](id=liferay-plugin-types-to-develop-with-mav-liferay-portal-6-2-dev-guide-02-en)
 
 You can develop all Liferay plugin types with Maven: portlets, themes,
 layout templates, hooks, and Ext. Next, you'll learn how to create each plugin
@@ -2452,7 +2452,7 @@ develop each type of plugin regardless of development environment.
 Let's start with portlet plugins. 
 
 
-#### Creating a Portlet Plugin 
+#### Creating a Portlet Plugin [](id=creating-a-portlet-plugin-liferay-portal-6-2-dev-guide-02-en)
 
 To create a Liferay portlet plugin project, follow the *Creating Liferay Plugins
 with Maven* section. 
@@ -2466,7 +2466,7 @@ find the Liferay portlet archetypes more easily.
 
 ---
 
-##### Anatomy 
+##### Anatomy [](id=anatomy-liferay-portal-6-2-dev-guide-02-en)
 
 A portlet project created from the
 `com.liferay.maven.archetypes:liferay-portlet-archetype` has the following
@@ -2511,14 +2511,14 @@ To view the full directory structure of a portlet developed by Ant, visit our
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
 section in this guide. 
 
-##### Deployment 
+##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en)
 
 To deploy your portlet plugin, follow the instructions detailed above in
 *Deploying Liferay Plugins with Maven*. 
 
 Congratulations! You successfully created a Liferay portlet plugin using Maven. 
 
-##### More Information 
+##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en)
 
 For detailed information on creating portlet plugins, see Chapter 3, 
 [Portlet Development](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3). 
@@ -2526,7 +2526,7 @@ For detailed information on creating portlet plugins, see Chapter 3,
 Next, let's run through a brief example for developing a theme plugin using
 Maven.
 
-#### Developing Liferay Theme Plugins with Maven 
+#### Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-ma-liferay-portal-6-2-dev-guide-02-en)
 
 So you're sitting in your armchair next to the fire, just as we described in our
 chapter introduction; shadows dance on the tapestry-covered wall, and Lenore II
@@ -2540,7 +2540,7 @@ mood for your users. We'll show you how to develop your own theme plugin (i.e.,
 your "scenery") using Maven so your portal has a lasting impression on anyone
 who visits. 
 
-##### Creating a Theme Plugin 
+##### Creating a Theme Plugin [](id=creating-a-theme-plugin-liferay-portal-6-2-dev-guide-02-en)
 
 Theme plugin creation is similar to portlet plugin creation. We'll start by
 assuming you already created the `sample-parent-project` and its `pom.xml`. 
@@ -2557,7 +2557,7 @@ find the Liferay portlet archetypes.
 
 ---
 
-##### Anatomy 
+##### Anatomy [](id=anatomy-liferay-portal-6-2-dev-guide-02-en-0)
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -2604,7 +2604,7 @@ of a
 Theme](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
 section in this guide. 
 
-##### Theme POM 
+##### Theme POM [](id=theme-pom-liferay-portal-6-2-dev-guide-02-en)
 
 The theme plugin project POM has two additional properties: 
 
@@ -2621,7 +2621,7 @@ The theme plugin project POM has two additional properties:
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
 
-##### Deployment
+##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-0)
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 Plugins with Maven* section. 
@@ -2637,7 +2637,7 @@ placed in the *target* directory. Its path is
 
 ---
 
-##### More Information 
+##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-0)
 
 For more information on Liferay themes and its settings, see Chapter 9,
 [Creating Liferay Themes and Layout
@@ -2646,13 +2646,13 @@ Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-
 You successfully developed a Liferay theme using Maven. Find out about
 developing hook plugins next. 
 
-#### Developing Liferay Hook Plugins with Maven 
+#### Developing Liferay Hook Plugins with Maven [](id=developing-liferay-hook-plugins-with-mav-liferay-portal-6-2-dev-guide-02-en)
 
 Hooks are the optimal plugin type for customizing Liferay's core features.
 Creating a hook is almost identical to portlet plugin creation in Maven. Let's
 take a look. 
 
-##### Creating a Hook Plugin 
+##### Creating a Hook Plugin [](id=creating-a-hook-plugin-liferay-portal-6-2-dev-guide-02-en)
 
 To create a Liferay hook plugin project, follow the steps outlined in the
 *Creating Liferay Plugins with Maven* section. 
@@ -2666,7 +2666,7 @@ Liferay portlet archetypes.
 
 ---
 
-##### Anatomy 
+##### Anatomy [](id=anatomy-liferay-portal-6-2-dev-guide-02-en-1)
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -2702,12 +2702,12 @@ of a Hook* section of the [Creating a
 Hook](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
 section in this guide. 
 
-##### Deployment 
+##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-1)
 
 To deploy your hook plugin, follow the instructions from the *Deploying Liferay
 Plugins with Maven* section. 
 
-##### More Information 
+##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-1)
 
 For detailed information on creating hooks, see the
 [Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
@@ -2716,7 +2716,7 @@ Chapter of this guide.
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
 
-#### Developing Liferay Layout Template Plugins with Maven 
+#### Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugi-liferay-portal-6-2-dev-guide-02-en)
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. In our introduction to themes, we
@@ -2736,7 +2736,7 @@ It shall clasp a sainted kitten whom the angels named Lenore II--"
 In memory of the late, now crispy Lenore II, let's create a layout template
 plugin with Maven. 
 
-##### Creating a Layout Template Plugin 
+##### Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin-liferay-portal-6-2-dev-guide-02-en)
 
 To create a Liferay layout template plugin project follow the *Creating Liferay
 Plugins with Maven* section.
@@ -2750,7 +2750,7 @@ the Liferay layout template archetypes.
 
 ---
 
-##### Anatomy 
+##### Anatomy [](id=anatomy-liferay-portal-6-2-dev-guide-02-en-2)
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -2783,12 +2783,12 @@ To view the directory structure of a layout template developed by Ant, visit the
 Project](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
 section in this guide. 
 
-##### Deployment 
+##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-2)
 
 To deploy your layout template plugin, follow the instructions detailed above in
 the *Deploying Liferay Plugins with Maven* section. 
 
-##### More Information 
+##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-2)
 
 For detailed information on creating layout templates, see Chapter 9, [Creating
 Liferay Themes and Layout
@@ -2798,7 +2798,7 @@ You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! In the next section we'll cover other
 Liferay-provided Maven archetypes. 
 
-#### Developing More Liferay Plugins with Maven 
+#### Developing More Liferay Plugins with Maven [](id=developing-more-liferay-plugins-with-mav-liferay-portal-6-2-dev-guide-02-en)
 
 Did you think we covered all the available archetypes for developing Liferay
 plugins? The Liferay team has been busy expanding our archetype list, and we're
@@ -2851,7 +2851,7 @@ understand Liferay's deprecation policy. That way you'll know when methods from
 our API's are deprecated, and you can make any necessary changes. We'll
 describe the deprecation policy next. 
 
-## Liferay's Deprecation Policy
+## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-liferay-portal-6-2-dev-guide-02-en)
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major releases of Liferay.
@@ -2883,7 +2883,7 @@ development haven't been deprecated.
 
 <!--I updated it based on the user guide. Please review -Russ -->
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-02-en)
 
 <!-- Summary needs to include Liferay IDE and Plugins SDK -->
 

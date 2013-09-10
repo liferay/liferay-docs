@@ -1,5 +1,5 @@
 
-# Resources for Liferay Developers 
+# Resources for Liferay Developers [](id=resources-for-liferay-developers-liferay-portal-6-2-dev-guide-13-en)
 
 The following are useful reference resources for developers working with the Liferay Platform:
 
