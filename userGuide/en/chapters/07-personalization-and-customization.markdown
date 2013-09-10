@@ -210,11 +210,11 @@ example, you may want to show blog entries horizontally instead of vertically,
 or list your assets in the asset publisher portlet in different sizes.
 
 Let's go through a simple use case to illustrate how creating a custom ADT can
-improve your site. Consider you're customizing the Nosester site and want to
+improve your site. Suppose you're customizing the Nose-ster site and want to
 allow users to spread their noses to other social networks. Specifically, you
 want to configure the Wiki portlet for collaboration with Facebook or Twitter.
 With ADTs, you can launch a template editor, create a custom template, and
-make your portlet host that template. Custom templates let you re-skin your
+configure your portlet host that template. Custom templates let you re-skin your
 portlet and give you ultimate control over its appearance and functionality in
 your portal.
 
@@ -230,35 +230,34 @@ template, you must create a custom template for that site's portlets.
 
 ![Figure 7.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
-If you'd like to add an ADT, select the portlet you'd like to customize. Below
-is a list of the portlets that can be customized using ADTs, and their sample
-template descriptions:
+If you'd like to add an ADT, select the portlet you'd like to customize. The
+list below specifies the portlets that can be customized using ADTs. It also
+provides sample template descriptions:
 
 - *Asset Publisher*: displays abstracts, icons, related assets, and print/edit
-actions for assets. Optionally includes asset bookmarks and ratings.
+  actions for assets. Optionally includes asset bookmarks and ratings.
 - *Blogs*: displays titles, authors, and abstracts compactly for blog entries.
 - *Categories Navigation*: displays a column for each vocabulary. Each column
-includes the name of a vocabulary with the vocabulary's top level categories
-listed underneath.
+  includes the name of a vocabulary with the vocabulary's top level categories
+  listed underneath.
 - *Media Gallery*: displays images in a carousel.
 - *Site Map*: displays a column for each top level page. Each column includes
-the name of a top level page with the page's immediate children listed
-underneath.
+  the name of a top level page with the page's immediate children listed
+  underneath.
 - *Tags Navigation*: displays asset tags colored by popularity: red (high),
-yellow (medium), and green (low).
+  yellow (medium), and green (low).
 - *Wiki*: displays social bookmarks and ratings for wiki pages and their child
-pages.
+  pages.
 
 To create a new ADT, click *Add* and select the template you'd like to create,
-based on portlet type. Then enter the name, description, and optional small
-image you'd like to use. You can select the language type for your template (FTL
-or VM). Lastly, the *Script* option lets you browse your file system for a
-template on your file system, or you can launch the editor and create one
-directly. On the left side of the template editor, you'll notice a palette of
-common variables used for making templates. This is a great reference when
-creating your template. To place one of the variables into the template editor,
-simply position your cursor where you want it placed, and click the variable
-name.
+based on portlet type. Then enter the name and, optionally, a description and a
+small image to use. You can select the language type for your template (FTL or
+VM). Lastly, the *Script* option lets you browse your file system for a template
+on your file system, or you can launch the editor and create one directly. On
+the left side of the template editor, you'll notice a palette of common
+variables used for making templates. This is a great reference when creating
+your template. To place one of the variables into the template editor, simply
+position your cursor where you want it placed, and click the variable name.
 
 Think it can't get any better? Guess again! If the variable name doesn't give
 you enough information on the variable's functionality, you can hover your
@@ -280,7 +279,7 @@ similar Wiki ADT. Instead of starting from scratch, you can import the existing
 Wiki ADT into your new one and build off of it. In other words, you can utilize
 ADTs as generic templates which allow for reusable code to be imported by
 Velocity or FreeMarker templates in the system. For more information on how to
-create a custom template, visit the *Liferay Developer's Guide*.
+create a custom template, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
@@ -299,9 +298,9 @@ your ADT through its *Actions* button. This provides several options:
 - *Copy*: creates a copy of the ADT.
 - *Delete*: deletes the ADT.
 
-In addition, your ADT generates a static URL and WebDAV URL. These values access
-the XML source of your template. You can find these URLs by clicking the ADT
-from the menu and expanding the *Details* section. With the WebDAV URL, site
+Additionally, your ADT generates a static URL and a WebDAV URL. These values
+access the XML source of your template. You can find these URLs by clicking the
+ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the *Document Management* chapter's *WebDAV access* chapter.
@@ -311,7 +310,7 @@ open its *Configuration* menu. In the *Display Settings* sub-tab located within
 the *Setup* tab, select your ADT from the *Display Template* drop-down menu.
 You'll notice they're separated by context type. Also, you can manage
 site-specific display templates for your portlet: do this by clicking the
-*Manage Display Templates for <SPECIFIC_SITE>* link next to the *Display
+*Manage Display Templates for [SPECIFIC_SITE]* link next to the *Display
 Template* drop-down menu. A window will display with a list of your configured
 templates only available for your site with options to add new templates or edit
 existing templates.
@@ -319,27 +318,28 @@ existing templates.
 ![Figure 7.7: In the *Configuration* menu of a portlet, you can edit and manage available ADTs.](../../images/adt-configuration.png)
 
 Now that you know the general functions of ADTs, let's create our own. This
-brief demonstration will show just how easy, yet powerful ADTs can be for your
-Liferay Portal.
+brief demonstration will show you just how easy, yet powerful, ADTs can be for
+your portal.
 
-1. Add the Media Gallery portlet by navigating to *Add* &rarr; *Content and
-Applications* &rarr; *Applications* &rarr; *Content Management* &rarr; *Media
-Gallery*.
+1. Add the Media Gallery portlet to a page by navigating to *Add* &rarr;
+   *Content and Applications* &rarr; *Applications* &rarr; *Content Management*
+   &rarr; *Media Gallery*.
 
 2. Select the *Options* wrench from the top right corner, then click
-*Configuration*.
+   *Configuration*.
 
 3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
-*Save*.
+   *Save* and close the popup.
 
-4. Click *Multiple Media* and select two custom photos to display. Then click
-*Save*, and navigate back to the main portlet screen.
+4. Click the *Add Multiple Media* linkand select two custom photos to display.
+   Then click *Save*, and navigate back to the main portlet screen.
 
 5. Notice the default format of the pictures. To change the display template for
-this portlet, navigate back to the *Options* wrench and click *Configuration*.
+   this portlet, navigate back to the *Options* wrench and click
+   *Configuration*.
 
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
-*Save*.
+   *Save*.
 
 	![Figure 7.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
 
@@ -353,7 +353,11 @@ Customizing the user interface of Liferay's bundled portlets provides the
 ultimate customization experience for Liferay users. Next, let's look at how to
 use Liferay's rules engine.
 
-## Using Liferay's rules engine  
+## Using Liferay's rules engine
+
+<!-- Befofe this section can be updated for 6.2, need to wait until the 6.2
+Drools EE plugin (or app) is available from the customer portal (or
+Marketplace). -->
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
