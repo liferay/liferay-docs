@@ -9,20 +9,24 @@ language (e.g. 'en' for English).
 Directory Structure
 ===================
 liferay-docs/
- |____ <document dir>/ (e.g. QuickstartGuide/, userGuide/, devGuide/, soffice/)
+ |____ <document dir>/ (e.g. userGuide/, devGuide/, soffice/)
  |      |____ <language dir>/ (e.g. 'en' for English, 'es' for Spanish)
  |      |      |
  |      |      |____ chapters/
- |      |      |      |____ [0-9][0-9]-<chapter subject>.markdown
+ |      |      |      |____ [0-9][0-9]-<subject>.markdown
  |      |      |            (e.g. 01-intro.markdown)		
  |      |      |
  |      |      |____ images/ (language specific versions of the default images)
  |      |
+ |      |____ code/ (code examples)
+ |      |____ drawings/ (source files, such as .odg files, for drawings)
  |      |____ images/ (default images for the document)
- |      |____ build.xml
+ |      |____ build.xml (boiler plate Ant build.file)
+ |      |____ doc.properties (project metadata)
  |
- |____ code/ (code for custom ant tasks)
- |____ lib/ (JARs for custom ant tasks)
+ |____ code/ (code for custom Ant tasks)
+ |____ guidelines/ (instructions on tools, Markdown conventions, and writing)
+ |____ lib/ (JARs for custom Ant tasks)
  |
  |____ README
  |____ build-common.xml
@@ -32,7 +36,7 @@ liferay-docs/
 
 Document Format Conversion
 ==========================
-Documents can be converted from markdown to HTML, epub and ODT formats using ant
+Documents can be converted from markdown to HTML, epub and ODT formats using Ant
 targets found in build-common.xml. Override default properties, found in
 build.properties, by creating your own properties file
 (e.g. build.<username>.properties) to specify your desired property values.
@@ -94,3 +98,18 @@ liferay-docs/<doc.name>/build/<lang>/
                    |      |____ userGuide.odt
                    |
                    |____ images/ (language specific images)
+
+Contributing Documentation
+--------------------------
+
+To contribute new material or bug fixes, please send pull requests to the
+respective document managers:
+
+Using Liferay Portal (userGuide) - Rich Sezov (Github user: sez11a) 
+Developer's Guide (devGuide) - Jim Hinkey (Github user: jhinkey)
+Social Office (soffice) - Jesse Rao (Github user: jrao)
+
+Here are the branches for the respective product releases:
+
+Liferay Portal 6.2 CE/EE - master
+Liferay Portal 6.1 CE/EE - 6.1.x
