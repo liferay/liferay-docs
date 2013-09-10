@@ -1,5 +1,5 @@
 
-# Using Web Forms and Dynamic Data Lists  
+# Using Web Forms and Dynamic Data Lists
 
 As needs change in business and organizations, the technology used to fulfill
 those needs must adapt as well. People use electronic means to do things that
@@ -8,13 +8,15 @@ to sign up on your web site for a holiday party. Or maybe every fall, you need
 to put up a job posting board, only allowing administrators to create new job
 posts. Maybe you want to allow users to manage a notebook or To-Do list on their
 private pages. In all of these cases, you want to enter in custom sets of data,
-allow your users to add their information and be able to access the set of data. 
+allow your users to add their information, and be able to access the set of
+data. 
 
 In the past, you'd need to be a developer to accomplish any of this. Today, you
 can do it without writing a single line of code. Enter Liferay's *Dynamic Data
-Lists*. This is an easy way to create, aggregate and display new data types.
+Lists*. This is an easy way to create, aggregate, and display new data types.
 Data Lists are flexible enough to handle all types of data, and you don't have
-to write any code. Simply put, Liferay gives you the power to:
+to write any code. Simply put, Liferay gives you the power to perform the
+following actions:
 
 - Define your own data definitions
 
@@ -26,15 +28,15 @@ to write any code. Simply put, Liferay gives you the power to:
 
 - Integrate lists into Workflow 
 
-All of this capability is easily distilled into two concepts: data defining and
-data displaying. These data lists are dynamic for a reason: they are flexible
-and powerful. Whether you want to collect simple input from the user or develop
-an entire data entry system for real estate listings, Dynamic Data Lists have
-your use case covered. Combined with the flexibility provided through templates
-and the power of languages like Velocity, entire applications can be built in a
-short time.
+All of this capability can be easily distilled into two concepts: data defining
+and data displaying. These data lists are dynamic for a reason: they are
+flexible and powerful. Whether you want to collect simple input from the user or
+develop an entire data entry system for real estate listings, Dynamic Data Lists
+have your use case covered. Combined with the flexibility provided through
+templates and the power of languages like Velocity, entire applications can be
+built in a short time.
 
-## Building a list platform in Liferay  
+## Building a List Platform in Liferay and Defining Data Types
 
 To expand and extend the social capabilities of our site, we want to build a
 new, radical platform on Liferay: custom-built lists that users can share and
@@ -43,18 +45,17 @@ Relation type). Marketing has come up with a great name for our new service:
 `list.it`. Our beautiful `list.it` dashboard will give users the power to
 generate their own lists, see the lists of their friends and tally the results
 of certain types of lists (surveys, anyone?). Liferay makes this as simple as
-throwing some Dynamic Data List Display and Form portlets on a user's private
-and public user pages. 
-
-## Defining data types  
+throwing some Dynamic Data List Display and Form portlets on the public and
+private pages of users' personal sites.
 
 When new users log in to `list.it`, they are going to want to build a few lists
 for themselves. Chances are, many of the lists they would want to create--to do
 lists, shopping lists and memos come to mind--are already defined in the portal.
 All the user has to do is create a new list, choose that pre-defined data type,
-and have at it! A number of data definitions ship with the portal to help you
-get started: *To Do*, *Issues*, *Meeting Minutes* and *Contacts*. Use these on
-their own to generate new data lists or tweak them to fit your use case. 
+and have at it! A number of data definitions ship with the portal's default site
+to help you get started. These include *To Do*, *Issues Tracking*, *Meeting
+Minutes*, and *Contacts*. Use these on their own to generate new data lists or
+tweak them to fit your use case. 
 
 If none of the built-in data definitions suits your needs, you can define your
 own. Perhaps we want to allow our `list.it` users (who would probably call
@@ -67,31 +68,34 @@ You now have a `list.it` account and have been dying to bug your friends and
 family to sign up for "volunteer" work: helping you move into a new apartment.
 Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
-for your site, you can find them in the content section of the control panel,
-selecting *Go To &rarr; Control Panel &rarr; Content &rarr; Dynamic Data Lists*
-or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*.
+for your site, you can find them in the Content section Site Administration are
+of the Control Panel. To manage the dynamic data lists of your site, click
+*Admin* from the Dockbar and select *Content*. Then click on *Dynamic Data
+Lists*.
 
-![Figure 10.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
+![Figure 10.1: You can manage dynamic data lists from the Content section of the Site Administration area of the Control Panel.](../../images/05-ddl-control-panel.png)
 
-Within the dynamic data lists section, you can either create a new data type
-(*Manage Data Definitions*) or a new list from an existing data type. Also, a
-new feature introduced in Liferay 6.2 is the *Copy* button. This copies the DDM
-templates associated with an existing data definition. You can access the Copy
-button by navigating to *Manage Data Definitions* and clicking *Actions* &rarr;
-*Copy*. The Copy menu gives options to copy the form and display templates
-associated with the data definition. We'll discuss how to manage and create form
-and display templates later in the chapter. When you're finished, the copied
-data definition can be accessed in the *Manage Data Definitions* menu. Now when
-you'd like to create a data definition based on an already existing one, you can
-use the copied version as a checkpoint and work off of it.
+From the Dynamic Data Lists portlet in the Control Panel, you can either click
+*Add* to create a new dynamic data list from an existing data type or you can
+click *Manage Data Definitions* to add or edit data definitions. Liferay 6.2
+introduced the *Copy* action which copies the DDM templates associated with an
+existing data definition. You can access the Copy button by navigating to
+*Manage Data Definitions* and clicking *Actions* &rarr; *Copy* next to a data
+definition. The Copy menu includes options for copying the form and displaying
+templates associated with the data definition. We'll discuss how to manage and
+create form and display templates later in the chapter. When you're finished,
+the copied data definition can be accessed in the *Manage Data Definitions*
+menu. The Copy feature lets you create new data definitions based on existing
+ones. You can use the copied version as a checkpoint and work off of it.
 
-If you have a new data type, you need to create a definition for it first. Click
-*Manage Data Definitions* and click the *Add* button. The first thing you should
-enter is a name for the definition and a description. Call it *Volunteer
-Sign-Up*. When creating a new data definition, you have a palette of fields to
-lay out, as well as a blank canvas to construct the definition. The interface
-looks similar to creating and editing web content structures covered previously.
-Let's explore the different data types at our disposal:
+If you want to use a new data type, you need to create a definition for it.
+From the Dynamic Data Lists portlet in the Control Panel, click *Manage Data
+Definitions* and click the *Add* button. The first thing you should enter is a
+name for the definition and a description. Create a new data definition called
+*Volunteer Sign-Up*. When creating a new data definition, you have a palette of
+fields to lay out, as well as a blank canvas to construct the definition. The
+interface looks similar to creating and editing web content structures covered
+previously. Let's explore the different data types at our disposal:
 
 **Boolean:** presents a checkbox to the user and stores either a `true`
 (checked) or `false` (unchecked) based on state.
@@ -126,64 +130,64 @@ box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 10.2: Data definition fields.](../../images/05-data-definition-screen.png)
+![Figure 10.2: You can combin many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
-tasks your friends and family can volunteer to do for you, use *Select*
-(obviously set to allow multiple options). Finally, you don't want to forget a
-*Documents and Media* so they can upload images of themselves. After all, how
-much more official-feeling and fun is it if you can print out some nifty badges?
-To add these fields, drag them from the palette on the left to the work area on
-the right.
+tasks your friends and family can volunteer to do for you, use *Select* to allow
+users to choose from a list of tasks. Finally, don't forget a *Documents and
+Media* field users can upload images of themselves. After all, how much more
+official-feeling and fun is it if you can print out some nifty badges? To add
+these fields, drag them from the palette on the left to the work area on the
+right.
 
 When creating data definitions, you can also customize the appearance of the
 input fields and provide helpful tips and hints for those entering data. Some
 data types have specific configuration options but all have some in common. The
 following properties can be edited in three ways: 1) by double-clicking on any
-field, 2) by clicking the gear icon in the upper-right corner of the field or 3)
-by clicking the *Settings* tab when the field is selected. Let's take a look at
-the properties you can edit for each of these field types: 
+field, 2) by clicking the wrench icon in the upper-right corner of the field or
+3) by clicking the *Settings* tab when the field is selected. Let's take a look
+at the properties you can edit for each of these field types: 
 
-**Type:** Lists the type of field placed in the definition. This is not editable
-but is available to reference from a display template.
+- **Type:** Lists the type of field placed in the definition. This is not
+  editable but is available to reference from a display template.
 
-**Field Label:** Sets the text that can be displayed with the field. This is the
-human-readable text that the user sees.
+- **Field Label:** Sets the text that can be displayed with the field. This is
+  the human-readable text that the user sees.
 
-**Show Label:** When set to *Yes*, the label is shown with the form field.
+- **Show Label:** When set to *Yes*, the label is shown with the form field.
 
-**Required:** When set to *Yes*, this field must have data in it for a new entry
-to be submitted (not available for Boolean).
+- **Required:** When set to *Yes*, this field must have data in it for a new
+  entry to be submitted (not available for Boolean).
 
-**Name:** The name of the field internally, automatically generated. Since this
-is the variable name that you can read the data from in a display template, you
-should give a more memorable name here.
+- **Name:** The name of the field internally, automatically generated. Since
+  this is the variable name that you can read the data from in a display
+  template, you should give a more memorable name here.
 
-**Predefined Value:** If you would like example data or a default value for the
-user to start with, enter it here. The field's value defaults to this when
-adding a new entry.
+- **Predefined Value:** If you would like example data or a default value for
+  the user to start with, enter it here. The field's value defaults to this when
+  adding a new entry.
 
-**Tip:** Each field can have a small help icon, with a tooltip attached that
-displays helpful information. If you would like to provide text for the tooltip
-you may enter it here.
+- **Tip:** Each field can have a small help icon, with a tooltip attached that
+  displays helpful information. If you would like to provide text for the
+  tooltip you may enter it here.
 
-**Indexable:** When set to *Yes*, Liferay is able to index your field for
-search.
+- **Indexable:** When set to *Yes*, Liferay is able to index your field for
+  search.
 
-**Repeatable:** When set to *Yes*, the field is repeatable. Your users can then
-add as many copies of this field as they like.
+- **Repeatable:** When set to *Yes*, the field is repeatable. Your users can
+  then add as many copies of this field as they like.
 
-**Width:** Sets the visual width of the form on the page. It does not affect the
-values that are stored. Possible values are *Small*, *Medium* and *Large* (not
-available for Boolean, Documents and Media, Radio, and Select).
+- **Width:** Sets the visual width of the form on the page. It does not affect
+  the values that are stored. Possible values are *Small*, *Medium* and *Large*
+  (not available for Boolean, Documents and Media, Radio, and Select).
 
-**Multiple:** When set to *Yes*, allows the user to select more than
-one option. This defaults to no (only available for Select).
+- **Multiple:** When set to *Yes*, allows the user to select more than one
+  option. This defaults to no (only available for Select).
 
-**Options:** Changes the options available for selection. You're able to add and
-remove options as well as edit each individual option's display name and value
-(only available for Radio and Select).
+- **Options:** Changes the options available for selection. You're able to add
+  and remove options as well as edit each individual option's display name and
+  value (only available for Radio and Select).
 
 ![Figure 10.3: Data field properties.](../../images/05-data-definition-field-properties.png)
 
@@ -223,7 +227,7 @@ then instantly updated with the new or changed fields.
 
 All that's left to do is build a new data list and let your users play with it.
 
-## Creating data lists  
+## Creating Data Lists
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
@@ -238,7 +242,8 @@ definition and robust data entry and delivery.
 
 To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
-1. From the *Content* section of the Control Panel, select *Dynamic Data Lists*.
+1. From the Dockbar, click on *Admin* &rrar; *Content* and then on *Dynamic Data
+   Lists*.
 
 2. Click on *Add* to create a new list based on a data definition, which in our
    case is the volunteer sign-up.
@@ -259,14 +264,11 @@ the layout as well, which means the form looks just the way you laid it out.
 
 ![Figure 10.4: Entering a new data record.](../../images/05-ddl-add-record.png)
 
-<!-- Photos from this point and below may need to be replaced. Will wait until
-after new theme is implemented for 6.2 -->
-
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
 questions bring us to the mecca that is the display side of this equation.
 
-### Using data list forms  
+### Using Data List Forms
 
 A nice way to enable people to use your forms is the Dynamic Data List Forms
 portlet. This portlet is tailored to entering new records. When you deploy that
@@ -279,12 +281,13 @@ Display portlet: just set it up, point it to a list (either existing or new) and
 let it go. This is very easy to do. 
 
 To display a list inside the portlet, add the Dynamic Data List Form portlet to
-a page from the Dockbar: *Add &rarr; More &rarr; Dynamic Data List Form*. With
-the portlet on the page, click on the small gear icon in the lower left corner.
-This takes you to the configuration page, where you can select a list to use for
-the form entries. Each time a user visits your page with the volunteer sign-up,
-they are presented with a form to fill out. If they have already filled out an
-entry, a message is displayed instead.
+a page: Click the *Add* button on the left side of the screen, click on
+*Applications* and search for *Dynamic Data List Form*. With the portlet on the
+page, click on the small gear icon in the lower left corner. This takes you to
+the configuration page, where you can select a list to use for the form entries.
+Each time a user visits your page with the volunteer sign-up, they are presented
+with a form to fill out. If they have already filled out an entry, a message is
+displayed instead.
 
 Unlike the Web Content Display portlet, however, the Dynamic Data List Forms
 portlet may not be installed already in your portal. If not, just head over to
@@ -293,7 +296,7 @@ Liferay Marketplace, grab it and install it.
 You can publish your lists anywhere in your portal too. Read on to find out more
 about that. 
 
-### Using default displays  
+### Using default displays
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
@@ -342,7 +345,7 @@ his B.O. problem. For reasons like that, you'll need to customize the data entry
 form or the display of the list. Liferay lets you do exactly that using a custom
 *form template* or *display template*. 
 
-## Make it pretty: creating custom displays  
+## Make it pretty: creating custom displays
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
@@ -354,7 +357,7 @@ to customize: form templates and display templates. This covers the forms of
 lists (*form templates*), as well as the display of the list contents (*display
 templates*). 
 
-### Form templates  
+### Form templates
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
@@ -386,7 +389,7 @@ few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-### Display templates  
+### Display templates
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
@@ -542,7 +545,7 @@ environment that requires approval from other users, then it's not enough to
 just create the list and display a form. What you need is a real integration
 with Workflow. Workflow integrates smoothly with Dynamic Data Lists.
 
-### Using workflow  
+### Using workflow
 
 Liferay integrates the powerful features of workflow and the data capabilities
 of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic
@@ -564,7 +567,7 @@ Choose the workflow you would like to use, then every record has to go through
 the workflow process. Now if you need to preview or edit entries as they're
 coming in, it's easy to work in to your daily workflow.
 
-#### Creating a Kaleo Form  
+#### Creating a Kaleo Form
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -579,7 +582,7 @@ Inside Kaleo Forms, users can create lists that follow a workflow, called a
 *process*, or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
-#### Starting a new Process  
+#### Starting a new Process
 
 Defining processes that must be followed in data collection and entry is a
 fundamental part of business. Historically, this hasn't been fun or easy but
@@ -610,7 +613,7 @@ While the form looks complicated, it can be straightforward. There are a few
 pieces that make up a process and clicking on each one takes you to the relevant
 list of options to insert.
 
-##### Selecting an Entry Definition  
+##### Selecting an Entry Definition
 
 The first part of a new Kaleo process is also the simplest: the entry
 definition. This is just another way to refer to a data definition. All of the
@@ -618,7 +621,7 @@ available data definitions can be chosen, including our awesome "Volunteer
 Sign-Up List." Just like with normal data lists, you can always create a new
 entry definition from the list view by clicking on *Add new definition*.
 
-##### Selecting an Initial Form  
+##### Selecting an Initial Form
 
 One of the great advantages to using Kaleo forms to present your list as a
 process is having total control over the form template. You can always use a
@@ -643,7 +646,7 @@ edit mode form.
 Once you have chosen the initial display you want, all that's left to do is
 configure the workflow for your process.
 
-##### Selecting a Workflow  
+##### Selecting a Workflow
 
 You can now select a workflow to apply to your new list-defined process. All the
 available workflows can be chosen and you can create new ones from the selection
@@ -656,7 +659,7 @@ We'll keep ours simple and just choose "Single Approver Definition." This gives
 us a starting point (entry creation) and a 'review' task, which we can use to
 add additional information in a secondary form.
 
-##### Assigning Workflow Task Forms  
+##### Assigning Workflow Task Forms
 
 Many workflows offer you the option of having multiple editorial and review
 stages. During these stages, you might want to offer different forms that allow
@@ -665,7 +668,7 @@ opportunity to fine-tune the stages of workflow to use different forms.
 
 When inside the view to assign forms to tasks:
 
-1. Choose the workflow task by clicking on it.  This selects the task in the
+1. Choose the workflow task by clicking on it. This selects the task in the
    chart.
 
 2. In the details pane on the left-hand side there is a property called `Forms`.
@@ -681,7 +684,7 @@ You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
 Kaleo Forms.
 
-#### Using a Kaleo Form  
+#### Using a Kaleo Form
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -710,7 +713,7 @@ If you are a Listie, or a `list.it` developer, you're now prepared to show your
 lists to the world. That is, in fact, the reason you created `list.it` in the
 first place, right? 
 
-## Summary  
+## Summary
 
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our
