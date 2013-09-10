@@ -4,10 +4,10 @@ If you're anything like Liferay Portal's developers, you don't want to be
 forced to work with one development technology. Our developers build Liferay
 with the tools they prefer. That's why we strive to provide you with as much
 flexibility as possible. You can develop your Liferay-based portal with tools
-ranging in complexity from IDEs like Eclipse, Netbeans or IntelliJ Idea, to
+ranging in complexity from IDEs like Eclipse, Netbeans, or IntelliJ Idea, to
 text editors like Notepad, Vim, or Emacs. You can write your persistence layer
 directly using SQL and JDBC, or use advanced object-relational mapping
-libraries like Hibernate or iBatis. You get the idea. 
+libraries like Hibernate or iBATIS. You get the idea. 
 
 In this chapter we'll introduce and show you how to set up a streamlined
 development environment specifically designed for developing your Liferay
@@ -19,6 +19,8 @@ the topics we'll cover along the way:
 - Developing Plugins Using Maven 
 - Liferay's Deprecation Policy 
 
+<!-- Let's put the Deprecation Policy into the APIs chapter - Jim -->
+
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
 overwhelming for newcomers, though. So we removed some of the options,
@@ -27,9 +29,9 @@ We actually added to the list of technologies you can use by developing
 specific tools that soften the learning curve for Liferay plugin development,
 and providing ways for you to use alternative tools. The most significant
 Liferay-specific tool is Liferay IDE, a fully featured Integrated Development
-Environment based on Eclipse. Alternatively, there's the Plugins Software
+Environment (IDE) based on Eclipse. Alternatively, there's the Plugins Software
 Development Kit (SDK), which is based on Apache Ant and can be used with any
-editor or Integrated Development Environment (IDE) you'd like. If you'd like,
+editor or Integrated Development Environment you'd like. If you'd like,
 you can also use Apache Maven Archetypes; there are plenty of Liferay
 archetypes you can use to develop your plugins. 
 
@@ -38,7 +40,7 @@ IDE.
 
 ## Developing Apps with Liferay IDE 
 
-Even if you're a grizzled veteran of Java development, if you're going to be
+Even if you're a grizzled veteran Java developer, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
 Liferay IDE. When Liferay IDE is mated with the Plugins SDK and a Liferay
 runtime environment, you have a one stop development environment, where you can
@@ -52,17 +54,23 @@ supports development of portlets, hooks, layout templates, themes, and ext
 plugins. To use Liferay IDE, you need the Eclipse Java EE developer package
 using Helios or a later version. 
 
-In this section we'll get you started by showing you how to install Liferay
-IDE, but we won't stop there; we'll take you through the setup process, get
-your runtime environment set up, and start introducing you to some of Liferay
-IDE's cool features. More complete demonstrations of Liferay IDE and it's
-features can be found in the chapters specifically describing the development
-of a plugin type (e.g., the *portlets* chapter). There's a helpful code
-generation tool called Service Builder that we'll introduce here, but we've
-given it a separate chapter in this guide because it deserves a through
-description; check it out, we think you'll be impressed. how to develop
-in-depth then develop some plugins with Liferay IDE. Last we'll discuss Liferay
-IDE's Remote Server Adapter. 
+In this section we'll show you how to install Liferay IDE, set up projects for
+your applications, and deploy them to your portal. We'll get you started with
+the basics of developing your Liferay application in Liferay IDE. The guide has
+other chapters geared to each specific plugin type (e.g., the *portlets* chapter
+covers portlet development, the *hooks* chapter covers hook development, etc.).
+But, as an application project and portlet plugins together in this chapter,
+you'll get the gist of how Liferay IDE helps you create all types of plugins
+easily. 
+
+We'll introduce you to Liferay's Service Builder. It helps you leverage
+Hibernate's Object-Relational Mapping capabilities and gives you the capability
+to automatically generate code to access the object data. We'll point out the
+various editor modes Liferay IDE provides for creating your data entities,
+relating them, and building services around them. This section gives you quick
+tour, but we've dedicated an entire chapter later in this guide to give
+Liferay's Service Builder the attention it deserves; check it out, we think
+you'll be impressed. 
 
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
