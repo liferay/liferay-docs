@@ -108,7 +108,7 @@ look at how users can customize applications.
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
-user visits such a page, a notification will appear stating that the user can
+user visits such a page, a notification appears stating that the user can
 customize the page. Users can make customizations only in the sections of pages
 designated by administrators. Customizations are based on the rows and columns
 of a page layout. Page customizations are only visible to the user who made the
@@ -116,21 +116,19 @@ customizations. By default, site members can make page customizations but
 non-site members and guests can't.
 
 To enable page customizations as an administrator, first navigate to the page
-you'd like to let site members modify. Then select *Manage* &rarr; *Page
-Customizations* from the Dockbar.
+you'd like to let site members modify. Then click on the *Edit* button at the
+left side of the page, expand the *Customization Settings* area, and click on
+the *Show Customizable Sections* button. 
 
-![Figure 7.1: To enable page customizations, select *Manage* &rarr; *Page
-Customizations* from the Dockbar.](../../images/page-customizations.png)
+![Figure 7.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
 
-Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or
+Once you've clicked the *Show Customizable Sections* button, you'll see one or
 more red regions, depending on the layout template of your page. Check one or
 more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 7.2: Check one or more of the *Customizable* boxes to allow site
-members to customize certain sections of the
-page.](../../images/customizable-regions.png)
+![Figure 7.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification
 saying, "You can customize this page." Site members can toggle between viewing
@@ -141,53 +139,51 @@ match the default page. This allows users to discard one set of customizations
 and start a new set without having to manually undo each customization that
 they'd previously made.
 
-Note that non-administrator site members can access the Add menu from the
-Dockbar when viewing their customizable page even if they don't ordinarily have
-permission to view this menu. This allows them to add portlets to the sections
-of the page that they're allowed to customize. If they click *View Default
-Page*, the Add menu will disappear from the Dockbar since they're not allowed to
-modify the default page.
+Note that non-administrator site members can access the Add menu from the left
+side of the screen when viewing their customizable page even if they don't
+ordinarily have permission to view this menu. This allows them to add portlets
+to the sections of the page that they're allowed to customize. If they click
+*View Default Page*, the Add menu will disappear from the Dockbar since they're
+not allowed to modify the default page.
 
-![Figure 7.3: Non-administrator site members can customize their own versions of
-customizable pages but can't modify the default
-page.](../../images/default-customizable-page.png)
+![Figure 7.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
-the *default page* view and the *customized page*. Changes made to the *default
-page* affect all users, whereas changes made to the *customized page* affect
-only the administrator who made the changes.  Changes made by administrators to
-non-customizable sections in the *default view* are immediately applied for all
-users. However, changes made by administrators to customizable sections do *not*
-overwrite users' customizations.
+the *default page* view and the *customized page* view. Changes made to the
+*default page* affect all users, whereas changes made to the *customized page*
+affect only the administrator who made the changes. Changes made by
+administrators to non-customizable sections in the *default view* are
+immediately applied for all users. However, changes made by administrators to
+customizable sections do *not* overwrite users' customizations.
 
 Users can make two kinds of customizations to customizable regions. First, they
 can configure any portlet applications within the customizable regions. Second,
-they can add portlets to or remove portlets from the customizable regions. As a
-simple example, suppose that you, as an administrator, selected the right column
-of the default portal homepage to be customizable. A member of the default site
-could take the following steps to make a personal customization of the portal
-homepage:
+they can add portlets to or remove portlets from the customizable regions. For
+example, suppose that you, as an administrator, selected the right column of the
+Welcome page of the Nose-ster site to be customizable. A member of the Nose-ster
+site could take the following steps to make a personal customization of the
+Welcome page:
 
-1. Navigate to the portal homepage by clicking *Go To* &rarr; *Liferay* from the
-   Dockbar. (The portal homepage belongs to an automatically created site called
-*Liferay*, by default.)
-2. Remove the Hello World portlet remove from the right column of the page.
-3. Add the Language portlet to the right column by clicking *Add* &rarr; *More*
-   in the Dockbar, expanding the *Tools* category, and clicking *Add* next to
-*Language*.
+1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Nose-ster* from
+   the Dockbar.
+2. Remove the Hello World portlet from the right column of the page.
+3. Add the Language portlet to the right column of the page by clicking *Add*,
+   clicking on *Applications*, searching for *Language*, and clicking *Add* next
+   to its name.
 4. Configure the Language portlet by clicking on the wrench icon and selecting
    *Configuration* and then opening the *Display Style* dropdown menu and
-choosing *Select Box*.
+   choosing *Select Box*.
 
-The Language portlet is useful to have on your portal homepage if you expect
+The Language portlet is useful to have on your portal's homepage if you expect
 users who speak different languages to access your portal. Users can select
 their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
-Language portlet, the customized portal homepage looks like this:
+Language portlet, the customized Welcome page looks like this:
 
-![Figure 7.4: In this example, Joe Bloggs removed the Hello World portlet, added
-the Language portlet, and changed the display style from icons to a select
-box.](../../images/customized-portal-homepage.png)
+![Figure 7.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+
+<!-- This section needs updating for 6.2. The following two paragraph's
+statements about the required permissions and roles seem to be obsolete. -->
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
@@ -203,7 +199,7 @@ In addition to granting the ability to customize portlet configurations, the
 and to import or export portlet settings. Next, let's look at how to use
 application display templates.
 
-## Using application display templates 
+## Using Application Display Templates 
 
 Application display templates work similarly to site and page templates, but at
 the portlet level. The application display template (ADT) framework allows
