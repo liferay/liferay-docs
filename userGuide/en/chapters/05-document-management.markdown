@@ -1,22 +1,20 @@
-
 # Document Management  
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
 can use it to store files of any kind; it serves as a virtual shared drive. The
-Documents and Media portlet introduced in Liferay 6.1 takes its name from the
-fact that it represents a redesign of two portlets from previous versions: the
-Document Library and the Image Gallery. First, the Documents and Media library
-serves as a repository for all types of files; there's no need to store image
-files in a separate Image Gallery anymore. Second, the Media Gallery portlet
-introduced in Liferay 6.1 does not serve as a repository but just displays
-selected content from the Documents and Media library. It can display image,
-audio and video files. Other features introduced with Liferay 6.1's Documents
-and Media library include customizable document types and metadata sets,
-automatic document preview generation and support for mounting multiple external
-repositories. The new document types and metadata sets are an addition to, not a
-replacement for, the portal's system of tags and categories. Let's start
-exploring how to use the Documents and Media portlet.
+Documents and Media portlet takes its name from the fact that it represents a
+redesign of two portlets from previous versions: the Document Library and the
+Image Gallery. First, the Documents and Media library serves as a repository for
+all types of files; there's no need to store image files in a separate Image
+Gallery anymore. Second, the Media Gallery portlet does not serve as a
+repository but just displays selected content from the Documents and Media
+library. It can display image, audio and video files. Other features in the
+Documents and Media library include customizable document types and metadata
+sets, automatic document preview generation and support for mounting multiple
+external repositories. The new document types and metadata sets are an addition
+to, not a replacement for, the portal's system of tags and categories. Let's
+start exploring how to use the Documents and Media portlet.
 
 ## Getting Started with the Documents and Media Portlet
 
@@ -37,11 +35,11 @@ The default view of the Documents and Media portlet displays the contents of the
 You can use these filters to choose what you want the main window of the portlet
 to display. *Recent* displays documents users have recently uploaded, edited or
 downloaded. *Mine* shows *your* documents; in other words, the documents you
-have uploaded. *Basic Document* and the document types listed below it are also
-filters. If you click on one of these filters, the main portlet window shows
-only documents that belong to the selected document type. When you add custom
-document types, which we discuss below, they are added to the filter list. Next,
-let's look at how to navigate around Documents and Media. 
+have uploaded. *Browse by Type* displays a list of options you can choose to
+help filter your results. If you click on one of these filters, the main portlet
+window shows only documents that belong to the selected document type. When you
+add custom document types, which we discuss below, they are added to the filter
+list. Next, let's look at how to navigate around Documents and Media.
 
 ### Navigating the Documents and Media Portlet  
 
@@ -49,7 +47,7 @@ In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
 as well as its uploader and the user who last edited it. Depending on the
 document, some automatically extracted metadata may also be displayed, such as
-the document creator, author, title, content type, creation date and last
+the document creator, author, title, content type, creation date, and last
 modification date. In the case of audio or video files, the duration would also
 be displayed. You can perform several actions on the document here:
 
@@ -75,16 +73,17 @@ have permission. You can check the document back in when you're done working.
 **Permissions:** allows you to configure file-specific permissions for the
 document.
 
-**Delete:** lets you remove the document from the Documents and Media library.
+**Move to the Recycle Bin:** lets you remove the document from the Documents and
+Media library.
 
 If comments are enabled, you can also view comments, add comments, or subscribe
 to comments about documents. Comments are enabled by default.
 
-![Figure 5.2: Viewing a Document](../../images/05-doclib-document-view.png)
+![Figure 5.2: You can click an asset in the Documents and Media portlet to view its options and properties.](../../images/05-doclib-document-view.png)
 
 The menu at the top of the Documents and Media portlet contains Actions, Add,
 Sort By and Manage buttons. There are also buttons for switching between icon
-view, descriptive view and list view. If there are lots of documents in the
+view, descriptive view, and list view. If there are lots of documents in the
 Documents and Media library, the search field can help you find the documents
 you're looking for. If your portlet contains more documents than it can display
 at once, you can use the navigation tool at the bottom of the portlet window to
@@ -117,12 +116,13 @@ option prevents anyone else from modifying it while you are working.
 the portlet's file system. You can move multiple documents and folders at the
 same time. Moving documents and folders is also possible via drag & drop.
 
-**Delete:** allows you to remove a document or folder from the portlet. You can
-delete multiple documents and folders at the same time.
+**Move to the Recycle Bin:** allows you to remove a document or folder from the
+portlet. You can move multiple documents and folders to the Recycle Bin at the
+same time.
 
 #### Add  
 
-From the Add button, you can add documents, folders and shortcuts just like on
+From the Add button, you can add documents, folders, and shortcuts just like on
 your local file system.
 
 **Folder:** lets you create a new location in your portlet's file system.
@@ -160,20 +160,21 @@ upload, you can select that document type from the Add menu. This will associate
 the metadata fields associated with the document type to your document and you
 will be asked to fill out the fields.
 
-A new feature introduced in Liferay 6.2 is the drag-and-drop upload feature.
-Instead of manually uploading an asset via the portlet's menu, you can select
-and drag an asset from your desktop and drop it onto your portlet. You can also
-drag-and-drop folders full of assets. When you drag the asset onto your browser,
-the Documents and Media portlet is highlighted blue indicating its compatibility
-for the drag-and-drop feature. When the asset is finally dropped on the
-highlighted region, the asset is automatically uploaded and available instantly.
+Another useful feature for Liferay's Documents and Media portlet is the
+drag-and-drop upload feature. Instead of manually uploading an asset via the
+portlet's menu, you can select and drag an asset from your desktop and drop it
+onto your portlet. You can also drag-and-drop folders full of assets. When you
+drag the asset onto your browser, the Documents and Media portlet is highlighted
+blue indicating its compatibility for the drag-and-drop feature. When the asset
+is finally dropped on the highlighted region, the asset is automatically
+uploaded and available instantly.
 
 Let's move on and discuss the Sort action.
 
 #### Sort  
 
 You can sort the items displayed in the main window of the Documents and Media
-portlet using the Sort By menu. You can sort by title, create date, modified
+portlet using the *Sort By* menu. You can sort by title, create date, modified
 date, downloads or size.
 
 **Title:** lets you alphabetically sort documents by title.
@@ -187,6 +188,8 @@ downloaded.
 
 **Size:** lets you sort documents by how much disk space they use.
 
+Let's dive into the Manage action next!
+
 #### Manage  
 
 The Manage menu allows you to view the names of document types and metadata
@@ -197,27 +200,29 @@ sets, as well as the last times they were edited.
 **Metadata Sets:** shows you a list of defined metadata sets as well as their
 portal IDs.
 
+Now that we know the basic functionality of the Documents and Media portlet,
+let's explore document types and metadata sets.
+
 ## Document Types and Metadata Sets  
 
-Customizable document types and metadata sets are new features in Liferay 6.1.
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages
 users not to forget to enter important information about their documents. For
-example, you could create a "copyrighted" document type and require users to
+example, you could create a *copyrighted* document type and require users to
 enter a license for all "copyrighted" documents. More importantly, document
 types and metadata sets can improve document searchability. The values that
 users enter into the fields determined by their document type's metadata set
 become searchable entities within the portal. You can use Liferay's search
 portlet to search for these terms. Document types and metadata sets are
-accessible from the Manage Button at the top of the Documents and Media portlet
-window.
+accessible from the *Manage* button at the top of the Documents and Media
+portlet window.
 
-![Figure 5.3: Document Types Dialog Box](../../images/05-document-types.png)
+![Figure 5.3: Navigate to the Document Types Dialog Box by clicking *Manage* &rarr; *Document Types*.](../../images/05-document-types.png)
 
 You can add a new document type using the Add button at the top of the dialog
 box. To do so, you need to define one or more metadata sets to associate with
-your document type. When creating a new document type, you can define "Main
-Metadata Fields" or select "Additional Metadata Fields". Main metadata fields
+your document type. When creating a new document type, you can define *Main
+Metadata Fields* or select *Additional Metadata Fields*. Main metadata fields
 are directly tied to their document type and cannot be made available to other
 document types. Additional metadata fields, by contrast, can be defined
 independently and can be used in many different document types. You can
@@ -226,23 +231,23 @@ by defining different main metadata fields for them. However, additional
 metadata fields need to be defined and saved before creating a document type
 that will implement them. 
 
-As an example, we could create a document type called "Syllabus" and define a
+As an example, we could create a document type called *Syllabus* and define a
 metadata set. What metadata should we associate with syllabi? Let's choose for
-our syllabi to have course title, professor, semester, course description and
+our syllabi to have course title, professor, semester, course description, and
 course requirements fields. All syllabi in our portal should maintain entries
 for these fields. This ensures that a syllabus will show up in a portal search
 if its course title, professor or semester is searched for. Since we don't want
-to use our metadata set for any document type other than "Syllabus," let's
+to use our metadata set for any document type other than *Syllabus*, let's
 create our metadata set under the Main Metadata Fields area. Alternatively, we
 could create our metadata set independently using *Manage &rarr; Metadata Sets
 &rarr; Add* and then select it as an Additional Metadata Field. 
 
-You can view, edit or add metadata sets from the *Manage &rarr; Metadata*
-window. A metadata set consists of a group of fields. If you click the Add
+You can view, edit, or add metadata sets from the *Manage &rarr; Metadata*
+window. A metadata set consists of a group of fields. If you click the *Add*
 button, you can use same UI for defining a metadata set that you used in the Add
 Document Type window.
 
-![Figure 5.6: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
+![Figure 5.6: Adding a New Metadata Set is easier than ever with Liferay's advanced editor.](../../images/05-new-metadata-set.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Editor had icons missing during image updating cycle -->
@@ -251,9 +256,10 @@ Make sure the Fields tab is selected on the left. Then, to define a metadata
 set, just choose fields to use from the area on the left and drag and drop them
 into the area on the right. The drag and drop interface allows for nested fields
 so you need to be careful about where you drop the fields. Default values,
-mouse-over tips, widths and other settings can be configured for most fields. To
-configure these settings, just double-click on a field from the area on the
-right. This automatically selects the Settings tab on the left. Then
+mouse-over tips, widths, and other settings can be configured for most fields.
+To configure these settings, just click on a field from the area on the right.
+This automatically selects the Settings tab on the left. Alternatively, you can
+access the Settings tab by clicking the fields *Settings* button (wrench). Then
 double-click on a value to edit. Liferay supports the following kinds of fields
 for metadata sets:
 
@@ -330,7 +336,6 @@ of allowed file extensions, which types of files should be indexed, etc.
 
 ## Using External Repositories  
 
-Adding repositories in Documents and Media is a new feature in Liferay 6.1.
 Content Management Interoperability Services (CMIS) is a specification for
 improving interoperability between Enterprise Content Management systems.
 Documents and Media allows users to connect to multiple third-party repositories
@@ -407,6 +412,10 @@ CMIS. One that is familiar to many users is SharePoint. In the exercise below,
 we'll set up SharePoint as a Documents and Media repository.
 
 ### Example Repository Setup: SharePoint 
+
+<!-- Sharepoint currently does not work on Liferay. We're monitoring the
+Sharepoint status and will update when it's working. Thus, Sharepoint repository
+sections are not updated for 6.2. -->
 
 With Liferay Portal you can connect to an external SharePoint server and add it
 as a Documents and Media repository. This lets users collaborate and
@@ -598,12 +607,6 @@ file opens in your Microsoft Office application.
 When you save the file, it is stored automatically in the Documents and Media
 folder from which you opened it. 
 
-This feature currently limits you to opening Documents and Media files whose
-titles end in their file's extension (e.g., `.doc`, `.docx`, `.xls`, `.xlsx`,
-`.ppt`, or `.pptx`). See
-[http://issues.liferay.com/browse/LPS-31223](http://issues.liferay.com/browse/LPS-31223)
-for more information. 
-
 Note that 64-bit Microsoft Internet Explorer and 64-bit Microsoft Office
 versions do not currently support this feature. It is only supported on 32-bit
 Microsoft Internet Explorer versions with 32-bit versions of Microsoft Office.
@@ -648,11 +651,11 @@ Now let's look at configuring the Documents and Media portlet.
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
 customizations appear on the Setup tab. To change your Documents and Media
-portlet's top-level folder, click *Select* next to *Root Folder*, browse to the
-folder you'd like to be your new top-level folder, and click *Save*. The root
-folder is the highest-level folder that's accessible from the Documents and
+portlet's top-level folder, click *Select* below *Root Folder*, browse or create
+the folder you'd like to be your new top-level folder, and click *Save*. The
+root folder is the highest-level folder that's accessible from the Documents and
 Media portlet. For example, suppose you created a folder called *My Documents*
-in the Documents and Media portlet's default Home folder.  If you set the My
+in the Documents and Media portlet's default Home folder. If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
@@ -663,7 +666,7 @@ quickly find relevant files. If you'd like the search bar not to appear, uncheck
 the *Show Search* box. The *Maximum Entries to Display* dropdown menu lets you
 set a limit on how many folders and files can be displayed in the portlet window
 at once. By default, the Documents and Media portlet contains three display
-style views: icon, list, and descriptive. Icons for each appear in the portlet
+style views: Icon, List, and Descriptive. Icons for each appear in the portlet
 window, allowing users to select the display style with which they're most
 comfortable. Under the Display Style Views heading, you can select which display
 styles users are able to choose and you can arrange the order of the selected
@@ -673,35 +676,35 @@ default display style.
 Related assets are enabled by default for Documents and Media files. Related
 assets allow users to link assets together even if the assets don't share any
 tags or categories. To disable related assets for files in your Documents and
-Media portlet, uncheck the *Related Assets* box. For more information on related
-assets, see the section on defining content relationships in chapter 6.
+Media portlet, uncheck the *Enable Related Assets* box. For more information on
+related assets, see the section on defining content relationships in chapter 6.
 
 Under the Show Columns heading, you can customize which columns appear when your
 Documents and Media portlet uses the list display style. By default, file names,
-sizes, downloads, and actions are displayed. You can also configure the portlet
-to display files' create dates and modified dates. To add or remove columns from
-being displayed, move them to the Current box or to the Available box. You can
-arrange the columns in the Current box to control the order in which the columns
-appear in the portlet: the topmost column in the box appears as the leftmost
-column in the portlet.
+sizes, statuses, downloads, and actions are displayed. You can also configure
+the portlet to display files' create dates and modified dates. To add or remove
+columns from being displayed, move them to the Current box or to the Available
+box. You can arrange the columns in the Current box to control the order in
+which the columns appear in the portlet: the topmost column in the box appears
+as the leftmost column in the portlet.
 
-Comment ratings are also enabled by default for Documents and Media files. If
-users decide that a certain comment about a file is useful or informative, they
-can rate it as good by clicking on the thumbs up icon next to the rating. If
-they think the comment is unhelpful or misleading, they can click on the thumbs
-down icon. If you'd like to disable comment ratings for files within your
-portlet, uncheck the *Enable Comment Ratings* box.
+Ratings and comment ratings are also enabled by default for Documents and Media
+files. If users decide that a file or certain comment about a file is useful or
+informative, they can rate it as good by clicking on the thumbs up icon next to
+the rating. If they think the file or comment is unhelpful or misleading, they
+can click on the thumbs down icon. If you'd like to disable ratings or comment
+ratings for files within your portlet, uncheck the *Enable Ratings* or *Enable
+Comment Ratings* box, respectively.
 
 ## Automatic Previews and metadata  
 
 Whenever possible, Liferay 6.2 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
 APIs to generate previews for documents. The only tool available that is 100%
-Java and has a compatible license to be distributed with Liferay is PDFBox. From
-a vanilla installation of Liferay 6.1, if you upload a PDF file to the Documents
-and Media portlet, Liferay will process the PDF in a separate thread to generate
-a preview. This process may last only a few seconds for a small file. The larger
-the file is, the longer it takes.
+Java and has a compatible license to be distributed with Liferay is PDFBox. If
+you upload a PDF file to the Documents and Media portlet, Liferay will process
+the PDF in a separate thread to generate a preview. This process may last only a
+few seconds for a small file. The larger the file, the longer it takes.
 
 The first time you run a conversion like this, look for a console message that
 indicates something like the following:
@@ -709,6 +712,9 @@ indicates something like the following:
     Liferay is not configured to use ImageMagick for generating Document Library
     previews and will default to PDFBox. For better quality previews, install
     ImageMagick and enable it in portal-ext.properties.
+    
+<!-- Did not receive this message when clicking on a PDF file for 6.2. Was able
+to produce message in 6.1. -->
 
 While a default implementation of image generation for document previews and
 thumbnails is provided via PDFBox, you'll need to install and configure some
@@ -722,18 +728,16 @@ configured, Documents and Media content is displayed using a customized viewer
 depending on the type of content. Configuring Liferay to use OpenOffice or
 LibreOffice in server mode allows you to generate thumbnails and previews for
 supported file types (.pdf, .docx, .odt, .ppt, .odp, etc.), lets you view
-documents in your browser and lets you convert documents. ImageMagick allows for
-faster and higher-quality previews and conversions. Xuggler allows for audio and
-video previews, lets you play audio and video files in your browser and extracts
-thumbnails from video files. Please see the *External Services* section of
-chapter 16 for instructions on how to configure Liferay to use these tools.
+documents in your browser, and lets you convert documents. ImageMagick allows
+for faster and higher-quality previews and conversions. Xuggler allows for audio
+and video previews, lets you play audio and video files in your browser, and
+extracts thumbnails from video files. Please see the *External Services* section
+of chapter 17 for instructions on how to configure Liferay to use these tools.
 
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
 
-![Figure 5.13: Previews in Documents and Media](../../images/05-previews.jpg)
-
-<!-- Needs to be replaced for 6.2 -->
+![Figure 5.13: After configuring additional tools, previews in the Documents and Media portlet are more advanced.](../../images/05-doc-previews.png)
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -780,9 +784,9 @@ Wouldn't it be great if you could access documents and folders belonging to
 Liferay's Documents and Media library from your own machine's file manager? You
 can, thanks to the Documents and Media library's WebDAV integration. WebDAV
 stands for Web-based Distributed Authoring and Versioning. It's a set of methods
-based on HTTP that allows users to create, edit, move or delete files stored on
+based on HTTP that allows users to create, edit, move, or delete files stored on
 web servers. WebDAV is supported by most major operating systems and desktop
-environments, including Linux (both KDE and GNOME), Mac OS and Windows.
+environments, including Linux (both KDE and GNOME), Mac OS, and Windows.
 
 Suppose you've created an *Image Gallery* folder using a Documents and Media
 portlet and uploaded some images to it. Portal users with the appropriate
@@ -798,11 +802,11 @@ to access. Mouse over the folder (*Image Gallery* for our example) and select
 
 ![Figure 5.18: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
 
-Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map
+Copy the WebDAV URL. On Windows, right-click on *Computer* and select *Map
 Network Drive*. Select an unused drive, paste the WebDAV URL, and click
 *Finish*. You're prompted to enter your Liferay credentials and then, provided
 you have the required permissions, the *Image Gallery* folder appears. You can
-now add, edit, move or delete files in this directory. 
+now add, edit, move, or delete files in this directory.
 
 On Mac OS X, select *Go* &rarr; *Connect to Server* in Finder. Then enter the
 WebDAV URL of the folder you'd like to access in the Server Address field, click
@@ -821,32 +825,31 @@ application is a powerful way to manage any types of files your users need to
 use. Next, let's look at how you can leverage Liferay Portal's Asset framework.
 
 Now you know just how easy it is to store your files using Liferay's Documents
-and Media portlet. In the next section we'll review some ways to organize and
+and Media portlet. In the next section, we'll review some ways to organize and
 manage your assets so you're getting the most out of your content.
 
 ## Liferay Sync  
 
-Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
-CE and EE that synchronizes files between your Liferay server and users' desktop
-and mobile environments. With Liferay Sync, your users can publish and access
-shared documents and files from their native environments without using a
-browser. Windows and Mac OS desktops and Android and iOS-based mobile platforms
-are currently supported. As users add and collaborate on documents and files,
-Liferay Sync automatically synchronizes them across all configured Sync clients.
-Liferay Sync is fully integrated into the Liferay Platform so that features such
-as authentication, versioning, workflow, and social collaboration function in
-the supported environments. Liferay Sync stores files locally so that they're
-always available, even when you're offline. It automatically synchronizes your
-files upon reconnection.
+Liferay Sync is an add-on product for Liferay CE and EE that synchronizes files
+between your Liferay server and users' desktop and mobile environments. With
+Liferay Sync, your users can publish and access shared documents and files from
+their native environments without using a browser. Windows and Mac OS desktops
+and Android and iOS-based mobile platforms are currently supported. As users add
+and collaborate on documents and files, Liferay Sync automatically synchronizes
+them across all configured Sync clients. Liferay Sync is fully integrated into
+the Liferay Platform so that features such as authentication, versioning,
+workflow, and social collaboration function in the supported environments.
+Liferay Sync stores files locally so that they're always available, even when
+you're offline. It automatically synchronizes your files upon reconnection.
 
 ### How does it work?  
 
-Liferay Sync manages documents and site information through Liferay 6.1's
-built-in web services. Clients securely communicate to Liferay using
-user-supplied credentials such that each user can only access those documents
-and sites for which they have permission. Changes made through Liferay Sync are
-immediately available to the rest of the Liferay Platform, including users
-accessing Liferay through traditional web-based interfaces.
+Liferay Sync manages documents and site information through Liferay's built-in
+web services. Clients securely communicate to Liferay using user-supplied
+credentials such that each users can only access those documents and sites for
+which they have permission. Changes made through Liferay Sync are immediately
+available to the rest of the Liferay Platform, including users accessing Liferay
+through traditional web-based interfaces.
 
 For desktop environments, a new folder structure is created and used for
 synchronizing files. Files found therein can be treated as any ordinary file.
@@ -863,7 +866,7 @@ Sync folder and synchronizing them across other Sync clients. In iOS devices,
 "pulling down" on the Sync file list forces a refresh. In Android, click on the
 *Refresh* icon within the menu.
 
-Liferay Sync is designed to work with both Liferay 6.1 Community Edition and
+Liferay Sync is designed to work with both Liferay Community Edition and
 Enterprise Edition. Using Sync with Liferay CE limits users to syncing one site.
 Using Sync with Liferay EE enables users to synchronize documents and files
 across all the sites which they can access.
@@ -1044,6 +1047,10 @@ page. Click on the *README.txt* icon, look at the information displayed to the
 right, and you'll see that its version number has incremented.
 
 ![Figure 5.27: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
+
+<!-- Needs to be updated for 6.2
+Current versions of Liferay Sync are unable to connect to new 6.2 Liferay Portal
+-->
 
 Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
