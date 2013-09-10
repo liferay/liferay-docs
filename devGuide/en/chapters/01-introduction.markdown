@@ -1,4 +1,4 @@
-# Realizing the Benefits of Liferay's Development Platform [](id=realizing-the-benefits-of-liferays-devel-liferay-portal-6-2-dev-guide-01-en)
+# Realizing the Benefits of Liferay's Development Platform [](id=liferays-development-platform-liferay-portal-6-2-dev-guide-01-en)
 
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
@@ -168,7 +168,7 @@ remote services, and much more. Liferay does not impose specific requirements on
 the use of any of those frameworks. You, the portal developer, choose the best
 tools for your projects. 
 
-## Extending and Customizing Liferay [](id=extending-and-customizing-liferay-liferay-portal-6-2-dev-guide-01-en)
+## Extending and Customizing Liferay [](id=extending-and-customizing-liferay-portal-6-2-dev-guide-01-en)
 
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
@@ -180,7 +180,7 @@ Liferay is designed to be customized. Multiple plugins and plugin types can be
 combined into a single WAR file. Let's take a look at these plugin types and how
 they can be used. 
 
-### Customizing the Look and Feel: Themes [](id=customizing-the-look-and-feel-themes-liferay-portal-6-2-dev-guide-01-en)
+### Customizing the Look and Feel: Themes [](id=customizing-look-and-feel-with-themes-liferay-portal-6-2-dev-guide-01-en)
 
 Themes let you dictate your site's look and feel. You can specify color schemes
 and commonly used images. You'll apply styling for UI elements such as fonts,
@@ -192,7 +192,7 @@ widths of your users' desktop, tablet, and mobile devices. Most importantly,
 themes let you focus on designing your site's UI, while leaving its
 functionality to the portlets. 
 
-### Adding New Predefined Page Layouts: Layout Templates [](id=adding-new-predefined-page-layouts-layou-liferay-portal-6-2-dev-guide-01-en)
+### Adding New Predefined Page Layouts: Layout Templates [](id=adding-new-predefined-page-layouts-liferay-portal-6-2-dev-guide-01-en)
 
 Layouts are similar to themes, except they specify the *arrangement* of portlets
 on a page rather than their look and feel. You can create custom layout
@@ -200,7 +200,7 @@ templates to arrange portlets just the way you like them. And you can even embed
 commonly used portlets. Like themes, layout templates are also written in
 Velocity and are hot-deployable. 
 
-### Customizing or Extending the Out-of-Box Functionality: Hook Plugins [](id=customizing-or-extending-the-out-of-box--liferay-portal-6-2-dev-guide-01-en)
+### Customizing or Extending the Out-of-Box Functionality: Hook Plugins [](id=customize-or-extend-functionality-liferay-portal-6-2-dev-guide-01-en)
 
 Hook plugins are how you customize the core functionality of Liferay at many
 predefined extension points. Hook plugins are used to modify portal properties
@@ -210,7 +210,7 @@ replace any of the core Liferay services with a custom implementation. Hook
 plugins can also replace the JSP templates used by any of the default portlets.
 Best of all, hooks are hot-deployable plugins just like portlets. 
 
-### Advanced Customization: Ext Plugins [](id=advanced-customization-ext-plugins-liferay-portal-6-2-dev-guide-01-en)
+### Advanced Customization: Ext Plugins [](id=advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-01-en)
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay
 core, allowing you to replace essentially any class with a custom
