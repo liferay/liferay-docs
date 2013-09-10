@@ -11,27 +11,30 @@ topics:
 
 Personal sites allow each portal user to manage and customize a set of public
 and/or private pages and any associated content or applications. Public pages
-provide a means of making content publicly available while private pages provide
-a means of hiding information from other users. Liferay 6.1 introduced
-customizable pages and applications. Administrators can designate certain pages
-or applications as "customizable," which allows each user to make and save their
-own customizations. Portlet layouts can also be customized with the use of
-Application Display Templates. Liferay Enterprise Edition provides a rules
-engine which allows administrators to create custom portal rules and simplify
-complex blocks of code containing lots of `if-else` statements. Let's start by
-discussing personal sites.
+provide a means of making content publicly available. Private pages provide a
+means for users to create content and use applications that should be hidden
+from other users. Liferay 6.1 introduced the concepts of customizable pages and
+applications. Administrators can designate certain pages or applications as
+"customizable," which allows each user to make and save their own
+customizations. Portlet layouts can also be customized with the use of
+application display templates. Application display templates allow a portlet's
+look and feel to be completely customized. Liferay Enterprise Edition provides a
+rules engine which allows administrators to create custom portal rules and
+simplify complex blocks of code containing lots of `if-else` statements. Let's
+start by discussing personal sites.
 
 ## User Personal Sites  
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
 Personal sites are fully customizable but cannot have more than one member. The
-public pages of personal sites provide a space for users to publish content that
-they'd like to make accessible to anyone, including guests. User blogs are often
-placed on public personal site pages. Content and applications that users would
-like to reserve for personal use are often placed on the private pages of
-personal sites. For example, each user can add a Documents and Media portlet to
-his or her private pages and use it as an online private file repository.
+public pages of personal sites provide a space for users to add content and
+applications that they'd like to make accessible to anyone, including guests.
+User blogs are often placed on public personal site pages. Content and
+applications that users would like to reserve for personal use are often placed
+on the private pages of personal sites. For example, each user can add a
+Documents and Media portlet to his or her private pages and use it as an online
+private file repository.
 
 If you'd like to disable personal sites for your portal, just add the following
 properties to your `portal-ext.properties` file:
@@ -41,9 +44,9 @@ properties to your `portal-ext.properties` file:
     
 ---
 
-![Tip](../../images/tip.png) Note that the public and private page sets of
-personal sites are handled separately. You can leave one page set enabled while
-disabling the other.
+ ![Tip](../../images/tip.png) Note that the public and private page sets of
+ personal sites are handled separately. You can leave one page set enabled while
+ disabling the other.
 
 ---
 
@@ -70,7 +73,8 @@ properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the portlets that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the Default User Public Layouts and Default User Private Layouts sections of
-chapter 20 for details.
+the `portal.properties` file for details. You can find an HTML version of the
+this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 
 ---
 
@@ -84,7 +88,7 @@ by setting the following properties:
 As of Liferay 6.1, this property is obsolete. However, you can customize the
 modifiable portions of personal sites through Liferay's permissions system by
 removing permissions from roles. To disallow all portal users from modifying
-something, remove the permission from the User role.
+something, remove the relevant permission from the User role.
 
 ---
 
