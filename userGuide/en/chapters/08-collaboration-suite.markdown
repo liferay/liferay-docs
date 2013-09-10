@@ -333,10 +333,10 @@ the CE and EE versions of the new Calendar portlet. -->
 
 Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
-selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
-settings: *User Settings*, *Templates*, and *Email From*.
+selecting *Configuration*. The Setup tab provides two sub-tabs of configurable
+settings: *User Settings* and *RSS*.
 
-![Figure 8.9: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
+![Figure 8.8: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
 
 **User Settings:** On this screen, you can customize your calendar's default
 view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
@@ -352,21 +352,10 @@ Standard Time* or you can check the *Use Global Time Zone* box. If you check
 administrator can set via *Control Panel* &rarr; *Portal Settings* &rarr;
 *Display Settings* &rarr; *Time Zone*.
 
-![Figure 8.10: The Setup &rarr; Templates tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
-
-**Templates:** On this screen, you can configure email templates for event
-reminders or invitations. Currently, there's only one option for the
-*Notification Type*: *Email*. For the *Notification Template Type*, you can
-select *Reminder* or *Invitation*. For the *Subject* and *Body* of your email,
-you can enter whatever information you'd like to be automatically sent. Remember
-that you can use the following variables in your email templates:
-
-![Figure 8.11: You can use these variables in your email templates.](../../images/new-calendar-configuration3.png)
-
-**Email From:** This screen allows you to specify the name and email address
-that's used to send the automatic emails for event reminders and invitations. 
-
-![Figure 8.12: The *Email From* Screen allows you to specify the name and email address that's used to send the automatic emails for event reminders and invitations.](../../images/new-calendar-configuration4.png)
+**RSS:** You can enable and customize your RSS Subscriptions for your calendar
+from this screen. You have the following options: *Enable RSS Subscription*,
+*Maximum Items to Display*, *Display Style*, *Format*, and *Time Interval*.
+These options are explained in more detail in the Blogs section.
 
 Next, let's look at how to use the new Calendar portlet.
 
@@ -385,13 +374,12 @@ how to configure the default display view of the calendar.
 #### Adding New Calendars
 
 You can add new personal or site calendars from the default view of the new
-Calendar portlet and choose which calendar's events to display. To manage your
-personal or site calendars, mouse over *My Calendars* or *Current Site
-Calendars*, click on the arrow icon, and select *Manage Calendars*. All users
-can manage their personal calendars. By default, only site administrators can
-manage site calendars.
-
-![Figure 8.13: Click on *Manage Calendars* to see a list of calendars.](../../images/new-calendar-manage-calendars.png)
+Calendar portlet and choose which calendar's events to display. To add a new
+personal or site calendar, mouse over *My Calendars* or *Current Site
+Calendars*, click on the arrow icon, and select *Add Calendar*. To manage your
+personal or site calendars, navigate to the same drop-down menu and select
+*Manage Calendars*. All users can manage their personal calendars. By default,
+only site administrators can manage site calendars.
 
 On the Manage Calendars screen, you can click *Add Calendar* to create a new
 calendar. As usual, you can enter a name and description for the calendar and
@@ -404,15 +392,13 @@ corresponding to the calendars. When you click on a colored box, its color
 disappears and the events of that calendar are no longer displayed. Click on an
 uncolored box to view the events of the corresponding calendar.
 
-![Figure 8.14: Click on the colored boxes next to your calendars to choose whether or not the calendar's events should be displayed.](../../images/new-calendar-toggles.png)
+![Figure 8.9: You have options to add or manage calendars. Also, you can toggle the colored boxes beside your calendars to show/hide your planned events.](../../images/new-calendar-manage-calendars.png)
 
 When adding a calendar, you can also specify whether or not to enable comments
 and ratings for your calendar's events. Comments and ratings can be
 enabled/disabled on a per calendar basis. They are disabled by default.
 Additionally, you can specify a color for your calendar. Events created in the
 new calendar will default to the color you choose.
-
-![Figure 8.15: Click on *Actions* &rarr; *Edit* next to a calendar to change its name, description, color, default calendar status, and to enable/disable comments and ratings for calendar events.](../../images/new-calendar-edit-calendar.png)
 
 You can edit a calendar to change its name, description, or color. You can also
 change the calendar's default calendar status and flag or unflag the *Enable
@@ -426,18 +412,18 @@ calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
 
-![Figure 8.16: When you click anywhere on the calendar, you'll see the event creation popup appear. Click on *Edit Details* to specify details for your event.](../../images/new-calendar-event-popup.png)
+![Figure 8.10: When you click anywhere on the calendar, you'll see the event creation popup appear. Click *Edit* to specify details for your event.](../../images/new-calendar-event-popup.png)
 
 In the new event popup, you can select the calendar in which you'd like to
 create the new event. This is useful since sites and users can have multiple
 calendars. You can click *Save* to create the event right away or you can click
-*Edit Details* to specify more event information.
+*Edit* to specify more event information.
 
-![Figure 8.17: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
+![Figure 8.11: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
 
 The *Title* you enter determines the name of the event as it's displayed on the
 calendar. The *Start Date* and *End Date* times determine when your event takes
-place. You can click on the calendar icon to change the day and you can specify
+place. You can click on the date text box to change the day and you can specify
 times by selecting a particular hour and minute of the day. Note: Even though
 the *Day* and *Week* views of the calendar break days into hours and half-hours
 and display events in these time-slots, that's just for convenience. You're free
@@ -446,26 +432,45 @@ to specify whatever start times and end times you like, such as 11:37am and
 the *Repeat* box if your event takes place over multiple days. Checking this box
 opens another popup.
 
-![Figure 8.18: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
+![Figure 8.12: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
 
-In the Details collapsible section, you can specify three pieces of information.
+In the Details collapsible section, you can specify four pieces of information.
 Under *Calendar*, you can select the calendar to which you'd like to add your
 event. Remember that sites and users can have multiple calendars. Under
 *Description*, you can explain the purpose of your event and add any details
 that you think might be useful. Use the *Location* field to specify where your
-event takes place.
+event takes place. Lastly, the *Viewable by* field lets you set the permissions
+for your calendar.
 
-Liferay's Calendar portlet supports social activities. Whenever a calendar event
-is added or updated, a corresponding social activity notification is created. If
-the event was added or updated in a calendar that the current user has
-permission to view, the social activity will be viewable in the Activities
-portlet. If the Social Networking portlets have been installed (they're
-available as an app on Liferay Marketplace; search for *Social Networking CE* or
-*Social Networking EE*), the social networking notifications will also appear in
-all the appropriate portlets, such as the Friends' Activities or Members'
-Activities portlets.
+For more advanced permissions options, select the *More Options* link. A list of
+roles for which you can permission appears in the left column. The other columns
+represent permissions which can be configured for the event:
 
-![Figure 8.19: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
+- Add Discussion
+- Delete Discussion
+- Permissions
+- Update Discussion
+
+*Discussions* refers to comments on the event. So the Add Discussion, Delete
+Discuss, and Update Discussion permissions determine whether a role can add,
+delete, or update a comment on an event. The Permissions permission determines
+whether a role can update an event's permissions.
+
+In the Invitations collapsible section, you can invite users, organizations, or
+other calendar resources to an event. To invite a user, group, or resource,
+start typing the name of the entity you'd like to invite and a list of matches
+will appear. Select the one you want or hit *Enter* if the entity you'd like to
+invite is at the top of the list. All the entities you've invited to your event
+appear as a list under the *Pending* heading, which shows how many pending
+invitations there are. If you accidentally invited the wrong entity, mouse over
+its name in the *Pending* list, click on the arrow icon that appears, and click
+*Remove*. If you'd just like to check the status of a resource, click on *Check
+Availability* instead. When you click on *Check Availability* for a calendar
+resource, its schedule is displayed in this calendar view. If you like to
+overview the availability of all the invited entities, just click on *Resources
+Availability*.
+
+![Figure 8.13: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
 
 The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
@@ -481,6 +486,23 @@ event. Email is currently the only supported event notification type.
  dates of the events.
 
 ---
+
+The Categorization and Related Assets collapsible sections let you tag the event
+and select related assets, respectively. By tagging your event, it will come up
+in searches related to that specified tag. In addition, related assets including
+blogs, message boards, web content, calendar, bookmarks, wikis, and documents
+can be selected to include with your calendar event. When you're done specifying
+event details, click *Save*.
+
+Liferay's Calendar portlet supports social activities. Whenever a calendar event
+is added or updated, a corresponding social activity notification is created. If
+the event was added or updated in a calendar that the current user has
+permission to view, the social activity will be viewable in the Activities
+portlet. If the Social Networking portlets have been installed (they're
+available as an app on Liferay Marketplace; search for *Social Networking CE* or
+*Social Networking EE*), the social networking notifications will also appear in
+all the appropriate portlets, such as the Friends' Activities or Members'
+Activities portlets.
 
 Calendar administrators can customize the email notification templates for event
 invitation and event reminder emails. To customize a calendar's email templates,
@@ -501,36 +523,7 @@ email template. For example, `[$EVENT_LOCATION$]` represents the event location,
 `[$EVENT_START_DATE$]` represents the event start date, and `[$EVENT_TITLE$]`
 specifies the event title.
 
-You can invite users, organizations, or other calendar resources to an event.
-To invite a user, group, or resource, start typing the name of the entity you'd
-like to invite and a list of matches will appear. Select the one you want or hit
-*Enter* if the entity you'd like to invite is at the top of the list. All the
-entities you've invited to your event appear as a list under the *Pending*
-heading, which shows how many pending invitations there are. If you accidentally
-invited the wrong entity, mouse over its name in the *Pending* list, click on
-the arrow icon that appears, and click *Remove*. If you'd just like to check the
-status of a resource, click on *Check Availability* instead. The last item in
-the *Edit Event Details* popup is the resources availability calendar view. When
-you click on *Check Availability* for a calendar resource, its schedule is
-displayed in this calendar view. If you like to overview the availability of all
-the invited entities, just click on *Resources Availability*. When you're done
-specifying event details, click *Save*.
-
-When editing an event, you can also configure the event's permissions. To
-configure an event's permissions, click on the *Permissions* button that appears
-next to the Save button. A list of roles for which you can permission appears in
-the left column. The other columns represent permissions which can be configured
-for the event:
-
-- Add Discussion
-- Delete Discussion
-- Permissions
-- Update Discussion
-
-*Discussions* refers to comments on the event. So the Add Discussion, Delete
-Discuss, and Update Discussion permissions determine whether a role can add,
-delete, or update a comment on an event. The Permissions permission determines
-whether a role can update an event's permissions.
+![Figure 8.14: The *Calendar Settings* &rarr; *Notification Templates* tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
 
 To respond to an event invitation, you can click *Accept*, *Maybe*, or *Decline*
 when viewing the event in the Calendar portlet. The default event invitation
@@ -553,13 +546,11 @@ have noticed that the new Calendar portlet has two tabs in the main portlet
 window: Calendar and Resources. Click on the *Resources* tab of the portlet to
 view, edit, add, or delete resources.
 
-![Figure 8.20: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
+![Figure 8.15: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
 able to enter a name and description for your resource, specify whether or not
 it should be active, apply tags and categories, and configure its permissions.
-
-![Figure 8.21: To manage a calendar resource and view the calendars on which it appears, use the Actions button.](../../images/new-calendar-resource-calendars.png)
 
 Once you've created a calendar resource, you can click on the *Actions* button
 next to it and select one of the following four options: *Edit*, *Permissions*,
@@ -571,7 +562,7 @@ representing the rooms and projectors helps prevent conflicts. Click *Actions*
 &rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
 in which the selected calendar resource appears.
 
-![Figure 8.22: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
+![Figure 8.16: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
 
 Liferay's new Calendar portlet provides an easy-to-use scheduling tool. Sites
 and users can have multiple calendars, calendar events can include calendar
@@ -580,32 +571,33 @@ hope this flexible system meets the needs of your organization.
 
 #### Exporting and Importing Calendar Data
 
-Liferay's Calendar portlet allows to data to be exported or imported as LAR
-files. Both calendar events and resources can be exported or imported. As with
-all LAR files, data can only be imported into a version of Liferay that's the
-same as the one from which it was exported. To access the interface for
-exporting or importing calendar data, click on the *wrench* icon in the portlet
-header and select *Export / Import*. By default, the Export tab appears which
-allows you to define a new export process or use an existing one to export
-calendar data. If you'd like to import data, click on *Import*. You'll be able
-to define a new import process by selecting an existing LAR file or by using an
-existing import process.
+Liferay's Calendar portlet allows data to be exported or imported as LAR files.
+Both calendar events and resources can be exported or imported. As with all LAR
+files, data can only be imported into a version of Liferay that's the same as
+the one from which it was exported. To access the interface for exporting or
+importing calendar data, click on the *wrench* icon in the portlet header and
+select *Export / Import*. By default, the Export tab appears which allows you to
+define a new export process or use an existing one to export calendar data. If
+you'd like to import data, click on *Import*. You'll be able to define a new
+import process by selecting an existing LAR file or by using an existing import
+process.
 
 To define a new export process, you first have to choose a name for the LAR file
 to be generated. `Calendar-201308061558.portlet.lar` is an example of a typical
 Calendar portlet LAR filename. Notice that by default, a timestamp is included
-in the LAR filename. Next, you have to define a data range. You can select *All*
-to export calendar data regardless of when it was created or last modified.
-Alternatively, you can specify a data range. In this case, only calendar data
-which was created or modified at or after the start date and before the end date
-will be exported. Next, you can choose which kinds of calendar data to export:
-calendar events, resources, or both. For each selected kind of calendar data,
-you can choose to export associated comments, ratings, or both. Finally, you can
-choose whether or not to export the permissions defined for the specific
-Calendar portlet window from which you're exporting data. Click *Export* to
-export your data into a LAR file. You should see a message stating *Your request
-completed successfully* and you'll be able to click on the LAR file's name to
-download it.
+in the LAR filename. First you have the option of including the Configuration of
+your calendar in the LAR file. Next, you have to define a data range. You can
+select *All* to export calendar data regardless of when it was created or last
+modified. Alternatively, you can specify a data range. In this case, only
+calendar data which was created or modified at or after the start date and
+before the end date will be exported. Next, you can choose which kinds of
+calendar data to export: calendar events, resources, or both. For each selected
+kind of calendar data, you can choose to export associated comments, ratings, or
+both. Finally, you can choose whether or not to export the permissions defined
+for the specific Calendar portlet window from which you're exporting data. Click
+*Export* to export your data into a LAR file. You should see a message stating
+*Your request completed successfully* and you'll be able to click on the LAR
+file's name to download it.
 
 To define a new import process, click on *Import* from the Export / Import
 window. Then either drop a LAR file into the box outlined by the dashed lines or
