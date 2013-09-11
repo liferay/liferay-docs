@@ -650,9 +650,9 @@ site while Liferay does the integration work for you.
 The Message Boards portlet offers many configuration options. They are
 straightforward to use and are the reason why this portlet is a full-featured
 forum application for your web site. To get started, add a Message Boards
-portlet to your site. Once it is added, click the *Menu* icon in the portlet's
-title bar and click *Configuration*. There are two rows of tabs. The first tab
-in the top row is titled *Setup*. This is where you can configure the
+portlet to your site. Once it is added, click the *Options* icon in the
+portlet's title bar and click *Configuration*. There are two rows of tabs. The
+first tab in the top row is titled *Setup*. This is where you can configure the
 application the way you want it to behave on your site.
 
 ### General  
@@ -660,8 +660,9 @@ application the way you want it to behave on your site.
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
 by default. You can also choose whether you want the message format to be BBcode
-or HTML. Anonymous posting, subscribe by default, flags, and ratings are
-selected by default and the default message format is BBcode. 
+or HTML and choose how long posts display on the message board. Anonymous
+posting, subscribe by default, flags, and ratings are selected by default and
+the default message format is BBcode.
 
 Enabling *Allow Anonymous Posting* allows users without an account on the system
 to post messages to your message boards. Whether or not you you'll want to do
@@ -700,6 +701,10 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
+Lastly, you can set the amount of time a post is displayed until it is taken
+away. You have options of 24 hours, 7 days, 30 days, and 365 days. After the
+time has passed, the post is removed from the message board.
+
 ### Email From  
 
 This tab allows you to configure the name and email address from which message
@@ -716,7 +721,7 @@ message is added to a topic to which they are subscribed.
 **Enabled:** allows you to turn on the automatic emails to subscribed users.
 Uncheck the box to disable the message added emails.
 
-**Subject Prefix:** lets you choose a prefix to be prepended to the subject
+**Subject:** lets you choose a prefix to be prepended to the subject
 line of the email. This is usually done so that users can set up message
 filters to filter the notifications to a specific folder in their email
 clients.
@@ -767,13 +772,13 @@ the regular role, or the user group. Of course, you probably wouldn't want to
 create a role, organization, organization role, site role, and user group all
 with the same name in your portal, but you get the idea. 
 
-    Moderator=site-role:Message Boards Administrator
-
     Moderator=organization:Message Boards Administrator
 
     Moderator=organization-role:Message Boards Administrator
 
     Moderator=regular-role:Message Boards Administrator
+    
+    Moderator=site-role:Message Boards Administrator
 
     Moderator=user-group:Message Boards Administrator
 
@@ -789,7 +794,7 @@ localized in a particular language.
 ### RSS  
 
 Message board threads can be published as RSS feeds. This tab allows you to
-define how the feeds are generated.
+enable/disale RSS subscriptions and define how the feeds are generated.
 
 **Maximum Items to Display:** lets you select the number of items to display in
 the feed.
@@ -805,28 +810,26 @@ The default page that the Message Boards portlet displays has three buttons on
 it. Click the one labeled *Permissions*. This allows you to define which roles
 have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
-click *Submit*.
+click *Save*.
 
 ### Adding Categories
 
 You are now ready to add categories to your message boards. Click the *Add
-Category* button. You may merge with a Parent Category by enabling the *Merge
-with Parent Category* check box and clicking the *Select* button. Enter a name
+Category* button. Enter a name
 for the category and a description of the category.
 
-Starting with Liferay 6.1, categories can have different display styles. The
-available categories must be set in portal property
-`message.boards.category.display.styles` and the default category in
-`message.boards.category.display.styles.default`. When creating a new category,
-you can select the display style you like for that category. By default,
-Liferay provides two predefined display styles, although many more can be
-easily added:
+Categories can have different display styles. The available categories must be
+set in portal property `message.boards.category.display.styles` and the default
+category in `message.boards.category.display.styles.default`. When creating a
+new category, you can select the display style you like for that category. By
+default, Liferay provides two predefined display styles, although many more can
+be easily added:
 
 **Default:** classic display style for general purpose and discussions.
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 8.23: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
+![Figure 8.23: You have several options when creating a Message Boards Category.](../../images/05-editing-message-board-category.png)
 
 You can add as many categories to your message boards as you wish. As we saw
 above, categories can have subcategories. You can add any number of top-level
@@ -840,6 +843,11 @@ At the bottom of the form for creating or editing a message board category is a
 check box for enabling the mailing list function. If don't want to add a mailing
 list to the category you're creating, click *Save* now. You can always edit an
 existing category to add, edit, or remove a mailing list.
+
+Also, you may merge with a Parent Category by navigating to a category's
+*Actions* &rarr; *Move* button. From this window, you can enable the *Merge with
+Parent Category* check box and click the *Select* button to choose the parent
+category.
 
 Once one or more categories have been added to a message board, they appear in a
 list on the message board's home. The list displays the names of the categories
@@ -1019,21 +1027,19 @@ site's message board. Without the Message Boards Subscription Manager, users
 must manage their own message board subscriptions. The Message Boards
 Subscription Manager is available for both Liferay CE and EE--make sure to
 select the correct version when downloading and installing the app. Once
-installed, the Message Boards Subscription Manager appears in the site section
-of the Control Panel.
+installed, the Message Boards Subscription Manager appears in the Configuration
+section of Site Administration.
 
-![Figure 8.24: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the site section of the Control Panel.](../../images/message-boards-subscription-manager-control-panel.png)
+![Figure 8.24: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.](../../images/message-boards-subscription-manager-control-panel.png)
 
 The subscription manager allows managing the subscriptions of both the
 site-scoped message board and the subscriptions of any page-scoped message
 boards that may exist within the site. To access the Message Boards Subscription
-Manager, navigate to the Control Panel, select a site in the context menu
-selector, and click on *Message Boards Subscription Manager*. You'll see a list
-of the categories that have been created within your site's site-scoped message
-board. To manage the subscriptions of a page-scoped message board, select the
-appropriate scope in the control panel's scope selector under the control
-panel's site selector. Click *Actions* &rrar; *View* next to a category to view
-the category's threads in a new browser tab. Click *Actions* &rarr; *Manage
+Manager, navigate to your site's Site Administration page, select
+*Configuration*, and click on *Message Boards Subscription Manager*. You'll see
+a list of the categories that have been created within your site's site-scoped
+message board. Click *Actions* &rarr; *View* next to a category to view the
+category's threads in a new browser tab. Click *Actions* &rarr; *Manage
 Subscriptions* to view a list of users which can be subscribed or unsubscribed
 from the message board category.
 
@@ -1090,14 +1096,14 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 8.26: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
+![Figure 8.26: The *Follow your nose* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 8.27: Emoticons Available in the Editor](../../images/05-emoticons.png)
+![Figure 8.27: Liferay's dynamic editor even includes a wide range of smiley faces!](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you are
@@ -1106,13 +1112,13 @@ that are posted to the message boards are shown by default in a threaded view
 so that replies are attached to the proper parent message. This makes it easy
 to follow along with conversations.
 
-When viewing a message board thread, users are given several options. At the
-top right of the thread are three icons, allowing users to view threads in a
-flat view, in a tree view, or in a combination view. A flat view shows all of
-the messages in the order in which they are posted. A tree view shows all of
-the messages in a threaded view, so that replies are next to the messages they
-are replying to. A combination view shows the threads at the top as subjects
-only, with the flat view underneath.
+When viewing a message board thread, users are given several options. At the top
+right of the thread are three icons, allowing users to view threads in a
+combination view, flat view, or tree view. A combination view shows the threads
+at the top as subjects only, with the flat view underneath. A flat view shows
+all of the messages in the order in which they are posted. A tree view shows all
+of the messages in a threaded view, so that replies are next to the messages
+they are replying to.
 
 When viewing a thread, users can click links allowing them to post a new
 thread, subscribe to the thread they are viewing, or if they have
@@ -1134,20 +1140,20 @@ The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
 delegate that role to one or more of your users. That would free you up to
 concentrate on other areas of your web site. To do this, you can create a role
-called Message Board Administrators. This role can be scoped by the portal, an
+called Message Board Administrator. This role can be scoped by the portal, an
 organization, or a site. If you have a portal scoped role, members of this role
 will be able to administer any Message Boards portlet in the portal. If it is
 an organization or site scoped role, members of this role will be able to
 administer a Message Boards portlet in only the organization or site which
 assigned the role to them.
 
-Go to the Control Panel and create this role. Once it is created, click
-*Actions &rarr; Define Permissions*. Click the *Add Permissions* drop-down list.
-Browse the list until you find the Message Boards portlet under the Site
-Content section and then click on it. You will then see a screen which allows
-you to configure the various permissions on the portlet.
+Go to the Control Panel and create this role. Once it is created, click *Actions
+&rarr; Define Permissions*. Click the *Content* drop-down list. Browse the list
+until you find the Message Boards portlet and then click on it. You will then
+see a screen which allows you to configure the various permissions on the
+portlet.
 
-![Figure 8.28: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
+![Figure 8.28: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and
 then click *Save*. You can add users to this role and they will inherit the
@@ -1160,7 +1166,7 @@ threads. In addition to these, a number of other functions are available.
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
 do. You can select the *Actions* menu to the right of the thread and choose
-*Move Thread*. Or, if you are already viewing the thread and you have
+*Move*. Or, if you are already viewing the thread and you have
 administrative access, there is a link at the top of the thread labeled *Move
 Thread*. Click this link. You will be presented with a simple form which allows
 you to select a category to which to move the thread and a check box which
@@ -1173,10 +1179,11 @@ the *Move Thread* button and the thread will be moved.
 Users with administrative access to the message boards can delete threads.
 Sometimes users begin discussing topics that are inappropriate or that reveal
 confidential information. In this case, you can simply delete the thread from
-the message boards. This is easy to do. First, view the list of threads. Next
-to every thread is an *Actions* button. Click *Actions &rarr; Delete* to delete
-the thread. This does not prevent users from re-posting the information, so you
-may need to be vigilant in deleting threads or consider the next option.
+the message boards. This is easy to do. First, view the list of threads. Next to
+every thread is an *Actions* button. Click *Actions &rarr; Move to the Recycle
+Bin* to delete the thread. This does not prevent users from re-posting the
+information, so you may need to be vigilant in deleting threads or consider the
+next option.
 
 #### Banning Users  
 
