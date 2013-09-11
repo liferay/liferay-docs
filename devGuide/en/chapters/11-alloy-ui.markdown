@@ -79,39 +79,40 @@ HTML file.
 
 1. Create an HTML page like this:
 
-    <!DOCTYPE html>
+        <!DOCTYPE html>
 
-    <head>
-      <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css" rel="stylesheet">
+			<head>
+              <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css"
+                  rel="stylesheet">
+	
+                <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js" />
+			</head>
 
-      <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
-    </head>
+			<body>
+                <button id="try-btn" class="btn" type="button">
+                    Try me now!
+                </button>
 
-    <body>
-      <button id="try-btn" class="btn" type="button">
-      Try me now!
-      </button>
+                <script>
+                    AUI().use(
+                        'node',
+                        'transition',
+                        function(A) {
+                            A.one('.btn').on(
+                                'click', function() {
+                                    this.transition(
+                                        {
+                                            width: '500px'
+                                        }
+                                    );
+                                }
+                            );
+                        }
+                    );
+                </script>
+            </body>
 
-      <script>
-        AUI().use(
-          'node',
-          'transition',
-          function(A) {
-            A.one('.btn').on(
-              'click', function() {
-                this.transition(
-                  {
-                    width: '500px'
-                  }
-                );
-              }
-            );
-          }
-        );
-      </script>
-    </body>
-
-    </html>
+        </html>
 
 2. Navigate to this HTML in your browser.
 3. Click *Try me now!*
