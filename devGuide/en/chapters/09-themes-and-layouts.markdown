@@ -1,4 +1,4 @@
-# Creating Liferay Themes and Layout Templates [](id=creating-liferay-themes-and-layout-templ-liferay-portal-6-2-dev-guide-09-en)
+# Creating Liferay Themes and Layout Templates [](id=creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Do you want arrange your pages' portlets differently than
@@ -607,7 +607,7 @@ Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want it. Next, let's take a look at how to
 configure display your site's name. 
 
-#### Site Names [](id=site-names-liferay-portal-6-2-dev-guide-09-en)
+#### Site Names [](id=displaying-site-name-via-theme-liferay-portal-6-2-dev-guide-en)
 
 The site name settings let site administrators decide whether to display a
 site's name (i.e., title). But, if you are using using logo, that mentions your
@@ -649,7 +649,7 @@ display from the each site's *Look and Feel* control page.
  
 Let's talk about Liferay's JavaScript library next. 
 
-## Understanding Your Theme's JavaScript Callbacks in `main.js` [](id=understanding-your-themes-javascript-cal-liferay-portal-6-2-dev-guide-09-en)
+## Understanding Your Theme's JavaScript Callbacks in `main.js` [](id=themes-javascript-callbacks-main-js-liferay-portal-6-2-dev-guide-en)
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
@@ -1173,7 +1173,7 @@ Let's see what each of the template files does:
 
 Let's move on to Liferay configuration files.
 
-### Liferay Configuration Files [](id=liferay-configuration-files-liferay-portal-6-2-dev-guide-09-en)
+### Liferay Configuration Files [](id=liferay-layout-configuration-files-liferay-portal-6-2-dev-guide-09-en)
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:

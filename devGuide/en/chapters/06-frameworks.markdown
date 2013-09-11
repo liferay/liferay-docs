@@ -148,7 +148,7 @@ Here we'll give you a helpful categorical listing of the fields:
 Are you wondering how the `ServiceContext` fields get populated? Good! We'll
 show you that next. 
 
-### Creating and Populating a Service Context [](id=creating-and-populating-a-service-contex-liferay-portal-6-2-dev-guide-06-en)
+### Creating and Populating a Service Context [](id=creating-and-populating-a-service-context-liferay-portal-6-2-dev-guide-en)
 
 Although all the `ServiceContext` class fields are optional, services that
 store any type of content need the scope group ID specified, at least. Here's a
@@ -769,7 +769,7 @@ example of a blogs entry being removed:
 Great! Now that you know how to work with resource permissions, we'll show you
 how to provide a user interface for managing resource permissions. 
 
-### Adding Permission [](id=adding-permission-liferay-portal-6-2-dev-guide-06-en)
+### Adding Permissions [](id=adding-permissions-liferay-portal-6-2-dev-guide-06-en)
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
@@ -910,7 +910,7 @@ performance. There are several ways to obtain a permission checker:
 Next you'll optimize permission checking by creating helper classes to do most
 of the heavy lifting. 
 
-### Creating Helper Classes for Permission Checking [](id=creating-helper-classes-for-permission-c-liferay-portal-6-2-dev-guide-06-en)
+### Creating Helper Classes for Permission Checking [](id=creating-permission-helper-classes-liferay-portal-6-2-dev-guide-06-en)
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
@@ -1151,7 +1151,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create and modify assets, consider tagging and categorizing
 them. Let's tackle that next. 
 
-#### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categor-liferay-portal-6-2-dev-guide-06-en)
+#### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
 
 In the last section we let Asset Framework know about the tags and categories
 that we associated with a given asset; but how does a content author specify
@@ -1692,7 +1692,7 @@ destinations, senders, listeners, and approaches to sending messages. Next we'll
 show you how easy it is to create your destinations, register listeners, and
 send your messages. To demonstrate, we'll implement a business use case.
 
-### Example Use Case--Procurement Process [](id=example-use-case--procurement-process-liferay-portal-6-2-dev-guide-06-en)
+### Example Use Case--Procurement Process [](id=message-bus-example-procurement-process-liferay-portal-6-2-dev-guide-06-en)
 
 Our use case will consider Jungle Gyms R-Us and its distribution of playground
 equipment, buying the equipment from manufacturers and selling the equipment to

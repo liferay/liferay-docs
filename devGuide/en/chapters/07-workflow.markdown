@@ -1,5 +1,5 @@
 
-# Designing Workflows with Kaleo Designer for Java [](id=designing-workflows-with-kaleo-designer--liferay-portal-6-2-dev-guide-07-en)
+# Designing Workflows with Kaleo Designer for Java [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -195,7 +195,7 @@ workflow graphically. Graphical features and toolbars allow you to customize
 your workflow definition. The *Palette* view is one of Designer's most commonly
 used tools. Let's explore it next. 
 
-### Palette and Floating Palette [](id=palette-and-floating-palette-liferay-portal-6-2-dev-guide-07-en)
+### Palette and Floating Palette [](id=kaleo-palette-and-floating-palette-liferay-portal-6-2-dev-guide-07-en)
 
 The *Palette* lets you graphically customize your workflow with nodes and
 transitions. In addition, you can choose different behaviors for your mouse
@@ -320,7 +320,7 @@ the join node to another task.
 While we're using Designer's Workflow Diagram, let's go over some of its
 features. 
 
-### Workflow Diagram Features [](id=workflow-diagram-features-liferay-portal-6-2-dev-guide-07-en)
+### Workflow Diagram Features [](id=kaleo-workflow-diagram-features-liferay-portal-6-2-dev-guide-07-en)
 
 Developer Studio provides you with additional features within the workflow
 diagram. Below we list some of these features; they can greatly enhance your
@@ -348,7 +348,7 @@ workflow designing experience.
 You've probably noticed the *Properties* and *Outline* views below your workflow
 diagram. Let's explore them next. 
 
-### Properties View and Outline View [](id=properties-view-and-outline-view-liferay-portal-6-2-dev-guide-07-en)
+### Properties View and Outline View [](id=workflow-properties-view-and-outline-view-liferay-portal-6-2-dev-guide-en)
 
 The *Properties* and *Outline* views contain more cool features you can use to
 customize your workflow; they're located on the bottom and bottom right of
@@ -600,14 +600,14 @@ DDLs soon in the *Configuring a DDL record* section of this chapter.
 Next let's create a custom notification and write a template for it using a
 template editor. 
 
-## Leveraging Template Editors for Notifications [](id=leveraging-template-editors-for-notifica-liferay-portal-6-2-dev-guide-07-en)
+## Leveraging Template Editors for Notifications [](id=workflow-template-editors-notifications-liferay-portal-6-2-dev-guide-en)
 
 Designer lets you leverage FreeMarker and Velocity editors to customize
 templates for your workflow notifications. A FreeMarker editor comes bundled
 with Developer Studio. To edit Velocity templates, you'll need to install an
 editor. Don't worry, Developer Studio makes it easy, and we'll show you how. 
 
-### Add-on: Install Velocity Editor Support [](id=add-on-install-velocity-editor-support-liferay-portal-6-2-dev-guide-07-en)
+### Add-on: Install Velocity Editor Support [](id=workflow-velocity-editor-support-liferay-portal-6-2-dev-guide-en)
 
 Liferay Developer Studio comes with additional add-on support for editing
 Velocity template notifications in the Kaleo Designer for Java. To use this
@@ -642,7 +642,7 @@ When you edit a notification template set to the Velocity type, the template
 opens in the Velocity editor (a small "v" icon is in the left side of the
 editor's tab). 
 
-### Creating Notifications [](id=creating-notifications-liferay-portal-6-2-dev-guide-07-en)
+### Creating Notifications [](id=creating-workflow notifications-liferay-portal-6-2-dev-guide-07-en)
 
 To access the template editors, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
@@ -772,7 +772,7 @@ the Velocity editor you installed.
 In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-### Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-var-liferay-portal-6-2-dev-guide-07-en)
+### Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
 
 A context variable provides a uniform variable to insert into your templates and
 scripts. When executed, a context variable is automatically deleted and replaced
@@ -1005,7 +1005,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
-## Using Dynamic Data Lists (DDLs) with Workflows [](id=using-dynamic-data-lists-ddls-with-workf-liferay-portal-6-2-dev-guide-07-en)
+## Using Dynamic Data Lists (DDLs) with Workflows [](id=using-dynamic-data-lists-ddls-with-workflow-liferay-portal-6-2-dev-guide-en)
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
