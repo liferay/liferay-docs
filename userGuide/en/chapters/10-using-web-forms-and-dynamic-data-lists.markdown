@@ -591,7 +591,7 @@ Inside Kaleo Forms, users can create lists that follow a workflow, called a
 *process*, or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
-#### Starting a new Process
+#### Starting a New Process
 
 Defining processes that must be followed in data collection and entry is a
 fundamental part of business. Historically, this hasn't been fun or easy but
@@ -604,7 +604,7 @@ you to manage process definitions you have created.
 
 To build a list in Kaleo Forms with a workflow:
 
-1. Within the Kaleo Forms portlet click on the *Processes* tab.
+1. Within the Kaleo Forms portlet, click on the *Processes* tab.
 
 2. Click on *Add Process* and a form appears.
 
