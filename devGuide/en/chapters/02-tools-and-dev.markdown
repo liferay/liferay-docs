@@ -552,7 +552,6 @@ seems best to you.
 
 We can express to the reader that we'll go into more detail on the portlet
 fields in Chapter 3. - Jim -->
--->
 
 1. Go to File &rarr; New  &rarr; Liferay Portlet. 
 
@@ -609,18 +608,16 @@ Here's a brief description of how you can create this portlet in the
 explorer. Select New  &rarr; Liferay Portlet.
 
 2. Use the plugin creation wizard to specify these values:
-- **Portlet class**: *LocationListingPortlet*
-- **Java package**: *com.nosester.portlet.eventlisting*
-- **Superclass**: *com.liferay.util.bridges.mvc.MVCPortlet*
-- **Portlet name**: *locationlisting*
-- **Display name**: *Location Listing Portlet*
-- **Title**: *Location Listing Portlet*
-- **Portlet modes**: *View*
-- **Create JSP files**: *yes*
-- **Create resources bundle file**: *yes*
-- **Category**: *Sample*
-
-<!--I just stole the above from Service Builder chapter. -->
+    - **Portlet class**: *LocationListingPortlet*
+    - **Java package**: *com.nosester.portlet.eventlisting*
+    - **Superclass**: *com.liferay.util.bridges.mvc.MVCPortlet*
+    - **Portlet name**: *locationlisting*
+    - **Display name**: *Location Listing Portlet*
+    - **Title**: *Location Listing Portlet*
+    - **Portlet modes**: *View*
+    - **Create JSP files**: *yes*
+    - **Create resources bundle file**: *yes*
+    - **Category**: *Sample*
 
 3. Click Finish and deploy the Location Listing portlet to your Liferay Portal.
 
