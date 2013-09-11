@@ -649,7 +649,7 @@ display from the each site's *Look and Feel* control page.
  
 Let's talk about Liferay's JavaScript library next. 
 
-## Understanding Your Theme's JavaScript Callbacks in `main.js` [](id=themes-javascript-callbacks-main-js-liferay-portal-6-2-dev-guide-en)
+## Understanding Your Theme's JavaScript Callbacks in *main.js* [](id=themes-javascript-callbacks-main-js-liferay-portal-6-2-dev-guide-en)
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
