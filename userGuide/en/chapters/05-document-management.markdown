@@ -2,40 +2,37 @@
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
-can use it to store files of any kind; it serves as a virtual shared drive. The
-Documents and Media portlet takes its name from the fact that it represents a
-redesign of two portlets from previous versions: the Document Library and the
-Image Gallery. First, the Documents and Media library serves as a repository for
-all types of files; there's no need to store image files in a separate Image
-Gallery anymore. Second, the Media Gallery portlet does not serve as a
-repository but just displays selected content from the Documents and Media
-library. It can display image, audio and video files. Other features in the
-Documents and Media library include customizable document types and metadata
-sets, automatic document preview generation and support for mounting multiple
-external repositories. The new document types and metadata sets are an addition
-to, not a replacement for, the portal's system of tags and categories. Let's
-start exploring how to use the Documents and Media portlet.
+can use it to store files of any kind; it serves as a virtual shared drive, and
+can mount and browse external repositories. Its companion portlet, the Media
+Gallery, displays selected content from the Documents and Media library. It can
+display image, audio and video files. Other features in the Documents and Media
+library include customizable document types and metadata sets, automatic
+document preview generation, and support for mounting multiple external
+repositories. The new document types and metadata sets are an addition to, not a
+replacement for, the portal's system of tags and categories. Let's start
+exploring how to use the Documents and Media portlet.
 
 ## Getting Started with the Documents and Media Portlet
 
-The Documents and Media portlet is non-instanceable. This means that each page
-on your portal can host at most one such portlet. Furthermore, if you add
-multiple Documents and Media portlets to pages in the same site, these portlets
-will share the same data sets since they are scoped by site by default. However,
-you can add multiple Documents and Media *Display* portlets to a page. Then you
-can choose content from actual Documents and Media repositories to display.
-Remember that users, by default, have their own personal sites with public and
-private pages. They can use their personal sites to host Documents and Media
-portlets for storing or sharing their own files.
+The Documents and Media portlet, like many other of Liferay's portlets, is
+non-instanceable. This means that each page on your portal can host at most one
+such portlet. Furthermore, if you add multiple Documents and Media portlets to
+pages in the same site, these portlets by default share the same data sets since they
+are scoped by site. However, you can add multiple Documents and Media *Display*
+portlets to a page. Then you can choose specific subfolders from actual
+Documents and Media repositories to display. Remember that users, by default,
+have their own personal sites with public and private pages. They can use their
+personal sites to host Documents and Media portlets for storing or sharing their
+own files.
 
 ![Figure 5.1: The Documents and Media portlet offers a plethora of options to choose from.](../../images/05-document-library.png)
 
-The default view of the Documents and Media portlet displays the contents of the
+The Documents and Media portlet's default view displays the contents of the
 *Home* folder. The links on the left side of the portlet windows are filters.
 You can use these filters to choose what you want the main window of the portlet
-to display. *Recent* displays documents users have recently uploaded, edited or
+to show. *Recent* displays documents users have recently uploaded, edited or
 downloaded. *Mine* shows *your* documents; in other words, the documents you
-have uploaded. *Browse by Type* displays a list of options you can choose to
+have uploaded. *Browse by Type* shows a list of options you can choose to
 help filter your results. If you click on one of these filters, the main portlet
 window shows only documents that belong to the selected document type. When you
 add custom document types, which we discuss below, they are added to the filter
@@ -45,9 +42,9 @@ list. Next, let's look at how to navigate around Documents and Media.
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
-as well as its uploader and the user who last edited it. Depending on the
-document, some automatically extracted metadata may also be displayed, such as
-the document creator, author, title, content type, creation date, and last
+as well as who uploaded it and who last edited it. Depending on the document,
+some automatically extracted metadata may also be displayed, such as the
+document creator, author, title, content type, creation date, and last
 modification date. In the case of audio or video files, the duration would also
 be displayed. You can perform several actions on the document here:
 
@@ -210,7 +207,7 @@ out the fields defined by the metadata set of the document type. This encourages
 users not to forget to enter important information about their documents. For
 example, you could create a *copyrighted* document type and require users to
 enter a license for all "copyrighted" documents. More importantly, document
-types and metadata sets can improve document searchability. The values that
+types and metadata sets can make it easier to find documents. The values that
 users enter into the fields determined by their document type's metadata set
 become searchable entities within the portal. You can use Liferay's search
 portlet to search for these terms. Document types and metadata sets are
@@ -235,7 +232,7 @@ As an example, we could create a document type called *Syllabus* and define a
 metadata set. What metadata should we associate with syllabi? Let's choose for
 our syllabi to have course title, professor, semester, course description, and
 course requirements fields. All syllabi in our portal should maintain entries
-for these fields. This ensures that a syllabus will show up in a portal search
+for these fields. This ensures that a syllabus shows up in a portal search
 if its course title, professor or semester is searched for. Since we don't want
 to use our metadata set for any document type other than *Syllabus*, let's
 create our metadata set under the Main Metadata Fields area. Alternatively, we
@@ -693,8 +690,8 @@ files. If users decide that a file or certain comment about a file is useful or
 informative, they can rate it as good by clicking on the thumbs up icon next to
 the rating. If they think the file or comment is unhelpful or misleading, they
 can click on the thumbs down icon. If you'd like to disable ratings or comment
-ratings for files within your portlet, uncheck the *Enable Ratings* or *Enable
-Comment Ratings* box, respectively.
+ratings for files, uncheck the *Enable Ratings* or *Enable Comment Ratings*
+box, respectively.
 
 ## Automatic Previews and metadata  
 
@@ -702,12 +699,12 @@ Whenever possible, Liferay 6.2 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
 APIs to generate previews for documents. The only tool available that is 100%
 Java and has a compatible license to be distributed with Liferay is PDFBox. If
-you upload a PDF file to the Documents and Media portlet, Liferay will process
-the PDF in a separate thread to generate a preview. This process may last only a
-few seconds for a small file. The larger the file, the longer it takes.
+you upload a PDF file to the Documents and Media portlet, Liferay generates a
+preview for the PDF in a separate thread. This process may last only a few
+seconds for a small file. The larger the file, the longer it takes.
 
-The first time you run a conversion like this, look for a console message that
-indicates something like the following:
+The first time you run a conversion like this, look for the following console
+message: 
 
     Liferay is not configured to use ImageMagick for generating Document Library
     previews and will default to PDFBox. For better quality previews, install
@@ -732,7 +729,7 @@ documents in your browser, and lets you convert documents. ImageMagick allows
 for faster and higher-quality previews and conversions. Xuggler allows for audio
 and video previews, lets you play audio and video files in your browser, and
 extracts thumbnails from video files. Please see the *External Services* section
-of chapter 17 for instructions on how to configure Liferay to use these tools.
+of chapter 17 for how to configure Liferay to use these tools.
 
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
@@ -834,8 +831,9 @@ Liferay Sync is an add-on product for Liferay CE and EE that synchronizes files
 between your Liferay server and users' desktop and mobile environments. With
 Liferay Sync, your users can publish and access shared documents and files from
 their native environments without using a browser. Windows and Mac OS desktops
-and Android and iOS-based mobile platforms are currently supported. As users add
-and collaborate on documents and files, Liferay Sync automatically synchronizes
+and Android and iOS-based mobile platforms are currently supported, while Linux
+users have an unsupported beta they can use. As users add and collaborate on
+documents and files, Liferay Sync automatically synchronizes
 them across all configured Sync clients. Liferay Sync is fully integrated into
 the Liferay Platform so that features such as authentication, versioning,
 workflow, and social collaboration function in the supported environments.
@@ -869,7 +867,7 @@ Sync folder and synchronizing them across other Sync clients. In iOS devices,
 Liferay Sync is designed to work with both Liferay Community Edition and
 Enterprise Edition. Using Sync with Liferay CE limits users to syncing one site.
 Using Sync with Liferay EE enables users to synchronize documents and files
-across all the sites which they can access.
+across all the sites they can access.
 
 Liferay Sync is also designed to work with Liferay Social Office. You can sync
 one site from Social Office CE as well as one site from Liferay Portal CE. If
