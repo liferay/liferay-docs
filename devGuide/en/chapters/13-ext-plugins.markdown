@@ -3,7 +3,7 @@
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
 sure you can't accomplish your goal using a different tool. Check out Chapter
-12, Hooks for the available alternatives. If a hook won't suffice, keep reading
+10, Hooks for the available alternatives. If a hook won't suffice, keep reading
 to discover the use cases for Ext plugins and how to set one up. First let's
 talk about why you should avoid Ext plugins when possible. 
 

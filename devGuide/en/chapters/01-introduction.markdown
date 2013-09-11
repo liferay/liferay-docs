@@ -230,7 +230,7 @@ effect.
  *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
  the extension environment in order to simplify development. For instructions on
  converting an existing Extension Environment into a plugin, see the section
- on migrating old extension environments in chapter 12.
+ on migrating old extension environments in Chapter 13.
 
 ---
 

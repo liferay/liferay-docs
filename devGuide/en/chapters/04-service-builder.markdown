@@ -1147,7 +1147,7 @@ user. The company represents the portal instance. We set the `createDate` and
 `modifiedDate` of our Event to the current time. After that, we call the
 generated `addEvent` method of `EventLocalServiceBaseImpl` with our Event.
 Lastly, we add the Event as a resource so that we can apply permissions to it
-later. We'll cover the details of adding resources in Chapter 12. 
+later. We'll cover the details of adding resources in Chapter 6. 
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add their signatures to the `EventLocalService` interface by

@@ -1314,7 +1314,7 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See Chapter 12 on Ext plugins. 
+    - `ext/` - Ext plugins directory. See Chapter 13 on Ext plugins. 
 
     - `hooks/` - hook plugins directory. See Chapter 10 on hooks. 
     - `layouttpl/` - layout templates directory. See Chapter 9 on creating
