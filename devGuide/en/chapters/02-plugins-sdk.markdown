@@ -144,22 +144,26 @@ but you shouldn't modify it directly (In fact, you will see the message "DO NOT
 EDIT THIS FILE" at the top if you open it). In order to override the default
 settings, create a new file named `build.[username].properties` in the same
 folder, where `[username]` is your user ID on your machine. For example, if your
-user name is jsmith, your file name would be `build.jsmith.properties`. 
+user name is jbloggs, your file name would be `build.jbloggs.properties`. 
 
 Edit this file and add the following lines: 
 
-    #
-    # Specify the paths to an unzipped Tomcat bundle.
-    #
+    app.server.type=the name build.properties uses for your application server type
+    app.server.parent.dir=the directory containing your Liferay bundle
+    app.server.tomcat.dir=the directory containing your application server
 
-    app.server.type=tomcat
-    app.server.dir=the directory containing your application server
+If you are using Liferay Portal bundled with Tomcat 7.0.40 and your
+bundle is in your `c:/liferay-portal-6.1.30-ee-ga3` folder, you'd specify the
+following lines:
 
-If you use Liferay Portal bundled with Tomcat, `app.server.dir` should be the
-absolute path to your directory (e.g.
-`c:/liferay-portal-[version]/bundles/tomcat-[tomcat-version]`). We specify
-`app.server.type` as it's a best practice to specify the application server type
-along with the application server properties we are overriding. 
+    app.server.type = tomcat
+    app.server.parent.dir = c:/liferay-portal-6.1.30-ee-ga3
+    app.server.tomcat.dir = ${app.server.parent.dir}/tomcat-7.0.40 
+
+Since we're using the Tomcat app server, we specified `tomcat` as our app server
+type and we specified the `app.server.tomcat.dir` property. See the Plugins
+SDK's `build.properties` for the name of the app server property that matches
+your app server.
 
 Save the file. 
 
