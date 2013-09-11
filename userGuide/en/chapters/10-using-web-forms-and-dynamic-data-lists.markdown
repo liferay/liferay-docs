@@ -348,7 +348,7 @@ his B.O. problem. For reasons like that, you'll need to customize the data entry
 form or the display of the list. Liferay lets you do exactly that using a custom
 *form template* or *display template*. 
 
-## Make it pretty: creating custom displays
+## Make it Pretty: Creating Custom Displays
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
@@ -360,7 +360,7 @@ to customize: form templates and display templates. This covers the forms of
 lists (*form templates*), as well as the display of the list contents (*display
 templates*). 
 
-### Form templates
+### Form Templates
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
@@ -368,13 +368,20 @@ using a data definition will see every item in that definition on the input
 form. What if, however, you want a quick sign-up form to find out who's coming
 to dinner tonight? Using a form template you can customize the form's display
 any way you want. You can limit the fields displayed for entry or change the
-order of elements. To access and create new templates, go to *Control Panel
-&rarr; Content &rarr; Dynamic Data Lists &rarr; Manage Data Definitions*, choose
-the data model you want to modify, click the *Actions* button and choose *Manage
-Templates*. When you click on *Add Form Template*, you're presented with the
-same kind of graphical, drag-and-drop interface used for creating the data
-definition. Move items around, delete unwanted fields from view and save when
-ready. 
+order of elements. To access and create new templates, go to the Dockbar and
+click *Admin* &rarr; *Content*, click on Dynamic Data Lists, click on *Manage
+Data Definitions*, then click on the *Actions* button next to your data
+definition of choice and select *Manage Templates*. When you click on *Add Form
+Template*, you're presented with the same kind of graphical, drag-and-drop
+interface used for creating the data definition. Move items around, delete
+unwanted fields from view and save when ready.
+
+---
+
+ ![Tip](../../images/tip.png) Note: Form templates were called *detail
+ templates* prior to Liferay 6.2.
+
+---
 
 Note that data definitions can have multiple templates. You can choose the
 template you want to use for display in either a dynamic data list display or a
@@ -392,7 +399,7 @@ few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-### Display templates
+### Display Templates
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
@@ -404,6 +411,13 @@ Taking it even further, you could provide a fancy, JavaScript-driven image
 carousel preview of all the attendees of the party. This would complement your
 other displays and be another bragging right on `list.it`. Display templates
 give you the power to do all this and more.
+
+---
+
+ ![Tip](../../images/tip.png) Note: Display templates were called *list
+ templates* prior to Liferay 6.2.
+
+---
 
 Just like form templates, display templates are found in the Manage Templates
 section of a data definition. With display templates you can customize the
@@ -421,39 +435,30 @@ scripts to pull data from a backing structure, see web content templates in
 chapter 3.
 
 The first thing we need to do is create a new display template for our
-"Volunteer Sign-Up" data definition. Like other features in Liferay, there are
-several ways to do this, depending on your context.
+"Volunteer Sign-Up" data definition. As with many other features in Liferay,
+there are multiple ways to do this, depending on your context.
 
 From the Dynamic Data List Display portlet:
 
-1. Navigate to where your DDL Display portlet is and make sure your list is
-   selected.
+1. Navigate to the page with your DDL Display portlet and make sure your list is
+   selected in the portlet's configuration.
 
-2. Find the *Create Display Template* icon on the bottom-left of the portlet
-window and click it to create a new template. If you don't see the icon, sign in
-as a user with rights to create templates.
+2. Find the *Add Display Template* icon on the bottom-left corner of the portlet
+   window and click it to create a new template. If you don't see the icon, sign
+   in as a user with permission to create templates.
 
-From the Dockbar:
+From the Dockbar/Control Panel:
 
-1. Go to *Manage &rarr; Site Content*.
+1. Click on *Admin* &rarr; *Content*.
 
-2. When loaded, navigate to *Dynamic Data Lists &rarr; Manage Data Definitions*.
+2. Navigate to *Dynamic Data Lists* &rarr; *Manage Data Definitions*.
 
-3. Find your data definition in the list, then click *Actions &rarr; Manage
-   Templates*
+3. Find your data definition in the list, then click *Actions* &rarr; *Manage
+   Templates*.
 
 4. Now you can click on *Add Display Template* to create a new template.
 
-From the control panel:
-
-1. Navigate to *Dynamic Data Lists &rarr; Manage Data Definitions*.
-
-2. Find your data definition in the list, then click *Actions &rarr; Manage
-   Templates*
-
-3. Now you can click on *Add Display Template* to create a new template.
-
-Fill out the form with a title and a description. Next, choose a templating
+Fill out the form with a name and a description. Next, choose a templating
 language. Just like web content templates, you can choose between FreeMarker or
 Velocity. There is no functional difference between the two. Once you choose the
 script language, you can upload a template file or use the display template
@@ -463,14 +468,15 @@ Additionally, you can hover your pointer over a variable in the pallete for a
 more detailed description. To place a variable into the display template code,
 position your cursor where you want it placed, and click the variable name in
 the palette. Another useful tool in the display template editor is the
-autocomplete feature. It can be invoked by typing *${* which opens a drop-down
-menu of common variables. By clicking one of the variables, the editor inserts
-the variable into your display template code.
+autocomplete feature. In a Freemarker template, it can be invoked by typing *${*
+which opens a drop-down menu of common variables. Upon selecting one of the
+variables, the editor inserts the variable into your display template code.
 
-We want to use our template to give us a summary of who is helping on the tasks
-in our move. To do that, we need to access the records for the list and pull out
-the name and task for each volunteer. Within the template, we have access to a
-few helper variables to find out what records we have access to:
+We want to write a Freemarker template to give us a summary of who is helping on
+the tasks in our move. To do that, we need to access the records for the list
+and pull out the name and task for each volunteer. Within the template, we have
+access to a number of helper variables to find out what records we have access
+to:
 
     reserved_ddm_structure_id
     
@@ -486,62 +492,61 @@ and data definition. We can easily retrieve all the records through a service
 call to `DDLRecordLocalService`. To gain access to this service, we need to use
 a helper utility called `serviceLocator` that retrieves an instance of the
 service for us. Once we have the service, we can retrieve the list of records
-(our list of volunteers). Accessing the service with the `serviceLocator` is a
-single line of code:
+(our list of volunteers). Accessing the service with the `serviceLocator` can be
+done with the following line of code:
 
-    #set ($ddlRecordsUtil = 
-    		$serviceLocator.findService(
-    		"com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
+    <#assign DDLRecordLocalService =
+        serviceLocator.findService(
+        "com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService")>
 
-We store a handle to our service in `ddlRecordsUtil` so we can then use the
+We store a handle to our service in `DDLRecordLocalService` so we can use the
 service to retrieve our list of volunteers:
 
-    #set ($records = ${ddlRecordsUtil.getRecords($recordSetId)})
+    <#assign records = DDLRecordLocalService.getRecords(reserved_record_set_id)>
     
 Now that we have our records, we can iterate through the list and display the
 data from each record that we want to show. To access a field from a record
-entry (such as the volunteer's name), we call the `getField` method and pass in
-the field's name. Each field has a number of methods on it as well, but the one
-you will use most often is `getValue`, which returns the content of the field.
-Each field has the set of properties discussed above and can be accessed in the
-same way (`get + FieldName`):
+entry (such as the volunteer's name), we call the `getFieldValue` method and
+pass in the field's name. Each dynamic data list record has a number of other
+similar methods (see the `com.liferay.portlet.dynamicdatalists.model.DDLRecord`
+interface at
+[http://docs.liferay.com/portal/6.2/javadocs](http://docs.liferay.com/portal/6.2/javadocs)
+but you'll probably use `getFieldValue` most often. This method returns the
+content of the field.
 
-       #set ($name = $record.getField("name").getValue())
+    ${cur_record.getFieldValue("name")}
        
 Now all we have to do is set the results in some appealing way. In this example,
 we've made it very simple by using an unordered list for the results (`<ul>`).
 Here is the complete source for the template:
 
     <h1>Task Summary</h1>
-    
-    Here are the tasks that people have signed up for on "$reserved_record_set_name.data".
-    #set ($ddlRecordsUtil = $serviceLocator.findService("com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
-    
-    #set ($recordSetId = $getterUtil.getLong($reserved_record_set_id.data))
-    #set ($records = ${ddlRecordsUtil.getRecords($recordSetId)})
-    
+
+    Here are the tasks that people have signed up for on "${reserved_record_set_name}".
+
+    <#assign DDLRecordLocalService = serviceLocator.findService("com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService")>
+
+    <#assign records = DDLRecordLocalService.getRecords(reserved_record_set_id)>
+
     <ul>
-    
-    #foreach ($record in $records)
-    
-       #set ($name = $record.getField("name").getValue())
-       #set ($tasks = $record.getField("task").getValue())
-       
-        <li><em>${name}</em> will help with <strong>$tasks</strong> </li>
-    #end
+    <#if records?has_content>
+            <#list records as cur_record>
+                    <li><em>${cur_record.getFieldValue("name")}</em> will help with ${cur_record.getFieldValue("task")}</li>
+            </#list>
+    </#if>
     </ul>
 
-Once you've typed your source into the editor window, click *Update* and then
+Once you've typed the template's source into the editor window, click *Save* to
 save the display template. With the display template selected, your list display
 can now be a summary of tasks as shown below. 
 
-![Figure 10.7: A display template in action](../../images/05-ddl-list-template.png)
+![Figure 10.7: This display template provides a list of users who've volunteered along with the tasks for which they volunteered.](../../images/05-ddl-list-template.png)
 
 All the knowledge you have accrued through building out your award-winning
 content can be brought to bear in display templates. With the full power of
-Velocity templates at your fingertips, you have easy access to all the data in
-the list, as well as the full complement of helper methods and the Alloy UI
-JavaScript library to make easy work of dynamic displays. 
+Freemarker or Velocity templates at your fingertips, you have easy access to all
+the data in the list, as well as the full complement of helper methods and the
+Alloy UI JavaScript library to make easy work of dynamic displays. 
 
 If you're not a Listie, and you happen to be deploying custom lists in an
 environment that requires approval from other users, then it's not enough to
