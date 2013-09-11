@@ -548,32 +548,33 @@ Freemarker or Velocity templates at your fingertips, you have easy access to all
 the data in the list, as well as the full complement of helper methods and the
 Alloy UI JavaScript library to make easy work of dynamic displays. 
 
-If you're not a Listie, and you happen to be deploying custom lists in an
+If you're not a Listie and you happen to be deploying custom lists in an
 environment that requires approval from other users, then it's not enough to
 just create the list and display a form. What you need is a real integration
-with Workflow. Workflow integrates smoothly with Dynamic Data Lists.
+with workflow. Workflow integrates smoothly with Dynamic Data Lists.
 
-### Using workflow
+### Using Workflow
 
 Liferay integrates the powerful features of workflow and the data capabilities
 of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic
 data list portlets by default, so you can focus on the core task of building
 custom forms backed by a data list. After this is done, you can deploy custom
 workflows to the form and its data. Though Kaleo Forms is only available in
-Enterprise Edition, you can still apply a workflow to a list when creating it in
-the Community Edition.
+Liferay EE, you can still apply a workflow to a list when creating it in Liferay
+CE.
 
-If you don't have a workflow engine installed, install the Kaleo Web plugin by
-going to *Control Panel &rarr; Server &rarr; Plugins Installation &rarr; Install
-More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list. You can
-also copy the Kaleo `.war` file to the deploy folder of you application server.
-Once workflow is installed, you have a new option when creating a list:
+If you don't have a workflow engine installed, you need install the Kaleo Web
+plugin. This plugin is included in the *Kaleo Workflow CE* and *Kaleo Workflow
+EE* apps which are available from Liferay Marketplace. To manually deploy the
+Kaleo workflow plugin, just copy the plugin `.war` file to the deploy folder of
+you application server. Once workflow is installed, you have a new option when
+creating a list:
 
-![Figure 10.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
+![Figure 10.8: Once the workflow plugin has been installed, you can choose a workflow when creating a new dynamic data list.](../../images/05-ddl-add-workflow.png)
 
-Choose the workflow you would like to use, then every record has to go through
-the workflow process. Now if you need to preview or edit entries as they're
-coming in, it's easy to work in to your daily workflow.
+Choose the workflow you'd like to use. This requires that every record must pass
+through the workflow process. Now if you need to preview or edit entries as
+they're coming in, it's easy to integrate it into your daily workflow.
 
 #### Creating a Kaleo Form
 
