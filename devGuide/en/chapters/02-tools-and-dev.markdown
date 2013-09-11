@@ -263,10 +263,10 @@ portal(https://www.liferay.com/group/customer/downloads/portal)? -Russ -->
 
     ![Figure 2.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
-2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
+2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
     under the *Liferay, Inc.* category and click *Next*.
 
-3.  Click *Browse* and select your `liferay-portal-6.1.x directory`. 
+3.  Click *Browse* and select your `liferay-portal-6.2.x directory`. 
 
 4.  If you've selected the Liferay portal directory and a bundle JRE is present,
     it is automatically selected as the server's launch JRE. If no JRE bundle
@@ -1017,7 +1017,7 @@ configure the Remote Server Adapter, use the following steps:
 
 2.  Launch Liferay IDE and open the new server wizard by clicking *File* &rarr;
     *New* &rarr; *Other*; select *Server* in the Server category and click
-    *Next*. Select *Remote Liferay Server (Liferay 6.1)* in the Liferay, Inc.
+    *Next*. Select *Remote Liferay Server (Liferay 6.2)* in the Liferay, Inc.
     category.
 
 3.  Enter the IP address of the machine with the remote Liferay Portal instance
@@ -1167,7 +1167,7 @@ Setting up the Plugins SDK is easy. Let's get to it.
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
-Setup](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-lifer-1)
+Setup](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-lifer-1)
 chapter of *Using Liferay Portal*. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
@@ -1192,7 +1192,7 @@ Installation steps:
 
      Click the *Downloads* link at the top of the page. 
 
-     From the *Liferay Portal 6.1 Community Edition* section, select the
+     From the *Liferay Portal 6.2 Community Edition* section, select the
      *Plugins SDK* option. 
 
      Click *Download*. 
@@ -1290,11 +1290,11 @@ Edit this file and add the following lines:
     app.server.tomcat.dir=the directory containing your application server
 
 If you are using Liferay Portal bundled with Tomcat 7.0.40 and your
-bundle is in your `c:/liferay-portal-6.1.30-ee-ga3` folder, you'd specify the
+bundle is in your `c:/liferay-portal-6.2` folder, you'd specify the
 following lines:
 
     app.server.type = tomcat
-    app.server.parent.dir = c:/liferay-portal-6.1.30-ee-ga3
+    app.server.parent.dir = c:/liferay-portal-6.2
     app.server.tomcat.dir = ${app.server.parent.dir}/tomcat-7.0.40 
 
 Since we're using the Tomcat app server, we specified `tomcat` as our app server
@@ -1792,8 +1792,8 @@ Get the artifacts for Liferay CE from SourceForge by following these steps:
     [http://sourceforge.net/projects/lportal/files/Liferay%20Portal/](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
 2.  Select the Liferay version for which you need Maven artifacts. For example,
-    if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
-    *6.1.1 GA2*. 
+    if you need Maven artifacts for Liferay Portal 6.2.0 CE GA1, select version
+    *6.2.0 GA1*. 
 
     ![Figure 2.20: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
@@ -1839,13 +1839,13 @@ Maven artifacts from source, follow these steps:
     server. Note that your `app.server.[app server name].dir` directory doesn't
     need to exist yet; you can create it by invoking an Ant target in the next
     step. For example, if you're running Apache Tomcat and your
-    Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
+    Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.2.x`, use
     the following properties:
 
-        app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x
+        app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.2.x
 
         app.server.tomcat.dir=
-            /home/jbloggs/liferay/bundles/ce-6.1.x/[tomcat version]
+            /home/jbloggs/liferay/bundles/ce-6.2.x/[tomcat version]
 
 3.  If an application server doesn't already exist at the directory specified by
     your `app.server.[app server name].dir` property, run `ant -f build-dist.xml
@@ -2034,7 +2034,7 @@ Liferay offers an option for automatic download and installation of Liferay CE
 Maven artifacts. They're publicly available on the *Central Repository*, located
 at
 [http://search.maven.org/#search|ga|1|liferay%20maven](http://search.maven.org/#search|ga|1|liferay%20maven),
-and are updated with each Liferay release (e.g., 6.1.0, 6.1.10, 6.1.20, etc.).
+and are updated with each Liferay release (e.g., 6.2.0, 6.2.10, 6.2.20, etc.).
 The first time you use Maven to compile a Liferay plugin project, Maven
 automatically downloads the required artifacts from the Central Repository into
 your local repository if they're not found in your local repository or any of
@@ -2098,41 +2098,41 @@ Let's create a parent project named `sample-parent-project`:
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-client</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-impl</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-service</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>portal-web</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                     <type>war</type>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-bridges</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-java</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                 </dependency>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
                     <artifactId>util-taglib</artifactId>
-                    <version>6.1.20</version>
+                    <version>6.2.0</version>
                 </dependency>
             </dependencies>
 
@@ -2140,8 +2140,6 @@ Let's create a parent project named `sample-parent-project`:
 
     If you use this example POM, replace the `<version>` values with the version
     of Liferay applicable to the plugins you're developing. 
-
-    <!--Change to 6.2 after release -->
  
 3.  Modify the values of the *properties* to match your Liferay environment.
 
@@ -2156,8 +2154,8 @@ Let's create a parent project named `sample-parent-project`:
     Your POM's *properties* should look similar to the following:
     
         <properties>
-            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.20-ee-ga2\deploy</liferay.auto.deploy.dir>
-            <liferay.version>6.1.20</liferay.version>
+            <liferay.auto.deploy.dir>E:\liferay-portal-6.2\deploy</liferay.auto.deploy.dir>
+            <liferay.version>6.2.0</liferay.version>
         </properties>
 
 By specifying your Liferay instance's deploy directory in the POM, you're
@@ -2329,12 +2327,12 @@ these steps:
 1.  Make sure your parent POM's Liferay-specific properties specify the correct
     Liferay version and your Liferay Portal's deploy directory path. 
 
-    Here's an example of these properties using Liferay 6.1.20 and a deploy
-    directory path of `E:\liferay-portal-6.1.20-ee-ga2\deploy`: 
+    Here's an example of these properties using Liferay 6.2 and a deploy
+    directory path of `E:\liferay-portal-6.2\deploy`: 
 
         <properties>
-            <liferay.auto.deploy.dir>E:\liferay-portal-6.1.20-ee-ga2\deploy</liferay.auto.deploy.dir>
-            <liferay.version>6.1.20</liferay.version>
+            <liferay.auto.deploy.dir>E:\liferay-portal-6.2\deploy</liferay.auto.deploy.dir>
+            <liferay.version>6.2.0</liferay.version>
         </properties>
 
     If you haven't already created a parent plugin project, see *Using a Parent
@@ -2876,7 +2874,7 @@ the clear; in acoordince with our policy, methods you used in your custom
 development haven't been deprecated. 
 
 <!-- I think this whole section is incorrect. It should be synced with this
-(focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/editions-of-lifer-4 -->
+(focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/editions-of-lifer-4 -->
 
 <!--I updated it based on the user guide. Please review -Russ -->
 

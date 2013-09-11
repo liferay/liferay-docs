@@ -973,8 +973,8 @@ Create new directories as necessary. Place the following content into the new
 file (remove the line break after `{mvcPathName}.jsp`):
 
     <?xml version="1.0"?>
-    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" 
-    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_1_0.dtd">
+    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN" 
+    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
 
     <routes>
         <route>

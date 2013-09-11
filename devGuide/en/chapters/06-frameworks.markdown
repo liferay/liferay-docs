@@ -98,7 +98,7 @@ First we'll look at the fields of the `ServiceContext` class.
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
 
-[http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html).
+[http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html).
 
 Here we'll give you a helpful categorical listing of the fields: 
 
@@ -494,8 +494,8 @@ resources to actions:
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC
-     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
-     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+     "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
 
     <resource-action-mapping>
         <portlet-resource>
@@ -665,8 +665,8 @@ for all built-in Liferay portlets (including the blogs portlet):
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC
-     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
-     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+     "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
     
     <resource-action-mapping>
         <resource file="resource-actions/portal.xml" />
@@ -1729,7 +1729,7 @@ Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
 Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
+Kaleo](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/workflow-with-kal-4)
 to resolve the communication breakdown, but we'll resolve the Jungle Gym's
 communication woes using Message Bus, to show you how it works. 
 Here are the inter-department message exchanges we'll accommodate:
@@ -2340,7 +2340,7 @@ object `Device` from the `themeDisplay` object like this:
     Device device = themeDisplay.getDevice();
 
 You can view the API in the [Device
-Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 
@@ -2383,7 +2383,7 @@ from its built in applications, so they're proven to work in the real world,
 even in high performance portals. 
 
 This section is a placeholder that provides a brief description of the main
-frameworks provided with Liferay 6.1. The following list is a work in progress,
+frameworks provided with Liferay 6.2. The following list is a work in progress,
 since we'll add more sections  to this chapter over time, and some of the
 current sections might evolve into their own chapters as we add more
 information and detailed instructions on how to use them. 

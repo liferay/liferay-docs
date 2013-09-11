@@ -19,7 +19,7 @@ Here are the topics we'll cover in this chapter:
 ## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
 
 You can find Liferay's services by searching for them in the Javadocs:
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
 Below we'll show you how to search for portal services and portlet services.
 
 Let's start by finding a portal service. 
@@ -30,7 +30,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 
 
 1. In your browser, open up the Javadocs:
-   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/) 
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/) 
 
 2. Under *Portal Services*, click the link for the `com.liferay.portal.service`
    package, since the services for the Organization entity belong to the
@@ -53,7 +53,7 @@ naming convention `com.liferay.portlet.[portlet-name].service`, where
 Here's how you find services for a user's blogs statistics:
 
 1. In your browser, open the Javadocs:
-   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 
 2. Under *Portlet Services*, click the link for the
    `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
@@ -140,7 +140,7 @@ resides on the portal host machine and is controlled by the portal
 administrator. Portal administrators can configure security settings for the
 Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
 Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Properties
-Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+Reference](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properti-1)
 chapter of *Using Liferay Portal* describes these properties. 
 
 ---
@@ -183,14 +183,6 @@ can get Organization data with the following URL:
 
     http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
----
-
-![note](../../images/tip-pen-paper.png) **Note:** Older Liferay versions let you
-access services with `http://localhost:8080/tunnel-web/axis`. This path has
-changed in Liferay 6.1; if you enter it, you'll be redirected to the new one. 
-
----
-
 The authentication type specified for your Liferay Portal instance dictates the
 authentication type you'll use to access your web service. The portal
 administrator can set the portal's authentication type to any of the following: 
@@ -200,7 +192,7 @@ administrator can set the portal's authentication type to any of the following:
 - *email address*
 
 Your Liferay Portal Password Policies (see chapter
-[Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
+[Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/administering-liferay-port-1)
 of *Using Liferay Portal*) should be reviewed, since they'll be enforced on your
 administrative ID as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an

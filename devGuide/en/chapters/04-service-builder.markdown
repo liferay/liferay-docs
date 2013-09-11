@@ -184,7 +184,7 @@ is configurable via portal properties. All you have to do to enable entity and
 finder caching for an entity in your project is to set the `cache-enabled=true`
 attribute of your entity's `<entity>` element in your `service.xml`
 configuration file. Please refer to the [Liferay User
-Guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-clusteri-2)
+Guide](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-clusteri-2)
 for more details about Liferay caching.
 
 <!-- Is the Clustering chapter of the User Guide the only place where we discuss
@@ -239,7 +239,7 @@ page.
  portlet provides many more features than the simple example application
  described here. For information about the Calendar portlet, please refer to
  the chapter on Liferay's collaboration suite in [Using Liferay
- Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+ Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide).
 
 ---
 
@@ -712,8 +712,8 @@ added some comments to highlight the service's various elements. Other than
 that, your `service.xml` file's contents should look similar to this: 
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
     <service-builder package-path="com.nosester.portlet.eventlisting">
         <author>Joe Bloggs</author>
         <namespace>Event</namespace>
@@ -1367,7 +1367,7 @@ following services:
   updating roles. 
 
 For more information on these services, see the Liferay Portal CE Javadocs at
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
+[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 or the Liferay Portal EE Javadocs included in the Liferay Portal EE
 Documentation `.zip` file that you can download from the Customer Portal on
 [http://www.liferay.com](http://www.liferay.com). 
