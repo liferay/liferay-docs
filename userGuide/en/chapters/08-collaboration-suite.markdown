@@ -1522,9 +1522,9 @@ management wants to implement? What's their favorite ice cream flavor? When you
 use Liferay's Polls feature you can find out the answer to these and other
 questions that should help you better understand your users. 
 
-There are two portlets involved in making and displaying a poll: the Polls
-portlet, which is accessed through the Control Panel, and the Polls Display
-portlet, which can be added to any page in the portal. 
+There are two portlets involved in making and displaying a poll: the *Polls*
+portlet, which is accessed through the Site Administration page, and the *Polls
+Display* portlet, which can be added to any page in the portal.
 
 The Polls portlet helps you set up the poll question and the possible answers
 users can select. The Polls Display portlet is an instanceable portlet that
@@ -1537,17 +1537,17 @@ separate polls can be managed; a separate portlet called Polls Display can be
 configured to display a specific poll's questions and results.
 
 The Polls Display Portlet allows users to vote for a specific poll's questions
-and see the results. Questions must be created from the Polls portlet in the
-Control Panel. You can display one question at a time or you can combine
-several questions inside a nested portlet to create a survey.
+and see the results. Questions must be created from the Polls portlet on the
+Site Administration page. You can display one question at a time or you can
+combine several questions inside a nested portlet to create a survey.
 
-We'll begin by creating a poll in the Control Panel.
+We'll begin by creating a poll.
 
 ### Creating a Poll  
 
-In the Control Panel, navigate to the *Polls* link under Content. Click the
-*Add Question* button. A form appears that allows you to fill out all the
-information for your poll. 
+On your site's Site Administration page, navigate to the *Polls* link under
+Content. Click the *Add Question* button. A form appears that allows you to fill
+out all the information for your poll.
 
 ![Figure 8.32: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
@@ -1588,14 +1588,13 @@ the two-step process and put your poll on a page.
 ### Adding a Poll to a Page  
 
 Now that you have created your poll question, it's time to present it to your
-users. Navigate to your portal and add the Polls Display portlet to a page. It
-is available from the *Content Management* section of the *Add* &rarr; *More*
-menu. 
+users. Navigate to your site and add the Polls Display portlet to a page. It is
+available from the *Add* &rarr; *Applications* &rarr; *Content Management* menu.
 
 The Polls Display portlet may look strange when it first appears on your page.
 That's because it's not configured. Before visitors to your site can use the
 poll, they must be able to access it. Click on the link labeled *Please
-configure this portlet to make it visible to all users*, and a dialog box like
+configure this portlet to make it visible to all users, and a dialog box like
 the one below appears.
 
 ![Figure 8.33: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
@@ -1605,7 +1604,7 @@ displays the name of the poll you created. Choose it, click *Save*, and it is
 displayed on the page. That, in a nutshell, is how you create a poll, but there
 is another way to add a question to the Polls Display portlet.
 
-Start by navigating to your portal and placing the Polls Display portlet on a
+Start by navigating to your site and placing the Polls Display portlet on a
 page. Using the icons in the lower left of the portlet, choose the *Add
 Question* button. A new form appears that lets you create another question.
 When you are done filling out the form, click *Save* and you new poll appears
@@ -1642,9 +1641,9 @@ of votes cast.
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
-*Pie* and *Vertical Bar*.
+*Pie*, and *Vertical Bar*.
 
-![Figure 8.36: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
+![Figure 8.36: This is what the vertical bar graph for the Nose Size poll results looks like.](../../images/polls-results-vertical-bar.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are
