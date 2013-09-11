@@ -348,12 +348,12 @@ You can define settings to make your theme configurable. Create a file named
 content:
 
     <?xml version="1.0"?>
-    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.1.0//EN"
-    "http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd">
+    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
 
     <look-and-feel>
         <compatibility>
-            <version>6.1.1+</version>
+            <version>6.2.0+</version>
         </compatibility>
         <theme id="deep-blue" name="Deep Blue">
             <settings>
@@ -445,7 +445,7 @@ company's name in the footer of your site's pages:
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
-Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
+Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
 ![Figure 9.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
@@ -460,7 +460,7 @@ footer, including the slogan.
  to display configurable theme settings properly, like the slogan text area and
  footer checkbox from the previous example. For details, see the [Overriding a
  *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
+ File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
 ---
@@ -1370,22 +1370,22 @@ your convenience, we've listed all of them in the following table.
 
 | Variable | Type | Description |
 | -------- | ---- | ----------- |
- $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
  $request | javax.servlet.http.HttpServletRequest| |
- $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
- $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Company.html) |
- $user | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $realUser | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $layout | com.liferay.portal.model.Layout | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
+ $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
+ $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Company.html) |
+ $user | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/User.html) |
+ $realUser | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/User.html) |
+ $layout | com.liferay.portal.model.Layout | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Layout.html) |
  $layouts | java.util.List<com.liferay.portal.model.Layout> ||
  $plid | java.lang.Long ||
- $layoutTypePortlet | com.liferay.portal.model.LayoutTypePortlet | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
+ $layoutTypePortlet | com.liferay.portal.model.LayoutTypePortlet | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
  $portletGroupId | java.lang.Long ||
  $locale | java.util.Locale ||
  $timeZone| java.util.TimeZone ||
- $theme | com.liferay.taglib.util.VelocityTaglib | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
- $colorScheme | com.liferay.portal.model.ColorScheme | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/ColorScheme.html) |
- $portletDisplay | com.liferay.portal.theme.PortletDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
+ $theme | com.liferay.taglib.util.VelocityTaglib | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
+ $colorScheme | com.liferay.portal.model.ColorScheme | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/ColorScheme.html) |
+ $portletDisplay | com.liferay.portal.theme.PortletDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
 ---
 
 Now your layout template toolbox is complete. 

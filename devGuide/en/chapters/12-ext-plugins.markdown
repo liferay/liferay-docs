@@ -236,11 +236,11 @@ application server directory to determine the value to use for your
 
 For example, `C:/work` could be your `ext.work.dir` value. If we have a Liferay
 bundle `.zip` file
-`C:/downloads/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip` which we
+`C:/downloads/liferay-portal-tomcat-6.2.0-ce-ga1-[timestamp].zip` which we
 set as the value for our `app.server.zip.name` property, the *relative path* to
 the application server *within* our Liferay bundle `.zip` file is
-`liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23`. We'd then specify
-`C:/work/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23` as our `app.server.dir`
+`liferay-portal-6.2.0-ce-ga1\tomcat-7.0.40`. We'd then specify
+`C:/work/liferay-portal-6.2.0-ce-ga1/tomcat-7.0.40` as our `app.server.dir`
 property value. 
 
 ---
@@ -824,7 +824,7 @@ versions of Liferay, you could configure Lucene analyzers from
 single analyzer for all portal-indexed fields. For example, it was difficult to
 provide correct behaviors for handling both keyword and text fields. 
 
-In Liferay 6.1, you no longer configure Lucene from `portal-ext.properties`.
+Since Liferay 6.1, you no longer configure Lucene from `portal-ext.properties`.
 Instead, Lucene analyzers are defined in Spring configuration files. The default
 analyzer configuration is defined in
 `/portal-impl/src/META-INF/search-spring.xml`. Liferay 6.1 introduced per-field
@@ -971,7 +971,7 @@ small and easy to transport. Execute these steps on the server:
 
 2.  Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
     Liferay distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-portal-6.1.0-ce-ga1/`).
+    your bundle (e.g., `liferay-portal-6.2.0-ce-ga1/`).
 
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
@@ -985,7 +985,7 @@ changes from all your Ext plugins. Before you deploy the Liferay `.war` file,
 copy the dependency `.jar` files for Liferay and all Ext plugins to the global
 application server class loader in the production server. The precise location
 varies from server to server; see [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) to get
+6.2](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide) to get
 the details for your application server. 
 
 The first step in creating the aggregated `.war` file is to deploy your Ext

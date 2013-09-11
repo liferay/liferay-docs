@@ -1,6 +1,6 @@
 # Liferay Marketplace [](id=liferay-marketplace-liferay-portal-6-2-dev-guide-11-en)
 
-The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
+The **Liferay Marketplace** is an exciting hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
 build and enhance their existing platforms, developers and software vendors are
 searching for new avenues to reach this market. Marketplace leverages the entire
@@ -29,7 +29,7 @@ Liferay Marketplace:
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
 highly recommended that you first read the [Liferay
-Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
 chapter of *Using Liferay Portal*, where you will find detailed information
 about the Marketplace from an end user's perspective.
  
@@ -253,7 +253,7 @@ which versions of Liferay your app works with.
 ---
 
  ![note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so, be
- sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+ sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
  chapter of *Using Liferay Portal*! 
 
 ---
@@ -303,10 +303,10 @@ download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found on the [Versioning Policy
 Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).
-Accordingly, Liferay 6.1 CE GA1 is designated as version `6.1.0`. CE GA2 is then
-`6.1.1`, and so on. Liferay 6.1 EE GA1 is designated as `6.1.10`. EE versioning
+Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
+`6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versioning
 follows a slightly different policy given then presence of fix packs and service
-packs, so 6.1 EE GA3 is `6.1.30`.
+packs, so 6.2 EE GA2 will be `6.1.20`.
 
 For each plugin that makes up your app, packaging directives must be placed in
 the `liferay-plugin-package.properties` file (located in the `WEB-INF/`

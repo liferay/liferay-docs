@@ -241,8 +241,7 @@ site templates.
 All the hooks we've demonstrated so far are scoped to the portal. What if you
 need to customize specific sites without propagating the customizations
 throughout the entire portal? You can! *Application Adapters* are special hooks
-that let you make changes at the site level. In Liferay 6.1, Application
-Adapters are used for overriding JSPs. 
+that let you make changes at the site level. They are used for overriding JSPs. 
 
 There's a Sample Application Adapter in the [Liferay Plugins
 Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook).
@@ -404,7 +403,7 @@ others, extend `com.liferay.portal.struts.SimpleAction`.
  ![important](../../images/tip-pen-paper.png) **Important:** For better forward
  compatibility, use hooks to customize Struts actions rather than Ext plugins.
  For more information, see the [Properties
- Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+ Reference](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properti-1)
  chapter of *Using Liferay Portal* or find the `portal.properties` configuration
  file for your version of Liferay in the [Portal
  Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
@@ -428,9 +427,9 @@ which value to use.
 
 To find out which properties accept multiple values, look in the [Configuring
 Liferay's
-Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties)
+Properties](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properties)
 section of [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in
+6.2](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide) or in
 the `portal.properties` file. 
 
 ---
@@ -792,7 +791,7 @@ requirements:
   organizations and users. 
 
 For a complete list of available services and their methods check the [Liferay
-Portal 6.1 Javadocs](http://docs.liferay.com/portal/6.1/javadocs/) or access the
+Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/) or access the
 Javadocs for your version of Liferay at
 [http://docs.liferay.com/portal](http://docs.liferay.com/portal) and selecting
 the *javadocs* link. 
@@ -832,7 +831,7 @@ other types of hooks that may interest you.
 
 Since hooks are the preferred plugin type for customizing Liferay's core
 features, the Liferay team is happy to keep providing you new hooks. This
-section is a placeholder for hooks that are available in Liferay Portal 6.1,
+section is a placeholder for hooks that are available in Liferay Portal 6.2,
 but aren't yet fully documented. Here's a summary of these hooks:
 
 - **Servlet filter hook:** Servlet filters allow you to pre-process requests
