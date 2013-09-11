@@ -1263,14 +1263,14 @@ if you wish to use some of WikiCreole's advanced features.
 ### Getting Started with the Liferay Wiki  
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
-the portlet to a page using the *Add &rarr; More* menu and then click
-*Configuration* in the portlet menu in the Wiki portlet's title bar. You'll see
-some options are likely to be familiar to you by now such as sharing the
-application with websites, Facebook, Google Gadgets, etc. You will also notice
-that the communication tab has some additional options not seen in the other
-portlets.
+the portlet to a page using the *Add &rarr; Applications* menu and then click
+*Configuration* in the portlet's *Options* menu in the Wiki portlet's title bar.
+You'll see some options are likely to be familiar to you by now such as sharing
+the application with websites, Facebook, Google Gadgets, etc. You will also
+notice that the communication tab has some additional options not seen in the
+other portlets.
 
-![Figure 8.29: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
+![Figure 8.29: For each of the public parameters in this portlet, it is possible to ignore the values coming from other portlets or to read the value from another parameter.](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
 communication across portlets, using predefined public render parameters. From
@@ -1303,9 +1303,9 @@ Once you have set the options the way you want them, click *Save*.
 ### Managing Wikis  
 
 The Wiki portlet can contain many wikis. By default, it contains only one,
-called *Main*. To manage Wikis, navigate to the *Control Panel* and select
-*Wiki*. This page allows you to add, modify, and delete wikis. The Main wiki
-has already been added for you.
+called *Main*. To manage Wikis, navigate to your site's *Site Administration
+&rarr; Content* page and select *Wiki*. This page allows you to add, modify, and
+delete wikis. The Main wiki has already been added for you.
 
 At the top of this screen is a *Permissions* button. Clicking this allows you
 to define which roles have access to create wikis. If you have created a
@@ -1335,31 +1335,34 @@ Currently, MediaWiki is the only wiki that is supported, but others are likely
 to be supported in the future.
 
 **RSS:** opens a new page where you can subscribe to an RSS feed using Live
-Bookmarks, Google, or Yahoo.
+Bookmarks, Yahoo, or a chosen application from your machine.
 
 **Subscribe:** allows you to subscribe to a wiki node, and any time a page is
 added or updated Liferay will send you an email informing you what happened.
 
-**Delete:** deletes the wiki node.
+**Move to the Recycle Bin:** moves the wiki node to the recycle bin.
 
-To go back to your wiki, click on its name in the list of wikis. Note that
-there is also a wrench icon leading to a configuration menu on this portlet in
-the Control Panel. This contains several other options which you may have seen
-on other portlets.
+**View Removed Attachments:** displays attachments that have been removed from
+the wiki node.
 
-The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
-to the ones for notification email settings for other portlets, allowing you to
-customize who wiki emails come from and the format and text of the email that
-is sent when a page is added or updated.
+To go back to your wiki, navigate back to the Wiki portlet you added to your
+page. Then click the *Options &rarr; Configuration* button, which contains
+several other options which you may have seen on other portlets.
 
 The *Display Settings* tab gives you several options for how the wiki should be
 displayed. *Enable Related Assets*, *Enable Page Ratings*, *Enable Comments*,
 and *Enable Comment Ratings* are similar to the same options in other portlets.
 They give you the ability to set how you want users to interact with wiki
-documents: a little, a lot, or not at all. Below this, you can set which wikis
-are visible in the Wiki portlet by default and which are hidden. You might host
-two wikis on a given site, exposing one to the public and keeping the other
-private for site members.
+documents: a little, a lot, or not at all. The *Display Template* drop-down
+option lets you choose the application display template for your portlet. Below
+this, you can set which wikis are visible in the Wiki portlet by default and
+which are hidden. You might host two wikis on a given site, exposing one to the
+public and keeping the other private for site members.
+
+The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
+to the ones for notification email settings for other portlets, allowing you to
+customize who wiki emails come from and the format and text of the email that
+is sent when a page is added or updated.
 
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
@@ -1367,15 +1370,15 @@ portlets do, and you can configure its options in the *RSS* tab.
 ### Adding and Editing Wiki Pages  
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
-started adding data to your wiki, click the *Edit* link at the top right of the
-portlet. You will be brought to a blank editing page.
+started adding data to your wiki, click the *Edit* link. You will be brought to
+a blank editing page.
 
-![Figure 8.30: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
+![Figure 8.30: By clicking *Edit*, you can create/modify your wiki content.](../../images/05-editing-wiki-page.png)
 
 You can now begin to add content to the page. Notice that there is a very
-convenient "cheat sheet"? which can help with the wiki syntax. You can use this
-syntax to format your wiki pages. Consider, for example, the following wiki
-document:
+convenient *Show Syntax Help* link which can help with the wiki syntax. You can
+use this syntax to format your wiki pages. Consider, for example, the following
+wiki document:
 
 == Welcome to Our Wiki! ==
 
@@ -1397,7 +1400,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 8.31: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
+![Figure 8.31: By using the syntax help guide, you can format your wiki headings and text.](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
 Since the pages behind these links have not been created yet, clicking one of
@@ -1413,11 +1416,11 @@ separation of content and code. If you want all of your users to use the Creole
 format, you can disable the HTML format using the `portal-ext.properties` file.
 See chapter 14 for details about how to configure this.
 
-At the bottom of the page editing screen, you can select *Categories* for the
-article. Categories are hierarchical lists of headings under which you can
-create wiki pages. This allows you to organize your content in a more formal
-fashion. You can create categories using the Control Panel, in the *Categories*
-section.
+At the bottom of the page editing screen, you can select *Categorization* to add
+tags. The tags link your wiki to categories. You can create categories using the
+Site Administration page, in the *Content &rarr; Categories* section. Categories
+are hierarchical lists of headings under which you can create wiki pages. This
+allows you to organize your content in a more formal fashion.
 
 ### Page Details  
 
@@ -1433,7 +1436,8 @@ perform some actions on the page.
 
 **Title:** displays the title of the page.
 
-**Format:** displays the format for the page -- either Creole or HTML.
+**Format:** displays the format for the page -- either Creole, HTML, or
+MediaWiki.
 
 **Latest Version:** displays the latest version of the page. The wiki portlet
 automatically keeps track of page versions whenever a page has been edited.
@@ -1444,6 +1448,9 @@ automatically keeps track of page versions whenever a page has been edited.
 
 **Attachments:** displays the number of attachments to the page.
 
+**Convert To:** offers different conversion formats for the wiki page: DOC, ODT,
+PDF, RTF, SXW, and TXT.
+
 **RSS Subscription:** displays links which allow you to subscribe to the page
 as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
 
@@ -1451,7 +1458,8 @@ as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
 wiki or just to this page.
 
 **Advanced Actions:** contains links allowing you to modify the permissions on
-the page, make a copy of the page, move (rename) the page, or delete the page.
+the page, make a copy of the page, move (rename) the page, or move the page to
+the recycle bin.
 
 #### History  
 
@@ -1476,9 +1484,8 @@ inline, which is a nice way to include illustrations in your wiki documents.
 ### Navigating in the Wiki Portlet  
 
 At the top of the portlet is a list of links which allow you to navigate around
-the wiki. Next to the *Manage Wikis* button is a list of wikis that are
-currently created in the portlet. Simply click on the wiki's name to begin
-browsing that wiki. After this is a set of navigation links:
+the wiki. Simply click on the wiki's name to begin browsing that wiki. After
+this is a set of navigation links:
 
 **Recent Changes:** takes you to a page which shows all of the recently updated
 pages.
