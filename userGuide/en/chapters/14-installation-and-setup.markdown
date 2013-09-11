@@ -2168,7 +2168,7 @@ Make the following edits as applicable to your operating system:
 - On Windows, comment out the initial `JAVA_OPTS` assignment as demonstrated in
   the following line:
 
-        rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M
+        rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M"
 
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
