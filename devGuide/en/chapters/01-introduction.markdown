@@ -147,10 +147,10 @@ your own JavaScript code and leverage one of the JavaScript libraries available.
 You can use any JavaScript library with Liferay, including jQuery, Dojo, YUI,
 Sencha (previously known as ExtJs), and Sproutcore. 
 
-Since version 6, however, Liferay has its own library called *Alloy UI* which is
-based on YUI 3. Alloy UI has a large set of components specifically designed for
-modern user interfaces. Liferay's core portlets make use Alloy UI. You can use
-Alloy UI for your custom portlets or use another JavaScript library, as long as
+Since version 6, however, Liferay has its own library called *AlloyUI* which is
+based on YUI 3. AlloyUI has a large set of components specifically designed for
+modern user interfaces. Liferay's core portlets make use AlloyUI. You can use
+AlloyUI for your custom portlets or use another JavaScript library, as long as
 the library does not conflict with libraries referenced by other portlets
 deployed in the same portal. 
 
@@ -185,7 +185,7 @@ they can be used.
 Themes let you dictate your site's look and feel. You can specify color schemes
 and commonly used images. You'll apply styling for UI elements such as fonts,
 links, navigation elements, page headers, and page footers, using a combination
-of CSS and Velocity or FreeMarker templates. With Liferay's Alloy UI API
+of CSS and Velocity or FreeMarker templates. With Liferay's AlloyUI API
 framework, you use a consistent interface to common UI elements that make up
 your page. This makes it easy to create sites that respond well to the window
 widths of your users' desktop, tablet, and mobile devices. Most importantly,

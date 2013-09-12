@@ -501,7 +501,7 @@ portal will be able to interpret the taglib and create a URL with enough
 information to render the whole page. 
 
 Second, notice that the form in `edit.jsp` has the prefix `aui`, signifying that
-it's part of the Alloy UI tag library. Alloy greatly simplifies the code
+it's part of the AlloyUI tag library. AlloyUI greatly simplifies the code
 required to create attractive and accessible forms by providing tags that render
 both the label and the field at once. You can also use regular HTML or any other
 taglibs to create forms based on your own preferences. 

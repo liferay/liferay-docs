@@ -231,7 +231,7 @@ using `ServiceContext` in calling the `updateStructure` method of the
 
 The example above uses JSON to populate the `ServiceContext`. 
 
-On the front-end, you can use Alloy UI and Liferay UI tags in your forms to
+On the front-end, you can use AlloyUI and Liferay UI tags in your forms to
 extract information and automatically insert the corresponding data into your
 request object. You can see an example at
 `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. 
@@ -1178,10 +1178,10 @@ search for a tag or create a new one or select an existing category.
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's Alloy
-UI Form taglibs, creating fields to enter tags and categories is even simpler.
-You just use `<aui:input name="tags" type="assetTags" />` and `<aui:input
-name="categories" type="assetCategories" />`, respectively. 
+![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's
+AlloyUI Form taglibs, creating fields to enter tags and categories is even
+simpler. You just use `<aui:input name="tags" type="assetTags" />` and
+`<aui:input name="categories" type="assetCategories" />`, respectively. 
 
 ---
 
