@@ -829,7 +829,7 @@ be easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 8.23: You have several options when creating a Message Boards Category.](../../images/05-editing-message-board-category.png)
+![Figure 8.17: You have several options when creating a Message Boards Category.](../../images/05-editing-message-board-category.png)
 
 You can add as many categories to your message boards as you wish. As we saw
 above, categories can have subcategories. You can add any number of top-level
@@ -1030,7 +1030,7 @@ select the correct version when downloading and installing the app. Once
 installed, the Message Boards Subscription Manager appears in the Configuration
 section of Site Administration.
 
-![Figure 8.24: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.](../../images/message-boards-subscription-manager-control-panel.png)
+![Figure 8.18: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.](../../images/message-boards-subscription-manager-control-panel.png)
 
 The subscription manager allows managing the subscriptions of both the
 site-scoped message board and the subscriptions of any page-scoped message
@@ -1043,7 +1043,7 @@ category's threads in a new browser tab. Click *Actions* &rarr; *Manage
 Subscriptions* to view a list of users which can be subscribed or unsubscribed
 from the message board category.
 
-![Figure 8.25: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
+![Figure 8.19: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
 
 Click on the *Subscribe* or *Unsubscribe* links next to a user's name to
 subscribe or unsubscribe the user from the selected message board category.
@@ -1096,14 +1096,14 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 8.26: The *Follow your nose* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
+![Figure 8.20: The *Follow your nose* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 8.27: Liferay's dynamic editor even includes a wide range of smiley faces!](../../images/05-emoticons.png)
+![Figure 8.21: Liferay's dynamic editor even includes a wide range of smiley faces!](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you are
@@ -1153,7 +1153,7 @@ until you find the Message Boards portlet and then click on it. You will then
 see a screen which allows you to configure the various permissions on the
 portlet.
 
-![Figure 8.28: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.](../../images/05-defining-permissions-message-board-admin-role.png)
+![Figure 8.22: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and
 then click *Save*. You can add users to this role and they will inherit the
@@ -1270,7 +1270,7 @@ the application with websites, Facebook, Google Gadgets, etc. You will also
 notice that the communication tab has some additional options not seen in the
 other portlets.
 
-![Figure 8.29: For each of the public parameters in this portlet, it is possible to ignore the values coming from other portlets or to read the value from another parameter.](../../images/05-wiki-configuration.png)
+![Figure 8.23: For each of the public parameters in this portlet, it is possible to ignore the values coming from other portlets or to read the value from another parameter.](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
 communication across portlets, using predefined public render parameters. From
@@ -1373,7 +1373,7 @@ By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link. You will be brought to
 a blank editing page.
 
-![Figure 8.30: By clicking *Edit*, you can create/modify your wiki content.](../../images/05-editing-wiki-page.png)
+![Figure 8.24: By clicking *Edit*, you can create/modify your wiki content.](../../images/05-editing-wiki-page.png)
 
 You can now begin to add content to the page. Notice that there is a very
 convenient *Show Syntax Help* link which can help with the wiki syntax. You can
@@ -1400,7 +1400,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 8.31: By using the syntax help guide, you can format your wiki headings and text.](../../images/05-wiki-front-page.png)
+![Figure 8.25: By using the syntax help guide, you can format your wiki headings and text.](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
 Since the pages behind these links have not been created yet, clicking one of
@@ -1549,7 +1549,7 @@ On your site's Site Administration page, navigate to the *Polls* link under
 Content. Click the *Add Question* button. A form appears that allows you to fill
 out all the information for your poll.
 
-![Figure 8.32: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
+![Figure 8.26: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
 **Title:** Enter the name of the poll question. 
 
@@ -1597,7 +1597,7 @@ poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users, and a dialog box like
 the one below appears.
 
-![Figure 8.33: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
+![Figure 8.27: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
 
 Under the Setup tab is a menu option labeled *Question*. Selecting this option
 displays the name of the poll you created. Choose it, click *Save*, and it is
@@ -1615,7 +1615,7 @@ perform other tasks by using the icons in the lower left corner of the portlet.
 Besides adding questions, you can also edit the currently selected question or
 select existing questions.
 
-![Figure 8.34: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
+![Figure 8.28: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
 
 **Edit Question:** Displays a similar dialog box to the one used to create the
 poll. 
@@ -1637,13 +1637,13 @@ name and the question, as well as a breakdown of the poll results appears,
 including percentages and total number of votes per answer and the total number
 of votes cast.
 
-![Figure 8.35: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
+![Figure 8.29: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie*, and *Vertical Bar*.
 
-![Figure 8.36: This is what the vertical bar graph for the Nose Size poll results looks like.](../../images/polls-results-vertical-bar.png)
+![Figure 8.30: This is what the vertical bar graph for the Nose Size poll results looks like.](../../images/polls-results-vertical-bar.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are
@@ -1661,7 +1661,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 8.37: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
+![Figure 8.31: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
@@ -1733,7 +1733,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.38: Openfire Administration Web Tool](../../images/jabber-service-name.png)
+![Figure 8.32: Openfire Administration Web Tool](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
@@ -1779,16 +1779,22 @@ provided by Google.
 The Mail portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
 installed the Liferay `.war` manually on your application server, you can
-install the Mail portlet by going to the Control Panel, clicking *Plugins
-Installation*, and then clicking the *Install More Portlets* button. Find the
-*Mail* portlet in the list, click on it, and then click *Install*.
+install the Mail portlet by accessing Liferay Marketplace. You can go to
+Marketplace by navigating the the Control Panel and clicking *Store* under the
+*Apps* heading. You can learn more about Marketplace and how to
+purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 8.39: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 8.33: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
-To connect the Mail portlet with an email account, click the *Add a New Email
-Account* link. From there, you are given a choice between a Custom email
-Account or a Gmail Account. Choose the option that you wish, and fill out the
-form that appears.
+<!-- Needs to be updated for 6.2 -->
+<!-- There are a few bugs that make it impossible to configure an account using
+the Mail portlet. Info below this point still needs to be tested for 6.2.
+Reference: LPS-36241 -->
+
+To connect the Mail portlet with an email account, click the *Add Mail Account*
+link. From there, you are given a choice between a Custom email Account or a
+Gmail Account. Choose the option that you wish, and fill out the form that
+appears.
 
 For a Gmail account, all you need to do is provide your email address and your
 password, and the portlet will take care of the rest.
@@ -1844,7 +1850,7 @@ belonging to a group of people at once. These portlets have all the features you
 would want in a blog, including rich text editing, links to news aggregators,
 tags, RSS feeds, and more.
 
-The Calendar portlet likewise can be used to manage a shared calendar or a
+The Calendar portlet, likewise, can be used to manage a shared calendar or a
 group calendar. It includes features for events, event notification, repeatable
 events, and import and export to and from the standard iCalendar format.
 
