@@ -62,7 +62,7 @@
 
 	<path id="test.classpath">
 		<path refid="plugin.classpath" />
-		<fileset dir="${app.server.lib.portal.dir}" includes="aspectj-weaver.jar,commons-io.jar,spring-*.jar" />
+		<fileset dir="${app.server.lib.portal.dir}" excludes="ant.jar" includes="*.jar" />
 		<fileset dir="${sdk.dir}/lib" includes="junit.jar,mockito-all.jar,powermock-*.jar,spring-test.jar" />
 		<pathelement location="test-classes/integration" />
 		<pathelement location="test-classes/unit" />
@@ -141,12 +141,12 @@ ECJ was automatically installed. Please rerun your task.
 			</or>
 			<then>
 				<subant target="create">
-					<fileset dir="${sdk.dir}/${plugin.type}s" includes="build.xml"/>
+					<fileset dir="${sdk.dir}/${plugin.type}s" includes="build.xml" />
 				</subant>
 			</then>
 			<else>
 				<subant target="create">
-					<fileset dir="${sdk.dir}/${plugin.type}" includes="build.xml"/>
+					<fileset dir="${sdk.dir}/${plugin.type}" includes="build.xml" />
 				</subant>
 			</else>
 		</if>
@@ -198,6 +198,50 @@ ECJ was automatically installed. Please rerun your task.
 			newenvironment="true"
 		>
 			<jvmarg value="-Dplugins.env.dir=." />
+		</java>
+	</target>
+
+	<target name="setup-jrebel">
+		<property name="jrebel.plugin.classes.dir" value="${basedir}/${plugin.classes.dir}" />
+
+		<echo file="${jrebel.plugin.classes.dir}/rebel.xml"><![CDATA[<?xml version="1.0"?>
+
+<application
+	xmlns="http://www.zeroturnaround.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd"
+>
+	<classpath>
+		<dir name="${jrebel.plugin.classes.dir}" />
+	</classpath>
+</application>]]></echo>
+
+		<if>
+			<available file="docroot" type="dir" />
+			<then>
+				<replace file="${jrebel.plugin.classes.dir}/rebel.xml">
+					<replacetoken><![CDATA[</application>]]></replacetoken>
+					<replacevalue><![CDATA[	<web>
+		<link target="/${plugin.name}">
+			<dir name="${basedir}/docroot" />
+		</link>
+	</web>
+</application>]]></replacevalue>
+				</replace>
+			</then>
+		</if>
+	</target>
+
+	<target name="sort-xml-attributes">
+		<java
+			classname="com.liferay.portal.tools.XMLAttributesSorter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-Xss2048k" />
+			<arg value="sort.xml.file.name=${sort.xml.file.name}" />
 		</java>
 	</target>
 </project>
