@@ -428,11 +428,11 @@ functionality of your portal application must reside in its portlets.
 
 ---
 
-![tip](../../images/tip.png) **Tip:** Liferay 4.4.2 and below support the
-Portlet 1.0 standard: JSR-168. Liferay 5.0 and above support the Portlet 2.0
-standard: JSR-286. You cannot run Portlet 2.0 portlets in Liferay 4.4.2, but
-because the Portlet 2.0 standard is backwards-compatible, portlets written to
-the 1.0 standard will run in Liferay 5.x and above.
+ ![Tip](../../images/tip.png) **Tip:** Liferay 4.4.2 and below support the
+ Portlet 1.0 standard: JSR-168. Liferay 5.0 and above support the Portlet 2.0
+ standard: JSR-286. You cannot run Portlet 2.0 portlets in Liferay 4.4.2, but
+ because the Portlet 2.0 standard is backwards-compatible, portlets written to
+ the 1.0 standard still run in Liferay 5.x and above.
 
 ---
 
@@ -490,8 +490,7 @@ infrastructure that Liferay provides.
 
 ### Themes  
 
-![Figure 14.15: Envision Theme from Liferay's Theme
-Repository](../../images/marketplace-envision-theme.png)
+![Figure 14.15: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
 Themes are hot deployable plugins which can completely transform the look and
 feel of the portal. Most organizations have their own look and feel standards
@@ -503,10 +502,10 @@ web site and more are being added every day. This makes it easier for those who
 wish to develop themes for Liferay, as you can now choose a theme which most
 closely resembles what you want to do and then customize it. This is much easier
 than starting a theme from scratch. You can learn more about theme development
-in [*Liferay in Action*](http://manning.com/sezov).
+in [*Liferay in Action*](http://manning.com/sezov) or the [Liferay Development
+Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development).
 
-![Figure 14.16: Murali Theme from Liferay's Theme
-Repository](../../images/marketplace-murali-theme.png)
+![Figure 14.16: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ### Layout Templates  
 
@@ -514,8 +513,7 @@ Layout Templates are ways of choosing how your portlets will be arranged on a
 page. They make up the body of your page, the large area into which you can drag
 and drop portlets. Liferay Portal comes with several built-in layout templates.
 If you have a complex page layout (especially for your home page), you may wish
-to create a custom layout template of your own. This is covered in [*Liferay in
-Action*](http://manning.com/sezov).
+to create a custom layout template of your own. This is covered in [*Liferay in Action*](http://manning.com/sezov) and the [Liferay Development Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development).
 
 ### Hook Plugins  
 
@@ -531,90 +529,42 @@ environment with something that is easier to use and hot deployable.
 
 Web plugins are regular Java EE web modules designed to work with Liferay.
 Liferay supports integration with various Enterprise Service Bus (ESB)
-implementations, as well as Single Sign-On implementations, workflow engines and
-so on. These are implemented as web modules used by Liferay portlets to provide
-functionality.
+implementations, as well as Single Sign-On implementations, workflow engines,
+and so on. These are implemented as web modules used by Liferay portlets to
+provide functionality.
 
-### Installing Plugins from Repositories  
+### Configuring Plugins
 
-Liferay Portal has a section of the Control Panel called Plugins Installation,
-which you can find under the Server heading. This section not only allows you to
-see what plugins are installed in your portal, but also it enables you to run
-the search indexer on those portlets that support it and install new portlets.
+Liferay Portal has a section of the Control Panel called Plugins Configuration,
+which you can find under the Apps heading. This section not only allows you to
+see what plugins are installed on your portal, but also enables you to configure
+which portal roles can access certain plugins.
 
-Use the dockbar's *Go to* menu to select *Control Panel*. Under the Server
-heading, select *Plugins Installation*. You should now see the page which allows
-you to configure and install portlets.
+Use the Dockbar's *Admin* menu to select *Control Panel*. Under the Server
+heading, select *Plugins Configuration*. You should now see an interface which
+allows you to view and manage installed portlet, theme, and layout template
+plugins.
 
-The default view of the Plugins Installation page shows which plugins are
-already installed on the system and whether or not they are active. The Portlet
-Plugins tab allows you reindex certain portlets to improve their searchability.
-The Theme and Layout Template Plugins tabs display which portal roles can access
-them.
+The default view of the Plugins Configuration page shows which plugins are
+already installed on the system and whether or not they are active. On the
+Portlet Plugins tab, you have to click on a specific portlet in order to view
+and configure the portlet's permissions. The Theme and Layout Template Plugins
+tabs directly display which portal roles can access them.
 
-![Figure 14.17: Plugins Installation Portlet Tab Default
-View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 14.17: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
-![Figure 14.18: Plugins Installation Theme Tab Default
-View](../../images/marketplace-plugins-installation-theme-tab.png)
-
-If you would like to see what plugins are available, you can do so by clicking
-the *Install More <Plugin Type>* button, where <Plugin Type> changes based on
-which tab you are viewing. Please note the machine running Liferay must have
-access to the Internet to read the Official and Community repositories. If the
-machine does not have Internet access, you will need to download the plugins
-from the site and install them manually. We will discuss how to do this later in
-this chapter.
-
-It's easy to navigate from the initial page of the Plugin Installer to different
-pages since the plugins are listed alphabetically. You can also change the
-number of items per page and navigate to a specific page if you know where a
-particular plugin appears in the list. This is a standard feature of Liferay and
-you will see it in most of Liferay's portlets.
-
-![Figure 14.19: Installing
-Plugins](../../images/marketplace-plugins-installer.png)
-
-After you click the *Install More <Plugin Type>* button, a new view appears.
-This view has multiple tabs, and by default, displays the *Portlet Plugins* tab.
-Note the list displayed is a list of all of the plugins available across all of
-the repositories to which the server is subscribed. Above this is a search
-mechanism which allows you to search for plugins by their name, by whether or
-not they are installed, by tag or by which repository they belong to. To install
-a plugin, choose the plugin by clicking on its name. For example, if you want to
-use online web forms on your web site, you might want to install the Web Form
-portlet. This portlet provides a handy interface which allows you to create
-forms for users to fill out. You can specify an address to which the results
-will be emailed.
-
-Find the Web Form Portlet in the list by searching for it or browsing to it.
-Once you have found it, click on its name. Another page will be displayed which
-describes the portlet plugin in more detail. Below the description is an
-*Install* button. Click this button to install your plugin.
-
-![Figure 14.20: Installing the Web Form
-Portlet](../../images/marketplace-installing-web-form-portlet.png)
-
-Once you click *Install*, your chosen plugin will automatically download and be
-installed on your instance of Liferay. If you have the Liferay console open, you
-can view the deployment as it happens. When it is finished, you should be able
-to go back to the Add Application window and add your new plugin to a page in
-your portal.
-
-The same procedure is used for installing new Liferay themes, layout templates,
-hooks and web modules. Instead of the *Portlet Plugins* tab, you would use the
-appropriate tab for the type of plugin you wish to install to view the list of
-plugins of that type. For themes, convenient thumbnails (plus a larger version
-when you click on the details of a particular theme) are shown in the list.
-
-After clicking on the *Install* button for a theme, the theme becomes available
-on the *Look and Feel* tab of any page.
+It's easy to browse through the lists of installed plugins since the plugins are
+listed alphabetically. You can also change the number of items per page and
+navigate to a specific page if you know where a particular plugin appears in the
+list. This is a standard feature of Liferay and you will see it in most of
+Liferay's portlets.
 
 ### Installing Plugins Manually  
 
-Installing plugins manually is almost as easy as installing plugins via the
-Plugin Installer. There are several scenarios in which you would need to install
-plugins manually rather than from Liferay's repositories:
+Installing plugins manually is not quite as easy as installing plugins via the
+Marketplace interface but it's still quite simple. There are several scenarios
+in which you would need to install plugins manually rather than from Liferay's
+repositories:
 
 -   Your server is firewalled without access to the Internet. This makes it
     impossible for your instance of Liferay to connect to the plugin
@@ -629,49 +579,47 @@ plugins manually rather than from Liferay's repositories:
 You can still use the Control Panel to install plugins that are not available
 from the online repositories. This is by far the easiest way to install plugins.
 
-If your server is firewalled, you will not see any plugins displayed in the
-Portlet Plugins or Theme Plugins tabs. Instead, you will need to click the
-*Upload File* tab. This gives you a simple interface for uploading a `.war` file
-containing a plugin to your Liferay Portal.
+If your server is firewalled, you will not be able to install plugins directly
+from the Liferay Marketplace. Instead, you will need to download the `.lpkg`
+file (in the case of a Marketplace app) or `.war` file (in the case of an
+individual plugin). Then navigate to the Control Panel and click on *App
+Manager* under the Apps heading. Then click on *Install*. This gives you a
+simple interface for installing an `.lpkg` or `.war` file containing an app or
+plugin to your Liferay Portal. Use the *File Upload* option to browse to and
+install from a local `.lpkg` or `.war` file. Use the *URL* option to install
+from a remote `.lpkg` or `.war` file.
 
-![Figure 14.21: Installing a Plugin
-Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 14.21: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
-Click the *Browse* button and navigate your file system to find the portlet or
-theme `.war` you have downloaded. The other field on the page is optional: you
-can specify your own context for deployment. If you leave this field blank, the
-default context defined in the plugin (or the `.war` file name itself) will be
-used.
-
-That's all the information the Plugin Installer needs in order to deploy your
-portlet, theme, layout template, hook or web module. Click the *Install* button
+That's all the information the App Manager needs in order to deploy your
+portlet, theme, layout template, hook, or web plugin. Click the *Install* button
 and your plugin will be uploaded to the server and deployed. If it is a portlet,
-you should see it in the *Add Content* window. If it is a theme, it will be
-available on the *Look and Feel* tab in the page definition.
+theme, or layout template you should see it in the appropriate tab of the
+Plugins Configuration interface.
 
-If you do not wish to use the Update Manager or Plugin Installer to deploy
-plugins, you can also deploy them at the operating system level. The first time
-Liferay starts, it creates a *hot deploy* folder which is, by default, created
-inside the Liferay Home folder. This folder generally resides one directory up
-from where your application server is installed, though it may be elsewhere
-depending on which application server you are running. To find out where the
-Liferay Home folder is for your application server, please see the section on
-your server in chapter 1. The first time Liferay is launched, it will create a
-folder structure in Liferay Home to house various configuration and
-administrative data. One of the folders it creates is called *deploy*. If you
-copy a portlet or theme plugin into this folder, Liferay will deploy it and make
-it available for use just as though you'd installed it via the Plugin Installer
-in the Control Panel. In fact, this is what the Plugin Installer is doing behind
-the scenes.
+If you do not wish to use the App Manager to deploy plugins, you can also deploy
+them at the operating system level. The first time Liferay starts, it creates a
+*hot deploy* folder which is, by default, created inside the Liferay Home
+folder. This folder generally resides one directory up from where your
+application server is installed, though it may be elsewhere depending on which
+application server you are running. To find out where the Liferay Home folder is
+for your application server, please see the section on your server in this
+guide's [Installing Liferay](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay)
+chapter. The first time Liferay is launched, it creates a folder structure in
+Liferay Home to house various configuration and administrative data. One of the
+folders it creates is called *deploy*. If you copy a portlet or theme plugin
+into this folder, Liferay hot deploys it and makes it available for use just as
+though you'd installed it via App Manager in the Control Panel. In fact, this is
+what the App Manager does behind the scenes.
 
 You can change the defaults for this directory structure so it is stored
 anywhere you like by modifying the appropriate properties in your
 `portal-ext.properties` file. Please see the above section on the
 `portal-ext.properties` file for more information.
 
-To have Liferay hot deploy a portlet or theme plugin, copy the plugin into your
-hot deploy folder, which by default is in `[Liferay Home]/deploy`. If you are
-watching the Liferay console, you should see messages like the following:
+To have Liferay hot deploy a plugin, copy the plugin into your hot deploy
+folder, which by default is in `[Liferay Home]/deploy`. If you are watching the
+Liferay console, you should see messages like the following:
 
 	16:11:47,616 INFO [PortletAutoDeployListener:71] Copying portlets for
 	/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
@@ -746,11 +694,11 @@ Let's take a look at each of these factors.
 
 ---
 
-![Tip](../../images/tip.png) **Tip:** This applies to Liferay versions prior to
-version 4.3.5. Liferay versions above 4.3.5 are able to auto detect the type of
-server it is running on, which makes things a lot easier. If you are running a
-newer version of Liferay, you can skip this section. If you are upgrading from
-one of these versions, continue reading.
+ ![Tip](../../images/tip.png) **Tip:** This applies to Liferay versions prior to
+ version 4.3.5. Liferay versions above 4.3.5 are able to auto detect the type of
+ server it is running on, which makes things a lot easier. If you are running a
+ newer version of Liferay, you can skip this section. If you are upgrading from
+ one of these versions, continue reading.
 
 ---
 
@@ -815,25 +763,6 @@ slashes, like so:
 Save the file and then restart your container. Now plugins should install
 correctly.
 
-Instead of changing the hot deploy destination directory in your
-`portal-ext.properties` file, you can do it via the Plugin Installer. To change
-the setting this way, navigate to the Plugins Installation page of the control
-panel, click the *Install More <Plugins>* button. This will bring you to the
-Plugin Installer page. Next, click on the *Configuration* tab of the Plugin
-Installer page. There are a number of settings you can change on this tab,
-including the default folders for hot deploy, where Liferay should look for
-plugin repositories and so on.
-
-![Figure 14.22: Changing the Hot Deploy Destination
-Directory](../../images/marketplace-plugin-installer-configuration.png)
-
-The setting to change is the field labeled *Destination Directory*. Change this
-to the full path to your container's auto deploy folder from the root of your
-file system. When you are finished, click the *Save* button at the bottom of the
-form. The setting will now take effect without your having to restart your
-container. Note the setting in the Control Panel overrides the setting in the
-properties file.
-
 If you are having hot deploy trouble in Liferay versions 4.3.5 and greater, it
 is possible the administrator of your application server has changed the default
 folder for auto deploy in your application server. In this case, you would want
@@ -870,7 +799,7 @@ Now you can deploy plugins using the Plugin Installer portlet or by dropping
 modify them and then copy the result into the destination directory you have
 configured. You may then deploy them from here to your application server.
 
-##### Example: WebSphere &#174; Application Server  
+##### Example: WebSphere &#174; Application Server
 
 1.  If you don't have one already, create a `portal-ext.properties` file in the
     Liferay Home folder of your Liferay installation. Add the following
