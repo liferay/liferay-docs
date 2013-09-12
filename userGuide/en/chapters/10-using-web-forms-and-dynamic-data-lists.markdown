@@ -576,6 +576,9 @@ Choose the workflow you'd like to use. This requires that every record must pass
 through the workflow process. Now if you need to preview or edit entries as
 they're coming in, it's easy to integrate it into your daily workflow.
 
+<!-- Need to check the status of the Kaleo Designer and Kaleo Forms portlets for
+6.2 before updating the following section. -->
+
 #### Creating a Kaleo Form
 
 ![EE Only Feature](../../images/ee-feature-web.png)
