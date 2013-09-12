@@ -33,10 +33,12 @@ Intrigued? We hope so. We'll cover the following topics:
 
 - What is Service Builder? 
 - Defining Your Object-Relational Map
-- Writing the Local Service Class
+- Generating Services
+- Writing Local Service Classes
 - Calling Local Services
+- Understanding the Service Builder-generated Code
 - Using Model Hints
-- Enabling Remote Services
+- Writing Remote Service Classes
 - Developing Custom SQL Queries
 - Configuring `service.properties`
 
