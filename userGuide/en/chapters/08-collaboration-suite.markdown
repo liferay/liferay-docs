@@ -1661,23 +1661,25 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 8.37: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
+![Figure 8.37: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
 installed the Liferay `.war` manually on your application server, you can
-install the Chat portlet by going to the Control Panel, clicking *Plugins
-Installation*, and then clicking the *Install More Portlets* button. Find the
-Chat portlet in the list, click on it, and then click *Install*.
+install the Chat portlet by accessing Liferay Marketplace. You can go to
+Marketplace by navigating the the Control Panel and clicking *Store* under the
+*Apps* heading. You can learn more about Marketplace and how to
+purchase/download an app in the *Liferay Marketplace* chapter.
 
-The Chat portlet is very simple to use. To change the settings, click
-*Settings* (found near the lower right corner next to *Online Friends*). Here
-you can set your status, choose whether or not to show that you are online, and
-whether or not to play a sound if someone sends you a message while you have
-the window or tab in the background. The Chat portlet displays the number of
-your friends who are online. Click the *Online Friends* link and then click on
-a friend's name to open a chat window. You can have multiple chats open at a
-time, and can have one or more of them minimized.
+The Chat portlet is very simple to use. To change the settings, click *Settings*
+(found near the lower right corner next to *Online Friends*). Here you can set
+your status, choose whether or not to show that you are online, whether or not
+to play a sound if someone sends you a message while you have the window or tab
+in the background, and whether to enable desktop notifications for new messages.
+The Chat portlet displays the number of your friends who are online. Click the
+*Online Friends* link and then click on a friend's name to open a chat window.
+You can have multiple chats open at a time, and can have one or more of them
+minimized.
 
 ### Jabber Server Integration  
 
