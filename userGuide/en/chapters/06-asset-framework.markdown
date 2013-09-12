@@ -1,8 +1,8 @@
 # Leveraging the Asset Framework  
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
-already examined Liferay's most common type of asset: web content. Other types
-of assets include blog posts, wiki articles, message board posts, bookmarks, and
+examined Liferay's most common type of asset: web content. Other types of assets
+include blog posts, wiki articles, message board posts, bookmarks, and
 documents. It's possible for developers to define custom asset types that
 utilize Liferay's asset framework. Originally, the asset framework was created
 to provide a mechanism for adding tags to blog entries, wiki articles, and web
@@ -14,7 +14,7 @@ This chapter covers the following topics:
 
 - Tagging and categorizing content
 - Using targeted, single value, and multi-value vocabularies
-- Using Faceted Search
+- Using faceted search
 - Using the Asset Publisher
 - Setting up display pages
 - Adding relationships between assets
@@ -35,13 +35,15 @@ this.
 ## Tagging and Categorizing Content  
 
 Tags and categories are two important tools you can use to help organize
-information on your portal and make it easier for your users to find the content
-they're looking for through search or navigation. Tagging and categorizing web
-content is easy. You can do it at the bottom of the same form you use to add
-content. If you open the *Categorization* section of the form, you'll be
-presented with an interface for adding tags and categories.
+information on your portal. These tools help users to easily find the content
+they're looking for through search or navigation. Tagging and categorizing
+assets is easy. You can tag or categorize an asset at creation time or when
+editing an existing asset. If you click on the *Categorization* section of the
+form for creating or editing an asset, you'll find an interface for adding tags
+and categories. If no categories are available to be added to the asset (e.g.,
+if no categories have been created), the Categories heading won't appear.
 
-![Figure 6.1: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+![Figure 6.1: Here, the Web Content Display portlet's form for categorizing a new web content article doesn't include a Categories heading since no categories have been created.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
 each site in the portal. This interface can be used to manage all your tags and
@@ -50,27 +52,35 @@ content when you enter it. Let's take a closer look at tags and categories.
 
 ### Tags  
 
-Tags are an important tool that you can use to help organize information on your
-portal and make it easier for your users to find content that they're looking
-for. Tags are words or phrases that you can attach to any content on the
-website. Tagging content will make your search results more accurate, and enable
-you to use tools like the Asset Publisher to display content in an organized
-fashion on a web page. There are two ways to create tags: you can do it through
-the administrative console in the Control Panel, or on the fly as content is
-created.
+Tags are an important tool that can help organize information on your portal and
+make it easier for users to find the content that they're interested in. Tags
+are words or phrases that you can attach to any content on the website. Tagging
+content makes your search results more accurate and enables you to use tools
+like the Asset Publisher to display content in an organized fashion on a web
+page. There are two ways to create tags: you can do it through the
+administrative console in the Control Panel or on the fly as content is created.
+By default, tags can be created by regular users and users can apply them to any
+assets which they have permission to create or edit.
 
-![Figure 6.2: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 6.2: When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
 
-To create tags in the Control Panel, select the site that you want to create
-tags for, and select *Tags*. From this screen, you will be able to view any
-existing tags and make new ones. To create a new tag, simply click *Add Tag*.
-You'll then be asked for the name of the tag, and you'll have the ability to set
-permissions for viewing or managing the tag. You can also add properties to a
-tag. Properties basically act like tags for your tags. Structurally, properties
-are key-value pairs associated with specific tags that provide information about
-your tags. You can edit existing tags from the *Tags* window of on the Control
-Panel. You can change the tag name, change the tag's permissions, delete the
-tag, or add properties.
+To create tags in the Control Panel, visit the site for which you want to create
+tags and then click on *Admin* &rarr; *Content*. Then click on *Tags* in the
+Content section on the left. From this screen, you can view existing tags and
+create new ones. To create a new tag, simply click *Add Tag* and enter a name
+for the tag. You can also customize a tag's permissions. For example, you can
+make the tag viewable by guests, site members, or owner. You can assign other
+permissions for managing tags, including permission to delete the tag, edit the
+tag, or edit the tag's permissions. You can also add properties to a tag.
+Properties are a way to add information to specific tags. You can think of tag
+properties as tags for your tags. Structurally, tag properties are key-value
+pairs associated with specific tags that provide information about the tags.
+While regular users can, by default, create new tags by applying them to any
+assets that they have permission to create or edit, only site administrators can
+access the *Tags* portlet in the Content section of the Site Administration area
+of the Control Panel. Here, site administrators can create new tags and edit any
+existing site tags. They can also change tag names, change the tags'
+permissions, delete tags, and add or edit tag properties.
 
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
@@ -83,78 +93,109 @@ categories can be grouped together in *vocabularies*. While tags represent an ad
 hoc method for users to group content together, categories exist to allow
 administrators to organize content in a more official, hierarchical structure.
 You can think of tags like the index of a book and categories like its table of
-contents. Both serve the same purpose: to help users find the information
-they seek.
+contents. Both serve the same purpose: to help users find the information they
+seek.
 
-Adding vocabularies and categories is similar to adding tags. Once you've
-selected the site you want to work on, select *Categories* from the content
-section of the Control Panel, and you will be presented with the categories
-administration page.
+Adding vocabularies and categories is similar to adding tags. Visit the site for
+which you want to create categories and then click on *Admin* &rarr; *Content*.
+Then click on *Categories* in the Content section on the left to view the
+categories administration portlet.
 
-![Figure 6.3: Categories Administration Page](../../images/05-categories.png)
+![Figure 6.3: When managing a site's content, click on *Categories* and then on *Add Vocabulary* to create a new vocabulary. By default, a vocabulary called *Topic* already exists. When adding new categories, make sure you're adding them to the correct vocabulary.](../../images/add-category.png)
 
 Clicking on a vocabulary on the left displays any categories that have been
-created under that vocabulary. You can create new vocabularies simply by
-clicking *Add Vocabulary* and providing a name for it. You can create categories
-in a similar fashion by choosing a vocabulary on the left, and then selecting
-*Add Category*. Like tags, you can also provide properties for categories. Once
-you have created some vocabularies and categories, you can take advantage of the
-full capabilities of categories by creating a nested hierarchy of categories. To
-nest categories, select what you want to be the parent category, then drag any
-category that you want to become a child category onto it. You will see a plus
-sign appear next to the name of the category you are dragging if you can add it
-to the selected parent category; if you see a red *x* that means that you cannot
-add that category as a subcategory of parent category that you have selected.
+created under that vocabulary. To create a new vocabulary, click on the *Add
+Vocabulary* button. Enter a name and, optionally, a description. By default, the
+*Allow Multiple Categories* box is checked. This allows multiple categories from
+the vocabulary to be applied to an asset. If the box is unchecked, only one
+category from the vocabulary can be applied to add asset. The *Associated Asset
+Types* lets you choose which asset types the categories of the vocabulary can be
+applied to and which asset types are *required* to have an associated asset from
+the vocabulary. Lastly, you can configure the permissions of the vocabulary.
+Should the vocabulary be viewable by guests? Only site members? Only owners?
+Which of these roles should be able to delete the vocabulary, update it, or edit
+its permissions? By default, guests can view the vocabulary but only the owner
+can delete it, update it, or configure its permissions.
 
-Once you have created a hierarchy of categories, your content creators will have
-them available to apply to content that they create. Navigate to the Web Content
-page of the Control Panel and click *Add Content*. Click the Categorization link
-from the right-side menu and click *Select* on the vocabulary you would like to
-use. A dialog box will appear with your categories. Select any relevant
-categories by checking the box next to them, and they will be applied to the
-content.
+Creating new categories is similar to creating new tags except that categories
+must be added to an existing vocabulary and they can only be create by site
+administrators. However, once created, regular users can apply categories to any
+assets they have permission to create or edit. To create a new category, click
+the *Add Category* button in the categories administration portlet. Enter a name
+for the new category and, optionally, a description. Use the *To Vocabulary*
+dropdown list to select a vocabulary to which to add the category. Just as with
+tags, you can configure the permissions of the category, choosing which roles
+(guest, site member, owner) can view the category, apply it to an asset, delete
+it, update it, or configure its permissions. By default, categories are viewable
+by guests and site members can apply categories to assets. Also, you can add
+properties to categories, just as with tags. Category properties are a way to
+add information to specific categories. You can think of category properties as
+tags for your categories. Structurally, category properties are just like tag
+properties: they are key-value pairs associated with specific categories that
+provide information about the categories.
 
-There are a several new enhancements to vocabularies and categories in Liferay
-6.1. The three main features are targeted vocabularies, single/multi-valued
-vocabularies, and separated widgets for every vocabulary.
+Once you have created some vocabularies and categories, you can take advantage
+of the full capabilities of categories by creating a nested hierarchy of
+categories. To nest categories, select the category that you'd like to be the
+parent category. Then drag any category that should be a child category onto it.
+You will see a plus sign appear next to the name of the category you are
+dragging if you can add it to the selected parent category; if you see a red *x*
+that means that you cannot add that category as a subcategory of parent category
+that you have selected.
 
-## Targeted Vocabularies 
+After you have created a hierarchy of categories, your content creators will have
+them available to apply to content that they create. Click on *Web Content* in
+the Content section of the Site Administration area the Control Panel and click
+*Add* &rrar; *Basic Web Content*. Click on *Categorization* from the right-side
+menu and click *Select* on the vocabulary you'd like to apply. A dialog box
+appears with your categories. Select any relevant categories by checking the box
+next to them, and they'll be applied to the content.
+
+Liferay 6.1 added several new features to vocabularies and categories. We
+mentioned a few of these already when we were discussing the *Allow Multiple
+Categories* and *Required* checkboxes for vocabularies and categories. The three
+new features are targeted vocabularies, single/multi-valued vocabularies, and
+separated widgets for every vocabulary.
+
+#### Targeted Vocabularies 
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
-configure these settings, go to the categories administration page and mouse
-over the vocabulary in the list until you see the edit icon to the right. Select
-the icon to reveal a dialog box like the one below.
+configure these settings, go to the categories administration portlet in the
+Control Panel and mouse over the vocabulary in the list until you see the edit
+icon to the right. Select the icon to reveal a dialog box like the one below.
 
 ![Figure 6.4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
-of the vocabulary to specific assets. In the screenshot above, notice how the
-vocabulary `Famous Noses` is configured to be available for Blogs and Web
-Content, but it is not required. It is mandatory, however, for Documents and
-Media Documents.
+of the vocabulary to specific assets. In the screenshot above, notice that the
+vocabulary is configured to be available for Web Content articles and Blog
+entries, but it is not required. It is mandatory, however, for Documents and
+Media files.
 
-### Single and Multi-valued Vocabularies 
+#### Single and Multi-valued Vocabularies 
 
-You can now decide if the user can choose one or more categories from the same
-vocabulary to categorize an asset. If a vocabulary is single-valued you can only
-choose one, and if it allows more, you can choose several categories.
+You can also decide if users can choose one or more categories from the same
+vocabulary to apply to an asset. If a vocabulary is single-valued you can only
+choose one. If it allows more, you can choose several categories from the
+vocabulary to apply to an asset.
 
-![Figure 6.5: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes.](../../images/multi-valued-vocabularies.png)
+![Figure 6.5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Cinema* and *Music* categories are selected to be applied but the *Sports* category is not.](../../images/multi-valued-vocabularies.png)
 
-Setting vocabulary values is done through the categories administration page.
-Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
-single value vocabularies or use the default option to set multi-value
-vocabularies.
+You can configure the single-valued or multi-valued status of a vocabulary
+through the categories administration portlet. Edit a vocabulary and deselect
+the *Allow Multiple Categories* checkbox to create a single-valued vocabulary.
+Use the default option to create a multi-valued vocabulary.
 
-### Separated Widgets 
+#### Separated Widgets 
 
-The third important improvement is every vocabulary has its own separated
-widget. These widgets appear in the Categorization section of every asset and
-they allow users to easily select appropriate categories for that asset.
+A third feature of vocabularies and categories is that every vocabulary has its
+own separated widget. These widgets appear in the Categorization section of the
+form for editing an asset and they allow users to easily select appropriate
+categories for that asset.
 
-![Figure 6.6: Now that vocabularies have their own widgets, it's easy to select available categories.](../../images/separated-widgets.png)
+![Figure 6.6: Vocabularies have their own widgets, making it easy to select available categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
@@ -162,18 +203,18 @@ of tags and categories: searching for content.
 
 ## Searching for Content in Liferay
 
-To stay organized, I (RS) used to use a paper-based planner. It had various
+To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a
 commercial company, but over the years I tweaked it into something that worked
 for me. This final version (before I went digital) had different tabs for
 different areas of my life that I wanted to keep track of: daily items like
 tasks, notes, a spiritual section, and agenda pages that kept track of things I
-needed to go over with specific people. A Planning section had tabs for
+needed to go over with specific people. A planning section had tabs for
 projects, family, future items, and reference. 
 
 Of course, since this was paper-based, it had its limitations. It was kind of
 hard to find stuff. Did I put the note I'd written about that new toy my
-daughter wanted in the Notes section or in the Family section? Or maybe it was
+daughter wanted in the notes section or in the family section? Or maybe it was
 on my *While Out* list, so I would remember to buy it before her birthday? 
 
 Liferay content can be like this. That important information you remember
@@ -194,14 +235,14 @@ placed a page to allow users to search for assets of any type. We'll learn how
 to use the Search portlet when we discuss Liferay's faceted search feature in
 the next section. There's also a Web Content Search portlet. This portlet can be
 placed on a page to allow users to search for web content articles. Users can't
-use the Web Content Search portlet to search for other kinds of content. The
-Blogs, Wiki, Message Boards, Documents and Media, and Web Content portlets all
-provide search bars that allow users to search among the specific types of
-assets with which these portlets allow users to interact. Note that all of these
-portlets are accessible from the Control Panel. They can also, except for the
-Web Content portlet, be placed on portal pages for end-users to use. The Web
-Content portlet is not designed for end users; it's intended for administrative
-use only.
+use the Web Content Search portlet to search for other kinds of content.
+However, the Blogs, Wiki, Message Boards, Documents and Media, and Web Content
+portlets all provide search bars that allow users to search among the specific
+types of assets with which these portlets allow users to interact. Note that all
+of these portlets are accessible from the Control Panel. They can also, except
+for the Web Content portlet, be placed on portal pages for end-users to use. The
+Web Content portlet is not designed for end users; it's intended for
+administrative use only.
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
@@ -247,7 +288,7 @@ administrators can configure the facets available to users for filtering search
 results. The default facets include the following:
 
 * Site
-* Asset type (pictured above)
+* Asset type
 * Asset tag
 * Asset category
 * Folder
@@ -257,58 +298,59 @@ results. The default facets include the following:
 For example, after searching for a certain term in the Search portlet, clicking
 on a specific site filters the search results to only display assets within the
 specified site. Clicking on a specific user filters the search results to only
-display assets added by the specified user. The frequency in which the term was
-found for each facet is listed in parentheses after the facet. It may jog your
-memory to see that the term you searched for appears in a blog entry, and that
-may be all you need to find what you were looking for. If, however, your memory
-is more foggy than that, or you're searching for something you're not sure is
-actually there, then the asset tags or asset categories facets may be more
-helpful to you. 
+display assets added by the specified user. The frequency with which the term
+was found for each facet is listed in parentheses after the facet. It may jog
+your memory to see that the term you searched for appears in a blog entry, and
+that may be all you need to find what you were looking for. If, however, your
+memory is more foggy than that, or you're searching for something you're not
+sure is actually there, then the asset tags or asset categories facets may be
+more helpful to you. 
 
-![Figure 6.8: Asset tag facets provide you with more information about content that contains the terms for which you searched.](../../images/faceted-search-2.png)
+![Figure 6.8: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-2.png)
 
-In this case, if you searched for a wireless phone, you may be more interested
-in content that has your search terms in it and has also been tagged by users.
-One or more of the tags may help you to find what you're looking for. Note that
-the number of tags that appear is configurable: by default it's 10, but there
-could be many more as a result of a particular search. We'll look at the
-configuration options later in the chapter. For now, let's see how drilling down
-works. 
+For example, if you searched for a wireless phone, you might be more interested
+in content that has your search terms in it *and* has also been tagged by users.
+One or more tags might help you to find what you're looking for. Note that the
+number of tags that appear is configurable: by default it's 10, but there could
+be many more as a result of a particular search. We'll look at the configuration
+options later in the chapter. For now, let's learn how to drill down to narrow
+search results. 
 
-To drill down into the search, click a facet to add it to the filter list, and
-the results to the right are refined by the facet you selected. 
+To drill down into the search, click on a facet to add it to the filter list.
+The results to the right are refined by the selected facets. 
 
 ![Figure 6.9: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
 
-Here we can see that we've selected one of the tags, *liferay*, to further
-refine the search. The tag appears in a list at the top, and there's a red X
-next to it that lets us remove it from our filter as we work to increase the
-relevancy of our search. But maybe selecting only the tag isn't enough to filter
-our search into something small enough to sort through. In this case, we can
-further refine the search by selecting another facet, as below. 
+Here, we've refined the search to only show documents. We've also selected one
+of the tags, *cool*, to refine the search. The facets we've selected, *Document*
+and *cool*, appear in a list at the top, and there's a red "X" next to it that
+lets us remove it from our filter as we work to refile our search.  Suppose that
+the two facets we selected weren't enough to filter our search into a small
+enough list to sort through. In this case, we could further refine the search by
+selecting another facet, as below. 
 
 ![Figure 6.10: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
 
-Now we've selected web content, which is one particular content type within
-Liferay, and the list of potential hits on our search terms has been
-dramatically reduced. In this way, you can interactively tweak the search
-results to narrow them down, making it easier to find that proverbial needle
-within the haystack. 
+Now we've also selected the *Music* category, which reduces the list of search
+hits on the right. In this way, you can interactively tweak the search results
+to narrow them down, making it easier to find that proverbial needle within the
+haystack. 
 
 #### Asset Types 
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
 searched. Under the hood, this means that these entities use Liferay's Asset API
-and have an Indexer defined. 
+and have an Indexer class defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
-For this reason, you may have additional asset types defined in your portal
-beyond the ones that Liferay ships with by default. If this is the case, you may
-wish to tweak the `frequency threshold` and the `max terms` settings to increase
-the number of asset types displayed past the default of 10. This is covered in
-the section below on search options. 
+described in the [Developer's
+Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/asset-framewo-4).
+For this reason, you can have additional asset types defined in your portal
+beyond the ones that Liferay ships with by default. If this is the case, you
+might want to tweak the `frequencyThreshold` and the `maxTerms` settings to
+increase the number of asset types displayed past the default of 10. This is
+covered in the section below on search options. 
 
 #### Asset Tags 
 
@@ -317,14 +359,14 @@ be displayed in the Asset Tag facet. Tags are handled in a similar way to how
 asset types are handled: not all tags may appear. There may be many more than
 the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
-setting `max terms` property.
+setting the `max terms` property.
 
 #### Asset Categories 
 
 If categories have been applied to any asset that appears in the result set,
-they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
-thing as the two sections above. That last sentence was written to check if
-you're still reading. 
+they may be displayed in the Asset Categories facet. Asset categories work just
+like asset tags. As with asset tags, you can modify the number of categories
+listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
@@ -427,8 +469,8 @@ developers are encouraged to re-design their search code as described in
 *Liferay in Action*, and then custom assets are aggregated with native portal
 assets seamlessly. 
 
-These are the basic options, but surely you didn't miss the fact that there are
-also advanced options. 
+These are the basic options. But you didn't miss the fact that there are also
+advanced options, did you?
 
 Configuring advanced search requires a bit more technical acumen than you might
 expect, because there are so many properties to tweak. Thankfully, in most
@@ -672,13 +714,12 @@ use of Liferay's asset framework to bring relevant content to users.
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
-This allows you to publish your web content using Liferay's Asset Publisher.
-
-You can use the Asset Publisher to publish a mixed group of various kinds of
-assets such as images, documents, blogs, and of course, web content. This helps
-in creating a more dynamic web site: you can place user-created wiki entries,
-blog posts or message board messages in context with your content. Let's look at
-some of its features.
+This allows you to publish different kinds of content using Liferay's Asset
+Publisher. You can use the Asset Publisher to publish a mixed group of various
+kinds of assets such as images, documents, blogs, and of course, web content.
+This helps in creating a more dynamic web site: you can place user-created wiki
+entries, blog posts, or message board messages in context with your content.
+Let's examine some of its features.
 
 ### Querying for Content  
 
@@ -691,9 +732,9 @@ To get to all the portlet's options, click the *Configuration* link in the
 portlet's menu (the wrench icon). On the Setup tab, you can configure the Asset
 Publisher's settings from the following three areas:
 
-* Asset Selection
-* Display Settings
-* Subscriptions
+- Asset Selection
+- Display Settings
+- Subscriptions
 
 Asset Selection allows you to configure which assets are displayed. You can set
 asset selection to either *dynamic* or *manual*. With dynamic asset selection,
@@ -724,165 +765,265 @@ any type, not just web content articles.
 #### Selecting Assets Manually  
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
-the Asset Publisher that you want to select content manually. You can select
-what you want to be published within the portlet, or you can create new content
-from within the Asset Publisher.
+the Asset Publisher that you want to select content manually. You can configure
+multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.12: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
-Clicking *Add New* gives you a menu of options, enabling you to create the
-content right where you are. You can create blogs, bookmarks, calendar entries,
-documents, images, and of course, web content. Anything you create here is added
-to the list below of assets that are displayed by the portlet.
+When selecting assets manually, you'll see a list of configured scopes under the
+Scope heading. Click the red "X" button at the right to remove a scope from the
+list. Click the *Select* button to add additional scopes to the Asset
+Publisher's configuration. After you've added a scope, a new Select button
+appears under the Asset Entries heading. A list of assets selected for display
+appears in the Asset Entries section. You can select assets to be displayed by
+clicking on the appropriate *Select* button. One button appears for each
+configured scope. By default, the available asset types include the following:
 
-Clicking *Select Existing* gives you a similar menu, except this time you can
-pick from existing content in the portal that either you or your users have
-created. Has someone written an excellent wiki page that you want to highlight?
-Select it here, and it will be displayed.
+- Documents Folder
+- Bookmarks Folder
+- Blogs Entry
+- Message Boards Message
+- Web Content Article
+- Bookmarks Entry
+- Wiki Page
+- Document
+- Web Content Folder
 
-The Asset Publisher enables you to mix and match different content types in the
-same interface. Once you have your content selected, you can move on to the
-display types to configure how the content appears.
+You can select any number of assets to be displayed. Note, however, that there's
+a display setting called *Number of Items to Display* that determines the
+maximum number of items to display (or, if pagination is enabled, the maximum
+number of items to display per page). The Asset Publisher enables you to mix and
+match different asset types in the same interface. When you're done selecting
+items to display, click *Save*. Any selected assets are added to the list of
+assets that are displayed by the portlet. Once you have your content selected,
+you can configure the display types to configure how the content appears. We'll
+discuss the display settings in more detail after we finish discussing how to
+select assets for display. 
 
-Most of the time, however, you'll likely be using the Asset Publisher to select
-content dynamically.
+While manual Asset selection allows you to select assets of various types from
+different scopes, it can be time-consuming to periodically update the assets
+that should be displayed. It's often more convenient to use the Asset Publisher
+to select content dynamically.
 
 #### Selecting Assets Dynamically  
 
 The Asset Publisher's default behavior is to select assets dynamically according
-to rules that you give it. These rules can be stacked on top of each other so
+a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You have the following options for creating these rules:
 
-**Scope:** Choose the sites or organizations from which the content should be
-selected.
+**Scope:** Choose the sites from which the content should be selected. This
+works the same way as with manual asset selection: assets can only be displayed
+if they belong to a configured scope.
 
-**Asset Type:** Choose whether you'll display any asset or only assets of a
-specific type, such as only web content, only wiki entries, or any combinations
+**Asset Type:** Choose whether you'll display any assets or only assets of a
+specific type, such as only web content, only wiki entries, or any combination
 of multiple types.
+
+**Filter Rules:** Add as many filters on tags or categories as you like. You can
+choose whether the content must contain or must not contain any or all of the
+tags or categories that you enter.
 
 ![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
-**Filter Rules:** Add as many filters on tags or categories as you like. You can
-choose whether the content contains or does not contain any or all categories or
-tags that you enter.
+Once you've set up your filter rules for dynamically selecting content, you can
+decide how the content will be displayed.
 
-Once you've set up your filter rules for dynamically selecting your content, you
-can then decide how the content will be displayed.
+<!-- TODO: Discuss how to use the CUSTOM USER ATTRIBUTES section of the dynamic
+asset selection configuration window of the Asset Publisher. -->
 
-The Display Settings section gives you precise control over the display of your
-assets. There are a multitude of options available to configure how you want
-your content to appear. You can configure the style, length of abstracts,
-behavior of the asset link, maximum items to display, pagination type and file
-conversions. Additionally, you can enable printing, flags, ratings, comments and
-comment ratings, and these work the same way they do in the Web Content Display
-portlet.
+You can order the content returned by the filters by title, create date,
+modified date, publication date, etc. in ascending or descending order. For
+instance, suppose you have a series of "How To" articles that you want displayed
+in descending order based on whether the article was tagged with the *hammer*
+tag. Or, suppose you want a series of video captures to display in ascending
+order based on a category called *birds*. For these use cases, you can configure
+the ordering and grouping settings. You can also group by *Asset*, *Type* or
+*Vocabularies*. Vocabularies are groups of categories defined by administrators
+in the *Categories* section of the Control Panel.
 
----
+The *Ordering and Grouping* section of the Asset Publisher allows you to
+precisely control how content is ordered and grouped when displayed. You can
+order the assets displayed by Asset Publisher in ascending or descending order
+by the following attributes:
 
- ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments and
- ratings to a page is through the *Page Comments* and *Page Ratings* portlets.
- Just add the portlets in the appropriate location near the asset you'd like to
- have feedback for. Note that starting in Liferay 6.2, these portlets can no
- longer be exported.
- 
----
+- Title
+- Create Date
+- Modified Date
+- Publish Date
+- Expiration Date
+- Priority
 
-You can display the content returned by the filters above in order by title,
-create date, modified date, view count and more in ascending or descending
-order. For instance, you may have a series of "How To" articles that you want
-displayed in descending order based on whether the article was tagged with the
-*hammer* tag. Or, you may want a series of video captures to display in
-ascending order based on a category called *birds*. You can also group by
-*Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined
-by administrators in the *Categories* section of the Control Panel.
+You can also configure a second ordering. The second ordering would be applied
+to any assets for which the first ordering wasn't sufficient. For example,
+suppose you chose to order assets by title and there are multiple assets with
+the same title. Then the second ordering would take effect. For example, you
+could order all the assets that had the same title by their publication dates.
 
-In the *Ordering and Grouping* section of the Asset Publisher, you have great
-control over how content is ordered and grouped in the list, but this is only
-one aspect of how your content will be displayed. You can refine the display
-through many other display settings.
+You can establish grouping rules as well as ordering rules. You can group assets
+by type or by vocabulary. For example, suppose there's a vocabulary called
+*Membership Type* that belongs to your site. Suppose this vocabulary has two
+categories: *Premium* and *Regular*. If you group assets by Membership Type, all
+assets with the Premium category will be displayed in one group and all assets
+with the Regular category will be displayed in another group. Grouping rules are
+applied before any ordering rules: they're a way to divide up the displayed
+assets into separate lists. The ordering rules are applied separately to each
+group of assets.
 
-### Configuring Display Settings  
+Note that grouping and ordering rules are only one mechanism to control how your
+content will be displayed. You can refine the display through many other display
+settings which we'll examine next.
 
-The Display Settings section gives you precise control over the display of your
-assets. There are a multitude of options available to configure how you want
-your content to appear. You can configure the style, length of abstracts,
-behavior of the asset link, maximum items to display, pagination type and file
-conversions. Additionally, you can enable printing, flags, ratings, comments and
-comment ratings, and these work the same way they do in the Web Content Display
-portlet.
+### Configuring Display Settings
 
----
+Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
+Configuration window. Here, you can configure many more settings that control
+the Asset Publisher's behavior and that determine how the Asset Publisher
+displays content. The Display Settings section gives you precise control over
+the display of your assets. There are many options available to configure how
+you want your content to appear. Many of these, such as printing, flags,
+ratings, comments, comment ratings, and social bookmarks work the same way they
+do in the Web Content Display portlet.
 
- ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
- content articles that have an associated small image, the small image becomes a
- link to the full article. To use this feature, add or edit a web content
- article that the Asset Publisher should display. Before clicking *Publish*,
- click on *Abstracts*, flag *Small Image*, and upload an image. Then click
- *Publish*. Once your web content article appears in the Asset Publisher's list,
- clicking the small image takes you to the full article.
+- **Show Add Content Button**: When checked, this checkbox adds an *Add New*
+  button that allows users to add new assets directly from the Asset Publisher
+  portlet. This is checked by default.
 
----
+- **Display Template**: This selector lets you choose an application display
+  template to customize how the Asset Publisher displays assets.  Liferay
+  creates the following display templates for each newly created site, including
+  the default site:
 
-#### Display Style  
+    - Abstracts: This display template shows the first 200-500 characters of the
+      content, defined by the **Abstract Length** field. This is the default
+      display template of the Asset Publisher.
+    - Table: This display template displays the content in an HTML table which
+      can be styled by a theme developer.
+    - Title List: This display template displays the content's title as defined
+      by the user who entered it.
+    - Full Content: This display template displays the entire content of the
+      entry.
 
-**Abstracts:** Shows the first 200-500 characters of the content, defined by the
-**Abstract Length** field.
+    There's also a Rich Summary display template that belongs to the global
+    scope. This template provides a summary view of each asset along with a
+    *Read More* link to the article's full content.
 
-**Table:** Displays the content in an HTML table which can be styled by a theme
-developer.
+- **Abstract Length**: Here, you can select the number of characters to display
+  for abstracts. The default is `200`.
 
-**Title List:** The content's title as defined by the user who entered it.
+- **Asset Link Behavior:** The default value is *Show Full Content*. With this
+  value selected, when the link to an asset is clicked, the full asset is
+  displayed in the current Asset Publisher. (There's also a *View in Context*
+  link that shows the article in the Wiki page's Wiki portlet.) If the value
+  *View in a Specific Portlet* is selected, clicking on an asset causes that
+  asset to be displayed in the portlet to which the asset belongs. For example,
+  a blog entry would be displayed in the Blogs portlet where it was created.
+  Likewise, a forum post would be displayed in the Message Boards portlet where
+  it was created. Similarly, a generic web content article would be displayed in
+  the Asset Publisher of its configured display page. See the section below on
+  display pages for more information.
 
-**Full Content:** The entire content of the entry.
+    ---
 
-#### Other Settings  
+     ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays
+     web content articles that have an associated small image, the small image
+     becomes a link to the full article.  To use this feature, add or edit a web
+     content article that the Asset Publisher should display. Before clicking
+     *Publish*, click on *Abstracts*, flag *Small Image*, and upload an image.
+     Then click *Publish*. Once your web content article appears in the Asset
+     Publisher's list, clicking the small image takes you to the full article.
+     
+    ---
 
-**Asset Link Behavior:** The default value is *Show Full Content*. With this
-value selected, when the link to an asset is clicked, the full asset is
-displayed in the current Asset Publisher. If the value *View in a Specific
-Portlet* is selected, clicking on an asset causes that asset to be displayed in
-the portlet to which the asset belongs. For example, a blog entry would be
-displayed in the Blogs portlet where it was created. Likewise, a forum post
-would be displayed in the Message Boards portlet where it was created.
-Similarly, a generic Web Content article would be displayed in the Asset
-Publisher of its configured Display Page. See the section below on Display Pages
-for more information.
+- **Number of Items to Display**: Here, you can select the maximum number of
+  assets that can be displayed by the Asset Publisher. However, if pagination is
+  enabled, there's no limit to the number of of assets that the Asset Publisher
+  can display. So with pagination enabled, this number represents the maximum
+  number of assets that can be displayed per page.
 
-**Maximum Items to Display:** You can display 1-100 items.
+- **Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
+  pagination set to *None*, the Asset Publisher displays at most the number of
+  assets specified in the **Number of Items to Display** property. Setting the
+  pagination type to *Simple* adds *Previous* and *Next* buttons that enable the
+  user to browse through "pages" of assets in the Asset Publisher. Setting the
+  pagination type to *Regular* adds more options and information including
+  *First* and *Last* buttons, a dropdown selector for pages, the number of items
+  per page, and the total number of results (assets being displayed).
 
-**Pagination Type:** Select Simple or Regular. Simple shows previous and next
-navigation; regular includes a way of selecting the page to which you'd like to
-navigate.
+- **Show Metadata Descriptions**: <!-- TODO -->
 
-**Exclude Assets with 0 Views:** If an asset has not been viewed, exclude it
-from the list.
+- **Show Available Locales:** Since content can be localized, you can have
+  different versions of it based on locale. Enabling this option shows the
+  locales available, enabling users to view the content in their language of
+  choice. 
 
-**Show Available Locales:** Since content can be localized, you can have
-different versions of it based on locale. This will show the locales available,
-enabling the user to view the content in the language of his or her choice.
+- **Set as the Default Asset Publisher for This Page**: The Asset Publisher
+  portlet is an instanceable portlet; multiple Asset Publishers can be added to
+  a page and each has an independent configuration. The default Asset Publisher
+  for a page is the one used to display any web content associated with the
+  page.
 
-**Enable Conversion To:** If you have enabled Liferay Portal's OpenOffice.org
-integration, you can allow your users to convert the content to one of several
-formats, including PDF.
+- **Enable Conversion To:** If you have enabled Liferay Portal's
+  OpenOffice/LibreOffice integration, you can allow your users to convert the
+  content to one of several formats:
 
-Below these options are the same ones in the Web Content Display portlet: enable
-print, enable comments, enable ratings, etc.
+    - DOC
+    - ODT
+    - PDF
+    - RTF
+    - SXW
+    - TXT
 
-**Show Metadata:** Allows you to select from the available metadata types (see
-below).
+    Please refer to the User Guide's section on [Liferay Server Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
+    for information on setting up Liferay's OpenOffice/LibreOffice document
+    conversion functionality.
 
-![Figure 6.14: Available metadata types](../../images/available-metadata-fields.png)
+- **Enable ...**: The Asset Publisher's Display Settings allow you to
+  enable/disable the following options for displayed assets:
+  
+    - Print
+    - Flags
+    - Related assets
+    - Ratings
+    - Comments
+    - Comment ratings
+    - Social bookmarks
 
-**Enable RSS Subscription:** This lets users subscribe to the content via RSS
-Feeds.
+    Enabling the Print option adds a *Print* link to the full view of an asset
+    displayed in the Asset Publisher. Clicking *Print* opens a new browser
+    window with a print view of the asset. Enabling flags, related assets,
+    ratings, comments, comment ratings, or social bookmarks add links to the
+    corresponding social features to the view full of the asset in the Asset
+    Publisher.
+
+    ---
+
+     ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments
+     and ratings to a page is through the *Page Comments* and *Page Ratings*
+     portlets.  Just add the portlets in the appropriate location near the asset
+     you'd like to have feedback for. Note that starting in Liferay 6.2, these
+     portlets can no longer be exported.
+     
+    ---
+
+- **Display Style**: <!-- TODO -->
+
+- **Display Position**: <!-- TODO -->
+
+- **Show Metadata:** Allows you to select various metadata types to be
+  displayed (see below). For example, you can select tags and categories for
+  display. Upon saving your configuration, the Asset Publisher displays tags and
+  categories for each displayed asset. Then users can click on the tags and
+  categories to manually filter the displayed assets.
+
+![Figure 6.14: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
 though there are many choices, it's easy to go through the options and quickly
-adjust the ones that apply to you. You'll want to use the Asset Publisher to
-query for mixed assets in the portal that have relevant information for your
-users.
+adjust the ones that apply to your situation. You'll want to use the Asset
+Publisher to query for different kinds of assets in the portal that contain
+relevant information for your users.
 
 ### Configuring Asset Publisher Subscriptions
 
@@ -925,22 +1066,22 @@ by Liferay 6.1.
 
 ### Content Display Pages
 
-If you've been using Liferay for a while, or you've just spent a little bit of
-time with this guide, you might have noticed something about how Liferay handles
-web content--content is never tied directly to a page. While this can be useful
-(because it means that you don't have to recreate content if you want to display
-the same thing on multiple pages), it also means that you don't have a static
-URL for any web content, which is bad for search engine optimization.
+If you've been using Liferay for a while, you might have noticed something about
+how Liferay handles web content--content is never tied directly to a page. While
+this can be useful (because it means that you don't have to recreate content if
+you want to display the same thing on multiple pages), it also means that you
+don't have a static URL for any web content, which is bad for search engine
+optimization.
 
-As an improvement, Liferay has introduced the concept of Display Pages and
-Canonical URLs. Each web content entry on the portal has a canonical URL, which
-is the official location of the content that is referenced any time the content
-is displayed. A Display Page can be any page with an asset publisher configured
-to display any content associated with the page. When adding or editing web
-content articles, you can select a Display Page, but only pages with a
-configured asset publisher are available for selection.
+As an improvement, Liferay introduced the concept of *display pages* and
+*canonical URLs*. Each web content entry on the portal has a canonical URL,
+which is the official location of the content that is referenced any time the
+content is displayed. A display page can be any page with an asset publisher
+configured to display any content associated with the page. When adding or
+editing web content articles, you can select a display page, but only pages with
+a configured asset publisher are available for selection.
 
-To create a Display Page, you can create a page yourself, add an Asset Publisher
+To create a display page, you can create a page yourself, add an Asset Publisher
 portlet and configure it yourself. Alternatively, you can use the *Content
 Display Page* page template included with Liferay. If you're creating a Display
 Page manually, once you've added an Asset Publisher portlet to the page, open
@@ -949,28 +1090,28 @@ This Page* box.
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole
-bunch of content on the same page?" Yes. That's exactly what I said. Just
-watch--create a display page called *My Web Content Display Page* somewhere on
-your portal, using the *Content Display Page* template. Now, on a different
-page, add a Web Content Display portlet. Click the *Add Web Content* button,
-enter a title and some content, click on *Display Page* at the right, and select
-the Display Page you just created. Then click *Publish*.
+bunch of content on the same page?" That's right. Just watch--create a display
+page called *My Web Content Display Page* somewhere on your portal, using the
+*Content Display Page* template. Now, on a different page, add a Web Content
+Display portlet. Click the *Add Web Content* button, enter a title and some
+content, click on *Display Page* at the right, and select the Display Page you
+just created. Then click *Publish*.
 
-![Figure 6.15: Selecting a Display Page](../../images/04-web-content-display-page.png)
+![Figure 6.15: You can select a display page for a web content article when creating or editing one.](../../images/04-web-content-display-page.png)
 
-In the Asset Publisher of the *My Web Content Display Page*, you can now click
-the *Read More* link to display the content. Notice that the canonical URL for
+In the Asset Publisher of the *My Web Content Display Page*, click the *Read
+More* link to display the full content. Notice that the canonical URL for
 content appears in your browser's address bar. If you create your own custom
 display page, any additional portlets that you place on the page are displayed
 along with the content when you access it via the canonical URL. If you used the
-*Content Display Page* page template for your Display page, it not only features
+*Content Display Page* page template for your display page, it not only features
 a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
 ![Figure 6.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
-Let's move on to another new featured introduced by Liferay 6.1.
+Next, let's learn about another new feature introduced by Liferay 6.1.
 
 ## Defining Content Relationships  
 
@@ -990,12 +1131,12 @@ currently published on the page where it is placed. Let's take a look at the
 Related Assets portlet.
 
 As a prerequisite for the Related Assets portlet to display related assets, you
-configure it to show the content you want displayed. To do this, go to the Asset
-Publisher portlet and select the *wrench* icon in the upper right corner of the
-portlet. Under the *Setup* tab, set type of asset(s) to display using the
-*Asset Type* menu. The default value is set to *Any*. You can narrow the scope
-of the portlet to display any single category of asset type or select multiple
-assets from the menu.
+have to configure it to show the content you want displayed. To do this, go to
+the Asset Publisher portlet and select the *wrench* icon in the upper right
+corner of the portlet. Under the *Setup* tab, set type of asset(s) to display
+using the *Asset Type* menu. The default value is set to *Any*. You can narrow
+the scope of the portlet to display any single category of asset type or select
+multiple assets from the menu.
 
 Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
@@ -1012,10 +1153,10 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet.](../../images/related-assets-portlet-after.png)
+![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../images/related-assets-portlet-after.png)
 
-Once you select an asset, its related assets will display in the Related Assets
-portlet, similar to the image above.
+Once you select an asset, its related assets are displayed in the Related Assets
+portlet, as in the image above.
 
 ## Summary  
 

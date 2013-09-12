@@ -14,58 +14,46 @@
 
 package com.nosester.portlet.eventlisting.service.impl;
 
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.service.ServiceContext;
-
-import com.nosester.portlet.eventlisting.model.Location;
-import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
-import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
-
 import java.util.Date;
 import java.util.List;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.ServiceContext;
+import com.nosester.portlet.eventlisting.model.Location;
+import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
 /**
  * The implementation of the location local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
- *
- * <p>
- * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the {@link
+ * com.nosester.portlet.eventlisting.service.LocationLocalService} interface.
+ * <p> This is a local service. Methods of this service will not have security
+ * checks based on the propagated JAAS credentials because this service can only
+ * be accessed from within the same VM.
  * </p>
  *
- * @author jbloggs
- * @see com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
- * @see com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
+ * @author Joe Bloggs
+ * @see    com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
+ * @see    com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil
  */
 public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
-	/**
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil} to access the location local service.
-	 */
 
-	public Location addLocation(Location location) throws SystemException {
+	public Location addLocation(
+			long userId, long groupId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext)
+	throws PortalException, SystemException {
 
-		long locationId = counterLocalService.increment(Location.class.getName());
-		location.setLocationId(locationId);
+		User user = userPersistence.findByPrimaryKey(userId);
 
 		Date now = new Date();
-		location.setCreateDate(now);
-		location.setModifiedDate(now);
 
-		return super.addLocation(location);
-	}
-
-	public Location addLocation(String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
-
-		long locationId = 0;
-		try {
-			locationId = counterLocalService.increment(Location.class.getName());
-		} catch (SystemException e) {
-			e.printStackTrace();
-		}
+		long locationId =
+			counterLocalService.increment(Location.class.getName());
 
 		Location location = locationPersistence.create(locationId);
 
@@ -76,42 +64,100 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setStateOrProvince(stateOrProvince);
 		location.setCountry(country);
 
-		long companyId = serviceContext.getCompanyId();
-		location.setCompanyId(companyId);
-
-		long groupId = serviceContext.getScopeGroupId();
 		location.setGroupId(groupId);
+		location.setCompanyId(user.getCompanyId());
+		location.setUserId(user.getUserId());
+		location.setCreateDate(serviceContext.getCreateDate(now));
+		location.setModifiedDate(serviceContext.getModifiedDate(now));
 
-		long userId = 0;
-		try {
-			userId = serviceContext.getGuestOrUserId();
-		} catch (PortalException pe) {
-			pe.printStackTrace();
-		} catch (SystemException se) {
-			se.printStackTrace();
+		super.addLocation(location);
+
+		// Resources
+
+		if (serviceContext.isAddGroupPermissions() ||
+			serviceContext.isAddGuestPermissions()) {
+
+			addLocationResources(
+				location, serviceContext.isAddGroupPermissions(),
+				serviceContext.isAddGuestPermissions());
 		}
-
-		location.setUserId(userId);
-
-		Date now = new Date();
-		location.setCreateDate(now);
-		location.setModifiedDate(now);
-
-		try {
-			return super.addLocation(location);
-		} catch (SystemException e) {
-			e.printStackTrace();
+		else {
+			addLocationResources(
+				location, serviceContext.getGroupPermissions(),
+				serviceContext.getGuestPermissions());
 		}
 
 		return location;
 	}
 
-	public List<Location> getLocationsByGroupId(long groupId) throws SystemException {
+	public void addLocationResources(
+			Location location, boolean addGroupPermissions,
+			boolean addGuestPermissions)
+		throws PortalException, SystemException {
+
+		resourceLocalService.addResources(
+			location.getCompanyId(), location.getGroupId(),
+			location.getUserId(), Location.class.getName(),
+			location.getLocationId(), false, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	public void addLocationResources(
+			Location location, String[] groupPermissions,
+			String[] guestPermissions)
+		throws PortalException, SystemException {
+
+		resourceLocalService.addModelResources(
+			location.getCompanyId(), location.getGroupId(),
+			location.getUserId(), Location.class.getName(),
+			location.getLocationId(), groupPermissions, guestPermissions);
+	}
+
+	public void addLocationResources(
+			long locationId, boolean addGroupPermissions,
+			boolean addGuestPermissions)
+		throws PortalException, SystemException {
+
+		Location location = locationPersistence.fetchByPrimaryKey(locationId);
+
+		addLocationResources(
+			location, addGroupPermissions, addGuestPermissions);
+	}
+
+	public void addLocationResources(
+			long locationId, String[] groupPermissions,
+			String[] guestPermissions)
+		throws PortalException, SystemException {
+
+		Location location = locationPersistence.fetchByPrimaryKey(locationId);
+
+		addLocationResources(
+			location, groupPermissions, guestPermissions);
+	}
+
+	public Location deleteLocation(Location location)
+		throws SystemException {
+
+		return locationPersistence.remove(location);
+	}
+
+	public Location deleteLocation(long locationId)
+		throws PortalException, SystemException {
+
+		Location location = locationPersistence.fetchByPrimaryKey(locationId);
+
+		return deleteLocation(location);
+	}
+
+	public List<Location> getLocationsByGroupId(long groupId)
+		throws SystemException {
 
 		return locationPersistence.findByGroupId(groupId);
 	}
 
-	public List<Location> getLocationsByGroupId(long groupId, int start, int end) throws SystemException {
+	public List<Location> getLocationsByGroupId(
+			long groupId, int start, int end)
+		throws SystemException {
 
 		return locationPersistence.findByGroupId(groupId, start, end);
 	}
@@ -121,22 +167,15 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return locationPersistence.countByGroupId(groupId);
 	}
 
-	public Location updateLocation(Location location) throws SystemException {
+	public Location updateLocation(
+			long locationId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext)
+		throws PortalException, SystemException {
+
+		Location location = locationPersistence.findByPrimaryKey(locationId);
 
 		Date now = new Date();
-		location.setModifiedDate(now);
-
-		return super.updateLocation(location);
-	}
-
-	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
-
-		Location location = null;
-		try {
-			location = LocationLocalServiceUtil.fetchLocation(locationId);
-		} catch (SystemException e) {
-			e.printStackTrace();
-		}
 
 		location.setName(name);
 		location.setDescription(description);
@@ -144,32 +183,9 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setCity(city);
 		location.setStateOrProvince(stateOrProvince);
 		location.setCountry(country);
+		location.setModifiedDate(serviceContext.getModifiedDate(now));
 
-		long companyId = serviceContext.getCompanyId();
-		location.setCompanyId(companyId);
-
-		long groupId = serviceContext.getScopeGroupId();
-		location.setGroupId(groupId);
-
-		long userId = 0;
-		try {
-			userId = serviceContext.getGuestOrUserId();
-		} catch (PortalException pe) {
-			pe.printStackTrace();
-		} catch (SystemException se) {
-			se.printStackTrace();
-		}
-
-		location.setUserId(userId);
-
-		Date now = new Date();
-		location.setModifiedDate(now);
-
-		try {
-			return super.addLocation(location);
-		} catch (SystemException e) {
-			e.printStackTrace();
-		}
+		super.updateLocation(location);
 
 		return location;
 	}

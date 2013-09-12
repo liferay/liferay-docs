@@ -58,43 +58,14 @@ public class LocationServiceWrapper implements LocationService,
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.addLocation(location);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location addLocation(
-		long locationId, java.lang.String name, java.lang.String description,
+		long groupId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
 		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _locationService.addLocation(locationId, name, description,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.addLocation(groupId, name, description,
 			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location update(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.update(location);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _locationService.updateLocation(locationId, name, description,
-			streetAddress, city, stateOrProvince, country, serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Location delete(
-		com.nosester.portlet.eventlisting.model.Location location)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.delete(location);
 	}
 
 	@Override
@@ -103,6 +74,18 @@ public class LocationServiceWrapper implements LocationService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _locationService.deleteLocation(locationId);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	/**

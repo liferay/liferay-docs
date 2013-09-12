@@ -276,23 +276,52 @@ public class LocationLocalServiceUtil {
 	}
 
 	public static com.nosester.portlet.eventlisting.model.Location addLocation(
-		java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
+		long userId, long groupId, java.lang.String name,
+		java.lang.String description, java.lang.String streetAddress,
+		java.lang.String city, java.lang.String stateOrProvince,
+		java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addLocation(name, description, streetAddress, city,
-			stateOrProvince, country, serviceContext);
+				   .addLocation(userId, groupId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
-	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return getService()
-				   .updateLocation(locationId, name, description,
-			streetAddress, city, stateOrProvince, country, serviceContext);
+	public static void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addLocationResources(location, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	public static void addLocationResources(
+		com.nosester.portlet.eventlisting.model.Location location,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addLocationResources(location, groupPermissions, guestPermissions);
+	}
+
+	public static void addLocationResources(long locationId,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addLocationResources(locationId, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	public static void addLocationResources(long locationId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addLocationResources(locationId, groupPermissions, guestPermissions);
 	}
 
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(
@@ -310,6 +339,18 @@ public class LocationLocalServiceUtil {
 	public static int getLocationsCountByGroupId(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getLocationsCountByGroupId(groupId);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	public static void clearService() {

@@ -11,27 +11,30 @@ topics:
 
 Personal sites allow each portal user to manage and customize a set of public
 and/or private pages and any associated content or applications. Public pages
-provide a means of making content publicly available while private pages provide
-a means of hiding information from other users. Liferay 6.1 introduced
-customizable pages and applications. Administrators can designate certain pages
-or applications as "customizable," which allows each user to make and save their
-own customizations. Portlet layouts can also be customized with the use of
-Application Display Templates. Liferay Enterprise Edition provides a rules
-engine which allows administrators to create custom portal rules and simplify
-complex blocks of code containing lots of `if-else` statements. Let's start by
-discussing personal sites.
+provide a means of making content publicly available. Private pages provide a
+means for users to create content and use applications that should be hidden
+from other users. Liferay 6.1 introduced the concepts of customizable pages and
+applications. Administrators can designate certain pages or applications as
+"customizable," which allows each user to make and save their own
+customizations. Portlet layouts can also be customized with the use of
+application display templates. Application display templates allow a portlet's
+look and feel to be completely customized. Liferay Enterprise Edition provides a
+rules engine which allows administrators to create custom portal rules and
+simplify complex blocks of code containing lots of `if-else` statements. Let's
+start by discussing personal sites.
 
 ## User Personal Sites  
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
 Personal sites are fully customizable but cannot have more than one member. The
-public pages of personal sites provide a space for users to publish content that
-they'd like to make accessible to anyone, including guests. User blogs are often
-placed on public personal site pages. Content and applications that users would
-like to reserve for personal use are often placed on the private pages of
-personal sites. For example, each user can add a Documents and Media portlet to
-his or her private pages and use it as an online private file repository.
+public pages of personal sites provide a space for users to add content and
+applications that they'd like to make accessible to anyone, including guests.
+User blogs are often placed on public personal site pages. Content and
+applications that users would like to reserve for personal use are often placed
+on the private pages of personal sites. For example, each user can add a
+Documents and Media portlet to his or her private pages and use it as an online
+private file repository.
 
 If you'd like to disable personal sites for your portal, just add the following
 properties to your `portal-ext.properties` file:
@@ -41,9 +44,9 @@ properties to your `portal-ext.properties` file:
     
 ---
 
-![Tip](../../images/tip.png) Note that the public and private page sets of
-personal sites are handled separately. You can leave one page set enabled while
-disabling the other.
+ ![Tip](../../images/tip.png) Note that the public and private page sets of
+ personal sites are handled separately. You can leave one page set enabled while
+ disabling the other.
 
 ---
 
@@ -70,7 +73,8 @@ properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the portlets that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the Default User Public Layouts and Default User Private Layouts sections of
-chapter 20 for details.
+the `portal.properties` file for details. You can find an HTML version of the
+this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 
 ---
 
@@ -84,7 +88,7 @@ by setting the following properties:
 As of Liferay 6.1, this property is obsolete. However, you can customize the
 modifiable portions of personal sites through Liferay's permissions system by
 removing permissions from roles. To disallow all portal users from modifying
-something, remove the permission from the User role.
+something, remove the relevant permission from the User role.
 
 ---
 
@@ -104,7 +108,7 @@ look at how users can customize applications.
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
-user visits such a page, a notification will appear stating that the user can
+user visits such a page, a notification appears stating that the user can
 customize the page. Users can make customizations only in the sections of pages
 designated by administrators. Customizations are based on the rows and columns
 of a page layout. Page customizations are only visible to the user who made the
@@ -112,21 +116,19 @@ customizations. By default, site members can make page customizations but
 non-site members and guests can't.
 
 To enable page customizations as an administrator, first navigate to the page
-you'd like to let site members modify. Then select *Manage* &rarr; *Page
-Customizations* from the Dockbar.
+you'd like to let site members modify. Then click on the *Edit* button at the
+left side of the page, expand the *Customization Settings* area, and click on
+the *Show Customizable Sections* button. 
 
-![Figure 7.1: To enable page customizations, select *Manage* &rarr; *Page
-Customizations* from the Dockbar.](../../images/page-customizations.png)
+![Figure 7.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
 
-Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or
+Once you've clicked the *Show Customizable Sections* button, you'll see one or
 more red regions, depending on the layout template of your page. Check one or
 more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 7.2: Check one or more of the *Customizable* boxes to allow site
-members to customize certain sections of the
-page.](../../images/customizable-regions.png)
+![Figure 7.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification
 saying, "You can customize this page." Site members can toggle between viewing
@@ -137,53 +139,51 @@ match the default page. This allows users to discard one set of customizations
 and start a new set without having to manually undo each customization that
 they'd previously made.
 
-Note that non-administrator site members can access the Add menu from the
-Dockbar when viewing their customizable page even if they don't ordinarily have
-permission to view this menu. This allows them to add portlets to the sections
-of the page that they're allowed to customize. If they click *View Default
-Page*, the Add menu will disappear from the Dockbar since they're not allowed to
-modify the default page.
+Note that non-administrator site members can access the Add menu from the left
+side of the screen when viewing their customizable page even if they don't
+ordinarily have permission to view this menu. This allows them to add portlets
+to the sections of the page that they're allowed to customize. If they click
+*View Default Page*, the Add menu will disappear from the Dockbar since they're
+not allowed to modify the default page.
 
-![Figure 7.3: Non-administrator site members can customize their own versions of
-customizable pages but can't modify the default
-page.](../../images/default-customizable-page.png)
+![Figure 7.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
-the *default page* view and the *customized page*. Changes made to the *default
-page* affect all users, whereas changes made to the *customized page* affect
-only the administrator who made the changes.  Changes made by administrators to
-non-customizable sections in the *default view* are immediately applied for all
-users. However, changes made by administrators to customizable sections do *not*
-overwrite users' customizations.
+the *default page* view and the *customized page* view. Changes made to the
+*default page* affect all users, whereas changes made to the *customized page*
+affect only the administrator who made the changes. Changes made by
+administrators to non-customizable sections in the *default view* are
+immediately applied for all users. However, changes made by administrators to
+customizable sections do *not* overwrite users' customizations.
 
 Users can make two kinds of customizations to customizable regions. First, they
 can configure any portlet applications within the customizable regions. Second,
-they can add portlets to or remove portlets from the customizable regions. As a
-simple example, suppose that you, as an administrator, selected the right column
-of the default portal homepage to be customizable. A member of the default site
-could take the following steps to make a personal customization of the portal
-homepage:
+they can add portlets to or remove portlets from the customizable regions. For
+example, suppose that you, as an administrator, selected the right column of the
+Welcome page of the Nose-ster site to be customizable. A member of the Nose-ster
+site could take the following steps to make a personal customization of the
+Welcome page:
 
-1. Navigate to the portal homepage by clicking *Go To* &rarr; *Liferay* from the
-   Dockbar. (The portal homepage belongs to an automatically created site called
-*Liferay*, by default.)
-2. Remove the Hello World portlet remove from the right column of the page.
-3. Add the Language portlet to the right column by clicking *Add* &rarr; *More*
-   in the Dockbar, expanding the *Tools* category, and clicking *Add* next to
-*Language*.
+1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Nose-ster* from
+   the Dockbar.
+2. Remove the Hello World portlet from the right column of the page.
+3. Add the Language portlet to the right column of the page by clicking *Add*,
+   clicking on *Applications*, searching for *Language*, and clicking *Add* next
+   to its name.
 4. Configure the Language portlet by clicking on the wrench icon and selecting
    *Configuration* and then opening the *Display Style* dropdown menu and
-choosing *Select Box*.
+   choosing *Select Box*.
 
-The Language portlet is useful to have on your portal homepage if you expect
+The Language portlet is useful to have on your portal's homepage if you expect
 users who speak different languages to access your portal. Users can select
 their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
-Language portlet, the customized portal homepage looks like this:
+Language portlet, the customized Welcome page looks like this:
 
-![Figure 7.4: In this example, Joe Bloggs removed the Hello World portlet, added
-the Language portlet, and changed the display style from icons to a select
-box.](../../images/customized-portal-homepage.png)
+![Figure 7.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+
+<!-- This section needs updating for 6.2. The following two paragraph's
+statements about the required permissions and roles seem to be obsolete. -->
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
@@ -199,7 +199,7 @@ In addition to granting the ability to customize portlet configurations, the
 and to import or export portlet settings. Next, let's look at how to use
 application display templates.
 
-## Using application display templates 
+## Using Application Display Templates 
 
 Application display templates work similarly to site and page templates, but at
 the portlet level. The application display template (ADT) framework allows
@@ -210,11 +210,11 @@ example, you may want to show blog entries horizontally instead of vertically,
 or list your assets in the asset publisher portlet in different sizes.
 
 Let's go through a simple use case to illustrate how creating a custom ADT can
-improve your site. Consider you're customizing the Nosester site and want to
+improve your site. Suppose you're customizing the Nose-ster site and want to
 allow users to spread their noses to other social networks. Specifically, you
 want to configure the Wiki portlet for collaboration with Facebook or Twitter.
 With ADTs, you can launch a template editor, create a custom template, and
-make your portlet host that template. Custom templates let you re-skin your
+configure your portlet host that template. Custom templates let you re-skin your
 portlet and give you ultimate control over its appearance and functionality in
 your portal.
 
@@ -230,35 +230,34 @@ template, you must create a custom template for that site's portlets.
 
 ![Figure 7.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
-If you'd like to add an ADT, select the portlet you'd like to customize. Below
-is a list of the portlets that can be customized using ADTs, and their sample
-template descriptions:
+If you'd like to add an ADT, select the portlet you'd like to customize. The
+list below specifies the portlets that can be customized using ADTs. It also
+provides sample template descriptions:
 
 - *Asset Publisher*: displays abstracts, icons, related assets, and print/edit
-actions for assets. Optionally includes asset bookmarks and ratings.
+  actions for assets. Optionally includes asset bookmarks and ratings.
 - *Blogs*: displays titles, authors, and abstracts compactly for blog entries.
 - *Categories Navigation*: displays a column for each vocabulary. Each column
-includes the name of a vocabulary with the vocabulary's top level categories
-listed underneath.
+  includes the name of a vocabulary with the vocabulary's top level categories
+  listed underneath.
 - *Media Gallery*: displays images in a carousel.
 - *Site Map*: displays a column for each top level page. Each column includes
-the name of a top level page with the page's immediate children listed
-underneath.
+  the name of a top level page with the page's immediate children listed
+  underneath.
 - *Tags Navigation*: displays asset tags colored by popularity: red (high),
-yellow (medium), and green (low).
+  yellow (medium), and green (low).
 - *Wiki*: displays social bookmarks and ratings for wiki pages and their child
-pages.
+  pages.
 
 To create a new ADT, click *Add* and select the template you'd like to create,
-based on portlet type. Then enter the name, description, and optional small
-image you'd like to use. You can select the language type for your template (FTL
-or VM). Lastly, the *Script* option lets you browse your file system for a
-template on your file system, or you can launch the editor and create one
-directly. On the left side of the template editor, you'll notice a palette of
-common variables used for making templates. This is a great reference when
-creating your template. To place one of the variables into the template editor,
-simply position your cursor where you want it placed, and click the variable
-name.
+based on portlet type. Then enter the name and, optionally, a description and a
+small image to use. You can select the language type for your template (FTL or
+VM). Lastly, the *Script* option lets you browse your file system for a template
+on your file system, or you can launch the editor and create one directly. On
+the left side of the template editor, you'll notice a palette of common
+variables used for making templates. This is a great reference when creating
+your template. To place one of the variables into the template editor, simply
+position your cursor where you want it placed, and click the variable name.
 
 Think it can't get any better? Guess again! If the variable name doesn't give
 you enough information on the variable's functionality, you can hover your
@@ -280,7 +279,7 @@ similar Wiki ADT. Instead of starting from scratch, you can import the existing
 Wiki ADT into your new one and build off of it. In other words, you can utilize
 ADTs as generic templates which allow for reusable code to be imported by
 Velocity or FreeMarker templates in the system. For more information on how to
-create a custom template, visit the *Liferay Developer's Guide*.
+create a custom template, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
@@ -299,9 +298,9 @@ your ADT through its *Actions* button. This provides several options:
 - *Copy*: creates a copy of the ADT.
 - *Delete*: deletes the ADT.
 
-In addition, your ADT generates a static URL and WebDAV URL. These values access
-the XML source of your template. You can find these URLs by clicking the ADT
-from the menu and expanding the *Details* section. With the WebDAV URL, site
+Additionally, your ADT generates a static URL and a WebDAV URL. These values
+access the XML source of your template. You can find these URLs by clicking the
+ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the *Document Management* chapter's *WebDAV access* chapter.
@@ -311,7 +310,7 @@ open its *Configuration* menu. In the *Display Settings* sub-tab located within
 the *Setup* tab, select your ADT from the *Display Template* drop-down menu.
 You'll notice they're separated by context type. Also, you can manage
 site-specific display templates for your portlet: do this by clicking the
-*Manage Display Templates for <SPECIFIC_SITE>* link next to the *Display
+*Manage Display Templates for [SPECIFIC_SITE]* link next to the *Display
 Template* drop-down menu. A window will display with a list of your configured
 templates only available for your site with options to add new templates or edit
 existing templates.
@@ -319,27 +318,28 @@ existing templates.
 ![Figure 7.7: In the *Configuration* menu of a portlet, you can edit and manage available ADTs.](../../images/adt-configuration.png)
 
 Now that you know the general functions of ADTs, let's create our own. This
-brief demonstration will show just how easy, yet powerful ADTs can be for your
-Liferay Portal.
+brief demonstration will show you just how easy, yet powerful, ADTs can be for
+your portal.
 
-1. Add the Media Gallery portlet by navigating to *Add* &rarr; *Content and
-Applications* &rarr; *Applications* &rarr; *Content Management* &rarr; *Media
-Gallery*.
+1. Add the Media Gallery portlet to a page by navigating to *Add* &rarr;
+   *Content and Applications* &rarr; *Applications* &rarr; *Content Management*
+   &rarr; *Media Gallery*.
 
 2. Select the *Options* wrench from the top right corner, then click
-*Configuration*.
+   *Configuration*.
 
 3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
-*Save*.
+   *Save* and close the popup.
 
-4. Click *Multiple Media* and select two custom photos to display. Then click
-*Save*, and navigate back to the main portlet screen.
+4. Click the *Add Multiple Media* linkand select two custom photos to display.
+   Then click *Save*, and navigate back to the main portlet screen.
 
 5. Notice the default format of the pictures. To change the display template for
-this portlet, navigate back to the *Options* wrench and click *Configuration*.
+   this portlet, navigate back to the *Options* wrench and click
+   *Configuration*.
 
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
-*Save*.
+   *Save*.
 
 	![Figure 7.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
 
@@ -353,7 +353,11 @@ Customizing the user interface of Liferay's bundled portlets provides the
 ultimate customization experience for Liferay users. Next, let's look at how to
 use Liferay's rules engine.
 
-## Using Liferay's rules engine  
+## Using Liferay's rules engine
+
+<!-- Befofe this section can be updated for 6.2, need to wait until the 6.2
+Drools EE plugin (or app) is available from the customer portal (or
+Marketplace). -->
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

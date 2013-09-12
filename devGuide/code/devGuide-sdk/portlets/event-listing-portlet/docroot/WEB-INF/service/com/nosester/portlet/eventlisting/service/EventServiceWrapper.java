@@ -58,41 +58,13 @@ public class EventServiceWrapper implements EventService,
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.addEvent(event);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event addEvent(
-		java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _eventService.addEvent(name, description, date, locationId,
-			serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event update(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.update(event);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event updateEvent(
-		long eventId, java.lang.String name, java.lang.String description,
-		java.util.Date date, long locationId,
-		com.liferay.portal.service.ServiceContext serviceContext) {
-		return _eventService.updateEvent(eventId, name, description, date,
-			locationId, serviceContext);
-	}
-
-	@Override
-	public com.nosester.portlet.eventlisting.model.Event delete(
-		com.nosester.portlet.eventlisting.model.Event event)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.delete(event);
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.addEvent(groupId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
 	}
 
 	@Override
@@ -101,6 +73,25 @@ public class EventServiceWrapper implements EventService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.deleteEvent(eventId);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event getEvent(long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEvent(eventId);
+	}
+
+	@Override
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.updateEvent(userId, eventId, name, description,
+			month, day, year, hour, minute, locationId, serviceContext);
 	}
 
 	/**

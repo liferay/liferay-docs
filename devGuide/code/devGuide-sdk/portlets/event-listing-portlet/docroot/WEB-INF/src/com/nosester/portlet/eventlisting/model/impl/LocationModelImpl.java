@@ -79,7 +79,7 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 			{ "stateOrProvince", Types.VARCHAR },
 			{ "country", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Event_Location (locationId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description VARCHAR(250) null,streetAddress VARCHAR(75) null,city VARCHAR(75) null,stateOrProvince VARCHAR(75) null,country VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table Event_Location (locationId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,description STRING null,streetAddress VARCHAR(75) null,city VARCHAR(75) null,stateOrProvince VARCHAR(75) null,country VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table Event_Location";
 	public static final String ORDER_BY_JPQL = " ORDER BY location.name ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY Event_Location.name ASC";
@@ -278,8 +278,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		}
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getLocationId() {
 		return _locationId;
 	}
@@ -289,8 +289,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_locationId = locationId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getCompanyId() {
 		return _companyId;
 	}
@@ -300,8 +300,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_companyId = companyId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getGroupId() {
 		return _groupId;
 	}
@@ -323,8 +323,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		return _originalGroupId;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public long getUserId() {
 		return _userId;
 	}
@@ -344,8 +344,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_userUuid = userUuid;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public Date getCreateDate() {
 		return _createDate;
 	}
@@ -355,8 +355,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_createDate = createDate;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
@@ -366,8 +366,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_modifiedDate = modifiedDate;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getName() {
 		if (_name == null) {
 			return StringPool.BLANK;
@@ -384,8 +384,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_name = name;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getDescription() {
 		if (_description == null) {
 			return StringPool.BLANK;
@@ -400,8 +400,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_description = description;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getStreetAddress() {
 		if (_streetAddress == null) {
 			return StringPool.BLANK;
@@ -416,8 +416,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_streetAddress = streetAddress;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getCity() {
 		if (_city == null) {
 			return StringPool.BLANK;
@@ -432,8 +432,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_city = city;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getStateOrProvince() {
 		if (_stateOrProvince == null) {
 			return StringPool.BLANK;
@@ -448,8 +448,8 @@ public class LocationModelImpl extends BaseModelImpl<Location>
 		_stateOrProvince = stateOrProvince;
 	}
 
-	@Override
 	@JSON
+	@Override
 	public String getCountry() {
 		if (_country == null) {
 			return StringPool.BLANK;
