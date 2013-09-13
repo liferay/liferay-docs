@@ -1,4 +1,4 @@
-# Liferay Utility Applications  
+# Liferay Utility Applications [](id=liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
 
 ---
 
@@ -28,7 +28,7 @@ software items to display to visitors. The Knowledge Base application allows you
 to create articles and organize them into full books or guides that be published
 on your portal.
 
-## Capturing Web Sites with the Bookmarks Portlet  
+## Capturing Web Sites with the Bookmarks Portlet [](id=capturing-web-sites-with-the-bookmarks--liferay-portal-6-2-user-guide-13-en)
 
 Many of us enjoy collecting things we value. They may be stamps, comic books,
 sea shells, or fabulous shoes. The list goes on and on. But have you considered
@@ -41,7 +41,7 @@ links to access regularly visited web sites. Administrators can publish links
 tailored to specific groups of users. Both internal pages as well as external
 sites can be bookmarked.
 
-### Organizing Bookmarks by Folder  
+### Organizing Bookmarks by Folder [](id=organizing-bookmarks-by-folder-liferay-portal-6-2-user-guide-13-en)
 
 You can store all your important links in one place and you can manage this data
 easily using folders. You can create, edit, and delete bookmark folders. You get
@@ -66,7 +66,7 @@ As your collection of links grows, you may need to add more subfolders to keep
 things in order. Should you decide a link needs to move from one folder to
 another, you can manage this using the Edit option for that link. 
 
-#### Moving a Link  
+#### Moving a Link [](id=moving-a-link-liferay-portal-6-2-user-guide-13-en)
 
 Just for fun, let's move a link from the main bookmarks folder into a subfolder
 one level down. We'll move the Liferay link into the Nonfiction subfolder in the
@@ -128,7 +128,7 @@ out of both subfolders and return it to the main bookmarks view.
 Now that you have an understanding of how bookmark folders are used, let's
 create some new bookmarks.
 
-### Adding and Using Bookmarks  
+### Adding and Using Bookmarks [](id=adding-and-using-bookmarks-liferay-portal-6-2-user-guide-13-en)
 
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *More*. The portlet looks like this by default:
@@ -177,7 +177,7 @@ Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
 
-## Creating Your Own Plugin Repository  
+## Creating Your Own Plugin Repository [](id=creating-your-own-plugin-repository-liferay-portal-6-2-user-guide-13-en)
 
 As your enterprise builds its own library of portlets for internal use, you can
 create your own plugin repository to make it easy to install and upgrade
@@ -215,7 +215,7 @@ running on an instance of Liferay.
 We will first look at creating a plugin repository using the Software Catalog in
 the Control Panel.
 
-### Software Catalog  
+### Software Catalog [](id=software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
@@ -392,7 +392,7 @@ When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-#### Generating The Software Catalog  
+#### Generating The Software Catalog [](id=generating-the-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 The Software Catalog works by generating an XML document which the Plugin
 Installer reads. Using the data from this XML document, the Plugin Installer
@@ -495,7 +495,7 @@ your HTTP server. You can then give out the URL to the directory which holds
 this file on your web site and anyone with an instance of Liferay will be able
 to point their Plugin Installer portlets to it.
 
-#### Benefits of the Software Catalog  
+#### Benefits of the Software Catalog [](id=benefits-of-the-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 As you can see, the Software Catalog makes it easy for you to create a
 repository of your software. Users of Liferay can configure their Plugin
@@ -516,7 +516,7 @@ How can you do this? The Software Catalog is also available as a portlet. You
 can add it to any page on your web site through the *Add Application* menu. You
 can find the portlet in the *Tools* category.
 
-### Manually Creating A Software Catalog  
+### Manually Creating A Software Catalog [](id=manually-creating-a-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 If you do not wish to use the Control Panel to create your software catalog, you
 can create it manually by manually typing out the XML file that the Software
@@ -537,7 +537,7 @@ Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this
 DTD with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
-### Connecting to a Software Catalog  
+### Connecting to a Software Catalog [](id=connecting-to-a-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 If there is a software catalog of plugins you would like to point your instance
 of Liferay to, all you need is the URL to the catalog. Once you have the URL, go
@@ -555,7 +555,7 @@ If all this talk of catalogs has put you in the mood to do some shopping, then
 it's probably a good time to get acquainted with Liferay's Shopping application.
 Let's go down that aisle next.
 
-## Shopping  
+## Shopping [](id=shopping-liferay-portal-6-2-user-guide-13-en)
 
 Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company
@@ -573,7 +573,7 @@ transactions are processed.
 
 Before we start printing money, let's first create an online store.
 
-### Setting up shop  
+### Setting up shop [](id=setting-up-shop-liferay-portal-6-2-user-guide-13-en)
 
 To begin setting up a store, place the Shopping application on a page in your
 site. Like the Message Boards portlet, the Shopping portlet takes up a lot of
@@ -608,7 +608,7 @@ Below the tabs are breadcrumbs for navigating between the categories and
 subcategories you create. In fact, this would be a good time to start creating
 some categories.
 
-#### Creating Categories  
+#### Creating Categories [](id=creating-categories-liferay-portal-6-2-user-guide-13-en)
 
 It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
@@ -631,7 +631,7 @@ any category. Notice as you add categories and subcategories, navigational
 breadcrumbs appear in the portlet. Use these to move through the store
 inventory.
 
-#### Creating Items  
+#### Creating Items [](id=creating-items-liferay-portal-6-2-user-guide-13-en)
 
 When you select a category, you'll see its items appear. You create items the
 same way you create categories. Use the *Add Item* button to open the new item
@@ -679,14 +679,14 @@ item is easy, using the *Search* function.
 That's how you create an item for the store. Now let's examine some of the
 shopping portlet's configuration options.
 
-### Configuration  
+### Configuration [](id=configuration-liferay-portal-6-2-user-guide-13-en)
 
 By selecting the *wrench* icon in the top right of the portlet, you can manage
 the configuration options of the shopping application. In the Setup view, there
 are tabs for Payment Settings, Shipping Calculation, Insurance Calculation, and
 Emails.
 
-#### Payment Settings  
+#### Payment Settings [](id=payment-settings-liferay-portal-6-2-user-guide-13-en)
 
 The payment settings section is where you configure all the functions related to
 transactions for your store.
@@ -718,7 +718,7 @@ This rate is added as a sales tax charge to orders.
 
 **Minimum Order:** sets the minimum amount required for a sale.
 
-#### Shipping and Insurance Calculation  
+#### Shipping and Insurance Calculation [](id=shipping-and-insurance-calculation-liferay-portal-6-2-user-guide-13-en)
 
 Both the Shipping and Insurance forms have identical options.
 
@@ -729,7 +729,7 @@ on a percentage of the total amount spent.
 **Values:** sets the shipping and insurance fees based on a range of figures
 that the total order amount falls under.
 
-#### Emails  
+#### Emails [](id=emails-liferay-portal-6-2-user-guide-13-en)
 
 This form sets the addresses for customer email notifications. Use the list of
 term definitions below to customize the correspondence with your customers.
@@ -751,7 +751,7 @@ items for your store, set up payment options, and configured customer
 communication options. These are the basics required to get your store up and
 running. Now let's review the buying process.
 
-### Using the shopping cart  
+### Using the shopping cart [](id=using-the-shopping-cart-liferay-portal-6-2-user-guide-13-en)
 
 Logged in users are given a shopping cart to store the items they wish to buy.
 Customers can manage items and their quantities directly from the cart, allowing
@@ -810,7 +810,7 @@ summary. After reviewing the summary, click *Finished* and you are given
 confirmation the order has been placed, along with the order number. Use this
 number to search for the order history and keep track of its status.
 
-#### Customizing the shopping cart with a hook  
+#### Customizing the shopping cart with a hook [](id=customizing-the-shopping-cart-with-a-ho-liferay-portal-6-2-user-guide-13-en)
 
 If you think the shopping cart looks a little basic for your purposes, you can
 customize it by using a hook. To learn more about changing the appearance of the
@@ -822,7 +822,7 @@ Now your online store is set up, you have inventory, you have a payment system,
 and you have sales rolling in. All is good. Some day there will be customers
 with questions about their orders. Let's go over the orders next.
 
-### Managing Orders  
+### Managing Orders [](id=managing-orders-liferay-portal-6-2-user-guide-13-en)
 
 Under the Orders tab there are fields for finding specific orders. Search 
 for orders using the order number, order status, first or last name on the order
@@ -856,7 +856,7 @@ follow the delivery process.
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
-### Managing Coupons  
+### Managing Coupons [](id=managing-coupons-liferay-portal-6-2-user-guide-13-en)
 
 The Coupons view of the Shopping application lets you provide coupon codes for
 special sale events or other discounts. You can determine the type of discount
@@ -879,7 +879,7 @@ a percentage, a fixed amount, free shipping, or a tax free sale. The Limits
 section lets you set coupon restrictions based on a list of categories and/or
 SKU numbers.
 
-#### Integrating the Amazon Rankings portlet  
+#### Integrating the Amazon Rankings portlet [](id=integrating-the-amazon-rankings-portlet-liferay-portal-6-2-user-guide-13-en)
 
 If your store sells books, you can use Liferay's Amazon Rankings application to
 display them alongside the main shopping portlet. Both of these are found in the
@@ -889,7 +889,7 @@ outside of the typical category structure. Books are arranged in ascending order
 according to Amazon's Best Sellers Rank. Book cover images displayed in the
 portlet come from the images in the product's description.
 
-##### Setting up your Amazon Web Services account  
+##### Setting up your Amazon Web Services account [](id=setting-up-your-amazon-web-services-acc-liferay-portal-6-2-user-guide-13-en)
 
 To use Amazon rankings, you must first setup an Amazon Associates Program
 account. This gives you the *associate ID tag* you need to enter in your
@@ -916,7 +916,7 @@ information.
 If your Amazon Web Services key is set improperly, you can't add books to your
 Shopping portlet.
 
-##### Setting up the Amazon Rankings portlet  
+##### Setting up the Amazon Rankings portlet [](id=setting-up-the-amazon-rankings-portlet-liferay-portal-6-2-user-guide-13-en)
 
 After setting up your Amazon Web Services account, choose the books to display
 in your store. Select *Configuration* from the Amazon Rankings portlet in the
@@ -935,7 +935,7 @@ book's Amazon page.
 Now that you have a good grasp on Liferay's Shopping and Amazon Rankings
 applications, let's learn how to generate reports in Liferay.
 
-## Generating Reports in Liferay
+## Generating Reports in Liferay [](id=generating-reports-in-liferay-liferay-portal-6-2-user-guide-13-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -954,7 +954,7 @@ your Liferay instance's Control Panel interface or you can navigate to
 browser, purchase and download the apps, and copy the `.lpkg` files to your
 Liferay instance's `/deploy` folder.
 
-### Using the Reports Portlet
+### Using the Reports Portlet [](id=using-the-reports-portlet-liferay-portal-6-2-user-guide-13-en)
 
 Once you've installed the Reports and Jasper Reports EE applications, log in to
 your portal as an administrator and navigate to the Control Panel. If your
@@ -1103,7 +1103,7 @@ file. You can also deliver the report by clicking *Actions* &rarr; *Deliver
 Report*, choosing an email recipient, and clicking *Deliver*. To delete the
 report file, click *Actions* &rarr; *Delete*.
 
-### Configuring the Reports Admin Portlet
+### Configuring the Reports Admin Portlet [](id=configuring-the-reports-admin-portlet-liferay-portal-6-2-user-guide-13-en)
 
 To configure the Reports Admin portlet, navigate to the Reports Admin portlet in
 the Control Panel, click on the *wrench* icon at the top right corner of the
@@ -1124,7 +1124,7 @@ message that's sent when a report notification is sent to a portal user. In this
 case, the report is not included as an attachment; the email message just
 provides a link to the report's location in the portal.
 
-### Using the Reports Display Portlet
+### Using the Reports Display Portlet [](id=using-the-reports-display-portlet-liferay-portal-6-2-user-guide-13-en)
 
 Installing the Reports EE and JasperReports EE apps not only adds the Reports
 Admin portlet to the Control Panel but also makes the Reports Display portlet
@@ -1144,7 +1144,7 @@ site-scoped reports will not be visible; only reports for which the View
 permission has been added to the Guest role will appear in the Reports Display
 portlet.
 
-### Creating a Sample Jasper Report in Liferay
+### Creating a Sample Jasper Report in Liferay [](id=creating-a-sample-jasper-report-in-life-liferay-portal-6-2-user-guide-13-en)
 
 To create a sample Jasper report in Liferay, follow this section's instructions.
 We'll use your portal's database as our report definition's data source and
@@ -1312,7 +1312,7 @@ screenName, emailAddress, createDate, and modfifiedDate of each user.
 Now that we understand how to generate Jasper reports in Liferay, let's see what
 the Knowledge base application has to offer. 
 
-## Knowledge Base
+## Knowledge Base [](id=knowledge-base-liferay-portal-6-2-user-guide-13-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -1333,7 +1333,7 @@ instance's Control Panel interface or you can navigate to
 browser, purchase and download the app, and copy the `.lpkg` file to your
 Liferay instance's `/deploy` folder.
 
-### Knowledge Base Display Portlet  
+### Knowledge Base Display Portlet [](id=knowledge-base-display-portlet-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
 site pages as well as one that adds a page to the Control Panel. The four
@@ -1400,7 +1400,7 @@ what a user can do with the Knowledge Base display portlet on a page while the
 admin permissions define what a user can do on the Knowledge Base page of the
 Control Panel.
 
-### Knowledge Base Page of the Control Panel  
+### Knowledge Base Page of the Control Panel [](id=knowledge-base-page-of-the-control-pane-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base page of the Control Panel has two tabs: one for articles and
 one for templates. The articles tab shows all the articles in the knowledge base
@@ -1462,7 +1462,7 @@ To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
 
-### Knowledge Base Article Portlet  
+### Knowledge Base Article Portlet [](id=knowledge-base-article-portlet-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
 article. When you first place this portlet on a page it displays the message
@@ -1478,7 +1478,7 @@ article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
 view the history of the article or print the article.
 
-### Knowledge Base Section Portlet  
+### Knowledge Base Section Portlet [](id=knowledge-base-section-portlet-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base Section portlet allows administrators to selectively show
 articles associated with a specific section. For example, a news site might have
@@ -1505,7 +1505,7 @@ an administrator to select a display style (title or abstract), an article
 window state (maximized or normal), how to order the articles, how many articles
 to display per page and whether or not to show pagination.
 
-### Knowledge Base Navigation  
+### Knowledge Base Navigation [](id=knowledge-base-navigation-liferay-portal-6-2-user-guide-13-en)
 
 Wikis often have deeply nested articles that can be hard to find by browsing.
 Liferay's knowledge base's ability to selectively display articles makes it
@@ -1526,7 +1526,7 @@ create topics from the Categories page of the Control Panel.
 
 You can select topics for articles when you are creating or editing them.
 
-## Akismet
+## Akismet [](id=akismet-liferay-portal-6-2-user-guide-13-en)
 
 Akismet is a web-based spam detection service. The Akismet app, available from
 Liferay Marketplace, integrates Liferay with Akismet to provide spam detection
@@ -1559,7 +1559,7 @@ select any posts that you don't agree are spam and mark them as *Not Spam*. If
 you're not sure about a post, click the *Actions* button and select *View in
 Context* to view the post in its original setting.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-13-en)
 
 In this chapter, we examined several Liferay utility applications: the Bookmarks
 portlet, the Shopping portlet, the Software Catalog, the Reports and

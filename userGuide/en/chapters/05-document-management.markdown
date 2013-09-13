@@ -1,4 +1,4 @@
-# Document Management  
+# Document Management [](id=document-management-liferay-portal-6-2-user-guide-05-en)
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
@@ -12,7 +12,7 @@ repositories. The new document types and metadata sets are an addition to, not a
 replacement for, the portal's system of tags and categories. Let's start
 exploring how to use the Documents and Media portlet.
 
-## Getting Started with the Documents and Media Portlet
+## Getting Started with the Documents and Media Portlet [](id=getting-started-with-the-documents-and--liferay-portal-6-2-user-guide-05-en)
 
 The Documents and Media portlet, like many other of Liferay's portlets, is
 non-instanceable. This means that each page on your portal can host at most one
@@ -38,7 +38,7 @@ window shows only documents that belong to the selected document type. When you
 add custom document types, which we discuss below, they are added to the filter
 list. Next, let's look at how to navigate around Documents and Media.
 
-### Navigating the Documents and Media Portlet  
+### Navigating the Documents and Media Portlet [](id=navigating-the-documents-and-media-port-liferay-portal-6-2-user-guide-05-en)
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -93,7 +93,7 @@ subscribes you to the folder you're currently viewing so that you'll receive
 email notifications. You'll be notified about any actions that take place in the
 folder such as file additions, edits, or deletions.
 
-#### Actions  
+#### Actions [](id=actions-liferay-portal-6-2-user-guide-05-en)
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -117,7 +117,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 portlet. You can move multiple documents and folders to the Recycle Bin at the
 same time.
 
-#### Add  
+#### Add [](id=add-liferay-portal-6-2-user-guide-05-en)
 
 From the Add button, you can add documents, folders, and shortcuts just like on
 your local file system.
@@ -168,7 +168,7 @@ uploaded and available instantly.
 
 Let's move on and discuss the Sort action.
 
-#### Sort  
+#### Sort [](id=sort-liferay-portal-6-2-user-guide-05-en)
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the *Sort By* menu. You can sort by title, create date, modified
@@ -187,7 +187,7 @@ downloaded.
 
 Let's dive into the Manage action next!
 
-#### Manage  
+#### Manage [](id=manage-liferay-portal-6-2-user-guide-05-en)
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.
@@ -200,7 +200,7 @@ portal IDs.
 Now that we know the basic functionality of the Documents and Media portlet,
 let's explore document types and metadata sets.
 
-## Document Types and Metadata Sets  
+## Document Types and Metadata Sets [](id=document-types-and-metadata-sets-liferay-portal-6-2-user-guide-05-en)
 
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages
@@ -244,7 +244,7 @@ window. A metadata set consists of a group of fields. If you click the *Add*
 button, you can use same UI for defining a metadata set that you used in the Add
 Document Type window.
 
-![Figure 5.6: Adding a New Metadata Set is easier than ever with Liferay's advanced editor.](../../images/05-new-metadata-set.png)
+![Figure 5.4: Adding a New Metadata Set is easier than ever with Liferay's advanced editor.](../../images/05-new-metadata-set.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Editor had icons missing during image updating cycle -->
@@ -297,7 +297,7 @@ been created they can be included in any number of document types as additional
 metadata sets. Next, let's take a look at tags. Tags can be attached to most
 forms of web content that can be created in Liferay, including documents.
 
-## Alternative File Repository Options
+## Alternative File Repository Options [](id=alternative-file-repository-options-liferay-portal-6-2-user-guide-05-en)
 
 By default, Liferay stores documents and media files on the file system of the
 server on which it's running. You can choose a specific location for the
@@ -331,7 +331,7 @@ file to find a complete list of supported customizations. You can customize
 features such as the maximum allowed size of documents and media files, the list
 of allowed file extensions, which types of files should be indexed, etc.
 
-## Using External Repositories  
+## Using External Repositories [](id=using-external-repositories-liferay-portal-6-2-user-guide-05-en)
 
 Content Management Interoperability Services (CMIS) is a specification for
 improving interoperability between Enterprise Content Management systems.
@@ -363,7 +363,7 @@ Documentum are available through Liferay's Marketplace.
 
 Let's go through those steps, starting with setting our portal properties.
 
-##### Adjusting portal properties 
+##### Adjusting portal properties [](id=adjusting-portal-properties-liferay-portal-6-2-user-guide-05-en)
 
 The admin must ensure that the same credentials and authentication are being
 used in Liferay and in the external repository. This is normally synchronized
@@ -383,7 +383,7 @@ names, so in `portal-ext.properties` add the following:
 Alternatively, configure these properties in the Control Panel under *Portal 
 Settings* &rarr; *Authentication*.
 
-##### Adding required repository users 
+##### Adding required repository users [](id=adding-required-repository-users-liferay-portal-6-2-user-guide-05-en)
 
 Once these properties are set, you must create a user in Liferay with a
 screen name and password matching the administrative user of your external
@@ -391,12 +391,12 @@ repository. Be sure to assign appropriate roles (e.g. Administrator) to that
 user. Sign out of Liferay and sign in again as that new user. See sections of
 the *Management* chapter on adding and managing users.
 
-##### Adding the repository 
+##### Adding the repository [](id=adding-the-repository-liferay-portal-6-2-user-guide-05-en)
 
 You can add new repositories from the UI by clicking the *Add* button from the
 Home folder. Repositories can only be mounted in the Home folder.
 
-![Figure 5.7: You can add a new repository by navigating to *Add* &rarr; *Repository* in the Documents and Media portlet.](../../images/05-new-repository.png)
+![Figure 5.5: You can add a new repository by navigating to *Add* &rarr; *Repository* in the Documents and Media portlet.](../../images/05-new-repository.png)
 
 All fields in this form are required, except for *Repository ID*. Leave this
 field blank, and a repository ID is automatically generated by the system. When
@@ -408,7 +408,7 @@ previously, there are several repositories that work well with Liferay using
 CMIS. One that is familiar to many users is SharePoint. In the exercise below,
 we'll set up SharePoint as a Documents and Media repository.
 
-### Example Repository Setup: SharePoint 
+### Example Repository Setup: SharePoint [](id=example-repository-setup-sharepoint-liferay-portal-6-2-user-guide-05-en)
 
 <!-- Sharepoint currently does not work on Liferay. We're monitoring the
 Sharepoint status and will update when it's working. Thus, Sharepoint repository
@@ -441,7 +441,7 @@ Before you can use SharePoint as an external repository with Liferay portal, you
 must verify that SharePoint is properly configured. Several services must be
 set up on the SharePoint server before synchronizing with Liferay.
 
-#### Configuring the CMIS Connector on SharePoint 
+#### Configuring the CMIS Connector on SharePoint [](id=configuring-the-cmis-connector-on-share-liferay-portal-6-2-user-guide-05-en)
 
 SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
 Liferay Portal. The Connector is installed with the SharePoint Administrator
@@ -456,7 +456,7 @@ deploy that file. When deployment completes, Solution Properties shows the
 solution is successfully deployed to all target sites. Now it's time to
 configure the CMIS Producer.
 
-#### Activating a SharePoint site as a CMIS Producer 
+#### Activating a SharePoint site as a CMIS Producer [](id=activating-a-sharepoint-site-as-a-cmis--liferay-portal-6-2-user-guide-05-en)
 
 The Producer makes SharePoint repositories available through the CMIS Connector.
 Choose the SharePoint site containing the document libraries to be used as
@@ -471,7 +471,7 @@ Now any document library created under this site is CMIS enabled. Before we
 leave our SharePoint console, let's take note of our SharePoint document
 library's repository ID.
 
-#### Acquiring the SharePoint document library's repository ID 
+#### Acquiring the SharePoint document library's repository ID [](id=acquiring-the-sharepoint-document-libra-liferay-portal-6-2-user-guide-05-en)
 
 Acquiring your SharePoint document library's repository ID, or list ID, is
 important as it must be specified in the AtomPub URL Liferay uses to connect
@@ -490,7 +490,7 @@ Follow these steps to get the repository ID:
 4. The browser window refreshes displaying the repository ID between curly
 braces '{' and '}' in the browser's address bar.
 
-    ![Figure 5.9: The repository ID can be found by displaying the repository's URL in a Firefox browser.](../../images/05-sharepoint-list-id.png)
+    ![Figure 5.6: The repository ID can be found by displaying the repository's URL in a Firefox browser.](../../images/05-sharepoint-list-id.png)
 
     The repository ID is highlighted in the figure above. For this 
     example, the repository ID is `6DFDA9-B547-4D1D-BF85-976863CDF533`.
@@ -503,7 +503,7 @@ Be sure to copy down this URL so you can use it to configure SharePoint as a
 repository in Documents and Media. Next, let's enable Basic Authentication on
 the SharePoint host.
 
-#### Enabling Basic Authentication on the SharePoint host 
+#### Enabling Basic Authentication on the SharePoint host [](id=enabling-basic-authentication-on-the-sh-liferay-portal-6-2-user-guide-05-en)
 
 For the CMIS connector and producer to work, Basic Authentication on IIS must be
 enabled. This lets Liferay's SharePoint hook authenticate against the SharePoint
@@ -511,7 +511,7 @@ web services. Enable Basic Authentication on your SharePoint host.
 
 You are now prepared to mount SharePoint as an external repository.
 
-#### Adding SharePoint as a Liferay Documents and Media repository 
+#### Adding SharePoint as a Liferay Documents and Media repository [](id=adding-sharepoint-as-a-liferay-document-liferay-portal-6-2-user-guide-05-en)
 
 With the SharePoint server configured, we now turn our attention to Liferay. As
 mentioned in the common steps for adding an external repository, be sure to
@@ -582,7 +582,7 @@ To further enhance your use of Microsoft Office documents with Documents and
 Media, Liferay provides integration directly with Microsoft Office. Let's look
 at that next.
 
-## Microsoft Office integration 
+## Microsoft Office integration [](id=microsoft-office-integration-liferay-portal-6-2-user-guide-05-en)
 
 Liferay lets you open Microsoft Office files that reside in
 Documents and Media. You can open the files from Microsoft Internet
@@ -596,7 +596,7 @@ and click the *Open in MS Office* link. Liferay launches Microsoft Office
 and prompts you to log in using your Portal credentials. Once logged in, the
 file opens in your Microsoft Office application. 
 
-![Figure 5.10: Open Microsoft Office files from within your Internet Explorer browser by clicking the *Open in MS Office* link.](../../images/05-open-in-MS-office.png)
+![Figure 5.7: Open Microsoft Office files from within your Internet Explorer browser by clicking the *Open in MS Office* link.](../../images/05-open-in-MS-office.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- This feature only works for 32 bit browsers/Microsoft Office. -->
@@ -626,7 +626,7 @@ Simply select *File*&rarr; *Open* in Word and enter
 `http://localhost:8080/sharepoint/` in the file name field. Click *Open* and log
 in using your Portal credentials.
 
-![Figure 5.11: Enter the URL of your `sharepoint` location on Liferay to access Documents and Media.](../../images/office-path.png)
+![Figure 5.8: Enter the URL of your `sharepoint` location on Liferay to access Documents and Media.](../../images/office-path.png)
 
 In the list of folders displayed, navigate to *guest* &rarr; *document_library*
 and select *All Files* to see your Documents and Media files.
@@ -643,7 +643,7 @@ their most up-to-date versions of Office files.
 
 Now let's look at configuring the Documents and Media portlet.
 
-## Configuring the Documents and Media portlet  
+## Configuring the Documents and Media portlet [](id=configuring-the-documents-and-media-por-liferay-portal-6-2-user-guide-05-en)
 
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
@@ -656,7 +656,7 @@ in the Documents and Media portlet's default Home folder. If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
-![Figure 5.12: To make portlet-specific configurations for Documents and Media, click on the wrench icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
+![Figure 5.9: To make portlet-specific configurations for Documents and Media, click on the wrench icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
 
 By default, the Documents and Media portlet contains a search bar to help users
 quickly find relevant files. If you'd like the search bar not to appear, uncheck
@@ -693,7 +693,7 @@ can click on the thumbs down icon. If you'd like to disable ratings or comment
 ratings for files, uncheck the *Enable Ratings* or *Enable Comment Ratings*
 box, respectively.
 
-## Automatic Previews and metadata  
+## Automatic Previews and metadata [](id=automatic-previews-and-metadata-liferay-portal-6-2-user-guide-05-en)
 
 Whenever possible, Liferay 6.2 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
@@ -734,7 +734,7 @@ of chapter 17 for how to configure Liferay to use these tools.
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
 
-![Figure 5.13: After configuring additional tools, previews in the Documents and Media portlet are more advanced.](../../images/05-doc-previews.png)
+![Figure 5.10: After configuring additional tools, previews in the Documents and Media portlet are more advanced.](../../images/05-doc-previews.png)
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -742,12 +742,12 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the native player of the browser. Otherwise it
 falls back to a Flash player.
 
-![Figure 5.15: You can watch a video clip or even view a slideshow inside Liferay's Documents and Media portlet.](../../images/05-document-preview.png)
+![Figure 5.11: You can watch a video clip or even view a slideshow inside Liferay's Documents and Media portlet.](../../images/05-document-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-### Automatic extraction of RAW Metadata  
+### Automatic extraction of RAW Metadata [](id=automatic-extraction-of-raw-metadata-liferay-portal-6-2-user-guide-05-en)
 
 When adding new documents or viewing existing documents, a process is triggered
 automatically that extracts the file's metadata. The library used by this
@@ -756,7 +756,7 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-### Document type restrictions and workflow per folder  
+### Document type restrictions and workflow per folder [](id=document-type-restrictions-and-workflow-liferay-portal-6-2-user-guide-05-en)
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
@@ -767,7 +767,7 @@ folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. Then the UI will
 look like this:
 
-![Figure 5.17: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
+![Figure 5.12: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -775,7 +775,7 @@ Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access
 documents stored in Liferay's Documents and Media repositories. 
 
-### WebDAV access  
+### WebDAV access [](id=webdav-access-liferay-portal-6-2-user-guide-05-en)
 
 Wouldn't it be great if you could access documents and folders belonging to
 Liferay's Documents and Media library from your own machine's file manager? You
@@ -797,7 +797,7 @@ Next, navigate to the Documents and Media portlet hosting the folder you'd like
 to access. Mouse over the folder (*Image Gallery* for our example) and select
 *Access from Desktop*.
 
-![Figure 5.18: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
+![Figure 5.13: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on *Computer* and select *Map
 Network Drive*. Select an unused drive, paste the WebDAV URL, and click
@@ -825,7 +825,7 @@ Now you know just how easy it is to store your files using Liferay's Documents
 and Media portlet. In the next section, we'll review some ways to organize and
 manage your assets so you're getting the most out of your content.
 
-## Liferay Sync  
+## Liferay Sync [](id=liferay-sync-liferay-portal-6-2-user-guide-05-en)
 
 Liferay Sync is an add-on product for Liferay CE and EE that synchronizes files
 between your Liferay server and users' desktop and mobile environments. With
@@ -840,7 +840,7 @@ workflow, and social collaboration function in the supported environments.
 Liferay Sync stores files locally so that they're always available, even when
 you're offline. It automatically synchronizes your files upon reconnection.
 
-### How does it work?  
+### How does it work? [](id=how-does-it-work-liferay-portal-6-2-user-guide-05-en)
 
 Liferay Sync manages documents and site information through Liferay's built-in
 web services. Clients securely communicate to Liferay using user-supplied
@@ -875,7 +875,7 @@ you've installed Social Office CE on Liferay Portal EE, then you can sync any
 site from Portal, but only one from Social Office. If you've installed Social
 Office EE on Liferay Portal EE, then you can sync any and all sites.
 
-### Installing Liferay Sync  
+### Installing Liferay Sync [](id=installing-liferay-sync-liferay-portal-6-2-user-guide-05-en)
 
 For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 Page](http://www.liferay.com/products/liferay-sync/features), and click *Get it
@@ -886,7 +886,7 @@ be named `liferay-sync-<version>-<date>.exe`. For Mac OS, it should be
 installer wizard to configure your client to connect to an existing Liferay 6.1
 deployment using your Liferay credentials.
 
-#### Windows  
+#### Windows [](id=windows-liferay-portal-6-2-user-guide-05-en)
 
 Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
@@ -899,18 +899,18 @@ information. Sync needs to know where you'd like to locally store the files it's
 supposed to sync with your Liferay server. And, of course, it needs to know your
 server's URL and the account credentials with which it should authenticate.
 
-![Figure 5.19: The first time you run Liferay Sync, you'll have to tell it how to communicate with your Liferay server.](../../images/liferay-sync-new-account-info.png)
+![Figure 5.14: The first time you run Liferay Sync, you'll have to tell it how to communicate with your Liferay server.](../../images/liferay-sync-new-account-info.png)
 
 The options for the Mac OS application installer are similar.
 
-#### Mac OS  
+#### Mac OS [](id=mac-os-liferay-portal-6-2-user-guide-05-en)
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image, and opens a window showing the contents of the image. To
 install Sync, drag the Liferay Sync icon to the Applications folder. Once it's
 installed, go to your Applications folder to run it.
 
-![Figure 5.22: Drag the Liferay Sync icon to the Applications folder.](../../images/liferay-sync-mac-install.png)
+![Figure 5.15: Drag the Liferay Sync icon to the Applications folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with
 the URL for the Liferay server that you'll be using Sync with, along with your
@@ -923,7 +923,7 @@ you wish to change any of your settings, click the icon to open the Liferay Sync
 menu and click on *Preferences*. Note that on Windows, the Sync menu says
 *Properties*, not *Preferences*.
 
-#### Mobile  
+#### Mobile [](id=mobile-liferay-portal-6-2-user-guide-05-en)
 
 For iOS, visit the App Store, search for Liferay, and install the Liferay Sync
 App.
@@ -933,7 +933,7 @@ App.
 
 Once the mobile apps are installed, follow the on-screen instructions as below.
 
-### Using Liferay Sync on the Desktop  
+### Using Liferay Sync on the Desktop [](id=using-liferay-sync-on-the-desktop-liferay-portal-6-2-user-guide-05-en)
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's
 running. A green checkmark means Liferay Sync has a working connection to your
@@ -968,7 +968,7 @@ the account information you provided when you started Sync for the first time.
 For example, you can enter a new URL for your Liferay server and enter a
 different set of Liferay credentials.
 
-![Figure 5.25: Open the Liferay Sync menu and select *Properties* (*Preferences*, on Mac OS) to edit the settings you configured during setup.](../../images/liferay-sync-properties.png)
+![Figure 5.16: Open the Liferay Sync menu and select *Properties* (*Preferences*, on Mac OS) to edit the settings you configured during setup.](../../images/liferay-sync-properties.png)
 
 There are three items listed in the *General Settings* section. *Start Liferay
 Sync on Login* is checked by default. If you don't want Sync to start
@@ -1006,7 +1006,7 @@ link to Liferay's home page.
 from [liferay.com](liferay.com) and allows you to set whether or not Liferay
 Sync should automatically check for updates.
 
-#### Using your Sync folder  
+#### Using your Sync folder [](id=using-your-sync-folder-liferay-portal-6-2-user-guide-05-en)
 
 Once Liferay Sync has been configured and is running, any files you add to or
 modify in your Sync folder are automatically detected and uploaded to your
@@ -1044,7 +1044,7 @@ again, and then go back to your browser and refresh your Documents and Media
 page. Click on the *README.txt* icon, look at the information displayed to the
 right, and you'll see that its version number has incremented.
 
-![Figure 5.27: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
+![Figure 5.17: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
 
 <!-- Needs to be updated for 6.2
 Current versions of Liferay Sync are unable to connect to new 6.2 Liferay Portal
@@ -1054,7 +1054,7 @@ Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
 downloaded by all other Liferay Sync clients connected to your site.
 
-#### Demonstrating Liferay Sync Permissions  
+#### Demonstrating Liferay Sync Permissions [](id=demonstrating-liferay-sync-permissions-liferay-portal-6-2-user-guide-05-en)
 
 Liferay Sync uses the default Liferay permissions to determine which files and
 folders are synced to the user's machine. This means that whatever files a user
@@ -1086,7 +1086,7 @@ credentials of another user who doesn't belong to the *Secret Site*, the
 a Liferay Sync folder that can only be accessed by the *secretagent* user and
 your administrators.
 
-### Using Liferay Sync Mobile  
+### Using Liferay Sync Mobile [](id=using-liferay-sync-mobile-liferay-portal-6-2-user-guide-05-en)
 
 Once you've installed Liferay Sync on your Android or iOS mobile environment,
 you'll be able to access the same functionality that's available when using Sync
@@ -1094,14 +1094,14 @@ on a desktop environment. However, the interface differs from that of the Sync
 desktop clients. Let's discuss the usage of Liferay Sync Mobile for Android
 first.
 
-#### Android  
+#### Android [](id=android-liferay-portal-6-2-user-guide-05-en)
 
 After installing Liferay Sync for Android, an empty screen appears asking you to
 set up the app. This screen appears whenever preferences are missing. Touch the
 screen and it displays the *Settings* view. You can always go back to *Settings*
 by clicking on the wrench icon at the top right corner of the screen.
 
-![Figure 5.29: Click the wrench icon to access your Liferay server credentials.](../../images/liferay-sync-android-settings.png)
+![Figure 5.18: Click the wrench icon to access your Liferay server credentials.](../../images/liferay-sync-android-settings.png)
 
 Enter your Liferay server credentials by filling in your *Login*, *Password*,
 and *Server* information. Your *Login* is either your user account's email
@@ -1116,7 +1116,7 @@ includes options to refresh, open the settings menu, upload files, take photos,
 test your connection, etc. After you have successfully tested your connection,
 hit the *back* button and you'll see a list of Liferay sites you have access to.
 
-![Figure 5.31: Sites](../../images/liferay-sync-android-sites.png)
+![Figure 5.19: Sites](../../images/liferay-sync-android-sites.png)
 
 You can browse the files of a site by tapping on any of them. This opens a list
 of the folders and files belonging to the site that you have permission to view.
@@ -1150,7 +1150,7 @@ Clicking on *View Details* (Gingerbread) or the round icon with the letter "i"
 (Ice Cream Sandwich) opens the details view, which displays the entry's metadata
 such as creation date, author, version, description, etc.:
 
-![Figure 5.35: Liferay Sync's details view offers several options.](../../images/liferay-sync-android-details.png)
+![Figure 5.20: Liferay Sync's details view offers several options.](../../images/liferay-sync-android-details.png)
 
 If you click on *Download* (floppy disk icon on Ice Cream Sandwich), it
 downloads and overwrites the local file copy.
@@ -1168,7 +1168,7 @@ users need to click on the device menu button). Depending on the device screen
 width, some icons may overflow to the three dots button on the right. Click on
 this button to see all of the available actions.
 
-![Figure 5.37: More options are available by selecting the three dots button.](../../images/liferay-sync-android-more.png)
+![Figure 5.21: More options are available by selecting the three dots button.](../../images/liferay-sync-android-more.png)
 
 The *Refresh* button fetches and updates the list of folders and files that have
 been changed in the portal.
@@ -1196,7 +1196,7 @@ you quick offline access to them. You can view the contents of items in the
 
 Next, let's look at the iOS Sync app.
 
-#### iOS  
+#### iOS [](id=ios-liferay-portal-6-2-user-guide-05-en)
 
 After installing Liferay Sync for iOS, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
@@ -1213,7 +1213,7 @@ toolbar section and you'll see a list of Liferay sites you have access to. You
 can browse the files of a site by tapping on its name or icon. This opens a list
 of the folders and files belonging to the site that you have permission to view.
 
-![Figure 5.43: Liferay Sync offers a folder and files menu.](../../images/liferay-sync-ios-files-list.png)
+![Figure 5.22: Liferay Sync offers a folder and files menu.](../../images/liferay-sync-ios-files-list.png)
 
 From here, you can click on a folder to browse deeper into the folder hierarchy.
 You can also click on the *Back* button to navigate back to parent folders up to
@@ -1227,7 +1227,7 @@ and, if a previewer for this file type is available, you can view the contents
 of the file. The next time you open a file, it won't download it again; instead,
 it opens the local copy.
 
-![Figure 5.45: Local files are stored after they are downloaded.](../../images/liferay-sync-ios-open.png)
+![Figure 5.23: Local files are stored after they are downloaded.](../../images/liferay-sync-ios-open.png)
 
 There are 3 icons at the bottom of the screen when you open a file:
 
@@ -1247,7 +1247,7 @@ social apps and messengers if they are available.f
 In the file list, there's an Edit button. Clicking on it switches the app to
 the edit mode as shown below:
 
-![Figure 5.48: Edit mode is a key feature in Liferay Sync mobile.](../../images/liferay-sync-ios-edit.png)
+![Figure 5.24: Edit mode is a key feature in Liferay Sync mobile.](../../images/liferay-sync-ios-edit.png)
 
 Selecting one or more files or folders and clicking on the *Delete* button
 deletes the selected files or folders from the remote portal. Once you delete
@@ -1283,7 +1283,7 @@ All downloaded files are stored on your device indefinitely. If you want to
 delete downloaded files locally but don't want to remove them from the portal,
 go to *Settings* and click on the *Clear Cache* button.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-05-en)
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
 and customizable virtual shared drive. Liferay 6.1 introduced the ability to

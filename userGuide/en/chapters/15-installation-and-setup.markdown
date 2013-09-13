@@ -1,5 +1,5 @@
 
-#  Installation and Setup  
+#  Installation and Setup [](id=installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 
 ---
 
@@ -22,7 +22,7 @@ application server bundles from which to choose. These are very easy to install
 and with a small amount of configuration can be made into production-ready
 systems.
 
-## Editions of Liferay  
+## Editions of Liferay [](id=editions-of-liferay-liferay-portal-6-2-user-guide-15-en)
 
 Liferay ships in two different editions: Liferay Portal Community Edition (CE)
 and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that
@@ -52,7 +52,7 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-### Liferay's Versioning Schema 
+### Liferay's Versioning Schema [](id=liferays-versioning-schema-liferay-portal-6-2-user-guide-15-en)
 
 Liferay's release process follows a prescribed structure that is consistent from
 one release to the next. Each release has a specific number sequence attached to
@@ -69,7 +69,7 @@ are organized in a straightforward numerical system consisting of a three digit
 number. For example, 6.1.2. These numbers represent the type of the release:
 Major.Minor.Maintenance.
 
-#### Major Release 
+#### Major Release [](id=major-release-liferay-portal-6-2-user-guide-15-en)
 
 A change in the first digit of the version (e.g., 6.x to 7.x) is a major
 release. This means that:
@@ -80,7 +80,7 @@ release. This means that:
 - There are architectural changes, changes to APIs (as part of the deprecation
   process), or changes to internal schema.
 
-#### Minor Release 
+#### Minor Release [](id=minor-release-liferay-portal-6-2-user-guide-15-en)
 
 A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor
 release. This means that:
@@ -91,7 +91,7 @@ release. This means that:
 
 - Customers should leverage the upgrade tools and documentation.
 
-#### Maintenance Release 
+#### Maintenance Release [](id=maintenance-release-liferay-portal-6-2-user-guide-15-en)
 
 A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
 maintenance release. This means that:
@@ -106,7 +106,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-#### Release Process 
+#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
 
 Each version of Liferay has a surname that specifies the expected quality of
 that release. This is needed because pre-releases of Liferay look very much like
@@ -134,7 +134,7 @@ and what it means:
   testers. These releases are stable and are made available via Liferay's
   Downloads page for CE and on the Customer Portal for EE. 
 
-#### Comments and Recommendations 
+#### Comments and Recommendations [](id=comments-and-recommendations-liferay-portal-6-2-user-guide-15-en)
 
 At this point you might be asking yourself questions like, which version
 should I use? What if I was using a previous version? Will the update to a new
@@ -177,7 +177,7 @@ series of maintenance releases.
 
 Now let's learn about Liferay bundles.
 
-## Obtaining Liferay Portal  
+## Obtaining Liferay Portal [](id=obtaining-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
 The CE version of Liferay is freely downloadable from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at
@@ -214,7 +214,7 @@ First we'll go over installing Liferay from a bundle and after this we'll
 provide instructions for installing Liferay manually on all the application
 servers it supports. 
 
-## Installing a bundle  
+## Installing a bundle [](id=installing-a-bundle-liferay-portal-6-2-user-guide-15-en)
 
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is
@@ -313,7 +313,7 @@ application server upon which you want to install Liferay. The bulk of this
 chapter describes how to install Liferay on all the application servers it
 supports, both open source and proprietary. 
 
-## App servers  
+## App servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many enterprises can't do
@@ -326,7 +326,7 @@ Liferay Home folder, databases and Liferay's main configuration file. These were
 touched on in the section on bundles above but we'll look at them in more detail
 now. 
 
-### Liferay Home  
+### Liferay Home [](id=liferay-home-liferay-portal-6-2-user-guide-15-en)
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
 one folder higher than the location of the application server itself. This is
@@ -356,7 +356,7 @@ Home by the Setup Wizard) override property values in `portal-ext.properties`.
 
 Let's move on to examining the database. 
 
-### Liferay's database  
+### Liferay's database [](id=liferays-database-liferay-portal-6-2-user-guide-15-en)
 
 As stated above, if you create your database and grant a user ID full access to
 it, Liferay can use that user ID to create its indexes and tables automatically.
@@ -409,7 +409,7 @@ you attempt to install them.
 
 Once you have your database ready, you can install Liferay on your server. 
 
-### Liferay installation overview  
+### Liferay installation overview [](id=liferay-installation-overview-liferay-portal-6-2-user-guide-15-en)
 
 Before we begin, it's important to go over the various facets of the
 installation. They are: 
@@ -436,7 +436,7 @@ the instructions for your application server. This method uses the setup wizard
 to create a working configuration. We'll go through the steps in order, so first
 we'll look at the options for data sources. 
 
-#### Using data sources  
+#### Using data sources [](id=using-data-sources-liferay-portal-6-2-user-guide-15-en)
 
 Liferay comes bundled with its own built-in data source. It's configured by a
 number of properties which are set in a properties file. By default, the setup
@@ -457,7 +457,7 @@ such a big deal.
 Since mail sessions are configured in a similar way to data sources, we'll look
 at them next. 
 
-#### Using mail sessions  
+#### Using mail sessions [](id=using-mail-sessions-liferay-portal-6-2-user-guide-15-en)
 
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay's running and it tries to send mail via SMTP to this server. If
@@ -480,7 +480,7 @@ Let's look next at this configuration file and, if you're choosing not to use
 the setup wizard, show you how to get Liferay connected to your database and
 your mail server. 
 
-#### The portal-ext.properties file  
+#### The portal-ext.properties file [](id=the-portal-ext-properties-file-liferay-portal-6-2-user-guide-15-en)
 
 Liferay's properties files differ from the configuration files of most other
 products in that changing the default configuration file is discouraged. In
@@ -540,7 +540,7 @@ In either case, your next step is to install Liferay onto your application
 server. Once this is done, if you're using the recommended built-in data source,
 you can use the setup wizard, which we'll cover next. 
 
-## Using Liferay's setup wizard  
+## Using Liferay's setup wizard [](id=using-liferays-setup-wizard-liferay-portal-6-2-user-guide-15-en)
 
 To make it easy to configure Liferay optimally for your use, the first thing you
 see when browsing to your newly installed Liferay bundle is a setup wizard. This
@@ -639,7 +639,7 @@ database has been created.
 
 ---
 
-## Manual Configuration  
+## Manual Configuration [](id=manual-configuration-liferay-portal-6-2-user-guide-15-en)
 
 You don't have to use the setup wizard to configure Liferay. The setup wizard
 behind the scenes creates a configuration file that you can create manually.
@@ -702,7 +702,7 @@ When you've finished, save the file.
 Next, follow the instructions for installing Liferay on your particular
 application server in the section below. 
 
-## Installing Liferay on an existing application server  
+## Installing Liferay on an existing application server [](id=installing-liferay-on-an-existing-appli-liferay-portal-6-2-user-guide-15-en)
 
 This section contains detailed instructions for installing Liferay Portal using
 its .war file distribution. This allows system administrators to deploy Liferay
@@ -710,7 +710,7 @@ in existing application server installations. It is recommended that you have a
 good understanding of how to deploy Java EE applications in your application
 server of choice.
 
-### Installing Liferay in five easy steps  
+### Installing Liferay in five easy steps [](id=installing-liferay-in-five-easy-steps-liferay-portal-6-2-user-guide-15-en)
 
 There are five generic steps to installing Liferay on an existing application
 server:
@@ -766,7 +766,7 @@ want support all the way down to the application server from Liferay, then Mule
 Tcat is your solution. After we cover Mule Tcat, we'll look at all the supported
 application servers in alphabetical order. 
 
-## Installing Liferay on Mule Tcat  
+## Installing Liferay on Mule Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
 Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
 source portal, and Tcat Server, an enterprise grade administration console for
@@ -831,7 +831,7 @@ Solaris and Linux (32 and 64-bit) as well as a manual installation zip.
 After obtaining the software bundles, you can proceed with installation and
 configuration of the Administration Console.
 
-### Installing the Administration Console on Windows   
+### Installing the Administration Console on Windows [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
 
 For Windows, Tcat comes with an installer to assist with installation and
 configuration. After downloading, execute the installer, accepting the
@@ -903,7 +903,7 @@ You may choose to customize the shortcut location or accept the default.
 After configuring the shortcuts, the Tcat Server Windows installer performs the
 installation as previously configured.
 
-### Installing the Administraton Console on Linux (Ubuntu)  
+### Installing the Administraton Console on Linux (Ubuntu) [](id=installing-the-administraton-console-on-liferay-portal-6-2-user-guide-15-en)
 
 For Linux, Tcat comes with an installer to assist with installation and
 configuration. After downloading, execute the installer, accepting the
@@ -1001,7 +1001,7 @@ and you may choose to not create the symbolic link.
 
 Now that Tcat is installed, you can add Liferay to it. 
 
-### Adding Liferay Portal packages  
+### Adding Liferay Portal packages [](id=adding-liferay-portal-packages-liferay-portal-6-2-user-guide-15-en)
 
 After completing the TcatServer Administration Console installation, you can
 configure the Liferay Portal packages for Tcat.
@@ -1050,7 +1050,7 @@ during the installation process.
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
 
-### Tcat Server Managed Server Installation  
+### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
 
 The steps to install the Tcat Server managed server are quite similar to those
 for installing the Tcat Server Administration Console.
@@ -1111,7 +1111,7 @@ To:
 By modifying the `common.loader` property, you instruct Tcat Server to load
 everything in the `lib/ext` folder as part of the classpath.
 
-### Registering the managed server  
+### Registering the managed server [](id=registering-the-managed-server-liferay-portal-6-2-user-guide-15-en)
 
 After completing the installation process and starting the appropriate
 TcatServer processes, open a browser to `[SERVER NAME]:[PORT]/console`. Using
@@ -1182,7 +1182,7 @@ More information is available at
 -   [Setting Security on Repository
     Artifacts](http://www.mulesoft.org/documentation/display/TCAT/Setting+Security)
 
-### Deploying Liferay Portal  
+### Deploying Liferay Portal [](id=deploying-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
 As part of the installation process, the current version of Liferay Portal and a
 number of Liferay Plugins have been provisioned into the Tcat repository. You
@@ -1276,7 +1276,7 @@ access Liferay Portal on the target Tomcat instance.
 
 ![Figure 15.35: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
 
-### Deploying Liferay plugins on Mule Tcat  
+### Deploying Liferay plugins on Mule Tcat [](id=deploying-liferay-plugins-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
 
 Liferay Portal Tcat Edition works with all the appropriate Liferay EE Plugins,
@@ -1312,7 +1312,7 @@ you need a complete stack, combining Liferay Portal with Mule Tcat gives you
 everything you need to run a fully supported and robust portal environment for
 your enterprise. 
 
-## Installing Liferay on GlassFish 3  
+## Installing Liferay on GlassFish 3 [](id=installing-liferay-on-glassfish-3-liferay-portal-6-2-user-guide-15-en)
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
@@ -1339,7 +1339,7 @@ and that you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en)
 
 Liferay depends on jar files found in the Liferay Dependencies Archive. You
 should also have installed your database driver.
@@ -1361,7 +1361,7 @@ should also have installed your database driver.
 Terrific, you have your JAR files just where you'll need them. Next we'll
 configure your domain.
 
-##### Domain Configuration  
+##### Domain Configuration [](id=domain-configuration-liferay-portal-6-2-user-guide-15-en)
 
 There are a couple of modifications you need to make in your domain to use
 Liferay Portal.
@@ -1406,7 +1406,7 @@ location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en)
 
 If you want to use GlassFish to manage your domain's data source, follow the
 instructions found in this section. If you want to use Liferay Portal to manage
@@ -1482,14 +1482,14 @@ your data source, you can skip this section.
 
 Congratulations! You've now configured your domain's data source on GlassFish!
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en)
 
 If you want to use GlassFish to manage your mail session, follow GlassFish's
 documentation on configuring a JavaMail session with a JNDI name of
 `mail/MailSession`. If you want to use Liferay Portal to manage your mail
 session, you can skip this step.
 
-### Domain Configuration - Continued  
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en)
 
 Let's tie up some loose ends with regards to Liferay being able to access your
 database and mail session.
@@ -1522,7 +1522,7 @@ your `portal-ext.properties` file to reference that mail session:
 Liferay can now communicate with your database and mail session. So let's go
 ahead and deploy Liferay.
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en)
 
 Here are the steps you'll need to follow to deploy Liferay Portal to your
 domain's server. Before you deploy Liferay Portal, let's consider whether you
@@ -1589,7 +1589,7 @@ See the section on the setup wizard above for how to use the setup wizard.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
-## Installing Liferay on Jetty 7  
+## Installing Liferay on Jetty 7 [](id=installing-liferay-on-jetty-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above Jetty's install location.
 
@@ -1610,7 +1610,7 @@ the dependencies file should be called
 Now that you have all of your installation files, you're ready to start
 installing and configuring Liferay on Jetty.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-0)
 
 Let's work with the Liferay depenency jar files first.
 
@@ -1644,7 +1644,7 @@ Let's work with the Liferay depenency jar files first.
 
 Now that your `.jar` files are in place, let's configure your domain.
 
-### Jetty Configuration  
+### Jetty Configuration [](id=jetty-configuration-liferay-portal-6-2-user-guide-15-en)
 
 To get Jetty ready for running Liferay Portal, you must make a number of
 modifications that involve configuration files, initialization files and run
@@ -1739,7 +1739,7 @@ scripts.
 Now that your general Jetty startup files are set in place, let's consider how
 you will manage your data source. 
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to manage your data source within Jetty, continue following the
 instructions in this section. If you want to use the built-in Liferay data
@@ -1779,7 +1779,7 @@ source, you can skip this section.
 Super! Now you have your database specified and ready for use with Liferay on
 Jetty. Let's consider your mail session next.
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to manage your mail session within Jetty, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -1820,7 +1820,7 @@ session values with your own.
 
 Great! Now you'll be able to use this mail session with Liferay.
 
-### Configuring data sources and mail sessions  
+### Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessi-liferay-portal-6-2-user-guide-15-en)
 
 Let's revisit your configuration to make sure we'll be able to access your data
 source and mail session from Liferay Portal.
@@ -1850,7 +1850,7 @@ source and mail session from Liferay Portal.
 
 Let's start your server and deploy Liferay Portal! 
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-0)
 
 Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
@@ -1909,7 +1909,7 @@ wizard.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
-## Installing Liferay on JBoss 5.1  
+## Installing Liferay on JBoss 5.1 [](id=installing-liferay-on-jboss-5-1-liferay-portal-6-2-user-guide-15-en)
 
 Note: Java 7 deprecated some classes used by JBoss 5.1. Use Java 5 or Java 6 to
 run JBoss 5.1.
@@ -1926,7 +1926,7 @@ run JBoss 5.1.
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-### Configuring Dependencies  
+### Configuring Dependencies [](id=configuring-dependencies-liferay-portal-6-2-user-guide-15-en)
 
 First we'll take care of dependencies and potential conflicts.
 
@@ -1975,7 +1975,7 @@ it's deployed.
         jboss-ejb3-endpoint-deployer.jar
         messaging-definitions-jboss-beans.xml
 
-### Deploying Liferay  
+### Deploying Liferay [](id=deploying-liferay-liferay-portal-6-2-user-guide-15-en)
 
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
@@ -2028,7 +2028,7 @@ files, it's time to deploy Liferay.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
-### Deploying plugins
+### Deploying plugins [](id=deploying-plugins-liferay-portal-6-2-user-guide-15-en)
 
 Add a `jboss-classloading.xml` to the `WEB-INF` folder of each plugin, with the
 following content:
@@ -2063,7 +2063,7 @@ place, configure your `portal-ext.properties` file with the following:
 	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
 	# (This one needs to be the exact folder into which you are going to place your WAR files.) 
 
-## Installing Liferay on JBoss 7  
+## Installing Liferay on JBoss 7 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -2077,7 +2077,7 @@ place, configure your `portal-ext.properties` file with the following:
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-1)
 
 Let's work with the dependency jar files first.
 
@@ -2119,7 +2119,7 @@ resource root entry with that of your database driver.
 		
 Great! You have your `.jar` files ready for your domain.
 
-### Configuring JBoss  
+### Configuring JBoss [](id=configuring-jboss-liferay-portal-6-2-user-guide-15-en)
 
 Let's make some adjustments in your configuration to support using Liferay.
 
@@ -2199,7 +2199,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next we'll consider the database and mail configuration. 
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
 If you want JBoss to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -2266,7 +2266,7 @@ Your final data sources subsystem should look something like this:
 Now that you've configured your data source, let's go over how to configure your
 mail session within JBoss.
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
 At the time this document was written, JavaMail was not yet supported in JBoss
 AS 7.0.1 - however, it was implemented in the JBoss AS 7.1 alpha (see
@@ -2292,7 +2292,7 @@ Specify your mail subsystem  in `standalone.xml` as in the following example:
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
-### Configuring data sources and mail sessions  
+### Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-ses-liferay-portal-6-2-user-guide-15-en-0)
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -2324,7 +2324,7 @@ You've completed the steps necessary for your deployment of Liferay so Liferay
 Portal can now communicate with your data source and mail session--way to go!
 Now you're ready to deploy Liferay Portal.
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-1)
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in
    your JBoss installation, delete all of its subfolders and files. Otherwise,
@@ -2393,7 +2393,7 @@ Now you're ready to deploy Liferay Portal.
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
-## Installing Liferay on Resin 4  
+## Installing Liferay on Resin 4 [](id=installing-liferay-on-resin-4-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above Resin's install location.
 
@@ -2414,7 +2414,7 @@ the dependencies file should be called
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on Resin.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-2)
 
 Let's work with the depenency jar files first.
 
@@ -2445,7 +2445,7 @@ Let's work with the depenency jar files first.
 Great! now you have your `.jar` files in place. Next, let's configure Resin for
 Liferay. 
 
-### Configuring Resin  
+### Configuring Resin [](id=configuring-resin-liferay-portal-6-2-user-guide-15-en)
 
 The primary file used in configuring your domain is
 `$RESIN_HOME/conf/resin.xml`. You need to make common modifications necessary to
@@ -2497,7 +2497,7 @@ Resin's logs. But let's start with the changes to `resin.xml`.
 Now that you've completed some important common configuration tasks to support
 Liferay, let's consider database configuration. 
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-2)
 
 If you want to manage your data source within Resin, continue following the
 instructions in this section. If you want to use the built-in Liferay data
@@ -2530,7 +2530,7 @@ password value with values specific to your database.
 Resin is now managing your database connection. Let's consider next how to
 configure mail.
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-2)
 
 If you want to manage your mail session within Resin, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -2572,7 +2572,7 @@ You can specify additional properties for your mail session as needed.
 Now that your mail session is squared away, we'll make sure Liferay can access
 it.
 
-### Configuring data source and mail session  
+### Configuring data source and mail session [](id=configuring-data-source-and-mail-sessio-liferay-portal-6-2-user-guide-15-en)
 
 Let's make sure Liferay's connected to your data source and mail session.
 
@@ -2601,7 +2601,7 @@ Let's make sure Liferay's connected to your data source and mail session.
 Great! Now Liferay can access your database and your mail session. Now, let's
 deploy Liferay.
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-2)
 
 Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
@@ -2669,7 +2669,7 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 Congratulations! You've installed Liferay Portal on Resin and have it up and
 running.
 
-## Installing Liferay on Tomcat 7  
+## Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above Tomcat's install location.
 
@@ -2689,7 +2689,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-3)
 
 Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate
 JDBC driver and a few other JARs installed.
@@ -2744,7 +2744,7 @@ JDBC driver and a few other JARs installed.
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
 
-### Tomcat Configuration  
+### Tomcat Configuration [](id=tomcat-configuration-liferay-portal-6-2-user-guide-15-en)
 
 The steps in this section focus on:
 
@@ -2839,7 +2839,7 @@ Let's get started with our configuration tasks.
 
 Excellent work! Now let's consider configuration of your database.
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-3)
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -2872,7 +2872,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 Your Tomcat managed data source is now configured. Let's move on to your mail
 session.
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-3)
 
 If you want to manage your mail session within Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -2906,7 +2906,7 @@ replace the mail session values with your own.
 Super! Your mail session is configured. Next, we'll make sure Liferay will be
 able to access your mail session and database.
 
-### Configuring your database and mail session  
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
 
 In this section we'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -2934,7 +2934,7 @@ connecting to your database and mail session.
 It's just that easy! Now it's time to deploy Liferay Portal on your Tomcat
 server. 
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
 
 We'll deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder.
@@ -2994,7 +2994,7 @@ We'll deploy Liferay as an exploded web archive within your
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
-## Installing Liferay on JOnAS 5.2  
+## Installing Liferay on JOnAS 5.2 [](id=installing-liferay-on-jonas-5-2-liferay-portal-6-2-user-guide-15-en)
 
 JOnAS is somewhat unique among the open-source application servers for two
 reasons: it is built entirely on an OSGi core, allowing for dynamic deployment
@@ -3011,7 +3011,7 @@ Given the unique nature of the server, there are a few steps to consider in the
 configuration stage. Otherwise, installing on JOnAS follows much the same
 pattern as other servers: configure, copy dependencies and deploy.
 
-### Configuring JOnAS for Liferay  
+### Configuring JOnAS for Liferay [](id=configuring-jonas-for-liferay-liferay-portal-6-2-user-guide-15-en)
 
 A pristine JOnAS installation comes with a number of samples, tutorials and
 template configuration files. A lot of this is unnecessary and irrelevant for
@@ -3132,7 +3132,7 @@ To turn of HSQL and other JOnAS-level services:
 
 This allows JOnAS to startup appropriately with Liferay installed.
             
-### Configuring Containers in JOnAS 
+### Configuring Containers in JOnAS [](id=configuring-containers-in-jonas-liferay-portal-6-2-user-guide-15-en)
 
 Now that the application server has all extraneous services and applications
 disabled, you can now tweak the configuration of the containers within JOnAS:
@@ -3174,7 +3174,7 @@ the loader:
 	      
     To ensure the required packages are loaded.
       
-### Starting JOnAS  
+### Starting JOnAS [](id=starting-jonas-liferay-portal-6-2-user-guide-15-en)
 
 Once you have the required configuration in place, all that is left is to copy
 the portal dependencies and the Liferay `.war` file and start the server. JOnAS
@@ -3211,7 +3211,7 @@ JOnAS:
 
 JOnAS starts and Liferay opens a browser to `http://localhost:8080`.
 
-## Installing Liferay on WebLogic 10  
+## Installing Liferay on WebLogic 10 [](id=installing-liferay-on-weblogic-10-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay. For example, if your domain location is
@@ -3241,7 +3241,7 @@ support JDK 1.6.
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on WebLogic.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-4)
 
 Liferay requires several `.jar` files including the Liferay Dependency JARs and
 a JAR file for your database driver. The following steps describe how to install
@@ -3266,7 +3266,7 @@ these `.jar` files properly.
 Now that you have your WebLogic installation is loaded up with JAR files for
 Liferay to use, let's consider how to configure your database.
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -3303,7 +3303,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 Great work! Your data source can now be managed from within WebLogic. Next,
 let's consider the mail session for your domain.
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -3330,7 +3330,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now you have your mail session specified and ready for Liferay to use. 
 
-### Domain Configuration - Continued 
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-0)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -3362,7 +3362,7 @@ data source and mail session from Liferay Portal.
 Liferay can now communicate with your data source and mail session. It's now
 time to deploy Liferay!
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
 Follow the instructions in this section to deploy Liferay Portal to your domain.
 
@@ -3443,7 +3443,7 @@ above.
 
 Congratulations on your deployment of Liferay Portal on WebLogic 10!
 
-## Installing Liferay on Oracle WebLogic 10.3  
+## Installing Liferay on Oracle WebLogic 10.3 [](id=installing-liferay-on-oracle-weblogic-1-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay.
@@ -3478,7 +3478,7 @@ JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
 
 Let's get started by installing the JAR files Liferay needs.
 
-### Dependency Jars  
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-5)
 
 Liferay needs the JAR files contained in the Liferay Dependencies Archive and
 the driver JAR file applicable for your database.
@@ -3496,7 +3496,7 @@ So far so good. Your JAR files are in place and ready for Liferay.
 Start Oracle WebLogic if you want to configure your database and/or mail session
 within Oracle WebLogic.
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-5)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -3536,7 +3536,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-### Mail Configuration 
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-5)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -3553,7 +3553,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-### Domain Configuration - Continued  
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-1)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -3595,7 +3595,7 @@ data source and mail session from Liferay Portal.
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-5)
 
 This section provides instructions for deploying Liferay to your application
 server domain.
@@ -3681,7 +3681,7 @@ folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
 
 Congratulations! You are now running Liferay on Oracle WebLogic.
 
-## Installing Liferay on WebSphere 8.0  
+## Installing Liferay on WebSphere 8.0 [](id=installing-liferay-on-websphere-8-0-liferay-portal-6-2-user-guide-15-en)
 
 ![Tip](../../images/02-tip.png) **Tip:** Throughout this installation and
 configuration process, WebSphere prompts you to Click Save to apply changes to
@@ -3690,7 +3690,7 @@ Master Configuration. Do so intermittently to save your changes.
 **Liferay Home** is in a folder called `liferay` in the home folder of the user
 ID that is running WebSphere.
 
-### Preparing WebSphere for Liferay  
+### Preparing WebSphere for Liferay [](id=preparing-websphere-for-liferay-liferay-portal-6-2-user-guide-15-en)
 
 When the application server binaries have been installed, start the **Profile
 Management Tool** to create a profile appropriate for Liferay. 
@@ -3757,7 +3757,7 @@ Management Tool** to create a profile appropriate for Liferay.
 12. WebSphere then creates your profile and finishes with a message telling you
 	the profile was created successfully. You're now ready to install Liferay! 
 
-### Copying portal dependencies  
+### Copying portal dependencies [](id=copying-portal-dependencies-liferay-portal-6-2-user-guide-15-en)
 
 Liferay ships with dependency .jars it needs to have on the global classpath.
 These should be copied to WebSphere's global folder provided for this purpose: 
@@ -3767,7 +3767,7 @@ These should be copied to WebSphere's global folder provided for this purpose:
 Once you've copied the .jars here, start the server profile you're planning to
 use for Liferay. Once it starts, you're ready to configure your database. 
 
-### Database Configuration  
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-6)
 
 If you want WebSphere to manage the database connections, follow the
 instructions below. Note this is not necessary if you're planning on using
@@ -3835,7 +3835,7 @@ install.
 
 Once you've set up your database, you can set up your mail session. 
 
-### Mail Configuration  
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-6)
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section. 
@@ -3855,7 +3855,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Great! Now you're ready to deploy Liferay. 
 
-### Deploy Liferay  
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-6)
 
 1. Click *Applications &rarr; New Application &rarr; New Enterprise
    Application*.
@@ -3871,7 +3871,7 @@ Great! Now you're ready to deploy Liferay.
 6. Click *Finish*. When Liferay has installed, click *Save to Master
    Configuration*.
 
-### Start Liferay  
+### Start Liferay [](id=start-liferay-liferay-portal-6-2-user-guide-15-en)
 
 1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
    to use WebSphere's data source and mail session, create a file called
@@ -3893,7 +3893,7 @@ Great! Now you're ready to deploy Liferay.
 
 Congratulations! You've installed Liferay on WebSphere! 
 
-## Making Liferay Coexist with Other Java EE Applications  
+## Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java--liferay-portal-6-2-user-guide-15-en)
 
 Liferay Portal by default is configured to sit at the root (i.e., `/`) of your
 application server. Dedicating your application server to running only Liferay
@@ -3942,7 +3942,7 @@ you deploy it. Extract the file from the `.war` file, modify it and then put it
 back in the `.war` file. Then deploy the modified Liferay `.war` file to the
 server in the proper context.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-15-en)
 
 This chapter is a guide to everything about installing Liferay. Whether you
 choose a Liferay bundle or an existing application server, Liferay Portal

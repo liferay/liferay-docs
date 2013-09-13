@@ -91,8 +91,8 @@ it sing a song. *
 
 *Singing a Song*
 
-*You'd think that making Liferay sing would be hard, but it is in fact easy. All
-you have to do....*
+You'd think that making Liferay sing would be hard, but it is in fact easy. All
+you have to do....
 
 ## Text Conventions 
 
@@ -118,7 +118,7 @@ this:
 Markdown, this is done by placing your code inside a left accent character,
 which on US keyboards is to the left of the number 1 key, like this: 
 
-	\`my code is here\`
+	`my code is here`
 
 We are not writing code; we are writing instructions for human beings to be able
 to write code or use our software. Obviously, if you are documenting something
@@ -140,7 +140,7 @@ providing. Of course, make sure your code works.
 
 When you need to refer to a file name, put the file name in a code font as well. 
 
-**Example:** You will want to use the **Software Catalog** portlet if you will
+**Example:** You will want to use the Software Catalog portlet if you will
 have multiple users submitting portlets into the repository, and if you don't
 want to worry about creating the `liferay-plugin-repository.xml` file yourself. 
 
@@ -154,7 +154,7 @@ not to include the quotation marks when copying and pasting these values.
 Programmers are used to writing code, not prose. Because of this, programmers
 like to put periods, commas, and other punctuation outside the quotation marks,
 which is incorrect punctuation--but good programming syntax. If you do need to
-use quotes for something, please remember the punctuation goes `inside` the
+use quotes for something, please remember the punctuation goes *inside* the
 quotes. 
 
 ### Italics 
@@ -217,7 +217,7 @@ use a period. If it's not a sentence, don't.
 
 Use a period for bullets that are sentences, like: 
 
-*  Roll your mouse over the Dock and click //Sign In//. 
+*  Roll your mouse over the Dock and click *Sign In*. 
 *  Enter your email address and password.
 
 Never end a section with bullet points, like I was about to do before I typed
