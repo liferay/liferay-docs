@@ -1,5 +1,12 @@
 # Liferay Utility Applications  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog has been replaced by Liferay Marketplace
 but can still be installed as a plugin. Please see chapter 13 for information

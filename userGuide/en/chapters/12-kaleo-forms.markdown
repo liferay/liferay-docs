@@ -1,6 +1,14 @@
 
 # Kaleo Forms: Defining Business Processes  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 In the last chapter, we looked at the elements that comprise a workflow

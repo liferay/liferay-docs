@@ -1,5 +1,13 @@
 # Configuring Liferay for High Availability  
 
+ 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is
 fully ready to support mission-critical, enterprise applications in an
 environment configured for multiple redundancies and 24/7 uptimes. The product,
@@ -48,8 +56,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 20.1: Liferay is designed to scale to as large an installation as you
-need.](../../images/enterprise-configuration.png) 
+![Figure 20.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -229,9 +236,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 20.2: When creating a shard using the manual shard selector, specify
-the shard you want to use for that
-instance.](../../images/enterprise-sharding-portal-instance.png)
+![Figure 20.2: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
 
 The last thing you need to do is modify the `spring.configs` section of your
 `portal-ext.properties` file to enable the sharding configuration, which by
@@ -760,8 +765,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 20.5: The default algorithm requires each node to create massive
-amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+![Figure 20.5: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
 the application(s) running), consider the stack memory footprint of those 100+
@@ -1269,7 +1273,7 @@ property `javascript.files` into one compacted file for faster loading for
 production. 
 
     javascript.fast.load=true
-    
+ 
 These are various things the Liferay engineering team has done to increase
 performance generally. If your developers make use of Liferay's tools and
 platform, their JavaScript and themes can also take advantage of these

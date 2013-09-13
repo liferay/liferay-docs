@@ -178,15 +178,6 @@ Helper methods and all application logic should be put in this class. Whenever m
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
 			<name>EventImpl</name>
-			<comment><![CDATA[NOTE FOR DEVELOPERS:
-
-Never reference this class directly. All methods that expect a event model instance should use the {@link com.nosester.portlet.eventlisting.model.Event} interface instead.]]></comment>
-		</method>
-		<method>
-			<name>getLocation</name>
-			<return>
-				<comment><![CDATA[]]></comment>
-			</return>
 		</method>
 	</javadoc>
 	<javadoc>
@@ -200,9 +191,6 @@ Helper methods and all application logic should be put in this class. Whenever m
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
 			<name>LocationImpl</name>
-			<comment><![CDATA[NOTE FOR DEVELOPERS:
-
-Never reference this class directly. All methods that expect a location model instance should use the {@link com.nosester.portlet.eventlisting.model.Location} interface instead.]]></comment>
 		</method>
 	</javadoc>
 	<javadoc>

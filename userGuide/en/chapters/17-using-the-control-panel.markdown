@@ -1,6 +1,13 @@
 
 # Using the Control Panel  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 In this chapter, we continue our coverage of Liferay's control panel that we
 began in chapter 15. We'll cover the following topics:
 
