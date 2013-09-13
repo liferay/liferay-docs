@@ -583,15 +583,21 @@ they're coming in, it's easy to integrate it into your daily workflow.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-Kaleo Forms is a plugin that enables you to have greater control over the list
-creation and entry process. For lists to appeal to companies all over the world
-(and make your new site not just a resounding success but attract profitable
-businesses), business users must be able to control the workflow of list entry
-and review those entries when made. There should also be a cool dashboard you
-can use to make all of your changes.
+Kaleo Forms EE is an app that provides you with greater control over the list
+creation and entry process. The Kaleo Forms EE app is available from Liferay
+Marketplace. It includes both the Kaleo Designer portlet and the Kaleo Forms
+portlet. The Kaleo Designer portlet provides an easy-to-use UI that helps
+streamline the creation of workflow definitions. The Kaleo Forms portlet lets
+you create web forms and basic applications. The Kaleo Forms EE app bundles
+these applications together, you can create workflows that govern the processing
+of web forms and applications.
 
-Inside Kaleo Forms, users can create lists that follow a workflow, called a
-*process*, or create new *entries* in a process. Creating a new process is easy,
+For lists to appeal to companies all over the world (and make your new site not
+just a resounding success but attract profitable businesses), business users
+must be able to control the workflow of list entry and review those entries when
+made. There should also be a cool dashboard you make all of your changes. Using
+Kaleo Forms, users can create lists that follow a workflow, called a *process*,
+or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
 #### Starting a New Process
