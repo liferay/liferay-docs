@@ -32,7 +32,7 @@ process for any kind of content before it is published to your portal.
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
 Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo
 Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the
-plugin adds a *Workflow* option under the *Configuration section of your
+plugin adds a *Workflow* option under the *Configuration* section of your
 Control Panel. 
 
 The `kaleo-web` plugin comes bundled with one worfklow called the Single
@@ -77,18 +77,19 @@ moves the workflow to the next task or state. This cycle continues until the end
 Approved state is reached. For example, you could create a workflow which goes
 through two approvers. Initiating the workflow puts it in the In Review state
 and then transitions to a task which requires user input. Users approve or
-reject the asset as part of the task. When the first user approves the workflow,
-a condition checks to see if there are two approvals. Since there is only one,
-workflow transitions back to the task. When the second user approves the
-workflow, the condition finds there are two approvers and it triggers a
-different transition to the Approved state. 
+reject the asset as part of the task. When the first user approves the asset in
+the workflow, a condition checks to see if there are two approvals. Since there
+is only one, workflow transitions back to the task. When the second user
+approves the asset, the condition finds there are two approvers and it triggers
+a different transition to the Approved state. 
 
-Let's look in detail at how you'd create a workflow using a single approver.
+Let's learn about a workflows components and look in detail at how you'd create
+a workflow using a single approver.
 
 ### Starting a workflow definition  
 
 Below is a diagram of a single approver workflow definition. It has only two
-tasks and two states. 
+tasks (Update and Review) and two states (Initial State and Approved). 
 
 ![Figure 11.1: The default single approver workflow. Arrows represent
 transitions and boxes represent states and
