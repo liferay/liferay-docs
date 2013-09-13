@@ -1,6 +1,6 @@
-# Liferay Marketplace 
+# Liferay Marketplace [](id=liferay-marketplace-liferay-portal-6-2-dev-guide-11-en)
 
-The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
+The **Liferay Marketplace** is an exciting hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
 build and enhance their existing platforms, developers and software vendors are
 searching for new avenues to reach this market. Marketplace leverages the entire
@@ -29,18 +29,18 @@ Liferay Marketplace:
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
 highly recommended that you first read the [Liferay
-Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
 chapter of *Using Liferay Portal*, where you will find detailed information
 about the Marketplace from an end user's perspective.
  
-## Marketplace Basics 
+## Marketplace Basics [](id=marketplace-basics-liferay-portal-6-2-dev-guide-11-en)
 
 Before diving into the details of developing for the Marketplace, it is
 important to have a good grasp of new concepts introduced in the Marketplace.
 The following list of questions will help in understanding the concepts that you
 will use over and over again as a Marketplace developer.
 
-### What is an App? 
+### What is an App? [](id=what-is-an-app-liferay-portal-6-2-dev-guide-11-en)
 
 As a Liferay Developer, you will undoubtedly already be familiar with the
 concept of plugins (portlets, hooks, themes, etc). If not, review Chapter 1 of
@@ -62,7 +62,7 @@ your app's individual plugins (`.war` files) are uploaded as part of the publish
 process, along with identifying information (name, description, version, icon,
 etc). This is described in detail later on in this chapter.
 
-### What is a Version? 
+### What is a Version? [](id=what-is-an-app-version-liferay-portal-6-2-dev-guide-11-en)
 
 The concept of versioning is well known in software, and it is no different
 here. A version of an app represents the functionality of the app at a given
@@ -87,7 +87,7 @@ the Liferay versioning scheme. See the *Specify App Packaging Directives*
 section below for details on how to specify the releases of Liferay for which
 your app is designed.
 
-### What is a Package? 
+### What is a Package? [](id=what-is-an-app-package-liferay-portal-6-2-dev-guide-11-en)
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you wish to publish version 1.0 of your app, which you're
@@ -101,7 +101,7 @@ packages that you can upload in support of different versions of Liferay, as you
 will see in a later section. In this guide, packages are sometimes referred to
 as files that make up your app.
 
-### How Do Apps Relate to Users and Companies? 
+### How Do Apps Relate to Users and Companies? [](id=how-do-apps-relate-to-users-and-companies-liferay-portal-6-2-dev-guide-en)
 
 When publishing an app, it is possible to publish it *on behalf of* yourself (an
 individual) or a *company* with which you are associated. The selection you make
@@ -109,7 +109,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, admin, and company, and the ramifications of choosing one
 vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
 
-### What Are the Requirements for Publishing Apps? 
+### What Are the Requirements for Publishing Apps? [](id=app-publishing-requirements-liferay-portal-6-2-dev-guide-en)
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -174,7 +174,7 @@ Now that you've learned the packaging and deployment requirements for your app,
 let's consider the versions of Liferay you're targetting for your app and how to
 prepare your app for them. 
 
-### Things You Need Before You Can Publish 
+### Things You Need Before You Can Publish [](id=things-you-need-before-publishing-an-app-liferay-portal-6-2-dev-guide-en)
 
 You must first develop your app using your preferred development tool (for
 example, using Liferay Developer Studio or the Plugins SDK). Your app will
@@ -192,7 +192,7 @@ Next, think of a good name and description of your app, along with a versioning
 scheme you wish to use. Take some screenshots, design an icon, create web sites
 for your app (if they do not already exist), and have a support plan in place.
 
-### Image and Naming Requirements 
+### Image and Naming Requirements [](id=app-image-and-naming-requirements-liferay-portal-6-2-dev-guide-en)
 
 **Icons** for your app *must be* exactly 90 pixels in both height and width and
 must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb. Animated
@@ -217,7 +217,7 @@ Above and beyond these basics of creating apps in the form of Liferay plugins,
 there are additional considerations to take into account when designing and
 publishing apps.
 
-### What Kind of Validations Are Performed by Liferay? 
+### What Kind of Validations Are Performed by Liferay? [](id=liferay-app-validations-liferay-portal-6-2-dev-guide-en)
 
 Liferay will ensure that apps meet a minimum set of requirements, such as:
 
@@ -231,7 +231,7 @@ the Marketplace. For details regarding this, consult the *Liferay Marketplace
 User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
 *End User License Agreements* associated with each app.
  
-### What Versions of Liferay Should I Target? 
+### What Versions of Liferay Should I Target? [](id=targeting-liferay-versions-for-apps-liferay-portal-6-2-dev-guide-en)
 
 Of course, targeting the widest possible range of versions will ensure you a
 larger audience. However, there are certain features in specific versions of
@@ -253,7 +253,7 @@ which versions of Liferay your app works with.
 ---
 
  ![note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so, be
- sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+ sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
  chapter of *Using Liferay Portal*! 
 
 ---
@@ -262,14 +262,14 @@ Now that we have covered the basics, you're armed with enough knowledge to start
 creating apps on the Marketplace, so let's see what that looks like in the next
 section.
 
-## Developing and Publishing Apps 
+## Developing and Publishing Apps [](id=developing-and-publishing-apps-liferay-portal-6-2-dev-guide-11-en)
 
 Let's jump right in with an example. In this section, we'll walk you through the
 creation and publication steps (but we won't actually publish the app on the
 Marketplace, since this example app isn't very useful!). After walking through
 this, you should understand how Marketplace App development typically occurs.
 
-### Develop a Sample App 
+### Develop a Sample App [](id=develop-a-sample-app-liferay-portal-6-2-dev-guide-11-en)
 
 Before you can publish anything, you first have to create (develop) an app! Apps
 are nothing more than collections of individual plugins, so the first step in
@@ -286,7 +286,7 @@ these advanced tasks are dealt with is out of scope for this section, but some
 tips and considerations for Marketplace development can be found later in this
 chapter.
 
-### Specify App Packaging Directives 
+### Specify App Packaging Directives [](id=specify-app-packaging-directives-liferay-portal-6-2-dev-guide-11-en)
 
 When publishing your app, each plugin you upload is packaged into one or more
 *packages* for each Liferay release you intend to support. When you upload your
@@ -303,10 +303,10 @@ download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found on the [Versioning Policy
 Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).
-Accordingly, Liferay 6.1 CE GA1 is designated as version `6.1.0`. CE GA2 is then
-`6.1.1`, and so on. Liferay 6.1 EE GA1 is designated as `6.1.10`. EE versioning
+Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
+`6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versioning
 follows a slightly different policy given then presence of fix packs and service
-packs, so 6.1 EE GA3 is `6.1.30`.
+packs, so 6.2 EE GA2 will be `6.1.20`.
 
 For each plugin that makes up your app, packaging directives must be placed in
 the `liferay-plugin-package.properties` file (located in the `WEB-INF/`
@@ -364,7 +364,7 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. We'll illustrate
 this with an example. 
 
-#### Example App: Using Different Versions of a Hook 
+#### Example App: Using Different Versions of a Hook [](id=app-uses-hooks-with-different-versions-liferay-portal-6-2-dev-guide-en)
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
@@ -386,7 +386,7 @@ that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
 specified for each plugin. We'll talk about that next.  
 
-#### Marketplace Packages Your App's Plugins 
+#### Marketplace Packages Your App's Plugins [](id=marketplace-packages-your-apps-plugins-liferay-portal-6-2-dev-guide-11-en)
 
 When you upload your app's plugins, as demonstrated later on in this chapter,
 you'll notice that Marketplace groups them into separate packages based on the
@@ -402,7 +402,7 @@ for each your app's plugins.
 Now that you've developed your app and specified its packaging directives, it's
 time to get it to the Marketplace! 
 
-### Establish a Marketplace Account 
+### Establish a Marketplace Account [](id=establish-a-marketplace-account-liferay-portal-6-2-dev-guide-11-en)
 
 Before you can publish anything to the Marketplace, you must first have an
 account on [liferay.com](http://liferay.com). If you do not have an account,
@@ -446,12 +446,12 @@ that have been purchased on behalf of companies you are associated with.
 Since you have not purchased or published any apps, the first two tabs are
 likely empty. Let's get publishing!
 
-### Upload (Publish) your App 
+### Upload (Publish) your App [](id=upload-and-publish-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 To begin the process of publishing your app, click *Add an App*. A form appears,
 allowing you to fill in your app's details.
 
-#### Initial App Details 
+#### Initial App Details [](id=initial-app-details-liferay-portal-6-2-dev-guide-11-en)
 
 The first step is to enter the basic details about your app. 
 
@@ -538,7 +538,7 @@ the *What is a version* section in this chapter to choose a good version
 specifier and enter it here. For our example, since this is the first version,
 enter `1.0`. Click *Next*.
 
-#### Upload Files (Plugins) for your App 
+#### Upload Files (Plugins) for your App [](id=upload-plugin-files-for-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 This screen allows you to upload different sets of plugin files (variations) to
 support different Liferay versions. You must upload at least one plugin file
@@ -566,7 +566,7 @@ portlet plugin was automatically copied for use in both the EE and CE
 variations, even though you only uploaded the portlet plugin once. Click *Next*
 to advance to the final screen.
 
-#### Preview and Submit Your App 
+#### Preview and Submit Your App [](id=preview-and-submit-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
@@ -582,7 +582,7 @@ this example on Liferay's Marketplace, don't do it, since this is only an
 example app. The next section describes what happens when you submit apps or app
 changes.
 
-### The Review Process 
+### The Review Process [](id=the-app-review-process-liferay-portal-6-2-dev-guide-11-en)
 
 When you submit apps to the Marketplace, they are reviewed by Liferay
 Marketplace staff to ensure that your app meets the minimum standards described
@@ -617,7 +617,7 @@ kinds of feedback from users and yourself about what's right and wrong with it.
 In the next section, we'll explore how to make changes once you have published
 your app.
 
-## Making Changes to Published Apps 
+## Making Changes to Published Apps [](id=making-changes-to-published-apps-liferay-portal-6-2-dev-guide-11-en)
 
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
@@ -629,7 +629,7 @@ or more of these kinds of changes during the life of the app:
 
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing Your App Details 
+### Editing Your App Details [](id=editing-your-app-details-liferay-portal-6-2-dev-guide-11-en)
 
 App details include the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
@@ -649,7 +649,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-### Adding Support for New Versions of Liferay Portal 
+### Adding Support for New Versions of Liferay Portal [](id=adding-support-for-new-versions-of-liferay-portal-6-2-dev-guide-11-en)
 
 If you need to add files in support of another Liferay release, the process is
 similar. Navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the
@@ -674,7 +674,7 @@ bottom of the preview screen. Click *Submit for Review* to submit your requested
 change (adding of files). The files will be reviewed by Liferay, and once
 approved, the new package is available for download in the Marketplace.
 
-### Releasing a New Version of your App 
+### Releasing a New Version of your App [](id=releasing-a-new-version-of-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 After time passes, you may wish to add new functionality to your app or fix a
 batch of bugs. This can be accomplished by releasing a new version of your app.
@@ -711,7 +711,7 @@ with the new version of the app. For a new version of the app, you must upload
 all files for all supported Liferay versions again, even if they have not
 changed since the last version.
 
-### Deactivating Your App 
+### Deactivating Your App [](id=deactivating-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app causes the app to no longer be downloadable from the Marketplace for new
@@ -726,7 +726,7 @@ To deactivate your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*,
 click on the *Actions* button next to the app for which you want deactivate, and
 select the *Deactivate* action.
 
-## Tracking App Performance 
+## Tracking App Performance [](id=tracking-app-performance-liferay-portal-6-2-dev-guide-11-en)
 
 One of the main reasons for developing and publishing apps into the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
@@ -744,7 +744,7 @@ data within the date range. Finally, the same data that is graphed is also shown
 in tabular format, in case you want to know the exact values making up the
 graph. The different types of data available to view are described below.
 
-### Views 
+### Views [](id=views-of-your-app-liferay-portal-6-2-dev-guide-11-en)
 
 When someone searches or browses the Marketplace, they click on apps to see
 detailed views of the apps they're interested in. When this occurs for your app,
@@ -753,13 +753,13 @@ Metrics screen when *Views* is selected at the top. *Views* is also the default
 view, as shown above. The number of recorded views per day per user is
 unlimited.
 
-### Downloads 
+### Downloads [](id=recorded-app-downloads-liferay-portal-6-2-dev-guide-11-en)
 
 A download is recorded for your app when someone downloads a specific package of
 a specific version of your app. The number of recorded downloads per day per
 user is unlimited.
 
-### Installations 
+### Installations [](id=recorded-app-installations-liferay-portal-6-2-dev-guide-11-en)
 
 The Marketplace does a best effort in recording installations of your app on
 Liferay instances. When a Liferay Administrator installs your app via the
@@ -770,7 +770,7 @@ Now that you understand how to publish your app and track its performance, let's
 get a good understanding of Liferay Portal's Plugin Security Manager and the
 security information you'll need to provide with your app. 
 
-## Understanding Plugin Security Management 
+## Understanding Plugin Security Management [](id=understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
@@ -824,7 +824,7 @@ Before we dive into the intricacies of these properties, let's consider a plugin
 development approach that involves designing an app for the security manager
 from the ground up. 
 
-## Developing Plugins with Security in Mind
+## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind-liferay-portal-6-2-dev-guide-11-en)
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
@@ -850,7 +850,7 @@ Here is the suggested approach for developing secure plugins:
 
 Let's go over each part of this approach. 
 
-### Consider Common Security Pitfalls 
+### Consider Common Security Pitfalls [](id=consider-common-security-pitfalls-liferay-portal-6-2-dev-guide-11-en)
 
 As you develop your plugin, you need to anticipate your plugin's actions in
 light of Liferay's secured environment. The security manager leverages the Java
@@ -988,7 +988,7 @@ Security and Liferay's Plugin Security Management, the easier it will be for you
 to write security-aware plugins. Keeping this in mind, you can proceed
 confidently creating your plugin. 
 
-### Develop Your Plugin
+### Develop Your Plugin [](id=develop-your-plugin-for-security-liferay-portal-6-2-dev-guide-en)
 
 Start creating your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
@@ -1001,7 +1001,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
 PACL. 
 
-### Build Your Plugin's PACL
+### Build Your Plugin's PACL [](id=build-your-plugins-pacl-liferay-portal-6-2-dev-guide-11-en)
 
 Rather than tediously figuring out all of the resources your plugin accesses, on
 your own, let Liferay's PACL Policy Generation tool to give you a head start.
@@ -1042,7 +1042,7 @@ Now that your plugin has a thoroughly specified list of resources it accesses,
 let's enable the security manager and do final testing of your PACL properties.
 We cover enabling the security manager in the next section. 
 
-### Test the Plugin with the Security Manager Enabled
+### Test the Plugin with the Security Manager Enabled [](id=test-the-plugin-with-security-manager-liferay-portal-6-2-dev-guide-en)
 
 If you want to distribute plugins, either through the Liferay Marketplace or
 through your web site, you have to assume potential users will insist the
@@ -1076,7 +1076,7 @@ plugins.
 In case you need it for your plugin, let's get familiar with the Java Security
 Policy file. 
 
-### Using a Java Security Policy File
+### Using a Java Security Policy File [](id=using-a-java-security-policy-file-liferay-portal-6-2-dev-guide-11-en)
 
 If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -1142,7 +1142,7 @@ specify all of the resources your plugin needs to access! Next, let's revisit
 the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-### Convert PACL Absolute File Paths into Relative Paths
+### Convert PACL Absolute File Paths into Relative Paths [](id=convert-pacl-file-paths-to-relative-paths-liferay-portal-6-2-dev-guide-en)
 
 As mentioned earlier in this chapter, we recommend using the PACL generation
 tool to give you a head start on specifying your plugin's security rules. But
@@ -1221,7 +1221,7 @@ Security Manager.
 The sections that follow demonstrated how to enable the Security Manager (which
 you've already done) and provide descriptions for each type of PACL property. 
 
-## Enabling the Security Manager
+## Enabling the Security Manager [](id=enabling-the-security-manager-liferay-portal-6-2-dev-guide-11-en)
 
 If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume users will insist the Security Manager is
@@ -1236,7 +1236,7 @@ It's very easy to activate the security manager. Set the following
 Next, we'll look at exactly what APIs the Security Manager protects, and how you
 can declare whether your application uses any of these properties. 
 
-## Portal Access Control List (PACL) Properties 
+## Portal Access Control List (PACL) Properties [](id=portal-access-control-list-pacl-properties-liferay-portal-6-2-dev-guide-en)
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the security manager properties specified in your plugin's
@@ -1250,7 +1250,7 @@ The sections that follow describe the PACL properties: explaining each
 property's purpose, its possible values, and the syntax to use in specifying its
 value.
 
-### AWT Security
+### AWT Security [](id=pacl-awt-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify the AWT operations the plugin is permitted to access. 
 
@@ -1271,7 +1271,7 @@ Specify the AWT operations the plugin is permitted to access.
         toolkitModality,\
         watchMousePointer
 
-### Class Loader Security 
+### Class Loader Security [](id=pacl-class-loader-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify the reference IDs of plugins for this plugin to access.
 
@@ -1281,7 +1281,7 @@ Specify the reference IDs of plugins for this plugin to access.
 		1_WAR_flashportlet,\
 		flash-portlet
 
-### Environment Variable Security
+### Environment Variable Security [](id=pacl-environment-variable-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify regular expression patterns used to match environment variables
 that the plugin is permitted to access. 
@@ -1294,7 +1294,7 @@ that the plugin is permitted to access.
         java.version,\
         java.vm.v.*
 
-### Expando Bridge
+### Expando Bridge [](id=pacl-expando-bridge-liferay-portal-6-2-dev-guide-11-en)
 
 Specify models having Expando Bridge attributes the plugin is permitted to
 access. The plugin can also access Expando Bridge attributes via the
@@ -1305,7 +1305,7 @@ wrapper classes of the models.
 	security-manager-expando-bridge=\
         com.liferay.portal.model.User
 
-### File Security 
+### File Security [](id=pacl-file-security-liferay-portal-6-2-dev-guide-11-en)
 
 The following properties address file deletion, execution, reading, writing and
 replacement operations. The `*` character in a path name indicates all files in
@@ -1347,7 +1347,7 @@ Specify files the plugin is permitted to overwrite.
 		../webapps/chat-portlet/WEB-INF/*,\
 		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
-### Bean Security
+### Bean Security [](id=pacl-bean-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify bean properties the plugin is permitted to acquire. 
 
@@ -1364,7 +1364,7 @@ Specify bean properties the plugin is permitted to set.
     security-manager-set-bean-property=\
         com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
 
-### Hook Security
+### Hook Security [](id=pacl-hook-security-liferay-portal-6-2-dev-guide-11-en)
 
 Set to `true` if the hook plugin is permitted use custom JSPs. By default, the
 hook plugin is not permitted to use custom JSPs. 
@@ -1423,7 +1423,7 @@ override.
 	security-manager-hook-struts-action-paths=\
 		/portal/test/pacl/success
 
-### JNDI Security
+### JNDI Security [](id=pacl-jndi-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify which services the plugin can look up. You can use regular expressions
 to make this dynamic. 
@@ -1440,7 +1440,7 @@ preceding and/or trailing `john`.
 		test-pacl-[mM]ark|test-pacl-[lL]uke,\
 		test-pacl-.*john.*
 
-### Message Bus Security 
+### Message Bus Security [](id=pacl-message-bus-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify which services the plugin is permitted to listen on via the portal's
 message bus.
@@ -1462,7 +1462,7 @@ messages to) via the portal's message bus.
 		liferay/test_pacl_listen_success,\
 		liferay/test_pacl_send_success
 
-### Portlet Bag Pool Security
+### Portlet Bag Pool Security [](id=pacl-portlet-bag-pool-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify regular expression patterns used to match any portlet IDs that the
 plugin is permitted to access from the portlet bag pool. 
@@ -1473,7 +1473,7 @@ plugin is permitted to access from the portlet bag pool.
         1_WAR_flashportlet,\
         .*_WAR_chatportlet
 
-### Search Engine Security
+### Search Engine Security [](id=pacl-search-engine-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify the IDs of search engines the plugin is permitted to access. 
 
@@ -1482,7 +1482,7 @@ Specify the IDs of search engines the plugin is permitted to access.
 	security-manager-search-engine-ids=\
 		SYSTEM_ENGINE
 
-### Portal Service Security
+### Portal Service Security [](id=pacl-portal-service-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify portal service classes and/or methods the plugin is permitted to access.
 Use the `#` character as a delimiter between a class and its method. 
@@ -1496,7 +1496,7 @@ Use the `#` character as a delimiter between a class and its method.
 		com.liferay.portlet.blogs.service.BlogsEntryLocalService,\
 		com.liferay.portlet.blogs.service.BlogsStatsUserLocalService
 
-### Portlet Service Security
+### Portlet Service Security [](id=pacl-portlet-service-security-liferay-portal-6-2-dev-guide-11-en)
 
 For each portlet the plugin accesses, replicate this property substituting
 `some-portlet` in the `[` square brackets `]` with the name of the accessible
@@ -1511,7 +1511,7 @@ access. Use the `#` character as a delimiter between a class and its method.
 		com.liferay.chat.service.EntryLocalService,\
 		com.liferay.chat.service.StatusLocalService#getStatuses
 
-### Socket Security 
+### Socket Security [](id=pacl-socket-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify sockets permitted to accept connections in the plugin.
 
@@ -1552,7 +1552,7 @@ use:
 
 - `*:*` matches every socket and every port. 
 
-### SQL Security 
+### SQL Security [](id=pacl-sql-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify tables in the Liferay database on which the plugin is permitted to
 perform the applicable operations. These property names use the following
@@ -1632,7 +1632,7 @@ Specify tables the plugin can update.
 	security-manager-sql-tables-update=\
 		ListType
 
-### Thread Security 
+### Thread Security [](id=pacl-thread-security-liferay-portal-6-2-dev-guide-11-en)
 
 Specify regular expression patterns used to match names of the thread pool
 executor for the plugin to access.
@@ -1651,7 +1651,7 @@ executor for the plugin to access.
 chapter previously) are left here. They should be combined and the chapter
 rewqorked for flow. --> 
 
-## Summary 
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en-0)
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
