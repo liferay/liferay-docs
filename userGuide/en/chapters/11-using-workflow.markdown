@@ -7,6 +7,7 @@
 reflect the new features in Liferay 6.2. 
 
 ---
+
 Liferay Portal includes a workflow engine called Kaleo. In Greek, Kaleo 
 means "called ones," which is appropriate for a workflow engine that calls users
 to participate in a process designed for them. Kaleo workflow allows a user to
@@ -102,24 +103,23 @@ transitions and boxes represent states and
 tasks.](../../images/kaleo-workflow-single-approver.png)
 
 First you define the schema. For Liferay workflows using Kaleo,
-`liferay-worklow-definition-6_1_0.xsd` should be your schema. You can find this
+`liferay-worklow-definition-6_2_0.xsd` should be your schema. You can find this
 schema in the `definitions` folder of the Liferay source or a good XML editor
-can cache it from Liferay's web site.
+can cache it from Liferay's web site. Here's how you define it in your workflow
+definition's XML file:
 
     <workflow-definition
-	xmlns="urn:liferay.com:liferay-workflow_6.1.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.1.0 
-	http://www.liferay.com/dtd/liferay-workflow-definition_6_1_0.xsd"
+        xmlns="urn:liferay.com:liferay-workflow_6.2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd"
     >
 
 Next you define a name and description for the workflow. This appears in the
 control panel when users choose and configure workflows.
 
-    <name>Single Approver</name>
-    <description>A single approver can approve a workflow
-    content.</description>
-    <version>1</version>
+	<name>Single Approver</name>
+	<description>A single approver can approve a workflow content.</description>
+	<version>1</version>
 
 After that, you define your initial state. 
 
@@ -135,6 +135,9 @@ a new state or task.
 
     <state>
         <name>created</name>
+		<metadata>
+			<![CDATA[{"xy":[36,51]}]]>
+		</metadata>
         <initial>true</initial>
 
 From the initial state, you transition to a new task, where further processing
@@ -142,9 +145,8 @@ is blocked so the asset can be reviewed.
 
         <transitions>
             <transition>
-            <name>review</name>
-            <target>review</target>
-            <default>true</default>
+                <name>review</name>
+                <target>review</target>
             </transition>
         </transitions>
     </state>
@@ -172,48 +174,79 @@ You can also see the task is assigned to `<user/>`. This tag always assigns the
 task back to the user who created the asset.
 
     <task>
-	<name>update</name>
-	<actions>
-        <notification>
-		<name>Creator Modification Notification</name>
-		<execution-type>onAssignment</execution-type>
-		<template>Your submission was rejected by a reviewer, please modify and resubmit.</template>
-		<template-language>text</template-language>
-		<notification-type>email</notification-type>
-        </notification>
-	</actions>
-	<assignments>
-        <user />
-	</assignments>
-	<transitions>
-        <transition>
-		<name>resubmit</name>
-		<target>review</target>
-		<default>true</default>
-        </transition>
-	</transitions>
-    </task>
- 
+        <name>update</name>
+        <metadata>
+            <![CDATA[{"transitions":{"resubmit":{"bendpoints":[[303,140]]}},"xy":[328,199]}]]>
+        </metadata>
+		<actions>
+			<action>
+				<name>reject</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("denied"), workflowContext);
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("pending"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onAssignment</execution-type>
+			</action>
+			<notification>
+				<name>Creator Modification Notification</name>
+				<template>Your submission was rejected by ${userName}, please modify and resubmit.</template>
+				<template-language>freemarker</template-language>
+				<notification-type>email</notification-type>
+				<notification-type>user-notification</notification-type>
+				<execution-type>onAssignment</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<user />
+		</assignments>
+		<transitions>
+			<transition>
+				<name>resubmit</name>
+				<target>review</target>
+			</transition>
+		</transitions>
+	</task>
+
 The *review* task is the first task in the workflow. This is where portal users
 with the proper role review the content and decide to reject it (move it back to
 the beginning) or accept it (transition it to the next step).
 
 Once the transition has been made to this task, a notification is sent to those
 who are assigned to the task. You can edit the name or content of the
-notification in the XML file.
+notification in the XML file. Once the reviewer completes their review and
+exits the workflow task, another email is sent to the original submitter indicating
+that the review is completed. 
 
-    <task>
-	<name>review</name>
-	<actions>
-        <notification>
-		<name>Review Notification</name>
-		<execution-type>onAssignment</execution-type>
-		<template>You have a new submission waiting for your review in the workflow.</template>
-		<template-language>text</template-language>
-		<notification-type>email</notification-type>
-        </notification>
-	</actions>
-    
+	<task>
+		<name>review</name>
+		<metadata>
+			<![CDATA[{"xy":[168,36]}]]>
+		</metadata>
+		<actions>
+			<notification>
+				<name>Review Notification</name>
+				<template>${userName} sent you a ${entryType} for review in the workflow.</template>
+				<template-language>freemarker</template-language>
+				<notification-type>email</notification-type>
+				<notification-type>user-notification</notification-type>
+				<execution-type>onAssignment</execution-type>
+			</notification>
+			<notification>
+				<name>Review Completion Notification</name>
+				<template>
+					Your submission has been reviewed and the reviewer has applied the following ${taskComments}.</template>
+				<template-language>freemarker</template-language>
+				<notification-type>email</notification-type>
+				<recipients>
+					<user />
+				</recipients>
+				<execution-type>onExit</execution-type>
+			</notification>
+		</actions>
+
 You must also assign the task to a specific role or roles. This role doesn't
 have to be the role you notified. For example, you might want to notify all the
 content creators any time a new item is submitted. Regardless of who you're
