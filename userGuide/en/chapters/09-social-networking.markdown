@@ -115,7 +115,7 @@ Activities portlet, you can use the *Maximum Activities to Display* dropdown
 menu to set a limit on how many activities can be displayed at once in the
 portlet window.
 
-![Figure 9.5: The Map Portlet](../../images/map-portlet.png)
+![Figure 9.5: The Map portlet can be placed on a single user's page to display one location or on the main site page to display all users' location.](../../images/map-portlet.png)
 
 The Map portlet allows you to view the locations of site members, both locally
 and internationally. Only members of the site to which the Map portlet has been
@@ -127,7 +127,7 @@ configuring geolocation services, visit the MaxMind support page at
 Once you've installed the Geocoder portlet and configured it to access MaxMind
 GeoIP or GeoLite, you'll need a key from Google to access Google's Maps API so
 your Map portlet will work. Visit
-[http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html#Obtaining_Key](http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html#Obtaining_Key)
+[https://developers.google.com/maps/documentation/javascript/tutorial#api_key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key)
 to learn how to obtain a valid Google API key. To configure the Map portlet
 using the GeoLite City database, use the following steps:
 
@@ -141,14 +141,17 @@ using the GeoLite City database, use the following steps:
 4. Download the Geo Lite City database from
    [http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz](http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz).
 
-5. Unzip the `.dat` file to your desired storage location on your server.
+5. Unzip the `.dat` file to your desired storage location.
 
 6. Create a `portlet-ext.properties` file in the
    `/{ROOT}/webapps/ip-geocoder-portlet/WEB-INF/classes/` directory of your
    Liferay installation.
 
-7. Add the property `maxmind.database.file={GeoIP Lite City database .dat file
-   path}` to this file.
+7. Add the property `maxmind.database.file={GeoLite City .dat file path}` to
+   this file.
+   
+    Note: Make sure your the file's directory path is separated by `\\`. For
+    example: `E:\\ce\\bundles\\GeoLiteCity.dat`.
 
 8. Create a `portlet-ext.properties` file in the
    `/{ROOT}/webapps/social-networking-portlet/WEB-INF/classes/` directory of
@@ -156,7 +159,7 @@ using the GeoLite City database, use the following steps:
 
 9. Add the property `map.google.maps.api.key={Your API Key}` to this file. If
    you haven't done so already, you'll need to generate a [Google Maps API
-   Key](http://code.google.com/apis/maps/signup.html).
+   Key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key).
 
 10. Restart your application server.
 
