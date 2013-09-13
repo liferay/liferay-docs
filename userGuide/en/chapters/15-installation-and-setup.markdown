@@ -1,6 +1,13 @@
 
 #  Installation and Setup  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. You can install Liferay Portal on
 everything from a shared Tomcat installation to a multi-node cluster running a

@@ -1,6 +1,13 @@
 
 # Management  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever
 you're looking for is there. Liferay's control panel is something like this. If

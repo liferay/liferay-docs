@@ -1,5 +1,12 @@
 # Using Scripting for Advanced Flexibility  
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Liferay provides a robust script engine that can be used to interpret scripts in
 Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of
 Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It

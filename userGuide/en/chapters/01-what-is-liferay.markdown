@@ -1,5 +1,12 @@
 # What is Liferay?   
 
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 If you're reading this, we're going to make a wild guess and say that you're
 probably looking for some software to help you run your web site. Creating a
 dynamic web site that's more than brochureware is complicated these days. You
