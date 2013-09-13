@@ -21,7 +21,7 @@ defined network. This variation is a huge advantage when trying to communicate
 important information to a large group of people. This difference in
 communication settings is illustrated below:
 
-![Figure 9.1: Standard Apps vs. Social Apps](../../images/15-opensocial-5.png)
+![Figure 9.1: The graphic above demonstrates Standard Apps vs. Social Apps.](../../images/15-opensocial-5.png)
 
 Liferay has a constantly improving set of social features which enable you to
 encourage social interactions on your own portal and to leverage the power and
@@ -62,15 +62,18 @@ through custom CSS.
 The social portlets are all included with the Liferay Community Edition
 distribution, but need to be installed separately for Enterprise Edition. If
 you're using Liferay Enterprise Edition, or had previously removed the social
-portlets from Community Edition, you can use Liferay's plugin installer to
-easily add social features to your portal.
+portlets from Community Edition, you can use Liferay Marketplace to easily add
+social features to your portal. You can learn more about Marketplace in the
+*Liferay Marketplace* chapter.
 
-If you're logged in as an administrator, go to the control panel and click on
-*Plugins Installation* in the *Server* section. From here, click on *Install
-More Portlets* and search for *Social Networking*. Once the results come up,
-select the latest version of the Social Networking Portlet and click *Install*.
-Once the install process finishes, you can start using the social networking
-portlets. 
+You can also moderate the plugins in your portal. If you're logged in as an
+administrator, go to the Control Panel and click on *App Manager* in the *Apps*
+section. From here, you can administer all your plugins. For now, we'll deal
+with the *Social Networking* app. Under the Apps heading, click *Store* to
+navigate to Liferay Marketplace. Install and download the *Social Networking*
+portlet to your portal instance.
+
+Now that we have our social plugins ready to go, let's learn how to use them!
 
 ### Using social networking on public pages  
 
@@ -79,16 +82,14 @@ pages. The goal of these is to use social connections to help a group work
 together more closely. These include the **Members**, **Meetups**, **Summary**,
 and **Activities** portlets.
 
-![Figure 9.2: The Members
-Portlet](../../images/XX-social-networking-members-portlet.png)
+![Figure 9.2: The *Members* portlet displays all the members of a particular site.](../../images/XX-social-networking-members-portlet.png)
 
 The Members portlet is a simple list of all the current site's members. The only
 configuration options you have are permissions, which are the same for every
 portlet. For example, you might change the permissions so only members of the
 current site can view the portlet. 
 
-![Figure 9.3: The Meetups
-Portlet](../../images/XX-social-networking-meetups.png)
+![Figure 9.3: Meetups are organized in the two tabs *All Meetups* and *My Meetups*.](../../images/XX-social-networking-meetups.png)
 
 The Meetups portlet is a tool for creating casual meetings for users of your
 portal. Anyone can create a "meetup" and give it a title, description,
@@ -99,10 +100,9 @@ register for the meetup, which lets the organizer keep track of who's coming.
 The options for creating a meetup are essentially the same as those for creating
 a calendar event and the Meetups portlet shares some functionality with the
 Calendar. For more information on the Calendar portlet and configuring events,
-see chapter 7.
+see chapter 8.
 
-![Figure 9.4: The Activities
-Portlet](../../images/XX-social-networking-activities.png)
+![Figure 9.4: All of your site members' activities are listed with brief descriptions and time stamps.](../../images/XX-social-networking-activities.png)
 
 The Activities portlet comes in two varieties: the standard Activities portlet
 and the Members' Activities portlet. The basic function of the portlets are the
