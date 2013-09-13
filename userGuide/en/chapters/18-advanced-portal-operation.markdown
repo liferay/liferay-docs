@@ -86,56 +86,53 @@ We'll come back to Tom, Dick and Harry's story later in the chapter. For now,
 let's look at how to install Liferay's audit plugins so you can do the same
 thing Harry's about to do. 
 
-### Installing and configuring the audit plugins  
+### Installing and Configuring the Audit Plugins  
 
 Liferay's audit functionality is composed of two parts: a back-end piece that
 hooks into Liferay events and a front-end piece that gives you an interface to
-see what's happening. Both of these are available as EE-only plugins in the
-Customer Portal or Liferay Marketplace, and you'll need to install both to get
-audit functionality working (plugins installation is covered in chapter 13). 
+see what's happening. Both of these plugins are included in the Audit EE app
+which is available on Liferay Marketplace. Please refer to this guide's chapter
+on [Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketplace)
+for information on installing plugins.
 
-Once installed, there are two properties in your `portal-ext.properties` file
-which you can use to tweak the settings. 
+Once installed, you can set two properties in your `portal-ext.properties` file
+to tweak the default settings. 
 
 **com.liferay.portal.servlet.filters.audit.AuditFilter:** By default, this is
 set to `false`, because the audit plugins aren't installed by default. When you
 set it to `true`, the audit hook is able to capture more information about
 events, such as the client host and the client's IP address. 
 
-**audit.message.com.liferay.portal.model.Layout.VIEW:** In the code, pages are
-*layouts*. Setting this to `true`, therefore, records audit events for page
-views. It's turned off by default because this may be too fine-grained for most
-installations. 
+**audit.message.com.liferay.portal.model.Layout.VIEW:** In Liferay's code, pages
+are referred to as *layouts*. Setting this to `true`, therefore, records audit
+events for page views. It's turned off by default because this may be too
+fine-grained for most installations. 
 
 Once you've decided if you're going to use one or both of the two settings
 above, place them in your `portal-ext.properties` file and restart your Liferay
 server. Once it comes up, audit events are captured by Liferay, and you'll be
 able to use them to see what's happening in your portal. 
 
-### Using audit events  
+### Using Audit Events  
 
 Now that you're capturing audit events, it's easy to use them to view activities
-in your portal. Navigate to the control panel and you'll find a new entry in the
-*Portal* section labeled *Audit Reports* (see figure 17.1). 
+in your portal. Navigate to the Control Panel and you'll find a new entry in the
+Configuration section called *Audit Reports* (see the figure below). 
 
-![Figure 18.1: Once the Audit Reports plugins are installed, an entry appears in
-the control panel.](../../images/control-panel-audit-reports.png)
+![Figure 18.1: Once the Audit EE app has been installed, an Audit Reports entry appears in the Control Panel.](../../images/control-panel-audit-reports.png)
 
-Clicking the entry shows you a list of the events Liferay has already captured
-(see figure 17.2), along with an interface for searching for events. You can
-browse the list if you want, but it's likely you'll need to use the search to
-find what you're looking for. 
+Clicking on *Audit Reports* shows you a list of the events Liferay has already
+captured (see the figure beblow), along with an interface for searching for
+events. You can browse the list but you'll likely need to use the search to find
+what you're looking for.
 
-![Figure 18.2: Liferay captures and stores events as soon as the audit plugins
-are installed.](../../images/audit-list-events.png)
+![Figure 18.2: Liferay captures and stores events as soon as the Audit EE app has been installed.](../../images/audit-list-events.png)
 
-Figure 17.2 shows Stephen Professor logged in and did some things on the site.
-To see the detail of any of these events, all you need to do is click one to see
-more information. You'll then see something like figure 17.3. 
+The figure above shows that Joe Bloggs logged in and performed some actions on
+the site. To view details about any of these events, all you need to do is click
+on an entry. You'll then see something like the figure below. 
 
-![Figure 18.3: Clicking an event in the list shows the details of that event.
-This event shows it must've been Stephen Professor's first time logging into the
-site, because he's accepting the terms of use.](../../images/audit-detail.png)
+![Figure 18.3: Clicking an event in the list shows the details of that event. This event shows that Joe Bloggs updated his user account. Specifically, it shows that he updated his `prefixId` from `0` to `11015`. The `prefixId` value represents a prefix for a real name like "Dr.", "Mr.", "Mrs.", or "Ms."](../../images/audit-detail.png)
 
 As you can see, depending on how many users you have in your portal, this list
 can get populated very quickly. For this reason, it's a good idea to keep the
@@ -143,20 +140,22 @@ can get populated very quickly. For this reason, it's a good idea to keep the
 This way, you don't clutter up your audit events with multiple page view events,
 which will definitely be the most often triggered event in your portal. 
 
-Now that you know how to browse and view audit events, let's look at searching
-for specific events. 
+Now that you know how to browse and view audit events, let's learn how to search
+for specific events.
 
-### Viewing audit reports  
+### Viewing Audit Reports  
 
 Finding what you want in a big list of events is, to use the expression, like
-searching for a needle in a haystack. This is why the audit portlet gives you a
+searching for a needle in a haystack. This is why the audit portlet provides a
 robust searching mechanism. By default, it looks pretty simple: there's only a
-single field for searching. Clicking the *advanced* link, however, reveals a
-search dialog broken out by various fields you can use in your search. 
+single field for searching. Clicking the *gear* icon next to the search bar,
+however, reveals an advanced search dialog broken out by various fields you can
+use in your search. 
 
 Let's look at the options we have for search. 
 
-**Match:** You can match all fields you've specified or any single field. 
+**Match:** You can search for matches to *all* the fields you've specified or
+*any* single field. 
 
 **User ID:** Specify the user ID you'd like to search for. This would be the
 user who performed some action in the portal you'd like to audit. 
@@ -198,21 +197,19 @@ need this if you run a "vertical" cluster of multiple VMs on the same machine.
 Using this form, if you wanted to check to see if someone in the portal
 unassigned a user from a particular role, you might search for a resource name
 of *user* and a resource action of *unassign*. The results of such a search
-might look something like figure 17.4. 
+might look something like the figure below. 
 
-![Figure 18.4: Searching audit events is easy with the search form provided by
-the audit portlet. You can quickly drill down to find the types of events you're
-looking for.](../../images/audit-unassign-search.png)
+<!-- Need to wait for UI of the Audit Portlet EE to be updated for 6.2 before
+the screenshot below can be updated. -->
+
+![Figure 18.4: Searching for audit events is easy with the advanced search form provided by the audit portlet. You can specify various search criteria to find the types of events you're looking for.](../../images/audit-unassign-search.png)
 
 Once you have the results of your search, you can click on any of the records
-returned to see the detail page for that record. Figure 17.5 shows, in this
-particular case, the default administrative user removed Stephen Professor from
-the role of Power User. 
+returned to see the detail page for that record. The figure below shows, in this
+case, that the default administrative user removed the Power User role from Joe
+Bloggs.
 
-![Figure 18.5: If you've delegated portal administration to multiple users, you
-can use the audit plugins to determine who made what change. And, of course,
-you'll never leave the default administrative user enabled in a production
-system, right?](../../images/audit-unassign-detail.png)
+![Figure 18.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled on a production system, right?](../../images/audit-unassign-detail.png)
 
 As you can see, Liferay's audit portlets give you a lot of power to see what's
 happening in your portal. You can use this information to troubleshoot problems,
@@ -262,7 +259,7 @@ better day than Melvin is.
 Now that we've seen how you can use audit trails, let's look at some tools and
 best practices for maintaining your Liferay installation.
 
-## Liferay monitoring using Google Analytics  
+## Liferay Monitoring using Google Analytics  
 
 Liferay includes built-in support for Google Analytics, allowing administrators
 to make use of Google's tool set for analyzing site traffic data. When you sign
@@ -279,28 +276,30 @@ for Liferay "out of the box."
 
 Because of this, support for Google Analytics has been built into Liferay, and
 can be turned on through a simple user interface. This allows Liferay
-administrators to make use of Google Analytics on a community by community basis
-and turn it on and off when needed.
+administrators to make use of Google Analytics on a site by site basis and turn
+it on and off when needed. You can sign up for Google Analytics at the Google
+Analytics site here:
+[http://www.google.com/analytics](http://www.google.com/analytics).
 
-To enable Google Analytics support, go to *Site Settings* in the control panel,
-and then select *Analytics* on the right. You'll see a very simple form,
-pictured below. 
+To enable Google Analytics support, navigate to *Site Administration* in the
+Control Panel, expand the *Configuration* area in menu at the left side of the
+screen, then click on *Site Settings*. Click on *Analytics* and you'll see a
+very simple form, pictured below. 
 
-![Figure 18.6: Setting up Google Analytics for your site is very easy: sign up
-for the ID and then enter it into this field.
+![Figure 18.6: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.
 ](../../images/maintaining-google-analytics.png)
 
-Put your Google Analytics ID (which should have been provided to you when you
+Enter your Google Analytics ID (which should have been provided to you when you
 signed up for the service) in the field and click *Save*. All the pages in the
-community you selected will now have the Google Analytics code in them and will
-be tracked. 
+site you selected will now have the Google Analytics code in them and will be
+tracked. 
 
 This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site
 and from where. Next, we discuss some topics germane to maintaining your Liferay
 installation as it's used. Let's start with backup.
 
-## Backing up a Liferay installation  
+## Backing up a Liferay Installation  
 
 Once you have an installation of Liferay Portal running, you'll want to have
 proper backup procedures in place in case of a catastrophic hardware failure of
@@ -308,7 +307,7 @@ some kind. Liferay isn't very different from any other application that may be
 running on your application server. Nevertheless, there are some specific
 components you should include in your backup plan.
 
-### Backing up source code  
+### Backing up Source Code  
 
 If you have extended Liferay or have written any plugins, they should be stored
 in a source code repository such as Git, Subversion, or CVS, unless you're Linus
@@ -325,13 +324,14 @@ need to build your extension and deploy it to a server.
 
 Let's look at the items that need to be backed up in your Liferay installation. 
 
-### Backing up Liferay's file system  
+### Backing up Liferay's File System  
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the
 *Liferay Home* folder, which is generally one folder up from where your
-application server is installed (see chapter 14 for specific details for your
-application server). At a minimum, this file should be backed up, but it is
-generally best to back up your whole application server.
+application server is installed (see the [Installation and Setup](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay)
+chapter of this guide for specific details for your application server). At a
+minimum, this file should be backed up, but it is generally best to back up your
+whole application server.
 
 If you've followed the non-plugin procedure (see chapter 19) to modify your
 Ehcache configuration, you'll have cache configuration files in the deploy
@@ -341,17 +341,17 @@ settings are stored in your source code repository, which is backed up
 separately. 
 
 Liferay stores configuration files, search indexes, and cache information in a
-folder called `data` in Liferay Home. If you're using the File System store or
+folder called `/data` in Liferay Home. If you're using the File System store or
 the Advanced File System store, the media repository is stored here (by default)
 too. You should always back up the contents of your Liferay Home folder.
 
 If you've modified the location where the Document Library stores files, you
 should also back up this location.
 
-That about covers the file system locations Liferay uses. Next, let's discuss
-how to back up Liferay's database.
+That covers the file system locations Liferay uses. Next, let's discuss how to
+back up Liferay's database.
 
-### Backing up Liferay's database  
+### Backing up Liferay's Database  
 
 Liferay's database is the central repository for all of the Portal's information
 and is the most important component that needs to be backed up. You can do this
@@ -411,8 +411,7 @@ place higher up in the hierarchy and select the package name instead of an
 individual class name. If you do this, messages for every class lower in the
 hierarchy will be displayed in your application server's log file.
 
-![Figure 18.7: Log levels can be dynamically changed at runtime, whenever you
-need to debug an issue. ](../../images/maintaining-log-levels.png) 
+![Figure 18.7: Log levels can be dynamically changed at runtime whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near
 the top of the hierarchy (such as `com.liferay`, for example), you may wind up
@@ -437,8 +436,7 @@ the various logging levels:
 To enable your logging messages to appear in your server's log file via the
 control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 18.8: Adding your own logging classes is as simple as specifying it in
-this field.](../../images/maintaining-add-log-category.png) 
+![Figure 18.8: Adding your own logging classes is easy. To add a logging class, just specify it in this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see you can add a logging category. Put in the fully qualified name of
 your class or of the package that contains the classes whose log messages you
