@@ -667,14 +667,21 @@ however, this is not a guarantee everything will work without modification. Ext
 plugins are the most complicating factor in an upgrade, so it is important to
 test as much as possible.
 
-As a general rule, you can upgrade from one major release to the next major
-release. For example, you can upgrade directly from Liferay 5.2.x to 6.0.x, but
-not from 5.2.x to 6.1.x. If you need to upgrade over several major releases,
-you'll need to run the upgrade procedure for each major release until you reach
-the release you want. This doesn't mean you need to run the procedure for every
-point release or service pack; you only need to run the procedure for the major
-releases. A good practice is to use the latest version of each major release to
-upgrade your system. 
+Prior to Liferay 6.1, you could only upgrade from one major release to the next
+major release. For example, you could upgrade directly from Liferay 5.2.x to
+6.0.x, but not from 5.2.x to 6.1.x. If you needed to upgrade over several major
+releases, you needed to run the upgrade procedure for each major release until
+you reached the release you want. This doesn't mean you needed to run the
+procedure for every point release or service pack; you only needed to run the
+procedure for the major releases. A good practice was to use the latest version
+of each major release to upgrade your system. 
+
+Liferay introduced the *seamless upgrade* feature with Liferay 6.1. Seamless
+upgrades allow Liferay to be upgraded by simply pointing the latest version of
+Liferay to the database of the older version. Of course, before upgrading, you
+should test the upgrade in a non-production environment. You should also always
+back up your database and other important information and make all the other
+appropriate preparations that we'll discuss in the section.
 
 Now that we've gotten the general philosophy of upgrading out of the way, let's
 outline the procedure you'll undergo for upgrading a Liferay 6.0 installation to
@@ -688,19 +695,20 @@ You should make a few preparations before performing an upgrade. Specifically,
 you should make sure you've migrated to permission algorithm 6, reviewed your
 image gallery usage, reviewed the defaults of the new version of Liferay, and
 cataloged all the plugins you have installed. After you've performed these
-tasks, you're ready to upgrade. Let's look at them one by one. 
+tasks, you're ready to upgrade. Make sure to test the upgrade in a
+non-production environment before upgrading your production Liferay instance.
+Let's look at the preparatory tasks you should perform one by one. 
 
 ### Migrate to Algorithm 6  
 
-If your Liferay installation has existed for a while, you may be on a different
-permission algorithm than the one that's available in Liferay Portal 6.1.
-Permission algorithms 1-5 were deprecated in Liferay Portal 6.0, and they've now
-been removed in 6.1, which means you must migrate *before* you upgrade. 
+If your Liferay installation has existed for a while, you might be on a
+different permission algorithm than the one that's available in Liferay Portal
+6.1. Permission algorithms 1-5 were deprecated in Liferay Portal 6.0, and
+they've now been removed in 6.1, which means you must migrate *before* you
+upgrade. 
 
 If you're on Liferay 5.2 or below, you need to upgrade to the latest available
-release of Liferay 6.0 first. Please follow the instructions in the [*Liferay
-Portal Administrator's
-Guide*](https://www.liferay.com/documentation/liferay-portal/6.0/administration/-/ai/upgrading-lifer-4)
+release of Liferay 6.0 first. Please follow the instructions in the [*Liferay Portal Administrator's Guide*](https://www.liferay.com/documentation/liferay-portal/6.0/administration/-/ai/upgrading-lifer-4)
 to do this. We will assume for the rest of this section that you have 6.0
 running, and that it's configured to use an older algorithm than algorithm 6. 
 
@@ -721,8 +729,7 @@ Administration* and select *Data Migration* from the menu along the top of the
 screen. A section entitled *Legacy Permissions Migration* appears at the
 bottom of the page.
 
-![Figure 18.9: Update your permissions algorithm by clicking the *Execute*
-button.](../../images/17-convert-permissions-algorithm.png)
+![Figure 18.9: Update your permissions algorithm by clicking the *Execute* button.](../../images/17-convert-permissions-algorithm.png)
 
 Algorithms 5 and 6 do not support adding permissions at the user level. If you
 have permissions set for individual users, the converter can simulate this for
@@ -741,12 +748,11 @@ and modify the algorithm property to show that you're now using algorithm 6:
 
 Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
-you'll need to explicitly set your Image Gallery storage option. 
+might need to explicitly set your Image Gallery storage option. 
 
 ### Migrate Your Image Gallery Images  
 
-Liferay 6.1 introduces a major change to how Liferay handles files. No longer do
-we have a separate Document Library and Image Gallery; instead, these have been
+Liferay 6.1 introduced a major change to how Liferay handles files. Liferay 6.0 and previous versions had a separate Document Library and Image Gallery; instead, these have been
 combined into Documents and Media. If you were using Liferay's Image Gallery to
 store images, these can be migrated over during an upgrade, but you'll have to
 take some extra steps first. 
@@ -807,7 +813,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-### Catalog all the plugins you have installed  
+### Catalog all Installed Plugins  
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -842,7 +848,7 @@ repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-#### Upgrading a bundle  
+#### Upgrading a Bundle  
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
@@ -885,7 +891,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-#### Upgrading using a .war file  
+#### Upgrading Using a .war File  
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -962,10 +968,11 @@ changes in behavior.
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal
 database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
-in *Liferay in Action*, but it is mentioned here because of its feature which
-generates interfaces not only for Java code, but also for web services and
-JavaScript. This means that the method calls for storing and retrieving portal
-objects are all the same, and are generated in the same step.
+in [*Liferay in Action*](http://manning.com/sezov), but it is mentioned here
+because of its feature which generates interfaces not only for Java code, but
+also for web services and JavaScript. This means that the method calls for
+storing and retrieving portal objects are all the same, and are generated in the
+same step.
 
 ![Figure 18.x: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
@@ -974,8 +981,8 @@ how one gets access to those methods (i.e., locally or through web services),
 Liferay provides a consistent interface for accessing portal data that few other
 products can match. The actual interfaces for the various services are covered
 in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
-in *Liferay in Action*. Before these services can be used, administrators need
-to enable users to access these services remotely.
+in [*Liferay in Action*](http://manning.com/sezov). Before these services can be
+used, administrators need to enable users to access these services remotely.
 
 In the default `portal.properties` file, there is a section called **Main
 Servlet**. This section defines the security settings for all of the remote
@@ -1050,11 +1057,12 @@ For example, to get Organization data using a user that has the ID of
 
     http://2:test@localhost:8080/tunnel-web/secure/axis/Portal_OrganizationService
 
-It is important to note here how *Password Policies* (covered in chapter 15) can
-be used in combination with this feature. If you are enforcing password policies
-on your users (requiring passwords to take a certain form, requiring users to
-change their passwords on a periodic basis, etc.), any administrative user
-account which accesses Liferay's web services in a batch job will have its
+It is important to note here how *Password Policies* (covered in this guide's
+chapter on [User Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-portal)
+can be used in combination with this feature. If you are enforcing password
+policies on your users (requiring passwords to take a certain form, requiring
+users to change their passwords on a periodic basis, etc.), any administrative
+user account which accesses Liferay's web services in a batch job will have its
 password expire too.
 
 To prevent this from happening, you can add a new password policy which does not
@@ -1070,12 +1078,32 @@ of two security checks:
 2.  The user ID being used must have permission to access the resources it
     attempts to access.
 
+### Accessing Liferay's JSON Web Services
+
+To see which Liferay service methods are registered and available for use via
+JSON web services, open your browser to the following address:
+
+    http://localhost:8080/api/jsonws
+
+The page lists the portal's registered and exposed service methods. Get each
+method's details by clicking the method name. You can view the full signature of
+each method, all its arguments, the exceptions that can be thrown, and its
+Javadoc! Using a simple form from within your browser, you can even invoke the
+service method for testing purposes.
+
+To list registered services on a plugin (e.g. a custom portlet), don't forget to
+use its context path in your URL:
+
+    http://localhost:8080/[plugin-context]/api/jsonws
+
+This lists the JSON Web Service API for the plugin. 
+
 ### Accessing Liferay's WSDL
 
 After configuring the security settings properly, your first step in obtaining
-access to remote web services is to access the WSDL. If you are on a browser on
-the same machine Liferay is running on, you can do this by accessing the
-following URL:
+access to Liferay's remote SOAP web services is to access the WSDL. If you are
+on a browser on the same machine Liferay is running on, you can do this by
+accessing the following URL:
 
     http://localhost:<port number\>/tunnel-web/axis
 
@@ -1107,9 +1135,8 @@ any language that supports it. You can either save the document to your local
 machine and then generate the client code that way, or use your tool to trigger
 Liferay to generate the document dynamically by using one of the URLs above. For
 further information about developing applications that take advantage of
-Liferay's remote services, please see the [*Liferay Developer
-Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
-*Liferay in Action*.
+Liferay's remote services, please see the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
+[*Liferay in Action*](http://manning.com/sezov).
 
 ## Summary  
 
