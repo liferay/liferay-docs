@@ -1,19 +1,20 @@
 
 # Using Workflow  
 
-Liferay Portal includes a workflow engine called Kaleo. In Greek, this word
+Liferay Portal includes a workflow engine called Kaleo. In Greek, Kaleo 
 means "called ones," which is appropriate for a workflow engine that calls users
 to participate in a process designed for them. Kaleo workflow allows a user to
 define any number of simple to complex business processes/workflows, deploy
 them, and manage them through a portal interface. The processes have knowledge
 of users, groups and roles. You don't have to write a single line of code to
-accomplish this: all you have to do is create a single XML document. And if
+accomplish this: all you have to do is create one XML document. And if
 you're a Liferay EE customer, you get a graphical workflow designer which gives
 you a point and click interface to create workflows. 
 
 To explain how to use Kaleo Workflow, this chapter covers: 
 
--	Installation
+-	Installation <!-- This doesn't match the first section below which is
+	instead entitled Enabling Workflow, so which is it supposed to be? -->
 
 -	Creating workflow definitions
 
@@ -27,38 +28,31 @@ should be familiar with how to use Liferay's Kaleo workflow to set up approval
 process for any kind of content before it is published to your portal. 
 
 ## Enabling workflow  
-
+<!--Should there be installation documentation here? -->
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
-Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo Forms
-EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the plugin
-adds a number of new options to the control panel:
+Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo
+Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the
+plugin adds a *Workflow* option under the *Configuration section of your
+Control Panel. 
 
--   My Workflow Tasks
-
--   Workflow Configuration
-
--   My Submissions
-
--   Workflow
-
-There is one workflow that comes bundled with the `kaleo-web` plugin: Single
+The `kaleo-web` plugin comes bundled with one worfklow called the Single
 Approver Workflow. This workflow requires one approval before an asset can be
 published. One of the conveniences of using Liferay's workflow engine is that
 any roles specified in the workflow definition are created automatically when
-the definition is deployed. This provides a level of integration with the portal
-that third party engines cannot match. The Single Approver Workflow contains
-three roles each with different scopes. The scope of each role can be deduced by
-their names: Site Content Reviewer, Organization Content Reviewer and Portal
-Content Reviewer. 
+the definition is deployed. This provides a level of integration with the
+portal that third party engines cannot match. The Single Approver Workflow
+contains three roles, each with different scopes. You can deduce the scope of
+each role by its name: Site Content Reviewer, Organization Content Reviewer and
+Portal Content Reviewer. 
 
 Let's jump right in and create a workflow process definition. 
 
 ## Creating new workflow definitions  
 
 A Kaleo workflow, called a *process definition*, is defined in an XML file and
-is executed by users on the portal. You can create as many different workflow
-definitions as needed to manage the work done on your portal. You can define new
-user roles in the workflow to manage the approval process or use roles that
+is executed by users of the portal. You can create as many different workflow
+definitions as needed to manage the work done on your portal. Your workflows
+can define new user roles to manage the approval process or use roles that
 already exist in your portal.
 
 The XML file has several parts which define the workflow. To get an idea of how
@@ -66,16 +60,16 @@ this works, we'll examine the default `single-approver-definition.xml` file
 which is included in the Liferay Kaleo plugin.
 
 The key parts of the workflow definition are the asset that's running through
-the workflow, the nodes of the workflow and the transitions between nodes. The
+the workflow, the nodes of the workflow, and the transitions between nodes. The
 asset is any kind of asset registered in Liferay: web content, wiki articles,
-message board threads and more. Developers can create their own assets as well
-to be used with workflow (see [*Liferay in Action*](http://manning.com/sezov) or
-*Liferay Developer's Guide* for more information). Nodes represent stages of the
-workflow and there are several types. Transitions occur between nodes and
+message board threads, and more. Developers can also create their own assets to
+use with workflows (see [*Liferay in Action*](http://manning.com/sezov) or
+*Liferay Developer's Guide* for more information). Nodes represent stages of
+the workflow and there are several types. Transitions occur between nodes and
 indicate what the next node should be. 
 
 Think of workflow as a state machine made up of nodes. A node can be a state, a
-task, a condition, a fork, a join or a timer. Transitions are used to move from
+task, a condition, a fork, a join, or a timer. Transitions are used to move from
 one node to another. Each type of node has different properties. For example,
 states execute actions automatically and require no user input. Tasks block
 until user input completes a transition to another state. The transition then
@@ -94,7 +88,7 @@ Let's look in detail at how you'd create a workflow using a single approver.
 ### Starting a workflow definition  
 
 Below is a diagram of a single approver workflow definition. It has only two
-tasks and two states.  
+tasks and two states. 
 
 ![Figure 11.1: The default single approver workflow. Arrows represent
 transitions and boxes represent states and
