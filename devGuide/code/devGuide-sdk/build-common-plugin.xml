@@ -27,13 +27,21 @@
 		</else>
 	</if>
 
-	<var name="plugin.full.version" value="${lp.version}.${plugin.version}${lp.version.file.suffix}" />
+	<property name="plugin.full.version.default" value="${lp.version}.${plugin.version}${lp.version.file.suffix}" />
 
-	<var name="plugin.file" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.${plugin.packaging}" />
-	<var name="plugin.javadoc.file" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-javadoc.zip" />
-	<var name="plugin.pom.file" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.pom" />
-	<var name="plugin.sources.file" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-sources.${plugin.packaging}" />
-	<var name="plugin.src.file" value="${sdk.dir}/dist/${plugin.name}-src-${plugin.full.version}.zip" />
+	<property name="plugin.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.${plugin.packaging}" />
+	<property name="plugin.javadoc.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-javadoc.zip" />
+	<property name="plugin.pom.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.pom" />
+	<property name="plugin.sources.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-sources.${plugin.packaging}" />
+	<property name="plugin.src.file.default" value="${sdk.dir}/dist/${plugin.name}-src-${plugin.full.version}.zip" />
+
+	<var name="plugin.full.version" value="${plugin.full.version.default}" />
+
+	<var name="plugin.file" value="${plugin.file.default}" />
+	<var name="plugin.javadoc.file" value="${plugin.javadoc.file.default}" />
+	<var name="plugin.pom.file" value="${plugin.pom.file.default}" />
+	<var name="plugin.sources.file" value="${plugin.sources.file.default}" />
+	<var name="plugin.src.file" value="${plugin.src.file.default}" />
 
 	<if>
 		<available file="src" />
@@ -264,7 +272,7 @@
 			classpathref="service.classpath"
 			fork="true"
 			newenvironment="true"
-			outputproperty="service.test.output"
+			outputproperty="build-service.output"
 		>
 			<jvmarg value="-Xms512m" />
 			<jvmarg value="-Xmx1024m" />
@@ -305,16 +313,16 @@
 			</then>
 		</if>
 
-		<echo>${service.test.output}</echo>
+		<delete file="ServiceBuilder.temp" />
+
+		<echo>${build-service.output}</echo>
 
 		<if>
-			<contains string="${service.test.output}" substring="Error" />
+			<contains string="${build-service.output}" substring="Error" />
 			<then>
 				<fail>Service Builder generated exceptions.</fail>
 			</then>
 		</if>
-
-		<delete file="ServiceBuilder.temp" />
 
 		<mkdir dir="docroot/WEB-INF/service-classes" />
 
@@ -363,6 +371,7 @@
 			fork="true"
 			maxmemory="256m"
 			newenvironment="true"
+			outputproperty="build-wsdd.output"
 		>
 			<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
 			<jvmarg value="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger" />
@@ -376,6 +385,15 @@
 			<os family="windows" />
 			<then>
 				<delete file="build-wsdd-classpath.jar" />
+			</then>
+		</if>
+
+		<echo>${build-wsdd.output}</echo>
+
+		<if>
+			<contains string="${build-wsdd.output}" substring="IOException" />
+			<then>
+				<fail>WSDD Builder generated exceptions.</fail>
 			</then>
 		</if>
 	</target>
@@ -662,6 +680,37 @@ Please find a solution that does not require portal-impl.jar.
 			</then>
 		</if>
 
+		<if>
+			<and>
+				<available file="docroot/WEB-INF/src/content" />
+				<resourcecontains resource="docroot/WEB-INF/liferay-hook.xml" substring="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;" />
+			</and>
+			<then>
+				<pathconvert pathsep="${line.separator}&#x9;" property="language.properties.elements">
+					<fileset dir="docroot/WEB-INF/src/content">
+						<include name="Language*.properties" />
+					</fileset>
+					<mapper>
+						<chainedmapper>
+							<flattenmapper />
+							<globmapper
+								from="Language*.properties"
+								to="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;"
+							/>
+						</chainedmapper>
+					</mapper>
+				</pathconvert>
+
+				<copy file="docroot/WEB-INF/liferay-hook.xml" overwrite="true" tofile="docroot/WEB-INF/liferay-hook.xml.processed">
+					<filterchain>
+						<tokenfilter>
+							<replacestring from="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;" to="${language.properties.elements}" />
+						</tokenfilter>
+					</filterchain>
+				</copy>
+			</then>
+		</if>
+
 		<antcall target="merge" />
 	</target>
 
@@ -699,7 +748,7 @@ Please find a solution that does not require portal-impl.jar.
 
 								<for param="import.shared.full.path">
 									<path>
-										<fileset dir="${sdk.dir}/dist" includes="@{import.shared.current}-${lp.version}.1*.jar" />
+										<fileset dir="${sdk.dir}/dist" includes="@{import.shared.current}-${lp.version}.*.jar" />
 									</path>
 									<sequential>
 										<copy
@@ -1285,20 +1334,42 @@ Please find a solution that does not require portal-impl.jar.
 		<antcall target="clean-portal-dependencies" />
 
 		<if>
+			<available file="docroot/WEB-INF/liferay-hook.xml.processed" />
+			<then>
+				<property name="liferay-hook.xml.excludes" value="WEB-INF/liferay-hook.xml*" />
+			</then>
+			<else>
+				<property name="liferay-hook.xml.excludes" value="" />
+			</else>
+		</if>
+
+		<if>
 			<contains string="${app.server.dir}" substring="glassfish" />
 			<then>
 				<zip
 					basedir="${docroot.dir}"
 					destfile="${plugin.file}"
-					excludes="**/META-INF/context.xml,${plugins.war.excludes}"
-				/>
+					excludes="**/META-INF/context.xml,${liferay-hook.xml.excludes},${plugins.war.excludes}"
+				>
+					<zipfileset
+						dir="${docroot.dir}"
+						fullpath="WEB-INF/liferay-hook.xml"
+						includes="WEB-INF/liferay-hook.xml.processed"
+					/>
+				</zip>
 			</then>
 			<else>
 				<zip
 					basedir="${docroot.dir}"
 					destfile="${plugin.file}"
-					excludes="${plugins.war.excludes}"
-				/>
+					excludes="${liferay-hook.xml.excludes},${plugins.war.excludes}"
+				>
+					<zipfileset
+						dir="${docroot.dir}"
+						fullpath="WEB-INF/liferay-hook.xml"
+						includes="WEB-INF/liferay-hook.xml.processed"
+					/>
+				</zip>
 			</else>
 		</if>
 
@@ -1310,7 +1381,13 @@ Please find a solution that does not require portal-impl.jar.
 				<zip destfile="${plugin.src.file}">
 					<zipfileset
 						dir="${docroot.dir}"
+						excludes="${liferay-hook.xml.excludes}"
 						prefix="${plugin.name}-src-${plugin.full.version}"
+					/>
+					<zipfileset
+						dir="${docroot.dir}"
+						fullpath="${plugin.name}-src-${plugin.full.version}/WEB-INF/liferay-hook.xml"
+						includes="WEB-INF/liferay-hook.xml.processed"
 					/>
 				</zip>
 			</then>

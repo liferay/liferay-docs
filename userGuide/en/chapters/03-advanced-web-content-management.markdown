@@ -1,5 +1,5 @@
 
-# Advanced Web Content Management   
+# Advanced Web Content Management [](id=advanced-web-content-management-liferay-portal-6-2-user-guide-03-en)
 
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more
@@ -24,7 +24,7 @@ sections on creating teams and rules for presenting site pages to mobile
 devices. Once finished with this chapter, you'll be the envy of your peers as
 they'll think you really know what you're doing.
 
-## Advanced Content with Structures and Templates  
+## Advanced Content with Structures and Templates [](id=advanced-content-with-structures-and-te-liferay-portal-6-2-user-guide-03-en)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -47,7 +47,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-### Using Structures  
+### Using Structures [](id=using-structures-liferay-portal-6-2-user-guide-03-en)
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -82,7 +82,7 @@ content which scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-#### Editing Structures
+#### Editing Structures [](id=editing-structures-liferay-portal-6-2-user-guide-03-en)
 
 Go back to the Site Administration page and select *Web Content* from the
 Content section. The first way to access the Manage Structures interface is
@@ -150,7 +150,8 @@ Take a moment to add, delete, and rearrange different elements.
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
 <!-- Needs to be replaced for 6.2. -->
-<!-- Icons not appearing at the present time for WC structure editor -->
+<!-- Icons not appearing at the present time for WC structure editor (LPS-35338)
+-->
 
 Liferay supports the following fields in structures:
 
@@ -196,7 +197,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at field settings.
 
-#### Editing Field Settings  
+#### Editing Field Settings [](id=editing-field-settings-liferay-portal-6-2-user-guide-03-en)
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -266,7 +267,7 @@ know what to put into the Body element (example: *This is an HTML text area for
 the body of your content*). Now, when users hover over the Help icon near your
 title, your tip is displayed.
 
-##### Structure Default Values
+##### Structure Default Values [](id=structure-default-values-liferay-portal-6-2-user-guide-03-en)
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
@@ -290,7 +291,7 @@ This form allows you to manage the structure settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, let's demonstrate assigning permissions.
 
-#### Assigning Permissions  
+#### Assigning Permissions [](id=assigning-permissions-liferay-portal-6-2-user-guide-03-en)
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -308,7 +309,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-### Using Templates  
+### Using Templates [](id=using-templates-liferay-portal-6-2-user-guide-03-en)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -325,7 +326,7 @@ created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (FTL, VM, XSL, and CSS)  
+#### Template Types (FTL, VM, XSL, and CSS) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -358,7 +359,7 @@ options.
 <!-- CSS was not available during testing of 6.2 feature. Notified Juan
 Fernandez of missing template language. Bug filed for fix: LPS-37934 -->
 
-#### Adding Templates
+#### Adding Templates [](id=adding-templates-liferay-portal-6-2-user-guide-03-en)
 
 Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -479,7 +480,7 @@ Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
 template.
 
-### Assigning Template Permissions  
+### Assigning Template Permissions [](id=assigning-template-permissions-liferay-portal-6-2-user-guide-03-en)
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -497,10 +498,7 @@ based on the roles and responsibilities within your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how to create RSS feeds in Liferay.
 
-<!-- Skipping RSS Feeds for now. I was unable to add feeds during testing
-(LPS-38500). Need to return to this section for 6.2 editing. -->
-
-## Managing RSS Feeds in Liferay
+## Managing RSS Feeds in Liferay [](id=managing-rss-feeds-in-liferay-liferay-portal-6-2-user-guide-03-en)
 
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
@@ -514,7 +512,7 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
 see how to create RSS feeds in Liferay.
 
-### Managing RSS Feeds from the Control Panel
+### Managing RSS Feeds from the Control Panel [](id=managing-rss-feeds-from-the-control-pan-liferay-portal-6-2-user-guide-03-en)
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
@@ -546,7 +544,7 @@ select a target page for the feed. A feed's target page serves two purposes:
    target page. When users click on such links for "orphaned" articles, the full
    content of the "orphaned" article is displayed on the target page.
 
-![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
 
 To specify a target page, you need to enter the target page's friendly URL. Note
 that friendly URLs do not include the host name. For example, the friendly URL
@@ -603,7 +601,7 @@ set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
-### Using the RSS Portlet
+### Using the RSS Portlet [](id=using-the-rss-portlet-liferay-portal-6-2-user-guide-03-en)
 
 The RSS portlet allows you to display any number of RSS feeds and configure how
 they are displayed. If you're looking for a web-based RSS reader, look no
@@ -648,14 +646,14 @@ in the RSS portlet either above all of the feeds or below all of the feeds. You
 can use these to provide an introduction, description, or footnotes about the
 feeds that you've selected to be displayed.
 
-![Figure 3.10: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
+![Figure 3.10: By default, the RSS portlet is configured to display feeds from Liferay Community Blogs, Yahoo News, and the New York Times. This image displays what the Liferay Community Blogs feed looks like in the RSS portlet.](../../images/rss-portlet-default-view.png)
 
 Now that we've discussed how to create, manage, and use RSS feeds, let's examine
 site templates and page templates. Site templates are a powerful tool for
 managing many similar sites. Let's examine how they work and then we'll look at
 page templates.
 
-## Using Site Templates  
+## Using Site Templates [](id=using-site-templates-liferay-portal-6-2-user-guide-03-en)
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
@@ -739,7 +737,7 @@ By default, the following site templates are provided:
 Now that you know the basics for creating and managing your site templates,
 let's put your knowledge to the test by completing an example.
 
-### Site Templates Example
+### Site Templates Example [](id=site-templates-example-liferay-portal-6-2-user-guide-03-en)
 
 Suppose we need to create the following three sites for Nose-ster's internal
 use: Engineering, Marketing, and Legal. These should be private sites that are
@@ -801,7 +799,7 @@ and share content within the sites. Also, site administrators can add new pages,
 portlets, and content to their sites, further differentiating each department's
 site from the others.
 
-### Propagating Changes from Site Templates to Sites
+### Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-liferay-portal-6-2-user-guide-03-en)
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose
@@ -863,7 +861,7 @@ copied during a site reset.
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
 
-## Using Page Templates  
+## Using Page Templates [](id=using-page-templates-liferay-portal-6-2-user-guide-03-en)
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
@@ -947,7 +945,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-### Exporting and Importing Site Templates and Page Templates  
+### Exporting and Importing Site Templates and Page Templates [](id=exporting-and-importing-site-templates--liferay-portal-6-2-user-guide-03-en)
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be
@@ -981,11 +979,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-## Localization  
-
-Previous versions of Liferay had the ability to create and manage different
-translations of your web content but with Liferay 6.2 we've added several
-improvements.
+## Localization [](id=localization-liferay-portal-6-2-user-guide-03-en)
 
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
@@ -994,22 +988,16 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
-
-<!-- Needs to be replaced for 6.2 -->
-<!-- Very few translation options available at present time (6) -->
+![Figure 3.16: You have many translation languages to choose from for your web content.](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
-When you select a language, a lightbox opens within your browser window enabling
-you to easily compare the original with the new translation. Once you are done
-with the translation, click *Save* and the translation is added to the list of
-*Available Translations*.
+When you select a language, a new window opens within your browser enabling you
+to translate the original web content into the selected language. Once you are
+done with the translation, click *Save* and the translation is added to the list
+of *Available Translations*.
 
-![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
-
-<!-- Needs to be replaced for 6.2 -->
-<!-- Unable to compare translations at this time -- window sizing issues -->
+![Figure 3.17: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -1025,7 +1013,7 @@ steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window. Next, we'll
 discuss how to let users customize their site pages.
 
-## Allowing Users to Customize Site Pages  
+## Allowing Users to Customize Site Pages [](id=allowing-users-to-customize-site-pages-liferay-portal-6-2-user-guide-03-en)
 
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
@@ -1048,7 +1036,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-## Scheduling Web Content  
+## Scheduling Web Content [](id=scheduling-web-content-liferay-portal-6-2-user-guide-03-en)
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way
@@ -1078,7 +1066,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging Page Publication  
+## Staging Page Publication [](id=staging-page-publication-liferay-portal-6-2-user-guide-03-en)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -1132,7 +1120,7 @@ several different versions of sites and pages to be developed at the same time.
 Variations can be created, merged, and published using a Git-like versioning
 system. Let's jump in to see how to use staging.
 
-### Enabling Local Live Staging
+### Enabling Local Live Staging [](id=enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Site administrators can enable Staging for a site via the Site Settings UI. To
 reach this interface, navigate to the Site Administration page of your site,
@@ -1147,7 +1135,7 @@ neither. Page versioning allows you to work in parallel on different versions of
 pages and maintains a history of all page modifications. We discuss page
 versioning in more detail below.
 
-### Enabling Remote Live Staging
+### Enabling Remote Live Staging [](id=enabling-remote-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 When you enable Remote Live staging, the remote site becomes the live
 environment and the current site becomes the staging environment. The remote
@@ -1233,7 +1221,7 @@ use LDAP to copy selected user accounts from your local (staging) Liferay server
 to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
 (EE-only), available on Liferay Marketplace, makes this easy.
 
-### Example: Enabling Local Live Staging
+### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Let's create a Local Live staging environment for Nose-ster's home page. Before
 we begin, let's add a new page. Click *Add &rarr; Page* from the Dockbar in the
@@ -1261,7 +1249,7 @@ it and your local server for remote staging. Either way, once you make a
 selection (either *Local Live* or *Remote Live*), more options become available
 for page versioning and staged portlets.
 
-### Enabling Page Versioning and Staged Portlets
+### Enabling Page Versioning and Staged Portlets [](id=enabling-page-versioning-and-staged-por-liferay-portal-6-2-user-guide-03-en)
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -1292,7 +1280,7 @@ site. But portlets like the Message Boards or Wiki would likely benefit from
 you enable staging and accept the defaults, staging is *not* enabled for the
 collaborative portlets.
 
-### Using the Staging Environment  
+### Using the Staging Environment [](id=using-the-staging-environment-liferay-portal-6-2-user-guide-03-en)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice a colored bar with some new menus just below the Dockbar when you
@@ -1386,7 +1374,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-### Using Site Pages Variations  
+### Using Site Pages Variations [](id=using-site-pages-variations-liferay-portal-6-2-user-guide-03-en)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -1498,7 +1486,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-### Wrapping up Staging  
+### Wrapping up Staging [](id=wrapping-up-staging-liferay-portal-6-2-user-guide-03-en)
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
@@ -1508,7 +1496,7 @@ maintaining a content-rich web site a snap.
 
 Let's examine teams next.
 
-## Creating Teams for Advanced Site Membership Management  
+## Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-member-liferay-portal-6-2-user-guide-03-en)
 
 Teams allow site administrators a greater degree of flexibility than was
 possible using just user groups and roles. They allow site administrators to
@@ -1543,7 +1531,7 @@ ability to edit/manage the team have the ability to manage team permissions.
 That's it! Now your team is ready to perform their functions. Next, let's look
 at how to configure Liferay for mobile devices.
 
-## Displaying Site Pages to Mobile Devices  
+## Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices-liferay-portal-6-2-user-guide-03-en)
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the portal based on the device being used to access Liferay. The
@@ -1740,7 +1728,7 @@ Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job! Now the Liferay site's pages are presented to Android
 and iOS tablet users with the 1 Column layout template.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-03-en)
 
 This chapter has been your guide to advanced Liferay site management and web
 content management. We've seen how you can use Liferay to manage both simple
