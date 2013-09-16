@@ -285,45 +285,49 @@ When creating the notification, you need to specify the `template-language` as
 In this workflow, anyone who is capable of approving the content is notified
 `onAssignment`. This includes administrators and site and organization owners.
 The `role-type` tag helps the system sort out who should receive the
-notification based on the scope and can be set as *community*, *organization* or
-*portal*. 
+notification based on the scope and can be set as *site*, *organization* or
+*portal*. When you specify a `role-type` to define the scope of the workflow
+notification, please not that the  portal role is equvalent to the *regular*
+role-type declaration in our XML snippet below. 
 
-	<assignments>
+<!--So can they use portal in poace of regular or must they specify regular to define a role-type scoped at the portal level?-->
+
+    <assignments>
         <roles>
-		<role>
-            <role-type>community</role-type>
-            <name>Community Administrator</name>
-		</role>
-		<role>
-            <role-type>community</role-type>
-            <name>Community Content Reviewer</name>
-		</role>
-		<role>
-            <role-type>community</role-type>
-            <name>Community Owner</name>
-		</role>
-		<role>
-            <role-type>organization</role-type>
-            <name>Organization Administrator</name>
-		</role>
-		<role>
-              <role-type>organization</role-type>
-              <name>Organization Content Reviewer</name>
-		</role>
-		<role>
-            <role-type>organization</role-type>
-            <name>Organization Owner</name>
-		</role>
-		<role>
-            <role-type>regular</role-type>
-            <name>Portal Content Reviewer</name>
-		</role>
-		<role>
-            <role-type>regular</role-type>
-            <name>Administrator</name>
-		</role>
+            <role>
+                <role-type>organization</role-type>
+                <name>Organization Administrator</name>
+            </role>
+            <role>
+                <role-type>organization</role-type>
+                <name>Organization Content Reviewer</name>
+            </role>
+            <role>
+                <role-type>organization</role-type>
+                <name>Organization Owner</name>
+            </role>
+            <role>
+                <role-type>regular</role-type>
+                <name>Administrator</name>
+            </role>
+            <role>
+                <role-type>regular</role-type>
+                <name>Portal Content Reviewer</name>
+            </role>
+            <role>
+                <role-type>site</role-type>
+                <name>Site Administrator</name>
+            </role>
+            <role>
+                <role-type>site</role-type>
+                <name>Site Content Reviewer</name>
+            </role>
+            <role>
+                <role-type>site</role-type>
+                <name>Site Owner</name>
+            </role>
         </roles>
-	</assignments>
+    </assignments>
 
 Once the content is approved you'll want to transition to a new state. 
 
@@ -333,18 +337,17 @@ In this case, you only need a single approver, then the transition goes to the
 final approved state. In more complex workflows, you might transition to a
 second tier approver.
 
-	<transitions>
-        <transition>
-		<name>approve</name>
-		<target>approved</target>
-		<default>true</default>
-        </transition>
-        <transition>
-		<name>reject</name>
-		<target>update</target>
-		<default>false</default>
-        </transition>
-	</transitions>
+		<transitions>
+			<transition>
+				<name>approve</name>
+				<target>approved</target>
+			</transition>
+			<transition>
+				<name>reject</name>
+				<target>update</target>
+				<default>false</default>
+			</transition>
+		</transitions>
     </task>
 
 Finally, we define our end state. Remember states automatically run all actions
@@ -360,19 +363,29 @@ want, you can change the `<script-language>` to another supported language
 (Ruby, Groovy or Python) and rewrite the action with additional details to meet
 your needs.
 
-    <state>
-	<name>approved</name>
-	<actions>
-        <action>
-		<name>approve</name>
-		<execution-type>onEntry</execution-type>
-		<script>
-        <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);]]>
-		</script>
-		<script-language>javascript</script-language>
-        </action>
-	</actions>
-    </state>
+	<state>
+		<name>approved</name>
+		<metadata>
+			<![CDATA[
+				{"xy":[380,51]}
+			]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>approve</name>
+				<script>
+					<![CDATA[
+						import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
+						import com.liferay.portal.kernel.workflow.WorkflowConstants;
+
+						WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.toStatus("approved"), workflowContext);
+					]]>
+				</script>
+				<script-language>groovy</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+		</actions>
+	</state>
 
 To create longer workflows, you'd create additional states, tasks and
 transitions according to your requirements. For instance, if you wanted to have
@@ -394,8 +407,8 @@ This way, you're not waiting for one manager's approval before you can send the
 notification to the other manager. The below illustration shows how a workflow
 with a fork and a join might be designed. 
 
-<!-- | TODO - I deleted the original one... --> ![Figure 11.2: Parallel Approval
-Design](../../images/kaleo-workflow-parallel-approval.png)
+<!-- | TODO - I deleted the original one... --> 
+![Figure 11.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
 You can transition to a fork from a task or state. From the fork, you can
 transition to multiple tasks or states which occur in parallel. In the previous
@@ -446,11 +459,11 @@ process.
 <!-- | TODO I accidentally removed this one too -->
 ### Timers  
 
-**Timers** are a new workflow feature in 6.1, which help make sure important
-tasks in a workflow aren't forgotten or left undone because of an oversight or
-the absence of someone on the critical path. The basic concept of the timer is
-that after a period of time specified, a specific action occurs. There are two
-main elements for a Timer, the **Task Timer** and the **Timer Action**.
+*Timers* help make sure important tasks in a workflow aren't forgotten or left
+undone because of an oversight or the absence of someone on the critical path.
+The basic concept of the timer is that after a period of time specified, a
+specific action occurs. There are two main elements for a Timer, the *Task
+Timer* and the *Timer Action*.
 
 Timers occur within a Task element and are formatted like:
 
@@ -524,7 +537,7 @@ A Reassignment would be formatted like this:
 			</assignments>
 		</reassignments>
     </timer-actions>
-    
+
 Obviously we can't think of everything, so if you have an idea for using timers
 in your workflow that doesn't fit into our design, you could access Liferay's
 scripting engine to create a custom action to happen after a specified amount of
@@ -562,7 +575,7 @@ sites.
 
 Users are the most important part of the workflow, since they're the ones who do
 all the work. To make a user a part of the workflow process, you assign them a
-role which you defined in your workflow . When you're creating your workflow
+role which you defined in your workflow. When you're creating your workflow
 definition, you can create new roles by defining them in the XML file or by
 using roles which you have already created in your portal. Roles created
 automatically are always portal scoped, so if you want to use site or
@@ -570,28 +583,28 @@ organization scoped roles, create the roles before deploying your workflow to
 the portal.
 
 A portal administrator can create a default workflow definition scheme for each
-application which applies for the entire portal and site and organization
-administrators can customize the settings for their sites and organizations. Now
-that we've seen how to create workflow definitions, let's discuss how to use
-them. 
+application which applies for the entire portal; site and organization
+administrators can customize the settings for their sites and organizations.
+Now that we've seen how to create workflow definitions, let's discuss how to
+use them. 
 
 ## Configuring assets to use workflow process definitions  
 
 Most of your workflow configuration is done via the control panel. Everything
 you need to do in the portal can be done through simple GUI controls.
 
-![Figure 11.3: Adding a Workflow
-Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
+![Figure 11.3: Adding a Workflow Definition](../../images/11-workflow-upload-definition.png)
 
-You can find the Workflow section under the Portal heading in the control panel.
+You can find the Workflow section under the Configuration heading in the control panel.
 There are three options under Workflow: *Definitions*, *Default Configuration*
 and *Submissions*.
 
 If you created a new workflow definition, you need to add it so it can be used
 in the portal. Click *Definitions*. By default, only the Single Approver
-workflow appears here. Clicking *Add* allows you to enter a title for a new
-workflow definition and upload the XML file. Once you add a file here, it's
-added to the portal and is immediately available for use.
+workflow appears here. Clicking *Upload Definition* allows you to enter a title
+for a new workflow definition, browse to your local XML file, and upload it to
+your Liferay instance. Once you add a file here, it's added to the portal and
+is immediately available for use.
 
 Under *Default Configuration*, you can set the workflow behavior (if any) for
 all workflow-enabled applications on the portal. You can choose to use no
@@ -600,8 +613,10 @@ Setting the default configuration causes any newly created sites to default to
 that configuration. An administrator can then edit the definitions for each one
 individually through the *Workflow Configuration* page.
 
-Clicking on *Submissions* will let you view any currently pending assets or any
+In the *Submissions* tab you can see any currently pending assets or any
 assets which were previously approved.
+
+Let's learn how to configure workflows in the Control Panel next.
 
 ### Configuring workflow  
 
@@ -609,13 +624,15 @@ After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Workflow Configuration* and tweak the definitions
 you're using for each site individually.
 
-![Figure 11.4: The Workflow Configuration
-Page](../../images/kaleo-workflow-configuration.png)
+![Figure 11.4: The Workflow Configuration Page](../../images/11-workflow-default-config.png)
 
-Using the context selector drop-down menu in the control panel, you can select
-any site in the portal. All the options under that heading, including Workflow
-Configuration, now apply to that particular site. Using workflow is just as
-easy. 
+By setting default workflow configuration behavior from the Control Panel, your
+specified settings are implemented at the portal scope. If you need to set the
+workflow configuration at the site level, you can do so from Liferay's *Site
+Administration* section. You can get there from the Control Panel by clicking
+*Sites*, clicking on a site from the list, and opening the *Configuration*
+menu. The *Workflow Configuration* option lets you modify workflow behavior for
+the sleected site.
 
 ### My Workflow Tasks  
 
