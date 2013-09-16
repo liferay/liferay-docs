@@ -175,8 +175,7 @@ can only be used on personal pages. These include the Summary, Wall, Friends,
 and Friends' Activities portlets. These portlets can be used to create profile
 pages similar to Facebook's or Google+'s. 
 
-![Figure 9.6: Social Networking Portlets in a Facebook-like
-Layout](../../images/XX-social-networking-personal-portlets.png)
+![Figure 9.6: You can get creative with Social Networking portlets and make a custom designed profile page.](../../images/XX-social-networking-personal-portlets.png)
 
 The Summary portlet provides a quick overview of a user's profile. When posted
 in a user's personal site, it displays the user's name, profile picture and job
@@ -224,7 +223,7 @@ to members' personal sites. With the user group site, you can control whether
 users can modify pages and you can push changes out to users in the future. Once
 the site template is assigned to a user group, you can set the *Default User
 Associations* to have all users be the member of a particular group in *Portal
-Settings* in the control panel. The advantage of this is that it can be managed
+Settings* in the Control Panel. The advantage of this is that it can be managed
 entirely through the GUI and it's easy to configure. If you base your user
 group's site on a template, you can use the *Enable propagation of changes from
 the site template* option to manage all user pages simply by changing the
@@ -241,12 +240,11 @@ information on the `portal-ext.properties` method, see *Default User Private
 Layouts* and *Default User Public Layouts* in chapter 20.
     
 Because it's the recommended method, we'll use the user group method to create
-the layouts. As an administrator, go to the control panel and select *Site
-Templates* from under the *Portal* section. Click *Add* and fill out the form.
+the layouts. As an administrator, go to the Control Panel and select *Site
+Templates* from under the *Sites* section. Click *Add* and fill out the form.
 We'll call our new site template *Social Layout*. Click *Save*.
 
-![Figure 9.7: Creating the Site
-Template](../../images/social-networking-site-template.png)
+![Figure 9.7: You can give your site template a custom name and description and also specify several configuration settings..](../../images/social-networking-site-template.png)
 
 ---
 
@@ -257,21 +255,12 @@ user's ability to add or modify additional pages.
 
 ---
 
-Once you've created the template, choose *Actions &rarr; Manage Pages* for
-*Social Layout* from the Site Templates page, then click *View Pages*. Let's
+Once you've created the template, choose *Actions &rarr; View Pages*. Let's
 change the name of the page from the default to *My Profile* and add some
-portlets to the page. In the screenshot below, we removed the borders to make
-the page look more integrated, and also used Nested Portlets to make the layout
-more interesting.
-
-![Figure 9.8: Social Profile Site
-Template](../../images/social-networking-profile-template.png)
-
-Back in the control panel, select *Users and Organizations* from the *Portal*
-section. Once there click *Add &rarr; User Group*. Name the group *Social
-Users*. When creating a user group, you have the option to set a user group
-site; use this option and select the Social Layout template for your Public
-Pages.
+portlets to the page. Back in the Control Panel, select *User Groups* from the
+*Users* section. Once there, click *Add* and name the group *Social Users*. When
+creating a user group, you have the option to set a user group site; use this
+option and select the Social Layout template for your Public Pages.
 
 Now go to *Portal Settings* and select *Users* from the submenu. From the Users
 page, go to the *Default User Associations* tab and enter *Social Users* in the
@@ -294,13 +283,13 @@ We'll look at a handful of portlets, both those designed specifically for
 connecting users and those that can create connections as a side-effect of just
 getting work done.
 
-The Directory portlet can provide a simple way for users to connect. If we have
-a site dedicated to people with big noses, we can place a directory portlet on
-that site, listing all the users that have joined that site. Users can connect
-by sending requests to other users on that list. This isn't the worst way to get
-users connected but it probably won't be very effective. Why not? Well, other
-than sharing some very basic common interests, we haven't really had any
-interactions.
+The Site Members Directory portlet can provide a simple way for users to
+connect. If we have a site dedicated to people with big noses, we can place a
+Site Members Directory portlet on that site, listing all the users that have
+joined that site. Users can connect by sending requests to other users on that
+list. This isn't the worst way to get users connected but it probably won't be
+very effective. Why not? Well, other than sharing some very basic common
+interests, we haven't really had any interactions.
 
 The Activities portlet provides a similar but more effective means of
 connection. Because it shows a list of what other users are doing, this portlet
@@ -325,21 +314,19 @@ types beyond Friend: your developers can take advantage of these by using
 Liferay's social API. This is covered in *[Liferay in
 Action](http://www.manning.com/sezov)* and the *Liferay Developer's Guide*. Now
 that you've got all these social applications running on your system, you might
-wonder: how can I measure social interaction? How do I make identify the best
+wonder: how can I measure social interaction? How do I identify the best
 contributors to my site? Liferay has an answer: social activity measurements.
 
 ## Measuring social activity  
 
-<!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1.
-Please rewrite. | --> When you have a lot of user interaction on your web site,
-it can be helpful to try to separate the signal from the noise. Liferay contains
-a lot of applications which end users can use to communicate with each other and
-provide information. Some of this information is good and helpful and some of it
-can be rather unhelpful. Using Liferay's Social Activity feature will help show
-which users are making real, valuable contributions.
+When you have a lot of user interaction on your web site, it can be helpful to
+try to separate the signal from the noise. Liferay contains a lot of
+applications which end users can use to communicate with each other and provide
+information. Some of this information is good and helpful and some of it can be
+rather unhelpful. Using Liferay's Social Activity feature will help show which
+users are making real, valuable contributions.
 
-![Figure 9.9: The Social Equity Page of the Control
-Panel](../../images/05-social-equity.png)
+![Figure 9.8: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../images/05-social-equity.png)
 
 To activate Social Activity, you'll first need to determine which collaboration
 applications you want to use Social Activity. There are currently three types of
@@ -355,22 +342,20 @@ actions for blogs. You'll notice each item on the list has dropdowns you can use
 to set the number of participation and contribution points; popularity points
 are tied directly to contribution points. In addition to that, you can expand
 the box by clicking *Limits* in the top right of each list item. You can use
-this to set a limit on how many times a use can perform this activity with a
+this to set a limit on how many times a user can perform this activity with a
 specific asset and receive the requisite points. For some activities, you can
-set limits on both participation and contribution points but on new content
-creation you can only set limits on participation points.
+set limits on both participation and contribution points, but on new content
+creation, you can only set limits on participation points.
 
 It might not be immediately obvious, but for all actions that do not involve the
-creation of a new asset, all of the contribution points always go to the
-original asset creator and all popularity points go to the original asset. That
-means if *Votes on a Blog* is set to have 1 *Participation* point and 5
-*Contribution* points (and therefore 5 *Popularity* points), the user who votes
-on the asset will receive 1 participation point, the user who created the asset
-will receive 5 contribution points, and the asset will receive 5 popularity
-points. 
+creation of a new asset, all of the contribution points go to the original asset
+creator and all popularity points go to the original asset. That means if *Votes
+on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points
+(and therefore 5 *Popularity* points), the user who votes on the asset will
+receive 1 participation point, the user who created the asset will receive 5
+contribution points, and the asset will receive 5 popularity points. 
 
-![Figure 9.10: Setting limits in Social
-Activity](../../images/social-equity-limits.png)
+![Figure 9.9: You can set limits for your site's social activity.](../../images/social-equity-limits.png)
 
 It's easy to assign points--you can arbitrarily assign points for just about
 anything--the challenge is making the points significant in some way. As
@@ -382,7 +367,7 @@ display is the *User Statistics* portlet.
 The User Statistics portlet displays a list of users ranked by an amalgamation
 of their participation and contribution scores. By clicking on the Configuration
 icon for the portlet, you can change some of the specifics of the rankings.
-There are four check boxes that you can enable or disable:
+There are five check boxes that you can enable or disable:
 
 **Rank by Contribution**: If this is checked, a user's contribution score will
 be used as a factor in calculating their rank.
@@ -403,21 +388,19 @@ points, you can click the *plus* button to add one and the *minus* button to
 remove one. You can have as many data points displayed as you want, but
 displaying too many might make your portlet a little unwieldy.
 
-![Figure 9.11: The User Statistics
-portlet](../../images/user-statistics-portlet.png)
+![Figure 9.10: The User Statistics portlet gives rankings to promote user contributions and participation.](../../images/user-statistics-portlet.png)
 
-The **Group Statistics** portlet provides some more advanced data analytics. If
-you add it to a page, and click on the configuration icon, you see that by
-default, it will display one metric *Activities on Assets*. You can click the
-*plus* button to add additional slots, and choose from the dozen or so metrics
-available for each slot, covering virtually any action that a user can perform
-on content on the portal. If you decide that you're displaying too many metrics,
-you can click the *minus* button for a particular slot on the configuration view
-to remove it.
+The *Group Statistics* portlet provides some more advanced data analytics. If
+you add it to a page, and click on the configuration icon, you can select the
+assets to track. You can click the *plus* button to add additional slots, and
+choose from the various metrics available for each slot, covering virtually any
+action that a user can perform on content in the portal. If you decide that
+you're displaying too many metrics, you can click the *minus* button for a
+particular slot on the configuration view to remove it.
 
 There are a wide-ranging number of actions that you can provide social credit
 for. Users can receive credit for everything from subscribing to a blog to
-writing wiki articles. You can easily tweak the numbers in the control panel if
+writing wiki articles. You can easily tweak the numbers in the Control Panel if
 it becomes clear that certain activities are weighted too high or too low.
 
 Social Activity can be an invaluable tool for portals that are heavily driven by
@@ -775,7 +758,7 @@ integration, a gadget editor is included. The gadget editor is a complete
 development environment for gadgets providing syntax highlighting, a preview
 function, undo/redo options, and built in tabs for working on multiple gadgets
 at once. You can also organize and manage gadgets through a simple file manager
-embedded into the portlet. To access the gadget editor, go to the control panel
+embedded into the portlet. To access the gadget editor, go to the Control Panel
 and click on *OpenSocial Gadget Editor* in the *Content* section.
 
 Once you have created and saved a gadget using the editor, click on the wrench
