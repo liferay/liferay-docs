@@ -694,7 +694,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-### Note about permissions for deleting containers 
+### Note about permissions for deleting containers  [](id=lp-6-1-ugen15-note-about-permissions-for-deleting-containers--0)
 
 Liferay Portal contains many types of portal resources upon which permissions
 can be defined. These include both assets and asset containers. The term *asset*
