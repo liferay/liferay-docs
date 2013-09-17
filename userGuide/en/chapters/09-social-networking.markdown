@@ -512,7 +512,7 @@ options for each role on your site.
 If you navigate to *Add* &rarr; *Applications* &rarr; *Gadgets*, you should see the
 *To-Do List* gadget.
 
-![Figure 9.17: You can conveniently list your gadgets within the *Gadgets* category.](../../images/15-opensocial-4.png)
+![Figure 9.15: You can conveniently list your gadgets within the *Gadgets* category.](../../images/15-opensocial-4.png)
 
 In the next section, we'll demonstrate how to share OpenSocial gadgets with
 other sites.
@@ -528,27 +528,38 @@ iGoogle lets users customize their own page and add gadgets to their page. Your
 Liferay Portal users can share their portlets and other OpenSocial gadgets on
 iGoogle or any other OpenSocial-compatible site. Let's try this now.
 
+---
+
+![Tip](../../images/01-tip.png) **Warning:** The iGoogle site will be removed
+completely from Google on November 1, 2013:
+[https://support.google.com/websearch/answer/2664197](https://support.google.com/websearch/answer/2664197).
+Therefore, after the specified date, sharing your Liferay OpenSocial gadgets to
+iGoogle will no longer be possible.
+
+---
+
 <!-- Since Google has discontinued iGoogle (see
 http://googlesystem.blogspot.com/2012/07/igoogle-will-be-discontinued.html),
 this isn't a good example. Can you find another example? -->
+
+<!-- Liferay is only configured to share OpenSocial gadgets with iGoogle.
+Therefore, there are no other examples that can be created. There are other
+sites trying to replace iGoogle (www.ighome.com), but Liferay is not configured
+to share with these sites. -->
 
 For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
 
 1. Add the *Loan Calculator* portlet onto your Liferay page
 
-2. Click the wrench icon in the upper right corner of the portlet and select
+2. Click the gear icon in the upper right corner of the portlet and select
    *Configuration*
-
-    ![Figure 9.18: Select the *Configuration*
-    button.](../../images/15-opensocial-6.png)
 
 3. Select the *Sharing* tab and the *OpenSocial Gadget* sub-tab
 
 4. Check the box labeled *Allow users to add Loan Calculator to iGoogle*. Also,
    replace "localhost:8080" with the name of your public domain and port.
 
-    ![Figure 9.19: Allow users to add your portlet as an OpenSocial Gadget in
-    iGoogle.](../../images/15-opensocial-7.png)
+    ![Figure 9.16: Allow users to add your portlet as an OpenSocial Gadget in iGoogle.](../../images/15-opensocial-7.png)
 
 5. Click Save
 
@@ -556,8 +567,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
    corner of your portlet. There is a new option named *Add to iGoogle*
    available. Click on this button to add your portlet to your iGoogle page.
 
-    ![Figure 9.20: Users simply click the *Add to iGoogle* button to add your
-    portlet to their iGoogle page.](../../images/15-opensocial-8.png)
+    ![Figure 9.17: Users simply click the *Add to iGoogle* button to add your portlet to their iGoogle page.](../../images/15-opensocial-8.png)
 
 Your portlet is now available on your iGoogle page!
 
