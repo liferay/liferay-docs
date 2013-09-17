@@ -452,8 +452,7 @@ This method is a quick way to add a gadget to a single page. To do this, go to
 the *Add* &rarr; *More* menu and add *OpenSocial Gadget* to the page. The
 portlet displays a link to pick a gadget for display:
 
-![Figure 9.12: Configure a gadget to display in your
-portlet.](../../images/15-opensocial-1.png)
+![Figure 9.11: Configure a gadget to display in your portlet.](../../images/15-opensocial-1.png)
 
 Click the configure link and a configuration window opens. Next, you need to
 insert a URL to an OpenSocial gadget. We'll insert the URL for a colorful
@@ -461,14 +460,10 @@ calculator which is:
 
     http://www.labpixies.com/campaigns/calc/calc.xml
 
-![Figure 9.13: Configuring an adhoc gadget with your portlet is as easy as
-pasting the gadget's URL.](../../images/15-opensocial-37.png)
-
 After pasting the URL into the text field, click *Save* and your new gadget is
 visible on your page.
 
-![Figure 9.14: The calculator gadget displays seemlessly on your
-page.](../../images/15-opensocial-2.png)
+![Figure 9.12: The calculator gadget displays seemlessly on your page.](../../images/15-opensocial-2.png)
 
 This particular gadget allows you to change its "skins" to fit your needs.
 Likewise, there are many other user-friendly interactive gadgets that give you
@@ -483,7 +478,7 @@ application. We'll demonstrate this by adding a *To-Do List* gadget for
 portal-wide use.
 
 1. Go to the Control Panel and select *OpenSocial Gadget Publisher* under the
-   *Portal* heading
+   *Apps* heading
 
 2. Click *Publish Gadget*
 
@@ -494,13 +489,11 @@ portal-wide use.
 
 5. Click *Save*
 
-![Figure 9.15: Configure new gadgets with
-ease.](../../images/15-opensocial-38.png)
+![Figure 9.13: Configure new gadgets with ease.](../../images/15-opensocial-38.png)
 
 Your *OpenSocial Gadget Publisher* should now look like this:
 
-![Figure 9.16: Publish gadgets for portal-wide use via the OpenSocial Gadget
-Publisher.](../../images/15-opensocial-3.png)
+![Figure 9.14: Publish gadgets for portal-wide use via the OpenSocial Gadget Publisher.](../../images/15-opensocial-3.png)
 
 Clicking *Actions* next to the gadget enables you to edit, refresh, change
 permissions on, or delete the gadget. Here is a brief listing of what these four
@@ -516,13 +509,12 @@ options for each role on your site.
 
 *Delete:* removes the listing for the gadget. 
 
-If you navigate to *Add* &rarr; *More* &rarr; *Gadgets*, you should see the
+If you navigate to *Add* &rarr; *Applications* &rarr; *Gadgets*, you should see the
 *To-Do List* gadget.
 
-![Figure 9.17: You can conveniently list your gadgets within the *Gadgets*
-category.](../../images/15-opensocial-4.png)
+![Figure 9.17: You can conveniently list your gadgets within the *Gadgets* category.](../../images/15-opensocial-4.png)
 
-In the next section, we will demonstrate how to share OpenSocial gadgets with
+In the next section, we'll demonstrate how to share OpenSocial gadgets with
 other sites.
 
 ### Sharing OpenSocial Gadgets  
