@@ -1,5 +1,12 @@
 
-# Management  
+# Management [](id=management-liferay-portal-6-2-user-guide-16-en)
+
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
 
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever
@@ -24,7 +31,7 @@ This chapter explains how to use the control panel to manage the following:
 Let's begin our examination of Liferay's control panel by looking at how to
 manage users in Liferay Portal.
 
-## The Portal Section of the Control Panel
+## The Portal Section of the Control Panel [](id=the-portal-section-of-the-control-panel-liferay-portal-6-2-user-guide-16-en)
 
 The Portal section of the control panel is used for most administrative tasks.
 You'll find there an interface for the creation and maintenance of the following
@@ -33,7 +40,7 @@ templates, page templates, and roles. Additionally, you can configure many
 settings, including the following: password policies, portal settings, custom
 fields, monitoring, and plugins configuration.
 
-![Figure 16.x: The Portal Section of the control panel allows portal administrators to manage users, organizations, sites, teams, site templates, page templates, and roles, as well as various portal settings.](../../images/portal-section-control-panel.png)
+![Figure 16.1: The Portal Section of the control panel allows portal administrators to manage users, organizations, sites, teams, site templates, page templates, and roles, as well as various portal settings.](../../images/portal-section-control-panel.png)
 
 Since we explained how to manage sites, teams, site templates, and page
 templates in chapters 2 and 3, we won't discuss them in detail here. In this
@@ -49,7 +56,7 @@ only users with the administrator role, which is a portal scoped role, have
 permission to view this section of the control panel. You can, of course, grant
 permissions to one or more sections to custom roles.
 
-## Adding Users  
+## Adding Users [](id=adding-users-liferay-portal-6-2-user-guide-16-en)
 
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the
@@ -58,7 +65,7 @@ Organizations* page under the *Portal* category. Click the *Add* button and
 select *User*. Fill out the Add User form using your name and email address.
 When you are finished, click *Save*.
 
-![Figure 16.1: The Add User Screen](../../images/01-add-user-screen.png)
+![Figure 16.2: The Add User Screen](../../images/01-add-user-screen.png)
 
 After you submit the form, the page reloads with a message saying the save was
 successful. An expanded form appears that allows you to fill out a lot more
@@ -68,7 +75,7 @@ generated and, if Liferay was correctly installed (see chapter 14), an email
 message with the password in it was sent to the user. This, of course, requires
 that Liferay can properly communicate with your SMTP mail server.
 
-![Figure 16.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
+![Figure 16.3: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to
 change the default password for the user ID to something you can remember. You
@@ -94,7 +101,7 @@ the portal. Log out of the portal and then log back in with your own user ID.
 
 We'll next look at some aspects of user management. 
 
-## User Management  
+## User Management [](id=user-management-liferay-portal-6-2-user-guide-16-en)
 
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
@@ -119,7 +126,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-### Organizations 
+### Organizations [](id=organizations-liferay-portal-6-2-user-guide-16-en)
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and
@@ -238,7 +245,7 @@ Organization*. To attach a site when you create an organization, click the
 don't know right now if your organization needs a site, that's fine. You can
 always add one later if the need arises. 
 
-![Figure 16.3: Adding an organization](../../images/01-add-organization-screen.png)
+![Figure 16.4: Adding an organization](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
 
@@ -309,7 +316,7 @@ can be assigned to organizations when they fit into a hierarchical structure.
 Users groups provide a more ad hoc way to group users than sites and
 organizations. Let's look at them next.
 
-## User Groups  
+## User Groups [](id=user-groups-liferay-portal-6-2-user-guide-16-en)
 
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create
@@ -341,7 +348,7 @@ Groups* link and then click the *Add* button. There are only two fields to fill
 out: Name and Description. Click *Save* and you will be redirected back to the
 *User Groups* page of the control panel.
 
-![Figure 16.4: Creating a New User Group](../../images/server-configuration-new-user-group.png)
+![Figure 16.5: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
 Note in the figure above how each user group may have a site, with public and
 private pages. This is a special type of site that determines the base pages on
@@ -355,7 +362,7 @@ certain areas as customizable, just like they can for regular sites. This allows
 users to decide which applications they want to place in certain areas of each
 page, as well as change their configuration.
 
-![Figure 16.5: User Group Actions](../../images/01-editing-a-user-group.png)
+![Figure 16.6: User Group Actions](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions* button
 next to a user group to perform various operations on that group.
@@ -386,7 +393,7 @@ group's Actions menu. Clicking one of these links opens the user group's site in
 a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
-### Creating and Editing a User Group  
+### Creating and Editing a User Group [](id=creating-and-editing-a-user-group-liferay-portal-6-2-user-guide-16-en)
 
 A user group's site can be administered from the control panel. Select *User
 Groups* from the control panel to see a list of existing user groups. To edit a
@@ -405,14 +412,14 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-### Assigning Members to a User Group  
+### Assigning Members to a User Group [](id=assigning-members-to-a-user-group-liferay-portal-6-2-user-guide-16-en)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the control panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
-![Figure 16.6: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
+![Figure 16.7: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be assigned as members of the user group.
 
@@ -431,7 +438,7 @@ assigning a role to users from the roles management UI.
 The next section describes a more advanced usage of user groups: User Group
 Sites.
 
-### User Group Sites  
+### User Group Sites [](id=user-group-sites-liferay-portal-6-2-user-guide-16-en)
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their
@@ -524,14 +531,14 @@ down menu for the user group's public pages and click *Save*. After the page
 reloads you can click to see the pages and make any changes desired, add
 additional pages, etc.
 
-![Figure 16.7: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
+![Figure 16.8: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
 
 Also, try visiting the public site of one of the users who belongs to the user
 group. You will see how all of the pages in the user group appear as part of the
 user site, including the ones copied from the site template and the ones added
 afterwards.
 
-## Roles and Permissions  
+## Roles and Permissions [](id=roles-and-permissions-liferay-portal-6-2-user-guide-16-en)
 
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to
@@ -574,7 +581,7 @@ described as follows:
 
 For more information about teams, please refer to chapter 3.
 
-![Figure 16.8: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
+![Figure 16.9: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
 functions you can perform on your new role, click the *Actions* button.
@@ -598,13 +605,13 @@ role.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-### Defining Permissions on a Role  
+### Defining Permissions on a Role [](id=defining-permissions-on-a-role-liferay-portal-6-2-user-guide-16-en)
 
 Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
 permissions you want to grant to members of the role.
 
-![Figure 16.9: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 16.10: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define
 Permissions*, you will be shown a list of all the permissions defined for that
@@ -636,7 +643,7 @@ control panel. Some control panel portlets have a Configuration button, so you
 can define who gets to see that, as well as who gets to see an application in
 the control panel.
 
-![Figure 16.10: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
+![Figure 16.11: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a
 permission, check the box next to it. If you want to limit the scope of the
@@ -668,7 +675,7 @@ menu and select *User Groups* under the *Control Panel: Portal* heading and
 check the *Access in Control Panel* and *View* permissions so that user group
 managers can manage user groups from the Control Panel.
 
-![Figure 16.11: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
+![Figure 16.12: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
 You might expect that these permissions would be enough to allow users assigned
 to the User Group Manager role to add or remove any users to or from any user
@@ -681,7 +688,7 @@ user groups, they don't have permission to view users at the portal level. This
 means that if they click *Assign Members* for a user group and click on the
 *Available* tab, they'll see an empty list.
 
-![Figure 16.12: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
+![Figure 16.13: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
 
 To fix this, click *Go To* &rarr; *Control Panel*. Click on *Roles* and then
 *Actions* &rarr; *Define Permissions*. Then click on the *Add Permissions*
@@ -694,7 +701,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-### Permission for Delegating Social Activities Configuration
+### Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activi-liferay-portal-6-2-user-guide-16-en)
 
 Liferay 6.2 added a new permission that allows site administrators to delegate
 responsibility for configuring social activities to other users. To assign this
@@ -713,7 +720,7 @@ of the permissions and then click *Save*:
 Once these permissions have been assigned to the chosen role, any users assigned
 to the role will be able to manage your site's Social Activities configuration.
 
-### Note About Permissions for Deleting Containers 
+### Note About Permissions for Deleting Containers [](id=note-about-permissions-for-deleting-con-liferay-portal-6-2-user-guide-16-en)
 
 Liferay Portal contains many types of portal resources upon which permissions
 can be defined. These include both assets and asset containers. The term *asset*
@@ -733,7 +740,7 @@ of the contained assets is *not* a common use case. Nevertheless, it's important
 to note that assets in a container can be indirectly deleted if their asset
 container is deleted.
 
-### Note About the Power Users Role  
+### Note About the Power Users Role [](id=note-about-the-power-users-role-liferay-portal-6-2-user-guide-16-en)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -759,7 +766,7 @@ Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal
 settings you can configure.
 
-## Managing Portal Settings  
+## Managing Portal Settings [](id=managing-portal-settings-liferay-portal-6-2-user-guide-16-en)
 
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
@@ -778,7 +785,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-### Password Policies  
+### Password Policies [](id=password-policies-liferay-portal-6-2-user-guide-16-en)
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration and more.
@@ -845,7 +852,7 @@ policy. You cannot delete the default policy.
 
 Next, let's examine Liferay's Portal Settings.
 
-### Portal Settings  
+### Portal Settings [](id=portal-settings-liferay-portal-6-2-user-guide-16-en)
 
 Most global portal settings can be configured from the Portal Settings section
 of the control panel. The Configuration heading contains the following links:
@@ -875,11 +882,11 @@ newsletters. Any domain names associated with your organization can go here.
 notifications for certain events, such as user registrations, password changes,
 etc. You can customize those messages here.
 
-![Figure 16.13: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
+![Figure 16.14: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
 
-### General  
+### General [](id=general-liferay-portal-6-2-user-guide-16-en)
 
 The General link takes you to a page with three headings: Main Configuration,
 Navigation and Additional Information. Under the Main Configuration heading, you
@@ -892,7 +899,7 @@ page for your portal here as well as default landing and logout pages. Under the
 Additional Information heading, you can specify a Legal name, ID, company type,
 SIC code, ticker symbol, industry and industry type.
 
-### Authentication  
+### Authentication [](id=authentication-liferay-portal-6-2-user-guide-16-en)
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM,
 OpenID, Open SSO and SiteMinder. You can use any of these authentication methods
@@ -950,9 +957,9 @@ email address is an important default for the following reasons:
 
 We'll examine how to set up LDAP authentication next.
 
-## Integrating Liferay Users into your Enterprise  
+## Integrating Liferay Users into your Enterprise [](id=integrating-liferay-users-into-your-ent-liferay-portal-6-2-user-guide-16-en)
 
-### LDAP  
+### LDAP [](id=ldap-liferay-portal-6-2-user-guide-16-en)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
 LDAP directory. There are two places for you to configure the LDAP settings:
@@ -1024,7 +1031,7 @@ for setting this. See below for instructions describing how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-#### Adding LDAP Servers  
+#### Adding LDAP Servers [](id=adding-ldap-servers-liferay-portal-6-2-user-guide-16-en)
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
 If you have more than one, you can arrange the servers by order of preference
@@ -1145,7 +1152,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure 16.14: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 16.15: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
@@ -1182,13 +1189,13 @@ You can also add your own mappings if you wish.
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
 
-![Figure 16.15: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 16.16: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-#### LDAP Options Not Available in the GUI  
+#### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui-liferay-portal-6-2-user-guide-16-en)
 
 Although most of the LDAP configuration can be done from the control panel,
 there are several configuration parameters that are only available by editing
@@ -1245,7 +1252,7 @@ don't, you can replace the values of these properties with phrases from your
 server's error messages. This will enable Liferay to recognize them. Next, let's
 look at the Single Sign-On solutions Liferay supports.
 
-### SSO  
+### SSO [](id=sso-liferay-portal-6-2-user-guide-16-en)
 
 Single Sign-On solutions allow you to provide a single login credential for
 multiple systems. This allows you to have people authenticate to the Single
@@ -1258,7 +1265,7 @@ the extension environment. Alternatively, your organization can choose to
 sponsor support for it. Please contact `sales@liferay.com` for more information
 about this.
 
-### Authentication: Central Authentication Service (CAS)  
+### Authentication: Central Authentication Service (CAS) [](id=authentication-central-authentication-s-liferay-portal-6-2-user-guide-16-en)
 
 CAS is an authentication system originally created at Yale University. It is a
 widely-used open source single sign-on solution and was the first SSO product to
@@ -1320,7 +1327,7 @@ The rest of the settings are various URLs, with defaults included. Change
 finished, click *Save*. After this, when users click the *Sign In* link, they
 will be directed to the CAS server to sign in to Liferay.
 
-### Authentication: Facebook  
+### Authentication: Facebook [](id=authentication-facebook-liferay-portal-6-2-user-guide-16-en)
 
 Liferay Portal also enables users to log in using their Facebook accounts. To
 enable this feature, you simply need to select the *Enable* box and enter the
@@ -1333,7 +1340,7 @@ Liferay to add a user from Facebook. Once selected, a new user is created by
 retrieving four fields from Facebook (first name, last name, email address and
 gender).
 
-### Authentication: NTLM  
+### Authentication: NTLM [](id=authentication-ntlm-liferay-portal-6-2-user-guide-16-en)
 
 NTLM is a Microsoft protocol that can be used for authentication through
 Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
@@ -1353,7 +1360,7 @@ will be a computer account, not a user account.
 
 **Service Password:** Enter the password for the service account.
 
-### Authentication: OpenID  
+### Authentication: OpenID [](id=authentication-openid-liferay-portal-6-2-user-guide-16-en)
 
 OpenID is a new single sign-on standard which is implemented by multiple
 vendors. The idea is multiple vendors can implement the standard and then users
@@ -1385,7 +1392,7 @@ to implement the feature.
 
 OpenID is enabled by default in Liferay but can be disabled here.
 
-### Atlassian Crowd  
+### Atlassian Crowd [](id=atlassian-crowd-liferay-portal-6-2-user-guide-16-en)
 
 Atlassian Crowd is a web-based Single Sign-On product similar to CAS. Crowd can
 be used to manage authentication to many different web applications and
@@ -1395,7 +1402,7 @@ Because Atlassian Crowd implements an OpenID producer, Liferay works and has
 been tested with it. Simply use the OpenID authentication feature in Liferay to
 log in using Crowd.
 
-### Authentication: OpenSSO  
+### Authentication: OpenSSO [](id=authentication-opensso-liferay-portal-6-2-user-guide-16-en)
 
 OpenSSO is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. Liferay integrates with OpenSSO,
@@ -1421,7 +1428,7 @@ your OpenSSO server (i.e., only modify the host name portion of the URLs), click
 the *Enabled* check box and then click *Save*. Liferay will then redirect users
 to OpenSSO when they click the *Sign In* link.
 
-### Authentication: SiteMinder  
+### Authentication: SiteMinder [](id=authentication-siteminder-liferay-portal-6-2-user-guide-16-en)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay
 5.2 introduced built-in integration with SiteMinder. SiteMinder uses a custom
@@ -1439,7 +1446,7 @@ your installation, enter the custom value here.
 When you are finished, click *Save*. Next, let's examine how to configure
 portal-wide user settings.
 
-### Users  
+### Users [](id=users-liferay-portal-6-2-user-guide-16-en)
 
 The Users page of Portal Settings has three tabs: Fields, Reserved Credentials
 and Default User Associations.
@@ -1473,7 +1480,7 @@ defined site templates in certain user groups to pre-populate end users' private
 pages. If there is a particular configuration you want everyone to have, you may
 want to enter those user groups here.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-16-en)
 
 In this chapter, we began to examine Liferay's control panel. Site memberships
 and teams aren't the only way for portal administrators to group and manage

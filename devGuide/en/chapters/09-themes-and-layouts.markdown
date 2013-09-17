@@ -1,4 +1,4 @@
-# Creating Liferay Themes and Layout Templates
+# Creating Liferay Themes and Layout Templates [](id=creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Do you want arrange your pages' portlets differently than
@@ -19,7 +19,7 @@ We'll go over the following topics in this chapter:
 
 Let's get started creating Liferay themes.
 
-## Creating Liferay Themes
+## Creating Liferay Themes [](id=creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
 
 Themes are hot deployable plugins unique to a site served by
 the portal. With themes, you can alter the user interface so completely that
@@ -52,7 +52,7 @@ line or the Liferay IDE.
 
 Let's create a theme! 
 
-### Creating a Theme Project
+### Creating a Theme Project [](id=creating-a-theme-project-liferay-portal-6-2-dev-guide-09-en)
 
 The theme creation process is nearly identical to the portlet creation process
 that we covered in Chapter 3. Our theme will be named *Deep Blue*, so the
@@ -95,7 +95,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-### Setting a Base Theme 
+### Setting a Base Theme [](id=setting-a-base-theme-liferay-portal-6-2-dev-guide-09-en)
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -132,7 +132,7 @@ existing theme that's installed or in your Plugins SDK.
 
 Now that your base theme is set, let's deploy the theme to your portal instance.
 
-### Deploying the Theme 
+### Deploying the Theme [](id=deploying-the-theme-liferay-portal-6-2-dev-guide-09-en)
 
 If you're already familiar with portlet deployment from reading Chapter 3, theme
 deployment will be a piece of cake! You can deploy your theme in Developer
@@ -170,7 +170,7 @@ Let's apply your theme to a page:
 
 Now that you've built and deployed a theme, let's study theme anatomy.
 
-### Anatomy of a Theme Project
+### Anatomy of a Theme Project [](id=anatomy-of-a-theme-project-liferay-portal-6-2-dev-guide-09-en)
 
 Custom themes are created by layering your customizations on top of one of
 Liferay's built-in themes. 
@@ -249,7 +249,7 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-## Using Developer Mode with Themes
+## Using Developer Mode with Themes [](id=using-developer-mode-with-themes-liferay-portal-6-2-dev-guide-09-en)
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
@@ -316,7 +316,7 @@ when you redeploy your theme.
 
 Let's add a thumbnail image for our theme now. 
 
-## Creating a Theme Thumbnail 
+## Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail-liferay-portal-6-2-dev-guide-09-en)
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
@@ -334,26 +334,26 @@ there, along with the *Classic* theme's thumbnail.
 
 Let's learn how to design a theme's look and feel next. 
 
-## Designing a Look and Feel
+## Designing a Look and Feel [](id=designing-a-look-and-feel-liferay-portal-6-2-dev-guide-09-en)
 
 You define a theme's look and feel via a file named `liferay-look-and-feel.xml`
 in the `WEB-INF` directory. 
 
 Let's consider how make your theme configurable to administrative users.
 
-### Making Themes Configurable with Settings 
+### Making Themes Configurable with Settings [](id=making-themes-configurable-with-settings-liferay-portal-6-2-dev-guide-09-en)
 
 You can define settings to make your theme configurable. Create a file named
 `liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
 content:
 
     <?xml version="1.0"?>
-    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.1.0//EN"
-    "http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd">
+    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
 
     <look-and-feel>
         <compatibility>
-            <version>6.1.1+</version>
+            <version>6.2.0+</version>
         </compatibility>
         <theme id="deep-blue" name="Deep Blue">
             <settings>
@@ -445,7 +445,7 @@ company's name in the footer of your site's pages:
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
-Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
+Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
 ![Figure 9.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
@@ -460,14 +460,14 @@ footer, including the slogan.
  to display configurable theme settings properly, like the slogan text area and
  footer checkbox from the previous example. For details, see the [Overriding a
  *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
+ File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
 ---
 
 Next, let's customize your theme's color scheme. 
 
-### Specifying Color Schemes
+### Specifying Color Schemes [](id=specifying-color-schemes-liferay-portal-6-2-dev-guide-09-en)
 
 Specify color schemes with a CSS class name, which of course also lets you
 choose different background images, different border colors, and more. 
@@ -521,7 +521,7 @@ section above.
 
 Let's review the predefined settings available for your theme. 
 
-### Leveraging Portal Predefined Settings 
+### Leveraging Portal Predefined Settings [](id=leveraging-portal-predefined-settings-liferay-portal-6-2-dev-guide-09-en)
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
@@ -540,7 +540,7 @@ file.
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 
 
-#### Portlet Borders
+#### Portlet Borders [](id=portlet-borders-liferay-portal-6-2-dev-guide-09-en)
 
 The theme turns on portlet borders, by default. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false` in your theme's
@@ -562,7 +562,7 @@ the borders as the default:
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
-#### Bullet Styles
+#### Bullet Styles [](id=bullet-styles-liferay-portal-6-2-dev-guide-09-en)
 
 Liferay's Navigation portlet can be configured to use any bullet styles
 inherited by your theme or implementated in your theme. For example, if your
@@ -607,7 +607,7 @@ Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want it. Next, let's take a look at how to
 configure display your site's name. 
 
-#### Site Names 
+#### Site Names [](id=displaying-site-name-via-theme-liferay-portal-6-2-dev-guide-en)
 
 The site name settings let site administrators decide whether to display a
 site's name (i.e., title). But, if you are using using logo, that mentions your
@@ -649,7 +649,7 @@ display from the each site's *Look and Feel* control page.
  
 Let's talk about Liferay's JavaScript library next. 
 
-## Understanding Your Theme's JavaScript Callbacks in `main.js`
+## Understanding Your Theme's JavaScript Callbacks in *main.js* [](id=themes-javascript-callbacks-main-js-liferay-portal-6-2-dev-guide-en)
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
@@ -670,7 +670,7 @@ callbacks:
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
 
-## Importing Resources with Your Themes
+## Importing Resources with Your Themes [](id=importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en)
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -1079,7 +1079,7 @@ and which you can download from Liferay Marketplace.
 
 As promised, we'll show you how to create Layout Templates next. 
 
-## Creating Liferay Layout Templates 
+## Creating Liferay Layout Templates [](id=creating-liferay-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
 By now, you've likely added portlets to a page by dragging them from the *Add*
 menu and dropping them into place. Are there times, though, when you find
@@ -1093,7 +1093,7 @@ make your pages visually pop.
 
 Let's create a custom layout template!
 
-### Creating a Layout Template Project
+### Creating a Layout Template Project [](id=creating-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
 
 With the Plugins SDK you can deploy layout templates as plugins, and creating
 layout templates with Liferay Developer Studio is easier than ever. Let's call
@@ -1131,7 +1131,7 @@ the *create* script, followed by operating system-specific commands:
 Developer Studio's *New Project* wizard and the *create* scripts in terminal
 generate layout template projects in your Plugin SDK's `layouttpl` folder. 
 
-### Anatomy of a Layout Template Project 
+### Anatomy of a Layout Template Project [](id=anatomy-of-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
 
 Let's look at the directory structure of a layout template project and learn
 about its various files:  
@@ -1155,7 +1155,7 @@ and `.wap.tpl` file for each layout template in the `docroot/` folder. The
 Now that you're well-versed on the anatomy of a layout template, let's begin
 exploring layout template files. 
 
-### Layout Template Files 
+### Layout Template Files [](id=layout-template-files-liferay-portal-6-2-dev-guide-09-en)
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each of the template files does: 
@@ -1173,7 +1173,7 @@ Let's see what each of the template files does:
 
 Let's move on to Liferay configuration files.
 
-### Liferay Configuration Files 
+### Liferay Configuration Files [](id=liferay-layout-configuration-files-liferay-portal-6-2-dev-guide-09-en)
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -1186,7 +1186,7 @@ has two Liferay configuration files:
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
 
-### Deploying Layout Templates 
+### Deploying Layout Templates [](id=deploying-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
 If you've ever deployed a theme or portlet, you already know how to deploy
 layout templates! Use Developer Studio or the terminal to deploy your layout
@@ -1212,7 +1212,7 @@ Wait a minute! We can deploy the template, but we still haven't designed it.
 We'll need to add content to the TPL files that were generated when we created
 our layout template. 
 
-### Designing a Layout Template 
+### Designing a Layout Template [](id=designing-a-layout-template-liferay-portal-6-2-dev-guide-09-en)
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
@@ -1268,7 +1268,7 @@ arranged and sized evenly.
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
 
-## Embedding Portlets in a Layout Template 
+## Embedding Portlets in a Layout Template [](id=embedding-portlets-in-a-layout-template-liferay-portal-6-2-dev-guide-09-en)
 
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting
@@ -1363,34 +1363,34 @@ See how simple it is to embed portlets in your pages?
 Wouldn't it be nice to have an organized reference of available layout template
 variables? You're in luck! We'll dive into available variables next!
 
-## Variables Available to Layout a Template
+## Variables Available to Layout a Template [](id=variables-available-to-layout-a-template-liferay-portal-6-2-dev-guide-09-en)
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
 
 | Variable | Type | Description |
 | -------- | ---- | ----------- |
- $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
  $request | javax.servlet.http.HttpServletRequest| |
- $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
- $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Company.html) |
- $user | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $realUser | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $layout | com.liferay.portal.model.Layout | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
+ $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
+ $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Company.html) |
+ $user | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/User.html) |
+ $realUser | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/User.html) |
+ $layout | com.liferay.portal.model.Layout | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Layout.html) |
  $layouts | java.util.List<com.liferay.portal.model.Layout> ||
  $plid | java.lang.Long ||
- $layoutTypePortlet | com.liferay.portal.model.LayoutTypePortlet | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
+ $layoutTypePortlet | com.liferay.portal.model.LayoutTypePortlet | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
  $portletGroupId | java.lang.Long ||
  $locale | java.util.Locale ||
  $timeZone| java.util.TimeZone ||
- $theme | com.liferay.taglib.util.VelocityTaglib | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
- $colorScheme | com.liferay.portal.model.ColorScheme | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/ColorScheme.html) |
- $portletDisplay | com.liferay.portal.theme.PortletDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
+ $theme | com.liferay.taglib.util.VelocityTaglib | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
+ $colorScheme | com.liferay.portal.model.ColorScheme | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/ColorScheme.html) |
+ $portletDisplay | com.liferay.portal.theme.PortletDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
 ---
 
 Now your layout template toolbox is complete. 
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-09-en)
 
 In this chapter, you learned how to customize the look and feel of your Liferay
 Portal by creating custom themes. During this process, you created your own

@@ -1,4 +1,4 @@
-# Leveraging the Asset Framework  
+# Leveraging the Asset Framework [](id=leveraging-the-asset-framework-liferay-portal-6-2-user-guide-06-en)
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
 examined Liferay's most common type of asset: web content. Other types of assets
@@ -32,7 +32,7 @@ to browse content by tags and categories. The Asset Publisher is designed to
 integrate with the Tags Navigation and Categories Navigation portlets to allow
 this.
 
-## Tagging and Categorizing Content  
+## Tagging and Categorizing Content [](id=tagging-and-categorizing-content-liferay-portal-6-2-user-guide-06-en)
 
 Tags and categories are two important tools you can use to help organize
 information on your portal. These tools help users to easily find the content
@@ -50,7 +50,7 @@ each site in the portal. This interface can be used to manage all your tags and
 categories in one place. It is important that you both tag and categorize your
 content when you enter it. Let's take a closer look at tags and categories.
 
-### Tags  
+### Tags [](id=tags-liferay-portal-6-2-user-guide-06-en)
 
 Tags are an important tool that can help organize information on your portal and
 make it easier for users to find the content that they're interested in. Tags
@@ -85,7 +85,7 @@ permissions, delete tags, and add or edit tag properties.
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
 
-### Categories  
+### Categories [](id=categories-liferay-portal-6-2-user-guide-06-en)
 
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and
@@ -157,7 +157,7 @@ Categories* and *Required* checkboxes for vocabularies and categories. The three
 new features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
 
-#### Targeted Vocabularies 
+#### Targeted Vocabularies [](id=targeted-vocabularies-liferay-portal-6-2-user-guide-06-en)
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -174,7 +174,7 @@ vocabulary is configured to be available for Web Content articles and Blog
 entries, but it is not required. It is mandatory, however, for Documents and
 Media files.
 
-#### Single and Multi-valued Vocabularies 
+#### Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies-liferay-portal-6-2-user-guide-06-en)
 
 You can also decide if users can choose one or more categories from the same
 vocabulary to apply to an asset. If a vocabulary is single-valued you can only
@@ -188,7 +188,7 @@ through the categories administration portlet. Edit a vocabulary and deselect
 the *Allow Multiple Categories* checkbox to create a single-valued vocabulary.
 Use the default option to create a multi-valued vocabulary.
 
-#### Separated Widgets 
+#### Separated Widgets [](id=separated-widgets-liferay-portal-6-2-user-guide-06-en)
 
 A third feature of vocabularies and categories is that every vocabulary has its
 own separated widget. These widgets appear in the Categorization section of the
@@ -201,7 +201,7 @@ It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
 of tags and categories: searching for content. 
 
-## Searching for Content in Liferay
+## Searching for Content in Liferay [](id=searching-for-content-in-liferay-liferay-portal-6-2-user-guide-06-en)
 
 To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a
@@ -227,7 +227,7 @@ content, tags, and categories to refine your search. Let's look at the search
 features Liferay provides for specific kinds of content and then examine how to
 use Liferay's faceted search.
 
-### Searching for Specific Types of Content
+### Searching for Specific Types of Content [](id=searching-for-specific-types-of-content-liferay-portal-6-2-user-guide-06-en)
 
 Liferay provides several applications that allow users and administrators to
 search for content. First, there's the Search portlet. The Search portlet can be
@@ -261,7 +261,7 @@ appropriate portlet. For example, if you'd like to search for the term *Liferay*
 among wiki articles, enter the term *Liferay* into the Wiki portlet's search
 bar. 
 
-![Figure 6.x: When using the Wiki portlet's search bar to search for *Liferay*, wiki articles, comments, and attachments containing the word *Liferay* are returned.](../../images/wiki-search.png)
+![Figure 6.7: When using the Wiki portlet's search bar to search for *Liferay*, wiki articles, comments, and attachments containing the word *Liferay* are returned.](../../images/wiki-search.png)
 
 Wiki articles, comments, and text file attachments containing the word *Liferay*
 are returned as search results. The search results clearly show whether an
@@ -272,13 +272,13 @@ tool that allows users to include or not include specific types of assets in a
 search. However, the Search portlet does not return comments or attachments as
 search results.
 
-### Searching for Portal Content Using Facets
+### Searching for Portal Content Using Facets [](id=searching-for-portal-content-using-face-liferay-portal-6-2-user-guide-06-en)
 
 To get started using faceted search, drop the Search portlet on a page and
 search for something. You'll see a page with results on the right and a
 collection of *facets* on the left. 
 
-![Figure 6.7: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search-1.png)
+![Figure 6.8: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search-1.png)
 
 Facets allow users of the Search portlet to select criteria with which to filter
 search results. A facet is a combination of the information about a specific
@@ -306,7 +306,7 @@ memory is more foggy than that, or you're searching for something you're not
 sure is actually there, then the asset tags or asset categories facets may be
 more helpful to you. 
 
-![Figure 6.8: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-2.png)
+![Figure 6.9: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-2.png)
 
 For example, if you searched for a wireless phone, you might be more interested
 in content that has your search terms in it *and* has also been tagged by users.
@@ -319,7 +319,7 @@ search results.
 To drill down into the search, click on a facet to add it to the filter list.
 The results to the right are refined by the selected facets. 
 
-![Figure 6.9: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
+![Figure 6.10: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here, we've refined the search to only show documents. We've also selected one
 of the tags, *cool*, to refine the search. The facets we've selected, *Document*
@@ -329,14 +329,14 @@ the two facets we selected weren't enough to filter our search into a small
 enough list to sort through. In this case, we could further refine the search by
 selecting another facet, as below. 
 
-![Figure 6.10: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
+![Figure 6.11: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
 
 Now we've also selected the *Music* category, which reduces the list of search
 hits on the right. In this way, you can interactively tweak the search results
 to narrow them down, making it easier to find that proverbial needle within the
 haystack. 
 
-#### Asset Types 
+#### Asset Types [](id=asset-types-liferay-portal-6-2-user-guide-06-en)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -352,7 +352,7 @@ might want to tweak the `frequencyThreshold` and the `maxTerms` settings to
 increase the number of asset types displayed past the default of 10. This is
 covered in the section below on search options. 
 
-#### Asset Tags 
+#### Asset Tags [](id=asset-tags-liferay-portal-6-2-user-guide-06-en)
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -361,7 +361,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting the `max terms` property.
 
-#### Asset Categories 
+#### Asset Categories [](id=asset-categories-liferay-portal-6-2-user-guide-06-en)
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
@@ -370,7 +370,7 @@ listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
-### Advanced Searching 
+### Advanced Searching [](id=advanced-searching-liferay-portal-6-2-user-guide-06-en)
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -433,12 +433,12 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-### Setting Search Options 
+### Setting Search Options [](id=setting-search-options-liferay-portal-6-2-user-guide-06-en)
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 6.11: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)
+![Figure 6.12: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
 
@@ -691,7 +691,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see,
 it's not as hard as it looks initially.
 
-### Summary   
+### Summary [](id=summary-liferay-portal-6-2-user-guide-06-en)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable
@@ -710,7 +710,7 @@ contents of their communities.
 Next, we'll look at how the Asset Publisher portlet makes even more extensive
 use of Liferay's asset framework to bring relevant content to users.
 
-## Using the Asset Publisher  
+## Using the Asset Publisher [](id=using-the-asset-publisher-liferay-portal-6-2-user-guide-06-en)
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
@@ -721,7 +721,7 @@ This helps in creating a more dynamic web site: you can place user-created wiki
 entries, blog posts, or message board messages in context with your content.
 Let's examine some of its features.
 
-### Querying for Content  
+### Querying for Content [](id=querying-for-content-liferay-portal-6-2-user-guide-06-en)
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -762,13 +762,13 @@ start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display portlet except that you can select assets of
 any type, not just web content articles.
 
-#### Selecting Assets Manually  
+#### Selecting Assets Manually [](id=selecting-assets-manually-liferay-portal-6-2-user-guide-06-en)
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can configure
 multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.12: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.13: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
 Scope heading. Click the red "X" button at the right to remove a scope from the
@@ -805,7 +805,7 @@ different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
 
-#### Selecting Assets Dynamically  
+#### Selecting Assets Dynamically [](id=selecting-assets-dynamically-liferay-portal-6-2-user-guide-06-en)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
@@ -824,7 +824,7 @@ of multiple types.
 choose whether the content must contain or must not contain any or all of the
 tags or categories that you enter.
 
-![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 6.14: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 Once you've set up your filter rules for dynamically selecting content, you can
 decide how the content will be displayed.
@@ -874,7 +874,7 @@ Note that grouping and ordering rules are only one mechanism to control how your
 content will be displayed. You can refine the display through many other display
 settings which we'll examine next.
 
-### Configuring Display Settings
+### Configuring Display Settings [](id=configuring-display-settings-liferay-portal-6-2-user-guide-06-en)
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
 Configuration window. Here, you can configure many more settings that control
@@ -1016,7 +1016,7 @@ do in the Web Content Display portlet.
   categories for each displayed asset. Then users can click on the tags and
   categories to manually filter the displayed assets.
 
-![Figure 6.14: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
+![Figure 6.15: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
@@ -1025,7 +1025,7 @@ adjust the ones that apply to your situation. You'll want to use the Asset
 Publisher to query for different kinds of assets in the portal that contain
 relevant information for your users.
 
-### Configuring Asset Publisher Subscriptions
+### Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptio-liferay-portal-6-2-user-guide-06-en)
 
 The Asset Publisher portlet supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, open the Asset
@@ -1040,7 +1040,7 @@ Enabling RSS subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
 feed appears in at the bottom of the Asset Publisher portlet.
 
-![Figure 6.x: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+![Figure 6.16: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
 
 Enabling email subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
@@ -1064,7 +1064,7 @@ to your `portal-ext.properties` file and change the number:
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-### Content Display Pages
+### Content Display Pages [](id=content-display-pages-liferay-portal-6-2-user-guide-06-en)
 
 If you've been using Liferay for a while, you might have noticed something about
 how Liferay handles web content--content is never tied directly to a page. While
@@ -1097,7 +1097,7 @@ Display portlet. Click the *Add Web Content* button, enter a title and some
 content, click on *Display Page* at the right, and select the Display Page you
 just created. Then click *Publish*.
 
-![Figure 6.15: You can select a display page for a web content article when creating or editing one.](../../images/04-web-content-display-page.png)
+![Figure 6.17: You can select a display page for a web content article when creating or editing one.](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
@@ -1109,11 +1109,11 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 6.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 6.18: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Next, let's learn about another new feature introduced by Liferay 6.1.
 
-## Defining Content Relationships  
+## Defining Content Relationships [](id=defining-content-relationships-liferay-portal-6-2-user-guide-06-en)
 
 Related Assets is a new feature in Liferay 6.1 that enables you to connect any
 number of assets within a site or across the portal, even if they don't share
@@ -1153,12 +1153,12 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../images/related-assets-portlet-after.png)
+![Figure 6.19: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../images/related-assets-portlet-after.png)
 
 Once you select an asset, its related assets are displayed in the Related Assets
 portlet, as in the image above.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the

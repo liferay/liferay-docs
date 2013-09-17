@@ -1,4 +1,4 @@
-# Using Liferay Frameworks
+# Using Liferay Frameworks [](id=using-liferay-frameworks-liferay-portal-6-2-dev-guide-06-en)
 
 Picture a hot, summer day. You're on vacation, and you're just coming back from
 the beach after a day of frolicking on the sand and in the water. After all
@@ -75,7 +75,7 @@ This chapter covers the following topics:
 
 Let's get cookin' with Liferay's `ServiceContext` class next.
 
-## ServiceContext 
+## ServiceContext [](id=servicecontext-liferay-portal-6-2-dev-guide-06-en)
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -93,12 +93,12 @@ and populate a Service Context, and learn to access Service Context data.
 
 First we'll look at the fields of the `ServiceContext` class. 
 
-### Service Context Fields 
+### Service Context Fields [](id=service-context-fields-liferay-portal-6-2-dev-guide-06-en)
 
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
 
-[http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html).
+[http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html).
 
 Here we'll give you a helpful categorical listing of the fields: 
 
@@ -148,7 +148,7 @@ Here we'll give you a helpful categorical listing of the fields:
 Are you wondering how the `ServiceContext` fields get populated? Good! We'll
 show you that next. 
 
-### Creating and Populating a Service Context  
+### Creating and Populating a Service Context [](id=creating-and-populating-a-service-context-liferay-portal-6-2-dev-guide-en)
 
 Although all the `ServiceContext` class fields are optional, services that
 store any type of content need the scope group ID specified, at least. Here's a
@@ -231,7 +231,7 @@ using `ServiceContext` in calling the `updateStructure` method of the
 
 The example above uses JSON to populate the `ServiceContext`. 
 
-On the front-end, you can use Alloy UI and Liferay UI tags in your forms to
+On the front-end, you can use AlloyUI and Liferay UI tags in your forms to
 extract information and automatically insert the corresponding data into your
 request object. You can see an example at
 `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. 
@@ -243,7 +243,7 @@ point to some file in Liferay. -Rich -->
 
 Next let's see an example of accessing information from a `ServiceContext`. 
 
-### Accessing Service Context Data 
+### Accessing Service Context Data [](id=accessing-service-context-data-liferay-portal-6-2-dev-guide-06-en)
 
 We'll use code snippets from `BlogsEntryLocalServiceImpl.addEntry(...,
 ServiceContext)` to show you how to access information from a `ServiceContext`
@@ -342,7 +342,7 @@ information for your services.
 
 Let's look at Liferay's permissions system next. 
 
-## Security and Permissions 
+## Security and Permissions [](id=security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
 
 The Java portlet standard defines a simple security scheme using portlet roles and
 their mapping to portal roles. On top of that, Liferay provides a fine-grained
@@ -350,7 +350,7 @@ permissions system you can use to implement access security in your custom
 portlets. Here we'll give an overview of the standard Java security system,
 Liferay's permission system, and how to use them in your own portlets. 
 
-### JSR Portlet Security 
+### JSR Portlet Security [](id=jsr-portlet-security-liferay-portal-6-2-dev-guide-06-en)
 
 The JSR specification defines a means to specify roles used by portlets in their
 `portlet.xml` definitions. The role names themselves, however, are not
@@ -451,7 +451,7 @@ how to use it in your portlets. We recommend using Liferay's permission system,
 because it offers a much more robust way of tailoring your application's
 permissions. 
 
-### Liferay's Permission System 
+### Liferay's Permission System [](id=liferays-permission-system-liferay-portal-6-2-dev-guide-06-en)
 
 You can add permissions to your custom portlets using four easy steps (also
 known as DRAC): 
@@ -494,8 +494,8 @@ resources to actions:
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC
-     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
-     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+     "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
 
     <resource-action-mapping>
         <portlet-resource>
@@ -665,8 +665,8 @@ for all built-in Liferay portlets (including the blogs portlet):
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC
-     "-//Liferay//DTD Resource Action Mapping 6.1.0//EN"
-     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+     "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
     
     <resource-action-mapping>
         <resource file="resource-actions/portal.xml" />
@@ -706,7 +706,7 @@ which permissions algorithm is used. For these reasons, I removed the whole
 section. It seems to improve the flow: we just left off talking about portal
 resources in the XML file, and now it goes right into the code. -Rich -->
 
-### Adding a Resource 
+### Adding a Resource [](id=adding-a-resource-liferay-portal-6-2-dev-guide-06-en)
 
 After defining resources and actions, it's time to add resources into the
 permissions system. Resources are added at the same time entities are added to
@@ -769,7 +769,7 @@ example of a blogs entry being removed:
 Great! Now that you know how to work with resource permissions, we'll show you
 how to provide a user interface for managing resource permissions. 
 
-### Adding Permission 
+### Adding Permissions [](id=adding-permissions-liferay-portal-6-2-dev-guide-06-en)
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
@@ -817,7 +817,7 @@ users can configure the permission settings for model resources.
 
 Next we'll show you how to implement permissions checking. 
 
-### Checking Permissions 
+### Checking Permissions [](id=checking-permissions-liferay-portal-6-2-dev-guide-06-en)
 
 The last major step toward implementing permissions for your custom portlet is
 to ensure the configured permissions are enforced. You'll do this by adding
@@ -910,7 +910,7 @@ performance. There are several ways to obtain a permission checker:
 Next you'll optimize permission checking by creating helper classes to do most
 of the heavy lifting. 
 
-### Creating Helper Classes for Permission Checking 
+### Creating Helper Classes for Permission Checking [](id=creating-permission-helper-classes-liferay-portal-6-2-dev-guide-06-en)
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
@@ -986,7 +986,7 @@ You're now equipped to implement security in your custom Liferay portlets!
 
 Next, let's learn how to use the Asset Framework. 
 
-## Asset Framework 
+## Asset Framework [](id=asset-framework-liferay-portal-6-2-dev-guide-06-en)
 
 Liferay's asset framework is a system that allow you to add common functionality
 to your application. For example, you might build an event management
@@ -1059,7 +1059,7 @@ developer would leverage asset framework and the steps required to do so. -Russ
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
 
-#### Adding, Updating, and Deleting Assets 
+#### Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets-liferay-portal-6-2-dev-guide-06-en)
 
 Whenever you create a new entity, you need to let the Asset Framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -1151,7 +1151,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create and modify assets, consider tagging and categorizing
 them. Let's tackle that next. 
 
-#### Entering and Displaying Tags and Categories 
+#### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
 
 In the last section we let Asset Framework know about the tags and categories
 that we associated with a given asset; but how does a content author specify
@@ -1178,10 +1178,10 @@ search for a tag or create a new one or select an existing category.
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's Alloy
-UI Form taglibs, creating fields to enter tags and categories is even simpler.
-You just use `<aui:input name="tags" type="assetTags" />` and `<aui:input
-name="categories" type="assetCategories" />`, respectively. 
+![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's
+AlloyUI Form taglibs, creating fields to enter tags and categories is even
+simpler. You just use `<aui:input name="tags" type="assetTags" />` and
+`<aui:input name="categories" type="assetCategories" />`, respectively. 
 
 ---
 
@@ -1214,7 +1214,7 @@ Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
 tags you can use to leverage Asset Framework's features. 
 
-#### More JSP Tags for Assets 
+#### More JSP Tags for Assets [](id=more-jsp-tags-for-assets-liferay-portal-6-2-dev-guide-06-en)
 
 In addition to tags and categories, there are more features that Asset Framework
 provides. These features allow users to do the following with your assets: 
@@ -1291,7 +1291,7 @@ don't need to do this now, but we should do it later, for the 6.2 release. -Rich
 With Liferay's taglib tags, you can easily apply these features to your assets.
 No problemo, right? So let's get the assets published in your portal. 
 
-#### Publishing Assets with Asset Publisher 
+#### Publishing Assets with Asset Publisher [](id=publishing-assets-with-asset-publisher-liferay-portal-6-2-dev-guide-06-en)
 
 A huge benefit of using the asset framework is that you can leverage the Asset
 Publisher portlet to publish lists of your custom asset types. You can choose
@@ -1599,7 +1599,7 @@ your custom portlets.
 Next, we'll show you how to leverage Liferay's Message Bus in sending messages
 within and between your applications. So let's hop on that bus! 
 
-## Using Message Bus 
+## Using Message Bus [](id=using-message-bus-liferay-portal-6-2-dev-guide-06-en)
 
 The *Message Bus* is a service level API used to exchange messages within
 Liferay. The Message Bus is a mechanism for sending message payloads to
@@ -1630,7 +1630,7 @@ System's architecture.
 "subtopics" list, so I left his change and also changed the subtopics list into
 a paragraph. Russ--> 
 
-### The Message Bus System 
+### The Message Bus System [](id=the-message-bus-system-liferay-portal-6-2-dev-guide-06-en)
 
 The Message Bus system contains the following components: 
 
@@ -1692,7 +1692,7 @@ destinations, senders, listeners, and approaches to sending messages. Next we'll
 show you how easy it is to create your destinations, register listeners, and
 send your messages. To demonstrate, we'll implement a business use case.
 
-### Example Use Case--Procurement Process 
+### Example Use Case--Procurement Process [](id=message-bus-example-procurement-process-liferay-portal-6-2-dev-guide-06-en)
 
 Our use case will consider Jungle Gyms R-Us and its distribution of playground
 equipment, buying the equipment from manufacturers and selling the equipment to
@@ -1729,7 +1729,7 @@ Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
 Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
+Kaleo](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/workflow-with-kal-4)
 to resolve the communication breakdown, but we'll resolve the Jungle Gym's
 communication woes using Message Bus, to show you how it works. 
 Here are the inter-department message exchanges we'll accommodate:
@@ -1744,7 +1744,7 @@ Here are the inter-department message exchanges we'll accommodate:
 
 Let's implement Procurement's request to Finance first. 
 
-### Synchronous Messaging 
+### Synchronous Messaging [](id=synchronous-messaging-liferay-portal-6-2-dev-guide-06-en)
 
 In our example, equipment purchases can't proceed without approval from Finance
 and Legal departments. Since special offers from the manufacturers often only
@@ -2041,7 +2041,7 @@ about the slide's safety ratings!
 Next let's have Procurement notify the Sales and Warehouse departments and
 solicit their feedback.
 
-### Asynchronous Messaging with Callbacks  
+### Asynchronous Messaging with Callbacks [](id=asynchronous-messaging-with-callbacks-liferay-portal-6-2-dev-guide-06-en)
 
 Asynchronous messaging consists of sending a message and then continuing with
 processing without blocking waiting for an immediate response. This allows the
@@ -2240,7 +2240,7 @@ employees.
 
 <!-- Missing transition. --> 
 
-### Asynchronous "Send and Forget" 
+### Asynchronous "Send and Forget" [](id=asynchronous-send-and-forget-liferay-portal-6-2-dev-guide-06-en)
 
 In the *send and forget* model, the sender sends messages and continues
 processing. We'll apply this behavior to Jungle Gym's company-wide new product
@@ -2295,7 +2295,7 @@ Along the way you used Message Bus to implement the following:
 
 <!--
 
-## Social Activities 
+## Social Activities [](id=social-activities-liferay-portal-6-2-dev-guide-06-en)
 
 Needs Content
  
@@ -2303,7 +2303,7 @@ Needs Content
 
 Next we'll show you the Device Detection API and its capabilities. 
 
-## Device Detection 
+## Device Detection [](id=device-detection-liferay-portal-6-2-dev-guide-06-en)
 
 As you know, Internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile Internet
@@ -2332,7 +2332,7 @@ You can create your own plugin to use your device's database. Let's look at
 some simple uses of the Device Detection API and talk about its
 capabilities. 
 
-### Using the Device API 
+### Using the Device API [](id=using-the-device-api-liferay-portal-6-2-dev-guide-06-en)
 
 Let's look at a couple of code snippets to get you started. You can obtain the
 object `Device` from the `themeDisplay` object like this:
@@ -2340,7 +2340,7 @@ object `Device` from the `themeDisplay` object like this:
     Device device = themeDisplay.getDevice();
 
 You can view the API in the [Device
-Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 
@@ -2354,7 +2354,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. You can refer to the Device Javadocs mentioned
 above for assistance.  Let's look at some device capabilities next.
 
-### Device Capabilities
+### Device Capabilities [](id=device-capabilities-liferay-portal-6-2-dev-guide-06-en)
 
 Most of the capabilities of a device can be detected, depending on the device
 detection implementation you're using. The Device Recognition plugin's device
@@ -2383,7 +2383,7 @@ from its built in applications, so they're proven to work in the real world,
 even in high performance portals. 
 
 This section is a placeholder that provides a brief description of the main
-frameworks provided with Liferay 6.1. The following list is a work in progress,
+frameworks provided with Liferay 6.2. The following list is a work in progress,
 since we'll add more sections  to this chapter over time, and some of the
 current sections might evolve into their own chapters as we add more
 information and detailed instructions on how to use them. 
@@ -2420,7 +2420,7 @@ extended information on each of these frameworks.  -->
 <!-- The above section should also be removed. All of these are implemented and
 documented in *Liferay in Action*. -Rich -->
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-06-en)
 
 You've learned how to leverage `ServiceContext` objects in your use of Liferay
 services and how Liferay's permissions and JSR portal security work.

@@ -1,5 +1,5 @@
 
-# Collaboration Suite  
+# Collaboration Suite [](id=collaboration-suite-liferay-portal-6-2-user-guide-08-en)
 
 Liferay Portal ships with a robust suite of collaboration applications which
 you can use to build communities of users for your site. These applications
@@ -24,7 +24,7 @@ how to set up and administer:
 
 Let's jump right in and begin by exploring Blogs.
 
-## Expressing yourself using Blogs  
+## Expressing yourself using Blogs [](id=expressing-yourself-using-blogs-liferay-portal-6-2-user-guide-08-en)
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
 *log*. Blogs were first popularized by web sites such as Slashdot
@@ -57,7 +57,7 @@ entries from multiple users' blogs and put them all in one larger list. We will
 go over how to use both of these portlets to create a blogging site for your
 users.
 
-### The Blogs Portlet  
+### The Blogs Portlet [](id=the-blogs-portlet-liferay-portal-6-2-user-guide-08-en)
 
 The Blogs portlet is available from the *Collaboration* section of the *Add
 &rarr; Applications* menu. Notice that it is an instanceable portlet, meaning
@@ -78,7 +78,7 @@ empty. There are several display options to let you configure it to look the
 way you want it to look. Before we start adding entries, let's configure the
 portlet so that it displays entries the way you want them.
 
-#### Configuring the Blogs Portlet  
+#### Configuring the Blogs Portlet [](id=configuring-the-blogs-portlet-liferay-portal-6-2-user-guide-08-en)
 
 The Blogs portlet is easy to configure. Click on the *Options* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
@@ -150,7 +150,7 @@ options work just like the ones above for blog entries.
 Now that you have the Blogs portlet looking the way you want it, you'll want to
 review permissions for it--especially if you're working on a shared blog. 
 
-#### Permissions  
+#### Permissions [](id=permissions-liferay-portal-6-2-user-guide-08-en)
 
 If you have a personal blog, the default permissions should work well for you.
 If you have a shared blog, you may want to modify the permissions on the blog.
@@ -169,7 +169,7 @@ blog.
 
 Now that everyone's able to post, let's look at how posts work. 
 
-#### Adding Blog Entries  
+#### Adding Blog Entries [](id=adding-blog-entries-liferay-portal-6-2-user-guide-08-en)
 
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
@@ -248,7 +248,7 @@ information from multiple places. For that reason, it also includes the Blogs
 Aggregator portlet so that you can "bubble up" blog entries from multiple users
 and highlight them on your site. Let's look next at how that works. 
 
-### Aggregating Blog Entries  
+### Aggregating Blog Entries [](id=aggregating-blog-entries-liferay-portal-6-2-user-guide-08-en)
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator portlet allows you to publish entries from multiple bloggers on one
@@ -295,7 +295,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Administrator Portlet  
+### The Blogs Administrator Portlet [](id=the-blogs-administrator-portlet-liferay-portal-6-2-user-guide-08-en)
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your
@@ -309,7 +309,7 @@ tools for managing blog entries, your best bet is to use the Blogs portlet.
 Next, let's look at Liferay's improved Calendar portlet available from Liferay
 Marketplace.
 
-## Managing Events and Calendar Resources with Liferay's Calendar Portlet 
+## Managing Events and Calendar Resources with Liferay's Calendar Portlet [](id=managing-events-and-calendar-resources--liferay-portal-6-2-user-guide-08-en)
 
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
@@ -329,7 +329,7 @@ resources, and event invitations.
 that it's available from Marketplace. Briefly describe the differences between
 the CE and EE versions of the new Calendar portlet. -->
 
-### Configuring the Calendar Portlet 
+### Configuring the Calendar Portlet [](id=configuring-the-calendar-portlet-liferay-portal-6-2-user-guide-08-en)
 
 Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
@@ -359,7 +359,7 @@ These options are explained in more detail in the Blogs section.
 
 Next, let's look at how to use the new Calendar portlet.
 
-### Using the Calendar Portlet 
+### Using the Calendar Portlet [](id=using-the-calendar-portlet-liferay-portal-6-2-user-guide-08-en)
 
 The first thing you'll notice about Liferay's new Calendar portlet is its
 revamped look and feel. There's a monthly mini-calendar which provides you with
@@ -371,7 +371,7 @@ divided into hours and half-hours. The month view displays a traditional
 calendar view with days represented as boxes. In the previous section, we saw
 how to configure the default display view of the calendar.
 
-#### Adding New Calendars
+#### Adding New Calendars [](id=adding-new-calendars-liferay-portal-6-2-user-guide-08-en)
 
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To add a new
@@ -405,7 +405,7 @@ change the calendar's default calendar status and flag or unflag the *Enable
 Comments* and *Enable Ratings* checkboxes to enable or disable comments and
 ratings for a calendar's events.
 
-#### Adding Events to a Calendar
+#### Adding Events to a Calendar [](id=adding-events-to-a-calendar-liferay-portal-6-2-user-guide-08-en)
 
 It's very easy to add events to a calendar: just click on any day of the
 calendar and you'll see an event creation popup appear. If you've selected the
@@ -531,7 +531,7 @@ notification emails contain links to their corresponding events. This allows
 users easy access to events in the Calendar portlet so they can respond to event
 invitations.
 
-#### Adding and Using Calendar Resources
+#### Adding and Using Calendar Resources [](id=adding-and-using-calendar-resources-liferay-portal-6-2-user-guide-08-en)
 
 You might be wondering, "It makes sense to invite users and organizations to an
 event, but what about other calendar resources? What are they used for? How can
@@ -569,7 +569,7 @@ and users can have multiple calendars, calendar events can include calendar
 resources and calendar resources have their own schedules of availability. We
 hope this flexible system meets the needs of your organization.
 
-#### Exporting and Importing Calendar Data
+#### Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data-liferay-portal-6-2-user-guide-08-en)
 
 Liferay's Calendar portlet allows data to be exported or imported as LAR files.
 Both calendar events and resources can be exported or imported. As with all LAR
@@ -630,7 +630,7 @@ You must also specify an option for assigning ownership of the imported data:
 Next, let's look at one of the most widely used applications provided by
 Liferay: its message boards.
 
-## Discuss, Ask, and Answer Using the Message Boards  
+## Discuss, Ask, and Answer Using the Message Boards [](id=discuss-ask-and-answer-using-the-messag-liferay-portal-6-2-user-guide-08-en)
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -655,7 +655,7 @@ portlet's title bar and click *Configuration*. There are two rows of tabs. The
 first tab in the top row is titled *Setup*. This is where you can configure the
 application the way you want it to behave on your site.
 
-### General  
+### General [](id=general-liferay-portal-6-2-user-guide-08-en)
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
@@ -705,7 +705,7 @@ Lastly, you can set the amount of time a post is displayed until it is taken
 away. You have options of 24 hours, 7 days, 30 days, and 365 days. After the
 time has passed, the post is removed from the message board.
 
-### Email From  
+### Email From [](id=email-from-liferay-portal-6-2-user-guide-08-en)
 
 This tab allows you to configure the name and email address from which message
 board email notifications are sent. The default name and email address are those
@@ -713,7 +713,7 @@ of the default administrator account: The name is `Test Test` and the email
 address is `test@liferay.com`. Make sure to update this email address to a valid
 one that can be dedicated to notifications.
 
-### Message Added Email  
+### Message Added Email [](id=message-added-email-liferay-portal-6-2-user-guide-08-en)
 
 This tab allows you to customize the email message that users receive when a
 message is added to a topic to which they are subscribed.
@@ -737,13 +737,13 @@ certain variables which you can use in the fields above to customize the email
 message. Some of these variables are for the message board category name, the
 site name, and more.
 
-### Message Updated Email  
+### Message Updated Email [](id=message-updated-email-liferay-portal-6-2-user-guide-08-en)
 
 The Message Updated Email tab is identical to the Message Added Email tab,
 except it defines the email message that users receive whenever a topic is
 updated.
 
-### Thread Priorities  
+### Thread Priorities [](id=thread-priorities-liferay-portal-6-2-user-guide-08-en)
 
 You can define custom priorities for message threads on this tab. These allow
 administrators to tag certain threads with certain priorities in order to
@@ -756,7 +756,7 @@ There is also a field on this form that allows you to select a localized
 language for your priorities. If you need to do this, you can select the
 language from the selection box.
 
-### User Ranks  
+### User Ranks [](id=user-ranks-liferay-portal-6-2-user-guide-08-en)
 
 On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
@@ -791,7 +791,7 @@ rank.
 As with thread priorities, on this tab you can define whether your ranks are
 localized in a particular language.
 
-### RSS  
+### RSS [](id=rss-liferay-portal-6-2-user-guide-08-en)
 
 Message board threads can be published as RSS feeds. This tab allows you to
 enable/disale RSS subscriptions and define how the feeds are generated.
@@ -804,7 +804,7 @@ an abstract, or just the title of a thread.
 
 **Format:** allows you to choose the format: RSS 1.0, RSS 2.0, or Atom 1.0.
 
-### Permissions  
+### Permissions [](id=permissions-liferay-portal-6-2-user-guide-08-en-0)
 
 The default page that the Message Boards portlet displays has three buttons on
 it. Click the one labeled *Permissions*. This allows you to define which roles
@@ -812,7 +812,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Save*.
 
-### Adding Categories
+### Adding Categories [](id=adding-categories-liferay-portal-6-2-user-guide-08-en)
 
 You are now ready to add categories to your message boards. Click the *Add
 Category* button. Enter a name
@@ -864,7 +864,7 @@ Liferay's Message Boards portlet supports two different mechanisms for sending
 email notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists.
 
-### User Subscriptions and Mailing Lists
+### User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists-liferay-portal-6-2-user-guide-08-en)
 
 The first mechanism Liferay uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
@@ -1019,7 +1019,7 @@ if your server supports it.
 When you're finished configuring the mailing list for your category, click
 *Save*. 
 
-### Managing User Subscriptions with the Message Boards Subscription Manager
+### Managing User Subscriptions with the Message Boards Subscription Manager [](id=managing-user-subscriptions-with-the-me-liferay-portal-6-2-user-guide-08-en)
 
 The Message Boards Subscription Manager is available as an app from Liferay
 Marketplace. It allows site administrators to manage the subscriptions of their
@@ -1053,7 +1053,7 @@ unsubscribe a number of users at once. The Message Boards Subscription Manager
 is easy to use but it's a great tool for site administrators who need to make
 sure that certain users receive emails from important message board categories.
 
-### Using the Message Boards  
+### Using the Message Boards [](id=using-the-message-boards-liferay-portal-6-2-user-guide-08-en)
 
 Upon seeing Liferay's Message Boards portlet, your users will immediately
 recognize that the interface is similar to many other implementations they've
@@ -1078,7 +1078,7 @@ has a list of who the top posters to your message boards are. The Banned Users
 tab shows all of the users who have been banned from posting on the message
 boards.
 
-### Posting New Threads  
+### Posting New Threads [](id=posting-new-threads-liferay-portal-6-2-user-guide-08-en)
 
 To post a new thread simply select the *Post New Thread* button. You will see a
 message editing form. The body field on this form is different from that of the
@@ -1134,7 +1134,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-### Message Board Administrative Functions  
+### Message Board Administrative Functions [](id=message-board-administrative-functions-liferay-portal-6-2-user-guide-08-en)
 
 The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
@@ -1161,7 +1161,7 @@ permissions. Message Board administrators can perform all of the functions we
 have already presented, including creating and deleting categories and posting
 threads. In addition to these, a number of other functions are available.
 
-#### Moving Threads  
+#### Moving Threads [](id=moving-threads-liferay-portal-6-2-user-guide-08-en)
 
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
@@ -1174,7 +1174,7 @@ allows you to post a message explaining why the thread was moved. This message
 will be posted as a reply to the thread you are moving. When finished, click
 the *Move Thread* button and the thread will be moved.
 
-#### Deleting Threads  
+#### Deleting Threads [](id=deleting-threads-liferay-portal-6-2-user-guide-08-en)
 
 Users with administrative access to the message boards can delete threads.
 Sometimes users begin discussing topics that are inappropriate or that reveal
@@ -1185,7 +1185,7 @@ Bin* to delete the thread. This does not prevent users from re-posting the
 information, so you may need to be vigilant in deleting threads or consider the
 next option.
 
-#### Banning Users  
+#### Banning Users [](id=banning-users-liferay-portal-6-2-user-guide-08-en)
 
 Unfortunately, sometimes certain users become abusive. If you wind up with a
 user like this, you can certainly make attempts to warn him or her that the
@@ -1202,7 +1202,7 @@ abusive behavior, you can choose to reinstate the user. To do this, click the
 list of all banned users. Find the user in the list and select *Unban this
 User*.
 
-#### Splitting Threads  
+#### Splitting Threads [](id=splitting-threads-liferay-portal-6-2-user-guide-08-en)
 
 Sometimes a thread will go on for a while and the discussion completely changes
 into something else. In this case, you can split the thread where the
@@ -1211,14 +1211,14 @@ Administrative users will see a *Split Thread* link on each post. To split the
 thread, click the link. You will be brought to a form which allows you to add
 an explanation post to the split thread. Click *OK* to split the thread.
 
-#### Editing Posts  
+#### Editing Posts [](id=editing-posts-liferay-portal-6-2-user-guide-08-en)
 
 Administrative users can edit anyone's posts, not just their own. Sometimes
 users will post links to copyrighted material or unsuitable pictures. You can
 edit these posts, which allows you to redact information that should not be
 posted or to censor profanity that is not allowed on your message boards.
 
-#### Permissions  
+#### Permissions [](id=permissions-liferay-portal-6-2-user-guide-08-en-1)
 
 Permissions can be set not only on threads, but also on individual posts. You
 can choose to limit a particular conversation or a post to only a select group
@@ -1230,7 +1230,7 @@ thread, while others are only allowed to view it. Other combinations of the
 above permissions are also possible. Next, let's discuss Liferay's Wiki
 portlet.
 
-## Working together with the Wiki  
+## Working together with the Wiki [](id=working-together-with-the-wiki-liferay-portal-6-2-user-guide-08-en)
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured
 wiki application which has all of the features you would expect in a state of
@@ -1260,7 +1260,7 @@ be familiar to users of other wikis. The portlet provides a handy cheat sheet
 for the syntax on the page editing form, with a link to the full documentation
 if you wish to use some of WikiCreole's advanced features.
 
-### Getting Started with the Liferay Wiki  
+### Getting Started with the Liferay Wiki [](id=getting-started-with-the-liferay-wiki-liferay-portal-6-2-user-guide-08-en)
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
 the portlet to a page using the *Add &rarr; Applications* menu and then click
@@ -1300,7 +1300,7 @@ parameter of the other portlet.
 
 Once you have set the options the way you want them, click *Save*.
 
-### Managing Wikis  
+### Managing Wikis [](id=managing-wikis-liferay-portal-6-2-user-guide-08-en)
 
 The Wiki portlet can contain many wikis. By default, it contains only one,
 called *Main*. To manage Wikis, navigate to your site's *Site Administration
@@ -1367,7 +1367,7 @@ is sent when a page is added or updated.
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
 
-### Adding and Editing Wiki Pages  
+### Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages-liferay-portal-6-2-user-guide-08-en)
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link. You will be brought to
@@ -1422,14 +1422,14 @@ Site Administration page, in the *Content &rarr; Categories* section. Categories
 are hierarchical lists of headings under which you can create wiki pages. This
 allows you to organize your content in a more formal fashion.
 
-### Page Details  
+### Page Details [](id=page-details-liferay-portal-6-2-user-guide-08-en)
 
 When viewing a page, you can view its details by clicking the *Details* link
 which appears in the top right of the page. This allows you to view many
 properties of the page. There are several tabs which organize all of the
 details into convenient categories.
 
-#### Details  
+#### Details [](id=details-liferay-portal-6-2-user-guide-08-en)
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -1461,27 +1461,27 @@ wiki or just to this page.
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-#### History  
+#### History [](id=history-liferay-portal-6-2-user-guide-08-en)
 
 This tab shows a list of all of the versions of the wiki page since it was
 created. You can revert a page back to a previous state and you can also
 compare the differences between versions by selecting the versions and then
 clicking the *Compare Versions* button.
 
-#### Incoming/Outgoing Links  
+#### Incoming/Outgoing Links [](id=incoming-outgoing-links-liferay-portal-6-2-user-guide-08-en)
 
 The next two tabs are for incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-#### Attachments  
+#### Attachments [](id=attachments-liferay-portal-6-2-user-guide-08-en)
 
 The last tab is for attachments. You can attach any file to the wiki. This is
 mostly used to attach images to wiki articles which can then be referenced in
 the text. Referencing them using the proper WikiCreole syntax renders the image
 inline, which is a nice way to include illustrations in your wiki documents.
 
-### Navigating in the Wiki Portlet  
+### Navigating in the Wiki Portlet [](id=navigating-in-the-wiki-portlet-liferay-portal-6-2-user-guide-08-en)
 
 At the top of the portlet is a list of links which allow you to navigate around
 the wiki. Simply click on the wiki's name to begin browsing that wiki. After
@@ -1513,7 +1513,7 @@ The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. Next, we'll look at how
 Liferay handles live chat.
 
-## Find out what others think or do using Polls  
+## Find out what others think or do using Polls [](id=find-out-what-others-think-or-do-using--liferay-portal-6-2-user-guide-08-en)
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of
@@ -1543,7 +1543,7 @@ combine several questions inside a nested portlet to create a survey.
 
 We'll begin by creating a poll.
 
-### Creating a Poll  
+### Creating a Poll [](id=creating-a-poll-liferay-portal-6-2-user-guide-08-en)
 
 On your site's Site Administration page, navigate to the *Polls* link under
 Content. Click the *Add Question* button. A form appears that allows you to fill
@@ -1585,7 +1585,7 @@ further information about permissions, please see chapters 15 and 16.
 As you can see, creating a poll is fairly straightforward. Next, let's complete
 the two-step process and put your poll on a page.
 
-### Adding a Poll to a Page  
+### Adding a Poll to a Page [](id=adding-a-poll-to-a-page-liferay-portal-6-2-user-guide-08-en)
 
 Now that you have created your poll question, it's time to present it to your
 users. Navigate to your site and add the Polls Display portlet to a page. It is
@@ -1629,7 +1629,7 @@ You can also manage the Polls Display portlet by clicking the wrench symbol in
 the upper right corner of the portlet's title bar. Now let's see the poll
 results.
 
-### Viewing the Poll Results  
+### Viewing the Poll Results [](id=viewing-the-poll-results-liferay-portal-6-2-user-guide-08-en)
 
 When you create a poll question, it appears in a list in the Control Panel.
 After users vote in the poll, the data is collected here. If you select it, the
@@ -1654,7 +1654,7 @@ questions or you can use Polls to create a little fun for your community. As
 with most things in Liferay, you are only limited by your imagination. Now
 let's see what you can do with Liferay's Chat feature.
 
-## Staying in touch with the Chat  
+## Staying in touch with the Chat [](id=staying-in-touch-with-the-chat-liferay-portal-6-2-user-guide-08-en)
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a
@@ -1681,7 +1681,7 @@ The Chat portlet displays the number of your friends who are online. Click the
 You can have multiple chats open at a time, and can have one or more of them
 minimized.
 
-### Jabber Server Integration  
+### Jabber Server Integration [](id=jabber-server-integration-liferay-portal-6-2-user-guide-08-en)
 
 Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet.
 Jabber is the original name of the XMPP (Extensible Messaging and Presence
@@ -1698,7 +1698,7 @@ override some properties of your Chat portlet's `portlet.properties` file. You
 could modify your Chat portlet's `portlet.properties` file directly, but it's a
 best practice to override it instead.
 
-#### Installation Steps  
+#### Installation Steps [](id=installation-steps-liferay-portal-6-2-user-guide-08-en)
 
 You can use any chat server that supports Jabber. The Chat portlet's Jabber
 server integration feature was tested with versions 3.7.0 and 3.7.1 of
@@ -1743,7 +1743,7 @@ chat server on a remote machine or chose to not use the default port, change
 3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1
 or higher.
 
-#### Single Sign On  
+#### Single Sign On [](id=single-sign-on-liferay-portal-6-2-user-guide-08-en)
 
 If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet
 will import the user automatically to Jabber after he logs in to the portal.
@@ -1768,7 +1768,7 @@ and your portal is also using LDAP for authentication, you can disable the
 Next, let's look at how you can integrate your email addresses with Liferay's
 Mail portlet.
 
-## Integrating your email with Liferay Mail  
+## Integrating your email with Liferay Mail [](id=integrating-your-email-with-liferay-mai-liferay-portal-6-2-user-guide-08-en)
 
 Liferay's Mail portlet enables your users to interact with their email using an
 easy to use, ubiquitous web interface. If your mail system supports the IMAP
@@ -1842,7 +1842,7 @@ as manage all of your folders in Liferay's Mail portlet.
 The Mail portlet is a great way to integrate a familiar service with other the
 collaboration features that Liferay provides. 
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-08-en)
 
 We have explored many of the portlets in Liferay's collaboration suite. The
 Blogs and Blogs Aggregation portlets can be used to manage shared blogs or blogs

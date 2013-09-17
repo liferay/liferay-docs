@@ -1,4 +1,4 @@
-# Developing Portlet Applications 
+# Developing Portlet Applications [](id=developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en)
 
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
@@ -30,7 +30,7 @@ Liferay:
 
 First, let's create the portlet that we'll use throughout this chapter. 
 
-## Creating a Portlet Project
+## Creating a Portlet Project [](id=creating-a-portlet-project-liferay-portal-6-2-dev-guide-03-en)
 
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
@@ -102,7 +102,7 @@ configuration, and we encourage you to keep your projects in the Plugins SDK.
 
 ---
 
-### Deploying the Portlet 
+### Deploying the Portlet [](id=deploying-the-portlet-liferay-portal-6-2-dev-guide-03-en)
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets
 (and any other plugin types) a breeze. All you need to do is drop the plugin's
@@ -152,7 +152,7 @@ page below.
 
 Congratulations, you've just created your first portlet! 
 
-## Anatomy of a Portlet Project
+## Anatomy of a Portlet Project [](id=anatomy-of-a-portlet-project-liferay-portal-6-2-dev-guide-03-en)
 
 A portlet project is made up of at least three components:
 
@@ -221,7 +221,7 @@ or `<head>`.  Additionally, namespace all CSS classes and element IDs to prevent
 conflicts with other portlets. Liferay provides two tools, a taglib and API
 methods, to generate a namespace for you. 
 
-### A Closer Look at the My Greeting Portlet
+### A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet-liferay-portal-6-2-dev-guide-03-en)
 
 If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 
@@ -379,7 +379,7 @@ There are many more elements that you should be aware of for more advanced
 development. They're all listed in the DTD for this file, which is found in the
 `definitions` folder in the Liferay Portal source code.
 
-## Writing the My Greeting Portlet
+## Writing the My Greeting Portlet [](id=writing-the-my-greeting-portlet-liferay-portal-6-2-dev-guide-03-en)
 
 Let's make our portlet do something useful. First, we'll give it two pages:
 
@@ -391,11 +391,16 @@ The `MVCPortlet` class handles the rendering of our JSPs, so for this example,
 we won't write a single Java class. 
 
 First, since we don't want multiple greetings on the same page, let's make the
-My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`, changing
-the value of the element `instanceable` from `true` to `false`. Here's what it
-looks like:
+My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`. If your
+`portlet` element already has an `instanceable` element, change its value from
+`true` to `false`. If you don't already have an `instanceable` element for your
+portlet, add it. Here's what it looks like: 
 
-    <instanceable>false</instanceable>
+    <portlet>
+        ...
+        <instanceable>false</instanceable>
+        ....
+    </portlet>
 
 Now we'll create our JSP templates. Start by editing `view.jsp`, found in your
 portlet's `docroot` directory. Replace its current contents with the following:
@@ -496,7 +501,7 @@ portal will be able to interpret the taglib and create a URL with enough
 information to render the whole page. 
 
 Second, notice that the form in `edit.jsp` has the prefix `aui`, signifying that
-it's part of the Alloy UI tag library. Alloy greatly simplifies the code
+it's part of the AlloyUI tag library. AlloyUI greatly simplifies the code
 required to create attractive and accessible forms by providing tags that render
 both the label and the field at once. You can also use regular HTML or any other
 taglibs to create forms based on your own preferences. 
@@ -567,7 +572,7 @@ doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
 they're explained in the next section. 
 
-## Understanding the Two Phases of Portlet Execution
+## Understanding the Two Phases of Portlet Execution [](id=understand-portlet-execution-phases-liferay-portal-6-2-dev-guide-03-en)
 
 Our portlet needs two execution phases, the action phase and the render phase.
 Multiple execution phases can be confusing to developers used to regular servlet
@@ -739,7 +744,7 @@ information must pass from the action phase to the render phase, so that the JSP
 knows that the preference has just been saved and can show a message to the
 user. 
 
-## Passing Information from the Action Phase to the Render Phase
+## Passing Information from the Action Phase to the Render Phase [](id=passing-info-from-action-to-render-phase-liferay-portal-6-2-dev-guide-en)
 
 There are two ways to pass information from the action phase to the render
 phase. The first way is through render parameters. In the `processAction` method
@@ -872,7 +877,7 @@ If an error occurred, you'd see this in your portlet:
 The first message is automatically added by Liferay. The second one is the one
 you added in your JSP. 
 
-## Developing a Portlet with Multiple Actions
+## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions-liferay-portal-6-2-dev-guide-en)
 
 Right now our portlet only has two views: the default view and edit view. Adding
 more views is easy, and you can link to them using the `mvcPath` parameter in
@@ -931,7 +936,7 @@ finishing touches on your portlet by first learning about an extension to
 Liferay's portlet specification that generates more elegant URLs for your
 portlets. 
 
-## Adding Friendly URL Mapping to the Portlet
+## Adding Friendly URL Mapping to the Portlet [](id=portlet-friendly-url-mapping-liferay-portal-6-2-dev-guide-03-en)
 
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
@@ -965,17 +970,16 @@ Next, create the file (remove the line break):
     -greeting-friendly-url-routes.xml
 
 Create new directories as necessary. Place the following content into the new
-file:
+file (remove the line break after `{mvcPathName}.jsp`):
 
     <?xml version="1.0"?>
-    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" 
-    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_1_0.dtd">
+    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN" 
+    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
 
     <routes>
         <route>
             <pattern>/{mvcPathName}</pattern>
-            <generated-parameter name="mvcPath">
-                /{mvcPathName}.jsp
+            <generated-parameter name="mvcPath">/{mvcPathName}.jsp\
             </generated-parameter>
         </route>
     </routes>
@@ -994,7 +998,7 @@ For more information on friendly URL mapping, there's a detailed discussion in
 [*Liferay in Action*](http://manning.com/sezov). Our next step here is to
 explore localization of the portlet's user interface. 
 
-## Localizing Your Portlet
+## Localizing Your Portlet [](id=localizing-your-portlet-liferay-portal-6-2-dev-guide-03-en)
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
@@ -1096,7 +1100,7 @@ That's all you need to do to leverage Liferay's core localization keys. If you
 need to add localization keys, follow the instructions below to deliver locally
 tailored portlets to your customers. 
 
-### Your Localization Plan 
+### Your Localization Plan [](id=your-localization-plan-liferay-portal-6-2-dev-guide-03-en)
 
 First consider some questions that will make our life easier as we develop your
 localization:
@@ -1112,7 +1116,7 @@ localization:
 
 Let's proceed, assuming you answered "yes" to all of the above questions. 
 
-### Create Resource Bundles 
+### Create Resource Bundles [](id=creating-a-portlet-resource-bundle-liferay-portal-6-2-dev-guide-03-en)
 
 First, let's create resource bundles files for translating the fictional
 portlets My Finances, Asset Ticker and Portfolio Manager. All three portlets
@@ -1202,7 +1206,7 @@ Production environment.
 
 Next, let's localize titles and descriptions of our various fictitious portlets. 
 
-### Portlet Title and Description in Control Panel
+### Portlet Title and Description in Control Panel [](id=portlet-title-description-in-control-panel-liferay-portal-6-2-dev-guide-en)
 
 You may have noticed that your Control Panel-enabled portlets are missing that
 super-fancy must-have portlet title and description in Control Panel. To make
@@ -1276,7 +1280,7 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 
 ---
 
-### Overriding Liferay Portal Translations
+### Overriding Liferay Portal Translations [](id=overriding-liferay-portal-translations-liferay-portal-6-2-dev-guide-03-en)
 
 If you want your translations available throughout the portal, or if you want to
 override an existing translation, refer to Chapter 10 of this guide,
@@ -1286,7 +1290,7 @@ keys with other portlets, as well as override existing Liferay translations.
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
-## Creating Plugins to Extend Plugins
+## Creating Plugins to Extend Plugins [](id=creating-plugins-to-extend-plugins-liferay-portal-6-2-dev-guide-03-en)
 
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
@@ -1358,7 +1362,7 @@ If there's no key you can use, you can create your own, as described in this
 chapter. Liferay gives you the tools to make localization possible, and uses a
 web service to provide rudimentary translations. 
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-03-en)
 
 You've covered a lot of ground learning Liferay Portlet development. You created
 a portlet project, studied its anatomy, and created the "My Greeting Portlet".

@@ -1,4 +1,4 @@
-# What's New in Liferay 6.2 APIs?
+# What's New in Liferay 6.2 APIs? [](id=whats-new-in-liferay-6-2-apis-liferay-portal-6-2-dev-guide-en)
 
 Liferay Portal 6.2 offers a host of new features and updates to the previous
 release. Our guide to *Using Liferay Portal 6.2* shows you how to use these

@@ -1,4 +1,4 @@
-# Personalization and Customization  
+# Personalization and Customization [](id=personalization-and-customization-liferay-portal-6-2-user-guide-07-en)
 
 In this chapter, we discuss several ways Liferay users can customize pages,
 applications, and the way they use your portal. We'll cover the following
@@ -23,7 +23,7 @@ rules engine which allows administrators to create custom portal rules and
 simplify complex blocks of code containing lots of `if-else` statements. Let's
 start by discussing personal sites.
 
-## User Personal Sites  
+## User Personal Sites [](id=user-personal-sites-liferay-portal-6-2-user-guide-07-en)
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
@@ -104,7 +104,7 @@ Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal. Next, let's
 look at how users can customize applications.
 
-## Page Customizations  
+## Page Customizations [](id=page-customizations-liferay-portal-6-2-user-guide-07-en)
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
@@ -199,7 +199,7 @@ In addition to granting the ability to customize portlet configurations, the
 and to import or export portlet settings. Next, let's look at how to use
 application display templates.
 
-## Using Application Display Templates 
+## Using Application Display Templates [](id=using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
 
 Application display templates work similarly to site and page templates, but at
 the portlet level. The application display template (ADT) framework allows
@@ -353,7 +353,7 @@ Customizing the user interface of Liferay's bundled portlets provides the
 ultimate customization experience for Liferay users. Next, let's look at how to
 use Liferay's rules engine.
 
-## Using Liferay's rules engine
+## Using Liferay's rules engine [](id=using-liferays-rules-engine-liferay-portal-6-2-user-guide-07-en)
 
 <!-- Befofe this section can be updated for 6.2, need to wait until the 6.2
 Drools EE plugin (or app) is available from the customer portal (or
@@ -365,7 +365,7 @@ Liferay Portal Enterprise Edition provides an implementation of a JSR-94
 compliant rules engine. This rules engine is provided as a Web Plugin and is
 based on the popular open source Drools project. 
 
-### Why use a rules engine?  
+### Why use a rules engine? [](id=why-use-a-rules-engine-liferay-portal-6-2-user-guide-07-en)
 
 If you are not familiar with rules engines, you may be wondering why you would
 want to use one. In most applications, complex rule processing often takes the
@@ -394,7 +394,7 @@ significant amount of money.
 After all this, you may be interested in using Liferay's rules engine, so let's
 get started with it. 
 
-### Installation  
+### Installation [](id=installation-liferay-portal-6-2-user-guide-07-en)
 
 The Drools Web Plugin is available to Liferay Enterprise Edition customers
 through Liferay Marketplace. Its name is `Drools EE`, and you'll find it
@@ -409,7 +409,7 @@ Drools Portlet is available through the Customer Portal.
 
 Let's examine the sample portlet to see how it works. 
 
-#### Configuring the sample Drools portlet  
+#### Configuring the sample Drools portlet [](id=configuring-the-sample-drools-portlet-liferay-portal-6-2-user-guide-07-en)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
@@ -461,7 +461,7 @@ Drools Portlet added to the page.
 Now that you can see how it works in practice, let's look closer at the rules
 themselves. 
 
-#### Rules Definitions  
+#### Rules Definitions [](id=rules-definitions-liferay-portal-6-2-user-guide-07-en)
 
 Rule definitions can be written using Drools' declarative language. Rule files
 are text files that often have a .drl extension. A rule file can contain
@@ -630,7 +630,7 @@ For additional documentation on the Drools rules language, please see the
 official Drools documentation at
 [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/). 
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-07-en)
 
 In this chapter, we discussed personal sites for portal users. We showed how to
 enable or disable them, how to set whether or not pages should be automatically
