@@ -1,60 +1,61 @@
 
-# Management [](id=management-liferay-portal-6-2-user-guide-16-en)
-
----
-
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
+# User Management [](id=management-liferay-portal-6-2-user-guide-16-en)
 
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever
-you're looking for is there. Liferay's control panel is something like this. If
-you want to create users, sites, organizations, configure permissions and
-plugins and pretty much anything else, you'll do it with the control panel. The
-nice thing about the control panel is it makes all this very easy to do. This
-chapter takes all the concepts you learned about Liferay in chapter 1 (sites,
-organizations, and more) and makes them concrete. Here, you'll learn how to
-create and manage every aspect of Liferay's configuration. 
+you're looking for is there. Liferay's Control Panel is something like this. If
+you want to create users, organizations, sites, configure permissions and
+plugins and pretty much anything else, you can do it from the Control Panel.
+When signed in to Liferay as an administrator, you can access the Control Panel
+from the Dockbar by clicking *Admin* &rarr; *Control Panel*.
 
-This chapter explains how to use the control panel to manage the following:
+The Control Panel is organized into four main areas: Users, Sites, Apps, and
+Configuration. The Users section lets you create and manage users,
+organizations, user groups, roles, and password policies. If monitoring has been
+enabled for your portal, you can also view all of the live portal sessions of
+your users from this area of the Control Panel. In this chapter, we cover the
+Users section of the Control Panel and provide examples of some of the user
+management concepts we discussed in chapter one: users, organizations, and user
+groups. For information about the Sites section of the Control Panel and site
+management, please refer to chapters 2 and 3 of this guide. For information
+about the Apps section of the Control Panel and plugin managment, please refer
+to chapter 14. Finally, for information about the Configuration section of the
+Control Panel and managing portal settings, please refer to the next chapter,
+chapter 17.
+
+This chapter explains how to use the Control Panel to manage the following:
 
 - Users
 - Organizations
 - User Groups
 - Roles
 - Password Policies
-- Authentication Policies
-- Global User Settings
+- Monitoring
 
-Let's begin our examination of Liferay's control panel by looking at how to
+Let's begin our examination of Liferay's Control Panel by looking at how to
 manage users in Liferay Portal.
 
-## The Portal Section of the Control Panel [](id=the-portal-section-of-the-control-panel-liferay-portal-6-2-user-guide-16-en)
+## The Users Section of the Control Panel [](id=the-portal-section-of-the-control-panel-liferay-portal-6-2-user-guide-16-en)
 
-The Portal section of the control panel is used for most administrative tasks.
-You'll find there an interface for the creation and maintenance of the following
-portal entities: users, organizations, user groups, sites, teams, site
-templates, page templates, and roles. Additionally, you can configure many
-settings, including the following: password policies, portal settings, custom
-fields, monitoring, and plugins configuration.
+The Users section of the Control Panel is used for most administrative tasks
+involving user management. There, you'll find an interface for the creation and
+maintenance of the following portal entities: users, organizations, user groups,
+and roles. 
 
-![Figure 16.1: The Portal Section of the control panel allows portal administrators to manage users, organizations, sites, teams, site templates, page templates, and roles, as well as various portal settings.](../../images/portal-section-control-panel.png)
+![Figure 16.1: The Users section of the Control Panel allows portal administrators to manage users, organizations, user groups, and roles. It also allows administrators to monitor users' live portal sessions if monitoring has been enabled for the portal.](../../images/users-section-control-panel.png)
 
 Since we explained how to manage sites, teams, site templates, and page
-templates in chapters 2 and 3, we won't discuss them in detail here. In this
-chapter, we'll focus on using the control panel for user management. We'll
-finish our coverage of the control panel in the next chapter, discussing portal
-and server administration.
+templates in chapters 2 and 3, we won't discuss them in detail here.
+Nevertheless, remember that it's possible and sometimes simpler to use sites,
+site memberships, and teams to organize users and manage permissions than it is
+to use organizations, user groups, and custom roles.
 
-As a portal administrator, you'll use the Portal section of the control panel to
-create your portal structure, implement security, and administer your users.
-Configurable portal settings include mail host names, email notifications and
-authentication options including single sign-on and LDAP integration. Note that
-only users with the administrator role, which is a portal scoped role, have
-permission to view this section of the control panel. You can, of course, grant
-permissions to one or more sections to custom roles.
+As a portal administrator, you'll use the Users section of the Control Panel to
+create users, organizations, and user groups, implement security via roles and
+permissions, and administer your users. Note that only users with the
+administrator role, which is a portal scoped role, have permission to view the
+Control Panel. You can, of course, grant permissions to view one or more
+sections, such as the Users section, to custom roles.
 
 ## Adding Users [](id=adding-users-liferay-portal-6-2-user-guide-16-en)
 
@@ -86,7 +87,7 @@ account. This allows you to perform administrative tasks with your own ID
 instead of having to use the default ID. It also helps to make your portal more
 secure by deleting or disabling the default ID.
 
-Click the *Roles* link. The control panel's Roles page shows the roles to which
+Click the *Roles* link. The Control Panel's Roles page shows the roles to which
 your ID is currently assigned. You should have one role: Power User. By default,
 all users are assigned the Power User role. You can give this role certain
 permissions if you wish or disable it altogether. You can also define the
@@ -103,7 +104,7 @@ We'll next look at some aspects of user management.
 
 ## User Management [](id=user-management-liferay-portal-6-2-user-guide-16-en)
 
-If you click the *Users* link on the left menu of the control panel, there are
+If you click the *Users* link on the left menu of the Control Panel, there are
 now two users in the list of users. If you want to change something about a
 particular user, you can click the *Actions* button next to that user.
 
@@ -121,7 +122,7 @@ the site as if you were the user.
 **Deactivate:** deactivates the user's account.
 
 Note most users can't perform most of the above actions. In fact, most users
-won't even have access to this section of the control panel. You can perform all
+won't even have access to this section of the Control Panel. You can perform all
 of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
@@ -239,7 +240,7 @@ distributed user administration.  Next, let's learn how to create and manage
 organizations. 
 
 To add an organization, click the *Users and Organizations* link on the left
-side of the control panel. Then click the *Add* button and choose *Regular
+side of the Control Panel. Then click the *Add* button and choose *Regular
 Organization*. To attach a site when you create an organization, click the
 *Organization Site* tab at the right and check the *Create Site* box. If you
 don't know right now if your organization needs a site, that's fine. You can
@@ -343,10 +344,10 @@ following goals:
   the home page on all teachers' personal sites has the same layout and
   applications.
 
-Creating a user group is easy. Navigate to the control panel, click the *Users
+Creating a user group is easy. Navigate to the Control Panel, click the *Users
 Groups* link and then click the *Add* button. There are only two fields to fill
 out: Name and Description. Click *Save* and you will be redirected back to the
-*User Groups* page of the control panel.
+*User Groups* page of the Control Panel.
 
 ![Figure 16.5: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
@@ -395,8 +396,8 @@ You can safely close the browser window when you're done.
 
 ### Creating and Editing a User Group [](id=creating-and-editing-a-user-group-liferay-portal-6-2-user-guide-16-en)
 
-A user group's site can be administered from the control panel. Select *User
-Groups* from the control panel to see a list of existing user groups. To edit a
+A user group's site can be administered from the Control Panel. Select *User
+Groups* from the Control Panel to see a list of existing user groups. To edit a
 user group, click on its name or description. You can also click on the
 *Actions* button to see the full list of actions that can be performed on a user
 group. When editing a user group, you can view its site, if it exists, by
@@ -407,7 +408,7 @@ As an example of how user group sites can be used, let's create a user group
 called *Bloggers* along with a simple template. We'll call the site template
 *Bloggers* too. It should contain a single *Blog* page with the Blogs and
 Recents Bloggers portlets on it. First, navigate to the User Groups page of the
-control panel. Then click *Add* and enter the name *Bloggers* for your user
+Control Panel. Then click *Add* and enter the name *Bloggers* for your user
 group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
@@ -415,7 +416,7 @@ Our next step is to assign an existing user to the *Bloggers* group.
 ### Assigning Members to a User Group [](id=assigning-members-to-a-user-group-liferay-portal-6-2-user-guide-16-en)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
-Then navigate to the User Groups page of the control panel and click *Actions*
+Then navigate to the User Groups page of the Control Panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
@@ -548,7 +549,7 @@ Administrator. A role with that name is likely to have permissions relevant to
 the specific Message Board portlets delegated to it. Users who are placed in
 this role will inherit these permissions.
 
-The roles page of the control panel serves as a single interface which lets you
+The roles page of the Control Panel serves as a single interface which lets you
 create roles, assign permissions to them and assign users to the roles. Roles
 can be scoped by portal, site or organization. To create a role, click the
 *Roles* link and then click the *Add* button. You can choose a Regular, Site or
@@ -556,7 +557,7 @@ Organization role. A regular role is a portal-scoped role. Make a selection and
 then type a name for your role, a title and a description. The name field is
 required but the title and description are optional. If you enter a name and a
 title, the title will be displayed in the list of roles on the Roles page of the
-control panel. If you do not enter a title, the name will be displayed. When you
+Control Panel. If you do not enter a title, the name will be displayed. When you
 have finished, click *Save*.
 
 In addition to regular roles, site roles, and organization roles, there are also
@@ -638,10 +639,10 @@ Site Application permissions affect the application as a whole. So, using our
 Message Boards example, an application permission might define who can add the
 Message Boards portlet to a page.
 
-The control panel permissions affect how the portlet appears to the user in the
-control panel. Some control panel portlets have a Configuration button, so you
+The Control Panel permissions affect how the portlet appears to the user in the
+Control Panel. Some Control Panel portlets have a Configuration button, so you
 can define who gets to see that, as well as who gets to see an application in
-the control panel.
+the Control Panel.
 
 ![Figure 16.11: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
@@ -776,7 +777,7 @@ user interface. This section covers how to configure portal settings such as
 password policies, authentication settings, mail host names, email
 notifications, display settings and monitoring.
 
-Now that you have been navigating in the control panel, you should be pretty
+Now that you have been navigating in the Control Panel, you should be pretty
 familiar with how it works. All the options appear in the left navigation, their
 interfaces appear in the middle and any sub-options appear on the right. We have
 focused so far on the maintenance of users and portal security. The remaining
@@ -792,7 +793,7 @@ requirements on password strength, frequency of password expiration and more.
 Additionally, you can apply different password policies to different sets of
 portal users.
 
-If you are viewing a page other than the control panel, select *Control Panel*
+If you are viewing a page other than the Control Panel, select *Control Panel*
 from the *Go to* menu of the Dockbar. Next, click on the *Password Policies*
 link on the left side of the screen under the *Portal* heading. You will see
 there is already a default password policy in the system. You can edit this in
@@ -855,7 +856,7 @@ Next, let's examine Liferay's Portal Settings.
 ### Portal Settings [](id=portal-settings-liferay-portal-6-2-user-guide-16-en)
 
 Most global portal settings can be configured from the Portal Settings section
-of the control panel. The Configuration heading contains the following links:
+of the Control Panel. The Configuration heading contains the following links:
 
 **General:** lets you configure global settings, such as the company name,
 domain, the virtual host, a global portal logo and more.
@@ -963,13 +964,13 @@ We'll examine how to set up LDAP authentication next.
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
 LDAP directory. There are two places for you to configure the LDAP settings:
-here in the control panel or in the `portal-ext.properties` file (which is
-covered in chapter 20). We recommend you use the control panel since your
+here in the Control Panel or in the `portal-ext.properties` file (which is
+covered in chapter 20). We recommend you use the Control Panel since your
 configuration settings will be stored in the database. Note that if you use
 both, the settings in the database will be merged with the settings in
 `portal-ext.properties`. If there's a conflict or overlapping data, the LDAP
-servers set in the control panel take precedence over the servers set in
-`portal-ext.properties`. Configuring the LDAP settings from the control panel is
+servers set in the Control Panel take precedence over the servers set in
+`portal-ext.properties`. Configuring the LDAP settings from the Control Panel is
 easier and does not require a restart of Liferay. The only compelling reason to
 use the `portal-ext.properties` file is if you have many Liferay nodes which
 will be configured to run against the same LDAP directory. In that case, for
@@ -1016,7 +1017,7 @@ using the following options:
     users.update.last.login=false
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by default.
-This can be configured on the Password Policies page of the control panel. Check
+This can be configured on the Password Policies page of the Control Panel. Check
 the *Use LDAP Password Policy* box if you want to use the password policies
 defined by your LDAP directory. Once this is enabled, the Password Policies tab
 will display a message stating you are not using a local password policy. You
@@ -1092,7 +1093,7 @@ keystore*. The import is handled by a command like the following:
 
 The *keytool* utility ships as part of the Java SDK.
 
-Once this is done, go back to the LDAP page in the control panel. Modify the
+Once this is done, go back to the LDAP page in the Control Panel. Modify the
 LDAP URL in the Base DN field to the secure version by changing the protocol to
 `https` and the port to `636` like the following:
 
@@ -1145,7 +1146,7 @@ directory.
 
     +   *Group*
 
-The control panel provides default mappings for commonly used LDAP attributes.
+The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
 
 * *Test LDAP Users:* Once you have your attribute mappings set up (see above),
@@ -1197,7 +1198,7 @@ to all of your LDAP server connections.
 
 #### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui-liferay-portal-6-2-user-guide-16-en)
 
-Although most of the LDAP configuration can be done from the control panel,
+Although most of the LDAP configuration can be done from the Control Panel,
 there are several configuration parameters that are only available by editing
 `portal-ext.properties`. These options will be available in the GUI in future
 versions of Liferay Portal but for now they can only be configured by editing
@@ -1313,7 +1314,7 @@ running.
 
 Once your CAS server is up and running, you can configure Liferay to use it.
 This is a simple matter of navigating to the *Settings &rarr;  Authentication
-&rarr; CAS* tab in the control panel. Enable CAS authentication and then modify
+&rarr; CAS* tab in the Control Panel. Enable CAS authentication and then modify
 the URL properties to point to your CAS server.
 
 **Enabled:** Check this box to enable CAS single sign-on.
@@ -1422,7 +1423,7 @@ user.
 
 In the same browser window, go to the URL for your server running Liferay and
 log in as the same user, using the email address *test@liferay.com*. Go to the
-control panel and click *Settings &rarr; Authentication &rarr; OpenSSO*. Modify
+Control Panel and click *Settings &rarr; Authentication &rarr; OpenSSO*. Modify
 the three URL fields (Login URL, Logout URL and Service URL) so they point to
 your OpenSSO server (i.e., only modify the host name portion of the URLs), click
 the *Enabled* check box and then click *Save*. Liferay will then redirect users
@@ -1482,7 +1483,7 @@ want to enter those user groups here.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-16-en)
 
-In this chapter, we began to examine Liferay's control panel. Site memberships
+In this chapter, we began to examine Liferay's Control Panel. Site memberships
 and teams aren't the only way for portal administrators to group and manage
 users: organizations can be used to arrange users into hierarchical structures
 and user groups are a flexible way to collect groups of users that transcend
@@ -1495,5 +1496,5 @@ We also looked at how to configure password policies for users. Next, we looked
 at the different authentication options provided by Liferay. You can configure
 Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM, OpenID,
 OpenSSO, or SiteMinder. Finally, we examined some general configuration options
-for the portal users. We'll continue our coverage of Liferay's control panel in
+for the portal users. We'll continue our coverage of Liferay's Control Panel in
 the next chapter.
