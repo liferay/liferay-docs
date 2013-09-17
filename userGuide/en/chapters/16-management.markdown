@@ -57,59 +57,70 @@ administrator role, which is a portal scoped role, have permission to view the
 Control Panel. You can, of course, grant permissions to view one or more
 sections, such as the Users section, to custom roles.
 
-## Adding Users [](id=adding-users-liferay-portal-6-2-user-guide-16-en)
+### Adding and Editing Users [](id=adding-users-liferay-portal-6-2-user-guide-16-en)
 
-Let's add a user account for yourself and configure this account so it has the
-same administrative access as the default administrator account. Go up to the
-Dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and
-Organizations* page under the *Portal* category. Click the *Add* button and
+Are you using Liferay's default administrative user, Test Test
+(test@liferay.com)? If so, let's add a user account for yourself and configure
+your new account so it has the same administrative access as the default
+administrator account. From the Dockbar, click *Admin* and select *Control
+Panel*. Then click on *Users and Organizations*. Click the *Add* button and
 select *User*. Fill out the Add User form using your name and email address.
 When you are finished, click *Save*.
 
-![Figure 16.2: The Add User Screen](../../images/01-add-user-screen.png)
+![Figure 16.2: You need to at least enter a screen name, email address, and first name in order to create a new user account.](../../images/01-add-user-screen.png)
 
-After you submit the form, the page reloads with a message saying the save was
-successful. An expanded form appears that allows you to fill out a lot more
-information about the user. You don't have to fill anything else out right now.
-Just note that when the user ID was created, a password was automatically
-generated and, if Liferay was correctly installed (see chapter 14), an email
-message with the password in it was sent to the user. This, of course, requires
-that Liferay can properly communicate with your SMTP mail server.
+After you submit the form, the page reloads with a success message. An expanded
+form appears that allows you to fill out a lot more information about the user.
+You don't have to fill anything else out right now. Just note that when the user
+account was created, a password was automatically generated. If Liferay was
+correctly installed and a mail server was set up (see chapter 14), an email
+message with the user's new password was sent to the user's email address. This,
+of course, requires that Liferay can properly communicate with your SMTP mail
+server.
 
-![Figure 16.3: Liferay's User Account Editor](../../images/01-user-account-editor.png)
+![Figure 16.3: Once you've completed the basic form for creating a new user account, you'll see a much more detailed form for editing the user and adding additional information.](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to
-change the default password for the user ID to something you can remember. You
-can do this by clicking on the *Password* link in the box on the right, entering
-the new password in the two fields and clicking *Save*. Next, you should give
-your user account the same administrative rights as the default administrator's
-account. This allows you to perform administrative tasks with your own ID
-instead of having to use the default ID. It also helps to make your portal more
-secure by deleting or disabling the default ID.
+change the default password for your user account to something you can remember.
+You can do this by clicking on the *Password* link in the box on the right,
+entering the new password in the two fields and clicking *Save*. Next, you
+should give your user account the same administrative rights as the default
+administrator's account. This allows you to perform administrative tasks with
+your own account instead of having to use the default administrator account.
+In production, you should always delete or disable the default administrator
+account to secure your portal.
 
-Click the *Roles* link. The Control Panel's Roles page shows the roles to which
-your ID is currently assigned. You should have one role: Power User. By default,
-all users are assigned the Power User role. You can give this role certain
-permissions if you wish or disable it altogether. You can also define the
-default roles a new user receives. We'll see how to do this later.
+On the form for editing a user, click the *Roles* link in the menu on the right
+side of the screen. This page shows the roles to which your account is currently
+assigned. You should have one role: Power User. By default, all users are
+assigned the Power User role. The Power User role doesn't grant any special
+permissions. It can safely be ignored. Alternatively, it can be used to extend
+the User role. If there are certain custom permissions that you'd like all of
+your portal users to have, you can grant these custom permissions to the Power
+User role. You can also customize the default roles a new user receives via
+*Default User Associations*. We'll learn to do this when we look at Portal
+Settings in the next chapter.
 
-To make yourself an Administrator, click the *Select* link. A dialog box pops up
-with a list of all the roles in the system. Select the Administrator role from
-the list. The dialog box disappears and the role is added to the list of roles
-associated with your account. Next, click the *Save* button, which is at the
-bottom of the blue bar of links on the right. You are now an administrator of
-the portal. Log out of the portal and then log back in with your own user ID.
+We want to assign the Administrator role to our user account. On the form for
+editing a user, after having clicked on *Roles* at the right side of the screen,
+click the *Select* link under Regular Roles. A dialog box pops up with a list of
+all the regular (portal-scoped) roles in the portal. Select the Administrator
+role from the list. The dialog box disappears and the role is added to the list
+of roles associated with your account. Don't forget to click the *Save* button
+which is at the bottom of the blue bar of links on the right side of the screen.
+You are now a portal administrator. Log out of the portal and then log back in
+with your own user account. Next, let's look at some other aspects of user
+management. 
 
-We'll next look at some aspects of user management. 
+### User Management [](id=user-management-liferay-portal-6-2-user-guide-16-en)
 
-## User Management [](id=user-management-liferay-portal-6-2-user-guide-16-en)
+If you click on *Users and Organizations* in the Control Panel, you should now
+see your user account in the list of users. If you want to change something
+about a particular user, you can click the *Actions* button next to that user.
 
-If you click the *Users* link on the left menu of the Control Panel, there are
-now two users in the list of users. If you want to change something about a
-particular user, you can click the *Actions* button next to that user.
-
-**Edit User:** takes you back to the Edit User page where you can modify
-anything about the user.
+**Edit:** takes you back to the Edit User page where you can modify any aspect
+of the user account including the screen name, email address, first name, last
+name, site and organization memberships, roles, etc.
 
 **Permissions:** allows you to define which roles have permissions to edit the
 user.
@@ -121,11 +132,11 @@ the site as if you were the user.
 
 **Deactivate:** deactivates the user's account.
 
-Note most users can't perform most of the above actions. In fact, most users
-won't even have access to this section of the Control Panel. You can perform all
-of the above functions because you have administrative access.
+Note that most users can't perform most of the above actions. In fact, most
+users won't even have access to the Control Panel. You can perform all of the
+above functions because you have administrative access.
 
-Let's look next at how to manage organizations. 
+Next, let's look at how to manage organizations.
 
 ### Organizations [](id=organizations-liferay-portal-6-2-user-guide-16-en)
 
