@@ -590,14 +590,15 @@ use them.
 
 ## Configuring assets to use workflow process definitions  
 
-Most of your workflow configuration is done via the control panel. Everything
-you need to do in the portal can be done through simple GUI controls.
+All your global workflow configuration can be done via the control panel.
+Everything you need to do in the portal can be done through simple GUI
+controls.
 
 ![Figure 11.3: Adding a Workflow Definition](../../images/11-workflow-upload-definition.png)
 
 You can find the Workflow section under the Configuration heading in the control panel.
 There are three options under Workflow: *Definitions*, *Default Configuration*
-and *Submissions*.
+and *Submissions*. The default workflow behavior you specify here will apply throughout your Liferay Portal.
 
 If you created a new workflow definition, you need to add it so it can be used
 in the portal. Click *Definitions*. By default, only the Single Approver
@@ -607,32 +608,36 @@ your Liferay instance. Once you add a file here, it's added to the portal and
 is immediately available for use.
 
 Under *Default Configuration*, you can set the workflow behavior (if any) for
-all workflow-enabled applications on the portal. You can choose to use no
-workflow, which is the default, or select any installed workflow definition.
-Setting the default configuration causes any newly created sites to default to
-that configuration. An administrator can then edit the definitions for each one
-individually through the *Workflow Configuration* page.
+all workflow-enabled applications on the portal, including Page Revision, User,
+Blogs Entries, Web Content Articles, Comments, Message Borads Messages, and
+Wiki Pages. You can choose to use no workflow, which is the default, or select
+any installed workflow definition.  Setting the default configuration causes
+any newly created sites to default to that configuration. An administrator can
+then edit the definitions for each one individually through the site's
+*Workflow Configuration* page, by accessing the Site Administration section of
+the portal.
 
 In the *Submissions* tab you can see any currently pending assets or any
 assets which were previously approved.
 
-Let's learn how to configure workflows in the Control Panel next.
+Let's learn how to configure workflows for both the portal and individual sites
+next.
 
 ### Configuring workflow  
 
 After you have uploaded workflow definitions and set the default workflow
-behavior you can go up to *Workflow Configuration* and tweak the definitions
+behavior you can go up to *Default Configuration* and tweak the definitions
 you're using for each site individually.
 
 ![Figure 11.4: The Workflow Configuration Page](../../images/11-workflow-default-config.png)
 
 By setting default workflow configuration behavior from the Control Panel, your
-specified settings are implemented at the portal scope. If you need to set the
-workflow configuration at the site level, you can do so from Liferay's *Site
-Administration* section. You can get there from the Control Panel by clicking
-*Sites*, clicking on a site from the list, and opening the *Configuration*
-menu. The *Workflow Configuration* option lets you modify workflow behavior for
-the sleected site.
+specified settings are implemented at the global portal scope. If you need to
+set the workflow configuration at the site level, you can do so from Liferay's
+*Site Administration* section. You can get there from the Control Panel by
+clicking *Sites*, clicking on a site from the list, and opening the
+*Configuration* menu. The *Workflow Configuration* option lets you modify
+workflow behavior for the sleected site's assets that can be workflow enabled.
 
 ### My Workflow Tasks  
 
@@ -709,11 +714,10 @@ and Media portlet since it must be defined at the folder level. To see how this
 works, create a new page in the default site called *Documents and Media* and
 add the Documents and Media portlet to this page. Then click *Add* &rarr;
 *Folder*, enter the name *My Documents*, and click *Save*. Mouse over your new
-My Documents folder, click on the gray icon that appears at the top right corner
+My Documents folder, click on the black arrow that appears at the top right corner
 of the folder, and select *Edit*.
 
-![Figure 11.9: Workflow for Documents and Media must be enabled at the folder
-level. Edit a folder to select a workflow.](../../images/folder-edit.png)
+![Figure 11.9: Workflow for Documents and Media must be enabled at the folder level. Edit a folder to select a workflow.](../../images/11-workflow-edit-folder.png)
 
 By default, the *Use document type restrictions and workflow of the parent
 folder* button is selected. To enable workflow for this folder, select the
@@ -724,21 +728,24 @@ Types* drop-down menu appears. By default, you can select *No workflow* or
 drop-down menu. You can add custom workflows through the Workflow page in the
 Portal section of the Control Panel.
 
-![Figure 11.10: You can use the document type restrictions and workflow of the
-parent folder or you can define specific document type restrictions and workflow
-for this folder.](../../images/folder-workflow.png)
+![Figure 11.10: You can use the document type restrictions and workflow of the parent folder or you can define specific document type restrictions and workflow for this folder.](../../images/11-folder-workflow.png)
 
 After you've selected the *Single Approver* workflow and clicked *Save*,
 workflow takes effect for the My Documents folder. Try adding a new document to
 your My Documents folder--notice that the *Publish* button now says *Submit for
 Publication* since workflow is enabled. Any users assigned to the (Portal,
 Organization, or Site) Content Reviewer roles can see that your document has
-been submitted for publication by navigating to the Control Panel and clicking
-on *My Workflow Tasks*. Ordinarily, the same user who submitted a document for
+been submitted for publication by navigating to My Account and clicking on *My
+Workflow Tasks*. Ordinarily, the same user who submitted a document for
 publication wouldn't also approve it but we'll do this to demonstrate how the
 process works.
 
-Navigate to the Control Panel and click on *My Workflow Tasks*. The document
+<!--When I try to add a Document to a workflow-enabled folder, I cannot.
+There is no option under Add to add a folder. It works for folders not
+workflow-enabled. An alreadt created document cannot be added to a workflow
+enabled folder either. So I couldn't test this step properly.-->
+
+Navigate to the My Account and click on *My Workflow Tasks*. The document
 that you submitted for publication appears under *Assigned to My Roles* since
 you're an administrator. Click *Actions* &rarr; *Assign to Me* next to your
 document. Then click *Actions* &rarr; *Approve* next to the document when it
@@ -747,23 +754,22 @@ through the workflow!
 
 ### Collaboration  
 
-To enable workflow for collaborative applications, first navigate to the Control
-Panel and select a scope in the context menu selector. You can enable workflow
-globally, or for a specific site. Once you've chosen a scope, click on *Workflow
-Configuration* in the content section of the Control Panel. This page lists the
-portal resources for which you can select a workflow.
+To enable workflow for collaborative applications, first navigate to the
+Workflow page of the Control Panel, where you can enable default workflow
+behavior globally. To enable workflow for a specific site, use the the Site
+Administration section, selecting the site for which you'd like to specify
+workflow behavior and clicking Workflow Configuration. You'll see the portal
+resources for which you can select a workflow.
 
-![Figure 11.11: The Workflow Configuration page of the Control Panel lists the
-resources for which can select a workflow for your chosen
-scope.](../../images/workflow-configuration.png)
+![Figure 11.11: The Workflow Configuration page of the Control Panel lists the resources for which you can select a workflow.](../../images/workflow-configuration.png)
 
-To select a workflow, click on the Workflow drop-down menu and choose a workflow.
-By default, you can only select *No workflow* or *Single Approver*. Custom
-workflows that you added also appear in this drop-down menu. You can add custom
-workflows through the Workflow page in the Portal section of the Control Panel.
-To enable workflow for the collaborative applications, select the *Single
-Approver* for the Blogs Entry, Message Boards Message and Wiki Page resources,
-then click *Save.*
+To select a workflow, click on the Workflow drop-down menu and choose a
+workflow. By default, you can only select *No workflow* or *Single Approver*.
+Custom workflows that you added also appear in this drop-down menu. You can add
+custom workflows through the Workflow page in the Configuration section of the
+Control Panel. To enable workflow for the collaborative applications, select
+the *Single Approver* for the Blogs Entry, Message Boards Message and Wiki Page
+resources, then click *Save.*
 
 To test the workflow for collaborative applications, add a page called
 *Collaboration* to the site whose scope you selected when you enabled workflow.
@@ -773,29 +779,29 @@ content for the Wiki frontpage. For each application, notice that the *Publish*
 button is replaced by a *Submit for Publication* button since workflow is
 enabled.
 
-The workflow process for collaborative applications works the same way as in the
-examples you've already seen. Any users assigned to the (Portal, Organization,
-or Site) Content Reviewer roles can see that your blog post, message board
-thread, and wiki article have been submitted for publication by navigating to
-the Control Panel and clicking on *My Workflow Tasks*. Of course, since you
-submitted these items for publication, it wouldn't make sense in a real-world
-use case for you to approve them. However, to see how the workflow process
-works, go ahead and approve these items yourself; you can do this since you're
-an administrator.
+The workflow process for collaborative applications works the same way as in
+the examples you've already seen. Any users assigned to the (Portal,
+Organization, or Site) Content Reviewer roles can see that your blog post,
+message board thread, and wiki article have been submitted for publication by
+navigating to My Account and clicking on *My Workflow Tasks*. Of course, since
+you submitted these items for publication, it wouldn't make sense in a
+real-world use case for you to approve them. However, to see how the workflow
+process works, go ahead and approve these items yourself; you can do this since
+you're an administrator.
 
-Navigate to the Control Panel and click on *My Workflow Tasks*. The items you've
+Navigate to My Account and click on *My Workflow Tasks*. The items you've
 submitted for publication appear under *Assigned to My Roles*. Click *Actions*
 &rarr; *Assign to Me* next to the items you've submitted. Then click *Actions*
 &rarr; *Approve* next to each item when it appears in the *Assigned to Me*
-category. That's it--your blog post, message board thread, and wiki article have
-passed through the workflow!
+category. That's it--your blog post, message board thread, and wiki article
+have passed through the workflow!
 
 ## Summary  
 
 In this chapter, we explained how to install the Kaleo workflow plugin for
 Liferay EE. Liferay's Kaleo workflow engine is included with Liferay CE. We
-discussed how to create new workflow definitions and examined the XML schema for
-them. We looked at how to choose different workflow processes for different
+discussed how to create new workflow definitions and examined the XML schema
+for them. We looked at how to choose different workflow processes for different
 asset types. We also explained how end-users can interact with the approval
 process. Finally, we discussed how to use workflow with different types of
 applications such as Documents and Media and Blogs, Wikis, and Message Boards.
