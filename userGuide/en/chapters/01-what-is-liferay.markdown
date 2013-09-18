@@ -168,10 +168,7 @@ server, where all web content work happens on a separate server from your live
 site. In either case, when you're ready, site changes can be pushed to the live
 site, either manually or on a schedule. 
 
-![Figure 1.2: Staging supports publishing manually or on a schedule.](../../images/04-web-content-staging-publish.png)
-
-<!-- Need to replace image for 6.2 -->
-<!-- There are a few UI changes that still need to be made to staging. -->
+![Figure 1.2: Staging supports publishing manually or on a schedule.](../../images/web-content-staging-publish.png)
 
 Liferay Portal's web content creation tools are easy and intuitive to use at all
 levels. If you need only basic content management capabilities for your site,
