@@ -13,10 +13,9 @@ common features first, starting with the look and feel configuration options.
 ## Look and Feel [](id=look-and-feel-liferay-portal-6-2-user-guide-04-en)
 
 An administrator can access the look and feel configuration menu of any Liferay
-portlet by clicking on the wrench icon at the top right corner of the portlet
-and selecting *Look and Feel*. The location of the wrench icon and other
-portlet icons (minimize, maximize, and remove) may vary, depending on your
-theme. Liferay portlets' look and feel dialog boxes contain six tabs:
+portlet by clicking on the gear icon at the top right corner of the portlet and
+selecting *Look and Feel*. The location of the gear icon may vary, depending on
+your theme. Liferay portlets' look and feel dialog boxes contain six tabs:
 
 - Portlet Configuration
 - Text Styles
@@ -126,7 +125,7 @@ Next, let's discuss exporting and importing portlet data.
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
-Message Boards portlets. To export or import portlet data, click on the wrench
+Message Boards portlets. To export or import portlet data, click on the gear
 icon of your portlet and select *Export/Import*. Exporting portlet data produces
 a `.lar` file that you can save and import into another portlet application of
 the same type. To import portlet data, you must select a `.lar` file. Be careful
@@ -231,7 +230,7 @@ portal (global), site (default), or page . This grants you some flexibility in
 how you want to set up your portal. You can configure the scope of a portlet
 with just a few simple steps.
 
-1.  Click the *Options* icon in the portlet window (the wrench).
+1.  Click the *Options* icon in the portlet window (the gear icon).
 
 2.  Select *Configuration*.
 
@@ -297,7 +296,7 @@ those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some
 Liferay portlets provide a configuration UI to help you get the most out of
 this communication mechanism. To access this UI, open your portlet's
-configuration window by clicking on the wrench icon and selecting
+configuration window by clicking on the gear icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
 ![Figure 4.10: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
