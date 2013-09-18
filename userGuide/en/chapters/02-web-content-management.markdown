@@ -556,7 +556,7 @@ page.
 
  ![Tip](../../images/01-tip.png) Usually, you don't want the web content display
  portlet that you're using to embed a portlet to be visible. To make the web
- content display portlet invisible, click on the wrench icon of the web content
+ content display portlet invisible, click on the gear icon of the web content
  display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
  *Save*. Once you've refreshed the page, only the embedded portlet will be
  visible.
