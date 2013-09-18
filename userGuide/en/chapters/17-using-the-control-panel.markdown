@@ -735,12 +735,14 @@ The Content Sharing section of Portal Settings also allows you to choose a
 behavior for whether or not subsites can display content from parent sites and
 for configuring the defaults. There are three options:
 
-- *Enabled by Default*: This means that subsites can display content from parent
-  sites by default but this can be disabled by a site administrator.
-- *Disabled by Default*: This means that subsites cannot display content from
-  parent sites by default but this can be enabled by a site administrator.
-- *Disabled*: This means that subsites cannot display content from parent sites
-  and this behavior cannot be changed by a site administrator.
+**Enabled by Default**: This means that subsites can display content from parent
+sites by default but this can be disabled by a site administrator.
+
+**Disabled by Default**: This means that subsites cannot display content from
+parent sites by default but this can be enabled by a site administrator.
+
+**Disabled**: This means that subsites cannot display content from parent sites
+and this behavior cannot be changed by a site administrator.
 
 ### Identification [](id=identification-liferay-portal-6-2-user-guide-17-en)
 
