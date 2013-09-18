@@ -173,8 +173,9 @@ the league itself, to any of the associations, or to any of the associations'
 clubs. An organization administrator of the Atlantic Soccer Association could
 manage any users belonging to the Atlantic Soccer Association itself, or to the
 Midway Soccer Club, Fairview Soccer Club, or Oak Grove Soccer Club. However, an
-administrator of the Atlantic Soccer Club would not be able to manage users
-belonging to the Atlantic Baseball Association or to the Bethel Basketball Club.
+administrator of the Atlantic Soccer Association would not be able to manage
+users belonging to the Atlantic Baseball Association or to the Bethel Basketball
+Club.
 
 Organizations and suborganization hierarchies can be created to unlimited
 levels. Users can be members of one or many organizations. The rights of an
@@ -250,14 +251,14 @@ use organizations to facilitate distributed portal administration, not just
 distributed user administration.  Next, let's learn how to create and manage
 organizations. 
 
-To add an organization, click the *Users and Organizations* link on the left
-side of the Control Panel. Then click the *Add* button and choose *Regular
-Organization*. To attach a site when you create an organization, click the
-*Organization Site* tab at the right and check the *Create Site* box. If you
-don't know right now if your organization needs a site, that's fine. You can
-always add one later if the need arises. 
+To add an organization, click the *Users and Organizations* link in the Control
+Panel. Then click the *Add* button and choose *Regular Organization*. To attach
+a site when you create an organization, click on *Organization Site* at the
+right and check the *Create Site* box. If you don't know right now if your
+organization needs a site, that's fine. You can always add one later if the need
+arises. 
 
-![Figure 16.4: Adding an organization](../../images/01-add-organization-screen.png)
+![Figure 16.4: Adding a new organization is easy. Once you've clicked *Save* to create the organization, you can specify additional details about the organization.](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
 
@@ -270,31 +271,35 @@ the currently configured parent.
 
 ---
 
-![Tip](../../images/01-tip.png) **Tip:** Note that you're already a member of
-any organizations you create. By creating an organization, you become both a
-member and receive the Organization Owner role, which gives you full rights to
-the organization. You can, of course, add other users to this role to make them
-Organization Owners. 
+ ![Tip](../../images/01-tip.png) **Tip:** By creating an organization, you
+ automatically become both a member and receive the Organization Owner role,
+ which gives you full administrative rights within the organization. This means
+ that you can, for example, appoint other users to be organization
+ administrators or organization owners. Organization owners are equivalent to
+ organization administrators except that they can assign the Organization Owner
+ and Organization Administrator roles to other users; organization
+ administrators can't make these assignments.
 
 ---
 
-Fill out the information for your organization and click *Save*. As before with
-users, the form reappears and you can enter more information about the
-organization. Organizations can have multiple email addresses, postal addresses,
-web sites and phone numbers associated with them. The Services link can be used
-to indicate the operating hours of the organization, if any.
+Fill out the information for your organization and click *Save*. As when
+creating a new user, after you click *Save* to submit the form, a success
+message appears along with a new form which lets you enter additional
+information about the organization. Organizations can have multiple email
+addresses, postal addresses, web sites, and phone numbers associated with them.
+The Services link can be used to indicate the operating hours of the
+organization, if any.
 
-For now, click the *Back* button. This takes you back to the list of
-organizations.
-
-Click the *Actions* button next to the new organization you created. This shows
-the actions you can take to manipulate this organization.
+For now, click on the *Back* icon. This takes you back to the list of
+organizations. Click the *Actions* button next to the new organization you
+created. This shows a list of actions you can perform on this organization.
 
 **Edit:** lets you specify details about the organization, including addresses,
 phone numbers, email addresses and websites.
 
-**Manage Site:** lets you create and manage public and private pages for the
-organization's site.
+**Manage Site:** lets you create and manage the public and private pages of the
+organization's site. This only appears for organizations that have attached
+sites.
 
 **Assign Organization Roles:** lets you assign organization-scoped roles to
 users. By default, Organizations are created with three roles: Organization
@@ -355,26 +360,27 @@ following goals:
   the home page on all teachers' personal sites has the same layout and
   applications.
 
-Creating a user group is easy. Navigate to the Control Panel, click the *Users
-Groups* link and then click the *Add* button. There are only two fields to fill
-out: Name and Description. Click *Save* and you will be redirected back to the
-*User Groups* page of the Control Panel.
+Creating a user group is easy. Navigate to the Control Panel, click on the
+*Users Groups* link and then click on the *Add* button. There's only one
+required field: Name. It's usually best to enter a description as well. Click
+*Save* and you will be redirected back to the *User Groups* page of the Control
+Panel.
 
-![Figure 16.5: Creating a New User Group](../../images/server-configuration-new-user-group.png)
+![Figure 16.5: When creating a new user group, you can select a site template for the public or private pages of the user group site. If you don't select a site template at creation time, you can edit the user group later to add one.](../../images/server-configuration-new-user-group.png)
 
-Note in the figure above how each user group may have a site, with public and
-private pages. This is a special type of site that determines the base pages on
-all user group members' personal sites. The user group site works in a similar
-way to Site Templates, except in this case the User Group Site pages are not
-copied for each user but are rather shown dynamically along with any custom
-pages the user may have on his/her personal site. For this reason, users are not
-allowed to make any modifications to the pages that are *inherited* from the
-user group. Alternatively the administrators of the user group can define
+Note in the figure above that a user group can have a site, with public and
+private pages. A user group site is a special type of site that determines the
+base pages of the personal sites of all the user group members. User group sites
+work similarly to site templates, except that user group site pages are not
+copied for each user. Instead, they are shown dynamically along with any custom
+pages that the user may have on his/her personal site. For this reason, users
+are not allowed to make any modifications to the pages that are *inherited* from
+the user group. Optionally, the administrators of the user group can define
 certain areas as customizable, just like they can for regular sites. This allows
 users to decide which applications they want to place in certain areas of each
-page, as well as change their configuration.
+page, as well as customize the configurations of the applications.
 
-![Figure 16.6: User Group Actions](../../images/01-editing-a-user-group.png)
+![Figure 16.6: To edit the pages of a user group site, click *Actions* &rarr; *Manage Site Pages* next to the user group you'd like to edit.](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions* button
 next to a user group to perform various operations on that group.
@@ -399,15 +405,15 @@ user group .
 
 **Delete:** removes the user group.
 
-If your user group has a site, two options named **Go to the Site's Public
-Pages** and **Go to the Site's Private Pages** also appear as links in your user
-group's Actions menu. Clicking one of these links opens the user group's site in
-a new browser window. Any changes you make to the site are saved automatically.
-You can safely close the browser window when you're done.
+If your user group has a site, two options named *Go to the Site's Public Pages*
+and *Go to the Site's Private Pages* also appear as links in your user group's
+Actions menu. Clicking one of these links opens the user group's site in a new
+browser window. Any changes you make to the site are saved automatically. You
+can safely close the browser window when you're done.
 
 ### Creating and Editing a User Group [](id=creating-and-editing-a-user-group-liferay-portal-6-2-user-guide-16-en)
 
-A user group's site can be administered from the Control Panel. Select *User
+A user group's site can be administered from the Control Panel. Click on *User
 Groups* from the Control Panel to see a list of existing user groups. To edit a
 user group, click on its name or description. You can also click on the
 *Actions* button to see the full list of actions that can be performed on a user
@@ -416,10 +422,10 @@ clicking the *Open Pages* link under Public Pages or Private Pages (read below
 for details on user group sites).
 
 As an example of how user group sites can be used, let's create a user group
-called *Bloggers* along with a simple template. We'll call the site template
-*Bloggers* too. It should contain a single *Blog* page with the Blogs and
-Recents Bloggers portlets on it. First, navigate to the User Groups page of the
-Control Panel. Then click *Add* and enter the name *Bloggers* for your user
+called *Bloggers* along with a simple site template. We'll call the site
+template *Bloggers* too. It should contain a single *Blog* page with the Blogs
+and Recents Bloggers portlets on it. First, navigate to the User Groups page of
+the Control Panel. Then click *Add* and enter the name *Bloggers* for your user
 group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
@@ -431,24 +437,14 @@ Then navigate to the User Groups page of the Control Panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
-![Figure 16.7: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
+![Figure 16.7: When assigning members to a user group, click on the *Available* tab to see a list of users able to be added to the user group.](../../images/01-adding-members-to-user-group.png)
 
-From that list, one or more users can be assigned as members of the user group.
-
-For example, by default, newly created users are given *Welcome* pages on the
-public pages portion of their personal sites. This Welcome page contains the
-Language, Search and Blogs portlets. You can see the effect of the *Bloggers*
-site template on the public pages of Joe Bloggs's personal site in the figure
-above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs*
-page with the *Blogs* and *Recent Bloggers* portlets.
-
+From this list, one or more users can be assigned as members of the user group.
 After the user group has been created and several users have been added to it,
 you can add all those users at once as members of a site in one step from the
 *Site Memberships* UI of the site. You can also use the user group when
-assigning a role to users from the roles management UI.
-
-The next section describes a more advanced usage of user groups: User Group
-Sites.
+assigning a role to users from the roles management UI. The next section
+explains how to use user group sites.
 
 ### User Group Sites [](id=user-group-sites-liferay-portal-6-2-user-guide-16-en)
 
@@ -477,13 +473,14 @@ shown in those areas. If a user has permission to add custom pages to his/her
 personal site, besides those *inherited* from a user group, the custom pages are
 always shown last.
 
-Since the *inheritance* of pages is done dynamically, this new system introduced
-in Liferay 6.1 can scale to hundreds of thousands of users or even millions of
-them without an exponential impact in performance. Previous versions of Liferay
-used a different technique that required user group pages be copied to each
-user's personal site. For portals upgrading from previous versions of Liferay,
-you can keep the old behavior but it has been left disabled by default. You can
-enable it by adding the following line to your portal-ext.properties file:
+Since the *inheritance* of pages is done dynamically, this system, which was
+introduced in Liferay 6.1, can scale to hundreds of thousands of users or even
+millions of them without an exponential impact in performance. Previous versions
+of Liferay used a different technique that required user group pages be copied
+to each user's personal site. For portals upgrading from previous versions of
+Liferay, you can keep the old behavior but it has been left disabled by default.
+You can enable it by adding the following line to your portal-ext.properties
+file:
 
 	user.groups.copy.layouts.to.user.personal.site=true
 
@@ -504,12 +501,12 @@ checked.
 
 ---
 
-![tip](../../images/01-tip.png) **Tip:** Previous to Liferay 6.1, pages from
-different user groups could be combined on users' personal sites by using a
-naming convention. Liferay 6.1 simplifies the way user groups' sites work by
-disallowing page combination. Set the property
-*user.groups.copy.layouts.to.user.personal.site* to true if you depend on that
-functionality.
+ ![Tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, pages from
+ different user groups could be combined on users' personal sites by using a
+ naming convention. Liferay 6.1 simplifies the way user groups' sites work by
+ disallowing page combination. Set the property
+ *user.groups.copy.layouts.to.user.personal.site* to true if you want to
+ preserve the page combination functionality.
 
 ---
 
@@ -537,17 +534,17 @@ personal site without having to modify it directly. When a user is assigned to a
 user group, the configured site pages are copied directly to the user's personal
 site.
 
-Following with the example above, we will create a site for our sample user
-group. Edit the *Bloggers* group. Choose an existing Site Template from the drop
-down menu for the user group's public pages and click *Save*. After the page
-reloads you can click to see the pages and make any changes desired, add
+Continuing with the example above, we will create a site for our sample user
+group. Edit the *Bloggers* user group. Choose an existing Site Template from the
+drop down menu for the user group's public pages and click *Save*. After the
+page reloads you can click to see the pages and make any changes desired, add
 additional pages, etc.
 
-![Figure 16.8: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
+![Figure 16.8: You can select a site template to apply to a user group's public or private pages if the public or private page set is empty. If pages have already been added to the page set, you'll have to remove them before you can apply a site template the page.](../../images/server-configuration-new-user-group.png)
 
 Also, try visiting the public site of one of the users who belongs to the user
-group. You will see how all of the pages in the user group appear as part of the
-user site, including the ones copied from the site template and the ones added
+group. You'll see that all of the pages in the user group appear as part of the
+user site, including ones copied from the site template and ones added
 afterwards.
 
 ## Roles and Permissions [](id=roles-and-permissions-liferay-portal-6-2-user-guide-16-en)
@@ -560,16 +557,16 @@ Administrator. A role with that name is likely to have permissions relevant to
 the specific Message Board portlets delegated to it. Users who are placed in
 this role will inherit these permissions.
 
-The roles page of the Control Panel serves as a single interface which lets you
-create roles, assign permissions to them and assign users to the roles. Roles
-can be scoped by portal, site or organization. To create a role, click the
-*Roles* link and then click the *Add* button. You can choose a Regular, Site or
-Organization role. A regular role is a portal-scoped role. Make a selection and
-then type a name for your role, a title and a description. The name field is
-required but the title and description are optional. If you enter a name and a
-title, the title will be displayed in the list of roles on the Roles page of the
-Control Panel. If you do not enter a title, the name will be displayed. When you
-have finished, click *Save*.
+If you navigate to the Control Panel and click on *Roles*, you'll find a single
+interface which lets you create roles, assign permissions to them, and assign
+users to the roles. Roles can be scoped by portal, site, or organization. To
+create a role, click the *Roles* link and then click the *Add* button. You can
+choose a Regular, Site or Organization role. A regular role is a portal-scoped
+role. Make a selection and then type a name for your role, a title and a
+description. The name field is required but the title and description are
+optional. If you enter a name and a title, the title will be displayed in the
+list of roles on the Roles page of the Control Panel. If you do not enter a
+title, the name will be displayed. When you have finished, click *Save*.
 
 In addition to regular roles, site roles, and organization roles, there are also
 teams. Teams can be created by site administrators within a specific site. The
@@ -593,7 +590,7 @@ described as follows:
 
 For more information about teams, please refer to chapter 3.
 
-![Figure 16.9: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
+![Figure 16.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
 functions you can perform on your new role, click the *Actions* button.
@@ -619,21 +616,23 @@ Next, let's examine how to configure the permissions granted by different roles.
 
 ### Defining Permissions on a Role [](id=defining-permissions-on-a-role-liferay-portal-6-2-user-guide-16-en)
 
-Roles serve as repositories of permissions to be assigned to users who belong to
-them. So, to use a role, you need to assign members to it and define the
-permissions you want to grant to members of the role.
+Roles serve as repositories of permissions. When a roles is assigned to a user,
+the user receives all the permissions defined by the role. So, to use a role,
+you need to assign members to it and define the permissions you want to grant to
+members of the role.
 
-![Figure 16.10: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 16.10: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of portal permissions.](../../images/01-defining-permissions-on-a-role.png)
 
-When you click the *Actions* button on portal-scoped role and select *Define
-Permissions*, you will be shown a list of all the permissions defined for that
-role. Click the *Add Permissions* drop-down menu to see a list of the
-permissions that can be defined. As of Liferay version 6.1, these permissions
-fall into seven categories: Portal, Site Content, Site Application, Control
-Panel: Personal, Control Panel: Site, Control Panel: Portal and Control Panel:
-Server. For non-portal scoped roles, you need to click on the *Options* link on
-individual portlets, then *Configuration*, then *Permissions* to assign
-permissions within the site or organization that owns the portlet. 
+When you click on the *Actions* button for a portal-scoped role and select
+*Define Permissions*, you'll see a list of all the permissions that have been
+defined for that role. To add permissions to a role, drill down through the
+categories of permissions on the left side of the screen and click on a specific
+category (such as *Site Administration* &rarr; *Pages* &rarr; *Site Pages*.
+In the center of the screen, you'll see the permissions that belong to that
+category. Flag the checkboxes next to the permissions that you'd like to add the
+role, then click *Save*. For non-portal scoped roles, you need to click on the
+*Options* link on individual portlets, then *Configuration*, then *Permissions*
+to assign permissions within the site that owns the portlet. 
 
 Portal permissions cover portal-wide activities that comprise several
 categories, such as site, organization, location, password policy, etc. This
@@ -641,31 +640,100 @@ allows you to create a role that, for example, can create new sites within the
 portal. This would allow you to grant users that particular permission without
 making them overall portal administrators.
 
-Site Content permissions cover the content the installed portlets create. If you
-pick one of the portlets from this list, you'll get options for defining
-permissions on its content. For example, if you pick Message Boards, you'll see
-permissions for creating categories and threads or deleting and moving topics.
+For Liferay 6.2, the permissions fall into the following hierarchy of
+categories:
 
-Site Application permissions affect the application as a whole. So, using our
-Message Boards example, an application permission might define who can add the
-Message Boards portlet to a page.
+- Control Panel
+    - General Permissions
+    - Users
+        - Users and Organizations
+        - User Groups
+        - Roles
+        - Password Policies
+        - Monitoring
+    - Sites
+        - Sites
+        - Site Templates
+        - Page Templates
+    - Apps
+        - Store
+        - Purchased
+        - App Manager
+        - Plugins Configuration
+        - License Manager
+    - Configuration
+        - Portal Settings
+        - Custom Fields
+        - Server Administration
+        - Portal Instances
+- Site Administration
+    - Pages
+        - Site Pages
+    - Content
+        - Recent Content
+        - Web Content
+        - Documents and Media
+        - Blogs
+        - Message Boards
+        - Wiki
+        - Dynamic Data Lists
+        - Bookmarks
+        - Polls
+        - Software Catalog
+        - Tags
+        - Categories
+        - Recycle Bin
+    - Users
+        - Site Memberships
+        - Site Teams
+    - Configuration
+        - Site Settings
+        - Site Template Settings
+        - Application Display Templates
+        - Social Activity
+        - Mobile Device Families
+    - Applications
+        - [too many to list]
+- My Account
+    - Account Settings
+    - My Pages
 
-The Control Panel permissions affect how the portlet appears to the user in the
-Control Panel. Some Control Panel portlets have a Configuration button, so you
-can define who gets to see that, as well as who gets to see an application in
-the Control Panel.
+The three basic categories of permissions are Control Panel, Site
+Administration, and My Account. By default, any portal user can manage their
+user account via the permissions belonging to the My Account category. Site
+administrators can access the site administration tools belonging to the Site
+Administration category. And portal administrators can access the entire Control
+Panel. For custom roles, you can mix and match permissions from as many
+categories as you like.
 
-![Figure 16.11: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
+The permissions in the Site Administration &rrar; Applications categories govern
+the content that can be created by core portlets such as the Wiki and Message
+Boards. If you pick one of the portlets from this list, you'll get options for
+defining permissions on its content. For example, if you pick Message Boards,
+you'll see permissions for creating categories and threads or deleting and
+moving topics.
+
+Site application permissions affect the application as a whole. So, using the
+Message Boards as an example, an application permission might define who can add
+the Message Boards portlet to a page.
+
+The Control Panel permissions affect how the Control Panel appears to the user
+in the Control Panel. The Control Panel appears differently to different users,
+depending on their permissions. Some Control Panel portlets have a Configuration
+button and you can define who gets to see that. You can also fine-tune who gets
+to see various applications in the Control Panel.
+
+![Figure 16.11: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a
-permission, check the box next to it. If you want to limit the scope of the
-permission to a particular site, click the *Limit Scope* link and then choose
-the site. Once you have chosen the permissions granted to this role, click
-*Save*. For a portal-scoped Message Boards Administrator role, you might grant
-content permissions for every action listed. After you click *Save*, you will
-see a list of all permissions currently granted to this role. From here, you can
-add more permissions or go back by clicking a link in the breadcrumb list or the
-*Return to Full Page* link.
+permission, flag the checkbox next to it. If you want to change the scope of a
+permission, click the *Change* link next to the gear icon next to the permission
+and then choose a new scope. After you finish defining permissions for a role,
+click *Save*. For a portal-scoped Message Boards Administrator role, you might
+want to grant content permissions for every Message Boards action listed. After
+you click *Save*, you'll see a list of all permissions currently granted to the
+role. From the Summary view, you can add more permissions or go back by clicking
+on the *Back* icon.
 
 The list of permissions that you can define for a role may seem overwhelming.
 However, these permissions ensure that you can customize exactly which areas of
@@ -673,19 +741,24 @@ your portal you'd like different collections of users to be able to access.
 Sometimes you might find that a certain permission grants more or less access
 than what you expected--always test your permissions configurations! 
 
-For example, suppose that you created a role called User Group Manager. You'd
+For example, suppose that you need to create a role called User Group Manager. You'd
 like to define the permissions for the User Group Manager role so that users
 assigned to this role can add users to or remove users from any user group. To
-do this, you might click on *Go To* &rarr; *Control Panel* and then *Roles*
-&rarr; *Add* &rarr; *Regular Role*. After naming your role, you'd click
-*Actions* &rarr; *Define Permissions*. Then you'd click on the *Add Permissions*
-dropdown menu and select *Users and Organizations* under the *Portal* heading.
-Since you'd like user group managers to be able to view user groups and assign
-members to them, you'd check the *Assign Members* and *View* permissions under
-the *User Group* heading. Then you'd go back to the *Add Permissions* dropdown
-menu and select *User Groups* under the *Control Panel: Portal* heading and
-check the *Access in Control Panel* and *View* permissions so that user group
-managers can manage user groups from the Control Panel.
+do this, you can take the following steps:
+
+1. Click on *Admin* &rarr; *Control Panel* from the Dockbar and then click on
+   *Roles*.
+2. On the Roles screen, click *Add* &rarr; *Regular Role*.
+3. After naming your role and entering a title, click *Save*.
+4. Click on *Define Permissions* and drill down in the menu on the left to
+   *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.
+5. Under the *General Permissions* heading, flag *Access in Control Panel* and
+   *View*. This lets user group managers access the User Groups Control Panel
+   portlet and view existing user groups.
+6. Since you'd like user group managers to be able to view user groups and
+   assign members to them, you'd also check the *Assign Members* and *View*
+   permissions under the *Resource Permissions* &rarr; *User Group* heading.
+7. Click *Save*.
 
 ![Figure 16.12: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
@@ -702,12 +775,15 @@ means that if they click *Assign Members* for a user group and click on the
 
 ![Figure 16.13: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
 
-To fix this, click *Go To* &rarr; *Control Panel*. Click on *Roles* and then
-*Actions* &rarr; *Define Permissions*. Then click on the *Add Permissions*
-dropdown list and select *Users and Organizations* under the *Portal* heading.
-On this page, check the *View* permission under the *User* heading. Once you've
-saved, users who've been assigned to the User Group Manager role will be able to
-browse the portal's entire list of users when assigning users to a user group.
+To fix this, log in as an administrator and click *Admin* &rarr; *Control Panel*
+from the Dockbar. Then click on *Roles* and then on *Actions* &rarr; *Define
+Permissions* next to the *User Group Manager* role. Then, drill down to the
+*Control Panel* &rarr; *Users* &rarr; *Users and Organizations* category and
+flag the *View* permission under the *Resource Permissions* &rrar; *User*
+heading.  *View*.  Click *Save*. Once you've saved your permissions
+configuration, users who've been assigned to the User Group Manager role will be
+able to browse the portal's entire list of users when assigning users to a user
+group.
 
 Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
@@ -715,13 +791,13 @@ flexibility as possible to build the site you have designed.
 
 ### Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activi-liferay-portal-6-2-user-guide-16-en)
 
-Liferay 6.2 added a new permission that allows site administrators to delegate
-responsibility for configuring social activities to other users. To assign this
-permission to a role, first navigate to the Control Panel and click on *Roles*.
-If you'd like to add a new role, do so. Then click *Actions* next to the role
-to which you'd like to add social activities configuration permissions and
-select *Define Permissions*. Next, expand the *Site Administration* section,
-then the *Configuration* section, and then click on *Social Activity*. Flag all
+As of Liferay 6.2, there's a permission that allows site administrators to
+delegate responsibility for configuring social activities to other users. To
+assign this permission to a role, first navigate to the Control Panel and click
+on *Roles*. If you'd like to add a new role, do so. Then click *Actions* next to
+the role to which you'd like to add social activities configuration permissions
+and select *Define Permissions*. Next, drill down to the *Site Administration*
+&rarr; *Configuration* &rarr; *Social Activity* permissions category. Flag all
 of the permissions and then click *Save*:
 
 - Access in Site Administration
@@ -775,8 +851,75 @@ permissions for the role.
 ---
 
 Now that we've seen how to use organizations and user groups to manage users and
-how to use roles to define permissions, let's examine the general portal
-settings you can configure.
+how to use roles to define permissions, let's learn how to configure portal
+password policies.
+
+### Password Policies [](id=password-policies-liferay-portal-6-2-user-guide-16-en)
+
+Password policies can enhance the security of your portal. You can set
+requirements on password strength, frequency of password expiration, user
+lockout, and more. Additionally, you can apply different password policies to
+different sets of portal users. You define custom password policies or delegate
+user authentication to an LDAP server.
+
+If you are viewing a page other than the Control Panel, click on *Admin* &rarr;
+*Control Panel* from the Dockbar. Next, click on the *Password Policies* link
+under the *Users* heading. You'll see that there's already a default password
+policy in the system. You can edit this in the same manner as you edit other
+resources in the portal: click *Actions* and then click *Edit*.
+
+The Password Policy settings form contains the following fields. Enabling
+specific settings via the check boxes prompts setting-specific options to
+appear.
+
+**Name:** requires you to enter a name for the password policy.
+
+**Description:** lets you describe the password policy so other administrators
+will know what it's for.
+
+**Changeable:** determines whether or not a user can change his or her password.
+
+**Change Required:** determines whether or not a user must change his or her
+password after logging into the portal for the first time.
+
+**Minimum Age:** lets you choose how long a password must remain in effect
+before it can be changed.
+
+**Reset Ticket Max Age:** determines how long a password reset link remains
+valid.
+
+**Password Syntax Checking:** allows you to set a minimum password length and to
+choose whether or not dictionary words can be in passwords. You can also specify
+detailed requirements such as minimum numbers of alpha numeric characters, lower
+case letters, upper case letters, numbers or symbols.
+
+**Password History:** lets you keep a history (with a defined length) of
+passwords and prevents users from changing their passwords to one that was
+previously used.
+
+**Password Expiration:** lets you choose how long passwords can remain active
+before they expire. You can select the age, the warning time and a grace limit.
+
+**Lockout:** allows you to set a number of failed log-in attempts that triggers
+a user's account to lock. You can choose whether an administrator needs to
+unlock the account or if it becomes unlocked after a specific duration.
+
+From the list of password policies, you can perform several other actions.
+
+**Edit:** brings you to the form above and allows you to modify the password
+policy.
+
+**Permissions:** allows you to define which users, user groups or roles have
+permission to edit the password policy.
+
+**Assign Members:** takes you to a screen where you can search and select users
+in the portal to be assigned to this password policy. The password policy will
+be enforced for any users who are added here.
+
+**Delete:** shows up for any password policies you add beyond the default
+policy. You cannot delete the default policy.
+
+<!--
 
 ## Managing Portal Settings [](id=managing-portal-settings-liferay-portal-6-2-user-guide-16-en)
 
@@ -1492,20 +1635,25 @@ defined site templates in certain user groups to pre-populate end users' private
 pages. If there is a particular configuration you want everyone to have, you may
 want to enter those user groups here.
 
+-->
+
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-16-en)
 
-In this chapter, we began to examine Liferay's Control Panel. Site memberships
-and teams aren't the only way for portal administrators to group and manage
-users: organizations can be used to arrange users into hierarchical structures
-and user groups are a flexible way to collect groups of users that transcend
-organizational hierarchies. You can create roles to define permissions and scope
-them for the entire portal or for a particular site or organization. User groups
-can be assigned to roles; in this case, each member of the user group is
-assigned to the role. 
+In this chapter, we learned how to manage users, organizations, user groups, and
+roles via Liferay's Control Panel. Site memberships and teams aren't the only
+way for portal administrators to group and manage users: organizations can be
+used to arrange users into hierarchical structures and user groups are a
+flexible way to collect groups of users that transcend organizational
+hierarchies. You can create roles to define permissions and scope them for the
+entire portal or for a particular site or organization. User groups can be
+assigned to roles; in this case, each member of the user group is assigned to
+the role. We also looked at how to configure password policies for users. We'll
+continue our coverage of Liferay's Control Panel in the next chapter, where
+we'll examine configurable portal and server settings.
 
-We also looked at how to configure password policies for users. Next, we looked
-at the different authentication options provided by Liferay. You can configure
-Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM, OpenID,
-OpenSSO, or SiteMinder. Finally, we examined some general configuration options
-for the portal users. We'll continue our coverage of Liferay's Control Panel in
-the next chapter.
+<!--
+Next, we looked at the different authentication options provided by Liferay. You
+can configure Liferay so that users can authenticate via LDAP, CAS, Facebook,
+NTLM, OpenID, OpenSSO, or SiteMinder. Finally, we examined some general
+configuration options for the portal users. 
+-->
