@@ -4,14 +4,13 @@
 In the previous chapter, we learned how to use the Control Panel for user
 management. We learned how to manage users, organizations, user group, roles,
 and password policies. We also learned about user monitoring. In this chapter,
-we'll look at portal and server configuration options for Liferay.
-
-Now that you have been navigating in the Control Panel, you should be pretty
-familiar with how it works. The Control Panel is organized in four main areas:
-Users, Sites, Apps, and Configuration. The options in the *Configuration*
-section of the Control Panel category include configuration options which
-control how the portal operates and integrates with other systems you may have.
-In this chapter, we'll cover the following topics:
+we'll look at portal and server configuration options for Liferay. Now that you
+have been navigating in the Control Panel, you should be pretty familiar with
+how it works. The Control Panel is organized in four main areas: Users, Sites,
+Apps, and Configuration. The options in the *Configuration* section of the
+Control Panel category include configuration options which control how the
+portal operates and integrates with other systems you may have.  In this
+chapter, we'll cover the following topics:
 
 - Portal settings, such as user authentication options, mail host names, email
   notifications, identification settings, and display settings 
@@ -31,18 +30,18 @@ portal project. It's easy to adjust configuration settings using the
 portlet-driven user interface of Liferay' Control Panel. Let's start by
 examining Liferay's Portal Settings.
 
-## Portal Settings [](id=portal-settings-liferay-portal-6-2-user-guide-16-en)
+## Configuring Portal Settings [](id=portal-settings-liferay-portal-6-2-user-guide-16-en)
 
 Most global portal settings can be configured from the Portal Settings section
 of the Control Panel. The Configuration heading contains the following links:
 
 **General:** lets you configure global settings, such as the company name,
-domain, the virtual host, a global portal logo and more.
+domain, the virtual host, a global portal logo, and more.
 
-**Authentication:** allows you to configure log in IDs, connection to LDAP and
-Single Sign-On.
+**Authentication:** allows you to configure user authentication methods and
+connections to LDAP and Single Sign-On servers.
 
-**Users:** has three tabs, labeled Fields, Reserved Credentials and Default User
+**Users:** has three tabs labeled Fields, Reserved Credentials and Default User
 Associations. The Fields tab enables or disables some user fields, such as
 birthday or terms of use. The Reserved Credentials tab lets you reserve screen
 names and email addresses so users cannot register using them. You might use
@@ -61,22 +60,28 @@ newsletters. Any domain names associated with your organization can go here.
 notifications for certain events, such as user registrations, password changes,
 etc. You can customize those messages here.
 
-![Figure 16.14: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
+**Content Sharing**: contains options for enabling site administrators to
+display content in one site from other sites they administer. You can also
+configure rules for whether subsites should be able to display content from
+their parent sites.
 
-Let's discuss these settings next.
+![Figure 16.14: After clicking on *Portal Settings* in Liferay's Control Panel, you can configure any of the areas shown in this figure.](../../images/server-configuration-portal-settings-pages.png)
+
+Let's discuss these settings in more detail.
 
 ### General [](id=general-liferay-portal-6-2-user-guide-16-en)
 
-The General link takes you to a page with three headings: Main Configuration,
-Navigation and Additional Information. Under the Main Configuration heading, you
-can set the name of the company, organization or site which is running the
-portal. This name also defines the name of your portal's default site. Its
-default name is `liferay.com` so you will definitely want to set this to reflect
-your own company. You can also set the mail domain, virtual host and content
-delivery network address here. Under the Navigation heading, you can set a home
-page for your portal here as well as default landing and logout pages. Under the
-Additional Information heading, you can specify a Legal name, ID, company type,
-SIC code, ticker symbol, industry and industry type.
+The General link takes you to a screen with three headings: Main Configuration,
+Navigation, and Additional Information. Under the Main Configuration heading,
+you can set the name of the company or organization that's responsible for
+running the portal. This name also defines the name of your portal's default
+site. Its default name is `liferay.com` so you will definitely want to change
+this to reflect the name of your company or organization. You can also set the
+mail domain, virtual host and content delivery network address here. Under the
+Navigation heading, you can set a home page for your portal here as well as
+default landing and logout pages. Under the Additional Information heading, you
+can specify a Legal name, ID, company type, SIC code, ticker symbol, industry
+and industry type.
 
 ### Authentication [](id=authentication-liferay-portal-6-2-user-guide-16-en)
 
@@ -91,13 +96,13 @@ other tabs. The General tab allows you to customize Liferay's standard
 authentication behavior. Specifically, the General tab allows you to select from
 several global authentication settings:
 
--   Authenticate via email address (default), screen name or user ID (a
-    numerical ID auto-generated in the database not recommended).
+-   Authenticate via email address (default), screen name, or user ID (a
+    numerical ID auto-generated in the database--not recommended).
 
 -   Enable/Disable automatic log in. If enabled, Liferay allows a user to check
     a box which will cause the site to "remember" the user's log in by placing a
-cookie on his or her browser. If disabled, users will always have to log in
-manually.
+    cookie on his or her browser. If disabled, users will always have to log in
+    manually.
 
 -   Enable/Disable forgotten password functionality.
 
@@ -109,13 +114,14 @@ accounts on your site.
 
 -   Enable/Disable account creation by those using an email address in the
     domain of the company running the site (which you just set on the General
-page of Portal Settings). This is handy if you are using Liferay to host both
-internal and external web sites. You can make sure all internal IDs have to be
-created by administrators but external users can register for IDs themselves.
+    page of Portal Settings). This is handy if you are using Liferay to host
+    both internal and external web sites. You can make sure all internal IDs
+    have to be created by administrators but external users can register for IDs
+    themselves.
 
 -   Enable / Disable email address verification. If you enable this, Liferay
     will send users a verification email with a link back to the portal to
-verify the email address they entered is a valid one they can access.
+    verify the email address they entered is a valid one they can access.
 
 By default, all settings except for the last are enabled. User authentication by
 email address is an important default for the following reasons:
@@ -134,28 +140,48 @@ email address is an important default for the following reasons:
     user. So it is important to keep the email address at the forefront of a
     user's mind when he or she logs in to help the user keep it up to date. 
 
-We'll examine how to set up LDAP authentication next.
+Next, we'll examine how to integrate existing users from other environments,
+such as LDAP servers, into Liferay.
 
-## Integrating Liferay Users into your Enterprise [](id=integrating-liferay-users-into-your-ent-liferay-portal-6-2-user-guide-16-en)
+## Integrating Existing Users into Liferay
+
+Liferay provides a number of user authentication options. You can configure
+Liferay to connect to LDAP or NTLM servers so users from those environments can
+log in to your Liferay server. You can also configure Liferay to allow users to
+log in via Facebook or OpenId accounts. Liferay's Control Panel provides
+interfaces for setting up user authentication using the following services:
+
+- LDAP
+- CAS
+- Facebook
+- NTML
+- OpenId
+- Open SSO
+- SiteMinder
+
+Let's start by learning how to connect Liferay to an LDAP server.
 
 ### LDAP [](id=ldap-liferay-portal-6-2-user-guide-16-en)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
 LDAP directory. There are two places for you to configure the LDAP settings:
-here in the Control Panel or in the `portal-ext.properties` file (which is
-covered in chapter 20). We recommend you use the Control Panel since your
-configuration settings will be stored in the database. Note that if you use
-both, the settings in the database will be merged with the settings in
+here in the Control Panel or in your Liferay server's `portal-ext.properties`
+file. You can browse an HTML version of Liferay's `portal.properties` file
+online at
+[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
+We recommend you use the Control Panel to configure LDAP server connection
+settings since your settings will be stored in the database. Note that if you
+use both, the settings in the database will be merged with the settings in
 `portal-ext.properties`. If there's a conflict or overlapping data, the LDAP
-servers set in the Control Panel take precedence over the servers set in
-`portal-ext.properties`. Configuring the LDAP settings from the Control Panel is
-easier and does not require a restart of Liferay. The only compelling reason to
-use the `portal-ext.properties` file is if you have many Liferay nodes which
-will be configured to run against the same LDAP directory. In that case, for
-your initial deployment, it may be easier to copy the `portal-ext.properties`
-file to all of the nodes so the first time they start up, the settings are
-correct. Regardless of which method you use, the available settings are the
-same.
+server settings in the database take precedence over the servers set in
+the `portal-ext.properties` file. Configuring the LDAP settings from the Control
+Panel is easier and does not require a restart of Liferay. The only compelling
+reason to use the `portal-ext.properties` file is if you have many Liferay nodes
+which need be configured to run against the same LDAP directory. In that case,
+for your initial deployment, it may be easier to copy the
+`portal-ext.properties` file to all of the nodes so the first time they start
+up, the settings are correct. Regardless of which method you use, the available
+settings are the same.
 
 You configure the global values from the LDAP tab of the Authentication page.
 
@@ -173,17 +199,17 @@ configure new LDAP servers below.
 **Import/Export:** You can import and export user data from LDAP directories
 using the following options:
 
-* *Import Enabled:* Check this box to cause Liferay to do a mass import from
+- *Import Enabled:* Check this box to cause Liferay to do a mass import from
   your LDAP directories. If you want Liferay to only synchronize users when they
   log in, leave this box unchecked. Definitely leave this unchecked if you are
   working in a clustered environment. Otherwise, all of your nodes would try to
   do a mass import when each of them starts up.
 
-* *Import on Startup Enabled:* Check this box to have Liferay run the import
+- *Import on Startup Enabled:* Check this box to have Liferay run the import
   when it starts up. Note: This box only appears if you check the *Import
   Enabled* box above.
 
-* *Export Enabled:* Check this box to enable Liferay to export user accounts
+- *Export Enabled:* Check this box to enable Liferay to export user accounts
   from the database to LDAP. Liferay uses a listener to track any changes made
   to the `User` object and will push these changes out to the LDAP server
   whenever the `User` object is updated. Note that by default on every login,
@@ -192,7 +218,7 @@ using the following options:
   disable this by setting the following property in your `portal-ext.properties`
   file:
 
-    users.update.last.login=false
+        users.update.last.login=false
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by default.
 This can be configured on the Password Policies page of the Control Panel. Check
@@ -222,27 +248,27 @@ same configuration options.
 **Server Name:** Enter a name for your LDAP server.
 
 **Default Values:** Several leading directory servers are listed here. If you
-are using one of these, select it and click the Reset Values button. The rest of
-the form will be populated with the proper default values for that directory.
+are using one of these, select it and click the *Reset Values* button. The rest
+of the form will be populated with the proper default values for that directory.
 
 **Connection:** These settings cover the basic connection to LDAP.
 
-* *Base Provider URL:* This tells the portal where the LDAP server is located.
+- *Base Provider URL:* This tells the portal where the LDAP server is located.
   Make sure the machine on which Liferay is installed can communicate with the
   LDAP server. If there is a firewall between the two systems, check to make
   sure the appropriate ports are opened.
 
-* *Base DN:* This is the Base Distinguished Name for your LDAP directory. It is
+- *Base DN:* This is the Base Distinguished Name for your LDAP directory. It is
   usually modeled after your organization. For a commercial organization, it may
   look similar to this: `dc=companynamehere,dc=com`.
 
-* *Principal:* By default, the administrator ID is populated here. If you have
+- *Principal:* By default, the administrator ID is populated here. If you have
   removed the default LDAP administrator, you will need to use the fully
   qualified name of the administrative credential you use instead. You need an
   administrative credential because Liferay will be using this ID to synchronize
   user accounts to and from LDAP .
 
-* *Credentials:* This is the password for the administrative user.
+- *Credentials:* This is the password for the administrative user.
 
 This is all you need to make a regular connection to an LDAP directory. The rest
 of the configuration is optional. Generally, the default attribute mappings
@@ -262,9 +288,9 @@ the certificate:
 Click *Start* &rarr; *Administrative Tools* &rarr; *Certificate Authority*.
 Highlight the machine that is the certificate authority, right-click on it, and
 click *Properties*. From the General menu, click *View Certificate*. Select the
-Details view, and click Copy To File. Use the resulting wizard to save the
-certificate as a file.  As with the CAS install (see the below section entitled
-Single Sign-On), you will need to import the certificate into the *cacerts
+Details view, and click *Copy To File*. Use the resulting wizard to save the
+certificate as a file. As with the CAS install (see the below section entitled
+*Single Sign-On*), you will need to import the certificate into the *cacerts
 keystore*. The import is handled by a command like the following:
 
     keytool -import -trustcacerts -keystore /some/path/jdk1.5.0_11/jre/lib/security/cacerts -storepass changeit -noprompt -alias MyRootCA -file /some/path/MyRootCA.cer
@@ -283,7 +309,7 @@ authentication.
 **Users:** This section contains settings for finding users in your LDAP
 directory.
 
-* *Authentication Search Filter:* The search filter box can be used to determine
+- *Authentication Search Filter:* The search filter box can be used to determine
   the search criteria for user logins. By default, Liferay uses users' email
   addresses for their login names. If you have changed this setting, you will
   need to modify the search filter here, which has been configured to use the
@@ -292,15 +318,15 @@ directory.
   email addresses, you would modify the search filter so it can match the
   entered log in name:
 
-    (cn=@screen_name@)
+        (cn=@screen_name@)
 
-* *Import Search Filter:* Depending on the **LDAP** server, there are different
+- *Import Search Filter:* Depending on the **LDAP** server, there are different
   ways to identify the user. Generally, the default setting
   (`objectClass=inetOrgPerson`) is fine but if you want to search for only a
   subset of users or users that have different object classes, you can change
   this.
 
-* *User Mapping:* The next series of fields allows you to define mappings from
+- *User Mapping:* The next series of fields allows you to define mappings from
   LDAP attributes to Liferay fields. Though your LDAP user attributes may be
   different from LDAP server to LDAP server, there are five fields Liferay
   requires to be mapped for the user to be recognized. You must define a mapping
@@ -327,7 +353,7 @@ directory.
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
 
-* *Test LDAP Users:* Once you have your attribute mappings set up (see above),
+- *Test LDAP Users:* Once you have your attribute mappings set up (see above),
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
@@ -335,7 +361,7 @@ You can also add your own mappings if you wish.
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
-* *Import Search Filter:* This is the filter for finding LDAP groups you want to
+- *Import Search Filter:* This is the filter for finding LDAP groups you want to
   map to Liferay. Enter the LDAP group attributes you want retrieved for this
   mapping. The following attributes can be mapped:
 
@@ -345,25 +371,25 @@ You can also add your own mappings if you wish.
 
     + User
 
-* *Test LDAP Groups:* Click the **Test LDAP Groups** to display a list of the
+- *Test LDAP Groups:* Click the **Test LDAP Groups** to display a list of the
   groups returned by your search filter.
 
 **Export:** This section contains settings for exporting user data from LDAP.
 
-* *Users DN:* Enter the location in your LDAP tree where the users will be
+- *Users DN:* Enter the location in your LDAP tree where the users will be
   stored. When Liferay does an export, it will export the users to this
   location.
 
-* *User Default Object Classes:* When a user is exported, the user is created
+- *User Default Object Classes:* When a user is exported, the user is created
   with the listed default object classes. To find out what your default object
   classes are, use an LDAP browser tool such as JXplorer to locate a user and
   view the Object Class attributes stored in LDAP for that user.
 
-* *Groups DN:* Enter the location in your LDAP tree where the groups will be
+- *Groups DN:* Enter the location in your LDAP tree where the groups will be
   stored. When Liferay does an export, it will export the groups to this
   location.
 
-* *Group Default Object Classes:* When a group is exported, the group is created
+- *Group Default Object Classes:* When a group is exported, the group is created
   with the listed default object classes. To find out what your default object
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
@@ -377,12 +403,12 @@ to all of your LDAP server connections.
 #### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui-liferay-portal-6-2-user-guide-16-en)
 
 Although most of the LDAP configuration can be done from the Control Panel,
-there are several configuration parameters that are only available by editing
-`portal-ext.properties`. These options will be available in the GUI in future
-versions of Liferay Portal but for now they can only be configured by editing
-the properties file.
+there are several configuration parameters that are only available by adding to
+your Liferay server's `portal-ext.properties` file. These options may be
+available in the GUI in future versions of Liferay Portal but for now they can
+only be configured by editing the properties file.
 
-If you need to change any of these options, copy the LDAP section from the
+If you need to change any of these options, copy the LDAP section from Liferay's
 `portal.properties` file into your `portal-ext.properties` file. Note that since
 you have already configured LDAP from the GUI, any settings from the properties
 file that match settings already configured in the GUI will be ignored. The GUI,
@@ -622,13 +648,21 @@ The last field defines the header SiteMinder is using to keep track of the user.
 The default value is already populated. If you have customized the field for
 your installation, enter the custom value here.
 
-When you are finished, click *Save*. Next, let's examine how to configure
-portal-wide user settings.
+When you are finished, click *Save*. Now that we've looked at various options
+for integrating existing users into Liferay, let's look at other Liferay portal
+settings.
+
+## Configuring Additional Portal Settings
+
+Go back to the Control Panel, and click on *Portal Settings* under the
+*Configuration* heading. We've already looked at the options available from the
+*General* and *Authentication* links. Now let's examine the other portal
+settings options.
 
 ### Users [](id=users-liferay-portal-6-2-user-guide-16-en)
 
-The Users page of Portal Settings has three tabs: Fields, Reserved Credentials
-and Default User Associations.
+If you click on *Users* from the Portal Settings screen, you'll find three tabs:
+Fields, Reserved Credentials and Default User Associations.
 
 The Fields tab allows you to enable/disable the following fields:
 
@@ -649,7 +683,7 @@ use this feature to prevent users from creating IDs that look like
 administrative IDs or that have reserved words in their names.
 
 The Default User Associations tab has three fields allowing you to list (one per
-line) sites, roles and user groups you want new users to become members of
+line) sites, roles, and user groups you want new users to become members of
 automatically. By default, Liferay assigns new users to both the Users role and
 the Power Users role.
 
@@ -662,7 +696,7 @@ want to enter those user groups here.
 ### Mail Host Names [](id=mail-host-names-liferay-portal-6-2-user-guide-17-en)
 
 Mail Host Names appears after Authentication and Users on the Portal Settings
-page of the control panel. You can enter other mail host names (one per line)
+screen of the Control Panel. You can enter other mail host names (one per line)
 besides the one you configured on the General tab. This lets the portal know
 which mail host names are owned by your organization.
 
@@ -674,18 +708,39 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the From field
 in all email messages sent by the portal.
 
-![Figure 17.1: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
+![Figure 17.1: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure 17.2: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
+![Figure 17.2: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
+
+### Content Sharing
+
+The Content Sharing section of the Portal Settings area of the Control Panel
+allows you to choose whether or or not site administrators can display content
+in sites from other sites they administer. For example, suppose that a certain
+user is a site administrator of two sites: *Engineering* and *Marketing*. The
+checkbox in the Content Sharing section of Portal Settings determines whether or
+not the site administrator can display content from the Marketing site in the
+Engineering site and vice versa.
+
+The Content Sharing section of Portal Settings also allows you to choose a
+behavior for whether or not subsites can display content from parent sites and
+for configuring the defaults. There are three options:
+
+- *Enabled by Default*: This means that subsites can display content from parent
+  sites by default but this can be disabled by a site administrator.
+- *Disabled by Default*: This means that subsites cannot display content from
+  parent sites by default but this can be enabled by a site administrator.
+- *Disabled*: This means that subsites cannot display content from parent sites
+  and this behavior cannot be changed by a site administrator.
 
 ### Identification [](id=identification-liferay-portal-6-2-user-guide-17-en)
 
@@ -700,7 +755,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 17.3: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 17.3: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
 themes, you can choose whether or not to display the logo. Be careful to choose
@@ -708,15 +763,16 @@ an image file that fits the space. If you pick something too big, it might
 overlap with the navigation. Next, let's look at how to customize different
 types of portal assets using custom fields.
 
-<!--  should we provide a range of recommended parameters for custom logos?  -->
+<!-- Should we provide a range of recommended parameters for custom logos?  -->
+
 ## Custom Fields [](id=custom-fields-liferay-portal-6-2-user-guide-17-en)
 
-Custom fields appear beneath Portal Settings in the Portal section of the
-control panel. Custom fields are a way to add attributes to many types of assets
-and resources in the portal. For example, if you're using Liferay Portal to
-create a site for rating books, you might create a custom field called *Favorite
-Books* for User resource. If you're using the Wiki for book reviews, you might
-add fields called *Book Title* and *Book Author*.
+Custom fields appear beneath Portal Settings under the Configuration heading of
+the Control Panel. Custom fields are a way to add attributes to many types of
+assets and resources in the portal. For example, if you're using Liferay Portal
+to create a site for rating books, you might create a custom field called
+*Favorite Books* for User resource. If you're using the Wiki for book reviews,
+you might add fields called *Book Title* and *Book Author*.
 
 It's possible to add custom fields to following kinds of portal resources:
 
