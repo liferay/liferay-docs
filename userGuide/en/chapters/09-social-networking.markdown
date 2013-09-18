@@ -650,13 +650,13 @@ key and secret given by the service provider.
    your gadget. You must also register your gadget with Twitter to access the
    Consumer Key and Consumer Secret.
 
-    ![Figure 9.21: Twitter allows you to manage OAuth for your Twitter gadget.](../../images/15-opensocial-9.png)
+    ![Figure 9.18: Twitter allows you to manage OAuth for your Twitter gadget.](../../images/15-opensocial-9.png)
 
 4. Go to [https://www.twitter.com](https://www.twitter.com) and, before logging
    in, scroll to the bottom of the page and select *Developers*. Then click
    *Get started with the platform* to begin registering your gadget.
 
-    ![Figure 9.23: Select *Get started with the platform* from within the *Developers* page.](../../images/15-opensocial-11.png)
+    ![Figure 9.19: Select *Get started with the platform* from within the *Developers* page.](../../images/15-opensocial-11.png)
 
 5. Navigate to the *REST API* heading and click *Manage & create your
 applications*. Then click *Create a new application*.    
@@ -673,12 +673,12 @@ applications*. Then click *Create a new application*.
     b. Finally, select the *Create your Twitter application* tab at the bottom
     of the page.
 
-    ![Figure 9.24: Fill in *Application Details* to setup connectivity between your Twitter gadget and your portal.](../../images/15-opensocial-12.png)
+    ![Figure 9.20: Fill in *Application Details* to setup connectivity between your Twitter gadget and your portal.](../../images/15-opensocial-12.png)
 
 7. You are given the OAuth setting that you need to configure your gadget on
    Liferay. Copy the Consumer Key and Consumer Secret to your clipboard.
 
-    ![Figure 9.25: Here are the *Consumer Key* and *Consumer Secret* (value is blacked out for security reasons).](../../images/15-opensocial-13.png)
+    ![Figure 9.21: Here are the *Consumer Key* and *Consumer Secret* (value is blacked out for security reasons).](../../images/15-opensocial-13.png)
 
 8. Enter your Consumer Key and Consumer Secret under the *Manage OAuth* that you
    navigated to earlier. Also, select `HMAC_SYMMETRIC` for the *Key Type* and
@@ -693,7 +693,7 @@ applications*. Then click *Create a new application*.
    Twitter* checkbox. Then click *Update this Twitter application's settings* at
    the bottom of the page.
 
-    ![Figure 9.27: Select the *Read and Write* option to enable two way communication.](../../images/15-opensocial-19.png)
+    ![Figure 9.22: Select the *Read and Write* option to enable two way communication.](../../images/15-opensocial-19.png)
 
 10. Navigate back to the *Details* tab and, at the bottom of the page, click
     *Create my access token*.
@@ -714,18 +714,18 @@ OAuth-configured gadget to your page.
    *Twitter Gadget*. If your gadget is configured correctly, it should appear
    like this:
 
-    ![Figure 9.28: Your OAuth configured Twitter gadget awaits personalization with your Twitter account.](../../images/15-opensocial-14.png)
+    ![Figure 9.23: Your OAuth configured Twitter gadget awaits personalization with your Twitter account.](../../images/15-opensocial-14.png)
 
 2. Click on *Personalize this gadget* to be redirected to the service provider.
 
 3. Fill in your Twitter user name and password and select *Authorize app*
 
-    ![Figure 9.29: Authorizing your OpenSocial application to use your account is straightforward.](../../images/15-opensocial-15.png)
+    ![Figure 9.24: Authorizing your OpenSocial application to use your account is straightforward.](../../images/15-opensocial-15.png)
 
 4. Your Twitter Gadget should now show your last 20 tweets from your timeline.
    Your gadget should look similar to the snapshot below:
 
-    ![Figure 9.30: Check out your Twitter gadget timeline!](../../images/15-opensocial-16.png)
+    ![Figure 9.25: Check out your Twitter gadget timeline!](../../images/15-opensocial-16.png)
 
 5. Using this gadget, you can tweet your current status and have it display on
    your Liferay site and Twitter page. To change the amount of tweets displayed,
@@ -733,12 +733,12 @@ OAuth-configured gadget to your page.
    *Configuration*.  Under the *Setup* tab, you can type the number of tweets to
    display.
 
-    ![Figure 9.31: Configure the number of Tweets to display.](../../images/15-opensocial-17.png)
+    ![Figure 9.26: Configure the number of Tweets to display.](../../images/15-opensocial-17.png)
 
 6. Lastly, you can tweet and view your Twitter timeline. The snapshot below
    displays what the Twitter Gadget looks like when tweeting.
 
-    ![Figure 9.32: Here is your Twitter gadget just the way you like it!](../../images/15-opensocial-20.png)
+    ![Figure 9.27: Here is your Twitter gadget just the way you like it!](../../images/15-opensocial-20.png)
 
 As you can see, OAuth is easy to configure and offers users the freedom to
 securely add valuable data from third-party sites.
