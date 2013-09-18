@@ -39,15 +39,6 @@ displayed in the selected language.
 
 ![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
 
-<!-- For every window in the look and feel section, we are given *Title* and
-*Initial Window State*. I don't think these are correctly placed and these need
-to be monitored closely. Both features are originally from the WAP Styling tab,
-which has been deprecated for 6.2. I'm not going to describe these two features
-for now, and will wait for confirmation on whether or not this is correct. A
-ticket has been filed for these repetitive features: LPS-38624. Note that the
-screenshots will need to be retaken if these features are incorrectly placed.
--->
-
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
