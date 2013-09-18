@@ -614,7 +614,7 @@ that only site administrators have permission to customize the RSS portlet and
 select feeds to be displayed.
 
 Once you've added the RSS portlet to a page, open the portlet's Configuration
-popup window by clicking on the wrench icon at the top right corner of the
+popup window by clicking on the gear icon at the top right corner of the
 portlet and selecting *Configuration*.
 
 ![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
