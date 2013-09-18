@@ -795,18 +795,19 @@ It's possible to add custom fields to following kinds of portal resources:
 - Web Content Article
 - Wiki Page
 
-The ability to add custom fields to any of these resources provides a lot of
-flexibility to portal developers. For example, suppose you'd like to define a
-limitation on the number of users that can be assigned to certain roles. A
-portal administrator can create a custom field called *max-users* for the Role
+The ability to add custom fields to any of these resources affords flexibility
+to portal developers. For example, suppose you'd like to define a limitation on
+the number of users that can be assigned to certain roles. A portal
+administrator can create a custom field called *max-users* for the Role
 resource. Then a portal developer can create a hook plugin that checks this
-field upon user assignment to roles.
+field upon user assignment to roles to make sure that there aren't too many
+users assigned to the role.
 
 To add a custom field, click on the *Custom Fields* link in the control panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 17.4: Custom Fields Resource List](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 17.4: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you need to add the custom field key. The key appears as the label for
 the field on the form. For some portal resources (like the User), custom fields
@@ -815,7 +816,7 @@ fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 17.5: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 17.5: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
