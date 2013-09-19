@@ -130,7 +130,7 @@ box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 10.2: You can combin many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
+![Figure 10.2: You can combine many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
