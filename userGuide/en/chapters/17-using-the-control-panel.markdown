@@ -803,7 +803,7 @@ resource. Then a portal developer can create a hook plugin that checks this
 field upon user assignment to roles to make sure that there aren't too many
 users assigned to the role.
 
-To add a custom field, click on the *Custom Fields* link in the control panel.
+To add a custom field, click on the *Custom Fields* link in the Control Panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
@@ -821,27 +821,14 @@ developers can access custom fields programatically through the
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
 you cannot change its type. However, you can delete custom fields and create new
-ones.
-
-## Plugins Configuration [](id=plugins-configuration-liferay-portal-6-2-user-guide-17-en)
-
-The Plugins Configuration page contains tabs for three types of plugins:
-portlets, themes and layouts. You can use these tabs to view which roles can add
-plugins to pages or you can make the plugins active or inactive.
-
-Note that this is for basic configuration: if you want to view the existing
-permission configuration for a given portlet and/or modify that configuration
-for existing roles, this is where you can do that. If you need to add
-permissions to new roles for a given portlet, use the Roles section of the
-control panel and the *Actions &rarr; Define Permissions* button. Next, let's
-look at how to apply server configurations.
+ones. Next, let's look at how to apply server configurations.
 
 ## Server Administration [](id=server-administration-liferay-portal-6-2-user-guide-17-en)
 
-The Server Administration page of the control panel lets you perform various
-tasks related to the portal server itself, as opposed to the resources in the
-portal. Clicking the link makes this clear: you're immediately presented with a
-graph showing the resources available in the JVM.
+The Server Administration page of the Control Panel lets you perform various
+tasks related to the portal server itself that aren't directly related to the
+resources in the portal. Clicking the link makes this clear: you're immediately
+presented with a graph showing the resources available in the JVM.
 
 ### Resources [](id=resources-liferay-portal-6-2-user-guide-17-en)
 
@@ -896,6 +883,10 @@ and where they might be.
 **Verify database tables of all plugins:** Checks all tables against their
 indexes for accuracy of data retrieval.
 
+<!-- Waiting for more information about this one (JR)
+**Verify Membership Policies**:
+-->
+
 **Clean up Permissions:** This process removes the assignment of some
 permissions on the Guest, User, and Power User roles to simplify the management
 of "User Customizable Pages". Notably, the "Add To Page" permissions is removed
@@ -927,20 +918,22 @@ portal.
 
 The portal properties tab tab shows an exhaustive list of the portal properties.
 These properties can be customized; you can peruse the full list of customizable
-properties in chapter 20. If you need to check the current value of a particular
-property, it can be viewed from this screen without having to shut down the
-portal or open any properties files.
+properties online at
+[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
+If you need to check the current value of a particular property, it can be
+viewed from this screen without having to shut down the portal or open any
+properties files.
 
-### Captcha [](id=captcha-liferay-portal-6-2-user-guide-17-en)
+### CAPTCHA
 
-By default, Liferay ships with its own simple captcha service which is designed
+By default, Liferay ships with its own simple CAPTCHA service which is designed
 to thwart bots from registering for accounts on sites powered by Liferay. If you
-want to instead use Google's reCaptcha service, you can enable this setting from
-the Captcha tab of the Server Administration page.
+want to instead use Google's reCAPTCHA service, you can enable this setting from
+the CAPTCHA tab of the Server Administration page.
 
-Simply check the *Enable ReCaptcha* box and enter your public and private keys
+Simply check the *Enable ReCAPTCHA* box and enter your public and private keys
 into the provided fields, then click *Save*. Liferay Portal will then use
-reCaptcha instead of simple captcha.
+reCAPTCHA instead of simple CAPTCHA.
 
 ### Data Migration [](id=data-migration-liferay-portal-6-2-user-guide-17-en)
 
@@ -958,15 +951,18 @@ Once you have all of this information entered, click *Execute* to copy the data.
 The next section helps you migrate your documents. If you want to move off of
 the Jackrabbit JSR-170 repository to the file system, or to the Jackrabbit
 repository from the file system, or to any of the other repositories supported
-by the documents and media library, you can do so very easily. Make sure you
+by the Documents and Media library, you can do so very easily. Make sure you
 have already set up your `portal-ext.properties` file so the hook is properly
 configured before running this migration. Select the Document Library hook that
-represents where you want your documents migrated and click *Execute*. Your
-documents will be migrated to the new repository. You can then shut down
-Liferay, make the new repository the default in the `portal-ext.properties` file
-and then restart.
+represents the location to which you want your documents to be migrated, then
+click *Execute*. Your documents will be migrated to the new repository. You can
+then shut down Liferay, make the new repository the default in the
+`portal-ext.properties` file, and then restart.
 
-Similarly, you can migrate images from the Image Gallery in the same manner.
+You can migrate images from the Image Gallery in the same manner. (In Liferay
+6.0 and previous versions, the Document Library and Image Gallery were distinct
+repositories. In Liferay 6.1 and later versions, these have been combined into a
+single Documents and Media repository.)
 
 ### File Uploads [](id=file-uploads-liferay-portal-6-2-user-guide-17-en)
 
@@ -980,15 +976,17 @@ portal.
 
 ### Mail [](id=mail-liferay-portal-6-2-user-guide-17-en)
 
-Rather than using the `portal-ext.properties` file as we did in the installation
-chapter, you can configure a mail server from the Mail tab of the Server
-Configuration tab. If the portal is to receive mail (see our coverage of the
-Message Boards portlet in chapter 7), you can connect a POP mail server. If the
-portal is to send mail, which it needs to do to send notifications to users, you
-can connect to an SMTP server here as well and this is highly recommended.
+Instead of using your Liferay server's `portal-ext.properties` file to configure
+a mail server, you can configure a mail server from the Mail tab of the Server
+Configuration section of the Control Panel. If your portal is to receive mail
+(see, for example, our coverage of the Message Boards portlet in chapter 8), you
+can connect a POP mail server. If your portal is to send mail, which is useful
+for sending notifications to users, you can connect to an SMTP server. We highly
+recommend setting up mail servers for your portal.
 
-Note that if you add your mail server settings here, they will override anything
-in your `portal-ext.properties` file.
+Note that if you configure mail server settings here in the Control Panel, these
+settings will override any mail server settings in your `portal-ext.properties`
+file.
 
 ### External Services [](id=external-services-liferay-portal-6-2-user-guide-17-en)
 
@@ -1015,15 +1013,15 @@ Server Administration Control Panel interface.
 
 ---
 
-![Tip](../../images/01-tip.png) **Tip:** If you're running Liferay on a Linux
-server and experience a problem enabling Xuggler, check your server's glibc
-version. You might have to update glibc to version 2.6 or later in order for
-Xuggler to work.
+ ![Tip](../../images/01-tip.png) **Tip:** If you're running Liferay on a Linux
+ server and experience a problem enabling Xuggler, check your server's glibc
+ version. You might have to update glibc to version 2.6 or later in order for
+ Xuggler to work.
 
 ---
 
 Once you've installed these tools, you can use the External Services tab of the
-control panel to configure Liferay to use them.
+Control Panel to configure Liferay to use them.
 
 #### OpenOffice/LibreOffice configuration [](id=openoffice-libreoffice-configuration-liferay-portal-6-2-user-guide-17-en)
 
@@ -1043,7 +1041,7 @@ Liferay, you can start it in server mode with the following command:
 
 Once OpenOffice or LibreOffice has been installed and is running in server mode,
 you can configure Liferay to use it either in your `portal-ext.properties` file
-or from the control panel. To enable OpenOffice/LibreOffice in your
+or from the Control Panel. To enable OpenOffice/LibreOffice in your
 `portal-ext.properties` file, add the following line:
 
     openoffice.server.enabled=true
@@ -1066,14 +1064,14 @@ temp folder. You can turn the cache off by setting the following property:
 
     openoffice.cache.enabled=false
 
-To configure Liferay to use OpenOffice/LibreOffice from the control panel,
+To configure Liferay to use OpenOffice/LibreOffice from the Control Panel,
 navigate to the *Server Administration* &rarr; *External Services* page and
 check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on
 a non-default port, you must also specify the port number. By default,
-OpenOffice runs on port 8100, which is the default port in the control panel. If
+OpenOffice runs on port 8100, which is the default port in the Control Panel. If
 you have something else running on this port, find an open port and specify it
 both in the command to start OpenOffice/LibreOffice in server mode and on the
-control panel's External Services configuration page. When you are finished,
+Control Panel's External Services configuration page. When you are finished,
 click *Save*. Now Liferay can perform many types of document conversions.
 
 #### ImageMagick configuration [](id=imagemagick-configuration-liferay-portal-6-2-user-guide-17-en)
@@ -1082,7 +1080,7 @@ Once you've installed the correct version of
 [*ImageMagick*](http://www.imagemagick.org) for your operating system, which
 should include the installation of Ghostscript, you need to configure Liferay to
 use ImageMagick. You can do this either in your `portal-ext.properties` file or
-from the control panel. To enable ImageMagick in your `portal-ext.properties`
+from the Control Panel. To enable ImageMagick in your `portal-ext.properties`
 file, add the following lines and make sure the search path points to the
 directories for the ImageMagick and Ghostscript executables. You may also need
 to configure the path for fonts used by Ghostscript when in Mac or Unix
@@ -1093,7 +1091,7 @@ environments.
     imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
     imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
 
-To enable ImageMagick from the control panel, navigate to the *Server
+To enable ImageMagick from the Control Panel, navigate to the *Server
 Administration* &rarr; *External Services* page, check the *Enabled* checkbox
 for ImageMagick and verify the paths to the ImageMagick and Ghostscript
 executables are correct.
@@ -1120,13 +1118,13 @@ systems:
     export PATH=$XUGGLE_HOME/bin:$PATH
 
 Once your environment variables are set up correctly, you can configure Liferay
-to use Xuggler either in your `portal-properties` file or from the control
-panel. If you'd like to use your portal-ext.properties file, just add the
+to use Xuggler either in your `portal-properties` file or from the Control
+Panel. If you'd like to use your portal-ext.properties file, just add the
 following line:
 
     xuggler.enabled=true
 
-To configure Liferay to use Xuggler in the control panel, navigate to the
+To configure Liferay to use Xuggler in the Control Panel, navigate to the
 *Server Administration* &rarr; *External Services* page and check *Enabled*.
 That's it! You've successfully configured the Documents and Media library to use
 Xuggler for audio and video files.
@@ -1136,7 +1134,10 @@ Xuggler for audio and video files.
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
 including JavaScript, Groovy, Python, Ruby and Beanshell. For further
-information about Liferay's APIs, see the JavaDoc or [*Liferay in Action*](http://manning.com/sezov).
+information about Liferay's APIs, please refer to the [Liferay Development
+Gudie](https://www.liferay.com/documentation/liferay-portal/6.2/development),
+[*Liferay in Action*](http://manning.com/sezov), or Liferay's
+[Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
 
 ### Shutdown [](id=shutdown-liferay-portal-6-2-user-guide-17-en)
 
@@ -1154,12 +1155,14 @@ multiple portal instances.
 ## Portal Instances [](id=portal-instances-liferay-portal-6-2-user-guide-17-en)
 
 Liferay Portal allows you to run more than one portal instance on a single
-server. The Portal Instances page of the control panel lets you manage these
-instances. Data for each portal instance are kept separate from every other
-portal instance. All portal data, however, is kept in the same database.
+server. The Portal Instances section of the Control Panel appears under the
+Configuration heading. This sectin lets you manage multiple portal instances
+from a single Liferay installation. Each portal instance's data is kept separate
+from every other portal instance's data. All portal data, however, is kept in
+the same database.
 
-Each portal instance requires its own domain name. Liferay will direct users to
-the proper portal instance based on this domain name. So before you configure an
+Each portal instance requires its own domain name. Liferay directs users to the
+proper portal instance based on this domain name. So before you configure an
 instance, configure its domain name in your network first. When you're ready to
 add an instance, click the *Add* button here.
 
@@ -1186,37 +1189,29 @@ portal using your new domain name. You will see you are brought to what looks
 like a clean install of Liferay. This is your new portal instance which can now
 be configured any way you like.
 
-## Plugins Installation [](id=plugins-installation-liferay-portal-6-2-user-guide-17-en)
-
-The *Plugins Installation* page of the control panel shows all of the plugins
-currently installed. These are divided into tabs for portlets, themes, layout
-templates, hook plugins and web plugins. If you want to install a new plugin,
-click the *Install More Portlets* button. You will then be brought to the Plugin
-Installer, where you can browse Liferay's repository of portlets or install your
-own plugins. We covered the plugins installer and explained how to install
-plugins manually in chapter 13.
-
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-17-en)
 
 In this chapter, we examined how to configure Liferay's portal settings. We
 looked at the different authentication options provided by Liferay. You can
 configure Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM,
 OpenID, OpenSSO, or SiteMinder. We also examined some general configuration
-options for the portal users, such as default user associations. 
+options for the portal users, such as reserved credentials and default user
+associations. 
 
-Next, we learned how to configure mail host names, email notifications,
-identification, and portal display settings. We showed how to add custom fields
-to various portal entities such as users, pages, documents, wiki articles,
-message board posts, and more. 
+Next, we learned how to configure mail host names, email notifications, content
+sharing, identification information, and portal display settings. We showed how
+to add custom fields to various portal entities such as users, pages, documents,
+wiki articles, message board posts, and more. 
 
-Next, we saw how to view and configure overall server settings. We saw how to
+We also saw how to view and configure overall server settings. We saw how to
 view the memory currently being used by the server, as well as how to initiate
 garbage collection, a thread dump, search engine re-indexing and the clearing of
 various caches. We learned how to debug parts of the portal by changing log
-levels and by viewing the various properties defined in the portal.
+levels and by viewing the various properties defined in the portal. We learned
+how to properly notify users that the portal is about to shut down and how to
+set up external services like OpenOffice integration.
 
-Finally, we learned how to properly notify users that the portal is about to
-shut down and how to set up external services like OpenOffice integration. We
-looked at how to create multiple portal instances on a single installation of
-Liferay and we showed how to view currently installed plugins. We hope this
-information helps you become an effective Liferay Portal Administrator.
+Lastly, we looked at how to create multiple portal instances on a single
+installation of Liferay and we showed how to view currently installed plugins.
+We hope this information helps you become an effective Liferay Portal
+Administrator.
