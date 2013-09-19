@@ -728,9 +728,9 @@ query for mixed types of content on the fly. By giving you the ability to
 control what and how content is displayed from one location, the Asset Publisher
 helps you to "bubble up" the most relevant content to your users.
 
-To get to all the portlet's options, click the *Configuration* link in the
-portlet's menu (the wrench icon). On the Setup tab, you can configure the Asset
-Publisher's settings from the following three areas:
+To get to all the portlet's options, click the *Options* button in the portlet's
+menu (the gear icon). On the Setup tab, you can configure the Asset Publisher's
+settings from the following three areas:
 
 - Asset Selection
 - Display Settings
@@ -1029,7 +1029,7 @@ relevant information for your users.
 
 The Asset Publisher portlet supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, open the Asset
-Publisher's configuration window (click on the wrench icon and select
+Publisher's configuration window (click on the gear icon and select
 *Configuration*). In the configuration window, open the Subscriptions tab of the
 Setup tab. There are two options:
 
@@ -1132,7 +1132,7 @@ Related Assets portlet.
 
 As a prerequisite for the Related Assets portlet to display related assets, you
 have to configure it to show the content you want displayed. To do this, go to
-the Asset Publisher portlet and select the *wrench* icon in the upper right
+the Asset Publisher portlet and select the *gear* icon in the upper right
 corner of the portlet. Under the *Setup* tab, set type of asset(s) to display
 using the *Asset Type* menu. The default value is set to *Any*. You can narrow
 the scope of the portlet to display any single category of asset type or select

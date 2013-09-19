@@ -170,7 +170,7 @@ Welcome page:
 3. Add the Language portlet to the right column of the page by clicking *Add*,
    clicking on *Applications*, searching for *Language*, and clicking *Add* next
    to its name.
-4. Configure the Language portlet by clicking on the wrench icon and selecting
+4. Configure the Language portlet by clicking on the gear icon and selecting
    *Configuration* and then opening the *Display Style* dropdown menu and
    choosing *Select Box*.
 
@@ -282,7 +282,7 @@ Velocity or FreeMarker templates in the system. For more information on how to
 create a custom template, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 Another cool feature is the *Export/Import* functionality. You can take
-advantage of this feature by clicking the wrench icon at the top right of the
+advantage of this feature by clicking the gear icon at the top right of the
 screen and selecting *Export/Import*. For more information on using this
 feature, visit the *Export/Import* sub-section in the [Understanding Liferay's
 common configuration options
@@ -325,18 +325,17 @@ your portal.
    *Content and Applications* &rarr; *Applications* &rarr; *Content Management*
    &rarr; *Media Gallery*.
 
-2. Select the *Options* wrench from the top right corner, then click
+2. Select the *Options* gear from the top right corner, then click
    *Configuration*.
 
 3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
    *Save* and close the popup.
 
-4. Click the *Add Multiple Media* linkand select two custom photos to display.
+4. Click the *Add Multiple Media* link and select two custom photos to display.
    Then click *Save*, and navigate back to the main portlet screen.
 
 5. Notice the default format of the pictures. To change the display template for
-   this portlet, navigate back to the *Options* wrench and click
-   *Configuration*.
+   this portlet, navigate back to the *Options* gear and click *Configuration*.
 
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
    *Save*.
@@ -442,7 +441,7 @@ Sample Drools Portlet plugin also contains a second rule that returns
 personalized content based on the user's net worth set in the My Account &rarr;
 Custom Fields section of the Control Panel. To see this rule in action, add a
 second instance of the Sample Drools Portlet to a page. Once added to the page,
-select the *Options* icon (*the wrench*) and then select *Configuration*. You
+select the *Options* icon (*the gear*) and then select *Configuration*. You
 need to replace the rules defined in the *Rules* section of the Configuration
 screen with contents of the *rules_user_custom_attribute_content.drl* file. The
 rule file can be found in the deployed portlet at
