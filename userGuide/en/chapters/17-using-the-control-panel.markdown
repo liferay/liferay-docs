@@ -1133,8 +1133,11 @@ Xuggler for audio and video files.
 
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
-including JavaScript, Groovy, Python, Ruby and Beanshell. For further
-information about Liferay's APIs, please refer to the [Liferay Development
+including JavaScript, Groovy, Python, Ruby and Beanshell. This guide contains a
+[chapter](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-scripting-for-advanced-flexibilit-liferay-portal-6-2-user-guide-19-en)
+that explains how to use Liferay's scripting console and provides some examples.
+For further information about Liferay's APIs, please refer to the [Liferay
+Development
 Gudie](https://www.liferay.com/documentation/liferay-portal/6.2/development),
 [*Liferay in Action*](http://manning.com/sezov), or Liferay's
 [Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
