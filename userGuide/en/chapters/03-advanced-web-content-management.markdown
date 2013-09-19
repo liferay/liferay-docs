@@ -149,10 +149,6 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
-<!-- Needs to be replaced for 6.2. -->
-<!-- Icons not appearing at the present time for WC structure editor (LPS-35338)
--->
-
 Liferay supports the following fields in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
