@@ -1,15 +1,8 @@
 # Using Scripting for Advanced Flexibility [](id=using-scripting-for-advanced-flexibilit-liferay-portal-6-2-user-guide-19-en)
 
----
-
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay provides a robust script engine that can be used to interpret scripts in
-Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of
-Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It
+Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of
+Liferay's involvement with the [Romulus project](http://www.ict-romulus.eu). It
 was originally developed to support non Java-based portlets, but has now been
 extended to handle a lot more. For example, when Liferay's workflow framework
 was introduced, the script engine was leveraged to support the execution of
