@@ -1,5 +1,5 @@
 
-# Web Content Management
+# Web Content Management [](id=web-content-management-liferay-portal-6-2-user-guide-02-en)
 
 Liferay's Web Content Management system allows non-technical users to publish
 content to the web without having advanced knowledge of web technology or
@@ -52,7 +52,7 @@ create and manage content on the portal for *Nose-ster*, a new social network
 where people are connected based on what their noses look like. Once you're
 familiar with Liferay WCM, you'll wonder how you ever got along without it. 
 
-## Setting up the Nose-ster Example Portal
+## Setting up the Nose-ster Example Portal [](id=setting-up-the-nose-ster-example-portal-liferay-portal-6-2-user-guide-02-en)
 
 Suppose that you've been assigned the task of building a web site for an
 innovative new social networking site called Nose-ster. You've decided to take
@@ -86,7 +86,7 @@ many of the applications you'll need, out of the box. These applications are
 ready to go and are integrated with the rest of Liferay's user management and
 security features.
 
-## Leveraging Liferay's Multi-site Capabilities
+## Leveraging Liferay's Multi-site Capabilities [](id=leveraging-liferays-multi-site-capabili-liferay-portal-6-2-user-guide-02-en)
 
 As stated in chapter 1, a site is a set of pages that can be used to publish
 content or applications. Sites can be independent or they can be associated with
@@ -189,7 +189,7 @@ changed through the simple configuration of the setup wizard. The portal name
 can also be changed at any time through the Control Panel within *Portal
 Settings*.
 
-### Creating and Managing Sites
+### Creating and Managing Sites [](id=creating-and-managing-sites-liferay-portal-6-2-user-guide-02-en)
 
 Sites can be created through the Control Panel by a portal administrator. To add
 a site, click on *Sites* under the Sites section of the Control Panel and then
@@ -272,7 +272,7 @@ permission to do so.
 
 Now that our new site is created, lets learn how to create and manage its pages.
 
-### Creating and Managing Pages
+### Creating and Managing Pages [](id=creating-and-managing-pages-liferay-portal-6-2-user-guide-02-en)
 
 You have a few options for accessing and configuring your site's page editing
 interface. There are three interfaces to be aware of: *Site Pages*, *Page*, and
@@ -321,7 +321,7 @@ members of the organization.
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
 
-#### More Page Management Tools
+#### More Page Management Tools [](id=more-page-management-tools-liferay-portal-6-2-user-guide-02-en)
 
 From the Site Pages interface in Site Administration, you can add a page to the
 site by clicking the *Add Page* button. Because *Public Pages* is selected on
@@ -377,7 +377,7 @@ page. This is because you're only managing the current page.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
-##### Backing up and Restoring Pages
+##### Backing up and Restoring Pages [](id=backing-up-and-restoring-pages-liferay-portal-6-2-user-guide-02-en)
 
 Next to the *Add Page* button on the Site Pages screen, there are two buttons
 labeled *Export* and *Import*. The Export button exports the pages you create
@@ -416,7 +416,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel. 
 
-##### Customizing the Look and Feel of Site Pages
+##### Customizing the Look and Feel of Site Pages [](id=customizing-the-look-and-feel-of-site-p-liferay-portal-6-2-user-guide-02-en)
 
 When you open *Site Pages* from within Site Administration, it defaults to the
 Look and Feel tab. On this tab, you're presented with an interface that allows
@@ -462,7 +462,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-##### Using a Custom Logo for a Site
+##### Using a Custom Logo for a Site [](id=using-a-custom-logo-for-a-site-liferay-portal-6-2-user-guide-02-en)
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
@@ -480,7 +480,7 @@ disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. Let's take a look at how to edit individual pages.
 
-#### Changing Options for Individual Pages
+#### Changing Options for Individual Pages [](id=changing-options-for-individual-pages-liferay-portal-6-2-user-guide-02-en)
 
 When you use the *Edit Page* interface for a single page, some different options
 appear. Let's look at what these do. 
@@ -568,7 +568,7 @@ users to be able to customize.
 
 Next, we'll run practice modifying page layouts!
 
-#### Modifying Page Layouts
+#### Modifying Page Layouts [](id=modifying-page-layouts-liferay-portal-6-2-user-guide-02-en)
 
 Page layouts allow you to arrange your pages so the content appears the way you
 want it to. Liferay comes with many layouts already defined. Developers can
@@ -593,7 +593,7 @@ you virtually unlimited options for laying out your pages.
 
 The next option we'll explore is page customizations. 
 
-#### Page Customizations
+#### Page Customizations [](id=page-customizations-liferay-portal-6-2-user-guide-02-en)
 
 With page customizations, any user with the appropriate permissions can create
 personalized versions of any public page. Before users can create personalized
@@ -621,7 +621,7 @@ section of chapter 6.
 Now that you know how to enable page customizations, let's look at the settings
 for the site as a whole.
 
-#### Configuring Site Settings
+#### Configuring Site Settings [](id=configuring-site-settings-liferay-portal-6-2-user-guide-02-en)
 
 As with Site Pages, you can access Site Settings by navigating to Site
 Administration and clicking *Site Settings* from the Configuration section on
@@ -764,7 +764,7 @@ section.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-#### Page Templates and Site Templates
+#### Page Templates and Site Templates [](id=page-templates-and-site-templates-liferay-portal-6-2-user-guide-02-en)
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
 pages on larger portals. As you continue to add pages to sites in your portal,
@@ -776,7 +776,7 @@ create a single site template and use it to create as many sites as desired. For
 more information on page templates and site templates, see the *Advanced Web
 Content Management* chapter. 
 
-#### Site Content
+#### Site Content [](id=site-content-liferay-portal-6-2-user-guide-02-en)
 
 Liferay 6.2 separates Web Content management from the Control Panel by placing
 it on the *Admin* &rarr; *Site Administration* page. From Site Administration,
@@ -788,7 +788,7 @@ managed, including web content.
 For details about Liferay's social collaboration suite, see chapter 10. Next,
 let's learn more details about creating pages.
 
-### Creating Pages
+### Creating Pages [](id=creating-pages-liferay-portal-6-2-user-guide-02-en)
 
 There are a lot of other things you can do beyond placing portlets on a page. So
 let's start working on the Nose-ster site. You can do this by going up to the
@@ -830,7 +830,7 @@ hierarchy. Some examples of that are in Liferay's plugin repositories.
 For now, click the back arrow. You should be able to define and manage pages in
 Liferay at this point so let's look at what you'd put on a page.
 
-#### Adding Portlets to a Page
+#### Adding Portlets to a Page [](id=adding-portlets-to-a-page-liferay-portal-6-2-user-guide-02-en)
 
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets. Even
@@ -860,7 +860,7 @@ If the layout options provided aren't enough, you can even develop your own.
 More information about that can be found in Liferay's official guide to
 development, [*Liferay in Action*](http://manning.com/sezov).
 
-#### Page Permissions
+#### Page Permissions [](id=page-permissions-liferay-portal-6-2-user-guide-02-en)
 
 By default, public pages are just that: public. They can be viewed by anybody,
 logged in or not logged in. And private pages are really only private from
@@ -914,7 +914,7 @@ templates to define how content is to be displayed, set up a workflow for
 content to be approved, schedule when content is to be published and much, much
 more.
 
-## Features of Liferay's WCM
+## Features of Liferay's WCM [](id=features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en)
 
 Liferay's WCM offers a host of features that makes managing the content of your
 site easier:
@@ -956,7 +956,7 @@ etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see chapter 5 for more information on Liferay's asset framework.
 
-### Authoring (Basic) Content
+### Authoring (Basic) Content [](id=authoring-basic-content-liferay-portal-6-2-user-guide-02-en)
 
 As we've already discussed, content is the reason web sites exist. Liferay
 Portal has made it easier than ever to get content published to your site.
@@ -1006,7 +1006,7 @@ view the web content templates associated with a structure or add a new
 template to a structure. In the next chapter, we'll cover advanced features such
 as structures, templates, and content scheduling in detail. 
 
-#### Rich, WYSIWYG Editing
+#### Rich, WYSIWYG Editing [](id=rich-wysiwyg-editing-liferay-portal-6-2-user-guide-02-en)
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
 customizable form that by default has two fields: a title and a powerful WYSIWYG
@@ -1087,7 +1087,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-##### Creating a Display Page
+##### Creating a Display Page [](id=creating-a-display-page-liferay-portal-6-2-user-guide-02-en)
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -1155,7 +1155,7 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-### Publishing (Basic) Content
+### Publishing (Basic) Content [](id=publishing-basic-content-liferay-portal-6-2-user-guide-02-en)
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
@@ -1228,7 +1228,7 @@ both processes.
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools. 
 
-##### Editing Content  
+##### Editing Content [](id=editing-content-liferay-portal-6-2-user-guide-02-en)
 
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web
@@ -1256,7 +1256,7 @@ Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
 workflow. 
 
-## Using Liferay's Workflow with WCM  
+## Using Liferay's Workflow with WCM [](id=using-liferays-workflow-with-wcm-liferay-portal-6-2-user-guide-02-en)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
@@ -1295,7 +1295,7 @@ As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content  
+#### Defining Workflows for Web Content [](id=defining-workflows-for-web-content-liferay-portal-6-2-user-guide-02-en)
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
@@ -1345,7 +1345,7 @@ workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
 detail in chapter 6.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-02-en)
 
 This chapter has provided an introduction to Liferay site management and web
 content management. We've learned how you can use Liferay to create multiple

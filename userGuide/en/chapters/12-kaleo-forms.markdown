@@ -1,5 +1,13 @@
 
-# Kaleo Forms: Defining Business Processes  
+# Kaleo Forms: Defining Business Processes [](id=kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
+
+---
+
+![Note](../../images/01-tip.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -26,7 +34,7 @@ create workflow definitions without having to write XML.
 
 Let's look at Kaleo Forms first. 
 
-## Kaleo Forms  
+## Kaleo Forms [](id=kaleo-forms-liferay-portal-6-2-user-guide-12-en)
 
 Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
 *Summary* tab displays similar information to what you might see in the *My
@@ -67,7 +75,7 @@ You probably noticed when choosing a workflow, you also have the option to
 create a new one. This is where the Kaleo Workflow Designer can help you build a
 workflow without having to write any XML. Let's see how this works. 
 
-## Kaleo Designer  
+## Kaleo Designer [](id=kaleo-designer-liferay-portal-6-2-user-guide-12-en)
 
 Kaleo Designer provides a drag and drop interface for users to create custom
 workflows. It's an incredibly powerful tool for managing workflow definitions.
@@ -138,7 +146,7 @@ default workflow, only a tiny bit messier, as the nodes display in the order
 they were created, not in the logical order that happens when a human writes the
 code. Save your definition and it's ready to use.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-12-en)
 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a
 very robust environment for web content management. The Kaleo Forms portlet

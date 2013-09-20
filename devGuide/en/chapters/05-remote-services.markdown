@@ -1,4 +1,4 @@
-# Accessing Services Remotely 
+# Accessing Services Remotely [](id=accessing-services-remotely-liferay-portal-6-2-dev-guide-05-en)
 
 You've created your portlet and built some terrific services. You're happy to
 brag to your colleagues about the awesome things your portlet does. And you've
@@ -16,21 +16,21 @@ Here are the topics we'll cover in this chapter:
 - SOAP Web Services 
 - JSON Web Services 
 
-## Finding Services 
+## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
 
 You can find Liferay's services by searching for them in the Javadocs:
-[http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
 Below we'll show you how to search for portal services and portlet services.
 
 Let's start by finding a portal service. 
 
-### Finding Portal Services
+### Finding Portal Services [](id=finding-portal-services-liferay-portal-6-2-dev-guide-05-en)
 
 Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 
 
 1. In your browser, open up the Javadocs:
-   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/) 
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/) 
 
 2. Under *Portal Services*, click the link for the `com.liferay.portal.service`
    package, since the services for the Organization entity belong to the
@@ -42,7 +42,7 @@ the *Organization* services:
 
 That was easy! What if you want to find portlet services? 
 
-### Finding Portlet Services
+### Finding Portlet Services [](id=finding-portlet-services-liferay-portal-6-2-dev-guide-05-en)
 
 Searching for one of Liferay's built-in portlet services is also easy. Instead
 of clicking the link for the service package of the *portal*, click the link for
@@ -53,7 +53,7 @@ naming convention `com.liferay.portlet.[portlet-name].service`, where
 Here's how you find services for a user's blogs statistics:
 
 1. In your browser, open the Javadocs:
-   [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 
 2. Under *Portlet Services*, click the link for the
    `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
@@ -65,7 +65,7 @@ Here's how you find services for a user's blogs statistics:
 
 Now you're ready to invoke Liferay services.
 
-## Invoking the API Remotely 
+## Invoking the API Remotely [](id=invoking-the-api-remotely-liferay-portal-6-2-dev-guide-05-en)
 
 *Remote* clients run outside of the portal JVM or on a remote machine, but they
 can still access Liferay's service APIs. The main benefit of remotely accessing
@@ -105,7 +105,7 @@ somebody who knows the remote API intimately? -Rich -->
 Let's step back now and discuss the security layers of Liferay's *service
 oriented* architecture and how you can configure them. 
 
-## Service Security Layers 
+## Service Security Layers [](id=service-security-layers-liferay-portal-6-2-dev-guide-05-en)
 
 Liferay's remote services sit behind a layer of security that by default allows
 only local connections. Access to the remote APIs must be enabled as a separate
@@ -140,7 +140,7 @@ resides on the portal host machine and is controlled by the portal
 administrator. Portal administrators can configure security settings for the
 Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
 Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Properties
-Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+Reference](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properti-1)
 chapter of *Using Liferay Portal* describes these properties. 
 
 ---
@@ -183,14 +183,6 @@ can get Organization data with the following URL:
 
     http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
----
-
-![note](../../images/tip-pen-paper.png) **Note:** Older Liferay versions let you
-access services with `http://localhost:8080/tunnel-web/axis`. This path has
-changed in Liferay 6.1; if you enter it, you'll be redirected to the new one. 
-
----
-
 The authentication type specified for your Liferay Portal instance dictates the
 authentication type you'll use to access your web service. The portal
 administrator can set the portal's authentication type to any of the following: 
@@ -200,7 +192,7 @@ administrator can set the portal's authentication type to any of the following:
 - *email address*
 
 Your Liferay Portal Password Policies (see chapter
-[Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
+[Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/administering-liferay-port-1)
 of *Using Liferay Portal*) should be reviewed, since they'll be enforced on your
 administrative ID as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an
@@ -221,7 +213,7 @@ security checks:
 
 Next let's talk about Liferay's SOAP web services. 
 
-## SOAP Web Services 
+## SOAP Web Services [](id=soap-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
@@ -302,7 +294,7 @@ next section.
 
 Next, let's invoke the web service! 
 
-### SOAP Java Client 
+### SOAP Java Client [](id=soap-java-client-liferay-portal-6-2-dev-guide-05-en)
 
 A Java web service client can easily be set up using Eclipse IDE. Here's how: 
 
@@ -492,7 +484,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 
 Next let's implement a web service client implemented in PHP. 
 
-### SOAP PHP Client 
+### SOAP PHP Client [](id=soap-php-client-liferay-portal-6-2-dev-guide-05-en)
 
 You can write your client in any language that supports web services invocation.
 Let's invoke the same operations we did when we created our Java client, this
@@ -544,7 +536,7 @@ services!
 
 Next we'll explore Liferay's JSON Web Services. 
 
-## JSON Web Services 
+## JSON Web Services [](id=json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 JSON Web Services let you access portal service methods by exposing them as a
 JSON HTTP API. Service methods are made easily accessible using HTTP requests,
@@ -559,7 +551,7 @@ We'll cover the following topics as we explore JSON Web Service functionality:
 
 Let's talk about registering JSON Web Services next. 
 
-### Registering JSON Web Services 
+### Registering JSON Web Services [](id=registering-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
@@ -624,7 +616,7 @@ scope for our documentation.
 -Rich
 -->
 
-#### Registering Plugin JSON Web Services 
+#### Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 Custom portlets can be registered and scanned for JSON web services, too.
 Services that use the `@JSONWebService` annotation become part of the JSON API.
@@ -700,7 +692,7 @@ declaration in web.xml), then we should explain why it's necessary. -->
 
 Let's see how to form a mapped URL of the service next. 
 
-#### Mapping and Naming Conventions 
+#### Mapping and Naming Conventions [](id=mapping-and-naming-conventions-liferay-portal-6-2-dev-guide-05-en)
 
 You can form a mapped URL of an exposed service using the following naming
 convention: 
@@ -767,7 +759,7 @@ ingeniously, *Option 1* and *Option 2*.
 
 NExt we'll learn to available JSON Web Services. 
 
-#### Listing Available JSON Web Services 
+#### Listing Available JSON Web Services [](id=listing-available-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 To see which service methods are registered and available for use, open your
 browser to the following address: 
@@ -796,7 +788,7 @@ level.
 
 Let's find out how to ignore a specific method. 
 
-#### Ignoring a Method 
+#### Ignoring a Method [](id=ignoring-a-method-from-json-webservices-liferay-portal-6-2-dev-guide-en)
 
 To keep a method from being exposed as a service, annotate the method with the
 following option:
@@ -807,7 +799,7 @@ Methods with this annotation don't become part of the JSON Web Service API.
 
 Let's learn to define custom HTTP method names and URL names. 
 
-#### HTTP Method Name and URL 
+#### HTTP Method Name and URL [](id=http-method-name-and-url-json-liferay-portal-6-2-dev-guide-05-en)
 
 At the method level, you can define custom HTTP method names and URL names. Just
 use an annotation like this one: 
@@ -843,7 +835,7 @@ Service Builder chapter. We're also missing a transition here. -Rich -->
 Next we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
-#### Manual Registration Mode 
+#### Manual Registration Mode [](id=json-manual-registration-mode-liferay-portal-6-2-dev-guide-05-en)
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
@@ -870,7 +862,7 @@ how easy it is. Maybe you can fit the pun in somewhere else? -->
 
 Next let's look at portal configuration options that apply to JSON Web Services. 
 
-### Portal Configuration of JSON Web Services 
+### Portal Configuration of JSON Web Services [](id=portal-configuration-of-json-web-service-liferay-portal-6-2-dev-guide-05-en)
 
 JSON Web Services are enabled on Liferay Portal by default. If you need to
 disable them, specify this portal property setting: 
@@ -879,7 +871,7 @@ disable them, specify this portal property setting:
 
 Now let's look at strict HTTP methods. 
 
-#### Strict HTTP Methods 
+#### Strict HTTP Methods [](id=json-strict-http-methods-liferay-portal-6-2-dev-guide-05-en)
 
 All JSON Web Services are mapped to either GET or POST HTTP methods. If a
 service method name starts with `get`, `is` or `has`, the service is assumed to
@@ -898,7 +890,7 @@ methods.
 When strict HTTP mode is enabled, you still might have need to disable HTTP
 methods. We'll show you how next. 
 
-#### Disabling HTTP Methods 
+#### Disabling HTTP Methods [](id=disabling-http-methods-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, you can set the portal JSON
@@ -911,7 +903,7 @@ Now all requests that use HTTP methods from the list above are ignored.
 
 Next we'll show you how to restrict public access to exposed JSON APIs. 
 
-#### Controlling Public Access 
+#### Controlling Public Access [](id=json-controlling-public-access-liferay-portal-6-2-dev-guide-05-en)
 
 Each service method knows if it can be executed by unauthenticated users and
 if a user has adequate permission for the chosen action. Most of the portal's
@@ -932,7 +924,7 @@ access to all exposed methods, specify `*`.
 
 Next find out how to invoke JSON Web Services. 
 
-### Invoking JSON Web Services 
+### Invoking JSON Web Services [](id=invoking-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 How you invoke a JSON web service depends on how you pass in its parameters.
 We'll discuss how to pass in parameters below, but first let's make sure you
@@ -950,7 +942,7 @@ Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required--when using numeric *hints* to match methods. Let's look
 at using hints next. 
 
-#### Using Hints 
+#### Using Hints [](id=using-hints-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Adding numeric hints lets you specify how many method arguments a service has.
 If you don't specify an argument for a parameter, it's automatically
@@ -973,7 +965,7 @@ In this example, `param2` will automatically be set to `null`.
 
 Find out how to pass parameters as part of the URL path next. 
 
-#### Passing Parameters as Part of a URL Path 
+#### Passing Parameters as Part of a URL Path [](id=passing-parameters-as-part-of-a-url-path-liferay-portal-6-2-dev-guide-en)
 
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
@@ -995,7 +987,7 @@ you.
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
-#### Passing Parameters as a URL Query 
+#### Passing Parameters as a URL Query [](id=passing-parameters-as-a-url-query-json-liferay-portal-6-2-dev-guide-en)
 
 You can pass in parameters as request parameters. Parameter names are specified
 as is (e.g. camelCase) and are set equal to their argument values, like this: 
@@ -1052,7 +1044,7 @@ web service parameters for a `List<Locale>` Java method argument type:
 
 Now let's see how to specify an argument as `null`. 
 
-#### Sending NULL Values 
+#### Sending NULL Values [](id=json-sending-null-values-liferay-portal-6-2-dev-guide-05-en)
 
 To pass a `null` value for an argument, prefix the parameter name with a dash.
 Here's an example: 
@@ -1074,7 +1066,7 @@ without a prefix. Here's an example:
 
 Now let's learn about encoding parameters. 
 
-#### Encoding Parameters
+#### Encoding Parameters [](id=encoding-parameters-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 There's a difference between URL encoding and query (i.e. request parameters)
 encoding. The difference lies in how the space character is encoded. When the
@@ -1099,7 +1091,7 @@ received, this value is first going to be translated to an array of 10 bytes
 
 Did you know you can send files as arguments? Find out how next. 
 
-#### Sending Files as Arguments 
+#### Sending Files as Arguments [](id=sending-files-as-arguments-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Files can be uploaded using multipart forms and requests. Here's an example: 
 
@@ -1121,7 +1113,7 @@ This is common upload form that invokes the `addFileEntry` method of the
 
 Now we'll show you how to invoke JSON Web Services using JSON RPC. 
 
-#### JSON RPC 
+#### JSON RPC [](id=json-rpc-liferay-portal-6-2-dev-guide-05-en)
 
 You can invoke JSON Web Service using [JSON RPC](http://json-rpc.org). Most of
 the JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One
@@ -1142,7 +1134,7 @@ Here's an example of invoking a JSON web service using JSON RPC:
 Let's talk about paramteters that are made available to secure JSON web
 services by default. 
 
-#### Default Parameters 
+#### Default Parameters [](id=default-json-web-service-parameters-liferay-portal-6-2-dev-guide-en)
 
 When accessing *secure* JSON web services (i.e., the user has to be
 authenticated), some parameters are made available to the web services by
@@ -1158,7 +1150,7 @@ Here are the default parameters:
 
 Let's find out about object parameters next. 
 
-#### Object Parameters 
+#### Object Parameters [](id=object-parameters-json-web-services-liferay-portal-6-2-dev-guide-en)
 
 Most services accept simple parameters like numbers and strings. However,
 sometimes you might need to provide an object (a non-simple type) as a service
@@ -1211,7 +1203,7 @@ method parameter.
 Once you pass in an object parameter, you might want to populate the object.
 Find out how next. 
 
-#### Inner Parameters 
+#### Inner Parameters [](id=inner-parameters-json-web-services-liferay-portal-6-2-dev-guide-en)
 
 When you pass in an object paramter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
@@ -1240,7 +1232,7 @@ parameters to set inner content of created parameter instances!
 
 Next let's see what values are returned when a JSON seb service is invoked. 
 
-### Returned Values 
+### Returned Values [](id=returned-values-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
@@ -1282,7 +1274,7 @@ by Igor Spasi&#263;.
 
 Let's check out some common JSON WebService errors. 
 
-### Common JSON Web Service Errors 
+### Common JSON Web Service Errors [](id=common-json-web-service-errors-liferay-portal-6-2-dev-guide-05-en)
 
 While working with JSON Web Services, you may encounter errors. Let's look at
 the most common errors in the following subsections. 
@@ -1337,7 +1329,7 @@ transition" problems above would be to combine some of the sections. -Rich -->
 Next we'll show you how to optimize your use of JSON Web Services by using the
 *JSON Web Services Invoker*. 
 
-### JSON Web Services Invoker 
+### JSON Web Services Invoker [](id=json-web-services-invoker-liferay-portal-6-2-dev-guide-05-en)
 
 Using JSON Web Services is easy: you send a request that defines a service
 method and parameters, and you receive the result as JSON object. Below we'll
@@ -1358,7 +1350,7 @@ that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-#### A Simple Invoker Call 
+#### A Simple Invoker Call [](id=a-simple-invoker-call-json-liferay-portal-6-2-dev-guide-05-en)
 
 The Invoker is accessible from the following fixed address:
 
@@ -1409,7 +1401,7 @@ user's contact ID using the syntax `$user.contactId`.
 Next see how you can use nested service calls to join information from two
 related objects. 
 
-#### Nesting Service Calls 
+#### Nesting Service Calls [](id=nesting-service-calls-in-json-liferay-portal-6-2-dev-guide-en)
 
 With nested service calls, you can magically bind information from related
 objects together in a JSON object. You can call other services within the same
@@ -1455,7 +1447,7 @@ prefix before the parameter name.
 Next let's talk about filtering object properties so only those you
 need are returned when you invoke a service. 
 
-#### Filtering Results 
+#### Filtering Results [](id=filtering-results-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 Many of Liferay Portal's model objects are rich with properties. If you only
 need a handful of an object's properties for your business logic, making a web
@@ -1481,7 +1473,7 @@ white-list properties, you simply place the properties in square brackets (e.g.,
 
 Let's talk about batching calls next. 
 
-#### Batching Calls 
+#### Batching Calls [](id=batching-calls-in-json-liferay-portal-6-2-dev-guide-05-en)
 
 When we nested service calls earlier, the intent was to invoke multiple services
 with a single HTTP request. Using a single request for multiple service calls is
@@ -1502,7 +1494,7 @@ commands are collectively invoked in a single HTTP request, one after another.
 By learning to leverage JSON Web Services in Liferay, you've added some powerful
 tools to your toolbox. Good job! 
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-05-en)
 
 In this chapter, we showed you how easy it is to find and invoke services. We
 also explained how Liferay's service security layers are used to protect your

@@ -1,4 +1,4 @@
-# Designing User Interfaces with AlloyUI
+# Designing User Interfaces with AlloyUI [](id=designing-user-interfaces-with-alloyui-liferay-portal-6-2-dev-guide-en)
 
 Liferay's User Interface (UI) Team continually strives to provide stylish,
 lightning-fast components that are extensible and built to last. I liken the
@@ -72,46 +72,47 @@ chapter by exploring the following topics:
 
 To start things off right, let's go over a simple example using AlloyUI.
 
-## A simple AlloyUI example
+## A simple AlloyUI example [](id=simple-alloyui-example-liferay-portal-6-2-dev-guide-en)
 
 AlloyUI is easy to use. Let's demonstrate by using Alloy's `node` module in an
 HTML file.
 
 1. Create an HTML page like this:
 
-    <!DOCTYPE html>
+        <!DOCTYPE html>
 
-    <head>
-      <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css" rel="stylesheet">
+			<head>
+              <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css"
+                  rel="stylesheet">
+	
+                <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js" />
+			</head>
 
-      <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
-    </head>
+			<body>
+                <button id="try-btn" class="btn" type="button">
+                    Try me now!
+                </button>
 
-    <body>
-      <button id="try-btn" class="btn" type="button">
-      Try me now!
-      </button>
+                <script>
+                    AUI().use(
+                        'node',
+                        'transition',
+                        function(A) {
+                            A.one('.btn').on(
+                                'click', function() {
+                                    this.transition(
+                                        {
+                                            width: '500px'
+                                        }
+                                    );
+                                }
+                            );
+                        }
+                    );
+                </script>
+            </body>
 
-      <script>
-        AUI().use(
-          'node',
-          'transition',
-          function(A) {
-            A.one('.btn').on(
-              'click', function() {
-                this.transition(
-                  {
-                    width: '500px'
-                  }
-                );
-              }
-            );
-          }
-        );
-      </script>
-    </body>
-
-    </html>
+        </html>
 
 2. Navigate to this HTML in your browser.
 3. Click *Try me now!*
@@ -222,37 +223,39 @@ You'll get plenty of practice using AlloyUI as you go through its fundamentals
 in this chapter. Next we'll give you a real workout by traversing a document
 object model (DOM).
 
-## Traversing the DOM with AlloyUI
+<!-- Add Section - Traversing the DOM with AlloyUI -->
 
 <!-- insert content -->
 
+<!--
 - Select Node based on element ID
 A.one('#someId')
 
 - Set Node's value
 shippingFirstnameNode.val(billingFirstnameNode.val() );
+-->
 
 <!-- insert transition -->
 
-## Using AlloyUI taglibs
+<!-- Add Section - Using AlloyUI taglibs -->
 
 <!-- insert content -->
 
 <!-- insert transition -->
 
-## Styling your components with Twitter Bootstrap
+<!-- Add Section - Styling your components with Twitter Bootstrap -->
 
 <!-- insert content -->
 
 <!-- insert transition -->
 
-## Creating your own UI component modules
+<!-- Add Section - Creating your own UI component modules -->
 
 <!-- Explain the benefits of building UI components in the AlloyUI project -->
 
 Before we create components, let's go over setting up the AlloyUI project. 
 
-### Working with the AlloyUI project
+### Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-en)
 
 Liferay Portal comes bundled with AlloyUI, as it's used throughout the portal
 and core portlets. Conveniently, you can use AlloyUI in any project--it doesn't
@@ -357,9 +360,9 @@ done.`
 Congratulations on building AlloyUI! Now it's time to create your own UI
 components in AlloyUI. 
 
-### Creating components is easy with AlloyUI
+<!-- Add Section - Creating components is easy with AlloyUI -->
 
 <!-- Explain how to create components and modules in AlloyUI -->
 
-## Summary
+<!-- Add Summary -->
 

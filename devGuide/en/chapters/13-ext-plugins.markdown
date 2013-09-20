@@ -1,9 +1,9 @@
-# Advanced Customization with Ext Plugins 
+# Advanced Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en)
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
 sure you can't accomplish your goal using a different tool. Check out Chapter
-12, Hooks for the available alternatives. If a hook won't suffice, keep reading
+10, Hooks for the available alternatives. If a hook won't suffice, keep reading
 to discover the use cases for Ext plugins and how to set one up. First let's
 talk about why you should avoid Ext plugins when possible. 
 
@@ -41,13 +41,13 @@ With these use cases in mind, we'll discuss the following topics:
 
 Let's create an Ext plugin. 
 
-## Creating an Ext Plugin 
+## Creating an Ext Plugin [](id=creating-an-ext-plugin-liferay-portal-6-2-dev-guide-12-en)
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 (see Chapter 2, on the Plugins SDK). 
 
-### Using Developer Studio
+### Using Developer Studio [](id=create-ext-plugin-in-developer-studio-liferay-portal-6-2-dev-guide-en)
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
@@ -65,7 +65,7 @@ The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create
 a completely new plugin or add a new plugin to an existing plugin project. 
 
-### Using the Terminal 
+### Using the Terminal [](id=create-ext-plugin-in-terminal-liferay-portal-6-2-dev-guide-en)
 
 Navigate to the *ext* directory in the Liferay Plugins SDK and enter the
 appropriate command for your operating system to create a new Ext plugin: 
@@ -82,7 +82,7 @@ A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder named
 `example-ext` inside the `ext` folder in your Plugins SDK. The Plugins SDK
 automatically named the EXT by appending `-ext` to the project name. 
 
-### Anatomy of the Ext Plugin 
+### Anatomy of the Ext Plugin [](id=anatomy-of-the-ext-plugin-liferay-portal-6-2-dev-guide-12-en)
 
 The structure of your new `example-ext` folder looks like this: 
 
@@ -178,7 +178,7 @@ You've now created an Ext plugin and are familiar with its directory structure
 and its most significant files. Let's use your Ext plugin to customize Liferay
 Portal. 
 
-## Developing an Ext Plugin 
+## Developing an Ext Plugin [](id=developing-an-ext-plugin-liferay-portal-6-2-dev-guide-12-en)
 
 An Ext plugin changes Liferay itself when deployed; it's not a separate
 component that can be easily removed at any time. For this reason, the Ext
@@ -211,7 +211,7 @@ customization techniques.
 
 Now let's look at each step of the development proces in more detail. 
 
-### Set Up 
+### Set Up [](id=set-up-liferay-portal-6-2-dev-guide-12-en)
 
 Before deploying an Ext plugin, you must edit the `build.[username].properties`
 file in the root folder of your Plugins SDK. If the file doesn't yet exist,
@@ -236,11 +236,11 @@ application server directory to determine the value to use for your
 
 For example, `C:/work` could be your `ext.work.dir` value. If we have a Liferay
 bundle `.zip` file
-`C:/downloads/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip` which we
+`C:/downloads/liferay-portal-tomcat-6.2.0-ce-ga1-[timestamp].zip` which we
 set as the value for our `app.server.zip.name` property, the *relative path* to
 the application server *within* our Liferay bundle `.zip` file is
-`liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23`. We'd then specify
-`C:/work/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23` as our `app.server.dir`
+`liferay-portal-6.2.0-ce-ga1\tomcat-7.0.40`. We'd then specify
+`C:/work/liferay-portal-6.2.0-ce-ga1/tomcat-7.0.40` as our `app.server.dir`
 property value. 
 
 ---
@@ -257,7 +257,7 @@ property value.
 
 Next we'll change our newly created Ext plugin and deploy it. 
 
-### Initial Deployment 
+### Initial Deployment [](id=initial-ext-plugin-deployment-liferay-portal-6-2-dev-guide-en)
 
 Our environment is set up and we're ready to start customizing. First let's look
 at a simple example that customizes the sections of a user profile. The
@@ -274,7 +274,7 @@ our portal.
 
 Now we're ready to deploy. 
 
-#### Deploy the Plugin
+#### Deploy the Plugin [](id=deploy-the-ext-plugin-liferay-portal-6-2-dev-guide-12-en)
 
 You can deploy your plugin from Liferay Developer Studio or the terminal. 
 
@@ -319,7 +319,7 @@ appropriate destinations inside the deployed and running Liferay application.
 Restart your application server, and let's find out about *publishing* your
 changes. 
 
-#### Publish the Plugin 
+#### Publish the Plugin [](id=publish-the-ext-plugin-liferay-portal-6-2-dev-guide-12-en)
 
 To complete the deployment process, your Ext plugin must be published to the
 Liferay server. As with deployment, you can publish using Liferay Developer
@@ -568,7 +568,7 @@ for the key named *basic* is already included in Liferay's language bundle.
 
 Let's redeploy our Ext plugin to review the changes we made. 
 
-### Redeployment 
+### Redeployment [](id=ext-plugin-redeployment-liferay-portal-6-2-dev-guide-12-en)
 
 So far, Ext plugin development has been similar to the development of other
 plugin types. You've now reached the point of divergence. When the plugin is
@@ -652,7 +652,7 @@ After your `example-ext` plugin is published to Liferay Portal, check out your
 That completes the development process. Let's learn how you can package your Ext
 plugin for distribution and production. 
 
-### Distribution 
+### Distribution [](id=ext-plugin-distribution-liferay-portal-6-2-dev-guide-12-en)
 
 Once you're finished developing the plugin, you can package it in a `.war` file
 for distribution and production deployment. 
@@ -675,7 +675,7 @@ next section covers JBoss 7 requirements for packaging up an Ext plugin
 containing a new taglib. If this doesn't apply to you, feel free to skip over
 it and to start reading about advanced customization techniques. 
 
-### Ext Plugin Packaging Requirements for JBoss 7
+### Ext Plugin Packaging Requirements for JBoss 7 [](id=ext-plugin-jboss-packaging-requirements-liferay-portal-6-2-dev-guide-en)
 
 If you're developing an Ext plugin that defines a new taglib, you need to take
 JBoss's classloading behavior into account. Before packaging this kind of Ext
@@ -717,7 +717,7 @@ Now that you've learned the basics of Ext plugin development have covered this
 requirement for JBoss customizations, let's look at some advanced customizations
 that you can do.
 
-### Advanced Customization Techniques 
+### Advanced Customization Techniques [](id=ext-advanced-customization-techniques-liferay-portal-6-2-dev-guide-en)
 
 With Ext plugins, you can change almost everything in Liferay. Let's look at
 some additional customization techniques made possible by Ext plugins. As
@@ -739,7 +739,7 @@ In the following subsections, we'll cover these topics:
 
 Let's learn to use advanced configuration files next. 
 
-#### Using Advanced Configuration Files 
+#### Using Advanced Configuration Files [](id=using-ext-advanced-configuration-files-liferay-portal-6-2-dev-guide-en)
 
 Liferay uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks Liferay
@@ -816,7 +816,7 @@ repository-ext.xml`
 
 Let's learn how to configure a Lucene Analyzer next. 
 
-#### Configuring Lucene Analyzers 
+#### Configuring Lucene Analyzers [](id=configuring-lucene-analyzers-with-ext-liferay-portal-6-2-dev-guide-en)
 
 Liferay uses Lucene to facilitate search and indexing within the portal. In old
 versions of Liferay, you could configure Lucene analyzers from
@@ -824,7 +824,7 @@ versions of Liferay, you could configure Lucene analyzers from
 single analyzer for all portal-indexed fields. For example, it was difficult to
 provide correct behaviors for handling both keyword and text fields. 
 
-In Liferay 6.1, you no longer configure Lucene from `portal-ext.properties`.
+Since Liferay 6.1, you no longer configure Lucene from `portal-ext.properties`.
 Instead, Lucene analyzers are defined in Spring configuration files. The default
 analyzer configuration is defined in
 `/portal-impl/src/META-INF/search-spring.xml`. Liferay 6.1 introduced per-field
@@ -877,7 +877,7 @@ You can define custom analyzers for any fields, including custom fields.
 
 Let's learn to change the API of a core service next. 
 
-#### Changing the API of a Core Service 
+#### Changing the API of a Core Service [](id=changing-core-service-api-with-ext-liferay-portal-6-2-dev-guide-en)
 
 Sometimes you might need to change the API of a method provided by one of
 Liferay's services (e.g., `UserLocalService`). This is an advanced customization
@@ -909,7 +909,7 @@ bean: your new implementation.
 You can also replace core classes in `portal-impl`. Keep reading to find out
 how. 
 
-#### Replacing Core Classes in `portal-impl` 
+#### Replacing Core Classes in `portal-impl` [](id=replacing-core-classes-in-portal-impl-liferay-portal-6-2-dev-guide-12-en)
 
 If you're sure you need to change a core portal-impl class, and certain it can't
 be replaced in a configuration file, here's the best way to do it while avoiding
@@ -943,7 +943,7 @@ version of Liferay is released.
 That's it for advanced customization techniques. Let's talk about deploying in
 porudction next. 
 
-## Deploying in Production 
+## Deploying in Production [](id=deploying-ext-plugin-in-production-liferay-portal-6-2-dev-guide-en)
 
 Often times you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
@@ -951,7 +951,7 @@ WebSphere or Weblogic have their own deployment tools, and Liferay's autodeploy
 process won't work. Let's look at two methods for deploying and redeploying Ext
 plugins in these scenarios. 
 
-### Method 1: Redeploying Liferay's Web Application 
+### Method 1: Redeploying Liferay's Web Application [](id=redeploying-liferays-web-application-liferay-portal-6-2-dev-guide-en)
 
 You can use this method in any application server that supports auto-deploy;
 Tomcat and Glassfish are two examples. What's the benefit? The only artifact
@@ -971,12 +971,12 @@ small and easy to transport. Execute these steps on the server:
 
 2.  Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
     Liferay distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-portal-6.1.0-ce-ga1/`).
+    your bundle (e.g., `liferay-portal-6.2.0-ce-ga1/`).
 
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
 
-### Method 2: Generate an Aggregated WAR File 
+### Method 2: Generate an Aggregated WAR File [](id=generating-an-aggregated-war-file-liferay-portal-6-2-dev-guide-12-en)
 
 Some application servers don't support auto-deploy; WebSphere and Weblogic are
 two examples. With an aggregated WAR file, all Ext plugins are merged before
@@ -985,7 +985,7 @@ changes from all your Ext plugins. Before you deploy the Liferay `.war` file,
 copy the dependency `.jar` files for Liferay and all Ext plugins to the global
 application server class loader in the production server. The precise location
 varies from server to server; see [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) to get
+6.2](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide) to get
 the details for your application server. 
 
 The first step in creating the aggregated `.war` file is to deploy your Ext
@@ -1013,7 +1013,7 @@ want to send. I think we need to change this and get Tomcat out of it. -->
 Next we'll show you how to migrate your extension environment (from older
 verisons of Liferay) into Ext plugins. 
 
-## Migrating Old Extension Environments 
+## Migrating Old Extension Environments [](id=migrating-old-extension-environments-liferay-portal-6-2-dev-guide-12-en)
 
 Because Ext plugins are an evolution of the extension environment provided in
 Liferay 5.2 and earlier, you might need to migrate your extension environment
@@ -1066,7 +1066,7 @@ to portlet plugins; extension environment portlets have been deprecated since
 Liferay Portal 6.0, and support isn't guaranteed in future Liferay Portal
 releases. 
 
-#### Licensing and Contributing 
+#### Licensing and Contributing [](id=licensing-and-contributing-liferay-portal-6-2-dev-guide-12-en)
 
 Liferay Portal is Open Source software licensed under the LGPL 2.1 license
 ([http://www.gnu.org/licenses/lgpl-2.1.html](http://www.gnu.org/licenses/lgpl-2.1.html)).
@@ -1086,7 +1086,7 @@ instructions on how to contribute to Liferay:
 
 [http://www.liferay.com/community/wiki/-/wiki/Main/Contributing](http://www.liferay.com/community/wiki/-/wiki/Main/Contributing)
 
-## Summary 
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-12-en)
 
 Ext plugins are a powerful way to extend Liferay. There are no limits to what
 you can use them to customize, so use them carefully. Before using an Ext
