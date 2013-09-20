@@ -149,45 +149,45 @@ field, 2) by clicking the wrench icon in the upper-right corner of the field or
 3) by clicking the *Settings* tab when the field is selected. Let's take a look
 at the properties you can edit for each of these field types: 
 
-- **Type:** Lists the type of field placed in the definition. This is not
-  editable but is available to reference from a display template.
+**Type:** Lists the type of field placed in the definition. This is not editable
+but is available to reference from a display template.
 
-- **Field Label:** Sets the text that can be displayed with the field. This is
-  the human-readable text that the user sees.
+**Field Label:** Sets the text that can be displayed with the field. This is the
+human-readable text that the user sees.
 
-- **Show Label:** When set to *Yes*, the label is shown with the form field.
+**Show Label:** When set to *Yes*, the label is shown with the form field.
 
-- **Required:** When set to *Yes*, this field must have data in it for a new
-  entry to be submitted (not available for Boolean).
+**Required:** When set to *Yes*, this field must have data in it for a new entry
+to be submitted (not available for Boolean).
 
-- **Name:** The name of the field internally, automatically generated. Since
-  this is the variable name that you can read the data from in a display
-  template, you should give a more memorable name here.
+**Name:** The name of the field internally, automatically generated. Since this
+is the variable name that you can read the data from in a display template, you
+should give a more memorable name here.
 
-- **Predefined Value:** If you would like example data or a default value for
-  the user to start with, enter it here. The field's value defaults to this when
-  adding a new entry.
+**Predefined Value:** If you would like example data or a default value for the
+user to start with, enter it here. The field's value defaults to this when
+adding a new entry.
 
-- **Tip:** Each field can have a small help icon, with a tooltip attached that
-  displays helpful information. If you would like to provide text for the
-  tooltip you may enter it here.
+**Tip:** Each field can have a small help icon, with a tooltip attached that
+displays helpful information. If you would like to provide text for the tooltip
+you may enter it here.
 
-- **Indexable:** When set to *Yes*, Liferay is able to index your field for
-  search.
+**Indexable:** When set to *Yes*, Liferay is able to index your field for
+search.
 
-- **Repeatable:** When set to *Yes*, the field is repeatable. Your users can
-  then add as many copies of this field as they like.
+**Repeatable:** When set to *Yes*, the field is repeatable. Your users can then
+add as many copies of this field as they like.
 
-- **Width:** Sets the visual width of the form on the page. It does not affect
-  the values that are stored. Possible values are *Small*, *Medium* and *Large*
-  (not available for Boolean, Documents and Media, Radio, and Select).
+**Width:** Sets the visual width of the form on the page. It does not affect the
+values that are stored. Possible values are *Small*, *Medium* and *Large* (not
+available for Boolean, Documents and Media, Radio, and Select).
 
-- **Multiple:** When set to *Yes*, allows the user to select more than one
-  option. This defaults to no (only available for Select).
+**Multiple:** When set to *Yes*, allows the user to select more than one option.
+This defaults to no (only available for Select).
 
-- **Options:** Changes the options available for selection. You're able to add
-  and remove options as well as edit each individual option's display name and
-  value (only available for Radio and Select).
+**Options:** Changes the options available for selection. You're able to add and
+remove options as well as edit each individual option's display name and VALUE
+(ONLY AVAILABLE FOR RADIO AND SELECT).
 
 ![Figure 10.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* dropdown menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
 
