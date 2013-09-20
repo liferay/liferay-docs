@@ -1036,6 +1036,7 @@ Publisher's configuration window (click on the wrench icon and select
 Setup tab. There are two options:
 
 **Enable RSS Subscription**
+
 **Enable Email Subscription**
 
 Enabling RSS subscription creates an RSS feed containing links to all of the
