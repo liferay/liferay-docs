@@ -39,7 +39,7 @@ sites can be bookmarked.
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *Applications*. The portlet looks like this by default:
 
-![Figure 13.8: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
+![Figure 13.1: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
 
 Across the top of the portlet are links labeled Home, Recent, and Mine. There is
 also a Search field and button.
@@ -65,7 +65,7 @@ permissions for various Roles to the folder. Click *Save* when you are finished.
 To create a bookmark, click the *Add Bookmark* button. This form is similar to
 the New Folder form but has a few more options.
 
-![Figure 13.10: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
+![Figure 13.2: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
 
 Click *Select* to choose the folder for the new bookmark. Click *Remove* to
 delete a bookmark from the selected folder. As stated above, a removed link goes
@@ -90,7 +90,7 @@ folders can have any number of subfolders.
 Here's an example of what one bookmarks portlet might look like. Bookmark
 Folders are displayed above individual bookmarks. 
 
-![Figure 13.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
+![Figure 13.3: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
 In this example, there are six bookmark folders, three of which have
 subfolders. The columns showing the number of folders and the number of entries
@@ -121,7 +121,7 @@ the *Select* button and a new window appears, like the one below. Clicking the
 *Remove* button here doesn't affect the link. It is used solely for moving links
 out of folders and subfolders back into the main Bookmarks view.
 
-![Figure 13.2: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
+![Figure 13.4: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
 
 Now choose the *Sports & Games* folder. When you do this, notice how the link's
 Folder section changes to reflect the new location of the link. When you choose
@@ -146,7 +146,7 @@ appropriate folder from the breadcrumbs at the top. In this example, we selected
 *Sports & Games* for consistency. This opens a new window, like the one below,
 showing the other folder options.
 
-![Figure 13.7: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
+![Figure 13.6: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
 
 You can choose one of the other subfolders from the list, or you can choose
 *Home* from the breadcrumbs at the top. When you verify that the desired folder
@@ -177,7 +177,7 @@ You can create your plugin repository in two ways:
     using its graphical interface and an HTTP server.
 
 2.  Create an XML file using the Liferay Plugin Repository DTD
-    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`) and an
+    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_2_0.dtd`) and an
     HTTP server.
 
 Both methods have their benefits. The first method allows users to upload their
@@ -205,20 +205,31 @@ You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
 creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 13.11: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
+---
+
+![Tip](../../images/01-tip.png) **Tip:** The Software Catalog plugin was
+deprected in Liferay 6.2 and is disabled by default. To activate it, navigate
+to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
+of portlets until you find *Software Catalog*. Select *Software Catalog* and
+click the *Active* checkbox. Then click *Save*.
+
+---
+
+You can add the Software Catalog portlet to your page by navigating to *Add*
+&rarr; *Applications* and selecting it from the *Tools* category.
+
+![Figure 13.7: The Software Catalog portlet can be added to any of your site pages.](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The
-Control Panel presents you with the software catalog for whichever site you are
-working on. This means different sites can have different software repositories,
-so you can host several software repositories on the same instance of Liferay if
-you wish, they just have to be in different sites. Choose the site that will
-host the plugin repository and go to the Control Panel. You will see at the top
-of the screen a message that says "Content for [Site]," where [Site] is the
-site you were on when you selected the Control Panel from the dockbar. If you
-want to administer the software catalog for a different site, you can select it
-from the selection box.
+Software Catalog can be managed from your site's Site Administration page. This
+means different sites can have different software repositories, so you can host
+several software repositories on the same instance of Liferay if you wish, they
+just have to be in different sites. Choose the site that will host the plugin
+repository and go to the Site Administration page. You can change the site that
+you're on by navigating to the Dockbar's *My Sites* drop-down menu and selecting
+your desired site.
 
-![Figure 13.12: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 13.8: This is an example of a populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The
 default view of the portlet, when populated with software, displays what plugins
@@ -231,7 +242,7 @@ a site called *Old Computers*. This site will be for users to collaborate on
 setting up and using old computers with obsolete hardware and operating systems.
 Users who participate in the site will eventually get upgraded to a more
 privileged status and get their own blog page. To implement this, you have
-created a My Summary portlet which displays the user's name, picture and
+created a My Summary portlet which displays the user's name, picture, and
 description from his or her user profile. Because this portlet is generic enough
 that it could be useful to anyone using Liferay, you have decided to make it
 available in your own software catalog.
@@ -265,7 +276,7 @@ To create the product record in the Software Catalog portlet, click the
 *Products* tab, then click the *Add Product* button. Fill out the form with
 information about your product.
 
-![Figure 13.13: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 13.9: The *New Product* screen provides a recommended licenses setting for your product.](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -289,8 +300,8 @@ details page for this software product.
 **Permissions:** Click the *Configure* link to set permissions for this software
 product.
 
-**Group ID:** Enter a group ID. A group ID is a name space which usually
-identifies the company or organization that made the software. For our example,
+**Site ID:** Enter a site ID. A site ID is a name space which 
+identifies the site that released the software. For our example,
 we will use *old-computers*.
 
 **Artifact ID:** Enter an Artifact ID. The artifact ID is a unique name within
@@ -346,7 +357,7 @@ our example, we have entered 6.0.3 for the name, because our portlet should work
 on that version and higher, and [http://www.liferay.com](http://www.liferay.com)
 for the URL. Click *Save*.
 
-![Figure 13.14: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 13.10: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice a
 message is displayed stating the product does not have any released versions.
@@ -565,7 +576,7 @@ space. It's best, therefore, to dedicate an entire page to the application. The
 Shopping portlet is available from the *Add* &rarr; *More* menu in the Dockbar
 under Shopping.
 
-![Figure 13.15: Start setting up the store by entering items and categories in
+![Figure 13.11: Start setting up the store by entering items and categories in
 the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has four tabs across the top:
@@ -598,7 +609,7 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 13.16: In this figure there are three subcategories for the
+![Figure 13.12: In this figure there are three subcategories for the
 `Aromatherapy` category. The first subcategory has three items, the second has
 two, and the third is empty.](../../images/shopping-categories.png)
 
@@ -607,7 +618,7 @@ the number of subcategories and the number of items that are in the category.
 You can edit the category, set permissions for it or delete it using the
 *Actions* button.
 
-![Figure 13.17: Breadcrumbs are an important navigational tool in the shopping 
+![Figure 13.13: Breadcrumbs are an important navigational tool in the shopping 
 portlet.](../../images/shopping-category-breadcrumbs.png)
 
 Each category can have unlimited subcategories and you can add subcategories to
@@ -629,7 +640,7 @@ characteristics for the item. These can include things like sizes and colors.
 The additional fields appear in the item form as pull-down menus, as in the
 figure below.
 
-![Figure 13.18: The additional fields you create for an item appear in the item
+![Figure 13.14: The additional fields you create for an item appear in the item
 description form as menu options.](../../images/shopping-item-options.png)
 
 The Prices area is for all data pertaining to the item's cost, minimum and
@@ -640,7 +651,7 @@ photo or upload the file locally. Choose from three sizes of images. You must
 select the appropriate check box for the image you want to display. When you're
 finished creating a new item, click *Save*.
 
-![Figure 13.19: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
+![Figure 13.15: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
 
 As products are added, they are listed in the Items section of the portlet.
 If the item you just created needs to go into one of your new categories or
@@ -648,13 +659,13 @@ subcategories, you can assign it to the category by editing the item. Choose
 the *Select* button (next to the *Remove* button), and this displays a dialog box
 listing all the shop categories.
 
-![Figure 13.20: To put an item in a category, edit the item and choose *Select*
+![Figure 13.16: To put an item in a category, edit the item and choose *Select*
 to see the available categories.](../../images/shopping-select-categories.png)
 
 Choose the desired category from the list to relocate the item to its new
 location. Notice how the breadcrumbs reflect this change in the item form.
 
-![Figure 13.21: When an item moves into a category, the breadcrumb navigation
+![Figure 13.17: When an item moves into a category, the breadcrumb navigation
 updates accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
 You can make changes to any item through *Actions* &rarr; *Edit*. Finding an
@@ -718,7 +729,7 @@ that the total order amount falls under.
 This form sets the addresses for customer email notifications. Use the list of
 term definitions below to customize the correspondence with your customers.
 
-![Figure 13.22: Shopping emails can be configured in a myriad of ways to suit
+![Figure 13.18: Shopping emails can be configured in a myriad of ways to suit
 your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the email address from which order and shipping
@@ -748,7 +759,7 @@ When buyers select an item, they see the item's description displaying all of
 its relevant information. The figure below is typical of what an item's
 description might look like.
 
-![Figure 13.23: You can include images of each item in your store. (Medium sized
+![Figure 13.19: You can include images of each item in your store. (Medium sized
 images display on the item's description form).](../../images/shopping-item.png)
 
 Below the product description is the Availability field indicating whether the
@@ -766,7 +777,7 @@ top of the form. You can also continue shopping by scrolling through a
 category, item by item, using the *Previous* and *Next* buttons at the bottom of
 the product description.
 
-![Figure 13.24: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
+![Figure 13.20: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
 
 Each time you add an item to the cart, a running tally of the cart's contents is
 kept. Quantities for each item are controlled using drop-down menus.  The order
@@ -786,7 +797,7 @@ shopping again or to stop shopping.
 address, and the credit card information. You can also add comments about the
 order if necessary.
 
-![Figure 13.25: All the information pertaining an order can be seen in the order 
+![Figure 13.21: All the information pertaining an order can be seen in the order 
 summary view.](../../images/shopping-order-summary.png)
 
 When all the data has been entered correctly, click *Continue* to see the order
@@ -813,14 +824,14 @@ for orders using the order number, order status, first or last name on the order
 or by the email address associated with the account. For more information on 
 searching in Liferay Portal, see the Faceted Search section in chapter 5. 
 
-![Figure 13.26: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
+![Figure 13.22: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
 
 Below the search fields is the orders list. Orders can be deleted or edited
 using the *Actions* button. When you select an order from the Orders tab, or if 
 you edit an order, you see a summary of the order details along with some 
 options across the bottom.
 
-![Figure 13.27: Review order specifics in the Edit 
+![Figure 13.23: Review order specifics in the Edit 
 view.](../../images/shopping-order-detail.png)
 
 **Invoice:** creates a printer-friendly copy of the order that can be sent to a
@@ -847,7 +858,7 @@ special sale events or other discounts. You can determine the type of discount
 to apply and whether it is currently active. You can search for coupons and
 create new coupons from this form.
 
-![Figure 13.28: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
+![Figure 13.24: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
 
 To add a coupon, enter the coupon code in the Code field. If no code is
 specified, you can create one automatically by selecting the *Autogenerate Code*
@@ -855,7 +866,7 @@ checkbox. After entering the coupon's name and description, you can set the
 coupon's start and expiration dates. Additional options let you activate the
 coupon and set it to never expire.
 
-![Figure 13.29: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
+![Figure 13.25: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
 
 Under the Discount section, you can set the minimum order amount required for
 the discount, the discount amount, and the discount type. Types can be based on
@@ -908,13 +919,13 @@ upper right corner. Go to the *Setup* tab and enter the International Standard
 Book Numbers (ISBNs) in the textbox, separated by spaces. The portlet accepts
 10-digit ISBNs rejecting ISBNs that letters.
 
-![Figure 13.30: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
+![Figure 13.26: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
 When you are finished setting up the rankings, books appear in the portlet
 similar to the example below. Clicking on the book's cover image opens the
 book's Amazon page.
 
-![Figure 13.31: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
+![Figure 13.27: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
 Now that you have a good grasp on Liferay's Shopping and Amazon Rankings
 applications, let's learn how to generate reports in Liferay.
@@ -945,7 +956,7 @@ your portal as an administrator and navigate to the Control Panel. If your
 applications have been successfully deployed, you'll find a *Reports Admin*
 entry in the site section of the Control Panel.
 
-![Figure 13.32: To check that the Reports EE and Jasper Reports EE applications have been succesfully deployed to your Liferay server, look for the *Reports Admin* entry in the site section of the Control Panel.](../../images/reports-admin-control-panel.png)
+![Figure 13.28: To check that the Reports EE and Jasper Reports EE applications have been succesfully deployed to your Liferay server, look for the *Reports Admin* entry in the site section of the Control Panel.](../../images/reports-admin-control-panel.png)
 
 Click on *Reports Admin* in the Control Panel. The Reports Admin portlet has
 three tabs:
@@ -964,7 +975,7 @@ set up as a default data source called *Portal*. The *Portal* data source does
 not appear on the Sources tab but is selectable on the form for adding/editing a
 report definition.
 
-![Figure 13.33: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
+![Figure 13.29: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
 
 In order to generate a report, you need to a have one or more report definitions
 configured. To create a report definition, you need a data source and a report
@@ -1117,7 +1128,7 @@ Reports tab of the Reports Admin portlet. The Reports Display portlet allows
 users to download or deliver reports but not to add, edit, or delete report
 definitions or data sources.
 
-![Figure 13.34: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
+![Figure 13.30: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
 
 The Reports Display portlet is intended to be placed within a site's private
 pages to allow site members to access site-scoped reports. It can also be placed
@@ -1291,7 +1302,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 This report should list all of your portal's users, displaying the userId,
 screenName, emailAddress, createDate, and modfifiedDate of each user.
 
-![Figure 13.35: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
+![Figure 13.31: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
 
 Now that we understand how to generate Jasper reports in Liferay, let's see what
 the Knowledge base application has to offer. 
@@ -1327,7 +1338,7 @@ page, the Knowledge Base display portlet presents many of the same options to an
 administrator that are available from the Knowledge Base page of the control
 panel.
 
-![Figure 13.36: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 13.32: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to
 control what it displays.
@@ -1351,7 +1362,7 @@ the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 13.37: New Knowledge Base
+![Figure 13.33: New Knowledge Base
 Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
@@ -1370,7 +1381,7 @@ which roles can add articles and templates, which are granted knowledge base
 administrator privileges, which can change permissions on articles, which can
 subscribe to articles and which can view templates.
 
-![Figure 13.38: Knowledge Base
+![Figure 13.34: Knowledge Base
 Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control
@@ -1391,7 +1402,7 @@ one for templates. The articles tab shows all the articles in the knowledge base
 and lets you perform actions on them. The templates tab shows all the templates
 defined in the knowledge base and lets you perform actions on them.
 
-![Figure 13.39: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 13.35: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -1424,7 +1435,7 @@ template basically functions like a starting point for the creation of certain
 types of articles. Click the *Add Template* button on the Templates tab of the
 Knowledge Base page of the Control Panel to create a new template.
 
-![Figure 13.40: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 13.36: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control
 panel. You can perform the following actions on a template:
@@ -1440,7 +1451,7 @@ permissions on templates.
 
 *Delete:* lets you remove a template from the knowledge base.
 
-![Figure 13.41: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.37: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
@@ -1455,7 +1466,7 @@ a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 13.42: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 13.38: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -1482,7 +1493,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 13.43: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.39: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -1498,7 +1509,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 13.44: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 13.40: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base display portlet. When both of these portlets are placed on a page
@@ -1506,7 +1517,7 @@ you can select a topic in the Categories Navigation portlet and the Knowledge
 Base display portlet will show all of the articles that match the topic. You can
 create topics from the Categories page of the Control Panel.
 
-![Figure 13.45: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 13.41: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
