@@ -1,5 +1,12 @@
 # Using Liferay Frameworks [](id=using-liferay-frameworks-liferay-portal-6-2-dev-guide-06-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Picture a hot, summer day. You're on vacation, and you're just coming back from
 the beach after a day of frolicking on the sand and in the water. After all
 that activity, you're hungry. Time to grill up some burgers and dogs. 

@@ -1,5 +1,12 @@
 # Accessing Services Remotely [](id=accessing-services-remotely-liferay-portal-6-2-dev-guide-05-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 You've created your portlet and built some terrific services. You're happy to
 brag to your colleagues about the awesome things your portlet does. And you've
 started to prick their interest; they want to call your portlet's services. You

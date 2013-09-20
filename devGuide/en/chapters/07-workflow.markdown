@@ -1,6 +1,13 @@
 
 # Designing Workflows with Kaleo Designer for Java [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal includes a workflow engine called *Kaleo Designer for Java*.

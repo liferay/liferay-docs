@@ -1,6 +1,13 @@
 
 # Conclusions [](id=conclusions-liferay-portal-6-2-dev-guide-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Liferay Portal is a very flexible platform that allows creating a wide variety
 of portals and websites. It is the developer through custom applications and
 customizations who gives it the shape desired by the end users of the portal.
