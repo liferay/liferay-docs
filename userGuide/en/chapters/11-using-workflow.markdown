@@ -20,14 +20,15 @@ you a point and click interface to create workflows.
 
 To explain how to use Kaleo Workflow, this chapter covers: 
 
--	Installation <!-- This doesn't match the first section below which is
-	instead entitled Enabling Workflow, so which is it supposed to be? -->
+- Installation 
+<!-- This doesn't match the first section below which is instead entitled
+Enabling Workflow, so which is it supposed to be? -->
 
--	Creating workflow definitions
+- Creating workflow definitions
 
--   Configuring assets to use workflow
+- Configuring assets to use workflow
 
--	How users interact with workflow
+- How users interact with workflow
 
 We introduced Kaleo workflow in chapter 2, where we discussed how to set up an
 approval process for basic web content. Once we're done with this chapter, you
@@ -35,12 +36,13 @@ should be familiar with how to use Liferay's Kaleo workflow to set up approval
 process for any kind of content before it is published to your portal. 
 
 ## Enabling workflow  
-<!--Should there be installation documentation here? -->
+
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
 Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo
-Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the
-plugin adds a *Workflow* option under the *Configuration* section of your
-Control Panel. 
+Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace, wich you can
+access through the Apps section of the Control Panel. Installing the plugin
+adds a *Workflow* option under the *Configuration* section of your Control
+Panel. 
 
 The `kaleo-web` plugin comes bundled with one worfklow called the Single
 Approver Workflow. This workflow requires one approval before an asset can be
@@ -66,14 +68,17 @@ The XML file has several parts which define the workflow. To get an idea of how
 this works, we'll examine the default `single-approver-definition.xml` file
 which is included in the Liferay Kaleo plugin.
 
-The key parts of the workflow definition are the asset that's running through
-the workflow, the nodes of the workflow, and the transitions between nodes. The
-asset is any kind of asset registered in Liferay: web content, wiki articles,
-message board threads, and more. Developers can also create their own assets to
-use with workflows (see [*Liferay in Action*](http://manning.com/sezov) or
-*Liferay Developer's Guide* for more information). Nodes represent stages of
-the workflow and there are several types. Transitions occur between nodes and
-indicate what the next node should be. 
+The key parts of the workflow definition are the asset or workflow-enabled
+action that's running through the workflow, the nodes of the workflow, and the
+transitions between nodes. Assets are any kind of asset registered in Liferay:
+web content, wiki articles, message board threads, blogs entries, and even
+comments, are workflow-enabled. Workflow-enabled actions in the portal include
+Page Revision and  User addition or editing. Developers can also create their
+own assets to use with workflows (see [*Liferay in
+Action*](http://manning.com/sezov) or *Liferay Developer's Guide* for more
+information). Nodes represent stages of the workflow and there are several
+types. Transitions occur between nodes and indicate what the next node should
+be. 
 
 Think of workflow as a state machine made up of nodes. A node can be a state, a
 task, a condition, a fork, a join, or a timer. Transitions are used to move from
@@ -596,9 +601,10 @@ controls.
 
 ![Figure 11.3: Adding a Workflow Definition](../../images/11-workflow-upload-definition.png)
 
-You can find the Workflow section under the Configuration heading in the control panel.
-There are three options under Workflow: *Definitions*, *Default Configuration*
-and *Submissions*. The default workflow behavior you specify here will apply throughout your Liferay Portal.
+You can find the Workflow section under the Configuration heading in the
+control panel. There are three tabs under Workflow which are used to configure workflow in the portal: *Definitions*, *Default
+Configuration* and *Submissions*. The default workflow behavior you specify
+here will apply throughout your Liferay Portal.
 
 If you created a new workflow definition, you need to add it so it can be used
 in the portal. Click *Definitions*. By default, only the Single Approver
@@ -608,20 +614,70 @@ your Liferay instance. Once you add a file here, it's added to the portal and
 is immediately available for use.
 
 Under *Default Configuration*, you can set the workflow behavior (if any) for
-all workflow-enabled applications on the portal, including Page Revision, User,
-Blogs Entries, Web Content Articles, Comments, Message Borads Messages, and
-Wiki Pages. You can choose to use no workflow, which is the default, or select
-any installed workflow definition.  Setting the default configuration causes
-any newly created sites to default to that configuration. An administrator can
-then edit the definitions for each one individually through the site's
-*Workflow Configuration* page, by accessing the Site Administration section of
-the portal.
+all workflow-enabled actions in the portal; available categories include Page
+Revision, User, Blogs Entries, Web Content Articles, Comments, Message Boards
+Messages, and Wiki Pages. You can choose to use no workflow, which is the
+default, or select any installed workflow definition. Setting the default
+configuration of an asset causes any new action on that asset to default to that
+configuration, throughout the portal. An administrator can edit the workflow
+behavior for each site's assets individually through the site's *Workflow
+Configuration* page, by accessing its Site Administration section. The interface
+for making changes at the site level is similar to that of the Control Panel
+interface; the only difference is that you are in the Site Administration
+section and the changes you specify are only applicable to the scope you have
+selected here.
 
-In the *Submissions* tab you can see any currently pending assets or any
-assets which were previously approved.
+In the *Submissions* tab you can see any currently pending assets or any assets
+which were previously approved.
 
 Let's learn how to configure workflows for both the portal and individual sites
 next.
+
+<!--This was in the "Collaboration" Section but it didn't make sense there
+since there's no difference in using workflow among applications, that I can
+see.-->
+
+To enable workflow for collaborative applications, first navigate to the
+Workflow page of the Control Panel, where you can enable default workflow
+behavior globally. To enable workflow for a specific site, use the the Site
+Administration section, selecting the site for which you'd like to specify
+workflow behavior and clicking Workflow Configuration. You'll see the portal
+resources for which you can select a workflow.
+
+![Figure 11.11: The Workflow Configuration page of the Control Panel lists the resources for which you can select a workflow.](../../images/workflow-configuration.png)
+
+To select a workflow, click on the Workflow drop-down menu and choose a
+workflow. By default, you can only select *No workflow* or *Single Approver*.
+Custom workflows that you added also appear in this drop-down menu. You can add
+custom workflows through the Workflow page in the Configuration section of the
+Control Panel. To enable workflow for the collaborative applications, select
+the *Single Approver* for the Blogs Entry, Message Boards Message and Wiki Page
+resources, then click *Save.*
+
+To test the workflow for collaborative applications, add a page called
+*Collaboration* to the site whose scope you selected when you enabled workflow.
+Then add the Blogs, Message Boards, and Wiki portlets to this page. Using each
+portlet, add a blog entry, post a new message board thread, and write some
+content for the Wiki frontpage. For each application, notice that the *Publish*
+button is replaced by a *Submit for Publication* button since workflow is
+enabled.
+
+The workflow process for collaborative applications works the same way as in
+the examples you've already seen. Any users assigned to the (Portal,
+Organization, or Site) Content Reviewer roles can see that your blog post,
+message board thread, and wiki article have been submitted for publication by
+navigating to My Account and clicking on *My Workflow Tasks*. Of course, since
+you submitted these items for publication, it wouldn't make sense in a
+real-world use case for you to approve them. However, to see how the workflow
+process works, go ahead and approve these items yourself; you can do this since
+you're an administrator.
+
+Navigate to My Account and click on *My Workflow Tasks*. The items you've
+submitted for publication appear under *Assigned to My Roles*. Click *Actions*
+&rarr; *Assign to Me* next to the items you've submitted. Then click *Actions*
+&rarr; *Approve* next to each item when it appears in the *Assigned to Me*
+category. That's it--your blog post, message board thread, and wiki article
+have passed through the workflow!
 
 ### Configuring workflow  
 
@@ -641,19 +697,19 @@ workflow behavior for the sleected site's assets that can be workflow enabled.
 
 ### My Workflow Tasks  
 
-My Workflow Tasks is a personalized version of the Workflow Tasks and it's
-found in the users My Account section. Here are specific tasks which have been
+My Workflow Tasks is a personalized version of the Workflow Tasks and it's found
+in the users My Account section. Here you'll find specific tasks which were
 assigned to you or assigned to a role of which you are a member. You can also
 view your completed tasks by opening the Completed tab.
 
 ![Figure 11.5: My Workflow Tasks Page](../../images/11-my-workflow-tasks.png)
 
-It's here workflow administrative users review and approve content. By clicking
-the link to the asset, you can view it, and the Actions dropdown lets you
-approve, reject, or reassign assets assigned to you. For assets assigned to
-your roles, you can assign the asset to be reviewed (either to yourself or
-another user). Whether or not an asset is assigned to you or to your role, you
-can update the due date as well. 
+Workflow administrative users review and approve content from their My Worfklow
+Tasks section. By clicking the link to the asset, you can view it, and the
+Actions dropdown lets you approve, reject, or reassign assets assigned to you.
+For assets assigned to your roles, you can assign the asset to be reviewed
+(either to yourself or another user). Whether or not an asset is assigned to you
+or to your role, you can update the due date as well. 
 
 ### My Submissions  
 
@@ -754,47 +810,6 @@ through the workflow!
 
 ### Collaboration  
 
-To enable workflow for collaborative applications, first navigate to the
-Workflow page of the Control Panel, where you can enable default workflow
-behavior globally. To enable workflow for a specific site, use the the Site
-Administration section, selecting the site for which you'd like to specify
-workflow behavior and clicking Workflow Configuration. You'll see the portal
-resources for which you can select a workflow.
-
-![Figure 11.11: The Workflow Configuration page of the Control Panel lists the resources for which you can select a workflow.](../../images/workflow-configuration.png)
-
-To select a workflow, click on the Workflow drop-down menu and choose a
-workflow. By default, you can only select *No workflow* or *Single Approver*.
-Custom workflows that you added also appear in this drop-down menu. You can add
-custom workflows through the Workflow page in the Configuration section of the
-Control Panel. To enable workflow for the collaborative applications, select
-the *Single Approver* for the Blogs Entry, Message Boards Message and Wiki Page
-resources, then click *Save.*
-
-To test the workflow for collaborative applications, add a page called
-*Collaboration* to the site whose scope you selected when you enabled workflow.
-Then add the Blogs, Message Boards, and Wiki portlets to this page. Using each
-portlet, add a blog entry, post a new message board thread, and write some
-content for the Wiki frontpage. For each application, notice that the *Publish*
-button is replaced by a *Submit for Publication* button since workflow is
-enabled.
-
-The workflow process for collaborative applications works the same way as in
-the examples you've already seen. Any users assigned to the (Portal,
-Organization, or Site) Content Reviewer roles can see that your blog post,
-message board thread, and wiki article have been submitted for publication by
-navigating to My Account and clicking on *My Workflow Tasks*. Of course, since
-you submitted these items for publication, it wouldn't make sense in a
-real-world use case for you to approve them. However, to see how the workflow
-process works, go ahead and approve these items yourself; you can do this since
-you're an administrator.
-
-Navigate to My Account and click on *My Workflow Tasks*. The items you've
-submitted for publication appear under *Assigned to My Roles*. Click *Actions*
-&rarr; *Assign to Me* next to the items you've submitted. Then click *Actions*
-&rarr; *Approve* next to each item when it appears in the *Assigned to Me*
-category. That's it--your blog post, message board thread, and wiki article
-have passed through the workflow!
 
 ## Summary  
 
