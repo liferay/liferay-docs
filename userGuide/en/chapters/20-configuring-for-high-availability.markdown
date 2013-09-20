@@ -1,13 +1,5 @@
 # Configuring Liferay for High Availability [](id=configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
 
- 
----
-
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is
 fully ready to support mission-critical, enterprise applications in an
 environment configured for multiple redundancies and 24/7 uptimes. The product,
@@ -17,7 +9,7 @@ needs.
 
 This chapter covers these topics in detail. Liferay runs on so many different
 Java EE application servers that we can't cover all the differences between
-them. For this reason, we'll discuss Liferay configurations only. For example,
+them. For this reason, we'll only discuss Liferay configurations. For example,
 we'll look at how to configure Liferay to work in a clustered environment, but
 not how to create the cluster in your application server. The documentation for
 your particular application server is always a much better place to learn those
@@ -34,9 +26,9 @@ scenarios, such as
 
 - Performance Testing and Tuning
 
-During this discussion, we'll mention a number of other open source products
-upon which Liferay relies for much of this functionality. These products all
-have their own documentation which should be consulted for a fuller view of what
+During the discussion, we'll mention a number of other open source products upon
+which Liferay relies for much of this functionality. These products all have
+their own documentation which should be consulted for a fuller view of what
 these products can do. For example, Liferay uses Ehcache for its caching
 mechanism. We'll cover how to configure Ehcache to enable caches in Liferay, but
 will refer you to that product's documentation for further information about
@@ -88,9 +80,12 @@ Many of these configuration changes can be made by adding or modifying
 properties in your `portal-ext.properties` file. Remember that this file
 overrides the defaults in the `portal.properties` file. The original version of
 this file can be found in the Liferay source code or can be extracted from the
-`portal-impl.jar` file in your Liferay installation. It is a best practice to
-copy the relevant section you want to modify from `portal.properties` into your
-`portal-ext.properties` file, and then modify the values there.
+`portal-impl.jar` file in your Liferay installation. You can also browse an
+online version of Liferay's properties file:
+[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
+It's a best practice to copy the relevant section you want to modify from
+`portal.properties` into your `portal-ext.properties` file, and then modify the
+values there.
 
 ---
 
@@ -104,24 +99,24 @@ copy the relevant section you want to modify from `portal.properties` into your
 
 ---
 
-We'll take each of the points above one by one to present a clear picture of how
-to cluster Liferay. 
+We'll discuss each of the points above one by one to present a clear picture of
+how to cluster Liferay. 
 
-### All nodes should be pointing to the same Liferay database [](id=all-nodes-should-be-pointing-to-the-sam-liferay-portal-6-2-user-guide-20-en)
+### All Nodes Should Point to the Same Liferay Database
 
 This is pretty self-explanatory. Each node should be configured with a data
 source that points to one Liferay database (or a database cluster) that all the
 nodes will share. This ensures all the nodes operate from the same basic data
 set. This means, of course, Liferay cannot (and should not) use the embedded
 HSQL database that is shipped with the bundles (but you already knew that,
-right?). And, of course, it goes without saying the database server is a
+right?). And, of course, it goes without saying that the database server is a
 separate physical box from the server which is running Liferay. 
 
 Beyond a database cluster, there are two more advanced options you can use to
 optimize your database configuration: a read-writer database configuration, and
 sharding. 
 
-#### Read-Writer database configuration [](id=read-writer-database-configuration-liferay-portal-6-2-user-guide-20-en)
+#### Read-Writer Database Configuration [](id=read-writer-database-configuration-liferay-portal-6-2-user-guide-20-en)
 
 Liferay allows you to use two different data sources for reading and writing.
 This enables you to split your database infrastructure into two sets: one that
@@ -135,10 +130,12 @@ configure two different data sources for Liferay to use, one for reading, and
 one for writing:
 
     jdbc.read.driverClassName=com.mysql.jdbc.Driver
-    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.read.username=**your user name**
+    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
     jdbc.write.driverClassName=com.mysql.jdbc.Driver
-    jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.write.username=**your user name**
+    jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.write.username=**your user name**
     jdbc.write.password=**your password**
 
 Of course, specify the user name and password to your database in the above
@@ -179,7 +176,7 @@ Next, we'll look at database sharding.
 
 #### Database Sharding [](id=database-sharding-liferay-portal-6-2-user-guide-20-en)
 
-Liferay starting with version 5.2.3 supports database sharding for different
+Liferay, starting with version 5.2.3, supports database sharding for different
 portal instances. Sharding is a term used to describe an extremely high
 scalability configuration for systems with massive amounts of users. In
 diagrams, a database is normally pictured as a cylinder. Instead, picture it as
@@ -200,7 +197,7 @@ instances, using the *round robin shard selector*. This is a class which serves
 as the default algorithm for sharding in Liferay. Using this algorithm, Liferay
 selects from several different portal instances and evenly distributes the data
 across them. Alternatively, you can use the manual shard selector. In this case,
-you'd need to use the UI provided in the control panel to configure your shards. 
+you'd need to use the UI provided in the Control Panel to configure your shards. 
 
 Of course, if you wish to have your developers implement your own sharding
 algorithm, you can do that. This is a great use of the Ext plugin. You can
@@ -219,7 +216,8 @@ database shards in your `portal-ext.properties` file this way:
     jdbc.default.username=
     jdbc.default.password=
     jdbc.one.driverClassName=com.mysql.jdbc.Driver
-    jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=
+    jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.one.username=
     jdbc.one.password=
     jdbc.two.driverClassName=com.mysql.jdbc.Driver
     jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
@@ -229,8 +227,8 @@ database shards in your `portal-ext.properties` file this way:
 
 Once you do this, you can set up your DNS so several domain names point to your
 Liferay installation (e.g., abc1.com, abc2.com, abc3.com). Next, go to the
-control panel and click *Portal Instances* in the Server category. Create two to
-three instances bound to the DNS names you have configured.
+Control Panel and click on *Portal Instances* under the Configuration heading.
+Create two to three instances bound to the DNS names you have configured.
 
 If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
@@ -290,21 +288,21 @@ That's all there is to it. Your system is now set up for sharding. Now that
 you've got your database set up and optimized for a large installation, let's
 turn to clustering the Documents and Media Library. 
 
-### Documents and Media Library clustering [](id=documents-and-media-library-clustering-liferay-portal-6-2-user-guide-20-en)
+### Documents and Media Library Clustering [](id=documents-and-media-library-clustering-liferay-portal-6-2-user-guide-20-en)
 
-Liferay 6.1 introduces a new Documents and Media Library which is capable of
-mounting several repositories at a time and presenting a unified interface to
-the user. By default, users can make use of the Liferay repository, which is
-already mounted. This repository is built into Liferay Portal and can use as its
-back-end one of several different store implementations. In addition to this,
-many different kinds of third party repositories can be mounted. If you have a
+Beginning with Liferay 6.1, Liferay's Documents and Media Library is capable of
+mounting several repositories at a time while presenting a unified interface to
+the user. By default, users can use the Liferay repository, which is already
+mounted. This repository is built into Liferay Portal and can use one of several
+different store implementations as its back-end. In addition to this, many
+different kinds of third party repositories can be mounted. If you have a
 separate repository you've mounted, all nodes of the cluster will point to this
-repository. Your avenue for improving performance at that point is to cluster
+repository. Your avenue for improving performance at this point is to cluster
 your third party repository, using the documentation for the repository you have
-chosen. If you don't have a third party repository, there are ways you can
-configure the Liferay repository to perform well in a clustered configuration. 
+chosen. If you don't have a third party repository, you can configure the
+Liferay repository to perform well in a clustered configuration. 
 
-The main thing to keep in mind is you need to make sure every node of the
+The main thing to keep in mind is you need to make sure that every node of the
 cluster has the same access to the file store as every other node. For this
 reason, you'll need to take a look at your store configuration. 
 
@@ -313,7 +311,7 @@ Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`
 property. Let's consider the ramifications of the various store options. 
 
-#### Using the File System store [](id=using-the-file-system-store-liferay-portal-6-2-user-guide-20-en)
+#### Using the File System Store [](id=using-the-file-system-store-liferay-portal-6-2-user-guide-20-en)
 
 This is the default store. It's a simple file storage implementation that uses a
 local folder to store files. You can use the file system for your clustered
@@ -359,14 +357,14 @@ storing multiple versions of the document.
 As you can see, the File System Store binds your documents very closely to
 Liferay, and may not be exactly what you want. But if you've been using the
 default settings for a while and need to migrate your documents, Liferay
-provides a migration utility in the control panel in *Server Administration*
+provides a migration utility in the Control Panel in *Server Administration*
 &rarr; *Data Migration*. Using this utility, you can move your documents very
 easily from one store implementation to another. 
 
 Speaking of other store implementations, let's look at some others Liferay
 provides. 
 
-#### Using the Advanced File System store [](id=using-the-advanced-file-system-store-liferay-portal-6-2-user-guide-20-en)
+#### Using the Advanced File System Store [](id=using-the-advanced-file-system-store-liferay-portal-6-2-user-guide-20-en)
 
 Liferay's advanced file system store is similar to the default file system
 store. Like that store, it saves files to the local file system--which, of
@@ -387,8 +385,8 @@ The same rules apply to the advanced file system store as apply to the default
 file system store. To cluster this, you'll need to point the store to a network
 mounted file system that all the nodes can access, and that networked file
 system needs to support concurrent requests and file locking. Otherwise, you may
-experience data corruption issues if two users attempt from two different nodes
-to write to the same file at the same time. 
+experience data corruption issues if two users attempt to write to the same file
+at the same time from two different nodes. 
 
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
@@ -396,16 +394,15 @@ the documents and media library. In addition to this, you can also redefine the
 Liferay store to use one of three other supported protocols. We'll look at these
 next. 
 
-#### Using the CMIS store [](id=using-the-cmis-store-liferay-portal-6-2-user-guide-20-en)
+#### Using the CMIS Store [](id=using-the-cmis-store-liferay-portal-6-2-user-guide-20-en)
 
 Though you can mount as many different CMIS (Content Management Interoperability
-Services) repositories as you like in the documents and media library, you may
+Services) repositories as you like in the Documents and Media library, you may
 wish also to redefine the Liferay repository to point to a CMIS repository as
-well. Why? Because, as you know, users are users, and it's possible they may
-find a way to create a folder or upload content to the Liferay repository. It
-would be nice if that Liferay repository was connected to a clustered CMIS
-repository by the administrator without having to mount it through the UI. The
-CMIS store allows you to do just that. 
+well. Why? Users might want to create a folder or upload content to the Liferay
+repository. It would be nice if that Liferay repository was connected to a
+clustered CMIS repository by the administrator without having to mount it
+through the UI. The CMIS store allows you to do just that. 
 
 If you wish to use the CMIS store, all you need to do is set the following four
 directives in your `portal-ext.properties` file: 
@@ -415,21 +412,21 @@ directives in your `portal-ext.properties` file:
     dl.store.cmis.repository.url=http://localhost:8080/url/to/your/cmis/repository
     dl.store.cmis.system.root.dir=Liferay Home
 
-Now the Liferay repository is connected to CMIS via the CMIS store. As long as
-all nodes are pointing to your CMIS repository, everything in your Liferay
-cluster should be fine, as the CMIS protocol prevents multiple simultaneous file
-access from causing data corruption. 
+With the configuration above, the Liferay repository is connected to CMIS via
+the CMIS store. As long as all nodes are pointing to your CMIS repository,
+everything in your Liferay cluster should be fine, as the CMIS protocol prevents
+multiple simultaneous file access from causing data corruption. 
 
 From here, we'll move on to the JCR store. 
 
-#### Using the JCR store [](id=using-the-jcr-store-liferay-portal-6-2-user-guide-20-en)
+#### Using the JCR Store [](id=using-the-jcr-store-liferay-portal-6-2-user-guide-20-en)
 
 Liferay Portal supports as a store the Java Content Repository standard. Under
-the hood, Liferay uses Jackrabbit—-which is a project from Apache-—as its
-JSR-170 compliant document repository. By default, Jackrabbit is configured to
-store the documents on the local file system upon which Liferay is installed, in
-the `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is
-Jackrabbit's configuration file, called `repository.xml`. 
+the hood, Liferay uses Jackrabbit, a project from Apache, as its JSR-170
+compliant document repository. By default, Jackrabbit is configured to store the
+documents on the local file system upon which Liferay is installed, in the
+`[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
+configuration file, called `repository.xml`. 
 
 Using the default settings, the JCR store is not very different from the file
 system stores, except you can use any JCR client to access the files. You can,
@@ -488,7 +485,7 @@ manually go into your database and index the primary key columns for all the
 Jackrabbit tables.
 
 Note that this configuration doesn't perform as well as the advanced file system
-store, because you're storing documents in a database instead of in the file
+store, because you're storing documents in a database instead of on the file
 system. But it does have the benefit of clustering well. Next, we'll look at
 Amazon's S3 store. 
 
@@ -516,14 +513,15 @@ Amazon's service.
 
 We have one more store to go over: the Documentum store. 
 
-##### Using the Documentum store [](id=using-the-documentum-store-liferay-portal-6-2-user-guide-20-en)
+##### Using the Documentum Store [](id=using-the-documentum-store-liferay-portal-6-2-user-guide-20-en)
 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 If you have a Liferay Portal EE license, you have access to the Documentum hook
 which adds support for Documentum to Liferay's Documents and Media library.
-Install this hook by using the Liferay Marketplace. 
+The Documentum hook is included in the Documentum Connector EE app which you can
+download and install from Liferay Marketplace. 
 
 This hook doesn't add an option to make the Liferay repository into a Documentum
 repository, as the other store implementations do. Instead, it gives you the
@@ -531,20 +529,21 @@ ability to mount Documentum repositories via the Documents and Media library UI.
 
 There's not really a lot to this; it's incredibly easy. Click *Add* &rarr;
 *Repository*, and in the form that appears, choose *Documentum* as the
-repository type. After that, give it a name and specify the Documentum
-repository and cabinet, and Liferay mounts the repository for you. That's really
-all there is to it. If all your nodes are pointing to a Documentum repository,
-you can cluster Documentum to achieve higher performance. 
+repository type. After that, enter a name for the repository, specify the
+location of the Documentum repository and cabinet, and Liferay mounts the
+repository for you. That's really all there is to it. If all your nodes are
+pointing to a Documentum repository, you can cluster Documentum to achieve
+higher performance. 
 
-Now that we've covered the available ways you can configure documents and media
-for clustering, we can move on to configuring search. 
+Now that we've covered the available ways you can configure Documents and Media
+for clustering, let's move on to configuring search. 
 
-### Clustering search [](id=clustering-search-liferay-portal-6-2-user-guide-20-en)
+### Clustering Search [](id=clustering-search-liferay-portal-6-2-user-guide-20-en)
 
-You can configure search for clustering in one of two ways: use pluggable
-enterprise search (recommended), or configure Lucene so indexes replicate across
-the individual file systems of the nodes in the cluster. We'll look at both ways
-to do this. 
+You can configure search for clustering in one of two ways: you can use pluggable
+enterprise search (recommended) or you can configure Lucene so indexes replicate
+across the individual file systems of the nodes in the cluster. We'll look at
+both ways to do this. 
 
 #### Using Pluggable Enterprise Search [](id=using-pluggable-enterprise-search-liferay-portal-6-2-user-guide-20-en)
 
@@ -662,11 +661,11 @@ Once the plugin is hot deployed, your Liferay server's search is automatically
 upgraded to use Solr. It's likely, however, that initial searches will come up
 with nothing: this is because you need to reindex everything using Solr.
 
-Go to the control panel. In the *Server* section, click *Server Administration*.
-Click the *Execute* button next to *Reindex all search indexes* at the bottom of
-the page. Liferay will begin sending indexing requests to Solr for execution.
-Once Solr has indexed all your data, you'll have a search server running
-independently of all your Liferay nodes.
+Navigate to the Control Panel. Under the Configuration heading, click on *Server
+Administration*. On the Resources tab, click the *Execute* button next to
+*Reindex all search indexes*. When you click this button, Liferay begins sending
+indexing requests to Solr for execution. Once Solr has indexed all your data,
+you'll have a search server running independently of all your Liferay nodes.
 
 Installing the plugin to your nodes has the effect of overriding any calls to
 Lucene for searching. All Liferay's search boxes will now use Solr as the search
@@ -676,7 +675,7 @@ independently of all your nodes. If, however, you don't have the server hardware
 upon which to install a separate search server, you can sync the search indexes
 between all your nodes, as is described next. 
 
-#### Clustering Lucene indexes on all nodes [](id=clustering-lucene-indexes-on-all-nodes-liferay-portal-6-2-user-guide-20-en)
+#### Clustering Lucene Indexes on All Nodes [](id=clustering-lucene-indexes-on-all-nodes-liferay-portal-6-2-user-guide-20-en)
 
 Lucene, the search indexer which Liferay uses, can be configured to sync indexes
 across each cluster node. This is the easiest configuration to implement, though
@@ -717,12 +716,12 @@ designed to replicate the cache across a cluster.
 Liferay uses **Ehcache**, which has robust distributed caching support. This
 means that the cache can be distributed across multiple Liferay nodes running
 concurrently. Enabling this cache can increase performance dramatically. For
-example, say that two users are browsing the message boards. The first user
+example, suppose that two users are browsing the message boards. The first user
 clicks a thread to read it. Liferay must look up that thread from the database
 and format it for display in the browser. With a distributed Ehcache running,
 this thread is stored in a cache for quick retrieval, and that cache is then
-replicated to the other nodes in the cluster. Say then that the second user who
-is being served by another node in the cluster wants to read the same forum
+replicated to the other nodes in the cluster. Suppose then that the second user
+who is being served by another node in the cluster wants to read the same forum
 thread and clicks on it. This time, the data is retrieved more quickly. Because
 the thread is in the cache, no trip to the database is necessary. 
 
@@ -749,7 +748,7 @@ see how to do this with a plugin first.
 The next thing we'll cover about caching is a special EE-only optimization that
 can be made to the cache. 
 
-#### Enhanced distributed cache algorithm [](id=enhanced-distributed-cache-algorithm-liferay-portal-6-2-user-guide-20-en)
+#### Enhanced Distributed Cache Algorithm [](id=enhanced-distributed-cache-algorithm-liferay-portal-6-2-user-guide-20-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -810,7 +809,7 @@ to use the default Ehcache settings just by enabling Cluster Link. If you need
 to tweak the cache for your site, you have two options: you can modify Ehcache
 settings with a plugin or you can modify them directly.
 
-#### Modifying the Ehcache settings with a plugin [](id=modifying-the-ehcache-settings-with-a-p-liferay-portal-6-2-user-guide-20-en)
+#### Modifying the Ehcache Settings With a Plugin [](id=modifying-the-ehcache-settings-with-a-p-liferay-portal-6-2-user-guide-20-en)
 
 A benefit of working with plugins is that you can quickly install a plugin on
 each node of your cluster without taking down the cluster. We'll cover this
@@ -870,19 +869,20 @@ properties above:
 	ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
 	
 Save the file and deploy the plugin (deploying plugins is covered in the
-*Liferay Developer's Guide*), and the settings you've placed in those files will
-override the default Liferay settings. In this way, you can tweak your cache
-settings so that your cache performs optimally for the type of traffic generated
-by your site. The strength of doing it this way is that you don't have restart
-your server to change the cache settings. This is a great benefit, but beware:
-since Ehcache doesn't allow for changes to cache settings while the cache is
-alive, reconfiguring a cache while the server is running will flush the cache. 
+[Liferay Development Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development)),
+and the settings you've placed in those files will override the default Liferay
+settings. In this way, you can tweak your cache settings so that your cache
+performs optimally for the type of traffic generated by your site. The strength
+of doing it this way is that you don't have restart your server to change the
+cache settings. This is a great benefit, but beware: since Ehcache doesn't allow
+for changes to cache settings while the cache is alive, reconfiguring a cache
+while the server is running will flush the cache. 
 
 There is, of course, another way to do this if you don't want to create a
 plugin. It requires you to restart the server to enable the new cache settings,
 but you don't have to work with any developer tools to do it. 
 
-#### Modifying the Ehcache settings directly [](id=modifying-the-ehcache-settings-directly-liferay-portal-6-2-user-guide-20-en)
+#### Modifying the Ehcache Settings Directly [](id=modifying-the-ehcache-settings-directly-liferay-portal-6-2-user-guide-20-en)
 
 This method is pretty similar to the plugin method, except that you have to
 modify the Liferay installation directly. You'll still need to extract Liferay's
@@ -916,7 +916,7 @@ files in your custom folder. For example:
 You can now take a look at the settings in these files and tune them to fit your
 environment and application. Let's examine how to do that next. 
 
-#### Customizing Hibernate cache settings [](id=customizing-hibernate-cache-settings-liferay-portal-6-2-user-guide-20-en)
+#### Customizing Hibernate Cache Settings [](id=customizing-hibernate-cache-settings-liferay-portal-6-2-user-guide-20-en)
 
 By default, Hibernate (Liferay's database persistence layer) is configured to
 use Ehcache as its cache provider. This is the recommended setting. If you're
@@ -998,7 +998,7 @@ systems), but for completeness, we'll go ahead and tell you how to do it anyway.
 But you've been forewarned: it's far better to use one of the other methods of
 clustering your search index. 
 
-#### Sharing a search index (not recommended unless you have a file locking-aware SAN) [](id=sharing-a-search-index-not-recommended--liferay-portal-6-2-user-guide-20-en)
+#### Sharing a Search Index (not recommended unless you have a file locking-aware SAN) [](id=sharing-a-search-index-not-recommended--liferay-portal-6-2-user-guide-20-en)
 
 If you wish to have a shared index (and we really hope you don't), you'll need
 to either share the index on the file system or in the database. This requires
@@ -1046,9 +1046,9 @@ separate search server or syncing the indexes on the nodes' file systems.
 
 ---
 
-![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
-connection string for this to work. Add the following parameter to your
-connection string:
+ ![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
+ connection string for this to work. Add the following parameter to your
+ connection string:
 
     emulateLocators=true
 
@@ -1092,7 +1092,6 @@ hierarchy).
 
 All of the above will get basic Liferay clustering working; however, the
 configuration can be further optimized. We will see how to do this next.
-
 
 ## Performance Tuning [](id=performance-tuning-liferay-portal-6-2-user-guide-20-en)
 
@@ -1174,7 +1173,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 20.7: Java Memory](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 20.7: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
@@ -1282,7 +1281,7 @@ properties.
 Let's look at one final, general way of increasing Liferay's performance:
 disabling unused servlet filters. 
 
-### Disabling unused servlet filters [](id=disabling-unused-servlet-filters-liferay-portal-6-2-user-guide-20-en)
+### Disabling Unused Servlet Filters [](id=disabling-unused-servlet-filters-liferay-portal-6-2-user-guide-20-en)
 
 Liferay comes by default with a number of servlet filters enabled and running.
 It is likely that for your installation, you don't need them all. Since servlet
