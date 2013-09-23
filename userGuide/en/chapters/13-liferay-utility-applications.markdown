@@ -284,6 +284,8 @@ information about your product.
 plugin.
 
 **Licenses:** Select the license(s) under which you are releasing this software.
+You must first add a license using the *License* tab before you can select it in
+the *New Product* form.
 
 **Author:** Enter the name of the author of the software.
 
@@ -334,7 +336,7 @@ does exactly what we have described here. This portlet was added to the suite of
 portlets which Liferay provides in the Social Networking plugin. This plugin
 makes use of the many social networking features which have been added to
 Liferay. So rather than just displaying a summary of your information, the
-Social Networking portlet adds features such as status updates, a "wall" for
+Social Networking portlet adds features such as status updates, a *wall* for
 each user in his or her profile that other users can *write* on, the ability to
 become *friends* with other users—thereby granting them access to their
 profiles—and more.
@@ -353,15 +355,15 @@ So click the *Framework Versions* tab and then click the *Add Framework Version*
 button.
 
 Give the framework a name, a URL and leave the *Active* check box checked. For
-our example, we have entered 6.0.3 for the name, because our portlet should work
+our example, we have entered 6.2.0 for the name, because our portlet should work
 on that version and higher, and [http://www.liferay.com](http://www.liferay.com)
 for the URL. Click *Save*.
-
-![Figure 13.10: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice a
 message is displayed stating the product does not have any released versions.
 Click the *Add Product Version* button.
+
+![Figure 13.10: Versions usually increment by *.1* for every new release.](../../images/marketplace-adding-product-version-software-catalog.png)
 
 **Version Name:** Enter the version of your product.
 
@@ -379,20 +381,23 @@ here.
 software product here. The Plugin Installer portlet will follow this link in
 order to download your software product.
 
+**Test Direct Download URL:** Select *Yes* if you'd like Liferay to test the
+download URL for its validity.
+
 **Include Artifact in Repository:** To enable others to use the Plugin Installer
-portlet to connect to your repository and download your plugin, select *yes*
+portlet to connect to your repository and download your plugin, select *Yes*
 here.
 
 When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-#### Generating The Software Catalog [](id=generating-the-software-catalog-liferay-portal-6-2-user-guide-13-en)
+#### Generating the Software Catalog [](id=generating-the-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
 The Software Catalog works by generating an XML document which the Plugin
 Installer reads. Using the data from this XML document, the Plugin Installer
 knows where it can download the plugins from, what version of Liferay the
-plugins are designed for and all other data about the plugins that have been
+plugins are designed for, and all other data about the plugins that have been
 entered into the Software Catalog portlet.
 
 In order to get your Software Catalog to generate this XML data, you will need
@@ -400,18 +405,12 @@ to access a particular URL. If you have created a friendly URL for your site
 (for example, the default site, which is called *guest*, has a friendly URL of
 `/guest` already configured for it), you can use the friendly URL. If not, you
 will first need to know the Group ID of the site in which your Software Catalog
-portlet resides. You can do this by accessing the Manage Pages interface and
-looking at the URLs for any of the pages. The URL will look something like this:
-`http://localhost:8080/web/10148/1`.
-
-Obviously, it is much easier if you are using Friendly URLs, which we highly
-recommend.
+portlet resides. Obviously, it is much easier if you are using Friendly URLs,
+which we highly recommend.
 
 Next, go to your browser and go to the following URL:
 
-[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or
-Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL
-name or Group ID\>)
+	http://<server name\>:<port number\>/software_catalog?<Friendly URL name or Group ID\>
 
 For example, if you are on the same machine as your Liferay instance, and that
 instance is running on port 8080, and your group ID from the database is 10148,
@@ -426,59 +425,35 @@ you would use the following URL:
 
 If you have configured everything properly, an XML document should be returned:
 
-	<?xml version="1.0" encoding="UTF-8"?\>
-
+	<?xml version="1.0" encoding="UTF-8"?>
+	
 	<plugin-repository\>
-
-	<settings/\>
-
-	<plugin-package\>
-
-	<name\>My Summary</name\>
-
-	<module-id\>old-computers/my-summary-portlet/1.0/war</module-id\>
-
-	<modified-date\>Thu, 23 Apr 2009 20:40:16 +0000</modified-date\>
-
-	<types\>
-
-	<type\>portlet</type\>
-
-	</types\>
-
-	<tags\>
-
-	<tag\>social</tag\>
-
-	<tag\>profile</tag\>
-
-	</tags\>
-
-	<short-description\>My Summary</short-description\>
-
-	<long-description\>My Summary</long-description\>
-
-	<change-log\>Initial Version</change-log\>
-
-	<download-url\>[http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war](http://www.liferay.com/portlets/my-summary-portlet-5.2.2.war)
-
-	</download-url\>
-
-	<author\>Rich Sezov</author\>
-
-	<screenshots/\>
-
-	<licenses\>
-
-	<license osi-approved="true"\>MIT License</license\>
-
-	</licenses\>
-
-	<liferay-versions/\>
-
-	</plugin-package\>
-
-	</plugin-repository\>
+		<settings/>
+		<plugin-package>
+			<name>My Summary</name>
+			<module-id>old-computers/my-summary-portlet/1.0/war</module-id>
+			<modified-date>Thu, 20 Sep 2013 18:28:14 +0000</modified-date>
+			<types>
+				<type>portlet</type>
+			</types>
+			<tags>
+				<tag>social</tag>
+				<tag>profile</tag>
+			</tags>
+			<short-description>My Summary</short-description>
+			<long-description>My Summary</long-description>
+			<change-log>Initial Version</change-log>
+			<download-url>
+				http://www.liferay.com/portlets/my-summary-portlet-6.2.0.war
+			</download-url>
+			<author>Cody Hoag</author>
+			<screenshots/>
+			<licenses>
+				<license osi-approved="true">LGPL</license>
+			</licenses>
+			<liferay-versions/>
+		</plugin-package>
+	</plugin-repository>
 
 You can now give the URL to your software repository out on your web site and
 other administrators of Liferay can enter it into the Plugins Installation
@@ -508,8 +483,8 @@ any of those pages yourself. Simply configure your software in the portlet and
 all of that is done for you.
 
 How can you do this? The Software Catalog is also available as a portlet. You
-can add it to any page on your web site through the *Add Application* menu. You
-can find the portlet in the *Tools* category.
+can add it to any page on your web site through the *Add* &rarr; *Applications*
+menu. You can find the portlet in the *Tools* category.
 
 ### Manually Creating A Software Catalog [](id=manually-creating-a-software-catalog-liferay-portal-6-2-user-guide-13-en)
 
@@ -528,7 +503,7 @@ provide a user interface for downloading your software.
 If you still wish to use a text editor to create your software catalog, you can.
 To manually create a software catalog, obtain the DTD for the XML file from
 Liferay's source code. You will find this DTD in the *definitions* folder in the
-Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this
+Liferay source. It is a file called `liferay-plugin-package_6_2_0.dtd`. Use this
 DTD with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
@@ -536,15 +511,12 @@ plugins) to create your software catalog manually.
 
 If there is a software catalog of plugins you would like to point your instance
 of Liferay to, all you need is the URL to the catalog. Once you have the URL, go
-to the Plugin Installer in your Control Panel and click the *Configuration* tab.
-You will see there are two fields in which you can enter URLs to plugin
-repositories: *Trusted Plugin Repositories* and *Untrusted Plugin Repositories*.
-Currently, the only difference between the two is to provide a visual cue for
-administrators as to which repositories are trusted and untrusted.
+to the App Manager in the Control Panel and click the *Install* tab. You will
+see there is a field in which you can enter a URL to a plugin repository.
 
-Enter the URL to the repository to which you wish to connect in one of the
-fields and click *Save*. The portlet will connect to the repository and items
-from this repository will be shown in the list.
+Enter the URL to the repository to which you wish to connect and click *Save*.
+The portlet will connect to the repository and items from this repository will
+be shown in the list.
 
 If all this talk of catalogs has put you in the mood to do some shopping, then
 it's probably a good time to get acquainted with Liferay's Shopping application.
@@ -555,7 +527,7 @@ Let's go down that aisle next.
 Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company
 produces a publication that customers want to purchase? If you have something of
-value the visitors of your site want or need, then Lifeary's Shopping
+value the visitors of your site want or need, then Liferay's Shopping
 application can help you get these items to your customers with a secure
 transaction.
 
@@ -573,11 +545,10 @@ Before we start printing money, let's first create an online store.
 To begin setting up a store, place the Shopping application on a page in your
 site. Like the Message Boards portlet, the Shopping portlet takes up a lot of
 space. It's best, therefore, to dedicate an entire page to the application. The
-Shopping portlet is available from the *Add* &rarr; *More* menu in the Dockbar
-under Shopping.
+Shopping portlet is available from the *Add* &rarr; *Applications* menu on the
+left side panel under Shopping.
 
-![Figure 13.11: Start setting up the store by entering items and categories in
-the shopping portlet.](../../images/shopping-add-portlet.png)
+![Figure 13.11: Start setting up the store by entering items and categories in the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has four tabs across the top:
 
@@ -609,17 +580,14 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 13.12: In this figure there are three subcategories for the
-`Aromatherapy` category. The first subcategory has three items, the second has
-two, and the third is empty.](../../images/shopping-categories.png)
+![Figure 13.12: In this figure there are three subcategories for the `Aromatherapy` category. The first subcategory has three items, the second has two, and the third is empty.](../../images/shopping-categories.png)
 
 When you click *Save*, your new category is listed in the portlet, along with
 the number of subcategories and the number of items that are in the category.
 You can edit the category, set permissions for it or delete it using the
 *Actions* button.
 
-![Figure 13.13: Breadcrumbs are an important navigational tool in the shopping 
-portlet.](../../images/shopping-category-breadcrumbs.png)
+![Figure 13.13: Breadcrumbs are an important navigational tool in the shopping portlet.](../../images/shopping-category-breadcrumbs.png)
 
 Each category can have unlimited subcategories and you can add subcategories to
 any category. Notice as you add categories and subcategories, navigational
@@ -637,13 +605,9 @@ items are available and set the appropriate permissions.
 
 The Fields area is where you add additional fields to set specific
 characteristics for the item. These can include things like sizes and colors.
-The additional fields appear in the item form as pull-down menus, as in the
-figure below.
+The additional fields appear in the item form as pull-down menus.
 
-![Figure 13.14: The additional fields you create for an item appear in the item
-description form as menu options.](../../images/shopping-item-options.png)
-
-The Prices area is for all data pertaining to the item's cost, minimum and
+The Prices area is for all data pertaining to the item's cost, minimum, and
 maximum quantities, quantity discounts, taxes, and shipping costs.
 
 The Images area lets you add photos to the item form. You can add a link to the
@@ -653,20 +617,14 @@ finished creating a new item, click *Save*.
 
 ![Figure 13.15: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
 
-As products are added, they are listed in the Items section of the portlet.
-If the item you just created needs to go into one of your new categories or
-subcategories, you can assign it to the category by editing the item. Choose
-the *Select* button (next to the *Remove* button), and this displays a dialog box
-listing all the shop categories.
-
-![Figure 13.16: To put an item in a category, edit the item and choose *Select*
-to see the available categories.](../../images/shopping-select-categories.png)
-
-Choose the desired category from the list to relocate the item to its new
-location. Notice how the breadcrumbs reflect this change in the item form.
-
-![Figure 13.17: When an item moves into a category, the breadcrumb navigation
-updates accordingly.](../../images/shopping-item-breadcrumb-change.png)
+As products are added, they are listed in the Items section of the portlet. If
+the item you just created needs to go into one of your new categories or
+subcategories, you can assign it to the category by editing the item. Choose the
+*Select* button (next to the *Remove* button), and this displays a dialog box
+listing all the shop categories. Choose the desired category from the list to
+relocate the item to its new location. Notice how the breadcrumbs reflect this
+change in the item form. For a tutorial on categories, breadcrumbs, and item
+relocation, visit the *Moving a Link* section in this chapter.
 
 You can make changes to any item through *Actions* &rarr; *Edit*. Finding an
 item is easy, using the *Search* function.
@@ -676,7 +634,7 @@ shopping portlet's configuration options.
 
 ### Configuration [](id=configuration-liferay-portal-6-2-user-guide-13-en)
 
-By selecting the *wrench* icon in the top right of the portlet, you can manage
+By selecting the *gear* icon in the top right of the portlet, you can manage
 the configuration options of the shopping application. In the Setup view, there
 are tabs for Payment Settings, Shipping Calculation, Insurance Calculation, and
 Emails.
@@ -729,8 +687,7 @@ that the total order amount falls under.
 This form sets the addresses for customer email notifications. Use the list of
 term definitions below to customize the correspondence with your customers.
 
-![Figure 13.18: Shopping emails can be configured in a myriad of ways to suit
-your needs.](../../images/shopping-confirmation-email-form.png)
+![Figure 13.18: Shopping emails can be configured in a myriad of ways to suit your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the email address from which order and shipping
 notifications are sent.  
@@ -759,8 +716,7 @@ When buyers select an item, they see the item's description displaying all of
 its relevant information. The figure below is typical of what an item's
 description might look like.
 
-![Figure 13.19: You can include images of each item in your store. (Medium sized
-images display on the item's description form).](../../images/shopping-item.png)
+![Figure 13.19: Your product's SKU number is listed above the image.](../../images/shopping-item.png)
 
 Below the product description is the Availability field indicating whether the
 item is in stock. There are also two buttons for managing the shopping
@@ -771,13 +727,11 @@ experience:
 **Next:** lets you to scroll through all the items in the category, giving you
 the option to add to the cart as you go.
 
-After adding an item to the cart, click *<< Back* to return to the product
-description and continue shopping by navigating the category breadcrumbs at the
-top of the form. You can also continue shopping by scrolling through a 
+After adding an item to the cart, click Back (blue arrow) to return to the
+product description and continue shopping by navigating the category breadcrumbs
+at the top of the form. You can also continue shopping by scrolling through a
 category, item by item, using the *Previous* and *Next* buttons at the bottom of
 the product description.
-
-![Figure 13.20: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
 
 Each time you add an item to the cart, a running tally of the cart's contents is
 kept. Quantities for each item are controlled using drop-down menus.  The order
@@ -797,13 +751,13 @@ shopping again or to stop shopping.
 address, and the credit card information. You can also add comments about the
 order if necessary.
 
-![Figure 13.21: All the information pertaining an order can be seen in the order 
-summary view.](../../images/shopping-order-summary.png)
+![Figure 13.20: The shopping cart gives a preview of the items you'd like to buy.](../../images/shopping-cart-order.png)
 
-When all the data has been entered correctly, click *Continue* to see the order
-summary. After reviewing the summary, click *Finished* and you are given
-confirmation the order has been placed, along with the order number. Use this
-number to search for the order history and keep track of its status.
+When you're ready to checkout, click the *Checkout* button at the bottom of the
+screen. When all the data has been entered correctly, click *Continue* to see
+the order summary. After reviewing the summary, click *Finished* and you are
+given confirmation the order has been placed, along with the order number. Use
+this number to search for the order history and keep track of its status.
 
 #### Customizing the shopping cart with a hook [](id=customizing-the-shopping-cart-with-a-ho-liferay-portal-6-2-user-guide-13-en)
 
@@ -819,20 +773,15 @@ with questions about their orders. Let's go over the orders next.
 
 ### Managing Orders [](id=managing-orders-liferay-portal-6-2-user-guide-13-en)
 
-Under the Orders tab there are fields for finding specific orders. Search 
-for orders using the order number, order status, first or last name on the order
-or by the email address associated with the account. For more information on 
-searching in Liferay Portal, see the Faceted Search section in chapter 5. 
-
-![Figure 13.22: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
+Under the Orders tab there are fields for finding specific orders. Search for
+orders using the order number, order status, first or last name on the order, or
+by the email address associated with the account. For more information on
+searching in Liferay Portal, see the Faceted Search section in chapter 6.
 
 Below the search fields is the orders list. Orders can be deleted or edited
 using the *Actions* button. When you select an order from the Orders tab, or if 
 you edit an order, you see a summary of the order details along with some 
 options across the bottom.
-
-![Figure 13.23: Review order specifics in the Edit 
-view.](../../images/shopping-order-detail.png)
 
 **Invoice:** creates a printer-friendly copy of the order that can be sent to a
 customer.
@@ -878,7 +827,7 @@ SKU numbers.
 
 If your store sells books, you can use Liferay's Amazon Rankings application to
 display them alongside the main shopping portlet. Both of these are found in the
-Shopping category under *Add* &rarr; *More* in the Control Panel. The Amazon
+Shopping category under *Add* &rarr; *Applications* in the left menu. The Amazon
 Rankings application lets you highlight the books in your store's inventory
 outside of the typical category structure. Books are arranged in ascending order
 according to Amazon's Best Sellers Rank. Book cover images displayed in the
@@ -897,7 +846,7 @@ Amazon License Keys are available here:
 [https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/)
 
 Add the following lines to your `portal-ext.properties` file and populate the
-values for the associate ID tag, access key id, and secret access key. Ensure
+values for the associate ID tag, access key ID, and secret access key. Ensure
 there are no spaces between the `=` sign and the property values.
 
 	amazon.access.key.id=
@@ -907,6 +856,21 @@ there are no spaces between the `=` sign and the property values.
 Note that these keys are provided by Amazon for personal use only. Please
 consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more
 information.
+
+To obtain the `amazon.associate.tag`, visit
+[https://affiliate-program.amazon.com/gp/associates/apply/main.html](https://affiliate-program.amazon.com/gp/associates/apply/main.html)
+and apply, if necessary. Your associate tag is the *Tracking ID* listed in the
+upper left corner of the [Associates
+Central](https://affiliate-program.amazon.com/gp/associates/network/main.html)
+page.
+
+---
+
+![Tip](../../images/01-tip.png) **Tip:** Make sure to create your affiliate
+program before generating an access key; otherwise, the access key will not be
+linked to your affiliate program. 
+
+---
 
 If your Amazon Web Services key is set improperly, you can't add books to your
 Shopping portlet.
