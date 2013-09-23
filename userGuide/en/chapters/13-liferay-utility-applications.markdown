@@ -896,6 +896,11 @@ applications, let's learn how to generate reports in Liferay.
 
 ## Generating Reports in Liferay [](id=generating-reports-in-liferay-liferay-portal-6-2-user-guide-13-en)
 
+<!-- Unable to deploy Reports and JasperReports for Liferay EE 6.2. Finish this
+section when the EE apps are available on Marketplace. 
+Reference ticket: LRDOCS-764
+-->
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay's Reports portlet allows administrators to create reports and schedule
@@ -1272,6 +1277,11 @@ Now that we understand how to generate Jasper reports in Liferay, let's see what
 the Knowledge base application has to offer. 
 
 ## Knowledge Base [](id=knowledge-base-liferay-portal-6-2-user-guide-13-en)
+
+<!-- Unable to deploy Knowledge Base plugin for Liferay EE 6.2. Finish this
+section when the EE apps are available on Marketplace.
+Reference ticket: LRDOCS-764
+-->
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
