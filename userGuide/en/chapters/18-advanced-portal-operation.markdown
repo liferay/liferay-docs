@@ -961,8 +961,8 @@ changes in behavior.
 
         passwords.encryption.algorithm=SHA
 
-    By default, Liferay 6.2 uses PBKDF2WithHmacSHA1/160/128000 for password
-    encryption.
+    By default, Liferay 6.2 uses a stronger algorithm,
+    PBKDF2WithHmacSHA1/160/128000, for password encryption.
         
         passwords.encryption.algorithm=PBKDF2WithHmacSHA1/160/128000
 
