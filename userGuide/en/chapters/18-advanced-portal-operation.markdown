@@ -944,20 +944,39 @@ changes in behavior.
         company.encryption.algorithm=DES
         company.encryption.key.size=56
    
-   By default, Liferay 6.2 uses the much stronger AES encryption algorithm with
-   a 128 bit key size for the company level encryption algorithm.
+    By default, Liferay 6.2 uses the much stronger AES encryption algorithm with
+    a 128 bit key size for the company level encryption algorithm.
    
         company.encryption.algorithm=AES
         company.encryption.key.size=128
    
-   However, the upgrade for the `company.encryption.algorithm` property is only
-   performed if the value for this properties was not customized, i.e., if it
-   was still set to DES. The upgrade doesn't make any changes if a different
-   algorithm was explicitly selected. (Note that this does not affect password
-   encryption which is handled via a different property:
-   `passwords.encryption.algorithm`.)
+    However, the upgrade for the `company.encryption.algorithm` property is only
+    performed if the value for this properties was not customized, i.e., if it
+    was still set to DES. The upgrade doesn't make any changes if a different
+    algorithm was explicitly selected. (Note that this does not affect password
+    encryption which is handled via a different property:
+    `passwords.encryption.algorithm`.)
 
-2. After upgrading from Liferay 6.1 to Liferay 6.2, users will have to sign back
+2. By default, Liferay 6.1 used the SHA algorithm for password encryption.
+
+        passwords.encryption.algorithm=SHA
+
+    By default, Liferay 6.2 uses PBKDF2WithHmacSHA1/160/128000 for password
+    encryption.
+        
+        passwords.encryption.algorithm=PBKDF2WithHmacSHA1/160/128000
+
+    If you'd like your upgrade to migrate your password encryption algorithm,
+    you need to specify the legacy password encryption algorithm from which
+    you're migrating. For example, if you were using the 6.1 default before your
+    upgrade, you'd set the following property:
+
+        passwords.encryption.algorithm.legacy=SHA
+
+    Set this property before performing an upgrade so that users' passwords will
+    be encrypted with the new algorithm.
+
+3. After upgrading from Liferay 6.1 to Liferay 6.2, users will have to sign back
    in to the portal even if they were using the *Remember Me* feature of the
    Sign In portlet. After the upgrade, the *Remember Me* feature works
    correctly: users can log in to the portal, close their browser, open a new
