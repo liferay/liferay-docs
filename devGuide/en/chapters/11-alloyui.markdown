@@ -1,5 +1,12 @@
 # Designing User Interfaces with AlloyUI [](id=designing-user-interfaces-with-alloyui-liferay-portal-6-2-dev-guide-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has still under
+construction. 
+
+---
+
 Liferay's User Interface (UI) Team continually strives to provide stylish,
 lightning-fast components that are extensible and built to last. I liken the
 team to an elite band of metallurgists: cutting-edge scientists that extract
