@@ -1,5 +1,12 @@
 # Creating Liferay Themes and Layout Templates [](id=creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Do you want arrange your pages' portlets differently than
 what Liferay's templates support out-of-the-box? Create your own Layout
@@ -362,7 +369,7 @@ content:
         </theme>
     </look-and-feel>
 
-To define additional settings, add more `<settings>` elements to the file.
+To define additional settings, add more `<setting>` elements to the file.
 Access the settings from the theme templates using the following code:
 
     $theme.getSetting("my-setting")

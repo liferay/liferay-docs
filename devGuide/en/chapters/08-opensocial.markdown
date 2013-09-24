@@ -1,6 +1,13 @@
 
 # Creating and Integrating with OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and Javascript. It was originally
 developed by Google, Myspace and others to standardize common social networking

@@ -1,15 +1,8 @@
 # Using Scripting for Advanced Flexibility [](id=using-scripting-for-advanced-flexibilit-liferay-portal-6-2-user-guide-19-en)
 
----
-
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay provides a robust script engine that can be used to interpret scripts in
-Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of
-Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It
+Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of
+Liferay's involvement with the [Romulus project](http://www.ict-romulus.eu). It
 was originally developed to support non Java-based portlets, but has now been
 extended to handle a lot more. For example, when Liferay's workflow framework
 was introduced, the script engine was leveraged to support the execution of
@@ -32,7 +25,9 @@ following topics:
 
 The most common thing you'll want to do is access Liferay's services. If you
 have any familiarity with Liferay's developer tools and API, this will be a snap
-for you. 
+for you. To access Liferay's scripting console, navigate to the Control Panel,
+click on *Server Administration* under the Configuration heading, then open the
+*Script* tab.
 
 ## Accessing Liferay Services [](id=accessing-liferay-services-liferay-portal-6-2-user-guide-19-en)
 
@@ -109,7 +104,7 @@ follows:
 
 	userCount = UserLocalServiceUtil.getUsersCount()
 	users = UserLocalServiceUtil.getUsers(0, userCount)
-	for ( user in users){
+	for (user in users){
 		System.out.println("User Name: " + user.getFullName())
 	}
 	
@@ -162,29 +157,31 @@ could be implemented with the following code.
 As you can see, Liferay's services can be accessed from any of these languages.
 Let's look at some practical examples of how you'd use this. 
 		
-## Running scripts from the control panel [](id=running-scripts-from-the-control-panel-liferay-portal-6-2-user-guide-19-en)
+## Running Scripts from the Control Panel [](id=running-scripts-from-the-control-panel-liferay-portal-6-2-user-guide-19-en)
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
-Administration* &rarr; *Script*. Change the script type to Groovy and modify the
-current code to look like the following: 
+Administration* &rarr; *Script*. Change the script type to Groovy and replace
+the code in the scripting console with the following: 
 
     number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
     out.println(number); 
 
-Click the execute button and check the console or the log for your output. 
+Click the *Execute* button and check the scripting console or the log for the
+output.
 
-Let's implement a more realistic example. We'll retrieve some user information
-from the database, make some changes and then update the database with our
-changes. Our company has updated the terms of use and requires that everyone be
-presented with the updated terms of use on the next log in. When users agree to
-the terms of use, a boolean attribute called `agreedToTermsOfUse` is set in
-their user records. As long as the boolean is `true`, Liferay will not present
-the user with the terms of use. However, if we set this flag to `false` for
-everyone, all users will have to agree to it again to use the site. 
+Now let's implement a more realistic example. We'll retrieve some user
+information from the database, make some changes and then update the database
+with our changes. Our company has updated the terms of use and requires that
+everyone be presented with the updated terms of use on the next log in. When
+users agree to the terms of use, a boolean attribute called `agreedToTermsOfUse`
+is set in their user records. As long as the boolean is `true`, Liferay will not
+present the user with the terms of use. However, if we set this flag to `false`
+for everyone, all users will have to agree to it again to use the site. 
 
-We'll again use Groovy, so ensure the script type is set to Groovy and execute
-the following code to check the status of the `agreedToTermsOfUse` attribute:
+We'll again use Groovy, so ensure that the script type is set to Groovy and
+execute the following code to check the status of the `agreedToTermsOfUse`
+user attribute:
 
 	import com.liferay.portal.service.UserLocalServiceUtil
 
@@ -195,14 +192,15 @@ the following code to check the status of the `agreedToTermsOfUse` attribute:
 		println("User Name: " + user.getFullName() + " -- " + user.getAgreedToTermsOfUse())
 	}
 	
-Now we'll actually update each user in the system to set his or her
-`agreedToTermsOfUse` attribute to false. We'll be sure to skip the default user
-as the default user is not required to agree to the Terms of Use. We'll also
-skip the admin user that's currently logged in and running the script. If you're
-logged in as someone other than test@liferay.com, be sure to update the
+The code above just prints the value of the `agreedToTermsOfUse` attribute for
+each user. Next, we'll actually update each user in the system to set his or her
+`agreedToTermsOfUse` attribute to `false`. We'll be sure to skip the default
+user as the default user is not required to agree to the Terms of Use. We'll
+also skip the admin user that's currently logged in and running the script. If
+you're logged in as someone other than test@liferay.com, be sure to update the
 following script before running it. 
 	
-	import com.liferay.portal.service.UserLocalServiceUtil
+        import com.liferay.portal.service.UserLocalServiceUtil
 
 	userCount = UserLocalServiceUtil.getUsersCount()
 	users = UserLocalServiceUtil.getUsers(0, userCount)
@@ -220,25 +218,25 @@ following script before running it.
 	}
 	
 To verify the script has updated the records, run the first script again and you
-should see all users (except the default user and your ID) have been updated. 
+should see that all users (except the default user and your user) have been
+updated. 
 
 That's all that's needed to run scripts and to access the Liferay service layer.
 There are, however, some things to keep in mind when working with the script
 console: 
 
-* There is no undo
+- There is no undo
 
-* There is no preview
+- There is no preview
 
-* When using Local Services, no permissions checking is enforced
+- When using Local Services, no permissions checking is enforced
 
-* Scripts are executed synchronously, so be careful with scripts that might take
+- Scripts are executed synchronously, so be careful with scripts that might take
   a long time to execute. 
 
 For these reasons, you want to use the script console with care, and test run
-your scripts on non-production systems before you run them on production. 
-
-Of course, the script engine has uses beyond the script console. One of the main
+your scripts on non-production systems before you run them on production. Of
+course, the script engine has uses beyond the script console. One of the main
 uses of it is in designing workflows. 
 
 ## Leveraging the Script Engine in Workflow [](id=leveraging-the-script-engine-in-workflo-liferay-portal-6-2-user-guide-19-en)
@@ -271,8 +269,8 @@ for any user assigned to approve content.
 Of course, before you try any of this, you might want to know what the
 appropriate syntax is for inserting a script into the workflow. In an XML
 workflow definition, a script can be used in any XML type that can contain an
-*<actions>* tag - those types being `<state>`, `<task>`, `<fork>` and `<join>`.
-Inside of one of those types, format your script like so:
+*actions* tag--those types being `<state>`, `<task>`, `<fork>` and `<join>`.
+Inside of one of those types, format your script like this:
 
 	<actions>
 		<action>
@@ -344,14 +342,11 @@ returns.
 
 The combination of Liferay's scripting and workflow engines is incredibly
 powerful, but as it provides users with the ability to execute code, it can also
-be very dangerous. When configuring your permissions, be aware of the potential
+be dangerous. When configuring your permissions, be aware of the potential
 consequences of poorly, or maliciously, written scripts inside of a workflow
 definition. For more information on creating definitions with Kaleo Workflow see
-*Chapter 6: Workflow with Kaleo*.
-
-<!--  check chapter reference  -->
-  
-<!-- TODO -->
+[chapter 11](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en)
+of this guide on using Kaleo workflow.
 
 <!-- ## Script Based Portlets -->
 
@@ -359,8 +354,8 @@ definition. For more information on creating definitions with Kaleo Workflow see
 
 ## Custom Java Tools in the Script Engine [](id=custom-java-tools-in-the-script-engine-liferay-portal-6-2-user-guide-19-en)
 
-There are several challenges when working with the Script Engine, including
-debugging and logging. One approach to overcome these challenges is to develop
+Users of the Script Engine face several challenges, including debugging and
+logging challenges. One approach to overcome these challenges is to develop
 custom Java utilities that can be called from your scripts. These utilities can
 write to a custom log file or the Liferay log file. You can also place
 breakpoints in your utility code and step through it using your favorite
@@ -375,8 +370,7 @@ Liferay Developer Studio, select *File* &rarr; *New* &rarr; *Liferay Project*.
 Name the project *script-utils* and accept the display name generated by the
 wizard. Be sure to select *Hook* for the Plugin Type and then select *Finish*. 
 
-![Figure 19.1: Creating a new utilities project is easy if you use Liferay IDE
-or Liferay Developer Studio.](../../images/13-new-liferay-project.png)
+![Figure 19.1: Creating a new utilities project is easy if you use Liferay IDE or Liferay Developer Studio.](../../images/13-new-liferay-project.png)
 
 You're using a Liferay Hook Plugin to deploy your utility, but you're not using
 any of the typical hook features. You just need a way to make your code
@@ -385,12 +379,11 @@ this. This means you don't need to add anything to the `liferay-hook.xml` file.
 Instead, you'll begin by adding your utility code. 
 
 You'll be following the Dependency Injection design pattern so begin by creating
-the interface. Right click on the `docroot/WEB-INF/src` folder and select *New*
+the interface. Right-click on the `docroot/WEB-INF/src` folder and select *New*
 &rarr; *Interface*. You'll create your interface in the `com.liferay.sample`
 package. Name it `ScriptUtil`. 
 
-![Figure 19.2: Create a new Java Interface which you'll later
-implement.](../../images/13-new-interface.png)
+![Figure 19.2: Create a new Java Interface which you'll later implement.](../../images/13-new-interface.png)
 
 Next, add two methods to the interface. 
 
@@ -404,13 +397,12 @@ Next, add two methods to the interface.
 
 	}
 
-Next, create the implementation class. Right click on the `docroot/WEB-INF/src`
-folder and select *New* &rarr; *Class*. Create the interface in the
+Next, create the implementation class. Right-click on the `docroot/WEB-INF/src`
+folder and select *New* &rarr; *Class*. Create the class in the
 `com.liferay.sample` package and name it `ScriptUtilImpl`. Be sure to select
 `com.liferay.sample.ScripUtil` as the Interface. 
 
-![Figure 19.3: Create a new Java Class that implements the interface you created
-earlier.](../../images/13-new-class.png)
+![Figure 19.3: Create a new Java Class that implements the interface you created earlier.](../../images/13-new-class.png)
 
 Next, add implementations for the two methods. 
 
@@ -457,8 +449,8 @@ plugin. The `BeanLocator` reads the bean definitions you provided.
 If you're adding your utility to a Service Builder enabled plugin, then you'll
 already have a `BeanLocator` and you can skip this step. Since this Hook plugin
 is not already using Service Builder, you'll need to define a context loader
-listener in our Hook to provide a `BeanLocator`. Open the
-`docroot/WEB-INF/web.xml` file and replace its contents with the following code: 
+listener in our Hook to provide a `BeanLocator`. Create a
+`docroot/WEB-INF/web.xml` file in your project and add the following code to it:
 
 	<?xml version="1.0"?>
 	<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
@@ -469,34 +461,39 @@ listener in our Hook to provide a `BeanLocator`. Open the
 		</listener>
 	</web-app>
 	
-Save all of the changes you've made and deploy the hook. Once the hook has been
-deployed successfully, the `ScriptUtil` can be used in your script engine code. 
+If your project already contains a `docroot/WEB-INF/web.xml` file, you can
+replace its contents with the code above. Save all of the changes you've made
+and deploy the hook. Once the hook has been deployed successfully, the
+`ScriptUtil` can be used in your script engine code. 
 
-To see the `ScriptUtil` code in action, navigate back to the *control panel*
+To see the `ScriptUtil` code in action, navigate back to the *Control Panel*
 &rarr; *Server Administration* &rarr; *Script*. Change the script type to Groovy
 and enter the following script: 
 
 	myUtil = 
 		com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate("script-utils-hook",
-		"com.liferay.samples.ScriptUtil")
+		"com.liferay.sample.ScriptUtil")
 
 	println(myUtil.operationOne())
 
 	println(myUtil.operationTwo("Joe Bloggs"))
 	
-You should see the results of your script displayed right under the script. 
+You should see the results of your script displayed right under the script
+console. 
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-19-en)
 
-In this chapter we saw how Liferay's script engine opens up many exciting
-possibilities for working with Liferay regardless of your language of choice. We
-learned how you can leverage Liferay's Services Oriented Architecture (SOA) from
-any of the popular scripting languages Liferay supports. We then saw how those
-scripts could be used to simplify administrative tasks by leveraging the
-Administrator Script Console. Next, we discovered how you could enhance workflow
-by using the power of scripts. Lastly, we saw how you could overcome some of the
-limitations of running scripts in Liferay by creating custom Java utilities that
-could be executed from within your scripts. 
+In this chapter, we saw how Liferay's script engine opens up many exciting
+possibilities for working with Liferay. You can write and execute scripts from
+Liferay's Script console in the Control Panel using in a variety of languages
+including Beanshell, Javascript, Groovy, Python, and Ruby. We learned how you
+can leverage Liferay's Services Oriented Architecture (SOA) from any of the
+popular scripting languages that Liferay supports. We also saw how those scripts
+could be used to simplify administrative tasks by leveraging the Script console.
+Next, we discovered how you could enhance workflow by using the power of
+scripts. Lastly, we saw how you could overcome some of the limitations of
+running scripts in Liferay by creating custom Java utilities that could be
+executed from within your scripts.
 
 As you can see, Liferay's script engine opens up many exciting possibilities for
 working with Liferay regardless of your language of choice.

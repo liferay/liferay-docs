@@ -1,5 +1,12 @@
 # Developing Portlet Applications [](id=developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
 then display it whenever the portlet is viewed. Last we'll clean up the
