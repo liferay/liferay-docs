@@ -287,13 +287,13 @@ field in question. From the Search portlet's Configuration window,
 administrators can configure the facets available to users for filtering search
 results. The default facets include the following:
 
-* Site
-* Asset type
-* Asset tag
-* Asset category
-* Folder
-* User
-* Modified time range
+- Site
+- Asset type
+- Asset tag
+- Asset category
+- Folder
+- User
+- Modified time range
 
 For example, after searching for a certain term in the Search portlet, clicking
 on a specific site filters the search results to only display assets within the
@@ -885,109 +885,109 @@ you want your content to appear. Many of these, such as printing, flags,
 ratings, comments, comment ratings, and social bookmarks work the same way they
 do in the Web Content Display portlet.
 
-- **Show Add Content Button**: When checked, this checkbox adds an *Add New*
-  button that allows users to add new assets directly from the Asset Publisher
-  portlet. This is checked by default.
+**Show Add Content Button**: When checked, this checkbox adds an *Add New*
+button that allows users to add new assets directly from the Asset Publisher
+portlet. This is checked by default.
 
-- **Display Template**: This selector lets you choose an application display
-  template to customize how the Asset Publisher displays assets.  Liferay
-  creates the following display templates for each newly created site, including
-  the default site:
+**Display Template**: This selector lets you choose an application display
+template to customize how the Asset Publisher displays assets. Liferay creates
+the following display templates for each newly created site, including the
+default site:
 
-    - Abstracts: This display template shows the first 200-500 characters of the
-      content, defined by the **Abstract Length** field. This is the default
-      display template of the Asset Publisher.
-    - Table: This display template displays the content in an HTML table which
-      can be styled by a theme developer.
-    - Title List: This display template displays the content's title as defined
-      by the user who entered it.
-    - Full Content: This display template displays the entire content of the
-      entry.
+- Abstracts: This display template shows the first 200-500 characters of the
+  content, defined by the **Abstract Length** field. This is the default display
+  template of the Asset Publisher.
+- Table: This display template displays the content in an HTML table which can
+  be styled by a theme developer.
+- Title List: This display template displays the content's title as defined by
+  the user who entered it.
+- Full Content: This display template displays the entire content of the entry.
 
     There's also a Rich Summary display template that belongs to the global
     scope. This template provides a summary view of each asset along with a
     *Read More* link to the article's full content.
 
-- **Abstract Length**: Here, you can select the number of characters to display
-  for abstracts. The default is `200`.
+**Abstract Length**: Here, you can select the number of characters to display
+for abstracts. The default is `200`.
 
-- **Asset Link Behavior:** The default value is *Show Full Content*. With this
-  value selected, when the link to an asset is clicked, the full asset is
-  displayed in the current Asset Publisher. (There's also a *View in Context*
-  link that shows the article in the Wiki page's Wiki portlet.) If the value
-  *View in a Specific Portlet* is selected, clicking on an asset causes that
-  asset to be displayed in the portlet to which the asset belongs. For example,
-  a blog entry would be displayed in the Blogs portlet where it was created.
-  Likewise, a forum post would be displayed in the Message Boards portlet where
-  it was created. Similarly, a generic web content article would be displayed in
-  the Asset Publisher of its configured display page. See the section below on
-  display pages for more information.
+**Asset Link Behavior:** The default value is *Show Full Content*. With this
+value selected, when the link to an asset is clicked, the full asset is
+displayed in the current Asset Publisher. (There's also a *View in Context* link
+that shows the article in the Wiki page's Wiki portlet.) If the value *View in a
+Specific Portlet* is selected, clicking on an asset causes that asset to be
+displayed in the portlet to which the asset belongs. For example, a blog entry
+would be displayed in the Blogs portlet where it was created.  Likewise, a forum
+post would be displayed in the Message Boards portlet where it was created.
+Similarly, a generic web content article would be displayed in the Asset
+Publisher of its configured display page. See the section below on display pages
+for more information.
 
-    ---
+---
 
-     ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays
-     web content articles that have an associated small image, the small image
-     becomes a link to the full article.  To use this feature, add or edit a web
-     content article that the Asset Publisher should display. Before clicking
-     *Publish*, click on *Abstracts*, flag *Small Image*, and upload an image.
-     Then click *Publish*. Once your web content article appears in the Asset
-     Publisher's list, clicking the small image takes you to the full article.
-     
-    ---
+ ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
+ content articles that have an associated small image, the small image becomes a
+ link to the full article.  To use this feature, add or edit a web content
+ article that the Asset Publisher should display. Before clicking *Publish*,
+ click on *Abstracts*, flag *Small Image*, and upload an image.  Then click
+ *Publish*. Once your web content article appears in the Asset Publisher's list,
+ clicking the small image takes you to the full article.
 
-- **Number of Items to Display**: Here, you can select the maximum number of
-  assets that can be displayed by the Asset Publisher. However, if pagination is
-  enabled, there's no limit to the number of of assets that the Asset Publisher
-  can display. So with pagination enabled, this number represents the maximum
-  number of assets that can be displayed per page.
+---
 
-- **Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
-  pagination set to *None*, the Asset Publisher displays at most the number of
-  assets specified in the **Number of Items to Display** property. Setting the
-  pagination type to *Simple* adds *Previous* and *Next* buttons that enable the
-  user to browse through "pages" of assets in the Asset Publisher. Setting the
-  pagination type to *Regular* adds more options and information including
-  *First* and *Last* buttons, a dropdown selector for pages, the number of items
-  per page, and the total number of results (assets being displayed).
+**Number of Items to Display**: Here, you can select the maximum number of
+assets that can be displayed by the Asset Publisher. However, if pagination is
+enabled, there's no limit to the number of of assets that the Asset Publisher
+can display. So with pagination enabled, this number represents the maximum
+number of assets that can be displayed per page.
 
-- **Show Metadata Descriptions**: <!-- TODO -->
+**Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
+pagination set to *None*, the Asset Publisher displays at most the number of
+assets specified in the **Number of Items to Display** property. Setting the
+pagination type to *Simple* adds *Previous* and *Next* buttons that enable the
+user to browse through "pages" of assets in the Asset Publisher. Setting the
+pagination type to *Regular* adds more options and information including *First*
+and *Last* buttons, a dropdown selector for pages, the number of items per page,
+and the total number of results (assets being displayed).
 
-- **Show Available Locales:** Since content can be localized, you can have
-  different versions of it based on locale. Enabling this option shows the
-  locales available, enabling users to view the content in their language of
-  choice. 
+<!-- TODO 
+**Show Metadata Descriptions**:
+-->
 
-- **Set as the Default Asset Publisher for This Page**: The Asset Publisher
-  portlet is an instanceable portlet; multiple Asset Publishers can be added to
-  a page and each has an independent configuration. The default Asset Publisher
-  for a page is the one used to display any web content associated with the
-  page.
+**Show Available Locales:** Since content can be localized, you can have
+different versions of it based on locale. Enabling this option shows the locales
+available, enabling users to view the content in their language of choice. 
 
-- **Enable Conversion To:** If you have enabled Liferay Portal's
-  OpenOffice/LibreOffice integration, you can allow your users to convert the
-  content to one of several formats:
+**Set as the Default Asset Publisher for This Page**: The Asset Publisher
+portlet is an instanceable portlet; multiple Asset Publishers can be added to a
+page and each has an independent configuration. The default Asset Publisher for
+a page is the one used to display any web content associated with the page.
 
-    - DOC
-    - ODT
-    - PDF
-    - RTF
-    - SXW
-    - TXT
+**Enable Conversion To:** If you have enabled Liferay Portal's
+OpenOffice/LibreOffice integration, you can allow your users to convert the
+content to one of several formats:
 
-    Please refer to the User Guide's section on [Liferay Server Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
+- DOC
+- ODT
+- PDF
+- RTF
+- SXW
+- TXT
+
+    Please refer to the User Guide's section on [Liferay Server
+    Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
-- **Enable ...**: The Asset Publisher's Display Settings allow you to
-  enable/disable the following options for displayed assets:
-  
-    - Print
-    - Flags
-    - Related assets
-    - Ratings
-    - Comments
-    - Comment ratings
-    - Social bookmarks
+**Enable ...**: The Asset Publisher's Display Settings allow you to
+enable/disable the following options for displayed assets:
+
+- Print
+- Flags
+- Related assets
+- Ratings
+- Comments
+- Comment ratings
+- Social bookmarks
 
     Enabling the Print option adds a *Print* link to the full view of an asset
     displayed in the Asset Publisher. Clicking *Print* opens a new browser
@@ -1006,15 +1006,17 @@ do in the Web Content Display portlet.
      
     ---
 
-- **Display Style**: <!-- TODO -->
+<!-- TODO
+**Display Style**:
 
-- **Display Position**: <!-- TODO -->
+**Display Position**:
+-->
 
-- **Show Metadata:** Allows you to select various metadata types to be
-  displayed (see below). For example, you can select tags and categories for
-  display. Upon saving your configuration, the Asset Publisher displays tags and
-  categories for each displayed asset. Then users can click on the tags and
-  categories to manually filter the displayed assets.
+**Show Metadata:** Allows you to select various metadata types to be displayed
+(see below). For example, you can select tags and categories for display. Upon
+saving your configuration, the Asset Publisher displays tags and categories for
+each displayed asset. Then users can click on the tags and categories to
+manually filter the displayed assets.
 
 ![Figure 6.15: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
@@ -1033,8 +1035,9 @@ Publisher's configuration window (click on the gear icon and select
 *Configuration*). In the configuration window, open the Subscriptions tab of the
 Setup tab. There are two options:
 
-- *Enable RSS Subscription*
-- *Enable Email Subscription*
+**Enable RSS Subscription**
+
+**Enable Email Subscription**
 
 Enabling RSS subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
