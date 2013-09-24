@@ -260,7 +260,7 @@ If you click *Configuration* from the options button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 8.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* wrench from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
+![Figure 8.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
 Blogs Aggregator aggregates the entries of every blogger on your system. If you
@@ -332,7 +332,7 @@ the CE and EE versions of the new Calendar portlet. -->
 ### Configuring the Calendar Portlet [](id=configuring-the-calendar-portlet-liferay-portal-6-2-user-guide-08-en)
 
 Once you've added the new Calendar portlet to a page, open its configuration
-dialog box by clicking on the wrench icon in the portlet's title bar and
+dialog box by clicking on the gear icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides two sub-tabs of configurable
 settings: *User Settings* and *RSS*.
 
@@ -575,7 +575,7 @@ Liferay's Calendar portlet allows data to be exported or imported as LAR files.
 Both calendar events and resources can be exported or imported. As with all LAR
 files, data can only be imported into a version of Liferay that's the same as
 the one from which it was exported. To access the interface for exporting or
-importing calendar data, click on the *wrench* icon in the portlet header and
+importing calendar data, click on the *gear* icon in the portlet header and
 select *Export / Import*. By default, the Export tab appears which allows you to
 define a new export process or use an existing one to export calendar data. If
 you'd like to import data, click on *Import*. You'll be able to define a new
@@ -1642,7 +1642,7 @@ you to choose different questions from the drop-down menu.
 
 **Add Question:** Allows you to create a new question. 
 
-You can also manage the Polls Display portlet by clicking the wrench symbol in
+You can also manage the Polls Display portlet by clicking the gear symbol in
 the upper right corner of the portlet's title bar. Now let's see the poll
 results.
 

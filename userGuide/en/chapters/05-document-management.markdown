@@ -645,8 +645,8 @@ Now let's look at configuring the Documents and Media portlet.
 
 ## Configuring the Documents and Media portlet [](id=configuring-the-documents-and-media-por-liferay-portal-6-2-user-guide-05-en)
 
-To configure the Documents and Media portlet, click on the wrench icon at the
-top of the portlet window and select *Configuration*. The portlet-specific
+To configure the Documents and Media portlet, click on the gear icon at the top
+of the portlet window and select *Configuration*. The portlet-specific
 customizations appear on the Setup tab. To change your Documents and Media
 portlet's top-level folder, click *Select* below *Root Folder*, browse or create
 the folder you'd like to be your new top-level folder, and click *Save*. The
@@ -656,7 +656,7 @@ in the Documents and Media portlet's default Home folder. If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
-![Figure 5.9: To make portlet-specific configurations for Documents and Media, click on the wrench icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
+![Figure 5.9: To make portlet-specific configurations for Documents and Media, click on the gear icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
 
 By default, the Documents and Media portlet contains a search bar to help users
 quickly find relevant files. If you'd like the search bar not to appear, uncheck
@@ -768,8 +768,6 @@ type and per folder. You can set this by editing the folder. Then the UI will
 look like this:
 
 ![Figure 5.12: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
-
-<!-- Needs to be replaced for 6.2 -->
 
 Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access

@@ -149,10 +149,6 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
-<!-- Needs to be replaced for 6.2. -->
-<!-- Icons not appearing at the present time for WC structure editor (LPS-35338)
--->
-
 Liferay supports the following fields in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
@@ -614,7 +610,7 @@ that only site administrators have permission to customize the RSS portlet and
 select feeds to be displayed.
 
 Once you've added the RSS portlet to a page, open the portlet's Configuration
-popup window by clicking on the wrench icon at the top right corner of the
+popup window by clicking on the gear icon at the top right corner of the
 portlet and selecting *Configuration*.
 
 ![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
