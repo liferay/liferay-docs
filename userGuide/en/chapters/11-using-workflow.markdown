@@ -20,9 +20,7 @@ you a point and click interface to create workflows.
 
 To explain how to use Kaleo Workflow, this chapter covers: 
 
-- Installation 
-<!-- This doesn't match the first section below which is instead entitled
-Enabling Workflow, so which is it supposed to be? -->
+- Enabling workflow
 
 - Creating workflow definitions
 
@@ -30,12 +28,11 @@ Enabling Workflow, so which is it supposed to be? -->
 
 - Using workflow with other applications
 
-We introduced Kaleo workflow in chapter 2, where we discussed how to set up an
-approval process for basic web content. Once we're done with this chapter, you
-should be familiar with how to use Liferay's Kaleo workflow to set up approval
-process for any kind of content before it is published to your portal. 
+Once we're done with this chapter, you should be familiar with how to use
+Liferay's Kaleo workflow to set up approval process for any kind of content
+before it is published to your portal. 
 
-## Enabling Workflow  
+## Enabling Workflow 
 
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
 Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo
@@ -81,33 +78,31 @@ types. Transitions occur between nodes and indicate what the next node should
 be. 
 
 Think of workflow as a state machine made up of nodes. A node can be a state, a
-task, a condition, a fork, a join, or a timer. Transitions are used to move from
-one node to another. Each type of node has different properties. For example,
-states execute actions automatically and require no user input. Tasks block
-until user input completes a transition to another state. The transition then
-moves the workflow to the next task or state. This cycle continues until the end
-Approved state is reached. For example, you could create a workflow which goes
-through two approvers. Initiating the workflow puts it in the In Review state
-and then transitions to a task which requires user input. Users approve or
-reject the asset as part of the task. When the first user approves the asset in
-the workflow, a condition checks to see if there are two approvals. Since there
-is only one, workflow transitions back to the task. When the second user
-approves the asset, the condition finds there are two approvers and it triggers
-a different transition to the Approved state. 
+task, a condition, a fork, a join, or a timer. Transitions are used to move
+from one node to another. Each type of node has different properties. For
+example, states execute actions automatically and require no user input. Tasks
+block until user input completes a transition to another state. The transition
+then moves the workflow to the next task or state. This cycle continues until
+the end Approved state is reached. For example, you could create a workflow
+which goes through two approvers. Initiating the workflow puts it in the In
+Review state and then transitions to a task which requires user input. Users
+approve or reject the asset as part of the task. When the first user approves
+the asset in the workflow, a condition checks to see if there are two
+approvals. Since there is only one, workflow transitions back to the task. When
+the second user approves the asset, the condition finds there are two approvers
+and it triggers a different transition to the Approved state. 
 
-Let's learn about a workflows components and look in detail at how you'd create
-a workflow using a single approver.
+Let's learn about the Single Approver Workflow's components and look in detail
+at how you'd create a workflow using a single approver. 
 
 ### Starting a Workflow Definition  
 
 Below is a diagram of a single approver workflow definition. It has only two
 tasks (Update and Review) and two states (Initial State and Approved). 
 
-![Figure 11.1: The default single approver workflow. Arrows represent
-transitions and boxes represent states and
-tasks.](../../images/kaleo-workflow-single-approver.png)
+![Figure 11.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
 
-First you define the schema. For Liferay workflows using Kaleo,
+First you should define the schema. For Liferay workflows using Kaleo,
 `liferay-worklow-definition-6_2_0.xsd` should be your schema. You can find this
 schema in the `definitions` folder of the Liferay source or a good XML editor
 can cache it from Liferay's web site. Here's how you define it in your workflow
@@ -216,14 +211,14 @@ task back to the user who created the asset.
 	</task>
 
 The *review* task is the first task in the workflow. This is where portal users
-with the proper role review the content and decide to reject it (move it back to
-the beginning) or accept it (transition it to the next step).
+with the proper role review the content and decide to reject it (move it back
+to the beginning) or accept it (transition it to the next step).
 
 Once the transition has been made to this task, a notification is sent to those
 who are assigned to the task. You can edit the name or content of the
 notification in the XML file. Once the reviewer completes their review and
-exits the workflow task, another email is sent to the original submitter indicating
-that the review is completed. 
+exits the workflow task, another email is sent to the original submitter
+indicating that the review is completed. 
 
 	<task>
 		<name>review</name>
@@ -274,13 +269,14 @@ Notifications need an `execution-type` which can be `onAssignment`, `onEntry` or
     or state.
 
 Notifications also need a `notification-type` which can be `email`, `im` or
-`private-message`. Note the `private-message` type is a placeholder for now;
-that functionality is in Liferay's Social Office product but has not yet been
-integrated into Liferay Portal. Your notification type and execution type should
-complement each other. You wouldn't want to use an `onExit` execution type with
-a private message, because the user won't receive that message until he or she
-logs back in. Generally speaking, email notifications work best with `onExit` or
-`onAssignment`, while IM or private message work better with `onEntry`.
+`private-message`. Note that both the `private-message` and `im` types are
+placeholders for now; that functionality is in Liferay's Social Office product
+but has not yet been integrated into Liferay Portal. Your notification type and
+execution type should complement each other. You wouldn't want to use an
+`onExit` execution type with a private message, because the user won't receive
+that message until he or she logs back in. Generally speaking, email
+notifications work best with `onExit` or `onAssignment`, while IM or private
+message work better with `onEntry`.
 
 Email and private message notifications can also be created as plain text or you
 can create formatted content using FreeMarker or Velocity templating languages.
@@ -292,10 +288,11 @@ In this workflow, anyone who is capable of approving the content is notified
 The `role-type` tag helps the system sort out who should receive the
 notification based on the scope and can be set as *site*, *organization* or
 *portal*. When you specify a `role-type` to define the scope of the workflow
-notification, please not that the  portal role is equvalent to the *regular*
+notification, please note that the  portal role is equvalent to the *regular*
 role-type declaration in our XML snippet below. 
 
-<!--So can they use portal in poace of regular or must they specify regular to define a role-type scoped at the portal level?-->
+<!--So can they use portal in place of regular or must they specify regular to
+define a role-type scoped at the portal level?-->
 
     <assignments>
         <roles>
@@ -578,9 +575,9 @@ generate roles scoped for organizations, sites and for the whole portal based on
 workflow definitions. You can also customize workflow options for individual
 sites.
 
-Users are the most important part of the workflow, since they're the ones who do
-all the work. To make a user a part of the workflow process, you assign them a
-role which you defined in your workflow. When you're creating your workflow
+Users are the most important part of the workflow, since they're the ones who
+do all the work. To make a user a part of the workflow process, you assign them
+a role which you defined in your workflow. When you're creating your workflow
 definition, you can create new roles by defining them in the XML file or by
 using roles which you have already created in your portal. Roles created
 automatically are always portal scoped, so if you want to use site or
@@ -604,7 +601,7 @@ controls.
 You can find the Workflow section under the Configuration heading in the
 control panel. There are three tabs under Workflow which are used to configure
 workflow in the portal: *Definitions*, *Default Configuration* and
-*Submissions*. The default workflow behavior you specify here will apply
+*Submissions*. These tabs let you upload definitions, enable workflow for your portal's resources, and The default workflow behavior you specify here will apply
 throughout your Liferay Portal.
 
 From the *Definitions* tab you can see the currently available workflow
@@ -614,8 +611,8 @@ workflow definition, browse to your local XML file, and upload it to your
 Liferay instance. Once you add a file here, it's added to the portal and is
 immediately available for use.
 
-Under *Default Configuration*, you can set the workflow behavior (if any) for
-all workflow-enabled actions in the portal; available resources include Page
+Under *Default Configuration*, you can set the workflow behavior for all
+workflow-enabled actions in the portal; available resources include Page
 Revision, User, Blogs Entries, Web Content Articles, Comments, Message Boards
 Messages, and Wiki Pages. You can also add a custom potlet to this list by
 using Liferay's API. You can choose from two default workflow options in
@@ -624,9 +621,9 @@ in detail earlier in the chapter.
 
 When you set the default workflow configuration of a resource, any new action
 on that resource defaults to that configuration, throughout the portal. An
-administrator can edit the workflow behavior for each site's assets
+administrator can edit the workflow behavior for each site's resources
 individually through the *Workflow Configuration* section of a particular
-site's Site Administration section.  The interface for making changes at the
+site's Site Administration section. The interface for making changes at the
 site level is similar to that of the Control Panel interface; the only
 difference is that you are in the Site Administration section and the changes
 you specify are only applicable to the scope you have selected here.
@@ -717,17 +714,11 @@ workflows without having to deal with XML.
 Above we saw an example of using workflow with Liferay web content. The process
 is the same for all resources that are workflow-enabled. However, while
 configuring your resources to use workflow in the Default Configuration tab of
-the Workflow section, you may have noticed that *Documents* and *Dynamic Data
-Lists Records* are listed below the other resources in the Default
-Configuration section of the Control Panel with a note that "The workflows for
-the following resources can be configured within their respective portlets".
-
-You can enable workflow for most portal resources, including page revisions for
-staging, web content, and collaborative applications, from the Control Panel.
-However, it doesn't make sense for all resources to have workflow defined at
-the portal level. Two examples for which workflow configuration is more
-specific are Documents and Media folders and Dynamic Data Lists (i.e., each
-individaul list). 
+the Workflow section, you may have noticed a note that "The workflows for the
+following resources can be configured within their respective portlets".
+resources listed are *Documents* and *Dynamic Data Lists Records*. Workflow
+configuration is more specifically enabled for Documents and Media folders and
+Dynamic Data Lists (i.e., each individaul list). 
 
 To see how this works for a Documents and Media folder, create a new page in
 the default site called *Documents and Media* and add the Documents and Media
@@ -788,5 +779,5 @@ discussed how to create new workflow definitions and examined the XML schema
 for them. We looked at how to choose different workflow processes for different
 asset types. We also explained how end-users can interact with the approval
 process. Finally, we discussed how to use workflow with different types of
-applications such as Documents and Media and Blogs, Wikis, and Message Boards.
-In the next chapter, we'll look at Kaleo forms and the Kaleo workflow designer.
+applications such as Documents and Media and Dynamic Data Lists. In the next
+chapter, we'll look at Kaleo forms and the Kaleo workflow designer.
