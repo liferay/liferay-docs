@@ -536,20 +536,30 @@ provide functionality.
 ### Configuring Plugins [](id=configuring-plugins-liferay-portal-6-2-user-guide-14-en)
 
 Liferay Portal has a section of the Control Panel called Plugins Configuration,
-which you can find under the Apps heading. This section not only allows you to
-see what plugins are installed on your portal, but also enables you to configure
-which portal roles can access certain plugins.
+which you can find under the Apps heading of the Control Panel. The Plugins
+Configuration section not only allows you to see what plugins are installed on
+your portal, but also enables you to configure which portal roles can access
+certain plugins. It also allows you to activate or deactivate portlet plugins.
+From the Control Panel, click on *Plugins Configuration* to find an interface
+which allows you to view and manage installed portlet, theme, and layout
+template plugins.
 
-Use the Dockbar's *Admin* menu to select *Control Panel*. Under the Server
-heading, select *Plugins Configuration*. You should now see an interface which
-allows you to view and manage installed portlet, theme, and layout template
-plugins.
+The default view of the Plugins Configuration section shows which plugins are
+already installed on the system. For portlet plugins, you can click on the
+plugin's name to view whether or not it's active and to view or configure the
+portlet's permissions. You don't have to uninstall a plugin to prevent users
+from accessing the plugin's functionality; instead, you can deactivate the
+plugin. To deactivate a plugin, click on the plugin's name in the Plugins
+Configuration section of the Control Panel and remove the flag from the *Active*
+checkbox. Then click *Save*. To reactive the plugin later, just flag the
+*Active* checkbox again and click *Save*.
 
-The default view of the Plugins Configuration page shows which plugins are
-already installed on the system and whether or not they are active. On the
-Portlet Plugins tab, you have to click on a specific portlet in order to view
-and configure the portlet's permissions. The Theme and Layout Template Plugins
-tabs directly display which portal roles can access them.
+On the Portlet Plugins tab, you have to click on a specific portlet in order to
+view the plugin's active/inactive status and to configure the portlet's
+permissions. The active/inactive status doesn't apply to themes or layout
+templates: if a theme or layout template has been installed, then it's available
+for use. The Theme and Layout Template Plugins tabs of the Plugins Configuration
+section directly display which portal roles can access them.
 
 ![Figure 14.16: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
@@ -559,7 +569,15 @@ navigate to a specific page if you know where a particular plugin appears in the
 list. This is a standard feature of Liferay and you will see it in most of
 Liferay's portlets.
 
-### Installing Plugins Manually [](id=installing-plugins-manually-liferay-portal-6-2-user-guide-14-en)
+Note that the Plugins Configuration section of the Control Panel is for basic
+configuration: it allows you to active or deactivate portlet plugins, view the
+existing permissions configuration for various plugins and/or modify the
+configurations for existing roles. If you need to add permissions to new roles
+for certain portlets, use the Roles section of the Control Panel and the
+*Actions* &rarr; *Define Permissions* button. Next, let's learn how to install
+plugins manually.
+
+### Installing Plugins Manually  
 
 Installing plugins manually is not quite as easy as installing plugins via the
 Marketplace interface but it's still quite simple. There are several scenarios
