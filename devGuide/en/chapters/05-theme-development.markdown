@@ -360,7 +360,7 @@ content:
         </theme>
     </look-and-feel>
 
-To define additional settings, add more `<settings>` elements to the file.
+To define additional settings, add more `<setting>` elements to the file.
 Access the settings from the theme templates using the following code:
 
     $theme.getSetting("my-setting")
