@@ -13,10 +13,9 @@ common features first, starting with the look and feel configuration options.
 ## Look and Feel [](id=look-and-feel-liferay-portal-6-2-user-guide-04-en)
 
 An administrator can access the look and feel configuration menu of any Liferay
-portlet by clicking on the wrench icon at the top right corner of the portlet
-and selecting *Look and Feel*. The location of the wrench icon and other
-portlet icons (minimize, maximize, and remove) may vary, depending on your
-theme. Liferay portlets' look and feel dialog boxes contain six tabs:
+portlet by clicking on the gear icon at the top right corner of the portlet and
+selecting *Look and Feel*. The location of the gear icon may vary, depending on
+your theme. Liferay portlets' look and feel dialog boxes contain six tabs:
 
 - Portlet Configuration
 - Text Styles
@@ -38,15 +37,6 @@ key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
 ![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
-
-<!-- For every window in the look and feel section, we are given *Title* and
-*Initial Window State*. I don't think these are correctly placed and these need
-to be monitored closely. Both features are originally from the WAP Styling tab,
-which has been deprecated for 6.2. I'm not going to describe these two features
-for now, and will wait for confirmation on whether or not this is correct. A
-ticket has been filed for these repetitive features: LPS-38624. Note that the
-screenshots will need to be retaken if these features are incorrectly placed.
--->
 
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
@@ -135,7 +125,7 @@ Next, let's discuss exporting and importing portlet data.
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
-Message Boards portlets. To export or import portlet data, click on the wrench
+Message Boards portlets. To export or import portlet data, click on the gear
 icon of your portlet and select *Export/Import*. Exporting portlet data produces
 a `.lar` file that you can save and import into another portlet application of
 the same type. To import portlet data, you must select a `.lar` file. Be careful
@@ -240,7 +230,7 @@ portal (global), site (default), or page . This grants you some flexibility in
 how you want to set up your portal. You can configure the scope of a portlet
 with just a few simple steps.
 
-1.  Click the *Options* icon in the portlet window (the wrench).
+1.  Click the *Options* icon in the portlet window (the gear icon).
 
 2.  Select *Configuration*.
 
@@ -306,7 +296,7 @@ those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some
 Liferay portlets provide a configuration UI to help you get the most out of
 this communication mechanism. To access this UI, open your portlet's
-configuration window by clicking on the wrench icon and selecting
+configuration window by clicking on the gear icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
 ![Figure 4.10: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
