@@ -1,13 +1,6 @@
 
 # Using Workflow [](id=using-workflow-liferay-portal-6-2-user-guide-11-en)
 
----
-
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay Portal includes a workflow engine called Kaleo. In Greek, Kaleo 
 means "called ones," which is appropriate for a workflow engine that calls users
 to participate in a process designed for them. Kaleo workflow allows a user to
