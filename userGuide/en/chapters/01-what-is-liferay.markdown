@@ -357,9 +357,6 @@ OpenSocial gadgets.
 
 ![Figure 1.7: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
 
-<!-- Need to replace image for 6.2 -->
-<!-- OpenSocial gadget editor not displaying currently (9/18/2014) -->
-
 Liferay Portal also supports the creation of Facebook applications; in fact, no
 additional coding is necessary to publish your Liferay applications on Facebook
 (you would, of course, need to use Facebook's API to use Facebook-specific
