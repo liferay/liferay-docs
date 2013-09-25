@@ -713,17 +713,18 @@ Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
 designed to replicate the cache across a cluster. 
 
-Liferay uses **Ehcache**, which has robust distributed caching support. This
-means that the cache can be distributed across multiple Liferay nodes running
-concurrently. Enabling this cache can increase performance dramatically. For
-example, suppose that two users are browsing the message boards. The first user
-clicks a thread to read it. Liferay must look up that thread from the database
-and format it for display in the browser. With a distributed Ehcache running,
-this thread is stored in a cache for quick retrieval, and that cache is then
-replicated to the other nodes in the cluster. Suppose then that the second user
-who is being served by another node in the cluster wants to read the same forum
-thread and clicks on it. This time, the data is retrieved more quickly. Because
-the thread is in the cache, no trip to the database is necessary. 
+Liferay uses [Ehcache](www.ehcache.org), which has robust distributed caching
+support. This means that the cache can be distributed across multiple Liferay
+nodes running concurrently. Enabling this cache can increase performance
+dramatically. For example, suppose that two users are browsing the message
+boards. The first user clicks a thread to read it. Liferay must look up that
+thread from the database and format it for display in the browser. With a
+distributed Ehcache running, this thread is stored in a cache for quick
+retrieval, and that cache is then replicated to the other nodes in the cluster.
+Suppose then that the second user who is being served by another node in the
+cluster wants to read the same forum thread and clicks on it. This time, the
+data is retrieved more quickly. Because the thread is in the cache, no trip to
+the database is necessary. 
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching allows for common portal destinations to be
@@ -742,11 +743,9 @@ script should reflect that too.
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you'll need to tweak the
 settings yourself. You can modify the Liferay installation directly or you can
-use a plugin to do it. Either way, the settings you change are the same. Let's
-see how to do this with a plugin first. 
-
-The next thing we'll cover about caching is a special EE-only optimization that
-can be made to the cache. 
+use a plugin to do it. Either way, the settings you change are the same. Next,
+we'll discuss a special EE-only optimization that can be made to the cache.
+After that, we'll explain how to configure Liferay's caching settings.
 
 #### Enhanced Distributed Cache Algorithm [](id=enhanced-distributed-cache-algorithm-liferay-portal-6-2-user-guide-20-en)
 
@@ -812,9 +811,10 @@ settings with a plugin or you can modify them directly.
 #### Modifying the Ehcache Settings With a Plugin [](id=modifying-the-ehcache-settings-with-a-p-liferay-portal-6-2-user-guide-20-en)
 
 A benefit of working with plugins is that you can quickly install a plugin on
-each node of your cluster without taking down the cluster. We'll cover this
-first. If you're not a developer, don't worry--even though you'll create a
-plugin, you won't have to write any code. 
+each node of your cluster without taking down the cluster. Modifying the Ehcache
+settings with a plugin is recommended over modifying Liferay's Ehcache settings
+directly. We'll discuss this method first. If you're not a developer, don't
+worry--even though you'll create a plugin, you won't have to write any code. 
 
 Since we're assuming you're an administrator and not a developer, we'll take the
 easiest route, and use Liferay's graphical development tools, rather than the
@@ -835,7 +835,7 @@ Project*. Select *Hook* as the project type and give your project a name. Click
 
 In your project, create a text file called `portlet.properties` in the
 `docroot/WEB-INF/src` folder. This file can override properties in your portal
-just like `portal-ext.properties`. Into this file place the following three
+just like `portal-ext.properties`. Into this file, add the following three
 properties: 
 
 	net.sf.ehcache.configurationResourceName=
@@ -889,7 +889,7 @@ modify the Liferay installation directly. You'll still need to extract Liferay's
 configuration files as described in the previous section. Next, shut down your
 server and find the location in the server where Liferay is installed (this may
 not be possible on all application servers, and if this is the case, you'll need
-to use the plugin method described above). For example, say you're running
+to use the plugin method described above). For example, suppose you're running
 Liferay on Tomcat. Tomcat stores the deployed version of Liferay in `[Tomcat
 Home]/webapps/ROOT`. Inside this folder is the folder structure
 `WEB-INF/classes`. You can create a new folder in here called `custom_cache` to
@@ -897,8 +897,8 @@ store the custom versions of the cache configuration files. Copy the files you
 extracted from Liferay into this folder. 
 
 You then need to modify the properties in `portal-ext.properties` that point to
-these files. Copy/paste the **Hibernate** section of `portal.properties` into
-your `portal-ext.properties` file and then modify the
+these files. Copy/paste the *Hibernate* section of `portal.properties` into your
+`portal-ext.properties` file and then modify the
 `net.sf.ehcache.configurationResourceName` property to point to the clustered
 version of the configuration file that is now in your custom folder:
 
@@ -982,8 +982,9 @@ with the `MBMessageImpl` class:
 Note that if your developers have overridden any of these classes in an Ext
 plugin, you'll have to specify the overridden versions rather than the stock
 ones that come with Liferay Portal. You can customize the other ehcache
-configuration files in exactly the same way. Refer to Ehcache's documentation
-for information on how to do this. 
+configuration files in exactly the same way. Refer to Ehcache's
+[documentation](www.ehcache.org/documentation) for information on how to do
+this. 
 
 As you can see, it's easy to add specific data to be cached. Be careful,
 however, as too much caching can actually reduce performance if the JVM runs out
@@ -991,6 +992,64 @@ of memory and starts garbage collecting too frequently. You'll likely need to
 experiment with the memory settings on your JVM as well as the cache settings
 above. You can find the specifics about these settings in the documentation for
 Ehcache.
+
+#### Configuring Liferay's Caching Settings
+
+To understand how Liferay behaves with various cache configurations, let's
+consider five different scenarios.
+
+- Scenario 1: The portal administrator does not override the default cache
+  configuration files (i.e., does not override
+  `ehcache.single.vm.config.location`, `ehcache.multi.vm.config.location`, or
+  `net.sf.ehcache.configurationResourceName`) but does set
+  `clusterlink.enabled=true` and `ehcache.cluster.link.replication=true`. This
+  is the recommended configuration for a Liferay cluster, as long as the Ehcache
+  Cluster EE app, available from Liferay Marketplace, has been installed.
+  **Important**: The Ehcache Cluster EE app must be installed or cache
+  replication will *not* work with this configuration. In this scenario, Liferay
+  automatically resets cache peer and cache event listers and replaces them with
+  Cluster Link based listeners. This basically activates Cluster Link based
+  cache replication. The configured LiferayCacheManagerPeerProviderFactory,
+  RMICacheManagerPeerListenerFactory, and LiferayCacheEventListenerFactory
+  classes are replaced with Cluster Link based implementations.
+
+- Scenario 2: The portal administrator does not override the default cache
+  configuration files, does set `cluserlink.enabled=true`, but does not set
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay
+  utilizes Ehcache's out-of-the-box replication mechanisms (Multicast for
+  discovery and RMI for replication). Lots of replicator threads appear in the
+  log with this configuration.
+
+- Scenario 3: The portal administrator does not override the default cache
+  configuration files and does not set `cluserlink.enabled=true`. In this case,
+  Liferay does not activate any replication and operates with the assumption
+  that there's no cluster.
+
+- Scenario 4: The portal administrator overrides the default cache configuration
+  files and sets `clusterlink.enabled=true` and
+  `ehcache.cluster.link.replication=true`. In this case, Liferay uses Cluster
+  Link based replication for any caches configured with the
+  LiferayCacheEventListenerFactory classs. If the portal administrator
+  configured a different CacheEventListener class for a specific cache (e.g.,
+  JGroups), then Liferay uses that listener class. This a basically a hybrid
+  mode that was useful prior to Liferay 6.1 before Liferay supported cached
+  object replication (and only supported cached event replication). This is
+  *not* a recommended configuration for Liferay 6.1 or later.
+
+- Scenario 5: The portal administrator overrides the default cache configuration
+  files and sets `clusterlink.enabled=true` but does not set
+  `ehcache.cluster.link.replication=true`. In this case, Liferay uses the cache
+  configurations specified in the custom cache configuration files. This is the
+  recommended configuration when overriding the default cache configuration
+  files.
+
+As a general rule, we recommend that portal administrators *not* set custom
+cache configuration files but to set `clusterlink.enabled=true` and
+`ehcache.cluster.link.replication=true` (i.e., we recommend that portal
+administrators set up the configuration in scenario 1). If it's necessary to
+tune the cache configurations, it's better to do it via a plugin than to do it
+directly. We explained how to do this in the section above called "Modifying the
+Ehcache Settings With a Plugin."
 
 Next, we'll show how to share indexes in a database. This is actually not a
 recommended configuration, as it's slow (databases are always slower than file
