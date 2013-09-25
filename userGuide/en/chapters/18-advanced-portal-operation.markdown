@@ -667,40 +667,58 @@ however, this is not a guarantee everything will work without modification. Ext
 plugins are the most complicating factor in an upgrade, so it is important to
 test as much as possible.
 
-Prior to Liferay 6.1, you could only upgrade from one major release to the next
-major release. For example, you could upgrade directly from Liferay 5.2.x to
-6.0.x, but not from 5.1.x to 6.0.x. If you needed to upgrade over several major
-releases, you needed to run the upgrade procedure for each major release until
-you reached the release you want. This doesn't mean you needed to run the
+Prior to Liferay 6.1 SP2, you could upgrade only from one major release to the
+next major release. For example, you could upgrade directly from Liferay 5.2.x
+to 6.0.x, but not from 5.1.x to 6.0.x. If you needed to upgrade over several
+major releases, you needed to run the upgrade procedure for each major release
+until you reached the release you want. This doesn't mean you needed to run the
 procedure for every point release or service pack; you only needed to run the
 procedure for the major releases. A good practice was to use the latest version
 of each major release to upgrade your system. 
 
 Liferay introduced the *seamless upgrade* feature with Liferay 6.1. Seamless
-upgrades allow Liferay to be upgraded by simply pointing the latest version of
-Liferay to the database of the older version. Of course, before upgrading, you
-should test the upgrade in a non-production environment. You should also always
-back up your database and other important information and make all the other
-appropriate preparations that we'll discuss in the section.
+upgrades allow Liferay to be upgraded more easily. In most cases, pointing the
+latest version of Liferay to the database of the older version is enough. Of
+course, before upgrading, you should test the upgrade in a non-production
+environment. You should also always back up your database and other important
+information and make all the other appropriate preparations that we'll discuss
+in the section.
 
 Now that we've discussed the general philosophy of upgrading, let's outline the
 procedure for upgrading to Liferay 6.2.
 
 ### Preparing for an Upgrade [](id=preparing-for-an-upgrade-liferay-portal-6-2-user-guide-18-en)
 
-You should make a few preparations before performing an upgrade. Specifically,
-you should make sure you've migrated to permission algorithm 6, reviewed your
-image gallery usage, reviewed the defaults of the new version of Liferay, and
-cataloged all the plugins you have installed. After you've performed these
-tasks, you're ready to upgrade. Make sure to test the upgrade in a
-non-production environment before upgrading your production Liferay instance.
-Let's look at the preparatory tasks you should perform one by one. 
+The first thing you need to do is size up your situation. You can do this by
+asking yourself a few questions from the chart below. First: What version of
+Liferay was the first version you installed? If it was 6.0 or 6.1, there are
+fewer steps, because you won't have to worry about migrating your permission
+algorithm. If, however, you never upgraded to permissions algorithm 6 or you're
+still running a 5.x Liferay, you need to migrate to algorithm 6 before
+attempting to upgrade to Liferay 6.2. 
+
+Next, if you're upgrading from a version of Liferay older than 6.1, you'll have
+to migrate your image gallery over to Documents and Media. Finally, take note of
+all the plugins you have installed. Every plugin must be updated to run on the
+current release. This is easy to do with Marketplace: after you bring up
+Liferay 6.2, install from Marketplace any of the plugins you had installed
+previously. For custom plugins, have your development team update them to run on
+the new version of Liferay. 
+
+![Figure 18.x: Use this flowchart to determine the steps to take for your upgrade.](../../images/upgrade-decisions.png)
+
+The flowchart illustrates the procedure described above. Use it to determine
+your course of action for the upgrade. Each step is described fully below so
+that you can perform your upgrade as efficiently as possible. Be sure to test
+the upgrade in a non-production environment before upgrading your production
+Liferay instance. Let's look at the preparatory tasks you should perform one by
+one. 
 
 ### Migrate to Algorithm 6 [](id=migrate-to-algorithm-6-liferay-portal-6-2-user-guide-18-en)
 
 If your Liferay installation has existed for a while, you might be on a
 different permission algorithm than the one that's available in Liferay Portal
-6.1. Permission algorithms 1-5 were deprecated in Liferay Portal 6.0, and
+6.1. Permission algorithms 1-5 were deprecated in Liferay Portal 6.0 and
 were removed in 6.1, which means you must migrate *before* you upgrade.
 
 ---
@@ -715,7 +733,7 @@ were removed in 6.1, which means you must migrate *before* you upgrade.
 
 ---
 
-If you're on Liferay 5.2 or below, you need to upgrade to the latest available
+If you're on Liferay 5.2 or below, you must upgrade to the latest available
 release of Liferay 6.0 first. Please follow the instructions in the [*Liferay
 Portal Administrator's Guide*](https://www.liferay.com/documentation/liferay-portal/6.0/administration/-/ai/upgrading-lifer-4)
 to do this. We will assume for the rest of this section that you have upgraded
@@ -764,9 +782,9 @@ might need to explicitly set your Image Gallery storage option.
 
 Liferay 6.1 introduced a major change to how Liferay handles files. Liferay 6.0
 and previous versions had a separate Document Library and Image Gallery. In
-Liferay 6.1 and later versions, these have been combined into Documents and
-Media. If you were using Liferay's Image Gallery to store images, these can be
-migrated over during an upgrade, but you'll have to take some extra steps first. 
+Liferay 6.1 and 6.2, these are combined into the Documents and Media repository.
+If you were using Liferay's Image Gallery to store images, these can be migrated
+over during an upgrade, but you'll have to take some extra steps first. 
 
 In Liferay 6.0, you had three ways you could store images in the Image Gallery.
 You could use the `DatabaseHook` and store them as BLOBs in the database; you
@@ -792,6 +810,14 @@ property defaults.
 
 ### Review the Liferay 6.2 Properties Defaults [](id=review-the-new-6-1-properties-defaults-liferay-portal-6-2-user-guide-18-en)
 
+<!-- This section should highlight the changes in property defaults between 6.1
+and 6.2, not 6.0 and 6.2. Each version of the guide has a section that documents
+the changes between the current and the previous release. So these changes are
+already documented, but there are probably others in 6.2 that have changed.
+Those are the ones we need to highlight. Some of these property differences are
+the encryption ones you outline below, so this will actually make this section
+flow better. -->
+
 The next thing you'll need to look at are the defaults that have changed between
 your old Liferay instance's version and Liferay 6.2. These are preserved in a
 `portal-legacy-[version].properties` file in Liferay's `/WEB-INF/classes` folder
@@ -814,6 +840,14 @@ The 6.2 values have changed to:
     discussion.subscribe.by.default=true
     message.boards.subscribe.by.default=true
  
+<!-- The below section is informative, but it doesn't answer the "whys." Why did
+we make the encryption stronger? What makes the algorithms we chose the best
+ones? What benefits do users get now that we're using a different algorithm? Can
+the NSA crack this one (joke)? Will my portal's performance be impacted by the
+stronger encryption algorithm, and if so, how do I plan for it? In other words,
+we need to tell the story of how Liferay is doing its part to help its users
+keep their data secure. -->
+
 Please also note the following changes in behavior:
 
 1. By default, Liferay 6.1 used the DES encryption algorithm with a 56 bit key
@@ -832,7 +866,7 @@ Please also note the following changes in behavior:
     performed if the value for this properties was not customized, i.e., if it
     was still set to DES. The upgrade doesn't make any changes if a different
     algorithm was explicitly selected. (Note that this does not affect password
-    encryption which is handled via a different property:
+    encryption which a different property handles:
     `passwords.encryption.algorithm`.)
 
 2. By default, Liferay 6.1 used the SHA algorithm for password encryption.
@@ -852,7 +886,7 @@ Please also note the following changes in behavior:
         passwords.encryption.algorithm.legacy=SHA
 
     Set this property before performing an upgrade so that both existing users'
-    and new users' passwords will be encrypted with the new algorithm.
+    and new users' passwords are re-encrypted with the new algorithm.
 
 3. After upgrading from Liferay 6.1 to Liferay 6.2, users must sign back in to
    the portal even if they were using the *Remember Me* feature of the Sign In
