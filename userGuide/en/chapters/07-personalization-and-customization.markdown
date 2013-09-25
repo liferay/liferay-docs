@@ -78,9 +78,9 @@ this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.propert
 
 ---
 
-![Tip](../../images/tip.png) Prior to Liferay 6.1, administrators could disallow
-users from being able to modify the pages and portlets of their personal sites
-by setting the following properties:
+ ![Tip](../../images/tip.png) Prior to Liferay 6.1, administrators could
+ disallow users from being able to modify the pages and portlets of their
+ personal sites by setting the following properties:
 
     layout.user.public.layouts.modifiable=true
     layout.user.private.layouts.modifiable=true
@@ -182,7 +182,7 @@ Language portlet, the customized Welcome page looks like this:
 
 ![Figure 7.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
 
-<!-- This section needs updating for 6.2. The following two paragraph's
+<!-- This section needs updating for 6.2. The following two paragraphs'
 statements about the required permissions and roles seem to be obsolete. -->
 
 To allow users to customize a page, administrators must grant users permission
@@ -354,7 +354,7 @@ use Liferay's rules engine.
 
 ## Using Liferay's rules engine [](id=using-liferays-rules-engine-liferay-portal-6-2-user-guide-07-en)
 
-<!-- Befofe this section can be updated for 6.2, need to wait until the 6.2
+<!-- Before this section can be updated for 6.2, need to wait until the 6.2
 Drools EE plugin (or app) is available from the customer portal (or
 Marketplace). -->
 
@@ -376,86 +376,87 @@ must then be recompiled, tested, and redeployed. A rules engine provides a means
 to separate the rules or logic of an application from the remaining code.
 Separating these rules provides several distinct advantages. 
 
-* A rule engine allows for a more declarative style of programming where the
+- A rules engine allows for a more declarative style of programming where the
   rules define what is happening, without describing how it is happening. This
-makes it much easier to read than nested 'if-else' blocks of code. It's also
-easier to make changes without introducing bugs in your code. 
+  makes it much easier to read than nested 'if-else' blocks of code. It's also
+  easier to make changes without introducing bugs in your code. 
 
-* The rules are written in a language that is easier for non-developers to
+- The rules are written in a language that is easier for non-developers to
   understand. This makes it easier for business users to validate and even
-modify the rules without having to involve developers.  
+  modify the rules without having to involve developers.  
 
-* A rule engine allows for changes to be made to the rules without requiring
+- A rules engine allows for changes to be made to the rules without requiring
   that you recompile your application. If your code must pass through a strict
-deployment workflow, this can be a huge time saver and can also save a
-significant amount of money. 
+  deployment workflow, this can be a huge time saver and can also save a
+  significant amount of money. 
 
 After all this, you may be interested in using Liferay's rules engine, so let's
 get started with it. 
 
 ### Installation [](id=installation-liferay-portal-6-2-user-guide-07-en)
 
-The Drools Web Plugin is available to Liferay Enterprise Edition customers
-through Liferay Marketplace. Its name is `Drools EE`, and you'll find it
+The Drools web plugin is available to Liferay Enterprise Edition customers
+through Liferay Marketplace. It's called the Drools EE app and you'll find it
 categorized as a Utility app.
 
-The Drools Web Plugin provides a rules engine implementation, but by itself it
+The Drools web plugin provides a rules engine implementation. By itself, it
 doesn't provide any observable changes to the portal user interface or any
 additional functionality. To see the rules engine in action, you can download
-and install a Sample Drools Portlet that contains two rule definitions that
+and install the Sample Drools portlet that contains two rule definitions that
 illustrate how to leverage the rules engine in your custom code. The Sample
-Drools Portlet is available through the Customer Portal.
+Drools portlet is available through the Customer Portal.
 
 Let's examine the sample portlet to see how it works. 
 
-#### Configuring the sample Drools portlet [](id=configuring-the-sample-drools-portlet-liferay-portal-6-2-user-guide-07-en)
+#### Configuring the Sample Drools Portlet [](id=configuring-the-sample-drools-portlet-liferay-portal-6-2-user-guide-07-en)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
-Begin by downloading and installing the Sample Drools Portlet. The Sample Drools
-Portlet is available to Liferay Enterprise Edition customers through the
+Begin by downloading and installing the Sample Drools portlet. The Sample Drools
+portlet is available to Liferay Enterprise Edition customers through the
 customer portal. The name is `sample-drools-portlet`, and you'll find it in the
 list of web plugins.
 
-After installation is complete, add the portlet to a page. Initially, the
-portlet indicates the name of the currently logged in user and a message that
-says there are no results. To see results in the portlet we'll need to create
-and tag assets in the site to which you added the portlet. 
+After installation is complete, log in as an administrator and add the portlet
+to a page. Initially, the portlet indicates the name of the currently logged in
+user and a message stating that there are no results. To see results in the
+portlet, we need to create and tag assets in the site to which you added the
+portlet. 
 
-Log in as an administrative user and navigate to the Control Panel. Once in the
-Control Panel, add a new Web Content entry to your site. Before publishing the
-Web Content entry, tag the article with *west coast symposium*. While still in
-the control panel, navigate to *My Account* and select the Address link on the
-right side of the screen. Enter a Canadian, Mexican, or US based address and
-save the record. Now, navigate back to the liferay.com site and the Web Content
-should be displayed in the Sample Drools Portlet.
+From the Dockbar, click *Admin* &rarr; *Content* and create a new web content
+instance in your site. Before publishing the web content instance, tag the
+article with *north america symposium*. Then, navigate to *My Account* from the
+Dockbar and click on the *Addresses* link on the right side of the screen. Enter
+a Canadian, Mexican, or US based address and click *Save*. Navigate back to the
+page with the Sample Drools portlet. The Sample Drools portlet should now be
+displaying the web content instance that you created.
 
 The default rule that's being evaluated displays a list of assets based on the
 current user's address. For example, if the current user's country is set to
-Canada, Mexico, or the United States, the Sample Drools Portlet displays a list
+Canada, Mexico, or the United States, the Sample Drools portlet displays a list
 of assets that have been tagged with the *west coast symposium* tag.
 
 <!-- | TODO: Need screen shots here. | --> <!-- | TODO: We need to point to what
-we're about to do before we do it; otherwise this is hard to follow. | --> The
-Sample Drools Portlet plugin also contains a second rule that returns
-personalized content based on the user's net worth set in the My Account &rarr;
-Custom Fields section of the Control Panel. To see this rule in action, add a
-second instance of the Sample Drools Portlet to a page. Once added to the page,
-select the *Options* icon (*the gear*) and then select *Configuration*. You
+we're about to do before we do it; otherwise this is hard to follow. | -->
+The Sample Drools portlet plugin also contains a second rule that returns
+personalized content based on the user's net worth set in the *My Account*
+&rarr; *Custom Fields* section of the Control Panel. To see this rule in action,
+add a second instance of the Sample Drools portlet to a page. Once added to the
+page, select the *Options* icon (the gear) and then select *Configuration*. You
 need to replace the rules defined in the *Rules* section of the Configuration
 screen with contents of the *rules_user_custom_attribute_content.drl* file. The
 rule file can be found in the deployed portlet at
 `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`.
 In the same Configuration screen, add `networth` to the
-user-custom-attribute-names field. Save your changes and close the pop-up
-window. Navigate to the Control Panel and add a Custom Field on the User object
-with the Key `networth`. Navigate to *My Account* and select the Custom Fields
+`user-custom-attribute-names` field. Save your changes and close the pop-up
+window. Navigate to the Control Panel and add a Custom Field to the User object
+with the key `networth`. Navigate to *My Account* and click on the Custom Fields
 link on the right side of the screen. Enter a net worth of 150000 and save the
 record. While still in the Control Panel, add a new Web Content entry to the
 default liferay.com site. Before publishing the Web Content entry, tag the
 article with *high net worth* and then save the entry. Now, navigate back to the
 liferay.com site and the Web Content should be displayed in the second Sample
-Drools Portlet added to the page.
+Drools portlet added to the page.
 
 Now that you can see how it works in practice, let's look closer at the rules
 themselves. 
@@ -474,7 +475,7 @@ official Drools Documentation at
 [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
 
 To see examples of a rules definition file, access the following directory in
-the Sample Drools Portlet
+the Sample Drools portlet
 `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`. To
 see how rules work in action we'll look at the rule defined in
 `rules_user_address_content.drl`. 
@@ -640,7 +641,7 @@ members can configure these portions of the pages, add or remove portlet
 applications, and save their configurations.
 
 We also discussed how you can use Liferay's rules engine with Liferay EE. As you
-can see from the Sample Rules Portlet, using a rules engine can be a powerful
+can see from the Sample Rules portlet, using a rules engine can be a powerful
 way to decouple the rules of your application from the front-end and back-end
 code. These rules are written in a declarative language that business users can
 read and verify. Additionally, rule definitions can be modified without
