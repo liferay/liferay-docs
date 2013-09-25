@@ -1,19 +1,32 @@
 # Developing Portlet Applications [](id=developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en)
 
----
+Think of your Liferay portal as a pizza crust (sit down, you can go order a
+real pizza when we're done here). In chapter two we equipped you with Liferay's
+tools for developing your pizza, and Liferay comes with some basic toppings
+that make for a pretty good pizza out of the box (i.e., our core portlets and
+built-in functionality). Of course, your boss might demand anchovies, and Liferay
+definitely doesn't come with anchovies. So what do you do? You take our tools,
+get some anchovies (your app's source code), and make them integreate with the
+pizza (Liferay). In this chapter we're going to show you how to develop portlet
+projects to top your Liferay pizza in such a way that the end user won't be
+able to tell the difference between your custom portlet and our core portlets.
 
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
+In the last chapter we showed you how to create Liferay plugin projects, and if
+you followed along with our exercises, you now have a project to hold Liferay
+portlets. Unfortunately we don't really have any portlets in there yet. Now
+that we have you here, let's get to business on actually creating an
+application with the Liferay development tools we've already introduced to you.
+It's fitting to start with portlet development, because portlets are the most
+basic, most commonly used type of Liferay plugin you'll develop. In this
+chapter we'll create and deploy a simple portlet using the Plugins SDK. It will
+allow a customized greeting to be saved in the portlet's preferences and then
+display it whenever the portlet is viewed. Last we'll clean up the portlet's
+URLs by adding a friendly URL mapping. 
 
----
-
-In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
-It will allow a customized greeting to be saved in the portlet's preferences and
-then display it whenever the portlet is viewed. Last we'll clean up the
-portlet's URLs by adding a friendly URL mapping. 
+<!--Needs a hook (Rich's Crutch)-->
 
 You're free to use any framework you prefer to develop your portlets, including
-Struts, Spring MVC, or JSF. Here we'll use the Liferay MVCPortlet framework,
+Struts, Spring MVC, JSF, and Vaadin. Here we'll use the Liferay MVCPortlet framework,
 because it's simple, lightweight, and easy to understand. 
 
 You don't have to be a Java developer to take advantage of Liferay's built-in
@@ -53,16 +66,19 @@ Liferay Developer Studio first, then by using the terminal.
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
-2.  Fill in the *Project* and *Display* names with *my-greeting-portlet* and *My
+2.  Fill in the *Project name* and *Display name* with *my-greeting-portlet* and *My
     Greeting*, respectively. 
 
 3.  Select the Liferay Plugins SDK and Portal Runtime that you've configured. 
 
 4.  Select *Portlet* as your Plugin type. 
 
-5.  Click *Finish*. 
+5.  Click *Next*. 
 
-![Figure 3.1: Creating the My Greeting portlet](../../images/02-portlet-development-1.png)
+6. In the next window, make sure that the *Liferay MVC* framework is selected
+   and click *Finish*. 
+
+![Figure 3.1: Creating the My Greeting portlet](../../images/03-new-portlet-project.png)
 
 With Developer Studio, you can create a new plugin project or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -97,7 +113,6 @@ the `build-common.xml` file in the Plugins SDK project. You can determine from
 the `plugin.classpath` and `portal.classpath` entries, which `.jar` files are
 necessary to build your newly created portlet project. This is not a recommended
 configuration, and we encourage you to keep your projects in the Plugins SDK. 
-
 
 ---
 
@@ -150,10 +165,10 @@ switch to the terminal window running Liferay, within a few seconds you should
 see the message `1 portlet for my-greeting-portlet is available for use`. If
 not, double-check your configuration. 
 
-In your web browser, log in to the portal as explained earlier. Hover over
-*Add* at the top of the page and click on *More*. Select the *Sample* category,
-and then click *Add* next to *My Greeting*. Your portlet appears in the
-page below. 
+In your web browser, log in to the portal as explained earlier. Click the Add
+button, which appears as a *Plus* symbol in the top right hand section of your
+browser. Then click *Applications*, find the My Greeting portlet in the
+*Sample* category, and click *Add*. Your portlet appears in the page. 
 
 ![Figure 3.2: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.png)
 
