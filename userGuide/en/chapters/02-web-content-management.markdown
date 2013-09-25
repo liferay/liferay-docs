@@ -785,8 +785,20 @@ managed, including web content.
 
 ![Figure 2.10: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
-For details about Liferay's social collaboration suite, see chapter 10. Next,
-let's learn more details about creating pages.
+For details about Liferay's social collaboration suite, see chapter 10.
+
+---
+
+![Tip](../../images/01-tip.png) **Note:** The *Web Content List* and *Recent
+Content* plugins were deprected in Liferay 6.2 and are disabled by default. To
+activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
+Configuration* and scroll through the list of portlets until you find the
+plugin. Select the plugins name and click the *Active* checkbox. Then click
+*Save*.
+
+---
+
+Next, let's learn more details about creating pages.
 
 ### Creating Pages [](id=creating-pages-liferay-portal-6-2-user-guide-02-en)
 
