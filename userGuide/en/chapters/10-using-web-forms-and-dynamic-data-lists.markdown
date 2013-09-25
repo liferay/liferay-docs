@@ -1,5 +1,5 @@
 
-# Using Web Forms and Dynamic Data Lists
+# Using Web Forms and Dynamic Data Lists [](id=using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en)
 
 As needs change in business and organizations, the technology used to fulfill
 those needs must adapt as well. People use electronic means to do things that
@@ -36,7 +36,7 @@ have your use case covered. Combined with the flexibility provided through
 templates and the power of languages like Velocity, entire applications can be
 built in a short time.
 
-## Building a List Platform in Liferay and Defining Data Types
+## Building a List Platform in Liferay and Defining Data Types [](id=building-a-list-platform-in-liferay-and-liferay-portal-6-2-user-guide-10-en)
 
 To expand and extend the social capabilities of our site, we want to build a
 new, radical platform on Liferay: custom-built lists that users can share and
@@ -130,7 +130,7 @@ box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 10.2: You can combin many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
+![Figure 10.2: You can combine many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
@@ -149,45 +149,45 @@ field, 2) by clicking the wrench icon in the upper-right corner of the field or
 3) by clicking the *Settings* tab when the field is selected. Let's take a look
 at the properties you can edit for each of these field types: 
 
-- **Type:** Lists the type of field placed in the definition. This is not
-  editable but is available to reference from a display template.
+**Type:** Lists the type of field placed in the definition. This is not editable
+but is available to reference from a display template.
 
-- **Field Label:** Sets the text that can be displayed with the field. This is
-  the human-readable text that the user sees.
+**Field Label:** Sets the text that can be displayed with the field. This is the
+human-readable text that the user sees.
 
-- **Show Label:** When set to *Yes*, the label is shown with the form field.
+**Show Label:** When set to *Yes*, the label is shown with the form field.
 
-- **Required:** When set to *Yes*, this field must have data in it for a new
-  entry to be submitted (not available for Boolean).
+**Required:** When set to *Yes*, this field must have data in it for a new entry
+to be submitted (not available for Boolean).
 
-- **Name:** The name of the field internally, automatically generated. Since
-  this is the variable name that you can read the data from in a display
-  template, you should give a more memorable name here.
+**Name:** The name of the field internally, automatically generated. Since this
+is the variable name that you can read the data from in a display template, you
+should give a more memorable name here.
 
-- **Predefined Value:** If you would like example data or a default value for
-  the user to start with, enter it here. The field's value defaults to this when
-  adding a new entry.
+**Predefined Value:** If you would like example data or a default value for the
+user to start with, enter it here. The field's value defaults to this when
+adding a new entry.
 
-- **Tip:** Each field can have a small help icon, with a tooltip attached that
-  displays helpful information. If you would like to provide text for the
-  tooltip you may enter it here.
+**Tip:** Each field can have a small help icon, with a tooltip attached that
+displays helpful information. If you would like to provide text for the tooltip
+you may enter it here.
 
-- **Indexable:** When set to *Yes*, Liferay is able to index your field for
-  search.
+**Indexable:** When set to *Yes*, Liferay is able to index your field for
+search.
 
-- **Repeatable:** When set to *Yes*, the field is repeatable. Your users can
-  then add as many copies of this field as they like.
+**Repeatable:** When set to *Yes*, the field is repeatable. Your users can then
+add as many copies of this field as they like.
 
-- **Width:** Sets the visual width of the form on the page. It does not affect
-  the values that are stored. Possible values are *Small*, *Medium* and *Large*
-  (not available for Boolean, Documents and Media, Radio, and Select).
+**Width:** Sets the visual width of the form on the page. It does not affect the
+values that are stored. Possible values are *Small*, *Medium* and *Large* (not
+available for Boolean, Documents and Media, Radio, and Select).
 
-- **Multiple:** When set to *Yes*, allows the user to select more than one
-  option. This defaults to no (only available for Select).
+**Multiple:** When set to *Yes*, allows the user to select more than one option.
+This defaults to no (only available for Select).
 
-- **Options:** Changes the options available for selection. You're able to add
-  and remove options as well as edit each individual option's display name and
-  value (only available for Radio and Select).
+**Options:** Changes the options available for selection. You're able to add and
+remove options as well as edit each individual option's display name and VALUE
+(ONLY AVAILABLE FOR RADIO AND SELECT).
 
 ![Figure 10.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* dropdown menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
 
@@ -227,7 +227,7 @@ then instantly updated with the new or changed fields.
 
 All that's left to do is build a new data list and let your users play with it.
 
-## Creating Data Lists
+## Creating Data Lists [](id=creating-data-lists-liferay-portal-6-2-user-guide-10-en)
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
@@ -268,7 +268,7 @@ But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
 questions bring us to the mecca that is the display side of this equation.
 
-### Using Data List Forms
+### Using Data List Forms [](id=using-data-list-forms-liferay-portal-6-2-user-guide-10-en)
 
 A nice way to enable people to use your forms is the Dynamic Data List Form
 portlet. This portlet is tailored to entering new records. When you deploy that
@@ -297,7 +297,7 @@ page with the Sign-Up form, the Dynamic Data List Form portlet presents them
 with a form to fill out. Once records have been submitted for lists, you can
 publish the lists anywhere in your portal. Read on to find out more about that. 
 
-### Using Default Displays
+### Using Default Displays [](id=using-default-displays-liferay-portal-6-2-user-guide-10-en)
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
@@ -348,7 +348,7 @@ his B.O. problem. For reasons like that, you'll need to customize the data entry
 form or the display of the list. Liferay lets you do exactly that using a custom
 *form template* or *display template*. 
 
-## Make it Pretty: Creating Custom Displays
+## Make it Pretty: Creating Custom Displays [](id=make-it-pretty-creating-custom-displays-liferay-portal-6-2-user-guide-10-en)
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
@@ -360,7 +360,7 @@ to customize: form templates and display templates. This covers the forms of
 lists (*form templates*), as well as the display of the list contents (*display
 templates*). 
 
-### Form Templates
+### Form Templates [](id=form-templates-liferay-portal-6-2-user-guide-10-en)
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
@@ -399,7 +399,7 @@ few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-### Display Templates
+### Display Templates [](id=display-templates-liferay-portal-6-2-user-guide-10-en)
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
@@ -553,7 +553,7 @@ environment that requires approval from other users, then it's not enough to
 just create the list and display a form. What you need is a real integration
 with workflow. Workflow integrates smoothly with Dynamic Data Lists.
 
-### Using Workflow
+### Using Workflow [](id=using-workflow-liferay-portal-6-2-user-guide-10-en)
 
 Liferay integrates the powerful features of workflow and the data capabilities
 of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic
@@ -576,109 +576,117 @@ Choose the workflow you'd like to use. This requires that every record must pass
 through the workflow process. Now if you need to preview or edit entries as
 they're coming in, it's easy to integrate it into your daily workflow.
 
-<!-- Need to check the status of the Kaleo Designer and Kaleo Forms portlets for
-6.2 before updating the following section. -->
-
-#### Creating a Kaleo Form
+#### Creating a Kaleo Form [](id=creating-a-kaleo-form-liferay-portal-6-2-user-guide-10-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-Kaleo Forms is a plugin that enables you to have greater control over the list
-creation and entry process. For lists to appeal to companies all over the world
-(and make your new site not just a resounding success but attract profitable
-businesses), business users must be able to control the workflow of list entry
-and review those entries when made. There should also be a cool dashboard you
-can use to make all of your changes.
+Kaleo Forms EE is an app that provides you with greater control over the list
+creation and entry process. The Kaleo Forms EE app is available from Liferay
+Marketplace. It includes both the Kaleo Designer portlet and the Kaleo Forms
+portlet. The Kaleo Designer portlet provides an easy-to-use UI that helps
+streamline the creation of workflow definitions. The Kaleo Forms portlet lets
+you create web forms and basic applications. The Kaleo Forms EE app bundles
+these applications together, you can create workflows that govern the processing
+of web forms and applications.
 
-Inside Kaleo Forms, users can create lists that follow a workflow, called a
-*process*, or create new *entries* in a process. Creating a new process is easy,
+For lists to appeal to companies all over the world (and make your new site not
+just a resounding success but attract profitable businesses), business users
+must be able to control the workflow of list entry and review those entries when
+made. There should also be a cool dashboard you make all of your changes. Using
+Kaleo Forms, users can create lists that follow a workflow, called a *process*,
+or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
-#### Starting a New Process
+#### Starting a New Process [](id=starting-a-new-process-liferay-portal-6-2-user-guide-10-en)
 
 Defining processes that must be followed in data collection and entry is a
 fundamental part of business. Historically, this hasn't been fun or easy but
 Kaleo forms makes it as easy as possible. A process is just another way to
-describe a workflow you want on a list. When you place a Kaleo Forms portlet on
-a page, you are presented with a dashboard with two tabs: *Summary* and
-*Processes*. The summary view shows entries you have added to established
-processes, while also allowing you to add new entries. The processes view allows
-you to manage process definitions you have created.
+describe a workflow that's imposed on a list. When you place a Kaleo Forms
+portlet on a page, you are presented with a dashboard with two tabs: *Summary*
+and *Processes*. The summary view shows an inbox view which shows tasks that are
+assigned to you and tasks that are assigned to your roles. The summary view also
+lets you view your pending requests and your completed requests. If any process
+definitions have been defined, you can submit records to a list from the summary
+view. The processes view allows you to add process definitions and manage ones
+that have already been created.
 
 To build a list in Kaleo Forms with a workflow:
 
-1. Within the Kaleo Forms portlet, click on the *Processes* tab.
+1. Add the Kaleo Forms portlet to a page.
 
-2. Click on *Add Process* and a form appears.
+2. Within the Kaleo Forms portlet, click on the *Processes* tab.
 
-3. Enter a name and description, helping your users understand the purpose of
-   this process.
+3. Click on *Add Process* and a form appears.
 
-4. Select the appropriate list, workflow and forms you want to use in this
+4. Enter a name and, optionally, a description. Entering a description helps
+   your users understand the purpose of this process.
+
+5. Select the appropriate list, workflow and forms you want to use in this
    process.
 
-5. Click *Save* to save your process.
+6. Click *Save* to save your process.
 
-![Figure 10.9: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
+![Figure 10.9: When using the Kaleo Forms portlet to create a new workflow process, you need to complete this form.](../../images/05-ddl-kaleo-forms-new-process.png)
 
-While the form looks complicated, it can be straightforward. There are a few
-pieces that make up a process and clicking on each one takes you to the relevant
-list of options to insert.
+While the form looks complicated, it's easy to complete. There are a few pieces
+that make up a process and when you click on one, you can browse a list and
+select the appropriate piece to insert.
 
-##### Selecting an Entry Definition
+##### Selecting an Entry Definition [](id=selecting-an-entry-definition-liferay-portal-6-2-user-guide-10-en)
 
-The first part of a new Kaleo process is also the simplest: the entry
+The first part of a new Kaleo process is also the simplest one: the entry
 definition. This is just another way to refer to a data definition. All of the
 available data definitions can be chosen, including our awesome "Volunteer
-Sign-Up List." Just like with normal data lists, you can always create a new
-entry definition from the list view by clicking on *Add new definition*.
+Sign-Up List." Just as with normal data lists, you can always create a new entry
+definition from the list view by clicking *Add*.
 
-##### Selecting an Initial Form
+##### Selecting an Initial Form [](id=selecting-an-initial-form-liferay-portal-6-2-user-guide-10-en)
 
-One of the great advantages to using Kaleo forms to present your list as a
-process is having total control over the form template. You can always use a
+One of the advantages of using Kaleo forms to present your list as a process is
+that it grants you complete control over the form template. You can always use a
 default template, which displays all the fields from your entry definition.
-Greater flexibility comes, however, from creating multiple form templates for
-use in different stages of the process. When you create a form template you
-have the option of what *mode* to put it in:
+You can also, however, create multiple form templates for use in different
+stages of the process. When you create a form template, you can specify what
+*mode* to put it in:
 
 **Create:** *Create* mode gives a display for creating the initial entry. The
-first stage of any workflow requires you to create a new entry, so this should
-be the mode chosen for the initial form. All fields marked `required` must be
+first stage of any workflow requires you to create a new entry, so the initial
+form template must be a create mode form. All fields marked `required` must be
 included on create mode forms.
 
 **Edit:** *Edit* mode is used for any stage of the workflow process. For
-instance, you may want to separate information that shouldn't be saved from
-information that should. Other stages in the workflow may be a great place to
-store that additional information. No required fields have to be present on an
-edit mode form.
+instance, you might want to separate information that need not be saved from
+information that must. Other stages in the workflow could be a great place to
+store additional, non-required, information. Required fields can be absent from
+an edit mode form.
 
-![Figure 10.10: Selecting a form template as the initial form](../../images/05-kaleo-forms-form-templates.png)
+Once you have chosen an initial display template (it must be a create mode
+template, not an edit template), all that's left to do is configure the workflow
+for your process.
 
-Once you have chosen the initial display you want, all that's left to do is
-configure the workflow for your process.
+##### Selecting a Workflow [](id=selecting-a-workflow-liferay-portal-6-2-user-guide-10-en)
 
-##### Selecting a Workflow
+You can now select a workflow to apply to your new list-defined process. Any of
+the available workflows can be chosen. You can also create new ones from the
+selection screen. Simply choose *Add Workflow* and a Workflow Designer screen
+appears allowing you to define a new workflow by dragging elements in a flow
+chart.
 
-You can now select a workflow to apply to your new list-defined process. All the
-available workflows can be chosen and you can create new ones from the selection
-screen. Simply choose *Add Workflow* and a Workflow Designer screen appears
-allowing you to define a new workflow by dragging elements in a flow chart.
+![Figure 10.11: You'll see this form when editing or creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
-![Figure 10.11: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+We'll keep ours simple; just choose *Single Approver Definition*. This gives us
+a starting point (entry creation) and a *review* task, which we can use to add
+additional information in a secondary form.
 
-We'll keep ours simple and just choose "Single Approver Definition." This gives
-us a starting point (entry creation) and a 'review' task, which we can use to
-add additional information in a secondary form.
+##### Assigning Workflow Task Forms [](id=assigning-workflow-task-forms-liferay-portal-6-2-user-guide-10-en)
 
-##### Assigning Workflow Task Forms
+Many workflows offer the option of having multiple editorial and review stages.
+During these stages, you might want to offer different forms that allow the user
+to add more information to the entry. Kaleo forms offers you the opportunity to
+fine-tune the stages of workflow to use different forms.
 
-Many workflows offer you the option of having multiple editorial and review
-stages. During these stages, you might want to offer different forms that allow
-the user to add more information to the entry. Kaleo forms offers you the
-opportunity to fine-tune the stages of workflow to use different forms.
-
-When inside the view to assign forms to tasks:
+From the view to assign forms to tasks:
 
 1. Choose the workflow task by clicking on it. This selects the task in the
    chart.
@@ -690,13 +698,13 @@ When inside the view to assign forms to tasks:
 
 4. Click *Save* to save the form assignment.
 
-![Figure 10.12: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
+![Figure 10.12: When creating or editing a Kaleo process, click *Assign* under Workflow Task Forms. Then click on a task, such as review, from the graphical view. Look for the *Forms* property in the Settings tab; you can use this property to assign a form template to a task.](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
 Kaleo Forms.
 
-#### Using a Kaleo Form
+#### Using a Kaleo Form [](id=using-a-kaleo-form-liferay-portal-6-2-user-guide-10-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -704,33 +712,32 @@ Once you have a new Kaleo Form process, you can add new entries through the
 Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters
 the workflow you selected for the process.
 
-![Figure 10.13: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
+![Figure 10.13: When adding a new entry to a process, you're presented with the process's configured form template for the initial display.](../../images/05-kaleo-form-new-entry.png)
 
-After you have created an entry, the next task in the workflow may have an
-additional form to complete. If so, there is also an option to enter it:
+After you have created an entry, (depending on the configured workflow) the next
+task in the workflow may have an additional form to complete. If so, there will
+be an option to enter it:
 
-1. Next to the entry in progress click the *Actions* button.
+1. Next to the entry in progress, click the *Actions* button.
 
 2. Click *Complete form*.
-
-![Figure 10.14: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
 
 After the new entry has worked its way through the entire workflow, it is added
 to the data set collected. The owner of that data set (who created the Kaleo
 process) can view and edit the entries collected.
 
-![Viewing a completed list](../../images/05-kaleo-forms-view.png)
+![To view an entry submitted to a list via workflow, click on *My Completed Requests* from the Kaleo Forms portlet's Summary tab, then click on the name of the entry you'd like to view.](../../images/05-kaleo-forms-view.png)
 
 If you are a Listie, or a `list.it` developer, you're now prepared to show your
 lists to the world. That is, in fact, the reason you created `list.it` in the
 first place, right? 
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-user-guide-10-en)
 
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our
 lists, let alone how to create a list. You can now be the envy of your
-co-workers as you breeze through list setup and data definitions. Once you have
+co-workers as you breeze through list and data definition setup. Once you have
 your new lists set up, you can work through building new, custom input forms for
 the data. Your friends on `list.it` will thank you and wonder how you were able
 to accomplish it all. That's nothing next to the masterpiece of design that you

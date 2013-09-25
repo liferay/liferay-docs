@@ -1,5 +1,12 @@
 # Liferay Marketplace [](id=liferay-marketplace-liferay-portal-6-2-dev-guide-11-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 The **Liferay Marketplace** is an exciting hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
 build and enhance their existing platforms, developers and software vendors are

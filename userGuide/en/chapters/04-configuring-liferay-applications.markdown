@@ -1,5 +1,5 @@
 
-# Configuring Liferay Applications 
+# Configuring Liferay Applications [](id=configuring-liferay-applications-liferay-portal-6-2-user-guide-04-en)
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
@@ -10,13 +10,12 @@ your portal and provide an enhanced experience for your users. So before we get
 into the nitty gritty of the applications themselves, it's best to cover these
 common features first, starting with the look and feel configuration options.
 
-## Look and Feel  
+## Look and Feel [](id=look-and-feel-liferay-portal-6-2-user-guide-04-en)
 
 An administrator can access the look and feel configuration menu of any Liferay
-portlet by clicking on the wrench icon at the top right corner of the portlet
-and selecting *Look and Feel*. The location of the wrench icon and other
-portlet icons (minimize, maximize, and remove) may vary, depending on your
-theme. Liferay portlets' look and feel dialog boxes contain six tabs:
+portlet by clicking on the gear icon at the top right corner of the portlet and
+selecting *Look and Feel*. The location of the gear icon may vary, depending on
+your theme. Liferay portlets' look and feel dialog boxes contain six tabs:
 
 - Portlet Configuration
 - Text Styles
@@ -38,15 +37,6 @@ key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
 ![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
-
-<!-- For every window in the look and feel section, we are given *Title* and
-*Initial Window State*. I don't think these are correctly placed and these need
-to be monitored closely. Both features are originally from the WAP Styling tab,
-which has been deprecated for 6.2. I'm not going to describe these two features
-for now, and will wait for confirmation on whether or not this is correct. A
-ticket has been filed for these repetitive features: LPS-38624. Note that the
-screenshots will need to be retaken if these features are incorrectly placed.
--->
 
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
@@ -129,13 +119,13 @@ removed from Liferay in the next release.
 
 Next, let's discuss exporting and importing portlet data.
 
-## Export/Import  
+## Export/Import [](id=export-import-liferay-portal-6-2-user-guide-04-en)
 
 <!-- This section needs to be tested against the new AlloyUI -->
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
-Message Boards portlets. To export or import portlet data, click on the wrench
+Message Boards portlets. To export or import portlet data, click on the gear
 icon of your portlet and select *Export/Import*. Exporting portlet data produces
 a `.lar` file that you can save and import into another portlet application of
 the same type. To import portlet data, you must select a `.lar` file. Be careful
@@ -144,7 +134,7 @@ See the Backing up and Restoring Pages section of chapter 2 for a discussion of
 exporting and importing data across an entire site. Let's explore the export
 process first.
 
-![Figure 4.8: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
+![Figure 4.7: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
 
 First, you can select a *Date Range* of content that you'd like to export.
 Content that has been added to your portlet within your specified date range is
@@ -169,7 +159,7 @@ portlet's permissions but not the permissions assigned to roles. After you've
 exported your portlet's data, switch to the *Current and Previous* tab to view
 ongoing export processes and the history of past exports.
 
-![Figure 4.9: When importing portlet data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../images/portlet-import.png)
+![Figure 4.8: When importing portlet data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../images/portlet-import.png)
 
 To import portlet data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines. After selecting the LAR
@@ -198,7 +188,7 @@ imported content.
 
 Next, let's discuss the concept of a portlet's scope.
 
-## Scope  
+## Scope [](id=scope-liferay-portal-6-2-user-guide-04-en)
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
@@ -240,7 +230,7 @@ portal (global), site (default), or page . This grants you some flexibility in
 how you want to set up your portal. You can configure the scope of a portlet
 with just a few simple steps.
 
-1.  Click the *Options* icon in the portlet window (the wrench).
+1.  Click the *Options* icon in the portlet window (the gear icon).
 
 2.  Select *Configuration*.
 
@@ -248,7 +238,7 @@ with just a few simple steps.
 
 4.  Use the drop-down menu to set the scope.
 
-![Figure 4.10: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
+![Figure 4.9: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
 setting the scope to the current page, you can add as many of these portlets to a
@@ -256,7 +246,7 @@ site as you want, provided they are all added to separate pages.
 
 Another useful feature of Liferay's portlets is Archived Setups.  
 
-## Archived Setups  
+## Archived Setups [](id=archived-setups-liferay-portal-6-2-user-guide-04-en)
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a
@@ -281,7 +271,7 @@ configuration options, such as the Message Boards portlet.
 
 Next, we'll see how permissions apply to Liferay portlets in general. 
 
-## Permissions  
+## Permissions [](id=permissions-liferay-portal-6-2-user-guide-04-en)
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
@@ -299,17 +289,17 @@ blogs portlet. We'll go over permissions for specific applications in the
 sections for those applications. For now, let's move on to sharing
 applications.
 
-## Communication  
+## Communication [](id=communication-liferay-portal-6-2-user-guide-04-en)
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some
 Liferay portlets provide a configuration UI to help you get the most out of
 this communication mechanism. To access this UI, open your portlet's
-configuration window by clicking on the wrench icon and selecting
+configuration window by clicking on the gear icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 4.11: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
+![Figure 4.10: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
 parameters: categoryId, nodeId, nodeName, resetCur, tag, title. For each of
@@ -337,7 +327,7 @@ This can be achieved by setting the value of the title parameter of the Wiki
 portlet to be read from the country parameter of the administration portlet.
 Cool, isn't it?
 
-## Sharing  
+## Sharing [](id=sharing-liferay-portal-6-2-user-guide-04-en)
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
@@ -356,21 +346,21 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 4.12: The Sharing tab of the Portlet Configuration Dialog Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
+![Figure 4.11: The Sharing tab of the Portlet Configuration Dialog Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
 sub-tabs under sharing: Any Web Site, Facebook, OpenSocial Gadget, Netvibes, and
 Friends.
 
-### Any Web Site  
+### Any Web Site [](id=any-web-site-liferay-portal-6-2-user-guide-04-en)
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the portlet as a widget. That's all you need to do. When
 a user loads the page on the other web site, the code will pull the relevant
 portlet from your site and display it.
 
-### Facebook  
+### Facebook [](id=facebook-liferay-portal-6-2-user-guide-04-en)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -379,13 +369,13 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 4.13: Liferay's Forums on Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
+![Figure 4.12: Liferay's Forums on Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
 Action*](http://manning.com/sezov) for more details. 
 
-### OpenSocial Gadget  
+### OpenSocial Gadget [](id=opensocial-gadget-liferay-portal-6-2-user-guide-04-en)
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -406,7 +396,7 @@ portal at a glance, using asset publishers or custom RSS feeds. You could also
 use Liferay's API to build your own portlet and provide the URL for users to
 place on their iGoogle pages.
 
-#### Netvibes  
+#### Netvibes [](id=netvibes-liferay-portal-6-2-user-guide-04-en)
 
 Netvibes offers a similar service to iGoogle--users can log in, create their
 own personal portal, called a *dashboard*, and add customizable widgets to the
@@ -415,7 +405,7 @@ portlet, check the *Allow users to add [portlet-name] to Netvibes pages* box.
 You can then use the provided URL to create a custom Netvibes widget based on
 the instance of the portlet that you're using.
 
-#### Friends  
+#### Friends [](id=friends-liferay-portal-6-2-user-guide-04-en)
 
 The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a
 single check box that allows you to give your friends permission to add the
@@ -424,7 +414,7 @@ for your blog or calendar if you wish to share them.
 
 Next, let's explore what the Recycle Bin does for your Liferay applications.
 
-## Recycling Assets with the Recycle Bin
+## Recycling Assets with the Recycle Bin [](id=recycling-assets-with-the-recycle-bin-liferay-portal-6-2-user-guide-04-en)
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
@@ -436,7 +426,7 @@ be restored back to its original state. Recycled items can expire after a
 certain period of time, resulting in their permanent deletion. Before diving
 into how the Recycle Bin works, let's look at how to configure it.
 
-### Configuring the Recycle Bin
+### Configuring the Recycle Bin [](id=configuring-the-recycle-bin-liferay-portal-6-2-user-guide-04-en)
 
 To begin using the Recycle Bin, you must enable it where you plan to use it. The
 Recycle Bin supports portal-wide scope or site-specific scope. The poral-wide
@@ -457,7 +447,7 @@ site-specific scope.
 **Trash Entries Max Age:** customize the number of days a file is kept in the
 Recycle Bin until its permanent deletion (default is 30 days).
 
-![Figure 4.14: The Recycle Bin offers several configurable options for your site.](../../images/recycle-bin-site-settings.png)
+![Figure 4.13: The Recycle Bin offers several configurable options for your site.](../../images/recycle-bin-site-settings.png)
 
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
@@ -501,14 +491,14 @@ recycled can restore the document.
 Now that you've successfully configured the Recycle Bin, let's look at how to
 use it.
 
-### Using the Recycle Bin
+### Using the Recycle Bin [](id=using-the-recycle-bin-liferay-portal-6-2-user-guide-04-en)
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 the portal. Instead of offering a specific Recycle Bin for each asset type,
 Liferay provides a central master Recycle Bin where different asset types can be
 stored. This provides an easy search and recovery process.
 
-![Figure 4.15: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+![Figure 4.14: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../images/recycle-bin-overview.png)
 
 You can recycle several different types of assets, including:
 
@@ -559,7 +549,7 @@ the menu.
 
 9. You can restore or delete the content. Select *Restore*.
 
-	![Figure 4.16: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+	![Figure 4.15: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
 content was restored back to its original place.
@@ -583,7 +573,7 @@ Recycle Bin* button located at the top of the Recycle Bin screen. This
 permanently deletes all the files from the Recycle Bin. Next, let's discuss how
 to use the drag and drop feature.
 
-#### Drag and Drop
+#### Drag and Drop [](id=drag-and-drop-liferay-portal-6-2-user-guide-04-en)
 
 A quick and easy way to dispose of your unwanted assets is to drag and drop them
 into the Recycle Bin. While you're in the Control Panel, you can simply select
@@ -594,12 +584,12 @@ Recycle Bin is highlighted, showing you where the files can be dropped. After
 you drop the asset onto the Recycle Bin portlet, the asset is removed from its
 original location and transferred to the Recycle Bin.
 
-![Figure 4.17: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+![Figure 4.16: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
 
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
 
-#### Recycle Bin intelligence and support
+#### Recycle Bin intelligence and support [](id=recycle-bin-intelligence-and-support-liferay-portal-6-2-user-guide-04-en)
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the
@@ -628,7 +618,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 4.18: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+![Figure 4.17: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/portal, it will store files with matching
@@ -642,7 +632,7 @@ separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
 *Live* Recycle Bin, holding unstaged material is still viewable while in
 staging; however, it is never used.
 
-![Figure 4.19: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+![Figure 4.18: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
@@ -671,7 +661,7 @@ The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring
 your Liferay portal to fully leverage its capabilities.
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-user-guide-04-en)
 
 In this chapter, we explored the configuration options available for Liferay
 applications. We showed how to customize your applications, export/import

@@ -1,5 +1,5 @@
 
-# Advanced Web Content Management   
+# Advanced Web Content Management [](id=advanced-web-content-management-liferay-portal-6-2-user-guide-03-en)
 
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more
@@ -24,7 +24,7 @@ sections on creating teams and rules for presenting site pages to mobile
 devices. Once finished with this chapter, you'll be the envy of your peers as
 they'll think you really know what you're doing.
 
-## Advanced Content with Structures and Templates  
+## Advanced Content with Structures and Templates [](id=advanced-content-with-structures-and-te-liferay-portal-6-2-user-guide-03-en)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -47,7 +47,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-### Using Structures  
+### Using Structures [](id=using-structures-liferay-portal-6-2-user-guide-03-en)
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -82,7 +82,7 @@ content which scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-#### Editing Structures
+#### Editing Structures [](id=editing-structures-liferay-portal-6-2-user-guide-03-en)
 
 Go back to the Site Administration page and select *Web Content* from the
 Content section. The first way to access the Manage Structures interface is
@@ -149,10 +149,6 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
-<!-- Needs to be replaced for 6.2. -->
-<!-- Icons not appearing at the present time for WC structure editor (LPS-35338)
--->
-
 Liferay supports the following fields in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
@@ -197,7 +193,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at field settings.
 
-#### Editing Field Settings  
+#### Editing Field Settings [](id=editing-field-settings-liferay-portal-6-2-user-guide-03-en)
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -267,7 +263,7 @@ know what to put into the Body element (example: *This is an HTML text area for
 the body of your content*). Now, when users hover over the Help icon near your
 title, your tip is displayed.
 
-##### Structure Default Values
+##### Structure Default Values [](id=structure-default-values-liferay-portal-6-2-user-guide-03-en)
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
@@ -291,7 +287,7 @@ This form allows you to manage the structure settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, let's demonstrate assigning permissions.
 
-#### Assigning Permissions  
+#### Assigning Permissions [](id=assigning-permissions-liferay-portal-6-2-user-guide-03-en)
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -309,7 +305,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-### Using Templates  
+### Using Templates [](id=using-templates-liferay-portal-6-2-user-guide-03-en)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -326,7 +322,7 @@ created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (FTL, VM, XSL, and CSS)  
+#### Template Types (FTL, VM, XSL, and CSS) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -359,7 +355,7 @@ options.
 <!-- CSS was not available during testing of 6.2 feature. Notified Juan
 Fernandez of missing template language. Bug filed for fix: LPS-37934 -->
 
-#### Adding Templates
+#### Adding Templates [](id=adding-templates-liferay-portal-6-2-user-guide-03-en)
 
 Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -480,7 +476,7 @@ Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
 template.
 
-### Assigning Template Permissions  
+### Assigning Template Permissions [](id=assigning-template-permissions-liferay-portal-6-2-user-guide-03-en)
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -498,7 +494,7 @@ based on the roles and responsibilities within your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how to create RSS feeds in Liferay.
 
-## Managing RSS Feeds in Liferay
+## Managing RSS Feeds in Liferay [](id=managing-rss-feeds-in-liferay-liferay-portal-6-2-user-guide-03-en)
 
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
@@ -512,7 +508,7 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
 see how to create RSS feeds in Liferay.
 
-### Managing RSS Feeds from the Control Panel
+### Managing RSS Feeds from the Control Panel [](id=managing-rss-feeds-from-the-control-pan-liferay-portal-6-2-user-guide-03-en)
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
@@ -601,7 +597,7 @@ set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
-### Using the RSS Portlet
+### Using the RSS Portlet [](id=using-the-rss-portlet-liferay-portal-6-2-user-guide-03-en)
 
 The RSS portlet allows you to display any number of RSS feeds and configure how
 they are displayed. If you're looking for a web-based RSS reader, look no
@@ -614,7 +610,7 @@ that only site administrators have permission to customize the RSS portlet and
 select feeds to be displayed.
 
 Once you've added the RSS portlet to a page, open the portlet's Configuration
-popup window by clicking on the wrench icon at the top right corner of the
+popup window by clicking on the gear icon at the top right corner of the
 portlet and selecting *Configuration*.
 
 ![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
@@ -653,7 +649,7 @@ site templates and page templates. Site templates are a powerful tool for
 managing many similar sites. Let's examine how they work and then we'll look at
 page templates.
 
-## Using Site Templates  
+## Using Site Templates [](id=using-site-templates-liferay-portal-6-2-user-guide-03-en)
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
@@ -737,7 +733,7 @@ By default, the following site templates are provided:
 Now that you know the basics for creating and managing your site templates,
 let's put your knowledge to the test by completing an example.
 
-### Site Templates Example
+### Site Templates Example [](id=site-templates-example-liferay-portal-6-2-user-guide-03-en)
 
 Suppose we need to create the following three sites for Nose-ster's internal
 use: Engineering, Marketing, and Legal. These should be private sites that are
@@ -799,7 +795,7 @@ and share content within the sites. Also, site administrators can add new pages,
 portlets, and content to their sites, further differentiating each department's
 site from the others.
 
-### Propagating Changes from Site Templates to Sites
+### Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-liferay-portal-6-2-user-guide-03-en)
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose
@@ -861,7 +857,7 @@ copied during a site reset.
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
 
-## Using Page Templates  
+## Using Page Templates [](id=using-page-templates-liferay-portal-6-2-user-guide-03-en)
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
@@ -945,7 +941,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-### Exporting and Importing Site Templates and Page Templates  
+### Exporting and Importing Site Templates and Page Templates [](id=exporting-and-importing-site-templates--liferay-portal-6-2-user-guide-03-en)
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be
@@ -979,7 +975,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-## Localization  
+## Localization [](id=localization-liferay-portal-6-2-user-guide-03-en)
 
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
@@ -1013,7 +1009,7 @@ steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window. Next, we'll
 discuss how to let users customize their site pages.
 
-## Allowing Users to Customize Site Pages  
+## Allowing Users to Customize Site Pages [](id=allowing-users-to-customize-site-pages-liferay-portal-6-2-user-guide-03-en)
 
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
@@ -1036,7 +1032,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-## Scheduling Web Content  
+## Scheduling Web Content [](id=scheduling-web-content-liferay-portal-6-2-user-guide-03-en)
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way
@@ -1066,7 +1062,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging Page Publication  
+## Staging Page Publication [](id=staging-page-publication-liferay-portal-6-2-user-guide-03-en)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -1113,29 +1109,29 @@ publishing is slower with Remote Live than with Local Live since data needs to
 be transferred over a network. And, of course, you need more hardware to run a
 separate staging server.
 
-Liferay 6.1 added a feature to staging called Page Versioning. This feature
-works with both Local Live and Remote Live staging and allows site
-administrators to create multiple variations of staged pages. This allows
-several different versions of sites and pages to be developed at the same time.
-Variations can be created, merged, and published using a Git-like versioning
-system. Let's jump in to see how to use staging.
+Liferay also offers the Page Versioning feature. This feature works with both
+Local Live and Remote Live staging and allows site administrators to create
+multiple variations of staged pages. This allows several different versions of
+sites and pages to be developed at the same time. Variations can be created,
+merged, and published using a Git-like versioning system. Let's jump in to see
+how to use staging.
 
-### Enabling Local Live Staging
+### Enabling Local Live Staging [](id=enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Site administrators can enable Staging for a site via the Site Settings UI. To
-reach this interface, navigate to the Site Administration page of your site,
-click on *Site Settings* in the left menu, then click on *Staging* listed under
-the Advanced tab. Under Staging Type, select either *Local Live* or *Remote
-Live* and additional options appear. Staging allows changes to be made in a
-staging environment so that work can be reviewed, possibly using a workflow,
-before it's published to a live site. Enabling Local Live staging is easy. Just
-select *Local Live* and decide whether you'd like to enable page versioning. You
-can enable page versioning on a site's public pages, private pages, both, or
-neither. Page versioning allows you to work in parallel on different versions of
-pages and maintains a history of all page modifications. We discuss page
-versioning in more detail below.
+reach this interface, navigate to the *Site Administration* &rarr;
+*Configuration* page of your site, make sure *Site Settings* is highlighted in
+the left menu, and click on *Staging* listed under the Advanced tab. Under
+Staging Type, select either *Local Live* or *Remote Live* and additional options
+appear. Staging allows changes to be made in a staging environment so that work
+can be reviewed, possibly using a workflow, before it's published to a live
+site. Enabling Local Live staging is easy. Just select *Local Live* and decide
+whether you'd like to enable page versioning. You can enable page versioning on
+a site's public pages, private pages, both, or neither. Page versioning allows
+you to work in parallel on different versions of pages and maintains a history
+of all page modifications. We discuss page versioning in more detail below.
 
-### Enabling Remote Live Staging
+### Enabling Remote Live Staging [](id=enabling-remote-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 When you enable Remote Live staging, the remote site becomes the live
 environment and the current site becomes the staging environment. The remote
@@ -1162,16 +1158,12 @@ Then add the following lines to your remote Liferay server's
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay portal instance as
-a site administrator. Then navigate to the Site Administration page for your
-site. Then click on *Site Settings* in the left menu and then on *Staging*
-listed under the Advanced tab. Select *Remote Live* under Staging Type and
-additional options appear.
+a site administrator. Then navigate to the *Site Administration* &rarr;
+*Configuration* page for your site. Then click on *Site Settings* in the left
+menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
+under Staging Type and additional options appear.
 
 ![Figure 3.19: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
-
-<!-- Needs to be replaced for 6.2 -->
-<!-- Skipping Staging images at present time. Still a lot of development work to
-be merged into trunk for this topic. -->
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -1221,13 +1213,13 @@ use LDAP to copy selected user accounts from your local (staging) Liferay server
 to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
 (EE-only), available on Liferay Marketplace, makes this easy.
 
-### Example: Enabling Local Live Staging
+### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Let's create a Local Live staging environment for Nose-ster's home page. Before
-we begin, let's add a new page. Click *Add &rarr; Page* from the Dockbar in the
-default site and name the new page *News and Events*. Next, click *News and
-Events* to view the page. Then add the Alerts and Announcements portlets to the
-News and Events page.
+we begin, let's add a new page. Click *Add &rarr; Page* from the left side menu
+in the default site and name the new page *News and Events*. Next, click *News
+and Events* to view the page. Then add the Alerts and Announcements portlets to
+the News and Events page.
 
 When you activate staging Local Live staging, Liferay creates a clone of your
 site. This clone became the staging environment. Because of this, we recommend
@@ -1241,15 +1233,15 @@ update history won't be saved until you enable page versioning. Page versioning
 requires staging (either Local Live or Remote Live) to be enabled.
 
 Now we're ready to activate staging for this site. Go to *Admin* &rarr; *Site
-Administration* &rarr; *Site Settings* and select *Staging* from under the
-*Advanced* heading. We'll assume we don't have a separate staging server so
-we'll select the *Local Live* staging type. If you do have a separate server to
-use for staging, follow the instructions in the previous section for configuring
-it and your local server for remote staging. Either way, once you make a
-selection (either *Local Live* or *Remote Live*), more options become available
-for page versioning and staged portlets.
+Administration* &rarr; *Configuration* *Site Settings* and select *Staging* from
+under the *Advanced* heading. We'll assume we don't have a separate staging
+server so we'll select the *Local Live* staging type. If you do have a separate
+server to use for staging, follow the instructions in the previous section for
+configuring it and your local server for remote staging. Either way, once you
+make a selection (either *Local Live* or *Remote Live*), more options become
+available for page versioning and staged portlets.
 
-### Enabling Page Versioning and Staged Portlets
+### Enabling Page Versioning and Staged Portlets [](id=enabling-page-versioning-and-staged-por-liferay-portal-6-2-user-guide-03-en)
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -1261,8 +1253,6 @@ example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ster site and then click *Save*.
 
 ![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
-
-<!-- Needs to be replaced for 6.2 -->
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
@@ -1280,28 +1270,33 @@ site. But portlets like the Message Boards or Wiki would likely benefit from
 you enable staging and accept the defaults, staging is *not* enabled for the
 collaborative portlets.
 
-### Using the Staging Environment  
+### Using the Staging Environment [](id=using-the-staging-environment-liferay-portal-6-2-user-guide-03-en)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
-notice a colored bar with some new menus just below the Dockbar when you
-navigate to the site. These new menus help us manage staged pages. You'll also
-notice that most of your page management options have been removed, because now
-you can't directly edit live pages. You now must use the staging environment to
-make changes. Click on *Staging* to view the staged area. Your management
-options are restored and you can access some new options related to staging. If
-you're following along with the Nose-ster example, navigate back to the News and
-Events page and click on *Staging* to get your page editing capabilities back.
+notice a colored bar with some new menus on the Dockbar when you navigate to the
+site. These new menus help us manage staged pages. You'll also notice that most
+of your page management options have been removed, because now you can't
+directly edit live pages. You now must use the staging environment to make
+changes. Click on the green *Staging* button to view the staged area. Your
+management options are restored and you can access some new options related to
+staging. If you're following along with the Nose-ster example, navigate back to
+the News and Events page and click on *Staging* to get your page editing
+capabilities back.
 
-![Figure 3.21: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.21: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
-<!-- Needs to be replaced for 6.2 -->
-
-Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
-the Calendar portlet isn't there. That's because you've staged a change to the
+Add the Bookmarks portlet and then click on *Live* from the Dockbar. Notice that
+the Bookmarks portlet isn't there. That's because you've staged a change to the
 page but haven't published that change yet to the live site. Go back to the
-staged page and look at the options you have available. From here you can *Undo*
-changes, view a *History* of changes, *Mark as Ready for Publication*, and
-*Manage Page Variations*.
+staged page and click on the *Staging* drop-down menu to look at the options you
+have available. From here you have many options to choose from to help in your
+staging conquest.
+
+**Manage Site Pages Variations:** allows you to work in parallel on multiple
+versions of a staged site page. We'll explain this later.
+
+**Manage Page Variations:** allows you to work in parallel on multiple versions
+of a staged page. We'll explain this later.
 
 **Undo/Redo:** allows you to step back/forward through recent changes to a page,
 which can save you the time of manually adding or removing portlets if you make
@@ -1311,55 +1306,55 @@ a mistake.
 dates. You can go to any change in the revision history and see how the pages
 looked at that point.
 
-**Manage Page Variations:** allows you to work in parallel on multiple versions
-of a staged page. We will explain this later.
+**Mark as Ready for Publication:** After you're done making changes to the
+staged page, click this button. The status of the page changes from *Draft* to
+*Ready for Publication* and any changes you've made can be published to the Live
+Site. When you publish a page to live, only the version which was *Marked as
+Ready for Publication* is published.
 
-After you're done making changes to the staged page, click the *Mark as Ready
-for Publication* button. The status of the page changes from *Draft* to *Ready
-for Publication* and any changes you've made can be published to the Live Site.
-When you publish a page to live, only the version which was *Marked as Ready for
-Publication* is published.
+The *Publish to Live* button gives you the option to publish to Live *Now* or
+*Schedule* a publication to Live.
 
-The dropdown next to the Staging link at the top gives you the option to
-*Publish to Live Now* or *Schedule Publication to Live*.
+**Now:** immediately pushes any changes to the Live Site.
 
-**Publish to Live Now:** immediately pushes any changes to the Live Site.
+**Schedule:** lets you set a specific date to publish or to set up recurring
+publishing. You could use this, for example, to publish all changes made during
+the week every Monday morning without any further intervention.
 
-**Schedule Publication to Live:** lets you set a specific date to publish or to
-set up recurring publishing. You could use this, for example, to publish all
-changes made during the week every Monday morning without any further
-intervention.
+The *Publish to Live* button also gives you options to select pages,
+applications, content, and permissions. Furthermore, you're given the *Current
+and Previous* and *Scheduled* tabs. The *Current and Previous* tab lets you view
+past publications along with their authors and create/completion dates. The
+*Scheduled* tab lets you view what publication processes are scheduled for
+publishing.
 
-Click on *Mark as Ready for Publication* and then *Publish to Live Now* to
-publish your Calendar portlet to the live site.
+Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
+*Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
 
-Content publication can be also controlled using staging. Calendar events are
-staged by default (this can be changed in Staging Configuration). If you create
-an event in the staged site, it isn't visible in the live site until you publish
+Content publication can be also controlled using staging. Bookmarks are staged
+by default (this can be changed in Staging Configuration). If you create a
+bookmark in the staged site, it isn't visible in the live site until you publish
 it to the live site following the same steps you just performed (you can select
 which types of content are published when you publish to the live site). If
-workflow is enabled for Calendar Events, the event needs to go through the
+workflow is enabled for any new resource, the resource needs to go through the
 workflow process before it can be published to the live site.
 
 ![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
-<!-- Needs to be replaced for 6.2 -->
-
 Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
 versions, sometimes hundreds. Such high version numbers can make it very slow to
-publish web content articles. Liferay 6.2 addresses this issue by allowing site
+publish web content articles. Liferay addresses this issue by allowing site
 administrators to choose whether or not to publish a web content article's
 version history when a staged article is ready to be published. To use this
 feature, staging must be enabled. Edit a web content article that's being
 displayed in a Web Content Display portlet on one of your pages and then click
-*Staging* &rarr; *Publish to Live Now* from just below the Dockbar. In the
-popup, expand the Applications heading and scroll down until you see the section
-for Web Content.
+*Staging* &rarr; *Publish to Live* from the Dockbar. In the popup, expand the
+Content heading and find the section for Web Content. You can click the *Change*
+button to select/deselect options to publish dealing with your new Web Content
+instance.
 
-![Figure 3.23: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
-
-<!-- Needs to be replaced for 6.2 -->
+![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
@@ -1374,13 +1369,13 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-### Using Site Pages Variations  
+### Using Site Pages Variations [](id=using-site-pages-variations-liferay-portal-6-2-user-guide-03-en)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
 need to be working on multiple versions of the site at the same time to ensure
 everything has been properly reviewed before it goes live. With staging in
-Liferay 6.1 you can do this using **Page Variations**.
+Liferay 6.2 you can do this using *Page Variations*.
 
 For example, you can create several page variations, enabling the marketing team
 to give your site a completely different look and feel for Christmas. At the
@@ -1397,23 +1392,23 @@ pages, different applications on these pages, different configuration of these
 applications and even different pages. One page can exist in just one site page
 variation or in several of them.
 
-By default, we only have one site page variation which is called **Main
-Variation**. To create a new one, use the dropdown next to the *Staging* link
+By default, we only have one site page variation which is called *Main
+Variation*. To create a new one, use the dropdown next to the *Staging* link
 and click on *Manage Site Pages Variations*. This brings you to a list of the
 existing site page variations for your site. Click *Add Site Pages Variation* to
 create a new one. From the *Add Site Pages Variation* screen, you can set a
-Name, Description and also set your new variation to copy the content from an
+Name, Description, and also set your new variation to copy the content from an
 existing variation. There are several options to choose in this selector.
 
-**Any existing Site Pages Variation:** creates a new site page variation that
-contains only the last version of all the pages that exist in this variation.
-The current variation must be marked as ready for publication.
-
-**All Site Pages Variation:** creates a new variation that contains the last
+**All Site Pages Variations:** creates a new variation that contains the last
 version marked as ready for publication from any single page existing in any
 other variation.
 
-**None:** creates a new, empty variation.
+**None (Empty Site Pages Variation):** creates a new, empty variation.
+
+**Main Variation:** creates a new site page variation that contains only the
+last version of all the pages that exist in this variation. The current
+variation must be marked as ready for publication.
 
 You are also able to rename any variation. For example, edit the Main Variation
 and change its name to something that makes more sense in your site, such as
@@ -1433,16 +1428,18 @@ When you delete a page, it is deleted only in the current variation. The same
 happens when you add a new page. If you try to access a page which was deleted
 in the current variation, Liferay informs you this page is not *enabled* in this
 variation and you must enable it. To enable it, navigate to the *Site
-Administration* &rarr; *Site Pages* screen. Here all the existing pages for all
-the variations are shown in a tree. Pages not enabled for the current variation
-are shown in a lighter color.
+Administration* &rarr; *Pages* &rarr; *Site Pages* screen. Here all the existing
+pages for all the variations are shown in a tree. Pages not enabled for the
+current variation are shown in a lighter color. You can also access Staging
+options from the Site Pages screen by clicking the *Staging* drop-down menu
+located above the pages tree.
 
-To publish a variation to the live site, click on *Publish to Live now* in the
-dropdown next to the variation name. Publications can also be scheduled
-independently for different variations. For example, you could have a variation
-called *Mondays* which is published to the live site every Monday and another
-one called *Day 1* which is published to the live site every first day of each
-month.
+To publish a variation to the live site, click on *Publish to Live* &rarr;
+*Publish* in the dropdown next to the variation name. Publications can also be
+scheduled independently for different variations. For example, you could have a
+variation called *Mondays* which is published to the live site every Monday and
+another one called *Day 1* which is published to the live site every first day
+of each month.
 
 You can also have variations for a single page inside a site page variation,
 which allows you to work in parallel in different versions of a page. For
@@ -1465,13 +1462,11 @@ Christmas Day to display different content on those particular days.
 
 ![Figure 3.24: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
-<!-- Needs to be replaced for 6.2 -->
-
 Another powerful feature is the possibility of *merging* Site Pages Variations.
-To merge two Site Pages Variations, you need to go to the Manage Site Variations
-screen. From there, click on *Merge* on the Site Pages Variation you want to use
-as the base. You will be asked to choose the Site Pages Variation to merge on
-top of it. Merging works in the following way:
+To merge two Site Pages Variations, you need to go to the Manage Site Pages
+Variations screen. From there, click on *Merge* on the Site Pages Variation you
+want to use as the base. You will be asked to choose the Site Pages Variation to
+merge on top of it. Merging works in the following way:
 
 * New pages that don't exist in the base Variation, will be added.
 * If a page exists in both Site Pages variations, and at least one version of
@@ -1486,7 +1481,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-### Wrapping up Staging  
+### Wrapping up Staging [](id=wrapping-up-staging-liferay-portal-6-2-user-guide-03-en)
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
@@ -1496,7 +1491,7 @@ maintaining a content-rich web site a snap.
 
 Let's examine teams next.
 
-## Creating Teams for Advanced Site Membership Management  
+## Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-member-liferay-portal-6-2-user-guide-03-en)
 
 Teams allow site administrators a greater degree of flexibility than was
 possible using just user groups and roles. They allow site administrators to
@@ -1531,7 +1526,7 @@ ability to edit/manage the team have the ability to manage team permissions.
 That's it! Now your team is ready to perform their functions. Next, let's look
 at how to configure Liferay for mobile devices.
 
-## Displaying Site Pages to Mobile Devices  
+## Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices-liferay-portal-6-2-user-guide-03-en)
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the portal based on the device being used to access Liferay. The
@@ -1728,7 +1723,7 @@ Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job! Now the Liferay site's pages are presented to Android
 and iOS tablet users with the 1 Column layout template.
 
-## Summary  
+## Summary [](id=summary-liferay-portal-6-2-user-guide-03-en)
 
 This chapter has been your guide to advanced Liferay site management and web
 content management. We've seen how you can use Liferay to manage both simple

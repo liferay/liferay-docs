@@ -1,5 +1,12 @@
 # Working with Liferay's Developer Tools [](id=working-with-liferays-developer-tools-liferay-portal-6-2-dev-guide-02-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
+reflect the new features in Liferay 6.2. 
+
+---
+
 If you're anything like Liferay Portal's developers, you don't want to be
 forced to work with one development technology. Our developers build Liferay
 with the tools they prefer. That's why we strive to provide you with as much
