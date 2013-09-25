@@ -2121,21 +2121,21 @@ Great! You have your `.jar` files ready for your domain.
 
 ### Running Liferay on JBoss 7 in Standalone Mode vs. Domain Mode
 
-JBoss 7 can be launched in either *standalone* mode or *domain* mode. Running
-JBoss 7 in domain mode allows multiple application server instances to be
-managed from a single control point. A collection of such application servers is
-known as a *domain*. For more information on standalone mode vs. domain mode,
-please refer to the section on this topic in the [JBoss 7 User Guide](https://community.jboss.org/wiki/JBossAS7UserGuide?_sscc=t).
-Liferay fully supports JBoss 7 when it's run in standalone mode but not when
-it's run in domain mode.
+JBoss 7 can be launched in either *standalone* mode or *domain* mode. Domain
+mode allows multiple application server instances to be managed from a single
+control point. A collection of such application servers is known as a *domain*.
+For more information on standalone mode vs. domain mode, please refer to the
+section on this topic in the [JBoss 7 User
+Guide](https://community.jboss.org/wiki/JBossAS7UserGuide?_sscc=t).  Liferay
+fully supports JBoss 7 when it runs in standalone mode but not when it runs
+in domain mode.
 
-You can run Liferay on JBoss 7 when it's run in domain mode but this method is
-not fully supported. In particular, Liferay's hot-deploy does not work when
-JBoss 7 is run in domain mode since JBoss 7 cannot deploy non-exploded `.war`
-files in domain mode. This prevents many Liferay plugins from working as
-intended. For example, JSP hooks won't work on a Liferay running on a JBoss 7
-running in domain mode since Liferay's JSP override mechanism relies on the
-application server reloading customized JSP files from the exploded plugin
+You can run Liferay on JBoss 7 in domain mode, but this method is not fully
+supported. In particular, Liferay's hot-deploy does not work since JBoss 7
+cannot deploy non-exploded `.war` files in domain mode. This prevents many
+Liferay plugins from working as intended. For example, JSP hooks don't work on
+JBoss 7 running in domain mode since Liferay's JSP override mechanism relies on
+the application server reloading customized JSP files from the exploded plugin
 `.war` file location. Other plugins, such as service or action hooks, should
 still work properly since they don't require JBoss to access anything (such as
 JSP files) from an exploded `.war` file on the file system. The best practice
