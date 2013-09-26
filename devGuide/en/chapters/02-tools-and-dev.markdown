@@ -1023,18 +1023,17 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
     ---
 
-    ![note](../../images/tip-pen-paper.png) **Note:** Make sure you have available
-    projects configured in Liferay IDE. If not, you'll get an error message
-    indicating there are no available resources to add or remove from the server. 
+    ![Note](../../images/tip-pen-paper.png) **Note:** Make sure you have
+    available projects configured in Liferay IDE. If not, you'll get an error
+    message indicating there are no available resources to add or remove from
+    the server. 
 
     ---
 
 2.  Select the Liferay projects to publish to your remote server; click *Add* to
     add them to your remote server, then click *Finish*. Deployment begins
-    immediately. 
-
-    Your console displays a message that the plugin was successfully
-    deployed if publication to the remote server was successful.
+    immediately. If publication to the remote server was successful, your
+    console displays a message that the plugin was successfully deployed!
 
 3.  As you make changes to your plugin project, republish them so they take
     effect on the remote server. To set your remote server's publication
@@ -1045,41 +1044,25 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
     modified project files, right click on the server in the Servers view and
     select *Publish*. 
 
-Have you noticed that there's a lot of depth to Liferay IDE? You can easily come
-across difficult questions and run into very specific problems, but someone else
-might have already solved your issue or answered your question. So where would
-you go to find out? Don't reinvent the wheel, visit the [Liferay IDE Community
-page](http://www.liferay.com/community/liferay-projects/liferay-ide/overview)!
-On the *Forums* page, you can look up resolutions to specific errors and ask
-questions. Be sure to fully describe any problems you have to ensure you get a
-working answer. You can even track known issues from the *Issue Tracker* page. 
+Next, let's examine the structure of Liferay's Plugins SDK. We'll also learn how
+to use it independently of Liferay IDE.
 
-<!--This last paragraph feels too broad to be stuck in the ## Using the Remote
-Server Adapter section. Maybe it should go in the introduction or at the end of
-the Liferay IDE section? -Russ-->
+<!-- Next we'll show you how to use tag library snippets in Liferay IDE. -->
 
-<!--Next let's talk about Liferay's Service Builder code generation tool. -->
-
-<!--Next we'll show you how to use Tag Libraery Snippets in Liferay IDE. -->
-
-<!--### Using Tag Library Snippets -->
-
-<!--Add content-->
-
-<!-- Missing transition -->
+<!-- ### Using Tag Library Snippets -->
 
 ## Leveraging the Plugins SDK [](id=leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
-that work best for you. If you don't want to use Liferay IDE, we also provide a
-Plugins Software Development Kit (SDK), the Plugins SDK is based on Apache Ant,
-and can be used along with any editor or Integrated Development Environment
-(IDE). 
+that work best for you. If you don't want to use Liferay IDE, you can use
+Liferay's Plugins Software Development Kit (SDK) all by itself. The Plugins SDK
+is based on Apache Ant, and can be used along with any editor or Integrated
+Development Environment (IDE). 
  
-In this section we'll get you set up with the Plugins SDK, discuss its file
-structure and available ant targets, and share some best practices to help you
-get the most out of the Plugins SDK. 
+In this section, we'll explain how to set up a Plugins SDK. We'll also discuss
+its file structure and available Ant targets and share some best practices to
+help you get the most out of the Plugins SDK. 
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
@@ -1095,13 +1078,11 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
-the SDK is already installed and ready to use. Liferay Portal Enterprise
-Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs
-EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
-[free
-trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
-of Liferay Portal EE today. 
+ ![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
+ the SDK is already installed and ready to use. Liferay Portal Enterprise
+ Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
+ [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
+ of Liferay Portal EE today. 
 
 ---
 
@@ -1123,11 +1104,12 @@ Installation steps:
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
-Community Edition comes bundled with many plugins. It's common to remove them
-to speed up the server start-up. Just navigate to the
-`liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
-all its subdirectories except for `ROOT` and `tunnel-web`. 
+ ![Tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
+ Community Edition comes bundled with many plugins. It's common to remove them
+ to speed up the server start-up. Just navigate to the
+ `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
+ all its subdirectories except for `ROOT`, `marketplace-portlet`, and
+ `tunnel-web`. 
 
 ---
 
@@ -1141,12 +1123,12 @@ or higher) on your machine. Download the latest version of Ant from
 [http://ant.apache.org/](http://ant.apache.org/). Extract the archive's contents
 into a folder of your choosing. 
 
-Now that Ant is installed, set an `ANT_HOME` environment variable to your Ant
-installation location. Then put Ant's `bin` directory (e.g., `$ANT_HOME/bin`) in
-your path. We'll give you examples of doing this on Linux (Unix or Mac OS X) and
-Windows. 
+Now that Ant is installed, create an `ANT_HOME` environment variable to capture
+your Ant installation location. Then put Ant's `bin` directory (e.g.,
+`$ANT_HOME/bin`) in your path. We'll give you examples of doing this on Linux
+(Unix or Mac OS X) and Windows. 
 
-On Linux (Unix or Mac OS X), if your Ant installation directory is
+On Unix-like systems (Linux or Mac OS X), if your Ant installation directory is
 `/java/apache-ant-<version>` and your shell is Bash, set `ANT_HOME` and adjust
 your path by specifying the following in `.bash_profile` or from your terminal: 
 
@@ -1193,21 +1175,23 @@ Now that Ant is configured, let's set up your Plugins SDK environment.
 
 #### Plugins SDK Configuration [](id=plugins-sdk-configuration-liferay-portal-6-2-dev-guide-02-en)
 
-Now we have the proper tools, but we need to configure the Plugins SDK to deploy
-into your Liferay instance. The Plugins SDK contains a `build.properties` file
-that contains the default settings about the location of your Liferay
-installation and your deployment folder. You can use this file as a reference,
-but you shouldn't modify it directly (In fact, you will see the message "DO NOT
-EDIT THIS FILE" at the top if you open it). In order to override the default
-settings, create a new file named `build.[username].properties` in the same
-folder, where `[username]` is your user ID on your machine. For example, if your
-user name is jbloggs, your file name would be `build.jbloggs.properties`. 
+Now we have the proper tools set up. Next, we need to configure our Plugins SDK.
+It needs to know the location of our Liferay installation so it can compile
+plugins against Liferay's JAR files and can deploy plugins to your Liferay
+instance. The Plugins SDK contains a `build.properties` file that contains the
+default settings about the location of your Liferay installation and your
+deployment folder. You can use this file as a reference, but you shouldn't
+modify it directly (In fact, you will see the message "DO NOT EDIT THIS FILE" at
+the top if you open it). In order to override the default settings, create a new
+file named `build.[username].properties` in the same folder, where `[username]`
+is your user ID on your machine. For example, if your user name is jbloggs, your
+file name would be `build.jbloggs.properties`. 
 
 Edit this file and add the following lines: 
 
-    app.server.type=the name build.properties uses for your application server type
-    app.server.parent.dir=the directory containing your Liferay bundle
-    app.server.tomcat.dir=the directory containing your application server
+    app.server.type=[the name build.properties uses for your application server type]
+    app.server.parent.dir=[the directory containing your Liferay bundle]
+    app.server.tomcat.dir=[the directory containing your application server]
 
 If you are using Liferay Portal bundled with Tomcat 7.0.40 and your
 bundle is in your `c:/liferay-portal-6.2` folder, you'd specify the
@@ -1215,16 +1199,17 @@ following lines:
 
     app.server.type = tomcat
     app.server.parent.dir = c:/liferay-portal-6.2
-    app.server.tomcat.dir = ${app.server.parent.dir}/tomcat-7.0.40 
+    app.server.tomcat.dir = ${app.server.parent.dir}/tomcat-7.0.40
 
-Since we're using the Tomcat app server, we specified `tomcat` as our app server
-type and we specified the `app.server.tomcat.dir` property. See the Plugins
-SDK's `build.properties` for the name of the app server property that matches
-your app server. 
+<!-- Is there a reason for the space between the property names and property
+values above? -Jesse -->
 
-Save the file. 
+Since we're using the Tomcat application server, we specified `tomcat` as our
+app server type and we specified the `app.server.tomcat.dir` property. See the
+Plugins SDK's `build.properties` for the name of the app server property that
+matches your app server. 
 
-Next, let's consider the structure of the Plugins SDK. 
+Save the file. Next, let's consider the structure of the Plugins SDK. 
 
 ### Structure of the SDK [](id=plugins-sdk-directory-structure-liferay-portal-6-2-dev-guide-02-en)
 
@@ -1258,7 +1243,7 @@ type. Here is the directory structure of the Plugins SDK:
       referenced by each plugin type. 
 
 New plugins are placed in their own subdirectory of the appropriate plugin type.
-For instance, a new portlet called "greeting-portlet" would reside in
+For instance, a new portlet called *greeting-portlet* would reside in
 `liferay-plugins-[version]/portlets/greeting-portlet`. 
 
 There's an Ant build file called `build.xml` in each of the plugins
@@ -1294,11 +1279,11 @@ Liferay IDE.
 
 Navigate to the `portlets` folder of your Plugins SDK and follow these steps: 
 
-1.  In Linux and Mac OS X, enter
+1.  On Linux and Mac OS X, enter
 
         ./create.sh event-listing "Event Listing"
 
-2.  In Windows, enter
+2.  On Windows, enter
 
         create.bat event-listing "Event Listing"
 
@@ -1310,14 +1295,11 @@ appends "-portlet" to the project name when creating its directory.
 
 ![Figure 2.17: Creating the Event Listing Portlet.](../../images/02-terminal-build-success-plugins-sdk-project-create.png)
 
-<!--New image. If it stays we'll need to fix the figure numbers throughout the
-chapter. -->
-
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
- control system such as Subversion, CVS, Mercurial, Git, etc., this might be
- a good moment to do an initial check-in of your changes. After building the
+ ![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+ control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
+ good moment to do an initial check-in of your changes. After building the
  plugin for deployment, several additional files will be generated that should
  *not* be handled by the source control system. 
 
@@ -2806,6 +2788,15 @@ framework. You configured Maven locally, downloaded and installed the required
 Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
+
+Feeling confused by the number of features provided by Eclipse and Liferay IDE?
+You can easily come across difficult questions and run into very specific
+problems, but someone else might have already solved your issue or answered your
+question. So where would you go to find out? Don't reinvent the wheel, visit the
+[Liferay IDE Community page](http://www.liferay.com/community/liferay-projects/liferay-ide/overview)!
+On the *Forums* page, you can look up solutions to specific issues and ask
+questions. Be sure to fully describe any problems you have to ensure you get a
+working answer. You can even track known issues from the *Issue Tracker* page. 
 
 <!-- Missing transition into portlets chapter -->
 
