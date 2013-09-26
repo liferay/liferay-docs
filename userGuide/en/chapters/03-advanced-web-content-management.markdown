@@ -332,12 +332,12 @@ systematically to go along with the format we've defined for our content.
 3. Click on the *Add* button.
 4. Add the following fields:
 
-Field Type		        Variable Name
-----------		        -------------
-Text				    *title*
-Text Box		 	    *abstract*
-Documents and Media     *image*
-Text Area		        *body*
+	| Field Type | &nbsp;Variable Name |
+	--------- | ---------- |
+	Text  | &nbsp;`title` |
+	Text Box | &nbsp;`abstract` |
+	Documents and Media | &nbsp;`image` |
+	Text Area | &nbsp;`body` |
 
 5.  Name the structure *News Article* and click *Save*.
 6.  Back on the Manage Structures interface, click *Actions* &rarr; *Manage
