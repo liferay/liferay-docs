@@ -370,12 +370,12 @@ interface.
 3. Click on the *Add* button.
 4. Name the structure *News Article* and add the following fields:
 
-| Field Type | &nbsp;Field Label | &nbsp;Name |
---------- | ---------- | ---------- |
- Text  | &nbsp;Title | &nbsp;`title` |
- Text Box | &nbsp;Abstract | &nbsp;`abstract` |
- Image | &nbsp;Image | &nbsp;`image` |
- HTML | &nbsp;Body | &nbsp;`body` |
+	| Field Type | &nbsp;Field Label | &nbsp;Name |
+	--------- | ---------- | ---------- |
+	Text  | &nbsp;Title | &nbsp;`title` |
+	Text Box | &nbsp;Abstract | &nbsp;`abstract` |
+	Image | &nbsp;Image | &nbsp;`image` |
+	HTML | &nbsp;Body | &nbsp;`body` |
 
 5. Click *Save*.
 6. In the Manage Structures interface, click *Choose* next to the News Article
