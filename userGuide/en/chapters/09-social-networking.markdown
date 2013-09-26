@@ -640,7 +640,7 @@ key and secret given by the service provider.
    the Control Panel and click on *OpenSocial Gadget Publisher* under the
    *Apps* heading. Click *Publish Gadget* and insert the Twitter Demo URL:
 
-        https://cdhoag-liferay.googlecode.com/git/Twitter.xml
+        https://raw.github.com/dejuknow/opensocial-gadgets/master/Twitter/Twitter.xml
 
 2. Click *Save*
 
