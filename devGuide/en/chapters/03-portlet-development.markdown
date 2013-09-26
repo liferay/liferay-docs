@@ -398,9 +398,12 @@ My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`. If your
 portlet, add it. Here's what it looks like: 
 
     <portlet>
-        ...
+        <portlet-name>my-greeting</portlet-name>
+        <icon>/icon.png</icon>
         <instanceable>false</instanceable>
-        ....
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <css-class-wrapper>my-greeting-portlet</css-class-wrapper>
     </portlet>
 
 Now we'll create our JSP templates. Start by editing `view.jsp`, found in your
