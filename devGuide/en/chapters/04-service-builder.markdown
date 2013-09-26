@@ -150,9 +150,9 @@ Ehcache as an underlying cache provider for each of these cache levels but this
 is configurable via portal properties. All you have to do to enable entity and
 finder caching for an entity in your project is to set the `cache-enabled=true`
 attribute of your entity's `<entity>` element in your `service.xml`
-configuration file. Please refer to the [Liferay User
-Guide](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-clusteri-2)
-for more details about Liferay caching.
+configuration file. Please refer to the [Liferay
+Clustering](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-clustering-liferay-portal-6-2-user-guide-20-en)
+section of *Using Liferay Portal 6.2* for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
 associated with creating database persistence code but it doesn't prevent you
@@ -200,8 +200,8 @@ page.
  is only intended to demonstrate how to use Service Builder. The Calendar
  portlet provides many more features than the simple example application
  described here. For information about the Calendar portlet, please refer to
- the chapter on Liferay's collaboration suite in [Using Liferay
- Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide).
+ the chapter on Liferay's collaboration suite in [*Using Liferay
+ Portal 6.2*](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide).
 
 ---
 
