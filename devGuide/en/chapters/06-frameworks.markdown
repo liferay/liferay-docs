@@ -72,8 +72,8 @@ This chapter covers the following topics:
 
 - ServiceContext
 - Security and Permissions
-- Assets Framework
-- Using Message Bus
+- Asset Framework
+- Message Bus
 - Device Detection
 
 <!-- - Social Activities (Add this above Device Detection) -->
@@ -174,7 +174,7 @@ end class which has access to the `PortletRequest`, use one of the
 The above example looks different if you invoke the service from a servlet: 
 
     ServiceContext serviceContext =
-        ServiceContextFactory.getInstance(BlogsEntry.class.getName(),portletRequest);
+        ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
     BlogsEntryServiceUtil.addEntry(..., serviceContext);
 
 You can see an example of populating a `ServiceContext` with information from a
@@ -192,9 +192,9 @@ Since our API can be invoked from JavaScript, you're sometimes required to pass
 the `ServiceContext` from JavaScript to the server. This can be done by passing
 the `ServiceContext` as any other JavaScript object. There are many examples of
 this in the JavaScript code of Liferay's portlets. Here's an example from
-`[liferay-portal]/portal-web/html/portlet/journal/js/main.js` that demonstrates
-using `ServiceContext` in calling the `updateStructure` method of the
-`JournalStructure` service: 
+`[liferay-portal]/portal-web/docroot/html/portlet/journal/js/main.js` that
+demonstrates using `ServiceContext` in calling the `updateStructure` method of
+the `JournalStructure` service: 
 
     var instance = this;
 
@@ -248,7 +248,7 @@ JavaScript, you're already on the front-end. What this is is an alternative to
 JavaScript, by using tags. We should flesh this out and have a full example, not
 point to some file in Liferay. -Rich -->
 
-Next let's see an example of accessing information from a `ServiceContext`. 
+Next, let's see an example of accessing information from a `ServiceContext`. 
 
 ### Accessing Service Context Data [](id=accessing-service-context-data-liferay-portal-6-2-dev-guide-06-en)
 
@@ -284,7 +284,7 @@ Here are the corresponding code snippets:
     }
 
 Can `ServiceContext` be used to access the UUID of the blog entry? Absolutely!
-Can you use `ServiceContext` to set the time the blog entry was added? Sure you
+Can you use `ServiceContext` to set the time the blog entry was added? You sure
 can. See here: 
 
     entry.setUuid(serviceContext.getUuid());
@@ -321,7 +321,7 @@ asset entries too.
         serviceContext.getAssetLinkEntryIds());
 
 Does `ServiceContext` also play a role in starting a workflow instance for the
-blogs entry? Must you Ask? 
+blogs entry? Must you ask? 
 
     // Workflow
 
@@ -351,11 +351,11 @@ Let's look at Liferay's permissions system next.
 
 ## Security and Permissions [](id=security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
 
-The Java portlet standard defines a simple security scheme using portlet roles and
-their mapping to portal roles. On top of that, Liferay provides a fine-grained
-permissions system you can use to implement access security in your custom
-portlets. Here we'll give an overview of the standard Java security system,
-Liferay's permission system, and how to use them in your own portlets. 
+The Java portlet standard defines a simple security scheme using portlet roles
+and their mapping to portal roles. On top of this, Liferay provides a
+fine-grained permissions system that you can use to implement access security in
+your custom portlets. Here, we'll give an overview of the standard Java security
+system, Liferay's permission system, and how to use them in your own portlets. 
 
 ### JSR Portlet Security [](id=jsr-portlet-security-liferay-portal-6-2-dev-guide-06-en)
 
