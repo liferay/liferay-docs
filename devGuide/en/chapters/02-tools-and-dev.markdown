@@ -366,12 +366,22 @@ select the type of plugins it will hold.
 
     ![Figure 2.5: The wizard for creating a new portlet project spans multiple wizards. The wizard uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
+<!--
+I think we should go through the entire new Liferay portlet project wizard
+at this point and create the Event Listing portlet. If we don't, Liferay IDE
+still creates configuration files, such as portlet.xml, liferay-display.xml and
+liferay-portlet.xml with event-listing portlet entries in them. I'd suggest
+moving the instructions from the 'Creating Portlets' section below to up here.
+The instructions for creating the Location Listing portlet can remain in the
+'Creating Portlets' section since those instructions show how to add portlet to
+an existing portlet project. -Jesse, 9/26/2013
+-->
+
 Note: We're creating the event-listing-portlet project now so that we can
-highlight how Liferay IDE simplifies project creation. However, we don't
-actually create any portlets in the project. For information on creating
-portlet, please see the chapter of this guide on portlets. Similarly, for more
-information on themes, layout templates, hooks, or Ext plugins, please refer to
-the appropriate chapter of this guide.
+highlight how Liferay IDE simplifies project creation. For more information on
+creating portlets, please see the chapter of this guide on portlets. Similarly,
+for more information on themes, layout templates, hooks, or Ext plugins, please
+refer to the appropriate chapter of this guide.
 
 Our *event-listing-portlet* plugin project should appear in the Eclipse package
 explorer. The project was created in the plugins SDK you configured, under the
@@ -457,80 +467,76 @@ Once you're logged in, click *Add* &rarr; *More*; expand the *Sample* category
 and click the *Add* link next to your Event Listing application. You should see
 the correctly deployed portlet on the page. 
 
-Great, you can create projects in Liferay IDE! Let's find out how to import
-existing projects into Liferay IDE. 
+Great, now you can create projects in Liferay IDE! Next, let's how to create
+plugins inside of existing projects in Liferay IDE. 
 
 ### Creating Plugins [](id=creating-plugins-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay projects can contain multiple plugins. When you specify that your
 project is a portlet plugin project, the wizard guides you through the creation
-of a portlet to put inside the project. Here, though, we'll describe the
-process as if you have an empty plugin project. We'll illustrate the
-generalized process for creating plugins inside a project, and then we'll
-create the Event Listing portlet and the Location Listing portlet.  These
+of a portlet to put inside the project. If you've followed the instructions in
+the chapter so far, you should already have created the event-listing-portlet
+project and created the Event Listing portlet inside it. In this section we'll
+add a second portlet to the event-listing-portlet project: the Location Listing
+portlet. This illustrates the general process for creating plugins inside of an
+existing Liferay project. When complete, the Event Listing and Location Listing
 portlets will allow users to add, edit, or remove events or locations, display
 lists of events or locations, search for particular events or locations, and
-view the details of individual events or locations. We'll start by creating the
-Event Listing portlet in a new portlet plugin project. 
+view the details of individual events or locations.
 
-Now your Liferay IDE contains a plugin project with the skeleton of the Event
-Listing portlet.  Along with the Event Listing portlet, let's create a Location
-Listing porlet inside the same project: 
+Your Liferay IDE should now contain a plugin project with the skeleton of the
+Event Listing portlet. Now let's create a Location Listing portlet inside the
+same project.
 
-<!-- Mention the event-listing-portlet-project we created in the section on 
-creating new Liferay projects.
+<!--
+Move the instructions below on creating the Event Listing portlet to the
+section above where we cover the new Liferay portlet project wizard. These steps
+should be modified and appended to the instructions for going through the new
+Liferay portlet project wizard. -Jesse, 9/26/2013
+-->
 
-Explain the purpose of the Event Listing and Location Listing portlets. You can
-move any helpful content from the Service Builder chapter on these portlets.
-(See Configuring Service Builder and Defining Portlet Data section) 
+Use the following steps to create the Event Listing portlet:
 
-Create the Event Listing portlet first and use it to point out all of the
-wizard's features and the end results it produces. The example portlets are
-required to have certain values; so we'll need to provide those values for the
-reader to enter. 
-
-See Chapter 4's Configuring Service Builder and Defining Portlet Data section.
-The section gives the wizard field values briskly, but comprehensively. Let's
-make sure the reader enters those values here too. Present them in a manner that
-seems best to you. 
-
-We can express to the reader that we'll go into more detail on the portlet
-fields in Chapter 3. - Jim -->
-
-1. Go to File &rarr; New  &rarr; Liferay Portlet. 
+1. Click on *File* &rarr; *New* &rarr; *Liferay Portlet*. 
 
     Alternatively, right click on your `event-listing-portlet` project in
-    Liferay IDE's *Package Explorer*, and select *New* &rarr; *Liferay
+    Liferay IDE's *Package Explorer* and select *New* &rarr; *Liferay
     Portlet*. 
 
-2. The *New Liferay Portlet* dialog box will appear, with your newly created
+2. The *New Liferay Portlet* dialog box appears with your newly created
 plugin project *event-listing-portlet* selected as the *Portlet plugin project*
-by default. We recommend naming your *Portlet class* after the name of your
+by default. It's a good idea to name your *Portlet class* after the name of your
 portlet. We'll name the class *EventListingPortlet* in this example. We'll
 name our *Java package* after the plugin's parent project, so it will be
-*com.nosester.portlet.eventListing* for our example. We'll leave the
+*com.nosester.portlet.eventlisting* for our example. We'll leave the
 *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you
 could have selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
 *javax.portlet.GenericPortlet* for your superclass. 
 
     Click *Next*.
 
-3. In the Next window of the *New Liferay Portlet* wizard, you'll specify
-deployment descriptor details for your portlet. First enter the *Name* of your
-portlet--in our example this will be *eventlisting*. Subsequently enter the
-portlet's *Display name* and *Title*; we'll specify both as *Location Listing
-Portlet*. Also in this window you can specify which portlet modes youd like
-your portlet to have. *View* mode is automatically selected. Click *Next*.
+3. In the next window of the *New Liferay Portlet* wizard, you'll specify
+   deployment descriptor details for your portlet. First enter the *Name* of
+   your portlet--in our example, this will be *eventlisting*. Next, enter the
+   portlet's *Display name* and *Title*; we'll specify both as *Event Listing
+   Portlet*. In this window, you can also specify which portlet modes you'd like
+   your portlet to have. *View* mode is automatically selected. There are also
+   options for creating resources: you can specify the folder where JSP files
+   will be created as well as whether or not a resource bundle file will be
+   created. We'll leave the *Create JSP files* box flagged, accept the default
+   JSP folder, and flaf the *Create resource bundle file* box. Click *Next*.
 
-4. In the next window, set the location for your portlets custom icon, CSS,
-and JavaScript. You can also choose the category for your portlet (it's
-categorized under *Sample* by default), and add it to the *Control Panel* of
-your Liferay Portal. Click *Next*. 
+4. In the next window, you can set the location for your portlet's custom icon,
+   CSS, and JavaScript files. You can also specify a CSS class wrapper. Next,
+   you can also choose the category for your portlet (it's categorized under
+   *Sample* by default), and choose whether or not to add it to the *Control
+   Panel* of your Liferay Portal. Accept the default, leaving the *Add to
+   Control Panel* box unflagged and click *Next*.
 
 5. The last step is to specify modifiers, interfaces, and method stubs to
-generate in the Portlet class. Once you're done, click *Finish*. 
+   generate in the Portlet class. Accept the defaults and click *Finish*. 
 
-![Figure 2.7: Liferay IDE's portlet creation wizard.](../../images/ide-portlet-plugin-wizard-1.png)
+![Figure 2.7: You can use Liferay IDE's portlet creation wizard either when creating a new portlet project or when adding a portlet to an existing project.](../../images/ide-portlet-plugin-wizard-1.png)
 
 By default, new portlets use the MVCPortlet framework, a light framework that
 hides part of the complexity of portlets and makes the most common operations
@@ -549,7 +555,7 @@ Here's a brief description of how you can create this portlet in the
 `event-listing-portlet` plugin project:
 
 1. Right click the `event-listing-portlet` project in Liferay IDE's package
-explorer. Select New  &rarr; Liferay Portlet.
+explorer. Select *New*  &rarr; *Liferay Portlet*.
 
 2. Use the plugin creation wizard to specify these values:
     - **Portlet class**: *LocationListingPortlet*
@@ -563,15 +569,13 @@ explorer. Select New  &rarr; Liferay Portlet.
     - **Create resources bundle file**: *yes*
     - **Category**: *Sample*
 
-3. Click Finish and deploy the Location Listing portlet to your Liferay Portal.
+3. Click *Finish* and deploy the Location Listing portlet to your Liferay
+   Portal.
 
-Next we'll show you how our Service Builder tool helps you generate your model,
-persistence, and serivce layers. 
+Next, we'll show you how our Service Builder tool helps you generate your model,
+persistence, and service layers. 
 
 ### Using the Service Builder Graphical Editor [](id=service-builder-graphical-editor-liferay-portal-6-2-dev-guide-02-en)
-
-<!-- Please move this section just after Creating Plugins. It's an exciting
-feature that would dovetail nicely after creating your plugin. - Jim -->
 
 *Loose coupling* is a great principle to use when developing your applications.
 By keeping all of your code for fetching data self contained in a service
@@ -608,21 +612,7 @@ gives you a *Build Services* button to generate the service layer.
 
 - Source mode displays the raw XML content of the `service.xml` file.
  
-![Figure 2.8: Service Builder's overview mode and *Build Services* button.](../../images/service-xml-entities-overivew.png)
-
-<!--
-Please describe Overview, Diagram, and Source modes of the graphical editor.
-
-Let's add a good svc builder screenshot maximizing stuff you can talk to.
-Here's one from Overview mode that shows entities and highlihghts the Build
-Services button (which I've highlighted in red). The image is at
-images/service-xml-entities-overivew.png
-
-Also, please include (if we can take another image, maybe at bottom of section),
-show Diagram mode - see images/service-builder-relate-entities.png
-
--Jim
--->
+![Figure 2.8: Liferay IDE provides an overview view of `service.xml` which allows you to edit the file by drilling down through a menu and editing form fields instead of editing the XML directly. It also provides a *Build Services* button for running Service Builder.](../../images/service-xml-entities-overview.png)
 
 With Liferay IDE, generating your service layer is easy. First you'll create
 `service.xml`, by selecting your project (`event-listing-portlet` if you're
@@ -635,43 +625,35 @@ Our Service Builder chapter of this guide will lead you through filling out
 
 - Global service information
 - Service entities
-- The attriubtes for each service entity
+- The attributes for each service entity
 - Relationships between service entities
 - Ordering of service entities instances
 - Service entity finder methods
 
-In the Service Builder chapter of this guide we'll show you how two custom
+In the Service Builder chapter of this guide, we'll show you how our two custom
 portlets, the Events Listing Portlet and the Location Listing Portlet, can be
 developed more efficiently and modularly by using Service Builder. We'll
 describe the contents of `service.xml` in detail, and get you started using
 Service Builder to develop your custom applications using our code generation
 tool. And if *code generator* is a bad word to you, let us assure you that
 Liferay always gives you full control over all your code, including code
-generated by Serivce Builder. 
+generated by Service Builder. 
 
-![Figure 2.9: Service Builder's overview mode and *Build Services* button.](../../images/service-builder-relate-entities.png)
+![Figure 2.9: Liferay IDE provides a diagram view of `service.xml` which provides a visual aid to understanding the relationships between service entities.](../../images/service-builder-relate-entities.png)
 
-Once you've generated your `service.xml`, you can build services. In Overview
-mode of `service.xml`, there's a button available at the top right hand corner
-of the window. The button looks like a document with the numerical sequence
-*010* in front of it. Alternatively, right click on your project and select
-*Liferay* &rarr; *Build Services*. Once the process is finished, you'll see a
-plethora of new Java classes under`docroot/WEB-INF/src` in your project that
-Service Builder generated for you. Now get out there and write your business
-logic, but do checkout o9ur Service Builder chapter for a thoruough description
-of its capabilities. 
+Once you've generated your `service.xml`, you can build services. When viewing
+`service.xml` in overview mode, there's a button available at the top right hand
+corner of the window. The button looks like a document with the numerical
+sequence *010* in front of it. Alternatively, right click on your project and
+select *Liferay* &rarr; *Build Services*. Once the process is finished, you'll
+see a plethora of new Java classes under`docroot/WEB-INF/src` in your project
+that Service Builder generated for you. Now you can get out there and write your
+business logic, but make sure to check out the Service Builder chapter of this
+guide for a thorough description of its capabilities. 
 
-<!-- Need to add a screenshot and talk to it. - Jim --> 
-<!-- Okay I added to this section, and I think it's ready for review. The
-screenshots have been added but I'm not sure I've adequately referenced and
-used them. I'm trying to give a flyover of Service Builder and how easy it is
-to generate the service layer using it, in order to peak the interest of thew
-reader to go check out the real meat in the Serfice Builder chapter itself.
--Russ -->
-
-Now you know how to create projects and plugins from scratch, and you know
-about Service Builder's nearly-magical time-saving capabilities. Let's learn
-how to import existing projects into Liferay IDE.
+Now you know how to create projects and plugins from scratch and you know about
+Service Builder's amazing time-saving capabilities. Let's learn how to import
+existing projects into Liferay IDE.
 
 ### Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-portal-6-2-dev-guide-02-en)
 
@@ -681,7 +663,7 @@ to recreate them.
 
 We'll cover the following import scenarios: 
 
-1.  Importing existing Liferay projects from the Plugins SDK. 
+1.  Importing existing Liferay projects from a Plugins SDK. 
 
 2.  Importing Eclipse projects that aren't in Liferay IDE (i.e., don't have
     the Liferay facet or target runtime).
@@ -694,45 +676,45 @@ We'll cover the following import scenarios:
 Let's start by learning how to import existing Liferay projects from Liferay
 PLugins SDK. 
 
-#### Importing Existing Liferay Projects from the Plugins SDK [](id=importing-existing-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
+#### Importing Existing Liferay Projects from a Plugins SDK [](id=importing-existing-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
 
-You can import Liferay projects you created with the Plugins SDK, but aren't
-yet in your Liferay IDE Eclipse workspace. These projects might already have
-`.project` or `.classpth` files in them; regardless, we'll use the same
+You can import Liferay projects that have been created with the Plugins SDK, but
+aren't yet in your Liferay IDE Eclipse workspace. These projects might already
+have `.project` or `.classpath` files in them; regardless, we'll use the same
 procedure to import them. 
 
-Do you want to create one project, or multiple projects, from your PLugins SDK?
-You can do either, and we'll show you how below. Any time you import a project
-into Liferay IDE, verify that it was successfully configured as a Liferay IDE
-project by using the process outlined in the section following the import
-instructions. 
+Do you want to import one project, or multiple projects, from your Plugins SDK?
+It's easy to import Liferay project into Liferay IDE. Any time you import a
+project into Liferay IDE, you can verify that it was successfully configured as
+a Liferay IDE project by using the process outlined in the section below called
+*Verifying Successful Project Import*. 
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** This section assumes that
-you've created projects with the Plugins SDK and are familiar with the
-directory structure used by the Plugins SDK. If you haven't and if you aren't,
-check out the *Plugins SDK* section of this chapter; it comes right after this
-section. 
+ ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
+ you've created projects with the Plugins SDK and are familiar with the
+ directory structure used by the Plugins SDK. If you need to, check out the
+ *Plugins SDK* section of this chapter; it comes right after this section. 
 
 ---
 
-First let's look at the import steps needed for creating a single Liferay IDE
-project from a Plugins SDK project: 
+First, let's look at the steps for importing a single Liferay IDE project from a
+Plugins SDK project: 
 
 1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
     *Liferay* &rarr; *Liferay Project from Existing Source*. 
 
     You can invoke the same wizard from the Liferay shortcut bar; just click
-    the *Create a New Liferay Project* button.
+    the *New* button and select *Liferay Project from Existing Source*.
 
-    ![Figure 2.10: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
+    ![Figure 2.10: Instead of clicking *File* &rarr; *New*, you can click on the *New* button on the shortcut bar.](../../images/ide-new-proj-existing-source.png)
 
-2.  Browse to your project folder. It should be a subdirectory of one of the
-    plugin types (e.g., portlets, hooks, themes, etc) or it won't import
-    correctly. Once you select the plugin project folder, its type and SDK
-    version values are updated to the correct values. If the SDK isn't recent
-    enough or the project type is incorrect, it's marked with an error. 
+2.  In the Plugins SDK, browse to the project folder of the project you'd like
+    to import. It should be a subfolder of one of the plugin type folders (e.g.,
+    portlets, hooks, themes, etc) or it won't import correctly. Once you select
+    the plugin project folder, its type and SDK version values are updated to
+    the correct values. If the SDK isn't recent enough or the project type is
+    incorrect, it's marked with an error. 
 
 3.  After you select the plugin project folder, the *Liferay plugin type* and
     *Liferay plugin SDK version* values are updated. If your Plugins SDK is
@@ -746,27 +728,29 @@ project from a Plugins SDK project:
 5.  Click *Finish* to perform the import. 
 
 Remember to verify that your project was configured correctly as a Liferay IDE
-project. Verification is described right after our next topic, which is making
-multiple Liferay IDE projects from a single Plugins SDK. 
+project. We descibe the verification process in the section below called
+*Verifying Successful Project Import*. Before we discuss verification, let's
+discuss how to import multiple projects into Liferay IDE from a single Plugins
+SDK. 
 
-Next we'll show you how to import all your Plugins SDK into multiple Liferay
-IDE projects. You can use these steps: 
+Next we'll show you how to import all the projects from a Plugins SDK into
+Liferay IDE. You can use these steps: 
 
-1.  In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
+1.  In Eclipse, go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
     Projects from Plugins SDK*. 
 
-    ![Figure 2.11: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
+    ![Figure 2.11: To import projects from a Plugins SDK, choose *Liferay Projects from Plugins SDK* from the Import menu.](../../images/ide-import-from-plugin-sdk.png)
 
-2.  In the *Import Projects* window, use the combo box to select the *Liferay
-    Plugins SDK* you're importing plugins from. 
+2.  In the *Import Liferay Projects* window, use the combo box to select the
+    *Liferay Plugins SDK* you're importing plugins from. 
 
     ---
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
+    ![Note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
     configured in Liferay IDE (i.e., it's not in the dropdown list of the
-    *Import Projects* window), use the *Configure* link to add one. To
-    configure a Plugins SDK on the Installed SDKs on the pref page just click
-    *Add* and then Browse to the directory of the Plugins SDK root directory.
+    *Import Projects* window), use the *Configure* link to add one. To configure
+    a Plugins SDK from the Installed SDKs window, just click *Add* and then
+    browse to the Plugins SDK's root directory.
 
     ---
 
@@ -774,7 +758,7 @@ IDE projects. You can use these steps:
     Location* and *Liferay Plugin SDK Version* fields are automatically filled
     in, as long as they're valid. Invalid entries are marked with an error. 
 
-4.  The list of projects that are available for import are displayed in a table.
+4.  The list of projects that are available for import are displayed in a list.
     Any projects already in the workspace are disabled. Projects available for
     import have an empty check box; select each project you'd like to import. 
 
@@ -785,27 +769,28 @@ IDE projects. You can use these steps:
 
 7.  Click *Finish*. 
 
-Your plugins are imported! Now skip to the end of this section to verify that
-they were configured correctly as Liferay IDE projects. We'll talk about a
-different import scenario next; importing existing eclipse projects into Liferay
-IDE. 
+Your plugins are now imported! To learn how to verify that your projects were
+correctly configured as Liferay IDE projects, skip to the section below called
+*Verifying Successful Project Import*. Next, we'll discuss a different import
+scenario; importing existing Eclipse projects into Liferay IDE. 
 
-#### Importing Existing Eclipse Projects into Liferay IDE [](id=importing-existing-eclipse-projects-into-liferay-portal-6-2-dev-guide-02-en)
+#### Converting Existing Eclipse Projects into Liferay IDE Projects [](id=importing-existing-eclipse-projects-into-liferay-portal-6-2-dev-guide-02-en)
 
-The steps we outlined above let you import projects not already in an Eclipse
-workspace. If you have a project in your Eclipse workspace (i.e., you can see it
-in Eclipse's project explorer) that you'd like to import to Liferay IDE, follow
-the import steps below to convert your project. 
+The steps outlined above are for importing Liferay projects that aren't already
+in an Eclipse workspace. If you have a non-Liferay project in your Eclipse
+workspace (i.e., you can see it in Eclipse's project explorer) that you'd like
+to convert to a Liferay project, follow the steps below. 
 
-1.  In Eclipse, right-click the project in your Project Explorer, and select
+1.  In Eclipse, right-click on the project in your Project Explorer, and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
     ---
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
-    action available it means either that the project is already a Liferay IDE
-    project, or that it is not faceted (i.e., Java and Dynamic Web project facets
-    are not yet configured). Configure accordingly before moving on. 
+    ![Note](../../images/tip-pen-paper.png) **Note:** If you don't have a
+    convert action available it means either that the project is already a
+    Liferay IDE project, or that it is not faceted (i.e., Java and Dynamic Web
+    project facets are not yet configured). Configure accordingly before
+    proceeding. 
 
     ---
 
@@ -813,7 +798,7 @@ the import steps below to convert your project.
     location and SDK version should be detected automatically. If they aren't
     valid, an error message is displayed. 
 
-    ![Figure 2.12: Converting a project](../../images/ide-convert-plugin-project.png)
+    ![Figure 2.12: To convert an existing project into a Liferay project, it must first be moved into a Liferay Plugins SDK. Once this is done, The *Convert Project* wizard detects the Plugins SDK when you select the project.](../../images/ide-convert-plugin-project.png)
 
 3.  Select the Liferay runtime to use for the project. If you don't have a
     Liferay Runtime defined, do so now by clicking *New...*. 
@@ -821,14 +806,14 @@ the import steps below to convert your project.
 4.  Click *Finish*. 
 
 Remember to verify that your import was successful and that your project was
-configured correctly as a Liferay IDE project; the last subsection in this topic
-will show you how. We have one more import scenario to cover--importing existing
-Liferay IDE projects into your Liferay IDE. 
+configured correctly as a Liferay IDE project; the *Verifying Successful Project
+Import* section below explains how to do this. We have one more import scenario
+to cover--importing existing Liferay projects into Liferay IDE. 
 
-#### Importing an Existing Liferay IDE Project [](id=importing-existing-liferay-ide-projects-liferay-portal-6-2-dev-guide-02-en)
+#### Importing Existing Liferay Projects Into Liferay IDE[](id=importing-existing-liferay-ide-projects-liferay-portal-6-2-dev-guide-02-en)
 
-What if you had a Liferay IDE project in your workspace, but it's not there
-anymore? Here's how you can import it into your current workspace: 
+What if you had a Liferay IDE project in your workspace that was removed? Here's
+how you can re-import it into your current workspace: 
 
 1.  Open Liferay IDE, go to *File* &rarr; *Import* ... &rarr; *General* &rarr;
     *Existing Projects into Workspace*. 
@@ -837,21 +822,21 @@ anymore? Here's how you can import it into your current workspace:
 
 3.  Select the directory of the Liferay IDE project to import. 
 
-4.  In the *Projects:* list you should see your Liferay IDE project. 
+4.  In the *Projects:* list, you should see your Liferay IDE project. 
 
 5.  Click *Finish*. 
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** There are two common errors
-that occur when importing existing Liferay IDE projects into your workspace:
+ ![Note](../../images/tip-pen-paper.png) **Note:** There are two common errors
+ that occur when importing existing Liferay IDE projects into your workspace:
 
-- The SDK name used in that project doesn't exist in your new workspace. 
-- The runtime id used doesn't exist in your new workspace. 
+ - The SDK name used in that project doesn't exist in your new workspace. 
+ - The runtime id used doesn't exist in your new workspace. 
 
-You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
-window; you can modify the targeted runtime in the *Project properties* &rarr;
-*Targeted Runtimes* dialog window. 
+ You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
+ window; you can modify the targeted runtime in the *Project properties* &rarr;
+ *Targeted Runtimes* dialog window. 
 
 ---
 
@@ -867,23 +852,18 @@ projects. Here's how you verify that your imports were successful:
 1.  Once the project is imported, you should see a new project inside Eclipse
     and it should have an "L" overlay image; the "L" is for Liferay! 
 
-    ![Figure 2.13: Verifying that the import succeeded](../../images/ide-liferay-project-w-overlay-image.png)
+    ![Figure 2.13: Look for an "L" overlay image to verify that the import succeeded.](../../images/ide-liferay-project-w-overlay-image.png)
 
-2.  Let's check the project's target runtime and facets to make sure it's
-    configured as a *Liferay IDE* project:
-
-    <!--
-    Inform the user that he should configure it's runtime and facet if not
-    already configured - Jim
-    -->
+2.  Check the project's target runtime and facets to make sure it's configured
+    as a *Liferay IDE* project:
 
     2.1. In the *Package Explorer*, right click *<project-name>* &rarr;
          *Properties* &rarr; *Targeted Runtimes*. 
 
-    2.2. In the *Properties* window, click *Project Facets* and make sure both
-         Liferay runtime and Liferay plugin facets are properly configured. 
+    2.2. In the *Properties* window, click *Project Facets* and make sure that
+    the Liferay plugin facets are properly configured. 
 
-    ![Figure 2.14: Project Facets](../../images/ide-project-facets.png)
+    ![Figure 2.14: Make sure that your project's Liferay plugin facets are properly configured.](../../images/ide-project-facets.png)
 
 Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
@@ -901,9 +881,9 @@ Remote Server Adapter:
 
 - It is version 6.1 or later. 
 - It has the Remote IDE Connector application installed from Liferay
-  Marketplace. Remote IDE Connector contains the `server-manager-web` plugin for
-  Liferay that provides an API for Liferay IDE's Remote Server Adapter to use
-  for all its remote operations. 
+  Marketplace. The Remote IDE Connector contains the `server-manager-web` plugin
+  for Liferay that provides an API for Liferay IDE's Remote Server Adapter to
+  use for all its remote operations. 
 
 The Remote Server Adapter lets developers deploy local projects to a remote
 development server for testing purposes--this is its primary use case. If you're
@@ -918,18 +898,14 @@ to apply plugin updates and fixes.
 To start deploying projects to a remote server, you'll need to download and
 install the following resources on your local development machine:
 
-- Download [Liferay
-  IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
-  Liferay's downloads page or download [Liferay Developer
-  Studio](http://www.liferay.com/group/customer/products/developer-studio/1.6)
-  from the Customer Portal.
-- Download [Liferay Portal CE or
-  EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to
-  your local development machine. 
+- Download [Liferay IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
+from Liferay's downloads page or download [Liferay Developer Studio](http://www.liferay.com/group/customer/products/developer-studio/1.6)
+from the Customer Portal.
+- Download [Liferay Portal CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
+to your local development machine. 
 
-You'll need to download [Liferay Portal CE or
-EE](http://www.liferay.com/downloads/liferay-portal/available-releases) to your
-remote (test) server as well. 
+You'll need to download [Liferay Portal CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
+to your remote (test) server as well. 
 
 Our demonstration uses the Remote Server Adapter on Liferay Portal bundled with
 Apache Tomcat, but you can use the adapter with Liferay Portal running on any
@@ -939,10 +915,10 @@ server to host the plugins you'll deploy to it.
 
 ---
 
-![important](../../images/tip-pen-paper.png) **Important:** Keep a record of
-your portal administrator login credentials (e.g., username/password) for your
-remote Liferay server; you'll need them to configure your connection from
-Liferay IDE to the remote Liferay server. 
+ ![Important](../../images/tip-pen-paper.png) **Important:** Keep a record of
+ your portal administrator login credentials (e.g., username/password) for your
+ remote Liferay server; you'll need them to configure your connection from
+ Liferay IDE to the remote Liferay server. 
 
 ---
 
@@ -956,8 +932,8 @@ instance. Alternatively, you can install the Remote IDE Connector to your remote
 Liferay instance before configuring Liferay IDE's Remote Server Adapter. To
 configure the Remote Server Adapter, use the following steps:
 
-1.  Start your remote Liferay Portal instance--verify that you can log in as an
-    administrator. 
+1.  Start your remote Liferay Portal instance and verify that you can log in as
+    an administrator.
 
 2.  Launch Liferay IDE and open the new server wizard by clicking *File* &rarr;
     *New* &rarr; *Other*; select *Server* in the Server category and click
@@ -966,9 +942,9 @@ configure the Remote Server Adapter, use the following steps:
 
 3.  Enter the IP address of the machine with the remote Liferay Portal instance
     into the *Server's host name* field. For the *Server name*, enter
-    *Liferay@[IP address]*, then click *Next*. 
+    *Liferay@\[IP address\]*, then click *Next*. 
 
-    ![Figure 2.15: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
+    ![Figure 2.15: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
 
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
