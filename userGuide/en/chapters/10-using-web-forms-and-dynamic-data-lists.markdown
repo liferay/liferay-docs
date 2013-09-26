@@ -68,7 +68,7 @@ You now have a `list.it` account and have been dying to bug your friends and
 family to sign up for "volunteer" work: helping you move into a new apartment.
 Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
-for your site, you can find them in the Content section Site Administration are
+for your site, you can find them in the Content section Site Administration area
 of the Control Panel. To manage the dynamic data lists of your site, click
 *Admin* from the Dockbar and select *Content*. Then click on *Dynamic Data
 Lists*.
