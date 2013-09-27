@@ -546,7 +546,7 @@ Use the following steps to create the Event Listing portlet:
     There are also options for creating resources: you can specify the folder
     where JSP files will be created as well as whether or not a resource bundle
     file will be created. We'll leave the *Create JSP files* box flagged,
-    specify *html/lcoationlisting* as the JSP folder, and flag the *Create
+    specify *html/locationlisting* as the JSP folder, and flag the *Create
     resource bundle file* box. Click *Next*. 
 
     ![Figure 2.7: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
