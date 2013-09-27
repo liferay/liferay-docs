@@ -178,11 +178,11 @@ Congratulations, you've just created your first portlet!
 
 A portlet project is made up of at least three components:
 
-1.  Java Source. 
+1. Java Source. 
 
-2.  Configuration files. 
+2. Configuration files. 
 
-3.  Client-side files (`.jsp`, `.css`, `.js`, graphics files, etc.). 
+3. Client-side files (`.jsp`, `.css`, `.js`, graphics files, etc.). 
 
 When using Liferay's Plugins SDK, these files are stored in a standard directory
 structure:
@@ -212,9 +212,9 @@ mode: each of the registered portlet modes has a corresponding JSP with the
 same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
 is for help mode.
 
-The **Java Source** is stored in the `docroot/WEB-INF/src` folder. 
+The *Java Source* is stored in the `docroot/WEB-INF/src` folder. 
 
-The **Configuration Files** are stored in the `docroot/WEB-INF` folder. Files
+The *Configuration Files* are stored in the `docroot/WEB-INF` folder. Files
 stored here include the standard JSR-286 portlet configuration file
 `portlet.xml`, as well as three optional Liferay-specific configuration files.
 The Liferay-specific configuration files, while optional, are important if your
@@ -233,25 +233,24 @@ the Liferay-specific files:
   deployer. You can configure Portal Access Control List (PACL) properties,
   `.jar` dependencies, and more. 
 
-**Client Side Files** are the `.jsp`, `.css`, and `.js` files that you
-write to implement your portlet's user interface. These files should go in the
-`docroot` folder, either in the root of the folder or in a folder structure that
-makes sense for your application. Remember, with portlets you're only dealing
-with a portion of the HTML document that is getting returned to the browser. Any
-HTML code in your client side files must be free of global tags like `<html>`
-or `<head>`.  Additionally, namespace all CSS classes and element IDs to prevent
-conflicts with other portlets. Liferay provides two tools, a taglib and API
-methods, to generate a namespace for you. 
+*Client Side Files* are the `.jsp`, `.css`, and `.js` files that you write to
+implement your portlet's user interface. These files should go in the `docroot`
+folder; `.jsp` files can be placed in the root of the folder, while `.css` and
+`.js` files are given their own subfolders in `docroot`. Remember, with
+portlets you're only dealing with a portion of the HTML document that is
+getting returned to the browser. Any HTML code in your client side files must
+be free of global tags like `<html>` or `<head>`.  Additionally, namespace all
+CSS classes and element IDs to prevent conflicts with other portlets. Liferay
+provides two tools, a taglib and API methods, to generate a namespace for you. 
 
 ### A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet-liferay-portal-6-2-dev-guide-03-en)
 
 If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 
 
-**docroot/WEB-INF/portlet.xml**
-
-In the Plugins SDK, the portlet descriptor's default content looks like this
-(shown using Developer Studio's Portlet Application Configuration Editor):
+In the Plugins SDK, the portlet descriptor's default content in
+`docroot/WEB-INF/portlet.xml`looks like this (shown using Developer Studio's
+Portlet Application Configuration Editor):
 
 ![Figure 3.3: Portlet XML file of the My Greeting portlet](../../images/02-portlet-development-4.png)
 
@@ -286,8 +285,8 @@ Here's a basic summary of what each element represents:
   bundles.
 
     Specifying the information directly into the `portlet-info` element in your
-    `portlet.xml` file is straightforward. For example, to you could specify a
-    weather portlet's information, like this:
+    `portlet.xml` file is straightforward. For example, you could specify a weather
+    portlet's information, like this:
 
         <portlet>
             ...
@@ -300,9 +299,9 @@ Here's a basic summary of what each element represents:
         </portlet>
 
     Alternatively, you can specify this same information as resources in a
-    resource bundle file for your portlet. For example, you could create file
-    `docroot/WEB-INF/src/content/Language.properties`, in your portlet project,
-    to specify your portlet's title, short title, and keywords:
+    resource bundle file for your portlet. For example, you could create the file
+    `docroot/WEB-INF/src/content/Language.properties`, in your portlet project, to
+    specify your portlet's title, short title, and keywords:
 
         # Default Resource Bundle
         #
@@ -331,9 +330,9 @@ Here's a basic summary of what each element represents:
     
     ![note](../../images/tip-pen-paper.png) **Note:** You should not specify
     values for a portlet's title, short title, and keywords in both a portlet's 
-    `<portlet-info>` element in `portlet.xml` and in a resource bundle. But if
-    by accident you do, the values in the resource bundle take precedence over
-    the values in the `<portlet-info>` element.
+    `<portlet-info>` element in `portlet.xml` and in a resource bundle. If you
+    do so unintentionally, the values in the resource bundle take precedence over the
+    values in the `<portlet-info>` element.
 
     ---
 
