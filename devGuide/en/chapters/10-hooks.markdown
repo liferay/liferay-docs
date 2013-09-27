@@ -7,15 +7,16 @@ reflect the new features in Liferay 6.2.
 
 ---
 
-Liferay Hooks are the best plugin for customizing Liferay's core features.  If
+Liferay Hooks are the best plugin for customizing Liferay's core features. If
 possible, use hooks whenever you need to override Liferay's core functionality.
 It's possible to use Ext plugins for many of the same tasks, but hooks are
 hot-deployable and more forward compatible, so we urge you to use them
 preferentially. 
 
-In this chapter we'll learn to create hooks and discuss their most common uses. 
+In this chapter, we'll learn how to create hooks and we'll explore their most
+common uses.
 
-Our chapter topics include these items:
+We'll cover the following topics:
 
 - Creating a Hook
 - Overriding Web Resources
@@ -28,18 +29,19 @@ Our chapter topics include these items:
 - Overriding a *Language.properties* file
 - Other Hooks
 
-Like portlets, layout templates, and themes, hooks are created and managed using
-the Plugins SDK, or the terminal. Let's create and deploy a hook using both
-environments. 
+As with portlets, layout templates, and themes, the easiest way to create and
+manage hooks is via Liferay IDE or Developer Studio. However, if you don't want
+to use an IDE, you can use the terminal. We'll demonstrate how to create and
+deploy a hook using both Liferay IDE and the terminal.
 
 ## Creating a Hook [](id=creating-a-hook-liferay-portal-6-2-dev-guide-10-en)
 
-Regardless of whether you use the Plugins SDK or your terminal to create hooks,
+Regardless of whether you use Liferay IDE or your terminal to create hooks,
 hooks projects are stored in the Plugins SDK's `hooks` directory. 
 
-***Using Developer Studio:***
+***Using Liferay IDE:***
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
 
 2.  Enter *example* for your Project name and *Example* for your Display name. 
 
@@ -49,11 +51,13 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 5.  Click *Finish*. 
 
-![Figure 10.1: Creating your hook plugin](../../images/06-hooks-1.png)
+![Figure 10.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a Plugins SDK and Liferay Runtime, select *Hook*, then click *Finish*.](../../images/06-hooks-1.png)
 
-The Plugins SDK automatically named the hook by appending "-hook" to the project
-name. With Developer Studio, you can create a completely new plugin or add a new
-plugin to an existing plugin project. 
+The Plugins SDK automatically names the hook by appending "-hook" to the project
+name. With Liferay IDE, you can create a hook in a completely new plugin project
+or create a hook in an existing plugin project. Use *File* &rarr; *New* &rarr;
+*Liferay Project* to create a new plugin project and *File* &rarr; *New* &rarr;
+*Liferay Hook* to create a hook in an existing plugin project.
 
 ***Using the terminal:*** Navigate to your Plugins SDK directory in a terminal
 and enter the appropriate command for your operating system:
@@ -74,7 +78,7 @@ Now that you've created a hook, let's go ahead and deploy it.
 
 ### Deploying the Hook [](id=deploying-the-hook-liferay-portal-6-2-dev-guide-10-en)
 
-***Using Developer Studio:*** Click and drag your hook project onto your server.
+***Using Liferay IDE:*** Click and drag your hook project onto your server.
 Upon deployment, your server displays messages indicating that your hook was
 read, registered and is now available for use. 
 
@@ -82,7 +86,7 @@ read, registered and is now available for use.
     Registering hook for example-hook
     Hook for example-hook is available for use
 
-If you ever need to redeploy your plugin while in Developer Studio, right-click
+If you ever need to redeploy your plugin while in Liferay IDE, right-click
 your plugin's icon located underneath your server and select *Redeploy*. 
 
 ***Using the terminal:*** Open a terminal window in your `hooks/example-hook`
@@ -94,10 +98,10 @@ A BUILD SUCCESSFUL message indicates your hook is now being deployed. If you
 switch to the terminal window running Liferay, in a few seconds you
 should see the message "Hook for example-hook is available for use". 
 
- ![note](../../images/tip-pen-paper.png) **Note:** When we created portlets and
- themes, they were fully functional upon deployment. Hooks aren't like that,
-because they're Liferay customizations, and the default customization is the
-original implementation! 
+ ![Note](../../images/tip-pen-paper.png) **Note:** When we created portlets and
+ themes, they were fully functional upon deployment. Hooks aren't like that
+ because they're Liferay customizations. The default customization is the
+ original implementation! 
 
 ### Anatomy of the Hook [](id=anatomy-of-the-hook-liferay-portal-6-2-dev-guide-10-en)
 
@@ -106,32 +110,35 @@ by mirroring the structure of Liferay's code that you plan to customize. A hook
 plugin is built to contain this: 
 
 - `example-hook/`
+    - `docroot/WEB-INF/src/`
     - `docroot/`
         - `META-INF/`
+            - `MANIFEST.MF`
         - `WEB-INF/`
-            - `lib`
+            - `lib/`
             - `liferay-hook.xml`
             - `liferay-plugin-package.properties`
+            - `web.xml`
     - `build.xml`
 
-In Developer Studio's *Package Explorer*, here's what the hook structure looks
+In Liferay IDE's *Package Explorer*, here's what the hook structure looks
 like:
 
-![Figure 10.2: Package Explorer view of hook plugin](../../images/06-hooks-3.png)
+![Figure 10.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/06-hooks-3.png)
 
-The particular files you'll work on depend on what Liferay feature you're
-overriding with your hook. Let's start making hooks for the features developers
-override the most; web resources are a good place to start. 
+The particular files you'll work on depend on the Liferay features you're
+overriding with your hook. We'll start by making one of the most common hook
+plugin customizations: a customization of Liferay's web resources. 
 
 ## Overriding Web Resources [](id=overriding-web-resources-with-hook-liferay-portal-6-2-dev-guide-en)
 
-Hooks are commonly used to override web resources, found in `portal-web` in the
-Liferay source. You can use a hook to override JSP files, JSPF files, JavaScript
-files, CSS files, or images. 
+Hooks are commonly used to override web resources, found in `portal-web` in
+Liferay's source. You can use a hook to override JSP files, JSPF files,
+JavaScript files, CSS files, or images. 
 
 ---
 
- ![important](../../images/tip-pen-paper.png) **Important:** Some resources have
+ ![Important](../../images/tip-pen-paper.png) **Important:** Some resources have
  additional requisites:
 
  - ***JSPF:*** Changes won't take effect unless you modify the JSP that
@@ -148,7 +155,7 @@ hook to modify your portal's *Terms of Use* page.
 1.  Create the directory `hooks/example-hook/docroot/META-INF/custom_jsps`.
 
 2.  Edit `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml` by adding the
-    following between `<hook></hook>`:
+    following line between `<hook></hook>`:
 
         <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
 
@@ -183,11 +190,16 @@ won't know which version to use.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** We don't recommend changing
- the *Terms of Use* with a hook. You can replace the *Terms of Use* with web
- content simply by setting two properties in `portal-ext.properties`. Although
- our hook wasn't necessary, it was a good way to demonstrate overriding a JSP
- with a hook. 
+ ![Note](../../images/tip-pen-paper.png) **Note:** We don't recommend changing
+ the *Terms of Use* with a hook. You can replace the *Terms of Use* with a piece
+ of web content simply by specifying values for these two properties in
+ `portal-ext.properties`:
+
+    terms.of.use.journal.article.group.id=
+    terms.of.use.journal.article.id=
+
+ Although our example hook doesn't provide any new functionality, it
+ demonstrates how to override Liferay's JSP files. 
 
 ---
 
