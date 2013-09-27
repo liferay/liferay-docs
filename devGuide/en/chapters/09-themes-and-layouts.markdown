@@ -269,6 +269,18 @@ portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
 are removed, so any changes you make are visible right away. Also, you won't
 have to reboot the server as often in Developer Mode.
 
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If you're accessing your portal
+ through a Developer Studio server (e.g., Liferay v6.2 CE Server), you already
+ have Developer Mode enabled. When you start your Liferay server on Developer
+ Studio for the first time, a `liferay-ide.properties` file is created in your
+ Liferay Portal directory. Within this file, notice the following line:
+ `include-and-override=portal-developer.properties`. This automatically
+ enables Developer Mode while using Developer Studio.
+ 
+---
+
 Before you use Developer Mode, you'll have to add the
 `portal-developer.properties` file to your application server's configuration
 file. Each application server has a different configuration file or UI to
@@ -286,8 +298,7 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
     CATALINA_OPTS=
         "$CATALINA_OPTS
          -Dfile.encoding=UTF8
-         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES\
-             =false
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
          -Duser.timezone=GMT
          -Xmx1024m
          -XX:MaxPermSize=256m"
@@ -314,7 +325,7 @@ settings that trigger them:
   (`browser.launcher.url=`).
 - FreeMarker Templates for themes and web content are not cached, so changes
   are applied immediately
-  (`freemarker.engine.resource.modification.check.interval=0`). 
+  (`freemarker.engine.modification.check.interval=0`). 
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 
