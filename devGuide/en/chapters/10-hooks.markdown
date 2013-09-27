@@ -177,6 +177,12 @@ hook to modify your portal's *Terms of Use* page.
 6.  Create a new user and log in. The *Terms of Use* page should include the
     changes you made above. 
 
+<!--
+The steps above work but we should warn the reader that lots of errors appear
+when editing the terms_of_use.jsp in Eclipse since the required imports don't
+exist in the hook project; they're in Liferay. -Jesse, 9/27/2013
+-->
+
 Now there are two *Terms of Use* JSP files in the
 `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/ROOT/html/portal`
 directory. One is called `terms_of_use.jsp` and another
@@ -191,8 +197,8 @@ won't know which version to use.
 ---
 
  ![Note](../../images/tip-pen-paper.png) **Note:** We don't recommend changing
- the *Terms of Use* with a hook. You can replace the *Terms of Use* with a piece
- of web content simply by specifying values for these two properties in
+ Liferay's *Terms of Use* with a hook. You can replace the *Terms of Use* with a
+ piece of web content simply by specifying values for these two properties in
  `portal-ext.properties`:
 
     terms.of.use.journal.article.group.id=
@@ -203,29 +209,32 @@ won't know which version to use.
 
 ---
 
-Next, we'll look at a different way to customize a JSP. 
+Next, we'll look at a different way to customize a JSP.
 
 ## Customizing JSPs Without Overriding the Original [](id=customize-jsp-without-overriding-original--liferay-portal-6-2-dev-guide-en)
 
 If we can override a JSP with a hook plugin, why learn another way to accomplish
-the same thing? Good question. Each time the original (overridden) file is changed
-by Liferay (for example, to fix a bug) after you override it, you'll have to
-make those changes manually to your customized file, to benefit from them. 
+the same thing? Good question. Each time the original (overridden) file is
+updated by Liferay (for example, to fix a bug) after you override it, you'll
+have to manually make the same changes to your customized file if you want to
+receive the update. 
 
 You can avoid this drawback and make your JSP modifications less invasive by
 rendering the original JSP into a string and modifying it dynamically
-afterwards. This way you can change minor elements of a JSP, like adding a new
+afterwards. This way, you can change minor elements of a JSP, like adding a new
 heading or button, without modifying your hook every time you upgrade Liferay.
-Here's an example that customizes the search portlet. Specifically, it adds
-helpful text to aid the user in searching for content. Since this technique
+Here's an example that customizes the Search portlet. Specifically, it adds
+some helpful text to aid the user in searching for content. Since this technique
 involves string manipulation, it's mainly useful for making a small number of
 changes to a JSP.
 
-1.  Open the
+1.  Copy the
     `[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/html/portlet/search/search.jsp`
-    file.
+    file to your hook project: First, create the
+    `docroot/META-INF/custom_jsps/html/portlet/search` folder in your hook
+    project and then copy the `search.jsp` to this folder.
 
-2.  Append the following code to the end of the JSP file:
+2.  Append the following code to the end of the `search.jsp` file:
 
         <liferay-util:buffer var="html">
             <liferay-util:include page="/html/portlet/search/view.portal.jsp" />
@@ -241,41 +250,40 @@ changes to a JSP.
 
         <%= html %>
 
-3.  Start your Liferay instance or restart it if you already have one running.
+3.  Make sure your Liferay server is running and redeploy your hook plugin.
 
-4.  Add the *Search* portlet to a page by selecting *Add* &rarr; *Content and
-    Applications* &rarr; *Tools* &rarr; *Search*.
+4.  Add the *Search* portlet to a page by selecting *Add* &rarr; *Applications*
+    &rarr; *Tools* &rarr; *Search*.
 
-5.  Input text into the search field and click *Search*.
+5.  Input some text into the search field and click *Search*.
 
 Your custom string is now displayed at the bottom of the Search portlet.
 
-![Figure 10.3: After customizing the JSP file, your custom string is displayed.](../../images/jsp-search-string.png)
+![Figure 10.3: After customizing the JSP file in your hook and redeploying, your custom string is displayed at the bottom of the Search portlet.](../../images/jsp-search-string.png)
 
 Next, we'll explore application adapters and what they can do for your sites and
 site templates.
 
 ## Customizing Sites and Site Templates with Application Adapters [](id=application-adapter-hook-liferay-portal-6-2-dev-guide-en)
 
-All the hooks we've demonstrated so far are scoped to the portal. What if you
-need to customize specific sites without propagating the customizations
+The JSP hooks that we've demonstrated so far are scoped to the portal. What if
+you need to customize specific sites without propagating the customizations
 throughout the entire portal? You can! *Application Adapters* are special hooks
 that let you make changes at the site level. They are used for overriding JSPs. 
 
-There's a Sample Application Adapter in the [Liferay Plugins
-Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook).
+There's a Sample Application Adapter in the [Liferay Plugins Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook).
 How do we build an Application Adapter of our own? 
 
 To create an Application Adapter, you need a hook with custom JSPs, and you need
-to turn the hook's global custom JSP setting off. First, configure your
-`liferay-hook.xml` with the following directives: 
+to turn the hook's global custom JSP setting off. You can do this by configuring
+your `liferay-hook.xml` with the following directives: 
 
     <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
     <custom-jsp-global>false</custom-jsp-global>
 
-When you deploy your hook, Liferay installs the Application Adapter to your
-instance, under the name of the hook. An Application Adapter hook named *Foo*
-becomes available to sites and site templates under the name *Foo Hook*. 
+When you deploy your hook, Liferay installs the Application Adapter under the
+name of the hook. An Application Adapter hook named *Foo* becomes available to
+sites and site templates under the name *Foo Hook*. 
 
 Now, let's discuss the perks of including the original JSP when overriding it.
 
@@ -305,9 +313,7 @@ For Application Adapter hooks, we include the original JSP by setting the
     />
 
 The view JSP is specified as `view.jsp`, *not* `view.portal.jsp` as for global
-hooks.
-
-In the next section, we'll create and test an application adapter. 
+hooks. In the next section, we'll create and test an application adapter. 
 
 ### Creating an Application Adapter [](id=create-an-application-adapter-hook-liferay-portal-6-2-dev-guide-10-en)
 
@@ -325,9 +331,9 @@ Here's how we do it:
             <custom-jsp-global>false</custom-jsp-global>
         </hook>
 
-2.  Create a new `view.jsp` file in your hook's
-    `docroot/META-INF/custom_jsps/html/portlet/navigation` directory and insert
-    code to include the original JSP:
+2.  Create a `docroot/META-INF/custom_jsps/html/portlet/navigation` directory in
+    your hook project, create a new `view.jsp` file in this directory, and
+    insert code to include the original JSP:
 
         <%@ taglib uri="http://liferay.com/tld/util" 
         prefix="liferay-util" %>
@@ -343,17 +349,18 @@ Here's how we do it:
 
 3.  Deploy your Application Adapter hook plugin. 
 
-4.  Open your Liferay Portal instance in your web browser and navigate to the
-    site where you'll use the Application Adapter. 
+4.  In your web browser, navigate to the Liferay site where you'll use the
+    Application Adapter. 
 
-5.  Select *Manage* &rarr; *Site Settings*. From the *Application Adapter*
-    field's drop-down menu, select *example*. Then click *Save*. 
+5.  Select *Admin* &rarr; *Configuration* to access the Site Settings section of
+    the Site Administration interface. From the *Application Adapter* field's
+    drop-down selector menu, select *Example*. Then click *Save*. 
 
-    ![Figure 10.4: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 10.4: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
 
-6.  Navigate back to your site's Navigation portlet, and make sure that the
-    modification message from your Application Adapter hook plugin's `view.jsp`
-    file is displayed there.
+6.  Navigate to your site's pages, add the Navigation portlet to a page, and
+    make sure that the modification message from your Application Adapter hook
+    plugin's `view.jsp` file is displayed there.
 
 7.  Navigate to a different site's Navigation portlet to verify that only the
     content of the portlet's *original* `view.jsp` file displays. 
@@ -363,28 +370,27 @@ at the site scope is easy!
 
 You can also apply Application Adapters to Site Templates. 
 
-Let's pretend you want to make an Enterprise Resource Planning (ERP) solution
-for a company's departments. Your ERP solution requires an extension of
-Liferay's Wiki Portlet, so you implement that extension as an Application
-Adapter. Then, you incorporate the Application Adapter in a Site Template (named
-"ERP site") for the company's ERP sites. The company's administrative user
-creates the sites by going to *Control Panel* &rarr; *Sites* and adding sites
-based on the "ERP site" template. The added sites include your Application
-Adapter automatically. 
+Suppose you want to make an Enterprise Resource Planning (ERP) solution for a
+company's departments. Your ERP solution requires an extension of Liferay's Wiki
+portlet so you implement that extension as an Application Adapter. Then you
+incorporate the Application Adapter in a Site Template (named *ERP site*) for
+the company's ERP sites. The company's administrative user creates the sites by
+going to *Control Panel* &rarr; *Sites* and adding sites based on the "ERP site"
+template. The added sites include your Application Adapter automatically. 
 
 That's it for Application Adapters. Let's learn about performing custom actions
 through hooks. 
 
 ## Performing a Custom Action [](id=perform-a-custom-action-with-hook-liferay-portal-6-2-dev-guide-en)
 
-Hooks are useful for triggering custom actions on common portal events,
-like user log in or system start up. The actions for each of these events are
-defined in `portal.properties`, so we'll need to extend this file to create a
-custom action. Hooks make this a simple task.
+Hooks are useful for triggering custom actions on common portal events, like
+user login or system startup. The actions for each of these events are defined
+in `portal.properties` so we need to extend this file to create a custom action.
+Hooks make this a simple task.
 
-1.  Create the directory
-    `example-hook/docroot/WEB-INF/src/com/liferay/sample/hook`, and create the
-    file `LoginAction.java` inside it with this content:
+1.  In your hook project, create the directory
+    `docroot/WEB-INF/src/com/liferay/sample/hook` and create a file called
+    `LoginAction.java` inside it with this content:
 
         package com.liferay.sample.hook;
 
@@ -398,13 +404,13 @@ custom action. Hooks make this a simple task.
             }
         }
 
-2.  Create a `portal.properties` file inside `example-hook/docroot/WEB-INF/src`
-    with this content:
+2.  Create a `portal.properties` file inside your hook project's
+    `docroot/WEB-INF/src` folder with this content:
 
         login.events.pre=com.liferay.sample.hook.LoginAction
 
-3.  Edit `liferay-hook.xml` inside `example-hook/docroot/WEB-INF`, adding the
-    following line above `<custom-jsp-dir>`:
+3.  Edit your `docroot/WEB-INF/liferay-hook.xml` file, adding the following line
+    above `<custom-jsp-dir>`:
 
         <portal-properties>portal.properties</portal-properties>
 
@@ -414,19 +420,18 @@ custom action. Hooks make this a simple task.
 
 Custom action hook plugins aren't limited to the log in event. You can define
 custom actions for other events, too. For actions that require access to the
-`HttpServletRequest`, extend `com.liferay.portal.kernel.events.Action`; for
-others, extend `com.liferay.portal.struts.SimpleAction`. 
+`HttpServletRequest` object, extend `com.liferay.portal.kernel.events.Action`;
+for others, extend `com.liferay.portal.struts.SimpleAction`. 
 
 ---
 
- ![important](../../images/tip-pen-paper.png) **Important:** For better forward
+ ![Important](../../images/tip-pen-paper.png) **Important:** For better forward
  compatibility, use hooks to customize Struts actions rather than Ext plugins.
- For more information, see the [Properties
- Reference](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properti-1)
- chapter of *Using Liferay Portal* or find the `portal.properties` configuration
- file for your version of Liferay in the [Portal
- Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
- wiki page. 
+ For a list of portal properties that can be overridden via hook, see the
+ [liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions). For
+ more information about the properties themselves, you can view an online
+ version of Liferay's [portal properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+ file.
 
 ---
 
@@ -441,15 +446,12 @@ our value was appended to the existing `login.events.pre` values. We can
 repeatedly modify the property from additional hooks because it accepts
 multiple values. Some portal properties only accept a *single* value, such as
 the `terms.of.use.required` property, which is either `true` or `false`. Only
-modify single value properties from one hook; otherwise Liferay won't know
-which value to use. 
+modify single value properties from a single hook plugin; otherwise Liferay
+won't know which value to use.
 
-To find out which properties accept multiple values, look in the [Configuring
-Liferay's
-Properties](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properties)
-section of [Using Liferay Portal
-6.2](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide) or in
-the `portal.properties` file. 
+To find out which properties accept multiple values, see the
+[liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions) or
+examine Liferay's `portal.properties` file.
 
 ---
 
