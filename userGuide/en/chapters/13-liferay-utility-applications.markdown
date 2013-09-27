@@ -773,10 +773,11 @@ with questions about their orders. Let's go over the orders next.
 
 ### Managing Orders [](id=managing-orders-liferay-portal-6-2-user-guide-13-en)
 
-Under the Orders tab there are fields for finding specific orders. Search for
+On the Orders tab, there are fields for finding specific orders. Search for
 orders using the order number, order status, first or last name on the order, or
 by the email address associated with the account. For more information on
-searching in Liferay Portal, see the Faceted Search section in chapter 6.
+searching in Liferay Portal, see the Faceted Search section in chapter 6 of this
+guide.
 
 Below the search fields is the orders list. Orders can be deleted or edited
 using the *Actions* button. When you select an order from the Orders tab, or if 
