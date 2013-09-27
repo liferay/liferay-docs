@@ -1,16 +1,9 @@
 # Creating Liferay Themes and Layout Templates [](id=creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Do you want to transform the look and feel of your Liferay Portal? Create your
-own Liferay Theme! Do you want arrange your pages' portlets differently than
+own Liferay Theme! Do you want to arrange your pages' portlets differently than
 what Liferay's templates support out-of-the-box? Create your own Layout
-Template! In this chapter, we'll show you how do do both.
+Template! In this chapter, we'll show you how to do both.
 
 We'll go over the following topics in this chapter:
 
@@ -37,7 +30,7 @@ follow the same philosophy as Liferay configuration: they are modifications, or
 differences from the default. Because of this, every line of markup and every
 style has a default value that your theme can fall back on if you have chosen
 not to customize it. In other words, your theme inherits the styling, images,
-and templates from any of the built in themes. This saves you time and keeps
+and templates from any of the built-in themes. This saves you time and keeps
 your themes smaller and less cluttered, because your theme contains only its own
 resources, using defaults for the rest, like emoticon graphics for the message
 boards portlet. 
@@ -69,7 +62,7 @@ Studio first, and then with the terminal.
 
 ***Using Developer Studio:*** 
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
 
 2.  Fill in *deep-blue* for the Project name and *Deep Blue* for the Display
     name. 
@@ -80,7 +73,7 @@ Studio first, and then with the terminal.
 
 5.  Click *Finish*. 
 
-![Figure 9.1: Creating your theme plugin](../../images/05-themes-1.png)
+![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/05-themes-1.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -116,10 +109,17 @@ styling wherever there are differences. After the base themes are added, your
 own custom styling is added on top.
 
 By default, themes are based on the *_styled* theme, which provides only basic
-styling of portlets. If you open the `build.xml` file in your theme's directory
-using the Build Application Configuration Editor, you see the following code:
+styling of portlets. If you open the `build.xml` file in your theme's directory,
+you see the following code:
 
-![Figure 9.2: Content of build.xml](../../images/05-themes-5.png)
+	<?xml version="1.0"?>
+	<!DOCTYPE project>
+
+	<project name="deep-blue-theme" basedir="." default="deploy">
+		<import file="../build-common-theme.xml" />
+
+		<property name="theme.parent" value="_styled" />
+	</project>
 
 The `theme.parent` property determines the theme your theme inherits its styling
 from. In addition to the *_styled* theme, you can choose to inherit from the
@@ -148,7 +148,7 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
-![Figure 9.3: Drag and drop your theme onto the server](../../images/05-themes-6.png)
+![Figure 9.3: Drag and drop your theme onto the server.](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
@@ -170,10 +170,10 @@ Let's apply your theme to a page:
 
 1.  Go to your web browser and log in to the portal. 
 
-2.  Hover over **Manage** at the top of the page and click on *Page*. 
+2.  Click the *Edit* button from the left side menu. 
 
-3.  Directly underneath the words **Manage Pages**, select the *Look and Feel*
-    tab. Click on your theme to activate it.
+3. Click the *Look and Feel* tab, select *Deep Blue* beneath the *Available
+   Themes* heading, and click *Save*.
 
 Now that you've built and deployed a theme, let's study theme anatomy.
 
@@ -187,20 +187,23 @@ accessible folders. Here's the full structure of our Deep Blue theme:
 
 - `deep-blue-theme/`
     - `docroot/`
-        - `WEB-INF/`
-            - `liferay-plugin-package.properties`
-        - `_diffs/` - subfolders not created by default.
+        - `_diffs/` (subfolders not created by default)
             - `css/`
             - `images/`
             - `js/`
             - `templates/`
         - `css/`
+        	- `aui`
+        		- (many directories)
+        	- `_aui_custom.scss`
+        	- `_aui_variables.scss`
+        	- `_liferay_custom.scss`
             - `application.css`
+            - `aui.css`
             - `base.css`
             - `custom.css`
             - `dockbar.css`
             - `extras.css`
-            - `forms.css`
             - `layout.css`
             - `main.css`
             - `navigation.css`
@@ -215,6 +218,9 @@ accessible folders. Here's the full structure of our Deep Blue theme:
             - `portal_normal.vm`
             - `portal_pop_up.vm`
             - `portlet.vm`
+        - `WEB-INF/`
+        	- `liferay-look-and-feel.xml`
+            - `liferay-plugin-package.properties`
 
 The `_diffs` folder that's created inside the `docroot` directory of your theme
 is important; this is where you place your theme's code. The `_diffs` folder
@@ -243,7 +249,7 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
-![Figure 9.4: How to redeploy your theme plugin](../../images/05-themes-2.png)
+![Figure 9.4: Redeploying your theme in Developer Studio is the same as entering the `ant deploy` command for an already deployed plugin.](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
