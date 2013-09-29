@@ -1193,8 +1193,9 @@ start:
             ...
         </portlet>
 <!--I get an error in my portlet.xml that "the resource bunde content/Language
-ewas not foind on the Java build path" At this point our portlets are ready to
-deliver a localized UI.-->
+was not foind on the Java build path" -->
+
+At this point our portlets are ready to deliver a localized UI.
 
 ---
 
@@ -1300,11 +1301,11 @@ our title and description keys in `Language.properties` would be:
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** Do you know how your portlet
- title is processed? If your portlet doesn't define a resource bundle or
- `javax.portlet.title`, the portal container next checks the `<portlet-info>`
-and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
-missing too, the `<portlet-name>` node value is rendered as portlet title. 
+![tip](../../images/tip-pen-paper.png) **Tip:** Do you know how your portlet
+title is processed? If your portlet doesn't define a resource bundle or
+`javax.portlet.title`, the portal container next checks the `<portlet-info>` and
+inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're missing
+too, the `<portlet-name>` node value is rendered as portlet title. 
 
 ---
 
@@ -1325,8 +1326,9 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
 If you want your translations available throughout the portal, or if you want to
 override an existing translation, refer to Chapter 10 of this guide,
 specifically the *Overriding a Language.properties File* section. It describes
-how to use a hook to override existing Liferay translations. You can share your
-keys with other portlets, as well as override existing Liferay translations. 
+how to use a hook to override existing Liferay translations. You can share
+your keys with other portlets, as well as override existing Liferay
+translations. 
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
@@ -1344,15 +1346,18 @@ To create a plugin which extends another, follow these steps:
     folder, which should be empty. 
 
 3.  Copy the original WAR file of the plugin you'd like to extend (for example,
-    `social-networking-portlet-6.1.10.1-ee-ga1.war`) to the root folder of your
+    `social-networking-portlet-6.2.0.1.war`) to the root folder of your
     new plugin. 
+
+<!--Need to change the .war file name once we know what it is in 6.2. I just
+used the CE name-->
 
 4.  Add the following line to your `build.xml` inside of the `<project>` tag to
     reference the original WAR file you are going to extend:
 
         <property
             name="original.war.file"
-            value="social-networking-portlet-6.1.10.1-ee-ga1.war"
+            value="social-networking-portlet-6.2.0.1.war"
         />
 
 5.  Copy any files from the original plugin that you're overwriting to your
@@ -1379,7 +1384,7 @@ To create a plugin which extends another, follow these steps:
         merge-unzip:
         [unzip] Expanding:
         /home/dsanz/sdk/portlets/my-social-networking-portlet/social-
-        networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/
+        networking-portlet-6.2.0.1.war into /home/dsanz/sdk/
         portlets/my-social-networking-portlet/tmp 
         [copy] Copying 2 files to
         /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp 
