@@ -418,20 +418,15 @@ Hooks make this a simple task.
     you should see your custom message, *## My custom login action*, displayed
     in the terminal window running Liferay. 
 
-Custom action hook plugins aren't limited to the log in event. You can define
+Custom action hook plugins aren't limited to the login event. You can define
 custom actions for other events, too. For actions that require access to the
 `HttpServletRequest` object, extend `com.liferay.portal.kernel.events.Action`;
-for others, extend `com.liferay.portal.struts.SimpleAction`. 
+for others, extend `com.liferay.portal.struts.SimpleAction`.
 
 ---
 
  ![Important](../../images/tip-pen-paper.png) **Important:** For better forward
  compatibility, use hooks to customize Struts actions rather than Ext plugins.
- For a list of portal properties that can be overridden via hook, see the
- [liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions). For
- more information about the properties themselves, you can view an online
- version of Liferay's [portal properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
- file.
 
 ---
 
@@ -449,28 +444,28 @@ the `terms.of.use.required` property, which is either `true` or `false`. Only
 modify single value properties from a single hook plugin; otherwise Liferay
 won't know which value to use.
 
-To find out which properties accept multiple values, see the
-[liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions) or
-examine Liferay's `portal.properties` file.
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** Hooks support customizing a
+ specific list of predefined properties.  For a list of portal properties that
+ can be overridden via hook, see the
+ [liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions). In
+ addition to defining custom actions, hooks can override portal properties to
+ define model listeners, validators, generators, and content sanitizers. If you
+ want to customize a property that's not found in this list, you must use an Ext
+ plugin (see the chapter of this guide on Ext plugins). For more information
+ about the properties themselves, you can view an online version of Liferay's
+ [portal properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+ file.
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** Hooks support customizing a
-specific list of predefined properties. This list is found in
-`liferay-hook-[liferay version].dtd`, in the `definitions` folder of the Liferay
-source code. In addition to defining custom actions, hooks can override portal
-properties to define model listeners, validators, generators, and
-content sanitizers. If you want to customize a property that's not found in this
-list, you must use an Ext plugin (Chapter 13). 
-
----
-
-Now let's look at overriding and adding Struts actions from a hook plugin. 
+Next, let's learn how to override and add Struts actions from a hook plugin. 
 
 ## Overriding and Adding Struts Actions [](id=override-and-add-struts-actions-with-hook-liferay-portal-6-2-dev-guide-en)
 
-Do you want to add a new Struts action to Liferay portal or override existing
-Struts actions? *Struts action hooks* let you do just that. 
+Do you want to add a new Struts action to Liferay or override existing Struts
+actions? *Struts action hooks* let you do just that. 
 
 Let's consider the interfaces used for Struts actions. There are two:
 
@@ -482,23 +477,23 @@ The `StrutsAction` interface is for regular Struts actions from the portal, like
 for similar Struts actions, but from portlets. 
 
 Struts actions are defined as classes, and they're all connected in a
-`struts-config.xml` file. A `struts-config.xml` for Liferay portal running on
-Apache Tomcat is in the
+`struts-config.xml` file. The `struts-config.xml` for a Liferay Portal instance
+running on Apache Tomcat can be found in the
 `liferay-portal-[version]/tomcat-[version]/webapps/ROOT/WEB-INF` directory. The
 `struts-config.xml` file links actions to specific JSP pages. Each action
 performs a specific task and then returns a *forward*, an object containing a
-name and path. The forward defines what page the user goes to after the action
-completes. When a user submits a form that maps to one of these actions, the
-action class is loaded, executed, and returns a forward. 
+name and path. The forward defines the page the portal sends the user to after
+the action completes. When a user submits a form that maps to one of these
+actions, the action class is loaded, executed, and returns a forward. 
 
 A Struts action hook can wrap or override existing Struts actions or create a
 new Struts path; we'll demonstrate both here. We'll override the Struts actions
-in the `struts-config.xml` using a Struts action hook to point to a custom
-class, then we'll create a new Struts path: `/c/portal/sample` and
+in the `struts-config.xml` file by using a Struts action hook to point to a
+custom class. Then we'll create a new Struts path: `/c/portal/sample` and
 navigate to it. Let's get started! 
 
-First, let's override the login portlet's Struts action using the example-hook
-we created earlier in the chapter. 
+First, let's override the Sign In portlet's Struts action using the example-hook
+project that we've been using in this chapter. 
 
 Here's the current action in your portal's `struts-config.xml` file:
 
@@ -633,64 +628,23 @@ of `BaseStrutsAction`, but not the `execute(StrutsAction, HttpServletRequest,
 HttpServletResponse)` method. The original Struts action's `execute()` method
 is ignored. That's fine for our example.
 
-**Best Practice**
+---
 
-When overriding an existing Struts action, it's usually best to override the
-method that takes the original Struts action handle as a parameter and execute
-that original Struts action. Think of the original action as a servlet filter
-or aspect. If you override the method that *takes* the original action handle
-as a parameter and don't explicitly execute it, the original action won't be 
-executed. If you override the `execute` method that *does not take* the original
-action as a parameter, you are ignoring the original action and it won't be
-executed.
+ [Note](../../images/tip.png) **Best practice**: When overriding an existing
+ Struts action, it's usually best to override the method that takes the original
+ Struts action handle as a parameter and execute that original Struts action.
+ Think of the original action as a servlet filter or aspect. If you override the
+ method that *takes* the original action handle as a parameter and don't
+ explicitly execute it, the original action won't be executed. If you override
+ the `execute` method that *does not take* the original action as a parameter,
+ you are ignoring the original action and it won't be executed.
 
 ---
 
-![Tip](../../images/tip-pen-paper.png) **Warning:** There's a
-classloading bug that manifests under certain conditions when executing
-an original Struts action. The issue is fixed in
-[LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't
-have the fix pack for this bug, set the context classloader to the
-portal classloader and execute the original action in a `try` block.
-Then, in a corresponding `finally` block, reset the classloader back to
-the original classloader. 
-
-Here's an example for the temporary workaround:
-
-    public class SampleLayoutStrutsAction extends BaseStrutsAction {
-
-            @Override
-            public String execute(StrutsAction originalStrutsAction,
-                HttpServletRequest request, HttpServletResponse response)
-                throws Exception {
-
-                System.out.println("SampleLayoutStrutsAction.execute() - " +
-                    request.getRequestURI());
-
-                Thread currentThread = Thread.currentThread();
-
-                ClassLoader contextClassLoader =
-                    currentThread.getContextClassLoader();
-
-                currentThread.setContextClassLoader(
-                    PortalClassLoaderUtil.getClassLoader());
-
-                try {
-                    return originalStrutsAction.execute(request, response);
-                }
-                finally {
-                    currentThread.setContextClassLoader(contextClassLoader);
-                }
-            }
-
-        }
-
----
-
-That's it for overriding the Struts actions! Now Let's get our new Struts
+That's it for overriding the Struts actions! Now let's get our new Struts
 path working. 
 
-1.  Create `sample.jsp` in the
+1.  Create a `sample.jsp` file in the
     `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert
     the following code:
 
@@ -748,8 +702,9 @@ functionality of `UserLocalService` from our hook, create a class that extends
 `UserLocalServiceWrapper`, override the methods you want to modify, and instruct
 Liferay to use your service class instead of the original. 
 
-1.  Inside `example-hook/docroot/WEB-INF/src/com/liferay/sample/hook` create
-    a new file called `MyUserLocalServiceImpl.java` with the following content:
+1.  Inside your example-hook project's
+    `/docroot/WEB-INF/src/com/liferay/sample/hook` folder, create a new file
+    called `MyUserLocalServiceImpl.java` with the following content:
 
         package com.liferay.sample.hook;
     
@@ -791,7 +746,6 @@ Liferay to use your service class instead of the original.
             <service-type>
             com.liferay.portal.service.UserLocalService
             </service-type>
-
             <service-impl>
             com.liferay.sample.hook.MyUserLocalServiceImpl
             </service-impl>
@@ -811,24 +765,23 @@ requirements:
 - **LayoutLocalService:** Adds, deletes, retrieves and manages pages of sites,
   organizations and users. 
 
-For a complete list of available services and their methods check the [Liferay
-Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/) or access the
-Javadocs for your version of Liferay at
-[http://docs.liferay.com/portal](http://docs.liferay.com/portal) and selecting
-the *javadocs* link. 
+For a complete list of available services and their methods, check the [Liferay Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/)
+or access the Javadocs for your version of Liferay at
+[http://docs.liferay.com/portal](http://docs.liferay.com/portal) and click on
+the *Javadocs* link. 
 
-Now that you know how to override a portal service, let's go a bit deeper and
-override a `Language.properties` file.
+Now that you know how to override a portal service, let's learn how to override
+a `Language.properties` file.
 
 ## Overriding a *Language.properties* File [](id=override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
 
-Hooks let you change any of the messages displayed by Liferay, to suit your
+Hooks let you change any of the messages displayed by Liferay to suit your
 needs. To do so, create a *Language* file for the locale of the messages you
 want to customize, then refer to your file from your `liferay-hook.xml` file.
 For example, to override the Spanish and French message translations of portal's
 `Language.properties` file, create *Language* files for them in the same
-directory, and refer to these language files in your `liferay-hook.xml` file,
-like so:
+directory and refer to these language files in your `liferay-hook.xml` file,
+like this:
 
     <hook>
         ...
@@ -839,9 +792,10 @@ like so:
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip:** Check the DTD of each Liferay
-XML file you modify for the elements and attributes that can be included in the
-XML and the specified order for those elements. 
+ ![Tip](../../images/tip-pen-paper.png) **Tip:** Check the DTD of each Liferay
+ XML file, you modify for the elements and attributes that can be included in the
+ XML and the specified order for those elements. You can find the Liferay DTDs
+ online here: [http://docs.liferay.com/portal/6.2/definitions](http://docs.liferay.com/portal/6.2/definitions).
 
 ---
 
@@ -864,6 +818,7 @@ but aren't yet fully documented. Here's a summary of these hooks:
   working example, see the
   [sample-servlet-filter-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-servlet-filter-hook)
   in the Plugin SDK. 
+
 - **CMIS extension hook:** The Documents and Media Library now supports multiple
   CMIS repositories mounted for each Documents and Media Portlet. If a
   repository doesn't fully implement CMIS or has native features that you'd like
@@ -872,10 +827,10 @@ but aren't yet fully documented. Here's a summary of these hooks:
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-10-en)
 
-In this chapter we discussed some of the many uses of the versatile hook plugin,
-the preferred tool for customizing Liferay. You learned how to perform custom
-portal actions, override and extend custom portal JSPs, modify portal
-properties, and replace portal services. 
+In this chapter, we discussed some of the many uses of the versatile hook
+plugin, the preferred tool for customizing Liferay. You learned how to perform
+custom portal actions, override and extend custom portal JSPs, modify portal
+properties, and replace portal services and language properties. 
 
 Next, we'll show you what it takes to develop apps for publishing to *Liferay
 Marketplace*. 
