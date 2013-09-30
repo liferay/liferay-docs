@@ -2699,7 +2699,7 @@ running.
 
 ## Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7-liferay-portal-6-2-user-guide-15-en)
 
-**Liferay Home** is one folder above Tomcat's install location.
+*Liferay Home* is one folder above Tomcat's install location.
 
 For this section, we will refer to your Tomcat server's installation location as
 `$TOMCAT_HOME`. If you do not already have an existing Tomcat server, we
@@ -2711,11 +2711,21 @@ manually, please follow the steps below.
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
 [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
-The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and
+The Liferay `.war` file should be called `liferay-portal-6.2.x-<date>.war` and
 the dependencies file should be called
-`liferay-portal-dependencies-6.1.x-<date>.zip`.
+`liferay-portal-dependencies-6.2.x-<date>.zip`.
 
 Next, let's get started by addressing Liferay's library dependencies.
+
+
+Steps to put in this section as per the build-dist-tomcat target in build-dist.xml:
+
+1. Create lib/ext directory in Tomcat home directory.
+2. Open tomcat-home/conf/catalina.properties and `replace common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar` with `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`
+3. Open `tomcat-home/conf/server.xml` and replace both instances of `redirectPort="8443" />` with `redirectPort="8443" URIEncoding="UTF-8" />`
+4. 
+
+
 
 ### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-3)
 
@@ -2728,9 +2738,28 @@ JDBC driver and a few other JARs installed.
    do not extract to this directory, you can copy the dependencies archive to
    this directory, extract them and then delete the archive.
 
-3. Next, you need several `.jar` files which are included as part of the Liferay
-   source distribution. Many application servers ship with these already on the
-   class path but Tomcat does not. The best way to get the appropriate versions
+3. Next, you need several `.jar` files which, while included as part of the
+   Liferay source distribution, are not automatically included with Tomcat.
+   You'll have to download them yourself, so let's get started:
+    -Place these `.jar` files into `$TOMCAT_HOME/lib/ext`:
+        - `activation.jar`: You can get this `.jar` from
+          [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+        - `jms.jar`You can get this `.jar` from
+          [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+        - `jta.jar`: You can get this `.jar` from
+          [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+        - `jutf7.jar`: You can get this `.jar` from
+          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
+        - `mail.jar`: You can get this `.jar` from
+          [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+        - `persistence.jar`: You can get this `.jar` from
+          [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+<!--This one is stumping me, I can't figure out where they can get the persistence.jar-->
+    -Place these `.jar` files into
+    `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies` The best way
+        - `resin.jar`
+        - `script-10.jar`
+to get the appropriate versions
    of these files is to download the Liferay source code and get them from
    there. Once you have downloaded the Liferay source, unzip the source into a
    temporary folder. We'll refer to the location of the Liferay source as
@@ -2738,12 +2767,6 @@ JDBC driver and a few other JARs installed.
 
     1. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
 	   `$TOMCAT_HOME/lib/ext` folder:
-        - `activation.jar`
-        - `jms.jar`
-        - `jta.jar`
-        - `jutf7.jar`
-        - `mail.jar`
-        - `persistence.jar`
     2. Copy the following jar from `$LIFERAY_SOURCE/lib/portal` to your
 	  `$TOMCAT_HOME/lib/ext` folder:
         - `ccpp.jar`
@@ -2753,8 +2776,6 @@ JDBC driver and a few other JARs installed.
     3. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
 	   `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies`
         folder:
-        - `resin.jar`
-        - `script-10.jar`
 
 4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
    the JDBC driver for your version of the database server. In the case of
