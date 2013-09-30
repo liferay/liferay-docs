@@ -344,14 +344,19 @@ Let's add a thumbnail image for our theme now.
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
-thumbnail is a broken image. To remedy this, create a 1080 pixels wide by 864
+thumbnail is nonexistent. To remedy this, create a 150 pixels wide by 120
 pixels high image to use as your theme's thumbnail. You may want to take a
-snapshot of your theme and resize it to these dimension. It is very important to
-abide by these *exact* dimensions or your image will not display properly as a
-thumbnail. Save the image as a `.png` file named `screenshot.png` and place it
+snapshot of your theme and resize it to these dimensions. It is very important
+to abide by these *exact* dimensions or your image will not display properly as
+a thumbnail. Save the image as a `.png` file named `thumbnail.png` and place it
 in your theme's `docroot/_diffs/images` directory (create this directory if it
 doesn't already exist). On redeployment, your `screenshot.png` file
 automatically displays as your theme's thumbnail.
+
+<!-- Right now, a new theme doesn't have a broken image; there is no image at
+all. There is an LPS ticket that suggests that a broken thumbnail be specified
+for 6.2 (LPS-39119). We should monitor its status and change the docs, if
+necessary. -->
 
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
@@ -363,13 +368,13 @@ Let's learn how to design a theme's look and feel next.
 You define a theme's look and feel via a file named `liferay-look-and-feel.xml`
 in the `WEB-INF` directory. 
 
-Let's consider how make your theme configurable to administrative users.
+Let's consider how to make your theme configurable to administrative users.
 
 ### Making Themes Configurable with Settings [](id=making-themes-configurable-with-settings-liferay-portal-6-2-dev-guide-09-en)
 
 You can define settings to make your theme configurable. Create a file named
-`liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
-content:
+`liferay-look-and-feel.xml` in the `WEB-INF` directory (if necessary), with the
+following content:
 
     <?xml version="1.0"?>
     <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN"
@@ -413,7 +418,7 @@ setting:
             <setting key="header-type" value="detailed" />
         </settings>
         </theme>
-            <theme id="deep-blue-mini" name="Deep Blue Mini">
+    <theme id="deep-blue-mini" name="Deep Blue Mini">
         <settings>
             <setting key="header-type" value="brief" />
         </settings>
@@ -449,8 +454,8 @@ company's name in the footer of your site's pages:
 
     ---
 
-2.  Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
-    located in your theme's `WEB-INF` folder:
+2. Declare the two theme setting variables for the Deep Blue theme in your
+   `liferay-look-and-feel.xml`, located in your theme's `WEB-INF` folder:
 
         <settings>
             <setting configurable="true" 
@@ -466,10 +471,19 @@ company's name in the footer of your site's pages:
             />
         </settings>
 
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
+ up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
+ For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd`. When
+ referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
+ 
+---
+
 The portal administrator can enter a slogan and activate it for the portal via
-the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
-sites and managing pages* section of [Using Liferay
-Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
+the *Look and Feel* section of the *Site Administration* &rarr; *Site Pages*
+panel (see the *Creating and Managing Pages* section of [Using Liferay
+Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-liferays-multi-site-capabili-liferay-portal-6-2-user-guide-02-en)).
 
 ![Figure 9.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
@@ -480,10 +494,10 @@ footer, including the slogan.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties hook
- to display configurable theme settings properly, like the slogan text area and
- footer checkbox from the previous example. For details, see the [Overriding a
- *Language.properties*
+ ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties
+ hook to display configurable theme settings properly, like the slogan text area
+ and footer checkbox from the previous example. For details, see the [Overriding
+ a *Language.properties*
  File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
