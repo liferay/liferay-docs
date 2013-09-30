@@ -880,12 +880,19 @@ your portal's Documents and Media libraries.
 thread dump which can be examined later to determine if there are any deadlocks
 and where they might be.
 
-**Verify database tables of all plugins:** Checks all tables against their
-indexes for accuracy of data retrieval.
+**Verify database tables of all plugins:** You can check all tables against
+their indexes for accuracy of data retrieval.
 
-<!-- Waiting for more information about this one (JR)
-**Verify Membership Policies**:
--->
+**Verify Membership Policies**: You can check that existing site membership
+policies have been correctly applied and automatically make updates if
+necessary. For example, suppose that someone manually changed the Liferay
+database or that the Liferay database was hacked, resulting in a user being
+assigned to a site in violation of a site membership policy. When the *Verify
+Membership Policies* button is clicked, the verify methods of all the site
+membership policies that have been implemented are triggered. These methods
+check that all site memberships are in accord with the site membership policies;
+if they are not, the necessary changes (such as removing users from forbidden
+sites) are made.
 
 **Clean up Permissions:** This process removes the assignment of some
 permissions on the Guest, User, and Power User roles to simplify the management
