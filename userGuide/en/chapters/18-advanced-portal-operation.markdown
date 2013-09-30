@@ -705,7 +705,7 @@ Liferay 6.2, install from Marketplace any of the plugins you had installed
 previously. For custom plugins, have your development team update them to run on
 the new version of Liferay. 
 
-![Figure 18.x: Use this flowchart to determine the steps to take for your upgrade.](../../images/upgrade-decisions.png)
+![Figure 18.9: Use this flowchart to determine the steps to take for your upgrade.](../../images/upgrade-decisions.png)
 
 The flowchart illustrates the procedure described above. Use it to determine
 your course of action for the upgrade. Each step is described fully below so
@@ -757,7 +757,7 @@ Next, log in as an administrator and navigate to the Control Panel. Go to
 of the screen. A section entitled *Legacy Permissions Migration* appears at the
 bottom of the page.
 
-![Figure 18.9: Update your permissions algorithm by clicking the *Execute* button.](../../images/17-convert-permissions-algorithm.png)
+![Figure 18.10: Update your permissions algorithm by clicking the *Execute* button.](../../images/17-convert-permissions-algorithm.png)
 
 Algorithms 5 and 6 do not support adding permissions at the user level. If you
 have permissions set for individual users, the converter can simulate this for
@@ -1040,7 +1040,7 @@ also for web services and JavaScript. This means that the method calls for
 storing and retrieving portal objects are all the same, and are generated in the
 same step.
 
-![Figure 18.10: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
+![Figure 18.11: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
@@ -1090,7 +1090,7 @@ If the machine on which the batch job is running has the IP address
 Liferay's web services and pass in user credentials to be used to upload the
 documents.
 
-![Figure 18.11: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
+![Figure 18.12: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
 
 The second layer of security is Liferay's security model that it uses for every
 object in the portal. The user account that accesses the services remotely must

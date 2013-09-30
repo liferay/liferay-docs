@@ -627,7 +627,7 @@ You must also specify an option for assigning ownership of the imported data:
 - *Use the Current User as Author* means that the current user will be assigned
   as the author of the imported content regardless of the original author.
 
-### Upgrading the Calendar Portlet
+### Upgrading the Calendar Portlet [](id=upgrading-the-calendar-portlet-liferay-portal-6-2-user-guide-08-en)
 
 In Liferay 6.1 and previous versions, an older version of the Calendar portlet
 was included as one of the core portlets. If you're upgrading from Liferay 6.1

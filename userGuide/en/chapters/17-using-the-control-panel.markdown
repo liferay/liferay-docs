@@ -143,7 +143,7 @@ email address is an important default for the following reasons:
 Next, we'll examine how to integrate existing users from other environments,
 such as LDAP servers, into Liferay.
 
-## Integrating Existing Users into Liferay
+## Integrating Existing Users into Liferay [](id=integrating-existing-users-into-liferay-liferay-portal-6-2-user-guide-17-en)
 
 Liferay provides a number of user authentication options. You can configure
 Liferay to connect to LDAP or NTLM servers so users from those environments can
@@ -652,7 +652,7 @@ When you are finished, click *Save*. Now that we've looked at various options
 for integrating existing users into Liferay, let's look at other Liferay portal
 settings.
 
-## Configuring Additional Portal Settings
+## Configuring Additional Portal Settings [](id=configuring-additional-portal-settings-liferay-portal-6-2-user-guide-17-en)
 
 Go back to the Control Panel, and click on *Portal Settings* under the
 *Configuration* heading. We've already looked at the options available from the
@@ -721,7 +721,7 @@ A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-### Content Sharing
+### Content Sharing [](id=content-sharing-liferay-portal-6-2-user-guide-17-en)
 
 The Content Sharing section of the Portal Settings area of the Control Panel
 allows you to choose whether or or not site administrators can display content
@@ -924,7 +924,7 @@ If you need to check the current value of a particular property, it can be
 viewed from this screen without having to shut down the portal or open any
 properties files.
 
-### CAPTCHA
+### CAPTCHA [](id=captcha-liferay-portal-6-2-user-guide-17-en)
 
 By default, Liferay ships with its own simple CAPTCHA service which is designed
 to thwart bots from registering for accounts on sites powered by Liferay. If you
