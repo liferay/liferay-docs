@@ -4,12 +4,13 @@ Think of your Liferay portal as a pizza crust (sit down, you can go order a
 real pizza when we're done here). In chapter two we equipped you with Liferay's
 tools for developing your pizza, and Liferay comes with some basic toppings
 that make for a pretty good pizza out of the box (i.e., our core portlets and
-built-in functionality). Of course, your boss might demand anchovies, and Liferay
-definitely doesn't come with anchovies. So what do you do? You take our tools,
-get some anchovies (your app's source code), and make them integreate with the
-pizza (Liferay). In this chapter we're going to show you how to develop portlet
-projects to top your Liferay pizza in such a way that the end user won't be
-able to tell the difference between your custom portlet and our core portlets.
+built-in functionality). Of course, your boss might demand anchovies, and
+Liferay definitely doesn't come with anchovies. So what do you do? You take our
+tools, get some anchovies (your app's source code), and make them integreate
+with the pizza (Liferay). In this chapter we're going to show you how to
+develop portlet projects to top your Liferay pizza in such a way that the end
+user won't be able to tell the difference between your custom portlet and our
+core portlets.
 
 In the last chapter we showed you how to create Liferay plugin projects, and if
 you followed along with our exercises, you now have a project to hold Liferay
@@ -377,7 +378,7 @@ Here's a basic summary of what each element represents:
 the code of the web application. Specifically in Liferay, the `role-name`
 references which roles can access the portlet. 
 
-**docroot/WEB-INF/liferay-portlet.xml**: In addition to the standard
+*docroot/WEB-INF/liferay-portlet.xml*: In addition to the standard
 `portlet.xml` options, there are optional Liferay-specific enhancements for Java
 Standard portlets that are installed on a Liferay Portal server. By default, the
 Plugins SDK sets the contents of this descriptor, as shown in Developer Studio:
