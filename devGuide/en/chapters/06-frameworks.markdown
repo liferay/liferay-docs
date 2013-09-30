@@ -72,8 +72,8 @@ This chapter covers the following topics:
 
 - ServiceContext
 - Security and Permissions
-- Assets Framework
-- Using Message Bus
+- Asset Framework
+- Message Bus
 - Device Detection
 
 <!-- - Social Activities (Add this above Device Detection) -->
@@ -174,7 +174,7 @@ end class which has access to the `PortletRequest`, use one of the
 The above example looks different if you invoke the service from a servlet: 
 
     ServiceContext serviceContext =
-        ServiceContextFactory.getInstance(BlogsEntry.class.getName(),portletRequest);
+        ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
     BlogsEntryServiceUtil.addEntry(..., serviceContext);
 
 You can see an example of populating a `ServiceContext` with information from a
@@ -192,9 +192,9 @@ Since our API can be invoked from JavaScript, you're sometimes required to pass
 the `ServiceContext` from JavaScript to the server. This can be done by passing
 the `ServiceContext` as any other JavaScript object. There are many examples of
 this in the JavaScript code of Liferay's portlets. Here's an example from
-`[liferay-portal]/portal-web/html/portlet/journal/js/main.js` that demonstrates
-using `ServiceContext` in calling the `updateStructure` method of the
-`JournalStructure` service: 
+`[liferay-portal]/portal-web/docroot/html/portlet/journal/js/main.js` that
+demonstrates using `ServiceContext` in calling the `updateStructure` method of
+the `JournalStructure` service: 
 
     var instance = this;
 
@@ -248,7 +248,7 @@ JavaScript, you're already on the front-end. What this is is an alternative to
 JavaScript, by using tags. We should flesh this out and have a full example, not
 point to some file in Liferay. -Rich -->
 
-Next let's see an example of accessing information from a `ServiceContext`. 
+Next, let's see an example of accessing information from a `ServiceContext`. 
 
 ### Accessing Service Context Data [](id=accessing-service-context-data-liferay-portal-6-2-dev-guide-06-en)
 
@@ -284,7 +284,7 @@ Here are the corresponding code snippets:
     }
 
 Can `ServiceContext` be used to access the UUID of the blog entry? Absolutely!
-Can you use `ServiceContext` to set the time the blog entry was added? Sure you
+Can you use `ServiceContext` to set the time the blog entry was added? You sure
 can. See here: 
 
     entry.setUuid(serviceContext.getUuid());
@@ -321,7 +321,7 @@ asset entries too.
         serviceContext.getAssetLinkEntryIds());
 
 Does `ServiceContext` also play a role in starting a workflow instance for the
-blogs entry? Must you Ask? 
+blogs entry? Must you ask? 
 
     // Workflow
 
@@ -351,11 +351,11 @@ Let's look at Liferay's permissions system next.
 
 ## Security and Permissions [](id=security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
 
-The Java portlet standard defines a simple security scheme using portlet roles and
-their mapping to portal roles. On top of that, Liferay provides a fine-grained
-permissions system you can use to implement access security in your custom
-portlets. Here we'll give an overview of the standard Java security system,
-Liferay's permission system, and how to use them in your own portlets. 
+The Java portlet standard defines a simple security scheme using portlet roles
+and their mapping to portal roles. On top of this, Liferay provides a
+fine-grained permissions system that you can use to implement access security in
+your custom portlets. Here, we'll give an overview of the standard Java security
+system, Liferay's permission system, and how to use them in your own portlets. 
 
 ### JSR Portlet Security [](id=jsr-portlet-security-liferay-portal-6-2-dev-guide-06-en)
 
@@ -405,8 +405,9 @@ are from different portlets (e.g. portlets from different developers).
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** Each role named in a portlet's
-`<security-role-ref>` element is given permission to add the portlet to a page. 
+ ![Note](../../images/tip-pen-paper.png) **Note:** Each role named in a
+ portlet's `<security-role-ref>` element is given permission to add the portlet
+ to a page. 
 
 ---
 
@@ -501,102 +502,107 @@ resources to actions:
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC
-     "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
-     "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
+    "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
 
     <resource-action-mapping>
-        <portlet-resource>
-            <portlet-name>33</portlet-name>
-            <permissions>
-                <supports>
-                    <action-key>ADD_TO_PAGE</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </portlet-resource>
-        <portlet-resource>
-            <portlet-name>161</portlet-name>
-            <permissions>
-                <supports>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </portlet-resource>
-        <model-resource>
-            <model-name>com.liferay.portlet.blogs</model-name>
-            <portlet-ref>
-                <portlet-name>33</portlet-name>
-            </portlet-ref>
-            <permissions>
-                <supports>
-                    <action-key>ADD_ENTRY</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>SUBSCRIBE</action-key>
-                </supports>
-                <site-member-defaults />
-                <guest-defaults />
-                <guest-unsupported>
-                    <action-key>ADD_ENTRY</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>SUBSCRIBE</action-key>
-                </guest-unsupported>
-            </permissions>
-        </model-resource>
-        <model-resource>
-            <model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
-            <portlet-ref>
-                <portlet-name>33</portlet-name>
-            </portlet-ref>
-            <permissions>
-                <supports>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>DELETE</action-key>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>DELETE</action-key>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                </guest-unsupported>
-            </permissions>
-            ...
-        </model-resource>
+            <portlet-resource>
+                    <portlet-name>33</portlet-name>
+                    <permissions>
+                            <supports>
+                                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+                                    <action-key>ADD_TO_PAGE</action-key>
+                                    <action-key>CONFIGURATION</action-key>
+                                    <action-key>VIEW</action-key>
+                            </supports>
+                            <site-member-defaults>
+                                    <action-key>VIEW</action-key>
+                            </site-member-defaults>
+                            <guest-defaults>
+                                    <action-key>VIEW</action-key>
+                            </guest-defaults>
+                            <guest-unsupported>
+                                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+                                    <action-key>CONFIGURATION</action-key>
+                            </guest-unsupported>
+                    </permissions>
+            </portlet-resource>
+            <portlet-resource>
+                    <portlet-name>161</portlet-name>
+                    <permissions>
+                            <supports>
+                                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                                    <action-key>CONFIGURATION</action-key>
+                                    <action-key>VIEW</action-key>
+                            </supports>
+                            <site-member-defaults>
+                                    <action-key>VIEW</action-key>
+                            </site-member-defaults>
+                            <guest-defaults>
+                                    <action-key>VIEW</action-key>
+                            </guest-defaults>
+                            <guest-unsupported>
+                                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                                    <action-key>CONFIGURATION</action-key>
+                            </guest-unsupported>
+                    </permissions>
+            </portlet-resource>
+            <model-resource>
+                    <model-name>com.liferay.portlet.blogs</model-name>
+                    <portlet-ref>
+                            <portlet-name>33</portlet-name>
+                            <portlet-name>161</portlet-name>
+                    </portlet-ref>
+                    <weight>1</weight>
+                    <permissions>
+                            <supports>
+                                    <action-key>ADD_ENTRY</action-key>
+                                    <action-key>PERMISSIONS</action-key>
+                                    <action-key>SUBSCRIBE</action-key>
+                            </supports>
+                            <site-member-defaults />
+                            <guest-defaults />
+                            <guest-unsupported>
+                                    <action-key>ADD_ENTRY</action-key>
+                                    <action-key>PERMISSIONS</action-key>
+                                    <action-key>SUBSCRIBE</action-key>
+                            </guest-unsupported>
+                    </permissions>
+            </model-resource>
+            <model-resource>
+                    <model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
+                    <portlet-ref>
+                            <portlet-name>33</portlet-name>
+                            <portlet-name>161</portlet-name>
+                    </portlet-ref>
+                    <weight>2</weight>
+                    <permissions>
+                            <supports>
+                                    <action-key>ADD_DISCUSSION</action-key>
+                                    <action-key>DELETE</action-key>
+                                    <action-key>DELETE_DISCUSSION</action-key>
+                                    <action-key>PERMISSIONS</action-key>
+                                    <action-key>UPDATE</action-key>
+                                    <action-key>UPDATE_DISCUSSION</action-key>
+                                    <action-key>VIEW</action-key>
+                            </supports>
+                            <site-member-defaults>
+                                    <action-key>ADD_DISCUSSION</action-key>
+                                    <action-key>VIEW</action-key>
+                            </site-member-defaults>
+                            <guest-defaults>
+                                    <action-key>ADD_DISCUSSION</action-key>
+                                    <action-key>VIEW</action-key>
+                            </guest-defaults>
+                            <guest-unsupported>
+                                    <action-key>DELETE</action-key>
+                                    <action-key>DELETE_DISCUSSION</action-key>
+                                    <action-key>PERMISSIONS</action-key>
+                                    <action-key>UPDATE</action-key>
+                                    <action-key>UPDATE_DISCUSSION</action-key>
+                            </guest-unsupported>
+                    </permissions>
+            </model-resource>
     </resource-action-mapping>
 
 Permissions in the blogs portlet are defined at two different levels: the
@@ -686,22 +692,23 @@ for all built-in Liferay portlets (including the blogs portlet):
 You should put your plugin's `resource-actions` XML files (e.g.  `default.xml`
 and `blogs.xml`) in a directory in your project's classpath. Then create a
 properties file (typically named `portlet.properties`) for your portlet that
-references the the file that specifies your `<resource-action-mapping>` element
-(e.g. `default.xml`). In this portlet properties file, create a property
-named `resource.actions.configs` with the relative path to your portlet's
+references the file that specifies your `<resource-action-mapping>` element
+(e.g. `default.xml`). In this portlet properties file, create a property named
+`resource.actions.configs` with the relative path to your portlet's
 resource-action mapping file (e.g.  `default.xml`) as its value. Here's what
 this property specification might look like: 
 
     resource.actions.configs=resource-actions/default.xml
 
-Check out a copy of the Liferay source code from the Liferay Github repository
-to see an example of a portlet that defines its resources and permissions as we
-just described; start by looking at the definition files found in the
+Check out a copy of the Liferay source code from the Liferay Github
+[repository](https://github.com/liferay/liferay-portal) to see an example of a
+portlet that defines its resources and permissions as we just described; start
+by looking at the definition files found in the
 `portal-impl/src/resource-actions` directory. For an example of defining
 permissions in the context of a portlet plugin, check out `plugins/trunk` and
 look at the portlet `sample-permissions-portlet`. 
 
-Next we'll show you how to add resources. 
+Next, we'll show you how to add resources. 
 
 <!-- I didn't see any point to the permission algorithms section. It didn't seem
 to lead anywhere, and developers who have been approaching Liferay have been met
@@ -727,7 +734,7 @@ signature of that method:
         String primKey, boolean portletActions,
         boolean addGroupPermissions, boolean addGuestPermissions)
 
-Each Entity that requires access permission must be added as a resource
+Each entity that requires access permission must be added as a resource
 every time it is stored. For example, every time a user adds a new
 entry to her blog, the `addResources(...)` method must be called to add the
 new entry object to the resource system. Here's an example of the call from the
@@ -795,7 +802,7 @@ interface to the user. Just add these two Liferay UI tags to your JSP:
     theme, and one of them (see below) is used for permissions. 
 
 This example demonstrates the use of both tags; it comes from the
-`view_entry_content.jspf`file. 
+`view_entry_content.jspf` file. 
 
     <liferay-security:permissionsURL
         modelResource="<%= BlogsEntry.class.getName() %>"
@@ -814,15 +821,15 @@ For the first tag, specify the following attributes:
 -   `modelResourceDescription`: You can pass in anything that best describes
     this model instance. In this example, the blogs title was passed in. 
 -   `resourcePrimKey`: The primary key of your model instance. 
--   `var`: Specifies the name of the variable to be assigned the resulting URL
-    String. The variable is then passed to the `<liferay-ui:icon>` tag so the
-    permission icon has the proper URL link. 
+-   `var`: Specifies the name of the variable to which the resulting URL string
+    will be assigned. The variable is then passed to the `<liferay-ui:icon>` tag
+    so the permission icon has the proper URL link.
 
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources. 
 
-Next we'll show you how to implement permissions checking. 
+Next, we'll show you how to implement permissions checking. 
 
 ### Checking Permissions [](id=checking-permissions-liferay-portal-6-2-dev-guide-06-en)
 
@@ -831,7 +838,7 @@ to ensure the configured permissions are enforced. You'll do this by adding
 permission checks to your application. For example, your business layer can
 check for permission before deleting a resource, or your user interface can hide
 a button that adds an entity (e.g. a calendar event) if the user doesn't have
-permission. 
+permission.
 
 You need to implement checking of any custom permissions you defined in your
 `resource-actions` XML file. In the Blogs portlet, one supported custom action
@@ -850,9 +857,9 @@ a blog entry.  Here's the `ADD_ENTRY` action in a JSP file:
     }
     %>
 
-The second place to check for the add entry permission is in the business
-logic. If the check fails, a `PrincipalException` is thrown `and the add entry
-request is aborted:`
+The second place to check for the add entry permission is in the business logic.
+If the check fails, a `PrincipalException` is thrown and the add entry request
+is aborted:
 
     if (!permissionChecker.hasPermission(
         scopeGroupId, "com.liferay.portlet.blogs.model",
@@ -914,7 +921,7 @@ performance. There are several ways to obtain a permission checker:
         PermissionChecker permissionChecker =
             themeDisplay.getPermissionChecker();
 
-Next you'll optimize permission checking by creating helper classes to do most
+Next, you'll optimize permission checking by creating helper classes to do most
 of the heavy lifting. 
 
 ### Creating Helper Classes for Permission Checking [](id=creating-permission-helper-classes-liferay-portal-6-2-dev-guide-06-en)
@@ -933,7 +940,7 @@ your permission logic calls for checking multiple action types.
         }
     %>
 
-Now let's see how a `ServiceImpl` class `BlogsEntryServiceImpl` uses the
+Now let's see how a `ServiceImpl` class, `BlogsEntryServiceImpl`, uses the
 `BlogsPermission` helper class. In the method
 `BlogsEntryServiceImpl.addEntry(...)`, a call is made to check whether the
 incoming request has permission to add an entry. The check is done using the
@@ -972,18 +979,18 @@ Likewise, you're encouraged to use custom portlet action keys.
 class, which is what the reader is expecting out of this section. Certainly I
 was. We've only seen how to use a helper class that already exists. -Rich --> 
 
-Let's review what we've just covered. Implementing permission into your custom
-portlet consists of four main steps: 
+Let's review what we've just covered. Implementing permissions into your custom
+portlet consists of four main steps:
  
-1.  Define any custom resources and actions. 
+1.  Define any custom resources and actions.
 
-2.  Implement code to register (or add) any newly created resources, such as a
-    `BlogsEntry` object. 
+2.  Implement code to register (i.e., add) any newly created resources, such as
+    a `BlogsEntry` object.
 
-3.  Provide an interface for the user to configure permission. 
+3.  Provide an interface for the user to configure permissions.
 
-4.  Implement code to check permission before returning resources or showing
-    custom features. 
+4.  Implement code to check permissions before returning resources or showing
+    custom features.
 
 The two major resources are portlets and entities. Liferay does most of the work
 for you by providing a configuration file and a system of resources that let you
@@ -991,7 +998,7 @@ check permissions wherever you need to in your application.
 
 You're now equipped to implement security in your custom Liferay portlets! 
 
-Next, let's learn how to use the Asset Framework. 
+Next, let's learn how to use Liferay's asset framework. 
 
 ## Asset Framework [](id=asset-framework-liferay-portal-6-2-dev-guide-06-en)
 
@@ -1005,11 +1012,11 @@ This common functionality is what Liferay's asset framework gives you. Using the
 power of Liferay's built-in message boards, tags, and categories, Liferay lets
 you infuse your application with these features in no time. 
  
-The term *asset* is a generic term referring to any type of content,
-including text, an external file, a URL, an image, or a record in an online
-book library. Consequently, when we use the term *asset* here, we're referring
-to some type of Liferay content, like documents, blog entries, bookmarks, wiki
-pages, or anything you create in your applications. 
+The term *asset* is a generic term that refers to any type of content, including
+text, an external file, a URL, an image, or a record in an online book library.
+Consequently, when we use the term *asset* here, we're referring to some type of
+Liferay content, like documents, blog entries, bookmarks, wiki pages, or
+anything you create in your applications. 
 
 Here are the features you can reuse thanks to the asset framework: 
 
@@ -1017,8 +1024,8 @@ Here are the features you can reuse thanks to the asset framework:
     when the author assigns them to the content. 
 -   Associate categories to custom content types. Authors are only allowed to
     select from predefined categories within several predefined vocabularies. 
--   Manage tags from the control panel, including merging tags. 
--   Manage categories from the control panel, including creating complex
+-   Manage tags from the Control Panel, including merging tags. 
+-   Manage categories from the Control Panel, including creating complex
     hierarchies. 
 -   Associate comments with assets. 
 -   Rate assets using a five star rating system. 
@@ -1035,42 +1042,27 @@ Here are the features you can reuse thanks to the asset framework:
     time, since it likely won't be necessary to develop custom portlets for your
     custom content types. 
 
-At this point you might be saying, "Asset Framework sounds great; but how do I
-leverage all these awesome functions?" Excellent question, young padawan, and
-perfect timing; we couldn't have said it better ourselves. 
+At this point you might be saying, "Liferay's asset framework sounds great; but
+how do I leverage all these awesome functions?" Excellent question, young
+padawan, and perfect timing; we couldn't have said it better ourselves. 
 
-We'll describe the first two briefly here before we dive in head first: 
+We'll briefly describe the first two steps here before we dive in head first: 
 
--   The first step is mandatory; you must let the framework know whenever one of
-    your custom content entries is added, updated or deleted. 
--   The second step enables the asset framework in the UI: you can use a
-    set of taglibs to provide widgets that allow authors to enter comments, tags
-    and categories, as well as how to show the entered tags and categories along
-    with the content. 
+-   The first step is mandatory. You must let the framework know whenever one of
+    your custom content entries is added, updated, or deleted. 
+-   The second step enables the asset framework in the UI. You can use a set of
+    taglibs to provide widgets that allow authors to enter comments, tags and
+    categories and that show the entered tags and categories along with the
+    content. 
 
-<!--I don't understand the second half of the second step, after the comma.
--Russ -->
-
-<!-- It was confusingly written; hopefully I fixed it. -Rich -->
-
-<!--It's still confusing to me, as it says taglibs provide widgets that allow
-authors to enter comments, tags and categories, as well as how to...I wasn't
-expecting a how to here and it doesn't work, does it? since it's originally
-saying taglibs provide widgets that allow...-->
-
-<!--Not to add to the confusion here, but in the wordsmithing it looks like
-something got messed up, or something was lost between the question of how a
-developer would leverage asset framework and the steps required to do so. -Russ
---> 
-
-Next let's dive head first into the first step; informing the Asset Framework
-when you add, update, or delete assets. 
+Let's dive head first into the first step: we need to inform the asset framework
+when we're adding, updating, or deleting assets.
 
 #### Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets-liferay-portal-6-2-dev-guide-06-en)
 
-Whenever you create a new entity, you need to let the Asset Framework know. In
+Whenever you create a new entity, you need to let the asset framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
-invoke a method of the Asset Framework that adds an `AssetEntry` so that Liferay
+invoke a method of the asset framework that adds an `AssetEntry` so that Liferay
 can keep track of the asset. 
 
 Specifically, you should access these methods using either the static methods
@@ -1126,8 +1118,8 @@ Here's a quick summary of the most important parameters of this method:
     It's especially useful if your content will be exported and imported across
     separate portals.  
 -   `assetCategoryIds` and `assetTagNames` represent the categories and tags
-    selected by the author of the content. The Asset Framework will store them
-    for you. 
+    selected by the author of the content. The asset framework stores them for
+    you.
 -   `visible` specifies whether the content should be shown at all by Asset
     Publisher. 
 -   `title,` `description` and `summary` are descriptive fields used by the
@@ -1144,9 +1136,9 @@ Otherwise, it looks like we're holding back information for no apparent reason.
 -Rich -->
 
 When one of your custom content entries is deleted, you should once again let
-Asset Framework know. That way it can clean up stored information and make sure
-that the Asset Publisher doesn't show any information for the content that has
-been deleted. The signature of method to delete an asset entry is: 
+the asset framework know. This way, it can clean up stored information and make
+sure that the Asset Publisher doesn't show any information for the content that
+has been deleted. The signature of method to delete an asset entry is: 
 
     void deleteEntry(String className, long classPK)
 
@@ -1155,18 +1147,18 @@ Here's an example invocation extracted again from the blogs portlet:
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
 
-Now that you can create and modify assets, consider tagging and categorizing
-them. Let's tackle that next. 
+Now that you can create, modify, and delete assets, let's learn how to
+categorize them. 
 
 #### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
 
-In the last section we let Asset Framework know about the tags and categories
-that we associated with a given asset; but how does a content author specify
-the tags and categories? 
+In the last section, we let the asset framework know about the tags and
+categories that we associated with a given asset; but how does a content author
+specify the tags and categories? 
 
 Liferay provides a set of JSP tags you can use to make this task very easy. You
 can put the following Liferay UI tags in your forms to create content that can
-be associated with new or existing tags or predefined categories: 
+be associated with new or existing tags or predefined categories:
 
     <label>Tags</label>
     <liferay-ui:asset-tags-selector
@@ -1185,10 +1177,10 @@ search for a tag or create a new one or select an existing category.
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's
-AlloyUI Form taglibs, creating fields to enter tags and categories is even
-simpler. You just use `<aui:input name="tags" type="assetTags" />` and
-`<aui:input name="categories" type="assetCategories" />`, respectively. 
+ ![Tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's
+ AlloyUI Form taglibs, creating fields to enter tags and categories is even
+ simpler. You just use `<aui:input name="tags" type="assetTags" />` and
+ `<aui:input name="categories" type="assetCategories" />`, respectively. 
 
 ---
 
@@ -1219,12 +1211,13 @@ based on the specified tag or category.
 
 Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
-tags you can use to leverage Asset Framework's features. 
+tags you can use to leverage the asset framework's features. 
 
 #### More JSP Tags for Assets [](id=more-jsp-tags-for-assets-liferay-portal-6-2-dev-guide-06-en)
 
-In addition to tags and categories, there are more features that Asset Framework
-provides. These features allow users to do the following with your assets: 
+In addition to tags and categories, there are more features that the asset
+framework provides. These features allow users to do the following with your
+assets: 
 
 -   Add comments
 -   Rate comments of other users
@@ -1600,8 +1593,8 @@ by Juan Fern&agrave;ndez; he talks about doing just that.
 take his blog entry and massage the text to include it right here in the
 documentation. -Rich -->
 
-Now get out there and start enjoying the benefits of the Asset Framework in
-your custom portlets. 
+Now get out there and start enjoying the benefits of the asset framework in
+your custom portlets!
 
 Next, we'll show you how to leverage Liferay's Message Bus in sending messages
 within and between your applications. So let's hop on that bus! 
@@ -2326,9 +2319,8 @@ system was used to make a request, and then follows rules to make Liferay render
 pages based on the device. To use this feature, you first need to install the
 *Device Recognition Provider* app from Liferay Marketplace. Find more
 information on the app by following one of these links, depending on whether you
-use Liferay CE or EE: [Device Recognition
-CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
-Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
+use Liferay CE or EE: [Device Recognition CE](http://www.liferay.com/marketplace/-/mp/application/15193341)
+or [Device Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
 
 The Device Recognition plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
@@ -2346,8 +2338,7 @@ object `Device` from the `themeDisplay` object like this:
 
     Device device = themeDisplay.getDevice();
 
-You can view the API in the [Device
-Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+You can view the API in the [Device Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 
@@ -2379,8 +2370,6 @@ With the Device Detection API, you can detect the capabilities of a device
 making request to your portal and render content accordingly; so your grandma's
 gnarly tablet and your cousin's awesome new mobile phone can make requests to
 your portal and receive identical content. This will make everyone happy! 
-
-<!--Next let's look at Message Bus, another of Liferay's APIs. -->
 
 <!-- ## Other frameworks -->
 
@@ -2433,10 +2422,11 @@ You've learned how to leverage `ServiceContext` objects in your use of Liferay
 services and how Liferay's permissions and JSR portal security work.
 
 With Liferay's frameworks, implementing complex functionality in your custom
-portlets becomes easy. We covered Asset Framework, Device Detection, and Message
-Bus. Make sure you check back regularly to find more detailed descriptions of
-current frameworks and discover brand new frameworks that'll knock your socks
-off, or at least simplify your custom portlet development. 
+portlets becomes easy. We discussed how to use Liferay's ServiceContext object,
+permissions framework, asset framework, message bus API, and device detection
+API. Check back regularly to find more detailed descriptions of current
+frameworks. You might also discover brand new frameworks that'll knock your
+socks off, or at least simplify your custom portlet development. 
 
 Not only does Liferay Portal boast of fabulous frameworks but also of its
 unwavering support of workflow development. Naturally, privileged portal users
