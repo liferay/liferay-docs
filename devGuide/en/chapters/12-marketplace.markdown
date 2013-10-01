@@ -849,7 +849,7 @@ from the ground up.
 
 ## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind-liferay-portal-6-2-dev-guide-11-en)
 
-At the start of plugin developement, you may not have a clear picture of all the
+At the start of plugin development, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address your plugin's
 PACL later. But, as you develop your plugin there are some common security
@@ -885,7 +885,7 @@ documentation is available for you to read at
 But we'll highlight a couple common mistakes developers make that violate
 Liferay's secured environment: 
 
-- Invoking a method, irectly or indirectly, without considering whether it can
+- Invoking a method, directly or indirectly, without considering whether it can
   throw a security exception.
 - Using external libraries or frameworks that access classloaders outside of
   your plugin.  
@@ -907,7 +907,7 @@ designing your plugin. If they throw security exceptions, handle them
 appropriately with try/catch blocks. Keep in mind that you not only need to
 handle security exceptions of methods your plugin invokes *directly*, but you
 also need to handle the security exceptions of the underlying methods your
-plugin invokes *indirectly*.   
+plugin invokes *indirectly*.
 
 For example, you may be using a file utility that calls `java.io.File`'s
 `canRead` method. Since the `canRead` method can throw a `SecurityException`,
@@ -1016,7 +1016,7 @@ confidently creating your plugin.
 Start creating your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
 everything you normally would do. Do all of this with the Plugin Security
-Manager disabled via your plugin's `liferay-plugin-package.properties` file:  
+Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
 	security-manager-enabled=false
 
@@ -1103,7 +1103,7 @@ Policy file.
 
 If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
-file. You can create policy file (`java.policy`) in your plugin's `WEB-INF`
+file. You can create the policy file (`java.policy`) in your plugin's `WEB-INF`
 folder. The policy file must follow Policy File syntax as described in detail at
 [http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
 Like the rules you define in your plugin's PACL, the additional rules you define
@@ -1209,7 +1209,7 @@ The star means "every file in this single directory." The dash, however, matches
 everything in this folder and below. 
 
 One more note. This: 
-                                            
+
     ${liferay.web.portal.dir}/html/themes/-
 
 does not include this: 
@@ -1672,14 +1672,14 @@ executor for the plugin to access.
 
 <!--Right now summaries from both chapters (plugins security was its own
 chapter previously) are left here. They should be combined and the chapter
-rewqorked for flow. --> 
+reworked for flow. --> 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en-0)
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
 
-With regards to Marketetplace apps, we looked at how to create, publish,
+With regards to Marketplace apps, we looked at how to create, publish,
 maintain, and track apps. You do this through [liferay.com](http://liferay.com),
 using your own personal credentials and its features for Marketplace. Then, we
 covered the requirements for publishing apps, which did not differ significantly
