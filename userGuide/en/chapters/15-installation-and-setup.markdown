@@ -3283,7 +3283,7 @@ Let's proceed with configuring WebLogic.
 
 ### Configuring WebLogic
 
-Let’s make the following adjustments in your configuration to support using
+Let's make the following adjustments in your configuration to support using
 Liferay:
 - Set WebLogic Server's memory arguments for the Sun JVM and other JVM types.
 - Set the maximum size for Java's permanent generation space.
