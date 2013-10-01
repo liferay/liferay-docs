@@ -1427,41 +1427,42 @@ your data source, you can skip this section.
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC
    Connection Pools*
 
-    ![Figure 15.37: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
+    ![Figure 15.37: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
 
 4. Click *New...*.
 
-5. In the first screen (Step 1 of 2), give your connection pool the name
-   `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource` and
-   select your database driver vendor (e.g. `MySQL`) as follows:
+5. On the first screen (Step 1 of 2), enter the name `LiferayPool` for your
+   connection pool, select the `javax.sql.ConnectionPoolDataSource` resource
+   type, and select your database driver vendor (e.g. `MySQL`). See the
+   following figure:
 
-    ![Figure 15.38: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
+    ![Figure 15.38: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6. Click *Next* to advance to the next step in creating your JDBC connection
    pool.
 
-7. On the this screen (Step 2 of 2), scroll down to the *Additional Properties*
-   section.
+7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
+   Properties* section.
 
     ![Figure 15.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
-    **URL:** the URL of your connection pool.
+    **Url:** the URL of your connection pool.
 
     For example,
 
-        jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+        jdbc:mysql://localhost:3306/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
 
     Note, if you are using the above example, you should specify the name of
     your database in place of `lportal`. Likewise, if your database is not on
     the same host as GlassFish, specify your the database server's host name in
     place of `localhost`. Lastly, specify your database type in place of
-    `jdbc:mysql`.
+    `jdbc:mysql` and use the correct port (3306 is for MySQL).
 
-    **user:** the name of your database user.
+    **User:** the name of your database user.
 
-    **password:** your database user's password.
+    **Password:** your database user's password.
 
 9. Click *Finish*.
 
@@ -1521,10 +1522,10 @@ database and mail session.
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-If you are using *GlassFish* to manage your mail session, add the following to
-your `portal-ext.properties` file to reference that mail session:
+4. If you are using *GlassFish* to manage your mail session, add the following
+   to your `portal-ext.properties` file to reference that mail session:
 
-    mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
 Liferay will now be able to communicate with your database and mail session. So
 let's go ahead and deploy Liferay.
@@ -1535,9 +1536,9 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your
 domain's server. Before you deploy Liferay Portal, let's consider whether you
 want to also start the setup wizard.
 
-- **Start the setup wizard along with Liferay Portal**--Do this if you want to
-  configure your portal, set up your site's administrative account and/or manage
-  your database within Liferay.
+**Start the setup wizard along with Liferay Portal**: Do this if you want to
+configure your portal, set up your site's administrative account, and/or manage
+your database within Liferay.
 		
 If this is your first time starting Liferay Portal 6.1, the setup wizard is
 automatically invoked. If you want to re-run the wizard, specify
@@ -1548,8 +1549,8 @@ automatically invoked. If you want to re-run the wizard, specify
 
 The setup wizard is then invoked during server startup.
 
-- **Start Liferay Portal without invoking the setup wizard** - Do this if want
-  to preserve your current portal settings.
+**Start Liferay Portal without invoking the setup wizard**: Do this if want to
+preserve your current portal settings.
 
 To startup the server without triggering the setup wizard, specify
 `setup.wizard.enabled=false` in your properties (e.g.
