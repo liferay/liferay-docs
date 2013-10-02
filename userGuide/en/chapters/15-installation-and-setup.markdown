@@ -2721,14 +2721,22 @@ Next, let's get started by addressing Liferay's library dependencies.
 Steps to put in this section as per the build-dist-tomcat target in build-dist.xml:
 
 1. Create lib/ext directory in Tomcat home directory.
-2. Open tomcat-home/conf/catalina.properties and `replace common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar` with `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`
-3. Open `tomcat-home/conf/server.xml` and replace both instances of `redirectPort="8443" />` with `redirectPort="8443" URIEncoding="UTF-8" />`
+2. Open tomcat-home/conf/catalina.properties and replace
+`common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar`
+with
+`common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`
+3. Open `tomcat-home/conf/server.xml` and replace both instances of
+`redirectPort="8443" />` with `redirectPort="8443" URIEncoding="UTF-8" />`
 4. 1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in
    the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina calls
    `setenv.bat` or `setenv.sh`. Edit the file and populate it with following
    contents: <!--See below in configuring tomcat for details here and compare with script-->
 5. Make the above *.sh file executable, see instructions below.
 6. Edit "app.server.${user.name}.properties", specifying app.server.type=tomcat
+7. Delete the "classes" directory in LiferayHome/portal-web.<!--Not sure this is necessary-->
+8. Install Dependency JARs.
+8. Deploy the Liferay WAR file <ant target="deploy" inheritAll="false" />
+<!--Dependency JARs other than those in the downloaded dependencies zip: persistence.jar, mail.jar, jta.jar, mysql.jar. Might also want to explain -->
 
 
 
@@ -2819,19 +2827,19 @@ Let's get started with our configuration tasks.
 
     setenv.bat:
 
-		if exist "%CATALINA_HOME%/jre@java.version@/win" (
-			if not "%JAVA_HOME%" == "" (
-				set JAVA_HOME=
-			)
-		
-			set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
-		)
+    if exist "%CATALINA_HOME%/jre@java.version@/win" (
+        if not "%JAVA_HOME%" == "" (
+            set JAVA_HOME=
+        )
 
-		set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
+    )
+
+    set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
     setenv.sh:
 
-		JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
     This sets the character encoding to UTF-8, sets the time zone to Greenwich
     Mean Time and allocates memory to the Java virtual machine.
