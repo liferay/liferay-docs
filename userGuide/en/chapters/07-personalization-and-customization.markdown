@@ -354,10 +354,6 @@ use Liferay's rules engine.
 
 ## Using Liferay's rules engine [](id=using-liferays-rules-engine-liferay-portal-6-2-user-guide-07-en)
 
-<!-- Before this section can be updated for 6.2, need to wait until the 6.2
-Drools EE plugin (or app) is available from the customer portal (or
-Marketplace). -->
-
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94
@@ -425,19 +421,21 @@ portlet.
 
 From the Dockbar, click *Admin* &rarr; *Content* and create a new web content
 instance in your site. Before publishing the web content instance, tag the
-article with *north america symposium*. Then, navigate to *My Account* from the
+article with *americas*. Then, navigate to *My Account* from the
 Dockbar and click on the *Addresses* link on the right side of the screen. Enter
-a Canadian, Mexican, or US based address and click *Save*. Navigate back to the
-page with the Sample Drools portlet. The Sample Drools portlet should now be
-displaying the web content instance that you created.
+a Brazilian, Canadian, Mexican, or US based address and click *Save*. Navigate
+back to the page with the Sample Drools portlet. The Sample Drools portlet
+should now be displaying the web content instance that you created.
 
 The default rule that's being evaluated displays a list of assets based on the
 current user's address. For example, if the current user's country is set to
-Canada, Mexico, or the United States, the Sample Drools portlet displays a list
-of assets that have been tagged with the *west coast symposium* tag.
+Brazil, Canada, Mexico, or the United States, the Sample Drools portlet displays
+a list of assets that have been tagged with the *americas* tag.
 
-<!-- | TODO: Need screen shots here. | --> <!-- | TODO: We need to point to what
-we're about to do before we do it; otherwise this is hard to follow. | -->
+![Figure 7.x: By default, the Sample Drools portlet returns personalized content based on the addresses set on the form for editing a user account. This form is accessible from the Dockbar via *\[User Name\]* &rarr; *My Account*. Users with addresses in Brazil, Canada, Mexico, or the United States will see a list of assets tagged with the "americas" tag in the Sample Drools portlet.](../../images/sample-drools-portlet.png)
+
+<!-- | TODO: We need to point to what we're about to do before we do it;
+otherwise this is hard to follow. | -->
 The Sample Drools portlet plugin also contains a second rule that returns
 personalized content based on the user's net worth set in the *My Account*
 &rarr; *Custom Fields* section of the Control Panel. To see this rule in action,
