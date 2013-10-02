@@ -290,7 +290,7 @@ There are two applications included in the bundle that you need to remove:
 To remove them, all you have to do is undeploy them. The method for doing this
 differs by application server and that, of course, depends on the bundle you
 have chosen. For example, on Tomcat you delete the application folders from the
-`[Tomcat Home]/webapps` folder. On Glassfish, you use the administrative console
+`[Tomcat Home]/webapps` folder. On GlassFish, you use the administrative console
 to undeploy them. 
 
 If you forget to undeploy the sample applications before you run through the
@@ -313,7 +313,7 @@ application server upon which you want to install Liferay. The bulk of this
 chapter describes how to install Liferay on all the application servers it
 supports, both open source and proprietary. 
 
-## App servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
+## App Servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many enterprises can't do
@@ -1403,10 +1403,18 @@ above.
 For example, replace: 
 
     <jvm-options>-Xmx256m</jvm-options>
-	
+
 with this: 
-	
+
     <jvm-options>-Xmx1024m</jvm-options>
+
+Edit your `domain1/config/config/server-policy.xml` and append the following
+lines to the end of the file:
+
+    grant {
+        permission java.lang.reflect.ReflectPermission  "suppressAccessChecks";
+        permission javax.security.auth.AuthPermission "doAsPrivileged";
+    };
 
 Delete, rename, or move the `domain1/docroot/index.html` file to another
 location to allow your Liferay Portal default page to be displayed.
@@ -1444,7 +1452,7 @@ your data source, you can skip this section.
 7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
    Properties* section.
 
-    ![Figure 15.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+    ![Figure 15.39: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
@@ -1586,14 +1594,19 @@ creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
 7. Click *OK*.
 
-![Figure 15.40: Glassfish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
+![Figure 15.40: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
 
-- If you disabled the setup wizard, your site's home page opens in your browser
-  at [http://localhost:8080](http://localhost:8080).
+Once you have deployed Liferay via GlassFish's administrative console, restart
+GlassFish.
 
-- Otherwise, the setup wizard opens in your browser.
+- If you disabled the setup wizard, visit
+  [http://localhost:8080](http://localhost:8080) to open your portal homepage.
 
-See the section on the setup wizard above for how to use the setup wizard. 
+- Otherwise, visiting [http://localhost:8080](http://localhost:8080) loads the
+  portal setup wizard.
+
+See the section on the setup wizard above for instructions on using the setup
+wizard.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
