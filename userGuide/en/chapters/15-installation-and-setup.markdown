@@ -2723,7 +2723,12 @@ Steps to put in this section as per the build-dist-tomcat target in build-dist.x
 1. Create lib/ext directory in Tomcat home directory.
 2. Open tomcat-home/conf/catalina.properties and `replace common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar` with `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`
 3. Open `tomcat-home/conf/server.xml` and replace both instances of `redirectPort="8443" />` with `redirectPort="8443" URIEncoding="UTF-8" />`
-4. 
+4. 1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in
+   the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina calls
+   `setenv.bat` or `setenv.sh`. Edit the file and populate it with following
+   contents: <!--See below in configuring tomcat for details here and compare with script-->
+5. Make the above *.sh file executable, see instructions below.
+6. Edit "app.server.${user.name}.properties", specifying app.server.type=tomcat
 
 
 
@@ -2865,27 +2870,27 @@ Let's get started with our configuration tasks.
     tags for configuring a JAAS realm, disabling persistent sessions and
     disabling sessions in general.
 
-3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
+<!--3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
     with:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-		
+-->		
     This allows Catalina to access the dependency jars you extracted to
     `$TOMCAT_HOME/lib/ext`.
-
+<!--
 4. To ensure consistent use of UTF-8 URI Encoding, edit
    `$TOMCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"` to
    your connector on port 8080. Below is an example of specifying this encoding
    on the connector:
 
 		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
-
+-->
 5. Make sure there is no `support-catalina.jar` file in your
    `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
-
+<!--I don't see one, should I include this instruction? -->
 Excellent work! Now let's consider configuration of your database.
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-3)
