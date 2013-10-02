@@ -3241,6 +3241,12 @@ JOnAS starts and Liferay opens a browser to `http://localhost:8080`.
 
 ## Installing Liferay on Oracle WebLogic 12c (12.1.x) [](id=install-liferay-on-weblogic-12c-liferay-portal-6-2-user-guide-15-en)
 
+In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
+Since you're using Oracle WebLogic, you may be curious of Liferay's support of
+XA transactions. Liferay doesn't require XA transactions, but it supports XA.
+Let's get acquainted with how Liferay fits in with your current WebLogic
+domain. 
+
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay.
 
@@ -3326,8 +3332,6 @@ within WebLogic.
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
 
-![Figure 15.44: WebLogic Data Sources](../../images/02-weblogic-10-3-data-sources.png)
-
 1.  Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data
     Source*.
 
@@ -3337,8 +3341,6 @@ you want to use Liferay's built-in data source, you can skip this section.
 3.  Choose the type of database and click *Next*. From the screenshot, you can
     see we have chosen MySQL. The database driver class is selected
     automatically.
-
-    ![Figure 15.45: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
 
 4.  Click *Next* three times. You should be on the *Connection Properties*
     screen. Enter the database name, the host name, the port, the database user
@@ -3365,8 +3367,6 @@ Next, let's configure a mail session in WebLogic.
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
-
-![Figure 15.46: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
 
 1.  Select *Mail Sessions* and create a new mail session which points to your
     mail server.
@@ -3469,8 +3469,6 @@ Now, let's deploy Liferay Portal.
 2.  Select *Deployments* and click the  *Install* button. Upload `jsf-1.2.war`
     from WebLogic's common files directory and select *Install this deployment
     as a library.*
-
-    ![Figure 15.47: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
 
 3.  After installing the JSF libraries, go back to deployments and select the
     Liferay `.war` file from the file system or click the *Upload Your File(s)*
