@@ -436,6 +436,12 @@ a list of assets that have been tagged with the *americas* tag.
 
 <!-- | TODO: We need to point to what we're about to do before we do it;
 otherwise this is hard to follow. | -->
+
+<!--
+TODO: The rules in the `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl` file need to be updated to be compatible with API changes. See the fix for LPS-40820 for an example of how this should be done. -Jesse, 10/1/2013
+-->
+
+<!--
 The Sample Drools portlet plugin also contains a second rule that returns
 personalized content based on the user's net worth set in the *My Account*
 &rarr; *Custom Fields* section of the Control Panel. To see this rule in action,
@@ -447,17 +453,18 @@ rule file can be found in the deployed portlet at
 `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`.
 In the same Configuration screen, add `networth` to the
 `user-custom-attribute-names` field. Save your changes and close the pop-up
-window. Navigate to the Control Panel and add a Custom Field to the User object
-with the key `networth`. Navigate to *My Account* and click on the Custom Fields
-link on the right side of the screen. Enter a net worth of 150000 and save the
-record. While still in the Control Panel, add a new Web Content entry to the
-default liferay.com site. Before publishing the Web Content entry, tag the
-article with *high net worth* and then save the entry. Now, navigate back to the
-liferay.com site and the Web Content should be displayed in the second Sample
-Drools portlet added to the page.
+window. Navigate to the Control Panel and add a custom field to the User object
+with the key `networth`. Navigate to *My Account* and click on the *Custom
+Fields* link on the right side of the screen. Enter a net worth of 150000 and
+save the record. Next, add a new web content instance to the default
+site of your portal. Before publishing the web content, tag the instance
+with *high net worth* and then save the entry. Now, navigate back to the
+default site and the web content should be displayed in the second Sample Drools
+portlet added to the page.
+-->
 
-Now that you can see how it works in practice, let's look closer at the rules
-themselves. 
+Now that you've seen how the Sample Drools portlet works, let's take a look
+closer at the rules themselves. 
 
 #### Rules Definitions [](id=rules-definitions-liferay-portal-6-2-user-guide-07-en)
 
