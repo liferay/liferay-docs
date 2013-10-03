@@ -835,14 +835,6 @@ added:
     mobile.device.styling.wap.enabled=false
     journal.articles.search.with.index=true
 
-<!-- The below section is informative, but it doesn't answer the "whys." Why did
-we make the encryption stronger? What makes the algorithms we chose the best
-ones? What benefits do users get now that we're using a different algorithm? Can
-the NSA crack this one (joke)? Will my portal's performance be impacted by the
-stronger encryption algorithm, and if so, how do I plan for it? In other words,
-we need to tell the story of how Liferay is doing its part to help its users
-keep their data secure. -->
-
 Please refer to the 6.1 and 6.2 versions of Liferay's `portal.properties` file
 for explanations of each of these properties. This file can be found in the your
 Liferay instance's `/WEB-INF/lib/portal-impl.jar` file. Online versions can also
@@ -951,17 +943,19 @@ Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
 
+### Upgrade Choices: Upgrade a Bundle or Upgrade Manually
+
 There are two different procedures to upgrade Liferay. The first one, upgrading
-a Liferay bundle, is the most common. The second procedure is for upgrading a
-Liferay installation on an application server. We'll go over both.
+a Liferay bundle, is the most common. The second procedure is for manually
+upgrading a Liferay installation on an application server. We'll discuss both.
 
 In both cases, Liferay auto-detects whether the database requires an upgrade the
 first time the new version is started. When Liferay does this, it upgrades the
 database to the format required by the new version. To perform this task,
-Liferay *must* be accessing the database with an ID that can create, drop and
-modify tables. Make sure you have granted these permissions to the ID before you
-attempt to upgrade Liferay. And, of course, we'll run the risk of overly
-repeating ourselves: back up your database. 
+Liferay *must* be accessing the database with a database user account that can
+create, drop and modify tables. Make sure you have granted these permissions to
+the database user account before you attempt to upgrade Liferay. And, of course,
+we'll run the risk of overly repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
@@ -1008,7 +1002,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-#### Upgrading Using a .war File [](id=upgrading-using-a--war-file-liferay-portal-6-2-user-guide-18-en)
+#### Upgrading Manually [](id=upgrading-using-a--war-file-liferay-portal-6-2-user-guide-18-en)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -1049,6 +1043,16 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
+
+### Post-Upgrade Tasks
+
+After upgrading to Liferay 6.2, you should reindex your portal's search indexes.
+Liferay 6.2 indexes new information in many places, including Documents and
+Media, Web Content, and Bookmarks. To reindex all search indexes, navigate to
+the *Control Panel* &rarr; *Server Administration* and click on *Reindex all
+search indexes*. This invokes each of your portal's indexer classes so that the
+all new information that Liferay 6.2 is configured to index gets indexed
+immediately.
 
 ## Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-liferay-portal-6-2-user-guide-18-en)
 
