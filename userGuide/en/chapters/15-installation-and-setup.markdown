@@ -1530,8 +1530,9 @@ database and mail session.
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-4. If you are using *GlassFish* to manage your mail session, add the following
-   to your `portal-ext.properties` file to reference that mail session:
+    Otherwise, if you are using *GlassFish* to manage your mail session, add the
+    following to your `portal-ext.properties` file to reference that mail
+    session:
 
         mail.session.jndi.name=mail/MailSession
 
@@ -1560,7 +1561,7 @@ The setup wizard is then invoked during server startup.
 **Start Liferay Portal without invoking the setup wizard**: Do this if want to
 preserve your current portal settings.
 
-To startup the server without triggering the setup wizard, specify
+To start up the server without triggering the setup wizard, specify
 `setup.wizard.enabled=false` in your properties (e.g.
 `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
