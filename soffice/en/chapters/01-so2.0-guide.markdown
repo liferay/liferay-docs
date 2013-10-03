@@ -898,11 +898,21 @@ These additional features include the following:
 - A Social Office User management tool that provides an easier way to assign
   users to the Social Office User role
 - Enhanced auditing tools for the Documents and Media library
-- The ability to mount Sharepoint and Documentum repositories to the Documents
+- The ability to mount Documentum and Sharepoint repositories to the Documents
   and Media library.
 - The ability for Liferay Sync users to sync with multiple Social Office sites
 - Bug fixes and usability improvements since Social Office 2.0 CE GA2
 - Access to Liferay Support
+
+The Documentum and Sharepoint plugins that are included in Social Office EE are
+the same plugins as those provided by the [Documentum Connector EE](https://www.liferay.com/marketplace/-/mp/application/15098914) and
+[Sharepoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537) apps on
+Liferay Marketplace. These plugins integrate Liferay's Documents and Media
+functionality with Documentum and Sharepoint. They allow Documentum and
+Sharepoint repositories to be mounted within Liferay's Documents and Media
+system. Please refer to the Liferay Marketplace app descriptions and the
+Documents and Media section of the [Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/using-external-repositori-3)
+for information on properties and configuration.
 
 After installing Social Office EE to your Liferay EE instance, you'll be
 directed to the following screen when you log in as an administrator:
