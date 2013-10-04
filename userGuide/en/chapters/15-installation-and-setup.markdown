@@ -2063,11 +2063,11 @@ place, configure your `portal-ext.properties` file with the following:
 	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
 	# (This one needs to be the exact folder into which you are going to place your WAR files.) 
 
-## Installing Liferay on JBoss 7 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above JBoss's install location.
 
-1. Download and install JBoss AS 7.0.x into your preferred directory. This
+1. Download and install JBoss AS 7.1.x into your preferred directory. This
    directory is referred to as `$JBOSS_HOME` throughout this section.
 
 2. Download the latest version of the Liferay Portal `.war` file.
@@ -2092,8 +2092,13 @@ Let's work with the dependency jar files first.
    [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+   
+3. Download the `jtds-<JTDS_VERSION>.jar.` file and insert it into the
+`$JBOSS_HOME/modules/com/liferay/portal/main` folder. You can download and learn
+more about this JDBC driver at the jTDS home page:
+[http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
 
-3. Create the file `module.xml` in the
+4. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
    contents.
 
@@ -2101,11 +2106,14 @@ Let's work with the dependency jar files first.
 
 		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
 			<resources>
-				<resource-root path="mysql-connector-java-5.1.18-bin.jar" />
+				<resource-root path="hsql.jar" />
+				<resource-root path="jtds-1.3.1.jar" />
+				<resource-root path="mysql-connector-java-5.1.26-bin.jar" />
 				<resource-root path="portal-service.jar" />
 				<resource-root path="portlet.jar" />
 			</resources>
 			<dependencies>
+				<module name="ibm.jdk" />
 				<module name="javax.api" />
 				<module name="javax.mail.api" />
 				<module name="javax.servlet.api" />
@@ -2114,38 +2122,93 @@ Let's work with the dependency jar files first.
 			</dependencies>
 		</module>
 
-If you're using a different database driver, replace the path of the MySQL
-resource root entry with that of your database driver.
-		
+	If you're using a different database or JDBC driver, replace the paths of
+	the MySQL and jTDS resource root entries with the correct paths.
+
+5. Next, you'll need to include a patch from Liferay's source code for one of
+JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
+the source into a temporary folder. We'll refer to the location of the Liferay
+source as `$LIFERAY_SOURCE`.
+
+6. Currently, there are bugs in the
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+file regarding the IBM JVM
+([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
+[JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
+additional steps to ensure a successful deployment with Liferay. In summary,
+you'll need to update the `ServerDependenciesProcessor.class` file in the
+`jboss-as-<$JBOSS_VERSION>.Final.jar` file to specify the IBM JDK. The steps to
+insert the patch can be referenced below.
+
+    1. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file from
+    `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
+    `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
+    
+    2. Navigate to the
+    `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
+    in a command prompt and enter the following statement:
+    
+    		jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+
+    	This command inserts the `ServerDependenciesProcessor.class` file into
+    	the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+    	`org/jboss/as/server/deployment/module` folder. You can reference the
+    	official documentation for updating a JAR file at
+    	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
+
+    3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
+    orginal `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
+
 Great! You have your `.jar` files ready for your domain.
 
-### Running Liferay on JBoss 7 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-in-standalon-liferay-portal-6-2-user-guide-15-en)
+### Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-in-standalon-liferay-portal-6-2-user-guide-15-en)
 
-JBoss 7 can be launched in either *standalone* mode or *domain* mode. Domain
+JBoss 7.1 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
 control point. A collection of such application servers is known as a *domain*.
 For more information on standalone mode vs. domain mode, please refer to the
-section on this topic in the [JBoss 7 User
-Guide](https://community.jboss.org/wiki/JBossAS7UserGuide?_sscc=t).  Liferay
-fully supports JBoss 7 when it runs in standalone mode but not when it runs
-in domain mode.
+section on this topic in the [JBoss 7.1 Admin
+Guide](https://docs.jboss.org/author/display/AS71/Admin+Guide#AdminGuide-Operatingmodes).
+Liferay fully supports JBoss 7.1 when it runs in standalone mode but not when it
+runs in domain mode.
 
-You can run Liferay on JBoss 7 in domain mode, but this method is not fully
-supported. In particular, Liferay's hot-deploy does not work since JBoss 7
-cannot deploy non-exploded `.war` files in domain mode. This prevents many
-Liferay plugins from working as intended. For example, JSP hooks don't work on
-JBoss 7 running in domain mode since Liferay's JSP override mechanism relies on
-the application server reloading customized JSP files from the exploded plugin
-`.war` file location. Other plugins, such as service or action hooks, should
-still work properly since they don't require JBoss to access anything (such as
-JSP files) from an exploded `.war` file on the file system. The best practice
-when running Liferay on JBoss 7 is to use standalone mode.
+You can run Liferay on JBoss 7.1 in domain mode, but this method is not fully
+supported. In particular, Liferay's hot-deploy does not work since JBoss 7.1
+cannot deploy non-exploded `.war` files in domain mode. The `.war` files are
+located in the `domain/data/content` directory. Deployments are only possible
+using the command line interface. This prevents many Liferay plugins from
+working as intended. For example, JSP hooks don't work on JBoss 7.1 running in
+domain mode since Liferay's JSP override mechanism relies on the application
+server reloading customized JSP files from the exploded plugin `.war` file
+location. Other plugins, such as service or action hooks, should still work
+properly since they don't require JBoss to access anything (such as JSP files)
+from an exploded `.war` file on the file system. 
 
-Note: This does not prevent Liferay from running in a clustered environment on
-multiple JBoss servers. You can set up a cluster of Liferay instances running on
-JBoss 7 servers running in standalone mode. Please refer to the chapter of this
-guide on [Configuring Liferay for High Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
+---
+
+![tip](../../images/01-tip.png) **Note:** This does not prevent Liferay from
+running in a clustered environment on multiple JBoss servers. You can set up a
+cluster of Liferay instances running on JBoss 7.1 servers running in standalone
+mode. Please refer to the chapter of this guide on [Configuring Liferay for High
+Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
 for information on setting up a Liferay cluster.
+
+---
+
+For multi-server production environments, the choice of running a managed domain
+versus standalone servers comes down to whether you want to use the centralized
+management capabilites a managed domain provides. Running a standalone server is
+better suited for most development scenarios. Any indiviual server configuration
+that can be achieved in a managed domain can also be achieved in a standalone
+server. Even if the application being developed will eventually run in
+production on a managed domain installation, most development can be done using
+a standalone server. Therefore, the best practice when running Liferay on JBoss
+7.1 is to use standalone mode.
+
+<!-- An excellent document on JBoss' 7.1 domain mode (written by Igor Spasic)
+can be found here:
+https://support.liferay.com/secure/attachment/72257/JBoss%20AS7%20Domain%20Mode.pdf
+-->
 
 ### Configuring JBoss [](id=configuring-jboss-liferay-portal-6-2-user-guide-15-en)
 
@@ -2154,46 +2217,56 @@ Let's make some adjustments in your configuration to support using Liferay.
 You can specify the JBoss server instance's configuration in the XML file
 `$JBOSS_HOME/standalone/configuration/standalone.xml`. We'll refer to this file
 simply as `standalone.xml`. You must also make some modifications to your
-configuration and startup scripts found in the `$JBOSS_HOME/bin/` folder. But
-let's start with the changes to `standalone.xml`.
+configuration and startup scripts found in the `$JBOSS_HOME/bin/` folder.
+Lastly, you'll need to make some modifications in your `$JBOSS_HOME/modules/`.
+Let's start with the changes to `standalone.xml`.
 
 Make the following modifications to `standalone.xml`:
 
-1. Disable the welcome root of the web subsystem's virtual server default
-   host by specifying `enable-welcome-root="false"`.
+1. Add the following system properties between the `</extensions>` and
+`<management>` tags:
 
-		<subsystem xmlns="urn:jboss:domain:web:1.0" default-virtual-server="default-host">
-			<connector name="http" scheme="http" protocol="HTTP/1.1" socket-binding="http"/>
+		<system-properties>
+			<property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
+			<property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
+		</system-properties>
+
+2. Add a timeout for the deployment scanner by setting
+`deployment-timeout="120"` as seen in the excerpt below.
+
+		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+			<deployment-scanner deployment-timeout="120" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+		</subsystem>
+
+3. Add the following JAAS security domain to the security subsystem
+`<security-domains>` defined in element `<subsystem
+xmlns="urn:jboss:domain:security:1.1">`.
+
+		<security-domain name="PortalRealm">
+			<authentication>
+				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
+			</authentication>
+		</security-domain>
+
+4. Disable the welcome root of the web subsystem's virtual server default host
+by specifying `enable-welcome-root="false"`.
+
+		<subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
+			<connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
 			<virtual-server name="default-host" enable-welcome-root="false">
 			   <alias name="localhost" />
 			   <alias name="example.com" />
 			</virtual-server>
-		</subsystem>
-			
-2. Insert the following `<configuration>` element within the web subsystem
-   element `<subsystem xmlns="urn:jboss:domain:web:1.0"
-   default-virtual-server="default-host">`.
+		</subsystem>		
+
+5. Insert the following `<configuration>` element within the web subsystem
+element `<subsystem xmlns="urn:jboss:domain:web:1.1"
+default-virtual-server="default-host" native="false">`.
 
 		<configuration>
 			<jsp-configuration development="true" />
 		</configuration>
-
-3. Add a timeout for the deployment scanner by setting
-   `deployment-timeout="120"` as seen in the excerpt below.
-
-		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.0">
-			<deployment-scanner name="default" path="deployments" scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
-		</subsystem>
-
-4. Add the following JAAS security domain to the security subsystem
-   `<security-domains>` defined in element `<subsystem
-   xmlns="urn:jboss:domain:security:1.0">`.
-
-		<security-domain name="PortalRealm">
-			<authentication>
-				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required"/>				</authentication>
-		</security-domain>
-
+		
 Now it's time for some changes to your configuration and startup scripts.
 		
 Make the following modifications to your standalone domain's configuration
@@ -2225,7 +2298,53 @@ Then add the following `JAVA_OPTS` assignment one line above the
 	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 		
 The prescribed script modifications are now complete for your Liferay
-installation on JBoss. Next we'll consider the database and mail configuration. 
+installation on JBoss.
+
+Lastly, let's make the necessary changes in your `$JBOSS_HOME/modules`
+directory.
+
+1. Create folder `$JBOSS_HOME/modules/ibm/jdk/main` and create and insert a new
+`module.xml` file into that folder.
+
+2. Insert the following contents into the
+`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
+
+		<?xml version="1.0"?>
+
+		<module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
+			<dependencies>
+				<system export="true">
+					<paths>
+						<path name="com/ibm" />
+						<path name="com/ibm/crypto/provider" />
+						<path name="com/ibm/jvm" />
+						<path name="com/ibm/jvm/io" />
+						<path name="com/ibm/jvm/util" />
+						<path name="com/ibm/match" />
+						<path name="com/ibm/misc" />
+						<path name="com/ibm/net" />
+						<path name="com/ibm/nio" />
+						<path name="com/ibm/nio/ch" />
+						<path name="com/ibm/security/auth" />
+						<path name="com/ibm/security/bootstrap" />
+						<path name="com/ibm/security/auth/module" />
+						<path name="com/ibm/security/util" />
+						<path name="META-INF/services" />
+					</paths>
+				</system>
+			</dependencies>
+		</module>]]>
+
+3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
+the following path names inside the &lt;paths&gt;...<\/paths> element:
+
+		<path name="com/sun/crypto" />
+		<path name="com/sun/crypto/provider" />
+		<path name="com/sun/image/codec/jpeg" />
+		<path name="com/sun/org/apache/xml/internal/resolver" />
+		<path name="com/sun/org/apache/xml/internal/resolver/tools" />
+
+Next we'll consider the database and mail configuration. 
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
@@ -2296,12 +2415,8 @@ mail session within JBoss.
 
 ### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
-At the time this document was written, JavaMail was not yet supported in JBoss
-AS 7.0.1 - however, it was implemented in the JBoss AS 7.1 alpha (see
-[https://issues.jboss.org/browse/AS7-1177](https://issues.jboss.org/browse/AS7-1177).
-If you want JBoss to manage your mail session, use the following instructions
-which are based on the implementation found in JBoss AS 7.1 alpha. If you want
-to use the built-in Liferay mail session, you can skip this section.
+If you want JBoss to manage your mail session, use the following instructions.
+If you want to use the built-in Liferay mail session, you can skip this section.
 
 Specify your mail subsystem  in `standalone.xml` as in the following example:
 
@@ -2326,7 +2441,7 @@ Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
 
 1. First, navigate to the Liferay Home folder, which is one folder above JBoss's
-   install location (i.e. `$JBOSS/..`).
+   install location (i.e. `$JBOSS_HOME/..`).
 
 2. If you're using *JBoss* to manage your data source, add the following to your
    `portal-ext.properties` file in your *Liferay Home* to refer to your data
@@ -2368,9 +2483,7 @@ Now you're ready to deploy Liferay Portal.
 4. Remove `eclipselink.jar` from
    `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure the
    Hibernate persistence provider is used instead of the one provided in the
-   `eclipselink.jar`. Note, JBoss 7.0.2 has a known issue
-   [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944)
-   in determining which persistence provider to use.
+   `eclipselink.jar`.
 
 5.  Before you start Liferay Portal, let's consider whether you want to also
     start the setup wizard.
@@ -2379,7 +2492,7 @@ Now you're ready to deploy Liferay Portal.
     to configure your portal, setup your site's administrative account and/or
     manage your database within Liferay.
 		
-    If this is your first time starting Liferay Portal 6.1, the setup wizard is
+    If this is your first time starting Liferay Portal 6.2, the setup wizard is
     invoked on server startup. If you want to re-run the wizard, specify
     `setup.wizard.enabled=true` in your properties file (e.g.
     `portal-setup-wizard.properties`).
