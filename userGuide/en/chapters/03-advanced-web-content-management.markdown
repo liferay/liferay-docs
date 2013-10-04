@@ -332,29 +332,30 @@ systematically to go along with the format we've defined for our content.
 3. Click on the *Add* button.
 4. Add the following fields:
 
-Field Type		        Variable Name
-----------		        -------------
-Text				    *title*
-Text Box		 	    *abstract*
-Documents and Media     *image*
-Text Area		        *body*
+	| Field Type | &nbsp;Variable Name |
+	--------- | ---------- |
+	Text  | &nbsp;`title` |
+	Text Box | &nbsp;`abstract` |
+	Documents and Media | &nbsp;`image` |
+	Text Area | &nbsp;`body` |
 
 5.  Name the structure *News Article* and click *Save*.
 6.  Back on the Manage Structures interface, click *Actions* &rarr; *Manage
     Templates* next to the News Article structure that you created.
 7.  Click *Add*.
 8.  Enter the name *News Article* and add a description.
-9.  Make sure Velocity is selected as the script language (it's the default).
-10. If you've written the script beforehand, you can select *Browse* to upload
+9.  Uncheck the *Cacheable* checkbox.
+10.  Make sure Velocity is selected as the script language (it's the default).
+11. If you've written the script beforehand, you can select *Browse* to upload
     it from your machine. Otherwise, you can click *Launch Editor* to type the
     script directly into the small editor window that appears.
-11. Click *Save*.
-12. Click *Back*.
-13. Select the News Article structure.
-14. On the New Web Content form, you'll see the Title, Abstract, Image, and Body
+12. Click *Save*.
+13. Click *Back*.
+14. Select the News Article structure.
+15. On the New Web Content form, you'll see the Title, Abstract, Image, and Body
     fields that you defined for the News Article structure. The News Article
     template should also be selected.
-15. Populate the fields and click *Publish* to publish your News Article.
+16. Populate the fields and click *Publish* to publish your News Article.
 
 Below is the template script for this structure. It is written in Velocity:
 
