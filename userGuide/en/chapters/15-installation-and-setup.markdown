@@ -2717,29 +2717,6 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-
-Steps to put in this section as per the build-dist-tomcat target in build-dist.xml:
-
-1. Create lib/ext directory in Tomcat home directory.
-2. Open tomcat-home/conf/catalina.properties and replace
-`common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar`
-with
-`common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`
-3. Open `tomcat-home/conf/server.xml` and replace both instances of
-`redirectPort="8443" />` with `redirectPort="8443" URIEncoding="UTF-8" />`
-4. 1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in
-   the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina calls
-   `setenv.bat` or `setenv.sh`. Edit the file and populate it with following
-   contents: <!--See below in configuring tomcat for details here and compare with script-->
-5. Make the above *.sh file executable, see instructions below.
-6. Edit "app.server.${user.name}.properties", specifying app.server.type=tomcat
-7. Delete the "classes" directory in LiferayHome/portal-web.<!--Not sure this is necessary-->
-8. Install Dependency JARs.
-8. Deploy the Liferay WAR file <ant target="deploy" inheritAll="false" />
-<!--Dependency JARs other than those in the downloaded dependencies zip: persistence.jar, mail.jar, jta.jar, mysql.jar. Might also want to explain -->
-
-
-
 ### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-3)
 
 Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate
@@ -2749,59 +2726,52 @@ JDBC driver and a few other JARs installed.
 
 2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files
    do not extract to this directory, you can copy the dependencies archive to
-   this directory, extract them and then delete the archive.
+   this directory, extract them and then delete the archive. 
 
 3. Next, you need several `.jar` files which, while included as part of the
    Liferay source distribution, are not automatically included with Tomcat.
-   You'll have to download them yourself, so let's get started:
-    -Place these `.jar` files into `$TOMCAT_HOME/lib/ext`:
-        - `activation.jar`: You can get this `.jar` from
-          [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
-        - `jms.jar`You can get this `.jar` from
-          [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
-        - `jta.jar`: You can get this `.jar` from
-          [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
-        - `jutf7.jar`: You can get this `.jar` from
-          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
-        - `mail.jar`: You can get this `.jar` from
-          [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-        - `persistence.jar`: You can get this `.jar` from
-          [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
-<!--This one is stumping me, I can't figure out where they can get the persistence.jar-->
-    -Place these `.jar` files into
-    `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies` The best way
-        - `resin.jar`
-        - `script-10.jar`
-to get the appropriate versions
-   of these files is to download the Liferay source code and get them from
-   there. Once you have downloaded the Liferay source, unzip the source into a
-   temporary folder. We'll refer to the location of the Liferay source as
-   `$LIFERAY_SOURCE`.
+   You'll have to download them yourself, so let's get started. Place these
+   `.jar` files into `$TOMCAT_HOME/lib/ext`:
 
-    1. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
-	   `$TOMCAT_HOME/lib/ext` folder:
-    2. Copy the following jar from `$LIFERAY_SOURCE/lib/portal` to your
-	  `$TOMCAT_HOME/lib/ext` folder:
-        - `ccpp.jar`
-        - *Note:* Tomcat 6 users should *not* copy the `ccpp.jar` file into
-        their `$TOMCAT_HOME/lib/ext` folder and should delete it from this
-        folder if it already exists.
-    3. Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
-	   `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies`
-        folder:
+    - `jta.jar`: You can get this `.jar`, which manages transactions, from
+            [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+    - `mail.jar`: You can get this `.jar` from
+            [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+    - `persistence.jar`: You can learn about the Java Persistence API and how to
+    download it from
+            [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+
+    Although you can get each `.jar` listed above separately, copying it into your
+    `%TOMCAT_HOME/lib/ext` directory, you might find it more convenient to get the
+    appropriate versions of these files by downloading the Liferay source code and
+    copying them from there. Once you have downloaded the Liferay source, unzip the
+    source into a temporary folder. We'll refer to the location of the Liferay
+    source as `$LIFERAY_SOURCE`. From `$LIFERAY_SOURCE/lib/development`, you can
+    find `jta.jar`, `mail.jar`, and `persistence.jar`.
 
 4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
    the JDBC driver for your version of the database server. In the case of
    MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the
    latest MySQL JDBC driver from
-   [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
+   [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/).
    Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 
-5. Liferay requires an additional .jar on Tomcat installations to manage
-   transactions. This is included in the bundle but you need to add it if you're
-   installing Liferay manually. You may find this .jar here:
-   [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html).
-   Place this file in Tomcat's lib/ext folder. 
+5. There are a few other JARs that come with a typical Liferay bundle that you
+   might want to download and place in your `$TOMCAT_HOME/lib/ext` folder. They
+   include:
+
+    - `activation.jar`: You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+    - `ccpp.jar`: You can get this `.jar` from 
+        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+    - `jms.jar`: You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+    - `jtds.jar`: You can get this `.jar` from
+        [http://sourceforge.net/projects/jtds/files/](http://sourceforge.net/projects/jtds/files/)
+    - `jutf7.jar`: You can get this `.jar` from 
+          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
+    - `junit.jar`: You can get this `.jar` from 
+        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
@@ -2825,24 +2795,27 @@ Let's get started with our configuration tasks.
    `setenv.bat` or `setenv.sh`. Edit the file and populate it with following
    contents:
 
-    setenv.bat:
+    - `setenv.bat`:
 
-    if exist "%CATALINA_HOME%/jre@java.version@/win" (
-        if not "%JAVA_HOME%" == "" (
-            set JAVA_HOME=
-        )
+            if exist "%CATALINA_HOME%/jre@java.version@/win" (
+                if not "%JAVA_HOME%" == "" (
+                    set JAVA_HOME=
+                )
 
-        set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
-    )
+                set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
+            )
 
-    set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+            set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-    setenv.sh:
+    - `setenv.sh`:
 
-    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+            CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
     This sets the character encoding to UTF-8, sets the time zone to Greenwich
     Mean Time and allocates memory to the Java virtual machine.
+
+<!--Th setenv.bat and .sh are slightly different from 6.1, I took it from
+setenv.sh and .bat in a built liferay 6.2.--> 
 
 2. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a
    `ROOT.xml` file in it. Edit this file and populate it with the following
@@ -2870,7 +2843,7 @@ Let's get started with our configuration tasks.
 			"session.disabled" in portal.properties.
 			-->
 
-			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
 		</Context>
 		
     Setting `crossContext="true"` allows multiple web apps to use the same class
@@ -2878,28 +2851,28 @@ Let's get started with our configuration tasks.
     tags for configuring a JAAS realm, disabling persistent sessions and
     disabling sessions in general.
 
-<!--3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
+3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
     with:
 
 		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
--->		
+		
     This allows Catalina to access the dependency jars you extracted to
     `$TOMCAT_HOME/lib/ext`.
-<!--
+
 4. To ensure consistent use of UTF-8 URI Encoding, edit
-   `$TOMCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"` to
-   your connector on port 8080. Below is an example of specifying this encoding
-   on the connector:
+   `$TOMCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
+   where you see `redirectPort=8443`, in the definition of your connectors (HTTP
+   and AJP). For example:
 
 		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
--->
+
 5. Make sure there is no `support-catalina.jar` file in your
    `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
 <!--I don't see one, should I include this instruction? -->
-Excellent work! Now let's consider configuration of your database.
+Excellent work! Now let's configure your database.
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-3)
 
@@ -2910,7 +2883,7 @@ you want to use Liferay's built-in data source, you can skip this section.
    a different machine, make sure it's accessible from your Liferay machine.
 
 2. Add your data source as a resource in the context of your web application
-   specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+   specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
 
 		<Context...>
 			<Resource
@@ -2999,7 +2972,8 @@ server.
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
 
 We'll deploy Liferay as an exploded web archive within your
-`$TOMCAT_HOME/webapps` folder.
+`$TOMCAT_HOME/webapps` folder, decide how to configure the setup wizard, and
+then start Liferay!
 
 1. If you are manually installing Liferay on a clean Tomcat server, delete the
    contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the
@@ -3009,7 +2983,7 @@ We'll deploy Liferay as an exploded web archive within your
 2.  Before you start Liferay Portal, let's consider whether you want to also
     start the setup wizard.
 
-    **Start the setup wizard along with Liferay Portal** - Do this if you want
+    *Start the setup wizard along with Liferay Portal* - Do this if you want
     to configure your portal, setup your site's administrative account and/or
     manage your database within Liferay.
 		
@@ -3022,7 +2996,7 @@ We'll deploy Liferay as an exploded web archive within your
 
     The setup wizard is invoked during server startup.
 
-    **Start Liferay Portal without invoking the setup wizard** - Do this if want
+    *Start Liferay Portal without invoking the setup wizard* - Do this if want
     to preserve your current portal settings.
 
     To start the server without triggering the setup wizard, specify
