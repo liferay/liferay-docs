@@ -2728,8 +2728,8 @@ JDBC driver and a few other JARs installed.
    do not extract to this directory, you can copy the dependencies archive to
    this directory, extract them and then delete the archive. 
 
-3. Next, you need several `.jar` files which, while included as part of the
-   Liferay source distribution, are not automatically included with Tomcat.
+3. Next, you need a few `.jar` files which are included as part of the
+   Liferay source distribution, but are not automatically included with Tomcat.
    You'll have to download them yourself, so let's get started. Place these
    `.jar` files into `$TOMCAT_HOME/lib/ext`:
 
@@ -2971,9 +2971,9 @@ server.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
 
-We'll deploy Liferay as an exploded web archive within your
-`$TOMCAT_HOME/webapps` folder, decide how to configure the setup wizard, and
-then start Liferay!
+It's time to deploy Liferay as an exploded web archive within your
+`$TOMCAT_HOME/webapps` folder, configure our setup wizard behavior, and then
+start Liferay!
 
 1. If you are manually installing Liferay on a clean Tomcat server, delete the
    contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the
