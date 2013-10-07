@@ -1089,7 +1089,8 @@ portlet and configure it yourself. Alternatively, you can use the *Content
 Display Page* page template included with Liferay. If you're creating a Display
 Page manually, once you've added an Asset Publisher portlet to the page, open
 its configuration window. Then check the *Set as the Default Asset Publisher for
-This Page* box.
+This Page* box. Also, for its display settings, set the Display Style to
+*Abstracts* and the Asset Link Behavior to *View in Context*.
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole
