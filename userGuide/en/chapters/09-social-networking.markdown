@@ -57,7 +57,23 @@ the portlet to other web sites. They do not have any way to change options like
 feed length or display styles. Some styling changes, however, can be made
 through custom CSS.
 
-### Installing the Social Portlets [](id=installing-the-social-portlets-liferay-portal-6-2-user-guide-09-en)
+### Using the Core Liferay Social Portlets
+
+Out-of-the box, Liferay provides four social portlets:
+
+- Activities
+- Group Statistics
+- Requests
+- User Statistics
+
+The Activities portlet displays information about user activity in the site to
+which the portlet was added. User activities tracked by the Activities portlet
+include updates to the Documents and Media library, blog posts, message boards
+posts, wiki pages, and bookmarks. The Activities portlet also tracks information
+about web content but only displays this information if the current user is a
+site administrator.
+
+### Installing the Social Networking Portlets [](id=installing-the-social-portlets-liferay-portal-6-2-user-guide-09-en)
 
 The social portlets are all included with the Liferay Community Edition
 distribution, but need to be installed separately for Enterprise Edition. If
