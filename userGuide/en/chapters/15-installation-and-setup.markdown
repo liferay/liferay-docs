@@ -766,16 +766,34 @@ want support all the way down to the application server from Liferay, then Mule
 Tcat is your solution. After we cover Mule Tcat, we'll look at all the supported
 application servers in alphabetical order. 
 
-## Installing Liferay on Mule Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
-Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
-source portal, and Tcat Server, an enterprise grade administration console for
-the Apache Tomcat application server.
+If you don't already have an existing Mulesoft Tcat server, we recommend you
+download a Liferay/Tomcat bundle from
+[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
+If you have an existing Tcat server or otherwise need to manually install
+Liferay onto a Tcat server, follow the instructions in this section. 
 
-Tcat Server provides several tools to make Tomcat more administrator friendly,
-especially in organizations used to leveraging administration consoles like
-those found in other more complex JEE application servers. You may use the
-console to:
+<!--Below are the sections from the Tomcat section, copied here to see if this structure will be useful, but probably best to go by the GUI-->
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-3)
+
+### Tomcat Configuration [](id=tomcat-configuration-liferay-portal-6-2-user-guide-15-en)
+
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-3)
+
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-3)
+
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
+
+### Enabling PACL
+
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
+
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
+
+
+Tcat Server provides a graphical console to make Tomcat setup and configuration
+more administrator friendly. You may use the console to:
 
 -   Monitor and control all Tomcat instances on multiple servers and across
     multiple environments 
@@ -784,8 +802,10 @@ console to:
     viewing remote logs and more
 -   Provide granular entitlement controls for the above functions and more
 
-This isn't a complete guide to Mule Tcat; it just covers Liferay installation.
-For full documentation, you'll find more detailed information here:
+This isn't a complete guide to Mulesoft Tcat; we'll focus on Liferay
+installation, and limit our discussion to the Windows and Linux 64-bit
+installation wizards. For full Tcat documentation (including installation and
+server setup), you'll find more detailed information here:
 [http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home)
 
 To obtain Liferay Portal Tcat Edition, you need access to the Liferay Customer
@@ -793,26 +813,6 @@ Portal and the Mulesoft Tcat Server web site. If you are not a current Liferay
 customer and would like to try the product, please contact Liferay via email at
 sales@liferay.com.
 
-For this section, we'll limit ourselves to the Windows and Linux 64-bit
-installation wizards. For more detailed installation instructions, please
-consult the Mulesoft Tcat Server installation documents located at:
-
-[http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home)
-
--   [Installing Tcat Server on
-    Linux](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Linux)
-
--   [Installing Tcat Server on
-    Windows](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Microsoft+Windows)
-
--   [Installing Tcat Server on
-    Solaris](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Solaris)
-
--   [Installing Tcat Server on Mac OS
-    X](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Mac+OS+X)
-
--   [Adding Tcat Server Capabilities to an Existing Apache Tomcat
-    Install](http://www.mulesoft.org/documentation/display/TCAT/Add+Tcat+Server+Capabilities+to+an+Existing+Tomcat+Install)
 
 First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
 need two files:
