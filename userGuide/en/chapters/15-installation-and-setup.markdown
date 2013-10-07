@@ -2078,10 +2078,10 @@ Make the following modifications to `standalone.xml`:
 		</system-properties>
 
 2. Add a timeout for the deployment scanner by setting
-`deployment-timeout="120"` as seen in the excerpt below.
+`deployment-timeout="240"` as seen in the excerpt below.
 
 		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
-			<deployment-scanner deployment-timeout="120" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+			<deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
 		</subsystem>
 
 3. Add the following JAAS security domain to the security subsystem
