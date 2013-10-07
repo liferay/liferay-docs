@@ -2966,8 +2966,50 @@ connecting to your database and mail session.
 
 		mail.session.jndi.name=mail/MailSession
 
-It's just that easy! Now it's time to deploy Liferay Portal on your Tomcat
-server. 
+It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
+let's look at configuring Portal Access Control Language (PACL) with Liferay on
+Tomcat. 
+
+### Enabling PACL
+
+To enable PACL for use with your Liferay Portal when running on Tomcat, you
+need to enable the security manager and add some required permissions to the
+server policy configuration file. This simply entails editing two files in
+`$TOMCAT_HOME` you're already familiar with if you've been following along in
+setting up Liferay with a Tomcat Application Server: 
+
+- In `$TOMCAT_HOME/bin/setenv.sh` (if on Linux, Unix, or Mac OS) or
+  `setenv.bat` (if on Windows) enable the security manager by inserting the
+following code into the `CATALINA_OPTS` variable (inside the quotation marks):
+
+    `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
+
+- In `$TOMCAT_HOME/conf/Catalina.policy`, add the required permissions:
+    `// Tune for specific apps (these are generally required by Liferay plugins not using PACL)
+    grant codeBase "file:${catalina.home}${/}webapps${/}-" {
+        permission java.util.PropertyPermission "base.path", "write";
+        permission java.util.PropertyPermission "*", "read";
+        permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+    // represents each webapp's ${javax.servlet.context.tempdir} directory
+    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
+        permission java.util.PropertyPermission "base.path", "write";
+        permission java.util.PropertyPermission "*", "read";
+        permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+
+    // Since Liferay portal is a security provider it needs AllPermissions
+    grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
+        permission java.security.AllPermission;
+    };
+    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
+        permission java.security.AllPermission;
+    };
+    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
+        permission java.security.AllPermission;
+    };`
+
+Now you have PACL enabled and ocnfigured for your portal. Let's deploy Liferay!
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
 
