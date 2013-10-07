@@ -1536,8 +1536,50 @@ database and mail session.
 
         mail.session.jndi.name=mail/MailSession
 
-Liferay will now be able to communicate with your database and mail session. So
-let's go ahead and deploy Liferay.
+Liferay will now be able to communicate with your database and mail session.
+
+### PACL Configuration
+
+To enable PACL on GlassFish, you need to make some security configurations.
+First, enable the security manager by editing
+`glassfish/domains/domain1/config/domain.xml` and make sure it contains the
+following:
+
+    <java-config ...>
+        ...
+        <jvm-options>-Djava.security.manager</jvm-options>
+        ...
+    </java-config>
+
+Next, add the required permissions to the server policy configuration file:
+`glassfish/domains/domain1/config/server.policy`. These include the following:
+
+    // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+
+    // Represents each webapp's ${javax.servlet.context.tempdir} directory
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+
+    // Since Liferay portal is a security provider it needs AllPermissions
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}liferay-portal${/}-" {
+            permission java.security.AllPermission;
+    };
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}liferay-portal${/}-" {
+            permission java.security.AllPermission;
+    };
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}lib${/}portal-service.jar" {
+            permission java.security.AllPermission;
+    };
+
+Now let's go ahead and deploy Liferay.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en)
 
