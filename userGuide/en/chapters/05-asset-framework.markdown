@@ -688,8 +688,8 @@ to rules that you give it. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You have the following options for creating these rules:
 
-**Scope:** Choose the sites or organizations from which the content should be
-selected.
+**Scope:** Choose the scopes from which the content should be selected. This can
+be either the scope of current site, the global scope, or both.
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a
 specific type, such as only web content, only wiki entries, or any combinations
