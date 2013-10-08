@@ -113,10 +113,10 @@ portlet is a core Liferay portlet but is only useful if there's some way to send
 social requests, such as friend requests. This functionality can be added by
 installing the Social Networking app from Liferay Marketplace. It's also
 possible to develop and deploy custom portlets that implement Liferay's social
-API to enable social requests. Please refer to the [Liferay Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development) or
-[Liferay's Javadocs](http://docs.liferay.com/portal/6.2/javadocs/) for
-information about Liferay's social API. 
+API to enable social requests. Please refer to the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development) or
+the
+[Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/social/service/package-summary.html)
+for information about Liferay's social API. 
 
 ### Installing the Social Networking Portlets [](id=installing-the-social-portlets-liferay-portal-6-2-user-guide-09-en)
 
