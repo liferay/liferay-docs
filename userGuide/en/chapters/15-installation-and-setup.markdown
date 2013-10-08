@@ -3291,9 +3291,11 @@ Let's proceed with configuring WebLogic.
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
-- Set WebLogic Server's memory arguments for the Sun JVM and other JVM types.
+- Set WebLogic Server's memory arguments.
 - Set the maximum size for Java's permanent generation space.
 - Set the file encoding.
+- Enable Lucene support.
+- Enable AspectJ support.
 
 You can set WebLogic Server's memory arguments in your `setDomainEnv.[cmd|sh]`
 environment script file. For Sun JVM, set your WLS memory arguments, for 64 bit
@@ -3306,8 +3308,9 @@ to at least `-XX:PermSize=256m`.
 Lastly, make sure to specify UTF-8 for Java's file encoding, by
 including `-Dfile.encoding=UTF8` as a Java property.
 
-Here's is an example of what these environment script changes might look like in
-a WebLogic `setDomainEnv.cmd` file: 
+For example, in a WebLogic `setDomainEnv.cmd` file, after its call to the
+`commEnv.cmd` script, you'd make sure to specify the memory arguments and
+permanent generation space like the following code:
 
     ...
     if "%JAVA_VENDOR"=="Sun" (
@@ -3320,9 +3323,26 @@ a WebLogic `setDomainEnv.cmd` file:
     ...
     set MEM_PERM_SIZE_64BIT=-XX:PermSize=256m
     set MEM_PERM_SIZE_32BIT=-XX:PermSize=256m
-    ...
+
+Later in the `setDomainEnv.cmd` file's clustering support  section, you'd set
+the UTF-8 file encoding by adding `-Dfile.encoding=UTF8` to the Java properties
+as done the following code: 
+
     set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
-    ...
+
+Next, we'll need to specify some local environment settings to support Liferay's
+memory requirements, its use of the [Apache
+Lucene](http://en.wikipedia.org/wiki/Lucene) search engine library, and its use
+of Aspect Oriented Programming (AOP) with
+[AspectJ](http://en.wikipedia.org/wiki/AspectJ). In your
+`startWebLogic.[bat|sh]` file, after the `SETLOCAL` command, add the following
+lines:
+
+	set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
+    
+	set "MW_HOME=${app.server.weblogic.dir.windows}"
+    
+	set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
 Next, start WebLogic if you want to configure your database and/or mail session
 within WebLogic.
@@ -3418,6 +3438,37 @@ data source and mail session from Liferay Portal.
             <implementation-version>1.2</implementation-version>
             <exact-match>false</exact-match>
         </library-ref>
+
+Before we deploy Liferay, we'll teach you how to enable and configure Java
+Security so that you can start using Liferay's plugin security manager with
+the Liferay apps you download and install. 
+
+### Security Configuration
+
+When you are ready to start using other people's apps from Marketplace, you'll
+want to protect your portal and your WebLogic server from security threats. To
+do so, you can enable Java Security on your WebLogic server and specify a
+security policy to grant your Liferay Portal access to your server. 
+
+To enable security on your WebLogic server, add the `-Djava.security.manager`
+Java option in your `startWebLogic.[bat|sh]` file. 
+
+For now, in order to grant Liferay access to your server let's open up all
+permissions. You can fine tune the permissions in your policy later. Create a
+policy file named `weblogic.policy` in your `[wlserver]/server/lib` folder and
+add the following contents:
+
+    grant {
+        permission java.security.AllPermission;
+    };
+
+For extensive information on Java SE Security Architecture see its specification
+documents at
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
+And see section [*Understanding Plugin Security
+Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
+in Chapter 12 of the Developer's Guide to learn how to configure your plugins'
+access to resources they need on Liferay and your server's environment. 
 
 Now its the moment you've been waiting for: Liferay deployment!
 
