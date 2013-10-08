@@ -759,7 +759,7 @@ Portlet* is selected, clicking on an asset causes that asset to be displayed in
 the portlet to which the asset belongs. For example, a blog entry would be
 displayed in the Blogs portlet where it was created. Likewise, a forum post
 would be displayed in the Message Boards porlet where it was created. Similarly,
-a generic Web Content article would be displayed in the Asset Publisher of its
+a generic Web Content instance would be displayed in the Asset Publisher of its
 configurated Display Page. See the secton below on Display Pages for more
 information.
 
@@ -816,7 +816,7 @@ Canonical URLs. Each web content entry on the portal has a canonical URL, which
 is the official location of the content that is referenced any time the content
 is displayed. A Display Page can be any page with an asset publisher configured
 to display any content associated with the page. When adding or editing web
-content articles, you can select a Display Page, but only pages with a
+content instances, you can select a Display Page, but only pages with a
 configured asset publisher are available for selection.
 
 To create a Display Page, you can create a page yourself, add an Asset Publisher
