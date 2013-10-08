@@ -914,10 +914,10 @@ for abstracts. The default is `200`.
 value selected, when the link to an asset is clicked, the full asset is
 displayed in the current Asset Publisher. (There's also a *View in Context* link
 that shows the article in the Wiki page's Wiki portlet.) If the value *View in a
-Specific Portlet* is selected, clicking on an asset causes that asset to be
-displayed in the portlet to which the asset belongs. For example, a blog entry
-would be displayed in the Blogs portlet where it was created.  Likewise, a forum
-post would be displayed in the Message Boards portlet where it was created.
+Context* is selected, clicking on an asset causes that asset to be displayed in
+the portlet to which the asset belongs. For example, a blog entry would be
+displayed in the Blogs portlet where it was created. Likewise, a forum post
+would be displayed in the Message Boards portlet where it was created.
 Similarly, a generic web content article would be displayed in the Asset
 Publisher of its configured display page. See the section below on display pages
 for more information.
