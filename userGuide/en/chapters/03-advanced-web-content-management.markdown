@@ -743,11 +743,14 @@ and refreshes the page, the following message appears:
 	overwrite the changes and receive updates from the site template.
 
 If the site administrator clicks the *Reset* button, changes are propagated from
-the site template to all the pages of the site that were imported from the site
-template. Clicking the *Reset* button makes two kinds of updates. First, changes
-made by site administrators to pages that were imported from the site template
-are undone. Second, changes made by site template administrators to site
-template pages are applied to the site pages.
+the site template page to the corresponding site page that was imported from the
+site template. Clicking the *Reset* button makes two kinds of updates to a page.
+First, changes made by site administrators to the site page are undone. Second,
+changes made by site template administrators to the site template page are
+applied to the site page. Note: clicking the *Reset* button only resets one
+page. If multiple site pages have been modified and you'd like to re-apply the
+site template pages to them, you'll need to click the *Reset* button for each
+page.
 
 Site template administrators can set preferences for portlets on site template
 pages. When a portal administrator creates a site from a site template, the
