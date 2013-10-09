@@ -167,7 +167,7 @@ file, you're given a similar screen to what you'd be offered during export.
 Select the appropriate content and permissions, and click *Continue*.
 
 The next screen offers options split into two sections -- *Update Data* and
-*Authorship of the Content*. Here's options and decriptions for each section:
+*Authorship of the Content*. Here's options and descriptions for each section:
 
 **Update Data**
 
@@ -429,7 +429,7 @@ into how the Recycle Bin works, let's look at how to configure it.
 ### Configuring the Recycle Bin [](id=configuring-the-recycle-bin-liferay-portal-6-2-user-guide-04-en)
 
 To begin using the Recycle Bin, you must enable it where you plan to use it. The
-Recycle Bin supports portal-wide scope or site-specific scope. The poral-wide
+Recycle Bin supports portal-wide scope or site-specific scope. The portal-wide
 scope of the Recycle Bin is set by adding the `trash.enabled` property to your
 `portal-ext.properties` file. We'll go into more detail for adding this property
 and several others to your properties file later in the section. First, let's
@@ -472,7 +472,7 @@ searches in the Recycle Bin (default is 500).
 trash handler runs to delete trash entries that have been in the Recycle Bin
 longer than the maximum age (default is 60).
 
-Also, as we mentioned earlier, there is a property to enable the Recyle bin
+Also, as we mentioned earlier, there is a property to enable the Recycle bin
 portal-wide.
 
 `trash.enabled=true`: set this property to true to enable the Recycle Bin for
