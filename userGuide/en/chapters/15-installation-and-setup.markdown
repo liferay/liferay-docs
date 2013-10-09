@@ -2204,19 +2204,11 @@ Modify `standalone.xml` adding your data source and driver within the
 1. First, add your data source within the `<datasources>` element.
 
 		<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-			<connection-url>
-				jdbc:mysql://localhost/lportal
-			</connection-url>
-			<driver>
-				mysql
-			</driver>
+			<connection-url>jdbc:mysql://localhost/lportal</connection-url>
+			<driver>mysql</driver>
 			<security>
-				<user-name>
-					root
-				</user-name>
-				<password>
-					root
-				</password>
+				<user-name>root</user-name>
+				<password>root</password>
 			</security>
 		</datasource>
 
@@ -2227,7 +2219,7 @@ Modify `standalone.xml` adding your data source and driver within the
    `<datasources>` element.
 
 		<drivers>
-			<driver name="mysql" module="com.liferay.portal"/>
+			<driver name="mysql" module="com.liferay.portal.main"/>
 		</drivers>
 
 Your final data sources subsystem should look something like this:
@@ -2235,23 +2227,15 @@ Your final data sources subsystem should look something like this:
 		<subsystem xmlns="urn:jboss:domain:datasources:1.0">
 			<datasources>
 				<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-					<connection-url>
-						jdbc:mysql://localhost/lportal
-					</connection-url>
-					<driver>
-						mysql
-					</driver>
+					<connection-url>jdbc:mysql://localhost/lportal</connection-url>
+					<driver>mysql</driver>
 					<security>
-						<user-name>
-							root
-						</user-name>
-						<password>
-							root
-						</password>
+						<user-name>root</user-name>
+						<password>root</password>
 					</security>
 				</datasource>
 				<drivers>
-					<driver name="mysql" module="com.liferay.portal"/>
+					<driver name="mysql" module="com.liferay.portal.main"/>
 				</drivers>
 			</datasources>
 		</subsystem>
@@ -2268,16 +2252,25 @@ Specify your mail subsystem  in `standalone.xml` as in the following example:
 
 	<subsystem xmlns="urn:jboss:domain:mail:1.0">
 		<mail-session jndi-name="java:/mail/MailSession" >
-			<smtp-server address="smtp.gmail.com" port="465">
+			<smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
 				   <login name="username" password="password"/>
 			</smtp-server>
-			<pop3-server address="pop.gmail.com" port="110"/>
-			<imap-server address="imap.gmail.com" port="993">
+			<pop3-server outbound-socket-binding-ref="mail-pop">
 				<login name="username" password="password"/>
-			</imap-server>
+			</pop3-server>
 	   </mail-session>
 	</subsystem>
-
+	...
+	<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+	...
+	<outbound-socket-binding name="mail-smtp">
+            <remote-destination host="smtp.gmail.com" port="465"/>
+        </outbound-socket-binding>
+        <outbound-socket-binding name="mail-pop">
+            <remote-destination host="pop.gmail.com" port="110"/>
+        </outbound-socket-binding>
+    </socket-binding-group>
+	
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
