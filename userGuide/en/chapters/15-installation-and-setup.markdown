@@ -3638,29 +3638,25 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.48: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
+    ![Figure 15.48: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
-3. Check the box *Deploy administrative console*. This gives you a web-based UI
-   for working with your application server. Skip the default applications.
+3. Check the box *Deploy the administrative console*. This gives you a web-based
+   UI for working with your application server. Skip the default applications.
    You'd only install these on a development machine. Click *Next*. 
 
 4. Set profile name and location. Ensure you specify a performance tuning
    setting other than *Development*, since you're installing a server for
-   production use. Click *Next*. 
+   production use. Please see the WebSphere documentation for further
+   information about performance tuning settings. Click *Next*. 
 
-    ![Figure 15.49: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
-
-5. Choose node and host names for your server. These will be specific to your
+5. Choose node, server, and host names for your server. These will be specific to your
    environment. Click *Next*. 
 
-    ![Figure 15.50: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
-
 6. Administrative security in WebSphere is a way to restrict who has access to
-   the administrative tools. For simplicity, we've disabled it but you may want
-   to have it enabled in your environment. Please see WebSphere's documentation
-   for further information. Click *Next*. 
-
-    ![Figure 15.51: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
+   the administrative tools. You may want to have it enabled in your
+   environment so that a user name and password are required to administer the
+   WebSphere server. Please see WebSphere's documentation for further
+   information. Click *Next*. 
 
 7. Each profile needs a security certificate, which comes next in the wizard. If
    you don't have certificates already, choose the option to generate a personal
@@ -3669,26 +3665,27 @@ Management Tool** to create a profile appropriate for Liferay.
 8. Once the certificates are generated, set a password for your keystore. Click
    *Next*. 
 
-    ![Figure 15.52: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
-
 9. Next, you can customize the ports this server profile uses. Be sure to choose
-   ports that are open on your machine. When choosing ports, installation
+   ports that are open on your machine. When choosing ports, the wizard
    detects existing WebSphere installations and if it finds activity, it
    increments ports by one. 
 
-    ![Figure 15.53: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
-
-10. If you want WebSphere to start automatically when the machine is booted, you
-	configure it next. This differs by operating system. When you're finished
-   configuring this the way you want, click *Next*. 
+10. Choose whether you want this profile started when the machine starts. Click
+    *Next*. 
 
 11. WebSphere ships with IBM HTTP Server, which is a rebranded version of
-    Apache. If you want to front your WebSphere server with IBM HTTP Server,
-    you'd configure this next. Please see WebSphere's documentation for details
-    on this. When finished, click *Next*. 
+    Apache. Choose whether you want a web server definition, so that this JVM
+    receives requests forwarded from the HTTP server. Please see WebSphere's
+    documentation for details on this. When finished, click *Next*. 
 
-12. WebSphere then creates your profile and finishes with a message telling you
-	the profile was created successfully. You're now ready to install Liferay! 
+12. The wizard then shows you a summary of what you selected, enabling you to
+    keep your choices or go back and change something. When you're satisfied, click
+    *Next*. 
+
+![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-02-summary.png)
+
+WebSphere then creates your profile and finishes with a message telling you the
+profile was created successfully. You're now ready to install Liferay! 
 
 ### Copying portal dependencies [](id=copying-portal-dependencies-liferay-portal-6-2-user-guide-15-en)
 
@@ -3697,8 +3694,9 @@ These should be copied to WebSphere's global folder provided for this purpose:
 
 	[Install Location]/WebSphere/AppServer/lib/ext
 
-Once you've copied the .jars here, start the server profile you're planning to
-use for Liferay. Once it starts, you're ready to configure your database. 
+If you have a JDBC database driver .jar, copy it to this location as well. 
+Once you've copied the .jars, start the server profile you created for
+Liferay. Once it starts, you're ready to configure your database. 
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-6)
 
@@ -3790,19 +3788,57 @@ Great! Now you're ready to deploy Liferay.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-6)
 
-1. Click *Applications &rarr; New Application &rarr; New Enterprise
+1. Click *Applications* &rarr; *New Application* &rarr; *New Enterprise
    Application*.
 
 2. Browse to the Liferay `.war` file and click *Next*.
 
-3. Leave *Fast Path* selected and click *Next*, then click *Next* again.
+3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
+   Application* has been checked, and click *Next* again.
 
-4. Make sure your server is selected and click *Next*.
+4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy Liferay. Click *Next*.
 
-5. Keep the context root set to / and click *Next*.
+5. Map Liferay to the root context (/) and click *Next*. 
 
-6. Click *Finish*. When Liferay has installed, click *Save to Master
-   Configuration*.
+6. Ensure that you have made all the correct choices and click *Finish*. When
+   Liferay has installed, click *Save to Master Configuration*.
+
+You've now installed Liferay, but don't start it yet. If you wish to use PACL,
+you have one more thing to configure. 
+
+### Enabling Security for Portal Access Control Lists
+
+In the administrative console, go to *Security* $rarr; *Global Security*.  Check
+the box to enable Java 2 security, and click *Apply*. Save to the master
+configuration. 
+
+    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-enable-security.png)
+
+Next, you need to configure security for the Liferay profile you created. This
+requires editing a text file, which can be found nested several folders deep in
+WebSphere's `profiles` directory. The exact path depends on how you've named
+your profile, but it will be something like this: 
+
+    [profile_root]/config/cells/[cell_name]/nodes/[node_name]/app.policy
+
+First, in each existing `grant` section, replace the content with
+`java.security.AllPermission;`. Then add the following lines to the bottom of
+the file: 
+
+    grant codeBase "file:${was.install.root}/lib/-" {
+      permission java.security.AllPermission;
+    };
+
+    grant codeBase "file:${was.install.root}/plugins/-" {
+      permission java.security.AllPermission;
+    };
+
+    grant codeBase "file:${server.root}/-" {
+      permission java.security.AllPermission;
+    };
+
+Save the file. You should now stop the profile and restart it. Once it comes up,
+you're ready to start Liferay. 
 
 ### Start Liferay [](id=start-liferay-liferay-portal-6-2-user-guide-15-en)
 
@@ -3817,7 +3853,7 @@ Great! Now you're ready to deploy Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.56: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
+    ![Figure 15.56: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
