@@ -15,12 +15,15 @@ commercial application server and on everything in between. In fact, Liferay is
 used successfully in all of these scenarios every day.
 
 You'll find that because Liferay is extremely flexible in its deployment
-options, it is easy to install as well. If you already have an application
+options, it is also easy to install. If you already have an application
 server, you can use the tools for deployment that came with your application
 server. If you don't have an application server, Liferay provides several
 application server bundles from which to choose. These are very easy to install
 and with a small amount of configuration can be made into production-ready
 systems.
+
+But first, you need to determine which edition of Liferay you wish to install.
+Let's look at the options you have so that you can make the right decision. 
 
 ## Editions of Liferay [](id=editions-of-liferay-liferay-portal-6-2-user-guide-15-en)
 
@@ -52,13 +55,13 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-### Liferay's Versioning Schema [](id=liferays-versioning-schema-liferay-portal-6-2-user-guide-15-en)
+### Understanding Liferay's Releases
 
 Liferay's release process follows a prescribed structure that is consistent from
 one release to the next. Each release has a specific number sequence attached to
-it signifying the type of release it is, whether it's a major, minor or
-maintenance release. Each release also has a term attached to it to
-indicate its intended level of quality.
+it, signifying the type of release it is: major, minor or maintenance release.
+Each release also has a term attached to it to indicate its intended level of
+quality.
 
 EE subscribers have access to additional maintenance releases, along with 
 specific *Fix Packs* and *Hot Fixes* that make applying updates to production
@@ -214,6 +217,11 @@ First we'll go over installing Liferay from a bundle and after this we'll
 provide instructions for installing Liferay manually on all the application
 servers it supports. 
 
+## Configuring Liferay Portal Security
+
+<!-- This is where we should put high-level information about PACL and its
+requirement for Java security. -->
+
 ## Installing a bundle [](id=installing-a-bundle-liferay-portal-6-2-user-guide-15-en)
 
 Liferay bundles contain the same directory structure regardless of application
@@ -247,16 +255,16 @@ an example:
    below). If you're setting up Liferay for demo purposes, you can skip this
    step. 
 
-3. Start Tomcat in the same way as you would if you had downloaded it manually.
-   Tomcat is launched by way of a script which is found in its `bin` folder. If
-   you drop to a command prompt and go to this folder, you can launch Tomcat via
-   the following command on Windows:
+3. Start Tomcat in the same way you would if you had downloaded it manually.
+   Tomcat is launched by way of a script which is found in its `bin` folder. If you
+   drop to a command prompt and go to this folder, you can launch Tomcat via the
+   following command on Windows:
 
-    	startup
+	startup
 
-    or the following command on Linux/Mac/Unix:
+   or the following command on Linux/Mac/Unix:
 
-    	./startup.sh
+	./startup.sh
 
 The Liferay/Tomcat bundle then launches. If you are on Windows, another command
 prompt window appears with Tomcat's console in it. If you are on Linux, you can
@@ -264,14 +272,14 @@ see the Tomcat console by issuing the following command:
 
     tail -f ../logs/catalina.out
 
-Once Tomcat has completed its start up, it automatically launches a web browser
-that displays Liferay's setup wizard. If for some reason your browser doesn't
-load the wizard, launch your web browser and then go to
+Once Tomcat has started, it automatically launches a web browser that displays
+Liferay's setup wizard. If for some reason your browser doesn't load the wizard,
+launch your web browser and then go to
 [http://localhost:8080](http://localhost:8080). 
 
 Liferay CE ships with a sample web site that showcases Liferay's features. It
-contains many links describing the features of Liferay that we'll cover in
-detail throughout this book. 
+contains many links describing the features of Liferay that we cover in detail
+throughout this book. 
 
 If you're installing Liferay on your own machine to explore its features, you
 likely want to leave the sample site there so you can examine it. If, however,
@@ -279,37 +287,38 @@ you're installing Liferay on your server to run your own site, it's best to
 start with a clean system. Before running the setup wizard, you should remove
 the sample data from your Liferay installation. You must do this before
 running the setup wizard to get a clean database, and it's as simple as
-undeploying the applications that install the sample data.
+undeploying the application that installs the sample data.
 
-There are two applications included in the bundle that you need to remove:
-
-- resources-importer-web
+There is one application included in the bundle that you need to remove:
 
 - welcome-theme
 
-To remove them, all you have to do is undeploy them. The method for doing this
+To remove it, all you have to do is undeploy it. The method for doing this
 differs by application server and that, of course, depends on the bundle you
-have chosen. For example, on Tomcat you delete the application folders from the
+have chosen. For example, on Tomcat you delete the application folder from the
 `[Tomcat Home]/webapps` folder. On Glassfish, you use the administrative console
-to undeploy them. 
+to undeploy it. 
 
-If you forget to undeploy the sample applications before you run through the
+If you forget to undeploy the sample application before you run through the
 setup wizard and connect Liferay to your real database, the sample data is
-created in your database, and you won't have a clean installation. Make sure you
-get the sample data undeployed before setting up your server.
+created in your database, and there isn't an easy way to clean it out. Make sure
+you get the sample data undeployed before setting up your server, or you'll have
+to drop your database and re-create it. That's not such a bad thing to have to
+do, since it's a brand new database. If you're working with an existing
+installation of Liferay, please see the section on upgrading in chapter 18. 
 
-If you're using Liferay EE, you don't have the sample site so you don't need to
+If you're using Liferay EE, you don't have the sample site, so you don't need to
 worry about this. The next step is to run through the setup wizard, which we'll
 cover below. 
 
 As you can see, bundles are the easiest way to get started with Liferay. They
-come pre-configured with a running Liferay instance that can be used immediately
-to explore all of the things that Liferay can do. Bundles are the fastest way to
+come preconfigured with a running Liferay instance that can be used immediately
+to explore all the things that Liferay can do. Bundles are the fastest way to
 create full production-ready Liferay installations. If you're using a bundle,
 skip to the section on the setup wizard below to continue your installation. 
 
 Of course, it's not always possible to use a bundle. You may already have an
-application server upon which you want to install Liferay. The bulk of this
+application server where Liferay should be installed. The bulk of this
 chapter describes how to install Liferay on all the application servers it
 supports, both open source and proprietary. 
 
