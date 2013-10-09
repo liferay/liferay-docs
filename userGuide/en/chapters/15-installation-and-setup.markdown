@@ -3247,8 +3247,8 @@ XA transactions. Liferay doesn't require XA transactions, but it supports XA.
 Let's get acquainted with how Liferay fits in with your current WebLogic
 domain. 
 
-**Liferay Home** is one folder above the domain to which you will be installing
-Liferay.
+For demonstration purposes, we'll assume *Liferay Home** is one folder above the
+domain to which you will be installing Liferay.
 
 For example, if your domain location is
 `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home
@@ -3273,7 +3273,8 @@ Let's get started by installing the `.jar` files Liferay needs.
 ### Dependency Jars
 
 Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
-the driver `.jar` file applicable for your database.
+the driver `.jar` file applicable for your database. We'll put them on your
+domain's global classpath. 
 
 1.  Navigate to the folder that corresponds to the domain to which you will be
     installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay
@@ -3298,19 +3299,21 @@ Liferay:
 - Enable AspectJ support.
 
 You can set WebLogic Server's memory arguments in your `setDomainEnv.[cmd|sh]`
-environment script file. For Sun JVM, set your WLS memory arguments, for 64 bit
-and 32 bit architectures, to `-Xms256m -Xmx1024m` at a minimum. For all other
-JVMs, set the WLS memory arguments to `-Xms512m -Xmx512m`. 
+environment script file found in your domain's `bin` folder. For the Sun JVM,
+we'll set the WLS memory arguments for 64 bit and 32 bit architectures to
+`-Xms256m -Xmx1024m` at a minimum. For all other JVMs, we'll set the 64 bit and
+32 bit WLS memory arguments to `-Xms512m -Xmx512m` respectively. 
 
-Set the permanent generation space, for 64 bit and 32 bit architectures, values
-to at least `-XX:PermSize=256m`.
+We'll set the permanent generation space for 64 bit and 32 bit architectures
+to `-XX:PermSize=256m`.
 
-Lastly, make sure to specify UTF-8 for Java's file encoding, by
+Lastly, we'll make sure to specify UTF-8 for Java's file encoding, by
 including `-Dfile.encoding=UTF8` as a Java property.
 
-For example, in a WebLogic `setDomainEnv.cmd` file, after its call to the
-`commEnv.cmd` script, you'd make sure to specify the memory arguments and
-permanent generation space like the following code:
+If you're on Windows, for example, you'd edit your `setDomainEnv.cmd` file and
+find the call to the `commEnv.cmd` script. After this call, you'd update your
+memory arguments and permanent generation space settings to be like the
+following code: 
 
     ...
     if "%JAVA_VENDOR"=="Sun" (
@@ -3324,9 +3327,9 @@ permanent generation space like the following code:
     set MEM_PERM_SIZE_64BIT=-XX:PermSize=256m
     set MEM_PERM_SIZE_32BIT=-XX:PermSize=256m
 
-Later in the `setDomainEnv.cmd` file's clustering support  section, you'd set
-the UTF-8 file encoding by adding `-Dfile.encoding=UTF8` to the Java properties
-as done the following code: 
+Later in the `setDomainEnv.cmd` file's clustering support section, you'd set
+the UTF-8 file encoding by appending `-Dfile.encoding=UTF8` to the front of the
+list of Java property values, as done in the following line of code: 
 
     set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
 
@@ -3334,18 +3337,24 @@ Next, we'll need to specify some local environment settings to support Liferay's
 memory requirements, its use of the [Apache
 Lucene](http://en.wikipedia.org/wiki/Lucene) search engine library, and its use
 of Aspect Oriented Programming (AOP) with
-[AspectJ](http://en.wikipedia.org/wiki/AspectJ). In your
-`startWebLogic.[bat|sh]` file, after the `SETLOCAL` command, add the following
-lines:
+[AspectJ](http://en.wikipedia.org/wiki/AspectJ).
+
+Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT
+your server's `bin` folder. If you're on Windows, you'd add directives similar
+to those listed below, after the `SETLOCAL` command:
 
 	set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
-	set "MW_HOME=${app.server.weblogic.dir.windows}"
+	set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
     
 	set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
-Next, start WebLogic if you want to configure your database and/or mail session
-within WebLogic.
+Make sure to set your `MW_HOME` value to your WebLogic server's location. On
+Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
+`$JAVA_OPTIONS`. 
+
+Next, if you want to configure your database and/or mail session within
+WebLogic, start your WebLogic server.
 
 ### Database Configuration
 
@@ -3427,10 +3436,11 @@ data source and mail session from Liferay Portal.
         mail.session.jndi.name=mail/MailSession
 
 2.  Lastly, you must provide WebLogic a reference to a version of Java Server
-    Faces (JSF)--either version 1.2 or 2.0--to use that library. Insert the
-    following deployment descriptor within the `<weblogic-web-app>` element of
-    `WEB-INF/weblogic.xml` found in your Liferay Portal `.war`, making sure to
-    specify the applicable JSF version: 
+    Faces (JSF)--either version 1.2 or 2.0--to use that library. Open the
+    `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` file. Insert the
+    following deployment descriptor after the `<context-root>` element within
+    the `<weblogic-web-app>` element. Make sure to specify the applicable JSF
+    version:
 
         <library-ref>
             <library-name>jsf</library-name>
@@ -3451,10 +3461,10 @@ do so, you can enable Java Security on your WebLogic server and specify a
 security policy to grant your Liferay Portal access to your server. 
 
 To enable security on your WebLogic server, add the `-Djava.security.manager`
-Java option in your `startWebLogic.[bat|sh]` file. 
+Java option in your `startWebLogic.[cmd|sh]` file domain's folder. 
 
 For now, in order to grant Liferay access to your server let's open up all
-permissions. You can fine tune the permissions in your policy later. Create a
+permissions--you can fine-tune your policy's permissions later. Create a
 policy file named `weblogic.policy` in your `[wlserver]/server/lib` folder and
 add the following contents:
 
@@ -3467,8 +3477,8 @@ documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 And see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
-in Chapter 12 of the Developer's Guide to learn how to configure your plugins'
-access to resources they need on Liferay and your server's environment. 
+in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
+access to resources. 
 
 Now its the moment you've been waiting for: Liferay deployment!
 
@@ -3517,9 +3527,10 @@ Now, let's deploy Liferay Portal.
 
 1.  Start WebLogic.
 
-2.  Select *Deployments* and click the  *Install* button. Upload `jsf-1.2.war`
-    from WebLogic's common files directory and select *Install this deployment
-    as a library.*
+2.  Select *Deployments* and click the  *Install* button. Upload the desired JSF
+    `.war` file--`jsf-1.2.war` or `jsf-2.0.war`--from WebLogic's common
+    deployable libraries folder and select *Install this deployment as a
+    library* to your domain's server that will be running Liferay. 
 
 3.  After installing the JSF libraries, go back to deployments and select the
     Liferay `.war` file from the file system or click the *Upload Your File(s)*
@@ -3532,9 +3543,11 @@ Now, let's deploy Liferay Portal.
 
 6.  Click *Finish*. After the deployment finishes, click *Save*.
 
+    Liferay will precompiles all of the JSPs and 
 	Liferay launches in one of the following manners:
     - If the setup wizard was disabled, your site's home page opens in your
-	  browser at [http://localhost:7001](http://localhost:7001).
+	  browser at your server's host and port (e.g.,
+	  [http://localhost:8080](http://localhost:8080). 
     - Otherwise, the setup wizard opens in your browser.
 
 Please see the section above for how to use the setup wizard. 
