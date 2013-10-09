@@ -290,7 +290,7 @@ There are two applications included in the bundle that you need to remove:
 To remove them, all you have to do is undeploy them. The method for doing this
 differs by application server and that, of course, depends on the bundle you
 have chosen. For example, on Tomcat you delete the application folders from the
-`[Tomcat Home]/webapps` folder. On Glassfish, you use the administrative console
+`[Tomcat Home]/webapps` folder. On GlassFish, you use the administrative console
 to undeploy them. 
 
 If you forget to undeploy the sample applications before you run through the
@@ -313,7 +313,7 @@ application server upon which you want to install Liferay. The bulk of this
 chapter describes how to install Liferay on all the application servers it
 supports, both open source and proprietary. 
 
-## App servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
+## App Servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many enterprises can't do
@@ -1312,13 +1312,13 @@ you need a complete stack, combining Liferay Portal with Mule Tcat gives you
 everything you need to run a fully supported and robust portal environment for
 your enterprise. 
 
-## Installing Liferay on GlassFish 3 [](id=installing-liferay-on-glassfish-3-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-3-liferay-portal-6-2-user-guide-15-en)
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
 For example, if your domain location is
-`/glassfish-3.1-web/glassfish3/glassfish/domains/domain1`, Liferay Home is
-`/glassfish-3.1-web/glassfish3/`.
+`/glassfish-4.0-web/glassfish4/glassfish/domains/domain1`, Liferay Home is
+`/glassfish-4.0-web/glassfish4/`.
 
 If you don't already have an existing GlassFish server, we recommend that you
 download a Liferay/GlassFish bundle from
@@ -1329,13 +1329,13 @@ GlassFish manually, please follow the steps below.
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
 [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
-The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and
+The Liferay `.war` file should be called `liferay-portal-6.2.x-<date>.war` and
 the dependencies file should be called
-`liferay-portal-dependencies-6.1.x-<date>.zip`.
+`liferay-portal-dependencies-6.2.x-<date>.zip`.
 
 These instructions assume that you are running the latest supported version of
-Glassfish (currently 3.1.2.2), have already configured a domain and server,
-and that you have access to the GlassFish administrative console.
+Glassfish (currently 4.0), have already configured a domain and server, and that
+you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
@@ -1358,7 +1358,7 @@ should also have installed your database driver.
    [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
    Extract the JAR file and copy it to `lib`.
 
-Terrific, you have your JAR files just where you'll need them. Next we'll
+Terrific, you have your JAR files just where you need them. Next, we'll
 configure your domain.
 
 ##### Domain Configuration [](id=domain-configuration-liferay-portal-6-2-user-guide-15-en)
@@ -1368,6 +1368,7 @@ Liferay Portal.
 
 Before starting GlassFish, modify your domain's configuration to do the
 following: 
+
 - Set the file encoding
 - Set the user time-zone
 - Set the preferred protocol stack
@@ -1376,9 +1377,9 @@ following:
 - Increase the default amount of memory available.
 
 Modify
-`/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml` 
-merging in the following JVM options into the current list of JVM options within
-your `<java-config>` element: 
+`glassfish4/glassfish/domains/domain1/config/domain.xml`,
+merging in the following JVM options into the current lists of JVM options
+within any `<java-config>` element in the file: 
 
     <jvm-options>-Dfile.encoding=UTF8</jvm-options> 
     <jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
@@ -1387,8 +1388,14 @@ your `<java-config>` element:
     <jvm-options>-Xmx1024m</jvm-options>
     <jvm-options>-XX:MaxPermSize=512m</jvm-options>
 
-Be sure that any existing options with values such as `-Dfile.encoding`,
-`-Djava.net.preferIPv4Stack`,
+There may be multiple lists of JVM options in your `domain.xml` file. For
+example, by default, GlassFish's
+`glassfish4/glassfish/domains/domain1/config/domain.xml` file contains two lists
+of JVM options. There's one list inside of the `<config name="server-config">`
+element's `<java-config>` element and another inside of the `<config
+name="default-config">` element's `<java-config>` element. In both lists of JVM
+options, make sure that any existing options with values such as
+`-Dfile.encoding`, `-Djava.net.preferIPv4Stack`,
 `-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`,
 `-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed
 above.
@@ -1396,10 +1403,18 @@ above.
 For example, replace: 
 
     <jvm-options>-Xmx256m</jvm-options>
-	
+
 with this: 
-	
+
     <jvm-options>-Xmx1024m</jvm-options>
+
+Edit your `domain1/config/config/server-policy.xml` and append the following
+lines to the end of the file:
+
+    grant {
+        permission java.lang.reflect.ReflectPermission  "suppressAccessChecks";
+        permission javax.security.auth.AuthPermission "doAsPrivileged";
+    };
 
 Delete, rename, or move the `domain1/docroot/index.html` file to another
 location to allow your Liferay Portal default page to be displayed.
@@ -1420,41 +1435,42 @@ your data source, you can skip this section.
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC
    Connection Pools*
 
-    ![Figure 15.37: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
+    ![Figure 15.37: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
 
 4. Click *New...*.
 
-5. In the first screen (Step 1 of 2), give your connection pool the name
-   `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource` and
-   select your database driver vendor (e.g. `MySQL`) as follows:
+5. On the first screen (Step 1 of 2), enter the name `LiferayPool` for your
+   connection pool, select the `javax.sql.ConnectionPoolDataSource` resource
+   type, and select your database driver vendor (e.g. `MySQL`). See the
+   following figure:
 
-    ![Figure 15.38: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
+    ![Figure 15.38: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6. Click *Next* to advance to the next step in creating your JDBC connection
    pool.
 
-7. On the this screen (Step 2 of 2), scroll down to the *Additional Properties*
-   section.
+7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
+   Properties* section.
 
-    ![Figure 15.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+    ![Figure 15.39: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
-    **URL:** the URL of your connection pool.
+    **Url:** the URL of your connection pool.
 
     For example,
 
-        jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+        jdbc:mysql://localhost:3306/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
 
     Note, if you are using the above example, you should specify the name of
     your database in place of `lportal`. Likewise, if your database is not on
     the same host as GlassFish, specify your the database server's host name in
     place of `localhost`. Lastly, specify your database type in place of
-    `jdbc:mysql`.
+    `jdbc:mysql` and use the correct port (3306 is for MySQL).
 
-    **user:** the name of your database user.
+    **User:** the name of your database user.
 
-    **password:** your database user's password.
+    **Password:** your database user's password.
 
 9. Click *Finish*.
 
@@ -1496,31 +1512,74 @@ database and mail session.
 
 1. Shutdown your domain's application server if it is currently running.
 
-2. Create a `portal-ext.properties` file in the *Liferay Home* folder mentioned
-   at the beginning of this GlassFish installation section.
-
-3. If you are using *Glassfish* to manage your data source, add the following to
+2. If you are using *Glassfish* to manage your data source, create a
+   `portal-ext.properties` file in the *Liferay Home* folder mentioned at the
+   beginning of this GlassFish installation section and add the following to
    your `portal-ext.properties` file in your *Liferay Home* to refer to your
    data source:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
-    Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-    the instructions in the *Deploy Liferay* section for using the setup wizard.
+    Otherwise, if you are using *Liferay Portal* to manage your data source,
+    follow the instructions in the *Deploy Liferay* section for using the setup
+    wizard.
 
-4. If want to use *Liferay Portal* to manage your mail session, you can
+3. If want to use *Liferay Portal* to manage your mail session, you can
    configure the mail session within Liferay Portal. That is, after starting
    your portal as described in the *Deploy Liferay* section, go to *Control
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-If you are using *GlassFish* to manage your mail session, add the following to
-your `portal-ext.properties` file to reference that mail session:
+    Otherwise, if you are using *GlassFish* to manage your mail session, add the
+    following to your `portal-ext.properties` file to reference that mail
+    session:
 
-    mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
-Liferay can now communicate with your database and mail session. So let's go
-ahead and deploy Liferay.
+Liferay will now be able to communicate with your database and mail session.
+
+### PACL Configuration
+
+To enable PACL on GlassFish, you need to make some security configurations.
+First, enable the security manager by editing
+`glassfish/domains/domain1/config/domain.xml` and make sure it contains the
+following:
+
+    <java-config ...>
+        ...
+        <jvm-options>-Djava.security.manager</jvm-options>
+        ...
+    </java-config>
+
+Next, add the required permissions to the server policy configuration file:
+`glassfish/domains/domain1/config/server.policy`. These include the following:
+
+    // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+
+    // Represents each webapp's ${javax.servlet.context.tempdir} directory
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    };
+
+    // Since Liferay portal is a security provider it needs AllPermissions
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}liferay-portal${/}-" {
+            permission java.security.AllPermission;
+    };
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}liferay-portal${/}-" {
+            permission java.security.AllPermission;
+    };
+    grant codeBase "file:${com.sun.aas.instanceRoot}${/}lib${/}portal-service.jar" {
+            permission java.security.AllPermission;
+    };
+
+Now let's go ahead and deploy Liferay.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en)
 
@@ -1528,9 +1587,9 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your
 domain's server. Before you deploy Liferay Portal, let's consider whether you
 want to also start the setup wizard.
 
-- **Start the setup wizard along with Liferay Portal** - Do this if you want to
-  configure your portal, set up your site's administrative account and/or manage
-  your database within Liferay.
+**Start the setup wizard along with Liferay Portal**: Do this if you want to
+configure your portal, set up your site's administrative account, and/or manage
+your database within Liferay.
 		
 If this is your first time starting Liferay Portal 6.1, the setup wizard is
 automatically invoked. If you want to re-run the wizard, specify
@@ -1541,10 +1600,10 @@ automatically invoked. If you want to re-run the wizard, specify
 
 The setup wizard is then invoked during server startup.
 
-- **Start Liferay Portal without invoking the setup wizard** - Do this if want
-  to preserve your current portal settings.
+**Start Liferay Portal without invoking the setup wizard**: Do this if want to
+preserve your current portal settings.
 
-To startup the server without triggering the setup wizard, specify
+To start up the server without triggering the setup wizard, specify
 `setup.wizard.enabled=false` in your properties (e.g.
 `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
@@ -1555,9 +1614,9 @@ creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
 ---
 
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
+ ![Note](../../images/tip.png) Property values in
+ `portal-setup-wizard.properties` override property values in
+ `portal-ext.properties`.
 
 ---
 
@@ -1578,14 +1637,19 @@ creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
 7. Click *OK*.
 
-![Figure 15.40: Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 15.40: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
 
-- If you disabled the setup wizard, your site's home page opens in your browser
-  at [http://localhost:8080](http://localhost:8080).
+Once you have deployed Liferay via GlassFish's administrative console, restart
+GlassFish.
 
-- Otherwise, the setup wizard opens in your browser.
+- If you disabled the setup wizard, visit
+  [http://localhost:8080](http://localhost:8080) to open your portal homepage.
 
-See the section on the setup wizard above for how to use the setup wizard. 
+- Otherwise, visiting [http://localhost:8080](http://localhost:8080) loads the
+  portal setup wizard.
+
+See the section on the setup wizard above for instructions on using the setup
+wizard.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
