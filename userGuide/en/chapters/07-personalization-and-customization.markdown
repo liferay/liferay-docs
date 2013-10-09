@@ -354,10 +354,6 @@ use Liferay's rules engine.
 
 ## Using Liferay's rules engine [](id=using-liferays-rules-engine-liferay-portal-6-2-user-guide-07-en)
 
-<!-- Before this section can be updated for 6.2, need to wait until the 6.2
-Drools EE plugin (or app) is available from the customer portal (or
-Marketplace). -->
-
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94
@@ -425,19 +421,27 @@ portlet.
 
 From the Dockbar, click *Admin* &rarr; *Content* and create a new web content
 instance in your site. Before publishing the web content instance, tag the
-article with *north america symposium*. Then, navigate to *My Account* from the
+article with *americas*. Then, navigate to *My Account* from the
 Dockbar and click on the *Addresses* link on the right side of the screen. Enter
-a Canadian, Mexican, or US based address and click *Save*. Navigate back to the
-page with the Sample Drools portlet. The Sample Drools portlet should now be
-displaying the web content instance that you created.
+a Brazilian, Canadian, Mexican, or US based address and click *Save*. Navigate
+back to the page with the Sample Drools portlet. The Sample Drools portlet
+should now be displaying the web content instance that you created.
 
 The default rule that's being evaluated displays a list of assets based on the
 current user's address. For example, if the current user's country is set to
-Canada, Mexico, or the United States, the Sample Drools portlet displays a list
-of assets that have been tagged with the *west coast symposium* tag.
+Brazil, Canada, Mexico, or the United States, the Sample Drools portlet displays
+a list of assets that have been tagged with the *americas* tag.
 
-<!-- | TODO: Need screen shots here. | --> <!-- | TODO: We need to point to what
-we're about to do before we do it; otherwise this is hard to follow. | -->
+![Figure 7.x: By default, the Sample Drools portlet returns personalized content based on the addresses set on the form for editing a user account. This form is accessible from the Dockbar via *\[User Name\]* &rarr; *My Account*. Users with addresses in Brazil, Canada, Mexico, or the United States will see a list of assets tagged with the "americas" tag in the Sample Drools portlet.](../../images/sample-drools-portlet.png)
+
+<!-- | TODO: We need to point to what we're about to do before we do it;
+otherwise this is hard to follow. | -->
+
+<!--
+TODO: The rules in the `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl` file need to be updated to be compatible with API changes. See the fix for LPS-40820 for an example of how this should be done. -Jesse, 10/1/2013
+-->
+
+<!--
 The Sample Drools portlet plugin also contains a second rule that returns
 personalized content based on the user's net worth set in the *My Account*
 &rarr; *Custom Fields* section of the Control Panel. To see this rule in action,
@@ -449,22 +453,23 @@ rule file can be found in the deployed portlet at
 `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`.
 In the same Configuration screen, add `networth` to the
 `user-custom-attribute-names` field. Save your changes and close the pop-up
-window. Navigate to the Control Panel and add a Custom Field to the User object
-with the key `networth`. Navigate to *My Account* and click on the Custom Fields
-link on the right side of the screen. Enter a net worth of 150000 and save the
-record. While still in the Control Panel, add a new Web Content entry to the
-default liferay.com site. Before publishing the Web Content entry, tag the
-article with *high net worth* and then save the entry. Now, navigate back to the
-liferay.com site and the Web Content should be displayed in the second Sample
-Drools portlet added to the page.
+window. Navigate to the Control Panel and add a custom field to the User object
+with the key `networth`. Navigate to *My Account* and click on the *Custom
+Fields* link on the right side of the screen. Enter a net worth of 150000 and
+save the record. Next, add a new web content instance to the default
+site of your portal. Before publishing the web content, tag the instance
+with *high net worth* and then save the entry. Now, navigate back to the
+default site and the web content should be displayed in the second Sample Drools
+portlet added to the page.
+-->
 
-Now that you can see how it works in practice, let's look closer at the rules
-themselves. 
+Now that you've seen how the Sample Drools portlet works, let's take a look
+closer at the rules themselves. 
 
 #### Rules Definitions [](id=rules-definitions-liferay-portal-6-2-user-guide-07-en)
 
 Rule definitions can be written using Drools' declarative language. Rule files
-are text files that often have a .drl extension. A rule file can contain
+are text files that often have a `.drl` extension. A rule file can contain
 multiple rules. In addition to the standard Drools' declarative language, a
 domain specific language (DSL) can be created for your specific problem domain.
 <!-- | TODO: Explain. | --> Creating a DSL can make your rules even easier for
@@ -477,19 +482,24 @@ official Drools Documentation at
 To see examples of a rules definition file, access the following directory in
 the Sample Drools portlet
 `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`. To
-see how rules work in action we'll look at the rule defined in
+see how rules work in action, we'll look at the rule defined in
 `rules_user_address_content.drl`. 
 
-At first glance, this .drl file looks a lot like a Java class file.  This
+At first glance, this `.drl` file looks a lot like a Java class file.  This
 example starts with a comment describing the rule. Single line comments can
-begin with either a *#* or *//* and multi-line comments begin with _/*_ and end
-with _*/_. 
+begin with either a `*#*` or `*//*` and multi-line comments begin with `_/*_`
+and end with `_*/_`. 
 
-	## ## Rules ## ## This sample program will return personalized content
-based on the user's ## addresses set in the My Account section of the Control
-Panel.  ## ## For example, suppose the current user has an address in the United
-States and ## is a member of the Liferay site. All assets within the Liferay
-site ## that are tagged with "West Coast Symposium" will be returned.  ##
+    ##
+    ## Rules
+    ##
+    ## This sample program will return personalized content based on the user's
+    ## addresses set in the My Account section of the Control Panel.
+    ##
+    ## For example, suppose the current user has an address in the United States and
+    ## is a member of the Liferay site. All assets within the Liferay site
+    ## that are tagged with "West Coast Symposium" will be returned.
+    ##
 
 Following the comments is a `package` declaration. The package declaration is
 optional in a Drools, but if it appears, it must be at the beginning of the
@@ -500,87 +510,169 @@ the end of the package declaration and all other statements is optional.
     package com.liferay.sampledrools.dependencies;
 
 After the package declaration are a series of `import` statements. Import
-statements in the rule file are used the same as the import statements in Java
+statements in the rule file are used just like the import statements in Java
 classes. Classes that are imported can be used in the rules. 
 
-	import com.liferay.portal.kernel.util.KeyValuePair; import
-    com.liferay.portal.kernel.util.StringUtil; import
-    com.liferay.portal.model.Address; import com.liferay.portal.model.Contact;
-    import com.liferay.portal.model.User; import
-    com.liferay.portal.service.AddressLocalServiceUtil; import
-    com.liferay.portlet.asset.model.AssetEntry; import
-    com.liferay.portlet.asset.service.persistence.AssetEntryQuery; import
-    com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil; import
-    com.liferay.portlet.asset.service.AssetTagLocalServiceUtil;
+    import com.liferay.portal.kernel.search.BooleanClause;
+    import com.liferay.portal.kernel.search.BooleanClauseOccur;
+    import com.liferay.portal.kernel.search.BooleanClauseFactoryUtil;
+    import com.liferay.portal.kernel.search.BooleanQuery;
+    import com.liferay.portal.kernel.search.BooleanQueryFactoryUtil;
+    import com.liferay.portal.kernel.search.Document;
+    import com.liferay.portal.kernel.search.FacetedSearcher;
+    import com.liferay.portal.kernel.search.Field;
+    import com.liferay.portal.kernel.search.Hits;
+    import com.liferay.portal.kernel.search.Indexer;
+    import com.liferay.portal.kernel.search.SearchContext;
+    import com.liferay.portal.kernel.search.facet.AssetEntriesFacet;
+    import com.liferay.portal.kernel.search.facet.Facet;
+    import com.liferay.portal.kernel.search.facet.ScopeFacet;
+    import com.liferay.portal.kernel.util.GetterUtil;
+    import com.liferay.portal.kernel.util.KeyValuePair;
+    import com.liferay.portal.kernel.util.LocaleUtil;
+    import com.liferay.portal.kernel.util.StringUtil;
+    import com.liferay.portal.kernel.util.Validator;
+    import com.liferay.portal.model.Address;
+    import com.liferay.portal.model.Group;
+    import com.liferay.portal.model.Contact;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.AddressLocalServiceUtil;
+    import com.liferay.portal.util.PortalUtil;
+    import com.liferay.portlet.asset.model.AssetEntry;
+    import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
 
-	import java.util.ArrayList; import java.util.List;
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.List;
 	
 The next line declares the `dialect` for the package. In this case, we will be
 using Java for any of the code expressions that we'll encounter. The other
-possible value for dialect is `MVEL`. <!-- | TODO: And what is that? | --> If
+possible value for the dialect is `MVEL`, which is a powerful expression
+language for Java-based applications. See
+[http://mvel.codehaus.org/](http://mvel.codehaus.org/) for details. If
 necessary, the dialect can also be specified at the rule level to override the
-package level dialect.  
+package level dialect.
 
-	dialect "java"
+        dialect "java"
 	
 In this rule file, we have only a single function, which is listed next.
 Functions allow you to insert Java code that can be evaluated at run time into
 your rule file. Functions are commonly used as a as part of the consequence
-clause of the rule statement. Functions are similar to Java methods, but to
-define a function you use the *function* keyword. The function's parameters and
-the return type are declared as they would be in a Java method. In this example,
-the `getAssetEntries` function returns a `java.util.List` object that contains
-`AssetEntry` objects based on the `groupId`s, `classNameId`s, and `name`s
+clause of the rule statement. Functions are similar to Java methods but you use
+the *function* keyword to define a function. The function's parameters and the
+return type are declared as they would be in a Java method. In this example, the
+`getAssetEntries` function returns a `java.util.List` object that contains
+`AssetEntry` objects based on the `user`, `classNameId`s, and `assetTagName`
 provided in the function call. 
 
-	function List getAssetEntries( long[] groupIds, long[] classNameIds,
-    String[] names) {
-	 
-		long[] assetTagIds =
-    AssetTagLocalServiceUtil.getTagIds(groupIds, names);
-	 
-		List<AssetEntry> assetEntries = new ArrayList<AssetEntry>();
-	 
-		if (assetTagIds.length > 0) { AssetEntryQuery assetEntryQuery =
-    new AssetEntryQuery();
-	 		
-			assetEntryQuery.setAnyTagIds(assetTagIds);
-    assetEntryQuery.setClassNameIds(classNameIds);
-    assetEntryQuery.setGroupIds(groupIds); assetEntryQuery.setVisible(true);
-	 
-			assetEntries.addAll(AssetEntryLocalServiceUtil.getEntries(assetEntryQuery));
+    function List getAssetEntries(
+        User user, long[] classNameIds, String assetTagName) {
+
+        List<Group> groups = user.getMySites();
+
+        long[] groupIds = new long[groups.size()];
+
+        for (int i = 0; i < groups.size(); i++) {
+            Group group = groups.get(i);
+
+            groupIds[i] = group.getGroupId();
+        }
+
+        if ((classNameIds == null) || (classNameIds.length == 0) ||
+            (groupIds.length == 0) || Validator.isNull(assetTagName)) {
+
+            return Collections.emptyList();
+        }
+
+        SearchContext searchContext = new SearchContext();
+
+        Facet assetEntriesFacet = new AssetEntriesFacet(searchContext);
+
+        assetEntriesFacet.setStatic(true);
+
+        searchContext.addFacet(assetEntriesFacet);
+
+        Facet scopeFacet = new ScopeFacet(searchContext);
+
+        scopeFacet.setStatic(true);
+
+        searchContext.addFacet(scopeFacet);
+
+        searchContext.setAttribute("paginationType", "regular");
+        searchContext.setCompanyId(user.getCompanyId());
+        searchContext.setGroupIds(groupIds);
+        searchContext.setIncludeStagingGroups(false);
+        searchContext.setScopeStrict(false);
+        searchContext.setUserId(user.getUserId());
+
+        BooleanQuery booleanQuery = BooleanQueryFactoryUtil.create(searchContext);
+
+        booleanQuery.addExactTerm(Field.ASSET_TAG_NAMES, assetTagName);
+
+        BooleanClause booleanClause = BooleanClauseFactoryUtil.create(
+            searchContext, booleanQuery, BooleanClauseOccur.MUST.getName());
+
+        searchContext.setBooleanClauses(new BooleanClause[] {booleanClause});
+
+        List<AssetEntry> assetEntries = new ArrayList<AssetEntry>();
+
+        Indexer indexer = FacetedSearcher.getInstance();
+
+        Hits hits = indexer.search(searchContext);
+
+        for (int i = 0; i < hits.getDocs().length; i++) {
+            Document document = hits.doc(i);
+
+            String entryClassName = document.get(Field.ENTRY_CLASS_NAME);
+
+            long entryClassPK = GetterUtil.getLong(
+                document.get(Field.ENTRY_CLASS_PK));
+            long rootEntryClassPK = GetterUtil.getLong(
+                document.get(Field.ROOT_ENTRY_CLASS_PK));
+
+            if (rootEntryClassPK > 0) {
+                entryClassPK = rootEntryClassPK;
+            }
+
+            AssetEntry assetEntry = AssetEntryLocalServiceUtil.fetchEntry(
+                entryClassName, entryClassPK);
+
+            if (assetEntry != null) {
+                assetEntries.add(assetEntry);
+            }
+        }
+
+        return assetEntries;
     }
-	
-		return assetEntries; }
 
 Alternatively, this function could've been written in a helper class and then
 imported using a *function import*. So if we had created a helper class called
 `AddressContentHelper` the import would look like this: 
 
-	import function
-com.liferay.sampledrools.dependencies.AddressContentHelper.getAsetEntries;
+        import function
+        com.liferay.sampledrools.dependencies.AddressContentHelper.getAsetEntries;
 
 The last section of the rules file contains the actual rules. The syntax of a
 rule is very straightforward. 
 
-	rule "name" attribute when condition then consequence end
+        rule "name" attribute when condition then consequence end
 
 The rule name is required and it must be unique within the package as declared
 above. Names with spaces must be enclosed in double quotes. It is considered a
 best practice to always enclose your rule names in double quotes. 
 
-	rule "Initialize Rules"
+        rule "Initialize Rules"
  
 The attributes section is optional. In our first rule, we have a single
 attribute called `salience`. The salience attribute is an integer value that
 acts as a priority weighting. The number can be positive or negative and
-defaults to the value of 0. Rules with a higher salience value are given a
+defaults to the value of `0`. Rules with a higher salience value are given a
 higher priority. It is considered a best practice to write attributes one to a
 line. In our example, the first rule is one that should be evaluated before any
 other so it is given a high salience value of 1000. None of our other rules have
-a salience attribute set, so they all default to a value of 0.  
+a salience attribute set, so they all default to a value of `0`.
 
-		salience 1000
+        salience 1000
 
 The `when` keyword marks the conditional section of the rule. It is also
 referred to as the Left Hand Side (LHS). The `when` keyword is followed by zero
@@ -600,11 +692,11 @@ that the rule must operate on a User object.
 
 In more complex rules, the pattern may include constraints or may evaluate the
 properties of Java objects.  For example, the second rule of this rule file is
-called *Get European Symposium Content*. This rule includes the following
-pattern which ensures that a user's address contains the country name France,
-Germany, or Spain. 
+called *Get European Content*. This rule includes the following pattern which
+ensures that a user's address contains the country name France, Germany, or
+Spain. 
 
-	userAddress : Address(country.name in ("France", "Germany", "Spain"));
+	userAddress : Address(country.getName(Locale.US) in ("France", "Germany", "Spain"));
 
 The consequence section of the rule follows the conditional section. It's also
 known as the Right Hand Side (RHS) or action part of the rule. The consequence
@@ -616,10 +708,10 @@ more facts supporting the truth of the current rule. After the consequence
 section of the rule, the rule is terminated with the keyword `end`. 
 
 	then List<Address> userAddresses = AddressLocalServiceUtil.getAddresses(
-    user.getCompanyId(), Contact.class.getName(), user.getContactId());
+            user.getCompanyId(), Contact.class.getName(), user.getContactId());
 
-		for (Address userAddress : userAddresses) {
-    insertLogical(userAddress); } end
+        for (Address userAddress : userAddresses) {
+            insertLogical(userAddress); } end
 
 Following the initial rule in our example, there are three additional rules that
 will be evaluated. Each of these rules evaluates the `userAddress` that was
