@@ -2208,14 +2208,19 @@ Make the following edits as applicable to your operating system:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 - On Unix, merge the following values into your settings for `JAVA_OPTS`
   replacing any matching attributes with the ones found in the assignment
   below:
 
-	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
-		
+	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+
+    Make sure you replace the `$JBOSS_HOME` references with the appropriate
+    directory. You'll notice we've added some java security options. We'll
+    finish configuring the java security options in the *Security Configuration*
+    section.
+
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss.
 
@@ -2377,6 +2382,40 @@ Liferay Portal can access them.
 
 You've completed the steps necessary for your deployment of Liferay so Liferay
 Portal can now communicate with your data source and mail session--way to go!
+Before we deploy Liferay Portal on your JBoss app server, we'll teach you how to
+enable and configure Java security so you can begin using Liferay's plugin
+security manager with your downloaded Liferay applications.
+
+### Security Configuration
+
+When you're ready to begin using other people's apps from Marketplace, you'll
+want to protect your portal and your JBoss server from security threats. To do
+so, you can enable Java Security on your JBoss server and specify a security
+policy to grant your portal access to your server.
+
+Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` java
+options in the `standalone.conf.bat` file earlier in the *Configuring JBoss*
+section. The `-Djava.security.manager` Java option enables security on your
+JBoss server. Likewise, the `-Djava.security.policy` Java option lists the
+permissions for your server's Java security policy. If you have not set these
+options, you'll need to do so before using Java security.
+
+For now, in order to grant Liferay access to your server let's open up all
+permissions. You can tune the permissions in your policy later. Create the
+`$JBOSS_HOME/bin/server.policy` file and add the following contents:
+
+    grant {
+	    permission java.security.AllPermission;
+	};
+
+For extensive information on Java SE Security Architecture, see its
+specification documents at
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html)
+Also, see section [*Understanding Plugin Security
+Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
+in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
+access to resources.
+
 Now you're ready to deploy Liferay Portal.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-1)
