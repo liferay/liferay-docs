@@ -790,6 +790,69 @@ Liferay onto a Tcat server, follow the instructions in this section.
 ### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
+<!--Here's the build-dist-tcat target from build-dist.xml-->
+
+	<target name="build-dist-tcat">
+		<echo file="app.server.${user.name}.properties">
+			app.server.type=tomcat
+
+			app.server.tomcat.version=7.0.39
+			app.server.tomcat.zip.url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.39/bin/apache-tomcat-7.0.39.zip
+		</echo>
+
+		<antcall target="build-dist-tomcat" inheritAll="false">
+			<param name="tomcat.keep.app.server.properties" value="true" />
+		</antcall>
+
+		<script classpathref="project.classpath" language="beanshell">
+			String lpVersion = project.getProperty("lp.version");
+
+			String lpVersionTcat = lpVersion.replace(".", "_");
+
+			project.setProperty("lp.version.tcat", lpVersionTcat);
+		</script>
+
+		<echo append="true" file="release.${user.name}.properties">
+			lp.version.tcat=${lp.version.tcat}
+		</echo>
+
+		<delete dir="${app.server.tcat.dir}" />
+
+		<antcall target="build-dist-tcat-profile" inheritAll="false">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+		</antcall>
+
+		<antcall target="build-dist-tcat-tomcat" inheritAll="false">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+		</antcall>
+
+		<if>
+			<not>
+				<available file="${app.server.parent.dir}/${app.server.tcat.zip.name}" />
+			</not>
+			<then>
+				<mkdir dir="${app.server.parent.dir}" />
+
+				<get
+					dest="${app.server.parent.dir}/${app.server.tcat.zip.name}"
+					src="${app.server.tcat.zip.url}"
+					verbose="true"
+				/>
+			</then>
+		</if>
+
+		<antcall target="build-dist-tcat-admin" inheritAll="false">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
+		</antcall>
+
+		<antcall target="build-dist-tcat-agent" inheritAll="false">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
+		</antcall>
+
+		<delete file="app.server.${user.name}.properties" />
+	</target>
 
 
 Tcat Server provides a graphical console to make Tomcat setup and configuration
@@ -817,20 +880,21 @@ sales@liferay.com.
 First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
 need two files:
 
--   **Liferay Portal 6.1 EE Tcat Admin:** contains the Tcat administration
+-   *Liferay Portal 6.1 EE Tcat Admin:* contains the Tcat administration
     console and Liferay Portal EE and all appropriate plugins.
 
--   **Liferay Portal 6.1 EE Tcat Agent:** contains a vanilla Tomcat application
+-   *Liferay Portal 6.1 EE Tcat Agent:* contains a vanilla Tomcat application
     server and the Tcat management agent.
 
 Next, download the appropriate Tcat platform installation at:
 [http://www.mulesoft.com/download-tcat](http://www.mulesoft.com/download-tcat).
-You may select installation wizards for Windows (32 and 64-bit), Mac, Unix,
+You can select installation wizards for Windows (32 and 64-bit), Mac, Unix,
 Solaris and Linux (32 and 64-bit) as well as a manual installation zip.
 
-After obtaining the software bundles, you can proceed with installation and
-configuration of the Administration Console.
-
+After obtaining the software bundles, installing Tcat, and configuring the Tcat
+administration console, you're ready to install Liferay to run on your Tcat
+server.
+<!--Begin too much Tcat specific information.
 ### Installing the Administration Console on Windows [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
 
 For Windows, Tcat comes with an installer to assist with installation and
@@ -1000,13 +1064,13 @@ and you may choose to not create the symbolic link.
 ![Figure 15.17: ](../../images/tcat-html_78e73740.png)
 
 Now that Tcat is installed, you can add Liferay to it. 
-
+I think this is too much Tcat specific information; it might all be unnecessary, as we point them to the Tcat documentation above. -->
 ### Adding Liferay Portal packages [](id=adding-liferay-portal-packages-liferay-portal-6-2-user-guide-15-en)
 
-After completing the TcatServer Administration Console installation, you can
+Once you have your Tcat Administration Console installed and set up, you can
 configure the Liferay Portal packages for Tcat.
 
-First, extract the previously downloaded Liferay Portal 6.1 EE Tcat Admin into a
+First, extract the previously downloaded Liferay Portal 6.2 EE Tcat Admin into a
 temporary directory. Once extracted, locate the file `tcat-init.groovy` and the
 directory `tcat\_init`.
 
@@ -1049,7 +1113,7 @@ during the installation process.
 
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
-
+<!--I see nothing in here although I chose not to add symbolic links and did the standard installation -->
 ### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
 
 The steps to install the Tcat Server managed server are quite similar to those
