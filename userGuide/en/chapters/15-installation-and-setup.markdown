@@ -3311,7 +3311,7 @@ XA transactions. Liferay doesn't require XA transactions, but it supports XA.
 Let's get acquainted with how Liferay fits in with your current WebLogic
 domain. 
 
-For demonstration purposes, we'll assume *Liferay Home** is one folder above the
+For demonstration purposes, we'll assume *Liferay Home* is one folder above the
 domain to which you will be installing Liferay.
 
 For example, if your domain location is
@@ -3431,19 +3431,22 @@ you want to use Liferay's built-in data source, you can skip this section.
 2.  Give your data source a name, such as *Liferay Data Source*. The JNDI name
     should be `jdbc/LiferayPool`.
 
-3.  Choose the type of database and click *Next*. From the screenshot, you can
-    see we have chosen MySQL. The database driver class is selected
-    automatically.
+3.  Choose the type of database and click *Next*. 
 
 4.  Click *Next* three times. You should be on the *Connection Properties*
     screen. Enter the database name, the host name, the port, the database user
     name and the password. WebLogic uses this information to construct the
     appropriate JDBC URL to connect to your database. Click *Next*.
 
-5.  WebLogic next confirms the information you provided. For MySQL, some
-    additional parameters must be added to the URL. Modify the JDBC URL so it
-    has the proper parameters. Provide your database name, host name, user name
-    and password as the values. Click *Next*.
+5.  WebLogic prompts you to confirm the information you've specified for your
+    data source. 
+
+    Depending on the database you are using, you may need to specify additional
+    parameters. For example, you may need to modify your JDBC URL to include
+    additional parameters. If you need to access previous wizard pages to modify
+    information, click *Back* to revisit those pages. 
+
+    When you're done specifying your configuration, click *Next*. 
 
 6.  Click *Test Configuration* to make sure WebLogic can connect to your
     database successfully. When it does, click *Finish*.
@@ -3464,8 +3467,8 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 1.  Select *Mail Sessions* and create a new mail session which points to your
     mail server.
 
-2.  Give it the name Liferay Mail and give it the JNDI name of `mail/MailSession`
-    and click *Next*.
+2.  Give it the name *Liferay Mail* and give it the JNDI name of
+    `mail/MailSession` and click *Next*.
 
 3.  Choose your server and then click *Finish*.
 
@@ -3476,12 +3479,10 @@ Now let's make sure Liferay can access this mail session.
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
 
-1.  Create a `portal-ext.properties` file in the Liferay Home folder, which is
-    one folder up from your domain's home folder.
+1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 
     If you are using *WebLogic* to manage your data source, add the following to
-    your `portal-ext.properties` file in *Liferay Home* to refer to your data
-    source:
+    your `portal-ext.properties` file to refer to your data source:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
@@ -3561,7 +3562,7 @@ your database within Liferay.
 If this is your first time starting Liferay Portal, the setup wizard is
 invoked on server startup. If you want to re-run the wizard, specify
 `setup.wizard.enabled=true` in your properties file (e.g.
-`portal-setup-wizard.properties`).
+`portal-setup-wizard.properties`) in your Liferay Home.
 
     setup.wizard.enabled=true
 
@@ -3571,8 +3572,9 @@ The setup wizard is invoked during server startup.
 to preserve your current portal settings.
 
 To start the server without triggering the setup wizard, specify
-`setup.wizard.enabled=false` in your properties (e.g.,
-`portal-setup-wizard.properties` or `portal-ext.properties` file).
+`setup.wizard.enabled=false` in your properties file (e.g.,
+`portal-setup-wizard.properties` or `portal-ext.properties`) in your Liferay
+Home. 
 
     setup.wizard.enabled=false
 
@@ -3589,7 +3591,7 @@ The `portal-setup-wizard.properties` file the setup wizard creates has
 
 Now, let's deploy Liferay Portal.
 
-1.  Start WebLogic.
+1.  Start your WebLogic server if it's not already started.
 
 2.  Select *Deployments* and click the  *Install* button. Upload the desired JSF
     `.war` file--`jsf-1.2.war` or `jsf-2.0.war`--from WebLogic's common
