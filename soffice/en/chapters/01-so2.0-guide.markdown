@@ -960,6 +960,15 @@ Before starting the following Social Office upgrade process, make sure you've
 already upgraded your portal to version 6.1.1 CE, and backed up your old
 `portal-ext.properties` file, data folder, and database.
 
+---
+
+ ![Notice](../../images/tip.png) **Notice:** NOTICE: Current SO 2.0.4 CE
+ customers planning to upgrade to 2.0.5 EE must *first* download and upgrade to
+ 2.0.5 CE. A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported;
+ attempting this will break Social Office.
+
+---
+
 1. In your new 6.1.1 portal bundle, add the following properties into your
    `portal-ext.properties` file:
 
