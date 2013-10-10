@@ -96,18 +96,13 @@ remote service. -Rich -->
 
 Liferay's API follows a Service Oriented Architecture
 [(SOA)](http://en.wikipedia.org/wiki/Service-oriented_architecture). The API
-supports Java invocation and a variety of protocols including SOAP, JSON over
-HTTP, Burlap, Hessian, and more. A limited set of *RESTful* web services, based
-on the AtomPub protocol, are also supported--see the [Portal Atom
-Collections](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Atom+Collections)
-wiki by Igor Spasi&#263; for more details. You can also use the API
-through Remote Procedure Calls
-([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)). You have many good 
+supports Java invocation and a variety of protocols including SOAP and JSON over
+HTTP. A limited set of *RESTful* web services, based on the AtomPub protocol,
+are also supported--see the [Portal Atom Collections](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Atom+Collections)
+wiki by Igor Spasi&#263; for more details. You can also use the API through
+Remote Procedure Calls
+([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)). You have many good
 options for leveraging Liferay's API. 
-
-<!-- This Burlap and Hessian statement has been around for a while, yet I've
-never actually seen an implementation of it. Has this statement been vetted by
-somebody who knows the remote API intimately? -Rich --> 
 
 Let's step back now and discuss the security layers of Liferay's *service
 oriented* architecture and how you can configure them. 
