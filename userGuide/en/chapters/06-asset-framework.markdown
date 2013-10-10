@@ -43,7 +43,7 @@ form for creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the Categories heading won't appear.
 
-![Figure 6.1: Here, the Web Content Display portlet's form for categorizing a new web content article doesn't include a Categories heading since no categories have been created.](../../images/04-web-content-categorization.png)
+![Figure 6.1: Here, the Web Content Display portlet's form for categorizing a new web content instance doesn't include a Categories heading since no categories have been created.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
 each site in the portal. This interface can be used to manage all your tags and
@@ -170,7 +170,7 @@ icon to the right. Select the icon to reveal a dialog box like the one below.
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
 of the vocabulary to specific assets. In the screenshot above, notice that the
-vocabulary is configured to be available for Web Content articles and Blog
+vocabulary is configured to be available for Web Content instances and Blog
 entries, but it is not required. It is mandatory, however, for Documents and
 Media files.
 
@@ -234,7 +234,7 @@ search for content. First, there's the Search portlet. The Search portlet can be
 placed a page to allow users to search for assets of any type. We'll learn how
 to use the Search portlet when we discuss Liferay's faceted search feature in
 the next section. There's also a Web Content Search portlet. This portlet can be
-placed on a page to allow users to search for web content articles. Users can't
+placed on a page to allow users to search for web content instances. Users can't
 use the Web Content Search portlet to search for other kinds of content.
 However, the Blogs, Wiki, Message Boards, Documents and Media, and Web Content
 portlets all provide search bars that allow users to search among the specific
@@ -249,7 +249,7 @@ Lucene for indexing and searching for content. Please refer to the Lucene
 section of the portal properties file if you'd like to customize Liferay's
 indexing and search behavior. By default, Liferay indexes blog posts, wiki
 articles, and message board posts, Documents and Media files' descriptions, and
-web content articles. If a Documents and Media file is a text file, the file's
+web content instances. If a Documents and Media file is a text file, the file's
 content is indexed as well. Comments on blog posts, wiki articles, and Documents
 and Media files and text file attachments to wiki articles and message board
 posts are also indexed. Liferay automatically indexes content as it's added to
@@ -760,7 +760,7 @@ explore the available configurations for the Asset Selection, Display Settings,
 and Subscriptions sections of the Asset Publisher's configuration window. Let's
 start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display portlet except that you can select assets of
-any type, not just web content articles.
+any type, not just web content instances.
 
 #### Selecting Assets Manually [](id=selecting-assets-manually-liferay-portal-6-2-user-guide-06-en)
 
@@ -783,7 +783,7 @@ configured scope. By default, the available asset types include the following:
 - Bookmarks Folder
 - Blogs Entry
 - Message Boards Message
-- Web Content Article
+- Web Content Instance
 - Bookmarks Entry
 - Wiki Page
 - Document
@@ -914,23 +914,23 @@ for abstracts. The default is `200`.
 value selected, when the link to an asset is clicked, the full asset is
 displayed in the current Asset Publisher. (There's also a *View in Context* link
 that shows the article in the Wiki page's Wiki portlet.) If the value *View in a
-Specific Portlet* is selected, clicking on an asset causes that asset to be
-displayed in the portlet to which the asset belongs. For example, a blog entry
-would be displayed in the Blogs portlet where it was created.  Likewise, a forum
-post would be displayed in the Message Boards portlet where it was created.
-Similarly, a generic web content article would be displayed in the Asset
+Context* is selected, clicking on an asset causes that asset to be displayed in
+the portlet to which the asset belongs. For example, a blog entry would be
+displayed in the Blogs portlet where it was created. Likewise, a forum post
+would be displayed in the Message Boards portlet where it was created.
+Similarly, a generic web content instance would be displayed in the Asset
 Publisher of its configured display page. See the section below on display pages
 for more information.
 
 ---
 
  ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
- content articles that have an associated small image, the small image becomes a
- link to the full article.  To use this feature, add or edit a web content
- article that the Asset Publisher should display. Before clicking *Publish*,
+ content instances that have an associated small image, the small image becomes a
+ link to the full instance.  To use this feature, add or edit a web content
+ instance that the Asset Publisher should display. Before clicking *Publish*,
  click on *Abstracts*, flag *Small Image*, and upload an image.  Then click
- *Publish*. Once your web content article appears in the Asset Publisher's list,
- clicking the small image takes you to the full article.
+ *Publish*. Once your web content instance appears in the Asset Publisher's list,
+ clicking the small image takes you to the full instance.
 
 ---
 
@@ -1081,7 +1081,7 @@ As an improvement, Liferay introduced the concept of *display pages* and
 which is the official location of the content that is referenced any time the
 content is displayed. A display page can be any page with an asset publisher
 configured to display any content associated with the page. When adding or
-editing web content articles, you can select a display page, but only pages with
+editing web content, you can select a display page, but only pages with
 a configured asset publisher are available for selection.
 
 To create a display page, you can create a page yourself, add an Asset Publisher
@@ -1089,7 +1089,8 @@ portlet and configure it yourself. Alternatively, you can use the *Content
 Display Page* page template included with Liferay. If you're creating a Display
 Page manually, once you've added an Asset Publisher portlet to the page, open
 its configuration window. Then check the *Set as the Default Asset Publisher for
-This Page* box.
+This Page* box. Also, for its display settings, set the Display Style to
+*Abstracts* and the Asset Link Behavior to *View in Context*.
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole
@@ -1100,7 +1101,7 @@ Display portlet. Click the *Add Web Content* button, enter a title and some
 content, click on *Display Page* at the right, and select the Display Page you
 just created. Then click *Publish*.
 
-![Figure 6.17: You can select a display page for a web content article when creating or editing one.](../../images/04-web-content-display-page.png)
+![Figure 6.17: You can select a display page for a web content instance when creating or editing one.](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for

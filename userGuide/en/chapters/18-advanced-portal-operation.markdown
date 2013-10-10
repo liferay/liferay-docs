@@ -810,44 +810,38 @@ property defaults.
 
 ### Review the Liferay 6.2 Properties Defaults [](id=review-the-new-6-1-properties-defaults-liferay-portal-6-2-user-guide-18-en)
 
-<!-- This section should highlight the changes in property defaults between 6.1
-and 6.2, not 6.0 and 6.2. Each version of the guide has a section that documents
-the changes between the current and the previous release. So these changes are
-already documented, but there are probably others in 6.2 that have changed.
-Those are the ones we need to highlight. Some of these property differences are
-the encryption ones you outline below, so this will actually make this section
-flow better. -->
-
 The next thing you'll need to look at are the defaults that have changed between
 your old Liferay instance's version and Liferay 6.2. These are preserved in a
 `portal-legacy-[version].properties` file in Liferay's `/WEB-INF/classes` folder
 and in the `portal-impl/src` folder of Liferay's source code. For example, here
-are some of the 6.0 properties defaults:
+are some 6.1 legacy properties:
 
-    users.last.name.required=true
-    layout.types=portlet,panel,embedded,article,url,link_to_layout
-    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=bbcode
-    setup.wizard.enabled=false
-    discussion.subscribe.by.default=false
-    message.boards.subscribe.by.default=false
+    hibernate.cache.use_query_cache=true
+    hibernate.cache.use_second_level_cache=true
+    locale.prepend.friendly.url.style=1
+    passwords.encryption.algorithm.legacy=SHA
+    mobile.device.styling.wap.enabled=true
+    journal.articles.search.with.index=false
 
-The 6.2 values have changed to: 
+The `passwords.encryption.algorithm.legacy` and
+`mobile.device.styling.wap.enabled` properties do not exist in 6.1. In 6.2, the
+default values of some properties have changed and some new properties have been
+added: 
 
-    users.last.name.required=false
-    layout.types=portlet,panel,embedded,url,link_to_layout
-    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=ckeditor_bbcode
-    setup.wizard.enabled=true
-    discussion.subscribe.by.default=true
-    message.boards.subscribe.by.default=true
- 
-<!-- The below section is informative, but it doesn't answer the "whys." Why did
-we make the encryption stronger? What makes the algorithms we chose the best
-ones? What benefits do users get now that we're using a different algorithm? Can
-the NSA crack this one (joke)? Will my portal's performance be impacted by the
-stronger encryption algorithm, and if so, how do I plan for it? In other words,
-we need to tell the story of how Liferay is doing its part to help its users
-keep their data secure. -->
+    hibernate.cache.use_query_cache=false
+    hibernate.cache.use_second_level_cache=false
+    locale.prepend.friendly.url.style=3
+    passwords.encryption.algorithm.legacy=
+    mobile.device.styling.wap.enabled=false
+    journal.articles.search.with.index=true
 
+Please refer to the 6.1 and 6.2 versions of Liferay's `portal.properties` file
+for explanations of each of these properties. This file can be found in the your
+Liferay instance's `/WEB-INF/lib/portal-impl.jar` file. Online versions can also
+be found at
+[http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
+and
+[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 Please also note the following changes in behavior:
 
 1. By default, Liferay 6.1 used the DES encryption algorithm with a 56 bit key
@@ -857,7 +851,9 @@ Please also note the following changes in behavior:
         company.encryption.key.size=56
    
     By default, Liferay 6.2 uses the much stronger AES encryption algorithm with
-    a 128 bit key size for the company level encryption algorithm.
+    a 128 bit key size for the company level encryption algorithm. AES-128 is
+    believed to be secure, is fast, and is a standard for symmetric key
+    encryption. 
    
         company.encryption.algorithm=AES
         company.encryption.key.size=128
@@ -874,9 +870,26 @@ Please also note the following changes in behavior:
         passwords.encryption.algorithm=SHA
 
     By default, Liferay 6.2 uses a stronger algorithm,
-    PBKDF2WithHmacSHA1/160/128000, for password encryption.
+    PBKDF2WithHmacSHA1/160/128000, for password encryption. PBKDF2
+    (Password-Based Key Derivation Function 2) is a key derivation function
+    that's part of RSA's PKCS (Public-Key Cryptography Standards) series: PKCS
+    #5, version 2.0. It's also described in the IETF's [RFC
+    2898](http://tools.ietf.org/html/rfc2898). The
+    `PBKDF2WithHmacSHA1/160/128000` algorithm uses a keyed-hash message
+    authentication code using SHA-1 and generates 160-bit hashes using 128,000
+    rounds. One round is a single iteration of the key derivation function.
         
         passwords.encryption.algorithm=PBKDF2WithHmacSHA1/160/128000
+
+    Performance is affected by password encryption during sign-in and password
+    changes. In 2012, [OWASP](http://www.owasp.org), the Open Web Application
+    Security Project, recommended to use 64,000 rounds and to double the number
+    of rounds each year. If using PBKDF2 with 128,000 rounds is too expensive
+    for the hardware on which you're running Liferay, you can downgrade your
+    security algorithm to improve performance by choosing a smaller number. For
+    example, you set the following:
+
+        passwords.encryption.algorithm=PBKDF2WithHmacSHA1/160/64000
 
     If you'd like your upgrade to migrate your password encryption algorithm,
     you need to specify the legacy password encryption algorithm from which
@@ -930,17 +943,19 @@ Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
 
+### Upgrade Choices: Upgrade a Bundle or Upgrade Manually
+
 There are two different procedures to upgrade Liferay. The first one, upgrading
-a Liferay bundle, is the most common. The second procedure is for upgrading a
-Liferay installation on an application server. We'll go over both.
+a Liferay bundle, is the most common. The second procedure is for manually
+upgrading a Liferay installation on an application server. We'll discuss both.
 
 In both cases, Liferay auto-detects whether the database requires an upgrade the
 first time the new version is started. When Liferay does this, it upgrades the
 database to the format required by the new version. To perform this task,
-Liferay *must* be accessing the database with an ID that can create, drop and
-modify tables. Make sure you have granted these permissions to the ID before you
-attempt to upgrade Liferay. And, of course, we'll run the risk of overly
-repeating ourselves: back up your database. 
+Liferay *must* be accessing the database with a database user account that can
+create, drop and modify tables. Make sure you have granted these permissions to
+the database user account before you attempt to upgrade Liferay. And, of course,
+we'll run the risk of overly repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
@@ -987,7 +1002,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-#### Upgrading Using a .war File [](id=upgrading-using-a--war-file-liferay-portal-6-2-user-guide-18-en)
+#### Upgrading Manually [](id=upgrading-using-a--war-file-liferay-portal-6-2-user-guide-18-en)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -1028,6 +1043,16 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
+
+### Post-Upgrade Tasks
+
+After upgrading to Liferay 6.2, you should reindex your portal's search indexes.
+Liferay 6.2 indexes new information in many places, including Documents and
+Media, Web Content, and Bookmarks. To reindex all search indexes, navigate to
+the *Control Panel* &rarr; *Server Administration* and click on *Reindex all
+search indexes*. This invokes each of your portal's indexer classes so that the
+all new information that Liferay 6.2 is configured to index gets indexed
+immediately.
 
 ## Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-liferay-portal-6-2-user-guide-18-en)
 
