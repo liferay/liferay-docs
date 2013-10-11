@@ -3,14 +3,16 @@
 
 ---
 
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
+![Note](../../images/01-tip.png) This chapter is still being updated 
 reflect the new features in Liferay 6.2. 
 
 ---
 
 Liferay Portal is one of the most flexible applications on the market today with
-regard to application server environments. You can install Liferay Portal on
-everything from a shared Tomcat installation to a multi-node cluster running a
+regard to application server environments. It supports a wide variety of
+application servers, freeing you to use the Java application server you think is
+best. Liferay also scales very well: you can install Liferay Portal on
+everything from a shared hosting account to a multi-node cluster running a
 commercial application server and on everything in between. In fact, Liferay is
 used successfully in all of these scenarios every day.
 
@@ -18,9 +20,10 @@ You'll find that because Liferay is extremely flexible in its deployment
 options, it is also easy to install. If you already have an application
 server, you can use the tools for deployment that came with your application
 server. If you don't have an application server, Liferay provides several
-application server bundles from which to choose. These are very easy to install
-and with a small amount of configuration can be made into production-ready
-systems.
+application server bundles from which to choose. These are pre-configured
+application servers with Liferay already installed in them. They're very easy to
+install and with a small amount of configuration can be made into
+production-ready systems.
 
 But first, you need to determine which edition of Liferay you wish to install.
 Let's look at the options you have so that you can make the right decision. 
@@ -55,130 +58,7 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-### Understanding Liferay's Releases
-
-Liferay's release process follows a prescribed structure that is consistent from
-one release to the next. Each release has a specific number sequence attached to
-it, signifying the type of release it is: major, minor or maintenance release.
-Each release also has a term attached to it to indicate its intended level of
-quality.
-
-EE subscribers have access to additional maintenance releases, along with 
-specific *Fix Packs* and *Hot Fixes* that make applying updates to production
-environments safer and faster.
-
-Let's start with an explanation of Liferay's version structure. Liferay versions
-are organized in a straightforward numerical system consisting of a three digit
-number. For example, 6.1.2. These numbers represent the type of the release:
-Major.Minor.Maintenance.
-
-#### Major Release [](id=major-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the first digit of the version (e.g., 6.x to 7.x) is a major
-release. This means that:
-
-- There are major changes in functionality or new functionality based on high
-  demand.
-
-- There are architectural changes, changes to APIs (as part of the deprecation
-  process), or changes to internal schema.
-
-#### Minor Release [](id=minor-release-liferay-portal-6-2-user-guide-15-en)
-
-A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor
-release. This means that:
-
-- There are new features and bug fixes from prior releases.
-
-- Customizations may be affected when installing.
-
-- Customers should leverage the upgrade tools and documentation.
-
-#### Maintenance Release [](id=maintenance-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
-maintenance release. This means that:
-
-- Each maintenance release provides an improved level of security and reliability.
-
-- Customizations are generally safe, but we recommend doing a review.
-
-- No new features are included. 
-
-These rules are relaxed when a minor or major release is still in beta quality.
-
-Now let's delve into the evolution of versions.
-
-#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
-
-Each version of Liferay has a surname that specifies the expected quality of
-that release. This is needed because pre-releases of Liferay look very much like
-maintenance releases when viewed solely through their version numbers. The
-surname in general replaces the third digit in the version, but is visible
-through the logs and administration UIs. Here is a description of each surname
-and what it means:
-
-- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
-  more of these types within each minor or major release.  These releases are
-  meant for testing and to provide Liferay feedback through the beta testing
-  category in the forums. There will likely be major changes in milestone
-  releases, but beta releases are considered "feature complete" and should have
-  only bug fixes. 
-
-- **Release Candidates:** (6.1 RC1, 6.1 RC2) There can be zero, one, or more of
-  these right after the beta releases. These releases appear near the end of the
-  release process and are candidates for release. As such, they should have
-  minimal to no bugs, but because they are very new, some minor bugs may have
-  slipped by. 
-
-- **General Availability:** (6.1 GA1, 6.1 GA2, ....) There can be one or more of
-  these releases. A General Availability release is a re-label of the last
-  release candidate, based on internal testing and feedback from beta
-  testers. These releases are stable and are made available via Liferay's
-  Downloads page for CE and on the Customer Portal for EE. 
-
-#### Comments and Recommendations [](id=comments-and-recommendations-liferay-portal-6-2-user-guide-15-en)
-
-At this point you might be asking yourself questions like, which version
-should I use? What if I was using a previous version? Will the update to a new
-maintenance release cost a lot? Here are some comments and recommendations to
-address these questions.
-
-- When starting a new project, always use the latest stable version available;
-  that is, the latest available GA. At the time of writing, the most recent
-  version is Liferay CE 6.1 GA2 (6.1.1) or Liferay EE 6.1 GA2 (6.1.20). 
-
-- Always update to the latest maintenance release available for the functional
-  version (major or minor) that you are using. For example, if you started your
-  project with Liferay 6.1.0 GA1, it is recommended that you switch to GA2 to
-  take advantage of bug fixes and improvements. If you have a subscription, you
-  can benefit from the fixes faster by requesting fix packs and hot fixes from
-  the support team.
-
-- You are always welcome to use any preview, beta or release candidate.  In
-  fact, that's why they exist--so as many people as possible start using it and
-  provide us their feedback. Please note, we do not recommend using pre-releases
-  (milestones, betas, or release candidates) in production. You may not want to
-  use these releases even during development if you have tight deadlines, since
-  you may find road blocks.
-
-- Plugins that work in any GA or fix pack version will work in any later
-  maintenance release. That is, a plugin developed for Liferay 6.1 GA1 will also
-  work in Liferay 6 GA2 or a GA2 fix pack. 
-
-For more details on updating Liferay Portal, see [Upgrading
-Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-6)
-in chapter 17.
-
-Liferay Portal is a very flexible application that runs well on several
-different server environments. It's simple to install and comes in either a
-Community Edition or an Enterprise Edition, depending on your needs. Liferay
-follows a systematic versioning system that makes it easy to keep current with
-the latest updates. The strength of the Liferay community helps detect potential
-issues early that are then reported through the forums and are later fixed in a
-series of maintenance releases.
-
-Now let's learn about Liferay bundles.
+Now let's learn how to get a copy of Liferay Portal. 
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
@@ -219,6 +99,7 @@ servers it supports.
 
 ## Configuring Liferay Portal Security
 
+[To Be Written]
 <!-- This is where we should put high-level information about PACL and its
 requirement for Java security. -->
 
@@ -3967,6 +3848,112 @@ You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
 you deploy it. Extract the file from the `.war` file, modify it and then put it
 back in the `.war` file. Then deploy the modified Liferay `.war` file to the
 server in the proper context.
+
+Now that you have Liferay installed in the context you wish, you'll want to
+understand Liferay's releases and the process for keeping your installation up
+to date. We'll spend a brief amount of time on that next. 
+
+### Understanding Liferay's Releases
+
+Which version of Liferay should you install? That's an easy question to answer:
+if this is a new installation, we recommend you install the latest version
+available. If you want to understand how Liferay releases work, read on.
+Otherwise, you can skip this section for now and read it later. 
+
+Liferay's release process follows a prescribed structure that is consistent from
+one release to the next. Each release has a specific number sequence attached to
+it, signifying the type of release it is: major, minor or maintenance release.
+Each release also has a term attached to it to indicate its intended level of
+quality.
+
+EE subscribers have access to additional maintenance releases, along with 
+specific *Fix Packs* and *Hot Fixes* that make applying updates to production
+environments safer and faster.
+
+Let's start with an explanation of Liferay's version structure. Liferay versions
+are organized in a straightforward numerical system consisting of a three digit
+number. For example, 6.1.2. These numbers represent the type of the release:
+Major.Minor.Maintenance.
+
+A change in the first or second digit of the version (e.g., 6.x to 7.x or 6.1 to
+6.2) is a major or minor release. This means that there are changes in
+functionality or new functionality based on high demand. There are new features
+and bug fixes from prior releases. There are also architectural changes, changes
+to APIs (as part of the deprecation process), or changes to internal schema for
+frameworks such as Service Builder, because new features have been added.
+Customizations may be affected when installing. Customers should leverage the
+upgrade tools and documentation.
+
+A change in the third digit of the version scheme (e.g, 6.2.1 to 6.2.2) is a
+maintenance release. This means that each maintenance release provides an
+improved level of security and reliability. Customizations are generally safe,
+but we recommend doing a review. No new features are included. 
+
+These rules are relaxed when a minor or major release is still in beta quality.
+
+Now let's delve into the evolution of versions.
+
+#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
+
+Each release of Liferay has a surname that specifies its expected quality.  This
+is needed because pre-releases of Liferay look very much like maintenance
+releases when viewed solely through their version numbers. The surname in
+general replaces the third digit in the version, but is visible through the logs
+and administration UIs. Here is a description of each surname and what it means:
+
+- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
+  more of these types within each minor or major release.  These releases are
+  meant for testing and to provide Liferay feedback through the beta testing
+  category in the forums. There will likely be major changes in milestone
+  releases, but beta releases are considered "feature complete" and should have
+  only bug fixes. 
+
+- **Release Candidates:** (6.2 RC1, 6.2 RC2) There can be zero, one, or more of
+  these right after the beta releases. These releases appear near the end of the
+  release process and are candidates for release. As such, they should have
+  minimal to no bugs, but because they are very new, some minor bugs may have
+  slipped by. 
+
+- **General Availability:** (6.2 GA1, 6.2 GA2, ....) There can be one or more of
+  these releases. A General Availability release is a re-label of the last
+  release candidate, based on internal testing and feedback from beta
+  testers. These releases are stable and are made available via Liferay's
+  Downloads page for CE and on the Customer Portal for EE. 
+
+Armed with this information, here's our advice for how to manage your Liferay
+installation. 
+
+- When starting a new project, always use the latest stable version available;
+  that is, the latest available GA. At the time of writing, the most recent
+  version is Liferay CE 6.2 GA1 (6.2.0) or Liferay EE 6.1 GA2 (6.2.00). 
+
+- Always update to the latest maintenance release available for the functional
+  version (major or minor) that you are using. For example, if you started your
+  project with Liferay 6.2.0 GA1, it is recommended that you switch to GA2
+  if/when it becomes available to take advantage of bug fixes and improvements. If
+  you have a subscription, you can benefit from the fixes faster by requesting
+  fix packs and hot fixes from the support team.
+
+- You are always welcome to use any preview, beta or release candidate. In
+  fact, that's why they exist--so as many people as possible start using it and
+  provide us their feedback. Please note, we do not recommend using pre-releases
+  (milestones, betas, or release candidates) in production. You may not want to
+  use these releases even during development if you have tight deadlines, since
+  you may hit some unexpected bugs. 
+
+- Plugins that work in any GA or fix pack version will work in any later
+  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will also
+  work in Liferay 6.2 GA2 or a GA2 fix pack. 
+
+For more details on updating Liferay Portal, see Upgrading Liferay in chapter
+17.
+
+Liferay Portal is a very flexible application that runs well on several
+different server environments. It's simple to install and follows a systematic
+versioning system that makes it easy to keep current with the latest updates.
+The strength of the Liferay community helps detect potential issues early that
+are then reported through the forums and are later fixed in a series of
+maintenance releases.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-15-en)
 
