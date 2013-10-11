@@ -673,7 +673,7 @@ selection screen. Simply choose *Add Workflow* and a Workflow Designer screen
 appears allowing you to define a new workflow by dragging elements in a flow
 chart.
 
-![Figure 10.11: You'll see this form when editing or creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+![Figure 10.10: You'll see this form when editing or creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
 We'll keep ours simple; just choose *Single Approver Definition*. This gives us
 a starting point (entry creation) and a *review* task, which we can use to add
@@ -698,7 +698,7 @@ From the view to assign forms to tasks:
 
 4. Click *Save* to save the form assignment.
 
-![Figure 10.12: When creating or editing a Kaleo process, click *Assign* under Workflow Task Forms. Then click on a task, such as review, from the graphical view. Look for the *Forms* property in the Settings tab; you can use this property to assign a form template to a task.](../../images/05-kaleo-forms-task-form.png)
+![Figure 10.11: When creating or editing a Kaleo process, click *Assign* under Workflow Task Forms. Then click on a task, such as review, from the graphical view. Look for the *Forms* property in the Settings tab; you can use this property to assign a form template to a task.](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
@@ -712,7 +712,7 @@ Once you have a new Kaleo Form process, you can add new entries through the
 Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters
 the workflow you selected for the process.
 
-![Figure 10.13: When adding a new entry to a process, you're presented with the process's configured form template for the initial display.](../../images/05-kaleo-form-new-entry.png)
+![Figure 10.12: When adding a new entry to a process, you're presented with the process's configured form template for the initial display.](../../images/05-kaleo-form-new-entry.png)
 
 After you have created an entry, (depending on the configured workflow) the next
 task in the workflow may have an additional form to complete. If so, there will

@@ -380,29 +380,58 @@ way for you to back them up to separate files. Let's see how that works.
 ##### Backing up and Restoring Pages [](id=backing-up-and-restoring-pages-liferay-portal-6-2-user-guide-02-en)
 
 Next to the *Add Page* button on the Site Pages screen, there are two buttons
-labeled *Export* and *Import*. The Export button exports the pages you create
-into a single file, called a LAR (Liferay Archive). You can then import this
-file into any server running Liferay to re-create the pages. If you have a LAR
-you would like to import, use the *Import* button. Exporting and Importing LARs
-is a great way to take content from one environment (say, a development or QA
-environment) and move it all in one shot to your production server. Note that
-you should not make this a regular occurrence. If you want to regularly move
-pages from one server to another, you should use Liferay's staging environment,
-which is covered in chapter 3.
+labeled *Export* and *Import*. The Export button allows you to export the your
+site's data as a single file, called a LAR (Liferay Archive) file. When
+importing data into a site, it's best to use a newly created site to avoid
+potential conflicts between the existing site data and the data about to be
+imported. When exporting site data, you can specify exactly what data should be
+included in the LAR:
 
-LARs are also a good way to back up your site's content. You can export them to
-a specific location on your server which is backed up, and if you ever have to
-restore your site, all you need to do is import the latest LAR file. One
-limitation on LAR files, however, is that they are version dependent, so you
-can't use an export from an old version of Liferay and import it into a newer
-version.
+- Site pages (you can select exactly which ones)
+- Page settings
+- Theme
+- Theme settings
+- Logo
+- Application configurations
+- Application content
+- Archived setups
+- User preferences
+
+Once you've created a LAR file, you can import it into a site on another Liferay
+server. The data included in the LAR file, including all the site pages, will
+be imported into the site. Exporting and importing LARs is a great way to take
+content from a site in one environment (say, a development or QA environment)
+and move it all in one shot to a site on another server. You can use LARs to
+import data onto production servers, but you should not make this a regular
+occurrence. If you want to regularly move pages from one server to another, you
+should use Liferay's staging environment, which we discuss in chapter 3.
+
+LARs can be a good way to back up your site's content. You can export them to a
+specific location on your server which is backed up. If you ever have to restore
+your site, all you need to do is import the latest LAR file. However, please be
+careful! If there's any content that exists both in the LAR and in the site
+that's importing the data, there may be a conflict, and data could be
+corrupted.  If you'd like to restore a Liferay site using a LAR file, it's best
+to delete the site entirely, create a new site with the same name as the old
+one (i.e., re-create the site), and then import the LAR file into the new site.
+This way, there's no chance for there to be a data conflict.
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** LAR files are version dependent. You
+ can't import a LAR file that was exported from one version of Liferay into
+ a Liferay server that's running a different version of Liferay. Also,
+ note that periodically exporting LARs is *not* a complete backup solution;
+ please refer to chapter 18 of this guide for information on backing up Liferay.
+
+---
 
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `nosesterv1.lar`. Use the check boxes
 to determine what you'd like to export. For this initial export, select
 everything. Note that if you select one of the *Choose* radio selectors or
 *Change* links, you're given checkboxes for options to choose. The applications'
-content can also be selcted for export, including the Documents and Media
+content can also be selected for export, including the Documents and Media
 Library, Message Boards, and Web Content assets. You can even export the theme
 you're using!
 

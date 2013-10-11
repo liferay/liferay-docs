@@ -577,7 +577,7 @@ for certain portlets, use the Roles section of the Control Panel and the
 *Actions* &rarr; *Define Permissions* button. Next, let's learn how to install
 plugins manually.
 
-### Installing Plugins Manually  
+### Installing Plugins Manually [](id=installing-plugins-manually-liferay-portal-6-2-user-guide-14-en)
 
 Installing plugins manually is not quite as easy as installing plugins via the
 Marketplace interface but it's still quite simple. There are several scenarios

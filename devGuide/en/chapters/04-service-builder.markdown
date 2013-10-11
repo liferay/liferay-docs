@@ -150,9 +150,9 @@ Ehcache as an underlying cache provider for each of these cache levels but this
 is configurable via portal properties. All you have to do to enable entity and
 finder caching for an entity in your project is to set the `cache-enabled=true`
 attribute of your entity's `<entity>` element in your `service.xml`
-configuration file. Please refer to the [Liferay User
-Guide](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-clusteri-2)
-for more details about Liferay caching.
+configuration file. Please refer to the [Liferay
+Clustering](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-clustering-liferay-portal-6-2-user-guide-20-en)
+section of *Using Liferay Portal 6.2* for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
 associated with creating database persistence code but it doesn't prevent you
@@ -178,19 +178,33 @@ Next, let's roll up our sleeves and learn how to use Service Builder.
 
 ## Defining Your Object-Relational Map [](id=define-your-object-relational-map-liferay-portal-6-2-dev-guide-04-en)
 
-In order to demonstrate how to use Service Builder, let's create an example
+In order to demonstrate how to use Service Builder, let's continue using the
+event-listing-portlet project that we created in Chapter 2. It's an example
 portlet project that Nose-ster, a fictitious organization, can use to schedule
-social events. For our example, we'll create a new Liferay portlet project for
-managing and listing these events. We'll define two entities: *events* and
-*locations*. The event entity represents a social event that can be scheduled
-for Nose-ster, while the location entity represents a location at which a social
-event can take place. Since an event must have a location, the event entity will
-reference a location entity as one of its attributes.
+social events. We're using the event-listing-portlet project to manage and list
+these events. We need to add some entities, or model types, to represent
+Nose-ster's events and the locations where they hold their events. We'll define
+two entities: *events* and *locations*. The event entity represents a social
+event that can be scheduled for Nose-ster, while the location entity represents
+a location at which a social event can take place. Since an event must have a
+location, the event entity will reference a location entity as one of its
+attributes. 
 
+![Figure 4.1: The Event Listing portlet lets you add and modify Nose-ster social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
+
+If you'd like to examine the finished example project, it's a part of our *Dev
+Guide SDK* which you can browse at
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
+The project is in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
+folder.
+
+<!--
 If you'd like to examine the finished example project, it's a part of our *Dev
 Guide SDK* which you can download as a `.zip` file from our Developer's Guide
 page. 
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development)
+[http://www.liferay.com/documentation/liferay-portal/6.2/development](http://www.liferay.com/documentation/liferay-portal/6.2/development)
+-->
 
 ---
 
@@ -200,80 +214,17 @@ page.
  is only intended to demonstrate how to use Service Builder. The Calendar
  portlet provides many more features than the simple example application
  described here. For information about the Calendar portlet, please refer to
- the chapter on Liferay's collaboration suite in [Using Liferay
- Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide).
+ the chapter on Liferay's collaboration suite in [*Using Liferay
+ Portal 6.2*](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide).
 
 ---
 
-Liferay portlet projects can contain multiple portlets. We'll create two
-portlets in our Event Listing portlet project: the Event Listing portlet and the
-Location Listing portlet. These portlets will allow users to add, edit, or
-remove events or locations, display lists of events or locations, search for
-particular events or locations, and view the details of individual events or
-locations.
-
-![Figure 4.1: The Event Listing portlet lets you add and modify Nose-ster social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
-
-We'll start by creating the Event Listing portlet in a new portlet plugin
-project. To follow this example, create a new Liferay portlet project in your
-Liferay Plugins SDK using Liferay IDE or Developer Studio. Go to *File* &rarr;
-*New Liferay Project* to bring up the Liferay project wizard. We'll use this
-wizard to create both the Event Listing portlet project and the Event Listing
-portlet itself. After we finish creating our project and our first portlet,
-we'll use the new Liferay portlet wizard to create a second portlet in this
-project: the Location Listing portlet. Here's some key information to specify
-for the Event Listing portlet project in the first wizard: 
-
-- **Project name:** *event-listing-portlet*
-- **Display name:** *Event Listing*
-- **Project type:** *Portlet*
-- **Portlet framework:** *Liferay MVC*
-- **Create custom portlet class:** *yes*
-
-After you select *Create custom portlet class*, the rest of the wizard lets you
-specify details about the Event Listing portlet class:
-
-- **Portlet class:** *EventListingPortlet*
-- **Java package:** *com.nosester.portlet.eventlisting*
-- **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
-- **Portlet name:** *eventlisting*
-- **Display name:** *Event Listing Portlet*
-- **Title:** *Event Listing Portlet*
-- **Portlet modes:** *View*
-- **Create JSP files:** yes
-- **Create resources bundle file:** *yes*
-- **Category:** *Sample*
-
-Selecting *Create resources bundle file* lets you add different language
-translations for your portlet's textual display values. Click *Finish* to
-create your Liferay portlet plugin project and the Event Listing portlet.
-
-Next, we'll create the Location Listing portlet in the Event Listing portlet
-project. Select the project in the Package Explorer and then select *File*
-&rarr; *New* &rarr; *Liferay Portlet*. Creating the Location Listing portlet in
-the IDE is similar to how you created the Event Listing portlet. Only the
-portlet class name and a few other name values will be different.
-
-Here is a summary of the values to specify for creating the Location Listing
-portlet via the Liferay portlet wizard: 
-
-- **Portlet class:** *LocationListingPortlet*
-- **Java package:** *com.nosester.portlet.eventlisting*
-- **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
-- **Portlet name:** *locationlisting*
-- **Display name:** *Location Listing Portlet*
-- **Title:** *Location Listing Portlet*
-- **Portlet modes:** *View*
-- **Create JSP files:** *yes*
-- **Create resources bundle file:** *yes*
-- **Category:** *Sample*
-
-After you've finished using the Liferay portlet wizard to create the Location
-Listing portlet, expand your project's `docroot/WEB-INF/src` folder and the
-`com.nosester.portlet.eventlisting` package. Notice that Liferay IDE created the
-`EventListingPortlet.java` and `LocationListingPortlet.java` files in this
-package. We'll add some business logic to these portlet classes after using
-Service Builder to create a service layer for our event and location entities.
+As with any portlet project, the event-listing-portlet project's Java sources
+lie in its `docroot/WEB-INF/src` folder. Notice that Liferay IDE's portlet
+wizard created the `EventListingPortlet.java` and `LocationListingPortlet.java`
+files in the `com.nostester.portlet.eventlisting` package. We'll add some
+business logic to these portlet classes after using Service Builder to create a
+service layer for our event and location entities. 
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file in your project's `docroot/WEB-INF`
@@ -331,7 +282,7 @@ Let's start creating our service by using Liferay IDE to create your
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
-[http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd](http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd)
+[http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd](http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd)
 specifies the format and requirements of the XML to use. You can create your
 `service.xml` file manually, following the DTD, or you can use Liferay IDE.
 Liferay IDE helps you build the `service.xml` file piece-by-piece, taking the
@@ -656,9 +607,17 @@ Terrific! You've created the example service and its Event and Location entities
 for the Event Listing portlet project.
 
 We've made the source code for the service and the entire Event Listing portlet
-project available in the *Dev Guide SDK* which you can download from our
+project available in the *Dev Guide SDK* which you can browse at
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
+The project is in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
+folder.
+
+<!-- download from our
 Developer's Guide page at
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
+[http://www.liferay.com/documentation/liferay-portal/6.2/development](http://www.liferay.com/documentation/liferay-portal/6.2/development).
+-->
+
 We've also listed the `service.xml` content here for your convenience. We've
 added some comments to highlight the service's various elements. Other than
 that, your `service.xml` file's contents should look similar to this: 
@@ -742,11 +701,10 @@ that, your `service.xml` file's contents should look similar to this:
     </service-builder>
 
 <!--
-Should we include the entity element's uuid attribute? The
-sample-service-builder-portlet-master project includes it. - Jim
+We should include the entity element's uuid attribute here and in the SDK
+project. See that the sample-service-builder-portlet-master project includes it.
+Also, we should describe the uuid and the other audit fields - Jim
 -->
-
-<!-- Yes, because it's required by various Liferay APIs. -Rich -->
 
 Now that you've specified the service for the Event Listing portlet project,
 let's *build* the service by running Service Builder. Then we'll look at the
@@ -1418,7 +1376,7 @@ following along in the previous sections, Service Builder created the
         </model>
     </model-hints>
 
-<!-- Should the above model elements include the uuid String field? - Jim -->
+<!-- The above model elements should include the uuid String field? - Jim -->
 
 The root-level element is `model-hints`. In this are all your model entities
 represented by `model` elements. Each `model` element must have a `name`
@@ -1668,9 +1626,9 @@ caller has permission to add/update/delete events. We cover Liferay's security
 and permissions system in Chapter 6. To see how the Event Listing portlet is
 integrated with Liferay's permissions system, browse the Event Listing portlet
 project available in the *Dev Guide SDK* at
-[https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk). 
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
 The project is in the SDK's
-[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
 folder. 
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,

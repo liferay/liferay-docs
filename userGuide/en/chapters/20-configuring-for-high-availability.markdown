@@ -102,7 +102,7 @@ values there.
 We'll discuss each of the points above one by one to present a clear picture of
 how to cluster Liferay. 
 
-### All Nodes Should Point to the Same Liferay Database
+### All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-life-liferay-portal-6-2-user-guide-20-en)
 
 This is pretty self-explanatory. Each node should be configured with a data
 source that points to one Liferay database (or a database cluster) that all the
@@ -993,7 +993,7 @@ experiment with the memory settings on your JVM as well as the cache settings
 above. You can find the specifics about these settings in the documentation for
 Ehcache.
 
-#### Configuring Liferay's Caching Settings
+#### Configuring Liferay's Caching Settings [](id=configuring-liferays-caching-settings-liferay-portal-6-2-user-guide-20-en)
 
 To understand how Liferay behaves with various cache configurations, let's
 consider five different scenarios.

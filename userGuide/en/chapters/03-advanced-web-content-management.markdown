@@ -140,6 +140,20 @@ your structure, you can access the WebDAV URL by re-opening the structure or
 template and clicking the *Details* section. If you'd like the see WebDAV in
 action, visit the *Document Management* chapter's *WebDAV access* chapter.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** Some operating systems require a
+ WebDAV server to be class level 2 before (i.e., to support file locking) before
+ allowing files to be read or written. For Liferay 6.2, the Documents and Media
+ library was upgraded to class level 2 but Web Content structures and templates
+ were not. This means that Liferay 6.2's Document and Media library supports
+ WebDAV file locking but Web Content structures and templates do not. However,
+ on operating systems which require WebDAV servers to be class level 2, it's
+ possible to avoid the restriction by using third-party WebDAV clients (e.g.,
+ [Cyberduck](http://cyberduck.ch).
+
+---
+
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
 *View* mode is selected. Click the *Source* tab to switch to Source mode. This
@@ -370,12 +384,12 @@ interface.
 3. Click on the *Add* button.
 4. Name the structure *News Article* and add the following fields:
 
-| Field Type | &nbsp;Field Label | &nbsp;Name |
---------- | ---------- | ---------- |
- Text  | &nbsp;Title | &nbsp;`title` |
- Text Box | &nbsp;Abstract | &nbsp;`abstract` |
- Image | &nbsp;Image | &nbsp;`image` |
- HTML | &nbsp;Body | &nbsp;`body` |
+	| Field Type | &nbsp;Field Label | &nbsp;Name |
+	--------- | ---------- | ---------- |
+	Text  | &nbsp;Title | &nbsp;`title` |
+	Text Box | &nbsp;Abstract | &nbsp;`abstract` |
+	Image | &nbsp;Image | &nbsp;`image` |
+	HTML | &nbsp;Body | &nbsp;`body` |
 
 5. Click *Save*.
 6. In the Manage Structures interface, click *Choose* next to the News Article
@@ -823,16 +837,19 @@ template administrators cannot add, remove, or reorder custom site pages.
 If a site administrator changes a page that was imported from a site template
 and refreshes the page, the following message appears:
 
-	This page has been changed since the last update from the site template. No
-	further updates from the site template will be applied. Click *Reset* to
-	overwrite the changes and receive updates from the site template.
+        This page has been changed since the last update from the site template.
+        No further updates from the site template will be applied. Click *Reset*
+        to overwrite the changes and receive updates from the site template.
 
 If the site administrator clicks the *Reset* button, changes are propagated from
-the site template to all the pages of the site that were imported from the site
-template. Clicking the *Reset* button makes two kinds of updates. First, changes
-made by site administrators to pages that were imported from the site template
-are undone. Second, changes made by site template administrators to site
-template pages are applied to the site pages.
+the site template page to the corresponding site page that was imported from the
+site template. Clicking the *Reset* button makes two kinds of updates to a page.
+First, changes made by site administrators to the site page are undone. Second,
+changes made by site template administrators to the site template page are
+applied to the site page. Note: clicking the *Reset* button only resets one
+page. If multiple site pages have been modified and you'd like to re-apply the
+site template pages to them, you'll need to click the *Reset* button for each
+page.
 
 Site template administrators can set preferences for portlets on site template
 pages. When a portal administrator creates a site from a site template, the
