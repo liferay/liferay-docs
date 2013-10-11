@@ -315,16 +315,13 @@ Marketplace.
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
 Calendar portlet on Liferay Marketplace. The new Calendar portlet upgrades
-several features of the old Calendar portlet and adds additional features. It's
-possible to have both Calendar portlets deployed to your Liferay Portal instance
-at the same time. You can even add both Calendar portlets to the same page if
-you'd like to compare them--they're completely compatible. The features you're
-used to from the old Calendar portlet are still available. You can add events
-and configure email notifications and you can use the Calendar portlet as a
-shared calendar for an entire site or as a personal calendar. Some of the new
-features include an improved look and feel, more configuration options, the
-ability to assign multiple calendars to a site or user, the concept of calendar
-resources, and event invitations.
+several features of the old Calendar portlet and adds additional features. The
+features you're used to from the old Calendar portlet are still available. You
+can add events and configure email notifications and you can use the Calendar
+portlet as a shared calendar for an entire site or as a personal calendar. Some
+of the new features include an improved look and feel, more configuration
+options, the ability to assign multiple calendars to a site or user, the concept
+ of calendar resources, and event invitations.
 
 <!-- Add installation instructions for the new Calendar portlet here. Confirm
 that it's available from Marketplace. Briefly describe the differences between
