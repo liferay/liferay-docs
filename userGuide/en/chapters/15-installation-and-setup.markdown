@@ -97,7 +97,7 @@ First we'll go over installing Liferay from a bundle and after this we'll
 provide instructions for installing Liferay manually on all the application
 servers it supports. 
 
-## Configuring Liferay Portal Security
+## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-liferay-portal-6-2-user-guide-15-en)
 
 [To Be Written]
 <!-- This is where we should put high-level information about PACL and its
@@ -1428,7 +1428,7 @@ database and mail session.
 
 Liferay will now be able to communicate with your database and mail session.
 
-### PACL Configuration
+### PACL Configuration [](id=pacl-configuration-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL on GlassFish, you need to make some security configurations.
 First, enable the security manager by editing
@@ -2267,7 +2267,7 @@ Before we deploy Liferay Portal on your JBoss app server, we'll teach you how to
 enable and configure Java security so you can begin using Liferay's plugin
 security manager with your downloaded Liferay applications.
 
-### Security Configuration
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your portal and your JBoss server from security threats. To do
@@ -2915,7 +2915,7 @@ It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-### Enabling PACL
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -3265,7 +3265,7 @@ If you still have the `mainWebApp` module installed, remove it first.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
-### Dependency Jars
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-4)
 
 Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
 the driver `.jar` file applicable for your database. We'll put them on your
@@ -3283,7 +3283,7 @@ So far so good. Your `.jar` files are in place and ready for Liferay.
 
 Let's proceed with configuring WebLogic.
 
-### Configuring WebLogic
+### Configuring WebLogic [](id=configuring-weblogic-liferay-portal-6-2-user-guide-15-en)
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
@@ -3351,7 +3351,7 @@ Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
 Next, if you want to configure your database and/or mail session within
 WebLogic, start your WebLogic server.
 
-### Database Configuration
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -3390,7 +3390,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-### Mail Configuration
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -3405,7 +3405,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-### Domain Configuration - Continued
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-0)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -3449,7 +3449,7 @@ Before we deploy Liferay, we'll teach you how to enable and configure Java
 Security so that you can start using Liferay's plugin security manager with
 the Liferay apps you download and install. 
 
-### Security Configuration
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 When you are ready to start using other people's apps from Marketplace, you'll
 want to protect your portal and your WebLogic server from security threats. To
@@ -3478,7 +3478,7 @@ access to resources.
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-### Deploy Liferay
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
 This section provides instructions for deploying Liferay to your application
 server domain.
@@ -3575,7 +3575,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.48: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
+    ![Figure 15.41: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
 3. Check the box *Deploy the administrative console*. This gives you a web-based
    UI for working with your application server. Skip the default applications.
@@ -3619,7 +3619,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
+![Figure 15.42: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -3643,7 +3643,7 @@ Liferay's standard database configuration; in that case, skip this section.
 You'll set your database information in Liferay's setup wizard after the
 install. 
 
-![Figure 15.54: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 15.43: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -3684,7 +3684,7 @@ install.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![Figure 15.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 15.44: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
 	database. Click *OK* and save to master configuration.
@@ -3744,13 +3744,13 @@ Great! Now you're ready to deploy Liferay.
 You've now installed Liferay, but don't start it yet. If you wish to use PACL,
 you have one more thing to configure. 
 
-### Enabling Security for Portal Access Control Lists
+### Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-con-liferay-portal-6-2-user-guide-15-en)
 
 In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
+    ![Figure 15.45: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
@@ -3791,7 +3791,7 @@ you're ready to start Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.56: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
+    ![Figure 15.46: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
@@ -3853,7 +3853,7 @@ Now that you have Liferay installed in the context you wish, you'll want to
 understand Liferay's releases and the process for keeping your installation up
 to date. We'll spend a brief amount of time on that next. 
 
-### Understanding Liferay's Releases
+### Understanding Liferay's Releases [](id=understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version

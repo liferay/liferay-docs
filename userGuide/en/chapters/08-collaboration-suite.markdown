@@ -1680,7 +1680,7 @@ questions or you can use Polls to create a little fun for your community. As
 with most things in Liferay, you are only limited by your imagination. Next,
 let's learn how to use Liferay's Announcements portlet.
 
-## Sending Alerts and Announcements in Your Portal
+## Sending Alerts and Announcements in Your Portal [](id=sending-alerts-and-announcements-in-you-liferay-portal-6-2-user-guide-08-en)
 
 Suppose you're running a portal with lots of users. Maybe you have thousands or
 tens of thousands of users (or more!). Wouldn't it be nice to have an easy way
@@ -1692,7 +1692,7 @@ reminder to all the members of a certain site to submit an answer to this week's
 poll question. Liferay provides two portlets that meet this need: the Alerts
 portlet and the Announcements portlet.
 
-![Figure 8.x: The Alerts and Annoucements portlets provide administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
+![Figure 8.31: The Alerts and Annoucements portlets provide administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
 
 The Alerts and Announcements portlets let you broadcast important information to
 different groups of users. Each alert or announcement can be created in a
@@ -1706,7 +1706,7 @@ or Test. Each kind of announcement that's broadcast to a user is viewable from
 the Alerts or Announcements portlet, of course. But alerts and announcements can
 also be sent via email or SMS (Short Message Service, i.e., text).
 
-![Figure 8.x: The Alerts and Annoucements portlets display lists of alerts and annoucements to regular users. They also provide administrators with an interface for managing and adding entries.](../../images/alerts-portlet.png)
+![Figure 8.32: The Alerts and Annoucements portlets display lists of alerts and annoucements to regular users. They also provide administrators with an interface for managing and adding entries.](../../images/alerts-portlet.png)
 
 Let's look at how to create announcements in the Announcements portlet. When you
 view the Announcements portlet as an administrator, you'll see two tabs: Entries
@@ -1777,7 +1777,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 8.31: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
+![Figure 8.33: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
@@ -1849,7 +1849,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.32: Openfire Administration Web Tool](../../images/jabber-service-name.png)
+![Figure 8.34: Openfire Administration Web Tool](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
@@ -1900,7 +1900,7 @@ Marketplace by navigating the the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 8.33: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 8.35: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 <!-- Needs to be updated for 6.2 -->
 <!-- There are a few bugs that make it impossible to configure an account using
