@@ -624,10 +624,9 @@ that existed prior to 6.2 will still be available after your upgrade. After
 following
 [these](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-5)
 steps for upgrading Liferay, all you need to do to access previously added
-events is deploy the new Calendar portlet and add it to a page. You can browse
-through the new Calendar to confirm that the upgrade succeeded: you should be
-able to view and edit calendar events that were added via the old calendar
-portlet.
+events is deploy the new Calendar portlet. You can browse through the new
+Calendar to confirm that the upgrade succeeded: you should be able to view and
+edit calendar events that were added via the old calendar portlet.
 
 The old Calendar portlet included certain calendar event types such as
 appointments, birthdays, holidays, and meetings. The new Calendar portlet
