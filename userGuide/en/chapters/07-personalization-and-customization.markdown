@@ -432,7 +432,7 @@ current user's address. For example, if the current user's country is set to
 Brazil, Canada, Mexico, or the United States, the Sample Drools portlet displays
 a list of assets that have been tagged with the *americas* tag.
 
-![Figure 7.x: By default, the Sample Drools portlet returns personalized content based on the addresses set on the form for editing a user account. This form is accessible from the Dockbar via *\[User Name\]* &rarr; *My Account*. Users with addresses in Brazil, Canada, Mexico, or the United States will see a list of assets tagged with the "americas" tag in the Sample Drools portlet.](../../images/sample-drools-portlet.png)
+![Figure 7.9: By default, the Sample Drools portlet returns personalized content based on the addresses set on the form for editing a user account. This form is accessible from the Dockbar via *\[User Name\]* &rarr; *My Account*. Users with addresses in Brazil, Canada, Mexico, or the United States will see a list of assets tagged with the "americas" tag in the Sample Drools portlet.](../../images/sample-drools-portlet.png)
 
 <!-- | TODO: We need to point to what we're about to do before we do it;
 otherwise this is hard to follow. | -->

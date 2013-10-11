@@ -3,14 +3,16 @@
 
 ---
 
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
+![Note](../../images/01-tip.png) This chapter is still being updated 
 reflect the new features in Liferay 6.2. 
 
 ---
 
 Liferay Portal is one of the most flexible applications on the market today with
-regard to application server environments. You can install Liferay Portal on
-everything from a shared Tomcat installation to a multi-node cluster running a
+regard to application server environments. It supports a wide variety of
+application servers, freeing you to use the Java application server you think is
+best. Liferay also scales very well: you can install Liferay Portal on
+everything from a shared hosting account to a multi-node cluster running a
 commercial application server and on everything in between. In fact, Liferay is
 used successfully in all of these scenarios every day.
 
@@ -18,9 +20,10 @@ You'll find that because Liferay is extremely flexible in its deployment
 options, it is also easy to install. If you already have an application
 server, you can use the tools for deployment that came with your application
 server. If you don't have an application server, Liferay provides several
-application server bundles from which to choose. These are very easy to install
-and with a small amount of configuration can be made into production-ready
-systems.
+application server bundles from which to choose. These are pre-configured
+application servers with Liferay already installed in them. They're very easy to
+install and with a small amount of configuration can be made into
+production-ready systems.
 
 But first, you need to determine which edition of Liferay you wish to install.
 Let's look at the options you have so that you can make the right decision. 
@@ -55,130 +58,7 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-### Understanding Liferay's Releases
-
-Liferay's release process follows a prescribed structure that is consistent from
-one release to the next. Each release has a specific number sequence attached to
-it, signifying the type of release it is: major, minor or maintenance release.
-Each release also has a term attached to it to indicate its intended level of
-quality.
-
-EE subscribers have access to additional maintenance releases, along with 
-specific *Fix Packs* and *Hot Fixes* that make applying updates to production
-environments safer and faster.
-
-Let's start with an explanation of Liferay's version structure. Liferay versions
-are organized in a straightforward numerical system consisting of a three digit
-number. For example, 6.1.2. These numbers represent the type of the release:
-Major.Minor.Maintenance.
-
-#### Major Release [](id=major-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the first digit of the version (e.g., 6.x to 7.x) is a major
-release. This means that:
-
-- There are major changes in functionality or new functionality based on high
-  demand.
-
-- There are architectural changes, changes to APIs (as part of the deprecation
-  process), or changes to internal schema.
-
-#### Minor Release [](id=minor-release-liferay-portal-6-2-user-guide-15-en)
-
-A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor
-release. This means that:
-
-- There are new features and bug fixes from prior releases.
-
-- Customizations may be affected when installing.
-
-- Customers should leverage the upgrade tools and documentation.
-
-#### Maintenance Release [](id=maintenance-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
-maintenance release. This means that:
-
-- Each maintenance release provides an improved level of security and reliability.
-
-- Customizations are generally safe, but we recommend doing a review.
-
-- No new features are included. 
-
-These rules are relaxed when a minor or major release is still in beta quality.
-
-Now let's delve into the evolution of versions.
-
-#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
-
-Each version of Liferay has a surname that specifies the expected quality of
-that release. This is needed because pre-releases of Liferay look very much like
-maintenance releases when viewed solely through their version numbers. The
-surname in general replaces the third digit in the version, but is visible
-through the logs and administration UIs. Here is a description of each surname
-and what it means:
-
-- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
-  more of these types within each minor or major release.  These releases are
-  meant for testing and to provide Liferay feedback through the beta testing
-  category in the forums. There will likely be major changes in milestone
-  releases, but beta releases are considered "feature complete" and should have
-  only bug fixes. 
-
-- **Release Candidates:** (6.1 RC1, 6.1 RC2) There can be zero, one, or more of
-  these right after the beta releases. These releases appear near the end of the
-  release process and are candidates for release. As such, they should have
-  minimal to no bugs, but because they are very new, some minor bugs may have
-  slipped by. 
-
-- **General Availability:** (6.1 GA1, 6.1 GA2, ....) There can be one or more of
-  these releases. A General Availability release is a re-label of the last
-  release candidate, based on internal testing and feedback from beta
-  testers. These releases are stable and are made available via Liferay's
-  Downloads page for CE and on the Customer Portal for EE. 
-
-#### Comments and Recommendations [](id=comments-and-recommendations-liferay-portal-6-2-user-guide-15-en)
-
-At this point you might be asking yourself questions like, which version
-should I use? What if I was using a previous version? Will the update to a new
-maintenance release cost a lot? Here are some comments and recommendations to
-address these questions.
-
-- When starting a new project, always use the latest stable version available;
-  that is, the latest available GA. At the time of writing, the most recent
-  version is Liferay CE 6.1 GA2 (6.1.1) or Liferay EE 6.1 GA2 (6.1.20). 
-
-- Always update to the latest maintenance release available for the functional
-  version (major or minor) that you are using. For example, if you started your
-  project with Liferay 6.1.0 GA1, it is recommended that you switch to GA2 to
-  take advantage of bug fixes and improvements. If you have a subscription, you
-  can benefit from the fixes faster by requesting fix packs and hot fixes from
-  the support team.
-
-- You are always welcome to use any preview, beta or release candidate.  In
-  fact, that's why they exist--so as many people as possible start using it and
-  provide us their feedback. Please note, we do not recommend using pre-releases
-  (milestones, betas, or release candidates) in production. You may not want to
-  use these releases even during development if you have tight deadlines, since
-  you may find road blocks.
-
-- Plugins that work in any GA or fix pack version will work in any later
-  maintenance release. That is, a plugin developed for Liferay 6.1 GA1 will also
-  work in Liferay 6 GA2 or a GA2 fix pack. 
-
-For more details on updating Liferay Portal, see [Upgrading
-Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-6)
-in chapter 17.
-
-Liferay Portal is a very flexible application that runs well on several
-different server environments. It's simple to install and comes in either a
-Community Edition or an Enterprise Edition, depending on your needs. Liferay
-follows a systematic versioning system that makes it easy to keep current with
-the latest updates. The strength of the Liferay community helps detect potential
-issues early that are then reported through the forums and are later fixed in a
-series of maintenance releases.
-
-Now let's learn about Liferay bundles.
+Now let's learn how to get a copy of Liferay Portal. 
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
@@ -217,8 +97,9 @@ First we'll go over installing Liferay from a bundle and after this we'll
 provide instructions for installing Liferay manually on all the application
 servers it supports. 
 
-## Configuring Liferay Portal Security
+## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-liferay-portal-6-2-user-guide-15-en)
 
+[To Be Written]
 <!-- This is where we should put high-level information about PACL and its
 requirement for Java security. -->
 
@@ -1804,7 +1685,7 @@ database and mail session.
 
 Liferay will now be able to communicate with your database and mail session.
 
-### PACL Configuration
+### PACL Configuration [](id=pacl-configuration-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL on GlassFish, you need to make some security configurations.
 First, enable the security manager by editing
@@ -2237,167 +2118,13 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 See the section on the setup wizard above for more information about the setup
 wizard. 
 
-You've just installed and deployed Liferay Portal on Jetty - way to go!
+You've just installed and deployed Liferay Portal on Jetty - way to go! 
 
-## Installing Liferay on JBoss 5.1 [](id=installing-liferay-on-jboss-5-1-liferay-portal-6-2-user-guide-15-en)
-
-Note: Java 7 deprecated some classes used by JBoss 5.1. Use Java 5 or Java 6 to
-run JBoss 5.1.
+## Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above JBoss's install location.
 
-1. Download and install JBoss EAP 5.1.x into your preferred directory. This
-   directory is referred to as `$JBOSS_HOME` throughout this section.
-
-2. Download the latest version of the Liferay Portal `.war` file.
-
-3. Download Liferay's Portal Dependencies.
-
-Now that you have all of your installation files, you are ready to start
-installing and configuring Liferay on JBoss.
-
-### Configuring Dependencies [](id=configuring-dependencies-liferay-portal-6-2-user-guide-15-en)
-
-First we'll take care of dependencies and potential conflicts.
-
-1. Unzip Liferay's dependencies to `$JBOSS_HOME/server/default/lib`.
-
-2. Download your database driver `.jar` file and put it into the folder as
-   well. For demonstration purposes, we'll download the MySQL Connector/J
-   driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
-   and put its `.jar` file into the `$JBOSS_HOME/server/default/lib` folder.
-
-3. Next we'll delete JBoss's Hibernate Validator and HSQL JARs to prevent
-   conflicts with Liferay's JARs. Remove the following files from
-   `$JBOSS_HOME/common/lib`:
-
-        hibernate-validator.jar
-        hsqldb.jar
-        hsqldb-plugin.jar
-
-Next we need to clean up the entries for the JAR files that we deleted.
-
-1. Open `$JBOSS_HOME/server/default/conf/login-config.xml` in a text editor.
-
-2. Comment out the blocks with the name `HsqlDBRealm` and `JmsXARealm` around
-   lines 41-64.
-
-We'll also delete some other files that can cause conflicts with Liferay when
-it's deployed.
-
-1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
-    - /messaging
-	- ejb2-container-jboss-beans.xml
-    - ejb2-timer-service.xml
-    - ejb3-connections-jboss-beans.xml
-    - ejb3-container-jboss-beans.xml
-    - ejb3-interceptors-aop.xml
-    - ejb3-timerservice-jboss-beans.xml
-    - hsqldb-ds.xml
-    - jms-ra.rar
-    - mail-ra.rar
-    - mail-service.xml
-    - profile-service-secured.jar
-    - uuid-key-generator.sar
-
-2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
-
-        jboss-ejb3-endpoint-deployer.jar
-        messaging-definitions-jboss-beans.xml
-
-### Deploying Liferay [](id=deploying-liferay-liferay-portal-6-2-user-guide-15-en)
-
-Now that we've added all of the necessary dependencies and removed unnecessary
-files, it's time to deploy Liferay.
-
-1. Navigate to `$JBOSS_HOME/../server/default/deploy/ROOT.war` and delete all
-   the content of the folder.
-
-2. Extract the contents of the Liferay WAR file into this folder.
-
-3. Create a file named `jboss-classloading.xml` in the
-   `$JBOSS_HOME/../server/default/ROOT.war/WEB-INF` directory and add the
-   following contents to it:
-
-        <classloading xmlns="urn:jboss:classloading:1.0"
-                parent-first="false"
-                domain="LiferayDomain"
-                export-all="NON_EMPTY" 
-                import-all="true">
-        </classloading>
-
-    This configuration file defines a domain that does not allow parent classes
-    to load first. Instead, Liferay Portal's classes are exported. Since JBoss
-    comes with its own Hibernate JARs, the above configuration is needed to tell
-    Liferay to ignore these JARs and to use its own JARs instead. If you omit
-    this configuration, you may encounter a Hibernate exception. It's also
-    necessary to add a `jboss-classloading.xml` file to the `WEB-INF` folder of
-    each Liferay plugin; see the *Deploying plugins* section below.
-
-4.  Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
-    `$JBOSS_HOME`) and add the following properties:
-
-        hibernate.validator.apply_to_ddl=false
-        hibernate.validator.autoregister_listeners=false
-
-5.  Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
-    - jaxrpc.jar
-    - stax.jar
-    - xercesImpl.jar
-    - xml-apis.jar
-
-6.  Add the following lines to your `portal-ext.properties` file:
-
-	NOTE: The autodeploy folder must be set with the full name of the folder;
-	you can't use any variables to define the location.
-
-		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
-		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
-
-7. Start the JBoss Application Server.
-
-Liferay is now successfully installed on JBoss 5.1. 
-
-### Deploying plugins [](id=deploying-plugins-liferay-portal-6-2-user-guide-15-en)
-
-Add a `jboss-classloading.xml` to the `WEB-INF` folder of each plugin, with the
-following content:
-
-	<classloading xmlns="urn:jboss:classloading:1.0"
-		domain="PLUGINNAME-portlet"
-		parent-domain="LiferayDomain"
-		parent-first="false"
-		top-level-classloader="false"
-		export-all="NON_EMPTY"
-		import-all="false">
-	</classloading>
-
-The `LiferayDomain` referenced in the above configuration is the domain we
-defined above during step 3 of the *Deploying Liferay* section. Configuring
-plugins to use the Liferay domain ensures that if JBoss and Liferay have
-different versions of a JAR file, the plugin will use Liferay's version. Without
-this configuration, Liferay plugins might end up using the wrong versions of JAR
-files. You can make this configuration either before or after the plugin WAR has
-been deployed, as long as JBoss is not running. Of course, it's best to make
-this configuration before deployment. Otherwise, if there's a JAR conflict,
-you'll have to shut down your server, configure the plugin to use the Liferay
-domain, and restart the server.
-
-To set up a hot deploy folder and have plugins automatically copied to the right
-place, configure your `portal-ext.properties` file with the following:
-
-	auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy
-	# (This one can be left like this, Liferay should automatically create this
-	folder.)
-
-	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
-	# (This one needs to be the exact folder into which you are going to place your WAR files.) 
-
-## Installing Liferay on JBoss 7 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
-
-**Liferay Home** is one folder above JBoss's install location.
-
-1. Download and install JBoss AS 7.0.x into your preferred directory. This
+1. Download and install JBoss AS 7.1.x into your preferred directory. This
    directory is referred to as `$JBOSS_HOME` throughout this section.
 
 2. Download the latest version of the Liferay Portal `.war` file.
@@ -2422,8 +2149,13 @@ Let's work with the dependency jar files first.
    [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+   
+3. Download the `jtds-<JTDS_VERSION>.jar.` file and insert it into the
+`$JBOSS_HOME/modules/com/liferay/portal/main` folder. You can download and learn
+more about this JDBC driver at the jTDS home page:
+[http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
 
-3. Create the file `module.xml` in the
+4. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
    contents.
 
@@ -2431,11 +2163,14 @@ Let's work with the dependency jar files first.
 
 		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
 			<resources>
-				<resource-root path="mysql-connector-java-5.1.18-bin.jar" />
+				<resource-root path="hsql.jar" />
+				<resource-root path="jtds-1.3.1.jar" />
+				<resource-root path="mysql-connector-java-5.1.26-bin.jar" />
 				<resource-root path="portal-service.jar" />
 				<resource-root path="portlet.jar" />
 			</resources>
 			<dependencies>
+				<module name="ibm.jdk" />
 				<module name="javax.api" />
 				<module name="javax.mail.api" />
 				<module name="javax.servlet.api" />
@@ -2444,38 +2179,93 @@ Let's work with the dependency jar files first.
 			</dependencies>
 		</module>
 
-If you're using a different database driver, replace the path of the MySQL
-resource root entry with that of your database driver.
-		
+	If you're using a different database or JDBC driver, replace the paths of
+	the MySQL and jTDS resource root entries with the correct paths.
+
+5. Next, you'll need to include a patch from Liferay's source code for one of
+JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
+the source into a temporary folder. We'll refer to the location of the Liferay
+source as `$LIFERAY_SOURCE`.
+
+6. Currently, there are bugs in the
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+file regarding the IBM JVM
+([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
+[JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
+additional steps to ensure a successful deployment with Liferay. In summary,
+you'll need to update the `ServerDependenciesProcessor.class` file in the
+`jboss-as-<$JBOSS_VERSION>.Final.jar` file to specify the IBM JDK. The steps to
+insert the patch can be referenced below.
+
+    1. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file from
+    `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
+    `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
+    
+    2. Navigate to the
+    `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
+    in a command prompt and enter the following statement:
+    
+    		jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+
+    	This command inserts the `ServerDependenciesProcessor.class` file into
+    	the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+    	`org/jboss/as/server/deployment/module` folder. You can reference the
+    	official documentation for updating a JAR file at
+    	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
+
+    3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
+    original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
+
 Great! You have your `.jar` files ready for your domain.
 
-### Running Liferay on JBoss 7 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-in-standalon-liferay-portal-6-2-user-guide-15-en)
+### Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-in-standalon-liferay-portal-6-2-user-guide-15-en)
 
-JBoss 7 can be launched in either *standalone* mode or *domain* mode. Domain
+JBoss 7.1 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
 control point. A collection of such application servers is known as a *domain*.
 For more information on standalone mode vs. domain mode, please refer to the
-section on this topic in the [JBoss 7 User
-Guide](https://community.jboss.org/wiki/JBossAS7UserGuide?_sscc=t).  Liferay
-fully supports JBoss 7 when it runs in standalone mode but not when it runs
-in domain mode.
+section on this topic in the [JBoss 7.1 Admin
+Guide](https://docs.jboss.org/author/display/AS71/Admin+Guide#AdminGuide-Operatingmodes).
+Liferay fully supports JBoss 7.1 when it runs in standalone mode but not when it
+runs in domain mode.
 
-You can run Liferay on JBoss 7 in domain mode, but this method is not fully
-supported. In particular, Liferay's hot-deploy does not work since JBoss 7
-cannot deploy non-exploded `.war` files in domain mode. This prevents many
-Liferay plugins from working as intended. For example, JSP hooks don't work on
-JBoss 7 running in domain mode since Liferay's JSP override mechanism relies on
-the application server reloading customized JSP files from the exploded plugin
-`.war` file location. Other plugins, such as service or action hooks, should
-still work properly since they don't require JBoss to access anything (such as
-JSP files) from an exploded `.war` file on the file system. The best practice
-when running Liferay on JBoss 7 is to use standalone mode.
+You can run Liferay on JBoss 7.1 in domain mode, but this method is not fully
+supported. In particular, Liferay's hot-deploy does not work since JBoss 7.1
+cannot deploy non-exploded `.war` files in domain mode. The `.war` files are
+located in the `domain/data/content` directory. Deployments are only possible
+using the command line interface. This prevents many Liferay plugins from
+working as intended. For example, JSP hooks don't work on JBoss 7.1 running in
+domain mode since Liferay's JSP override mechanism relies on the application
+server reloading customized JSP files from the exploded plugin `.war` file
+location. Other plugins, such as service or action hooks, should still work
+properly since they don't require JBoss to access anything (such as JSP files)
+from an exploded `.war` file on the file system. 
 
-Note: This does not prevent Liferay from running in a clustered environment on
-multiple JBoss servers. You can set up a cluster of Liferay instances running on
-JBoss 7 servers running in standalone mode. Please refer to the chapter of this
-guide on [Configuring Liferay for High Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
+---
+
+![tip](../../images/01-tip.png) **Note:** This does not prevent Liferay from
+running in a clustered environment on multiple JBoss servers. You can set up a
+cluster of Liferay instances running on JBoss 7.1 servers running in standalone
+mode. Please refer to the chapter of this guide on [Configuring Liferay for High
+Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
 for information on setting up a Liferay cluster.
+
+---
+
+For multi-server production environments, the choice of running a managed domain
+versus standalone servers comes down to whether you want to use the centralized
+management capabilities a managed domain provides. Running a standalone server
+is better suited for most development scenarios. Any individual server
+configuration that can be achieved in a managed domain can also be achieved in a
+standalone server. Even if the application being developed will eventually run
+in production on a managed domain installation, most development can be done
+using a standalone server. Therefore, the best practice when running Liferay on
+JBoss 7.1 is to use standalone mode.
+
+<!-- An excellent document on JBoss' 7.1 domain mode (written by Igor Spasic)
+can be found here:
+https://support.liferay.com/secure/attachment/72257/JBoss%20AS7%20Domain%20Mode.pdf
+-->
 
 ### Configuring JBoss [](id=configuring-jboss-liferay-portal-6-2-user-guide-15-en)
 
@@ -2484,46 +2274,56 @@ Let's make some adjustments in your configuration to support using Liferay.
 You can specify the JBoss server instance's configuration in the XML file
 `$JBOSS_HOME/standalone/configuration/standalone.xml`. We'll refer to this file
 simply as `standalone.xml`. You must also make some modifications to your
-configuration and startup scripts found in the `$JBOSS_HOME/bin/` folder. But
-let's start with the changes to `standalone.xml`.
+configuration and startup scripts found in the `$JBOSS_HOME/bin/` folder.
+Lastly, you'll need to make some modifications in your `$JBOSS_HOME/modules/`.
+Let's start with the changes to `standalone.xml`.
 
 Make the following modifications to `standalone.xml`:
 
-1. Disable the welcome root of the web subsystem's virtual server default
-   host by specifying `enable-welcome-root="false"`.
+1. Add the following system properties between the `</extensions>` and
+`<management>` tags:
 
-		<subsystem xmlns="urn:jboss:domain:web:1.0" default-virtual-server="default-host">
-			<connector name="http" scheme="http" protocol="HTTP/1.1" socket-binding="http"/>
+		<system-properties>
+			<property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
+			<property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
+		</system-properties>
+
+2. Add a timeout for the deployment scanner by setting
+`deployment-timeout="240"` as seen in the excerpt below.
+
+		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+			<deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+		</subsystem>
+
+3. Add the following JAAS security domain to the security subsystem
+`<security-domains>` defined in element `<subsystem
+xmlns="urn:jboss:domain:security:1.1">`.
+
+		<security-domain name="PortalRealm">
+			<authentication>
+				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
+			</authentication>
+		</security-domain>
+
+4. Disable the welcome root of the web subsystem's virtual server default host
+by specifying `enable-welcome-root="false"`.
+
+		<subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
+			<connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
 			<virtual-server name="default-host" enable-welcome-root="false">
 			   <alias name="localhost" />
 			   <alias name="example.com" />
 			</virtual-server>
-		</subsystem>
-			
-2. Insert the following `<configuration>` element within the web subsystem
-   element `<subsystem xmlns="urn:jboss:domain:web:1.0"
-   default-virtual-server="default-host">`.
+		</subsystem>		
+
+5. Insert the following `<configuration>` element within the web subsystem
+element `<subsystem xmlns="urn:jboss:domain:web:1.1"
+default-virtual-server="default-host" native="false">`.
 
 		<configuration>
 			<jsp-configuration development="true" />
 		</configuration>
-
-3. Add a timeout for the deployment scanner by setting
-   `deployment-timeout="120"` as seen in the excerpt below.
-
-		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.0">
-			<deployment-scanner name="default" path="deployments" scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
-		</subsystem>
-
-4. Add the following JAAS security domain to the security subsystem
-   `<security-domains>` defined in element `<subsystem
-   xmlns="urn:jboss:domain:security:1.0">`.
-
-		<security-domain name="PortalRealm">
-			<authentication>
-				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required"/>				</authentication>
-		</security-domain>
-
+		
 Now it's time for some changes to your configuration and startup scripts.
 		
 Make the following modifications to your standalone domain's configuration
@@ -2546,16 +2346,67 @@ Make the following edits as applicable to your operating system:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 - On Unix, merge the following values into your settings for `JAVA_OPTS`
   replacing any matching attributes with the ones found in the assignment
   below:
 
-	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
-		
+	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+
+    Make sure you replace the `$JBOSS_HOME` references with the appropriate
+    directory. You'll notice we've added some Java security options. We'll
+    finish configuring the Java security options in the *Security Configuration*
+    section.
+
 The prescribed script modifications are now complete for your Liferay
-installation on JBoss. Next we'll consider the database and mail configuration. 
+installation on JBoss.
+
+Lastly, let's make the necessary changes in your `$JBOSS_HOME/modules`
+directory.
+
+1. Create folder `$JBOSS_HOME/modules/ibm/jdk/main` and create and insert a new
+`module.xml` file into that folder.
+
+2. Insert the following contents into the
+`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
+
+		<?xml version="1.0"?>
+
+		<module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
+			<dependencies>
+				<system export="true">
+					<paths>
+						<path name="com/ibm" />
+						<path name="com/ibm/crypto/provider" />
+						<path name="com/ibm/jvm" />
+						<path name="com/ibm/jvm/io" />
+						<path name="com/ibm/jvm/util" />
+						<path name="com/ibm/match" />
+						<path name="com/ibm/misc" />
+						<path name="com/ibm/net" />
+						<path name="com/ibm/nio" />
+						<path name="com/ibm/nio/ch" />
+						<path name="com/ibm/security/auth" />
+						<path name="com/ibm/security/bootstrap" />
+						<path name="com/ibm/security/auth/module" />
+						<path name="com/ibm/security/util" />
+						<path name="META-INF/services" />
+					</paths>
+				</system>
+			</dependencies>
+		</module>]]>
+
+3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
+the following path names inside the &lt;paths&gt;...<\/paths> element:
+
+		<path name="com/sun/crypto" />
+		<path name="com/sun/crypto/provider" />
+		<path name="com/sun/image/codec/jpeg" />
+		<path name="com/sun/org/apache/xml/internal/resolver" />
+		<path name="com/sun/org/apache/xml/internal/resolver/tools" />
+
+Next we'll consider the database and mail configuration. 
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
@@ -2569,19 +2420,11 @@ Modify `standalone.xml` adding your data source and driver within the
 1. First, add your data source within the `<datasources>` element.
 
 		<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-			<connection-url>
-				jdbc:mysql://localhost/lportal
-			</connection-url>
-			<driver>
-				mysql
-			</driver>
+			<connection-url>jdbc:mysql://localhost/lportal</connection-url>
+			<driver>mysql</driver>
 			<security>
-				<user-name>
-					root
-				</user-name>
-				<password>
-					root
-				</password>
+				<user-name>root</user-name>
+				<password>root</password>
 			</security>
 		</datasource>
 
@@ -2592,7 +2435,7 @@ Modify `standalone.xml` adding your data source and driver within the
    `<datasources>` element.
 
 		<drivers>
-			<driver name="mysql" module="com.liferay.portal"/>
+			<driver name="mysql" module="com.liferay.portal.main"/>
 		</drivers>
 
 Your final data sources subsystem should look something like this:
@@ -2600,23 +2443,15 @@ Your final data sources subsystem should look something like this:
 		<subsystem xmlns="urn:jboss:domain:datasources:1.0">
 			<datasources>
 				<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-					<connection-url>
-						jdbc:mysql://localhost/lportal
-					</connection-url>
-					<driver>
-						mysql
-					</driver>
+					<connection-url>jdbc:mysql://localhost/lportal</connection-url>
+					<driver>mysql</driver>
 					<security>
-						<user-name>
-							root
-						</user-name>
-						<password>
-							root
-						</password>
+						<user-name>root</user-name>
+						<password>root</password>
 					</security>
 				</datasource>
 				<drivers>
-					<driver name="mysql" module="com.liferay.portal"/>
+					<driver name="mysql" module="com.liferay.portal.main"/>
 				</drivers>
 			</datasources>
 		</subsystem>
@@ -2626,27 +2461,32 @@ mail session within JBoss.
 
 ### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-1)
 
-At the time this document was written, JavaMail was not yet supported in JBoss
-AS 7.0.1 - however, it was implemented in the JBoss AS 7.1 alpha (see
-[https://issues.jboss.org/browse/AS7-1177](https://issues.jboss.org/browse/AS7-1177).
-If you want JBoss to manage your mail session, use the following instructions
-which are based on the implementation found in JBoss AS 7.1 alpha. If you want
-to use the built-in Liferay mail session, you can skip this section.
+If you want JBoss to manage your mail session, use the following instructions.
+If you want to use the built-in Liferay mail session, you can skip this section.
 
 Specify your mail subsystem  in `standalone.xml` as in the following example:
 
 	<subsystem xmlns="urn:jboss:domain:mail:1.0">
 		<mail-session jndi-name="java:/mail/MailSession" >
-			<smtp-server address="smtp.gmail.com" port="465">
+			<smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
 				   <login name="username" password="password"/>
 			</smtp-server>
-			<pop3-server address="pop.gmail.com" port="110"/>
-			<imap-server address="imap.gmail.com" port="993">
+			<pop3-server outbound-socket-binding-ref="mail-pop">
 				<login name="username" password="password"/>
-			</imap-server>
+			</pop3-server>
 	   </mail-session>
 	</subsystem>
-
+	...
+	<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+	...
+	<outbound-socket-binding name="mail-smtp">
+            <remote-destination host="smtp.gmail.com" port="465"/>
+        </outbound-socket-binding>
+        <outbound-socket-binding name="mail-pop">
+            <remote-destination host="pop.gmail.com" port="110"/>
+        </outbound-socket-binding>
+    </socket-binding-group>
+	
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
@@ -2656,7 +2496,7 @@ Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
 
 1. First, navigate to the Liferay Home folder, which is one folder above JBoss's
-   install location (i.e. `$JBOSS/..`).
+   install location (i.e. `$JBOSS_HOME/..`).
 
 2. If you're using *JBoss* to manage your data source, add the following to your
    `portal-ext.properties` file in your *Liferay Home* to refer to your data
@@ -2680,6 +2520,40 @@ Liferay Portal can access them.
 
 You've completed the steps necessary for your deployment of Liferay so Liferay
 Portal can now communicate with your data source and mail session--way to go!
+Before we deploy Liferay Portal on your JBoss app server, we'll teach you how to
+enable and configure Java security so you can begin using Liferay's plugin
+security manager with your downloaded Liferay applications.
+
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en)
+
+When you're ready to begin using other people's apps from Marketplace, you'll
+want to protect your portal and your JBoss server from security threats. To do
+so, you can enable Java Security on your JBoss server and specify a security
+policy to grant your portal access to your server.
+
+Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` Java
+options in the `standalone.conf.bat` file earlier in the *Configuring JBoss*
+section. The `-Djava.security.manager` Java option enables security on your
+JBoss server. Likewise, the `-Djava.security.policy` Java option lists the
+permissions for your server's Java security policy. If you have not set these
+options, you'll need to do so before using Java security.
+
+For now, in order to grant Liferay access to your server let's open up all
+permissions. You can tune the permissions in your policy later. Create the
+`$JBOSS_HOME/bin/server.policy` file and add the following contents:
+
+    grant {
+	    permission java.security.AllPermission;
+	};
+
+For extensive information on Java SE Security Architecture, see its
+specification documents at
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
+Also, see section [*Understanding Plugin Security
+Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
+in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
+access to resources.
+
 Now you're ready to deploy Liferay Portal.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-1)
@@ -2698,9 +2572,7 @@ Now you're ready to deploy Liferay Portal.
 4. Remove `eclipselink.jar` from
    `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure the
    Hibernate persistence provider is used instead of the one provided in the
-   `eclipselink.jar`. Note, JBoss 7.0.2 has a known issue
-   [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944)
-   in determining which persistence provider to use.
+   `eclipselink.jar`.
 
 5.  Before you start Liferay Portal, let's consider whether you want to also
     start the setup wizard.
@@ -2709,7 +2581,7 @@ Now you're ready to deploy Liferay Portal.
     to configure your portal, setup your site's administrative account and/or
     manage your database within Liferay.
 		
-    If this is your first time starting Liferay Portal 6.1, the setup wizard is
+    If this is your first time starting Liferay Portal 6.2, the setup wizard is
     invoked on server startup. If you want to re-run the wizard, specify
     `setup.wizard.enabled=true` in your properties file (e.g.
     `portal-setup-wizard.properties`).
@@ -3300,7 +3172,7 @@ It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-### Enabling PACL
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -3567,7 +3439,7 @@ To change the Tomcat ports for Liferay's use:
    adjust the ports if needed (such as changing the AJP port from `9009` to
    `8009`.
 
-To modify the OSGI defaults to ensure required java packages are bootsrapped by
+To modify the OSGI defaults to ensure required Java packages are bootsrapped by
 the loader:
 
 1. Open the file `defaults.properties` inside of `$JONAS_BASE/conf/osgi`.
@@ -3627,8 +3499,8 @@ XA transactions. Liferay doesn't require XA transactions, but it supports XA.
 Let's get acquainted with how Liferay fits in with your current WebLogic
 domain. 
 
-**Liferay Home** is one folder above the domain to which you will be installing
-Liferay.
+For demonstration purposes, we'll assume *Liferay Home* is one folder above the
+domain to which you will be installing Liferay.
 
 For example, if your domain location is
 `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home
@@ -3650,10 +3522,11 @@ If you still have the `mainWebApp` module installed, remove it first.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
-### Dependency Jars
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-4)
 
 Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
-the driver `.jar` file applicable for your database.
+the driver `.jar` file applicable for your database. We'll put them on your
+domain's global classpath. 
 
 1.  Navigate to the folder that corresponds to the domain to which you will be
     installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay
@@ -3667,7 +3540,7 @@ So far so good. Your `.jar` files are in place and ready for Liferay.
 
 Let's proceed with configuring WebLogic.
 
-### Configuring WebLogic
+### Configuring WebLogic [](id=configuring-weblogic-liferay-portal-6-2-user-guide-15-en)
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
@@ -3678,19 +3551,21 @@ Liferay:
 - Enable AspectJ support.
 
 You can set WebLogic Server's memory arguments in your `setDomainEnv.[cmd|sh]`
-environment script file. For Sun JVM, set your WLS memory arguments, for 64 bit
-and 32 bit architectures, to `-Xms256m -Xmx1024m` at a minimum. For all other
-JVMs, set the WLS memory arguments to `-Xms512m -Xmx512m`. 
+environment script file found in your domain's `bin` folder. For the Sun JVM,
+we'll set the WLS memory arguments for 64 bit and 32 bit architectures to
+`-Xms256m -Xmx1024m` at a minimum. For all other JVMs, we'll set the 64 bit and
+32 bit WLS memory arguments to `-Xms512m -Xmx512m` respectively. 
 
-Set the permanent generation space, for 64 bit and 32 bit architectures, values
-to at least `-XX:PermSize=256m`.
+We'll set the permanent generation space for 64 bit and 32 bit architectures
+to `-XX:PermSize=256m`.
 
-Lastly, make sure to specify UTF-8 for Java's file encoding, by
+Lastly, we'll make sure to specify UTF-8 for Java's file encoding, by
 including `-Dfile.encoding=UTF8` as a Java property.
 
-For example, in a WebLogic `setDomainEnv.cmd` file, after its call to the
-`commEnv.cmd` script, you'd make sure to specify the memory arguments and
-permanent generation space like the following code:
+If you're on Windows, for example, you'd edit your `setDomainEnv.cmd` file and
+find the call to the `commEnv.cmd` script. After this call, you'd update your
+memory arguments and permanent generation space settings to be like the
+following code: 
 
     ...
     if "%JAVA_VENDOR"=="Sun" (
@@ -3704,9 +3579,9 @@ permanent generation space like the following code:
     set MEM_PERM_SIZE_64BIT=-XX:PermSize=256m
     set MEM_PERM_SIZE_32BIT=-XX:PermSize=256m
 
-Later in the `setDomainEnv.cmd` file's clustering support  section, you'd set
-the UTF-8 file encoding by adding `-Dfile.encoding=UTF8` to the Java properties
-as done the following code: 
+Later in the `setDomainEnv.cmd` file's clustering support section, you'd set
+the UTF-8 file encoding by appending `-Dfile.encoding=UTF8` to the front of the
+list of Java property values, as done in the following line of code: 
 
     set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
 
@@ -3714,20 +3589,26 @@ Next, we'll need to specify some local environment settings to support Liferay's
 memory requirements, its use of the [Apache
 Lucene](http://en.wikipedia.org/wiki/Lucene) search engine library, and its use
 of Aspect Oriented Programming (AOP) with
-[AspectJ](http://en.wikipedia.org/wiki/AspectJ). In your
-`startWebLogic.[bat|sh]` file, after the `SETLOCAL` command, add the following
-lines:
+[AspectJ](http://en.wikipedia.org/wiki/AspectJ).
+
+Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT
+your server's `bin` folder. If you're on Windows, you'd add directives similar
+to those listed below, after the `SETLOCAL` command:
 
 	set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
-	set "MW_HOME=${app.server.weblogic.dir.windows}"
+	set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
     
 	set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
-Next, start WebLogic if you want to configure your database and/or mail session
-within WebLogic.
+Make sure to set your `MW_HOME` value to your WebLogic server's location. On
+Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
+`$JAVA_OPTIONS`. 
 
-### Database Configuration
+Next, if you want to configure your database and/or mail session within
+WebLogic, start your WebLogic server.
+
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -3738,19 +3619,22 @@ you want to use Liferay's built-in data source, you can skip this section.
 2.  Give your data source a name, such as *Liferay Data Source*. The JNDI name
     should be `jdbc/LiferayPool`.
 
-3.  Choose the type of database and click *Next*. From the screenshot, you can
-    see we have chosen MySQL. The database driver class is selected
-    automatically.
+3.  Choose the type of database and click *Next*. 
 
 4.  Click *Next* three times. You should be on the *Connection Properties*
     screen. Enter the database name, the host name, the port, the database user
     name and the password. WebLogic uses this information to construct the
     appropriate JDBC URL to connect to your database. Click *Next*.
 
-5.  WebLogic next confirms the information you provided. For MySQL, some
-    additional parameters must be added to the URL. Modify the JDBC URL so it
-    has the proper parameters. Provide your database name, host name, user name
-    and password as the values. Click *Next*.
+5.  WebLogic prompts you to confirm the information you've specified for your
+    data source. 
+
+    Depending on the database you are using, you may need to specify additional
+    parameters. For example, you may need to modify your JDBC URL to include
+    additional parameters. If you need to access previous wizard pages to modify
+    information, click *Back* to revisit those pages. 
+
+    When you're done specifying your configuration, click *Next*. 
 
 6.  Click *Test Configuration* to make sure WebLogic can connect to your
     database successfully. When it does, click *Finish*.
@@ -3763,7 +3647,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-### Mail Configuration
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -3771,24 +3655,22 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 1.  Select *Mail Sessions* and create a new mail session which points to your
     mail server.
 
-2.  Give it the name Liferay Mail and give it the JNDI name of `mail/MailSession`
-    and click *Next*.
+2.  Give it the name *Liferay Mail* and give it the JNDI name of
+    `mail/MailSession` and click *Next*.
 
 3.  Choose your server and then click *Finish*.
 
 Now let's make sure Liferay can access this mail session.
 
-### Domain Configuration - Continued
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-0)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
 
-1.  Create a `portal-ext.properties` file in the Liferay Home folder, which is
-    one folder up from your domain's home folder.
+1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 
     If you are using *WebLogic* to manage your data source, add the following to
-    your `portal-ext.properties` file in *Liferay Home* to refer to your data
-    source:
+    your `portal-ext.properties` file to refer to your data source:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
@@ -3807,10 +3689,11 @@ data source and mail session from Liferay Portal.
         mail.session.jndi.name=mail/MailSession
 
 2.  Lastly, you must provide WebLogic a reference to a version of Java Server
-    Faces (JSF)--either version 1.2 or 2.0--to use that library. Insert the
-    following deployment descriptor within the `<weblogic-web-app>` element of
-    `WEB-INF/weblogic.xml` found in your Liferay Portal `.war`, making sure to
-    specify the applicable JSF version: 
+    Faces (JSF)--either version 1.2 or 2.0--to use that library. Open the
+    `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` file. Insert the
+    following deployment descriptor after the `<context-root>` element within
+    the `<weblogic-web-app>` element. Make sure to specify the applicable JSF
+    version:
 
         <library-ref>
             <library-name>jsf</library-name>
@@ -3823,7 +3706,7 @@ Before we deploy Liferay, we'll teach you how to enable and configure Java
 Security so that you can start using Liferay's plugin security manager with
 the Liferay apps you download and install. 
 
-### Security Configuration
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 When you are ready to start using other people's apps from Marketplace, you'll
 want to protect your portal and your WebLogic server from security threats. To
@@ -3831,10 +3714,10 @@ do so, you can enable Java Security on your WebLogic server and specify a
 security policy to grant your Liferay Portal access to your server. 
 
 To enable security on your WebLogic server, add the `-Djava.security.manager`
-Java option in your `startWebLogic.[bat|sh]` file. 
+Java option in your `startWebLogic.[cmd|sh]` file domain's folder. 
 
 For now, in order to grant Liferay access to your server let's open up all
-permissions. You can fine tune the permissions in your policy later. Create a
+permissions--you can fine-tune your policy's permissions later. Create a
 policy file named `weblogic.policy` in your `[wlserver]/server/lib` folder and
 add the following contents:
 
@@ -3845,14 +3728,14 @@ add the following contents:
 For extensive information on Java SE Security Architecture see its specification
 documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
-And see section [*Understanding Plugin Security
+Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
-in Chapter 12 of the Developer's Guide to learn how to configure your plugins'
-access to resources they need on Liferay and your server's environment. 
+in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
+access to resources. 
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-### Deploy Liferay
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
 This section provides instructions for deploying Liferay to your application
 server domain.
@@ -3867,7 +3750,7 @@ your database within Liferay.
 If this is your first time starting Liferay Portal, the setup wizard is
 invoked on server startup. If you want to re-run the wizard, specify
 `setup.wizard.enabled=true` in your properties file (e.g.
-`portal-setup-wizard.properties`).
+`portal-setup-wizard.properties`) in your Liferay Home.
 
     setup.wizard.enabled=true
 
@@ -3877,8 +3760,9 @@ The setup wizard is invoked during server startup.
 to preserve your current portal settings.
 
 To start the server without triggering the setup wizard, specify
-`setup.wizard.enabled=false` in your properties (e.g.,
-`portal-setup-wizard.properties` or `portal-ext.properties` file).
+`setup.wizard.enabled=false` in your properties file (e.g.,
+`portal-setup-wizard.properties` or `portal-ext.properties`) in your Liferay
+Home. 
 
     setup.wizard.enabled=false
 
@@ -3895,11 +3779,12 @@ The `portal-setup-wizard.properties` file the setup wizard creates has
 
 Now, let's deploy Liferay Portal.
 
-1.  Start WebLogic.
+1.  Start your WebLogic server if it's not already started.
 
-2.  Select *Deployments* and click the  *Install* button. Upload `jsf-1.2.war`
-    from WebLogic's common files directory and select *Install this deployment
-    as a library.*
+2.  Select *Deployments* and click the  *Install* button. Upload the desired JSF
+    `.war` file--`jsf-1.2.war` or `jsf-2.0.war`--from WebLogic's common
+    deployable libraries folder and select *Install this deployment as a
+    library* to your domain's server that will be running Liferay. 
 
 3.  After installing the JSF libraries, go back to deployments and select the
     Liferay `.war` file from the file system or click the *Upload Your File(s)*
@@ -3912,9 +3797,11 @@ Now, let's deploy Liferay Portal.
 
 6.  Click *Finish*. After the deployment finishes, click *Save*.
 
+    Liferay will precompiles all of the JSPs and 
 	Liferay launches in one of the following manners:
     - If the setup wizard was disabled, your site's home page opens in your
-	  browser at [http://localhost:7001](http://localhost:7001).
+	  browser at your server's host and port (e.g.,
+	  [http://localhost:8080](http://localhost:8080). 
     - Otherwise, the setup wizard opens in your browser.
 
 Please see the section above for how to use the setup wizard. 
@@ -3945,7 +3832,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.48: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
+    ![Figure 15.41: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
 3. Check the box *Deploy the administrative console*. This gives you a web-based
    UI for working with your application server. Skip the default applications.
@@ -3989,7 +3876,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-02-summary.png)
+![Figure 15.42: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -4013,7 +3900,7 @@ Liferay's standard database configuration; in that case, skip this section.
 You'll set your database information in Liferay's setup wizard after the
 install. 
 
-![Figure 15.54: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 15.43: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -4054,7 +3941,7 @@ install.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![Figure 15.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 15.44: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
 	database. Click *OK* and save to master configuration.
@@ -4103,7 +3990,8 @@ Great! Now you're ready to deploy Liferay.
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked, and click *Next* again.
 
-4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy Liferay. Click *Next*.
+4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy
+   Liferay. Click *Next*.
 
 5. Map Liferay to the root context (/) and click *Next*. 
 
@@ -4113,13 +4001,13 @@ Great! Now you're ready to deploy Liferay.
 You've now installed Liferay, but don't start it yet. If you wish to use PACL,
 you have one more thing to configure. 
 
-### Enabling Security for Portal Access Control Lists
+### Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-con-liferay-portal-6-2-user-guide-15-en)
 
 In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-enable-security.png)
+    ![Figure 15.45: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
@@ -4160,7 +4048,7 @@ you're ready to start Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.56: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
+    ![Figure 15.46: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
@@ -4217,6 +4105,112 @@ You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
 you deploy it. Extract the file from the `.war` file, modify it and then put it
 back in the `.war` file. Then deploy the modified Liferay `.war` file to the
 server in the proper context.
+
+Now that you have Liferay installed in the context you wish, you'll want to
+understand Liferay's releases and the process for keeping your installation up
+to date. We'll spend a brief amount of time on that next. 
+
+### Understanding Liferay's Releases [](id=understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
+
+Which version of Liferay should you install? That's an easy question to answer:
+if this is a new installation, we recommend you install the latest version
+available. If you want to understand how Liferay releases work, read on.
+Otherwise, you can skip this section for now and read it later. 
+
+Liferay's release process follows a prescribed structure that is consistent from
+one release to the next. Each release has a specific number sequence attached to
+it, signifying the type of release it is: major, minor or maintenance release.
+Each release also has a term attached to it to indicate its intended level of
+quality.
+
+EE subscribers have access to additional maintenance releases, along with 
+specific *Fix Packs* and *Hot Fixes* that make applying updates to production
+environments safer and faster.
+
+Let's start with an explanation of Liferay's version structure. Liferay versions
+are organized in a straightforward numerical system consisting of a three digit
+number. For example, 6.1.2. These numbers represent the type of the release:
+Major.Minor.Maintenance.
+
+A change in the first or second digit of the version (e.g., 6.x to 7.x or 6.1 to
+6.2) is a major or minor release. This means that there are changes in
+functionality or new functionality based on high demand. There are new features
+and bug fixes from prior releases. There are also architectural changes, changes
+to APIs (as part of the deprecation process), or changes to internal schema for
+frameworks such as Service Builder, because new features have been added.
+Customizations may be affected when installing. Customers should leverage the
+upgrade tools and documentation.
+
+A change in the third digit of the version scheme (e.g, 6.2.1 to 6.2.2) is a
+maintenance release. This means that each maintenance release provides an
+improved level of security and reliability. Customizations are generally safe,
+but we recommend doing a review. No new features are included. 
+
+These rules are relaxed when a minor or major release is still in beta quality.
+
+Now let's delve into the evolution of versions.
+
+#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
+
+Each release of Liferay has a surname that specifies its expected quality.  This
+is needed because pre-releases of Liferay look very much like maintenance
+releases when viewed solely through their version numbers. The surname in
+general replaces the third digit in the version, but is visible through the logs
+and administration UIs. Here is a description of each surname and what it means:
+
+- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
+  more of these types within each minor or major release.  These releases are
+  meant for testing and to provide Liferay feedback through the beta testing
+  category in the forums. There will likely be major changes in milestone
+  releases, but beta releases are considered "feature complete" and should have
+  only bug fixes. 
+
+- **Release Candidates:** (6.2 RC1, 6.2 RC2) There can be zero, one, or more of
+  these right after the beta releases. These releases appear near the end of the
+  release process and are candidates for release. As such, they should have
+  minimal to no bugs, but because they are very new, some minor bugs may have
+  slipped by. 
+
+- **General Availability:** (6.2 GA1, 6.2 GA2, ....) There can be one or more of
+  these releases. A General Availability release is a re-label of the last
+  release candidate, based on internal testing and feedback from beta
+  testers. These releases are stable and are made available via Liferay's
+  Downloads page for CE and on the Customer Portal for EE. 
+
+Armed with this information, here's our advice for how to manage your Liferay
+installation. 
+
+- When starting a new project, always use the latest stable version available;
+  that is, the latest available GA. At the time of writing, the most recent
+  version is Liferay CE 6.2 GA1 (6.2.0) or Liferay EE 6.1 GA2 (6.2.00). 
+
+- Always update to the latest maintenance release available for the functional
+  version (major or minor) that you are using. For example, if you started your
+  project with Liferay 6.2.0 GA1, it is recommended that you switch to GA2
+  if/when it becomes available to take advantage of bug fixes and improvements. If
+  you have a subscription, you can benefit from the fixes faster by requesting
+  fix packs and hot fixes from the support team.
+
+- You are always welcome to use any preview, beta or release candidate. In
+  fact, that's why they exist--so as many people as possible start using it and
+  provide us their feedback. Please note, we do not recommend using pre-releases
+  (milestones, betas, or release candidates) in production. You may not want to
+  use these releases even during development if you have tight deadlines, since
+  you may hit some unexpected bugs. 
+
+- Plugins that work in any GA or fix pack version will work in any later
+  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will also
+  work in Liferay 6.2 GA2 or a GA2 fix pack. 
+
+For more details on updating Liferay Portal, see Upgrading Liferay in chapter
+17.
+
+Liferay Portal is a very flexible application that runs well on several
+different server environments. It's simple to install and follows a systematic
+versioning system that makes it easy to keep current with the latest updates.
+The strength of the Liferay community helps detect potential issues early that
+are then reported through the forums and are later fixed in a series of
+maintenance releases.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-15-en)
 
