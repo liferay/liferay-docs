@@ -451,7 +451,7 @@ represent permissions which can be configured for the event:
 - Update Discussion
 
 *Discussions* refers to comments on the event. So the Add Discussion, Delete
-Discuss, and Update Discussion permissions determine whether a role can add,
+Discussion, and Update Discussion permissions determine whether a role can add,
 delete, or update a comment on an event. The Permissions permission determines
 whether a role can update an event's permissions.
 
