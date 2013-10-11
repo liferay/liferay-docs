@@ -1,41 +1,39 @@
 # Developing Portlet Applications [](id=developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en)
 
 Think of your Liferay portal as a pizza crust (sit down, you can go order a
-real pizza when we're done here). In chapter two we equipped you with Liferay's
+real pizza when we're done here). In Chapter 2 we equipped you with Liferay's
 tools for developing your pizza, and Liferay comes with some basic toppings
 that make for a pretty good pizza out of the box (i.e., our core portlets and
 built-in functionality). Of course, your boss might demand anchovies, and
 Liferay definitely doesn't come with anchovies. So what do you do? You take our
-tools, get some anchovies (your app's source code), and make them integreate
+tools, get some anchovies (your app's source code), and integrate them
 with the pizza (Liferay). In this chapter we're going to show you how to
-develop portlet projects to top your Liferay pizza in such a way that the end
-user won't be able to tell the difference between your custom portlet and our
+develop portlet projects to top your Liferay pizza in such a way that the
+end-user won't be able to tell the difference between your custom portlet and our
 core portlets.
 
 In the last chapter we showed you how to create Liferay plugin projects, and if
 you followed along with our exercises, you now have a project to hold Liferay
-portlets. Unfortunately we don't really have any portlets in there yet. Now
-that we have you here, let's get to business on actually creating an
+portlets. Unfortunately we don't really have any portlets in there yet. So
+we're going to get to business on actually creating an
 application with the Liferay development tools we've already introduced to you.
 It's fitting to start with portlet development, because portlets are the most
-basic, most commonly used type of Liferay plugin you'll develop. In this
-chapter we'll create and deploy a simple portlet using the Plugins SDK. It will
+basic, most commonly used type of Liferay plugin you'll develop.
+We'll create and deploy a simple portlet using the Plugins SDK. It will
 allow a customized greeting to be saved in the portlet's preferences and then
-display it whenever the portlet is viewed. Last we'll clean up the portlet's
-URLs by adding a friendly URL mapping. 
-
-<!--Needs a hook (Rich's Crutch)-->
+display it whenever the portlet is viewed. Then we'll clean up the portlet's
+URLs by adding a friendly URL mapping. Lastly we'll localize the portlet. 
 
 You're free to use any framework you prefer to develop your portlets, including
 Struts, Spring MVC, JSF, and Vaadin. Here we'll use the Liferay MVCPortlet framework,
 because it's simple, lightweight, and easy to understand. 
 
 You don't have to be a Java developer to take advantage of Liferay's built-in
-features (such as user and organization management, page building and content
+features (such as user and organization management, page building, and content
 management). An application developed using Ruby or PHP can be deployed as a
 portlet using the Plugins SDK, and it will run seamlessly inside of Liferay. For
 examples, check out the liferay-plugins repository from
-[Github](http://github.com/liferay).
+GitHub at [http://github.com/liferay](http://github.com/liferay).
 
 We'll discuss the following topics as we learn about developing portlets for
 Liferay:
@@ -193,13 +191,16 @@ structure:
     - `docroot/`
         - `css/`
         - `js/`
+        - `META-INF/`
         - `WEB-INF/`
+            - `lib/`
             - `src/` - this folder is not created by default.
+            - `tld/`
             - `liferay-display.xml`
             - `liferay-plugin-package.properties`
             - `liferay-portlet.xml`
             - `portlet.xml`
-            - `web.xml` - this file is not created by default.
+            - `web.xml`
         - `icon.png`
         - `view.jsp`
 
@@ -225,14 +226,14 @@ the Liferay-specific files:
 - `liferay-display.xml`- Describes the category the portlet appears under in the
   *Add* menu of the Dockbar (the horizontal bar that appears at the top of the
   page to all logged-in users). 
+- `liferay-plugin-package.properties`- Describes the plugin to Liferay's hot
+  deployer. You can configure Portal Access Control List (PACL) properties,
+  `.jar` dependencies, and more. 
 - `liferay-portlet.xml`- Describes Liferay-specific enhancements for JSR-286
   portlets installed on a Liferay Portal server. For example, you can set
   an image icon to represent the app, trigger a job for the scheduler, and much
   more. A complete listing of this file's settings is in its DTD in the
   `definitions` folder in the Liferay Portal source code. 
-- `liferay-plugin-package.properties`- Describes the plugin to Liferay's hot
-  deployer. You can configure Portal Access Control List (PACL) properties,
-  `.jar` dependencies, and more. 
 
 *Client Side Files* are the `.jsp`, `.css`, and `.js` files that you write to
 implement your portlet's user interface. These files should go in the `docroot`
@@ -250,7 +251,7 @@ If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 
 
 In the Plugins SDK, the portlet descriptor's default content in
-`docroot/WEB-INF/portlet.xml`looks like this (shown using Developer Studio's
+`docroot/WEB-INF/portlet.xml` looks like this (shown using Developer Studio's
 Portlet Application Configuration Editor):
 
 ![Figure 3.3: Portlet XML file of the My Greeting portlet](../../images/03-portlet-xml.png)
@@ -416,7 +417,8 @@ First, since we don't want multiple greetings on the same page, let's make the
 My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`. If your
 `portlet` element already has an `instanceable` element, change its value from
 `true` to `false`. If you don't already have an `instanceable` element for your
-portlet, add it. Here's what it looks like: 
+portlet, add it. Here's what it looks like in the context of the `portlet`
+element: 
 
     <portlet>
         <portlet-name>my-greeting</portlet-name>
@@ -494,10 +496,10 @@ content:
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
 
-Deploy the portlet again in Developer Studio or by entering the command `ant
-deploy` in your `my-greeting-portlet` folder. Go back to your web browser and
-refresh the page; you should now be able to use the portlet to save and display
-a custom greeting. 
+Redeploy the portlet in Developer Studio or redeploy it in a terminal by
+executing the command `ant deploy` from your `my-greeting-portlet` folder. Go back to your
+web browser and refresh the page; you should now be able to use the portlet to
+save and display a custom greeting. 
 
 ![Figure 3.5: The *view* page of My Greeting portlet](../../images/03-my-greeting-view.png)
 
@@ -593,7 +595,7 @@ the Liferay's Portlet 2.0 Javadocs at
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** For the purpose of making
+![note](../../images/tip-pen-paper.png) **Note:** For the purpose of making
 our example easy to follow, we cheated a little bit. The portlet specification
 doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
@@ -707,7 +709,9 @@ Our example above could be enhanced by creating the following class:
 Create the above class, and its package, in the directory `docroot/WEB-INF/src`
 in your portal project. 
 
-The file `portlet.xml` must also be changed so that it points to your new class:
+The file `portlet.xml` must also be changed so that it points to your new
+portlet class `com.liferay.samples.MyGreetingPortlet`, instead
+`com.liferay.util.bridges.mvc.MVCPortlet`: 
 
     <portlet>
     <portlet-name>my-greeting</portlet-name>
@@ -767,7 +771,7 @@ preference. Overwrite the `edit.jsp` file contents with the following:
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
 
-Deploy the portlet again after making these changes; everything should work
+Redeploy the portlet after making these changes; everything should work
 exactly like before. Well, almost. Unless you paid close attention, you may have
 missed something: the portlet no longer shows a message to the user that the
 preference has been saved after she clicks the save button. To implement that,
@@ -878,13 +882,20 @@ declarations below:
 
     <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
 
-After this change, redeploy the portlet, go to the edit screen and save it. You
-should see a nice message that looks like this:
+After this change, redeploy the portlet, go to the edit screen, edit the
+greeting, and save it. You should see a nice message that looks like this:
 
 ![Figure 3.7: The sample "My Greeting" portlet showing a success message](../../images/03-greeting-saved.png)
 
-There's also an equivalent utility class for error notification; it's commonly
-used after catching an exception in the `processAction` method. For example:
+There's also an equivalent utility class for error notification. You can add
+the `liferay-ui:error` tag to your `view.jsp` after the `liferay-ui:success`
+tag: 
+
+    <liferay-ui:error key="error" message="Sorry, an error prevented saving
+    your greeting" />
+
+This error utility is commonly used after catching an exception in the
+`processAction` method. For example: 
 
     try {
         prefs.setValue("greeting", greeting);
@@ -895,17 +906,10 @@ used after catching an exception in the `processAction` method. For example:
         SessionErrors.add(actionRequest, "error");
     }
 
-The error, if it exists, is shown in your `view.jsp` using the
-`liferay-ui:error` tag:
+Your `view.jsp` shows the error message in your portlet, if an error occurs
+while processing the action request. 
 
-    <liferay-ui:error key="error" message="Sorry, an error prevented saving
-    your greeting" />
-
-<!--If an error occurred, you'd see this in your portlet:-->
-
-<!--![Figure 3.8: The sample "My Greeting" portlet showing an error message](../../images/portlet-invalid-data.png)-->
-<!--How do I reproduce this? I added the code but I'm not sure what greeting I
-can type to get it to throw the error-->
+![Figure 3.8: The sample "My Greeting" portlet showing an error message](../../images/portlet-invalid-data.png)
 
 The first message is automatically added by Liferay. The second one is the one
 you added in your JSP. 
@@ -975,8 +979,8 @@ When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
 
     http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet
-        &p_p_lifecycle=0&p_p_state=normal&p_p_mode=view\&p_p_col_id=column-1&_my
-        greeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
+        &p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1
+        &p_p_col_count=2&_mygreeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
 
 Since Liferay 6, there's a built-in feature that can easily change the ugly URL
 above to this:
@@ -987,14 +991,12 @@ The feature is called friendly URL mapping. It takes unnecessary parameters out
 of the URL and allows you to place the important parameters in the URL path,
 rather than in the query string. To add this functionality, first edit
 `liferay-portlet.xml` and add the following lines directly after `</icon>` and
-before `<instanceable>`. 
+before `<instanceable>` (remove the line breaks): 
 
-    <friendly-url-mapper-class>
-        com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
-    </friendly-url-mapper-class>
+    <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendl\
+    yURLMapper</friendly-url-mapper-class>
     <friendly-url-mapping>my-greeting</friendly-url-mapping>
-    <friendly-url-routes>
-        com/liferay/samples/my-greeting-friendly-url-routes.xml
+    <friendly-url-routes>com/liferay/samples/my-greeting-friendly-url-routes.xml\
     </friendly-url-routes>
 
 Next, create the file (remove the line break):
@@ -1002,8 +1004,8 @@ Next, create the file (remove the line break):
     my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/my\
     -greeting-friendly-url-routes.xml
 
-Create new directories as necessary. Place the following content into the new
-file (remove the line break after `{mvcPathName}.jsp`):
+Place the following content into the new file (remove the line break after
+`{mvcPathName}.jsp`): 
 
     <?xml version="1.0"?>
     <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN" 
@@ -1017,18 +1019,12 @@ file (remove the line break after `{mvcPathName}.jsp`):
         </route>
     </routes>
 
-Redeploy your portlet, refresh the page, and try clicking either of the links
-again. 
+Redeploy your portlet, refresh the page, and look at the URL after clicking the
+*Edit greeting* link and then after clicking the *Back* link. Notice how much
+shorter and more user-friendly the URL is, without even having to modify the
+JSPs. 
 
-<!--![Figure 3.9: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.png)-->
-
-Notice how much shorter and more user-friendly the URL is, without even having
-to modify the JSPs. 
-
-<!--![Figure 3.10: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.png)-->
-
-<!--Friendly URL mapping isn't working per the instructions above. No Errors,
-just nof riendly URLs-->
+![Figure 3.9: Configuring friendly URLs for your JSPs is easy in Liferay. Look at the nice URL the portlet uses for the `edit.jsp`.](../../images/portlets-my-greeting-edit-friendly.png)
 
 For more information on friendly URL mapping, there's a detailed discussion in
 [*Liferay in Action*](http://manning.com/sezov). Our next step here is to
@@ -1080,12 +1076,12 @@ the `liferay-ui` tag library.
 
 The `<liferay-ui:message />` tag also supports passing strings as arguments to
 a language key. For example, the `welcome-x` key expects one argument. Here is
-`welcome-x` key from the `Language.properties` file:
+the `welcome-x` key from the `Language.properties` file:
 
     welcome-x=Welcome{0}!
 
 It references `{0}`, which denotes the first argument of the argument list. An
-arbitrary number of arguments can be passed in via message tag, but only those
+arbitrary number of arguments can be passed in via a message tag, but only those
 arguments expected by the language key are used. The arguments are referenced in
 order as `{0}`, `{1}`, etc. Let's pass in the user's screen name as an argument
 to the `welcome-x` language key in the "My Greeting" portlet. 
@@ -1101,8 +1097,8 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 
         <liferay-theme:defineObjects />
 
-3.  Replace the current welcome message tag,
-    `<liferay-ui:message key="welcome" />`, in the JSP with the following:
+3.  Replace the current welcome message tag and exclamation point,
+    `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
 
         <liferay-ui:message key="welcome-x" /> <%= user.getScreenName() %>
 
@@ -1179,22 +1175,43 @@ start:
             <portlet-name>finances</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
         <portlet>
             <portlet-name>portfolio</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
         <portlet>
             <portlet-name>ticker</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
-<!--I get an error in my portlet.xml that "the resource bunde content/Language
-was not foind on the Java build path" -->
+
+    Make sure to put each `resource-bundle` element in its proper place in the
+    `portlet` element. See the `portlet.xml` file's schema
+    [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
+    for details. 
+
+    For the my-greeting portlet, you'd specify the resource bundle before the
+    the `portlet-info` element, like the code below:
+
+        <portlet>
+            <portlet-name>my-greeting</portlet-name>
+                ....
+                <resource-bundle>content/Language</resource-bundle>
+                <portlet-info>
+                    <title>My Greeting</title>
+                    <short-title>My Greeting</short-title>
+                    <keywords>My Greeting</keywords>
+                </portlet-info>
+                ...
+        </portlet>
 
 At this point our portlets are ready to deliver a localized UI.
 
@@ -1204,7 +1221,7 @@ At this point our portlets are ready to deliver a localized UI.
 naming convention for language bundles so your portlets can share properties,
 and the Plugins SDK Ant task used to build the translations works.
 
- ---
+---
 
 In order for a user to see a message in his own locale, the message value must
 be specified in a resource bundle file with a name ending in his locale's two
