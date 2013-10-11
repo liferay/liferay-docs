@@ -958,14 +958,12 @@ The feature is called friendly URL mapping. It takes unnecessary parameters out
 of the URL and allows you to place the important parameters in the URL path,
 rather than in the query string. To add this functionality, first edit
 `liferay-portlet.xml` and add the following lines directly after `</icon>` and
-before `<instanceable>`. 
+before `<instanceable>` (remove the line breaks): 
 
-    <friendly-url-mapper-class>
-        com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
-    </friendly-url-mapper-class>
+    <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendl\
+    yURLMapper</friendly-url-mapper-class>
     <friendly-url-mapping>my-greeting</friendly-url-mapping>
-    <friendly-url-routes>
-        com/liferay/samples/my-greeting-friendly-url-routes.xml
+    <friendly-url-routes>com/liferay/samples/my-greeting-friendly-url-routes.xml\
     </friendly-url-routes>
 
 Next, create the file (remove the line break):
@@ -973,8 +971,8 @@ Next, create the file (remove the line break):
     my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/my\
     -greeting-friendly-url-routes.xml
 
-Create new directories as necessary. Place the following content into the new
-file (remove the line break after `{mvcPathName}.jsp`):
+Place the following content into the new file (remove the line break after
+`{mvcPathName}.jsp`): 
 
     <?xml version="1.0"?>
     <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" 
@@ -1069,8 +1067,8 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 
         <liferay-theme:defineObjects />
 
-3.  Replace the current welcome message tag,
-    `<liferay-ui:message key="welcome" />`, in the JSP with the following:
+3.  Replace the current welcome message tag and exclamation point,
+    `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
 
         <liferay-ui:message key="welcome-x" /> <%= user.getScreenName() %>
 
@@ -1149,20 +1147,28 @@ start:
             <portlet-name>finances</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
         <portlet>
             <portlet-name>portfolio</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
         <portlet>
             <portlet-name>ticker</portlet-name>
             ...
             <resource-bundle>content/Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
+
+    Make sure to put each `resource-bundle` element in its proper place in the
+    `portlet` element. See the `portlet.xml` file's schema
+    [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
+    for details. 
 
 At this point our portlets are ready to deliver a localized UI.
 
