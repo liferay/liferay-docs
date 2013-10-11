@@ -497,9 +497,9 @@ content:
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
 
 Redeploy the portlet in Developer Studio or redeploy it in a terminal by
-executing the command `ant deploy` from your `my-greeting-portlet` folder. Go back to your
-web browser and refresh the page; you should now be able to use the portlet to
-save and display a custom greeting. 
+executing the command `ant deploy` from your `my-greeting-portlet` folder. Go
+back to your web browser and refresh the page; you should now be able to use the
+portlet to save and display a custom greeting. 
 
 ![Figure 3.5: The *view* page of My Greeting portlet](../../images/03-my-greeting-view.png)
 
@@ -1020,9 +1020,8 @@ Place the following content into the new file (remove the line break after
     </routes>
 
 Redeploy your portlet, refresh the page, and look at the URL after clicking the
-*Edit greeting* link and then after clicking the *Back* link. Notice how much
-shorter and more user-friendly the URL is, without even having to modify the
-JSPs. 
+*Edit greeting* link. Notice how much shorter and more user-friendly the URL is,
+without even having to modify the JSPs. 
 
 ![Figure 3.9: Configuring friendly URLs for your JSPs is easy in Liferay. Look at the nice URL the portlet uses for the `edit.jsp`.](../../images/portlets-my-greeting-edit-friendly.png)
 
@@ -1230,6 +1229,9 @@ character code. For example, a resource bundle file named
 be present with a Spanish translation of the word "Welcome". Don't worry, the
 Plugins SDK provides a means for you to get translations for your default
 resource bundle.
+
+<!-- TODO The following section on using the Bing Translator service still needs
+to be tested -->
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
