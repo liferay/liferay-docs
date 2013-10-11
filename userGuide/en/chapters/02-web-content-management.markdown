@@ -384,7 +384,7 @@ labeled *Export* and *Import*. The Export button allows you to export the your
 site's data as a single file, called a LAR (Liferay Archive) file. When
 importing data into a site, it's best to use a newly created site to avoid
 potential conflicts between the existing site data and the data about to be
-imported. When exporting site data, you can specify exactly which data should be
+imported. When exporting site data, you can specify exactly what data should be
 included in the LAR:
 
 - Site pages (you can select exactly which ones)
@@ -398,11 +398,11 @@ included in the LAR:
 - User preferences
 
 Once you've created a LAR file, you can import it into a site on another Liferay
-server. The data included in the LAR file, included all of the site pages, will
+server. The data included in the LAR file, including all the site pages, will
 be imported into the site. Exporting and importing LARs is a great way to take
 content from a site in one environment (say, a development or QA environment)
 and move it all in one shot to a site on another server. You can use LARs to
-import data onto production servers but you should not make this a regular
+import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
 should use Liferay's staging environment, which we discuss in chapter 3.
 
@@ -410,11 +410,11 @@ LARs can be a good way to back up your site's content. You can export them to a
 specific location on your server which is backed up. If you ever have to restore
 your site, all you need to do is import the latest LAR file. However, please be
 careful! If there's any content that exists both in the LAR and in the site
-that's importing the data, there may be a conflict and data could be corrupted.
-If you'd like to restore a Liferay site using a LAR file, it's best to delete
-the site entirely, create a new site with the same name as the old one (i.e.,
-re-create the site), and then import the LAR file into the new site. This way,
-there's no chance for there to be a data conflict.
+that's importing the data, there may be a conflict, and data could be
+corrupted.  If you'd like to restore a Liferay site using a LAR file, it's best
+to delete the site entirely, create a new site with the same name as the old
+one (i.e., re-create the site), and then import the LAR file into the new site.
+This way, there's no chance for there to be a data conflict.
 
 ---
 
