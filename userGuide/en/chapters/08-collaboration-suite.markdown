@@ -474,17 +474,9 @@ Availability*.
 The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
 might like event notifications to be send one day and one hour before your
-event. Email is currently the only supported event notification type.
-
----
-
- ![Tip](../../images/tip.png) Tip: The default time zone for users is UTC. It's
- important to set users' time zones correctly so that event notification emails
- are sent and received properly. If users' time zones don't match the portal's
- time zone, the dates in the contents of the notification emails won't match the
- dates of the events.
-
----
+event. Email is currently the only supported event notification type. To avoid
+confusion, the time in the contents of the notification email is shown in the
+user's timezone, which is also shown in the message.
 
 The Categorization and Related Assets collapsible sections let you tag the event
 and select related assets, respectively. By tagging your event, it will come up
