@@ -290,11 +290,13 @@ Here's a basic summary of what each element represents:
         javax.portlet.short-title=Weather
         javax.portlet.keywords=weather,forecast
 
-    To use the resource bundle, you'd reference it in your `portlet.xml` file:
+    To use the resource bundle, you'd reference it in your `portlet.xml`
+    file, in your `portlet` element just before your `portlet-info` element:
 
         <portlet>
             ...
             <resource-bundle>content.Language</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
 
@@ -347,8 +349,12 @@ Here's a basic summary of what each element represents:
             <resource-bundle>content.Language</resource-bundle>
             <resource-bundle>content.Language_de</resource-bundle>
             <resource-bundle>content.Language_en</resource-bundle>
+            <portlet-info>...</portlet-info>
             ...
         </portlet>
+
+    If you're mavenizing your portlet, make sure to copy your `content` folder
+    into your portlet's `src/main/webapp/WEB-INF/classes` folder. 
 
     For more information, see the JSR-286 portlet specification, at
     [http://www.jcp.org/en/jsr/detail?id=286](http://www.jcp.org/en/jsr/detail?id=286).
@@ -1208,6 +1214,16 @@ translations using the Bing Translator service, you'll need to do the following:
 
 When the build completes, you'll find the generated files with all of the
 translations, in the same folder as your `Language.properties` file.
+
+
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** If you're mavenizing your
+ portlet, make sure to copy your `content` folder into your portlet's
+ `src/main/webapp/WEB-INF/classes` folder. 
+
+---
 
 By using Studio's language building capability, you can keep all created
 translations synchronized with your default `Language.properties`. You can run
