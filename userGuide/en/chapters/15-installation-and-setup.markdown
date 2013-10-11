@@ -803,16 +803,20 @@ Liferay onto a Tcat server, follow the instructions in this section.
 
 	<target name="build-dist-tcat">
 		<echo file="app.server.${user.name}.properties">
+<!--Setting Tomcat as app server type in app.server.russell.properties-->
+
 			app.server.type=tomcat
 
 			app.server.tomcat.version=7.0.39
 			app.server.tomcat.zip.url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.39/bin/apache-tomcat-7.0.39.zip
 		</echo>
 
+<!--Not exactly sura about the purpose of build-dist-tomcat, but probably unnecessary for our steps since we're assuming Tcat is already installed-->
 		<antcall target="build-dist-tomcat" inheritAll="false">
 			<param name="tomcat.keep.app.server.properties" value="true" />
 		</antcall>
 
+<!--Not sure about the below <script>-->
 		<script classpathref="project.classpath" language="beanshell">
 			String lpVersion = project.getProperty("lp.version");
 
@@ -821,19 +825,53 @@ Liferay onto a Tcat server, follow the instructions in this section.
 			project.setProperty("lp.version.tcat", lpVersionTcat);
 		</script>
 
+<!--Unsure about this, too-->
 		<echo append="true" file="release.${user.name}.properties">
 			lp.version.tcat=${lp.version.tcat}
 		</echo>
 
 		<delete dir="${app.server.tcat.dir}" />
 
+<!--Okay, download profile from liferay.com, but this isn't in the current instructions for 6.1 so I'm still a bit confused-->
 		<antcall target="build-dist-tcat-profile" inheritAll="false">
 			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
 		</antcall>
 
+<!--Not sure about this, copied build-dist-tcat-tomcat below for more analysis-->
 		<antcall target="build-dist-tcat-tomcat" inheritAll="false">
 			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
 		</antcall>
+
+                <target name="build-dist-tcat-tomcat">
+<!--Create $TCAT_HOME/tomcat directory?-->
+                    <mkdir dir="${app.server.tcat.dir}/tomcat" />
+
+<!--Why would we copy the tcat home directory to the tomcat directory, which is inside the tcat home?-->
+                    <copy todir="${app.server.tcat.dir}/tomcat">
+                        <fileset
+                            dir="${app.server.tomcat.dir}"
+                            excludes="**/ROOT.xml,logs/**,temp/**,webapps/**,work/**"
+                        />
+                    </copy>
+
+<!--Create temp directory in the tomcat directory-->
+                    <mkdir dir="${app.server.tcat.dir}/tomcat/temp" />
+
+<!--Obviously, edit server.xml as follows-->
+                    <replace file="${app.server.tcat.dir}/tomcat/conf/server.xml">
+                        <replacetoken><![CDATA[xmlValidation="false" xmlNamespaceAware="false" deployXML="false">]]></replacetoken>
+                        <replacevalue><![CDATA[xmlValidation="false" xmlNamespaceAware="false">]]></replacevalue>
+                    </replace>
+
+<!--Not really sure what this is doing-->
+                    <move file="${app.server.tcat.dir}/tomcat" tofile="${app.server.tcat.dir}/admin" />
+
+                    <mkdir dir="${app.server.tcat.dir}/agent" />
+
+                    <copy todir="${app.server.tcat.dir}/agent">
+                        <fileset dir="${app.server.tcat.dir}/admin" />
+                    </copy>
+                </target>
 
 		<if>
 			<not>
@@ -850,19 +888,172 @@ Liferay onto a Tcat server, follow the instructions in this section.
 			</then>
 		</if>
 
+<!--This would appear to simply build a zip of the Liferay Tcat Admin download-->
 		<antcall target="build-dist-tcat-admin" inheritAll="false">
 			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
 			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
 		</antcall>
 
+<!--The Tcat agent download-->
 		<antcall target="build-dist-tcat-agent" inheritAll="false">
 			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
 			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
 		</antcall>
 
+<!--Why delete app.server.russell.properties at the end?-->
 		<delete file="app.server.${user.name}.properties" />
 	</target>
 
+<!--More build-dist-tcat stuff that's used in the main target-->
+	<target name="build-dist-tcat-admin">
+		<copy file="tools/servers/tcat/tcat-init.groovy" todir="${app.server.tcat.dir}/admin" />
+
+		<unzip
+			dest="${app.server.tcat.dir}/admin/webapps"
+			src="${app.server.parent.dir}/${app.server.tcat.zip.name}"
+		>
+			<patternset
+				includes="**/console.war"
+			/>
+			<flattenmapper />
+		</unzip>
+
+		<replace file="${app.server.tcat.dir}/admin/conf/server.xml">
+			<replacefilter token="8005" value="8105" />
+			<replacefilter token="8009" value="8109" />
+			<replacefilter token="8080" value="8180" />
+			<replacefilter token="8443" value="81443" />
+		</replace>
+
+		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/profiles" />
+
+		<copy file="dist/liferay-portal-tcat-profile-${lp.version}.zip" todir="${app.server.tcat.dir}/admin/tcat_init/profiles" />
+
+		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/scripts" />
+
+		<copy file="tools/servers/tcat/LiferayDeployerFactory.groovy" todir="${app.server.tcat.dir}/admin/tcat_init/scripts" />
+
+		<antcall target="build-dist-tcat-admin-webapps-plugins">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+		</antcall>
+
+		<antcall target="build-dist-tcat-admin-webapps-portal">
+			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
+		</antcall>
+	</target>
+
+	<target name="build-dist-tcat-admin-webapps-plugins">
+		<echo append="true" file="${lp.plugins.dir}/build.${user.name}.properties">
+			plugins.war.excludes=**/WEB-INF/service/**,**/WEB-INF/src/**
+		</echo>
+
+		<ant dir="${lp.plugins.dir}" target="all" inheritAll="false" />
+
+		<copy todir="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}">
+			<fileset dir="${lp.plugins.dir}/dist" includes="*.war" />
+		</copy>
+
+		<ant dir="${lp.plugins.dir}" target="clean" inheritAll="false" />
+
+		<ant dir="${lp.plugins.dir}" target="all" inheritAll="false" />
+	</target>
+
+	<target name="build-dist-tcat-admin-webapps-portal">
+		<tstamp>
+			<format property="tstamp.value" pattern="yyyyMMddkkmmssSSS" />
+		</tstamp>
+
+		<mkdir dir="${tstamp.value}/META-INF" />
+
+		<echo file="${tstamp.value}/META-INF/context.xml"><![CDATA[<?xml version="1.0"?>
+			<Context path="" crossContext="true">
+				<Realm
+					className="org.apache.catalina.realm.JAASRealm"
+					appName="PortalRealm"
+					userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+					roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+				/>
+			</Context>]]>
+		</echo>
+
+		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}" />
+
+		<copy file="dist/liferay-portal-${lp.version}.war" tofile="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}/ROOT.war" />
+
+		<zip
+			basedir="${tstamp.value}"
+			destfile="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}/ROOT.war"
+			update="yes"
+		/>
+
+		<delete dir="${tstamp.value}" />
+	</target>
+
+	<target name="build-dist-tcat-agent">
+		<echo file="${app.server.tcat.dir}/agent/conf/Catalina/localhost/agent.xml"><![CDATA[<?xml version="1.0"?>
+			<Context privileged="true" />]]>
+		</echo>
+
+		<unzip
+			dest="${app.server.tcat.dir}/agent/webapps"
+			src="${app.server.parent.dir}/${app.server.tcat.zip.name}"
+		>
+			<patternset
+				includes="**/agent.war"
+			/>
+			<flattenmapper />
+		</unzip>
+	</target>
+
+	<target name="build-dist-tcat-profile">
+		<mkdir dir="${app.server.tcat.dir}/profile/files/lib/ext" />
+
+		<copy file="tools/servers/tcat/profile.xml" todir="${app.server.tcat.dir}/profile">
+			<filterset>
+				<filter token="lp.version" value="${lp.version}" />
+			</filterset>
+		</copy>
+
+		<copy todir="${app.server.tcat.dir}/profile/files/lib/ext">
+			<fileset dir="${app.server.tomcat.dir}/lib/ext" />
+		</copy>
+
+		<echo file="${app.server.tcat.dir}/profile/files/lib/ext/portal-bundle.properties">auto.deploy.deploy.dir=${catalina.base}/deploy</echo>
+
+		<delete file="dist/liferay-portal-tcat-profile-${lp.version}.zip" failonerror="false" />
+
+		<zip destfile="dist/liferay-portal-tcat-profile-${lp.version}.zip">
+			<zipfileset
+				dir="${app.server.tcat.dir}/profile"
+			/>
+		</zip>
+	</target>
+
+	<target name="build-dist-tcat-tomcat">
+		<mkdir dir="${app.server.tcat.dir}/tomcat" />
+
+		<copy todir="${app.server.tcat.dir}/tomcat">
+			<fileset
+				dir="${app.server.tomcat.dir}"
+				excludes="**/ROOT.xml,logs/**,temp/**,webapps/**,work/**"
+			/>
+		</copy>
+
+		<mkdir dir="${app.server.tcat.dir}/tomcat/temp" />
+
+		<replace file="${app.server.tcat.dir}/tomcat/conf/server.xml">
+			<replacetoken><![CDATA[xmlValidation="false" xmlNamespaceAware="false" deployXML="false">]]></replacetoken>
+			<replacevalue><![CDATA[xmlValidation="false" xmlNamespaceAware="false">]]></replacevalue>
+		</replace>
+
+		<move file="${app.server.tcat.dir}/tomcat" tofile="${app.server.tcat.dir}/admin" />
+
+		<mkdir dir="${app.server.tcat.dir}/agent" />
+
+		<copy todir="${app.server.tcat.dir}/agent">
+			<fileset dir="${app.server.tcat.dir}/admin" />
+		</copy>
+	</target>
 
 Tcat Server provides a graphical console to make Tomcat setup and configuration
 more administrator friendly. You may use the console to:
@@ -887,7 +1078,9 @@ sales@liferay.com.
 
 
 First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
-need two files:
+need three files:
+
+-   *Liferay Portal 6.2 EE Tcat Profile:* <!--contains...-->
 
 -   *Liferay Portal 6.1 EE Tcat Admin:* contains the Tcat administration
     console and Liferay Portal EE and all appropriate plugins.
