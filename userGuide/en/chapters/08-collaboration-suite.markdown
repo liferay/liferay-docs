@@ -546,12 +546,9 @@ it should be active, apply tags and categories, and configure its permissions.
 Once you've created a calendar resource, you can click on the *Actions* button
 next to it and select one of the following four options: *Edit*, *Permissions*,
 *Delete*, or *View Calendars*. The *View Calendars* option exists since calendar
-resources can be made available to multiple calendars. For example, different
-departments in your company, represented by different sites, might both want to
-use a certain room or projector at the same time. Adding the calendar resources
-representing the rooms and projectors helps prevent conflicts. Click *Actions*
-&rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
-in which the selected calendar resource appears.
+resources, like sites and users, can have more than one calendar associated with
+them. Click *Actions* &rarr; *View Calendars* and then click on *Add Calendar*
+to add a new calendar in which the selected calendar resource appears.
 
 ![Figure 8.16: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
 
