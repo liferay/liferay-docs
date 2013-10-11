@@ -318,10 +318,11 @@ Calendar portlet on Liferay Marketplace. The new Calendar portlet upgrades
 several features of the old Calendar portlet and adds additional features. The
 features you're used to from the old Calendar portlet are still available. You
 can add events and configure email notifications and you can use the Calendar
-portlet as a shared calendar for an entire site or as a personal calendar. Some
-of the new features include an improved look and feel, more configuration
-options, the ability to assign multiple calendars to a site or user, the concept
- of calendar resources, and event invitations.
+portlet as a shared calendar for an entire site or as a personal calendar. All
+content created through the old Calendar will be automatically imported by the
+new Calendar. Some of the new features include an improved look and feel, more
+configuration options, the ability to assign multiple calendars to a site or
+user, the concept of calendar resources, and event invitations.
 
 <!-- Add installation instructions for the new Calendar portlet here. Confirm
 that it's available from Marketplace. Briefly describe the differences between
