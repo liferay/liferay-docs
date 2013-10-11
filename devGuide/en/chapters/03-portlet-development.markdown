@@ -1245,18 +1245,21 @@ our `portlet.xml` this way:
         <portlet-name>1</portlet-name>
         ...
         <resource-bundle>content/Language</resource-bundle>
+        <portlet-info>...</portlet-info>
         ...
     </portlet>
     <portlet>
         <portlet-name>2</portlet-name>
         ...
         <resource-bundle>content/Language</resource-bundle>
+        <portlet-info>...</portlet-info>
         ...
     </portlet>
     <portlet>
         <portlet-name>3</portlet-name>
         ...
         <resource-bundle>content/Language</resource-bundle>
+        <portlet-info>...</portlet-info>
         ...
     </portlet>
 
