@@ -2076,7 +2076,7 @@ insert the patch can be referenced below.
     	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
     3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
-    orginal `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
+    original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
 
 Great! You have your `.jar` files ready for your domain.
 
@@ -2116,13 +2116,13 @@ for information on setting up a Liferay cluster.
 
 For multi-server production environments, the choice of running a managed domain
 versus standalone servers comes down to whether you want to use the centralized
-management capabilites a managed domain provides. Running a standalone server is
-better suited for most development scenarios. Any indiviual server configuration
-that can be achieved in a managed domain can also be achieved in a standalone
-server. Even if the application being developed will eventually run in
-production on a managed domain installation, most development can be done using
-a standalone server. Therefore, the best practice when running Liferay on JBoss
-7.1 is to use standalone mode.
+management capabilities a managed domain provides. Running a standalone server
+is better suited for most development scenarios. Any individual server
+configuration that can be achieved in a managed domain can also be achieved in a
+standalone server. Even if the application being developed will eventually run
+in production on a managed domain installation, most development can be done
+using a standalone server. Therefore, the best practice when running Liferay on
+JBoss 7.1 is to use standalone mode.
 
 <!-- An excellent document on JBoss' 7.1 domain mode (written by Igor Spasic)
 can be found here:
@@ -2217,8 +2217,8 @@ Then add the following `JAVA_OPTS` assignment one line above the
 	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
-    directory. You'll notice we've added some java security options. We'll
-    finish configuring the java security options in the *Security Configuration*
+    directory. You'll notice we've added some Java security options. We'll
+    finish configuring the Java security options in the *Security Configuration*
     section.
 
 The prescribed script modifications are now complete for your Liferay
@@ -2393,7 +2393,7 @@ want to protect your portal and your JBoss server from security threats. To do
 so, you can enable Java Security on your JBoss server and specify a security
 policy to grant your portal access to your server.
 
-Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` java
+Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` Java
 options in the `standalone.conf.bat` file earlier in the *Configuring JBoss*
 section. The `-Djava.security.manager` Java option enables security on your
 JBoss server. Likewise, the `-Djava.security.policy` Java option lists the
@@ -2410,7 +2410,7 @@ permissions. You can tune the permissions in your policy later. Create the
 
 For extensive information on Java SE Security Architecture, see its
 specification documents at
-[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html)
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
@@ -3301,7 +3301,7 @@ To change the Tomcat ports for Liferay's use:
    adjust the ports if needed (such as changing the AJP port from `9009` to
    `8009`.
 
-To modify the OSGI defaults to ensure required java packages are bootsrapped by
+To modify the OSGI defaults to ensure required Java packages are bootsrapped by
 the loader:
 
 1. Open the file `defaults.properties` inside of `$JONAS_BASE/conf/osgi`.
@@ -3590,7 +3590,7 @@ add the following contents:
 For extensive information on Java SE Security Architecture see its specification
 documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
-And see section [*Understanding Plugin Security
+Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources. 
@@ -3738,7 +3738,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-02-summary.png)
+![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -3852,7 +3852,8 @@ Great! Now you're ready to deploy Liferay.
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked, and click *Next* again.
 
-4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy Liferay. Click *Next*.
+4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy
+   Liferay. Click *Next*.
 
 5. Map Liferay to the root context (/) and click *Next*. 
 
@@ -3868,7 +3869,7 @@ In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-enable-security.png)
+    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
