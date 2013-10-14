@@ -315,16 +315,14 @@ Marketplace.
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
 Calendar portlet on Liferay Marketplace. The new Calendar portlet upgrades
-several features of the old Calendar portlet and adds additional features. It's
-possible to have both Calendar portlets deployed to your Liferay Portal instance
-at the same time. You can even add both Calendar portlets to the same page if
-you'd like to compare them--they're completely compatible. The features you're
-used to from the old Calendar portlet are still available. You can add events
-and configure email notifications and you can use the Calendar portlet as a
-shared calendar for an entire site or as a personal calendar. Some of the new
-features include an improved look and feel, more configuration options, the
-ability to assign multiple calendars to a site or user, the concept of calendar
-resources, and event invitations.
+several features of the old Calendar portlet and adds additional features. The
+features you're used to from the old Calendar portlet are still available. You
+can add events and configure email notifications and you can use the Calendar
+portlet as a shared calendar for an entire site or as a personal calendar. All
+content created through the old Calendar will be automatically imported by the
+new Calendar. Some of the new features include an improved look and feel, more
+configuration options, the ability to assign multiple calendars to a site or
+user, the concept of calendar resources, and event invitations.
 
 <!-- Add installation instructions for the new Calendar portlet here. Confirm
 that it's available from Marketplace. Briefly describe the differences between
@@ -453,7 +451,7 @@ represent permissions which can be configured for the event:
 - Update Discussion
 
 *Discussions* refers to comments on the event. So the Add Discussion, Delete
-Discuss, and Update Discussion permissions determine whether a role can add,
+Discussion, and Update Discussion permissions determine whether a role can add,
 delete, or update a comment on an event. The Permissions permission determines
 whether a role can update an event's permissions.
 
@@ -476,17 +474,9 @@ Availability*.
 The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
 might like event notifications to be send one day and one hour before your
-event. Email is currently the only supported event notification type.
-
----
-
- ![Tip](../../images/tip.png) Tip: The default time zone for users is UTC. It's
- important to set users' time zones correctly so that event notification emails
- are sent and received properly. If users' time zones don't match the portal's
- time zone, the dates in the contents of the notification emails won't match the
- dates of the events.
-
----
+event. Email is currently the only supported event notification type. To avoid
+confusion, the time in the contents of the notification email is shown in the
+user's timezone, which is also shown in the message.
 
 The Categorization and Related Assets collapsible sections let you tag the event
 and select related assets, respectively. By tagging your event, it will come up
@@ -556,12 +546,9 @@ it should be active, apply tags and categories, and configure its permissions.
 Once you've created a calendar resource, you can click on the *Actions* button
 next to it and select one of the following four options: *Edit*, *Permissions*,
 *Delete*, or *View Calendars*. The *View Calendars* option exists since calendar
-resources can be made available to multiple calendars. For example, different
-departments in your company, represented by different sites, might both want to
-use a certain room or projector at the same time. Adding the calendar resources
-representing the rooms and projectors helps prevent conflicts. Click *Actions*
-&rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
-in which the selected calendar resource appears.
+resources, like sites and users, can have more than one calendar associated with
+them. Click *Actions* &rarr; *View Calendars* and then click on *Add Calendar*
+to add a new calendar in which the selected calendar resource appears.
 
 ![Figure 8.16: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
 
@@ -637,10 +624,9 @@ that existed prior to 6.2 will still be available after your upgrade. After
 following
 [these](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-5)
 steps for upgrading Liferay, all you need to do to access previously added
-events is deploy the new Calendar portlet and add it to a page. You can browse
-through the new Calendar to confirm that the upgrade succeeded: you should be
-able to view and edit calendar events that were added via the old calendar
-portlet.
+events is deploy the new Calendar portlet. You can browse through the new
+Calendar to confirm that the upgrade succeeded: you should be able to view and
+edit calendar events that were added via the old calendar portlet.
 
 The old Calendar portlet included certain calendar event types such as
 appointments, birthdays, holidays, and meetings. The new Calendar portlet
