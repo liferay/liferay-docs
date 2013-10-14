@@ -346,11 +346,11 @@ Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
 thumbnail is nonexistent. To remedy this, create a 150 pixels wide by 120
 pixels high image to use as your theme's thumbnail. You may want to take a
-snapshot of your theme and resize it to these dimensions. It is very important
+snapshot of your theme and re-size it to these dimensions. It is very important
 to abide by these *exact* dimensions or your image will not display properly as
 a thumbnail. Save the image as a `.png` file named `thumbnail.png` and place it
 in your theme's `docroot/_diffs/images` directory (create this directory if it
-doesn't already exist). On redeployment, your `screenshot.png` file
+doesn't already exist). On redeployment, your `thumbnail.png` file
 automatically displays as your theme's thumbnail.
 
 <!-- Right now, a new theme doesn't have a broken image; there is no image at
@@ -533,7 +533,7 @@ called `night.css`, letting the default styling handle the first color scheme,
 or we can use both `day.css` and `night.css` to specify each scheme. Let's use
 the latter option here, creating both files to define our color schemes.
 
-Place the following lines at the bottom of your `custom.css` file:
+Place the following lines at the bottom of your `docroot/css/custom.css` file:
 
     @import url(color_schemes/day.css);
     @import url(color_schemes/night.css);
@@ -565,7 +565,8 @@ The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
 portlet borders, bullet styles, and the site name, but more settings may be
 added in the future. Modify these settings from the `liferay-look-and-feel.xml`
-file.
+file. Remember, your `liferay-look-and-feel.xml` file should have the 6.2.0
+doctype for the following predefined settings to work correctly.
 
 ---
 
@@ -603,7 +604,7 @@ used in your sites.
 #### Bullet Styles [](id=bullet-styles-liferay-portal-6-2-dev-guide-09-en)
 
 Liferay's Navigation portlet can be configured to use any bullet styles
-inherited by your theme or implementated in your theme. For example, if your
+inherited by your theme or implemented in your theme. For example, if your
 theme uses Liferay's *classic* theme as its base parent, you can leverage its
 *arrows* bullet style. Here is the arrow bullet style's class from the
 *classic* theme's `_diffs/css/custom.css` file:
@@ -648,8 +649,8 @@ configure display your site's name.
 #### Site Names [](id=displaying-site-name-via-theme-liferay-portal-6-2-dev-guide-en)
 
 The site name settings let site administrators decide whether to display a
-site's name (i.e., title). But, if you are using using logo, that mentions your
-company or site, on each site page, you may find the default site name display
+site's name (i.e., title). But, if you are using a logo that mentions your
+company or site on each site page, you may find the default site name display
 distracting.
 
 ![Figure 9.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
@@ -683,7 +684,8 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
     </settings>
 
 With these settings configurable, site administrators can control site name
-display from the each site's *Look and Feel* control page.
+display from the each site's *Look and Feel* tab, which can be found by clicking
+the *Edit* button from the left side menu of any page.
  
 Let's talk about Liferay's JavaScript library next. 
 
@@ -703,7 +705,43 @@ callbacks:
 - **Liferay.on('allPortletsReady', fn):** Executed after everything else
   (including AJAX portlets) has finished loading. 
 
-![Figure 9.8: Content of main.js](../../images/05-themes-4.png)
+The contents of the `main.js` file are listed below:
+
+	AUI().ready(
+
+		/*
+		This function gets loaded when all the HTML, not including the portlets, is
+		loaded.
+		*/
+
+		function() {
+		}
+	);
+
+	Liferay.Portlet.ready(
+
+		/*
+		This function gets loaded after each and every portlet on the page.
+
+		portletId: the current portlet's id
+		node: the Alloy Node object of the current portlet
+		*/
+
+		function(portletId, node) {
+		}
+	);
+
+	Liferay.on(
+		'allPortletsReady',
+
+		/*
+		This function gets loaded when everything, including the portlets, is on
+		the page.
+		*/
+
+		function() {
+		}
+	);
 
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
@@ -728,10 +766,10 @@ and immediately see their new theme in action. In this section, we discuss how
 to include resources with your theme.
 
 Liferay's welcome theme includes resources that the resources importer
-automatically deploys to the default site. (Note: The welcome theme was
-introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
-welcome theme and the pages and content that it imports to the default site
-provide a good example of the resources importer's functionality.
+automatically deploys to the default site. (Note: The welcome theme is only
+applied out-of-the-box in Liferay CE.) The welcome theme and the pages and
+content that it imports to the default site provide a good example of the
+resources importer's functionality.
 
 ![Figure 9.9: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
 
@@ -748,8 +786,7 @@ Marketplace app.
  Liferay Portal instance and don't have the resources importer already deployed,
  you might see a message like this:
  
-    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
-        for deploy because it is missing resources-importer-web
+    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queuing test-theme for deploy because it is missing resources-importer-web
 
  Such a message appears if the resources importer is declared as a dependency in
  your theme's `liferay-plugin-package.properties` file but is not deployed. You
@@ -1047,14 +1084,17 @@ Liferay:
   template under `resources-importer/journal/articles/`, rename the downloaded
   `article.xml` file as desired, and copy it into the folder for the template.
   The web content article's XML fills in the data required by the structure.
-- **structure:** Edit the structure by clicking the *Launch Editor* button, and
-  copy and paste its contents into a new XML file for the structure in the
+<!-- *Download* button is currently unavailable for Web Content (bassed on
+structure and template). Contacted Juan for more info and following LPS-31355
+-->
+- **structure:** Edit the structure by clicking *Source*, and copy and paste its
+  contents into a new XML file for the structure in the
   `resources-importer/journal/structures/` folder. The structure XML sets a
   wireframe, or blueprint, for an article's data. 
-- **template:** Edit the template by clicking the *Launch Editor* button, and
-  copy and paste its contents into a new XML file for the template in the
+- **template:** Edit the template by clicking *Source*, and copy and paste its
+  contents into a new XML file for the template in the
   `resources-importer/journal/templates/` folder. The template defines how the
-  data should be displayed. 
+  data should be displayed.
 
 Here is an outline of steps you can use in developing your theme and its
 resources:
@@ -1070,7 +1110,7 @@ resources:
     with the layout templates, portlets, and portlet preferences of these pages.
 
 4.  Create an `assets.json` file in your `resources-importer/` folder.  In this
-    file, specify details of your resources assets.
+    file, specify details of your resource assets.
 
 5.  In your `liferay-plugin-package.properties` file, include
     `resources-importer-web` in your `required-deployment-contexts` property's
