@@ -430,7 +430,7 @@ on your personal home and profile pages can be found in the Liferay Marketplace
 chapter of the *User Guide*. For now, go to your personal home page by clicking
 on the *Go to My Home* link.
 
-![Figure 11.2: Use the Dockbar from anywhere in Liferay to navigate to your personal pages. Either click on the *Go to My Home* link or click *Places* &rarr; *User Profile*.](../../images/marketplace-my-homepage-link.png) 
+![Figure 11.2: Access your liferay.com Home page by selecting your name &rarr; *User Profile* and then clicking the *Home* tab](../../images/liferay-dot-com-user-profile.png) 
 
 Your home page contains links to often-used functionality of liferay.com,
 including app creation and management. There are several links on the left of
