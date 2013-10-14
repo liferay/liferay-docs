@@ -426,10 +426,12 @@ Click *App Manager* to visit this page.
 
 You'll notice three tabs across the top:
 
-**Purchased** - This shows apps you have personally purchased, and those apps
+**Purchased**: This shows apps you have personally purchased, and those apps
 that have been purchased on behalf of companies you are associated with.
-**Apps** - This shows apps you have personally *published*.
-**Add an App** - This screen begins the process of publishing a new app.
+
+**Apps**: This shows apps you have personally *published*.
+
+**Add an App**: This screen begins the process of publishing a new app.
 
 Since you have not purchased or published any apps, the first two tabs are
 likely empty. Let's get publishing!
