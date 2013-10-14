@@ -317,9 +317,9 @@ included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
 Calendar portlet on Liferay Marketplace. The new Calendar portlet upgrades
 several features of the old Calendar portlet and adds additional features. The
 features you're used to from the old Calendar portlet are still available. You
-can add events and configure email notifications and you can use the Calendar
+can add events and configure email notifications. You can use the Calendar
 portlet as a shared calendar for an entire site or as a personal calendar. All
-content created through the old Calendar will be automatically imported by the
+content created through the old Calendar is imported automatically by the
 new Calendar. Some of the new features include an improved look and feel, more
 configuration options, the ability to assign multiple calendars to a site or
 user, the concept of calendar resources, and event invitations.
@@ -475,8 +475,12 @@ The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
 might like event notifications to be send one day and one hour before your
 event. Email is currently the only supported event notification type. To avoid
-confusion, the time in the contents of the notification email is shown in the
-user's timezone, which is also shown in the message.
+confusion, the event time in notification emails is shown in the user's
+time zone, and the time zone is also displayed. Of course, Liferay can only
+calculate this properly if both the portal's and the user's time zones are set
+correctly. Users should set this for themselves when they create accounts. To
+set the portal's time zone, see the section *Configuring Additional Portal
+Settings* in chapter 17. 
 
 The Categorization and Related Assets collapsible sections let you tag the event
 and select related assets, respectively. By tagging your event, it will come up
@@ -622,7 +626,7 @@ was included as one of the core portlets. If you're upgrading from Liferay 6.1
 or a previous version to Liferay 6.2 or a later version, all the calendar events
 that existed prior to 6.2 will still be available after your upgrade. After
 following
-[these](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-5)
+[these](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/upgrading-liferay-liferay-portal-6-2-user-guide-18-en)
 steps for upgrading Liferay, all you need to do to access previously added
 events is deploy the new Calendar portlet. You can browse through the new
 Calendar to confirm that the upgrade succeeded: you should be able to view and
