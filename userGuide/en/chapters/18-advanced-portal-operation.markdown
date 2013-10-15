@@ -873,7 +873,7 @@ Please also note the following changes in behavior:
     PBKDF2WithHmacSHA1/160/128000, for password encryption. PBKDF2
     (Password-Based Key Derivation Function 2) is a key derivation function
     that's part of RSA's PKCS (Public-Key Cryptography Standards) series: PKCS
-    #5, version 2.0. It's also described in the IETF's [RFC
+    \#5, version 2.0. It's also described in the IETF's [RFC
     2898](http://tools.ietf.org/html/rfc2898). The
     `PBKDF2WithHmacSHA1/160/128000` algorithm uses a keyed-hash message
     authentication code using SHA-1 and generates 160-bit hashes using 128,000
