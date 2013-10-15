@@ -298,7 +298,8 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
     CATALINA_OPTS=
         "$CATALINA_OPTS
          -Dfile.encoding=UTF8
-         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES
+             =false
          -Duser.timezone=GMT
          -Xmx1024m
          -XX:MaxPermSize=256m"
@@ -417,7 +418,7 @@ setting:
         <settings>
             <setting key="header-type" value="detailed" />
         </settings>
-        </theme>
+    </theme>
     <theme id="deep-blue-mini" name="Deep Blue Mini">
         <settings>
             <setting key="header-type" value="brief" />
@@ -1084,9 +1085,6 @@ Liferay:
   template under `resources-importer/journal/articles/`, rename the downloaded
   `article.xml` file as desired, and copy it into the folder for the template.
   The web content article's XML fills in the data required by the structure.
-<!-- *Download* button is currently unavailable for Web Content (bassed on
-structure and template). Contacted Juan for more info and following LPS-31355
--->
 - **structure:** Edit the structure by clicking *Source*, and copy and paste its
   contents into a new XML file for the structure in the
   `resources-importer/journal/structures/` folder. The structure XML sets a
@@ -1095,6 +1093,10 @@ structure and template). Contacted Juan for more info and following LPS-31355
   contents into a new XML file for the template in the
   `resources-importer/journal/templates/` folder. The template defines how the
   data should be displayed.
+
+<!-- *Download* button is currently unavailable for Web Content (based on
+structure and template). Contacted Juan for more info and following LPS-31355
+-->
 
 Here is an outline of steps you can use in developing your theme and its
 resources:
@@ -1237,7 +1239,7 @@ exploring layout template files.
 ### Layout Template Files [](id=layout-template-files-liferay-portal-6-2-dev-guide-09-en)
 
 One or more layout template plugins can reside in a layout template project.
-Let's see what each template files does: 
+Let's see what each template file does: 
 
 - `<project-name>.tpl`: Generates the HTML structure of the template. 
 - `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
