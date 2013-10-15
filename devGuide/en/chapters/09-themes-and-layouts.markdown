@@ -1173,9 +1173,9 @@ Let's create a custom layout template!
 
 ### Creating a Layout Template Project [](id=creating-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
 
-With the Plugins SDK you can deploy layout templates as plugins, and creating
-layout templates with Liferay Developer Studio is easier than ever. Let's call
-our layout template called "Columns 1 4 1". 
+With the Plugins SDK, you can deploy layout templates as plugins, and creating
+layout templates with Liferay Developer Studio is easier than ever. Let's create
+a layout template called *Columns 1 4 1*. 
 
 ***Using Developer Studio:*** 
 
@@ -1206,7 +1206,7 @@ the *create* script, followed by operating system-specific commands:
 
         create.bat columns-1-4-1 "Columns 1 4 1"
 
-Developer Studio's *New Project* wizard and the *create* scripts in terminal
+Developer Studio's *New Project* wizard and the *create* scripts in the terminal
 generate layout template projects in your Plugin SDK's `layouttpl` folder. 
 
 ### Anatomy of a Layout Template Project [](id=anatomy-of-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
@@ -1216,8 +1216,9 @@ about its various files:
 
 - `columns-1-4-1-layouttpl/`
 	- `docroot/`
+		- `META-INF/`
 		- `WEB-INF/`
-			- `liferay-layout-templates.properties`
+			- `liferay-layout-templates.xml`
 			- `liferay-plugin-package.properties`
 		- `columns_1_4_1.png`
 		- `columns_1_4_1.tpl`
@@ -1236,30 +1237,29 @@ exploring layout template files.
 ### Layout Template Files [](id=layout-template-files-liferay-portal-6-2-dev-guide-09-en)
 
 One or more layout template plugins can reside in a layout template project.
-Let's see what each of the template files does: 
+Let's see what each template files does: 
 
 - `<project-name>.tpl`: Generates the HTML structure of the template. 
 - `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
   wireless application protocol. 
 - `<project-name>.png`: Thumbnail representation of the template that you see in
   Liferay Portal from the Page Layout screen. You'll have to create the
-  thumbnail
-  image, but you can use the default PNG for layout templates as a starting
-  point. 
+  thumbnail image, but you can use the default PNG for layout templates as a
+  starting point.
 
-![Figure 9.11: Default layout template thumbnail](../../images/blank_columns.png)
+![Figure 9.11: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
 ### Liferay Configuration Files [](id=liferay-layout-configuration-files-liferay-portal-6-2-dev-guide-09-en)
 
-In addition to the three template-specific files, a layout template project
-has two Liferay configuration files:
+In addition to the three template-specific files, a layout template project has
+two Liferay configuration files:
 
-- `liferay-layout-templates.properties`: Specifies the name of the layout
-  templates and the location of their TPL and PNG files. 
-- `liferay-plugin-package.properties`: Describes the plugin project to
-  Liferay's hot deployer. 
+- `liferay-layout-templates.xml`: Specifies the name of the layout templates and
+  the location of their TPL and PNG files. 
+- `liferay-plugin-package.properties`: Describes the plugin project to Liferay's
+  hot deployer. 
 
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
@@ -1275,7 +1275,7 @@ templates:
 - ***Deploying in the terminal:*** From your layout template project directory,
   enter
 
-    ant deploy
+        ant deploy
 
 When deploying your plugin, the server displays messages indicating that your
 plugin was read, registered, and is now available for use. 
@@ -1301,8 +1301,8 @@ designing templates becomes fun! Let's try it:
     Editor* to see it displayed in *Visual (Experimental)* mode. 
 
 2.  Click the triangle in the upper left corner of the editor to view the
-    Palette. Drag rows, columns, and even existing templates onto your
-    canvas. 
+    Palette (if necessary). Drag rows, columns, and even existing templates onto
+    your canvas. 
 
 3.  Start designing your new layout template by dragging an *existing* layout
     template into the editor. Then modify it by adding, deleting, and adjusting
@@ -1313,35 +1313,35 @@ designing templates becomes fun! Let's try it:
     layout template whenever you need by using *Visual (Experimental)* mode in
     Developer Studio. 
 
-    ![Figure 9.12: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
+    ![Figure 9.12: You can easily adjust your layout template using *Visual* mode in Developer Studio.](../../images/layout-template-tpl-visual-almost.png)
 
-5.  To finely tune your design's dimensions, switch to *Source* view and edit
+5.  To fine tune your design's dimensions, switch to *Source* view and edit
     your TPL files as necessary. 
 
-![Figure 9.13: Source view of the template](../../images/layout-template-tpl-src-almost.png)
+For example, if you want each second-row column of the above template to be 20%
+of the page width, adjust that row's first column (`column-2`) from 25% to 20%. 
 
-For example, if you want each second-row column of the above template to be 25%
-of the page width, adjust that row's first column (`column-2`) from 20% to 25%. 
-
-Here's how the original 20% column width definition looks:
-
-    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
-        $processor.processColumn(
-            "column-2", "portlet-column-content portlet-column-content-first")
-    </div>
-
-Here's the column width definition modified to 25%:
+Here's how the original 25% column width definition looks:
 
     <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
         $processor.processColumn(
             "column-2", "portlet-column-content portlet-column-content-first")
     </div>
 
-It's hard to see, but we changed the column's class `aui-w20` value to
-`aui-w25`. 
+Here's the column width definition modified to 20%:
 
-Just like that, the rows and columns of the "Columns 1 4 1" layout template are
-arranged and sized evenly. 
+    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
+        $processor.processColumn(
+            "column-2", "portlet-column-content portlet-column-content-first")
+    </div>
+
+It's hard to see, but we changed the column's class `aui-w25` value to
+`aui-w20`. 
+
+![Figure 9.13: You can also edit your layout template using *Source* mode.](../../images/layout-template-tpl-src-almost.png)
+
+Just like that, the rows and columns of the *Columns 1 4 1* layout template are
+arranged and sized to fit your needs. 
 
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
@@ -1356,7 +1356,7 @@ locations on your pages. Users can minimize embedded portlets but can't move or
 remove them. Whether instanceable or non-instanceable, core portlets and custom
 portlets you created with the Plugins SDK can be embedded in layout templates. 
 
-Let's embed some portlets in our "Columns 1 4 1" layout template. We'll place
+Let's embed some portlets in our *Columns 1 4 1* layout template. We'll place
 the *navigation portlet* and *search portlet* in the first and last columns of
 our layout template's middle row. Additionally, we'll embed a custom portlet in
 the template's upper and lower rows. 
@@ -1376,7 +1376,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 9.14: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 9.14: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1430,11 +1430,11 @@ Here's the TPL that implements embedding of these portlets:
         </div>
     </div>
 
-What would a page using our "Columns 1 4 1" layout template look like? Check out
+What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 9.15: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
+![Figure 9.15: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
@@ -1448,7 +1448,7 @@ your convenience, we've listed all of them in the following table.
 
 | Variable | Type | Description |
 | -------- | ---- | ----------- |
- $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $processor | com.liferay.portal.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/layoutconfiguration/util/velocity/TemplateProcessor.html) |
  $request | javax.servlet.http.HttpServletRequest| |
  $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
  $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Company.html) |
