@@ -943,7 +943,7 @@ Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
 
-### Upgrade Choices: Upgrade a Bundle or Upgrade Manually
+### Upgrade Choices: Upgrade a Bundle or Upgrade Manually [](id=upgrade-choices-upgrade-a-bundle-or-upg-liferay-portal-6-2-user-guide-18-en)
 
 There are two different procedures to upgrade Liferay. The first one, upgrading
 a Liferay bundle, is the most common. The second procedure is for manually
@@ -1044,7 +1044,7 @@ That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
 
-### Post-Upgrade Tasks
+### Post-Upgrade Tasks [](id=post-upgrade-tasks-liferay-portal-6-2-user-guide-18-en)
 
 After upgrading to Liferay 6.2, you should reindex your portal's search indexes.
 Liferay 6.2 indexes new information in many places, including Documents and

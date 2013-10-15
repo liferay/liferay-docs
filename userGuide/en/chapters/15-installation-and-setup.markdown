@@ -3,14 +3,16 @@
 
 ---
 
-![Note](../../images/01-tip.png) This chapter has not yet been updated to
+![Note](../../images/01-tip.png) This chapter is still being updated 
 reflect the new features in Liferay 6.2. 
 
 ---
 
 Liferay Portal is one of the most flexible applications on the market today with
-regard to application server environments. You can install Liferay Portal on
-everything from a shared Tomcat installation to a multi-node cluster running a
+regard to application server environments. It supports a wide variety of
+application servers, freeing you to use the Java application server you think is
+best. Liferay also scales very well: you can install Liferay Portal on
+everything from a shared hosting account to a multi-node cluster running a
 commercial application server and on everything in between. In fact, Liferay is
 used successfully in all of these scenarios every day.
 
@@ -18,9 +20,10 @@ You'll find that because Liferay is extremely flexible in its deployment
 options, it is also easy to install. If you already have an application
 server, you can use the tools for deployment that came with your application
 server. If you don't have an application server, Liferay provides several
-application server bundles from which to choose. These are very easy to install
-and with a small amount of configuration can be made into production-ready
-systems.
+application server bundles from which to choose. These are pre-configured
+application servers with Liferay already installed in them. They're very easy to
+install and with a small amount of configuration can be made into
+production-ready systems.
 
 But first, you need to determine which edition of Liferay you wish to install.
 Let's look at the options you have so that you can make the right decision. 
@@ -55,130 +58,7 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-### Understanding Liferay's Releases
-
-Liferay's release process follows a prescribed structure that is consistent from
-one release to the next. Each release has a specific number sequence attached to
-it, signifying the type of release it is: major, minor or maintenance release.
-Each release also has a term attached to it to indicate its intended level of
-quality.
-
-EE subscribers have access to additional maintenance releases, along with 
-specific *Fix Packs* and *Hot Fixes* that make applying updates to production
-environments safer and faster.
-
-Let's start with an explanation of Liferay's version structure. Liferay versions
-are organized in a straightforward numerical system consisting of a three digit
-number. For example, 6.1.2. These numbers represent the type of the release:
-Major.Minor.Maintenance.
-
-#### Major Release [](id=major-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the first digit of the version (e.g., 6.x to 7.x) is a major
-release. This means that:
-
-- There are major changes in functionality or new functionality based on high
-  demand.
-
-- There are architectural changes, changes to APIs (as part of the deprecation
-  process), or changes to internal schema.
-
-#### Minor Release [](id=minor-release-liferay-portal-6-2-user-guide-15-en)
-
-A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor
-release. This means that:
-
-- There are new features and bug fixes from prior releases.
-
-- Customizations may be affected when installing.
-
-- Customers should leverage the upgrade tools and documentation.
-
-#### Maintenance Release [](id=maintenance-release-liferay-portal-6-2-user-guide-15-en)
-
-A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
-maintenance release. This means that:
-
-- Each maintenance release provides an improved level of security and reliability.
-
-- Customizations are generally safe, but we recommend doing a review.
-
-- No new features are included. 
-
-These rules are relaxed when a minor or major release is still in beta quality.
-
-Now let's delve into the evolution of versions.
-
-#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
-
-Each version of Liferay has a surname that specifies the expected quality of
-that release. This is needed because pre-releases of Liferay look very much like
-maintenance releases when viewed solely through their version numbers. The
-surname in general replaces the third digit in the version, but is visible
-through the logs and administration UIs. Here is a description of each surname
-and what it means:
-
-- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
-  more of these types within each minor or major release.  These releases are
-  meant for testing and to provide Liferay feedback through the beta testing
-  category in the forums. There will likely be major changes in milestone
-  releases, but beta releases are considered "feature complete" and should have
-  only bug fixes. 
-
-- **Release Candidates:** (6.1 RC1, 6.1 RC2) There can be zero, one, or more of
-  these right after the beta releases. These releases appear near the end of the
-  release process and are candidates for release. As such, they should have
-  minimal to no bugs, but because they are very new, some minor bugs may have
-  slipped by. 
-
-- **General Availability:** (6.1 GA1, 6.1 GA2, ....) There can be one or more of
-  these releases. A General Availability release is a re-label of the last
-  release candidate, based on internal testing and feedback from beta
-  testers. These releases are stable and are made available via Liferay's
-  Downloads page for CE and on the Customer Portal for EE. 
-
-#### Comments and Recommendations [](id=comments-and-recommendations-liferay-portal-6-2-user-guide-15-en)
-
-At this point you might be asking yourself questions like, which version
-should I use? What if I was using a previous version? Will the update to a new
-maintenance release cost a lot? Here are some comments and recommendations to
-address these questions.
-
-- When starting a new project, always use the latest stable version available;
-  that is, the latest available GA. At the time of writing, the most recent
-  version is Liferay CE 6.1 GA2 (6.1.1) or Liferay EE 6.1 GA2 (6.1.20). 
-
-- Always update to the latest maintenance release available for the functional
-  version (major or minor) that you are using. For example, if you started your
-  project with Liferay 6.1.0 GA1, it is recommended that you switch to GA2 to
-  take advantage of bug fixes and improvements. If you have a subscription, you
-  can benefit from the fixes faster by requesting fix packs and hot fixes from
-  the support team.
-
-- You are always welcome to use any preview, beta or release candidate.  In
-  fact, that's why they exist--so as many people as possible start using it and
-  provide us their feedback. Please note, we do not recommend using pre-releases
-  (milestones, betas, or release candidates) in production. You may not want to
-  use these releases even during development if you have tight deadlines, since
-  you may find road blocks.
-
-- Plugins that work in any GA or fix pack version will work in any later
-  maintenance release. That is, a plugin developed for Liferay 6.1 GA1 will also
-  work in Liferay 6 GA2 or a GA2 fix pack. 
-
-For more details on updating Liferay Portal, see [Upgrading
-Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-6)
-in chapter 17.
-
-Liferay Portal is a very flexible application that runs well on several
-different server environments. It's simple to install and comes in either a
-Community Edition or an Enterprise Edition, depending on your needs. Liferay
-follows a systematic versioning system that makes it easy to keep current with
-the latest updates. The strength of the Liferay community helps detect potential
-issues early that are then reported through the forums and are later fixed in a
-series of maintenance releases.
-
-Now let's learn about Liferay bundles.
+Now let's learn how to get a copy of Liferay Portal. 
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
@@ -217,8 +97,9 @@ First we'll go over installing Liferay from a bundle and after this we'll
 provide instructions for installing Liferay manually on all the application
 servers it supports. 
 
-## Configuring Liferay Portal Security
+## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-liferay-portal-6-2-user-guide-15-en)
 
+[To Be Written]
 <!-- This is where we should put high-level information about PACL and its
 requirement for Java security. -->
 
@@ -1547,7 +1428,7 @@ database and mail session.
 
 Liferay will now be able to communicate with your database and mail session.
 
-### PACL Configuration
+### PACL Configuration [](id=pacl-configuration-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL on GlassFish, you need to make some security configurations.
 First, enable the security manager by editing
@@ -2076,7 +1957,7 @@ insert the patch can be referenced below.
     	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
     3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
-    orginal `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
+    original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
 
 Great! You have your `.jar` files ready for your domain.
 
@@ -2116,13 +1997,13 @@ for information on setting up a Liferay cluster.
 
 For multi-server production environments, the choice of running a managed domain
 versus standalone servers comes down to whether you want to use the centralized
-management capabilites a managed domain provides. Running a standalone server is
-better suited for most development scenarios. Any indiviual server configuration
-that can be achieved in a managed domain can also be achieved in a standalone
-server. Even if the application being developed will eventually run in
-production on a managed domain installation, most development can be done using
-a standalone server. Therefore, the best practice when running Liferay on JBoss
-7.1 is to use standalone mode.
+management capabilities a managed domain provides. Running a standalone server
+is better suited for most development scenarios. Any individual server
+configuration that can be achieved in a managed domain can also be achieved in a
+standalone server. Even if the application being developed will eventually run
+in production on a managed domain installation, most development can be done
+using a standalone server. Therefore, the best practice when running Liferay on
+JBoss 7.1 is to use standalone mode.
 
 <!-- An excellent document on JBoss' 7.1 domain mode (written by Igor Spasic)
 can be found here:
@@ -2217,8 +2098,8 @@ Then add the following `JAVA_OPTS` assignment one line above the
 	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
-    directory. You'll notice we've added some java security options. We'll
-    finish configuring the java security options in the *Security Configuration*
+    directory. You'll notice we've added some Java security options. We'll
+    finish configuring the Java security options in the *Security Configuration*
     section.
 
 The prescribed script modifications are now complete for your Liferay
@@ -2386,14 +2267,14 @@ Before we deploy Liferay Portal on your JBoss app server, we'll teach you how to
 enable and configure Java security so you can begin using Liferay's plugin
 security manager with your downloaded Liferay applications.
 
-### Security Configuration
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your portal and your JBoss server from security threats. To do
 so, you can enable Java Security on your JBoss server and specify a security
 policy to grant your portal access to your server.
 
-Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` java
+Remember, we set the `-Djava.security.manager` and `-Djava.security.policy` Java
 options in the `standalone.conf.bat` file earlier in the *Configuring JBoss*
 section. The `-Djava.security.manager` Java option enables security on your
 JBoss server. Likewise, the `-Djava.security.policy` Java option lists the
@@ -2410,7 +2291,7 @@ permissions. You can tune the permissions in your policy later. Create the
 
 For extensive information on Java SE Security Architecture, see its
 specification documents at
-[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html)
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
@@ -3034,7 +2915,7 @@ It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-### Enabling PACL
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -3301,7 +3182,7 @@ To change the Tomcat ports for Liferay's use:
    adjust the ports if needed (such as changing the AJP port from `9009` to
    `8009`.
 
-To modify the OSGI defaults to ensure required java packages are bootsrapped by
+To modify the OSGI defaults to ensure required Java packages are bootsrapped by
 the loader:
 
 1. Open the file `defaults.properties` inside of `$JONAS_BASE/conf/osgi`.
@@ -3384,7 +3265,7 @@ If you still have the `mainWebApp` module installed, remove it first.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
-### Dependency Jars
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-4)
 
 Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
 the driver `.jar` file applicable for your database. We'll put them on your
@@ -3402,7 +3283,7 @@ So far so good. Your `.jar` files are in place and ready for Liferay.
 
 Let's proceed with configuring WebLogic.
 
-### Configuring WebLogic
+### Configuring WebLogic [](id=configuring-weblogic-liferay-portal-6-2-user-guide-15-en)
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
@@ -3470,7 +3351,7 @@ Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
 Next, if you want to configure your database and/or mail session within
 WebLogic, start your WebLogic server.
 
-### Database Configuration
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -3509,7 +3390,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-### Mail Configuration
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -3524,7 +3405,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-### Domain Configuration - Continued
+### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-0)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -3568,7 +3449,7 @@ Before we deploy Liferay, we'll teach you how to enable and configure Java
 Security so that you can start using Liferay's plugin security manager with
 the Liferay apps you download and install. 
 
-### Security Configuration
+### Security Configuration [](id=security-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 When you are ready to start using other people's apps from Marketplace, you'll
 want to protect your portal and your WebLogic server from security threats. To
@@ -3590,14 +3471,14 @@ add the following contents:
 For extensive information on Java SE Security Architecture see its specification
 documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
-And see section [*Understanding Plugin Security
+Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources. 
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-### Deploy Liferay
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
 This section provides instructions for deploying Liferay to your application
 server domain.
@@ -3694,7 +3575,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.48: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
+    ![Figure 15.41: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
 3. Check the box *Deploy the administrative console*. This gives you a web-based
    UI for working with your application server. Skip the default applications.
@@ -3738,7 +3619,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.x: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-02-summary.png)
+![Figure 15.42: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -3762,7 +3643,7 @@ Liferay's standard database configuration; in that case, skip this section.
 You'll set your database information in Liferay's setup wizard after the
 install. 
 
-![Figure 15.54: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 15.43: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -3803,7 +3684,7 @@ install.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![Figure 15.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 15.44: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
 	database. Click *OK* and save to master configuration.
@@ -3852,7 +3733,8 @@ Great! Now you're ready to deploy Liferay.
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked, and click *Next* again.
 
-4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy Liferay. Click *Next*.
+4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy
+   Liferay. Click *Next*.
 
 5. Map Liferay to the root context (/) and click *Next*. 
 
@@ -3862,13 +3744,13 @@ Great! Now you're ready to deploy Liferay.
 You've now installed Liferay, but don't start it yet. If you wish to use PACL,
 you have one more thing to configure. 
 
-### Enabling Security for Portal Access Control Lists
+### Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-con-liferay-portal-6-2-user-guide-15-en)
 
 In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.x: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-enable-security.png)
+    ![Figure 15.45: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
@@ -3909,7 +3791,7 @@ you're ready to start Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.56: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
+    ![Figure 15.46: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
@@ -3966,6 +3848,112 @@ You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
 you deploy it. Extract the file from the `.war` file, modify it and then put it
 back in the `.war` file. Then deploy the modified Liferay `.war` file to the
 server in the proper context.
+
+Now that you have Liferay installed in the context you wish, you'll want to
+understand Liferay's releases and the process for keeping your installation up
+to date. We'll spend a brief amount of time on that next. 
+
+### Understanding Liferay's Releases [](id=understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
+
+Which version of Liferay should you install? That's an easy question to answer:
+if this is a new installation, we recommend you install the latest version
+available. If you want to understand how Liferay releases work, read on.
+Otherwise, you can skip this section for now and read it later. 
+
+Liferay's release process follows a prescribed structure that is consistent from
+one release to the next. Each release has a specific number sequence attached to
+it, signifying the type of release it is: major, minor or maintenance release.
+Each release also has a term attached to it to indicate its intended level of
+quality.
+
+EE subscribers have access to additional maintenance releases, along with 
+specific *Fix Packs* and *Hot Fixes* that make applying updates to production
+environments safer and faster.
+
+Let's start with an explanation of Liferay's version structure. Liferay versions
+are organized in a straightforward numerical system consisting of a three digit
+number. For example, 6.1.2. These numbers represent the type of the release:
+Major.Minor.Maintenance.
+
+A change in the first or second digit of the version (e.g., 6.x to 7.x or 6.1 to
+6.2) is a major or minor release. This means that there are changes in
+functionality or new functionality based on high demand. There are new features
+and bug fixes from prior releases. There are also architectural changes, changes
+to APIs (as part of the deprecation process), or changes to internal schema for
+frameworks such as Service Builder, because new features have been added.
+Customizations may be affected when installing. Customers should leverage the
+upgrade tools and documentation.
+
+A change in the third digit of the version scheme (e.g, 6.2.1 to 6.2.2) is a
+maintenance release. This means that each maintenance release provides an
+improved level of security and reliability. Customizations are generally safe,
+but we recommend doing a review. No new features are included. 
+
+These rules are relaxed when a minor or major release is still in beta quality.
+
+Now let's delve into the evolution of versions.
+
+#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
+
+Each release of Liferay has a surname that specifies its expected quality.  This
+is needed because pre-releases of Liferay look very much like maintenance
+releases when viewed solely through their version numbers. The surname in
+general replaces the third digit in the version, but is visible through the logs
+and administration UIs. Here is a description of each surname and what it means:
+
+- **Milestone** and **Beta:** (6.2 M1, 6.2 B1, 6.2 B2, ...) There can be zero or
+  more of these types within each minor or major release.  These releases are
+  meant for testing and to provide Liferay feedback through the beta testing
+  category in the forums. There will likely be major changes in milestone
+  releases, but beta releases are considered "feature complete" and should have
+  only bug fixes. 
+
+- **Release Candidates:** (6.2 RC1, 6.2 RC2) There can be zero, one, or more of
+  these right after the beta releases. These releases appear near the end of the
+  release process and are candidates for release. As such, they should have
+  minimal to no bugs, but because they are very new, some minor bugs may have
+  slipped by. 
+
+- **General Availability:** (6.2 GA1, 6.2 GA2, ....) There can be one or more of
+  these releases. A General Availability release is a re-label of the last
+  release candidate, based on internal testing and feedback from beta
+  testers. These releases are stable and are made available via Liferay's
+  Downloads page for CE and on the Customer Portal for EE. 
+
+Armed with this information, here's our advice for how to manage your Liferay
+installation. 
+
+- When starting a new project, always use the latest stable version available;
+  that is, the latest available GA. At the time of writing, the most recent
+  version is Liferay CE 6.2 GA1 (6.2.0) or Liferay EE 6.1 GA2 (6.2.00). 
+
+- Always update to the latest maintenance release available for the functional
+  version (major or minor) that you are using. For example, if you started your
+  project with Liferay 6.2.0 GA1, it is recommended that you switch to GA2
+  if/when it becomes available to take advantage of bug fixes and improvements. If
+  you have a subscription, you can benefit from the fixes faster by requesting
+  fix packs and hot fixes from the support team.
+
+- You are always welcome to use any preview, beta or release candidate. In
+  fact, that's why they exist--so as many people as possible start using it and
+  provide us their feedback. Please note, we do not recommend using pre-releases
+  (milestones, betas, or release candidates) in production. You may not want to
+  use these releases even during development if you have tight deadlines, since
+  you may hit some unexpected bugs. 
+
+- Plugins that work in any GA or fix pack version will work in any later
+  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will also
+  work in Liferay 6.2 GA2 or a GA2 fix pack. 
+
+For more details on updating Liferay Portal, see Upgrading Liferay in chapter
+17.
+
+Liferay Portal is a very flexible application that runs well on several
+different server environments. It's simple to install and follows a systematic
+versioning system that makes it easy to keep current with the latest updates.
+The strength of the Liferay community helps detect potential issues early that
+are then reported through the forums and are later fixed in a series of
+maintenance releases.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-15-en)
 
