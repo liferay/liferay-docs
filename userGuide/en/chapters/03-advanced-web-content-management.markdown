@@ -1155,30 +1155,41 @@ environment and the current site becomes the staging environment. The remote
 (live) Liferay server and the local (staging) Liferay server should be
 completely separate systems. They should not, for example, share the same the
 database. When Remote Live staging is enabled, all the necessary information is
-transferred over the network connecting the two servers. Before a site
-administrator can enable Remote Live staging for a site, the remote Liferay
-server must first be added to the current Liferay server's list of allowed
-servers. The current Liferay server must also be added to the remote Liferay
-server's list of allowed servers. You can make these configurations in your
-Liferay servers' `portal-ext.properties` files. Your first step should be to add
-the following lines to your current Liferay server's `portal-ext.properties`
-file:
+transferred over the network connecting the two servers.
+
+Before a site administrator can enable Remote Live staging for a site, the
+remote Liferay server must be added to the current Liferay server's list of
+allowed servers. The current Liferay server must also be added to the remote
+Liferay server's list of allowed servers. You also need to specify an
+authentication key to be shared by your current and your remote server and
+enable each Liferay server's tunneling servlet authentication verifier. You can
+make all of these configurations in your Liferay servers'
+`portal-ext.properties` files.  Your first step should be to add the following
+lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
+    tunneling.servlet.shared.secret=[secret]
+    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
 
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
+    tunneling.servlet.shared.secret=[secret]
+    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
 
-Remember to restart both Liferay servers after making these portal properties
-updates. After restarting, log back in to your local Liferay portal instance as
-a site administrator. Then navigate to the *Site Administration* &rarr;
-*Configuration* page for your site. Then click on *Site Settings* in the left
-menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
-under Staging Type and additional options appear.
+Using a pre-shared key between your staging and production environments helps
+secure the remote publication process. You can specify any value for the
+`tunneling.servlet.shared.secret` property; the value for your current server
+just has to match the value of your remote server. Remember to restart both
+Liferay servers after making these portal properties updates. After restarting,
+log back in to your local Liferay portal instance as a site administrator. Then
+navigate to the *Site Administration* &rarr; *Configuration* page for your site.
+Then click on *Site Settings* in the left menu and then on *Staging* listed
+under the Advanced tab. Select *Remote Live* under Staging Type and additional
+options appear.
 
 ![Figure 3.19: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
