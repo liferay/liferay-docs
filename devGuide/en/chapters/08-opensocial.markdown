@@ -67,6 +67,10 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 		</Content>
 	</Module>
 
+<!-- The above code for the map gadget cannot be viewed on a Liferay page. It
+needs to be updated to reference Google's v3 API. It is currently using v2 API.
+A ticket has been created to follow progress: LRDOCS-811 -->
+
 For more details on the map gadget, visit Google's [Specifying a
 Geographical
 Location](https://developers.google.com/gadgets/docs/fundamentals#location)
@@ -243,6 +247,9 @@ Gadgets](https://developers.google.com/gadgets/docs/oauth) reference.
 Let's now shift our focus to gadget/portlet communication with PubSub.
 
 ## Gadget/Portlet Communication with PubSub [](id=gadget-portlet-communication-with-pubsub-liferay-portal-6-2-dev-guide-08-en)
+
+<!-- Google has deprecated gadget PubSub:
+https://developers.google.com/gadgets/docs/pubsub -->
 
 Have you ever wanted your gadgets to communicate with each other or with
 portlets? You can do so with *PubSub*. It is a messaging pattern in which
@@ -697,7 +704,7 @@ default address is now blank.
    Gadget* screen opens up, showing your gadget's URL and categories to select
    for your gadget.
 
-    ![Figure 8.14: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
+    ![Figure 8.11: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
 
 9.  Choose a category and click *Save*.
 
