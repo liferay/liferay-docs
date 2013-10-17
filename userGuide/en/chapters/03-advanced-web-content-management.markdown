@@ -336,9 +336,9 @@ created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (FTL, VM, XSL, and CSS) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
+#### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
 
-Liferay supports templates written in four different templating languages, to
+Liferay supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
 chances you can jump right in and use whichever one you've already used before.
 If you haven't yet been exposed to any of them, your best bet is FreeMarker or
@@ -360,14 +360,6 @@ transform the underlying XML of a structure into markup suitable for the
 browser. While it may not be as clean and compact as Velocity or FTL, it's
 widely used for transforming XML into other formats and it's very likely your
 developers have already been exposed to it.
-
-**CSS** (Cascading Style Sheets): You can use CSS if your structure is very
-straightforward and modifications are simple (colors, fonts, layouts, etc.). If
-your structure is more complex, however, you'll need to use one of the other
-options.
-
-<!-- CSS was not available during testing of 6.2 feature. Notified Juan
-Fernandez of missing template language. Bug filed for fix: LPS-37934 -->
 
 #### Adding Templates [](id=adding-templates-liferay-portal-6-2-user-guide-03-en)
 
