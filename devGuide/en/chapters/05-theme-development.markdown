@@ -10,12 +10,12 @@ follow the same philosophy as Liferay configuration: they are modifications, or
 differences from the default. Because of this, every line of markup and every
 style has a default value that your theme can fall back on if you have chosen
 not to customize it. In other words, your theme inherits the styling, images,
-and templates from any of the built in themes. This saves you time and keeps
+and templates from any of the built-in themes. This saves you time and keeps
 your themes smaller and less cluttered, because your theme contains only its own
 resources, using defaults for the rest, like emoticon graphics for the message
 boards portlet. 
 
-In this chapter you'll learn all about Liferay themes:
+In this chapter, you'll learn all about Liferay themes:
 
 - Creating a Theme
 - Anatomy of a Theme
@@ -55,7 +55,7 @@ Studio first, and then with the terminal.
 
 ***Using Developer Studio:*** 
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
 
 2.  Fill in *deep-blue* for the Project name and *Deep Blue* for the Display
     name. 
@@ -563,7 +563,7 @@ used in your sites.
 ### Bullet Styles [](id=liferay-portal-6-1-configure-bullet-styles-with-theme)
 
 Liferay's Navigation portlet can be configured to use any bullet styles
-inherited by your theme or implementated in your theme. For example, if your
+inherited by your theme or implemented in your theme. For example, if your
 theme uses Liferay's *classic* theme as its base parent, you can leverage its
 *arrows* bullet style. Here is the arrow bullet style's class from the
 *classic* theme's `_diffs/css/custom.css` file:
@@ -1034,7 +1034,7 @@ resources:
     with the layout templates, portlets, and portlet preferences of these pages.
 
 4.  Create an `assets.json` file in your `resources-importer/` folder.  In this
-    file, specify details of your resources assets.
+    file, specify details of your resource assets.
 
 5.  In your `liferay-plugin-package.properties` file, include
     `resources-importer-web` in your `required-deployment-contexts` property's
