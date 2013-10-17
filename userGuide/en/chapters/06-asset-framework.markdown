@@ -1092,6 +1092,17 @@ its configuration window. Then check the *Set as the Default Asset Publisher for
 This Page* box. Also, for its display settings, set the Display Style to
 *Abstracts* and the Asset Link Behavior to *View in Context*.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** Web content linked in the Asset
+ Publisher can be viewed by clicking its asset link. With the *View in Context*
+ behavior checked, the link will display the Web Content in its configured
+ display page. If the web content does not have a configured display page, it
+ will be displayed in the web content display portlet to which the asset
+ belongs.
+
+---
+
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole
 bunch of content on the same page?" That's right. Just watch--create a display
