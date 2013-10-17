@@ -658,6 +658,20 @@ application servers in alphabetical order.
 
 ## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
+1. Get Tomcat? And do the Tomcat stuff (create lib/ext, set Tomcat as app
+server in build.properties)
+
+2. Download Liferay stuff (Tcat Admin, Tcat Agent, Tcat Profile?)
+
+3. 
+
+### Installing the Administration Console on Windows [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
+### Adding Liferay Portal packages [](id=adding-liferay-portal-packages-liferay-portal-6-2-user-guide-15-en)
+### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
+### Registering the managed server [](id=registering-the-managed-server-liferay-portal-6-2-user-guide-15-en)
+### Deploying Liferay Portal [](id=deploying-liferay-portal-liferay-portal-6-2-user-guide-15-en)
+### Deploying Liferay plugins on Mule Tcat [](id=deploying-liferay-plugins-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
+
 If you don't already have an existing Mulesoft Tcat server, we recommend you
 download a Liferay/Tomcat bundle from
 [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
@@ -1196,7 +1210,7 @@ during the installation process.
 
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
-<!--I see nothing in here although I chose not to add symbolic links and did the standard installation -->
+
 ### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
 
 The steps to install the Tcat Server managed server are quite similar to those
