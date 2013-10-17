@@ -1180,14 +1180,18 @@ Then add the following lines to your remote Liferay server's
     tunneling.servlet.shared.secret=[secret]
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
 
-Using a pre-shared key between your staging and production environments helps
-secure the remote publication process. You can specify any value for the
+Liferay's use of a pre-shared key between your staging and production
+environments helps secure the remote publication process. It also removes the
+need to send the publishing user's password to the remote server for web service
+authentication. Using a pre-shared key allows Liferay to create an authorization
+context (permission checker) from the provided email address, screen name, or
+user ID *without* the user's password. You can specify any value for the
 `tunneling.servlet.shared.secret` property; the value for your current server
 just has to match the value of your remote server. Remember to restart both
 Liferay servers after making these portal properties updates. After restarting,
 log back in to your local Liferay portal instance as a site administrator. Then
 navigate to the *Site Administration* &rarr; *Configuration* page for your site.
-Then click on *Site Settings* in the left menu and then on *Staging* listed
+Next, click on *Site Settings* in the left menu and then on *Staging* listed
 under the Advanced tab. Select *Remote Live* under Staging Type and additional
 options appear.
 
@@ -1206,40 +1210,45 @@ the remote Liferay server and create a new blank site. After the site has been
 created, note the site ID so you can enter it into the Remote Site ID field on
 your local Liferay server. You can find any site's ID by selecting *Actions
 &rarr; Edit* next to the site's name on the Sites page of the Control Panel.
-Finally, check the *Use a Secure Network Connection* field to secure the
-publication of pages from your local (staging) Liferay server to your remote
-(live) Liferay server.
+Finally, it's best to check the *Use a Secure Network Connection* field to use
+HTTPS for the publication of pages from your local (staging) Liferay server to
+your remote (live) Liferay server.
 
 ---
 
-![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
-enabled for a site as early as possible. It's generally *not* a good idea to add
-gigabytes of data into Liferay's CMS and then decide to turn on remote staging.
-There's an existing issue that limits Liferay to less than 2G of data for
-publishing data to a remote staging server:
-[http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
-You can check this issue to see if it's been resolved and to find out which
-versions of Liferay it affects.
+ ![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
+ enabled for a site as early as possible. It's generally *not* a good idea to
+ add gigabytes of data into Liferay's CMS and then decide to turn on remote
+ staging.  There's an existing issue that limits Liferay to less than 2G of data
+ for publishing data to a remote staging server:
+ [http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
+ You can check this issue to see if it's been resolved and to find out which
+ versions of Liferay it affects.
 
 ---
 
-That's all you need to do to enable Remote Live Staging! However, when a user
-attempts to publish changes from the local (staging) server to the remote (live)
-server, Liferay passes the user's credentials to the remote server to perform a
+That's all you need to do to enable Remote Live Staging! Note that if you fail
+to set the tunneling servlet shared secret or the values of these properties on
+your current and remote servers don't match, you won't be able to enable staging
+and an error message appears. When a user attempts to publish changes from the
+local (staging) server to the remote (live) server, Liferay passes the user's
+email address, screen name, or user ID to the remote server to perform a
 permission check. In order for a publishing operation to succeed, the operation
 must be performed by a user that has identical credentials and permissions on
 both the local (staging) and the remote (live) server. This is true regardless
 of whether the user attempts to publish the changes immediately or attempts to
-schedule the publication for later. If only a few users should have permission
-to publish changes from staging to production, it's easy enough to create a few
-user accounts on the remote server that match a selected few on the local
-server. However, the more user accounts that you have to create, the more
-tedious this job becomes and the more likely you are to make a mistake. And you
-not only have to create identical user accounts, you also have to ensure that
-these users have identical permissions. For this reason, we recommend that you
-use LDAP to copy selected user accounts from your local (staging) Liferay server
-to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
-(EE-only), available on Liferay Marketplace, makes this easy.
+schedule the publication for later.
+
+If only a few users should have permission to publish changes from staging to
+production, it's easy enough to create a few user accounts on the remote server
+that match a selected few on the local server. However, the more user accounts
+that you have to create, the more tedious this job becomes and the more likely
+you are to make a mistake. And you not only have to create identical user
+accounts, you also have to ensure that these users have identical permissions.
+For this reason, we recommend that you use LDAP to copy selected user accounts
+from your local (staging) Liferay server to your remote (live) Liferay server.
+Liferay's Virtual LDAP Server application (EE-only), available on Liferay
+Marketplace, makes this easy.
 
 ### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
