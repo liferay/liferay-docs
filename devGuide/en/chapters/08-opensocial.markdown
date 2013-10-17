@@ -348,6 +348,13 @@ the GoogleMapsViewer.xml gadget (Google Map) on a Liferay page. The gadget's
 code needs to be updated to use Google's v3 API (instead of v2). Progress for
 this task can be followed in LRDOCS-812. -->
 
+---
+
+![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
+to reflect the new features in Liferay 6.2.
+
+---
+
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub. These two gadgets are able to communicate with one
 another and provide tools that the user could not otherwise produce. We will
@@ -383,10 +390,20 @@ below:
 
 Congratulations! Your gadgets are communicating well with each other. This
 simple example demonstrates two gadgets communicating with each other using
-PubSub. We will now dive into the source code and analyze how this interaction
-is accomplished.
+PubSub.
 
-First, we'll look at the contents of the *Google Maps* XML file
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** Gadget-to-gadget communication
+using the publish-subscribe framework has been deprecated for Google gadgets:
+[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+However, PubSub is still the primary communication for gadgets and will be
+supported with gadgets on Liferay.
+
+---
+
+We will now dive into the source code and analyze how this interaction is
+accomplished. First, we'll look at the contents of the *Google Maps* XML file
 *GoogleMapsPublisher.xml*:
 
 	<?xml version="1.0" encoding="UTF-8" ?> 
@@ -576,10 +593,27 @@ and gadgets.
 
 ### Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets-liferay-portal-6-2-dev-guide-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
+to reflect the new features in Liferay 6.2.
+
+---
+
 For this section, we will continue implementing the *Google Map* gadget on your
 site. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
 for a user to allow communications between those gadgets and your portlets.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** The publish-subscribe
+framework has been deprecated for Google gadgets:
+[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+However, PubSub is still a primary communication mechanism between portlets and
+gadgets and will be supported on Liferay.
+
+---
 
 As a demonstration, we will send messages from a *Directory* portlet to the
 *Google Map* gadget. For each user listed in the *Directory* portlet, we will
