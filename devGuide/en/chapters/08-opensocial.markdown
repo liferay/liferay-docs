@@ -1,16 +1,9 @@
 
 # Creating and Integrating with OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 OpenSocial is a public specification for creating web applications using
-standard technologies like HTML, CSS, and Javascript. It was originally
-developed by Google, Myspace and others to standardize common social networking
+standard technologies like HTML, CSS, and JavaScript. It was originally
+developed by Google, Myspace, and others to standardize common social networking
 API's but has evolved into a general platform for building web applications.
 Whereas "standard" applications work with data on a per-user basis, "social"
 applications share data within well defined networks, facilitating communication
@@ -73,6 +66,10 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 		]]> 
 		</Content>
 	</Module>
+
+<!-- The above code for the map gadget cannot be viewed on a Liferay page. It
+needs to be updated to reference Google's v3 API. It is currently using v2 API.
+A ticket has been created to follow progress: LRDOCS-811 -->
 
 For more details on the map gadget, visit Google's [Specifying a
 Geographical
@@ -241,7 +238,7 @@ gadget's access to their resources on the external web applications. It's just
 that easy!
 
 Read the [Gadget
-personalization](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/opensocial-integration)
+personalization](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/exporting-portal-applications-as-widget-liferay-portal-6-2-user-guide-09-en)
 section of the *Social Networking* chapter in *Using Liferay Portal 6.2* for
 instructions on configuring and using OAuth enabled gadgets. To learn how to
 write OAuth enabled gadgets, see Google's [Writing OAuth
@@ -250,6 +247,9 @@ Gadgets](https://developers.google.com/gadgets/docs/oauth) reference.
 Let's now shift our focus to gadget/portlet communication with PubSub.
 
 ## Gadget/Portlet Communication with PubSub [](id=gadget-portlet-communication-with-pubsub-liferay-portal-6-2-dev-guide-08-en)
+
+<!-- Google has deprecated gadget PubSub:
+https://developers.google.com/gadgets/docs/pubsub -->
 
 Have you ever wanted your gadgets to communicate with each other or with
 portlets? You can do so with *PubSub*. It is a messaging pattern in which
@@ -294,37 +294,37 @@ fundamental example, we'll import two simple gadgets and send messages from one
 to the other. One acts as a publisher and the other as a subscriber. Follow the
 steps below:
 
-1.  Navigate to the Control Panel and select *OpenSocial Gadget Publisher* from
-    under the *Portal* heading.
+1. Navigate to the Control Panel and select *OpenSocial Gadget Publisher* from
+   under the *Apps* heading.
 
-2.  Select *Publish Gadget* and, for each gadget, enter the URL and click
-    *Save*. 
+2. Select *Publish Gadget* and, for each gadget, enter the URL and click
+   *Save*. 
 
     *Sample PubSub Publisher URL*:
-    `http://svn.apache.org/repos/asf/shindig/trunk/content/container/sample-pubsub-2-publisher.xml`
+    `http://svn.apache.org/repos/asf/shindig/trunk/content/gadgets/sample-pubsub-2-publisher.xml`
 
     *Sample PubSub Subscriber URL*:
-    `http://svn.apache.org/repos/asf/shindig/trunk/content/container/sample-pubsub-2-subscriber.xml`
+    `http://svn.apache.org/repos/asf/shindig/trunk/content/gadgets/sample-pubsub-2-subscriber.xml`
 	
-3.  Go back to a page on your site, navigate to *Add* &rarr; *More...*, and add
-    your new gadgets to the page
+3. Go back to a page on your site, navigate to *Add* &rarr; *Applications*, and
+   add your new gadgets to the page
 
-4.  Click *Publish a random number* on the PubSub Publisher gadget.  Notice that
-    it publishes a number; but the PubSub Subscriber gadget does not receive the
-    number.
+4. Click *Publish a random number* on the PubSub Publisher gadget.  Notice that
+   it publishes a number; but the PubSub Subscriber gadget does not receive the
+   number.
 
     ![Figure 8.3: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/opensocial-23.png)
 
-5.  Select *Subscribe* on the subscriber gadget.
+5. Select *Subscribe* on the subscriber gadget.
 
-6.  Click *Publish a random number* again from the publisher gadget. You now see
-    the random number received by the subscriber.
+6. Click *Publish a random number* again from the publisher gadget. You now see
+   the random number received by the subscriber.
 
     ![Figure 8.4: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/opensocial-24.png)
 
-7.  Select *Unsubscribe* on the subscriber gadget.
+7. Select *Unsubscribe* on the subscriber gadget.
 
-8.  Click *Publish a random number*.
+8. Click *Publish a random number*.
 
 As you would expect, the subscriber portlet no longer receives the random
 number.
@@ -343,6 +343,18 @@ demonstrating gadget to gadget interaction and portlet to gadget interaction.
 
 ### Gadget to Gadget [](id=opensocial-gadget-to-gadget-liferay-portal-6-2-dev-guide-en)
 
+<!-- The next two sections cannot be updated due to errors received when placing
+the GoogleMapsViewer.xml gadget (Google Map) on a Liferay page. The gadget's
+code needs to be updated to use Google's v3 API (instead of v2). Progress for
+this task can be followed in LRDOCS-812. -->
+
+---
+
+![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
+to reflect the new features in Liferay 6.2.
+
+---
+
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub. These two gadgets are able to communicate with one
 another and provide tools that the user could not otherwise produce. We will
@@ -353,39 +365,45 @@ address. The second gadget represents the subscriber who receives the address,
 displays the address, and locates the address on Google Maps. Follow the steps
 below:
 
-1.  Publish the *Google Address* and *Google Map* gadgets, as we had done
-    previously with other gadgets. The URLs are given below:
+1. Publish the *Google Address* and *Google Map* gadgets, as we had done
+   previously with other gadgets. The URLs are given below:
 
     *Google Address URL*:
-    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsPublisher.xml`
+    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml`
 
     *Google Map URL*:
-    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsViewer.xml`
+    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml`
 
-2.  Add both gadgets to a page.
+2. Add both gadgets to a page.
 
-    ![Figure 8.5: Gadgets are easy to publish and some gadgets, like Google's
-    *Address* and *Map* gadgets, are automatically synced to communicate with
-    each other.](../../images/opensocial-25.png)
+    ![Figure 8.5: Gadgets are easy to publish and some gadgets, like Google's *Address* and *Map* gadgets, are automatically synced to communicate with each other.](../../images/opensocial-25.png)
 
     Note: The address bar is already filled with an address. This default
     address is specified in the *Google Address* gadget's source code. We will
     edit this setting using Liferay's gadget editor later in the chapter.
 
-3.  Input an address into the *Address* bar and then click *Update*. You should
-    now be able to see that address location displayed in the *Google Map*
-    gadget.
+3. Input an address into the *Address* bar and then click *Update*. You should
+   now be able to see that address location displayed in the *Google Map*
+   gadget.
 
-    ![Figure 8.6: After inputting a custom address in the *Google Address*
-    gadget, you are able to see its physical location in the *Google Map*
-    gadget.](../../images/opensocial-26.png)
+    ![Figure 8.6: After inputting a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/opensocial-26.png)
 
 Congratulations! Your gadgets are communicating well with each other. This
 simple example demonstrates two gadgets communicating with each other using
-PubSub. We will now dive into the source code and analyze how this interaction
-is accomplished.
+PubSub.
 
-First, we'll look at the contents of the *Google Maps* XML file
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** Gadget-to-gadget communication
+using the publish-subscribe framework has been deprecated for Google gadgets:
+[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+However, PubSub is still the primary communication for gadgets and will be
+supported with gadgets on Liferay.
+
+---
+
+We will now dive into the source code and analyze how this interaction is
+accomplished. First, we'll look at the contents of the *Google Maps* XML file
 *GoogleMapsPublisher.xml*:
 
 	<?xml version="1.0" encoding="UTF-8" ?> 
@@ -575,10 +593,27 @@ and gadgets.
 
 ### Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets-liferay-portal-6-2-dev-guide-en)
 
+---
+
+![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
+to reflect the new features in Liferay 6.2.
+
+---
+
 For this section, we will continue implementing the *Google Map* gadget on your
 site. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
 for a user to allow communications between those gadgets and your portlets.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** The publish-subscribe
+framework has been deprecated for Google gadgets:
+[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+However, PubSub is still a primary communication mechanism between portlets and
+gadgets and will be supported on Liferay.
+
+---
 
 As a demonstration, we will send messages from a *Directory* portlet to the
 *Google Map* gadget. For each user listed in the *Directory* portlet, we will
@@ -642,16 +677,16 @@ time. You can also organize and manage gadgets easily using the editor's file
 manager. All of this gives you the convenience of creating and improving your
 gadgets right from within Liferay Portal.
 
-Within the editor, each gadget's XML file has a wrench icon allowing you to
-close, rename, delete, or publish the gadget, or to simply show the gadget's
-URL. The *Publish* button directs you to a screen, similar to the *OpenSocial
-Gadget Publisher*, allowing you to publish your gadget. Gadgets published
-through the editor are stored in the site's Document and Media Library. The
-*Show URL* button gives you the URL so that the gadget may be shared with other
-sites. These options offer a user-friendly and easy to use testing station for
-enhancing the gadgets on your sites.
+Within the editor, each gadget's XML file has a drop-down menu allowing you to
+close, rename, delete, publish, or unpublish the gadget, or to simply show the
+gadget's URL. The *Publish* button directs you to a screen, similar to the
+*OpenSocial Gadget Publisher*, allowing you to publish your gadget. Gadgets
+published through the editor are stored in the site's Document and Media
+Library. The *Show URL* button gives you the URL so that the gadget may be
+shared with other sites. These options offer a user-friendly and easy to use
+testing station for enhancing the gadgets on your sites.
 
-![Figure 8.8: The wrench icon can be easily found to the right of your XML file.](../../images/opensocial-39.png)
+![Figure 8.8: The drop-down menu can be easily found to the right of your XML file.](../../images/opensocial-39.png)
 
 **Note:** When you publish a new gadget,
 remember that your Liferay Portal installation is the new host when specifying
@@ -665,29 +700,29 @@ the XML file and specify a customized address or remove the default address
 entirely from the gadget's UI. For our example, we will remove the default
 address entirely from our gadget's text window.
 
-1.  Copy the gadget XML contents into the gadget editor. Navigate to *OpenSocial
-    Gadget Publisher* from under the *Portal* heading and select the URL for
-    *Google Address*.
+1. Copy the gadget XML contents into the gadget editor. Navigate to *OpenSocial
+   Gadget Publisher* from under the *Apps* heading and select the URL for
+   *Google Address*.
 
-2.  Copy the XML content onto your clipboard.
+2. Copy the XML content onto your clipboard.
 
-3.  Navigate to the *OpenSocial Gadget Editor* from the Control Panel and paste
-    your clipboard contents into the gadget editor.
+3. Navigate to the *OpenSocial Gadget Editor* from the *Site Administration*
+   &rarr; *Content* tab and paste your clipboard contents into the gadget editor.
 
-4.  Click the floppy disk button to save your new gadget XML, naming your gadget
-    *GoogleMapsPublisher.xml*. Press the green check button to save the file.
+4. Click the floppy disk button to save your new gadget XML, naming your gadget
+   *GoogleMapsPublisher.xml*. Press the check button to save the file.
 
     ![Figure 8.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/opensocial-31.png)
 
     **Note:** Liferay will not allow you to publish your new gadget without
     attaching `.xml` to the end of your file name. 
 
-5.  Select the *Preview* tab from the toolbar and a preview of your gadget
-    appears.
+5. Select the *Preview* tab from the toolbar and a preview of your gadget
+   appears.
 
     ![Figure 8.10: The *Preview* tab displays what your gadget would look like if it was added to a Liferay page.](../../images/opensocial-32.png)
 
-6.  Locate the following element in the gadget XML:
+6. Close the Preview window and locate the following element in the gadget XML:
 
         <input type="text" id="address" name="address" size="40" value="1400
         Montefino Avenue, Diamond Bar, CA 91765">
@@ -695,23 +730,15 @@ address entirely from our gadget's text window.
     Then, remove the `value="1400 Montefino Avenue, Diamond Bar, CA 91765"`
     setting and save the file.
 
-7.  Select the editor's *Preview* mode and click the refresh button.
+7. Select the editor's *Preview* mode again. As you would expect, the gadget's
+default address is now blank.
 
-    ![Figure 8.11: The refresh button is easy to find in the upper right corner of the editor's *Preview* pane.](../../images/opensocial-34.png)
+8. Publish your gadget for portal-wide use by selecting the drop-down menu next
+   to the *GoogleMapsPublisher.xml* file and clicking *Publish*. A *Publish
+   Gadget* screen opens up, showing your gadget's URL and categories to select
+   for your gadget.
 
-    As you would expect, the gadget's default address is now blank.
-
-    ![Figure 8.12: Your updated gadget now has a blank text window, thanks to the editing you've done in Liferay's gadget editor.](../../images/opensocial-33.png)
-
-8.  Publish your gadget for portal-wide use by selecting the wrench icon next to
-    the *GoogleMapsPublisher.xml* file and clicking *Publish*.
-
-    ![Figure 8.13: You can publish your OpenSocial gadgets directly from Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
-
-    A *Publish Gadget* screen opens up, showing your gadget's URL and categories
-    to select for your gadget.
-
-    ![Figure 8.14: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
+    ![Figure 8.11: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
 
 9.  Choose a category and click *Save*.
 
