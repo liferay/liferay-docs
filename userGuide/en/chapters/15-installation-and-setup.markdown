@@ -25,83 +25,125 @@ application servers with Liferay already installed in them. They're very easy to
 install and with a small amount of configuration can be made into
 production-ready systems.
 
-But first, you need to determine which edition of Liferay you wish to install.
-Let's look at the options you have so that you can make the right decision. 
+The installation steps vary slightly according to your Liferay edition, so we'll
+be sure to let you know when they are different. 
 
 ## Editions of Liferay [](id=editions-of-liferay-liferay-portal-6-2-user-guide-15-en)
 
-Liferay ships in two different editions: Liferay Portal Community Edition (CE)
-and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that
-has been available for years: frequently updated and bursting with the latest
-features, the Community Edition of Liferay Portal is offered for free under the
-Lesser GNU public license, an open source license. This license gives you the
-flexibility to link Liferay with your own code in your portlet, theme, hook,
-layout, Ext or web plugins, no matter what license you use for your code. If,
-however, you modify Liferay directly, those modifications need to be released as
-open source. This is really the best of both worlds: you have the freedom to do
-what you want with your code if you use plugins, but if you modify Liferay
-directly, the community receives the benefits of any enhancements that you've
-made. 
+Liferay ships in two editions: one for the community and one for enterprise
+subscribers. The community edition is the same Liferay Portal that has been
+available for years: frequently updated and bursting with the latest features,
+the Community Edition of Liferay Portal is offered for free under the Lesser GNU
+public license, a free software license with one important exception. This
+license gives you the flexibility to link Liferay with your own code in your
+portlet, theme, hook, layout, Ext or web plugins, no matter what license you use
+for your code. If, however, you modify Liferay directly, those modifications
+need to be released as free software under the terms of the license. The best
+way, of course, to do this is to contribute it back to the Liferay community.
+This is really the best of both worlds: you have the freedom use any license (or
+no license) if you use plugins, but if you modify Liferay directly, the
+community receives the benefits of any enhancements that you've made. 
 
-Liferay Portal EE is a supported version of Liferay Portal for the enterprise.
-Hardened for security and designed to be rock solid stable, EE is offered with a
-subscription and support package, allowing organizations to build their portals
-on a stable version of the product that is offered over an extended period of
-time.
+Liferay for enterprise subscribers is a supported version of Liferay Portal for
+the enterprise. The subscription and support package allows organizations to
+build their portals on a stable version of the product that is offered over an
+extended period of time. It's the best wayfor you to develop, deploy, and
+maintain your Liferay solution. It includes 
 
-Because the release cycle for EE is longer than that for CE, each enterprise
-release is supported for four years. All bug fixes in Liferay Portal are
-backported to your version of Liferay for the duration of your subscription.
-This gives organizations the peace of mind that comes from knowing that their
-Liferay-powered web sites are stable and will run for years to come, enabling
-them to build their sites on a proven, stable platform. Additionally, Liferay
-offers training and consulting on the Enterprise Edition to ensure long-term
-support and stability for our clients. 
+- Liferay support
+- Updates
+- Fix Packs
+- Cloud Services
+- Liferay Portal Enterprise Edition 
 
 Now let's learn how to get a copy of Liferay Portal. 
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal-liferay-portal-6-2-user-guide-15-en)
 
-The CE version of Liferay is freely downloadable from our web site at
+The Liferay community can download Liferay Portal from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at
-the top of the page and you are presented with multiple options for getting a
-copy of Liferay, including our convenient bundles or a `.war` package for
-installation on your application server of choice.
+the top of the page, and you'll see multiple options for getting a copy of
+Liferay, including our convenient bundles or a `.war` package for installation
+on your application server of choice.
 
-The EE version of Liferay is provided to you as a result of your support
-subscription. Everything you need is provided in the Customer Portal, including
-download links that allow you to obtain a copy of a Liferay bundle or a `.war`
-package for installation on your application server of choice.
+Liferay enterprise subscribers can download Liferay from the Customer Portal.
+You have a choice of the same open source app server bundles as community
+members, plus a few commercial alternatives, in addition to the `.war` package
+for manual installation. 
 
-So what is a bundle anyway? A bundle is an open source application server with
-Liferay preinstalled. This is the most convenient way to install Liferay.
-Liferay is bundled with a number of open source application servers; all you
-need to do is choose the one that best fits your needs. If you don't currently
-have an application server, you may want to start with the Tomcat bundle, as
-Tomcat is one of the smallest and most straightforward bundles to configure. If
-you have an open source application server preference, choose the server you
-prefer from the available Liferay Portal bundles. All of the bundles ship with a
-Java Runtime Environment for Windows; if you are using a different operating
-system, you will need to have a JDK (Java Development Kit) installed prior to
-launching Liferay.
+So what is a bundle anyway? A bundle is an application server with Liferay
+preinstalled. This is the most convenient way to install Liferay. Liferay is
+bundled with a number of application servers; all you need to do is choose the
+one that best fits your needs. If you don't currently have an application
+server, you may want to start with the Tomcat bundle, as Tomcat is one of the
+smallest and most straightforward bundles to configure. If you have an open
+source application server preference, choose the server you prefer from the
+available Liferay Portal bundles. All the bundles ship with a Java Runtime
+Environment for Windows; if you are using a different operating system, you must
+have a JDK (Java Development Kit) installed prior to launching Liferay Portal.
 
 Please note that Liferay is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
 licenses for these servers don't allow for redistribution. Liferay Portal,
-however, runs just as well on these application servers as it does on open
-source application servers. A `.war` file and dependency `.jar`s are provided
-for proprietary application servers and you'll need to follow a procedure to
-install Liferay on them. 
+however, runs just as well on these application servers as it does on the
+others. A `.war` file and dependency `.jar`s are provided for proprietary
+application servers, and you'll need to follow a procedure to install Liferay on
+them. 
 
-First we'll go over installing Liferay from a bundle and after this we'll
-provide instructions for installing Liferay manually on all the application
-servers it supports. 
+Once you have Liferay, you can then plan out your installation. This is a
+two-step process: first, determine if you need Liferay Portal Security turned
+on, and second, install Liferay Portal, by using a bundle or by installing it
+manually on your existing app server. Next, we'll show you your options with
+regard to Liferay Portal Security. 
 
 ## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-liferay-portal-6-2-user-guide-15-en)
 
-[To Be Written]
-<!-- This is where we should put high-level information about PACL and its
-requirement for Java security. -->
+As you probably know, Liferay Marketplace is an online store for obtaining
+applications that run on the Liferay Portal platform. These applications are
+provided not only by Liferay, but also by partners and independent developers
+who want you to install and use their applications on your server. Many of these
+applications are excellent, and we recommend that you try them out for yourself. 
+
+Because many of the applications on Marketplace are *not* provided by Liferay,
+however, there's an issue of trust: how do you know these applications are doing
+what they're advertised to do? There is a vetting process that they go through
+before they're allowed on Marketplace, but if the source code is not provided,
+there's no way for even Liferay to know if an app has been properly represented.
+For this reason, Liferay Portal implements a security layer we call the Portal
+Access Control List, or PACL. 
+
+PACL forces an application to declare up front the functions from Liferay's APIs
+that it calls. Anything that's not declared is not allowed to run. It's similar
+to what you might see on your mobile phone when you install an app: you get to
+see the Liferay API functions the app uses, and then you can decide if you want
+to install that app based on the permissions it requires. This way, you see
+right away what portal data that app can access, and the app can do nothing
+else: you're protected--if you have PACL enabled. So if you plan to use apps
+downloaded from Marketplace, it's important to make sure PACL is enabled. 
+
+By default, Liferay's bundles have PACL turned off. The reason for this is that
+there is a small performance penalty for having PACL enabled. Since the only
+reason to have PACL enabled is to install untrusted third party apps from
+Marketplace (and not everybody does that), we decided to leave PACL turned off
+by default, so that your portal performs as fast as possible. 
+
+All of this is to say: if you intend to use Marketplace apps, please enable
+PACL. Later in this chapter, there are sections for all the app servers Liferay
+supports. Each of those sections has a subsection that explains how to enable
+Java security for that app server, which is a prerequisite for enabling PACL.
+Once you have Java security enabled, PACL can be enabled by adding one line to
+your `portal-ext.properties` or `portal-setup-wizard.properties` file: 
+
+    portal.security.manager.strategy=liferay
+
+Save the file and if Liferay is running, restart it. Your portal is now
+configured to check PACL-enabled Marketplace apps against their declared
+permissions. 
+
+Now that you understand all the prerequisites for installing Liferay Portal,
+let's go ahead and get it done! First we'll go over installing Liferay from a
+bundle and after this we'll provide instructions for installing Liferay manually
+on all the application servers it supports. 
 
 ## Installing a bundle [](id=installing-a-bundle-liferay-portal-6-2-user-guide-15-en)
 

@@ -1,16 +1,9 @@
 # Creating Liferay Themes and Layout Templates [](id=creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Do you want to transform the look and feel of your Liferay Portal? Create your
-own Liferay Theme! Do you want arrange your pages' portlets differently than
+own Liferay Theme! Do you want to arrange your pages' portlets differently than
 what Liferay's templates support out-of-the-box? Create your own Layout
-Template! In this chapter, we'll show you how do do both.
+Template! In this chapter, we'll show you how to do both.
 
 We'll go over the following topics in this chapter:
 
@@ -37,7 +30,7 @@ follow the same philosophy as Liferay configuration: they are modifications, or
 differences from the default. Because of this, every line of markup and every
 style has a default value that your theme can fall back on if you have chosen
 not to customize it. In other words, your theme inherits the styling, images,
-and templates from any of the built in themes. This saves you time and keeps
+and templates from any of the built-in themes. This saves you time and keeps
 your themes smaller and less cluttered, because your theme contains only its own
 resources, using defaults for the rest, like emoticon graphics for the message
 boards portlet. 
@@ -69,7 +62,7 @@ Studio first, and then with the terminal.
 
 ***Using Developer Studio:*** 
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
 
 2.  Fill in *deep-blue* for the Project name and *Deep Blue* for the Display
     name. 
@@ -80,7 +73,7 @@ Studio first, and then with the terminal.
 
 5.  Click *Finish*. 
 
-![Figure 9.1: Creating your theme plugin](../../images/05-themes-1.png)
+![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/05-themes-1.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -116,10 +109,17 @@ styling wherever there are differences. After the base themes are added, your
 own custom styling is added on top.
 
 By default, themes are based on the *_styled* theme, which provides only basic
-styling of portlets. If you open the `build.xml` file in your theme's directory
-using the Build Application Configuration Editor, you see the following code:
+styling of portlets. If you open the `build.xml` file in your theme's directory,
+you see the following code:
 
-![Figure 9.2: Content of build.xml](../../images/05-themes-5.png)
+	<?xml version="1.0"?>
+	<!DOCTYPE project>
+
+	<project name="deep-blue-theme" basedir="." default="deploy">
+		<import file="../build-common-theme.xml" />
+
+		<property name="theme.parent" value="_styled" />
+	</project>
 
 The `theme.parent` property determines the theme your theme inherits its styling
 from. In addition to the *_styled* theme, you can choose to inherit from the
@@ -148,7 +148,7 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
-![Figure 9.3: Drag and drop your theme onto the server](../../images/05-themes-6.png)
+![Figure 9.2: Drag and drop your theme onto the server.](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
@@ -170,10 +170,10 @@ Let's apply your theme to a page:
 
 1.  Go to your web browser and log in to the portal. 
 
-2.  Hover over **Manage** at the top of the page and click on *Page*. 
+2.  Click the *Edit* button from the left side menu. 
 
-3.  Directly underneath the words **Manage Pages**, select the *Look and Feel*
-    tab. Click on your theme to activate it.
+3. Click the *Look and Feel* tab, select *Deep Blue* beneath the *Available
+   Themes* heading, and click *Save*.
 
 Now that you've built and deployed a theme, let's study theme anatomy.
 
@@ -187,20 +187,23 @@ accessible folders. Here's the full structure of our Deep Blue theme:
 
 - `deep-blue-theme/`
     - `docroot/`
-        - `WEB-INF/`
-            - `liferay-plugin-package.properties`
-        - `_diffs/` - subfolders not created by default.
+        - `_diffs/` (subfolders not created by default)
             - `css/`
             - `images/`
             - `js/`
             - `templates/`
         - `css/`
+        	- `aui`
+        		- (many directories)
+        	- `_aui_custom.scss`
+        	- `_aui_variables.scss`
+        	- `_liferay_custom.scss`
             - `application.css`
+            - `aui.css`
             - `base.css`
             - `custom.css`
             - `dockbar.css`
             - `extras.css`
-            - `forms.css`
             - `layout.css`
             - `main.css`
             - `navigation.css`
@@ -215,6 +218,9 @@ accessible folders. Here's the full structure of our Deep Blue theme:
             - `portal_normal.vm`
             - `portal_pop_up.vm`
             - `portlet.vm`
+        - `WEB-INF/`
+        	- `liferay-look-and-feel.xml`
+            - `liferay-plugin-package.properties`
 
 The `_diffs` folder that's created inside the `docroot` directory of your theme
 is important; this is where you place your theme's code. The `_diffs` folder
@@ -243,7 +249,7 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
-![Figure 9.4: How to redeploy your theme plugin](../../images/05-themes-2.png)
+![Figure 9.3: Redeploying your theme in Developer Studio is the same as entering the `ant deploy` command for an already deployed plugin.](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
@@ -263,6 +269,18 @@ portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
 are removed, so any changes you make are visible right away. Also, you won't
 have to reboot the server as often in Developer Mode.
 
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If you're accessing your portal
+ through a Developer Studio server (e.g., Liferay v6.2 CE Server), you already
+ have Developer Mode enabled. When you start your Liferay server on Developer
+ Studio for the first time, a `liferay-ide.properties` file is created in your
+ Liferay Portal directory. Within this file, notice the following line:
+ `include-and-override=portal-developer.properties`. This automatically
+ enables Developer Mode while using Developer Studio.
+ 
+---
+
 Before you use Developer Mode, you'll have to add the
 `portal-developer.properties` file to your application server's configuration
 file. Each application server has a different configuration file or UI to
@@ -280,7 +298,7 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
     CATALINA_OPTS=
         "$CATALINA_OPTS
          -Dfile.encoding=UTF8
-         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES\
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES
              =false
          -Duser.timezone=GMT
          -Xmx1024m
@@ -308,7 +326,7 @@ settings that trigger them:
   (`browser.launcher.url=`).
 - FreeMarker Templates for themes and web content are not cached, so changes
   are applied immediately
-  (`freemarker.engine.resource.modification.check.interval=0`). 
+  (`freemarker.engine.modification.check.interval=0`). 
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 
@@ -327,14 +345,19 @@ Let's add a thumbnail image for our theme now.
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
-thumbnail is a broken image. To remedy this, create a 1080 pixels wide by 864
+thumbnail is nonexistent. To remedy this, create a 150 pixels wide by 120
 pixels high image to use as your theme's thumbnail. You may want to take a
-snapshot of your theme and resize it to these dimension. It is very important to
-abide by these *exact* dimensions or your image will not display properly as a
-thumbnail. Save the image as a `.png` file named `screenshot.png` and place it
+snapshot of your theme and re-size it to these dimensions. It is very important
+to abide by these *exact* dimensions or your image will not display properly as
+a thumbnail. Save the image as a `.png` file named `thumbnail.png` and place it
 in your theme's `docroot/_diffs/images` directory (create this directory if it
-doesn't already exist). On redeployment, your `screenshot.png` file
+doesn't already exist). On redeployment, your `thumbnail.png` file
 automatically displays as your theme's thumbnail.
+
+<!-- Right now, a new theme doesn't have a broken image; there is no image at
+all. There is an LPS ticket that suggests that a broken thumbnail be specified
+for 6.2 (LPS-39119). We should monitor its status and change the docs, if
+necessary. -->
 
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
@@ -346,13 +369,13 @@ Let's learn how to design a theme's look and feel next.
 You define a theme's look and feel via a file named `liferay-look-and-feel.xml`
 in the `WEB-INF` directory. 
 
-Let's consider how make your theme configurable to administrative users.
+Let's consider how to make your theme configurable to administrative users.
 
 ### Making Themes Configurable with Settings [](id=making-themes-configurable-with-settings-liferay-portal-6-2-dev-guide-09-en)
 
 You can define settings to make your theme configurable. Create a file named
-`liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
-content:
+`liferay-look-and-feel.xml` in the `WEB-INF` directory (if necessary), with the
+following content:
 
     <?xml version="1.0"?>
     <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN"
@@ -395,8 +418,8 @@ setting:
         <settings>
             <setting key="header-type" value="detailed" />
         </settings>
-        </theme>
-            <theme id="deep-blue-mini" name="Deep Blue Mini">
+    </theme>
+    <theme id="deep-blue-mini" name="Deep Blue Mini">
         <settings>
             <setting key="header-type" value="brief" />
         </settings>
@@ -432,8 +455,8 @@ company's name in the footer of your site's pages:
 
     ---
 
-2.  Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
-    located in your theme's `WEB-INF` folder:
+2. Declare the two theme setting variables for the Deep Blue theme in your
+   `liferay-look-and-feel.xml`, located in your theme's `WEB-INF` folder:
 
         <settings>
             <setting configurable="true" 
@@ -449,24 +472,33 @@ company's name in the footer of your site's pages:
             />
         </settings>
 
-The portal administrator can enter a slogan and activate it for the portal via
-the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
-sites and managing pages* section of [Using Liferay
-Portal](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
+---
 
-![Figure 9.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+ ![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
+ up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
+ For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd`. When
+ referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
+ 
+---
+
+The portal administrator can enter a slogan and activate it for the portal via
+the *Look and Feel* section of the *Site Administration* &rarr; *Site Pages*
+panel (see the *Creating and Managing Pages* section of [Using Liferay
+Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-liferays-multi-site-capabili-liferay-portal-6-2-user-guide-02-en)).
+
+![Figure 9.4: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
-![Figure 9.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+![Figure 9.5: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties hook
- to display configurable theme settings properly, like the slogan text area and
- footer checkbox from the previous example. For details, see the [Overriding a
- *Language.properties*
+ ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties
+ hook to display configurable theme settings properly, like the slogan text area
+ and footer checkbox from the previous example. For details, see the [Overriding
+ a *Language.properties*
  File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
@@ -502,7 +534,7 @@ called `night.css`, letting the default styling handle the first color scheme,
 or we can use both `day.css` and `night.css` to specify each scheme. Let's use
 the latter option here, creating both files to define our color schemes.
 
-Place the following lines at the bottom of your `custom.css` file:
+Place the following lines at the bottom of your `docroot/css/custom.css` file:
 
     @import url(color_schemes/day.css);
     @import url(color_schemes/night.css);
@@ -534,7 +566,8 @@ The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
 portlet borders, bullet styles, and the site name, but more settings may be
 added in the future. Modify these settings from the `liferay-look-and-feel.xml`
-file.
+file. Remember, your `liferay-look-and-feel.xml` file should have the 6.2.0
+doctype for the following predefined settings to work correctly.
 
 ---
 
@@ -572,7 +605,7 @@ used in your sites.
 #### Bullet Styles [](id=bullet-styles-liferay-portal-6-2-dev-guide-09-en)
 
 Liferay's Navigation portlet can be configured to use any bullet styles
-inherited by your theme or implementated in your theme. For example, if your
+inherited by your theme or implemented in your theme. For example, if your
 theme uses Liferay's *classic* theme as its base parent, you can leverage its
 *arrows* bullet style. Here is the arrow bullet style's class from the
 *classic* theme's `_diffs/css/custom.css` file:
@@ -617,11 +650,11 @@ configure display your site's name.
 #### Site Names [](id=displaying-site-name-via-theme-liferay-portal-6-2-dev-guide-en)
 
 The site name settings let site administrators decide whether to display a
-site's name (i.e., title). But, if you are using using logo, that mentions your
-company or site, on each site page, you may find the default site name display
+site's name (i.e., title). But, if you are using a logo that mentions your
+company or site on each site page, you may find the default site name display
 distracting.
 
-![Figure 9.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+![Figure 9.6: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
 
 Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
 as a base theme, you have the following settings available for configuring site
@@ -652,7 +685,8 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
     </settings>
 
 With these settings configurable, site administrators can control site name
-display from the each site's *Look and Feel* control page.
+display from the each site's *Look and Feel* tab, which can be found by clicking
+the *Edit* button from the left side menu of any page.
  
 Let's talk about Liferay's JavaScript library next. 
 
@@ -672,7 +706,43 @@ callbacks:
 - **Liferay.on('allPortletsReady', fn):** Executed after everything else
   (including AJAX portlets) has finished loading. 
 
-![Figure 9.8: Content of main.js](../../images/05-themes-4.png)
+The contents of the `main.js` file are listed below:
+
+	AUI().ready(
+
+		/*
+		This function gets loaded when all the HTML, not including the portlets, is
+		loaded.
+		*/
+
+		function() {
+		}
+	);
+
+	Liferay.Portlet.ready(
+
+		/*
+		This function gets loaded after each and every portlet on the page.
+
+		portletId: the current portlet's id
+		node: the Alloy Node object of the current portlet
+		*/
+
+		function(portletId, node) {
+		}
+	);
+
+	Liferay.on(
+		'allPortletsReady',
+
+		/*
+		This function gets loaded when everything, including the portlets, is on
+		the page.
+		*/
+
+		function() {
+		}
+	);
 
 Want to learn how to import resources with your theme? We'll discuss how you can
 do this in the next section.
@@ -697,12 +767,12 @@ and immediately see their new theme in action. In this section, we discuss how
 to include resources with your theme.
 
 Liferay's welcome theme includes resources that the resources importer
-automatically deploys to the default site. (Note: The welcome theme was
-introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
-welcome theme and the pages and content that it imports to the default site
-provide a good example of the resources importer's functionality.
+automatically deploys to the default site. (Note: The welcome theme is only
+applied out-of-the-box in Liferay CE.) The welcome theme and the pages and
+content that it imports to the default site provide a good example of the
+resources importer's functionality.
 
-![Figure 9.9: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
+![Figure 9.7: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
 
 If it's not already installed, you can download the resources importer
 application from Liferay Marketplace. Search for either *Resources Importer CE*
@@ -717,8 +787,7 @@ Marketplace app.
  Liferay Portal instance and don't have the resources importer already deployed,
  you might see a message like this:
  
-    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
-        for deploy because it is missing resources-importer-web
+    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queuing test-theme for deploy because it is missing resources-importer-web
 
  Such a message appears if the resources importer is declared as a dependency in
  your theme's `liferay-plugin-package.properties` file but is not deployed. You
@@ -1016,14 +1085,18 @@ Liferay:
   template under `resources-importer/journal/articles/`, rename the downloaded
   `article.xml` file as desired, and copy it into the folder for the template.
   The web content article's XML fills in the data required by the structure.
-- **structure:** Edit the structure by clicking the *Launch Editor* button, and
-  copy and paste its contents into a new XML file for the structure in the
+- **structure:** Edit the structure by clicking *Source*, and copy and paste its
+  contents into a new XML file for the structure in the
   `resources-importer/journal/structures/` folder. The structure XML sets a
   wireframe, or blueprint, for an article's data. 
-- **template:** Edit the template by clicking the *Launch Editor* button, and
-  copy and paste its contents into a new XML file for the template in the
+- **template:** Edit the template by clicking *Source*, and copy and paste its
+  contents into a new XML file for the template in the
   `resources-importer/journal/templates/` folder. The template defines how the
-  data should be displayed. 
+  data should be displayed.
+
+<!-- *Download* button is currently unavailable for Web Content (based on
+structure and template). Contacted Juan for more info and following LPS-31355
+-->
 
 Here is an outline of steps you can use in developing your theme and its
 resources:
@@ -1039,7 +1112,7 @@ resources:
     with the layout templates, portlets, and portlet preferences of these pages.
 
 4.  Create an `assets.json` file in your `resources-importer/` folder.  In this
-    file, specify details of your resources assets.
+    file, specify details of your resource assets.
 
 5.  In your `liferay-plugin-package.properties` file, include
     `resources-importer-web` in your `required-deployment-contexts` property's
@@ -1102,9 +1175,9 @@ Let's create a custom layout template!
 
 ### Creating a Layout Template Project [](id=creating-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
 
-With the Plugins SDK you can deploy layout templates as plugins, and creating
-layout templates with Liferay Developer Studio is easier than ever. Let's call
-our layout template called "Columns 1 4 1". 
+With the Plugins SDK, you can deploy layout templates as plugins, and creating
+layout templates with Liferay Developer Studio is easier than ever. Let's create
+a layout template called *Columns 1 4 1*. 
 
 ***Using Developer Studio:*** 
 
@@ -1119,7 +1192,7 @@ our layout template called "Columns 1 4 1".
 
 5.  Click *Finish*. 
 
-![Figure 9.10: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
+![Figure 9.8: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -1135,7 +1208,7 @@ the *create* script, followed by operating system-specific commands:
 
         create.bat columns-1-4-1 "Columns 1 4 1"
 
-Developer Studio's *New Project* wizard and the *create* scripts in terminal
+Developer Studio's *New Project* wizard and the *create* scripts in the terminal
 generate layout template projects in your Plugin SDK's `layouttpl` folder. 
 
 ### Anatomy of a Layout Template Project [](id=anatomy-of-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
@@ -1145,8 +1218,9 @@ about its various files:
 
 - `columns-1-4-1-layouttpl/`
 	- `docroot/`
+		- `META-INF/`
 		- `WEB-INF/`
-			- `liferay-layout-templates.properties`
+			- `liferay-layout-templates.xml`
 			- `liferay-plugin-package.properties`
 		- `columns_1_4_1.png`
 		- `columns_1_4_1.tpl`
@@ -1165,30 +1239,29 @@ exploring layout template files.
 ### Layout Template Files [](id=layout-template-files-liferay-portal-6-2-dev-guide-09-en)
 
 One or more layout template plugins can reside in a layout template project.
-Let's see what each of the template files does: 
+Let's see what each template file does: 
 
 - `<project-name>.tpl`: Generates the HTML structure of the template. 
 - `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
   wireless application protocol. 
 - `<project-name>.png`: Thumbnail representation of the template that you see in
   Liferay Portal from the Page Layout screen. You'll have to create the
-  thumbnail
-  image, but you can use the default PNG for layout templates as a starting
-  point. 
+  thumbnail image, but you can use the default PNG for layout templates as a
+  starting point.
 
-![Figure 9.11: Default layout template thumbnail](../../images/blank_columns.png)
+![Figure 9.9: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
 ### Liferay Configuration Files [](id=liferay-layout-configuration-files-liferay-portal-6-2-dev-guide-09-en)
 
-In addition to the three template-specific files, a layout template project
-has two Liferay configuration files:
+In addition to the three template-specific files, a layout template project has
+two Liferay configuration files:
 
-- `liferay-layout-templates.properties`: Specifies the name of the layout
-  templates and the location of their TPL and PNG files. 
-- `liferay-plugin-package.properties`: Describes the plugin project to
-  Liferay's hot deployer. 
+- `liferay-layout-templates.xml`: Specifies the name of the layout templates and
+  the location of their TPL and PNG files. 
+- `liferay-plugin-package.properties`: Describes the plugin project to Liferay's
+  hot deployer. 
 
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
@@ -1204,7 +1277,7 @@ templates:
 - ***Deploying in the terminal:*** From your layout template project directory,
   enter
 
-    ant deploy
+        ant deploy
 
 When deploying your plugin, the server displays messages indicating that your
 plugin was read, registered, and is now available for use. 
@@ -1230,8 +1303,8 @@ designing templates becomes fun! Let's try it:
     Editor* to see it displayed in *Visual (Experimental)* mode. 
 
 2.  Click the triangle in the upper left corner of the editor to view the
-    Palette. Drag rows, columns, and even existing templates onto your
-    canvas. 
+    Palette (if necessary). Drag rows, columns, and even existing templates onto
+    your canvas. 
 
 3.  Start designing your new layout template by dragging an *existing* layout
     template into the editor. Then modify it by adding, deleting, and adjusting
@@ -1242,35 +1315,35 @@ designing templates becomes fun! Let's try it:
     layout template whenever you need by using *Visual (Experimental)* mode in
     Developer Studio. 
 
-    ![Figure 9.12: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
+    ![Figure 9.10: You can easily adjust your layout template using *Visual* mode in Developer Studio.](../../images/layout-template-tpl-visual-almost.png)
 
-5.  To finely tune your design's dimensions, switch to *Source* view and edit
+5.  To fine tune your design's dimensions, switch to *Source* view and edit
     your TPL files as necessary. 
 
-![Figure 9.13: Source view of the template](../../images/layout-template-tpl-src-almost.png)
+For example, if you want each second-row column of the above template to be 20%
+of the page width, adjust that row's first column (`column-2`) from 25% to 20%. 
 
-For example, if you want each second-row column of the above template to be 25%
-of the page width, adjust that row's first column (`column-2`) from 20% to 25%. 
-
-Here's how the original 20% column width definition looks:
-
-    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
-        $processor.processColumn(
-            "column-2", "portlet-column-content portlet-column-content-first")
-    </div>
-
-Here's the column width definition modified to 25%:
+Here's how the original 25% column width definition looks:
 
     <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
         $processor.processColumn(
             "column-2", "portlet-column-content portlet-column-content-first")
     </div>
 
-It's hard to see, but we changed the column's class `aui-w20` value to
-`aui-w25`. 
+Here's the column width definition modified to 20%:
 
-Just like that, the rows and columns of the "Columns 1 4 1" layout template are
-arranged and sized evenly. 
+    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
+        $processor.processColumn(
+            "column-2", "portlet-column-content portlet-column-content-first")
+    </div>
+
+It's hard to see, but we changed the column's class `aui-w25` value to
+`aui-w20`. 
+
+![Figure 9.11: You can also edit your layout template using *Source* mode.](../../images/layout-template-tpl-src-almost.png)
+
+Just like that, the rows and columns of the *Columns 1 4 1* layout template are
+arranged and sized to fit your needs. 
 
 Now that we've generated some positive Feng Shui through the design of our
 layout, let's increase our control over the layout by embedding portlets. 
@@ -1285,7 +1358,7 @@ locations on your pages. Users can minimize embedded portlets but can't move or
 remove them. Whether instanceable or non-instanceable, core portlets and custom
 portlets you created with the Plugins SDK can be embedded in layout templates. 
 
-Let's embed some portlets in our "Columns 1 4 1" layout template. We'll place
+Let's embed some portlets in our *Columns 1 4 1* layout template. We'll place
 the *navigation portlet* and *search portlet* in the first and last columns of
 our layout template's middle row. Additionally, we'll embed a custom portlet in
 the template's upper and lower rows. 
@@ -1305,7 +1378,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 9.14: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 9.12: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1359,11 +1432,11 @@ Here's the TPL that implements embedding of these portlets:
         </div>
     </div>
 
-What would a page using our "Columns 1 4 1" layout template look like? Check out
+What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 9.15: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
+![Figure 9.13: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
@@ -1377,7 +1450,7 @@ your convenience, we've listed all of them in the following table.
 
 | Variable | Type | Description |
 | -------- | ---- | ----------- |
- $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $processor | com.liferay.portal.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/layoutconfiguration/util/velocity/TemplateProcessor.html) |
  $request | javax.servlet.http.HttpServletRequest| |
  $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
  $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/Company.html) |

@@ -421,18 +421,26 @@ The Marketplace home page is shown below:
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. You'll visit here often during the course of development, so
-it might be a good idea to bookmark it now. To get started, the first thing you
-want to do is visit your personal *Home* page. There is a thin strip at the top
-of your browser window. This is known as the *Dockbar*. Many links are present
-in the drop-down menus of the Dockbar, including a link titled *Go to My Home*.
-This is a link to your personal home page. More details about what you can find
-on your personal home and profile pages can be found in the Liferay Marketplace
-chapter of the *User Guide*. For now, go to your personal home page by clicking
-on the *Go to My Home* link.
+it might be a good idea to bookmark it now. 
 
-![Figure 11.2: Access your liferay.com Home page by selecting your name &rarr; *User Profile* and then clicking the *Home* tab](../../images/liferay-dot-com-user-profile.png) 
+You can publish Marketplace apps as an individual or as part of a company.
+Before you can submit apps to the Marketplace, you must register yourself as an
+app developer. It's easy. Simply click the link *Become a Developer* in the
+*Marketplace* column on the left. You're now in the Marketplace registration
+wizard. If you're registering with a company and the company is already
+registered, you can search for it from these Marketplace registration screens
+and request to *join* the company in publishing apps to the Marketplace. On
+completing the Marketplace registration, Liferay sends you an email confirming
+your acceptance as a Marketplace Developer--Congratulations!
 
-Your home page contains links to often-used functionality of liferay.com,
+Now that you're a Marketplace Developer, your liferay.com *App Manager* provides
+options for adding new apps and viewing your published apps. Your App Manager is
+accessible from your user profile page. Let's go there now. In the upper right
+corner on liferay.com select your name &rarr; *User Profile*. 
+
+![Figure 11.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
+
+Your profile page contains links to often-used functionality of liferay.com,
 including app creation and management. There are several links on the left of
 your home page, including one called *App Manager*. This link allows you to
 manage the apps that you have for either personal or company use and to manage
