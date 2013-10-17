@@ -612,6 +612,68 @@ role.
 
 **Delete:** permanently removes a role from the portal.
 
+Next, let's learn about the difference between the (portal/site/organization)
+administrator and owner roles that Liferay provides out-of-the-box.
+
+### Out-of-the-box Liferay Roles
+
+If you navigate to the Control Panel and click on *Roles*, you'll see a list of
+all the roles that have been created in your portal. This list includes roles
+that Liferay provides out-of-the-box and any additional custom roles. These are
+some of Liferay's out-of-the-box roles:
+
+- Guest: The guest role is assigned to unauthenticated users and grants the
+  lowest-level permissions within the portal.
+- User: The user role is assigned to authenticated users and grants basic
+  basic permissions within the portal.
+- Power User: By default, the power user role grants the same permissions as the
+  user role. It's designed to be an extension point for distinguishing regular
+  users from more privileged users. For example, you can set up your portal so
+  that only power users have personal sites.
+- Site Member: The site member role grants basic privileges within a site, such
+  as the ability to visit the site's private pages.
+- Site Administrator: The site administrator role grants the ability to manage
+  *almost* all aspects of a site including site content, site memberships, and
+  site settings. Site administrators cannot delete the membership of or remove
+  roles from other site administrators or site owners. They also *cannot* assign
+  other users as site administrators or site owners.
+- Site Owner: The site owner role is the same as the site administrator role
+  except that it grants the ability to manage *all* aspects of a site, including
+  the ability to delete the membership of or remove roles from site
+  administrators or other site owners. They *can* assign other users and site
+  administrators or site owners.
+- Organization User: The organization user role grants basic privileges within
+  an organization. If the organization has an attached site, the organization
+  user role implicitly grants the site member role within the attached site.
+- Organization Administrator: The organization administrator role grants the
+  ability to manage *almost* all aspects of an organization including the
+  organization's users and the organization's site (if it exists). Organization
+  administrators cannot delete the membership of or remove roles from other
+  organization administrators or organization owners. They also *cannot* assign
+  other users as organization administrators or organization owners.
+- Organization Owner: The organization owner role is the same as the site
+  administrator role except that it grants the ability to manage *all* aspects
+  of an organization, including the ability to delete the membership of or
+  remove roles from organization administrators or other organization owners.
+  They *can* assign other users and site administrators or site owners.
+- Administrator: The administrator role grants the ability to manage the entire
+  portal, including global portal settings and individual sites, organizations,
+  and users.
+
+---
+
+ ![Tip](../../tip.png) **Tip:** It's easy to overlook the differences between
+ site and organization owners and site and organization administrators. Remember
+ that site and organization administrators *cannot* delete the membership of or
+ remove the administrator or owner role from any other administrator or owner.
+ They also *cannot* appoint other users as site or organization administrators
+ or owners. Site and organization owners *can* delete the membership of or
+ remove the administrator or owner roles from other site or organization
+ administrators. They *can* appoint other users as site or organization
+ administrators or owners.
+
+---
+
 Next, let's examine how to configure the permissions granted by different roles.
 
 ### Defining Permissions on a Role [](id=defining-permissions-on-a-role-liferay-portal-6-2-user-guide-16-en)
