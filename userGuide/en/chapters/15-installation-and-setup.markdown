@@ -708,6 +708,8 @@ server in build.properties)
 3. 
 
 ### Installing the Administration Console on Windows [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
+
+### Installing the Administration Console on Linux [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
 ### Adding Liferay Portal packages [](id=adding-liferay-portal-packages-liferay-portal-6-2-user-guide-15-en)
 ### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
 ### Registering the managed server [](id=registering-the-managed-server-liferay-portal-6-2-user-guide-15-en)
@@ -1127,7 +1129,10 @@ ones having more readable text.  -->
 ![Figure 15.10: Installation type](../../images/tcat-html_766a1d6e.png)
 
 You should select the "Custom" installation option to provide better control of
-where Tcat Server is installed.
+where Tcat Server is installed. This isn't true anymore in the Tcat7 installer,
+it only allows you to specify which Tcat components to install, and only gives
+you the agent and the console to choose from (as well as the old Tcat 6 agent,
+which is unseletcted by default).
 
 ![Figure 15.11: Installation component selections](../../images/tcat-html_55494177.png)
 
@@ -1135,24 +1140,26 @@ After selecting the custom installation option, the Tcat installer prompts you
 to select the desired components. 
 
 -   **Tcat Server:** a version of Apache Tomcat that includes the appropriate
-    management agents used by Tcat.
+    management agents used by Tcat. THIS ISN'T AN OPTION
 
 -   **Administration Console:** the administration console for monitoring and
     managing all available Tcat servers. This console contains tools used for
     application deployment, log access, server control and other administration
-    tools.
+    tools. JUST CALLED `CONSOLE`
 
 -   **Tomcat Documentation:** the documentation that comes normally with an
-    Apache Tomcat distribution. You do not need to select this option.
+    Apache Tomcat distribution. You do not need to select this option. NOT AN
+OPTION
 
 -   **Tomcat Examples:** the examples that comes normally with an Apache Tomcat
-    distribution. You do not need to select this option.
+    distribution. You do not need to select this option. NOT AN OPTION
 
 -   **Tomcat Manager Application:** the manager application that comes normally
     with an Apache Tomcat distribution. You do not need to select this option.
+NOT AN OPTION
 
 For this step in the installation process, select the Administration Console in
-addition to Tcat Server, which is the default setting.
+addition to Tcat Server (TCAT AGENT?), which is the default setting.
 
 After selecting Tcat Server and the Administration Console for installation, the
 installation wizard prompts you for an installation directory.
