@@ -1696,7 +1696,25 @@ or Test. Each kind of announcement that's broadcast to a user is viewable from
 the Alerts or Announcements portlet, of course. But alerts and announcements can
 also be sent via email or SMS (Short Message Service, i.e., text).
 
-![Figure 8.32: The Annoucements portlet displays lists of alerts and annoucements to regular users. It also provides administrators with an interface for managing and adding entries.](../../images/announcements-portlet.png)
+You can also create roles in Liferay to assign to users that should have access
+to announcing general announcements. For instance, if you'd like an employee in
+your site to have strict control over what is announced, you can assign them to
+an Announcements role. To create a simple Announcement role, you'll need to
+navigate to the *Control Panel* &rarr; *Roles* &rarr; *Add* &rarr; *Regular
+Role*. Specify the name of your role as *Announcements*, click *Save*, and then
+select the *Define Permissions* tab. For this particular role, you'll need to
+grant two permissions:
+
+- *Control Panel &rarr; General Permissions &rarr; Add General Announcements*
+- *Site Administration &rarr; Applications &rarr; Announcements &rarr; Add
+Entry*
+
+You'll need to click *Save* after selecting each permission. Now you have a
+simple Announcements role that can add an entry to the Announcements portlet and
+add general announcements to your site! Of course, you can add additional
+permissions to give the Announcements role more access, if you prefer.
+
+![Figure 8.32: The Annoucements portlet displays a list of annoucements to regular users. It also provides administrators with an interface for managing and adding entries.](../../images/announcements-portlet.png)
 
 Let's look at how to create announcements in the Announcements portlet. When you
 view the Announcements portlet as an administrator, you'll see two tabs: Entries
