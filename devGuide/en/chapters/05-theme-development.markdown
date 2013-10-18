@@ -370,13 +370,21 @@ one includes more details, while the other is smaller). Instead of creating two
 themes that are identical except for some changes in the header, you can create
 one and define a setting that lets you choose which header is displayed. 
 
-In the `portal_normal.vm` template, write:
+Make sure you have a `docroot/_diffs/templates` folder created and copy the
+`docroot/templates/portal_normal.vm` file into that directory. It's a good rule
+of thumb to modify files for your new theme in the `_diffs` folder. Now, open
+your `_diffs/templates/portal_normal.vm` template and insert the following:
 
     #if ($theme.getSetting("header-type") == "detailed")
         #parse ("$full_templates_path/header_detailed.vm")
     #else
         #parse ("$full_templates_path/header_brief.vm")
     #end
+
+If you're following along with this example, you'll need to create the
+`header_detailed.vm` and `header_brief.vm` files and place them in the
+`_diffs/templates` folder. For this simple tutorial, you can keep these VM
+templates blank.
 
 Then, add two different entries in the `liferay-look-and-feel.xml` file
 that refer to the same theme, but have different values for the header-type
@@ -386,8 +394,8 @@ setting:
         <settings>
             <setting key="header-type" value="detailed" />
         </settings>
-        </theme>
-            <theme id="deep-blue-mini" name="Deep Blue Mini">
+    </theme>
+    <theme id="deep-blue-mini" name="Deep Blue Mini">
         <settings>
             <setting key="header-type" value="brief" />
         </settings>
@@ -400,8 +408,8 @@ or off or to allow users to provide input to a theme setting.
 As an example, you can create an option to display a slogan next to your
 company's name in the footer of your site's pages:
 
-1.  Insert logic into your `portal_normal.vm` template to display a slogan along
-    with your company's name (e.g. Nosester) in the footer of your site pages:
+1. Insert logic into your `portal_normal.vm` template to display a slogan along
+   with your company's name (e.g. Nosester) in the footer of your site pages:
 
         <footer id="footer" role="contentinfo">
             <p>
@@ -439,6 +447,15 @@ company's name in the footer of your site's pages:
                      value="true"
             />
         </settings>
+
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
+ up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
+ For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd`. When
+ referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
+ 
+---
 
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
