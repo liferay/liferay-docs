@@ -1126,15 +1126,15 @@ Let's proceed, assuming you answered "yes" to all of the above questions.
 
 ### Create Resource Bundles [](id=create-resource-bundles)
 
-First, let's create resource bundle files for translating the fictional
-portlets My Finances, Asset Ticker and Portfolio Manager. All three portlets
-share some attributes:
+First, let's create a resource bundle for providing textual translations of
+three related fictional portlets named My Finances, Asset Ticker and Portfolio
+Manager. All three portlets share some attributes:
 
 - They use existing Liferay core messages to handle standard UI cases. 
 - They use common financial terms, so we don't want to repeat them for each
   portlet. 
-- They have special keys like title, description or some context-related
-  content. 
+  
+Let's explore sharing translated text between these portlets. 
 
 Assuming you already created a plugin project and added portlets, let's
 start:
@@ -1230,7 +1230,10 @@ maintanance of translations. Of course, you'll want to have someone fluent in
 that language review the translation before deploying the translation to a
 Production environment. 
 
-Next, let's localize titles and descriptions of our various fictitious portlets. 
+Now that you know how to create a shared resource bundle, let's consider a case
+in which you must use separate resource bundles for each portlet. In order to
+localize messages used in the Control Panel for a Control Panel-enabled portlet,
+you must use separate resource bundles. We'll show you how to implement them. 
 
 ### Portlet Title and Description In Control Panel [](id=lp-6-1-dgen03-portlet-title-and-description-in-control-panel-0)
 
