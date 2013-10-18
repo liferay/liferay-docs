@@ -63,8 +63,8 @@ Here's how you find services for a user's blogs statistics:
    [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 
 2. Under *Portlet Services*, click the link for the
-   `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
-   services are a part of the *blogs portlet*. 
+   `com.liferay.portlet.blogs.service` package in the *Packages* frame, since
+   the services are a part of the *blogs portlet*. 
 
 3. Find and click on the `-ServiceUtil` class (in this case
    `BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the
@@ -96,18 +96,13 @@ remote service. -Rich -->
 
 Liferay's API follows a Service Oriented Architecture
 [(SOA)](http://en.wikipedia.org/wiki/Service-oriented_architecture). The API
-supports Java invocation and a variety of protocols including SOAP, JSON over
-HTTP, Burlap, Hessian, and more. A limited set of *RESTful* web services, based
-on the AtomPub protocol, are also supported--see the [Portal Atom
-Collections](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Atom+Collections)
-wiki by Igor Spasi&#263; for more details. You can also use the API
-through Remote Procedure Calls
-([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)). You have many good 
-options for leveraging Liferay's API. 
-
-<!-- This Burlap and Hessian statement has been around for a while, yet I've
-never actually seen an implementation of it. Has this statement been vetted by
-somebody who knows the remote API intimately? -Rich --> 
+supports Java invocation and a variety of protocols including SOAP and JSON over
+HTTP. A limited set of *RESTful* web services, based on the AtomPub protocol,
+are also supported--see the [Portal Atom Collections](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Atom+Collections)
+wiki by Igor Spasi&#263; for more details. You can also use the API through
+Remote Procedure Calls
+([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)). You have many good
+options for leveraging Liferay's API.  
 
 Let's step back now and discuss the security layers of Liferay's *service
 oriented* architecture and how you can configure them. 
@@ -291,8 +286,10 @@ Here's the WSDL Excerpt for the `addUserGroup` operation of `UserGroup`:
 
     <wsdl:operation name="addUserGroup" parametterOrder="name description
     publicLayoutSetPropertyId privateLayoutSetPropertyId">
-        <wsdl:input message="impl:addUserGroupRequest" name="addUserGroupRequest"/>
-        <wsdl:outputMessage="impl:addUserGroupResponse" name="assUserGroupResponse"/>
+        <wsdl:input message="impl:addUserGroupRequest" name="addUserGroupRequest"
+        />
+        <wsdl:outputMessage="impl:addUserGroupResponse" name="assUserGroupResponse"
+        />
     </wsdl:operation>
 
 To use the service, you pass in the WSDL URL along with your login credentials
@@ -475,8 +472,8 @@ Here are a few things to note about the URL:
 
 - It's a *secure* (authenticated) URL for the service. Authentication is done
   using HTTP Basic Authentication, which isn't appropriate for a production
-  environment, since the password is unencrypted. It's simply used for convenience
-  in this example. 
+  environment, since the password is unencrypted. It's simply used for
+  convenience in this example. 
 - The screen name and password are passed in as credentials. 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
   end of the URL. Remember that the service name can be found in the web service
@@ -584,17 +581,17 @@ methods become exposed as JSON API. As explained previously, the `-ServiceImpl`
 configuration overrides the `-Service` interface configuration during
 registration.
 
-Portal, however, does not scan all available classes for the annotations. Instead,
-it only scans services. More precisely, it scans all classes registered in
-application context of the portal, i.e. of the plugin. All classes that are available
-to the `BeanLocator` are scanned. Practically, this means that the portal scans
-all classes registered in portal's Spring context of the portal, i.e. plugin. If you use
-Service Builder to build plugin services, it automatically registers them 
-in the Spring context and they are made available to the `BeanLocator`. Moreover, this means
-that you can register *any* object in the Spring context of your plugin and the
-portal scans it for remote services! We are not forcing you to use Service Builder.
-We recommend using it because it easily does so many things with regards to your
-remote services. 
+Portal, however, does not scan all available classes for the annotations.
+Instead, it only scans services. More precisely, it scans all classes registered
+in application context of the portal, i.e. of the plugin. All classes that are
+available to the `BeanLocator` are scanned. Practically, this means that the
+portal scans all classes registered in portal's Spring context of the portal,
+i.e. plugin. If you use Service Builder to build plugin services, it
+automatically registers them in the Spring context and they are made available
+to the `BeanLocator`. Moreover, this means that you can register *any* object in
+the Spring context of your plugin and the portal scans it for remote services!
+We are not forcing you to use Service Builder. We recommend using it because it
+easily does so many things with regards to your remote services. 
 
 ---
 
@@ -610,21 +607,23 @@ services come enabled out-of-the-box.
 
 #### Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
-Lets say you have a portlet named `SupraSurf` that has some services. And
-you decide to expose them as remote services. After enabling the `remote-service` attribute
-on its `SurfBoard` entity, you rebuild the services. Service Builder regenerates
-the `SurfBoardService` interface, adding the `@JSONWebService`
-annotation to it. This annotation tells the portal that the interface's public methods
-are to be exposed as JSON Web Services, making them a part of the plugin's JSON API. 
+Lets say you have a portlet named `SupraSurf` that has some services. And you
+decide to expose them as remote services. After enabling the `remote-service`
+attribute on its `SurfBoard` entity, you rebuild the services. Service Builder
+regenerates the `SurfBoardService` interface, adding the `@JSONWebService`
+annotation to it. This annotation tells the portal that the interface's public
+methods are to be exposed as JSON Web Services, making them a part of the
+plugin's JSON API. 
 
-By default, scanning of the portlet's services is disabled. To enable scanning you need to add an appropriate
-filter definition in portlet's `web.xml`. Fortunately, Liferay provides a way
-automatically add the filter. Just click the *Build WSDD* button in Liferay IDE
-while editing the `service.xml` file in *Overview* mode, or
-just invoke the `build-wsdd` Ant target. On building the WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables
-the JSON Web Services for the plugin. Under the hood, the Plugins SDK registers
-the `SecureFilter` and the `JSONWebServiceServlet` for the plugin. You only need
-to enable JSON Web Services for your plugin once.
+By default, scanning of the portlet's services is disabled. To enable scanning
+you need to add an appropriate filter definition in portlet's `web.xml`.
+Fortunately, Liferay provides a way automatically add the filter. Just click the
+*Build WSDD* button in Liferay IDE while editing the `service.xml` file in
+*Overview* mode, or just invoke the `build-wsdd` Ant target. On building the
+WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
+JSON Web Services for the plugin. Under the hood, the Plugins SDK registers the
+`SecureFilter` and the `JSONWebServiceServlet` for the plugin. You only need to
+enable JSON Web Services for your plugin once.
 
 Let's deploy the `SupraSurf` portlet plugin on our portal server. If your server
 isn't running, start it up. Then deploy your plugin onto it. 
@@ -634,8 +633,8 @@ configure the portal to log the plugin's informational messages (i.e., its `INFO
 ...` messages). See the section on Liferay's logging system in
 [Using Liferay Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferays-logging-system-liferay-portal-6-2-user-guide-18-en).
 
-Let's add a simple method to the plugin's services. Edit the `SurfBoardServiceImpl` class and add the following
-method:
+Let's add a simple method to the plugin's services. Edit the
+`SurfBoardServiceImpl` class and add the following method:
 
     public String helloWorld(String worldName) {
         return "Hello world: " + worldName;
@@ -649,16 +648,16 @@ Web Service action!
 	INFO  [JSONWebServiceActionsManagerImpl:117] Configured 1 actions for\
 	    /suprasurf-portlet
 
-This same mechanism registers Liferay Portal's own service actions. They are conveniently enabled by
-default, so you don't have to configure them. 
+This same mechanism registers Liferay Portal's own service actions. They are
+conveniently enabled by default, so you don't have to configure them. 
 
 Next, let's learn how to form a mapped URL for the remote service so we can
 access it. 
 
 #### Mapping and Naming Conventions [](id=mapping-and-naming-conventions-liferay-portal-6-2-dev-guide-05-en)
 
-You can form a mapped URL of an exposed service bey llowing naming
-convention convention below:
+You can form a mapped URL of an exposed service by following the naming
+convention below: 
 
     http://[server]:[port]/api/jsonws/[plugin-context-name.][service-class-name]/[service-method-name]
 
@@ -666,9 +665,9 @@ Let's look at the last three bracketed items more closely:
 
 - `plugin-context-name` is the plugin's context name (e.g., `suprasurf-portlet`
   in our example). For the portal's services, this part is not needed. 
-- `service-class-name` is generated from the service's class name in lower case, minus its
-  `Service` or `ServiceImpl` suffix. For example, specify `surfboard` as the
-  `plugin-context-name` for the `SurfBoardService` class. 
+- `service-class-name` is generated from the service's class name in lower case,
+  minus its `Service` or `ServiceImpl` suffix. For example, specify `surfboard`
+  as the `plugin-context-name` for the `SurfBoardService` class. 
 - `service-method-name` is generated from the service's method name by
   converting its camel case to lower case and using dashes (`-`) to separate
   words. 
@@ -691,10 +690,10 @@ Here's is that portal service method's URL:
 
         http://localhost:8080/api/jsonws/user-service/get-user-by-id
 
-Each service method is bound to one HTTP method type. Any method with a name starting
-with `get`, `is`, or `has` is assumed to be a read-only method and is mapped as
-a *GET HTTP* method by default. All other methods are mapped as *POST HTTP*
-methods. 
+Each service method is bound to one HTTP method type. Any method with a name
+starting with `get`, `is`, or `has` is assumed to be a read-only method and is
+mapped as a *GET HTTP* method by default. All other methods are mapped as *POST
+HTTP* methods. 
 
 As you may have noticed, plugin services are accessed via the portal context.
 Conveniently, requests sent this way can leverage the user's authentication
