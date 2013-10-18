@@ -1122,7 +1122,7 @@ localization:
   if you want to provide your customers fancy *Title* and *Description* features
   like the majority of core liferay portlets. 
 
-Let's proceed, assuming you answered "yes" to all of the above questions. 
+We'll cover these different cases in the following sections. 
 
 ### Create Resource Bundles [](id=create-resource-bundles)
 
