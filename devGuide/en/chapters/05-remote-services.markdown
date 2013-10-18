@@ -63,8 +63,8 @@ Here's how you find services for a user's blogs statistics:
    [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 
 2. Under *Portlet Services*, click the link for the
-   `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
-   services are a part of the *blogs portlet*. 
+   `com.liferay.portlet.blogs.service` package in the *Packages* frame, since
+   the services are a part of the *blogs portlet*. 
 
 3. Find and click on the `-ServiceUtil` class (in this case
    `BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the
@@ -286,8 +286,10 @@ Here's the WSDL Excerpt for the `addUserGroup` operation of `UserGroup`:
 
     <wsdl:operation name="addUserGroup" parametterOrder="name description
     publicLayoutSetPropertyId privateLayoutSetPropertyId">
-        <wsdl:input message="impl:addUserGroupRequest" name="addUserGroupRequest"/>
-        <wsdl:outputMessage="impl:addUserGroupResponse" name="assUserGroupResponse"/>
+        <wsdl:input message="impl:addUserGroupRequest" name="addUserGroupRequest"
+        />
+        <wsdl:outputMessage="impl:addUserGroupResponse" name="assUserGroupResponse"
+        />
     </wsdl:operation>
 
 To use the service, you pass in the WSDL URL along with your login credentials
@@ -470,8 +472,8 @@ Here are a few things to note about the URL:
 
 - It's a *secure* (authenticated) URL for the service. Authentication is done
   using HTTP Basic Authentication, which isn't appropriate for a production
-  environment, since the password is unencrypted. It's simply used for convenience
-  in this example. 
+  environment, since the password is unencrypted. It's simply used for
+  convenience in this example. 
 - The screen name and password are passed in as credentials. 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
   end of the URL. Remember that the service name can be found in the web service
@@ -555,8 +557,7 @@ Let's talk about registering JSON Web Services next.
 
 ### Registering JSON Web Services [](id=registering-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
-Liferay's developers use a tool called *Service Builder* to build services.
-The very same tool is used to build portal's own remote services. When
+Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
 `service.xml` entities with the property `remote-service="true"`) are exposed as
 JSON Web Services. When each `-Service.java` interface is created for a
@@ -580,69 +581,93 @@ methods become exposed as JSON API. As explained previously, the `-ServiceImpl`
 configuration overrides the `-Service` interface configuration during
 registration.
 
-Portal, however, does not scan all available classes for the annotations. Instead,
-it scans only services. More precisely, it scans all classes registered in
-application context of the portal, i.e. of the plugin. All classes that are available
-from `BeanLocator` are scanned. Practically, this means that portal scans
-all classes registered in Spring context of the portal, i.e. plugin. If you use
-service builder to build plugin services, they are automatically registered 
-in Springs context and available from `BeanLocator`. Moreover, this means
-that you can register *any* object in spring context of your plugin and it will
-be scanned for remote services! You are not forced to use service builder,
-although it's recommended as service builder does so many things regarding
-remote services so you don't have to.
+Portal, however, does not scan all available classes for the annotations.
+Instead, it only scans services. More precisely, it scans all classes registered
+in application context of the portal, i.e. of the plugin. All classes that are
+available to the `BeanLocator` are scanned. Practically, this means that the
+portal scans all classes registered in portal's Spring context of the portal,
+i.e. plugin. If you use Service Builder to build plugin services, it
+automatically registers them in the Spring context and they are made available
+to the `BeanLocator`. Moreover, this means that you can register *any* object in
+the Spring context of your plugin and the portal scans it for remote services!
+We are not forcing you to use Service Builder. We recommend using it because it
+easily does so many things with regards to your remote services. 
 
-Ok, now lets see how you can create a plugin with some remote services. Keep
-in mind that the very same mechanism is used for the portal services - they
-are enabled out of box.
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use 
+ *Service Builder* to expose their services via JSON automatically.
+ If you're interested in using Service Builder, read Chapter 4. 
+
+---
+
+OK, now let's see how you can create a plugin with some remote services. Keep
+in mind that Liferay developers use the very same mechanism so that Liferay Portal's
+services come enabled out-of-the-box. 
 
 #### Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
-Lets say you have a portlet (e.g. 'SupraSurf' portlet) with some services and
-decide to expose them as remote services. After enabling `remote-service` attribute
-on entites of intereset (e.g. on `SurfBoard` entity), rebuild services. Created
-interface `SurfBoardService` will be annotated with the `@JSONWebService`
-annotation. This marker will tell portal that methods of this service 
-are exposed as JSON Web Services and will become part of the JSON API of the plugin.
+Lets say you have a portlet named `SupraSurf` that has some services. And you
+decide to expose them as remote services. After enabling the `remote-service`
+attribute on its `SurfBoard` entity, you rebuild the services. Service Builder
+regenerates the `SurfBoardService` interface, adding the `@JSONWebService`
+annotation to it. This annotation tells the portal that the interface's public
+methods are to be exposed as JSON Web Services, making them a part of the
+plugin's JSON API. 
 
-Scanning of portlet services isn't enabled by default; you need to add appropriate
-filter definition in `web.xml`. Fortunatelly, there is an easy way to do so,
-just invoke `build-wsdd` Ant target. It will modify the `web.xml` and enable
-the JSON WebServices for the plugin. This Ant task actually just registers
-the `SecureFilter` and the `JSONWebServiceServlet` under the hood. You need
-to enable JSON Web Services only once.
+By default, scanning of the portlet's services is disabled. To enable scanning
+you need to add an appropriate filter definition in portlet's `web.xml`.
+Fortunately, Liferay provides a way automatically add the filter. Just click the
+*Build WSDD* button in Liferay IDE while editing the `service.xml` file in
+*Overview* mode, or just invoke the `build-wsdd` Ant target. On building the
+WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
+JSON Web Services for the plugin. Under the hood, the Plugins SDK registers the
+`SecureFilter` and the `JSONWebServiceServlet` for the plugin. You only need to
+enable JSON Web Services for your plugin once.
 
-Lets now add a method to our service. Edit `SurfBoardServiceImpl` and add the following
-method:
+Let's deploy the `SupraSurf` portlet plugin on our portal server. If your server
+isn't running, start it up. Then deploy your plugin onto it. 
 
-	public String helloWorld(String worldName) {
-		return "Hello world: " + worldName;
-	}
+To get some feedback from the portal on registering your plugin's services,
+configure the portal to log the plugin's informational messages (i.e., its `INFO
+...` messages). See the section on Liferay's logging system in
+[Using Liferay Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferays-logging-system-liferay-portal-6-2-user-guide-18-en).
 
-Rebuild services and deploy it. You'll see the
-following lines in the console output when the info log level is set:
+Let's add a simple method to the plugin's services. Edit the
+`SurfBoardServiceImpl` class and add the following method:
 
-	INFO  [JSONWebServiceActionsManagerImpl:117] Configured 1 actions for /suprasurf-portlet
+    public String helloWorld(String worldName) {
+        return "Hello world: " + worldName;
+    }
 
-Your service method just become registered as JSON Web Service action!
+Rebuild the services and deploy the plugin. Notice that the portal prints a
+message like the one below informing us that an action was configured for the
+portlet. This indicates that the service method is now registered as a JSON Web
+Web Service action!  
 
-Again, the same mechanism is used for the portal own services. They are enabled by
-default, so you don't have to configure anything.
+	INFO  [JSONWebServiceActionsManagerImpl:117] Configured 1 actions for\
+	    /suprasurf-portlet
 
-Let's see how to form a mapped URL of the service next, to access the created remote service. 
+This same mechanism registers Liferay Portal's own service actions. They are
+conveniently enabled by default, so you don't have to configure them. 
+
+Next, let's learn how to form a mapped URL for the remote service so we can
+access it. 
 
 #### Mapping and Naming Conventions [](id=mapping-and-naming-conventions-liferay-portal-6-2-dev-guide-05-en)
 
-You can form a mapped URL of an exposed service using the following naming
-convention: 
+You can form a mapped URL of an exposed service by following the naming
+convention below: 
 
     http://[server]:[port]/api/jsonws/[plugin-context-name.][service-class-name]/[service-method-name]
 
 Let's look at the last three bracketed items more closely: 
 
-- `plugin-contex-name` is the context name of the plugin (`suprasurf-portlet` in our example). For portal's services, this part is obviously not needed.
-- `service-class-name` is generated from the service's class name by removing
-  the `Service` or `ServiceImpl` suffix and making it lower case. 
+- `plugin-context-name` is the plugin's context name (e.g., `suprasurf-portlet`
+  in our example). For the portal's services, this part is not needed. 
+- `service-class-name` is generated from the service's class name in lower case,
+  minus its `Service` or `ServiceImpl` suffix. For example, specify `surfboard`
+  as the `plugin-context-name` for the `SurfBoardService` class. 
 - `service-method-name` is generated from the service's method name by
   converting its camel case to lower case and using dashes (`-`) to separate
   words. 
@@ -654,27 +679,27 @@ For our created service method, the URL looks like:
 
 	http://localhost:8080/api/jsonws/suprasurf-portlet.surfboard/hello-world
 
-Note the context name part of the URL. For the portal, it's similar. Here's the
-portal's service method we want to access: 
+Note the context name part of the URL. For the portal, it's similar. Here's a
+portal service method we want to access: 
 
         @JSONWebService
         public interface UserService {
             public com.liferay.portal.model.User getUserById(long userId) {...}
 
-Here's what the portal service method's URL looks like: 
+Here's is that portal service method's URL: 
 
         http://localhost:8080/api/jsonws/user-service/get-user-by-id
 
-Each service method is bound to one HTTP method type. Any method name starting
-with `get`, `is` or `has` are assumed to be read-only methods and are mapped as
-*GET HTTP* methods by default. All other methods are mapped as *POST HTTP*
-methods. 
+Each service method is bound to one HTTP method type. Any method with a name
+starting with `get`, `is`, or `has` is assumed to be a read-only method and is
+mapped as a *GET HTTP* method by default. All other methods are mapped as *POST
+HTTP* methods. 
 
-As you noticed, plugin services are accessed via the portal context. Conveniently,
-requests sent this way can leverage the user's authentication
+As you may have noticed, plugin services are accessed via the portal context.
+Conveniently, requests sent this way can leverage the user's authentication
 in his current portal session.
 
-Next we'll learn to available JSON Web Services. 
+Next we'll learn to how to *list* JSON Web Services available from our portal. 
 
 #### Listing Available JSON Web Services [](id=listing-available-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -689,11 +714,11 @@ the method, all its arguments, list exceptions that can be thrown, and read its
 Javadoc! Using a simple form from within your browser, you can even invoke the
 service method for testing purposes. 
 
-The same API page lists remote services of plugins, too. When more then
-one plugin with the remote services enabled is deployed, API page will
-show a select box with all available plugins context paths (including the
-portals path as well). With this select box you can easily switch from
-portals list to plugin list of remote services.
+The same API page lists remote services of plugins, too. When multiple plugins
+with remote services enabled are deployed, the API page
+shows a select box with all available plugin context paths (including the
+portal's path). The select box facilitates switching between the plugins' list
+of remote services and the portal's list of remote services.
 
 If you've been paying attention, you already know how to control registration by
 using the `@JSONWebService` annotation in your `-ServiceImpl` class. This
@@ -723,11 +748,9 @@ use an annotation like this one:
     public boolean addBoard(
 
 In this example, the plugin's service method `addBoard` is mapped to URL
-method name `add-board-wow`. The complete URL is actually
-
-	http://localhost:8080/api/jsonws/suprasurf-portlet.surfboard/add-board-wow
-
-and can be accessed using the PUT HTTP method.
+method name `add-board-wow`. Its complete URL is now
+`http://localhost:8080/api/jsonws/suprasurf-portlet.surfboard/add-board-wow` and
+can be accessed using the PUT HTTP method. 
 
 If the URL name starts with a slash character (`/`), only the method name is
 used to form the service URL; the class name is ignored.
@@ -741,8 +764,8 @@ in class-level annotation:
     @JSONWebService("sbs")
     public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl{
 
-This maps all the service methods of the class to URL class name `sbs` instead
-of the `surfboard` default.
+This maps all of the service's methods to a URL class name `sbs` instead
+of the default class name `surfboard`. 
 
 Next we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
@@ -765,12 +788,6 @@ to you annotate only those methods that you want exposed.
 Now only the `addBoard` method and any other method annotated with
 `@JSONWebService` will be part of the JSON Web Service API; all other methods
 of this service will be excluded from the API.
-
-<!-- Russ, while I love this pun, unfortunately for the survival of the
-statements about how easy it is to annotate, annotations are a standard Java
-thing that developers should know about before reading this. For that reason,
-it's neither a novel nor a new concept, and so I'm removing the statements about
-how easy it is. Maybe you can fit the pun in somewhere else? -->
 
 Next let's look at portal configuration options that apply to JSON Web Services. 
 
@@ -882,7 +899,8 @@ Find out how to pass parameters as part of the URL path next.
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
 from method argument names by converting them from camelCase to names using all
-lower case and separated-by-dash. Here's an example of calling a portal's service: 
+lower case and separated-by-dash. Here's an example of calling one of the
+portal's services: 
 
     http://localhost:8080/api/jsonws/dlapp/get-file-entries/repository-id/\
     10172/folder-id/0
@@ -1292,12 +1310,12 @@ command is a JSON string, null values can be specified either by explicitly
 using the `null` keyword or by placing a dash before the parameter name and 
 leaving the value empty (e.g. `"-param1": ''`).
 
-The example Invoker call functions exactly the same as the following standard
+The example Invoker calls functions exactly the same as the following standard
 JSON Web Service call: 
 
     /user/get-user-by-id?userId=123&-param1
 
-Of course, JSON WebService invoker may contain calls to plugin's methods as well:
+Of course, JSON WebService invoker handles calls to plugin methods as well:
 
     {
         "/suprasurf-portlet.surfboard/hello-world": {
@@ -1305,7 +1323,7 @@ Of course, JSON WebService invoker may contain calls to plugin's methods as well
         }
     }
 
-This would call our plugin's remote service.
+The code above calls our plugin's remote service. 
 
 You can use variables to reference objects returned from service calls. Variable
 names must start with a dollar sign, `$`. In our previous example, the service
