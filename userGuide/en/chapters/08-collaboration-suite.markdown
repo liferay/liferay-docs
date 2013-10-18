@@ -1839,7 +1839,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.34: Openfire Administration Web Tool](../../images/jabber-service-name.png)
+![Figure 8.34: View your server information using the Openfire Administration Web Tool.](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
@@ -1890,12 +1890,7 @@ Marketplace by navigating the the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 8.35: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
-
-<!-- Needs to be updated for 6.2 -->
-<!-- There are a few bugs that make it impossible to configure an account using
-the Mail portlet. Info below this point still needs to be tested for 6.2.
-Reference: LPS-36241 -->
+![Figure 8.35: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add Mail Account*
 link. From there, you are given a choice between a Custom email Account or a
@@ -1914,7 +1909,10 @@ account.
 
 **Password**: lets you choose a password for logging into the account.
 
-**Incoming Settings**: allows you to specify the host name for your IMAP
+**Save Password**: allows Liferay to save your password so you won't have to
+enter it next time you access your mail account.
+
+**Incoming Host Name**: allows you to specify the host name for your IMAP
 (Internet Mail Access Protocol) or POP server.
 
 **Incoming Port**: allows you to specify the port upon which the IMAP or POP
@@ -1938,12 +1936,12 @@ you can add as many mail accounts as you want in order to view them in the
 portlet.
 
 Click the tab for the mail account you just configured to be brought to an
-interface which allows you to read your mail and compose new messages. To read
-a message, click on it. To compose a new message, click the *Compose Email*
-link on the left side of the portlet. A form appears which allows you to
-compose an email message using the same rich text editor that appears
-everywhere else in Liferay. You can read, reply, and create messages, as well
-as manage all of your folders in Liferay's Mail portlet. 
+interface which allows you to read your mail and compose new messages. To read a
+message, click on it. To compose a new message, click the *Compose* link on the
+left side of the portlet. A form appears which allows you to compose an email
+message using the same rich text editor that appears everywhere else in Liferay.
+You can read, reply, and create messages, as well as manage all of your folders
+in Liferay's Mail portlet.
 
 The Mail portlet is a great way to integrate a familiar service with other the
 collaboration features that Liferay provides. 
