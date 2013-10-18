@@ -1170,12 +1170,26 @@ project we created earlier in Chapter 2:
 1.  Create a `content` package in your project's source folder
     `doocroot/WEB-INF/src`. 
 
-2.  Create a file `Language.properties` in the content folder you just created.
-    The `Language.properties` file will hold all the keys you define for your
-    portlets. 
+2.  Create a file `Language.properties` in the content folder you just created
+    and add the following language key: 
 
-3.  For each portlet, update its `<portlet>` node in the `portlet.xml` file to
-    refer to the resource bundle correctly:
+        your-nose-knows-best=Your nose knows best
+
+3.  Create another language key file `Language_es.properties` in the content
+    folder and add the equivalent  `your-nose-knows-best` key translated to
+    Spanish: 
+
+        your-nose-knows-best=La nariz sabe mejor
+
+4.  Add the following line below your last included JSP (e.g., after
+    `<%@include file="/html/init.jsp" %>`) in the `view.jsp` files for each of
+    your portlets. This line brings your translated language key value into your
+    JSP: 
+
+        Nose-ster - <liferay-ui:message key="your-nose-knows-best" />!
+
+5.  For both portlets, update their `<portlet>` node in the `portlet.xml` file
+    to refer to the same resource bundle: 
 
         <portlet>
             <portlet-name>eventlisting</portlet-name>
@@ -1196,6 +1210,16 @@ project we created earlier in Chapter 2:
     `portlet` element. See the `portlet.xml` file's schema
     [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
     for details. 
+
+6.  Redeploy the plugin and go to the page where you added the Event Listing and
+    Location Listing portlets to verify that they display the same message
+    "Nose-ster - Your nose knows best!". 
+
+7.  Switch your portal's locale to Spanish by adding `/es` after
+    `localhost:8080` and refresh the page. Notice how both portlets display your
+    translated language key.
+
+![Figure 3.11: Sharing resource bundles between multiple portlets helps you leverage common translated text. And Liferay IDE's language building capabilities help you use translation services.](../../images/portlet-localization-shared-bundle-spanish.png)
 
 At this point any language keys you specify in the `Language.properties` file
 are accessible from either of the portlets. 
@@ -1379,7 +1403,7 @@ the project:
 
 Portal's Control Panel displays your portlet's localized title and description. 
 
-![Figure 3.11: It's easy to localize titles and descriptions for multiple portlets in your project.](../../images/localized-portlet-title-desc-in-control-panel.png)
+![Figure 3.12: It's easy to localize titles and descriptions for multiple portlets in your project.](../../images/localized-portlet-title-desc-in-control-panel.png)
 
 You're becoming an expert localizer!
 
