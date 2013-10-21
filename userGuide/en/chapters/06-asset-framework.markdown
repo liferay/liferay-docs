@@ -1095,11 +1095,11 @@ This Page* box. Also, for its display settings, set the Display Style to
 ---
 
  ![Note](../../images/01-tip.png) **Note:** Web content linked in the Asset
- Publisher can be viewed by clicking its asset link. With the *View in Context*
- behavior checked, the link will display the Web Content in its configured
- display page. If the web content does not have a configured display page, it
- will be displayed in the web content display portlet to which the asset
- belongs.
+ Publisher can be viewed by clicking their asset links. With the *View in
+Context* behavior checked, the link displays the Web Content in its
+configured display page. If the web content does not have a configured display
+page, it is displayed in the web content display portlet to which the
+asset belongs.
 
 ---
 
