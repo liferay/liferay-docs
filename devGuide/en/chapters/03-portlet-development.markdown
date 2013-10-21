@@ -1052,7 +1052,7 @@ in their language, specify the message key named `welcome`.
 
     <liferay-ui:message key="welcome" />
 
-This key maps to the of the word "Welcome", in your translation of it to the
+This key maps to the the word "Welcome", in your translation of it to the
 user's locale. Here is the `welcome` language key from Liferay's
 `Language.properties` file.
 
