@@ -254,12 +254,19 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
          -XX:MaxPermSize=256m"
          -Dexternal-properties=portal-developer.properties"
 
+If you're already using the system property `external-properties` to load other
+properties files, add `portal-developer.properties` to the list and use a comma
+to separate it from other entries.
+
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** If you're already using the
- system property `external-properties` to load other properties files, add
- `portal-developer.properties` to the list and use a comma to separate it from
- other entries.
+ ![tip](../../images/tip-pen-paper.png) **Note:** Older versions of Liferay 6.1
+ bundled with Tomcat use the `JAVA_OPTS` variable line. This caused some
+ performance issues and was changed to `CATALINA_OPTS`. If you have the
+ `JAVA_OPTS` variable line in your `setenv.sh` or `setenv.bat` file, change the
+ variable line to `CATALINA_OPTS` to take full advantage of the performance
+ upgrade. More information on this change can be referenced in
+ [LPS-26464](https://issues.liferay.com/browse/LPS-26464).
 
 ---
 
