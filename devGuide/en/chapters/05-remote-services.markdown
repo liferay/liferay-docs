@@ -317,39 +317,54 @@ Next, let's invoke the web service!
 
 A Java web service client can easily be set up using Eclipse IDE. Here's how: 
 
-In Eclipse, add a new web service client to your project for each service you
-plan to consume in your client code. For our purposes, the client we're building
-needs a web service client for the portal's `Company`, `User`, and `UserGroup`
-services. 
+In Eclipse, you can add a new web service client to your project for each
+service you plan to consume in your client code. For our example, we'll build a
+web service client for the portal's `Company`, `User`, and `UserGroup` services.
 
-To add your Web Service Clients in Eclipse IDE, click *New* &rarr; *Other...*,
-then expand the *Web Services* category. Click *Web Service Client*.
+To create a new web service client project in Eclipse IDE, click *File* &rarr;
+*New* &rarr; *Other...*, then expand the *Web Services* category. Select *Web
+Service Client*.
 
 For each client you create, you're prompted to enter the service definition
-(WSDL) for the desired service. Here's an example WSDL: 
+(WSDL) for the desired service. Since our example web service client will use
+Liferay Portal's `Company`, `User`, and `UserGroup` services, we'll need to
+enter the following WSDLs: 
+
+    http://localhost:8080/api/axis/Portal_CompanyService?wsdl
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
+    http://localhost:8080/api/axis/Portal_UserGroupService?wsdl
+
 ![Figure 5.3: Service Definition](../../images/api-web-svc-wsdl.png)
 
-With the WSDL specified, Eclipse automatically adds the auxiliary files and
-libraries required to consume that web service. Nifty!
+When you specify a WSDL, Eclipse automatically adds the auxiliary files and
+libraries required to consume that web service. Nifty! After you've created your
+web service client project using one of the above WSDLs, you need to create
+additional clients in the project using the remaining WSDLs. To create an
+additional client in an existing project, right-click on the project and select
+*New* &rarr; *Other* &rarr; *Web Service Client*. Click *Next*, enter the
+WSDL, and complete the wizard.
 
-Here's the code that locates and invokes operations to create a new user group
-named `MyUserGroup` and add a user with the screen name *test* to it: 
+The code below locates and invokes operations to create a new user group named
+`MyUserGroup` and add a user with the screen name *test* to it. Create a
+`LiferaySoapClient.java` file in your web service client project. If you create
+this class in a certain package, remember to add the package declaration to the
+code below.
 
     import java.net.URL;
 
-    import com.liferay.portal.model.CompanySoap; import
-    com.liferay.portal.model.UserGroupSoap; import
-    com.liferay.portal.service.http.CompanyServiceSoap; import
-    com.liferay.portal.service.http.CompanyServiceSoapServiceLocator; import
-    com.liferay.portal.service.http.UserGroupServiceSoap; import
-    com.liferay.portal.service.http.UserGroupServiceSoapServiceLocator; import
-    com.liferay.portal.service.http.UserServiceSoap; import
-    com.liferay.portal.service.http.UserServiceSoapServiceLocator;
+    import com.liferay.portal.model.CompanySoap;
+    import com.liferay.portal.model.UserGroupSoap;
+    import com.liferay.portal.service.http.CompanyServiceSoap;
+    import com.liferay.portal.service.http.CompanyServiceSoapServiceLocator;
+    import com.liferay.portal.service.http.UserGroupServiceSoap;
+    import com.liferay.portal.service.http.UserGroupServiceSoapServiceLocator;
+    import com.liferay.portal.service.http.UserServiceSoap;
+    import com.liferay.portal.service.http.UserServiceSoapServiceLocator;
 
     public class LiferaySoapClient {
+
         public static void main(String[] args) {
 
             try {
@@ -460,6 +475,7 @@ named `MyUserGroup` and add a user with the screen name *test* to it:
             }
             return new URL(url);
         }
+
     }
 
 Running this client should produce output like the following example: 
@@ -508,6 +524,8 @@ Next let's implement a web service client implemented in PHP.
 You can write your client in any language that supports web services invocation.
 Let's invoke the same operations we did when we created our Java client, this
 time using PHP and the PHP SOAP Client: 
+
+<!-- How to create and run the PHP SOAP client? -Jesse -->
 
     <?php
         $groupName = "MyGroup2";
@@ -568,7 +586,7 @@ We'll cover the following topics as we explore JSON Web Service functionality:
 - Invocation 
 - Results
 
-Let's talk about registering JSON Web Services next. 
+Let's start by discussing how to register JSON Web Services. 
 
 ### Registering JSON Web Services [](id=registering-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -596,17 +614,20 @@ methods become exposed as JSON API. As explained previously, the `-ServiceImpl`
 configuration overrides the `-Service` interface configuration during
 registration.
 
-Portal, however, does not scan all available classes for the annotations.
-Instead, it only scans services. More precisely, it scans all classes registered
-in application context of the portal, i.e. of the plugin. All classes that are
-available to the `BeanLocator` are scanned. Practically, this means that the
-portal scans all classes registered in portal's Spring context of the portal,
-i.e. plugin. If you use Service Builder to build plugin services, it
+Liferay Portal, however, does not scan all available classes for the
+annotations.  Instead, it only scans services. More precisely, it scans all
+classes registered in application context of the portal, i.e. of the plugin. All
+classes that are available to the `BeanLocator` are scanned. Practically, this
+means that the portal scans all classes registered in portal's Spring context of
+the portal, i.e. plugin. If you use Service Builder to build plugin services, it
 automatically registers them in the Spring context and they are made available
 to the `BeanLocator`. Moreover, this means that you can register *any* object in
 the Spring context of your plugin and the portal scans it for remote services!
 We are not forcing you to use Service Builder. We recommend using it because it
 easily does so many things with regards to your remote services. 
+
+<!-- Why use the phrase "portal, i.e. plugin"? What does it mean? "portal" does
+not mean "plugin". -Jesse -->
 
 ---
 
@@ -616,13 +637,13 @@ easily does so many things with regards to your remote services.
 
 ---
 
-OK, now let's see how you can create a plugin with some remote services. Keep
-in mind that Liferay developers use the very same mechanism so that Liferay Portal's
-services come enabled out-of-the-box. 
+OK, now let's see how you can create a plugin with some remote services. Keep in
+mind that Liferay developers use the very same mechanism so that Liferay
+Portal's services come enabled out-of-the-box. 
 
 #### Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
-Lets say you have a portlet named `SupraSurf` that has some services. And you
+Let's say you have a portlet named `SupraSurf` that has some services. And you
 decide to expose them as remote services. After enabling the `remote-service`
 attribute on its `SurfBoard` entity, you rebuild the services. Service Builder
 regenerates the `SurfBoardService` interface, adding the `@JSONWebService`
@@ -632,8 +653,8 @@ plugin's JSON API.
 
 By default, scanning of the portlet's services is disabled. To enable scanning
 you need to add an appropriate filter definition in portlet's `web.xml`.
-Fortunately, Liferay provides a way automatically add the filter. Just click the
-*Build WSDD* button in Liferay IDE while editing the `service.xml` file in
+Fortunately, Liferay provides a way to automatically add the filter. Just click
+the *Build WSDD* button in Liferay IDE while editing the `service.xml` file in
 *Overview* mode, or just invoke the `build-wsdd` Ant target. On building the
 WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
 JSON Web Services for the plugin. Under the hood, the Plugins SDK registers the
