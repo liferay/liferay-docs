@@ -439,6 +439,15 @@ to delete the site entirely, create a new site with the same name as the old
 one (i.e., re-create the site), and then import the LAR file into the new site.
 This way, there's no chance for there to be a data conflict.
 
+Liferay can handle some kinds of naming collisions when importing a LAR file
+into a site. For example, suppose you're importing a LAR file into a site and
+the LAR file has a page with a certain friendly URL. If an existing page in the
+site has the same friendly URL there will be a collision. Liferay resolves the
+collision by adding a number to the end of the friendly URL and incrementing
+until there's no collision. This behavior takes place for friendly URL
+translations as well. Similarly, if importing a LAR into a site causes a
+category name collision, Liferay renames the imported categories.
+
 ---
 
  ![Note](../../images/01-tip.png) **Note:** LAR files are version dependent. You
