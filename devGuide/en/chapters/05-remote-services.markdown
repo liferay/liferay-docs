@@ -517,7 +517,7 @@ for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and
 parameter order, request type, response type, and return type are conveniently
 specified in the WSDL for each Liferay web service. It's all there for you!
 
-Next let's implement a web service client implemented in PHP. 
+Next, let's implement a web service client implemented in PHP. 
 
 ### SOAP PHP Client [](id=soap-php-client-liferay-portal-6-2-dev-guide-05-en)
 
@@ -600,31 +600,31 @@ registered and available as JSON Web Services.
 
 The `-Service.java` interface source file should never be modified by the user.
 If you need, however, more control over its methods (e.g., hiding some methods
-and exposing others), you can configure the `-ServiceImpl` class.  When the
+and exposing others), you can configure the `-ServiceImpl` class. When the
 service implementation class (`-ServiceImpl`) is annotated with the
 `@JSONWebService` annotation, the service interface is ignored and the service
 implementation class is used for configuration in its place. In other words,
 `@JSONWebService` annotations in the service implementation override any JSON
 Web Service configuration in service interface.
 
-That's it!  When you start Liferay Portal, it scans service classes 
-for annotations (more about scanning later). Each class that uses
-the `@JSONWebService` annotation is examined and its
-methods become exposed as JSON API. As explained previously, the `-ServiceImpl`
-configuration overrides the `-Service` interface configuration during
-registration.
+That's it! When you start Liferay Portal, it scans service classes for
+annotations (more about scanning later). Each class that uses the
+`@JSONWebService` annotation is examined and its methods become exposed as JSON
+API. As explained previously, the `-ServiceImpl` configuration overrides the
+`-Service` interface configuration during registration.
 
 Liferay Portal, however, does not scan all available classes for the
-annotations.  Instead, it only scans services. More precisely, it scans all
-classes registered in application context of the portal, i.e. of the plugin. All
-classes that are available to the `BeanLocator` are scanned. Practically, this
-means that the portal scans all classes registered in portal's Spring context of
-the portal, i.e. plugin. If you use Service Builder to build plugin services, it
-automatically registers them in the Spring context and they are made available
-to the `BeanLocator`. Moreover, this means that you can register *any* object in
-the Spring context of your plugin and the portal scans it for remote services!
-We are not forcing you to use Service Builder. We recommend using it because it
-easily does so many things with regards to your remote services. 
+annotations. Instead, it only scans services. More precisely, it scans all
+classes registered in the application context of the portal, i.e. of the plugin.
+All classes that are available to the `BeanLocator` are scanned. Practically,
+this means that the portal scans all classes registered in portal's Spring
+context of the portal, i.e. plugin. If you use Service Builder to build plugin
+services, it automatically registers them in the Spring context and they are
+made available to the `BeanLocator`. Moreover, this means that you can register
+*any* object in the Spring context of your plugin and the portal scans it for
+remote services! We are not forcing you to use Service Builder. We recommend
+using it because it easily does so many things with regards to your remote
+services. 
 
 <!-- Why use the phrase "portal, i.e. plugin"? What does it mean? "portal" does
 not mean "plugin". -Jesse -->
@@ -651,7 +651,7 @@ annotation to it. This annotation tells the portal that the interface's public
 methods are to be exposed as JSON Web Services, making them a part of the
 plugin's JSON API. 
 
-By default, scanning of the portlet's services is disabled. To enable scanning
+By default, scanning of the portlet's services is disabled. To enable scanning,
 you need to add an appropriate filter definition in portlet's `web.xml`.
 Fortunately, Liferay provides a way to automatically add the filter. Just click
 the *Build WSDD* button in Liferay IDE while editing the `service.xml` file in
@@ -679,7 +679,7 @@ Let's add a simple method to the plugin's services. Edit the
 Rebuild the services and deploy the plugin. Notice that the portal prints a
 message like the one below informing us that an action was configured for the
 portlet. This indicates that the service method is now registered as a JSON Web
-Web Service action!  
+Web Service action!
 
 	INFO  [JSONWebServiceActionsManagerImpl:117] Configured 1 actions for\
 	    /suprasurf-portlet
@@ -692,7 +692,7 @@ access it.
 
 #### Mapping and Naming Conventions [](id=mapping-and-naming-conventions-liferay-portal-6-2-dev-guide-05-en)
 
-You can form a mapped URL of an exposed service by following the naming
+You can form the mapped URL of an exposed service by following the naming
 convention below: 
 
     http://[server]:[port]/api/jsonws/[plugin-context-name.][service-class-name]/[service-method-name]
@@ -708,8 +708,9 @@ Let's look at the last three bracketed items more closely:
   converting its camel case to lower case and using dashes (`-`) to separate
   words. 
 
-Let's demonstrate by mapping a service method's URL using the above naming
-conventions both on some portal service and on created plugin service. 
+We'll demonstrate these naming conventions by mapping a service method's URL
+using the naming conventions both on a created plugin service and on a portal
+service.
 
 For our created service method, the URL looks like:
 
@@ -732,10 +733,10 @@ mapped as a *GET HTTP* method by default. All other methods are mapped as *POST
 HTTP* methods. 
 
 As you may have noticed, plugin services are accessed via the portal context.
-Conveniently, requests sent this way can leverage the user's authentication
-in his current portal session.
+Conveniently, requests sent this way can leverage the user's authentication in
+his current portal session.
 
-Next we'll learn to how to *list* JSON Web Services available from our portal. 
+Next, we'll learn to how to *list* JSON Web Services available from our portal. 
 
 #### Listing Available JSON Web Services [](id=listing-available-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -744,17 +745,20 @@ browser to the following address:
 
     http://localhost:8080/api/jsonws
 
-The API page lists the portal's registered and exposed service methods. Get each
-method's details by clicking the method name. You'll see the full signature of
-the method, all its arguments, list exceptions that can be thrown, and read its
-Javadoc! Using a simple form from within your browser, you can even invoke the
-service method for testing purposes. 
+The API page lists the portal's registered and exposed service methods. To get
+each method's details, click on the method name. You'll see the full signature
+of the method, all of its arguments, and a list of exceptions that can be
+thrown. For additional information about remote service methods, you can look up
+the method in Liferay Portal's
+[Javadocs](http://docs.liferay.com/portal/6.2/javadocs). Using a simple form
+from within your browser, you can even invoke the service method for testing
+purposes.
 
 The same API page lists remote services of plugins, too. When multiple plugins
-with remote services enabled are deployed, the API page
-shows a select box with all available plugin context paths (including the
-portal's path). The select box facilitates switching between the plugins' list
-of remote services and the portal's list of remote services.
+with remote services enabled are deployed, the API page shows a select box with
+all available plugin context paths (including the portal's path). The select box
+facilitates switching between the plugins' list of remote services and the
+portal's list of remote services.
 
 If you've been paying attention, you already know how to control registration by
 using the `@JSONWebService` annotation in your `-ServiceImpl` class. This
