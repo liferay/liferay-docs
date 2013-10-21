@@ -791,7 +791,9 @@ from and what pages they most often visit. This helps you tweak your site so you
 can provide the most relevant content to your users.
 
 **Content Sharing:** lets you configure whether sub-sites can display content
-from this site.
+from this site. Even if you initially allowed content sharing between the parent
+site and its sub-sites, you're able to deselect this option and immediately
+revoke content sharing from all sub-sites.
 
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be
