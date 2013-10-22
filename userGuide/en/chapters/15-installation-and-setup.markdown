@@ -461,15 +461,14 @@ server:
 
 1. Obtain the Liferay `.war` file and the dependencies archive.
 
-2. Make sure you don't have an application listening at the root (`/`) of your
-   server. If you do, move it to a different context or undeploy it.
+2. Shut your application server down.
 
-3. Shut your application server down.
-
-4. Extract the dependencies to a location on your server's global classpath.
+3. Extract the dependencies to a location on your server's global classpath.
    This allows both Liferay and plugins to access these dependencies.
 
-5. Start your application server, deploy the Liferay `.war` file and start it.
+4. Start your application server. 
+
+5. Deploy the Liferay `.war` file.
 
 The instructions below are specific for each application server that Liferay
 supports. Liferay supports a wide combination of application servers and
@@ -483,7 +482,7 @@ successfully. If you still need to install your application server, please
 follow your vendor's instructions first.
 
 Since Liferay uses the UTF-8 character encoding, make sure that your application
-server has the Java -Dfile.encoding=UTF-8 parameter set before you proceed. Note
+server has the Java `-Dfile.encoding=UTF-8` parameter set before you proceed. Note
 that different application servers provide different means for setting this
 parameter. For example, in Tomcat this parameter goes in the `setenv.sh` or
 `setenv.bat` script. For other application servers, this parameter might go in a
@@ -1334,43 +1333,6 @@ Now let's go ahead and deploy Liferay.
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en)
 
-Here are the steps you'll need to follow to deploy Liferay Portal to your
-domain's server. Before you deploy Liferay Portal, let's consider whether you
-want to also start the setup wizard.
-
-**Start the setup wizard along with Liferay Portal**: Do this if you want to
-configure your portal, set up your site's administrative account, and/or manage
-your database within Liferay.
-		
-If this is your first time starting Liferay Portal 6.1, the setup wizard is
-automatically invoked. If you want to re-run the wizard, specify
-`setup.wizard.enabled=true` in your properties file (e.g.
-`portal-setup-wizard.properties`).
-
-    setup.wizard.enabled=true
-
-The setup wizard is then invoked during server startup.
-
-**Start Liferay Portal without invoking the setup wizard**: Do this if want to
-preserve your current portal settings.
-
-To start up the server without triggering the setup wizard, specify
-`setup.wizard.enabled=false` in your properties (e.g.
-`portal-setup-wizard.properties` or `portal-ext.properties` file).
-
-    setup.wizard.enabled=false
-
-Once you run the setup wizard, the `portal-setup-wizard.properties` file it
-creates already has `setup.wizard.enabled=false` conveniently specified for you.
-
----
-
- ![Note](../../images/tip.png) Property values in
- `portal-setup-wizard.properties` override property values in
- `portal-ext.properties`.
-
----
-
 1. Start your domain's application server.
 
 2. Go to the GlassFish console URL:
@@ -1392,15 +1354,6 @@ creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
 Once you have deployed Liferay via GlassFish's administrative console, restart
 GlassFish.
-
-- If you disabled the setup wizard, visit
-  [http://localhost:8080](http://localhost:8080) to open your portal homepage.
-
-- Otherwise, visiting [http://localhost:8080](http://localhost:8080) loads the
-  portal setup wizard.
-
-See the section on the setup wizard above for instructions on using the setup
-wizard.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
@@ -1858,53 +1811,10 @@ Now you're ready to deploy Liferay Portal.
    Hibernate persistence provider is used instead of the one provided in the
    `eclipselink.jar`.
 
-5.  Before you start Liferay Portal, let's consider whether you want to also
-    start the setup wizard.
-
-    **Start the setup wizard along with Liferay Portal** - Do this if you want
-    to configure your portal, setup your site's administrative account and/or
-    manage your database within Liferay.
-		
-    If this is your first time starting Liferay Portal 6.2, the setup wizard is
-    invoked on server startup. If you want to re-run the wizard, specify
-    `setup.wizard.enabled=true` in your properties file (e.g.
-    `portal-setup-wizard.properties`).
-
-        setup.wizard.enabled=true
-
-    The setup wizard is invoked during server startup.
-
-    **Start Liferay Portal without invoking the setup wizard** - Do this if want
-    to preserve your current portal settings.
-
-    To start the server without triggering the setup wizard, specify
-    `setup.wizard.enabled=false` in your properties (e.g.
-    `portal-setup-wizard.properties` or `portal-ext.properties` file).
-
-        setup.wizard.enabled=false
-
-    The `portal-setup-wizard.properties` file the setup wizard creates has
-    `setup.wizard.enabled=false` conveniently specified for you.
-
-    ---
-
-    ![Note](../../images/tip.png) Property values in
-    `portal-setup-wizard.properties` override property values in
-    `portal-ext.properties`.
-
-    ---
-
     Now it's time to start Liferay Portal on JBoss!
 
-6.  Start the JBoss application server.
-    - If the setup wizard was disabled, your site's home page opens
-      automatically in your browser at
-      [http://localhost:8080](http://localhost:8080). 
-    - Otherwise, the setup wizard opens in your browser.
-
-    See the section on the setup wizard above for how to use Liferay's setup
-    wizard.
-
+5.  Start the JBoss application server.
+ 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
 ## Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7-liferay-portal-6-2-user-guide-15-en)
@@ -2232,53 +2142,10 @@ start Liferay!
    default Tomcat home page. Then extract the Liferay `.war` file to
    `$TOMCAT_HOME/webapps/ROOT`.
 
-2.  Before you start Liferay Portal, let's consider whether you want to also
-    start the setup wizard.
-
-    *Start the setup wizard along with Liferay Portal* - Do this if you want
-    to configure your portal, setup your site's administrative account and/or
-    manage your database within Liferay.
-		
-    If this is your first time starting Liferay Portal 6.1, the setup wizard is
-    invoked on server startup. If you want to re-run the wizard, specify
-    `setup.wizard.enabled=true` in your properties file (e.g.
-    `portal-setup-wizard.properties`).
-
-        setup.wizard.enabled=true
-
-    The setup wizard is invoked during server startup.
-
-    *Start Liferay Portal without invoking the setup wizard* - Do this if want
-    to preserve your current portal settings.
-
-    To start the server without triggering the setup wizard, specify
-    `setup.wizard.enabled=false` in your properties (e.g.
-    `portal-setup-wizard.properties` or `portal-ext.properties` file).
-
-        setup.wizard.enabled=false
-
-    The `portal-setup-wizard.properties` file the setup wizard creates has
-    `setup.wizard.enabled=false` conveniently specified for you.
-
-    ---
-
-    ![Note](../../images/tip.png) Property values in
-    `portal-setup-wizard.properties` override property values in
-    `portal-ext.properties`.
-
-    ---
-
     Now its time to launch Liferay Portal on Tomcat!
 
 3. Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or
    `$TOMCAT_HOME/bin/startup.sh`.
-
-    - If the setup wizard was disabled, your site's home page opens in your
-    browser at [http://localhost:8080](http://localhost:8080).
-
-    - Otherwise, the setup wizard opens in your browser.
-
-    To use the setup wizard, please see the section above. 
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
@@ -2531,43 +2398,6 @@ Now its the moment you've been waiting for: Liferay deployment!
 This section provides instructions for deploying Liferay to your application
 server domain.
 
-Before you deploy Liferay Portal, consider whether you want to use the setup
-wizard.
-
-***Start the setup wizard along with Liferay Portal*** - Do this if you want to
-configure your portal, set up your site's administrative account and/or manage
-your database within Liferay.
-		
-If this is your first time starting Liferay Portal, the setup wizard is
-invoked on server startup. If you want to re-run the wizard, specify
-`setup.wizard.enabled=true` in your properties file (e.g.
-`portal-setup-wizard.properties`) in your Liferay Home.
-
-    setup.wizard.enabled=true
-
-The setup wizard is invoked during server startup.
-
-***Start Liferay Portal without invoking the setup wizard*** - Do this if want
-to preserve your current portal settings.
-
-To start the server without triggering the setup wizard, specify
-`setup.wizard.enabled=false` in your properties file (e.g.,
-`portal-setup-wizard.properties` or `portal-ext.properties`) in your Liferay
-Home. 
-
-    setup.wizard.enabled=false
-
-The `portal-setup-wizard.properties` file the setup wizard creates has
-`setup.wizard.enabled=false` conveniently specified for you.
-
----
-
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
-
----
-
 Now, let's deploy Liferay Portal.
 
 1.  Start your WebLogic server if it's not already started.
@@ -2587,19 +2417,11 @@ Now, let's deploy Liferay Portal.
     give it a name of your choosing and click *Next*.
 
 6.  Click *Finish*. After the deployment finishes, click *Save*.
-
-    Liferay will precompiles all of the JSPs and 
-	Liferay launches in one of the following manners:
-    - If the setup wizard was disabled, your site's home page opens in your
-	  browser at your server's host and port (e.g.,
-	  [http://localhost:8080](http://localhost:8080). 
-    - Otherwise, the setup wizard opens in your browser.
-
-Please see the section above for how to use the setup wizard. 
+    Liferay precompiles all the JSPs and Liferay launches.
 
 Congratulations! You are now running Liferay on Oracle WebLogic 12c.
 
-## Installing Liferay on WebSphere 8.0 [](id=installing-liferay-on-websphere-8-0-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on WebSphere 8.5 [](id=installing-liferay-on-websphere-8-5-liferay-portal-6-2-user-guide-15-en)
 
 ![Tip](../../images/02-tip.png) **Tip:** Throughout this installation and
 configuration process, WebSphere prompts you to Click Save to apply changes to
@@ -2703,7 +2525,7 @@ install.
 
 5. For name, enter the name of JDBC provider (e.g. *MySQL JDBC Provider*).
 
-6. For Implementation class name, enter:
+6. For Implementation Class Name, enter:
 
         com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
 
@@ -2765,7 +2587,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 4. Give it a name of *liferaymail* and a JNDI name of `mail/MailSession`. Click
    *OK* and save to master configuration.
 
-5. Click *Security &rarr; Global Security* and deselect *Use Java 2 security to
+5. Click *Security &rarr; Global Security* and de-select *Use Java 2 security to
    restrict application access to local resources* if it is selected. Click
    *Apply*.
 
@@ -2781,8 +2603,8 @@ Great! Now you're ready to deploy Liferay.
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked, and click *Next* again.
 
-4. Choose the WebSphere runtimes and/or clusters to which you wish to deploy
-   Liferay. Click *Next*.
+4. Choose the WebSphere runtimes and/or clusters where you want Liferay
+   deployed. Click *Next*.
 
 5. Map Liferay to the root context (/) and click *Next*. 
 
@@ -2854,16 +2676,16 @@ To make it easy to configure Liferay optimally for your use, the first thing you
 see when browsing to your newly installed Liferay bundle is a setup wizard. This
 gives you a convenient way to configure Liferay for your purposes. 
 
-There are three sections of the wizard: the portal, the adminstrator and the
+There are three sections of the wizard: the portal, the administrator and the
 database. For the portal, you need to supply the following information: 
 
 **Portal Name:** the name of the web site you're powering with Liferay. In this
-book, we'll build a social network for your nose. This site is called Nosester
+book, we build a social network for your nose. This site is called Nosester
 so we've supplied `Nosester` in the screenshot below. 
 
 **Default Language:** choose the default locale where your site resides. 
 
-For the adminstrator, you need to supply the following information: 
+For the administrator, you need to supply the following information: 
 
 **First Name:** the first name of the user that has the administrator account. 
 
@@ -2877,7 +2699,7 @@ Liferay supports just about all the leading databases today:
 
 * DB2
 
-* Ingres
+* Informix
 
 * MySQL
 
@@ -2891,24 +2713,16 @@ Liferay supports just about all the leading databases today:
 
 In addition to these, Liferay also supports a few embedded databases that are
 designed for development. We haven't listed these here because you're setting up
-a production Liferay server and you shouldn't use an embedded database with a
+a production Liferay server, and you shouldn't use an embedded database with a
 production box. 
 
 Before you fill out the database section of Liferay's setup wizard, you should
-already have created a database for Liferay to use. This database must have
-UTF-8 as its character set, because Liferay is an internationalized application
-and needs the UTF-8 character set to display text in many different languages.
-Check the documentation for your database to see how to do this. 
-
-Once you have your database created, create a user that can do anything to the
-database, including create and drop tables. It's important that this user has
-complete rights over the Liferay database, because Liferay manages its own
-tables. Once you have your database and the credentials for this user, you can
-continue. 
+already have created a database for Liferay to use. If you haven't, please see
+the section above entitled *Liferay's Database*. 
 
 Open the Database section of the wizard. From the select box, choose your
 database. You'll see a form which lets you specify the URL to the database, the
-driver class and the user credentials (see below). Most of this is filled out
+driver class, and the user credentials (see below). Most of this is filled out
 already; all you should need to do is supply the name of your database and the
 server it's running on, as well as the user credentials. 
 
@@ -2917,7 +2731,7 @@ server it's running on, as well as the user credentials.
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and
 data it needs in its database. When it's finished, it tells you the location of
-the configuration file (`portal-setup-wizard.properties`) where it saved all of
+the configuration file (`portal-setup-wizard.properties`) where it saved all
 your settings. From here, you can go to your home page. 
 
 Congratulations! You've just installed Liferay Portal! The next thing you need
@@ -2938,12 +2752,11 @@ wizard by adding this line to your *portal-ext.properties* file:
 
 ---
 
-![Tip](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20
-EE), the admin user test@liferay.com is created by the setup wizard even when a
-different user is specified. This means that two admin users are created:
-test@liferay.com and the specified user. Unless you're just installing Liferay
-for testing purposes, you should deactivate the test@liferay.com user after your
-database has been created.
+![Tip](../../images/02-tip.png) In Liferay 6.2, the admin user test@liferay.com
+is created by the setup wizard even when a different user is specified. This
+means that two admin users are created: test@liferay.com and the specified user.
+Unless you're just installing Liferay for testing purposes, you should
+deactivate the test@liferay.com user after your database has been created.
 
 ---
 
@@ -2967,12 +2780,11 @@ to use your application server's pool, continue with this procedure.
 
 If you want to use your application server's connection pool, you will have to
 create one in your application server that points to your database. The
-connection pool should be called `jdbc/LiferayPool`. Your database must use the
-UTF-8 character set since Liferay is an internationalized application. It needs
-the UTF-8 character set to display text in many different languages. Check the
-documentation for your database to see how to do this. To direct Liferay to use
-your `jdbc/LiferayPool` connection pool, add the following directive to your
-`portal-ext.properties` file:
+connection pool should be called `jdbc/LiferayPool`. In the application server
+sections above, there are instructions for how to do this on each application
+server that Liferay supports. To tell Liferay to use your `jdbc/LiferayPool`
+connection pool, add the following directive to your `portal-ext.properties`
+file:
 
 	jdbc.default.jndi.name=jdbc/LiferayPool
 
