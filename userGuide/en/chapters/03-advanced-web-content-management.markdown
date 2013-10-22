@@ -140,6 +140,20 @@ your structure, you can access the WebDAV URL by re-opening the structure or
 template and clicking the *Details* section. If you'd like the see WebDAV in
 action, visit the *Document Management* chapter's *WebDAV access* chapter.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** Some operating systems require a
+ WebDAV server to be class level 2 before (i.e., to support file locking) before
+ allowing files to be read or written. For Liferay 6.2, the Documents and Media
+ library was upgraded to class level 2 but Web Content structures and templates
+ were not. This means that Liferay 6.2's Document and Media library supports
+ WebDAV file locking but Web Content structures and templates do not. However,
+ on operating systems which require WebDAV servers to be class level 2, it's
+ possible to avoid the restriction by using third-party WebDAV clients (e.g.,
+ [Cyberduck](http://cyberduck.ch).
+
+---
+
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
 *View* mode is selected. Click the *Source* tab to switch to Source mode. This
@@ -322,9 +336,9 @@ created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (FTL, VM, XSL, and CSS) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
+#### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-xsl-and-css-liferay-portal-6-2-user-guide-03-en)
 
-Liferay supports templates written in four different templating languages, to
+Liferay supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
 chances you can jump right in and use whichever one you've already used before.
 If you haven't yet been exposed to any of them, your best bet is FreeMarker or
@@ -347,14 +361,6 @@ browser. While it may not be as clean and compact as Velocity or FTL, it's
 widely used for transforming XML into other formats and it's very likely your
 developers have already been exposed to it.
 
-**CSS** (Cascading Style Sheets): You can use CSS if your structure is very
-straightforward and modifications are simple (colors, fonts, layouts, etc.). If
-your structure is more complex, however, you'll need to use one of the other
-options.
-
-<!-- CSS was not available during testing of 6.2 feature. Notified Juan
-Fernandez of missing template language. Bug filed for fix: LPS-37934 -->
-
 #### Adding Templates [](id=adding-templates-liferay-portal-6-2-user-guide-03-en)
 
 Liferay WCM makes it easy to create structures, templates, and content from the
@@ -370,12 +376,12 @@ interface.
 3. Click on the *Add* button.
 4. Name the structure *News Article* and add the following fields:
 
-| Field Type | &nbsp;Field Label | &nbsp;Name |
---------- | ---------- | ---------- |
- Text  | &nbsp;Title | &nbsp;`title` |
- Text Box | &nbsp;Abstract | &nbsp;`abstract` |
- Image | &nbsp;Image | &nbsp;`image` |
- HTML | &nbsp;Body | &nbsp;`body` |
+	| Field Type | &nbsp;Field Label | &nbsp;Name |
+	--------- | ---------- | ---------- |
+	Text  | &nbsp;Title | &nbsp;`title` |
+	Text Box | &nbsp;Abstract | &nbsp;`abstract` |
+	Image | &nbsp;Image | &nbsp;`image` |
+	HTML | &nbsp;Body | &nbsp;`body` |
 
 5. Click *Save*.
 6. In the Manage Structures interface, click *Choose* next to the News Article
@@ -823,16 +829,19 @@ template administrators cannot add, remove, or reorder custom site pages.
 If a site administrator changes a page that was imported from a site template
 and refreshes the page, the following message appears:
 
-	This page has been changed since the last update from the site template. No
-	further updates from the site template will be applied. Click *Reset* to
-	overwrite the changes and receive updates from the site template.
+        This page has been changed since the last update from the site template.
+        No further updates from the site template will be applied. Click *Reset*
+        to overwrite the changes and receive updates from the site template.
 
 If the site administrator clicks the *Reset* button, changes are propagated from
-the site template to all the pages of the site that were imported from the site
-template. Clicking the *Reset* button makes two kinds of updates. First, changes
-made by site administrators to pages that were imported from the site template
-are undone. Second, changes made by site template administrators to site
-template pages are applied to the site pages.
+the site template page to the corresponding site page that was imported from the
+site template. Clicking the *Reset* button makes two kinds of updates to a page.
+First, changes made by site administrators to the site page are undone. Second,
+changes made by site template administrators to the site template page are
+applied to the site page. Note: clicking the *Reset* button only resets one
+page. If multiple site pages have been modified and you'd like to re-apply the
+site template pages to them, you'll need to click the *Reset* button for each
+page.
 
 Site template administrators can set preferences for portlets on site template
 pages. When a portal administrator creates a site from a site template, the
@@ -1138,30 +1147,45 @@ environment and the current site becomes the staging environment. The remote
 (live) Liferay server and the local (staging) Liferay server should be
 completely separate systems. They should not, for example, share the same the
 database. When Remote Live staging is enabled, all the necessary information is
-transferred over the network connecting the two servers. Before a site
-administrator can enable Remote Live staging for a site, the remote Liferay
-server must first be added to the current Liferay server's list of allowed
-servers. The current Liferay server must also be added to the remote Liferay
-server's list of allowed servers. You can make these configurations in your
-Liferay servers' `portal-ext.properties` files. Your first step should be to add
-the following lines to your current Liferay server's `portal-ext.properties`
-file:
+transferred over the network connecting the two servers.
+
+Before a site administrator can enable Remote Live staging for a site, the
+remote Liferay server must be added to the current Liferay server's list of
+allowed servers. The current Liferay server must also be added to the remote
+Liferay server's list of allowed servers. You also need to specify an
+authentication key to be shared by your current and your remote server and
+enable each Liferay server's tunneling servlet authentication verifier. You can
+make all of these configurations in your Liferay servers'
+`portal-ext.properties` files.  Your first step should be to add the following
+lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
+    tunneling.servlet.shared.secret=[secret]
+    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
 
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
+    tunneling.servlet.shared.secret=[secret]
+    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
 
-Remember to restart both Liferay servers after making these portal properties
-updates. After restarting, log back in to your local Liferay portal instance as
-a site administrator. Then navigate to the *Site Administration* &rarr;
-*Configuration* page for your site. Then click on *Site Settings* in the left
-menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
-under Staging Type and additional options appear.
+Liferay's use of a pre-shared key between your staging and production
+environments helps secure the remote publication process. It also removes the
+need to send the publishing user's password to the remote server for web service
+authentication. Using a pre-shared key allows Liferay to create an authorization
+context (permission checker) from the provided email address, screen name, or
+user ID *without* the user's password. You can specify any value for the
+`tunneling.servlet.shared.secret` property; the value for your current server
+just has to match the value of your remote server. Remember to restart both
+Liferay servers after making these portal properties updates. After restarting,
+log back in to your local Liferay portal instance as a site administrator. Then
+navigate to the *Site Administration* &rarr; *Configuration* page for your site.
+Next, click on *Site Settings* in the left menu and then on *Staging* listed
+under the Advanced tab. Select *Remote Live* under Staging Type and additional
+options appear.
 
 ![Figure 3.19: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
@@ -1178,40 +1202,45 @@ the remote Liferay server and create a new blank site. After the site has been
 created, note the site ID so you can enter it into the Remote Site ID field on
 your local Liferay server. You can find any site's ID by selecting *Actions
 &rarr; Edit* next to the site's name on the Sites page of the Control Panel.
-Finally, check the *Use a Secure Network Connection* field to secure the
-publication of pages from your local (staging) Liferay server to your remote
-(live) Liferay server.
+Finally, it's best to check the *Use a Secure Network Connection* field to use
+HTTPS for the publication of pages from your local (staging) Liferay server to
+your remote (live) Liferay server.
 
 ---
 
-![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
-enabled for a site as early as possible. It's generally *not* a good idea to add
-gigabytes of data into Liferay's CMS and then decide to turn on remote staging.
-There's an existing issue that limits Liferay to less than 2G of data for
-publishing data to a remote staging server:
-[http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
-You can check this issue to see if it's been resolved and to find out which
-versions of Liferay it affects.
+ ![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
+ enabled for a site as early as possible. It's generally *not* a good idea to
+ add gigabytes of data into Liferay's CMS and then decide to turn on remote
+ staging.  There's an existing issue that limits Liferay to less than 2G of data
+ for publishing data to a remote staging server:
+ [http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
+ You can check this issue to see if it's been resolved and to find out which
+ versions of Liferay it affects.
 
 ---
 
-That's all you need to do to enable Remote Live Staging! However, when a user
-attempts to publish changes from the local (staging) server to the remote (live)
-server, Liferay passes the user's credentials to the remote server to perform a
+That's all you need to do to enable Remote Live Staging! Note that if you fail
+to set the tunneling servlet shared secret or the values of these properties on
+your current and remote servers don't match, you won't be able to enable staging
+and an error message appears. When a user attempts to publish changes from the
+local (staging) server to the remote (live) server, Liferay passes the user's
+email address, screen name, or user ID to the remote server to perform a
 permission check. In order for a publishing operation to succeed, the operation
 must be performed by a user that has identical credentials and permissions on
 both the local (staging) and the remote (live) server. This is true regardless
 of whether the user attempts to publish the changes immediately or attempts to
-schedule the publication for later. If only a few users should have permission
-to publish changes from staging to production, it's easy enough to create a few
-user accounts on the remote server that match a selected few on the local
-server. However, the more user accounts that you have to create, the more
-tedious this job becomes and the more likely you are to make a mistake. And you
-not only have to create identical user accounts, you also have to ensure that
-these users have identical permissions. For this reason, we recommend that you
-use LDAP to copy selected user accounts from your local (staging) Liferay server
-to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
-(EE-only), available on Liferay Marketplace, makes this easy.
+schedule the publication for later.
+
+If only a few users should have permission to publish changes from staging to
+production, it's easy enough to create a few user accounts on the remote server
+that match a selected few on the local server. However, the more user accounts
+that you have to create, the more tedious this job becomes and the more likely
+you are to make a mistake. And you not only have to create identical user
+accounts, you also have to ensure that these users have identical permissions.
+For this reason, we recommend that you use LDAP to copy selected user accounts
+from your local (staging) Liferay server to your remote (live) Liferay server.
+Liferay's Virtual LDAP Server application (EE-only), available on Liferay
+Marketplace, makes this easy.
 
 ### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 

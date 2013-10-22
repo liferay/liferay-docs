@@ -14,14 +14,14 @@ searching for new avenues to reach this market. Marketplace leverages the entire
 Liferay ecosystem to release and share apps in a user-friendly, one-stop site. 
 
 In addition to providing application consumers with Marketplace, Liferay
-provides a Plugin Security Manager to help protect a consumer's portal from bad
-side-affects that a Marketplace app may produce. The Plugin Security Manager's
-job is to only allow an app to use resources that the app has specified up-front
-in its Portal Access Control List (PACL). As such, we'll explain how you create
-a PACLs for the apps you develop. 
+provides a Plugin Security Manager to help protect a consumer's portal from the
+potentially negative side-affects of Marketplace apps. The Plugin Security
+Manager's job is to only allow an app to use resources that the app has
+specified up-front in its Portal Access Control List (PACL). As such, we'll
+explain how to create PACLs for the apps you develop. 
 
-This chapter covers to following topics related to developing apps for the
-Liferay Marketplace: 
+This chapter covers to following topics related to developing apps for Liferay
+Marketplace: 
 
 - Marketplace Basics
 - Requirements for Publishing to the Marketplace
@@ -35,8 +35,7 @@ Liferay Marketplace:
 - Portal Access Control List (PACL) Properties
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
-highly recommended that you first read the [Liferay
-Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
+highly recommended that you first read the [Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
 chapter of *Using Liferay Portal*, where you will find detailed information
 about the Marketplace from an end user's perspective.
  
@@ -44,12 +43,12 @@ about the Marketplace from an end user's perspective.
 
 Before diving into the details of developing for the Marketplace, it is
 important to have a good grasp of new concepts introduced in the Marketplace.
-The following list of questions will help in understanding the concepts that you
-will use over and over again as a Marketplace developer.
+The following sections discuss concepts with which you'll need to be familiar as
+a Marketplace developer.
 
 ### What is an App? [](id=what-is-an-app-liferay-portal-6-2-dev-guide-11-en)
 
-As a Liferay Developer, you will undoubtedly already be familiar with the
+As a Liferay developer, you will undoubtedly already be familiar with the
 concept of plugins (portlets, hooks, themes, etc). If not, review Chapter 1 of
 this guide. A *Liferay App* (sometimes just called an *app*) is a collection of
 one or more of these plugins, packaged together to represent the full
@@ -65,9 +64,9 @@ Liferay's hot-deploy folder like any other plugin, and it is deployed into the
 running instance of Liferay Portal.
 
 Developers are not required to create the actual Liferay app files. Instead,
-your app's individual plugins (`.war` files) are uploaded as part of the publish
-process, along with identifying information (name, description, version, icon,
-etc). This is described in detail later on in this chapter.
+your app's individual plugins (`.war` files) are uploaded as part of the
+publication process, along with identifying information (name, description,
+version, icon, etc). This is described in detail later on in this chapter.
 
 ### What is a Version? [](id=what-is-an-app-version-liferay-portal-6-2-dev-guide-11-en)
 
@@ -79,7 +78,8 @@ point in time. When an app is first created, it is given an initial version
 cases, additional qualifiers can be found in the version specifier, to which
 developers often give special meaning. For example, a developer may declare that
 the version of their app is always in x.y.z format (where the significance of
-each x, y, and z are defined). Liferay itself also does this.
+each x, y, and z are defined). Liferay Portal versions, as well as Liferay app
+versions, follow this format.
 
 In any case, as developer of your app, you have complete freedom in how you wish
 to assign version designators. It is highly recommended that you stick to a well
@@ -114,7 +114,8 @@ When publishing an app, it is possible to publish it *on behalf of* yourself (an
 individual) or a *company* with which you are associated. The selection you make
 determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, admin, and company, and the ramifications of choosing one
-vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
+vs. the other, visit the [Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
+chapter in the User Guide.
 
 ### What Are the Requirements for Publishing Apps? [](id=app-publishing-requirements-liferay-portal-6-2-dev-guide-en)
 
@@ -169,7 +170,7 @@ requirements to keep in mind.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Important:** If you're developing a
+ ![Note](../../images/tip-pen-paper.png) **Important:** If you're developing a
  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
  see the section on Understanding Plugin Security Management for details. Give
  yourself adequate time to develop your app's PACL and time to test your app
@@ -226,7 +227,7 @@ publishing apps.
 
 ### What Kind of Validations Are Performed by Liferay? [](id=liferay-app-validations-liferay-portal-6-2-dev-guide-en)
 
-Liferay will ensure that apps meet a minimum set of requirements, such as:
+Liferay ensures that apps meet a minimum set of requirements, such as:
 
 - Running basic anti-virus checks
 - Ensuring titles, descriptions, images, etc. are appropriate
@@ -248,19 +249,18 @@ files for your app designed for different versions of the Liferay Platform.
 
 Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 and
 later. That's not to say that they will not work with prior versions. However,
-only Liferay 6.1 has support for installing Apps directly from the Marketplace
-and safeguards against malicious Apps that will be ineffective on earlier
-versions of Liferay. If you wish to use an app for an earlier version, consult
-the documentation for that app, as it may or may not be supported on earlier
-versions of Liferay.
+only Liferay 6.1 and later versions provide support for installing apps directly
+from the Marketplace and provide safeguards against malicious apps. If you wish
+to use an app for an earlier version, consult the documentation for that app, as
+it may or may not be supported on earlier versions of Liferay.
 
 Read the *Specify App Compatibility* section below for details on how to specify
 which versions of Liferay your app works with.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so, be
- sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-marketpla-1)
+ ![Note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so, be
+ sure to read the [Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
  chapter of *Using Liferay Portal*! 
 
 ---
@@ -308,8 +308,7 @@ is compatible. In order to specify which release of Liferay your app is
 compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
-can be found on the [Versioning Policy
-Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).
+can be found in the [Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/editions-of-liferay-liferay-portal-6-2-user-guide-15-en).
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 `6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versioning
 follows a slightly different policy given then presence of fix packs and service
@@ -318,16 +317,16 @@ packs, so 6.2 EE GA2 will be `6.1.20`.
 For each plugin that makes up your app, packaging directives must be placed in
 the `liferay-plugin-package.properties` file (located in the `WEB-INF/`
 directory of your plugin's `.war` file). Within this file, you must specify a
-comma-separated list of Liferay releases with which your app is compatible, and
-for which packages should be generated, using the `liferay-versions` keyword.
+comma-separated list of Liferay releases with which your app is compatible and
+for which packages should be generated using the `liferay-versions` keyword.
 Marketplace will create packages that contain your plugins based on these
 packaging directives (and will intelligently group them together as each plugin
-is uploaded).  You should specify CE versions first, followed by EE versions,
-using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
-are replaced with the corresponding Liferay Releases with which your app is
+is uploaded). You should specify CE versions first, followed by EE versions,
+using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE` are
+replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
- ![note](../../images/tip-pen-paper.png) **Note:** If your app is compatible
+ ![Note](../../images/tip-pen-paper.png) **Note:** If your app is compatible
  with both CE and EE, you must specify a set of versions for both CE and EE
  releases. If you only specify compatibility with CE, then your app will not be
  compatible with (and will fail to deploy to) any EE release.
@@ -343,11 +342,11 @@ and 6.1 EE release starting with EE GA3. Marketplace will create two packages,
 one that is compatible with the 6.1 CE GA3 release and *later*, and another that
 is compatible with 6.1 EE GA3 release and *later*.
 
- ![note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
+ ![Note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
  the `+` symbol.  This ensures that your app will be deployable onto future
  versions of Liferay (but does not guarantee your app will work in future
- versions).  So, `liferay-versions=6.1.1,6.1.2` will not work, but
+ versions). So, `liferay-versions=6.1.1,6.1.2` will not work, but
  `liferay-versions=6.1.1,6.1.2+` will work.  Similarly,
  `liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
  not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
@@ -391,7 +390,7 @@ with EE GA3 and later, while the CE hook would work exclusively with CE GA3 and
 later. You might think that it's difficult to arrange the packaging for an app
 that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
-specified for each plugin. We'll talk about that next.  
+specified for each plugin. We'll talk about that next.
 
 #### Marketplace Packages Your App's Plugins [](id=marketplace-packages-your-apps-plugins-liferay-portal-6-2-dev-guide-11-en)
 
@@ -422,33 +421,42 @@ The Marketplace home page is shown below:
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. You'll visit here often during the course of development, so
-it might be a good idea to bookmark it now. To get started, the first thing you
-want to do is visit your personal *Home* page. There is a thin strip at the top
-of your browser window. This is known as the *Dockbar*. Many links are present
-in the drop-down menus of the Dockbar, including a link titled *Go to My Home*.
-This is a link to your personal home page. More details about what you can find
-on your personal home and profile pages can be found in the Liferay Marketplace
-chapter of the *User Guide*. For now, go to your personal home page by clicking
-on the *Go to My Home* link.
+it might be a good idea to bookmark it now. 
 
-![Figure 11.2: Use the My Home Page link from anywhere in Liferay to navigate to your personal pages. ](../../images/marketplace-my-homepage-link.png) 
+You can publish Marketplace apps as an individual or as part of a company.
+Before you can submit apps to the Marketplace, you must register yourself as an
+app developer. It's easy. Simply click the link *Become a Developer* in the
+*Marketplace* column on the left. You're now in the Marketplace registration
+wizard. If you're registering with a company and the company is already
+registered, you can search for it from these Marketplace registration screens
+and request to *join* the company in publishing apps to the Marketplace. On
+completing the Marketplace registration, Liferay sends you an email confirming
+your acceptance as a Marketplace Developer--Congratulations!
 
-Your home page contains links to often-used functionality of liferay.com,
+Now that you're a Marketplace Developer, your liferay.com *App Manager* provides
+options for adding new apps and viewing your published apps. Your App Manager is
+accessible from your user profile page. Let's go there now. In the upper right
+corner on liferay.com select your name &rarr; *User Profile*. 
+
+![Figure 11.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
+
+Your profile page contains links to often-used functionality of liferay.com,
 including app creation and management. There are several links on the left of
-your home page, including one titled *App Manager*. This link allows you to
-manage the apps that you have either purchased (or have been purchased for use
-in companies you are associated with) or apps that you or your company have
-developed. You'll use this page heavily, so a bookmark would be useful here.
-Click *App Manager* to visit this page.
+your home page, including one called *App Manager*. This link allows you to
+manage the apps that you have for either personal or company use and to manage
+the apps that you or your company have developed. You'll use this page heavily,
+so a bookmark would be useful here. Click *App Manager* to visit this page.
 
 ![Figure 11.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
 
 You'll notice three tabs across the top:
 
-**Purchased** - This shows apps you have personally purchased, and those apps
-that have been purchased on behalf of companies you are associated with.
-**Apps** - This shows apps you have personally *published*.
-**Add an App** - This screen begins the process of publishing a new app.
+**Purchased**: This shows apps you have personally purchased, and those apps
+that have been purchased on behalf of companies you are associated with. 
+
+**Apps**: This shows apps you have personally *published*. 
+
+**Add an App**: This screen begins the process of publishing a new app.
 
 Since you have not purchased or published any apps, the first two tabs are
 likely empty. Let's get publishing!
@@ -465,6 +473,25 @@ The first step is to enter the basic details about your app.
 ![Figure 11.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
+
+**App Owner:** Choose to whom the app "belongs" once it is uploaded--either
+yourself (personal) or a company. If you wish to publish your app on behalf of
+your company, but your company does not yet have a Marketplace profile, you can
+enter the company name in the **Company Name** field. If you are a
+representative of your company, you can register your company by clicking the
+*Register My Company* link.
+
+Publishing on behalf of yourself is the default. When you publish on behalf of
+yourself, the app appears in your *App Manager* &rarr; *Apps* list, and your
+name appears in the Marketplace as the Publisher/Author. You are the only one
+who can manage this app (add new releases, new versions, edit details, etc).
+
+Publishing on behalf of a company effectively hands the keys over to the admins
+of the company. The app only appears on the company's *App Manager* &rarr;
+*Apps* list. In addition to yourself, company admins can manage this app (add
+new releases, new versions, edit details, etc). The app appears to be
+authored/developed by the company, not you personally. It also appears on the
+company's public profile page under its list of apps.
 
 **Name:** The name of your application. Arguably the most important detail of
 your app, the name of your app should be a good title that conveys the function
@@ -489,6 +516,32 @@ The screenshots you upload here are displayed when your app is viewed on the
 Marketplace, using a carousel of rotating images. See the *Marketplace Basics*
 section of this chapter for detailed requirements for screen captures.
 
+**Category:** Choose the Marketplace category that most accurately describes
+what your app does. Users looking for specific types of apps will often browse
+categories by clicking on a specific category name in the main Marketplace home
+page. Having your app listed under the appropriate category will help them find
+your app.
+
+**Developer Website URL:** This is a URL that should reference the web site
+associated with the development of the app. For open source apps, this typically
+points at the project site where the source is maintained. For others, links to
+a home page of information about this app would be appropriate.
+
+**Support URL:** This is a URL that should reference a location where
+purchasers or users of the app can get support for the app.
+
+**Documentation URL:** What better way to showcase the amazing capabilities of
+your app than to have a live, running version of it for potential buyers to see
+and use? This field can house a URL pointing to exactly that.
+
+**Source Code URL:** If you'd to provide a link to the source code of your app,
+do so here.
+
+**Labs:** You can denote an app as experimental by flagging the appropriate box.
+
+**Security:** If your app does *not* use Liferay's PACL Security Manager, flag
+the appropriate box.
+
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
 searches, tag clouds, and other search mechanisms. You can click on
@@ -497,42 +550,15 @@ you've already entered. Click *Select* to select from existing tags, or you can
 manually type in new tags. See the *Marketplace Basics* section of this chapter
 for detailed requirements for tags.
 
-**Category:** Choose the Marketplace category that most accurately describes
-what your app does. Users looking for specific types of apps will often browse
-categories by clicking on a specific category name in the main Marketplace home
-page. Having your app listed under the appropriate category will help them find
-your app.
+**EULA:** You can either use the default end user license agreement or provide
+your own. There's a link to the minimum terms which custom EULAs must satisfy.
 
-**Developer Website:** This is a URL that should reference the web site
-associated with the development of the app. For open source apps, this typically
-points at the project site where the source is maintained. For others, links to
-a home page of information about this app would be appropriate.
-
-**Support Website:** This is a URL that should reference a location where
-purchasers or users of the app can get support for the app.
-
-**Demo Website:** What better way to showcase the amazing capabilities of your
-app than to have a live, running version of it for potential buyers to see and
-use? This field can house a URL pointing to exactly that.
-
-**App Owner:** Choose to whom the app "belongs" once it is uploaded--either
-yourself (personal) or a company. If you wish to publish your app on behalf of
-your company, but your company does not yet have a Marketplace profile, you can
-enter the company name in the **Company Name** field. If you are a
-representative of your company, you can register your company by clicking the
-*Register My Company* link.
-
-Publishing on behalf of yourself is the default. When you publish on behalf of
-yourself, the app appears in your *App Manager* &rarr; *Apps* list, and your
-name appears in the Marketplace as the Publisher/Author. You are the only one
-who can manage this app (add new releases, new versions, edit details, etc).
-
-Publishing on behalf of a company effectively hands the keys over to the admins
-of the company. The app only appears on the company's *App Manager* &rarr;
-*Apps* list. In addition to yourself, company admins can manage this app (add
-new releases, new versions, edit details, etc). The app appears to be
-authored/developed by the company, not you personally. It also appears on the
-company's public profile page under its list of apps.
+**Liferay Only:** If you're publishing a CE-only or EE-only app, select *CE
+Only* or *EE Only* in the *Product Type* dropdown selector. If you're providing
+an app that runs on both CE and EE, just flag the *Liferay EE Plugin* checkbox.
+If you're uploading a bug fix or would like to replace a previous version of
+your app, specify the app entry IDs of the apps to be replaced by the new app in
+the *Supercedes App Entry IDs* field.
 
 Make up some sample data to use during this example, and enter it into the form.
 Once you have entered all your app's details, click *Next* to move on to the
@@ -611,12 +637,12 @@ cancel your submission by clicking *Cancel Submission* on the *Preview* screen
 for each app.
 
 Once your app is approved by Marketplace staff, congratulations! You will
-receive an email confirmation and at that moment, your app is in the
+receive an email confirmation and at that moment, your app is available on
 Marketplace. The app is also shown on your public Profile page, which lists all
 apps that you have personally developed and published.
 
 If your app is rejected, an email will be sent to the email address associated
-with the app, along with a note explaining the reasons for rejection.  At that
+with the app, along with a note explaining the reasons for rejection. At that
 point, you can make the requested changes, and re-submit the app for approval.
 
 Now that you have successfully published your first app, you'll likely get all
@@ -768,8 +794,8 @@ user is unlimited.
 
 ### Installations [](id=recorded-app-installations-liferay-portal-6-2-dev-guide-11-en)
 
-The Marketplace does a best effort in recording installations of your app on
-Liferay instances. When a Liferay Administrator installs your app via the
+The Marketplace makes an effort to count the number of installations of your app
+to Liferay instances. When a Liferay Administrator installs your app via the
 Liferay Administration console (Control Panel), an *Install* is recorded for
 your app. 
 
@@ -833,7 +859,7 @@ from the ground up.
 
 ## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind-liferay-portal-6-2-dev-guide-11-en)
 
-At the start of plugin developement, you may not have a clear picture of all the
+At the start of plugin development, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address your plugin's
 PACL later. But, as you develop your plugin there are some common security
@@ -869,7 +895,7 @@ documentation is available for you to read at
 But we'll highlight a couple common mistakes developers make that violate
 Liferay's secured environment: 
 
-- Invoking a method, irectly or indirectly, without considering whether it can
+- Invoking a method, directly or indirectly, without considering whether it can
   throw a security exception.
 - Using external libraries or frameworks that access classloaders outside of
   your plugin.  
@@ -891,7 +917,7 @@ designing your plugin. If they throw security exceptions, handle them
 appropriately with try/catch blocks. Keep in mind that you not only need to
 handle security exceptions of methods your plugin invokes *directly*, but you
 also need to handle the security exceptions of the underlying methods your
-plugin invokes *indirectly*.   
+plugin invokes *indirectly*.
 
 For example, you may be using a file utility that calls `java.io.File`'s
 `canRead` method. Since the `canRead` method can throw a `SecurityException`,
@@ -1000,7 +1026,7 @@ confidently creating your plugin.
 Start creating your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
 everything you normally would do. Do all of this with the Plugin Security
-Manager disabled via your plugin's `liferay-plugin-package.properties` file:  
+Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
 	security-manager-enabled=false
 
@@ -1087,7 +1113,7 @@ Policy file.
 
 If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
-file. You can create policy file (`java.policy`) in your plugin's `WEB-INF`
+file. You can create the policy file (`java.policy`) in your plugin's `WEB-INF`
 folder. The policy file must follow Policy File syntax as described in detail at
 [http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
 Like the rules you define in your plugin's PACL, the additional rules you define
@@ -1193,7 +1219,7 @@ The star means "every file in this single directory." The dash, however, matches
 everything in this folder and below. 
 
 One more note. This: 
-                                            
+
     ${liferay.web.portal.dir}/html/themes/-
 
 does not include this: 
@@ -1656,14 +1682,14 @@ executor for the plugin to access.
 
 <!--Right now summaries from both chapters (plugins security was its own
 chapter previously) are left here. They should be combined and the chapter
-rewqorked for flow. --> 
+reworked for flow. --> 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en-0)
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
 
-With regards to Marketetplace apps, we looked at how to create, publish,
+With regards to Marketplace apps, we looked at how to create, publish,
 maintain, and track apps. You do this through [liferay.com](http://liferay.com),
 using your own personal credentials and its features for Marketplace. Then, we
 covered the requirements for publishing apps, which did not differ significantly

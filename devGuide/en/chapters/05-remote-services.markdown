@@ -102,7 +102,7 @@ are also supported--see the [Portal Atom Collections](http://www.liferay.com/com
 wiki by Igor Spasi&#263; for more details. You can also use the API through
 Remote Procedure Calls
 ([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)). You have many good
-options for leveraging Liferay's API.  
+options for leveraging Liferay's API. 
 
 Let's step back now and discuss the security layers of Liferay's *service
 oriented* architecture and how you can configure them. 

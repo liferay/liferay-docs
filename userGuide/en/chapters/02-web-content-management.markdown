@@ -191,10 +191,31 @@ Settings*.
 
 ### Creating and Managing Sites [](id=creating-and-managing-sites-liferay-portal-6-2-user-guide-02-en)
 
-Sites can be created through the Control Panel by a portal administrator. To add
-a site, click on *Sites* under the Sites section of the Control Panel and then
-click *Add*. If there is at least one site template available, a dropdown menu
-appears. Site templates provide a preconfigured set of pages, portlet
+Sites can be created through the Control Panel by a portal administrator.
+Liferay's Control Panel provides an administrative interface for managing your
+portal. There are four main sections of the Liferay's Control Panel: Users,
+Sites, Apps, and Configuration. In this chapter, we'll learn how to use the
+Control Panel to manage sites. In the next chapter, we'll learn about using the
+Control Panel to manage site templates and page templates. For information about
+the Apps, Users, and Configuration sections of the Control Panel, please see
+chapters 14, 16, and 17 of this guide.
+
+---
+
+ ![Tip](../../images/tip.png) **Tip:** Prior to Liferay 6.2, the Control Panel
+ included interfaces both for site administration and for portal administration.
+ In Liferay 6.2, these interfaces have been separated. If you're signed in as an
+ administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
+ &rrar; *Control Panel*. To manage a single site, navigate to the site by
+ clicking on *My Sites* and clicking on the site's name. Then click on *Admin*
+ &rarr; *Site Administration*. The Site Administration interface allows to
+ configure site settings and manage the pages, content, and users of the site.
+
+---
+
+To add a site, click on *Sites* under the Sites section of the Control Panel and
+then click *Add*. If there is at least one site template available, a dropdown
+menu appears. Site templates provide a preconfigured set of pages, portlet
 applications, and content that can be used as the basis of a site's public or
 private page set. To create a site from scratch, select *Blank Site*. Otherwise,
 select the name of the site template you'd like to use. If you opt to create a
@@ -234,13 +255,15 @@ from restricted sites using the My Sites portlet.
  birthdays, job titles, organizations, and user groups. Using this information,
  the site membership policy can automatically assign members to the site. If
  your site will implement a membership policy, your site administrators can
- disallow manual membership management for their site. <!--See the TBD chapter
- of the Developer's Guide for information about creating site membership
- policies. -JR -->When the Allow Manual Membership Management option is disabled,
- the Site Memberships section as well as various other options to manually
- assign/remove members are hidden, even from administrators.
+ disallow manual membership management for their site. When the Allow Manual
+ Membership Management option is disabled, the Site Memberships section as well
+ as various other options to manually assign/remove members are hidden, even
+ from administrators.
 
 ---
+
+<!--See the (TBD) chapter of the Developer's Guide for information about
+creating site membership policies. -JR -->
 
 **Directory Indexing Enabled:** allows site administrators to browse the site's
 documents and media files and folders. For example, a site administrator of a
@@ -380,29 +403,67 @@ way for you to back them up to separate files. Let's see how that works.
 ##### Backing up and Restoring Pages [](id=backing-up-and-restoring-pages-liferay-portal-6-2-user-guide-02-en)
 
 Next to the *Add Page* button on the Site Pages screen, there are two buttons
-labeled *Export* and *Import*. The Export button exports the pages you create
-into a single file, called a LAR (Liferay Archive). You can then import this
-file into any server running Liferay to re-create the pages. If you have a LAR
-you would like to import, use the *Import* button. Exporting and Importing LARs
-is a great way to take content from one environment (say, a development or QA
-environment) and move it all in one shot to your production server. Note that
-you should not make this a regular occurrence. If you want to regularly move
-pages from one server to another, you should use Liferay's staging environment,
-which is covered in chapter 3.
+labeled *Export* and *Import*. The Export button allows you to export the your
+site's data as a single file, called a LAR (Liferay Archive) file. When
+importing data into a site, it's best to use a newly created site to avoid
+potential conflicts between the existing site data and the data about to be
+imported. When exporting site data, you can specify exactly what data should be
+included in the LAR:
 
-LARs are also a good way to back up your site's content. You can export them to
-a specific location on your server which is backed up, and if you ever have to
-restore your site, all you need to do is import the latest LAR file. One
-limitation on LAR files, however, is that they are version dependent, so you
-can't use an export from an old version of Liferay and import it into a newer
-version.
+- Site pages (you can select exactly which ones)
+- Page settings
+- Theme
+- Theme settings
+- Logo
+- Application configurations
+- Application content
+- Archived setups
+- User preferences
+
+Once you've created a LAR file, you can import it into a site on another Liferay
+server. The data included in the LAR file, including all the site pages, will
+be imported into the site. Exporting and importing LARs is a great way to take
+content from a site in one environment (say, a development or QA environment)
+and move it all in one shot to a site on another server. You can use LARs to
+import data onto production servers, but you should not make this a regular
+occurrence. If you want to regularly move pages from one server to another, you
+should use Liferay's staging environment, which we discuss in chapter 3.
+
+LARs can be a good way to back up your site's content. You can export them to a
+specific location on your server which is backed up. If you ever have to restore
+your site, all you need to do is import the latest LAR file. However, please be
+careful! If there's any content that exists both in the LAR and in the site
+that's importing the data, there may be a conflict, and data could be
+corrupted.  If you'd like to restore a Liferay site using a LAR file, it's best
+to delete the site entirely, create a new site with the same name as the old
+one (i.e., re-create the site), and then import the LAR file into the new site.
+This way, there's no chance for there to be a data conflict.
+
+Liferay can handle some kinds of naming collisions when importing a LAR file
+into a site. For example, suppose you're importing a LAR file into a site and
+the LAR file has a page with a certain friendly URL. If an existing page in the
+site has the same friendly URL there will be a collision. Liferay resolves the
+collision by adding a number to the end of the friendly URL and incrementing
+until there's no collision. This behavior takes place for friendly URL
+translations as well. Similarly, if importing a LAR into a site causes a
+category name collision, Liferay renames the imported categories.
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** LAR files are version dependent. You
+ can't import a LAR file that was exported from one version of Liferay into
+ a Liferay server that's running a different version of Liferay. Also,
+ note that periodically exporting LARs is *not* a complete backup solution;
+ please refer to chapter 18 of this guide for information on backing up Liferay.
+
+---
 
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `nosesterv1.lar`. Use the check boxes
 to determine what you'd like to export. For this initial export, select
 everything. Note that if you select one of the *Choose* radio selectors or
 *Change* links, you're given checkboxes for options to choose. The applications'
-content can also be selcted for export, including the Documents and Media
+content can also be selected for export, including the Documents and Media
 Library, Message Boards, and Web Content assets. You can even export the theme
 you're using!
 
@@ -730,7 +791,9 @@ from and what pages they most often visit. This helps you tweak your site so you
 can provide the most relevant content to your users.
 
 **Content Sharing:** lets you configure whether sub-sites can display content
-from this site.
+from this site. Even if you initially allowed content sharing between the parent
+site and its sub-sites, you're able to deselect this option and immediately
+revoke content sharing from all sub-sites.
 
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be
