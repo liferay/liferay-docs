@@ -463,13 +463,13 @@ code below.
         }
 
         private static URL _getURL(String remoteUser, String password,
-            String serviceName, boolean authenicate)
+            String serviceName, boolean authenticate)
         throws Exception {
             //Unauthenticated url
             String url = "http://localhost:8080/api/axis/" + serviceName;
 
             //Authenticated url
-            if (authenicate) {
+            if (authenticate) {
                 url = "http://" + remoteUser + ":" + password +
                     "@localhost:8080/api/secure/axis/" + serviceName;
             }
