@@ -790,7 +790,7 @@ use an annotation like this one:
 In this example, the plugin's service method `addBoard` is mapped to URL
 method name `add-board-wow`. Its complete URL is now
 `http://localhost:8080/api/jsonws/suprasurf-portlet.surfboard/add-board-wow` and
-can be accessed using the PUT HTTP method. 
+can be accessed using the HTTP PUT method. 
 
 If the URL name starts with a slash character (`/`), only the method name is
 used to form the service URL; the class name is ignored.
@@ -802,22 +802,22 @@ Similarly, you can change the class name part of the URL, by setting the value
 in class-level annotation:
 
     @JSONWebService("sbs")
-    public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl{
+    public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl {
 
 This maps all of the service's methods to a URL class name `sbs` instead
 of the default class name `surfboard`. 
 
-Next we'll show you a different approach to exposing your methods as we discuss
+Next, we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
 #### Manual Registration Mode [](id=json-manual-registration-mode-liferay-portal-6-2-dev-guide-05-en)
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
-Sometimes,however, you want the opposite: to explicitly specify only those
+Sometimes, however, you want the opposite: to explicitly specify only those
 methods that are to be exposed (the *whitelist* approach). This is possible,
-too, by specifying *manual mode* on the class-level annotation. Then it is up
-to you annotate only those methods that you want exposed.
+too, by specifying *manual mode* on the class-level annotation. Then it is up to
+you annotate only those methods that you want exposed.
 
     @JSONWebService(mode = JSONWebServiceMode.MANUAL)
     public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl{
@@ -829,7 +829,8 @@ Now only the `addBoard` method and any other method annotated with
 `@JSONWebService` will be part of the JSON Web Service API; all other methods
 of this service will be excluded from the API.
 
-Next let's look at portal configuration options that apply to JSON Web Services. 
+Next, let's look at portal configuration options that apply to JSON Web
+Services. 
 
 ### Portal Configuration of JSON Web Services [](id=portal-configuration-of-json-web-service-liferay-portal-6-2-dev-guide-05-en)
 
@@ -870,7 +871,7 @@ For example:
 
 Now all requests that use HTTP methods from the list above are ignored.
 
-Next we'll show you how to restrict public access to exposed JSON APIs. 
+Next, we'll show you how to restrict public access to exposed JSON APIs. 
 
 #### Controlling Public Access [](id=json-controlling-public-access-liferay-portal-6-2-dev-guide-05-en)
 
@@ -891,14 +892,14 @@ accessible. All other JSON methods will be secured. To disable access to *all*
 exposed methods, you can leave the right side of the `=` symbol empty; to enable
 access to all exposed methods, specify `*`. 
 
-Next find out how to invoke JSON Web Services. 
+Read on to find out how to invoke JSON web services. 
 
 ### Invoking JSON Web Services [](id=invoking-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 How you invoke a JSON web service depends on how you pass in its parameters.
-We'll discuss how to pass in parameters below, but first let's make sure you
-understand how your invocation is matched to a method, especially when a service
-method is overloaded. 
+We'll discuss how to pass in parameters below, but first you need to understand
+how your invocation is matched to a method, especially when a service method is
+overloaded. 
 
 The general rule is that you provide the method name and *all* parameters for
 that service method--even if you only provide `null`. 
@@ -971,17 +972,15 @@ on this page.
 As with passing parameters as part of a URL path, the parameter order is not
 important, and the *best match* rule applies for overloaded methods. 
 
-Now that you know a few different ways to pass parameters, next let's mix them
-all up. 
-
-Parameters can be passed in a mixed way; some can be part of the URL path and
-some can be specified as request parameters. 
+Now you know a few different ways to pass parameters. It's also possible to pass
+URL parameters in a mixed way. Some can be part of the URL path and some can be
+specified as request parameters.
 
 Parameter values are sent as strings using the HTTP protocol. Before a matching
-Java service method is invoked, each parameter value is converted from a `String`
-to its target Java type. Liferay uses a third party open source library to
-convert each object to its appropriate common type. It's possible to add or
-change the conversion for certain types; but we'll just cover the standard
+Java service method is invoked, each parameter value is converted from a
+`String` to its target Java type. Liferay uses a third party open source library
+to convert each object to its appropriate common type. It's possible to add or
+change the conversion for certain types but we'll just cover the standard
 conversions process. 
 
 Conversion for common types (e.g., `long`, `String`, `boolean`) is
@@ -1043,13 +1042,13 @@ encoding. The difference lies in how the space character is encoded. When the
 space character is part of the URL path, it's encoded as `%20`; when it's part
 of the query it's encoded as a plus sign (`+`).
 
-All these encoding rules apply as well to international (non-ascii) characters.
-Since Liferay Portal works in UTF-8 mode, parameter values must be encoded as
-UTF-8 values. Liferay Portal doesn't decode request URLs and request parameter
-values to UTF-8 itself; it relies on the web server layer. When accessing
-services through JSON-RPC, encoding parameters to UTF-8 isn't enough--you need
-to send the encoding type in a Content-Type header (e.g.  `Content-Type :
-"text/plain; charset=utf-8"`). 
+All these encoding rules apply to ASCII and international (non-ASCII)
+characters. Since Liferay Portal works in UTF-8 mode, parameter values must be
+encoded as UTF-8 values. Liferay Portal doesn't decode request URLs and request
+parameter values to UTF-8 itself; it relies on the web server layer. When
+accessing services through JSON-RPC, encoding parameters to UTF-8 isn't
+enough--you need to send the encoding type in a Content-Type header (e.g.
+`Content-Type : "text/plain; charset=utf-8"`). 
 
 For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super"
 in Cyrillic) to some JSON Web Service method. This name first has to be
@@ -1078,7 +1077,7 @@ Files can be uploaded using multipart forms and requests. Here's an example:
         <input type="submit" value="addFileEntry(file)"/>
     </form>
 
-This is common upload form that invokes the `addFileEntry` method of the
+This is a common upload form that invokes the `addFileEntry` method of the
 `DLAppService` class. 
 
 Now we'll show you how to invoke JSON Web Services using JSON RPC. 
@@ -1087,9 +1086,9 @@ Now we'll show you how to invoke JSON Web Services using JSON RPC.
 
 You can invoke JSON Web Service using [JSON RPC](http://json-rpc.org). Most of
 the JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One
-important limitation is that parameters must be passed in as *named*
-parameters.  Positional parameters are not supported, as there are too many
-overloaded methods for convenient use of positional parameters. 
+important limitation is that parameters must be passed in as *named* parameters.
+Positional parameters are not supported, as there are too many overloaded
+methods for convenient use of positional parameters. 
 
 Here's an example of invoking a JSON web service using JSON RPC: 
 
@@ -1101,7 +1100,7 @@ Here's an example of invoking a JSON web service using JSON RPC:
         "jsonrpc":"2.0"
     }
 
-Let's talk about paramteters that are made available to secure JSON web
+Let's talk about parameters that are made available to secure JSON web
 services by default. 
 
 #### Default Parameters [](id=default-json-web-service-parameters-liferay-portal-6-2-dev-guide-en)
@@ -1111,7 +1110,7 @@ authenticated), some parameters are made available to the web services by
 default. Unless you want to change their values to something other than their
 defaults, you don't have to specify them explicitly. 
 
-Here are the default parameters:  
+Here are the default parameters:
 
 - `userId`: The id of authenticated user
 - `user`: The full User object
@@ -1175,17 +1174,18 @@ Find out how next.
 
 #### Inner Parameters [](id=inner-parameters-json-web-services-liferay-portal-6-2-dev-guide-en)
 
-When you pass in an object paramter, you'll often need to populate its inner
+When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
-`ServiceContext` (see the *ServiceContext* section in this chapter to find out
-more about this type). To make an appropriate call to JSONWS, you might need to
-set the `serviceContext` parameter's fields `addGroupPermissions` and
-`scopeGroupId`. 
+`ServiceContext` (see the
+[ServiceContext](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/servicecontext-liferay-portal-6-2-dev-guide-06-en)
+section of the next chapter to find out more about this type). To make an
+appropriate call to JSONWS, you might need to set the `serviceContext`
+parameter's fields `addGroupPermissions` and `scopeGroupId`. 
 
-You can pass inner parameters by specifying them using dot notation. Just
-apppend the name of the parameter with a dot (i.e., a period, `.`), followed by
-the name of the inner parameter. For the `ServiceContext` inner parameters we
-mentioned above, you'd specify `serviceContext.addGroupPermissions` and
+You can pass inner parameters by specifying them using dot notation. Just append
+the name of the parameter with a dot (i.e., a period, `.`), followed by the name
+of the inner parameter. For the `ServiceContext` inner parameters we mentioned
+above, you'd specify `serviceContext.addGroupPermissions` and
 `serviceContext.scopeGroupId`. They're recognized as inner parameters and their
 values are injected into existing parameters before the API service method is
 executed. 
@@ -1195,12 +1195,12 @@ and are ignored during matching.
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip:** Use inner parameters with object
-parameters to set inner content of created parameter instances! 
+ ![Tip](../../images/tip-pen-paper.png) **Tip:** Use inner parameters with
+ object parameters to set inner content of created parameter instances! 
 
 ---
 
-Next let's see what values are returned when a JSON seb service is invoked. 
+Next, let's see what values are returned when a JSON seb service is invoked. 
 
 ### Returned Values [](id=returned-values-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -1212,7 +1212,8 @@ Let's look at some values returned from service calls. We'll create a
 `UserGroup` as we did in our SOAP web service client examples. To make it easy,
 we'll use the test form provided with the JSON web service in our browser. 
 
-1.  Open your browser to the JSON web service method that adds a `UserGroup`: 
+1.  Sign in to your portal as an administrator and then point your browser to
+    the JSON web service method that adds a `UserGroup`: 
 
         http://127.0.0.1:8080/api/jsonws?signature=/usergroup/add-user-group-2-\
         name-description
@@ -1224,8 +1225,8 @@ we'll use the test form provided with the JSON web service in our browser.
     `http://127.0.0.1:8080/api/jsonws` then scrolling down to the section for
     *UserGroup*; click *add-user-group*. 
 
-2.  In the *name* field enter *UserGroup3* and set the description to an
-    arbitrary value like *Created using JSON WS*.
+2.  In the *name* field, enter *UserGroup3* and set the description to an
+    arbitrary value like *Created via JSON WS*.
 
 3.  Click *Invoke* and you'll get a result similar to the following: 
 
@@ -1238,9 +1239,11 @@ serialized into a JSON string. To find out more about JSON strings, go to
 [json.org](http://www.json.org/).
 
 To learn about serializing Java objects, maps and lists, check out the article
-[JSON
-Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization)
+[JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization)
 by Igor Spasi&#263;. 
+
+<!-- Wouldn't it be better to pull any important information from the wiki into
+this guide so the information can be maintained? -Jesse -->
 
 Let's check out some common JSON WebService errors. 
 
