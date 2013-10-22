@@ -571,11 +571,11 @@ It's worth repeating that you can use any language that supports use of SOAP web
 services to create your web services client. Try it out on Liferay's SOAP web
 services!
 
-Next we'll explore Liferay's JSON Web Services. 
+Next we'll explore Liferay's JSON web services. 
 
 ## JSON Web Services [](id=json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
-JSON Web Services let you access portal service methods by exposing them as a
+JSON web services let you access portal service methods by exposing them as a
 JSON HTTP API. Service methods are made easily accessible using HTTP requests,
 both from JavaScript within the portal and from any JSON-speaking client. 
 
@@ -586,17 +586,17 @@ We'll cover the following topics as we explore JSON Web Service functionality:
 - Invocation 
 - Results
 
-Let's start by discussing how to register JSON Web Services. 
+Let's start by discussing how to register JSON web services. 
 
 ### Registering JSON Web Services [](id=registering-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
 `service.xml` entities with the property `remote-service="true"`) are exposed as
-JSON Web Services. When each `-Service.java` interface is created for a
+JSON web services. When each `-Service.java` interface is created for a
 remote-enabled service, the `@JSONWebService` annotation is added on the class
 level of that interface. All of the public methods of that interface become
-registered and available as JSON Web Services. 
+registered and available as JSON web services. 
 
 The `-Service.java` interface source file should never be modified by the user.
 If you need, however, more control over its methods (e.g., hiding some methods
@@ -648,7 +648,7 @@ decide to expose them as remote services. After enabling the `remote-service`
 attribute on its `SurfBoard` entity, you rebuild the services. Service Builder
 regenerates the `SurfBoardService` interface, adding the `@JSONWebService`
 annotation to it. This annotation tells the portal that the interface's public
-methods are to be exposed as JSON Web Services, making them a part of the
+methods are to be exposed as JSON web services, making them a part of the
 plugin's JSON API. 
 
 By default, scanning of the portlet's services is disabled. To enable scanning,
@@ -657,9 +657,9 @@ Fortunately, Liferay provides a way to automatically add the filter. Just click
 the *Build WSDD* button in Liferay IDE while editing the `service.xml` file in
 *Overview* mode, or just invoke the `build-wsdd` Ant target. On building the
 WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
-JSON Web Services for the plugin. Under the hood, the Plugins SDK registers the
+JSON web services for the plugin. Under the hood, the Plugins SDK registers the
 `SecureFilter` and the `JSONWebServiceServlet` for the plugin. You only need to
-enable JSON Web Services for your plugin once.
+enable JSON web services for your plugin once.
 
 Let's deploy the `SupraSurf` portlet plugin on our portal server. If your server
 isn't running, start it up. Then deploy your plugin onto it. 
@@ -736,7 +736,7 @@ As you may have noticed, plugin services are accessed via the portal context.
 Conveniently, requests sent this way can leverage the user's authentication in
 his current portal session.
 
-Next, we'll learn to how to *list* JSON Web Services available from our portal. 
+Next, we'll learn to how to *list* JSON web services available from our portal. 
 
 #### Listing Available JSON Web Services [](id=listing-available-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -834,7 +834,7 @@ Services.
 
 ### Portal Configuration of JSON Web Services [](id=portal-configuration-of-json-web-service-liferay-portal-6-2-dev-guide-05-en)
 
-JSON Web Services are enabled on Liferay Portal by default. If you need to
+JSON web services are enabled on Liferay Portal by default. If you need to
 disable them, specify this portal property setting: 
 
     json.web.service.enabled=false
@@ -843,7 +843,7 @@ Now let's look at strict HTTP methods.
 
 #### Strict HTTP Methods [](id=json-strict-http-methods-liferay-portal-6-2-dev-guide-05-en)
 
-All JSON Web Services are mapped to either GET or POST HTTP methods. If a
+All JSON web services are mapped to either GET or POST HTTP methods. If a
 service method name starts with `get`, `is` or `has`, the service is assumed to
 be read-only and is bound to the GET method; otherwise it's bound to POST. 
 
@@ -864,7 +864,7 @@ methods. We'll show you how next.
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, you can set the portal JSON
-Web Services to work in read-only mode by disabling HTTP methods other than GET.
+web services to work in read-only mode by disabling HTTP methods other than GET.
 For example: 
 
     jsonws.web.service.invalid.http.methods=DELETE,POST,PUT
@@ -1080,12 +1080,12 @@ Files can be uploaded using multipart forms and requests. Here's an example:
 This is a common upload form that invokes the `addFileEntry` method of the
 `DLAppService` class. 
 
-Now we'll show you how to invoke JSON Web Services using JSON RPC. 
+Now we'll show you how to invoke JSON web services using JSON RPC. 
 
 #### JSON RPC [](id=json-rpc-liferay-portal-6-2-dev-guide-05-en)
 
 You can invoke JSON Web Service using [JSON RPC](http://json-rpc.org). Most of
-the JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One
+the JSON RPC 2.0 specification is supported in Liferay JSON web services. One
 important limitation is that parameters must be passed in as *named* parameters.
 Positional parameters are not supported, as there are too many overloaded
 methods for convenient use of positional parameters. 
@@ -1230,9 +1230,19 @@ we'll use the test form provided with the JSON web service in our browser.
 
 3.  Click *Invoke* and you'll get a result similar to the following: 
 
-        {"addedByLDAPImport":false,"companyId":10154,"description":"Created
-        using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,
-        "userGroupId":13162}
+        {
+          "addedByLDAPImport": false,
+          "companyId": 10154,
+          "createDate": 1382460167254,
+          "description": "Created via JSON WS",
+          "modifiedDate": 1382460167254,
+          "name": "UserGroup3",
+          "parentUserGroupId": 0,
+          "userGroupId": 13901,
+          "userId": 10198,
+          "userName": "Test Test",
+          "uuid": "1b18c73d-482a-4772-b6f4-a9253bbcbf92"
+        }
 
 The returned `String` represents the `UserGroup` object you just created,
 serialized into a JSON string. To find out more about JSON strings, go to
@@ -1249,15 +1259,22 @@ Let's check out some common JSON WebService errors.
 
 ### Common JSON Web Service Errors [](id=common-json-web-service-errors-liferay-portal-6-2-dev-guide-05-en)
 
-While working with JSON Web Services, you may encounter errors. Let's look at
+While working with JSON web services, you may encounter errors. Let's look at
 the most common errors in the following subsections. 
 
 <!--I would have put the subsections in an unordered list, but I'll leave them
-for now. Which is preferred?  Are they long enough to warrant subsections? --> 
+for now. Which is preferred? Are they long enough to warrant subsections? --> 
 
 <!-- No, they're not long enough. In fact, that's been a problem with this whole
 chapter. I removed some sections already. One way to fix some of the "missing
 transition" problems above would be to combine some of the sections. -Rich -->
+
+-   Authenticated access required
+
+    If you see this error, it means you don't have permission to invoke the
+    remote service. Double-check that you're signed in as a user with the
+    appropriate permissions. If necessary, sign in as an administrator to invoke
+    the remote service.
 
 -   Missing value for parameter 
     
@@ -1299,15 +1316,15 @@ transition" problems above would be to combine some of the sections. -Rich -->
 
     Had you going there, didn't we? 
 
-Next we'll show you how to optimize your use of JSON Web Services by using the
+Next we'll show you how to optimize your use of JSON web services by using the
 *JSON Web Services Invoker*. 
 
 ### JSON Web Services Invoker [](id=json-web-services-invoker-liferay-portal-6-2-dev-guide-05-en)
 
-Using JSON Web Services is easy: you send a request that defines a service
+Using JSON web services is easy: you send a request that defines a service
 method and parameters, and you receive the result as JSON object. Below we'll
 show you why that's not optimal, and introduce a tool that lets you use JSON
-Web Services more efficiently and pragmatically. 
+web services more efficiently and pragmatically. 
 
 Consider this example: You're working with two related objects: a `User` and its
 corresponding `Contact`. With simple JSON Web Service calls, you first call some
@@ -1334,7 +1351,7 @@ command request parameter is missing, the request body is used as the command.
 So you can specify the command by either using the request parameter `cmd` or
 the request body. 
 
-The Invoker command is a plain JSON map describing how JSON Web Services are
+The Invoker command is a plain JSON map describing how JSON web services are
 called and how the results are managed. Here's an example of how to call a
 simple service using the Invoker: 
 
@@ -1358,7 +1375,7 @@ JSON Web Service call:
 
     /user/get-user-by-id?userId=123&-param1
 
-Of course, JSON WebService invoker handles calls to plugin methods as well:
+Of course, JSON Web Service invoker handles calls to plugin methods as well:
 
     {
         "/suprasurf-portlet.surfboard/hello-world": {
@@ -1381,7 +1398,7 @@ call returned a user object you can assign to a variable:
 The `$user` variable holds the returned user object. You can reference the
 user's contact ID using the syntax `$user.contactId`. 
 
-Next see how you can use nested service calls to join information from two
+Next, see how you can use nested service calls to join information from two
 related objects. 
 
 #### Nesting Service Calls [](id=nesting-service-calls-in-json-liferay-portal-6-2-dev-guide-en)
@@ -1421,14 +1438,14 @@ request to make the above nested service call:
 
 ---
 
-![note](../../images/tip-pen-paper.png) **Note:** You must *flag* parameters
-that take values from existing variables. To flag a parameter, insert the `@`
-prefix before the parameter name. 
+ ![Note](../../images/tip-pen-paper.png) **Note:** You must *flag* parameters
+ that take values from existing variables. To flag a parameter, insert the `@`
+ prefix before the parameter name. 
 
 ---
 
-Next let's talk about filtering object properties so only those you
-need are returned when you invoke a service. 
+Next, let's talk about filtering object properties so only those you need are
+returned when you invoke a service. 
 
 #### Filtering Results [](id=filtering-results-in-json-liferay-portal-6-2-dev-guide-05-en)
 
@@ -1474,16 +1491,20 @@ following format:
 The result is a JSON array populated with results from each command. The
 commands are collectively invoked in a single HTTP request, one after another. 
 
-By learning to leverage JSON Web Services in Liferay, you've added some powerful
+By learning to leverage JSON web services in Liferay, you've added some powerful
 tools to your toolbox. Good job! 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-05-en)
 
-In this chapter, we showed you how easy it is to find and invoke services. We
-also explained how Liferay's service security layers are used to protect your
-data. Then, we dove into SOAP web services and showed you how to invoke them.
-Lastly, we jumped into JSON web services to register them and invoke them in a
-myriad of ways. You see, here at Liferay, we aim to give you terrific service! 
+In this chapter, we showed you how easy it is to find and invoke Liferay remote
+web services. We also explained how Liferay's service security layers are used
+to protect your data and prevent unauthorized service calls. Then, we dove into
+SOAP web services and showed you how to create SOAP web service clients to
+invoke them. Lastly, we jumped into JSON web services. We learned how to
+register them, list them, and invoke them from Liferay JSON web service
+interface. We also learned about several different URL patterns and ways to pass
+JSON web service parameters in service calls. You see, here at Liferay, we aim
+to give you terrific service! 
 
 Next, we'll take a look at some of the powerful frameworks of Liferay Portal,
 learn how they work and how you can leverage them.
