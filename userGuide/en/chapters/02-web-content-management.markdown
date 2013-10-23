@@ -176,8 +176,8 @@ pages are part of their personal sites. All pages belong to one of two types of
 page sets: public pages and private pages. By default, public pages are
 accessible to anyone, even non-logged in users (guests). Private pages are
 accessible only to users who are members of the site which owns the pages. This
-means the private pages of an organization's site would be viewable only by
-members of the organization. 
+means the private pages of an organization's site would only be viewable by site
+members and members of the organization. 
 
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
