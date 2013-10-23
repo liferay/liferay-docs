@@ -557,55 +557,45 @@ Next, let's implement a web service client implemented in PHP.
 
 You can write your client in any language that supports web services invocation.
 Let's invoke the same operations we did when we created our Java client, this
-time using PHP and the PHP SOAP Client: 
-
-<!-- How to create and run the PHP SOAP client? -Jesse -->
+time using PHP and a PHP SOAP Client: 
 
     <?php
-        $groupName = "MyGroup2";
+        $userGroupName = "MyUserGroup2";
         $userName = "test";
-        $clientOptions = array(
-        'login' => $userName,
-        'password' => 'test');
+        $clientOptions = array('login' => $userName, 'password' => 'test');
 
         // Add user group
-
-        $userGroupClient = new SoapClient(
-            "http://localhost:8080/api/secure/axis/Portal_UserGroupService?wsdl",
+        $userGroupClient = new 
+            SoapClient("http://localhost:8080/api/axis/Portal_UserGroupService?wsdl", 
             $clientOptions);
-        $group = $userGroupClient->addUserGroup($groupName, "This is my group",
-            0, 0);
-        print "group id for " . $groupName . " is " . $group->userGroupId . "\n";
+        $userGroup = $userGroupClient->addUserGroup($userGroupName, "This user group was created by the PHP client! ");
+        print ("User group ID is $userGroup->userGroupId ");
 
-        // add user to user group
-
+        // Add user to user group
         $companyClient = new SoapClient(
-            "http://localhost:8080/api/secure/axis/Portal_CompanyService?wsdl",
+            "http://localhost:8080/api/axis/Portal_CompanyService?wsdl",
             $clientOptions);
         $company = $companyClient->getCompanyByVirtualHost("localhost");
         $userClient = new SoapClient(
-            "http://localhost:8080/api/secure/axis/Portal_UserService?wsdl",
+            "http://localhost:8080/api/axis/Portal_UserService?wsdl",
             $clientOptions);
         $userId = $userClient->getUserIdByScreenName($company->companyId,
             $userName);
-        print "user id for " . $userName . " is " . $userId . "\n";
-
+        print ("User ID for $userName is $userId ");
         $users = array($userId);
-        $userClient->addUserGroupUsers($group->userGroupId, $users);
+        $userClient->addUserGroupUsers($userGroup->userGroupId, $users);
 
-        // get and print user groups to which user belongs
-
+        // Print the user groups to which the user belongs
         $userGroups = $userGroupClient->getUserUserGroups($userId);
-        print "user groups for user " . $userId . " ...\n";
-        foreach($userGroups as $k=>$v)
-            print ($v->name) . " " . $v->userGroupId . "\n";
+        print ("User groups for user $userId ... ");
+        foreach($userGroups as $ug)
+            print ("$ug->name, $ug->userGroupId ")
     ?>
 
-It's worth repeating that you can use any language that supports use of SOAP web
-services to create your web services client. Try it out on Liferay's SOAP web
-services!
+Remember, you can use any language that supports use of SOAP web services to
+create a web services client. Test your clients on Liferay's SOAP web services!
 
-Next we'll explore Liferay's JSON web services. 
+Next, we'll explore Liferay's JSON web services. 
 
 ## JSON Web Services [](id=json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -1350,7 +1340,7 @@ transition" problems above would be to combine some of the sections. -Rich -->
 
     Had you going there, didn't we? 
 
-Next we'll show you how to optimize your use of JSON web services by using the
+Next, we'll show you how to optimize your use of JSON web services by using the
 *JSON Web Services Invoker*. 
 
 ### JSON Web Services Invoker [](id=json-web-services-invoker-liferay-portal-6-2-dev-guide-05-en)
