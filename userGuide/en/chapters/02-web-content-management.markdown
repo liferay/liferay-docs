@@ -191,10 +191,31 @@ Settings*.
 
 ### Creating and Managing Sites [](id=creating-and-managing-sites-liferay-portal-6-2-user-guide-02-en)
 
-Sites can be created through the Control Panel by a portal administrator. To add
-a site, click on *Sites* under the Sites section of the Control Panel and then
-click *Add*. If there is at least one site template available, a dropdown menu
-appears. Site templates provide a preconfigured set of pages, portlet
+Sites can be created through the Control Panel by a portal administrator.
+Liferay's Control Panel provides an administrative interface for managing your
+portal. There are four main sections of the Liferay's Control Panel: Users,
+Sites, Apps, and Configuration. In this chapter, we'll learn how to use the
+Control Panel to manage sites. In the next chapter, we'll learn about using the
+Control Panel to manage site templates and page templates. For information about
+the Apps, Users, and Configuration sections of the Control Panel, please see
+chapters 14, 16, and 17 of this guide.
+
+---
+
+ ![Tip](../../images/tip.png) **Tip:** Prior to Liferay 6.2, the Control Panel
+ included interfaces both for site administration and for portal administration.
+ In Liferay 6.2, these interfaces have been separated. If you're signed in as an
+ administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
+ &rrar; *Control Panel*. To manage a single site, navigate to the site by
+ clicking on *My Sites* and clicking on the site's name. Then click on *Admin*
+ &rarr; *Site Administration*. The Site Administration interface allows to
+ configure site settings and manage the pages, content, and users of the site.
+
+---
+
+To add a site, click on *Sites* under the Sites section of the Control Panel and
+then click *Add*. If there is at least one site template available, a dropdown
+menu appears. Site templates provide a preconfigured set of pages, portlet
 applications, and content that can be used as the basis of a site's public or
 private page set. To create a site from scratch, select *Blank Site*. Otherwise,
 select the name of the site template you'd like to use. If you opt to create a
@@ -234,13 +255,15 @@ from restricted sites using the My Sites portlet.
  birthdays, job titles, organizations, and user groups. Using this information,
  the site membership policy can automatically assign members to the site. If
  your site will implement a membership policy, your site administrators can
- disallow manual membership management for their site. <!--See the TBD chapter
- of the Developer's Guide for information about creating site membership
- policies. -JR -->When the Allow Manual Membership Management option is disabled,
- the Site Memberships section as well as various other options to manually
- assign/remove members are hidden, even from administrators.
+ disallow manual membership management for their site. When the Allow Manual
+ Membership Management option is disabled, the Site Memberships section as well
+ as various other options to manually assign/remove members are hidden, even
+ from administrators.
 
 ---
+
+<!--See the (TBD) chapter of the Developer's Guide for information about
+creating site membership policies. -JR -->
 
 **Directory Indexing Enabled:** allows site administrators to browse the site's
 documents and media files and folders. For example, a site administrator of a
@@ -415,6 +438,15 @@ corrupted.  If you'd like to restore a Liferay site using a LAR file, it's best
 to delete the site entirely, create a new site with the same name as the old
 one (i.e., re-create the site), and then import the LAR file into the new site.
 This way, there's no chance for there to be a data conflict.
+
+Liferay can handle some kinds of naming collisions when importing a LAR file
+into a site. For example, suppose you're importing a LAR file into a site and
+the LAR file has a page with a certain friendly URL. If an existing page in the
+site has the same friendly URL there will be a collision. Liferay resolves the
+collision by adding a number to the end of the friendly URL and incrementing
+until there's no collision. This behavior takes place for friendly URL
+translations as well. Similarly, if importing a LAR into a site causes a
+category name collision, Liferay renames the imported categories.
 
 ---
 
@@ -759,7 +791,9 @@ from and what pages they most often visit. This helps you tweak your site so you
 can provide the most relevant content to your users.
 
 **Content Sharing:** lets you configure whether sub-sites can display content
-from this site.
+from this site. Even if you initially allowed content sharing between the parent
+site and its sub-sites, you're able to deselect this option and immediately
+revoke content sharing from all sub-sites.
 
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be

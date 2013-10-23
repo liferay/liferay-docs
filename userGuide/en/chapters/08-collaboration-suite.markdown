@@ -1682,7 +1682,7 @@ reminder to all the members of a certain site to submit an answer to this week's
 poll question. Liferay provides two portlets that meet this need: the Alerts
 portlet and the Announcements portlet.
 
-![Figure 8.31: The Alerts and Annoucements portlets provide administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
+![Figure 8.31: The Alerts portlet provides administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
 
 The Alerts and Announcements portlets let you broadcast important information to
 different groups of users. Each alert or announcement can be created in a
@@ -1696,7 +1696,25 @@ or Test. Each kind of announcement that's broadcast to a user is viewable from
 the Alerts or Announcements portlet, of course. But alerts and announcements can
 also be sent via email or SMS (Short Message Service, i.e., text).
 
-![Figure 8.32: The Alerts and Annoucements portlets display lists of alerts and annoucements to regular users. They also provide administrators with an interface for managing and adding entries.](../../images/alerts-portlet.png)
+You can also create roles in Liferay to assign to users that should have access
+to announcing general announcements. For instance, if you'd like an employee in
+your site to have strict control over what is announced, you can assign them to
+an Announcements role. To create a simple Announcement role, you'll need to
+navigate to the *Control Panel* &rarr; *Roles* &rarr; *Add* &rarr; *Regular
+Role*. Specify the name of your role as *Announcements*, click *Save*, and then
+select the *Define Permissions* tab. For this particular role, you'll need to
+grant two permissions:
+
+- *Control Panel &rarr; General Permissions &rarr; Add General Announcements*
+- *Site Administration &rarr; Applications &rarr; Announcements &rarr; Add
+Entry*
+
+You'll need to click *Save* after selecting each permission. Now you have a
+simple Announcements role that can add an entry to the Announcements portlet and
+add general announcements to your site! Of course, you can add additional
+permissions to give the Announcements role more access, if you prefer.
+
+![Figure 8.32: The Annoucements portlet displays a list of annoucements to regular users. It also provides administrators with an interface for managing and adding entries.](../../images/announcements-portlet.png)
 
 Let's look at how to create announcements in the Announcements portlet. When you
 view the Announcements portlet as an administrator, you'll see two tabs: Entries
@@ -1839,7 +1857,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.34: Openfire Administration Web Tool](../../images/jabber-service-name.png)
+![Figure 8.34: View your server information using the Openfire Administration Web Tool.](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
@@ -1890,12 +1908,7 @@ Marketplace by navigating the the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 8.35: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
-
-<!-- Needs to be updated for 6.2 -->
-<!-- There are a few bugs that make it impossible to configure an account using
-the Mail portlet. Info below this point still needs to be tested for 6.2.
-Reference: LPS-36241 -->
+![Figure 8.35: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add Mail Account*
 link. From there, you are given a choice between a Custom email Account or a
@@ -1914,7 +1927,10 @@ account.
 
 **Password**: lets you choose a password for logging into the account.
 
-**Incoming Settings**: allows you to specify the host name for your IMAP
+**Save Password**: allows Liferay to save your password so you won't have to
+enter it next time you access your mail account.
+
+**Incoming Host Name**: allows you to specify the host name for your IMAP
 (Internet Mail Access Protocol) or POP server.
 
 **Incoming Port**: allows you to specify the port upon which the IMAP or POP
@@ -1938,12 +1954,12 @@ you can add as many mail accounts as you want in order to view them in the
 portlet.
 
 Click the tab for the mail account you just configured to be brought to an
-interface which allows you to read your mail and compose new messages. To read
-a message, click on it. To compose a new message, click the *Compose Email*
-link on the left side of the portlet. A form appears which allows you to
-compose an email message using the same rich text editor that appears
-everywhere else in Liferay. You can read, reply, and create messages, as well
-as manage all of your folders in Liferay's Mail portlet. 
+interface which allows you to read your mail and compose new messages. To read a
+message, click on it. To compose a new message, click the *Compose* link on the
+left side of the portlet. A form appears which allows you to compose an email
+message using the same rich text editor that appears everywhere else in Liferay.
+You can read, reply, and create messages, as well as manage all of your folders
+in Liferay's Mail portlet.
 
 The Mail portlet is a great way to integrate a familiar service with other the
 collaboration features that Liferay provides. 

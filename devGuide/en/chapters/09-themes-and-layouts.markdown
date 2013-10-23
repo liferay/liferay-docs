@@ -402,13 +402,21 @@ one includes more details, while the other is smaller). Instead of creating two
 themes that are identical except for some changes in the header, you can create
 one and define a setting that lets you choose which header is displayed. 
 
-In the `portal_normal.vm` template, write:
+Make sure you have a `docroot/_diffs/templates` folder created and copy the
+`docroot/templates/portal_normal.vm` file into that directory. It's a good rule
+of thumb to modify files for your new theme in the `_diffs` folder. Now, open
+your `_diffs/templates/portal_normal.vm` template and insert the following:
 
     #if ($theme.getSetting("header-type") == "detailed")
         #parse ("$full_templates_path/header_detailed.vm")
     #else
         #parse ("$full_templates_path/header_brief.vm")
     #end
+
+If you're following along with this example, you'll need to create the
+`header_detailed.vm` and `header_brief.vm` files and place them in the
+`_diffs/templates` folder. For this simple tutorial, you can keep these VM
+templates blank.
 
 Then, add two different entries in the `liferay-look-and-feel.xml` file
 that refer to the same theme, but have different values for the header-type
@@ -432,8 +440,8 @@ or off or to allow users to provide input to a theme setting.
 As an example, you can create an option to display a slogan next to your
 company's name in the footer of your site's pages:
 
-1.  Insert logic into your `portal_normal.vm` template to display a slogan along
-    with your company's name (e.g. Nosester) in the footer of your site pages:
+1. Insert logic into your `portal_normal.vm` template to display a slogan along
+   with your company's name (e.g. Nosester) in the footer of your site pages:
 
         <footer id="footer" role="contentinfo">
             <p>
@@ -783,7 +791,7 @@ Marketplace app.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
+ ![Tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
  Liferay Portal instance and don't have the resources importer already deployed,
  you might see a message like this:
  
@@ -892,7 +900,15 @@ if you're not familiar with JSON, the `sitemap.json` file is easy to understand.
 Let's examine a sample `sitemap.json` file:
 
     {
-        "layouts": [
+	"layoutTemplateId": "2_columns_ii",
+	"privatePages": [
+	    {
+	        "friendlyURL": "/private-page",
+		"name": "Private Page",
+		"title": "Private Page"
+	    }
+	],
+	"publicPages": [
             {
                 "columns": [
                     [
@@ -979,7 +995,10 @@ Let's examine a sample `sitemap.json` file:
                     ]
                 ],
                 "friendlyURL": "/home",
-                "name": "Welcome",
+                "nameMap": {
+                    "en_US": "Welcome",
+                    "fr_CA": "Bienvenue"
+                },
                 "title": "Welcome"
             },
             {
@@ -1017,21 +1036,19 @@ Let's examine a sample `sitemap.json` file:
                 "title": "Hidden Page",
                 "hidden": "true"
             }
-        ],
-        "layoutTemplateId": "2_columns_ii"
+        ]
     }
 
 The first thing you should declare in your `sitemap.json` file is a layout
 template ID so the target site or site template can reference the layout
-template to use for its pages. (In the above example, this declaration is
-actually at the end of the file.) You can also specify different layout
-templates to use for individual pages. You can find layout templates in your
-Liferay installation's `/layouttpl` folder. Next, you have to declare the
-layouts, or pages, that your site template should use. Note that pages are
-called *layouts* in Liferay's code. You can specify a name, title, and friendly
-URL for a page, and you can set a page to be hidden. To declare that web content
-should be displayed on a page, simply specify an HTML file. You can declare
-portlets by specifying their portlet IDs which can be found in Liferay's
+template to use for its pages. You can also specify different layout templates
+to use for individual pages. You can find layout templates in your Liferay
+installation's `/layouttpl` folder. Next, you have to declare the layouts, or
+pages, that your site template should use. Note that pages are called *layouts*
+in Liferay's code. You can specify a name, title, and friendly URL for a page,
+and you can set a page to be hidden. To declare that web content should be
+displayed on a page, simply specify an HTML file. You can declare portlets by
+specifying their portlet IDs which can be found in Liferay's
 `WEB-INF/portlet-custom.xml` file. You can also specify portlet preferences for
 each portlet.
 
