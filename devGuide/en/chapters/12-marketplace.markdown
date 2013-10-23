@@ -417,7 +417,7 @@ upper-right corner of the screen. Once you have registered, you can visit the
 Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
 The Marketplace home page is shown below:
 
-![Figure 11.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
+![Figure 12.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. You'll visit here often during the course of development, so
@@ -438,7 +438,7 @@ options for adding new apps and viewing your published apps. Your App Manager is
 accessible from your user profile page. Let's go there now. In the upper right
 corner on liferay.com select your name &rarr; *User Profile*. 
 
-![Figure 11.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
+![Figure 12.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
 
 Your profile page contains links to often-used functionality of liferay.com,
 including app creation and management. There are several links on the left of
@@ -447,7 +447,7 @@ manage the apps that you have for either personal or company use and to manage
 the apps that you or your company have developed. You'll use this page heavily,
 so a bookmark would be useful here. Click *App Manager* to visit this page.
 
-![Figure 11.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
+![Figure 12.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
 
 You'll notice three tabs across the top:
 
@@ -470,7 +470,7 @@ allowing you to fill in your app's details.
 
 The first step is to enter the basic details about your app. 
 
-![Figure 11.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
+![Figure 12.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
 
@@ -564,7 +564,7 @@ Make up some sample data to use during this example, and enter it into the form.
 Once you have entered all your app's details, click *Next* to move on to the
 next screen.
 
-![Figure 11.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
+![Figure 12.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
 
 On this screen, you must specify the version of your app. Review the guidance in
 the *What is a version* section in this chapter to choose a good version
@@ -578,7 +578,7 @@ support different Liferay versions. You must upload at least one plugin file
 before advancing beyond this screen. The screen is shown here as it initially
 appears:
 
-![Figure 11.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
+![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
 
 Press the *Browse* button, and select the plugins that make up your app. Each
 time you add plugins to the list, they will automatically begin uploading, and
@@ -592,7 +592,7 @@ Therefore, we will upload 3 plugins that make up our app. Once the files are
 uploaded, a check mark appears next to each plugin, and the plugins are
 displayed based on the compatibility information.
 
-![Figure 11.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
+![Figure 12.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
 This indicates that the files were successfully uploaded. Notice that the
 portlet plugin was automatically copied for use in both the EE and CE
@@ -605,7 +605,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
 will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 11.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 12.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
@@ -670,7 +670,7 @@ process. To make changes to this content for your app, navigate to *Home* &rarr;
 *App Manager* &rarr; *Apps*, then click the *Action* button next to the app you
 wish to edit, and select *Edit*.
 
-![Figure 11.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
+![Figure 12.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
 
 This screen shows you what the app looks like on the Marketplace. To edit the
 detail information, click the *Edit* button at the bottom of the preview. This
@@ -725,7 +725,7 @@ button begins the process of adding a new version, starting with the App Details
 screen. In this case, the screen is pre-filled with data from the current
 version of the app, as shown below.
 
-![Figure 11.10: Adding a version is similar to creating a new app, except that the fields are filled in for you.](../../images/marketplace-add-version-details.png) 
+![Figure 12.10: Adding a version is similar to creating a new app, except that the fields are filled in for you.](../../images/marketplace-add-version-details.png) 
 
 You can make any changes to the pre-filled data on this screen. Since this is a
 new version of an existing app making major changes (such as completely changing
@@ -768,7 +768,7 @@ downloads, and installations of your app(s). To access these metrics, navigate
 to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next
 to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 11.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 12.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Installations*).
