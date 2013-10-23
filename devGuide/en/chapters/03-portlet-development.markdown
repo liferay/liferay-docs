@@ -1036,8 +1036,8 @@ explore localization of the portlet's user interface.
 
 ## Localizing Your Portlets [](id=localizing-your-portlet-liferay-portal-6-2-dev-guide-03-en)
 
-If your portlets target an international audience, you can localize their user
-interfaces. Localizing a portlet's language is done using language keys for each
+If your portlets target an international audience, you can localize the user
+interface. Localizing a portlet's language is done using language keys for each
 language you wish to support. You can translate these manually or use a web
 service to translate them for you. Conveniently, all existing translated
 messages Portal uses are accessible to all plugin projects. To localize messages
@@ -1074,7 +1074,7 @@ in their language, specify the message key named `welcome`.
 
     <liferay-ui:message key="welcome" />
 
-This key maps to the of the word "Welcome", in your translation of it to the
+This key maps to the word "Welcome", in your translation of it to the
 user's locale. Here is the `welcome` language key from Liferay's
 `Language.properties` file.
 
@@ -1121,9 +1121,9 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 3.  Replace the current welcome message tag and exclamation point,
     `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
 
-        <liferay-ui:message key="welcome-x" /> <%= user.getScreenName() %>
+        <liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>" />
 
-When you refesh your page, your "My Greeting" portlet greets you by your screen
+When you refresh your page, your "My Greeting" portlet greets you by your screen
 name!
 
 ![Figure 3.10: By passing the user's screen name as an argument to Liferay's `welcome-x` language key, we were able to display a personalized greeting.](../../images/03-screen-name-greeting.png)
@@ -1132,8 +1132,8 @@ Other message tags you'll want to use are the `<liferay-ui:success />` and
 `<liferay-ui:error />` tags. The `<liferay-ui:success />` helps you give
 positive feedback, marked up in a pleasant green background. The
 `<liferay-ui:error />` tag helps you warn your users of invalid input or
-exceptional conditions. The error messages are marked up in an appropriate red
-background. 
+exceptional conditions. Error messages are marked up in an appropriately
+alarming red background. 
 
 The `<liferay-ui:success />` tag is triggered when its key value is found in the
 `SessionMessages` object. Earlier in our `MyGreetingPortlet` class, we triggered
@@ -1286,7 +1286,7 @@ translations, in the same folder as your `Language.properties` file.
 By using Studio's language building capability, you can keep all created
 translations synchronized with your default `Language.properties`. You can run
 it any time during development. It significantly reduces the time spent on the
-maintanance of translations. Of course, you'll want to have someone fluent in
+maintenance of translations. Of course, you'll want to have someone fluent in
 that language review the translation before deploying the translation to a
 Production environment. 
 

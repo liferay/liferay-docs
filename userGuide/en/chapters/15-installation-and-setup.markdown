@@ -93,8 +93,139 @@ them.
 Once you have Liferay, you can then plan out your installation. This is a
 two-step process: first, determine if you need Liferay Portal Security turned
 on, and second, install Liferay Portal, by using a bundle or by installing it
-manually on your existing app server. Next, we'll show you your options with
-regard to Liferay Portal Security. 
+manually on your existing app server. Next, we'll go over the steps it takes to
+install Liferay Portal. 
+
+## Liferay installation overview [](id=liferay-installation-overview-liferay-portal-6-2-user-guide-15-en)
+
+Before we begin, it's important to go over the various facets of the
+installation. They are: 
+
+1. Create your database. 
+
+2. Determine whether you want to use the Liferay managed data source or a data
+   source managed by your application server. The Liferay managed data source is
+   recommended. 
+
+3. Gather credentials for sending email notifications to users. Liferay supports
+   a JNDI mail session as well as its built-in mail session. 
+
+4. Install a Liferay bundle or on an existing application server according to
+   the instructions for your application server (see below). 
+
+5. Determine whether you'll use Marketplace or other third party applications.
+   If you will, you should enable Liferay's Plugin Access Control List (PACL). 
+
+We'll go through the steps in order, so first we'll look at the Liferay
+database. 
+
+## Liferay's database [](id=liferays-database-liferay-portal-6-2-user-guide-15-en)
+
+The recommended way of setting up your Liferay database also happens to be the
+simplest. Liferay Portal takes care of just about everything. The only thing you
+need to do is create a blank database encoded for character set UTF-8. The
+reason for this is that Liferay is a multilingual application, and needs UTF-8
+encoding to display all the character sets it supports. 
+
+Next, create an ID for accessing this database and grant it all
+rights--including the rights to create and drop tables--to the blank Liferay
+database. This is the ID you'll use to connect to the Liferay database, and
+you'll configure it later either in your application server or in Liferay's
+properties file so that Liferay can connect to it. 
+
+One of the first things Liferay Portal does when you bring it up for the first
+time is create the tables it needs in the database you just created. It does
+this automatically, complete with indexes. 
+
+If you create your database and grant a user ID full access to it, Liferay can
+use that user ID to create its indexes and tables automatically.  This is the
+recommended way to set up Liferay, as it allows you to take advantage of
+Liferay's ability to maintain its database automatically during upgrades or
+through various plugin installs that create tables of their own. It is by far
+the best way to set up your Liferay installation.
+
+If you'll be setting up Liferay's database with the recommended permissions, you
+can skip to the next section.
+
+---
+
+![Tip](../../images/02-tip.png) **Note:** The below instructions are not the
+recommended set up for Liferay installations, but the procedure is documented
+here so enterprises with more restrictive standards can install Liferay with
+more strict--but suboptimal--database settings. If it's at all possible,
+Liferay recommends that you use the automatic method as documented above instead
+of the procedure outlined below.
+
+---
+
+Even though Liferay can create its database automatically, some enterprises
+prefer *not* to allow the user ID configured in an application server to have
+the permissions over the database necessary for Liferay and its plugins to
+maintain their tables. For these organizations, Select, Insert, Update and
+Delete are the only permissions allowed so we will go over how to set up the
+database manually. If your organization *is* willing to grant the Liferay user
+ID permissions to create and drop tables in the database--and this is the
+recommended configuration--by all means, use the recommended configuration. 
+
+Creating the database is simple: grant the ID Liferay uses to access the
+database full rights to do anything to the database. Then install Liferay and
+have it create the database. Once the database is created, remove the
+permissions for creating tables and dropping tables from the user ID.
+
+There are some caveats to running Liferay like this. Many Liferay plugins create
+new tables when they're deployed. In addition to this, Liferay has an automatic
+database upgrade function that runs when Liferay is upgraded. If the user ID
+that accesses the database doesn't have enough rights to create/modify/drop
+tables in the database, you must grant those rights to the ID before you deploy
+one of these plugins or start your upgraded Liferay for the first time. Once the
+tables are created or the upgrade is complete, you can remove those rights until
+the next deploy or upgrade. Additionally, your developers may create plugins
+that need to create their own tables. These are just like Liferay's plugins that
+do the same thing, and they cannot be installed if Liferay can't create these
+tables automatically. If you wish to install these plugins, you will need to
+grant rights to create tables in the database before you attempt to install
+them. 
+
+Once you have your database ready, you can install Liferay on your server. 
+
+## Liferay Home [](id=liferay-home-liferay-portal-6-2-user-guide-15-en)
+
+Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
+usually one folder higher than the location of the application server itself.
+This is why the bundles place the application server one folder in from the
+bundle's root folder.
+
+If Liferay is unable to create the resources it needs in this folder or if it
+finds itself running on certain application servers, it creates a folder called
+`liferay` in the home folder of the user ID that is running Liferay, and that
+becomes Liferay Home.
+
+The home folder is important to the operation of Liferay. The aforementioned
+folders (`data` and `deploy`) are created there, and Liferay's properties
+configuration files are also stored there. 
+
+We recommend using the setup wizard to configure your database and mail sessions
+when you first configure Liferay. This creates a
+`portal-setup-wizard.properties` file where all the settings from the setup
+wizard are stored. When you begin customizing your portal's configuration, we
+recommend you create a separate properties file for that, called
+`portal-ext.properties`. This allows you to keep your server configuration
+properties separate from core properties like your database and mail server
+configurations.  All the possible properties that can
+be placed in this file are documented in [our reference documentation](http://docs.liferay.com/portal/6.2/propertiesdoc). 
+
+---
+
+![Tip](../../images/tip.png) **Note:** To avoid using the setup wizard so you
+can configure everything manually from a `portal-ext.properties` file, you must
+disable the Setup Wizard by specifying `setup.wizard.enabled=false` in the
+`portal-ext.properties`. Also, note that property values in
+`portal-setup-wizard.properties` (the file created in Liferay Home by the Setup
+Wizard) override property values in `portal-ext.properties`. 
+
+---
+
+Let's move on and discuss Liferay Portal security. 
 
 ## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-liferay-portal-6-2-user-guide-15-en)
 
@@ -142,34 +273,35 @@ permissions.
 
 Now that you understand all the prerequisites for installing Liferay Portal,
 let's go ahead and get it done! First we'll go over installing Liferay from a
-bundle and after this we'll provide instructions for installing Liferay manually
+bundle, and after this we'll provide instructions for installing Liferay manually
 on all the application servers it supports. 
 
 ## Installing a bundle [](id=installing-a-bundle-liferay-portal-6-2-user-guide-15-en)
 
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is
-called *Liferay Home* and we refer to it thoughout this documentation. 
+called *Liferay Home*, and we refer to it thoughout this documentation. 
 
 ![Figure 15.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
 
 Inside this folder, there are folders for various purposes:
 
-**Data:** This folder is used to store the embedded HSQL database which the
-bundles use, as well as the configuration and data for the Jackrabbit JSR-170
-content repository and the Lucene search index.
+**Data:** This folder is used to store the embedded HSQL database the bundles
+use, as well as the configuration and data for the Jackrabbit JSR-170 content
+repository and the Lucene search index. It also contains the base directory
+where the OSGi framework can persist any of its operating files. 
 
-**Deploy:** Plugins which you wish to deploy to Liferay can be copied into this
-folder. It is also used by Liferay Marketplace and Liferay's graphical plugin
-installer utility. 
+**Deploy:** Plugins that can be copied into this folder, and Liferay then
+deploys them. It is also used by Liferay Marketplace and Liferay's graphical
+plugin installer utility. 
 
 **[Application Server]:** The name of this folder is different depending on
-which bundle you have downloaded. This folder contains the application server in
+the bundle you've downloaded. This folder contains the application server in
 which Liferay has been installed.
 
-Installing a bundle is as easy as uncompressing the archive, copying a JDBC
-driver and then starting the application server. Let's use the Tomcat bundle as
-an example:
+Getting a Liferay bundle up and running is as easy as uncompressing the archive,
+copying a JDBC driver, and then starting the application server. Let's use the
+Tomcat bundle as an example:
 
 1. Unzip the bundle to a location of your choice. 
 
@@ -218,21 +350,22 @@ There is one application included in the bundle that you need to remove:
 
 To remove it, all you have to do is undeploy it. The method for doing this
 differs by application server and that, of course, depends on the bundle you
-have chosen. For example, on Tomcat you delete the application folders from the
-`[Tomcat Home]/webapps` folder. On GlassFish, you use the administrative console
-to undeploy them. 
+have chosen. For example, on Tomcat you delete the application folder from the
+`[Tomcat Home]/webapps` folder. On GlassFish, you use the administrative
+console. 
 
 If you forget to undeploy the sample application before you run through the
 setup wizard and connect Liferay to your real database, the sample data is
 created in your database, and there isn't an easy way to clean it out. Make sure
 you get the sample data undeployed before setting up your server, or you'll have
 to drop your database and re-create it. That's not such a bad thing to have to
-do, since it's a brand new database. If you're working with an existing
-installation of Liferay, please see the section on upgrading in chapter 18. 
+do, since it's a brand new database. If you don't have a brand new database,
+you're working with an existing installation of Liferay, and you should follow
+the instructions on upgrading in chapter 18 instead of what's described here. 
 
-If you're using Liferay EE, you don't have the sample site, so you don't need to
-worry about this. The next step is to run through the setup wizard, which we'll
-cover below. 
+If you're a Liferay Portal Enterprise subscriber, you don't have the sample
+site, so you don't need to worry about this. The next step is to run through the
+setup wizard, which we'll cover below. 
 
 As you can see, bundles are the easiest way to get started with Liferay. They
 come preconfigured with a running Liferay instance that can be used immediately
@@ -248,130 +381,19 @@ supports, both open source and proprietary.
 ## App Servers [](id=app-servers-liferay-portal-6-2-user-guide-15-en)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
-easiest to do this by starting with a bundle. But many enterprises can't do
+easiest to do this by starting with a bundle. But many organizations can't do
 that. There may be an existing infrastructure into which you're installing
-Liferay or you may have standardized on a particular application server. You'll
+Liferay, or you may have standardized on a particular application server. You'll
 be happy to know that Liferay Portal has been designed to work well with all the
 leading application servers and that it's easy and straightforward to install.
-But before we get started, we need to go over a few concepts; namely, the
-Liferay Home folder, databases and Liferay's main configuration file. These were
-touched on in the section on bundles above but we'll look at them in more detail
-now. 
+But before we get started, we need to go over a few concepts; namely, data
+sources and mail sessions. These were touched on in the section on bundles above
+but we'll look at them in more detail now. 
 
-### Liferay Home [](id=liferay-home-liferay-portal-6-2-user-guide-15-en)
-
-Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
-one folder higher than the location of the application server itself. This is
-why the bundles place the application server one folder in from the bundle's
-root folder.
-
-If Liferay is unable to create the resources it needs in this folder or if it
-finds itself running on certain application servers, it creates a folder called
-`liferay` in the home folder of the user ID that is running Liferay and that
-becomes Liferay Home.
-
-As described above in the *Bundles* section, the home folder is very important
-to the operation of Liferay. The aforementioned folders (*data* and *deploy*)
-are created there and you can also put a special configuration file called
-`portal-ext.properties` there. This file is fully documented in chapter 20, a
-reference for Liferay properties.
-
----
-
-![Tip](../../images/tip.png) **Note:** To use database properties from a
-`portal-ext.properties` file you must disable the Setup Wizard by specifying
-`setup.wizard.enabled=false` in that `portal-ext.properties`.  Also, note that
-property values in `portal-setup-wizard.properties` (the file created in Liferay
-Home by the Setup Wizard) override property values in `portal-ext.properties`. 
-
----
-
-Let's move on to examining the database. 
-
-### Liferay's database [](id=liferays-database-liferay-portal-6-2-user-guide-15-en)
-
-As stated above, if you create your database and grant a user ID full access to
-it, Liferay can use that user ID to create its indexes and tables automatically.
-This is the recommended way to set up Liferay, as it allows you to take
-advantage of Liferay's ability to automatically maintain its database during
-upgrades or through various plugin installs which may create tables of their
-own. It is by far the best way to set up your Liferay installation.
-
-If you'll be setting up Liferay's database with the recommended permissions, you
-can skip to the next section.
-
----
-
-![Tip](../../images/02-tip.png) **Note:** This is not the recommended set up
-for Liferay installations but is documented here so enterprises with more
-restrictive standards can install Liferay with more strict -- but
-suboptimal -- database settings. If it's at all possible, Liferay recommends that
-you use the automatic method as documented above instead of the procedure
-outlined below.
-
----
-
-Even though Liferay can create its database automatically, some enterprises
-prefer *not* to allow the user ID configured in an application server to have
-the permissions over the database necessary for Liferay and its plugins to
-maintain their tables. For these organizations, Select, Insert, Update and
-Delete are the only permissions allowed so we will go over how to set up the
-database manually. If your organization *is* willing to grant the Liferay user
-ID permissions to create and drop tables in the database -- and this is the
-recommended configuration -- by all means, use the recommended configuration. 
-
-Creating the database is simple: grant the ID Liferay uses to access the
-database full rights to do anything to the database. Then install Liferay and
-have it create the database. Once the database is created, remove the
-permissions for creating tables and dropping tables from the user ID.
-
-There are some caveats to running Liferay like this. Many Liferay plugins create
-new tables when they're deployed. In addition to this, Liferay has an automatic
-database upgrade function which runs when the version of Liferay is upgraded to
-a new release. If the user ID that accesses the database doesn't have enough
-rights to create/modify/drop tables in the database, you must grant those rights
-to the ID before you deploy one of these plugins or start your upgraded Liferay
-for the first time. Once the tables are created or the upgrade is complete, you
-can remove those rights until the next deploy or upgrade. Additionally, your
-developers may create plugins that need to create their own tables. These are
-just like Liferay's plugins that do the same thing and they cannot be installed
-if Liferay can't create these tables automatically. If you wish to install these
-plugins, you will need to grant rights to create tables in the database before
-you attempt to install them. 
-
-Once you have your database ready, you can install Liferay on your server. 
-
-### Liferay installation overview [](id=liferay-installation-overview-liferay-portal-6-2-user-guide-15-en)
-
-Before we begin, it's important to go over the various facets of the
-installation. They are: 
-
-1. Create your database (see above). 
-
-2. Determine whether you want to use the Liferay managed data source or a data
-   source managed by your application server. The Liferay managed data source is
-   recommended. 
-
-3. Gather credentials for sending email notifications to users. Liferay supports
-   a JNDI mail session as well as its built-in mail session. 
-
-4. Install Liferay according to the instructions for your application server
-   (see below). 
-
-5. Create a `portal-ext.properties` file in the Liferay Home folder. This is a
-   simple text properties file that you'll use to override Liferay's default
-   properties (see below). This is where you'll place the mail session
-   configuration credentials you collected in step 3. 
-
-The easiest way to install Liferay is to set up your database and then follow
-the instructions for your application server. This method uses the setup wizard
-to create a working configuration. We'll go through the steps in order, so first
-we'll look at the options for data sources. 
-
-#### Using data sources [](id=using-data-sources-liferay-portal-6-2-user-guide-15-en)
+### Using data sources [](id=using-data-sources-liferay-portal-6-2-user-guide-15-en)
 
 Liferay comes bundled with its own built-in data source. It's configured by a
-number of properties which are set in a properties file. By default, the setup
+number of properties that are set in a properties file. By default, the setup
 wizard asks you for the necessary values and creates a configuration file that
 uses the built-in data source to connect to the database. 
 
@@ -384,12 +406,13 @@ that.
 
 To do this, you'll need to create your own configuration file and skip the setup
 wizard. Since you'd be creating this file *after* the wizard anyway, this isn't
-such a big deal. 
+such a big deal. We show you how to do that after all the sections on
+application servers. 
 
 Since mail sessions are configured in a similar way to data sources, we'll look
 at them next. 
 
-#### Using mail sessions [](id=using-mail-sessions-liferay-portal-6-2-user-guide-15-en)
+### Using mail sessions [](id=using-mail-sessions-liferay-portal-6-2-user-guide-15-en)
 
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay's running and it tries to send mail via SMTP to this server. If
@@ -408,60 +431,6 @@ application server and it should point to your mail server. Once you've done
 that, you're ready to point Liferay to it. You can do this through the
 configuration file or through Liferay's control panel after it's been installed. 
 
-Let's look next at this configuration file and, if you're choosing not to use
-the setup wizard, show you how to get Liferay connected to your database and
-your mail server. 
-
-#### The portal-ext.properties file [](id=the-portal-ext-properties-file-liferay-portal-6-2-user-guide-15-en)
-
-Liferay's properties files differ from the configuration files of most other
-products in that changing the default configuration file is discouraged. In
-fact, the file that contains all the defaults is stored inside of a `.jar` file,
-making it more difficult to customize. Why is it set up this way? Because
-Liferay uses the concept of *overriding* the defaults in a separate file, rather
-than going in and customizing the default configuration file. You put only the
-settings you want to customize in your own configuration file and then you have
-a file that contains only the settings you need. This makes it far easier to
-determine whether a particular setting has been customized and it makes the
-settings more portable across different installations of Liferay.
-
-The default configuration file is called `portal.properties` and it resides
-inside of the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's
-`WEB-INF/lib` folder. The file used to override the configuration manually is
-`portal-ext.properties`. 
-
-Complicating matters, the setup wizard creates a file called
-`portal-setup-wizard.properties`. This file performs the same function as
-`portal-ext.properties`, and you can use it in place of that file if you wish.
-The `portal-ext.properties` file is read before the
-`portal-setup-wizard.properties file`, so if you have both files in your
-configuration, note that the settings in the setup wizard file override the ones
-in `portal-ext.properties`. 
-
-This file should be created in your Liferay Home folder. You'll use this file
-throughout this book to change many of Liferay's settings. An exhaustive list of
-the configurable properties is provided in chapter 20. 
-
----
-
-![Tip](../../images/tip.png) **Warning:** The configuration you
-choose in the setup wizard is saved in a `portal-setup-wizard.properties` file
-in your Liferay Home directory. In the setup wizard, however, if you specify a
-different Liferay Home directory than the default, the
-`portal-setup-wizard.properties` file that's saved there will not be read upon
-restarting your server. To have Liferay read your
-`portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
-your new Liferay Home directory and add the following line to it, where
-`${liferay.home}` is the new Liferay Home directory that you chose:
-
-    include-and-override=${liferay.home}/portal-setup-wizard.properties
-
-Without this workaround, Liferay will not read the
-`portal-setup-wizard.properties` file with your saved configuration when you
-restart your server and you'll see the setup wizard again. 
-
----
-
 You now have all the background information you need. Next you need to make your
 decision: will you use Liferay's built-in data source, or the one provided by
 your application server? If you're planning to use the one provided by your
@@ -469,167 +438,10 @@ server, you can't use Liferay's installation wizard, and you'll have to follow
 the instructions in the section below titled Manual Configuration. 
 
 In either case, your next step is to install Liferay onto your application
-server. Once this is done, if you're using the recommended built-in data source,
-you can use the setup wizard, which we'll cover next. 
-
-## Using Liferay's setup wizard [](id=using-liferays-setup-wizard-liferay-portal-6-2-user-guide-15-en)
-
-To make it easy to configure Liferay optimally for your use, the first thing you
-see when browsing to your newly installed Liferay bundle is a setup wizard. This
-gives you a convenient way to configure Liferay for your purposes. 
-
-There are three sections of the wizard: the portal, the adminstrator and the
-database. For the portal, you need to supply the following information: 
-
-**Portal Name:** the name of the web site you're powering with Liferay. In this
-book, we'll build a social network for your nose. This site is called Nosester
-so we've supplied `Nosester` in the screenshot below. 
-
-**Default Language:** choose the default locale where your site resides. 
-
-For the adminstrator, you need to supply the following information: 
-
-**First Name:** the first name of the user that has the administrator account. 
-
-**Last Name:** the last name of the user that has the administrator account. 
-
-**Email:** the email address of the user that has the administrator account. 
-
-![Figure 15.2: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
-
-Liferay supports just about all the leading databases today: 
-
-* DB2
-
-* Ingres
-
-* MySQL
-
-* Oracle
-
-* PostgreSQL
-
-* SQL Server
-
-* Sybase
-
-In addition to these, Liferay also supports a few embedded databases that are
-designed for development. We haven't listed these here because you're setting up
-a production Liferay server and you shouldn't use an embedded database with a
-production box. 
-
-Before you fill out the database section of Liferay's setup wizard, you should
-already have created a database for Liferay to use. This database must have
-UTF-8 as its character set, because Liferay is an internationalized application
-and needs the UTF-8 character set to display text in many different languages.
-Check the documentation for your database to see how to do this. 
-
-Once you have your database created, create a user that can do anything to the
-database, including create and drop tables. It's important that this user has
-complete rights over the Liferay database, because Liferay manages its own
-tables. Once you have your database and the credentials for this user, you can
-continue. 
-
-Open the Database section of the wizard. From the select box, choose your
-database. You'll see a form which lets you specify the URL to the database, the
-driver class and the user credentials (see below). Most of this is filled out
-already; all you should need to do is supply the name of your database and the
-server it's running on, as well as the user credentials. 
-
-![Figure 15.3: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
-
-Once you've filled out the form, click *Finish Configuration*. You'll see a
-message stating that Liferay is being installed as it creates the tables and
-data it needs in its database. When it's finished, it tells you the location of
-the configuration file (`portal-setup-wizard.properties`) where it saved all of
-your settings. From here, you can go to your home page. 
-
-Congratulations! You've just installed Liferay Portal! The next thing you need
-to do is set up your mail configuration, so Liferay can send email notifications
-to users. This is covered in the Manual Configuration section below. 
-
----
-
-![Tip](../../images/02-tip.png) The wizard is an extremely helpful tool,
-especially if you're setting up Liferay for the first time or creating a
-completely fresh portal instance. If you're a Liferay veteran and you already
-have your database information and various properties set up, you can skip the
-wizard by adding this line to your *portal-ext.properties* file:
-
-    setup.wizard.enabled=false
-
----
-
----
-
-![Tip](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20
-EE), the admin user test@liferay.com is created by the setup wizard even when a
-different user is specified. This means that two admin users are created:
-test@liferay.com and the specified user. Unless you're just installing Liferay
-for testing purposes, you should deactivate the test@liferay.com user after your
-database has been created.
-
----
-
-## Manual Configuration [](id=manual-configuration-liferay-portal-6-2-user-guide-15-en)
-
-You don't have to use the setup wizard to configure Liferay. The setup wizard
-behind the scenes creates a configuration file that you can create manually.
-Create a text file called `portal-ext.properties` in your Liferay Home folder.
-This file overrides default properties that come with Liferay. The first setting
-you'll override is the default configuration that points Liferay to the embedded
-HSQL database.
-
-As stated above, there are two ways to set up the connection:
-
--   Use the built-in connection pool.
-
--   Use your application server's connection pool.
-
-Use the setup wizard if you're using the built-in connection pool. If you want
-to use your application server's pool, continue with this procedure.
-
-If you want to use your application server's connection pool, you will have to
-create one in your application server that points to your database. The
-connection pool should be called `jdbc/LiferayPool`. Your database must use the
-UTF-8 character set since Liferay is an internationalized application. It needs
-the UTF-8 character set to display text in many different languages. Check the
-documentation for your database to see how to do this. To direct Liferay to use
-your `jdbc/LiferayPool` connection pool, add the following directive to your
-`portal-ext.properties` file:
-
-	jdbc.default.jndi.name=jdbc/LiferayPool
-
-Next, install Liferay according to the instructions for your application server.
-Once it's installed, you can set up the mail configuration. 
-
-For mail, you can use Liferay's control panel to create the configuration and
-this is the recommended way. Go to *Control Panel &rarr; Server Administration
-&rarr; Mail* and enter your settings for your mail session settings. If,
-however, you're setting up a lot of Liferay machines and they're all going to
-have similar mail configurations, it's easier to do the configuration once and
-then copy the configuration file to multiple machines. In this case, you'll want
-to use the `portal-ext.properties` file. To use the built-in mail session, use
-the following properties and customize their values for your environment: 
-
-    mail.session.mail.pop3.host=localhost
-    mail.session.mail.pop3.password=
-    mail.session.mail.pop3.port=110
-    mail.session.mail.pop3.user=
-    mail.session.mail.smtp.auth=false
-    mail.session.mail.smtp.host=localhost
-    mail.session.mail.smtp.password=
-    mail.session.mail.smtp.port=25
-    mail.session.mail.smtp.user=
-    mail.session.mail.store.protocol=pop3
-    mail.session.mail.transport.protocol=smtp
-    
-To use your application server's mail session, create it first. Then specify it
-in the `portal-ext.properties` file: 
-	
-	mail.session.jndi.name=mail/MailSession
-
-When you've finished, save the file.
+server. What follows are sections for every application server that Liferay
+supports. Once you have Liferay Portal installed, the first thing you see is the
+setup wizard. To continue, follow the instructions for setting up Liferay on
+your application server, and then skip down to the section on the setup wizard. 
 
 Next, follow the instructions for installing Liferay on your particular
 application server in the section below. 
@@ -662,7 +474,7 @@ server:
 The instructions below are specific for each application server that Liferay
 supports. Liferay supports a wide combination of application servers and
 databases. Because of this, this section assumes MySQL as the database, that the
-database has already been created and that you're using the setup wizard. If
+database has already been created, and that you're using the setup wizard. If
 you're not using the setup wizard, see the sections above for information on how
 to set up Liferay manually.
 
@@ -673,8 +485,8 @@ follow your vendor's instructions first.
 Since Liferay uses the UTF-8 character encoding, make sure that your application
 server has the Java -Dfile.encoding=UTF-8 parameter set before you proceed. Note
 that different application servers provide different means for setting this
-parameter. For example, in Tomcat this parameter goes in the setenv.sh or
-setenv.bat script. For other application servers, this parameter might go in a
+parameter. For example, in Tomcat this parameter goes in the `setenv.sh` or
+`setenv.bat` script. For other application servers, this parameter might go in a
 different script or might have to be set through an administration console.
 
 The following instructions assume an installation on a local machine. When
@@ -683,12 +495,12 @@ of the server.
 
 ---
 
-![Tip](../../images/02-tip.png) **Tip:** Note that Liferay *requires* JDK 5 or
-greater. Do not attempt to install Liferay 6.x on an application server that
-runs under Java 1.4 or lower; it will not work. If you are running an
-application server that ships with a JDK and that JDK is 1.4 or lower, you'll
-need to upgrade your application server to run current versions of Liferay
-Portal.
+![Tip](../../images/02-tip.png) **Tip:** Note that Liferay *requires* JDK 6 or
+greater. Do not attempt to install Liferay 6.2 on an application server that
+runs under Java 5 or lower; it will not work. If you are running an
+application server that ships with a JDK and that JDK is version 5 or lower,
+you'll need to upgrade your application server to run current versions of
+Liferay Portal.
 
 ---
 
@@ -699,6 +511,13 @@ Tcat is your solution. After we cover Mule Tcat, we'll look at all the supported
 application servers in alphabetical order. 
 
 ## Installing Liferay on Mule Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
+
+---
+
+![tip](../../images/01-tip.png)*Note:* This section has not yet been upgraded to
+6.2.
+
+---
 
 Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
 source portal, and Tcat Server, an enterprise grade administration console for
@@ -1585,326 +1404,6 @@ wizard.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
-## Installing Liferay on Jetty 7 [](id=installing-liferay-on-jetty-7-liferay-portal-6-2-user-guide-15-en)
-
-**Liferay Home** is one folder above Jetty's install location.
-
-For this section, we'll refer to Jetty server's installation location as
-`$JETTY_HOME`. If you do not already have an existing Jetty server, we recommend
-you download a Liferay/Jetty bundle from
-[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
-If you have an existing Jetty server or would like to install Liferay on Jetty
-manually, please follow the steps below.
-
-Before you begin, make sure you have downloaded the latest Liferay `.war` file
-and Liferay Portal dependencies from
-[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
-The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and
-the dependencies file should be called
-`liferay-portal-dependencies-6.1.x-<date>.zip`.
-
-Now that you have all of your installation files, you're ready to start
-installing and configuring Liferay on Jetty.
-
-### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-0)
-
-Let's work with the Liferay depenency jar files first.
-
-1. Create folder `$JETTY_HOME/lib/ext/liferay`.
-
-2. Unzip the jar files found in the Liferay Portal Dependencies zip file to your
-   `$JETTY_HOME/lib/ext/liferay` folder. Take care to extract the zip file's
-   `.jar` files directly into this folder.
-
-3. Next, you need several `.jar` files which are included as part of the Liferay
-   source distribution. Many application servers ship with these already on the
-   class path but Jetty does not. The best way to get the appropriate versions
-   of these files is to download the Liferay source code and get them from
-   there. Once you have downloaded the Liferay source, unzip the source into a
-   temporary folder. We'll refer to the location of the Liferay source as
-   `$LIFERAY_SOURCE`.
-
-    Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your
-    `$JETTY_HOME/lib/ext/liferay` folder:
-	- activation.jar
-    - jta.jar
-    - mail.jar
-    - persistence.jar
-
-4. Make sure the JDBC driver for your database is accessible to Jetty. Obtain
-   the JDBC driver for your version of the database server. In the case of
-   MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the
-   latest MySQL JDBC driver from
-   [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
-   Extract the JAR file and copy it to `$JETTY_HOME/lib/ext/liferay`.
-
-Now that your `.jar` files are in place, let's configure your domain.
-
-### Jetty Configuration [](id=jetty-configuration-liferay-portal-6-2-user-guide-15-en)
-
-To get Jetty ready for running Liferay Portal, you must make a number of
-modifications that involve configuration files, initialization files and run
-scripts.
-
-1. Create a `start.config` file to modify the behavior of Jetty's `start.jar`.
-   It's best to base your `start.config` file on the default one found in
-   `start.jar`.
-
-    1. Extract the default start config file
-       `org/eclipse/jetty/start/start.config` from the `start.jar` into
-       `$JETTY_HOME/etc` so you have the file `$JETTY_HOME/etc/start.config`.
-	2. Add the following property assignment to `$JETTY_HOME/etc/start.config`
-       to specify where Jetty should write its logs:
-       `jetty.logs=$(jetty.home)/logs`
-    3. Add the following directive to `$JETTY_HOME/etc/start.config` to load all
-       of the `.jar` and `.zip` files found in your `$JETTY_HOME/lib/liferay`
-       folder into your class path: `$(jetty.home)/lib/liferay/*`
-
-    Now that your class loading is specified, let's create initialization files
-    and run scripts that invoke these configuration directives during Jetty's
-    startup process.
-
-2.  Create initialization file: `$JETTY_HOME/bin/start.ini`
-
-        START=../etc/start.config
-        OPTIONS=Server,jsp,resources
-			
-        ../etc/jetty.xml
-        ../etc/jetty-deploy.xml
-        ../etc/jetty-webapps.xml
-        ../etc/jetty-contexts.xml
-        ../etc/jetty-testrealm.xml
-
-    This initialization file does the following:
-    - Sets `$JETTY_HOME/etc/start.config` as your starting configuration file.
-    - Sets your server options.
-    - Specifies a sequence of deployment descriptor files to be processed. 
-
-3.  Create a run script appropriate to your operating system:
-
-    On Windows, create: `$JETTY_HOME/bin/run.bat`
-
-        @echo off
-
-        if "" == "%JAVA_HOME%" goto errorJavaHome
-
-        set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
-
-        "%JAVA_HOME%/bin/java" %JAVA_OPTS% -jar ../start.jar
-
-        goto end
-
-        :errorJavaHome
-            echo JAVA_HOME not defined.
-
-            goto end
-
-        :end
-
-    On Unix/Linux, create: `$JETTY_HOME/bin/run.sh`
-
-        #!/bin/sh
-
-        if [ ! $JAVA_HOME ]
-        then
-            echo JAVA_HOME not defined.
-            exit
-        fi
-
-        export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
-
-        $JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
-
-4.  Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context,
-    classpath and resource base of your web application:
-
-        <?xml version="1.0"?>
-        <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
-
-        <Configure class="org.eclipse.jetty.webapp.WebAppContext">
-            <Set name="contextPath">/</Set>
-            <Set name="extraClasspath"><SystemProperty name="jetty.home" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-util-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-webapp-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar</Set>
-            <Set name="resourceBase"><SystemProperty name="jetty.home" />/webapps/root</Set>
-        </Configure>
-
-5.  Lastly, create the following folders:
-    - $JETTY_HOME/logs - for log files
-    - $JETTY_HOME/temp - for temporary files. Note, this folder is specified to
-    our JVM as a temporary folder in the run script you created previously.
-
-Now that your general Jetty startup files are set in place, let's consider how
-you will manage your data source. 
-
-### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-0)
-
-If you want to manage your data source within Jetty, continue following the
-instructions in this section. If you want to use the built-in Liferay data
-source, you can skip this section.
-
-1. Management of databases in Jetty is done via the file
-   `$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text
-   within the root element `<Configure>` to specify the data pool for your data
-   source. Be sure to pass in value `jdbc/LiferayPool` as the second argument.
-
-		<New id="LiferayPool" class="org.eclipse.jetty.plus.jndi.Resource">
-			<Arg></Arg>
-			<Arg>jdbc/LiferayPool</Arg>
-			<Arg>
-				<New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
-					<Set name="Url">jdbc:mysql://localhost/lportal?
-		useUnicode=true&amp;characterEncoding=UTF-8</Set>
-					<Set name="User">root</Set>
-					<Set name="Password">root</Set>
-				</New>
-			</Arg>
-		</New>
-
-    Be sure to replace the URL database value (i.e. `lportal`), user value and
-    password value with values specific to your database.
-
-2. Your data pool needs Jetty's JNDI and Jetty Plus libraries loaded to access
-   those classes at runtime. Your `$JETTY_HOME/etc/start.config` file should
-   have sections that load these libraries as long as `jndi` and `plus` *options*
-   are specified at startup.
-
-    To set these options, edit your `$JETTY_HOME/bin/start.ini` file and add `jndi`
-    and `plus` as values for the `OPTIONS` variable:
-
-		OPTIONS=Server,jsp,resources,jndi,plus
-
-Super! Now you have your database specified and ready for use with Liferay on
-Jetty. Let's consider your mail session next.
-
-### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-0)
-
-If you want to manage your mail session within Jetty, use the following
-instructions. If you want to use the built-in Liferay mail session, you can skip
-this section.
-
-Management of mail sessions in Jetty is done via the configuration file
-`$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text
-within the root element `<Configure>` to specify your mail session. Be sure to
-pass in value `mail/MailSession` as the first argument and to replace the mail
-session values with your own.
-
-	<New id="MailSession" class="org.eclipse.jetty.plus.jndi.Resource">
-		<Arg>mail/MailSession</Arg>
-		<Arg>
-			<New class="org.eclipse.jetty.jndi.factories.MailSessionReference">
-				<Set name="user"></Set>
-				<Set name="password"></Set>
-				<Set name="properties">
-					<New class="java.util.Properties">
-						<Put name="mail.pop3.host">pop.gmail.com</Put>
-						<Put name="mail.pop3.port">110</Put>
-						<Put name="mail.smtp.host">smtp.gmail.com</Put>
-						<Put name="mail.smtp.password">password</Put>
-						<Put name="mail.smtp.user">user</Put>
-						<Put name="mail.smtp.port">465</Put>
-						<Put name="mail.transport.protocol">smtp</Put>
-						<Put name="mail.smtp.auth">true</Put>
-						<Put name="mail.smtp.starttls.enable">true</Put>
-						<Put name="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</Put>
-						<Put name="mail.imap.host">imap.gmail.com</Put>
-						<Put name="mail.imap.port">993</Put>
-						<Put name="mail.store.protocol">imap</Put>
-					</New>
-				</Set>
-			</New>
-		</Arg>
-	</New>
-
-Great! Now you'll be able to use this mail session with Liferay.
-
-### Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessi-liferay-portal-6-2-user-guide-15-en)
-
-Let's revisit your configuration to make sure we'll be able to access your data
-source and mail session from Liferay Portal.
-
-1. First, navigate to the *Liferay Home* folder, which is one folder above
-   Jetty's install location. Create a file named `portal-ext.properties`.
-
-2. If you are using *Jetty* to manage your data source, add the following to
-   your `portal-ext.properties` file in your *Liferay Home* to refer to your
-   data source:
-
-		jdbc.default.jndi.name=jdbc/LiferayPool
-
-    Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-    the instructions in the *Deploy Liferay* section for using the setup wizard.
-
-3. If want to use *Liferay Portal* to manage your mail session, you can
-   configure the mail session within Liferay Portal. That is, after starting
-   your portal as described in the *Deploy Liferay* section, go to *Control
-   Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
-   your mail session.
-
-    Otherwise, if you are using *Jetty* to manage your mail session, add the
-    following to your `portal-ext.properties` file to reference that mail session:
-
-        mail.session.jndi.name=mail/MailSession
-
-Let's start your server and deploy Liferay Portal! 
-
-### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-0)
-
-Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
-
-1.  If you already have an application folder `$JETTY_HOME/webapps/root`, delete
-    it or move it to a location outside of `$JETTY_HOME/webapps`.
-
-2.  Then extract the contents of the Liferay portal `.war` file into
-    `$JETTY_HOME/webapps/root`.
-
-3.  Before you start Liferay Portal, let's consider whether you want to also
-    start the setup wizard.
-
-    **Start the setup wizard along with Liferay Portal** - Do this if you want
-    to configure your portal, setup your site's administrative account and/or
-    manage your database within Liferay.
-		
-    If this is your first time starting Liferay Portal 6.1, the setup wizard is
-    invoked on server startup. If you want to re-run the wizard, specify
-    `setup.wizard.enabled=true` in your properties file (e.g.
-    `portal-setup-wizard.properties`).
-
-        setup.wizard.enabled=true
-
-    The setup wizard is invoked during server startup.
-
-    **Start Liferay Portal without invoking the setup wizard** - Do this if want
-    to preserve your current portal settings.
-
-    To start the server without triggering the setup wizard, specify
-    `setup.wizard.enabled=false` in your properties (e.g.
-    `portal-setup-wizard.properties` or `portal-ext.properties` file).
-
-        setup.wizard.enabled=false
-
-    The `portal-setup-wizard.properties` file the setup wizard creates has
-    `setup.wizard.enabled=false` conveniently specified for you.
-
-    ---
-
-    ![Note](../../images/tip.png) Property values in
-    `portal-setup-wizard.properties` override property values in
-    `portal-ext.properties`.
-
-    ---
-
-    Now its time to launch Liferay Portal!
-
-4.  Start Liferay Portal by executing `run.bat` (Windows) or `run.sh`
-    (Unix/Linux) script from `$JETTY_HOME/bin`.
-    - If the setup wizard was disabled, your site's home page opens in your
-      browser at [http://localhost:8080](http://localhost:8080).
-    - Otherwise, the setup wizard opens in your browser.
-
-See the section on the setup wizard above for more information about the setup
-wizard. 
-
-You've just installed and deployed Liferay Portal on Jetty - way to go! 
-
 ## Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en)
 
 **Liferay Home** is one folder above JBoss's install location.
@@ -2408,282 +1907,6 @@ Now you're ready to deploy Liferay Portal.
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
-## Installing Liferay on Resin 4 [](id=installing-liferay-on-resin-4-liferay-portal-6-2-user-guide-15-en)
-
-**Liferay Home** is one folder above Resin's install location.
-
-For this section, we will refer to your Resin server's installation location as
-`$RESIN_HOME`. If you do not already have an existing Resin server, we recommend
-you download a Liferay/Resin bundle from
-[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
-If you have an existing Resin server or would like to install Liferay on Resin
-manually, please follow the steps below.
-
-Before you begin, make sure you have downloaded the latest Liferay `.war` file
-and Liferay Portal dependencies from
-[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
-The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and
-the dependencies file should be called
-`liferay-portal-dependencies-6.1.x-<date>.zip`.
-
-Now that you have all of your installation files, you are ready to start
-installing and configuring Liferay on Resin.
-
-### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-2)
-
-Let's work with the depenency jar files first.
-
-1. Unzip the jar files found in the Liferay Portal Dependencies zip file to
-	your `$RESIN_HOME/ext-lib` folder. Take care to extract the zip file's
-   `.jar` files directly into this folder.
-
-2. Next, you need several `.jar` files which are included as part of the Liferay
-   source distribution. Many application servers ship with these already on the
-   class path but Resin does not. The best way to get the appropriate versions
-   of these files is to download the Liferay source code and get them from
-   there. Once you have downloaded the Liferay source, unzip the source into a
-   temporary folder. We'll refer to the location of the Liferay source as
-   `$LIFERAY_SOURCE`.
-
-    1. Go to `$LIFERAY_SOURCE/lib/development` and copy `saxpath.jar` into
-	   `$RESIN_HOME/lib`.
-    2. Go to `$LIFERAY_SOURCE/lib/portal` and copy `log4j.jar`, `slf4j-api.jar`
-	   and `slf4j-log4j12.jar` into `$RESIN_HOME/lib`.
-    3. If folder `$RESIN_HOME/extlib` doesn't exist, create it.
-    4. Make sure the JDBC driver for your database is accessible by Resin.
-       Obtain the JDBC driver for the database you want to use. In the case of
-       MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download
-       the latest MySQL JDBC driver from
-       [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
-       Extract the JAR file and copy it to `$RESIN_HOME/extlib`.
-
-Great! now you have your `.jar` files in place. Next, let's configure Resin for
-Liferay. 
-
-### Configuring Resin [](id=configuring-resin-liferay-portal-6-2-user-guide-15-en)
-
-The primary file used in configuring your domain is
-`$RESIN_HOME/conf/resin.xml`. You need to make common modifications necessary to
-support Liferay Portal. You'll also create a run script and add a folder to hold
-Resin's logs. But let's start with the changes to `resin.xml`.
-
-1.  Make the following modifications to your `resin.xml`. These modifications to
-    your application cluster make the following configuration changes:
-    - Set the file encoding
-    - Set the preferred protocol stack
-    - Set the user time-zon
-    - Increase the default amount of memory available. 
-
-    To accomplish this, insert the following `<jvm-arg>` elements as server
-    defaults for your main application cluster. Please see the following
-    example:
-
-        <cluster id="app-tier">
-            ...
-            <server-default>
-                ...
-                <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
-                <jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
-                <jvm-arg>-Duser.timezone=GMT</jvm-arg>
-                <jvm-arg>-Xmx1024m</jvm-arg>
-                <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
-                ...
-            </server-default>
-        </cluster>
-
-2.  Create an appropriate script in `$RESIN_HOME/bin` to help you start Resin.
-
-    If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
-    insert the following text in the script:
-
-        ..\resin.exe console
-
-    If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
-    insert the following text in the script:
-
-        #!/bin/sh
-
-        ./resin.sh $
-
-3.  Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
-    Resin, the server generates log files `access`, `jvm-default` and
-    `watchdog-manager` in this folder.
-
-Now that you've completed some important common configuration tasks to support
-Liferay, let's consider database configuration. 
-
-### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-2)
-
-If you want to manage your data source within Resin, continue following the
-instructions in this section. If you want to use the built-in Liferay data
-source, you can skip this section.
-
-Management of databases in Resin is done via the configuration file
-`$RESIN_HOME/conf/resin.xml`. Edit `resin.xml` and insert a `<database>` element
-for your database. Be sure to give it the JNDI name `jdbc/LiferayPool` and add
-it within the application tier cluster element as in the example below:
-
-	<cluster id="app-tier">
-		...
-		<database>
-			<jndi-name>jdbc/LiferayPool</jndi-name>
-			<driver type="com.mysql.jdbc.Driver">
-				<url>jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8</url>
-				<user>root</user>
-				<password>root</password>
-            </driver>
-            <prepared-statement-cache-size>8</prepared-statement-cache-size>
-            <max-connections>20</max-connections>
-            <max-idle-time>30s</max-idle-time>
-          </database>
-          ...
-	</cluster>
-
-Be sure to replace the URL database value (i.e. `lportal`), user value and
-password value with values specific to your database. 
-
-Resin is now managing your database connection. Let's consider next how to
-configure mail.
-
-### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-2)
-
-If you want to manage your mail session within Resin, use the following
-instructions. If you want to use the built-in Liferay mail session, you can skip
-this section.
-
-Management of mail sessions in Resin is done via the configuration file
-`$RESIN_HOME/conf/resin.xml`. Edit `resin.xml` and insert a `<mail>` element
-that specifies your mail session. Be sure to give it the JNDI name
-`mail/MailSession`. Add your mail element within the application tier cluster
-element. Use the example below, replacing its values with the values of your
-mail session.
-
-	<cluster id="app-tier">
-		...
-		<mail jndi-name="mail/MailSession">
-			<properties>
-				mail.pop3.host=pop.gmail.com
-				mail.pop3.port=110
-				mail.pop3.user=
-				mail.pop3.password=
-				mail.smtp.host=smtp.gmail.com
-				mail.smtp.password=password
-				mail.smtp.user=user
-				mail.smtp.port=465
-				mail.transport.protocol=smtp
-				mail.smtp.auth=true
-				mail.smtp.starttls.enable=true
-				mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
-				mail.imap.host=imap.gmail.com
-				mail.imap.port=993
-				mail.store.protocol=imap
-			</properties>
-		</mail>
-          ...
-	</cluster>
-
-You can specify additional properties for your mail session as needed.
-
-Now that your mail session is squared away, we'll make sure Liferay can access
-it.
-
-### Configuring data source and mail session [](id=configuring-data-source-and-mail-sessio-liferay-portal-6-2-user-guide-15-en)
-
-Let's make sure Liferay's connected to your data source and mail session.
-
-1. First, navigate to the *Liferay Home* folder, which is one folder above
-   Resin's install location (i.e. `$RESIN_HOME/..`).
-
-2. If you're using *Resin* to manage your data source, add the following to your
-   `portal-ext.properties` file in your *Liferay Home* to refer to your data
-   source:
-
-        jdbc.default.jndi.name=jdbc/LiferayPool
-
-    If you're using *Liferay Portal* to manage your data source, follow the
-    instructions in the *Deploy Liferay* section for using the setup wizard.
-
-3. If want to use *Liferay Portal* to manage your mail session, configure the
-   mail session within Liferay Portal. That is, after starting your portal as
-   described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server
-   Administration &rarr; Mail* and enter the settings for your mail session.
-
-    If you're using *Resin* to manage your mail session, add the following to your
-    `portal-ext.properties` file to reference that mail session:
-
-        mail.session.jndi.name=mail/MailSession
-
-Great! Now Liferay can access your database and your mail session. Now, let's
-deploy Liferay.
-
-### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-2)
-
-Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
-
-1. If you already have an application folder `$RESIN_HOME/webapps/ROOT`, delete
-   it or move it to a location outside of `$RESIN_HOME/webapps`.
-
-2. Extract the contents of the Liferay portal `.war` file into
-   `RESIN_HOME/webapps/ROOT`. The following files should now exist in your
-   `RESIN_HOME/webapps/ROOT` folder:
-    - dtd (folder)
-    - errors (folder)
-    - html (folder)
-    - layouttpl (folder)
-    - META-INF (folder)
-    - wap (folder)
-    - WEB-INF (folder)
-    - index.jsp
-
-3.  Before you start Liferay Portal, let's consider whether you want to also
-    start the setup wizard.
-
-    **Start the setup wizard along with Liferay Portal** - Do this if you want
-    to configure your portal, setup your site's administrative account and/or
-    manage your database within Liferay.
-		
-    If this is your first time starting Liferay Portal 6.1, the setup wizard is
-    invoked on server startup. If you want to re-run the wizard, specify
-    `setup.wizard.enabled=true` in your properties file (e.g.
-    `portal-setup-wizard.properties`).
-
-        setup.wizard.enabled=true
-
-    The setup wizard is invoked during server startup.
-
-    **Start Liferay Portal without invoking the setup wizard** - Do this if want
-    to preserve your current portal settings.
-
-    To start the server without triggering the setup wizard, specify
-    `setup.wizard.enabled=false` in your properties (e.g.
-    `portal-setup-wizard.properties` or `portal-ext.properties` file).
-
-        setup.wizard.enabled=false
-
-    The `portal-setup-wizard.properties` file the setup wizard creates has
-    `setup.wizard.enabled=false` conveniently specified for you.
-
-    ---
-
-    ![Note](../../images/tip.png) Property values in
-    `portal-setup-wizard.properties` override property values in
-    `portal-ext.properties`.
-
-    ---
-
-    Now its time to launch Liferay Portal on Resin!
-
-4.  Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh`
-    (Unix/Linux) script from `$RESIN_HOME/bin`.
-    - If the setup wizard was disabled, your site's home page opens in your
-    browser at [http://localhost:8080](http://localhost:8080).
-    - Otherwise, the setup wizard opens in your browser.
-
-    Please see the section above describing how to use the setup wizard. 
-
-Congratulations! You've installed Liferay Portal on Resin and have it up and
-running.
-
 ## Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7-liferay-portal-6-2-user-guide-15-en)
 
 *Liferay Home* is one folder above Tomcat's install location.
@@ -3058,223 +2281,6 @@ start Liferay!
     To use the setup wizard, please see the section above. 
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
-
-## Installing Liferay on JOnAS 5.2 [](id=installing-liferay-on-jonas-5-2-liferay-portal-6-2-user-guide-15-en)
-
-JOnAS is somewhat unique among the open-source application servers for two
-reasons: it is built entirely on an OSGi core, allowing for dynamic deployment
-of simultaneous webapps and containers and allows the clean separation of the
-configuration directory from the server itself. In fact, the separation of the
-configuration is recommended by the developers of JOnAS as a way to cleanly
-deploy so you can revert to default settings later.
-
-If you don't have an existing JOnAS installation, it is recommeded to use the
-available Liferay-JOnAS bundle, which can be downloaded from
-[http://www.liferay.com/ja/downloads/liferay-portal/available-releases](http://www.liferay.com/ja/downloads/liferay-portal/available-releases).
-
-Given the unique nature of the server, there are a few steps to consider in the
-configuration stage. Otherwise, installing on JOnAS follows much the same
-pattern as other servers: configure, copy dependencies and deploy.
-
-### Configuring JOnAS for Liferay [](id=configuring-jonas-for-liferay-liferay-portal-6-2-user-guide-15-en)
-
-A pristine JOnAS installation comes with a number of samples, tutorials and
-template configuration files. A lot of this is unnecessary and irrelevant for
-installing Liferay. In addition, the server already contains an application
-deployed to the root context, which you must remove prior to installing the
-Liferay `.war` package (and which you'd want to remove anyway for a production
-configuration). JOnAS allows you to decide where to place all the server
-configuration and deployment settings, also called `$JONAS_BASE`. The folder
-created by unzipping the JOnAS application (likely called `jonas-full-5.2.2` or
-similar) is referred to as `$JONAS_ROOT`. This allows a unique, clean separation
-between application and configuration. 
-
-The structure of `$JONAS_BASE` is:
-- /conf    -    configuration files
-- /deploy    -    main deployment directory (Liferay is deployed here)
-- /lib    -    used for extending the main server classloaders
-- /lib/ext    -    extensions for unbundled applications
-- /logs    -    logs for the running instance
-- /work    -    the working directory, used by containers such as Tomcat
-- /repositories    -    contains OSGi bundles for deployment; not used for Liferay installation
-    
-By default, the `$JONAS_BASE` directory is the same as `$JONAS_ROOT`. Creating a
-new `$JONAS_BASE` is a simple process, outlined in the JOnAS Configuration
-Guide, found at
-[http://jonas.ow2.org/JONAS_5_2_2/doc/doc-en/html/configuration_guide.html](http://jonas.ow2.org/JONAS_5_2_2/doc/doc-en/html/configuration_guide.html).
-
-To remove sample files and unneeded configuration:
-
-1.  Navigate to the directory you unpackaged *JOnAS* into, `$JONAS_BASE`.
-
-2.  Find the following sample directories and remove them:
-    - /examples
-    - /tutorial
-
-3.  Navigate to `$JONAS_BASE/conf` and remove the following files:
-    - db2.properties
-    - FirebirdSQL.properties
-    - HSQL1.properties
-    - jetty\*.xml
-    - InstantDB1.properties
-    - InterBase1.properties
-    - MailMimePartDS1.properties
-    - MailSession1.properties
-    - McKoi1.properties
-    - MySQL.properties
-    - Oracle1.properties
-    - PostgreSQL1.properties
-    - spy.properties
-    - Sybase1.properties
-		
-    This disables the default settings for the databases available in JOnAS, as
-    well as removing configuration for Jetty as a container to use for the
-    webapp.
-      
-4.  To remove the default application installed on the root context:
-
-    1. Go to the `$JONAS_BASE/deploy` directory and remove:
-        - ctxroot.xml
-        - doc.xml
-        - jdbc-ds.xml
-        - jonasAdmin.xml
-    2. Go to the `$JONAS_ROOT/repositories` directory to remove the application
-    by removing:
-        - org/mortbay/
-        - org/ow2/jonas/documentation/
-        - org/ow2/jonas/jonas-admin/
-        - org/ow2/jonas/jonas-ctxroot/
-	     
-    This will fully remove the Maven deployment plan and artifact for the
-    JOnAS default application, as well as the administration console from
-    loading on the root context.
-      
-Now that JOnAS is prepared for configuring Liferay to run on the server as its
-root application, you can begin tuning the settings for Liferay. By default,
-JOnAS has its own deployment of Hypersonic it uses internally. This internal use
-of HSQL must be disabled, along with other JOnAS services, so they won't
-conflict with Liferay's.
-
-To turn of HSQL and other JOnAS-level services:
-
-1. Open the file `jonas.properties` in the directory `$JONAS_BASE/conf`.
-
-2. Find the configuration section for the JOnAS database manager, starting
-   around line 340:
-
-        #
-        ###################### JOnAS DBM Database service configuration
-        
-        ...
-	
-        jonas.service.dbm.datasources    hsql
-	    
-3. Change the datasources definition around line 353 to read: 
-
-            jonas.service.dbm.datasources    
-	    
-    Thereby preventing the HSQL database from being used internally.
-       
-4. Find the services configuration around line 82:
-
-            jonas.services    jtm,db,security,resource,ejb3,jaxws,web,ear,depmonitor
-	   
-5. Modify the services being loaded to read:
-
-            jonas.services    jtm,resource,ejb3,jaxws,web,ear,validation,depmonitor
-	    
-    This prevents the internal `db` and `security` services from interfering
-    with Liferay.
-      
-6. To put JOnAS into production mode for proper deployment of Liferay, find the
-   property around line 71:
-
-            jonas.development    true      
-	    
-    And change it to `false`:
-
-            jonas.development    false
-
-This allows JOnAS to startup appropriately with Liferay installed.
-            
-### Configuring Containers in JOnAS [](id=configuring-containers-in-jonas-liferay-portal-6-2-user-guide-15-en)
-
-Now that the application server has all extraneous services and applications
-disabled, you can now tweak the configuration of the containers within JOnAS:
-Tomcat and OSGi. By default, the Tomcat container is set to listen on a
-different HTTP port and HTTPS port than Liferay uses by default.
-
-To change the Tomcat ports for Liferay's use:
-
-1. Open the file `tomcat6-server.xml` inside of `$JONAS_BASE/conf`.
-
-2. Find the `Connector` definition around line 69:
-
-            <Connector port="9000" protocol="HTTP/1.1"
-                           connectionTimeout="20000"
-                           redirectPort="9043" />
-			   
-    Change it to reflect the default ports:
-
-            <Connector port="8080" protocol="HTTP/1.1"
-                           connectionTimeout="20000"
-                           redirectPort="8443" />
-
-3. If you are using any other settings in Tomcat's server settings, you can
-   adjust the ports if needed (such as changing the AJP port from `9009` to
-   `8009`.
-
-To modify the OSGI defaults to ensure required Java packages are bootsrapped by
-the loader:
-
-1. Open the file `defaults.properties` inside of `$JONAS_BASE/conf/osgi`.
-
-2. Find the declaration for `javase-packages` around line 93:
-
-        javase-packages ${javase-${javase.version}}
-	    
-     And add the following packages to make it read:
-      
-        javase-packages ${javase-${javase.version}}, com.sun.jmx.mbeanserver, com.sun.crypto.provider, org.apache.felix.framework
-	      
-    To ensure the required packages are loaded.
-      
-### Starting JOnAS [](id=starting-jonas-liferay-portal-6-2-user-guide-15-en)
-
-Once you have the required configuration in place, all that is left is to copy
-the portal dependencies and the Liferay `.war` file and start the server. JOnAS
-maintains libraries inside `$JONAS_BASE/lib/ext` and the application inside
-`$JONAS_BASE/deploy`.
-
-To install `liferay-portal-dependencies-6.1.x-<date>.zip`:
-
-1. Unzip the archive `liferay-portal-dependencies-6.1.x-<date>.zip` on your
-   local filesystem.
-
-2. Navigate to `$JONAS_BASE/lib/ext`.
-
-3. Copy the `.jar` files from `liferay-portal-dependencies-6.1.x-<date>/` to
-   `$JONAS_BASE/lib/ext`.
-
-4. Install any additional libraries needed, such as database connectors.
-
-To deploy the `liferay-portal-6.1.x-<date>.war` file:
-
-1. Copy the `liferay-portal-6.1.x-<date>.war` file from its current directory.
-
-2. Navigate to `$JONAS_BASE/deploy`.
-
-3. Paste the `liferay-portal-6.1.x-<date>.war` file into the `deploy` directory.
-
-Once the necessary files have been installed, all that is needed is to start
-JOnAS:
-
-1. Navigate to `$JONAS_BASE/bin`.
-
-2. Run the command `jonas.bat start` on Windows and `./jonas start` on UNIX-lixe
-   systems.
-
-JOnAS starts and Liferay opens a browser to `http://localhost:8080`.
 
 ## Installing Liferay on Oracle WebLogic 12c (12.1.x) [](id=install-liferay-on-weblogic-12c-liferay-portal-6-2-user-guide-15-en)
 
@@ -3842,6 +2848,169 @@ you're ready to start Liferay.
 
 Congratulations! You've installed Liferay on WebSphere! 
 
+## Using Liferay's setup wizard [](id=using-liferays-setup-wizard-liferay-portal-6-2-user-guide-15-en)
+
+To make it easy to configure Liferay optimally for your use, the first thing you
+see when browsing to your newly installed Liferay bundle is a setup wizard. This
+gives you a convenient way to configure Liferay for your purposes. 
+
+There are three sections of the wizard: the portal, the adminstrator and the
+database. For the portal, you need to supply the following information: 
+
+**Portal Name:** the name of the web site you're powering with Liferay. In this
+book, we'll build a social network for your nose. This site is called Nosester
+so we've supplied `Nosester` in the screenshot below. 
+
+**Default Language:** choose the default locale where your site resides. 
+
+For the adminstrator, you need to supply the following information: 
+
+**First Name:** the first name of the user that has the administrator account. 
+
+**Last Name:** the last name of the user that has the administrator account. 
+
+**Email:** the email address of the user that has the administrator account. 
+
+![Figure 15.2: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+Liferay supports just about all the leading databases today: 
+
+* DB2
+
+* Ingres
+
+* MySQL
+
+* Oracle
+
+* PostgreSQL
+
+* SQL Server
+
+* Sybase
+
+In addition to these, Liferay also supports a few embedded databases that are
+designed for development. We haven't listed these here because you're setting up
+a production Liferay server and you shouldn't use an embedded database with a
+production box. 
+
+Before you fill out the database section of Liferay's setup wizard, you should
+already have created a database for Liferay to use. This database must have
+UTF-8 as its character set, because Liferay is an internationalized application
+and needs the UTF-8 character set to display text in many different languages.
+Check the documentation for your database to see how to do this. 
+
+Once you have your database created, create a user that can do anything to the
+database, including create and drop tables. It's important that this user has
+complete rights over the Liferay database, because Liferay manages its own
+tables. Once you have your database and the credentials for this user, you can
+continue. 
+
+Open the Database section of the wizard. From the select box, choose your
+database. You'll see a form which lets you specify the URL to the database, the
+driver class and the user credentials (see below). Most of this is filled out
+already; all you should need to do is supply the name of your database and the
+server it's running on, as well as the user credentials. 
+
+![Figure 15.3: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+Once you've filled out the form, click *Finish Configuration*. You'll see a
+message stating that Liferay is being installed as it creates the tables and
+data it needs in its database. When it's finished, it tells you the location of
+the configuration file (`portal-setup-wizard.properties`) where it saved all of
+your settings. From here, you can go to your home page. 
+
+Congratulations! You've just installed Liferay Portal! The next thing you need
+to do is set up your mail configuration, so Liferay can send email notifications
+to users. This is covered in the Manual Configuration section below. 
+
+---
+
+![Tip](../../images/02-tip.png) The wizard is an extremely helpful tool,
+especially if you're setting up Liferay for the first time or creating a
+completely fresh portal instance. If you're a Liferay veteran and you already
+have your database information and various properties set up, you can skip the
+wizard by adding this line to your *portal-ext.properties* file:
+
+    setup.wizard.enabled=false
+
+---
+
+---
+
+![Tip](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20
+EE), the admin user test@liferay.com is created by the setup wizard even when a
+different user is specified. This means that two admin users are created:
+test@liferay.com and the specified user. Unless you're just installing Liferay
+for testing purposes, you should deactivate the test@liferay.com user after your
+database has been created.
+
+---
+
+## Manual Configuration [](id=manual-configuration-liferay-portal-6-2-user-guide-15-en)
+
+You don't have to use the setup wizard to configure Liferay. The setup wizard
+behind the scenes creates a configuration file that you can create manually.
+Create a text file called `portal-ext.properties` in your Liferay Home folder.
+This file overrides default properties that come with Liferay. The first setting
+you'll override is the default configuration that points Liferay to the embedded
+HSQL database.
+
+As stated above, there are two ways to set up the connection:
+
+-   Use the built-in connection pool.
+
+-   Use your application server's connection pool.
+
+Use the setup wizard if you're using the built-in connection pool. If you want
+to use your application server's pool, continue with this procedure.
+
+If you want to use your application server's connection pool, you will have to
+create one in your application server that points to your database. The
+connection pool should be called `jdbc/LiferayPool`. Your database must use the
+UTF-8 character set since Liferay is an internationalized application. It needs
+the UTF-8 character set to display text in many different languages. Check the
+documentation for your database to see how to do this. To direct Liferay to use
+your `jdbc/LiferayPool` connection pool, add the following directive to your
+`portal-ext.properties` file:
+
+	jdbc.default.jndi.name=jdbc/LiferayPool
+
+Next, install Liferay according to the instructions for your application server.
+Once it's installed, you can set up the mail configuration. 
+
+For mail, you can use Liferay's control panel to create the configuration and
+this is the recommended way. Go to *Control Panel &rarr; Server Administration
+&rarr; Mail* and enter your settings for your mail session settings. If,
+however, you're setting up a lot of Liferay machines and they're all going to
+have similar mail configurations, it's easier to do the configuration once and
+then copy the configuration file to multiple machines. In this case, you'll want
+to use the `portal-ext.properties` file. To use the built-in mail session, use
+the following properties and customize their values for your environment: 
+
+    mail.session.mail.pop3.host=localhost
+    mail.session.mail.pop3.password=
+    mail.session.mail.pop3.port=110
+    mail.session.mail.pop3.user=
+    mail.session.mail.smtp.auth=false
+    mail.session.mail.smtp.host=localhost
+    mail.session.mail.smtp.password=
+    mail.session.mail.smtp.port=25
+    mail.session.mail.smtp.user=
+    mail.session.mail.store.protocol=pop3
+    mail.session.mail.transport.protocol=smtp
+ 
+To use your application server's mail session, create it first. Then specify it
+in the `portal-ext.properties` file: 
+	
+	mail.session.jndi.name=mail/MailSession
+
+When you've finished, save the file.
+
+All the instructions above assumed that you wanted to install Liferay Portal at
+the root context of your server. But what if that isn't the case? Next, you'll
+see how to use a different context for Liferay Portal. 
+
 ## Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java--liferay-portal-6-2-user-guide-15-en)
 
 Liferay Portal by default is configured to sit at the root (i.e., `/`) of your
@@ -3895,7 +3064,7 @@ Now that you have Liferay installed in the context you wish, you'll want to
 understand Liferay's releases and the process for keeping your installation up
 to date. We'll spend a brief amount of time on that next. 
 
-### Understanding Liferay's Releases [](id=understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
+## Understanding Liferay's Releases [](id=understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
@@ -3935,7 +3104,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-#### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
+### Release Process [](id=release-process-liferay-portal-6-2-user-guide-15-en)
 
 Each release of Liferay has a surname that specifies its expected quality.  This
 is needed because pre-releases of Liferay look very much like maintenance
