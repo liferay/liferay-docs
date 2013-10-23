@@ -546,10 +546,34 @@ patches that *can* be installed, from what's in the `patches` folder. To install
 the available patches, issue the following command: 
 
 	./patching-tool.sh install
+
+Liferay copies files into the plugins in deployment time. If these files are
+patched in the portal, they need to be updated in the plugins as well. In these
+cases, the patching-tool notifies you about the change. You can run the
+following command to update these files automatically:
+
+        ./patching-tool.sh update-plugins
+
+If you do not wish to have the patching tool update the plugins, redeployment of
+them is also enough. If there are new indexes created by the patch, the
+patching tool prompts you to update them. To get the list, please run this
+command:
+
+        ./patching-tool.sh index-info
+
+As there's no database connection at patching time, the patches needed to be
+created at portal startup. In order to get the indexes automatically created,
+please add the following line to your `portal-ext.properties` file if your
+server has permissions to modify the indexes on the database:
+
+        database.indexes.update.on.startup=true
+
+Otherwise, you have to create the indexes manually. Check the output of the
+`./patching-tool.sh index-info` command for more details.
 	
-Your patches are now installed. You can verify this by using the
+Once your patches have been installed, you can verify them by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
-installed patches. Let's look now at how you'd manage your patches. 
+installed patches. Next, let's look now at how to manage your patches. 
 
 #### Handling hot fixes and patches [](id=lp-6-1-ugen16-handling-hot-fixes-and-patches-0)
 
