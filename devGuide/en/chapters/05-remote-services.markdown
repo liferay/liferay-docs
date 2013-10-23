@@ -205,6 +205,26 @@ administrator can set the portal's authentication type to any of the following:
 - *screen name*
 - *user ID*
 
+---
+
+ ![Tip](../../tip.png) **Important:** In order for authentication for remote
+ service calls to work, the portal authentication type must be set either to
+ *screen name* or *user ID*. The default *email address* authentication type
+ does not allow remote service calls to be authenticated.
+
+---
+
+This can be set either via the Control Panel or via the `portal-ext.properties`
+file. To set the portal authentication type via the Control Panel, navigate to
+the Control Panel, click on *Portal Settings*, and then on *Authentication*.
+Under *How do users authenticate?*, make a selection. To set the portal
+authentication type via properties file, add the following to your Liferay
+instance's `portal-ext.properties` file but uncomment only the appropriate line:
+
+    company.security.auth.type=emailAddress
+    #company.security.auth.type=screenName
+    #company.security.auth.type=userId
+
 Your Liferay Portal password policies (see the
 [User Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
 chapter of *Using Liferay Portal*) should be reviewed, since they'll be enforced
