@@ -245,7 +245,14 @@ it manually by a site administrator.
 users to be manually added or removed from the site. By default, manual site
 membership management is enabled. This allows administrators to manually assign
 users to the site. It also allows users to join open sites or request membership
-from restricted sites using the My Sites portlet.
+from restricted sites using the My Sites portlet. For organization sites, manual
+site membership management is disabled, by default. This causes organization
+members to be automatically assigned membership following the organization's
+membership policy. Also, because manual membership management is disabled for
+organization sites, by default, the *Users* section of *Site Administration* is
+unavailable. To activate the *Users* functionality for your organization site,
+you'll need to check *Allow Manual Membership Management* after creating the
+organization site by navigating to its *Site Settings* menu.
 
 ---
 
@@ -256,9 +263,9 @@ from restricted sites using the My Sites portlet.
  the site membership policy can automatically assign members to the site. If
  your site will implement a membership policy, your site administrators can
  disallow manual membership management for their site. When the Allow Manual
- Membership Management option is disabled, the Site Memberships section as well
- as various other options to manually assign/remove members are hidden, even
- from administrators.
+ Membership Management option is disabled, the *Users* section of *Site
+ Administration* (Site Memberships and Site Teams) is hidden, even from
+ administrators.
 
 ---
 
@@ -338,8 +345,8 @@ pages are part of their personal sites. All pages belong to one of two types of
 page sets: public pages and private pages. By default, public pages are
 accessible to anyone, even non-logged in users (guests). Private pages are
 accessible only to users who are members of the site which owns the pages. This
-means the private pages of an organization's site would be viewable only by
-members of the organization. 
+means the private pages of an organization's site would only be viewable by
+site members and members of the organization. 
 
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
