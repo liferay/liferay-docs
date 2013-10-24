@@ -39,30 +39,52 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
-		<ModulePrefs title="Map of __UP_loc__" height="300" 
-			author="Jane Smith" 
-			author_email="xxx@google.com" /> 
-		<UserPref name="loc" 
-			display_name="Location" required="true" /> 
+		<ModulePrefs title="Location Map" height="300"
+		    author="Cody Hoag" 
+			author_email="cody.hoag@liferay.com" /> 
+		<UserPref name="lat" display_name="Latitude" required="true" /> 
+		<UserPref name="lng" display_name="Longitude" required="true" /> 
 		<Content type="html">
 		<![CDATA[ 
-			<script src="http://maps.google.com/maps?file=js" type="text/javascript"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript">
+			</script>
 			<div id="map" style="width: 100%; height: 100%;"></div>
 			<script type="text/javascript">
-			var prefs = new gadgets.Prefs();
-			var map = new GMap(document.getElementById("map"));
-			map.addControl(new GSmallMapControl());
-			map.addControl(new GMapTypeControl());
-			var geocoder = new GClientGeocoder();
-			geocoder.getLatLng(prefs.getString('loc'), showMap)
+			
+			var includeMarker = false;
+			var latlng;
+			var userPrefs = new gadgets.Prefs();
+            var latLocation = userPrefs.getFloat('lat');
+            var lngLocation = userPrefs.getFloat('lng');
+			
+			if (latLocation == "" && lngLocation == "") {
+			    latlng = new google.maps.LatLng(33.997547,-117.814305);
+			}
+			else {
+			    latlng = new google.maps.LatLng(latLocation,lngLocation);
+			    includeMarker=true;
+			}
+			
+			function initialize() {
+                var mapOptions = {
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 7
+                }
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                
+                if (includeMarker == true) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: latlng
+                    });
+                }
+            }
 
-			function showMap(point) {
-				if (point!=null) {
-					map.centerAndZoom(point, 6);
-				}
-			};    
-			</script>
-		]]> 
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            </script>
+        ]]> 
 		</Content>
 	</Module>
 
