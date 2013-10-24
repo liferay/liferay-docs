@@ -144,7 +144,8 @@ services, pass in the appropriate user credentials, and upload the documents.
  administrator. Portal administrators can configure security settings for the
  Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
  Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The
- `portal.properties` file (online version [here](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html))
+ `portal.properties` file (online version is available at
+ [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html))
  describes these properties. 
 
 ---
@@ -201,21 +202,22 @@ following:
 
 ---
 
- ![Tip](../../tip.png) **Important:** In order for authentication for remote
- service calls to work, the portal authentication type must be set either to
- *screen name* or *user ID*. The default *email address* authentication type
- does not allow remote service calls to be authenticated.
+ ![Tip](../../tip.png) **Important:** In order for authentication to work for
+ remote service calls, the portal authentication type must be set either to
+ *screen name* or *user ID*. Authentication using the *email address*
+ authentication type is not supported for remote service calls. 
 
 ---
 
-This can be set either via the Control Panel or via the `portal-ext.properties`
-file. To set the portal authentication type via the Control Panel, navigate to
+You can set the authentication type via the Control Panel or via the
+`portal-ext.properties` file. To set the portal authentication type via the Control Panel, navigate to
 the Control Panel, click on *Portal Settings*, and then on *Authentication*.
 Under *How do users authenticate?*, make a selection. To set the portal
-authentication type via properties file, add the following to your Liferay
-instance's `portal-ext.properties` file but uncomment only the appropriate line:
+authentication type via properties file, add the following lines to your Liferay
+instance's `portal-ext.properties` file and uncomment the line for the appropriate
+authentication type:
 
-    company.security.auth.type=emailAddress
+    #company.security.auth.type=emailAddress
     #company.security.auth.type=screenName
     #company.security.auth.type=userId
 
@@ -254,7 +256,9 @@ As an example, let's look at the SOAP web service classes for Liferay's
 
 2. Add a new user group named *MyGroup*. 
 
-3. Add the default administrative user, test@liferay.com, to the new user group. 
+3. Add your portal's administrative user to the new user group. For
+   demonstration purposes, we'll use an administrative user whose email address
+   is `test@liferay.com`. 
 
 We'll use these SOAP related classes: 
 
@@ -283,7 +287,7 @@ browser to the following URL:
 ---
 
  ![Note](../../tip-pen-paper.png) **Note:** Prior to Liferay 6.2, there were two
- different URL for accessing remote Liferay services.
+ different URLs for accessing remote Liferay services.
  `http://[host]:[port]/api/secure/axis` was for services requiring
  authentication and `http://[host]:[port]/api/axis` was for services that didn't
  require authentication. As of Liferay 6.2, all remote Liferay services require
@@ -336,16 +340,16 @@ Next, let's invoke the web service!
 ### SOAP Java Client [](id=soap-java-client-liferay-portal-6-2-dev-guide-05-en)
 
 You can easily set up a Java web service client to access Liferay's remote
-services using Eclipse IDE. Here's how: 
+services using Eclipse. Here's how: 
 
-In Eclipse, you can add use the *New* &rarr; *Web Service Client* wizard to
+In Eclipse, you can use the *New* &rarr; *Web Service Client* wizard to
 either create a new web service client project or add a client to an existing
 project. You need to add a new web service client to your project for each
 service that you need to consume in your client code. For our example, we'll
 build a web service client to invoke the portal's `Company`, `User`, and
 `UserGroup` services.
 
-To create a new web service client project in Eclipse IDE, click *File* &rarr;
+To create a new web service client project in Eclipse, click *File* &rarr;
 *New* &rarr; *Other...*, then expand the *Web Services* category. Select *Web
 Service Client*.
 
@@ -373,11 +377,11 @@ WSDL, and complete the wizard.
 The code below locates and invokes operations to create a new user group named
 `MyUserGroup` and add a user with the screen name *test* to it. Create a
 `LiferaySoapClient.java` file in your web service client project and add the
-following code to it. If you create this class in a certain package, remember to
-add the package declaration to the code below. To run the code from Eclipse,
-make sure that your Liferay server is running, right-click on the
-`LiferaySoapClient.java` class, and select *Run as Java application*. Check your
-console to check that your service calls succeeded.
+following code to it. If you create this class in a package other than the one
+that's specified in the code below, replace the package with your package. To
+run the client from Eclipse, make sure that your Liferay server is running,
+right-click on the `LiferaySoapClient.java` class, and select *Run as Java
+application*. Check your console to check that your service calls succeeded.
 
     package com.liferay.test;
 
@@ -536,7 +540,7 @@ Here are a few things to note about this example:
 - Authentication is done using HTTP Basic Authentication, which isn't
   appropriate for a production environment, since the password is unencrypted.
   It's simply used for convenience in this example. In production, you should
-  set `company.security.auth.requires.https=false`. Please refer to Liferay'
+  set `company.security.auth.requires.https=false`. Please refer to Liferay's
   [`portal.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
   file for more information.
 - The screen name and password are passed in the URL as credentials. 
@@ -551,7 +555,7 @@ for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and
 parameter order, request type, response type, and return type are conveniently
 specified in the WSDL for each Liferay web service. It's all there for you!
 
-Next, let's implement a web service client implemented in PHP. 
+Next, let's implement a web service client in PHP. 
 
 ### SOAP PHP Client [](id=soap-php-client-liferay-portal-6-2-dev-guide-05-en)
 
@@ -592,10 +596,8 @@ time using PHP and a PHP SOAP Client:
             print ("$ug->name, $ug->userGroupId ")
     ?>
 
-Remember, you can use any language that supports use of SOAP web services to
-create a web services client. Test your clients on Liferay's SOAP web services!
-
-Next, we'll explore Liferay's JSON web services. 
+Remember, you can implement a web service client in any language that supports
+using SOAP web services. Next, we'll explore Liferay's JSON web services. 
 
 ## JSON Web Services [](id=json-web-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -639,19 +641,16 @@ API. As explained previously, the `-ServiceImpl` configuration overrides the
 
 Liferay Portal, however, does not scan all available classes for the
 annotations. Instead, it only scans services. More precisely, it scans all
-classes registered in the application context of the portal, i.e. of the plugin.
-All classes that are available to the `BeanLocator` are scanned. Practically,
-this means that the portal scans all classes registered in portal's Spring
-context of the portal, i.e. plugin. If you use Service Builder to build plugin
-services, it automatically registers them in the Spring context and they are
-made available to the `BeanLocator`. Moreover, this means that you can register
-*any* object in the Spring context of your plugin and the portal scans it for
-remote services! We are not forcing you to use Service Builder. We recommend
-using it because it easily does so many things with regards to your remote
-services. 
-
-<!-- Why use the phrase "portal, i.e. plugin"? What does it mean? "portal" does
-not mean "plugin". -Jesse -->
+classes, including plugin classes, registered in the portal's application
+context. All classes that are available to the `BeanLocator` are scanned.
+Practically, this means that the portal scans all classes registered in its
+Spring context and the Spring context of its plugins. If you use Service Builder
+to build plugin services, the services are automatically registered to the
+Spring context and are made available to the `BeanLocator`. Moreover, this means
+that you can register *any* object in the Spring context of your plugin and the
+portal scans it for remote services! We are not forcing you to use Service
+Builder. We recommend using it because it easily does so many things with
+regards to your remote services. 
 
 ---
 
@@ -676,11 +675,11 @@ methods are to be exposed as JSON web services, making them a part of the
 plugin's JSON API. 
 
 By default, scanning of the portlet's services is disabled. To enable scanning,
-you need to add an appropriate filter definition in portlet's `web.xml`.
-Fortunately, Liferay provides a way to automatically add the filter. Just click
-the *Build WSDD* button in Liferay IDE while editing the `service.xml` file in
-*Overview* mode, or just invoke the `build-wsdd` Ant target. On building the
-WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
+you need to add an appropriate filter definition in the portlet's `web.xml`
+file. Fortunately, Liferay provides a way to automatically add the filter. Just
+click the *Build WSDD* button in Liferay IDE while editing the `service.xml`
+file in *Overview* mode, or just invoke the `build-wsdd` Ant target. On building
+the WSDD, Liferay's Plugins SDK modifies the portlet's `web.xml` and enables the
 JSON web services for the plugin. Under the hood, the Plugins SDK registers the
 `SecureFilter` and the `JSONWebServiceServlet` for the plugin. You only need to
 enable JSON web services for your plugin once.
