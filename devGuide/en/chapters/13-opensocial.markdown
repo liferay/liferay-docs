@@ -166,7 +166,7 @@ current map gadget:
 	<UserPref name="lng" display_name="Longitude" required="true" />
 
 Notice the `lat` and `lng` UserPrefs of the map gadget. These user preferences
-take in the user's latitude and longitude preference, stores them, and displays
+take in the user's latitude and longitude preferences, stores them, and displays
 them on the mapping interface.
 
 Lastly, we'll look at what a user sees in the gadget's user interface when
