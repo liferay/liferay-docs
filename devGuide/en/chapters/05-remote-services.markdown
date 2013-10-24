@@ -141,9 +141,9 @@ services, pass in the appropriate user credentials, and upload the documents.
 resides on the portal host machine and is controlled by the portal
 administrator. Portal administrators can configure security settings for the
 Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
-Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Properties
-Reference](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-s-properti-1)
-chapter of *Using Liferay Portal* describes these properties. 
+Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. Liferay's
+[Properties Reference](http://docs.liferay.com/portal/6.2/propertiesdoc/)
+describes these properties in detail. 
 
 ---
 
@@ -194,7 +194,7 @@ administrator can set the portal's authentication type to any of the following:
 - *email address*
 
 Your Liferay Portal Password Policies (see chapter
-[Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/administering-liferay-port-1)
+[Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
 of *Using Liferay Portal*) should be reviewed, since they'll be enforced on your
 administrative ID as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an
