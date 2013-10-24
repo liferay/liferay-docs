@@ -584,11 +584,12 @@ information is read from your plugins).
 
 ![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
-As more a complicated example, let's consider an app that consists of a hook and
+As a more complicated example, let's consider an app that consists of a hook and
 a portlet. The portlet works across all Liferay releases, but the hook is built
 separately for CE and EE. Therefore, you would upload 3 plugins that make up the
-app. Once the files are uploaded, a check mark appears next to each plugin, and
-the plugins are displayed based on the compatibility information.
+app: 1 portlet plugin for all releases, 1 hook plugin for CE, and 1 hook plugin
+for EE. Once the files are uploaded, a check mark appears next to each plugin,
+and the plugins are displayed based on their compatibility information. 
 
 ![Figure 12.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
