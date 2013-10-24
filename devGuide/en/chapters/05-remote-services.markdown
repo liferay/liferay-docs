@@ -81,8 +81,8 @@ JavaScript and PHP and remote services can reply to calls with JSON objects.
 Note, however, that remote services are often harder to call than local services
 since contextual information that's usually available when making local service
 calls is not available when making remote service calls. For example, the
-`ServiceContext` or `ThemeDisplay` objects are often available when you're making
-local service calls but not when you're making remote service calls.
+`ServiceContext` or `ThemeDisplay` objects are often available when you're
+making local service calls but not when you're making remote service calls. 
 
 Invoking remote services does require more overhead such as memory, network
 bandwidth, and processing than does invoking local services. Also, remote
@@ -202,20 +202,20 @@ following:
 
 ---
 
- ![Tip](../../tip.png) **Important:** In order for authentication to work for
- remote service calls, the portal authentication type must be set either to
- *screen name* or *user ID*. Authentication using the *email address*
- authentication type is not supported for remote service calls. 
+ ![Tip](../../images/tip-pen-paper.png) **Important:** In order for
+ authentication to work for remote service calls, the portal authentication type
+ must be set either to *screen name* or *user ID*. Authentication using the
+ *email address* authentication type is not supported for remote service calls. 
 
 ---
 
 You can set the authentication type via the Control Panel or via the
-`portal-ext.properties` file. To set the portal authentication type via the Control Panel, navigate to
-the Control Panel, click on *Portal Settings*, and then on *Authentication*.
-Under *How do users authenticate?*, make a selection. To set the portal
-authentication type via properties file, add the following lines to your Liferay
-instance's `portal-ext.properties` file and uncomment the line for the appropriate
-authentication type:
+`portal-ext.properties` file. To set the portal authentication type via the
+Control Panel, navigate to the Control Panel, click on *Portal Settings*, and
+then on *Authentication*. Under *How do users authenticate?*, make a selection.
+To set the portal authentication type via properties file, add the following
+lines to your Liferay instance's `portal-ext.properties` file and uncomment the
+line for the appropriate authentication type:
 
     #company.security.auth.type=emailAddress
     #company.security.auth.type=screenName
@@ -286,8 +286,8 @@ browser to the following URL:
 
 ---
 
- ![Note](../../tip-pen-paper.png) **Note:** Prior to Liferay 6.2, there were two
- different URLs for accessing remote Liferay services.
+ ![Note](../../images/tip-pen-paper.png) **Note:** Prior to Liferay 6.2, there
+ were two different URLs for accessing remote Liferay services.
  `http://[host]:[port]/api/secure/axis` was for services requiring
  authentication and `http://[host]:[port]/api/axis` was for services that didn't
  require authentication. As of Liferay 6.2, all remote Liferay services require
@@ -570,9 +570,11 @@ time using PHP and a PHP SOAP Client:
 
         // Add user group
         $userGroupClient = new 
-            SoapClient("http://localhost:8080/api/axis/Portal_UserGroupService?wsdl", 
-            $clientOptions);
-        $userGroup = $userGroupClient->addUserGroup($userGroupName, "This user group was created by the PHP client! ");
+            SoapClient(
+                "http://localhost:8080/api/axis/Portal_UserGroupService?wsdl", 
+                $clientOptions);
+        $userGroup = $userGroupClient->addUserGroup($userGroupName,
+            "This user group was created by the PHP client! ");
         print ("User group ID is $userGroup->userGroupId ");
 
         // Add user to user group
