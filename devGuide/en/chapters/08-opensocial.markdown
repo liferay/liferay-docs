@@ -88,11 +88,6 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 		</Content>
 	</Module>
 
-For more details on the map gadget, visit Google's [Specifying a
-Geographical
-Location](https://developers.google.com/gadgets/docs/fundamentals#location)
-section.
-
 For the official documentation on Gadget anatomy, see Google's [Anatomy of a
 Gadget](https://developers.google.com/gadgets/docs/basic#Anatomy). For
 convenience, however, let's consider gadget *meta-data* and *content* here to
@@ -165,17 +160,19 @@ bring up map gadgets, they are typically interested in their current location or
 a location of interest--not some random distant land. Therefore, it makes sense
 for a map gadget to take the user's location of interest as input. UserPrefs
 facilitate taking in this information, storing it, and processing it to present
-gadget user interfaces customized to the user. Here is the UserPref for our
+gadget user interfaces customized to the user. Here are the UserPrefs for our
 current map gadget:
  
-    <UserPref name="loc" display_name="Location" required="true" />
+    <UserPref name="lat" display_name="Latitude" required="true" />
+    <UserPref name="lng" display_name="Longitude" required="true" />
 
-Notice the UserPref `loc` of the map gadget. This user preference takes in the
-user's location preference, stores it, and displays it on the mapping interface.
+Notice the `lat` and `lng` UserPrefs of the map gadget. These user preferences
+take in the user's latitude and longitude preferences, stores them, and displays
+them on the mapping interface.
 
 Lastly, we'll look at what a user sees in the gadget's user interface when
-setting the *Location* user preference. Here is a snapshot of what this window
-looks like on Liferay Portal:
+setting the *Latitude* and *Longitude* user preferences. Here is a snapshot of
+what this window looks like on Liferay Portal:
 
 ![Figure 8.2: Here, the map gadget's user preference is made available for user input.](../../images/opensocial-21.png)
 
