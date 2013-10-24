@@ -254,8 +254,8 @@ from the Marketplace and provide safeguards against malicious apps. If you wish
 to use an app for an earlier version, consult the documentation for that app, as
 it may or may not be supported on earlier versions of Liferay.
 
-Read the *Specify App Compatibility* section below for details on how to specify
-which versions of Liferay your app works with.
+Read the section below for details on how to specify the versions of Liferay
+your app works with. 
 
 ---
 
@@ -540,7 +540,9 @@ do so here.
 **Labs:** You can denote an app as experimental by flagging the appropriate box.
 
 **Security:** If your app does *not* use Liferay's PACL Security Manager, flag
-the appropriate box.
+the appropriate box. Otherwise, make sure to enable the security manager in your
+app by including the setting `security-manager-enabled=true` in your
+`liferay-plugin-package.properties` file. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
@@ -564,26 +566,23 @@ Make up some sample data to use during this example, and enter it into the form.
 Once you have entered all your app's details, click *Next* to move on to the
 next screen.
 
-![Figure 12.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
+#### Upload Files (Plugins) for your App [](id=upload-plugin-files-for-your-app-liferay-portal-6-2-dev-guide-11-en)
 
-On this screen, you must specify the version of your app. Review the guidance in
-files. Review the guidance in
-the *What is a version* section in this chapter to choose a good version
-specifier and enter it here. For our example, since this is the first version,
-enter `1.0`. Click *Next*.
+On this screen, you must specify the version of your app and upload its plugin
+files. Review the guidance in the *What is a version* section in this chapter to
+choose a good version specifier and enter it here. For our example, since this
+is the first version, enter `1.0`. 
 
-Then you must upload all of the different sets of your plugin's files (variations) to
-support different Liferay versions. You must upload at least one plugin file
-before advancing beyond this screen. The screen is shown here as it initially
-appears:
+Then you must upload the different sets of plugin files (variations) to support
+different Liferay versions. You must upload at least one plugin file before
+advancing beyond this screen. So, click the *Browse* button, and select the
+plugins that make up your app. Each time you add plugins to the list, they
+automatically begin uploading and their compatibility information is scanned
+(read the previous sections in this chapter to understand what compatibility
+information is read from your plugins). 
 
-![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png) 
 
-Press the *Browse* button, and select the plugins that make up your app. Each
-time you add plugins to the list, they will automatically begin uploading, and
-their compatibility information will be scanned (read the *Specify App
-Compatibility* section above to understand what compatibility information is
-read from your plugins).
+![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
 As more a complicated example, let's consider an app that consists of a hook and
 a portlet. The portlet works across all Liferay releases, but the hook is built
@@ -654,7 +653,7 @@ your app.
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
 
-- Editing your app details (e.g. description, icon, etc)
+- Editing your app details (e.g., description, icon, etc)
 - Adding support for a new version of Liferay Portal
 - Releasing a new version of your app to fix bugs or offer new functionality
 - Disabling your apps
@@ -668,8 +667,6 @@ information that you supplied on the first screen during the app creation
 process. To make changes to this content for your app, navigate to *Home* &rarr;
 *App Manager* &rarr; *Apps*, then click the *Action* button next to the app you
 wish to edit, and select *Edit*.
-
-![Figure 12.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
 
 This screen shows you what the app looks like on the Marketplace. To edit the
 detail information, click the *Edit* button at the bottom of the preview. This
@@ -722,9 +719,7 @@ new version, and then click *Edit*. You will be taken to the Details screen. At
 the bottom of the Details screen, click the *Add New Version* button. This
 button begins the process of adding a new version, starting with the App Details
 screen. In this case, the screen is pre-filled with data from the current
-version of the app, as shown below.
-
-![Figure 12.10: Adding a version is similar to creating a new app, except that the fields are filled in for you.](../../images/marketplace-add-version-details.png) 
+version of the app. 
 
 You can make any changes to the pre-filled data on this screen. Since this is a
 new version of an existing app making major changes (such as completely changing
