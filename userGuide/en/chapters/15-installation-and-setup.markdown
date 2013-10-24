@@ -513,6 +513,7 @@ application servers in alphabetical order.
 
 1. Get Tomcat? And do the Tomcat stuff (create lib/ext, set Tomcat as app
 server in build.properties)
+
 ---
 
 ![tip](../../images/01-tip.png)*Note:* This section has not yet been upgraded to
@@ -523,7 +524,6 @@ server in build.properties)
 Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
 source portal, and Tcat Server, an enterprise grade administration console for
 the Apache Tomcat application server.
->>>>>>> master
 
 2. Download Liferay stuff (Tcat Admin, Tcat Agent, Tcat Profile?)
 
@@ -2228,7 +2228,7 @@ setenv.sh and .bat in a built liferay 6.2.-->
 			<!-- JAAS -->
 
 			<!--<Realm
-				className="org.apache.catalina.realm.JAASRealm"
+				classNjame="org.apache.catalina.realm.JAASRealm"
 				appName="PortalRealm"
 				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
 				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
