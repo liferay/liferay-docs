@@ -1270,14 +1270,7 @@ we'll use the test form provided with the JSON web service in our browser.
 
 The returned `String` represents the `UserGroup` object you just created,
 serialized into a JSON string. To find out more about JSON strings, go to
-[json.org](http://www.json.org/).
-
-To learn about serializing Java objects, maps and lists, check out the article
-[JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization)
-by Igor Spasi&#263;. 
-
-<!-- Wouldn't it be better to pull any important information from the wiki into
-this guide so the information can be maintained? -Jesse -->
+[json.org](http://www.json.org/). 
 
 Let's check out some common JSON WebService errors. 
 
