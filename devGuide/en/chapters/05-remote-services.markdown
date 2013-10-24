@@ -139,14 +139,13 @@ services, pass in the appropriate user credentials, and upload the documents.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** The `portal.properties` file
+![Note](../../images/tip-pen-paper.png) **Note:** The `portal.properties` file
  resides on the portal host machine and is controlled by the portal
  administrator. Portal administrators can configure security settings for the
  Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
- Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The
- `portal.properties` file (online version is available at
- [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html))
- describes these properties. 
+ Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. Liferay's
+ [Properties Reference](http://docs.liferay.com/portal/6.2/propertiesdoc/)
+ describes these properties in detail. 
 
 ---
 
