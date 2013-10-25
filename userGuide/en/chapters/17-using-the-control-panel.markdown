@@ -652,7 +652,7 @@ When you are finished, click *Save*. Now that we've looked at various options
 for integrating existing users into Liferay, let's look at other Liferay portal
 settings.
 
-### SAML
+### SAML [](id=saml-liferay-portal-6-2-user-guide-17-en)
 
 ![EE-only](../../images/ee-feature-web.png)
 
@@ -671,7 +671,7 @@ provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
 Provider.
 
-#### Setting up Liferay as a SAML Identity Provider
+#### Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-p-liferay-portal-6-2-user-guide-17-en)
 
 In order to set Liferay up to act as a SAML Identity Provider, use the following
 steps:
@@ -722,7 +722,7 @@ steps:
     your certificate and private key information, you can view information about
     your certificate or download your certificate.
 
-    ![Figure 15.x: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin.png)
+<!-- The below figure is missing.    After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin.png) -->
 
 5. Finally, after you've saved your certificate and private key information,
    check the *Enabled* box at the top of the General tab and click *Save*.
@@ -741,7 +741,7 @@ back to this Liferay instance's Control Panel and add the Service Provider:
 *Control Panel* &rarr; *SAML Admin* &rrar; *Service Provider Connections* &rarr;
 *Add Service Provider*.
 
-#### Setting up Liferay as a SAML Service Provider
+#### Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-pr-liferay-portal-6-2-user-guide-17-en)
 
 In order to set Liferay up to act as a SAML Service Provider, use the following
 steps. Many of the steps are similar to the ones for setting Liferay up to act

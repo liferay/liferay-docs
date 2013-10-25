@@ -617,7 +617,7 @@ role.
 Next, let's learn about the difference between the (portal/site/organization)
 administrator and owner roles that Liferay provides out-of-the-box.
 
-### Out-of-the-box Liferay Roles
+### Out-of-the-box Liferay Roles [](id=out-of-the-box-liferay-roles-liferay-portal-6-2-user-guide-16-en)
 
 If you navigate to the Control Panel and click on *Roles*, you'll see a list of
 all the roles that have been created in your portal. This list includes roles
@@ -665,7 +665,7 @@ some of Liferay's out-of-the-box roles:
 
 ---
 
- ![Tip](../../tip.png) **Tip:** It's easy to overlook the differences between
+ ![Tip](../../images/01-tip.png) **Tip:** It's easy to overlook the differences between
  site and organization owners and site and organization administrators. Remember
  that site and organization administrators *cannot* delete the membership of or
  remove the administrator or owner role from any other administrator or owner.

@@ -548,7 +548,7 @@ disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. 
 
-##### JavaScript
+##### JavaScript [](id=javascript-liferay-portal-6-2-user-guide-02-en)
 
 If you click on *JavaScript* from the Site Pages interface for a page set
 (either Public Pages or Private Pages), you'll find a window where you can enter
@@ -565,7 +565,7 @@ and you can add some dynamic features to your site's pages.
 Next, let's look at an advanced feature of the Site Pages interface: merging the
 current site's pages with the pages of the default site.
 
-##### Advanced
+##### Advanced [](id=advanced-liferay-portal-6-2-user-guide-02-en)
 
 If you click on *Advanced* from the Site Pages interface for a public page set,
 you'll find an option to merge the public pages of your portal's default site
