@@ -32,44 +32,60 @@ The second part of the document contains the gadget *content*, defining the
 gadget's user interface and business logic. We'll spend time going over all
 these facets of gadget XML.
 
-![Figure 13.1: An OpenSocial gadget's XML consists of elements specifying gadget
-preferences, user preferences, and content.](../../images/opensocial-22.png)
+![Figure 13.1: An OpenSocial gadget's XML consists of elements specifying gadget preferences, user preferences, and content.](../../images/opensocial-22.png)
 
 Below is an example OpenSocial gadget XML file for a map gadget:
 
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
-		<ModulePrefs title="Map of __UP_loc__" height="300" 
-			author="Jane Smith" 
-			author_email="xxx@google.com" /> 
-		<UserPref name="loc" 
-			display_name="Location" required="true" /> 
+		<ModulePrefs title="Location Map" height="300"
+		    author="Cody Hoag" 
+			author_email="cody.hoag@liferay.com" /> 
+		<UserPref name="lat" display_name="Latitude" required="true" /> 
+		<UserPref name="lng" display_name="Longitude" required="true" /> 
 		<Content type="html">
 		<![CDATA[ 
-			<script src="http://maps.google.com/maps?file=js" type="text/javascript"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript">
+			</script>
 			<div id="map" style="width: 100%; height: 100%;"></div>
 			<script type="text/javascript">
-			var prefs = new gadgets.Prefs();
-			var map = new GMap(document.getElementById("map"));
-			map.addControl(new GSmallMapControl());
-			map.addControl(new GMapTypeControl());
-			var geocoder = new GClientGeocoder();
-			geocoder.getLatLng(prefs.getString('loc'), showMap)
+			
+			var includeMarker = false;
+			var latlng;
+			var userPrefs = new gadgets.Prefs();
+            var latLocation = userPrefs.getFloat('lat');
+            var lngLocation = userPrefs.getFloat('lng');
+			
+			if (latLocation == "" && lngLocation == "") {
+			    latlng = new google.maps.LatLng(33.997547,-117.814305);
+			}
+			else {
+			    latlng = new google.maps.LatLng(latLocation,lngLocation);
+			    includeMarker=true;
+			}
+			
+			function initialize() {
+                var mapOptions = {
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 7
+                }
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                
+                if (includeMarker == true) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: latlng
+                    });
+                }
+            }
 
-			function showMap(point) {
-				if (point!=null) {
-					map.centerAndZoom(point, 6);
-				}
-			};    
-			</script>
-		]]> 
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            </script>
+        ]]> 
 		</Content>
 	</Module>
-
-For more details on the map gadget, visit Google's [Specifying a
-Geographical
-Location](https://developers.google.com/gadgets/docs/fundamentals#location)
-section.
 
 For the official documentation on Gadget anatomy, see Google's [Anatomy of a
 Gadget](https://developers.google.com/gadgets/docs/basic#Anatomy). For
@@ -143,20 +159,29 @@ bring up map gadgets, they are typically interested in their current location or
 a location of interest--not some random distant land. Therefore, it makes sense
 for a map gadget to take the user's location of interest as input. UserPrefs
 facilitate taking in this information, storing it, and processing it to present
-gadget user interfaces customized to the user. Here is the UserPref for our
+gadget user interfaces customized to the user. Here are the UserPrefs for our
 current map gadget:
  
-		<UserPref name="loc" display_name="Location" required="true" />
+	<UserPref name="lat" display_name="Latitude" required="true" />
+	<UserPref name="lng" display_name="Longitude" required="true" />
 
-Notice the UserPref `loc` of the map gadget. This user preference takes in the
-user's location preference, stores it, and displays it on the mapping interface.
+Notice the `lat` and `lng` UserPrefs of the map gadget. These user preferences
+take in the user's latitude and longitude preferences, stores them, and displays
+them on the mapping interface.
 
 Lastly, we'll look at what a user sees in the gadget's user interface when
-setting the *Location* user preference. Here is a snapshot of what this window
-looks like on Liferay Portal:
+setting the *Latitude* and *Longitude* user preferences. 
 
-![Figure 13.2: Here, the map gadget's user preference is made
-available for user input.](../../images/opensocial-21.png)
+<!--
+Here is a snapshot of
+what this window looks like on Liferay Portal:
+
+!incorrect[Figure 13.2: Here, the map gadget's user preference is made available for user input.](../../images/opensocial-21.png)
+-->
+
+<!-- Need to update snapshot above with updated Map gadget. I'm unable to do it
+at the present time because the Gadget Editor doesn't currently work for 6.1.
+-->
 
 UserPrefs can be displayed in many different ways and help your gadget become
 more adaptable to your users' ever changing expectations. And, there is an
@@ -305,16 +330,14 @@ steps below:
     it publishes a number; but the PubSub Subscriber gadget does not receive the
     number.
 
-    ![Figure 13.3: The subscriber cannot receive any messages from the publisher
-    without being subscribed to the channel.](../../images/opensocial-23.png)
+    ![Figure 13.2: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/opensocial-23.png)
 
 5.  Select *Subscribe* on the subscriber gadget.
 
 6.  Click *Publish a random number* again from the publisher gadget. You now see
     the random number received by the subscriber.
 
-    ![Figure 13.4: When the subscriber is subscribed to the publisher's channel,
-    the subscriber is able to receive messages.](../../images/opensocial-24.png)
+    ![Figure 13.3: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/opensocial-24.png)
 
 7.  Select *Unsubscribe* on the subscriber gadget.
 
@@ -358,9 +381,7 @@ below:
 
 2.  Add both gadgets to a page.
 
-    ![Figure 13.5: Gadgets are easy to publish and some gadgets, like Google's
-    *Address* and *Map* gadgets, are automatically synced to communicate with
-    each other.](../../images/opensocial-25.png)
+    ![Figure 13.4: Gadgets are easy to publish and some gadgets, like Google's *Address* and *Map* gadgets, are automatically synced to communicate with each other.](../../images/opensocial-25.png)
 
     Note: The address bar is already filled with an address. This default
     address is specified in the *Google Address* gadget's source code. We will
@@ -370,9 +391,7 @@ below:
     now be able to see that address location displayed in the *Google Map*
     gadget.
 
-    ![Figure 13.6: After inputting a custom address in the *Google Address*
-    gadget, you are able to see its physical location in the *Google Map*
-    gadget.](../../images/opensocial-26.png)
+    ![Figure 13.5: After inputting a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/opensocial-26.png)
 
 Congratulations! Your gadgets are communicating well with each other. This
 simple example demonstrates two gadgets communicating with each other using
@@ -589,9 +608,7 @@ After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the
 interaction would look like:
 
-![Figure 13.7: Your modified *Directory* portlet sends a user address to the
-*Google Map* gadget to display the address location in its
-map.](../../images/opensocial-27.png)
+![Figure 13.6: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
@@ -618,8 +635,7 @@ through the editor are stored in the site's Document and Media Library. The
 sites. These options offer a user-friendly and easy to use testing station for
 enhancing the gadgets on your sites.
 
-![Figure 13.8: The wrench icon can be easily found to the right of your XML
-file.](../../images/opensocial-39.png)
+![Figure 13.7: The wrench icon can be easily found to the right of your XML file.](../../images/opensocial-39.png)
 
 **Note:** When you publish a new gadget,
 remember that your Liferay Portal installation is the new host when specifying
@@ -645,9 +661,7 @@ address entirely from our gadget's text window.
 4.  Click the floppy disk button to save your new gadget XML, naming your gadget
     *GoogleMapsPublisher.xml*. Press the green check button to save the file.
 
-    ![Figure 13.9: It is easy to insert gadget content into Liferay's
-    *OpenSocial Gadget Editor* and save it as an OpenSocial
-    gadget.](../../images/opensocial-31.png)
+    ![Figure 13.8: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/opensocial-31.png)
 
     **Note:** Liferay will not allow you to publish your new gadget without
     attaching `.xml` to the end of your file name. 
@@ -655,8 +669,7 @@ address entirely from our gadget's text window.
 5.  Select the *Preview* tab from the toolbar and a preview of your gadget
     appears.
 
-    ![Figure 13.10: The *Preview* tab displays what your gadget would look like
-    if it was added to a Liferay page.](../../images/opensocial-32.png)
+    ![Figure 13.9: The *Preview* tab displays what your gadget would look like if it was added to a Liferay page.](../../images/opensocial-32.png)
 
 6.  Locate the following element in the gadget XML:
 
@@ -668,27 +681,21 @@ address entirely from our gadget's text window.
 
 7.  Select the editor's *Preview* mode and click the refresh button.
 
-    ![Figure 13.11: The refresh button is easy to find in the upper right corner
-    of the editor's *Preview* pane.](../../images/opensocial-34.png)
+    ![Figure 13.10: The refresh button is easy to find in the upper right corner of the editor's *Preview* pane.](../../images/opensocial-34.png)
 
     As you would expect, the gadget's default address is now blank.
 
-    ![Figure 13.12: Your updated gadget now has a blank text window, thanks to
-    the editing you've done in Liferay's gadget
-    editor.](../../images/opensocial-33.png)
+    ![Figure 13.11: Your updated gadget now has a blank text window, thanks to the editing you've done in Liferay's gadget editor.](../../images/opensocial-33.png)
 
 8.  Publish your gadget for portal-wide use by selecting the wrench icon next to
     the *GoogleMapsPublisher.xml* file and clicking *Publish*.
 
-    ![Figure 13.13: You can publish your OpenSocial gadgets directly from
-    Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
+    ![Figure 13.12: You can publish your OpenSocial gadgets directly from Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
 
     A *Publish Gadget* screen opens up, showing your gadget's URL and categories
     to select for your gadget.
 
-    ![Figure 13.14: A *Publish Gadget* window displays your gadget's URL and a
-    host of categories for you to consider for your
-    gadget.](../../images/opensocial-36.png)
+    ![Figure 13.13: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
 
 9.  Choose a category and click *Save*.
 
