@@ -540,33 +540,33 @@ downloading a fix pack from the customer portal, you'll need to place it in the
 `patches` folder, which is inside the patching tool's home folder. Once you've
 done that, it's a simple matter to install it. First, execute
 
-	./patching-tool.sh info
+    ./patching-tool.sh info
 	
 This shows you a list of patches you've already installed, along with a list of
 patches that *can* be installed, from what's in the `patches` folder. To install
 the available patches, issue the following command: 
 
-	./patching-tool.sh install
+    ./patching-tool.sh install
 
 Liferay copies files into the plugins in deployment time. If these files are
 patched in the portal, they need to be updated in the plugins as well. In these
 cases, the patching tool notifies you about the change. You can run the
 following command to update these files automatically:
 
-        ./patching-tool.sh update-plugins
+    ./patching-tool.sh update-plugins
 
 If you do not wish to have the patching tool update the plugins, it's enough to
 re-deploy them. If there are new indexes created by the patch, the patching tool
 notifies you to update them. To get the list, run this command:
 
-        ./patching-tool.sh index-info
+    ./patching-tool.sh index-info
 
 As there's no database connection at patching time, the patches needed to be
 created at portal startup. In order to get the indexes automatically created,
 add the following line to the `portal-ext.properties` file if the server has
 permissions to modify the indexes on the database:
 
-        database.indexes.update.on.startup=true
+    database.indexes.update.on.startup=true
 
 Otherwise, you have to create the indexes manually. Check the output of the
 `./patching-tool index-info` command for more details.
