@@ -546,7 +546,65 @@ appear next to the logo. This option is enabled by default and cannot be
 disabled if the *Allow Site Administrators to set their own logo* option is
 disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
-the name display. Let's take a look at how to edit individual pages.
+the name display. 
+
+##### JavaScript
+
+If you click on *JavaScript* from the Site Pages interface for a page set
+(either Public Pages or Private Pages), you'll find a window where you can enter
+JavaScript code the will be executed at the bottom of every page in the site.
+If your site's theme uses JavaScript (as is usually the case), it's best to add
+custom JavaScript code to the theme and *not* in this window. This way, all of
+your site's JavaScript code remains in one place.
+
+Using the JavaScript window of your site's Site Pages interface may be useful if
+your site's theme does *not* use JavaScript. In this case, the JavaScript window
+of your site's Site Pages interface will contain *all* of your site's JavaScript
+and you can add some dynamic features to your site's pages. 
+
+Next, let's look at an advanced feature of the Site Pages interface: merging the
+current site's pages with the pages of the default site.
+
+##### Advanced
+
+If you click on *Advanced* from the Site Pages interface for a public page set,
+you'll find an option to merge the public pages of your portal's default site
+with the public pages of the current site. If you enable this option, the pages
+of the default site appear in the current site's navigation bar, along with the
+current site's pages. Also, the pages of the current site appear in the
+navigation bar of the default site, along with the default site's pages. This
+"merging" of pages only affects the list of pages in the default site's and the
+current site's *navigation bars*. This allows users to more easily navigate
+from the current site to the default site, and vice versa. This option can be
+enabled for the public pages of both personal sites and regular sites.
+
+Note that this "merging" of pages is not a "hard merge". For example, suppose
+that the site administrators of twenty different sites on your portal all
+enabled the *Merge default site's public pages* option. Would the pages of all
+these different sites be merged into each site's navigation bar? No, that would
+make a mess! Instead, the portal keeps track of the current `scopeGroupId` (the
+ID of the current site) and the previous `scopeGroupId` (the ID of the
+previously visited site). If the *Merge default site's public pages* option is
+enabled for either the current site or the previous site, the pages of the
+default site are merged in the pages of the other site.
+
+For example, suppose that your portal has three sites: the default site, site A,
+and site B. All three sites have some public pages. Site A has the *Merge
+default site's public pages* option enabled, site B does not. When a user first
+logs in, he's directed to the default site. The `scopeGroupId` is that of the
+default site and there is no previous `scopeGroupId`, so no additional pages
+appear in the default site's navigation bar. Then suppose the user navigates to
+site A. Site A has the *Merge default site's public pages* option enabled, so
+the default site's pages are added to site A's navigation bar. Now if the user
+goes back to the default site, site A becomes the previous site so site A's
+pages are added to the default site's navigation bar. If the user navigates to
+site B, no additional pages appear in site B's navigation bar because site B
+does not have the *Merge default site's public pages* option enabled. And if the
+user navigates back to the default site, site B becomes the previous site, and,
+again, since site B does not have the *Merge default site's public pages* option
+enabled, no additional pages are added to the default site's navigation menu.
+
+Next, let's examine how to configure individual pages.
 
 #### Changing Options for Individual Pages [](id=changing-options-for-individual-pages-liferay-portal-6-2-user-guide-02-en)
 
@@ -585,7 +643,7 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-**Look and Feel:** lets you set a page-specific theme.  
+**Look and Feel:** lets you set a page-specific theme.
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
 executed on this page. 
