@@ -1132,7 +1132,7 @@ Once you have installed the managed server, there is one more step to perform on
 the managed server. You must modify the `catalina.properties` file located in
 the `conf` directory of your Tcat Server installation.
 
-You will need to change the text:
+You will need to change the text (remove line breaks):
 
 	common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,${catalina.home}/lib,${catalina.home}/lib/\*.jar
 
