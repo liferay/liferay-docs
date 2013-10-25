@@ -764,7 +764,7 @@ this number to search for the order history and keep track of its status.
 If you think the shopping cart looks a little basic for your purposes, you can
 customize it by using a hook. To learn more about changing the appearance of the
 shopping cart, consult the [*Liferay Developer's
-Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
+Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) or
 see section 8.3 in [*Liferay in Action*](http://manning.com/sezov). 
 
 Now your online store is set up, you have inventory, you have a payment system,
