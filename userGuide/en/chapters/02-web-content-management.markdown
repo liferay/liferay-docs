@@ -1038,7 +1038,7 @@ etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see chapter 5 for more information on Liferay's asset framework.
 
-### Authoring (Basic) Content [](id=authoring-basic-content-liferay-portal-6-2-user-guide-02-en)
+### Creating (Basic) Content [](id=authoring-basic-content-liferay-portal-6-2-user-guide-02-en)
 
 As we've already discussed, content is the reason web sites exist. Liferay
 Portal has made it easier than ever to get content published to your site.
@@ -1096,9 +1096,8 @@ editor. We could customize this form to contain whatever fields our content
 needs but we'll keep things simple for now. If web content structures have
 already been created in your currently selected scope, you can select one for
 your new web content article by clicking *Select* next to the *Structure*
-heading.
-
-![Figure 2.15: If you'd like to select a web content structure for your web content article, click *Select* next to the *Structure* heading.](../../images/web-content-structure-select.png)
+heading. We discuss web content structures and templates in detail in the next
+chapter.
 
 Type the words *Welcome to Nose-ster* in the *Name* field. Notice that content
 can be localized in whatever language you want. If you click on the *localize*
@@ -1114,14 +1113,12 @@ momentous achievement at Nose-ster, let's give our announcement some of the pomp
 and circumstance we think it deserves!
 
 Using the editor, select all the text and then change the style to *Heading 1*
-and the color to *Dark Green*.
+and the color to *Dark Green*. You could insert an image here or even more text
+with a different style, as demonstrated in the screenshot below. You can also
+add bullets, numbering, links to another site or custom images. You can even add
+an emoticon. Go ahead and add a smiley face to the end of your announcement.
 
-You could insert an image here or even more text with a different style, as
-demonstrated in the screenshot below. You can also add bullets, numbering, links
-to another site or custom images. You can even add an emoticon. Let's add a
-smiley face at the end of our announcement.
-
-![Figure 2.16: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
+![Figure 2.15: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text,
 images, tables, links and more. Additionally, you can modify the display to
@@ -1130,10 +1127,33 @@ Portal: for example, when you upload an image to be added to a page, that image
 can be viewed and manipulated in the Documents and Media portlet.
 
 If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can
-click the *Source* button and write your own HTML if you wish.
+switch from the WYSIWYG view by clicking the *Source* button. From the Source
+view, you can view the HTML content of your web content. If you wish, can edit
+the HTML directly.
 
-On the right of the New Web Content form are options that allow you to
-customize your web content. 
+![Figure 2.16: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
+
+You can integrate Liferay with external services to enable additional
+functionality. For example, if you navigate to the Control Panel, click on
+*Server Administration* and then on *External Services*, you can install and
+enable Xuggler. Enabling Xuggler allows you to embed audio and video files in
+web content. Installing and enabling Xuggler is easy; you can do it right from
+the Control Panel. Please refer to chapter 17 of this guide for more details.
+
+Once Xuggler has been installed and enabled, embedding audio or video files in a
+web content is easy. From the Dockbar, navigate to *Site Content* &rarr; *Web
+Content* and click *Add* &rarr; *Basic Web Content*. Look for the buttons on the
+CKEditor toolbar with audio and video icons. Click on either the audio or video
+button and then click *Browse Server* to browse to the audio or video file's
+location on your portal's documents and media repository. When you find the
+appropriate file, click *Choose*. If you haven't already uploaded the audio or
+video file to the portal, you can do so by clicking on the *Upload* button.
+Select the file and then check that the audio or video component appears in the
+web content. Excellent! When your web content is published, users can view or
+listen the embedded multimedia!
+
+The right side of the New Web Content form provides options for customizing your
+web content.
 
 ![Figure 2.17: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
 
@@ -1169,7 +1189,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-##### Creating a Display Page [](id=creating-a-display-page-liferay-portal-6-2-user-guide-02-en)
+#### Creating a Display Page [](id=creating-a-display-page-liferay-portal-6-2-user-guide-02-en)
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -1192,7 +1212,7 @@ you'll be redirected to the Default Display Page of the article.
 
 You now see that the link looks something like this:
 
-www.nosester.com/nose-article
+    www.nosester.com/nose-article
 
 This is an example of a canonical URL, and it's a nice enhancement for Search
 Engine Optimization (SEO) because the article's URL becomes the page URL. To a
@@ -1310,7 +1330,7 @@ both processes.
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools. 
 
-##### Editing Content [](id=editing-content-liferay-portal-6-2-user-guide-02-en)
+### Editing Content [](id=editing-content-liferay-portal-6-2-user-guide-02-en)
 
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web
@@ -1321,9 +1341,12 @@ necessary changes.
 
 ![Figure 2.21: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
 
-When you publish your content this way, it becomes available immediately
-(unless, of course, you have a workflow enabled, which we'll see below). This
-happens whether you edit it in place or in Site Administration.
+When you publish updates to a web content that's already being displayed
+somewhere on your portal (e.g., in a Web Content Display portlet or an Asset
+Publisher portlet), the content is immediately updated (unless, of course, you
+have a workflow enabled, which we'll discuss below). It makes no difference
+whether you edit it from a Web Content Display portlet, from the Asset
+Publisher, or from the Site Administration interface.
 
 Note: if you want to view your page the way your users will see it (i.e.,
 without all those portlet controls and icons), go up to the left palette and
