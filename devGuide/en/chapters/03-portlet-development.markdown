@@ -1406,7 +1406,16 @@ describes how to use a hook to override existing Liferay translations. You can
 share your keys with other portlets, as well as override existing Liferay
 translations. 
 
-Next let's use the Plugins SDK to create a plugin that extends another plugin. 
+In summary, if localization is important for your portlets, always consider
+statements in a *localization plan*, since some portlets in your plugin and hard
+customer requests can make a mess in your localization files and keys. If
+possible, reuse Liferay core language keys since they're already translated for
+you. If there's no key you can use, you can create your own, as described in
+this chapter. In the Plugins SDK, Liferay provides tools to help you make
+localizations and provides an easy way to check that you've translated all of
+the language properties of a resource bundle.
+
+Next, let's use the Plugins SDK to create a plugin that extends another plugin. 
 
 ## Creating Plugins to Extend Plugins [](id=creating-plugins-to-extend-plugins-liferay-portal-6-2-dev-guide-03-en)
 
@@ -1472,16 +1481,6 @@ used the CE name-->
 
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
-
-In summary, if localization is important for your portlets, always consider
-statements in a *localization plan*, since some portlets in your plugin and hard
-customer requests can make a mess in your localization files and keys. If
-possible, reuse Liferay core language keys since they're already translated for
-you. 
-
-If there's no key you can use, you can create your own, as described in this
-chapter. Liferay gives you the tools to make localization possible, and uses a
-web service to provide rudimentary translations. 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-03-en)
 
