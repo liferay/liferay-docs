@@ -92,7 +92,8 @@ Liferay's audit functionality is composed of two parts: a back-end piece that
 hooks into Liferay events and a front-end piece that gives you an interface to
 see what's happening. Both of these plugins are included in the Audit EE app
 which is available on Liferay Marketplace. Please refer to this guide's chapter
-on [Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketplace)
+on [Leveraging the Liferay
+Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
 for information on installing plugins.
 
 Once installed, you can set two properties in your `portal-ext.properties` file
@@ -328,7 +329,8 @@ Let's look at the items that need to be backed up in your Liferay installation.
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the
 *Liferay Home* folder, which is generally one folder up from where your
-application server is installed (see the [Installation and Setup](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay)
+application server is installed (see the [Installation and
+Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 chapter of this guide for specific details for your application server). At a
 minimum, this file should be backed up, but it is generally best to back up your
 whole application server.
@@ -1081,7 +1083,7 @@ immediately.
 
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal
-database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
+database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) and
 in [*Liferay in Action*](http://manning.com/sezov), but it is mentioned here
 because of its feature which generates interfaces not only for Java code, but
 also for web services and JavaScript. This means that the method calls for
@@ -1094,7 +1096,7 @@ Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
 Liferay provides a consistent interface for accessing portal data that few other
 products can match. The actual interfaces for the various services are covered
-in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
+in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) and
 in [*Liferay in Action*](http://manning.com/sezov). Before these services can be
 used, administrators need to enable users to access these services remotely.
 
@@ -1172,7 +1174,8 @@ For example, to get Organization data using a user that has the ID of
     http://2:test@localhost:8080/tunnel-web/secure/axis/Portal_OrganizationService
 
 It is important to note here how *Password Policies* (covered in this guide's
-chapter on [User Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-portal)
+chapter on [User
+Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
 can be used in combination with this feature. If you are enforcing password
 policies on your users (requiring passwords to take a certain form, requiring
 users to change their passwords on a periodic basis, etc.), any administrative
@@ -1249,7 +1252,7 @@ any language that supports it. You can either save the document to your local
 machine and then generate the client code that way, or use your tool to trigger
 Liferay to generate the document dynamically by using one of the URLs above. For
 further information about developing applications that take advantage of
-Liferay's remote services, please see the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
+Liferay's remote services, please see the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) or
 [*Liferay in Action*](http://manning.com/sezov).
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-18-en)

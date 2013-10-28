@@ -284,9 +284,8 @@ create a custom template, visit the [Liferay Developer's Guide](https://www.life
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the gear icon at the top right of the
 screen and selecting *Export/Import*. For more information on using this
-feature, visit the *Export/Import* sub-section in the [Understanding Liferay's
-common configuration options
-](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
+feature, visit the
+[Export/Import](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/export-import-liferay-portal-6-2-user-guide-04-en)
 section of this guide.
 
 After you've completed the initial set up and saved your ADT, you can manage
