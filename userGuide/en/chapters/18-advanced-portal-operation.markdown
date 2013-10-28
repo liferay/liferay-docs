@@ -92,7 +92,8 @@ Liferay's audit functionality is composed of two parts: a back-end piece that
 hooks into Liferay events and a front-end piece that gives you an interface to
 see what's happening. Both of these plugins are included in the Audit EE app
 which is available on Liferay Marketplace. Please refer to this guide's chapter
-on [Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketplace)
+on [Leveraging the Liferay
+Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
 for information on installing plugins.
 
 Once installed, you can set two properties in your `portal-ext.properties` file
@@ -328,7 +329,8 @@ Let's look at the items that need to be backed up in your Liferay installation.
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the
 *Liferay Home* folder, which is generally one folder up from where your
-application server is installed (see the [Installation and Setup](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay)
+application server is installed (see the [Installation and
+Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 chapter of this guide for specific details for your application server). At a
 minimum, this file should be backed up, but it is generally best to back up your
 whole application server.
@@ -547,10 +549,33 @@ patches that *can* be installed, from what's in the `patches` folder. To install
 the available patches, issue the following command: 
 
 	./patching-tool.sh install
-	
-Your patches are now installed. You can verify this by using the
+
+Liferay copies files into the plugins in deployment time. If these files are
+patched in the portal, they need to be updated in the plugins as well. In these
+cases, the patching tool notifies you about the change. You can run the
+following command to update these files automatically:
+
+        ./patching-tool.sh update-plugins
+
+If you do not wish to have the patching tool update the plugins, it's enough to
+re-deploy them. If there are new indexes created by the patch, the patching tool
+notifies you to update them. To get the list, run this command:
+
+        ./patching-tool.sh index-info
+
+As there's no database connection at patching time, the patches needed to be
+created at portal startup. In order to get the indexes automatically created,
+add the following line to the `portal-ext.properties` file if the server has
+permissions to modify the indexes on the database:
+
+        database.indexes.update.on.startup=true
+
+Otherwise, you have to create the indexes manually. Check the output of the
+`./patching-tool index-info` command for more details.
+
+Once your patches have been installed, you can verify them by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
-installed patches. Let's look now at how you'd manage your patches. 
+installed patches. Next, let's look now at how to manage your patches. 
 
 #### Handling hot fixes and patches [](id=handling-hot-fixes-and-patches-liferay-portal-6-2-user-guide-18-en)
 
@@ -873,7 +898,7 @@ Please also note the following changes in behavior:
     PBKDF2WithHmacSHA1/160/128000, for password encryption. PBKDF2
     (Password-Based Key Derivation Function 2) is a key derivation function
     that's part of RSA's PKCS (Public-Key Cryptography Standards) series: PKCS
-    #5, version 2.0. It's also described in the IETF's [RFC
+    \#5, version 2.0. It's also described in the IETF's [RFC
     2898](http://tools.ietf.org/html/rfc2898). The
     `PBKDF2WithHmacSHA1/160/128000` algorithm uses a keyed-hash message
     authentication code using SHA-1 and generates 160-bit hashes using 128,000
@@ -1058,7 +1083,7 @@ immediately.
 
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal
-database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
+database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) and
 in [*Liferay in Action*](http://manning.com/sezov), but it is mentioned here
 because of its feature which generates interfaces not only for Java code, but
 also for web services and JavaScript. This means that the method calls for
@@ -1071,7 +1096,7 @@ Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
 Liferay provides a consistent interface for accessing portal data that few other
 products can match. The actual interfaces for the various services are covered
-in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) and
+in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) and
 in [*Liferay in Action*](http://manning.com/sezov). Before these services can be
 used, administrators need to enable users to access these services remotely.
 
@@ -1149,7 +1174,8 @@ For example, to get Organization data using a user that has the ID of
     http://2:test@localhost:8080/tunnel-web/secure/axis/Portal_OrganizationService
 
 It is important to note here how *Password Policies* (covered in this guide's
-chapter on [User Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-portal)
+chapter on [User
+Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
 can be used in combination with this feature. If you are enforcing password
 policies on your users (requiring passwords to take a certain form, requiring
 users to change their passwords on a periodic basis, etc.), any administrative
@@ -1226,7 +1252,7 @@ any language that supports it. You can either save the document to your local
 machine and then generate the client code that way, or use your tool to trigger
 Liferay to generate the document dynamically by using one of the URLs above. For
 further information about developing applications that take advantage of
-Liferay's remote services, please see the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
+Liferay's remote services, please see the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) or
 [*Liferay in Action*](http://manning.com/sezov).
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-18-en)

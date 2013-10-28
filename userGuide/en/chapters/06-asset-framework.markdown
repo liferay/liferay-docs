@@ -344,13 +344,13 @@ searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer class defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/asset-framewo-4).
-For this reason, you can have additional asset types defined in your portal
-beyond the ones that Liferay ships with by default. If this is the case, you
-might want to tweak the `frequencyThreshold` and the `maxTerms` settings to
-increase the number of asset types displayed past the default of 10. This is
-covered in the section below on search options. 
+described in the [Asset
+Framework](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en).
+section of the Developer's Guide. For this reason, you can have additional asset
+types defined in your portal beyond the ones that Liferay ships with by default.
+If this is the case, you might want to tweak the `frequencyThreshold` and the
+`maxTerms` settings to increase the number of asset types displayed past the
+default of 10. This is covered in the section below on search options.
 
 #### Asset Tags [](id=asset-tags-liferay-portal-6-2-user-guide-06-en)
 
@@ -974,7 +974,7 @@ content to one of several formats:
 - TXT
 
     Please refer to the User Guide's section on [Liferay Server
-    Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
+    Administration](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/server-administration-liferay-portal-6-2-user-guide-17-en)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
@@ -1091,6 +1091,17 @@ Page manually, once you've added an Asset Publisher portlet to the page, open
 its configuration window. Then check the *Set as the Default Asset Publisher for
 This Page* box. Also, for its display settings, set the Display Style to
 *Abstracts* and the Asset Link Behavior to *View in Context*.
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** Web content linked in the Asset
+ Publisher can be viewed by clicking their asset links. With the *View in
+Context* behavior checked, the link displays the Web Content in its
+configured display page. If the web content does not have a configured display
+page, it is displayed in the web content display portlet to which the
+asset belongs.
+
+---
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole

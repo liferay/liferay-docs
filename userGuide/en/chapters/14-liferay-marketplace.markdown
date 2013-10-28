@@ -503,7 +503,7 @@ wish to develop themes for Liferay, as you can now choose a theme which most
 closely resembles what you want to do and then customize it. This is much easier
 than starting a theme from scratch. You can learn more about theme development
 in [*Liferay in Action*](http://manning.com/sezov) or the [Liferay Development
-Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development).
+Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 ![Figure 14.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
@@ -513,7 +513,7 @@ Layout Templates are ways of choosing how your portlets will be arranged on a
 page. They make up the body of your page, the large area into which you can drag
 and drop portlets. Liferay Portal comes with several built-in layout templates.
 If you have a complex page layout (especially for your home page), you may wish
-to create a custom layout template of your own. This is covered in [*Liferay in Action*](http://manning.com/sezov) and the [Liferay Development Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development).
+to create a custom layout template of your own. This is covered in [*Liferay in Action*](http://manning.com/sezov) and the [Liferay Development Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 ### Hook Plugins [](id=hook-plugins-liferay-portal-6-2-user-guide-14-en)
 
@@ -622,7 +622,8 @@ folder. This folder generally resides one directory up from where your
 application server is installed, though it may be elsewhere depending on which
 application server you are running. To find out where the Liferay Home folder is
 for your application server, please see the section on your server in this
-guide's [Installing Liferay](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay)
+guide's [Installation and
+Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 chapter. The first time Liferay is launched, it creates a folder structure in
 Liferay Home to house various configuration and administrative data. One of the
 folders it creates is called *deploy*. If you copy a portlet or theme plugin

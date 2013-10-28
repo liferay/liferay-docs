@@ -277,8 +277,10 @@ the currently configured parent.
  that you can, for example, appoint other users to be organization
  administrators or organization owners. Organization owners are equivalent to
  organization administrators except that they can assign the Organization Owner
- and Organization Administrator roles to other users; organization
- administrators can't make these assignments.
+ and Organization Administrator roles to other users; they can also remove the
+ memberships of other Organization Administrators or Owners. Organization
+ administrators can't make these role assignments and can't manage the
+ memberships of other Organization Administrators or Owners.
 
 ---
 
@@ -611,6 +613,69 @@ assigned to this role.
 role.
 
 **Delete:** permanently removes a role from the portal.
+
+Next, let's learn about the difference between the (portal/site/organization)
+administrator and owner roles that Liferay provides out-of-the-box.
+
+### Out-of-the-box Liferay Roles [](id=out-of-the-box-liferay-roles-liferay-portal-6-2-user-guide-16-en)
+
+If you navigate to the Control Panel and click on *Roles*, you'll see a list of
+all the roles that have been created in your portal. This list includes roles
+that Liferay provides out-of-the-box and any additional custom roles. These are
+some of Liferay's out-of-the-box roles:
+
+- Guest: The Guest role is assigned to unauthenticated users and grants the
+  lowest-level permissions within the portal.
+- User: The User role is assigned to authenticated users and grants basic
+  basic permissions within the portal.
+- Power User: By default, the Power User role grants the same permissions as the
+  User role. It's designed to be an extension point for distinguishing regular
+  users from more privileged users. For example, you can set up your portal so
+  that only Power Users have personal sites.
+- Site Member: The Site Member role grants basic privileges within a site, such
+  as the ability to visit the site's private pages.
+- Site Administrator: The Site Administrator role grants the ability to manage
+  *almost* all aspects of a site including site content, site memberships, and
+  site settings. Site Administrators cannot delete the membership of or remove
+  roles from other Site Administrators or Site Owners. They also *cannot* assign
+  other users as Site Administrators or Site Owners.
+- Site Owner: The Site Owner role is the same as the Site Administrator role
+  except that it grants the ability to manage *all* aspects of a site, including
+  the ability to delete the membership of or remove roles from Site
+  Administrators or other Site Owners. They *can* assign other users as Site
+  Administrators or Site Owners.
+- Organization User: The Organization User role grants basic privileges within
+  an organization. If the organization has an attached site, the Organization
+  User role implicitly grants the Site member role within the attached site.
+- Organization Administrator: The Organization Administrator role grants the
+  ability to manage *almost* all aspects of an organization including the
+  organization's users and the organization's site (if it exists). Organization
+  Administrators cannot delete the membership of or remove roles from other
+  Organization Administrators or Organization Owners. They also *cannot* assign
+  other users as Organization Administrators or Organization Owners.
+- Organization Owner: The Organization Owner role is the same as the
+  Organization Administrator role except that it grants the ability to manage
+  *all* aspects of an organization, including the ability to delete the
+  membership of or remove roles from Organization Administrators or other
+  Organization Owners. They *can* assign other users as Organization
+  Administrators or Organization Owners.
+- Administrator: The administrator role grants the ability to manage the entire
+  portal, including global portal settings and individual sites, organizations,
+  and users.
+
+---
+
+ ![Tip](../../images/01-tip.png) **Tip:** It's easy to overlook the differences between
+ site and organization owners and site and organization administrators. Remember
+ that site and organization administrators *cannot* delete the membership of or
+ remove the administrator or owner role from any other administrator or owner.
+ They also *cannot* appoint other users as site or organization administrators
+ or owners. Site and organization owners *can* delete the membership of or
+ remove the administrator or owner roles from other site or organization
+ administrators. They *can* appoint other users as site or organization
+ administrators or owners.
+
+---
 
 Next, let's examine how to configure the permissions granted by different roles.
 
