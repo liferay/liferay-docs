@@ -20,7 +20,7 @@ We'll cover the following topics:
 
 - Creating a Hook
 - Overriding Web Resources
-- Customizing JSPs Without Modifying the Original
+- Customizing JSPs by Extending the Original
 - Customizing Sites and Site Templates with Application Adapters 
 - Performing a Custom Action 
 - Overriding and Adding Struts Actions 
@@ -152,36 +152,41 @@ JavaScript files, CSS files, or images.
 Replacing a portal JSP is a simple task with hooks. Let's create and deploy a
 hook to modify your portal's *Terms of Use* page. 
 
-1.  Create the directory `hooks/example-hook/docroot/META-INF/custom_jsps`.
+1.  Use the hook project we created earlier or create a new hook project. 
 
-2.  Edit `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml` by adding the
-    following line between `<hook></hook>`:
+2.  Open the `liferay-hook.xml` file from your project's `docroot/WEB-INF`
+    folder in Liferay IDE. By default, it opens in *Overview* mode. This mode,
+    gives you a graphical user interface for developing your hook. You can
+    toggle between overview mode and source mode via their respective tabs for
+    the `liferay-hook.xml` file's editor. 
 
-        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+3.  Select the *Custom JSPs* folder from the outline to bring up the custom JSP
+    options. Select the checkbox *Customize Liferay Portal JSPs* and create
+    the default custom JSP folder `/META-INF/custom_jsps`, by clicking the icon
+    that has the three yellow diamonds. 
 
-    When your hook is deployed, any JSP you put in the `custom_jsps` directory
-    replaces a corresponding JSP with the same name and relative path found
-    inside your Liferay instance. The directory structure inside this folder
-    must mirror the one within
-    `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/ROOT`. 
+    ![Figure 7.3: Liferay IDE lets you specify a folder for the custom JSPs you're developing. Create the folder by clicking the icon that has the three yellow diamonds.](../../images/hook-create-custom-jsps-folder.png)
 
-3.  Create the directory
-    `hooks/example-hook/docroot/META-INF/custom_jsps/html/portal/`, then place
-    in it a copy of the `terms_of_use.jsp` file from
-    `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/ROOT/html/portal/`.
+4.  Add to the listing of custom JSPs by clicking the plus icon and specifying
+    Portal's `html/portal/terms_of_use.jsp` file. Hint, the browse icon on the
+    right-hand side within the custom JSP text field simplifies finding the JSP
+    you want to customize. It lets you scroll through the JSPs that are
+    accessible and lets you specify key words to narrow your search. 
 
-4.  Open your copy of the `terms_of_use.jsp` and modify as necessary. 
+    ![Figure 7.4: Liferay IDE simplifies adding a custom JSP to your hook by providing a powerful overview mode for editing your `liferay-hook.xml` file.](../../images/add-jsp-customization-with-hook.png)
 
-5.  Deploy your hook and wait until it is deployed successfully. 
+5.  Open your hook's `docroot/META-INF/custom_jsps/html/portal/terms_of_use.jsp`
+    file and modify it as necessary. 
 
-6.  Create a new user and log in. The *Terms of Use* page should include the
+    Note, lots of errors will show in the editor because the resources used in
+    the JSP (e.g., `PortalUtil`) are not available in the project; but they'll
+    be available from the portal once the hook plugin is deployed to the portal
+    server. 
+
+6.  Deploy your hook and wait until it is deployed successfully. 
+
+7.  Create a new user and log in. The *Terms of Use* page should include the
     changes you made above. 
-
-<!--
-The steps above work but we should warn the reader that lots of errors appear
-when editing the terms_of_use.jsp in Eclipse since the required imports don't
-exist in the hook project; they're in Liferay. -Jesse, 9/27/2013
--->
 
 Now there are two *Terms of Use* JSP files in the
 `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/ROOT/html/portal`
@@ -211,38 +216,53 @@ won't know which version to use.
 
 Next, we'll look at a different way to customize a JSP.
 
-## Customizing JSPs Without Overriding the Original [](id=customize-jsp-without-overriding-original--liferay-portal-6-2-dev-guide-en)
+## Customizing JSPs by Extending the Original [](id=customize-jsp-without-overriding-original--liferay-portal-6-2-dev-guide-en)
 
-If we can override a JSP with a hook plugin, why learn another way to accomplish
-the same thing? Good question. Each time the original (overridden) file is
-updated by Liferay (for example, to fix a bug) after you override it, you'll
-have to manually make the same changes to your customized file if you want to
-receive the update. 
+If we can replace a JSP with a hook plugin, why learn another way to accomplish
+the same thing? Good question. Let's say you want to preserve the original JSP's
+content and functionality, but you want to add more to the JSP. And when you
+upgrade Liferay, you want to benefit from any changes made to that upgraded JSP.
+Well, you can; simply include the original JSP and then add more stuff to it. 
 
-You can avoid this drawback and make your JSP modifications less invasive by
-rendering the original JSP into a string and modifying it dynamically
-afterwards. This way, you can change minor elements of a JSP, like adding a new
-heading or button, without modifying your hook every time you upgrade Liferay.
-Here's an example that customizes the Search portlet. Specifically, it adds
-some helpful text to aid the user in searching for content. Since this technique
+Here's an example that customizes the search page of the Blogs portlet. Specifically, it
+adds helpful text to aid the user in searching for content. Since this technique
 involves string manipulation, it's mainly useful for making a small number of
 changes to a JSP.
 
-1.  Copy the
-    `[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/html/portlet/search/search.jsp`
-    file to your hook project: First, create the
-    `docroot/META-INF/custom_jsps/html/portlet/search` folder in your hook
-    project and then copy the `search.jsp` to this folder.
+1.  Use the hook project we created earlier or create a new hook project. 
 
-2.  Append the following code to the end of the `search.jsp` file:
+2.  Open the `liferay-hook.xml` file from your project's `docroot/WEB-INF`
+    folder in Liferay IDE and select the file's *Overview* mode tab.  
 
+3.  Select the *Custom JSPs* folder from the outline to bring up the custom JSP
+    options. Select the checkbox *Customize Liferay Portal JSPs* and create
+    the default custom JSP folder `/META-INF/custom_jsps` by clicking the icon
+    that has the three yellow diamonds. 
+
+    Add to the listing of custom JSPs by clicking the plus icon and specifying
+    Portal's `html/portlet/blogs/search.jsp` file. Hint, the browse icon on the
+    right-hand side within the custom JSP text field simplifies finding the JSP
+    you want to customize. 
+
+    Click OK and save the `liferay-hook.xml` file. Liferay IDE pulls a copy of
+    the Liferay Portal JSP into your project so you can modify it. 
+
+4.  Open the JSP file `docroot/META-INF/custom_jsps/html/blogs/search.jsp` that
+    Liferay IDE pulled into your project. 
+
+5.  Replace the JSPs code with the following: 
+
+        <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
+        
+        <%@ page import="com.liferay.portal.kernel.util.StringUtil" %>
+        
         <liferay-util:buffer var="html">
-            <liferay-util:include page="/html/portlet/search/view.portal.jsp" />
+            <liferay-util:include page="/html/portlet/blogs/search.portal.jsp" />
         </liferay-util:buffer>
-
+        
         <%
         html = StringUtil.add(
-            html, 
+            html,
             "Didn't find what you were looking for? Refine your search and " +
                 "try again!",
             "\n");
@@ -250,16 +270,15 @@ changes to a JSP.
 
         <%= html %>
 
-3.  Make sure your Liferay server is running and redeploy your hook plugin.
+    Notice how this code assigns the original JSP's HTML content to the variable
+    `html`. We proceed to add some more content of our own to that HTML and then
+    display it. 
 
-4.  Add the *Search* portlet to a page by selecting *Add* &rarr; *Applications*
-    &rarr; *Tools* &rarr; *Search*.
+6.  Deploy the hook plugin and add the Blogs portlet to a page. 
 
-5.  Input some text into the search field and click *Search*.
+7.  Add a blog and then use the Blog portlet's search. 
 
-Your custom string is now displayed at the bottom of the Search portlet.
-
-![Figure 10.3: After customizing the JSP file in your hook and redeploying, your custom string is displayed at the bottom of the Search portlet.](../../images/jsp-search-string.png)
+Your custom message now shows below the search results. 
 
 Next, we'll explore application adapters and what they can do for your sites and
 site templates.
@@ -356,7 +375,7 @@ Here's how we do it:
     the Site Administration interface. From the *Application Adapter* field's
     drop-down selector menu, select *Example*. Then click *Save*. 
 
-    ![Figure 10.4: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 10.3: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
 
 6.  Navigate to your site's pages, add the Navigation portlet to a page, and
     make sure that the modification message from your Application Adapter hook
@@ -682,7 +701,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 10.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 10.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 

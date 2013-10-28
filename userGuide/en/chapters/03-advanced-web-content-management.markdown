@@ -100,8 +100,9 @@ as that of the original. Once you've copied a web content structure, you should
 enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
-detail templates and list templates, please refer to chapter 9 on [Dynamic Data
-Lists](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-liferay).
+detail templates and list templates, please refer to chapter 10 on [Using Web
+Forms and Dynamic Data
+Lists](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en).
 
 ![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page.](../../images/manage-structures.png)
 
@@ -1032,14 +1033,12 @@ advanced publishing options.
 If a web site isn't properly managed, it can quickly become stale and that
 drives viewers away. If people are finding your site because of search engines,
 you don't want them presented with outdated (and possibly inaccurate) web
-content.
-
-You also want your content to be found easily by your users. This is done
-through tags and categories.
+content. You also want your content to be found easily by your users. This is
+done through tags and categories.
 
 Additionally, you may want to create content and send it through an approval and
-reviewal process weeks before you want it displayed on the web site. Liferay
-gives you this flexibility with the *Schedule* and *Workflow* features.
+review process weeks before you want it displayed on the web site. Liferay gives
+you this flexibility with the *Schedule* and *Workflow* features.
 
 ## Scheduling Web Content [](id=scheduling-web-content-liferay-portal-6-2-user-guide-03-en)
 

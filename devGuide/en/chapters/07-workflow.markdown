@@ -996,45 +996,49 @@ Are you ready for our *Kaleo Designer for Java* finale? You just have to
 activate the workflow in your Liferay Portal, then we'll set up the DDL record
 and try out our new workflow. Let's activate! 
 
+<!-- The content below has been updated for 6.2 -->
+
 ## Using Workflows in Liferay Portal [](id=using-workflows-in-liferay-portal-liferay-portal-6-2-dev-guide-07-en)
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
-Liferay Portal. Navigate to the *Control Panel* and select *Workflow*. Then, in
-the *Definitions* tab, click on the *Actions* button and select *Activate*. 
+Liferay Portal. Navigate to the *Control Panel* and, under the *Configuration*
+heading, select *Workflow*. Then, in the *Definitions* tab, click on the
+*Actions* button and select *Activate*.
 
 A workflow definition can be associated with publication of an asset or DDL
 record. Let's associate our ticket process workflow definition with a DDL record
-that lets a developer indicate whether she'll fix a ticket's issue. You can
-find detailed instructions for creating a DDL by visiting the section [Defining
-data
-types](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/defining-data-typ-1)
-in *Using Liferay Portal*. We'll demonstrate how easy it is. 
+that lets a developer indicate whether she'll fix a ticket's issue. You can find
+detailed instructions for creating a DDL by visiting the section [Defining data
+types](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/building-a-list-platform-in-liferay-and-liferay-portal-6-2-user-guide-10-en)
+in *Using Liferay Portal*. We'll demonstrate how easy it is.
 
 ## Using Dynamic Data Lists (DDLs) with Workflows [](id=using-dynamic-data-lists-ddls-with-workflow-liferay-portal-6-2-dev-guide-en)
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
-Lists](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/dynamic-data-lists-in-lifer-1)
-in *Using Liferay Portal*. 
+Lists](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en)
+in *Using Liferay Portal*.
 
 First we'll create a data definition that lets the user select a status value. 
 
-1.  In Liferay Portal, go to *Control Panel* &rarr; *Dynamic Data Lists*.
+1. In Liferay Portal, go to *Site Administration* &rarr; *Content* &rarr;
+   *Dynamic Data Lists*.
 
-2.  Click the *Manage Data Definitions* link, then *Add* a new data definition.
+2. Click the *Manage Data Definitions* link, then *Add* a new data definition.
 
-3.  In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
+3. Name the data definition *Status*. Then, in the *Fields* tab, drag and drop
+   the *Select* field onto the canvas.
 
     ![Figure 7.18: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
-4.  In the *Settings* tab, double click the *Name* property to open the property
-    editor--enter *status* as the value. 
+4. In the *Settings* tab, double click the *Name* property to open the property
+   editor--enter *status* as the value. Then click *Save*.
 
-5.  Edit the *Options* setting; give your *status* field option values of `fix`
-    with label "Fix" and `not` with label "Do not fix". 
+5. Edit the *Options* setting; give your *status* field option values of `fix`
+   with label "Fix" and `not` with label "Do not fix". 
 
-6.  Click *Save*. 
+6. Click *Save*. 
 
 Recall the code we inserted for our condition node:
 
@@ -1064,13 +1068,13 @@ Kaleo Forms portlet to test our new workflow definition!
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
 You can learn how to use Kaleo Forms in the [Kaleo
-Forms](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/lp-6-1-ugen06-kaleo-forms-0)
-section of *Using Liferay Portal*; we'll demonstrate its use here by using it
-with our ticket process workflow. 
+Forms](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
+chapter of *Using Liferay Portal*; we'll demonstrate its use here by using it
+with our ticket process workflow.
 
 1.  Create a new *Process* in Kaleo Forms; name it *Ticket Process*. 
 
-2.  Select the *status* data definition we created earlier. 
+2.  Select the *status* entry definition we created earlier. 
 
 3.  Add an *Initial Form* based on our *status* data definition. 
 

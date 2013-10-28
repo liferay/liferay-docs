@@ -39,42 +39,54 @@ Below is an example OpenSocial gadget XML file for a map gadget:
 
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
-		<ModulePrefs title="Map of __UP_loc__" height="300" 
-			author="Jane Smith" 
-			author_email="xxx@google.com" /> 
-		<UserPref name="loc" 
-			display_name="Location" required="true" /> 
+		<ModulePrefs title="Location Map" height="300"
+		    author="Cody Hoag" 
+			author_email="cody.hoag@liferay.com" /> 
+		<UserPref name="lat" display_name="Latitude" required="true" /> 
+		<UserPref name="lng" display_name="Longitude" required="true" /> 
 		<Content type="html">
 		<![CDATA[ 
-			<script src="http://maps.google.com/maps?file=js" type="text/javascript">
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript">
 			</script>
 			<div id="map" style="width: 100%; height: 100%;"></div>
 			<script type="text/javascript">
-			var prefs = new gadgets.Prefs();
-			var map = new GMap(document.getElementById("map"));
-			map.addControl(new GSmallMapControl());
-			map.addControl(new GMapTypeControl());
-			var geocoder = new GClientGeocoder();
-			geocoder.getLatLng(prefs.getString('loc'), showMap)
+			
+			var includeMarker = false;
+			var latlng;
+			var userPrefs = new gadgets.Prefs();
+            var latLocation = userPrefs.getFloat('lat');
+            var lngLocation = userPrefs.getFloat('lng');
+			
+			if (latLocation == "" && lngLocation == "") {
+			    latlng = new google.maps.LatLng(33.997547,-117.814305);
+			}
+			else {
+			    latlng = new google.maps.LatLng(latLocation,lngLocation);
+			    includeMarker=true;
+			}
+			
+			function initialize() {
+                var mapOptions = {
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 7
+                }
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                
+                if (includeMarker == true) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: latlng
+                    });
+                }
+            }
 
-			function showMap(point) {
-				if (point!=null) {
-					map.centerAndZoom(point, 6);
-				}
-			};    
-			</script>
-		]]> 
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            </script>
+        ]]> 
 		</Content>
 	</Module>
-
-<!-- The above code for the map gadget cannot be viewed on a Liferay page. It
-needs to be updated to reference Google's v3 API. It is currently using v2 API.
-A ticket has been created to follow progress: LRDOCS-811 -->
-
-For more details on the map gadget, visit Google's [Specifying a
-Geographical
-Location](https://developers.google.com/gadgets/docs/fundamentals#location)
-section.
 
 For the official documentation on Gadget anatomy, see Google's [Anatomy of a
 Gadget](https://developers.google.com/gadgets/docs/basic#Anatomy). For
@@ -148,17 +160,19 @@ bring up map gadgets, they are typically interested in their current location or
 a location of interest--not some random distant land. Therefore, it makes sense
 for a map gadget to take the user's location of interest as input. UserPrefs
 facilitate taking in this information, storing it, and processing it to present
-gadget user interfaces customized to the user. Here is the UserPref for our
+gadget user interfaces customized to the user. Here are the UserPrefs for our
 current map gadget:
  
-    <UserPref name="loc" display_name="Location" required="true" />
+    <UserPref name="lat" display_name="Latitude" required="true" />
+    <UserPref name="lng" display_name="Longitude" required="true" />
 
-Notice the UserPref `loc` of the map gadget. This user preference takes in the
-user's location preference, stores it, and displays it on the mapping interface.
+Notice the `lat` and `lng` UserPrefs of the map gadget. These user preferences
+take in the user's latitude and longitude preferences, stores them, and displays
+them on the mapping interface.
 
 Lastly, we'll look at what a user sees in the gadget's user interface when
-setting the *Location* user preference. Here is a snapshot of what this window
-looks like on Liferay Portal:
+setting the *Latitude* and *Longitude* user preferences. Here is a snapshot of
+what this window looks like on Liferay Portal:
 
 ![Figure 8.2: Here, the map gadget's user preference is made available for user input.](../../images/opensocial-21.png)
 
