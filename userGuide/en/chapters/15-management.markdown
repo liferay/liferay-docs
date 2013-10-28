@@ -1420,7 +1420,7 @@ your installation, enter the custom value here.
 When you are finished, click *Save*. Next, let's learn about the SAML 2.0
 Provider EE plugin.
 
-### SAML
+### SAML [](id=lp-6-1-ugen15-saml-0)
 
 ![EE-only](../../images/ee-feature-web.png)
 
@@ -1439,7 +1439,7 @@ provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
 Provider.
 
-#### Setting up Liferay as a SAML Identity Provider
+#### Setting up Liferay as a SAML Identity Provider [](id=lp-6-1-ugen15-setting-up-liferay-as-a-saml-identity-provider-0)
 
 In order to set Liferay up to act as a SAML Identity Provider, use the following
 steps:
@@ -1507,7 +1507,7 @@ back to this Liferay instance's Control Panel and add the Service Provider:
 *Control Panel* &rarr; *SAML Admin* &rrar; *Service Provider Connections* &rarr;
 *Add Service Provider*.
 
-#### Setting up Liferay as a SAML Service Provider
+#### Setting up Liferay as a SAML Service Provider [](id=lp-6-1-ugen15-setting-up-liferay-as-a-saml-service-provider-0)
 
 In order to set Liferay up to act as a SAML Service Provider, use the following
 steps. Many of the steps are similar to the ones for setting Liferay up to act
