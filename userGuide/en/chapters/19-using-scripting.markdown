@@ -383,11 +383,11 @@ the interface. Right-click on the `docroot/WEB-INF/src` folder and select *New*
 &rarr; *Interface*. You'll create your interface in the `com.liferay.sample`
 package. Name it `ScriptUtil`. 
 
-![Figure 19.2: Create a new Java Interface which you'll later implement.](../../images/13-new-interface.png)
+![Figure 19.2: Create a new Java interface which you'll implement in the next step.](../../images/13-new-interface.png)
 
 Next, add two methods to the interface. 
 
-	package com.liferay.samples;
+	package com.liferay.sample;
 
 	public interface ScriptUtil {
 
@@ -406,7 +406,7 @@ folder and select *New* &rarr; *Class*. Create the class in the
 
 Next, add implementations for the two methods. 
 
-	package com.liferay.samples;
+	package com.liferay.sample;
 
 	import com.liferay.portal.kernel.log.Log;
 	import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -429,42 +429,39 @@ Next, add implementations for the two methods.
 		
 		private static Log _log = LogFactoryUtil.getLog(ScriptUtilImpl.class); 
 
-	}
+        }
 	
 Liferay makes extensive use of the Spring Framework and you'll be using it here
 to inject your implementation class into the application. Spring needs a bean
-definition which you'll declare in an XML file named `applicationContext.xml`.
-Create this file in the `docroot/WEB-INF/` directory and add the following code: 
+definition which you'll declare in an XML file named `hook-spring.xml`. Create
+a `docroot/WEB-INF/src/META-INF` directory, create the `hook-spring.xml` file in
+this folder, and add the following code to `hook-spring.xml`: 
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+        <?xml version="1.0"?>
 
-	<beans>
-		<bean id="com.liferay.sample.ScriptUtil" class="com.liferay.sample.ScriptUtilImpl" />
-	</beans>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                default-destroy-method="destroy" default-init-method="afterPropertiesSet"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+                <bean id="com.liferay.sample.ScriptUtilImpl" class="com.liferay.sample.ScriptUtilImpl" />
+        </beans>
 
 Upon deployment, you'll need the portal to create a `BeanLocator` for your
-plugin. The `BeanLocator` reads the bean definitions you provided.
-
-If you're adding your utility to a Service Builder enabled plugin, then you'll
-already have a `BeanLocator` and you can skip this step. Since this Hook plugin
-is not already using Service Builder, you'll need to define a context loader
-listener in our Hook to provide a `BeanLocator`. Create a
+plugin. The `BeanLocator` reads the bean definitions you provided. Create a
 `docroot/WEB-INF/web.xml` file in your project and add the following code to it:
 
-	<?xml version="1.0"?>
-	<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
-
-	<web-app>
-		<listener>
-			<listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
-		</listener>
-	</web-app>
+        <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+                <context-param>
+                        <param-name>portalContextConfigLocation</param-name>
+                        <param-value>/WEB-INF/classes/META-INF/hook-spring.xml</param-value>
+                </context-param>
+        </web-app>
 	
 If your project already contains a `docroot/WEB-INF/web.xml` file, you can
-replace its contents with the code above. Save all of the changes you've made
-and deploy the hook. Once the hook has been deployed successfully, the
-`ScriptUtil` can be used in your script engine code. 
+simply add the contents of the `<context-param>` element inside of the
+`<web-app>` element. Save all of the changes you've made and deploy the hook.
+Once the hook has been deployed successfully, the `ScriptUtil` can be used in
+your script engine code. 
 
 To see the `ScriptUtil` code in action, navigate back to the *Control Panel*
 &rarr; *Server Administration* &rarr; *Script*. Change the script type to Groovy
