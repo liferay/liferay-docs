@@ -810,7 +810,11 @@ to select content dynamically.
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
-content. You have the following options for creating these rules:
+content. You can define complicated rules for selecting assets for display and
+Liferay automatically takes permissions into account. Liferay's Asset Publisher
+performs well in these situations since it queries by search index instead of
+querying the database directly. You have the following options for creating
+rules for selecting content:
 
 **Scope:** Choose the sites from which the content should be selected. This
 works the same way as with manual asset selection: assets can only be displayed
