@@ -511,8 +511,16 @@ application servers in alphabetical order.
 
 ## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
-1. Get Tomcat? And do the Tomcat stuff (create lib/ext, set Tomcat as app
-server in build.properties)
+0. Get Tcat, Liferay WAR and Portal Dependencies WAR
+1. Create lib/ext, get Tomcat dependency jars (see Tomcat section, copy here)
+2. Register server with your Tcat admin console server
+3. Create server Profile (stuff in setenv.sh and profile.xml) to set env variables, etc.
+4. Create `ROOT.xml` locally and use console to upload to
+`conf/Catalina/localhost`. Set `crossContext="true"`.
+5. Edit `catalina.properties` in `conf/`, adding `lib/ext` to the common.loader
+property as in tomcat instructions but can do in console).
+6. 
+
 
 ---
 
