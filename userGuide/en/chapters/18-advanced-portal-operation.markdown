@@ -1081,32 +1081,32 @@ search indexes*. This invokes each of your portal's indexer classes so that the
 all new information that Liferay 6.2 is configured to index gets indexed
 immediately.
 
+Have you ever wondered how to use WSRP in Liferay? We'll cover this next!
+
 ## Using Web Services for Remote Portlets (WSRP)
 
 The Web Services for Remote Portlets (WSRP) specification defines a web service
-interface for accessing and interacting with interactive presentation-oriented
-web services in the form of portlets. Now you're probably wondering why we need
-WSRP if we already have web services and portlets. You could provide
-platform-independent access to specific services via web services. However, to
-allow the user access to those services, you would need to build presentation
-logic and a user interface. To develop, compile, and deploy the presentation to
-the end-user would take a substantial amount of time and effort, which we'd all
-love to avoid. Therefore, you can implement WSRP's presentation-oriented web
-services to allow portals to display remote portlets inside their pages, as if
-locally deployed, without requiring any additional programming by developers.
+interface for accessing and interacting with presentation-oriented web services
+in the form of portlets. Now you're probably wondering why we need WSRP if we
+already have web services and portlets. You could provide platform-independent
+access to specific services via web services. However, to allow the user access
+to those services, you would need to build presentation logic and a user
+interface. To develop, compile, and deploy the presentation to the end-user
+would take a substantial amount of time and effort, which we'd all love to
+avoid. Therefore, you can implement WSRP's presentation-oriented web services to
+allow portals to display remote portlets inside their pages, as if locally
+deployed, without requiring any additional programming by developers.
 
 In essence, you'll be providing access to your business logic and providing the
-user interface using WSRP. Here are the four main components for WSRP:
+user interface using WSRP. Here are the two main components for WSRP:
 
 - *Producer:* A web service that offers one or more portlets and is described
 using a Web Services Description Language (WSDL) document.
 - *Consumer:* The web service client that gathers all the components allowing
 for the presentation to the end user.
-- *Portlets*
-- *End Users*
 
-We'll explain each of these and their roles in the next section. So, without
-further ado, let's explore WSRP in Liferay!
+We'll explain how the components interact with each other in more detail in the
+next section. So, without further ado, let's explore WSRP in Liferay!
 
 ### WSRP with Liferay
 
@@ -1127,10 +1127,10 @@ producers and consumers and how they interact.
 
 ![Figure 18.11: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
 
-As we mentioned in the previous chapter, there are four main components of the
-WSRP process: producers, consumers, portlets, and end users. For an in-depth
-analysis for each of these components and how they work together, visit [How
-WSRP
+As we mentioned in the previous chapter, there are two main components of the
+WSRP process: producers and consumers. For an in-depth analysis for each of
+these components and how they work together to provide remote portlets for end
+users, visit [How WSRP
 Works](http://docs.oracle.com/cd/E13218_01/wlp/docs81/wsrp/intro.html#1001163)
 provided by Oracle.
 
@@ -1138,8 +1138,8 @@ Let's go ahead and create a producer. Go to the *Producers* tab and click *Add
 Producer*. Give your producer a name and choose the appropriate version of WSRP
 to use. You'll also notice a list of available portlets your producer can use.
 For demonstration purposes, we'll select the *Hello World* portlet. Once you
-click the *Save* button, the portal generates a WSDL to define your producer. To
-view the WSDL document, click the URL link provided.
+click the *Save* button, the portal generates a WSDL document to define your
+producer. To view the WSDL document, click the URL link provided.
 
 ![Figure 18.12: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
 
@@ -1164,15 +1164,36 @@ We'll leave these additional fields blank for our demonstration. Lastly, we need
 to define the portlets that the end-user will be able to use from this consumer.
 To do this, go to *Actions* &rarr; *Manage Portlets* for your consumer. Add the
 remote portlets that you've configured for your producer. In this case, select
-the *Hello World* remote portlet and give the new portlet and arbitrary name.
-Now end users can "consume" or use the remote portlet in the portal with Liferay
-WSRP.
+the *Hello World* remote portlet and give the new portlet an arbitrary name. Now
+end users can "consume" or use the remote portlet just like any local portlet in
+the portal.
 
 Next, we'll learn how to create custom remote portlets.
 
 ### Creating Custom Remote Portlets
 
+With the demand for dynamic portlets by end users, sometimes a finite,
+pre-selected list of remote portlets isn't enough. Because of this, Liferay
+allows you to make custom developed portlets remotely accessible for WSRP.
 
+To enable your custom portlet for WSRP, you'll need to add the
+`<remoteable>true</remoteable>` tag in your portlet's
+`docroot/WEB-INF/liferay-portlet.xml` file:
+
+	<liferay-portlet-app>
+		<portlet>
+			<portlet-name>RemoteSamplePortlet</portlet-name>
+			<remoteable>true</remoteable>
+	...
+		</portlet>
+	...
+	</liferay-portlet-app>
+
+After editing your portlet's `liferay-portlet.xml` file, your custom portlet
+will appear in the list of portlets available when creating a WSRP producer.
+Congratulations! Now you can share all your portlets to end users using WSRP!
+
+Next, we'll learn how to remotely access Liferay services.
 
 ## Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-liferay-portal-6-2-user-guide-18-en)
 
@@ -1185,7 +1206,7 @@ also for web services and JavaScript. This means that the method calls for
 storing and retrieving portal objects are all the same, and are generated in the
 same step.
 
-![Figure 18.11: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
+![Figure 18.13: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
@@ -1235,7 +1256,7 @@ If the machine on which the batch job is running has the IP address
 Liferay's web services and pass in user credentials to be used to upload the
 documents.
 
-![Figure 18.12: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
+![Figure 18.14: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
 
 The second layer of security is Liferay's security model that it uses for every
 object in the portal. The user account that accesses the services remotely must
