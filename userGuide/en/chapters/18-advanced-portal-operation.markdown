@@ -1079,6 +1079,40 @@ search indexes*. This invokes each of your portal's indexer classes so that the
 all new information that Liferay 6.2 is configured to index gets indexed
 immediately.
 
+## Using Web Services for Remote Portlets (WSRP)
+
+The Web Services for Remote Portlets (WSRP) specification defines a web service
+interface for accessing and interacting with interactive presentation-oriented
+web services in the form of portlets. Now you're probably wondering why we need
+WSRP if we already have web services and portlets. You could provide
+platform-independent access to our services via web services. However, to allow
+the user access to those services, you would need to build presentation logic
+and a user interface. To develop, compile, and deploy the presentation to the
+end-user would take a substantial amount of time and effort, which we'd all love
+to avoid. Therefore, you can implement WSRP's presentation-oriented web services
+to allow portals to display remote portlets inside their pages, as if locally
+deployed, without requiring any additional programming by developers.
+
+In essence, you'll be providing access to your business logic and providing the
+user interface using WSRP. Here are the four main ingredients for WSRP:
+
+*Producer:* A web service that offers one or more portlets and is described
+using a WSDL document.
+*Consumer:* The web service client that gathers all the components allowing for
+the presentation to the end user.
+*Portlets*
+*End Users*
+
+We'll explain each of these and their roles in the next section. So,
+without further ado, let's explore WSRP in Liferay!
+
+### WSRP in Liferay
+
+Liferay provides a deployable WSRP portlet to offer admins easy usage of the
+WSRP in Liferay. The plugin can be downloaded from Liferay Marketplace as a CE
+or EE app by navigating to the Control Panel and selecting *Store* from beneath
+the *Apps* header.
+
 ## Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-liferay-portal-6-2-user-guide-18-en)
 
 Liferay includes a utility called the *Service Builder* which is used to
