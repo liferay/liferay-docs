@@ -27,6 +27,8 @@ We'll discuss the following topics in this section:
 
 -   Upgrading Liferay
 
+-   Using Web Services for Remote Portlets (WSRP)
+
 -   Remotely Accessing Liferay Services
 
 Let's get started with audit trails.
@@ -1085,33 +1087,92 @@ The Web Services for Remote Portlets (WSRP) specification defines a web service
 interface for accessing and interacting with interactive presentation-oriented
 web services in the form of portlets. Now you're probably wondering why we need
 WSRP if we already have web services and portlets. You could provide
-platform-independent access to our services via web services. However, to allow
-the user access to those services, you would need to build presentation logic
-and a user interface. To develop, compile, and deploy the presentation to the
-end-user would take a substantial amount of time and effort, which we'd all love
-to avoid. Therefore, you can implement WSRP's presentation-oriented web services
-to allow portals to display remote portlets inside their pages, as if locally
-deployed, without requiring any additional programming by developers.
+platform-independent access to specific services via web services. However, to
+allow the user access to those services, you would need to build presentation
+logic and a user interface. To develop, compile, and deploy the presentation to
+the end-user would take a substantial amount of time and effort, which we'd all
+love to avoid. Therefore, you can implement WSRP's presentation-oriented web
+services to allow portals to display remote portlets inside their pages, as if
+locally deployed, without requiring any additional programming by developers.
 
 In essence, you'll be providing access to your business logic and providing the
-user interface using WSRP. Here are the four main ingredients for WSRP:
+user interface using WSRP. Here are the four main components for WSRP:
 
-*Producer:* A web service that offers one or more portlets and is described
-using a WSDL document.
-*Consumer:* The web service client that gathers all the components allowing for
-the presentation to the end user.
-*Portlets*
-*End Users*
+- *Producer:* A web service that offers one or more portlets and is described
+using a Web Services Description Language (WSDL) document.
+- *Consumer:* The web service client that gathers all the components allowing
+for the presentation to the end user.
+- *Portlets*
+- *End Users*
 
-We'll explain each of these and their roles in the next section. So,
-without further ado, let's explore WSRP in Liferay!
+We'll explain each of these and their roles in the next section. So, without
+further ado, let's explore WSRP in Liferay!
 
-### WSRP in Liferay
+### WSRP with Liferay
 
-Liferay provides a deployable WSRP portlet to offer admins easy usage of the
-WSRP in Liferay. The plugin can be downloaded from Liferay Marketplace as a CE
-or EE app by navigating to the Control Panel and selecting *Store* from beneath
-the *Apps* header.
+Liferay provides a deployable WSRP portlet that supports both 1.0 and 2.0
+specifications of WSRP. The portlet can be downloaded from Liferay Marketplace
+as a CE or EE app by navigating to the Control Panel and selecting *Store* from
+beneath the *Apps* header. Once you've downloaded and installed the WSRP app,
+you have instant access to the portlet by navigating to the Control Panel and,
+under *Apps*, selecting *WSRP*.
+
+Liferay portal's server can be used as a WSRP producer, hosting portlets that
+will be consumed by other Liferay portal servers acting as WSRP consumers. So
+with WSRP, you're delivering both data and presentation in a way that decouples
+deployment and delivery of your portlets. And with Liferay, you don't need any
+extra development in order to start enjoying WSRP advantages; just deploy the
+WSRP plugin portlet and start using it! The image below illustrates WSRP
+producers and consumers and how they interact.
+
+![Figure 18.11: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
+
+As we mentioned in the previous chapter, there are four main components of the
+WSRP process: producers, consumers, portlets, and end users. For an in-depth
+analysis for each of these components and how they work together, visit [How
+WSRP
+Works](http://docs.oracle.com/cd/E13218_01/wlp/docs81/wsrp/intro.html#1001163)
+provided by Oracle.
+
+Let's go ahead and create a producer. Go to the *Producers* tab and click *Add
+Producer*. Give your producer a name and choose the appropriate version of WSRP
+to use. You'll also notice a list of available portlets your producer can use.
+For demonstration purposes, we'll select the *Hello World* portlet. Once you
+click the *Save* button, the portal generates a WSDL to define your producer. To
+view the WSDL document, click the URL link provided.
+
+![Figure 18.12: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
+
+Now that we've created a producer, let's create a consumer. For the purposes of
+this exercise, we're going to use the same Liferay installation as the producer
+and consumer. However, typical use cases have WSRP producers and consumers
+linked on differing portal servers.
+
+Navigate to the *Consumers* tab and select the *Add Consumer* button. Give it a
+name and add the producer's WSDL URL in the *URL* field. There are also
+additional fields, which include:
+
+- *Forward Cookies:* Allows the WSRP consumer to forward specific cookies from
+the user's browser session to the WSRP producer.
+- *Forward Headers:* Allows the WSRP consumer to forward specific HTTP headers
+from the user's browser session to the WSRP producer.
+- *Markup Character Sets:* Markup character encodings supported for the consumer
+in a comma delimited list. UTF-8 is assumed and will be automatically added as a
+supported encoding.
+
+We'll leave these additional fields blank for our demonstration. Lastly, we need
+to define the portlets that the end-user will be able to use from this consumer.
+To do this, go to *Actions* &rarr; *Manage Portlets* for your consumer. Add the
+remote portlets that you've configured for your producer. In this case, select
+the *Hello World* remote portlet and give the new portlet and arbitrary name.
+Now end users can "consume" or use the remote portlet in the portal with Liferay
+WSRP.
+
+Next, we'll learn how to create custom remote portlets.
+
+### Creating Custom Remote Portlets
+
+
 
 ## Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-liferay-portal-6-2-user-guide-18-en)
 
