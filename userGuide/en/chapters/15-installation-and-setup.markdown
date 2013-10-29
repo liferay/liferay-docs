@@ -511,6 +511,189 @@ application servers in alphabetical order.
 
 ## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
+For this section, we will refer to your Tcat server's installation location as
+`$TCAT_HOME`. If you don't already have an existing Tcat server, we
+recommend you download a Liferay/Tcat bundle from
+[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
+If you have an existing Tcat server on which you'd like to deploy Liferay
+manually, please follow the steps below.
+
+Your first step is downloading the latest Liferay `.war` file and Liferay
+Portal dependencies from
+[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+The Liferay `.war` file should be called `liferay-portal-6.2.x-<date>.war` and
+the dependencies file should be called
+`liferay-portal-dependencies-6.2.x-<date>.zip`.
+
+Next, let's get started by addressing Liferay's library dependencies.
+
+### Dependency Jars 
+
+To run Liferay Portal on your Tcat server, you first need to put the Liferay Portal
+Dependency JARs, an appropriate JDBC driver and a few other JARs, into your
+Tcat server.
+
+1. Create folder `$TCAT_HOME/lib/ext`.
+
+2. Extract the Liferay dependencies file to `$TCAT_HOME/lib/ext`. If the files
+   do not extract to this directory, you can copy the dependencies archive to
+   this directory, extract them and then delete the archive. 
+
+3. Next, you need a few `.jar` files which are included as part of the
+   Liferay source distribution, but are not automatically included with Tomcat.
+   You'll have to download them yourself, so let's get started. Place these
+   `.jar` files into `$TCAT_HOME/lib/ext`:
+
+    - `jta.jar`: You can get this `.jar`, which manages transactions, from
+            [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+    - `mail.jar`: You can get this `.jar` from
+            [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+    - `persistence.jar`: You can learn about the Java Persistence API and how to
+    download it from
+            [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+
+    Although you can get each `.jar` listed above separately, copying it into your
+    `%TCAT_HOME/lib/ext` directory, you might find it more convenient to get the
+    appropriate versions of these files by downloading the Liferay source code and
+    copying them from there. Once you have downloaded the Liferay source, unzip the
+    source into a temporary folder. We'll refer to the location of the Liferay
+    source as `$LIFERAY_SOURCE`. From `$LIFERAY_SOURCE/lib/development`, you can
+    find `jta.jar`, `mail.jar`, and `persistence.jar`.
+
+4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
+   the JDBC driver for your version of the database server. In the case of
+   MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the
+   latest MySQL JDBC driver from
+   [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/).
+   Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
+
+5. There are a few other JARs that come with a typical Liferay bundle that you
+   might want to download and place in your `$TCAT_HOME/lib/ext` folder. They
+   include:
+
+    - `activation.jar`: You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+    - `ccpp.jar`: You can get this `.jar` from 
+        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+    - `jms.jar`: You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+    - `jtds.jar`: You can get this `.jar` from
+        [http://sourceforge.net/projects/jtds/files/](http://sourceforge.net/projects/jtds/files/)
+    - `jutf7.jar`: You can get this `.jar` from 
+          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
+    - `junit.jar`: You can get this `.jar` from 
+        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
+
+Now that you have the necessary libraries in place, we'll move on to configuring
+your domain.
+
+### Tcat Configuration 
+
+If you're setting up a Liferay deployment onto an existing Tcat server, you
+might already be familiar with the Tcat Administration Console. Our
+instructions for configuring Tcat to run Liferay will assume you have a Tcat
+server with the Administration Console on it, and a separate Tcat server
+instance that you will deploy Liferay to. To find information specific to Tcat
+server management, see [Mulesoft's Tcat
+Documentation](http://www.mulesoft.org/documentation/display/TCAT/Home). This
+section will focus on:
+
+- Setting environment variables
+
+- Creating a context for your web application
+
+- Modifying the list of classes/JARs to be loaded
+
+- Specifying URI encoding
+
+Let's get started with our configuration tasks.
+
+1. Setting the `CATALINA_OPTS`  environemnt variable in Tcat is easy. You just
+need to add a server profile. In your Tcat Admin Console, navigate to the
+*Administration* tab and click *Server Profiles*. Name the profile
+appropriately (*Liferay* 6.2, perhaps), provide a description if you wish,
+select the workspace where you'll keep your profile (`/Profiles` is a logical
+choice), and click the *Add Variable* button. Name it `CATALINA_OPTS`, and give
+it the following value: 
+
+    -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+    This sets the character encoding to UTF-8, sets the time zone to Greenwich
+    Mean Time and allocates memory to the Java virtual machine.
+
+    You need to apply the profile to the Tcat servon on which you're deploying
+    Liferay. To do so, go to the *Servers* tab, select the deisred server, and
+    sekect your profile from the *Set Profile* dropdown menu.  
+
+2. Create a file locally called `ROOT.xml`, and populate it with the following
+contents: 
+
+		<Context path="" crossContext="true">
+
+			<!-- JAAS -->
+
+			<!--<Realm
+				classNjame="org.apache.catalina.realm.JAASRealm"
+				appName="PortalRealm"
+				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+			/>-->
+
+			<!--
+			Uncomment the following to disable persistent sessions across reboots.
+			-->
+
+			<!--<Manager pathname="" />-->
+
+			<!--
+			Uncomment the following to not use sessions. See the property
+			"session.disabled" in portal.properties.
+			-->
+
+			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+		</Context>
+
+    Click your server's name to edit its configuration. Using the *Files* tab,
+    navigate to the directory `$TCAT_HOME/conf/Catalina/localhost` and upload your
+    ROOT.xml file.
+	
+    Setting `crossContext="true"` allows multiple web apps to use the same class
+    loader. In the content above you will also find commented instructions and
+    tags for configuring a JAAS realm, disabling persistent sessions and
+    disabling sessions in general.
+
+3. Still in your servers *Files* tab, open
+`$TCAT_HOME/conf/catalina.properties`, click the *Edit catalina.properties*
+link, and replace the line:
+
+		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+
+    with:
+
+		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+		
+    This allows Catalina to access the dependency jars you extracted to
+    `$TCAT_HOME/lib/ext`.
+
+4. To ensure consistent use of UTF-8 URI Encoding, edit
+   `$TCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
+   where you see `redirectPort=8443`, in the definition of your connectors (HTTP
+   and AJP). For example:
+
+		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+
+Excellent work! Now let's configure your database.
+
+### Database Configuration 
+
+### Mail Configuration 
+
+### Configuring your Database and Mail Session 
+
+### Enabling PACL 
+
+### Deploying Liferay
+
 0. Get Tcat, Liferay WAR and Portal Dependencies WAR
 1. Create lib/ext, get Tomcat dependency jars (see Tomcat section, copy here)
 2. Register server with your Tcat admin console server
@@ -568,261 +751,6 @@ Liferay onto a Tcat server, follow the instructions in this section.
 ### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
-<!--Here's the build-dist-tcat target from build-dist.xml-->
-
-	<target name="build-dist-tcat">
-		<echo file="app.server.${user.name}.properties">
-<!--Setting Tomcat as app server type in app.server.russell.properties-->
-
-			app.server.type=tomcat
-
-			app.server.tomcat.version=7.0.39
-			app.server.tomcat.zip.url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.39/bin/apache-tomcat-7.0.39.zip
-		</echo>
-
-<!--Not exactly sura about the purpose of build-dist-tomcat, but probably unnecessary for our steps since we're assuming Tcat is already installed-->
-		<antcall target="build-dist-tomcat" inheritAll="false">
-			<param name="tomcat.keep.app.server.properties" value="true" />
-		</antcall>
-
-<!--Not sure about the below <script>-->
-		<script classpathref="project.classpath" language="beanshell">
-			String lpVersion = project.getProperty("lp.version");
-
-			String lpVersionTcat = lpVersion.replace(".", "_");
-
-			project.setProperty("lp.version.tcat", lpVersionTcat);
-		</script>
-
-<!--Unsure about this, too-->
-		<echo append="true" file="release.${user.name}.properties">
-			lp.version.tcat=${lp.version.tcat}
-		</echo>
-
-		<delete dir="${app.server.tcat.dir}" />
-
-<!--Okay, download profile from liferay.com, but this isn't in the current instructions for 6.1 so I'm still a bit confused-->
-		<antcall target="build-dist-tcat-profile" inheritAll="false">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-		</antcall>
-
-<!--Not sure about this, copied build-dist-tcat-tomcat below for more analysis-->
-		<antcall target="build-dist-tcat-tomcat" inheritAll="false">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-		</antcall>
-
-                <target name="build-dist-tcat-tomcat">
-<!--Create $TCAT_HOME/tomcat directory?-->
-                    <mkdir dir="${app.server.tcat.dir}/tomcat" />
-
-<!--Why would we copy the tcat home directory to the tomcat directory, which is inside the tcat home?-->
-                    <copy todir="${app.server.tcat.dir}/tomcat">
-                        <fileset
-                            dir="${app.server.tomcat.dir}"
-                            excludes="**/ROOT.xml,logs/**,temp/**,webapps/**,work/**"
-                        />
-                    </copy>
-
-<!--Create temp directory in the tomcat directory-->
-                    <mkdir dir="${app.server.tcat.dir}/tomcat/temp" />
-
-<!--Obviously, edit server.xml as follows-->
-                    <replace file="${app.server.tcat.dir}/tomcat/conf/server.xml">
-                        <replacetoken><![CDATA[xmlValidation="false" xmlNamespaceAware="false" deployXML="false">]]></replacetoken>
-                        <replacevalue><![CDATA[xmlValidation="false" xmlNamespaceAware="false">]]></replacevalue>
-                    </replace>
-
-<!--Not really sure what this is doing-->
-                    <move file="${app.server.tcat.dir}/tomcat" tofile="${app.server.tcat.dir}/admin" />
-
-                    <mkdir dir="${app.server.tcat.dir}/agent" />
-
-                    <copy todir="${app.server.tcat.dir}/agent">
-                        <fileset dir="${app.server.tcat.dir}/admin" />
-                    </copy>
-                </target>
-
-		<if>
-			<not>
-				<available file="${app.server.parent.dir}/${app.server.tcat.zip.name}" />
-			</not>
-			<then>
-				<mkdir dir="${app.server.parent.dir}" />
-
-				<get
-					dest="${app.server.parent.dir}/${app.server.tcat.zip.name}"
-					src="${app.server.tcat.zip.url}"
-					verbose="true"
-				/>
-			</then>
-		</if>
-
-<!--This would appear to simply build a zip of the Liferay Tcat Admin download-->
-		<antcall target="build-dist-tcat-admin" inheritAll="false">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
-		</antcall>
-
-<!--The Tcat agent download-->
-		<antcall target="build-dist-tcat-agent" inheritAll="false">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-			<param name="app.server.tcat.zip.name" value="${app.server.tcat.zip.name}" />
-		</antcall>
-
-<!--Why delete app.server.russell.properties at the end?-->
-		<delete file="app.server.${user.name}.properties" />
-	</target>
-
-<!--More build-dist-tcat stuff that's used in the main target-->
-	<target name="build-dist-tcat-admin">
-		<copy file="tools/servers/tcat/tcat-init.groovy" todir="${app.server.tcat.dir}/admin" />
-
-		<unzip
-			dest="${app.server.tcat.dir}/admin/webapps"
-			src="${app.server.parent.dir}/${app.server.tcat.zip.name}"
-		>
-			<patternset
-				includes="**/console.war"
-			/>
-			<flattenmapper />
-		</unzip>
-
-		<replace file="${app.server.tcat.dir}/admin/conf/server.xml">
-			<replacefilter token="8005" value="8105" />
-			<replacefilter token="8009" value="8109" />
-			<replacefilter token="8080" value="8180" />
-			<replacefilter token="8443" value="81443" />
-		</replace>
-
-		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/profiles" />
-
-		<copy file="dist/liferay-portal-tcat-profile-${lp.version}.zip" todir="${app.server.tcat.dir}/admin/tcat_init/profiles" />
-
-		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/scripts" />
-
-		<copy file="tools/servers/tcat/LiferayDeployerFactory.groovy" todir="${app.server.tcat.dir}/admin/tcat_init/scripts" />
-
-		<antcall target="build-dist-tcat-admin-webapps-plugins">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-		</antcall>
-
-		<antcall target="build-dist-tcat-admin-webapps-portal">
-			<param name="app.server.tcat.dir" value="${app.server.tcat.dir}" />
-		</antcall>
-	</target>
-
-	<target name="build-dist-tcat-admin-webapps-plugins">
-		<echo append="true" file="${lp.plugins.dir}/build.${user.name}.properties">
-			plugins.war.excludes=**/WEB-INF/service/**,**/WEB-INF/src/**
-		</echo>
-
-		<ant dir="${lp.plugins.dir}" target="all" inheritAll="false" />
-
-		<copy todir="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}">
-			<fileset dir="${lp.plugins.dir}/dist" includes="*.war" />
-		</copy>
-
-		<ant dir="${lp.plugins.dir}" target="clean" inheritAll="false" />
-
-		<ant dir="${lp.plugins.dir}" target="all" inheritAll="false" />
-	</target>
-
-	<target name="build-dist-tcat-admin-webapps-portal">
-		<tstamp>
-			<format property="tstamp.value" pattern="yyyyMMddkkmmssSSS" />
-		</tstamp>
-
-		<mkdir dir="${tstamp.value}/META-INF" />
-
-		<echo file="${tstamp.value}/META-INF/context.xml"><![CDATA[<?xml version="1.0"?>
-			<Context path="" crossContext="true">
-				<Realm
-					className="org.apache.catalina.realm.JAASRealm"
-					appName="PortalRealm"
-					userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-					roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-				/>
-			</Context>]]>
-		</echo>
-
-		<mkdir dir="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}" />
-
-		<copy file="dist/liferay-portal-${lp.version}.war" tofile="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}/ROOT.war" />
-
-		<zip
-			basedir="${tstamp.value}"
-			destfile="${app.server.tcat.dir}/admin/tcat_init/webapps/${lp.version.tcat}/ROOT.war"
-			update="yes"
-		/>
-
-		<delete dir="${tstamp.value}" />
-	</target>
-
-	<target name="build-dist-tcat-agent">
-		<echo file="${app.server.tcat.dir}/agent/conf/Catalina/localhost/agent.xml"><![CDATA[<?xml version="1.0"?>
-			<Context privileged="true" />]]>
-		</echo>
-
-		<unzip
-			dest="${app.server.tcat.dir}/agent/webapps"
-			src="${app.server.parent.dir}/${app.server.tcat.zip.name}"
-		>
-			<patternset
-				includes="**/agent.war"
-			/>
-			<flattenmapper />
-		</unzip>
-	</target>
-
-	<target name="build-dist-tcat-profile">
-		<mkdir dir="${app.server.tcat.dir}/profile/files/lib/ext" />
-
-		<copy file="tools/servers/tcat/profile.xml" todir="${app.server.tcat.dir}/profile">
-			<filterset>
-				<filter token="lp.version" value="${lp.version}" />
-			</filterset>
-		</copy>
-
-		<copy todir="${app.server.tcat.dir}/profile/files/lib/ext">
-			<fileset dir="${app.server.tomcat.dir}/lib/ext" />
-		</copy>
-
-		<echo file="${app.server.tcat.dir}/profile/files/lib/ext/portal-bundle.properties">auto.deploy.deploy.dir=${catalina.base}/deploy</echo>
-
-		<delete file="dist/liferay-portal-tcat-profile-${lp.version}.zip" failonerror="false" />
-
-		<zip destfile="dist/liferay-portal-tcat-profile-${lp.version}.zip">
-			<zipfileset
-				dir="${app.server.tcat.dir}/profile"
-			/>
-		</zip>
-	</target>
-
-	<target name="build-dist-tcat-tomcat">
-		<mkdir dir="${app.server.tcat.dir}/tomcat" />
-
-		<copy todir="${app.server.tcat.dir}/tomcat">
-			<fileset
-				dir="${app.server.tomcat.dir}"
-				excludes="**/ROOT.xml,logs/**,temp/**,webapps/**,work/**"
-			/>
-		</copy>
-
-		<mkdir dir="${app.server.tcat.dir}/tomcat/temp" />
-
-		<replace file="${app.server.tcat.dir}/tomcat/conf/server.xml">
-			<replacetoken><![CDATA[xmlValidation="false" xmlNamespaceAware="false" deployXML="false">]]></replacetoken>
-			<replacevalue><![CDATA[xmlValidation="false" xmlNamespaceAware="false">]]></replacevalue>
-		</replace>
-
-		<move file="${app.server.tcat.dir}/tomcat" tofile="${app.server.tcat.dir}/admin" />
-
-		<mkdir dir="${app.server.tcat.dir}/agent" />
-
-		<copy todir="${app.server.tcat.dir}/agent">
-			<fileset dir="${app.server.tcat.dir}/admin" />
-		</copy>
-	</target>
 
 Tcat Server provides a graphical console to make Tomcat setup and configuration
 more administrator friendly. You may use the console to:
