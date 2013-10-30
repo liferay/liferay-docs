@@ -293,55 +293,55 @@ category `legal` has been applied to the asset, the asset is sent to the `Legal
 Review` task upon submission. Otherwise, the asset is sent to the `Default
 Review` task.
 
-	<script>
-			<![CDATA[
-				import com.liferay.portal.kernel.util.GetterUtil;
-				import com.liferay.portal.kernel.workflow.WorkflowConstants;
-				import com.liferay.portal.kernel.workflow.WorkflowHandler;
-				import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
-				import com.liferay.portlet.asset.model.AssetCategory;
-				import com.liferay.portlet.asset.model.AssetEntry;
-				import com.liferay.portlet.asset.model.AssetRenderer;
-				import com.liferay.portlet.asset.model.AssetRendererFactory;
-				import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
+        <script>
+            <![CDATA[
+                import com.liferay.portal.kernel.util.GetterUtil;
+                import com.liferay.portal.kernel.workflow.WorkflowConstants;
+                import com.liferay.portal.kernel.workflow.WorkflowHandler;
+                import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
+                import com.liferay.portlet.asset.model.AssetCategory;
+                import com.liferay.portlet.asset.model.AssetEntry;
+                import com.liferay.portlet.asset.model.AssetRenderer;
+                import com.liferay.portlet.asset.model.AssetRendererFactory;
+                import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
 
-				import java.util.List;
+                import java.util.List;
 
-				String className = (String)workflowContext.get(
-					WorkflowConstants.CONTEXT_ENTRY_CLASS_NAME);
+                String className = (String)workflowContext.get(
+                    WorkflowConstants.CONTEXT_ENTRY_CLASS_NAME);
 
-				WorkflowHandler workflowHandler = 
-					WorkflowHandlerRegistryUtil.getWorkflowHandler(className);
+                WorkflowHandler workflowHandler =
+                    WorkflowHandlerRegistryUtil.getWorkflowHandler(className);
 
-				AssetRendererFactory assetRendererFactory = 
-					workflowHandler.getAssetRendererFactory();
+                AssetRendererFactory assetRendererFactory =
+                    workflowHandler.getAssetRendererFactory();
 
-				long classPK =
-					GetterUtil.getLong((String)workflowContext.get
-						(WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+                long classPK =
+                    GetterUtil.getLong((String)workflowContext.get
+                    (WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
 
-				AssetRenderer assetRenderer = 
-					workflowHandler.getAssetRenderer(classPK);
+                AssetRenderer assetRenderer =
+                    workflowHandler.getAssetRenderer(classPK);
 
-				AssetEntry assetEntry = assetRendererFactory.getAssetEntry(
-					assetRendererFactory.getClassName(), assetRenderer.getClassPK());
+                AssetEntry assetEntry = assetRendererFactory.getAssetEntry(
+                    assetRendererFactory.getClassName(), assetRenderer.getClassPK());
 
-				List<AssetCategory> assetCategories = assetEntry.getCategories();
+                List<AssetCategory> assetCategories = assetEntry.getCategories();
 
-				returnValue = "Content Review";
+                returnValue = "Default Review";
 
-				for (AssetCategory assetCategory : assetCategories) {
-					String categoryName = assetCategory.getName();
+                for (AssetCategory assetCategory : assetCategories) {
+                    String categoryName = assetCategory.getName();
 
-					if (categoryName.equals("legal")) {
-						returnValue = "Legal Review";
+                    if (categoryName.equals("legal")) {
+                        returnValue = "Legal Review";
 
-						return;
-					}
-				}
-			]]>
-		</script>
-		<script-language>groovy</script-language>
+                        return;
+                    }
+                }
+               ]]>
+        </script>
+        <script-language>groovy</script-language>
 
 Within a workflow, the next task or state is chosen based on the return value.
 
