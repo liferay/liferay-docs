@@ -1084,9 +1084,8 @@ Here's how you generate a PACL policy for your plugin:
  generation one more time and restart Liferay. This gives the security manager
  another opportunity to detect additional properties to satisfy your security
  policy. If you are still seeing security violations on deployment, you'll need
- to address them per instructions that follow in this chapter. 
-
- Here are the work-around steps: Remove the previously generated
+ to address them per instructions that follow in this chapter. Here are the
+ work-around steps: Remove the previously generated
  `[servletContextName].policy` file, set `security-manager-enabled=generate` in
  your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
  plugin, and merge any new properties from the newly generated
@@ -1137,7 +1136,7 @@ If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
 file. You can create the policy file (`java.policy`) in your plugin's `WEB-INF`
 folder. The policy file must follow Policy File syntax as described in detail at
-[http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
 Like the rules you define in your plugin's PACL, the additional rules you define
 in your plugin's Java Policy File, `WEB-INF/java.policy`, only apply to that
 plugin. Plugins aren't privy to each other's security policies. 
@@ -1149,7 +1148,7 @@ any rules in a Java policy file that you can specify in a PACL.
 Here's a scenario that calls for using a Java Security Policy:
 
 Java has a security implementation called
-[http://docs.oracle.com/javase/6/docs/api/java/net/NetPermission.html](java.net.NetPermission).
+[http://docs.oracle.com/javase/7/docs/api/java/net/NetPermission.html](java.net.NetPermission).
 It checks a whole bunch of networking operations, that Liferay's implementation
 doesn't check. In case you want to perform one of these operations, like using a
 custom Stream Handler, you can grant your plugin permission to do so in its
@@ -1288,8 +1287,9 @@ It's very easy to activate the security manager. Set the following
 
 	security-manager-enabled=true
 
-Next, we'll look at exactly what APIs the Security Manager protects, and how you
-can declare whether your application uses any of these properties. 
+Next, we'll explain the purpose of the PACL properties, show you some of the
+wildcards you can use for particular property values, and refer you to the file
+containing the PACL property definitions. 
 
 ## Portal Access Control List (PACL) Properties [](id=portal-access-control-list-pacl-properties-liferay-portal-6-2-dev-guide-en)
 
@@ -1303,410 +1303,53 @@ up-front the access your plugin needs.
 
 The online definitions for the PACL properties can be found at
 [http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html).
-The sections that follow describe the PACL properties: explaining each
-property's purpose, its possible values, and the syntax to use in specifying its
-value.
+If you have the Liferay Portal source code, you can find the
+`liferay-plugin-package_6_2_0.properties` file in the
+`liferay-portal/definitions` folder. 
 
-### AWT Security [](id=pacl-awt-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the AWT operations the plugin is permitted to access. 
-
-*Example:*
-
-    security-manager-awt-operations=\
-        accessClipboard,\
-        accessEventQueue,\
-        accessSystemTray,\
-        createRobot,\
-        fullScreenExclusive,\
-        listenToAllAWTEvents,\
-        readDisplayPixels,\
-        replaceKeyboardFocusManager,\
-        setAppletStub,\
-        setWindowAlwaysOnTop,\
-        showWindowWithoutWarningBanner,\
-        toolkitModality,\
-        watchMousePointer
-
-### Class Loader Security [](id=pacl-class-loader-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the reference IDs of plugins for this plugin to access.
-
-*Example:*
-
-	security-manager-class-loader-reference-ids=\
-		1_WAR_flashportlet,\
-		flash-portlet
-
-### Environment Variable Security [](id=pacl-environment-variable-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match environment variables
-that the plugin is permitted to access. 
-
-*Example:*
-
-    security-manager-environment-variables=\
-        java.home,\
-        java.vendor,\
-        java.version,\
-        java.vm.v.*
-
-### Expando Bridge [](id=pacl-expando-bridge-liferay-portal-6-2-dev-guide-11-en)
-
-Specify models having Expando Bridge attributes the plugin is permitted to
-access. The plugin can also access Expando Bridge attributes via the
-wrapper classes of the models. 
-
-*Example:*
-
-	security-manager-expando-bridge=\
-        com.liferay.portal.model.User
-
-### File Security [](id=pacl-file-security-liferay-portal-6-2-dev-guide-11-en)
+Some of the properties accept wildcard characters that have special meaning.
+Let's investigate the wildcard characters you can use in your plugin's file
+security properties. 
 
 The following properties address file deletion, execution, reading, writing and
 replacement operations. The `*` character in a path name indicates all files in
 the current directory. The `-` character in a path name indicates all files in
 the current directory and in its subdirectories.
 
-Specify files the plugin is permitted to delete.
-
-*Example:*
+Here's an example that uses the `-` character to specify that the plugin is
+permitted to delete files in the
+`../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp` directory and its
+subdirectories. 
 
 	security-manager-files-delete=\
 		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
 
-Specify files the plugin is permitted to execute.
+Note, you can use a relative paths in the file security
+properties. 
 
-*Example:*
+You can use a mix of UNIX/Linux style paths and Windows style paths as
+demonstrated in the example below: 
 
 	security-manager-files-execute=\
 		/bin/bash,\
 		C:\\WINDOWS\\system32\\ping.exe
 
-Specify files the plugin is permitted to read.
-
-*Example:*
-
-	security-manager-files-read=\
-		../webapps/chat-portlet/images/*,\
-		../webapps/chat-portlet/WEB-INF/liferay-releng.properties,\
-		../webapps/chat-portlet/WEB-INF/src/-,\
-		/bin/bash,\
-		C:\\WINDOWS\\system32\\ping.exe
-
-Specify files the plugin is permitted to overwrite.
-
-*Example:*
+And the following example uses the `*` character to specify that the plugin is
+reads files in the `../webapps/chat-portlet/images` and
+`../webapps/chat-portlet/WEB-INF/*` directories, but not their subdirectories:
 
 	security-manager-files-write=\
 		../webapps/chat-portlet/images/*,\
 		../webapps/chat-portlet/WEB-INF/*,\
 		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
-### Bean Security [](id=pacl-bean-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify bean properties the plugin is permitted to acquire. 
-
-*Example:*
-
-    security-manager-get-bean-property=\
-        com.liferay.portal.kernel.xml.SAXReaderUtil,\
-        com.liferay.portal.util.PortalUtil
-
-Specify bean properties the plugin is permitted to set. 
-
-*Example:*
-
-    security-manager-set-bean-property=\
-        com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
-
-### Hook Security [](id=pacl-hook-security-liferay-portal-6-2-dev-guide-11-en)
-
-Set to `true` if the hook plugin is permitted use custom JSPs. By default, the
-hook plugin is not permitted to use custom JSPs. 
-
-*Example:*
-
-	security-manager-hook-custom-jsp-dir-enabled=false
-
-Specify entities for which the hook plugin is permitted to customize indexing.
-Customizing the indexing can involve modifying the search, summary and/or
-queries for these entities. 
-
-*Example:*
-
-	security-manager-hook-indexers=\
-		com.liferay.portal.model.User
-
-Specify which language property locales the plugin is permitted to override. 
-
-*Example:*
-
-This example grants the plugin permission to override the Great Britain locale
-of English, the Spain locale of Spanish, and *all* Portuguese locales. 
-
-	security-manager-hook-language-properties-locales=\
-		en_GB,\
-		es_ES,\
-		pt
-
-Specify which portal properties the plugin is permitted to override. 
-
-*Example:*
-
-	security-manager-hook-portal-properties-keys=\
-		phone.number.format.impl
-
-Specify which services the plugin is permitted to access. 
-
-*Example:*
-
-	security-manager-hook-services=\
-		com.liferay.portlet.blogs.service.BlogsEntryLocalService
-
-Specify whether to allow the plugin's servlet filter hooks. Setting this to
-`true` gives the plugin permission to pre-process requests going to the portal's
-servlets and post-process requests coming from the portal's servlets. By
-default, the plugin's servlet filter hooks are not allowed. 
-
-	security-manager-hook-servlet-filters-enabled=false
-
-Specify struts action paths that the hook plugin is permitted to add or
-override. 
-
-*Example:*
-
-	security-manager-hook-struts-action-paths=\
-		/portal/test/pacl/success
-
-### JNDI Security [](id=pacl-jndi-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify which services the plugin can look up. You can use regular expressions
-to make this dynamic. 
-
-*Example:*
-
-Using the sample values below, the plugin can look up objects for key names
-`matthew`, `mark`, `Mark`, `luke`, and `Luke`. In addition, the plugin can
-look-up objects for key names containing `john` with zero or more characters
-preceding and/or trailing `john`. 
-
-	security-manager-jndi-names=\
-		test-pacl-matthew,\
-		test-pacl-[mM]ark|test-pacl-[lL]uke,\
-		test-pacl-.*john.*
-
-### Message Bus Security [](id=pacl-message-bus-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify which services the plugin is permitted to listen on via the portal's
-message bus.
-
-*Example:*
-
-	security-manager-message-bus-listen=\
-		liferay/test_pacl,\
-		liferay/test_pacl_listen_success
-
-Specify which message bus destinations the plugin is permitted to call (send
-messages to) via the portal's message bus.
-
-*Example:*
-
-	security-manager-message-bus-send=\
-		liferay/message_bus/default_response,\
-		liferay/test_pacl_listen_failure,\
-		liferay/test_pacl_listen_success,\
-		liferay/test_pacl_send_success
-
-### Portlet Bag Pool Security [](id=pacl-portlet-bag-pool-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match any portlet IDs that the
-plugin is permitted to access from the portlet bag pool. 
-
-*Example:*
-
-    security-manager-portlet-bag-pool-portlet-ids=\
-        1_WAR_flashportlet,\
-        .*_WAR_chatportlet
-
-### Search Engine Security [](id=pacl-search-engine-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the IDs of search engines the plugin is permitted to access. 
-
-*Example:*
-
-	security-manager-search-engine-ids=\
-		SYSTEM_ENGINE
-
-### Portal Service Security [](id=pacl-portal-service-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify portal service classes and/or methods the plugin is permitted to access.
-Use the `#` character as a delimiter between a class and its method. 
-
-*Example:*
-
-	security-manager-services[portal]=\
-		com.liferay.portal.service.GroupLocalService,\
-		com.liferay.portal.service.PortalService#getBuildNumber,\
-		com.liferay.portal.service.persistence.CompanyPersistence,\
-		com.liferay.portlet.blogs.service.BlogsEntryLocalService,\
-		com.liferay.portlet.blogs.service.BlogsStatsUserLocalService
-
-### Portlet Service Security [](id=pacl-portlet-service-security-liferay-portal-6-2-dev-guide-11-en)
-
-For each portlet the plugin accesses, replicate this property substituting
-`some-portlet` in the `[` square brackets `]` with the name of the accessible
-portlet. 
-
-Specify portlet service classes and/or methods the plugin is permitted to
-access. Use the `#` character as a delimiter between a class and its method. 
-
-*Example:*
-
-	security-manager-services[some-portlet]=\
-		com.liferay.chat.service.EntryLocalService,\
-		com.liferay.chat.service.StatusLocalService#getStatuses
-
-### Socket Security [](id=pacl-socket-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify sockets permitted to accept connections in the plugin.
-
-*Example:*
-
-	security-manager-sockets-accept=\
-		localhost:4320
-
-Specify connections the plugin is permitted to make with the outside world.
-
-*Example:*
-
-	security-manager-sockets-connect=\
-		www.cbs.com:80,\
-		www.google.com:80,\
-		www.google.com:443,\
-		www.yahoo.com:443
-
-Specify sockets the plugin can listen on.
-
-*Example:*
-
-This example specifies socket range `4316-4318`, socket `4320`, and socket
-`4321`.
-
-	security-manager-sockets-listen=\
-		4316-4318,\
-		4320,\
-		4321
-
-*The Star Socket Wildcard:*
-
-The star (`*`) represent any hostname. Here are examples that demonstrate its
-use: 
-
-- `*.liferay.com` matches any host ending in `.liferay.com`, such as
-`docs.liferay.com` and `issues.liferay.com`. 
-
-- `*:*` matches every socket and every port. 
-
-### SQL Security [](id=pacl-sql-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify tables in the Liferay database on which the plugin is permitted to
-perform the applicable operations. These property names use the following
-convention:
-
-	security-manager-sql-tables-[operation]    
- 
-Specify tables on which the plugin can do any and all operations.
-
-*Example:*
-
-	security-manager-sql-tables-all=\
-		TestPACL_Foo
-
-Specify tables the plugin can create.
-
-*Example:*
-
-	security-manager-sql-tables-create=\
-		TestPACL_CreateSuccess,\
-		TestPACL_DropSuccess,\
-		TestPACL_InsertSuccess,\
-		TestPACL_ReplaceSuccess,\
-		TestPACL_TruncateSuccess
-
-Specify tables from which the plugin can delete records.
-
-*Example:*
-
-	security-manager-sql-tables-delete=\
-		ClassName_
-
-Specify tables the plugin can drop.
-
-*Example:*
-
-	security-manager-sql-tables-drop=\
-		TestPACL_CreateSuccess,\
-		TestPACL_DropSuccess,\
-		TestPACL_InsertSuccess,\
-		TestPACL_ReplaceSuccess,\
-		TestPACL_TruncateSuccess
-
-Specify tables into which the plugin can insert records.
-
-*Example:*
-
-	security-manager-sql-tables-insert=\
-		TestPACL_InsertSuccess
-
-Specify tables in which the plugin can replace records.
-
-*Example:*
-
-	security-manager-sql-tables-replace=\
-		TestPACL_ReplaceSuccess
-
-Specify tables the plugin can query.
-
-*Example:*
-
-	security-manager-sql-tables-select=\
-		Counter,\
-		TestPACL_Bar
-
-Specify tables from which the plugin can delete all records.
-
-*Example:*
-
-	security-manager-sql-tables-truncate=\
-		TestPACL_TruncateSuccess
-
-Specify tables the plugin can update.
-
-*Example:*
-
-	security-manager-sql-tables-update=\
-		ListType
-
-### Thread Security [](id=pacl-thread-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match names of the thread pool
-executor for the plugin to access.
-
-*Example:*
-
-	security-manager-thread-pool-executor-names=\
-		liferay/test_pacl,\
-		liferay/test_pacl_listen_failure,\
-		liferay/test_pacl_listen_success
+For socket security properties the `*` character represents any hostname. For
+example, `*.liferay.com` matches any host ending in `.liferay.com`, such as
+`docs.liferay.com` and `issues.liferay.com`. And `*:*` matches every socket and
+every port. 
 
 <!-- TODO insert section(s) explaining security with respect to core development
 -->
-
-<!--Right now summaries from both chapters (plugins security was its own
-chapter previously) are left here. They should be combined and the chapter
-reworked for flow. --> 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en-0)
 
@@ -1724,7 +1367,7 @@ download, and install metrics.
 
 As for plugin security management, we discussed why plugin security management
 is necessary, how the Plugin Security Manager checks each plugin against its
-portal access control list (PACL) and how to specify PACL properties for the
+portal access control list (PACL), and how to specify PACL properties for the
 plugins you create and deploy. We also explained Liferay's support of the Java
 Security Policy, in case you need to specify rules above and beyond what PACL
 properties support. 
