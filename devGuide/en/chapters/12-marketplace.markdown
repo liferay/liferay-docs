@@ -1023,7 +1023,7 @@ write code, unit test your code, and have users beta test your app. In essence,
 do everything you would normally do. Do all of this with the Plugin Security
 Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
-	security-manager-enabled=false
+    security-manager-enabled=false
 
 Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
@@ -1075,7 +1075,8 @@ Here's how you generate a PACL policy for your plugin:
     properties that start with the "security-manager-" prefix. 
 
 ----
- ![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
+
+![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
  [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
  need to be restarted after deploying your plugin, in order for the security
  manager to detect and write out the complete set of policies for a plugin. If
@@ -1091,6 +1092,7 @@ Here's how you generate a PACL policy for your plugin:
  plugin, and merge any new properties from the newly generated
  `[servletContextName].policy` file into your
  `liferay-plugin-package.properties` file. 
+ 
 ----
 
 Now that you've thoroughly specified the resources your plugin accesses, let's
@@ -1106,7 +1108,7 @@ it when testing your plugins.
 To enable the Security Manger set the following
 `liferay-plugin-package.properties` property to true: 
 
-	security-manager-enabled=true
+    security-manager-enabled=true
 
 Then, re-deploy your plugin and re-test it's functionality. The Security Manager
 throws Java security exceptions, if your plugin accesses resources that are not
@@ -1285,7 +1287,7 @@ plugins and on packaging it for distribution.
 It's very easy to activate the security manager. Set the following
 `liferay-plugin-package.properties` property to true: 
 
-	security-manager-enabled=true
+    security-manager-enabled=true
 
 Next, we'll explain the purpose of the PACL properties, show you some of the
 wildcards you can use for particular property values, and refer you to the file
@@ -1321,8 +1323,8 @@ permitted to delete files in the
 `../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp` directory and its
 subdirectories. 
 
-	security-manager-files-delete=\
-		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
+    security-manager-files-delete=\
+        ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
 
 Note, you can use a relative paths in the file security
 properties. 
@@ -1330,18 +1332,18 @@ properties.
 You can use a mix of UNIX/Linux style paths and Windows style paths as
 demonstrated in the example below: 
 
-	security-manager-files-execute=\
-		/bin/bash,\
-		C:\\WINDOWS\\system32\\ping.exe
+    security-manager-files-execute=\
+        /bin/bash,\
+        C:\\WINDOWS\\system32\\ping.exe
 
 And the following example uses the `*` character to specify that the plugin is
 reads files in the `../webapps/chat-portlet/images` and
 `../webapps/chat-portlet/WEB-INF/*` directories, but not their subdirectories:
 
-	security-manager-files-write=\
-		../webapps/chat-portlet/images/*,\
-		../webapps/chat-portlet/WEB-INF/*,\
-		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
+    security-manager-files-write=\
+        ../webapps/chat-portlet/images/*,\
+        ../webapps/chat-portlet/WEB-INF/*,\
+        ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
 For socket security properties the `*` character represents any hostname. For
 example, `*.liferay.com` matches any host ending in `.liferay.com`, such as
