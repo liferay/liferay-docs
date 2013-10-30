@@ -607,7 +607,7 @@ section will focus on:
 
 - Specifying URI encoding
 
-![Figure 15.x: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/tcat-sign-in.png)
+![Figure 15.x: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
 
 Let's get started with our configuration tasks.
 
