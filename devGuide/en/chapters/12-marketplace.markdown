@@ -805,7 +805,7 @@ security information you'll need to provide with your app.
 
 ## Understanding Plugin Security Management [](id=understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 
-We all wish cyberspace were free of malicious software and unwanted bugs. Since
+We all wish cyberspace was free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
 Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and
 tights, except, well, it's not.
@@ -831,46 +831,46 @@ plugins, and then maybe the importance of this will be clear.
   way of knowing if it does anything nefarious.
 - Upper management requests your corporate branch and other branches use a
   standard set of plugins on your portal instances. This set of plugins,
-  however, was written by an outside firm, and you need to know there will be no
-  tampering with your proprietary files.
+  however, was written by an outside firm, and you must assure that the plugins
+  will not tamper with your proprietary files. 
 
 These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
-in protecting your portal, system and network.
+in protecting your portal, system, and network.
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
 plugin accesses, so people deploying the plugin can review what it does without
 seeing its source code. If the plugin tries to access anything that's not on
-this list, the plugin's request is stopped dead in its tracks with the security
-manager logging information on the attempt to access unauthorized APIs or
-resources. 
+this list, the plugin's request is stopped dead in its tracks and the security
+manager logs information on the plugin's attempt to access the unauthorized APIs
+or resources. 
 
 Access to APIs and resources is authorized by means of property values specified
 in the plugin's `liferay-plugin-package.properties` file. This file must be
-specified in your plugin's `WEB-INF` directory. These security manager
+specified in your plugin's `WEB-INF` directory. These security management
 properties are collectively known as the plugin's PACL. 
 
 As you develop plugins for Liferay Marketplace or for distribution within your
-organization, you'll need to set the security manager properties appropriately.
-Before we dive into the intricacies of these properties, let's consider a plugin
-development approach that involves designing an app for the security manager
-from the ground up. 
+organization, you'll need to set the security management properties
+appropriately. Before we dive into the intricacies of these properties, let's
+consider a plugin development approach that involves designing an app for the
+security manager from the ground up. 
 
 ## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind-liferay-portal-6-2-dev-guide-11-en)
 
 At the start of plugin development, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address your plugin's
-PACL later. But, as you develop your plugin there are some common security
-pitfalls, highlighted in the next section, that we'll show you how to avoid.
-After you develop your plugin you'll dig whole-heartedly into security
-management by generating and fine-tuning you plugin's PACL. Don't worry, we'll
-guide you through it. 
+Portal Access Control List (PACL) later. But, as you develop your plugin there
+are some common security pitfalls, highlighted in the next section, that you'll
+want to avoid. After you develop your plugin you'll dig whole-heartedly
+into security management by generating and fine-tuning your plugin's PACL. Don't
+worry, we'll guide you through the entire process. 
 
-If you're developing a plugin as part of a free app, writing a PACL for your
-plugin and enabling the security manager are optional, and you can skip this
-chapter. Otherwise, read on. 
+If you're developing a plugin as part of a free app, writing the plugin's PACL
+and enabling the security manager for the plugin are optional, and you can skip
+the remainder of this chapter. Otherwise, read on. 
 
 Here is the suggested approach for developing secure plugins: 
 
@@ -879,7 +879,7 @@ Here is the suggested approach for developing secure plugins:
 - Build your plugin's PACL using Liferay's PACL Policy Generation tool. 
 - Test your plugin thoroughly, with the security manager enabled. 
 - Add to your plugin's security policy, as needed.
-- Convert your policy's absolute file paths into relative paths. 
+- Convert your policy's absolute file paths to relative paths. 
 
 Let's go over each part of this approach. 
 
@@ -895,29 +895,29 @@ documentation is available for you to read at
 But we'll highlight a couple common mistakes developers make that violate
 Liferay's secured environment: 
 
-- Invoking a method, directly or indirectly, without considering whether it can
-  throw a security exception.
-- Using external libraries or frameworks that access classloaders outside of
-  your plugin.  
+- Invoking a method, directly or indirectly, without considering whether the
+  method can throw a security exception.
+- Using external libraries or external frameworks that access classloaders
+  outside of your plugin.  
 
 You wouldn't intentionally make these kinds of mistakes, but you'd be surprised
 at how easily you can make them if you're not being careful enough. We'll
 consider scenarios that illustrate both of these mistakes and explain how to
 avoid making them in your plugin. Let's consider security exceptions first. 
 
-When you're running on Liferay Portal with the security manager enabled, you
-must only access authorized resources. If you invoke a method declared as
-throwing a security exception (i.e., `java.lang.SecurityException`) and you're
-not authorized to access the resources the method uses, the method throws the
-security exception and the Security Manger stops your plugin dead in its tracks.
-Security exceptions are unchecked, meaning that the compiler doesn't require
-your code to handle them. But since methods that throw security exceptions are
-declared as throwing them, you should check their signatures as you're
-designing your plugin. If they throw security exceptions, handle them
-appropriately with try/catch blocks. Keep in mind that you not only need to
-handle security exceptions of methods your plugin invokes *directly*, but you
-also need to handle the security exceptions of the underlying methods your
-plugin invokes *indirectly*.
+When you're running on Liferay Portal with the security manager enabled for your
+plugin, you must only access authorized resources. If you invoke a method
+declared as throwing a security exception (i.e., `java.lang.SecurityException`)
+and you're not authorized to access the resources the method uses, the method
+throws the security exception and the Security Manger stops your plugin dead in
+its tracks. Security exceptions are unchecked, meaning that the compiler doesn't
+require your code to handle them. But since methods that throw security
+exceptions are declared as throwing them, you should check their signatures
+while you're designing your plugin. If the methods your plugin uses throw
+security exceptions, handle them appropriately with try/catch blocks. Keep in
+mind that you not only need to handle security exceptions of methods your plugin
+invokes *directly*, but you also need to handle the security exceptions of the
+underlying methods your plugin invokes *indirectly*. 
 
 For example, you may be using a file utility that calls `java.io.File`'s
 `canRead` method. Since the `canRead` method can throw a `SecurityException`,
@@ -944,7 +944,7 @@ It declares a factory bean that calls a method on a Liferay class. This seems
 reasonable, right? Unfortunately, Spring tries to grab the classloader for the
 factory class. Since the factory class does not belong to the plugin, the
 security manager balks at the plugin's attempt to access the classloader for the
-factory class. The security manager doesn't allow applications to get arbitrary
+factory class. The security manager forbids applications from accessing arbitrary
 classloaders because the classloaders can add, access, and modify classes that
 your plugin is unauthorized to access. Using Spring in this manner violates the
 secured environment.
@@ -1024,8 +1024,8 @@ confidently creating your plugin.
 ### Develop Your Plugin [](id=develop-your-plugin-for-security-liferay-portal-6-2-dev-guide-en)
 
 Start creating your plugin the way you normally would. Design your application,
-write code, unit test your code, have users beta test your code. In essence, do
-everything you normally would do. Do all of this with the Plugin Security
+write code, unit test your code, and have users beta test your app. In essence,
+do everything you would normally do. Do all of this with the Plugin Security
 Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
 	security-manager-enabled=false
@@ -1045,41 +1045,68 @@ properties from this policy file into your plugin's
 
 Here's how you generate a PACL policy for your plugin: 
 
-1. Specify your Liferay home in your `portal-ext.properties` file, if you
-haven't done so already. For example: 
+1.  In your `portal-ext.properties` file, enable Liferay Portal's security
+    manager and specify your Liferay home, if you
+    haven't done so already. For example: 
 
-        liferay.home=C:/liferay-portal-<version>/bundles
+        portal.security.manager.strategy=true
+
+        liferay.home=C:/liferay-portal-[version]
 
     You must restart Liferay for the property to take affect. 
 
-2. Turn on the security manager's *generate* mode in your plugin by setting the
-following property in your `liferay-plugin-package.properties` file: 
+2.  Enable the security manager to generate a security policy for your plugin by
+    setting the following property in your plugin's
+    `liferay-plugin-package.properties` file: 
 
         security-manager-enabled=generate
 
-3. Deploy your plugin. 
+3.  Deploy your plugin.
 
-    The PACL Policy Generation tool writes a PACL policy file: 
+    The PACL Policy Generation tool writes a PACL policy file with the following
+    path: 
 
-        ${liferay.home}/pacl-policy/${servletContextName}.policy
+        [liferay.home]/pacl-policy/[servletContextName].policy
 
-    The security manager performs security checks on your plugin; but rather
-    than throwing errors on failed checks, the generator tool writes suggested
-    rules for satisfying the security manager. 
+    On deploying your plugin and as you exercise your plugin's features, Liferay
+    Portal's security manager performs security checks on your plugin; but
+    rather than throwing errors on failed checks, the generator tool writes
+    suggested rules that specify access to the resources your plugin accesses. 
 
-4. Lastly, merge the properties found in your newly generated PACL policy file
-into your plugin's `liferay-plugin-package.properties` file. It's just a matter
-of merging the properties that start with the "security-manager-" prefix. 
+4.  Lastly, merge the properties that the security manager wrote (i.e., your
+    newly generated PACL policy file
+    `[liferay.home]/pacl-policy/[servletContextName].policy`) into your plugin's
+    `liferay-plugin-package.properties` file. It's just a matter of merging the
+    properties that start with the "security-manager-" prefix. 
 
-Now that your plugin has a thoroughly specified list of resources it accesses,
-let's enable the security manager and do final testing of your PACL properties.
-We cover enabling the security manager in the next section. 
+----
+ ![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
+ [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
+ need to be restarted after deploying your plugin, in order for the security
+ manager to detect and write out the complete set of policies for a plugin. If
+ you are using your plugin with the "security-manager-" generated properties the
+ first time and notice security violations, then you may need to turn on policy
+ generation one more time and restart Liferay. This gives the security manager
+ another opportunity to detect additional properties to satisfy your security
+ policy. If you are still seeing security violations on deployment, you'll need
+ to address them per instructions that follow in this chapter. 
+
+ Here are the work-around steps: Remove the previously generated
+ `[servletContextName].policy` file, set `security-manager-enabled=generate` in
+ your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
+ plugin, and merge any new properties from the newly generated
+ `[servletContextName].policy` file into your
+ `liferay-plugin-package.properties` file. 
+----
+
+Now that you've thoroughly specified the resources your plugin accesses, let's
+enable the security manager and do final testing of your PACL properties. 
 
 ### Test the Plugin with the Security Manager Enabled [](id=test-the-plugin-with-security-manager-liferay-portal-6-2-dev-guide-en)
 
 If you want to distribute plugins, either through the Liferay Marketplace or
 through your web site, you have to assume potential users will insist the
-Security Manager is enabled in your plugin. For this reason, you should enable
+Security Manager be enabled in your plugin. For this reason, you should enable
 it when testing your plugins. 
 
 To enable the Security Manger set the following
@@ -1094,17 +1121,17 @@ Java security exceptions, so you can authorize access to the respective
 resources in the PACL properties of your `liferay-plugin-package.properties`
 file. Save your changes to the file, re-deploy the plugin, and re-test. Make
 sure everything works. If not, there are more rules you must declare for your
-plugin. Refer to the Portal Access Control List Properties section of this
-chapter to see the definitions of all the PACL properties and see example
-property values. 
+plugin. Refer to the online definition of the Portal Access Control List
+Properties for the `liferay-plugin-package.properties` file at 
+[http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
+and in the PACL properties section of this chapter for additional details. 
 
 If you are not finding an adequate way to specify a security rule with PACL, you
-can specify it in a Java Security Policy file. You see, it's almost impossible
-for Liferay and PACL to be aware of every possible security implementation
-check, because developers, libraries, and the Java Security API can always call
-for new types of security checks. So, Liferay provides a fallback to PACL, that
-lets you specify operations permissible within the context of your app's
-plugins. 
+can specify it in a Java Security Policy file. It's almost impossible for
+Liferay and PACL to be aware of every possible security implementation check,
+because developers, libraries, and the Java Security API can always call for new
+types of security checks. So, Liferay provides a fallback to PACL, that lets you
+specify operations permissible within the context of your app's plugins. 
 
 In case you need it for your plugin, let's get familiar with the Java Security
 Policy file. 
@@ -1161,8 +1188,8 @@ How do you add more permissions to a codebase? Just define them on separate
 lines in the grant entry: 
 
     grant codeBase "file:${my-supercool-portlet}${/}-" {
-	    permission java.lang.RuntimePermission "loadLibrary.test_b";
-	    permission java.net.NetPermission "specifyStreamHandler";
+        permission java.lang.RuntimePermission "loadLibrary.test_b";
+        permission java.net.NetPermission "specifyStreamHandler";
     };
 
 In this example, we've granted the plugin permission to invoke native code
@@ -1240,7 +1267,7 @@ For file path separators, you can use the `${/}` alias.
 Example,
 
     grant codeBase "file:${my-supercool-portlet}${/}-" {
-    	permission java.net.NetPermission "specifyStreamHandler";
+        permission java.net.NetPermission "specifyStreamHandler";
     };
 
 Congratulations! You now know how to specify your policy's file paths
@@ -1279,6 +1306,8 @@ Manager prevents it from happening. Consider this a virtual finger waggin'. To
 prevent this from happening, you have to tell the Plugin Security Manager
 up-front the access your plugin needs.
 
+The online definitions for the PACL properties can be found at
+[http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html).
 The sections that follow describe the PACL properties: explaining each
 property's purpose, its possible values, and the syntax to use in specifying its
 value.
