@@ -189,7 +189,7 @@ This defaults to no (only available for Select).
 remove options as well as edit each individual option's display name and VALUE
 (ONLY AVAILABLE FOR RADIO AND SELECT).
 
-![Figure 10.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* dropdown menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
+![Figure 10.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* drop-down menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can
 stack inputs within inputs by dragging a field within another field. You can
@@ -262,7 +262,7 @@ you know to sign up. But what would it look like for them to add an entry to
 this list? The data definition you've previously created (or selected) defines
 the layout as well, which means the form looks just the way you laid it out. 
 
-![Figure 10.4: You can enter a new data record by clicking on *Admin* &rarr; *Content* from the Dockbar, clicking on *Dynamic Data Lists*, clicking on an existing list, and then clicking on the *Add* buton next to the list's name. Alternatively, you can install the Dynamic Data List Form portlet, add it to a page, and configure it to allow users to submit new data records for a lists.](../../images/05-ddl-add-record.png)
+![Figure 10.4: You can enter a new data record by clicking on *Admin* &rarr; *Content* from the Dockbar, clicking on *Dynamic Data Lists*, clicking on an existing list, and then clicking on the *Add* button next to the list's name. Alternatively, you can install the Dynamic Data List Form portlet, add it to a page, and configure it to allow users to submit new data records for a lists.](../../images/05-ddl-add-record.png)
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
@@ -298,12 +298,12 @@ with a form to fill out.
 
 ---
 
- ![Note](../../images/tip.png) **Note:** If you want guests to use DDL forms,
- you'll need to enable the *Allow Multiple Submissions* feature. Liferay treats
- the Guest user as one user. Therefore, if a guest submits a DDL form, Liferay
- assumes the Guest user filled out their one form and it won't allow any other
- guests to submit a form. Thus, allowing the Guest user to submit multiple
- submissions allows all your guests to submit DDL forms.
+ ![Note](../../images/tip.png) **Note:** If you want to allow guests to submit
+ DDL forms, you'll need to enable the *Allow Multiple Submissions* feature.
+ Liferay treats the Guest user as one user. Therefore, if a guest submits a DDL
+ form, Liferay assumes the Guest user filled out their one form and it won't
+ allow any other guests to submit a form. Thus, allowing the Guest user to
+ submit multiple submissions allows all your guests to submit DDL forms.
 
 ---
 
@@ -477,15 +477,15 @@ Velocity. There is no functional difference between the two. Once you choose the
 script language, you can upload a template file or use the display template
 editor to type in a script manually. Inside the editor, you have access to a
 palette featuring common variables related to your selected template language.
-Additionally, you can hover your pointer over a variable in the pallete for a
+Additionally, you can hover your pointer over a variable in the palette for a
 more detailed description. To place a variable into the display template code,
 position your cursor where you want it placed, and click the variable name in
 the palette. Another useful tool in the display template editor is the
-autocomplete feature. In a Freemarker template, it can be invoked by typing *${*
+autocomplete feature. In a FreeMarker template, it can be invoked by typing *${*
 which opens a drop-down menu of common variables. Upon selecting one of the
 variables, the editor inserts the variable into your display template code.
 
-We want to write a Freemarker template to give us a summary of who is helping on
+We want to write a FreeMarker template to give us a summary of who is helping on
 the tasks in our move. To do that, we need to access the records for the list
 and pull out the name and task for each volunteer. Within the template, we have
 access to a number of helper variables to find out what records we have access
@@ -557,7 +557,7 @@ can now be a summary of tasks as shown below.
 
 All the knowledge you have accrued through building out your award-winning
 content can be brought to bear in display templates. With the full power of
-Freemarker or Velocity templates at your fingertips, you have easy access to all
+FreeMarker or Velocity templates at your fingertips, you have easy access to all
 the data in the list, as well as the full complement of helper methods and the
 Alloy UI JavaScript library to make easy work of dynamic displays. 
 
