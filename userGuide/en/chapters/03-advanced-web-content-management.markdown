@@ -867,7 +867,9 @@ Propagate* button.
 
 The *Reset and Propagate* button resets the merge fail count and attempts to
 propagate your site changes again. This process gives the portal administrator
-the opportunity to detect and fix a merge fail, when problems arise. 
+the opportunity to detect and fix a merge fail, when problems arise. This
+helpful process can also be done with page template merges, which follows
+similar steps.
 
 Site administrators can also add data to site template portlets. For example,
 site template administrators can add the Wiki portlet to a site template page
@@ -952,7 +954,10 @@ select your template from the drop down menu, and click *Add Page* to finish.
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
-*Automatically apply changes done to the page template* box.
+*Automatically apply changes done to the page template* box. Occasionally,
+propagation for page templates fail due to unintended errors. To learn how to
+manage a failed page template propagation, visit the *Propagating Changes from
+Site Templates to Sites* section of this chapter.
 
 <!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here
 because it is of interest in the context of managing a site, not in the context
