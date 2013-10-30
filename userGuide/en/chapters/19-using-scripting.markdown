@@ -344,8 +344,9 @@ The combination of Liferay's scripting and workflow engines is incredibly
 powerful, but as it provides users with the ability to execute code, it can also
 be dangerous. When configuring your permissions, be aware of the potential
 consequences of poorly, or maliciously, written scripts inside of a workflow
-definition. For more information on creating definitions with Kaleo Workflow see
-[chapter 11](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en)
+definition. For more information on creating workflow definitions with Kaleo
+workflow, see [chapter
+11](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en)
 of this guide on using Kaleo workflow.
 
 <!-- ## Script Based Portlets -->
