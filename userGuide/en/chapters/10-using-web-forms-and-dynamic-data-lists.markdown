@@ -294,8 +294,21 @@ for a list. If this box is not checked, once a user fills out an entry, the
 portlet displays a message stating that a record has already been submitted. If
 the *Allow Multiple Submissions* box is checked, each time a user visits your
 page with the Sign-Up form, the Dynamic Data List Form portlet presents them
-with a form to fill out. Once records have been submitted for lists, you can
-publish the lists anywhere in your portal. Read on to find out more about that. 
+with a form to fill out.
+
+---
+
+ ![Note](../../images/tip.png) **Note:** If you want guests to use DDL forms,
+ you'll need to enable the *Allow Multiple Submissions* feature. Liferay treats
+ the Guest user as one user. Therefore, if a guest submits a DDL form, Liferay
+ assumes the Guest user filled out their one form and it won't allow any other
+ guests to submit a form. Thus, allowing the Guest user to submit multiple
+ submissions allows all your guests to submit DDL forms.
+
+---
+
+Once records have been submitted for lists, you can publish the lists anywhere
+in your portal. Read on to find out more about that. 
 
 ### Using Default Displays [](id=using-default-displays-liferay-portal-6-2-user-guide-10-en)
 
