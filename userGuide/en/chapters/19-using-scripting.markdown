@@ -234,23 +234,24 @@ console: 
 - Scripts are executed synchronously, so be careful with scripts that might take
   a long time to execute. 
 
-For these reasons, you want to use the script console with care, and test run
-your scripts on non-production systems before you run them on production. Of
-course, the script engine has uses beyond the script console. One of the main
-uses of it is in designing workflows. 
+For these reasons, you should use the script console with care. It's best to
+test run your scripts on non-production systems before running them on
+production. Of course, Liferay's script engine has uses beyond the script
+console. Let's learn how to leverage Liferay's script engine for designing
+workflows. 
 
 ## Leveraging the Script Engine in Workflow [](id=leveraging-the-script-engine-in-workflo-liferay-portal-6-2-user-guide-19-en)
 
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
-approving content in an enterprise environment. Just with the standard feature
-set, it is a powerful and robust workflow solution. Adding scripting features
-brings it to the next level.
+approving content in an enterprise environment. Even if you don't leverage
+custom scripts, it's a powerful and robust workflow solution. Adding custom
+scripts takes it to the next level.
 
-The default workflow definition included with Kaleo gives you a quick look into
-how the feature works. The final step in the workflow runs a script that makes
-content available for use. As you can see in the snippet below, it uses
-JavaScript to access the Java class associated with the workflow to set the
-status of the content to *approved*.
+Examine the default Single Approver workflow definition included with Kaleo for
+an overview of how the feature works. The final step in the workflow runs a
+script that makes content available for use. As you can see in the snippet
+below, it uses JavaScript to access the Java class associated with the workflow
+to set the status of the content to *approved*.
 
 	<script>
 	<![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
@@ -260,17 +261,19 @@ status of the content to *approved*.
 
 At virtually any point in a workflow, you can use Liferay's scripting engine to
 access workflow APIs or other APIs outside of workflow. There are a lot of
-different ways you could use this, but some practical ones might be getting a
-list of users with a specific workflow-related role; sending an email to the
-designated content approver with a list of people to contact if he is unable to
-review the content; or creating an alert to be displayed in the Alerts portlet
-for any user assigned to approve content.
+different ways you could use this. Here are a few practical ones:
 
-Of course, before you try any of this, you might want to know what the
-appropriate syntax is for inserting a script into the workflow. In an XML
-workflow definition, a script can be used in any XML type that can contain an
-*actions* tag--those types being `<state>`, `<task>`, `<fork>` and `<join>`.
-Inside of one of those types, format your script like this:
+- Getting a list of users with a specific workflow-related role
+- Sending an email to the designated content approver with a list of people to
+  contact if he is unable to review the content
+- Creating an alert to be displayed in the Alerts portlet for any user assigned
+  to approve content
+
+Of course, before you try any of this, you need to know the appropriate syntax
+for inserting a script into a workflow. In an XML workflow definition, a script
+can be used in any XML type that can contain an *actions* tag: those types are
+`<state>`, `<task>`, `<fork>` and `<join>`. Inside of one of those types, format
+your script like this:
 
 	<actions>
 		<action>
@@ -283,9 +286,12 @@ Inside of one of those types, format your script like this:
 	</actions>
 
 Here's an example of a workflow script created in Groovy. This one is designed
-to be used with a `Condition` statement in Kaleo. It accesses Liferay's Asset
-Framework to determine the category of an asset in the workflow so the correct
-approval process can be automatically determined. 
+to be used with a `Condition` statement in Kaleo. It accesses Liferay's asset
+framework to determine the category of an asset in the workflow. The script uses
+the category to automatically determine the correct approval process. If the
+category `legal` has been applied to the asset, the asset is sent to the `Legal
+Review` task upon submission. Otherwise, the asset is sent to the `Default
+Review` task.
 
 	<script>
 			<![CDATA[
@@ -337,17 +343,16 @@ approval process can be automatically determined.
 		</script>
 		<script-language>groovy</script-language>
 
-Within a workflow, the next task or state is chosen based on the what the method
-returns.
+Within a workflow, the next task or state is chosen based on the return value.
 
 The combination of Liferay's scripting and workflow engines is incredibly
-powerful, but as it provides users with the ability to execute code, it can also
-be dangerous. When configuring your permissions, be aware of the potential
+powerful. However, since it provides users with the ability to execute code, it
+can be dangerous. When configuring your permissions, be aware of the potential
 consequences of poorly, or maliciously, written scripts inside of a workflow
 definition. For more information on creating workflow definitions with Kaleo
 workflow, see [chapter
 11](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en)
-of this guide on using Kaleo workflow.
+of this guide.
 
 <!-- ## Script Based Portlets -->
 
