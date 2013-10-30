@@ -852,6 +852,23 @@ when resetting, portlet preferences are copied from site template portlets to
 site portlets. Only global portlet preferences or local portlet preferences
 which don't refer to IDs are overwritten.
 
+In some cases, merging site template and site changes fails. For example, if
+pages from a site template cannot be propagated because their friendly URLs are
+in conflict, the portal could try to continuously merge the site changes.
+Instead of entering into an infinite loop of merge fails, Liferay stops the
+merge after several unsuccessful attempts. However, Liferay doesn't stop there;
+your merge is temporarily paused, you're given an indication of the current
+merge fail, and, then, you're given the opportunity to fix your merge conflicts.
+After you've squared away your conflict, navigate to *Site Administration*
+&rarr; *Configuration* &rarr; *Site Settings* and click the *Reset and
+Propagate* button.
+
+![Figure 3.13: You can reset and propagate the merge fail count by navigationg to *Site Settings*.](../../images/reset-and-propagate.png)
+
+The *Reset and Propagate* button resets the merge fail count and attempts to
+propagate your site changes again. This process gives the portal administrator
+the opportunity to detect and fix a merge fail, when problems arise. 
+
 Site administrators can also add data to site template portlets. For example,
 site template administrators can add the Wiki portlet to a site template page
 and use the Wiki to create lots of articles. When a portal administrator creates
