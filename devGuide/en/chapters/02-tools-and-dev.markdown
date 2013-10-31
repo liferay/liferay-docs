@@ -1467,7 +1467,7 @@ Then, upon the velvet falling, I betook to Maven installing..."
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
 recommend putting your Maven installation's `bin` directory in your system's
-path, so you can run the Maven executable (`mvn`) easily from your command
+`$PATH`, so you can run the Maven executable (`mvn`) easily from your command
 prompt. 
 
 Let's learn about the types of repositories you can use with Maven projects. 
@@ -2097,7 +2097,7 @@ below to generate Liferay plugin projects of any type.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
- and that it's executable is in your path environment variable. 
+ and that it's executable is in your `$PATH` environment variable. 
 
 ---
 
