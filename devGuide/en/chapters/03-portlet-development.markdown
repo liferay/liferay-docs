@@ -1494,8 +1494,8 @@ To create a plugin which extends another, follow these steps:
     `social-networking-portlet-6.2.0.1.war`) to the root folder of your
     new plugin. 
 
-<!--Need to change the .war file name once we know what it is in 6.2. I just
-used the CE name-->
+    <!--Need to change the .war file name once we know what it is in 6.2. I just
+    used the CE name-->
 
 4.  Add the following line to your `build.xml` inside of the `<project>` tag to
     reference the original WAR file you are going to extend:
