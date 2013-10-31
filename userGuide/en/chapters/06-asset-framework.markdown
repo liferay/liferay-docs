@@ -344,13 +344,13 @@ searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer class defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/asset-framewo-4).
-For this reason, you can have additional asset types defined in your portal
-beyond the ones that Liferay ships with by default. If this is the case, you
-might want to tweak the `frequencyThreshold` and the `maxTerms` settings to
-increase the number of asset types displayed past the default of 10. This is
-covered in the section below on search options. 
+described in the [Asset
+Framework](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en).
+section of the Developer's Guide. For this reason, you can have additional asset
+types defined in your portal beyond the ones that Liferay ships with by default.
+If this is the case, you might want to tweak the `frequencyThreshold` and the
+`maxTerms` settings to increase the number of asset types displayed past the
+default of 10. This is covered in the section below on search options.
 
 #### Asset Tags [](id=asset-tags-liferay-portal-6-2-user-guide-06-en)
 
@@ -810,7 +810,11 @@ to select content dynamically.
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
-content. You have the following options for creating these rules:
+content. You can define complicated rules for selecting assets for display and
+Liferay automatically takes permissions into account. Liferay's Asset Publisher
+performs well in these situations since it queries by search index instead of
+querying the database directly. You have the following options for creating
+rules for selecting content:
 
 **Scope:** Choose the sites from which the content should be selected. This
 works the same way as with manual asset selection: assets can only be displayed
@@ -974,7 +978,7 @@ content to one of several formats:
 - TXT
 
     Please refer to the User Guide's section on [Liferay Server
-    Administration](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-server-administration-0)
+    Administration](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/server-administration-liferay-portal-6-2-user-guide-17-en)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
