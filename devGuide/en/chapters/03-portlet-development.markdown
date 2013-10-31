@@ -1262,21 +1262,54 @@ translations using the Bing Translator service, you'll need to do the following:
     sure to write down your client ID and client secret given to you for your
     application.
 
-2.  Edit the `portal-ext.properties` file in your Liferay Home directory by
+2.  Make sure that you have a `build.[username].properties` file in your Plugins
+    SDK root directory. This `build.[username].properties` file should contain a
+    reference to a Liferay bundle. If you have a Liferay Tomcat bundle, for
+    example, your reference should look like this:
+
+        app.server.dir=[Liferay Home]/tomcat-7.0.42
+        auto.deploy.dir=[Liferay Home]/deploy
+
+    `[Liferay Home]` refers to your bundle's root directory.
+
+3.  Edit the `portal-ext.properties` file in your Liferay Home directory by
     adding the following two lines replaced with your values:
 
         microsoft.translator.client.id=your-[client-id]
         microsoft.translator.client.secret=your-[client-secret]
 
-3.  In Developer Studio, right-click on the `Language.properties` file &rarr;
-    Liferay &rarr; Build Languages.
+    Liferay copies the `portal-ext.properties` file from your Liferay Home
+    directory to the `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory
+    upon startup. So either start Liferay or manually copy your
+    `portal-ext.properties` file from Liferay Home to this location.
 
-    If prompted, choose the option to force Eclipse to accept the
-    `Language.properties` file as UTF-8. Make sure you are connected to the
-    Internet when you execute this. 
+4.  Edit the `Language.properties` file of the plugin for which you'd like to
+    add properties to be translated. For example, if you have a `hello-world`
+    portlet in your Plugins SDK, you'd edit the following file:
+
+        [Liferay Plugins SDK]/portlets/hello-world-portlet/docroot/WEB-INF/src/content/Language.properties
+
+    You can add properties, remove properties, or edit properties. However,
+    translations will *not* be generated for existing properties. 
+
+5.  Run `ant build-lang` from the plugin directory of the plugin for which you'd
+    like to generate translations. For example, in the case of the `hello-world`
+    portlet example, you'd run `ant build-lang` from the `[Liferay Plugins
+    SDK]/portlets/hello-world-portlet` directory.
 
 When the build completes, you'll find the generated files with all of the
-translations, in the same folder as your `Language.properties` file.
+translations in the same folder as your `Language.properties` file.
+
+---
+
+ ![Note](../../pen-paper-tip.png) **Note:** Since translations aren't generated
+ for existing properties, use two steps if you need to edit existing properties.
+ First, remove the properties from `Language.properties` and run `ant
+ build-lang` to remove the properties from all the other resource bundles. Then
+ re-add the properties with new values and run `ant build-lang` again. Now the
+ Microsoft Translator should generate new translations for your properties.
+
+---
 
 ---
 
