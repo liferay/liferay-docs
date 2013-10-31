@@ -1302,7 +1302,7 @@ translations in the same folder as your `Language.properties` file.
 
 ---
 
- ![Note](../../pen-paper-tip.png) **Note:** Since translations aren't generated
+ ![Note](../../images/tip-pen-paper.png) **Note:** Since translations aren't generated
  for existing properties, use two steps if you need to edit existing properties.
  First, remove the properties from `Language.properties` and run `ant
  build-lang` to remove the properties from all the other resource bundles. Then
