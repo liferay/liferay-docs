@@ -1234,8 +1234,8 @@ we'll use a simple Jasper template that was created using iReport Designer.
                 </summary>
         </jasperReport>
 
-2. Log in to your portal as an administrator, navigate to the Control Panel, and
-   navigate to the Reports Admin portlet.
+2. Log in to your portal as an administrator, navigate to Site Administration,
+   and navigate to the Reports Admin portlet.
 
 3. Navigate to the Definitions tab and click *Add Report Definition*.
 
