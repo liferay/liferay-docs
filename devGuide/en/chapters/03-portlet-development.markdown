@@ -1430,6 +1430,11 @@ To create a plugin which extends another, follow these steps:
         
         ...
 
+6.  If the plugin that you're extending contains a service, you need to
+    overwrite the `ClpSerializer.java` file. The Service Builder-generated
+    `ClpSerializer.java` file contains a hard-coded project for
+    `_servletContextName`. You need to change this to the name of your plugin.
+
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
