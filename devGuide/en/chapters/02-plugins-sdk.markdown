@@ -64,11 +64,11 @@ Installation steps:
     systems have trouble running Java applications from folders with names
     containing spaces, avoid using spaces when naming your folder.
 
-    On Windows, to a build a plugin's services (see Chapter 4 on Service
-    Builder), the Plugins SDK and Liferay Portal instance must be on the same
-    drive. E.g., if your Liferay Portal instance is on your `C:\` drive, your
-    Plugins SDK must also be on your `C:\` drive in order for Service Builder to
-    be able to run successfully. 
+    On Windows, to build a plugin's services (see Chapter 4 on Service Builder),
+    the Plugins SDK and Liferay Portal instance must be on the same drive. E.g.,
+    if your Liferay Portal instance is on your `C:\` drive, your Plugins SDK
+    must also be on your `C:\` drive in order for Service Builder to be able to
+    run successfully. 
 
 ---
 
