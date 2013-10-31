@@ -13,6 +13,7 @@ customers. In this chapter we'll discuss following applications:
 - Reports and JasperReports
 - Knowledge Base
 - Akismet
+- Weather
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs
 in the portal that can also be used by an administrator to publish relevant
@@ -1529,6 +1530,24 @@ select any posts that you don't agree are spam and mark them as *Not Spam*. If
 you're not sure about a post, click the *Actions* button and select *View in
 Context* to view the post in its original setting.
 
+## Weather
+
+Liferay's Weather portlet displays basic weather-related information
+(temperature, conditions) for multiple configurable locations. It's available as
+an app from Liferay Marketplace. For each configured location, a link to [Open Weather Map](http://openweathermap.org/)
+is provided that points to more detailed information. The Weather portlet also
+provides a search bar that allows users to find information about locations that
+aren't listed by the portlet. Searching via the search bar forwards the user to
+[Open Weather Map](http://openweathermap.org/), where the search is executed.
+
+![Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
+
+To configure the displayed locations, open the Weather portlet's configuration
+window. In the first text area, enter the names of the cities about which you'd
+like weather information to be displayed. Alternatively, you can use zip codes.
+Enter one city or zip code per line. For the temperature format, you can choose
+between Celsius and Fahrenheit.
+
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-13-en)
 
 In this chapter, we examined several Liferay utility applications: the Bookmarks
@@ -1547,5 +1566,7 @@ combined with a suitable implementation, such as the JasperReports application
 generate reports, and export reports to a wide variety of formats. The Knowledge
 Base application is an EE-only application that allows you to create articles
 and organize them into full books or guides that be published on your portal.
-Next, let's take a tour of the Liferay Marketplace and learn how to manage
-Liferay plugins.
+The Weather portlet provides users with a summary of weather-related information
+for multiple locations and provides a links to [Open Weather Map](http://openweathermap.org/)
+for more detailed information for each location. Next, let's take a tour of the
+Liferay Marketplace and learn how to manage Liferay plugins.
