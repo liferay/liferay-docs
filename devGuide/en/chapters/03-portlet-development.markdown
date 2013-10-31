@@ -1039,23 +1039,21 @@ explore localization of the portlet's user interface.
 If your portlets target an international audience, you can localize the user
 interface. Localizing a portlet's language is done using language keys for each
 language you wish to support. You can translate these manually or use a web
-service to translate them for you. Conveniently, all of the existing translated
-messages used by Liferay Portal are also accessible to plugin projects. To
-localize messages in addition to portal's localized messages, you must create
-language keys in one or more resource bundles within your plugin project. When
-planning your plugin's localization, you should consider the following
-questions.
+service to translate them for you. Conveniently, all existing translated
+messages Portal uses are accessible to all plugin projects. To localize messages
+in addition to portal's localized messages, you must create language keys in one
+or more resource bundles within your plugin project. There are some basic
+questions to ask yourself in planning your plugin's localization. 
 
-Are there messages that Liferay Portal uses that you'd like to use in your
-portlets? Does your plugin contain multiple portlets? If so, do any of its
-portlets need to be available for administrative purposes in the Control Panel?
-If any of its portlets need to be in the Control Panel, you should create
-separate resource bundles for each of these portlets. Otherwise, your portlets
-should share the same resource bundle so that you can leverage Liferay's
-language building capabilities from Liferay IDE and the Plugins SDK. We'll show
-you how to localize your portlets in all of these scenarios. Let's start by
-leveraging messages Portal has already localized in its core set of language
-keys. 
+Are there messages that Portal uses that you'd like to use in your portlets?
+Does your plugin contain multiple portlets? If so, do any of its portlets need
+to be available for administrative purposes in the Control Panel? If any of its
+portlets need to be in the Control Panel, you should create separate resource
+bundles for each of these portlets. Otherise your portlets should share the same
+resource bundle so that you can leverage Liferay's language building
+capabilities from Liferay IDE and the Plugins SDK. We'll show you how to
+localize your portlets in all of these scenarios. Let's start by leveraging
+messages Portal has already localized in its core set of language keys. 
 
 ### Using Liferay's Language Keys [](id=using-liferay-langauge-keys-liferay-portal-6-2-dev-guide-03-en)
 
@@ -1088,8 +1086,8 @@ current greeting paragraph with this:
 
     <p><liferay-ui:message key="welcome" />! <%= greeting %></p>
 
-Revisit the page to confirm that the word "Welcome", from `Language.properties`,
-now precedes your greeting!
+Revisit the page to see the word "Welcome", from `Language.properties`, now
+precedes your greeting!
 
 Note, in order to use the `<liferay-ui:message />` tag, or any of the
 `liferay-ui` tags, you must include the following line in your JSP. It imports
@@ -1229,41 +1227,74 @@ are accessible from either of the portlets.
 ---
 
  ![Note](../../images/tip-pen-paper.png) **Note:** It's best to use the Liferay
- naming convention for language bundle files and folders so your portlets can
- access the bundle and you can use the automatic language building capabilities
+ naming convention for language bundle file and folder so your portlets can
+ access the bundle and you can use the automatic langauge building capabilities
  of Liferay IDE and the Plugins SDK with the bundle. 
 
 ---
 
 Before we cover localizing Control Panel portlets, let's learn how Liferay
-facilitates generating language properties files. 
+facilitates generating language key files and translating the keys to languages
+you want to support. 
 
-### Generating Language Properties Files [](id=translating-languages-liferay-portal-6-2-dev-guide-03-en)
+### Translating Languages [](id=translating-languages-liferay-portal-6-2-dev-guide-03-en)
 
 In order for a user to see a message in his own locale, the message value must
 be specified in a resource bundle file with a name ending in his locale's two
 character code. For example, a resource bundle file named
 `Language_es.properties` containing a message property with key `welcome` must
 be present with a Spanish translation of the word "Welcome". Don't worry, the
-Plugins SDK provides a means for you to generate language properties files for
-multiple languages. The Plugins SDK contains an Ant target called `build-lang`
-that copies the language properties keys from the default `Language.properties`
-file to the generated language properties files, such as
-`Language_es.properties`, `Language_ru.properties`, etc. However, you'll need a
-translator to translate each key value for each language you'd like to support.
-The default language properties values are appended with the message `"Automatic
-Copy"` so that users will know which properties haven't yet been translated.
+Plugins SDK provides a means for you to get translations for your default
+resource bundle.
 
-Even though the Plugins SDK's `build-lang` doesn't generated a machine
-translation, it's still useful since it provides translators with a specific
-list of language key/value pairs that need to be translated. In fact, some users
-prefer no translation at all to a machine translation since machine translations
-are often rude, inadvertently funny, or simply inaccurate. In the previous
-section, we explained how to create a shared resource bundle. Next, we'll
-explain why you may need to use separate resource bundles for each portlet. For
-example, in order to localize the title and description for each of your
-plugin's Control Panel-enabled portlets, you must use separate resource bundles.
-We'll show you how to implement them. 
+<!-- TODO The following section on using the Bing Translator service still needs
+to be tested -->
+
+The Plugins SDK uses the Bing Translator service
+[http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
+translate all of the resources in your Language.properties file to multiple
+languages. It provides a base translation for you to start with. To create base
+translations using the Bing Translator service, you'll need to do the following:
+
+1.  Signup for an Azure Marketplace account and register your application. Be
+    sure to write down your ID and secret given to you for your application.
+
+2.  Edit the `portal-ext.properties` file in your Liferay Home directory by
+    adding the following two lines replaced with your values:
+
+        microsoft.translator.client.id=your-id
+        microsoft.translator.client.secret=your-secret
+
+3.  In Developer Studio, right-click on the `Language.properties` file &rarr;
+    Liferay &rarr; Build Languages.
+
+    If prompted, choose the option to force Eclipse to accept the
+    `Language.properties` file as UTF-8. Make sure you are connected to the
+    Internet when you execute this. 
+
+When the build completes, you'll find the generated files with all of the
+translations, in the same folder as your `Language.properties` file.
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** If you're mavenizing your
+ portlet, make sure to copy your `content` folder into your portlet's
+ `src/main/webapp/WEB-INF/classes` folder. 
+
+---
+
+By using Studio's language building capability, you can keep all created
+translations synchronized with your default `Language.properties`. You can run
+it any time during development. It significantly reduces the time spent on the
+maintenance of translations. Of course, you'll want to have someone fluent in
+that language review the translation before deploying the translation to a
+Production environment. 
+
+Now that you know how to create a shared resource bundle, let's consider why you
+may need to use separate resource bundles for each portlet. For example, in
+order to localize the title and descpription for each of your plugin's Control
+Panel-enabled portlets, you must use separate resource bundles. We'll show you
+how to implement them. 
 
 ### Localizing Control Panel Portlets [](id=localize-control-panel-portlets-liferay-portal-6-2-dev-guide-en)
 
