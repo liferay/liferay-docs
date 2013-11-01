@@ -1318,13 +1318,12 @@ distracting in the first paragraph and thought it was more important to focus on
 introducing model hints. Perhaps this can be moved somewhere else in this
 section or the chapter. - Jim
 
-Service Builder generates a
-number of XML configuration files in your project's
+Service Builder generates a number of XML configuration files in your project's
 `docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
 to manage Spring and Hibernate configurations. Don't modify the Spring or
 Hibernate configuration files; your changes will be overwritten the next time
-Service Builder runs. However, you can safely edit the
-`portlet-model-hints.xml` file. 
+Service Builder runs. However, you can safely edit the `portlet-model-hints.xml`
+file. 
 -->
 
 Model hints let you to configure how the AlloyUI tag library, `aui`, shows
@@ -1378,10 +1377,10 @@ following along in the previous sections, Service Builder created the
 
 <!-- The above model elements should include the uuid String field? - Jim -->
 
-The root-level element is `model-hints`. In this are all your model entities
-represented by `model` elements. Each `model` element must have a `name`
-attribute specifying the fully-qualified model class name. Each model has
-`field` elements representing its model entity's columns. Lastly, each
+The root-level element is `model-hints`. All your model entities are represented
+by `model` sub-elements of the `model-hints` element. Each `model` element must
+have a `name` attribute specifying the fully-qualified model class name. Each
+model has `field` elements representing its model entity's columns. Lastly, each
 `field` element must have a name and a type. Each `field` element's names and
 types correspond to the names and types specified for each entity's columns in
 your project's `service.xml` file. Service Builder generates all these elements
@@ -1435,7 +1434,7 @@ Name                | Value Type | Description | Default
 `max-length`        | integer | sets the maximum column size for SQL file generation | 75
 `month-nullable`    | boolean | allows the month to be null in a date field | false
 `secret`            | boolean | sets whether hide the characters input by the user | false
-`show-time`         | boolean | sets whether to show inlcude time along with the date | true
+`show-time`         | boolean | sets whether to show include time along with the date | true
 `upper-case`        | boolean | converts all characters to upper case | false
 `year-nullable`     | boolean | allows the year to be null in a date field | false
 `year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
