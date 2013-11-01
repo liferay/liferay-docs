@@ -527,7 +527,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-### Dependency Jars 
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en)
 
 To run Liferay Portal on your Tcat server, you first need to make some JAR files
 available on Tcat's global classpath. These include the Liferay Dependency JARs,
@@ -585,7 +585,7 @@ requires.
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
 
-### Tcat Configuration 
+### Tcat Configuration [](id=tcat-configuration-liferay-portal-6-2-user-guide-15-en)
 
 If you're installing Liferay Portal onto an existing Tcat server, you should be
 familiar with the Tcat Administration Console. The following instructions assume
@@ -601,7 +601,7 @@ to Tcat server installation and management, see [Mulesoft's Tcat Documentation](
 
 - Specify URI encoding
 
-![Figure 15.x: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
+![Figure 15.2: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
 
 Next, you'll configure your managed Tcat instance. 
 
@@ -667,7 +667,7 @@ link, and replace the line:
 with:
 
         common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-        
+
 This allows Catalina to access the dependency jars you extracted to
 `[TCAT_HOME]/lib/ext`.
 
@@ -678,11 +678,11 @@ This allows Catalina to access the dependency jars you extracted to
 
     <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
-![Figure 15.x: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
+![Figure 15.3: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
 
 Excellent work! Now it's time to configure your database.
 
-### Database Configuration 
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en)
 
 If you want Tcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -708,7 +708,7 @@ the context of your web application specified in
                 maxWait="10000"
             />
         </Context>
-    
+ 
 Note the above resource definition assumes your database name is *lportal*
 and your MySQL username and password are both *root*. You'll have to update
 these values with your own database name and credentials.
@@ -716,7 +716,7 @@ these values with your own database name and credentials.
 Your Tcat managed data source is now configured. Let's move on to your mail
 session.
 
-### Mail Configuration 
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en)
 
 If you want to manage your mail session within Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -750,7 +750,7 @@ mail session. Be sure to replace the mail session values with your own.
 Super! Your mail session is configured. Next, you need to connect Liferay to the
 mail session and database connections you just created. 
 
-### Configuring your Database and Mail Session 
+### Configuring your Database and Mail Session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
 
 In this section you'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -778,7 +778,7 @@ connecting to your database and mail session.
 Before you deploy Liferay Portal, let's look at configuring Portal Access
 Control Lists (PACL) with Liferay on Tomcat. 
 
-### Enabling PACL 
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
 
 To enable PACL, you need to enable the security manager and add some required
 permissions to the server policy configuration file. This entails editing
@@ -819,7 +819,7 @@ Edit `$TCAT_HOME/conf/Catalina.policy` and add the required permissions:
 
 Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
 
-### Deploying Liferay
+### Deploying Liferay [](id=deploying-liferay-liferay-portal-6-2-user-guide-15-en)
 
 It's time to deploy Liferay as an exploded web archive in your
 `$TCAT_HOME/webapps` folder. The first step is to make sure your Tcat server is
@@ -836,7 +836,7 @@ running; then follow these steps to deploy and start Liferay.
    Liferay, and under the *Name* field, type `/` to put the extracted Liferay into
    `[TCAT_HOME]/webapps/ROOT`.
 
-   ![Figure 15.x: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
+   ![Figure 15.4: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
 
 3. Once you've entered all the deployment details, you can select *Deploy*.
    Once you see a *Successful* message in the Tcat Administration Console,
@@ -872,7 +872,7 @@ you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
-### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en)
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-0)
 
 Liferay depends on jar files found in the Liferay Dependencies Archive. You
 should also have installed your database driver.
@@ -954,7 +954,7 @@ location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
-### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en)
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to use GlassFish to manage your domain's data source, follow the
 instructions found in this section. If you want to use Liferay Portal to manage
@@ -968,7 +968,7 @@ your data source, you can skip this section.
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC
    Connection Pools*
 
-    ![Figure 15.35: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
+    ![Figure 15.5: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
 
 4. Click *New...*.
 
@@ -977,7 +977,7 @@ your data source, you can skip this section.
    type, and select your database driver vendor (e.g. `MySQL`). See the
    following figure:
 
-    ![Figure 15.36: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
+    ![Figure 15.6: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6. Click *Next* to advance to the next step in creating your JDBC connection
    pool.
@@ -985,7 +985,7 @@ your data source, you can skip this section.
 7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
    Properties* section.
 
-    ![Figure 15.37: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+    ![Figure 15.7: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
@@ -1031,7 +1031,7 @@ your data source, you can skip this section.
 
 Congratulations! You've now configured your domain's data source on GlassFish!
 
-### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en)
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to use GlassFish to manage your mail session, follow GlassFish's
 documentation on configuring a JavaMail session with a JNDI name of
@@ -1133,7 +1133,7 @@ Now let's go ahead and deploy Liferay.
 
 7. Click *OK*.
 
-![Figure 15.38: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
+![Figure 15.8: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
 
 Once you have deployed Liferay via GlassFish's administrative console, restart
 GlassFish.
@@ -1844,7 +1844,7 @@ replace the mail session values with your own.
 Super! Your mail session is configured. Next, we'll make sure Liferay will be
 able to access your mail session and database.
 
-### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-se-liferay-portal-6-2-user-guide-15-en-0)
 
 In this section we'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -1873,7 +1873,7 @@ It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en-0)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -2229,7 +2229,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.39: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
+    ![Figure 15.9: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
 3. Check the box *Deploy the administrative console*. This gives you a web-based
    UI for working with your application server. Skip the default applications.
@@ -2273,7 +2273,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.40: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
+![Figure 15.10: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -2297,7 +2297,7 @@ Liferay's standard database configuration; in that case, skip this section.
 You'll set your database information in Liferay's setup wizard after the
 install. 
 
-![Figure 15.41: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 15.11: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -2338,7 +2338,7 @@ install.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![Figure 15.42: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 15.12: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
     database. Click *OK* and save to master configuration.
@@ -2404,7 +2404,7 @@ In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.43: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
+    ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
@@ -2445,7 +2445,7 @@ you're ready to start Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.44: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
+    ![Figure 15.14: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
@@ -2477,7 +2477,7 @@ For the administrator, you need to supply the following information:
 
 **Email:** the email address of the user that has the administrator account. 
 
-![Figure 15.45: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 15.15: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 Liferay supports just about all the leading databases today: 
 
@@ -2510,7 +2510,7 @@ driver class, and the user credentials (see below). Most of this is filled out
 already; all you should need to do is supply the name of your database and the
 server it's running on, as well as the user credentials. 
 
-![Figure 15.46: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 15.16: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and

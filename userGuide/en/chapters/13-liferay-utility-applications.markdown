@@ -1508,7 +1508,7 @@ select any posts that you don't agree are spam and mark them as *Not Spam*. If
 you're not sure about a post, click the *Actions* button and select *View in
 Context* to view the post in its original setting.
 
-## Weather
+## Weather [](id=weather-liferay-portal-6-2-user-guide-13-en)
 
 Liferay's Weather portlet displays basic weather-related information
 (temperature, conditions) for multiple configurable locations. It's available as
