@@ -208,7 +208,7 @@ creating the `liferay-plugin-repository.xml` file yourself.
 ---
 
 ![Tip](../../images/01-tip.png) **Tip:** The Software Catalog plugin was
-deprected in Liferay 6.2 and is disabled by default. To activate it, navigate
+deprecated in Liferay 6.2 and is disabled by default. To activate it, navigate
 to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
 of portlets until you find *Software Catalog*. Select *Software Catalog* and
 click the *Active* checkbox. Then click *Save*.
@@ -897,11 +897,6 @@ applications, let's learn how to generate reports in Liferay.
 
 ## Generating Reports in Liferay [](id=generating-reports-in-liferay-liferay-portal-6-2-user-guide-13-en)
 
-<!-- Unable to deploy Reports and JasperReports for Liferay EE 6.2. Finish this
-section when the EE apps are available on Marketplace. 
-Reference ticket: LRDOCS-764
--->
-
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay's Reports portlet allows administrators to create reports and schedule
@@ -922,14 +917,13 @@ Liferay instance's `/deploy` folder.
 ### Using the Reports Portlet [](id=using-the-reports-portlet-liferay-portal-6-2-user-guide-13-en)
 
 Once you've installed the Reports and Jasper Reports EE applications, log in to
-your portal as an administrator and navigate to the Control Panel. If your
+your portal as an administrator and navigate to *Site Administration*. If your
 applications have been successfully deployed, you'll find a *Reports Admin*
-entry in the site section of the Control Panel.
+entry in the *Configuration* section on the left menu.
 
-![Figure 13.22: To check that the Reports EE and Jasper Reports EE applications have been succesfully deployed to your Liferay server, look for the *Reports Admin* entry in the site section of the Control Panel.](../../images/reports-admin-control-panel.png)
+![Figure 13.22: To check that the Reports EE and Jasper Reports EE applications have been successfully deployed to your Liferay server, look for the *Reports Admin* entry in the Configuration section of your Site Administration page.](../../images/reports-admin-site-admin.png)
 
-Click on *Reports Admin* in the Control Panel. The Reports Admin portlet has
-three tabs:
+The Reports Admin portlet has three tabs:
 
 - *Reports*
 - *Definitions*
@@ -980,21 +974,7 @@ Once your data source has been saved, make sure that your report template is
 ready for use. If you're using Jasper and need to create a Jasper template,
 consider using a tool like iReport Designer or Jaspersoft Studio to create your
 template. iReport is built on top of Netbeans IDE while Jaspersoft Studio is
-Eclipse-based. Make sure that the version of iReport Designer or Jaspersoft
-Studio that you use is compatible with the version of Jasper Reports that's
-bundled with your Jasper Reports application. For example, if you use iReport
-5.1.0 to create Jasper templates, the templates are created with `uuid`s
-included in `jasperReport` elements. If your Jasper Reports application is using
-`jasperreports-4.0.2.jar`, an error complaining about incompatible `uuid`s in
-the template's `jasperReport` elements will appear when you try to use generate
-a report using the template. There are two solutions to this issue:
-
-1. Switch to an earlier, compatible, version of iReport Designer. iReport 4.5.1
-   is the latest version that does not insert `uuid`s into Jasper templates.
-
-2. If you don't want to switch to an earlier version of iReport, you can search
-   for and remove all of the `uuid`s in your Jasper template. Then your reports
-   will be generated without problems.
+Eclipse-based. 
 
 Once you've created a Jasper template (`.jrxml` file), you're
 ready to create a report definition. Liferay handles compiling the template,
@@ -1039,7 +1019,7 @@ generating a report, you can also configure the permissions of the report to be
 generated. By default, generated reports are site-scoped and are viewable by
 site members.
 
-To configure reports to be generated on a schedule, click *Actions* &rrar; *Add
+To configure reports to be generated on a schedule, click *Actions* &rarr; *Add
 Schedule* next to your report definition from the Report Admin portlet's
 Definitions tab. You can select a start date and, optionally, an end date. You
 can also select how often to repeat the report generation event:
@@ -1249,8 +1229,8 @@ we'll use a simple Jasper template that was created using iReport Designer.
                 </summary>
         </jasperReport>
 
-2. Log in to your portal as an administrator, navigate to the Control Panel, and
-   navigate to the Reports Admin portlet.
+2. Log in to your portal as an administrator, navigate to Site Administration,
+   and navigate to the Reports Admin portlet.
 
 3. Navigate to the Definitions tab and click *Add Report Definition*.
 
@@ -1270,7 +1250,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 9. Click *Actions* &rrar; *Download* next to the `sample-report.pdf` file.
 
 This report should list all of your portal's users, displaying the userId,
-screenName, emailAddress, createDate, and modfifiedDate of each user.
+screenName, emailAddress, createDate, and modifiedDate of each user.
 
 ![Figure 13.25: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
 
@@ -1279,10 +1259,8 @@ the Knowledge base application has to offer.
 
 ## Knowledge Base [](id=knowledge-base-liferay-portal-6-2-user-guide-13-en)
 
-<!-- Unable to deploy Knowledge Base plugin for Liferay EE 6.2. Finish this
-section when the EE apps are available on Marketplace.
-Reference ticket: LRDOCS-764
--->
+<!-- Unable to compile the Knowledge Base portlet for Liferay EE 6.2 (10-31-13).
+Finish this section when the app will compile and deploy: LRDOCS-764 -->
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
