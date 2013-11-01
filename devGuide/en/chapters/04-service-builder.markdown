@@ -966,12 +966,10 @@ the database by making the following call:
 
     EventLocalServiceUtil.addEvent(event);
 
-Service Builder looks through `EventLocalServiceImpl` and automatically copies
-the signatures of each method into the interface. You can now add a new Event to
-the database by invoking the static `addEvent` method that Service Builder
-generated in the `EventLocalServiceUtil` utility class. In addition to all the
-Java classes, Service Builder also generates a `service.properties` file which
-will be covered later. Next, let's call our newly implemented local service. 
+Service Builder generates the `addEvent` method in the `EventLocalServiceUtil`
+utility class. In addition to all the Java classes, Service Builder also
+generates a `service.properties` file which we'll discuss later. Next, let's
+call our newly implemented local service. 
 
 ## Calling Local Services [](id=call-local-services-liferay-portal-6-2-dev-guide-04-en)
 
