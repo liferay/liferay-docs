@@ -169,7 +169,7 @@ Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
 
-## Weather
+## Weather [](id=lp-6-1-ugen12-weather-0)
 
 Liferay's Weather portlet displays basic weather-related information
 (temperature, conditions) for multiple configurable locations. It's available as
