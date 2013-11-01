@@ -2393,9 +2393,8 @@ directory structure:
                 - view.jsp
     - pom.xml
 
-The `portlet-plugin/src/main/java/` directory is created automatically when you
-on create a portlet project with Maven. It holds the portlet's Java source code
-(e.g., `com.liferay.sample.SamplePortlet.java`), and
+Maven creates the `src/main/java/` directory automatically. It holds the
+portlet's Java source code (e.g., `com.liferay.sample.SamplePortlet.java`), and
 `portlet-plugin/src/main/webapp` holds its web source code. If you've created
 any portlet plugins using the Plugins SDK, you might have noted it uses a
 different directory structure. 
