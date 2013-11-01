@@ -90,12 +90,11 @@ Here's how to download and install *Kaleo Forms EE*:
 with an existing workflow designer that's used *within* Liferay Portal. It's
 used to design workflow configuration and is described in the [Kaleo Forms:
 Defining Business
-Processes](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
+Processes](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
 chapter of *Using Liferay Portal*. Refer to the [Using
 Workflow](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/workflow-with-kal-4)
-chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo
-workflow concepts or want to know how to design your workflow within Liferay
-Portal. 
+chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo workflow
+concepts or want to know how to design your workflow within Liferay Portal. 
 
 ---
 
@@ -235,9 +234,10 @@ use in your workflow:
 
 Drag and drop any nodes you need onto your workflow diagram. Each node type
 supports execution of scripted actions and sending notifications that can use
-templates. For additional information on the node types, refer to the [Kaleo
-Designer](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/lp-6-1-ugen06-kaleo-designer-0)
-section of *Using Liferay Portal*. 
+templates. For additional information on the node types, refer to the [Designing
+Workflows with Kaleo Designer for
+Java](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
+chapter of *Using Liferay Portal*. 
 
 For our `ticket-process-definition` workflow diagram, we have a simple
 `StartNode` *State* node, followed by the `Developer` *Task* node, followed by
@@ -306,8 +306,8 @@ different site roles. For simplicity, lets assign both the QA and QA Management
 tasks to the same user. If you have a user in mind, specify that user.
 Otherwise, create a user named "Joe Bloggs" with screen name "joe". For the user
 to receive emails, he must be registered within Liferay Portal. If you haven't
-registered Joe Bloggs ("joe") already, see the [Adding
-users](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/lp-6-1-ugen12-adding-users-0)
+registered Joe Bloggs ("joe") already, see the [Adding and Editing
+Users](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/the-portal-section-of-the-control-panel-liferay-portal-6-2-user-guide-16-en)
 section of *Using Liferay Portal* for instructions. To configure the user's
 email, login to the user's account and visit *Control Panel* &rarr; *Server
 Administration* &rarr; *Mail* for setup options. 
@@ -936,8 +936,8 @@ takes you to the XML, and you can easily switch contexts as you need.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** *Using Liferay Portal* section
-[Creating new workflow
-definitions](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-process-definitio-1)
+[Creating New Workflow
+Definitions](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en)
 explains how to define workflows via XML.
 
 ---
