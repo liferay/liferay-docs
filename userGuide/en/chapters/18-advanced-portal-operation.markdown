@@ -1125,36 +1125,66 @@ producers and consumers and how they interact.
 ![Figure 18.11: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
 
 As we mentioned in the previous chapter, there are two main components of the
-WSRP process: producers and consumers. For an in-depth analysis for each of
-these components and how they work together to provide remote portlets for end
-users, visit [How WSRP
-Works](http://docs.oracle.com/cd/E13218_01/wlp/docs81/wsrp/intro.html#1001163)
-provided by Oracle.
+WSRP process: producers and consumers. Let's go through the basic process of how
+producers and consumers work together to bring the end user a remote portlet.
+First, the consumer portal server establishes a connection with its producer
+portal server counterpart. This connection is made possible by giving the
+consumer the producer portlet's URL. The consumer, then, uses the URL to
+discover the producer's portlet and establish a connection. After the connection
+is made, the consumer acquires the producer's information and creates a consumer
+proxy portlet. The proxy portlet acts as an intermediary, relaying requests to
+and from the end user and producer portlet.
 
-<!-- We should not link to this. This is a competitor's documentation. We need
-to provide our own explanation of WSRP or get rid of it. -Rich -->
+For example, you can compare the proxy portlet to a TV satellite box. If you
+want to change the channel on your TV, you (end user) send the channel number
+you desire to the TV satellite box (consumer's proxy portlet) via your TV's
+remote. When the satellite box receives the request to change the channel, it
+relays the request to a TV satellite (producer's portlet) which then sends the
+channel information back to the satellite box. Then, the satellite box displays
+the new channel to you on your TV. In this simple example, you're not directly
+telling the TV satellite to change the channel, but rather, you're communicating
+with the satellite box, which acts as an intermediary between you and the
+satellite. This example directly relates to using WSRP with Liferay. Although
+the end user is sending requests to the consumer portlet, you're not receiving
+feedback from the consumer portlet itself, but rather, its producer portlet
+located remotely.
 
-Let's create a producer. Go to the *Producers* tab and click *Add
-Producer*. Give your producer a name and choose the appropriate version of WSRP
-to use. Liferay displays a list of available portlets your producer can use.
-For demonstration purposes, select the Hello World portlet and click the *Save*
-button. The portal generates a WSDL document to define your producer. To view
-the WSDL document, click the URL link provided.
+Now that you know a little bit about the WSRP process, let's begin configuring
+WSRP on Liferay Portal. For this demonstration, we'll assume you have two portal
+servers.
+
+---
+
+ ![Tip](../../images/tip.png) **Tip**: If you're following along with this
+ example and don't have an additional portal server, you can download another
+ instance of Liferay Portal and have it running at the same time as your current
+ Liferay instance to simulate an additional portal server. Remember, typical use
+ cases have WSRP producers and consumers linked on differing portal servers. To
+ run two portal instances locally at the same time, you'll need to change one of
+ your portal's server configurations. Navigate to one of your portal's
+ `tomcat-<VERSION>\conf\server.xml` and change the `port=` designations to
+ different values (e.g., change `8080` to `18080`). Also, you can specify the
+ new port number for your browser launcher URL by adding
+ `browser.launcher.url=http://localhost:18080` to your portal's
+ `portal-ext.properties` file.
+
+---
+
+To create a producer, go to the *Producers* tab and click *Add Producer*. Give
+your producer a name and choose the appropriate version of WSRP to use. Liferay
+displays a list of available portlets your producer can use. For demonstration
+purposes, select the Hello World portlet and click the *Save* button. The portal
+generates a WSDL document to define your producer. To view the WSDL document,
+click the URL link provided.
 
 ![Figure 18.12: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
 
-Now that we've created a producer, let's create a consumer. For the purposes of
-this exercise, we're going to use the same Liferay installation as the producer
-and consumer. However, typical use cases have WSRP producers and consumers
-linked on differing portal servers.
+Now that we've created a producer, let's create a consumer on your second portal
+server. 
 
-<!-- We have to do this in training, but we should not do this in the
-documentation. We have to imagine that the reader has another server to use.
--Rich -->
-
-Navigate to the Consumers tab and select the *Add Consumer* button. Give it a
-name and add the producer's WSDL URL in the *URL* field. There are also
-additional fields:
+On your consumer portal server, navigate to the Consumers tab and select the
+*Add Consumer* button. Give it a name and add the producer's WSDL URL in the
+*URL* field. There are also additional fields:
 
 *Forward Cookies:* Allows the WSRP consumer to forward specific cookies from
 the user's browser session to the WSRP producer.
@@ -1166,13 +1196,13 @@ from the user's browser session to the WSRP producer.
 are shown in a comma delimited list. UTF-8 is assumed and will be added
 automatically as a supported encoding.
 
-Leave these additional fields blank for our demonstration. Lastly, we need
-to define the portlets that the end-user can use from this consumer.
-To do this, go to *Actions* &rarr; *Manage Portlets* for your consumer. Add the
-remote portlets that you've configured for your producer. In this case, select
-the *Hello World* remote portlet and give the new portlet an arbitrary name. Now
-end users can "consume" or use the remote portlet just like any local portlet in
-the portal.
+Leave these additional fields blank for our demonstration. Lastly, we need to
+define the portlets that the end-user can use from this consumer. To do this, go
+to *Actions* &rarr; *Manage Portlets* for your consumer. Add the remote portlets
+that you've configured for your producer portal server. In this case, select the
+*Hello World* remote portlet and give the new portlet an arbitrary name. Now end
+users can "consume" or use the remote portlet just like any local portlet in the
+portal.
 
 Next, you'll learn how to create custom remote portlets.
 
