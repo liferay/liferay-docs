@@ -8,6 +8,7 @@ application is an EE-only plugin. In this chapter we'll discuss several of these
 applications:
 
 - Bookmarks
+- Weather
 - Software catalog
 - Shopping
 - Knowledge Base
@@ -167,6 +168,27 @@ the Asset Framework for further information about this.
 Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
+
+## Weather
+
+Liferay's Weather portlet displays basic weather-related information
+(temperature, conditions) for multiple configurable locations. It's available as
+an app from Liferay Marketplace. For each configured location, a link to [Open Weather Map](http://openweathermap.org/)
+is provided that points to more detailed information. The Weather portlet also
+provides a search bar that allows users to find information about locations that
+aren't listed by the portlet. Searching via the search bar forwards the user to
+[Open Weather Map](http://openweathermap.org/), where the search is executed.
+
+![Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
+
+To configure the displayed locations, open the Weather portlet's configuration
+window. In the first text area, enter the names of the cities about which you'd
+like weather information to be displayed. Alternatively, you can use zip codes.
+Enter one city or zip code per line. For the temperature format, you can choose
+between Celsius and Fahrenheit.
+
+Sometimes you have a team of developers creating lots of plugins. Next, you'll 
+see how to create your own repository for those plugins. 
 
 ## Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
@@ -1143,7 +1165,8 @@ In this chapter, we examined two Liferay utility applications: the Software
 Catalog and the Knowledge Base. The Software Catalog allows you to define a set
 of software items to make available to visitors to your portal. Remember that
 the Software Catalog will be replaced by Liferay Marketplace and will soon be
-deprecated. The Knowledge Base application is an EE-only application that allows
-you to create articles and organize them into full books or guides that be
-published on your portal. Next, let's take a tour of the Liferay Marketplace and
-learn how to manage Liferay plugins.
+deprecated. The Knowledge Base application is an EE-only application that
+allows you to create articles and organize them into full books or guides that
+be published on your portal. Liferay's Weather portlet displays basic
+weather-related information for multiple configurable locations. Next, let's
+take a tour of the Liferay Marketplace and learn how to manage Liferay plugins.
