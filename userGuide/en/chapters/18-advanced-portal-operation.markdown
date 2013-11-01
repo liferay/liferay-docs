@@ -1129,11 +1129,11 @@ WSRP process: producers and consumers. Let's go through the basic process of how
 producers and consumers work together to bring the end user a remote portlet.
 First, the consumer portal server establishes a connection with its producer
 portal server counterpart. This connection is made possible by giving the
-consumer the producer portlet's URL. The consumer, then, uses the URL to
+consumer the producer portlet's URL. The consumer then uses the URL to
 discover the producer's portlet and establish a connection. After the connection
 is made, the consumer acquires the producer's information and creates a consumer
 proxy portlet. The proxy portlet acts as an intermediary, relaying requests to
-and from the end user and producer portlet.
+and from the end user and the producer portlet.
 
 For example, you can compare the proxy portlet to a TV satellite box. If you
 want to change the channel on your TV, you (end user) send the channel number
@@ -1145,8 +1145,8 @@ the new channel to you on your TV. In this simple example, you're not directly
 requesting the TV satellite to change the channel, but rather, you're
 communicating with the satellite box, which acts as an intermediary between you
 and the satellite. This example directly relates to using WSRP with Liferay.
-Although the end user is sending requests to the consumer portlet, you're not
-receiving feedback from the consumer portlet itself, but rather, its producer
+Although the end users are sending requests to the consumer portlet, they're not
+receiving feedback from the consumer portlet itself, but rather its producer
 portlet located remotely.
 
 Now that you know a little bit about the WSRP process, let's begin configuring
@@ -1162,7 +1162,7 @@ servers.
  cases have WSRP producers and consumers linked on differing portal servers. To
  run two portal instances locally at the same time, you'll need to change one of
  your portal's server configurations. Navigate to one of your portal's
- `tomcat-<VERSION>\conf\server.xml` and change the `port=` designations to
+ `tomcat-[VERSION]\conf\server.xml` and change the `port=` designations to
  different values (e.g., change `8080` to `18080`). Also, you can specify the
  new port number for your browser launcher URL by adding
  `browser.launcher.url=http://localhost:18080` to your portal's
