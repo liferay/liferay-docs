@@ -856,9 +856,9 @@ In some cases, merging site template and site changes fails. For example, if
 pages from a site template cannot be propagated because their friendly URLs are
 in conflict, the portal could try to continuously merge the site changes.
 Instead of entering into an infinite loop of merge fails, Liferay stops the
-merge after several unsuccessful attempts. However, Liferay doesn't stop there;
+merge after several unsuccessful attempts. However, Liferay doesn't stop there:
 your merge is temporarily paused, you're given an indication of the current
-merge fail, and, then, you're given the opportunity to fix your merge conflicts.
+merge fail, and then you have the  opportunity to fix your merge conflicts.
 After you've squared away your conflict, navigate to *Site Administration*
 &rarr; *Configuration* &rarr; *Site Settings* and click the *Reset and
 Propagate* button.
@@ -955,13 +955,9 @@ Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
 *Automatically apply changes done to the page template* box. Occasionally,
-propagation for page templates fail due to unintended errors. To learn how to
+propagation for page templates fails due to unintended errors. To learn how to
 manage a failed page template propagation, visit the *Propagating Changes from
 Site Templates to Sites* section of this chapter.
-
-<!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here
-because it is of interest in the context of managing a site, not in the context
-of managing a site template | -->
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
