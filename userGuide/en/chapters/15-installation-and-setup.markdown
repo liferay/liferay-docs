@@ -315,11 +315,11 @@ Tomcat bundle as an example:
    drop to a command prompt and go to this folder, you can launch Tomcat via the
    following command on Windows:
 
-	startup
+    startup
 
    or the following command on Linux/Mac/Unix:
 
-	./startup.sh
+    ./startup.sh
 
 The Liferay/Tomcat bundle then launches. If you are on Windows, another command
 prompt window appears with Tomcat's console in it. If you are on Linux, you can
@@ -512,13 +512,13 @@ application servers in alphabetical order.
 ## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
 For this section, we will refer to your Tcat server's installation location as
-`$TCAT_HOME`. If you don't already have an existing Tcat server, we
+`[TCAT_HOME]`. If you don't already have an existing Tcat server, we
 recommend you download a Liferay/Tcat bundle from
 [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
 If you have an existing Tcat server on which you'd like to deploy Liferay
 manually, please follow the steps below.
 
-Your first step is downloading the latest Liferay `.war` file and Liferay
+Your first step is to download the latest Liferay `.war` file and Liferay
 Portal dependencies from
 [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
 The Liferay `.war` file should be called `liferay-portal-6.2.x-[date].war` and
@@ -529,164 +529,158 @@ Next, let's get started by addressing Liferay's library dependencies.
 
 ### Dependency Jars 
 
-To run Liferay Portal on your Tcat server, you first need to put the Liferay Portal
-Dependency JARs, an appropriate JDBC driver and a few other JARs, into your
-Tcat server.
+To run Liferay Portal on your Tcat server, you first need to make some JAR files
+available on Tcat's global classpath. These include the Liferay Dependency JARs,
+a JDBC driver for your database, and some other dependencies that Liferay Portal
+requires. 
 
-1. Create the folder `$TCAT_HOME/lib/ext`.
+1. Create the folder `[TCAT_HOME]/lib/ext`.
 
-2. Extract the Liferay dependencies file to `$TCAT_HOME/lib/ext`. If the files
-   do not extract to this directory, you can copy the dependencies archive to
-   this directory, extract them and then delete the archive. 
+2. Extract the Liferay dependencies file and copy the `.jars` to `[TCAT_HOME]/lib/ext`. 
 
-3. Next, you need a few `.jar` files which are included as part of the
-   Liferay source distribution, but are not automatically included with Tomcat.
-   You'll have to download them yourself, so let's get started. Place these
-   `.jar` files into `$TCAT_HOME/lib/ext`:
+3. Next, you need a few `.jar` files that are included as part of the
+   Liferay Tcat bundle, but are not included with Tcat.  You'll have to download
+   them yourself, so let's get started. Place these `.jar` files into
+   `$TCAT_HOME/lib/ext`:
 
-    - `jta.jar`: You can get this `.jar`, which manages transactions, from
+   - `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
             [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
-    - `mail.jar`: You can get this `.jar` from
+
+   - `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
             [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-    - `persistence.jar`: You can learn about the Java Persistence API and how to
-    download it from
+
+   - `persistence.jar`: Support for the Java Persistence API. You can get this
+      `.jar` from
             [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
-    Although you can get each `.jar` listed above separately, copying it into your
-    `%TCAT_HOME/lib/ext` directory, you might find it more convenient to get the
-    appropriate versions of these files by downloading the Liferay source code and
-    copying them from there. Once you have downloaded the Liferay source, unzip the
-    source into a temporary folder. We'll refer to the location of the Liferay
-    source as `$LIFERAY_SOURCE`. From `$LIFERAY_SOURCE/lib/development`, you can
-    find `jta.jar`, `mail.jar`, and `persistence.jar`.
+   - `activation.jar`: This is an implementation of the Java Activation
+      Framework. You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+
+   - `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
+        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+
+   - `jms.jar`: The Java Messaging Service. You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+
+   - `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
+          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
+
+   - `junit.jar`: Optional: lets you run unit tests. You can get this `.jar` from 
+        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
+
+   Although you can get each `.jar` listed above separately, it may be more
+   convenient to get them by downloading the Liferay source code and copying them
+   from there. Once you have downloaded the Liferay source, unzip the source
+   into a temporary folder. You can find the `.jar` files in
+   `[LIFERAY_SOURCE]/lib/development`. 
 
 4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
    the JDBC driver for your version of the database server. In the case of
-   MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the
+   MySQL, use `mysql-connector-java-[version]-bin.jar`. You can download the
    latest MySQL JDBC driver from
    [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/).
-   Extract the JAR file and copy it to `$TCAT_HOME/lib/ext`.
-
-5. There are a few other JARs that come with a typical Liferay bundle that you
-   might want to download and place in your `$TCAT_HOME/lib/ext` folder. They
-   include:
-
-    - `activation.jar`: You can get this `.jar` from
-        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
-    - `ccpp.jar`: You can get this `.jar` from 
-        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `jms.jar`: You can get this `.jar` from
-        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
-    - `jtds.jar`: You can get this `.jar` from
-        [http://sourceforge.net/projects/jtds/files/](http://sourceforge.net/projects/jtds/files/)
-    - `jutf7.jar`: You can get this `.jar` from 
-          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
-    - `junit.jar`: You can get this `.jar` from 
-        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
+   Extract the JAR file and copy it to `[TCAT_HOME]/lib/ext`.
 
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
 
 ### Tcat Configuration 
 
-If you're setting up a Liferay deployment onto an existing Tcat server, you
-might already be familiar with the Tcat Administration Console. Our
-instructions for configuring Tcat to run Liferay will assume you have a Tcat
-server with the Administration Console on it, and a separate, managed Tcat
-server instance that you will deploy Liferay to, while using the Tcat
-Administration console to manage your Liferay server. To find information
-specific to Tcat server installation and management, see [Mulesoft's Tcat
-Documentation](http://www.mulesoft.org/documentation/display/TCAT/Home). This
-section will focus on:
+If you're installing Liferay Portal onto an existing Tcat server, you should be
+familiar with the Tcat Administration Console. The following instructions assume
+you have a Tcat server with the Administration Console and a separate, managed
+Tcat server instance where you'll deploy Liferay. To find information specific
+to Tcat server installation and management, see [Mulesoft's Tcat Documentation](http://www.mulesoft.org/documentation/display/TCAT/Home). You have to do a few things to configure your managed Tcat server instance: 
 
-- Setting environment variables
+- Set environment variables
 
-- Creating a context for your web application
+- Create a context for your web application
 
-- Modifying the list of classes/JARs to be loaded
+- Modify the list of classes/JARs to be loaded
 
-- Specifying URI encoding
+- Specify URI encoding
 
 ![Figure 15.x: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
 
-Let's get started with our configuration tasks.
+Next, you'll configure your managed Tcat instance. 
 
 1. To set the `CATALINA_OPTS` environment variable, you need to add a server
-profile. In your Tcat Administration Console, navigate to the *Administration*
+profile. In the Tcat Administration Console, navigate to the *Administration*
 tab and click *Server Profiles*. Name the profile appropriately (*Liferay 6.2*,
 perhaps), provide a description if you wish, select the workspace where you'll
 keep your profile (`/Profiles` is a logical choice), and click the *Add
-Variable* button. Name it `CATALINA_OPTS`, and give it the following value: 
+Variable* button. Name it `CATALINA_OPTS` and give it the following value: 
 
         -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-    This sets the character encoding to UTF-8, sets the time zone to Greenwich
-    Mean Time and allocates memory to the Java virtual machine.
+This sets the character encoding to UTF-8, sets the time zone to Greenwich
+Mean Time and allocates memory to the Java virtual machine.
 
-    You need to apply the profile to the Tcat servon on which you're deploying
-    Liferay. To do so, go to the *Servers* tab, select the deisred server, and
-    select your profile from the *Set Profile* dropdown menu.  
+Apply the profile to the Tcat server where you're deploying Liferay. To do so,
+go to the *Servers* tab, select the desired server, and select your profile from
+the *Set Profile* dropdown menu. 
 
-2. Create a file locally called `ROOT.xml`, and populate it with the following
-contents: 
+2. Create a file locally called `ROOT.xml`: 
 
-		<Context path="" crossContext="true">
+    <Context path="" crossContext="true">
 
-			<!-- JAAS -->
+    <!-- JAAS -->
 
-			<!--<Realm
-				classNjame="org.apache.catalina.realm.JAASRealm"
-				appName="PortalRealm"
-				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-			/>-->
+    <!--<Realm
+        classNjame="org.apache.catalina.realm.JAASRealm"
+        appName="PortalRealm"
+        userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+        roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+    />-->
 
-			<!--
-			Uncomment the following to disable persistent sessions across reboots.
-			-->
+    <!--
+    Uncomment the following to disable persistent sessions across reboots.
+    -->
 
-			<!--<Manager pathname="" />-->
+    <!--<Manager pathname="" />-->
 
-			<!--
-			Uncomment the following to not use sessions. See the property
-			"session.disabled" in portal.properties.
-			-->
+    <!--
+    Uncomment the following to not use sessions. See the property
+    "session.disabled" in portal.properties.
+    -->
 
-			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
-		</Context>
+    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+    </Context>
 
-    Click your server's name to edit its configuration. Using the *Files* tab,
-    navigate to the directory `$TCAT_HOME/conf/Catalina/localhost` and upload your
-    ROOT.xml file.
-	
-    Setting `crossContext="true"` allows multiple web apps to use the same class
-    loader. In the content above you will also find commented instructions and
-    tags for configuring a JAAS realm, disabling persistent sessions and
-    disabling sessions in general.
+<!-- Why do we have all that stuff up there commmented out? Wouldn't it be
+better not to include it at all? -Rich -->
+
+Click your server's name to edit its configuration. Using the *Files* tab,
+navigate to the directory `[TCAT_HOME]/conf/Catalina/localhost` and upload your
+ROOT.xml file.  Setting `crossContext="true"` allows multiple web apps to use the same class
+loader. In the content above you will also find commented instructions and
+tags for configuring a JAAS realm, disabling persistent sessions and
+disabling sessions in general.
 
 3. Still in your server's *Files* tab, open
-`$TCAT_HOME/conf/catalina.properties`, click the *Edit catalina.properties*
+`[TCAT_HOME]/conf/catalina.properties`, click the *Edit catalina.properties*
 link, and replace the line:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
-    with:
+with:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-		
-    This allows Catalina to access the dependency jars you extracted to
-    `$TCAT_HOME/lib/ext`.
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+        
+This allows Catalina to access the dependency jars you extracted to
+`[TCAT_HOME]/lib/ext`.
 
 4. To ensure consistent use of UTF-8 URI Encoding, edit
-   `$TCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
+   `[TCAT_HOME]/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
    where you see `redirectPort=8443`, in the definition of your connectors (HTTP
    and AJP). For example:
 
-		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
-![Figure 15.x: You can edit your Tcat files in the Administration Console.](../../images/15-tcat-server-files.png)
+![Figure 15.x: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
 
-Excellent work! Now let's configure your database.
+Excellent work! Now it's time to configure your database.
 
 ### Database Configuration 
 
@@ -698,26 +692,26 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 2. Using the Tcat Administration Console, add your data source as a resource in
 the context of your web application specified in
-`$TCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
+`[TCAT_HOME]/conf/Catalina/localhost/ROOT.xml`:
 
-		<Context...>
-			<Resource
-				name="jdbc/LiferayPool"
-				auth="Container"
-				type="javax.sql.DataSource"
-				driverClassName="com.mysql.jdbc.Driver"
-				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-				username="root"
-				password="root"
-				maxActive="100"
-				maxIdle="30"
-				maxWait="10000"
-			/>
-		</Context>
-	
-    Note the above resource definition assumes your database name is *lportal*
-    and your MySQL username and password are both *root*. You'll have to update
-    these values with your own database name and credentials.
+        <Context...>
+            <Resource
+                name="jdbc/LiferayPool"
+                auth="Container"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+                username="root"
+                password="root"
+                maxActive="100"
+                maxIdle="30"
+                maxWait="10000"
+            />
+        </Context>
+    
+Note the above resource definition assumes your database name is *lportal*
+and your MySQL username and password are both *root*. You'll have to update
+these values with your own database name and credentials.
 
 Your Tcat managed data source is now configured. Let's move on to your mail
 session.
@@ -729,76 +723,75 @@ instructions. If you want to use the built-in Liferay mail session, you can skip
 this section.
 
 Create a mail session bound to `mail/MailSession`. In the Tcat Administration
-Console, edit `$TCAT_ HOME/conf/Catalina/localhost/ROOT.xml` and configure a
+Console, edit `[TCAT_ HOME]/conf/Catalina/localhost/ROOT.xml` and configure a
 mail session. Be sure to replace the mail session values with your own.
 
-	<Context...>
-		<Resource
-			name="mail/MailSession"
-			auth="Container"
-			type="javax.mail.Session"
-			mail.pop3.host="pop.gmail.com"
-			mail.pop3.port="110"
-			mail.smtp.host="smtp.gmail.com"
-			mail.smtp.port="465"
-			mail.smtp.user="user"
-			mail.smtp.password="password"
-			mail.smtp.auth="true"
-			mail.smtp.starttls.enable="true"
-			mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-			mail.imap.host="imap.gmail.com"
-			mail.imap.port="993"
-			mail.transport.protocol="smtp"
-			mail.store.protocol="imap"
-		/>
-	</Context>
+    <Context...>
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
 
-Super! Your mail session is configured. Next, we'll make sure Liferay will be
-able to access your mail session and database.
+Super! Your mail session is configured. Next, you need to connect Liferay to the
+mail session and database connections you just created. 
 
 ### Configuring your Database and Mail Session 
 
-In this section we'll specify appropriate properties for Liferay to use in
+In this section you'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
 
-1. If you are using Tcat to manage your data source, add the following to your
-`portal-ext.properties` file in your *Liferay Home* to refer to your data
-source:
+1. If you are using Tcat to manage your data source, add the following line to
+   the `portal-ext.properties` file in your *Liferay Home*. This points Liferay
+   Portal to your data source: 
 
-		jdbc.default.jndi.name=jdbc/LiferayPool
+    jdbc.default.jndi.name=jdbc/LiferayPool
 
-    Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-    the instructions in the *Deploy Liferay* section for using the setup wizard.
+   Otherwise, if you are using *Liferay Portal* to manage your data source, follow
+   the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-2. If want to use Liferay Portal to manage your mail session, you can
-   configure the mail session within Liferay Portal. That is, after starting
+2. If you want to use Liferay Portal to manage your mail session, you can
+   configure the mail session in Liferay Portal. After starting
    your portal as described in the *Deploy Liferay* section, go to *Control
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-    Otherwise, if you are using Tcat to manage your mail session, add the
-    following to your `portal-ext.properties` file to reference that mail session:
+   If you are using Tcat to manage your mail session, add the following to your
+   `portal-ext.properties` file to reference that mail session:
 
-		mail.session.jndi.name=mail/MailSession
+    mail.session.jndi.name=mail/MailSession
 
-Before we deploy Liferay Portal on your Tcat server, let's look at configuring
-Portal Access Control Language (PACL) with Liferay on Tomcat. 
+Before you deploy Liferay Portal, let's look at configuring Portal Access
+Control Lists (PACL) with Liferay on Tomcat. 
 
 ### Enabling PACL 
 
-To enable PACL for use with your Liferay Portal when running on Tcat, you need
-to enable the security manager and add some required permissions to the server
-policy configuration file. This simply entails editing the `CATALINA_OPTS`
-variable and editing the `Catalina.policy` file:
+To enable PACL, you need to enable the security manager and add some required
+permissions to the server policy configuration file. This entails editing
+the `CATALINA_OPTS` variable and editing the `Catalina.policy` file:
 
-- In the *Administration* tab of your Tcat Administration Console, click
-  *Server Profiles* and click the profile applied to your Liferay Tcat server.
-Click the *Value* field of the `CATALINA_OPTS` variable created earlier, and
-add the following to it:
+In the *Administration* tab of the Tcat Administration Console, click *Server
+Profiles* and click the profile applied to your Liferay Tcat server. Click the
+*Value* field of the `CATALINA_OPTS` variable created earlier, and add the
+following parameter to it:
 
     `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
 
-- Edit `$TCAT_HOME/conf/Catalina.policy`, add the required permissions:
+Edit `$TCAT_HOME/conf/Catalina.policy` and add the required permissions:
 
         // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
         grant codeBase "file:${catalina.home}${/}webapps${/}-" {
@@ -828,30 +821,29 @@ Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
 
 ### Deploying Liferay
 
-It's time to deploy Liferay as an exploded web archive within your
-`$TCAT_HOME/webapps` folder and start Liferay! The first step is to make sure
-your Tcat server is running, then follow these steps to deploy and start
-Liferay.
+It's time to deploy Liferay as an exploded web archive in your
+`$TCAT_HOME/webapps` folder. The first step is to make sure your Tcat server is
+running; then follow these steps to deploy and start Liferay.
 
 1. If you are manually installing Liferay on a clean Tcat server, delete the
-contents of the `$TCAT_HOME/webapps/ROOT` directory. This removes the default
-Apache Tomcat home page.
+   contents of the `[TCAT_HOME]/webapps/ROOT` directory. This removes the default
+   home page.
 
 2. In the Tcat Administration Console, click the *Deployments* tab and select
-*New Deployment*. Select the server on which you're deploying Liferay, and
-click *Upload New Webapp*. Browse to the `liferay-portal-6.2.x-[date].war` file
-you downloaded. Make sure you select *Advanced Options* while uploading
-Liferay, and under the *Name* field, simply type `/` to put the extracted
-Liferay into `$TCAT_HOME/webapps/ROOT`.
+   *New Deployment*. Select the server where you're deploying Liferay and
+   click *Upload New Webapp*. Browse to the `liferay-portal-6.2.x-[date].war` file
+   you downloaded. Make sure you select *Advanced Options* while uploading
+   Liferay, and under the *Name* field, type `/` to put the extracted Liferay into
+   `[TCAT_HOME]/webapps/ROOT`.
 
-    ![Figure 15.x: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
+   ![Figure 15.x: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
 
 3. Once you've entered all the deployment details, you can select *Deploy*.
-You should see a *Successful* message in the Tcat Administration Console, and
-now you're ready to launch Liferay Portal on Tcat!
+   Once you see a *Successful* message in the Tcat Administration Console,
+   you're ready to launch Liferay Portal on Tcat!
 
 Now you can navigate to Liferay and follow the setup wizard. Congratulations
-on successfully installing and deploying Liferay on Tomcat!
+on successfully installing and deploying Liferay on Mule Tcat!
 
 ## Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-3-liferay-portal-6-2-user-guide-15-en)
 
@@ -1015,8 +1007,8 @@ your data source, you can skip this section.
 
 9. Click *Finish*.
 
-	You should now see your `LiferayPool` connection pool listed under
-	*Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
+    You should now see your `LiferayPool` connection pool listed under
+    *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
 10. Test your connection by selecting your `LiferayPool` connection pool and
     clicking *Ping*.
@@ -1187,28 +1179,28 @@ more about this JDBC driver at the jTDS home page:
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
    contents.
 
-		<?xml version="1.0"?>
+        <?xml version="1.0"?>
 
-		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
-			<resources>
-				<resource-root path="hsql.jar" />
-				<resource-root path="jtds-1.3.1.jar" />
-				<resource-root path="mysql-connector-java-5.1.26-bin.jar" />
-				<resource-root path="portal-service.jar" />
-				<resource-root path="portlet.jar" />
-			</resources>
-			<dependencies>
-				<module name="ibm.jdk" />
-				<module name="javax.api" />
-				<module name="javax.mail.api" />
-				<module name="javax.servlet.api" />
-				<module name="javax.servlet.jsp.api" />
-				<module name="javax.transaction.api" />
-			</dependencies>
-		</module>
+        <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
+            <resources>
+                <resource-root path="hsql.jar" />
+                <resource-root path="jtds-1.3.1.jar" />
+                <resource-root path="mysql-connector-java-5.1.26-bin.jar" />
+                <resource-root path="portal-service.jar" />
+                <resource-root path="portlet.jar" />
+            </resources>
+            <dependencies>
+                <module name="ibm.jdk" />
+                <module name="javax.api" />
+                <module name="javax.mail.api" />
+                <module name="javax.servlet.api" />
+                <module name="javax.servlet.jsp.api" />
+                <module name="javax.transaction.api" />
+            </dependencies>
+        </module>
 
-	If you're using a different database or JDBC driver, replace the paths of
-	the MySQL and jTDS resource root entries with the correct paths.
+    If you're using a different database or JDBC driver, replace the paths of
+    the MySQL and jTDS resource root entries with the correct paths.
 
 5. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
@@ -1233,13 +1225,13 @@ insert the patch can be referenced below.
     `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
     in a command prompt and enter the following statement:
     
-    		jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+            jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
 
-    	This command inserts the `ServerDependenciesProcessor.class` file into
-    	the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
-    	`org/jboss/as/server/deployment/module` folder. You can reference the
-    	official documentation for updating a JAR file at
-    	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
+        This command inserts the `ServerDependenciesProcessor.class` file into
+        the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+        `org/jboss/as/server/deployment/module` folder. You can reference the
+        official documentation for updating a JAR file at
+        [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
     3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
     original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
@@ -1311,49 +1303,49 @@ Make the following modifications to `standalone.xml`:
 1. Add the following system properties between the `</extensions>` and
 `<management>` tags:
 
-		<system-properties>
-			<property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
-			<property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
-		</system-properties>
+        <system-properties>
+            <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
+            <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
+        </system-properties>
 
 2. Add a timeout for the deployment scanner by setting
 `deployment-timeout="240"` as seen in the excerpt below.
 
-		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
-			<deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
-		</subsystem>
+        <subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+            <deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+        </subsystem>
 
 3. Add the following JAAS security domain to the security subsystem
 `<security-domains>` defined in element `<subsystem
 xmlns="urn:jboss:domain:security:1.1">`.
 
-		<security-domain name="PortalRealm">
-			<authentication>
-				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
-			</authentication>
-		</security-domain>
+        <security-domain name="PortalRealm">
+            <authentication>
+                <login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
+            </authentication>
+        </security-domain>
 
 4. Disable the welcome root of the web subsystem's virtual server default host
 by specifying `enable-welcome-root="false"`.
 
-		<subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
-			<connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
-			<virtual-server name="default-host" enable-welcome-root="false">
-			   <alias name="localhost" />
-			   <alias name="example.com" />
-			</virtual-server>
-		</subsystem>		
+        <subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
+            <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
+            <virtual-server name="default-host" enable-welcome-root="false">
+               <alias name="localhost" />
+               <alias name="example.com" />
+            </virtual-server>
+        </subsystem>        
 
 5. Insert the following `<configuration>` element within the web subsystem
 element `<subsystem xmlns="urn:jboss:domain:web:1.1"
 default-virtual-server="default-host" native="false">`.
 
-		<configuration>
-			<jsp-configuration development="true" />
-		</configuration>
-		
+        <configuration>
+            <jsp-configuration development="true" />
+        </configuration>
+        
 Now it's time for some changes to your configuration and startup scripts.
-		
+        
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
@@ -1380,7 +1372,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
   replacing any matching attributes with the ones found in the assignment
   below:
 
-	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
     directory. You'll notice we've added some Java security options. We'll
@@ -1399,40 +1391,40 @@ directory.
 2. Insert the following contents into the
 `$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
 
-		<?xml version="1.0"?>
+        <?xml version="1.0"?>
 
-		<module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
-			<dependencies>
-				<system export="true">
-					<paths>
-						<path name="com/ibm" />
-						<path name="com/ibm/crypto/provider" />
-						<path name="com/ibm/jvm" />
-						<path name="com/ibm/jvm/io" />
-						<path name="com/ibm/jvm/util" />
-						<path name="com/ibm/match" />
-						<path name="com/ibm/misc" />
-						<path name="com/ibm/net" />
-						<path name="com/ibm/nio" />
-						<path name="com/ibm/nio/ch" />
-						<path name="com/ibm/security/auth" />
-						<path name="com/ibm/security/bootstrap" />
-						<path name="com/ibm/security/auth/module" />
-						<path name="com/ibm/security/util" />
-						<path name="META-INF/services" />
-					</paths>
-				</system>
-			</dependencies>
-		</module>]]>
+        <module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
+            <dependencies>
+                <system export="true">
+                    <paths>
+                        <path name="com/ibm" />
+                        <path name="com/ibm/crypto/provider" />
+                        <path name="com/ibm/jvm" />
+                        <path name="com/ibm/jvm/io" />
+                        <path name="com/ibm/jvm/util" />
+                        <path name="com/ibm/match" />
+                        <path name="com/ibm/misc" />
+                        <path name="com/ibm/net" />
+                        <path name="com/ibm/nio" />
+                        <path name="com/ibm/nio/ch" />
+                        <path name="com/ibm/security/auth" />
+                        <path name="com/ibm/security/bootstrap" />
+                        <path name="com/ibm/security/auth/module" />
+                        <path name="com/ibm/security/util" />
+                        <path name="META-INF/services" />
+                    </paths>
+                </system>
+            </dependencies>
+        </module>]]>
 
 3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
 the following path names inside the &lt;paths&gt;...<\/paths> element:
 
-		<path name="com/sun/crypto" />
-		<path name="com/sun/crypto/provider" />
-		<path name="com/sun/image/codec/jpeg" />
-		<path name="com/sun/org/apache/xml/internal/resolver" />
-		<path name="com/sun/org/apache/xml/internal/resolver/tools" />
+        <path name="com/sun/crypto" />
+        <path name="com/sun/crypto/provider" />
+        <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/org/apache/xml/internal/resolver" />
+        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 Next we'll consider the database and mail configuration. 
 
@@ -1447,42 +1439,42 @@ Modify `standalone.xml` adding your data source and driver within the
 
 1. First, add your data source within the `<datasources>` element.
 
-		<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-			<connection-url>jdbc:mysql://localhost/lportal</connection-url>
-			<driver>mysql</driver>
-			<security>
-				<user-name>root</user-name>
-				<password>root</password>
-			</security>
-		</datasource>
+        <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+            <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+            <driver>mysql</driver>
+            <security>
+                <user-name>root</user-name>
+                <password>root</password>
+            </security>
+        </datasource>
 
-	Be sure to replace the URL database value (i.e. `lportal`), user value and
-	password value with values specific to your database.
+    Be sure to replace the URL database value (i.e. `lportal`), user value and
+    password value with values specific to your database.
 
 2. Then add your driver to the `<drivers>` element also found within the
    `<datasources>` element.
 
-		<drivers>
-			<driver name="mysql" module="com.liferay.portal.main"/>
-		</drivers>
+        <drivers>
+            <driver name="mysql" module="com.liferay.portal.main"/>
+        </drivers>
 
 Your final data sources subsystem should look something like this:
 
-		<subsystem xmlns="urn:jboss:domain:datasources:1.0">
-			<datasources>
-				<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-					<connection-url>jdbc:mysql://localhost/lportal</connection-url>
-					<driver>mysql</driver>
-					<security>
-						<user-name>root</user-name>
-						<password>root</password>
-					</security>
-				</datasource>
-				<drivers>
-					<driver name="mysql" module="com.liferay.portal.main"/>
-				</drivers>
-			</datasources>
-		</subsystem>
+        <subsystem xmlns="urn:jboss:domain:datasources:1.0">
+            <datasources>
+                <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>root</user-name>
+                        <password>root</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="mysql" module="com.liferay.portal.main"/>
+                </drivers>
+            </datasources>
+        </subsystem>
 
 Now that you've configured your data source, let's go over how to configure your
 mail session within JBoss.
@@ -1494,27 +1486,27 @@ If you want to use the built-in Liferay mail session, you can skip this section.
 
 Specify your mail subsystem  in `standalone.xml` as in the following example:
 
-	<subsystem xmlns="urn:jboss:domain:mail:1.0">
-		<mail-session jndi-name="java:/mail/MailSession" >
-			<smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
-				   <login name="username" password="password"/>
-			</smtp-server>
-			<pop3-server outbound-socket-binding-ref="mail-pop">
-				<login name="username" password="password"/>
-			</pop3-server>
-	   </mail-session>
-	</subsystem>
-	...
-	<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
-	...
-	<outbound-socket-binding name="mail-smtp">
+    <subsystem xmlns="urn:jboss:domain:mail:1.0">
+        <mail-session jndi-name="java:/mail/MailSession" >
+            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
+                   <login name="username" password="password"/>
+            </smtp-server>
+            <pop3-server outbound-socket-binding-ref="mail-pop">
+                <login name="username" password="password"/>
+            </pop3-server>
+       </mail-session>
+    </subsystem>
+    ...
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+    ...
+    <outbound-socket-binding name="mail-smtp">
             <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
         <outbound-socket-binding name="mail-pop">
             <remote-destination host="pop.gmail.com" port="110"/>
         </outbound-socket-binding>
     </socket-binding-group>
-	
+    
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
@@ -1530,10 +1522,10 @@ Liferay Portal can access them.
    `portal-ext.properties` file in your *Liferay Home* to refer to your data
    source:
 
-		jdbc.default.jndi.name=java:jdbc/LiferayPool
+        jdbc.default.jndi.name=java:jdbc/LiferayPool
 
-	If you're using *Liferay Portal* to manage your data source, follow the
-	instructions in the *Deploy Liferay* section for using the setup wizard.
+    If you're using *Liferay Portal* to manage your data source, follow the
+    instructions in the *Deploy Liferay* section for using the setup wizard.
 
 3. If you're using *Liferay Portal* to manage your mail session, this
    configuration is done within Liferay Portal. That is, after starting your
@@ -1571,8 +1563,8 @@ permissions. You can tune the permissions in your policy later. Create the
 `$JBOSS_HOME/bin/server.policy` file and add the following contents:
 
     grant {
-	    permission java.security.AllPermission;
-	};
+        permission java.security.AllPermission;
+    };
 
 For extensive information on Java SE Security Architecture, see its
 specification documents at
@@ -1732,31 +1724,31 @@ setenv.sh and .bat in a built liferay 6.2.-->
    `ROOT.xml` file in it. Edit this file and populate it with the following
    contents to set up a portal web application:
 
-		<Context path="" crossContext="true">
+        <Context path="" crossContext="true">
 
-			<!-- JAAS -->
+            <!-- JAAS -->
 
-			<!--<Realm
-				classNjame="org.apache.catalina.realm.JAASRealm"
-				appName="PortalRealm"
-				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-			/>-->
+            <!--<Realm
+                classNjame="org.apache.catalina.realm.JAASRealm"
+                appName="PortalRealm"
+                userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+                roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+            />-->
 
-			<!--
-			Uncomment the following to disable persistent sessions across reboots.
-			-->
+            <!--
+            Uncomment the following to disable persistent sessions across reboots.
+            -->
 
-			<!--<Manager pathname="" />-->
+            <!--<Manager pathname="" />-->
 
-			<!--
-			Uncomment the following to not use sessions. See the property
-			"session.disabled" in portal.properties.
-			-->
+            <!--
+            Uncomment the following to not use sessions. See the property
+            "session.disabled" in portal.properties.
+            -->
 
-			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
-		</Context>
-		
+            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+        </Context>
+        
     Setting `crossContext="true"` allows multiple web apps to use the same class
     loader. In the content above you will also find commented instructions and
     tags for configuring a JAAS realm, disabling persistent sessions and
@@ -1764,12 +1756,12 @@ setenv.sh and .bat in a built liferay 6.2.-->
 
 3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
     with:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-		
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+        
     This allows Catalina to access the dependency jars you extracted to
     `$TOMCAT_HOME/lib/ext`.
 
@@ -1778,7 +1770,7 @@ setenv.sh and .bat in a built liferay 6.2.-->
    where you see `redirectPort=8443`, in the definition of your connectors (HTTP
    and AJP). For example:
 
-		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
 5. Make sure there is no `support-catalina.jar` file in your
    `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
@@ -1796,21 +1788,21 @@ you want to use Liferay's built-in data source, you can skip this section.
 2. Add your data source as a resource in the context of your web application
    specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
 
-		<Context...>
-			<Resource
-				name="jdbc/LiferayPool"
-				auth="Container"
-				type="javax.sql.DataSource"
-				driverClassName="com.mysql.jdbc.Driver"
-				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-				username="root"
-				password="root"
-				maxActive="100"
-				maxIdle="30"
-				maxWait="10000"
-			/>
-		</Context>
-	
+        <Context...>
+            <Resource
+                name="jdbc/LiferayPool"
+                auth="Container"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+                username="root"
+                password="root"
+                maxActive="100"
+                maxIdle="30"
+                maxWait="10000"
+            />
+        </Context>
+    
     Note the above resource definition assumes your database name is *lportal*
     and your MySQL username and password are both *root*. You'll have to update
     these values with your own database name and credentials.
@@ -1828,26 +1820,26 @@ Create a mail session bound to `mail/MailSession`. Edit `$TOMCAT_
 HOME/conf/Catalina/localhost/ROOT.xml` and configure a mail session. Be sure to
 replace the mail session values with your own.
 
-	<Context...>
-		<Resource
-			name="mail/MailSession"
-			auth="Container"
-			type="javax.mail.Session"
-			mail.pop3.host="pop.gmail.com"
-			mail.pop3.port="110"
-			mail.smtp.host="smtp.gmail.com"
-			mail.smtp.port="465"
-			mail.smtp.user="user"
-			mail.smtp.password="password"
-			mail.smtp.auth="true"
-			mail.smtp.starttls.enable="true"
-			mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-			mail.imap.host="imap.gmail.com"
-			mail.imap.port="993"
-			mail.transport.protocol="smtp"
-			mail.store.protocol="imap"
-		/>
-	</Context>
+    <Context...>
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
 
 Super! Your mail session is configured. Next, we'll make sure Liferay will be
 able to access your mail session and database.
@@ -1861,7 +1853,7 @@ connecting to your database and mail session.
    your `portal-ext.properties` file in your *Liferay Home* to refer to your
    data source:
 
-		jdbc.default.jndi.name=jdbc/LiferayPool
+        jdbc.default.jndi.name=jdbc/LiferayPool
 
     Otherwise, if you are using *Liferay Portal* to manage your data source, follow
     the instructions in the *Deploy Liferay* section for using the setup wizard.
@@ -1875,7 +1867,7 @@ connecting to your database and mail session.
     Otherwise, if you are using *Tomcat* to manage your mail session, add the
     following to your `portal-ext.properties` file to reference that mail session:
 
-		mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
 It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
@@ -2045,11 +2037,11 @@ Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT
 your server's `bin` folder. If you're on Windows, you'd add directives similar
 to those listed below, after the `SETLOCAL` command:
 
-	set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
+    set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
-	set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
+    set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
     
-	set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
+    set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
 Make sure to set your `MW_HOME` value to your WebLogic server's location. On
 Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
@@ -2291,7 +2283,7 @@ profile was created successfully. You're now ready to install Liferay!
 Liferay ships with dependency .jars it needs to have on the global classpath.
 These should be copied to WebSphere's global folder provided for this purpose: 
 
-	[Install Location]/WebSphere/AppServer/lib/ext
+    [Install Location]/WebSphere/AppServer/lib/ext
 
 If you have a JDBC database driver .jar, copy it to this location as well. 
 Once you've copied the .jars, start the server profile you created for
@@ -2341,7 +2333,7 @@ install.
 15. Everything else should stay at the default values. Save the data source.
 
 16. When finished, go back into the data source and click *Custom Properties*
-	and then click the *Show Filter Function* button. This is the second from
+    and then click the *Show Filter Function* button. This is the second from
     last of the small icons under the *New* and *Delete* buttons.
 
 17. Type *user* into the search terms and click *Go*.
@@ -2349,19 +2341,19 @@ install.
     ![Figure 15.42: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
-	database. Click *OK* and save to master configuration.
+    database. Click *OK* and save to master configuration.
 
 19. Do another filter search for the url property. Give it a value that points
-	to your database. For example, the MySQL URL would be:
+    to your database. For example, the MySQL URL would be:
     `jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false`.
     Click *OK* and save to master configuration.
 
 20. Do another filter search for the password property. Enter the password for
-	the user ID you added earlier as the value for this property. Click *OK* and
+    the user ID you added earlier as the value for this property. Click *OK* and
     save to master configuration.
 
 21. Go back to the data source page by clicking it in the breadcrumb trail.
-	Click the *Test Connection* button. It should connect successfully.
+    Click the *Test Connection* button. It should connect successfully.
 
 Once you've set up your database, you can set up your mail session. 
 
@@ -2578,7 +2570,7 @@ server that Liferay supports. To tell Liferay to use your `jdbc/LiferayPool`
 connection pool, add the following directive to your `portal-ext.properties`
 file:
 
-	jdbc.default.jndi.name=jdbc/LiferayPool
+    jdbc.default.jndi.name=jdbc/LiferayPool
 
 Next, install Liferay according to the instructions for your application server.
 Once it's installed, you can set up the mail configuration. 
@@ -2606,8 +2598,8 @@ the following properties and customize their values for your environment:
  
 To use your application server's mail session, create it first. Then specify it
 in the `portal-ext.properties` file: 
-	
-	mail.session.jndi.name=mail/MailSession
+    
+    mail.session.jndi.name=mail/MailSession
 
 When you've finished, save the file.
 
