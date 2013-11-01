@@ -1386,7 +1386,7 @@ Let's work with the dependency jar files first.
    [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
-   
+
 3. Download the `jtds-<JTDS_VERSION>.jar.` file and insert it into the
 `$JBOSS_HOME/modules/com/liferay/portal/main` folder. You can download and learn
 more about this JDBC driver at the jTDS home page:
@@ -1839,16 +1839,18 @@ Next, let's get started by addressing Liferay's library dependencies.
 
 ### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-3)
 
-Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate
-JDBC driver and a few other JARs installed.
+Liferay Portal depends on several `JAR` files found in the Liferay
+Dependencies Archive. In addition to these, you need the proper driver for your
+database. You can get the necessary dependencies by following these steps:
 
-1. Create folder `$TOMCAT_HOME/lib/ext`.
+1. Create a folder named `ext` in `$TOMCAT_HOME/lib`.
 
-2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files
-   do not extract to this directory, you can copy the dependencies archive to
-   this directory, extract them and then delete the archive. 
+2. Unzip the Liferay Dependencies file to `$TOMCAT_HOME/lib/ext` so that its
+`.jar` files reside there. If the `.jar` files are nested in a
+`liferay-portal-dependencies-6.2` directory after you extract them, copy them
+into `$TOMCAT_HOME/lib/ext` and delete the empty folder.
 
-3. Next, you need a few `.jar` files which are included as part of the
+3. Next, you need a few third party `.jar` files which are included as part of the
    Liferay source distribution, but are not automatically included with Tomcat.
    You'll have to download them yourself, so let's get started. Place these
    `.jar` files into `$TOMCAT_HOME/lib/ext`:
