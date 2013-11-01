@@ -1137,17 +1137,17 @@ and from the end user and producer portlet.
 
 For example, you can compare the proxy portlet to a TV satellite box. If you
 want to change the channel on your TV, you (end user) send the channel number
-you desire to the TV satellite box (consumer's proxy portlet) via your TV's
+you desire to the TV's satellite box (consumer's proxy portlet) via your TV's
 remote. When the satellite box receives the request to change the channel, it
 relays the request to a TV satellite (producer's portlet) which then sends the
 channel information back to the satellite box. Then, the satellite box displays
 the new channel to you on your TV. In this simple example, you're not directly
-telling the TV satellite to change the channel, but rather, you're communicating
-with the satellite box, which acts as an intermediary between you and the
-satellite. This example directly relates to using WSRP with Liferay. Although
-the end user is sending requests to the consumer portlet, you're not receiving
-feedback from the consumer portlet itself, but rather, its producer portlet
-located remotely.
+requesting the TV satellite to change the channel, but rather, you're
+communicating with the satellite box, which acts as an intermediary between you
+and the satellite. This example directly relates to using WSRP with Liferay.
+Although the end user is sending requests to the consumer portlet, you're not
+receiving feedback from the consumer portlet itself, but rather, its producer
+portlet located remotely.
 
 Now that you know a little bit about the WSRP process, let's begin configuring
 WSRP on Liferay Portal. For this demonstration, we'll assume you have two portal
