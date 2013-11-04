@@ -1260,9 +1260,6 @@ the Knowledge base application has to offer.
 
 ## Knowledge Base [](id=knowledge-base-liferay-portal-6-2-user-guide-13-en)
 
-<!-- Unable to compile the Knowledge Base portlet for Liferay EE 6.2 (10-31-13).
-Finish this section when the app will compile and deploy: LRDOCS-764 -->
-
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay's Knowledge Base portlet provides a means for creating and organizing
@@ -1285,16 +1282,16 @@ Liferay instance's `/deploy` folder.
 ### Knowledge Base Display Portlet [](id=knowledge-base-display-portlet-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
-site pages as well as one that adds a page to the Control Panel. The four
+site pages as well as one that adds a page to Site Administration. The four
 portlets that can be placed on a page are Knowledge Base (Display), Knowledge
-Base Search, Knowledge Base Article and Knowledge Base Section. When placed on a
-page, the Knowledge Base display portlet presents many of the same options to an
-administrator that are available from the Knowledge Base page of the control
-panel.
+Base Article, Knowledge Base Search, and Knowledge Base Section. When placed on
+a page, the Knowledge Base display portlet presents many of the same options to
+an administrator that are available from the Knowledge Base page of Site
+Administration.
 
-![Figure 13.26: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 13.26: The Knowledge Base Display portlet displays your recently added articles in a list.](../../images/liferay-collaboration-kb-display-portlet.png)
 
-You can use the four links at the top of the Knowledge Base display portlet to
+You can use the four links at the top of the Knowledge Base Display portlet to
 control what it displays.
 
 *Knowledge Base Home:* shows you a list of all top level articles.
@@ -1308,19 +1305,18 @@ parents or children of the others.
 *My Subscriptions:* shows you a list of articles you are subscribed to.
 
 The *Add Article* button is available from the Knowledge Base Home or
-Administrator view of the Knowledge Base display portlet or from the Articles
-tab of the Knowledge Base page of the Control Panel. Use this button to create
+Administrator view of the Knowledge Base Display portlet or from the Articles
+tab of the Knowledge Base page of Site Administration. Use this button to create
 an article for the knowledge base. When creating an article, you can use the
 same WYSIWYG editor you used to create wiki pages. Articles, however, are not
-the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
+the same as wiki pages; they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 13.27: New Knowledge Base
-Article](../../images/liferay-collaboration-kb-new-article.png)
+![Figure 13.27: You can create a new Knowledge Base Article using the WYSIWYG editor.](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
-use the editor to add attachments, add tags and set permissions. By default,
+use the editor to add attachments, add tags, and set permissions. By default,
 view permission is granted to the guest role, meaning anyone can view your
 article. After you're done using the editor, you can save it as draft and
 continue working on it later or you can submit it for publication. Your article
@@ -1328,35 +1324,35 @@ may need to be approved before being published, depending on the workflow
 defined for your portal.
 
 You can find the *Permissions* button next to the Add Article button in the
-Knowledge Base display portlet or on the Knowledge Base page of the control
-panel. Click this button to define permissions that apply to the Knowledge Base
-display portlet generally, not to particular articles. Here, you can define
-which roles can add articles and templates, which are granted knowledge base
-administrator privileges, which can change permissions on articles, which can
-subscribe to articles and which can view templates.
+Knowledge Base display portlet or on the Knowledge Base page of Site
+Administration. Click this button to define permissions that apply to the
+Knowledge Base Display portlet generally, not to particular articles. Here, you
+can define which roles can add articles and templates, which are granted
+knowledge base administrator privileges, which can change permissions on
+articles, which can subscribe to articles, and which can view templates.
 
-![Figure 13.28: Knowledge Base
-Permissions](../../images/liferay-collaboration-kb-permissions.png)
+![Figure 13.28: Set various permissions for each of your portal's roles in the Knowledge Base Permissions interface.](../../images/liferay-collaboration-kb-permissions.png)
 
-Users may need to be granted access to the knowledge base page of the control
-panel in order to exercise some of the above permissions. For example, suppose
-the user role has been granted the Add Article and the View Templates
-permissions. A user will be able to add articles from the knowledge base display
-portlet but will need access to the knowledge base page of the Control Panel in
-order to view templates. Note that the Knowledge Base (Display) permissions are
-distinct from the Knowledge Base (Admin) portlet. The display permissions define
-what a user can do with the Knowledge Base display portlet on a page while the
-admin permissions define what a user can do on the Knowledge Base page of the
-Control Panel.
+Users may need to be granted access to the knowledge base page of Site
+Administration in order to exercise some of the above permissions. For example,
+suppose the user role has been granted the *Add Article* and the *View
+Templates* permissions. A user will be able to add articles from the Knowledge
+Base Display portlet but will need access to the knowledge base page of Site
+Administration in order to view templates. Note that the Knowledge Base
+Display permissions are distinct from the Knowledge Base Admin portlet. The
+display permissions define what a user can do with the Knowledge Base Display
+portlet on a page while the admin permissions define what a user can do on the
+Knowledge Base page of Site Administration.
 
-### Knowledge Base Page of the Control Panel [](id=knowledge-base-page-of-the-control-pane-liferay-portal-6-2-user-guide-13-en)
+### Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-the-control-pane-liferay-portal-6-2-user-guide-13-en)
 
-The Knowledge Base page of the Control Panel has two tabs: one for articles and
-one for templates. The articles tab shows all the articles in the knowledge base
-and lets you perform actions on them. The templates tab shows all the templates
-defined in the knowledge base and lets you perform actions on them.
+The Knowledge Base page of the Site Administration interface has two tabs: one
+for articles and one for templates. The *Articles* tab shows all the articles in
+the knowledge base and lets you perform actions on them. The *Templates* tab
+shows all the templates defined in the knowledge base and lets you perform
+actions on them.
 
-![Figure 13.29: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 13.29: Administrators can control knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -1377,22 +1373,23 @@ parent article for it.
 *Delete:* lets you remove an article from the knowledge base.
 
 These actions are similar to the ones that can be performed from the
-Administrator view of the Knowledge Base display portlet. However, the Knowledge
-Base display portlet is intended to be placed on a page for the end user so an
+Administrator view of the Knowledge Base Display portlet. However, the Knowledge
+Base Display portlet is intended to be placed on a page for the end user so an
 additional action is available: *RSS* is a link to an RSS feed of an article.
-Also, the *View* action is only available from the Control Panel since the
-Knowledge Base Article portlet can be used to display an article on a page.
+Also, the *View* action is only available from the Site Administration page
+since the Knowledge Base Article portlet can be used to display an article on a
+page.
 
-The templates tab of the Knowledge Base page of the Control Panel allows
+The Templates tab of the Knowledge Base page of Site Administration allows
 administrators to create templates to facilitate the creation of articles. A
 template basically functions like a starting point for the creation of certain
 types of articles. Click the *Add Template* button on the Templates tab of the
-Knowledge Base page of the Control Panel to create a new template.
+Knowledge Base page of Site Administration to create a new template.
 
-![Figure 13.30: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 13.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base (Admin)*.](../../images/liferay-collaboration-kb-new-template.png)
 
-Navigate back to the templates tab of the Knowledge Base page of the control
-panel. You can perform the following actions on a template:
+Navigate back to the Templates tab of the Knowledge Base page of Site
+Administration. You can perform the following actions on a template:
 
 *View:* displays a template. From here, you can use the template to create an
 article, edit the template, modify the permissions on the template or delete it.
@@ -1405,8 +1402,6 @@ permissions on templates.
 
 *Delete:* lets you remove a template from the knowledge base.
 
-![Figure 13.31: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
-
 To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
@@ -1414,18 +1409,18 @@ the contents of the template copied for you.
 ### Knowledge Base Article Portlet [](id=knowledge-base-article-portlet-liferay-portal-6-2-user-guide-13-en)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
-article. When you first place this portlet on a page it displays the message
+article. When you first place this portlet on a page, it displays the message
 *Please configure this portlet to make it visible to all users*. This message is
 a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 13.32: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 13.32: Display articles using the Knowledge Base Article portlet.](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
-view the history of the article or print the article.
+view the history of the article, or print the article.
 
 ### Knowledge Base Section Portlet [](id=knowledge-base-section-portlet-liferay-portal-6-2-user-guide-13-en)
 
@@ -1447,7 +1442,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 13.33: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.33: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
