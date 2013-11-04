@@ -251,9 +251,12 @@ You can run Liferay on any application server supported by Liferay Portal. Here,
 for demonstration purposes, we'll set up our Liferay runtime on the Tomcat
 application server. The steps you'd follow for any other supported application
 server would be similar. For a list of Liferay bundles with other application
-servers, please visit [Liferay's Downloads page](https://www.liferay.com/downloads/liferay-portal/available-releases).
-For instructions on installing Liferay manually on other application servers,
-please refer to [Using Liferay Portal](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay).
+servers, please visit [Liferay's Downloads
+page](https://www.liferay.com/downloads/liferay-portal/available-releases). For
+instructions on installing Liferay manually on other application servers, please
+refer to the [Installation and
+Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
+chapter of *Using Liferay Portal*. 
 
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
@@ -1075,7 +1078,7 @@ Setting up the Plugins SDK is easy. Let's get to it.
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
-Setup](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-lifer-1)
+Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 chapter of *Using Liferay Portal*. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
@@ -1106,6 +1109,12 @@ Installation steps:
 2.  Unzip the archive to a folder of your choosing. Because some operating
     systems have trouble running Java applications from folders with names
     containing spaces, avoid using spaces when naming your folder.
+
+    On Windows, to build a plugin's services (see Chapter 4 on Service Builder),
+    the Plugins SDK and Liferay Portal instance must be on the same drive. E.g.,
+    if your Liferay Portal instance is on your `C:\` drive, your Plugins SDK
+    must also be on your `C:\` drive in order for Service Builder to be able to
+    run successfully. 
 
 ---
 
@@ -1467,7 +1476,7 @@ Then, upon the velvet falling, I betook to Maven installing..."
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
 recommend putting your Maven installation's `bin` directory in your system's
-path, so you can run the Maven executable (`mvn`) easily from your command
+`$PATH`, so you can run the Maven executable (`mvn`) easily from your command
 prompt. 
 
 Let's learn about the types of repositories you can use with Maven projects. 
@@ -2097,7 +2106,7 @@ below to generate Liferay plugin projects of any type.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
- and that it's executable is in your path environment variable. 
+ and that it's executable is in your `$PATH` environment variable. 
 
 ---
 
@@ -2393,8 +2402,8 @@ directory structure:
                 - view.jsp
     - pom.xml
 
-The `portlet-plugin/src/main/java/` directory holds the portlet's Java source
-code (e.g., `com.liferay.sample.SamplePortlet.java`), and
+Maven creates the `src/main/java/` directory automatically. It holds the
+portlet's Java source code (e.g., `com.liferay.sample.SamplePortlet.java`), and
 `portlet-plugin/src/main/webapp` holds its web source code. If you've created
 any portlet plugins using the Plugins SDK, you might have noted it uses a
 different directory structure. 
@@ -2409,7 +2418,7 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 To view the full directory structure of a portlet developed by Ant, visit our
 [Anatomy of a
-Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
+Portlet](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/anatomy-of-a-portlet-project-liferay-portal-6-2-dev-guide-03-en)
 section in this guide. 
 
 ##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en)
@@ -2422,7 +2431,7 @@ Congratulations! You successfully created a Liferay portlet plugin using Maven.
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en)
 
 For detailed information on creating portlet plugins, see Chapter 3, 
-[Portlet Development](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3). 
+[Developing Portlet Applications](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en). 
 
 Next, let's run through a brief example for developing a theme plugin using
 Maven.
@@ -2473,10 +2482,10 @@ directory structure:
                 - WEB-INF/
                     - liferay-plugin-package.properties
                     - web.xml
-                - css/
-                - images/
-                - js/
-                - templates/
+            - css/
+            - images/
+            - js/
+            - templates/
 
 Several of the directories listed in the structure above are not created
 automatically; you'll create them as needed, depending on the customizations
@@ -2501,9 +2510,9 @@ Location       | Maven project     | Plugins SDK project |
 customizations | `src/main/webapp` | `docroot/_diffs`    |
 
 To view the directory structure of a theme developed by Ant, visit the [Anatomy
-of a
-Theme](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
-section in this guide. 
+of a Theme
+Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
+section in this guide.
 
 ##### Theme POM [](id=theme-pom-liferay-portal-6-2-dev-guide-02-en)
 
@@ -2542,7 +2551,7 @@ placed in the *target* directory. Its path is
 
 For more information on Liferay themes and its settings, see Chapter 9,
 [Creating Liferay Themes and Layout
-Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7). 
+Templates](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
 
 You successfully developed a Liferay theme using Maven. Find out about
 developing hook plugins next. 
@@ -2599,8 +2608,8 @@ Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
 To view the directory structure of a hook developed by Ant, visit the *Anatomy
-of a Hook* section of the [Creating a
-Hook](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
+of the Hook* section of the [Creating a
+Hook](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-a-hook-liferay-portal-6-2-dev-guide-10-en)
 section in this guide. 
 
 ##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-1)
@@ -2610,9 +2619,10 @@ Plugins with Maven* section.
 
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-1)
 
-For detailed information on creating hooks, see the
-[Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
-Chapter of this guide. 
+For detailed information on creating hooks, see the [Customizing and Extending
+Functionality with
+Hooks](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en)
+Chapter of this guide.
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
@@ -2681,7 +2691,7 @@ Web source | `src/main/webapp` | `docroot` |
 
 To view the directory structure of a layout template developed by Ant, visit the
 [Anatomy of a Layout Template
-Project](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
+Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-layout-templates-liferay-portal-6-2-dev-guide-09-en)
 section in this guide. 
 
 ##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-2)
@@ -2693,7 +2703,7 @@ the *Deploying Liferay Plugins with Maven* section.
 
 For detailed information on creating layout templates, see Chapter 9, [Creating
 Liferay Themes and Layout
-Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0). 
+Templates](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
 
 You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! In the next section we'll cover other
@@ -2780,7 +2790,7 @@ the clear; in acoordince with our policy, methods you used in your custom
 development haven't been deprecated. 
 
 <!-- I think this whole section is incorrect. It should be synced with this
-(focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/editions-of-lifer-4 -->
+(focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/editions-of-liferay-liferay-portal-6-2-user-guide-15-en -->
 
 <!--I updated it based on the user guide. Please review -Russ -->
 

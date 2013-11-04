@@ -718,6 +718,16 @@ service for the example Event Listing portlet project you've been developing
 throughout this chapter. The project resides in the
 `portlets/event-listing-portlet` folder of your Plugins SDK. 
 
+---
+
+ ![Tip](../../images/tip-pen-paper.png) **Note:** On Windows, your Liferay
+ Portal instance and your Plugins SDK must be on the same drive in order to
+ build services. E.g., if your Liferay Portal instance is on your `C:\` drive,
+ your Plugins SDK must also be on your `C:\` drive in order for Service Builder
+ to be able to run successfully.
+
+---
+
 <!-- I thought we we had decided these dual sections of IDE/Plugins SDK were
 awkward, and we were going to focus just on showing how it's done in IDE? -Rich
 -->
