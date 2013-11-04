@@ -1447,7 +1447,7 @@ sections.
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
 window state (maximized or normal), how to order the articles, how many articles
-to display per page and whether or not to show pagination.
+to display per page, and whether or not to show pagination.
 
 ### Knowledge Base Navigation [](id=knowledge-base-navigation-liferay-portal-6-2-user-guide-13-en)
 
@@ -1458,15 +1458,16 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 13.34: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 13.34: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
-Knowledge Base display portlet. When both of these portlets are placed on a page
+Knowledge Base Display portlet. When both of these portlets are placed on a page
 you can select a topic in the Categories Navigation portlet and the Knowledge
-Base display portlet will show all of the articles that match the topic. You can
-create topics from the Categories page of the Control Panel.
+Base Display portlet will show all of the articles that match the topic. You can
+create topics from the Categories page of *Site Administration* &rarr;
+*Content*.
 
-![Figure 13.35: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 13.35: Use the Categories Navigation portlet to search articles that match a specific topic.](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
