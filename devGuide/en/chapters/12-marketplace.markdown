@@ -1,12 +1,5 @@
 # Liferay Marketplace [](id=liferay-marketplace-liferay-portal-6-2-dev-guide-11-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 The **Liferay Marketplace** is an exciting hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
 build and enhance their existing platforms, developers and software vendors are
@@ -254,8 +247,8 @@ from the Marketplace and provide safeguards against malicious apps. If you wish
 to use an app for an earlier version, consult the documentation for that app, as
 it may or may not be supported on earlier versions of Liferay.
 
-Read the *Specify App Compatibility* section below for details on how to specify
-which versions of Liferay your app works with.
+Read the section below for details on how to specify the versions of Liferay
+your app works with. 
 
 ---
 
@@ -417,7 +410,7 @@ upper-right corner of the screen. Once you have registered, you can visit the
 Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
 The Marketplace home page is shown below:
 
-![Figure 11.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
+![Figure 12.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. You'll visit here often during the course of development, so
@@ -438,7 +431,7 @@ options for adding new apps and viewing your published apps. Your App Manager is
 accessible from your user profile page. Let's go there now. In the upper right
 corner on liferay.com select your name &rarr; *User Profile*. 
 
-![Figure 11.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
+![Figure 12.2: Select your name &rarr; *User Profile* on liferay.com to access your *App Manager*.](../../images/liferay-dot-com-user-profile.png) 
 
 Your profile page contains links to often-used functionality of liferay.com,
 including app creation and management. There are several links on the left of
@@ -447,7 +440,7 @@ manage the apps that you have for either personal or company use and to manage
 the apps that you or your company have developed. You'll use this page heavily,
 so a bookmark would be useful here. Click *App Manager* to visit this page.
 
-![Figure 11.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
+![Figure 12.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
 
 You'll notice three tabs across the top:
 
@@ -470,7 +463,7 @@ allowing you to fill in your app's details.
 
 The first step is to enter the basic details about your app. 
 
-![Figure 11.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
+![Figure 12.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
 
@@ -540,7 +533,9 @@ do so here.
 **Labs:** You can denote an app as experimental by flagging the appropriate box.
 
 **Security:** If your app does *not* use Liferay's PACL Security Manager, flag
-the appropriate box.
+the appropriate box. Otherwise, make sure to enable the security manager in your
+app by including the setting `security-manager-enabled=true` in your
+`liferay-plugin-package.properties` file. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
@@ -564,35 +559,32 @@ Make up some sample data to use during this example, and enter it into the form.
 Once you have entered all your app's details, click *Next* to move on to the
 next screen.
 
-![Figure 11.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
-
-On this screen, you must specify the version of your app. Review the guidance in
-the *What is a version* section in this chapter to choose a good version
-specifier and enter it here. For our example, since this is the first version,
-enter `1.0`. Click *Next*.
-
 #### Upload Files (Plugins) for your App [](id=upload-plugin-files-for-your-app-liferay-portal-6-2-dev-guide-11-en)
 
-This screen allows you to upload different sets of plugin files (variations) to
-support different Liferay versions. You must upload at least one plugin file
-before advancing beyond this screen. The screen is shown here as it initially
-appears:
+On this screen, you must specify the version of your app and upload its plugin
+files. Review the guidance in the *What is a version* section in this chapter to
+choose a good version specifier and enter it here. For our example, since this
+is the first version, enter `1.0`. 
 
-![Figure 11.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
+Then you must upload the different sets of plugin files (variations) to support
+different Liferay versions. You must upload at least one plugin file before
+advancing beyond this screen. So, click the *Browse* button, and select the
+plugins that make up your app. Each time you add plugins to the list, they
+automatically begin uploading and their compatibility information is scanned
+(read the previous sections in this chapter to understand what compatibility
+information is read from your plugins). 
 
-Press the *Browse* button, and select the plugins that make up your app. Each
-time you add plugins to the list, they will automatically begin uploading, and
-their compatibility information will be scanned (read the *Specify App
-Compatibility* section above to understand what compatibility information is
-read from your plugins).
 
-For this example, our app consists of a hook and a portlet. The portlet works
-across all Liferay releases, but the hook is built separately for CE and EE.
-Therefore, we will upload 3 plugins that make up our app. Once the files are
-uploaded, a check mark appears next to each plugin, and the plugins are
-displayed based on the compatibility information.
+![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
-![Figure 11.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
+As a more complicated example, let's consider an app that consists of a hook and
+a portlet. The portlet works across all Liferay releases, but the hook is built
+separately for CE and EE. Therefore, you would upload 3 plugins that make up the
+app: 1 portlet plugin for all releases, 1 hook plugin for CE, and 1 hook plugin
+for EE. Once the files are uploaded, a check mark appears next to each plugin,
+and the plugins are displayed based on their compatibility information. 
+
+![Figure 12.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
 This indicates that the files were successfully uploaded. Notice that the
 portlet plugin was automatically copied for use in both the EE and CE
@@ -605,7 +597,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
 will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 11.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 12.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
@@ -655,7 +647,7 @@ your app.
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
 
-- Editing your app details (e.g. description, icon, etc)
+- Editing your app details (e.g., description, icon, etc)
 - Adding support for a new version of Liferay Portal
 - Releasing a new version of your app to fix bugs or offer new functionality
 - Disabling your apps
@@ -669,8 +661,6 @@ information that you supplied on the first screen during the app creation
 process. To make changes to this content for your app, navigate to *Home* &rarr;
 *App Manager* &rarr; *Apps*, then click the *Action* button next to the app you
 wish to edit, and select *Edit*.
-
-![Figure 11.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
 
 This screen shows you what the app looks like on the Marketplace. To edit the
 detail information, click the *Edit* button at the bottom of the preview. This
@@ -723,9 +713,7 @@ new version, and then click *Edit*. You will be taken to the Details screen. At
 the bottom of the Details screen, click the *Add New Version* button. This
 button begins the process of adding a new version, starting with the App Details
 screen. In this case, the screen is pre-filled with data from the current
-version of the app, as shown below.
-
-![Figure 11.10: Adding a version is similar to creating a new app, except that the fields are filled in for you.](../../images/marketplace-add-version-details.png) 
+version of the app. 
 
 You can make any changes to the pre-filled data on this screen. Since this is a
 new version of an existing app making major changes (such as completely changing
@@ -768,7 +756,7 @@ downloads, and installations of your app(s). To access these metrics, navigate
 to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next
 to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 11.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 12.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Installations*).
@@ -805,7 +793,7 @@ security information you'll need to provide with your app.
 
 ## Understanding Plugin Security Management [](id=understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 
-We all wish cyberspace were free of malicious software and unwanted bugs. Since
+We all wish cyberspace was free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
 Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and
 tights, except, well, it's not.
@@ -831,46 +819,46 @@ plugins, and then maybe the importance of this will be clear.
   way of knowing if it does anything nefarious.
 - Upper management requests your corporate branch and other branches use a
   standard set of plugins on your portal instances. This set of plugins,
-  however, was written by an outside firm, and you need to know there will be no
-  tampering with your proprietary files.
+  however, was written by an outside firm, and you must assure that the plugins
+  will not tamper with your proprietary files. 
 
 These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
-in protecting your portal, system and network.
+in protecting your portal, system, and network.
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
 plugin accesses, so people deploying the plugin can review what it does without
 seeing its source code. If the plugin tries to access anything that's not on
-this list, the plugin's request is stopped dead in its tracks with the security
-manager logging information on the attempt to access unauthorized APIs or
-resources. 
+this list, the plugin's request is stopped dead in its tracks and the security
+manager logs information on the plugin's attempt to access the unauthorized APIs
+or resources. 
 
 Access to APIs and resources is authorized by means of property values specified
 in the plugin's `liferay-plugin-package.properties` file. This file must be
-specified in your plugin's `WEB-INF` directory. These security manager
+specified in your plugin's `WEB-INF` directory. These security management
 properties are collectively known as the plugin's PACL. 
 
 As you develop plugins for Liferay Marketplace or for distribution within your
-organization, you'll need to set the security manager properties appropriately.
-Before we dive into the intricacies of these properties, let's consider a plugin
-development approach that involves designing an app for the security manager
-from the ground up. 
+organization, you'll need to set the security management properties
+appropriately. Before we dive into the intricacies of these properties, let's
+consider a plugin development approach that involves designing an app for the
+security manager from the ground up. 
 
 ## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind-liferay-portal-6-2-dev-guide-11-en)
 
 At the start of plugin development, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address your plugin's
-PACL later. But, as you develop your plugin there are some common security
-pitfalls, highlighted in the next section, that we'll show you how to avoid.
-After you develop your plugin you'll dig whole-heartedly into security
-management by generating and fine-tuning you plugin's PACL. Don't worry, we'll
-guide you through it. 
+Portal Access Control List (PACL) later. But, as you develop your plugin there
+are some common security pitfalls, highlighted in the next section, that you'll
+want to avoid. After you develop your plugin you'll dig whole-heartedly
+into security management by generating and fine-tuning your plugin's PACL. Don't
+worry, we'll guide you through the entire process. 
 
-If you're developing a plugin as part of a free app, writing a PACL for your
-plugin and enabling the security manager are optional, and you can skip this
-chapter. Otherwise, read on. 
+If you're developing a plugin as part of a free app, writing the plugin's PACL
+and enabling the security manager for the plugin are optional, and you can skip
+the remainder of this chapter. Otherwise, read on. 
 
 Here is the suggested approach for developing secure plugins: 
 
@@ -879,7 +867,7 @@ Here is the suggested approach for developing secure plugins:
 - Build your plugin's PACL using Liferay's PACL Policy Generation tool. 
 - Test your plugin thoroughly, with the security manager enabled. 
 - Add to your plugin's security policy, as needed.
-- Convert your policy's absolute file paths into relative paths. 
+- Convert your policy's absolute file paths to relative paths. 
 
 Let's go over each part of this approach. 
 
@@ -895,29 +883,29 @@ documentation is available for you to read at
 But we'll highlight a couple common mistakes developers make that violate
 Liferay's secured environment: 
 
-- Invoking a method, directly or indirectly, without considering whether it can
-  throw a security exception.
-- Using external libraries or frameworks that access classloaders outside of
-  your plugin.  
+- Invoking a method, directly or indirectly, without considering whether the
+  method can throw a security exception.
+- Using external libraries or external frameworks that access classloaders
+  outside of your plugin.  
 
 You wouldn't intentionally make these kinds of mistakes, but you'd be surprised
 at how easily you can make them if you're not being careful enough. We'll
 consider scenarios that illustrate both of these mistakes and explain how to
 avoid making them in your plugin. Let's consider security exceptions first. 
 
-When you're running on Liferay Portal with the security manager enabled, you
-must only access authorized resources. If you invoke a method declared as
-throwing a security exception (i.e., `java.lang.SecurityException`) and you're
-not authorized to access the resources the method uses, the method throws the
-security exception and the Security Manger stops your plugin dead in its tracks.
-Security exceptions are unchecked, meaning that the compiler doesn't require
-your code to handle them. But since methods that throw security exceptions are
-declared as throwing them, you should check their signatures as you're
-designing your plugin. If they throw security exceptions, handle them
-appropriately with try/catch blocks. Keep in mind that you not only need to
-handle security exceptions of methods your plugin invokes *directly*, but you
-also need to handle the security exceptions of the underlying methods your
-plugin invokes *indirectly*.
+When you're running on Liferay Portal with the security manager enabled for your
+plugin, you must only access authorized resources. If you invoke a method
+declared as throwing a security exception (i.e., `java.lang.SecurityException`)
+and you're not authorized to access the resources the method uses, the method
+throws the security exception and the Security Manger stops your plugin dead in
+its tracks. Security exceptions are unchecked, meaning that the compiler doesn't
+require your code to handle them. But since methods that throw security
+exceptions are declared as throwing them, you should check their signatures
+while you're designing your plugin. If the methods your plugin uses throw
+security exceptions, handle them appropriately with try/catch blocks. Keep in
+mind that you not only need to handle security exceptions of methods your plugin
+invokes *directly*, but you also need to handle the security exceptions of the
+underlying methods your plugin invokes *indirectly*. 
 
 For example, you may be using a file utility that calls `java.io.File`'s
 `canRead` method. Since the `canRead` method can throw a `SecurityException`,
@@ -944,7 +932,7 @@ It declares a factory bean that calls a method on a Liferay class. This seems
 reasonable, right? Unfortunately, Spring tries to grab the classloader for the
 factory class. Since the factory class does not belong to the plugin, the
 security manager balks at the plugin's attempt to access the classloader for the
-factory class. The security manager doesn't allow applications to get arbitrary
+factory class. The security manager forbids applications from accessing arbitrary
 classloaders because the classloaders can add, access, and modify classes that
 your plugin is unauthorized to access. Using Spring in this manner violates the
 secured environment.
@@ -1024,11 +1012,11 @@ confidently creating your plugin.
 ### Develop Your Plugin [](id=develop-your-plugin-for-security-liferay-portal-6-2-dev-guide-en)
 
 Start creating your plugin the way you normally would. Design your application,
-write code, unit test your code, have users beta test your code. In essence, do
-everything you normally would do. Do all of this with the Plugin Security
+write code, unit test your code, and have users beta test your app. In essence,
+do everything you would normally do. Do all of this with the Plugin Security
 Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
-	security-manager-enabled=false
+    security-manager-enabled=false
 
 Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
@@ -1045,47 +1033,75 @@ properties from this policy file into your plugin's
 
 Here's how you generate a PACL policy for your plugin: 
 
-1. Specify your Liferay home in your `portal-ext.properties` file, if you
-haven't done so already. For example: 
+1.  In your `portal-ext.properties` file, enable Liferay Portal's security
+    manager and specify your Liferay home, if you
+    haven't done so already. For example: 
 
-        liferay.home=C:/liferay-portal-<version>/bundles
+        portal.security.manager.strategy=true
+
+        liferay.home=C:/liferay-portal-[version]
 
     You must restart Liferay for the property to take affect. 
 
-2. Turn on the security manager's *generate* mode in your plugin by setting the
-following property in your `liferay-plugin-package.properties` file: 
+2.  Enable the security manager to generate a security policy for your plugin by
+    setting the following property in your plugin's
+    `liferay-plugin-package.properties` file: 
 
         security-manager-enabled=generate
 
-3. Deploy your plugin. 
+3.  Deploy your plugin.
 
-    The PACL Policy Generation tool writes a PACL policy file: 
+    The PACL Policy Generation tool writes a PACL policy file with the following
+    path: 
 
-        ${liferay.home}/pacl-policy/${servletContextName}.policy
+        [liferay.home]/pacl-policy/[servletContextName].policy
 
-    The security manager performs security checks on your plugin; but rather
-    than throwing errors on failed checks, the generator tool writes suggested
-    rules for satisfying the security manager. 
+    On deploying your plugin and as you exercise your plugin's features, Liferay
+    Portal's security manager performs security checks on your plugin; but
+    rather than throwing errors on failed checks, the generator tool writes
+    suggested rules that specify access to the resources your plugin accesses. 
 
-4. Lastly, merge the properties found in your newly generated PACL policy file
-into your plugin's `liferay-plugin-package.properties` file. It's just a matter
-of merging the properties that start with the "security-manager-" prefix. 
+4.  Lastly, merge the properties that the security manager wrote (i.e., your
+    newly generated PACL policy file
+    `[liferay.home]/pacl-policy/[servletContextName].policy`) into your plugin's
+    `liferay-plugin-package.properties` file. It's just a matter of merging the
+    properties that start with the "security-manager-" prefix. 
 
-Now that your plugin has a thoroughly specified list of resources it accesses,
-let's enable the security manager and do final testing of your PACL properties.
-We cover enabling the security manager in the next section. 
+----
+
+![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
+ [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
+ need to be restarted after deploying your plugin, in order for the security
+ manager to detect and write out the complete set of policies for a plugin. If
+ you are using your plugin with the "security-manager-" generated properties the
+ first time and notice security violations, then you may need to turn on policy
+ generation one more time and restart Liferay. This gives the security manager
+ another opportunity to detect additional properties to satisfy your security
+ policy. If you are still seeing security violations on deployment, you'll need
+ to address them per instructions that follow in this chapter. Here are the
+ work-around steps: Remove the previously generated
+ `[servletContextName].policy` file, set `security-manager-enabled=generate` in
+ your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
+ plugin, and merge any new properties from the newly generated
+ `[servletContextName].policy` file into your
+ `liferay-plugin-package.properties` file. 
+ 
+----
+
+Now that you've thoroughly specified the resources your plugin accesses, let's
+enable the security manager and do final testing of your PACL properties. 
 
 ### Test the Plugin with the Security Manager Enabled [](id=test-the-plugin-with-security-manager-liferay-portal-6-2-dev-guide-en)
 
 If you want to distribute plugins, either through the Liferay Marketplace or
 through your web site, you have to assume potential users will insist the
-Security Manager is enabled in your plugin. For this reason, you should enable
+Security Manager be enabled in your plugin. For this reason, you should enable
 it when testing your plugins. 
 
 To enable the Security Manger set the following
 `liferay-plugin-package.properties` property to true: 
 
-	security-manager-enabled=true
+    security-manager-enabled=true
 
 Then, re-deploy your plugin and re-test it's functionality. The Security Manager
 throws Java security exceptions, if your plugin accesses resources that are not
@@ -1094,17 +1110,17 @@ Java security exceptions, so you can authorize access to the respective
 resources in the PACL properties of your `liferay-plugin-package.properties`
 file. Save your changes to the file, re-deploy the plugin, and re-test. Make
 sure everything works. If not, there are more rules you must declare for your
-plugin. Refer to the Portal Access Control List Properties section of this
-chapter to see the definitions of all the PACL properties and see example
-property values. 
+plugin. Refer to the online definition of the Portal Access Control List
+Properties for the `liferay-plugin-package.properties` file at 
+[http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
+and in the PACL properties section of this chapter for additional details. 
 
 If you are not finding an adequate way to specify a security rule with PACL, you
-can specify it in a Java Security Policy file. You see, it's almost impossible
-for Liferay and PACL to be aware of every possible security implementation
-check, because developers, libraries, and the Java Security API can always call
-for new types of security checks. So, Liferay provides a fallback to PACL, that
-lets you specify operations permissible within the context of your app's
-plugins. 
+can specify it in a Java Security Policy file. It's almost impossible for
+Liferay and PACL to be aware of every possible security implementation check,
+because developers, libraries, and the Java Security API can always call for new
+types of security checks. So, Liferay provides a fallback to PACL, that lets you
+specify operations permissible within the context of your app's plugins. 
 
 In case you need it for your plugin, let's get familiar with the Java Security
 Policy file. 
@@ -1115,7 +1131,7 @@ If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
 file. You can create the policy file (`java.policy`) in your plugin's `WEB-INF`
 folder. The policy file must follow Policy File syntax as described in detail at
-[http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html#FileSyntax](http://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html#FileSyntax).
 Like the rules you define in your plugin's PACL, the additional rules you define
 in your plugin's Java Policy File, `WEB-INF/java.policy`, only apply to that
 plugin. Plugins aren't privy to each other's security policies. 
@@ -1127,7 +1143,7 @@ any rules in a Java policy file that you can specify in a PACL.
 Here's a scenario that calls for using a Java Security Policy:
 
 Java has a security implementation called
-[http://docs.oracle.com/javase/6/docs/api/java/net/NetPermission.html](java.net.NetPermission).
+[http://docs.oracle.com/javase/7/docs/api/java/net/NetPermission.html](java.net.NetPermission).
 It checks a whole bunch of networking operations, that Liferay's implementation
 doesn't check. In case you want to perform one of these operations, like using a
 custom Stream Handler, you can grant your plugin permission to do so in its
@@ -1161,8 +1177,8 @@ How do you add more permissions to a codebase? Just define them on separate
 lines in the grant entry: 
 
     grant codeBase "file:${my-supercool-portlet}${/}-" {
-	    permission java.lang.RuntimePermission "loadLibrary.test_b";
-	    permission java.net.NetPermission "specifyStreamHandler";
+        permission java.lang.RuntimePermission "loadLibrary.test_b";
+        permission java.net.NetPermission "specifyStreamHandler";
     };
 
 In this example, we've granted the plugin permission to invoke native code
@@ -1240,7 +1256,7 @@ For file path separators, you can use the `${/}` alias.
 Example,
 
     grant codeBase "file:${my-supercool-portlet}${/}-" {
-    	permission java.net.NetPermission "specifyStreamHandler";
+        permission java.net.NetPermission "specifyStreamHandler";
     };
 
 Congratulations! You now know how to specify your policy's file paths
@@ -1264,10 +1280,11 @@ plugins and on packaging it for distribution.
 It's very easy to activate the security manager. Set the following
 `liferay-plugin-package.properties` property to true: 
 
-	security-manager-enabled=true
+    security-manager-enabled=true
 
-Next, we'll look at exactly what APIs the Security Manager protects, and how you
-can declare whether your application uses any of these properties. 
+Next, we'll explain the purpose of the PACL properties, show you some of the
+wildcards you can use for particular property values, and refer you to the file
+containing the PACL property definitions. 
 
 ## Portal Access Control List (PACL) Properties [](id=portal-access-control-list-pacl-properties-liferay-portal-6-2-dev-guide-en)
 
@@ -1279,439 +1296,84 @@ Manager prevents it from happening. Consider this a virtual finger waggin'. To
 prevent this from happening, you have to tell the Plugin Security Manager
 up-front the access your plugin needs.
 
-The sections that follow describe the PACL properties: explaining each
-property's purpose, its possible values, and the syntax to use in specifying its
-value.
+The online definitions for the PACL properties can be found at
+[http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html).
+If you have the Liferay Portal source code, you can find the
+`liferay-plugin-package_6_2_0.properties` file in the
+`liferay-portal/definitions` folder. 
 
-### AWT Security [](id=pacl-awt-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the AWT operations the plugin is permitted to access. 
-
-*Example:*
-
-    security-manager-awt-operations=\
-        accessClipboard,\
-        accessEventQueue,\
-        accessSystemTray,\
-        createRobot,\
-        fullScreenExclusive,\
-        listenToAllAWTEvents,\
-        readDisplayPixels,\
-        replaceKeyboardFocusManager,\
-        setAppletStub,\
-        setWindowAlwaysOnTop,\
-        showWindowWithoutWarningBanner,\
-        toolkitModality,\
-        watchMousePointer
-
-### Class Loader Security [](id=pacl-class-loader-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the reference IDs of plugins for this plugin to access.
-
-*Example:*
-
-	security-manager-class-loader-reference-ids=\
-		1_WAR_flashportlet,\
-		flash-portlet
-
-### Environment Variable Security [](id=pacl-environment-variable-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match environment variables
-that the plugin is permitted to access. 
-
-*Example:*
-
-    security-manager-environment-variables=\
-        java.home,\
-        java.vendor,\
-        java.version,\
-        java.vm.v.*
-
-### Expando Bridge [](id=pacl-expando-bridge-liferay-portal-6-2-dev-guide-11-en)
-
-Specify models having Expando Bridge attributes the plugin is permitted to
-access. The plugin can also access Expando Bridge attributes via the
-wrapper classes of the models. 
-
-*Example:*
-
-	security-manager-expando-bridge=\
-        com.liferay.portal.model.User
-
-### File Security [](id=pacl-file-security-liferay-portal-6-2-dev-guide-11-en)
+Some of the properties accept wildcard characters that have special meaning.
+Let's investigate the wildcard characters you can use in your plugin's file
+security properties. 
 
 The following properties address file deletion, execution, reading, writing and
 replacement operations. The `*` character in a path name indicates all files in
 the current directory. The `-` character in a path name indicates all files in
 the current directory and in its subdirectories.
 
-Specify files the plugin is permitted to delete.
-
-*Example:*
-
-	security-manager-files-delete=\
-		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
-
-Specify files the plugin is permitted to execute.
-
-*Example:*
-
-	security-manager-files-execute=\
-		/bin/bash,\
-		C:\\WINDOWS\\system32\\ping.exe
-
-Specify files the plugin is permitted to read.
-
-*Example:*
-
-	security-manager-files-read=\
-		../webapps/chat-portlet/images/*,\
-		../webapps/chat-portlet/WEB-INF/liferay-releng.properties,\
-		../webapps/chat-portlet/WEB-INF/src/-,\
-		/bin/bash,\
-		C:\\WINDOWS\\system32\\ping.exe
-
-Specify files the plugin is permitted to overwrite.
-
-*Example:*
-
-	security-manager-files-write=\
-		../webapps/chat-portlet/images/*,\
-		../webapps/chat-portlet/WEB-INF/*,\
-		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
-
-### Bean Security [](id=pacl-bean-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify bean properties the plugin is permitted to acquire. 
-
-*Example:*
-
-    security-manager-get-bean-property=\
-        com.liferay.portal.kernel.xml.SAXReaderUtil,\
-        com.liferay.portal.util.PortalUtil
-
-Specify bean properties the plugin is permitted to set. 
-
-*Example:*
-
-    security-manager-set-bean-property=\
-        com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
-
-### Hook Security [](id=pacl-hook-security-liferay-portal-6-2-dev-guide-11-en)
-
-Set to `true` if the hook plugin is permitted use custom JSPs. By default, the
-hook plugin is not permitted to use custom JSPs. 
-
-*Example:*
-
-	security-manager-hook-custom-jsp-dir-enabled=false
-
-Specify entities for which the hook plugin is permitted to customize indexing.
-Customizing the indexing can involve modifying the search, summary and/or
-queries for these entities. 
-
-*Example:*
-
-	security-manager-hook-indexers=\
-		com.liferay.portal.model.User
-
-Specify which language property locales the plugin is permitted to override. 
-
-*Example:*
-
-This example grants the plugin permission to override the Great Britain locale
-of English, the Spain locale of Spanish, and *all* Portuguese locales. 
-
-	security-manager-hook-language-properties-locales=\
-		en_GB,\
-		es_ES,\
-		pt
-
-Specify which portal properties the plugin is permitted to override. 
-
-*Example:*
-
-	security-manager-hook-portal-properties-keys=\
-		phone.number.format.impl
-
-Specify which services the plugin is permitted to access. 
-
-*Example:*
-
-	security-manager-hook-services=\
-		com.liferay.portlet.blogs.service.BlogsEntryLocalService
-
-Specify whether to allow the plugin's servlet filter hooks. Setting this to
-`true` gives the plugin permission to pre-process requests going to the portal's
-servlets and post-process requests coming from the portal's servlets. By
-default, the plugin's servlet filter hooks are not allowed. 
-
-	security-manager-hook-servlet-filters-enabled=false
-
-Specify struts action paths that the hook plugin is permitted to add or
-override. 
-
-*Example:*
-
-	security-manager-hook-struts-action-paths=\
-		/portal/test/pacl/success
-
-### JNDI Security [](id=pacl-jndi-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify which services the plugin can look up. You can use regular expressions
-to make this dynamic. 
-
-*Example:*
-
-Using the sample values below, the plugin can look up objects for key names
-`matthew`, `mark`, `Mark`, `luke`, and `Luke`. In addition, the plugin can
-look-up objects for key names containing `john` with zero or more characters
-preceding and/or trailing `john`. 
-
-	security-manager-jndi-names=\
-		test-pacl-matthew,\
-		test-pacl-[mM]ark|test-pacl-[lL]uke,\
-		test-pacl-.*john.*
-
-### Message Bus Security [](id=pacl-message-bus-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify which services the plugin is permitted to listen on via the portal's
-message bus.
-
-*Example:*
-
-	security-manager-message-bus-listen=\
-		liferay/test_pacl,\
-		liferay/test_pacl_listen_success
-
-Specify which message bus destinations the plugin is permitted to call (send
-messages to) via the portal's message bus.
-
-*Example:*
-
-	security-manager-message-bus-send=\
-		liferay/message_bus/default_response,\
-		liferay/test_pacl_listen_failure,\
-		liferay/test_pacl_listen_success,\
-		liferay/test_pacl_send_success
-
-### Portlet Bag Pool Security [](id=pacl-portlet-bag-pool-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match any portlet IDs that the
-plugin is permitted to access from the portlet bag pool. 
-
-*Example:*
-
-    security-manager-portlet-bag-pool-portlet-ids=\
-        1_WAR_flashportlet,\
-        .*_WAR_chatportlet
-
-### Search Engine Security [](id=pacl-search-engine-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify the IDs of search engines the plugin is permitted to access. 
-
-*Example:*
-
-	security-manager-search-engine-ids=\
-		SYSTEM_ENGINE
-
-### Portal Service Security [](id=pacl-portal-service-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify portal service classes and/or methods the plugin is permitted to access.
-Use the `#` character as a delimiter between a class and its method. 
-
-*Example:*
-
-	security-manager-services[portal]=\
-		com.liferay.portal.service.GroupLocalService,\
-		com.liferay.portal.service.PortalService#getBuildNumber,\
-		com.liferay.portal.service.persistence.CompanyPersistence,\
-		com.liferay.portlet.blogs.service.BlogsEntryLocalService,\
-		com.liferay.portlet.blogs.service.BlogsStatsUserLocalService
-
-### Portlet Service Security [](id=pacl-portlet-service-security-liferay-portal-6-2-dev-guide-11-en)
-
-For each portlet the plugin accesses, replicate this property substituting
-`some-portlet` in the `[` square brackets `]` with the name of the accessible
-portlet. 
-
-Specify portlet service classes and/or methods the plugin is permitted to
-access. Use the `#` character as a delimiter between a class and its method. 
-
-*Example:*
-
-	security-manager-services[some-portlet]=\
-		com.liferay.chat.service.EntryLocalService,\
-		com.liferay.chat.service.StatusLocalService#getStatuses
-
-### Socket Security [](id=pacl-socket-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify sockets permitted to accept connections in the plugin.
-
-*Example:*
-
-	security-manager-sockets-accept=\
-		localhost:4320
-
-Specify connections the plugin is permitted to make with the outside world.
-
-*Example:*
-
-	security-manager-sockets-connect=\
-		www.cbs.com:80,\
-		www.google.com:80,\
-		www.google.com:443,\
-		www.yahoo.com:443
-
-Specify sockets the plugin can listen on.
-
-*Example:*
-
-This example specifies socket range `4316-4318`, socket `4320`, and socket
-`4321`.
-
-	security-manager-sockets-listen=\
-		4316-4318,\
-		4320,\
-		4321
-
-*The Star Socket Wildcard:*
-
-The star (`*`) represent any hostname. Here are examples that demonstrate its
-use: 
-
-- `*.liferay.com` matches any host ending in `.liferay.com`, such as
-`docs.liferay.com` and `issues.liferay.com`. 
-
-- `*:*` matches every socket and every port. 
-
-### SQL Security [](id=pacl-sql-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify tables in the Liferay database on which the plugin is permitted to
-perform the applicable operations. These property names use the following
-convention:
-
-	security-manager-sql-tables-[operation]    
- 
-Specify tables on which the plugin can do any and all operations.
-
-*Example:*
-
-	security-manager-sql-tables-all=\
-		TestPACL_Foo
-
-Specify tables the plugin can create.
-
-*Example:*
-
-	security-manager-sql-tables-create=\
-		TestPACL_CreateSuccess,\
-		TestPACL_DropSuccess,\
-		TestPACL_InsertSuccess,\
-		TestPACL_ReplaceSuccess,\
-		TestPACL_TruncateSuccess
-
-Specify tables from which the plugin can delete records.
-
-*Example:*
-
-	security-manager-sql-tables-delete=\
-		ClassName_
-
-Specify tables the plugin can drop.
-
-*Example:*
-
-	security-manager-sql-tables-drop=\
-		TestPACL_CreateSuccess,\
-		TestPACL_DropSuccess,\
-		TestPACL_InsertSuccess,\
-		TestPACL_ReplaceSuccess,\
-		TestPACL_TruncateSuccess
-
-Specify tables into which the plugin can insert records.
-
-*Example:*
-
-	security-manager-sql-tables-insert=\
-		TestPACL_InsertSuccess
-
-Specify tables in which the plugin can replace records.
-
-*Example:*
-
-	security-manager-sql-tables-replace=\
-		TestPACL_ReplaceSuccess
-
-Specify tables the plugin can query.
-
-*Example:*
-
-	security-manager-sql-tables-select=\
-		Counter,\
-		TestPACL_Bar
-
-Specify tables from which the plugin can delete all records.
-
-*Example:*
-
-	security-manager-sql-tables-truncate=\
-		TestPACL_TruncateSuccess
-
-Specify tables the plugin can update.
-
-*Example:*
-
-	security-manager-sql-tables-update=\
-		ListType
-
-### Thread Security [](id=pacl-thread-security-liferay-portal-6-2-dev-guide-11-en)
-
-Specify regular expression patterns used to match names of the thread pool
-executor for the plugin to access.
-
-*Example:*
-
-	security-manager-thread-pool-executor-names=\
-		liferay/test_pacl,\
-		liferay/test_pacl_listen_failure,\
-		liferay/test_pacl_listen_success
+Here's an example that uses the `-` character to specify that the plugin is
+permitted to delete files in the
+`../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp` directory and its
+subdirectories. 
+
+    security-manager-files-delete=\
+        ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
+
+Note, you can use a relative paths in the file security
+properties. 
+
+You can use a mix of UNIX/Linux style paths and Windows style paths as
+demonstrated in the example below: 
+
+    security-manager-files-execute=\
+        /bin/bash,\
+        C:\\WINDOWS\\system32\\ping.exe
+
+And the following example uses the `*` character to specify that the plugin is
+reads files in the `../webapps/chat-portlet/images` and
+`../webapps/chat-portlet/WEB-INF/*` directories, but not their subdirectories:
+
+    security-manager-files-write=\
+        ../webapps/chat-portlet/images/*,\
+        ../webapps/chat-portlet/WEB-INF/*,\
+        ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
+
+For socket security properties the `*` character represents any hostname. For
+example, `*.liferay.com` matches any host ending in `.liferay.com`, such as
+`docs.liferay.com` and `issues.liferay.com`. And `*:*` matches every socket and
+every port. 
 
 <!-- TODO insert section(s) explaining security with respect to core development
 -->
 
-<!--Right now summaries from both chapters (plugins security was its own
-chapter previously) are left here. They should be combined and the chapter
-reworked for flow. --> 
-
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-11-en-0)
 
-In this chapter we introduced concepts and instructions for developers to make
+In this chapter, we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
 
-With regards to Marketplace apps, we looked at how to create, publish,
-maintain, and track apps. You do this through [liferay.com](http://liferay.com),
-using your own personal credentials and its features for Marketplace. Then, we
-covered the requirements for publishing apps, which did not differ significantly
-from requirements for general Liferay development. We then showed how you can
-publish a sample app on the Marketplace and how you can modify it as the app
-evolves. Finally, we looked at how to track the adoption of apps using view,
-download, and install metrics. 
+We looked at how to create, publish, maintain, and track Liferay Marketplace
+apps. You can do this through the App Manager that's available on your personal
+[liferay.com](http://liferay.com) home page ([liferay.com](http://liferay.com)
+account required!). Then, we covered the requirements for publishing apps, which
+did not differ significantly from requirements for general Liferay development.
+Next, we showed how you can publish a sample app on the Marketplace and how you
+can modify it as the app evolves. Finally, we looked at how to track the
+adoption of apps using view, download, and install metrics. 
 
-As for plugin security management, we discussed why plugin security management
-is necessary, how the Plugin Security Manager checks each plugin against its
-portal access control list (PACL) and how to specify PACL properties for the
-plugins you create and deploy. We also explained Liferay's support of the Java
-Security Policy, in case you need to specify rules above and beyond what PACL
-properties support. 
+Regarding plugin security management, we discussed why plugin security
+management is necessary, how the Plugin Security Manager checks each plugin
+against its portal access control list (PACL), and how to specify PACL
+properties for the plugins you create and deploy. We also explained Liferay's
+support of the Java Security Policy, in case you need to specify rules above and
+beyond what PACL properties support.
 
-Now you have a better understanding of how plugin security works, and can use
+Now you have a better understanding of how plugin security works and can use
 Liferay Portal's Plugin Security Manager effectively to specify exactly what
 services your plugin needs in order to function. Anyone running Liferay Portal
 with Security Manager turned on will know you're a "law abiding" citizen,
 because you've specified what services your applications need to access in order
 to function. We hope this information helps you understand how to develop safe
-powerful Liferay apps. 
+and powerful Liferay apps. 
 
 Next, we'll talk about using Ext plugins to make customizations that you can't
 make with any other Liferay plugin type. 

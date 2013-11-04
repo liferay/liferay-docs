@@ -1729,10 +1729,10 @@ Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
 Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/workflow-with-kal-4)
+Kaleo](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
 to resolve the communication breakdown, but we'll resolve the Jungle Gym's
-communication woes using Message Bus, to show you how it works. 
-Here are the inter-department message exchanges we'll accommodate:
+communication woes using Message Bus, to show you how it works. Here are the
+inter-department message exchanges we'll accommodate:
 
  Message | Sender | Listener | Response | Response Listeners |
 -------- | ------ | -------- | -------- | ------------------ |

@@ -507,7 +507,7 @@ footer, including the slogan.
  hook to display configurable theme settings properly, like the slogan text area
  and footer checkbox from the previous example. For details, see the [Overriding
  a *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
+ File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
  section found in the *Hooks* chapter of this guide.
 
 ---

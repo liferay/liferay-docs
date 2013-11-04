@@ -23,13 +23,13 @@ this. Probably the first thing you want to do after you install Liferay Portal
 to manage your site is to get your content published. Let's dive right in and
 see how Liferay Portal handles that task. 
 
-## Building a site with Liferay Web Content 
+## Building a site with Liferay Web Content [](id=building-a-site-with-liferay-web-conten-liferay-portal-6-2-user-guide-01-en)
 
 When you log into Liferay and look at its default screen, one thing should jump
 out at you right away: it's built for all clients that access the web, not just
 desktop browsers. 
 
-![Figure 1.x: When designing pages, Liferay includes a preview that lets you see how it would look when displayed at resolutions for computers, tablets, and phones.](../../images/01-preview.png)
+![Figure 1.1: When designing pages, Liferay includes a preview that lets you see how it would look when displayed at resolutions for computers, tablets, and phones.](../../images/01-preview.png)
 
 Another thing to notice is that all the page controls are right there for you.
 For example, to add something, you click the *+* button, and then
@@ -51,7 +51,7 @@ By default, Liferay Portal starts with a single site that has a single page. You
 can build any website you wish out of this, complete with multi-nested page
 hierarchies, as the figure below shows. 
 
-![Figure 1.1: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
+![Figure 1.2: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
 
 These pages can have any layout you like: Liferay Portal ships with several
 built-in, and you can create your own custom layouts and deploy them easily.
@@ -80,7 +80,7 @@ server, where all web content work happens on a separate server from your live
 site. In either case, when you're ready, site changes can be pushed to the live
 site, either manually or on a schedule. 
 
-![Figure 1.2: Staging supports publishing manually or on a schedule.](../../images/web-content-staging-publish.png)
+![Figure 1.3: Staging supports publishing manually or on a schedule.](../../images/web-content-staging-publish.png)
 
 Liferay Portal's web content creation tools are easy and intuitive to use at all
 levels. If you need only basic content management capabilities for your site,
@@ -95,7 +95,7 @@ capture all the information from your writers that you'd need in an article. The
 figure below shows what this structure might look like to a journalist who'd be
 entering his or her article into the system. 
 
-![Figure 1.3: Structures allow you to specify exactly the type of data that makes up your content. You can also include tooltips to help your users understand what each field is for.](../../images/01-content-structure.png)
+![Figure 1.4: Structures allow you to specify exactly the type of data that makes up your content. You can also include tooltips to help your users understand what each field is for.](../../images/01-content-structure.png)
 
 As you can see, you can use structures to make sure writers provide the title of
 the story, what type of story it will be, and the byline (i.e., the writer's
@@ -142,7 +142,7 @@ the Site Administration page or can be added to any page, and, as shown below,
 looks very much like the file manager that you're already familiar with from
 your operating system. 
 
-![Figure 1.4: Liferay Portal's Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
+![Figure 1.5: Liferay Portal's Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
 
 Like a file manager, you can browse files and folders in nested hierarchies. You
 can also mount other repositories that you might have in your environment, such
@@ -204,7 +204,7 @@ These applications range from personal productivity applications like a calendar
 and email, to community-building applications like message boards, polls, and
 wikis. 
 
-![Figure 1.5: Liferay Portal's message boards are as fully featured as any standalone forum application, with the added benefit that they're integrated with the rest of the system.](../../images/01-message-boards.png)
+![Figure 1.6: Liferay Portal's message boards are as fully featured as any standalone forum application, with the added benefit that they're integrated with the rest of the system.](../../images/01-message-boards.png)
 
 This is a suite of integrated applications with all the features of similar,
 standalone applications. For example, Liferay Portal's message boards include
@@ -230,7 +230,7 @@ content and documents--is the Recycle Bin. If users delete content that needs to
 be restored later, you don't have to find it in your backups: it's in the
 Recycle Bin. 
 
-![Figure 1.x: The Recycle Bin can hold any kind of content.](../../images/recycle-bin-overview.png)
+![Figure 1.7: The Recycle Bin can hold any kind of content.](../../images/recycle-bin-overview.png)
 
 We could go through all of Liferay Portal's collaborative applications, but
 let's save that for the body of the book. Liferay Portal's suite of
@@ -255,7 +255,7 @@ rounding things out with an API to handle relationships between users as well as
 publish their activities to each other, Liferay Portal helps you implement
 common features of social networks. 
 
-![Figure 1.6: Liferay Portal provides feeds of social activities. These feeds can contain entries from any of Liferay's built-in applications or applications that you write.](../../images/01-social-activities.png)
+![Figure 1.8: Liferay Portal provides feeds of social activities. These feeds can contain entries from any of Liferay's built-in applications or applications that you write.](../../images/01-social-activities.png)
 
 Social relationships in Liferay Portal are ideally suited for everything from
 public social networks to enabling social features in your corporate Intranet.
@@ -270,7 +270,7 @@ applications. It fully supports the OpenSocial framework. You can publish
 gadgets you find online, or you can use Liferay Portal's built-in OpenSocial
 gadget editor to create and serve your own OpenSocial gadgets. 
 
-![Figure 1.7: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
+![Figure 1.9: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
 
 Liferay Portal also supports the creation of Facebook applications; in fact, no
 additional coding is necessary to publish your Liferay applications on Facebook
@@ -278,7 +278,7 @@ additional coding is necessary to publish your Liferay applications on Facebook
 features like posting on users' timelines). All you need to do is get an API key
 and canvas page URL from Facebook. 
 
-![Figure 1.8: Any Liferay application can be published to multiple social networks with a few clicks.](../../images/01-facebook-integration.png)
+![Figure 1.10: Any Liferay application can be published to multiple social networks with a few clicks.](../../images/01-facebook-integration.png)
 
 As you can see, Liferay Portal is built with social applications in mind. It's
 highly likely, however that you also have your own application you

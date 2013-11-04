@@ -315,11 +315,11 @@ Tomcat bundle as an example:
    drop to a command prompt and go to this folder, you can launch Tomcat via the
    following command on Windows:
 
-	startup
+    startup
 
    or the following command on Linux/Mac/Unix:
 
-	./startup.sh
+    ./startup.sh
 
 The Liferay/Tomcat bundle then launches. If you are on Windows, another command
 prompt window appears with Tomcat's console in it. If you are on Linux, you can
@@ -509,558 +509,341 @@ want support all the way down to the application server from Liferay, then Mule
 Tcat is your solution. After we cover Mule Tcat, we'll look at all the supported
 application servers in alphabetical order. 
 
-## Installing Liferay on Mule Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
 
----
+For this section, we will refer to your Tcat server's installation location as
+`[TCAT_HOME]`. If you don't already have an existing Tcat server, we
+recommend you download a Liferay/Tcat bundle from
+[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
+If you have an existing Tcat server on which you'd like to deploy Liferay
+manually, please follow the steps below.
 
-![tip](../../images/01-tip.png)*Note:* This section has not yet been upgraded to
-6.2.
+Your first step is to download the latest Liferay `.war` file and Liferay
+Portal dependencies from
+[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+The Liferay `.war` file should be called `liferay-portal-6.2.x-[date].war` and
+the dependencies file should be called
+`liferay-portal-dependencies-6.2.x-[date].zip`.
 
----
+Next, let's get started by addressing Liferay's library dependencies.
 
-Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
-source portal, and Tcat Server, an enterprise grade administration console for
-the Apache Tomcat application server.
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en)
 
-Tcat Server provides several tools to make Tomcat more administrator friendly,
-especially in organizations used to leveraging administration consoles like
-those found in other more complex JEE application servers. You may use the
-console to:
+To run Liferay Portal on your Tcat server, you first need to make some JAR files
+available on Tcat's global classpath. These include the Liferay Dependency JARs,
+a JDBC driver for your database, and some other dependencies that Liferay Portal
+requires. 
 
--   Monitor and control all Tomcat instances on multiple servers and across
-    multiple environments 
--   Deploy and view applications across instances
--   Troubleshoot problems across all instances, including view JMX parameters,
-    viewing remote logs and more
--   Provide granular entitlement controls for the above functions and more
+1. Create the folder `[TCAT_HOME]/lib/ext`.
 
-This isn't a complete guide to Mule Tcat; it just covers Liferay installation.
-For full documentation, you'll find more detailed information here:
-[http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home)
+2. Extract the Liferay dependencies file and copy the `.jars` to `[TCAT_HOME]/lib/ext`. 
 
-To obtain Liferay Portal Tcat Edition, you need access to the Liferay Customer
-Portal and the Mulesoft Tcat Server web site. If you are not a current Liferay
-customer and would like to try the product, please contact Liferay via email at
-sales@liferay.com.
+3. Next, you need a few `.jar` files that are included as part of the
+   Liferay Tcat bundle, but are not included with Tcat.  You'll have to download
+   them yourself, so let's get started. Place these `.jar` files into
+   `$TCAT_HOME/lib/ext`:
 
-For this section, we'll limit ourselves to the Windows and Linux 64-bit
-installation wizards. For more detailed installation instructions, please
-consult the Mulesoft Tcat Server installation documents located at:
+   - `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
+            [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
 
-[http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home)
+   - `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
+            [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
 
--   [Installing Tcat Server on
-    Linux](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Linux)
+   - `persistence.jar`: Support for the Java Persistence API. You can get this
+      `.jar` from
+            [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
--   [Installing Tcat Server on
-    Windows](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Microsoft+Windows)
+   - `activation.jar`: This is an implementation of the Java Activation
+      Framework. You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
 
--   [Installing Tcat Server on
-    Solaris](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Solaris)
+   - `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
+        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
 
--   [Installing Tcat Server on Mac OS
-    X](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Mac+OS+X)
+   - `jms.jar`: The Java Messaging Service. You can get this `.jar` from
+        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
 
--   [Adding Tcat Server Capabilities to an Existing Apache Tomcat
-    Install](http://www.mulesoft.org/documentation/display/TCAT/Add+Tcat+Server+Capabilities+to+an+Existing+Tomcat+Install)
+   - `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
+          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
 
-First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
-need two files:
+   - `junit.jar`: Optional: lets you run unit tests. You can get this `.jar` from 
+        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
--   **Liferay Portal 6.1 EE Tcat Admin:** contains the Tcat administration
-    console and Liferay Portal EE and all appropriate plugins.
+   Although you can get each `.jar` listed above separately, it may be more
+   convenient to get them by downloading the Liferay source code and copying them
+   from there. Once you have downloaded the Liferay source, unzip the source
+   into a temporary folder. You can find the `.jar` files in
+   `[LIFERAY_SOURCE]/lib/development`. 
 
--   **Liferay Portal 6.1 EE Tcat Agent:** contains a vanilla Tomcat application
-    server and the Tcat management agent.
+4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
+   the JDBC driver for your version of the database server. In the case of
+   MySQL, use `mysql-connector-java-[version]-bin.jar`. You can download the
+   latest MySQL JDBC driver from
+   [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/).
+   Extract the JAR file and copy it to `[TCAT_HOME]/lib/ext`.
 
-Next, download the appropriate Tcat platform installation at:
-[http://www.mulesoft.com/download-tcat](http://www.mulesoft.com/download-tcat).
-You may select installation wizards for Windows (32 and 64-bit), Mac, Unix,
-Solaris and Linux (32 and 64-bit) as well as a manual installation zip.
+Now that you have the necessary libraries in place, we'll move on to configuring
+your domain.
 
-After obtaining the software bundles, you can proceed with installation and
-configuration of the Administration Console.
+### Tcat Configuration [](id=tcat-configuration-liferay-portal-6-2-user-guide-15-en)
 
-### Installing the Administration Console on Windows [](id=installing-the-administration-console-o-liferay-portal-6-2-user-guide-15-en)
+If you're installing Liferay Portal onto an existing Tcat server, you should be
+familiar with the Tcat Administration Console. The following instructions assume
+you have a Tcat server with the Administration Console and a separate, managed
+Tcat server instance where you'll deploy Liferay. To find information specific
+to Tcat server installation and management, see [Mulesoft's Tcat Documentation](http://www.mulesoft.org/documentation/display/TCAT/Home). You have to do a few things to configure your managed Tcat server instance: 
 
-For Windows, Tcat comes with an installer to assist with installation and
-configuration. After downloading, execute the installer, accepting the
-appropriate license agreement.
+- Set environment variables
 
-Upon accepting the license agreement, the system presents you with two
-installation choices, a "standard" or "custom" installation.
+- Create a context for your web application
 
-![Figure 15.2: Installation selection](../../images/tcat-html_2589582e.png)
+- Modify the list of classes/JARs to be loaded
 
-You should select the "Custom" installation option to provide better control of
-where Tcat Server is installed.
+- Specify URI encoding
 
-![Figure 15.3: Installation component selection](../../images/tcat-html_m230ba580.png)
+![Figure 15.2: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
 
-After selecting the custom installation option, the Tcat installer prompts you
-to select the desired components. 
+Next, you'll configure your managed Tcat instance. 
 
--   **Tcat Server:** a version of Apache Tomcat that includes the appropriate
-    management agents used by Tcat.
+1. To set the `CATALINA_OPTS` environment variable, you need to add a server
+profile. In the Tcat Administration Console, navigate to the *Administration*
+tab and click *Server Profiles*. Name the profile appropriately (*Liferay 6.2*,
+perhaps), provide a description if you wish, select the workspace where you'll
+keep your profile (`/Profiles` is a logical choice), and click the *Add
+Variable* button. Name it `CATALINA_OPTS` and give it the following value: 
 
--   **Administration Console:** the administration console for monitoring and
-    managing all available Tcat servers. This console contains tools used for
-    application deployment, log access, server control and other administration
-    tools.
+        -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
--   **Tomcat Documentation:** the documentation that comes normally with an
-    Apache Tomcat distribution. You do not need to select this option.
+This sets the character encoding to UTF-8, sets the time zone to Greenwich
+Mean Time and allocates memory to the Java virtual machine.
 
--   **Tomcat Examples:** the examples that comes normally with an Apache Tomcat
-    distribution. You do not need to select this option.
+Apply the profile to the Tcat server where you're deploying Liferay. To do so,
+go to the *Servers* tab, select the desired server, and select your profile from
+the *Set Profile* dropdown menu. 
 
--   **Tomcat Manager Application:** the manager application that comes normally
-    with an Apache Tomcat distribution. You do not need to select this option.
+2. Create a file locally called `ROOT.xml`: 
 
-For this step in the installation process, select the Administration Console in
-addition to Tcat Server.
+    <Context path="" crossContext="true">
 
-![Figure 15.4: Installation location](../../images/tcat-html_261b594a.png)
+    <!-- JAAS -->
 
-After selecting Tcat Server and the Administration Console for installation, the
-installation wizard prompts you for an installation directory. Please select the
-desired installation directory for the Tcat Server.
+    <!--<Realm
+        classNjame="org.apache.catalina.realm.JAASRealm"
+        appName="PortalRealm"
+        userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+        roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+    />-->
 
-![Figure 15.5: Port configurations](../../images/tcat-html_66274d0c.png)
+    <!--
+    Uncomment the following to disable persistent sessions across reboots.
+    -->
 
-After selecting the appropriate installation location, the installation wizard
-prompts you to specify the appropriate port numbers. If this is the first time
-installing Tcat and no other Apache Tomcat installations are present, then you
-may retain the above ports. However, if there are other installations, you will
-need to select new ports. For the purpose of this installation, we will assume
-the above ports are correct.
+    <!--<Manager pathname="" />-->
+
+    <!--
+    Uncomment the following to not use sessions. See the property
+    "session.disabled" in portal.properties.
+    -->
+
+    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+    </Context>
+
+<!-- Why do we have all that stuff up there commmented out? Wouldn't it be
+better not to include it at all? -Rich -->
+
+Click your server's name to edit its configuration. Using the *Files* tab,
+navigate to the directory `[TCAT_HOME]/conf/Catalina/localhost` and upload your
+ROOT.xml file.  Setting `crossContext="true"` allows multiple web apps to use the same class
+loader. In the content above you will also find commented instructions and
+tags for configuring a JAAS realm, disabling persistent sessions and
+disabling sessions in general.
+
+3. Still in your server's *Files* tab, open
+`[TCAT_HOME]/conf/catalina.properties`, click the *Edit catalina.properties*
+link, and replace the line:
 
-![Figure 15.6: Windows service installation](../../images/tcat-html_7936c58a.png)
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+
+with:
 
-To ensure the operating system starts the Tcat Server and Administrator Console,
-you must configure the Tcat Server process as a Windows service. The next step
-in the installation wizard helps with this process.
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+
+This allows Catalina to access the dependency jars you extracted to
+`[TCAT_HOME]/lib/ext`.
+
+4. To ensure consistent use of UTF-8 URI Encoding, edit
+   `[TCAT_HOME]/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
+   where you see `redirectPort=8443`, in the definition of your connectors (HTTP
+   and AJP). For example:
 
-In the Windows service installation screen, please select "Install Tcat Server
-as a Windows service." You may choose an appropriate service name other than
-*TcatServer*.
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
-![Figure 15.7: Start menu shortcuts](../../images/tcat-html_3f911eab.png)
+![Figure 15.3: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
 
-The final step in the installation wizard is to configure Start Menu shortcuts.
-You may choose to customize the shortcut location or accept the default.
+Excellent work! Now it's time to configure your database.
 
-After configuring the shortcuts, the Tcat Server Windows installer performs the
-installation as previously configured.
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en)
 
-### Installing the Administraton Console on Linux (Ubuntu) [](id=installing-the-administraton-console-on-liferay-portal-6-2-user-guide-15-en)
+If you want Tcat to manage your data source, use the following procedure. If
+you want to use Liferay's built-in data source, you can skip this section.
 
-For Linux, Tcat comes with an installer to assist with installation and
-configuration. After downloading, execute the installer, accepting the
-appropriate license agreement. To execute the installer, make sure:
+1. Make sure your database server is installed and working. If it's installed on
+   a different machine, make sure it's accessible from your Liferay machine.
 
--   you have added execution permissions to the installer file (`chmod a+x [file
-    name]`)
+2. Using the Tcat Administration Console, add your data source as a resource in
+the context of your web application specified in
+`[TCAT_HOME]/conf/Catalina/localhost/ROOT.xml`:
 
--   you execute it with root privileges (don't worry: the installed service is
-    executed by a pre-defined system user with no root privileges)
-
-Upon accepting the license agreement, the system presents you with two
-installation choices: a "standard" or "custom" installation.
-
-<!-- The following two figures are difficult to read and should be replaced with
-ones having more readable text.  -->
-
-![Figure 15.8: Installation type](../../images/tcat-html_766a1d6e.png)
-
-You should select the "Custom" installation option to provide better control of
-where Tcat Server is installed.
-
-![Figure 15.9: Installation component selections](../../images/tcat-html_55494177.png)
-
-After selecting the custom installation option, the Tcat installer prompts you
-to select the desired components. 
-
--   **Tcat Server:** a version of Apache Tomcat that includes the appropriate
-    management agents used by Tcat.
-
--   **Administration Console:** the administration console for monitoring and
-    managing all available Tcat servers. This console contains tools used for
-    application deployment, log access, server control and other administration
-    tools.
-
--   **Tomcat Documentation:** the documentation that comes normally with an
-    Apache Tomcat distribution. You do not need to select this option.
-
--   **Tomcat Examples:** the examples that comes normally with an Apache Tomcat
-    distribution. You do not need to select this option.
-
--   **Tomcat Manager Application:** the manager application that comes normally
-    with an Apache Tomcat distribution. You do not need to select this option.
-
-For this step in the installation process, select the Administration Console in
-addition to Tcat Server, which is the default setting.
-
-After selecting Tcat Server and the Administration Console for installation, the
-installation wizard prompts you for an installation directory.
-
-![Figure 15.10: Installation location](../../images/tcat-html_7df6aabf.png)
-
-Please select the desired installation directory for the Tcat Server. The
-offered default directory is different if the installation process has been
-started as root.
-
-<!-- The following figure is difficult to read and should be replaced with a
-better one.  -->
-
-![Figure 15.11: Port configuration](../../images/tcat-html_5b760cd.png)
-
-After selecting the appropriate installation location, the installation wizard
-prompts you to specify the appropriate port numbers. If this is the first time
-installing Tcat and no other Apache Tomcat installations are present, then you
-may retain the above ports. However, if there are other installations, you will
-need to select new ports. For the purpose of this installation, we will assume
-the above ports are correct.
-
-![Figure 15.12: Configure Tcat system user](../../images/tcat-html_749e9b40.png)
-
-For security considerations, Tcat runs as a non-root system user. If the
-username specified at this step does not exist, it's created as a system daemon
-user.
-
-<!-- The following three figures are difficult to read and should be replaced
-with better ones.  -->
-
-![Figure 15.13: Install service](../../images/tcat-html_mf7bb10c.png)
-
-To ensure the operating system starts the Tcat Server and Administrator Console,
-you must create a service startup script in `/etc/init.d`. The next step in the
-installation wizard helps with this process.
-
-In the service installation screen, you may enter an appropriate service name or
-use the default. If you have multiple installations of Tcat, you should select a
-more appropriate name than what is supplied by default. 
-
-![Figure 15.14: Symbolic link creation](../../images/tcat-html_m55bbff3f.png)
-
-The final configuration step before installation is the creation of a symbolic
-link so the Tcat executable can be accessed more easily. This step is optional
-and you may choose to not create the symbolic link.
-
-![Figure 15.15: ](../../images/tcat-html_78e73740.png)
-
-Now that Tcat is installed, you can add Liferay to it. 
-
-### Adding Liferay Portal packages [](id=adding-liferay-portal-packages-liferay-portal-6-2-user-guide-15-en)
-
-After completing the TcatServer Administration Console installation, you can
-configure the Liferay Portal packages for Tcat.
-
-First, extract the previously downloaded Liferay Portal 6.1 EE Tcat Admin into a
-temporary directory. Once extracted, locate the file `tcat-init.groovy` and the
-directory `tcat\_init`.
-
-![Figure 15.16: Liferay Portal Tcat packages](../../images/tcat-html_12074416.png)
-
-The `tcat-init.groovy` file contains instructions for the TcatServer
-administration console to:
-
--   Pre-load the Liferay Portal and Plugins WAR files into the application
-    repository
-
--   Load the appropriate Liferay application profile that should be applied to
-    all other Tcat managed servers
-
--   Load the Liferay specific deployment manager
-
-The `tcat\_init` folder contains the managed server profiles, Liferay WAR files
-and administration scripts.
-
-Copy the `tcat-init.groovy` file and `tcat\_init` folder to the previously
-configured installation location.
-
-![Figure 15.17: The installation directory after copying the `tcat\_init` folder and `tcat-init.groovy` into the TcatServer installation directory.](../../images/tcat-html_mf987314.png)
-
-After successfully completing the installation on Windows, you should see a
-TcatServer entry in the Services console, similar to the screen shot below. 
-
-![Figure 15.18: Windows services console](../../images/tcat-html_3b2f5fb4.png)
-
-By default, the TcatServer service is inactive but is set to start automatically
-upon boot. Go ahead and choose to start the service.
-
-If you're using Linux, you should see an entry for the Tcat service
-initialization script in `/etc/init.d`. The script name is the name you choose
-during the installation process.
-
-<!--  We might want to replace this screen shot.  -->
-
-![Figure 15.19: Tcat service startup on Linux](../../images/tcat-html_352642da.png)
-
-To start the Tcat Server Administration Console, execute the service script in
-`/etc/init.d`.
-
-### Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation-liferay-portal-6-2-user-guide-15-en)
-
-The steps to install the Tcat Server managed server are quite similar to those
-for installing the Tcat Server Administration Console.
-
-First, launch the wizard. During the installation component configuration step,
-unselect "Administration Console" from the list of components.
-
-![Figure 15.20: Installation location](../../images/tcat-html_261b594a.png)
-
-The next step is to specify an installation location. If you have other
-installations of Tcat on this machine, you should choose another destination.
-For example, if you have already installed the Tcat Server Administration
-Console to `C:\\TcatServer6`, you should perhaps install the managed server to
-`C:\\TcatServer6Managed`.
-
-![Figure 15.21: Managed server port configurations](../../images/tcat-html_66274d0c.png)
-
-During the managed server installation, as with the administration console
-installation, you will be prompted to configure the appropriate port numbers. If
-you do not have another Tcat Server instance (e.g. administration console or
-another managed server), you may choose the default ports. Otherwise, you should
-select non-conflicting ports. For instance:
-
--   HTTP port: 8180
-
--   HTTPS redirect port: 81443
-
--   Tcat Server shutdown port: 8105
-
--   AJP connector port: 8109
-
--   Secure Agent Port: 52443
-
-To ensure the operating system starts the Tcat Server and Administrator Console,
-you must configure the Tcat process as a Windows service or Linux daemon. The
-next step in the installation wizard helps with this process.
-
-The final step in the installation wizard is to configure Start Menu shortcuts.
-You may choose to customize the shortcut location or simply accept the default.
-Since this is for a managed server, you may wish to name it similar to the
-service name.
-
-After configuring the shortcuts, the Tcat Server installer performs the
-installation as previously configured.
-
-Once you have installed the managed server, there is one more step to perform on
-the managed server. You must modify the `catalina.properties` file located in
-the `conf` directory of your Tcat Server installation.
-
-You will need to change the text:
-
-	common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,${catalina.home}/lib,${catalina.home}/lib/\*.jar
-
-To:
-
-	common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,${catalina.home}/lib,${catalina.home}/lib/\*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/\*.jar
-
-By modifying the `common.loader` property, you instruct Tcat Server to load
-everything in the `lib/ext` folder as part of the classpath.
-
-### Registering the managed server [](id=registering-the-managed-server-liferay-portal-6-2-user-guide-15-en)
-
-After completing the installation process and starting the appropriate
-TcatServer processes, open a browser to `[SERVER NAME]:[PORT]/console`. Using
-the previous installation example, you should point your browser to
-`http://localhost:8080/console`. The browser should render the TcatServer
-Administration Console shown below. 
-
-![Figure 15.22: Tcat Admin Console log in](../../images/tcat-html_m4bda7997.png)
-
-The default login is: admin/admin.
-
-Once you have logged into the administration console, you will be presented with
-a global dashboard that you may customize once you have dismissed the "Tcat
-Server - Quick Start" panel.
-
-![Figure 15.23: Customizable Tcat Admin Console](../../images/tcat-html_5d43770f.png)
-
-First make sure that you have started the previously installed managed server.
-Clicking on the *Servers* tab in the console, you will see a server listed as
-*Unregistered*.
-
-Unregistered servers are servers that have the Tcat management agent installed
-but are not added to the administration console. You may add the unregistered
-server by selecting either *Register* or *Register & Add To Group*.
-
-If you choose to use *Register & Add To Group*, the server is added to the
-desired server group (e.g. Development). For the purpose of this guide, we'll
-register the server to the Development group.
-
-![Figure 15.24: Monitoring a registered server](../../images/tcat-html_34603e60.png)
-
-After registering the server, you will have access to view its health status,
-log files and more. Feel free to walk through the console to examine its
-capabilities, like reviewing log files, current thread status and deployed web
-applications.
-
-More information is available at
-*[http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home).*
-
-**Managing and Monitoring Servers**
-
--   [Using the Server
-    Dashboard](http://www.mulesoft.org/documentation/display/TCAT/Server+Dashboard)
-
--   [Working with Server
-    Groups](http://www.mulesoft.org/documentation/display/TCAT/Working+with+Servers)
-
--   [Monitoring Servers (View Apps, Threads,
-    etc)](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+a+Server)
-
--   [Monitoring a JMX
-    Agent](http://www.mulesoft.org/documentation/display/TCAT/JMX+Agent+Monitoring)
-
--   [Scripts to Save JMX Metrics to CSV
-    Files](http://www.mulesoft.org/documentation/display/TCAT/Saving+JMX+Metric+Data+to+CSV+Files)
-
-**Managing Tcat Web Applications**
-
--   [Monitoring
-    Applications](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+Applications)
-
--   [Deploying
-    Applications](http://www.mulesoft.org/documentation/display/TCAT/Deploying+Applications)
-
--   [Using the
-    Repository](http://www.mulesoft.org/documentation/display/TCAT/Managing+the+Repository)
-
--   [Setting Security on Repository
-    Artifacts](http://www.mulesoft.org/documentation/display/TCAT/Setting+Security)
-
-### Deploying Liferay Portal [](id=deploying-liferay-portal-liferay-portal-6-2-user-guide-15-en)
-
-As part of the installation process, the current version of Liferay Portal and a
-number of Liferay Plugins have been provisioned into the Tcat repository. You
-can view them by clicking on the "Repository" tab.
-
-![Figure 15.25: Tcat Repository profiles](../../images/tcat-html_7e61df5a.png)
-
-There are two components in the Tcat Repository:
-
--   **Profiles:** application profiles to be applied to the Tcat managed
-    servers. Contains configuration, shared libraries and more. 
-
--   **Applications:** deployable WAR files for web applications and Liferay
-    Plugins. 
-
-![Figure 15.26: Tcat Repository: Applications](../../images/tcat-html_m4af27eb5.png)
-
-To begin Liferay deployment, we must first create a Liferay license profile to
-be deployed to the managed server:
-
-![Figure 15.27: Creating a new workspace for Liferay license profile](../../images/tcat-html_m2d96341c.png)
-
-
-1. First create a new workspace under *Profiles*. Select *Profiles* in the left
-   navigation and then click the *New Workspace* button. 
-
-2. Within the new workspace *Liferay Portal Trial License*, create another
-   folder called `deploy`. 
-
-3. In the `deploy` folder, select *New Artifact* and upload a new license file.
-
-After completing the above, you have successfully uploaded your Liferay Portal
-license file into the Tcat repository. The final step is to create a server
-profile from the *Administration* tab.
-
-*Server Profiles* shows the list of available Server Profiles and the option to
-create a new profile.
-
-![Figure 15.28: Viewing server profiles](../../images/tcat-html_m5c7a2b8c.png)
-
-When creating a server profile for the Liferay Portal Trial License, you will
-need to select the workspace folder created in the previous step. This ensures
-that when you apply the profile, Tcat uses the latest version of the license
-file.
-
-Once you've created the server profile for your Liferay Portal EE license, you
-may begin deploying Liferay to the managed server.
-
-![Figure 15.29: Apply Liferay Portal trial license](../../images/tcat-html_53af6680.png)
-
-The first step is to apply two server profiles, one for the license and the
-other for Liferay Portal. Applying the license profile does not require a
-restart of the server.
-
-![Figure 15.30: Apply Liferay profile](../../images/tcat-html_m1f86eaab.png)
-
-The second profile to be applied is the Liferay server profile. In the example
-shown we applied the profile for Liferay Portal EE 6.1.
-
-The Liferay Portal server profile requires a server restart. If you have the
-managed server configured as a Windows or Linux service, you may restart the
-server directly from the console by selecting the server and clicking "Restart".
-
-With both profiles applied, we can now deploy the Liferay Portal WAR to the
-appropriate server.
-
-The *Deployments* tab contains tools that assist in creating a deployment and
-targeting it to specific servers. Once you create a deployment, you may target
-it to any number of servers or deployment groups.
-
-![Figure 15.31: Choosing a web application for deployment](../../images/tcat-html_m54d58d30.png)
-
-When creating a deployment, you may choose a WAR file already uploaded into the
-repository or you may choose to upload a new WAR file. We recommend using a WAR
-file from the repository for non-development deployments. This ensures you
-consistently deploy the correct version to your environments.
-
-Since we are deploying Liferay Portal for the first time, we choose the ROOT.war
-file.
-
-After selecting the appropriate web application, you may choose which Servers to
-deploy to. In this example, we deploy to the Tomcat instance labeled *Liferay
-Portal Instance 1*. 
-
-![Figure 15.32: Completing Liferay Portal deployment](../../images/tcat-html_68a00002.png)
-
-After choosing to deploy the application, the Tcat console informs you of the
-current deployment status (e.g. "Successful"). Assuming you followed the
-previous steps and the deployment successfully completes, you will be able to
-access Liferay Portal on the target Tomcat instance.
-
-![Figure 15.33: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
-
-### Deploying Liferay plugins on Mule Tcat [](id=deploying-liferay-plugins-on-mule-tcat-liferay-portal-6-2-user-guide-15-en)
-
-
-Liferay Portal Tcat Edition works with all the appropriate Liferay EE Plugins,
-including:
-
--   Kaleo workflow engine
-
--   Knowledge base
-
--   Chat
-
--   Private messaging
-
-You may choose to deploy these plugins to the appropriate servers by following
-the same steps as for deploying Liferay Portal, specifying the appropriate
-plugin WAR file instead of the ROOT.war.
-
-Other plugins that may be downloaded and added to this repository include:
-
--   Audit
-
--   Report engine and console
-
--   Drools integration.
-
-You may download these plugins from the Liferay Customer Portal and manually add
-them to the Tcat repository.
-
-![Figure 15.34: Uploading new plugins into Tcat](../../images/tcat-html_19e9e6d6.png)
-
-Mule Tcat provides an enterprise grade solution to managing Tomcat servers. If
-you need a complete stack, combining Liferay Portal with Mule Tcat gives you
-everything you need to run a fully supported and robust portal environment for
-your enterprise. 
+        <Context...>
+            <Resource
+                name="jdbc/LiferayPool"
+                auth="Container"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+                username="root"
+                password="root"
+                maxActive="100"
+                maxIdle="30"
+                maxWait="10000"
+            />
+        </Context>
+ 
+Note the above resource definition assumes your database name is *lportal*
+and your MySQL username and password are both *root*. You'll have to update
+these values with your own database name and credentials.
+
+Your Tcat managed data source is now configured. Let's move on to your mail
+session.
+
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en)
+
+If you want to manage your mail session within Tomcat, use the following
+instructions. If you want to use the built-in Liferay mail session, you can skip
+this section.
+
+Create a mail session bound to `mail/MailSession`. In the Tcat Administration
+Console, edit `[TCAT_ HOME]/conf/Catalina/localhost/ROOT.xml` and configure a
+mail session. Be sure to replace the mail session values with your own.
+
+    <Context...>
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
+
+Super! Your mail session is configured. Next, you need to connect Liferay to the
+mail session and database connections you just created. 
+
+### Configuring your Database and Mail Session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
+
+In this section you'll specify appropriate properties for Liferay to use in
+connecting to your database and mail session.
+
+1. If you are using Tcat to manage your data source, add the following line to
+   the `portal-ext.properties` file in your *Liferay Home*. This points Liferay
+   Portal to your data source: 
+
+    jdbc.default.jndi.name=jdbc/LiferayPool
+
+   Otherwise, if you are using *Liferay Portal* to manage your data source, follow
+   the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+2. If you want to use Liferay Portal to manage your mail session, you can
+   configure the mail session in Liferay Portal. After starting
+   your portal as described in the *Deploy Liferay* section, go to *Control
+   Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
+   your mail session.
+
+   If you are using Tcat to manage your mail session, add the following to your
+   `portal-ext.properties` file to reference that mail session:
+
+    mail.session.jndi.name=mail/MailSession
+
+Before you deploy Liferay Portal, let's look at configuring Portal Access
+Control Lists (PACL) with Liferay on Tomcat. 
+
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
+
+To enable PACL, you need to enable the security manager and add some required
+permissions to the server policy configuration file. This entails editing
+the `CATALINA_OPTS` variable and editing the `Catalina.policy` file:
+
+In the *Administration* tab of the Tcat Administration Console, click *Server
+Profiles* and click the profile applied to your Liferay Tcat server. Click the
+*Value* field of the `CATALINA_OPTS` variable created earlier, and add the
+following parameter to it:
+
+    `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
+
+Edit `$TCAT_HOME/conf/Catalina.policy` and add the required permissions:
+
+        // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
+        grant codeBase "file:${catalina.home}${/}webapps${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+        };
+        // represents each webapp's ${javax.servlet.context.tempdir} directory
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+        };
+
+        // Since Liferay portal is a security provider it needs AllPermissions
+        grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
+            permission java.security.AllPermission;
+        };
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
+            permission java.security.AllPermission;
+        };
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
+            permission java.security.AllPermission;
+        };
+
+Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
+
+### Deploying Liferay [](id=deploying-liferay-liferay-portal-6-2-user-guide-15-en)
+
+It's time to deploy Liferay as an exploded web archive in your
+`$TCAT_HOME/webapps` folder. The first step is to make sure your Tcat server is
+running; then follow these steps to deploy and start Liferay.
+
+1. If you are manually installing Liferay on a clean Tcat server, delete the
+   contents of the `[TCAT_HOME]/webapps/ROOT` directory. This removes the default
+   home page.
+
+2. In the Tcat Administration Console, click the *Deployments* tab and select
+   *New Deployment*. Select the server where you're deploying Liferay and
+   click *Upload New Webapp*. Browse to the `liferay-portal-6.2.x-[date].war` file
+   you downloaded. Make sure you select *Advanced Options* while uploading
+   Liferay, and under the *Name* field, type `/` to put the extracted Liferay into
+   `[TCAT_HOME]/webapps/ROOT`.
+
+   ![Figure 15.4: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
+
+3. Once you've entered all the deployment details, you can select *Deploy*.
+   Once you see a *Successful* message in the Tcat Administration Console,
+   you're ready to launch Liferay Portal on Tcat!
+
+Now you can navigate to Liferay and follow the setup wizard. Congratulations
+on successfully installing and deploying Liferay on Mule Tcat!
 
 ## Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-3-liferay-portal-6-2-user-guide-15-en)
 
@@ -1089,7 +872,7 @@ you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
-### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en)
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-0)
 
 Liferay depends on jar files found in the Liferay Dependencies Archive. You
 should also have installed your database driver.
@@ -1171,7 +954,7 @@ location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
-### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en)
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to use GlassFish to manage your domain's data source, follow the
 instructions found in this section. If you want to use Liferay Portal to manage
@@ -1185,7 +968,7 @@ your data source, you can skip this section.
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC
    Connection Pools*
 
-    ![Figure 15.35: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
+    ![Figure 15.5: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
 
 4. Click *New...*.
 
@@ -1194,7 +977,7 @@ your data source, you can skip this section.
    type, and select your database driver vendor (e.g. `MySQL`). See the
    following figure:
 
-    ![Figure 15.36: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
+    ![Figure 15.6: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6. Click *Next* to advance to the next step in creating your JDBC connection
    pool.
@@ -1202,7 +985,7 @@ your data source, you can skip this section.
 7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
    Properties* section.
 
-    ![Figure 15.37: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+    ![Figure 15.7: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
@@ -1224,8 +1007,8 @@ your data source, you can skip this section.
 
 9. Click *Finish*.
 
-	You should now see your `LiferayPool` connection pool listed under
-	*Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
+    You should now see your `LiferayPool` connection pool listed under
+    *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
 10. Test your connection by selecting your `LiferayPool` connection pool and
     clicking *Ping*.
@@ -1248,7 +1031,7 @@ your data source, you can skip this section.
 
 Congratulations! You've now configured your domain's data source on GlassFish!
 
-### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en)
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-0)
 
 If you want to use GlassFish to manage your mail session, follow GlassFish's
 documentation on configuring a JavaMail session with a JNDI name of
@@ -1350,7 +1133,7 @@ Now let's go ahead and deploy Liferay.
 
 7. Click *OK*.
 
-![Figure 15.38: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
+![Figure 15.8: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
 
 Once you have deployed Liferay via GlassFish's administrative console, restart
 GlassFish.
@@ -1396,28 +1179,28 @@ more about this JDBC driver at the jTDS home page:
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
    contents.
 
-		<?xml version="1.0"?>
+        <?xml version="1.0"?>
 
-		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
-			<resources>
-				<resource-root path="hsql.jar" />
-				<resource-root path="jtds-1.3.1.jar" />
-				<resource-root path="mysql-connector-java-5.1.26-bin.jar" />
-				<resource-root path="portal-service.jar" />
-				<resource-root path="portlet.jar" />
-			</resources>
-			<dependencies>
-				<module name="ibm.jdk" />
-				<module name="javax.api" />
-				<module name="javax.mail.api" />
-				<module name="javax.servlet.api" />
-				<module name="javax.servlet.jsp.api" />
-				<module name="javax.transaction.api" />
-			</dependencies>
-		</module>
+        <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
+            <resources>
+                <resource-root path="hsql.jar" />
+                <resource-root path="jtds-1.3.1.jar" />
+                <resource-root path="mysql-connector-java-5.1.26-bin.jar" />
+                <resource-root path="portal-service.jar" />
+                <resource-root path="portlet.jar" />
+            </resources>
+            <dependencies>
+                <module name="ibm.jdk" />
+                <module name="javax.api" />
+                <module name="javax.mail.api" />
+                <module name="javax.servlet.api" />
+                <module name="javax.servlet.jsp.api" />
+                <module name="javax.transaction.api" />
+            </dependencies>
+        </module>
 
-	If you're using a different database or JDBC driver, replace the paths of
-	the MySQL and jTDS resource root entries with the correct paths.
+    If you're using a different database or JDBC driver, replace the paths of
+    the MySQL and jTDS resource root entries with the correct paths.
 
 5. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
@@ -1442,13 +1225,13 @@ insert the patch can be referenced below.
     `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
     in a command prompt and enter the following statement:
     
-    		jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+            jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
 
-    	This command inserts the `ServerDependenciesProcessor.class` file into
-    	the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
-    	`org/jboss/as/server/deployment/module` folder. You can reference the
-    	official documentation for updating a JAR file at
-    	[http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
+        This command inserts the `ServerDependenciesProcessor.class` file into
+        the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+        `org/jboss/as/server/deployment/module` folder. You can reference the
+        official documentation for updating a JAR file at
+        [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
     3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
     original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
@@ -1520,49 +1303,49 @@ Make the following modifications to `standalone.xml`:
 1. Add the following system properties between the `</extensions>` and
 `<management>` tags:
 
-		<system-properties>
-			<property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
-			<property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
-		</system-properties>
+        <system-properties>
+            <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
+            <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
+        </system-properties>
 
 2. Add a timeout for the deployment scanner by setting
 `deployment-timeout="240"` as seen in the excerpt below.
 
-		<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
-			<deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
-		</subsystem>
+        <subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+            <deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+        </subsystem>
 
 3. Add the following JAAS security domain to the security subsystem
 `<security-domains>` defined in element `<subsystem
 xmlns="urn:jboss:domain:security:1.1">`.
 
-		<security-domain name="PortalRealm">
-			<authentication>
-				<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
-			</authentication>
-		</security-domain>
+        <security-domain name="PortalRealm">
+            <authentication>
+                <login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
+            </authentication>
+        </security-domain>
 
 4. Disable the welcome root of the web subsystem's virtual server default host
 by specifying `enable-welcome-root="false"`.
 
-		<subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
-			<connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
-			<virtual-server name="default-host" enable-welcome-root="false">
-			   <alias name="localhost" />
-			   <alias name="example.com" />
-			</virtual-server>
-		</subsystem>		
+        <subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host">
+            <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
+            <virtual-server name="default-host" enable-welcome-root="false">
+               <alias name="localhost" />
+               <alias name="example.com" />
+            </virtual-server>
+        </subsystem>        
 
 5. Insert the following `<configuration>` element within the web subsystem
 element `<subsystem xmlns="urn:jboss:domain:web:1.1"
 default-virtual-server="default-host" native="false">`.
 
-		<configuration>
-			<jsp-configuration development="true" />
-		</configuration>
-		
+        <configuration>
+            <jsp-configuration development="true" />
+        </configuration>
+        
 Now it's time for some changes to your configuration and startup scripts.
-		
+        
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
@@ -1589,7 +1372,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
   replacing any matching attributes with the ones found in the assignment
   below:
 
-	    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
     directory. You'll notice we've added some Java security options. We'll
@@ -1608,40 +1391,40 @@ directory.
 2. Insert the following contents into the
 `$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
 
-		<?xml version="1.0"?>
+        <?xml version="1.0"?>
 
-		<module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
-			<dependencies>
-				<system export="true">
-					<paths>
-						<path name="com/ibm" />
-						<path name="com/ibm/crypto/provider" />
-						<path name="com/ibm/jvm" />
-						<path name="com/ibm/jvm/io" />
-						<path name="com/ibm/jvm/util" />
-						<path name="com/ibm/match" />
-						<path name="com/ibm/misc" />
-						<path name="com/ibm/net" />
-						<path name="com/ibm/nio" />
-						<path name="com/ibm/nio/ch" />
-						<path name="com/ibm/security/auth" />
-						<path name="com/ibm/security/bootstrap" />
-						<path name="com/ibm/security/auth/module" />
-						<path name="com/ibm/security/util" />
-						<path name="META-INF/services" />
-					</paths>
-				</system>
-			</dependencies>
-		</module>]]>
+        <module xmlns="urn:jboss:module:1.1" name="ibm.jdk">
+            <dependencies>
+                <system export="true">
+                    <paths>
+                        <path name="com/ibm" />
+                        <path name="com/ibm/crypto/provider" />
+                        <path name="com/ibm/jvm" />
+                        <path name="com/ibm/jvm/io" />
+                        <path name="com/ibm/jvm/util" />
+                        <path name="com/ibm/match" />
+                        <path name="com/ibm/misc" />
+                        <path name="com/ibm/net" />
+                        <path name="com/ibm/nio" />
+                        <path name="com/ibm/nio/ch" />
+                        <path name="com/ibm/security/auth" />
+                        <path name="com/ibm/security/bootstrap" />
+                        <path name="com/ibm/security/auth/module" />
+                        <path name="com/ibm/security/util" />
+                        <path name="META-INF/services" />
+                    </paths>
+                </system>
+            </dependencies>
+        </module>]]>
 
 3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
 the following path names inside the &lt;paths&gt;...<\/paths> element:
 
-		<path name="com/sun/crypto" />
-		<path name="com/sun/crypto/provider" />
-		<path name="com/sun/image/codec/jpeg" />
-		<path name="com/sun/org/apache/xml/internal/resolver" />
-		<path name="com/sun/org/apache/xml/internal/resolver/tools" />
+        <path name="com/sun/crypto" />
+        <path name="com/sun/crypto/provider" />
+        <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/org/apache/xml/internal/resolver" />
+        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 Next we'll consider the database and mail configuration. 
 
@@ -1656,42 +1439,42 @@ Modify `standalone.xml` adding your data source and driver within the
 
 1. First, add your data source within the `<datasources>` element.
 
-		<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-			<connection-url>jdbc:mysql://localhost/lportal</connection-url>
-			<driver>mysql</driver>
-			<security>
-				<user-name>root</user-name>
-				<password>root</password>
-			</security>
-		</datasource>
+        <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+            <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+            <driver>mysql</driver>
+            <security>
+                <user-name>root</user-name>
+                <password>root</password>
+            </security>
+        </datasource>
 
-	Be sure to replace the URL database value (i.e. `lportal`), user value and
-	password value with values specific to your database.
+    Be sure to replace the URL database value (i.e. `lportal`), user value and
+    password value with values specific to your database.
 
 2. Then add your driver to the `<drivers>` element also found within the
    `<datasources>` element.
 
-		<drivers>
-			<driver name="mysql" module="com.liferay.portal.main"/>
-		</drivers>
+        <drivers>
+            <driver name="mysql" module="com.liferay.portal.main"/>
+        </drivers>
 
 Your final data sources subsystem should look something like this:
 
-		<subsystem xmlns="urn:jboss:domain:datasources:1.0">
-			<datasources>
-				<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-					<connection-url>jdbc:mysql://localhost/lportal</connection-url>
-					<driver>mysql</driver>
-					<security>
-						<user-name>root</user-name>
-						<password>root</password>
-					</security>
-				</datasource>
-				<drivers>
-					<driver name="mysql" module="com.liferay.portal.main"/>
-				</drivers>
-			</datasources>
-		</subsystem>
+        <subsystem xmlns="urn:jboss:domain:datasources:1.0">
+            <datasources>
+                <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>root</user-name>
+                        <password>root</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="mysql" module="com.liferay.portal.main"/>
+                </drivers>
+            </datasources>
+        </subsystem>
 
 Now that you've configured your data source, let's go over how to configure your
 mail session within JBoss.
@@ -1703,27 +1486,27 @@ If you want to use the built-in Liferay mail session, you can skip this section.
 
 Specify your mail subsystem  in `standalone.xml` as in the following example:
 
-	<subsystem xmlns="urn:jboss:domain:mail:1.0">
-		<mail-session jndi-name="java:/mail/MailSession" >
-			<smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
-				   <login name="username" password="password"/>
-			</smtp-server>
-			<pop3-server outbound-socket-binding-ref="mail-pop">
-				<login name="username" password="password"/>
-			</pop3-server>
-	   </mail-session>
-	</subsystem>
-	...
-	<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
-	...
-	<outbound-socket-binding name="mail-smtp">
+    <subsystem xmlns="urn:jboss:domain:mail:1.0">
+        <mail-session jndi-name="java:/mail/MailSession" >
+            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
+                   <login name="username" password="password"/>
+            </smtp-server>
+            <pop3-server outbound-socket-binding-ref="mail-pop">
+                <login name="username" password="password"/>
+            </pop3-server>
+       </mail-session>
+    </subsystem>
+    ...
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+    ...
+    <outbound-socket-binding name="mail-smtp">
             <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
         <outbound-socket-binding name="mail-pop">
             <remote-destination host="pop.gmail.com" port="110"/>
         </outbound-socket-binding>
     </socket-binding-group>
-	
+    
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
@@ -1739,10 +1522,10 @@ Liferay Portal can access them.
    `portal-ext.properties` file in your *Liferay Home* to refer to your data
    source:
 
-		jdbc.default.jndi.name=java:jdbc/LiferayPool
+        jdbc.default.jndi.name=java:jdbc/LiferayPool
 
-	If you're using *Liferay Portal* to manage your data source, follow the
-	instructions in the *Deploy Liferay* section for using the setup wizard.
+    If you're using *Liferay Portal* to manage your data source, follow the
+    instructions in the *Deploy Liferay* section for using the setup wizard.
 
 3. If you're using *Liferay Portal* to manage your mail session, this
    configuration is done within Liferay Portal. That is, after starting your
@@ -1780,8 +1563,8 @@ permissions. You can tune the permissions in your policy later. Create the
 `$JBOSS_HOME/bin/server.policy` file and add the following contents:
 
     grant {
-	    permission java.security.AllPermission;
-	};
+        permission java.security.AllPermission;
+    };
 
 For extensive information on Java SE Security Architecture, see its
 specification documents at
@@ -1831,9 +1614,9 @@ manually, please follow the steps below.
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
 [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
-The Liferay `.war` file should be called `liferay-portal-6.2.x-<date>.war` and
+The Liferay `.war` file should be called `liferay-portal-6.2.x-[date].war` and
 the dependencies file should be called
-`liferay-portal-dependencies-6.2.x-<date>.zip`.
+`liferay-portal-dependencies-6.2.x-[date].zip`.
 
 Next, let's get started by addressing Liferay's library dependencies.
 
@@ -1842,7 +1625,7 @@ Next, let's get started by addressing Liferay's library dependencies.
 Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate
 JDBC driver and a few other JARs installed.
 
-1. Create folder `$TOMCAT_HOME/lib/ext`.
+1. Create the folder `$TOMCAT_HOME/lib/ext`.
 
 2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files
    do not extract to this directory, you can copy the dependencies archive to
@@ -1941,31 +1724,31 @@ setenv.sh and .bat in a built liferay 6.2.-->
    `ROOT.xml` file in it. Edit this file and populate it with the following
    contents to set up a portal web application:
 
-		<Context path="" crossContext="true">
+        <Context path="" crossContext="true">
 
-			<!-- JAAS -->
+            <!-- JAAS -->
 
-			<!--<Realm
-				className="org.apache.catalina.realm.JAASRealm"
-				appName="PortalRealm"
-				userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-				roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-			/>-->
+            <!--<Realm
+                classNjame="org.apache.catalina.realm.JAASRealm"
+                appName="PortalRealm"
+                userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+                roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+            />-->
 
-			<!--
-			Uncomment the following to disable persistent sessions across reboots.
-			-->
+            <!--
+            Uncomment the following to disable persistent sessions across reboots.
+            -->
 
-			<!--<Manager pathname="" />-->
+            <!--<Manager pathname="" />-->
 
-			<!--
-			Uncomment the following to not use sessions. See the property
-			"session.disabled" in portal.properties.
-			-->
+            <!--
+            Uncomment the following to not use sessions. See the property
+            "session.disabled" in portal.properties.
+            -->
 
-			<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
-		</Context>
-		
+            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+        </Context>
+        
     Setting `crossContext="true"` allows multiple web apps to use the same class
     loader. In the content above you will also find commented instructions and
     tags for configuring a JAAS realm, disabling persistent sessions and
@@ -1973,12 +1756,12 @@ setenv.sh and .bat in a built liferay 6.2.-->
 
 3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
     with:
 
-		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-		
+        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+        
     This allows Catalina to access the dependency jars you extracted to
     `$TOMCAT_HOME/lib/ext`.
 
@@ -1987,7 +1770,7 @@ setenv.sh and .bat in a built liferay 6.2.-->
    where you see `redirectPort=8443`, in the definition of your connectors (HTTP
    and AJP). For example:
 
-		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
 5. Make sure there is no `support-catalina.jar` file in your
    `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
@@ -2005,21 +1788,21 @@ you want to use Liferay's built-in data source, you can skip this section.
 2. Add your data source as a resource in the context of your web application
    specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
 
-		<Context...>
-			<Resource
-				name="jdbc/LiferayPool"
-				auth="Container"
-				type="javax.sql.DataSource"
-				driverClassName="com.mysql.jdbc.Driver"
-				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-				username="root"
-				password="root"
-				maxActive="100"
-				maxIdle="30"
-				maxWait="10000"
-			/>
-		</Context>
-	
+        <Context...>
+            <Resource
+                name="jdbc/LiferayPool"
+                auth="Container"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+                username="root"
+                password="root"
+                maxActive="100"
+                maxIdle="30"
+                maxWait="10000"
+            />
+        </Context>
+    
     Note the above resource definition assumes your database name is *lportal*
     and your MySQL username and password are both *root*. You'll have to update
     these values with your own database name and credentials.
@@ -2037,31 +1820,31 @@ Create a mail session bound to `mail/MailSession`. Edit `$TOMCAT_
 HOME/conf/Catalina/localhost/ROOT.xml` and configure a mail session. Be sure to
 replace the mail session values with your own.
 
-	<Context...>
-		<Resource
-			name="mail/MailSession"
-			auth="Container"
-			type="javax.mail.Session"
-			mail.pop3.host="pop.gmail.com"
-			mail.pop3.port="110"
-			mail.smtp.host="smtp.gmail.com"
-			mail.smtp.port="465"
-			mail.smtp.user="user"
-			mail.smtp.password="password"
-			mail.smtp.auth="true"
-			mail.smtp.starttls.enable="true"
-			mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-			mail.imap.host="imap.gmail.com"
-			mail.imap.port="993"
-			mail.transport.protocol="smtp"
-			mail.store.protocol="imap"
-		/>
-	</Context>
+    <Context...>
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
 
 Super! Your mail session is configured. Next, we'll make sure Liferay will be
 able to access your mail session and database.
 
-### Configuring your database and mail session [](id=configuring-your-database-and-mail-sess-liferay-portal-6-2-user-guide-15-en)
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-se-liferay-portal-6-2-user-guide-15-en-0)
 
 In this section we'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -2070,7 +1853,7 @@ connecting to your database and mail session.
    your `portal-ext.properties` file in your *Liferay Home* to refer to your
    data source:
 
-		jdbc.default.jndi.name=jdbc/LiferayPool
+        jdbc.default.jndi.name=jdbc/LiferayPool
 
     Otherwise, if you are using *Liferay Portal* to manage your data source, follow
     the instructions in the *Deploy Liferay* section for using the setup wizard.
@@ -2084,13 +1867,13 @@ connecting to your database and mail session.
     Otherwise, if you are using *Tomcat* to manage your mail session, add the
     following to your `portal-ext.properties` file to reference that mail session:
 
-		mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
 It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en)
+### Enabling PACL [](id=enabling-pacl-liferay-portal-6-2-user-guide-15-en-0)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -2105,29 +1888,30 @@ following code into the `CATALINA_OPTS` variable (inside the quotation marks):
     `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
 
 - In `$TOMCAT_HOME/conf/Catalina.policy`, add the required permissions:
-    `// Tune for specific apps (these are generally required by Liferay plugins not using PACL)
-    grant codeBase "file:${catalina.home}${/}webapps${/}-" {
-        permission java.util.PropertyPermission "base.path", "write";
-        permission java.util.PropertyPermission "*", "read";
-        permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-    };
-    // represents each webapp's ${javax.servlet.context.tempdir} directory
-    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
-        permission java.util.PropertyPermission "base.path", "write";
-        permission java.util.PropertyPermission "*", "read";
-        permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-    };
 
-    // Since Liferay portal is a security provider it needs AllPermissions
-    grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
-        permission java.security.AllPermission;
-    };
-    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
-        permission java.security.AllPermission;
-    };
-    grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
-        permission java.security.AllPermission;
-    };`
+        // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
+        grant codeBase "file:${catalina.home}${/}webapps${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+        };
+        // represents each webapp's ${javax.servlet.context.tempdir} directory
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
+            permission java.util.PropertyPermission "base.path", "write";
+            permission java.util.PropertyPermission "*", "read";
+            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+        };
+
+        // Since Liferay portal is a security provider it needs AllPermissions
+        grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
+            permission java.security.AllPermission;
+        };
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
+            permission java.security.AllPermission;
+        };
+        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
+            permission java.security.AllPermission;
+        };
 
 Now you have PACL enabled and ocnfigured for your portal. Let's deploy Liferay!
 
@@ -2253,11 +2037,11 @@ Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT
 your server's `bin` folder. If you're on Windows, you'd add directives similar
 to those listed below, after the `SETLOCAL` command:
 
-	set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
+    set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
-	set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
+    set "MW_HOME=D:\Oracle\Middleware\wlserver_12.1"
     
-	set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
+    set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
 Make sure to set your `MW_HOME` value to your WebLogic server's location. On
 Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
@@ -2445,7 +2229,7 @@ Management Tool** to create a profile appropriate for Liferay.
    wish. Web server definitions are used with IBM HTTP Server. For more
    information about these options, please see the WebSphere documentation. 
 
-    ![Figure 15.39: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
+    ![Figure 15.9: Choose the Advanced profile option to specify your own settings.](../../images/websphere-01-profile.png)
 
 3. Check the box *Deploy the administrative console*. This gives you a web-based
    UI for working with your application server. Skip the default applications.
@@ -2489,7 +2273,7 @@ Management Tool** to create a profile appropriate for Liferay.
     keep your choices or go back and change something. When you're satisfied, click
     *Next*. 
 
-![Figure 15.40: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
+![Figure 15.10: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
@@ -2499,7 +2283,7 @@ profile was created successfully. You're now ready to install Liferay!
 Liferay ships with dependency .jars it needs to have on the global classpath.
 These should be copied to WebSphere's global folder provided for this purpose: 
 
-	[Install Location]/WebSphere/AppServer/lib/ext
+    [Install Location]/WebSphere/AppServer/lib/ext
 
 If you have a JDBC database driver .jar, copy it to this location as well. 
 Once you've copied the .jars, start the server profile you created for
@@ -2513,7 +2297,7 @@ Liferay's standard database configuration; in that case, skip this section.
 You'll set your database information in Liferay's setup wizard after the
 install. 
 
-![Figure 15.41: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 15.11: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -2549,27 +2333,27 @@ install.
 15. Everything else should stay at the default values. Save the data source.
 
 16. When finished, go back into the data source and click *Custom Properties*
-	and then click the *Show Filter Function* button. This is the second from
+    and then click the *Show Filter Function* button. This is the second from
     last of the small icons under the *New* and *Delete* buttons.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![Figure 15.42: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+    ![Figure 15.12: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your
-	database. Click *OK* and save to master configuration.
+    database. Click *OK* and save to master configuration.
 
 19. Do another filter search for the url property. Give it a value that points
-	to your database. For example, the MySQL URL would be:
+    to your database. For example, the MySQL URL would be:
     `jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false`.
     Click *OK* and save to master configuration.
 
 20. Do another filter search for the password property. Enter the password for
-	the user ID you added earlier as the value for this property. Click *OK* and
+    the user ID you added earlier as the value for this property. Click *OK* and
     save to master configuration.
 
 21. Go back to the data source page by clicking it in the breadcrumb trail.
-	Click the *Test Connection* button. It should connect successfully.
+    Click the *Test Connection* button. It should connect successfully.
 
 Once you've set up your database, you can set up your mail session. 
 
@@ -2620,7 +2404,7 @@ In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.43: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
+    ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
@@ -2661,7 +2445,7 @@ you're ready to start Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-    ![Figure 15.44: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
+    ![Figure 15.14: While Liferay is starting, WebSphere displays this spinny little graphic. Don't watch it too closely, or you might get hypnotized.](../../images/websphere-04-liferay-starting.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish*
    when you're done. 
@@ -2693,7 +2477,7 @@ For the administrator, you need to supply the following information:
 
 **Email:** the email address of the user that has the administrator account. 
 
-![Figure 15.45: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 15.15: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 Liferay supports just about all the leading databases today: 
 
@@ -2726,7 +2510,7 @@ driver class, and the user credentials (see below). Most of this is filled out
 already; all you should need to do is supply the name of your database and the
 server it's running on, as well as the user credentials. 
 
-![Figure 15.46: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 15.16: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and
@@ -2786,7 +2570,7 @@ server that Liferay supports. To tell Liferay to use your `jdbc/LiferayPool`
 connection pool, add the following directive to your `portal-ext.properties`
 file:
 
-	jdbc.default.jndi.name=jdbc/LiferayPool
+    jdbc.default.jndi.name=jdbc/LiferayPool
 
 Next, install Liferay according to the instructions for your application server.
 Once it's installed, you can set up the mail configuration. 
@@ -2814,8 +2598,8 @@ the following properties and customize their values for your environment:
  
 To use your application server's mail session, create it first. Then specify it
 in the `portal-ext.properties` file: 
-	
-	mail.session.jndi.name=mail/MailSession
+    
+    mail.session.jndi.name=mail/MailSession
 
 When you've finished, save the file.
 
