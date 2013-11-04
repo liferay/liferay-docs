@@ -1,13 +1,6 @@
 
 #  Installation and Setup [](id=installation-and-setup-liferay-portal-6-2-user-guide-15-en)
 
----
-
-![Note](../../images/01-tip.png) This chapter is still being updated 
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. It supports a wide variety of
 application servers, freeing you to use the Java application server you think is
