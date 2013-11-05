@@ -232,7 +232,7 @@ you already downloaded Social Office EE and attempted to install it before
 deploying your order id license, you'll need to restart your Liferay server
 after deploying the license in order for Social Office EE to deploy.
 
-### Completing your installation [](id=lp-2-1-soen01-completing-your-installation)
+### Completing Your Installation [](id=lp-2-1-soen01-completing-your-installation)
 
 After deploying Social Office, check your server's console log. There should not
 be any console errors during installation. If you encounter any console errors,
@@ -273,7 +273,7 @@ be greyed out with a message stating that they've been undeployed.
 
 ---
 
-### Installation peculiarities for specific apps servers  [](id=lp-2-1-soen01-installation-peculiarities-for-specific-apps-servers)
+### Installation Peculiarities of Specific App Servers  [](id=lp-2-1-soen01-installation-peculiarities-for-specific-apps-servers)
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -285,7 +285,7 @@ you don't restart the server, the Dashboard link won't appear although you can
 find other content added by Social Office if you use the *Go To* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
-### Managing the Social Office welcome theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
+### Managing the Social Office Welcome Theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available
@@ -444,7 +444,7 @@ provides a shortcut for this process. Please refer to the *Using Social Office*
 section for more details about the Social Office User role and the features
 provided by Social Office.
 
-### What to do if your Installation is Unsuccessful [](id=lp-2-1-soen01-what-to-do-if-your-installation-is-unsuccessful)
+### What to do if Your Installation is Unsuccessful [](id=lp-2-1-soen01-what-to-do-if-your-installation-is-unsuccessful)
 
 If your Social Office Installation was unsuccessful, please make sure that you
 haven't made one of the following installation mistakes:
@@ -534,7 +534,7 @@ to fit the size of your browser window. You can click the button again to return
 the portlets to their default size. In addition to the standard Social Office
 theme, there's another theme for Social Office's Welcome page.
 
-### Using the Social Office User role and personal sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
+### Using the Social Office User Role and Personal Sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
 
 The Social Office plugin adds a special role to Liferay Portal: Social Office
 User. Assigning users to the Social Office User role provides them with personal
@@ -568,7 +568,7 @@ right-most item of the Dockbar becomes a drop-down list containing a link to
 your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
-#### Using the Dashboard and other private pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
+#### Using the Dashboard and Other Private Pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu and the Sites portlet in the left column
@@ -723,7 +723,7 @@ numbers of tasks, to tag your tasks.
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
 
-#### Using the Profile page and other public pages  [](id=lp-2-1-soen01-using-the-profile-page-and-other-public-pages)
+#### Using the Profile Page and Other Public Pages [](id=lp-2-1-soen01-using-the-profile-page-and-other-public-pages)
 
 You can access your public Profile page from the Dashboard by clicking on your
 name, which appears above the page navigation menu in the left column. Your
@@ -778,7 +778,7 @@ These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
-### Using Social Office sites for collaboration  [](id=lp-2-1-soen01-using-social-office-sites-for-collaboration)
+### Using Social Office Sites For Collaboration  [](id=lp-2-1-soen01-using-social-office-sites-for-collaboration)
 
 Social Office not only provides custom pages and applications for users'
 personal sites but also for general sites that can have many members. A portal
