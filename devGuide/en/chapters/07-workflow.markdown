@@ -1,5 +1,5 @@
 
-# Designing Workflows with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
+# Designing Workflow with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 ---
 
@@ -469,8 +469,8 @@ Join* join node:
 
 Now you know what the resulting XML is like for your workflow definition. You
 can check your definition's source code anytime from within Liferay Studio or
-your favorite XML editor. To learn about creating new workflow
-definitions, see
+your favorite XML editor. To learn more on the different workflow nodes
+available to use in Liferay workflow definitions, see
 [Using Liferay Portal 6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en). 
 
 Since we've been using Designer's Workflow Diagram mode, let's go over some of
