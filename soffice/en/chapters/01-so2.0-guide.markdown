@@ -285,6 +285,9 @@ you don't restart the server, the Dashboard link won't appear although you can
 find other content added by Social Office if you use the *Go To* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
+<!-- Commenting this out now (Nov. 5, 2013) since SO 2.1 EE has been released
+but SO 2.1 CE has not. The Social Office welcome theme is a CE-only feature.
+
 ### Managing the Social Office Welcome Theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
@@ -346,6 +349,8 @@ Office welcome theme overwrites any pages and customizations that have already
 been made to the guest site.
 
 ---
+
+-->
 
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
@@ -499,7 +504,7 @@ Next, let's discuss how Social Office can facilitate team collaboration.
 
 ## Using Social Office [](id=lp-2-1-soen01-using-social-office)
 
-Liferay Portal is a full featured web portal, containing an industry-leading
+Liferay Portal is a fully featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
 businesses use it to run major web sites all over the world. We've optimized
 Liferay Portal for creating state-of-the art, robust web sites that serve
@@ -528,21 +533,29 @@ installing the Social Office plugin if you'd like your site to facilitate
 communication between people within specific groups and accomplish tasks using
 shared virtual workspaces with minimal set up and administration.
 
-The Social Office theme adds a convenient button to the top-right corners of
-Social Office pages. This button allows you to expand the portlets on the page
-to fit the size of your browser window. You can click the button again to return
-the portlets to their default size. In addition to the standard Social Office
-theme, there's another theme for Social Office's Welcome page.
+The Social Office theme is used to style Social Office pages, including the
+private pages of users' personal sites, their public pages, and the pages of
+Social Office sites. The Social Office theme adds a convenient button to the
+top-right corners of Social Office pages. This button allows you to expand the
+portlets on the page to fit the size of your browser window. You can click the
+button again to return the portlets to their default size. In addition to the
+standard Social Office theme, there's also the Social Office's welcome theme
+that's used to style the Social Office welcome page (CE-only).
 
 ### Using the Social Office User Role and Personal Sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
 
-The Social Office plugin adds a special role to Liferay Portal: Social Office
-User. Assigning users to the Social Office User role provides them with personal
-sites pre-built with pages and applications designed to help them manage their
-work, share information, and communicate with each other. Assign yourself to the
-Social Office User role to see how it works. Once your user account has been
-granted the Social Office User role, a *Dashboard* link appears in the Dockbar.
-Now you can explore the extra features added to Liferay by Social Office.
+Social Office adds a special role to Liferay Portal: Social Office User.
+Assigning users to the Social Office User role provides them with personal sites
+pre-built with pages and applications designed to help them manage their work,
+share information, and communicate with each other. Social Office users also
+receive a user bar that appears at the top of all portal pages when they're
+logged in. Assign yourself to the Social Office User role to see how it works.
+Once your user account has been granted the Social Office User role, the user
+bar appears above the Dockbar. The user bar contains links to all the private
+pages of the user's personal site, including a link to the *Dashboard*, the
+private home page of a Social Office user. Once you've been assigned to the
+Social Office User role and you see the user bar, you can explore the extra
+features added to Liferay by Social Office.
 
 If all your portal users will be using Social Office, you should add this role
 to your portal's default user associations. Use the *Go to* menu of the Dockbar
@@ -555,18 +568,58 @@ the *Apply to Existing Users* box to grant the Social Office User role to
 previously created users. These users will receive the role the next time they
 log in to the portal.
 
+![Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../../images/user-bar-dockbar.png)
+
 The default personal pages provided by the Social Office user role include the
 private Dashboard page and the public Profile page. When a user who has been
-assigned to the Social Office User role logs in, several changes are made to his
-or her Dockbar. First, a *Dashboard* link appears to the right of the *Go to*
-menu. You can click this link from anywhere in the portal to go to your virtual
-private workspace. Second, a *Notifications* button is added to the right of the
-Dashboard link. The Notifications button displays how many unread notifications
-you have. You'll be notified upon receiving a private message, an invitation to
-join a site, a social connection request, or an event reminder. Lastly, the
-right-most item of the Dockbar becomes a drop-down list containing a link to
-your public *Profile* page as well as a link your *My Account* page of the
-control panel and the *Sign Out* link.
+assigned to the Social Office User role logs in, the user bar appears and
+several changes are made to the Dockbar. The *Dashboard* link appears as the
+left-most item of the user bar and links to the other private pages of the
+user's personal site appear next. You can click on these links from anywhere in
+the portal to access your virtual private workspace. Also, the *Go To* menu is
+moved from the Dockbar to the user bar. Instead of simply allowing the user to
+navigate to one of the sites he or she belongs to, the *Go To* menu provides
+access to the My Sites portlet. This means that Social Office users can not only
+use the *Go To* menu to navigate to sites they belong to but they can also
+search for sites, filter the sites in the list (*All Sites*, *My Sites*, *My
+Favorites*), add sites to their favorites list, access the Sites Directory, and
+access the Add Site wizard.
+
+Next, a *Notifications* icon is added to the right of the *Go To* menu. The
+Notifications icon displays how many unread notifications you have. You'll be
+notified upon receiving a private message, an invitation to join a site, a
+social connection request, or an event reminder. Alerts and announcements
+created via the Alerts or Announcements portlets are accessible via the
+Notifications icon. The *My Account* icon is also moved from the Dockbar to the
+user bar. When you click on your name or profile picture in the user bar, four
+options appear:
+
+- *My Profile*: takes you to your public Profile page, the public home page of
+  your personal site.
+- *My Account*: takes you to the *My Account* section of the Control Panel where
+  you can edit the details of your user account, such as your screen name, email
+  address, password, etc.
+- *Control Panel*: takes you to the Control Panel.
+- *Sign Out*: logs you out of the portal.
+
+The right-most item of the user bar is a gear icon that allows you to hide the
+Dockbar. When signed in as an administrator, clicking on the gear icon to hide
+the Dockbar only works if the *Edit Controls* box in the Dockbar is unflagged.
+The standard items that appear on the Dockbar for administrators are still
+accessible:
+
+- *Pin*: pins *both* the Dockbar and the user bar in place so that they're
+  always accessible, even when scrolling down a long page.
+- *Add*: allows you to add a new page or new portlet applications to a page.
+- *Manage*: lets you access various options for managing the current page or
+  site. These options are also available through the Control Panel.
+- *Edit Controls*: Allows you to enable/disable the special controls (such as
+  portlet options menus and maximize, minimize, and remove buttons) that are
+  accessible to site administrators.
+
+Now that we've learned how to use the Social Office user bar and seen how it
+works with the Dockbar, let's learn how to use the Social Office Dashboard and
+other private pages and their applications.
 
 #### Using the Dashboard and Other Private Pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
 
