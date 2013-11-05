@@ -1,5 +1,5 @@
 
-# Designing Workflows with Kaleo Designer for Java [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
+# Designing Workflows with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 ---
 
@@ -8,22 +8,22 @@ reflect the new features in Liferay 6.2.
 
 ---
 
-![EE Only Feature](../../images/ee-feature-web.png)
+Liferay Portal includes a workflow engine called *Kaleo*. Kaleo allows portal
+administrators to set up workflows for their organization's needs; the workflow
+calls users to participate in processes designed for them. Kaleo workflows,
+called *process definitions*, are essentially XML documents. Kaleo supports a
+host of XML element types to trigger decisive actions in your business process
+instances. You can fine-tune your process definition's logic by incorporating
+scripts and templates. 
 
-Liferay Portal includes a workflow engine called *Kaleo Designer for Java*.
-Kaleo allows portal administrators to set up workflows for their organization's
-needs; the workflow calls users to participate in processes designed for them.
-Kaleo workflows, called *process definitions*, are essentially XML documents.
-Kaleo supports a host of XML element types to trigger decisive actions in your
-business process instances. You can fine tune the logic of your process
-definition by incorporating scripts and templates. The *Kaleo Forms EE* app from
-Marketplace includes Liferay's *Kaleo Workflow Designer* that lets you create
-and modify portal workflows in your browser. With Kaleo Designer for Java, you
-can design and publish Kaleo workflows from Liferay Developer Studio! 
+The *Kaleo Forms EE* app from Marketplace includes Liferay's *Kaleo Workflow
+Designer* that lets you create and modify portal workflows in your browser. With
+Kaleo Designer for Java, you can design and publish Kaleo workflows from Liferay
+Developer Studio! 
 
 ![Figure 7.1: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
 
-Kaleo Designer for Java lets you incorporate back end Java development and
+Kaleo Designer for Java lets you incorporate back-end Java development and
 scripting in your workflows. Its graphical interface lets you drag and drop
 nodes into your workflow. A shortcut on each node gives you easy access to the
 node's XML, letting you edit its current implementation to make subtle
@@ -53,6 +53,14 @@ Studio to complete these tasks. As you can see, Kaleo Designer for Java is a
 powerful application for creating, modifying, and publishing workflows in
 Liferay Developer Studio. 
 
+Although Kaleo Designer for Java is the tool of choice for EE workflow
+designers, CE workflow designers can write Kaleo workflows too. But they are
+limited to writing them in their favorite XML editor. All Kaleo process
+definitions must follow the schema
+[http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd).
+As we show you how to design workflows, we'll include their resulting XML code
+for your convenience. 
+
 We'll cover the following topics as we design workflows:
 
 - Installing Kaleo Designer for Java
@@ -64,11 +72,9 @@ We'll cover the following topics as we design workflows:
 - Using Workflows in Liferay Portal
 - Using Dynamic Data Lists (DDLs) with Workflows
 
-<!--I only lightly edited the introduction to Kaleo. I don't think I understand
-enough about how it works from a development perspective; The above might be
-perfectly clear to a developer, but it's not to me. -Russ -->
-
 ## Installing Kaleo Designer for Java [](id=installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
+
+![EE Only Feature](../../images/ee-feature-web.png)
 
 To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
 Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
@@ -239,7 +245,7 @@ Workflows with Kaleo Designer for
 Java](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 chapter of *Using Liferay Portal*. 
 
-For our `ticket-process-definition` workflow diagram, we have a simple
+For our ticket-process-definition workflow diagram, we have a simple
 `StartNode` *State* node, followed by the `Developer` *Task* node, followed by
 the `EndNode` *State* node. There are two transitions, from `StartNode` &rarr;
 `Developer` and from `Developer` &rarr; `EndNode`. 
@@ -324,8 +330,151 @@ Assigning the QA and QA Management task nodes resolved their error markings (no
 more red "X"!). The join node's error marking won't disappear until you connect
 the join node to another task. 
 
-While we're using Designer's Workflow Diagram, let's go over some of its
-features. 
+Let's take a moment to consider the XML code of the ticket process workflow
+definition in its current state.
+
+It specifies its XML version, encoding, and its document root element called
+`workflow-definition`. Nested within the `workflow-definition` element are its
+name, description (optional), version, and its nodes: 1 fork, 1 join, a start
+and end state. Here's the general overview of our workflow definition: 
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workflow-definition xmlns="urn:liferay.com:liferay-workflow_6.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd">
+		<name>Ticket Process</name>
+		<version>1</version>
+
+		<!-- fork node -->
+
+		<!-- join node -->
+
+		<!-- start and end state nodes -->
+
+		<!-- task nodes -->
+
+    </workflow-definition>
+
+We'll describe each of our workflow definition's nodes, starting from top to
+bottom, left to right.
+
+Our start state node, named *StartNode*, simply transitions the flow of
+execution to our *Developer* task. Here is this state node (note, we left off
+the optional `<metadata>...</metada>` elements to shorten the code snippets): 
+
+    <state>
+        <name>StartNode</name>
+        <initial>true</initial>
+        <transitions>
+            <transition>
+                <name>Developer</name>
+                <target>Developer</target>
+                <default>true</default>
+            </transition>
+        </transitions>
+    </state>
+
+The *Developer* task is assigned to the creator and transitions to the *EndNode*
+state node upon approval. Each workflow instance is associated with an asset. By
+default, a task is associated with the asset creator.
+
+    <task>
+        <name>Developer</name>
+        <assignments>
+            <user></user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>approved</name>
+                <target>approved</target>
+            </transition>
+            <transition>
+                <name>EndNode</name>
+                <target>EndNode</target>
+            </transition>
+        </transitions>
+    </task>
+
+The ending state node is named *EndNode*. It specifies that an *Approve*
+action is to be executed on entering this node. 
+
+    <state>
+        <name>EndNode</name>
+        <actions>
+            <action>
+                <name>Approve</name>
+                <description>Approve</description>
+                <script> <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);]]> </script>
+                <script-language>javascript</script-language>
+                <execution-type>onEntry</execution-type>
+            </action>
+        </actions>
+    </state>
+
+Our workflow definition has one fork node named *Pass to QA*. It forks the
+process to the *QA* and *QA Manager* task nodes:
+
+    <fork>
+        <name>Pass to QA</name>
+        <transitions>
+            <transition>
+                <name>QA</name>
+                <target>QA</target>
+            </transition>
+            <transition>
+                <name>QA Manager</name>
+                <target>QA Manager</target>
+            </transition>
+        </transitions>
+    </fork>
+
+Both the the QA-related task nodes are assigned to the user with screenname
+*joe*.
+
+    <task>
+        <name>QA</name>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>Pass to QA Join</name>
+                <target>Pass to QA Join</target>
+                <default>Pass to QA Join</default>
+            </transition>
+        </transitions>
+    </task>
+
+    <task>
+        <name>QA Manager</name>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>Pass to QA Join</name>
+                <target>Pass to QA Join</target>
+            </transition>
+        </transitions>
+    </task>
+
+Lastly, the *QA* and *QA Manager* task nodes transition into the *Pass to QA
+Join* join node:
+
+    <join>
+        <name>Pass to QA Join</name>
+    </join>
+
+Now you know what the resulting XML is like for your workflow definition. You
+can check your definition's source code anytime from within Liferay Studio or
+your favorite XML editor. To learn about creating new workflow
+definitions, see
+[Using Liferay Portal 6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en). 
+
+Since we've been using Designer's Workflow Diagram mode, let's go over some of
+its features. 
 
 ### Workflow Diagram Features [](id=kaleo-workflow-diagram-features-liferay-portal-6-2-dev-guide-07-en)
 
@@ -582,6 +731,8 @@ Now the script accurately implements the condition logic we want. As a reminder,
 all of the code was injected into our workflow's XML file within the
 `<condition/>` element that represents our condition node. 
 
+<!-- TODO Give the XML for the condition node. - Jim -->
+
 ---
 
  ![note](../../images/tip-pen-paper.png) **Note:** Make sure you correctly name
@@ -769,6 +920,8 @@ Your email notification is set up! Now, when the Project Management task node is
 activated in the workflow, the specified user (i.e. *joe*) will receive the
 notification email, all dressed up with your FreeMarker template (you might say
 it's all dressed up with somewhere to go). 
+
+<!-- TODO - Give the XML code for the Project Management task node - Jim -->
 
 With template editors, customizing your notification templates is easier than
 ever. FreeMarker comes bundled with Developer Studio so it's obviously the
@@ -964,6 +1117,12 @@ To publish your `ticket process` workflow definition:
 
 Alternatively, you can publish your new workflow XML file by dragging it from
 your *Package Explorer* view onto your Liferay server in your *Servers* view. 
+
+If you are not using the Kaleo Designer for Java plugin and you'd like to
+publish workflow definitions you've written in XML, you can do so by uploading
+them from within Liferay Portal's workflow configuration screens. For details,
+see the chapter on using workflow in [Using Liferay Portal
+6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-assets-to-use-workflow-proc-liferay-portal-6-2-user-guide-11-en). 
 
 ---
 
