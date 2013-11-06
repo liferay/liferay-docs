@@ -566,7 +566,7 @@ Developer Studio supports several script languages:
 - Python 
 - Ruby 
 
-Let's dive back into our `software ticket` workflow definition and create a
+Let's dive back into our `ticket-process` workflow definition and create a
 script. It's not guaranteed that every ticket submitted has a resolution. If the
 issue was due to a silly user error, there's no reason to change the product. In
 such cases the developer will resolve the ticket and indicate there is no
@@ -723,7 +723,7 @@ We're pulling out the status from the DDL record and returning a value
 indicating "Yes" to continue fixing the ticket issue or "No" to transition to
 the workflow's end state. 
 
-Add the following to the script's imports to finsih things up: 
+Add the following to the script's imports to finish things up: 
 
 	import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
@@ -733,6 +733,42 @@ all of the code was injected into our workflow's XML file within the
 
 <!-- TODO Give the XML for the condition node. - Jim -->
 
+    <condition>
+        <name>Resolution</name>
+        <metadata><![CDATA[{"transitions":{"EndNode":{"bendpoints":[[33,707]]},"Yes":{"bendpoints":[]},"No":{"bendpoints":[[33,707]]},"Developer":{"bendpoints":[]}},"xy":[540,75]}]]></metadata>
+        <script><![CDATA[import com.liferay.portal.kernel.util.GetterUtil;
+            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+            import com.liferay.portal.service.ServiceContext;
+            import com.liferay.portlet.dynamicdatalists.model.DDLRecord;
+            import com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalServiceUtil;
+            import com.liferay.portlet.dynamicdatamapping.storage.Field;
+
+            long companyId = GetterUtil.getLong((String) workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
+            ServiceContext serviceConteimport com.liferay.portal.kernel.util.GetterUtil;
+
+            long ddlRecordId = GetterUtil.getLong(serviceContext.getAttribute("ddlRecordId"));
+            DDLRecord ddlRecord = DDLRecordLocalServiceUtil.getRecord(ddlRecordId);xt = (ServiceContext) workflowContext.get(WorkflowConstants.CONTEXT_SERVICE_CONTEXT);
+            Field field = ddlRecord.getField("status");
+
+            String status = GetterUtil.getString(field.getValue());
+            if (status.contains("not")) {
+                returnValue = "No"
+            }
+            else {
+                returnValue = "Yes"
+    }]]></script>
+        <script-language>groovy</script-language>
+        <transitions>
+            <transition>
+                <name>Yes</name>
+                <target>Developer</target>
+            </transition>
+            <transition>
+                <name>No</name>
+                <target>EndNode</target>
+            </transition>
+        </transitions>
+    </condition>
 ---
 
  ![note](../../images/tip-pen-paper.png) **Note:** Make sure you correctly name
@@ -816,8 +852,6 @@ There are several fields to fill in for your notification:
 - **Notification Transports**
 - **Addresses**
 
-<!--This is a field list, so bold, right? -->
-
 Click the pencil icon to open the editor associated with your notification's
 template language. Like the script editor, the template editor's *Palette* view
 lists entities that you can drag and drop onto your workflow diagram. 
@@ -886,8 +920,6 @@ To create the email notification, follow these steps:
 
 5.  Select *email* under **Notification transports**.
 
-<!--Bolded field items. -->
-
 Now open the FreeMarker template editor by clicking the pencil icon beneath the
 green "plus" symbol. 
 
@@ -921,12 +953,54 @@ activated in the workflow, the specified user (i.e. *joe*) will receive the
 notification email, all dressed up with your FreeMarker template (you might say
 it's all dressed up with somewhere to go). 
 
-<!-- TODO - Give the XML code for the Project Management task node - Jim -->
-
 With template editors, customizing your notification templates is easier than
 ever. FreeMarker comes bundled with Developer Studio so it's obviously the
 simplest solution, but you can create Velocity templates just as easy by using
 the Velocity editor you installed. 
+
+Here's what the XML source looks like for the Poject Management task we created:
+
+<!--Should I include the Freemarker? We just covered it in the last code block -->
+
+    <task>
+        <name>Project Management</name>
+        <actions>
+            <notification>
+                <name>ticket process email</name>
+                <template>/* specify task notification template */
+                    &lt;#assign comments = taskComments!&quot;&quot;&gt;
+                    &lt;#assign portalURL = serviceContext.portalURL!&quot;&quot;&gt;
+                    &lt;#assign wTasksURL = portalURL+&quot;/group/control_panel/manage?p_p_id=153&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;doAsGroupId=&quot;+groupId+&quot;&amp;refererPlid=&quot;&gt;
+                    
+                    &lt;!-- email body --&gt;
+                    &lt;p&gt; There is a new submission of ${entryType} waiting for review in the workflow. &lt;/p&gt;
+                    
+                    &lt;!-- personal message to assignee --&gt;
+                    &lt;p&gt; Please review the code waiting for you in your workflow tasks.
+                    &lt;#if comments != &quot;&quot; &gt; &lt;br/&gt; Assignment comment says: &lt;strong&gt;${comments}&lt;/strong&gt; &lt;/#if&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt; &lt;a href=&quot;${wTasksURL}&quot;&gt;Click here&lt;/a&gt; to see workflow tasks assigned to you. &lt;/p&gt;
+                    
+                    &lt;!-- signature --&gt;
+                    &lt;p&gt;Sincerely,&lt;br /&gt;&lt;strong&gt;Liferay Portal Workflow&lt;/strong&gt;&lt;/p&gt;
+                </template>
+                <template-language>freemarker</template-language>
+                <notification-type>email</notification-type>
+                <execution-type>onEntry</execution-type>
+            </notification>
+        </actions>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>Completed</name>
+                <target>EndNode</target>
+            </transition>
+        </transitions>
+    </task>
 
 In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
