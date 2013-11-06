@@ -282,7 +282,7 @@ restarted the server, the so-hook deployment completes as expected.
 
 For JBoss, you have to restart the server in order to see the Dashboard link. If
 you don't restart the server, the Dashboard link won't appear although you can
-find other content added by Social Office if you use the *Go To* &rarr; *My
+find other content added by Social Office if you use the *Go to* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
 <!-- Commenting this out now (Nov. 5, 2013) since SO 2.1 EE has been released
@@ -576,11 +576,11 @@ assigned to the Social Office User role logs in, the user bar appears and
 several changes are made to the Dockbar. The *Dashboard* link appears as the
 left-most item of the user bar and links to the other private pages of the
 user's personal site appear next. You can click on these links from anywhere in
-the portal to access your virtual private workspace. Also, the *Go To* menu is
+the portal to access your virtual private workspace. Also, the *Go to* menu is
 moved from the Dockbar to the user bar. Instead of simply allowing the user to
-navigate to one of the sites he or she belongs to, the *Go To* menu provides
+navigate to one of the sites he or she belongs to, the *Go to* menu provides
 access to the Sites portlet. This means that Social Office users can not only
-use the *Go To* menu to navigate to sites they belong to but they can also
+use the *Go to* menu to navigate to sites they belong to but they can also
 search for sites, filter the sites in the list (*All Sites*, *My Sites*, *My
 Favorites*), add sites to their favorites list, access the Sites Directory, and
 access the Add Site wizard.
@@ -600,9 +600,9 @@ team collaboration. The *Sites Directory* button opens a site directory dialog
 box which you can use to join, leave sites, or star sites. If you have the
 required permissions, you can also delete sites.
 
-![Figure 1.11: To access the Sites portlet, just click on *Go To* from the user bar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+![Figure 1.11: To access the Sites portlet, just click on *Go to* from the user bar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
-Next, a *Notifications* icon is added to the right of the *Go To* menu. The
+Next, a *Notifications* icon is added to the right of the *Go to* menu. The
 Notifications icon displays how many unread notifications you have. You'll be
 notified upon receiving a private message, an invitation to join a site, a
 social connection request, or an event reminder. Alerts and announcements
@@ -645,7 +645,7 @@ The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu in the left column so that you can
 navigate back and forth between the private pages of your personal site or
 navigate to your public pages. To access the My Sites portlet, just click on the
-*Go To* menu in the user bar. The private pages provided by Social Office
+*Go to* menu in the user bar. The private pages provided by Social Office
 include:
 
 - Dashboard
@@ -802,7 +802,7 @@ Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
 navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
-Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1) for
+Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
 information about document management.
 
 ![Figure 1.16: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
@@ -890,37 +890,49 @@ Microblogs portlet allows users to comment on entries.
 ### Using Social Office Sites For Collaboration  [](id=lp-2-1-soen01-using-social-office-sites-for-collaboration)
 
 Social Office not only provides custom pages and applications for users'
-personal sites but also for general sites that can have many members. A portal
-administrator can use the *Add Site* button of the Sites portlet to add a new
-site to use for team collaboration. This button opens a wizard which guides you
-through the process of creating a site based on the *Default Social Office Site*
-template. Sites based on this template come pre-built with pages and
-applications designed for team collaboration, just like the default Social
-Office personal sites come with applications designed to facilitate user
-interaction. The default pages created by the wizard include the following:
+personal sites but also for general sites that can have many members. To add a
+new Social Office site to use for team collaboration, click on *Go to* from the
+user bar to access the Sites portlet. Then click on the *Add Site* button. This
+button opens a wizard which guides you through the process of creating a site
+based on the *Default Social Office Site* template. Sites based on this template
+come pre-built with pages and applications designed for team collaboration, just
+like the default Social Office personal sites come with applications designed to
+facilitate user interaction. The default pages created by the wizard include the
+following:
 
 - *Home*
 - *Calendar*
 - *Documents*
 - *Forums*
-- *Blog*
+- *Blogs*
 - *Wiki*
 - *Members*
 
-When creating a site, you can select a membership type: Open, Restricted, or
-Private. Any portal user can join an open site. Portal users can request to join
-a restricted site but must be approved by a site administrator. Private sites
-are invisible to non-members; members must be invited by a site administrator.
-By default, all the pages of an open Social Office site are public but
-restricted and private Social Office site pages are private.
+The Add Site wizard lets you choose a site template to use to create your site's
+default pages. You can also choose which of the default template pages you'd
+like to include in your site. Links to these pages are embedded in the left-most
+column of each page that belongs to the site. You can also select one of the
+following four membership types:
 
-![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
+- Open: The site is listed, pages are public and users are free to join and
+  collaborate.
+- Public Restricted: The site is listed, pages are public but users must request
+  to join and collaborate.
+- Private Restricted: The site is listed, pages are private and users must
+  request to join and collaborate.
+- Private: The site is unlisted (it's invisible to non-members), pages are
+  private, and users must be invited to join and collaborate.
 
-The Add Site wizard lets you choose which of default template pages you'd like
-to include in your site. Links to these pages are embedded in the left-most
-column of each page that belongs to the site.
+Note that the available site membership types of Social Office sites are
+slightly different than those of regular Liferay sites. Regular Liferay sites
+have only three available membership types: Open, Restricted, and Private. A
+Restricted Liferay site has the same membership type as a private restricted
+Social Office site. The Public Restricted Social Office site membership type has
+no regular Liferay site equivalent. The default pages of an open Social Office
+site are public but those of restricted and private Social Office sites are
+private.
 
-![Figure 1.20: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
+![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
