@@ -952,7 +952,8 @@ Events portlets to inform or remind site members about important information.
 The Bookmarks portlet allows users to create a collection of useful links on
 your site and you can configure the RSS portlet to display an RSS feed of your
 choice. The Welcome portlet allows you to set up a custom welcome message for
-your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
+your site. It's really just a WYSIWYG portlet with its title changed to
+*Welcome*.
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet
 applications that are automatically scoped for the site. This means that these
@@ -975,10 +976,10 @@ The Recent Blogs portlet doesn't show the full content of each post. Instead,
 clicking on a post's title or on the *Read More* link in the Recent opens the
 full content of the post in the Blogs portlet.
 
-Previous versions of Social Office provided a Related Assets portlet on the
-Blogs page. This portlet is no longer provided on the Blogs page by default but
-can easily be added: just click *Add* &rarr; *More* from the Dockbar, search for
-*Related Assets*, and click *Add* next to its name to add it to the page.
+Prior to Social Office 2.0, Social Office provide a Related Assets portlet on
+the Blogs page. This portlet is no longer provided on the Blogs page by default
+but can easily be added: just click *Add* &rarr; *More* from the Dockbar, search
+for *Related Assets*, and click *Add* next to its name to add it to the page.
 Whenever the Blogs portlet displays the full content of a blog post, the Related
 Assets portlet lists any of the post's related assets. Click on the name of any
 related asset to view the asset. If there are no related assets, the Related
