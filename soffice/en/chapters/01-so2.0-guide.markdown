@@ -553,9 +553,9 @@ logged in. Assign yourself to the Social Office User role to see how it works.
 Once your user account has been granted the Social Office User role, the user
 bar appears above the Dockbar. The user bar contains links to all the private
 pages of the user's personal site, including a link to the *Dashboard*, the
-private home page of a Social Office user. Once you've been assigned to the
-Social Office User role and you see the user bar, you can explore the extra
-features added to Liferay by Social Office.
+private home page of a Social Office user's personal site. Once you've been
+assigned to the Social Office User role and you see the user bar, you can
+explore the extra features added to Liferay by Social Office.
 
 If all your portal users will be using Social Office, you should add this role
 to your portal's default user associations. Use the *Go to* menu of the Dockbar
@@ -611,8 +611,8 @@ Notifications icon. The *My Account* icon is also moved from the Dockbar to the
 user bar. When you click on your name or profile picture in the user bar, four
 options appear:
 
-- *My Profile*: takes you to your public Profile page, the public home page of
-  your personal site.
+- *My Profile*: takes you to your public Profile page. The Profile page is the
+  public home page of a Social Office user's personal site.
 - *My Account*: takes you to the *My Account* section of the Control Panel where
   you can edit the details of your user account, such as your screen name, email
   address, password, etc.
@@ -721,6 +721,8 @@ feeds can quickly become heavily populated, users can simply scroll to the
 bottom of a page with the Activities portlet and the Activities portlet loads
 more activities.
 
+![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
+
 The Upcoming Tasks portlet displays a list of tasks that have been created for
 you or that you've assigned to yourself. The Events portlet integrates with the
 Calendar portlet belonging to your scope to show upcoming events for the next
@@ -730,20 +732,20 @@ everyone, to your connections, or to your followers. Users can interact with
 microblogs status updates wherever they're displayed, such as in an Activities
 portlet. There are a few possible microblogs interactions: you can click a link
 to view the full microblog post, comment on the post, or repost the microblog.
-
 Next, let's take a look at the applications provided on the other private pages
 of Social Office users' personal sites.
-
-![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
 The Contacts Center is an important application for Social Office because it
 allows users to create LinkedIn-style connections and Twitter-style followers.
 This enables users to customize who they share information about social
 activities with and whose activity they're interested in. The Contacts Center
 application displays a list of portal users. You can choose to display *All*,
-*Connections*, or *Following* and you can also search for specific users. Select
-a user from the left-hand area of the Contacts Center portlet to view details
-about him or her. For each user, you'll have the following options:
+*Connections*, *Following*, or *My Contacts*. You can also display only the
+members of a particular site. There's also a search bar so you can search for
+specific users. To add a new contact, just click on the *Add Contact* button at
+the top of the Contacts Center. Select a user from the left-hand area of the
+Contacts Center portlet to view details about him or her. For each user, you'll
+have the following options:
 
 - *Add as Connection* sends a connection request to the selected user.
 - *Follow/Unfollow* subscribes and unsubscribes you to the selected user's
@@ -757,7 +759,7 @@ about him or her. For each user, you'll have the following options:
   is a file format standard for electronic business cards.
 - *Go to Profile* is a link to the selected user's public profile page.
 
-![Figure 1.13: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/contacts-center.png)
+![Figure 1.13: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center.png)
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
@@ -800,9 +802,8 @@ Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
 navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
-Liferay Portal. Please refer to chapter 4 of Liferay's User Guide for
-information about document management: [Document
-Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1)
+Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1) for
+information about document management.
 
 ![Figure 1.16: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
