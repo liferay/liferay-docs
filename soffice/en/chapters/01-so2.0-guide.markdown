@@ -1088,10 +1088,30 @@ already upgraded your portal to version 6.1.1 CE, and backed up your old
 
 ---
 
- ![Notice](../../images/tip.png) **Notice:** NOTICE: Current SO 2.0.4 CE
- customers planning to upgrade to 2.0.5 EE must *first* download and upgrade to
- 2.0.5 CE. A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported;
- attempting this will break Social Office.
+ ![Notice](../../images/tip.png) **Notice:** Current SO 2.0.4 CE customers
+ planning to upgrade to 2.0.5 EE must *first* download and upgrade to 2.0.5 CE.
+ A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported; attempting this
+ will break Social Office.
+
+---
+
+---
+
+ ![Notice](../../images/tip.png) **Notice:** There's an issue when upgrading
+ from SO 2.0.5 to 2.1: Deploying newer plugins over the older plugins produces
+ console exceptions when you navigate anywhere inside the portal. The reason for
+ the exceptions is that the old versions of the SO plugins were not completely
+ undeployed.
+
+ As a workaround, set the following portal property before upgrading to ensure
+ that all the SO plugins are completely undeployed before the newer SO plugins
+ are deployed:
+
+    hot.undeploy.on.redeploy=true
+
+ This issue only affects upgrades from 2.0.5 to 2.1 on Liferay 6.1. It does not
+ affect Liferay 6.2. It also does not affect fresh installs of SO 2.1 on Liferay
+ 6.1.
 
 ---
 
