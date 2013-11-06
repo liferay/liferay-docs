@@ -680,16 +680,56 @@ site-specific announcements.
 
 Using the power of Liferay's Social API, the Activities portlet presents
 information about different categories of users' recent activities. Use the tabs
-to display portal activities from different scopes: *Connections* shows a list
-of activities from users you have established a social connection with,
-*Following* shows activities from users you're following, and *My Sites* shows
-all the activities from sites you belong to. You can also select *Me* to view
-just your own activities. The Upcoming Tasks portlet displays a list of tasks
-that have been created for you or that you've assigned to yourself. The Events
-portlet integrates with the calendar portlet belonging to your scope to show
-upcoming events for the next few days. There's also a Microblogs Status Update
-portlet on your Dashboard which lets you broadcast a Facebook-like status to the
-scope of your choice: to everyone, to your connections, or to your followers.
+to display portal activities from different scopes:
+
+- *Connections*: shows a list of activities of users with which you have
+  established a social connection.
+- *Following*: shows activities of users you're following.
+- *My Sites*: shows all the activities from the sites of which you're a member.
+- *Me*: shows only your own activities.
+
+The Activities portlet consolidates related activities into a single activities
+entry so the activities feeds aren't spammed with nearly identical messages. For
+example, users often make several updates to an asset in quick succession, like
+this:
+
+    Bryan Cheung updated a wiki page in Sales Team. 1:48 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:47 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:47 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:46 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:46 PM
+    Pricing
+
+The Activities portlet consolidates entries like these so that only a single
+message is displayed, like this:
+
+    Bryan Cheung made 5 updates to a wiki page in Sales Team. 1:46 PM
+    Pricing
+
+For assets that allow commenting, such as blog entries, wiki articles, calendar
+events, tasks, and documents and media files, the Activities portlet allows
+users to comment the assets directly in the activities feed. Such comments are
+translated directly as comments on the asset. Comments on *groups* of activities
+are not translated as comments on the individual assets; these comments appear
+only in the activities feed. Forum-related activities do not allow comments;
+users have to click the link to the thread to leave a response. Since activities
+feeds can quickly become heavily populated, users can simply scroll to the
+bottom of a page with the Activities portlet and the Activities portlet loads
+more activities.
+
+The Upcoming Tasks portlet displays a list of tasks that have been created for
+you or that you've assigned to yourself. The Events portlet integrates with the
+Calendar portlet belonging to your scope to show upcoming events for the next
+few days. There's also a Microblogs Status Update portlet on your Dashboard
+which lets you broadcast a Facebook-like status to the scope of your choice: to
+everyone, to your connections, or to your followers. Users can interact with
+microblogs status updates wherever they're displayed, such as in an Activities
+portlet. There are a few possible microblogs interactions: you can click a link
+to view the full microblog post, comment on the post, or repost the microblog.
 
 Next, let's take a look at the applications provided on the other private pages
 of Social Office users' personal sites.
