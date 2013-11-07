@@ -476,10 +476,11 @@ Alternatively, you can use the following method:
 4.  Click *Finish*. 
 
 Deploy your project. You should see the project get deployed to your Liferay
-server; in the console you'll see a message indicating your new portlet is
-available for use.
+server; in the console you'll see a message, like the one below, indicating that
+your new portlet is available for use. 
 
-![Figure 2.6: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
+    INFO  [localhost-startStop-2][PortletHotDeployListener:490] 1 portlet for
+    event-listing-portlet is available for use
 
 Open *Liferay Portal Home* (`http://localhost:8080/` for a fresh Liferay
 installation) and log in with your administrator account. If this is your first
@@ -492,7 +493,7 @@ Once you're logged in, click *Add* &rarr; *More*; expand the *Sample* category
 and click the *Add* link next to your Event Listing application. Your *Event
 Listing Portlet* shows on the page.
 
-<!-- TODO - Add a small screenshot of the portlet on the page - Jim -->
+![Figure 2.6: Voila! You can add your brand new portlet (empty for now) to any page.](../../images/event-listing-portlet-with-empty-jsp-on-page.png)
 
 Great, now you can create projects in Liferay IDE! Next, let's learn how to
 create new plugins inside of existing projects in Liferay IDE. 
