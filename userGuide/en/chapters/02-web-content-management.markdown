@@ -127,7 +127,7 @@ that sites are used to organize pages, content, application data, and users (via
 site memberships) whereas organizations are only used to group users. Please
 refer to the Sites Admin Portlet section of Liferay's `portal.properties` file
 for a list of relevant configurable properties. For example, the
-`sites.content.sharing.with.children` property determines allows to disable
+`sites.content.sharing.with.children` property allows you to disable
 content sharing between sites and subsites, disable it by default while allowing
 site administrators to enable it per site, or to enable it by default while
 allowing administrators to disable it per site.
@@ -206,7 +206,7 @@ chapters 14, 16, and 17 of this guide.
  included interfaces both for site administration and for portal administration.
  In Liferay 6.2, these interfaces have been separated. If you're signed in as an
  administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
- &rrar; *Control Panel*. To manage a single site, navigate to the site by
+ &rarr; *Control Panel*. To manage a single site, navigate to the site by
  clicking on *My Sites* and clicking on the site's name. Then click on *Admin*
  &rarr; *Site Administration*. The Site Administration interface allows to
  configure site settings and manage the pages, content, and users of the site.
@@ -862,8 +862,9 @@ revoke content sharing from all sub-sites.
 
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be
-stored in the Recycle Bin until it is permanently deleted. For a full explantion
-of the Recycle Bin, see the *Configuring Liferay Applications* chapter.
+stored in the Recycle Bin until it is permanently deleted. For a full
+explanation of the Recycle Bin, see the *Configuring Liferay Applications*
+chapter.
 
 **Custom Fields:** lets you edit the custom fields you already have configured
 for the *Site* resource. If you don't have any custom fields configured for the
@@ -918,7 +919,7 @@ For details about Liferay's social collaboration suite, see chapter 10.
 ---
 
 ![Tip](../../images/01-tip.png) **Note:** The *Web Content List* and *Recent
-Content* plugins were deprected in Liferay 6.2 and are disabled by default. To
+Content* plugins were deprecated in Liferay 6.2 and are disabled by default. To
 activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
 Configuration* and scroll through the list of portlets until you find the
 plugin. Select the plugins name and click the *Active* checkbox. Then click
