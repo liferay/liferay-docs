@@ -935,6 +935,10 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 
 	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "event.groupId = ?";
 
+	public EventPersistenceImpl() {
+		setModelClass(Event.class);
+	}
+
 	/**
 	 * Caches the event in the entity cache if it is enabled.
 	 *
