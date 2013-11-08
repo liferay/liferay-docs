@@ -852,6 +852,25 @@ when resetting, portlet preferences are copied from site template portlets to
 site portlets. Only global portlet preferences or local portlet preferences
 which don't refer to IDs are overwritten.
 
+In some cases, merging site template and site changes fails. For example, if
+pages from a site template cannot be propagated because their friendly URLs are
+in conflict, the portal could try to continuously merge the site changes.
+Instead of entering into an infinite loop of merge fails, Liferay stops the
+merge after several unsuccessful attempts. However, Liferay doesn't stop there:
+your merge is temporarily paused, you're given an indication of the current
+merge fail, and then you have the  opportunity to fix your merge conflicts.
+After you've squared away your conflict, navigate to *Site Administration*
+&rarr; *Configuration* &rarr; *Site Settings* and click the *Reset and
+Propagate* button.
+
+![Figure 3.13: You can reset and propagate the merge fail count by navigationg to *Site Settings*.](../../images/reset-and-propagate.png)
+
+The *Reset and Propagate* button resets the merge fail count and attempts to
+propagate your site changes again. This process gives the portal administrator
+the opportunity to detect and fix a merge fail, when problems arise. This
+helpful process can also be done with page template merges, which follows
+similar steps.
+
 Site administrators can also add data to site template portlets. For example,
 site template administrators can add the Wiki portlet to a site template page
 and use the Wiki to create lots of articles. When a portal administrator creates
@@ -876,7 +895,7 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.13: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
+![Figure 3.14: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
 add new page templates. By default, three sample page templates are provided:
@@ -920,7 +939,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.14: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
+![Figure 3.15: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
@@ -930,16 +949,15 @@ you're on your desired site and navigate to *Admin* &rarr; *Site
 Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name,
 select your template from the drop down menu, and click *Add Page* to finish.
 
-![Figure 3.15: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
+![Figure 3.16: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
-*Automatically apply changes done to the page template* box.
-
-<!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here
-because it is of interest in the context of managing a site, not in the context
-of managing a site template | -->
+*Automatically apply changes done to the page template* box. Occasionally,
+propagation for page templates fails due to unintended errors. To learn how to
+manage a failed page template propagation, visit the *Propagating Changes from
+Site Templates to Sites* section of this chapter.
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
@@ -994,7 +1012,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.16: You have many translation languages to choose from for your web content.](../../images/04-web-content-content-translation.png)
+![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
@@ -1003,7 +1021,7 @@ to translate the original web content into the selected language. Once you are
 done with the translation, click *Save* and the translation is added to the list
 of *Available Translations*.
 
-![Figure 3.17: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
+![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -1049,7 +1067,7 @@ information. The scheduler is built right into the form your users access to add
 web content. Specifically, it can be found in the right panel listed with
 several other configurable settings.
 
-![Figure 3.18: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
+![Figure 3.19: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1186,7 +1204,7 @@ Next, click on *Site Settings* in the left menu and then on *Staging* listed
 under the Advanced tab. Select *Remote Live* under Staging Type and additional
 options appear.
 
-![Figure 3.19: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -1280,7 +1298,7 @@ it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ster site and then click *Save*.
 
-![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
@@ -1311,7 +1329,7 @@ staging. If you're following along with the Nose-ster example, navigate back to
 the News and Events page and click on *Staging* to get your page editing
 capabilities back.
 
-![Figure 3.21: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.22: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Bookmarks portlet and then click on *Live* from the Dockbar. Notice that
 the Bookmarks portlet isn't there. That's because you've staged a change to the
@@ -1367,7 +1385,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for any new resource, the resource needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.23: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
@@ -1382,7 +1400,7 @@ Content heading and find the section for Web Content. You can click the *Change*
 button to select/deselect options to publish dealing with your new Web Content
 instance.
 
-![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.24: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
@@ -1488,7 +1506,7 @@ For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.24: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.25: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Pages
@@ -1540,7 +1558,7 @@ and *User Groups* can be found in the *Site Memberships* portlet, which is also
 located in the Users tab. You can visit the *Management* chapter for more
 information on how these site memberships. Finally, click the *Add Team* button.
 
-![Figure 3.25: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
+![Figure 3.26: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1620,7 +1638,7 @@ displays a list of defined families and lets you add more. To add rules to a
 family, select *Actions* &rarr; *Manage Classification Rules*, or click on a
 family to edit it, and then click the *Manage Classification Rules* link.
 
-![Figure 3.26: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
+![Figure 3.27: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
 
 The rules defined for a family, along with the priorities of the families
 selected for a particular site or page, determine which family's actions are
@@ -1633,7 +1651,7 @@ that it's characterized as a *Simple Rule*. By default, only the Simple Rule
 type is available. The rules are designed to be extensible, and additional rule
 types can be added by your developers.
 
-![Figure 3.27: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.28: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family
@@ -1651,7 +1669,7 @@ apply only to that page. You can select multiple families for a particular site
 or page and order them by priority. The families are checked in decreasing order
 of priority: the actions defined by the first family that applies are executed.
 
-![Figure 3.28: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
+![Figure 3.29: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -1711,7 +1729,7 @@ mobile phones, and click *Save*. Now we just need to define the redirect action
 for our family. Navigate to *Pages* &rarr; *Site Pages* and click on *Mobile
 Device Rules* in the navigation menu to the right.
 
-![Figure 3.29: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.30: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Device Family* and then click the *Android and Bada Mobile Phones*
 device family that you configured. Once you've selected your device family,
