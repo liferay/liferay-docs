@@ -43,7 +43,7 @@ if (status.contains("closed")) {
 			</transition>
 		</transitions>
 	</condition>
-	ef snapsork>
+    <fork>
 		<name>Pass to QA</name>
 		<metadata><![CDATA[{"transitions":{"Audit":{"bendpoints":[],"xy":[-43,-8]},"Test":{"bendpoints":[],"xy":[18,-8]}},"xy":[600,37]}]]></metadata>
 		<transitions>
