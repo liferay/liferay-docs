@@ -106,12 +106,12 @@ oriented* architecture and how you can configure them.
 
 Liferay's remote services sit behind a layer of security that by default allows
 only local connections. Access to the remote APIs must be enabled as a separate
-step in order to call them from a remote machine. Liferay's core web services,
-require user authentication and user authentication verification; we'll talk
-about that process in this section as well. Lastly, regardless of whether the
-remote service is called from the same machine or via a web service, Liferay's
-standard security model comes into action: a user must have the proper
-permissions in Liferay's permissions system to access remote services. 
+step in order to call them from a remote machine. Liferay's core web services
+require user authentication and authentication verification. We'll discuss this
+process later in this section. Lastly, regardless of whether the remote service
+is called from the same machine or via a web service, Liferay's standard
+security model comes into action: a user must have the proper permissions in
+Liferay's permissions system to access remote services. 
 
 The first layer of security a client encounters when calling a remote service
 is called *invoker IP filtering*. Imagine you have have a batch job that runs
@@ -144,12 +144,12 @@ services, pass in the appropriate user credentials, and upload the documents.
 ---
 
 Next, if you're invoking the remote service via web services (e.g., JSON WS, old
-JSON, Axis, REST etc), a two step process of authentication and authentication
+JSON, Axis, REST, etc.), a two step process of authentication and authentication
 verification is involved. Each call to a Liferay portal web services must be
 accompanied by a user authentication token. It's up to the web service caller to
 produce the token (e.g., through Liferay's utilities or through some third-party
 software). Liferay verifies that there is a Liferay user that matches the token.
-If the crendentials are invalid, the web service invocation is aborted.
+If the credentials are invalid, the web service invocation is aborted.
 Otherwise, processing enters into Liferay's user permission layer. 
 
 Liferay's user permission layer is the last Liferay security layer triggered
@@ -240,7 +240,7 @@ security checks:
 - *IP permission layer*: The IP address must be pre-configured in the server's
   portal properties. 
 - *Authentication/verification layer (web services only)*: Liferay verifies that
-  the callers authorization token can be associated with a portal user.  
+  the caller's authorization token can be associated with a portal user.  
 - *User permission layer*: The user needs permission to access the related
   resources. 
 
