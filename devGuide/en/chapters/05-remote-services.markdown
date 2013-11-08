@@ -250,7 +250,15 @@ Next, let's talk about Liferay's SOAP web services.
 
 You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
-HTTP.
+HTTP. 
+
+---
+
+ ![Note](../../images/tip.png) **Note:** An authentication related token must
+ accompany each Liferay web service invocation. For details, read the section on
+ service security layers found earlier in this chapter. 
+
+---
 
 As an example, let's look at the SOAP web service classes for Liferay's
 `Company`, `User`, and `UserGroup` portal services to execute the following:
@@ -935,6 +943,14 @@ that service method--even if you only provide `null`.
 It's important to provide all parameters, but it doesn't matter *how* you do it
 (e.g., as part of the URL line, as request parameters, etc.). The order of the
 parameters doesn't matter either. 
+
+---
+
+ ![Note](../../images/tip.png) **Note:** An authentication related token must
+ accompany each Liferay web service invocation. For details, read the section on
+ service security layers found earlier in this chapter. 
+
+---
 
 Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required--when using numeric *hints* to match methods. Let's look
