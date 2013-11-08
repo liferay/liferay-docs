@@ -72,7 +72,7 @@ therefore should have no API deprecations.
 To understand Liferays releases, see [Using Liferay Portal
 6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-dev-guide-14-en)
 
 That about wraps up our chapter on Liferay's APIs. Next, we'll reflect on what
 we've learned in this guide and conclude our journey together. 

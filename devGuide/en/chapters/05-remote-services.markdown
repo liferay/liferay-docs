@@ -375,7 +375,7 @@ enter the following WSDLs:
 
     http://localhost:8080/api/axis/Portal_UserGroupService?wsdl
 
-![Figure 5.3: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 5.1: Service Definition](../../images/api-web-svc-wsdl.png)
 
 When you specify a WSDL, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service. Nifty! After you've created your
