@@ -976,12 +976,10 @@ the database by making the following call:
 
     EventLocalServiceUtil.addEvent(event);
 
-Service Builder looks through `EventLocalServiceImpl` and automatically copies
-the signatures of each method into the interface. You can now add a new Event to
-the database by invoking the static `addEvent` method that Service Builder
-generated in the `EventLocalServiceUtil` utility class. In addition to all the
-Java classes, Service Builder also generates a `service.properties` file which
-will be covered later. Next, let's call our newly implemented local service. 
+Service Builder generates the `addEvent` method in the `EventLocalServiceUtil`
+utility class. In addition to all the Java classes, Service Builder also
+generates a `service.properties` file which we'll discuss later. Next, let's
+call our newly implemented local service. 
 
 ## Calling Local Services [](id=call-local-services-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1328,26 +1326,29 @@ distracting in the first paragraph and thought it was more important to focus on
 introducing model hints. Perhaps this can be moved somewhere else in this
 section or the chapter. - Jim
 
-Service Builder generates a
-number of XML configuration files in your project's
+Service Builder generates a number of XML configuration files in your project's
 `docroot/WEB-INF/src/META-INF` folder. Service Builder uses most of these files
 to manage Spring and Hibernate configurations. Don't modify the Spring or
 Hibernate configuration files; your changes will be overwritten the next time
-Service Builder runs. However, you can safely edit the
-`portlet-model-hints.xml` file. 
+Service Builder runs. However, you can safely edit the `portlet-model-hints.xml`
+file. 
 -->
 
 Model hints let you to configure how the AlloyUI tag library, `aui`, shows
 model fields. As Liferay Portal displays form fields in your application, it
 first checks the model hints you specified and customizes the form's input
-fields based on these hints. For example, if you want to limit users to
-selecting dates in the future, you'd set a `year-range-past` hint to `false` for
-that field in your
+fields based on these hints.
+
+<!-- The following example is not working on Liferay 6.2 GA1 - JR
+For example, if you want to limit users to selecting dates in the future, you'd
+set a `year-range-past` hint to `false` for that field in your
 `portlet-model-hints.xml` file. It would look like the following tag:
 
     <field name="date" type="Date">
         <hint name="year-range-past">false</hint>
     </field>
+
+-->
 
 Let's look at the model hints file that Service Builder generated for the Event
 Listing portlet. Examine your project's
@@ -1363,8 +1364,8 @@ following along in the previous sections, Service Builder created the
             <field name="companyId" type="long" />
             <field name="groupId" type="long" />
             <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
+            <field name="createDate" type="Date" />
+            <field name="modifiedDate" type="Date" />
             <field name="name" type="String" />
             <field name="description" type="String" />
             <field name="date" type="Date />
@@ -1375,8 +1376,8 @@ following along in the previous sections, Service Builder created the
             <field name="companyId" type="long" />
             <field name="groupId" type="long" />
             <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
+            <field name="createDate" type="Date" />
+            <field name="modifiedDate" type="Date" />
             <field name="name" type="String" />
             <field name="description" type="String" />
             <field name="streetAddress" type="String" />
@@ -1388,10 +1389,10 @@ following along in the previous sections, Service Builder created the
 
 <!-- The above model elements should include the uuid String field? - Jim -->
 
-The root-level element is `model-hints`. In this are all your model entities
-represented by `model` elements. Each `model` element must have a `name`
-attribute specifying the fully-qualified model class name. Each model has
-`field` elements representing its model entity's columns. Lastly, each
+The root-level element is `model-hints`. All your model entities are represented
+by `model` sub-elements of the `model-hints` element. Each `model` element must
+have a `name` attribute specifying the fully-qualified model class name. Each
+model has `field` elements representing its model entity's columns. Lastly, each
 `field` element must have a name and a type. Each `field` element's names and
 types correspond to the names and types specified for each entity's columns in
 your project's `service.xml` file. Service Builder generates all these elements
@@ -1445,7 +1446,7 @@ Name                | Value Type | Description | Default
 `max-length`        | integer | sets the maximum column size for SQL file generation | 75
 `month-nullable`    | boolean | allows the month to be null in a date field | false
 `secret`            | boolean | sets whether hide the characters input by the user | false
-`show-time`         | boolean | sets whether to show inlcude time along with the date | true
+`show-time`         | boolean | sets whether to show include time along with the date | true
 `upper-case`        | boolean | converts all characters to upper case | false
 `year-nullable`     | boolean | allows the year to be null in a date field | false
 `year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
@@ -1521,8 +1522,9 @@ Define the following hint collection just below the `model-hints` root element
 in the `portlet-model-hints.xml` file:
 
 	<hint-collection name="DESCRIPTION-TEXTAREA">
-		<hint name="editor">true</hint>
-		<hint name="max-length">250</hint>
+		<hint name="display-height">105</hint>
+		<hint name="display-width">500</hint>
+		<hint name="max-length">4000</hint>
 	</hint-collection>
 
 Then replace the event and location description fields' entities with a
@@ -1532,6 +1534,7 @@ reference to the hint collection, as demonstrated below:
 		<hint-collection name="DESCRIPTION-TEXTAREA" />
 	</field>
 
+<!-- The following example is not working on Liferay 6.2 GA1 - JR
 The last hint is one that makes sure the user has no option to select a year
 from the past. Replace the event entity's date field with the following date
 field as specified below:
@@ -1540,11 +1543,17 @@ field as specified below:
 		<hint name="year-range-past">false</hint>
 	</field>
 
+-->
+
 Great! Now rebuild your service using Service Builder, redeploy your portlet
-project, and add or edit an event using the portlet. The following figure shows
-the portlet displaying the input fields as we specified.
-	
-![Figure 4.9: Customizing string input fields to use spacious text areas and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+project, and add or edit an event using the portlet. Check that the size of the
+description text area has changed as specified in your model hints.
+
+<!-- We don't actually use the <hint name="editor">true</hint> for the
+description textarea - JR
+
+![Figure 4.9: Customizing string input fields to use spacious text areas is just one example of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+-->
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
 not only can you influence how your model's input fields are displayed but also
@@ -1779,20 +1788,8 @@ After you've tested your SQL, you must specify it in a particular file for
 Liferay to access it. Liferay's `CustomSQLUtil` class looks up custom SQL from a
 file called `default.xml` in your portlet project's
 `docroot/WEB-INF/src/custom-sql/` folder. You must create the `custom-sql`
-folder and create the `default.xml` file in that `custom-sql` folder. 
-
-Here's the custom SQL that returns an event location's name, along with the
-event's name and event's description, for the Event Listing portlet: 
-
-    SELECT
-        COUNT(*) AS COUNT_VALUE
-    FROM
-        Inventory_PurchaseOrder
-    WHERE
-        (Inventory_PurchaseOrder.partId = ?) AND
-        (Inventory_PurchaseOrder.closed = 0)
-
-The `default.xml` file must adhere to the following format: 
+folder and create the `default.xml` file in that `custom-sql` folder. The
+`default.xml` file must adhere to the following format: 
 
     <custom-sql>
         <sql id="[fully-qualified class name + method]">

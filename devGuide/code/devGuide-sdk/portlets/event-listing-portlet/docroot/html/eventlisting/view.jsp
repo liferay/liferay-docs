@@ -55,7 +55,7 @@ This is the <b>Event Listing Portlet</b> portlet in View mode.
 		/>
 
 		<%
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
 		%>
 
 		<liferay-ui:search-container-column-text
