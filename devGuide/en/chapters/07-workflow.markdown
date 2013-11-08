@@ -1013,7 +1013,7 @@ customizable, rather than following the same format for every recipient. the
 context variables you declare in your notifications refer to your liferay
 instance and the values it holds for your declarations. 
 
-below you'll see tables listing numerous context variables and service context
+Below you'll see tables listing numerous context variables and service context
 content. the context variables are the first table, followed by the service
 context content for web content, blog entries, and message board messages. we've
 separated service context content from the workflow context variables because
@@ -1022,7 +1022,7 @@ note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
-***workflow* context variables**
+***Workflow* Context Variables**
 
  key | type | description |
 ---- | ---- | ----------- |
@@ -1037,7 +1037,7 @@ workflow activity.
  `userid` | &nbsp;&nbsp;java.lang.string | primary key of the assigned user |
 ---
 
-***web content* service context variables - obtain via key servicecontext**
+***Web Content* Service Context Variables - obtain via key servicecontext**
 
  key | type | description |
 ---- | ---- | ----------- |
