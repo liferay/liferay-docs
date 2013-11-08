@@ -612,13 +612,6 @@ and gadgets.
 
 ### Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets-liferay-portal-6-2-dev-guide-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
-to reflect the new features in Liferay 6.2.
-
----
-
 For this section, we will continue implementing the *Google Map* gadget on your
 site. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
@@ -634,13 +627,14 @@ gadgets and will be supported on Liferay.
 
 ---
 
-As a demonstration, we will send messages from a *Directory* portlet to the
-*Google Map* gadget. For each user listed in the *Directory* portlet, we will
-create a *Show in Google Maps* link that, when selected, displays the location
-of the user's address in the *Google Map* gadget.
+As a demonstration, we will send messages from a custom *Directory* portlet to
+the *Google Map* gadget. For each user listed in the *Directory* portlet, we
+will create a *Show in Google Maps* link that, when selected, displays the
+location of the user's address in the *Google Map* gadget.
 
-This portlet is much like Liferay's *Directory* portlet. The first thing we need
-to do is edit the portlet's `address.jsp` file to configure a Google Maps link. 
+This portlet is much like Liferay's *Portal Directory* portlet. The first thing
+we need to do is edit the portlet's `address.jsp` file to configure a Google
+Maps link.
 
 As you know from explanations given earlier, the *Google Map* gadget is
 distinguished as a subscriber. Therefore, the *Directory* portlet needs to take
@@ -663,7 +657,7 @@ channel declaration. This distinguishes who the messages are intended for when
 they are broadcast across a channel. Notice that you don't need to change
 anything for your *Google Map* gadget, since it's already subscribed to that
 channel. You only needed to define the *Directory* portlet as a publisher to
-that channel. 
+that channel.
 
 ---
 
@@ -678,7 +672,7 @@ After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the
 interaction would look like:
 
-![Figure 8.7: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
+![Figure 8.7: The modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
