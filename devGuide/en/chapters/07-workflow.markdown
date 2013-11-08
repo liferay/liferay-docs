@@ -734,7 +734,6 @@ block of XML looks like, including the Java in our Goovy script:
 
     <condition>
         <name>Resolution</name>
-        <metadata><![CDATA[{"transitions":{"EndNode":{"bendpoints":[[33,707]]},"Yes":{"bendpoints":[]},"No":{"bendpoints":[[33,707]]},"Developer":{"bendpoints":[]}},"xy":[540,75]}]]></metadata>
         <script><![CDATA[import com.liferay.portal.kernel.util.GetterUtil;
             import com.liferay.portal.kernel.workflow.WorkflowConstants;
             import com.liferay.portal.service.ServiceContext;
@@ -755,7 +754,7 @@ block of XML looks like, including the Java in our Goovy script:
             }
             else {
                 returnValue = "Yes"
-    }]]></script>
+        }]]></script>
         <script-language>groovy</script-language>
         <transitions>
             <transition>
