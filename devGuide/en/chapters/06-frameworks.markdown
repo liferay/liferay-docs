@@ -32,42 +32,6 @@ perform various common tasks, such has handling permissions, letting users
 enter comments, categories, and tags, and other common tasks that Liferay
 doesn't make you have to write yourself. 
 
-<!-- We'll rename this chapter eventually. Most of this content was from the
-former "Liferay APIs" and "Liferay Frameworks" chapters - Jim --> 
-
-<!-- Consider incorporating this API content somewhere else - Jim
-
-An *Application Programing Interface* (API) is a protocol that, when invoked,
-performs an action or set of actions. You can invoke an API from your own code
-directly through a Java invocation, or through web services. This chapter
-provides an overview of several essential Liferay APIs available to you for use
-in developing your Liferay Portal. 
-
-Liferay comes with a host of APIs that provide powerful portal and portlet
-services. The following table shows you the entities for which services are
-available: 
-
-Portal Services      | Portlet Services              |
---------------------- | ----------------------------- |
- *User*               | *Documents and Media Library* |
- *Organization*       | *Blogs*                       |
- *UserGroup*          | *Wikis*                       |
- *Company*            | *Assets*                      |
- *Role*               | *Social Activity*             |
- *Permission*         |                               |
- *ResourcePermission* |                               |
- *Layout*             |                               |
----
-
-The ability to call Liferay APIs with a Java method or web service invocation
-gives you the flexibility to implement client code in Java or any language
-(even a scripting language such as PHP) that supports web service invocations.
-The APIs can be called from within portlet or non-portlet code. You can make
-calls to the APIs *locally* from within the portal or *remotely* outside of the
-portal's *Java virtual machine* (*JVM*).
-
--->
-
 This chapter covers the following topics: 
 
 - ServiceContext
@@ -88,12 +52,8 @@ The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
 different methods with different sets of optional parameters into a single,
 easier-to-use method. The class also aggregates information necessary for
-transversal features, including permissioning, tagging, categorization, and
-more. 
-
-<!-- What's a transversal feature? I don't understand that term, and I'm
-thinking we shouldn't just use it like this without explaining what it is. -Rich
--->
+features used throughout Liferay's core portlets, such as permissioning,
+tagging, categorization, and more. 
 
 In this section we'll look at the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data.
@@ -167,11 +127,11 @@ parameter to a service API using Java:
     ...
     BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
-If you invoke the service from a servlet, a Struts action or any other front
+If you invoke the service from a servlet, a Struts action or any other front-end
 end class which has access to the `PortletRequest`, use one of the
 `ServiceContextFactory.getInstance(...)` methods. These methods create the
-`ServiceContext` object and automatically fill it with all necessary values.
-The above example looks different if you invoke the service from a servlet: 
+`ServiceContext` object and automatically fill it with all necessary values. The
+above example looks different if you invoke the service from a servlet: 
 
     ServiceContext serviceContext =
         ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
@@ -2252,19 +2212,21 @@ content management. How will content adapt to all devices with different
 capabilities? How can your grandma's gnarly tablet and cousin's awesome new
 mobile phone request the same information from your portal?
 
-The Device Detection API detects the capabilities of any device making a
-request to your portal. It can also determine what mobile device or operating
-system was used to make a request, and then follows rules to make Liferay render
-pages based on the device. To use this feature, you first need to install the
-*Device Recognition Provider* app from Liferay Marketplace. Find more
-information on the app by following one of these links, depending on whether you
-use Liferay CE or EE: [Device Recognition CE](http://www.liferay.com/marketplace/-/mp/application/15193341)
-or [Device Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
+The Device Detection API detects the capabilities of any device making a request
+to your portal. It can also determine what mobile device or operating system was
+used to make a request, and then follows rules to make Liferay render pages
+based on the device. To use this feature, you first need to install the *Device
+Recognition Provider* app from Liferay Marketplace. Find more information on
+[Device Recognition Provider CE
+app](http://www.liferay.com/marketplace/-/mp/application/15193341) and [Device
+Recognition Provider
+EE](http://www.liferay.com/marketplace/-/mp/application/15186132) at Liferay
+Marketplace. 
 
 The Device Recognition plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
 capabilities of your device. Visit the WURFL website for more information at
-[http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
+[http://wurfl.sourceforge.net](http://wurfl.sourceforge.net).
 
 You can create your own plugin to use your device's database. Let's look at
 some simple uses of the Device Detection API and talk about its
@@ -2277,7 +2239,8 @@ object `Device` from the `themeDisplay` object like this:
 
     Device device = themeDisplay.getDevice();
 
-You can view the API in the [Device Javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+You can view the `Device` API at
+[http://docs.liferay.com/portal/6.2/javadocs](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 
@@ -2295,9 +2258,9 @@ above for assistance.  Let's look at some device capabilities next.
 
 Most of the capabilities of a device can be detected, depending on the device
 detection implementation you're using. The Device Recognition plugin's device
-database (WURFL) has a list of capabilities
-[here](http://www.scientiamobile.com/wurflCapability/tree). For example, you
-can obtain the capability of a brand name with this code:
+database (WURFL) has a list of capabilities, described at
+[http://www.scientiamobile.com/wurflCapability/tree](http://www.scientiamobile.com/wurflCapability/tree).
+For example, you can obtain the capability of a brand name with this code:
 
     String brand = device.getCapability("brand_name");
 
