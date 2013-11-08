@@ -727,11 +727,10 @@ Add the following to the script's imports to finish things up:
 
 	import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
-Now the script accurately implements the condition logic we want. As a reminder,
-all of the code was injected into our workflow's XML file within the
-`<condition/>` element that represents our condition node. 
-
-<!-- TODO Give the XML for the condition node. - Jim -->
+Now the script accurately implements the condition logic we want. As a
+reminder, all of the code was injected into our workflow's XML file within the
+`<condition/>` element that represents our condition node. Here's what this
+block of XML looks like, including the Java in our Goovy script: 
 
     <condition>
         <name>Resolution</name>
@@ -958,35 +957,34 @@ ever. FreeMarker comes bundled with Developer Studio so it's obviously the
 simplest solution, but you can create Velocity templates just as easy by using
 the Velocity editor you installed. 
 
-Here's what the XML source looks like for the Poject Management task we created:
-
-<!--Should I include the Freemarker? We just covered it in the last code block -->
+Here's what the XML source looks like (with the embedded FreeMarker template)
+for the Poject Management task we created:
 
     <task>
-        <name>Project Management</name>
+        <name>project management</name>
         <actions>
             <notification>
                 <name>ticket process email</name>
                 <template>/* specify task notification template */
-                    &lt;#assign comments = taskComments!&quot;&quot;&gt;
-                    &lt;#assign portalURL = serviceContext.portalURL!&quot;&quot;&gt;
-                    &lt;#assign wTasksURL = portalURL+&quot;/group/control_panel/manage?p_p_id=153&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;doAsGroupId=&quot;+groupId+&quot;&amp;refererPlid=&quot;&gt;
+                    &lt;#assign comments = taskcomments!&quot;&quot;&gt;
+                    &lt;#assign portalurl = servicecontext.portalurl!&quot;&quot;&gt;
+                    &lt;#assign wtasksurl = portalurl+&quot;/group/control_panel/manage?p_p_id=153&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;doasgroupid=&quot;+groupid+&quot;&amp;refererplid=&quot;&gt;
                     
                     &lt;!-- email body --&gt;
-                    &lt;p&gt; There is a new submission of ${entryType} waiting for review in the workflow. &lt;/p&gt;
+                    &lt;p&gt; there is a new submission of ${entrytype} waiting for review in the workflow. &lt;/p&gt;
                     
                     &lt;!-- personal message to assignee --&gt;
-                    &lt;p&gt; Please review the code waiting for you in your workflow tasks.
-                    &lt;#if comments != &quot;&quot; &gt; &lt;br/&gt; Assignment comment says: &lt;strong&gt;${comments}&lt;/strong&gt; &lt;/#if&gt;
+                    &lt;p&gt; please review the code waiting for you in your workflow tasks.
+                    &lt;#if comments != &quot;&quot; &gt; &lt;br/&gt; assignment comment says: &lt;strong&gt;${comments}&lt;/strong&gt; &lt;/#if&gt;
                     &lt;/p&gt;
-                    &lt;p&gt; &lt;a href=&quot;${wTasksURL}&quot;&gt;Click here&lt;/a&gt; to see workflow tasks assigned to you. &lt;/p&gt;
+                    &lt;p&gt; &lt;a href=&quot;${wtasksurl}&quot;&gt;click here&lt;/a&gt; to see workflow tasks assigned to you. &lt;/p&gt;
                     
                     &lt;!-- signature --&gt;
-                    &lt;p&gt;Sincerely,&lt;br /&gt;&lt;strong&gt;Liferay Portal Workflow&lt;/strong&gt;&lt;/p&gt;
+                    &lt;p&gt;sincerely,&lt;br /&gt;&lt;strong&gt;liferay portal workflow&lt;/strong&gt;&lt;/p&gt;
                 </template>
                 <template-language>freemarker</template-language>
                 <notification-type>email</notification-type>
-                <execution-type>onEntry</execution-type>
+                <execution-type>onentry</execution-type>
             </notification>
         </actions>
         <assignments>
@@ -996,63 +994,63 @@ Here's what the XML source looks like for the Poject Management task we created:
         </assignments>
         <transitions>
             <transition>
-                <name>Completed</name>
-                <target>EndNode</target>
+                <name>completed</name>
+                <target>endnode</target>
             </transition>
         </transitions>
     </task>
 
-In the next section you'll see a list of workflow and service context content
+in the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-### Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
+### workflow context and service context variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
 
-A context variable provides a uniform variable to insert into your templates and
-scripts. When executed, a context variable is automatically deleted and replaced
-with the value pertaining to that key. When you create notifications for a
-workflow, assign Liferay Portal context variables for a cleaner and more
-efficient process. With context variables, your notifications become more
-customizable, rather than following the same format for every recipient. The
-context variables you declare in your notifications refer to your Liferay
+a context variable provides a uniform variable to insert into your templates and
+scripts. when executed, a context variable is automatically deleted and replaced
+with the value pertaining to that key. when you create notifications for a
+workflow, assign liferay portal context variables for a cleaner and more
+efficient process. with context variables, your notifications become more
+customizable, rather than following the same format for every recipient. the
+context variables you declare in your notifications refer to your liferay
 instance and the values it holds for your declarations. 
 
-Below you'll see tables listing numerous context variables and service context
-content. The context variables are the first table, followed by the service
-context content for web content, blog entries, and message board messages. We've
+below you'll see tables listing numerous context variables and service context
+content. the context variables are the first table, followed by the service
+context content for web content, blog entries, and message board messages. we've
 separated service context content from the workflow context variables because
-service context keys depend on asset type, while context variables don't. Also,
+service context keys depend on asset type, while context variables don't. also,
 note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
-***Workflow* Context Variables**
+***workflow* context variables**
 
- Key | Type | Description |
+ key | type | description |
 ---- | ---- | ----------- |
- `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
- `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
- `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
- `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
- `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
- `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
- `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
- `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
- `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
+ `companyid` | &nbsp;&nbsp;java.lang.string&nbsp;&nbsp;&nbsp; | primary key of the company |          
+ `entryclassname` | &nbsp;&nbsp;java.lang.string | class name for entry used by the task (e.g. com.liferay.portlet.journal.model.journalarticle) |
+ `entryclasspk` | &nbsp;&nbsp;java.lang.string | primary key of the entry class |
+ `entrytype` | &nbsp;&nbsp;java.lang.string | type of entry used by the task (e.g. web content, blog entry, mb message) |
+ `groupid` | &nbsp;&nbsp;java.lang.string | primary key of the assigned group |
+ `taskcomments*` | &nbsp;&nbsp;java.lang.string | workflow comments assigned to the task |
+ `taskname*` | &nbsp;&nbsp;java.lang.string | workflow task that activates the notification (e.g. review) |
+ `transitionname*` | &nbsp;&nbsp;java.lang.string | name of transition pointing to the task (e.g. approve) |
+ `userid` | &nbsp;&nbsp;java.lang.string | primary key of the assigned user |
 ---
 
-***Web Content* Service Context Variables - obtain via key serviceContext**
+***web content* service context variables - obtain via key servicecontext**
 
- Key | Type | Description |
+ key | type | description |
 ---- | ---- | ----------- |
- `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
- `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
- `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
- `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
- `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
- `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
- `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
- `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
- `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
+ `articleid` | &nbsp;&nbsp;java.lang.string&nbsp;&nbsp;&nbsp; | primary key of the web content |
+ `articleurl` | &nbsp;&nbsp;java.lang.string | link to the web content in maximized mode |
+ `assetlinkentryids` | &nbsp;&nbsp;java.lang.string | primary keys of the asset entries linked to the web content |
+ `assetlinkssearchcontainerprimarykeys` | &nbsp;&nbsp;java.lang.string | primary keys of the asset link search container |
+ `assettagnames` | &nbsp;&nbsp;java.lang.string | tag names applied the asset |
+ `autoarticleid` | &nbsp;&nbsp;java.lang.string | boolean variable indicating whether an article id is generated (e.g. false) |
+ `classnameid` | &nbsp;&nbsp;java.lang.string | primary key of the class name used by the task |
+ `classpk` | &nbsp;&nbsp;java.lang.string | primary key of the model entity |
+ `content` | &nbsp;&nbsp;java.lang.string | content of the web content |
  `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
  `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
  `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
