@@ -1337,14 +1337,18 @@ file.
 Model hints let you to configure how the AlloyUI tag library, `aui`, shows
 model fields. As Liferay Portal displays form fields in your application, it
 first checks the model hints you specified and customizes the form's input
-fields based on these hints. For example, if you want to limit users to
-selecting dates in the future, you'd set a `year-range-past` hint to `false` for
-that field in your
+fields based on these hints.
+
+<!-- The following example is not working on Liferay 6.2 GA1 - JR
+For example, if you want to limit users to selecting dates in the future, you'd
+set a `year-range-past` hint to `false` for that field in your
 `portlet-model-hints.xml` file. It would look like the following tag:
 
     <field name="date" type="Date">
         <hint name="year-range-past">false</hint>
     </field>
+
+-->
 
 Let's look at the model hints file that Service Builder generated for the Event
 Listing portlet. Examine your project's
@@ -1360,8 +1364,8 @@ following along in the previous sections, Service Builder created the
             <field name="companyId" type="long" />
             <field name="groupId" type="long" />
             <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
+            <field name="createDate" type="Date" />
+            <field name="modifiedDate" type="Date" />
             <field name="name" type="String" />
             <field name="description" type="String" />
             <field name="date" type="Date />
@@ -1372,8 +1376,8 @@ following along in the previous sections, Service Builder created the
             <field name="companyId" type="long" />
             <field name="groupId" type="long" />
             <field name="userId" type="long" />
-            <field name="createDate" type="long" />
-            <field name="modifiedDate" type="long" />
+            <field name="createDate" type="Date" />
+            <field name="modifiedDate" type="Date" />
             <field name="name" type="String" />
             <field name="description" type="String" />
             <field name="streetAddress" type="String" />
@@ -1518,8 +1522,9 @@ Define the following hint collection just below the `model-hints` root element
 in the `portlet-model-hints.xml` file:
 
 	<hint-collection name="DESCRIPTION-TEXTAREA">
-		<hint name="editor">true</hint>
-		<hint name="max-length">250</hint>
+		<hint name="display-height">105</hint>
+		<hint name="display-width">500</hint>
+		<hint name="max-length">4000</hint>
 	</hint-collection>
 
 Then replace the event and location description fields' entities with a
@@ -1529,6 +1534,7 @@ reference to the hint collection, as demonstrated below:
 		<hint-collection name="DESCRIPTION-TEXTAREA" />
 	</field>
 
+<!-- The following example is not working on Liferay 6.2 GA1 - JR
 The last hint is one that makes sure the user has no option to select a year
 from the past. Replace the event entity's date field with the following date
 field as specified below:
@@ -1537,11 +1543,13 @@ field as specified below:
 		<hint name="year-range-past">false</hint>
 	</field>
 
+-->
+
 Great! Now rebuild your service using Service Builder, redeploy your portlet
 project, and add or edit an event using the portlet. The following figure shows
 the portlet displaying the input fields as we specified.
 	
-![Figure 4.9: Customizing string input fields to use spacious text areas and customizing date fields to filter-out past years are just a couple examples of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+![Figure 4.9: Customizing string input fields to use spacious text areas is just one example of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
 not only can you influence how your model's input fields are displayed but also

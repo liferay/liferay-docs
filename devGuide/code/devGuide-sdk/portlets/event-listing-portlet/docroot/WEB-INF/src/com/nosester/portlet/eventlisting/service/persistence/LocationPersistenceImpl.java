@@ -935,6 +935,10 @@ public class LocationPersistenceImpl extends BasePersistenceImpl<Location>
 
 	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "location.groupId = ?";
 
+	public LocationPersistenceImpl() {
+		setModelClass(Location.class);
+	}
+
 	/**
 	 * Caches the location in the entity cache if it is enabled.
 	 *
