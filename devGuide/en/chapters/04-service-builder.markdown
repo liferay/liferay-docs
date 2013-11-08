@@ -1546,10 +1546,14 @@ field as specified below:
 -->
 
 Great! Now rebuild your service using Service Builder, redeploy your portlet
-project, and add or edit an event using the portlet. The following figure shows
-the portlet displaying the input fields as we specified.
-	
+project, and add or edit an event using the portlet. Check that the size of the
+description text area has changed as specified in your model hints.
+
+<!-- We don't actually use the <hint name="editor">true</hint> for the
+description textarea - JR
+
 ![Figure 4.9: Customizing string input fields to use spacious text areas is just one example of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+-->
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
 not only can you influence how your model's input fields are displayed but also
