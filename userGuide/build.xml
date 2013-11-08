@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="adminGuide Conversion" default="echo-props" basedir=".">
+<project name="Liferay User Guide" default="echo-props" basedir=".">
 
 	<import file="../build-common.xml" />
 
