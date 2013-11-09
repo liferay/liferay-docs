@@ -660,11 +660,10 @@ existing projects into Liferay IDE.
 
 ### Importing Existing Liferay Projects from a Plugins SDK [](id=importing-existing-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
 
-Do you want to import a Liferay project, or multiple Liferay projects, from a
-Liferay Plugins SDK into your Liferay IDE workspace? Liferay IDE makes it easy
-to import them. Don't worry if the projects already contain `.project` or
-`.classpath` files, the process we'll show you will still import them into your
-workspace. 
+Do you want to import one or more Liferay projectsinto your Liferay IDE
+workspace from a Liferay Plugins SDK? Liferay IDE makes it easy.  Don't worry
+if the projects already contain `.project` or `.classpath` files, the process
+we'll show you will still import them into your workspace. 
 
 ---
 
@@ -676,8 +675,8 @@ workspace.
 ---
 
 First, let's look at the steps for importing a single Liferay project from a
-Plugins SDK project into your workspace. For these steps, we'll assume you've
-yet to configure your Plugins SDK in Liferay IDE: 
+Plugins SDK project into your workspace. For these steps, we'll assume you
+haven't yet configured your Plugins SDK in Liferay IDE: 
 
 1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
     *Liferay* &rarr; *Liferay Project from Existing Source*. 
@@ -699,9 +698,9 @@ yet to configure your Plugins SDK in Liferay IDE:
     with an error. 
 
 4.  Select the *Liferay target runtime* for the plugin project. If you don't
-    have a Liferay Portal Runtime, use the *New...* button to create one now.
-    For instructions on setting up a runtime environment, see the section
-    *Liferay Portal Runtime and Server Setup*, found earlier in this chapter. 
+    have a Liferay Portal Runtime, use the *New...* button to create one now.  For
+    more detailed instructions, see the section *Liferay Portal Runtime and Server
+    Setup*, found earlier in this chapter. 
 
 5.  Click *Finish* to complete the import. 
 
@@ -710,7 +709,7 @@ successfully configured as a Liferay IDE project by using the process outlined
 in the section *Verifying Successful Project Import*, found later in this
 chapter. 
 
-Next,  let's import multiple projects from a Liferay Plugins SDK you've already
+Next, let's import multiple projects from a Liferay Plugins SDK you've already
 set up in Liferay IDE. You can use these steps: 
 
 1.  In Liferay IDE, go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr;
@@ -750,9 +749,10 @@ different scenario; converting existing Eclipse projects into Liferay projects.
 ### Converting Existing Eclipse Projects into Liferay IDE Projects [](id=importing-existing-eclipse-projects-into-liferay-portal-6-2-dev-guide-02-en)
 
 The steps outlined in the previous section are for importing Liferay projects
-that aren't already in your Eclipse workspace. If you have a non-Liferay project
-in your Eclipse workspace (i.e., you can see it in Eclipse's project explorer)
-that you'd like to convert to a Liferay project, follow the steps below. 
+that aren't already in your Eclipse workspace. You can also import a
+non-Liferay project in your Eclipse workspace (i.e., you can see it in
+Eclipse's project explorer) and convert it to a Liferay project. Just follow
+the steps below. 
 
 1.  Move the project into a Liferay Plugins SDK if it is not already in one. 
 
@@ -1686,18 +1686,18 @@ latest Liferay CE Maven artifacts from source, follow these steps:
         app.server.parent.dir=[your application server's parent directory]
         app.server.[type].dir=[your application server's directory]
 
-    For example, if you're using Liferay with Apache Tomcat 7.0.42 and your're
-    bundling Tomcat in your `c:/bundles` folder, you'd specify the following
+    For example, if you're using Liferay with Apache Tomcat 7.0.42 bundled
+    in your `c:/bundles` folder, you'd specify the following
     properties:
 
         app.server.type=tomcat
         app.server.parent.dir=c:/liferay-portal-6.2
         app.server.tomcat.dir=${app.server.parent.dir}/tomcat-7.0.42
 
-    Of course, specify the values appropriate to your application server and
-    your bundle/parent directory. Note that your `app.server.[type].dir`
-    directory doesn't need to exist yet; it is created by invoking an Ant target
-    in the next step. 
+    Of course, you should specify the values appropriate to your application
+    server and your bundle/parent directory. Note that your `app.server.[type].dir`
+    directory doesn't need to exist yet; it is created by invoking an Ant target in
+    the next step. 
 
 3.  Run `ant -f build-dist.xml unzip-[app server name]` to unzip a copy of your
     preferred application server to the specified directory.
@@ -1807,10 +1807,10 @@ Here's how you do it:
     Liferay Maven artifacts. If you haven't, see the *Managing Maven
     Repositories* section for instructions. 
 
-2.  Make sure the repository you're going to use to hold your Liferay artifacts
-    is specified as a server in Maven's `settings.xml` file. If it isn't
-    already, see the *Configuring Local Maven Settings* section for instructions
-    on adding an entry for the server. 
+2.  Make sure the repository that will hold your Liferay artifacts is specified
+    as a server in Maven's `settings.xml` file. If it isn't, see the *Configuring
+    Local Maven Settings* section for instructions on adding an entry for the
+    server. 
 
     Here's an example setting for a repository server named *liferay-releases*: 
 
@@ -1831,9 +1831,8 @@ Here's how you do it:
     yourself, they'll be in a time-stamped directory in your `liferay-portal`
     repository directory. 
 
-4.  Create a `build.[user name].properties` file (e.g.,
-    `build.jbloggs.properties`) in this directory. In the new properties file,
-    specify values for the properties `lp.maven.repository.id` and
+4.  Create a `build.[user name].properties` file in this directory. In the new
+    properties file, specify values for the properties `lp.maven.repository.id` and
     `lp.maven.repository.url`. These refer to your repository's ID and URL,
     respectively. 
 
@@ -1854,7 +1853,7 @@ Here's how you do it:
     repository server.
 
 To verify your artifacts are deployed, navigate to the *Repositories* page of
-your Nexus OSS server and select your repository. Notice a window appears below
+your Nexus OSS server and select your repository. A window appears below
 displaying the Liferay artifacts now deployed to your repository.
 
 ![Figure 2.21: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
@@ -1900,19 +1899,19 @@ artifacts. For more information on project inheritance, see Maven's
 documentation at
 [http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance). 
 
-We'll create our parent project and then specify the general settings we'll
-need to build your plugins for Liferay. The parent project is similar to the
-project root of the Liferay Plugins SDK. Its `pom.xml` file can specify
-information to be used by any plugin projects that refer to it. You can always
-specify information in each plugin's POM, but it's more convenient to use the
-parent project's POM for sharing common information. 
+We'll create our parent project and then specify the general settings needed to
+build your plugins for Liferay. The parent project is similar to the project
+root of the Liferay Plugins SDK. Its `pom.xml` file can specify information to
+be used by any plugin projects that refer to it. You can always specify
+information in each plugin's POM, but it's more convenient to use the parent
+project's POM for sharing common information. 
 
 Let's create a parent project named `sample-parent-project`. Start by creating a
 new directory for your parent project. For this example, we'll name the
 directory `sample-parent-project`. You can place the directory anywhere on your
 file system. 
 
-Then, create a POM file named `pom.xml` in your `sample-parent-project`
+Next, create a POM file named `pom.xml` in your `sample-parent-project`
 directory. Insert the following XML code into the POM:
 
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -2008,21 +2007,23 @@ directory. Insert the following XML code into the POM:
 
 	</project>
 
-The POM starts by specifing the model version that Maven supports, your
+The POM starts by specifying the model version that Maven supports, your
 project's [Maven
-coordinates](http://maven.apache.org/pom.html#Maven_Coordinates), your project's
-name, and your company's URL. 
+coordinates](http://maven.apache.org/pom.html#Maven_Coordinates), your
+project's name, and your company's URL. 
 
-Then, the POM specifies some Liferay property elements. Your plugins require
-these key properties in order to be deployed to your Liferay portal.
-Conveniently you can specify these values in a parent project for all of your
-plugin projects to leverage. Note, a plugin project can override any of these
-properties by specifying that property explicitly in the plugin project's POM. 
+Next, the POM specifies some key Liferay property elements that your plugins
+require in order to be deployed to your Liferay portal. You can conveniently
+specify these values in a parent project for all of your plugin projects to
+leverage. A plugin project can override any of its parent's properties by
+specifying the desired property explicitly in the child plugin project's POM. 
+
+<!--Is the correct term not child project, but module?-->
 
 Replace each Liferay property value (e.g., replace
 `${liferay.app.server.deploy.dir}` and other dereferenced `liferay.*`
 properties) with the appropriate value based on your Liferay environment. We've
-described these key Liferay related properties here: 
+described these key properties here: 
 
 - `liferay.app.server.deploy.dir`: Your app server's deployment directory. 
 - `liferay.app.server.lib.global.dir`: Your app server's global library
@@ -2036,8 +2037,8 @@ described these key Liferay related properties here:
   are using. 
 - `liferay.version`: The version of Liferay you are using. 
 
-Here's an example of specifying these *properties* for Liferay bundled with
-Apache Tomcat in a directory `C:\liferay-portal-6.2`: 
+Here's an example where we've specified these *properties* for Liferay bundled
+with Apache Tomcat in a directory `C:\liferay-portal-6.2`: 
 
 	<properties>
 		<liferay.app.server.deploy.dir>
@@ -2066,7 +2067,7 @@ Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 	</properties>
 
 
-The Liferay plugins you develop also depend on several Lifeary artifacts. We've
+The Liferay plugins you develop depend on several Lifeary artifacts. We've
 included them in individual `dependency` elements within the POM's
 `dependencies` element. All of your parent project's modules (i.e., projects
 that refer to this parent) can leverage these dependencies. 
@@ -2080,9 +2081,9 @@ through inheritance.
 
 ---
  
-Now that you've specified your project's general information, your Liferay
+Now that you specified your project's general information, your Liferay
 environment properties, and the Liferay artifacts on which Liferay plugin
-projects depend; let's create a plugin project using Liferay's archetypes. 
+projects depend, let's create a plugin project using Liferay's archetypes. 
 
 ### Creating Liferay Plugins with Maven [](id=creating-liferay-plugins-with-maven-liferay-portal-6-2-dev-guide-02-en)
 
@@ -2249,13 +2250,13 @@ to Liferay Portal using Maven.
 With Maven it's easy to deploy plugins to a Liferay Portal instance. Just follow
 these steps: 
 
-1.  Make sure you've either specified the Liferay specific properties (e.g.,
-    those properties starting with `liferay.`) your plugin uses. See this chapter's
+1.  Make sure you've specified the Liferay specific properties (e.g., those
+    properties starting with `liferay.`) your plugin uses. See this chapter's
     section *Using a Parent Plugin Project* for descriptions of these Liferay
     properties. 
 
-    Here's an example of specifying these *properties* for Liferay bundled with
-	Apache Tomcat in a directory `C:\liferay-portal-6.2`:
+    Here's an example where we specified these *properties* for Liferay bundled
+    with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 
 		<properties>
 			<liferay.app.server.deploy.dir>
@@ -2524,7 +2525,7 @@ directory structure:
                     - liferay-plugin-package.properties
                     - web.xml
                 - css/ \* Optionally add to hold CSS customizations
-                - images/ \* Optionally add to hold customn images
+                - images/ \* Optionally add to hold custon images
                 - js/ \* Optionally add to hold JavaScript customizations
                 - templates/ \* Optionally add to hold template customizations
 
