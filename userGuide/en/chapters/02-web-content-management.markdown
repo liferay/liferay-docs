@@ -210,7 +210,7 @@ chapters 14, 16, and 17 of this guide.
 
 ---
 
- ![Tip](../../images/tip.png) **Tip:** Prior to Liferay 6.2, the Control Panel
+ ![Tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.2, the Control Panel
  included interfaces both for site administration and for portal administration.
  In Liferay 6.2, these interfaces have been separated. If you're signed in as an
  administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
@@ -264,13 +264,13 @@ organization site by navigating to its *Site Settings* menu.
 
 ---
 
- [Tip](../../images/tip.png) It's possible for site memberships to be handled
- automatically by a membership policy. The membership policy can check various
- pieces of information from each user, such as their first names, last names,
- birthdays, job titles, organizations, and user groups. Using this information,
- the site membership policy can automatically assign members to the site. If
- your site will implement a membership policy, your site administrators can
- disallow manual membership management for their site. When the Allow Manual
+ ![Tip](../../images/01-tip.png) It's possible for site memberships to be
+ handled automatically by a membership policy. The membership policy can check
+ various pieces of information from each user, such as their first names, last
+ names, birthdays, job titles, organizations, and user groups. Using this
+ information, the site membership policy can automatically assign members to the
+ site. If your site will implement a membership policy, your site administrators
+ can disallow manual membership management for their site. When the Allow Manual
  Membership Management option is disabled, the *Users* section of *Site
  Administration* (Site Memberships and Site Teams) is hidden, even from
  administrators.
@@ -926,12 +926,12 @@ For details about Liferay's social collaboration suite, see chapter 10.
 
 ---
 
-![Tip](../../images/01-tip.png) **Note:** The *Web Content List* and *Recent
-Content* plugins were deprecated in Liferay 6.2 and are disabled by default. To
-activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
-Configuration* and scroll through the list of portlets until you find the
-plugin. Select the plugins name and click the *Active* checkbox. Then click
-*Save*.
+ ![Tip](../../images/01-tip.png) **Note:** The *Web Content List* and *Recent
+ Content* plugins were deprecated in Liferay 6.2 and are disabled by default. To
+ activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
+ Configuration* and scroll through the list of portlets until you find the
+ plugin. Select the plugins name and click the *Active* checkbox. Then click
+ *Save*.
 
 ---
 
