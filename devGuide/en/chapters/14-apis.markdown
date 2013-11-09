@@ -49,4 +49,30 @@ Example,
 
 -->
 
+No matter which Liferay APIs you're using, you'll need to understand Liferay's
+deprecation policy. That way you'll know when methods from our API's are
+deprecated, and you can make any necessary changes. We'll describe the
+deprecation policy next. 
 
+## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-liferay-portal-6-2-dev-guide-02-en)
+
+Methods in Liferay's APIs are deprecated when they're no longer called by
+Liferay internally. Method deprecation occurs during major and minor releases of
+Liferay. A change in the first or second digits of consecutive Liferay releases
+indicates a major or minor release, respectively. For example, the release of
+Liferay Portal 6.2.0 after 5.2.0 was a major release; whereas the release of
+6.2.0 after 6.1.30 was a minor release. Major and minor releases can have API
+deprecations. 
+
+APIs should not be deprecated between mainenance releases. Mainenance releases
+are signified by a change in the third digit of the release number. For example,
+the release of Liferay Portal 6.1.30 after 6.1.20 was a maintenance release and
+therefore should have no API deprecations. 
+
+To understand Liferays releases, see [Using Liferay Portal
+6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
+
+## Summary
+
+That about wraps up our chapter on Liferay's APIs. Next, we'll reflect on what
+we've learned in this guide and conclude our journey together. 
