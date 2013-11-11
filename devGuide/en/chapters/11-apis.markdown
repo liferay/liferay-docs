@@ -1641,66 +1641,6 @@ links*, *headers*, and the *attributes* parameter. By calling
 portletRequest)`, you can assure your expando bridge attributes are set on the
 `ServiceContext`. 
 
-`ServiceContext` is not just for Java; you can use it from other languages too.
-Since our API can be invoked from JavaScript, you're sometimes required to pass
-the `ServiceContext` from JavaScript to the server. This can be done by passing
-the `ServiceContext` as any other JavaScript object. There are many examples of
-this in the JavaScript code of Liferay's portlets. Here's an example from
-`[liferay-portal]/portal-web/html/portlet/journal/js/main.js` that demonstrates
-using `ServiceContext` in calling the `updateStructure` method of the
-`JournalStructure` service: 
-
-    var instance = this;
-
-    var defaultLocale = instance.getDefaultLocale();
-
-    var serviceParameterTypes = [
-        'long',
-        'java.lang.String',
-        'java.lang.String',
-        'java.util.Map<java.util.Locale, java.lang.String>',
-        'java.util.Map<java.util.Locale, java.lang.String>',
-        'java.lang.String',
-        'com.liferay.portal.service.ServiceContext'
-    ];
-
-    Liferay.Service.Journal.JournalStructure.updateStructure(
-        {
-            groupId: groupId,
-            structureId: structureId,
-            parentStructureId: parentStructureId || '',
-            nameMap: '{' + defaultLocale + ':' + name + '}',
-            descriptionMap: '{' + defaultLocale + ':' + (description == '' ? null : description ) + '}',
-            xsd: xsd,
-            serviceContext: A.JSON.stringify(
-                {
-                    scopeGroupId: groupId
-                }
-                    ),
-            serviceParameterTypes: A.JSON.stringify(serviceParameterTypes)
-        },
-        function(message) {
-            if (Lang.isFunction(callback)) {
-                callback(message);
-            }
-        }
-    );
-
-<!-- Review for 6.2; the Journal API has been changed to use the DDL backend.
--->
-
-The example above uses JSON to populate the `ServiceContext`. 
-
-On the front-end, you can use Alloy UI and Liferay UI tags in your forms to
-extract information and automatically insert the corresponding data into your
-request object. You can see an example at
-`portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. 
-
-<!-- The above paragraph doesn't make sense. If you're using ServiceContext from
-JavaScript, you're already on the front-end. What this is is an alternative to
-JavaScript, by using tags. We should flesh this out and have a full example, not
-point to some file in Liferay. -Rich -->
-
 Next let's see an example of accessing information from a `ServiceContext`. 
 
 ### Accessing Service Context data [](id=lp-6-1-dgen08-accessing-service-context-data-0)
