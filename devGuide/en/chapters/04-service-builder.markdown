@@ -1855,17 +1855,6 @@ file called `default.xml` in your portlet project's
 `docroot/WEB-INF/src/custom-sql/` folder. You must create the `custom-sql`
 folder and create the `default.xml` file in that `custom-sql` folder. 
 
-Here's the custom SQL that returns an event location's name, along with the
-event's name and event's description, for the Event Listing portlet: 
-
-    SELECT
-        COUNT(*) AS COUNT_VALUE
-    FROM
-        Inventory_PurchaseOrder
-    WHERE
-        (Inventory_PurchaseOrder.partId = ?) AND
-        (Inventory_PurchaseOrder.closed = 0)
-
 The `default.xml` file must adhere to the following format: 
 
     <custom-sql>
