@@ -532,8 +532,10 @@ Here's the current action in your portal's `struts-config.xml` file:
 1.  Navigate to your `example-hook/docroot/WEB-INF` folder and open
     `liferay-hook.xml`. 
 
-2.  Insert the following code before the closing `</hook>` tag:
+2.  Insert the following code between the `<hook>...</hook>` tags:
 
+		<portal-properties>portal.properties</portal-properties>
+		<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
         <struts-action>
             <struts-action-path>/portal/sample</struts-action-path>
             <struts-action-impl>

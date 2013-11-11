@@ -1,5 +1,5 @@
 
-# Designing Workflows with Kaleo Designer for Java [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
+# Designing Workflow with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 ---
 
@@ -8,22 +8,22 @@ reflect the new features in Liferay 6.2.
 
 ---
 
-![EE Only Feature](../../images/ee-feature-web.png)
+Liferay Portal includes a workflow engine called *Kaleo*. Kaleo allows portal
+administrators to set up workflows for their organization's needs; the workflow
+calls users to participate in processes designed for them. Kaleo workflows,
+called *process definitions*, are essentially XML documents. Kaleo supports a
+host of XML element types to trigger decisive actions in your business process
+instances. You can fine-tune your process definition's logic by incorporating
+scripts and templates. 
 
-Liferay Portal includes a workflow engine called *Kaleo Designer for Java*.
-Kaleo allows portal administrators to set up workflows for their organization's
-needs; the workflow calls users to participate in processes designed for them.
-Kaleo workflows, called *process definitions*, are essentially XML documents.
-Kaleo supports a host of XML element types to trigger decisive actions in your
-business process instances. You can fine tune the logic of your process
-definition by incorporating scripts and templates. The *Kaleo Forms EE* app from
-Marketplace includes Liferay's *Kaleo Workflow Designer* that lets you create
-and modify portal workflows in your browser. With Kaleo Designer for Java, you
-can design and publish Kaleo workflows from Liferay Developer Studio! 
+The *Kaleo Forms EE* app from Marketplace includes Liferay's *Kaleo Workflow
+Designer* that lets you create and modify portal workflows in your browser. With
+Kaleo Designer for Java, you can design and publish Kaleo workflows from Liferay
+Developer Studio! 
 
 ![Figure 7.1: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
 
-Kaleo Designer for Java lets you incorporate back end Java development and
+Kaleo Designer for Java lets you incorporate back-end Java development and
 scripting in your workflows. Its graphical interface lets you drag and drop
 nodes into your workflow. A shortcut on each node gives you easy access to the
 node's XML, letting you edit its current implementation to make subtle
@@ -53,6 +53,14 @@ Studio to complete these tasks. As you can see, Kaleo Designer for Java is a
 powerful application for creating, modifying, and publishing workflows in
 Liferay Developer Studio. 
 
+Although Kaleo Designer for Java is the tool of choice for EE workflow
+designers, CE workflow designers can write Kaleo workflows too. But they are
+limited to writing them in their favorite XML editor. All Kaleo process
+definitions must follow the schema
+[http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd).
+As we show you how to design workflows, we'll include their resulting XML code
+for your convenience. 
+
 We'll cover the following topics as we design workflows:
 
 - Installing Kaleo Designer for Java
@@ -64,11 +72,9 @@ We'll cover the following topics as we design workflows:
 - Using Workflows in Liferay Portal
 - Using Dynamic Data Lists (DDLs) with Workflows
 
-<!--I only lightly edited the introduction to Kaleo. I don't think I understand
-enough about how it works from a development perspective; The above might be
-perfectly clear to a developer, but it's not to me. -Russ -->
-
 ## Installing Kaleo Designer for Java [](id=installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
+
+![EE Only Feature](../../images/ee-feature-web.png)
 
 To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
 Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
@@ -239,7 +245,7 @@ Workflows with Kaleo Designer for
 Java](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 chapter of *Using Liferay Portal*. 
 
-For our `ticket-process-definition` workflow diagram, we have a simple
+For our ticket-process-definition workflow diagram, we have a simple
 `StartNode` *State* node, followed by the `Developer` *Task* node, followed by
 the `EndNode` *State* node. There are two transitions, from `StartNode` &rarr;
 `Developer` and from `Developer` &rarr; `EndNode`. 
@@ -324,8 +330,151 @@ Assigning the QA and QA Management task nodes resolved their error markings (no
 more red "X"!). The join node's error marking won't disappear until you connect
 the join node to another task. 
 
-While we're using Designer's Workflow Diagram, let's go over some of its
-features. 
+Let's take a moment to consider the XML code of the ticket process workflow
+definition in its current state.
+
+It specifies its XML version, encoding, and its document root element called
+`workflow-definition`. Nested within the `workflow-definition` element are its
+name, description (optional), version, and its nodes: 1 fork, 1 join, a start
+and end state. Here's the general overview of our workflow definition: 
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workflow-definition xmlns="urn:liferay.com:liferay-workflow_6.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd">
+		<name>Ticket Process</name>
+		<version>1</version>
+
+		<!-- fork node -->
+
+		<!-- join node -->
+
+		<!-- start and end state nodes -->
+
+		<!-- task nodes -->
+
+    </workflow-definition>
+
+We'll describe each of our workflow definition's nodes, starting from top to
+bottom, left to right.
+
+Our start state node, named *StartNode*, simply transitions the flow of
+execution to our *Developer* task. Here is this state node (note, we left off
+the optional `<metadata>...</metada>` elements to shorten the code snippets): 
+
+    <state>
+        <name>StartNode</name>
+        <initial>true</initial>
+        <transitions>
+            <transition>
+                <name>Developer</name>
+                <target>Developer</target>
+                <default>true</default>
+            </transition>
+        </transitions>
+    </state>
+
+The *Developer* task is assigned to the creator and transitions to the *EndNode*
+state node upon approval. Each workflow instance is associated with an asset. By
+default, a task is associated with the asset creator.
+
+    <task>
+        <name>Developer</name>
+        <assignments>
+            <user></user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>approved</name>
+                <target>approved</target>
+            </transition>
+            <transition>
+                <name>EndNode</name>
+                <target>EndNode</target>
+            </transition>
+        </transitions>
+    </task>
+
+The ending state node is named *EndNode*. It specifies that an *Approve*
+action is to be executed on entering this node. 
+
+    <state>
+        <name>EndNode</name>
+        <actions>
+            <action>
+                <name>Approve</name>
+                <description>Approve</description>
+                <script> <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);]]> </script>
+                <script-language>javascript</script-language>
+                <execution-type>onEntry</execution-type>
+            </action>
+        </actions>
+    </state>
+
+Our workflow definition has one fork node named *Pass to QA*. It forks the
+process to the *QA* and *QA Manager* task nodes:
+
+    <fork>
+        <name>Pass to QA</name>
+        <transitions>
+            <transition>
+                <name>QA</name>
+                <target>QA</target>
+            </transition>
+            <transition>
+                <name>QA Manager</name>
+                <target>QA Manager</target>
+            </transition>
+        </transitions>
+    </fork>
+
+Both the the QA-related task nodes are assigned to the user with screenname
+*joe*.
+
+    <task>
+        <name>QA</name>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>Pass to QA Join</name>
+                <target>Pass to QA Join</target>
+                <default>Pass to QA Join</default>
+            </transition>
+        </transitions>
+    </task>
+
+    <task>
+        <name>QA Manager</name>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>Pass to QA Join</name>
+                <target>Pass to QA Join</target>
+            </transition>
+        </transitions>
+    </task>
+
+Lastly, the *QA* and *QA Manager* task nodes transition into the *Pass to QA
+Join* join node:
+
+    <join>
+        <name>Pass to QA Join</name>
+    </join>
+
+Now you know what the resulting XML is like for your workflow definition. You
+can check your definition's source code anytime from within Liferay Studio or
+your favorite XML editor. To learn more on the different workflow nodes
+available to use in Liferay workflow definitions, see
+[Using Liferay Portal 6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en). 
+
+Since we've been using Designer's Workflow Diagram mode, let's go over some of
+its features. 
 
 ### Workflow Diagram Features [](id=kaleo-workflow-diagram-features-liferay-portal-6-2-dev-guide-07-en)
 
@@ -417,7 +566,7 @@ Developer Studio supports several script languages:
 - Python 
 - Ruby 
 
-Let's dive back into our `software ticket` workflow definition and create a
+Let's dive back into our `ticket-process` workflow definition and create a
 script. It's not guaranteed that every ticket submitted has a resolution. If the
 issue was due to a silly user error, there's no reason to change the product. In
 such cases the developer will resolve the ticket and indicate there is no
@@ -574,14 +723,50 @@ We're pulling out the status from the DDL record and returning a value
 indicating "Yes" to continue fixing the ticket issue or "No" to transition to
 the workflow's end state. 
 
-Add the following to the script's imports to finsih things up: 
+Add the following to the script's imports to finish things up: 
 
 	import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
-Now the script accurately implements the condition logic we want. As a reminder,
-all of the code was injected into our workflow's XML file within the
-`<condition/>` element that represents our condition node. 
+Now the script accurately implements the condition logic we want. As a
+reminder, all of the code was injected into our workflow's XML file within the
+`<condition/>` element that represents our condition node. Here's what this
+block of XML looks like, including the Java in our Goovy script: 
 
+    <condition>
+        <name>Resolution</name>
+        <script><![CDATA[import com.liferay.portal.kernel.util.GetterUtil;
+            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+            import com.liferay.portal.service.ServiceContext;
+            import com.liferay.portlet.dynamicdatalists.model.DDLRecord;
+            import com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalServiceUtil;
+            import com.liferay.portlet.dynamicdatamapping.storage.Field;
+
+            long companyId = GetterUtil.getLong((String) workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
+            ServiceContext serviceConteimport com.liferay.portal.kernel.util.GetterUtil;
+
+            long ddlRecordId = GetterUtil.getLong(serviceContext.getAttribute("ddlRecordId"));
+            DDLRecord ddlRecord = DDLRecordLocalServiceUtil.getRecord(ddlRecordId);xt = (ServiceContext) workflowContext.get(WorkflowConstants.CONTEXT_SERVICE_CONTEXT);
+            Field field = ddlRecord.getField("status");
+
+            String status = GetterUtil.getString(field.getValue());
+            if (status.contains("not")) {
+                returnValue = "No"
+            }
+            else {
+                returnValue = "Yes"
+        }]]></script>
+        <script-language>groovy</script-language>
+        <transitions>
+            <transition>
+                <name>Yes</name>
+                <target>Developer</target>
+            </transition>
+            <transition>
+                <name>No</name>
+                <target>EndNode</target>
+            </transition>
+        </transitions>
+    </condition>
 ---
 
  ![note](../../images/tip-pen-paper.png) **Note:** Make sure you correctly name
@@ -665,8 +850,6 @@ There are several fields to fill in for your notification:
 - **Notification Transports**
 - **Addresses**
 
-<!--This is a field list, so bold, right? -->
-
 Click the pencil icon to open the editor associated with your notification's
 template language. Like the script editor, the template editor's *Palette* view
 lists entities that you can drag and drop onto your workflow diagram. 
@@ -735,8 +918,6 @@ To create the email notification, follow these steps:
 
 5.  Select *email* under **Notification transports**.
 
-<!--Bolded field items. -->
-
 Now open the FreeMarker template editor by clicking the pencil icon beneath the
 green "plus" symbol. 
 
@@ -775,57 +956,100 @@ ever. FreeMarker comes bundled with Developer Studio so it's obviously the
 simplest solution, but you can create Velocity templates just as easy by using
 the Velocity editor you installed. 
 
-In the next section you'll see a list of workflow and service context content
+Here's what the XML source looks like (with the embedded FreeMarker template)
+for the Poject Management task we created:
+
+    <task>
+        <name>project management</name>
+        <actions>
+            <notification>
+                <name>ticket process email</name>
+                <template>/* specify task notification template */
+                    &lt;#assign comments = taskcomments!&quot;&quot;&gt;
+                    &lt;#assign portalurl = servicecontext.portalurl!&quot;&quot;&gt;
+                    &lt;#assign wtasksurl = portalurl+&quot;/group/control_panel/manage?p_p_id=153&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;doasgroupid=&quot;+groupid+&quot;&amp;refererplid=&quot;&gt;
+                    
+                    &lt;!-- email body --&gt;
+                    &lt;p&gt; there is a new submission of ${entrytype} waiting for review in the workflow. &lt;/p&gt;
+                    
+                    &lt;!-- personal message to assignee --&gt;
+                    &lt;p&gt; please review the code waiting for you in your workflow tasks.
+                    &lt;#if comments != &quot;&quot; &gt; &lt;br/&gt; assignment comment says: &lt;strong&gt;${comments}&lt;/strong&gt; &lt;/#if&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt; &lt;a href=&quot;${wtasksurl}&quot;&gt;click here&lt;/a&gt; to see workflow tasks assigned to you. &lt;/p&gt;
+                    
+                    &lt;!-- signature --&gt;
+                    &lt;p&gt;sincerely,&lt;br /&gt;&lt;strong&gt;liferay portal workflow&lt;/strong&gt;&lt;/p&gt;
+                </template>
+                <template-language>freemarker</template-language>
+                <notification-type>email</notification-type>
+                <execution-type>onentry</execution-type>
+            </notification>
+        </actions>
+        <assignments>
+            <user>
+                <screen-name>joe</screen-name>
+            </user>
+        </assignments>
+        <transitions>
+            <transition>
+                <name>completed</name>
+                <target>endnode</target>
+            </transition>
+        </transitions>
+    </task>
+
+in the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-### Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
+### workflow context and service context variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
 
-A context variable provides a uniform variable to insert into your templates and
-scripts. When executed, a context variable is automatically deleted and replaced
-with the value pertaining to that key. When you create notifications for a
-workflow, assign Liferay Portal context variables for a cleaner and more
-efficient process. With context variables, your notifications become more
-customizable, rather than following the same format for every recipient. The
-context variables you declare in your notifications refer to your Liferay
+a context variable provides a uniform variable to insert into your templates and
+scripts. when executed, a context variable is automatically deleted and replaced
+with the value pertaining to that key. when you create notifications for a
+workflow, assign liferay portal context variables for a cleaner and more
+efficient process. with context variables, your notifications become more
+customizable, rather than following the same format for every recipient. the
+context variables you declare in your notifications refer to your liferay
 instance and the values it holds for your declarations. 
 
 Below you'll see tables listing numerous context variables and service context
-content. The context variables are the first table, followed by the service
-context content for web content, blog entries, and message board messages. We've
+content. the context variables are the first table, followed by the service
+context content for web content, blog entries, and message board messages. we've
 separated service context content from the workflow context variables because
-service context keys depend on asset type, while context variables don't. Also,
+service context keys depend on asset type, while context variables don't. also,
 note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
 ***Workflow* Context Variables**
 
- Key | Type | Description |
+ key | type | description |
 ---- | ---- | ----------- |
- `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
- `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
- `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
- `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
- `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
- `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
- `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
- `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
- `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
+ `companyid` | &nbsp;&nbsp;java.lang.string&nbsp;&nbsp;&nbsp; | primary key of the company |          
+ `entryclassname` | &nbsp;&nbsp;java.lang.string | class name for entry used by the task (e.g. com.liferay.portlet.journal.model.journalarticle) |
+ `entryclasspk` | &nbsp;&nbsp;java.lang.string | primary key of the entry class |
+ `entrytype` | &nbsp;&nbsp;java.lang.string | type of entry used by the task (e.g. web content, blog entry, mb message) |
+ `groupid` | &nbsp;&nbsp;java.lang.string | primary key of the assigned group |
+ `taskcomments*` | &nbsp;&nbsp;java.lang.string | workflow comments assigned to the task |
+ `taskname*` | &nbsp;&nbsp;java.lang.string | workflow task that activates the notification (e.g. review) |
+ `transitionname*` | &nbsp;&nbsp;java.lang.string | name of transition pointing to the task (e.g. approve) |
+ `userid` | &nbsp;&nbsp;java.lang.string | primary key of the assigned user |
 ---
 
-***Web Content* Service Context Variables - obtain via key serviceContext**
+***Web Content* Service Context Variables - obtain via key servicecontext**
 
- Key | Type | Description |
+ key | type | description |
 ---- | ---- | ----------- |
- `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
- `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
- `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
- `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
- `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
- `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
- `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
- `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
- `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
+ `articleid` | &nbsp;&nbsp;java.lang.string&nbsp;&nbsp;&nbsp; | primary key of the web content |
+ `articleurl` | &nbsp;&nbsp;java.lang.string | link to the web content in maximized mode |
+ `assetlinkentryids` | &nbsp;&nbsp;java.lang.string | primary keys of the asset entries linked to the web content |
+ `assetlinkssearchcontainerprimarykeys` | &nbsp;&nbsp;java.lang.string | primary keys of the asset link search container |
+ `assettagnames` | &nbsp;&nbsp;java.lang.string | tag names applied the asset |
+ `autoarticleid` | &nbsp;&nbsp;java.lang.string | boolean variable indicating whether an article id is generated (e.g. false) |
+ `classnameid` | &nbsp;&nbsp;java.lang.string | primary key of the class name used by the task |
+ `classpk` | &nbsp;&nbsp;java.lang.string | primary key of the model entity |
+ `content` | &nbsp;&nbsp;java.lang.string | content of the web content |
  `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
  `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
  `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
@@ -964,6 +1188,12 @@ To publish your `ticket process` workflow definition:
 
 Alternatively, you can publish your new workflow XML file by dragging it from
 your *Package Explorer* view onto your Liferay server in your *Servers* view. 
+
+If you are not using the Kaleo Designer for Java plugin and you'd like to
+publish workflow definitions you've written in XML, you can do so by uploading
+them from within Liferay Portal's workflow configuration screens. For details,
+see the chapter on using workflow in [Using Liferay Portal
+6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-assets-to-use-workflow-proc-liferay-portal-6-2-user-guide-11-en). 
 
 ---
 

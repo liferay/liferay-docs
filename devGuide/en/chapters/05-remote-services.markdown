@@ -1,12 +1,5 @@
 # Accessing Services Remotely [](id=accessing-services-remotely-liferay-portal-6-2-dev-guide-05-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 You've created your portlet and built some terrific services. You're happy to
 brag to your colleagues about the awesome things your portlet does. Now folks
 are getting interested; they want to call your portlet's services. You wonder
@@ -113,10 +106,12 @@ oriented* architecture and how you can configure them.
 
 Liferay's remote services sit behind a layer of security that by default allows
 only local connections. Access to the remote APIs must be enabled as a separate
-step in order to call them from a remote machine. Behind this layer of security
-is Liferay's standard security model: even if on the same machine, a user must
-have the proper permissions in Liferay's permissions system to access remote
-services. 
+step in order to call them from a remote machine. Liferay's core web services
+require user authentication and authentication verification. We'll discuss this
+process later in this section. Lastly, regardless of whether the remote service
+is called from the same machine or via a web service, Liferay's standard
+security model comes into action: a user must have the proper permissions in
+Liferay's permissions system to access remote services. 
 
 The first layer of security a client encounters when calling a remote service
 is called *invoker IP filtering*. Imagine you have have a batch job that runs
@@ -135,8 +130,6 @@ If the IP address of the machine on which the batch job is running is listed
 as an authorized host for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-![Figure 5.1: Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
-
 ---
 
  ![Note](../../images/tip-pen-paper.png) **Note:** The `portal.properties` file
@@ -150,8 +143,17 @@ services, pass in the appropriate user credentials, and upload the documents.
 
 ---
 
-Liferay's security model is the second layer of security that's triggered
-when services are remotely invoked, and it's used for every object in the
+Next, if you're invoking the remote service via web services (e.g., JSON WS, old
+JSON, Axis, REST, etc.), a two step process of authentication and authentication
+verification is involved. Each call to a Liferay portal web services must be
+accompanied by a user authentication token. It's up to the web service caller to
+produce the token (e.g., through Liferay's utilities or through some third-party
+software). Liferay verifies that there is a Liferay user that matches the token.
+If the credentials are invalid, the web service invocation is aborted.
+Otherwise, processing enters into Liferay's user permission layer. 
+
+Liferay's user permission layer is the last Liferay security layer triggered
+when services are invoked remotely, and it's used for every object in the
 portal, whether accessing it locally or remotely. The user ID accessing the
 services remotely must have the proper permission to operate on the objects it's
 trying to access. A remote exception is thrown if the user ID isn't permitted.
@@ -163,8 +165,6 @@ web services to upload documents into the folder, you have to call the web
 service using a user ID of a member of this role (or using the user ID of a user
 with individual rights to add documents to this folder, such as a portal
 administrator). If you don't, Liferay denies you access to the web service. 
-
-![Figure 5.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
 With remote services, you can specify the user credentials using HTTP basic
 authentication. Since those credentials are passed over the network unencrypted,
@@ -237,9 +237,12 @@ need it to, without your administrative ID's password expiring.
 To summarize, accessing Liferay remotely requires you to pass two layers of
 security checks:
 
-- *First layer*: The IP address must be pre-configured in the server's portal
-  properties. 
-- *Second layer*: The user needs permission to access the related resources. 
+- *IP permission layer*: The IP address must be pre-configured in the server's
+  portal properties. 
+- *Authentication/verification layer (web services only)*: Liferay verifies that
+  the caller's authorization token can be associated with a portal user.  
+- *User permission layer*: The user needs permission to access the related
+  resources. 
 
 Next, let's talk about Liferay's SOAP web services. 
 
@@ -247,7 +250,15 @@ Next, let's talk about Liferay's SOAP web services.
 
 You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
-HTTP.
+HTTP. 
+
+---
+
+ ![Note](../../images/tip.png) **Note:** An authentication related token must
+ accompany each Liferay web service invocation. For details, read the section on
+ service security layers found earlier in this chapter. 
+
+---
 
 As an example, let's look at the SOAP web service classes for Liferay's
 `Company`, `User`, and `UserGroup` portal services to execute the following:
@@ -933,6 +944,14 @@ It's important to provide all parameters, but it doesn't matter *how* you do it
 (e.g., as part of the URL line, as request parameters, etc.). The order of the
 parameters doesn't matter either. 
 
+---
+
+ ![Note](../../images/tip.png) **Note:** An authentication related token must
+ accompany each Liferay web service invocation. For details, read the section on
+ service security layers found earlier in this chapter. 
+
+---
+
 Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required--when using numeric *hints* to match methods. Let's look
 at using hints next. 
@@ -1090,7 +1109,7 @@ Did you know you can send files as arguments? Find out how next.
 Files can be uploaded using multipart forms and requests. Here's an example: 
 
     <form
-     action="http://localhost:8080/api/secure/jsonws/dlapp/add-file-entry"
+     action="http://localhost:8080/api/jsonws/dlapp/add-file-entry"
      method="POST"
      enctype="multipart/form-data">
         <input type="hidden" name="repositoryId" value="10172"/>
@@ -1117,7 +1136,7 @@ methods for convenient use of positional parameters.
 
 Here's an example of invoking a JSON web service using JSON RPC: 
 
-    POST http://localhost:8080/api/secure/jsonws/dlapp
+    POST http://localhost:8080/api/jsonws/dlapp
     {
         "method":"get-folders",
         "params":{"repositoryId":10172, "parentFolderId":0},

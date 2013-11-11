@@ -357,18 +357,6 @@ demonstrating gadget to gadget interaction and portlet to gadget interaction.
 
 ### Gadget to Gadget [](id=opensocial-gadget-to-gadget-liferay-portal-6-2-dev-guide-en)
 
-<!-- The next two sections cannot be updated due to errors received when placing
-the GoogleMapsViewer.xml gadget (Google Map) on a Liferay page. The gadget's
-code needs to be updated to use Google's v3 API (instead of v2). Progress for
-this task can be followed in LRDOCS-812. -->
-
----
-
-![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
-to reflect the new features in Liferay 6.2.
-
----
-
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub. These two gadgets are able to communicate with one
 another and provide tools that the user could not otherwise produce. We will
@@ -420,13 +408,13 @@ We will now dive into the source code and analyze how this interaction is
 accomplished. First, we'll look at the contents of the *Google Maps* XML file
 *GoogleMapsPublisher.xml*:
 
-	<?xml version="1.0" encoding="UTF-8" ?> 
+	<?xml version="1.0" encoding="UTF-8" ?>
 
 	<Module>
 		<ModulePrefs title="Google Address">
 			<Require feature="pubsub-2">
 				<Param name="topics">
-					<![CDATA[ 
+					<![CDATA[
 					<Topic
 					    title="Google Maps"
 					    name="com.liferay.opensocial.gmapsdemo" publish="true"
@@ -435,10 +423,10 @@ accomplished. First, we'll look at the contents of the *Google Maps* XML file
 				</Param>
 			</Require>
 			<Require feature="dynamic-height" />
-		</ModulePrefs> 
+		</ModulePrefs>
 
 		<Content type="html">
-			<![CDATA[    
+			<![CDATA[
 			<table>
 				<tr>
 					<td>Address:</td>
@@ -463,7 +451,7 @@ accomplished. First, we'll look at the contents of the *Google Maps* XML file
 
 			<script type="text/javascript">
 				function updateLoc() {
-					var address = _gel("address").value;
+					var address = document.getElementById("address").value;
 					gadgets.Hub.publish(
 					    "com.liferay.opensocial.gmapsdemo", address);
 				}
@@ -511,13 +499,13 @@ processed by the gadget to show the address location on its map.
 Next, we'll analyze the example's *subscribing* gadget's source code specified
 in  *GoogleMapsViewer.xml*:
 
-	<?xml version="1.0" encoding="UTF-8" ?> 
+	<?xml version="1.0" encoding="UTF-8" ?>
 
 	<Module>
 		<ModulePrefs title="Google Map">
 			<Require feature="pubsub-2">
 				<Param name="topics">
-					<![CDATA[ 
+					<![CDATA[
 					<Topic
 					    title="Google Maps"
 					    name="com.liferay.opensocial.gmapsdemo"
@@ -530,41 +518,58 @@ in  *GoogleMapsViewer.xml*:
 		</ModulePrefs>
 
 		<Content type="html">
-			<![CDATA[ 
+			<![CDATA[
 			<script
-			    src="http://maps.google.com/maps?file=api&amp;v=2.x"
+				src="https://maps.googleapis.com/maps/api/js?sensor=false"
 			    type="text/javascript">
 			</script>
 
 			<div id="map" style="width:100%;height:100%"></div>
 
 			<script type="text/javascript">
-				var geocoder = new GClientGeocoder();
-
 				gadgets.HubSettings.onConnect = function(hub, suc, err) {
-					gadgets.Hub.subscribe(
-					    "com.liferay.opensocial.gmapsdemo", callback);
+					gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
 				}
 
-				function callback(topic, data, subscriberData) {			
-					geocoder.getLocations(data, showAddress);
+				function callback(topic, data, subscriberData) {
+					geocoder.geocode( { 'address': data }, showAddress);
 				}
 
-				function showAddress(response) {
-					map.clearOverlays();
-					place = response.Placemark[0];
-					point = newGLatLng(
-					    place.Point.coordinates[1],place.Point.coordinates[0]);
-					marker = new GMarker(point);
-					map.addOverlay(marker);
-					marker.openInfoWindowHtml(place.address);
+				function showAddress(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						while(overlays[0]) {
+							overlays.pop().setMap(null);
+						}
+
+						map.setCenter(results[0].geometry.location);
+
+						var marker = new google.maps.Marker(
+							{
+								map: map,
+								position: results[0].geometry.location
+							}
+						);
+
+						overlays.push(marker);
+					}
+					else {
+						alert('Failed to locate address. Reason: ' + status);
+					}
+
 					map.setZoom(12);
-					map.panTo(point, 13);
 				}
 
-				var map = new GMap2(document.getElementById("map"));
+				var overlays = [];
 
-				map.setCenter(new GLatLng(43, -100), 3);
+				var geocoder = new google.maps.Geocoder();
+
+				var mapOptions = {
+					center: new google.maps.LatLng(43, -100),
+					zoom: 3,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 				gadgets.window.adjustHeight();
 			</script>
@@ -592,7 +597,7 @@ this topic receive messages sent to it.
 
 When a message is received, the gadget's `callback()` function is executed. In
 this example, the callback method sends the received message (the address sent
-by the publisher) and calls `GClientGeocoder.getLocations()` to get the
+by the publisher) and calls `google.maps.Geocoder.geocode()` to get the
 locations. And finally, the locations are processed and displayed on the map.
 
 In summary, subscriber gadgets need to specify a topic and register a callback
@@ -606,13 +611,6 @@ section, we will demonstrate the capabilities of communication between portlets
 and gadgets.
 
 ### Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets-liferay-portal-6-2-dev-guide-en)
-
----
-
-![Note](../../images/tip-pen-paper.png) This section is currently *in progress*
-to reflect the new features in Liferay 6.2.
-
----
 
 For this section, we will continue implementing the *Google Map* gadget on your
 site. If you have portlet applications that can take advantage of the
@@ -629,13 +627,14 @@ gadgets and will be supported on Liferay.
 
 ---
 
-As a demonstration, we will send messages from a *Directory* portlet to the
-*Google Map* gadget. For each user listed in the *Directory* portlet, we will
-create a *Show in Google Maps* link that, when selected, displays the location
-of the user's address in the *Google Map* gadget.
+As a demonstration, we will send messages from a custom *Directory* portlet to
+the *Google Map* gadget. For each user listed in the *Directory* portlet, we
+will create a *Show in Google Maps* link that, when selected, displays the
+location of the user's address in the *Google Map* gadget.
 
-This portlet is much like Liferay's *Directory* portlet. The first thing we need
-to do is edit the portlet's `address.jsp` file to configure a Google Maps link. 
+This portlet is much like Liferay's *Portal Directory* portlet. The first thing
+we need to do is edit the portlet's `address.jsp` file to configure a Google
+Maps link.
 
 As you know from explanations given earlier, the *Google Map* gadget is
 distinguished as a subscriber. Therefore, the *Directory* portlet needs to take
@@ -658,7 +657,7 @@ channel declaration. This distinguishes who the messages are intended for when
 they are broadcast across a channel. Notice that you don't need to change
 anything for your *Google Map* gadget, since it's already subscribed to that
 channel. You only needed to define the *Directory* portlet as a publisher to
-that channel. 
+that channel.
 
 ---
 
@@ -673,7 +672,7 @@ After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the
 interaction would look like:
 
-![Figure 8.7: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
+![Figure 8.7: The modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
