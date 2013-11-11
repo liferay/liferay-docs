@@ -17,10 +17,7 @@
 		<field name="description" type="String">
 			<hint-collection name="DESCRIPTION-TEXTAREA" />
 		</field>
-		<field name="date" type="Date">
-			<hint name="show-time">true</hint>
-			<hint name="year-range-past">false</hint>
-		</field>
+		<field name="date" type="Date" />
 		<field name="locationId" type="long" />
 	</model>
 	<model name="com.nosester.portlet.eventlisting.model.Location">
