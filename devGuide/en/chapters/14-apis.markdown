@@ -51,11 +51,24 @@ Example,
 
 ## Application Display Templates
 
-Display Settings are the simpliest way to customize the portlet display. Unlike themes or hooks, they don't require deployment and they affect specific portlet instances. But, they are limited to those that come out of the box... Wouldn’t it be great to have as many of them as we wanted? As a user, this would simplify the task of customizing the portlet display. And as developers, we wouldn’t have to change our portlet configuration code every time a new setting is required.
+Display Settings are the simplest way to customize your portlet's display.
+Unlike with themes and hooks, you can modify the display settings for specific
+portlet instances without redeploying. Unfortunately, with Display Settings,
+you're limited to the display settings that come with Liferay by default. It's
+too bad there's no way to develop the settings you need. If you could, then
+customizing the portlet display would be simple for users, and life would be
+easier for the portlet's developer, since you wouldn't have to change your
+portlet's configuration code every time a new setting is required.
  
-That’s exactly what Application Display Templates provides: Adding custom display settings to our portlets. Actually, this is not a new concept in Liferay. In some portlets such as Web Content, Document and Media or Dynamid Data Lists we can add as many display options (or templates) as we want.
+You don't need to resign yourself to suffering with the current settings or
+unnecessarily develop a hook or theme to hack a solution. Instead use an
+Application Display Template to add custom display settings to your portlets.
+This is not actually a new concept in Liferay. In some portlets such as Web
+Content, Document and Media or Dynamid Data Lists we can add as many display
+options (or templates) as we want.
 
-You can use the Application Display Templates API to add this new feature to your plugins.
+You can use the Application Display Templates API to add this new feature to
+your plugins.
 
 ### Using the Application Display Templates API
 
