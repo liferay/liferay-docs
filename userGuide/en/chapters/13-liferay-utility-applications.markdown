@@ -1415,7 +1415,7 @@ a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 13.32: Display articles using the Knowledge Base Article portlet.](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 13.31: Display articles using the Knowledge Base Article portlet.](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -1442,7 +1442,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 13.33: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -1458,7 +1458,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 13.34: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 13.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base Display portlet. When both of these portlets are placed on a page
@@ -1467,7 +1467,7 @@ Base Display portlet will show all of the articles that match the topic. You can
 create topics from the Categories page of *Site Administration* &rarr;
 *Content*.
 
-![Figure 13.35: Use the Categories Navigation portlet to search articles that match a specific topic.](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 13.34: Use the Categories Navigation portlet to search articles that match a specific topic.](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
