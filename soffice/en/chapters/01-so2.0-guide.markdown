@@ -232,7 +232,7 @@ you already downloaded Social Office EE and attempted to install it before
 deploying your order id license, you'll need to restart your Liferay server
 after deploying the license in order for Social Office EE to deploy.
 
-### Completing your installation [](id=lp-2-1-soen01-completing-your-installation)
+### Completing Your Installation [](id=lp-2-1-soen01-completing-your-installation)
 
 After deploying Social Office, check your server's console log. There should not
 be any console errors during installation. If you encounter any console errors,
@@ -273,7 +273,7 @@ be greyed out with a message stating that they've been undeployed.
 
 ---
 
-### Installation peculiarities for specific apps servers  [](id=lp-2-1-soen01-installation-peculiarities-for-specific-apps-servers)
+### Installation Peculiarities of Specific App Servers  [](id=lp-2-1-soen01-installation-peculiarities-for-specific-apps-servers)
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -282,10 +282,13 @@ restarted the server, the so-hook deployment completes as expected.
 
 For JBoss, you have to restart the server in order to see the Dashboard link. If
 you don't restart the server, the Dashboard link won't appear although you can
-find other content added by Social Office if you use the *Go To* &rarr; *My
+find other content added by Social Office if you use the *Go to* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
-### Managing the Social Office welcome theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
+<!-- Commenting this out now (Nov. 5, 2013) since SO 2.1 EE has been released
+but SO 2.1 CE has not. The Social Office welcome theme is a CE-only feature.
+
+### Managing the Social Office Welcome Theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available
@@ -346,6 +349,8 @@ Office welcome theme overwrites any pages and customizations that have already
 been made to the guest site.
 
 ---
+
+-->
 
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
@@ -444,7 +449,7 @@ provides a shortcut for this process. Please refer to the *Using Social Office*
 section for more details about the Social Office User role and the features
 provided by Social Office.
 
-### What to do if your Installation is Unsuccessful [](id=lp-2-1-soen01-what-to-do-if-your-installation-is-unsuccessful)
+### What to do if Your Installation is Unsuccessful [](id=lp-2-1-soen01-what-to-do-if-your-installation-is-unsuccessful)
 
 If your Social Office Installation was unsuccessful, please make sure that you
 haven't made one of the following installation mistakes:
@@ -499,17 +504,15 @@ Next, let's discuss how Social Office can facilitate team collaboration.
 
 ## Using Social Office [](id=lp-2-1-soen01-using-social-office)
 
-Liferay Portal is a full featured web portal, containing an industry-leading
+Liferay Portal is a fully featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
 businesses use it to run major web sites all over the world. We've optimized
 Liferay Portal for creating state-of-the art, robust web sites that serve
-millions of users every day. 
-
-Social Office adds functionality for a specific purpose: collaboration. We've
-designed it for work groups needing to collaborate on documents and data in the
-office. The additional tools and defaults were carefully chosen to provide users
-working within a group the ability to easily communicate, collaborate, and
-coordinate their tasks.
+millions of users every day. Social Office adds functionality for a specific
+purpose: collaboration. We've designed it for work groups needing to collaborate
+on documents and data in the office. The additional tools and defaults were
+carefully chosen to provide users working within a group the ability to easily
+communicate, collaborate, and coordinate their tasks.
 
 Social Office adds extra collaborative tools to Liferay and allows you to
 quickly set up sites designed to facilitate collaboration. Each site is designed
@@ -528,21 +531,31 @@ installing the Social Office plugin if you'd like your site to facilitate
 communication between people within specific groups and accomplish tasks using
 shared virtual workspaces with minimal set up and administration.
 
-The Social Office theme adds a convenient button to the top-right corners of
-Social Office pages. This button allows you to expand the portlets on the page
-to fit the size of your browser window. You can click the button again to return
-the portlets to their default size. In addition to the standard Social Office
-theme, there's another theme for Social Office's Welcome page.
+The Social Office theme is used to style Social Office pages, including the
+private pages of users' personal sites, their public pages, and the pages of
+Social Office sites. The Social Office theme is mobile-responsive so users using
+smartphones or tablets can easily use the site. The Social Office theme
+adds a convenient button to the top-right corners of Social Office pages. This
+button allows you to expand the portlets on the page to fit the size of your
+browser window. You can click the button again to return the portlets to their
+default size. In addition to the standard Social Office theme, there's also the
+Social Office's welcome theme that's used to style the Social Office welcome
+page (CE-only).
 
-### Using the Social Office User role and personal sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
+### Using the Social Office User Role, the User Bar, and Personal Sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
 
-The Social Office plugin adds a special role to Liferay Portal: Social Office
-User. Assigning users to the Social Office User role provides them with personal
-sites pre-built with pages and applications designed to help them manage their
-work, share information, and communicate with each other. Assign yourself to the
-Social Office User role to see how it works. Once your user account has been
-granted the Social Office User role, a *Dashboard* link appears in the Dockbar.
-Now you can explore the extra features added to Liferay by Social Office.
+Social Office adds a special role to Liferay Portal: Social Office User.
+Assigning users to the Social Office User role provides them with personal sites
+pre-built with pages and applications designed to help them manage their work,
+share information, and communicate with each other. Social Office users also
+receive a user bar that appears at the top of all portal pages when they're
+logged in. Assign yourself to the Social Office User role to see how it works.
+Once your user account has been granted the Social Office User role, the user
+bar appears above the Dockbar. The user bar contains links to all the private
+pages of the user's personal site, including a link to the *Dashboard*, the
+private home page of a Social Office user's personal site. Once you've been
+assigned to the Social Office User role and you see the user bar, you can
+explore the extra features added to Liferay by Social Office.
 
 If all your portal users will be using Social Office, you should add this role
 to your portal's default user associations. Use the *Go to* menu of the Dockbar
@@ -555,35 +568,22 @@ the *Apply to Existing Users* box to grant the Social Office User role to
 previously created users. These users will receive the role the next time they
 log in to the portal.
 
+![Figure 1.x: Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../../images/user-bar-dockbar.png)
+
 The default personal pages provided by the Social Office user role include the
 private Dashboard page and the public Profile page. When a user who has been
-assigned to the Social Office User role logs in, several changes are made to his
-or her Dockbar. First, a *Dashboard* link appears to the right of the *Go to*
-menu. You can click this link from anywhere in the portal to go to your virtual
-private workspace. Second, a *Notifications* button is added to the right of the
-Dashboard link. The Notifications button displays how many unread notifications
-you have. You'll be notified upon receiving a private message, an invitation to
-join a site, a social connection request, or an event reminder. Lastly, the
-right-most item of the Dockbar becomes a drop-down list containing a link to
-your public *Profile* page as well as a link your *My Account* page of the
-control panel and the *Sign Out* link.
-
-#### Using the Dashboard and other private pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
-
-The private page sets of Social Office users serve as personal workspaces. Each
-private page displays a navigation menu and the Sites portlet in the left column
-so that you can navigate back and forth between the private pages of your
-personal site, navigate to your public pages, or navigate to one of the other
-sites you belong to. The private pages provided by Social Office include:
-
-- Dashboard
-- Contacts Center
-- Microblogs
-- Messages
-- My Documents
-- Tasks
-
-![Figure 1.10: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
+assigned to the Social Office User role logs in, the user bar appears and
+several changes are made to the Dockbar. The *Dashboard* link appears as the
+left-most item of the user bar and links to the other private pages of the
+user's personal site appear next. You can click on these links from anywhere in
+the portal to access your virtual private workspace. Also, the *Go to* menu is
+moved from the Dockbar to the user bar. Instead of simply allowing the user to
+navigate to one of the sites he or she belongs to, the *Go to* menu provides
+access to the Sites portlet. This means that Social Office users can not only
+use the *Go to* menu to navigate to sites they belong to but they can also
+search for sites, filter the sites in the list (*All Sites*, *My Sites*, *My
+Favorites*), add sites to their favorites list, access the Sites Directory, and
+access the Add Site wizard.
 
 The Sites portlet is an improved version of the basic My Sites portlet. It
 allows you to star various sites to customize your sites list. You can select
@@ -596,46 +596,156 @@ search query. If you have permission to add sites, you'll see an *Add Site*
 button which opens a wizard to guide you through the site creation process. This
 wizard will create a new site based on the *Default Social Office Site*
 template. This site comes pre-built with pages and applications designed for
-team collaboration. The *More Sites* button opens a site directory dialog box
-which you can use to join, leave sites, or star sites. If you have the required
-permissions, you can also delete sites.
+team collaboration. The *Sites Directory* button opens a site directory dialog
+box which you can use to join, leave sites, or star sites. If you have the
+required permissions, you can also delete sites.
 
-![Figure 1.11: The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+![Figure 1.11: To access the Sites portlet, just click on *Go to* from the user bar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+
+Next, a *Notifications* icon is added to the right of the *Go to* menu. The
+Notifications icon displays how many unread notifications you have. You'll be
+notified upon receiving a private message, an invitation to join a site, a
+social connection request, or an event reminder. Alerts and announcements
+created via the Alerts or Announcements portlets are accessible via the
+Notifications icon. The *My Account* icon is also moved from the Dockbar to the
+user bar. When you click on your name or profile picture in the user bar, four
+options appear:
+
+- *My Profile*: takes you to your public Profile page. The Profile page is the
+  public home page of a Social Office user's personal site.
+- *My Account*: takes you to the *My Account* section of the Control Panel where
+  you can edit the details of your user account, such as your screen name, email
+  address, password, etc.
+- *Control Panel*: takes you to the Control Panel.
+- *Sign Out*: logs you out of the portal.
+
+The right-most item of the user bar is a gear icon that allows you to hide the
+Dockbar. This can be very useful since most users won't require frequent access
+to the administrative functionality provided by the Dockbar. When signed in as
+an administrator, clicking on the gear icon to hide the Dockbar only works if
+the *Edit Controls* box in the Dockbar is unflagged. The standard items that
+appear on the Dockbar for administrators are still accessible:
+
+- *Pin*: pins *both* the Dockbar and the user bar in place so that they're
+  always accessible, even when scrolling down a long page.
+- *Add*: allows you to add a new page or new portlet applications to a page.
+- *Manage*: lets you access various options for managing the current page or
+  site. These options are also available through the Control Panel.
+- *Edit Controls*: Allows you to enable/disable the special controls (such as
+  portlet options menus and maximize, minimize, and remove buttons) that are
+  accessible to site administrators.
+
+Now that we've learned how to use the Social Office user bar and seen how it
+works with the Dockbar, let's learn how to use the Social Office Dashboard and
+other private pages and their applications.
+
+#### Using the Dashboard and Other Private Pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
+
+The private page sets of Social Office users serve as personal workspaces. Each
+private page displays a navigation menu in the left column so that you can
+navigate back and forth between the private pages of your personal site or
+navigate to your public pages. To access the My Sites portlet, just click on the
+*Go to* menu in the user bar. The private pages provided by Social Office
+include:
+
+- Dashboard
+- Contacts Center
+- Microblogs
+- Messages
+- My Documents
+- Tasks
+
+![Figure 1.10: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
 
 The Dashboard page provides several portlet applications designed to keep you up
 to date with various kinds of portal activity:
 
+- Announcements
 - Activities
 - Upcoming Tasks
 - Events
 - Microblogs Status Update
 
+The Announcements portlet lets you broadcast important information to different
+groups of users. Each announcement can be created in a specific scope so that
+you can manage which announcements are sent to which users. For more information
+about using the Announcements portlet, please refer to the Liferay [User Guide](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/sending-alerts-and-announcements-in-you-liferay-portal-6-2-user-guide-08-en).
+In Social Office, announcements created with the priority *Important* are
+displayed in red while announcements with the *Normal* priority are displayed in
+yellow. The default scoping of the displayed announcements in Social Office
+depends on the site of the Announcements portlet. By default, the Announcements
+portlet on the Dashboard shows an aggregated view of all general announcements
+while an Announcements portlet on a Social Office site page also shows
+site-specific announcements.
+
 Using the power of Liferay's Social API, the Activities portlet presents
 information about different categories of users' recent activities. Use the tabs
-to display portal activities from different scopes: *Connections* shows a list
-of activities from users you have established a social connection with,
-*Following* shows activities from users you're following, and *My Sites* shows
-all the activities from sites you belong to. You can also select *Me* to view
-just your own activities. The Upcoming Tasks portlet displays a list of tasks
-that have been created for you or that you've assigned to yourself. The Events
-portlet integrates with the calendar portlet belonging to your scope to show
-upcoming events for the next few days. There's also a Microblogs Status Update
-portlet on your Dashboard which lets you broadcast a Facebook-like status to the
-scope of your choice: to everyone, to your connections, or to your followers.
+to display portal activities from different scopes:
 
+- *Connections*: shows a list of activities of users with which you have
+  established a social connection.
+- *Following*: shows activities of users you're following.
+- *My Sites*: shows all the activities from the sites of which you're a member.
+- *Me*: shows only your own activities.
+
+The Activities portlet consolidates related activities into a single activities
+entry so the activities feeds aren't spammed with nearly identical messages. For
+example, users often make several updates to an asset in quick succession, like
+this:
+
+    Bryan Cheung updated a wiki page in Sales Team. 1:48 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:47 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:47 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:46 PM
+    Pricing
+    Bryan Cheung updated a wiki page in Sales Team. 1:46 PM
+    Pricing
+
+The Activities portlet consolidates entries like these so that only a single
+message is displayed, like this:
+
+    Bryan Cheung made 5 updates to a wiki page in Sales Team. 1:46 PM
+    Pricing
+
+For assets that allow commenting, such as blog entries, wiki articles, calendar
+events, tasks, and documents and media files, the Activities portlet allows
+users to comment the assets directly in the activities feed. Such comments are
+translated directly as comments on the asset. Comments on *groups* of activities
+are not translated as comments on the individual assets; these comments appear
+only in the activities feed. Forum-related activities do not allow comments;
+users have to click the link to the thread to leave a response. Since activities
+feeds can quickly become heavily populated, users can simply scroll to the
+bottom of a page with the Activities portlet and the Activities portlet loads
+more activities.
+
+![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
+
+The Upcoming Tasks portlet displays a list of tasks that have been created for
+you or that you've assigned to yourself. The Events portlet integrates with the
+Calendar portlet belonging to your scope to show upcoming events for the next
+few days. There's also a Microblogs Status Update portlet on your Dashboard
+which lets you broadcast a Facebook-like status to the scope of your choice: to
+everyone, to your connections, or to your followers. Users can interact with
+microblogs status updates wherever they're displayed, such as in an Activities
+portlet. There are a few possible microblogs interactions: you can click a link
+to view the full microblog post, comment on the post, or repost the microblog.
 Next, let's take a look at the applications provided on the other private pages
 of Social Office users' personal sites.
-
-![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
 The Contacts Center is an important application for Social Office because it
 allows users to create LinkedIn-style connections and Twitter-style followers.
 This enables users to customize who they share information about social
 activities with and whose activity they're interested in. The Contacts Center
 application displays a list of portal users. You can choose to display *All*,
-*Connections*, or *Following* and you can also search for specific users. Select
-a user from the left-hand area of the Contacts Center portlet to view details
-about him or her. For each user, you'll have the following options:
+*Connections*, *Following*, or *My Contacts*. You can also display only the
+members of a particular site. There's also a search bar so you can search for
+specific users. To add a new contact, just click on the *Add Contact* button at
+the top of the Contacts Center. Select a user from the left-hand area of the
+Contacts Center portlet to view details about him or her. For each user, you'll
+have the following options:
 
 - *Add as Connection* sends a connection request to the selected user.
 - *Follow/Unfollow* subscribes and unsubscribes you to the selected user's
@@ -649,7 +759,7 @@ about him or her. For each user, you'll have the following options:
   is a file format standard for electronic business cards.
 - *Go to Profile* is a link to the selected user's public profile page.
 
-![Figure 1.13: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/contacts-center.png)
+![Figure 1.13: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center.png)
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
@@ -692,9 +802,8 @@ Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
 navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
-Liferay Portal. Please refer to chapter 4 of Liferay's User Guide for
-information about document management: [Document
-Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1)
+Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
+information about document management.
 
 ![Figure 1.16: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
@@ -723,7 +832,7 @@ numbers of tasks, to tag your tasks.
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
 
-#### Using the Profile page and other public pages  [](id=lp-2-1-soen01-using-the-profile-page-and-other-public-pages)
+#### Using the Profile Page and Other Public Pages [](id=lp-2-1-soen01-using-the-profile-page-and-other-public-pages)
 
 You can access your public Profile page from the Dashboard by clicking on your
 name, which appears above the page navigation menu in the left column. Your
@@ -778,40 +887,52 @@ These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
-### Using Social Office sites for collaboration  [](id=lp-2-1-soen01-using-social-office-sites-for-collaboration)
+### Using Social Office Sites For Collaboration  [](id=lp-2-1-soen01-using-social-office-sites-for-collaboration)
 
 Social Office not only provides custom pages and applications for users'
-personal sites but also for general sites that can have many members. A portal
-administrator can use the *Add Site* button of the Sites portlet to add a new
-site to use for team collaboration. This button opens a wizard which guides you
-through the process of creating a site based on the *Default Social Office Site*
-template. Sites based on this template come pre-built with pages and
-applications designed for team collaboration, just like the default Social
-Office personal sites come with applications designed to facilitate user
-interaction. The default pages created by the wizard include the following:
+personal sites but also for general sites that can have many members. To add a
+new Social Office site to use for team collaboration, click on *Go to* from the
+user bar to access the Sites portlet. Then click on the *Add Site* button. This
+button opens a wizard which guides you through the process of creating a site
+based on the *Default Social Office Site* template. Sites based on this template
+come pre-built with pages and applications designed for team collaboration, just
+like the default Social Office personal sites come with applications designed to
+facilitate user interaction. The default pages created by the wizard include the
+following:
 
 - *Home*
 - *Calendar*
 - *Documents*
 - *Forums*
-- *Blog*
+- *Blogs*
 - *Wiki*
 - *Members*
 
-When creating a site, you can select a membership type: Open, Restricted, or
-Private. Any portal user can join an open site. Portal users can request to join
-a restricted site but must be approved by a site administrator. Private sites
-are invisible to non-members; members must be invited by a site administrator.
-By default, all the pages of an open Social Office site are public but
-restricted and private Social Office site pages are private.
+The Add Site wizard lets you choose a site template to use to create your site's
+default pages. You can also choose which of the default template pages you'd
+like to include in your site. Links to these pages are embedded in the left-most
+column of each page that belongs to the site. You can also select one of the
+following four membership types:
 
-![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
+- Open: The site is listed, pages are public and users are free to join and
+  collaborate.
+- Public Restricted: The site is listed, pages are public but users must request
+  to join and collaborate.
+- Private Restricted: The site is listed, pages are private and users must
+  request to join and collaborate.
+- Private: The site is unlisted (it's invisible to non-members), pages are
+  private, and users must be invited to join and collaborate.
 
-The Add Site wizard lets you choose which of default template pages you'd like
-to include in your site. Links to these pages are embedded in the left-most
-column of each page that belongs to the site.
+Note that the available site membership types of Social Office sites are
+slightly different than those of regular Liferay sites. Regular Liferay sites
+have only three available membership types: Open, Restricted, and Private. A
+Restricted Liferay site has the same membership type as a private restricted
+Social Office site. The Public Restricted Social Office site membership type has
+no regular Liferay site equivalent. The default pages of an open Social Office
+site are public but those of restricted and private Social Office sites are
+private.
 
-![Figure 1.20: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
+![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
@@ -831,7 +952,8 @@ Events portlets to inform or remind site members about important information.
 The Bookmarks portlet allows users to create a collection of useful links on
 your site and you can configure the RSS portlet to display an RSS feed of your
 choice. The Welcome portlet allows you to set up a custom welcome message for
-your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
+your site. It's really just a WYSIWYG portlet with its title changed to
+*Welcome*.
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet
 applications that are automatically scoped for the site. This means that these
@@ -854,10 +976,10 @@ The Recent Blogs portlet doesn't show the full content of each post. Instead,
 clicking on a post's title or on the *Read More* link in the Recent opens the
 full content of the post in the Blogs portlet.
 
-Previous versions of Social Office provided a Related Assets portlet on the
-Blogs page. This portlet is no longer provided on the Blogs page by default but
-can easily be added: just click *Add* &rarr; *More* from the Dockbar, search for
-*Related Assets*, and click *Add* next to its name to add it to the page.
+Prior to Social Office 2.0, Social Office provide a Related Assets portlet on
+the Blogs page. This portlet is no longer provided on the Blogs page by default
+but can easily be added: just click *Add* &rarr; *More* from the Dockbar, search
+for *Related Assets*, and click *Add* next to its name to add it to the page.
 Whenever the Blogs portlet displays the full content of a blog post, the Related
 Assets portlet lists any of the post's related assets. Click on the name of any
 related asset to view the asset. If there are no related assets, the Related
@@ -865,13 +987,17 @@ Assets portlet won't appear at all.
 
 The Members page contains a Members portlet and an Invitation portlet. By
 default, the Members portlet displays a list of all the members of the site.
-Using the Members portlet's dropdown selector, users can filter site members who
-are also social connections and site members who they're following. They can
-also select users in the Members portlet in order to send them connections
-requests, follow them, block them, send them private messages, or download their
-vCards. Please refer to the section on the Contacts portlet for more details.
-The Invitation portlet is only visible to site administrators. It allows
-administrators to send invitations to users to join the site.
+Using the Members portlet's dropdown selector, users can filter the set of
+displayed site members. The available filters include *All*, *Administrators*,
+*Connections*, and *Following*. The *Administrators* filter provides site
+members with an easy way to display entries for site owners and site
+administrators. This is useful for site members who need to contact site
+administrators. To view a user's details, including their email address, click
+on the user in the Members portlet. After clicking on a user, you can send them
+connections requests, follow them, block them, send them private messages, or
+download their vCards. Please refer to the section on the Contacts portlet for
+more details. The Invitation portlet is only visible to site administrators. It
+allows administrators to send invitations to users to join the site.
 
 Here's an example of how it all comes together: Ryan, Jim, and Michael are all
 members of the Sales Site. Ryan schedules a meeting for the whole Sales team
@@ -962,10 +1088,30 @@ already upgraded your portal to version 6.1.1 CE, and backed up your old
 
 ---
 
- ![Notice](../../images/tip.png) **Notice:** NOTICE: Current SO 2.0.4 CE
- customers planning to upgrade to 2.0.5 EE must *first* download and upgrade to
- 2.0.5 CE. A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported;
- attempting this will break Social Office.
+ ![Notice](../../images/tip.png) **Notice:** Current SO 2.0.4 CE customers
+ planning to upgrade to 2.0.5 EE must *first* download and upgrade to 2.0.5 CE.
+ A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported; attempting this
+ will break Social Office.
+
+---
+
+---
+
+ ![Notice](../../images/tip.png) **Notice:** There's an issue when upgrading
+ from SO 2.0.5 to 2.1: Deploying newer plugins over the older plugins produces
+ console exceptions when you navigate anywhere inside the portal. The reason for
+ the exceptions is that the old versions of the SO plugins were not completely
+ undeployed.
+
+ As a workaround, set the following portal property before upgrading to ensure
+ that all the SO plugins are completely undeployed before the newer SO plugins
+ are deployed:
+
+    hot.undeploy.on.redeploy=true
+
+ This issue only affects upgrades from 2.0.5 to 2.1 on Liferay 6.1. It does not
+ affect Liferay 6.2. It also does not affect fresh installs of SO 2.1 on Liferay
+ 6.1.
 
 ---
 
