@@ -180,4 +180,40 @@ Drag and Drop from your operating system to your browser is now supported.
 In addition to this, users can now subscribe to be notified of changes to
 folders or documents stored in the Docs and Media library. 
 
+## New Calendar Application
 
+The Calendar application has been completely redesigned and replaced in Liferay
+Portal 6.2. It is now a plugin, which means you can undeploy it if you aren't
+using the calendar. It now has a much more modern UI, can display multiple,
+sharable calendars, and supports resource reservations. 
+
+![The new calendar's improved UI lets you drag events around to change them.](../../images/new-calendar-event-invitations.png)
+
+In addition to this, calendars can be shared via RSS feeds, so you can make a
+calendar available to users outside of Liferay Portal. 
+
+## Platform Improvements
+
+In addition to these visible improvements, Liferay Portal 6.2 has received
+numerous improvements under the hood. The first version of our OSGi container is
+available in Liferay Portal 6.2. Users can deploy OSGi bundles into Liferay, and
+develop plugins as OSGi bundles. 
+
+Liferay Portal 6.2 also serves as an OAuth server, allowing you to use your
+Liferay Portal installation as an authentication service to enable your users to
+sign in to multiple websites with their credentials from your site. 
+
+For larger deployments, Liferay Portal 6.2 introduces portlet sandboxing. This
+lets you decide to run certain applications in their own JVMs. You can use this
+feature to make your portal more resilient: if you have some unstable
+applications, place them in their own JVMs, and if they crash, they can't bring
+down your portal. 
+
+Liferay Portal 6.2 also includes integration hooks for real-time analytics
+software. This lets you easily profile your server while it's running in order
+to debug issues you may be having with a custom application. 
+
+Liferay Portal 6.2 is a major release that incorporates many enhancements. These
+enhancements make upgrading your site to the latest release a worthwhile
+endeavor, and we highly recommend that you upgrade your site to this latest
+release. 
