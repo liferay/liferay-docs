@@ -124,10 +124,18 @@ site.
 As of Liferay 6.2, sites can be organized hierarchically, just like
 organizations. The difference between sites and organizations, of course, is
 that sites are used to organize pages, content, application data, and users (via
-site memberships) whereas organizations are only used to group users. Please
-refer to the Sites Admin Portlet section of Liferay's `portal.properties` file
-for a list of relevant configurable properties. For example, the
-`sites.content.sharing.with.children` property determines allows to disable
+site memberships) whereas organizations are only used to group users. Content
+sharing is available for sites within the same hierarchy. For instance, if a
+parent site has a document called *Nose Goals and Objectives* and would like for
+all its subsites to have a copy, the parent site's administrator can enable
+content sharing to automatically share the document with its subsites, instead
+of having to send each site the document individually. Also, content sharing
+privileges can be set to let every site administrator share content across sites
+they manage.
+
+Please refer to the Sites Admin Portlet section of Liferay's `portal.properties`
+file for a list of relevant configurable properties. For example, the
+`sites.content.sharing.with.children.enabled` property allows you to disable
 content sharing between sites and subsites, disable it by default while allowing
 site administrators to enable it per site, or to enable it by default while
 allowing administrators to disable it per site.
@@ -206,7 +214,7 @@ chapters 14, 16, and 17 of this guide.
  included interfaces both for site administration and for portal administration.
  In Liferay 6.2, these interfaces have been separated. If you're signed in as an
  administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
- &rrar; *Control Panel*. To manage a single site, navigate to the site by
+ &rarr; *Control Panel*. To manage a single site, navigate to the site by
  clicking on *My Sites* and clicking on the site's name. Then click on *Admin*
  &rarr; *Site Administration*. The Site Administration interface allows to
  configure site settings and manage the pages, content, and users of the site.
@@ -862,8 +870,9 @@ revoke content sharing from all sub-sites.
 
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be
-stored in the Recycle Bin until it is permanently deleted. For a full explantion
-of the Recycle Bin, see the *Configuring Liferay Applications* chapter.
+stored in the Recycle Bin until it is permanently deleted. For a full
+explanation of the Recycle Bin, see the *Configuring Liferay Applications*
+chapter.
 
 **Custom Fields:** lets you edit the custom fields you already have configured
 for the *Site* resource. If you don't have any custom fields configured for the
