@@ -931,11 +931,11 @@ the portal's namespacing logic for specific scenarios.
 
 ### Using Portlet Namespacing
 
-Namespacing ensures that a given portlet name is uniquely associated with the
+Namespacing ensures that a given portlet name is uniquely associated with a
 specific portlet and avoids name conflicts with other elements on the portal
 page or with other portlets on the page. You can use the `<portlet:namespace />`
 tag to produce a unique value for the portlet. Below is a code example using the
-`<portlet:namespace />` tag to uniquely name a portlet's form *fm* during
+`<portlet:namespace />` tag to reference the portlet's *fm* form during
 submission:
 
 	submitForm(document.<portlet:namespace />fm);
@@ -947,7 +947,21 @@ likewise, would be unable to know which *fm* to refer to. Therefore, adding
 `<portlet:namespace />fm` to both portlets would change the forms to *_Afm* and
 *_Bfm*, for the forms residing in portlets A and B, respectively.
 
+By default, Liferay only allows *namespaced* parameters to access portlets.
+However, many third-party portlets send *unnamespaced* parameters. Therefore,
+Liferay gives you the option to turn off the unnamespaced parameters filter for
+portlets, to avoid third-party portlets from breaking. To turn the filter off
+for a portlet, navigate to the portlet's `liferay-portlet.xml` file and enter
+the following tag:
 
+	<requires-namespaced-parameters>false</requires-namespaced-parameters>
+
+Turning this filter off is on a per portlet basis, so you'll need to set the
+`<requires-namespaced-parameters/>` tag to false for every third-party portlet
+that sends unnamespaced parameters.
+
+Interested in developing your custom portlet with multiple actions? Then you'll
+definitely want to check out the next section!
 
 ## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions-liferay-portal-6-2-dev-guide-en)
 
