@@ -238,12 +238,17 @@ the Liferay-specific files:
 *Client Side Files* are the `.jsp`, `.css`, and `.js` files that you write to
 implement your portlet's user interface. These files should go in the `docroot`
 folder; `.jsp` files can be placed in the root of the folder, while `.css` and
-`.js` files are given their own subfolders in `docroot`. Remember, with
-portlets you're only dealing with a portion of the HTML document that is
-getting returned to the browser. Any HTML code in your client side files must
-be free of global tags like `<html>` or `<head>`.  Additionally, namespace all
-CSS classes and element IDs to prevent conflicts with other portlets. Liferay
-provides two tools, a taglib and API methods, to generate a namespace for you. 
+`.js` files are given their own subfolders in `docroot`. Remember, with portlets
+you're only dealing with a portion of the HTML document that is getting returned
+to the browser. Any HTML code in your client side files must be free of global
+tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
+element IDs to prevent conflicts with other portlets. Liferay provides two
+tools, a taglib and API methods, to generate a namespace for you. You can
+reference the *Using Portlet Namespacing* section of this chapter to learn more
+about namespacing.
+
+Let's continue exploring portlet anatomy by studying your new My Greeting
+portlet.
 
 ### A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet-liferay-portal-6-2-dev-guide-03-en)
 
@@ -917,7 +922,28 @@ while processing the action request.
 ![Figure 3.8: The sample "My Greeting" portlet showing an error message](../../images/portlet-invalid-data.png)
 
 The first message is automatically added by Liferay. The second one is the one
-you added in your JSP. 
+you added in your JSP. You've successfully created and rendered your portlet's
+error message. Terrific!
+
+Have you ever wondered how Liferay Portal can differentiate between portlet
+requests with the same name? Let's discuss namespacing and how to turn on/off
+the portal's namespacing logic for specific scenarios.
+
+### Using Portlet Namespacing
+
+Namespacing ensures that a given portlet name is uniquely associated with the
+specific portlet and avoids name conflicts with other elements on the portal
+page or with other portlets on the page. You can use the `<portlet:namespace />`
+tag to produce a unique value for the portlet. For example, suppose your My
+Greeting portlet and another portlet on your portal page both have a form named
+*fm*. Without portlet namespacing, the portal would be unable to differentiate
+between the two forms and what portlet they reside in, causing unwanted
+conflicts. Below is a code example using the `<portlet:namespace />` tag to
+uniquely name the form *fm* during submission:
+
+	submitForm(document.<portlet:namespace />fm);
+
+
 
 ## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions-liferay-portal-6-2-dev-guide-en)
 
