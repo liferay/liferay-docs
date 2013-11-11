@@ -575,7 +575,7 @@ automatically begin uploading and their compatibility information is scanned
 information is read from your plugins). 
 
 
-![Figure 12.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+![Figure 12.5: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
 As a more complicated example, let's consider an app that consists of a hook and
 a portlet. The portlet works across all Liferay releases, but the hook is built
@@ -584,7 +584,7 @@ app: 1 portlet plugin for all releases, 1 hook plugin for CE, and 1 hook plugin
 for EE. Once the files are uploaded, a check mark appears next to each plugin,
 and the plugins are displayed based on their compatibility information. 
 
-![Figure 12.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
+![Figure 12.6: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
 This indicates that the files were successfully uploaded. Notice that the
 portlet plugin was automatically copied for use in both the EE and CE
@@ -597,7 +597,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
 will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 12.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 12.7: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
@@ -756,7 +756,7 @@ downloads, and installations of your app(s). To access these metrics, navigate
 to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next
 to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 12.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 12.8: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Installations*).
