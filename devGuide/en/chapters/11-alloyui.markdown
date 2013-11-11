@@ -27,27 +27,23 @@ incorporates Twitter Bootstrap to make styling components a snap.
 AlloyUI was built on YUI for several reasons. First, YUI facilitates building
 high quality production-level widgets quickly. YUI has a flexible, elegant
 architecture that is easy to extend. It is useful in both small and large scale
-projects. Lastly, YUI is documented well at
-[http://yuilibrary.com/yui/docs/](http://yuilibrary.com/yui/docs/). As you use
-YUI through AlloyUI, you'll realize these benefits. 
+projects. YUI's is is also documented well at
+[http://yuilibrary.com/yui/docs/](http://yuilibrary.com/yui/docs/). 
 
----
+By using AlloyUI, therefore leveraging YUI, you can reap significant performance
+benefits. YUI helps reduce the size of your up-front JavaScript request
+download, and lazily loads other modules as needed. YUI manages dependencies for
+you, by making sure modules are only downloaded once for a page and by
+specifying modules your page needs in a single request. Also, Liferay's
+`aui:script` tags collect the JavaScript embedded on your page for parsing only
+*after* its HTML and CSS have been loaded. This often speeds up the availability
+of your UI to your user. As you use YUI through AlloyUI, you'll realize these
+benefits. 
 
-![note](../../images/tip-pen-paper.png) Given the popularity of jQuery,
-you may be wondering why Liferay chose to build on YUI instead of jQuery.
-The most important reason for using YUI over jQuery is that YUI performs so much
-better. You'll see for yourself as you use AlloyUI in Liferay Portal. 
-
-<!-- Do you have a source for this? We should footnote a benchmark here. If we
-don't have a benchmark to cite, we should remove this sidebar. As it is, we
-shouldn't have a sidebar in the introduction if we can help it. -Rich
--->
- 
-You can use jQuery in Liferay Portal, but we strongly recommend you use AlloyUI.
-AlloyUI is always loaded and available to you. If you use something else, your
-page must load your library and AlloyUI, which slows down performance. 
-
----
+We know that many developers in the community like to use jQuery. You can use
+jQuery in Liferay Portal, but we strongly recommend you use AlloyUI. AlloyUI is
+always loaded and available to you. If you use something else, your page must
+load your library and AlloyUI, which slows down performance. 
 
 By reading this chapter and following along with its exercises, you'll learn
 what AlloyUI is and how to use it in Liferay Portal. For further details on the
@@ -108,21 +104,21 @@ HTML file.
 The button transitions from its original width to 500 pixels, as specified in
 your script.
 
-![Figure 11.x: It's easy to set and reset dimensions of AlloyUI components, such as this `aui-btn` component. Clicking the *Try me now!* button on our page, triggers our function to expand the button's width to 500 pixels.](../../images/alloyui-simple-example-try-me.png)
+![Figure 11.x: It's easy to set and reset dimensions of AlloyUI components, such as this `.btn` component. Clicking the *Try me now!* button on our page, triggers our function to set the button's width to 500 pixels.](../../images/alloyui-simple-example-try-me.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
-displays a button using AlloyUI's `aui-btn` module.
+displays a button using AlloyUI's `btn` module.
 
 Then we used a script element to reference Alloy's seed file, `aui-min.js`
 from a content delivery network (CDN). The seed file includes the bare minimum
 core code required for AlloyUI. Any additional code is loaded dynamically by
 YUI.
 
-    <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
+    <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** For performance reasons, it
+ ![Note](../../images/tip.png) **Note:** For performance reasons, it
  is almost always best to reference the seed file from the CDN rather than from
  a designated server. On receiving the request for the seed file, the CDN
  returns it from the nearest server on the CDN, minimizing latency time.
