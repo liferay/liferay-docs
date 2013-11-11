@@ -934,14 +934,18 @@ the portal's namespacing logic for specific scenarios.
 Namespacing ensures that a given portlet name is uniquely associated with the
 specific portlet and avoids name conflicts with other elements on the portal
 page or with other portlets on the page. You can use the `<portlet:namespace />`
-tag to produce a unique value for the portlet. For example, suppose your My
-Greeting portlet and another portlet on your portal page both have a form named
-*fm*. Without portlet namespacing, the portal would be unable to differentiate
-between the two forms and what portlet they reside in, causing unwanted
-conflicts. Below is a code example using the `<portlet:namespace />` tag to
-uniquely name the form *fm* during submission:
+tag to produce a unique value for the portlet. Below is a code example using the
+`<portlet:namespace />` tag to uniquely name a portlet's form *fm* during
+submission:
 
 	submitForm(document.<portlet:namespace />fm);
+
+For example, suppose you have two portlets named A and B residing on the same
+portal page and both have a form named *fm*. Without portlet namespacing, the
+portal would be unable to differentiate between the two forms named *fm* and,
+likewise, would be unable to know which *fm* to refer to. Therefore, adding
+`<portlet:namespace />fm` to both portlets would change the forms to *_Afm* and
+*_Bfm*, for the forms residing in portlets A and B, respectively.
 
 
 
