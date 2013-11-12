@@ -243,9 +243,8 @@ you're only dealing with a portion of the HTML document that is getting returned
 to the browser. Any HTML code in your client side files must be free of global
 tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
 element IDs to prevent conflicts with other portlets. Liferay provides two
-tools, a taglib and API methods, to generate a namespace for you. You can
-reference the *Using Portlet Namespacing* section of this chapter to learn more
-about namespacing.
+tools, a taglib and API methods, to generate a namespace for you. See the *Using
+Portlet Namespacing* section of this chapter to learn more about namespacing. 
 
 Let's continue exploring portlet anatomy by studying your new My Greeting
 portlet.
@@ -925,27 +924,35 @@ The first message is automatically added by Liferay. The second one is the one
 you added in your JSP. You've successfully created and rendered your portlet's
 error message. Terrific!
 
-Have you ever wondered how Liferay Portal can differentiate between portlet
-requests with the same name? Let's discuss namespacing and how to turn on/off
-the portal's namespacing logic for specific scenarios.
+Have you ever wondered how Liferay Portal determines which portlet to associate
+with a request parameter--especially when the portal receives multiple
+parameters, with the same name, coming from different portlets? Each of
+Liferay's core portlets namespaces its request parameters, so that Liferay can
+distinguish them from other request parameters. And you can leverage namespacing
+in your portlets, too. Let's discuss portlet namespacing and how to turn on/off
+the portal's namespacing logic for a portlet. 
 
 ### Using Portlet Namespacing
 
-Namespacing ensures that a given portlet name is uniquely associated with a
-specific portlet and avoids name conflicts with other elements on the portal
-page or with other portlets on the page. You can use the `<portlet:namespace />`
-tag to produce a unique value for the portlet. Below is a code example using the
-`<portlet:namespace />` tag to reference the portlet's *fm* form during
-submission:
+Namespacing ensures that a given portlet's name is uniquely associated with
+elements in request parameters it sends to the portal. This prevents name
+conflicts with other elements on the portal page and with elements from other portlets on the
+page. Namespacing your portlet elements is easy. Simply use the
+`<portlet:namespace />` tag to produce a unique value for your portlet's
+elements. The following example code uses the `<portlet:namespace />` tag to
+reference the portlet's *fm* form during submission:
 
 	submitForm(document.<portlet:namespace />fm);
 
-For example, suppose you have two portlets named A and B residing on the same
-portal page and both have a form named *fm*. Without portlet namespacing, the
-portal would be unable to differentiate between the two forms named *fm* and,
-likewise, would be unable to know which *fm* to refer to. Therefore, adding
-`<portlet:namespace />fm` to both portlets would change the forms to *_Afm* and
-*_Bfm*, for the forms residing in portlets A and B, respectively.
+To illustrate the benefits of namespacing an element, such as the *fm* form from
+the example code above, suppose you have a portlets named A and B on your
+portal. And they both have a form named *fm*. Without portlet namespacing, the
+portal would be unable to differentiate between the two forms and, likewise,
+would be unable to determine their associated portlets. But, submitting both
+portlet A's form and portlet B's form as `<portlet:namespace />fm` would
+distinguish the forms as *_Afm* and *_Bfm*, respectively. Liferay associates
+each namespaced element, such as these namespaced forms, with the portlet that
+produced it. 
 
 By default, Liferay only allows *namespaced* parameters to access portlets.
 However, many third-party portlets send *unnamespaced* parameters. Therefore,
