@@ -61,53 +61,45 @@ To start things off right, let's go over a simple example using AlloyUI.
 AlloyUI is easy to use. Let's demonstrate by using Alloy's `node` module in an
 HTML file.
 
-1. Create an HTML page like this:
-
+1. Create an HTML file like this: 
         <!DOCTYPE html>
 
-			<head>
-              <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css"
-                  rel="stylesheet">
-	
-                <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js" />
-			</head>
+        <input type="text" id="some-input" />
+        <span id="counter"></span> character(s) remaining
 
-			<body>
-                <button id="try-btn" class="btn" type="button">
-                    Try me now!
-                </button>
+        <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
 
-                <script>
-                    AUI().use(
-                        'node',
-                        'transition',
-                        function(A) {
-                            A.one('.btn').on(
-                                'click', function() {
-                                    this.transition(
-                                        {
-                                            width: '500px'
-                                        }
-                                    );
-                                }
-                            );
-                        }
-                    );
-                </script>
-            </body>
+        <link href="http://cdn.alloyui.com/2.0.0/aui-css/css/bootstrap.min.css"
+          rel="stylesheet"></link>
+
+        <script>
+        YUI().use(
+          'aui-char-counter',
+          function(Y) {
+            new Y.CharCounter(
+              {
+                counter: '#counter',
+                input: '#some-input',
+                maxLength: 10
+              }
+            );
+          }
+        );
+        </script>
 
         </html>
 
-2. Navigate to this HTML file in your browser.
-3. Click *Try me now!*
+2. Open the HTML file in your browser.
+3. Enter some characters into the text field.
 
-The button transitions from its original width to 500 pixels, as specified in
-your script.
+AlloyUI's character counter reports the number of characters you can enter in
+the text field before reaching the 10 character limit. 
 
-![Figure 11.x: It's easy to set and reset dimensions of AlloyUI components, such as this `.btn` component. Clicking the *Try me now!* button on our page, triggers our function to set the button's width to 500 pixels.](../../images/alloyui-simple-example-try-me.png)
+![Figure 11.x: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
-displays a button using AlloyUI's `btn` module.
+displays an HTML `<input/>` element with `id=some-input`. Then we reference an
+element called `counter`, followed by some text describing that counter. 
 
 Then we used a script element to reference Alloy's seed file, `aui-min.js`
 from a content delivery network (CDN). The seed file includes the bare minimum
@@ -125,9 +117,10 @@ YUI.
 
 ---
 
-Lastly, our script selects the first element of class `aui-btn` found on the
-page and sets a callback to change its width to 500 pixels when it is clicked.
-How's that for dynamic content!
+Lastly, the script reports the number of characters remaining in the text field.
+As you enter or delete characters from the field, the script recalculates the
+number of remaining characters and displays that number via the `counter`
+element on your page. How's that for dynamic content! 
 
 This script uses YUI and AlloyUI in what is commonly referred to as a "sandbox."
 Code is sandboxed when elements of the code are set off in their own namespaces.
@@ -154,45 +147,37 @@ follows this format:
 `YUI().use()` is a function call that instantiates modules for you to use. As
 parameters, you pass in packages and a function containing your code. The
 example code required YUI's `event` and `node` packages. The final argument
-is the AlloyUI object as parameter `A` (you could use any other value--YUI
-uses `Y`). Alloy's classes are stored in the `A` object. In this function, you 
-place presentation logic, leveraging AlloyUI's API via its mighty `A` object.
-We'll get into more details on the API shortly.
+is the YUI object as parameter `Y`. Alloy's classes are stored in this `Y`
+object. In this function, you place presentation logic, leveraging AlloyUI's API
+via the mighty `Y` object. We'll get into more details on the API shortly.
 
-Now that we've dissected the example, let's get it working in a portlet.
-First, specify the AlloyUI's taglib as a dependency in the
-`liferay-plugin-package.properties` for the portlet's project. You can specify
-this dependency via Design view of the file in Liferay IDE, or you can open
-the file and add the following assignment:
+Now that we've dissected the example, let's get it working in a portlet. Instead
+of referencing AlloyUI's seed file, simply reference the `aui` taglib in your
+JSP:
 
-<!-- TODO Add screenshot of Liferay IDE's Design view -->
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
-    portal-dependency-tlds=aui.tld
-
-Then add the code for the button and the Alloy script to your portlet's JSP.
-This time, however, replace the `<script>` tag with the `<aui:script>` tag.
+Then add the code for the input element and the Alloy script to your portlet's
+JSP. This time, however, replace the `<script>` tag with the `<aui:script>` tag.
 The `<aui:script>` tag combines the contents of all `<aui:script>` tags used on
 a page into one script block at the bottom of the page, and it wraps the
 functions in a `YUI.use()` call to bring in necessary module dependencies. 
 
-Another convenience you get by using the tag is there's no explicit reference to
-AlloyUI's seed file. With all these simplifications, the AlloyUI code in your
+With all these simplifications, the AlloyUI code in your
 JSP looks like this:
 
-    <button id="try-btn" class="aui-btn" type="button">Try me now!</button>
+    <input type="text" id="some-input" />
+    <span id="counter"></span> character(s) remaining
 
     <aui:script>
     YUI().use(
-      'node',
-      'transition',
-      function (A) {
-        A.one('.aui-btn').on(
-          'click', function() {
-            this.transition(
-              {
-                width: '500px'
-              }
-            );
+      'aui-char-counter',
+      function(Y) {
+        new Y.CharCounter(
+          {
+            counter: '#counter',
+            input: '#some-input',
+            maxLength: 10
           }
         );
       }
@@ -201,8 +186,10 @@ JSP looks like this:
 
 Voila! You're using AlloyUI in Liferay!
 
-Let's go over setting up the AlloyUI project for creating your own AlloyUI
-components. 
+![Figure 11.x: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
+
+Now that you've gotten your feet wet using AlloyUI, let's go over setting up the
+AlloyUI project for creating your own AlloyUI components. 
 
 ## Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-en)
 
@@ -215,16 +202,11 @@ Liferay, you might want to build it yourself.
 Here are some other reasons why you might use a local AlloyUI installation or
 AlloyUI project build:
 
-- Creating and testing your own AlloyUI component modules 
-- Using the latest AlloyUI project source code that is not yet released 
-- Using AlloyUI on a closed network 
-- Contributing and testing a fix or enhancement to AlloyUI 
+- Using AlloyUI Outside Liferay
+- Working with the AlloyUI Project
 
 Let's download AlloyUI and set it up for developing AlloyUI scripts and
 components locally. 
-
-<!-- I've been removing all references to a local web server, because AFAIK, you
-don't need one. The file system is fine. -Rich -->
 
 You can download AlloyUI as a `.zip` file from
 [http://alloyui.com](http://alloyui.com). The file contains the following files
@@ -235,23 +217,8 @@ and folders:
     - `demos/` - Contains basic examples of the AlloyUI components 
     - `src/` - Contains the source code of the AlloyUI modules 
     - `.alloy.json` - Specifies how to build the modules 
-    - `.shifter.json` - Specifies additional tasks used to build AlloyUI 
     - `LICENSE.md` - Defines AlloyUI's the license agreement 
     - `README.md` - Explains the AlloyUI project 
-
-If you'd rather build AlloyUI from the its latest source code, go to the
-project's repository at
-[https://github.com/liferay/alloy-ui](https://github.com/liferay/alloy-ui),
-fork the repository, and clone it to your machine. Whether you're using AlloyUI
-pre-built from the `.zip` file or cloned from the repository on Github,
-AlloyUI's modules are available in the `alloy-[version]/build/` folder. You can
-access these modules from your local web pages. 
-
-<!-- Consider adding back the following tip
- ![tip](../../images/tip-pen-paper.png) **Tip:** You may find it
- convenient to extract the AlloyUI installation into your web server installation, or
- create symbolic links from your AlloyUI installation to your web server. 
-- Jim -->
 
 As you did in the initial example, the first thing you'll call is AlloyUI's
 `aui-min.js` seed file, in your `alloy-[version]/build/aui/` folder. For
@@ -260,27 +227,67 @@ example, if your AlloyUI project root directory is
 
     <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
 
-Now that you've specified your local seed file, you can use AlloyUI throughout
-your web page. 
+Likewise, make sure to specify your local bootstrap seed file as well:
 
-<!-- I think this section needs to be reorganized, as it jumps around and gets
-confusing. We should start one thing, then finish it, then start the next thing.
-One possible order of steps we could use would be this: 
+    <link src="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
+      rel="stylesheet"></link>
 
-Using AlloyUI Outside Liferay
-1. Download AlloyUI. 
-2. Unzip and extract
-3. Use in web page. 
+Go ahead and replace the remote seed file references from the example HTML file
+we used at the beginning of this chapter with refernces to your local seed
+files. Except for the paths to your seed files, your HTML content should look
+similar to this:
+
+        <!DOCTYPE html>
+
+        <input type="text" id="some-input" />
+        <span id="counter"></span> character(s) remaining
+
+        <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
+
+        <link src="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
+          rel="stylesheet"></link>
+
+        <script>
+        YUI().use(
+          'aui-char-counter',
+          function(Y) {
+            new Y.CharCounter(
+              {
+                counter: '#counter',
+                input: '#some-input',
+                maxLength: 10
+              }
+            );
+          }
+        );
+        </script>
+
+        </html>
+
+The figure below shows what your web page should look like.
+
+![Figure 11.x: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+
+Great! Now you know how to use a local set of the AlloyUI tag libraries. This
+may come in handy when you're working offline. Next, we'll show you how to work
+with the AlloyUI source project. You'll have all of the source code at your
+disposal to see how everything works. And we'll show you how to build it so you
+can have experiment with the latest AlloyUI code whenever you want. 
+
+### Working with the AlloyUI Project
+
+To get the latest AlloyUI source code, go to the
+project's repository at
+[https://github.com/liferay/alloy-ui](https://github.com/liferay/alloy-ui),
+fork the repository, and clone it to your machine. 
+
+TODO, forking and cloning
 
 Working with the AlloyUI Project
 1. Download AlloyUI source. 
 2. Build AlloyUI locally. 
 3. Unzip and extract locally built distribution. 
 4. Use in web page. 
-
-I also removed the link to the specific version in these URLs and made the links
-go directly to the project. -Rich
--->
 
 Before we go on to creating your own AlloyUI components, let's build AlloyUI. If
 you are not interested, feel free to skip these build instructions. 
@@ -294,17 +301,21 @@ to build its modules. For instructions on installing Yogi Alloy and its
 dependencies, follow the instructions in Yogi Alloy's `README.md` file at
 [https://github.com/liferay/yogi-alloy/blob/master/README.md](https://github.com/liferay/yogi-alloy/blob/master/README.md).
 
-Yogi Alloy depends on the following:
-- [Node.js](nodejs.org) v0.8 Node.js is platform for building applications. Yogi
-Alloy requires Node.js version 0.8.
+Yogi Alloy depends on the following software:
+- [Node.js](http://nodejs.org) Node.js is platform for building applications. Yogi
+Alloy requires Node.js version 0.8 or higher.
+- Ruby 
 - [Compass](http://compass-style.org) is an open-source CSS authoring framework.
 
-Node.js version 0.9 is available at [http://nodejs.org/dist/v0.8.2/](http://nodejs.org/dist/v0.8.2/).
+The current version of Node.js is available at [http://nodejs.org/download/](http://nodejs.org/download/); while all versions are available at [http://nodejs.org/dist/](http://nodejs.org/dist/).
 
 On Windows you can download the `.msi` installation file and run it.
 
 On Linux, MacOS, or UNIX, you can download the `.tar.gz` file, unzip it, and
 un-tar it. Then follow the instructions in its `README.md` file to build it. 
+
+To install Ruby, follow its installation instructions at
+[https://www.ruby-lang.org/en/downloads/](https://www.ruby-lang.org/en/downloads/).
 
 To install Compass, follow its installation instructions at
 [http://compass-style.org/install/](http://compass-style.org/install/).
@@ -312,7 +323,7 @@ To install Compass, follow its installation instructions at
 Now that you've installed Yogi Alloy's dependencies, you can use the Node.js
 package manager (`npm`) to install Yogi Alloy. Execute the following command:  
 
-    npm -g install yogi yogi-alloy yuidocjs docpad shifter
+    npm install -g yogi yogi-alloy yuidocjs docpad shifter
 
 To build the AlloyUI project and its dependencies, execute: 
 
@@ -322,8 +333,7 @@ The Yogi Alloy target prompts you before building different parts of the AlloyUI
 project. Upon completion of the target, Yogi Alloy reports `.yogi [success]
 done.` 
 
-Congratulations on building AlloyUI! Now it's time to create your own UI
-components in AlloyUI. 
+Congratulations on building AlloyUI! 
 
 ## Summary
 
