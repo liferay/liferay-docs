@@ -741,7 +741,7 @@ class.
 ---
 
  ![tip](../../images/tip-pen-paper.png) **Tip:** When extending Liferay Portal,
- you should always avoid implementing the portal's interfaces directly. In some
+ you should try to avoid implementing the portal's interfaces directly. In some
  cases, patches are added to the interfaces in fix packs to fix an issue (e.g.
  adding a new method to a service). If the user implements the API directly, a
  patch could break the customization. However, if the basic implementation is
