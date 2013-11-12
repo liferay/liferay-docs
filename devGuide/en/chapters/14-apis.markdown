@@ -51,20 +51,36 @@ Example,
 
 ## Application Display Templates
 
-Display Settings are the simplest way to customize your portlet's display.
-Unlike with themes and hooks, you can modify the display settings for specific
-portlet instances without redeploying. Unfortunately, with Display Settings,
-you're limited to the display settings that come with Liferay by default. It's
-too bad there's no way to develop the settings you need. If you could, then
-customizing the portlet display would be simple for users, and life would be
-easier for the portlet's developer, since you wouldn't have to change your
-portlet's configuration code every time a new setting is required.
+<!--Display Settings are the simpliest way to customize the portlet display.
+Unlike themes or hooks, they don't require deployment and they affect specific
+portlet instances. But, they are limited to those that come out of the box...
+Wouldn’t it be great to have as many of them as we wanted? As a user, this
+would simplify the task of customizing the portlet display. And as developers,
+we wouldn’t have to change our portlet configuration code every time a new
+setting is required.
+
+That’s exactly what Application Display Templates provides: Adding custom
+display settings to our portlets. Actually, this is not a new concept in
+Liferay. In some portlets such as Web Content, Document and Media or Dynamid
+Data Lists we can add as many display options (or templates) as we want.
+
+You can use the Application Display Templates API to add this new feature to
+your plugins.-->
+
+Application Display Templates are a simple way to customize your portlet's
+display. Unlike with themes and hooks, you can modify the display settings for
+specific portlet instances without redeploying. With Display Settings, you're
+limited to the display settings that come with Liferay by default. It's too bad
+there's no way to develop the settings you need. If you could, then customizing
+the portlet display would be simple for users, and life would be easier for the
+portlet's developer, since you wouldn't have to change your portlet's
+configuration code every time a new setting is required.
  
 You don't need to resign yourself to suffering with the current settings or
 unnecessarily develop a hook or theme to hack a solution. Instead use an
 Application Display Template to add custom display settings to your portlets.
 This is not actually a new concept in Liferay. In some portlets such as Web
-Content, Document and Media or Dynamid Data Lists we can add as many display
+Content, Document and Media or Dynamic Data Lists we can add as many display
 options (or templates) as we want.
 
 You can use the Application Display Templates API to add this new feature to
@@ -72,11 +88,19 @@ your plugins.
 
 ### Using the Application Display Templates API
 
-1. Register your custom PortletDisplayTemplateHandler
+1. Register your custom `PortletDisplayTemplateHandler`
 
-   To join the exclusive ADT club your portlet has to sign a contract committing itself to fulfill all the Application Display Templates features. In other words, you have to create a your own PortletDisplayTemplateHandler implementation by extending the BasePortletDisplayTemplateHandler methods. You can check the TemplateHandler interface javadoc to learn what every method is for.
+<!-- Is this to register the portlet as able to take ADTs? -->
+
+    To join the exclusive ADT club your portlet has to sign a contract
+    committing itself to fulfill all the Application Display Templates features. In
+    other words, you have to create a your own `PortletDisplayTemplateHandler`
+    implementation by extending the BasePortletDisplayTemplateHandler methods. You
+    can check the TemplateHandler interface javadoc to learn what every method is
+    for.
  
-   Once you've created your handler, you have to declare it in the right section of your liferay-portlet.xml:
+    Once you've created your handler, you have to declare it in the right
+    section of your `liferay-portlet.xml`:
 
     	<?xml version="1.0"?>
     	<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" 
@@ -93,7 +117,9 @@ your plugins.
 
 2. Declare permissions
 
-   The action of adding Application Display Templates is new to your portlet, so you want to be sure you can grant specific permissions for it. Just add this line to your resource actions file:
+    The action of adding Application Display Templates is new to your portlet,
+    so you want to be sure you can grant specific permissions for it. Just add this
+    line to your resource actions file:
 
     	<?xml version="1.0"?>
     	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" 
@@ -112,7 +138,11 @@ your plugins.
 	 
 3. Add display settings configuration
 
-   Let's move to the frontend side of your portlet. Now your portlet officially supports Application Display Templates, you'll want to expose this option to your users. Just include the liferay-ui:ddm-template-selector taglib in your portlet configuration view providing the required information, like this:
+    Let's move to the frontend side of your portlet. Now your portlet
+    officially supports Application Display Templates, you'll want to expose this
+    option to your users. Just include the liferay-ui:ddm-template-selector taglib
+    in your portlet configuration view providing the required information, like
+    this:
  
     	<aui:form action="<%= configurationURL %>" method="post" name="fm">
     	 	<aui:fieldset> 
@@ -134,7 +164,10 @@ your plugins.
  
 4. Render Application Display Templates in your views
 
-   Last but not least, you have to extend your view code to render it with the selected Application Display Template. Here is where you decide exactly which part of your view will be rendered by the Application Display Template and what will be available in the template context.
+    Last but not least, you have to extend your view code to render it with the
+    selected Application Display Template. Here is where you decide exactly which
+    part of your view will be rendered by the Application Display Template and what
+    will be available in the template context.
  
     	<%
     	List<MyType> myList = getMyList();
@@ -154,13 +187,18 @@ your plugins.
     	 	</c:otherwise>
     	</c:choose>
 
-
 ### Recommendations
 
-As we have seen, Application Display Templates bring a great power. But if there's something we've learnt, is that with great power, comes great responsability!  Let’s go through some good practices in ADT design:
+As we have seen, Application Display Templates bring a great power. But if
+there's something we've learnt, is that with great power, comes great
+responsability!  Let’s go through some good practices in ADT design:
  
 #### Security
-You may want to hide some classes or packages from the template context, to limit the operations that ADTs can perform on your portal. Liferay provides some portal  properties to define the restricted classes, packages and variables:
+
+You may want to hide some classes or packages from the template context, to
+limit the operations that ADTs can perform on your portal. Liferay provides
+some portal  properties to define the restricted classes, packages and
+variables:
 
 	freemarker.engine.restricted.classes= 
 	freemarker.engine.restricted.packages=
@@ -170,7 +208,15 @@ You may want to hide some classes or packages from the template context, to limi
 	velocity.engine.restricted.variables=serviceLocator
 
 #### Performance
-Application Display Templates add extra processing task in portlet render. This inevitably has effect in the performance. To reduce this effect, make your templates as minimal as possible: focus on the presentation and use the existing API for complex operations. The best way to make efficient Application Display Templates is to know your template context well and what you can use from it. Now you don’t need to know them by heart thanks to the advanced tempalte editor! Finally, don't forget running performance tests and tuning the template cache options:
+
+Application Display Templates add extra processing task in portlet render. This
+inevitably has effect in the performance. To reduce this effect, make your
+templates as minimal as possible: focus on the presentation and use the
+existing API for complex operations. The best way to make efficient Application
+Display Templates is to know your template context well and what you can use
+from it. Now you don’t need to know them by heart thanks to the advanced
+tempalte editor! Finally, don't forget running performance tests and tuning the
+template cache options:
 
 	freemarker.engine.resource.modification.check.interval=60 
 	velocity.engine.resource.modification.check.interval=60
