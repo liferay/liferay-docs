@@ -945,14 +945,13 @@ reference the portlet's *fm* form during submission:
 	submitForm(document.<portlet:namespace />fm);
 
 To illustrate the benefits of namespacing an element, such as the *fm* form from
-the example code above, suppose you have a portlets named A and B on your
-portal. And they both have a form named *fm*. Without portlet namespacing, the
-portal would be unable to differentiate between the two forms and, likewise,
-would be unable to determine their associated portlets. But, submitting both
-portlet A's form and portlet B's form as `<portlet:namespace />fm` would
-distinguish the forms as *_Afm* and *_Bfm*, respectively. Liferay associates
-each namespaced element, such as these namespaced forms, with the portlet that
-produced it. 
+the example code above, suppose you have portlets named A and B in your portal
+and they both have a form named *fm*. Without portlet namespacing, the portal
+would be unable to differentiate between the two forms and, likewise, would be
+unable to determine their associated portlets. But, submitting both portlet A's
+form and portlet B's form as `<portlet:namespace />fm` would distinguish the
+forms as *_Afm* and *_Bfm*, respectively. Liferay associates each namespaced
+element, such as these namespaced forms, with the portlet that produced it.
 
 By default, Liferay only allows *namespaced* parameters to access portlets.
 However, many third-party portlets send *unnamespaced* parameters. Therefore,
