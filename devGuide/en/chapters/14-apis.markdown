@@ -51,13 +51,15 @@ Example,
 
 ## Application Display Templates
 
-<!--Display Settings are the simpliest way to customize the portlet display.
-Unlike themes or hooks, they don't require deployment and they affect specific
-portlet instances. But, they are limited to those that come out of the box...
-Wouldn’t it be great to have as many of them as we wanted? As a user, this
-would simplify the task of customizing the portlet display. And as developers,
-we wouldn’t have to change our portlet configuration code every time a new
-setting is required.
+<!--A portlet's Display Settings (*Configuration* &rarr; *Setup* &rarr;
+*Display Settings*) are the simplest way to customize its display. You can do
+the same things using a theme or hook, but Display Settings don't require
+deployment and they can affect specific portlet instances. Unfortunately, the
+display settings of your custom portlets are limited to those that come out of
+the box with Liferay. Wouldn’t it be great if you could give your custom
+portlet any display setting you wanted? This would allow users As a user, this would simplify the
+task of customizing the portlet display. And as developers, we wouldn’t have to
+change our portlet configuration code every time a new setting is required.
 
 That’s exactly what Application Display Templates provides: Adding custom
 display settings to our portlets. Actually, this is not a new concept in
@@ -84,23 +86,27 @@ Content, Document and Media or Dynamic Data Lists we can add as many display
 options (or templates) as we want.
 
 You can use the Application Display Templates API to add this new feature to
-your plugins.
+your plugins. Let's take a look.
 
 ### Using the Application Display Templates API
 
+To leverage the ADT API, there are several steps you need to follow, from
+registering your portlet to use ADTs, defining permissions, and exposing the
+ADT functionality to your users.
+
 1. Register your custom `PortletDisplayTemplateHandler`
 
-<!-- Is this to register the portlet as able to take ADTs? -->
-
-    To join the exclusive ADT club your portlet has to sign a contract
-    committing itself to fulfill all the Application Display Templates features. In
-    other words, you have to create a your own `PortletDisplayTemplateHandler`
-    implementation by extending the BasePortletDisplayTemplateHandler methods. You
-    can check the TemplateHandler interface javadoc to learn what every method is
-    for.
+    To join the exclusive ADT club, your portlet must sign a contract,
+    committing itself to fulfill all the Application Display Templates
+    requirements. In other words, you have to create your own
+    `PortletDisplayTemplateHandler` implementation by extending the
+    `BasePortletDisplayTemplateHandler` methods. You can check the
+    `TemplateHandler` interface
+    [javadoc](http://docs.liferay.com/portal/6.2/javadocs/) to learn about each
+    method.
  
-    Once you've created your handler, you have to declare it in the right
-    section of your `liferay-portlet.xml`:
+    Once you've created the handler, you declare it in the proper section of
+    your `liferay-portlet.xml`, like this:
 
     	<?xml version="1.0"?>
     	<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" 
@@ -117,9 +123,10 @@ your plugins.
 
 2. Declare permissions
 
-    The action of adding Application Display Templates is new to your portlet,
-    so you want to be sure you can grant specific permissions for it. Just add this
-    line to your resource actions file:
+    The ability to add Application Display Templates is new to your portlet, so
+    you should ensure you can grant specific permissions for it. Just add the line
+    `<action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>` to your portlet's
+    `default.xml` file, like this:
 
     	<?xml version="1.0"?>
     	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" 
@@ -138,11 +145,13 @@ your plugins.
 	 
 3. Add display settings configuration
 
-    Let's move to the frontend side of your portlet. Now your portlet
-    officially supports Application Display Templates, you'll want to expose this
-    option to your users. Just include the liferay-ui:ddm-template-selector taglib
-    in your portlet configuration view providing the required information, like
-    this:
+<!--Ask Eduardo what this means. Rich says using portlet configuration view is
+a Liferay specific way of doing things, and this is likely coming from that-->
+
+    Now that your portlet officially supports Application Display Templates, you'll
+    want to expose the ADT option to your users. Just include the
+    `liferay-ui:ddm-template-selector` taglib in your portlet configuration view,
+    providing the required information, like this:
  
     	<aui:form action="<%= configurationURL %>" method="post" name="fm">
     	 	<aui:fieldset> 
@@ -189,9 +198,9 @@ your plugins.
 
 ### Recommendations
 
-As we have seen, Application Display Templates bring a great power. But if
-there's something we've learnt, is that with great power, comes great
-responsability!  Let’s go through some good practices in ADT design:
+You've harnessed a lot of power by learning to leverage the ADT API. Be
+careful, for with great power, comes great responsibility!  Let’s go through
+some good practices in ADT design:
  
 #### Security
 
