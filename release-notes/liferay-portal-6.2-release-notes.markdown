@@ -103,11 +103,11 @@ to your site fairly effortless.
 ## Staging
 
 Staging received a major enhancement in Liferay Portal 6.1, and in version 6.2,
-it has continued to be refined. During updates from staging to production,
-sometimes inconsistencies can occur, particularly if someone has already changed
-content in production without staging it first. Liferay Portal 6.2 now validates
-staging updates and warns of potential inconsistencies. To further prevent this
-problem, you can now disable live changes when remote staging is enabled. 
+it continues to be refined. During updates from staging to production, sometimes
+inconsistencies can occur, particularly if someone has already changed content
+in production without staging it first. Liferay Portal 6.2 now validates staging
+updates and warns of potential inconsistencies. To further prevent this problem,
+you can now disable live changes when remote staging is enabled. 
 
 ![Staging has received important enhancements in Liferay Portal 6.2.](images/web-content-staging-publish.png)
 
@@ -196,11 +196,11 @@ calendar available to users outside of Liferay Portal.
 
 In addition to these visible improvements, Liferay Portal 6.2 has received
 numerous improvements under the hood. The first version of our OSGi container is
-available in Liferay Portal 6.2. Users can deploy OSGi bundles into Liferay, and
-develop plugins as OSGi bundles. 
+available in Liferay Portal 6.2. Users can deploy OSGi bundles into Liferay and
+can develop plugins as OSGi bundles. 
 
-Liferay Portal 6.2 also serves as an OAuth server, allowing you to use your
-Liferay Portal installation as an authentication service to enable your users to
+Liferay Portal 6.2 also serves as an OAuth server. This lets you use your
+Liferay Portal installation as an authentication service. Your users can
 sign in to multiple websites with their credentials from your site. 
 
 For larger deployments, Liferay Portal 6.2 introduces portlet sandboxing. This
