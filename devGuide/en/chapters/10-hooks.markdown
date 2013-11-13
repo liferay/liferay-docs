@@ -718,13 +718,14 @@ service behavior, and hook plugins are your tool for doing so.
 
 When extending Liferay Portal with hooks, you should try to avoid implementing
 the portal's interfaces directly. In some cases, patches are added to the
-interfaces in fix packs to fix an issue (e.g. adding a new method to a service).
-If the user implements the API directly, a patch could break the customization.
-However, if the basic implementation is extended, the patch would not break any
-customizations. Therefore, the best practice is to extend the base
-implementation from the portal. For example, if you'd like to modify
-`UserLocalService`, then you should extend `UserLocalServiceWrapper`. If you'd
-like to modify `SanitizerUtil`, then you should extend `BaseSanitizer`.
+interfaces in fix packs to fix an issue (e.g., adding a new method to a
+service). If you implement the API directly, a patch can break your
+customization. However, if you extend the basic implementation, a patch won't
+break your customization. Therefore, the best practice is to extend the Liferay
+Portal's base implementations. For example, if you'd like to modify the
+implementation of the `UserLocalService` interface, then extend
+`UserLocalServiceWrapper`. If you'd like to modify the `SanitizerUtil` class,
+then extend `BaseSanitizer`. 
 
 ---
 
