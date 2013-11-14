@@ -821,8 +821,8 @@ like this:
 
 ---
 
-Great! You now know how to customize language keys. Next, let's consider some
-other types of hooks that may interest you.
+Great! You now know how to customize language keys. Next, let's discuss
+extending your Indexer Post Processor.
 
 ## Extending the Indexer Post Processor 
 
