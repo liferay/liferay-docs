@@ -856,16 +856,16 @@ the Java source file's contents with the following lines:
 		import javax.portlet.PortletURL;
 		import com.liferay.portal.kernel.log.Log;
 		import com.liferay.portal.kernel.log.LogFactoryUtil;
+		import com.liferay.portal.kernel.search.BaseIndexerPostProcessor;
 		import com.liferay.portal.kernel.search.BooleanQuery;
 		import com.liferay.portal.kernel.search.Document;
 		import com.liferay.portal.kernel.search.Field;
-		import com.liferay.portal.kernel.search.IndexerPostProcessor;
 		import com.liferay.portal.kernel.search.SearchContext;
 		import com.liferay.portal.kernel.search.Summary;
 		import com.liferay.portal.model.User;
 
 
-			public class SampleIndexerPostProcessor implements IndexerPostProcessor
+			public class SampleIndexerPostProcessor extends BaseIndexerPostProcessor
 			{
 				public void postProcessContextQuery(BooleanQuery booleanQuery, SearchContext searchcontext)
 						throws Exception {
@@ -904,10 +904,10 @@ the Java source file's contents with the following lines:
 				private static Log _log = LogFactoryUtil.getLog(SampleIndexerPostProcessor.class);
 			}
 
-	Notice the `SampleIndexerPostProcessor` class implements Liferay's
-	`IndexerPostProcessor` interface. Then we add our own logic to enable users
-	to search for *Job Title* amongst all the portal's users. Thus, we've added
-	a new feature for the User Indexer. Let's give it a try!
+	Notice the `SampleIndexerPostProcessor` class extends Liferay's
+	`BaseIndexerPostProcessor` base implementation. Then we add our own logic to
+	enable users to search for *Job Title* amongst all the portal's users. Thus,
+	we've added a new feature for the User Indexer. Let's give it a try!
 
 Navigate to the *Control Panel* &rarr; *Users and Organizations* and make sure a
 user has a job title, which can be added in any user's *My Account* interface.
