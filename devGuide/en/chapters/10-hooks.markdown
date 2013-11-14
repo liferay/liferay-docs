@@ -27,7 +27,7 @@ We'll cover the following topics:
 - Extending and Overriding *portal.properties* 
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
-- Using an Indexer Post Processor Hook
+- Extending the Indexer Post Processor
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -824,7 +824,7 @@ like this:
 Great! You now know how to customize language keys. Next, let's consider some
 other types of hooks that may interest you.
 
-## Using an Indexer Post Processor Hook
+## Extending the Indexer Post Processor 
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
