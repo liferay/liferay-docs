@@ -1,12 +1,5 @@
 # Designing User Interfaces with AlloyUI [](id=designing-user-interfaces-with-alloyui-liferay-portal-6-2-dev-guide-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has still under
-construction. 
-
----
-
 Liferay's User Interface (UI) Team continually strives to provide stylish,
 lightning-fast components that are extensible and built to last. I liken the
 team to an elite band of metallurgists: cutting-edge scientists that extract
@@ -95,7 +88,7 @@ AlloyUI is easy to use. Let's demonstrate by using Alloy's in an HTML file.
 AlloyUI's character counter reports the number of characters you can enter in
 the text field before reaching the 10 character limit. 
 
-![Figure 11.x: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 11.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
 displays an HTML `<input/>` element with `id=some-input`. Then we referenced an
@@ -186,7 +179,7 @@ JSP looks like this:
 
 Voila! You're using AlloyUI in Liferay!
 
-![Figure 11.x: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
+![Figure 11.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
 
 Now that you've gotten your feet wet using AlloyUI, let's go over setting up the
 AlloyUI project for creating your own AlloyUI components. 
@@ -210,7 +203,7 @@ AlloyUI project build:
 Let's download AlloyUI and set it up for developing AlloyUI scripts and
 components locally. 
 
-### Working with an AlloyUI Project Release Zip File
+### Working with an AlloyUI Project Release Zip File [](id=using-downloaded-alloyui-zip-liferay-portal-6-2-dev-guide-11-en)
 
 You can download AlloyUI as a `.zip` file from
 [http://alloyui.com](http://alloyui.com). The file contains the following files
@@ -270,14 +263,14 @@ similar to this:
 
 The figure below shows what your web page should look like.
 
-![Figure 11.x: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 11.3: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Great! Now you know how to use a local set of the AlloyUI tag libraries. Next,
 we'll show you how to work with the AlloyUI source project. You'll learn how to
 build the project so you can experiment with the latest AlloyUI code whenever
 you want. 
 
-### Working with the AlloyUI Project Source
+### Working with the AlloyUI Project Source [](id=working-with-the-alloyui-project-source-liferay-portal-6-2-dev-guide-11-en)
 
 You may want to work with the latest cutting-edge AlloyUI code from time to
 time. Liferay makes it easy do get your hands on. We use a public
@@ -295,7 +288,7 @@ In this section we'll demonstrate the following:
 
 Let's get started by installing AlloyUI's dependencies. 
 
-#### Setting Up AlloyUI's Required Software
+#### Setting Up AlloyUI's Required Software [](id=set-up-alloyui-required-software-liferay-portal-6-2-dev-guide-11-en)
 
 The alloy-ui project depends on the following software:
 
@@ -339,7 +332,7 @@ following command:
 Great! You've installed all of the software applications that the alloy-ui
 project requires. Next, let's get our hands on the alloy-ui project. 
 
-#### Installing the AlloyUI Project
+#### Installing the AlloyUI Project [](id=install-the-alloyui-project-liferay-portal-6-2-dev-guide-11-en)
 
 Liferay's AlloyUI developers and AlloyUI community members contribute code to
 the [alloy-ui](https://github.com/liferay/alloy-ui) project on
@@ -403,7 +396,7 @@ initialize the project's remaining dependencies. Follow these steps:
 Alright! You have the alloy-ui project and all of its dependencies. Next, we'll
 build AlloyUI. 
 
-#### Building the AlloyUI Project
+#### Building the AlloyUI Project [](id=build-the-alloyui-project-liferay-portal-6-2-dev-guide-11-en)
 
 The alloy-ui project contains source code for AlloyUI, YUI3, and Twitter
 Bootstrap. The project uses a JavaScript build tool called Grunt to build all
@@ -438,7 +431,7 @@ Note, to build a single AlloyUI module, you can execute the following (replace
 When you're ready to try out your locally built version of AlloyUI, you can
 package it up and use it. We'll do that next. 
 
-#### Using Your Locally Built AlloyUI Distribution
+#### Using Your Locally Built AlloyUI Distribution [](id=create-alloyui-distribution-liferay-portal-6-2-dev-guide-11-en)
 
 Building a release distribution of your alloy-ui project is easy. And it's just
 as easy using your distribution in your web pages. We'll do it together. 
@@ -462,7 +455,7 @@ For example, you could specify the following seed file, replacing
 
 It's just that easy to use your very own cutting-edge copy of the AlloyUI code! 
 
-## Summary
+## Summary [](id=alloyui-chapter-summary-liferay-portal-6-2-dev-guide-11-en)
 
 In this chapter, we've only scratched the surface of showing you what AlloyUI
 has to offer you in designing user interfaces in Liferay. We've introduced you
