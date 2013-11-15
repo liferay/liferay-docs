@@ -6,7 +6,7 @@ team to an elite band of metallurgists: cutting-edge scientists that extract
 metals from craggy rocks deep beneath the earth's crust. They purify these
 metals and mix them together to make some of the most awesome things known to
 mankind--seemingly weightless bike frames, bridges with enough tensile strength
-to withstand huricanes, and swords that can cut through almost anything. The
+to withstand hurricanes, and swords that can cut through almost anything. The
 Liferay UI Team is like these scientists. They've put forth equal sweat and
 ingenuity to bring you a mixture, or *alloy*, of the best UI technologies and
 have wrapped it up in one ultimate framework--AlloyUI! 
@@ -52,9 +52,10 @@ To start things off right, let's go over a simple example using AlloyUI.
 
 ## A simple AlloyUI example [](id=simple-alloyui-example-liferay-portal-6-2-dev-guide-en)
 
-AlloyUI is easy to use. Let's demonstrate by using Alloy's in an HTML file.
+AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 
-1. Create an HTML file like this: 
+1. Create an HTML file and insert the following lines: 
+
         <!DOCTYPE html>
 
         <input type="text" id="some-input" />
@@ -83,6 +84,7 @@ AlloyUI is easy to use. Let's demonstrate by using Alloy's in an HTML file.
         </html>
 
 2. Open the HTML file in your browser.
+
 3. Enter some characters into the text field.
 
 AlloyUI's character counter reports the number of characters you can enter in
@@ -263,7 +265,7 @@ similar to this:
 
 The figure below shows what your web page should look like.
 
-![Figure 11.3: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 11.3: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter on your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Great! Now you know how to use a local set of the AlloyUI tag libraries. Next,
 we'll show you how to work with the AlloyUI source project. You'll learn how to
@@ -280,7 +282,8 @@ it locally. You can also leverage the alloy-ui project to create some AlloyUI
 modules of your own. We'll show you just how easy it is to install the project
 and use it. 
 
-In this section we'll demonstrate the following:
+In this section, we'll demonstrate the following:
+
 - Installing the required software for the AlloyUI project
 - Installing the alloy-ui project
 - Building the project
@@ -294,10 +297,10 @@ The alloy-ui project depends on the following software:
 
 - [Node.js](http://nodejs.org) is a platform for building applications.
 - [Ruby](https://www.ruby-lang.org/en/) is used in the alloy-ui project for
-  downloading other softare packages. 
+  downloading other software packages. 
 - [Compass](http://compass-style.org) is an open-source CSS authoring framework.
-- [Sass]() stands for Syntactically Awesome Stylesheets. It is a scripting
-  language used for specifying CSS. 
+- [Sass](http://sass-lang.com/) stands for Syntactically Awesome Stylesheets. It
+  is a scripting language used for specifying CSS. 
 
 Let's install Node.js first. You can download it from
 [http://nodejs.org/](http://nodejs.org/). Linux, OS X, or UNIX users can
@@ -309,7 +312,7 @@ installer file and run it.
 
  ![Warning](../../images/tip.png) **Warning:** On Windows, only install to
  locations that have UNIX-friendly paths. Paths like `C:\Program Files (x86)`
- that contain space characters and parens can prevent software from working
+ that contain space characters and parentheses can prevent software from working
  properly. 
 
 ---
@@ -413,8 +416,6 @@ source code. We've provided a table of these targets below.
  `build:yui` | `grunt build:yui` | Builds YUI only |
  `build:aui` | `grunt build:aui` | Builds AlloyUI only |
  `bootstrap` | `grunt bootstrap` | Builds and imports Bootstrap's CSS |
- `build` | `grunt build` | Builds YUI and AlloyUI together |
-
 
 Let's build everything by executing the following command:
 
