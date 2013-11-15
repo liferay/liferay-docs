@@ -1,13 +1,6 @@
 
 # Designing Workflow with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Liferay Portal includes a workflow engine called *Kaleo*. Kaleo allows portal
 administrators to set up workflows for their organization's needs; the workflow
 calls users to participate in processes designed for them. Kaleo workflows,
