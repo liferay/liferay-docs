@@ -49,7 +49,7 @@ Example,
 
 -->
 
-## Application Display Templates
+## Application Display Templates [](id=application-display-templates-liferay-portal-6-2-dev-guide-14-en)
 
 Display Settings are the simpliest way to customize the portlet display. Unlike themes or hooks, they don't require deployment and they affect specific portlet instances. But, they are limited to those that come out of the box... Wouldn’t it be great to have as many of them as we wanted? As a user, this would simplify the task of customizing the portlet display. And as developers, we wouldn’t have to change our portlet configuration code every time a new setting is required.
  
@@ -57,7 +57,7 @@ That’s exactly what Application Display Templates provides: Adding custom disp
 
 You can use the Application Display Templates API to add this new feature to your plugins.
 
-### Using the Application Display Templates API
+### Using the Application Display Templates API [](id=application-display-templates-api-liferay-portal-6-2-dev-guide-14-en)
 
 1. Register your custom PortletDisplayTemplateHandler
 
@@ -142,11 +142,11 @@ You can use the Application Display Templates API to add this new feature to you
     	</c:choose>
 
 
-### Recommendations
+### Recommendations [](id=adt-recommendations-liferay-portal-6-2-dev-guide-14-en)
 
 As we have seen, Application Display Templates bring a great power. But if there's something we've learnt, is that with great power, comes great responsability!  Let’s go through some good practices in ADT design:
  
-#### Security
+#### Security [](id=adt-security-liferay-portal-6-2-dev-guide-14-en)
 You may want to hide some classes or packages from the template context, to limit the operations that ADTs can perform on your portal. Liferay provides some portal  properties to define the restricted classes, packages and variables:
 
 	freemarker.engine.restricted.classes= 
@@ -156,7 +156,7 @@ You may want to hide some classes or packages from the template context, to limi
 	velocity.engine.restricted.packages=
 	velocity.engine.restricted.variables=serviceLocator
 
-#### Performance
+#### Performance [](id=adt-performance-liferay-portal-6-2-dev-guide-14-en)
 Application Display Templates add extra processing task in portlet render. This inevitably has effect in the performance. To reduce this effect, make your templates as minimal as possible: focus on the presentation and use the existing API for complex operations. The best way to make efficient Application Display Templates is to know your template context well and what you can use from it. Now you don’t need to know them by heart thanks to the advanced tempalte editor! Finally, don't forget running performance tests and tuning the template cache options:
 
 	freemarker.engine.resource.modification.check.interval=60 
