@@ -1,12 +1,5 @@
 # Advanced Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en)
 
----
-
-![Note](../../images/tip-pen-paper.png) This chapter has not yet been updated to
-reflect the new features in Liferay 6.2. 
-
----
-
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
 sure you can't accomplish your goal using a different tool. Check out Chapter
