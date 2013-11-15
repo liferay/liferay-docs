@@ -7,7 +7,7 @@ release addresses several usability issues, provides enhancements to existing
 functionality, and gives developers an easier way to work with mobile clients.
 What follows is a summarized list of the important enhancement highlights. For a
 full list, please see the release notes document in our issue tracker
-[here](http://issues.liferay.com/somewhere). 
+[here](https://issues.liferay.com/secure/StructureBoard.jspa?s=155). 
 
 ## Mobile Devices
 
@@ -22,10 +22,10 @@ applications convert app menus to drop down menus on small screens.
 
 ![On mobile devices, menus collapse to make way for content.](images/message-boards-mobile.png)
 
-Mobile Device Rules have been renamed to Mobile Device Families to better
-reflect their function: to detect classifications of various devices in order to
-present the most optimized view for that device type. It's much easier to set up
-classification rules for mobile device families in Liferay Portal 6.2. 
+Mobile Device Rules now make it much easier to set up Mobile Device Families to
+detect classifications of devices to present the most optimized view for that
+device type. It's much easier to set up classification rules for mobile device
+families in Liferay Portal 6.2. 
 
 ## User Experience
 
@@ -36,10 +36,13 @@ Liferay Portal much easier to theme. Developers can take advantage of a
 large library of existing Bootstrap-based themes and apply them to Liferay
 Portal. 
 
-User interface items have been cleaned up and standardized. One example of this
-is a back button at the left of every title. 
+User interface items have been cleaned up and standardized. Site administration
+has been divided into four semantic sections. A site switcher is available in a
+standard place on the UI, so you never have to go looking for it. Pages can be
+edited in context. The list of UI enhancements is so big that we'd bore you to
+death if we listed it all, so we highly recommend you check it out for yourself. 
 
-![A back button appears consistently where you expect it to be.](images/back-button.png)
+![Some of the many UI improvements are available while administering sites.](images/ui-improvements.png)
 
 Liferay Portal's administration interface has undergone a complete re-think and
 overhaul. Listening to user feedback, we realized that many users were
@@ -98,7 +101,10 @@ for site administrators as they build their pages.
 ![The side panel lets you create your site without ever leaving it.](images/side-panel.png)
 
 The panel's Content pane has a search facility that makes finding content to add
-to your site fairly effortless. 
+to your site fairly effortless. You can create content to add to your page right
+from the side panel. It's also easy to find existing content to add to your
+pages: it's all conveniently listed for you, complete with previews. Once you've
+found your content, a single click places it on the page. 
 
 ## Staging
 
@@ -134,20 +140,20 @@ You can organize sites to unlimited levels of depth, and the Site Membership
 Management framework mentioned above makes it easy for you to make sure only the
 proper users have access to the relevant parts of the hierarchy. 
 
-## Web Content Management
-
-Now you can share content in site hierarchies, or among sites with the same
-Administrators. 
-
 ![Sites can be set up to share content.](images/content-sharing.png)
 
-This offers site administrators an easy way to access content they know is in
-another site, without having to duplicate that content. 
+Site hierarchies give you more than just a way to organize sites. Sites that are
+part of a hierarchy can share content inside the hierarchy. This prevents you
+from unnecessarily having to copy content from one site to another, just to
+publish the same thing on two sites. Sites in hierarchies can also take
+advantage of navigation up and down the hierarchy, making it easier for users
+to find relevant content on all sites in the hierarchy. 
 
-It's also much easier to organize web content than it ever was before. Liferay
-Portal 6.2 introduces web content folders. You can now create folders and
-sub-folders for web content the same way you can create them for Documents and
-Media. 
+## Web Content Management
+
+It's much easier to organize web content than it ever was before. Liferay Portal
+6.2 introduces web content folders. You can now create folders and sub-folders
+for web content the same way you can create them for Documents and Media. 
 
 ![Organize your content in folders with Liferay Portal 6.2.](images/web-content-folders.png)
 
@@ -198,6 +204,8 @@ In addition to these visible improvements, Liferay Portal 6.2 has received
 numerous improvements under the hood. The first version of our OSGi container is
 available in Liferay Portal 6.2. Users can deploy OSGi bundles into Liferay and
 can develop plugins as OSGi bundles. 
+
+![OSGi bundles coexist with regular Liferay plugins seamlessly.](images/osgi.png)
 
 Liferay Portal 6.2 also serves as an OAuth server. This lets you use your
 Liferay Portal installation as an authentication service. Your users can
