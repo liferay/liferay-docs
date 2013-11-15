@@ -709,6 +709,27 @@ without changing the portlet itself; you're customizing the backend services
 that the portlet uses. You can leverage this architecture to customize portal
 service behavior, and hook plugins are your tool for doing so. 
 
+When extending Liferay Portal with hooks, you should try to avoid implementing
+the portal's interfaces directly. In some cases, patches are added to the
+interfaces in fix packs to fix an issue (e.g., adding a new method to a
+service). If you implement the API directly, a patch can break your
+customization. However, if you extend the basic implementation, a patch won't
+break your customization. Therefore, the best practice is to extend the Liferay
+Portal's base implementations. For example, if you'd like to modify the
+implementation of the `UserLocalService` interface, then extend
+`UserLocalServiceWrapper`. If you'd like to modify the `SanitizerUtil` class,
+then extend `BaseSanitizer`. 
+
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Your `portal.properties` file
+ also provides options to extend portal services. For example, you can extend
+ `BaseSanitizer` to use a custom sanitizer by setting the `sanitizer.impl`
+ property. By setting this property to your custom sanitizer class, you're
+ extending the `BaseSanitizer` already included in Liferay Portal.
+
+---
+
 Liferay generates dummy wrapper classes for all its services. For example,
 `UserLocalServiceWrapper` is created as a wrapper for `UserLocalService`, a
 service for adding, removing, and retrieving user accounts. To modify the
