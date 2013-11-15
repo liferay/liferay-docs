@@ -240,6 +240,57 @@ portal-->
 
 <!--Where do these lines go?-->
 
+## Liferay 6.2 Uses AlloyUI 2.0 [](id=liferay-portal-6-2-uses-alloyui-2-0-liferay-portal-6-2-dev-guide-02-en)
+
+
+<!-- Describe the different changes from 1.7 to 2.0, explain the reason for the
+changes, and describe what you need to do to migrate to 2.0 -->
+
+<!-- Describe liferay-aui-upgrade-tool -->
+
+<!-- Here are steps for installing liferay-aui-upgrade-tool -->
+
+To access the liferay-aui-upgrade-tool project and install it
+locally, you'll need an account on GitHub and the Git tool on your machine.
+Visit [https://github.com/](https://github.com/) for instructions on setting up
+the account and see [http://git-scm.com/](http://git-scm.com/) for instructions
+on installing Git. 
+
+Here are some simple steps for forking the liferay-aui-upgrade-tool project on
+GitHub and installing the project locally: 
+
+1.  Go to the AlloyUI project repository at
+    [https://github.com/liferay/liferay-aui-upgrade-tool](https://github.com/liferay/liferay-aui-upgrade-tool).
+
+2.  Click *Fork* to copy Liferay's liferay-aui-upgrade-tool repository to your
+    account on GitHub. 
+
+3.  In your terminal or in GitBash, navigate to the location where you want to
+    put the liferay-aui-upgrade-tool project. Then download a clone of the
+    repository by executing the following  command, replacing `[username]` with
+    your GitHub user name: 
+
+        git clone git@github.com:[username]/liferay-aui-upgrade-tool  
+
+5.  Navigate into your new liferay-aui-upgrade-tool repository directory and
+    associate a remote branch to Liferay's liferay-aui-upgrade-tool repository
+    so you'll be able to fetch its latest changes form time to time:  
+
+        cd liferay-aui-upgrade-tool
+        git remote add upstream git@github.com:liferay/alloy-ui.git
+
+6.  Lastly, create your own branch named `2.0.x` based on Liferay's `2.0.x`
+    branch, by execute the following command:
+
+        git checkout -b 2.0.x upstream/2.0.x
+
+To show you how to use the liferay-aui-upgrade-tool, let's upgrade the 6.1.x
+version of Microbloggs portlet to use AlloyUI 2.0.
+
+<!-- Demonstrate upgrading the Migroblogs portlet -->
+
+<!-- Summarize the section -->
+
 No matter which Liferay APIs you're using, you'll need to understand Liferay's
 deprecation policy. That way you'll know when methods from our API's are
 deprecated, and you can make any necessary changes. We'll describe the
