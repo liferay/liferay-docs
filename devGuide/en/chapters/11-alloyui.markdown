@@ -243,7 +243,7 @@ similar to this:
 
         <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
 
-        <link src="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
+        <link href="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
           rel="stylesheet"></link>
 
         <script>
