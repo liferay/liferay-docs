@@ -158,8 +158,7 @@ The `<aui:script>` tag combines the contents of all `<aui:script>` tags used on
 a page into one script block at the bottom of the page, and it wraps the
 functions in a `YUI.use()` call to bring in necessary module dependencies. 
 
-With all these simplifications, the AlloyUI code in your
-JSP looks like this:
+With all these simplifications, the AlloyUI code in your JSP looks like this:
 
     <input type="text" id="some-input" />
     <span id="counter"></span> character(s) remaining
@@ -365,22 +364,24 @@ installing the project locally:
     local machine. Before you start building the project, let's set it up with
     the `2.0.x` branch. AlloyUI 2.0 is the version used by Liferay Portal 6.2.  
 
-4.  To download Liferay's alloy-ui branches, you must first associate a remote
+4.  Navigate to your new alloy-ui directory in GitBash by running `cd alloy-ui`.
+
+5.  To download Liferay's alloy-ui branches, you must first associate a remote
     branch to Liferay's alloy-ui repository and then fetch all of branches via
     that remote branch: 
 
         git remote add upstream git@github.com:liferay/alloy-ui.git
         git fetch upstream
 
-5.  Lastly, create your own branch named `2.0.x` based on Liferay's `2.0.x`
-    branch, by execute the following command:
+6.  Lastly, create your own branch named `2.0.x` based on Liferay's `2.0.x`
+    branch, by executing the following command:
 
         git checkout -b 2.0.x upstream/2.0.x
 
 Great! Now that you have the `2.0.x` branch checked out, we can install and
 initialize the project's remaining dependencies. Follow these steps:
 
-1.  Install the global dependencies:
+1.  Install the global dependencies (exclude using `[sudo]` on Windows):
 
         [sudo] npm install -g grunt-cli shifter yogi yuidocjs phantomjs
 
@@ -437,7 +438,7 @@ package it up and use it. We'll do that next.
 Building a release distribution of your alloy-ui project is easy. And it's just
 as easy using your distribution in your web pages. We'll do it together. 
 
-To create your distribution `.zip` file of AlloyUI execute the following
+To create your distribution `.zip` file of AlloyUI, execute the following
 command: 
 
     grunt release
