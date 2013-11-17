@@ -51,24 +51,26 @@ Example,
 
 ## Application Display Templates
 
-<!--A portlet's Display Settings (*Configuration* &rarr; *Setup* &rarr;
-*Display Settings*) are the simplest way to customize its display. You can do
-the same things using a theme or hook, but Display Settings don't require
-redeployment and they affect specific portlet instances. Unfortunately, the
-display settings of your custom portlets are limited to those that come out of
-the box with Liferay. Wouldn’t it be great if you could give your custom portlet
-any display setting you wanted? This would allow users As a user, this would
-simplify the task of customizing the portlet display. The portlet's developer
-wouldn’t have to change the portlet configuration code every time a new setting
-is required.
+A portlet's Display Settings (*Configuration* &rarr; *Setup* &rarr; *Display
+Settings*) are the simplest way to customize its display. These come built in
+with Liferay, so you don't have to do anything special to enable them for your
+custom portlets. But what if Liferay doesn't give you all the settings you need? You
+could develop a theme or hook with the display options you need, but it'd be
+nice if there was an option not requiring redeployment, that was applicable to
+specific portlet instances. If you could give your custom portlet any display
+setting (in the portal) you wanted, this would simplify the task of customizing
+the portlet display, for users with the proper permissions. Additionally, the
+portlet's developer wouldn’t have to change the portlet configuration code
+every time a new setting was required.
 
-That’s exactly what Application Display Templates provide: Adding custom display
-settings to our portlets. Actually, this is not a new concept in Liferay. In
-some portlets such as Web Content, Document and Media or Dynamid Data Lists we
-can add as many display options (or templates) as we want.
+Be of good cheer! That’s precisely what Application Display Templates provide--
+the ability to add custom display settings to your portlets. Actually, this is
+not a new concept in Liferay. In some portlets such as Web Content, Document
+and Media or Dynamic Data Lists we can add as many display options (or
+templates) as we want.
 
-You can use the Application Display Templates API to add this new feature to
-your plugins.-->
+Let's learn to use the Application Display Templates API to add this new
+feature to your plugins.
 
 Application Display Templates are a simple way to customize your portlet's
 display. Unlike with themes and hooks, you can modify the display settings for
