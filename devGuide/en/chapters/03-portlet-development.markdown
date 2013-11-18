@@ -932,7 +932,7 @@ distinguish them from other request parameters. And you can leverage namespacing
 in your portlets, too. Let's discuss portlet namespacing and how to turn on/off
 the portal's namespacing logic for a portlet. 
 
-### Using Portlet Namespacing
+### Using Portlet Namespacing [](id=using-portlet-namespacing-liferay-portal-6-2-dev-guide-03-en)
 
 Namespacing ensures that a given portlet's name is uniquely associated with
 elements in request parameters it sends to the portal. This prevents name

@@ -838,7 +838,7 @@ like this:
 Great! You now know how to customize language keys. Next, let's discuss
 extending your Indexer Post Processor.
 
-## Extending the Indexer Post Processor 
+## Extending the Indexer Post Processor [](id=extending-the-indexer-post-processor-liferay-portal-6-2-dev-guide-10-en)
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
