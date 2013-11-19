@@ -20,6 +20,7 @@ We'll cover the following topics:
 - Extending and Overriding *portal.properties* 
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
+- Extending the Indexer Post Processor
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -709,6 +710,27 @@ without changing the portlet itself; you're customizing the backend services
 that the portlet uses. You can leverage this architecture to customize portal
 service behavior, and hook plugins are your tool for doing so. 
 
+When extending Liferay Portal with hooks, you should try to avoid implementing
+the portal's interfaces directly. In some cases, patches are added to the
+interfaces in fix packs to fix an issue (e.g., adding a new method to a
+service). If you implement the API directly, a patch can break your
+customization. However, if you extend the basic implementation, a patch won't
+break your customization. Therefore, the best practice is to extend the Liferay
+Portal's base implementations. For example, if you'd like to modify the
+implementation of the `UserLocalService` interface, then extend
+`UserLocalServiceWrapper`. If you'd like to modify the `SanitizerUtil` class,
+then extend `BaseSanitizer`. 
+
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** Your `portal.properties` file
+ also provides options to extend portal services. For example, you can extend
+ `BaseSanitizer` to use a custom sanitizer by setting the `sanitizer.impl`
+ property. By setting this property to your custom sanitizer class, you're
+ extending the `BaseSanitizer` already included in Liferay Portal.
+
+---
+
 Liferay generates dummy wrapper classes for all its services. For example,
 `UserLocalServiceWrapper` is created as a wrapper for `UserLocalService`, a
 service for adding, removing, and retrieving user accounts. To modify the
@@ -813,8 +835,102 @@ like this:
 
 ---
 
-Great! You now know how to customize language keys. Next, let's consider some
-other types of hooks that may interest you.
+Great! You now know how to customize language keys. Next, let's discuss
+extending your Indexer Post Processor.
+
+## Extending the Indexer Post Processor [](id=extending-the-indexer-post-processor-liferay-portal-6-2-dev-guide-10-en)
+
+Would you like to modify the search summaries, indexes, and queries available in
+your portal instance? Developing an Indexer Post Processor hook lets you do just
+that. The indexer hook implements a post processing system on top of the
+existing indexer to allow plugin hook developers to modify their search, index,
+and query capabilities. Let's run through a simple example to preview what you
+can accomplish with an indexer hook. For our example, we're going to add *Job
+Title* into the User Indexer so we can search for users by their Job Title.
+
+1. In your existing example-hook project, open the `liferay-hook.xml` file and
+insert the following lines before the closing `</hook>` tag:
+
+		<indexer-post-processor>
+        	<indexer-class-name>com.liferay.portal.model.User</indexer-class-name>
+        	<indexer-post-processor-impl>com.liferay.hook.indexer.SampleIndexerPostProcessor</indexer-post-processor-impl>
+        </indexer-post-processor>
+
+    The `<indexer-class-name/>` tag clarifies the model entity for the indexer.
+    Furthermore, the `<indexer-post-processor-impl/>` tag clarifies the
+    implementation of the interface.
+
+2. Create a new class in the `docroot/WEB-INF/src/com/liferay/hook/indexer`
+directory of your example-hook named *SampleIndexerPostProcessor*. Then replace
+the Java source file's contents with the following lines:
+
+		package com.liferay.hook.indexer;
+
+		import java.util.Locale;
+		import javax.portlet.PortletURL;
+		import com.liferay.portal.kernel.log.Log;
+		import com.liferay.portal.kernel.log.LogFactoryUtil;
+		import com.liferay.portal.kernel.search.BaseIndexerPostProcessor;
+		import com.liferay.portal.kernel.search.BooleanQuery;
+		import com.liferay.portal.kernel.search.Document;
+		import com.liferay.portal.kernel.search.Field;
+		import com.liferay.portal.kernel.search.SearchContext;
+		import com.liferay.portal.kernel.search.Summary;
+		import com.liferay.portal.model.User;
+
+
+			public class SampleIndexerPostProcessor extends BaseIndexerPostProcessor
+			{
+				public void postProcessContextQuery(BooleanQuery booleanQuery, SearchContext searchcontext)
+						throws Exception {
+					if(_log.isDebugEnabled())
+						_log.debug(" postProcessContextQuery()");
+					}
+
+				public void postProcessDocument(Document document, Object object)
+						throws Exception {
+					User userEntity = (User) object;
+					String indexerUserTitle = "";
+					try {
+						indexerUserTitle = userEntity.getJobTitle();
+					} catch (Exception e) {}
+					if(indexerUserTitle.length() > 0)
+						document.addText(Field.TITLE, indexerUserTitle);
+				}
+
+				public void postProcessFullQuery(BooleanQuery fullQuery, SearchContext searchcontext)
+						throws Exception {
+					if(_log.isDebugEnabled())
+						_log.debug(" postProcessFullQuery()");
+				}
+
+				public void postProcessSearchQuery(BooleanQuery searchquery, SearchContext searchcontext)
+						throws Exception {
+					if(_log.isDebugEnabled())
+						_log.debug(" postProcessSearchQuery()");
+				}
+
+				public void postProcessSummary(Summary summary, Document document, Locale locale,
+						String snippet, PortletURL portletURL) {
+					if(_log.isDebugEnabled())
+						_log.debug("postProcessSummary()");
+				}
+				private static Log _log = LogFactoryUtil.getLog(SampleIndexerPostProcessor.class);
+			}
+
+	Notice the `SampleIndexerPostProcessor` class extends Liferay's
+	`BaseIndexerPostProcessor` base implementation. Then we add our own logic to
+	enable users to search for *Job Title* amongst all the portal's users. Thus,
+	we've added a new feature for the User Indexer. Let's give it a try!
+
+Navigate to the *Control Panel* &rarr; *Users and Organizations* and make sure a
+user has a job title, which can be added in any user's *My Account* interface.
+Then test out the indexer hook by searching for that job title.
+
+![Figure 10.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
+
+In the next section, we'll explore more hooks that allow for customizing
+Liferay's core features.
 
 ## Other Hooks [](id=other-hooks-liferay-portal-6-2-dev-guide-10-en)
 

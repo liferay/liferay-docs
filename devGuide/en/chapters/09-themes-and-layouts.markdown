@@ -302,7 +302,7 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
              =false
          -Duser.timezone=GMT
          -Xmx1024m
-         -XX:MaxPermSize=256m"
+         -XX:MaxPermSize=256m
          -Dexternal-properties=portal-developer.properties"
 
 ---

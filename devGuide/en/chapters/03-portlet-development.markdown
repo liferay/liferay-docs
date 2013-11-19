@@ -238,12 +238,16 @@ the Liferay-specific files:
 *Client Side Files* are the `.jsp`, `.css`, and `.js` files that you write to
 implement your portlet's user interface. These files should go in the `docroot`
 folder; `.jsp` files can be placed in the root of the folder, while `.css` and
-`.js` files are given their own subfolders in `docroot`. Remember, with
-portlets you're only dealing with a portion of the HTML document that is
-getting returned to the browser. Any HTML code in your client side files must
-be free of global tags like `<html>` or `<head>`.  Additionally, namespace all
-CSS classes and element IDs to prevent conflicts with other portlets. Liferay
-provides two tools, a taglib and API methods, to generate a namespace for you. 
+`.js` files are given their own subfolders in `docroot`. Remember, with portlets
+you're only dealing with a portion of the HTML document that is getting returned
+to the browser. Any HTML code in your client side files must be free of global
+tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
+element IDs to prevent conflicts with other portlets. Liferay provides two
+tools, a taglib and API methods, to generate a namespace for you. See the *Using
+Portlet Namespacing* section of this chapter to learn more about namespacing. 
+
+Let's continue exploring portlet anatomy by studying your new My Greeting
+portlet.
 
 ### A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet-liferay-portal-6-2-dev-guide-03-en)
 
@@ -917,7 +921,53 @@ while processing the action request.
 ![Figure 3.8: The sample "My Greeting" portlet showing an error message](../../images/portlet-invalid-data.png)
 
 The first message is automatically added by Liferay. The second one is the one
-you added in your JSP. 
+you added in your JSP. You've successfully created and rendered your portlet's
+error message. Terrific!
+
+Have you ever wondered how Liferay Portal determines which portlet to associate
+with a request parameter--especially when the portal receives multiple
+parameters, with the same name, coming from different portlets? Each of
+Liferay's core portlets namespaces its request parameters, so that Liferay can
+distinguish them from other request parameters. And you can leverage namespacing
+in your portlets, too. Let's discuss portlet namespacing and how to turn on/off
+the portal's namespacing logic for a portlet. 
+
+### Using Portlet Namespacing [](id=using-portlet-namespacing-liferay-portal-6-2-dev-guide-03-en)
+
+Namespacing ensures that a given portlet's name is uniquely associated with
+elements in request parameters it sends to the portal. This prevents name
+conflicts with other elements on the portal page and with elements from other portlets on the
+page. Namespacing your portlet elements is easy. Simply use the
+`<portlet:namespace />` tag to produce a unique value for your portlet's
+elements. The following example code uses the `<portlet:namespace />` tag to
+reference the portlet's *fm* form during submission:
+
+	submitForm(document.<portlet:namespace />fm);
+
+To illustrate the benefits of namespacing an element, such as the *fm* form from
+the example code above, suppose you have portlets named A and B in your portal
+and they both have a form named *fm*. Without portlet namespacing, the portal
+would be unable to differentiate between the two forms and, likewise, would be
+unable to determine their associated portlets. But, submitting both portlet A's
+form and portlet B's form as `<portlet:namespace />fm` would distinguish the
+forms as *_Afm* and *_Bfm*, respectively. Liferay associates each namespaced
+element, such as these namespaced forms, with the portlet that produced it.
+
+By default, Liferay only allows *namespaced* parameters to access portlets.
+However, many third-party portlets send *unnamespaced* parameters. Therefore,
+Liferay gives you the option to turn off the unnamespaced parameters filter for
+portlets, to avoid third-party portlets from breaking. To turn the filter off
+for a portlet, navigate to the portlet's `liferay-portlet.xml` file and enter
+the following tag:
+
+	<requires-namespaced-parameters>false</requires-namespaced-parameters>
+
+Turning this filter off is on a per portlet basis, so you'll need to set the
+`<requires-namespaced-parameters/>` tag to false for every third-party portlet
+that sends unnamespaced parameters.
+
+Interested in developing your custom portlet with multiple actions? Then you'll
+definitely want to check out the next section!
 
 ## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions-liferay-portal-6-2-dev-guide-en)
 
