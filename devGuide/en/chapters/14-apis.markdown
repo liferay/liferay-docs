@@ -271,10 +271,10 @@ the "aui-" class name prefix.
 ### Removal of the "aui-" Prefix from All Classes
 
 The "aui-" class prefix was hindering developers from copying and pasting
-examples from Twitter&reg; Bootstrap's site into their Liferay plugin code. So
-we've removed the prefix from all of AlloyUI's CSS and JavaScript classes.
-You'll need to update any references to the classes that have been removed. For
-example, you should remove the "aui-" prefix from the class reference
+examples from Bootstrap's site into their Liferay plugin code. So we've removed
+the prefix from all of AlloyUI's CSS and JavaScript classes. You'll need to
+update any references to the classes that have been removed. For example, you
+should remove the "aui-" prefix from the class reference
 `.aui-ace-autocomplete`, converting the reference to `.ace-autocomplete`. There
 are plenty more class references like this one that you'll need to update. 
 
@@ -287,7 +287,7 @@ the original modules were deprecated. In some cases the original modules were
 deprecated with no replacement; in other cases we used the original name for the
 new module implementation and have simply renamed the old module by adding a
 "-deprecated" suffix to it. AlloyUI 2.0's module API is documented at
-[http://alloyui.com/api/](http://alloyui.com/api/). But we've listed the
+[http://alloyui.com/api/](http://alloyui.com/api/), but we've listed the
 deprecated modules here: 
 
 	aui-autocomplete-deprecated
@@ -376,12 +376,12 @@ Next, let's consider the component output and markup changes in AlloyUI 2.0.
 ### Component Output and Markup Changes
 
 AlloyUI 2.0 introduces appealing new changes in its output and some practical
-changes to its markup. These changes help facilitate building UIs with
-consistent look and feel with, and they help improve UI performance. You can try
-many of these component changes via the pages of examples and tutorials found on
-[http://alloyui.com/](http://alloyui.com/). And you'll have to take a look at
-the AlloyUI 2.0 [API documentation](http://alloyui.com/api/) to understand a
-number of the markup changes. But here are some common changes: 
+changes to its markup. These changes help facilitate building UIs with a
+consistent look and feel, and they help improve UI performance. You can try many
+of these component changes via the pages of examples and tutorials found on
+[http://alloyui.com/](http://alloyui.com/). You'll have to take a look at the
+AlloyUI 2.0 [API documentation](http://alloyui.com/api/) to understand a number
+of the markup changes--but here are some common changes: 
 
 -   Buttons work a little differently in AlloyUI 2.0. By default, they now
     submit the form. If you don't want that default behavior, you should prevent 
@@ -398,7 +398,7 @@ icons available.
 
 ### Icon Removals, in Favor of Using Bootstrap Icons
 
-We replaced many icons we with those provided by Bootstrap. We also added icons
+We replaced many icons with those provided by Bootstrap. We also added icons
 from the Font Awesome project. These icons look great and provide a consistent
 look and feel throughout Liferay and our plugins. You'll need to update your
 plugin's references for icons that have been removed. In cases where you use the
@@ -408,7 +408,7 @@ Bootstrap, such as their [icons from
 Glyphicons](http://liferay.github.io/alloy-bootstrap/base-css.html#icons). 
 
 We've given you the "dime" tour of the types of changes you'll need to
-accommodate in the plugins you're migrating from Liferay 6.1 to 6.2. But to
+accommodate in the plugins you're migrating from Liferay 6.1 to 6.2, but to
 really jump-start your migration process, we'll show you Liferay's AlloyUI
 Upgrade Tool. So, put on your work gloves and get ready to power through
 migrating your plugins! 
