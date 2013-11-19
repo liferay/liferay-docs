@@ -282,7 +282,7 @@ creating site membership policies. -JR -->
 
 **Directory Indexing Enabled:** allows site administrators to browse the site's
 documents and media files and folders. For example, a site administrator of a
-site called Nose-ster could can browse documents at
+site called Nose-ster can browse documents at
 [http://localhost:8080/documents/nose-ster](http://localhost:8080/documents/nose-ster) if this option is enabled.
 
 **Parent Site:** lets you select a parent site for the site that's being

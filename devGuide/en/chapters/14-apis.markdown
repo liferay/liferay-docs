@@ -49,7 +49,7 @@ Example,
 
 -->
 
-## Application Display Templates
+## Application Display Templates [](id=application-display-templates-liferay-portal-6-2-dev-guide-14-en)
 
 A portlet's Display Settings (*Configuration* &rarr; *Setup* &rarr; *Display
 Settings*) let you customize its display. They come built in with Liferay, so
@@ -72,7 +72,7 @@ portlets, too.
 You can use the Application Display Templates API to add this new feature to
 your plugins. Let's get started learning how.
 
-### Using the Application Display Templates API
+### Using the Application Display Templates API [](id=application-display-templates-api-liferay-portal-6-2-dev-guide-14-en)
 
 To leverage the ADT API, there are several steps you need to follow. These steps involve
 registering your portlet to use ADTs, defining permissions, and exposing the
@@ -190,7 +190,7 @@ ADT functionality to users.
 <!-- We need to point out where this code specifies the rendering based on the
 ADT. It's not obvious how it works. Jim --> 
 
-### Recommendations
+### Recommendations [](id=adt-recommendations-liferay-portal-6-2-dev-guide-14-en)
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, let's

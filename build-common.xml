@@ -216,7 +216,7 @@ English markdown, html, odt, and epub documents.
     <target name="markdown-to-html-win" depends="check-images, concat-markdown-files" description="converts markdown file to an html file on windows">
         <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
-        <exec executable="cmd">
+	<exec executable="cmd" dir="${build.dir}/${lang}">
             <arg value="/C" />
             <arg value="pandoc"/>
             <arg value="-f" />
@@ -228,8 +228,8 @@ English markdown, html, odt, and epub documents.
             <arg value="-RTS"/>-->
             <arg value="-smart"/>
             <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.html"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -254,7 +254,7 @@ English markdown, html, odt, and epub documents.
     <target name="markdown-to-odt-win" depends="check-images, concat-markdown-files" description="converts markdown file to an ODT file on Windows">
         <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to odt on windows"/>
         <!-- pandoc -f markdown -t odt +RTS K64m -RTS -o 01-chapter-02.odt 01-chapter-02.markdown -->
-        <exec executable="cmd">
+	<exec executable="cmd" dir="${build.dir}/${lang}">
             <arg value="/C" />
             <arg value="pandoc"/>
             <arg value="-f" />
@@ -266,8 +266,8 @@ English markdown, html, odt, and epub documents.
             <arg value="-RTS"/>
             <arg value="-smart"/>
             <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.odt"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.odt"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -291,7 +291,7 @@ English markdown, html, odt, and epub documents.
 
     <target name="markdown-to-epub-win" depends="check-images, concat-markdown-files" description="converts markdown file to an epub file on windows">
         <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to epub"/>
-        <exec executable="cmd">
+	<exec executable="cmd" dir="${build.dir}/${lang}">
             <arg value="/C" />
             <arg value="pandoc"/>
             <arg value="-f" />
@@ -302,8 +302,8 @@ English markdown, html, odt, and epub documents.
             <arg value="-K64m"/>
             <arg value="-RTS"/>-->
             <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.epub"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.epub"/>
+            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -335,7 +335,7 @@ English markdown, html, odt, and epub documents.
     <target name="chapter-to-html" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file">
         <echo message="... converting ${chapter} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.app}">
+	<exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
             <arg value="-f" />
             <arg value="markdown"/>
             <arg value="-t"/>
@@ -345,15 +345,15 @@ English markdown, html, odt, and epub documents.
             <arg value="-RTS"/>
             <arg value="-smart"/>-->
             <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.markdown"/>
+            <arg value="${lang}-${chapter}.html"/>
+            <arg value="${lang}-${chapter}.markdown"/>
         </exec>      
     </target>
     
     <target name="chapter-to-html-win" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file on windows">
         <echo message="... converting ${chapter} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="cmd">
+	<exec executable="cmd" dir="${build.dir}/${lang}">
             <arg value="/C" />
             <arg value="pandoc"/>
             <arg value="-f" />
@@ -365,8 +365,8 @@ English markdown, html, odt, and epub documents.
             <arg value="-RTS"/>-->
             <arg value="-smart"/>
             <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.markdown"/>
+            <arg value="${lang}-${chapter}.html"/>
+            <arg value="${lang}-${chapter}.markdown"/>
         </exec>      
     </target>
     
