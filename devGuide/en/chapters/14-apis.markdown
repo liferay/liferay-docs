@@ -240,16 +240,178 @@ options by overriding the following portal properties:
 <!-- Before transitioning into the next section, we should summarize what the
 reader has learned from this section about ADTs. Jim -->
 
-## Liferay 6.2 Uses AlloyUI 2.0 [](id=liferay-portal-6-2-uses-alloyui-2-0-liferay-portal-6-2-dev-guide-02-en)
+Next, we'll show you some of the changes to consider in using AlloyUI 2.0 and
+Twitter&reg; Bootstrap. 
 
-<!-- Describe the different changes from 1.7 to 2.0, explain the reason for the
-changes, and describe what you need to do to migrate to 2.0
+## AlloyUI 2.0 / Bootstrap migration [](id=alloyui-2-0-bootstrap-migration-liferay-portal-6-2-dev-guide-02-en)
 
--->
+Liferay 6.2 uses Twitter&reg; Bootstrap-based theming for a slick, vibrant look
+and feel with instant access to the Twitter&reg; Bootstrap (Bootstrap) theme
+library. But there are a number of changes that needed to be made to AlloyUI in
+order to accommodate and properly use Bootstrap. In this section, we'll explain
+the reasoning behind the changes to AlloyUI and we'll explain how to migrate
+plugins to use AlloyUI 2.0 and Bootstrap. 
 
-<!-- Describe liferay-aui-upgrade-tool -->
+Here is an outline of the types of changes you'll need to understand and handle
+in migrating your plugins:
 
-<!-- Here are steps for installing liferay-aui-upgrade-tool -->
+- Removal of the "aui-" prefixes from all classes
+- Module deprecations
+- CSS classes replaced with Bootstrap equivalents
+- Component output and markup changes
+- Icon removals, in favor of using Bootstrap icons
+
+<!-- Add Bullet - Only Use AlloyUI Classes in CSS via Their Modules Jim -->
+
+The good news is that Liferay provides a tool for making these changes. But
+before we show you that tool, we'll explain the impact of each of these AlloyUI
+changes with respect to Liferay 6.1 plugins. First, let's look at the removal of
+the "aui-" class name prefix. 
+
+### Removal of the "aui-" Prefix from All Classes
+
+The "aui-" class prefix was hindering developers from copying and pasting
+examples from Twitter&reg; Bootstrap's site into their Liferay plugin code. So
+we've removed the prefix from all of AlloyUI's CSS and JavaScript classes.
+You'll need to update any references to the classes that have been removed. For
+example, you should remove the "aui-" prefix from the class reference
+`.aui-ace-autocomplete`, converting the reference to `.ace-autocomplete`. There
+are plenty more class references like this one that you'll need to update. 
+
+Next, let's consider the modules that have been deprecated in AlloyUI 2.0. 
+
+### AlloyUI Module Deprecations
+
+Because extensive changes were needed for a number of AlloyUI modules, many of
+the original modules were deprecated. In some cases the original modules were
+deprecated with no replacement; in other cases we used the original name for the
+new module implementation and have simply renamed the old module by adding a
+"-deprecated" suffix to it. AlloyUI 2.0's module API is documented at
+[http://alloyui.com/api/](http://alloyui.com/api/). But we've listed the
+deprecated modules here: 
+
+	aui-autocomplete-deprecated
+	aui-autosize-deprecated
+	aui-button-item-deprecated
+	aui-chart-deprecated
+	aui-color-picker-base-deprecated
+	aui-color-picker-deprecated
+	aui-color-picker-grid-plugin-deprecated
+	aui-color-util-deprecated
+	aui-data-set-deprecated
+	aui-datasource-control-base-deprecated
+	aui-datasource-control-deprecated
+	aui-datepicker-base-deprecated
+	aui-datepicker-deprecated
+	aui-datepicker-select-deprecated
+	aui-delayed-task-deprecated
+	aui-dialog-iframe-deprecated
+	aui-editable-deprecated
+	aui-form-base-deprecated
+	aui-form-combobox-deprecated
+	aui-form-deprecated
+	aui-form-field-deprecated
+	aui-form-select-deprecated
+	aui-form-textarea-deprecated
+	aui-form-textfield-deprecated
+	aui-input-text-control-deprecated
+	aui-io-deprecated
+	aui-io-plugin-deprecated
+	aui-io-request-deprecated
+	aui-live-search-deprecated
+	aui-loading-mask-deprecated
+	aui-overlay-base-deprecated
+	aui-overlay-context-deprecated
+	aui-overlay-context-panel-deprecated
+	aui-overlay-deprecated
+	aui-overlay-manager-deprecated
+	aui-overlay-mask-deprecated
+	aui-panel-deprecated
+	aui-resize-base-deprecated
+	aui-resize-constrain-deprecated
+	aui-resize-deprecated
+	aui-scroller-deprecated
+	aui-simple-anim-deprecated
+	aui-skin-deprecated
+	aui-state-interaction-deprecated
+	aui-swf-deprecated
+	aui-template-deprecated
+	aui-textboxlist-deprecated
+	aui-tooltip-deprecated
+	aui-tpl-snippets-base-deprecated
+	aui-tpl-snippets-checkbox-deprecated
+	aui-tpl-snippets-deprecated
+	aui-tpl-snippets-input-deprecated
+	aui-tpl-snippets-select-deprecated
+	aui-tpl-snippets-textarea-deprecate
+
+Note, some of these modules have new implementations with the same name,
+excluding the suffix "-deprecated". Liferay's AlloyUI Upgrade Tool tacks the
+"-deprecated" suffix onto module references it finds. It's up to you to migrate
+to the new AlloyUI 2.0 modules. 
+
+Next, let's consider the CSS classes that have been replaced by Bootstrap
+equivalent components. 
+
+<!-- Section: Only Use AlloyUI Classes in CSS via Their Modules
+
+In CSS, a plugin should only use AlloyUI classes via their modules. This ensures
+that the AlloyUI classes are available on the site pages. 
+
+We need to explain this change. Maybe use a change to
+portal-web/docroot/html/css/portal/preview.css as was done for
+https://issues.liferay.com/browse/LPS-34974 ? Jim -->
+
+
+### CSS Classes Replaced with Bootstrap Equivalents
+
+Many of the CSS classes used in AlloyUI 1.7 were replaced with Bootstrap classes
+or were removed because they didn't blend well with Bootstrap. You may find this
+with CSS classes in your plugins. Consider replacing your classes with
+Bootstrap's CSS classes. See
+[http://liferay.github.io/alloy-bootstrap/base-css.html](http://liferay.github.io/alloy-bootstrap/base-css.html) for more information on these CSS classes. 
+
+Next, let's consider the component output and markup changes in AlloyUI 2.0. 
+
+### Component Output and Markup Changes
+
+AlloyUI 2.0 introduces appealing new changes in its output and some practical
+changes to its markup. These changes help facilitate building UIs with
+consistent look and feel with, and they help improve UI performance. You can try
+many of these component changes via the pages of examples and tutorials found on
+[http://alloyui.com/](http://alloyui.com/). And you'll have to take a look at
+the AlloyUI 2.0 [API documentation](http://alloyui.com/api/) to understand a
+number of the markup changes. But here are some common changes: 
+
+-   Buttons work a little differently in AlloyUI 2.0. By default, they now
+    submit the form. If you don't want that default behavior, you should prevent 
+    it by using a DOM event call like this: `event.domEvent.preventDefault();`.
+-   In `A.Modal`, you now use `close-panel` instead of the old `aui-btn-cancel`
+    tablib. 
+-   To delegate selectors for buttons, simply use `.selector-button` instead of
+    `.selector-button input`.
+
+There are plenty more changes, but at least these are a few to get you started.
+And remember that the Liferay AlloyUI Upgrade Tool--that we'll introduce
+shortly--will help you out as well. Next, let's consider the changes in the
+icons available. 
+
+### Icon Removals, in Favor of Using Bootstrap Icons
+
+We replaced many icons we with those provided by Bootstrap. We also added icons
+from the Font Awesome project. These icons look great and provide a consistent
+look and feel throughout Liferay and our plugins. You'll need to update your
+plugin's references for icons that have been removed. In cases where you use the
+`liferay:icon` taglib, you simply need to change the value of its `image`
+attribute to that of a different icon. Consider using the new icons available in
+Bootstrap, such as their [icons from
+Glyphicons](http://liferay.github.io/alloy-bootstrap/base-css.html#icons). 
+
+We've given you the "dime" tour of the types of changes you'll need to
+accommodate in the plugins you're migrating from Liferay 6.1 to 6.2. But to
+really jump-start your migration process, we'll show you Liferay's AlloyUI
+Upgrade Tool. So, put on your work gloves and get ready to power through
+migrating your plugins! 
 
 ### Upgrading Plugins with the Liferay AlloyUI Upgrade Tool [](id=upgrade-to-alloyui-2-0-with-tool-liferay-portal-6-2-dev-guide-en)
 
@@ -444,6 +606,8 @@ No matter which Liferay APIs you're using, you'll need to understand Liferay's
 deprecation policy. That way you'll know when methods from our API's are
 deprecated, and you can make any necessary changes. We'll describe the
 deprecation policy next. 
+
+<!-- TODO new Section: Use Namespaced Parameters in AJAX Requests -->
 
 ## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-liferay-portal-6-2-dev-guide-02-en)
 
