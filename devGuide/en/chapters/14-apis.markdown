@@ -56,27 +56,27 @@ Settings*) let you customize its display. They come built in with Liferay, so
 you don't have to do anything special to enable them for your custom portlets.
 But what if you need settings in addition to Liferay's display settings? You
 could develop a theme or hook with the display options you need, but it'd be
-nice if you could apply particular display options to specific portlet instances
-without having to redeploy any plugins. Ideally, you should be able to provide
-authorized portal users the ability to apply custom display settings to
-portlets. This would save portlet developers from having to change portlet
+nice if you could apply particular display options to specific portlet
+instances without having to redeploy any plugins. Ideally, you should be able
+to provide authorized portal users the ability to apply custom display settings
+to portlets. This would save portlet developers from having to change portlet
 configuration code every time you need new settings. 
 
-Be of good cheer! That's precisely what Application Display Templates (ADTs) provide--
-the ability to add custom display settings to your portlets from the portal. This isn't
-actually a new concept in Liferay. In some portlets (e.g., *Web Content*,
-*Documents and Media*, and *Dynamic Data Lists*, you can already add as many
-display options (or templates) as you want. Now you can add them to your custom
-portlets, too.
+Be of good cheer! That's precisely what Application Display Templates (ADTs)
+provide-- the ability to add custom display settings to your portlets from the
+portal. This isn't actually a new concept in Liferay. In some portlets (e.g.,
+*Web Content*, *Documents and Media*, and *Dynamic Data Lists*, you can already
+add as many display options (or templates) as you want. Now you can add them to
+your custom portlets, too.
 
 You can use the Application Display Templates API to add this new feature to
 your plugins. Let's get started learning how.
 
 ### Using the Application Display Templates API [](id=application-display-templates-api-liferay-portal-6-2-dev-guide-14-en)
 
-To leverage the ADT API, there are several steps you need to follow. These steps involve
-registering your portlet to use ADTs, defining permissions, and exposing the
-ADT functionality to users. 
+To leverage the ADT API, there are several steps you need to follow. These
+steps involve registering your portlet to use ADTs, defining permissions, and
+exposing the ADT functionality to users. 
 
 1.  Register your custom `PortletDisplayTemplateHandler`
 
@@ -89,8 +89,8 @@ ADT functionality to users.
     [javadoc](http://docs.liferay.com/portal/6.2/javadocs/) to learn about each
     method.
  
-    Once you've created the handler, declare it in the proper section of
-    your `liferay-portlet.xml`, like this:
+    Once you've created the handler, declare it in the proper section of your
+    `liferay-portlet.xml`, like this:
 
         <?xml version="1.0"?>
         <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN"
@@ -107,10 +107,10 @@ ADT functionality to users.
 
 2.  Declare permissions
 
-    Since the ability to add Application Display Templates is new to your portlet,
-    you should ensure you can grant specific permissions for it. Just add the
-    action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your portlet's `default.xml` file,
-    like this:
+    Since the ability to add Application Display Templates is new to your
+    portlet, you should ensure you can grant specific permissions for it. Just add
+    the action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your portlet's `default.xml`
+    file, like this:
 
         <?xml version="1.0"?>
         <!DOCTYPE resource-action-mapping PUBLIC 
@@ -157,13 +157,15 @@ ADT functionality to users.
  
 4.  Render Application Display Templates in your views
 
-    <!--Does this go into the configuration.jsp, too?-->
+    <!--I found that this actually goes into the portlet's view_resources.jsp
+    (in docroot/html/portletname), by searching the jukebox portlet-->
 
     You're almost finished, but you still have to extend your view code to
-    render your portlet with the selected Application Display Template. Here is where you
-    decide exactly which part of your view will be rendered by the Application
-    Display Template and what will be available in the template context. You'll be
-    adding some code to your `configuration.jsp`, similar to this:
+    render your portlet with the selected Application Display Template. Here is
+    where you decide exactly which part of your view will be rendered by the
+    Application Display Template and what will be available in the template
+    context. You'll be adding some code to your `view_resources.jsp`, similar to
+    this:
  
         <%
         List<MyType> myList = getMyList();
@@ -189,6 +191,10 @@ ADT functionality to users.
 
 <!-- We need to point out where this code specifies the rendering based on the
 ADT. It's not obvious how it works. Jim --> 
+
+<!--I also need to follow these steps for the event listing portlet and add the
+appropriate code so it is a concrete example that actually accomplishes
+something. Russ -->
 
 ### Recommendations [](id=adt-recommendations-liferay-portal-6-2-dev-guide-14-en)
 
@@ -224,8 +230,7 @@ templates as minimal as possible by focusing on the presentation, while using
 the existing API for complex operations. The best way to make Application
 Display Templates efficient is to know your template context well, and
 understand what you can use from it. Fortunately, you don't need to memorize
-the context information, thanks to Liferay's advanced
-template editor!
+the context information, thanks to Liferay's advanced template editor!
 
 <!-- It's not clear what the template editor provides with respect to context
 info. It would be good to clarify what it provides and/or how it provides that
