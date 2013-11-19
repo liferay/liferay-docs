@@ -243,7 +243,7 @@ reader has learned from this section about ADTs. Jim -->
 Next, we'll show you some of the changes to consider in using AlloyUI 2.0 and
 Twitter&reg; Bootstrap. 
 
-## AlloyUI 2.0 / Bootstrap migration [](id=alloyui-2-0-bootstrap-migration-liferay-portal-6-2-dev-guide-02-en)
+## AlloyUI 2.0 / Bootstrap Migration [](id=alloyui-2-0-bootstrap-migration-liferay-portal-6-2-dev-guide-02-en)
 
 Liferay 6.2 uses Twitter&reg; Bootstrap-based theming for a slick, vibrant look
 and feel with instant access to the Twitter&reg; Bootstrap (Bootstrap) theme
@@ -268,7 +268,7 @@ before we show you that tool, we'll explain the impact of each of these AlloyUI
 changes with respect to Liferay 6.1 plugins. First, let's look at the removal of
 the "aui-" class name prefix. 
 
-### Removal of the "aui-" Prefix from All Classes
+### Removal of the "aui-" Prefix from All Classes [](id=remove-aui-prefix-from-classes-liferay-portal-6-2-dev-guide-en)
 
 The "aui-" class prefix was hindering developers from copying and pasting
 examples from Bootstrap's site into their Liferay plugin code. So we've removed
@@ -280,7 +280,7 @@ are plenty more class references like this one that you'll need to update.
 
 Next, let's consider the modules that have been deprecated in AlloyUI 2.0. 
 
-### AlloyUI Module Deprecations
+### AlloyUI Module Deprecations [](id=alloyui-module-deprecations-liferay-portal-6-2-dev-guide-14-en)
 
 Because extensive changes were needed for a number of AlloyUI modules, many of
 the original modules were deprecated. In some cases the original modules were
@@ -363,7 +363,7 @@ portal-web/docroot/html/css/portal/preview.css as was done for
 https://issues.liferay.com/browse/LPS-34974 ? Jim -->
 
 
-### CSS Classes Replaced with Bootstrap Equivalents
+### CSS Classes Replaced with Bootstrap Equivalents [](id=css-classes-replaced-with-bootstrap-classes-liferay-portal-6-2-dev-guide-en)
 
 Many of the CSS classes used in AlloyUI 1.7 were replaced with Bootstrap classes
 or were removed because they didn't blend well with Bootstrap. You may find this
@@ -373,7 +373,7 @@ Bootstrap's CSS classes. See
 
 Next, let's consider the component output and markup changes in AlloyUI 2.0. 
 
-### Component Output and Markup Changes
+### Component Output and Markup Changes [](id=alloyui-output-and-markup-changes-liferay-portal-6-2-dev-guide-14-en)
 
 AlloyUI 2.0 introduces appealing new changes in its output and some practical
 changes to its markup. These changes help facilitate building UIs with a
@@ -396,7 +396,7 @@ And remember that the Liferay AlloyUI Upgrade Tool--that we'll introduce
 shortly--will help you out as well. Next, let's consider the changes in the
 icons available. 
 
-### Icon Removals, in Favor of Using Bootstrap Icons
+### Icon Removals, in Favor of Using Bootstrap Icons [](id=icons-removed-replaced-with-bootstrap-liferay-portal-6-2-dev-guide-en)
 
 We replaced many icons with those provided by Bootstrap. We also added icons
 from the Font Awesome project. These icons look great and provide a consistent
