@@ -1,10 +1,36 @@
 # What's New in Liferay 6.2 APIs? [](id=whats-new-in-liferay-6-2-apis-liferay-portal-6-2-dev-guide-en)
 
----
+<!-- NOTE TO CONTRIBUTERS
 
-![Note](../../images/tip-pen-paper.png) This chapter is under construction. 
+Add content describing your API changes. If a Dev Guide chapter/section related
+to your feature already exists, integrate your content with it and provide a
+reference here. Otherwise, add a new section here in this APIs chapter with
+content describing the your feature's new or modified API. 
 
----
+For example,
+
+    ## FeatureXYZ
+
+    Describe your new/modified API here
+
+Briefly describe your feature, even if it's a feature from the
+previous release. Explain what the new or modified API does and how to use
+it, by way of code examples. 
+
+If your feature is already described in another chapter of the Dev Guide,
+consider describing the API change there instead of here in this chapter. If you
+do write about it in another chapter, still mention the API change here in this
+chapter and refer to that other chapter/section, to help readers locate
+your API change.
+
+For example,
+
+    ## Message Bus FeatureXYZ
+
+    You can now to x, y, and z in the Message Bus API. See the Using Message Bus
+    section of Chapter 6 for details. 
+
+-->
 
 Liferay Portal 6.2 offers a host of new features and updates to the previous
 release. Our guide to *Using Liferay Portal 6.2* shows you how to use these
@@ -18,36 +44,8 @@ interfaces. The Javadoc for Liferay Portal's entire API is availabe at
 we'll describe some of the most notable additions and changes here in this
 chapter. 
 
-<!-- NOTE TO CONTRIBUTERS
-
-Add content describing your API changes. If a section related to your feature
-already exists, integrate your content with that section. Otherwise, add a new
-section and content describing the your feature's new or modified API. 
-
-Example,
-
-    ## FeatureXYZ
-
-    Describe your new/modified API here
-
-Briefly describe your feature, even if it's an existing feature from the
-previous release. Explain what the new or modified API does and whow how to use
-it by way of code example. 
-
-If your feature is already described in another chapter of the Dev Guide,
-consider describing the API change there instead of here in this chapter. If you
-do write about it in another chapter, still mention the API change here in this
-chapter and refer to that other chapter and section. That way readers can locate
-your API change description from this chapter.
-
-Example,
-
-    ## Message Bus FeatureXYZ
-
-    You can now to x, y, and z in the Message Bus API. See the Using Message Bus
-    section of Chapter 6 for details. 
-
--->
+To start things off, we'll take a look at the new things you can do with the
+Application Display Templates API. 
 
 ## Application Display Templates [](id=application-display-templates-liferay-portal-6-2-dev-guide-14-en)
 
@@ -606,8 +604,6 @@ No matter which Liferay APIs you're using, you'll need to understand Liferay's
 deprecation policy. That way you'll know when methods from our API's are
 deprecated, and you can make any necessary changes. We'll describe the
 deprecation policy next. 
-
-<!-- TODO new Section: Use Namespaced Parameters in AJAX Requests -->
 
 ## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-liferay-portal-6-2-dev-guide-02-en)
 
