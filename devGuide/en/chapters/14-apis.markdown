@@ -99,11 +99,15 @@ exposing the ADT functionality to users.
         <liferay-portlet-app>
             <portlet>
                 <portlet-name>MyApp</portlet-name>
+                <icon>icon.png</icon>
                 <template-handler>
                     org.my.app.template.MyAppPortletDisplayTemplateHandler
                 </template-handler>
             </portlet>
         </liferay-portlet-app>
+
+<!--It appears to matter that the template-handler element comes after the icon
+element-->
 
 2.  Declare permissions
 
@@ -123,10 +127,10 @@ exposing the ADT functionality to users.
                 <permissions>
                     <supports>
                         <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
-                    <supports>
-                <permissions>
-            <portlet-resource>
-        <resource-action-mapping>
+                    </supports>
+                </permissions>
+            </portlet-resource>
+        </resource-action-mapping>
 	 
 3.  Add display settings to your portlet's `configuration.jsp`
 
