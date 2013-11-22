@@ -136,7 +136,9 @@ element-->
 
     Now that your portlet officially supports Application Display Templates,
     you'll want to expose the ADT option to your users. Just include the
-    `liferay-ui:ddm-template-selector` taglib in your portlet's `configuration.jsp`,
+    `liferay-ui:ddm-template-selector` taglib in the JSP file you're using to
+    control your portlet's configuration mode (e.g., `config.jsp` if you chose to
+    have it created through the Liferay Developer Studio New Portlet wizard),
     providing the required information, like this:
  
         <aui:form action="<%= configurationURL %>" method="post" name="fm">
@@ -161,15 +163,12 @@ element-->
  
 4.  Render Application Display Templates in your views
 
-    <!--I found that this actually goes into the portlet's view_resources.jsp
-    (in docroot/html/portletname), by searching the jukebox portlet-->
-
     You're almost finished, but you still have to extend your view code to
     render your portlet with the selected Application Display Template. Here is
     where you decide exactly which part of your view will be rendered by the
     Application Display Template and what will be available in the template
-    context. You'll be adding some code to your `view_resources.jsp`, similar to
-    this:
+    context. You'll be adding some code to whatever JSP file controls your
+    portlet's view mode, and it will be similar to this:
  
         <%
         List<MyType> myList = getMyList();
@@ -196,7 +195,7 @@ element-->
 <!-- We need to point out where this code specifies the rendering based on the
 ADT. It's not obvious how it works. Jim --> 
 
-<!--I also need to follow these steps for the event listing portlet and add the
+<!--We also need to follow these steps for the event listing portlet and add the
 appropriate code so it is a concrete example that actually accomplishes
 something. Russ -->
 
