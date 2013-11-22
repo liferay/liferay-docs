@@ -295,18 +295,19 @@ which Liferay has been installed.
 In addition to Liferay Portal itself, bundles are shipped with a number of
 plugins already installed: 
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en](kaleo-web:) Liferay's workflow engine
+- [kaleo-web:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-workflow-liferay-portal-6-2-user-guide-11-en) Liferay's workflow engine
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en](marketplace:) Interface to Liferay Marketplace
+- [marketplace:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en) Interface to Liferay Marketplace
 
-- notifications: App that provides in-browser notifications for users
+- [notifications:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/touring-liferay-portals-user-interface-liferay-portal-6-2-user-guide-02-en) App that provides in-browser notifications for users
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en](opensocial:) Allows deploying OpenSocial gadgets to Liferay Portal
+- [opensocial:](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en) Allows deploying OpenSocial gadgets to Liferay Portal
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en](resources-importer-web:) Imports theme resources with theme plugins
+- [resources-importer-web:](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en) Imports theme resources with theme plugins
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-sync-liferay-portal-6-2-user-guide-05-en](sync-web:) Allows Liferay Sync to connect to this installation to keep
-  Documents and Media folders synchronized
+- [sync-web:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-sync-liferay-portal-6-2-user-guide-05-en) Allows Liferay Sync to connect to this installation to keep
+  Documents and Media folders synchronized. You must have this plugin installed
+if you want to use Liferay Sync Mobile or Desktop. 
 
 - web-forms: App that allows users to create forms users can fill out. The
   results are then emailed to a specified email address. 
@@ -314,16 +315,16 @@ plugins already installed:
 - welcome-theme: A default website that gives new users a tour of what Liferay
   Portal has to offer. 
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-events-and-calendar-resources-with-liferay-rsquo-s-calendar](calendar:) Liferay's calendar application. This used to be built-in, and is now
+- [calendar:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/managing-events-and-calendar-resources-with-liferay-rsquo-s-calendar) Liferay's calendar application. This used to be built-in, and is now
   a plugin, so it's included by default.
 
 If you are an enterprise subscriber, the welcome theme is not included, and you
 receive a few more plugins: 
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-designer-liferay-portal-6-2-user-guide-12-en](kaleo-designer-portlet:) Subscriber plugin that offers a graphical interface
+- [kaleo-designer-portlet:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-designer-liferay-portal-6-2-user-guide-12-en) Subscriber plugin that offers a graphical interface
   for creating Kaleo workflows. 
 
-- [https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/make-it-pretty-creating-custom-displays-liferay-portal-6-2-user-guide-10-en](kaleo-forms-portlet:) Subscriber plugin that allows attaching forms to
+- [kaleo-forms-portlet:](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/make-it-pretty-creating-custom-displays-liferay-portal-6-2-user-guide-10-en) Subscriber plugin that allows attaching forms to
   workflows. 
 
 Getting a Liferay bundle up and running is as easy as uncompressing the archive,
