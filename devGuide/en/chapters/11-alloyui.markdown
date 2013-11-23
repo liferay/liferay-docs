@@ -240,30 +240,34 @@ files. Except for the paths to your seed files, your HTML content should look
 similar to this:
 
         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Example</title>
 
-        <input type="text" id="some-input" />
-        <span id="counter"></span> character(s) remaining
-
-        <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
-
-        <link href="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
+          <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
+          <link href="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
           rel="stylesheet"></link>
+        </head>
+        <body>
+          <input type="text" id="some-input" />
+          <span id="counter"></span> character(s) remaining
 
-        <script>
-        YUI().use(
-          'aui-char-counter',
-          function(Y) {
-            new Y.CharCounter(
-              {
-                counter: '#counter',
-                input: '#some-input',
-                maxLength: 10
-              }
-            );
-          }
-        );
-        </script>
-
+          <script>
+          YUI().use(
+            'aui-char-counter',
+            function(Y) {
+              new Y.CharCounter(
+                {
+                  counter: '#counter',
+                  input: '#some-input',
+                  maxLength: 10
+                }
+              );
+            }
+          );
+          </script>
+        </body>
         </html>
 
 The figure below shows what your web page should look like.
