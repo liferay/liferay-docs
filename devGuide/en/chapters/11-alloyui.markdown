@@ -210,8 +210,8 @@ components locally.
 
 ### Working with an AlloyUI Project Release Zip File [](id=using-downloaded-alloyui-zip-liferay-portal-6-2-dev-guide-11-en)
 
-You can download AlloyUI as a `.zip` file from
-[http://alloyui.com](http://alloyui.com). The file contains the following files
+You can download any AlloyUI version as a `.zip` file from
+[https://github.com/liferay/alloy-ui/releases](https://github.com/liferay/alloy-ui/releases). The file contains the following files
 and folders:
 
 - `alloy-[version]/` - AlloyUI project root directory
