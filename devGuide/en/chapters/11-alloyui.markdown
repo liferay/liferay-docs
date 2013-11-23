@@ -399,9 +399,12 @@ initialize the project's remaining dependencies. Follow these steps:
 
 3.  Lastly, the alloy-ui project has a special target called `init` that clones
     and updates the GitHub software projects on which alloy-ui depends. These
-    projects include yui3, ace-builds, alloy-bootstrap, alloy-apidocs-theme, and
-    alloyui.com. Initialize these projects for alloy-ui by executing this
-    command:
+    projects include [yui3](https://github.com/liferay/yui3.git),
+    [ace-builds](https://github.com/ajaxorg/ace-builds.git),
+    [alloy-bootstrap](https://github.com/liferay/alloy-bootstrap.git),
+    [alloy-apidocs-theme](https://github.com/liferay/alloy-apidocs-theme.git), and
+    [alloyui.com](https://github.com/liferay/alloyui.com.git).
+    Initialize these projects for alloy-ui by executing this command:
 
         grunt init
 
