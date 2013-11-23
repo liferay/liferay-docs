@@ -145,7 +145,7 @@ follows this format:
 
 `YUI().use()` is a function call that instantiates modules for you to use. As
 parameters, you pass in packages and a function containing your code. The
-example code required YUI's `event` and `node` packages. The final argument
+example code required Alloy's `aui-char-counter` package. The final argument
 is the YUI object as parameter `Y`. Alloy's classes are stored in this `Y`
 object. In this function, you place presentation logic, leveraging AlloyUI's API
 via the mighty `Y` object. We'll get into more details on the API shortly.
