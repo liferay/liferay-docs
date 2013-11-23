@@ -57,30 +57,34 @@ AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 1. Create an HTML file and insert the following lines:
 
         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Example</title>
 
-        <input type="text" id="some-input" />
-        <span id="counter"></span> character(s) remaining
+          <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
+          <link href="http://cdn.alloyui.com/2.0.0/aui-css/css/bootstrap.min.css"
+          rel="stylesheet">
+        </head>
+        <body>
+          <input type="text" id="some-input" />
+          <span id="counter"></span> character(s) remaining
 
-        <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
-
-        <link href="http://cdn.alloyui.com/2.0.0/aui-css/css/bootstrap.min.css"
-          rel="stylesheet"></link>
-
-        <script>
-        YUI().use(
-          'aui-char-counter',
-          function(Y) {
-            new Y.CharCounter(
-              {
-                counter: '#counter',
-                input: '#some-input',
-                maxLength: 10
-              }
-            );
-          }
-        );
-        </script>
-
+          <script>
+          YUI().use(
+            'aui-char-counter',
+            function(Y) {
+              new Y.CharCounter(
+                {
+                  counter: '#counter',
+                  input: '#some-input',
+                  maxLength: 10
+                }
+              );
+            }
+          );
+          </script>
+        </body>
         </html>
 
 2. Open the HTML file in your browser.
