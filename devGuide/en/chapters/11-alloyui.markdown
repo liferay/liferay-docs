@@ -9,19 +9,19 @@ mankind--seemingly weightless bike frames, bridges with enough tensile strength
 to withstand hurricanes, and swords that can cut through almost anything. The
 Liferay UI Team is like these scientists. They've put forth equal sweat and
 ingenuity to bring you a mixture, or *alloy*, of the best UI technologies and
-have wrapped it up in one ultimate framework--AlloyUI! 
+have wrapped it up in one ultimate framework--AlloyUI!
 
 AlloyUI gives you skinnable, scalable UI components, so you can provide a
-consistent look and feel for your application. It's a framework containing 
+consistent look and feel for your application. It's a framework containing
 JavaScript extensions to Yahoo UI (YUI) that leverages all of YUI's modules and
 adds its own components to help you build terrific UIs. AlloyUI also
-incorporates Twitter Bootstrap to make styling components a snap. 
+incorporates Twitter Bootstrap to make styling components a snap.
 
 AlloyUI was built on YUI for several reasons. First, YUI facilitates building
 high quality production-level widgets quickly. YUI has a flexible, elegant
 architecture that is easy to extend. It is useful in both small and large scale
 projects. YUI is also documented well at
-[http://yuilibrary.com/yui/docs/](http://yuilibrary.com/yui/docs/). 
+[http://yuilibrary.com/yui/docs/](http://yuilibrary.com/yui/docs/).
 
 By using AlloyUI, and therefore leveraging YUI, you can reap significant
 performance benefits. YUI helps reduce the size of your up-front JavaScript
@@ -37,13 +37,13 @@ We know that many developers in the Liferay community like to use jQuery. You
 can use jQuery in Liferay Portal, but we strongly recommend you use AlloyUI.
 Note, AlloyUI is always loaded and available to you in Liferay. If you use
 something else, your page must load your library *and* AlloyUI, which slows down
-performance. 
+performance.
 
 By reading this chapter and following along with its exercises, you'll learn
 what AlloyUI is and how to use it in Liferay Portal. For further details on the
 AlloyUI project, tutorials, examples, and API documentation, make sure to visit
 [http://alloyui.com](http://alloyui.com). We'll show you around AlloyUI in this
-chapter by exploring the following topics: 
+chapter by exploring the following topics:
 
 - A simple AlloyUI example
 - Working with the AlloyUI project
@@ -54,7 +54,7 @@ To start things off right, let's go over a simple example using AlloyUI.
 
 AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 
-1. Create an HTML file and insert the following lines: 
+1. Create an HTML file and insert the following lines:
 
         <!DOCTYPE html>
 
@@ -88,13 +88,13 @@ AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 3. Enter some characters into the text field.
 
 AlloyUI's character counter reports the number of characters you can enter in
-the text field before reaching the 10 character limit. 
+the text field before reaching the 10 character limit.
 
 ![Figure 11.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
 displays an HTML `<input/>` element with `id=some-input`. Then we referenced an
-element called `counter` and added some text describing that counter. 
+element called `counter` and added some text describing that counter.
 
 Then we used a script element to reference Alloy's seed file, `aui-min.js`
 from a content delivery network (CDN). The seed file includes the bare minimum
@@ -115,14 +115,14 @@ YUI.
 Lastly, the code in the `script` element reports the number of characters
 remaining in the text field. As you enter or delete characters from the field,
 the script recalculates the number of remaining characters and displays that
-number via the `counter` element on your page. How's that for dynamic content! 
+number via the `counter` element on your page. How's that for dynamic content!
 
 This script uses YUI and AlloyUI in what is commonly referred to as a "sandbox."
 Code is sandboxed when elements of the code are set off in their own namespaces.
 Why do this? Because JavaScript, like many programming languages, has both a
 local and a global scope. Code placed in a JavaScript function is locally
 scoped, which means that nothing inside that function can be seen outside that
-function. Another way to describe this code is that it has been sandboxed. 
+function. Another way to describe this code is that it has been sandboxed.
 
 This reminds me of the countless hours I spent as a child using my die-cast
 metal toy tractor to plant imaginary crops in my toy sandbox. It was a wonderful
@@ -156,7 +156,7 @@ Then add the code for the input element and the Alloy script to your portlet's
 JSP. This time, however, replace the `<script>` tag with the `<aui:script>` tag.
 The `<aui:script>` tag combines the contents of all `<aui:script>` tags used on
 a page into one script block at the bottom of the page, and it wraps the
-functions in a `YUI.use()` call to bring in necessary module dependencies. 
+functions in a `YUI.use()` call to bring in necessary module dependencies.
 
 With all these simplifications, the AlloyUI code in your JSP looks like this:
 
@@ -183,7 +183,7 @@ Voila! You're using AlloyUI in Liferay!
 ![Figure 11.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
 
 Now that you've gotten your feet wet using AlloyUI, let's go over setting up the
-AlloyUI project for creating your own AlloyUI components. 
+AlloyUI project for creating your own AlloyUI components.
 
 ## Working with the AlloyUI project [](id=working-with-the-alloyui-project-liferay-portal-6-2-dev-guide-en)
 
@@ -191,37 +191,37 @@ Liferay bundles AlloyUI with the portal, as it's used throughout the portal
 and core portlets. Conveniently, you can use AlloyUI in any project--it doesn't
 have to run on Liferay. When you develop AlloyUI scripts and components for use
 in the portal, you can reuse them anywhere else. If you're using AlloyUI outside
-Liferay, you might want to build it yourself. 
+Liferay, you might want to build it yourself.
 
 Here are some other reasons why you might use a local AlloyUI installation or
 AlloyUI project build:
 
-- Creating and testing your own AlloyUI component modules 
-- Using the latest AlloyUI project source code that is not yet released 
-- Using AlloyUI on a closed network 
-- Contributing and testing a fix or enhancement to AlloyUI 
+- Creating and testing your own AlloyUI component modules
+- Using the latest AlloyUI project source code that is not yet released
+- Using AlloyUI on a closed network
+- Contributing and testing a fix or enhancement to AlloyUI
 
 Let's download AlloyUI and set it up for developing AlloyUI scripts and
-components locally. 
+components locally.
 
 ### Working with an AlloyUI Project Release Zip File [](id=using-downloaded-alloyui-zip-liferay-portal-6-2-dev-guide-11-en)
 
 You can download AlloyUI as a `.zip` file from
 [http://alloyui.com](http://alloyui.com). The file contains the following files
-and folders: 
+and folders:
 
-- `alloy-[version]/` - AlloyUI project root directory 
-    - `build/` - Contains the AlloyUI and YUI modules used in Liferay 
-    - `demos/` - Contains basic examples of the AlloyUI components 
-    - `src/` - Contains the source code of the AlloyUI modules 
-    - `.alloy.json` - Specifies how to build the modules 
-    - `LICENSE.md` - Defines AlloyUI's the license agreement 
-    - `README.md` - Explains the AlloyUI project 
+- `alloy-[version]/` - AlloyUI project root directory
+    - `build/` - Contains the AlloyUI and YUI modules used in Liferay
+    - `demos/` - Contains basic examples of the AlloyUI components
+    - `src/` - Contains the source code of the AlloyUI modules
+    - `.alloy.json` - Specifies how to build the modules
+    - `LICENSE.md` - Defines AlloyUI's the license agreement
+    - `README.md` - Explains the AlloyUI project
 
 As you did in the initial example, the first thing you'll call is AlloyUI's
 `aui-min.js` seed file, in your `alloy-[version]/build/aui/` folder. For
 example, if your AlloyUI project root directory is
-`/home/joe.bloggs/alloy-2.0.0/`, you'll refer to the seed file like this: 
+`/home/joe.bloggs/alloy-2.0.0/`, you'll refer to the seed file like this:
 
     <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
 
@@ -269,7 +269,7 @@ The figure below shows what your web page should look like.
 Great! Now you know how to use a local set of the AlloyUI tag libraries. Next,
 we'll show you how to work with the AlloyUI source project. You'll learn how to
 build the project so you can experiment with the latest AlloyUI code whenever
-you want. 
+you want.
 
 ### Working with the AlloyUI Project Source [](id=working-with-the-alloyui-project-source-liferay-portal-6-2-dev-guide-11-en)
 
@@ -279,7 +279,7 @@ time. Liferay makes it easy do get your hands on. We use a public
 latest AlloyUI code. You can download the code so that you can build it and try
 it locally. You can also leverage the alloy-ui project to create some AlloyUI
 modules of your own. We'll show you just how easy it is to install the project
-and use it. 
+and use it.
 
 In this section, we'll demonstrate the following:
 
@@ -288,7 +288,7 @@ In this section, we'll demonstrate the following:
 - Building the project
 - Packaging the project in a distribution and using that distribution
 
-Let's get started by installing AlloyUI's dependencies. 
+Let's get started by installing AlloyUI's dependencies.
 
 #### Setting Up AlloyUI's Required Software [](id=set-up-alloyui-required-software-liferay-portal-6-2-dev-guide-11-en)
 
@@ -296,10 +296,10 @@ The alloy-ui project depends on the following software:
 
 - [Node.js](http://nodejs.org) is a platform for building applications.
 - [Ruby](https://www.ruby-lang.org/en/) is used in the alloy-ui project for
-  downloading other software packages. 
+  downloading other software packages.
 - [Compass](http://compass-style.org) is an open-source CSS authoring framework.
 - [Sass](http://sass-lang.com/) stands for Syntactically Awesome Stylesheets. It
-  is a scripting language used for specifying CSS. 
+  is a scripting language used for specifying CSS.
 
 Let's install Node.js first. You can download it from
 [http://nodejs.org/](http://nodejs.org/). Linux, OS X, or UNIX users can
@@ -312,7 +312,7 @@ installer file and run it.
  ![Warning](../../images/tip.png) **Warning:** On Windows, only install to
  locations that have UNIX-friendly paths. Paths like `C:\Program Files (x86)`
  that contain space characters and parentheses can prevent software from working
- properly. 
+ properly.
 
 ---
 
@@ -327,12 +327,12 @@ get its latest updates:
 
 Now, let's use Ruby's gem command to install Compass and Sass. Conveniently,
 Sass comes bundled with Compass. To install both of them, simply execute the
-following command: 
+following command:
 
     gem install compass
 
 Great! You've installed all of the software applications that the alloy-ui
-project requires. Next, let's get our hands on the alloy-ui project. 
+project requires. Next, let's get our hands on the alloy-ui project.
 
 #### Installing the AlloyUI Project [](id=install-the-alloyui-project-liferay-portal-6-2-dev-guide-11-en)
 
@@ -342,33 +342,33 @@ the [alloy-ui](https://github.com/liferay/alloy-ui) project on
 locally, you'll need an account on GitHub and the Git tool on your machine.
 Visit [https://github.com/](https://github.com/) for instructions on setting up
 the account and see [http://git-scm.com/](http://git-scm.com/) for instructions
-on installing Git. 
+on installing Git.
 
 Here are some simple steps for forking the alloy-ui project on GitHub and
-installing the project locally: 
+installing the project locally:
 
 1.  Go to the AlloyUI project repository at
     [https://github.com/liferay/alloy-ui](https://github.com/liferay/alloy-ui).
 
 2.  Click *Fork* to copy Liferay's alloy-ui repository to your account on
-    GitHub. 
+    GitHub.
 
 3.  In your terminal or in GitBash, navigate to the location where you want to
     put the alloy-ui project. Then download a clone of the repository by
     executing the following  command, replacing `username` with your GitHub user
-    name: 
+    name:
 
         git clone git@github.com:username/alloy-ui
 
     Now you have your own personal copies of the project in GitHub and on your
     local machine. Before you start building the project, let's set it up with
-    the `2.0.x` branch. AlloyUI 2.0 is the version used by Liferay Portal 6.2.  
+    the `2.0.x` branch. AlloyUI 2.0 is the version used by Liferay Portal 6.2.
 
 4.  Navigate to your new alloy-ui directory in GitBash by running `cd alloy-ui`.
 
 5.  To download Liferay's alloy-ui branches, you must first associate a remote
     branch to Liferay's alloy-ui repository and then fetch all of branches via
-    that remote branch: 
+    that remote branch:
 
         git remote add upstream git@github.com:liferay/alloy-ui.git
         git fetch upstream
@@ -388,17 +388,17 @@ initialize the project's remaining dependencies. Follow these steps:
 2.  Then install the local dependencies:
 
         npm install
-    
+
 3.  Lastly, the alloy-ui project has a special target called `init` that clones
     and updates the GitHub software projects on which alloy-ui depends. These
     projects include yui3, ace-builds, alloy-bootstrap, alloy-apidocs-theme, and
     alloyui.com. Initialize these projects for alloy-ui by executing this
-    command: 
+    command:
 
         grunt init
 
 Alright! You have the alloy-ui project and all of its dependencies. Next, we'll
-build AlloyUI. 
+build AlloyUI.
 
 #### Building the AlloyUI Project [](id=build-the-alloyui-project-liferay-portal-6-2-dev-guide-11-en)
 
@@ -431,20 +431,20 @@ Note, to build a single AlloyUI module, you can execute the following (replace
     grunt build:aui --src src/aui-module-name
 
 When you're ready to try out your locally built version of AlloyUI, you can
-package it up and use it. We'll do that next. 
+package it up and use it. We'll do that next.
 
 #### Using Your Locally Built AlloyUI Distribution [](id=create-alloyui-distribution-liferay-portal-6-2-dev-guide-11-en)
 
 Building a release distribution of your alloy-ui project is easy. And it's just
-as easy using your distribution in your web pages. We'll do it together. 
+as easy using your distribution in your web pages. We'll do it together.
 
 To create your distribution `.zip` file of AlloyUI, execute the following
-command: 
+command:
 
     grunt release
 
 This creates zip file `alloy-[version].zip`. Unzip this file to an arbitrary
-location. 
+location.
 
 You can reference your AlloyUI distribution in your Liferay JSPs in the same
 manner we demonstrated in the section *Working with an AlloyUI Project Release*.
@@ -455,7 +455,7 @@ For example, you could specify the following seed file, replacing
 
     <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
 
-It's just that easy to use your very own cutting-edge copy of the AlloyUI code! 
+It's just that easy to use your very own cutting-edge copy of the AlloyUI code!
 
 ## Summary [](id=alloyui-chapter-summary-liferay-portal-6-2-dev-guide-11-en)
 
@@ -468,9 +468,9 @@ that you can build your own AlloyUI components. You should visit AlloyUI's
 official website, [http://alloyui.com/](http://alloyui.com/), regularly to get
 the latest information on the AlloyUI framework. But, we'll continue to add
 examples to this chapter to demonstrate more ways you can use AlloyUI in your
-portal. So, make sure to periodically check back with this guide. 
+portal. So, make sure to periodically check back with this guide.
 
 Now that you know how to use AlloyUI components to build snazzy UIs, why not
 boost your portal's social appeal with OpenSocial gadgets? In the next chapter,
-we'll show you how to incorporate OpenSocial gadgets in your portal. 
+we'll show you how to incorporate OpenSocial gadgets in your portal.
 
