@@ -57,30 +57,34 @@ AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 1. Create an HTML file and insert the following lines: 
 
         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Example</title>
 
-        <input type="text" id="some-input" />
-        <span id="counter"></span> character(s) remaining
+          <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
+          <link href="http://cdn.alloyui.com/2.0.0/aui-css/css/bootstrap.min.css"
+          rel="stylesheet">
+        </head>
+        <body>
+          <input type="text" id="some-input" />
+          <span id="counter"></span> character(s) remaining
 
-        <script src="http://cdn.alloyui.com/2.0.0/aui/aui-min.js"></script>
-
-        <link href="http://cdn.alloyui.com/2.0.0/aui-css/css/bootstrap.min.css"
-          rel="stylesheet"></link>
-
-        <script>
-        YUI().use(
-          'aui-char-counter',
-          function(Y) {
-            new Y.CharCounter(
-              {
-                counter: '#counter',
-                input: '#some-input',
-                maxLength: 10
-              }
-            );
-          }
-        );
-        </script>
-
+          <script>
+          YUI().use(
+            'aui-char-counter',
+            function(Y) {
+              new Y.CharCounter(
+                {
+                  counter: '#counter',
+                  input: '#some-input',
+                  maxLength: 10
+                }
+              );
+            }
+          );
+          </script>
+        </body>
         </html>
 
 2. Open the HTML file in your browser.
@@ -141,7 +145,7 @@ follows this format:
 
 `YUI().use()` is a function call that instantiates modules for you to use. As
 parameters, you pass in packages and a function containing your code. The
-example code required YUI's `event` and `node` packages. The final argument
+example code required Alloy's `aui-char-counter` package. The final argument
 is the YUI object as parameter `Y`. Alloy's classes are stored in this `Y`
 object. In this function, you place presentation logic, leveraging AlloyUI's API
 via the mighty `Y` object. We'll get into more details on the API shortly.
@@ -206,9 +210,9 @@ components locally.
 
 ### Working with an AlloyUI Project Release Zip File [](id=using-downloaded-alloyui-zip-liferay-portal-6-2-dev-guide-11-en)
 
-You can download AlloyUI as a `.zip` file from
-[http://alloyui.com](http://alloyui.com). The file contains the following files
-and folders: 
+You can download any AlloyUI version as a `.zip` file from
+[https://github.com/liferay/alloy-ui/releases](https://github.com/liferay/alloy-ui/releases). The file contains the following files
+and folders:
 
 - `alloy-[version]/` - AlloyUI project root directory 
     - `build/` - Contains the AlloyUI and YUI modules used in Liferay 
@@ -236,30 +240,34 @@ files. Except for the paths to your seed files, your HTML content should look
 similar to this:
 
         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Example</title>
 
-        <input type="text" id="some-input" />
-        <span id="counter"></span> character(s) remaining
-
-        <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
-
-        <link href="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
+          <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
+          <link href="/home/joe.bloggs/alloy-2.0.0/build/aui-css/css/bootstrap.min.css"
           rel="stylesheet"></link>
+        </head>
+        <body>
+          <input type="text" id="some-input" />
+          <span id="counter"></span> character(s) remaining
 
-        <script>
-        YUI().use(
-          'aui-char-counter',
-          function(Y) {
-            new Y.CharCounter(
-              {
-                counter: '#counter',
-                input: '#some-input',
-                maxLength: 10
-              }
-            );
-          }
-        );
-        </script>
-
+          <script>
+          YUI().use(
+            'aui-char-counter',
+            function(Y) {
+              new Y.CharCounter(
+                {
+                  counter: '#counter',
+                  input: '#some-input',
+                  maxLength: 10
+                }
+              );
+            }
+          );
+          </script>
+        </body>
         </html>
 
 The figure below shows what your web page should look like.
@@ -391,9 +399,12 @@ initialize the project's remaining dependencies. Follow these steps:
     
 3.  Lastly, the alloy-ui project has a special target called `init` that clones
     and updates the GitHub software projects on which alloy-ui depends. These
-    projects include yui3, ace-builds, alloy-bootstrap, alloy-apidocs-theme, and
-    alloyui.com. Initialize these projects for alloy-ui by executing this
-    command: 
+    projects include [yui3](https://github.com/liferay/yui3.git),
+    [ace-builds](https://github.com/ajaxorg/ace-builds.git),
+    [alloy-bootstrap](https://github.com/liferay/alloy-bootstrap.git),
+    [alloy-apidocs-theme](https://github.com/liferay/alloy-apidocs-theme.git), and
+    [alloyui.com](https://github.com/liferay/alloyui.com.git).
+    Initialize these projects for alloy-ui by executing this command:
 
         grunt init
 
