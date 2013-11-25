@@ -76,7 +76,8 @@ To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
 exposing the ADT functionality to users. 
 
-1.  Register your custom `PortletDisplayTemplateHandler`
+1.  First, you need to create and register your custom
+    `PortletDisplayTemplateHandler` class.
 
     To join the exclusive ADT club, your portlet must sign a contract,
     committing itself to fulfill all the Application Display Templates
