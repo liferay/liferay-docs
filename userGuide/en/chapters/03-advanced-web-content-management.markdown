@@ -1023,6 +1023,11 @@ of *Available Translations*.
 
 ![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
 
+You can modify the language translation list by inserting `locales.enabled=`
+followed by your preferred languages in your `portal-ext.properties` file. For
+example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
+*Dutch (Netherlands)*, and *Hindi (India)*.
+
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
 process to remove it, you can now simply open the translation you don't want and
