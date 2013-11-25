@@ -1962,7 +1962,7 @@ default Tomcat home page. Extract the Liferay `.war` file to
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
-## Installing Liferay on Oracle WebLogic 12c (12.1.x) [](id=install-liferay-on-weblogic-12c-liferay-portal-6-2-user-guide-15-en)
+## Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher) [](id=install-liferay-on-weblogic-12c-liferay-portal-6-2-user-guide-15-en)
 
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
 Since you're using Oracle WebLogic, you may be curious of Liferay's support of
