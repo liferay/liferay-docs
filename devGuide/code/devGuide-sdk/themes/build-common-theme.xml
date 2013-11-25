@@ -13,7 +13,8 @@
 		>
 			<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
 			<arg value="sass.dir=/" />
-			<arg value="saas.docroot.dir=${basedir}/docroot" />
+			<arg value="sass.docroot.dir=${basedir}/docroot" />
+			<arg value="sass.portal.common.dir=${app.server.portal.dir}/html/css/common" />
 		</java>
 	</target>
 
@@ -124,13 +125,6 @@
 						/>
 					</copy>
 
-					<copy todir="docroot" overwrite="false" preservelastmodified="true">
-						<fileset
-							dir="${app.server.portal.dir}/html/themes/classic"
-							includes="**/.sass-cache/**"
-						/>
-					</copy>
-
 					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
 						<fileset
 							dir="${app.server.portal.dir}/html/themes/classic/templates"
@@ -146,13 +140,6 @@
 						<fileset
 							dir="${app.server.portal.dir}/html/themes/control_panel"
 							excludes="**/.sass-cache/**,_diffs/**,templates/**"
-						/>
-					</copy>
-
-					<copy todir="docroot" overwrite="false" preservelastmodified="true">
-						<fileset
-							dir="${app.server.portal.dir}/html/themes/control_panel"
-							includes="**/.sass-cache/**"
 						/>
 					</copy>
 
@@ -173,13 +160,6 @@
 						<fileset
 							dir="${theme.parent}/docroot"
 							excludes="**/.sass-cache/**,_diffs/**,WEB-INF/*.properties,WEB-INF/*.xml"
-						/>
-					</copy>
-
-					<copy todir="docroot" overwrite="false" preservelastmodified="true">
-						<fileset
-							dir="${theme.parent}/docroot"
-							includes="**/.sass-cache/**"
 						/>
 					</copy>
 				</then>
