@@ -8,7 +8,6 @@ import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.portletdisplaytemplate.BasePortletDisplayTemplateHandler;
 import com.liferay.portal.kernel.template.TemplateVariableGroup;
 import com.liferay.portal.kernel.util.StringPool;
-import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateConstants;
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.util.PortletKeys;
@@ -21,15 +20,14 @@ public class LocationListingPortletDisplayTemplateHandler extends
 	}
 
 	public String getName(Locale locale) {
-		String portletTitle = PortalUtil.getPortletTitle(
-				PortletKeys.LOCATIONS, locale);
+		String locations = LanguageUtil.get(locale, PortletKeys.LOCATIONS);
 
-		return portletTitle.concat(StringPool.SPACE).concat(
+		return locations.concat(StringPool.SPACE).concat(
 				LanguageUtil.get(locale, "template"));
 	}
 
 	public String getResourceName() {
-		return PortletKeys.LOCATIONS;
+		return PortletKeys.LOCATION_LISTING_PORTLET_ID;
 	}
 
 	@Override
