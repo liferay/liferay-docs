@@ -1,5 +1,24 @@
 # Realizing the Benefits of Liferay's Development Platform [](id=liferays-development-platform-liferay-portal-6-2-dev-guide-01-en)
 
+This is really terrific stuff:
+
+* Boo
+* Bar
+
+**More** stuff coming your way:
+
+    <element>value</element>
+
+`variable` then *italics*.
+
+Numbered list:
+
+1. a
+1. b
+2. c
+
+
+
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
 it, you're in the right place. This guide assumes you already know
