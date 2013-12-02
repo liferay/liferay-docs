@@ -9,10 +9,6 @@
 		event = EventLocalServiceUtil.getEvent(eventId);
 	}
 
-	ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
-
-	long scopeGroupId = themeDisplay.getScopeGroupId();
-
 	List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId);
 
 	String redirect = ParamUtil.getString(request, "redirect");
