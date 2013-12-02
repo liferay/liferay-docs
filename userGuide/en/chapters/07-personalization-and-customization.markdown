@@ -157,12 +157,25 @@ immediately applied for all users. However, changes made by administrators to
 customizable sections do *not* overwrite users' customizations.
 
 Users can make two kinds of customizations to customizable regions. First, they
-can configure any portlet applications within the customizable regions. Second,
-they can add portlets to or remove portlets from the customizable regions. For
-example, suppose that you, as an administrator, selected the right column of the
-Welcome page of the Nose-ster site to be customizable. A member of the Nose-ster
-site could take the following steps to make a personal customization of the
-Welcome page:
+can configure portlet applications within the customizable regions. Second, they
+can add portlets to or remove portlets from the customizable regions.
+
+---
+
+ ![Tip](../../images/tip.png) **Note:** There are some portlets whose
+ configuration does not only affect the portlet instance, but affects all
+ instances of the portlet in the site. In these cases, the portal doesn't allow
+ users to change the portlet configuration within a cutomizable region since it
+ has an impact outside that customizable region. Therefore, changes to the
+ portlet configuration are only possible for portlets whose configuration does
+ not affect the whole site.
+
+---
+
+For example, suppose that you, as an administrator, selected the right column of
+the Welcome page of the Nose-ster site to be customizable. A member of the
+Nose-ster site could take the following steps to make a personal customization
+of the Welcome page:
 
 1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Nose-ster* from
    the Dockbar.
