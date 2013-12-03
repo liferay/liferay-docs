@@ -33,7 +33,3 @@
 <liferay-theme:defineObjects />
 
 <portlet:defineObjects />
-
-<%
-int pageDelta = GetterUtil.getInteger(portletPreferences.getValue("pageDelta", StringPool.BLANK));
-%>

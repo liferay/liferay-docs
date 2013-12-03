@@ -22,6 +22,8 @@ String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayS
 long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
 
 long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
+
+boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
 %>
 
 <c:choose>
@@ -51,31 +53,36 @@ long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayT
 					name="description"
 					property="description"
 				/>
+
+				<c:choose>
+					<c:when test="<%= showLocationAddress %>">
+						<liferay-ui:search-container-column-text
+							name="street-address"
+							property="streetAddress"
+						/>
 		
-				<liferay-ui:search-container-column-text
-					name="street-address"
-					property="streetAddress"
-				/>
+						<liferay-ui:search-container-column-text
+							name="city"
+							property="city"
+						/>
 		
-				<liferay-ui:search-container-column-text
-					name="city"
-					property="city"
-				/>
+						<liferay-ui:search-container-column-text
+							name="state-province"
+							property="stateOrProvince"
+						/>
 		
-				<liferay-ui:search-container-column-text
-					name="state-province"
-					property="stateOrProvince"
-				/>
-		
-				<liferay-ui:search-container-column-text
-					name="country"
-					property="country"
-				/>
-		
-				<liferay-ui:search-container-column-jsp
-					align="right"
-					path="/html/locationlisting/location_actions.jsp"
-				/>
+						<liferay-ui:search-container-column-text
+							name="country"
+							property="country"
+						/>
+					</c:when>
+					<c:otherwise>
+						<liferay-ui:search-container-column-jsp
+							align="right"
+							path="/html/locationlisting/location_actions.jsp"
+						/>
+					</c:otherwise>
+				</c:choose>
 			</liferay-ui:search-container-row>
 		
 			<liferay-ui:search-iterator />
