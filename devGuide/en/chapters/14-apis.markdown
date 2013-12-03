@@ -313,17 +313,17 @@ aware that your specific implementation will loo0k slightly different.
                             name="description"
                             property="description"
                         />
-                
+
                         <liferay-ui:search-container-column-text
                             name="street-address"
                             property="streetAddress"
                         />
-                
+
                         <liferay-ui:search-container-column-text
                             name="city"
                             property="city"
                         />
-                
+
                         <liferay-ui:search-container-column-text
                             name="state-province"
                             property="stateOrProvince"
@@ -347,20 +347,19 @@ aware that your specific implementation will loo0k slightly different.
 
 <!--Lines 20-25 of the original file are what we need to explain here.-->
 
-<!--Do we need to explain exactly what this code block would do if someone copied it in verbatim?-->
-
 <!-- We need to point out where this code specifies the rendering based on the
 ADT. It's not obvious how it works. Jim --> 
 
 5.  Add your template script
 <!--Show the Quick List Template and describe it briefly-->
 
-    Now comes the fun part, where you get to create your own scripts to change
-    the display of your portlet. Freemarker and Veolocity template languages are
-    supported. For the Location Listing Portlet, we've created a basic Freemarker
-    script that takes our *locations* from the default table format and displays
-    them and selected fields in a bullet list format. Here's what our
-    Freemarker script looks like:
+    Now that our portlet supports ADTs, you can create your own scripts to
+    change the display of your portlet, and upload them from your portlet's
+    *Configuration* section in Liferay Portal. Freemarker and Veolocity
+    template languages are supported. For the Location Listing Portlet, we've
+    created a basic Freemarker script that takes our *locations* from the default
+    table format and displays them and selected fields in a bullet list format.
+    Here's what our Freemarker script looks like:
 
         <#if entries?has_content>
             Quick List:
@@ -371,6 +370,7 @@ ADT. It's not obvious how it works. Jim -->
             </ul>
         </#if>
 
+    
     Once your script is uploaded into the portal (see our User Guide for the
     details) and saved, users with the specified roles can select the template when
     they're configuring the display settings of your portlet on a page.
