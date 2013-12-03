@@ -46,7 +46,6 @@ long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displ
 	<aui:select label="maximum-items-to-display" name="preferences--pageDelta--">
 
 		<%
-		int pageDelta = GetterUtil.getInteger(portletPreferences.getValue("pageDelta", String.valueOf(SearchContainer.DEFAULT_DELTA)));
 
 		int[] EVENT_ENTRY_PAGE_DELTA_VALUES = {3,5,10,15,25};
 
