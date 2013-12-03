@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import com.liferay.portal.kernel.configuration.Filter;
 import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.portletdisplaytemplate.BasePortletDisplayTemplateHandler;
 import com.liferay.portal.kernel.template.TemplateVariableGroup;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateConstants;
+import com.liferay.util.portlet.PortletProps;
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.util.PortletKeys;
 
@@ -48,5 +50,15 @@ public class LocationListingPortletDisplayTemplateHandler extends
 			"location", Location.class, "curLocation", "name");
 
 		return templateVariableGroups;
+	}
+
+	@Override
+	public String getTemplatesHelpPath(String language) {
+		return PortletProps.get(
+			getTemplatesHelpPropertyKey(), new Filter(language));
+	}
+	@Override
+	public String getTemplatesHelpPropertyKey() {
+		return "locations.portlet.display.templates.help";
 	}
 }
