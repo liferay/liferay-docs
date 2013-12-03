@@ -1533,24 +1533,26 @@ Liferay Portal supports a mechanism to store portlet basic configuration data
 for portlets called portlet preferences. Portlets can be configured with portlet
 preferences to provide a custom view or behavior for different users. Most of
 the portlets that are provided with Liferay have an associated configuration
-page. This page lets the administrator configure parameters of the portlet to
-set up how it will be shown to all other users. For instance, imagine we're
-using the Location Listing portlet we configured in the [Generating Your Service
+page. This page lets the administrator configure the portlet's parameters to
+provide a specific view or behavior to all users of the portlet.
+
+For instance, imagine we're using the Location Listing portlet we configured in
+the [Generating Your Service
 Layer](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en)
-chapter. We could create a configuration page (if necessary) and add custom
-option to that configuration page to allows users to hide the location events'
+chapter. We could create a configuration page (if necessary) and add a custom
+option to that configuration page to allow users to hide the location events'
 addresses. Then, the user would have the ability to hide the location of listed
 events by setting a portlet preference. Let's dive into this topic by running
 through an example of creating a configuration page, and then setting up a new
 portlet preference for the Location Listing's new configuration page.
 
-First, if your Location Listing portlet doesn't already have a configuration *Setup*
-page, you'll need to follow steps 1-3. To check to see if your portlet has the
-Setup configuration page, navigate to the wrench in the upper right corner and
-select *Configuration*.
+First, if your Location Listing Portlet doesn't already have a configuration
+*Setup* page, you'll need to follow steps 1-3. To check to see if your portlet
+has the Setup configuration page, navigate to the wrench icon in the upper right
+corner and select *Configuration*.
 
 1. To create a new configuration page, open `portlet.xml` and insert the
-following lines after the `</portlet-class>` tag:
+   following lines after the `</portlet-class>` tag:
 
 		<init-param>
 			<name>config-template</name>
@@ -1558,11 +1560,11 @@ following lines after the `</portlet-class>` tag:
 		</init-param>
 
 2. In the `docroot/html/locationlisting` directory, create a `configuration.jsp`
-file. You can leave this file blank for now, as we'll add content to it later in
-this exercise.
+   file. You can leave this file blank for now, as we'll add content to it later
+   in this exercise.
 
 3. Open the `liferay-portlet.xml` file and enter the following line after the
-`</icon>` tag:
+   `</icon>` tag:
 
 		<configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
 
@@ -1570,7 +1572,8 @@ this exercise.
 	update this tag with a custom configuration class later in the exercise.
 
 4. Now let's begin creating our portlet preference for the configuration page.
-If you began with a blank `configuration.jsp` file, add the following lines in your `configuration.jsp`:
+   If you began with a blank `configuration.jsp` file, add the following lines
+   in your `configuration.jsp`:
 
 		<liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
 
@@ -1591,23 +1594,16 @@ If you began with a blank `configuration.jsp` file, add the following lines in y
 	If you're working with a pre-popluated `configuration.jsp` file, you'll only
 	need to add the two lines associated with the *showLocationAddress*
 	variable. 
-	
-	---
-
-     ![Note](../../images/tip-pen-paper.png) **Note:** You'll need to
-     declare the 
-
-    ---
 
 5. Insert the `<portlet:defineObjects />` tag in your `init.jsp`. This inserts a
-set of implicit variables that are useful for portlet developers such as
-*renderRequest*, *portletConfig*, and *portletPreferences*.
+   set of implicit variables that are useful for portlet developers such as
+   *renderRequest*, *portletConfig*, and *portletPreferences*.
 
 6. Now let's create the custom configuration action class that extends the
-`DefaultConfigurationAction` class. Create a package named
-`com.nosester.portlet.eventlisting.action` in the `docroot/WEB-INF/src`
-directory. Creat a class named `ConfigurationActionImpl` and place it in the new
-package you just created.
+   `DefaultConfigurationAction` class. Create a package named
+   `com.nosester.portlet.eventlisting.action` in the `docroot/WEB-INF/src`
+   directory. In the new pacakge, create a class named
+   `ConfigurationActionImpl`.
 
 7. In the `ConfigurationActionImpl` class, insert the following:
 
@@ -1629,7 +1625,7 @@ package you just created.
 		}
 
 	Notice we're extending the `DefaultConfigurationAction` class and adding a
-	new `processAction()` method. The process actoin method is responsible for
+	new `processAction()` method. The process action method is responsible for
 	reading the information sent from the configuration form and storing it
 	in the database. Usually, this method will contain appropriate validation
 	logic for the parameters received from the form. As you see from our
@@ -1651,19 +1647,19 @@ package you just created.
 	
 	
 8. Let's specify our new custom configuration class in the
-`liferay-portlet.xml`. Replace the existing `<configuration-action-class/>` tags
-with the following:
+   `liferay-portlet.xml`. Replace the existing `<configuration-action-class/>`
+   tags with the following:
 
 		<configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
 
-That's it! You've learned how to create a custom configuration page and add a
-portlet preference to that page. Let's see the configuration page and portlet
-preference in action!
+That's it! You've created a custom configuration page and addded a portlet
+preference to that page. Let's see the configuration page and portlet preference
+in action!
 
 Navigate to your Location Listing Portlet's *Configuration* page. You now have
 the *show-location-address* checkbox available.
 
-![Figure 3.12: Your new portlet preference is available on the *Configuration* page.](../../images/show-location-address-pref.png)
+![Figure 3.13: Your new portlet preference is available on the *Configuration* page.](../../images/show-location-address-pref.png)
 
 By unchecking the checkbox, the location addresses are hidden from view in the
 Location Listing Portlet. Great job!
