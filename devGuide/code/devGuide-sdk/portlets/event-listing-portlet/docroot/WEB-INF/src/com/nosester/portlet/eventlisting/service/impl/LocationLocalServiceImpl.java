@@ -14,15 +14,16 @@
 
 package com.nosester.portlet.eventlisting.service.impl;
 
-import java.util.Date;
-import java.util.List;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
+
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * The implementation of the location local service.
@@ -52,8 +53,8 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 
 		Date now = new Date();
 
-		long locationId =
-			counterLocalService.increment(Location.class.getName());
+		long locationId = counterLocalService.increment(
+			Location.class.getName());
 
 		Location location = locationPersistence.create(locationId);
 
@@ -131,13 +132,10 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 
 		Location location = locationPersistence.fetchByPrimaryKey(locationId);
 
-		addLocationResources(
-			location, groupPermissions, guestPermissions);
+		addLocationResources(location, groupPermissions, guestPermissions);
 	}
 
-	public Location deleteLocation(Location location)
-		throws SystemException {
-
+	public Location deleteLocation(Location location) throws SystemException {
 		return locationPersistence.remove(location);
 	}
 

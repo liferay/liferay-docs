@@ -1,4 +1,4 @@
-<%@include file="/html/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <%@ page import="com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateUtil" %>
 
@@ -27,18 +27,18 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 %>
 
 <c:choose>
-    <c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
-    	<% List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId); %>
+	<c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
+		<% List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId); %>
 
-        <%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, locations) %>
-    </c:when>
-    <c:otherwise>
+		<%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, locations) %>
+	</c:when>
+	<c:otherwise>
 		<liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
 			<liferay-ui:search-container-results
 				results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
 				total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
 			/>
-		
+
 			<liferay-ui:search-container-row
 				className="com.nosester.portlet.eventlisting.model.Location"
 				keyProperty="locationId"
@@ -48,7 +48,7 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 					name="name"
 					value="<%= location.getName() %>"
 				/>
-		
+
 				<liferay-ui:search-container-column-text
 					name="description"
 					property="description"
@@ -60,17 +60,17 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 							name="street-address"
 							property="streetAddress"
 						/>
-		
+
 						<liferay-ui:search-container-column-text
 							name="city"
 							property="city"
 						/>
-		
+
 						<liferay-ui:search-container-column-text
 							name="state-province"
 							property="stateOrProvince"
 						/>
-		
+
 						<liferay-ui:search-container-column-text
 							name="country"
 							property="country"
@@ -84,7 +84,7 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 					</c:otherwise>
 				</c:choose>
 			</liferay-ui:search-container-row>
-		
+
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
 	</c:otherwise>
