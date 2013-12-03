@@ -514,7 +514,6 @@ portlet to save and display a custom greeting.
 
 ![Figure 3.6: The *edit* page of My Greeting portlet](../../images/03-my-greeting-edit.png)
 
-
 ---
 
  ![tip](../../images/tip-pen-paper.png) **Tip:** If your portlet deployed
@@ -719,7 +718,7 @@ Create the above class, and its package, in the directory `docroot/WEB-INF/src`
 in your portal project. 
 
 The file `portlet.xml` must also be changed so that it points to your new
-portlet class `com.liferay.samples.MyGreetingPortlet`, instead
+portlet class `com.liferay.samples.MyGreetingPortlet`, instead of
 `com.liferay.util.bridges.mvc.MVCPortlet`: 
 
     <portlet>
@@ -1525,7 +1524,151 @@ describes how to use a hook to override existing Liferay translations. You can
 share your keys with other portlets, as well as override existing Liferay
 translations. 
 
-Next let's use the Plugins SDK to create a plugin that extends another plugin. 
+Next, let's learn how to configure your portlets' preferences using
+configuration actions.
+
+### Handling Portlet Preferences with respect to Configuration Actions
+
+Liferay Portal supports a mechanism to store portlet basic configuration data
+for portlets called portlet preferences. Portlets can be configured with portlet
+preferences to provide a custom view or behavior for different users. Most of
+the portlets that are provided with Liferay have an associated configuration
+page. This page lets the administrator configure parameters of the portlet to
+set up how it will be shown to all other users. For instance, imagine we're
+using the Location Listing portlet we configured in the [Generating Your Service
+Layer](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en)
+chapter. We could create a configuration page (if necessary) and add custom
+option to that configuration page to allows users to hide the location events'
+addresses. Then, the user would have the ability to hide the location of listed
+events by setting a portlet preference. Let's dive into this topic by running
+through an example of creating a configuration page, and then setting up a new
+portlet preference for the Location Listing's new configuration page.
+
+First, if your Location Listing portlet doesn't already have a configuration *Setup*
+page, you'll need to follow steps 1-3. To check to see if your portlet has the
+Setup configuration page, navigate to the wrench in the upper right corner and
+select *Configuration*.
+
+1. To create a new configuration page, open `portlet.xml` and insert the
+following lines after the `</portlet-class>` tag:
+
+		<init-param>
+			<name>config-template</name>
+			<value>/html/locationlisting/configuration.jsp</value>
+		</init-param>
+
+2. In the `docroot/html/locationlisting` directory, create a `configuration.jsp`
+file. You can leave this file blank for now, as we'll add content to it later in
+this exercise.
+
+3. Open the `liferay-portlet.xml` file and enter the following line after the
+`</icon>` tag:
+
+		<configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
+
+	Notice that we've listed the default configuration action class. We'll
+	update this tag with a custom configuration class later in the exercise.
+
+4. Now let's begin creating our portlet preference for the configuration page.
+If you began with a blank `configuration.jsp` file, add the following lines in your `configuration.jsp`:
+
+		<liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
+
+		<aui:form action="<%= configurationURL %>" method="post" name="fm">
+			<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
+
+		<%	
+		boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+		%>
+
+		<aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress %>" />
+
+			<aui:button-row>
+				<aui:button type="submit" />
+			</aui:button-row>
+		</aui:form>
+
+	If you're working with a pre-popluated `configuration.jsp` file, you'll only
+	need to add the two lines associated with the *showLocationAddress*
+	variable. 
+	
+	---
+
+     ![Note](../../images/tip-pen-paper.png) **Note:** You'll need to
+     declare the 
+
+    ---
+
+5. Insert the `<portlet:defineObjects />` tag in your `init.jsp`. This inserts a
+set of implicit variables that are useful for portlet developers such as
+*renderRequest*, *portletConfig*, and *portletPreferences*.
+
+6. Now let's create the custom configuration action class that extends the
+`DefaultConfigurationAction` class. Create a package named
+`com.nosester.portlet.eventlisting.action` in the `docroot/WEB-INF/src`
+directory. Creat a class named `ConfigurationActionImpl` and place it in the new
+package you just created.
+
+7. In the `ConfigurationActionImpl` class, insert the following:
+
+		package com.nosester.portlet.eventlisting.action;
+
+		import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
+		import javax.portlet.ActionRequest;
+		import javax.portlet.ActionResponse;
+		import javax.portlet.PortletConfig;
+
+		public class ConfigurationActionImpl extends DefaultConfigurationAction {
+
+			@Override
+			public void processAction(
+				PortletConfig portletConfig, ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {  
+
+				super.processAction(portletConfig, actionRequest, actionResponse);
+			}
+		}
+
+	Notice we're extending the `DefaultConfigurationAction` class and adding a
+	new `processAction()` method. The process actoin method is responsible for
+	reading the information sent from the configuration form and storing it
+	in the database. Usually, this method will contain appropriate validation
+	logic for the parameters received from the form. As you see from our
+	example, we created a bare bones version of the `processAction()` method.
+
+	Another common method to include in a custom configuration class is the
+	`render()` method. The render method is invoked when the user clicks the
+	configuration icon. For this example, we'll stick with the original render
+	method from the `DefaultConfigurationAction` class we're extending.
+
+	---
+
+     ![Note](../../images/tip-pen-paper.png) **Note:** You won't need to store
+     portlet preferences by calling `preferences.store()` since they're
+     automatically stored in the `DefaultConfigurationAction` class, which your
+     configuration class extends.
+
+    ---
+	
+	
+8. Let's specify our new custom configuration class in the
+`liferay-portlet.xml`. Replace the existing `<configuration-action-class/>` tags
+with the following:
+
+		<configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
+
+That's it! You've learned how to create a custom configuration page and add a
+portlet preference to that page. Let's see the configuration page and portlet
+preference in action!
+
+Navigate to your Location Listing Portlet's *Configuration* page. You now have
+the *show-location-address* checkbox available.
+
+![Figure 3.12: Your new portlet preference is available on the *Configuration* page.](../../images/show-location-address-pref.png)
+
+By unchecking the checkbox, the location addresses are hidden from view in the
+Location Listing Portlet. Great job!
+
+Next, let's use the Plugins SDK to create a plugin that extends another plugin.
 
 ## Creating Plugins to Extend Plugins [](id=creating-plugins-to-extend-plugins-liferay-portal-6-2-dev-guide-03-en)
 
