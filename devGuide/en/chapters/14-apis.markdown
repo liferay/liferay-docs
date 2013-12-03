@@ -355,6 +355,27 @@ ADT. It's not obvious how it works. Jim -->
 5.  Add your template script
 <!--Show the Quick List Template and describe it briefly-->
 
+    Now comes the fun part, where you get to create your own scripts to change
+    the display of your portlet. Freemarker and Veolocity template languages are
+    supported. For the Location Listing Portlet, we've created a basic Freemarker
+    script that takes our *locations* from the default table format and displays
+    them and selected fields in a bullet list format. Here's what our
+    Freemarker script looks like:
+
+        <#if entries?has_content>
+            Quick List:
+            <ul>
+            <#list entries as curLocation>
+                <li>${curLocation.name} - ${curLocation.streetAddress}, ${curLocation.city}, ${curLocation.stateOrProvince}</li>
+            </#list>
+            </ul>
+        </#if>
+
+    Once your script is uploaded into the portal (see our User Guide for the
+    details) and saved, users with the specified roles can select the template when
+    they're configuring the display settings of your portlet on a page.
+
+
 ### Recommendations [](id=adt-recommendations-liferay-portal-6-2-dev-guide-14-en)
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
