@@ -950,7 +950,7 @@ We'll briefly describe the first two steps here before we dive in head first:
 Let's dive head first into the first step: we need to inform the asset framework
 when we're adding, updating, or deleting assets.
 
-#### Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets-liferay-portal-6-2-dev-guide-06-en)
+### Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets-liferay-portal-6-2-dev-guide-06-en)
 
 Whenever you create a new entity, you need to let the asset framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -1042,7 +1042,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create, modify, and delete assets, let's learn how to
 categorize them. 
 
-#### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
+### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
 
 In the last section, we let the asset framework know about the tags and
 categories that we associated with a given asset; but how does a content author
@@ -1105,7 +1105,7 @@ Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
 tags you can use to leverage the asset framework's features. 
 
-#### More JSP Tags for Assets [](id=more-jsp-tags-for-assets-liferay-portal-6-2-dev-guide-06-en)
+### More JSP Tags for Assets [](id=more-jsp-tags-for-assets-liferay-portal-6-2-dev-guide-06-en)
 
 In addition to tags and categories, there are more features that the asset
 framework provides. These features allow users to do the following with your
@@ -1183,7 +1183,7 @@ don't need to do this now, but we should do it later, for the 6.2 release. -Rich
 With Liferay's taglib tags, you can easily apply these features to your assets.
 No problemo, right? So let's get the assets published in your portal. 
 
-#### Publishing Assets with Asset Publisher [](id=publishing-assets-with-asset-publisher-liferay-portal-6-2-dev-guide-06-en)
+### Publishing Assets with Asset Publisher [](id=publishing-assets-with-asset-publisher-liferay-portal-6-2-dev-guide-06-en)
 
 A huge benefit of using the asset framework is that you can leverage the Asset
 Publisher portlet to publish lists of your custom asset types. You can choose
