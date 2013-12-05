@@ -2129,7 +2129,7 @@ registered to listen for inter-departmental responses.
 Don't forget to send news of these new products to *all* Jungle Gyms R-Us
 employees.
 
-<!-- Missing transition. --> 
+Next, let's explore the asynchronous *send and forget* model.
 
 ### Asynchronous "Send and Forget" [](id=asynchronous-send-and-forget-liferay-portal-6-2-dev-guide-06-en)
 
