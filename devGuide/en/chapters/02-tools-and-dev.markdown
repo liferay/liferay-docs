@@ -2773,13 +2773,9 @@ type. You can then customize the archetype to your liking. Using Maven to
 develop plugins offers an easy and effective way to customize your Liferay
 Portal. 
 
----
-
-![note](../../images/tip-pen-paper.png) **Note:** Are you wondering if we're
-going to make more terrible jokes that steal from classic poetry? Quoth the
-Maven, "Probably." 
-
----
+Are you wondering if we're going to make more terrible jokes that steal from
+classic poetry? Quoth the Maven, "Probably." Let's summarize what we learned in
+this chapter.
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-02-en)
 
