@@ -2783,7 +2783,12 @@ Maven, "Probably."
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-02-en)
 
-<!-- Summary needs to include Liferay IDE and Plugins SDK -->
+In this chapter, we covered many of Liferay's most popular development
+strategies. You covered Liferay IDE, which serves as a workspace used for
+customizing your Liferay instance. You also learned that when Liferay IDE is
+paired with the Plugins SDK, you have a one stop development environment where
+you can develop Liferay plugins, build them, and deploy them to your Liferay
+instance.
 
 You also learned all about developing Liferay plugins with the Maven build
 framework. You configured Maven locally, downloaded and installed the required
@@ -2800,5 +2805,6 @@ On the *Forums* page, you can look up solutions to specific issues and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
 
-<!-- Missing transition into portlets chapter -->
+Now that you have a firm grasp on Liferay's development tools, let's learn about
+developing one of Liferay's most important components: portlets.
 
