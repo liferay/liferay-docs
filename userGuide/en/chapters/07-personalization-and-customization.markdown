@@ -162,12 +162,11 @@ can add portlets to or remove portlets from the customizable regions.
 
 ---
 
- ![Tip](../../images/tip.png) **Note:** Only instanceable portlets can be
- configured in customizable regions. The portal doesn't allow users to change a
+ ![Tip](../../images/tip.png) **Note:** The portal doesn't allow users to change a
  non-instanceable portlet's configuration witin a customizable region since it
  could have an impact outside that customizable region. Therefore, changes to
  the portlet configuration in a customizable region are only possible for
- instanceable portlets whose configuration does not affect the entire site.
+ instanceable portlets, whose portlet configuration only affects that region.
 
 ---
 
