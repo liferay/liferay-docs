@@ -160,15 +160,13 @@ Users can make two kinds of customizations to customizable regions. First, they
 can configure portlet applications within the customizable regions. Second, they
 can add portlets to or remove portlets from the customizable regions.
 
----
-
- ![Tip](../../images/tip.png) **Note:** The portal doesn't allow users to change a
- non-instanceable portlet's configuration witin a customizable region since it
- could have an impact outside that customizable region. Therefore, changes to
- the portlet configuration in a customizable region are only possible for
- instanceable portlets, whose portlet configuration only affects that region.
-
----
+The portal doesn't allow users to change a non-instanceable portlet's
+configuration inside a customizable region since those kinds of portlets are
+tied to the site to which they've been added. If this were allowed, the
+customization would affect all users, not just the one who customized the
+region. Therefore, changes to the portlet configuration in a customizable region
+are only possible for instanceable portlets, whose portlet configuration only
+affects that one user.
 
 For example, suppose that you, as an administrator, selected the right column of
 the Welcome page of the Nose-ster site to be customizable. A member of the
