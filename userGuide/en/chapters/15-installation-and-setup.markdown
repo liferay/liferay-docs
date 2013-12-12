@@ -2184,8 +2184,8 @@ want to protect your portal and your WebLogic server from security threats. To
 do so, you can enable Java Security on your WebLogic server and specify a
 security policy to grant your Liferay Portal access to your server. 
 
-To enable security on your WebLogic server, add the `-Djava.security.manager`
-Java option in your `startWebLogic.[cmd|sh]` file domain's folder. 
+To enable security on your WebLogic server, set the `-Djava.security.manager`
+Java option in your `setDomainEnv.[cmd|sh]` file domain's folder. Set the property `-Djava.security.policy==` and the location of your `weblogic.policy` file. Note the double equals sign. The double equals sign means that you are telling the app server to use this policy file on top of any existing security policies. 
 
 For now, in order to grant Liferay access to your server let's open up all
 permissions--you can fine-tune your policy's permissions later. Create a
