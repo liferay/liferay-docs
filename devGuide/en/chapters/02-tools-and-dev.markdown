@@ -2092,11 +2092,41 @@ below to generate Liferay plugin projects of any type.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
- and that it's executable is in your `$PATH` environment variable. 
+ and that its executable is in your `$PATH` environment variable. 
 
 ---
 
-Here's how you use Maven archetypes to generate a Liferay plugin project:
+We'll demonstrate two ways of creating Liferay plugins with Maven: using Liferay
+IDE and using the command line. First, let's learn how to use Maven archetypes
+to generate a Liferay plugin project using Liferay IDE:
+
+1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Plugin Project*.
+
+2.  Assign a project name and display name. For our example, we'll use
+    *sample-portlet* and *Sample* for the project name and display names,
+    respectively. Notice that the display name field does *not* append the
+    *portlet* text. Because the plugin type is automatically appended to the
+    display name in Liferay Portal, there is no need to specify it. Therefore,
+    IDE prevents a developer from repetively appending the plugin type, and
+    ignores it completely if it's the last appended string of text.
+
+3.  Select *Maven (liferay-maven-plugin)* for the build type. Notice that some
+    of the options for your plugin project changed, including the *Location* 
+    field, which is set to the user's workspace by default. Choose the parent 
+    directory in which you want to create the plugin project. It is a best 
+    practice to create a parent project for your Maven plugins, that way, they 
+    can all share common project information. See section *Using a Parent Plugin
+    Project* for details.
+
+4.  Specify the *Artifact version* and *Group id*. For our example, we'll use
+    `1.0-SNAPSHOT` and `com.liferay.sample` for the artifact version and group
+    id, respectively.
+
+5.  <Profile stuff>
+
+Great! You've successfully created a Liferay portlet project using Maven in
+Liferay IDE! Next, let's run through the steps of creating your Liferay Maven
+plugins using the command line.
 
 1.  Open the command prompt and navigate to the parent directory in which you
     want to create the plugin project. Archetype will create a sub-directory for
@@ -2224,8 +2254,8 @@ plugin is installed there.
 
 ---
 
-Following these steps, you can use Archetype to generate all your Liferay
-plugins! 
+Following these steps using Liferay IDE or the command line, you can use
+Archetype to generate all your Liferay plugins! 
 
 Plugin projects generated from a Liferay archetype are equipped with a POM
 that's ready to work with a parent project. It inherits the values for
