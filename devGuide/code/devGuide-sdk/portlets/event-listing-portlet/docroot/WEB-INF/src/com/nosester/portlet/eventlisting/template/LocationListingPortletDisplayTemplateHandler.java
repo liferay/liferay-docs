@@ -40,7 +40,7 @@ public class LocationListingPortletDisplayTemplateHandler
 	@Override
 	public String getTemplatesHelpPropertyKey() {
 		return "locations.portlet.display.templates.help";
-	} @Override
+	}
 
 	@Override
 	public Map<String, TemplateVariableGroup> getTemplateVariableGroups(
