@@ -9,6 +9,8 @@
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
 <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %><%@
+page import="com.liferay.portal.kernel.template.TemplateHandler" %><%@
+page import="com.liferay.portal.kernel.template.TemplateHandlerRegistryUtil" %><%@
 page import="com.liferay.portal.kernel.util.Constants" %><%@
 page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
 page import="com.liferay.portal.kernel.util.ParamUtil" %><%@
