@@ -19,28 +19,17 @@ import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 /**
  * @author Joe Bloggs
  */
-
 public class ConfigurationActionImpl extends DefaultConfigurationAction {
 
 @Override
 	public void processAction(
-			PortletConfig portletConfig, ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {  
+			PortletConfig portletConfig, ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {
 
 		super.processAction(portletConfig, actionRequest, actionResponse);
 	}
-	
-//public String render(PortletConfig config, RenderRequest renderRequest, RenderResponse renderResponse) throws Exception { 
-
-//return "/configuration.jsp";
-//}
-
-
 
 }
-	
