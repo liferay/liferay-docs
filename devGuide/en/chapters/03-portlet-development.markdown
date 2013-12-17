@@ -1529,107 +1529,199 @@ configuration actions.
 
 ### Handling Portlet Preferences with respect to Configuration Actions
 
-Liferay Portal supports a mechanism to store portlet basic configuration data
-for portlets called portlet preferences. Portlets can be configured with portlet
-preferences to provide a custom view or behavior for different users. Most of
+Liferay Portal supports a mechanism to store basic configuration data
+for portlets, called portlet preferences. Portlets can be configured with portlet
+preferences to provide a custom view or custom behavior for different users. Most of
 the portlets that are provided with Liferay have an associated configuration
-page. This page lets the administrator configure the portlet's parameters to
-provide a specific view or behavior to all users of the portlet.
+page. By modifying a portlet's preferences from its configuration page,
+an administrator can
+provide a specific view or behavior to all of the portlet's users. 
 
 For instance, imagine we're using the Location Listing portlet we configured in
 the [Generating Your Service
 Layer](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en)
-chapter. We could create a configuration page (if necessary) and add a custom
-option to that configuration page to allow users to hide the location events'
-addresses. Then, the user would have the ability to hide the location of listed
-events by setting a portlet preference. Let's dive into this topic by running
-through an example of creating a configuration page, and then setting up a new
-portlet preference for the Location Listing's new configuration page.
+chapter. We could create a configuration page (if one does not already exist) and add a custom
+option allowing administrators to hide the location events'
+addresses, by adding a portlet preference. Let's dive into this topic by running
+through an example of creating a configuration page for the Location Listing portlet and setting up a new
+portlet preference for it. 
 
-First, if your Location Listing Portlet doesn't already have a configuration
-*Setup* page, you'll need to follow steps 1-3. To check to see if your portlet
-has the Setup configuration page, navigate to the wrench icon in the upper right
+First, if your Location Listing portlet doesn't already have a configuration
+*Setup* page, you'll need to follow the steps below; otherwise, skip these steps. To check to see if your portlet
+has the Setup configuration page, click the portlet's wrench/gear icon in the upper right
 corner and select *Configuration*.
 
 1. To create a new configuration page, open `portlet.xml` and insert the
-   following lines after the `</portlet-class>` tag:
+   following lines after the Location Listing portlet's `</portlet-class>` tag:
 
 		<init-param>
 			<name>config-template</name>
 			<value>/html/locationlisting/configuration.jsp</value>
 		</init-param>
 
-2. In the `docroot/html/locationlisting` directory, create a `configuration.jsp`
-   file. You can leave this file blank for now, as we'll add content to it later
+2. In the `docroot/html/locationlisting` directory, create a file named `configuration.jsp`.
+   You can leave this file blank for now, as we'll add content to it later
    in this exercise.
 
 3. Open the `liferay-portlet.xml` file and enter the following line after the
-   `</icon>` tag:
+   Location Listing portlet's `</icon>` tag:
 
 		<configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
 
 	Notice that we've listed the default configuration action class. We'll
 	update this tag with a custom configuration class later in the exercise.
 
-4. Now let's begin creating our portlet preference for the configuration page.
-   If you began with a blank `configuration.jsp` file, add the following lines
-   in your `configuration.jsp`:
+Now let's begin creating our portlet preference for the configuration page.
 
-		<liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
+1. If you began with a blank `configuration.jsp` file, add the following lines
+   to it:
 
-		<aui:form action="<%= configurationURL %>" method="post" name="fm">
-			<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
+        <%@include file="/html/init.jsp" %>
 
-		<%	
-		boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
-		%>
+        <liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
 
-		<aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress %>" />
+        <%  
+        boolean showLocationAddress_cfg = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+        %>
 
-			<aui:button-row>
-				<aui:button type="submit" />
-			</aui:button-row>
-		</aui:form>
+        <aui:form action="<%= configurationURL %>" method="post" name="fm">
+            <aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
+
+            <aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress_cfg %>" />
+
+            <aui:button-row>
+                <aui:button type="submit" />
+            </aui:button-row>
+        </aui:form>
 
 	If you're working with a pre-popluated `configuration.jsp` file, you'll only
-	need to add the two lines associated with the *showLocationAddress*
-	variable. 
+	need to add the scriplet that assigns our preference to the local arbitrary
+	variable *showLocationAddress_cfg*, add the `<aui:input>` checkbox, and add the
+	`<aui:button-row>` component. The *showLocationAddress_cfg* variable holds the
+	current value of whether to show the location addresses or not. The input
+	checkbox lets the user set the value of the *showLocationAddress* portlet
+	preference key. In order for the value to be persisted as a portlet
+	preference, the input must follow the naming convention
+	`preferences--somePreferenceKey--". For our example, the input name
+	`preferences--showLocationAddress--` will be map the input value to a
+	portlet preference key named `showLocationAddress`. 
 
-5. Insert the `<portlet:defineObjects />` tag in your `init.jsp`. This inserts a
-   set of implicit variables that are useful for portlet developers such as
-   *renderRequest*, *portletConfig*, and *portletPreferences*.
+	You've probably noticed some JSP compile errors and warnings with respect to
+	the code we added to the `configuration.jsp` file. We'll address them by
+	adding directives to the `init.jsp` so we can access the classes and taglibs
+	here in the `configuration.jsp` and in our other `.jsp` files.
 
-6. Now let's create the custom configuration action class that extends the
-   `DefaultConfigurationAction` class. Create a package named
-   `com.nosester.portlet.eventlisting.action` in the `docroot/WEB-INF/src`
-   directory. In the new pacakge, create a class named
-   `ConfigurationActionImpl`.
+2. In your `init.jsp` file, add the following directive to access the JSP
+   Standard Tag Library (JSTL), Liferay's theme taglib, and Liferay's portlet
+   taglib. 
 
-7. In the `ConfigurationActionImpl` class, insert the following:
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+        <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+        <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+
+   Then, insert the `<portlet:defineObjects />` tag to access implicit variables
+   that we'll need. It provides useful portlet variables such as
+   *renderRequest*, *portletConfig*, and *portletPreferences*. 
+
+   Also, make sure to add the following page directives to the `init.jsp`, as we
+   use these classes in our `configuration.jsp`. 
+ 
+        <%@ page import="com.liferay.portal.kernel.util.Constants" %>
+        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+
+   Now that you've resolved your compile errors and warnings, let's add logic in
+   our `view.jsp` to show/hide the location addresses based on the value of our
+   portlet preference key *showLocationAddress*. 
+
+3. In the `view.jsp` file, let's get the value of the *showLocationAddress*
+   portlet preference key. If it's value is `true`, we'll display all of the
+   location fields, including the address fields; otherwise, we'll hide the
+   address fields. 
+   
+   Start implementing this logic by adding a scriplet to get the value of the
+   *showLocationAddress* portlet preference key. 
+
+		<%	
+		boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences\
+		.getValue("showLocationAddress", StringPool.TRUE));
+		%>
+
+   If no *showLocationAddress* key is found, the value will default to `true`
+   based on the `StringPool.TRUE` default value we pass to
+   `portletPreferences.getValue(key, default)`. Then, wrap the street address,
+   city, state, and country result columns in a conditional code block using
+   `<c:choose ><c:when test="..."> ... <c:when></c:choose>` tags. 
+
+        <c:choose>
+            <c:when test="<%= showLocationAddress == true %>">
+                <liferay-ui:search-container-column-text
+                    name="street-address"
+                    property="streetAddress"
+                />
+
+                <liferay-ui:search-container-column-text
+                    name="city"
+                    property="city"
+                />
+
+                <liferay-ui:search-container-column-text
+                    name="state-province"
+                    property="stateOrProvince"
+                />
+
+                <liferay-ui:search-container-column-text
+                    name="country"
+                    property="country"
+                />
+            </c:when>
+        </c:choose>
+
+4. Now let's create the custom configuration action class that extends the
+   `DefaultConfigurationAction` class to demonstrate how we can access the
+   portlet preference in a custom configuration action.
+   
+   Create a package named `com.nosester.portlet.eventlisting.action` in the `docroot/WEB-INF/src`
+   directory. In the new package, create a class named
+   `ConfigurationActionImpl` with superclass  `DefaultConfigurationAction`.
+
+   In the `ConfigurationActionImpl` class, insert the following:
 
 		package com.nosester.portlet.eventlisting.action;
-
-		import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
+		
 		import javax.portlet.ActionRequest;
 		import javax.portlet.ActionResponse;
 		import javax.portlet.PortletConfig;
-
+		import javax.portlet.PortletPreferences;
+		
+		import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
+		
 		public class ConfigurationActionImpl extends DefaultConfigurationAction {
-
+		
 			@Override
 			public void processAction(
 				PortletConfig portletConfig, ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {  
-
+		
 				super.processAction(portletConfig, actionRequest, actionResponse);
+		
+				PortletPreferences prefs = actionRequest.getPreferences();
+		
+				String showLocationAddress = prefs.getValue("showLocationAddress", "true");
+		
+				System.out.println(
+					"showLocationAddress=" + showLocationAddress +
+					" in ConfigurationActionImpl.processAction().");
 			}
 		}
 
-	Notice we're extending the `DefaultConfigurationAction` class and adding a
-	new `processAction()` method. The process action method is responsible for
-	reading the information sent from the configuration form and storing it
-	in the database. Usually, this method will contain appropriate validation
+	Notice we've extended the `DefaultConfigurationAction` class and added a
+	new `processAction()` method. The super-class's `processAction()` method is responsible for
+	reading the portlet preferences from the configuration form and storing it
+	in the database. Usually, you'd add appropriate validation
 	logic for the parameters received from the form. As you see from our
-	example, we created a bare bones version of the `processAction()` method.
+	bare-bones example, we simply demonstrate accessing the preferences from the
+	action request. 
 
 	Another common method to include in a custom configuration class is the
 	`render()` method. The render method is invoked when the user clicks the
@@ -1644,9 +1736,8 @@ corner and select *Configuration*.
      configuration class extends.
 
     ---
-	
-	
-8. Let's specify our new custom configuration class in the
+
+5. Let's specify our new custom configuration class in the
    `liferay-portlet.xml`. Replace the existing `<configuration-action-class/>`
    tags with the following:
 
@@ -1661,8 +1752,21 @@ the *show-location-address* checkbox available.
 
 ![Figure 3.13: Your new portlet preference is available on the *Configuration* page.](../../images/show-location-address-pref.png)
 
+Each time you click *Save* after modifying the *show-location-address* checkbox,
+the `ConfigurationActionImpl.processAction(...)` method prints out the value of
+the "showLocationAddress" portlet preference key. The key will either be
+assigned a value of true or false:
+
+    showLocationAddress=true in ConfigurationActionImpl.processAction().
+    showLocationAddress=false in ConfigurationActionImpl.processAction().
+
 By unchecking the checkbox, the location addresses are hidden from view in the
-Location Listing Portlet. Great job!
+Location Listing portlet.
+
+![Figure 3.14: Liferay Portal makes it easy to customize a portlet UI based on the portlet preferences that administrative users set within the portlet.](../../images/portlet-preferences-modifying-view.png)
+
+Great job! Now you know how to use Liferay's portlet preferences in the portlets
+you develop. 
 
 Next, let's use the Plugins SDK to create a plugin that extends another plugin.
 
