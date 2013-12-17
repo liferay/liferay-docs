@@ -41,6 +41,10 @@
 			<name>view-template</name>
 			<value>/html/locationlisting/view.jsp</value>
 		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/locationlisting/configuration.jsp</value>
+		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>

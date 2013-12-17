@@ -4,8 +4,6 @@ This is the <b>Location Listing Portlet</b> portlet in View mode.
 
 <%
 	String redirect = PortalUtil.getCurrentURL(renderRequest);
-	ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
-	long scopeGroupId = themeDisplay.getScopeGroupId();
 %>
 
 <aui:button-row>
@@ -16,6 +14,10 @@ This is the <b>Location Listing Portlet</b> portlet in View mode.
 
 	<aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
 </aui:button-row>
+
+<%  
+boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+%>
 
 <liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
 	<liferay-ui:search-container-results
@@ -38,25 +40,29 @@ This is the <b>Location Listing Portlet</b> portlet in View mode.
 			property="description"
 		/>
 
-		<liferay-ui:search-container-column-text
-			name="street-address"
-			property="streetAddress"
-		/>
-
-		<liferay-ui:search-container-column-text
-			name="city"
-			property="city"
-		/>
-
-		<liferay-ui:search-container-column-text
-			name="state-province"
-			property="stateOrProvince"
-		/>
-
-		<liferay-ui:search-container-column-text
-			name="country"
-			property="country"
-		/>
+        <c:choose>
+	        <c:when test="<%= showLocationAddress_view == true %>">
+			    <liferay-ui:search-container-column-text
+				    name="street-address"
+				    property="streetAddress"
+			    />
+	
+			    <liferay-ui:search-container-column-text
+				    name="city"
+				    property="city"
+			    />
+	
+			    <liferay-ui:search-container-column-text
+				    name="state-province"
+				    property="stateOrProvince"
+			    />
+	
+			    <liferay-ui:search-container-column-text
+				    name="country"
+				    property="country"
+			    />
+			</c:when>
+		</c:choose>
 
 		<liferay-ui:search-container-column-jsp
 			align="right"
