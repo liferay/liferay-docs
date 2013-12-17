@@ -23,7 +23,7 @@ long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displ
 
 long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
 
-boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
 %>
 
 <c:choose>
@@ -55,7 +55,7 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 				/>
 
 				<c:choose>
-					<c:when test="<%= showLocationAddress %>">
+					<c:when test="<%= showLocationAddress_view %>">
 						<liferay-ui:search-container-column-text
 							name="street-address"
 							property="streetAddress"
@@ -76,13 +76,11 @@ boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue(
 							property="country"
 						/>
 					</c:when>
-					<c:otherwise>
-						<liferay-ui:search-container-column-jsp
-							align="right"
-							path="/html/locationlisting/location_actions.jsp"
-						/>
-					</c:otherwise>
 				</c:choose>
+				<liferay-ui:search-container-column-jsp
+					align="right"
+					path="/html/locationlisting/location_actions.jsp"
+				/>
 			</liferay-ui:search-container-row>
 
 			<liferay-ui:search-iterator />
