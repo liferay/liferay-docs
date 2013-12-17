@@ -1547,10 +1547,9 @@ through an example of creating a configuration page for the Location Listing
 portlet and setting up a new portlet preference for it. 
 
 First, if your Location Listing portlet doesn't already have a configuration
-*Setup* page, you'll need to follow the steps below; otherwise, skip these
-steps. To check to see if your portlet has the Setup configuration page, click
-the portlet's wrench/gear icon in the upper right corner and select
-*Configuration*.
+*Setup* page, you'll need to follow the steps below to create one. To check to
+see if your portlet has the Setup configuration page, click the portlet's
+wrench/gear icon in the upper right corner and select *Configuration*. 
 
 1.  To create a new configuration page, open `portlet.xml` and insert the
     following lines after the Location Listing portlet's `</portlet-class>` tag:
@@ -1602,20 +1601,23 @@ Now let's begin creating our portlet preference for the configuration page.
 
     If you're working with a pre-populated `configuration.jsp` file, you'll only
     need to add the scriplet that assigns our preference to the local arbitrary
-    variable `showLocationAddress_cfg`, add the `<aui:input>` checkbox, and add
-    the `<aui:button-row>` component. The `showLocationAddress_cfg` variable
+    variable `showLocationAddress_cfg`, add the `<aui:input
+    name="preferences--showLocationAddress--" ... />` checkbox, and add the
+    `<aui:button-row>` component. 
+
+    The `showLocationAddress_cfg` variable
     holds the current value of whether to show the location addresses or not.
     The input checkbox lets the user set the value of the `showLocationAddress`
     portlet preference *key*. In order for the value to be persisted as a
     portlet preference, the input must follow the naming convention
     `preferences--somePreferenceKey--`. For our example, the input name
-    `preferences--showLocationAddress--` will map the input value to a portlet
-    preference key named `showLocationAddress`. 
+    `preferences--showLocationAddress--` that we used maps the input value to a
+    portlet preference key named `showLocationAddress`. 
 
     You've probably noticed some JSP compile errors and warnings with respect to
     the code we added to the `configuration.jsp` file. We'll address them by
-    adding directives to the `init.jsp` so we can access the classes and taglibs
-    here in the `configuration.jsp` and in our other `.jsp` files.
+    adding directives to the `init.jsp` that this JSP includes. Adding the
+    directives will allow our JSPs to access the classes and taglibs. 
 
 2.  In your `init.jsp` file, add the following directive to access the JSP
     Standard Tag Library (JSTL), Liferay's theme taglib, and Liferay's portlet
@@ -1655,10 +1657,10 @@ Now let's begin creating our portlet preference for the configuration page.
         %>
 
     If no `showLocationAddress` key is found, the value will default to `true`
-    based on the `StringPool.TRUE` default value we pass to
+    based on the `StringPool.TRUE` default value we pass to the method
     `portletPreferences.getValue(key, default)`. Then, wrap the street address,
-    city, state, and country result columns in a conditional code block using
-    `<c:choose ><c:when test="..."> ... <c:when></c:choose>` tags. 
+    city, state, and country column text elements in a conditional code block
+    using `<c:choose ><c:when test="..."> ... <c:when></c:choose>` tags. 
 
         <c:choose>
             <c:when test="<%= showLocationAddress == true %>">
@@ -1725,7 +1727,7 @@ Now let's begin creating our portlet preference for the configuration page.
      Notice we've extended the `DefaultConfigurationAction` class and added a new
      `processAction()` method. The super-class's `processAction()` method is
      responsible for reading the portlet preferences from the configuration form
-     and storing it in the database. Usually, you'd add appropriate validation
+     and storing them in the database. Usually, you'd add appropriate validation
      logic for the parameters received from the form. As you see from our
      bare-bones example, we simply demonstrate accessing the preferences from the
      action request. 
@@ -1755,15 +1757,15 @@ That's it! You've created a custom configuration page and added a portlet
 preference to your portlet. Let's see the configuration page and portlet
 preference in action!
 
-Navigate to your Location Listing Portlet's *Configuration* page. You now have
+Navigate to your Location Listing portlet's *Configuration* page. You now have
 the *show-location-address* checkbox available.
 
 ![Figure 3.13: Your new portlet preference is available on the *Configuration* page.](../../images/show-location-address-pref.png)
 
 Each time you click *Save* after modifying the *show-location-address* checkbox,
 the `ConfigurationActionImpl.processAction(...)` method prints out the value of
-the "showLocationAddress" portlet preference key. The key will either be
-assigned a value of true or false:
+the `showLocationAddress` portlet preference key. The key will either be
+assigned a value of `true` or `false`:
 
     showLocationAddress=true in ConfigurationActionImpl.processAction().
     showLocationAddress=false in ConfigurationActionImpl.processAction().
