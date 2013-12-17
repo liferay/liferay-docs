@@ -1911,10 +1911,20 @@ use the `m2e-wtp` plugin. This provides a project configuration mapping between
 POMs in the Maven model to the flexible web project support in Eclipse. With
 these two plugin dependencies in place, the only remaining component is making
 sure that `m2e-core` can recognize the extra lifecycle metadata mappings that
-are required to support the custom Liferay goals. Normally, this would have to
-be done manually by the user. However, with the `m2e-liferay` plugin, the
+are required to support the custom Liferay goals. Let's break down Lifecycle
+mappings just a bit to get a better understanding of what this means.
+
+Both Maven and Eclipse have their own standard build project lifecycles that are
+independent from each other. Therefore, for both to work together and run
+seamlessly within Liferay IDE, you need lifecycle mapping to link both
+lifecycles into one, combined lifecycle. Normally, this would have to be done
+manually by the user. However, with the `m2e-liferay` plugin, the lifecycle
 metadata mapping and Eclipse build lifecycles are automatically handled
-providing a seamless user experience.
+providing a seamless user experience. The lifecycle mappings for your project can be viewed
+by right-clicking your project and selecting *Properties* &rarr; *Maven* &rarr;
+*Lifecycle Mapping*.
+
+![Figure 2.22: View your project's lifecycle mappings for verification of successful plugin execution.](../../images/maven-lifecycle-mapping.png)
 
 When first installing Liferay IDE, you're able to indicate that you'd like to
 use Maven in the startup screen and the Maven plugins are installed
@@ -1923,17 +1933,57 @@ required Maven plugins, navigate to *Help* &rarr; *Install New Software...*. In
 the *Work with* field insert the following: `Liferay IDE repository -
 http://releases.liferay.com/tools/ide/latest/milestone/`. 
 
-![Figure 2.22: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
-
 If the `m2e-liferay` plugin does not appear, this means you already have it
 installed. To verify, uncheck the *Hide items that are already installed*
 checkbox. Also, if you'd like to view everything that is bundled with the
 `m2e-liferay` plugin, uncheck the *Group items by category* checkbox.
 
+![Figure 2.23: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
+
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
 
 #### Configuring your Liferay Maven Project
+
+Now your Liferay IDE instance is Maven-ready and you have an existing Maven
+project. Let's learn about what is going on under the hood and configure your
+project accordingly. Note, if you'd like to learn how to create a new Maven
+project in IDE, visit the *Creating Liferay Plugins with Maven* section.
+Furthermore, you can import an existing Maven project by navigating to *File*
+&rarr; *Import* &rarr; *Maven* and selecting the import source of your Maven
+project.
+
+The `m2e-core` plugin will delegate project configuration of your Liferay Maven
+plugin to the `m2e-liferay` project configurator. Thus, the `m2e-wtp` project
+configurator will execute which will convert your Liferay WAR package into and
+Eclipse flexible web project. Next, the `m2e-liferay` configurator will execute
+and look for the Liferay Maven plugin to be registered on the POM effective
+model for WAR type packages. If no Liferay Maven plugin is configured on the
+effective POM for the project, the project configuration will not continue. If
+the plugin has been configured, the following settings must be specified:
+
+- *pluginType*
+- *liferayVersion*
+- *liferay.maven.plugin.version*
+- *autoDeployDir*
+- *appServerDeployDir*
+- *appServerLibGlobalDir*
+- *appServerPortalDir*
+
+There are various ways to satisfy these properties-- in the `pom.xml` directly,
+in a parent POM, or in a Maven profile (recommended). Once you have a Maven
+profile configured in the `${USER_HOME}/.m2/settings.xml` file, you can activate
+the profile by right-clicking on your project &rarr; *Properties* &rarr; *Maven*
+and entering in the profile IDs that supply the necessary settings into the
+*Active Maven Profiles* text field. Once you've specified all the values, the
+configurator (`m2e-liferay`) will verify the setting values are valid. If there
+are errors, the configurator will mark the user's `pom.xml` with these errors.
+If you need to fix an error, you can update the project to persist the change by
+right-clicking the project &rarr; *Maven* &rarr; *Update Project...*.
+
+After your POM configuration meets the requirements, the configurator will
+install the Liferay plugin facet, and your Maven project is officially a Liferay
+IDE project!
 
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
@@ -2297,7 +2347,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.23: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.24: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2438,7 +2488,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.24: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.25: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
