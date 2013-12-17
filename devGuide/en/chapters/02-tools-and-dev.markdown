@@ -1872,6 +1872,69 @@ your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
 Liferay CE plugins. 
 
+Now that we have our Maven artifacts set up, let's configure Liferay IDE with
+Maven.
+
+### Using Liferay IDE with Maven
+
+Wouldn't it be nice if you could manage your Maven project by a Liferay tool
+such as IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
+(`m2e-liferay`), or the added support of configuring Maven projects as full
+Liferay IDE projects. Let's dive into the reasoning for the Maven project
+configurator and how to install it and its dependencies.
+
+#### Installing Maven Plugins for Liferay IDE
+
+In order to properly support Maven projects in IDE, you first need a mechanism
+to recognize Maven projects as IDE projects. IDE projects are recognized in
+Eclipse as faceted web projects that include the appropriate Liferay plugin
+facet. Therefore, all IDE projects are also Eclipse web projects (faceted
+project with web facet installed). In order to get Maven projects to be
+recognized by IDE and work with other JEE tooling, such as the *Servers* view,
+they must be flexible web projects as well. For Maven projects to fulfill the
+requirements of being a flexible web project with Liferay facet installed, the
+`m2e-liferay` feature requires additional Eclipse plugin dependencies:
+
+- `m2e-core` (Maven integration for Eclipse)
+- `m2e-wtp` (Maven integration for WTP)
+
+Luckily, these dependencies are included when you install the `m2e-liferay`
+plugin. We'll flesh out the installation process soon, but first, let's get a
+deeper understanding of how these plugins work to give us our IDE/Maven
+compatibility.
+
+The `m2e-core` plugin is the standard Maven tooling support for Eclipse. The
+main benefits it provides is dependency resolution classpath management and
+abstract project configuration framework for adopters. Also, in order for
+Liferay projects using Maven to be recognized as flexible web projects, we must
+use the `m2e-wtp` plugin. This provides a project configuration mapping between
+POMs in the Maven model to the flexible web project support in Eclipse. With
+these two plugin dependencies in place, the only remaining component is making
+sure that `m2e-core` can recognize the extra lifecycle metadata mappings that
+are required to support the custom Liferay goals. Normally, this would have to
+be done manually by the user. However, with the `m2e-liferay` plugin, the
+metadata mapping and Eclipse build lifecycles are automatically handled
+providing a seamless user experience.
+
+When first installing Liferay IDE, you're able to indicate that you'd like to
+use Maven in the startup screen and the Maven plugins are installed
+automatically. Did you miss this during set up? No problem! To install the
+required Maven plugins, navigate to *Help* &rarr; *Install New Software...*. In
+the *Work with* field insert the following: `Liferay IDE repository -
+http://releases.liferay.com/tools/ide/latest/milestone/`. 
+
+![Figure 2.22: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
+
+If the `m2e-liferay` plugin does not appear, this means you already have it
+installed. To verify, uncheck the *Hide items that are already installed*
+checkbox. Also, if you'd like to view everything that is bundled with the
+`m2e-liferay` plugin, uncheck the *Group items by category* checkbox.
+
+Awesome! The required Maven plugins are installed and your IDE instance is ready
+to be mavenized! Next, let's learn how to configure an existing Maven project.
+
+#### Configuring your Liferay Maven Project
+
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
 
@@ -2234,7 +2297,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.22: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.23: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2375,7 +2438,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.23: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.24: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
