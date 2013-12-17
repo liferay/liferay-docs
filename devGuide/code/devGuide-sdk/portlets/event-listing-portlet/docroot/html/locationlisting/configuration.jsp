@@ -47,7 +47,7 @@ long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displ
 boolean showLocationAddress = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
 %>
 
-<aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress %>" />
+    <aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress_cfg %>" />
 
 	<aui:button-row>
 		<aui:button type="submit" />
