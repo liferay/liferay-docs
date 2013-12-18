@@ -1904,10 +1904,10 @@ deeper understanding of how these plugins work to give us our IDE/Maven
 compatibility.
 
 The `m2e-core` plugin is the standard Maven tooling support for Eclipse. The
-main benefits it provides is dependency resolution classpath management and
+main benefits it provides is dependency resolution classpath management and an
 abstract project configuration framework for adopters. Also, in order for
 Liferay projects using Maven to be recognized as flexible web projects, we must
-use the `m2e-wtp` plugin. This provides a project configuration mapping between
+use the `m2e-wtp` plugin. This provides project configuration mapping between
 POMs in the Maven model to the flexible web project support in Eclipse. With
 these two plugin dependencies in place, the only remaining component is making
 sure that `m2e-core` can recognize the extra lifecycle metadata mappings that
@@ -1929,8 +1929,8 @@ by right-clicking your project and selecting *Properties* &rarr; *Maven* &rarr;
 When first installing Liferay IDE, you're able to indicate that you'd like to
 use Maven in the startup screen and the Maven plugins are installed
 automatically. Did you miss this during set up? No problem! To install the
-required Maven plugins, navigate to *Help* &rarr; *Install New Software...*. In
-the *Work with* field insert the following: `Liferay IDE repository -
+required Maven plugins, navigate to *Help* &rarr; *Install New Software*. In
+the *Work with* field, insert the following: `Liferay IDE repository -
 http://releases.liferay.com/tools/ide/latest/milestone/`. 
 
 If the `m2e-liferay` plugin does not appear, this means you already have it
@@ -1958,27 +1958,26 @@ project.
 ![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
 of Eclipse and Maven, it is unsafe to manually insert or overwrite the
 `.classpath` and `.project` files and `.settings` folder. IDE automatically
-produces these files when a project is imported, or updates them when the POM is
-updated.
+generates these files when a project is imported or updated.
 
 ---
 
 The `m2e-core` plugin will delegate project configuration of your Liferay Maven
 plugin to the `m2e-liferay` project configurator. Thus, the `m2e-wtp` project
-configurator will execute which will convert your Liferay WAR package into and
+configurator will execute, which converts your Liferay WAR package into an
 Eclipse flexible web project. Next, the `m2e-liferay` configurator will execute
 and look for the Liferay Maven plugin to be registered on the POM effective
 model for WAR type packages. If no Liferay Maven plugin is configured on the
 effective POM for the project, the project configuration will not continue. If
 the plugin has been configured, the following settings must be specified:
 
-- *pluginType*
-- *liferayVersion*
+- *plugin.type*
+- *liferay.version*
 - *liferay.maven.plugin.version*
-- *autoDeployDir*
-- *appServerDeployDir*
-- *appServerLibGlobalDir*
-- *appServerPortalDir*
+- *auto.deploy.dir*
+- *app.server.deploy.dir*
+- *app.server.lib.global.dir*
+- *app.server.portal.dir*
 
 There are various ways to satisfy these properties-- in the Maven profile
 (recommended), in the `pom.xml` directly, or in the parent POM. Here's an
@@ -2005,10 +2004,10 @@ file, you can activate the profile by right-clicking on your project &rarr;
 necessary settings into the *Active Maven Profiles* text field. For example, to
 reference the profile and properties we listed above, you'd enter *sample* for
 the Active Maven Profile. Once you've specified all the values, the configurator
-(`m2e-liferay`) will verify the setting values are valid. If there are errors,
-the configurator will mark the user's `pom.xml` with these errors. If you need
-to fix an error, you can update the project to persist the change by
-right-clicking the project &rarr; *Maven* &rarr; *Update Project*.
+(`m2e-liferay`) will verify the properties are valid. If there are errors, the
+configurator will mark the user's `pom.xml` with these errors. If you need to
+fix an error, you can update the project to persist the change by right-clicking
+the project &rarr; *Maven* &rarr; *Update Project*.
 
 After your POM configuration meets the requirements, the configurator will
 install the Liferay plugin facet, and your Maven project is officially a Liferay
@@ -2040,6 +2039,9 @@ section of the `pom.xml` file.
 
 **Dependency Hierarchy:** provides hierarchical view of project dependencies and
 interactive list of resolved dependencies.
+
+By taking advantage of these interactive modes, modifying and organizing your
+POM and its dependencies has never been easier!
 
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
@@ -2276,7 +2278,7 @@ to generate a Liferay plugin project using Liferay IDE:
     respectively. Notice that the display name field does *not* append the
     *portlet* text. Because the plugin type is automatically appended to the
     display name in Liferay Portal, there is no need to specify it. Therefore,
-    IDE prevents a developer from repetively appending the plugin type, and
+    IDE prevents a developer from repetitively appending the plugin type, and
     ignores it completely if it's the last appended string of text.
 
 3.  Select *Maven (liferay-maven-plugin)* for the build type. Notice that some
@@ -2292,14 +2294,14 @@ to generate a Liferay plugin project using Liferay IDE:
     id, respectively.
 
 5.  Specify the active profile that you'd like your Liferay plugin project to
-    use. If you don't remember your active profile or you haven't created one, 
-    click the *Select Active Profiles* to the right of the text field. If you
-    have an active profile, they will be listed in the left menu. To select an
-    existing profile Id, highlight it and select the illuminated *right arrow*
-    button to transfer it to the right menu. Otherwise, if you don't have an 
-    existing profile Id, click the green *addition* button and give it a name.
+    use. If you don't remember your active profile or haven't created one, click
+    the *Select Active Profiles* to the right of the text field. If you have an 
+    active profile, they will be listed in the left menu. To select an existing 
+    profile ID, highlight it and select the illuminated *right arrow* button to 
+    transfer it to the right menu. Otherwise, if you don't have an existing 
+    profile ID, click the green *addition* button and give it a name.
     
-    If you're specifying a new profile Id, your plugin will be created, but will
+    If you're specifying a new profile ID, your plugin will be created, but will
     need further attention before it is deployable. You'll need to specify the
     necessary properties within the profile, which can be referenced in the
     *Configuring your Liferay Maven Project* section of this chapter.
@@ -2324,9 +2326,9 @@ to generate a Liferay plugin project using Liferay IDE:
     <!-- Talking to Greg about why this is, and if it is a bug. Will update when
     I have necessary info. -Cody -->
     
-6.  Select the *Portlet* plugin type and then click *Finish*.
+6.  Select the *Portlet* plugin type (if necessary) and then click *Finish*.
 
-![Figure 2.24: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+	![Figure 2.24: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's run through the steps of creating your Liferay Maven
