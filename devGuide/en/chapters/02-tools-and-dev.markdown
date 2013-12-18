@@ -1892,8 +1892,8 @@ facet. Therefore, all IDE projects are also Eclipse web projects (faceted
 project with web facet installed). In order to get Maven projects to be
 recognized by IDE and work with other JEE tooling, such as the *Servers* view,
 they must be flexible web projects as well. For Maven projects to fulfill the
-requirements of being a flexible web project with Liferay facet installed, the
-`m2e-liferay` feature requires additional Eclipse plugin dependencies:
+requirements of being a flexible web project with the Liferay facet installed,
+the `m2e-liferay` feature requires additional Eclipse plugin dependencies:
 
 - `m2e-core` (Maven integration for Eclipse)
 - `m2e-wtp` (Maven integration for WTP)
@@ -1953,6 +1953,16 @@ Furthermore, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the import source of your Maven
 project.
 
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
+of Eclipse and Maven, it is unsafe to manually insert or overwrite the
+`.classpath` and `.project` files and `.settings` folder. IDE automatically
+produces these files when a project is imported, or updates them when the POM is
+updated.
+
+---
+
 The `m2e-core` plugin will delegate project configuration of your Liferay Maven
 plugin to the `m2e-liferay` project configurator. Thus, the `m2e-wtp` project
 configurator will execute which will convert your Liferay WAR package into and
@@ -1970,20 +1980,66 @@ the plugin has been configured, the following settings must be specified:
 - *appServerLibGlobalDir*
 - *appServerPortalDir*
 
-There are various ways to satisfy these properties-- in the `pom.xml` directly,
-in a parent POM, or in a Maven profile (recommended). Once you have a Maven
-profile configured in the `${USER_HOME}/.m2/settings.xml` file, you can activate
-the profile by right-clicking on your project &rarr; *Properties* &rarr; *Maven*
-and entering in the profile IDs that supply the necessary settings into the
-*Active Maven Profiles* text field. Once you've specified all the values, the
-configurator (`m2e-liferay`) will verify the setting values are valid. If there
-are errors, the configurator will mark the user's `pom.xml` with these errors.
-If you need to fix an error, you can update the project to persist the change by
-right-clicking the project &rarr; *Maven* &rarr; *Update Project...*.
+There are various ways to satisfy these properties-- in the Maven profile
+(recommended), in the `pom.xml` directly, or in the parent POM. Here's an
+example of what a Maven profile looks like inside the `settings.xml` file.
+
+	<profiles>
+		<profile>
+			<id>sample</id>
+				<properties>
+					<plugin.type>portlet</plugin.type>
+					<liferay.version>6.2.0</liferay.version>
+					<liferay.maven.plugin.version>6.2.0</liferay.maven.plugin.version>
+					<liferay.auto.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\deploy</liferay.auto.deploy.dir>
+					<liferay.app.server.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps</liferay.app.server.deploy.dir>
+					<liferay.app.server.lib.global.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\lib\ext</liferay.app.server.lib.global.dir>
+					<liferay.app.server.portal.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps\ROOT</liferay.app.server.portal.dir>
+				</properties>
+		</profile>
+	</profiles>
+
+Once you have a Maven profile configured in the `${USER_HOME}/.m2/settings.xml`
+file, you can activate the profile by right-clicking on your project &rarr;
+*Properties* &rarr; *Maven* and entering the profile IDs that supply the
+necessary settings into the *Active Maven Profiles* text field. For example, to
+reference the profile and properties we listed above, you'd enter *sample* for
+the Active Maven Profile. Once you've specified all the values, the configurator
+(`m2e-liferay`) will verify the setting values are valid. If there are errors,
+the configurator will mark the user's `pom.xml` with these errors. If you need
+to fix an error, you can update the project to persist the change by
+right-clicking the project &rarr; *Maven* &rarr; *Update Project*.
 
 After your POM configuration meets the requirements, the configurator will
 install the Liferay plugin facet, and your Maven project is officially a Liferay
 IDE project!
+
+Once you have your Maven project configured, you may want to execute a specific
+Maven goal such as `liferay:build-lang` or `liferay:build-db` that is associated
+with your build phase. To access your project's Maven goals and execute them,
+right-click your project &rarr; *Liferay* &rarr; *Maven* and select the goal to
+execute. To learn more about Maven's build lifecycle and plugin goals, visit
+Apache's [Build Lifecycle
+Basics](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Build_Lifecycle_Basics)
+guide.
+
+When working with your `pom.xml` file in IDE, you'll notice several different
+viewing modes to work with:
+
+**pom.xml:** provides an editable POM as it appears on the file system.
+
+**Effective POM:** provides a read-only version of your project POM merged with
+its parent POM(s), `settings.xml`, and the settings in Eclipse for Maven.
+
+**Overview:** provides a graphical interface where you can add to and edit the
+`pom.xml` file.
+
+**Dependencies:** provides a graphical interface for adding and editing
+dependencies in your project, as well as modifying the `dependencyManagement`
+section of the `pom.xml` file.
+
+**Dependency Hierarchy:** provides hierarchical view of project dependencies and
+interactive list of resolved dependencies.
 
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
