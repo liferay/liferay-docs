@@ -1551,13 +1551,14 @@ First, if your Location Listing portlet doesn't already have a configuration
 see if your portlet has the Setup configuration page, click the portlet's
 wrench/gear icon in the upper right corner and select *Configuration*. 
 
-1.  To create a new configuration page, open `portlet.xml` and insert the
-    following lines after the Location Listing portlet's `</portlet-class>` tag:
+1.   To create a new configuration page, open `portlet.xml` and insert the
+     following lines after the Location Listing portlet's `</portlet-class>`
+     tag: 
 
-        <init-param>
-            <name>config-template</name>
-            <value>/html/locationlisting/configuration.jsp</value>
-        </init-param>
+         <init-param>
+             <name>config-template</name>
+             <value>/html/locationlisting/configuration.jsp</value>
+         </init-param>
 
 2.  In the `docroot/html/locationlisting` directory, create a file named
     `configuration.jsp`. You can leave this file blank for now, as we'll add
@@ -1569,8 +1570,10 @@ wrench/gear icon in the upper right corner and select *Configuration*.
         <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfig\
         urationAction</configuration-action-class>
 
-     Notice that we've listed the default configuration action class. We'll
-     update this tag with a custom configuration class later in the exercise.
+    Notice that we've listed the default configuration action class. We'll
+    update this tag with a custom configuration class later in the exercise.
+    Make sure to replace the backslash character `\` with the content of the
+    line that follows it. 
 
 Now let's begin creating our portlet preference for the configuration page.
 
@@ -1599,6 +1602,10 @@ Now let's begin creating our portlet preference for the configuration page.
             </aui:button-row>
         </aui:form>
 
+    
+     Make sure to replace each backslash character `\` with the content of the
+     line that follows it. 
+
     If you're working with a pre-populated `configuration.jsp` file, you'll only
     need to add the scriplet that assigns our preference to the local arbitrary
     variable `showLocationAddress_cfg`, add the `<aui:input
@@ -1619,7 +1626,7 @@ Now let's begin creating our portlet preference for the configuration page.
     adding directives to the `init.jsp` that this JSP includes. Adding the
     directives will allow our JSPs to access the classes and taglibs. 
 
-2.  In your `init.jsp` file, add the following directive to access the JSP
+2.  In your `init.jsp` file, add the following directives to access the JSP
     Standard Tag Library (JSTL), Liferay's theme taglib, and Liferay's portlet
     taglib. 
 
@@ -1628,20 +1635,20 @@ Now let's begin creating our portlet preference for the configuration page.
         <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
         <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 
-    Then, insert the `<portlet:defineObjects />` tag to access implicit variables
-    that we'll need. It provides useful portlet variables such as
+    Then, insert the `<portlet:defineObjects />` tag to access implicit
+    variables that we'll need. It provides useful portlet variables such as
     *renderRequest*, *portletConfig*, and *portletPreferences*. 
 
-    Also, make sure to add the following page directives to the `init.jsp`, as we
-    use these classes in our `configuration.jsp`. 
+    Also, make sure to add the following page directives to the `init.jsp`, as
+    we use these classes in our `configuration.jsp`. 
  
         <%@ page import="com.liferay.portal.kernel.util.Constants" %>
         <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
         <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
 
-    Now that you've resolved your compile errors and warnings, let's add logic in
-    our `view.jsp` to show/hide the location addresses based on the value of our
-    portlet preference key `showLocationAddress`. 
+    Now that you've resolved your compile errors and warnings, let's add logic
+    in our `view.jsp` to show/hide the location addresses based on the value of
+    our portlet preference key `showLocationAddress`. 
 
 3.  In the `view.jsp` file, let's get the value of the `showLocationAddress`
     portlet preference key. If it's value is `true`, we'll display all of the
@@ -1724,13 +1731,13 @@ Now let's begin creating our portlet preference for the configuration page.
             }
         }
 
-     Notice we've extended the `DefaultConfigurationAction` class and added a new
-     `processAction()` method. The super-class's `processAction()` method is
+     Notice we've extended the `DefaultConfigurationAction` class and added a
+     new `processAction()` method. The super-class's `processAction()` method is
      responsible for reading the portlet preferences from the configuration form
      and storing them in the database. Usually, you'd add appropriate validation
      logic for the parameters received from the form. As you see from our
-     bare-bones example, we simply demonstrate accessing the preferences from the
-     action request. 
+     bare-bones example, we simply demonstrate accessing the preferences from
+     the action request. 
 
      Another common method to include in a custom configuration class is the
      `render()` method. The render method is invoked when the user clicks the
