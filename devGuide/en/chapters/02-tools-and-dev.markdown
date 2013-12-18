@@ -2291,7 +2291,42 @@ to generate a Liferay plugin project using Liferay IDE:
     `1.0-SNAPSHOT` and `com.liferay.sample` for the artifact version and group
     id, respectively.
 
-5.  <Profile stuff>
+5.  Specify the active profile that you'd like your Liferay plugin project to
+    use. If you don't remember your active profile or you haven't created one, 
+    click the *Select Active Profiles* to the right of the text field. If you
+    have an active profile, they will be listed in the left menu. To select an
+    existing profile Id, highlight it and select the illuminated *right arrow*
+    button to transfer it to the right menu. Otherwise, if you don't have an 
+    existing profile Id, click the green *addition* button and give it a name.
+    
+    If you're specifying a new profile Id, your plugin will be created, but will
+    need further attention before it is deployable. You'll need to specify the
+    necessary properties within the profile, which can be referenced in the
+    *Configuring your Liferay Maven Project* section of this chapter.
+    
+    You also have the option to create a profile based on a Liferay runtime. To
+    do this, select the *Create New Maven Profile Based on Liferay Runtime*
+    button to the right of the text field. Specify the *Liferay runtime*, *New
+    profile id*, and *Liferay version*. For the new profile location you can
+    choose to specify your profile in the `settings.xml` (recommended) or your
+    project `pom.xml`. When creating your Maven profile based on a Liferay
+    runtime, the new profile is automatically populated with the required
+    properties, and no additional profile configuration is needed after your
+    plugin is created.
+    
+    ---
+
+    ![note](../../images/tip-pen-paper.png) **Note:** To create a new Maven
+    profile based on a Liferay runtime, you must first create an active profile. 
+
+    ---
+    
+    <!-- Talking to Greg about why this is, and if it is a bug. Will update when
+    I have necessary info. -Cody -->
+    
+6.  Select the *Portlet* plugin type and then click *Finish*.
+
+![Figure 2.24: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's run through the steps of creating your Liferay Maven
@@ -2403,7 +2438,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.24: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.25: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2544,7 +2579,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.25: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.26: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
