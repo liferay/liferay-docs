@@ -1,6 +1,6 @@
 # Liferay Faces Reference Documentation [](id=liferay-faces-reference-documentation-liferay-portal-6-2-dev-guide-04-en)
 
-![Liferay Faces is an umbrella project that provides support for the JavaServer<sup>™</sup> Faces (JSF) standard within Liferay Portal. Liferay Faces encompasesses the Liferay Faces Bridge, Liferay Faces Alloy, and the Liferay Faces Portal Projects. The Liferay Faces project was migrated from the PortletFaces project after Liferay  assumed leadership of it on April 3, 2012.](../../images/04-liferay-faces-logo.png)
+![Liferay Faces is an umbrella project that provides support for the JavaServer&#8482; Faces (JSF) standard within Liferay Portal. Liferay Faces encompasesses the Liferay Faces Bridge, Liferay Faces Alloy, and the Liferay Faces Portal Projects. The Liferay Faces project was migrated from the PortletFaces project after Liferay  assumed leadership of it on April 3, 2012.](../../images/04-liferay-faces-logo.png)
 
 This documentation contains information on the following:
 
@@ -388,7 +388,7 @@ Now that we've discussed basic JSF portlet development let's take a look at util
 
 #### Overview of CDI [](id=overview-of-cdi-liferay-portal-6-2-dev-guide-04-en)
 
-In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6 platform. In April 2013, [JSR 346](http://jcp.org/en/jsr/detail?id=346) updated CDI to version 1.1 for Java EE 7. In addition, [JSR 344](http://jcp.org/en/jsr/detail?id=344), the JSF 2.2 specification which is another component of Java EE 7, introduced a dependency on the CDI API for the `javax.faces.view.ViewScoped` annotation and for the Faces Flows feature. JBoss [Weld](http://seamframework.org/Weld) is the Reference Implementation (RI) for CDI and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open source implementation. 
+In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6 platform. In April 2013, [JSR 346](http://jcp.org/en/jsr/detail?id=346) updated CDI to version 1.1 for Java EE 7. In addition, [JSR 344](http://jcp.org/en/jsr/detail?id=344), the JSF 2.2 specification which is another component of Java EE 7, introduced a dependency on the CDI API for the `javax.faces.view.ViewScoped` annotation and for the Faces Flows feature. JBoss [Weld](http://seamframework.org/Weld) is the Reference Implementation (RI) for CDI and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open source implementation. 
 
 #### Compatible Portal Servers [](id=compatible-portal-servers-liferay-portal-6-2-dev-guide-04-en)
 
@@ -459,7 +459,7 @@ This is a sample of a `WEB-INF/jboss-deployment-structure.xml` descriptor.
 
 #### Weld Configuration for Resin [](id=weld-configuration-for-resin-liferay-portal-6-2-dev-guide-04-en)
 
-If using Resin, then it is not necessary to configure JBoss Weld since Resin includes the [CanDI](http://www.caucho.com/candi-java-dependency-injection/) implementation of CDI by default. For all other servers, it is necessary to configure the JBoss Weld implementation of CDI. 
+If using Resin, then it is not necessary to configure JBoss Weld since Resin includes the [CanDI](http://www.caucho.com/candi-java-dependency-injection/) implementation of CDI by default. For all other servers, it is necessary to configure the JBoss Weld implementation of CDI. 
 
 #### Weld Configuration for All Servers (except Resin) [](id=weld-configuration-for-all-servers-excep-liferay-portal-6-2-dev-guide-04-en)
 
@@ -567,7 +567,7 @@ The following table illustrates JSF 2 annotation usage and the equivalent CDI an
 |----------------|---------------------------|
 | `javax.faces.ManagedBean` | [`javax.inject.Named`](http://docs.oracle.com/javaee/6/api/javax/inject/Named.html) |
 | `javax.faces.ApplicationScoped` | [`javax.enterprise.context.ApplicationScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/ApplicationScoped.html) |
-| `javax.faces.RequestScoped` | No such equivalent, since [`javax.enterprise.context.RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) does not span portlet lifecycle phases. 
+| `javax.faces.RequestScoped` | No such equivalent, since [`javax.enterprise.context.RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) does not span portlet lifecycle phases. 
 | `javax.faces.SessionScoped` | [`javax.enterprise.context.SessionScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/SessionScoped.html) |
 | `javax.faces.ManagedProperty` (corresponding setter method required) | [`javax.inject.Inject`](http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html) (corresponding setter method not required) | 
 
@@ -581,12 +581,12 @@ Liferay Portal provides the ability to add portlets dynamically to portal pages 
 - Inside the [layout template](http://www.liferay.com/community/wiki/-/wiki/Main/Add+runtime+portlets+to+a+layout) with `$processor.processPortlet()` 
 -   Inside of a JSP with `<liferay-portlet:runtime />` 
 
-Unfortunately, as described in [FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding  JSF portlets doesn't work very well. It's actually not limited to JSF portlets -- this problem can happen with any portlet that needs to add JS/CSS resources to the `<head>`…`</head>` section of the portal 
+Unfortunately, as described in [FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding  JSF portlets doesn't work very well. It's actually not limited to JSF portlets -- this problem can happen with any portlet that needs to add JS/CSS resources to the `<head>`...`</head>` section of the portal 
 page. Since JSF portlets require the `jsf.js` resource to perform Ajax requests, the `jsf.js` resource needs  to be loaded when the portal page is initially rendered. 
 
 There are two workarounds:
 
-1. For plain JSF portlets, add a `<link />` element for the `jsf.js` resource in the `<head>`…`</head>` section of the `portal_normal.vm` or `portal_normal.ftl` file in the theme. The first few lines of `jsf.js` prevent double-instantiation in case it gets included multiple times on a page. This can occur when a JSF portlet is dynamically included and another JSF portlet is added statically. Unfortunately this approach will not work for PrimeFaces, since `primefaces.js` does not prevent double-instantiation. 
+1. For plain JSF portlets, add a `<link />` element for the `jsf.js` resource in the `<head>`...`</head>` section of the `portal_normal.vm` or `portal_normal.ftl` file in the theme. The first few lines of `jsf.js` prevent double-instantiation in case it gets included multiple times on a page. This can occur when a JSF portlet is dynamically included and another JSF portlet is added statically. Unfortunately this approach will not work for PrimeFaces, since `primefaces.js` does not prevent double-instantiation. 
 
 2. Use an iframe:  
 
@@ -649,9 +649,9 @@ The bridge features an *extension mechanism* that enables developers to decorate
 
 #### Wrapping the BridgeContextFactory With a Custom BridgeContext [](id=wrapping-the-bridgecontextfactory-with-a-liferay-portal-6-2-dev-guide-04-en)
 
-This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) shows how to wrap the [`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java) so that it returns a custom [`BridgeContext`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContext.java) instance which overrides one of the methods to provide custom functionality. 
+This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) shows how to wrap the [`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java) so that it returns a custom [`BridgeContext`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContext.java) instance which overrides one of the methods to provide custom functionality. 
 
-​1. Create a wrapper class for the `BridgeContext` that overrides the `getResponseNamespace()` method: 
+1. Create a wrapper class for the `BridgeContext` that overrides the `getResponseNamespace()` method: 
 
     package com.mycompany.myproject;
     public class BridgeContextCustomImpl extends BridgeContextWrapper {
@@ -660,22 +660,22 @@ This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/life
         
         public BridgeContextCustomImpl(BridgeContext bridgeContext) {
         
-            this.wrappedBridgeContext = bridgeContext;
-            BridgeContext.setCurrentInstance(this);
+            this.wrappedBridgeContext = bridgeContext;
+            BridgeContext.setCurrentInstance(this);
         }
         
         @Override
         public String getResponseNamespace() {
-            // return value based on custom algorithm.
+            // return value based on custom algorithm.
         }
         
         @Override
         public BridgeContext getWrapped() {
-            return wrappedBridgeContext;
+            return wrappedBridgeContext;
         }
     }
 
-​2. Create a wrapper class for the `BridgeContextFactory`: 
+2. Create a wrapper class for the `BridgeContextFactory`: 
 
     package com.mycompany.myproject;
     
@@ -700,7 +700,7 @@ This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/life
         }
     }
 
-​3. In the portlet's `WEB-INF/faces-config.xml`, specify the custom factory: 
+3. In the portlet's `WEB-INF/faces-config.xml`, specify the custom factory: 
 
     <faces-config xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension"
@@ -716,7 +716,7 @@ This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/life
         </factory>
     </faces-config>
 
-​4. Rebuild and re-deploy the portlet. 
+4. Rebuild and re-deploy the portlet. 
 
 The next section explains how to internationalize JSF Portlets. 
 
@@ -724,7 +724,7 @@ The next section explains how to internationalize JSF Portlets.
 
 There are at least two ways to handle internationalization with JSF and Liferay: 
 
-1. Using the standard JSF mechanism to create your own *i18n* keyword, as shown in the [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet) demo.
+1. Using the standard JSF mechanism to create your own *i18n* keyword, as shown in the [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet) demo.
     - Create a properties file in the classpath like [`i18n.properties`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/resources/i18n.properties)
     - Create a resource-bundle faces-config entry like [`faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/faces-config.xml)
     - Use your custom *i18n* keyword Expression Language (EL) in your Facelet view like [`applicant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/views/applicant.xhtml)
@@ -735,6 +735,7 @@ There are at least two ways to handle internationalization with JSF and Liferay:
     - Use the built-in *i18n* keyword Expression Language (EL) in your Facelet view like [`registrant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/views/registrant.xhtml) 
 
 In the next section, we will briefly look at Liferay Faces Alloy.
+
 ## Liferay Faces Alloy [](id=liferay-faces-alloy-liferay-portal-6-2-dev-guide-04-en)
 
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency
@@ -766,6 +767,7 @@ Next we will look at several aspects of the Liferay Faces Bridge, such as config
 Liferay Faces Bridge is a JAR that JSF developers can add as a dependency to their portlet WAR projects in order to deploy JSF web applications as portlets within JSR 286 (Portlet 2.0) compliant portlet containers like Liferay Portal 5.2, 6.0, and 6.1. 
 
 The project home page can be found at: <http://www.liferay.com/community/liferay-projects/liferay-faces/bridge>.
+
 ### Portlet Bridge Standard [](id=portlet-bridge-standard-liferay-portal-6-2-dev-guide-04-en)
 
 #### Overview [](id=overview-liferay-portal-6-2-dev-guide-04-en-1)
@@ -1222,8 +1224,8 @@ The project home page can be found at <http://www.liferay.com/community/liferay-
 
 ### LiferayFacesContext [](id=liferayfacescontext-liferay-portal-6-2-dev-guide-04-en)
 
-`LiferayFacesContext` is an abstract class that extends the JSF [`FacesContext`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html) abstract class. Because of this, it supplies all the same method signatures. The `LiferayFacesContext` implements the [delegation design pattern](http://en.wikipedia.org/wiki/Delegation_pattern) for methods
-defined by [`FacesContext`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html) by first calling [`FacesContext.getCurrentInstance()`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html#getCurrentInstance()) and then delegating to corresponding methods. 
+`LiferayFacesContext` is an abstract class that extends the JSF [FacesContext](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html) abstract class. Because of this, it supplies all the same method signatures. The `LiferayFacesContext` implements the [delegation design pattern](http://en.wikipedia.org/wiki/Delegation_pattern) for methods
+defined by [FacesContext](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html) by first calling [FacesContext.getCurrentInstance()](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html#getCurrentInstance()) and then delegating to corresponding methods. 
 
 ### Liferay Faces Portal UIComponent  and Composite Component Tags [](id=liferay-faces-portal-uicomponent--and-co-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1246,7 +1248,7 @@ Liferay Faces Portal provides the following UIComponent tags under the `liferay-
 
 ##### The liferay-ui:input-editor tag [](id=the-liferay-uiinput-editor-tag-liferay-portal-6-2-dev-guide-04-en)
 
-The `liferay-ui:input-editor` tag renders a text area that provides the ability to enter rich text such as bold, italic, and underline. The renderer relies on the [CKEditor](http://ckeditor.com/)<sup>TM</sup> to provide the rich text editing area. Since Liferay bundles the [CKEditor](http://ckeditor.com/)<sup>TM</sup> JavaScript and related images with the portal, the portlet developer does not need to include it with  the portlet. 
+The `liferay-ui:input-editor` tag renders a text area that provides the ability to enter rich text such as bold, italic, and underline. The renderer relies on the [CKEditor](http://ckeditor.com/)&#8482; to provide the rich text editing area. Since Liferay bundles the [CKEditor](http://ckeditor.com/)&#8482; JavaScript and related images with the portal, the portlet developer does not need to include it with  the portlet. 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -1271,7 +1273,7 @@ The `liferay-ui:input-editor` tag renders a text area that provides the ability 
 
 
 If using ICEfaces, then the "inline" version of `liferay-ui:input-editor` will expose an inefficiency in the 
-Direct2DOM<sup>TM</sup> (DOM-diff) algorithm. Typing a single character in the rich text area will cause ICEfaces to detect a DOM-diff, causing the entire `liferay-ui:input-editor` to be replaced in the browser's DOM with the form is submitted via Ajax. The workaround for this problem is to use the JSF 2.x `f:ajax` component to optimize/control which parts of the JSF component tree are DOM-diffed by ICEfaces. For example: 
+Direct2DOM&#8482; (DOM-diff) algorithm. Typing a single character in the rich text area will cause ICEfaces to detect a DOM-diff, causing the entire `liferay-ui:input-editor` to be replaced in the browser's DOM with the form is submitted via Ajax. The workaround for this problem is to use the JSF 2.x `f:ajax` component to optimize/control which parts of the JSF component tree are DOM-diffed by ICEfaces. For example: 
 
     <h:panelGroup id="feedback">
         <h:messages globalOnly="true" layout="table" />
@@ -1403,7 +1405,7 @@ Next we'll look at integrating Liferay Faces Portal's Language functionality wit
 
 ### Liferay Faces Portal Liferay Locale [](id=liferay-faces-portal-liferay-locale-liferay-portal-6-2-dev-guide-04-en)
 
-By default, the [Locale](http://java.sun.com/javase/6/docs/api/java/util/Locale.html) that is normally used to present internationalized JSF views is based on the web-browser's locale settings. In order to use the portal user's language preference, the Liferay Faces Portal project automatically registers the `LiferayLocalePhaseListener`. This phase listener modifies the locale inside the [`UIViewRoot`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html) based on the user's language preference returned by the [`User.getLocale()`](http://docs.liferay.com/portal/6.2/javadocs/portal-service/com/liferay/portal/model/User.html#getLocale()) method. 
+By default, the [Locale](http://java.sun.com/javase/6/docs/api/java/util/Locale.html) that is normally used to present internationalized JSF views is based on the web-browser's locale settings. In order to use the portal user's language preference, the Liferay Faces Portal project automatically registers the `LiferayLocalePhaseListener`. This phase listener modifies the locale inside the [UIViewRoot](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html) based on the user's language preference returned by the [User.getLocale()](http://docs.liferay.com/portal/6.2/javadocs/portal-service/com/liferay/portal/model/User.html#getLocale()) method. 
 
 Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal componets, Liferay Faces Portal theme integration, and Liferay Language Portlet Integration, let's move on to the Migration Guide which explains how to migrate projects which utilize the PortletFaces bridge to utilize the Liferay Faces bridge. 
 
@@ -1411,11 +1413,11 @@ Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal compo
 
 The Liferay Faces project originates from the <http://portletfaces.org> community website. On April 3, 2012 Liferay announced that it would be assuming leadership for the portletfaces.org community. Consequently, projects at portletfaces.org were repackaged under the Liferay Faces umbrella project along with some name changes: 
 
-- AlloyFaces -\> Liferay Faces Alloy 
+- AlloyFaces &rarr; Liferay Faces Alloy 
 
-- PorltetFaces Bridge -\> Liferay Faces Bridge 
+- PorltetFaces Bridge &rarr; Liferay Faces Bridge 
 
-- LiferayFaces -\> Liferay Faces Portal 
+- LiferayFaces &rarr; Liferay Faces Portal 
 
 #### BridgeRequestAttributeListener [](id=bridgerequestattributelistener-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1449,17 +1451,17 @@ Next, we'll look at the migration of configuration option names.
 
 PortletFaces Bridge provided several configuration options for use within the `WEB-INF/web.xml` and `WEB-INF/portlet.xml` descriptors. In order to ease migration, the configuration option names have been reproduced in the Liferay Faces project. It is recommended that the new configuration option names be used, as shown in the following listing: 
 
-- `org.portletfaces.bridge.containerAbleToSetHttpStatusCode` -\> `com.liferay.faces.bridge.containerAbleToSetHttpStatusCode` 
+- `org.portletfaces.bridge.containerAbleToSetHttpStatusCode` &rarr; `com.liferay.faces.bridge.containerAbleToSetHttpStatusCode` 
 
-- `org.portletfaces.bridgeRequestScopePreserved` -\> `com.liferay.faces.bridge.bridgeRequestScopePreserved` 
+- `org.portletfaces.bridgeRequestScopePreserved` &rarr; `com.liferay.faces.bridge.bridgeRequestScopePreserved` 
 
-- `org.portletfaces.bridge.optimizePortletNamespace` -\> `com.liferay.faces.bridge.optimizePortletNamespace` 
+- `org.portletfaces.bridge.optimizePortletNamespace` &rarr; `com.liferay.faces.bridge.optimizePortletNamespace` 
 
-- `org.portletfaces.bridge.preferPreDestroy` -\> `com.liferay.faces.bridge.preferPreDestroy` 
+- `org.portletfaces.bridge.preferPreDestroy` &rarr; `com.liferay.faces.bridge.preferPreDestroy` 
 
-- `org.portletfaces.bridge.resolveXMLEntities` -\> `com.liferay.faces.bridge.resolveXMLEntities` 
+- `org.portletfaces.bridge.resolveXMLEntities` &rarr; `com.liferay.faces.bridge.resolveXMLEntities` 
 
-- `org.portletfaces.bridge.resourceBufferSize` -\> `com.liferay.faces.bridge.resourceBufferSize`
+- `org.portletfaces.bridge.resourceBufferSize` &rarr; `com.liferay.faces.bridge.resourceBufferSize`
 
 Next, we will see how FileUpload has changed between the PortletFaces Bridge and the Liferay Faces Bridge. 
 
