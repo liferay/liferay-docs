@@ -629,19 +629,19 @@ Next we will discuss extension of the Liferay Faces Bridge via Factory Wrappers.
 
 [Liferay Faces Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) has several abstract classes that serve as a contract for defining factories: 
 
-- [`BridgeContextFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
-- [`BridgePhaseFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
-- [`BridgeRequestScopeFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
-- [`BridgeRequestScopeFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
-- [`BridgeRequestScopeCacheFactory.java`](https://github.com/liray/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
-- [`BridgeRequestScopeCacheFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
-- [`BridgeRequestScopeManagerFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeManagerFactory.java)
-- [`BridgeWriteBehindSupportFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/application/view/BridgeWriteBehindSupportFactory.java)
-- [`BridgeURLFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/url/BridgeURLFactory.java)
-- [`IncongruityContextFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/IncongruityContextFactory.java)
-- [`PortletContainerFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
-- [`PortletContainerFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
-- [`UploadedFileFactory.java`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/model/UploadedFileFactory.java)
+- [BridgeContextFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
+- [BridgePhaseFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
+- [BridgeRequestScopeFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
+- [BridgeRequestScopeFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
+- [BridgeRequestScopeCacheFactory.java](https://github.com/liray/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
+- [BridgeRequestScopeCacheFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
+- [BridgeRequestScopeManagerFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeManagerFactory.java)
+- [BridgeWriteBehindSupportFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/application/view/BridgeWriteBehindSupportFactory.java)
+- [BridgeURLFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/url/BridgeURLFactory.java)
+- [IncongruityContextFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/IncongruityContextFactory.java)
+- [PortletContainerFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
+- [PortletContainerFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
+- [UploadedFileFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/model/UploadedFileFactory.java)
 
 These factories are defined using the standard JSF `<factory-extension>` element in `faces-config.xml`. The *default implementations* of these factories are defined in the [bridge's `META-INF/faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/resources/META-INF/faces-config.xml) file. 
 
@@ -725,14 +725,14 @@ The next section explains how to internationalize JSF Portlets.
 There are at least two ways to handle internationalization with JSF and Liferay: 
 
 1. Using the standard JSF mechanism to create your own *i18n* keyword, as shown in the [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet) demo.
-    - Create a properties file in the classpath like [`i18n.properties`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/resources/i18n.properties)
-    - Create a resource-bundle faces-config entry like [`faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/faces-config.xml)
-    - Use your custom *i18n* keyword Expression Language (EL) in your Facelet view like [`applicant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/views/applicant.xhtml)
+    - Create a properties file in the classpath like [i18n.properties](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/resources/i18n.properties)
+    - Create a resource-bundle faces-config entry like [faces-config.xml](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/faces-config.xml)
+    - Use your custom *i18n* keyword Expression Language (EL) in your Facelet view like [applicant.xhtml](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/views/applicant.xhtml)
 
 2. Using the built-in *i18n* keyword provided by the [Liferay Faces Portal](http://www.liferay.com/community/liferay-projects/liferay-faces/portal) project, as shown in the [jsf2-registration-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-registration-portlet) demo. This method integrates JSF and Liferay very well, because it is able to "hook" into the thousands of existing internationalized keys that ship with Liferay Portal, as well as add your own. 
-    - Create a hook inside your portlet plugin like [`liferay-hook.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/WEB-INF/liferay-hook.xml)
-    - Create internaltionalized Langauge properties files like [`Language_en_US.properties`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/resources/Language_en_US.properties) 
-    - Use the built-in *i18n* keyword Expression Language (EL) in your Facelet view like [`registrant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/views/registrant.xhtml) 
+    - Create a hook inside your portlet plugin like [liferay-hook.xml](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/WEB-INF/liferay-hook.xml)
+    - Create internaltionalized Langauge properties files like [Language_en_US.properties](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/resources/Language_en_US.properties) 
+    - Use the built-in *i18n* keyword Expression Language (EL) in your Facelet view like [registrant.xhtml](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/views/registrant.xhtml) 
 
 In the next section, we will briefly look at Liferay Faces Alloy.
 
@@ -772,7 +772,7 @@ The project home page can be found at: <http://www.liferay.com/community/liferay
 
 #### Overview [](id=overview-liferay-portal-6-2-dev-guide-04-en-1)
 
-Because the Portlet 1.0 and JSF 1.0 specs were being created at essentially the same time, the Expert Group (EG) for the JSF specification constructed the JSF framework to be compliant with portlets. For example, the [`ExternalContext.getRequest()`](http://download.oracle.com/javaee/6/api/javax/faces/context/ExternalContext.html) method returns an `Object` instead of an [`javax.servlet.http.HttpServletRequest`](http://download.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html). When this method is used inside of a portal, the `Object` can be cast to a [`javax.portlet.PortletRequest`](http://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/PortletRequest.html). Despite the EG's conciousness of portlet compatibility within the design of JSF, the gap between the portlet and JSF lifecycles must be bridged. 
+Because the Portlet 1.0 and JSF 1.0 specs were being created at essentially the same time, the Expert Group (EG) for the JSF specification constructed the JSF framework to be compliant with portlets. For example, the [ExternalContext.getRequest()](http://download.oracle.com/javaee/6/api/javax/faces/context/ExternalContext.html) method returns an `Object` instead of an [javax.servlet.http.HttpServletRequest](http://download.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html). When this method is used inside of a portal, the `Object` can be cast to a [javax.portlet.PortletRequest](http://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/PortletRequest.html). Despite the EG's conciousness of portlet compatibility within the design of JSF, the gap between the portlet and JSF lifecycles must be bridged. 
 
 #### Portlet Bridge Standards and Implementations [](id=portlet-bridge-standards-and-implementat-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1312,7 +1312,7 @@ Next we will look at the `liferay-ui:ice-nav-data-paginator` composite component
 
 ##### The liferay-ui:ice-nav-data-paginator tag [](id=the-liferay-uiice-nav-data-paginator-tag-liferay-portal-6-2-dev-guide-04-en)
 
-The `liferay-ui:ice-info-data-paginator` encapsulates an ICEfaces 3.1 [`ice:dataPaginator`](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataPaginator.html) tag that renders navigation controls for an associated [`ice:dataTable`](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataTable.html). The icons will match the current Liferay theme. Since ICEfaces 4.0 has removed support for ice:dataPaginator, Liferay Faces 4.x no longer includes this feature.
+The `liferay-ui:ice-info-data-paginator` encapsulates an ICEfaces 3.1 [ice:dataPaginator](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataPaginator.html) tag that renders navigation controls for an associated [ice:dataTable](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataTable.html). The icons will match the current Liferay theme. Since ICEfaces 4.0 has removed support for ice:dataPaginator, Liferay Faces 4.x no longer includes this feature.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
