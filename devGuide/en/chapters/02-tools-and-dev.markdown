@@ -2315,17 +2315,7 @@ to generate a Liferay plugin project using Liferay IDE:
     runtime, the new profile is automatically populated with the required
     properties, and no additional profile configuration is needed after your
     plugin is created.
-    
-    ---
 
-    ![note](../../images/tip-pen-paper.png) **Note:** To create a new Maven
-    profile based on a Liferay runtime, you must first create an active profile. 
-
-    ---
-    
-    <!-- Talking to Greg about why this is, and if it is a bug. Will update when
-    I have necessary info. -Cody -->
-    
 6.  Select the *Portlet* plugin type (if necessary) and then click *Finish*.
 
 	![Figure 2.24: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
