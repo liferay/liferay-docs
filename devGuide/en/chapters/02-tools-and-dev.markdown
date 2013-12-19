@@ -502,7 +502,7 @@ Later in this guide, when we complete developing the Event Listing and Location
 Listing portlets, they'll allow users to add, edit, or remove events or
 locations, display lists of events or locations, search for particular events or
 locations, and view the details of individual events or locations. For now,
-we'll show you how to creat the Location Listing portlet in the
+we'll show you how to create the Location Listing portlet in the
 event-listing-portlet project. 
 
 Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
@@ -522,9 +522,9 @@ Use the following steps to create the Event Listing portlet:
     project* by default. It's a good idea to name your *Portlet class* after the
     name of your portlet. We'll name the class *LocationListingPortlet* in this
     example. Name your *Java package* after the plugin's parent project, so
-    it will be *com.nosester.portlet.eventlisting*. And leave
+    it will be *com.nosester.portlet.eventlisting*, and leave
     the *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*.
-    Alternatively, your could have selected
+    Alternatively, you could have selected
     *com.liferay.portal.kernel.portlet.LiferayPortlet* or
     *javax.portlet.GenericPortlet* for your superclass. Click *Next*.
 
@@ -653,7 +653,7 @@ existing projects into Liferay IDE.
 
 ### Importing Existing Liferay Projects from a Plugins SDK [](id=importing-existing-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
 
-Do you want to import one or more Liferay projectsinto your Liferay IDE
+Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy.  Don't worry
 if the projects already contain `.project` or `.classpath` files, the process
 we'll show you will still import them into your workspace. 
@@ -1434,7 +1434,7 @@ manage your repositories using a GUI. For this, you'll want Nexus OSS. It's a
 Maven repository management server that facilitates creating and managing
 release servers, snapshot servers, and proxy servers. Release servers hold
 software that has met the software provider's criteria for planned features and
-and quality. Snapshot servers hold software that is in a state of development. If
+quality. Snapshot servers hold software that is in a state of development. If
 you're not interested in using Nexus as a repository management server, feel
 free to skip this section. 
 
@@ -1738,14 +1738,14 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     remote Maven repository or don't want the artifacts to be remotely deployed,
     you can run the install target instead of the deploy
     target: `ant -f build-maven.xml install-artifacts`. The target installs the
-    Liferay artifacts you built to your local .m2 respository (e.g., to your
+    Liferay artifacts you built to your local .m2 repository (e.g., to your
     `[USER_HOME]/.m2/` directory). 
 
 ---
 
 ![note](../../images/tip-pen-paper.png) **Warning:** During the process of
  packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
- may experience sluggish performance or an insuffient amount of Java heap space.
+ may experience sluggish performance or an insufficient amount of Java heap space.
  There are two solutions to this problem:
  
 - *Increase the memory available for the Javadoc packaging process:*
@@ -2057,8 +2057,6 @@ interactive list of resolved dependencies.
 
 ![Figure 2.24: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
 
-
-
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
 
@@ -2253,7 +2251,7 @@ You can also specify these key properties in your Global or User `settings.xml`
 file. To learn more about this method, visit the *Configuring Your Liferay Maven
 Project* section.
 
-The Liferay plugins you develop depend on several Lifeary artifacts. We've
+The Liferay plugins you develop depend on several Liferay artifacts. We've
 included them in individual `dependency` elements within the POM's
 `dependencies` element. All of your parent project's modules (i.e., projects
 that refer to this parent) can leverage these dependencies. 
@@ -2766,7 +2764,7 @@ directory structure:
                     - liferay-plugin-package.properties
                     - web.xml
                 - css/ \* Optionally add to hold CSS customizations
-                - images/ \* Optionally add to hold custon images
+                - images/ \* Optionally add to hold custom images
                 - js/ \* Optionally add to hold JavaScript customizations
                 - templates/ \* Optionally add to hold template customizations
 
