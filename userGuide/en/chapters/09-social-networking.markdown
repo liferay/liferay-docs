@@ -672,15 +672,23 @@ on these sites.
 
 Keep these concepts in mind when going through the OAuth sections:
 
-**Service Provider:** a web application that uses OAuth for access **Protected
-Resources:** data controlled by the service provider, which can be accessed by
-the gadget through authentication **Consumer Key:** a value used by the gadget
-to identify itself to the service provider **Consumer Secret:** a secret the
-gadget uses to establish ownership of the consumer key **Request Token:** a
-value the gadget uses to obtain user authorization, which is exchanged for an
-access token **Access Token:** a value the gadget uses to gain access to the
-protected resources on behalf of the user, instead of using the user's service
-provider credentials
+**Service Provider:** a web application that uses OAuth for access
+
+**Protected Resources:** data controlled by the service provider, which can be
+accessed by the gadget through authentication
+
+**Consumer Key:** a value used by the gadget to identify itself to the service
+provider
+
+**Consumer Secret:** a secret the gadget uses to establish ownership of the
+consumer key
+
+**Request Token:** a value the gadget uses to obtain user authorization, which
+is exchanged for an access token
+
+**Access Token:** a value the gadget uses to gain access to the protected
+resources on behalf of the user, instead of using the user's service provider
+credentials
 
 OAuth is an open standard that authorizes third-party applications to interact
 with a user's resources. Users can share their private resources from one site
