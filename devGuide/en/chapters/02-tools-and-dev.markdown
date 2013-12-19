@@ -1969,19 +1969,34 @@ Eclipse flexible web project. Next, the `m2e-liferay` configurator will execute
 and look for the Liferay Maven plugin to be registered on the POM effective
 model for WAR type packages. If no Liferay Maven plugin is configured on the
 effective POM for the project, the project configuration will not continue. If
-the plugin has been configured, the following settings must be specified:
+the plugin has been configured, there are a list of key properties that must be
+specified, which you can reference in the next section titled *Using a Parent
+Plugin Project*.
 
-- *plugin.type*
-- *liferay.version*
-- *liferay.maven.plugin.version*
-- *auto.deploy.dir*
-- *app.server.deploy.dir*
-- *app.server.lib.global.dir*
-- *app.server.portal.dir*
+There are various ways to satisfy these properties-- the Maven profile in the
+User or Global `settings.xml` file (recommended), in the parent `pom.xml`, or in
+the `pom.xml` directly. You can think of these choices as a hierarchy for how
+your Maven plugins receive their properties.
 
-There are various ways to satisfy these properties-- in the Maven profile
-(recommended), in the `pom.xml` directly, or in the parent POM. Here's an
-example of what a Maven profile looks like inside the `settings.xml` file.
+*Global* `settings.xml`: provides configuration for all plugins belonging to all
+users on a machine. This file resides in the `${MAVEN_HOME}/conf/settings.xml`
+directory.
+
+*User* `settings.xml`: provides configuration for all plugins belonging to a
+single user on a machine. This file resides in the
+`${USER_HOME}/.m2/settings.xml` directory.
+
+*Parent* `pom.xml`: provides configuration for all modules in the parent
+project.
+
+`pom.xml`: provides configuration for the single plugin project.
+
+Note that if a profile is active from your `settings.xml`, its values will
+override your properties in a POM. If you'd like to specify the properties in a
+POM, navigate to the next section for more details.
+
+Here's an example of what a Maven profile looks like inside the `settings.xml`
+file.
 
 	<profiles>
 		<profile>
@@ -2039,6 +2054,10 @@ section of the `pom.xml` file.
 
 **Dependency Hierarchy:** provides hierarchical view of project dependencies and
 interactive list of resolved dependencies.
+
+![Figure 2.24: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
+
+
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
@@ -2230,6 +2249,9 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 		</liferay.version>
 	</properties>
 
+You can also specify these key properties in your Global or User `settings.xml`
+file. To learn more about this method, visit the *Configuring Your Liferay Maven
+Project* section.
 
 The Liferay plugins you develop depend on several Lifeary artifacts. We've
 included them in individual `dependency` elements within the POM's
@@ -2318,7 +2340,7 @@ to generate a Liferay plugin project using Liferay IDE:
 
 6.  Select the *Portlet* plugin type (if necessary) and then click *Finish*.
 
-	![Figure 2.24: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+	![Figure 2.25: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's run through the steps of creating your Liferay Maven
@@ -2430,7 +2452,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.25: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.26: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2571,7 +2593,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.26: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.27: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
