@@ -126,8 +126,8 @@ Web content structures also have the capability of inheriting characteristics
 from other structures. When a parent structure is configured, the child
 structure inherits the parent's fields and settings. Using this feature is
 helpful when you want to make a similar structure to one that already exists.
-For example, if you'd like to create an in-depth Nose-ster sports article in
-addition to a regular Nose-ster sports article, you can simply inherit the
+For example, if you'd like to create an in-depth Lunar Resort sports article in
+addition to a regular Lunar Resort sports article, you can simply inherit the
 characteristics of the regular article and only add additional fields to the
 more in-depth article. When the in-depth article is configured, it will display
 its parent's fields in addition to its own fields.
@@ -273,7 +273,7 @@ Select).
 remove options as well as edit each individual option's display name and value
 (only available for Radio and Select).
 
-For the Nose-ster structure, type something in the *Tip* field that helps users
+For the Lunar Resort structure, type something in the *Tip* field that helps users
 know what to put into the Body element (example: *This is an HTML text area for
 the body of your content*). Now, when users hover over the Help icon near your
 title, your tip is displayed.
@@ -419,10 +419,10 @@ Below is the template script for this structure. It is written in FreeMarker:
     <a href="${renderUrlMax}&${namespace}read_more=true">Read More</a>
     </#if>
 
-This template is pretty small but it actually does quite a bit. First, a portlet
-URL which maximizes the portlet is created. Once this is done, the template gets
-the namespace of the portlet. This is important to avoid URL collisions with
-other URLs that might be on the page.
+This template is small but accomplishes a lot. First, a portlet URL which
+maximizes the portlet is created. Once this is done, the template gets the
+namespace of the portlet. This is important to avoid URL collisions with other
+URLs that might be on the page.
 
 After this, the template attempts to get a request parameter called `read_more`.
 Whether or not this was successful is the key to the rest of the script:
@@ -437,6 +437,8 @@ When this template is rendered, it looks something like this:
 
 ![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
 
+<!--Figure needs to be reworked-->
+
 New for Liferay 6.2 is the ability to create generic templates that aren't
 connected to a specific structure. In previous versions of Liferay, each
 template had to be associated with a structure. Now, you have options for
@@ -446,7 +448,7 @@ can be embedded in other templates, which allows for reusable code, JS library
 imports, or macros which will be imported by Velocity or FreeMarker templates in
 the system.
 
-Suppose you have three different Nosester web content articles and structures
+Suppose you have three different Lunar Resort web content articles and structures
 with similar aesthetics. Instead of creating three different templates from
 scratch, you can use the same generic template for all three and build off of
 it. This creates a smarter and more efficient process when creating a multitude
@@ -742,11 +744,11 @@ let's put your knowledge to the test by completing an example.
 
 ### Site Templates Example [](id=site-templates-example-liferay-portal-6-2-user-guide-03-en)
 
-Suppose we need to create the following three sites for Nose-ster's internal
-use: Engineering, Marketing, and Legal. These should be private sites that are
-only accessible to members of these respective departments. We could design each
-site separately but can save ourselves some work if we create a site template to
-use instead.
+Suppose we need to create the following three sites for the Lunar Resort's
+internal use: Engineering, Marketing, and Legal. These should be private sites
+that are only accessible to members of these respective departments. We could
+design each site separately but can save ourselves some work if we create a
+site template to use instead.
 
 To create a site template, navigate to the Control Panel and click *Site
 Templates*. Then click *Add* and enter a name for your template: we'll use
@@ -792,15 +794,15 @@ Finally, click *Save* to create your Engineering site.
 Repeat these steps to create the Marketing and Legal sites. The new sites have
 all the pages and portlets you created in the site template. To view the pages
 of the new sites, click on *Sites* in the Control Panel and then click on
-*Actions* &rarr; *Go to Private Pages* next to one of your new sites. Using site
-templates streamlines the site creation process for administrators, making it
-easy to create sites quickly. Now each Nose-ster department has its own
-calendar, documents and media library, wiki, and message boards application.
-Although the pages and portlets of each department's site are the same, each
-site will quickly be filled with department-specific information as users add
-and share content within the sites. Also, site administrators can add new pages,
-portlets, and content to their sites, further differentiating each department's
-site from the others.
+*Actions* &rarr; *Go to Private Pages* next to one of your new sites. Using
+site templates streamlines the site creation process for administrators, making
+it easy to create sites quickly. Now each department of the Lunar Resort has
+its own calendar, documents and media library, wiki, and message boards
+application.  Although the pages and portlets of each department's site are the
+same, each site will quickly be filled with department-specific information as
+users add and share content within the sites. Also, site administrators can add
+new pages, portlets, and content to their sites, further differentiating each
+department's site from the others.
 
 ### Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-liferay-portal-6-2-user-guide-03-en)
 
@@ -1266,7 +1268,7 @@ Marketplace, makes this easy.
 
 ### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
-Let's create a Local Live staging environment for Nose-ster's home page. Before
+Let's create a Local Live staging environment for the Lunar Resort home page. Before
 we begin, let's add a new page. Click *Add &rarr; Page* from the left side menu
 in the default site and name the new page *News and Events*. Next, click *News
 and Events* to view the page. Then add the Alerts and Announcements portlets to
@@ -1299,9 +1301,9 @@ parallel on multiple versions of the site's pages. Page versioning also
 maintains a history of all updates to the site from the time page versioning was
 enabled. Site administrators can revert to a previous version of the site at any
 time. This flexibility is very important in cases where a mistake is found and
-it's important to quickly publish a fix. If you're following the Nose-ster
+it's important to quickly publish a fix. If you're following the Lunar Resort
 example, check *Enabled On Public Pages* to enable page versioning for the
-Nose-ster site and then click *Save*.
+Lunar Resort site and then click *Save*.
 
 ![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
@@ -1324,14 +1326,14 @@ collaborative portlets.
 ### Using the Staging Environment [](id=using-the-staging-environment-liferay-portal-6-2-user-guide-03-en)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
-notice a colored bar with some new menus on the Dockbar when you navigate to the
-site. These new menus help us manage staged pages. You'll also notice that most
-of your page management options have been removed, because now you can't
+notice a colored bar with some new menus on the Dockbar when you navigate to
+the site. These new menus help us manage staged pages. You'll also notice that
+most of your page management options have been removed, because now you can't
 directly edit live pages. You now must use the staging environment to make
 changes. Click on the green *Staging* button to view the staged area. Your
 management options are restored and you can access some new options related to
-staging. If you're following along with the Nose-ster example, navigate back to
-the News and Events page and click on *Staging* to get your page editing
+staging. If you're following along with the Lunar Resort example, navigate back
+to the News and Events page and click on *Staging* to get your page editing
 capabilities back.
 
 ![Figure 3.22: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
