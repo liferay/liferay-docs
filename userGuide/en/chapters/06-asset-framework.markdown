@@ -1134,12 +1134,12 @@ Next, let's learn about another new feature introduced by Liferay 6.1.
 
 ## Defining Content Relationships [](id=defining-content-relationships-liferay-portal-6-2-user-guide-06-en)
 
-Related Assets is a new feature in Liferay 6.1 that enables you to connect any
-number of assets within a site or across the portal, even if they don't share
-any tags and aren't in the same category. We've already seen that you can show
-related assets within the display for a specific asset, and with the Related
-Assets portlet you can show links to any assets which are related to content
-displayed on that page.
+Related Assets was a feature introduced in Liferay 6.1 that enables you to
+connect an asset to other assets within the same site or to global assets, even
+if they don't share any tags and aren't in the same category. We've already seen
+that you can show related assets within the display for a specific asset, and
+with the Related Assets portlet you can show links to any assets which are
+related to content displayed on that page.
 
 The Related Assets portlet is based on the Asset Publisher and possesses
 essentially the same interface with one key difference. The Asset publisher
