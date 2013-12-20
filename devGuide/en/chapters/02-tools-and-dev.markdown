@@ -37,12 +37,11 @@ IDE.
 
 ## Developing Apps with Liferay IDE [](id=developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
-Even if you're a grizzled veteran Java developer, if you're going to be
-doing a lot of development for your Liferay Portal instance, consider using
-Liferay IDE. When Liferay IDE is paired with the Plugins SDK and a Liferay
-runtime environment, you have a one stop development environment where you can
-develop your Liferay plugins, build them, and deploy them to your Liferay
-instance.
+Even if you're a grizzled veteran Java developer, if you're going to be doing a
+lot of development for your Liferay Portal instance, consider using Liferay IDE.
+When Liferay IDE is paired with the Plugins SDK or Maven and a Liferay runtime
+environment, you have a one stop development environment where you can develop
+your Liferay plugins, build them, and deploy them to your Liferay instance.
 
 Liferay IDE is an extension for Eclipse IDE and supports development of plugin
 projects for the Liferay Portal platform. You can install Liferay IDE as a set
@@ -94,6 +93,9 @@ Make sure you have a supported Java JRE and Eclipse release:
     Eclipse Indigo Java EE (3.7.x)
 
     Eclipse Helios Java EE (3.6.x)
+    
+    <!-- In talks with Greg about what Liferay IDE 2.0 requires. I'll update
+    these when I have the necessary info. -Cody -->
 
 Next, we'll show you how to install Liferay IDE. 
 
@@ -120,9 +122,12 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
     Eclipse Helios Update Site:
     [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
+    <!-- These links also need to be updated. I'm inquiring from Greg. -Cody -->
+    
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-6.  After calculating dependencies, click *Next* to complete the installation.
+6.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation.
 
 7.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -157,7 +162,8 @@ these steps:
 
 6.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-7.  After calculating dependencies, click *Next* to complete the installation.
+7.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation.
 
 8.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -179,8 +185,8 @@ software packages installed.
 #### Requirements [](id=liferay-ide-alternative-requirements-liferay-portal-6-2-dev-guide-02-en-0)
 
 Before setting up Liferay IDE, you need to have appropriate versions of Liferay
-Portal, Liferay Plugins SDK, and Eclipse. Make sure you satisfy these
-requirements before proceeding: 
+Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy
+these requirements before proceeding:
 
 1.  Liferay Portal 6.0.5 or greater is downloaded and unzipped. 
 
@@ -198,17 +204,20 @@ requirements before proceeding:
 
 ---
 
+<!-- Versions need to be updated for IDE 2.0. Also need to specify required
+Maven version. Talking to Greg about requirements. -Cody -->
+
 Let's set up your Liferay Plugins SDK. 
 
 #### Setting Up the Liferay Plugins SDK [](id=setting-up-liferay-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
-Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. If you're thinking, "Wait a second, buster! You told me earlier that the
-Plugins SDK could be used without Liferay IDE!", then you're right. In the
-second half of this chapter, we'll explain how to use the Plugins SDK on its
-own, with a text editor. Here, we explain the easiest way to use the Plugins
-SDK: by running it from Liferay IDE. 
+Plugins SDK and/or Maven installation and Liferay Portal must be installed and
+configured in your Liferay IDE. If you're thinking, "Wait a second, buster! You
+told me earlier that the Plugins SDK and Maven could be used without Liferay
+IDE!", then you're right. In the second half of this chapter, we'll explain how
+to use the Plugins SDK and Maven on its own, with a text editor. Here, we
+explain the easiest way to use the Plugins SDK: by running it from Liferay IDE.
 
 1.  In Eclipse, open the *Installed Plugin SDKs* dialog box--from your *Windows*
     dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
@@ -263,7 +272,7 @@ chapter of *Using Liferay Portal*.
     ![Figure 2.3: If you have multiple JREs installed on your system, choose the one which should run Liferay.](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
@@ -317,17 +326,26 @@ If you've been following our Liferay IDE configuration instructions, your
 Plugins SDK and Liferay portal server have already been configured in Liferay
 IDE. Now let's create a new Liferay plugin project in Liferay IDE. 
 
-1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
-2.  In the project creation wizard's first window, you'll name your project and
-    select the type of plugins it will hold.
+2.  In the project creation wizard, you'll name and configure your project.
 
-    2.1. We'll create a project to hold plugins that we'll use throughout this
-    guide. You need to provide both a *Project Name*, which is used to name the
-    project's directory, and a *Display Name*, which is used to identify the
-    plugin when adding it to a page in Liferay Portal. Our demonstration project
-    will have the project name *event-listing-portlet* and the display name
-    *Event Listing*.
+	We'll create a plugin project that we'll use throughout this guide.
+	First, we'll create a bare bones plugin project; then, we'll manually add an
+	additional plugin to the project and add additional configurations. 
+	
+	2.1. Provide both a *Project Name*, which is used to name the project's
+	directory, and a *Display Name*, which is used to identify the plugin when
+	adding it to a page in Liferay Portal. Our demonstration project will have
+	the project name *event-listing-portlet* and the display name *Event
+	Listing*.
+	
+	2.2. Leave the *Use default location* checkbox checked. By default, the
+	default location is set to your current workspace. If you'd like to change
+	where your plugin project is saved in your file system, uncheck the box and
+	specify your alternate location.
+	
+	2.3. 
 
     2.2. Under *Configuration*, your newly configured SDK and Liferay Runtime
     should already be selected. If you haven't yet pointed Liferay IDE to a
