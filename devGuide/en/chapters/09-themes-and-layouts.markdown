@@ -1404,7 +1404,7 @@ Now that we've discussed how layout template TPL files are designed, let's
 convert the 1 2 1 column template that we presented above into our 1 4 1 column
 template.
 
-![Figure 9.11: You can edit your layout template with a text editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
+![Figure 9.11: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
 
 1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
    *columns-1-4-1*.
