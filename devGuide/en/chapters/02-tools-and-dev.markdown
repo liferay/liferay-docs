@@ -2343,7 +2343,7 @@ to generate a Liferay plugin project using Liferay IDE:
     portlet's default display name. The wizard derives the default display name
     from the project name, starts it in upper-case, and leaves off the plugin
     type suffix *Portlet* because the plugin type is automatically appended to
-    the display name in Liferay Portal. The IDE saves the your from repetitively
+    the display name in Liferay Portal. The IDE saves the you from repetitively
     appending the plugin type to the display name; in fact, the IDE ignores any
     plugin type suffix if you happen to append it to the display name. 
 
