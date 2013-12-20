@@ -634,13 +634,15 @@ Builder gives you three modes to work in:
 
 - Source mode displays the raw XML content of the `service.xml` file.
  
-![Figure 2.8: Liferay IDE provides an overview view of `service.xml` which allows you to edit the file by drilling down through a menu and editing form fields instead of editing the XML directly. It also provides a *Build Services* button for running Service Builder.](../../images/service-xml-entities-overview.png)
+![Figure 2.8: Liferay IDE provides an Overview view of `service.xml` which allows you to edit the file by drilling down through a menu and editing form fields instead of editing the XML directly. It also provides a *Build Services* button for running Service Builder.](../../images/service-xml-entities-overview.png)
 
 With Liferay IDE, generating your service layer is easy. First you'll create
-`service.xml`, by selecting your project (`event-listing-portlet` if you're
-following along) in the Package Explorer and then selecting *File* &rarr; *New*
-&rarr; *Liferay Service Builder*. Service Builder creates a `service.xml` file
-in your `docroot/WEB-INF/src` folder and displays the file in overview mode.
+`service.xml`, by selecting your project in the Package Explorer and then
+selecting *File* &rarr; *New* &rarr; *Liferay Service Builder*. Service Builder
+creates a `service.xml` file in your `docroot/WEB-INF/src` folder and displays
+the file in overview mode. If you're following along with the
+`event-listing-portlet`, you already have the `service.xml` file because we
+created service builder portlet project during setup.
 
 Our Service Builder chapter of this guide will lead you through filling out
 `service.xml` to define the following:
