@@ -35,17 +35,50 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 ***Using Liferay IDE:***
 
-1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*.
 
-2.  Enter *example* for your Project name and *Example* for your Display name. 
+2.  Assign a project name and display name. To demonstrate, we'll use
+    *example-hook* and *Example* for the project name and display name,
+    respectively. Notice that upon entering *example-hook* as the project
+    name, the wizard conveniently inserts *Example* in grayed-out text as the
+    plugin's default display name. The wizard derives the default display name
+    from the project name, starts it in upper-case, and leaves off the plugin
+    type suffix *Hook* because the plugin type is automatically appended to
+    the display name in Liferay Portal. The IDE saves the you from repetitively
+    appending the plugin type to the display name; in fact, the IDE ignores any
+    plugin type suffix if you happen to append it to the display name.
 
-3.  Select the Plugins SDK and Portal Runtime you've configured. 
+    Enter the following values for the project name and display name:
+
+    - **Project name:** *example-hook*
+    - **Display name:** *Example*
+
+3.  Select the build type, Plugins SDK, and Liferay runtime. 
+
+    If you select the Maven build type, you'll be prompted to enter an artifact
+    version, group ID, and active profile for your project. See [Developing
+    Plugins Using 
+    Maven](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+    for more information. Otherwise, select the Ant build type, a Plugins SDK
+    and a Liferay runtime.  
+
+    For this demonstration, make the following selections: 
+
+    - **Build type:** *Ant*
+    - **Plugins SDK:** `[a configured Plugins SDK]`
+    - **Liferay runtime:** `[a configured Liferay runtime]`
+    
+    For more information, see sections *Setting Up the Liferay Plugins SDK* and *Liferay Portal
+    Runtime and Server Setup* from  
+    [Developing Apps with Liferay IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en) 
 
 4.  Select the *Hook* Plugin Type. 
 
 5.  Click *Finish*. 
 
-![Figure 10.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a Plugins SDK and Liferay Runtime, select *Hook*, then click *Finish*.](../../images/06-hooks-1.png)
+Figure 10.1 shows the values you specified for the hook plugin.
+
+![Figure 10.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a build type, Plugins SDK, and Liferay Runtime, select *Hook*, and then click *Finish*.](../../images/hooks-create-hook-project-with-sdk.png)
 
 The Plugins SDK automatically names the hook by appending "-hook" to the project
 name. With Liferay IDE, you can create a hook in a completely new plugin project
@@ -79,6 +112,28 @@ read, registered and is now available for use.
     Reading plugin package for example-hook
     Registering hook for example-hook
     Hook for example-hook is available for use
+
+Voila! Your hook deployed.
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** If the Liferay server
+ prints the following message to your console, the *Marketplace Portlet* and 
+ *Portal Compatibility Hook* must not already be deployed on your server.
+
+    Plugin example-hook requires marketplace-portlet, portal-compat-hook
+
+ For Liferay 6.2.0 CE GA1, you can fork and clone Liferay's *liferay-plugins*
+ project from GitHub, checkout the respective branch and/or tag, and deploy
+ each plugin. You can install the Plugins SDK in Liferay IDE and import each
+ plugin and deploy them. Here is information on each of the plugins: 
+
+- *Marketplace Portlet* (`marketplace-portlet`) - is available at
+`liferay-plugins/portlets/marketplace-portlet`.
+- *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
+`liferay-plugins/hooks/portal-compat-hook`.
+
+---
 
 If you ever need to redeploy your plugin while in Liferay IDE, right-click
 your plugin's icon located underneath your server and select *Redeploy*. 
@@ -118,7 +173,7 @@ plugin is built to contain this:
 In Liferay IDE's *Package Explorer*, here's what the hook structure looks
 like:
 
-![Figure 10.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/06-hooks-3.png)
+![Figure 10.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/hooks-file-structure.png)
 
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook. We'll start by making one of the most common hook
@@ -168,6 +223,9 @@ hook to modify your portal's *Terms of Use* page.
     accessible and lets you specify key words to narrow your search. 
 
     ![Figure 7.4: Liferay IDE simplifies adding a custom JSP to your hook by providing a powerful overview mode for editing your `liferay-hook.xml` file.](../../images/add-jsp-customization-with-hook.png)
+
+    <!-- We'll need to retake this Figure's screenshot as the ability to add a custom 
+    JSP using the graphical editor is broken. Jim -->
 
 5.  Open your hook's `docroot/META-INF/custom_jsps/html/portal/terms_of_use.jsp`
     file and modify it as necessary. 
