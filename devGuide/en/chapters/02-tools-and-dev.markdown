@@ -345,39 +345,53 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 	where your plugin project is saved in your file system, uncheck the box and
 	specify your alternate location.
 	
-	2.3. 
+	2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+	you'd like to use *Maven* for your build type, navigate to the *Developing
+	Plugins Using Maven* section for details.
 
-    2.2. Under *Configuration*, your newly configured SDK and Liferay Runtime
-    should already be selected. If you haven't yet pointed Liferay IDE to a
-    Plugins SDK, click *Configure* to open the *Installed Plugin SDK* management
-    wizard. You can also access the *New Server Runtime Environment* wizard if
-    you need to set up your runtime server; just click the *New* button next to
-    the *Liferay Portal Runtime* dropdown menu. 
+    2.4. Your newly configured SDK and Liferay Runtime should already be
+    selected. If you haven't yet pointed Liferay IDE to a Plugins SDK, click
+    *Configure SDKs* to open the *Installed Plugin SDKs* management wizard. You
+    can also access the *New Server Runtime Environment* wizard if you need to
+    set up your runtime server; just click the *New Liferay Runtime* button next
+    to the *Liferay Portal Runtime* dropdown menu.
 
-    2.3. Under *Plugin Type*, indicate which plugin type your project will hold
-    by selecting one from the list. You can choose from *Portlet*, *Hook*,
-    *Ext*, *Layout*, or *Theme*. Liferay IDE provides handy wizards for creating
-    new Liferay projects. Our demonstration project will hold portlets for the
-    Nose-ster organization, so make sure *Portlet* is selected. The portlet
-    project creation wizard spans multiple windows so make sure to click *Next*,
-    not *Finish*, after entering the required information in the first window. 
+    2.5. Under *Plugin Type*, indicate which plugin type your project will hold
+    by selecting one from the list. You can choose from *Portlet*, *Service
+    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, or *Ext*. Liferay IDE
+    provides handy wizards for creating new Liferay projects. Our demonstration
+    project will hold service builder portlets for the Nose-ster organization,
+    so make sure *Service Builder Portlet* is selected.
 
-    ![Figure 2.5: The wizard for creating a new portlet project spans multiple wizards. The wizard uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
+    ![Figure 2.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
-3.  The wizard's next window lets you choose a portlet framework to base your
-    portlet on. Liferay IDE provides options to generate portlets that can
-    leverage one of several frameworks, including *Liferay MVC*, *JavaServer
-    Face (JSF)*, and *Vaddin*.  There's an additional option to create a custom
-    portlet class based on the selected framework. You can find more
-    information about these frameworks and creating custom portlet classes in
-    the chapter on portlet development. In that chapter, we'll discuss the
-    plugin creation wizard in more detail. For creating our first portlet in our
-    *Event Listing* project, select the *Liferay MVC* framework, flag the
-    *Create custom portlet class* checkbox, and click *Next*. 
+    You can find more information Liferay's plugin frameworks in the chapter on
+    portlet development. In that chapter, we'll discuss the plugin creation
+    wizard in more detail.
+    
+    Great! You've created a Liferay portlet project! If you only wanted to
+    create a bare bones, deployable portlet-- you're done! You can skip to the
+    next section to learn how to deploy your project to a Liferay server. If
+    you're interested in learning how to add multiple plugins to a Liferay
+    project, and also want to build the Event Listing portlet for later
+    examples, proceed to the next step!
 
-4.  The wizard lets you specify the basic class information for your portlet.
-    Specify *EventListingPortlet* as the name of the portlet class, enter
-    *com.nosester.portlet.eventlisting* as its Java package, and select
+3.  We'll temporarily tear out some Event Listing portlet descriptors so we can
+    begin with a clean slate for our project framework. 
+    
+    3.1. Navigate to the portlet's `docroot/WEB-INF/liferay-display.xml` file
+    and remove the `<portlet id="event-listing" />` tag.
+    
+    3.2. Open the `docroot/WEB-INF/liferay-portlet.xml` file and remove the
+    <portlet>...</portlet> tags and code residing between those tags:
+    
+    3.3. Navigate to the `docroot/WEB-INF/portlet.xml` file and remove the
+    <portlet>...</portlet> tags and code residing between those tags:	
+    
+4.  Right-click your event-listing-portlet project &rarr; *New* &rarr; *Liferay
+    Portlet*. The wizard lets you specify the basic class information for your
+    new portlet. Specify *EventListingPortlet* as the name of the portlet class,
+    enter *com.nosester.portlet.eventlisting* as its Java package, and select
     *com.liferay.util.bridges.mvc.MVCPortlet* as it's superclass. Click *Next*.
 
 5.  In this window we'll specify the portlet's deployment descriptor details. In
@@ -389,15 +403,14 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
     **Title:** *Event Listing Portlet*
 
-    You can also specify which portlet modes you'd like
-    your portlet to have. *View* mode is automatically selected. There are also
-    options for creating resources: you can specify the folder where JSP files
-    will be created as well as whether or not a resource bundle file should be
-    created. We'll leave the *Create JSP files* box flagged, specify
-    *html/eventlisting* as the JSP folder, and flag the *Create resource bundle
-    file* box. Click *Next*. 
+    You can also specify which portlet modes you'd like your portlet to have.
+    *View* mode is automatically selected. There are also options for creating
+    resources: you can specify the folder where JSP files will be created as
+    well as whether or not a resource bundle file should be created. We'll leave
+    the *Create JSP files* box flagged, specify *html/eventlisting* as the JSP
+    folder, and flag the *Create resource bundle file* box. Click *Next*.
 
-4.  This window lets you specify portlet deployment descriptor details that are
+6.  This window lets you specify portlet deployment descriptor details that are
     specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. In the *Liferay Display* section, you can choose the category
@@ -451,6 +464,7 @@ IDE/Developer Studio:
             - `portlet.xml`
             - `web.xml`
         - `icon.png`
+        - `view.jsp`
 
 All projects, regardless of type, are created with a `build.xml` and a
 `liferay-plugin-package.properties` file--we've highlighted each of them with
@@ -508,42 +522,36 @@ create new plugins inside of existing projects in Liferay IDE.
 
 ### Creating Plugins [](id=creating-plugins-liferay-portal-6-2-dev-guide-02-en)
 
-Liferay projects can contain multiple plugins. When you specify that your
-project is a portlet plugin project, the wizard guides you through the creation
-of a portlet to put inside the project. If you've followed the instructions from
-the earlier section on creating new Liferay projects, you should already have
-created the event-listing-portlet project and created the Event Listing portlet
-inside it. In this section we'll add a second portlet to the
-event-listing-portlet project: the Location Listing portlet. This illustrates
-the general process for creating plugins inside of an existing Liferay project.
-Later in this guide, when we complete developing the Event Listing and Location
-Listing portlets, they'll allow users to add, edit, or remove events or
-locations, display lists of events or locations, search for particular events or
-locations, and view the details of individual events or locations. For now,
-we'll show you how to create the Location Listing portlet in the
-event-listing-portlet project. 
+Liferay projects can contain multiple plugins. If you've followed the
+instructions from the earlier section on creating new Liferay projects, you
+should already have created the event-listing-portlet project and created the
+Event Listing portlet inside it. In this section we'll add a second portlet to
+the event-listing-portlet project: the Location Listing portlet. This
+illustrates the general process for creating plugins inside of an existing
+Liferay project. Later in this guide, when we complete developing the Event
+Listing and Location Listing portlets, they'll allow users to add, edit, or
+remove events or locations, display lists of events or locations, search for
+particular events or locations, and view the details of individual events or
+locations. For now, we'll show you how to create the Location Listing portlet in
+the event-listing-portlet project.
 
 Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
 Since it's a portlet type project it has a skeleton in place for supporting more
 portlet plugins. Let's create our Location Listing portlet inside of it. 
 
-Use the following steps to create the Event Listing portlet:
+Use the following steps to create the Location Listing portlet:
 
-1.  Click on *File* &rarr; *New* &rarr; *Liferay Portlet*. 
+1.  Right click on your `event-listing-portlet` project in Liferay IDE's 
+    *Package Explorer* and select *New* &rarr; *Liferay Portlet*. 
 
-    Alternatively, right click on your `event-listing-portlet` project in
-    Liferay IDE's *Package Explorer* and select *New* &rarr; *Liferay
-    Portlet*. 
-
-2.  The *New Liferay Portlet* dialog box appears with your
-    plugin project *event-listing-portlet* selected as the *Portlet plugin
-    project* by default. It's a good idea to name your *Portlet class* after the
-    name of your portlet. We'll name the class *LocationListingPortlet* in this
-    example. Name your *Java package* after the plugin's parent project, so
-    it will be *com.nosester.portlet.eventlisting*, and leave
-    the *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*.
-    Alternatively, you could have selected
-    *com.liferay.portal.kernel.portlet.LiferayPortlet* or
+2.  The *New Liferay Portlet* dialog box appears with your plugin project 
+    *event-listing-portlet* selected as the *Portlet plugin project* by default.
+    It's a good idea to name your *Portlet class* after the name of your
+    portlet. We'll name the class *LocationListingPortlet* in this example. Name
+    your *Java package* after the plugin's parent project, so it will be
+    *com.nosester.portlet.eventlisting*, and leave the *Superclass* as
+    *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you could have
+    selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
     *javax.portlet.GenericPortlet* for your superclass. Click *Next*.
 
 3.  In the next window of the *New Liferay Portlet* wizard, you'll specify
@@ -619,7 +627,7 @@ Builder gives you three modes to work in:
 
 - Overview mode provides an easy to use graphical interface in Liferay IDE
   where you can add to and edit the `service.xml` file. Overview mode also
-gives you a *Build Services* button to generate the service layer. 
+  gives you a *Build Services* button to generate the service layer. 
 
 - Diagram mode gives you a visualization of the relationships between service
   entities; it's often helpful to create your entities using diagram mode.
