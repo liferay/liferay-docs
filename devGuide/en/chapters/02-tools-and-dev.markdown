@@ -502,7 +502,7 @@ Later in this guide, when we complete developing the Event Listing and Location
 Listing portlets, they'll allow users to add, edit, or remove events or
 locations, display lists of events or locations, search for particular events or
 locations, and view the details of individual events or locations. For now,
-we'll show you how to creat the Location Listing portlet in the
+we'll show you how to create the Location Listing portlet in the
 event-listing-portlet project. 
 
 Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
@@ -522,9 +522,9 @@ Use the following steps to create the Event Listing portlet:
     project* by default. It's a good idea to name your *Portlet class* after the
     name of your portlet. We'll name the class *LocationListingPortlet* in this
     example. Name your *Java package* after the plugin's parent project, so
-    it will be *com.nosester.portlet.eventlisting*. And leave
+    it will be *com.nosester.portlet.eventlisting*, and leave
     the *Superclass* as *com.liferay.util.bridges.mvc.MVCPortlet*.
-    Alternatively, your could have selected
+    Alternatively, you could have selected
     *com.liferay.portal.kernel.portlet.LiferayPortlet* or
     *javax.portlet.GenericPortlet* for your superclass. Click *Next*.
 
@@ -653,7 +653,7 @@ existing projects into Liferay IDE.
 
 ### Importing Existing Liferay Projects from a Plugins SDK [](id=importing-existing-liferay-projects-liferay-portal-6-2-dev-guide-02-en)
 
-Do you want to import one or more Liferay projectsinto your Liferay IDE
+Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy.  Don't worry
 if the projects already contain `.project` or `.classpath` files, the process
 we'll show you will still import them into your workspace. 
@@ -1434,7 +1434,7 @@ manage your repositories using a GUI. For this, you'll want Nexus OSS. It's a
 Maven repository management server that facilitates creating and managing
 release servers, snapshot servers, and proxy servers. Release servers hold
 software that has met the software provider's criteria for planned features and
-and quality. Snapshot servers hold software that is in a state of development. If
+quality. Snapshot servers hold software that is in a state of development. If
 you're not interested in using Nexus as a repository management server, feel
 free to skip this section. 
 
@@ -1738,14 +1738,14 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     remote Maven repository or don't want the artifacts to be remotely deployed,
     you can run the install target instead of the deploy
     target: `ant -f build-maven.xml install-artifacts`. The target installs the
-    Liferay artifacts you built to your local .m2 respository (e.g., to your
+    Liferay artifacts you built to your local .m2 repository (e.g., to your
     `[USER_HOME]/.m2/` directory). 
 
 ---
 
 ![note](../../images/tip-pen-paper.png) **Warning:** During the process of
  packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
- may experience sluggish performance or an insuffient amount of Java heap space.
+ may experience sluggish performance or an insufficient amount of Java heap space.
  There are two solutions to this problem:
  
 - *Increase the memory available for the Javadoc packaging process:*
@@ -1871,6 +1871,194 @@ automatically downloads the required artifacts from the Central Repository into
 your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
 Liferay CE plugins. 
+
+Now that we have our Maven artifacts set up, let's configure Liferay IDE with
+Maven.
+
+### Using Liferay IDE with Maven
+
+Wouldn't it be nice if you could manage your Maven project by a Liferay tool
+such as IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
+(`m2e-liferay`), or the added support of configuring Maven projects as full
+Liferay IDE projects. Let's dive into the reasoning for the Maven project
+configurator and how to install it and its dependencies.
+
+#### Installing Maven Plugins for Liferay IDE
+
+In order to properly support Maven projects in IDE, you first need a mechanism
+to recognize Maven projects as IDE projects. IDE projects are recognized in
+Eclipse as faceted web projects that include the appropriate Liferay plugin
+facet. Therefore, all IDE projects are also Eclipse web projects (faceted
+project with web facet installed). In order to get Maven projects to be
+recognized by IDE and work with other JEE tooling, such as the *Servers* view,
+they must be flexible web projects as well. For Maven projects to fulfill the
+requirements of being a flexible web project with the Liferay facet installed,
+the `m2e-liferay` feature requires additional Eclipse plugin dependencies:
+
+- `m2e-core` (Maven integration for Eclipse)
+- `m2e-wtp` (Maven integration for WTP)
+
+Luckily, these dependencies are included when you install the `m2e-liferay`
+plugin. We'll flesh out the installation process soon, but first, let's get a
+deeper understanding of how these plugins work to give us our IDE/Maven
+compatibility.
+
+The `m2e-core` plugin is the standard Maven tooling support for Eclipse. The
+main benefits it provides is dependency resolution classpath management and an
+abstract project configuration framework for adopters. Also, in order for
+Liferay projects using Maven to be recognized as flexible web projects, we must
+use the `m2e-wtp` plugin. This provides project configuration mapping between
+POMs in the Maven model to the flexible web project support in Eclipse. With
+these two plugin dependencies in place, the only remaining component is making
+sure that `m2e-core` can recognize the extra lifecycle metadata mappings that
+are required to support the custom Liferay goals. Let's break down Lifecycle
+mappings just a bit to get a better understanding of what this means.
+
+Both Maven and Eclipse have their own standard build project lifecycles that are
+independent from each other. Therefore, for both to work together and run
+seamlessly within Liferay IDE, you need lifecycle mapping to link both
+lifecycles into one, combined lifecycle. Normally, this would have to be done
+manually by the user. However, with the `m2e-liferay` plugin, the lifecycle
+metadata mapping and Eclipse build lifecycles are automatically handled
+providing a seamless user experience. The lifecycle mappings for your project can be viewed
+by right-clicking your project and selecting *Properties* &rarr; *Maven* &rarr;
+*Lifecycle Mapping*.
+
+![Figure 2.22: View your project's lifecycle mappings for verification of successful plugin execution.](../../images/maven-lifecycle-mapping.png)
+
+When first installing Liferay IDE, you're able to indicate that you'd like to
+use Maven in the startup screen and the Maven plugins are installed
+automatically. Did you miss this during set up? No problem! To install the
+required Maven plugins, navigate to *Help* &rarr; *Install New Software*. In
+the *Work with* field, insert the following: `Liferay IDE repository -
+http://releases.liferay.com/tools/ide/latest/milestone/`. 
+
+If the `m2e-liferay` plugin does not appear, this means you already have it
+installed. To verify, uncheck the *Hide items that are already installed*
+checkbox. Also, if you'd like to view everything that is bundled with the
+`m2e-liferay` plugin, uncheck the *Group items by category* checkbox.
+
+![Figure 2.23: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
+
+Awesome! The required Maven plugins are installed and your IDE instance is ready
+to be mavenized! Next, let's learn how to configure an existing Maven project.
+
+#### Configuring your Liferay Maven Project
+
+Now your Liferay IDE instance is Maven-ready and you have an existing Maven
+project. Let's learn about what is going on under the hood and configure your
+project accordingly. Note, if you'd like to learn how to create a new Maven
+project in IDE, visit the *Creating Liferay Plugins with Maven* section.
+Furthermore, you can import an existing Maven project by navigating to *File*
+&rarr; *Import* &rarr; *Maven* and selecting the import source of your Maven
+project.
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
+of Eclipse and Maven, it is unsafe to manually insert or overwrite the
+`.classpath` and `.project` files and `.settings` folder. IDE automatically
+generates these files when a project is imported or updated.
+
+---
+
+The `m2e-core` plugin will delegate project configuration of your Liferay Maven
+plugin to the `m2e-liferay` project configurator. Thus, the `m2e-wtp` project
+configurator will execute, which converts your Liferay WAR package into an
+Eclipse flexible web project. Next, the `m2e-liferay` configurator will execute
+and look for the Liferay Maven plugin to be registered on the POM effective
+model for WAR type packages. If no Liferay Maven plugin is configured on the
+effective POM for the project, the project configuration will not continue. If
+the plugin has been configured, there are a list of key properties that must be
+specified, which you can reference in the next section titled *Using a Parent
+Plugin Project*.
+
+There are various ways to satisfy these properties-- the Maven profile in the
+User or Global `settings.xml` file (recommended), in the parent `pom.xml`, or in
+the `pom.xml` directly. You can think of these choices as a hierarchy for how
+your Maven plugins receive their properties.
+
+*Global* `settings.xml`: provides configuration for all plugins belonging to all
+users on a machine. This file resides in the `${MAVEN_HOME}/conf/settings.xml`
+directory.
+
+*User* `settings.xml`: provides configuration for all plugins belonging to a
+single user on a machine. This file resides in the
+`${USER_HOME}/.m2/settings.xml` directory.
+
+*Parent* `pom.xml`: provides configuration for all modules in the parent
+project.
+
+`pom.xml`: provides configuration for the single plugin project.
+
+Note that if a profile is active from your `settings.xml`, its values will
+override your properties in a POM. If you'd like to specify the properties in a
+POM, navigate to the next section for more details.
+
+Here's an example of what a Maven profile looks like inside the `settings.xml`
+file.
+
+	<profiles>
+		<profile>
+			<id>sample</id>
+				<properties>
+					<plugin.type>portlet</plugin.type>
+					<liferay.version>6.2.0</liferay.version>
+					<liferay.maven.plugin.version>6.2.0</liferay.maven.plugin.version>
+					<liferay.auto.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\deploy</liferay.auto.deploy.dir>
+					<liferay.app.server.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps</liferay.app.server.deploy.dir>
+					<liferay.app.server.lib.global.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\lib\ext</liferay.app.server.lib.global.dir>
+					<liferay.app.server.portal.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps\ROOT</liferay.app.server.portal.dir>
+				</properties>
+		</profile>
+	</profiles>
+
+Once you have a Maven profile configured in the `${USER_HOME}/.m2/settings.xml`
+file, you can activate the profile by right-clicking on your project &rarr;
+*Properties* &rarr; *Maven* and entering the profile IDs that supply the
+necessary settings into the *Active Maven Profiles* text field. For example, to
+reference the profile and properties we listed above, you'd enter *sample* for
+the Active Maven Profile. Once you've specified all the values, the configurator
+(`m2e-liferay`) will verify the properties are valid. If there are errors, the
+configurator will mark the user's `pom.xml` with these errors. If you need to
+fix an error, you can update the project to persist the change by right-clicking
+the project &rarr; *Maven* &rarr; *Update Project*.
+
+After your POM configuration meets the requirements, the configurator will
+install the Liferay plugin facet, and your Maven project is officially a Liferay
+IDE project!
+
+Once you have your Maven project configured, you may want to execute a specific
+Maven goal such as `liferay:build-lang` or `liferay:build-db` that is associated
+with your build phase. To access your project's Maven goals and execute them,
+right-click your project &rarr; *Liferay* &rarr; *Maven* and select the goal to
+execute. To learn more about Maven's build lifecycle and plugin goals, visit
+Apache's [Build Lifecycle
+Basics](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Build_Lifecycle_Basics)
+guide.
+
+When working with your `pom.xml` file in IDE, you'll notice several different
+viewing modes to work with:
+
+**pom.xml:** provides an editable POM as it appears on the file system.
+
+**Effective POM:** provides a read-only version of your project POM merged with
+its parent POM(s), `settings.xml`, and the settings in Eclipse for Maven.
+
+**Overview:** provides a graphical interface where you can add to and edit the
+`pom.xml` file.
+
+**Dependencies:** provides a graphical interface for adding and editing
+dependencies in your project, as well as modifying the `dependencyManagement`
+section of the `pom.xml` file.
+
+**Dependency Hierarchy:** provides hierarchical view of project dependencies and
+interactive list of resolved dependencies.
+
+![Figure 2.24: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
+
+By taking advantage of these interactive modes, modifying and organizing your
+POM and its dependencies has never been easier!
 
 Next, we'll consider the benefits of using a Maven parent project with your
 plugin projects. 
@@ -2059,8 +2247,11 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 		</liferay.version>
 	</properties>
 
+You can also specify these key properties in your Global or User `settings.xml`
+file. To learn more about this method, visit the *Configuring Your Liferay Maven
+Project* section.
 
-The Liferay plugins you develop depend on several Lifeary artifacts. We've
+The Liferay plugins you develop depend on several Liferay artifacts. We've
 included them in individual `dependency` elements within the POM's
 `dependencies` element. All of your parent project's modules (i.e., projects
 that refer to this parent) can leverage these dependencies. 
@@ -2092,11 +2283,66 @@ below to generate Liferay plugin projects of any type.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
- and that it's executable is in your `$PATH` environment variable. 
+ and that its executable is in your `$PATH` environment variable. 
 
 ---
 
-Here's how you use Maven archetypes to generate a Liferay plugin project:
+We'll demonstrate two ways of creating Liferay plugins with Maven: using Liferay
+IDE and using the command line. First, let's learn how to use Maven archetypes
+to generate a Liferay plugin project using Liferay IDE:
+
+1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Plugin Project*.
+
+2.  Assign a project name and display name. For our example, we'll use
+    *sample-portlet* and *Sample* for the project name and display names,
+    respectively. Notice that the display name field does *not* append the
+    *portlet* text. Because the plugin type is automatically appended to the
+    display name in Liferay Portal, there is no need to specify it. Therefore,
+    IDE prevents a developer from repetitively appending the plugin type, and
+    ignores it completely if it's the last appended string of text.
+
+3.  Select *Maven (liferay-maven-plugin)* for the build type. Notice that some
+    of the options for your plugin project changed, including the *Location* 
+    field, which is set to the user's workspace by default. Choose the parent 
+    directory in which you want to create the plugin project. It is a best 
+    practice to create a parent project for your Maven plugins, that way, they 
+    can all share common project information. See section *Using a Parent Plugin
+    Project* for details.
+
+4.  Specify the *Artifact version* and *Group id*. For our example, we'll use
+    `1.0-SNAPSHOT` and `com.liferay.sample` for the artifact version and group
+    id, respectively.
+
+5.  Specify the active profile that you'd like your Liferay plugin project to
+    use. If you don't remember your active profile or haven't created one, click
+    the *Select Active Profiles* to the right of the text field. If you have an 
+    active profile, they will be listed in the left menu. To select an existing 
+    profile ID, highlight it and select the illuminated *right arrow* button to 
+    transfer it to the right menu. Otherwise, if you don't have an existing 
+    profile ID, click the green *addition* button and give it a name.
+    
+    If you're specifying a new profile ID, your plugin will be created, but will
+    need further attention before it is deployable. You'll need to specify the
+    necessary properties within the profile, which can be referenced in the
+    *Configuring your Liferay Maven Project* section of this chapter.
+    
+    You also have the option to create a profile based on a Liferay runtime. To
+    do this, select the *Create New Maven Profile Based on Liferay Runtime*
+    button to the right of the text field. Specify the *Liferay runtime*, *New
+    profile id*, and *Liferay version*. For the new profile location you can
+    choose to specify your profile in the `settings.xml` (recommended) or your
+    project `pom.xml`. When creating your Maven profile based on a Liferay
+    runtime, the new profile is automatically populated with the required
+    properties, and no additional profile configuration is needed after your
+    plugin is created.
+
+6.  Select the *Portlet* plugin type (if necessary) and then click *Finish*.
+
+	![Figure 2.25: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+
+Great! You've successfully created a Liferay portlet project using Maven in
+Liferay IDE! Next, let's run through the steps of creating your Liferay Maven
+plugins using the command line.
 
 1.  Open the command prompt and navigate to the parent directory in which you
     want to create the plugin project. Archetype will create a sub-directory for
@@ -2204,7 +2450,7 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.22: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.26: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2224,8 +2470,8 @@ plugin is installed there.
 
 ---
 
-Following these steps, you can use Archetype to generate all your Liferay
-plugins! 
+Following these steps using Liferay IDE or the command line, you can use
+Archetype to generate all your Liferay plugins! 
 
 Plugin projects generated from a Liferay archetype are equipped with a POM
 that's ready to work with a parent project. It inherits the values for
@@ -2345,7 +2591,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.23: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.27: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
@@ -2518,7 +2764,7 @@ directory structure:
                     - liferay-plugin-package.properties
                     - web.xml
                 - css/ \* Optionally add to hold CSS customizations
-                - images/ \* Optionally add to hold custon images
+                - images/ \* Optionally add to hold custom images
                 - js/ \* Optionally add to hold JavaScript customizations
                 - templates/ \* Optionally add to hold template customizations
 
