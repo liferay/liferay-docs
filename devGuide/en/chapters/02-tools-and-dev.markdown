@@ -1705,8 +1705,7 @@ latest Liferay CE Maven artifacts from source, follow these steps:
 
         gpg.keyname=[GPG key name]
         gpg.passphrase=[GPG passphrase]
-        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/l\
-        iferay-snapshots
+        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots
         lp.maven.repository.id=liferay-snapshots
 
     Of course, replace the values specified above with your own GPG and Maven
@@ -1833,8 +1832,7 @@ Here's how you do it:
     Here are some example property values:
 
         lp.maven.repository.id=liferay-releases
-        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/l\
-        iferay-releases
+        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-releases
 
     Note, if you created a repository in Nexus OSS, as demonstrated in the
     section *Managing Maven Repositories*, you can specify that repository's ID
@@ -2013,16 +2011,11 @@ file.
                 <properties>
                     <plugin.type>portlet</plugin.type>
                     <liferay.version>6.2.0</liferay.version>
-                    <liferay.maven.plugin.version>6.2.0</liferay.maven.plugin.vers\
-    ion>
-                    <liferay.auto.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\
-    \deploy</liferay.auto.deploy.dir>
-                    <liferay.app.server.deploy.dir>E:\liferay-portal-tomcat-6.2.0-\
-    ce-ga1\tomcat-7.0.42\webapps</liferay.app.server.deploy.dir>
-                    <liferay.app.server.lib.global.dir>E:\liferay-portal-tomcat-6.\
-    2.0-ce-ga1\tomcat-7.0.42\lib\ext</liferay.app.server.lib.global.dir>
-                    <liferay.app.server.portal.dir>E:\liferay-portal-tomcat-6.2.0-\
-    ce-ga1\tomcat-7.0.42\webapps\ROOT</liferay.app.server.portal.dir>
+                    <liferay.maven.plugin.version>6.2.0</liferay.maven.plugin.version>
+                    <liferay.auto.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\deploy</liferay.auto.deploy.dir>
+                    <liferay.app.server.deploy.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps</liferay.app.server.deploy.dir>
+                    <liferay.app.server.lib.global.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\lib\ext</liferay.app.server.lib.global.dir>
+                    <liferay.app.server.portal.dir>E:\liferay-portal-tomcat-6.2.0-ce-ga1\tomcat-7.0.42\webapps\ROOT</liferay.app.server.portal.dir>
                 </properties>
         </profile>
     </profiles>
@@ -2112,8 +2105,7 @@ directory. Insert the following XML code into the POM:
 	<?xml version="1.0" encoding="UTF-8"?>
 	<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/\
-	xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<modelVersion>4.0.0</modelVersion>
 
 		<groupId>com.liferay.sample</groupId>
@@ -2607,14 +2599,12 @@ these steps:
         <distributionManagement>
             <repository>
                 <id>liferay-releases</id>
-                <url>http://localhost:8081/nexus/content/repositories/liferay-rele\
-                ases</url>
+                <url>http://localhost:8081/nexus/content/repositories/liferay-releases</url>
             </repository>
             <snapshotRepository>
                 <id>liferay-snapshots</id>
                 <name>Liferay Snapshots Repository</name>
-                <url>http://localhost:8081/nexus/content/repositories/liferay-snap\
-                shots</url>
+                <url>http://localhost:8081/nexus/content/repositories/liferay-snapshots</url>
             </snapshotRepository>
         </distributionManagement>
 
