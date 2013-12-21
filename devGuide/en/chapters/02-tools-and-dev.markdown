@@ -949,12 +949,10 @@ configure the Remote Server Adapter, use the following steps:
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance: 
 
-    *Hostname*: Enter the IP address of your remote Liferay Portal instance's
+    - **Hostname:** Enter the IP address of your remote Liferay Portal instance's
     machine. 
-
-    *HTTP Port*: Enter the port it runs on (default: 8080). 
-
-    *Username* and *Password*: Enter your administrator credentials for the
+    - **HTTP Port:** Enter the port it runs on (default: 8080). 
+    - **Username** and **Password:** Enter your administrator credentials for the
     remote Liferay Portal instance. 
 
     Leave the *Liferay Portal Context Path* and *Server Manager Context Path*
@@ -1146,10 +1144,9 @@ properties:
 
 4.  Set the `ANT_HOME` variable:
 
-    *Variable name:* `ANT_HOME`. 
-
-    *Variable value:* *<Ant installation path>* (e.g.,
-    `C:\Java\apache-ant-<version>`). 
+    - **Variable name:** *ANT_HOME*
+    - **Variable value:** `[Ant installation path]` (e.g.,
+    `C:\Java\apache-ant-[version]`)
 
     Click *OK*. 
 
@@ -1525,13 +1522,10 @@ To create a repository using Nexus, follow these steps:
     so specify *Release* as the repository policy. Below are examples of
     repository property values: 
 
-    *Repository ID:* `liferay-releases`
-
-    *Repository Name:* `Liferay Release Repository`
-
-    *Provider:* `Maven2`
-
-    *Repository Policy:* `Release`
+    - **Repository ID:** *liferay-releases*
+    - **Repository Name:** *Liferay Release Repository*
+    - **Provider:** *Maven2*
+    - **Repository Policy:** *Release*
 
 4.  Click *Save*.
 
@@ -1549,13 +1543,10 @@ its repository policy:
 
 3.  Specify repository properties like the following:
 
-    *Repository ID:* `liferay-snapshots`
-
-    *Repository Name:* `Liferay Snapshot Repository`
-
-    *Provider:* `Maven2`
-
-    *Repository Policy:* `Snapshot`
+    - **Repository ID:** *liferay-snapshots*
+    - **Repository Name:** *Liferay Snapshot Repository*
+    - **Provider:** *Maven2*
+    - **Repository Policy:** *Snapshot*
 
 4.  Click *Save*.
 
