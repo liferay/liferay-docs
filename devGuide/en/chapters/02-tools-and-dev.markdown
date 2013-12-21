@@ -365,7 +365,6 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
     ![Figure 2.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
-    
 Great! You've created a Liferay portlet project! 
 
 Note, you can find more information Liferay's plugin frameworks in the chapter
@@ -477,7 +476,7 @@ Listing portlet by removing its descriptors and it's JSP.
     and remove the `<portlet id="event-listing" />` tag.
     
 2.  Open the `docroot/WEB-INF/liferay-portlet.xml` file and remove the
-    <portlet>...</portlet> tags and code residing between those tags.
+    `<portlet>...</portlet>` tags and code residing between those tags.
     
 3.  Navigate to the `docroot/WEB-INF/portlet.xml` file and remove the
     `<portlet>...</portlet>` tags and code residing between those tags.	
@@ -491,20 +490,19 @@ to start creating the example plugins.
 
 Liferay projects can contain multiple plugins. If you've followed the
 instructions from the earlier section on creating new Liferay projects, you
-should already have created the event-listing-portlet project and created the
-Event Listing portlet inside it. In this section we'll add a second portlet to
-the event-listing-portlet project: the Location Listing portlet. This
-illustrates the general process for creating plugins inside of an existing
-Liferay project. Later in this guide, when we complete developing the Event
-Listing and Location Listing portlets, they'll allow users to add, edit, or
-remove events or locations, display lists of events or locations, search for
-particular events or locations, and view the details of individual events or
-locations. For now, we'll show you how to create the Location Listing portlet in
-the event-listing-portlet project.
+should already have created the event-listing-portlet project. In this section
+we'll add two portlets to the event-listing-portlet project: the Location
+Listing portlet and the Event Listing portlet. This illustrates the general
+process for creating plugins inside of an existing Liferay project. Later in
+this guide, when we complete developing the Event Listing and Location Listing
+portlets, they'll allow users to add, edit, or remove events or locations,
+display lists of events or locations, search for particular events or locations,
+and view the details of individual events or locations. For now, we'll show you
+how to create both portlets in the event-listing-portlet project. 
 
 Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
 Since it's a portlet type project it has a skeleton in place for supporting more
-portlet plugins. Let's create our Location Listing portlet inside of it. 
+portlet plugins. Let's start by creating the Location Listing portlet. 
 
 Use the following steps to create the Location Listing portlet:
 
@@ -519,7 +517,20 @@ Use the following steps to create the Location Listing portlet:
     *com.nosester.portlet.eventlisting*, and leave the *Superclass* as
     *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you could have
     selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
-    *javax.portlet.GenericPortlet* for your superclass. Click *Next*.
+    *javax.portlet.GenericPortlet* for your superclass. 
+
+    ![Figure 2.7: Liferay IDE's portlet creation wizard makes creating a portlet class is easy.](../../images/create-a-portlet-class.png)
+
+    Here are the portlet class values to specify for the example Location
+    Listing portlet: 
+
+    - **Portlet plugin project:** *event-listing-portlet*
+    - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
+    - **Portlet class:** *LocationListingPortlet*
+    - **Java package:** *com.nosester.portlet.eventlisting*
+    - **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
+
+    Click *Next*.
 
 3.  In the next window of the *New Liferay Portlet* wizard, you'll specify
     deployment descriptor details for your portlet. First enter the *Name* of
@@ -531,9 +542,19 @@ Use the following steps to create the Location Listing portlet:
     where JSP files will be created as well as whether or not a resource bundle
     file will be created. We'll leave the *Create JSP files* box flagged,
     specify *html/locationlisting* as the JSP folder, and flag the *Create
-    resource bundle file* box. Click *Next*. 
+    resource bundle file* box.
 
-    ![Figure 2.7: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
+    Here are the portlet deployment descriptor details to specify for the
+    Location Listing portlet: 
+
+    - **Name:** *locationlisting*
+    - **Display name:** *Location Listing Portlet*
+    - **Title:** *Location Listing Portlet*
+    - **JSP folder:** *html/locationlisting*
+
+    Click *Next*. 
+
+    ![Figure 2.8: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
 
 4.  This window lets you specify portlet deployment descriptor details that are
     specific to Liferay. You can set the file paths of your portlet's custom
@@ -541,43 +562,42 @@ Use the following steps to create the Location Listing portlet:
     class wrapper. Next, you can also choose the category for your portlet (it's
     categorized under *Sample* by default), and choose whether or not to add it
     to the *Control Panel* of your Liferay Portal. Accept the default, leaving
-    the *Add to Control Panel* box unflagged and click *Next*.
+    the *Add to Control Panel* box unflagged. 
 
 5.  The last step is to specify modifiers, interfaces, and method stubs to
     generate in the Portlet class. Accept the defaults and click *Finish*. 
 
-By default, new portlets use the MVCPortlet framework, a light framework that
-hides part of the complexity of portlets and makes the most common operations
-easier. The default MVCPortlet project uses separate JSPs for each portlet
-mode: each of the registered portlet modes has a corresponding JSP with the
-same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
-is for help mode. 
-
-If you're following along with our event-listing-portlet project example,
-there's one more portlet we need to create, named *eventlisting*--or the Event
-Listing portlet. Let's create it in the event-listing-portlet project. 
+Use the following steps to create the Event Listing portlet:
 
 1.  Right-click your event-listing-portlet project &rarr; *New* &rarr; *Liferay
-    Portlet*. The wizard lets you specify the basic class information for your
-    new portlet. Specify *EventListingPortlet* as the name of the portlet class,
+    Portlet*. Specify *EventListingPortlet* as the name of the portlet class,
     enter *com.nosester.portlet.eventlisting* as its Java package, and select
-    *com.liferay.util.bridges.mvc.MVCPortlet* as it's superclass. Click *Next*.
+    *com.liferay.util.bridges.mvc.MVCPortlet* as it's superclass. 
 
-2.  In this window we'll specify the portlet's deployment descriptor details. In
-    the *Portlet Info* section, specify the following information:
+    ![Figure 2.9: Creating portlet classes is simple with Liferay IDE's portlet creation wizard.](../../images/create-a-portlet-class-eventlistingportlet.png)
 
-    **Name:** *eventlisting*
+    Here are the portlet class values to specify for the example Event
+    Listing portlet: 
 
-    **Display name:** *Event Listing Portlet*
+    - **Portlet plugin project:** *event-listing-portlet*
+    - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
+    - **Portlet class:** *EventListingPortlet*
+    - **Java package:** *com.nosester.portlet.eventlisting*
+    - **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
 
-    **Title:** *Event Listing Portlet*
+    Click *Next*. 
 
-    You can also specify which portlet modes you'd like your portlet to have.
-    *View* mode is automatically selected. There are also options for creating
-    resources: you can specify the folder where JSP files will be created as
-    well as whether or not a resource bundle file should be created. We'll leave
-    the *Create JSP files* box flagged, specify *html/eventlisting* as the JSP
-    folder, and flag the *Create resource bundle file* box. Click *Next*.
+2.  In this window we'll specify the portlet's deployment descriptor details. 
+
+    Here are the portlet deployment descriptor details to specify for the
+    Event Listing portlet: 
+
+    - **Name:** *eventlisting*
+    - **Display name:** *Event Listing Portlet*
+    - **Title:** *Event Listing Portlet*
+    - **JSP folder:** *html/eventlisting*
+
+    Click *Next*. 
 
 3.  This window lets you specify portlet deployment descriptor details that are
     specific to Liferay. You can set the file paths of your portlet's custom
@@ -592,9 +612,16 @@ Listing portlet. Let's create it in the event-listing-portlet project.
     modifiers, interfaces, and method stubs to generate in the Portlet class.
     Accept the defaults and click *Finish*. 
 
-To finish creating our Event Listing portlet, we'll redeploy the plugin
-project. In the *Servers* tab, simply right click the *event-listing-portlet*
-project, then click *Redeploy*. 
+By default, new portlets use the MVCPortlet framework, a light framework that
+hides part of the complexity of portlets and makes the most common operations
+easier. The default MVCPortlet project uses separate JSPs for each portlet
+mode: each of the registered portlet modes has a corresponding JSP with the
+same name as the mode. For example, `edit.jsp` is for edit mode and `help.jsp`
+is for help mode. 
+
+Let's redeploy the plugin project to make our portlet plugins available in the
+portal. In the *Servers* tab, simply right click the *event-listing-portlet*
+project, then click *Redeploy*.
 
 Now you've created and deployed the *Location Listing* portlet and the
 *Event Listing* portlet from the same project. Eventually, when the Location
@@ -640,7 +667,7 @@ Builder gives you three modes to work in:
 
 - Source mode displays the raw XML content of the `service.xml` file.
  
-![Figure 2.8: Liferay IDE provides an Overview view of `service.xml` which allows you to edit the file by drilling down through a menu and editing form fields instead of editing the XML directly. It also provides a *Build Services* button for running Service Builder.](../../images/service-xml-entities-overview.png)
+![Figure 2.10: Liferay IDE provides an Overview view of `service.xml` which allows you to edit the file by drilling down through a menu and editing form fields instead of editing the XML directly. It also provides a *Build Services* button for running Service Builder.](../../images/service-xml-entities-overview.png)
 
 With Liferay IDE, generating your service layer is easy. First you'll create
 `service.xml`, by selecting your project in the Package Explorer and then
@@ -669,7 +696,7 @@ tool. And if *code generator* is a bad word to you, let us assure you that
 Liferay always gives you full control over all your code, including code
 generated by Service Builder. 
 
-![Figure 2.9: Liferay IDE provides a diagram view of `service.xml` which provides a visual aid to understanding the relationships between service entities.](../../images/service-builder-relate-entities.png)
+![Figure 2.11: Liferay IDE provides a diagram view of `service.xml` which provides a visual aid to understanding the relationships between service entities.](../../images/service-builder-relate-entities.png)
 
 Once you've generated your `service.xml`, you can build services. When viewing
 `service.xml` in overview mode, there's a button available at the top right hand
@@ -711,7 +738,7 @@ haven't yet configured your Plugins SDK in Liferay IDE:
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *New* button and select *Liferay Project from Existing Source*.
 
-    ![Figure 2.10: Instead of clicking *File* &rarr; *New* to create a new Liferay project from an existing source, you can click the button shown above from Liferay IDE's shortcut bar.](../../images/ide-new-proj-existing-source.png)
+    ![Figure 2.12: Instead of clicking *File* &rarr; *New* to create a new Liferay project from an existing source, you can click the button shown above from Liferay IDE's shortcut bar.](../../images/ide-new-proj-existing-source.png)
 
 2.  In the *New Liferay Project* window, click the *Browse* button and 
     navigate to the project folder of the plugin you'd like to import. It should
@@ -742,7 +769,7 @@ set up in Liferay IDE. You can use these steps:
 1.  In Liferay IDE, go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr;
     *Liferay Projects from Plugins SDK*. 
 
-    ![Figure 2.11: To import projects from a Plugins SDK, choose *Liferay Projects from Plugins SDK* from the Import menu.](../../images/ide-import-from-plugin-sdk.png)
+    ![Figure 2.13: To import projects from a Plugins SDK, choose *Liferay Projects from Plugins SDK* from the Import menu.](../../images/ide-import-from-plugin-sdk.png)
 
 2.  In the *Import Liferay Projects* window, use the combo box to select the
     *Liferay Plugins SDK* from which you're importing plugins. 
@@ -799,7 +826,7 @@ the steps below.
 3.  In the *Convert Project* wizard, your project is selected and the SDK
     location and SDK version of your project is displayed.
 
-    ![Figure 2.12: The *Convert Project* wizard detects your Plugin's SDK's the location and version.](../../images/ide-convert-plugin-project.png)
+    ![Figure 2.14: The *Convert Project* wizard detects your Plugin's SDK's the location and version.](../../images/ide-convert-plugin-project.png)
 
 4.  Select the Liferay runtime to use for the project. If you don't have a
     Liferay Runtime defined, define one now by clicking *New...*. 
@@ -818,7 +845,7 @@ projects. Here's how you verify that your imports were successful:
 1.  Once the project is imported, you should see a new project inside Eclipse
     and it should have an "L" overlay image; the "L" is for Liferay! 
 
-    ![Figure 2.13: Look for an "L" overlay image to verify that the import succeeded.](../../images/ide-liferay-project-w-overlay-image.png)
+    ![Figure 2.15: Look for an "L" overlay image to verify that the import succeeded.](../../images/ide-liferay-project-w-overlay-image.png)
 
 2.  Check the project's target runtime and facets to make sure it's configured
     as a *Liferay IDE* project:
@@ -829,7 +856,7 @@ projects. Here's how you verify that your imports were successful:
     2.2. In the *Properties* window, click *Project Facets* and make sure that
     the Liferay plugin facets are properly configured. 
 
-    ![Figure 2.14: Make sure that your project's Liferay plugin facets are properly configured.](../../images/ide-project-facets.png)
+    ![Figure 2.16: Make sure that your project's Liferay plugin facets are properly configured.](../../images/ide-project-facets.png)
 
 Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
@@ -910,7 +937,7 @@ configure the Remote Server Adapter, use the following steps:
     into the *Server's host name* field. For the *Server name*, enter
     *Liferay@\[IP address\]*, then click *Next*. 
 
-    ![Figure 2.15: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
+    ![Figure 2.17: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
 
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
@@ -948,7 +975,7 @@ configure the Remote Server Adapter, use the following steps:
     Once you've purchased the application, navigate to the *Purchased* page of
     the Control Panel's Marketplace interface. 
 
-    ![Figure 2.16: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
+    ![Figure 2.18: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
     Find your application in the list of purchased products. Then click on the
     buttons to download and install the application. Once it's been installed on
@@ -1262,7 +1289,7 @@ the `portlets` folder in your Plugins SDK. This is where you'll work to
 implement your own functionality. Notice that the Plugins SDK automatically
 appends "-portlet" to the project name when creating its directory.
 
-![Figure 2.17: Creating the Event Listing Portlet.](../../images/02-terminal-build-success-plugins-sdk-project-create.png)
+![Figure 2.19: Creating the Event Listing Portlet.](../../images/02-terminal-build-success-plugins-sdk-project-create.png)
 
 ---
 
@@ -1487,7 +1514,7 @@ To create a repository using Nexus, follow these steps:
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-    ![Figure 2.18: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
+    ![Figure 2.20: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
     ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
@@ -1659,7 +1686,7 @@ Portal. Just follow these steps:
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
     field and select the *Development* value in the second field.
 
-    ![Figure 2.19: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
+    ![Figure 2.21: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
@@ -1675,7 +1702,7 @@ You can download Liferay CE artifacts from SourceForge by following these steps:
     if you need Maven artifacts for Liferay Portal 6.2.0 CE GA1, select version
     *6.2.0 GA1*. 
 
-    ![Figure 2.20: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
+    ![Figure 2.22: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3.  Select the appropriate zip file. The zip files use naming convention
     `liferay-portal-maven-[version]-[date].zip`. 
@@ -1883,7 +1910,7 @@ To verify your artifacts are deployed, navigate to the *Repositories* page of
 your Nexus OSS server and select your repository. A window appears below
 displaying the Liferay artifacts now deployed to your repository.
 
-![Figure 2.21: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
+![Figure 2.23: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
@@ -1959,7 +1986,7 @@ providing a seamless user experience. The lifecycle mappings for your project
 can be viewed by right-clicking your project and selecting *Properties* &rarr;
 *Maven* &rarr; *Lifecycle Mapping*. 
 
-![Figure 2.22: View your project's lifecycle mappings to verify successful plugin execution.](../../images/maven-lifecycle-mapping.png)
+![Figure 2.24: View your project's lifecycle mappings to verify successful plugin execution.](../../images/maven-lifecycle-mapping.png)
 
 When first installing Liferay IDE, the installation startup screen lets you
 select whether you'd like to install the Maven plugins automatically. Did you
@@ -1974,7 +2001,7 @@ checkbox and look for `m2e-liferay` in the list of installed plugins. Also, if
 you'd like to view everything that is bundled with the `m2e-liferay` plugin,
 uncheck the *Group items by category* checkbox. 
 
-![Figure 2.23: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
+![Figure 2.25: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
 
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
@@ -2096,7 +2123,7 @@ section of the `pom.xml` file.
 **Dependency Hierarchy:** provides hierarchical view of project dependencies and
 interactive list of resolved dependencies.
 
-![Figure 2.24: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
+![Figure 2.26: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
@@ -2386,7 +2413,7 @@ to generate a Liferay plugin project using Liferay IDE:
 
 6.  Select the *Portlet* plugin type and then click *Finish*.
 
-	![Figure 2.25: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+	![Figure 2.27: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's run through steps for creating your Liferay Maven
@@ -2500,7 +2527,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.26: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 2.28: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -2645,7 +2672,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 2.27: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 2.29: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
