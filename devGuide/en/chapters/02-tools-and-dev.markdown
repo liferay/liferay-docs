@@ -367,9 +367,9 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
 Great! You've created a Liferay portlet project! 
 
-Note, you can find more information Liferay's plugin frameworks in the chapter
-on portlet development. In that chapter, we'll discuss the plugin creation
-wizard in more detail.
+You can find more information on Liferay's plugin frameworks in the chapter on
+portlet development. In that chapter, we'll discuss the plugin creation wizard
+in more detail. 
 
 Note: We're creating the event-listing-portlet project now so that we can
 highlight how Liferay IDE simplifies project creation. For more information on
