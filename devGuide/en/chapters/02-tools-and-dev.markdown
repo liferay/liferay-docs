@@ -85,8 +85,10 @@ for your Eclipse release.
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
-- Java 5.0 JRE or greater. 
+- Java 6.0 JRE or greater. 
 - Liferay IDE must be run in one of the following Eclipse releases: 
+
+    Eclipse Kepler Java EE (4.3.x)
 
     Eclipse Juno Java EE (4.2.x)
 
@@ -103,14 +105,21 @@ Next, we'll show you how to install Liferay IDE.
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Juno, Indigo, or Helios from the
+1.  Install Eclipse Kepler, Juno, Indigo, or Helios from the
     [Eclipse](http://www.eclipse.org) website. 
 
 2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
 3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-4.  In the *Work with* field, enter the update site URL for your Eclipse release
+4.  In the *Work with* field, enter the update site URL
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0 GA1/updatesite/`
+    and press *Enter*. 
+
+    <!-- If these sites get 2.0 added to them, then reactivate them adding
+    Kepler to the start of the list. Otherwise, we'll remove them. - Jim
+
+    In the *Work with* field, enter the update site URL for your Eclipse release
     and press *Enter*. Your update site URL is one of the following: 
 
     Eclipse Juno Update Site: 
@@ -121,9 +130,8 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 
     Eclipse Helios Update Site:
     [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    -->
 
-    <!-- These links also need to be updated. I'm inquiring from Greg. -Cody -->
-    
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
 6.  After calculating dependencies, click *Next*, accept the license agreement,
@@ -141,24 +149,32 @@ update URL.
 
 #### Alternative Installation [](id=liferay-ide-alternative-installation-liferay-portal-6-2-dev-guide-02-en)
 
-To install Liferay IDE without specifying an update URL for Eclipse, follow
-these steps: 
+To install Liferay IDE from a `.zip` file, follow these steps: 
 
-1.  Install Eclipse Juno, Indigo, or Helios (you can download and unzip from one
-    of the links provided in the *Requirements* section above).
+1.  Install Eclipse Kepler, Juno, Indigo, or Helios from the
+    [Eclipse](http://www.eclipse.org) website. 
 
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Download the IDE 2.0 `.zip` file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+    for your operating system. 
 
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+    <!-- Replace the above step text with this text when IDE 2.0 is available
+    from the downloads page. - Jim
 
-4.  Instead of entering a URL in the *Work with* field, download the latest
+    Download the latest
     version of Liferay IDE from the releases page: 
 
     [Liferay IDE Downloads
     Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
+    -->
+
+3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+
+4.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
 5.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded ZIP file.
+    location of the downloaded Liferay IDE `.zip` file.
 
 6.  Liferay IDE features should be detected. Select them and click *Next*. 
 
