@@ -116,22 +116,6 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
     `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0 GA1/updatesite/`
     and press *Enter*. 
 
-    <!-- If these sites get 2.0 added to them, then reactivate them adding
-    Kepler to the start of the list. Otherwise, we'll remove them. - Jim
-
-    In the *Work with* field, enter the update site URL for your Eclipse release
-    and press *Enter*. Your update site URL is one of the following: 
-
-    Eclipse Juno Update Site: 
-    [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-
-    Eclipse Indigo Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-
-    Eclipse Helios Update Site:
-    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
-    -->
-
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
 6.  After calculating dependencies, click *Next*, accept the license agreement,
@@ -158,16 +142,6 @@ To install Liferay IDE from a `.zip` file, follow these steps:
     [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
     GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
     for your operating system. 
-
-    <!-- Replace the above step text with this text when IDE 2.0 is available
-    from the downloads page. - Jim
-
-    Download the latest
-    version of Liferay IDE from the releases page: 
-
-    [Liferay IDE Downloads
-    Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
-    -->
 
 3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
