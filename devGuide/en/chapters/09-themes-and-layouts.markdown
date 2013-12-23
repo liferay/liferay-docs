@@ -71,9 +71,24 @@ Studio first, and then with the terminal.
 
 4.  Select *Theme* for your Plugin type. 
 
-5.  Click *Finish*. 
+5.  Click *Next*. 
 
-![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/05-themes-1.png)
+6.  Select a theme parent. Your theme inherits the parent theme's styling as a
+    base from which to build your theme. In addition to the *_styled* theme, you
+    can choose to inherit from the *_unstyled* theme, which contains no styling.
+    There's also the *classic* theme that has a smooth look and feel and works
+    well. For now, select *_styled* as the theme parent. 
+
+7.  Select your theme's framework. You can select the *Freemarker* or *Velocity*
+    template frameworks for your theme. Or you can select *JSP* as your theme's
+    framework. 
+
+    <!-- Provide better explanation for the concept of the theme framework,
+    especially for the JSP value. - Jim -->
+
+8.  Click *Finish*.
+
+![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -1404,7 +1419,7 @@ Now that we've discussed how layout template TPL files are designed, let's
 convert the 1 2 1 column template that we presented above into our 1 4 1 column
 template.
 
-![Figure 9.11: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
+![Figure 9.10: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
 
 1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
    *columns-1-4-1*.
@@ -1477,7 +1492,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 9.12: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 9.11: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1535,7 +1550,7 @@ What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 9.13: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
+![Figure 9.12: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
