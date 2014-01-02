@@ -71,9 +71,24 @@ Studio first, and then with the terminal.
 
 4.  Select *Theme* for your Plugin type. 
 
-5.  Click *Finish*. 
+5.  Click *Next*. 
 
-![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/05-themes-1.png)
+6.  Select a theme parent. Your theme inherits the parent theme's styling as a
+    base from which to build your theme. In addition to the *_styled* theme, you
+    can choose to inherit from the *_unstyled* theme, which contains no styling.
+    There's also the *classic* theme that has a smooth look and feel and works
+    well. For now, select *_styled* as the theme parent. 
+
+7.  Select your theme's framework. You can select the *Freemarker* or *Velocity*
+    template frameworks for your theme. Or you can select *JSP* as your theme's
+    framework. 
+
+    <!-- Provide better explanation for the concept of the theme framework,
+    especially for the JSP value. - Jim -->
+
+8.  Click *Finish*.
+
+![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -1198,18 +1213,19 @@ a layout template called *Columns 1 4 1*.
 
 ***Using Developer Studio:*** 
 
-1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
-2.  Fill in the *Project* and *Display* names, which are "columns-1-4-1" and
-    "Columns 1 4 1", respectively. 
+2.  Enter *columns-1-4-1* for the Project name and *Columns 1 4 1* for the
+    Display name.
+    
+3.  Choose whichever build type you prefer (Ant or Maven) and select the
+    appropriate *Plugins SDK* and *Liferay runtime*. 
 
-3.  Select the appropriate *Plugins SDK* and *Portal Runtime*. 
-
-4.  Select *Layout* as your plugin type. 
+4.  Select *Layout Template* as your plugin type. 
 
 5.  Click *Finish*. 
 
-![Figure 9.8: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
+![Figure 9.8: Creating a new layout template project is easy with Liferay Developer Studio.](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -1225,13 +1241,15 @@ the *create* script, followed by operating system-specific commands:
 
         create.bat columns-1-4-1 "Columns 1 4 1"
 
-Developer Studio's *New Project* wizard and the *create* scripts in the terminal
-generate layout template projects in your Plugin SDK's `layouttpl` folder. 
+Developer Studio's *New Project* wizard and the *create* scripts generate layout
+template projects in your Plugin SDK's `layouttpl` folder. Layout template
+project names must end with *-layouttpl* so when you enter *columns-1-4-1* for
+the project name, *-layouttpl* is automatically appended to the project name.
 
 ### Anatomy of a Layout Template Project [](id=anatomy-of-a-layout-template-project-liferay-portal-6-2-dev-guide-09-en)
 
 Let's look at the directory structure of a layout template project and learn
-about its various files:  
+about its various files:
 
 - `columns-1-4-1-layouttpl/`
 	- `docroot/`
@@ -1244,24 +1262,25 @@ about its various files:
 		- `columns_1_4_1.wap.tpl`
 	- `build.xml`
 
-To name the parent folder, the Plugins SDK automatically appended "-layouttpl"
-to your project name. A project can contain multiple layout templates. The
-directory structure is the same, but you'll have a `.png`, `.tpl`,
-and `.wap.tpl` file for each layout template in the `docroot/` folder. The
-"liferay-" files describe the layout templates for packaging and deployment. 
+Navigate to your Plugins SDK's `layouttpl/` folder and you'll see that the
+Plugins SDK automatically appended *-layouttpl* to your project's name. A layout
+template project can contain multiple layout templates. The directory structure
+is the same, but you'll have a `.png`, `.tpl`, and `.wap.tpl` file for each
+layout template in the `docroot/` folder. The `liferay-*` files describe the
+layout templates for packaging and deployment. 
 
-Now that you're well-versed on the anatomy of a layout template, let's begin
-exploring layout template files. 
+Now that you're well-versed on the anatomy of a layout template, let's explore
+the layout template files.
 
 ### Layout Template Files [](id=layout-template-files-liferay-portal-6-2-dev-guide-09-en)
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each template file does: 
 
-- `<project-name>.tpl`: Generates the HTML structure of the template. 
-- `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
+- `[project-name].tpl`: Generates the HTML structure of the template. 
+- `[project-name].wap.tpl`: Variant template for mobile devices. WAP stands for
   wireless application protocol. 
-- `<project-name>.png`: Thumbnail representation of the template that you see in
+- `[project-name].png`: Thumbnail representation of the template that you see in
   Liferay Portal from the Page Layout screen. You'll have to create the
   thumbnail image, but you can use the default PNG for layout templates as a
   starting point.
@@ -1291,10 +1310,14 @@ templates:
 
 - ***Deploying in Developer Studio:*** Drag your layout template project onto
   your server. 
-- ***Deploying in the terminal:*** From your layout template project directory,
-  enter
+- ***Deploying in the terminal:*** If you're using Ant, execute the following
+  command From your layout template project directory:
 
         ant deploy
+
+    If you're using Maven, please refer to this guide's
+    [section](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/deploying-liferay-plugins-with-maven)
+    on deploying  Liferay plugins with Maven.
 
 When deploying your plugin, the server displays messages indicating that your
 plugin was read, registered, and is now available for use. 
@@ -1312,52 +1335,126 @@ our layout template.
 ### Designing a Layout Template [](id=designing-a-layout-template-liferay-portal-6-2-dev-guide-09-en)
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
-on which you design layout templates. If this seems overwhelming, don't worry.
-With the handy palette in Developer Studio's *Layout Template Editor*,
-designing templates becomes fun! Let's try it:
+on which you can design layout templates. If this seems overwhelming, don't
+worry. We'll build a new layout template and explain how it works. If you want
+to see more examples, check out the Page Layouts section of [Liferay Marketplace](www.liferay.com/marketplace),
+download some CE layout templates provided by Liferay, and examine the source.
+You also can examine Liferay's core layout templates. These can be found in
+Liferay's source in the `liferay-portal/portal-web/docroot/layouttpl/custom/`
+folder.
 
-1.  Open your layout template's TPL file in Developer Studio's *Layout Template
-    Editor* to see it displayed in *Visual (Experimental)* mode. 
+Let's describe the layout template that we're about to create. We named it
+*Columns 1 4 1* because we want the first row to have just one column, the
+second row to have 4 (equal width) columns, and the third row to have just one
+column. Liferay provides a similar layout template called *1-2-1 Columns Layout
+CE* on Liferay Marketplace. Here's the source of the 1-2-1 Columns Layout
+template:
 
-2.  Click the triangle in the upper left corner of the editor to view the
-    Palette (if necessary). Drag rows, columns, and even existing templates onto
-    your canvas. 
+    <div class="columns-1-2-1" id="main-content" role="main">
+            <div class="portlet-layout row-fluid">
+                    <div class="portlet-column portlet-column-only span12" id="column-1">
+                            $processor.processColumn("column-1", "portlet-column-content portlet-column-content-only")
+                    </div>
+            </div>
 
-3.  Start designing your new layout template by dragging an *existing* layout
-    template into the editor. Then modify it by adding, deleting, and adjusting
-    elements as you like. 
+            <div class="portlet-layout row-fluid">
+                    <div class="portlet-column portlet-column-first span8" id="column-2">
+                            $processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
+                    </div>
 
-4.  After adding rows and columns, drag their edges to achieve the desired
-    dimensions. Your layout isn't etched in stone. You can make changes to your
-    layout template whenever you need by using *Visual (Experimental)* mode in
-    Developer Studio. 
+                    <div class="portlet-column portlet-column-last span4" id="column-3">
+                            $processor.processColumn("column-3", "portlet-column-content portlet-column-content-last")
+                    </div>
+            </div>
 
-    ![Figure 9.10: You can easily adjust your layout template using *Visual* mode in Developer Studio.](../../images/layout-template-tpl-visual-almost.png)
-
-5.  To fine tune your design's dimensions, switch to *Source* view and edit
-    your TPL files as necessary. 
-
-For example, if you want each second-row column of the above template to be 20%
-of the page width, adjust that row's first column (`column-2`) from 25% to 20%. 
-
-Here's how the original 25% column width definition looks:
-
-    <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
-        $processor.processColumn(
-            "column-2", "portlet-column-content portlet-column-content-first")
+            <div class="portlet-layout row-fluid">
+                    <div class="portlet-column portlet-column-only span12" id="column-4">
+                            $processor.processColumn("column-4", "portlet-column-content portlet-column-content-only")
+                    </div>
+            </div>
     </div>
 
-Here's the column width definition modified to 20%:
+A CSS class named after the layout template project must be applied to the root
+`<div>`: `class="columns-1-2-1"`. An ID of *main-content* and a role of *main*
+must also be applied to the root `<div>`.
 
-    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
-        $processor.processColumn(
-            "column-2", "portlet-column-content portlet-column-content-first")
-    </div>
+Inside of the root `<div>`, you need to create `<div>`s for each row of your
+layout template. You must apply the *portlet-layout* and *row-fluid* CSS classes
+to these `<div>`s: `<div class="portlet-layout row-fluid">`.
 
-It's hard to see, but we changed the column's class `aui-w25` value to
-`aui-w20`. 
+Inside each row `<div>`, you must specify one or more column `<div>`s. For each
+column `<div>`, make sure to specify the *portlet-column* CSS class. If a column
+is the first, last, or only column in a row, you must specify another CSS class:
+*portlet-column-first*, *portlet-column-last*, or *portlet-column-only*.
 
-![Figure 9.11: You can also edit your layout template using *Source* mode.](../../images/layout-template-tpl-src-almost.png)
+Liferay 6.2 themes use a fork of Twitter Bootstrap called Alloy Bootstrap:
+[https://github.com/liferay/alloy-bootstrap](https://github.com/liferay/alloy-bootstrap)
+Alloy Bootstrap affects Liferay's layout templates as well as its themes.
+Liferay 6.2 layout templates use Bootstrap's 12 column grid system:
+[http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid). For each
+column `<div>`, you must specify another CSS class called *span[width]* where
+*width* is the numerator of a fraction over 12 representing the width of the
+column. For example, if you apply a *span8* CSS class to a column `<div>`, the
+column will take up `8/12 = 2/3` of the page width. Similarly, a *span3* CSS
+class means that the column will take up `1/4` of the page width and a *span12*
+CSS means that the column will take up the entire page width.
+
+Next, for each column `<div>`, you need to specify a unique CSS ID. E.g.,
+`id="column-1"`, `id="column-2"`, etc.
+
+Finally, inside each column `<div>`, you need to include a Velocity template
+directive. This directive is responsible for rendering the portlets that have
+been added to each column:
+
+    $processor.processColumn("column-1", "portlet-column-content portlet-column-content-only")
+
+The `processor.processColumn` function takes two arguments. The first is the CSS
+column ID and the second is a list of CSS classes. You always need to pass
+`"portlet-column-content"` in the second argument. If the column is the first,
+last, or only column in a row, you also have to pass both
+`"portlet-column-content"` and `portlet-column-content-[first|last|only]` in the second
+argument, separated by a space.
+
+Now that we've discussed how layout template TPL files are designed, let's
+convert the 1 2 1 column template that we presented above into our 1 4 1 column
+template.
+
+![Figure 9.10: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
+
+1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
+   *columns-1-4-1*.
+
+2. We don't need to change the first row `<div>` since its already set up
+   with a single column. We do need to change the second row `<div>` since we
+   need to set up four equal width columns. Replace the second row `<div>` with
+   the following:
+
+        <div class="portlet-layout row-fluid">
+                <div class="portlet-column portlet-column-first span3" id="column-2">
+                        $processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
+                </div>
+
+                <div class="portlet-column portlet-column span3" id="column-3">
+                        $processor.processColumn("column-3", "portlet-column-content")
+                </div>
+                
+                <div class="portlet-column portlet-column span3" id="column-4">
+                        $processor.processColumn("column-4", "portlet-column-content")
+                </div>
+                
+                <div class="portlet-column portlet-column-last span3" id="column-5">
+                        $processor.processColumn("column-5", "portlet-column-content portlet-column-content-last")
+                </div>
+        </div>
+
+3. The find row `<div>` is set up with a single column so the only thing we need
+   to change is its ID. Replace it with the following:
+
+        <div class="portlet-layout row-fluid">
+                <div class="portlet-column portlet-column-only span12" id="column-6">
+                        $processor.processColumn("column-6", "portlet-column-content portlet-column-content-only")
+                </div>
+        </div>
 
 Just like that, the rows and columns of the *Columns 1 4 1* layout template are
 arranged and sized to fit your needs. 
@@ -1395,7 +1492,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 9.12: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 9.11: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1410,7 +1507,7 @@ Here's a description of the portlets we're embedding in the layout:
 Here's the TPL that implements embedding of these portlets:
 
     <div class="columns_1_4_1" id="main-content" role="main">
-        <div class="portlet-layout">
+        <div class="portlet-layout row-fluid">
             <div class="portlet-column portlet-column-only" id="column-1">
                 $processor.processPortlet(
                     "my-hello-world-portlet_WAR_myhelloworldportlet")
@@ -1418,27 +1515,27 @@ Here's the TPL that implements embedding of these portlets:
                     "portlet-column-content portlet-column-content-only")
             </div>
         </div>
-        <div class="portlet-layout">
-            <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
+        <div class="portlet-layout row-fluid">
+            <div class="portlet-column portlet-column-first span3" id="column-2">
                 $processor.processPortlet("71_INSTANCE_xyz1")
                 $processor.processColumn(
                     "column-2",
                     "portlet-column-content portlet-column-content-first")
             </div>
-            <div class="aui-w25 portlet-column" id="column-3">
+            <div class="portlet-column span3" id="column-3">
                 $processor.processColumn("column-3", "portlet-column-content")
             </div>
-            <div class="aui-w25 portlet-column" id="column-4">
+            <div class="portlet-column span3" id="column-4">
                 $processor.processColumn("column-4", "portlet-column-content")
             </div>
-            <div class="aui-w25 portlet-column portlet-column-last" id="column-5">
+            <div class="portlet-column portlet-column-last span3" id="column-5">
                 $processor.processPortlet("3")
                 $processor.processColumn(
                     "column-5",
                     "portlet-column-content portlet-column-content-last")
             </div>
         </div>
-        <div class="portlet-layout">
+        <div class="portlet-layout row-fluid">
             <div class="portlet-column portlet-column-only" id="column-6">
                 $processor.processPortlet(
                 "my-goodbye-world-portlet_WAR_myhelloworldportlet_INSTANCE_jkl1")
@@ -1453,7 +1550,7 @@ What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 9.13: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
+![Figure 9.12: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
