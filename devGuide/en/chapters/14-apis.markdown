@@ -363,7 +363,7 @@ https://issues.liferay.com/browse/LPS-34974 ? Jim -->
 
 ### CSS Classes Replaced with Bootstrap Equivalents [](id=css-classes-replaced-with-bootstrap-classes-liferay-portal-6-2-dev-guide-en)
 
-Many of the CSS classes used in AlloyUI 1.7 were replaced with Bootstrap classes
+Many of the CSS classes used in AlloyUI 1.5 were replaced with Bootstrap classes
 or were removed because they didn't blend well with Bootstrap. You may find this
 with CSS classes in your plugins. Consider replacing your classes with
 Bootstrap's CSS classes. See
@@ -486,7 +486,7 @@ with the default extensions.
 ### Example: Upgrading the Microblogs Portlet to AlloyUI 2.0 [](id=example-upgrade-portlet-alloy-2-0-liferay-portal-6-2-dev-guide-en)
 
 Let's use the upgrade tool to upgrade Liferay's CE 6.1 Microblogs portlet from
-using AlloyUI version 1.7 to using AlloyUI 2.0. Here's how to run it on the
+using AlloyUI version 1.5 to using AlloyUI 2.0. Here's how to run it on the
 Microblogs portlet in its liferay-plugins repository:
 
     laut -f /home/joe.bloggs/liferay-plugins/portlets/microblogs-portlet
