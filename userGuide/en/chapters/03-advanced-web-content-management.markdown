@@ -435,7 +435,7 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
+![Figure 3.5: The initial and expanded views for the Lunar Resort News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/03-adv-web-content-structures-templates-completed.png)
 
 <!--Figure needs to be reworked-->
 
