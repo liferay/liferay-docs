@@ -48,7 +48,7 @@ projects for the Liferay Portal platform. You can install Liferay IDE as a set
 of Eclipse plugins from an update site. The latest version of Liferay IDE
 supports development of portlets, hooks, layout templates, themes, and Ext
 plugins. To use Liferay IDE, you need the Eclipse Java EE developer package
-using Helios or a later version. 
+using Indigo or a later version. 
 
 In this section we'll show you how to install Liferay IDE, set up projects for
 your applications, and deploy them to your portal. We'll get you started with
@@ -94,18 +94,13 @@ Make sure you have a supported Java JRE and Eclipse release:
 
     Eclipse Indigo Java EE (3.7.x)
 
-    Eclipse Helios Java EE (3.6.x)
-    
-    <!-- In talks with Greg about what Liferay IDE 2.0 requires. I'll update
-    these when I have the necessary info. -Cody -->
-
 Next, we'll show you how to install Liferay IDE. 
 
 #### Installation Steps [](id=liferay-ide-installation-steps-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Kepler, Juno, Indigo, or Helios from the
+1.  Install Eclipse Kepler, Juno, or Indigo from the
     [Eclipse](http://www.eclipse.org) website. 
 
 2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
@@ -135,7 +130,7 @@ update URL.
 
 To install Liferay IDE from a `.zip` file, follow these steps: 
 
-1.  Install Eclipse Kepler, Juno, Indigo, or Helios from the
+1.  Install Eclipse Kepler, Juno, or Indigo from the
     [Eclipse](http://www.eclipse.org) website. 
 
 2.  Download the IDE 2.0 `.zip` file from
@@ -183,7 +178,9 @@ these requirements before proceeding:
 2.  Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped. Make sure
     the Plugins SDK version matches the Liferay Portal version.
 
-3.  You've installed an appropriate Eclipse IDE version for Java EE Development,
+3.  Any version of Maven.
+
+4.  You've installed an appropriate Eclipse IDE version for Java EE Development,
     and the Liferay IDE extension--see the *Installation* section if you haven't
     already done this. 
 
@@ -193,9 +190,6 @@ these requirements before proceeding:
  (e.g., 5.2.x) are not supported by the Liferay IDE. 
 
 ---
-
-<!-- Versions need to be updated for IDE 2.0. Also need to specify required
-Maven version. Talking to Greg about requirements. -Cody -->
 
 Let's set up your Liferay Plugins SDK. 
 
