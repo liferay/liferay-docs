@@ -175,12 +175,11 @@ these requirements before proceeding:
 
 1.  Liferay Portal 6.0.5 or greater is downloaded and unzipped. 
 
-2.  Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped. Make sure
-    the Plugins SDK version matches the Liferay Portal version.
+2.  Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped, and/or any
+    version of Maven is installed. If you're using the Plugins SDK, make sure
+    the Plugins SDK version matches the Liferay Portal version. 
 
-3.  Any version of Maven.
-
-4.  You've installed an appropriate Eclipse IDE version for Java EE Development,
+3.  You've installed an appropriate Eclipse IDE version for Java EE Development,
     and the Liferay IDE extension--see the *Installation* section if you haven't
     already done this. 
 
