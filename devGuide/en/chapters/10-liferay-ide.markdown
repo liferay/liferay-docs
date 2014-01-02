@@ -8,13 +8,13 @@ productivity.
 Many of us at Liferay are like that, which is why our SDKs are designed to work
 with any text editor or IDE. You can be productive on the Liferay platform using
 any tool you want. To jumpstart your efforts, however, we also provide an IDE
-environment fully integrated with Eclipse. We've designed this carefully,
-so that it integrates well with our existing SDKs and other tools that are out
-there. Liferay IDE helps you manage many features of Liferay's platform, making
-them easier to use. There are editors for Service Builder files, workflow
+environment fully integrated with Eclipse. We've designed this carefully, so
+that it integrates well with our existing SDKs, Maven, and other tools that are
+out there. Liferay IDE helps you manage many features of Liferay's platform,
+making them easier to use. There are editors for Service Builder files, workflow
 definitions, layout templates, and more. You'll find wizards for creating every
-kind of Liferay project there is, snippets for tag libraries, and
-auto-deploy of changes to plugins. 
+kind of Liferay project there is, snippets for tag libraries, and auto-deploy of
+changes to plugins. 
 
 Whether you've been using Liferay for a long time or are just getting started,
 it's worth your time to check out Liferay IDE and see whether it's another of
@@ -41,9 +41,9 @@ Server*--Liferay IDE is already configured in Developer Studio.
 Liferay IDE is a plugin for Eclipse. You can install it in two ways: bundled
 with Eclipse (this is the easiest way) or into an existing Eclipse installation. 
 
-If you want to install the bundled version, a prerequisite is a 
-version of Java supported by Eclipse. As of this writing, the bundled version
-requires JDK 6 or above. 
+If you want to install the bundled version, a prerequisite is a version of Java
+supported by Eclipse. As of this writing, the bundled version requires JDK 6 or
+above.
 
 Once you've satisfied the prerequisite, it's an easy matter to install Liferay
 IDE. Go to Liferay's [downloads page](http://www.liferay.com/downloads) and
@@ -59,37 +59,32 @@ or install from a `.zip` file.
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
--   Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
+-   Java 6.0 JRE or greater  
 -   Liferay IDE supports the following Eclipse releases: 
+
+    Eclipse Kepler Java EE (4.3.x)
 
     Eclipse Juno Java EE (4.2.x)
 
     Eclipse Indigo Java EE (3.7.x)
 
-    Eclipse Helios Java EE (3.6.x)
-
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Juno, Indigo, or Helios from the
+1.  Install Eclipse Kepler, Juno, or Indigo from the
     [Eclipse](http://www.eclipse.org) website. 
 
 2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
 3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-4.  In the *Work with* field, enter the update site URL for your Eclipse release
-    and press *Enter*. Your update site URL is one of the following: 
-
-    - Eclipse Juno Update Site: 
-      [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-    - Eclipse Indigo Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-    - Eclipse Helios Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+4.  In the *Work with* field, enter the update site URL
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
+    GA1/updatesite/` and press *Enter*.
 
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-6.  After calculating dependencies, click *Next* to complete the installation.
+6.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation. 
 
 7.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -98,28 +93,27 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 
 ![Figure 10.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
-To install Liferay IDE without specifying an update URL for Eclipse, follow
-these steps: 
+To install Liferay IDE from a `.zip` file, follow these steps:
 
-1.  Install Eclipse Juno, Indigo, or Helios from the
-    [Eclipse](http://www.eclipse.org) website.
+1.  Install Eclipse Kepler, Juno, or Indigo from the
+    [Eclipse](http://www.eclipse.org) website. 
 
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Download the IDE 2.0 `.zip` file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+    for your operating system. 
 
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
-4.  Instead of entering a URL in the *Work with* field, download the latest
-    version of Liferay IDE from the releases page: 
+4.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-    [Liferay IDE Downloads
-    Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
-
-5.  In the *Add Site* dialog, click the *Archive* button and browse to the location of
-    the downloaded zip file.
+5.  In the *Add Site* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay IDE `.zip` file.
 
 6.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-7.  After calculating dependencies, click *Next* to complete the installation.
+7.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation.
 
 8.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -134,25 +128,53 @@ Let's set up Liferay IDE now that you have it installed.
 
 ## Setting Up Liferay IDE [](id=set--4)
 
-In order to start writing code with Liferay IDE, you need to have a Liferay
-runtime to code against, as well as a Plugins SDK to store your projects. Both
-of these must be registered in Liferay IDE, and this is easy to do. To get
-started, make sure you've downloaded and unzipped the following two items: 
+Now that you have Liferay IDE installed, either from a downloaded zip file or
+from the update site appropriate for your Eclipse version, you need to perform
+some basic setup. This section describes the setup steps to perform so you can
+develop your Liferay portal and test your customizations. 
 
-1.  Liferay Portal 6.0.5 or greater
+Before setting up Liferay IDE, let's make sure you have all the appropriate
+software packages installed. 
 
-2.  Liferay Plugins SDK 6.0.5 or greater
+#### Requirements
+
+Before setting up Liferay IDE, you need to have appropriate versions of Liferay
+Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy
+these requirements before proceeding:
+
+1.  Liferay Portal 6.0.5 or greater is downloaded and unzipped
+
+2.  Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped, and/or any
+    version of Maven is installed. If you're using the Plugins SDK, make sure
+    the Plugins SDK version matches the Liferay Portal version.
+
+3.  You've installed an appropriate Eclipse IDE version for Java EE Development,
+    and the Liferay IDE extension--see the *Installation* section if you haven't
+    already done this. 
+
+---
 
  ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
  (e.g., 5.2.x) are not supported by Liferay IDE. 
+
+---
 
 Let's set up your Liferay Plugins SDK. 
 
 ### Registering the Liferay Plugins SDK with Liferay IDE [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
-Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. 
+Plugins SDK and/or Maven installation and Liferay Portal must be installed and
+configured in your Liferay IDE. If you're thinking, "Wait a second, buster! I
+thought the Plugins SDK and Maven could be used without Liferay IDE!", then
+you're right. In the [The Plugins
+SDK](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/the-plugins-s-3)
+chapter, we'll explain how to use the Plugins SDK on its own, with a text
+editor. Also, we'll explain how to use Maven on its own in the [Developing
+plugins using
+Maven](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/developing-plugins-using-maven)
+chapter. Here, we explain the easiest way to use the Plugins SDK: by running it
+from Liferay IDE. 
 
 1.  In Eclipse, click *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr;
     *Installed Plugin SDKs*.
@@ -165,9 +187,13 @@ IDE.
 4.  Select *OK* and verify that your SDK was added to the list of *Installed
     Liferay Plugin SDKs*. 
 
+---
+
  ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
  your preferences. Set one as the default SDK by checking its box in the list of
  *Installed Liferay Plugin SDKs*. 
+
+---
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 
@@ -191,7 +217,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
     ![Figure 10.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr; *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
@@ -235,14 +261,15 @@ Once the server is launched, you can open Liferay portal home from the *Servers*
 tab by right clicking your Liferay Tomcat server and selecting *Open Liferay
 Portal Home*. 
 
-Next you'll learn to create new Liferay projects in Liferay IDE. 
+Next, you'll learn to create new Liferay projects in Liferay IDE. 
 
 ## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
 
 Creating Liferay projects is a straightforward process, similar to creating
 other Eclipse project types. 
 
-Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plugin Project. 
+Go to *File* &rarr; *New Project...* &rarr; *Liferay* &rarr; *Liferay Plugin
+Project*.
 
 In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
 Liferay Runtime should be selected. The plugin type *portlet* is the default
