@@ -29,14 +29,15 @@ our layout template called *Columns 1 4 1*.
 
 ***Using Developer Studio:*** 
 
-1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
-2.  Fill in the *Project* and *Display* names, which are "columns-1-4-1" and
-    "Columns 1 4 1", respectively. 
+2.  Enter *columns-1-4-1* for the Project name and *Columns 1 4 1* for the
+    Display name.
+    
+3.  Choose whichever build type you prefer (Ant or Maven) and select the
+    appropriate *Plugins SDK* and *Liferay runtime*. 
 
-3.  Select the appropriate *Plugins SDK* and *Portal Runtime*. 
-
-4.  Select *Layout* as your plugin type. 
+4.  Select *Layout Template* as your plugin type. 
 
 5.  Click *Finish*. 
 
@@ -56,13 +57,15 @@ the *create* script, followed by operating system-specific commands:
 
         create.bat columns-1-4-1 "Columns 1 4 1"
 
-Developer Studio's *New Project* wizard and the *create* scripts in the terminal
-generate layout template projects in your Plugin SDK's `layouttpl` folder. 
+Developer Studio's *New Project* wizard and the *create* scripts generate layout
+template projects in your Plugin SDK's `layouttpl` folder. Layout template
+project names must end with *-layouttpl* so when you enter *columns-1-4-1* for
+the project name, *-layouttpl* is automatically appended to the project name. 
 
 ## Anatomy of a Layout Template Project [](id=lp-6-1-dgen05-anatomy-of-a-layout-template-0)
 
 Let's look at the directory structure of a layout template project and learn
-about its various files:  
+about its various files: 
 
 - `columns-1-4-1-layouttpl/`
 	- `docroot/`
@@ -74,24 +77,25 @@ about its various files:
 		- `columns_1_4_1.wap.tpl`
 	- `build.xml`
 
-To name the parent folder, the Plugins SDK automatically appended "-layouttpl"
-to your project name. A project can contain multiple layout templates. The
-directory structure is the same, but you'll have a `.png`, `.tpl`,
-and `.wap.tpl` file for each layout template in the `docroot/` folder. The
-"liferay-" files describe the layout templates for packaging and deployment. 
+Navigate to your Plugins SDK's `layouttpl/` folder and you'll see that the
+Plugins SDK automatically appended *-layouttpl* to your project's name. A layout
+template project can contain multiple layout templates. The directory structure
+is the same, but you'll have a `.png`, `.tpl`, and `.wap.tpl` file for each
+layout template in the `docroot/` folder. The `liferay-*` files describe the
+layout templates for packaging and deployment. 
 
-Now that you're well-versed on the anatomy of a layout template, let's begin
-exploring layout template files. 
+Now that you're well-versed on the anatomy of a layout template, let's explore
+the layout template files.
 
 ### Layout template files [](id=lp-6-1-dgen05-layout-template-files-0)
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each template file does: 
 
-- `<project-name>.tpl`: Generates the HTML structure of the template. 
-- `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
+- `[project-name].tpl`: Generates the HTML structure of the template. 
+- `[project-name].wap.tpl`: Variant template for mobile devices. WAP stands for
   wireless application protocol. 
-- `<project-name>.png`: Thumbnail representation of the template that you see in
+- `[project-name].png`: Thumbnail representation of the template that you see in
   Liferay Portal from the Page Layout screen. You'll have to create the
   thumbnail image, but you can use the default PNG for layout templates as a
   starting point.
@@ -121,10 +125,14 @@ templates:
 
 - ***Deploying in Developer Studio:*** Drag your layout template project onto
   your server. 
-- ***Deploying in the terminal:*** From your layout template project directory,
-  enter
+- ***Deploying in the terminal:*** If you're using Ant, execute the following
+command from your layout template project directory:
 
         ant deploy
+
+    If you're using Maven, please refer to this guide's
+    [section](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/deploying-liferay-plugins-with-maven)
+    on deploying  Liferay plugins with Maven.
 
 When deploying your plugin, the server displays messages indicating that your
 plugin was read, registered, and is now available for use. 
