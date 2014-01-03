@@ -224,23 +224,22 @@ locations.
 ![Figure 4.1: The Event Listing portlet lets you add and modify Nose-ster social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
 
 We'll start by creating the Event Listing portlet in a new portlet plugin
-project. To follow this example, create a new Liferay portlet project in your
-Liferay Plugins SDK using Liferay IDE or Developer Studio. Go to *File* &rarr;
-*New Liferay Project* to bring up the Liferay project wizard. We'll use this
-wizard to create both the Event Listing portlet project and the Event Listing
-portlet itself. After we finish creating our project and our first portlet,
-we'll use the new Liferay portlet wizard to create a second portlet in this
-project: the Location Listing portlet. Here's some key information to specify
-for the Event Listing portlet project in the first wizard: 
+project. To create the Event Listing portlet project in your Liferay Plugins SDK
+using Liferay IDE or Developer Studio, follow the example in the [Creating New
+Liferay
+Projects](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-new-liferay-projec-4)
+section of this guide.
+
+Here's a summary of some key information that is specified for the Event Listing
+portlet project:
 
 - **Project name:** *event-listing-portlet*
 - **Display name:** *Event Listing*
 - **Project type:** *Portlet*
 - **Portlet framework:** *Liferay MVC*
-- **Create custom portlet class:** *yes*
 
-After you select *Create custom portlet class*, the rest of the wizard lets you
-specify details about the Event Listing portlet class:
+Furthermore, the list below summarizes key information for the Event Listing
+Portlet via the Liferay portlet wizard:
 
 - **Portlet class:** *EventListingPortlet*
 - **Java package:** *com.nosester.portlet.eventlisting*
@@ -253,18 +252,8 @@ specify details about the Event Listing portlet class:
 - **Create resources bundle file:** *yes*
 - **Category:** *Sample*
 
-Selecting *Create resources bundle file* lets you add different language
-translations for your portlet's textual display values. Click *Finish* to
-create your Liferay portlet plugin project and the Event Listing portlet.
-
-Next, we'll create the Location Listing portlet in the Event Listing portlet
-project. Select the project in the Package Explorer and then select *File*
-&rarr; *New* &rarr; *Liferay Portlet*. Creating the Location Listing portlet in
-the IDE is similar to how you created the Event Listing portlet. Only the
-portlet class name and a few other name values will be different.
-
-Here is a summary of the values to specify for creating the Location Listing
-portlet via the Liferay portlet wizard: 
+Lastly, here's a summary of the key values in the Location Listing Portlet via
+the Liferay portlet wizard:
 
 - **Portlet class:** *LocationListingPortlet*
 - **Java package:** *com.nosester.portlet.eventlisting*
@@ -278,11 +267,12 @@ portlet via the Liferay portlet wizard:
 - **Category:** *Sample*
 
 After you've finished using the Liferay portlet wizard to create the Location
-Listing portlet, expand your project's `docroot/WEB-INF/src` folder and the
-`com.nosester.portlet.eventlisting` package. Notice that Liferay IDE created the
-`EventListingPortlet.java` and `LocationListingPortlet.java` files in this
-package. We'll add some business logic to these portlet classes after using
-Service Builder to create a service layer for our event and location entities.
+Listing portlet in the example, expand your project's `docroot/WEB-INF/src`
+folder and the `com.nosester.portlet.eventlisting` package. Notice that Liferay
+IDE created the `EventListingPortlet.java` and `LocationListingPortlet.java`
+files in this package. We'll add some business logic to these portlet classes
+after using Service Builder to create a service layer for our event and location
+entities.
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file in your project's `docroot/WEB-INF`
