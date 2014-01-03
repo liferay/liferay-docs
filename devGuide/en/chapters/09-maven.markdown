@@ -370,7 +370,7 @@ Maven artifacts from source, follow these steps:
     [http://github.com/liferay/liferay-portal](http://github.com/liferay/liferay-portal),
     and clone it your machine.
 
-2.  Create a `app.server.[user name].properties` file in your local Liferay
+2.  Create an `app.server.[user name].properties` file in your local Liferay
     Portal CE source project root directory. Specify the following properties in
     it:
 
@@ -449,7 +449,7 @@ Maven artifacts from source, follow these steps:
 
 ![note](../../images/tip-pen-paper.png) **Warning:** During the process of
  packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
- may experience sluggish performance or an insuffient amount of Java heap space.
+ may experience sluggish performance or an insufficient amount of Java heap space.
  There are two solutions to this problem:
  
 - **Increase the memory available for the Javadoc packaging process:**
@@ -633,7 +633,7 @@ providing a seamless user experience. The lifecycle mappings for your project
 can be viewed by right-clicking your project and selecting *Properties* &rarr;
 *Maven* &rarr; *Lifecycle Mapping*. 
 
-![Figure 2.24: View your project's lifecycle mappings to verify successful plugin execution.](../../images/maven-lifecycle-mapping.png)
+![Figure 9.6: View your project's lifecycle mappings to verify successful plugin execution.](../../images/maven-lifecycle-mapping.png)
 
 When first installing Liferay IDE, the installation startup screen lets you
 select whether you'd like to install the Maven plugins automatically. Did you
@@ -648,7 +648,7 @@ checkbox and look for `m2e-liferay` in the list of installed plugins. Also, if
 you'd like to view everything that is bundled with the `m2e-liferay` plugin,
 uncheck the *Group items by category* checkbox. 
 
-![Figure 2.25: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
+![Figure 9.7: You can install the `m2e-liferay` plugin by searching for software on Liferay IDE's repository.](../../images/m2e-liferay-installation.png)
 
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
@@ -770,7 +770,7 @@ section of the `pom.xml` file.
 **Dependency Hierarchy:** provides hierarchical view of project dependencies and
 interactive list of resolved dependencies.
 
-![Figure 2.26: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
+![Figure 9.8: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
@@ -991,7 +991,7 @@ to generate a Liferay plugin project using Liferay IDE:
 
 6.  Select the *Portlet* plugin type and then click *Finish*.
 
-	![Figure 2.27: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+	![Figure 9.9: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's run through steps for creating your Liferay Maven
@@ -1071,7 +1071,7 @@ plugins using the command line.
 
     The snapshot below illustrates choosing the archetype version: 
 
-    ![Figure 9.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
+    ![Figure 9.10: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
 
 6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
     coordinates (properties) of your project. Here are some examples: 
@@ -1083,7 +1083,7 @@ plugins using the command line.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 9.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 9.11: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -1103,7 +1103,7 @@ there.
 
 ---
     
-![Figure 9.8: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
+![Figure 9.12: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
 
 Following these steps using Liferay IDE or the command line, you can use
 Archetype to generate all your Liferay projects!
@@ -1205,7 +1205,7 @@ these steps:
     The proper contents for your `<distributionManagement>` element can be found
     in the *Summary* tab for each of your repositories. 
 
-    ![Figure 9.9: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
+    ![Figure 9.13: Select the *Summary* tab of your repository to see how to specify it for distribution management in your plugin's POM.](../../images/maven-repository-summary.png) 
 
     Since you created the plugin as a snapshot, you'll have to deploy it to a
     snapshot repository. You can deploy a plugin as a release, but the plugin's
