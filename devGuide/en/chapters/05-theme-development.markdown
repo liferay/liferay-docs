@@ -64,9 +64,24 @@ Studio first, and then with the terminal.
 
 4.  Select *Theme* for your Plugin type. 
 
-5.  Click *Finish*. 
+5.  Click *Next*. 
 
- ![Figure 5.1: Creating your theme plugin](../../images/05-themes-1.png)
+6.  Select a theme parent. Your theme inherits the parent theme's styling as a
+    base from which to build your theme. In addition to the *_styled* theme, you
+    can choose to inherit from the *_unstyled* theme, which contains no styling.
+    There's also the *classic* theme that has a smooth look and feel and works
+    well. For now, select *_styled* as the theme parent. 
+
+7.  Select your theme's framework. You can select the *Freemarker* or *Velocity*
+    template frameworks for your theme. Or you can select *JSP* as your theme's
+    framework. 
+
+    <!-- Provide better explanation for the concept of the theme framework,
+    especially for the JSP value. - Jim -->
+
+8.  Click *Finish*.
+
+![Figure 5.1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
