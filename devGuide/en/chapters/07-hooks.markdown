@@ -33,11 +33,43 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 ***Using Developer Studio:***
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
-2.  Enter *example* for your Project name and *Example* for your Display name. 
+2.  Assign a project name and display name. To demonstrate, we'll use
+    *example-hook* and *Example* for the project name and display name,
+    respectively. Notice that upon entering *example-hook* as the project
+    name, the wizard conveniently inserts *Example* in grayed-out text as the
+    plugin's default display name. The wizard derives the default display name
+    from the project name, starts it in upper-case, and leaves off the plugin
+    type suffix *Hook* because the plugin type is automatically appended to
+    the display name in Liferay Portal. The IDE saves the you from repetitively
+    appending the plugin type to the display name; in fact, the IDE ignores any
+    plugin type suffix if you happen to append it to the display name.
 
-3.  Select the Plugins SDK and Portal Runtime you've configured. 
+    Enter the following values for the project name and display name:
+
+    - **Project name:** *example-hook*
+    - **Display name:** *Example*
+
+3.  Select the build type, Plugins SDK, and Liferay runtime. 
+
+    If you select the Maven build type, you'll be prompted to enter an artifact
+    version, group ID, and active profile for your project. See [Developing
+    Plugins Using 
+    Maven](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+    for more information. Otherwise, select the Ant build type, a Plugins SDK
+    and a Liferay runtime.  
+
+    For this demonstration, make the following selections: 
+
+    - **Build type:** *Ant*
+    - **Plugins SDK:** `[a configured Plugins SDK]`
+    - **Liferay runtime:** `[a configured Liferay runtime]`
+    
+    For more information, see sections [Installing the
+    SDK](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/installing-the-sdk)
+    and [Setting Up Liferay
+    IDE](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/setting-up-liferay-ide).
 
 4.  Select the *Hook* Plugin Type. 
 
