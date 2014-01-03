@@ -65,10 +65,10 @@ Installation steps:
     containing spaces, avoid using spaces when naming your folder.
 
     On Windows, to build a plugin's services (see Chapter 4 on Service Builder),
-    the Plugins SDK and Liferay Portal instance must be on the same drive. E.g.,
-    if your Liferay Portal instance is on your `C:\` drive, your Plugins SDK
-    must also be on your `C:\` drive in order for Service Builder to be able to
-    run successfully. 
+    the Plugins SDK and Liferay Portal instance must be on the same drive. For
+    example, if your Liferay Portal instance is on your `C:\` drive, your
+    Plugins SDK must also be on your `C:\` drive in order for Service Builder to
+    be able to run successfully.
 
 ---
 
@@ -114,10 +114,10 @@ properties:
 
 4.  Set the `ANT_HOME` variable:
 
-    **Variable name:** `ANT_HOME`. 
+    - **Variable name:** *ANT_HOME* 
 
-    **Variable value:** *<Ant installation path>* (e.g.,
-    `C:\Java\apache-ant-<version>`). 
+    - **Variable value:** `<Ant installation path>` (e.g.,
+    `C:\Java\apache-ant-<version>`) 
 
     Click *OK*. 
 
