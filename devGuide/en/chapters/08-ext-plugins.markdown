@@ -59,10 +59,10 @@ environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 	specify your alternate location. 
 
 4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
-	you'd like to use *Maven* for your build type, navigate to the [Using Liferay IDE with Maven](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/developing-plugins-using-maven)
+	you'd like to use *Maven* for your build type, navigate to the [Using Liferay
+	IDE with
+	Maven](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/use-liferay-ide-with-maven-liferay-portal-6-1-dev-guide-en)
 	section for details. 
-	
-	<!-- Change above link to exact location when available online -->
 
 5.  Your configured SDK and Liferay Runtime should already be selected. If you
     haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to

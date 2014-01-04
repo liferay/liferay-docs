@@ -54,9 +54,9 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 3.  Select the build type, Plugins SDK, and Liferay runtime. 
 
     If you select the Maven build type, you'll be prompted to enter an artifact
-    version, group ID, and active profile for your project. See [Developing
-    Plugins Using 
-    Maven](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+    version, group ID, and active profile for your project. See [Using Liferay
+	IDE with
+	Maven](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/use-liferay-ide-with-maven-liferay-portal-6-1-dev-guide-en)
     for more information. Otherwise, select the Ant build type, a Plugins SDK
     and a Liferay runtime.  
 
@@ -879,7 +879,7 @@ XML and the specified order for those elements.
 Great! You now know how to customize language keys. Next, let's discuss
 extending your Indexer Post Processor.
 
-## Extending the Indexer Post Processor 
+## Extending the Indexer Post Processor [](id=extend-the-indexer-post-processor-liferay-portal-6-1-dev-guide-en)
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
