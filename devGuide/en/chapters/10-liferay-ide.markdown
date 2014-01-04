@@ -413,13 +413,30 @@ and click the *Add* link next to your demo application. Your portlet then
 appears on the page. 
 
 Great, now you can create projects in Liferay IDE! Next, let's learn how to
-create new plugins inside of existing projects in Liferay IDE. But before we do,
-let's clean out the bare-bones portlet from our event-listing-portlet project. 
+create new plugins inside of existing projects in Liferay IDE. 
 
-The portlet project wizard conveniently creates a default portlet named after
-the project. However, for demonstration purposes, we want to begin creating
-portlets with a clean slate in our project. Let's tear out the default Event
-Listing portlet by removing its descriptors and it's JSP. 
+### Creating Plugins
+
+Liferay projects can contain multiple plugins. If you've followed the
+instructions from the earlier section on creating new Liferay projects, you
+should already have created the event-listing-portlet project. In this section
+we'll add two portlets to the event-listing-portlet project: the Location
+Listing portlet and the Event Listing portlet. This illustrates the general
+process for creating plugins inside of an existing Liferay project. Later in
+this guide, when we complete developing the Event Listing and Location Listing
+portlets, they'll allow users to add, edit, or remove events or locations,
+display lists of events or locations, search for particular events or locations,
+and view the details of individual events or locations. For now, we'll show you
+how to create both portlets in the event-listing-portlet project. But before we
+do, let's clean out the bare-bones default portlet from our
+event-listing-portlet project. 
+
+The portlet project wizard conveniently creates a default portlet named
+*event-listing-portlet* after the project's name. The portlets we'll create in
+this section will be named *locationlisting* and *eventlisting*. To avoid any
+confusion between the project's default portlet named *event-listing-portlet*
+and the portlet we'll be creating named *eventlisting*, let's remove the default
+portlet by removing its descriptors and it's JSP. 
     
 1.  Open the portlet's `docroot/WEB-INF/liferay-display.xml` file
     and remove the `<portlet id="event-listing" />` tag.
@@ -434,20 +451,6 @@ Listing portlet by removing its descriptors and it's JSP.
 
 Super! You've cleaned out the default portlet from the project. Now you're ready
 to start creating the example plugins. 
-
-### Creating Plugins
-
-Liferay projects can contain multiple plugins. If you've followed the
-instructions from the earlier section on creating new Liferay projects, you
-should already have created the event-listing-portlet project. In this section
-we'll add two portlets to the event-listing-portlet project: the Location
-Listing portlet and the Event Listing portlet. This illustrates the general
-process for creating plugins inside of an existing Liferay project. Later in
-this guide, when we complete developing the Event Listing and Location Listing
-portlets, they'll allow users to add, edit, or remove events or locations,
-display lists of events or locations, search for particular events or locations,
-and view the details of individual events or locations. For now, we'll show you
-how to create both portlets in the event-listing-portlet project. 
 
 Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
 Since it's a portlet type project it has a skeleton in place for supporting more
