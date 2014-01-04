@@ -136,7 +136,7 @@ develop your Liferay portal and test your customizations.
 Before setting up Liferay IDE, let's make sure you have all the appropriate
 software packages installed. 
 
-#### Requirements
+#### Requirements [](id=liferay-ide-requirements-liferay-portal-6-1-dev-guide-en)
 
 Before setting up Liferay IDE, you need to have appropriate versions of Liferay
 Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy

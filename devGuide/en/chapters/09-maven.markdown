@@ -583,7 +583,7 @@ Liferay CE plugins.
 Now that we have our Maven artifacts set up, let's configure Liferay IDE with
 Maven.
 
-## Using Liferay IDE with Maven 
+## Using Liferay IDE with Maven [](id=use-liferay-ide-with-maven-liferay-portal-6-1-dev-guide-en)
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
@@ -591,7 +591,7 @@ IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 Liferay IDE projects. Let's explore what the Maven project configurator does,
 how to install it, and how to install its dependencies. 
 
-### Installing Maven Plugins for Liferay IDE 
+### Installing Maven Plugins for Liferay IDE [](id=install-maven-plugins-for-liferay-ide-liferay-portal-6-1-dev-guide-en)
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -653,7 +653,7 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
 
-### Configuring your Liferay Maven Project 
+### Configuring your Liferay Maven Project [](id=configure-liferay-maven-project-liferay-portal-6-1-dev-guide-en)
 
 Now your Liferay IDE instance is Maven-ready and you have an existing Maven
 project. Let's investigate what is going on under the hood and configure your
