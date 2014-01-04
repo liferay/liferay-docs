@@ -415,7 +415,7 @@ appears on the page.
 Great, now you can create projects in Liferay IDE! Next, let's learn how to
 create new plugins inside of existing projects in Liferay IDE. 
 
-### Creating Plugins
+## Creating Plugins [](id=create-plugins-liferay-portal-6-1-dev-guide-en)
 
 Liferay projects can contain multiple plugins. If you've followed the
 instructions from the earlier section on creating new Liferay projects, you
