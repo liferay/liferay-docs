@@ -8,13 +8,13 @@ productivity.
 Many of us at Liferay are like that, which is why our SDKs are designed to work
 with any text editor or IDE. You can be productive on the Liferay platform using
 any tool you want. To jumpstart your efforts, however, we also provide an IDE
-environment fully integrated with Eclipse. We've designed this carefully,
-so that it integrates well with our existing SDKs and other tools that are out
-there. Liferay IDE helps you manage many features of Liferay's platform, making
-them easier to use. There are editors for Service Builder files, workflow
+environment fully integrated with Eclipse. We've designed this carefully, so
+that it integrates well with our existing SDKs, Maven, and other tools that are
+out there. Liferay IDE helps you manage many features of Liferay's platform,
+making them easier to use. There are editors for Service Builder files, workflow
 definitions, layout templates, and more. You'll find wizards for creating every
-kind of Liferay project there is, snippets for tag libraries, and
-auto-deploy of changes to plugins. 
+kind of Liferay project there is, snippets for tag libraries, and auto-deploy of
+changes to plugins. 
 
 Whether you've been using Liferay for a long time or are just getting started,
 it's worth your time to check out Liferay IDE and see whether it's another of
@@ -41,9 +41,9 @@ Server*--Liferay IDE is already configured in Developer Studio.
 Liferay IDE is a plugin for Eclipse. You can install it in two ways: bundled
 with Eclipse (this is the easiest way) or into an existing Eclipse installation. 
 
-If you want to install the bundled version, a prerequisite is a 
-version of Java supported by Eclipse. As of this writing, the bundled version
-requires JDK 6 or above. 
+If you want to install the bundled version, a prerequisite is a version of Java
+supported by Eclipse. As of this writing, the bundled version requires JDK 6 or
+above.
 
 Once you've satisfied the prerequisite, it's an easy matter to install Liferay
 IDE. Go to Liferay's [downloads page](http://www.liferay.com/downloads) and
@@ -59,37 +59,32 @@ or install from a `.zip` file.
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
--   Java 5.0 JRE or greater (Java 6 for Eclipse Juno). 
+-   Java 6.0 JRE or greater  
 -   Liferay IDE supports the following Eclipse releases: 
+
+    Eclipse Kepler Java EE (4.3.x)
 
     Eclipse Juno Java EE (4.2.x)
 
     Eclipse Indigo Java EE (3.7.x)
 
-    Eclipse Helios Java EE (3.6.x)
-
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Juno, Indigo, or Helios from the
+1.  Install Eclipse Kepler, Juno, or Indigo from the
     [Eclipse](http://www.eclipse.org) website. 
 
 2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
 3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-4.  In the *Work with* field, enter the update site URL for your Eclipse release
-    and press *Enter*. Your update site URL is one of the following: 
-
-    - Eclipse Juno Update Site: 
-      [http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
-    - Eclipse Indigo Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-    - Eclipse Helios Update Site:
-      [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+4.  In the *Work with* field, enter the update site URL
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
+    GA1/updatesite/` and press *Enter*.
 
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-6.  After calculating dependencies, click *Next* to complete the installation.
+6.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation. 
 
 7.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -98,28 +93,27 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 
 ![Figure 10.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
-To install Liferay IDE without specifying an update URL for Eclipse, follow
-these steps: 
+To install Liferay IDE from a `.zip` file, follow these steps:
 
-1.  Install Eclipse Juno, Indigo, or Helios from the
-    [Eclipse](http://www.eclipse.org) website.
+1.  Install Eclipse Kepler, Juno, or Indigo from the
+    [Eclipse](http://www.eclipse.org) website. 
 
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Download the IDE 2.0 `.zip` file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+    for your operating system. 
 
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
 
-4.  Instead of entering a URL in the *Work with* field, download the latest
-    version of Liferay IDE from the releases page: 
+4.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-    [Liferay IDE Downloads
-    Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
-
-5.  In the *Add Site* dialog, click the *Archive* button and browse to the location of
-    the downloaded zip file.
+5.  In the *Add Site* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay IDE `.zip` file.
 
 6.  Liferay IDE features should be detected. Select them and click *Next*. 
 
-7.  After calculating dependencies, click *Next* to complete the installation.
+7.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation.
 
 8.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
@@ -134,25 +128,53 @@ Let's set up Liferay IDE now that you have it installed.
 
 ## Setting Up Liferay IDE [](id=set--4)
 
-In order to start writing code with Liferay IDE, you need to have a Liferay
-runtime to code against, as well as a Plugins SDK to store your projects. Both
-of these must be registered in Liferay IDE, and this is easy to do. To get
-started, make sure you've downloaded and unzipped the following two items: 
+Now that you have Liferay IDE installed, either from a downloaded zip file or
+from the update site appropriate for your Eclipse version, you need to perform
+some basic setup. This section describes the setup steps to perform so you can
+develop your Liferay portal and test your customizations. 
 
-1.  Liferay Portal 6.0.5 or greater
+Before setting up Liferay IDE, let's make sure you have all the appropriate
+software packages installed. 
 
-2.  Liferay Plugins SDK 6.0.5 or greater
+#### Requirements [](id=liferay-ide-requirements-liferay-portal-6-1-dev-guide-en)
+
+Before setting up Liferay IDE, you need to have appropriate versions of Liferay
+Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy
+these requirements before proceeding:
+
+1.  Liferay Portal 6.0.5 or greater is downloaded and unzipped
+
+2.  Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped, and/or any
+    version of Maven is installed. If you're using the Plugins SDK, make sure
+    the Plugins SDK version matches the Liferay Portal version.
+
+3.  You've installed an appropriate Eclipse IDE version for Java EE Development,
+    and the Liferay IDE extension--see the *Installation* section if you haven't
+    already done this. 
+
+---
 
  ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
  (e.g., 5.2.x) are not supported by Liferay IDE. 
+
+---
 
 Let's set up your Liferay Plugins SDK. 
 
 ### Registering the Liferay Plugins SDK with Liferay IDE [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
-Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. 
+Plugins SDK and/or Maven installation and Liferay Portal must be installed and
+configured in your Liferay IDE. If you're thinking, "Wait a second, buster! I
+thought the Plugins SDK and Maven could be used without Liferay IDE!", then
+you're right. In the [The Plugins
+SDK](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/the-plugins-s-3)
+chapter, we'll explain how to use the Plugins SDK on its own, with a text
+editor. Also, we'll explain how to use Maven on its own in the [Developing
+plugins using
+Maven](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/developing-plugins-using-maven)
+chapter. Here, we explain the easiest way to use the Plugins SDK: by running it
+from Liferay IDE. 
 
 1.  In Eclipse, click *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr;
     *Installed Plugin SDKs*.
@@ -165,9 +187,13 @@ IDE.
 4.  Select *OK* and verify that your SDK was added to the list of *Installed
     Liferay Plugin SDKs*. 
 
+---
+
  ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
  your preferences. Set one as the default SDK by checking its box in the list of
  *Installed Liferay Plugin SDKs*. 
+
+---
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 
@@ -191,7 +217,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
     ![Figure 10.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr; *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
@@ -235,25 +261,125 @@ Once the server is launched, you can open Liferay portal home from the *Servers*
 tab by right clicking your Liferay Tomcat server and selecting *Open Liferay
 Portal Home*. 
 
-Next you'll learn to create new Liferay projects in Liferay IDE. 
+Next, you'll learn to create new Liferay projects in Liferay IDE. 
 
 ## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
 
 Creating Liferay projects is a straightforward process, similar to creating
-other Eclipse project types. 
+other Eclipse project types. Plugins for Liferay Portal must be created inside
+of a Liferay project. A Liferay project is essentially a root directory with a
+standardized structure containing the project's (and each of its plugins')
+necessary files. Since each plugin type requires a different folder and file
+structure, let's create a project to illustrate the process.
 
-Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plugin Project. 
+If you've been following our Liferay IDE configuration instructions, your
+Plugins SDK and Liferay portal server have already been configured in Liferay
+IDE. Now let's create a new Liferay plugin project in Liferay IDE. We'll create
+the Event Listing portlet project, which we'll use throughout this guide.
 
-In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
-Liferay Runtime should be selected. The plugin type *portlet* is the default
-plugin type. Type a project name and corresponding display name, then click
-*Finish*. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
-![Figure 10.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+2.  In the project creation wizard, you'll name and configure your project.
 
-Your new plugin project appears in the package explorer. 
+	We'll create a plugin project that we'll use throughout this guide.
+	First, we'll create a bare bones plugin project; then, we'll manually add an
+	additional plugin to the project and add additional configurations. 
+	
+	2.1. Provide both a *Project Name*, which is used to name the project's
+	directory, and a *Display Name*, which is used to identify the plugin when
+	adding it to a page in Liferay Portal. Our demonstration project will have
+	the project name *event-listing-portlet* and the display name *Event
+	Listing*.
+	
+	2.2. Leave the *Use default location* checkbox checked. By default, the
+	default location is set to your current workspace. If you'd like to change
+	where your plugin project is saved in your file system, uncheck the box and
+	specify your alternate location. 
+	
+	2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+	you'd like to use *Maven* for your build type, navigate to the *Developing
+	Plugins Using Maven* section for details.
 
-Now you need to deploy your new plugin project to your Liferay Server. 
+    2.4. Your newly configured SDK and Liferay Runtime should already be
+    selected. If you haven't yet pointed Liferay IDE to a Plugins SDK, click
+    *Configure SDKs* to open the *Installed Plugin SDKs* management wizard. You
+    can also access the *New Server Runtime Environment* wizard if you need to
+    set up your runtime server; just click the *New Liferay Runtime* button next
+    to the *Liferay Portal Runtime* dropdown menu.
+
+    2.5. Under *Plugin Type*, indicate which plugin type your project will hold
+    by selecting one from the list. You can choose from *Portlet*, *Service
+    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, or *Ext*. Liferay IDE
+    provides handy wizards for creating new Liferay projects. Our demonstration
+    project will hold service builder portlets for the Nose-ster organization,
+    so make sure *Service Builder Portlet* is selected.
+
+    ![Figure 10.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
+
+Great! You've created a Liferay portlet project! 
+
+You can find more information on Liferay's plugin frameworks in the chapter on
+portlet development. In that chapter, we'll discuss the plugin creation wizard
+in more detail. 
+
+Note: We're creating the event-listing-portlet project now so that we can
+highlight how Liferay IDE simplifies project creation. For more information on
+creating portlets, please see the chapter of this guide on portlets. Similarly,
+for more information on themes, layout templates, hooks, or Ext plugins, please
+refer to the appropriate chapter of this guide. 
+
+Our *event-listing-portlet* plugin project should appear in the Eclipse package
+explorer. The project was created in the plugins SDK you configured, under the
+directory corresponding to the plugin type the project contains. Here's the
+generalized directory structure for portlet projects created in Liferay
+IDE/Developer Studio: 
+
+- `PROJECT-NAME/`
+    - `docroot/WEB-INF/src`
+    - `build.xml` **- Common project file**
+    - `docroot/`
+        - `css/`
+            - `main.css`
+        - `view.jsp`
+        - `js/`
+            - `main.js`
+        - `META-INF/`
+            - `MANIFEST.MF`
+        - `WEB-INF/`
+            - `lib/`
+            - `tld/`
+                - `aui.tld`
+                - `liferay-portlet-ext.tld`
+                - `liferay-portlet.tld`
+                - `liferay-security.tld`
+                - `liferay-theme.tld`
+                - `liferay-ui.tld`
+                - `liferay-util.tld`
+            - `liferay-display.xml`
+            - `liferay-plugin-package.properties` **- Common project file**
+            - `liferay-portlet.xml`
+            - `portlet.xml`
+            - `web.xml`
+        - `icon.png`
+        - `view.jsp`
+
+All projects, regardless of type, are created with a `build.xml` and a
+`liferay-plugin-package.properties` file--we've highlighted each of them with
+the note **Common project file** in the directory structure above. The
+`build.xml` file allows Liferay IDE to use Ant to automatically compile and
+deploy your plugins. Another default file is
+`liferay-plugin-package.properties`. This file contains important metadata for
+your project. Liferay IDE's *properties* view gives you a simple interface to
+inspect or specify the file's fields, including your project's dependencies and
+deployment context, display name, and Liferay version. If you publish your
+project as an app to Liferay Marketplace, the value of the `name` property in
+`liferay-plugin-package.properties` is used as the app's name. The value of the
+`liferay-versions` property is used on Liferay Marketplace to specify the
+versions of Liferay on which your application is intended to run.
+
+If you're following along with the creation of the event-listing-portlet, we're
+not done yet! We still need to add additional plugins to our project, but first,
+let's deploy your new plugin project to your Liferay Server. 
 
 ## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
 
@@ -286,8 +412,176 @@ Once you're logged in, click *Add* &rarr; *More*, expand the *Sample* category,
 and click the *Add* link next to your demo application. Your portlet then
 appears on the page. 
 
-Now you can create projects in Liferay IDE! Let's find out how to import
-existing projects into Liferay IDE. 
+Great, now you can create projects in Liferay IDE! Next, let's learn how to
+create new plugins inside of existing projects in Liferay IDE. 
+
+## Creating Plugins [](id=create-plugins-liferay-portal-6-1-dev-guide-en)
+
+Liferay projects can contain multiple plugins. If you've followed the
+instructions from the earlier section on creating new Liferay projects, you
+should already have created the event-listing-portlet project. In this section
+we'll add two portlets to the event-listing-portlet project: the Location
+Listing portlet and the Event Listing portlet. This illustrates the general
+process for creating plugins inside of an existing Liferay project. Later in
+this guide, when we complete developing the Event Listing and Location Listing
+portlets, they'll allow users to add, edit, or remove events or locations,
+display lists of events or locations, search for particular events or locations,
+and view the details of individual events or locations. For now, we'll show you
+how to create both portlets in the event-listing-portlet project. But before we
+do, let's clean out the bare-bones default portlet from our
+event-listing-portlet project. 
+
+The portlet project wizard conveniently creates a default portlet named
+*event-listing-portlet* after the project's name. The portlets we'll create in
+this section will be named *locationlisting* and *eventlisting*. To avoid any
+confusion between the project's default portlet named *event-listing-portlet*
+and the portlet we'll be creating named *eventlisting*, let's remove the default
+portlet by removing its descriptors and it's JSP. 
+    
+1.  Open the portlet's `docroot/WEB-INF/liferay-display.xml` file
+    and remove the `<portlet id="event-listing" />` tag.
+    
+2.  Open the `docroot/WEB-INF/liferay-portlet.xml` file and remove the
+    `<portlet>...</portlet>` tags and code residing between those tags.
+    
+3.  Navigate to the `docroot/WEB-INF/portlet.xml` file and remove the
+    `<portlet>...</portlet>` tags and code residing between those tags.	
+
+4.  Remove the `docroot/view.jsp` file. 
+
+Super! You've cleaned out the default portlet from the project. Now you're ready
+to start creating the example plugins. 
+
+Your Liferay IDE's Package Explorer shows your Event Listing plugin project.
+Since it's a portlet type project it has a skeleton in place for supporting more
+portlet plugins. Let's start by creating the Location Listing portlet. 
+
+Use the following steps to create the Location Listing portlet:
+
+1.  Right click on your `event-listing-portlet` project in Liferay IDE's 
+    *Package Explorer* and select *New* &rarr; *Liferay Portlet*. 
+
+2.  The *New Liferay Portlet* dialog box appears with your plugin project 
+    *event-listing-portlet* selected as the *Portlet plugin project* by default.
+    It's a good idea to name your *Portlet class* after the name of your
+    portlet. We'll name the class *LocationListingPortlet* in this example. Name
+    your *Java package* after the plugin's parent project, so it will be
+    *com.nosester.portlet.eventlisting*, and leave the *Superclass* as
+    *com.liferay.util.bridges.mvc.MVCPortlet*. Alternatively, you could have
+    selected *com.liferay.portal.kernel.portlet.LiferayPortlet* or
+    *javax.portlet.GenericPortlet* for your superclass. 
+
+    ![Figure 10.7: Liferay IDE's portlet creation wizard makes creating a portlet class is easy.](../../images/create-a-portlet-class.png)
+
+    Here are the portlet class values to specify for the example Location
+    Listing portlet: 
+
+    - **Portlet plugin project:** *event-listing-portlet*
+    - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
+    - **Portlet class:** *LocationListingPortlet*
+    - **Java package:** *com.nosester.portlet.eventlisting*
+    - **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
+
+    Click *Next*.
+
+3.  In the next window of the *New Liferay Portlet* wizard, you'll specify
+    deployment descriptor details for your portlet. First enter the *Name* of
+    your portlet--in our example, this will be *locationlisting*. Next, enter
+    the portlet's *Display name* and *Title*; we'll specify both as *Location
+    Listing Portlet*. In this window, you can also specify which portlet modes
+    you'd like your portlet to have. *View* mode is automatically selected.
+    There are also options for creating resources: you can specify the folder
+    where JSP files will be created as well as whether or not a resource bundle
+    file will be created. We'll leave the *Create JSP files* box flagged,
+    specify *html/locationlisting* as the JSP folder, and flag the *Create
+    resource bundle file* box.
+
+    Here are the portlet deployment descriptor details to specify for the
+    Location Listing portlet: 
+
+    - **Name:** *locationlisting*
+    - **Display name:** *Location Listing Portlet*
+    - **Title:** *Location Listing Portlet*
+    - **JSP folder:** *html/locationlisting*
+
+    Click *Next*. 
+
+    ![Figure 10.8: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
+
+4.  This window lets you specify portlet deployment descriptor details that are
+    specific to Liferay. You can set the file paths of your portlet's custom
+    icon, main CSS file, and main JavaScript file. You can also specify a CSS
+    class wrapper. Next, you can also choose the category for your portlet (it's
+    categorized under *Sample* by default), and choose whether or not to add it
+    to the *Control Panel* of your Liferay Portal. Accept the default, leaving
+    the *Add to Control Panel* box unflagged. 
+
+5.  The last step is to specify modifiers, interfaces, and method stubs to
+    generate in the Portlet class. Accept the defaults and click *Finish*. 
+
+Use the following steps to create the Event Listing portlet:
+
+1.  Right-click your event-listing-portlet project &rarr; *New* &rarr; *Liferay
+    Portlet*. Specify *EventListingPortlet* as the name of the portlet class,
+    enter *com.nosester.portlet.eventlisting* as its Java package, and select
+    *com.liferay.util.bridges.mvc.MVCPortlet* as it's superclass. 
+
+    ![Figure 10.9: Creating portlet classes is simple with Liferay IDE's portlet creation wizard.](../../images/create-a-portlet-class-eventlistingportlet.png)
+
+    Here are the portlet class values to specify for the example Event
+    Listing portlet: 
+
+    - **Portlet plugin project:** *event-listing-portlet*
+    - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
+    - **Portlet class:** *EventListingPortlet*
+    - **Java package:** *com.nosester.portlet.eventlisting*
+    - **Superclass:** *com.liferay.util.bridges.mvc.MVCPortlet*
+
+    Click *Next*. 
+
+2.  In this window we'll specify the portlet's deployment descriptor details. 
+
+    Here are the portlet deployment descriptor details to specify for the
+    Event Listing portlet: 
+
+    - **Name:** *eventlisting*
+    - **Display name:** *Event Listing Portlet*
+    - **Title:** *Event Listing Portlet*
+    - **JSP folder:** *html/eventlisting*
+
+    Click *Next*. 
+
+3.  This window lets you specify portlet deployment descriptor details that are
+    specific to Liferay. You can set the file paths of your portlet's custom
+    icon, main CSS file, and main JavaScript file. You can also specify a CSS
+    class wrapper. In the *Liferay Display* section, you can choose the category
+    for your portlet (it's categorized under *Sample* by default), and choose
+    whether or not to add it to the *Control Panel* of your Liferay Portal.
+    Accept the default, leaving the *Add to Control Panel* box unflagged and
+    click *Next*. 
+
+4.  The last step in creating your portlet with the wizard is to specify
+    modifiers, interfaces, and method stubs to generate in the Portlet class.
+    Accept the defaults and click *Finish*. 
+
+By default, new portlets use the MVCPortlet framework, a light framework that
+hides part of the complexity of portlets and makes the most common operations
+easier. The default MVCPortlet project uses separate JSPs for each portlet
+mode: each of the registered portlet modes has a corresponding JSP with the
+same name as the mode. For example, `edit.jsp` is for edit mode and `help.jsp`
+is for help mode. 
+
+Let's redeploy the plugin project to make our portlet plugins available in the
+portal. In the *Servers* tab, simply right click the *event-listing-portlet*
+project, then click *Redeploy*.
+
+Now you've created and deployed the *Location Listing* portlet and the
+*Event Listing* portlet from the same project. Eventually, when the Location
+Listing portlet is complete it will allow users to enter viable event locations.
+
+If you've been following along to create the Event Listing portlet project,
+you're done! Next, let's find out how to import existing projects into Liferay
+IDE. 
 
 ## Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-i-4)
 
@@ -330,7 +624,7 @@ from a Plugins SDK project. Follow these steps:
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
 
-    ![Figure 10.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
+    ![Figure 10.10: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
 2.  Browse to your project folder. It should be a subdirectory of one of the
     plugin types (e.g., portlets, hooks, themes, etc) or it won't import
@@ -362,9 +656,9 @@ Does your Plugins SDK contain multiple plugins? You can easily batch import each
 plugin in your Plugins SDK as its own Liferay IDE project. 
 
 1.  In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
-    Projects from Plugin SDK*. 
+    Projects from Plugins SDK*. 
 
-    ![Figure 10.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
+    ![Figure 10.11: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
 2.  In the *Import Projects* window, use the combo box to select the *Liferay
     Plugins SDK* you're importing plugins from. 
@@ -420,7 +714,7 @@ convert your project.
     location and SDK version should be detected automatically. If they aren't
     valid, an error message is displayed. 
 
-    ![Figure 10.9: Converting a project](../../images/ide-convert-plugin-project.png)
+    ![Figure 10.12: Converting a project](../../images/ide-convert-plugin-project.png)
 
 3.  Select the Liferay runtime to use for the project. If you don't have a
     Liferay Runtime defined, do so now by clicking *New...*. 
@@ -474,7 +768,7 @@ projects. Here's how you verify that your imports were successful:
 1.  Once the project is imported, you should see a new project inside Eclipse
     and it should have an "L" overlay image; the "L" is for Liferay! 
 
-    ![Figure 10.10: Verifying that the import succeeded](../../images/ide-liferay-project-w-overlay-image.png)
+    ![Figure 10.13: Verifying that the import succeeded](../../images/ide-liferay-project-w-overlay-image.png)
 
 2.  Let's check the project's target runtime and facets to make sure it's
     configured as a *Liferay IDE* project:
@@ -485,7 +779,7 @@ projects. Here's how you verify that your imports were successful:
     2.2. In the *Properties* window, click *Project Facets* and make sure both
          Liferay runtime and Liferay plugin facets are properly configured. 
 
-    ![Figure 10.11: Project Facets](../../images/ide-project-facets.png)
+    ![Figure 10.14: Project Facets](../../images/ide-project-facets.png)
 
 Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
@@ -564,7 +858,7 @@ Server Adapter, use the following steps:
     into the *Server's host name* field. For the *Server name*, enter
     *Liferay@[IP address]*, then click *Next*. 
 
-    ![Figure 10.12: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
+    ![Figure 10.15: Define the remote Liferay server.](../../images/remote_server_adapter_wizard_1.png)
 
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
@@ -576,13 +870,11 @@ Server Adapter, use the following steps:
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance:  
 
-    *Hostname*: Enter the IP address of your remote Liferay Portal instance's
+    - **Hostname:** Enter the IP address of your remote Liferay Portal instance's
     machine. 
-
-    *HTTP Port*: Enter the port it runs on (default: 8080). 
-
-    *Username* and *Password*: Enter your administrator credentials for the
-    remote Liferay Portal instance.  
+    - **HTTP Port:** Enter the port it runs on (default: 8080). 
+    - **Username** and **Password:** Enter your administrator credentials for
+    the remote Liferay Portal instance.  
 
     Leave the *Liferay Portal Context Path* and *Server Manager Context Path*
     set to the defaults unless these values were changed for your remote Liferay
@@ -602,7 +894,7 @@ Server Adapter, use the following steps:
     Once you've purchased the application, navigate to the *Purchased* page of
     the Control Panel's Marketplace interface. 
 
-    ![Figure 10.13: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
+    ![Figure 10.16: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
     Find your application in the list of purchased products. Then click on the
     buttons to download and install the application. Once it's been installed on
@@ -704,7 +996,7 @@ Marketplace includes Liferay's *Kaleo Workflow Designer* that lets you create
 and modify portal workflows in your browser. With Kaleo Designer for Java, you
 can design and publish Kaleo workflows from Liferay Developer Studio! 
 
-![Figure 10.14: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
+![Figure 10.17: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
 
 Kaleo Designer for Java lets you incorporate back end Java development and
 scripting in your workflows. Its graphical interface lets you drag and drop
@@ -773,7 +1065,7 @@ After downloading and installing the Kaleo Forms EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
 the server instance in the Servers view of Developer Studio.
 
-![Figure 10.15: In Studio's *Servers* view, your server's Kaleo Workflows folder shows workflows published on your portal.](../../images/kaleo-1.png)
+![Figure 10.18: In Studio's *Servers* view, your server's Kaleo Workflows folder shows workflows published on your portal.](../../images/kaleo-1.png)
 
 Developer Studio retrieves all workflow definitions published on your portal
 server. As mentioned previously, the Kaleo Designer for Java lets you remotely
@@ -806,13 +1098,13 @@ highlight features from Kaleo Designer for Java (Designer) along the way.
 To demonstrate Designer's features, let's create a workflow definition for a
 software ticketing process. Are you ready to roll? Let's get started! 
 
-![Figure 10.16: Check out the adventures of Liferay's mascots, Ray and Alloy, found at http://www.liferay.com/ray.](../../images/kaleo-15.png)
+![Figure 10.19: Check out the adventures of Liferay's mascots, Ray and Alloy, found at http://www.liferay.com/ray.](../../images/kaleo-15.png)
 
 1.  Create your new workflow definition by going to *File* &rarr; *New* &rarr;
     *Liferay Kaleo Workflow*. Alternatively, you can select *Liferay Kaleo
     Workflow* from the toolbar button shown in the figure below. 
 
-    ![Figure 10.17: Create a new workflow definition locally by selecting *Liferay Kaleo Workflow* from the toolbar button.](../../images/kaleo-3.png)
+    ![Figure 10.20: Create a new workflow definition locally by selecting *Liferay Kaleo Workflow* from the toolbar button.](../../images/kaleo-3.png)
 
 2.  The *Create New Kaleo Workflow File* wizard will guide you through the steps
     necessary to complete the initial setup of your new workflow definition. 
@@ -853,7 +1145,7 @@ software ticketing process. Are you ready to roll? Let's get started!
     workflow is associated with an asset type. Later in our exercise, we'll
     associate our workflow with a Dynamic Data List (DDL). 
 
-    ![Figure 10.18: When choosing an assignment type for a task node, you are given multiple options.](../../images/kaleo-4.png)
+    ![Figure 10.21: When choosing an assignment type for a task node, you are given multiple options.](../../images/kaleo-4.png)
 
     ---
 
@@ -878,7 +1170,7 @@ The *Palette* lets you graphically customize your workflow with nodes and
 transitions. In addition, you can choose different behaviors for your mouse
 pointer. 
 
-![Figure 10.19: The palette toolbar lets you customize your workflow with additional nodes and transitions.](../../images/kaleo-6.png)
+![Figure 10.22: The palette toolbar lets you customize your workflow with additional nodes and transitions.](../../images/kaleo-6.png)
 
 Here are your pointer options: 
 
@@ -926,14 +1218,14 @@ options to select tasks to be done in your fork threads. In addition, a checkbox
 lets you indicate whether to automatically add a corresponding join node to your
 workflow.
 
-![Figure 10.20: You can select what to fork and whether to automatically create a join node.](../../images/kaleo-7.png) 
+![Figure 10.23: You can select what to fork and whether to automatically create a join node.](../../images/kaleo-7.png) 
 
 On finishing your fork node in the wizard, Kaleo Designer places your new nodes
 onto the workflow diagram's canvas. If you're not happy with the location of
 your new nodes, drag them to place them where you want on your canvas. Our
 ticket process workflow now looks something like this: 
 
-![Figure 10.21: After creating the fork and join nodes, you can reposition them to your liking.](../../images/kaleo-8.png)
+![Figure 10.24: After creating the fork and join nodes, you can reposition them to your liking.](../../images/kaleo-8.png)
 
 Why is there a red "X" in the bottom left of multiple nodes within our workflow?
 These are error markers! Errors indicate something is specified incorrectly or is
@@ -988,7 +1280,7 @@ Type* menu and click *Next*. You have options to enter the user's *User-id*,
 *Screen name*, or *Email address*. Enter the user's screen name and click
 *Finish*.
 
-![Figure 10.22: Designer lets you assign a task to a specific user of Liferay Portal.](../../images/kaleo-29.png)
+![Figure 10.25: Designer lets you assign a task to a specific user of Liferay Portal.](../../images/kaleo-29.png)
 
 Assigning the QA and QA Management task nodes resolved their error markings (no
 more red "X"!). The join node's error marking won't disappear until you connect
@@ -1056,7 +1348,7 @@ Node properties are grouped as follows:
 
 Here's what the Properties view looks like in Developer Studio: 
 
-![Figure 10.23: The Properties view gives you multiple sub-tabs to help customize your workflow nodes.](../../images/kaleo-11.png)
+![Figure 10.26: The Properties view gives you multiple sub-tabs to help customize your workflow nodes.](../../images/kaleo-11.png)
 
 Workflows frequently become too large to view in entirety on the workflow
 diagram screen; the *Outline* view is a huge asset when this happens. It's a top
@@ -1134,7 +1426,7 @@ transition icon to select. -->
 Here's a snapshot of the *Create New Condition Node* menu configured for the
 ticket process workflow. 
 
-![Figure 10.24: When creating a condition node, you can set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
+![Figure 10.27: When creating a condition node, you can set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
 
 Before adding a script to our condition node, let's make some changes to our
 workflow transitions: 
@@ -1203,7 +1495,7 @@ You can expand and collapse a folder by clicking its name bar.
 
 Here's a snapshot of the palette with the *Context Variables* folder open:
 
-![Figure 10.25: Each script editor is associated with a palette that contains helpful snippets of code you can insert.](../../images/kaleo-14.png) 
+![Figure 10.28: Each script editor is associated with a palette that contains helpful snippets of code you can insert.](../../images/kaleo-14.png) 
 
 Drag and drop an entity from your palette onto your Java/Groovy editor and code
 representing that entity appears in the editor. The inserted code is free of
@@ -1246,7 +1538,7 @@ We're pulling out the status from the DDL record and returning a value
 indicating "Yes" to continue fixing the ticket issue or "No" to transition to
 the workflow's end state. 
 
-Add the following to the script's imports to finsih things up: 
+Add the following to the script's imports to finish things up: 
 
 	import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
@@ -1267,7 +1559,7 @@ all of the code was injected into our workflow's XML file within the
 Here's a snapshot of our current ticket process workflow after inserting the
 condition node: 
 
-![Figure 10.26: The ticket process workflow after inserting the condition node.](../../images/kaleo-30.png)
+![Figure 10.29: The ticket process workflow after inserting the condition node.](../../images/kaleo-30.png)
 
 We need to create a valid DDL record to invoke this workflow properly. If you're
 thinking "How do we set up a DDL record?" or "How does this DDL record thingy
@@ -1326,7 +1618,7 @@ To access the template editors, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
 clicking the green "plus" symbol. 
 
-![Figure 10.27: When creating a notification, Developer Studio offers several options, like choosing  a template language.](../../images/kaleo-16.png)
+![Figure 10.30: When creating a notification, Developer Studio offers several options, like choosing  a template language.](../../images/kaleo-16.png)
 
 There are several fields to fill in for your notification: 
 
@@ -1364,7 +1656,7 @@ to customize notifications in your workflow definition.
 
 Let's continue editing our ticket process workflow. After completion of the QA
 task assignments, our Project Management team should be notified. To set up a
-notifcation email, we'll add a new task node that transitions from our join
+notification email, we'll add a new task node that transitions from our join
 node. This new task node will hold our email notification. Typically, we'd
 assign this task to a project management role and email it to the project
 management team's email alias. For demonstration purposes, we'll use "Joe Blogs"
@@ -1389,7 +1681,7 @@ Project Management node. Lastly, add a transition named *Completed* from our
 Project Management node to our *EndNode*. Here's an updated screenshot of what
 your workflow diagram should look like: 
 
-![Figure 10.28: Our workflow diagram is busy now; but we're not finished yet!](../../images/kaleo-31.png) 
+![Figure 10.31: Our workflow diagram is busy now; but we're not finished yet!](../../images/kaleo-31.png) 
 
 Let's create our email notification for our Project Management task node next.
 Click on the Project Management node and select *Notifications* in the
@@ -1435,7 +1727,7 @@ written in FreeMarker.
 The snapshot below illustrates what the snippet sends to the configured email
 recipient. 
 
-![Figure 10.29: This is how the email notification will appear when it's received.](../../images/kaleo-43.png) 
+![Figure 10.32: This is how the email notification will appear when it's received.](../../images/kaleo-43.png) 
 
 Your email notification is set up! Now, when the Project Management task node is
 activated in the workflow, the specified user (i.e. *joe*) will receive the
@@ -1591,7 +1883,7 @@ you'll also want to edit and review your workflow definition's XML source code.
 Selecting the *Source* tab next to the *Diagram* tab in the main editor view
 takes you to the XML, and you can easily switch contexts as you need. 
 
-![Figure 10.30: Feel free to switch between *Diagram* and *Source* modes of your workflow editor in Kaleo Designer for Java.](../../images/kaleo-20.png)
+![Figure 10.33: Feel free to switch between *Diagram* and *Source* modes of your workflow editor in Kaleo Designer for Java.](../../images/kaleo-20.png)
 
 *Source* mode offers you its own cool features: 
 
@@ -1698,7 +1990,7 @@ First we'll create a data definition that lets the user select a status value.
 
 3.  In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
 
-    ![Figure 10.31: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
+    ![Figure 10.34: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
 4.  In the *Settings* tab, double click the *Name* property to open the property
     editor--enter *status* as the value. 
@@ -1750,7 +2042,7 @@ with our ticket process workflow.
 
 5.  Leave *Workflow Task Forms* unassigned for our demonstration. 
 
-![Figure 10.32: To test the ticket process workflow, create a new Kaleo Forms *Process*--provide a name, entry definition, and workflow.](../../images/kaleo-41.png)
+![Figure 10.35: To test the ticket process workflow, create a new Kaleo Forms *Process*--provide a name, entry definition, and workflow.](../../images/kaleo-41.png)
 
 After saving, select the *Summary* tab in Kaleo Forms, click the *Submit New*
 button, and select *Ticket Process*.
