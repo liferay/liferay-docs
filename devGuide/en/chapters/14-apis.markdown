@@ -278,7 +278,7 @@ are plenty more class references like this one that you'll need to update.
 
 There are a number of HTML tags that AlloyUI 1.5 styled by defining custom CSS
 classes. For example, AlloyUI previously styled the HTML `<fieldset>` tag in a
-class named `.aui-fieldset`. But since Bootsrap provides styling for these tags,
+class named `.aui-fieldset`. But since Bootstrap provides styling for these tags,
 we now leverage the styling by wrapping the Bootstrap code (see
 [aui.css](https://github.com/liferay/liferay-portal/blob/6.2.0-ga1/portal-web/docroot/html/themes/_styled/css/aui.css)).
 For migrating such classes as `.aui-fieldset` to AlloyUI 2.0, simply remove
