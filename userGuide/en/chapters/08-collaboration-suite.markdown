@@ -225,8 +225,8 @@ thread under Related Assets.
 
 Once you've finished your blog entry, click *Publish*. You'll go back to the
 list of entries, and now your entry is displayed. Here is what it looks like
-when the display style is set to *Full Content* and the number of entries is
-set to ten:
+when the display template is set to *Full Content* and the maximum items to
+display is set to ten:
 
 ![Figure 8.5: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
 
@@ -1112,7 +1112,7 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 8.20: The *Follow your nose* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
+![Figure 8.20: The *Follow the moon* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
@@ -1647,11 +1647,11 @@ results.
 
 ### Viewing the Poll Results [](id=viewing-the-poll-results-liferay-portal-6-2-user-guide-08-en)
 
-When you create a poll question, it appears in a list in the Control Panel.
-After users vote in the poll, the data is collected here. If you select it, the
-name and the question, as well as a breakdown of the poll results appears,
-including percentages and total number of votes per answer and the total number
-of votes cast.
+When you create a poll question, it appears in a list in the *Content* section
+of Site Administration. After users vote in the poll, the data is collected
+here. If you select it, the name and the question, as well as a breakdown of the
+poll results appears, including percentages and total number of votes per answer
+and the total number of votes cast.
 
 ![Figure 8.29: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
@@ -1659,7 +1659,7 @@ Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie*, and *Vertical Bar*.
 
-![Figure 8.30: This is what the vertical bar graph for the Nose Size poll results looks like.](../../images/polls-results-vertical-bar.png)
+![Figure 8.30: This is what the vertical bar graph for the Lunar Resort poll results looks like.](../../images/polls-results-vertical-bar.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are
