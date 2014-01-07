@@ -83,13 +83,13 @@ the activities of a single user.
 Note that the Activities portlet provides links to the assets described in its
 activities feed. However, the links to the assets won't work unless there's a
 way to display the assets on the page. For example, suppose that the user Joe
-Bloggs uploaded a document called *Nose-ster happenings for August* to a site.
-If the Activities portlet has been placed on a page of that site, it will
-display a feed entry with a link to the *Nose-ster happenings for August*
+Bloggs uploaded a document called *Lunar Resort happenings for August* to a
+site. If the Activities portlet has been placed on a page of that site, it will
+display a feed entry with a link to the *Lunar Resort happenings for August*
 document. However, the link won't work unless there's a Documents and Media
 portlet or a Documents and Media Display portlet for the document to be
 displayed in. Remember add the appropriate portlets to the page of the
-Activities portlet if you want the Activities portlet's links to work.
+Activities portlet if you want the Activities portlet's links to work. 
 
 The User Statistics and Group Statistics portlets integrate with Liferay's
 social activity system which tracks user activity and assigns points for various
@@ -356,14 +356,14 @@ On a music based networking site like Last.fm, you can connect with people who
 have similar tastes to yours. With Liferay's social networking collaboration is
 the key to connection. 
 
-Using our example site of nosester.com, we can take a closer look at ways users
-can be connected through hierarchies and ways they can connect to each other.
-We'll look at a handful of portlets, both those designed specifically for
+Using our example site of lunar-resort.com, we can take a closer look at ways
+users can be connected through hierarchies and ways they can connect to each
+other. We'll look at a handful of portlets, both those designed specifically for
 connecting users and those that can create connections as a side-effect of just
 getting work done.
 
 The Site Members Directory portlet can provide a simple way for users to
-connect. If we have a site dedicated to people with big noses, we can place a
+connect. If we have a site dedicated to Lunar Resort astronauts, we can place a
 Site Members Directory portlet on that site, listing all the users that have
 joined that site. Users can connect by sending requests to other users on that
 list. This isn't the worst way to get users connected but it probably won't be

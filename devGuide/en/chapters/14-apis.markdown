@@ -276,6 +276,30 @@ should remove the "aui-" prefix from the class reference
 `.aui-ace-autocomplete`, converting the reference to `.ace-autocomplete`. There
 are plenty more class references like this one that you'll need to update. 
 
+There are a number of HTML tags that AlloyUI 1.5 styled by defining custom CSS
+classes. For example, AlloyUI previously styled the HTML `<fieldset>` tag in a
+class named `.aui-fieldset`. But since Bootsrap provides styling for these tags,
+we now leverage the styling by wrapping the Bootstrap code (see
+[aui.css](https://github.com/liferay/liferay-portal/blob/6.2.0-ga1/portal-web/docroot/html/themes/\_styled/css/aui.css)).
+For migrating such classes as `.aui-fieldset` to AlloyUI 2.0, simply remove
+the "aui-" prefix but append the `.aui` parent class name.
+
+For example, you'd replace this ...
+
+    .aui-fieldset {
+        // Styling
+    }
+
+... with this ...
+
+    .aui .fieldset {
+        // Styling
+    }
+
+You can check Bootstrap's
+[\_forms.scss](https://github.com/liferay/alloy-bootstrap/blob/master/lib/\_forms.scss)
+file for the HTML tags that Bootstrap styles. 
+
 Next, let's consider the modules that have been deprecated in AlloyUI 2.0. 
 
 ### AlloyUI Module Deprecations [](id=alloyui-module-deprecations-liferay-portal-6-2-dev-guide-14-en)
@@ -517,6 +541,15 @@ AlloyUI class names, replacing `aui-button-holder`, `aui-button-disabled`, and
 `aui-button-submit` class references with `button-holder`, `button-disabled` and
 `button-submit`, respectively. Keep this type of change throughout your
 portlet's files. 
+
+---
+
+ ![Warning](../../images/tip.png) **Warning:** Make sure to add the `.aui`
+ parent class reference in front of a classname if you're extending the
+ styling of a class that Bootstrap already styles. See the previous section on
+ *Removal of the aui- Prefix from All Classes* for details. 
+
+---
 
 Lastly, consider the changes done to the Microblogs portlet's `main.js` file.
 The script now uses the `liferay-util-window` module in place of the old
