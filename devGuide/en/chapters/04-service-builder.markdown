@@ -179,7 +179,8 @@ Next, let's roll up our sleeves and learn how to use Service Builder.
 ## Defining Your Object-Relational Map [](id=define-your-object-relational-map-liferay-portal-6-2-dev-guide-04-en)
 
 In order to demonstrate how to use Service Builder, let's continue using the
-event-listing-portlet project that we created in Chapter 2. It's an example
+event-listing-portlet project that we created in [Developing Apps with Liferay
+IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en). It's an example
 portlet project that Nose-ster, a fictitious organization, can use to schedule
 social events. We're using the event-listing-portlet project to manage and list
 these events. We need to add some entities, or model types, to represent
@@ -956,7 +957,9 @@ user. The company represents the portal instance. We set the `createDate` and
 `modifiedDate` of our Event to the current time. After that, we call the
 generated `addEvent` method of `EventLocalServiceBaseImpl` with our Event.
 Lastly, we add the Event as a resource so that we can apply permissions to it
-later. We'll cover the details of adding resources in Chapter 6. 
+later. We'll cover the details of adding resources in the [Asset
+Framework](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en)
+section. 
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add their signatures to the `EventLocalService` interface by
@@ -1641,8 +1644,10 @@ the following methods to the `EventServiceImpl` class:
 	}
 
 Each remote service method performs security checks to determine whether the
-caller has permission to add/update/delete events. We cover Liferay's security
-and permissions system in Chapter 6. To see how the Event Listing portlet is
+caller has permission to add/update/delete events. We cover Liferay's [Security
+and
+Permissions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
+framework later in this guide. To see how the Event Listing portlet is
 integrated with Liferay's permissions system, browse the Event Listing portlet
 project available in the *Dev Guide SDK* at
 [https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 

@@ -524,9 +524,10 @@ won't know which value to use.
  addition to defining custom actions, hooks can override portal properties to
  define model listeners, validators, generators, and content sanitizers. If you
  want to customize a property that's not found in this list, you must use an Ext
- plugin (see the chapter of this guide on Ext plugins). For more information
- about the properties themselves, you can view an online version of Liferay's
- [portal properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+ plugin (see [Advanced Customization with Ext Plugins](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en)).
+ For more information about the properties themselves, you can view an online
+ version of Liferay's [portal
+ properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
  file.
 
 ---
@@ -1014,5 +1015,4 @@ plugin, the preferred tool for customizing Liferay. You learned how to perform
 custom portal actions, override and extend custom portal JSPs, modify portal
 properties, and replace portal services and language properties. 
 
-Next, we'll show you what it takes to develop apps for publishing to *Liferay
-Marketplace*. 
+Next, we'll introduce you to Liferay's powerful UI framework: AlloyUI. 
