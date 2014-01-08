@@ -869,83 +869,83 @@ instance which overrides one of the methods to provide custom functionality.
 1.  Create a wrapper class for the `BridgeContext` that overrides the
     `getResponseNamespace()` method: 
 
-		package com.mycompany.myproject;
+        package com.mycompany.myproject;
 
-		public class BridgeContextCustomImpl extends BridgeContextWrapper {
+        public class BridgeContextCustomImpl extends BridgeContextWrapper {
 
-			private BridgeContext wrappedBridgeContext;
+            private BridgeContext wrappedBridgeContext;
 
-			public BridgeContextCustomImpl(BridgeContext bridgeContext) {
+            public BridgeContextCustomImpl(BridgeContext bridgeContext) {
 
-				this.wrappedBridgeContext = bridgeContext;
-				BridgeContext.setCurrentInstance(this);
-			}
+                this.wrappedBridgeContext = bridgeContext;
+                BridgeContext.setCurrentInstance(this);
+            }
 
-			@Override
-			public String getResponseNamespace() {
-				// return value based on custom algorithm.
-			}
+            @Override
+            public String getResponseNamespace() {
+                // return value based on custom algorithm.
+            }
 
-			@Override
-			public BridgeContext getWrapped() {
-				return wrappedBridgeContext;
-			}
-		}
+            @Override
+            public BridgeContext getWrapped() {
+                return wrappedBridgeContext;
+            }
+        }
 
 2.  Create a wrapper class for the `BridgeContextFactory`: 
 
-		package com.mycompany.myproject;
+        package com.mycompany.myproject;
 
-		public class BridgeContextFactoryCustomImpl extends BridgeContextFactory {
+        public class BridgeContextFactoryCustomImpl extends BridgeContextFactory {
 
-			private BridgeContextFactory wrappedBridgeContextFactory;
+            private BridgeContextFactory wrappedBridgeContextFactory;
 
-			public BridgeContextFactoryCustomImpl(
-			    BridgeContextFactory bridgeContextFactory) {
+            public BridgeContextFactoryCustomImpl(
+                BridgeContextFactory bridgeContextFactory) {
 
-			   this.wrappedBridgeContextFactory =  bridgeContextFactory;
-			}
+               this.wrappedBridgeContextFactory =  bridgeContextFactory;
+            }
 
-			public BridgeContextFactory getWrapped() {
-				return wrappedBridgeContextFactory;
-			}
+            public BridgeContextFactory getWrapped() {
+                return wrappedBridgeContextFactory;
+            }
 
-			@Override
-			public BridgeContext getBridgeContext(
-			    BridgeConfig bridgeConfig, BridgeRequestScope bridgeRequestScope,
-			    PortletConfig portletConfig, PortletContext portletContext,
-			    PortletRequest portletRequest, PortletResponse portletResponse,
-			    Bridge.PortletPhase portletPhase, PortletContainer portletContainer,
-			    IncongruityContext incongruityContext) {
+            @Override
+            public BridgeContext getBridgeContext(
+                BridgeConfig bridgeConfig, BridgeRequestScope bridgeRequestScope,
+                PortletConfig portletConfig, PortletContext portletContext,
+                PortletRequest portletRequest, PortletResponse portletResponse,
+                Bridge.PortletPhase portletPhase, PortletContainer portletContainer,
+                IncongruityContext incongruityContext) {
 
-				BridgeContext wrappedBridgeContext =
-				wrappedBridgeContextFactory.getBridgeContext(
-				    bridgeConfig, bridgeRequestScope, portletConfig, portletContext,
-				    portletRequest, portletResponse, portletPhase, portletContainer,
-				    incongruityContext);
+                BridgeContext wrappedBridgeContext =
+                wrappedBridgeContextFactory.getBridgeContext(
+                    bridgeConfig, bridgeRequestScope, portletConfig, portletContext,
+                    portletRequest, portletResponse, portletPhase, portletContainer,
+                    incongruityContext);
 
-				BridgeContext bridgeContext =
-				    new BridgeContextCustomImpl(wrappedBridgeContext);
+                BridgeContext bridgeContext =
+                    new BridgeContextCustomImpl(wrappedBridgeContext);
 
-				return bridgeContext;
-			}
-		}
+                return bridgeContext;
+            }
+        }
 
 3.  In the portlet's `WEB-INF/faces-config.xml`, specify the custom factory: 
 
-		<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
-		xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
-		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-		http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
-			<factory>
-				<factory-extension>
-					<bridge:bridge-context-factory>
-						com.mycompany.myproject.BridgeContextFactoryCustomImpl
-					</bridge:bridge-context-factory>
-				</factory-extension>
-			</factory>
-		</faces-config>
+        <faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+        http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+            <factory>
+                <factory-extension>
+                    <bridge:bridge-context-factory>
+                        com.mycompany.myproject.BridgeContextFactoryCustomImpl
+                    </bridge:bridge-context-factory>
+                </factory-extension>
+            </factory>
+        </faces-config>
 
 4.  Rebuild and re-deploy the portlet. 
 
@@ -1484,19 +1484,19 @@ enables file upload capability.
 Here's are code snippets from a class that imports the `FileUploadEvent` class
 and implements handling the file upload:
 
-	import com.liferay.faces.bridge.event.FileUploadEvent;
+    import com.liferay.faces.bridge.event.FileUploadEvent;
 
-	...
+    ...
 
     @ManagedBean(name = "backingBean")
     @ViewScoped
     public class ApplicantBackingBean implements Serializable {
 
-        	public void handleFileUpload(FileUploadEvent fileUploadEvent)
-        	throws Exception {
-	            UploadedFile uploadedFile = fileUploadEvent.getUploadedFile();
-	            System.err.println("Uploaded file:" + uploadedFile.getName());
-			}
+            public void handleFileUpload(FileUploadEvent fileUploadEvent)
+            throws Exception {
+                UploadedFile uploadedFile = fileUploadEvent.getUploadedFile();
+                System.err.println("Uploaded file:" + uploadedFile.getName());
+            }
         }
     }
 
