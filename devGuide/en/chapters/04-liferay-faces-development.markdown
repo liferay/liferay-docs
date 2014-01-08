@@ -108,7 +108,7 @@ that provide increased performance within Liferay.
     checkout the branch (or tag) that you want to work with. For example, type
     the following in a terminal window for the 4.2.0-m1 tag: 
 
-        git clone https://github.com/liferay/liferay-faces.git
+        git clone https://github.com/liferay/liferay-faces.git
         cd liferay-faces
         git checkout 4.2.0-m1
 
@@ -659,8 +659,8 @@ descriptor:
     <!-- Required only for Tomcat -->
     <listener>    
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
-    </listener> 
-    
+    </listener>
+
 Next we'll discuss configuring the Liferay CDI Portlet Bridge. 
 
 #### Liferay CDI Portlet Bridge Configuration [](id=liferay-cdi-portlet-bridge-configuration-liferay-portal-6-2-dev-guide-04-en)
@@ -740,7 +740,7 @@ annotations.
 | `javax.faces.ApplicationScoped` | [`javax.enterprise.context.ApplicationScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/ApplicationScoped.html) |
 | `javax.faces.RequestScoped` | No such equivalent, since [`javax.enterprise.context.RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) does not span portlet lifecycle phases. 
 | `javax.faces.SessionScoped` | [`javax.enterprise.context.SessionScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/SessionScoped.html) |
-| `javax.faces.ManagedProperty` (corresponding setter method required) | [`javax.inject.Inject`](http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html) (corresponding setter method not required) | 
+| `javax.faces.ManagedProperty` (corresponding setter method required) | [`javax.inject.Inject`](http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html) (corresponding setter method not required) | 
 
 Now that we have discussed JSF portlet development with CDI, let's move on to
 methods for dynamically adding a JSF portlet to a portal page.  
@@ -850,7 +850,7 @@ defined in the [bridge's
 file. 
 
 The bridge features an *extension mechanism* that enables developers to decorate
-any of these factories in `META-INF/faces-config.xml` (inside a jar), or
+any of these factories in `META-INF/faces-config.xml` (inside a jar), or
 `WEB-INF/faces-config.xml` (inside a portlet war). The benefit of this feature
 is that developers can plug in their own factory implementations that decorate
 (wrap) the default implementations with a
@@ -955,7 +955,7 @@ The next section explains how to internationalize JSF Portlets.
 
 There are at least two ways to handle internationalization with JSF and Liferay: 
 
-1. Using the standard JSF mechanism to create your own *i18n* keyword, as shown in the [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+1. Using the standard JSF mechanism to create your own *i18n* keyword, as shown in the [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
    demo.
     - Create a properties file in the classpath like [i18n.properties](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/resources/i18n.properties)
     - Create a resource-bundle faces-config entry like [faces-config.xml](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/faces-config.xml)
