@@ -1157,26 +1157,23 @@ Consequently, the default behavior of Liferay Faces Bridge is to cause the
 behavior is desired, then the following options can be placed in the
 `WEB-INF/web.xml` descriptor. 
 
-    <!-- The default value of the following -->
-    <!-- context-param is false, meaning that -->
-    <!-- Liferay Faces Bridge will cause -->
-    <!-- the BridgeRequestScope to end after -->
-    <!-- the RENDER_PHASE of the portlet -->
-    <!-- lifecycle. Setting the value to true -->
-    <!-- will cause Liferay Faces Bridge to -->
-    <!-- cause the BridgeRequestScope to last -->
-    <!-- until the next ACTION_PHASE or -->
-    <!-- EVENT_PHASE of the portlet lifecycle. -->
+    <!--
+    The default value of the following context-param is false, meaning that
+    Liferay Faces Bridge will cause the BridgeRequestScope to end after the
+    RENDER_PHASE of the portlet lifecycle. Setting the value to true will cause
+    Liferay Faces Bridge to cause the BridgeRequestScope to last until the next
+    ACTION_PHASE or EVENT_PHASE of the portlet lifecycle.
+    -->
     <context-param>
         <param-name>com.liferay.faces.bridge.bridgeRequestScopePreserved</param-name>
         <param-value>true</param-value>
     </context-param>
-    <!-- The default value of the following -->
-    <!-- context-param is 100. It defines -->
-    <!-- the maximum number of BridgeRequestScope -->
-    <!-- instances to keep in memory on the server -->
-    <!-- if the bridgeRequestScopePreserved -->
-    <!-- option is true. -->
+
+    <!--
+    The default value of the following context-param is 100. It defines the
+    maximum number of BridgeRequestScope instances to keep in memory on the
+    server if the bridgeRequestScopePreserved option is true. 
+    -->
     <context-param>
         <param-name>javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES</param-name>
         <param-value>2000</param-value>
@@ -1221,25 +1218,24 @@ WSRP.
 
 <!-- Consolidate into single comment, adding returns at 80 columns Jim -->
 
-    <!-- The default value of the following -->
-    <!-- context-param is false, meaning that -->
-    <!-- Liferay Faces Bridge will invoke -->
-    <!-- methods annotated with @PreDestroy -->
-    <!-- over those annoated with -->
-    <!-- @BridgePreDestroy. -->
-    <!-- Setting the value of the following -->
-    <!-- context-param instructs Liferay Faces -->
-    <!-- Bridge to prefer the @BridgePreDestroy -->
-    <!-- annotation over the standard @PreDestroy -->
-    <!-- annotation in order to support a WSRP -->
-    <!-- remote portal environment. -->
+    <!--
+    The default value of the following context-param is false, meaning that
+    Liferay Faces Bridge will invoke methods annotated with @PreDestroy over
+    those annoated with @BridgePreDestroy. Setting the value of the following
+    context-param instructs Liferay Faces Bridge to prefer the @BridgePreDestroy
+    annotation over the standard @PreDestroy annotation in order to support a
+    WSRP remote portal environment.
+    -->
     <context-param>
         <param-name>com.liferay.faces.bridge.preferPreDestroy</param-name>
         <param-value>false</param-value>
     </context-param>
-    <!-- The following listener is required to support -->
-    <!-- the @BridgeRequestScopeAttributeAdded -->
-    <!-- annotation in a WSRP remote portal environment. -->
+
+    <!--
+    The following listener is required to support the
+    @BridgeRequestScopeAttributeAdded annotation in a WSRP remote portal
+    environment. 
+    -->
     <listener>
         <listener-class>com.liferay.faces.bridge.servlet.BridgeRequestAttributeListener</listener-class>
     </listener>
@@ -1254,15 +1250,12 @@ Pluto, etc.) and is aware of some of the abilities (or limitations) of these
 containers. The Liferay Faces Bridge enables the developer to configure the
 abilities of the portlet container in the `WEB-INF/web.xml` descriptor.  
 
-    <!-- The default value of the following -->
-    <!-- context-param depends on which -->
-    <!-- portlet container the bridge -->
-    <!-- is running in. The value determines -->
-    <!-- whether or not the bridge resource -->
-    <!-- handler will attempt to set the -->
-    <!-- status code of downloaded resources -->
-    <!-- to values like -->
-    <!-- HttpServletResponse.SC_NOT_MODIFIED -->
+    <!--
+    The default value of the following context-param depends on which portlet
+    container the bridge is running in. The value determines whether or not the
+    bridge resource handler will attempt to set the status code of downloaded
+    resources to values like HttpServletResponse.SC_NOT_MODIFIED.
+    -->
     <context-param>
         <param-name>com.liferay.faces.bridge.containerAbleToSetHttpStatusCode</param-name>
         <param-value>true</param-value>
@@ -1293,12 +1286,11 @@ still guaranteeing uniqueness. Developers must manually configure Liferay Faces
 Bridge via the `WEB-INF/web.xml` descriptor in order to disable the namespace
 optimization and leverage the default behavior specified by JSR 329.  
 
-    <!-- The default value of the following -->
-    <!-- context-param is true, meaning that -->
-    <!-- Liferay Faces Bridge will optimize -->
-    <!-- the portlet namespace. Setting the value -->
-    <!-- of the following context-param to false -->
-    <!-- disables the optimization. -->
+    <!--
+    The default value of the following context-param is true, meaning that
+    Liferay Faces Bridge will optimize the portlet namespace. Setting the value
+    of the following context-param to false disables the optimization.
+    -->
     <context-param>
         <param-name>com.liferay.faces.bridge.optimizePortletNamespace</param-name>
         <param-value>false</param-value>
@@ -1325,8 +1317,7 @@ not XML entities are required to be resolved when parsing faces-config.xml files
 in the classpath. The default value of this option is false. You can set the
 option to true in the `WEB-INF/web.xml` descriptor. 
 
-    <!-- The default value of the following -->
-    <!-- context-param is false. -->
+    <!-- The default value of the following context-param is false. -->
     <context-param>
         <param-name>com.liferay.faces.bridge.resolveXMLEntities</param-name>
         <param-value>true</param-value>
@@ -1341,8 +1332,7 @@ Liferay Faces Bridge provides the ability to set the size of the buffer used to
 load resources into memory as the file contents are being copied to the
 response. The default value of this option is 1024 (1KB).  
 
-    <!-- The default value of the following -->
-    <!-- context-param is 1024. -->
+    <!-- The default value of the following context-param is 1024. -->
     <context-param>
         <param-name>com.liferay.faces.bridge.resourceBufferSize</param-name>
         <param-value>4096</param-value>
@@ -1383,8 +1373,7 @@ solve this problem, Liferay Faces Bridge provides a configuration option, which
 can be specified in `WEB-INF/web.xml`, that causes request scoped managed beans
 to be distinct for each portlet. 
 
-    <!-- The default value of the following -->
-    <!-- context-param is false. -->
+    <!-- The default value of the following context-param is false. -->
     <context-param>
         <param-name>com.liferay.faces.bridge.distinctRequestScopedManagedBeans</param-name>
         <param-value>true</param-value>
@@ -1408,8 +1397,7 @@ Liferay Faces Bridge enables support for View Parameters by default, but
 provides a configuration option that allows developers to disable the feature in
 the `WEB-INF/web.xml`.  
 
-    <!-- The default value of the following -->
-    <!-- context-param is true. -->
+    <!-- The default value of the following context-param is true. -->
     <context-param>
         <param-name>com.liferay.faces.bridge.viewParametersEnabled</param-name>
         <param-value>false</param-value>
