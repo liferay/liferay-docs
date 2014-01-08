@@ -1056,19 +1056,24 @@ The `bridge:inputFile` tag renders an HTML `<input type="file"/>` tag which enab
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:ui="http://java.sun.com/jsf/facelets">
         <h:head />
-        <h:body">
+        <h:body>
             <h:form>
-                fileUploadListener="#{applicantBackingBean.handleFileUpload}" multiple="multiple" />
+                <bridge:inputFile fileUploadListener="#{backingBean.handleFileUpload}" multiple="multiple" />
                 <h:commandButton value="Submit" />
             </h:form>
         </h:body>
     </f:view>
 
+Here's are code snippets from a class that imports the `FileUploadEvent` class
+and implements handling the file upload:
+
 	import com.liferay.faces.bridge.event.FileUploadEvent;
+
 	...
+
     @ManagedBean(name = "backingBean")
     @ViewScoped
-    public class BackingBean implements Serializable {
+    public class ApplicantBackingBean implements Serializable {
 
         	public void handleFileUpload(FileUploadEvent fileUploadEvent) throws Exception {
 	            UploadedFile uploadedFile = fileUploadEvent.getUploadedFile();
