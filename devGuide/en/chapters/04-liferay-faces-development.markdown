@@ -2,6 +2,8 @@
 
 ![Liferay Faces is an umbrella project that provides support for the JavaServer&#8482; Faces (JSF) standard within Liferay Portal. Liferay Faces encompasesses the Liferay Faces Bridge, Liferay Faces Alloy, and the Liferay Faces Portal Projects. The Liferay Faces project was migrated from the PortletFaces project after Liferay  assumed leadership of it on April 3, 2012.](../../images/04-liferay-faces-logo.png)
 
+<!-- Explain benefits of building portlets using JSF versus using JSP. - Jim -->
+
 This documentation contains information on the following:
 
 - Liferay Faces Versioning Scheme
@@ -17,6 +19,8 @@ The documentation will explain everything from choosing the correct Liferay Face
 First we will take a look at the Liferay Faces Versioning Scheme. 
 
 ## Liferay Faces Version Scheme [](id=liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Revisit this to elaborate. - Jim -->
 
 [Liferay Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) follows a `Major1.Major2.Minor-Type` versioning scheme: 
 
@@ -114,6 +118,9 @@ That's it, you have built Liferay Faces from source.
 
 #### Oracle WebLogic (Optional) [](id=oracle-weblogic-optional-liferay-portal-6-2-dev-guide-04-en)
 
+<!-- Reduce to bold section title? Rename to something like "Building Shared Libraries for Deploying Portlets on  Oracle WebLogic (Optional)"
+deployment on Oracle WebLogic" - Jim -->
+
 If you are deploying portlets to *Oracle WebLogic*, then it is necessary to build the *Shared Libraries* from the Liferay Faces source. However, the source will not build properly until the *WebLogic Injection Provider for Mojarra* is manually installed into your local `$HOME/.m2/repository` folder. 
 
 1. Locate Oracle's out-of-the-box `jsf-2.0.war` artifact, typically located in `Oracle/Middleware/wlserver/common/deployable-libraries/jsf-2.0.war` .
@@ -147,6 +154,8 @@ If you would like to contribute to Liferay Faces, please check out our wiki: [Co
 ## JSF Portlet Development [](id=jsf-portlet-development-liferay-portal-6-2-dev-guide-04-en)
 
 #### Overview [](id=overview-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Needs better crutch. - Jim -->
 
 The main goal of JSF portlet bridges is to make the JSF portlet development experience as close as possible to JSF webapp development. Consequently, many JSF webapps can be easily migrated to a portlet container using such a bridge. 
 
@@ -204,7 +213,7 @@ Additionally, Portlet 2.0 provides the ability to specify support for `EDIT` mod
         <portlet-mode>edit</portlet-mode>
     </supports>
 
-Although support for portlet `EDIT` mode has been specified, the portlet container does not necessarily know which JSF view should be rendered when the user enters portlet portlet `EDIT` mode. JSF portlet developers must specify the Facelet view that is to be displayed for each supported portlet mode. 
+Although support for portlet `EDIT` mode has been specified, the portlet container does not necessarily know which JSF view should be rendered when the user enters portlet portlet `EDIT` mode. JSF portlet developers must specify the Facelet view, in the `WEB-INF/portlet.xml` descriptor, that is to be displayed for each supported portlet mode. 
 
     <init-param>
         <name>javax.portlet.faces.defaultViewId.edit</name>
@@ -293,11 +302,15 @@ The JSR 329 standard defines a mechanism by which developers can use Portlet 2.0
 
 Section 5.3.2 of the JSR 329 standard also requires that if a `bridgePublicRenderParameterHandler` has been registered in the `WEB-INF/portlet.xml` descriptor, then the handler must be invoked so that it can perform any processing that might be necessary. 
 
+<!-- Split into snippets for portlet.xml and Java class. - Jim -->
+
     <!-- Optional bridgePublicRenderParameterHandler -->
     <init-param>
         <name>javax.portlet.faces.bridgePublicRenderParameterHandler</name>
         <value>com.liferay.faces.example.handler.CustomerSelectedHandler</value>
     </init-param>
+
+The following class provides a stub implementation of the `BridgePublicRenderParameterHandler` class:
 
     package com.liferay.faces.example.handler;
 
@@ -353,6 +366,8 @@ If a BridgeEventHandler has been registered in the `WEB-INF/portlet.xml` descrip
         <name>javax.portlet.faces.bridgeEventHandler</name>
         <value>com.liferay.faces.example.event.CustomerEditedEventHandler</value>
     </init-param>
+
+The following class implements the `BridgeEventHandler` interface.
 
     package com.liferay.faces.example.event;
 
@@ -411,6 +426,8 @@ More information on the necessary patches can be seen below.
 
 ##### Liferay Portal 6.1.20 EE GA2 [](id=liferay-portal-6-1-20-ee-ga2-liferay-portal-6-2-dev-guide-04-en)
 
+<!-- Note, upgrading to 6.1.30 EE GA3 resolves the issue too. - Jim --> 
+
 Customers using Liferay Portal 6.1.20 EE GA2 typically have the
 following patch installed:
 
@@ -459,11 +476,13 @@ This is a sample of a `WEB-INF/jboss-deployment-structure.xml` descriptor.
 
 #### Weld Configuration for Resin [](id=weld-configuration-for-resin-liferay-portal-6-2-dev-guide-04-en)
 
+<!-- Rearrange? Maybe do all servers, additional tomcat, and then Resin? -Jim -->
+
 If using Resin, then it is not necessary to configure JBoss Weld since Resin includes the [CanDI](http://www.caucho.com/candi-java-dependency-injection/) implementation of CDI by default. For all other servers, it is necessary to configure the JBoss Weld implementation of CDI. 
 
 #### Weld Configuration for All Servers (except Resin) [](id=weld-configuration-for-all-servers-excep-liferay-portal-6-2-dev-guide-04-en)
 
-The WEB-INF/web.xml descriptor of the portlet must include the following markup: 
+The `WEB-INF/web.xml` descriptor of the portlet must include the following markup: 
 
     <!-- Required for all servers except Resin -->
     <filter>    
@@ -755,9 +774,12 @@ Because Liferay Faces has several [active versions](http://www.liferay.com/docum
 - The VDL documentation for the Liferay Faces 3.0-legacy can be found at: <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>.
 - The VDL documentation for the Liferay Faces 3.0 can be found at: <http://docs.liferay.com/faces/3.0/vdldoc/>.
 - The VDL documentation for the Liferay Faces 3.1 can be found at: <http://docs.liferay.com/faces/3.1/vdldoc/>.
+
+<!-- Re-add links to VDLs for versions 3.2 through 4.2 when they are released. - Jim
 - The VDL documentation for the Liferay Faces 3.2 can be found at: <http://docs.liferay.com/faces/3.2/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.1 can be found at: <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at: <http://docs.liferay.com/faces/4.2/vdldoc/>.
+-->
 
 Next we will look at several aspects of the Liferay Faces Bridge, such as configuration of the bridge and the bridge's component tags.
 ## Liferay Faces Bridge [](id=liferay-faces-bridge-liferay-portal-6-2-dev-guide-04-en-0)
@@ -881,6 +903,8 @@ When JSF developers want to perform cleanup on managed-beans before they are des
 
 In order to explain this requirement, it is necessary to make a distinction between *local* portals and *remote* portals. Local portals invoke portlets that are deployed within the same (local) portlet container. Remote portals invoke portlets that are deployed elsewhere via WSRP (Web Services for Remote Portlets). The `@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations were introduced into the JSR 329 standard primarily to support WSRP in remote portals. That being the case, the standard indicates that developers should always use `@BridgePreDestroy` instead of `@PreDestroy`. Liferay Faces Bridge however takes a different approach: rather than assuming the remote portal use-case, Liferay Faces Bridge assumes the local portal use-case. When developing with a local portal like Liferay, Liferay Faces Bridge ensures that the standard `@PreDestroy` annotation works as expected. This means there is no reason to use the `@BridgeRequestScope` annotation with a local portal when using Liferay Faces Bridge. Developers must manually configure Liferay Faces Bridge via the `WEB-INF/web.xml` descriptor in order to leverage the `@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations for WSRP. 
 
+<!-- Consolidate into single comment, adding returns at 80 columns Jim -->
+
     <!-- The default value of the following -->
     <!-- context-param is false, meaning that -->
     <!-- Liferay Faces Bridge will invoke -->
@@ -953,7 +977,9 @@ The Liferay Faces Bridge namespace optimization enables portlets to have unique 
 
 #### Resolving XML Entities [](id=resolving-xml-entities-liferay-portal-6-2-dev-guide-04-en)
 
-Liferay Faces Bridge provides the ability to set a flag indicating whether or not XML entities are required to be resolved when parsing faces-config.xml files in the classpath. The default value of this option is false. 
+<!-- Explain why this is helpful. - Jim -->
+
+Liferay Faces Bridge provides the ability to set a flag indicating whether or not XML entities are required to be resolved when parsing faces-config.xml files in the classpath. The default value of this option is false. You can set the option to true in the `WEB-INF/web.xml` descriptor. 
 
     <!-- The default value of the following -->
     <!-- context-param is false. -->
@@ -993,7 +1019,7 @@ Liferay Portal provides the ability for developers to specify whether or not req
         
     </liferay-portlet-app>
 
-However, this non-shared feature only works for request attributes that are present in the request map and have a non-null value. This can cause a problem for JSF managed-beans in request scope. Specifically, the problem arises when a portal page has two (or more) portlets that each have a request scope managed bean with the same name. For example, if Portlet X and Portlet Y each have a class named BackingBean annotated with `@RequestScoped` `@ManagedBean`, then when the JSF runtime is asked to resolve an EL-expression `#{backingBean}`, there is no guarantee that the correct instance will be resolved. In order to solve this problem, Liferay Faces Bridge provides the a configuration option, which can be specified in `WEB-INF/web.xml`, that causes request scoped managed beans to be distinct for each portlet. 
+However, this non-shared feature only works for request attributes that are present in the request map and have a non-null value. This can cause a problem for JSF managed-beans in request scope. Specifically, the problem arises when a portal page has two (or more) portlets that each have a request scope managed bean with the same name. For example, if Portlet X and Portlet Y each have a class named BackingBean annotated with `@RequestScoped` `@ManagedBean`, then when the JSF runtime is asked to resolve an EL-expression `#{backingBean}`, there is no guarantee that the correct instance will be resolved. In order to solve this problem, Liferay Faces Bridge provides a configuration option, which can be specified in `WEB-INF/web.xml`, that causes request scoped managed beans to be distinct for each portlet. 
 
     <!-- The default value of the following -->
     <!-- context-param is false. -->
@@ -1035,9 +1061,12 @@ Because Liferay Faces has several [active versions](http://www.liferay.com/docum
 - The VDL documentation for the Liferay Faces 3.0-legacy can be found at: <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>.
 - The VDL documentation for the Liferay Faces 3.0 can be found at: <http://docs.liferay.com/faces/3.0/vdldoc/>.
 - The VDL documentation for the Liferay Faces 3.1 can be found at: <http://docs.liferay.com/faces/3.1/vdldoc/>.
+
+<!-- Re-add VDLs for 3.2 through 4.2 when released. - Jim
 - The VDL documentation for the Liferay Faces 3.2 can be found at: <http://docs.liferay.com/faces/3.2/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.1 can be found at: <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at: <http://docs.liferay.com/faces/4.2/vdldoc/>.
+-->
 
 The Liferay Faces Bridge provides the following UIComponent tags under the `bridge` and `portlet` namespaces for the Bridge and Portlet 2.0 tags respectively. 
 
@@ -1253,6 +1282,8 @@ Liferay Faces Portal provides the following UIComponent tags under the `liferay-
 
 ##### The liferay-ui:input-editor tag [](id=the-liferay-uiinput-editor-tag-liferay-portal-6-2-dev-guide-04-en)
 
+<!-- Note, that this tag is simply an example of one of the tags from liferay-ui library. - Jim -->
+
 The `liferay-ui:input-editor` tag renders a text area that provides the ability to enter rich text such as bold, italic, and underline. The renderer relies on the [CKEditor](http://ckeditor.com/)&#8482; to provide the rich text editing area. Since Liferay bundles the [CKEditor](http://ckeditor.com/)&#8482; JavaScript and related images with the portal, the portlet developer does not need to include it with  the portlet. 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -1393,6 +1424,7 @@ Most of the standard JSF HTML component tags render themselves as HTML markup su
 
         <h:messages errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" /> 
                 
+<!-- Demonstrate using the liferay-ui:message tag for these message types.  - Jim -->
 
 As a convenience, Liferay Faces Portal provides the [`liferay-ui:message`](http://docs.liferay.com/faces/4.2/vdldoc/liferay-ui/message.html) Facelet composite component tag that encapsulates the [`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html) tag and automatically applies the JSR 286 standard class names as shown above. 
 
@@ -1412,7 +1444,7 @@ Next we'll look at integrating Liferay Faces Portal's Language functionality wit
 
 By default, the [Locale](http://java.sun.com/javase/6/docs/api/java/util/Locale.html) that is normally used to present internationalized JSF views is based on the web-browser's locale settings. In order to use the portal user's language preference, the Liferay Faces Portal project automatically registers the `LiferayLocalePhaseListener`. This phase listener modifies the locale inside the [UIViewRoot](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html) based on the user's language preference returned by the [User.getLocale()](http://docs.liferay.com/portal/6.2/javadocs/portal-service/com/liferay/portal/model/User.html#getLocale()) method. 
 
-Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal componets, Liferay Faces Portal theme integration, and Liferay Language Portlet Integration, let's move on to the Migration Guide which explains how to migrate projects which utilize the PortletFaces bridge to utilize the Liferay Faces bridge. 
+Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal components, Liferay Faces Portal theme integration, and Liferay Language Portlet Integration, let's move on to the Migration Guide which explains how to migrate projects which utilize the PortletFaces bridge to utilize the Liferay Faces bridge. 
 
 ## Migration Guide [](id=migration-guide-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1427,6 +1459,13 @@ The Liferay Faces project originates from the <http://portletfaces.org> communit
 #### BridgeRequestAttributeListener [](id=bridgerequestattributelistener-liferay-portal-6-2-dev-guide-04-en)
 
 PortletFaces Bridge provided a class named `org.portletfaces.bridge.servlet.BridgeRequestAttributeListener` but Liferay Faces Bridge uses `com.liferay.faces.bridge.servlet.BridgeRequestAttributeListener`. In order to migrate to the new class, you will need to refactor to the new package namespace, as a deprecated class has not been provided. 
+
+<!--
+Mention this is form `WEB-INF/web.xml`.
+Modify code to possibly leave out the <web-app> tag.
+Clarify that we're replacing the PortletFaces one with Liferay Faces Bridge one.
+- Jim
+-->
 
     <!-- PortletFaces Bridge BridgeRequestAttributeListener -->
     <web-app>
@@ -1500,11 +1539,13 @@ The projects at portletfaces.org provided several UIComponents and Composite Com
 - The VDL documentation for the Liferay Faces 4.1 can be found at: <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at: <http://docs.liferay.com/faces/4.2/vdldoc/>.
 
-Each link for the VDL documentation contains information about all the `aui`, `aui-cc`, `bridge`, `liferay-ui`, `liferay-util`, and `liferay-security` tags for that version of the Liferay Faces Bridge, so each VDL documentation link basically holds the entirety of the PortletFaces tag library documentation (with the exception of certain tags which are excluded from certain verisons of the Lfieray Faces Bridge). 
+Each link for the VDL documentation contains information about all the `aui`, `aui-cc`, `bridge`, `liferay-ui`, `liferay-util`, and `liferay-security` tags for that version of the Liferay Faces Bridge, so each VDL documentation link basically holds the entirety of the PortletFaces tag library documentation (with the exception of certain tags which are excluded from certain versions of the Lfieray Faces Bridge). 
 
 #### GenericFacesPortlet [](id=genericfacesportlet-liferay-portal-6-2-dev-guide-04-en)
 
 PortletFaces Bridge provided its own `org.portletfaces.bridge.GenericFacesPortlet` class but the Liferay Faces Bridge uses the JSR 329 standard `javax.portlet.faces.bridge.GenericFacesPortlet` class. In order to ease migration, the old class still exists in Liferay Faces Bridge although it has been deprecated. It is recommended that the standard class name be used in all `WEB-INF/portlet.xml` `portlet-class` entries. 
+
+<!-- Leave out <portlet-app> elements. - Jim -->
 
     <!-- PortletFaces Bridge GenericFacesPortlet -->
     <portlet-app>
@@ -1567,3 +1608,5 @@ PortletFaces Bridge provided its own `org.portletfaces.bridge.preference.Prefere
     import javax.portlet.faces.preference.Preference;
 
 And those are all the changes necessary to migrate projects from the PortletFaces Bridge to the Liferay Faces Bridge.
+
+<!-- Needs transition and summary. Jim -->
