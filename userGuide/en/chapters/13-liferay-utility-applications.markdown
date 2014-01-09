@@ -14,6 +14,7 @@ customers. In this chapter we'll discuss following applications:
 - Knowledge Base
 - Akismet
 - Weather
+- OAuth
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs
 in the portal that can also be used by an administrator to publish relevant
@@ -1514,13 +1515,36 @@ provides a search bar that allows users to find information about locations that
 aren't listed by the portlet. Searching via the search bar forwards the user to
 [Open Weather Map](http://openweathermap.org/), where the search is executed.
 
-![Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
+![Figure 13.35: Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
 
 To configure the displayed locations, open the Weather portlet's configuration
 window. In the first text area, enter the names of the cities about which you'd
 like weather information to be displayed. Alternatively, you can use zip codes.
 Enter one city or zip code per line. For the temperature format, you can choose
 between Celsius and Fahrenheit.
+
+## OAuth
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+Liferay's OAuth app authorizes third-party applications to interact with a
+user's resources. Let's say you're hosting Liferay Portal and have users and
+customers coming to your web site. You want them to have access to a third party
+resource, like Twitter, and be able to access their accounts from your site. In
+the past, they would have to provide their Twitter user names and passwords, but
+not if you use OAuth. Therefore, a popular characterization for the OAuth client
+is the "valet key for your web services."
+
+OAuth is a "handshake mechanism" where, instead of requiring personal
+information, Liferay redirects users to Twitter, where they can tell Twitter to
+allow Liferay limited access to their accounts. This example is similar to our
+earlier "valet key" characterization. You wouldn't want a valet driver opening
+your glove box, storage spaces, hood, and other personal compartments within
+your vehicle. You would only want him or her to access things he or she needs to
+park your car. OAuth is based on this same idea: it allows a site just enough
+information to do what it needs and nothing more. This assures the user that
+their personal information is safe but gives them freedom to take advantage of
+valuable resources they typically use from the service provider's site.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-13-en)
 
