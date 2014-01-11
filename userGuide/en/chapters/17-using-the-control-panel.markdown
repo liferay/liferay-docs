@@ -652,6 +652,59 @@ When you are finished, click *Save*. Now that we've looked at various options
 for integrating existing users into Liferay, let's look at other Liferay portal
 settings.
 
+### Shibboleth
+
+Shibboleth is a federated single sign-on and attribute exchange framework that
+implements SAML (Security Assertion Markup Language). The Shibboleth plugin
+available from Liferay Marketplace allows Liferay to integrate with Shibboleth
+to provide SSO support. The Liferay Shibboleth plugin contains an autologin hook
+that automatically logs users into Liferay when they are authenticated to a
+Shibboleth identity provider and the HTTP request has a specific header
+attribute. All of the Shibboleth service provider and identity provider
+configuration is done outside of Liferay. All that the Liferay Shibboleth plugin
+needs to do is accept the header attribute from Shibboleth and log the user in.
+
+The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
+Portal Settings section of the Control Panel.
+
+![Figure 17.x: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+
+There are four configuration options:
+
+- *Enabled*
+- *Import from LDAP*
+- *Logout URL*
+- *User Header*
+
+Check or uncheck the *Enabled* box to enable or disable Shibboleth authentication
+for Liferay. If the *Enabled* box is not checked, the Shibboleth auto login hook
+is disabled and the automated login process will not work even if the user
+header is in the HTTP request. If you check the *Import from LDAP* box, then any
+users authenticated from Shibboleth that do not exist in Liferay will be
+imported into Liferay from LDAP. LDAP must already be enabled for this to work.
+The path you enter into the *Logout URL* field sets the logout URL for
+Shibboleth. The link is triggered when the user logs out of the portal.  If the
+logout URL is incorrect or is not set, the user will not be logged out of
+Shibboleth. The *User Header* is the attribute name of the user header that is
+passed in from the Shibboleth service provider. It should contain either the
+screen name or the email address of the user, which will be used to authenticate
+the user into the portal.
+
+It's possible to configure the above four Shibboleth options via portal
+properties instead of via the Control Panel. To configure the Shibboleth plugin
+this way, add the following properties to your Liferay server's
+`portal-ext.properties` file and restart Liferay.
+
+- `shibboleth.auth.enabled=true`: corresponds to the *Enable* box above
+- `shibboleth.import.from.ldap=false`: corresponds to the *Import from LDAP* box
+  above
+- `shibboleth.logout.url=/Shibboleth.soo/Logout`: corresponds to the *Logout
+  URL* box above
+- `shibboleth.auth.enabled=true`: corresponds the *User Header* box above
+
+Note that options selected via the Control Panel are saved to Liferay's database
+and take precedence over any options configured via portal properties.
+
 ### SAML [](id=saml-liferay-portal-6-2-user-guide-17-en)
 
 ![EE-only](../../images/ee-feature-web.png)
