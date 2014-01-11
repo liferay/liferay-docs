@@ -28,7 +28,7 @@ For example,
     ## Message Bus FeatureXYZ
 
     You can now to x, y, and z in the Message Bus API. See the Using Message Bus
-    section of Chapter 6 for details. 
+    section of [Link to some section] for details. 
 
 -->
 

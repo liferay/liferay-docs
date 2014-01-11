@@ -2,8 +2,10 @@
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
-sure you can't accomplish your goal using a different tool. Check out Chapter
-10, Hooks for the available alternatives. If a hook won't suffice, keep reading
+sure you can't accomplish your goal using a different tool. Check out
+[Customizing and Extending Functionality with
+Hooks](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en)
+for the available alternatives. If a hook won't suffice, keep reading
 to discover the use cases for Ext plugins and how to set one up. First let's
 talk about why you should avoid Ext plugins when possible. 
 
@@ -45,7 +47,8 @@ Let's create an Ext plugin.
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
-(see Chapter 2, on the Plugins SDK). 
+(see [Leveraging the Plugins
+SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)). 
 
 ### Using Developer Studio [](id=create-ext-plugin-in-developer-studio-liferay-portal-6-2-dev-guide-en)
 

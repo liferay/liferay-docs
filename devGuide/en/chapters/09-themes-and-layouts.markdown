@@ -55,7 +55,9 @@ Let's create a theme!
 ### Creating a Theme Project [](id=creating-a-theme-project-liferay-portal-6-2-dev-guide-09-en)
 
 The theme creation process is nearly identical to the portlet creation process
-that we covered in Chapter 3. Our theme will be named *Deep Blue*, so the
+that we covered in [Developing Apps with Liferay
+IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en).
+Our theme will be named *Deep Blue*, so the
 project name (without spaces) is *deep-blue*, and the display name (which can
 have spaces) is *Deep Blue*. Let's create the theme using Liferay Developer
 Studio first, and then with the terminal. 
@@ -156,8 +158,9 @@ Now that your base theme is set, let's deploy the theme to your portal instance.
 
 ### Deploying the Theme [](id=deploying-the-theme-liferay-portal-6-2-dev-guide-09-en)
 
-If you're already familiar with portlet deployment from reading Chapter 3, theme
-deployment will be a piece of cake! You can deploy your theme in Developer
+If you're already familiar with portlet deployment from reading [Developing Apps
+with Liferay IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en),
+theme deployment will be a piece of cake! You can deploy your theme in Developer
 Studio or the terminal. 
 
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
