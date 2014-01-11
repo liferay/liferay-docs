@@ -652,7 +652,7 @@ When you are finished, click *Save*. Now that we've looked at various options
 for integrating existing users into Liferay, let's look at other Liferay portal
 settings.
 
-### Shibboleth
+### Shibboleth [](id=shibboleth-liferay-portal-6-2-user-guide-17-en)
 
 Shibboleth is a federated single sign-on and attribute exchange framework that
 implements SAML (Security Assertion Markup Language). The Shibboleth plugin
@@ -667,7 +667,7 @@ needs to do is accept the header attribute from Shibboleth and log the user in.
 The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
 Portal Settings section of the Control Panel.
 
-![Figure 17.x: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+![Figure 17.1: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
 
 There are four configuration options:
 
@@ -948,14 +948,14 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the From field
 in all email messages sent by the portal.
 
-![Figure 17.1: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
+![Figure 17.2: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure 17.2: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
+![Figure 17.3: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
@@ -997,7 +997,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 17.3: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 17.4: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
 themes, you can choose whether or not to display the logo. Be careful to choose
@@ -1047,7 +1047,7 @@ To add a custom field, click on the *Custom Fields* link in the Control Panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 17.4: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 17.5: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you need to add the custom field key. The key appears as the label for
 the field on the form. For some portal resources (like the User), custom fields
@@ -1056,7 +1056,7 @@ fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 17.5: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 17.6: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
