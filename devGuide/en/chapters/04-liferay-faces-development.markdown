@@ -273,11 +273,21 @@ Faces](http://www.liferay.com/community/wiki?p_p_id=36&p_p_lifecycle=0&p_p_state
 
 <!-- Needs better crutch. - Jim -->
 
+<!-- Explain what Liferay Faces Bridge is, but save details for later. - Jim -->
+
 The main goal of JSF portlet bridges is to make the JSF portlet development
 experience as close as possible to JSF webapp development. Consequently, many
 JSF webapps can be easily migrated to a portlet container using such a bridge.  
 
 ### Liferay Faces Bridge [](id=liferay-faces-bridge-liferay-portal-6-2-dev-guide-04-en)
+
+<!--  This is a step required to migrate the web app to the portal. Either the
+heading should be removed or it should be changed to something like "Specifying
+the portlet.xml for your JSF portlet".
+
+Or it can simply be made a part of the steps for migrating a web app. We should
+explain that to be a portlet, it the project needs a portlet.xml file. And since
+it is a JSF webapp, it needs to have this portlet class setting. - Jim -->
 
 Utilizing JSF 2.x in a portlet requires that
 `javax.portlet.faces.GenericFacesPortlet` be named as the `<portlet-class>`
@@ -314,6 +324,10 @@ entity of the `WEB-INF/portlet.xml` file.
 
 Now that we've got `WEB-INF/portlet.xml` set up, let's move on to portlet
 preferences. 
+
+<!-- Great, but before we go on to showing them different optional things to
+develop, is there anything else that is required to migrate the web app? - Jim
+-->
 
 ### Utilizing PortletPreferences With JSF [](id=utilizing-portletpreferences-with-jsf-liferay-portal-6-2-dev-guide-04-en)
 
@@ -398,6 +412,9 @@ evironment, except that they are cast to the portlet version instead.
  `PortletResponse` or `PortletRequest`. 
 
 ---
+
+<!-- Is LiferayFacesContext in both Liferay Faces Bridge and Liferay Faces
+Portal? - Jim -->
 
 ### Utilizing IPC With JSF [](id=utilizing-ipc-with-jsf-liferay-portal-6-2-dev-guide-04-en)
 
@@ -586,6 +603,9 @@ utilizing CDI within JSF portlets.
 
 #### Overview of CDI [](id=overview-of-cdi-liferay-portal-6-2-dev-guide-04-en)
 
+<!-- Explain what CDI is, the benefits of using it and any drawbacks to using
+it. - Jim -->
+
 In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the
 Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6
 platform. In April 2013, [JSR 346](http://jcp.org/en/jsr/detail?id=346) updated
@@ -595,7 +615,9 @@ another component of Java EE 7, introduced a dependency on the CDI API for the
 `javax.faces.view.ViewScoped` annotation and for the Faces Flows feature. JBoss
 [Weld](http://seamframework.org/Weld) is the Reference Implementation (RI) for
 CDI and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open
-source implementation.  
+source implementation. 
+
+<!-- Explain that we'll cover CDI with JBoss Weld first. - Jim -->
 
 #### Compatible Portal Servers [](id=compatible-portal-servers-liferay-portal-6-2-dev-guide-04-en)
 
@@ -831,6 +853,9 @@ using several approaches:
   with `$processor.processPortlet()` 
 - Inside of a JSP with `<liferay-portlet:runtime />` 
 
+<!-- Can a JSF portlet be dynamically added inside a FreeMarker template for a
+theme? - Jim -->
+
 Unfortunately, as described in
 [FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding  JSF
 portlets doesn't work very well. It's actually not limited to JSF portlets --
@@ -898,6 +923,9 @@ ajaxable, are specified in the `WEB-INF/liferay-portlet.xml` configuration file.
 Next we will discuss extension of the Liferay Faces Bridge via Factory Wrappers.
 
 ### Extending Liferay Faces Bridge via Factory Wrappers [](id=extending-liferay-faces-bridge-via-facto-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- I noticed there's Bridge API and Bridge Impl. In what cases is Bridge Impl
+required? - Jim --> 
 
 [Liferay Faces
 Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
@@ -1045,9 +1073,17 @@ There are at least two ways to handle internationalization with JSF and Liferay:
     - Create internaltionalized Langauge properties files like [Language_en_US.properties](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/resources/Language_en_US.properties) 
     - Use the built-in *i18n* keyword Expression Language (EL) in your Facelet view like [registrant.xhtml](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/views/registrant.xhtml) 
 
+<!-- This section on JSF portlet i18n needs to be refactored to demonstrate,
+with code, how to internationalize a JSF portlet. Let's using code code
+listings here in the section. - Jim -->
+
 In the next section, we will briefly look at Liferay Faces Alloy.
 
 ## Liferay Faces Alloy [](id=liferay-faces-alloy-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- This section needs to be expanded. First, the reader needs some insight as
+to what AlloyUI is and why they'd want to use it. Then, eventually, we need to
+demonstrate using AlloyUI in a JSF portlet. - Jim --> 
 
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
 their portlet WAR projects in order to utilize Alloy UI in a way that is
@@ -1168,7 +1204,7 @@ configuration of the Liferay Faces Bridge.
 #### Overview [](id=overview-liferay-portal-6-2-dev-guide-04-en-2)
 
 The JSR 329 standard defines several configuration options prefixed with the
-`javax.portlet.faces namespace`. Liferay Faces Bridge defines additional
+`javax.portlet.faces` namespace. Liferay Faces Bridge defines additional
 implementation specific options prefixed with the `com.liferay.faces.bridge`
 namespace.  
 
@@ -1289,8 +1325,6 @@ using Liferay Faces Bridge. Developers must manually configure Liferay Faces
 Bridge via the `WEB-INF/web.xml` descriptor in order to leverage the
 `@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations for
 WSRP. 
-
-<!-- Consolidate into single comment, adding returns at 80 columns Jim -->
 
     <!--
     The default value of the following context-param is false, meaning that
@@ -1716,6 +1750,10 @@ Liferay Faces Portal is a JAR that JSF developers can add as a dependency to
 their portlet WAR projects in order to utilize Liferay-specific utilities and UI
 components. 
 
+<!-- What's the WAR file's name? How to get the WAR file? Where/how to add the
+WAR? Is the WAR already present in Liferay Portal? Is it present in a project
+created with Liferay IDE/Plugins SDK? - Jim --> 
+
 The project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/portal>. 
 
@@ -1757,6 +1795,9 @@ Liferay Faces Portal provides the following UIComponent tags under the
 `liferay-ui` and `liferay-security` tags. 
 
 #### Liferay Faces Portal UIComponent Tags [](id=liferay-faces-portal-uicomponent-tags-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Explain that we'll demonstrate how to use one of the tags as an example.
+Eventually we'll add more demonstrations. - Jim -->
 
 ##### The liferay-ui:input-editor tag [](id=the-liferay-uiinput-editor-tag-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1822,6 +1863,8 @@ component tree are DOM-diffed by ICEfaces. For example:
 Next we will look at the `liferay-ui` prefixed composite component tags.
 
 #### Liferay Faces Portal Composite Component Tags [](id=liferay-faces-portal-composite-component-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Explain that we'll demonstrate how to use several of the tags. - Jim -->
 
 ##### The liferay-ui:ice-info-data-paginator tag [](id=the-liferay-uiice-info-data-paginator-ta-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1997,6 +2040,8 @@ projects which utilize the PortletFaces bridge to utilize the Liferay Faces
 bridge. 
 
 ## Migration Guide [](id=migration-guide-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Rename, "Migrating From the portletfaces.org to Liferay Faces" - Jim -->
 
 The Liferay Faces project originates from the <http://portletfaces.org>
 community website. On April 3, 2012 Liferay announced that it would be assuming
