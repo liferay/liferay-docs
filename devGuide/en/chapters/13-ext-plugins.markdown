@@ -51,15 +51,31 @@ environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
-2.  Fill in *example* for Project name and *Example* for Display name. 
+2.  Fill in *example* for project name and *Example* for the display name. 
 
-3.  Select the Liferay Plugins SDK and Portal Runtime you've configured. 
+3.  Leave the *Use default location* checkbox checked. By default, the
+	default location is set to your current workspace. If you'd like to change
+	where your plugin project is saved in your file system, uncheck the box and
+	specify your alternate location. 
 
-4.  Select *Ext* for your Plugin type. 
+4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+	you'd like to use *Maven* for your build type, navigate to the [Developing
+	Plugins Using
+	Maven](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+	section for details. 
 
-5.  Click *Finish*. 
+5.  Your configured SDK and Liferay Runtime should already be selected. If you
+    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
+    open the *Installed Plugin SDKs* management wizard. You can also access the
+    *New Server Runtime Environment* wizard if you need to set up your runtime
+    server; just click the *New Liferay Runtime* button next to the *Liferay
+    Portal Runtime* dropdown menu. 
 
-![Figure 12.1: Creating an Ext plugin](../../images/07-ext-plugins-1.png)
+6.  Select *Ext* for your Plugin type. 
+
+7.  Click *Finish*. 
+
+![Figure 13.1: You can even create an Ext plugin project with Liferay IDE.](../../images/ext-create-an-ext-plugin-project.png)
 
 The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create

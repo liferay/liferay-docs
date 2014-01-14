@@ -2502,8 +2502,8 @@ There are three sections of the wizard: the portal, the administrator and the
 database. For the portal, you need to supply the following information: 
 
 **Portal Name:** the name of the web site you're powering with Liferay. In this
-book, we build a social network for your nose. This site is called Nosester
-so we've supplied `Nosester` in the screenshot below. 
+book, we build a website for a lunar colony. This site is called Lunar Resort, 
+so we've supplied `Lunar Resort` in the screenshot below. 
 
 **Default Language:** choose the default locale where your site resides. 
 
@@ -2548,7 +2548,7 @@ driver class, and the user credentials (see below). Most of this is filled out
 already; all you should need to do is supply the name of your database and the
 server it's running on, as well as the user credentials. 
 
-![Figure 15.16: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 15.16: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lunar_resort* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and

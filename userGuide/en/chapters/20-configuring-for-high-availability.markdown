@@ -1002,7 +1002,7 @@ consider five different scenarios.
   configuration files (i.e., does not override
   `ehcache.single.vm.config.location`, `ehcache.multi.vm.config.location`, or
   `net.sf.ehcache.configurationResourceName`) but does set
-  `clusterlink.enabled=true` and `ehcache.cluster.link.replication=true`. This
+  `cluster.link.enabled=true` and `ehcache.cluster.link.replication=true`. This
   is the recommended configuration for a Liferay cluster, as long as the Ehcache
   Cluster EE app, available from Liferay Marketplace, has been installed.
   **Important**: The Ehcache Cluster EE app must be installed or cache
@@ -1014,19 +1014,19 @@ consider five different scenarios.
   classes are replaced with Cluster Link based implementations.
 
 - Scenario 2: The portal administrator does not override the default cache
-  configuration files, does set `cluserlink.enabled=true`, but does not set
+  configuration files, does set `cluster.link.enabled=true`, but does not set
   `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay
   utilizes Ehcache's out-of-the-box replication mechanisms (Multicast for
   discovery and RMI for replication). Lots of replicator threads appear in the
   log with this configuration.
 
 - Scenario 3: The portal administrator does not override the default cache
-  configuration files and does not set `cluserlink.enabled=true`. In this case,
+  configuration files and does not set `cluster.link.enabled=true`. In this case,
   Liferay does not activate any replication and operates with the assumption
   that there's no cluster.
 
 - Scenario 4: The portal administrator overrides the default cache configuration
-  files and sets `clusterlink.enabled=true` and
+  files and sets `cluster.link.enabled=true` and
   `ehcache.cluster.link.replication=true`. In this case, Liferay uses Cluster
   Link based replication for any caches configured with the
   LiferayCacheEventListenerFactory classs. If the portal administrator
@@ -1037,14 +1037,14 @@ consider five different scenarios.
   *not* a recommended configuration for Liferay 6.1 or later.
 
 - Scenario 5: The portal administrator overrides the default cache configuration
-  files and sets `clusterlink.enabled=true` but does not set
+  files and sets `cluster.link.enabled=true` but does not set
   `ehcache.cluster.link.replication=true`. In this case, Liferay uses the cache
   configurations specified in the custom cache configuration files. This is the
   recommended configuration when overriding the default cache configuration
   files.
 
 As a general rule, we recommend that portal administrators *not* set custom
-cache configuration files but to set `clusterlink.enabled=true` and
+cache configuration files but to set `cluster.link.enabled=true` and
 `ehcache.cluster.link.replication=true` (i.e., we recommend that portal
 administrators set up the configuration in scenario 1). If it's necessary to
 tune the cache configurations, it's better to do it via a plugin than to do it

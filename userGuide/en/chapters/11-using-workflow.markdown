@@ -690,10 +690,10 @@ further. Under Configration, in Workflow Configuration, set Web Content to use
 the Single Approver workflow.
 
 Next, create two users, a Content Creator and a Content Reviewer. The Content
-Creator logs in and creates a new press release for Nose-ster and clicks *Submit
-for Publication*. This triggers the workflow process and notifies the Content
-Reviewer. When the Content Reviewer logs in, he or she can assign the workflow
-task to him- or herself and approve the content.
+Creator logs in and creates a new press release for the Lunar Resort and clicks
+*Submit for Publication*. This triggers the workflow process and notifies the
+Content Reviewer. When the Content Reviewer logs in, he or she can assign the
+workflow task to him- or herself and approve the content.
 
 ![Figure 11.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/11-workflow-assign-to-me.png)
 
