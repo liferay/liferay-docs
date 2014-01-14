@@ -121,40 +121,42 @@ Studio, so you can see just how easy it is.
 
 1.  Go to File &rarr; New &rarr; Liferay Plugin Project.  
 
-2.  Fill in the *Project name* and *Display name* with *my-jsf-portlet* and
-    *My JSF*, respectively. 
+2.  In the project creation wizard's first window, you'll name your project and
+    specify its development and runtime environments. 
 
-3.  Leave the *Use default location* checkbox checked. By default, the
-    default location is set to your current workspace. If you'd like to change
-    where your plugin project is saved in your file system, uncheck the box and
-    specify your alternate location. 
+    2.1 Fill in the *Project name* and *Display name* with *my-jsf-portlet*
+    and *My JSF*, respectively. 
 
-4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
-    you'd like to use *Maven* for your build type, navigate to the [Developing
-    Plugins Using
+    2.2. Leave the *Use default location* checkbox checked. By default, the
+    default location is set to your current workspace. If you'd like to
+    change where your plugin project is saved in your file system, uncheck
+    the box and specify your alternate location. 
+
+    2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type.
+    If you'd like to use *Maven* for your build type, navigate to the
+    [Developing Plugins Using
     Maven](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
     section for details. 
 
-5.  Your configured SDK and Liferay Runtime should already be selected. If you
-    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
-    open the *Installed Plugin SDKs* management wizard. You can also access the
-    *New Server Runtime Environment* wizard if you need to set up your runtime
-    server; just click the *New Liferay Runtime* button next to the *Liferay
-    Portal Runtime* dropdown menu. 
+    2.3. Your configured SDK and Liferay Runtime should already be selected.
+    If you haven't yet pointed Liferay IDE to a Plugins SDK, click
+    *Configure SDKs* to open the *Installed Plugin SDKs* management wizard.
+    You can also access the *New Server Runtime Environment* wizard if you
+    need to set up your runtime server; just click the *New Liferay Runtime*
+    button next to the *Liferay Portal Runtime* dropdown menu. 
 
-6.  Select *Portlet* as your Plugin type. 
+    2.4. Select *Portlet* as your Plugin type and click *Next*. 
 
-7.  Click *Next*. 
+3.  In the project creation wizard's first window, you'll select the framework
+    for your portlet and a UI component suite. 
 
-8.  Select the *JSF 2.x* portlet framework. 
+    3.1 Select the *JSF 2.x* portlet framework. 
 
-    Immediately, the wizard lists the JSF component suites available, including
-    are the JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
-    RichFaces. 
+    Immediately, the wizard lists the JSF component suites available,
+    including the JSF Standard suite, ICEfaces, Liferay Faces Alloy,
+    PrimeFaces, and RichFaces. 
 
-9.  Select *PrimeFaces*.
-
-10. Click *Finish*.
+    3.2. Select the *PrimeFaces* UI component suite and click *Finish*. 
 
 Great! Your new JSF portlet plugin project is ready for you to develop JSF
 portlets. 
@@ -172,41 +174,40 @@ simplify things, we'll set up Ivy to download these artifacts.
         <ibiblio m2compatible="true" name="sonatype-snapshots"
             root="https://oss.sonatype.org/content/repositories/snapshots/" />
 
-3.  Add the following `<resolver>` element within the `<chain>` element.
+3.  Add the following `<resolver>` element within the `<chain>` element and save
+    your changes.
 
         <resolver ref="sonatype-snapshots" />
 
-    Your `ivy-settings.xml` file should look like this:
+Your `ivy-settings.xml` file should look like this:
 
-        <ivysettings>
-            <settings defaultResolver="default" />
-        
-            <resolvers>
-                <ibiblio m2compatible="true" name="jboss-nexus"
-                    root="https://repository.jboss.org/nexus/content/repositories/releases" />
-                <ibiblio m2compatible="true" name="jboss-thirdparty"
-                    root="https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" />
-                <ibiblio m2compatible="true" name="maven2"
-                    root="http://repo1.maven.org/maven2" />
-                <ibiblio m2compatible="true" name="ow2-public"
-                    root="http://repository.ow2.org/nexus/content/repositories/public" />
-                <ibiblio m2compatible="true" name="primefaces"
-                    root="http://repository.primefaces.org" />
-                <ibiblio m2compatible="true" name="sonatype-snapshots"
-                    root="https://oss.sonatype.org/content/repositories/snapshots/" />
-        
-                <chain dual="true" name="default">
-                    <resolver ref="jboss-nexus" />
-                    <resolver ref="jboss-thirdparty" />
-                    <resolver ref="maven2" />
-                    <resolver ref="ow2-public" />
-                    <resolver ref="primefaces" />
-                    <resolver ref="sonatype-snapshots" />
-                </chain>
-            </resolvers>
-        </ivysettings>
+    <ivysettings>
+        <settings defaultResolver="default" />
 
-4.  Save. 
+        <resolvers>
+            <ibiblio m2compatible="true" name="jboss-nexus"
+                root="https://repository.jboss.org/nexus/content/repositories/releases" />
+            <ibiblio m2compatible="true" name="jboss-thirdparty"
+                root="https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" />
+            <ibiblio m2compatible="true" name="maven2"
+                root="http://repo1.maven.org/maven2" />
+            <ibiblio m2compatible="true" name="ow2-public"
+                root="http://repository.ow2.org/nexus/content/repositories/public" />
+            <ibiblio m2compatible="true" name="primefaces"
+                root="http://repository.primefaces.org" />
+            <ibiblio m2compatible="true" name="sonatype-snapshots"
+                root="https://oss.sonatype.org/content/repositories/snapshots/" />
+
+            <chain dual="true" name="default">
+                <resolver ref="jboss-nexus" />
+                <resolver ref="jboss-thirdparty" />
+                <resolver ref="maven2" />
+                <resolver ref="ow2-public" />
+                <resolver ref="primefaces" />
+                <resolver ref="sonatype-snapshots" />
+            </chain>
+        </resolvers>
+    </ivysettings>
 
 Now that Plugins SDK can access the Sonatype repository, let's specify the
 version of the artifacts for the JSF plugin project to use. 
@@ -215,36 +216,33 @@ version of the artifacts for the JSF plugin project to use.
 
 2.  Replace the current revision values of each `liferay-faces-*` dependency
 element with `"3.2.4-ga5-SNAPSHOT"`, so that the attribute settings are
-`rev="3.2.4-ga5-SNAPSHOT"`. 
+`rev="3.2.4-ga5-SNAPSHOT"`. Save your changes. 
 
-    Here's what your `ivy.xml` file should look like: 
+Here's what your `ivy.xml` file should look like: 
 
-        <?xml version="1.0"?>
+    <?xml version="1.0"?>
 
-        <ivy-module
-            version="2.0"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
-        >
-            <info module="portlet_primefaces_tmpl" organisation="com.liferay" />
+    <ivy-module
+        version="2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
+    >
+        <info module="portlet_primefaces_tmpl" organisation="com.liferay" />
 
-            <dependencies defaultconf="default">
-                <dependency name="jboss-el" org="org.jboss.el" rev="2.0.1.GA" />
-                <dependency name="jsf-api" org="com.sun.faces" rev="2.1.21" />
-                <dependency name="jsf-impl" org="com.sun.faces" rev="2.1.21" />
-                <dependency name="liferay-faces-bridge-api" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
-                <dependency name="liferay-faces-bridge-impl" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
-                <dependency name="liferay-faces-portal" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
-                <dependency name="liferay-faces-util" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
-                <dependency name="primefaces" org="org.primefaces" rev="3.5" />
-            </dependencies>
-        </ivy-module>
-
-3.  Save. 
+        <dependencies defaultconf="default">
+            <dependency name="jboss-el" org="org.jboss.el" rev="2.0.1.GA" />
+            <dependency name="jsf-api" org="com.sun.faces" rev="2.1.21" />
+            <dependency name="jsf-impl" org="com.sun.faces" rev="2.1.21" />
+            <dependency name="liferay-faces-bridge-api" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+            <dependency name="liferay-faces-bridge-impl" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+            <dependency name="liferay-faces-portal" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+            <dependency name="liferay-faces-util" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+            <dependency name="primefaces" org="org.primefaces" rev="3.5" />
+        </dependencies>
+    </ivy-module>
 
 Immediately, Ivy downloads the Liferay Faces artifacts into your Plugins SDK.
 Downloading the artifacts for the first time may take a minute or two. 
-
 
 ---
 
