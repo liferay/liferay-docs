@@ -84,13 +84,13 @@ those things throughout the sections ahead.
 
 In the Liferay Faces documentation, we'll cover the following topics:
 
-- Liferay Faces Versioning Scheme
-- Building Liferay Faces From Source
 - JSF Portlet Development
-- Liferay Faces Alloy
 - Liferay Faces Bridge
 - Liferay Faces Portal
+- Liferay Faces Alloy
+- Liferay Faces Versioning Scheme
 - How to Migrate Projects from PortletFaces to Liferay Faces
+- Building Liferay Faces From Source
 
 We'll guide you through developing portlets with Liferay Faces and introduce you
 to each of the Liferay Faces projects: Liferay Faces Bridge, Liferay Faces
@@ -98,188 +98,25 @@ Alloy, and the Liferay Faces Portal Projects. We'll explain everything from
 choosing the correct Liferay Faces Version for your project, to updating your
 project from PortletFaces to Liferay Faces. 
 
-First we will take a look at the Liferay Faces Versioning Scheme. 
-
-## Liferay Faces Version Scheme [](id=liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
-
-<!-- Revisit this to elaborate. - Jim -->
-
-[Liferay
-Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
-follows a `Major1.Major2.Minor-Type` versioning scheme:
-
-`Major1`: 
-
-- `1` = Portlet 1.0 Bridge for JSF 1.2 (JSR 301) *(Note that Liferay Faces
-does not support Portlet 1.0)* 
-- `2` = Portlet 2.0 Bridge for JSF 1.2 (JSR 329) 
-- `3` = Portlet 2.0 Bridge for JSF 2.1 (JSR TBA) 
-- `4` = Portlet 2.0 Bridge for JSF 2.2 (JSR TBA) 
-
-`Major2`: 
-
-- `0-legacy` = Liferay `5.2`
-- `0` = Liferay `6.0` 
-- `1` = Liferay `6.1` 
-- `2` = Liferay `6.2` 
-
-`Minor`: 
-
-- May contain bug fixes, improvements, and new features. 
-
-`Type`: 
-
-- GA (General Availability) 
-- RC (Release Candidate) 
-- BETA (Beta Quality) 
-- ALPHA (Alpha Quality)
-
-*Examples*:
-
-- `3.1.0-ga1`: First GA release for JSF 2.0/2.1 for use with Liferay 6.1.x
-- `3.1.1-ga2`: Second GA release for JSF 2.0/2.1 for use with Liferay 6.1.x
- 
----
-
- ![Note](../../images/tip.png) **Note:** Some permutations of this
- versioning scheme are not supported, see table below for specific information
- on supported versions of JSF and Liferay Portal. 
-
----
-
-The following table displays the Liferay Faces version and its compatible
-Liferay Portal version and its compatible JSF version:
-
-| Liferay Faces Version | JSF Version (`Major1`) | Liferay Portal Version (`Major2`) |
-|-----------------------|------------------------|-----------------------------------|
-| `2.1.x`               | `1.2`                  | `6.1`                             |
-| `3.0.x-legacy`        | `2.1`                  | `5.2`                             |
-| `3.0.x`               | `2.1`                  | `6.0`                             |
-| `3.1.x`               | `2.1`                  | `6.1`                             | 
-| `3.2.x`               | `2.1`                  | `6.2`                             |
-| `4.1.x`               | `2.2`                  | `6.1`                             | 
-| `4.2.x` (master)      | `2.2`                  | `6.2`                             |
-
-While Liferay Faces Bridge is theoretically compatible with any portal that
-implements the Portlet 2.0 standard, it has been carefully tested for use with
-Liferay Portal versions 5.2, 6.0, 6.1, and 6.2 and has several optimizations
-that provide increased performance within Liferay.  
-
-## Building Liferay Faces From Source [](id=building-liferay-faces-from-source-liferay-portal-6-2-dev-guide-04-en)
-
----
-
- ![Note](../../images/tip.png) **Note:** This procedure assumes that
- you need to use version 4.2.0-m1, but you will need to follow the [Liferay
- Faces Version
- Scheme](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en), in order to find the correct version of Liferay Faces that fits with the version of the Liferay Portal (and mojarra) that you are using. 
-
----
-
-#### General Instructions [](id=general-instructions-liferay-portal-6-2-dev-guide-04-en)
-
-1.  If you want to download the code via *Git*, then clone the repository and
-    checkout the branch (or tag) that you want to work with. For example, type
-    the following in a terminal window for the 4.2.0-m1 tag: 
-
-        git clone https://github.com/liferay/liferay-faces.git
-        cd liferay-faces
-        git checkout 4.2.0-m1
-
-2.  If you would rather download the code as a *ZIP archive*, then: 
-
-    -   Visit the [Liferay Faces](https://github.com/liferay/liferay-faces) page
-        at GitHub. 
-    -   Click on the Branch drop-down menu, then click on *Tags*, and select a
-        tag version such as 4.2.0-m1.
-    -   Click on the *Download Zip* button, which should download a file named
-        `liferay-faces-4.2.0-m1.zip`. 
-    -   Extract the `liferay-faces-4.2.0-m1.zip` archive. The resulting folder
-        should be named `liferay-faces-4.2.0-m1`.  
-    -   In a terminal window, type: 
-
-            cd liferay-faces-4.2.0-m1
-
-3.  Ensure that the Maven repository entries listed in this
-    [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
-    file are copied into your local `$HOME/.m2/settings.xml` file. If you do not
-    already have a `settings.xml` file in your maven configuration, you can use
-    the given `settings.xml` file. 
-
-4.  Build the source with Maven. 
-
-        mvn clean package
-
-5.  Verify that the artifacts have been built by Maven. For example, the
-    following JAR artifacts should exist: 
-
-    -   `alloy/target/liferay-faces-alloy-4.2.0-m1.jar`
-    -   `bridge-api/target/liferay-faces-bridge-api-4.2.0-m1.jar`
-    -   `bridge-impl/target/liferay-faces-bridge-impl-4.2.0-m1.jar`
-    -   `portal/target/liferay-faces-portal-4.2.0-m1.jar`
-    -   `util/target/liferay-faces-util-4.2.0-m1.jar`
-
-That's it, you have built Liferay Faces from source. 
-
-#### Oracle WebLogic (Optional) [](id=oracle-weblogic-optional-liferay-portal-6-2-dev-guide-04-en)
-
-<!-- Reduce to bold section title? Rename to something like "Building Shared
-Libraries for Deploying Portlets on  Oracle WebLogic (Optional)" deployment on
-Oracle WebLogic" - Jim --> 
-
-If you are deploying portlets to *Oracle WebLogic*, then it is necessary to
-build the *Shared Libraries* from the Liferay Faces source. However, the source
-will not build properly until the *WebLogic Injection Provider for Mojarra* is
-manually installed into your local `$HOME/.m2/repository` folder. 
-
-1.  Locate Oracle's out-of-the-box `jsf-2.0.war` artifact, typically located in
-    `Oracle/Middleware/wlserver/common/deployable-libraries/jsf-2.0.war`. 
-
-2.  Extract the jsf-2.0.war artifact into a temporary folder: 
-
-        cd $MW_HOME/Oracle/Middleware/wlserver/common/deployable-libraries
-        mkdir temp
-        cd temp
-        jar xvf ../jsf-2.0.war
-
-3.  Manually install the WebLogic Injection Provider for Mojarra
-    (`wls.jsf.di.jar`) into your local `$HOME/.m2/repository` folder. For
-    example, if using Oracle WebLogic version 10.3.6.0, type: 
-
-        mvn install:install-file -Dfile=WEB-INF/lib/wls.jsf.di.jar \
-        -DgroupId=com.oracle.weblogic -DartifactId=wls.jsf.di -Dpackaging=jar \
-        -DgeneratePom=true -Dversion=10.3.6.0 
-
-4.  Build the Shared Libraries from the Liferay Faces source: 
-
-        cd liferay-faces/support
-        mvn -P weblogic clean package
-
-5.  Verify that the Shared Libraries have been built by Maven. For example, the following WAR  artifacts should exist: 
-
-    - `servers/weblogic/jsf-shared-library/target/jsf-shared-library-3.1.3-ga4.war` 
-    - `servers/weblogic/jstl-shared-library/target/jstl-shared-library-3.1.3-ga4.war` 
-    - `servers/weblogic/richfaces-shared-library/target/richfaces-shared-library-3.1.3-ga4.war` 
-
----
-
-If you would like to contribute to Liferay Faces, please check out our wiki:
-[Contributing to Liferay
-Faces](http://www.liferay.com/community/wiki?p_p_id=36&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_36_struts_action=%2Fwiki%2Fedit_page&_36_redirect=http%3A%2F%2Fwww.liferay.com%2Fcommunity%2Fwiki%2F-%2Fwiki%2FMain%2FBuilding%2BLiferay%2BFaces%2BFrom%2BSource&p_r_p_185834411_nodeId=1071674&p_r_p_185834411_title=wiki%2F-%2Fwiki%2FMain%2FContributing%2Bto%2BLiferay%2BFaces). 
+Let's start developing JSF portlets using Liferay Faces. 
 
 ## JSF Portlet Development [](id=jsf-portlet-development-liferay-portal-6-2-dev-guide-04-en)
 
-#### Overview [](id=overview-liferay-portal-6-2-dev-guide-04-en)
-
 <!-- Needs better crutch. - Jim -->
 
-<!-- Explain what Liferay Faces Bridge is, but save details for later. - Jim -->
+<!-- 
+Before we dive into details on JSF portlet development, let's create a simple
+JSF portlet using Liferay IDE. ### Creating a JSF Portlet Using Liferay Faces
+
+Insert simple tutorial on creating a JSF portlet - Jim --> 
 
 The main goal of JSF portlet bridges is to make the JSF portlet development
 experience as close as possible to JSF webapp development. Consequently, many
-JSF webapps can be easily migrated to a portlet container using such a bridge.  
+JSF webapps can be easily migrated to a portlet container using such a bridge. 
 
 ### Liferay Faces Bridge [](id=liferay-faces-bridge-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Explain what Liferay Faces Bridge is, but save details for later. - Jim -->
 
 <!--  This is a step required to migrate the web app to the portal. Either the
 heading should be removed or it should be changed to something like "Specifying
@@ -1076,47 +913,6 @@ There are at least two ways to handle internationalization with JSF and Liferay:
 <!-- This section on JSF portlet i18n needs to be refactored to demonstrate,
 with code, how to internationalize a JSF portlet. Let's using code code
 listings here in the section. - Jim -->
-
-In the next section, we will briefly look at Liferay Faces Alloy.
-
-## Liferay Faces Alloy [](id=liferay-faces-alloy-liferay-portal-6-2-dev-guide-04-en)
-
-<!-- This section needs to be expanded. First, the reader needs some insight as
-to what AlloyUI is and why they'd want to use it. Then, eventually, we need to
-demonstrate using AlloyUI in a JSF portlet. - Jim --> 
-
-Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
-their portlet WAR projects in order to utilize Alloy UI in a way that is
-consistent with JSF development. 
-
-The project home page can be found at
-<http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>.  
-
-#### Liferay Faces Alloy Tags [](id=liferay-faces-alloy-tags-liferay-portal-6-2-dev-guide-04-en)
-
-Liferay Faces Alloy provides a set of Facelet UIComponent and Facelet Composite
-Component tags as part of its component suite. 
-
-Because Liferay Faces has several [active
-versions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
-(targeting different versions of JSF, Liferay Portal, etc.), there are several
-versions of the project's View Declaration Language (VDL) documentation for
-these tags. The VDL documentation can be found at the following addresses: 
-
-- The VDL documentation for the Liferay Faces 2.1 can be found at
-  <http://docs.liferay.com/faces/2.1/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.0-legacy can be found at
-  <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.0 can be found at
-  <http://docs.liferay.com/faces/3.0/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.1 can be found at
-  <http://docs.liferay.com/faces/3.1/vdldoc/>.
-
-<!-- Re-add links to VDLs for versions 3.2 through 4.2 when they are released. - Jim
-- The VDL documentation for the Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
-- The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
-- The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
--->
 
 Next we will look at several aspects of the Liferay Faces Bridge, such as
 configuration of the bridge and the bridge's component tags. 
@@ -2039,6 +1835,112 @@ Integration, let's move on to the Migration Guide which explains how to migrate
 projects which utilize the PortletFaces bridge to utilize the Liferay Faces
 bridge. 
 
+In the next section, we will briefly look at Liferay Faces Alloy.
+
+## Liferay Faces Alloy [](id=liferay-faces-alloy-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- This section needs to be expanded. First, the reader needs some insight as
+to what AlloyUI is and why they'd want to use it. Then, eventually, we need to
+demonstrate using AlloyUI in a JSF portlet. - Jim --> 
+
+Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
+their portlet WAR projects in order to utilize Alloy UI in a way that is
+consistent with JSF development. 
+
+The project home page can be found at
+<http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>.  
+
+#### Liferay Faces Alloy Tags [](id=liferay-faces-alloy-tags-liferay-portal-6-2-dev-guide-04-en)
+
+Liferay Faces Alloy provides a set of Facelet UIComponent and Facelet Composite
+Component tags as part of its component suite. 
+
+Because Liferay Faces has several [active
+versions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+(targeting different versions of JSF, Liferay Portal, etc.), there are several
+versions of the project's View Declaration Language (VDL) documentation for
+these tags. The VDL documentation can be found at the following addresses: 
+
+- The VDL documentation for the Liferay Faces 2.1 can be found at
+  <http://docs.liferay.com/faces/2.1/vdldoc/>.
+- The VDL documentation for the Liferay Faces 3.0-legacy can be found at
+  <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>.
+- The VDL documentation for the Liferay Faces 3.0 can be found at
+  <http://docs.liferay.com/faces/3.0/vdldoc/>.
+- The VDL documentation for the Liferay Faces 3.1 can be found at
+  <http://docs.liferay.com/faces/3.1/vdldoc/>.
+
+<!-- Re-add links to VDLs for versions 3.2 through 4.2 when they are released. - Jim
+- The VDL documentation for the Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
+- The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
+- The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
+-->
+
+## Liferay Faces Version Scheme [](id=liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Revisit this to elaborate. - Jim -->
+
+[Liferay
+Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
+follows a `Major1.Major2.Minor-Type` versioning scheme:
+
+`Major1`: 
+
+- `1` = Portlet 1.0 Bridge for JSF 1.2 (JSR 301) *(Note that Liferay Faces
+does not support Portlet 1.0)* 
+- `2` = Portlet 2.0 Bridge for JSF 1.2 (JSR 329) 
+- `3` = Portlet 2.0 Bridge for JSF 2.1 (JSR TBA) 
+- `4` = Portlet 2.0 Bridge for JSF 2.2 (JSR TBA) 
+
+`Major2`: 
+
+- `0-legacy` = Liferay `5.2`
+- `0` = Liferay `6.0` 
+- `1` = Liferay `6.1` 
+- `2` = Liferay `6.2` 
+
+`Minor`: 
+
+- May contain bug fixes, improvements, and new features. 
+
+`Type`: 
+
+- GA (General Availability) 
+- RC (Release Candidate) 
+- BETA (Beta Quality) 
+- ALPHA (Alpha Quality)
+
+*Examples*:
+
+- `3.1.0-ga1`: First GA release for JSF 2.0/2.1 for use with Liferay 6.1.x
+- `3.1.1-ga2`: Second GA release for JSF 2.0/2.1 for use with Liferay 6.1.x
+ 
+---
+
+ ![Note](../../images/tip.png) **Note:** Some permutations of this
+ versioning scheme are not supported, see table below for specific information
+ on supported versions of JSF and Liferay Portal. 
+
+---
+
+The following table displays the Liferay Faces version and its compatible
+Liferay Portal version and its compatible JSF version:
+
+| Liferay Faces Version | JSF Version (`Major1`) | Liferay Portal Version (`Major2`) |
+|-----------------------|------------------------|-----------------------------------|
+| `2.1.x`               | `1.2`                  | `6.1`                             |
+| `3.0.x-legacy`        | `2.1`                  | `5.2`                             |
+| `3.0.x`               | `2.1`                  | `6.0`                             |
+| `3.1.x`               | `2.1`                  | `6.1`                             | 
+| `3.2.x`               | `2.1`                  | `6.2`                             |
+| `4.1.x`               | `2.2`                  | `6.1`                             | 
+| `4.2.x` (master)      | `2.2`                  | `6.2`                             |
+
+While Liferay Faces Bridge is theoretically compatible with any portal that
+implements the Portlet 2.0 standard, it has been carefully tested for use with
+Liferay Portal versions 5.2, 6.0, 6.1, and 6.2 and has several optimizations
+that provide increased performance within Liferay. 
+
 ## Migration Guide [](id=migration-guide-liferay-portal-6-2-dev-guide-04-en)
 
 <!-- Rename, "Migrating From the portletfaces.org to Liferay Faces" - Jim -->
@@ -2261,5 +2163,107 @@ package namespace as deprecated classes have not been provided.
 
 And those are all the changes necessary to migrate projects from the
 PortletFaces Bridge to the Liferay Faces Bridge. 
+
+## Building Liferay Faces From Source [](id=building-liferay-faces-from-source-liferay-portal-6-2-dev-guide-04-en)
+
+---
+
+ ![Note](../../images/tip.png) **Note:** This procedure assumes that
+ you need to use version 4.2.0-m1, but you will need to follow the [Liferay
+ Faces Version
+ Scheme](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en), in order to find the correct version of Liferay Faces that fits with the version of the Liferay Portal (and mojarra) that you are using. 
+
+---
+
+#### General Instructions [](id=general-instructions-liferay-portal-6-2-dev-guide-04-en)
+
+1.  If you want to download the code via *Git*, then clone the repository and
+    checkout the branch (or tag) that you want to work with. For example, type
+    the following in a terminal window for the 4.2.0-m1 tag: 
+
+        git clone https://github.com/liferay/liferay-faces.git
+        cd liferay-faces
+        git checkout 4.2.0-m1
+
+2.  If you would rather download the code as a *ZIP archive*, then: 
+
+    -   Visit the [Liferay Faces](https://github.com/liferay/liferay-faces) page
+        at GitHub. 
+    -   Click on the Branch drop-down menu, then click on *Tags*, and select a
+        tag version such as 4.2.0-m1.
+    -   Click on the *Download Zip* button, which should download a file named
+        `liferay-faces-4.2.0-m1.zip`. 
+    -   Extract the `liferay-faces-4.2.0-m1.zip` archive. The resulting folder
+        should be named `liferay-faces-4.2.0-m1`.  
+    -   In a terminal window, type: 
+
+            cd liferay-faces-4.2.0-m1
+
+3.  Ensure that the Maven repository entries listed in this
+    [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
+    file are copied into your local `$HOME/.m2/settings.xml` file. If you do not
+    already have a `settings.xml` file in your maven configuration, you can use
+    the given `settings.xml` file. 
+
+4.  Build the source with Maven. 
+
+        mvn clean package
+
+5.  Verify that the artifacts have been built by Maven. For example, the
+    following JAR artifacts should exist: 
+
+    -   `alloy/target/liferay-faces-alloy-4.2.0-m1.jar`
+    -   `bridge-api/target/liferay-faces-bridge-api-4.2.0-m1.jar`
+    -   `bridge-impl/target/liferay-faces-bridge-impl-4.2.0-m1.jar`
+    -   `portal/target/liferay-faces-portal-4.2.0-m1.jar`
+    -   `util/target/liferay-faces-util-4.2.0-m1.jar`
+
+That's it, you have built Liferay Faces from source. 
+
+#### Oracle WebLogic (Optional) [](id=oracle-weblogic-optional-liferay-portal-6-2-dev-guide-04-en)
+
+<!-- Reduce to bold section title? Rename to something like "Building Shared
+Libraries for Deploying Portlets on  Oracle WebLogic (Optional)" deployment on
+Oracle WebLogic" - Jim --> 
+
+If you are deploying portlets to *Oracle WebLogic*, then it is necessary to
+build the *Shared Libraries* from the Liferay Faces source. However, the source
+will not build properly until the *WebLogic Injection Provider for Mojarra* is
+manually installed into your local `$HOME/.m2/repository` folder. 
+
+1.  Locate Oracle's out-of-the-box `jsf-2.0.war` artifact, typically located in
+    `Oracle/Middleware/wlserver/common/deployable-libraries/jsf-2.0.war`. 
+
+2.  Extract the jsf-2.0.war artifact into a temporary folder: 
+
+        cd $MW_HOME/Oracle/Middleware/wlserver/common/deployable-libraries
+        mkdir temp
+        cd temp
+        jar xvf ../jsf-2.0.war
+
+3.  Manually install the WebLogic Injection Provider for Mojarra
+    (`wls.jsf.di.jar`) into your local `$HOME/.m2/repository` folder. For
+    example, if using Oracle WebLogic version 10.3.6.0, type: 
+
+        mvn install:install-file -Dfile=WEB-INF/lib/wls.jsf.di.jar \
+        -DgroupId=com.oracle.weblogic -DartifactId=wls.jsf.di -Dpackaging=jar \
+        -DgeneratePom=true -Dversion=10.3.6.0 
+
+4.  Build the Shared Libraries from the Liferay Faces source: 
+
+        cd liferay-faces/support
+        mvn -P weblogic clean package
+
+5.  Verify that the Shared Libraries have been built by Maven. For example, the following WAR  artifacts should exist: 
+
+    - `servers/weblogic/jsf-shared-library/target/jsf-shared-library-3.1.3-ga4.war` 
+    - `servers/weblogic/jstl-shared-library/target/jstl-shared-library-3.1.3-ga4.war` 
+    - `servers/weblogic/richfaces-shared-library/target/richfaces-shared-library-3.1.3-ga4.war` 
+
+---
+
+If you would like to contribute to Liferay Faces, please check out our wiki:
+[Contributing to Liferay
+Faces](http://www.liferay.com/community/wiki?p_p_id=36&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_36_struts_action=%2Fwiki%2Fedit_page&_36_redirect=http%3A%2F%2Fwww.liferay.com%2Fcommunity%2Fwiki%2F-%2Fwiki%2FMain%2FBuilding%2BLiferay%2BFaces%2BFrom%2BSource&p_r_p_185834411_nodeId=1071674&p_r_p_185834411_title=wiki%2F-%2Fwiki%2FMain%2FContributing%2Bto%2BLiferay%2BFaces).
 
 <!-- Needs transition and summary. Jim -->
