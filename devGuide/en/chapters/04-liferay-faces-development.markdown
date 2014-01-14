@@ -100,9 +100,255 @@ project from PortletFaces to Liferay Faces.
 
 Let's start developing JSF portlets using Liferay Faces. 
 
-## JSF Portlet Development [](id=jsf-portlet-development-liferay-portal-6-2-dev-guide-04-en)
+## Developing JSF Portlets [](id=develop-jsf-portlets-liferay-portal-6-2-dev-guide-en)
 
-<!-- Needs better crutch. - Jim -->
+<!-- Needs overview -->
+
+### Creating a JSF Portlet Project
+
+We want to make it easy for you to implement portlets using JSF. And Liferay
+IDE, with it's powerful portlet plugin wizard, provides you with a great
+environment to do just that. The wizard lets you select a component suite that's
+right for your project, including JSF's standard UI component suite, ICEfaces,
+Liferay Faces Alloy, PrimeFaces, and RichFaces. Of course, you can use any
+development environment you like for building JSF portlets; but Liferay IDE is
+hard to beat. 
+
+We'll demonstrate creating a JSF portlet project using Liferay IDE/Developer
+Studio, so you can see just how easy it is. 
+
+***In Developer Studio:***
+
+1.  Go to File &rarr; New &rarr; Liferay Plugin Project.  
+
+2.  Fill in the *Project name* and *Display name* with *my-jsf-portlet* and
+    *My JSF*, respectively. 
+
+3.  Leave the *Use default location* checkbox checked. By default, the
+    default location is set to your current workspace. If you'd like to change
+    where your plugin project is saved in your file system, uncheck the box and
+    specify your alternate location. 
+
+4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+    you'd like to use *Maven* for your build type, navigate to the [Developing
+    Plugins Using
+    Maven](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+    section for details. 
+
+5.  Your configured SDK and Liferay Runtime should already be selected. If you
+    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
+    open the *Installed Plugin SDKs* management wizard. You can also access the
+    *New Server Runtime Environment* wizard if you need to set up your runtime
+    server; just click the *New Liferay Runtime* button next to the *Liferay
+    Portal Runtime* dropdown menu. 
+
+6.  Select *Portlet* as your Plugin type. 
+
+7.  Click *Next*. 
+
+8.  Select the *JSF 2.x* portlet framework. 
+
+    Immediately, the wizard lists the JSF component suites available, including
+    are the JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
+    RichFaces. 
+
+9.  Select *PrimeFaces*.
+
+10. Click *Finish*.
+
+Great! Your new JSF portlet plugin project is ready for you to develop JSF
+portlets. 
+
+![Figure 4.x: Liferay Faces supports using the most popular component suites with your JSF portlets.](../../images/jsf-select-primefaces-comp-suite.png)
+
+Next, let's configure your project to use the Liferay Faces `.jar` files. To
+simplify things, we'll set up Ivy to download these artifacts. 
+
+1.  Open your Plugins SDK's `ivy-settings.xml` file. 
+
+2.  Add the following element to the list of `<ibiblio>` elements within the
+    `<resolvers>` element. 
+
+        <ibiblio m2compatible="true" name="sonatype-snapshots"
+            root="https://oss.sonatype.org/content/repositories/snapshots/" />
+
+3.  Add the following `<resolver>` element within the `<chain>` element.
+
+        <resolver ref="sonatype-snapshots" />
+
+    Your `ivy-settings.xml` file should look like this:
+
+        <ivysettings>
+            <settings defaultResolver="default" />
+        
+            <resolvers>
+                <ibiblio m2compatible="true" name="jboss-nexus"
+                    root="https://repository.jboss.org/nexus/content/repositories/releases" />
+                <ibiblio m2compatible="true" name="jboss-thirdparty"
+                    root="https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" />
+                <ibiblio m2compatible="true" name="maven2"
+                    root="http://repo1.maven.org/maven2" />
+                <ibiblio m2compatible="true" name="ow2-public"
+                    root="http://repository.ow2.org/nexus/content/repositories/public" />
+                <ibiblio m2compatible="true" name="primefaces"
+                    root="http://repository.primefaces.org" />
+                <ibiblio m2compatible="true" name="sonatype-snapshots"
+                    root="https://oss.sonatype.org/content/repositories/snapshots/" />
+        
+                <chain dual="true" name="default">
+                    <resolver ref="jboss-nexus" />
+                    <resolver ref="jboss-thirdparty" />
+                    <resolver ref="maven2" />
+                    <resolver ref="ow2-public" />
+                    <resolver ref="primefaces" />
+                    <resolver ref="sonatype-snapshots" />
+                </chain>
+            </resolvers>
+        </ivysettings>
+
+4.  Save. 
+
+Now that Plugins SDK can access the Sonatype repository, let's specify the
+version of the artifacts for the JSF plugin project to use. 
+
+1.  Open the `ivy.xml` file found in your JSF plugin project's root directory. 
+
+2.  Replace the current revision values of each `liferay-faces-*` dependency
+element with `"3.2.4-ga5-SNAPSHOT"`, so that the attribute settings are
+`rev="3.2.4-ga5-SNAPSHOT"`. 
+
+    Here's what your `ivy.xml` file should look like: 
+
+        <?xml version="1.0"?>
+
+        <ivy-module
+            version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
+        >
+            <info module="portlet_primefaces_tmpl" organisation="com.liferay" />
+
+            <dependencies defaultconf="default">
+                <dependency name="jboss-el" org="org.jboss.el" rev="2.0.1.GA" />
+                <dependency name="jsf-api" org="com.sun.faces" rev="2.1.21" />
+                <dependency name="jsf-impl" org="com.sun.faces" rev="2.1.21" />
+                <dependency name="liferay-faces-bridge-api" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+                <dependency name="liferay-faces-bridge-impl" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+                <dependency name="liferay-faces-portal" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+                <dependency name="liferay-faces-util" org="com.liferay.faces" rev="3.2.4-ga5-SNAPSHOT" />
+                <dependency name="primefaces" org="org.primefaces" rev="3.5" />
+            </dependencies>
+        </ivy-module>
+
+3.  Save. 
+
+Immediately, Ivy downloads the Liferay Faces artifacts into your Plugins SDK.
+Downloading the artifacts for the first time may take a minute or two. 
+
+
+---
+
+ ![Note](../../images/tip.png) **Warning:** Liferay IDE may
+ report an error in your `portlet.xml` file, complaining that the class
+ `javax.portlet.faces.GenericFacesPortlet` is not found in the Java Build Path.
+ This is a known issue where the IDE is not aware that the Liferay Faces
+ artifacts contain this class. To resolve the errors, simply save an edit to the
+ `portlet.xml` file (e.g., add a space character, delete it, and save the file).
+ Liferay IDE will reparse the descriptors and realize it has the class in the
+ Java Build Path. 
+
+---
+
+Let's add a PrimeFaces calendar component to the JSF portlet's UI. Open the
+`view.xhtml` file from the portlet project's `docroot/views` folder and add the
+following code after the `<h:outputText
+value="#{i18n['my-jsf-hello-world']}" />` element:
+
+        <br />
+        <br />
+        <h:form>
+           <p:calendar></p:calendar>
+        </h:form>
+
+Your `view.xhtml` file should look like this:
+
+    <?xml version="1.0"?>
+    
+    <f:view
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+    >
+        <h:head />
+        <h:body>
+            <h:outputText value="#{i18n['my-jsf-hello-world']}" />
+            <br />
+            <br />
+            <h:form>
+               <p:calendar></p:calendar>
+            </h:form>
+        </h:body>
+    </f:view>
+
+It's time to deploy your JSF portlet to the portal and see what it looks like. 
+
+### Deploying the JSF Portlet [](id=deploy-the-jsf-portlet-liferay-portal-6-2-dev-guide-en)
+
+Liferay provides a mechanism called auto-deploy that makes deploying portlets
+(and any other plugin types) a breeze. All you need to do is drop the plugin's
+`.war` file into the deploy directory, and the portal makes the necessary
+changes specific to Liferay and then deploys the plugin to the application
+server. This is a method of deployment used throughout this guide.
+
+---
+
+ ![Note](../../images/tip.png) **Note:** Liferay supports a wide
+ variety of application servers. Many, such as Tomcat and Jboss, provide a
+ simple way to deploy web applications by just copying a file into a folder and
+ Liferay's auto-deploy mechanism takes advantage of that ability. You should be
+ aware though, that some application servers, such as Websphere or Weblogic,
+ require the use of specific tools to deploy web applications; Liferay's
+ auto-deploy process won't work for them. 
+
+---
+
+***Deploying in Developer Studio***: Drag your portlet project onto your
+server. When deploying your plugin, your server displays messages indicating
+that your plugin was read, registered and is now available for use. 
+
+    Reading plugin package for my-jsf-portlet
+    Registering portlets for my-jsf-portlet
+    1 portlet for my-jsf-portlet is available for use
+
+If at any time you need to redeploy your portlet while in Developer Studio,
+right-click your portlet located underneath your server and select *Redeploy*. 
+
+***Deploying in the terminal***: Open a terminal window in your
+`portlets/primefaces-portlet` directory and enter
+
+    ant deploy
+
+A BUILD SUCCESSFUL message indicates your portlet is now being deployed. If you
+switch to the terminal window running Liferay, within a few seconds you should
+see the message `1 portlet for my-jsf-portlet is available for use`. If
+not, double-check your configuration. 
+
+In your web browser, log in to the portal as explained earlier. Click the Add
+button, which appears as a *Plus* symbol in the top right hand section of your
+browser. Then click *Applications*, find the My JSF portlet in the
+*Sample* category, and click *Add*. Your portlet appears in the page. 
+
+![Figure 4.x: Liferay Faces lets you know when a UI component requires a page refresh to render the first time.](../../images/jsf-primefaces-portlet-needs-refresh.png) 
+
+Refresh the page, as the portlet's message suggests, and click inside the form
+below the *Hello World* text to see the PrimeFaces calendar component. 
+
+![Figure 4.x: Powerful UI components, like this PrimeFaces calendar, are a snap to include in your portlet UI.](../../images/jsf-primefaces-portlet-with-calendar.png) 
+
+It's just that easy to create and deplpoy JSF portlet plugins! 
 
 <!-- 
 Before we dive into details on JSF portlet development, let's create a simple
@@ -986,7 +1232,7 @@ then the full JSF lifecycle is initiated by the bridge.
 
 ![Figure 4.1: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/04-lifecycle-bridge.png)
  
-Besides ensuring that the two lifecycles connect corectly, JSF portlet bridges
+Besides ensuring that the two lifecycles connect correctly, JSF portlet bridges
 also act as a mediator between the portal URL generator and JSF navigation
 rules. JSF portlet bridges ensure that URLs which are created by the portal,
 comply with JSF navigation rules so that a JSF portlet is able to switch to
