@@ -760,7 +760,7 @@ are, of course, more complicated layouts available and you can play around with
 them to get the layout you want.
 
 Sometimes a particular layout is *almost* what you want but not quite. In this
-case use the Nested Portlets portlet to embed a layout inside another layout.
+case, use the Nested Portlets portlet to embed a layout inside another layout.
 This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
@@ -1044,10 +1044,11 @@ portlet and Blogs Aggregator portlet to the Community page.
 
 ![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
-You'll find it's easy to make your pages look exactly the way you want them to.
-If the layout options provided aren't enough, you can even develop your own.
-More information about that can be found in Liferay's official guide to
-development, [*Liferay in Action*](http://manning.com/sezov).
+It's easy to make your pages look exactly the way you want them to. If the
+default layout options provided aren't enough, you can even develop your own.
+To find more information about developing custom layout templates, please refer
+to the Liferay Developer's guide:
+[https://www.liferay.com/documentation/liferay-portal/6.2/development](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 #### Page Permissions [](id=page-permissions-liferay-portal-6-2-user-guide-02-en)
 
