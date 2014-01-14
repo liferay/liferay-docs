@@ -1222,10 +1222,10 @@ momentous achievement at the Lunar Resort, let's give our announcement some of
 the pomp and circumstance we think it deserves!
 
 Using the editor, select all the text and then change the style to *Heading 1*
-and the color to *Dark Green*. You could insert an image here or even more text
-with a different style, as demonstrated in the screenshot below. You can also
-add bullets, numbering, links to another site or custom images. You can even add
-an emoticon. Go ahead and add a smiley face to the end of your announcement.
+and the color to *Navy*. You could insert an image here or even more text with a
+different style, as demonstrated in the screenshot below. You can also add
+bullets, numbering, links to another site or custom images. You can even add an
+emoticon. Go ahead and add a smiley face to the end of your announcement.
 
 ![Figure 2.16: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
 
