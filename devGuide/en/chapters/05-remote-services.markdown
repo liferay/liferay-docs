@@ -1536,23 +1536,32 @@ tools to your toolbox. Good job! Next, let's learn how to implement OAuth so
 you can access third-party services while protecting your own personal resources
 in Liferay Portal.
 
-## Authorizing Services with OAuth
+## Authorizing Access to Services with OAuth
 
-Suppose you'd like to access a third-party service provider like Twitter, but
-don't want Twitter to have access to all your portal's private information. With
-the implementation of OAuth, you get the best of both worlds-- access to an
-outside service provider without giving that service provider access to all your
-protected resources. If you'd like to learn more about the OAuth framework,
-Liferay OAuth app, registering your OAuth app, or activating it from a portal
-page, visit the
+Suppose you'd like to build plugin to access service provider like Twitter. To
+access user's Twitter profile plugin needs users credentials. Here comes OAuth.
+Instead of having plugin storing user credentials and taking all security risk
+related to safe credentials storage or implementing authentication protocol,
+with OAuth plugin takes different approach. OAuth allows plugin to delegate user
+authentication to service provider and receive back a token as a proof of being
+authorized to access user profile data in further interaction with service
+provider.
+With the implementation of OAuth, you get the best of both worlds-- access to an
+outside service provider and users trust plugin won't access protected
+resources in an unwanted way. Liferay Portal can easily be configured to protect
+programmatic access to portal resources via OAuth. If you'd like to learn more
+about the OAuth framework, Liferay OAuth app, registering your OAuth app, or
+activating it from a portal page, visit the
 [OAuth](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
-section of *Using Liferay Portal*. Before you can use OAuth on a portal page,
-you'll need to implement an OAuth client library, service implementation, and a
-user interface to present the OAuth cycle.
+section of *Using Liferay Portal*. To access portal services in OAuth way,
+you'll need to implement an client with OAuth cycle implementation and user
+interface to lead user through the cycle.
 
 <!-- Update link to User Guide when available. -->
 
-Let's get started by first implementing an OAuth Client library.
+Here we will show an example of portlet accessing JSON Web Services at remote
+portal. Let's get started by first choosing and implementing services of an
+OAuth Client library.
 
 ### Selecting an OAuth Client Library
 
@@ -1605,16 +1614,21 @@ is listed below:
 
     }
 
-In this code snippet, the portlet is acquiring the access token and request
-token from the service provider. A request token is a value the portlet uses to
-obtain user authorization, which is exchanged for an access token. The access
-token is a value the portlet uses to gain access to the protected resources on
-behalf of the user, instead of using the user's service provider credentials. 
+In this code snippet, the portlet is providing service platform's OAuth URLs to
+Scribe for acquiring the access token and request token from the service
+provider. A request token is a value the portlet uses to obtain user
+authorization, which is exchanged for an access token. The access token is a
+value the portlet uses to gain access to the protected resources on behalf of
+the user, instead of using the user's service provider credentials.
 
-In addition to the tokens, you'll also need to authorize the callback URL you
-specified when registering your application through Liferay's *OAuth Admin*
-menu. Here's a code snippet where the callback URL is authorized and the
-portlet acquires the OAuth Service:
+In addition to the tokens, you'll also need to provide the callback URL so that
+service platform can redirect user browser back to your portlet once
+authentication and authorization is over. Callback URL can be provided within
+authorization request as parameter or can be specified when registering your
+application through Liferay's *OAuth Admin* menu. It is important to mention
+that callback URL provided via parameter would override callback setting set in
+*OAuth Admin*. Here's a code snippet where the callback URL is authorized and
+the portlet acquires the OAuth Service:
 
     public class OAuthUtil {
 
@@ -1684,8 +1698,9 @@ doing this, we provide the OAuth services implementation to your portlet.
 However, we're not quite done yet; we still need to provide our OAuth client
 library with further information about the OAuth platform we're accessing.
 
-First, you'll need to specify the OAuth portlet protocol URLs in your
-`portal-ext.properties` file. The URLs you specify here do not require
+First, you'll need to specify the OAuth protocol URLs. In case of our Liferay
+Portal as a service platform, OAuth portlet sets these URLs in its
+`portal.properties` file. The URLs specified here do not require
 authentication to access.
 
     auth.public.paths=\
@@ -1693,7 +1708,7 @@ authentication to access.
         /portal/oauth/authorize,\
         /portal/oauth/request_token
 
-Furthermore, you'll need to specify OAuth related constants in your portlet's
+You'll need to transfer these OAuth related constants in your portlet's
 `portlet.properties` file. We've provided an example code snippet of what this
 would look like:
 
