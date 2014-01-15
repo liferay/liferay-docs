@@ -102,7 +102,35 @@ Let's start developing JSF portlets using Liferay Faces.
 
 ## Developing JSF Portlets [](id=develop-jsf-portlets-liferay-portal-6-2-dev-guide-en)
 
-<!-- Needs overview -->
+Liferay fully supports developing and deploying JSF portlets on Liferay Portal,
+with the help of Liferay Faces Bridge. Liferay Faces Bridge provides the means
+for deploying JSF portlets on Liferay Portal. In fact, the bridge supports
+deployment of JSF web applications as portlets on any JSR 286 (Portlet 2.0)
+compliant portlet containers, like Liferay Portal 5.2, 6.0, 6.1, and 6.2.
+Liferay Faces Bridge not only implements the JSR 329 Portlet Bridge Standard,
+but it also contains innovative features that make it possible to leverage the
+power of JSF 2.x inside a portlet application. The Liferay Faces Bridge makes
+the JSF portlet development experience as close as possible to JSF web app
+development. We'll take you through the portlet development process and show you
+how to leverage Liferay Faces Bridge's full potential with your JSF portlets. 
+
+In this section, we'll demonstrate how to develop JSF portlets with the standard
+features you expect and additional features you'll appreciate for building JSF
+portlets that are powerful and easy to maintain. 
+
+Here are the topics we'll cover: 
+
+- Creating a JSF Portlet Project
+- Specifying the portlet.xml for Your JSF Portlet
+- Implementing Portlet Preferences
+- Accessing the Portlet API
+- Internationalizing JSF Portlet Content
+- Utilizing IPC with JSF Portlets 
+- Leveraging CDI in JSF portlets
+- Using Liferay Faces Bridge's JSF Component Tags 
+- Dynamically Adding JSF Portlets to Liferay Portal
+
+Let's get started with simple tutorial on creating and deploying a JSF portlet. 
 
 ### Creating a JSF Portlet Project [](id=create-jsf-portlet-project-liferay-portal-6-2-dev-guide-en)
 
@@ -343,36 +371,19 @@ Refresh the page and the portal renders your portlet's calendar component.
 
 It's just that easy to create and deplpoy JSF portlet plugins! 
 
-<!-- 
-Before we dive into details on JSF portlet development, let's create a simple
-JSF portlet using Liferay IDE. ### Creating a JSF Portlet Using Liferay Faces
+Next, let's get familiar with the portlet deployment descriptor file
+(`portlet.xml`), and consider the descriptor requirements for JSF portlets.  
 
-Insert simple tutorial on creating a JSF portlet - Jim --> 
+### Specifying the portlet.xml for Your JSF Portlet [](id=portlet-xml-file-jsf-portlet-liferay-portal-6-2-dev-guide-en)
 
-The main goal of JSF portlet bridges is to make the JSF portlet development
-experience as close as possible to JSF webapp development. Consequently, many
-JSF webapps can be easily migrated to a portlet container using such a bridge. 
+Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor file. As
+we demonstrated in the previous section, Liferay IDE and the Plugins SDK create
+this file for you. But there are a couple unique requirements for JSF portlets
+with respect to their deployment descriptors. 
 
-### Liferay Faces Bridge [](id=liferay-faces-bridge-liferay-portal-6-2-dev-guide-04-en)
-
-<!-- Explain what Liferay Faces Bridge is, but save details for later. - Jim -->
-
-<!--  This is a step required to migrate the web app to the portal. Either the
-heading should be removed or it should be changed to something like "Specifying
-the portlet.xml for your JSF portlet".
-
-Or it can simply be made a part of the steps for migrating a web app. We should
-explain that to be a portlet, it the project needs a portlet.xml file. And since
-it is a JSF webapp, it needs to have this portlet class setting. - Jim -->
-
-<!-- To summarize this section's content, the portlet developer needs to be
-aware of what he needs to do to specify in a portlet.xml file: the portlet-class
-and to map facelets to each portlet mode the portlet supports.
-- Jim -->
-
-Utilizing JSF 2.x in a portlet requires that
+First, utilizing JSF 2.x in a portlet requires that
 `javax.portlet.faces.GenericFacesPortlet` be named as the `<portlet-class>`
-entity of the `WEB-INF/portlet.xml` file. 
+entity. Notice that the following `portlet.xml` file meets this requirement. 
 
     <portlet-app>
         <portlet>
@@ -399,16 +410,27 @@ entity of the `WEB-INF/portlet.xml` file.
                 <portlet-mode>edit</portlet-mode>
                 <portlet-mode>help</portlet-mode>
             </supports>
+
             ...
+
         </portlet>
     </portlet-app>
 
+Second, each portlet must map a facelet to each portlet mode that it supports.
+The `portlet.xml` file content above supports the view, edit, and help portlet
+modes and maps each of those modes to a specific facelet. 
+
+For example, view mode support is specified by the
+`<portlet-mode>view</portlet-mode>` element and is mapped to the `/view.xhtml`
+facelet by the following `<init-param>` element:
+
+    <init-param>
+        <name>javax.portlet.faces.defaultViewId.view</name>
+        <value>/view1.xhtml</value>
+    </init-param>
+
 Now that we've got `WEB-INF/portlet.xml` set up, let's move on to portlet
 preferences. 
-
-<!-- Great, but before we go on to showing them different optional things to
-develop, is there anything else that is required to migrate the web app? - Jim
--->
 
 ### Utilizing PortletPreferences With JSF [](id=utilizing-portletpreferences-with-jsf-liferay-portal-6-2-dev-guide-04-en)
 
