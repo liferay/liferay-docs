@@ -104,7 +104,7 @@ Let's start developing JSF portlets using Liferay Faces.
 
 <!-- Needs overview -->
 
-### Creating a JSF Portlet Project
+### Creating a JSF Portlet Project [](id=create-jsf-portlet-project-liferay-portal-6-2-dev-guide-en)
 
 We want to make it easy for you to implement portlets using JSF. And Liferay
 IDE, with it's powerful portlet plugin wizard, provides you with a great
@@ -257,13 +257,12 @@ Downloading the artifacts for the first time may take a minute or two.
 
 ---
 
-Let's add a PrimeFaces calendar component to the JSF portlet's UI. Open the
-`view.xhtml` file from the portlet project's `docroot/views` folder and add the
-following code after the `<h:outputText
-value="#{i18n['my-jsf-hello-world']}" />` element:
+Let's make the portlet display a calendar. We'll replace the default "hello
+world" text output in the portlet's UI, with a PrimeFaces calendar component.
+Open the `view.xhtml` facelet file from the portlet project's `docroot/views`
+folder and replace the element `<h:outputText
+value="#{i18n['my-jsf-hello-world']}" />` with the following lines of code: 
 
-        <br />
-        <br />
         <h:form>
            <p:calendar></p:calendar>
         </h:form>
@@ -282,11 +281,8 @@ Your `view.xhtml` file should look like this:
     >
         <h:head />
         <h:body>
-            <h:outputText value="#{i18n['my-jsf-hello-world']}" />
-            <br />
-            <br />
             <h:form>
-               <p:calendar></p:calendar>
+               <p:calendar  mode="inline" />
             </h:form>
         </h:body>
     </f:view>
@@ -325,7 +321,7 @@ If at any time you need to redeploy your portlet while in Developer Studio,
 right-click your portlet located underneath your server and select *Redeploy*. 
 
 ***Deploying in the terminal***: Open a terminal window in your
-`portlets/primefaces-portlet` directory and enter
+`portlets/my-jsf-portlet` directory and enter
 
     ant deploy
 
@@ -341,8 +337,7 @@ browser. Then click *Applications*, find the My JSF portlet in the
 
 ![Figure 4.x: Liferay Faces lets you know when a UI component requires a page refresh to render the first time.](../../images/jsf-primefaces-portlet-needs-refresh.png) 
 
-Refresh the page, as the portlet's message suggests, and click inside the form
-below the *Hello World* text to see the PrimeFaces calendar component. 
+Refresh the page and the portal renders your portlet's calendar component.  
 
 ![Figure 4.x: Powerful UI components, like this PrimeFaces calendar, are a snap to include in your portlet UI.](../../images/jsf-primefaces-portlet-with-calendar.png) 
 
@@ -369,6 +364,11 @@ the portlet.xml for your JSF portlet".
 Or it can simply be made a part of the steps for migrating a web app. We should
 explain that to be a portlet, it the project needs a portlet.xml file. And since
 it is a JSF webapp, it needs to have this portlet class setting. - Jim -->
+
+<!-- To summarize this section's content, the portlet developer needs to be
+aware of what he needs to do to specify in a portlet.xml file: the portlet-class
+and to map facelets to each portlet mode the portlet supports.
+- Jim -->
 
 Utilizing JSF 2.x in a portlet requires that
 `javax.portlet.faces.GenericFacesPortlet` be named as the `<portlet-class>`
@@ -438,7 +438,7 @@ mode in the `WEB-INF/portlet.xml` descriptor.
 
 Although support for portlet `EDIT` mode has been specified, the portlet
 container does not necessarily know which JSF view should be rendered when the
-user enters portlet portlet `EDIT` mode. JSF portlet developers must specify the
+user enters portlet `EDIT` mode. JSF portlet developers must specify the
 Facelet view, in the `WEB-INF/portlet.xml` descriptor, that is to be displayed
 for each supported portlet mode.  
 
