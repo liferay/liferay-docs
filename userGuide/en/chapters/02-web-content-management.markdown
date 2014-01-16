@@ -91,7 +91,7 @@ Anything else you see on the page is provided by the theme that is installed.
 This includes site navigation and application windows, called *portlets*. Let's
 jump in and start creating the site we'll use for this book. 
 
-## Setting up the Lunar Resort Example Portal [](id=setting-up-the-lunar-resort-example-portal-liferay-portal-6-2-user-guide-02-en)
+## Setting up the Lunar Resort Example Portal [](id=setting-up-the-lunar-resort-example-por-liferay-portal-6-2-user-guide-02-en)
 
 Suppose that you've been assigned the task of building a web site for an
 innovative new company called Lunar Resort, Inc. You've decided to take
