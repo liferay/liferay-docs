@@ -243,31 +243,59 @@ properties from this policy file into your plugin's
 
 Here's how you generate a PACL policy for your plugin: 
 
-1. Specify your Liferay home in your `portal-ext.properties` file, if you
-haven't done so already. For example: 
+1.  Make sure your Liferay Portal instance has `liferay` set as its security
+    manager strategy value and that the security manager was activated during
+    application server startup. 
 
-        liferay.home=C:/liferay-portal-<version>/bundles
+    In your `portal-ext.properties` file, make sure Liferay Portal's security
+    manager strategy is specified as follows: 
 
-    You must restart Liferay for the property to take affect. 
+        portal.security.manager.strategy=liferay
 
-2. Turn on the security manager's *generate* mode in your plugin by setting the
-following property in your `liferay-plugin-package.properties` file: 
+    Your app server may require that certain startup arguments be used for
+    activiting the security manager. For example, Tomcat requires that you pass
+    in an option `-security` in order to activate the security manager. Check
+    your app server's security manager documentation to make sure. Conveniently,
+    some app servers, like Tomcat, output a terminal message, like "Using
+    Security Manager", indicating that it's using the security manager. 
+
+    Unless you already started Liferay with the security manager enabled and
+    activated as described above, you must restart Liferay with these settings. 
+
+2.  Enable the security manager to generate a security policy for your plugin by
+    setting the following property in your plugin's
+    `liferay-plugin-package.properties` file: 
 
         security-manager-enabled=generate
 
-3. Deploy your plugin. 
+3.  Deploy your plugin.
 
-    The PACL Policy Generation tool writes a PACL policy file: 
+    The PACL Policy Generation tool writes a PACL policy file with the following
+    path: 
 
-        ${liferay.home}/pacl-policy/${servletContextName}.policy
+        [liferay.home]/pacl-policy/[servletContextName].policy
 
-    The security manager performs security checks on your plugin; but rather
-    than throwing errors on failed checks, the generator tool writes suggested
-    rules for satisfying the security manager. 
+    On deploying your plugin and as you exercise your plugin's features, Liferay
+    Portal's security manager performs security checks on your plugin; but
+    rather than throwing errors on failed checks, the generator tool writes
+    suggested rules that specify access to the resources your plugin accesses. 
 
-4. Lastly, merge the properties found in your newly generated PACL policy file
-into your plugin's `liferay-plugin-package.properties` file. It's just a matter
-of merging the properties that start with the "security-manager-" prefix. 
+    Unless you've turned off logging for the generator tool, messages like the
+    ones below are logged, reporting the various authorization properties that
+    the tool generated
+
+        DEBUG [localhost-startStop-2][GeneratingPACLPolicy:230] my-pacl-portlet
+        generated authorization property {key=security-manager-properties-read,
+        value=log4j.configDebug}
+        DEBUG [localhost-startStop-2][GeneratingPACLPolicy:230] my-pacl-portlet
+        generated authorization property {key=security-manager-properties-read,
+        value=line.separator}
+
+4.  Lastly, merge the properties that the security manager wrote (i.e., your
+    newly generated PACL policy file
+    `[liferay.home]/pacl-policy/[servletContextName].policy`) into your plugin's
+    `liferay-plugin-package.properties` file. It's just a matter of merging the
+    properties that start with the "security-manager-" prefix. 
 
 Now that your plugin has a thoroughly specified list of resources it accesses,
 let's enable the security manager and do final testing of your PACL properties.
