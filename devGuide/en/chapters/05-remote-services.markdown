@@ -15,7 +15,7 @@ Here are the topics we'll cover in this chapter:
 - Service Security Layers 
 - SOAP Web Services 
 - JSON Web Services 
-- Authorizing Services with OAuth
+- Authorizing Access to Services with OAuth
 
 ## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
 
