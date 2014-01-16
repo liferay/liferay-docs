@@ -235,7 +235,7 @@ page](https://www.liferay.com/downloads/liferay-portal/available-releases). For
 instructions on installing Liferay manually on other application servers, please
 refer to the [Installation and
 Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
-chapter of *Using Liferay Portal*. 
+chapter of *Using Liferay Portal 6.2*. 
 
 1.  In Eclipse, open the *Server Runtime Environments* dialog box--go to
     *Window* &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
@@ -1045,7 +1045,7 @@ Setting up the Plugins SDK is easy. Let's get to it.
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
 Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
-chapter of *Using Liferay Portal*. Many people use the Tomcat bundle for
+chapter of *Using Liferay Portal 6.2*. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
@@ -1076,7 +1076,7 @@ Installation steps:
     systems have trouble running Java applications from folders with names
     containing spaces, avoid using spaces when naming your folder.
 
-    On Windows, to build a plugin's services (see Chapter 4 on Service Builder),
+    On Windows, to build a plugin's services (see [Generating Your Service Layer](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en)),
     the Plugins SDK and Liferay Portal instance must be on the same drive. E.g.,
     if your Liferay Portal instance is on your `C:\` drive, your Plugins SDK
     must also be on your `C:\` drive in order for Service Builder to be able to
@@ -1195,17 +1195,14 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-<version>/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See Chapter 13 on Ext plugins. 
-    - `hooks/` - hook plugins directory. See Chapter 10 on hooks. 
-    - `layouttpl/` - layout templates directory. See Chapter 9 on creating
-      Liferay Themes and Layout Templates. 
+    - `ext/` - Ext plugins directory. See [Advanced Customization with Ext Plugins](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en). 
+    - `hooks/` - hook plugins directory. See [Customizing and Extending Functionality with Hooks](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en). 
+    - `layouttpl/` - layout templates directory. See [Creating Liferay Layout Templates](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-layout-templates-liferay-portal-6-2-dev-guide-09-en).  
     - `lib/` - commonly referenced libraries. 
     - `misc/` - development configuration files. Example, a source code
       formatting specification file. 
-    - `portlets/` - portlet plugins directory. See Chapter 3 on portlet
-      development. 
-    - `themes/` - themes plugins directory. See Chapter 9 on creating Liferay
-      themes. 
+    - `portlets/` - portlet plugins directory. See [Developing Portlet Applications](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en). 
+    - `themes/` - themes plugins directory. See [Creating Liferay Themes and Layout Templates](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
     - `tools/` - plugin templates and utilities. 
     - `webs/` - web plugins directory. 
     - `build.properties` - default SDK properties. 
@@ -2758,7 +2755,7 @@ Congratulations! You successfully created a Liferay portlet plugin using Maven.
 
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en)
 
-For detailed information on creating portlet plugins, see Chapter 3, 
+For detailed information on creating portlet plugins, see
 [Developing Portlet Applications](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en). 
 
 Next, let's run through a brief example for developing a theme plugin using
@@ -2875,7 +2872,7 @@ placed in the *target* directory. Its path is
 
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-0)
 
-For more information on Liferay themes and its settings, see Chapter 9,
+For more information on Liferay themes and its settings, see
 [Creating Liferay Themes and Layout
 Templates](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
 
@@ -2948,10 +2945,9 @@ Plugins with Maven* section.
 
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-1)
 
-For detailed information on creating hooks, see the [Customizing and Extending
+For detailed information on creating hooks, see [Customizing and Extending
 Functionality with
-Hooks](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en)
-chapter of this guide.
+Hooks](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en).
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
@@ -3031,7 +3027,7 @@ the *Deploying Liferay Plugins with Maven* section.
 
 ##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-2)
 
-For detailed information on creating layout templates, see Chapter 9, [Creating
+For detailed information on creating layout templates, see [Creating
 Liferay Themes and Layout
 Templates](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
 

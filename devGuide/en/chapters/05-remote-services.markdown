@@ -222,13 +222,13 @@ line for the appropriate authentication type:
     #company.security.auth.type=screenName
     #company.security.auth.type=userId
 
-Your Liferay Portal password policies (see the
-[User Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
-chapter of *Using Liferay Portal*) should be reviewed, since they'll be enforced
-on your administrative ID as well. If the portal is enforcing password policies
-on its users (e.g., requiring them to change their passwords on a periodic
-basis), an administrative ID accessing Liferay's web services in a batch job
-will have its password expire too.
+Your Liferay Portal password policies (see the [User
+Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/management-liferay-portal-6-2-user-guide-16-en)
+chapter of *Using Liferay Portal 6.2*) should be reviewed, since they'll be
+enforced on your administrative ID as well. If the portal is enforcing password
+policies on its users (e.g., requiring them to change their passwords on a
+periodic basis), an administrative ID accessing Liferay's web services in a
+batch job will have its password expire too.
 
 To prevent a password from expiring, a portal administrator can add a new
 password policy that doesn't enforce password expiration and add a specific
@@ -325,7 +325,8 @@ Here's the list of *secure* web services for `UserGroup`:
 
  ![Note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use a
  tool called *Service Builder* to expose their services via SOAP automatically.
- If you're interested in using Service Builder, read Chapter 4. 
+ If you're interested in using Service Builder, read [Generating Your Service
+ Layer](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en). 
 
 ---
 
@@ -670,7 +671,8 @@ regards to your remote services.
 
  ![Note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use 
  *Service Builder* to expose their services via JSON automatically.
- If you're interested in using Service Builder, read Chapter 4. 
+ If you're interested in using Service Builder, read [Generating Your Service
+ Layer](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en). 
 
 ---
 
