@@ -125,12 +125,12 @@ Here are the topics we'll cover:
 - Specifying the portlet.xml for Your JSF Portlet
 - Utilizing Portlet Preferences
 - Accessing the Portlet API
-- Internationalizing JSF Portlet Content
+- Internationalizing JSF Portlets
 - Utilizing IPC with JSF Portlets 
 - Leveraging CDI in JSF portlets
 - Using Liferay Faces Bridge's JSF Component Tags 
 - Dynamically Adding JSF Portlets to Liferay Portal
-- Extending Liferay Faces Bridge via Factory Wrappers
+- Extending Liferay Faces Bridge Using Factory Wrappers
 
 Let's get started with simple tutorial on creating and deploying a JSF portlet. 
 
@@ -177,14 +177,15 @@ Studio, so you can see just how easy it is.
 
     2.4. Select *Portlet* as your Plugin type and click *Next*. 
 
-3.  In the project creation wizard's first window, you'll select the framework
-    for your portlet and a UI component suite. 
+3.  In this window, you'll select the portlet framework for your portlet and a
+    UI component suite. 
 
     3.1 Select the *JSF 2.x* portlet framework. 
 
-    Immediately, the wizard lists the JSF component suites available,
-    including the JSF Standard suite, ICEfaces, Liferay Faces Alloy,
-    PrimeFaces, and RichFaces. 
+        Immediately, the wizard lists the available JSF component suites in the
+        bottom section of the window. The list of component suites includes the
+        JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
+        RichFaces. 
 
     3.2. Select the *PrimeFaces* UI component suite and click *Finish*. 
 
@@ -193,8 +194,11 @@ portlets.
 
 ![Figure 4.x: Liferay Faces supports using the most popular component suites with your JSF portlets.](../../images/jsf-select-primefaces-comp-suite.png)
 
+<!-- As an alternative, we should explain how to download the JARs manually and
+install them. - Jim -->
+
 Next, let's configure your project to use the Liferay Faces `.jar` files. To
-simplify things, we'll set up Ivy to download these artifacts. 
+simplify things, we'll set up Ivy to download these artifacts: 
 
 1.  Open your Plugins SDK's `ivy-settings.xml` file. 
 
@@ -244,9 +248,8 @@ version of the artifacts for the JSF plugin project to use.
 
 1.  Open the `ivy.xml` file found in your JSF plugin project's root directory. 
 
-2.  Replace the current revision values of each `liferay-faces-*` dependency
-element with `"3.2.4-ga5-SNAPSHOT"`, so that the attribute settings are
-`rev="3.2.4-ga5-SNAPSHOT"`. Save your changes. 
+2.  For each of the dependencies with names starting with `liferay-faces-`,
+set their `rev` attribute values to `"3.2.4-ga5-SNAPSHOT"`. Save your changes. 
 
 Here's what your `ivy.xml` file should look like: 
 
@@ -272,7 +275,8 @@ Here's what your `ivy.xml` file should look like:
     </ivy-module>
 
 Immediately, Ivy downloads the Liferay Faces artifacts into your Plugins SDK.
-Downloading the artifacts for the first time may take a minute or two. 
+Downloading the artifacts for the first time may take a minute or two, depending
+on the speed of your internet connection. 
 
 ---
 
@@ -280,15 +284,16 @@ Downloading the artifacts for the first time may take a minute or two.
  report an error in your `portlet.xml` file, complaining that the class
  `javax.portlet.faces.GenericFacesPortlet` is not found in the Java Build Path.
  This is a known issue where the IDE is not aware that the Liferay Faces
- artifacts contain this class. To resolve the errors, simply save an edit to the
- `portlet.xml` file (e.g., add a space character, delete it, and save the file).
- Liferay IDE will reparse the descriptors and realize it has the class in the
- Java Build Path. 
+ artifacts you've just downloaded contain this class. To resolve the errors,
+ make an arbitrary edit (e.g., add a space character and then delete it) to the
+ `portlet.xml` file and save it. Liferay IDE reparses the descriptors and
+ resolves that the class is in the Java Build Path. 
 
 ---
 
-Let's make the portlet display a calendar. We'll replace the default "hello
-world" text output in the portlet's UI, with a PrimeFaces calendar component.
+Let's make the portlet display a calendar. We'll replace the portlet's default
+"hello world" text output with a PrimeFaces calendar component. 
+
 Open the `view.xhtml` facelet file from the portlet project's `docroot/views`
 folder and replace the element `<h:outputText
 value="#{i18n['my-jsf-hello-world']}" />` with the following lines of code: 
@@ -297,7 +302,7 @@ value="#{i18n['my-jsf-hello-world']}" />` with the following lines of code:
        <p:calendar></p:calendar>
     </h:form>
 
-Your `view.xhtml` file should look like this:
+Your `view.xhtml` facelet should look like this:
 
     <?xml version="1.0"?>
     
@@ -330,7 +335,7 @@ server. This is a method of deployment used throughout this guide.
 ---
 
  ![Note](../../images/tip.png) **Note:** Liferay supports a wide
- variety of application servers. Many, such as Tomcat and Jboss, provide a
+ variety of application servers. Many, such as Tomcat and JBoss, provide a
  simple way to deploy web applications by just copying a file into a folder and
  Liferay's auto-deploy mechanism takes advantage of that ability. You should be
  aware though, that some application servers, such as Websphere or Weblogic,
@@ -355,15 +360,15 @@ right-click your portlet located underneath your server and select *Redeploy*.
 
     ant deploy
 
-A BUILD SUCCESSFUL message indicates your portlet is now being deployed. If you
-switch to the terminal window running Liferay, within a few seconds you should
-see the message `1 portlet for my-jsf-portlet is available for use`. If
+A `BUILD SUCCESSFUL` message indicates your portlet is now being deployed. If
+you switch to the terminal window running Liferay, within a few seconds you
+should see the message `1 portlet for my-jsf-portlet is available for use`. If
 not, double-check your configuration. 
 
-In your web browser, log in to the portal as explained earlier. Click the Add
-button, which appears as a *Plus* symbol in the top right hand section of your
-browser. Then click *Applications*, find the My JSF portlet in the
-*Sample* category, and click *Add*. Your portlet appears in the page. 
+In your web browser, log in to the portal. Click the Add button, which appears
+as a *Plus* symbol in the top right hand section of your browser. Then click
+*Applications*, find the My JSF portlet in the *Sample* category, and click
+*Add*. Your portlet appears in the page. 
 
 ![Figure 4.x: Liferay Faces lets you know when a UI component requires a page refresh to render the first time.](../../images/jsf-primefaces-portlet-needs-refresh.png) 
 
@@ -374,18 +379,19 @@ Refresh the page and the portal renders your portlet's calendar component.
 It's just that easy to create and deplpoy JSF portlet plugins! 
 
 Next, let's get familiar with the portlet deployment descriptor file
-(`portlet.xml`), and consider the descriptor requirements for JSF portlets.  
+(`portlet.xml`) and consider the descriptor requirements for JSF portlets.  
 
 ### Specifying the portlet.xml for Your JSF Portlet [](id=portlet-xml-file-jsf-portlet-liferay-portal-6-2-dev-guide-en)
 
-Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor file. As
-we demonstrated in the previous section, Liferay IDE and the Plugins SDK create
-this file for you. But there are a couple unique requirements for JSF portlets
-with respect to their deployment descriptors. 
+Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor
+file. As we demonstrated in the previous section, Liferay IDE and the Plugins
+SDK create this file for you. But there are a couple unique requirements for JSF
+portlets with respect to their deployment descriptors. 
 
-First, utilizing JSF 2.x in a portlet requires that
-`javax.portlet.faces.GenericFacesPortlet` be named as the `<portlet-class>`
-entity. Notice that the following `portlet.xml` file meets this requirement. 
+First, utilizing JSF 2.x in a portlet requires specifying the class
+`javax.portlet.faces.GenericFacesPortlet` as the portlet's class. You specify
+this class name in the portlet's `<portlet-class>` entity. Notice that the
+portlet in the following `portlet.xml` snippet meets this requirement: 
 
     <portlet-app>
         <portlet>
@@ -419,12 +425,12 @@ entity. Notice that the following `portlet.xml` file meets this requirement.
     </portlet-app>
 
 Second, each portlet must map a facelet to each portlet mode that it supports.
-The `portlet.xml` file content above supports the view, edit, and help portlet
-modes and maps each of those modes to a specific facelet. 
+The `portlet.xml` file content above supports the `VIEW`, `EDIT`, and `HELP`
+portlet modes, and maps each of those modes to a specific facelet. 
 
-For example, view mode support is specified by the
-`<portlet-mode>view</portlet-mode>` element and is mapped to the `/view.xhtml`
-facelet by the following `<init-param>` element:
+In the example code above, `VIEW` mode support is specified by the
+`<portlet-mode>view</portlet-mode>` element. And the `VIEW` mode and is mapped
+to the `/view.xhtml` facelet by the `<init-param>` element:
 
     <init-param>
         <name>javax.portlet.faces.defaultViewId.view</name>
@@ -471,24 +477,31 @@ for each supported portlet mode.
         <value>/edit.xhtml</value>
     </init-param>
 
-Now that we have dealt with `EDIT` mode, let's learn how to access the portlet
-API. 
+<!-- This example's mapping values are slightly different from that of the
+portlet in the previous section. Were they meant to be different? In the
+previous example descriptor we mapped EDIT mode to the /preferences.xhtml
+facelet, yet in this example we map EDIT mode to the /edit.xhtml facelet. This
+seems confusing. - Jim -->
+
+Now that we've considered how to implement portal preferences, let's learn how
+to access the portlet API. 
 
 ### Accessing The Portlet API With ExternalContext [](id=access-portlet-api-with-externalcontext-liferay-portal-6-2-dev-guide-en)
 
 Just as JSF *web app* developers rely on `ExternalContext` to access to the
 Servlet API, JSF *portlet* developers rely on it to access to the Portlet API. 
 
-As a portlet developer, you'll often need to access an instance of the
-`javax.portlet.PortletRequest` or `javax.portlet.PortletResponse` objects. These
-instances are accessed in the same way that a
-`javax.servlet.http.HttpServletRequest` or
-`javax.servlet.http.HttpServletResponse` would be accessed in a servlet
-evironment, except that they are cast to the portlet versions of the classes
-instead. In the example code below, the request object from
+As you develop JSF portlets, you'll often need to access instances of the
+`javax.portlet.PortletRequest` and `javax.portlet.PortletResponse` classes. You
+access these instances similarly to the way you'd access the
+`javax.servlet.http.HttpServletRequest` and
+`javax.servlet.http.HttpServletResponse` classes in a servlet evironment, except
+that you cast them to the portlet versions of the classes. 
+
+In the example code snippet below, the request object from
 `externalContext.getRequest()` is cast to the `PortletRequest` class and the
 response object from `externalContext.getResponse()` is cast to the
-`PortletResponse` class. 
+`PortletResponse` class:
 
     import javax.portlet.PortletRequest;
     import javax.portlet.PortletResponse;
@@ -511,13 +524,13 @@ response object from `externalContext.getResponse()` is cast to the
         }
     }
             
-The code listing above uses the singleton class called `LiferayFacesContext`,
-which has methods `getPortletRequest()` and `getPortletResponse()`. This
-class comes with Liferay Faces Portal, which we'll cover in detail in later
-sections. You can leverage the `LiferayFacesContext` class in your JSF portlets
-on Liferay to get easy access to the portlet requests and responses. 
+The code listing above uses the singleton class `LiferayFacesContext`, which has
+methods `getPortletRequest()` and `getPortletResponse()`. You can leverage the
+`LiferayFacesContext` class in your JSF portlets on Liferay to get easy access
+to the portlet requests and responses. This class comes with Liferay Faces
+Portal, which we'll cover in detail in later sections. 
 
-The next section explains how to internationalize JSF Portlets. 
+In the next section, we'll explain how to internationalize your JSF portlets. 
 
 ### Internationalizing JSF Portlets [](id=internationalize-jsf-portlets-i18n-liferay-portal-6-2-dev-guide-en)
 
@@ -532,40 +545,45 @@ Liferay Portal:
     demonstrated in
     [`faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/faces-config.xml)
     - Use your custom *i18n* keyword Expression Language (EL) in your Facelet
-    view like [`applicant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/views/applicant.xhtml)
+    view, like [`applicant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/bridge/jsf2-portlet/src/main/webapp/views/applicant.xhtml)
 
-2. Using the built-in *i18n* keyword provided by the [Liferay Faces
-   Portal](http://www.liferay.com/community/liferay-projects/liferay-faces/portal)
-   project, as shown in the [jsf2-registration-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-registration-portlet)
+2. Using the built-in *i18n* keyword provided by [Liferay Faces
+   Portal](http://www.liferay.com/community/liferay-projects/liferay-faces/portal),
+   as shown in the
+   [jsf2-registration-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-registration-portlet)
    demo. This method integrates JSF and Liferay very well, because it allows you
-   to "hook" into the thousands of existing internationalized keys that ship
-   with Liferay Portal, in addition to the keys you add. 
-    - Create a hook inside your portlet plugin, like
-    [`liferay-hook.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/WEB-INF/liferay-hook.xml)
+   to "hook" into thousands of existing internationalized keys that Liferay
+   Portal includes and allows you to add your own keys. 
+    - Create a hook, like
+    [`liferay-hook.xml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/WEB-INF/liferay-hook.xml),
+    inside your portlet plugin
     - Create internaltionalized Langauge properties files, like
     [`Language_en_US.properties`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/resources/Language_en_US.properties) 
     - Use the built-in *i18n* keyword Expression Language (EL) in your Facelet
-    view, like 
+    view, like
     [`registrant.xhtml`](https://github.com/liferay/liferay-faces/blob/master/demos/portal/jsf2-registration-portlet/src/main/webapp/views/registrant.xhtml) 
 
 <!-- This section on JSF portlet i18n needs to be refactored to demonstrate,
 with code, how to internationalize a JSF portlet. - Jim -->
 
+Internationalizing your portlets is especially easy to do using the options that
+Liferay Faces provides. 
+
 Next, we'll learn how to communicate between JSF portlets using IPC. 
 
-### Utilizing IPC With JSF [](id=utilizing-ipc-with-jsf-liferay-portal-6-2-dev-guide-04-en)
+### Utilizing IPC With JSF Portlets [](id=utilizing-ipc-with-jsf-liferay-portal-6-2-dev-guide-04-en)
 
-Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC)
+Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
 using the JSR 329 approach for supporting Portlet 2.0 Events and Portlet 2.0
 Public Render Parameters. 
 
 ---
 
  ![Note](../../images/tip.png) **Note:** Visit
- <http://www.liferay.com/community/liferay-projects/liferay-faces/demos> for
- demo portlets that demonstrate how to use each of these approaches to IPC. You
- can also find demo portlets that show how to use Ajax Push for IPC using either
- ICEfaces+ICEPush or PrimeFaces+PrimePush. 
+ <http://www.liferay.com/community/liferay-projects/liferay-faces/demos> to see
+ portlets that demonstrate the IPC techniques described in this section. At that
+ location, you'll also find portlets that implement Ajax Push for IPC, using
+ ICEfaces+ICEPush and PrimeFaces+PrimePush. 
 
 ---
 
@@ -580,8 +598,8 @@ required by the Portlet 2.0 standard, Public Render Parameters must be declared
 in the `WEB-INF/portlet.xml` descriptor. 
 
 This example excerpt from a `WEB-INF/portlet.xml` descriptor demonstrates
-setting a public render parameter for a customer ID, shared between a customer
-portlet and a bookings portlet: 
+setting a public render parameter for a customer ID, shared between a Customers
+portlet and a Bookings portlet: 
 
     <portlet>
         <portlet-name>customersPortlet</portlet-name>
@@ -596,16 +614,15 @@ portlet and a bookings portlet:
         <qname xmlns:x="http://liferay.com/pub-render-params">x:selectedCustomerId</qname>
     </public-render-parameter>
 
-Fortunately, the JSR 329 standard defines a mechanism by which developers can
-use Portlet 2.0 Public Render Parameters for IPC in a way that is more natural
-to JSF development. Section 5.3.2 requires the bridge to inject the public
-render parameters into the Model concern of the MVC design pattern (as in JSF
-model managed-beans) after the `RESTORE_VIEW` phase completes. This is
+Fortunately, the JSR 329 standard defines a mechanism for you to use Portlet 2.0
+Public Render Parameters for IPC in a way that is more natural to JSF
+development. Section 5.3.2 of this standard requires the bridge to inject the
+public render parameters into the Model concern of the MVC design pattern (as in
+JSF model managed-beans) after the `RESTORE_VIEW` phase completes. This is
 accomplished by evaluating the EL expressions found in the
 `<model-el>...</model-el>` section of the `WEB-INF/faces-config.xml` descriptor.
 The `WEB-INF/faces-config.xml` descriptor excerpt below demonstrates using this
-mechanism to the customer and bookings portlet example we used in the previous
-code listing: 
+mechanism in the example Customers portlet and Bookings portlet:
 
     <faces-config>
         <application>
@@ -632,8 +649,8 @@ implement and register a `bridgePublicRenderParameterHandler` for processing
 public render parameters. 
 
 For example, a `BridgePublicRenderParameterHandler` for processing public render
-params for the currently selected customer for a Bookings portlet could be
-stubbed out like the following class code:
+params for the Bookings portlet's currently selected Customer could be
+stubbed out like the following class code: 
 
     package com.liferay.faces.example.handler;
 
@@ -651,9 +668,9 @@ stubbed out like the following class code:
 
     }
 
-For the `BridgePublicRenderParameterHandler` to be invoked, it would need to be
+For the `BridgePublicRenderParameterHandler` to be invoked, it must be
 registered in an `<init-param>` element within the portlet's `<portlet>` element
-in the plugin project's `WEB-INF/portlet.xml` descriptor: 
+in the `WEB-INF/portlet.xml` descriptor: 
 
     <init-param>
         <name>javax.portlet.faces.bridgePublicRenderParameterHandler</name>
@@ -662,7 +679,7 @@ in the plugin project's `WEB-INF/portlet.xml` descriptor:
 
 ---
 
- ![Note](../../images/tip.png) **Sample:** For a complete example demonstrating
+ ![Note](../../images/tip.png) **Note:** For a complete example demonstrating
  public render parameters and a `bridgePublicRenderParameterHandler`, see the
  [JSF2 IPC Public Render Parameters Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-pub-render-params-portlet)
  demo on GitHub.
@@ -670,28 +687,28 @@ in the plugin project's `WEB-INF/portlet.xml` descriptor:
 ---
 
 Now that we've discussed Public Render Parameters for JSF in IPC, let's look at
-Events IPC. 
+Events in IPC. 
 
 #### Handling Portlet 2.0 Events [](id=portlet-2-0-events-jsf-liferay-portal-6-2-dev-guide-en)
 
-As discussed in the [Utilizing IPC With
-JSF](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/utilizing-ipc-with-jsf-liferay-portal-6-2-dev-guide-04-en),
-the Server-Side Events technique provides a way for portlets to share data using
-an event-listener design. When using this form of IPC, the portlet container
-acts as broker and distributes events and payload (data) to portlets. One
-requirement of this approach is that the payload must implement the
-`java.io.Serializable` interface since it might be sent to a portlet in another
-WAR running in a different classloader. As required by the Portlet 2.0 standard,
-Events must be declared in the `WEB-INF/portlet.xml` descriptors of the involved
-portlets. 
+In Portlet 2.0, you can leverage a server-side events technique that uses an
+event-listener design to share data between portlets. When using this form of
+IPC, the portlet container acts as broker and distributes events and payload
+(data) to portlets. One requirement of this approach is that the payload must
+implement the `java.io.Serializable` interface since it might be sent to a
+portlet in another WAR running in a different classloader. In addition, the
+Portlet 2.0 standard requires the events to be declared in the
+`WEB-INF/portlet.xml` descriptors of the involved portlets. 
 
 The following example `WEB-INF/portlet.xml` descriptor snippet defines an IPC
-event for when a customer is edited.  The `bookingsPortlet` portlet is
-registered as a publisher (or sender) for it. The `customersPortlet` portlet, on the
-other hand, is registered as a processor (or listener) for that event type. As a
-result, when a customer is edited in the `bookingsPortlet` portlet, that
-portlet publishes the event and the `customersPortlet` portlet is notified for
-processing the event. 
+event for when a Customer is edited in the example Bookings portlet. The
+`bookingsPortlet` portlet is registered as the event's publisher (or sender).
+The `customersPortlet` portlet, on the other hand, is registered as a processor
+(or listener) for that event type. Consequently, when a Customer is edited in
+the `bookingsPortlet` portlet, that portlet publishes the event and the
+`customersPortlet` portlet is notified for processing the event. 
+
+Here's the a snippet from the example's `WEB-INF/portlet.xml` descriptor:
 
     <portlet>
         <portlet-name>customersPortlet</portlet-name>
@@ -713,11 +730,11 @@ processing the event.
         <value-type>com.liferay.faces.example.dto.Customer</value-type>
     </event-definition>
 
-Optionally, you can implement a `BridgeEventHandler` for an event and register
-the event in the `WEB-INF/portlet.xml` descriptor. If a `BridgeEventHandler` has
-been registered in the `WEB-INF/portlet.xml` descriptor, Section 5.2.5 of the
-JSR 329 standard requires that the handler must be invoked so that it can
-perform any event processing that might be necessary. 
+Optionally, you can implement a `BridgeEventHandler` for an event type and
+register the handler in the `WEB-INF/portlet.xml` descriptor. If a
+`BridgeEventHandler` has been registered in the `WEB-INF/portlet.xml`
+descriptor, Section 5.2.5 of the JSR 329 standard requires that the handler must
+be invoked so that it can perform any event processing that might be necessary. 
 
 When the customer's details (such as first name
 / last name) are edited in the Bookings portlet, the event 
@@ -763,7 +780,7 @@ as a bridge event handler for the Customers portlet.  The following
 
 ---
 
- ![Note](../../images/tip.png) **Sample:** 
+ ![Note](../../images/tip.png) **Note:** 
  For a complete example demonstrating JSF 2 IPC events, see the [JSF2 IPC Events
  -
  Customers](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-events-customers-portlet)
@@ -792,17 +809,21 @@ another component of Java EE 7, introduced a dependency on the CDI API for the
 CDI and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open
 source implementation. 
 
+<!-- The paragraph above is very heavy background info. It may be better as a
+side-bar note. - Jim -->
+
 - Configuring CDI on Liferay Portal
 - Configuring the Liferay CDI Portlet Bridge
 - Understanding CDI Annotations
-- Understanding JSF 2 Annotation
+- Understanding JSF Annotations
 
-Let's configure Weld CDI on Liferay Portal. 
+Let's look at configuring Weld on Liferay Portal, for leveraging CDI with JSF
+portlets. 
 
 #### Configuring CDI on Liferay Portal [](id=configure-weld-cdi-with-liferay-portal-6-2-dev-guide-en)
 
 In order to utilize Weld in your Liferay portlets, use one of the following
-portal/app server combinations: 
+portal/app-server combinations: 
 
 - Liferay Portal 6.1/6.2 (Tomcat)
 - Liferay Portal 6.1/6.2 (GlassFish)
@@ -819,11 +840,12 @@ portal/app server combinations:
       to version 1.1.10.Final (or higher). 
 - Liferay Portal 6.1/6.2 (Resin)
 
-When developing portlets with CDI 1.0, it is necessary to includea 
-`WEB-INF/beans.xml` descriptor in the WAR deployment so that the CDI implementation can
-detect your classes CDI related annotations when it scans the classpath. In
-addition, for JBoss AS 7, it is necessary to include
-`WEB-INF/jboss-deployment-structure.xml` descripter in the WAR deployment. 
+When developing portlets with CDI 1.0, it is necessary to include a
+`WEB-INF/beans.xml` descriptor in the WAR deployment, so that the CDI
+implementation can detect the CDI-related annotations of your classes when it
+scans the classpath. 
+
+<!-- Which WAR deployment, the portlet's WAR deployment? - Jim -->
 
 Here's an example `WEB-INF/beans.xml` descriptor: 
 
@@ -832,9 +854,10 @@ Here's an example `WEB-INF/beans.xml` descriptor:
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
         http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
     </beans>
-
-Here's an example of a `WEB-INF/jboss-deployment-structure.xml` descriptor for
-JBoss: 
+    
+For JBoss AS 7, you must also include a `WEB-INF/jboss-deployment-structure.xml`
+descriptor, in the WAR deployment, to include the CDI-related modules. Here's an
+example of a `WEB-INF/jboss-deployment-structure.xml` descriptor for JBoss: 
 
     <?xml version="1.0"?>
     <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
@@ -856,14 +879,16 @@ JBoss:
         </deployment>
     </jboss-deployment-structure>
 
+<!-- Wich WAR deployment? - Jim -->
+
 Next, we'll cover Weld configuration on the app server. Their are some different
 configuration steps for different app servers. We'll look at the most common
 configuration steps first. 
 
 **Weld Configuration**
 
-For most app servers, **excluding Resin**, the `WEB-INF/web.xml` descriptor of the
-portlet must include the following markup: 
+For most app servers, **excluding Resin**, the `WEB-INF/web.xml` descriptor of
+the portlet must include the following filter and filter mapping: 
 
     <filter>    
         <filter-name>WeldCrossContextFilter</filter-name>    
@@ -877,7 +902,7 @@ portlet must include the following markup:
         <dispatcher>ERROR</dispatcher>
     </filter-mapping>
 
-If using Resin, then it is not necessary to configure JBoss Weld since Resin
+If you are using Resin as your app server, you need not JBoss Weld, as Resin
 includes the [CanDI](http://www.caucho.com/candi-java-dependency-injection/)
 implementation of CDI by default. 
 
@@ -1238,10 +1263,9 @@ Unfortunately, as described in
 [FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding  JSF
 portlets doesn't work very well. It's actually not limited to JSF portlets --
 this problem can happen with any portlet that needs to add JS/CSS resources to
-the `<head>`...`</head>` section of the portal  
-page. Since JSF portlets require the `jsf.js` resource to perform Ajax requests,
-the `jsf.js` resource needs  to be loaded when the portal page is initially
-rendered. 
+the `<head>`...`</head>` section of the portal page. Since JSF portlets require
+the `jsf.js` resource to perform Ajax requests, the `jsf.js` resource needs  to
+be loaded when the portal page is initially rendered. 
 
 There are two workarounds:
 
@@ -1300,9 +1324,9 @@ ensures that JSF 2 is properly initialized. You specify the required
         </portlet>
     </liferay-portlet-app>
     
-Next we will discuss extension of Liferay Faces Bridge via Factory Wrappers.
+Next we will discuss extension of Liferay Faces Bridge with Factory Wrappers.
 
-### Extending Liferay Faces Bridge via Factory Wrappers [](id=liferay-faces-bridge-factory-wrappers-liferay-portal-6-2-dev-guide-en)
+### Extending Liferay Faces Bridge Using Factory Wrappers [](id=liferay-faces-bridge-factory-wrappers-liferay-portal-6-2-dev-guide-en)
 
 [Liferay Faces
 Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
