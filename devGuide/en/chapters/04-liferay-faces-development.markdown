@@ -85,12 +85,12 @@ those things throughout the sections ahead.
 
 In the Liferay Faces documentation, we'll cover the following topics:
 
-- JSF Portlet Development
-- Liferay Faces Bridge
-- Liferay Faces Portal
-- Liferay Faces Alloy
-- Liferay Faces Versioning Scheme
-- How to Migrate Projects from PortletFaces to Liferay Faces
+- Developing JSF Portlets
+- Understanding Liferay Faces Bridge
+- Leveraging Liferay UI Components and Utilities with Liferay Faces Portal
+- Leveraging AlloyUI Components with Liferay Faces Alloy
+- Understanding the Liferay Faces Version Scheme
+- Migrating to Liferay Faces
 - Building Liferay Faces From Source
 
 We'll guide you through developing portlets with Liferay Faces and introduce you
@@ -122,13 +122,13 @@ portlets that are powerful and easy to maintain.
 Here are the topics we'll cover: 
 
 - Creating a JSF Portlet Project
-- Specifying Your JSF Portlet's portlet.xml Descriptor 
+- Specifying Your JSF Portlet's portlet.xml Descriptor
 - Utilizing Portlet Preferences
-- Accessing the Portlet API
+- Accessing the Portlet API with ExternalContext
 - Internationalizing JSF Portlets
-- Utilizing IPC with JSF Portlets 
+- Utilizing IPC with JSF Portlets
 - Leveraging CDI in JSF portlets
-- Using Liferay Faces Bridge JSF Component Tags 
+- Using Liferay Faces Bridge JSF Component Tags
 - Dynamically Adding JSF Portlets to Liferay Portal
 - Extending Liferay Faces Bridge Using Factory Wrappers
 
@@ -182,10 +182,10 @@ Studio, so you can see just how easy it is.
 
     3.1 Select the *JSF 2.x* portlet framework. 
 
-        Immediately, the wizard lists the available JSF component suites in the
-        bottom section of the window. The list of component suites includes the
-        JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
-        RichFaces. 
+    Immediately, the wizard lists the available JSF component suites in the
+    bottom section of the window. The list of component suites includes the
+    JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
+    RichFaces. 
 
     3.2. Select the *PrimeFaces* UI component suite and click *Finish*. 
 
@@ -1539,7 +1539,7 @@ perfomed in the portlet's lifecycle. The JSF portlet bridge then initiates the
 an HTTP POST is executed on a portlet and the portlet enters the `ACTION_PHASE`,
 then the full JSF lifecycle is initiated by the bridge. 
 
-![Figure 4.1: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/04-lifecycle-bridge.png)
+![Figure 4.x: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/04-lifecycle-bridge.png)
  
 Besides ensuring that the two lifecycles connect correctly, the JSF portlet
 bridge also act as a mediator between the portal URL generator and JSF
@@ -1869,25 +1869,26 @@ If it is neccessary to utilize the JSF 1.x version of this feature, then this
 parameter should be set to false. 
 
 Now that we've discussed JSF portlet bridge standards and Liferay Faces Bridge
-configuration options, let's learn about the Liferay Faces Portal JAR. 
+configuration options, let's learn how Liferay Faces Portal lets you leverage
+Liferay Portal's utilities and component tags.  
 
 ## Leveraging Liferay UI Components and Utilities with Liferay Faces Portal [](id=liferay-faces-portal-liferay-portal-6-2-dev-guide-en)
 
-Liferay Faces Portal is a JAR that you can use to leverage Liferay-specific
-utilities and UI components in your JSF portlets.   
+Liferay Faces Portal is a `.jar` file that you can use to leverage
+Liferay-specific utilities and UI components in your JSF portlets. 
 
 The Liferay Faces Portal project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/portal>. 
 
-Let's consider the Liferay Portal utilities available for you to use with your
-JSF portlets. 
+Let's first consider the Liferay Portal utilities available for you to use with
+your JSF portlets. 
 
 ### Using Liferay Portal Utilities [](id=use-portal-utilities-liferay-faces-portal-liferay-portal-6-2-dev-guide-en)
 
 Since you're integrating your JSF portlet with Liferay Portal, you'll want to
 know how to access different things in the portal. In this section, we'll show
-you some of the key aspects of Liferay Portal that you can access via the
-Liferay Faces Portal JAR. 
+you some of the key aspects of Liferay Portal that you can access via Liferay
+Faces Portal. 
 
 #### Using the LiferayFacesContext [](id=liferay-faces-portal-liferayfacescontext-liferay-portal-6-2-dev-guide-en)
 
@@ -1900,7 +1901,11 @@ pattern](http://en.wikipedia.org/wiki/Delegation_pattern) for methods defined by
 by first calling 
 [FacesContext.getCurrentInstance()](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/context/FacesContext.html#getCurrentInstance())
 and then delegating to corresponding methods. 
-    
+
+<!-- We need to get Liferay Faces HTML Javadoc generated and posted on
+docs.liferay.com so that we can provide links to it for classes like
+LiferayFacesContext. - Jim --> 
+
 #### Leveraging the Current Theme [](id=current-theme-in-jsf-liferay-faces-portal-liferay-portal-6-2-dev-guide-en)
 
 Liferay Faces Portal offers several features to help you access and use the
@@ -1909,8 +1914,8 @@ current Liferay theme.
 #### Accessing the ThemeDisplay [](id=liferay-faces-portal-themedisplay-liferay-portal-6-2-dev-guide-en)
 
 Liferay Faces Portal provides the `LiferayFacesContext.getThemeDisplay()` method
-at the Java level and the `liferay.themeDisplay` EL variable for getting access
-to the Liferay
+at the Java level and the `liferay.themeDisplay` EL variable at the Facelet
+level, for accessing the Liferay
 [`ThemeDisplay`](http://docs.liferay.com/portal/6.2/javadocs/portal-service/com/liferay/portal/theme/ThemeDisplay.html)
 object. 
 
@@ -1932,30 +1937,29 @@ Liferay theme thanks to the power of CSS. However, the
 and
 [`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
 tag will not assume the current Liferay theme unless the following JSR 286
-standard CSS class names are applied: 
-
-- `portlet-msg-error`
-- `portlet-msg-info`
-- `portlet-msg-warn`
+standard CSS class names `portlet-msg-error`, `portlet-msg-info`, and
+`portlet-msg-warn` are applied: 
 
         <h:messages errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" /> 
-                
+
 <!-- Demonstrate using the liferay-ui:message tag for these message types.  - Jim -->
 
 As a convenience, Liferay Faces Portal provides the
 [`liferay-ui:message`](http://docs.liferay.com/faces/4.2/vdldoc/liferay-ui/message.html)
-Facelet composite component tag that encapsulates the [`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
-tag and automatically applies the JSR 286 standard class names as shown above. 
+Facelet composite component tag that encapsulates the
+[`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
+tag. The `liferay-ui:message` tag automatically applies the JSR 286 standard
+class names, as shown above. 
 
 ---
 
  ![Note](../../images/tip.png) **Note:** When running as a portlet, the ICEfaces
  [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html) and
  [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html)
- component tags automatically apply the JSR 286 standard class names as shown
- above. Additionally the
+ component tags automatically apply the JSR 286 standard class names too.
+ Additionally, the 
  [`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
- component tag will apply the following JSR 286 standard class names for
+ component tag applies the following JSR 286 standard class names for
  alternating table rows: 
 
  - `portlet-section-alternate`
@@ -1963,18 +1967,18 @@ tag and automatically applies the JSR 286 standard class names as shown above.
 
 ---
 
-Next, we'll look at integrating Liferay Faces Portal's Language functionality
+Next, we'll look at using Liferay Faces Portal's language capabilities
 with JSF Portlets. 
 
 #### Leveraging the Portal User's Locale [](id=liferay-faces-portal-liferay-locale-liferay-portal-6-2-dev-guide-en)
 
 By default, the
-[Locale](http://java.sun.com/javase/6/docs/api/java/util/Locale.html) that is
+[Locale](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html) that is
 normally used to present internationalized JSF views is based on the
 web-browser's locale settings. In order to use the portal user's language
-preference, the Liferay Faces Portal project automatically registers the
+preference, Liferay Faces Portal automatically registers the
 `LiferayLocalePhaseListener`. This phase listener modifies the locale inside the
-[UIViewRoot](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html)
+[UIViewRoot](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html),
 based on the user's language preference returned by the
 [User.getLocale()](http://docs.liferay.com/portal/6.2/javadocs/portal-service/com/liferay/portal/model/User.html#getLocale())
 method. 
@@ -2042,25 +2046,25 @@ need to include it with  the portlet.
 ![Note](../../images/tip.png) **Note:** Prior to Liferay 6.0 SP2 (6.0.12), the
 rich text area was rendered as an `<iframe>`. But due to incompatibilities with
 IE, the rich text area HTML markup is now  rendered "inline" with the portal
-page. Liferay Faces Portal will automatically detect the version of Liferay and
-will render the rich text area accordingly. However, if you using Liferay 6.0
+page. Liferay Faces Portal automatically detects the version of Liferay and
+renders the rich text area accordingly. However, if you using Liferay 6.0
 (6.0.10) or Liferay 6.0 SP1 (6.0.11) and have received an "inline" patch from
-Liferay Support, then you will need to add the following to the portlet's
-`WEB-INF/web.xml` descriptor: 
+Liferay Support, then you'll need to add the following context parameter to the
+portlet's `WEB-INF/web.xml` descriptor: 
 
     <context-param>
         <param-name>com.liferay.faces.portal.inlineInputEditor</param-name>
         <param-value>true</param-value>
     </context-param>
 
-
-If using ICEfaces, then the "inline" version of `liferay-ui:input-editor` will
-expose an inefficiency in the Direct2DOM&#8482; (DOM-diff) algorithm. Typing a
-single character in the rich text area will cause ICEfaces to detect a DOM-diff,
+If you're using ICEfaces, then the "inline" version of `liferay-ui:input-editor`
+exposes an inefficiency in the Direct2DOM&#8482; (DOM-diff) algorithm. Typing a
+single character in the rich text area causes ICEfaces to detect a DOM-diff,
 causing the entire `liferay-ui:input-editor` to be replaced in the browser's DOM
-with the form is submitted via Ajax. The workaround for this problem is to use
+when the form is submitted via Ajax. To workaround this problem, use
 the JSF 2.x `f:ajax` component to optimize/control which parts of the JSF
-component tree are DOM-diffed by ICEfaces. For example:  
+component tree are DOM-diffed by ICEfaces. For example, you could apply the
+`f:ajax` component like this: 
 
     <h:panelGroup id="feedback">
         <h:messages globalOnly="true" layout="table" />
@@ -2086,9 +2090,9 @@ The `liferay-ui:ice-info-data-paginator` encapsulates an ICEfaces 3.1
 [`ice:dataPaginator`](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataPaginator.html)
 tag that renders pagination information for an associated
 [`ice:dataTable`](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataTable.html).
-The navigation information will match the internationalized Liferay
-"showing-x-x-of-x-results" message. Since ICEfaces 4.0 has removed support for
-ice:dataPaginator, Liferay Faces 4.x no longer includes this feature. 
+The navigation information matches the internationalized Liferay
+"showing-x-x-of-x-results" message. Since ICEfaces 4.0 removed support for
+`ice:dataPaginator`, Liferay Faces 4.x no longer includes this feature. 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2112,7 +2116,7 @@ The `liferay-ui:ice-info-data-paginator` encapsulates an ICEfaces 3.1
 [ice:dataPaginator](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataPaginator.html)
 tag that renders navigation controls for an associated
 [ice:dataTable](http://www.icefaces.org/docs/v1_8_1/tld/ice/dataTable.html). The
-icons will match the current Liferay theme. Since ICEfaces 4.0 has removed
+icons match the current Liferay theme. Since ICEfaces 4.0 has removed
 support for ice:dataPaginator, Liferay Faces 4.x no longer includes this
 feature. 
 
@@ -2151,8 +2155,8 @@ Next, we'll look at the `liferay-security` prefixed tags.
 ##### The liferay-security:permissionsURL tag [](id=liferay-security-permissionsurl-tag-liferay-portal-6-2-dev-guide-en)
 
 The `liferay-security:permissionsURL` tag renders an HTML anchor tag (hyperlink)
-that the user can click on in order to see the Liferay Permissions screen for
-the associated resource. 
+that the user can click, to see the Liferay Permissions screen for the
+associated resource. 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2169,13 +2173,9 @@ the associated resource.
 
     </f:view>
 
-Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal
-components, Liferay Faces Portal theme integration, and Liferay Language Portlet
-Integration, let's move on to the Migration Guide which explains how to migrate
-projects which utilize the PortletFaces bridge to utilize the Liferay Faces
-bridge. 
-
-In the next section, we'll briefly look at Liferay Faces Alloy.
+Now that we have discussed the `LiferayFacesContext`, Liferay Faces Portal theme
+integration, and Liferay language integration, let's learn what UI components
+are available to use from Liferay Faces Alloy. 
 
 ## Leveraging AlloyUI Components with Liferay Faces Alloy [](id=liferay-faces-alloy-liferay-portal-6-2-dev-guide-04-en)
 
@@ -2183,15 +2183,14 @@ In the next section, we'll briefly look at Liferay Faces Alloy.
 to what AlloyUI is and why they'd want to use it. Then, eventually, we need to
 demonstrate using AlloyUI in a JSF portlet. - Jim --> 
 
-Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
-their portlet WAR projects in order to utilize Alloy UI in a way that is
-consistent with JSF development. 
-
-The project home page can be found at
-<http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
-
-Liferay Faces Alloy provides a set of Facelet UIComponent and Facelet Composite
+Liferay Faces Alloy is a `.jar` file that you add as a dependency in your
+JSF portlet project to leverage [AlloyUI](http://alloyui.com/). Liferay Faces
+Alloy provides a way to use AlloyUI in a typical JSF development fashion. It
+provides a set of Facelet UIComponent and Facelet Composite
 Component tags as part of its component suite. 
+
+The Liferay Faces Alloy project home page can be found at
+<http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
 Because Liferay Faces has several [active
 versions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
@@ -2214,9 +2213,13 @@ these tags. The VDL documentation can be found at the following addresses:
 - The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
 
-## Understanding the Liferay Faces Version Scheme [](id=liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+To see a sample JSF porlet that uses Liferay Faces Alloy, check out the
+[JSF2 Registration
+Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/portal/jsf2-registration-portlet). 
 
-<!-- Revisit this to elaborate. - Jim -->
+Next, let's get a handle on the versioning scheme used for Liferay Faces. 
+
+## Understanding the Liferay Faces Version Scheme [](id=liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
 
 [Liferay
 Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
@@ -2279,19 +2282,25 @@ implements the Portlet 2.0 standard, it has been carefully tested for use with
 Liferay Portal versions 5.2, 6.0, 6.1, and 6.2 and has several optimizations
 that provide increased performance within Liferay. 
 
+If you've developed portlets that use the PortletFaces Bridge, you'll need to
+migrate them to Liferay Faces in order to deploy them using the Liferay Faces
+Bridge--don't worry, it's very straightforward. In the next section, we'll show
+you how easy it is to migrate to Liferay Faces. 
+
 ## Migrating to Liferay Faces [](id=migrate-to-liferay-faces-liferay-portal-6-2-dev-guide-en)
 
-<!-- Rename, "Migrating From the portletfaces.org to Liferay Faces" - Jim -->
-
-The Liferay Faces project originates from the <http://portletfaces.org>
+The Liferay Faces project originated from the <http://portletfaces.org>
 community website. On April 3, 2012 Liferay announced that it would be assuming
 leadership for the portletfaces.org community. Consequently, projects at
-portletfaces.org were repackaged under the Liferay Faces umbrella project along
-with some name changes: 
+portletfaces.org were repackaged under the Liferay Faces umbrella project and
+underwent the following name changes: 
 
 - AlloyFaces &rarr; Liferay Faces Alloy 
 - PorltetFaces Bridge &rarr; Liferay Faces Bridge 
 - LiferayFaces &rarr; Liferay Faces Portal 
+
+Throughout this section, we'll cover the various replacements for old classes
+and namespaces. 
 
 ### Migrating BridgeRequestAttributeListener [](id=migrate-to-bridgerequestattributelistener-liferay-portal-6-2-dev-guide-en)
 
@@ -2359,8 +2368,8 @@ used, as shown in the following listing:
 - `org.portletfaces.bridge.resourceBufferSize` &rarr;
   `com.liferay.faces.bridge.resourceBufferSize`
 
-Next, we'll see how FileUpload has changed between the PortletFaces Bridge and
-the Liferay Faces Bridge. 
+Next, we'll explain how file upload classes have changed between the PortletFaces
+Bridge and the Liferay Faces Bridge. 
 
 ### Migrating File Upload [](id=migrate-liferay-faces-file-upload-liferay-portal-6-2-dev-guide-04-en)
 
@@ -2502,61 +2511,104 @@ package namespace as deprecated classes have not been provided.
 And those are all the changes necessary to migrate projects from the
 PortletFaces Bridge to the Liferay Faces Bridge. 
 
+Next, we'll show you how to build the Liferay Faces project. 
+
 ## Building Liferay Faces From Source [](id=building-liferay-faces-from-source-liferay-portal-6-2-dev-guide-en)
 
----
+You may have several reasons for downloading and building Liferay Faces from its
+project sourcee code: 
+- To try out the latest cutting edge changes
+- To investigate a suspected bug
+- To learn how Liferay Faces is implemented
 
- ![Note](../../images/tip.png) **Note:** This procedure assumes that
- you need to use version 4.2.0-m1, but you will need to follow the [Liferay
- Faces Version
- Scheme](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en), in order to find the correct version of Liferay Faces that fits with the version of the Liferay Portal (and mojarra) that you are using. 
+Whatever your reasons may be, we're happy to show you how to access the Liferay
+Faces source code and build it. 
 
----
+We'll start with installing the liferay-faces project. 
 
-### General Build Instructions [](id=general-liferay-faces-build-instructions-liferay-portal-6-2-dev-guide-en)
+### Installing the liferay-faces Project [](id=installing-the-liferay-faces-project-liferay-portal-6-2-dev-guide-en)
 
-1.  If you want to download the code via *Git*, then clone the repository and
-    checkout the branch (or tag) that you want to work with. For example, type
-    the following in a terminal window for the 4.2.0-m1 tag: 
+It's important to install the version of Liferay Faces that you want. So, it's a
+good idea to check the [Liferay Faces Version
+Scheme](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+to confirm the version of Liferay Faces. 
+
+You can either install the project by cloning it from GitHub or by downloading
+it as a `.zip` file. We'll demonstrate both options.
+
+**Cloning the project from GitHub**
+
+Cloning the project, requires that you [set up
+Git](https://help.github.com/articles/set-up-git) on your machine. Once you've
+set up Git, you can download the liferay-faces project from GitHub and work with
+a particular branch of the project, following these instructions: 
+
+1.  Execute the following command from your terminal:
 
         git clone https://github.com/liferay/liferay-faces.git
-        cd liferay-faces
+
+2.  Navigate into that directory by exeuting `cd liferay-faces`.
+
+3.  Checkout the branch (`master` is the default branch) you want to use.
+
+    For example, to use the first milestone release of version 4.2.0, execute
+    the following command:
+
         git checkout 4.2.0-m1
 
-2.  If you would rather download the code as a *ZIP archive*, then: 
+**Downloading the project as a `.zip` file**
 
-    -   Visit the [Liferay Faces](https://github.com/liferay/liferay-faces) page
-        at GitHub. 
-    -   Click on the Branch drop-down menu, then click on *Tags*, and select a
-        tag version such as 4.2.0-m1.
-    -   Click on the *Download Zip* button, which should download a file named
-        `liferay-faces-4.2.0-m1.zip`. 
-    -   Extract the `liferay-faces-4.2.0-m1.zip` archive. The resulting folder
-        should be named `liferay-faces-4.2.0-m1`.  
-    -   In a terminal window, type: 
+To download the liferay-faces project as a `.zip` file, follow these
+instructions: 
 
-            cd liferay-faces-4.2.0-m1
+1.  Visit the Liferay Faces project page,
+    <https://github.com/liferay/liferay-faces>. 
 
-3.  Ensure that the Maven repository entries listed in this
+2.  Click on the *branch* drop-down menu and select the branch or tag for the
+    version of the liferay-faces project that you'd like to use. 
+
+3.  Click on the *Download Zip* button to download the `[branch/tag name].zip`
+    file for that branch or tag. 
+
+4.  Extract the `.zip` file contents to a location on your machine.
+
+5.  In a terminal window, navigate into the liferay-faces project's root
+    directory: 
+
+        cd liferay-faces-[version]
+
+Now that you've installed the liferay-faces project, you can configure your
+environment for building the project. 
+
+### Building Liferay Faces with Maven [](id=building-liferay-faces-with-maven-liferay-portal-6-2-dev-guide-en)
+
+Maven is required to build the liferay-faces project. You can download Maven
+from
+[http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi).
+We recommend putting your Maven installation's `bin` directory in your system's
+`$PATH`, so you can run the Maven executable (`mvn`) easily from your terminal. 
+
+1.  Copy the `externalLiferayFacesRepositories` `<profile>` from
     [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
-    file are copied into your local `$HOME/.m2/settings.xml` file. If you do not
-    already have a `settings.xml` file in your maven configuration, you can use
-    the given `settings.xml` file. 
+    into your local `$HOME/.m2/settings.xml` file. If you do not already have a
+    `settings.xml` file in your Maven configuration, create a `settings.xml`
+    file in your `$HOME/.m2` folder and copy the contents of the
+    [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
+    file into it. 
 
-4.  Build the source with Maven. 
+2.  Build the source with Maven by executing the following command: 
 
         mvn clean package
 
-5.  Verify that the artifacts have been built by Maven. For example, the
-    following JAR artifacts should exist: 
+Maven builds the following Liferay Faces artifacts: 
 
-    -   `alloy/target/liferay-faces-alloy-4.2.0-m1.jar`
-    -   `bridge-api/target/liferay-faces-bridge-api-4.2.0-m1.jar`
-    -   `bridge-impl/target/liferay-faces-bridge-impl-4.2.0-m1.jar`
-    -   `portal/target/liferay-faces-portal-4.2.0-m1.jar`
-    -   `util/target/liferay-faces-util-4.2.0-m1.jar`
+-   `alloy/target/liferay-faces-alloy-[version].jar`
+-   `bridge-api/target/liferay-faces-bridge-api-[version].jar`
+-   `bridge-impl/target/liferay-faces-bridge-impl-[version].jar`
+-   `portal/target/liferay-faces-portal-[version].jar`
+-   `util/target/liferay-faces-util-[version].jar`
 
-That's it, you have built Liferay Faces from source. 
+That's it; you've built Liferay Faces from source! 
 
 ### Additional Build Requirements on Oracle WebLogic [](id=build-liferay-faces-with-oracle-weblogic-liferay-portal-6-2-dev-guide-en)
 
@@ -2608,4 +2660,19 @@ Faces](http://www.liferay.com/community/wiki?p_p_id=36&p_p_lifecycle=0&p_p_state
 
 ## Summary [](id=liferay-faces-documentation-summary-liferay-portal-6-2-dev-guide-en)
 
-<!-- Add summary - Jim -->
+You've come a long way since the initial sections on developing JSF portlets in
+Liferay Faces. You jumped right in with creating and deploying a JSF portlet
+using Liferay IDE. Then, you enhanced your portlet by implementing portlet
+preferences, internationalizing your portlet content, enabling your portlets to
+communicate with IPC, and context-scoping your managed beans with CDI. You
+learned how the Liferay Faces Bridge provides you with means to develop and
+deploy your JSF web apps as portlets. 
+
+You discovered how easy it was to use some of Liferay Portal's most common
+utilities and UI components via Liferay Faces Portal. And you surveyed the
+powerful AlloyUI components available through Liferay Faces Alloy. And let's not
+forget that Liferay Faces lets you use todays most popular JSF UI component
+suites including PrimeFaces, ICEFaces, and RichFaces. Liferay Faces provides you
+with the best options for creating JSF portlets on any JSR 286 (Portlet
+2.0) compliant portlet container; and using Liferay IDE/Developer Studio you can
+develop your JSF apps quickly and easily. 
