@@ -2610,53 +2610,8 @@ Maven builds the following Liferay Faces artifacts:
 
 That's it; you've built Liferay Faces from source! 
 
-### Additional Build Requirements on Oracle WebLogic [](id=build-liferay-faces-with-oracle-weblogic-liferay-portal-6-2-dev-guide-en)
-
-<!-- Reduce to bold section title? Rename to something like "Building Shared
-Libraries for Deploying Portlets on  Oracle WebLogic (Optional)" deployment on
-Oracle WebLogic" - Jim --> 
-
-If you are deploying portlets to *Oracle WebLogic*, then it is necessary to
-build the *Shared Libraries* from the Liferay Faces source. However, the source
-will not build properly until the *WebLogic Injection Provider for Mojarra* is
-manually installed into your local `$HOME/.m2/repository` folder. 
-
-1.  Locate Oracle's out-of-the-box `jsf-2.0.war` artifact, typically located in
-    `Oracle/Middleware/wlserver/common/deployable-libraries/jsf-2.0.war`. 
-
-2.  Extract the jsf-2.0.war artifact into a temporary folder: 
-
-        cd $MW_HOME/Oracle/Middleware/wlserver/common/deployable-libraries
-        mkdir temp
-        cd temp
-        jar xvf ../jsf-2.0.war
-
-3.  Manually install the WebLogic Injection Provider for Mojarra
-    (`wls.jsf.di.jar`) into your local `$HOME/.m2/repository` folder. For
-    example, if using Oracle WebLogic version 10.3.6.0, type: 
-
-        mvn install:install-file -Dfile=WEB-INF/lib/wls.jsf.di.jar \
-        -DgroupId=com.oracle.weblogic -DartifactId=wls.jsf.di -Dpackaging=jar \
-        -DgeneratePom=true -Dversion=10.3.6.0 
-
-4.  Build the Shared Libraries from the Liferay Faces source: 
-
-        cd liferay-faces/support
-        mvn -P weblogic clean package
-
-5.  Verify that the Shared Libraries have been built by Maven. For example, the following WAR  artifacts should exist: 
-
-    - `servers/weblogic/jsf-shared-library/target/jsf-shared-library-3.1.3-ga4.war` 
-    - `servers/weblogic/jstl-shared-library/target/jstl-shared-library-3.1.3-ga4.war` 
-    - `servers/weblogic/richfaces-shared-library/target/richfaces-shared-library-3.1.3-ga4.war` 
-
----
-
-If you would like to contribute to Liferay Faces, please check out our wiki:
-[Contributing to Liferay
-Faces](http://www.liferay.com/community/wiki?p_p_id=36&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_36_struts_action=%2Fwiki%2Fedit_page&_36_redirect=http%3A%2F%2Fwww.liferay.com%2Fcommunity%2Fwiki%2F-%2Fwiki%2FMain%2FBuilding%2BLiferay%2BFaces%2BFrom%2BSource&p_r_p_185834411_nodeId=1071674&p_r_p_185834411_title=wiki%2F-%2Fwiki%2FMain%2FContributing%2Bto%2BLiferay%2BFaces).
-
-<!-- Needs transition to summary. Jim -->
+In the next section, we'll reflect on what we've learned about developing JSF
+portlets with Liferay Faces. 
 
 ## Summary [](id=liferay-faces-documentation-summary-liferay-portal-6-2-dev-guide-en)
 
