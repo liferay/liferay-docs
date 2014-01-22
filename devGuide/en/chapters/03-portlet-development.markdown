@@ -1615,10 +1615,14 @@ plugins SDK) which combines the original one with your changes.
 
 ## Importing Templates and Structures with Your Portlets
 
+<!-- Needs introduction explaining what the templates-importer is and the
+benefits of using it. - Jim -->
+
 When you create a new portlet project using the Liferay Plugins SDK, check your
-plugin's `docroot/WEB-INF/liferay-plugin-package.properties` file for three
-entries related to the resources importer. One or some of these might be
-commented out or missing, depending on the version of your Plugins SDK: 
+plugin's `docroot/WEB-INF/liferay-plugin-package.properties` file for the three
+entries referenced below that are related to the resources importer. One, or some
+of them, may be commented out or missing, depending on the version of your
+Plugins SDK: 
 
     module-incremental-version=1
 
@@ -1627,34 +1631,36 @@ commented out or missing, depending on the version of your Plugins SDK:
 
     resources-importer-developer-mode-enabled=true
 
-The first entry, `required-deployment-contexts=resources-importer-web`, declares
-your theme's dependency on the resources importer plugin. The second entry,
-`resources-importer-developer-mode-enabled=true`, is a convenience feature for
-developers. With this setting enabled, if the templates are to be imported to
-the Global site where the templates already exist, the template will be
-overridden. Otherwise, you have to increment version in the
-`module-incremental-version` property each time you change anything in your
-plugin's `docroot/WEB-INF/src/templates-importer` folder. 
+<!-- Is there a templates-importer-web that we need to import too? Or does the
+resources-importer-web contain the Templates Importer? - Jim -->
 
-All of the resources a plugin uses with the templates importer go in the
-`[plugin-name]/docroot/WEB-INF/src/templates-importer` folder. The assets to be
-imported by your theme should be placed in the following directory structure: 
+The first entry, `required-deployment-contexts=resources-importer-web`, declares
+your plugin's dependency on the resources importer plugin. The second entry,
+`resources-importer-developer-mode-enabled=true`, is a convenience feature for
+you to use as you develop and test the structures and templates that you're
+importing. With this setting enabled, if the templates you're importing to the
+Global site already exist on that site, the Templates Importer overwrites them.
+Otherwise, you must increment the `module-incremental-version`
+property's number value each time you want to overwrite existing templates. 
+
+All of the structures and templates your plugin uses with the Templates Importer
+go in the `[plugin-name]/docroot/WEB-INF/src/templates-importer` folder. Use the
+following directory structure, for placing them in the proper location: 
 
 - `[plugin-name]/docroot/WEB-INF/src/templates-importer/`
     - `journal/`
         - `structures/` - contains structures (XML) and folders of child
           structures. Each folder name must match the file name of the
-          corresponding parent structure. For example, create folder `Structure
-          1/`
-          to hold a child of structure file `Structure 1.xml`. 
-        - `templates/` - groups templates (VM or FTL) into folders by structure.
+          corresponding parent structure. For example, create folder
+          `Structure 1/` to hold a child of structure file `Structure 1.xml`. 
+        - `templates/` - groups templates (FTL or VM) into folders by structure.
           Each folder name must match the file name of the corresponding
           structure. For example, create folder `Structure 1/` to hold a
           template for structure file `Structure 1.xml`. 
     - `templates/`
-        - `application_display/` - contains application display templates (VM or
-          FTL). The extension of the files should reflect the language that the
-          templates are written in. 
+        - `application_display/` - contains application display templates (FTL
+          or VM). The extension of the files should reflect the language that
+          the templates are written in. 
             - `asset_category/` - contains categories navigation templates
             - `asset_entry/` - contains asset publisher templates
             - `asset_tag/` - contains tags navigation templates
@@ -1665,11 +1671,11 @@ imported by your theme should be placed in the following directory structure:
         - `page/` - contains page templates (JSON)
         - `dynamic_data_list/` - contains dynamic data list templates and
           structures 
-            - `display_template/` - groups templates (VM or FTL) into folders by
+            - `display_template/` - groups templates (FTL or VM) into folders by
               structure. Each folder name must match the file name of the
               corresponding structure. For example, create folder `Structure 1/`
               to hold a template for structure file `Structure 1.xml`. 
-            - `form_template/` - groups templates (VM or FTL) into folders by
+            - `form_template/` - groups templates (FTL or VM) into folders by
               structure. Each folder name must match the file name of the
               corresponding structure. For example, create folder `Structure 1/`
               to hold a template for structure file `Structure 1.xml`. 
@@ -1678,11 +1684,22 @@ imported by your theme should be placed in the following directory structure:
 To have the templates imported with the resources importer, you have to add
 resource files to the folders outlined above. 
 
-The page template `json` file in the
+<!-- Is this sentence necessary? What do you mean by "resource files" in the
+sentence above? Rather, do you mean structure and template files? Or are we
+saying you can import assets along with the structures and templates from under
+the templates-importer/ folder? - Jim -->
+
+<!-- WRT the next paragraph, to import resources such as web content and assets,
+wouldn't we need to specify them in the resources-importer/ folder instead of
+the templates-importer/ folder? If so, and since the following JSON file does
+not specify any web content articles or assets, I think we should remove
+reference to web content and assets here. - Jim --> 
+
+The page template `.json` file (e.g., `page.json`) in the
 `[plugin-name]/docroot/WEB-INF/src/templates-importer/templates/page` folder
 specifies the layout template, web content, assets, and portlet configurations
 to be imported with the page template. Even if you're not familiar with JSON,
-the `json` file is easy to understand. Let's examine a sample `json` file: 
+the `.json` file is easy to understand. Let's examine a sample `.json` file: 
 
     {
         "layoutTemplate": {
@@ -1735,8 +1752,8 @@ the `json` file is easy to understand. Let's examine a sample `json` file:
         "layoutTemplateId": "2_columns_ii"
     }
 
-The first thing you should declare in your json file is a layout template ID so
-the page template can reference the layout template to use for its pages. (In
+The first thing you should declare in your `.json` file is a layout template ID
+so the page template can reference the layout template to use for its pages. (In
 the above example, this declaration is actually at the end of the file.) You can
 also specify different layout templates to use for individual pages. You can
 find layout templates in your Liferay installation's `/layouttpl` folder. You
@@ -1747,10 +1764,10 @@ which can be found in Liferay's `WEB-INF/portlet-custom.xml` file. You can also
 specify portlet preferences for each portlet. 
 
 Now that you've learned about the directory structure for your templates and the
-`json` file for the page templates, it's time to put resources into your plugin.
+`.json` file for the page templates, it's time to put resources into your plugin.
 You can create resources from scratch and/or bring in resources that you've
 already created in Liferay. Let's go over how to leverage your XML (structures)
-and VM or FTL (templates) files from Liferay. All structures and templates,
+and FTL or VM template files from Liferay. All structures and templates,
 except page templates, will have the same name as the file. 
 
 **Structure:** 
@@ -1770,21 +1787,21 @@ except page templates, will have the same name as the file.
 **Template:** 
 
 - **Application Display:** Edit the template by clicking on the template you
-  want to export. Copy and paste its contents into a new VM or FTL file and
+  want to export. Copy and paste its contents into a new FTL or VM file and
   place it in
   `templates-importer/templates/application_display/[your application display template type]/`. 
 - **Dynamic Data List:** Edit the template by clicking on Manage Data
   Definition. Click on *Manage Templates* from the Actions menu of the structure
   that your template is linked to. Choose the template that you want export.
-  Copy and paste its contents into a new VM or FTL file and place it in
+  Copy and paste its contents into a new FTL or VM file and place it in
   `templates-importer/templates/display_template/[structure name]/` or
   `templates-importer/templates/form_template/[structure name]/` 
 - **Page:** You will have to create the page template from scratch based on the
-  `json` file example for the page template above. 
+  `.json` file example for the page template above. 
 
 Here is an outline of steps you can use in developing your template resources:
 
-1. Create your plugin, preferably a portlet. 
+1. Create your plugin, preferably a portlet plugin. 
 
 2. Add your templates under the
    `[plugin-name]/docroot/WEB-INF/src/templates-importer` folder and its
@@ -1800,7 +1817,7 @@ Here is an outline of steps you can use in developing your template resources:
 4. If it is your first time importing these templates, make sure the
    `module-incremental-version` is set to `1` in
    `liferay-plugin-package.properties`. For every change that you make to the
-   templates, you will have to increment the version. If developer mode is
+   templates, you'll have to increment the version. If developer mode is
    enabled, the templates will be overridden on every plugin deploy if they have
    the same version. 
 
@@ -1829,7 +1846,8 @@ Here is an outline of steps you can use in developing your template resources:
           the Control Panel menu 
 
 You can go back to any of the beginning steps in this outline to make
-refinements. It's just that easy to create a plugin to import templates! 
+refinements. It's just that easy to import templates and structures with your
+plugin! 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-03-en)
 
