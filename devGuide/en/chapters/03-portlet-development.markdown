@@ -1613,16 +1613,6 @@ To create a plugin which extends another, follow these steps:
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
-In summary, if localization is important for your portlets, always consider
-statements in a *localization plan*, since some portlets in your plugin and hard
-customer requests can make a mess in your localization files and keys. If
-possible, reuse Liferay core language keys since they're already translated for
-you. 
-
-If there's no key you can use, you can create your own, as described in this
-chapter. Liferay gives you the tools to make localization possible, and uses a
-web service to provide rudimentary translations. 
-
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-03-en)
 
 You've covered a lot of ground learning Liferay Portlet development. You created
