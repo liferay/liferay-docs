@@ -1613,6 +1613,224 @@ To create a plugin which extends another, follow these steps:
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
+## Importing Templates and Structures with Your Portlets
+
+When you create a new portlet project using the Liferay Plugins SDK, check your
+plugin's `docroot/WEB-INF/liferay-plugin-package.properties` file for three
+entries related to the resources importer. One or some of these might be
+commented out or missing, depending on the version of your Plugins SDK: 
+
+    module-incremental-version=1
+
+    required-deployment-contexts=\
+        resources-importer-web
+
+    resources-importer-developer-mode-enabled=true
+
+The first entry, `required-deployment-contexts=resources-importer-web`, declares
+your theme's dependency on the resources importer plugin. The second entry,
+`resources-importer-developer-mode-enabled=true`, is a convenience feature for
+developers. With this setting enabled, if the templates are to be imported to
+the Global site where the templates already exist, the template will be
+overridden. Otherwise, you have to increment version in the
+`module-incremental-version` property each time you change anything in your
+plugin's `docroot/WEB-INF/src/templates-importer` folder. 
+
+All of the resources a plugin uses with the templates importer go in the
+`[plugin-name]/docroot/WEB-INF/src/templates-importer` folder. The assets to be
+imported by your theme should be placed in the following directory structure: 
+
+- `[plugin-name]/docroot/WEB-INF/src/templates-importer/`
+    - `journal/`
+        - `structures/` - contains structures (XML) and folders of child
+          structures. Each folder name must match the file name of the
+          corresponding parent structure. For example, create folder `Structure
+          1/`
+          to hold a child of structure file `Structure 1.xml`. 
+        - `templates/` - groups templates (VM or FTL) into folders by structure.
+          Each folder name must match the file name of the corresponding
+          structure. For example, create folder `Structure 1/` to hold a
+          template for structure file `Structure 1.xml`. 
+    - `templates/`
+        - `application_display/` - contains application display templates (VM or
+          FTL). The extension of the files should reflect the language that the
+          templates are written in. 
+            - `asset_category/` - contains categories navigation templates
+            - `asset_entry/` - contains asset publisher templates
+            - `asset_tag/` - contains tags navigation templates
+            - `blogs_entry/` - contains blogs templates
+            - `document_library/` - contains documents and media templates
+            - `site_map/` - contains site map templates
+            - `wiki_page/` - contains wiki templates
+        - `page/` - contains page templates (JSON)
+        - `dynamic_data_list/` - contains dynamic data list templates and
+          structures 
+            - `display_template/` - groups templates (VM or FTL) into folders by
+              structure. Each folder name must match the file name of the
+              corresponding structure. For example, create folder `Structure 1/`
+              to hold a template for structure file `Structure 1.xml`. 
+            - `form_template/` - groups templates (VM or FTL) into folders by
+              structure. Each folder name must match the file name of the
+              corresponding structure. For example, create folder `Structure 1/`
+              to hold a template for structure file `Structure 1.xml`. 
+            - `structure/` - contains structures (XML)
+
+To have the templates imported with the resources importer, you have to add
+resource files to the folders outlined above. 
+
+The page template `json` file in the
+`[plugin-name]/docroot/WEB-INF/src/templates-importer/templates/page` folder
+specifies the layout template, web content, assets, and portlet configurations
+to be imported with the page template. Even if you're not familiar with JSON,
+the `json` file is easy to understand. Let's examine a sample `json` file: 
+
+    {
+        "layoutTemplate": {
+            "columns": [
+                [
+                    {
+                        "portletId": "58"
+                    }
+                ],
+                [
+                    {
+                        "portletId": "47"
+                    },
+                    {
+                        "portletId": "118",
+                        "portletPreferences": {
+                            "columns": [
+                                [
+                                    {
+                                        "portletId": "3"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "portletId": "16"
+                                    },
+                                    {
+                                        "portletId": "56",
+                                        "portletPreferences": {
+                                            "articleId": "12380",
+                                            "groupId": "10197",
+                                            "lfrScopeType": "company",
+                                            "portletSetupShowBorders": "true",
+                                            "portletSetupTitle_en_US": 
+                                                "Web Content Display with Child Structure 1",
+                                            "portletSetupUseCustomTitle": "true"
+                                        }
+                                    }
+                                ]
+                            ],
+                            "layoutTemplateId": "2_columns_i"
+                        }
+                    }
+                ]
+            ],
+            "friendlyURL": "/page-3",
+            "name": "Page 3",
+            "title": "Page 3"
+        },
+        "layoutTemplateId": "2_columns_ii"
+    }
+
+The first thing you should declare in your json file is a layout template ID so
+the page template can reference the layout template to use for its pages. (In
+the above example, this declaration is actually at the end of the file.) You can
+also specify different layout templates to use for individual pages. You can
+find layout templates in your Liferay installation's `/layouttpl` folder. You
+can specify a name, title, and friendly URL for a page, and you can set a page
+to be hidden. To declare that web content should be displayed on a page, simply
+specify an HTML file. You can declare portlets by specifying their portlet IDs
+which can be found in Liferay's `WEB-INF/portlet-custom.xml` file. You can also
+specify portlet preferences for each portlet. 
+
+Now that you've learned about the directory structure for your templates and the
+`json` file for the page templates, it's time to put resources into your plugin.
+You can create resources from scratch and/or bring in resources that you've
+already created in Liferay. Let's go over how to leverage your XML (structures)
+and VM or FTL (templates) files from Liferay. All structures and templates,
+except page templates, will have the same name as the file. 
+
+**Structure:** 
+
+- **Dynamic Data Lists:** Edit the structure by clicking on *Manage Data
+  Definitions*. Click on a structure that you want to export and then click on
+  the *Source* tab. Copy and paste its contents into a new XML file for the
+  structure in the `templates-importer/journal/dynamic_data_list/structure`
+  folder. The structure XML sets a wireframe, or blueprint, for a dynamic data
+  list's data. 
+- **Web Content:** Edit the structure by clicking on *Manage* and then
+  *Structures*. Click on a structure that you want to export and then click on
+  the Source tab. Copy and paste its contents into a new XML file for the
+  structure in the `templates-importer/journal/structures/` folder. The
+  structure XML sets a wireframe, or blueprint, for an article's data. 
+
+**Template:** 
+
+- **Application Display:** Edit the template by clicking on the template you
+  want to export. Copy and paste its contents into a new VM or FTL file and
+  place it in
+  `templates-importer/templates/application_display/[your application display template type]/`. 
+- **Dynamic Data List:** Edit the template by clicking on Manage Data
+  Definition. Click on *Manage Templates* from the Actions menu of the structure
+  that your template is linked to. Choose the template that you want export.
+  Copy and paste its contents into a new VM or FTL file and place it in
+  `templates-importer/templates/display_template/[structure name]/` or
+  `templates-importer/templates/form_template/[structure name]/` 
+- **Page:** You will have to create the page template from scratch based on the
+  `json` file example for the page template above. 
+
+Here is an outline of steps you can use in developing your template resources:
+
+1. Create your plugin, preferably a portlet. 
+
+2. Add your templates under the
+   `[plugin-name]/docroot/WEB-INF/src/templates-importer` folder and its
+   subfolders. 
+
+3. In your `liferay-plugin-package.properties` file, include
+   `resources-importer-web` in your `required-deployment-contexts` property's
+   list and set `resources-importer-developer-mode-enabled=true` (turn this
+   setting off when finished developing the plugin). All templates will be
+   automatically imported into the Global site. This way, it will be accessible
+   to all sites in the portal. 
+
+4. If it is your first time importing these templates, make sure the
+   `module-incremental-version` is set to `1` in
+   `liferay-plugin-package.properties`. For every change that you make to the
+   templates, you will have to increment the version. If developer mode is
+   enabled, the templates will be overridden on every plugin deploy if they have
+   the same version. 
+
+5. Deploy your plugin into your Liferay instance.
+
+6. View your resources from within Liferay. Log in to your portal as an
+   administrator and check the Global site to make sure that your resources were
+   deployed correctly. From the Control Panel you can easily view your
+   resources: 
+
+    - Go to Sites in the Control Panel
+    - Go to the Global Site
+    - You can view the imported structures and templates here:
+
+        - The Journal Article structures and templates can be viewed in the Web
+          Content control panel portlet &rarr;  *Manage* &rarr; *Structures* or
+          *Manage* &rarr; *Templates* 
+        - The Dynamic Data List templates can be viewed in the Dynamic Data
+          Lists control panel portlet &rarr; *Manage Data Definitions*. The
+          templates can be viewed by going to the Actions menu of the Dynamic
+          Data List structure and then clicking on *Manage Templates*. 
+        - The Application Display templates can be viewed under the
+          *Configuration*
+          category &rarr; *Application Display Templates*.  
+        - The page templates can be viewed in the *Page Templates* category from
+          the Control Panel menu 
+
+You can go back to any of the beginning steps in this outline to make
+refinements. It's just that easy to create a plugin to import templates! 
+
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-03-en)
 
 You've covered a lot of ground learning Liferay Portlet development. You created
