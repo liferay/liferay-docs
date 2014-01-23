@@ -486,14 +486,13 @@ new releases, new versions, edit details, etc). The app appears to be
 authored/developed by the company, not you personally. It also appears on the
 company's public profile page under its list of apps.
 
-**Name:** The name of your application. Arguably the most important detail of
-your app, the name of your app should be a good title that conveys the function
-of the App but is not overly wordy or misleading. Choosing a good name for your
-app is key to its success, so choose wisely! See the *Marketplace
-Considerations* chapter for more guidance on how to pick good names. Do not
-include versions in the title unless it is a vital part of the name, for example
-*Angry Birds 2: More Anger*. Each app on the Marketplace must have a unique
-name.
+**Title:** The name of your application. Arguably the most important detail of
+your app, the app's name should convey its function but not be overly wordy or
+misleading. Choosing a good name for your app is key to its success, so choose
+wisely! See the *Marketplace Considerations* chapter for more guidance on how to
+pick good names. Do not include versions in the title unless it is a vital part
+of the name, for example *Angry Birds 2: More Anger*. Each app on the
+Marketplace must have a unique name. 
 
 **Description:** Like the name says, this is a description of your app. You can
 put anything you want here, but a good guideline is no more than 4-5 paragraphs.
