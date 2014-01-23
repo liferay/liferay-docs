@@ -486,11 +486,12 @@ new releases, new versions, edit details, etc). The app appears to be
 authored/developed by the company, not you personally. It also appears on the
 company's public profile page under its list of apps.
 
-**App Pricing:** Choose whether you want this app to be free or paid. If you
-choose paid, you will have the option to specify pricing and licensing details
+**App Pricing:** Choose whether you want the app to be free or paid. If you
+choose paid, you'll have the option to specify pricing and licensing details
 later in the submission process. Once your app is published to the Marketplace,
 you cannot change this option. If you wish to have both free and paid licenses
-for your app, you must submit two versions.  
+for your app, you must submit one version of your app for free licenses and
+another version of your app for paid licenses. 
 
 **Title:** The name of your application. Arguably the most important detail of
 your app, the app's name should convey its function but not be overly wordy or
@@ -595,65 +596,65 @@ This indicates that the files were successfully uploaded. Notice that the
 portlet plugin was automatically copied for use in both the EE and CE
 variations, even though you only uploaded the portlet plugin once. 
 
-If you selected Free for your app pricing, click *Next* to advance to the final
-screen. If you selected Paid, you will be presented with additional options for
-licensing and pricing your app. 
+If you selected *Free* for your app pricing, click *Next* to advance to the
+final screen. If you selected *Paid*, you'll be presented with additional
+options for licensing and pricing your app. 
 
 #### Creating your licensing and pricing model
 
-Carefully consider which licensing structure best meets your needs. Once
-approved, these options, with the exception of pricing updates, cannot be
-changed.  
+Carefully consider which licensing structure best meets your needs. Once you're
+app has been approved, these options, with the exception of pricing updates,
+cannot be changed. 
 
 **Choose a license term:**
 
 ![Figure 12.x: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
 
-Choosing Perpetual would allow the app to continue running without expiration,
-whereas **1 year term** will expire after one year from the purchase date.
-Perpetual license also allows you to offer Support Services, which must be
-renewed annually to maintain access to app updates and support. If you choose
-not to offer Support Services with a Perpetual License, customers will be
-provided with app updates only, whenever available. You cannot change this
-option once your app is approved. 
+Choosing *Perpetual* allows the app to continue running without expiration,
+whereas choosing **1 year term** expires the app's license one year from the
+purchase date. Perpetual license also allows you to offer Support Services,
+which the customer must renew annually to maintain access to app updates and
+support. If you choose not to offer Support Services with a Perpetual License,
+customers will be provided with app updates only, whenever updates are
+available. You cannot change your app's license terms once the app is approved. 
 
 **Creating license options:**
 
 ![Figure 12.x: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
 
-Creating license options allows you to design license bundles and to
-specify discounts for customers who purchase more Liferay Instances for your app
-(A Liferay Instance or Instance refers to a single installation of the Liferay
-Portal). Also you can designate different pricing for Standard vs. Developer
-Licenses. These Developer Licenses are intended for local developer workstations
-and are limited to 10 concurrent user connections. You must have at least one
-option, but no more than 10 options per type. You will price these options on
-the next page. 
+Creating license options allows you to design license bundles and to specify
+discounts for customers who purchase more Liferay Instances for your app (a
+Liferay Instance or Instance refers to a single installation of the Liferay
+Portal). Also you can designate different pricing for Standard Licenses vs.
+Developer Licenses. The Developer Licenses are intended for local developer
+workstations and are limited to 10 concurrent user connections. You must specify
+at least one license option, but no more than 10 options per type. You'll price
+these options on the next page. 
 
-**Paid support:** You have the option of offering additional paid Support
-Services for your app. If you select this option, customers can contact you with
-support requests and will be entitled to regular updates. 
+**Paid support:** You can offer additional paid Support Services for your app.
+If you select this option, customers can contact you with support requests and
+are entitled to regular updates. 
 
-**Offer a trial:** If you wish, you have the option of offering a free 30-day
-trial of your app which is restricted to 1 Instance and 25 users. 
+**Offer a trial:** If can offer a free 30-day trial of your app, restricted to 1
+Instance and 25 users. 
 
-When you have finished selecting all the options for your license, proceed to
-the next page to determine the pricing and availability. 
+When you finished selecting all the options for your license, proceed to the
+next page to determine the app's pricing and availability.
 
 **Pricing:**
 
 ![Figure 12.x: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
 
-Based on your selections from the previous page, you will have price fields for
-each license option and support, if offered. 
+Based on your selections from the previous page, you'll have price fields for
+each license option and for any support option you offered. 
 
-Choose the currency you wish to price your options in and then fill in the
-fields accordingly. Fill in the renewal cost for Support Services if offered.
-The Support Services price is based on per Instance, so for example, if you
-entered $100 USD and the customer is running 10 Instances, their annual Support
-Services renewal cost would be $1000. Note: This only applies to Perpetual
-Licenses. For **1 year** licenses, you should include any Support Services cost
-in the annual license price. 
+Choose the currency to use with the pricing options and then fill in the price
+fields accordingly. Fill in the renewal cost for any Support Services you
+offered. The Support Services price is based on per Instance, so for example, if
+you entered $100 USD and the customer is running 10 Instances, their annual
+Support Services renewal cost would be $1000. Note: This only applies to
+Perpetual Licenses. For **1 year** licenses, you should include any Support
+Services cost in the annual license price. 
 
 Once you've specified the prices, you can add the desired countries to this box.
 If you wanted to specify different prices for different regions, add a new table
@@ -661,7 +662,7 @@ and complete the fields as desired.
 
 Although the Liferay Marketplace supports major currencies and a broad list of
 countries, not all currencies and countries are currently available. Additional
-currencies and countries may be available at a later time. 
+currencies and countries may become available at a later time. 
 
 When you have completed your app's pricing and availability, click *Next* to
 advance to the final screen. 
