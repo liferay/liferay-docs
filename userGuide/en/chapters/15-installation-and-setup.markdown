@@ -673,7 +673,7 @@ the *Set Profile* dropdown menu.
     "session.disabled" in portal.properties.
     -->
 
-    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
     </Context>
 
 <!-- Why do we have all that stuff up there commmented out? Wouldn't it be
@@ -2391,7 +2391,7 @@ In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
+   ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in
