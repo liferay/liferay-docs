@@ -611,8 +611,8 @@ cannot be changed.
 ![Figure 12.x: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
 
 Choosing *Perpetual* allows the app to continue running without expiration,
-whereas choosing **1 year term** expires the app's license one year from the
-purchase date. Perpetual license also allows you to offer Support Services,
+whereas choosing *Non-Perpetual** expires the app's license one year from the
+purchase date. Perpetual License also allows you to offer Support Services,
 which the customer must renew annually to maintain access to app updates and
 support. If you choose not to offer Support Services with a Perpetual License,
 customers will be provided with app updates only, whenever updates are
@@ -635,10 +635,10 @@ these options on the next page.
 If you select this option, customers can contact you with support requests and
 are entitled to regular updates. 
 
-**Offer a trial:** If can offer a free 30-day trial of your app, restricted to 1
-Instance and 25 users. 
+**Offer a trial:** You can offer a free 30-day trial of your app, restricted to
+1 Instance and 25 users. 
 
-When you finished selecting all the options for your license, proceed to the
+When you're finished selecting all the options for your license, proceed to the
 next page to determine the app's pricing and availability.
 
 **Pricing:**
@@ -653,7 +653,7 @@ fields accordingly. Fill in the renewal cost for any Support Services you
 offered. The Support Services price is based on per Instance, so for example, if
 you entered $100 USD and the customer is running 10 Instances, their annual
 Support Services renewal cost would be $1000. Note: This only applies to
-Perpetual Licenses. For **1 year** licenses, you should include any Support
+Perpetual Licenses. For Non-Perpetual Licenses, you should include any Support
 Services cost in the annual license price. 
 
 Once you've specified the prices, you can add the desired countries to this box.
@@ -754,11 +754,10 @@ Marketplace.
 You can change your app's prices, Instance bundles, and regional availability if
 you wish. This can be for a variety of reasons, whether it's to run a
 promotional offer, or to adjust your pricing model to better account for app
-demand. To make changes to your app, navigate to *Home* &rarr; *App Manager*
-&rarr; *Apps*, then click the *Action* button next to the app you wish to edit,
-and select *Edit Prices*. 
-
-<!-- (need to verify with screens) - Caleb -->
+demand. To make changes to your app, navigate to *Company Profile Home* &rarr;
+*Apps*, then click the app you wish to edit, and then at the bottom, click
+*Edit* &rarr; *Pricing*. When you've finished editing your app's prices, click
+*Next*. 
 
 These changes do not require Liferay verification process to approve. Simply
 make the changes you wish and save your app. These new prices will be reflected
