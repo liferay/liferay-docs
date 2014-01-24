@@ -188,10 +188,10 @@ found everywhere else in the portal.
 
 The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
 special links that let you notify another site that you explicitly linked to 
-them int the *Content* field. For example, if you wanted to write an entry in 
+them in the *Content* field. For example, if you wanted to write an entry in 
 your blog and reference some other site's entry, you might put the URL to the
-other entry in the *Content* field and the trackback URL int the *Trackbacks 
-Send* field. If you have multiple URLs you want to send trackbacks to, 
+other entry in the *Content* field and the trackback URL in the *Trackbacks 
+Sent* field. If you have multiple URLs you want to send trackbacks to, 
 separate them with spaces. 
 
 If you want others who link to your blog to let you know about the link via
