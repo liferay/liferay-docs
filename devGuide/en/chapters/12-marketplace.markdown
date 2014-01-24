@@ -608,7 +608,7 @@ cannot be changed.
 
 **Choose a license term:**
 
-![Figure 12.x: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
+![Figure 12.7: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
 
 Choosing *Perpetual* allows the app to continue running without expiration,
 whereas choosing *Non-Perpetual** expires the app's license one year from the
@@ -620,7 +620,7 @@ available. You cannot change your app's license terms once the app is approved.
 
 **Creating license options:**
 
-![Figure 12.x: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
+![Figure 12.8: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
 
 Creating license options allows you to design license bundles and to specify
 discounts for customers who purchase more Liferay Instances for your app (a
@@ -643,7 +643,7 @@ next page to determine the app's pricing and availability.
 
 **Pricing:**
 
-![Figure 12.x: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
+![Figure 12.9: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
 
 Based on your selections from the previous page, you'll have price fields for
 each license option and for any support option you offered. 
@@ -673,7 +673,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
 will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 12.7: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 12.10: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
@@ -847,7 +847,7 @@ downloads, and installations of your app(s). To access these metrics, navigate
 to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next
 to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 12.8: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 12.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Installations*).
