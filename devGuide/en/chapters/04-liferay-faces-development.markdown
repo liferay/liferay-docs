@@ -2513,29 +2513,36 @@ PortletFaces Bridge to the Liferay Faces Bridge.
 
 ## Migrating From Liferay Faces 3.1 to Liferay Faces 3.2/4.2
 
-Because Liferay Faces 3.2 and 4.2 are compatible with the new Version of
-Liferay Portal (see the [Liferay Faces Version
+Liferay Faces 3.2 and 4.2 are compatible with Liferay Portal 6.2 (see the [Liferay Faces Version
 Scheme](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
-for more info on Liferay Portal compatibility), Liferay 6.2, upgrading to
-Liferay Faces 3.2/4.2 from Liferay Faces 3.1 requires a few changes to ensure
-that projects continue working correctly.
+for more info on Liferay Portal compatibility). Migrating to Liferay Faces
+3.2/4.2 from Liferay Faces 3.1 requires a few changes to ensure your projects
+continue working correctly. 
 
-### AlloyUI Tag changes in Liferay Faces 3.2/4.2
+In this section, we'll cover the following migration topics: 
 
-One of the changes in Liferay Portal 6.2 is the upgrade from AlloyUI 1.5 to
-AlloyUI 2.0, which includes the deprecation and removal of some javascript
-functionality, as well as the addition of some javascript widgets. To reflect
-these changes, the Liferay Faces team has deprecated certain AlloyUI tags and
-created some replacements.
+- Migrating Liferay Faces Alloy Tags for Liferay Faces 3.2/4.2
+- Migrating the `liferay-portlet.xml` File for Liferay Faces 3.2/4.2
 
-First we'll look at the changes to the `aui` namespace tags.
+First, let's explore Liferay Faces Alloy tag migration. 
 
-#### Migrating From Liferay Faces Alloy 3.1 tags to Liferay Faces Alloy 3.2/4.2 tags
+### Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags
 
-##### Changes to the `aui` Tags
+AlloyUI was upgraded from AlloyUI 1.5 to AlloyUI 2.0 between Liferay Portal 6.1
+and Liferay Portal 6.2. The AlloyUI changes include the deprecation and removal
+of some JavaScript functionality, and the addition of some JavaScript
+widgets. As a result, in Liferay Faces 3.2 and 4.2, corresponding Liferay Faces Alloy
+tags are deprecated and some are replaced. We'll go over the Liferay Faces
+Alloy tag changes that you'll need to accomodate in your Facelets. 
 
-Below is a table of the `aui` tags that are deprecated in 3.2/4.2 and their
-replacements:
+First, let's look at the changes to the `aui` namespace tags. 
+
+#### Changes to the Liferay Faces Alloy `aui` Tags
+
+The following table identifies the `aui` tags that are deprecated in 3.2/4.2 and
+each tag's replacement, if a replacement exists.
+
+** `aui` Tag Deprecation**
 
 | Deprecated `aui` Tag | Replacement `aui` Tag |
 |----------------------|-----------------------|
@@ -2547,24 +2554,23 @@ replacements:
 ---
 
  ![Note](../../images/tip.png) **Note:** The `aui:column` tag must be replaced
- by an `aui:col` tag nested within an `aui:row` tag.  
+ by an `aui:col` tag that is nested within an `aui:row` tag.  
 
  Also, because `aui:col` has completely different attributes than `aui:column`,
- `aui:column` cannot simply be replaced by `aui:col` without certain
- modifications. For more information on the differences between `aui:col` and
- `aui:column`, please check out our
- [VDLdocs for Liferay Faces 3.2](http://docs.liferay.com/faces/3.2/vdldoc/)
+ you must account for the `aui:col` attributes. For more information on the
+ `aui:col` tag, see the
+ [VDLdocs for Liferay Faces 3.2](http://docs.liferay.com/faces/3.2/vdldoc/).
 
 ---
 
-Next we will look at the changes to the `aui-cc` namespace.
+Next, we'll look at the changes to the tags in the `aui-cc` namespace.
 
-##### Changes to the `aui-cc` Tags
+#### Changes to the Liferay Faces Alloy `aui-cc` Tags
 
-Due to the upgrade of AlloyUI from 1.5 to 2.0, all `aui-cc` tags have been
-deprecated or removed in Liferay Faces 3.2/4.2.
+Below is a table of the `aui-cc` tags that are deprecated or removed with
+respect to the Liferay Faces 3.2, 4.1, and 4.2 releases: 
 
-Below is a table of the `aui-cc` tags that are deprecated in 3.2/4.2:
+** `aui-cc` Tag Deprecation**
 
 | Deprecated `aui-cc` Tag |
 |-------------------------|
@@ -2576,62 +2582,68 @@ Below is a table of the `aui-cc` tags that are deprecated in 3.2/4.2:
 
 ---
 
- ![Note](../../images/tip.png) **Note:** `aui-cc:message` and `aui-cc:messages`
- have been completely removed in 4.1/4.2 because they no longer have any
- analogous tags within the portal and their functionality is automatically
- implemented in the bridge for `h:message` and `h:messages` respectively.
+ ![Note](../../images/tip.png) **Note:** The `aui-cc:message` and
+ `aui-cc:messages` tags  have been completely removed in 4.1/4.2 because no
+ analogous tags in Liferay Portal exist for them and their
+ functionality is already implemented in the bridge's for `h:message` and
+ `h:messages` tags, respectively. 
 
 ---
 
-Finally, we will look at the modifications necessary to use a Liferay Faces 3.1
-Portlet in Liferay Portal 6.2.
+Now that we've learned the AlloyUI related migration changes, we'll look at the
+modifications necessary to use Liferay Faces 3.1 portlets in Liferay Portal 6.2. 
 
-### Modifying Your Portlet for Compatibility with Liferay Portal 6.2
+### Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
 
-Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2. This
-is because Liferay Faces 3.2 is compatible with JSF 2.1 while Liferay Faces 4.2
-is compatible with JSF 2.2 (see the [Liferay Faces Version
+Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2. We provide
+Liferay Faces 3.2 for compatibility with JSF 2.1 and provide Liferay Faces 4.2
+for compatibility with JSF 2.2 (see the [Liferay Faces Version
 Scheme](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
-for more info on Liferay Portal and JSF compatibility). If you are only
-interested in upgrading from Liferay Portal 6.1 to 6.2, you should upgrade from
-Liferay Faces 3.1 to 3.2. If want to upgrade to JSF 2.2 as well as Liferay 6.2,
-then you need to use Liferay Faces 4.2.
+for more info on Liferay Portal and JSF compatibility). If you are currently
+using Liferay Faces 3.1 and are interested in upgrading from Liferay
+Portal 6.1 to 6.2, but aren't interested in compatibility with JSF 2.2, you should
+upgrade from Liferay Faces 3.1 to 3.2. But, if you want to use JSF 2.2, in addition to Liferay 6.2,
+you must upgrade to Liferay Faces 4.2. 
 
 ---
 
  ![Note](../../images/tip.png) **Note:** This guide only addresses upgrading as
- it relates to Liferay Portal Upgrading from JSF 2.1 to 2.2 may require changes
- that this guide does not address. For information on upgrading to JSF 2.2 you
- should check out JSF specific upgrade guides.
+ it relates to Liferay Portal. Upgrading from JSF 2.1 to 2.2 may require
+ additional changes. For information on upgrading to JSF 2.2 you should check
+ out JSF specific upgrade guides. 
 
 ---
 
-The only change necessary modification to allow Liferay Faces portlets to run
-in 6.2 is to add
-`<requires-namespaced-parameters>false</requires-namespaced-parameters>` under
-the `<portlet>` section of your portlet's `WEB-INF/liferay-portlet.xml` file
-as shown in this example:
+Liferay Portal 6.2 can enforce namespacing of portlet request parameters. But
+you must turn this off for your JSF portlets by specifying
+`<requires-namespaced-parameters>false</requires-namespaced-parameters>` in each
+`<portlet>` element of your portlet project's `WEB-INF/liferay-portlet.xml`
+file. Here's a snippet that specifies this descriptor: 
 
     <liferay-portlet-app>
         <portlet>
-        
-            ...
-            
-            <requires-namespaced-parameters>false</requires-namespaced-paramete\
-            rs>
-            
-            ...
-            
-        </portlet>
-        
-        ...
-        
-    </liferay-portlet-app>
-    
-You can check out a real word example in our JSF2-portlet demo's [`liferay-portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/liferay-portlet.xml).
 
-And that's all that is necessary to upgrade portlets to Liferay Faces 3.2 or
-4.2 for use in Liferay Portal 6.2.
+            ...
+
+            <requires-namespaced-parameters>false</requires-namespaced-parameters>
+
+            ...
+
+        </portlet>
+
+        ...
+
+    </liferay-portlet-app>
+
+Turning off the parameter namespace requirement is all you need to do to upgrade
+your JSF portlets to Liferay Faces 3.2 or 4.2, for use in Liferay Portal 6.2. 
+
+As an example JSF portlet that runs on Liferay Portal 6.2, check out the
+[demo
+JSF2-portlet](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet)
+and its 
+[`liferay-portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/liferay-portlet.xml)
+file. 
 
 Next, we'll show you how to build the Liferay Faces project. 
 
