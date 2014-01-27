@@ -2542,13 +2542,11 @@ First, let's look at the changes to the `aui` namespace tags.
 The following table identifies the `aui` tags that are deprecated in 3.2/4.2 and
 each tag's replacement, if a replacement exists.
 
-** `aui` Tag Deprecation**
+**Tag Deprecations in the `aui` Namespace**
 
 | Deprecated `aui` Tag | Replacement `aui` Tag |
 |----------------------|-----------------------|
-| `aui:column` |
- [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/column.html) and
- [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) |
+| `aui:column` | [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/column.html) and  [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) |
 | `aui:layout` | No Replacement |
 
 ---
@@ -2570,7 +2568,7 @@ Next, we'll look at the changes to the tags in the `aui-cc` namespace.
 Below is a table of the `aui-cc` tags that are deprecated or removed with
 respect to the Liferay Faces 3.2, 4.1, and 4.2 releases: 
 
-** `aui-cc` Tag Deprecation**
+**Tag Deprecations in the `aui-cc` Namespace**
 
 | Deprecated `aui-cc` Tag |
 |-------------------------|
