@@ -7,18 +7,27 @@ SDK provides the means for your mobile apps to easily consume Liferay Portal's
 core web services and the web services of your custom portlets. It wraps Liferay
 JSON web services, takes care of authentication, makes REST (Representational
 State Transfer) requests (synchronously or asynchronously), parses JSON results,
-and handles server side exceptions. The Liferay Mobile SDK is compatible with
-Liferay Portal 6.2 and later, and it comes with the Liferay Android SDK and
-Liferay iOS SDK ready for you to download and use. For an illustration for how
-the Mobile SDK works, view Figure 8.1. 
+and handles server side exceptions.
 
-![Figure 8.1: There are four main steps involved with using the Mobile SDK.](../../images/mobile-sdk-diagram.png)
+The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later, and it
+comes with the Liferay Android SDK and Liferay iOS SDK ready for you to download
+and use. You can view more about the Liferay Mobile SDK by navigating to its
+[Official
+Project](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
+page. For an illustration for how the Mobile SDK works, view Figure 8.1.
+
+![Figure 8.1: The Mobile SDK allows you native app to access Liferay services.](../../images/mobile-sdk-diagram.png)
 
 The illustration displays the general process that links the Mobile SDK with
-your native app. In this chapter, we'll provide information about this process
-for the development of Android and iOS apps.
+your native app. You can create and edit you app using Liferay Developer Studio.
+Once the app is created, it can send and receive requests to/from the Liferay
+Mobile SDK to enable access to Liferay services. The SDK provides a bridge to
+your Liferay instance where you can access hidden complexities like
+authentication, permissions, remote service calls, and JSON-wrapped results.
 
-We'll discuss the following topics as we explore Liferay's Mobile SDK:
+In this chapter, we'll provide information about this process for the
+development of Android and iOS apps. We'll discuss the following topics as we
+explore Liferay's Mobile SDK:
 
 - Using the Android SDK
 - Using the iOS SDK
@@ -30,9 +39,14 @@ Android app.
 ## Using the Android SDK
 
 Suppose you're creating an Android app and would like to access some of
-Liferay's core services. You'll need to download the SDK and generate libraries
-from the SDK from which to choose the services you'll need for your native app.
-Let's get started!
+Liferay's core services. All you'll need to do is download the SDK and you'll
+immediately be able to access Liferay's core services. If you'd
+like to invoke remote web services, you'll need to generate the client
+libraries. You can learn more about the SDK builder and how to generate
+libraries by visiting the *Building an SDK for Custom Portlet Services* section
+of this chapter.
+
+Let's get started by downloading the Android SDK!
 
 ### Downloading the Android SDK
 
@@ -45,7 +59,8 @@ page.
 
 <!-- Change link once Downloads page is available on liferay.com. Bruno informed
 me that the Downloads page would be within its community project page, which
-will be located at https://www.liferay.com/community/liferay-projects -->
+will be located at
+https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
 
 Once you've downloaded your JAR file, insert it into the `/libs` directory of
 your Android project. Android Developer Tools should automatically add this JAR
@@ -126,6 +141,7 @@ app's configuration and then demonstrate how it accesses Liferay services.
 			JSONObject jsonObj = jsonArray.getJSONObject(i);
 				
 			users.add(new User(jsonObj));
+		}
 
     This code fetches all the users from the site with the `groupId`, which is
     specified in the `getGroupUsers()` method above.
@@ -139,7 +155,9 @@ app's configuration and then demonstrate how it accesses Liferay services.
     
     ![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
     require `groupId` as a parameter. You can get the user's groups by calling
-    the `getUserSites()` method from `GroupService`.
+    the `getUserSites()` method from `GroupService`. In our previous example,
+    the `getGuestGroupId(session)` method does this by retrieving the user's
+    group.
     
     ---
     
