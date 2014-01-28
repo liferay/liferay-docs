@@ -1256,6 +1256,129 @@ manually modified: `EventLocalServiceImpl`, `EventServiceImpl` and `EventImpl`.
 If you manually modify the other classes, your changes will be overwritten the
 next time you run Service Builder. 
 
+Now that we can access the location and event entities with the local services,
+let's build our UI. 
+
+## Building the UI for the Location Listing Portlet
+
+We'll start by building the UI for the location entity, because it does not
+have any dependencies on other entities (like the event entity). We'll build a
+UI that allows us to do the following things: 
+
+- List the locations
+- Add new locations
+- Edit locations
+- Delete locations
+
+It's always nice to see our current entities. So let's build a view that lists
+the entities. The figure below shows what we want the Location Listing portlet
+to look like, filled with the locations we add: 
+
+![Figure 4.x: You can display your entities nicely using Liferay's taglibs and AlloyUI.](../../images/jsp-list-locations.png)
+
+Since this part of our UI will give us a "view" of our entities, we'll implement
+it in a JSP file named `view.jsp`. Open the `view.jsp` file that you created
+earlier when you created your portlet using the creation wizard. The wizard
+generated the `view.jsp` file for you in the `docroot/html/locationlisting`
+folder. Replace the `view.jsp` file's contents with the following JSP code: 
+
+	<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+	<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+	<%@ page import="com.liferay.portal.util.PortalUtil" %>
+
+	<%@ page import="com.nosester.portlet.eventlisting.model.Location"%>
+	<%@ page import="com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil"%>
+
+	<liferay-theme:defineObjects />
+
+	<portlet:defineObjects />
+
+	This is the <b>Location Listing Portlet</b> portlet in View mode.
+
+	<%
+		String redirect = PortalUtil.getCurrentURL(renderRequest);
+	%>
+
+	<liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
+		<liferay-ui:search-container-results
+			results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
+			total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
+		/>
+
+		<liferay-ui:search-container-row
+			className="com.nosester.portlet.eventlisting.model.Location"
+			keyProperty="locationId"
+			modelVar="location" escapedModel="<%= true %>"
+		>
+			<liferay-ui:search-container-column-text
+				name="name"
+				value="<%= location.getName() %>"
+			/>
+
+			<liferay-ui:search-container-column-text
+				name="description"
+				property="<%= location.getDescription() %>"
+			/>
+	
+			<liferay-ui:search-container-column-text
+				name="street-address"
+				property="<%= location.getStreetAddress() %>"
+			/>
+
+			<liferay-ui:search-container-column-text
+				name="city"
+				property="<%= location.getCity() %>"
+			/>
+
+			<liferay-ui:search-container-column-text
+				name="state-province"
+				property="<%= location.getStateOrProvince() %>"
+			/>
+
+			<liferay-ui:search-container-column-text
+				name="country"
+				property="<%= location.getCountry() %>"
+			/>
+		</liferay-ui:search-container-row>
+
+		<liferay-ui:search-iterator />
+	</liferay-ui:search-container>
+
+Let's look at this code in detail, starting with the JSP directives. The taglib
+directives tell your JSP where to find taglibs you're using and what namespace
+prefix to use for them. For example, the `<%@ taglib
+uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>` directive
+specifies the location and prefix to use for the Liferay's theme tag library
+descriptor (TLD). In our JSP we've also specified directives for Portlet 2.0 and
+Liferay UI taglibs. 
+
+We also specified directives to import the classes we're using in the JSP page.
+We're using the PortalUtil, Location, and LocationLocalServiceUtil classes. 
+
+Below the page import directives, we specified a couple interesting tags:
+`<liferay-theme:defineObjects />` and `<portlet:defineObjects />`. They give us
+our JSP access to various methods and variables. 
+
+After outputing text that identifies the portlet, we get into the real "meat" of
+our JSP. We use Liferay's `<liferay-ui:search-container />` tag to return
+location entities from the database and list them in a table. The search
+container calls `LocationLocalServiceUtil` to get the locations. It then renders
+one instance of the `com.nosester.portlet.eventlisting.model.Location` class per
+table row. Each location is identified by it's `locationId`. Then each of the 
+location's properties are rendered in columns via the
+`<liferay-ui:search-container-column-text />` tags. 
+
+Redeploy the portlet to catch a glimpse of the current locations. 
+
+![Figure 4.x: Where are your location entities? Don't worry, you haven't added any yet. We'll create a page that will enable you to add locations.](../../images/jsp-listing-no-locations.png)
+
+We'll need to create a JSP that allows us to add locations. No problem.
+
+
+
 Next, let's learn how to call core Liferay services. Calling core Liferay
 services in your portlet is just as easy as calling your project's services that
 you generated via Service Builder.
