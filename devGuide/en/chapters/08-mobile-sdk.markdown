@@ -16,7 +16,7 @@ and use. You can view more about the Liferay Mobile SDK by navigating to its
 Project](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
 page. For an illustration for how the mobile SDK works, view Figure 8.1.
 
-![Figure 8.1: The mobile SDK allows you native app to access Liferay services.](../../images/mobile-sdk-diagram.png)
+![Figure 8.1: The mobile SDK allows your native app to access Liferay services.](../../images/mobile-sdk-diagram.png)
 
 The illustration displays the general process that links the mobile SDK with
 your native app. You can create and edit you app using Liferay Developer Studio.
@@ -88,7 +88,7 @@ app's configuration and then demonstrate how it accesses Liferay services.
         
         SessionImpl("http://10.0.2.2:8080", "test@liferay.com", "test");
 
-    The session is a conversional state between the client and server, which
+    The session is a conversion state between the client and server, which
     consists of multiple requests and responses between the two. We need a
     session to pass requests between the mobile SDK and your app. This code uses
     user authentication to pass information between the Liferay instance and the
@@ -240,7 +240,7 @@ synchronous calls again.
     userService.getGroupUsers(groupId);
 
 The `onFailure()` method is called if an exception occurs during the request.
-This could be triggered by either a connection exception (e.g. a request
+This could be triggered by either a connection exception (e.g., a request
 timeout) or a `ServerException`. If a `ServerException` occurs, it's because
 something went wrong on the server side. For instance, if you pass a `groupId`
 that doesn't exist, the portal complains about it and the SDK wraps the error
@@ -365,7 +365,7 @@ Awesome! Let's learn how to configure the SDK next.
 
 For your mobile app to access the mobile SDK, you'll need to complete several
 steps. We'll demonstrate these steps by providing access to a sample Blogs app.
-Note that the following code snippets are written in the *Objectve C*
+Note that the following code snippets are written in the *Objective C*
 programming language. Let's begin!
 
 1. Create a `Session` with user credentials:
@@ -448,7 +448,7 @@ the `LRCallback` protocol.
 
     @end
 
-Then, set this callbck to the session and call your service as usual:
+Then, set this callback to the session and call your service as usual:
 
     BlogsEntriesCallback *callback = [[BlogsEntriesCallback alloc] init];
 
@@ -466,7 +466,7 @@ invoked with the results once the request has finished successfully.
 The `onSuccess` result parameter doesn't have a specific type. Therefore, you
 need to check the service method signature in order to figure out which type you
 can cast to safely. In this example, the `getGroupEntriesWithGroupId` method
-retruns an `NSArray`, so you can cast to this type.
+returns an `NSArray`, so you can cast to this type.
 
     - (void)onSuccess:(id)result {
         NSArray *entries = (NSArray *)result;
