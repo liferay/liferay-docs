@@ -630,7 +630,7 @@ a portlet with the web context value `my-portlet`:
 Now that you've configured the SDK Builder, you're ready to build a platform
 specific SDK for your portlet's remote services. 
 
-### Building a Liferay Android SDK
+### Building the Liferay Android SDK
 
 To build the service related source files for your Liferay Android SDK, run the
 following command from the `liferay-mobile-sdk` project's root folder:
@@ -654,7 +654,7 @@ To learn how to use the Liferay Android SDK in your mobile app, visit the
 
 <!-- Replace link once it's available in liferay.com Dev Guide -->
 
-### Building a Liferay iOS SDK
+### Building the Liferay iOS SDK
 
 To build the service related source files for your Liferay iOS SDK, run the
 following command from the `liferay-mobile-sdk` project's root folder:
@@ -681,5 +681,15 @@ To learn how to use the Liferay iOS SDK in your mobile app, see the
 
 ## Summary
 
+In this chapter, we showed you how easy it is to download and configure
+Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
+separately, giving you step-by-step examples for accessing Liferay services. We
+even dove into a working example with the sample *Contacts App* by configuring
+Android Developer Tools. Then, we explored the SDK Builder and how to generate
+client libraries to access your portlet's custom services. Of course, this was
+also broken down into separate Android and iOS sections so that building the SDK
+for either platform is easier than ever.
 
+Next, we'll take a look at the OpenSocial framework and how OpenSocial gadgets
+can increase your portals effectiveness.
 
