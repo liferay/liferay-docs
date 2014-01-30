@@ -202,7 +202,7 @@ information. Great work!
 Next, we'll talk about different kinds of requests that are allowed between your
 Android app and the Liferay Mobile SDK.
 
-### Using Asynchronous HTTP Requests
+### Using Asynchronous HTTP Requests for Android
 
 Asynchronous requests allow your app to continue processing without
 interruption, and is notified when its request to the SDK is returned. On the
@@ -277,7 +277,7 @@ callback `onSuccess()` method instead.
 Besides using synchronous and asynchronous requests, you can also send requests
 using batch processing. Let's learn about this next.
 
-### Sending Requests Using Batch Processing
+### Sending Android Requests Using Batch Processing
 
 The Mobile SDK also allows sending requests using batch processing, which can be
 much more efficient in some cases. In summary, batch processing executes a
@@ -331,6 +331,191 @@ Next, let's dive into using the iOS SDK to access Liferay services!
 
 ## Using the iOS SDK
 
+You've just created a custom iOS app and now want your app to access Liferay
+services. How do you access Liferay services from an iOS mobile app? The answer
+is the Liferay iOS SDK. All you need to do is download the SDK and you'll
+immediately be able to access Liferay's core services. If you'd like to invoke
+remote web services, you'll need to generate the client libraries. You can learn
+more about the SDK builder and how to generate client libraries by reading the
+*Building an SDK for Custom Portlet Services* section of this chapter.
+
+Let's download the iOS SDK and get your app configured with Liferay services!
+
+### Downloading the iOS SDK
+
+To install the iOS SDK to your machine, you'll need to download the latest
+version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
+Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases/)
+page. We'll be providing installation instructions assuming you're using the
+XCode developer tool provided by Apple, which can be downloaded from the [Mac
+App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
+
+<!-- Replace Downloads page with Official Downloads page on liferay.com when
+available:
+https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
+
+After you've downloaded the ZIP file, unzip it into your XCode project. Within
+XCode, right-click on your project and click *Add Files to <PROJECT_NAME>*.
+Then, add both `core` and `v62` folders. The `v62` folder name can change for
+each Liferay version. In this example, the Mobile SDK is built for Liferay 6.2.
+
+Awesome! Let's learn how to configure the SDK next.
+
+### Configuring the iOS SDK
+
+For your mobile app to access the Mobile SDK, you'll need to complete several
+steps. We'll demonstrate these steps by providing access to a sample Blogs app.
+Note that the following code snippets are written in the *Objectve C*
+programming language. Let's begin!
+
+1. Create a `Session` with user credentials:
+
+        #import "LRSession.h"
+
+        LRSession *session = [[LRSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
+
+    To learn more about the session and its three parameters, reference the
+    *Configuring the Android SDK* section.
+
+2. Check which Liferay services you need to build your app by navigating to
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). This page
+lists all available portal services and plugin services. For this example, we'll
+import the `BlogsEntryService`.
+
+        #import "LRBlogsEntryService_v62.h"
+
+    Since the SDK is built for a specific Liferay version, service class names
+    have the Liferay version they are built for. In this case, it's `_v62`,
+    which means the SDK is built for Liferay 6.2. You can use several SDKs at
+    the same time to support different Liferay versions.
+
+3. Create an `LRBlogsEntryService_v62` object and make a service call.
+
+        LRBlogsEntryService_v62 *service = [[LRBlogsEntryService_v62 alloc] init:session];
+
+        NSError *error;
+        NSArray *entries = [service getGroupEntriesWithGroupId:1084 status:0 start:-1 end:-1 error:&error];
+
+    This fetches all blog entries from the *Guest* site. In this example, the
+    `groupId` is equal to 10184.
+    
+    This is a basic example of a synchronous service call-- which means the
+    method will only return after the request is finished.
+    
+    Service method return types can be `void`, `NSString`, `NSArray`,
+    `NSDictionary`, `NSNumber`, and `BOOL`.
+    
+    ---
+    
+    ![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+    require `groupId` as a parameter. You can get the user's groups by calling
+    `[LRGroupService_v62 getUserSites:&error]`.
+    
+    ---
+
+That's it! You've given the blogs app access to the `BlogsEntryService`. Next,
+let's discuss asynchronous HTTP requests.
+
+### Using Asynchronous HTTP Requests for iOS
+
+The iOS SDK allows asynchronous HTTP requests, which allows your app to send
+requests to the SDK and continue processing during the wait time for the return
+request. The only configuring you'll need to do is set a callback to the session
+object. You can set the callback to `nil` if you want to make synchronous
+requests again.
+
+Let's continue our example with the blogs app. To configure asynchronous
+requests, the first thing we'll need to do is create a class that conforms to
+the `LRCallback` protocol.
+
+    #import "LRCallback.h"
+
+    @interface BlogsEntriesCallback : NSObject <LRCallback>
+
+    @end
+
+    #import "BlogsEntriesCallback.h"
+
+    @implementation BlogsEntriesCallback
+
+    - (void)onFailure:(NSError *)error {
+        // Implement error handling code
+    }
+
+    - (void)onSuccess:(id)result {
+        // Called after request has finished successfully
+    }
+
+    @end
+
+Then, set this callbck to the session and call your service as usual:
+
+    BlogsEntriesCallback *callback = [[BlogsEntriesCallback alloc] init];
+
+    [session setCallback:callback];
+    [service getGroupEntriesWithGroupId:1084 status:0 start:-1 end:-1 error:&error];
+
+If a server side exception or a connection error occurs during the request, the
+`onFailure` method is called with an `NSError` that contains information about
+the error.
+
+Since the request is asynchronous, the `getGroupEntriesWithGroupId` method
+returns immediately with nil, and the `onSuccess` method of your callback is
+invoked with the results once the request has finished successfully.
+
+The `onSuccess` result parameter doesn't have a specific type. Therefore, you
+need to check the service method signature in order to figure out which type you
+can cast to safely. In this example, the `getGroupEntriesWithGroupId` method
+retruns an `NSArray`, so you can cast to this type.
+
+    - (void)onSuccess:(id)result {
+        NSArray *entries = (NSArray *)result;
+    }
+
+The `onSuccess` method is called on the main UI thread after the request has
+finished.
+
+Let's talk about another popular way to send your app's requests: batch
+processing.
+
+### Sending iOS Requests Using Batch Processing
+
+Another popular method of sending requests to the mobile SDK is batch
+processing, which can be more efficient in some cases. For example, suppose you
+want to delete 10 blog entries at the same time; instead of making one request
+for each delete call, you can create a batch of delete calls and send them
+together. Here's an example of how to do this:
+
+    #import "LRBatchSession.h"
+
+    LRBatchSession *batch = [[LRBatchSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
+    LRBlogsEntryService_v62 *service = [[LRBlogsEntryService_v62 alloc] init:batch];
+    NSError *error;
+
+    [service deleteEntryWithEntryId:1 error:&error];
+    [service deleteEntryWithEntryId:2 error:&error];
+    [service deleteEntryWithEntryId:3 error:&error];
+
+    NSArray *entries = [batch invoke:&error];
+
+First, create an `LRBatchSession` session. You can either pass credentials or
+pass another `session` to the constructor. This is useful when you already have
+a `Session` object and want to reuse the same credentials. Then make the service
+calls as usual. With asynchronous calls, these methods will return `nil` right
+away.
+
+Finally, call `[bath invoke:&error]`; this returns an `NSArray` containing the
+results for each service call. Since there are three `deleteEntryWithEntryId`
+calls, the entries array contains three objects. The order of the results
+matches the order of the service calls.
+
+If you want to make batch calls asynchronously, set the callback to the session.
+
+    [batch setCallback:callback];
+
+The return type for batch calls is always an `NSArray`.
+
+Next, let's learn how to build the SDK and generate client libraries.
 
 ## Building an SDK for Custom Portlet Services
 
