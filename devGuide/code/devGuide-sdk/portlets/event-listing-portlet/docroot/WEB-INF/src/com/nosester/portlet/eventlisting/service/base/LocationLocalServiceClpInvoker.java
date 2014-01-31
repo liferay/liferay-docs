@@ -171,7 +171,7 @@ public class LocationLocalServiceClpInvoker {
 		_methodName58 = "updateLocation";
 
 		_methodParameterTypes58 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
+				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
@@ -354,10 +354,11 @@ public class LocationLocalServiceClpInvoker {
 		if (_methodName58.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			return LocationLocalServiceUtil.updateLocation(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
-				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
-				(com.liferay.portal.service.ServiceContext)arguments[7]);
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
+				(java.lang.String)arguments[4], (java.lang.String)arguments[5],
+				(java.lang.String)arguments[6], (java.lang.String)arguments[7],
+				(com.liferay.portal.service.ServiceContext)arguments[8]);
 		}
 
 		throw new UnsupportedOperationException();
