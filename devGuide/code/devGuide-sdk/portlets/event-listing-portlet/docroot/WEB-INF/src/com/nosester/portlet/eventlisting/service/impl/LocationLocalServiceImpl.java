@@ -72,21 +72,6 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 
 		super.addLocation(location);
 
-		// Resources
-
-		if (serviceContext.isAddGroupPermissions() ||
-			serviceContext.isAddGuestPermissions()) {
-
-			addLocationResources(
-				location, serviceContext.isAddGroupPermissions(),
-				serviceContext.isAddGuestPermissions());
-		}
-		else {
-			addLocationResources(
-				location, serviceContext.getGroupPermissions(),
-				serviceContext.getGuestPermissions());
-		}
-
 		return location;
 	}
 
