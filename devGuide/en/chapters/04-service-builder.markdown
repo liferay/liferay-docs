@@ -743,7 +743,7 @@ the `service.xml` file from your `event-listing-portlet/docroot/WEB-INF` folder.
 By default, the file opens up in the Service Builder Editor. Make sure you are
 in Overview mode. Then click the *Build Services* button near the top-right
 corner of the view. The Build Services button has an image of a document with
-the numerical sequence *0101* in front of it. 
+the numerical sequence *010* in front of it. 
 
 Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
@@ -1305,17 +1305,16 @@ It's always nice to see our current entities. So let's build a view that lists
 the entities. The figure below shows what we want the Location Listing Portlet
 to look like, filled with locations: 
 
-![Figure 4.9: Using AlloyUI and Liferay UI taglibs, we'll be able to create a nice portlet views like this one.](../../images/jsp-list-locations.png)
+![Figure 4.9: Using AlloyUI and Liferay UI taglibs, we'll be able to create a nice portlet view like this one.](../../images/jsp-list-locations.png)
 
 Since this part of our UI will give us a "view" of our location entity
-instances, we'll implement it in a JSP file named `view.jsp`, that we'll keep in
+instances, we'll implement it in a JSP file named `view.jsp` that we'll keep in
 folder `docroot/html/locationlisting`. If you don't have this folder or the
 `view.jsp` file in it, create them. Then, open the `view.jsp` file and replace
 its contents with the following JSP code: 
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
-    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
     <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
     <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
@@ -1326,22 +1325,9 @@ its contents with the following JSP code:
 
     <liferay-theme:defineObjects />
 
-    <potlet:defineObjects />
+    <portlet:defineObjects />
     
     This is the <b>Location Listing Portlet</b> in View mode.
-
-    <%
-        String redirect = PortalUtil.getCurrentURL(renderRequest);
-    %>
-
-    <aui:button-row>
-        <portlet:renderURL var="addLocationURL">
-            <portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
-            <portlet:param name="redirect" value="<%= redirect %>" />
-        </portlet:renderURL>
-    
-        <aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
-    </aui:button-row>
 
     <liferay-ui:search-container emptyResultsMessage="There are no locations to display">
         <liferay-ui:search-container-results
@@ -1395,8 +1381,8 @@ uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>` directive
 specifies the location of Liferay's theme tag library descriptor (TLD) and the
 namespace prefix to use with its tags. In our JSP, we've also specified
 directives for the Portlet 2.0 and Liferay UI taglibs. Lastly, we specified
-directives to import the PortalUtil, Location, and LocationLocalServiceUtil
-classes, as we're using in the JSP. 
+directives to import the `PortalUtil`, `Location`, and
+`LocationLocalServiceUtil` classes, as we're using in the JSP. 
 
 Below the page import directives, we have a couple interesting tags:
 `<liferay-theme:defineObjects />` and `<portlet:defineObjects />`. These tags
@@ -1405,12 +1391,12 @@ and the portal's theme.
 
 <!-- We should elaborate on these objects. - Jim-->
 
-After outputing text that identifies the portlet, we get into the real "meat" of
-our JSP. We use Liferay's `<liferay-ui:search-container>` tag to return
+After outputting text that identifies the portlet, we get into the real "meat"
+of our JSP. We use Liferay's `<liferay-ui:search-container>` tag to return
 location entities from the database and list them in a table. The search
 container calls `LocationLocalServiceUtil` to get the locations. It then renders
 one instance of the `com.nosester.portlet.eventlisting.model.Location` class per
-table row. Each location is identified by it's `locationId` and each of a
+table row. Each location is identified by its `locationId` and each of a
 location's attributes are rendered in columns via the
 `<liferay-ui:search-container-column-text>` tags. 
 
@@ -1528,8 +1514,8 @@ to the `edit_location.jsp`:
 This code adds a button that redirects the user to the `edit_location.jsp` via
 the MVC path value `/html/locationlisting/edit_location.jsp`. It also includes
 the current URL, the URL of the `view.jsp`, with the request so that the
-`edit_location.jsp` can redirect the user back to the view after the user
-completes adding the new location. 
+`edit_location.jsp` can redirect the user back to the view after the user adds
+the new location. 
 
 Now that we've implemented a JSP for adding/editing locations and we've provided
 a button for users to click on to access that JSP, we must redeploy the portlet
@@ -1544,15 +1530,15 @@ displayed in the `view.jsp`.
 
 ![Figure 4.12: Note the new *Add Location* button in your Location Listing Portlet.](../../images/jsp-list-locations-with-no-action-button.png)
 
-Well, as we've mentioned before, we not only want to add new locations but we
-also want to edit *existing* locations. In addition, we want to be able to delete
+As we've mentioned before, we not only want to add new locations, but we also
+want to edit *existing* locations. In addition, we want to be able to delete
 locations. Let's provide a way for users to edit and delete individual
-locations. In the view we'll display a dropdown button that lets a user edit or
+locations. In the view, we'll display a dropdown button that lets a user edit or
 delete the applicable location. We'll create a JSP to handle each action request
 and send each request to the portlet. 
 
-Let's start by creating an action JSP called `location_action.jsp`. Create a
-file called `location_action.jsp` in the `/html/locationlisting` folder. Then
+Let's start by creating an action JSP called `location_actions.jsp`. Create a
+file called `location_actions.jsp` in the `/html/locationlisting` folder. Then
 copy the following contents into that JSP: 
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -1596,17 +1582,17 @@ copy the following contents into that JSP:
         <liferay-ui:icon-delete url="<%= deleteURL.toString() %>" />
     </liferay-ui:icon-menu>
 
-The above code from the `location_action.jsp` extracts the location information
+The above code from the `location_actions.jsp` extracts the location information
 from the request object. Then it provides an icon for editing the location and
 an icon for deleting the location. The user is redirected to the
-`edit_location.jsp` if he clicks on the edit icon. If the user clicks on the
+`edit_location.jsp` if they click on the edit icon. If the user clicks on the
 delete icon, a request is sent to the portlet to delete the location and the
-user is redirected to the `view.jsp`. Now that the `location_action.jsp` is
+user is redirected to the `view.jsp`. Now that the `location_actions.jsp` is
 implemented, let's link it to the `view.jsp`. 
 
 We'll fit the `view.jsp` with a container to render the edit and delete icons we
-implemented in the `location_action.jsp`. To do so, add the following element in
-the `view.jsp`, just before the closing `</liferay-ui:search-container-row>`
+implemented in the `location_actions.jsp`. To do so, add the following element
+in the `view.jsp`, just before the closing `</liferay-ui:search-container-row>`
 tag: 
 		
     <liferay-ui:search-container-column-jsp
@@ -1614,11 +1600,11 @@ tag:
         path="/html/locationlisting/location_actions.jsp"
     />
 
-The `<liferay-ui:search-container-column-jsp>` tag, displays the actions
+The `<liferay-ui:search-container-column-jsp>` tag displays the *Actions*
 button, which presents the user with the action icons implemented in the
 `location_actions.jsp`. 
 
-Now that you have your actions button in place, redeploy your portlet and
+Now that you have your *Actions* button in place, redeploy your portlet and
 refresh its view in your browser. Notice the fancy *Actions* button for each
 location. Try editing a location and deleting a location. 
 
@@ -1628,7 +1614,7 @@ location. Try editing a location and deleting a location.
 
 Great job creating the Location Listing Portlet's UI!
 
-In case you're interested the finished event-listing-portlet example project,
+In case you're interested, the finished event-listing-portlet example project,
 including the UIs of the Location Listing Portlet and Event Listing Portlet, is
 available in the
 [Dev Guide SDK](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk) 
@@ -1637,8 +1623,8 @@ in the SDK's
 folder. 
 
 Next, let's learn how to call core Liferay services. Calling core Liferay
-services in your portlet is just as easy as calling your project's services that
-you generated via Service Builder.
+services in your portlet is just as easy as calling your project's services you
+generated via Service Builder.
 
 ## Calling Liferay Services [](id=call-liferay-services-liferay-portal-6-2-dev-guide-04-en)
 
