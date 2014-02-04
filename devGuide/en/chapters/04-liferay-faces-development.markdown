@@ -3,11 +3,11 @@
 ![Liferay Faces logo](../../images/04-liferay-faces-logo.png)
 
 Do you want to develop MVC-based portlets using the Java EE standard? Do you
-want use a portlet development framework that provides a UI component model that
-makes it easy to develop sophisticated, rich UIs? Or, have you been developing
+want to use a portlet development framework with a UI component model that
+makes it easy to develop sophisticated, rich UIs? Or have you been writing 
 web apps using JSF that you'd like to use in Liferay Portal? If you answered yes
 to any of these questions, you're in luck! *Liferay Faces* provides all of these
-capabilities, and more. 
+capabilities and more. 
 
 Liferay Faces is an umbrella project that provides support for the
 JavaServer&#8482; Faces (JSF) standard within Liferay Portal. It encompasses the
@@ -32,7 +32,7 @@ Here some reasons why to use JSF and Liferay Faces:
 
 - JSF is the Java EE standard for developing web applications that utilize the
 Model/View/Controller (MVC) design pattern. As a standard, the specification is
-actively maintained by the JCP and the Oracle reference implementation (Mojarra)
+actively maintained by the JCP, and the Oracle reference implementation (Mojarra)
 has frequent releases. Software Architects often choose standards like JSF
 because they are supported by Java EE application server vendors and have a
 guaranteed service-life according to Service Level Agreements (SLAs).
@@ -61,16 +61,16 @@ reusable UI components that are encapsulated as markup.
 - JSF provides the Faces Flows feature which makes it easy for developers to
 create wizard-like applications that flow from view-to-view. 
 - JSF has good integration with dependency injection frameworks such as CDI and
-Spring that makes it easy for developers to create beans that are placed within
-a scope managed by a container: @RequestScoped, @ViewScoped, @SessionScoped,
-@FlowScoped
+Spring that make it easy for developers to create beans that are placed within
+a scope managed by a container: `@RequestScoped`, `@ViewScoped`,
+`@SessionScoped`, `@FlowScoped`
 - Since JSF is a stateful technology, the framework encapsulates the
 complexities of managing application state so that the developer doesn't have to
 write state management code. It is also possible to use JSF in a stateless
 manner, but some of the features of application state management become
 effectively disabled.
 
-There are some cases of why or when not to use JSF. For example, if you are a
+There are some reasons not to use JSF. For example, if you are a
 front-end developer who makes heavy use of HTML/CSS/JavaScript, you might find
 that JSF UI components render HTML in a manner that gives you less control over
 the overall HTML document. So, sticking with JavaScript and leveraging
@@ -78,46 +78,41 @@ AlloyUI may be better for you. Or, perhaps standards aren't a major
 consideration for you or you may simply prefer developing portlets using your
 current framework. 
 
-Whether you develop your next portlet application with JSF with Liferay Faces
+Whether you develop your next portlet application with JSF and Liferay Faces
 or with HTML/CSS/JavaScript is entirely up to you. But you probably want to
-learn more about Liferay Faces and try it out for yourself. And you'll do just
-those things throughout the sections ahead. 
+learn more about Liferay Faces and try it out for yourself. That's where this
+chapter is headed. You'll start with the basics: how to use the bridge to develop
+your own JSF portlet applications. From there, you'll learn how the Liferay
+Faces Bridge works. After this, you'll examine using Liferay UI Components and
+Utilities in JSF applications. From this, you'll be ready to graduate on to
+leveraging AlloyUI components using Liferay Faces Alloy. Finally, you'll see how
+to migrate an existing project to Liferay Faces, and for those who want to
+contribute to the Liferay Faces project, you'll learn how to build Liferay Faces
+from source. 
 
-In the Liferay Faces documentation, we'll cover the following topics:
-
-- Developing JSF Portlets
-- Understanding Liferay Faces Bridge
-- Leveraging Liferay UI Components and Utilities with Liferay Faces Portal
-- Leveraging AlloyUI Components with Liferay Faces Alloy
-- Understanding the Liferay Faces Version Scheme
-- Migrating to Liferay Faces
-- Building Liferay Faces From Source
-
-We'll guide you through developing portlets with Liferay Faces and introduce you
-to each of the Liferay Faces projects: Liferay Faces Bridge, Liferay Faces
-Alloy, and the Liferay Faces Portal Projects. We'll explain everything from
-choosing the correct Liferay Faces Version for your project, to updating your
-project from PortletFaces to Liferay Faces. 
+Your first task, however, is to learn how to develop portlets with Liferay
+Faces. This will introduce you to each of the Liferay Faces projects: Liferay
+Faces Bridge, Liferay Faces Alloy, and the Liferay Faces Portal Projects. We'll
+explain everything from choosing the correct Liferay Faces Version for your
+project, to updating your project from PortletFaces to Liferay Faces. 
 
 Let's start developing JSF portlets using Liferay Faces. 
 
 ## Developing JSF Portlets [](id=develop-jsf-portlets-liferay-portal-6-2-dev-guide-en)
 
-Liferay fully supports developing and deploying JSF portlets on Liferay Portal,
-with the help of Liferay Faces Bridge. Liferay Faces Bridge provides the means
-for deploying JSF portlets on Liferay Portal. In fact, the bridge supports
+Liferay supports developing and deploying JSF portlets on Liferay Portal, with
+the help of Liferay Faces Bridge. Liferay Faces Bridge provides the means for
+deploying JSF portlets on Liferay Portal. In fact, the bridge supports
 deployment of JSF web applications as portlets on any JSR 286 (Portlet 2.0)
-compliant portlet containers, like Liferay Portal 5.2, 6.0, 6.1, and 6.2.
-Liferay Faces Bridge not only implements the JSR 329 Portlet Bridge Standard,
-but it also contains innovative features that make it possible to leverage the
-power of JSF 2.x inside a portlet application. Liferay Faces Bridge makes the
-JSF portlet development experience as close as possible to JSF web app
-development. We'll take you through the portlet development process and show you
-how to leverage Liferay Faces Bridge's full potential with your JSF portlets.
+compliant portlet container, like Liferay Portal 5.2, 6.0, 6.1, and 6.2.
+Liferay Faces Bridge makes the JSF portlet development experience as close as
+possible to JSF web app development. We'll take you through the portlet
+development process and show you how to leverage Liferay Faces Bridge's full
+potential with your JSF portlets.
 
 In this section, we'll demonstrate how to develop JSF portlets with the standard
-features you expect and additional features you'll appreciate for building JSF
-portlets that are powerful and easy to maintain. 
+features you expect, as well as additional features that'll help you build JSF
+applications that are powerful and easy to maintain. 
 
 Here are the topics we'll cover: 
 
