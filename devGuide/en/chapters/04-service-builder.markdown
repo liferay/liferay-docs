@@ -905,15 +905,17 @@ class:
         return event;
     }	
 
-Remember to import the required classes. These include the following:
+Remember to import the required classes. For your convenience, you can copy the
+following imports into your class: 
 
-    com.nosester.portlet.eventlisting.model.Event
-    com.liferay.portal.kernel.exception.PortalException
-    com.liferay.portal.kernel.exception.SystemException
-    com.liferay.portal.model.User
-    com.liferay.portal.service.ServiceContext
-    java.util.Date
-    java.util.List
+    import java.util.Date;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.ServiceContext;
+    import com.nosester.portlet.eventlisting.model.Event;
 
 In order to add an Event to the database, you need an ID for the Event. Liferay
 provides a counter service which you call to obtain a unique ID for each new
@@ -966,14 +968,114 @@ later. We'll cover the details of adding resources in the [Asset
 Framework](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en)
 section. 
 
-Since events require event locations, let's create a local service
-implementation for the Location entity, too. In your
-`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/` folder,
-create a Java source file named `LocationLocalServiceImpl.java`. Copy the
-contents of the
-[`LocationLocalServiceImpl.java`](https://raw2.github.com/liferay/liferay-docs/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/LocationLocalServiceImpl.java)
-solution source file into the `LocationLocalServiceImpl.java` file you just
-created. Your local service implementations for events and locations are ready
+Since events require event locations, let's implement the local services for the
+Location entity, too. Open your `LocationLocalServiceImpl.java` file in your
+`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/` folder
+and add the following methods:  
+
+    public Location addLocation(
+            long userId, long groupId, String name, String description,
+            String streetAddress, String city, String stateOrProvince,
+            String country, ServiceContext serviceContext)
+    throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
+        Date now = new Date();
+
+        long locationId =
+            counterLocalService.increment(Location.class.getName());
+
+        Location location = locationPersistence.create(locationId);
+
+        location.setName(name);
+        location.setDescription(description);
+        location.setStreetAddress(streetAddress);
+        location.setCity(city);
+        location.setStateOrProvince(stateOrProvince);
+        location.setCountry(country);
+
+        location.setGroupId(groupId);
+        location.setCompanyId(user.getCompanyId());
+        location.setUserId(user.getUserId());
+        location.setCreateDate(serviceContext.getCreateDate(now));
+        location.setModifiedDate(serviceContext.getModifiedDate(now));
+
+        super.addLocation(location);
+
+        return location;
+    }
+
+    public Location deleteLocation(Location location)
+        throws SystemException {
+
+        return locationPersistence.remove(location);
+    }
+
+    public Location deleteLocation(long locationId)
+        throws PortalException, SystemException {
+
+        Location location = locationPersistence.fetchByPrimaryKey(locationId);
+
+        return deleteLocation(location);
+    }
+
+    public List<Location> getLocationsByGroupId(long groupId)
+        throws SystemException {
+
+        return locationPersistence.findByGroupId(groupId);
+    }
+
+    public List<Location> getLocationsByGroupId(
+            long groupId, int start, int end)
+        throws SystemException {
+
+        return locationPersistence.findByGroupId(groupId, start, end);
+    }
+
+    public int getLocationsCountByGroupId(long groupId) throws SystemException {
+
+        return locationPersistence.countByGroupId(groupId);
+    }
+
+    public Location updateLocation(
+            long userId, long locationId, String name, String description,
+            String streetAddress, String city, String stateOrProvince,
+            String country, ServiceContext serviceContext)
+        throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
+        Date now = new Date();
+
+        Location location = locationPersistence.findByPrimaryKey(locationId);
+
+        location.setName(name);
+        location.setDescription(description);
+        location.setStreetAddress(streetAddress);
+        location.setCity(city);
+        location.setStateOrProvince(stateOrProvince);
+        location.setCountry(country);
+        location.setModifiedDate(serviceContext.getModifiedDate(now));
+
+        super.updateLocation(location);
+
+        return location;
+    }
+
+Make sure to add the following imports:
+
+    import java.util.Date;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.ServiceContext;
+    import com.nosester.portlet.eventlisting.model.Location;
+    import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
+
+Your local service implementations for events and locations are ready
 for action. 
 
 Before you can use any custom methods that you added to the
@@ -1148,9 +1250,89 @@ ones we implemented in the `EventListingPortlet` class. Create file
 `LocationListingPortlet.java` in your
 `docroot/WEB-INF/src/com/nosester/portlet/eventlisting` folder, if it doesn't
 already exist. Open your `LocationListingPortlet.java` file and replace its
-contents with the contents of the
-[`LocationListingPortlet.java`](https://raw2.github.com/liferay/liferay-docs/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/LocationListingPortlet.java) 
-solution source file. 
+contents with the following code: 
+
+    package com.nosester.portlet.eventlisting;
+
+    import javax.portlet.ActionRequest;
+    import javax.portlet.ActionResponse;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.log.Log;
+    import com.liferay.portal.kernel.log.LogFactoryUtil;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+    import com.nosester.portlet.eventlisting.model.Location;
+    import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
+
+    public class LocationListingPortlet extends MVCPortlet {
+
+        public void addLocation(ActionRequest request, ActionResponse response)
+                throws Exception {
+
+            _updateLocation(request);
+
+            sendRedirect(request, response);
+        }
+
+        public void deleteLocation(ActionRequest request, ActionResponse response)
+            throws Exception {
+
+            long locationId = ParamUtil.getLong(request, "locationId");
+
+            LocationLocalServiceUtil.deleteLocation(locationId);
+
+            sendRedirect(request, response);
+        }
+
+        public void updateLocation(ActionRequest request, ActionResponse response)
+            throws Exception {
+
+            _updateLocation(request);
+
+            sendRedirect(request, response);
+        }
+
+        private Location _updateLocation(ActionRequest request)
+                throws PortalException, SystemException {
+
+            long locationId = (ParamUtil.getLong(request, "locationId"));
+            String name = (ParamUtil.getString(request, "name"));
+            String description = (ParamUtil.getString(request, "description"));
+            String streetAddress = (ParamUtil.getString(request, "streetAddress"));
+            String city = (ParamUtil.getString(request, "city"));
+            String stateOrProvince = (ParamUtil.getString(request, "stateOrProvince"));
+            String country = (ParamUtil.getString(request, "country"));
+
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    Location.class.getName(), request);
+
+            Location location = null;
+
+            if (locationId <= 0) {
+
+                location = LocationLocalServiceUtil.addLocation(
+                    serviceContext.getUserId(), serviceContext.getScopeGroupId(), name, description,
+                    streetAddress, city, stateOrProvince, country, serviceContext);
+            }
+            else {
+                location = LocationLocalServiceUtil.getLocation(locationId);
+    
+                location = LocationLocalServiceUtil.updateLocation(
+                        serviceContext.getUserId(), locationId, name,
+                        description, streetAddress, city, stateOrProvince, country,
+                        serviceContext);
+            }
+
+            return location;
+        }
+
+        private static Log _log = LogFactoryUtil.getLog(LocationListingPortlet.class);
+
+    }
 
 We've demonstrated how to call the local services generated by Service Builder
 in our project's `-Portlet` classes. Next, let's learn how to how to call
@@ -1480,11 +1662,10 @@ displaying text to indicate that we're populating a new location's fields.
 
 We use AlloyUI's `<aui:form>` tag to present a form for the user to fill in for
 the location and submit. It presents various location fields via `<aui:input>`
-tags. Each one uses a name that the
-[`LocationPortlet`](https://github.com/liferay/liferay-docs/blob/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/LocationListingPortlet.java)
-class references. Lastly, we include a button for users to submit the form to
-the portlet. The attributes specified for the button redirect control to the
-`view.jsp` via the `viewLocationURL` variable. 
+tags. Each one uses a name that the `LocationListingPortlet` class references.
+Lastly, we include a button for users to submit the form to the portlet. The
+attributes specified for the button redirect control to the `view.jsp` via the
+`viewLocationURL` variable. 
 
 Now that we've implemented the `edit_location.jsp`, we must provide a way for
 users to get to it. Let's add a button to the `view.jsp`, that redirects control
@@ -1585,8 +1766,8 @@ copy the following contents into that JSP:
 The above code from the `location_actions.jsp` extracts the location information
 from the request object. Then it provides an icon for editing the location and
 an icon for deleting the location. The user is redirected to the
-`edit_location.jsp` if they click on the edit icon. If the user clicks on the
-delete icon, a request is sent to the portlet to delete the location and the
+`edit_location.jsp` if the user clicks on the edit icon. If the user clicks on
+the delete icon, a request is sent to the portlet to delete the location and the
 user is redirected to the `view.jsp`. Now that the `location_actions.jsp` is
 implemented, let's link it to the `view.jsp`. 
 
