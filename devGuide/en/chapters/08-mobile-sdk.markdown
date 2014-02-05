@@ -1,22 +1,26 @@
-
 # Leveraging the Mobile SDK
 
-The Liferay Mobile SDK is a framework for building native mobile apps that
-integrate with your different Liferay Portal instances and their portlets. The
-SDK provides the means for your mobile apps to easily consume Liferay Portal's
-core web services and the web services of your custom portlets. It wraps Liferay
-JSON web services, takes care of authentication, makes REST (Representational
-State Transfer) requests (synchronously or asynchronously), parses JSON results,
-and handles server side exceptions.
+The Liferay Mobile SDK is a framework that provides the means for your native
+mobile apps to easily consume Liferay Portal's core web services and custom
+portlet web services. It wraps Liferay JSON web services, making them accessible
+for mobile apps. It takes care of authentication, makes
+[RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) requests
+(synchronously or asynchronously), parses JSON results, and handles server side
+exceptions, so you can concentrate on using the services in your app. 
 
 The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later, and it
-comes with the Liferay Android SDK and Liferay iOS SDK ready for you to download
-and use. You can view more about the Liferay Mobile SDK by navigating to its
-[Official
-Project](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
-page. For an illustration for how the mobile SDK works, view Figure 8.1.
+comes with the Liferay Android SDK and Liferay iOS SDK ready, for you to
+download and use. The mobile SDK's official [project
+page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
+gives you access to the SDK releases to download, provides the latest SDK news,
+and has forums for you to engage in mobile app development discussions. 
 
-![Figure 8.1: The mobile SDK allows your native app to access Liferay services.](../../images/mobile-sdk-diagram.png)
+<!-- For an illustration for how the mobile SDK works, see Figure 8.1. -->
+
+<!-- Leave out Liferay IDE/Studio images and references until the integration
+is ready. - Jim -->
+<!--
+![Figure 8.1: Liferay's Mobile SDK acts as a bridge allowing your native app to communicate with Liferay services and utilities.](../../images/mobile-sdk-diagram.png)
 
 The illustration displays the general process that links the mobile SDK with
 your native app. You can create and edit you app using Liferay Developer Studio.
@@ -24,10 +28,17 @@ Once the app is created, it can send and receive requests to/from the Liferay
 Mobile SDK to enable access to Liferay services. The SDK provides a bridge to
 your Liferay instance where you can access hidden complexities like
 authentication, permissions, remote service calls, and JSON-wrapped results.
+-->
 
-In this chapter, we'll provide information about this process for the
-development of Android and iOS apps. We'll discuss the following topics as we
-explore Liferay's Mobile SDK:
+<!-- Note, the paragraph above seems to repeat what's already been said in the
+chapter's first paragraph. I think the bridge analogy is helpful, so I added it
+to the figure caption. When Studio is ready, perhaps we could say more about
+that. But as it stands now, I think we can do without most of the content from
+this paragraph. - Jim -->
+
+In this chapter, we'll demonstrate developing Android and iOS apps that
+communicate with Liferay via the mobile SDK. We'll discuss the following topics
+as we learn how to use Liferay's Mobile SDK:
 
 - Using the Android SDK
 - Using the iOS SDK
@@ -38,17 +49,17 @@ Android app.
 
 ## Using the Android SDK
 
-Suppose you're creating an Android app and would like to access some of
-Liferay's core services. All you'll need to do is download the SDK and you'll
-immediately be able to access Liferay's core services. If you'd
-like to invoke remote web services, you'll need to generate the client
-libraries. You can learn more about the SDK builder and how to generate
-libraries by visiting the *Building an SDK for Custom Portlet Services* section
-of this chapter.
+Suppose you're creating an Android app and you'd like to access some of
+Liferay's core services. All you need to do is download the SDK and put it in
+your classpath, and you can access the services immediately. If you want to
+invoke custom portlet web services, you'll need to generate client libraries
+for them. You can learn more about generating these libraries by reading the
+*Building an SDK for Custom Portlet Services* section. 
 
-Let's get started by downloading the Android SDK!
+Let's get started by downloading the Android SDK and configuring it in your
+Android environment! 
 
-### Downloading the Android SDK
+### Setting Up the Android SDK
 
 As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
@@ -65,164 +76,197 @@ https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
 Once you've downloaded your JAR file, insert it into the `/libs` directory of
 your Android project. Android Developer Tools should automatically add this JAR
 to your classpath. If you're using a different IDE, make sure this JAR is added
-to the project classpath. Now import your classes and begin using the SDK!
+to the project classpath. Now, you'll be able to import the SDK classes for your
+app to use. 
 
-Great! Now let's move on to configuring the SDK.
+Great! Now let's start accessing Liferay services from your app. 
 
-### Configuring the Android SDK
+### Accessing Services from Your Android App
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
-your Android project, let's configure your app to use the SDK. In the following
-example, we'll reference the [Liferay Mobile SDK Sample
-Android](https://github.com/brunofarache/liferay-mobile-sdk-sample-android)
-app's configuration and then demonstrate how it accesses Liferay services.
+your Android project's classpath, let's consider how to access and invoke
+Liferay services from within an Android application. Here are the steps to
+follow: 
 
-1. Create a `Session` with the user credentials. For example, the sample app
-   creates the session in the
-   [UsersAsyncTask](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
-   class as follows:
+1. Create a session.
+2. Import the Liferay services for your app to use.
+3. Create a service object and call it's service methods.
 
-        Session session = new SettingsUtil.getSession();
-        
-    The `getSession()` method returns the following:
-        
-        SessionImpl("http://10.0.2.2:8080", "test@liferay.com", "test");
+We'll show how the [Liferay Mobile SDK Sample Android
+App](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/tree/1.0.0)
+demonstrates these steps. In particular, we'll outline the steps that its
+[`UsersAsyncTask`](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+class takes in accessing and calling Liferay services. In your app, you can
+follow these steps too. 
 
-    The session is a conversion state between the client and server, which
-    consists of multiple requests and responses between the two. We need a
-    session to pass requests between the mobile SDK and your app. This code uses
-    user authentication to pass information between the Liferay instance and the
-    user to maintain the session.
+#### Step 1: Create a session
 
-    The first parameter is the URL of the Liferay instance you're connecting to.
-    If you're running your app on an Android Emulator, it points to your local
-    Liferay instance. In this particular case, `http://10.0.2.2:8080` is
-    equivalent to `http://localhost:8080`, which means the emulator and Liferay
-    are running in the same machine.
+The session is a conversion state between the client and server, which
+consists of multiple requests and responses between the two. We need a
+session to pass requests between your app and the mobile SDK. 
 
-    The second parameter can be the user's email address, screen name, or user
-    ID. It depends on which authentication method your Liferay instance is
-    using. The default authentication method requires the user's email address.
+The sample app establishes a session by means of user authentication. It creates
+the session in the
+[UsersAsyncTask](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+class as follows:
 
-    Lastly, the third parameter is the user's password.
-    
-    ---
-    
-    ![Note](../../images/tip-pen-paper.png) **Warning:** Be careful to use these
-    credentials on a production Liferay instance. If you're using the
-    administrator credentials, you have permission to call any service and can
-    change any data by accident.
-    
-    ---
+	Session session = new SettingsUtil.getSession();
+  
+The `getSession()` method returns a `Session` instantiated like this: 
 
-2. Check which Liferay services you need to build your app by navigating to
-   [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). This
-   page lists all available portal services and plugin services. For our sample
-   app example, we'll build a contacts app and import `UserService`.
+	SessionImpl("http://10.0.2.2:8080", "test@liferay.com", "test");
 
-        import com.liferay.mobile.android.v62.user.UserService;
+Here's an explanation of each of the session parameter:
 
-    Since the SDK is built for a specific Liferay version, service classes are
-    separated by their package name. In this case, it's `.v62`, which means this
-    SDK is built for Liferay 6.2. You can use several SDKs at the same time to
-    support different Liferay versions.
+  - *Server:* The URL of the Liferay instance you're connecting to. If
+  you're running your app on an Android Emulator, the URL should point to your
+  local Liferay instance. In this particular case, `http://10.0.2.2:8080` is
+  equivalent to `http://localhost:8080`, which means the emulator and
+  Liferay are running on the same machine.
 
-3. Create a `UserService` object and make a service call:
+  - *Username:* Can either be the user's email address, screen name, or
+  user ID. Your session login user name must be consistent with the
+  authentication method your Liferay instance is using. Liferay's default
+  authentication method requires the user's email address.
 
-        UserService userService = new UserService(session);
+  - *Password:* The user's password.
 
-        ...
-        
-        long groupId = getGuestGroupId(session);
+---
 
-		JSONArray jsonArray = userService.getGroupUsers(groupId);
-			
-		for (int i = 0; i < jsonArray.length(); i++) {
-			JSONObject jsonObj = jsonArray.getJSONObject(i);
-				
-			users.add(new User(jsonObj));
-		}
+![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using these
+administrator credentials on a production Liferay instance, as you'll have
+permission to call any service. Make sure not to modify data accidentally. 
 
-    This code fetches all the users from the site with the `groupId`, which is
-    specified in the `getGroupUsers()` method above.
+---
 
-    This is a basic example of a synchronous service call; the method only
-    returns after the request is finished. Service method return types can be
-    `void`, `String`, `JSONArray`, and `JSONObject`. Primitive type wrappers can
-    be `Boolean`, `Integer`, `Long`, and `Double`.
-    
-    ---
-    
-    ![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
-    require `groupId` as a parameter. You can get the user's groups by calling
-    the `getUserSites()` method from `GroupService`. In our previous example,
-    the `getGuestGroupId(session)` method does this by retrieving the user's
-    group.
-    
-    ---
-    
-    As you'll notice when studying our sample app, there are several other
-    moving parts to make this app work. However, our demonstration showed the
-    basic process of accessing Liferay services through the mobile SDK. Now
-    let's take a look at how this app works.
+#### Step 2: Import the Liferay services for your app to use. 
 
-To test our sample *Contacts App*, you'll need to do the following:
+Being a contacts app, the sample app imports the mobile SDK's `UserService`
+class to connect to Liferay Portal's
+[`UserService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/UserService.html):
+
+	import com.liferay.mobile.android.v62.user.UserService; 
+
+Note, the Liferay version (`.v62`) is used in the package namespace. Since the
+SDK is built for a specific Liferay version, service classes are separated by
+their package name. In this example, our mobile SDK classes use the `.v62`
+package, which means this SDK is compatible with Liferay 6.2. But, you can use
+several SDKs in your classpath simultaneously to support different Liferay
+versions. 
+
+Your portal's JSON web services page (e.g.,
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
+lists all available portal services and portlet services. 
+
+#### Step 3: Create a service object and call its service methods.
+
+The sample app creates a `UserService` object and calls its
+`getGroupUsers(...)` method to fetch all of the `Guest` site's users:
+
+	UserService userService = new UserService(session);
+
+	...
+
+	long groupId = getGuestGroupId(session);
+
+	JSONArray jsonArray = userService.getGroupUsers(groupId);
+
+	for (int i = 0; i < jsonArray.length(); i++) {
+		JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+		users.add(new User(jsonObj));
+	}
+
+Since the `userService.getGroupUsers(...)` method requires a site group ID, we
+invoke the method `getGuestGroupId(session)` of the sample app's
+[`UsersAsyncTask`](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+class to get the `Guest` site's group ID, and then we pass that group ID as
+the `groupId` parameter in the call `userService.getGroupUsers(groupId)`. 
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+require a group ID as a parameter. The SDK's `GroupService` class, which uses
+Liferay Portal's
+[`GroupService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html),
+provides methods for getting a site's `Group` and other scope groups. 
+
+---
+
+The call `JSONArray jsonArray = userService.getGroupUsers(groupId)`
+demonstrates making a basic synchronous service call; the method only
+returns after the request has finished. 
+
+Service method return types can be `void`, `String`, `JSONArray`, and
+`JSONObject`. Primitive type wrappers can be `Boolean`, `Integer`, `Long`,
+and `Double`. 
+
+So far we've explained the basic process of accessing Liferay services through
+the mobile SDK. Now let's test the sample *Contacts App* from our development
+environment. 
+
+### Testing Your Android App in Eclipse
+
+To test the sample *Contacts App*, you'll need to do the following:
 
 1. Install the [Android Developer Tools
-   SDK](http://developer.android.com/sdk/index.html) plugin for IDE.
+   SDK](http://developer.android.com/sdk/index.html) plugin for Eclipse, Liferay
+   Developer Studio, or [Liferay IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en). 
 
 2. Fork and clone the [sample
-   app](https://github.com/brunofarache/liferay-mobile-sdk-sample-android) from
-   Github. Follow the [Fork A
-   Repo](https://help.github.com/articles/fork-a-repo) instructions for details.
+   app](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/tree/1.0.0)
+   from GitHub. If you're unfamiliar with GitHub and need help forking and
+   cloning the repository, follow the [Fork A
+   Repo](https://help.github.com/articles/fork-a-repo) instructions. 
 
-3. Import the sample app project into IDE. You can complete this process by
-   right-clicking in the *Package Explorer* and selecting *Import*. Then select
-   *General* &rarr; *Existing Projects into Workspace* and browse and select the
-   sample app project. Then click *Finish*.
+3. Import the sample app project into your Eclipse instance. You can complete
+   this process by right-clicking in the *Package Explorer* and selecting
+   *Import*. Then select *General* &rarr; *Existing Projects into Workspace* and
+   browse and select the sample app project. Then click *Finish*. 
 
 4. Configure an *Android Virtual Device* by following the
    [instructions](http://developer.android.com/tools/devices/index.html)
-   provided by Android.
+   provided by Android. 
 
-5. Make sure to have a local Liferay instance running on
-   [localhost:8080](localhost:8080).
+5. Make sure to start a Liferay instance on [localhost:8080](localhost:8080).
 
 6. Run the emulator by selecting the project, and clicking *Run* &rarr; *Run As*
    &rarr; *Android Application*.
 
-7. Navigate through the emulator to the *Liferay Contacts* app. You should see a
-   list of the users of your Liferay site.
+7. Navigate through the emulator to the *Liferay Contacts* app, to see it list
+   your Liferay site's users. You can select an individual user and view that
+   user's personal information.
 
-![Figure 8.2: The sample *Contacts App* provides the users of your local Liferay instance.](../../images/liferay-contacts-app.png)
+    ![Figure 8.2: The sample *Contacts App* lets you view the users of your local Liferay instance.](../../images/liferay-contacts-app.png)
 
-Notice you can also select an individual user and view their personal
-information. Great work!
+Great work!
 
-Next, we'll talk about different kinds of requests that are allowed between your
-Android app and the Liferay mobile SDK.
+Next, we'll explore making asynchronous HTTP requests to your portal's services.
 
-### Using Asynchronous HTTP Requests for Android
+### Invoking Services Asynchronously from Your Android App
 
-Asynchronous requests allow your app to continue processing without
-interruption, and is notified when its request to the SDK is returned. On the
-other hand, synchronous requests must wait for a response before the app can
-continue its processing. Android doesn't allow synchronous HTTP requests from
-the main UI thread. You can only make synchronous requests from different
-threads; for example, from within an
-[AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html).
+Android doesn't allow making synchronous HTTP requests from the main UI thread.
+Synchronous HTTP requests must be made from threads other than the main UI
+thread. For example, they can be made from an `AsyncTask` instance. 
 
-Therefore, the other option is to make asynchronous HTTP requests if you don't
-want to create an `AsyncTask` yourself. It makes the service call from an
-`AsyncTask` and you can pass a callback that is invoked after the request
-finishes.
+The SDK can help you make asynchronous HTTP requests if you don't
+want to create an `AsyncTask` yourself. Simply implement a callback class,
+instantiate it, and set the callback instance on the session. When the SDK makes
+your service calls for that session, it makes them asynchronously. To make
+synchronous calls again, set `null` as the session's callback. 
 
-You can set a callback class implementation to the session for the following
-service calls to be asynchronous. Set it back to null if you want to make
-synchronous calls again.
+The following steps outline how to implement asynchronous requests in your app: 
+
+1. Implement and instantiate your callback class.
+2. Set the callback on the session.
+5. Call Liferay services.
+
+The following code is an implementation of these steps: 
 
     import com.liferay.mobile.android.task.callback.AsyncTaskCallback;
     import com.liferay.mobile.android.task.callback.typed.JSONArrayAsyncTaskCallback;
+
+    ...
 
     AsyncTaskCallback callback = new JSONArrayAsyncTaskCallback() {
 
@@ -239,6 +283,13 @@ synchronous calls again.
     session.setCallback(callback);
     userService.getGroupUsers(groupId);
 
+Let's consider how this code asynchronously invokes the Liferay service. 
+
+It imports the `AsyncTaskCallback` callback class and the callback class
+`JSONArrayAsyncTaskCallback`, which is related to the service's `JSONArray`
+return type. Then it implements and instantiates the callback class. Lastly, it
+sets the callback on the session and calls the Liferay service.
+
 The `onFailure()` method is called if an exception occurs during the request.
 This could be triggered by either a connection exception (e.g., a request
 timeout) or a `ServerException`. If a `ServerException` occurs, it's because
@@ -252,12 +303,12 @@ return type: `JSONObjectAsyncTaskCallback`, `JSONArrayAsyncTackCallback`,
 `IntegerAsyncTaskCallback`, `LongAsyncTaskCallback`, and
 `DoubleAsyncTaskCallback`. All you'll need to do is pick the appropriate
 implementation for your service method return type. In the example code snippet
-above since `getGroupUsers` returns a `JSONArray`, you must use the
-`JSONArrayAsyncTaskCallback` instance.
+above, we used a `JSONArrayAsyncTaskCallback` instance since `getGroupUsers`
+returns a `JSONArray`. 
 
 It's also possible to use a generic `AsyncTaskCallback` implementation called
 `GenericAsyncTaskCallback`. For this implementation, you must implement a
-transform method and handle JSON parsing by yourself.
+transform method and handle JSON parsing yourself.
 
 ---
 
@@ -270,22 +321,23 @@ parameter to the `onPostExecute(JSONArray jsonArray)` method (i.e.,
 ---
 
 After the request has finished, the `onSuccess()` method is called on the main
-UI thread. Since the request is asynchronous, `userService.getGroupUsers`
-returns immediately with a null object. The result will be passed to the
-callback `onSuccess()` method instead.
+UI thread. Since the request is asynchronous, the service call immediately
+returns a `null` object. The service delivers the service's real return value to
+the callback's `onSuccess()` method, instead. 
 
 Besides using synchronous and asynchronous requests, you can also send requests
 using batch processing. Let's learn about this next.
 
-### Sending Android Requests Using Batch Processing
+### Sending Your Android App's Requests Using Batch Processing
 
 The mobile SDK also allows sending requests using batch processing, which can be
-much more efficient in some cases. In summary, batch processing executes a
-series of program jobs without needing manual intervention. For example, suppose
+much more efficient than sending separate requests. For example, suppose
 you want to delete 10 blog entries at the same time; instead of making one
-request for each delete call, you can create a batch of calls and send them all
-together. For example, here is a code snippet from a Blogs app using synchronous
-batch calls:
+request for each deletion, you can create a batch of calls and send them all
+together.
+
+Here is a code snippet from an app that deletes blog entries synchronously as a
+batch: 
 
     import com.liferay.mobile.android.service.BatchSessionImpl;
 
@@ -297,17 +349,17 @@ batch calls:
     service.deleteEntry(3);
 
     JSONArray jsonArray = batch.invoke();
-    
+
 First, the `BatchSessionImpl` session is created. You can either pass
 credentials or pass another session to the constructor. Passing another session
 to the constructor is useful when you already have a `Session` object and want
-to reuse the same credentials. Then, make the service calls as usual. With
-asynchronous calls, these methods would return a null object immediately.
+to reuse the same credentials. Then, it makes service calls as usual. With
+asynchronous calls, these methods would return a `null` object immediately. 
 
-Finally, call the `invoke()` method from the `Session` object. It returns a
-`JSONArray` containing the results for each service call. Since there are three
-`deleteEntry` calls, the `jsonArray` contains three objects. The order of the
-result matches the order of the service calls.
+Finally, it calls the `invoke()` method from the batch session object. It
+returns a `JSONArray` containing the results for each service call. Since there
+are three `deleteEntry` calls, the `jsonArray` contains three objects. The order
+of the result matches the order of the service calls. 
 
 If you want to make batch calls asynchronously, set the callback as a
 `BatchAsyncTaskCallback` instance:
@@ -325,23 +377,24 @@ If you want to make batch calls asynchronously, set the callback as a
 
     });
 
-As you can see, the return type is always a `JSONArray`.
+It's just that easy to make efficient service calls in batch! 
 
-Next, let's dive into using the iOS SDK to access Liferay services!
+Next, let's dive into using the iOS SDK to access Liferay services.
 
 ## Using the iOS SDK
 
 You've just created a custom iOS app and now want your app to access Liferay
-services. How do you access Liferay services from an iOS mobile app? The answer
-is the Liferay iOS SDK. All you need to do is download the SDK and you'll
-immediately be able to access Liferay's core services. If you'd like to invoke
-remote web services, you'll need to generate the client libraries. You can learn
-more about the SDK builder and how to generate client libraries by reading the
-*Building an SDK for Custom Portlet Services* section of this chapter.
+services. How do you access Liferay services from an iOS mobile app? Use
+Liferay's iOS SDK, of course. All you'll need to do is download the SDK and
+you'll immediately be able to access them. If you'd like to invoke remote web
+services, you'll need to generate the client libraries. You can learn more about
+the SDK builder and how to generate client libraries by reading the *Building an
+SDK for Custom Portlet Services* section of this document. 
 
-Let's download the iOS SDK and get your app configured with Liferay services!
+Let's get started by downloading the iOS SDK and configuring it in your iOS
+environment! 
 
-### Downloading the iOS SDK
+### Setting Up the iOS SDK
 
 To install the iOS SDK to your machine, you'll need to download the latest
 version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
@@ -354,75 +407,87 @@ App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
 available:
 https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
 
-After you've downloaded the ZIP file, unzip it into your XCode project. Within
+After you've downloaded the Zip file, unzip it into your XCode project. Within
 XCode, right-click on your project and click *Add Files to <PROJECT_NAME>*.
 Then, add both `core` and `v62` folders. The `v62` folder name can change for
 each Liferay version. In this example, the mobile SDK is built for Liferay 6.2.
 
 Awesome! Let's learn how to configure the SDK next.
 
-### Configuring the iOS SDK
+### Accessing Services from Your iOS App
 
 For your mobile app to access the mobile SDK, you'll need to complete several
-steps. We'll demonstrate these steps by providing access to a sample Blogs app.
-Note that the following code snippets are written in the *Objective C*
-programming language. Let's begin!
+steps:
 
-1. Create a `Session` with user credentials:
+1. Create a session.
+2. Import the Liferay services for your app to use.
+3. Create a service object and call it's services.
 
-        #import "LRSession.h"
+We'll demonstrate these steps by providing access to a sample Blogs app. Note
+that the following code snippets are written in the *Objective C* programming
+language. Let's begin! 
 
-        LRSession *session = [[LRSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
+#### Step 1: Create a session
+
+	#import "LRSession.h"
+
+	LRSession *session = [[LRSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
 
     To learn more about the session and its three parameters, reference the
     *Configuring the Android SDK* section.
+#### Step 2: Import the Liferay services for your app to use.
 
-2. Check which Liferay services you need to build your app by navigating to
-[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). This page
-lists all available portal services and plugin services. For this example, we'll
-import the `BlogsEntryService`.
+For this sample app, we'll import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
-        #import "LRBlogsEntryService_v62.h"
+	#import "LRBlogsEntryService_v62.h"
 
-    Since the SDK is built for a specific Liferay version, service class names
-    have the Liferay version they are built for. In this case, it's `_v62`,
-    which means the SDK is built for Liferay 6.2. You can use several SDKs at
-    the same time to support different Liferay versions.
+Note, the Liferay version (`.v62`) is used in the package namespacing.
+Since the SDK is built for a specific Liferay version, service classes are
+separated by their package name. Our mobile SDK classes use the `.v62`
+package, which means this SDK is compatible with Liferay 6.2. But, you can
+use several SDKs simultaneously to support different Liferay versions.
 
-3. Create an `LRBlogsEntryService_v62` object and make a service call.
+Your portal's JSON web services page (e.g.,
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
+lists all available portal services and plugin services. 
 
-        LRBlogsEntryService_v62 *service = [[LRBlogsEntryService_v62 alloc] init:session];
+#### Step 3: Create a service object and call its services.
 
-        NSError *error;
-        NSArray *entries = [service getGroupEntriesWithGroupId:1084 status:0 start:-1 end:-1 error:&error];
+For this sample app, we'll create an `LRBlogsEntryService_v62` object and
+make a service call that fetches all blog entries from the *Guest* site. In
+this example, the `groupId` is `10184`. 
 
-    This fetches all blog entries from the *Guest* site. In this example, the
-    `groupId` is equal to 10184.
-    
-    This is a basic example of a synchronous service call-- which means the
-    method will only return after the request is finished.
-    
-    Service method return types can be `void`, `NSString`, `NSArray`,
-    `NSDictionary`, `NSNumber`, and `BOOL`.
-    
-    ---
-    
-    ![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
-    require `groupId` as a parameter. You can get the user's groups by calling
-    `[LRGroupService_v62 getUserSites:&error]`.
-    
-    ---
+	LRBlogsEntryService_v62 *service = [[LRBlogsEntryService_v62 alloc] init:session];
+
+	NSError *error;
+	NSArray *entries = [service getGroupEntriesWithGroupId:1084 status:0 start:-1 end:-1 error:&error];
+
+
+This is a basic example of a synchronous service call-- which means the
+method will only returns after the request is finished.
+
+Service method return types can be `void`, `NSString`, `NSArray`,
+`NSDictionary`, `NSNumber`, and `BOOL`.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+require a group ID as a parameter. 
+You can call `[LRGroupService_v62 getUserSitesGroups:&error]`, which uses
+Liferay Portal's
+[`GroupService.getUserSitesGroups`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html#getUserSitesGroups()),
+to get a site groups. 
+
+---
 
 That's it! You've given the blogs app access to the `BlogsEntryService`. Next,
-let's discuss asynchronous HTTP requests.
+let's discuss making asynchronous HTTP requests.
 
-### Using Asynchronous HTTP Requests for iOS
+### Invoking Services Asynchronously from Your iOS App
 
-The iOS SDK allows asynchronous HTTP requests, which allows your app to send
-requests to the SDK and continue processing during the wait time for the return
-request. The only configuring you'll need to do is set a callback to the session
-object. You can set the callback to `nil` if you want to make synchronous
-requests again.
+The SDK allows asynchronous HTTP requests; all you need to do is set a
+callback to the session object. You can set the callback to `nil` if you want to
+make synchronous requests again. 
 
 Let's continue our example with the blogs app. To configure asynchronous
 requests, the first thing we'll need to do is create a class that conforms to
@@ -433,6 +498,7 @@ the `LRCallback` protocol.
     @interface BlogsEntriesCallback : NSObject <LRCallback>
 
     @end
+
 
     #import "BlogsEntriesCallback.h"
 
@@ -460,13 +526,13 @@ If a server side exception or a connection error occurs during the request, the
 the error.
 
 Since the request is asynchronous, the `getGroupEntriesWithGroupId` method
-returns immediately with nil, and the `onSuccess` method of your callback is
+returns immediately with `nil`, and the `onSuccess` method of your callback is
 invoked with the results once the request has finished successfully.
 
 The `onSuccess` result parameter doesn't have a specific type. Therefore, you
 need to check the service method signature in order to figure out which type you
 can cast to safely. In this example, the `getGroupEntriesWithGroupId` method
-returns an `NSArray`, so you can cast to this type.
+returns an `NSArray`; so you can cast to this type.
 
     - (void)onSuccess:(id)result {
         NSArray *entries = (NSArray *)result;
@@ -478,13 +544,14 @@ finished.
 Let's talk about another popular way to send your app's requests: batch
 processing.
 
-### Sending iOS Requests Using Batch Processing
+### Sending Your iOS App's Requests Using Batch Processing
 
-Another popular method of sending requests to the mobile SDK is batch
-processing, which can be more efficient in some cases. For example, suppose you
-want to delete 10 blog entries at the same time; instead of making one request
-for each delete call, you can create a batch of delete calls and send them
-together. Here's an example of how to do this:
+Another popular method of sending requests to the mobile SDK is through batch
+processing, which can be more efficient then sending requests separately.
+
+For example, suppose you want to delete 10 blog entries at the same time;
+instead of making one request for each delete call, you can create a batch of
+delete calls and send them together. Here's an example of how to do this:
 
     #import "LRBatchSession.h"
 
@@ -501,10 +568,9 @@ together. Here's an example of how to do this:
 First, create an `LRBatchSession` session. You can either pass credentials or
 pass another `session` to the constructor. This is useful when you already have
 a `Session` object and want to reuse the same credentials. Then make the service
-calls as usual. With asynchronous calls, these methods will return `nil` right
-away.
+calls as usual. With asynchronous calls, these methods return `nil` right away.
 
-Finally, call `[bath invoke:&error]`; this returns an `NSArray` containing the
+Finally, call `[bath invoke:&error]`, which returns an `NSArray` containing the
 results for each service call. Since there are three `deleteEntryWithEntryId`
 calls, the entries array contains three objects. The order of the results
 matches the order of the service calls.
@@ -515,12 +581,13 @@ If you want to make batch calls asynchronously, set the callback to the session.
 
 The return type for batch calls is always an `NSArray`.
 
-Next, let's learn how to build the SDK and generate client libraries.
+Next, let's learn how to build your custom portlet SDK and generate client
+libraries. 
 
 ## Building an SDK for Custom Portlet Services
 
-What if your app needs to access Liferay's remote services? You'll need to build
-the mobile SDK and generate the client libraries. You can accomplish this by
+What if your app needs to access Liferay's remote services? You'll need to
+generate the client libraries to access them. You can accomplish this by 
 using the SDK Builder.
 
 The Liferay Mobile SDK comes with an SDK Builder that generates the mobile SDK
@@ -528,8 +595,8 @@ for the Android and iOS platforms. Think of it as a Service Builder on the
 client side; it generates code that allows your mobile app to access your
 portlet's custom services. It is template-based, making it easy to extend to
 various mobile platforms. The SDK Builder generates client libraries that allow
-your native mobile apps to invoke remote web services of a portal instance and
-any of its custom portlets built with Liferay's [Service
+your native mobile apps to invoke the remote web services of a portal instance
+and any of its custom portlets built with Liferay's [Service
 Builder](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en).
 
 Let's configure your portlet's remote services so we can build the SDK!
@@ -558,10 +625,10 @@ so make sure to run `ant build-wsdd` before deploying your portlet.
 
 4. Run `ant deploy` to deploy your portlet with its WSDD.
 
-Now, you are ready to use the SDK Builder to generate a custom portlet SDK for
+Now, you're ready to use the SDK Builder to generate a custom portlet SDK for
 developing your mobile app. You'll be able to invoke your service's methods,
 like `[Entity]Service.bar();`, from your mobile app. The Liferay Mobile SDK
-takes care of making JSON Web Services requests to your portlet.
+takes care of making JSON Web Service requests to your portlet.
 
 Next, let's configure the SDK builder for building your custom portlet SDK.
 
@@ -578,8 +645,8 @@ some properties so that the SDK Builder can communicate with your portlet
 services and create an SDK specific to your mobile platform. Follow the steps
 below to set these properties:
 
-1. Create a file in the root folder called `build.${user.name}.properties`,
-where `${user.name}` is your computer user name.
+1. Create a file in the root folder called `build.${username}.properties`,
+where `${username}` is your computer user name.
 
 2. Here are the important properties to set:
 
@@ -590,7 +657,7 @@ where `${user.name}` is your computer user name.
 	`calendar-portlet` context, then you should set your context value to
 	`context=calendar-portlet`. Under the hood, the SDK Builder tries to
 	access `http://localhost:8080/calendar-portlet/api/jsonws?discover` to find
-	out which services are available for this portlet. Check in a browser if
+	out which services are available for this portlet. Check in a browser that
 	this URL is working before running the SDK. If it's not running, you may
 	have forgotten to run `ant build-wsdd` on the portlet.
 
@@ -618,8 +685,8 @@ where `${user.name}` is your computer user name.
 	are saved to `[destination]/android/src`. On iOS, the files are saved to
 	`[destination]/ios`.
 
-Here's an example of configuring the SDK Builder to generate a mobile SDK for
-a portlet with the web context value `my-portlet`:
+Here's an example of configuring the SDK Builder to generate an Android mobile
+SDK for a portlet with the web context value `my-portlet`:
 
     url=http://localhost:8080
     context=my-portlet
@@ -690,6 +757,8 @@ client libraries to access your portlet's custom services. Of course, this was
 also broken down into separate Android and iOS sections so that building the SDK
 for either platform is easier than ever.
 
-Next, we'll take a look at the OpenSocial framework and how OpenSocial gadgets
-can increase your portals effectiveness.
+Did you know that there is a breed of social applications called OpenSocial
+gadgets that lend themselves well to humans sharing information and application
+functionality within defined networks? They are light-weight and easy to write
+and distribute. We'll get into OpenSocial gadgets next. 
 
