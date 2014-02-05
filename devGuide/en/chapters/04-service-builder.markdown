@@ -2191,15 +2191,32 @@ the following methods to the `EventServiceImpl` class:
 	}
 
 Each remote service method performs security checks to determine whether the
-caller has permission to add/update/delete events. We cover Liferay's [Security
-and
+caller has permission to add/update/delete events. Notice that the methods use
+three new classes:
+
+- [`EventListingActionKeys`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/util/EventListingActionKeys.java)
+  is an extension of the [`ActionKeys`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/security/permission/ActionKeys.html)
+  class, providing constants specifying the types of actions your
+  plugin's portlets perform. 
+
+- [`EventPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventPermission.java)
+  is a helper class for checking whether the user is authorized to perform
+  specific actions on the Event entity. 
+
+- [`EventListingPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventListingPermission.java)
+  is a helper class for checking whether the user is authorized to add the
+  instances of the plugin's specific entity types. 
+
+You must manually create all of these types of classes. You can create `.java`
+files for each of them and copy contents from the linked solution classes above
+into the respective source files you create. We cover Liferay's [Security and 
 Permissions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
 framework later in this guide. To see how the Event Listing Portlet is
 integrated with Liferay's permissions system, browse the Event Listing example
 project available in the *Dev Guide SDK* at
 [https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk).
 The project is in the SDK's
-[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
 folder.
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,
