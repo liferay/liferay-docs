@@ -1,4 +1,4 @@
-# Leveraging the Mobile SDK
+# Leveraging the Mobile SDK [](id=mobile-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
 The Liferay Mobile SDK is a framework that provides the means for your native
 mobile apps to easily consume Liferay Portal's core web services and custom
@@ -47,7 +47,7 @@ as we learn how to use Liferay's Mobile SDK:
 Let's get started by learning how to access Liferay's core services from an
 Android app.
 
-## Using the Android SDK
+## Using the Android SDK [](id=use-the-android-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
 Suppose you're creating an Android app and you'd like to access some of
 Liferay's core services. All you need to do is download the SDK and put it in
@@ -59,7 +59,7 @@ for them. You can learn more about generating these libraries by reading the
 Let's get started by downloading the Android SDK and configuring it in your
 Android environment! 
 
-### Setting Up the Android SDK
+### Setting Up the Android SDK [](id=setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en)
 
 As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
@@ -81,7 +81,7 @@ app to use.
 
 Great! Now let's start accessing Liferay services from your app. 
 
-### Accessing Services from Your Android App
+### Accessing Services from Your Android App [](id=access-liferay-services-from-android-app-liferay-portal-6-2-dev-guide-en)
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
 your Android project's classpath, let's consider how to access and invoke
@@ -99,7 +99,7 @@ demonstrates these steps. In particular, we'll outline the steps that its
 class takes in accessing and calling Liferay services. In your app, you can
 follow these steps too. 
 
-#### Step 1: Create a session
+#### Step 1: Create a session [](id=create-a-session-android-liferay-portal-6-2-dev-guide-en)
 
 The session is a conversion state between the client and server, which
 consists of multiple requests and responses between the two. We need a
@@ -139,7 +139,7 @@ permission to call any service. Make sure not to modify data accidentally.
 
 ---
 
-#### Step 2: Import the Liferay services for your app to use. 
+#### Step 2: Import the Liferay services for your app to use. [](id=step-2-import-the-liferay-services-for-y-liferay-portal-6-2-dev-guide-08-en)
 
 Being a contacts app, the sample app imports the mobile SDK's `UserService`
 class to connect to Liferay Portal's
@@ -158,7 +158,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and portlet services. 
 
-#### Step 3: Create a service object and call its service methods.
+#### Step 3: Create a service object and call its service methods. [](id=step-3-create-a-service-object-and-call--liferay-portal-6-2-dev-guide-08-en)
 
 The sample app creates a `UserService` object and calls its
 `getGroupUsers(...)` method to fetch all of the `Guest` site's users:
@@ -205,7 +205,7 @@ So far we've explained the basic process of accessing Liferay services through
 the mobile SDK. Now let's test the sample *Contacts App* from our development
 environment. 
 
-### Testing Your Android App in Eclipse
+### Testing Your Android App in Eclipse [](id=test-android-app-with-liferay-portal-6-2-dev-guide-en)
 
 To test the sample *Contacts App*, you'll need to do the following:
 
@@ -243,7 +243,7 @@ Great work!
 
 Next, we'll explore making asynchronous HTTP requests to your portal's services.
 
-### Invoking Services Asynchronously from Your Android App
+### Invoking Services Asynchronously from Your Android App [](id=invoke-service-asynchronously-android-liferay-portal-6-2-dev-guide-en)
 
 Android doesn't allow making synchronous HTTP requests from the main UI thread.
 Synchronous HTTP requests must be made from threads other than the main UI
@@ -328,7 +328,7 @@ the callback's `onSuccess()` method, instead.
 Besides using synchronous and asynchronous requests, you can also send requests
 using batch processing. Let's learn about this next.
 
-### Sending Your Android App's Requests Using Batch Processing
+### Sending Your Android App's Requests Using Batch Processing [](id=batch-android-app-requests-to-liferay-portal-6-2-dev-guide-en)
 
 The mobile SDK also allows sending requests using batch processing, which can be
 much more efficient than sending separate requests. For example, suppose
@@ -381,7 +381,7 @@ It's just that easy to make efficient service calls in batch!
 
 Next, let's dive into using the iOS SDK to access Liferay services.
 
-## Using the iOS SDK
+## Using the iOS SDK [](id=use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
 You've just created a custom iOS app and now want your app to access Liferay
 services. How do you access Liferay services from an iOS mobile app? Use
@@ -394,7 +394,7 @@ SDK for Custom Portlet Services* section of this document.
 Let's get started by downloading the iOS SDK and configuring it in your iOS
 environment! 
 
-### Setting Up the iOS SDK
+### Setting Up the iOS SDK [](id=setup-liferay-mobile-sdk-for-ios-liferay-portal-6-2-dev-guide-en)
 
 To install the iOS SDK to your machine, you'll need to download the latest
 version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
@@ -414,7 +414,7 @@ each Liferay version. In this example, the mobile SDK is built for Liferay 6.2.
 
 Awesome! Let's learn how to configure the SDK next.
 
-### Accessing Services from Your iOS App
+### Accessing Services from Your iOS App [](id=access-liferay-services-from-ios-app-liferay-portal-6-2-dev-guide-en)
 
 For your mobile app to access the mobile SDK, you'll need to complete several
 steps:
@@ -427,7 +427,7 @@ We'll demonstrate these steps by providing access to a sample Blogs app. Note
 that the following code snippets are written in the *Objective C* programming
 language. Let's begin! 
 
-#### Step 1: Create a session
+#### Step 1: Create a session [](id=step-1-create-a-session-liferay-portal-6-2-dev-guide-08-en-0)
 
 	#import "LRSession.h"
 
@@ -435,7 +435,7 @@ language. Let's begin!
 
     To learn more about the session and its three parameters, reference the
     *Configuring the Android SDK* section.
-#### Step 2: Import the Liferay services for your app to use.
+#### Step 2: Import the Liferay services for your app to use. [](id=step-2-import-the-liferay-services-for-liferay-portal-6-2-dev-guide-08-en-0)
 
 For this sample app, we'll import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
@@ -451,7 +451,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and plugin services. 
 
-#### Step 3: Create a service object and call its services.
+#### Step 3: Create a service object and call its services. [](id=step-3-create-a-service-object-and-cal-liferay-portal-6-2-dev-guide-08-en-0)
 
 For this sample app, we'll create an `LRBlogsEntryService_v62` object and
 make a service call that fetches all blog entries from the *Guest* site. In
@@ -483,7 +483,7 @@ to get a site groups.
 That's it! You've given the blogs app access to the `BlogsEntryService`. Next,
 let's discuss making asynchronous HTTP requests.
 
-### Invoking Services Asynchronously from Your iOS App
+### Invoking Services Asynchronously from Your iOS App [](id=invoke-services-asynchronously-ios-liferay-portal-6-2-dev-guide-en)
 
 The SDK allows asynchronous HTTP requests; all you need to do is set a
 callback to the session object. You can set the callback to `nil` if you want to
@@ -544,7 +544,7 @@ finished.
 Let's talk about another popular way to send your app's requests: batch
 processing.
 
-### Sending Your iOS App's Requests Using Batch Processing
+### Sending Your iOS App's Requests Using Batch Processing [](id=batch-ios-app-requests-to-liferay-portal-6-2-dev-guide-en)
 
 Another popular method of sending requests to the mobile SDK is through batch
 processing, which can be more efficient then sending requests separately.
@@ -584,7 +584,7 @@ The return type for batch calls is always an `NSArray`.
 Next, let's learn how to build your custom portlet SDK and generate client
 libraries. 
 
-## Building an SDK for Custom Portlet Services
+## Building an SDK for Custom Portlet Services [](id=build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
 
 What if your app needs to access Liferay's remote services? You'll need to
 generate the client libraries to access them. You can accomplish this by 
@@ -601,7 +601,7 @@ Builder](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/a
 
 Let's configure your portlet's remote services so we can build the SDK!
 
-### Configuring your Portlet's Remote Services
+### Configuring your Portlet's Remote Services [](id=configure-portlet-remote-services-liferay-portal-6-2-dev-guide-08-en)
 
 In order for the SDK Builder to discover a portlet's remote services, the
 portlet's services must be made available and be accompanied by a Web Service
@@ -632,7 +632,7 @@ takes care of making JSON Web Service requests to your portlet.
 
 Next, let's configure the SDK builder for building your custom portlet SDK.
 
-### Configuring the SDK Builder
+### Configuring the SDK Builder [](id=configure-sdk-builder-liferay-portal-6-2-dev-guide-en)
 
 In order to use the SDK Builder, you'll need to have the Liferay Mobile SDK
 project on your local machine. If you haven't done so already, fork and clone
@@ -697,7 +697,7 @@ SDK for a portlet with the web context value `my-portlet`:
 Now that you've configured the SDK Builder, you're ready to build a platform
 specific SDK for your portlet's remote services. 
 
-### Building the Liferay Android SDK
+### Building the Liferay Android SDK [](id=building-the-liferay-android-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 To build the service related source files for your Liferay Android SDK, run the
 following command from the `liferay-mobile-sdk` project's root folder:
@@ -721,7 +721,7 @@ To learn how to use the Liferay Android SDK in your mobile app, visit the
 
 <!-- Replace link once it's available in liferay.com Dev Guide -->
 
-### Building the Liferay iOS SDK
+### Building the Liferay iOS SDK [](id=building-the-liferay-ios-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 To build the service related source files for your Liferay iOS SDK, run the
 following command from the `liferay-mobile-sdk` project's root folder:
@@ -746,7 +746,7 @@ To learn how to use the Liferay iOS SDK in your mobile app, see the
 
 <!-- Replace link once it's available in liferay.com Dev Guide -->
 
-## Summary
+## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
 In this chapter, we showed you how easy it is to download and configure
 Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
