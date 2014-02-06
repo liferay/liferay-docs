@@ -1033,15 +1033,25 @@ properties from this policy file into your plugin's
 
 Here's how you generate a PACL policy for your plugin: 
 
-1.  In your `portal-ext.properties` file, enable Liferay Portal's security
-    manager and specify your Liferay home, if you
-    haven't done so already. For example: 
+1.  Make sure your Liferay Portal instance has `liferay` set as its security
+    manager strategy value and that the security manager was activated during
+    application server startup. 
 
-        portal.security.manager.strategy=true
+    In your `portal-ext.properties` file, make sure Liferay Portal's security
+    manager strategy is specified as follows: 
 
-        liferay.home=C:/liferay-portal-[version]
+        portal.security.manager.strategy=liferay
 
-    You must restart Liferay for the property to take affect. 
+    Your app server may require that certain startup arguments be used for
+    activiting the security manager. Check the PACL and security manager
+    instructions for your app server in the [Installation and
+    Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
+    chapter of *Using Liferay Portal 6.2*. Some app servers, like Tomcat, output
+    a terminal message, like "Using Security Manager", indicating that it's
+    using the security manager. 
+
+    Unless you already started Liferay with the security manager enabled and
+    activated as described above, you must restart Liferay with these settings. 
 
 2.  Enable the security manager to generate a security policy for your plugin by
     setting the following property in your plugin's
@@ -1060,6 +1070,17 @@ Here's how you generate a PACL policy for your plugin:
     Portal's security manager performs security checks on your plugin; but
     rather than throwing errors on failed checks, the generator tool writes
     suggested rules that specify access to the resources your plugin accesses. 
+
+    Unless you've turned off logging for the generator tool, messages like the
+    ones below are logged, reporting the various authorization properties that
+    the tool generated
+
+        DEBUG [localhost-startStop-2][GeneratingPACLPolicy:230] my-pacl-portlet
+        generated authorization property {key=security-manager-properties-read,
+        value=log4j.configDebug}
+        DEBUG [localhost-startStop-2][GeneratingPACLPolicy:230] my-pacl-portlet
+        generated authorization property {key=security-manager-properties-read,
+        value=line.separator}
 
 4.  Lastly, merge the properties that the security manager wrote (i.e., your
     newly generated PACL policy file

@@ -360,13 +360,14 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
+		long userId, long locationId, java.lang.String name,
+		java.lang.String description, java.lang.String streetAddress,
+		java.lang.String city, java.lang.String stateOrProvince,
+		java.lang.String country,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _locationLocalService.updateLocation(locationId, name,
+		return _locationLocalService.updateLocation(userId, locationId, name,
 			description, streetAddress, city, stateOrProvince, country,
 			serviceContext);
 	}

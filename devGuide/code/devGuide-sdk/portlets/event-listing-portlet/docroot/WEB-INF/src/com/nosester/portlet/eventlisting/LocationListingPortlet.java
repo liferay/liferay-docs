@@ -64,14 +64,16 @@ public class LocationListingPortlet extends MVCPortlet {
 		Location location = null;
 
 		if (locationId <= 0) {
-			location = LocationServiceUtil.addLocation(
-				serviceContext.getScopeGroupId(), name, description,
+
+			location = LocationLocalServiceUtil.addLocation(
+				serviceContext.getUserId(), serviceContext.getScopeGroupId(), name, description,
 				streetAddress, city, stateOrProvince, country, serviceContext);
 		}
 		else {
 			location = LocationLocalServiceUtil.getLocation(locationId);
 
-			location = LocationLocalServiceUtil.updateLocation(locationId, name,
+			location = LocationLocalServiceUtil.updateLocation(
+					serviceContext.getUserId(), locationId, name,
 					description, streetAddress, city, stateOrProvince, country,
 					serviceContext);
 		}

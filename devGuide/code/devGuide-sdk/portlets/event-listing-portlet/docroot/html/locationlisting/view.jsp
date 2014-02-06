@@ -2,7 +2,7 @@
 
 <%@ page import="com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateUtil" %>
 
-This is the <b>Location Listing Portlet</b> portlet in View mode.
+This is the <b>Location Listing Portlet</b> in View mode.
 
 <%
 	String redirect = PortalUtil.getCurrentURL(renderRequest);

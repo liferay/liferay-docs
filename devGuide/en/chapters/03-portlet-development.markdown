@@ -65,19 +65,35 @@ Liferay Developer Studio first, then by using the terminal.
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
-2.  Fill in the *Project name* and *Display name* with *my-greeting-portlet* and *My
-    Greeting*, respectively. 
+2.  Fill in the *Project name* and *Display name* with *my-greeting-portlet* and
+    *My Greeting*, respectively. 
 
-3.  Select the Liferay Plugins SDK and Portal Runtime that you've configured. 
+3.  Leave the *Use default location* checkbox checked. By default, the
+	default location is set to your current workspace. If you'd like to change
+	where your plugin project is saved in your file system, uncheck the box and
+	specify your alternate location. 
 
-4.  Select *Portlet* as your Plugin type. 
+    ![Figure 3.1: Creating portlet projects with Liferay IDE is easy.](../../images/03-new-portlet-project.png)
 
-5.  Click *Next*. 
+4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+	you'd like to use *Maven* for your build type, navigate to the [Developing
+	Plugins Using
+	Maven](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+	section for details. 
 
-6. In the next window, make sure that the *Liferay MVC* framework is selected
+5.  Your configured SDK and Liferay Runtime should already be selected. If you
+    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
+    open the *Installed Plugin SDKs* management wizard. You can also access the
+    *New Server Runtime Environment* wizard if you need to set up your runtime
+    server; just click the *New Liferay Runtime* button next to the *Liferay
+    Portal Runtime* dropdown menu. 
+
+6.  Select *Portlet* as your Plugin type. 
+
+7.  Click *Next*. 
+
+8. In the next window, make sure that the *Liferay MVC* framework is selected
    and click *Finish*. 
-
-![Figure 3.1: Creating the My Greeting portlet](../../images/03-new-portlet-project.png)
 
 With Developer Studio, you can create a new plugin project or if you already
 have a project, create a new plugin in an existing project. A single Liferay

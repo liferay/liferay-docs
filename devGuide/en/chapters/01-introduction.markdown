@@ -230,7 +230,8 @@ effect.
  *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
  the extension environment in order to simplify development. For instructions on
  converting an existing Extension Environment into a plugin, see the section
- on migrating old extension environments in Chapter 13.
+ on migrating old extension environments in [Advanced Customization with Ext
+ Plugins](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en).
 
 ---
 
@@ -266,8 +267,12 @@ for Eclipse that extends its functionality to facilitate developing all types of
 Liferay plugins. Liferay IDE uses the Plugins SDK underneath, but you don't need
 to know the SDK unless you're performing an advanced operation not directly
 supported by Liferay IDE. To develop applications for Liferay Portal Enterprise
-Edition (EE), use Liferay Developer Studio which extends Liferay IDE, providing
+Edition (EE), use Liferay Developer Studio which extends Liferay IDE. 
+
+<!-- Re-add this sentence ending once the plugin is available. - Jim
+, providing
 additional integration plugins such as the Kaleo Designer for Java. 
+-->
 
 This guide shows you how to develop for Liferay using both the Plugins SDK and
 Liferay IDE, to benefit you and other developers even if you don't like IDEs or
