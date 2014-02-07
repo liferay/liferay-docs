@@ -75,8 +75,8 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 			EventListingActionKeys.VIEW);
 
 		return LocationLocalServiceUtil.updateLocation(
-			locationId, name, description, streetAddress, city, stateOrProvince,
-			country, serviceContext);
+			getUserId(), locationId, name, description, streetAddress, city,
+			stateOrProvince, country, serviceContext);
 	}
 
 }
