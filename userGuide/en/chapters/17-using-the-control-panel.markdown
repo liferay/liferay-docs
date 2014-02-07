@@ -332,23 +332,15 @@ directory.
   requires to be mapped for the user to be recognized. You must define a mapping
   to the corresponding attributes in LDAP for the following Liferay fields:
 
-    +   *Screen Name*
+    +   *Screen Name* (e.g., *uid*)
 
-    +   *Password*
+    +   *Password* (e.g., *userPassword*)
 
-    +   *Email Address*
+    +   *Email Address* (e.g., *mail* or *email*)
 
-    +   *Full Name*
+    +   *First Name* (e.g., *name* or *givenName*)
 
-    +   *First Name*
-
-    +   *Middle Name*
-
-    +   *Last Name*
-
-    +   *Job Title*
-
-    +   *Group*
+    +   *Last Name* (e.g., *sn*)
 
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
