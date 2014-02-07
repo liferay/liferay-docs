@@ -321,10 +321,12 @@ directory.
         (cn=@screen_name@)
 
 - *Import Search Filter:* Depending on the **LDAP** server, there are different
-  ways to identify the user. Generally, the default setting
-  (`objectClass=inetOrgPerson`) is fine but if you want to search for only a
-  subset of users or users that have different object classes, you can change
-  this.
+  ways to identify the user. The default setting is usually fine:
+
+        objectClass=inetOrgPerson
+
+    If you want to search for only a subset of users or users that have
+    different LDAP object classes, you can change this.
 
 - *User Mapping:* The next series of fields allows you to define mappings from
   LDAP attributes to Liferay fields. Though your LDAP user attributes may be
@@ -348,6 +350,8 @@ directory.
 
     +   *Group* (e.g., *member*)
 
+    The other LDAP user mapping fields are optional.
+
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
 
@@ -357,20 +361,26 @@ You can also add your own mappings if you wish.
 
 ![Figure 16.15: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
-**Groups:** This section contains settings for mapping LDAP groups to Liferay.
+**Groups:** This section contains settings for mapping LDAP groups to Liferay
+user groups.
 
-- *Import Search Filter:* This is the filter for finding LDAP groups you want to
-  map to Liferay. Enter the LDAP group attributes you want retrieved for this
-  mapping. The following attributes can be mapped:
+- *Import Search Filter:* This is the filter for finding the LDAP groups that
+  you want to map to Liferay user groups. E.g.,
 
-    + Group Name
+        (objectClass=groupOfNames)
 
-    + Description
+    Enter the LDAP group attributes you want retrieved for this mapping. The
+    following attributes can be mapped. The *Group Name* and *User* fields are
+    required, the *Description* is optional.
 
-    + User
+    + *Group Name* (e.g., *cn* or *o*)
 
-- *Test LDAP Groups:* Click the **Test LDAP Groups** to display a list of the
-  groups returned by your search filter.
+    + *Description* (e.g., *description*)
+
+    + *User* (e.g., *member*)
+
+- *Test LDAP Groups:* Click the *Test LDAP Groups* button to display a list of
+  the groups returned by your search filter.
 
 **Export:** This section contains settings for exporting user data from LDAP.
 
