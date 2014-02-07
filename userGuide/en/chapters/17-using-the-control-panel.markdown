@@ -342,6 +342,12 @@ directory.
 
     +   *Last Name* (e.g., *sn*)
 
+    If you'd like to import LDAP groups as Liferay user groups, make sure to
+    define a mapping for the Liferay group field so that membership information
+    is preserved:
+
+    +   *Group* (e.g., *member*)
+
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
 
