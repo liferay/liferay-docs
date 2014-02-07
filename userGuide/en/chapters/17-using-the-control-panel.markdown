@@ -323,7 +323,7 @@ directory.
 - *Import Search Filter:* Depending on the **LDAP** server, there are different
   ways to identify the user. The default setting is usually fine:
 
-        objectClass=inetOrgPerson
+        (objectClass=inetOrgPerson)
 
     If you want to search for only a subset of users or users that have
     different LDAP object classes, you can change this.
