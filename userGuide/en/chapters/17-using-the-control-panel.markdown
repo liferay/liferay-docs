@@ -190,7 +190,7 @@ You configure the global values from the LDAP tab of the Authentication page.
 **Required:** Check this box if LDAP authentication is required. Liferay will
 then not allow a user to log in unless he or she can successfully bind to the
 LDAP directory first. Uncheck this box if you want to allow users with Liferay
-accounts but no LDA accounts to log in to the portal.
+accounts but no LDAP accounts to log in to the portal.
 
 **LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
 you the Add button beneath this heading to add LDAP servers. We explain how to
