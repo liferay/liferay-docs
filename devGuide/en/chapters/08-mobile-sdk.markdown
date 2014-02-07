@@ -25,22 +25,8 @@ is ready. - Jim -->
 The illustration displays the general process that links the mobile SDK with
 your native app. You can create and edit you app using Liferay Developer Studio.
 Once the app is created, it can send and receive requests to/from the Liferay
-Mobile SDK to enable access to Liferay services. The SDK provides a bridge to
-your Liferay instance where you can access hidden complexities like
-authentication, permissions, remote service calls, and JSON-wrapped results.
+Mobile SDK to enable access to Liferay services. 
 -->
-
-<!-- Note, the paragraph above seems to repeat what's already been said in the
-chapter's first paragraph. I think the bridge analogy is helpful, so I added it
-to the figure caption. When Studio is ready, perhaps we could say more about
-that. But as it stands now, I think we can do without most of the content from
-this paragraph. - Jim -->
-
-<!-- I agree. Before, I had the image alone without any description. Bruno and I
-both agreed that it seemed a bit weird displaying the image and not explaining
-what was going on in it. I think explaining a little bit about the image is
-useful, like the integration of LDS, but not explaining the whole process again.
--Cody -->
 
 In this chapter, we'll demonstrate developing Android and iOS apps that
 communicate with Liferay via the mobile SDK. We'll discuss the following topics
@@ -60,7 +46,8 @@ Liferay's core services. All you need to do is download the SDK and put it in
 your classpath, and you can access the services immediately. If you want to
 invoke custom portlet web services, you'll need to generate client libraries
 for them. You can learn more about generating these libraries by reading the
-*Building an SDK for Custom Portlet Services* section. 
+[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
+section. 
 
 Let's get started by downloading the Android SDK and configuring it in your
 Android environment! 
@@ -394,8 +381,9 @@ services. How do you access Liferay services from an iOS mobile app? Use
 Liferay's iOS SDK, of course. All you'll need to do is download the SDK and
 you'll immediately be able to access them. If you'd like to invoke remote web
 services, you'll need to generate the client libraries. You can learn more about
-the SDK builder and how to generate client libraries by reading the *Building an
-SDK for Custom Portlet Services* section of this document. 
+the SDK builder and how to generate client libraries by reading the
+[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
+section. 
 
 Let's get started by downloading the iOS SDK and configuring it in your iOS
 environment! 
@@ -439,8 +427,9 @@ language. Let's begin!
 
 	LRSession *session = [[LRSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
 
-To learn more about the session and its three parameters, reference the
-*Configuring the Android SDK* section.
+To learn more about the session and its three parameters, refer to
+[Setting Up the Android
+SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en).
 
 #### Step 2: Import the Liferay services for your app to use. [](id=step-2-import-the-liferay-services-for-liferay-portal-6-2-dev-guide-08-en-0)
 
@@ -579,7 +568,7 @@ calls as usual. With asynchronous calls, these methods return `nil` right away.
 
 Finally, call `[bath invoke:&error]`, which returns an `NSArray` containing the
 results for each service call. Since there are three `deleteEntryWithEntryId`
-calls, the entry's array contains three objects. The order of the results
+calls, the `entries` array contains three objects. The order of the results
 matches the order of the service calls.
 
 If you want to make batch calls asynchronously, set the callback to the session.
@@ -673,7 +662,7 @@ where `${username}` is your computer user name.
 	example, the Calendar portlet has entities such as `CalendarBooking` and
 	`CalendarResource`. To generate an SDK for only the `CalendarBooking`
 	entity, set the filter's value to `calendarbooking`, all in lowercase. The
-	SDK Builder then make requests to the
+	SDK Builder then makes requests to
 	`http://localhost:8080/calendar-portlet/api/jsonws?discover=/calendarbooking/*`.
 	If you set `filter=`, specifying no filter value, the remote services of
 	*all* of the portlet's entities are made available to your mobile SDK.
@@ -726,8 +715,6 @@ dependencies.
 To learn how to use the Liferay Android SDK in your mobile app, visit the
 [Using the Android SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-the-android-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
 
-<!-- Replace link once it's available in liferay.com Dev Guide -->
-
 ### Building the Liferay iOS SDK [](id=building-the-liferay-ios-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 To build the service related source files for your Liferay iOS SDK, run the
@@ -750,8 +737,6 @@ dependencies.
 
 To learn how to use the Liferay iOS SDK in your mobile app, see the
 [Using the iOS SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
-
-<!-- Replace link once it's available in liferay.com Dev Guide -->
 
 ## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
