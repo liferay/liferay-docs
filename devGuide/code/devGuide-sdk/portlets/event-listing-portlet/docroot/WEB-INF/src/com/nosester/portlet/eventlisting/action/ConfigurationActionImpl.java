@@ -26,9 +26,10 @@ import javax.portlet.PortletPreferences;
  */
 public class ConfigurationActionImpl extends DefaultConfigurationAction {
 
-@Override
+	@Override
 	public void processAction(
-		PortletConfig portletConfig, ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {  
+		PortletConfig portletConfig, ActionRequest actionRequest,
+		ActionResponse actionResponse) throws Exception {  
 
 		super.processAction(portletConfig, actionRequest, actionResponse);
 
@@ -36,9 +37,7 @@ public class ConfigurationActionImpl extends DefaultConfigurationAction {
 
 		String showLocationAddress = prefs.getValue("showLocationAddress", "true");
 
-		System.out.println(
-			"showLocationAddress=" + showLocationAddress +
+		System.out.println("showLocationAddress=" + showLocationAddress +
 			" in ConfigurationActionImpl.processAction().");
 	}
-
 }

@@ -1,7 +1,5 @@
 <%@ include file="/html/init.jsp" %>
 
-<%@ page import="com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateUtil" %>
-
 This is the <b>Location Listing Portlet</b> in View mode.
 
 <%
@@ -55,7 +53,7 @@ boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getV
 				/>
 
 				<c:choose>
-					<c:when test="<%= showLocationAddress_view %>">
+					<c:when test="<%= showLocationAddress_view == true %>">
 						<liferay-ui:search-container-column-text
 							name="street-address"
 							property="streetAddress"
@@ -77,6 +75,7 @@ boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getV
 						/>
 					</c:when>
 				</c:choose>
+
 				<liferay-ui:search-container-column-jsp
 					align="right"
 					path="/html/locationlisting/location_actions.jsp"
@@ -84,6 +83,7 @@ boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getV
 			</liferay-ui:search-container-row>
 
 			<liferay-ui:search-iterator />
+
 		</liferay-ui:search-container>
 	</c:otherwise>
 </c:choose>
