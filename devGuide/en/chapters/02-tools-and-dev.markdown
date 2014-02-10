@@ -1631,17 +1631,11 @@ installation options.
 Let's look at the manual process first, by downloading and installing Liferay
 artifacts from a zip file. 
 
-#### Installing CE Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-liferay-portal-6-2-dev-guide-02-en)
+#### Installing EE/CE Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-liferay-portal-6-2-dev-guide-02-en)
 
-<!-- Reinstate the title "Installing EE/CE Artifacts from a Zip File" and add
-back EE references AFTER EE artifacts are available. - Jim -->
-
-<!-- Append this to the start of the following paragraph when EE artifacts are
-avialable "Whether you're building plugins for Liferay EE or CE, " - Jim -->
-You can get the Liferay
+Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file.
 
-<!--
 Let's download the Liferay EE artifacts first.
 
 You can download the Liferay EE artifacts package from Liferay's Customer
@@ -1649,20 +1643,19 @@ Portal. Just follow these steps:
 
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and sign in.
 
-2.  Go to the Customer Portal by clicking *Your Name* in the Dockbar and
-    selecting *Customer Portal*. 
+2.  Go to the Customer Portal by clicking your profile picture in the Dockbar
+    and selecting *Customer Portal*. 
 
 3.  Select *Liferay Portal* from the *Downloads* panel.
 
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
-    field and select the *Development* value in the second field.
+    field and select the *For Developers* value in the second field.
 
     ![Figure 2.21: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
     The Liferay Maven EE artifacts package downloads to your machine.
--->
 
 You can download Liferay CE artifacts from SourceForge by following these steps:
 
@@ -1887,11 +1880,86 @@ Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
 sharing with teammates. 
 
+Did you know that Liferay has its own Maven repository for EE artifacts? Let's
+learn how to install these next.
+
+#### Installing EE Artifacts from the Liferay Repository
+
+If you'd like to access Liferay's EE artifacts without downloading and
+installing the EE `.zip` file, you can download and install them from Liferay's
+own repository:
+[https://repository.liferay.com](https://repository.liferay.com). You'll need to
+configure Maven to look for the artifacts here.
+
+First, specify the Liferay Repository's credentials in your
+`[USER_HOME]/.m2/settings.xml` file as follows:
+
+    <repositories>
+        <repository>
+            <id>liferay-ce</id>
+		    <name>Liferay CE</name>
+		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
+		    <releases><enabled>true</enabled></releases>
+		    <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+	  
+	<pluginRepositories>
+        <pluginRepository>
+            <id>liferay-ce</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Notice the repositories are
+marked as *CE*. Currently, the CE and EE repositories are identical, so the
+repository name is irrelevant for the time being. Eventually, an EE-only
+repository will be available, which will require login configuration.
+
+---
+
+<!-- Need to change the ID, name, and URL of the repository info once there is
+an EE-only repository on repository.liferay.com. -Cody -->
+
+Next, when interacting with the Liferay Repository, you'll need to use
+specialized commands referring to the URL for generating artifacts. You'll need
+to run the following command to use the Liferay Repository for archetype
+generation:
+
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+---
+
+![note](../../images/tip-pen-paper.png) **Important:** Do not have the Liferay
+repository configured when publishing artifacts to Maven Central. You'll need to
+comment out the Liferay Repository credentials when publishing your artifacts.
+
+---
+
 If you're working with Liferay CE, there's an alternative method of obtaining
 the necessary Liferay Maven artifacts: you can let Maven download them
 automatically. Let's see how. 
 
 #### Installing CE Artifacts from the Central Repository [](id=install-ce-artifacts-from-central-repo-liferay-portal-6-2-dev-guide-02-en)
+
+---
+
+![note](../../images/tip-pen-paper.png) **Important:** Currently, the *GA1*
+Liferay Maven artifacts are not available in Maven's Central Repository. The
+Central Repository is only synced to Liferay's *6.2.0-RC5* release. As a current
+workaround to accessing Liferay's *6.2.0-GA1* artifacts, please reference the
+*Installing EE Artifacts from the Liferay Repository* section. Currently, the CE
+and EE artifacts are identical, and are both accessible from the Liferay
+repository located at
+[https://repository.liferay.com](https://repository.liferay.com).
+
+
+
+---
 
 Liferay offers an option for automatic download and installation of Liferay CE
 Maven artifacts. They're publicly available on the *Central Repository*, located
