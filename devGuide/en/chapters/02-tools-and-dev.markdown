@@ -1254,11 +1254,11 @@ Navigate to the `portlets` folder of your Plugins SDK and follow these steps:
 
 1.  On Linux and Mac OS X, enter
 
-        ./create.sh event-listing "Event Listing"
+        ./create.sh event-listing-portlet "Event Listing"
 
 2.  On Windows, enter
 
-        create.bat event-listing "Event Listing"
+        create.bat event-listing-portlet "Event Listing"
 
 Your terminal will display a BUILD SUCCESSFUL message from Ant, and a new
 folder with your portlet plugin's directory structure will be created inside of

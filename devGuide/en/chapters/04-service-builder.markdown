@@ -191,7 +191,7 @@ a location at which a social event can take place. Since an event must have a
 location, the event entity will reference a location entity as one of its
 attributes. 
 
-![Figure 4.1: The Event Listing portlet lets you add and modify Nose-ster social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
+![Figure 4.1: The Event Listing Portlet lets you add and modify social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
 
 If you'd like to examine the finished example project, it's a part of our *Dev
 Guide SDK* which you can browse at
@@ -495,6 +495,15 @@ Add both of these columns to your Event and Location entities.
 `companyId` | long   | no
 `groupId`   | long   | no
 
+We'll also want to know who owns each entity instance. To keep track of that,
+add a column called `userId` of type `long`. 
+
+**User column**
+
+  Name   | Type   | Primary
+:------: | :----: | :------:
+`userId` | long   | no
+
 Lastly, add columns to help audit both of the Event and Location entities. Add
 a column named `createDate` of type `Date` to note the date an entity instance
 was created. And add a column named `modifiedDate` of type `Date` to track the
@@ -515,7 +524,7 @@ specify the relationship between our Event entity and Location entity.
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
-this in our example Event Listing portlet project. 
+this in our example Event Listing project. 
 
 As we mentioned earlier for the example, each event must have a location.
 Therefore, each Event entity must relate to a Location entity. The good news is
@@ -605,10 +614,10 @@ folder and the `-PersistenceImpl` classes found in your
 folder.
 
 Terrific! You've created the example service and its Event and Location entities
-for the Event Listing portlet project.
+for the Event Listing example project.
 
-We've made the source code for the service and the entire Event Listing portlet
-project available in the *Dev Guide SDK* which you can browse at
+We've made the source code for the service and the entire Event Listing
+example project available in the *Dev Guide SDK* which you can browse at
 [https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
 The project is in the SDK's
 [portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
@@ -707,7 +716,7 @@ project. See that the sample-service-builder-portlet-master project includes it.
 Also, we should describe the uuid and the other audit fields - Jim
 -->
 
-Now that you've specified the service for the Event Listing portlet project,
+Now that you've specified the service for the Event Listing example project,
 let's *build* the service by running Service Builder. Then we'll look at the
 code Service Builder generates.
 
@@ -715,7 +724,7 @@ code Service Builder generates.
 
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. Next, you'll generate the
-service for the example Event Listing portlet project you've been developing
+service for the example Event Listing example project you've been developing
 throughout this chapter. The project resides in the
 `portlets/event-listing-portlet` folder of your Plugins SDK. 
 
@@ -729,16 +738,12 @@ throughout this chapter. The project resides in the
 
 ---
 
-<!-- I thought we we had decided these dual sections of IDE/Plugins SDK were
-awkward, and we were going to focus just on showing how it's done in IDE? -Rich
--->
-
 ***Using Liferay IDE or Developer Studio:*** From the Package Explorer, open
 the `service.xml` file from your `event-listing-portlet/docroot/WEB-INF` folder.
 By default, the file opens up in the Service Builder Editor. Make sure you are
 in Overview mode. Then click the *Build Services* button near the top-right
 corner of the view. The Build Services button has an image of a document with
-the numerical sequence *0101* in front of it. 
+the numerical sequence *010* in front of it. 
 
 Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
@@ -900,15 +905,17 @@ class:
         return event;
     }	
 
-Remember to import the required classes. These include the following:
+Remember to import the required classes. For your convenience, you can copy the
+following imports into your class: 
 
-    com.nosester.portlet.eventlisting.model.Event
-    com.liferay.portal.kernel.exception.PortalException
-    com.liferay.portal.kernel.exception.SystemException
-    com.liferay.portal.model.User
-    com.liferay.portal.service.ServiceContext
-    java.util.Date
-    java.util.List
+    import java.util.Date;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.ServiceContext;
+    import com.nosester.portlet.eventlisting.model.Event;
 
 In order to add an Event to the database, you need an ID for the Event. Liferay
 provides a counter service which you call to obtain a unique ID for each new
@@ -961,9 +968,120 @@ later. We'll cover the details of adding resources in the [Asset
 Framework](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en)
 section. 
 
-Before you can use any custom methods that you added to `EventLocalServiceImpl`
-class, you must add their signatures to the `EventLocalService` interface by
-running Service Builder again.
+Since events require event locations, let's implement the local services for the
+Location entity, too. Open your `LocationLocalServiceImpl.java` file in your
+`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/` folder
+and add the following methods:  
+
+    public Location addLocation(
+            long userId, long groupId, String name, String description,
+            String streetAddress, String city, String stateOrProvince,
+            String country, ServiceContext serviceContext)
+    throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
+        Date now = new Date();
+
+        long locationId =
+            counterLocalService.increment(Location.class.getName());
+
+        Location location = locationPersistence.create(locationId);
+
+        location.setName(name);
+        location.setDescription(description);
+        location.setStreetAddress(streetAddress);
+        location.setCity(city);
+        location.setStateOrProvince(stateOrProvince);
+        location.setCountry(country);
+
+        location.setGroupId(groupId);
+        location.setCompanyId(user.getCompanyId());
+        location.setUserId(user.getUserId());
+        location.setCreateDate(serviceContext.getCreateDate(now));
+        location.setModifiedDate(serviceContext.getModifiedDate(now));
+
+        super.addLocation(location);
+
+        return location;
+    }
+
+    public Location deleteLocation(Location location)
+        throws SystemException {
+
+        return locationPersistence.remove(location);
+    }
+
+    public Location deleteLocation(long locationId)
+        throws PortalException, SystemException {
+
+        Location location = locationPersistence.fetchByPrimaryKey(locationId);
+
+        return deleteLocation(location);
+    }
+
+    public List<Location> getLocationsByGroupId(long groupId)
+        throws SystemException {
+
+        return locationPersistence.findByGroupId(groupId);
+    }
+
+    public List<Location> getLocationsByGroupId(
+            long groupId, int start, int end)
+        throws SystemException {
+
+        return locationPersistence.findByGroupId(groupId, start, end);
+    }
+
+    public int getLocationsCountByGroupId(long groupId) throws SystemException {
+
+        return locationPersistence.countByGroupId(groupId);
+    }
+
+    public Location updateLocation(
+            long userId, long locationId, String name, String description,
+            String streetAddress, String city, String stateOrProvince,
+            String country, ServiceContext serviceContext)
+        throws PortalException, SystemException {
+
+        User user = userPersistence.findByPrimaryKey(userId);
+
+        Date now = new Date();
+
+        Location location = locationPersistence.findByPrimaryKey(locationId);
+
+        location.setName(name);
+        location.setDescription(description);
+        location.setStreetAddress(streetAddress);
+        location.setCity(city);
+        location.setStateOrProvince(stateOrProvince);
+        location.setCountry(country);
+        location.setModifiedDate(serviceContext.getModifiedDate(now));
+
+        super.updateLocation(location);
+
+        return location;
+    }
+
+Make sure to add the following imports:
+
+    import java.util.Date;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.ServiceContext;
+    import com.nosester.portlet.eventlisting.model.Location;
+    import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
+
+Your local service implementations for events and locations are ready
+for action. 
+
+Before you can use any custom methods that you added to the
+`EventLocalServiceImpl` and `LocationLocalServiceImpl` classes, you must add
+their signatures to the `EventLocalService` and `LocationLocalService`
+interfaces by running Service Builder again.
 
 ***Using Developer Studio:*** As we did before, open your `service.xml` file and
 make sure you are in the *Overview* mode. Then, select *Build Services*.
@@ -987,11 +1105,11 @@ call our newly implemented local service.
 ## Calling Local Services [](id=call-local-services-liferay-portal-6-2-dev-guide-04-en)
 
 Once Service Builder has generated your portlet project's services, you can call
-them in our project's `-Portlet` classes. You can call any methods in your
+them in your project's `-Portlet` classes. You can call any methods in your
 `EventLocalServiceUtil` or `LocationLocalServiceUtil` static utility classes
 from `EventListingPortlet` and `LocationListingPortlet`. For example, you
-want the Event Listing portlet to perform create, read, update, and delete
-(CRUD) operations on Events and the Location Listing portlet to perform CRUD
+want the Event Listing Portlet to perform create, read, update, and delete
+(CRUD) operations on Events and the Location Listing Portlet to perform CRUD
 operations on Locations. To this end, you'll create the following methods for 
 `EventListingPortlet` and similar ones for `LocationListingPortlet`:
 
@@ -999,7 +1117,10 @@ operations on Locations. To this end, you'll create the following methods for
 - `updateEvent`
 - `deleteEvent`
 
-Replace the contents of `EventListingPortlet.java` with the following code:
+Create file `EventListingPortlet.java` in your
+`docroot/WEB-INF/src/com/nosester/portlet/eventlisting` folder, if it doesn't
+already exist. Replace the contents of `EventListingPortlet.java` with the
+following code: 
 
     package com.nosester.portlet.eventlisting;
     
@@ -1091,7 +1212,7 @@ Replace the contents of `EventListingPortlet.java` with the following code:
         private static Log _log = LogFactoryUtil.getLog(EventListingPortlet.class);
     }
 
-The Event Listing portlet's `addEvent`, `updateEvent`, and `deleteEvent`
+The Event Listing Portlet's `addEvent`, `updateEvent`, and `deleteEvent`
 methods now call the appropriate methods from `EventLocalServiceUtil`. Liferay's
 `ParamUtil` getter methods such as `getLong` and `getString` return default
 values like `0` or `""` if the specified request parameter is not available from
@@ -1119,10 +1240,99 @@ Portlet classes should have access only to the `-LocalServiceUtil` classes. The
 `-LocalServiceUtil` classes, in turn, call their injected `-LocalServiceImpl`
 classes. Notice in the figure above that the `EventLocalServiceUtil` utility
 class has a private instance variable called `_service`. The `_service` instance
-variable of type `EventLocalService` gets an instance of
-`EventLocalServiceImpl` at runtime via dependency injection. So all the methods
-of the `EventLocalServiceUtil` utility class internally call corresponding
-methods of the `EventLocalServiceImpl` class at runtime.
+variable of type `EventLocalService` gets an instance of `EventLocalServiceImpl`
+at runtime via dependency injection. So all the methods of the
+`EventLocalServiceUtil` utility class internally call corresponding methods of
+the `EventLocalServiceImpl` class at runtime. 
+
+Let's implement the `LocationListingPortlet` class with methods similar to the
+ones we implemented in the `EventListingPortlet` class. Create file
+`LocationListingPortlet.java` in your
+`docroot/WEB-INF/src/com/nosester/portlet/eventlisting` folder, if it doesn't
+already exist. Open your `LocationListingPortlet.java` file and replace its
+contents with the following code: 
+
+    package com.nosester.portlet.eventlisting;
+
+    import javax.portlet.ActionRequest;
+    import javax.portlet.ActionResponse;
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.log.Log;
+    import com.liferay.portal.kernel.log.LogFactoryUtil;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+    import com.nosester.portlet.eventlisting.model.Location;
+    import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
+
+    public class LocationListingPortlet extends MVCPortlet {
+
+        public void addLocation(ActionRequest request, ActionResponse response)
+                throws Exception {
+
+            _updateLocation(request);
+
+            sendRedirect(request, response);
+        }
+
+        public void deleteLocation(ActionRequest request, ActionResponse response)
+            throws Exception {
+
+            long locationId = ParamUtil.getLong(request, "locationId");
+
+            LocationLocalServiceUtil.deleteLocation(locationId);
+
+            sendRedirect(request, response);
+        }
+
+        public void updateLocation(ActionRequest request, ActionResponse response)
+            throws Exception {
+
+            _updateLocation(request);
+
+            sendRedirect(request, response);
+        }
+
+        private Location _updateLocation(ActionRequest request)
+                throws PortalException, SystemException {
+
+            long locationId = (ParamUtil.getLong(request, "locationId"));
+            String name = (ParamUtil.getString(request, "name"));
+            String description = (ParamUtil.getString(request, "description"));
+            String streetAddress = (ParamUtil.getString(request, "streetAddress"));
+            String city = (ParamUtil.getString(request, "city"));
+            String stateOrProvince = (ParamUtil.getString(request, "stateOrProvince"));
+            String country = (ParamUtil.getString(request, "country"));
+
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    Location.class.getName(), request);
+
+            Location location = null;
+
+            if (locationId <= 0) {
+
+                location = LocationLocalServiceUtil.addLocation(
+                    serviceContext.getUserId(), serviceContext.getScopeGroupId(), name, description,
+                    streetAddress, city, stateOrProvince, country, serviceContext);
+            }
+            else {
+                location = LocationLocalServiceUtil.getLocation(locationId);
+    
+                location = LocationLocalServiceUtil.updateLocation(
+                        serviceContext.getUserId(), locationId, name,
+                        description, streetAddress, city, stateOrProvince, country,
+                        serviceContext);
+            }
+
+            return location;
+        }
+
+        private static Log _log = LogFactoryUtil.getLog(LocationListingPortlet.class);
+
+    }
 
 We've demonstrated how to call the local services generated by Service Builder
 in our project's `-Portlet` classes. Next, let's learn how to how to call
@@ -1256,9 +1466,346 @@ manually modified: `EventLocalServiceImpl`, `EventServiceImpl` and `EventImpl`.
 If you manually modify the other classes, your changes will be overwritten the
 next time you run Service Builder. 
 
+Now that we can access the location and event entities with the local services,
+let's build our UI. 
+
+## Creating User Interfaces for Service Builder Portlets
+
+We'll build a UI for the Location Listing Portlet that we've been developing in
+the Event Listing example project. The Location Listing Portlet's location
+entity is easy to work with because it has no dependencies on other entities
+(unlike the event entity, which depends on the location entity). We'll build a
+UI that allows us to do the following activities with the Location Listing
+Portlet: 
+
+- List the current locations
+- Add new locations
+- Edit locations
+- Delete locations
+
+It's always nice to see our current entities. So let's build a view that lists
+the entities. The figure below shows what we want the Location Listing Portlet
+to look like, filled with locations: 
+
+![Figure 4.9: Using AlloyUI and Liferay UI taglibs, we'll be able to create a nice portlet view like this one.](../../images/jsp-list-locations.png)
+
+Since this part of our UI will give us a "view" of our location entity
+instances, we'll implement it in a JSP file named `view.jsp` that we'll keep in
+folder `docroot/html/locationlisting`. If you don't have this folder or the
+`view.jsp` file in it, create them. Then, open the `view.jsp` file and replace
+its contents with the following JSP code: 
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    <%@ page import="com.liferay.portal.util.PortalUtil" %>
+
+    <%@ page import="com.nosester.portlet.eventlisting.model.Location"%>
+    <%@ page import="com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil"%>
+
+    <liferay-theme:defineObjects />
+
+    <portlet:defineObjects />
+    
+    This is the <b>Location Listing Portlet</b> in View mode.
+
+    <liferay-ui:search-container emptyResultsMessage="There are no locations to display">
+        <liferay-ui:search-container-results
+            results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
+            total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
+        />
+
+        <liferay-ui:search-container-row
+            className="com.nosester.portlet.eventlisting.model.Location"
+            keyProperty="locationId"
+            modelVar="location" escapedModel="<%= true %>"
+        >
+            <liferay-ui:search-container-column-text
+                name="name"
+                value="<%= location.getName() %>"
+            />
+
+            <liferay-ui:search-container-column-text
+                name="description"
+                value="<%= location.getDescription() %>"
+            />
+
+            <liferay-ui:search-container-column-text
+                name="streetAddress"
+                value="<%= location.getStreetAddress() %>"
+            />
+
+            <liferay-ui:search-container-column-text
+                name="city"
+                value="<%= location.getCity() %>"
+            />
+
+            <liferay-ui:search-container-column-text
+                name="stateOrProvince"
+                value="<%= location.getStateOrProvince() %>"
+            />
+
+            <liferay-ui:search-container-column-text
+                name="country"
+                value="<%= location.getCountry() %>"
+            />
+        </liferay-ui:search-container-row>
+
+        <liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+
+Let's look at this code in detail, starting with the JSP directives. The taglib
+directives tell your JSP where to find tags you're using and what namespace
+prefix to use for them. For example, the `<%@ taglib
+uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>` directive
+specifies the location of Liferay's theme tag library descriptor (TLD) and the
+namespace prefix to use with its tags. In our JSP, we've also specified
+directives for the Portlet 2.0 and Liferay UI taglibs. Lastly, we specified
+directives to import the `PortalUtil`, `Location`, and
+`LocationLocalServiceUtil` classes, as we're using in the JSP. 
+
+Below the page import directives, we have a couple interesting tags:
+`<liferay-theme:defineObjects />` and `<portlet:defineObjects />`. These tags
+give our JSP access to various variables from the context of the request objects
+and the portal's theme. 
+
+<!-- We should elaborate on these objects. - Jim-->
+
+After outputting text that identifies the portlet, we get into the real "meat"
+of our JSP. We use Liferay's `<liferay-ui:search-container>` tag to return
+location entities from the database and list them in a table. The search
+container calls `LocationLocalServiceUtil` to get the locations. It then renders
+one instance of the `com.nosester.portlet.eventlisting.model.Location` class per
+table row. Each location is identified by its `locationId` and each of a
+location's attributes are rendered in columns via the
+`<liferay-ui:search-container-column-text>` tags. 
+
+Redeploy the portlet to catch a glimpse of the current locations. 
+
+![Figure 4.10: Where are your location entities? Don't worry, you haven't added any yet. We'll create a page that will enable you to add locations.](../../images/jsp-list-no-locations.png)
+
+We'll need to create a JSP that enables us to add locations. Let's name this JSP
+`edit_location.jsp`, as we'll use it for modifying locations, as well as adding
+them. In the `docroot/html/locationlisting` folder, create the
+`edit_location.jsp` file. Copy the following code into it: 
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+
+    <%@ page import="com.nosester.portlet.eventlisting.model.Location"%>
+    <%@ page import="com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil"%>
+
+    <%
+        Location location = null;
+
+        long locationId = ParamUtil.getLong(request, "locationId");
+
+        if (locationId > 0) {
+            location = LocationLocalServiceUtil.getLocation(locationId);
+        }
+
+        String redirect = ParamUtil.getString(request, "redirect");
+    %>
+
+    <aui:model-context bean="<%= location %>" model="<%= Location.class %>" />
+    <portlet:renderURL var="viewLocationURL" />
+    <portlet:actionURL name='<%= location == null ? "addLocation" : "updateLocation" %>' var="editLocationURL" windowState="normal" />
+
+    <liferay-ui:header
+        backURL="<%= viewLocationURL %>"
+        title='<%= (location != null) ? location.getName() : "New Location" %>'
+    />
+
+    <aui:form action="<%= editLocationURL %>" method="POST" name="fm">
+        <aui:fieldset>
+            <aui:input name="redirect" type="hidden" value="<%= redirect %>" />
+
+            <aui:input name="locationId" type="hidden" value='<%= location == null ? "" : location.getLocationId() %>'/>
+
+            <aui:input name="name" />
+
+            <aui:input name="description" />
+
+            <aui:input name="streetAddress" />
+
+            <aui:input name="city" />
+
+            <aui:input name="stateOrProvince" />
+
+            <aui:input name="country" />
+
+        </aui:fieldset>
+
+        <aui:button-row>
+            <aui:button type="submit" />
+
+            <aui:button onClick="<%= viewLocationURL %>"  type="cancel" />
+        </aui:button-row>
+    </aui:form>
+
+As with the `view.jsp`, we specify directives to access taglibs and import
+classes that we're using in our JSP code. 
+
+Then we check for a location ID in the request. If a location ID is present,
+we'll edit that location. Otherwise, we'll create a new location to populate.
+Using the `<portlet:actionURL>` tag, we direct the portlet to edit an existing
+location or add a new location. The action uses the content from our JSP's form
+to modify the location. Lastly, before we go into the form code, we print a
+header for our portlet, either displaying the name of the existing location or
+displaying text to indicate that we're populating a new location's fields. 
+
+We use AlloyUI's `<aui:form>` tag to present a form for the user to fill in for
+the location and submit. It presents various location fields via `<aui:input>`
+tags. Each one uses a name that the `LocationListingPortlet` class references.
+Lastly, we include a button for users to submit the form to the portlet. The
+attributes specified for the button redirect control to the `view.jsp` via the
+`viewLocationURL` variable. 
+
+Now that we've implemented the `edit_location.jsp`, we must provide a way for
+users to get to it. Let's add a button to the `view.jsp`, that redirects control
+to the `edit_location.jsp`: 
+
+1.  Open your location's `view.jsp` file and add the following code above the
+    line that starts with the `<liferay-ui:search-container>` tag: 
+
+        <%
+            String redirect = PortalUtil.getCurrentURL(renderRequest);
+        %>
+
+        <aui:button-row>
+            <portlet:renderURL var="addLocationURL">
+                <portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
+                <portlet:param name="redirect" value="<%= redirect %>" />
+            </portlet:renderURL>
+
+            <aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
+        </aui:button-row>
+
+2.  Add the following directive to the top of the `view.jsp`, to import
+    AlloyUI's `aui` taglib: 
+
+        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+
+This code adds a button that redirects the user to the `edit_location.jsp` via
+the MVC path value `/html/locationlisting/edit_location.jsp`. It also includes
+the current URL, the URL of the `view.jsp`, with the request so that the
+`edit_location.jsp` can redirect the user back to the view after the user adds
+the new location. 
+
+Now that we've implemented a JSP for adding/editing locations and we've provided
+a button for users to click on to access that JSP, we must redeploy the portlet
+to update the portal with our portlet's changes. 
+
+Redeploy the portlet and add a new location. 
+
+![Figure 4.11: AlloyUI's `<aui:form>` tag helps you create attractive forms for editing your portlet's entities.](../../images/jsp-add-new-location.png)
+
+After you've added a location or two, you can see how nicely each location is
+displayed in the `view.jsp`. 
+
+![Figure 4.12: Note the new *Add Location* button in your Location Listing Portlet.](../../images/jsp-list-locations-with-no-action-button.png)
+
+As we've mentioned before, we not only want to add new locations, but we also
+want to edit *existing* locations. In addition, we want to be able to delete
+locations. Let's provide a way for users to edit and delete individual
+locations. In the view, we'll display a dropdown button that lets a user edit or
+delete the applicable location. We'll create a JSP to handle each action request
+and send each request to the portlet. 
+
+Let's start by creating an action JSP called `location_actions.jsp`. Create a
+file called `location_actions.jsp` in the `/html/locationlisting` folder. Then
+copy the following contents into that JSP: 
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
+    <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
+    <%@ page import="com.liferay.portal.util.PortalUtil" %>
+
+    <%@ page import="com.nosester.portlet.eventlisting.model.Location"%>
+
+    <portlet:defineObjects />
+
+    <%
+        ResultRow row = (ResultRow) request
+                .getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+        Location location = (Location) row.getObject();
+
+        long groupId = location.getGroupId();
+        String name = Location.class.getName();
+        long locationId = location.getLocationId();
+
+        String redirect = PortalUtil.getCurrentURL(renderRequest);
+    %>
+
+    <liferay-ui:icon-menu>
+        <portlet:renderURL var="editURL">
+            <portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
+            <portlet:param name="locationId" value="<%= String.valueOf(locationId) %>" />
+            <portlet:param name="redirect" value="<%= redirect %>" />
+        </portlet:renderURL>
+
+        <liferay-ui:icon image="edit" url="<%= editURL.toString() %>" />
+
+        <portlet:actionURL name="deleteLocation" var="deleteURL">
+            <portlet:param name="locationId" value="<%= String.valueOf(locationId) %>" />
+            <portlet:param name="redirect" value="<%= redirect %>" />
+        </portlet:actionURL>
+
+        <liferay-ui:icon-delete url="<%= deleteURL.toString() %>" />
+    </liferay-ui:icon-menu>
+
+The above code from the `location_actions.jsp` extracts the location information
+from the request object. Then it provides an icon for editing the location and
+an icon for deleting the location. The user is redirected to the
+`edit_location.jsp` if the user clicks on the edit icon. If the user clicks on
+the delete icon, a request is sent to the portlet to delete the location and the
+user is redirected to the `view.jsp`. Now that the `location_actions.jsp` is
+implemented, let's link it to the `view.jsp`. 
+
+We'll fit the `view.jsp` with a container to render the edit and delete icons we
+implemented in the `location_actions.jsp`. To do so, add the following element
+in the `view.jsp`, just before the closing `</liferay-ui:search-container-row>`
+tag: 
+		
+    <liferay-ui:search-container-column-jsp
+        align="right"
+        path="/html/locationlisting/location_actions.jsp"
+    />
+
+The `<liferay-ui:search-container-column-jsp>` tag displays the *Actions*
+button, which presents the user with the action icons implemented in the
+`location_actions.jsp`. 
+
+Now that you have your *Actions* button in place, redeploy your portlet and
+refresh its view in your browser. Notice the fancy *Actions* button for each
+location. Try editing a location and deleting a location. 
+
+![Figure 4.13: You can create helpful action icons to for users to click on to edit or delete portlet entities.](../../images/jsp-edit-location-entry.png)
+
+<!-- TODO Use language keys. - Jim -->
+
+Great job creating the Location Listing Portlet's UI!
+
+In case you're interested, the finished event-listing-portlet example project,
+including the UIs of the Location Listing Portlet and Event Listing Portlet, is
+available in the
+[Dev Guide SDK](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk) 
+in the SDK's
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
+folder. 
+
 Next, let's learn how to call core Liferay services. Calling core Liferay
-services in your portlet is just as easy as calling your project's services that
-you generated via Service Builder.
+services in your portlet is just as easy as calling your project's services you
+generated via Service Builder.
 
 ## Calling Liferay Services [](id=call-liferay-services-liferay-portal-6-2-dev-guide-04-en)
 
@@ -1354,7 +1901,7 @@ set a `year-range-past` hint to `false` for that field in your
 -->
 
 Let's look at the model hints file that Service Builder generated for the Event
-Listing portlet. Examine your project's
+Listing Portlet. Examine your project's
 `docroot/WEB-INF/src/META-INF/portlet-model-hints.xml` file. If you've been
 following along in the previous sections, Service Builder created the
 `portlet-model-hints.xml` file with the following contents:
@@ -1515,7 +2062,7 @@ the collection by its name:
 As always, remember to run Service Builder and redeploy your project after
 updating your `portlet-model-hints.xml` file.
 
-Now you can use a couple of model hints in the Event Listing portlet and
+Now you can use a couple of model hints in the Event Listing Portlet and
 Location Listing Portlet. Start by giving users an editor for filling
 in their description fields. Since you want to apply the same hint to both the
 event and location entities, define it as a hint collection. Then you can
@@ -1555,7 +2102,7 @@ description text area has changed as specified in your model hints.
 <!-- We don't actually use the <hint name="editor">true</hint> for the
 description textarea - JR
 
-![Figure 4.9: Customizing string input fields to use spacious text areas is just one example of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
+![Figure 4.14: Customizing string input fields to use spacious text areas is just one example of the many things you can do with Liferay model hints.](../../images/service-builder-edit-event.png)
 -->
 
 Well, you've learned the art of persuasion through Liferay's model hints. Now,
@@ -1589,9 +2136,9 @@ entity, all the classes, interfaces, and files required to support both SOAP and
 JSON web services are generated for that entity. Service Builder generates
 methods that call existing services, but it's up to you to implement the
 methods that are exposed remotely. Let's use Service Builder to generate remote
-services for the Nose-ster Event Listing portlet example project. You'll
-implement a few methods for the Event Listing portlet that can be called
-remotely via SOAP and JSON web services. 
+services for the Event Listing example project. You'll implement a few methods
+for the Event Listing Portlet that can be called remotely via SOAP and JSON web
+services. 
 
 Remember: local service methods are implemented in `EventLocalServiceImpl`.
 Similarly, you'll implement remote service methods in `EventServiceImpl`. Add
@@ -1644,16 +2191,33 @@ the following methods to the `EventServiceImpl` class:
 	}
 
 Each remote service method performs security checks to determine whether the
-caller has permission to add/update/delete events. We cover Liferay's [Security
-and
+caller has permission to add/update/delete events. Notice that the methods use
+three new classes:
+
+- [`EventListingActionKeys`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/util/EventListingActionKeys.java)
+  is an extension of the [`ActionKeys`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/security/permission/ActionKeys.html)
+  class, providing constants specifying the types of actions your
+  plugin's portlets perform. 
+
+- [`EventPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventPermission.java)
+  is a helper class for checking whether the user is authorized to perform
+  specific actions on the Event entity. 
+
+- [`EventListingPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventListingPermission.java)
+  is a helper class for checking whether the user is authorized to add the
+  instances of the plugin's specific entity types. 
+
+You must manually create all of these types of classes. You can create `.java`
+files for each of them and copy contents from the linked solution classes above
+into the respective source files you create. We cover Liferay's [Security and 
 Permissions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
-framework later in this guide. To see how the Event Listing portlet is
-integrated with Liferay's permissions system, browse the Event Listing portlet
+framework later in this guide. To see how the Event Listing Portlet is
+integrated with Liferay's permissions system, browse the Event Listing example
 project available in the *Dev Guide SDK* at
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk).
 The project is in the SDK's
-[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
-folder. 
+[portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
+folder.
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,
 and `deleteEvent` methods. The `eventLocalService` field holds a Spring bean of
@@ -1710,7 +2274,7 @@ web services. You can invoke JSON web services directly from your browser. For
 example, to bring up a test form for your Event entity's *delete-event*
 operation, visit the above URL and click on its *delete-event* link. 
 
-![Figure 4.10: You'll see a page displaying the name of the service method, its required parameters, its return type, possible exceptions it can throw, and a form for entering its parameters.](../../images/invoking-sb-generated-json-ws.png)
+![Figure 4.15: You'll see a page displaying the name of the service method, its required parameters, its return type, possible exceptions it can throw, and a form for entering its parameters.](../../images/invoking-sb-generated-json-ws.png)
 
 The only parameter required for the `delete-event` operation is an event ID.
 Since there's no UI yet for the Event Listing application, you probably don't
@@ -1760,7 +2324,7 @@ in your persistence layer and adds methods to your service layer that invoke the
 finder. But what if you'd like to do more complicated searches that incorporate
 attributes from multiple entities? 
 
-For example, consider the Nose-ster Event Listing portlet you've been developing
+For example, consider the Nose-ster Event Listing Portlet you've been developing
 in this chapter. Suppose you want to find an event based on its name,
 description, and location name. If you recall, the event entity refers to its
 location by the location's ID, not its name. That is, the event entity table,
@@ -1785,7 +2349,7 @@ these steps:
 3. Access your finder method from your service. 
 
 Next, you'll do exactly this to create and invoke custom SQL in your Event
-Listing portlet. 
+Listing Portlet. 
 
 ### Step 1: Specify Your Custom SQL [](id=specify-custom-sql-liferay-portal-6-2-dev-guide-04-en)
 
