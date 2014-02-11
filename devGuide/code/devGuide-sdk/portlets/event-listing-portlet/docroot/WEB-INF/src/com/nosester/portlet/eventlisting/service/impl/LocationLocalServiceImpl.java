@@ -72,21 +72,6 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 
 		super.addLocation(location);
 
-		// Resources
-
-		if (serviceContext.isAddGroupPermissions() ||
-			serviceContext.isAddGuestPermissions()) {
-
-			addLocationResources(
-				location, serviceContext.isAddGroupPermissions(),
-				serviceContext.isAddGuestPermissions());
-		}
-		else {
-			addLocationResources(
-				location, serviceContext.getGroupPermissions(),
-				serviceContext.getGuestPermissions());
-		}
-
 		return location;
 	}
 
@@ -168,14 +153,16 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 	}
 
 	public Location updateLocation(
-			long locationId, String name, String description,
+			long userId, long locationId, String name, String description,
 			String streetAddress, String city, String stateOrProvince,
 			String country, ServiceContext serviceContext)
 		throws PortalException, SystemException {
 
-		Location location = locationPersistence.findByPrimaryKey(locationId);
+		User user = userPersistence.findByPrimaryKey(userId);
 
 		Date now = new Date();
+
+		Location location = locationPersistence.findByPrimaryKey(locationId);
 
 		location.setName(name);
 		location.setDescription(description);

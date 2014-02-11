@@ -123,8 +123,8 @@ that it's a simple matter for your team to work together.
 
 ## Installing Social Office [](id=lp-2-1-soen01-installing-social-office)
 
-Social Office 2.0 is available as an application that can be installed on
-Liferay Portal CE 6.1 GA2 or EE 6.1 GA2. Prior to version 2.0, Social Office was
+Social Office 3.0 is available as an application that can be installed on
+Liferay Portal CE 6.2 GA1 or EE 6.2 GA1. Prior to version 2.0, Social Office was
 provided as an standalone product that was essentially a customized version of
 Liferay Portal. Liferay applications, or apps, are packages of Liferay plugins
 that are grouped together with descriptions, version information, and other
@@ -285,79 +285,12 @@ you don't restart the server, the Dashboard link won't appear although you can
 find other content added by Social Office if you use the *Go to* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
-<!-- Commenting this out now (Nov. 5, 2013) since SO 2.1 EE has been released
-but SO 2.1 CE has not. The Social Office welcome theme is a CE-only feature.
-
-### Managing the Social Office Welcome Theme [](id=lp-2-1-soen01-managing-the-social-office-welcome-theme)
-
-The Social Office welcome theme is a CE-only feature. The welcome theme and
-resource importer are included in the CE Social Office 2.0 package available
-from Marketplace. The Social Office welcome theme provides a clean login screen
-for Social Office when Social Office 2.0 is installed on a fresh portal
-instance.
-
-![Figure 1.5: The Social Office 2.0 welcome theme provides a clean and attractive login screen.](../../images/so-welcome-theme1.png)
-
-A fresh portal instance is an installation of Liferay Portal whose guest site
-(default liferay.com site) has not yet been modified. If the guest site has not
-been modified, the default theme of the guest site is replaced by the Social
-Office welcome theme. The Social Office welcome theme requires the so-hook and
-the resource-importer, which is why the resource-importer is also included in
-the Social Office package. 
-
-Note that the Social Office welcome theme is not intended for customization.
-It's simply intended to provide a simple login screen. If you try to customize a
-page it's been applied to, you'll find that it hides the edit controls from
-administrators. If you'd like to customize your portal's login page, you should
-first remove the Social Office welcome theme. To do so, follow these steps:
-
-1. Undeploy the Social Office welcome theme (so-welcome-theme).
-2. Navigate to the Control Panel, click on *Sites*, and select *Actions* &rarr;
-   *Edit Settings* on the guest site.
-3. Set the Application Adapter field to *None*.
-
-![Figure 1.6: Editing the default site's settings](../../images/so-welcome-theme2.png)
-
-4. Set the theme of the site back to the classic theme or to your theme of
-   choice.
-
-![Figure 1.7: Editing the default site's
-settings](../../images/so-welcome-theme3.png)
-
-If you'd like to install the SO welcome theme when the guest site has already
-been modified, you can follow these instructions:
-
-First, you have to revert the guest site back to its original state when you
-first installed Liferay Portal. This means that the guest site should only
-contain one page and the page should only have the Sign In portlet and the Hello
-World portlet. For Liferay Portal 6.1.1, a regular portal welcome theme is
-deployed by default. That means that you'll need to take the following steps: 
-
-1. Undeploy the portal welcome theme.
-2. Delete all other pages.
-3. Make sure the first page of the guest site only has the Sign In and Hello
-   World portlets. 
-4. Deploy the Social Office welcome theme (so-welcome-theme).
-
-This way, the Social Office welcome theme will be applied to the portal home
-page.
-
----
-
-![Figure 1.8: Tip](../../images/tip.png) **Warning:** Installing the Social
-Office welcome theme overwrites any pages and customizations that have already
-been made to the guest site.
-
----
-
--->
-
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
 
 ### Validating a Social Office Installation [](id=lp-2-1-soen01-validating-a-social-office-installation)
 
-The Social Office `.lpkg` file is hot-deployable and includes the following
+The Social Office 3.0 `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
 confirm that these plugins have been successfully deployed (or removed). Your
 server's console log should indicate whether or each plugin has been
@@ -366,33 +299,40 @@ CE or EE versions of Social Office.
 
 **CE Plugins:**
 
+- calendar-portlet
 - chat-portlet
 - contacts-portlet
 - deploy-listener-hook
 - events-display-portlet
 - microblogs-portlet
+- notifications-portlet
 - portal-compat-hook
 - private-messaging-portlet
-- *resource-importer-web*
+- so-activities-hook
+- so-announcements-portlet
+- so-configurations-portlet
 - so-hook
 - so-portlet
 - so-theme
-- *so-welcome-theme*
 - tasks-portlet
 - wysiwyg-portlet
 
 **EE Plugins:**
 
+- calendar-portlet
 - chat-portlet
 - contacts-portlet
-- deploy-listener-portlet
-- *documentum-hook*
+- deploy-listener-hook
+- documentum-hook
 - events-display-portlet
 - microblogs-portlet
+- notifications-portlet
 - portal-compat-hook
 - private-messaging-portlet
-- *sharepoint-hook*
-- *so-configurations*
+- sharepoint-hook
+- so-activities-hook
+- so-announcements-portlet
+- so-configurations-portlet
 - so-hook
 - so-portlet
 - so-theme
@@ -420,7 +360,7 @@ or on a default Social Office site:
 - Events Display
 - Microblogs
 - Private Messaging
-- Social Office Configurations (EE-only)
+- Social Office Configurations
 - Social Office Portlet
 - Tasks
 - Wysiwyg
@@ -436,7 +376,6 @@ or on a default Social Office site:
 **Themes**:
 
 - Social Office theme
-- Social Office Welcome theme (CE-only)
 
 In case you're uninstalling Social Office, make sure that the above components
 are no longer available. Uninstalling Social Office from Liferay's Control Panel
@@ -504,6 +443,19 @@ Next, let's discuss how Social Office can facilitate team collaboration.
 
 ## Using Social Office [](id=lp-2-1-soen01-using-social-office)
 
+After installing Social Office to your Liferay instance, you'll be directed to
+the following screen when you log in as an administrator:
+
+![Figure 1.23: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
+
+This page allows you to assign the Social Office User role to users,
+organizations, or user groups. If you aren't immediately sure who should be
+assigned to the Social Office User role, you can come back to this page later.
+It's called Social Office Configurations and it appears at the bottom of the
+Portal section of the Control Panel. The Social Office Configurations portlet
+was an EE-only feature of Social Office 2.x but it's a CE feature in Social
+Office 3.x.
+
 Liferay Portal is a fully featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
 businesses use it to run major web sites all over the world. We've optimized
@@ -534,13 +486,15 @@ shared virtual workspaces with minimal set up and administration.
 The Social Office theme is used to style Social Office pages, including the
 private pages of users' personal sites, their public pages, and the pages of
 Social Office sites. The Social Office theme is mobile-responsive so users using
-smartphones or tablets can easily use the site. The Social Office theme
-adds a convenient button to the top-right corners of Social Office pages. This
-button allows you to expand the portlets on the page to fit the size of your
-browser window. You can click the button again to return the portlets to their
-default size. In addition to the standard Social Office theme, there's also the
-Social Office's welcome theme that's used to style the Social Office welcome
-page (CE-only).
+smartphones or tablets can easily use the site. The Social Office theme adds a
+convenient button to the top-right corners of Social Office pages. This button
+allows you to expand the portlets on the page to fit the size of your browser
+window. You can click the button again to return the portlets to their default
+size. The Social Office theme provides two colors theme: Classic and Strata. The
+Classic color theme provides a white background while the Strata color theme
+provides some solid background colors. The Social Office welcome theme that was
+included with Social Office 2.x has been replaced by the regular Social Office
+theme in Social Office 3.x.
 
 ### Using the Social Office User Role, the User Bar, and Personal Sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
 
@@ -751,10 +705,9 @@ have the following options:
 - *Follow/Unfollow* subscribes and unsubscribes you to the selected user's
   activities stream.
 - *Block/Unblock* allows you to block and unblock users from viewing your
-  activities stream. As of Social Office 2.0, blocking a user only prevents that
-  user from following you or adding you as a connection. A blocked user can
-  still send messages to and view the public profile information of the blocking
-  user. 
+  activities stream. Blocking a user only prevents that user from following you
+  or adding you as a connection. A blocked user can still send messages to and
+  view the public profile information of the blocking user. 
 - *Export vCard* lets you export a user's vCard and save it as a VCF file. vCard
   is a file format standard for electronic business cards.
 - *Go to Profile* is a link to the selected user's public profile page.
@@ -1021,8 +974,6 @@ possible to install Social Office EE on Liferay CE. Social Office EE provides
 several useful features in addition to the ones provided by Social Office CE.
 These additional features include the following:
 
-- A Social Office User management tool that provides an easier way to assign
-  users to the Social Office User role
 - Enhanced auditing tools for the Documents and Media library
 - The ability to mount Documentum and Sharepoint repositories to the Documents
   and Media library.
@@ -1039,17 +990,6 @@ Sharepoint repositories to be mounted within Liferay's Documents and Media
 system. Please refer to the Liferay Marketplace app descriptions and the
 Documents and Media section of the [Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/using-external-repositori-3)
 for information on properties and configuration.
-
-After installing Social Office EE to your Liferay EE instance, you'll be
-directed to the following screen when you log in as an administrator:
-
-![Figure 1.23: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
-
-This page allows you to assign the Social Office User role to users,
-organizations, or user groups. If you aren't immediately sure who should be
-assigned to the Social Office User role, you can come back to this page later.
-It's called Social Office Configurations and it appears at the bottom of the
-Portal section of the Control Panel.
 
 Other features provided by Social Office EE include auditing improvements to the
 Documents and Media library. Once you've installed Social Office EE, you'll find
@@ -1075,120 +1015,30 @@ Comments*.
 
 Next, let's look at Social Office's upgrade process.
 
-## Upgrading Social Office [](id=lp-2-1-soen01-upgrading-social-office)
+## Upgrading From Social Office 2.x to 3.x
 
-Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
-1.5b and you'd like to upgrade to 2.0, you first need to upgrade your portal to
-version 6.1.1 CE. Please see the Upgrading Liferay section in chapter 17 of
-Liferay's User Guide for details about Liferay's upgrade process:
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
-Before starting the following Social Office upgrade process, make sure you've
-already upgraded your portal to version 6.1.1 CE, and backed up your old
-`portal-ext.properties` file, data folder, and database.
-
----
-
- ![Notice](../../images/tip.png) **Notice:** Current SO 2.0.4 CE customers
- planning to upgrade to 2.0.5 EE must *first* download and upgrade to 2.0.5 CE.
- A direct upgrade from 2.0.4 CE to 2.0.5 EE is *not* supported; attempting this
- will break Social Office.
+Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
+from Social Office 2.x to to 3.x, you first need to upgrade your portal from
+Liferay 6.1 to Liferay 6.2. For information on upgrading Liferay, please refer
+to the [Liferay User Guide](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/upgrading-liferay-liferay-portal-6-2-user-guide-18-en).
+Remember to undeploy your Social Office 2.x plugins before upgrading your portal
+to 6.2. If you have a Liferay Portal EE subscription, make sure to apply any
+available fix packs before deploying your Social Office 3.x plugins.
 
 ---
 
----
-
- ![Notice](../../images/tip.png) **Notice:** There's an issue when upgrading
- from SO 2.0.5 to 2.1: Deploying newer plugins over the older plugins produces
- console exceptions when you navigate anywhere inside the portal. The reason for
- the exceptions is that the old versions of the SO plugins were not completely
- undeployed.
-
- As a workaround, set the following portal property before upgrading to ensure
- that all the SO plugins are completely undeployed before the newer SO plugins
- are deployed:
-
-    hot.undeploy.on.redeploy=true
-
- This issue only affects upgrades from 2.0.5 to 2.1 on Liferay 6.1. It does not
- affect Liferay 6.2. It also does not affect fresh installs of SO 2.1 on Liferay
- 6.1.
+![Figure 1.x: Note](../../images/tip.png) Note: There are a few known issues with
+the Social Office plugins that you might experience if you're running on JBoss.
+If the Go To menu is not initially visible after deploying the Social Office
+plugins or if you can't confirm a connection or site invitation after logging in
+as the default administrator user, clear the `/temp` folder and then restart the
+server to resolve the issue.
 
 ---
 
-1. In your new 6.1.1 portal bundle, add the following properties into your
-   `portal-ext.properties` file:
-
-   5.2.7 uses permission algorithm 5 (comment out once data migration is
-   complete).
-   
-    permissions.user.check.algorithm=5
-    permissions.view.dynamic.inheritance=false
-
-   6.1.1 uses permission algorithm 6 (comment in once data migration is
-   complete).
-   
-    permissions.user.check.algorithm=6
-    permissions.view.dynamic.inheritance=false
-
-   The following property ensures that the document library uses the same
-   storage method.
-   
-    dl.hook.impl=com.liferay.documentlibrary.util.FileSystemHook
-
-   You do not want to index on startup/upgrade, so make sure reindex is disabled
-   when you deploy the Social Office packager.
-   
-    index.on.startup=false index.on.upgrade=false
-
-   Point Liferay to data folder of SO 1.5 (this may be different then your new
-   data folder).
-   
-    resource.repositories.root={your data folder}
-
-   The following values are taken from the default 5.2 legacy properties in the
-   portal folder.
-
-    users.image.max.height=0
-
-    users.image.max.width=0
-
-    locale.prepend.friendly.url.style=0
-
-    auth.token.check.enabled=false
-
-    image.hook.impl=com.liferay.portal.image.DatabaseHook
-
-    cdn.host.http=${cdn.host} cdn.host.https=${cdn.host}
-
-    virtual.hosts.default.community.name=
-
-    breadcrumb.show.guest.group=false breadcrumb.show.parent.groups=false
-
-    wiki.page.titles.regexp=([^/\\\\\\[\\]%&?@]+)
-    wiki.page.titles.remove.regexp=([/\\\\\\[\\]%&?@]+)
-	
-2. Make sure that your root directory is set to SO 1.5's root directory and that
-   permission algorithm 5 is being used.
-
-3. Start up your application server. (Your permission algorithm must be set to
-   5.)
-
-4. After the upgrade has completed and your portal is running, log in as an
-   administrator and navigate to Control Panel &rarr; Server Administration
-   &rarr; Data Migration.
-
-5. Flag *Generate Custom Roles*.
-
-6. Click *Execute* to update the permission algorithm.
-
-7. Shut down your application server.
-
-8. In your `portal-ext.properties` file, comment out permission algorithm 5 and
-   comment in permission algorithm 6.
-
-9. Start your application server back up.
-
-10. Deploy the Social Office 2.0 Packager or install Social Office 2.0 through
-    Liferay Marketplace.
-
-11. Check that all previous content and files are accessible and present.
+Once your 6.2 portal is ready, deploy your Social Office 3.x plugins. When you
+first log in to your portal as an administrator after installing Social Office
+3, you'll see the Social Office configurations portlet. You can use this portlet
+to grant the Social Office User role to users. The Social Office User provides
+access to the Dashboard home page, the public Profile page, and all of their
+applications. You're now ready to use Social Office!
