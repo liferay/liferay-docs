@@ -1932,6 +1932,8 @@ generation:
 
     mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
+<!-- Need to change URL above when there is an EE-only Liferay repo. -Cody -->
+
 ---
 
 ![note](../../images/tip-pen-paper.png) **Important:** Do not have the Liferay
@@ -1956,8 +1958,6 @@ workaround to accessing Liferay's *6.2.0-GA1* artifacts, please reference the
 and EE artifacts are identical, and are both accessible from the Liferay
 repository located at
 [https://repository.liferay.com](https://repository.liferay.com).
-
-
 
 ---
 
@@ -2348,7 +2348,7 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 		</liferay.auto.deploy.dir>
 
 		<liferay.maven.plugin.version>
-			6.2.0-RC5
+			6.2.0-GA1
 		</liferay.maven.plugin.version>
 
 		<liferay.version>
@@ -2473,12 +2473,50 @@ plugins using the command line.
 
 2.  Execute the command
 
-        mvn archetype:generate
+        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+    ---
+    
+    ![note](../../images/tip-pen-paper.png) **Important:** Currently, the new
+    GA1 artifacts for CE and EE are only available from
+    [repository.liferay.com](repository.liferay.com). Therefore, you must use
+    the `-DarchetypeCatalog=...` portion to access the Liferay Repository.
+    You'll also to configure a couple other files to ensure the generation
+    command completes successfully. Reference the *Installing CE Artifacts from
+    the Central Repository* and *Installing EE Artifacts from the Liferay
+    Repository* sections to configure Maven to access the Liferay Repository for
+    CE and EE artifacts, respectively.
+    
+    ---
+
+    <!-- Edit archetype generate command and remove above note when GA1 artifacts
+    are available from Maven Central. -Cody -->
 
     Archetype starts and lists the archetypes available to you. You're prompted
     to *choose* an archetype or *filter* archetypes by group / artifact ID. The
     output looks similar to the following text: 
 
+        ...
+        4: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-jsf-archetype
+        (Provides an archetype to create Liferay JSF portlets.)
+        5: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-layouttpl-archetype
+        (Provides an archetype to create Liferay layout templates.)
+        6: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-archetype
+        (Provides an archetype to create Liferay portlets.)
+        7: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-liferay-faces-alloy-archetype
+        (Provides an archetype to create Liferay Faces Alloy portlets.)
+        8: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-primefaces-archetype
+        (Provides an archetype to create Liferay PrimeFaces portlets.)
+        ...
+        Choose a number or apply filter (format: [groupId:]artifactId, case sensiti
+        ve contains):
+        
+<!--
         ...
         39: remote -> com.liferay.maven.archetypes:liferay-hook-archetype
         (Provides an archetype to create Liferay hooks.)
@@ -2494,15 +2532,26 @@ plugins using the command line.
         ...
         Choose a number or apply filter (format: [groupId:]artifactId, case sensiti
         ve contains):
+-->
+<!-- Output will look similar to this once GA1 artifacts are officially
+available on Maven Central/ZIP files. Add similar output back, when available
+-Cody -->
 
+3. Choose a Liferay portlet archetype by entering its number. Since we're using
+the Liferay Repository, the newest archetype version is automatically selected.
+(*6.2-GA1*).
+
+<!--
 3.  To find the right Liferay archetype for your project, you can either scroll
     up to find it or apply filters to narrow the set of results. Filtering on
     *liferay* as your group ID, and a plugin type (*portlet*, *hook*, *theme*,
     etc.) can help you focus on more applicable Liferay archetypes. 
 
     Entering `liferay:portlet` as a filter gives a listing of Liferay portlet
-    archetypes: 
-
+    archetypes: -->
+<!-- Add back when filtering is relevant (using GA1 artifacts from Central -Cody
+-->
+<!--
         Choose a number or apply filter (format: [groupId:]artifactId, case
         sensitive contains): : liferay:portlet Choose archetype:
         1: remote -> com.liferay.maven.archetypes:liferay-portlet-archetype
@@ -2524,8 +2573,10 @@ plugins using the command line.
         number or apply filter (format: [groupId:]artifactId, case sensitive co
         ntains): :
 
-4.  Choose an archetype by entering its number.
+4.  Choose an archetype by entering its number.-->
+<!-- Add back when step 3. is added back -->
 
+<!--
 5.  You're prompted to choose the archetype version. Enter the number
     corresponding to the Liferay version for the archetype. However, you're not
     required to select the archetype version that corresponds with your Liferay
@@ -2555,8 +2606,10 @@ plugins using the command line.
         20: 6.2.0-RC4
         21: 6.2.0-RC5
         Choose a number: 21:
+-->
+<!-- Add back when GA1 artifacts are available from Central. --Cody -->
 
-6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
+4.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
     coordinates (properties) of your project. Here are some examples: 
 
         groupId: com.liferay.sample
@@ -2571,7 +2624,7 @@ plugins using the command line.
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
 
-7.  Enter the letter *Y* to confirm your coordinates.
+5.  Enter the letter *Y* to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
@@ -2631,7 +2684,7 @@ these steps:
 			</liferay.auto.deploy.dir>
 
 			<liferay.maven.plugin.version>
-				6.2.0-RC5
+				6.2.0-GA1
 			</liferay.maven.plugin.version>
 
 			<liferay.version>
