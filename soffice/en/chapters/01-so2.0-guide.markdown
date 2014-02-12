@@ -419,19 +419,7 @@ assistance through the [Social Office Forum](http://www.liferay.com/community/fo
 
 If you'd like to completely uninstall Social Office, you can navigate to the
 *Marketplace* &rarr; *Purchased* page of the Control Panel and click on
-*Uninstall*. However, after you've uninstalled Social Office from Marketplace,
-you need to manually revert the friendly URL of the Welcome page. 
-
-![Figure 1.9: After uninstalling Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page.](../../images/site_pages_welcome_sologin.png)
-
-Also, you need to set the application adapter for the guest site to *none*
-instead of *so-hook*. You can access this option from the Site Settings page of
-the Control Panel.
-
-If you don't manually revert the friendly URL of the Welcome page and the
-application adapter of the guest site, the portal will look for the `/so/login`
-page which no longer exists since the hook is gone. This will produce a number
-of errors in the log and once you log out, you won't be able to log in again.
+*Uninstall*. 
 
 Uninstalling Social Office reverts users' Profile and Dashboard pages to the
 default Liferay public and private pages and reverts Social Office sites to
@@ -453,8 +441,8 @@ organizations, or user groups. If you aren't immediately sure who should be
 assigned to the Social Office User role, you can come back to this page later.
 It's called Social Office Configurations and it appears at the bottom of the
 Portal section of the Control Panel. The Social Office Configurations portlet
-was an EE-only feature of Social Office 2.x but it's a CE feature in Social
-Office 3.x.
+was an EE-only feature of Social Office 2.x but it's become a CE-feature as well
+in Social Office 3.x.
 
 Liferay Portal is a fully featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
