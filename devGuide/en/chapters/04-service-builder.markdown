@@ -760,8 +760,8 @@ remote Liferay services later in this chapter.
 
 ![Figure 4.4: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
 
-<!-- Also show how to execute by right-selecting project -> Liferay -> Build
-Services -->
+<!-- Also show/explain how to build services by right-selecting project ->
+Liferay -> Build Services. - Jim -->
 
 After running Service Builder, the Plugins SDK prints messages listing the
 generated files and a message stating `BUILD SUCCESSFUL`. More information about
@@ -2155,12 +2155,7 @@ services for the Event Listing example project. You'll implement a few methods
 for the Event Listing Portlet that can be called remotely via SOAP and JSON web
 services. 
 
-<!-- TODO Need to specify resource-actions/default.xml -->
-
-<!-- TODO Need to write EventListingActionKeys -->
-
-<!-- TODO Need to write permission checks in eventlisting/service/ ...
-EventListingPermission, EventPermission, and LocationPermission -->
+<!-- Need to specify resource-actions/default.xml - Jim -->
 
 Remember: local service methods are implemented in `EventLocalServiceImpl`.
 Similarly, you'll implement remote service methods in `EventServiceImpl`. Add
