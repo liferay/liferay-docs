@@ -918,8 +918,6 @@ class:
 Remember to import the required classes. For your convenience, you can copy the
 following imports into your class: 
 
-Remember to import the required classes. These include the following:
-
     import java.util.Calendar;
     import java.util.Date;
     import java.util.List;
@@ -1088,6 +1086,7 @@ Make sure to add the following imports:
     import com.liferay.portal.kernel.exception.SystemException;
     import com.liferay.portal.model.User;
     import com.liferay.portal.service.ServiceContext;
+
     import com.nosester.portlet.eventlisting.model.Location;
     import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
@@ -1485,7 +1484,7 @@ next time you run Service Builder.
 Now that we can access the location and event entities with the local services,
 let's build our UI. 
 
-## Creating User Interfaces for Service Builder Portlets
+## Creating User Interfaces for Service Builder Portlets [](id=creating-user-interfaces-for-service-bui-liferay-portal-6-2-dev-guide-04-en)
 
 We'll build a UI for the Location Listing Portlet that we've been developing in
 the Event Listing example project. The Location Listing Portlet's location
@@ -2507,18 +2506,21 @@ the following finder method and static field to the `EventFinderImpl` class:
         EventFinder.class.getName() +
             ".findByEventNameEventDescriptionLocationName";
 
-Remember to import the required classes. These include the following:
+Remember to import the required classes. We've provided the imports here for
+your convenience: 
 
-    java.util.List;
-    com.liferay.portal.kernel.dao.orm.QueryPos;
-    com.liferay.portal.kernel.dao.orm.QueryUtil;
-    com.liferay.portal.kernel.dao.orm.SQLQuery;
-    com.liferay.portal.kernel.dao.orm.Session;
-    com.liferay.portal.kernel.exception.SystemException;
-    com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
-    com.liferay.util.dao.orm.CustomSQLUtil;
-    com.nosester.portlet.eventlisting.model.Event;
-    com.nosester.portlet.eventlisting.model.impl.EventImpl;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.dao.orm.QueryPos;
+    import com.liferay.portal.kernel.dao.orm.QueryUtil;
+    import com.liferay.portal.kernel.dao.orm.SQLQuery;
+    import com.liferay.portal.kernel.dao.orm.Session;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
+    import com.liferay.util.dao.orm.CustomSQLUtil;
+
+    import com.nosester.portlet.eventlisting.model.Event;
+    import com.nosester.portlet.eventlisting.model.impl.EventImpl;
 
 The custom finder method opens a new Hibernate session and uses Liferay's
 `CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
