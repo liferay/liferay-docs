@@ -506,7 +506,6 @@ Use the following steps to create the Location Listing portlet:
 
     Here are the portlet class values to specify for the example Location
     Listing portlet: 
-
     - **Portlet plugin project:** *event-listing-portlet*
     - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
     - **Portlet class:** *LocationListingPortlet*
@@ -529,7 +528,6 @@ Use the following steps to create the Location Listing portlet:
 
     Here are the portlet deployment descriptor details to specify for the
     Location Listing portlet: 
-
     - **Name:** *locationlisting*
     - **Display name:** *Location Listing Portlet*
     - **Title:** *Location Listing Portlet*
@@ -560,8 +558,7 @@ Use the following steps to create the Event Listing portlet:
     ![Figure 2.9: Creating portlet classes is simple with Liferay IDE's portlet creation wizard.](../../images/create-a-portlet-class-eventlistingportlet.png)
 
     Here are the portlet class values to specify for the example Event
-    Listing portlet: 
-
+    Listing portlet:
     - **Portlet plugin project:** *event-listing-portlet*
     - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
     - **Portlet class:** *EventListingPortlet*
@@ -574,7 +571,6 @@ Use the following steps to create the Event Listing portlet:
 
     Here are the portlet deployment descriptor details to specify for the
     Event Listing portlet: 
-
     - **Name:** *eventlisting*
     - **Display name:** *Event Listing Portlet*
     - **Title:** *Event Listing Portlet*
@@ -931,7 +927,6 @@ configure the Remote Server Adapter, use the following steps:
 
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance: 
-
     - **Hostname:** Enter the IP address of your remote Liferay Portal instance's
     machine. 
     - **HTTP Port:** Enter the port it runs on (default: 8080). 
@@ -1126,7 +1121,6 @@ properties:
 3.  In the *System variables* section, click *New...*. 
 
 4.  Set the `ANT_HOME` variable:
-
     - **Variable name:** *ANT_HOME*
     - **Variable value:** `[Ant installation path]` (e.g.,
     `C:\Java\apache-ant-[version]`)
@@ -1501,7 +1495,6 @@ To create a repository using Nexus, follow these steps:
     artifacts. We're installing release version artifacts into this repository,
     so specify *Release* as the repository policy. Below are examples of
     repository property values: 
-
     - **Repository ID:** *liferay-releases*
     - **Repository Name:** *Liferay Release Repository*
     - **Provider:** *Maven2*
@@ -1522,7 +1515,6 @@ its repository policy:
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*.
 
 3.  Specify repository properties like the following:
-
     - **Repository ID:** *liferay-snapshots*
     - **Repository Name:** *Liferay Snapshot Repository*
     - **Provider:** *Maven2*
