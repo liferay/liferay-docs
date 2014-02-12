@@ -1878,10 +1878,17 @@ learn how to install these next.
 #### Installing EE Artifacts from the Liferay Repository
 
 If you'd like to access Liferay's EE artifacts without downloading and
-installing the EE `.zip` file, you can download and install them from Liferay's
-own repository:
-[https://repository.liferay.com](https://repository.liferay.com). You'll need to
-configure Maven to look for the artifacts here.
+installing the EE `.zip` file, you can configure Maven to automatically
+download and install them from Liferay's own repository:
+[https://repository.liferay.com](https://repository.liferay.com). The first time
+you use Maven to compile a Liferay plugin project, Maven automatically downloads
+the required artifacts from the Liferay Maven repository into your local
+repository, if they're not found in your local repository or any of your
+configured repository servers. You'll see it happen when you package your
+Liferay EE plugins. 
+
+In order to access artifacts from the Liferay Maven repository, you'll need to
+configure Maven to look for them there.
 
 First, specify the Liferay Repository's credentials in your project's parent
 `pom.xml` file as follows:
@@ -1944,9 +1951,9 @@ comment out the Liferay Repository credentials when publishing your artifacts.
 
 ---
 
-If you're working with Liferay CE, there's an alternative method of obtaining
-the necessary Liferay Maven artifacts: you can let Maven download them
-automatically. Let's see how. 
+Liferay makes its CE artifacts available on Maven's Central Repository. As with
+using Liferay's Maven repository, the Maven's Central Repository enables you to
+automatically download and install Liferay Maven artifacts. Let's see how. 
 
 #### Installing CE Artifacts from the Central Repository [](id=install-ce-artifacts-from-central-repo-liferay-portal-6-2-dev-guide-02-en)
 
