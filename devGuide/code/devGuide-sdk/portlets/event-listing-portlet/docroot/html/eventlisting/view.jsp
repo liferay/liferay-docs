@@ -1,5 +1,5 @@
 
-<%@include file="/html/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 This is the <b>Event Listing Portlet</b> in View mode.
 
