@@ -46,7 +46,7 @@ public class LocationListingPortletDisplayTemplateHandler extends
 		templateVariableGroup.empty();
 
 		templateVariableGroup.addCollectionVariable(
-			"locations", List.class, PortletDisplayTemplateConstants.ENTRIES,
+			"locations", List.class, PortletKeys.LOCATIONS,
 			"location", Location.class, "curLocation", "name");
 
 		return templateVariableGroups;
