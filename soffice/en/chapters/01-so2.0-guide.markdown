@@ -518,14 +518,14 @@ assigned to the Social Office User role logs in, the user bar appears and
 several changes are made to the Dockbar. The *Dashboard* link appears as the
 left-most item of the user bar and links to the other private pages of the
 user's personal site appear next. You can click on these links from anywhere in
-the portal to access your virtual private workspace. Also, the *Go to* menu is
-moved from the Dockbar to the user bar. Instead of simply allowing the user to
-navigate to one of the sites he or she belongs to, the *Go to* menu provides
-access to the Sites portlet. This means that Social Office users can not only
-use the *Go to* menu to navigate to sites they belong to but they can also
-search for sites, filter the sites in the list (*All Sites*, *My Sites*, *My
-Favorites*), add sites to their favorites list, access the Sites Directory, and
-access the Add Site wizard.
+the portal to access your virtual private workspace. Also, the *My Sites* link
+is moved to the user bar, where it's renamed to *Go to*. Instead of simply
+allowing the user to navigate to one of the sites he or she belongs to, the *Go
+to* menu provides access to the Sites portlet. This means that Social Office
+users can not only use the *Go to* menu to navigate to sites they belong to but
+they can also search for sites, filter the sites in the list (*All Sites*, *My
+Sites*, *My Favorites*), add sites to their favorites list, access the Sites
+Directory, and access the Add Site wizard.
 
 The Sites portlet is an improved version of the basic My Sites portlet. It
 allows you to star various sites to customize your sites list. You can select
@@ -542,16 +542,19 @@ team collaboration. The *Sites Directory* button opens a site directory dialog
 box which you can use to join, leave sites, or star sites. If you have the
 required permissions, you can also delete sites.
 
-![Figure 1.11: To access the Sites portlet, just click on *Go to* from the user bar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+![Figure 1.11: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
 Next, a *Notifications* icon is added to the right of the *Go to* menu. The
 Notifications icon displays how many unread notifications you have. You'll be
 notified upon receiving a private message, an invitation to join a site, a
 social connection request, or an event reminder. Alerts and announcements
 created via the Alerts or Announcements portlets are accessible via the
-Notifications icon. The *My Account* icon is also moved from the Dockbar to the
-user bar. When you click on your name or profile picture in the user bar, four
-options appear:
+Notifications icon.
+
+![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
+
+The *My Account* icon is also moved from the Dockbar to the user bar. When you
+click on your name or profile picture in the user bar, four options appear:
 
 - *My Profile*: takes you to your public Profile page. The Profile page is the
   public home page of a Social Office user's personal site.
