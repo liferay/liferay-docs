@@ -1891,8 +1891,8 @@ own repository:
 [https://repository.liferay.com](https://repository.liferay.com). You'll need to
 configure Maven to look for the artifacts here.
 
-First, specify the Liferay Repository's credentials in your
-`[USER_HOME]/.m2/settings.xml` file as follows:
+First, specify the Liferay Repository's credentials in your project's parent
+`pom.xml` file as follows:
 
     <repositories>
         <repository>
@@ -1918,12 +1918,18 @@ First, specify the Liferay Repository's credentials in your
 ![note](../../images/tip-pen-paper.png) **Note:** Notice the repositories are
 marked as *CE*. Currently, the CE and EE repositories are identical, so the
 repository name is irrelevant for the time being. Eventually, an EE-only
-repository will be available, which will require login configuration.
+repository will be available for archetype generation, which will require login
+configuration. At the current time, it's not possible to generate archetypes
+from a protected repository
+([ARCHETYPE-204](http://jira.codehaus.org/browse/ARCHETYPE-204)) like the
+*Liferay EE* repo. However, you can still log in to the [Liferay
+EE](https://repository.liferay.com/nexus/content/groups/liferay-ee) repo through
+the browser to view EE artifacts.
 
 ---
 
-<!-- Need to change the ID, name, and URL of the repository info once there is
-an EE-only repository on repository.liferay.com. -Cody -->
+<!-- Need to change the ID, name, and URL of the repository info once it's
+possible to access the EE-only repository on repository.liferay.com. -Cody -->
 
 Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands referring to the URL for generating artifacts. You'll need
@@ -1932,7 +1938,11 @@ generation:
 
     mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
-<!-- Need to change URL above when there is an EE-only Liferay repo. -Cody -->
+<!-- Need to change URL above when there is an EE-only Liferay repo. You'll
+notice I provided the specialized command here and in the portlet archetype
+example. Once everything is synced correctly and we're not solely relying on the
+Liferay repo, we can remove the specialized command from the portlet archetype
+exercise and only specify this way here. -Cody -->
 
 ---
 
@@ -2481,7 +2491,7 @@ plugins using the command line.
     GA1 artifacts for CE and EE are only available from
     [repository.liferay.com](repository.liferay.com). Therefore, you must use
     the `-DarchetypeCatalog=...` portion to access the Liferay Repository.
-    You'll also to configure a couple other files to ensure the generation
+    You'll also need to configure a couple other files to ensure the generation
     command completes successfully. Reference the *Installing CE Artifacts from
     the Central Repository* and *Installing EE Artifacts from the Liferay
     Repository* sections to configure Maven to access the Liferay Repository for
