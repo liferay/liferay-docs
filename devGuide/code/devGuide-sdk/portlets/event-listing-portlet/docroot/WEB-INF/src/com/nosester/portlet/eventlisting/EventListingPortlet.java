@@ -1,10 +1,5 @@
 package com.nosester.portlet.eventlisting;
 
-import java.util.Calendar;
-
-import javax.portlet.ActionRequest;
-import javax.portlet.ActionResponse;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -13,9 +8,15 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.EventServiceUtil;
+
+import java.util.Calendar;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 
 /**
  * @author Joe Bloggs
@@ -84,7 +85,7 @@ public class EventListingPortlet extends MVCPortlet {
 				serviceContext.getUserId(), eventId, name, description, month,
 				day, year, hour, minute, locationId, serviceContext);
 		}
-		
+
 		return event;
 	}
 

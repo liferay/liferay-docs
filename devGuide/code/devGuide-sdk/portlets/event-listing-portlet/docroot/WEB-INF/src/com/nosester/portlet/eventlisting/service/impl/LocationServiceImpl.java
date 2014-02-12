@@ -17,6 +17,7 @@ package com.nosester.portlet.eventlisting.service.impl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
+
 import com.nosester.portlet.eventlisting.model.Location;
 import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
@@ -41,7 +42,7 @@ import com.nosester.portlet.eventlisting.util.EventListingActionKeys;
  * @see    com.nosester.portlet.eventlisting.service.LocationServiceUtil
  */
 public class LocationServiceImpl extends LocationServiceBaseImpl {
-	
+
 	public Location addLocation(long groupId, String name, String description,
 			String streetAddress, String city, String stateOrProvince,
 			String country, ServiceContext serviceContext)
@@ -74,8 +75,8 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 			EventListingActionKeys.VIEW);
 
 		return LocationLocalServiceUtil.updateLocation(
-			locationId, name, description, streetAddress, city, stateOrProvince,
-			country, serviceContext);
+			getUserId(), locationId, name, description, streetAddress, city,
+			stateOrProvince, country, serviceContext);
 	}
 
 }

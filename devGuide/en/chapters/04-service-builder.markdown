@@ -260,7 +260,8 @@ entities. Once you create the file, you can then define your entities. We'll
 walk you through the whole process for the entities we've defined above, using
 Liferay IDE, which makes it easy. It'll only take seven steps to do it: 
 
-1.  Create the `service.xml` file in your project's `docroot/WEB-INF` folder.
+1.  Create the `service.xml` file in your project's `docroot/WEB-INF` folder, if
+    one does not already exist there. 
 
 2.  Define global information for the service.
 
@@ -290,11 +291,17 @@ Liferay IDE helps you build the `service.xml` file piece-by-piece, taking the
 guesswork out of creating XML that adheres to the DTD. For our tutorial, we'll
 use Liferay IDE to build the `service.xml` file.
 
-To create the `service.xml` file using Liferay IDE, select your
-`event-listing-portlet` project in the Package Explorer and then select *File*
-&rarr; *New* &rarr; *Liferay Service Builder*. Liferay IDE creates a
-`service.xml` file in your `docroot/WEB-INF/src` folder and displays the file in
-*Overview* mode.
+If a default `service.xml` file already exists in your `docroot/WEB-INF/src`
+folder, check to see if it has an `<entity />` element named "Foo". If it has
+the Foo entity, remove the entire `<entity name="Foo" ...> ... </entity>`
+element. The project wizard creates the Foo entity as an example, but it's of no
+use to us in this exercise. 
+
+If you don't already have a `service.xml` file it's easy to create one using
+Liferay IDE. Simply select your `event-listing-portlet` project in the Package
+Explorer and then select *File* &rarr; *New* &rarr; *Liferay Service Builder*.
+Liferay IDE creates a `service.xml` file in your `docroot/WEB-INF/src` folder
+and displays the file in *Overview* mode.
 
 Liferay IDE also provides a *Diagram* mode and a *Source* mode to give you
 different perspectives of the service information in your `service.xml` file.
@@ -459,7 +466,6 @@ columns for the entities as follows:
 `name`        | String | no
 `description` | String | no
 `date`        | Date   | no
-`locationId`  | long   | no
 
 **Location attribute columns**
 
@@ -513,6 +519,7 @@ last time an entity instance was modified.
 
   Name         | Type   | Primary
 :------------: | :----: | :------:
+`userId`       | long   | no
 `createDate`   | Date   | no
 `modifiedDate` | Date   | no
 
@@ -544,8 +551,8 @@ in Diagram mode and look similar to that of the figure below.
 ![Figure 4.3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
 
 Switch to *Source* mode in the editor for your `service.xml` file and note that
-Liferay IDE created a column element to hold the ID of the Location entity
-instance related to the Event:
+Liferay IDE created a column element in the Event entity to hold the ID of the
+Location entity instance rereference:
 
      <column name="locationId" type="long"></column>
 
@@ -753,6 +760,9 @@ remote Liferay services later in this chapter.
 
 ![Figure 4.4: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
 
+<!-- Also show/explain how to build services by right-selecting project ->
+Liferay -> Build Services. - Jim -->
+
 After running Service Builder, the Plugins SDK prints messages listing the
 generated files and a message stating `BUILD SUCCESSFUL`. More information about
 these files appears below. 
@@ -908,14 +918,18 @@ class:
 Remember to import the required classes. For your convenience, you can copy the
 following imports into your class: 
 
+    import java.util.Calendar;
     import java.util.Date;
     import java.util.List;
 
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.util.CalendarFactoryUtil;
     import com.liferay.portal.model.User;
     import com.liferay.portal.service.ServiceContext;
+
     import com.nosester.portlet.eventlisting.model.Event;
+    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 
 In order to add an Event to the database, you need an ID for the Event. Liferay
 provides a counter service which you call to obtain a unique ID for each new
@@ -1072,6 +1086,7 @@ Make sure to add the following imports:
     import com.liferay.portal.kernel.exception.SystemException;
     import com.liferay.portal.model.User;
     import com.liferay.portal.service.ServiceContext;
+
     import com.nosester.portlet.eventlisting.model.Location;
     import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
@@ -1469,7 +1484,7 @@ next time you run Service Builder.
 Now that we can access the location and event entities with the local services,
 let's build our UI. 
 
-## Creating User Interfaces for Service Builder Portlets
+## Creating User Interfaces for Service Builder Portlets [](id=creating-user-interfaces-for-service-bui-liferay-portal-6-2-dev-guide-04-en)
 
 We'll build a UI for the Location Listing Portlet that we've been developing in
 the Event Listing example project. The Location Listing Portlet's location
@@ -2140,6 +2155,8 @@ services for the Event Listing example project. You'll implement a few methods
 for the Event Listing Portlet that can be called remotely via SOAP and JSON web
 services. 
 
+<!-- Need to specify resource-actions/default.xml - Jim -->
+
 Remember: local service methods are implemented in `EventLocalServiceImpl`.
 Similarly, you'll implement remote service methods in `EventServiceImpl`. Add
 the following methods to the `EventServiceImpl` class:
@@ -2484,18 +2501,21 @@ the following finder method and static field to the `EventFinderImpl` class:
         EventFinder.class.getName() +
             ".findByEventNameEventDescriptionLocationName";
 
-Remember to import the required classes. These include the following:
+Remember to import the required classes. We've provided the imports here for
+your convenience: 
 
-    java.util.List;
-    com.liferay.portal.kernel.dao.orm.QueryPos;
-    com.liferay.portal.kernel.dao.orm.QueryUtil;
-    com.liferay.portal.kernel.dao.orm.SQLQuery;
-    com.liferay.portal.kernel.dao.orm.Session;
-    com.liferay.portal.kernel.exception.SystemException;
-    com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
-    com.liferay.util.dao.orm.CustomSQLUtil;
-    com.nosester.portlet.eventlisting.model.Event;
-    com.nosester.portlet.eventlisting.model.impl.EventImpl;
+    import java.util.List;
+
+    import com.liferay.portal.kernel.dao.orm.QueryPos;
+    import com.liferay.portal.kernel.dao.orm.QueryUtil;
+    import com.liferay.portal.kernel.dao.orm.SQLQuery;
+    import com.liferay.portal.kernel.dao.orm.Session;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
+    import com.liferay.util.dao.orm.CustomSQLUtil;
+
+    import com.nosester.portlet.eventlisting.model.Event;
+    import com.nosester.portlet.eventlisting.model.impl.EventImpl;
 
 The custom finder method opens a new Hibernate session and uses Liferay's
 `CustomSQLUtil.get(String id)` method to get the custom SQL to use for the

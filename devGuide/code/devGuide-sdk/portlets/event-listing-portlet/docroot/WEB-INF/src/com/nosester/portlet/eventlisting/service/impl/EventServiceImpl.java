@@ -17,6 +17,7 @@ package com.nosester.portlet.eventlisting.service.impl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
+
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl;
@@ -43,8 +44,8 @@ import com.nosester.portlet.eventlisting.util.EventListingActionKeys;
 public class EventServiceImpl extends EventServiceBaseImpl {
 
 	public Event addEvent(
-			long groupId, String name, String description,
-			int month, int day, int year, int hour, int minute, long locationId,
+			long groupId, String name, String description, int month, int day,
+			int year, int hour, int minute, long locationId,
 			ServiceContext serviceContext)
 		throws PortalException, SystemException {
 
