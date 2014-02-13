@@ -1895,9 +1895,9 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ce</id>
-		    <name>Liferay CE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
+            <id>liferay-ee</id>
+		    <name>Liferay EE</name>
+		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ee</url>
 		    <releases><enabled>true</enabled></releases>
 		    <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -1905,43 +1905,25 @@ First, specify the Liferay Repository's credentials in your project's parent
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-ce</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
+            <id>liferay-ee</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ee/</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
 
----
+Next, when interacting with the Liferay Repository, you'll need to use a
+specialized command to access the *Liferay EE* repo. Since the repo is
+protected, you'll need to specify your username and password when referring to
+the URL for generating artifacts. The username and password are the same as your
+liferay.com credentials. The command is listed below:
 
-![note](../../images/tip-pen-paper.png) **Note:** Notice the repositories are
-marked as *CE*. Currently, the CE and EE repositories are identical, so the
-repository name is irrelevant for the time being. Eventually, an EE-only
-repository will be available for archetype generation, which will require login
-configuration. At the current time, it's not possible to generate archetypes
-from a protected repository
-([ARCHETYPE-204](http://jira.codehaus.org/browse/ARCHETYPE-204)) like the
-*Liferay EE* repo. However, you can still log in to the [Liferay
-EE](https://repository.liferay.com/nexus/content/groups/liferay-ee) repo through
-the browser to view EE artifacts.
+    mvn archetype:generate -DarchetypeCatalog=https://USERNAME:PASSWORD@repository.liferay.com/nexus/content/groups/liferay-ee
 
----
-
-<!-- Need to change the ID, name, and URL of the repository info once it's
-possible to access the EE-only repository on repository.liferay.com. -Cody -->
-
-Next, when interacting with the Liferay Repository, you'll need to use
-specialized commands referring to the URL for generating artifacts. You'll need
-to run the following command to use the Liferay Repository for archetype
-generation:
-
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
-
-<!-- Need to change URL above when there is an EE-only Liferay repo. You'll
-notice I provided the specialized command here and in the portlet archetype
-example. Once everything is synced correctly and we're not solely relying on the
-Liferay repo, we can remove the specialized command from the portlet archetype
-exercise and only specify this way here. -Cody -->
+<!-- You'll notice I provided the specialized command here and in the portlet
+archetype example. Once everything is synced correctly and we're not solely
+relying on the Liferay repo, we can remove the specialized command from the
+portlet archetype exercise and only specify this way here. -Cody -->
 
 ---
 
@@ -1963,9 +1945,16 @@ automatically download and install Liferay Maven artifacts. Let's see how.
 Liferay Maven artifacts are not available in Maven's Central Repository. The
 Central Repository is only synced to Liferay's *6.2.0-RC5* release. As a current
 workaround to accessing Liferay's *6.2.0-GA1* artifacts, please reference the
-*Installing EE Artifacts from the Liferay Repository* section. Currently, the CE
-and EE artifacts are identical, and are both accessible from the Liferay
-repository located at
+*Installing EE Artifacts from the Liferay Repository* section for setup. Since
+the CE repo is public, there's no need to provide your username and password.
+Therefore, use the following command to access the CE repo:
+
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+Note that you'll need to change all *EE* references to *CE* in your parent
+`pom.xml`.
+
+You can visit the Liferay Repository in your browser at
 [https://repository.liferay.com](https://repository.liferay.com).
 
 ---
