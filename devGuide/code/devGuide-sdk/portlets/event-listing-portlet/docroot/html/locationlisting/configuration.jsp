@@ -14,7 +14,7 @@
  */
 --%>
 
-<%@ include file="../init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <%
 String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
@@ -42,6 +42,12 @@ long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displ
 			/>
 		</div>
 	</aui:fieldset>
+
+<%
+boolean showLocationAddress_cfg = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+%>
+
+    <aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress_cfg %>" />
 
 	<aui:button-row>
 		<aui:button type="submit" />

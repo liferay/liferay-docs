@@ -1875,7 +1875,7 @@ sharing with teammates.
 Did you know that Liferay has its own Maven repository for EE artifacts? Let's
 learn how to install these next.
 
-#### Installing EE Artifacts from the Liferay Repository
+#### Installing EE Artifacts from the Liferay Repository [](id=installing-ee-artifacts-from-the-liferay-liferay-portal-6-2-dev-guide-02-en)
 
 If you'd like to access Liferay's EE artifacts without downloading and
 installing the EE `.zip` file, you can configure Maven to automatically

@@ -1,4 +1,4 @@
-<%@include file="/html/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <%
 	Event event = null;
