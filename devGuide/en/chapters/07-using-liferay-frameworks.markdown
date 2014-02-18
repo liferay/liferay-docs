@@ -30,6 +30,7 @@ This chapter covers the following topics:
 - ServiceContext
 - Security and Permissions
 - Asset Framework
+- Recycle Bin
 - Message Bus
 - Device Detection
 
@@ -1490,6 +1491,58 @@ your custom portlets!
 
 Next, we'll show you how to leverage Liferay's Message Bus in sending messages
 within and between your applications. So let's hop on that bus! 
+
+## Implementing the Recycle Bin
+
+One of the most common actions to complete in the portal is the deletion of an
+entity. However, many times the word *delete* is closely associated with the
+word *permanent*. This is no longer true with Liferay's Recycle Bin. The Recycle
+Bin is not a single feature, but rather, a framework that is completely
+integrated with Liferay Portal. This means that all applications in the portal
+can use the Recycle Bin, if they are configured to do so. Many operating systems
+that use a Recycle Bin only allow their entities to be placed there. With
+Liferay's Recycle Bin, you can place Liferay entities *and* foreign entities
+into the same Recycle Bin. If you'd like to learn the basics of using the
+Recycle Bin, you can visit the [Recycling Assets with the Recycle
+Bin](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/recycling-assets-with-the-recycle-bin-liferay-portal-6-2-user-guide-04-en)
+section of *Using Liferay Portal*.
+
+Many of Liferay's assets already support the Recycle Bin, including Web Content,
+Documents and Media, Blogs, Message Boards, Wiki, Calendar, etc. Also, it is
+completely integrated with the platform. For example, if you have an asset
+publisher displaying assets, the assets in the Recycle Bin won't be displayed.
+Likewise, If you search for entities in the search bar, entities in the recycle
+bin will not display. The Recycle Bin's integration with Liferay's platform
+saves a substancial amount of headaches and custom coding. This framework is
+available for quick implementation so you can worry about other, more important
+things for your portal.
+
+In this section, we'll discuss how to implement the Recycle Bin framework for a
+Liferay application. We'll follow a five-step sequence to fully implement the
+framework into your app. While navigating the five steps, we'll refer to code
+snippets taken from Liferay's [Jukebox
+Portlet](https://github.com/liferay-labs/jukebox-portlet).
+
+For the Jukebox portlet, the following are already configured: entities
+(artists, albums, and songs), assets, indexed entities (searchable), and
+workflow. These are not mandatory to implement the Recycle Bin, but are present
+in the upcoming example. Let's begin implementing the Recycle Bin framework into
+your app!
+
+### Step 1: Moving Entries to the Recycle Bin
+
+### Step 2: Restoring Entries from the Recycle Bin
+
+### Step 3: Configuring the Undo Action
+
+### Step 4: Moving/Restoring Folders
+
+### Step 5: Resolving Conflicts
+
+
+
+
+
 
 ## Using Message Bus [](id=using-message-bus-liferay-portal-6-2-dev-guide-06-en)
 
