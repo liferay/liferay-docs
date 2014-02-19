@@ -94,7 +94,7 @@ AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 AlloyUI's character counter reports the number of characters you can enter in
 the text field before reaching the 10 character limit. 
 
-![Figure 11.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 12.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
 displays an HTML `<input/>` element with `id=some-input`. Then we referenced an
@@ -184,7 +184,7 @@ With all these simplifications, the AlloyUI code in your JSP looks like this:
 
 Voila! You're using AlloyUI in Liferay!
 
-![Figure 11.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
+![Figure 12.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
 
 Now that you've gotten your feet wet using AlloyUI, let's go over setting up the
 AlloyUI project for creating your own AlloyUI components. 
@@ -272,7 +272,7 @@ similar to this:
 
 The figure below shows what your web page should look like.
 
-![Figure 11.3: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter on your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 12.3: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter on your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Great! Now you know how to use a local set of the AlloyUI tag libraries. Next,
 we'll show you how to work with the AlloyUI source project. You'll learn how to

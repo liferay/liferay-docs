@@ -90,7 +90,7 @@ Studio first, and then with the terminal.
 
 8.  Click *Finish*.
 
-![Figure 9.1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
+![Figure 10.1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -166,7 +166,7 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
-![Figure 9.2: Drag and drop your theme onto the server.](../../images/05-themes-6.png)
+![Figure 10.2: Drag and drop your theme onto the server.](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
@@ -267,7 +267,7 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
-![Figure 9.3: Redeploying your theme in Developer Studio is the same as entering the `ant deploy` command for an already deployed plugin.](../../images/05-themes-2.png)
+![Figure 10.3: Redeploying your theme in Developer Studio is the same as entering the `ant deploy` command for an already deployed plugin.](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
@@ -512,12 +512,12 @@ the *Look and Feel* section of the *Site Administration* &rarr; *Site Pages*
 panel (see the *Creating and Managing Pages* section of [Using Liferay
 Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-liferays-multi-site-capabili-liferay-portal-6-2-user-guide-02-en)).
 
-![Figure 9.4: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+![Figure 10.4: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
-![Figure 9.5: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+![Figure 10.5: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 ---
 
@@ -680,7 +680,7 @@ site's name (i.e., title). But, if you are using a logo that mentions your
 company or site on each site page, you may find the default site name display
 distracting.
 
-![Figure 9.6: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+![Figure 10.6: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
 
 Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
 as a base theme, you have the following settings available for configuring site
@@ -798,7 +798,7 @@ applied out-of-the-box in Liferay CE.) The welcome theme and the pages and
 content that it imports to the default site provide a good example of the
 resources importer's functionality.
 
-![Figure 9.7: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
+![Figure 10.7: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
 
 If it's not already installed, you can download the resources importer
 application from Liferay Marketplace. Search for either *Resources Importer CE*
@@ -1228,7 +1228,7 @@ a layout template called *Columns 1 4 1*.
 
 5.  Click *Finish*. 
 
-![Figure 9.8: Creating a new layout template project is easy with Liferay Developer Studio.](../../images/layout-template-new-project.png)
+![Figure 10.8: Creating a new layout template project is easy with Liferay Developer Studio.](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -1288,7 +1288,7 @@ Let's see what each template file does:
   thumbnail image, but you can use the default PNG for layout templates as a
   starting point.
 
-![Figure 9.9: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
+![Figure 10.9: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
@@ -1422,7 +1422,7 @@ Now that we've discussed how layout template TPL files are designed, let's
 convert the 1 2 1 column template that we presented above into our 1 4 1 column
 template.
 
-![Figure 9.10: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
+![Figure 10.10: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
 
 1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
    *columns-1-4-1*.
@@ -1495,7 +1495,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 9.11: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 10.11: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1553,7 +1553,7 @@ What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 9.12: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
+![Figure 10.12: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 

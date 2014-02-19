@@ -76,9 +76,9 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 5.  Click *Finish*. 
 
-Figure 10.1 shows the values you specified for the hook plugin.
+Figure 11.1 shows the values you specified for the hook plugin.
 
-![Figure 10.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a build type, Plugins SDK, and Liferay Runtime, select *Hook*, and then click *Finish*.](../../images/hooks-create-hook-project-with-sdk.png)
+![Figure 11.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a build type, Plugins SDK, and Liferay Runtime, select *Hook*, and then click *Finish*.](../../images/hooks-create-hook-project-with-sdk.png)
 
 The Plugins SDK automatically names the hook by appending "-hook" to the project
 name. With Liferay IDE, you can create a hook in a completely new plugin project
@@ -173,7 +173,7 @@ plugin is built to contain this:
 In Liferay IDE's *Package Explorer*, here's what the hook structure looks
 like:
 
-![Figure 10.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/hooks-file-structure.png)
+![Figure 11.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/hooks-file-structure.png)
 
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook. We'll start by making one of the most common hook
@@ -427,7 +427,7 @@ Here's how we do it:
     the Site Administration interface. From the *Application Adapter* field's
     drop-down selector menu, select *Example*. Then click *Save*. 
 
-    ![Figure 10.3: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 11.3: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
 
 6.  Navigate to your site's pages, add the Navigation portlet to a page, and
     make sure that the modification message from your Application Adapter hook
@@ -756,7 +756,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 10.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 11.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
@@ -986,7 +986,7 @@ Navigate to the *Control Panel* &rarr; *Users and Organizations* and make sure a
 user has a job title, which can be added in any user's *My Account* interface.
 Then test out the indexer hook by searching for that job title.
 
-![Figure 10.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
+![Figure 11.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
 
 In the next section, we'll explore more hooks that allow for customizing
 Liferay's core features.
