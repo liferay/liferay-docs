@@ -2322,11 +2322,6 @@ API. Check back regularly to find more detailed descriptions of current
 frameworks. You might also discover brand new frameworks that'll knock your
 socks off, or at least simplify your custom portlet development. 
 
-Did you know that there is a breed of social applications called OpenSocial
-gadgets that lend themselves well to humans sharing information and application
-functionality within defined networks? They are light-weight and easy to write
-and distribute. We'll get into OpenSocial gadgets next. 
-
 <!-- Reinstate transition into Workflow chapter when Kaleo is ready for EE 6.2.
 - Jim
 
