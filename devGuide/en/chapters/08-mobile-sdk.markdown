@@ -1,4 +1,4 @@
-# Leveraging the Mobile SDK [](id=mobile-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
+# Leveraging the Mobile SDK (Beta) [](id=mobile-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
 The Liferay Mobile SDK is a framework that provides the means for your native
 mobile apps to easily consume Liferay Portal's core web services and custom
@@ -10,7 +10,8 @@ exceptions, so you can concentrate on using the services in your app.
 
 The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later, and it
 comes with the Liferay Android SDK and Liferay iOS SDK ready for you to
-download and use. The mobile SDK's official [project
+download and use. The Liferay Mobile SDK is in Beta and is currently
+unsupported. The mobile SDK's official [project
 page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
 gives you access to the SDK releases to download, provides the latest SDK news,
 and has forums for you to engage in mobile app development discussions. 
