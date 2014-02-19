@@ -788,11 +788,6 @@ accessible from the left-column navigation menu:
 - Contacts
 - Microblogs
 
-In addition to the navigation menu, the left column of each page of a Social
-Office user's public site contains a My Contacts portlet. This portlet allows
-viewers of a user's public site to see all the user's contacts and lets them
-navigate to any of the contacts' Profile pages.
-
 ![Figure 1.18: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about
@@ -994,15 +989,9 @@ enter a change log message.
 
 Additionally, Social Office EE allows comments to be added to specific versions
 of a document. Without Social Office EE, there's just a general comments area
-for each document that's not specific to any version.
-
-![Figure 1.25: Social Office EE allows you to comment on particular versions of files in the Documents and Media repository.](../../images/so-ee-doclib-comments.png)
-
-If you've been using Social Office CE and upgrade to EE, any comments that were
-added when you were using CE will appear in a section entitled *Previous
-Comments*.
-
-![Figure 1.26: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-previous-comments.png)
+for each document that's not specific to any version. If you've been using
+Social Office CE and upgrade to EE, any comments that were added when you were
+using CE will appear in a section entitled *Previous Comments*.
 
 Next, let's look at Social Office's upgrade process.
 
