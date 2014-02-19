@@ -189,7 +189,7 @@ of this guide. If you do have it installed, launch it.
 Great! Your new JSF portlet plugin project is ready for you to develop JSF
 portlets. 
 
-![Figure 4.x: Liferay Faces supports using the most popular component suites with your JSF portlets.](../../images/jsf-select-primefaces-comp-suite.png)
+![Figure 4.1: Liferay Faces supports using the most popular component suites with your JSF portlets.](../../images/jsf-select-primefaces-comp-suite.png)
 
 <!-- As an alternative, we should explain how to download the JARs manually and
 install them. - Jim -->
@@ -370,7 +370,7 @@ UI component requires a page refresh to render the first time.
 
 Refresh the page and the portal renders your portlet's calendar component. 
 
-![Figure 4.x: Powerful UI components, like this PrimeFaces calendar, are a snap to include in your portlet UI.](../../images/jsf-primefaces-portlet-with-calendar.png) 
+![Figure 4.2: Powerful UI components, like this PrimeFaces calendar, are a snap to include in your portlet UI.](../../images/jsf-primefaces-portlet-with-calendar.png) 
 
 It's just that easy to create and deploy JSF portlet plugins! 
 
@@ -481,7 +481,7 @@ seems confusing. - Jim -->
 Now that we've considered how to implement portal preferences, let's learn how
 to access the Portlet API. 
 
-### Accessing The Portlet API with ExternalContext [](id=access-portlet-api-with-externalcontext-liferay-portal-6-2-dev-guide-en)
+### Accessing the Portlet API with ExternalContext [](id=access-portlet-api-with-externalcontext-liferay-portal-6-2-dev-guide-en)
 
 Just as JSF *web app* developers rely on `ExternalContext` to access to the
 Servlet API, JSF *portlet* developers rely on it to access to the Portlet API. 
@@ -1053,9 +1053,10 @@ tags. The VDL documentation can be found at the following addresses:
   <http://docs.liferay.com/faces/3.0/vdldoc/>.
 - The VDL documentation for Liferay Faces 3.1 can be found at
   <http://docs.liferay.com/faces/3.1/vdldoc/>.
+- The VDL documentation for Liferay Faces 3.2 can be found at
+  <http://docs.liferay.com/faces/3.2/vdldoc/>.
 
-<!-- Re-add VDLs for 3.2 through 4.2 when released. - Jim
-- The VDL documentation for Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
+<!-- Re-add VDLs for 4.1 and 4.2 when released. - Jim
 - The VDL documentation for Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
@@ -1520,7 +1521,7 @@ perfomed in the portlet's lifecycle. The JSF portlet bridge then initiates the
 an HTTP POST is executed on a portlet and the portlet enters the `ACTION_PHASE`,
 then the full JSF lifecycle is initiated by the bridge. 
 
-![Figure 4.x: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/04-lifecycle-bridge.png)
+![Figure 4.3: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/04-lifecycle-bridge.png)
  
 Besides ensuring that the two lifecycles connect correctly, the JSF portlet
 bridge also acts as a mediator between the portal URL generator and JSF
@@ -1859,7 +1860,7 @@ Now that we've discussed JSF portlet bridge standards and Liferay Faces Bridge
 configuration options, let's learn how Liferay Faces Portal lets you leverage
 Liferay Portal's utilities and component tags. 
 
-## Leveraging Liferay Utilities with Liferay Faces Portal 
+## Leveraging Liferay Utilities with Liferay Faces Portal [](id=leveraging-liferay-utilities-with-lifera-liferay-portal-6-2-dev-guide-04-en)
 
 Let's first consider the Liferay Portal utilities available for you to use with
 your JSF portlets. 
@@ -1923,7 +1924,7 @@ standard CSS class names `portlet-msg-error`, `portlet-msg-info`, and
 <!-- Demonstrate using the liferay-ui:message tag for these message types.  - Jim -->
 
 As a convenience, Liferay Faces Portal provides the
-[`liferay-ui:message`](http://docs.liferay.com/faces/4.2/vdldoc/liferay-ui/message.html)
+[`liferay-ui:message`](http://docs.liferay.com/faces/3.2/vdldoc/liferay-ui/message.html)
 Facelet composite component tag that encapsulates the
 [`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
 tag. The `liferay-ui:message` tag automatically applies the JSR 286 standard
@@ -1980,9 +1981,10 @@ Because Liferay Faces has several [active versions](http://www.liferay.com/docum
   <http://docs.liferay.com/faces/3.0/vdldoc/>. 
 - The VDL documentation for Liferay Faces 3.1 can be found at
   <http://docs.liferay.com/faces/3.1/vdldoc/>. 
+- The VDL documentation for Liferay Faces 3.2 can be found at
+  <http://docs.liferay.com/faces/3.2/vdldoc/>. 
 
 <!-- Re-add upon release. - Jim
-- The VDL documentation for Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
 - The VDL documentation for Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
@@ -2182,10 +2184,11 @@ these tags. The VDL documentation can be found at the following addresses:
 - The VDL documentation for the Liferay Faces 3.0 can be found at
   <http://docs.liferay.com/faces/3.0/vdldoc/>.
 - The VDL documentation for the Liferay Faces 3.1 can be found at
-  <http://docs.liferay.com/faces/3.1/vdldoc/>.
+  <http://docs.liferay.com/faces/3.1/vdldoc/>. 
+- The VDL documentation for Liferay Faces 3.2 can be found at
+  <http://docs.liferay.com/faces/3.2/vdldoc/>. 
 
-<!-- Re-add links to VDLs for versions 3.2 through 4.2 when they are released. - Jim
-- The VDL documentation for the Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
+<!-- Re-add links to VDLs for versions 4.1 and 4.2 when they are released. - Jim
 - The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
@@ -2385,9 +2388,10 @@ Liferay Faces Bridge:
   <http://docs.liferay.com/faces/3.0/vdldoc/>. 
 - The VDL documentation for the Liferay Faces 3.1 can be found at
   <http://docs.liferay.com/faces/3.1/vdldoc/>. 
+- The VDL documentation for Liferay Faces 3.2 can be found at
+  <http://docs.liferay.com/faces/3.2/vdldoc/>.
 
 <!-- Re-add upon release. - Jim
-- The VDL documentation for the Liferay Faces 3.2 can be found at <http://docs.liferay.com/faces/3.2/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
@@ -2484,7 +2488,7 @@ package namespace as deprecated classes have not been provided.
 And those are all the changes necessary to migrate projects from the
 PortletFaces Bridge to the Liferay Faces Bridge. 
 
-## Migrating From Liferay Faces 3.1 to Liferay Faces 3.2/4.2
+## Migrating From Liferay Faces 3.1 to Liferay Faces 3.2/4.2 [](id=migrating-from-liferay-faces-3-1-to-life-liferay-portal-6-2-dev-guide-04-en)
 
 Liferay Faces 3.2 and 4.2 are compatible with Liferay Portal 6.2 (see the [Liferay Faces Version Scheme](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
 for more info on Liferay Portal compatibility). Migrating to Liferay Faces
@@ -2498,7 +2502,7 @@ In this section, we'll cover the following migration topics:
 
 First, let's explore Liferay Faces Alloy tag migration. 
 
-### Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags
+### Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags [](id=migrating-liferay-faces-alloy-3-1-tags-t-liferay-portal-6-2-dev-guide-04-en)
 
 AlloyUI was upgraded from AlloyUI 1.5 to AlloyUI 2.0 between Liferay Portal 6.1
 and Liferay Portal 6.2. The AlloyUI changes include the deprecation and removal
@@ -2509,7 +2513,7 @@ Alloy tag changes that you'll need to accommodate in your Facelets.
 
 First, let's look at the changes to the `aui` namespace tags. 
 
-#### Changes to the Liferay Faces Alloy `aui` Tags
+#### Changes to the Liferay Faces Alloy `aui` Tags [](id=changes-to-the-liferay-faces-alloy-aui-t-liferay-portal-6-2-dev-guide-04-en)
 
 The following table identifies the `aui` tags that are deprecated in 3.2/4.2 and
 each tag's replacement, if a replacement exists.
@@ -2518,7 +2522,7 @@ each tag's replacement, if a replacement exists.
 
 | Deprecated `aui` Tag | Replacement `aui` Tag |
 |----------------------|-----------------------|
-| `aui:column` | [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/column.html) and  [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) |
+| `aui:column` | [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) and  [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/col.html) |
 | `aui:layout` | No Replacement |
 
 ---
@@ -2535,7 +2539,7 @@ each tag's replacement, if a replacement exists.
 
 Next, we'll look at the changes to the tags in the `aui-cc` namespace.
 
-#### Changes to the Liferay Faces Alloy `aui-cc` Tags
+#### Changes to the Liferay Faces Alloy `aui-cc` Tags [](id=changes-to-the-liferay-faces-alloy-aui-c-liferay-portal-6-2-dev-guide-04-en)
 
 Below is a table of the `aui-cc` tags that are deprecated or removed with
 respect to the Liferay Faces 3.2, 4.1, and 4.2 releases: 
@@ -2563,7 +2567,7 @@ respect to the Liferay Faces 3.2, 4.1, and 4.2 releases:
 Now that we've learned the AlloyUI related migration changes, we'll look at the
 modifications necessary to use Liferay Faces 3.1 portlets in Liferay Portal 6.2. 
 
-### Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
+### Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2 [](id=migrating-the-liferay-portlet-xml-file-f-liferay-portal-6-2-dev-guide-04-en)
 
 Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2. We provide
 Liferay Faces 3.2 for compatibility with JSF 2.1 and provide Liferay Faces 4.2
