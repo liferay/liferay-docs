@@ -133,7 +133,7 @@ permission to call any service. Make sure not to modify data accidentally.
 
 ---
 
-#### Step 2: Import the Liferay services for your app to use. [](id=step-2-import-the-liferay-services-for-y-liferay-portal-6-2-dev-guide-08-en)
+#### Step 2: Import the Liferay services for your app to use [](id=step-2-import-the-liferay-services-for-y-liferay-portal-6-2-dev-guide-08-en)
 
 Being a contacts app, the sample app imports the mobile SDK's `UserService`
 class to connect to Liferay Portal's
@@ -152,7 +152,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and portlet services. 
 
-#### Step 3: Create a service object and call its service methods. [](id=step-3-create-a-service-object-and-call--liferay-portal-6-2-dev-guide-08-en)
+#### Step 3: Create a service object and call its service methods [](id=step-3-create-a-service-object-and-call--liferay-portal-6-2-dev-guide-08-en)
 
 The sample app creates a `UserService` object and calls its
 `getGroupUsers(...)` method to fetch all of the `Guest` site's users:
@@ -432,7 +432,7 @@ To learn more about the session and its three parameters, refer to
 [Setting Up the Android
 SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en).
 
-#### Step 2: Import the Liferay services for your app to use. [](id=step-2-import-the-liferay-services-for-liferay-portal-6-2-dev-guide-08-en-0)
+#### Step 2: Import the Liferay services for your app to use [](id=step-2-import-the-liferay-services-for-liferay-portal-6-2-dev-guide-08-en-0)
 
 For this sample app, we'll import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
@@ -448,7 +448,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and plugin services. 
 
-#### Step 3: Create a service object and call its services. [](id=step-3-create-a-service-object-and-cal-liferay-portal-6-2-dev-guide-08-en-0)
+#### Step 3: Create a service object and call its services [](id=step-3-create-a-service-object-and-cal-liferay-portal-6-2-dev-guide-08-en-0)
 
 For this sample app, we'll create an `LRBlogsEntryService_v62` object and
 make a service call that fetches all blog entries from the *Guest* site. In
