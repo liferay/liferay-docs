@@ -190,7 +190,7 @@ You configure the global values from the LDAP tab of the Authentication page.
 **Required:** Check this box if LDAP authentication is required. Liferay will
 then not allow a user to log in unless he or she can successfully bind to the
 LDAP directory first. Uncheck this box if you want to allow users with Liferay
-accounts but no LDA accounts to log in to the portal.
+accounts but no LDAP accounts to log in to the portal.
 
 **LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
 you the Add button beneath this heading to add LDAP servers. We explain how to
@@ -321,10 +321,12 @@ directory.
         (cn=@screen_name@)
 
 - *Import Search Filter:* Depending on the **LDAP** server, there are different
-  ways to identify the user. Generally, the default setting
-  (`objectClass=inetOrgPerson`) is fine but if you want to search for only a
-  subset of users or users that have different object classes, you can change
-  this.
+  ways to identify the user. The default setting is usually fine:
+
+        (objectClass=inetOrgPerson)
+
+    If you want to search for only a subset of users or users that have
+    different LDAP object classes, you can change this.
 
 - *User Mapping:* The next series of fields allows you to define mappings from
   LDAP attributes to Liferay fields. Though your LDAP user attributes may be
@@ -332,23 +334,23 @@ directory.
   requires to be mapped for the user to be recognized. You must define a mapping
   to the corresponding attributes in LDAP for the following Liferay fields:
 
-    +   *Screen Name*
+    +   *Screen Name* (e.g., *uid*)
 
-    +   *Password*
+    +   *Password* (e.g., *userPassword*)
 
-    +   *Email Address*
+    +   *Email Address* (e.g., *mail* or *email*)
 
-    +   *Full Name*
+    +   *First Name* (e.g., *name* or *givenName*)
 
-    +   *First Name*
+    +   *Last Name* (e.g., *sn*)
 
-    +   *Middle Name*
+    If you'd like to import LDAP groups as Liferay user groups, make sure to
+    define a mapping for the Liferay group field so that membership information
+    is preserved:
 
-    +   *Last Name*
+    +   *Group* (e.g., *member*)
 
-    +   *Job Title*
-
-    +   *Group*
+    The other LDAP user mapping fields are optional.
 
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
@@ -359,20 +361,26 @@ You can also add your own mappings if you wish.
 
 ![Figure 16.15: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
-**Groups:** This section contains settings for mapping LDAP groups to Liferay.
+**Groups:** This section contains settings for mapping LDAP groups to Liferay
+user groups.
 
-- *Import Search Filter:* This is the filter for finding LDAP groups you want to
-  map to Liferay. Enter the LDAP group attributes you want retrieved for this
-  mapping. The following attributes can be mapped:
+- *Import Search Filter:* This is the filter for finding the LDAP groups that
+  you want to map to Liferay user groups. E.g.,
 
-    + Group Name
+        (objectClass=groupOfNames)
 
-    + Description
+    Enter the LDAP group attributes you want retrieved for this mapping. The
+    following attributes can be mapped. The *Group Name* and *User* fields are
+    required, the *Description* is optional.
 
-    + User
+    + *Group Name* (e.g., *cn* or *o*)
 
-- *Test LDAP Groups:* Click the **Test LDAP Groups** to display a list of the
-  groups returned by your search filter.
+    + *Description* (e.g., *description*)
+
+    + *User* (e.g., *member*)
+
+- *Test LDAP Groups:* Click the *Test LDAP Groups* button to display a list of
+  the groups returned by your search filter.
 
 **Export:** This section contains settings for exporting user data from LDAP.
 

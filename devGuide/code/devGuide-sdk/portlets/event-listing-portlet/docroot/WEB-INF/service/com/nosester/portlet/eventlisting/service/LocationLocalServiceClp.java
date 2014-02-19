@@ -161,7 +161,7 @@ public class LocationLocalServiceClp implements LocationLocalService {
 		_methodName27 = "updateLocation";
 
 		_methodParameterTypes27 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
+				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
@@ -1013,9 +1013,10 @@ public class LocationLocalServiceClp implements LocationLocalService {
 
 	@Override
 	public com.nosester.portlet.eventlisting.model.Location updateLocation(
-		long locationId, java.lang.String name, java.lang.String description,
-		java.lang.String streetAddress, java.lang.String city,
-		java.lang.String stateOrProvince, java.lang.String country,
+		long userId, long locationId, java.lang.String name,
+		java.lang.String description, java.lang.String streetAddress,
+		java.lang.String city, java.lang.String stateOrProvince,
+		java.lang.String country,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
@@ -1025,7 +1026,9 @@ public class LocationLocalServiceClp implements LocationLocalService {
 			returnObj = _invokableLocalService.invokeMethod(_methodName27,
 					_methodParameterTypes27,
 					new Object[] {
-						locationId,
+						userId,
+						
+					locationId,
 						
 					ClpSerializer.translateInput(name),
 						
