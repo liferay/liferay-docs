@@ -673,7 +673,7 @@ the *Set Profile* dropdown menu.
     "session.disabled" in portal.properties.
     -->
 
-    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
     </Context>
 
 <!-- Why do we have all that stuff up there commmented out? Wouldn't it be
@@ -810,38 +810,21 @@ Control Lists (PACL) with Liferay on Tomcat.
 
 To enable PACL, you need to enable the security manager and add some required
 permissions to the server policy configuration file. This entails editing
-the `CATALINA_OPTS` variable and editing the `Catalina.policy` file:
+the `CATALINA_OPTS` variable and editing the `catalina.policy` file:
 
 In the *Administration* tab of the Tcat Administration Console, click *Server
 Profiles* and click the profile applied to your Liferay Tcat server. Click the
 *Value* field of the `CATALINA_OPTS` variable created earlier, and add the
 following parameter to it:
 
-    `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
+    `-Djava.security.manager -Djava.security.policy==$CATALINA_BASE/conf/catalina.policy`
 
-Edit `$TCAT_HOME/conf/Catalina.policy` and add the required permissions:
+The double equals sign tells the app server to use this policy file on top of
+any existing security policies. 
 
-        // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
-        grant codeBase "file:${catalina.home}${/}webapps${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-        };
-        // represents each webapp's ${javax.servlet.context.tempdir} directory
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-        };
+Edit `$TCAT_HOME/conf/catalina.policy` and add the required permissions:
 
-        // Since Liferay portal is a security provider it needs AllPermissions
-        grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
-            permission java.security.AllPermission;
-        };
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
-            permission java.security.AllPermission;
-        };
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
+        grant {
             permission java.security.AllPermission;
         };
 
@@ -973,8 +956,7 @@ Edit your `domain1/config/config/server-policy.xml` and append the following
 lines to the end of the file:
 
     grant {
-        permission java.lang.reflect.ReflectPermission  "suppressAccessChecks";
-        permission javax.security.auth.AuthPermission "doAsPrivileged";
+        permission java.security.AllPermission;
     };
 
 Delete, rename, or move the `domain1/docroot/index.html` file to another
@@ -1115,29 +1097,8 @@ following:
 Next, add the required permissions to the server policy configuration file:
 `glassfish/domains/domain1/config/server.policy`. These include the following:
 
-    // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
-    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-    };
-
-    // Represents each webapp's ${javax.servlet.context.tempdir} directory
-    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-    };
-
-    // Since Liferay portal is a security provider it needs AllPermissions
-    grant codeBase "file:${com.sun.aas.instanceRoot}${/}applications${/}liferay-portal${/}-" {
-            permission java.security.AllPermission;
-    };
-    grant codeBase "file:${com.sun.aas.instanceRoot}${/}generated${/}jsp${/}liferay-portal${/}-" {
-            permission java.security.AllPermission;
-    };
-    grant codeBase "file:${com.sun.aas.instanceRoot}${/}lib${/}portal-service.jar" {
-            permission java.security.AllPermission;
+    grant {
+        permission java.security.AllPermission;
     };
 
 Now let's go ahead and deploy Liferay.
@@ -1916,31 +1877,19 @@ following code into the `CATALINA_OPTS` variable (inside the quotation marks):
 
     `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
 
-- In `$TOMCAT_HOME/conf/Catalina.policy`, add the required permissions:
+- In `$TOMCAT_HOME/conf/catalina.policy`, add the required permissions:
 
-        // Tune for specific apps (these are generally required by Liferay plugins not using PACL)
-        grant codeBase "file:${catalina.home}${/}webapps${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-        };
-        // represents each webapp's ${javax.servlet.context.tempdir} directory
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}-" {
-            permission java.util.PropertyPermission "base.path", "write";
-            permission java.util.PropertyPermission "*", "read";
-            permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+        grant {
+            permission java.security.AllPermission;
         };
 
-        // Since Liferay portal is a security provider it needs AllPermissions
-        grant codeBase "file:${catalina.home}${/}webapps${/}ROOT${/}-" {
-            permission java.security.AllPermission;
-        };
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}_${/}-" {
-            permission java.security.AllPermission;
-        };
-        grant codeBase "file:${catalina.home}${/}work${/}Catalina${/}localhost${/}ROOT${/}-" {
-            permission java.security.AllPermission;
-        };
+To enable the security manager on Tomcat, the server must be started with the
+`-security` commandline options. Shutdown your Tomcat instance and restart it
+with the following command: 
+
+    ./startup.sh -security
+
+Tomcat reports the message `Using Security Manager` to your terminal. 
 
 Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
 
@@ -2442,7 +2391,7 @@ In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
 configuration. 
 
-    ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
+   ![Figure 15.13: Enabling security can be done by checking one box, but it still needs to be configured. ](../../images/websphere-05-liferay-enable-security.png)
 
 Next, you need to configure security for the Liferay profile you created. This
 requires editing a text file, which can be found nested several folders deep in

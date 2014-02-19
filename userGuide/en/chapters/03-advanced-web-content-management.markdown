@@ -1014,7 +1014,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-content-translation.png)
+![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
@@ -1023,7 +1023,7 @@ to translate the original web content into the selected language. Once you are
 done with the translation, click *Save* and the translation is added to the list
 of *Available Translations*.
 
-![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-content-translation-2.png)
+![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-translation-2.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -1330,7 +1330,7 @@ notice a colored bar with some new menus on the Dockbar when you navigate to
 the site. These new menus help us manage staged pages. You'll also notice that
 most of your page management options have been removed, because now you can't
 directly edit live pages. You now must use the staging environment to make
-changes. Click on the green *Staging* button to view the staged area. Your
+changes. Click on the *Staging* button to view the staged area. Your
 management options are restored and you can access some new options related to
 staging. If you're following along with the Lunar Resort example, navigate back
 to the News and Events page and click on *Staging* to get your page editing

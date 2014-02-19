@@ -481,7 +481,7 @@ the latest information on the AlloyUI framework. But, we'll continue to add
 examples to this chapter to demonstrate more ways you can use AlloyUI in your
 portal. So, make sure to periodically check back with this guide. 
 
-Now that you know how to use AlloyUI components to build snazzy UIs, why not
-boost your portal's social appeal with OpenSocial gadgets? In the next chapter,
-we'll show you how to incorporate OpenSocial gadgets in your portal. 
+Now that you know how to use AlloyUI components to build snazzy UIs, let's
+consider what it takes to develop your apps for publishing to *Liferay
+Marketplace*. 
 

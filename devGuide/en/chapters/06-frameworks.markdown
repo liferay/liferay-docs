@@ -1620,11 +1620,10 @@ conceivablly salvage it by making it into a purchase request application:
 Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
-Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
-to resolve the communication breakdown, but we'll resolve the Jungle Gym's
-communication woes using Message Bus, to show you how it works. Here are the
-inter-department message exchanges we'll accommodate:
+Jungle Gyms R-Us could use Liferay's Workflow with Kaleo to resolve the
+communication breakdown, but we'll resolve the Jungle Gym's communication woes
+using Message Bus, to show you how it works. Here are the inter-department
+message exchanges we'll accommodate:
 
  Message | Sender | Listener | Response | Response Listeners |
 -------- | ------ | -------- | -------- | ------------------ |
@@ -2323,6 +2322,14 @@ API. Check back regularly to find more detailed descriptions of current
 frameworks. You might also discover brand new frameworks that'll knock your
 socks off, or at least simplify your custom portlet development. 
 
+Did you know that there is a breed of social applications called OpenSocial
+gadgets that lend themselves well to humans sharing information and application
+functionality within defined networks? They are light-weight and easy to write
+and distribute. We'll get into OpenSocial gadgets next. 
+
+<!-- Reinstate transition into Workflow chapter when Kaleo is ready for EE 6.2.
+- Jim
+
 Not only does Liferay Portal boast of fabulous frameworks but also of its
 unwavering support of workflow development. Naturally, privileged portal users
 can create workflows right in portal. But as workflows incorporate API calls and
@@ -2335,3 +2342,4 @@ you also get access to an optimal development environment to work with Java APIs
 and FreeMarker templates. You're going to love building your workflows in Kaleo
 Designer for Java. Get ready to drop in and make waves with your workflows.
 Cowabunga! 
+-->

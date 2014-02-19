@@ -838,7 +838,8 @@ development environment for gadgets providing syntax highlighting, a preview
 function, undo/redo options, and built in tabs for working on multiple gadgets
 at once. You can also organize and manage gadgets through a simple file manager
 embedded into the portlet. To access the gadget editor, go to *Site
-Administration* &rarr; *Configuration* and click *OpenSocial Gadget Editor*.
+Administration* &rarr; *Configuration* &rarr; *Content* and click *OpenSocial
+Gadget Editor*.
 
 Once you have created and saved a gadget using the editor, click on the wrench
 next to the file to rename, delete, publish or get the URL for your gadget. If

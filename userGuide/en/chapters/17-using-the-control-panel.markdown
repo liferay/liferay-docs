@@ -190,7 +190,7 @@ You configure the global values from the LDAP tab of the Authentication page.
 **Required:** Check this box if LDAP authentication is required. Liferay will
 then not allow a user to log in unless he or she can successfully bind to the
 LDAP directory first. Uncheck this box if you want to allow users with Liferay
-accounts but no LDA accounts to log in to the portal.
+accounts but no LDAP accounts to log in to the portal.
 
 **LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
 you the Add button beneath this heading to add LDAP servers. We explain how to
@@ -321,10 +321,12 @@ directory.
         (cn=@screen_name@)
 
 - *Import Search Filter:* Depending on the **LDAP** server, there are different
-  ways to identify the user. Generally, the default setting
-  (`objectClass=inetOrgPerson`) is fine but if you want to search for only a
-  subset of users or users that have different object classes, you can change
-  this.
+  ways to identify the user. The default setting is usually fine:
+
+        (objectClass=inetOrgPerson)
+
+    If you want to search for only a subset of users or users that have
+    different LDAP object classes, you can change this.
 
 - *User Mapping:* The next series of fields allows you to define mappings from
   LDAP attributes to Liferay fields. Though your LDAP user attributes may be
@@ -332,23 +334,23 @@ directory.
   requires to be mapped for the user to be recognized. You must define a mapping
   to the corresponding attributes in LDAP for the following Liferay fields:
 
-    +   *Screen Name*
+    +   *Screen Name* (e.g., *uid*)
 
-    +   *Password*
+    +   *Password* (e.g., *userPassword*)
 
-    +   *Email Address*
+    +   *Email Address* (e.g., *mail* or *email*)
 
-    +   *Full Name*
+    +   *First Name* (e.g., *name* or *givenName*)
 
-    +   *First Name*
+    +   *Last Name* (e.g., *sn*)
 
-    +   *Middle Name*
+    If you'd like to import LDAP groups as Liferay user groups, make sure to
+    define a mapping for the Liferay group field so that membership information
+    is preserved:
 
-    +   *Last Name*
+    +   *Group* (e.g., *member*)
 
-    +   *Job Title*
-
-    +   *Group*
+    The other LDAP user mapping fields are optional.
 
 The Control Panel provides default mappings for commonly used LDAP attributes.
 You can also add your own mappings if you wish.
@@ -359,20 +361,26 @@ You can also add your own mappings if you wish.
 
 ![Figure 16.15: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
-**Groups:** This section contains settings for mapping LDAP groups to Liferay.
+**Groups:** This section contains settings for mapping LDAP groups to Liferay
+user groups.
 
-- *Import Search Filter:* This is the filter for finding LDAP groups you want to
-  map to Liferay. Enter the LDAP group attributes you want retrieved for this
-  mapping. The following attributes can be mapped:
+- *Import Search Filter:* This is the filter for finding the LDAP groups that
+  you want to map to Liferay user groups. E.g.,
 
-    + Group Name
+        (objectClass=groupOfNames)
 
-    + Description
+    Enter the LDAP group attributes you want retrieved for this mapping. The
+    following attributes can be mapped. The *Group Name* and *User* fields are
+    required, the *Description* is optional.
 
-    + User
+    + *Group Name* (e.g., *cn* or *o*)
 
-- *Test LDAP Groups:* Click the **Test LDAP Groups** to display a list of the
-  groups returned by your search filter.
+    + *Description* (e.g., *description*)
+
+    + *User* (e.g., *member*)
+
+- *Test LDAP Groups:* Click the *Test LDAP Groups* button to display a list of
+  the groups returned by your search filter.
 
 **Export:** This section contains settings for exporting user data from LDAP.
 
@@ -652,6 +660,59 @@ When you are finished, click *Save*. Now that we've looked at various options
 for integrating existing users into Liferay, let's look at other Liferay portal
 settings.
 
+### Shibboleth [](id=shibboleth-liferay-portal-6-2-user-guide-17-en)
+
+Shibboleth is a federated single sign-on and attribute exchange framework that
+implements SAML (Security Assertion Markup Language). The Shibboleth plugin
+available from Liferay Marketplace allows Liferay to integrate with Shibboleth
+to provide SSO support. The Liferay Shibboleth plugin contains an autologin hook
+that automatically logs users into Liferay when they are authenticated to a
+Shibboleth identity provider and the HTTP request has a specific header
+attribute. All of the Shibboleth service provider and identity provider
+configuration is done outside of Liferay. All that the Liferay Shibboleth plugin
+needs to do is accept the header attribute from Shibboleth and log the user in.
+
+The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
+Portal Settings section of the Control Panel.
+
+![Figure 17.1: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+
+There are four configuration options:
+
+- *Enabled*
+- *Import from LDAP*
+- *Logout URL*
+- *User Header*
+
+Check or uncheck the *Enabled* box to enable or disable Shibboleth authentication
+for Liferay. If the *Enabled* box is not checked, the Shibboleth auto login hook
+is disabled and the automated login process will not work even if the user
+header is in the HTTP request. If you check the *Import from LDAP* box, then any
+users authenticated from Shibboleth that do not exist in Liferay will be
+imported into Liferay from LDAP. LDAP must already be enabled for this to work.
+The path you enter into the *Logout URL* field sets the logout URL for
+Shibboleth. The link is triggered when the user logs out of the portal.  If the
+logout URL is incorrect or is not set, the user will not be logged out of
+Shibboleth. The *User Header* is the attribute name of the user header that is
+passed in from the Shibboleth service provider. It should contain either the
+screen name or the email address of the user, which will be used to authenticate
+the user into the portal.
+
+It's possible to configure the above four Shibboleth options via portal
+properties instead of via the Control Panel. To configure the Shibboleth plugin
+this way, add the following properties to your Liferay server's
+`portal-ext.properties` file and restart Liferay.
+
+- `shibboleth.auth.enabled=true`: corresponds to the *Enable* box above
+- `shibboleth.import.from.ldap=false`: corresponds to the *Import from LDAP* box
+  above
+- `shibboleth.logout.url=/Shibboleth.soo/Logout`: corresponds to the *Logout
+  URL* box above
+- `shibboleth.auth.enabled=true`: corresponds the *User Header* box above
+
+Note that options selected via the Control Panel are saved to Liferay's database
+and take precedence over any options configured via portal properties.
+
 ### SAML [](id=saml-liferay-portal-6-2-user-guide-17-en)
 
 ![EE-only](../../images/ee-feature-web.png)
@@ -895,14 +956,14 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the From field
 in all email messages sent by the portal.
 
-![Figure 17.1: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
+![Figure 17.2: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure 17.2: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
+![Figure 17.3: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
@@ -944,7 +1005,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 17.3: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 17.4: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
 themes, you can choose whether or not to display the logo. Be careful to choose
@@ -994,7 +1055,7 @@ To add a custom field, click on the *Custom Fields* link in the Control Panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 17.4: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 17.5: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you need to add the custom field key. The key appears as the label for
 the field on the form. For some portal resources (like the User), custom fields
@@ -1003,7 +1064,7 @@ fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 17.5: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 17.6: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
