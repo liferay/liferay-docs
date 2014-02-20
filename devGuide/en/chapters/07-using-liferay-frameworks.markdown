@@ -1756,6 +1756,96 @@ to do this next.
 
 ### Restoring Entries from the Recycle Bin
 
+Now that you're able to move entries *to* the Recycle Bin, let's configure your
+app to restore entries *from* the Recycle Bin. Besides, what's the point of
+having a Recycle Bin if you can't restore its entries?
+
+This configuration process is similar to the previous configuration for moving
+entries. We'll begin with creating a service method for the restoration process.
+
+#### Step 1: Creating a Service Method
+
+You'll need to create a service method that restores an entry from the Recycle
+Bin and places it back in its original location. We've provided a service method
+from the Jukebox portlet's
+[SongLocalServiceImpl](https://github.com/codyhoag/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java)
+that restores song entries currently residing in the Recycle Bin:
+
+    @Indexable(type = IndexableType.REINDEX)
+    @Override
+    public Song restoreSongFromTrash(long userId, long songId)
+        throws PortalException, SystemException {
+
+        ServiceContext serviceContext = new ServiceContext();
+
+        // Entry
+
+        User user = userPersistence.findByPrimaryKey(userId);
+        Date now = new Date();
+
+        TrashEntry trashEntry = trashEntryLocalService.getEntry(
+            Song.class.getName(), songId);
+
+        Song song = songPersistence.findByPrimaryKey(songId);
+
+        song.setName(TrashUtil.getOriginalTitle(song.getName()));
+        song.setModifiedDate(serviceContext.getModifiedDate(now));
+        song.setStatus(trashEntry.getStatus());
+        song.setStatusByUserId(user.getUserId());
+        song.setStatusByUserName(user.getFullName());
+        song.setStatusDate(serviceContext.getModifiedDate(now));
+
+        songPersistence.update(song);
+
+        assetEntryLocalService.updateVisible(
+            Song.class.getName(), song.getSongId(), true);
+
+        trashEntryLocalService.deleteEntry(Song.class.getName(), songId);
+
+        return song;
+    }
+
+We update the entry's status by setting it to its original status before the
+entry was trashed. For instance, if the entry was originally a draft
+(`STATUS_DRAFT`), it's restored back to a draft. This status change is called
+by the following:
+
+    song.setStatus(trashEntry.getStatus());
+
+Lastly, we delete the trash entry by calling:
+
+    trashEntryLocalService.deleteEntry(Song.class.getName(), songId);
+
+This deletes the entry from the Recycle Bin. Of course, the entry is preserved
+in its original location, which was accomplished by reassigning the entry's
+status. Thus, we've restored the entry. Next, let's apply this service method to
+finalize the entry restoration process.
+
+#### Step 2: Apply Service Method to Trash Handler
+
+Now that the `restoreTrashEntry()` service method is created, we need to
+implement it in the trash handler calling our service.
+
+    @Override
+    public void restoreTrashEntry(long userId, long classPK)
+        throws PortalException, SystemException {
+
+        SongLocalServiceUtil.restoreSongFromTrash(userId, classPK);
+    }
+
+This restore method is located in the Jukebox portlet's
+[SongTrashHandler](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
+class. This method tells the *Restore* button what to do when it's clicked.
+
+Sometimes, conflicts can occur when restoring entries. For instance, suppose you
+restore an entry, but an identically named entry is already present in the
+target location. Liferay provides a resolution conflicts framework, which
+provides a UI that prompts the user to instruct what to do. We'll talk more
+about the resolution framework in the *Resolving Conflicts* section.
+
+Your trash entries can now be restored from the Recycle Bin! Next, let's
+configure the *Undo* button.
+
 ### Configuring the Undo Action
 
 ### Moving/Restoring Folders
