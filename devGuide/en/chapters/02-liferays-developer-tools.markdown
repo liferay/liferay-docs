@@ -506,7 +506,6 @@ Use the following steps to create the Location Listing portlet:
 
     Here are the portlet class values to specify for the example Location
     Listing portlet: 
-
     - **Portlet plugin project:** *event-listing-portlet*
     - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
     - **Portlet class:** *LocationListingPortlet*
@@ -529,7 +528,6 @@ Use the following steps to create the Location Listing portlet:
 
     Here are the portlet deployment descriptor details to specify for the
     Location Listing portlet: 
-
     - **Name:** *locationlisting*
     - **Display name:** *Location Listing Portlet*
     - **Title:** *Location Listing Portlet*
@@ -560,8 +558,7 @@ Use the following steps to create the Event Listing portlet:
     ![Figure 2.9: Creating portlet classes is simple with Liferay IDE's portlet creation wizard.](../../images/create-a-portlet-class-eventlistingportlet.png)
 
     Here are the portlet class values to specify for the example Event
-    Listing portlet: 
-
+    Listing portlet:
     - **Portlet plugin project:** *event-listing-portlet*
     - **Source folder:** */event-listing-portlet/docroot/WEB-INF/src*
     - **Portlet class:** *EventListingPortlet*
@@ -574,7 +571,6 @@ Use the following steps to create the Event Listing portlet:
 
     Here are the portlet deployment descriptor details to specify for the
     Event Listing portlet: 
-
     - **Name:** *eventlisting*
     - **Display name:** *Event Listing Portlet*
     - **Title:** *Event Listing Portlet*
@@ -931,7 +927,6 @@ configure the Remote Server Adapter, use the following steps:
 
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance: 
-
     - **Hostname:** Enter the IP address of your remote Liferay Portal instance's
     machine. 
     - **HTTP Port:** Enter the port it runs on (default: 8080). 
@@ -1126,7 +1121,6 @@ properties:
 3.  In the *System variables* section, click *New...*. 
 
 4.  Set the `ANT_HOME` variable:
-
     - **Variable name:** *ANT_HOME*
     - **Variable value:** `[Ant installation path]` (e.g.,
     `C:\Java\apache-ant-[version]`)
@@ -1254,11 +1248,11 @@ Navigate to the `portlets` folder of your Plugins SDK and follow these steps:
 
 1.  On Linux and Mac OS X, enter
 
-        ./create.sh event-listing "Event Listing"
+        ./create.sh event-listing-portlet "Event Listing"
 
 2.  On Windows, enter
 
-        create.bat event-listing "Event Listing"
+        create.bat event-listing-portlet "Event Listing"
 
 Your terminal will display a BUILD SUCCESSFUL message from Ant, and a new
 folder with your portlet plugin's directory structure will be created inside of
@@ -1501,7 +1495,6 @@ To create a repository using Nexus, follow these steps:
     artifacts. We're installing release version artifacts into this repository,
     so specify *Release* as the repository policy. Below are examples of
     repository property values: 
-
     - **Repository ID:** *liferay-releases*
     - **Repository Name:** *Liferay Release Repository*
     - **Provider:** *Maven2*
@@ -1522,7 +1515,6 @@ its repository policy:
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*.
 
 3.  Specify repository properties like the following:
-
     - **Repository ID:** *liferay-snapshots*
     - **Repository Name:** *Liferay Snapshot Repository*
     - **Provider:** *Maven2*
@@ -1631,38 +1623,35 @@ installation options.
 Let's look at the manual process first, by downloading and installing Liferay
 artifacts from a zip file. 
 
-#### Installing CE Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-liferay-portal-6-2-dev-guide-02-en)
+#### Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-liferay-portal-6-2-dev-guide-02-en)
 
-<!-- Reinstate the title "Installing EE/CE Artifacts from a Zip File" and add
-back EE references AFTER EE artifacts are available. - Jim -->
-
-<!-- Append this to the start of the following paragraph when EE artifacts are
-avialable "Whether you're building plugins for Liferay EE or CE, " - Jim -->
-You can get the Liferay
+Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file.
 
-<!--
 Let's download the Liferay EE artifacts first.
+
+**Downloading a Liferay EE Artifact Zip File:**
 
 You can download the Liferay EE artifacts package from Liferay's Customer
 Portal. Just follow these steps: 
 
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and sign in.
 
-2.  Go to the Customer Portal by clicking *Your Name* in the Dockbar and
-    selecting *Customer Portal*. 
+2.  Go to the Customer Portal by clicking your profile picture in the Dockbar
+    and selecting *Customer Portal*. 
 
 3.  Select *Liferay Portal* from the *Downloads* panel.
 
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
-    field and select the *Development* value in the second field.
+    field and select the *For Developers* value in the second field.
 
     ![Figure 2.21: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
     The Liferay Maven EE artifacts package downloads to your machine.
--->
+
+**Downloading a Liferay CE Artifact Zip File:**
 
 You can download Liferay CE artifacts from SourceForge by following these steps:
 
@@ -1887,22 +1876,112 @@ Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
 sharing with teammates. 
 
-If you're working with Liferay CE, there's an alternative method of obtaining
-the necessary Liferay Maven artifacts: you can let Maven download them
-automatically. Let's see how. 
+Did you know that Liferay has its own Maven repository for artifacts? Let's
+learn how to install artifacts from Liferay's repository next.
 
-#### Installing CE Artifacts from the Central Repository [](id=install-ce-artifacts-from-central-repo-liferay-portal-6-2-dev-guide-02-en)
+#### Installing Artifacts from the Liferay Repository [](id=installing-ee-artifacts-from-the-liferay-liferay-portal-6-2-dev-guide-02-en)
 
-Liferay offers an option for automatic download and installation of Liferay CE
-Maven artifacts. They're publicly available on the *Central Repository*, located
-at
-[http://search.maven.org/#search|ga|1|liferay maven](http://search.maven.org/#search|ga|1|liferay%20maven),
-and are updated with each Liferay release (e.g., 6.2.0, 6.2.10, 6.2.20, etc.).
-The first time you use Maven to compile a Liferay plugin project, Maven
+<!-- If/when the Liferay repository becomes an EE-only artifact repository,
+include "EE" in front of "Artifacts in the above heading. In addition, remove
+CE references from this section. Jim --> 
+
+If you'd like to access Liferay's CE or EE artifacts without downloading and
+installing a `.zip` file, you can configure Maven to automatically
+download and install them from Liferay's own repository:
+[https://repository.liferay.com](https://repository.liferay.com). The first time
+you use Maven to compile a Liferay plugin project, Maven automatically downloads
+the required artifacts from the Liferay Maven repository into your local
+repository, if they're not found in your local repository or any of your
+configured repository servers. You'll see it happen when you package your
+Liferay plugins. 
+
+In order to access artifacts from the Liferay Maven repository, you'll need to
+configure Maven to look for them there.
+
+First, specify the Liferay Repository's credentials in your project's parent
+`pom.xml` file as follows:
+
+    <repositories>
+        <repository>
+            <id>liferay-ee</id>
+		    <name>Liferay EE</name>
+		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ee</url>
+		    <releases><enabled>true</enabled></releases>
+		    <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+	  
+	<pluginRepositories>
+        <pluginRepository>
+            <id>liferay-ee</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ee/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+Note, if you're using artifacts for Liferay CE, replace `liferay-ee` with
+`liferay-ce` and rename the repository to `Liferay CE`. 
+
+---
+
+![note](../../images/tip-pen-paper.png) **Important:** Do not have the Liferay
+repository configured when publishing artifacts to Maven Central. You'll need to
+comment out the Liferay Repository credentials when publishing your artifacts.
+
+--- 
+
+Next, when interacting with the Liferay Repository, you'll need to use
+specialized commands to access it.
+
+**Accessing the Liferay EE Maven Repository:**
+
+Since the Liferay EE repo is protected, you'll need to specify your username and
+password when referring to the URL for generating artifacts. The username and
+password are the same as your liferay.com credentials. The command is listed
+below: 
+
+    mvn archetype:generate -DarchetypeCatalog=https://USERNAME:PASSWORD@repository.liferay.com/nexus/content/groups/liferay-ee
+
+<!-- You'll notice I provided the specialized command here and in the portlet
+archetype example. Once everything is synced correctly and we're not solely
+relying on the Liferay repo, we can remove the specialized command from the
+portlet archetype exercise and only specify this way here. -Cody -->
+
+**Accessing the Liferay CE Maven Repository:**
+
+Since the Liferay CE repo is public, there's no need to provide your username
+and password. Therefore, use the following command to access the CE repo:
+
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+Liferay makes its artifacts available on Maven's Central Repository as well. As
+with using Liferay's Maven repository, the Maven's Central Repository enables
+you to automatically download and install Liferay Maven artifacts. Let's see
+how. 
+
+#### Installing Artifacts from the Central Repository [](id=install-ce-artifacts-from-central-repo-liferay-portal-6-2-dev-guide-02-en)
+
+---
+
+![note](../../images/tip-pen-paper.png) **Important:** Currently, the *GA1*
+Liferay Maven artifacts are not available in Maven's Central Repository. The
+Central Repository is only synced to Liferay's *6.2.0-RC5* release. As a current
+workaround to accessing Liferay's *6.2 GA1* artifacts, please reference the
+*Installing Artifacts from the Liferay Repository* section for setup.
+
+---
+
+Liferay offers an option for automatic download and installation of Liferay
+Maven artifacts publicly available on the *Central Repository*, located at
+[http://search.maven.org/#search|ga|1|liferay
+maven](http://search.maven.org/#search|ga|1|liferay%20maven). They are updated
+with Liferay releases (e.g., 6.0.6, 6.1.1, 6.1.2, 6.1.20, 6.1.30, 6.2.0-RC5,
+etc.). The first time you use Maven to compile a Liferay plugin project, Maven
 automatically downloads the required artifacts from the Central Repository into
 your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
-Liferay CE plugins. 
+Liferay plugins. 
 
 Now that we have our Maven artifacts set up, let's configure Liferay IDE with
 Maven.
@@ -2280,7 +2359,7 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 		</liferay.auto.deploy.dir>
 
 		<liferay.maven.plugin.version>
-			6.2.0-RC5
+			6.2.0-GA1
 		</liferay.maven.plugin.version>
 
 		<liferay.version>
@@ -2405,12 +2484,50 @@ plugins using the command line.
 
 2.  Execute the command
 
-        mvn archetype:generate
+        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+    ---
+    
+    ![note](../../images/tip-pen-paper.png) **Important:** Currently, the new
+    GA1 artifacts for CE and EE are only available from
+    [repository.liferay.com](repository.liferay.com). Therefore, you must use
+    the `-DarchetypeCatalog=...` portion to access the Liferay Repository.
+    You'll also need to configure a couple other files to ensure the generation
+    command completes successfully. Reference the *Installing CE Artifacts from
+    the Central Repository* and *Installing EE Artifacts from the Liferay
+    Repository* sections to configure Maven to access the Liferay Repository for
+    CE and EE artifacts, respectively.
+    
+    ---
+
+    <!-- Edit archetype generate command and remove above note when GA1 artifacts
+    are available from Maven Central. -Cody -->
 
     Archetype starts and lists the archetypes available to you. You're prompted
     to *choose* an archetype or *filter* archetypes by group / artifact ID. The
     output looks similar to the following text: 
 
+        ...
+        4: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-jsf-archetype
+        (Provides an archetype to create Liferay JSF portlets.)
+        5: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-layouttpl-archetype
+        (Provides an archetype to create Liferay layout templates.)
+        6: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-archetype
+        (Provides an archetype to create Liferay portlets.)
+        7: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-liferay-faces-alloy-archetype
+        (Provides an archetype to create Liferay Faces Alloy portlets.)
+        8: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        maven.archetypes:liferay-portlet-primefaces-archetype
+        (Provides an archetype to create Liferay PrimeFaces portlets.)
+        ...
+        Choose a number or apply filter (format: [groupId:]artifactId, case sensiti
+        ve contains):
+        
+<!--
         ...
         39: remote -> com.liferay.maven.archetypes:liferay-hook-archetype
         (Provides an archetype to create Liferay hooks.)
@@ -2426,15 +2543,26 @@ plugins using the command line.
         ...
         Choose a number or apply filter (format: [groupId:]artifactId, case sensiti
         ve contains):
+-->
+<!-- Output will look similar to this once GA1 artifacts are officially
+available on Maven Central/ZIP files. Add similar output back, when available
+-Cody -->
 
+3. Choose a Liferay portlet archetype by entering its number. Since we're using
+the Liferay Repository, the newest archetype version is automatically selected.
+(*6.2-GA1*).
+
+<!--
 3.  To find the right Liferay archetype for your project, you can either scroll
     up to find it or apply filters to narrow the set of results. Filtering on
     *liferay* as your group ID, and a plugin type (*portlet*, *hook*, *theme*,
     etc.) can help you focus on more applicable Liferay archetypes. 
 
     Entering `liferay:portlet` as a filter gives a listing of Liferay portlet
-    archetypes: 
-
+    archetypes: -->
+<!-- Add back when filtering is relevant (using GA1 artifacts from Central -Cody
+-->
+<!--
         Choose a number or apply filter (format: [groupId:]artifactId, case
         sensitive contains): : liferay:portlet Choose archetype:
         1: remote -> com.liferay.maven.archetypes:liferay-portlet-archetype
@@ -2456,8 +2584,10 @@ plugins using the command line.
         number or apply filter (format: [groupId:]artifactId, case sensitive co
         ntains): :
 
-4.  Choose an archetype by entering its number.
+4.  Choose an archetype by entering its number.-->
+<!-- Add back when step 3. is added back -->
 
+<!--
 5.  You're prompted to choose the archetype version. Enter the number
     corresponding to the Liferay version for the archetype. However, you're not
     required to select the archetype version that corresponds with your Liferay
@@ -2487,8 +2617,10 @@ plugins using the command line.
         20: 6.2.0-RC4
         21: 6.2.0-RC5
         Choose a number: 21:
+-->
+<!-- Add back when GA1 artifacts are available from Central. --Cody -->
 
-6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
+4.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
     coordinates (properties) of your project. Here are some examples: 
 
         groupId: com.liferay.sample
@@ -2503,7 +2635,7 @@ plugins using the command line.
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
 
-7.  Enter the letter *Y* to confirm your coordinates.
+5.  Enter the letter *Y* to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
@@ -2563,7 +2695,7 @@ these steps:
 			</liferay.auto.deploy.dir>
 
 			<liferay.maven.plugin.version>
-				6.2.0-RC5
+				6.2.0-GA1
 			</liferay.maven.plugin.version>
 
 			<liferay.version>

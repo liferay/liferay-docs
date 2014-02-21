@@ -78,7 +78,7 @@ SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/le
 
 7.  Click *Finish*. 
 
-![Figure 13.1: You can even create an Ext plugin project with Liferay IDE.](../../images/ext-create-an-ext-plugin-project.png)
+![Figure 14.1: You can even create an Ext plugin project with Liferay IDE.](../../images/ext-create-an-ext-plugin-project.png)
 
 The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create

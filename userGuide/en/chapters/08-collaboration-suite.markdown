@@ -1,4 +1,3 @@
-
 # Collaboration Suite [](id=collaboration-suite-liferay-portal-6-2-user-guide-08-en)
 
 Liferay Portal ships with a robust suite of collaboration applications which
@@ -188,11 +187,12 @@ interruption. You can also tag your entries using the same tagging mechanism
 found everywhere else in the portal.
 
 The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
-special links that let you notify another site that you linked to them. For
-example, if you wanted to write an entry in your blog and reference some other
-site's entry, you might put the URL to the other entry in the *Trackbacks to
-Send* field. If you have multiple URLs you want to send trackbacks to, separate
-them with spaces. 
+special links that let you notify another site that you explicitly linked to 
+them in the *Content* field. For example, if you wanted to write an entry in 
+your blog and reference some other site's entry, you might put the URL to the
+other entry in the *Content* field and the trackback URL in the *Trackbacks 
+Sent* field. If you have multiple URLs you want to send trackbacks to, 
+separate them with spaces. 
 
 If you want others who link to your blog to let you know about the link via
 trackbacks, leave the *Allow Trackbacks* box checked. This generates a URL that
