@@ -1760,8 +1760,12 @@ Now that you're able to move entries *to* the Recycle Bin, let's configure your
 app to restore entries *from* the Recycle Bin. Besides, what's the point of
 having a Recycle Bin if you can't restore its entries?
 
-This configuration process is similar to the previous configuration for moving
-entries. We'll begin with creating a service method for the restoration process.
+![Figure 6.2: By configuring the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
+
+The restoration of entries moves them to their original location, and removes
+them from the Recycle Bin. This configuration process is similar to the previous
+configuration for moving entries. We'll begin with creating a service method for
+the restoration process.
 
 #### Step 1: Creating a Service Method
 
@@ -1847,6 +1851,110 @@ Your trash entries can now be restored from the Recycle Bin! Next, let's
 configure the *Undo* button.
 
 ### Configuring the Undo Action
+
+Sometimes, you may accidentally send the wrong entry to the Recycle Bin. It
+seems kind of grueling to navigate away from your page to the Recycle Bin to
+restore the item, just to navigate back to where you originally started, right?
+The Recycle Bin framework can be configured to have an *Undo* button, so you can
+conveniently undo the action of sending an entry to the Recycle Bin.
+
+![Figure 6.3: Configure the Undo button to allow a convenient way to undo the sending of entries to the Recycle Bin.](../../images/undo-rb.png)
+
+Also, you're provided links to the trashed entry and Recycle Bin. Let's
+configure the Undo button and its related links!
+
+#### Step 1: Adding the Undo Tag
+
+The first thing we'll need to do is add the `trash-undo` taglib. Also, we need
+to pass an action URL, which creates an action that restores the entry. Here's
+an example of completing this in the Jukebox portlet's
+[view.jsp](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/html/songs/view.jsp):
+
+    <portlet:actionURL name="restoreSong" var="undoTrashURL" />
+
+    <liferay-ui:trash-undo portletURL="<%= undoTrashURL %>" />
+
+Now that we've added the taglib and action URL, let's call the action to restore
+the entry.
+
+#### Step 2: Calling the Action for Restoration
+
+Now you'll need to call the action to restore the entry. Here's an example of
+calling the action from the
+[JukeboxPortlet](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/portlet/JukeboxPortlet.java)
+class, which restores the song from the Recycle Bin:
+
+    public void restoreSong(ActionRequest request, ActionResponse response)
+        throws Exception {
+
+        long[] restoreEntryIds = StringUtil.split(
+            ParamUtil.getString(request, "restoreEntryIds"), 0L);
+
+        for (long restoreEntryId : restoreEntryIds) {
+            SongServiceUtil.restoreSongFromTrash(restoreEntryId);
+        }
+    }
+
+Next, let's display the taglib.
+
+#### Step 3: Displaying the Taglib
+
+The final step for configuring the Undo button is to display the taglib. In
+order to display the taglib, we need to provide some information for the session
+messages so the session knows which elements we deleted. Once the session
+message knows which elements we deleted, our method can recover this information
+and restore the entry. The following code from the
+[JukeboxPortlet](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/portlet/JukeboxPortlet.java)
+class does this:
+
+    public void deleteSong(ActionRequest request, ActionResponse response)
+        throws Exception {
+
+        long songId = ParamUtil.getLong(request, "songId");
+
+        boolean moveToTrash = ParamUtil.getBoolean(request, "moveToTrash");
+
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+            Song.class.getName(), request);
+
+        try {
+            if (moveToTrash) {
+                Song song = SongServiceUtil.moveSongToTrash(songId);
+
+                Map<String, String[]> data = new HashMap<String, String[]>();
+
+                data.put("deleteEntryClassName",
+                    new String[] {Song.class.getName()});
+                data.put("deleteEntryTitle",
+                    new String[] {TrashUtil.getOriginalTitle(song.getName())});
+                data.put("restoreEntryIds",
+                    new String[] {String.valueOf(songId)});
+
+                SessionMessages.add(request, PortalUtil.getPortletId(request) +
+                        SessionMessages.KEY_SUFFIX_DELETE_SUCCESS_DATA, data);
+
+                SessionMessages.add(request, PortalUtil.getPortletId(request) +
+                    SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_SUCCESS_MESSAGE);
+            }
+            ...
+        }
+        ...
+    }
+
+We gather the three elements that we need to distinguish the song to restore.
+These entries include the entry's class name, title, and IDs.
+
+    data.put("deleteEntryClassName",
+        new String[] {Song.class.getName()});
+    data.put("deleteEntryTitle",
+        new String[] {TrashUtil.getOriginalTitle(song.getName())});
+    data.put("restoreEntryIds",
+        new String[] {String.valueOf(songId)});
+
+Then we add these elements to the session messages. Your application now has the
+ability to Undo sending entries to the Recycle Bin.
+
+Next, let's learn how to move and restore folders to and from the Recycle Bin.
 
 ### Moving/Restoring Folders
 
