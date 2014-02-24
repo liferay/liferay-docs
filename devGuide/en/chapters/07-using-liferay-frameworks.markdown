@@ -1745,17 +1745,22 @@ implementing the trash renderer.
 #### Step 4: Implement the Trash Renderer
 
 Now that we have the necessary classes and methods to accomplish moving entries
-to the Recycle Bin, let's implement the trash renderer so we can see our
+to the Recycle Bin, let's implement the appropriate renderer so we can see our
 results. Similar to the trash handler, you'll need to create a class that
 renders trash in the Recycle Bin. If you're already using an asset renderer, you
-can reuse that as well. Here's an example of the
+can reuse that. If not you'll need to create a trash renderer. Here's an example
+of the
 [SongAssetRenderer](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/asset/SongAssetRenderer.java)
 for the Jukebox portlet:
 
     public class SongAssetRenderer extends BaseAssetRenderer implements TrashRenderer {
 
-If you've implemented a new trash renderer, you'll need to define it in the
-`liferay-portlet.xml` file.
+If you're using a trash renderer, you'll need to implement the
+`getTrashRenderer()` method from your trash handler. For an example of calling
+the trash renderer from a trash handler, you can reference the
+[DLFileShortcutTrashHandler](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portlet/documentlibrary/trash/DLFileShortcutTrashHandler.java)
+class. You can examine the trash renderer being called at
+[DLFileShortcutTrashRenderer](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portlet/documentlibrary/trash/DLFileShortcutTrashRenderer.java).
 
 Congratulations! Your app can now move entries to the Recycle Bin. What about
 restoring entries from the Recycle Bin to their original state? Let's learn how
