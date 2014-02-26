@@ -2143,13 +2143,10 @@ The code above provides a *typeSettings* map, in which you can store those
 values, and then replace them with something that doesn't conflict. We use the
 `TrashUtil.getTrashTitle(trashEntry.getEntryId())` method from the
 [SongLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java)
-class to obtain a string which will be different for each entity. This should be
-undone when restoring the entity. This same string is used to obtain the
-original value if needed using the method
-`TrashUtil.getOriginalTitle(currentTitle)`.
+class to obtain a string which will be different for each entity. 
 
-Next, we'll need to restore the entry's name when it's restored from the
-Recycle Bin.
+Next, we'll need to restore the entry's original name when it's restored from
+the Recycle Bin. 
 
 #### Step 2: Restore Trash Name When Restored From Recycle Bin
 
