@@ -61,11 +61,11 @@ access Liferay Marketplace.
 
 There are two ways to access the Marketplace.
 
-1. Via the website--Using your favorite browser, you can navigate to the
+1. Via the website: Using your favorite browser, you can navigate to the
    marketplace at
    [http://liferay.com/marketplace](http://liferay.com/marketplace).
 
-2. Via Liferay--If you have a Liferay portal up and running, you can use the
+2. Via Liferay: If you have a Liferay portal up and running, you can use the
    Apps section of the Control Panel to access Marketplace content.
 
 ### The Basics [](id=the-basics-liferay-portal-6-2-user-guide-14-en)
@@ -140,14 +140,14 @@ uploaded.
 
 Once you register a developer account with your `liferay.com` account, your
 existing `liferay.com` Home page will contain a new section in the left
-navigation menu entitled *Development*. You now have two *Apps* links: one
-under the main navigation menu and one in the *Development* section. The *Apps*
-link under your name is where you go when you want to purchase and download
-apps from Marketplace. The *Apps* link under the *Development* menu will let you
-manage existing apps and add new apps to the Marketplace. To see information on
-your app's performance, use the *Metrics* link in the Development menu. If
-you submit an app, it will be reviewed before appearing on the `liferay.com`
-Marketplace.
+navigation menu entitled *Development*. You now have two *Apps* links: one under
+the main navigation menu and one in the *Development* section. The *Apps* link
+under your name is where you go when you want to vies and download yuor
+purchased apps from the Marketplace. The *Apps* link under the *Development*
+menu will let you manage existing apps and add new apps to the Marketplace. To
+see information on your app's performance, use the *Metrics* link in the
+Development menu. If you submit an app, it will be reviewed before appearing on
+the `liferay.com` Marketplace.
 
 ---
 
@@ -163,12 +163,12 @@ manage and monitor your own marketplace apps, and the *Apps* link in your main
 navigation menu lets you view and download apps you purchased from the
 Marketplace.
 
-The Apps link in the menu under your name lists your purchased apps.
-From this screen, you can find information about the authors of the apps you
-have purchased and download or re-download the app (for example, if
-you lost your copy or have re-installed Liferay and wish to re-deploy the app).
-This option is also useful for downloading apps and deploying them to offline
-instances of Liferay that do not have direct access to `liferay.com`.
+The Apps link in the menu under your name lists your purchased apps.  From this
+screen, you can find information about the authors of the apps you have
+purchased and download or re-download the app (for example, if you lost your
+copy or have re-installed Liferay and wish to re-deploy the app).  This option
+is also useful for downloading apps and deploying them to offline instances of
+Liferay that do not have direct access to `liferay.com`.
 
 ![Figure 14.4: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
 
@@ -183,13 +183,14 @@ The Apps link lists apps you have authored and uploaded, and gives you an *Add
 New App* link that let's you submit an app to be added to the Marketplace. The
 Metrics link will show you details such as the number of downloads, the current
 price and other relevant information. Please see the 
-[Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) for details on this topic.
+[Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
+for details on this topic.
  
 ![Figure 14.5: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
  
 Clicking on *Add an App* allows you to upload a new app and make it available in
-the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) for more detail on
-authoring your own app.
+the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
+for more detail on authoring your own app.
 
 ### Creating a Company [](id=creating-a-company-liferay-portal-6-2-user-guide-14-en)
 
@@ -225,7 +226,7 @@ too.
 
 There are several ways to search for and find apps you are interested in.
 
-1. Browsing Categories. Click on a category (for example, *Communication* or
+1. Browsing Categories: Click on a category (for example, *Communication* or
    *Productivity*) to see a list of interesting apps in that category. Upon
    clicking a category, you are presented with a list of featured apps for that
    category, as well as a canonical listing of all apps. Also, on the right, are
@@ -233,9 +234,7 @@ There are several ways to search for and find apps you are interested in.
 
     ![Figure 14.7: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
 
-<!-- In the staged version of this page, there's another number 1 before
-"Searching," not a number 2.  -->
-2. Searching. To search for an app, type in search criteria in the search box
+2. Searching: To search for an app, type in search criteria in the search box
    under the navigation menu on the left and click *Search*. Apps matching the
    specified search criteria are displayed.
 
