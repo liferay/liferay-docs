@@ -1725,7 +1725,7 @@ to set up a portal web application:
             "session.disabled" in portal.properties.
             -->
 
-            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
         </Context>
         
     Setting `crossContext="true"` allows multiple web apps to use the same class
