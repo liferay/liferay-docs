@@ -1404,7 +1404,7 @@ directory.
                     </paths>
                 </system>
             </dependencies>
-        </module>]]>
+        </module>
 
 3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
 the following path names inside the &lt;paths&gt;...<\/paths> element:
