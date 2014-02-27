@@ -1660,10 +1660,10 @@ in its original UI by calling:
 
     `assetEntryLocalService.updateVisible(Song.class.getName(), song.getSongId(), false);`
 
-On first thought, this may seem a bit odd. Why are we making the asset entry
-invisible in its original location? I thought we were moving it to the Recycle
-Bin? Asset entries that are moved to the Recycle Bin are actually left in their
-original location, but with their visibility turned off.
+On first thought, this may seem a bit odd. Why are we making the entry invisible
+in its original location? I thought we were moving it to the Recycle Bin?
+Entries that are moved to the Recycle Bin are actually left in their original
+location, but with their visibility turned off.
 
 ---
 
@@ -1791,7 +1791,7 @@ having a Recycle Bin if you can't restore its entries?
 
 ![Figure 7.2: By configuring the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
 
-Asset entries are restored by returning their visibility in their original location,
+Entries are restored by returning their visibility in their original location,
 and removing them from the Recycle Bin. As we briefly discussed in the last
 section, entries are never removed from their original location, their
 visibility is only removed. Then a reference to the original entry (trash entry)
@@ -2166,7 +2166,7 @@ The trashed song is retrieved, and the `getOriginalTitle()` method is called.
 The string we obtained from the `TrashUtil.getTrashTitle()` method in the last
 section is used to obtain the original title from the
 `TrashUtil.getOriginalTitle()` method. The song's original title is returned as
-a combination of random numbers. Therefore, to get the original title for the
+an ID number from the database. Therefore, to get the original title for the
 proper locale, we'll need to configure the trash renderer or asset renderer to
 return the name in our locale.
 
