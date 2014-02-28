@@ -240,6 +240,8 @@ There are several ways to search for and find apps you are interested in.
 
     ![Figure 14.8: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
 
+Next, let's talk about app versioning.
+
 ### Versions [](id=versions-liferay-portal-6-2-user-guide-14-en)
 
 Apps are often updated to include new features or fix bugs. Each time an app is
