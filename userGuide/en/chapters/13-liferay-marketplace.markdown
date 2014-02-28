@@ -208,16 +208,15 @@ There are several ways to search for and find apps you are interested in.
    category, as well as a canonical listing of all apps. Also, on the right, are
    lists of the Most Viewed apps within that category.
 
-![Figure 13.7: Browsing
-Categories](../../images/marketplace-browsing-categories.png)
+    ![Figure 13.7: Browsing Categories](../../images/marketplace-browsing-categories.png)
 
-<!-- In the staged version of this page, there's another number 1 before
-"Searching," not a number 2.  -->
 2. Searching. To search for an app, type in search criteria in the search box
    under the navigation menu on the left and click *Search*. Apps matching the
    specified search criteria are displayed.
 
-![Figure 13.8: Marketplace Search Box](../../images/marketplace-search-box.png)
+    ![Figure 13.8: Marketplace Search Box](../../images/marketplace-search-box.png)
+
+Next, let's talk about app versioning.
 
 ### Versions [](id=lp-6-1-ugen09-versions-0)
 
