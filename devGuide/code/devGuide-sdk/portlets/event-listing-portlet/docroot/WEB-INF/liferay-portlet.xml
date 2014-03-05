@@ -16,6 +16,7 @@
 	<portlet>
 		<portlet-name>locationlisting</portlet-name>
 		<icon>/icon.png</icon>
+		<configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>

@@ -390,7 +390,7 @@ plugin is deployed.
 
 Alternatively, you can use the following procedure: 
 
-1.  Select your new plugin project then right click the Liferay Server in
+1.  Select your new plugin project and right click the Liferay Server in
     the *Servers* tab; 
 
 2.  Select *Add and Remove...*. 
