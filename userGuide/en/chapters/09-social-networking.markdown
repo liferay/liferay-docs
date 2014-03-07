@@ -750,12 +750,10 @@ applications*. Then click *Create New App*.
 6. Fill in the *Name*, *Description*, and *Website* fields with what you prefer.
 
     a. For the *Callback URL* field, enter Liferay's default callback URL:
-
-        `http://myLiferayServer/opensocial-portlet/gadgets/oauthcallback`
-
-        Replace "myLiferayServer" with an appropriate value -- for this
-        demonstration, we'll use 127.0.0.1:8080. 
-
+    `http://myLiferayServer/opensocial-portlet/gadgets/oauthcallback`. Replace
+    "myLiferayServer" with an appropriate value -- for this demonstration, we'll
+    use 127.0.0.1:8080.
+    
     b. Finally, select the *Create your Twitter application* tab at the bottom
     of the page.
 
