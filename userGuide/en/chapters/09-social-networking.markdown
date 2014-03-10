@@ -739,24 +739,21 @@ key and secret given by the service provider.
 
     ![Figure 9.19: Twitter allows you to manage OAuth for your Twitter gadget.](../../images/15-opensocial-9.png)
 
-4. Go to [https://www.twitter.com](https://www.twitter.com) and, before logging
-   in, scroll to the bottom of the page and select *Developers*. Then click
-   *Get started with the platform* to begin registering your gadget.
+4. Go to [https://dev.twitter.com](https://dev.twitter.com) and click *Get
+   started with the platform* to begin registering your gadget.
 
     ![Figure 9.20: Select *Get started with the platform* from within the *Developers* page.](../../images/15-opensocial-11.png)
 
 5. Navigate to the *REST API* heading and click *Manage & create your
-applications*. Then click *Create a new application*.    
+applications*. Then click *Create New App*.    
     
 6. Fill in the *Name*, *Description*, and *Website* fields with what you prefer.
 
     a. For the *Callback URL* field, enter Liferay's default callback URL:
-
-            http://myLiferayServer/opensocial-portlet/gadgets/oauthcallback
-
-        Replace "myLiferayServer" with an appropriate value -- for this
-        demonstration, we'll use 127.0.0.1:8080. 
-
+    `http://myLiferayServer/opensocial-portlet/gadgets/oauthcallback`. Replace
+    "myLiferayServer" with an appropriate value -- for this demonstration, we'll
+    use 127.0.0.1:8080.
+    
     b. Finally, select the *Create your Twitter application* tab at the bottom
     of the page.
 
