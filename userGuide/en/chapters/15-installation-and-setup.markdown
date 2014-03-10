@@ -1153,18 +1153,13 @@ Let's work with the dependency jar files first.
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
 2. Download your database driver `.jar` file and put it into the
-   `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well. For
-   demonstration purposes, we'll download the MySQL Connector/J driver from
+   `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well. To use MySQL,
+   we'll download the MySQL Connector/J driver from
    [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
-3. Download the `jtds-<JTDS_VERSION>.jar.` file and insert it into the
-`$JBOSS_HOME/modules/com/liferay/portal/main` folder. You can download and learn
-more about this JDBC driver at the jTDS home page:
-[http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
-
-4. Create the file `module.xml` in the
+3. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
    contents.
 
@@ -1172,9 +1167,7 @@ more about this JDBC driver at the jTDS home page:
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="hsql.jar" />
-                <resource-root path="jtds-1.3.1.jar" />
-                <resource-root path="mysql-connector-java-5.1.26-bin.jar" />
+                <resource-root path="mysql-connector-java-[version]-bin.jar" />
                 <resource-root path="portal-service.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
@@ -1188,15 +1181,15 @@ more about this JDBC driver at the jTDS home page:
             </dependencies>
         </module>
 
-    If you're using a different database or JDBC driver, replace the paths of
-    the MySQL and jTDS resource root entries with the correct paths.
+    Make sure to replace `[version]` with the correct version of the MySQL JDBC
+    driver.
 
-5. Next, you'll need to include a patch from Liferay's source code for one of
+4. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
 the source into a temporary folder. We'll refer to the location of the Liferay
 source as `$LIFERAY_SOURCE`.
 
-6. Currently, there are bugs in the
+5. Currently, there are bugs in the
 `$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
 file regarding the IBM JVM
 ([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
