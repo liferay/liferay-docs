@@ -1167,8 +1167,7 @@ Let's work with the dependency jar files first.
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="hsql.jar" />
-                <resource-root path="mysql-connector-java-5.1.26-bin.jar" />
+                <resource-root path="mysql-connector-java-[version]-bin.jar" />
                 <resource-root path="portal-service.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
@@ -1181,6 +1180,9 @@ Let's work with the dependency jar files first.
                 <module name="javax.transaction.api" />
             </dependencies>
         </module>
+
+    Make sure to replace `[version]` with the correct version of the MySQL JDBC
+    driver.
 
 4. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
