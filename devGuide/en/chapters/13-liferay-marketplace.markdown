@@ -613,7 +613,7 @@ If you selected *Free* for your app pricing, click *Next* to advance to the
 final screen. If you selected *Paid*, you'll be presented with additional
 options for licensing and pricing your app. 
 
-#### Creating your licensing and pricing model
+#### Creating your licensing and pricing model [](id=creating-licensing-and-pricing-model-liferay-portal-6-2-dev-guide-13-en)
 
 Carefully consider which licensing structure best meets your needs. Once you're
 app has been approved, these options, with the exception of pricing updates,
@@ -639,10 +639,9 @@ Creating license options allows you to design license bundles and to specify
 discounts for customers who purchase more Liferay Instances for your app (a
 Liferay Instance or Instance refers to a single installation of the Liferay
 Portal). Also you can designate different pricing for Standard Licenses vs.
-Developer Licenses. The Developer Licenses are intended for local developer
-workstations and are limited to 10 concurrent user connections. You must specify
-at least one license option, but no more than 10 options per type. You'll price
-these options on the next page. 
+Developer Licenses. Developer Licenses are limited to 10 unique IP addresses.
+You must specify at least one license option, but no more than 10 options per
+type. You'll price these options on the next page. 
 
 **Paid support:** You can offer additional paid Support Services for your app.
 If you select this option, customers can contact you with support requests and
@@ -762,7 +761,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-### Editing App Prices
+### Editing App Prices [](id=editing-app-prices-liferay-portal-6-2-dev-guide-13-en)
 
 You can change your app's prices, Instance bundles, and regional availability if
 you wish. This can be for a variety of reasons, whether it's to run a
