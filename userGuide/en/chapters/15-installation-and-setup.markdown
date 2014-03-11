@@ -1404,7 +1404,7 @@ directory.
                     </paths>
                 </system>
             </dependencies>
-        </module>]]>
+        </module>
 
 3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
 the following path names inside the &lt;paths&gt;...<\/paths> element:
@@ -1725,7 +1725,7 @@ to set up a portal web application:
             "session.disabled" in portal.properties.
             -->
 
-            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />
+            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
         </Context>
         
     Setting `crossContext="true"` allows multiple web apps to use the same class
@@ -2199,7 +2199,14 @@ configuration process, WebSphere prompts you to Click Save to apply changes to
 Master Configuration. Do so intermittently to save your changes.
 
 **Liferay Home** is in a folder called `liferay` in the home folder of the user
-ID that is running WebSphere.
+ID that is running WebSphere. 
+
+To work correctly on WebSphere 8.5, IBM's PM90932 patch must be installed. You
+can find more information about this patch
+[here](http://www-01.ibm.com/support/docview.wss?uid=swg1PM90932). 
+
+Please also note that the WebSphere Application Liberty Profile is not supported
+by Liferay. 
 
 ### Preparing WebSphere for Liferay [](id=preparing-websphere-for-liferay-liferay-portal-6-2-user-guide-15-en)
 
