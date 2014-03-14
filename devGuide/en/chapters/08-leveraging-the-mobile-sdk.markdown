@@ -16,18 +16,14 @@ page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/over
 gives you access to the SDK releases to download, provides the latest SDK news,
 and has forums for you to engage in mobile app development discussions. 
 
-<!-- For an illustration for how the mobile SDK works, see Figure 8.1. -->
+For an illustration for how the mobile SDK works, see Figure 8.1. 
 
-<!-- Leave out Liferay IDE/Studio images and references until the integration
-is ready. - Jim -->
-<!--
 ![Figure 8.1: Liferay's Mobile SDK acts as a bridge allowing your native app to communicate with Liferay services and utilities.](../../images/mobile-sdk-diagram.png)
 
 The illustration displays the general process that links the mobile SDK with
 your native app. You can create and edit you app using Liferay Developer Studio.
 Once the app is created, it can send and receive requests to/from the Liferay
 Mobile SDK to enable access to Liferay services. 
--->
 
 In this chapter, we'll demonstrate developing Android and iOS apps that
 communicate with Liferay via the mobile SDK. We'll discuss the following topics
@@ -35,7 +31,10 @@ as we learn how to use Liferay's Mobile SDK:
 
 - Using the Android SDK
 - Using the iOS SDK
+
+<!--
 - Building an SDK for Custom Portlet Services
+-->
 
 Let's get started by learning how to access Liferay's core services from an
 Android app.
@@ -578,6 +577,12 @@ If you want to make batch calls asynchronously, set the callback to the session.
 
 The return type for batch calls is always an `NSArray`.
 
+<!-- Commented out the SDK Builder content. Bruno advised that we've switched to
+Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
+overhaul this section, or remove it and point readers to Bruno's Github page.
+-Cody -->
+
+<!--
 Next, let's learn how to build your custom portlet SDK and generate client
 libraries. 
 
@@ -739,16 +744,22 @@ dependencies.
 To learn how to use the Liferay iOS SDK in your mobile app, see the
 [Using the iOS SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
 
+-->
+
 ## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
 In this chapter, we showed you how easy it is to download and configure
 Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
 separately, giving you step-by-step examples for accessing Liferay services. We
 even dove into a working example with the sample *Contacts App* by configuring
-Android Developer Tools. Then, we explored the SDK Builder and how to generate
-client libraries to access your portlet's custom services. Of course, this was
-also broken down into separate Android and iOS sections so that building the SDK
-for either platform is easier than ever.
+Android Developer Tools. 
+
+<!--
+Then, we explored the SDK Builder and how to generate client libraries to access
+your portlet's custom services. Of course, this was also broken down into
+separate Android and iOS sections so that building the SDK for either platform
+is easier than ever.
+-->
 
 Did you know that there is a breed of social applications called OpenSocial
 gadgets that lend themselves well to humans sharing information and application
