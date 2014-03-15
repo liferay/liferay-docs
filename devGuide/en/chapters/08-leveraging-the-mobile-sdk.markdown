@@ -577,6 +577,74 @@ If you want to make batch calls asynchronously, set the callback to the session.
 
 The return type for batch calls is always an `NSArray`.
 
+Next, let's learn how to use Liferay Developer Studio to customize your Android
+app by giving it access to the Liferay Mobile SDK.
+
+## Accessing the Mobile SDK Using Liferay Developer Studio
+
+Liferay Developer Studio (LDS) provides a user interface for developers to use
+when building Mobile SDK libraries and generating services for their app. By
+using LDS, you can simply import your app and inject it with Mobile SDK JARs
+that your app can reference. Also, LDS can generate services for an app already
+to deployed to Liferay Portal. LDS only supports Android apps, so you're unable
+to customize iOS apps. 
+
+The *Liferay Mobile SDK* plugin can be downloaded to provide this useful
+interface, but first, you'll need to install the [ADT
+plugin](http://developer.android.com/tools/sdk/eclipse-adt.html), which is the
+Android Development Tools plugin for Eclipse. You can follow Android's
+[Installing the Eclipse
+Plugin](http://developer.android.com/sdk/installing/installing-adt.html)
+documentation to correctly install the plugin.
+
+After you've installed the ADT plugin to your LDS instance, you need to install
+the *Liferay Mobile SDK* plugin. To do this, navigate to the *Help* &rarr;
+*Install New Software* menu and copy the following link into the *Work with*
+field:
+
+    http://files.liferay.org.es/staged/public-files/liferay-ide/unstable/build/releng/com.liferay.ide-repository/target/updatesite/
+
+A *Liferay* drop-down menu appears; click the drop-down arrow and select
+*Liferay Mobile SDK* and click *Next*.
+
+![Figure 8.3: Download the *Liferay Mobile SDK* plugin for LDS by navigating to the *Install New Software* menu.](../../images/download-mobile-sdk-plugin.png)
+
+Click *Finish* to complete the install.
+
+Terrific! LDS is now ready to build the Mobile SDK and generate service for your
+Android app! Let's show adding the Mobile SDK libraries into your app next.
+
+### Adding Mobile SDK Libraries
+
+You've been developing an Android app for months and you're almost ready to
+publish it. However, there are a few Liferay core web services you'd like to
+access for your app. LDS gives you the easy option of importing your Android app
+and adding the Liferay Android SDK libraries bundles as JAR files. These JARs
+allow your app to access Liferay core web services.
+
+To add the library JAR files, right-click your app and click *Configure* &rarr;
+*Add Liferay Android SDK libraries*. LDS gives you a success message indicating
+that the Liferay Android SDK libraries were added to the project.
+
+Wasn't that easy? Your Android app now has the Liferay Android SDK libraries and
+can call any of Liferay's core web services! Let's take a look behind the scenes
+and discover what happened. In your project's `libs` directory, the Liferay
+Android SDK JAR and PROPERTIES files were added. Furthermore, the `src` folder
+containing the source JAR was included. Lastly, the project library JAR is added
+to the classpath in the `Android Private Libraries` folder.
+
+![Figure 8.4: LDS makes it easy to inject Liferay Android SDK libraries accessible by your app.](../../images/mobile-sdk-jars.png)
+
+Next, let's learn how to generate Liferay custom portlet services.
+
+### Generating Custom Services
+
+
+### Creating a Liferay Android Sample Project
+
+
+
+
 <!-- Commented out the SDK Builder content. Bruno advised that we've switched to
 Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
 overhaul this section, or remove it and point readers to Bruno's Github page.
