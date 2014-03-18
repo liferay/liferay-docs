@@ -583,8 +583,8 @@ app by giving it access to the Liferay Mobile SDK.
 ## Accessing the Mobile SDK Using Liferay Developer Studio
 
 Liferay Developer Studio (LDS) provides a user interface for developers to use
-when building Mobile SDK libraries and generating services for their app. By
-using LDS, you can simply import your app and inject it with Mobile SDK JARs
+when building Mobile SDK libraries and generating custom services for their app.
+By using LDS, you can simply import your app and inject it with Mobile SDK JARs
 that your app can reference. Also, LDS can generate services for an app already
 deployed to Liferay Portal. LDS only supports Android apps, so you're unable to
 customize iOS apps.
@@ -610,17 +610,26 @@ A *Liferay* drop-down menu appears; click the drop-down arrow and select
 
 Click *Finish* to complete the install.
 
-Terrific! LDS is now ready to build the Mobile SDK and generate services for
-your Android app! Let's show adding the Mobile SDK libraries into your app next.
+Terrific! LDS is now ready to build the Mobile SDK and generate custom services
+for your Android app! Let's show adding the Mobile SDK libraries into your app
+next.
 
 ### Adding Mobile SDK Libraries
 
 You've been developing an Android app for months and you're almost ready to
 publish it. However, there are a few Liferay core web services you'd like to
 access for your app. LDS gives you the easy option of importing your existing
-Android application project and adding the Liferay Android SDK libraries to your
-project as JAR files. These JARs allow your app to access Liferay core web
-services.
+Android application project and adding the Liferay Android Mobile SDK libraries
+to your project as JAR files. These JARs allow your app to access Liferay core
+web services.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** The LDS action for injecting
+Liferay Android Mobile SDK library JARs is only available for Android apps that
+were created using the ADT plugin for Eclipse.
+
+---
 
 To add the library JAR files, right-click your app and click *Configure* &rarr;
 *Add Liferay Android SDK libraries*. LDS gives you a success message indicating
@@ -672,17 +681,17 @@ server you specified for all the remote APIs that are available to generate
 custom services.
 
 In the next menu, specify the Java package to be used for the generated code.
-You can select the *Browse* button to the right of the field to browse for
-available packages. You're also presented with available custom APIs from your
-server that you can select to generate the Java package for.
+You can select the *Browse* button to browse for available packages. You're also
+presented with available custom APIs from your server that you can select to
+generate the Java package for.
 
 ![Figure 8.6: LDS injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/choosing-apis-and-packages-wizard.png)
 
 For demonstration purposes, we'll specify the Java package as `foo.bar.custom`
-and select the *opensocial-portlet* custom API. You can view what this looks
-like in the figure below.
+and select the *opensocial-portlet* &rarr; *gadget* custom API. You can view
+what this looks like in the figure below.
 
-![Figure 8.6: LDS injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/injected-jars-mobile-sdk.png)
+![Figure 8.7: LDS injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/injected-jars-mobile-sdk.png)
 
 Notice that in the figure, we have the standard and custom `.jar` and
 `.properties` files. When generating custom services, LDS adds both the standard
@@ -702,12 +711,12 @@ looks like. Let's dive in and explain how to do this!
 
 To start the Liferay Android Sample Project wizard, navigate to *File* &rarr;
 *Project...* &rarr; *Liferay* &rarr; *Liferay Android Sample Project* and then
-click *Next*. Specify the project name and directory location, and Android
-target SDK. Notice that you also have the option to choose a sample project
-template from the Mobile SDK preferences menu. Click *Finish* when you're ready
-to create the sample Android app.
+click *Next*. Specify the project name, directory location, and Android target
+SDK. Notice that you also have the option to choose a sample project template
+from the Mobile SDK preferences menu. Click *Finish* when you're ready to create
+the sample Android app.
 
-![Figure 8.7: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
+![Figure 8.8: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
 
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
@@ -721,7 +730,11 @@ Mobile SDK libraries, open the sample app's `MainActivity` class from the
 `src/com/liferay/mobile/sample/activity` directory. In LDS, scroll your mouse
 over the `Session` object instance within the `onListItemClick()` method.
 
-![Figure 8.7: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+![Figure 8.9: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+
+You can see that the `Session` interface is being referenced from the
+`com.liferay.mobile.android.service` package. This app is using the Liferay
+Mobile SDK from the library JARs of this project.
 
 You can run the sample app using Android's emulator. For instructions on how to
 do this, visit Android's [Using the
@@ -902,7 +915,11 @@ In this chapter, we showed you how easy it is to download and configure
 Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
 separately, giving you step-by-step examples for accessing Liferay services. We
 even dove into a working example with the sample *Contacts App* by configuring
-Android Developer Tools.
+Android Developer Tools. Then, we explored Liferay Developer Studio's
+integration with the Mobile SDK. LDS offers ways to build standard and custom
+JARs for an Android app to reference. LDS also gives you the option to create a
+sample Liferay Android project to familiarize yourself with a Liferay Android
+app using the Mobile SDK.
 
 <!--
 Then, we explored the SDK Builder and how to generate client libraries to access
