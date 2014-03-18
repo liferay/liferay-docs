@@ -694,9 +694,38 @@ demonstrate how to create a Liferay Android Sample Project using LDS.
 
 ### Creating a Liferay Android Sample Project
 
+So far, we've demonstrated how to add Liferay Mobile SDK libraries to your
+pre-existing Android app. LDS also offers the ability to create a new sample
+Android project from scratch that includes Liferay Mobile SDK libraries and
+sample code. This gives you the ability to view what a Liferay Android project
+looks like. Let's dive in and explain how to do this!
 
+To start the Liferay Android Sample Project wizard, navigate to *File* &rarr;
+*Project...* &rarr; *Liferay* &rarr; *Liferay Android Sample Project* and then
+click *Next*. Specify the project name and directory location, and Android
+target SDK. Notice that you also have the option to choose a sample project
+template from the Mobile SDK preferences menu. Click *Finish* when you're ready
+to create the sample Android app.
 
+![Figure 8.7: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
 
+The sample Android app has the standard Liferay Mobile SDK JARs as well as
+sample classes that characterize how the app integrates with your portal
+instance. You can learn more about the Android application standard architecture
+by visiting Android's *Getting Started* guide, where they'll demonstrate
+standard architecture as well as activity classes, model classes, etc.
+
+The Liferay Android Sample Project that is built by default displays details of
+Liferay contacts. Just as evidence that this sample project is using the Liferay
+Mobile SDK libraries, open the sample app's `MainActivity` class from the
+`src/com/liferay/mobile/sample/activity` directory. In LDS, scroll your mouse
+over the `Session` object instance within the `onListItemClick()` method.
+
+![Figure 8.7: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+
+You can run the sample app using Android's emulator. For instructions on how to
+do this, visit Android's [Using the
+Emulator](http://developer.android.com/tools/devices/emulator.html) section.
 
 <!-- Commented out the SDK Builder content. Bruno advised that we've switched to
 Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
@@ -873,7 +902,7 @@ In this chapter, we showed you how easy it is to download and configure
 Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
 separately, giving you step-by-step examples for accessing Liferay services. We
 even dove into a working example with the sample *Contacts App* by configuring
-Android Developer Tools. 
+Android Developer Tools.
 
 <!--
 Then, we explored the SDK Builder and how to generate client libraries to access
