@@ -1,7 +1,7 @@
 
 # Leveraging the Liferay Marketplace [](id=leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
 
-Liferay Marketplace is an exciting new hub for sharing, browsing and downloading
+Liferay Marketplace is an exciting hub for sharing, browsing and downloading
 Liferay-compatible applications. As enterprises look for ways to build and
 enhance their existing platforms, developers and software vendors are searching
 for new avenues to reach this market. Marketplace leverages the entire Liferay
@@ -36,15 +36,15 @@ manage the applications through Liferay's Control Panel.
 ## Marketplace Concepts: Users, Companies, and Apps [](id=marketplace-concepts-users-companies-an-liferay-portal-6-2-user-guide-14-en)
 
 Anyone can browse the apps available on Liferay Marketplace at
-[http://liferay.com/marketplace](http://liferay.com/marketplace) but a
-`liferay.com` user account is required for purchasing and downloading apps.  You
-can browse, purchase, and download apps from the Marketplace website or from a
-running Liferay portal. Accessing Liferay Marketplace from a running Liferay
-portal makes it very easy to download and install apps. Once an app has been
-purchased, it takes just one click to download the app and one click to install
-it. If you'd later like to update or uninstall the app, again it just takes one
-click. A `liferay.com` user account required regardless of whether Liferay
-Marketplace is accessed via the browser or via an existing Liferay installation.
+[http://liferay.com/marketplace](http://liferay.com/marketplace), but a
+`liferay.com` user account is required for purchasing and downloading apps.
+You can browse, purchase, and download apps from the Marketplace website or
+from a running Liferay portal. Accessing Liferay Marketplace from a running
+Liferay portal makes it very easy to download and install apps. Once an app has
+been purchased, it takes just one click to download the app and one click to
+install it. Updating or uninstalling the app are also one-click processes. A
+`liferay.com` user account is required regardless of whether you access Liferay
+Marketplace via the browser or via an existing Liferay installation.
 
 Many official Liferay apps, as well as some third party apps, are available free
 of charge. Other apps require you to pay a fee in order to access them. When you
@@ -61,11 +61,11 @@ access Liferay Marketplace.
 
 There are two ways to access the Marketplace.
 
-1. Via the website--Using your favorite browser, you can navigate to the
+1. Via the website: Using your favorite browser, you can navigate to the
    marketplace at
    [http://liferay.com/marketplace](http://liferay.com/marketplace).
 
-2. Via Liferay--If you have a Liferay portal up and running, you can use the
+2. Via Liferay: If you have a Liferay portal up and running, you can use the
    Apps section of the Control Panel to access Marketplace content.
 
 ### The Basics [](id=the-basics-liferay-portal-6-2-user-guide-14-en)
@@ -80,7 +80,7 @@ Marketplace home page.
 ![Figure 14.1: You can access and browse the Marketplace home page without a `liferay.com` account but you need an account in order to purchase and download apps.](../../images/marketplace-homepage.png) 
  
 In the center of the page, you will see a number of icons. Each icon represents
-an individual app and they are grouped into a couple of different areas:
+an individual app, and apps are organized by category:
 
 * New and Interesting: The latest apps added to the marketplace
 
@@ -119,20 +119,35 @@ descriptions of apps against your search terms.
 ### Logging In [](id=logging-in-liferay-portal-6-2-user-guide-14-en)
 
 You do not need a `liferay.com` account in order to browse the Marketplace.
-However, if you wish to purchase and download an app (or if you are a developer
-and wish to create and upload new apps), you need to establish a `liferay.com`
-account and agree to the Marketplace Terms of Use. To get a new `liferay.com`
-account, visit [http://www.liferay.com](http://www.liferay.com), click *Sign
-In*, then *Create Account*, and sign up! Once you are signed in, you will be
-able to fully utilize the Marketplace to find and use Marketplace apps.
+However, if you wish to purchase and download an app, you need to establish a
+`liferay.com` account and agree to the Marketplace Terms of Use. To get a new
+`liferay.com` account, visit [http://www.liferay.com](http://www.liferay.com),
+click *Sign In*, then *Create Account*, and sign up! Once you are signed in,
+you can fully utilize the Marketplace to find and use Marketplace apps.
+
+If you are a developer and wish to create and upload new apps, you must also
+register as a developer in Marketplace. Just go to
+[http://liferay.com/marketplace](http://liferay.com/marketplace) and click
+*Become a Developer* from the *Marketplace* menu.
  
+![Figure 14.4: Click on the *Become a Developer* link in the menu on the left side of the Liferay Marketplace homepage to register a developer's account, either as an individual or a company.](../../images/marketplace-registration.png) 
+
+Once you register as a developer, your *liferay.com* homepage will
+have links for adding your apps to Marketplace, and managing them after they're
+uploaded. 
+
 ### Marketplace Profile [](id=marketplace-profile-liferay-portal-6-2-user-guide-14-en)
 
-On your existing `liferay.com` Home page, you'll notice a new link entitled *App
-Manager*. The App Manager allows you to access information about the apps you've
-purchased and apps you've uploaded to Marketplace. It also provides a mechanism
-for uploading new apps to Marketplace. Once you submit your app, it will be
-reviewed before appearing on the `liferay.com` Marketplace.
+Once you register a developer account with your `liferay.com` account, your
+existing `liferay.com` Home page will contain a new section in the left
+navigation menu entitled *Development*. You now have two *Apps* links: one under
+the main navigation menu and one in the *Development* section. The *Apps* link
+under your name is where you go when you want to vies and download yuor
+purchased apps from the Marketplace. The *Apps* link under the *Development*
+menu will let you manage existing apps and add new apps to the Marketplace. To
+see information on your app's performance, use the *Metrics* link in the
+Development menu. If you submit an app, it will be reviewed before appearing on
+the `liferay.com` Marketplace.
 
 ---
 
@@ -143,34 +158,39 @@ reviewed before appearing on the `liferay.com` Marketplace.
 
 ### Managing Apps [](id=managing-apps-liferay-portal-6-2-user-guide-14-en)
 
-The App Manager shows you relevant information related to your usage of
-Marketplace. You'll find three tabs to help you manage your Marketplace apps:
-*Purchased*, *Apps* and *Add an App*.
+The *Develoment* menu in your `liferay.com` home page is where you'll go to
+manage and monitor your own marketplace apps, and the *Apps* link in your main
+navigation menu lets you view and download apps you purchased from the
+Marketplace.
 
-The Purchased tab lists the apps you have purchased. From this screen, you can
-find information about the authors of the apps you have purchased. You can also
-download or re-download the app (for example, if you lost your copy or have
-re-installed Liferay and wish to re-deploy the app). This option is also useful
-for downloading apps and deploying them to offline instances of Liferay that do
-not have direct access to `liferay.com`.
+The Apps link in the menu under your name lists your purchased apps.  From this
+screen, you can find information about the authors of the apps you have
+purchased and download or re-download the app (for example, if you lost your
+copy or have re-installed Liferay and wish to re-deploy the app).  This option
+is also useful for downloading apps and deploying them to offline instances of
+Liferay that do not have direct access to `liferay.com`.
 
-![Figure 14.4: The App Manager portlet on your `liferay.com` private Home page lets you view your purchased apps, browse Marketplace apps, or submit apps to Marketplace.](../../images/marketplace-purchased-apps.png)
+![Figure 14.5: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
 
 If possible, it's best to log into your portal instance and install purchased
-applications through the My Marketplace link in the Control Panel. This will
-provide your portal instance with automatic update notices should they become
-available. If you download applications this way, they can be hot-deployed.
+applications through the *Store* link in the Control Panel's *Apps* section.
+This will provide your portal instance with automatic update notices should
+they become available. If you download applications this way, they can be
+hot-deployed.
  
-The Apps tab lists apps you have authored and uploaded, showing you details such
-as the number of downloads, the current price and other relevant information.
-From here you can manage the apps you have created (please see the Marketplace
-chapter of the Developer Guide for details on this topic).
+The *Development* menu is where developers go to manage their Marketplace apps.
+The Apps link lists apps you have authored and uploaded, and gives you an *Add
+New App* link that let's you submit an app to be added to the Marketplace. The
+Metrics link will show you details such as the number of downloads, the current
+price and other relevant information. Please see the 
+[Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
+for details on this topic.
  
-![Figure 14.5: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
+![Figure 14.6: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
  
 Clicking on *Add an App* allows you to upload a new app and make it available in
-the marketplace. Please see the Marketplace Developer Guide for more detail on
-authoring your own app.
+the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
+for more detail on authoring your own app.
 
 ### Creating a Company [](id=creating-a-company-liferay-portal-6-2-user-guide-14-en)
 
@@ -187,13 +207,13 @@ company's Marketplace account). Your company's Marketplace admin will then be
 able to add you to the company. If the company name you'd like to use is
 available, click the *Register Your Company* button to move on to the next step. 
 
-![Figure 14.6: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
+![Figure 14.7: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
 
 Your second step is to fill out your company's information. The public
 information you must provide includes a company logo, the company name, a
 company description, a company email address and a homepage URL. The private
 information you must provide includes a company address, your company's country,
-region, city, postal code and phone number. Additonal private information
+region, city, postal code and phone number. Additional private information
 required for validation includes a company email address and a legal tax
 document. Once your company's Marketplace registration has been approved, you
 will be your company's Marketplace admin! This means you'll be responsible for
@@ -206,21 +226,21 @@ too.
 
 There are several ways to search for and find apps you are interested in.
 
-1. Browsing Categories. Click on a category (for example, *Communication* or
+1. Browsing Categories: Click on a category (for example, *Communication* or
    *Productivity*) to see a list of interesting apps in that category. Upon
    clicking a category, you are presented with a list of featured apps for that
    category, as well as a canonical listing of all apps. Also, on the right, are
    lists of the Most Viewed apps within that category.
 
-    ![Figure 14.7: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
+    ![Figure 14.8: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
 
-<!-- In the staged version of this page, there's another number 1 before
-"Searching," not a number 2.  -->
-2. Searching. To search for an app, type in search criteria in the search box
+2. Searching: To search for an app, type in search criteria in the search box
    under the navigation menu on the left and click *Search*. Apps matching the
    specified search criteria are displayed.
 
-    ![Figure 14.8: You can also search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
+    ![Figure 14.9: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
+
+Next, let's talk about app versioning.
 
 ### Versions [](id=versions-liferay-portal-6-2-user-guide-14-en)
 
@@ -245,7 +265,7 @@ available also describes the range of Liferay Platform versions the app is
 compatible with. Make sure to choose a version of the app that is compatible
 with your Liferay Platform release.
 
-![Figure 14.9: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
+![Figure 14.10: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
 
 To check if an app is compatible with your version of Liferay, click on the App
 and then click on the *Version History* tab. The Version History tab displays
@@ -259,11 +279,11 @@ version of Liferay.
 Once you've found an app you wish to download and install, click on the name of
 the app to display its detailed information screen.
 
-![Figure 14.10: Click on an app to read a description and view additional details.](../../images/marketplace-app-information.png)
+![Figure 14.11: Click on an app to read a description and view additional details.](../../images/marketplace-app-information.png)
 
 This screen offers a number of items to help you learn more about the app. You
 can find the primary information about the app on the left side of the screen,
-below the app's icon.  In the center display, you see a set of screenshots along
+below the app's icon. In the center display, you see a set of screenshots along
 with a description of the app. Beneath the screenshots, you can find a
 description of the app. Below that, you can read reviews and view the version
 history of the app. Each app provides at least the following information:
@@ -305,10 +325,10 @@ Apps on the Liferay Marketplace consist of individual Liferay Plugins (for
 example: a portlet, a hook, or a collection of multiple plugins). Ultimately,
 these apps must be installed on a running Liferay instance before they can be
 used. Deploying an app to a running Liferay instance is automatically done
-through the process of *hot deploy*. When using *Control Panel* to install apps
-from the Marketplace, when you click *Purchase* or *Install* to download and use
-a given app, it will be downloaded and hot deployed to your local running
-Liferay instance.
+through the process of *hot deploy*. When using your Liferay portal's *Control
+Panel* to install apps from the Marketplace, when you click *Purchase* or
+*Install* to download and use a given app, it will be downloaded and hot
+deployed to your local running Liferay instance.
 
 For some Liferay installations, the hot deploy mechanism is disabled, in order
 for the site administrator to manage (or prevent) the deployment of plugins. In
@@ -328,7 +348,7 @@ that you can log in as an administrator. Once you are logged in as an
 administrator, click the *Admin* menu from the Dockbar and choose *Control
 Panel*.
 
-![Figure 14.11: As an administrator, you can access the Marketplace interface from the Control Panel of a running Liferay portal.](../../images/marketplace-control-panel-entries.png)
+![Figure 14.12: As an administrator, you can access the Marketplace interface from the Control Panel of a running Liferay portal.](../../images/marketplace-control-panel-entries.png)
  
 Click on either the *Store* or the *Purchased* links beneath the Apps heading.
 Before you can access Marketplace via the Control Panel, you need to associate
@@ -336,7 +356,7 @@ your `liferay.com` login credentials with your local administrator account.
 Enter your `liferay.com` email address and password so your Liferay installation
 can connect to the `liferay.com` Marketplace.
 
-![Figure 14.12: Before you can access Marketplace via the Control Panel you need to link your `liferay.com` credentials with your Liferay instance's administrator account.](../../images/marketplace-login.png)
+![Figure 14.13: Before you can access Marketplace via the Control Panel you need to link your `liferay.com` credentials with your Liferay instance's administrator account.](../../images/marketplace-login.png)
 
 ---
  
@@ -366,7 +386,7 @@ You can view and manage all the apps you've purchased by clicking on the
 past, including apps you may have purchased/downloaded while using other Liferay
 installations.
 
-![Figure 14.13: Purchased Apps](../../images/marketplace-purchased-apps-control-panel.png)
+![Figure 14.14: Purchased Apps](../../images/marketplace-purchased-apps-control-panel.png)
  
 The apps which you downloaded and installed on the currently running instance of
 Liferay are listed as Installed. Apps which you have previously downloaded or
@@ -384,15 +404,15 @@ environment, or in cases where the target Liferay instance that is to receive
 the app is behind a corporate firewall or otherwise does not have direct access
 to the Marketplace.
  
-In this case, using your browser, you will find the app on
-`liferay.com/marketplace`. Once found, click on the *Purchase* or *Free* button
-when viewing the individual app. This will cause the app to be placed in your
-*Purchased* list on your personal Home page. Navigate to your Home page, click
-on *App Manager* and visit the *Purchased* tab. Each app is listed. Find the app
-you just purchased and click *Downloads*. You'll find a list of app versions and
-Liferay versions. Choose the version of the app you want, making sure the
-Liferay version corresponds to the version of the Liferay installation into
-which you'd like to install the app. Click *Download App* and the app is
+In this case, using your browser, you will find the app on the [Liferay
+Marketplace](https://www.liferay.com/marketplace). Once found, click on the
+*Purchase* or *Free* button when viewing the individual app. This will cause
+the app to be placed in your *Purchased* list on your personal Home page.
+Navigate to your Home page and click on *Apps*. Each app is listed; click on
+the one you just purchased, or whatever app you want to download. You'll find a
+list of app versions and Liferay versions. Choose the version of the app you
+want, making sure the Liferay version corresponds to the version of the Liferay
+installation where you'll install the app. Click *App* and the app is
 downloaded to your local machine in the same way any other file would be
 downloaded. This file can then be hot-deployed to Liferay by copying it to
 Liferay's hot deploy directory.
@@ -400,8 +420,8 @@ Liferay's hot deploy directory.
 ## Creating and Uploading Apps [](id=creating-and-uploading-apps-liferay-portal-6-2-user-guide-14-en)
  
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find
-out more information about creating your own Liferay apps, visit the Liferay
-Marketplace Developer Guide and get started creating apps today!
+out more information about creating your own Liferay apps, visit the 
+[Liferay Marketplace Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) and get started creating apps today!
 
 Next, we'll discuss general Liferay plugin management. We'll explain the
 differences between the various types of Liferay plugins and show how to
@@ -490,7 +510,7 @@ infrastructure that Liferay provides.
 
 ### Themes [](id=themes-liferay-portal-6-2-user-guide-14-en)
 
-![Figure 14.14: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
+![Figure 14.15: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
 Themes are hot deployable plugins which can completely transform the look and
 feel of the portal. Most organizations have their own look and feel standards
@@ -505,7 +525,7 @@ than starting a theme from scratch. You can learn more about theme development
 in [*Liferay in Action*](http://manning.com/sezov) or the [Liferay Development
 Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
-![Figure 14.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
+![Figure 14.16: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ### Layout Templates [](id=layout-templates-liferay-portal-6-2-user-guide-14-en)
 
@@ -561,7 +581,7 @@ templates: if a theme or layout template has been installed, then it's available
 for use. The Theme and Layout Template Plugins tabs of the Plugins Configuration
 section directly display which portal roles can access them.
 
-![Figure 14.16: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 14.17: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
 It's easy to browse through the lists of installed plugins since the plugins are
 listed alphabetically. You can also change the number of items per page and
@@ -607,7 +627,7 @@ plugin to your Liferay Portal. Use the *File Upload* option to browse to and
 install from a local `.lpkg` or `.war` file. Use the *URL* option to install
 from a remote `.lpkg` or `.war` file.
 
-![Figure 14.17: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 14.18: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
 That's all the information the App Manager needs in order to deploy your
 portlet, theme, layout template, hook, or web plugin. Click the *Install* button
