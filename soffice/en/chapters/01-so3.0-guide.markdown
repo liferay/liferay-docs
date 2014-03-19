@@ -434,7 +434,7 @@ Next, let's discuss how Social Office can facilitate team collaboration.
 After installing Social Office to your Liferay instance, you'll be directed to
 the following screen when you log in as an administrator:
 
-![Figure 1.23: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
+![Figure 1.5: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
 
 This page allows you to assign the Social Office User role to users,
 organizations, or user groups. If you aren't immediately sure who should be
@@ -510,7 +510,7 @@ the *Apply to Existing Users* box to grant the Social Office User role to
 previously created users. These users will receive the role the next time they
 log in to the portal.
 
-![Figure 1.x: Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../../images/user-bar-dockbar.png)
+![Figure 1.6: Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../../images/user-bar-dockbar.png)
 
 The default personal pages provided by the Social Office user role include the
 private Dashboard page and the public Profile page. When a user who has been
@@ -542,7 +542,7 @@ team collaboration. The *Sites Directory* button opens a site directory dialog
 box which you can use to join, leave sites, or star sites. If you have the
 required permissions, you can also delete sites.
 
-![Figure 1.11: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+![Figure 1.7: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
 Next, a *Notifications* icon is added to the right of the *Go to* menu. The
 Notifications icon displays how many unread notifications you have. You'll be
@@ -551,7 +551,7 @@ social connection request, or an event reminder. Alerts and announcements
 created via the Alerts or Announcements portlets are accessible via the
 Notifications icon.
 
-![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
+![Figure 1.8: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
 
 The *My Account* icon is also moved from the Dockbar to the user bar. When you
 click on your name or profile picture in the user bar, four options appear:
@@ -600,7 +600,7 @@ include:
 - My Documents
 - Tasks
 
-![Figure 1.10: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
+![Figure 1.9: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
 
 The Dashboard page provides several portlet applications designed to keep you up
 to date with various kinds of portal activity:
@@ -666,7 +666,7 @@ feeds can quickly become heavily populated, users can simply scroll to the
 bottom of a page with the Activities portlet and the Activities portlet loads
 more activities.
 
-![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
+![Figure 1.10: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
 The Upcoming Tasks portlet displays a list of tasks that have been created for
 you or that you've assigned to yourself. The Events portlet integrates with the
@@ -703,7 +703,7 @@ have the following options:
   is a file format standard for electronic business cards.
 - *Go to Profile* is a link to the selected user's public profile page.
 
-![Figure 1.13: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center.png)
+![Figure 1.11: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center.png)
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
@@ -722,7 +722,7 @@ the Microblogs portlet chronologically displays all the status posts that you
 have permission to see. The Mentions tab displays all the posts in which you've
 been mentioned.
 
-![Figure 1.14: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs.png)
+![Figure 1.12: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs.png)
 
 Note that there are two different portlets for accessing the microblogs system:
 the Microblogs portlet and the Microblogs Status Update portlet. When placed on
@@ -740,7 +740,7 @@ email, you can enter a subject, a message body, and add attachments. Open the
 dropdown menu next to the *To* field to select a user or users to send your
 message to. You can select any number of users.
 
-![Figure 1.15: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messaging.png)
+![Figure 1.13: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messaging.png)
 
 Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
@@ -749,7 +749,7 @@ exactly the same as the standard Documents and Media portlet that ships with
 Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
 information about document management.
 
-![Figure 1.16: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
+![Figure 1.14: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
 With their private document libraries, each of your Social Office users can
 maintain a personal online repository of documents and files. Your users can use
@@ -771,7 +771,7 @@ assignee from your contacts (or assign to yourself), select a priority, and,
 optionally, enter a due date. It's also helpful, especially when there are large
 numbers of tasks, to tag your tasks. 
 
-![Figure 1.17: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
+![Figure 1.15: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
 
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
@@ -788,7 +788,7 @@ accessible from the left-column navigation menu:
 - Contacts
 - Microblogs
 
-![Figure 1.18: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
+![Figure 1.16: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about
 a user: their profile and profile picture, their latest microblog status, their
@@ -871,7 +871,7 @@ no regular Liferay site equivalent. The default pages of an open Social Office
 site are public but those of restricted and private Social Office sites are
 private.
 
-![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
+![Figure 1.17: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
@@ -882,7 +882,7 @@ Membership* link for restricted sites. When users have requested membership for
 a restricted site, the *Request Membership* link is replaced by a *Membership
 Requested* notification to inform users that their request is pending.
 
-![Figure 1.21: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
+![Figure 1.18: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
 The Home page of the default Social Office site contains a number of useful
 portlets. The Activities and Recent Downloads portlets keep site members up to
@@ -904,7 +904,7 @@ site they belong to. For more information about these applications, please refer
 to Liferay's user guide, *Using Liferay Portal*, available at
 [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.22: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
+![Figure 1.19: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
 
 In addition to the Blogs portlet, the Blogs page contains a Recent Blogs
 portlet. These two portlets are designed to work together. The Blogs portlet
@@ -985,7 +985,7 @@ Without Social Office EE, the version number will be automatically incremented
 when a file is edited but there's no way to specify a major/minor revision or
 enter a change log message.
 
-![Figure 1.24: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-checkin-screen.png)
+![Figure 1.20: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-checkin-screen.png)
 
 Additionally, Social Office EE allows comments to be added to specific versions
 of a document. Without Social Office EE, there's just a general comments area
@@ -995,7 +995,7 @@ using CE will appear in a section entitled *Previous Comments*.
 
 Next, let's look at Social Office's upgrade process.
 
-## Upgrading From Social Office 2.x to 3.x
+## Upgrading From Social Office 2.x to 3.x [](id=upgrading-from-social-office-2-x-to--liferay-portal-3-0-social-office-01-en)
 
 Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
 from Social Office 2.x to to 3.x, you first need to upgrade your portal from
@@ -1007,7 +1007,7 @@ available fix packs before deploying your Social Office 3.x plugins.
 
 ---
 
-![Figure 1.x: Note](../../images/tip.png) Note: There are a few known issues with
+![Figure 1.21: Note](../../images/tip.png) Note: There are a few known issues with
 the Social Office plugins that you might experience if you're running on JBoss.
 If the Go To menu is not initially visible after deploying the Social Office
 plugins or if you can't confirm a connection or site invitation after logging in
