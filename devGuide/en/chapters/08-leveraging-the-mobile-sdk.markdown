@@ -31,6 +31,7 @@ as we learn how to use Liferay's Mobile SDK:
 
 - Using the Android SDK
 - Using the iOS SDK
+- Accessing the Mobile SDK Using Eclipse
 
 <!--
 - Building an SDK for Custom Portlet Services
@@ -751,6 +752,9 @@ Emulator](http://developer.android.com/tools/devices/emulator.html) section.
 <!-- Commented out the SDK Builder content. Bruno advised that we've switched to
 Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
 overhaul this section, or remove it and point readers to Bruno's Github page.
+
+Maven can also be used for building the SDK. Coordinating with Bruno and Greg on
+this section and its value in the guide.
 -Cody -->
 
 <!--
