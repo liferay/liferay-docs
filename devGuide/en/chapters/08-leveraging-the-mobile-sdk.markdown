@@ -16,18 +16,14 @@ page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/over
 gives you access to the SDK releases to download, provides the latest SDK news,
 and has forums for you to engage in mobile app development discussions. 
 
-<!-- For an illustration for how the mobile SDK works, see Figure 8.1. -->
+For an illustration for how the mobile SDK works, see Figure 8.1. 
 
-<!-- Leave out Liferay IDE/Studio images and references until the integration
-is ready. - Jim -->
-<!--
 ![Figure 8.1: Liferay's Mobile SDK acts as a bridge allowing your native app to communicate with Liferay services and utilities.](../../images/mobile-sdk-diagram.png)
 
 The illustration displays the general process that links the mobile SDK with
 your native app. You can create and edit you app using Liferay Developer Studio.
 Once the app is created, it can send and receive requests to/from the Liferay
 Mobile SDK to enable access to Liferay services. 
--->
 
 In this chapter, we'll demonstrate developing Android and iOS apps that
 communicate with Liferay via the mobile SDK. We'll discuss the following topics
@@ -35,7 +31,11 @@ as we learn how to use Liferay's Mobile SDK:
 
 - Using the Android SDK
 - Using the iOS SDK
+- Accessing the Mobile SDK Using Eclipse
+
+<!--
 - Building an SDK for Custom Portlet Services
+-->
 
 Let's get started by learning how to access Liferay's core services from an
 Android app.
@@ -578,6 +578,186 @@ If you want to make batch calls asynchronously, set the callback to the session.
 
 The return type for batch calls is always an `NSArray`.
 
+Next, let's learn how to use Liferay Developer Studio to customize your Android
+app by giving it access to the Liferay Mobile SDK.
+
+## Accessing the Mobile SDK Using Eclipse
+
+Liferay provides the *Liferay Mobile SDK* plugin for developers to use when
+building Mobile SDK libraries and generating custom services for their app. By
+using this plugin, you can simply import your app in Eclipse and inject it with
+Mobile SDK JARs that your app can reference. Also, the Mobile SDK Eclipse plugin
+can generate services for an app already deployed to Liferay Portal. Eclipse
+only supports Android apps, so you're unable to customize iOS apps.
+
+The Liferay Mobile SDK plugin can be downloaded to provide this useful
+interface, but first, you need to install a few things to get up and running
+with Eclipse. There are two ways to install the necessary Android capabilities:
+install the *Android SDK Tools* and *ADT (Android Development Tools)* Eclipse
+plugins to a pre-existing Eclipse instance, or install the *Android Developer
+Tools SDK* bundle provided by Google, which includes these two plugins.
+
+You can follow the [Setting Up an Existing
+IDE](http://developer.android.com/sdk/installing/index.html) section on
+Android's site for instructions on how to download and install the [ADT
+Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html) plugin to a
+pre-existing IDE. Furthermore, follow the [Setting Up the ADT
+Bundle](http://developer.android.com/sdk/installing/bundle.html) section on
+Android's site for instructions on downloading and installing the ADT bundle.
+
+After you've installed the ADT plugin to your Eclipse instance, install the
+*Liferay Mobile SDK* plugin. To do this, navigate to the *Help* &rarr; *Install
+New Software* menu and copy the following link into the *Work with* field:
+
+    http://releases.liferay.com/tools/ide/latest/milestone/
+
+A *Liferay* drop-down menu appears; click the drop-down arrow and select
+*Liferay Mobile SDK* and click *Next*.
+
+![Figure 8.3: Download the *Liferay Mobile SDK* plugin for Eclipse by navigating to the *Install New Software* menu.](../../images/download-mobile-sdk-plugin.png)
+
+Click *Finish* to complete the install.
+
+Terrific! Eclipse is now ready to build the Liferay Mobile SDK and generate
+custom services for your Android app! Let's show adding the Liferay Mobile SDK
+libraries into your app next.
+
+### Adding Mobile SDK Libraries
+
+You've been developing an Android app for months and you're almost ready to
+publish it. However, there are a few Liferay core web services you'd like to
+access for your app. The Mobile SDK Eclipse plugin gives you the easy option of
+importing your existing Android application project and adding the Liferay
+Android Mobile SDK libraries to your project as JAR files. These JARs allow your
+app to access Liferay core web services.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** The action for injecting
+Liferay Android Mobile SDK library JARs is only available for Android apps that
+were created using the ADT plugin for Eclipse. Therefore, if you build your
+Android app with Gradle or Maven, the action does not work.
+
+---
+
+To add the library JAR files, right-click your app and click *Configure* &rarr;
+*Add Liferay Android SDK libraries*. Eclipse gives you a success message
+indicating that the Liferay Android SDK libraries were added to the project.
+
+Wasn't that easy? Your Android app now has the Liferay Android SDK libraries and
+can call any of Liferay's core web services! Let's take a look behind the scenes
+and discover what happened. In your project's `libs` directory, the Liferay
+Android SDK `.jar` and `.properties` files were added. Furthermore, the `src`
+folder containing the source JAR was included. Lastly, the project library JAR
+is added to the classpath in the `Android Private Libraries` folder.
+
+![Figure 8.4: The Mobile SDK Eclipse plugin makes it easy to inject Liferay Android SDK libraries accessible by your app.](../../images/mobile-sdk-jars.png)
+
+Next, let's learn how to generate Liferay custom portlet services.
+
+### Generating Custom Portlet Services
+
+The Liferay Mobile SDK offers the generation of custom portlet services. If you
+have your own custom portlets deployed to Liferay Portal and you'd like to
+generate new Mobile SDK services for those remote JSON services, you'll need to
+use the Mobile SDK Builder program.
+
+You can specify a running Liferay Portal instance in Eclipse, and Eclipse
+queries the server for all the remote APIs that are available to generate custom
+services. Once Eclipse finds your custom services and you specify the services
+you want to generate, a custom JAR is generated by the Mobile SDK Builder and
+copies the resulting JAR and its sources to the user's Android project.
+
+Now that you know the basic gist of how the Mobile SDK Eclipse plugin generates
+custom portlet services, let's demonstrate how to do this.
+
+Right-click your Android app project in the *Package Explorer* and navigate to
+*Configure* &rarr; *Generate services for Liferay custom portlets*. This opens a
+wizard where you'll specify your running portal server.
+
+![Figure 8.5: You can select *Check Status* to verify that you've specified the correct running portal server.](../../images/service-generation-wizard.png)
+
+Specify your server's *URL*, *Username*, and *Password*. Notice the *Status* and
+*Summary* fields; these fields indicate your running portal instance's status
+after clicking the *Check Status* button.
+
+Eclipse saves all server instances you've specified in the bottom field. This
+allows you to work with multiple servers. The servers are listed by *URL* and
+*Last Available Summary*.
+
+Once you've checked the status of your server, click *Next*. Eclipse queries the
+server you specified for all the remote APIs that are available to generate
+custom services.
+
+In the next menu, specify the Java package to be used for the generated code.
+You can select the *Browse* button to browse for available packages. You're also
+presented with available custom APIs from your server that you can select to
+generate the Java package for.
+
+![Figure 8.6: Eclipse queries all remote APIs that are available for generating custom portlet services.](../../images/choosing-apis-and-packages-wizard.png)
+
+For demonstration purposes, we'll specify the Java package as
+`com.liferay.custom` and select the *opensocial-portlet* &rarr; *gadget* custom
+API. You can view what this looks like in the figure below.
+
+![Figure 8.7: Eclipse injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/injected-jars-mobile-sdk.png)
+
+Notice that in the figure, we have the standard and custom `.jar` and
+`.properties` files. When generating custom services, Eclipse adds both the standard
+JAR and the custom JAR with the specified generated Java package.
+
+You've generated custom services for your Liferay portlets! Now your portlets
+have access to the Liferay Mobile SDK services you specified. Next, let
+demonstrate how to create a Liferay Android Sample Project using Eclipse.
+
+### Creating a Liferay Android Sample Project
+
+So far, we've demonstrated how to add Liferay Mobile SDK libraries to your
+pre-existing Android app. The Mobile SDK Eclipse plugin also offers the ability
+to create a new sample Android project from scratch that includes Liferay Mobile
+SDK libraries and sample code. This gives you the ability to view what a Liferay
+Android project looks like. Let's dive in and explain how to do this!
+
+To start the Liferay Android Sample Project wizard, navigate to *File* &rarr;
+*Project...* &rarr; *Liferay* &rarr; *Liferay Android Sample Project* and then
+click *Next*. Specify the project name, directory location, and Android target
+SDK. Notice that you also have the option to choose a sample project template
+from the Mobile SDK preferences menu. Click *Finish* when you're ready to create
+the sample Android app.
+
+![Figure 8.8: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
+
+The sample Android app has the standard Liferay Mobile SDK JARs as well as
+sample classes that characterize how the app integrates with your portal
+instance. You can learn more about the Android application standard architecture
+by visiting Android's *Getting Started* guide, where they'll demonstrate
+standard architecture as well as activity classes, model classes, etc.
+
+The Liferay Android Sample Project that is built by default displays details of
+Liferay contacts. Just as evidence that this sample project is using the Liferay
+Mobile SDK libraries, open the sample app's `MainActivity` class from the
+`src/com/liferay/mobile/sample/activity` directory. In Eclipse, scroll your
+mouse over the `Session` object instance within the `onListItemClick()` method.
+
+![Figure 8.9: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+
+You can see that the `Session` interface is being referenced from the
+`com.liferay.mobile.android.service` package. This app is using the Liferay
+Mobile SDK from the library JARs of this project.
+
+You can run the sample app using Android's emulator. For instructions on how to
+do this, visit Android's [Using the
+Emulator](http://developer.android.com/tools/devices/emulator.html) section.
+
+<!-- Commented out the SDK Builder content. Bruno advised that we've switched to
+Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
+overhaul this section, or remove it and point readers to Bruno's Github page.
+
+Maven can also be used for building the SDK. Coordinating with Bruno and Greg on
+this section and its value in the guide.
+-Cody -->
+
+<!--
 Next, let's learn how to build your custom portlet SDK and generate client
 libraries. 
 
@@ -739,16 +919,26 @@ dependencies.
 To learn how to use the Liferay iOS SDK in your mobile app, see the
 [Using the iOS SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
 
+-->
+
 ## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
 In this chapter, we showed you how easy it is to download and configure
 Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
 separately, giving you step-by-step examples for accessing Liferay services. We
 even dove into a working example with the sample *Contacts App* by configuring
-Android Developer Tools. Then, we explored the SDK Builder and how to generate
-client libraries to access your portlet's custom services. Of course, this was
-also broken down into separate Android and iOS sections so that building the SDK
-for either platform is easier than ever.
+Android Developer Tools. Then, we explored Liferay Developer Studio's
+integration with the Mobile SDK. LDS offers ways to build standard and custom
+JARs for an Android app to reference. LDS also gives you the option to create a
+sample Liferay Android project to familiarize yourself with a Liferay Android
+app using the Mobile SDK.
+
+<!--
+Then, we explored the SDK Builder and how to generate client libraries to access
+your portlet's custom services. Of course, this was also broken down into
+separate Android and iOS sections so that building the SDK for either platform
+is easier than ever.
+-->
 
 Did you know that there is a breed of social applications called OpenSocial
 gadgets that lend themselves well to humans sharing information and application
