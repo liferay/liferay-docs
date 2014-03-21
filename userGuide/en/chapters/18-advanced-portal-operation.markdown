@@ -27,6 +27,8 @@ We'll discuss the following topics in this section:
 
 -   Upgrading Liferay
 
+-   Liferay Portlet Sandboxing
+
 -   Using Web Services for Remote Portlets (WSRP)
 
 -   Remotely Accessing Liferay Services
@@ -1079,6 +1081,265 @@ Media, Web Content, and Bookmarks. To reindex all search indexes, navigate to
 the *Control Panel* &rarr; *Server Administration* and click on *Reindex all
 search indexes*. This invokes each of your portal's indexer classes, ensuring
 that your search indexes contain the updated data that 6.2 indexes. 
+
+## Liferay Portlet Sandboxing
+
+The performance, health, and stability of a portal deployment is heavily
+dependent upon the portlet modules deployed to it. If one portlet leaks memory
+or is extremely slow, your entire portal will be either crash due to the dreaded
+OutOfMemoryError or slow to a crawl. 
+
+Liferay Portal 6.2 introduces the portlet sandboxing feature to reduce the
+impacts any given portlet may have on the health and stability of your portal
+installation. 
+
+### Installation
+
+Liferay's portlet sandbox requires two modules to function:
+
+- spi-provider-web and
+- spi-admin-portlet
+
+The spi-provider-web contains the actual sandbox implementation while the
+spi-admin-portlet provides an administration console to control sandboxes. 
+
+To install, simply download the Liferay Sandbox App from the marketplace and
+deploy. Liferay Portal will deploy both modules. 
+
+Once successfully installed, you should see an option for "SPI Administration"
+appear in the Configuration section of the Control Panel. 
+
+![](../../images/sandboxing-spi-admin-available-in-control-panel.png)
+
+### Portal Configurations
+
+In addition to installing the Liferay Marketplace modules, the sandboxing
+feature requires some portal configuration changes (i.e. via
+portal-ext.properties). 
+
+#### Database Connections
+
+If you had previously not configured your database connection pools inside of
+portal.properties, you must do so in order to use the sandboxing feature. If you
+had previously used JNDI to configure your data sources, please convert to using
+the properties settings in portal.properties. You may consult the Liferay User's
+Guide for instructions on how to do. 
+
+The Sandbox Administration console will give you a warning if you attempt to
+create or start any sandbox with incorrect JDBC settings. 
+
+#### Resiliency Properties
+
+There are two new properties provided:
+
+- portal.resiliency.enabled
+- portal.resiliency.portlet.show.footer
+
+To activate sandboxing capabilities, you must set portal.resiliency.enabled to
+**true**.
+
+For debugging and development purposes, you may set
+portal.resiliency.portlet.show.footer to **true**. After activating this
+setting, the portal will show a footer at the bottom of a sandboxed portlet,
+showing the sandbox name servicing the request. 
+
+### SPI Administration
+
+To administer SPIs (or Sandbox Portal Instances), select "SPI Administration"
+from the Control Panel. You will be presented with the ability to:
+
+- Add new SPIs
+- Manage existing SPIs (start, stop, modify, delete)
+- Configure global settings
+
+![](../../images/sandboxing-add-spi-button.png)
+
+### Add New SPI
+
+To add a new SPI, simply click the "Add SPI" button. 
+
+You will be asked to enter General, SPI Configurations, and Advanced
+Configurations. 
+
+![](../../images/sandboxing-add-spi-general-details.png)
+
+#### General
+
+In the General section, you must provide a unique name for the SPI and a
+description. 
+
+#### SPI Configurations
+
+The SPI Configurations contains some of the most important settings for the SPI
+and is broken into 4 sections. 
+
+![](../../images/sandboxing-configure-spi-runtime.png)
+
+##### SPI Runtime
+
+**Maximum Worker Threads** is a parameter similar to the settings in your JEE
+application server. This controls how many worker threads the SPI will use to
+process requests. By default, it is set to 100. However, this should be tuned
+according to the number of threads allocated in the application server hosting
+your Liferay Portal. 
+
+**Connector Port** controls the port upon which the SPI will listen for requests
+from Liferay Portal. This setting must be unique for each SPI and you must
+ensure that no other processes are using the desired port. 
+
+##### SPI Applications
+
+![](../../images/sandboxing-configure-spi-apps.png)
+
+**SPI Applications** provides a way to select which applications will be hosted
+in the SPI. All request that utilizes these applications will be processed by
+the SPI. 
+
+It is important to note that the applications within this list are portlet and
+web plugins. Themes, layout templates, hooks, and Liferay EXTs are excluded. In
+addition, the following applications are explicitly excluded:
+
+- Marketplace-portlet
+- Resource-importer-web
+- Spi-admin-portlet
+- Spi-provider-web
+- Wurfl-commercial-web
+- Wurfl-web
+
+##### Java Runtime
+
+![](../../images/sandboxing-configure-spi-java-runtime.png)
+
+**JVM Arguments** allows you to specific arguments to be passed to the Java
+Virtual Machine (JVM) running the SPI. These include memory settings, debugger
+options, etc. If you do not specify any values, the system will automatically
+use the values:
+
+    -Xmx512m -XX:PermSize=200m
+
+It is highly recommend that you set these values based on your JVM performance
+tuning. You may also consult the Liferay Deployment Checklist for some
+guidelines on how to set the JVM arguments. 
+
+In development, you may also choose to add debug settings to the JVM arguments. 
+
+##### Recovery Options
+
+![](../../images/sandboxing-configure-spi-recovery.png)
+
+**Use Default Notification Options** allows you to specify whether to use the
+notification options defined globally in the SPI Admin console. 
+
+**Notification Recipients** allows you to specify a specific set of comma
+delimited email addresses that will be notified should the configured SPI fail.
+This option is disabled if you choose to **Use Default Notification Options**. 
+
+**Use Default Restart Options** allows you to specify whether to use the restart
+options defined globally in the SPI Admin console. 
+
+**Maximum Restart Attempts** allows you to specify how many times to attempt
+restarting the SPI if it should fail. Once Liferay reaches the maximum number of
+restart attempts, it will no longer attempt to restart the SPI and manual
+operator intervention is required. This option is disabled if you choose to
+**Use Default Restart Options**. 
+
+#### Advanced Configurations
+
+The Advanced Configurations section contains a series of optional parameters
+that should rarely be modified. 
+
+![](../../images/sandboxing-configure-spi-advanced-runtime-options.png)
+
+##### Advanced SPI Runtime
+
+**Java Executable** allows you to specify the path to your JVM, specifically the
+java executable. This parameter is generally not modified assuming you have Java
+added to your operating system path. 
+
+**SPI Ping Interval** allows you to modify the interval the SPI will ping back
+to the Portal to ensure the Portal is still alive. This will prevent SPIs from
+becoming zombie processes in the event of an unexpected Portal termination. 
+
+**SPI Register Timeout** allows you to configure the time allotted for the SPI
+to initially startup. The default is for 300,000ms or 300s. This should be ample
+time for a SPI to startup. However, if you have a large number of applications
+in a sandbox or if there are insufficient CPU or memory resources on the server,
+you may need to increase this setting. 
+
+**SPI Shutdown Timeout** allows you to configure the maximum amount of time a
+SPI will need to gracefully shutdown. As with the SPI Register Timeout, this may
+need to be increased on slower or overloaded machines.  
+
+##### SPI Core Applications
+
+You may also choose to allocate certain embedded Liferay functions (e.g. blogs,
+bookmarks, etc) to a SPI. This is generally not recommended.  
+
+### Manage Existing SPI
+
+#### Starting and Stopping
+
+The Portal will automatically start SPIs on startup. However, if you add a new
+SPI, you will need to manually start it. 
+
+![](../../images/sandboxing-start-stop-spi.png)
+
+Once successfully started, you will have the ability to stop or restart the SPI.
+Note, you will only be able to delete a SPI after it has been shut down. 
+
+![](../../images/sandboxing-restart-spi.png)
+
+#### Modifying SPI Configurations
+
+You may edit the configurations of a SPI. However, configuration changes made to
+running SPIs will only take effect after a restart. 
+
+![](../../images/sandboxing-modify-spi.png)
+
+### Configure Global Settings
+
+The SPI Administration console allows you to configure a series of global
+settings. You may access them by clicking on the configuration icon as shown
+below. 
+
+![](../../images/sandboxing-global-settings.png)
+
+Once you have opened the configuration panel, the SPI Administration console
+will display the ability for you to configure notification and restart options. 
+
+![](../../images/sandboxing-global-recovery-options.png)
+
+#### Notification Options
+
+The notification options allow you to configure both the content of and the
+recipients of the notification emails. These values will be used by all defined
+SPIs unless they have been explicitly configured otherwise. 
+
+![](../../images/sandboxing-global-notification-options.png)
+
+**Notification Email From Address** allows you to specify the origin email
+address for the notification email. 
+
+**Notification Email From Name** allows you to specify a name for the send of
+the notification email. 
+
+**Notification Recipients** allows you to specify a comma delimited list of
+email address that will receive the notification email. 
+
+**Notification Email Subject** allows you to specify the subject of the
+notification email. 
+
+**Notification Email Body** allows you to specify the body of the notification
+email. 
+
+#### Restart Options
+
+The restart options section allows you to configure how many times a given SPI
+will be restarted in the event of unexpected termination. In the example below,
+all SPIs will be restated 3 times before they require administrator
+intervention. 
+
+![](../../images/sandboxing-global-restart-options.png)
 
 Liferay Portal can serve portlets that are installed on the system, or it can
 serve portlets installed on another portal server. This is called Web Services
