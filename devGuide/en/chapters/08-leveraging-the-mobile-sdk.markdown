@@ -72,13 +72,67 @@ New Software* menu and copy the following link into the *Work with* field:
 A *Liferay* drop-down menu appears; click the drop-down arrow and select
 *Liferay Mobile SDK* and click *Next*.
 
-![Figure 8.3: Download the *Liferay Mobile SDK* plugin for Eclipse by navigating to the *Install New Software* menu.](../../images/download-mobile-sdk-plugin.png)
+![Figure 8.2: Download the *Liferay Mobile SDK* plugin for Eclipse by navigating to the *Install New Software* menu.](../../images/download-mobile-sdk-plugin.png)
 
 Click *Finish* to complete the install.
 
-Terrific! Eclipse is now ready to build the Liferay Mobile SDK and generate
-custom services for your Android app! Let's show adding the Liferay Mobile SDK
-libraries into your app next.
+Terrific! Eclipse is now ready to create Liferay Android sample projects, build
+the Liferay Mobile SDK libraries, and generate custom services for a
+pre-existing Android app! First, we'll demonstrate how to create a Liferay
+Android Sample Project using Eclipse.
+
+### Creating a Liferay Android Sample Project
+
+The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
+project from scratch that includes Liferay Mobile SDK libraries and sample code.
+This gives you the ability to view what a Liferay Android project looks like.
+Let's dive in and explain how to do this!
+
+To start the Liferay Android Sample Project wizard, navigate to *File* &rarr;
+*Project...* &rarr; *Liferay* &rarr; *Liferay Android Sample Project* and then
+click *Next*. Specify the project name, directory location, and Android target
+SDK. Notice that you also have the option to choose a sample project template
+from the mobile SDK preferences menu. Click *Finish* when you're ready to create
+the sample Android app.
+
+![Figure 8.3: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
+
+The sample Android app has the standard Liferay Mobile SDK JARs as well as
+sample classes that characterize how the app integrates with your portal
+instance. You can learn more about the Android application standard architecture
+by visiting Android's *Getting Started* guide, where they'll demonstrate
+standard architecture as well as activity classes, model classes, etc.
+
+The Liferay Android Sample Project that is built by default displays details of
+Liferay contacts. Just as evidence that this sample project is using the Liferay
+Mobile SDK libraries, open the sample app's `MainActivity` class from the
+`src/com/liferay/mobile/sample/activity` directory. In Eclipse, scroll your
+mouse over the `Session` object instance within the `onListItemClick()` method.
+
+![Figure 8.4: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+
+You can see that the `Session` interface is being referenced from the
+`com.liferay.mobile.android.service` package. This app is using the Liferay
+Mobile SDK from the library JARs of this project.
+
+You can run the sample app using Android's emulator. If you'd like to learn more
+about the emulator, visit Android's [Using the
+Emulator](http://developer.android.com/tools/devices/emulator.html) section.
+
+The sample project is a contacts app that displays the contacts of your portal
+and their personal information. Before running the emulator, make sure a portal
+instance with defined users is running. The sample app can only identify users
+of your portal when the portal server is running.
+
+To start the emulator, navigate to *Run* &rarr; *Run As* &rarr; *Android
+Application*. Navigate through the emulator to the *Liferay Contacts* app, to
+see it list your Liferay site's users. You can select an individual user and
+view that user's personal information.
+
+![Figure 8.5: The sample project lets you view the users of your local Liferay instance.](../../images/liferay-contacts-app.png)
+
+
+Let's show adding the Liferay Mobile SDK libraries into your app next.
 
 ### Adding Mobile SDK Libraries
 
@@ -109,7 +163,7 @@ Android SDK `.jar` and `.properties` files were added. Furthermore, the `src`
 folder containing the source JAR was included. Lastly, the project library JAR
 is added to the classpath in the `Android Private Libraries` folder.
 
-![Figure 8.4: The Mobile SDK Eclipse plugin makes it easy to inject Liferay Android SDK libraries accessible by your app.](../../images/mobile-sdk-jars.png)
+![Figure 8.6: The Mobile SDK Eclipse plugin makes it easy to inject Liferay Android SDK libraries accessible by your app.](../../images/mobile-sdk-jars.png)
 
 Next, let's learn how to generate Liferay custom portlet services.
 
@@ -133,7 +187,7 @@ Right-click your Android app project in the *Package Explorer* and navigate to
 *Configure* &rarr; *Generate services for Liferay custom portlets*. This opens a
 wizard where you'll specify your running portal server.
 
-![Figure 8.5: You can select *Check Status* to verify that you've specified the correct running portal server.](../../images/service-generation-wizard.png)
+![Figure 8.7: You can select *Check Status* to verify that you've specified the correct running portal server.](../../images/service-generation-wizard.png)
 
 Specify your server's *URL*, *Username*, and *Password*. Notice the *Status* and
 *Summary* fields; these fields indicate your running portal instance's status
@@ -152,67 +206,22 @@ You can select the *Browse* button to browse for available packages. You're also
 presented with available custom APIs from your server that you can select to
 generate the Java package for.
 
-![Figure 8.6: Eclipse queries all remote APIs that are available for generating custom portlet services.](../../images/choosing-apis-and-packages-wizard.png)
+![Figure 8.8: Eclipse queries all remote APIs that are available for generating custom portlet services.](../../images/choosing-apis-and-packages-wizard.png)
 
 For demonstration purposes, we'll specify the Java package as
 `com.liferay.custom` and select the *opensocial-portlet* &rarr; *gadget* custom
 API. You can view what this looks like in the figure below.
 
-![Figure 8.7: Eclipse injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/injected-jars-mobile-sdk.png)
+![Figure 8.9: Eclipse injects your Android project with the appropriate `.jar` and `.properties` files.](../../images/injected-jars-mobile-sdk.png)
 
 Notice that in the figure, we have the standard and custom `.jar` and
 `.properties` files. When generating custom services, Eclipse adds both the standard
 JAR and the custom JAR with the specified generated Java package.
 
 You've generated custom services for your Liferay portlets! Now your portlets
-have access to the Liferay Mobile SDK services you specified. Next, let
-demonstrate how to create a Liferay Android Sample Project using Eclipse.
+have access to the Liferay Mobile SDK services you specified. 
 
-### Creating a Liferay Android Sample Project
-
-So far, we've demonstrated how to add Liferay Mobile SDK libraries to your
-pre-existing Android app. The Mobile SDK Eclipse plugin also offers the ability
-to create a new sample Android project from scratch that includes Liferay Mobile
-SDK libraries and sample code. This gives you the ability to view what a Liferay
-Android project looks like. Let's dive in and explain how to do this!
-
-To start the Liferay Android Sample Project wizard, navigate to *File* &rarr;
-*Project...* &rarr; *Liferay* &rarr; *Liferay Android Sample Project* and then
-click *Next*. Specify the project name, directory location, and Android target
-SDK. Notice that you also have the option to choose a sample project template
-from the mobile SDK preferences menu. Click *Finish* when you're ready to create
-the sample Android app.
-
-![Figure 8.8: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
-
-The sample Android app has the standard Liferay Mobile SDK JARs as well as
-sample classes that characterize how the app integrates with your portal
-instance. You can learn more about the Android application standard architecture
-by visiting Android's *Getting Started* guide, where they'll demonstrate
-standard architecture as well as activity classes, model classes, etc.
-
-The Liferay Android Sample Project that is built by default displays details of
-Liferay contacts. Just as evidence that this sample project is using the Liferay
-Mobile SDK libraries, open the sample app's `MainActivity` class from the
-`src/com/liferay/mobile/sample/activity` directory. In Eclipse, scroll your
-mouse over the `Session` object instance within the `onListItemClick()` method.
-
-![Figure 8.9: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
-
-You can see that the `Session` interface is being referenced from the
-`com.liferay.mobile.android.service` package. This app is using the Liferay
-Mobile SDK from the library JARs of this project.
-
-You can run the sample app using Android's emulator. For instructions on how to
-do this, visit Android's [Using the
-Emulator](http://developer.android.com/tools/devices/emulator.html) section.
-
-
-
-
-
-
-
+Next, let's take an in-depth look at using the Android SDK.
 
 ## Using the Android SDK [](id=use-the-android-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
@@ -370,46 +379,8 @@ Service method return types can be `void`, `String`, `JSONArray`, and
 and `Double`. 
 
 So far, we've explained the basic process of accessing Liferay services through
-the mobile SDK. Now let's test the sample *Contacts App* from our development
-environment. 
-
-### Testing Your Android App in Eclipse [](id=test-android-app-with-liferay-portal-6-2-dev-guide-en)
-
-To test the sample *Contacts App*, you'll need to do the following:
-
-1. Install the [Android Developer Tools
-   SDK](http://developer.android.com/sdk/index.html) plugin for Eclipse, Liferay
-   Developer Studio, or [Liferay IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en). 
-
-2. Fork and clone the [sample
-   app](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/tree/1.0.0)
-   from GitHub. If you're unfamiliar with GitHub and need help forking and
-   cloning the repository, follow the [Fork A
-   Repo](https://help.github.com/articles/fork-a-repo) instructions. 
-
-3. Import the sample app project into your Eclipse instance. You can complete
-   this process by right-clicking in the *Package Explorer* and selecting
-   *Import*. Then select *General* &rarr; *Existing Projects into Workspace* and
-   browse and select the sample app project. Then click *Finish*. 
-
-4. Configure an *Android Virtual Device* by following the
-   [instructions](http://developer.android.com/tools/devices/index.html)
-   provided by Android. 
-
-5. Make sure to start a Liferay instance on [localhost:8080](localhost:8080).
-
-6. Run the emulator by selecting the project, and clicking *Run* &rarr; *Run As*
-   &rarr; *Android Application*.
-
-7. Navigate through the emulator to the *Liferay Contacts* app, to see it list
-   your Liferay site's users. You can select an individual user and view that
-   user's personal information.
-
-    ![Figure 8.2: The sample *Contacts App* lets you view the users of your local Liferay instance.](../../images/liferay-contacts-app.png)
-
-Great work!
-
-Next, we'll explore making asynchronous HTTP requests to your portal's services.
+the mobile SDK. Next, we'll explore making asynchronous HTTP requests to your
+portal's services. 
 
 ### Invoking Services Asynchronously from Your Android App [](id=invoke-service-asynchronously-android-liferay-portal-6-2-dev-guide-en)
 
