@@ -1532,10 +1532,14 @@ app.
 
 While discussing these capabilites, we'll refer to code snippets taken from
 Liferay's [Jukebox Portlet](https://github.com/liferay-labs/jukebox-portlet).
+The Jukebox portlet actually provides three separate portlets: *Songs*,
+*Albums*, and *Artists*, which are bundled as part of the Jukebox suite and
+integrated together.
+
 The Jukebox portlet allows you to upload songs that you can play from your
 portal. You can categorize the songs by album and artist, keeping your song
-collection organized. The Jukebox portlet's song, album, and artist assets can
-be sent to the Recycle Bin.
+collection organized. The Jukebox portlet's song and album assets can
+be sent to the Recycle Bin, but the artist assets are permanently deleted.
 
 Also, the Jukebox portlet offers indexed entities (searchable) and a workflow.
 These are not mandatory to implement the Recycle Bin, but are present in the
@@ -1597,13 +1601,23 @@ follows:
 
     <trash-handler>org.liferay.jukebox.trash.SongTrashHandler</trash-handler>
 
-<!-- In Jukebox, why isn't a trash handler specified for each entity? For
-example, there is no trash handler for Artist. And why are the trash handlers for
-Song and Album both in the Songs portlet? - Jim -->
-
 For an example of defining an app's trash handlers, view the Jukebox portlet's
 [liferay-portlet.xml](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/liferay-portlet.xml)
 file.
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Notice that the album trash
+handler is also specified within the songs portlet. This was done for
+organization purposes. A trash handler refers to an entity, not a portlet. Thus,
+they can be declared in any portlet. However, for the sake of organization, they
+are usually declared in the principal portlet of the suite.
+
+As we mentioned earlier, the Jukebox portlet does not send artist assets to the
+Recycle Bin. Therefore, there is no trash handler specified for artists in the
+principal portlet.
+
+---
 
 Let's create a service method for moving the entries, next.
 
