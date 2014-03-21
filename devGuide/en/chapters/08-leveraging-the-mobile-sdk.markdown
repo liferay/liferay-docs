@@ -131,7 +131,6 @@ view that user's personal information.
 
 ![Figure 8.5: The sample project lets you view the users of your local Liferay instance.](../../images/liferay-contacts-app.png)
 
-
 Let's show adding the Liferay Mobile SDK libraries into your app next.
 
 ### Adding Mobile SDK Libraries
