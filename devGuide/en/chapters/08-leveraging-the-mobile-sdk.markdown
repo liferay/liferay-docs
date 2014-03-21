@@ -729,8 +729,8 @@ If you want to make batch calls asynchronously, set the callback to the session.
 
 The return type for batch calls is always an `NSArray`.
 
-Next, let's learn how to use Liferay Developer Studio to customize your Android
-app by giving it access to the Liferay Mobile SDK.
+As you can see, it's very simple to make efficient service calls in batch using
+the iOS SDK! 
 
 <!-- Commented out the SDK Builder content. Bruno advised that we've switched to
 Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
@@ -907,14 +907,12 @@ To learn how to use the Liferay iOS SDK in your mobile app, see the
 ## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
 In this chapter, we showed you how easy it is to download and configure
-Liferay's Mobile SDK. We explained the Android and iOS mobile platforms
-separately, giving you step-by-step examples for accessing Liferay services. We
-even dove into a working example with the sample *Contacts App* by configuring
-Android Developer Tools. Then, we explored Liferay Developer Studio's
-integration with the Mobile SDK. LDS offers ways to build standard and custom
-JARs for an Android app to reference. LDS also gives you the option to create a
-sample Liferay Android project to familiarize yourself with a Liferay Android
-app using the Mobile SDK.
+Liferay's Mobile SDK. First, we explored Eclipse's integration with the Mobile
+SDK. Eclipse offers ways to build standard and custom JARs for an Android app to
+reference. Eclipse also gives you the option to create a sample Liferay Android
+project to familiarize yourself with a Liferay Android app using the Mobile SDK.
+Then, we explained the Android and iOS mobile platforms separately, giving you
+step-by-step examples for accessing Liferay services. 
 
 <!--
 Then, we explored the SDK Builder and how to generate client libraries to access
