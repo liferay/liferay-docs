@@ -1202,16 +1202,16 @@ Let's set the SPI's runtime options first.
 
 ##### SPI Runtime
 
-**Maximum Worker Threads** is a parameter similar to the settings in your JEE
-application server. It controls how many worker threads the SPI can use to
-process requests. By default, it is set to `100`. However, you should tune this
-value according to the number of threads allocated in the application server
-hosting your portal. 
+**Maximum Worker Threads:** Enter the maximum number of worker threads that the
+SPI can use to process requests. By default, it is set to `100`. However, you
+should tune this value according to the number of threads allocated in the
+application server hosting your portal. This parameter functions similarly to
+the settings in most JEE application servers. 
 
-**Connector Port** is the port upon which the SPI listens for requests from
-Liferay Portal. Each SPI runs on an embedded Apache Tomcat server instance. You
-must set a unique port for each SPI and you must ensure that no other processes
-are using that port. 
+**Connector Port:** Enter the port number on which the SPI listens for requests
+from Liferay Portal. Each SPI runs on an embedded Apache Tomcat server instance.
+Each of the portal's SPIs must use a unique port and you must ensure that no
+other processes are using that port. 
 
 ---
 
@@ -1252,10 +1252,11 @@ following applications are explicitly excluded:
 Next, we'll set the Java runtime resources for the SPI's JVM. 
 
 ##### Java Runtime
-**JVM Arguments** allows you to specify arguments to be passed to the Java
-Virtual Machine (JVM) running the SPI. These include memory settings, debugger
-options, etc. If you do not specify any values, the system will automatically
-use these values:
+
+The **JVM Arguments** panel allows you to specify arguments to be passed to the
+Java Virtual Machine (JVM) running the SPI. These include memory settings,
+debugger options, etc. If you do not specify any values, the system will
+automatically use these values:
 
     -Xmx512m -XX:PermSize=200m
 
@@ -1278,22 +1279,24 @@ and lets you configure for the app to automatically restart the SPI.
 
 ![Figure 18.17: You can have the SPI notify you and others if the SPI's apps crash it. And you can configure the maximum number of times to automatically revive the SPI, before requiring manual intervention.](../../images/sandboxing-configure-spi-recovery.png)
 
-**Use Default Notification Options** allows you to specify whether to use the
-notification options defined globally in the SPI Admin console. 
+**Use Default Notification Options:** Select this checkbox to use the globally
+defined notification options. Otherwise the notification options specified in
+this panel are used. 
 
-**Notification Recipients** allows you to specify a specific set of
-comma-delimited email addresses of people to be notified, should the configured
-SPI fail. This option is disabled if you choose to **Use Default Notification
-Options**. 
+**Notification Recipients:** Enter a set of comma-delimited email addresses of
+people to be notified, in the event that the SPI fails. This option is disabled
+if the *Use Default Notification Options* checkbox is selected. 
 
-**Use Default Restart Options** allows you to specify whether to use the restart
-options defined globally in the SPI Admin console. 
+**Use Default Restart Options:** Select this checkbox to use the globally
+defined restart options. Otherwise the restart options specified in this panel
+are used. 
 
-**Maximum Restart Attempts** allows you to specify how many times to attempt
-restarting the SPI, if it should fail. Once Liferay reaches the maximum number
-of restart attempts for the SPI, it refrains from restarting the SPI making
-manual operator intervention necessary for restarting it. This option is
-disabled if you choose *Use Default Restart Options*. 
+**Maximum Restart Attempts:** Enter the maximum number of times to attempt
+restarting the SPI, in the event that the SPI fails. Once Liferay reaches the
+maximum number of restart attempts for the SPI, it refrains from restarting the
+SPI. At that point, manual operator intervention is required to restart it.
+This option is disabled if the *Use Default Restart Options* checkbox is
+selected. 
 
 #### Advanced Configurations
 
@@ -1302,24 +1305,25 @@ that should rarely be modified.
 
 ##### Advanced SPI Runtime
 
-**Java Executable** allows you to specify the path to your JVM, specifically the
-`java` executable. This parameter is generally not modified, assuming your Java
-executable is in your system's `PATH`. 
+**Java Executable:** Enter the path to your JVM, specifically the path to your
+Java executable file (i.e., the `java` or `java.exe` file). You should generally
+not modify this value, assuming your Java executable is in your system's `PATH`. 
 
-**SPI Ping Interval** allows you to modify the interval that the SPI pings back
-to the portal to ensure the portal is still alive. This prevents SPIs from
-becoming "zombie" processes, in the event that it's portal terminates
-unexpectedly. 
+**SPI Ping Interval:** Enter the number of milliseconds to wait between pings
+that the SPI sends to the portal, to ensure the portal is alive. Pinging the
+portal prevents SPIs from becoming "zombie" processes, in the event that the
+portal terminates unexpectedly. 
 
-**SPI Register Timeout** allows you to configure the time allotted for the SPI
-to initially startup. The default value is 300,000 milliseconds (300 seconds).
-This should be ample time for a SPI to startup. However, if you have a large
-number of applications in the sandbox, or if there are insufficient CPU or
-memory resources on the server, you may need to increase the amount of time. 
+**SPI Register Timeout:** Enter the number of milliseconds allotted for the SPI
+to initially start up. The default value is `300000` milliseconds (`300`
+seconds). This should be ample time for a SPI to start up. However, if you have
+a large number of applications in the sandbox, or if the server has an
+insufficient CPU or insufficient memory resources, you may need to increase the
+amount of time. 
 
-**SPI Shutdown Timeout** allows you to configure the maximum amount of time the
-SPI should need to gracefully shutdown. As with the *SPI Register Timeout*, this
-value may need to be increased on slower or overloaded machines. 
+**SPI Shutdown Timeout:** Enter the maximum amount of time (in milliseconds)
+that the SPI should need to gracefully shutdown. As with the *SPI Register
+Timeout*, this value may need to be increased on slower or overloaded machines. 
 
 ##### SPI Core Applications
 
@@ -1382,20 +1386,19 @@ used by all defined SPIs.
 
 ![Figure 18.23: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
 
-**Notification Email From Address** allows you to specify a default origin email
-address for the notification emails sent from the SPIs. 
+**Notification Email From Address:** Enter a default origin email address to use
+for notification emails sent from the SPIs. 
 
-**Notification Email From Name** allows you to specify a default name for the
-sender of the notification emails. 
+**Notification Email From Name:** Enter a default name to use for the sender of
+the notification emails. 
 
-**Notification Recipients** allows you to specify a comma-delimited list of
-email addresses to receive the notification emails. 
+**Notification Recipients:** Enter a default comma-delimited list of email
+addresses to receive the notification emails. 
 
-**Notification Email Subject** allows you to specify a subject template for the
-notification emails. 
+**Notification Email Subject:** Enter a subject template for the notification
+emails. 
 
-**Notification Email Body** allows you to specify a body template for the
-notification emails. 
+**Notification Email Body:** Enter a body template for the notification emails.
 
 That's simple enough. Let's take a look at the restart options too. 
 
