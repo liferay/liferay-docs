@@ -1166,7 +1166,7 @@ After you've configured your portal for sandboxing and restarted it, deploy the
 sandbox app. Then, navigate to the Control Panel to see the *SPI Administration*
 link displayed in the *Configuration* section.
 
-![](../../images/sandboxing-spi-admin-available-in-control-panel.png)
+![Figure 18.11: The Sandboxing App comes with a *SPI Administration* UI that's accessible from the portal's Control Panel.](../../images/sandboxing-spi-admin-available-in-control-panel.png)
 
 Click on the *SPI Administration* link to start creating SPIs for running new or
 troublesome portlets. 
@@ -1178,12 +1178,12 @@ in the *Configuration* section of the Control Panel.
 
 To add a new SPI, simply click on the *Add SPI* button. 
 
-![](../../images/sandboxing-add-spi-button.png)
+![Figure 18.12: Click on the *Add SPI* button to define a new "sandbox" (SPI).](../../images/sandboxing-add-spi-button.png)
 
 The *Add SPI* panel divides the SPI's fields into *General*, *SPI
 Configurations*, and *Advanced Configurations* sections. 
 
-![](../../images/sandboxing-add-spi-general-details.png)
+![Figure 18.13: You can name your SPI, describe it, and configure it from the *Add SPI* panel.](../../images/sandboxing-add-spi-general-details.png)
 
 #### General
 
@@ -1195,7 +1195,7 @@ description.
 The SPI Configurations contains some of the most important settings for the SPI
 and is broken into 4 sections. 
 
-![](../../images/sandboxing-configure-spi-runtime.png)
+![Figure 18.14: From the *SPI Runtime* section of your SPI, you can set its maximum number of working threads based the number of threads available to your portal that you'd like to designate for the SPI. You must also set a unique connecter port for the SPI.](../../images/sandboxing-configure-spi-runtime.png)
 
 ##### SPI Runtime
 
@@ -1217,7 +1217,7 @@ to support communication between the MPI and SPIs.
 
 ##### SPI Applications
 
-![](../../images/sandboxing-configure-spi-apps.png)
+![Figure 18.15: All of the portlets and web plugins that you've installed on your portal are available for moving into a SPI.](../../images/sandboxing-configure-spi-apps.png)
 
 **SPI Applications** provides a way to select which applications will be hosted
 in the SPI. All request that utilizes these applications will be processed by
@@ -1236,7 +1236,7 @@ addition, the following applications are explicitly excluded:
 
 ##### Java Runtime
 
-![](../../images/sandboxing-configure-spi-java-runtime.png)
+![Figure 18.16: You can specify Java runtime options optimal for your SPI's apps.](../../images/sandboxing-configure-spi-java-runtime.png)
 
 **JVM Arguments** allows you to specific arguments to be passed to the Java
 Virtual Machine (JVM) running the SPI. These include memory settings, debugger
@@ -1253,7 +1253,7 @@ In development, you may also choose to add debug settings to the JVM arguments.
 
 ##### Recovery Options
 
-![](../../images/sandboxing-configure-spi-recovery.png)
+![Figure 18.17: You can have the SPI notify you and others if the SPI's apps crash it. And you can configure the maximum number of times to automatically revive the SPI, before requiring manual intervention.](../../images/sandboxing-configure-spi-recovery.png)
 
 **Use Default Notification Options** allows you to specify whether to use the
 notification options defined globally in the SPI Admin console. 
@@ -1308,17 +1308,17 @@ bookmarks, etc) to a SPI. This is generally not recommended.
 The Portal automatically starts SPIs on startup. However, when you first add a
 new SPI, you must start it manually. 
 
-![](../../images/sandboxing-start-stop-spi.png)
+![Figure 18.18: When you first create a SPI, you'll need to start it manually. You can edit and delete SPIs that are not running.](../../images/sandboxing-start-stop-spi.png)
 
 Once successfully started, you can stop or restart the SPI. Note, you cannot
 delete a SPI that is running. You must first stop the SPI. 
 
-![](../../images/sandboxing-restart-spi.png)
+![Figure 18.19: You can restart a SPI in order to activate modifications you've made to it.](../../images/sandboxing-restart-spi.png)
 
 You can edit a SPI's configuration. Configuration changes made to a running SPI
 take effect after it's restarted. 
 
-![](../../images/sandboxing-modify-spi.png)
+![Figure 18.20: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
 
 ### Configure Global Settings
 
@@ -1326,7 +1326,7 @@ The SPI Administration console allows you to configure a series of global
 settings. You can access them by clicking on the configuration icon as shown
 below. 
 
-![](../../images/sandboxing-global-settings.png)
+![Figure 18.21: Click on the global settings gear icon, in the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
 
 Once you've opened the configuration panel, the SPI Administration console
 enables you to configure global notification and set restart options for your
@@ -1335,7 +1335,7 @@ SPIs.
 Note, that option values explicitly configured in a SPI take precedence over
 the global settings with respect to that SPI.
 
-![](../../images/sandboxing-global-recovery-options.png)
+![Figure 18.22: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
 
 #### Notification Options
 
@@ -1343,7 +1343,7 @@ The notification options allow you to configure both the nofication email
 content and specify the recipients of the notification email. These values are
 used by all defined SPIs. 
 
-![](../../images/sandboxing-global-notification-options.png)
+![Figure 18.23: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
 
 **Notification Email From Address** allows you to specify the origin email
 address for the notification email. 
@@ -1367,7 +1367,7 @@ will be restarted in the event that it terminates unexpectedly. In the example
 below, all SPIs will be restarted 3 times before requiring administrator
 intervention to restart them. 
 
-![](../../images/sandboxing-global-restart-options.png)
+![Figure 18.24: You can set default restart options for your SPIs, from the SPI Administration's global configuration panel.](../../images/sandboxing-global-restart-options.png)
 
 Let's recap what Liferay's Sandboxing App does for you. It lets you isolate
 portlets and web plugins that are known troublemakers or that you are simply
@@ -1421,7 +1421,7 @@ hosts portlets that are consumed by other portal servers (Liferay or
 non-Liferay) acting as WSRP consumers. The image below illustrates WSRP
 producers and consumers and how they interact.
 
-![Figure 18.11: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
+![Figure 18.25: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
 
 As we mentioned in the previous chapter, there are two main components of the
 WSRP process: producers and consumers. Let's go through the basic process of how
@@ -1476,7 +1476,7 @@ purposes, select the Hello World portlet and click the *Save* button. The portal
 generates a WSDL document to define your producer. To view the WSDL document,
 click the URL link provided.
 
-![Figure 18.12: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
+![Figure 18.26: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
 
 Now that we've created a producer, let's create a consumer on your second portal
 server. 
@@ -1541,7 +1541,7 @@ also for web services and JavaScript. This means that the method calls for
 storing and retrieving portal objects are all the same, and are generated in the
 same step.
 
-![Figure 18.13: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
+![Figure 18.27: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
@@ -1591,7 +1591,7 @@ If the machine on which the batch job is running has the IP address
 Liferay's web services and pass in user credentials to be used to upload the
 documents.
 
-![Figure 18.14: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
+![Figure 18.28: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
 
 The second layer of security is Liferay's security model that it uses for every
 object in the portal. The user account that accesses the services remotely must
