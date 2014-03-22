@@ -1276,8 +1276,6 @@ operator intervention is required. This option is disabled if you choose
 The Advanced Configurations section contains a series of optional parameters
 that should rarely be modified. 
 
-![](../../images/sandboxing-configure-spi-advanced-runtime-options.png)
-
 ##### Advanced SPI Runtime
 
 **Java Executable** allows you to specify the path to your JVM, specifically the
