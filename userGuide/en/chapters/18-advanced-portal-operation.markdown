@@ -1187,89 +1187,113 @@ Configurations*, and *Advanced Configurations* sections.
 
 #### General
 
-In the General section, you must provide a unique name for the SPI and a
-description. 
+In the General section, you must provide a unique name for the SPI and describe
+the SPI. 
 
 #### SPI Configurations
 
-The SPI Configurations contains some of the most important settings for the SPI
-and is broken into 4 sections. 
+The SPI Configurations contains some of the most important settings for the SPI.
+It is broken into 4 sections: *SPI Runtime*, *SPI Applications*, *Java Runtime*,
+and *Recovery Options*. 
 
 ![Figure 18.14: From the *SPI Runtime* section of your SPI, you can set its maximum number of working threads based the number of threads available to your portal that you'd like to designate for the SPI. You must also set a unique connecter port for the SPI.](../../images/sandboxing-configure-spi-runtime.png)
+
+Let's set the SPI's runtime options first. 
 
 ##### SPI Runtime
 
 **Maximum Worker Threads** is a parameter similar to the settings in your JEE
-application server. This controls how many worker threads the SPI will use to
-process requests. By default, it is set to 100. However, this should be tuned
-according to the number of threads allocated in the application server hosting
-your Liferay Portal. 
+application server. It controls how many worker threads the SPI can use to
+process requests. By default, it is set to `100`. However, you should tune this
+value according to the number of threads allocated in the application server
+hosting your portal. 
 
-**Connector Port** controls the port upon which the SPI will listen for requests
-from Liferay Portal. This setting must be unique for each SPI and you must
-ensure that no other processes are using the desired port. 
+**Connector Port** is the port upon which the SPI listens for requests from
+Liferay Portal. Each SPI runs on an embedded Apache Tomcat server instance. You
+must set a unique port for each SPI and you must ensure that no other processes
+are using that port. 
 
-Each SPI runs on an embedded Apache Tomcat server instance. The SPIs and MPI
-serialize parameters and return values passed between them. The sandboxing
-feature uses an IPC framework called
-[Intraband](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Intraband),
-to support communication between the MPI and SPIs. 
+---
+
+ ![Note](../../images/tip.png) **Note**: The SPIs and MPI serialize parameters
+ and return values passed between them. The sandboxing feature uses an IPC
+ framework called
+ [Intraband](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Intraband),
+ to support communication between the MPI and SPIs. 
+
+---
+
+Next, we'll pull those troublesome apps into the SPI. 
 
 ##### SPI Applications
 
+The *SPI Applications* panel provides a way to select applications to be hosted
+in the SPI. All requests that utilize these applications are processed by the
+SPI. 
+
 ![Figure 18.15: All of the portlets and web plugins that you've installed on your portal are available for moving into a SPI.](../../images/sandboxing-configure-spi-apps.png)
 
-**SPI Applications** provides a way to select which applications will be hosted
-in the SPI. All request that utilizes these applications will be processed by
-the SPI. 
+<!-- It's confusing that the wurfl-commercial-web plugin is listed. This is
+either a bug or we need to explain that the UI can list "exlucded" portlets and
+web plugins, but that they can't actually be moved into the SPI. Jim -->
 
-It is important to note that the applications within this list are portlet and
-web plugins. Themes, layout templates, hooks, and Liferay EXTs are excluded. In
-addition, the following applications are explicitly excluded:
+The panel lists non-core portlets and web plugins that have been installed on
+the portal. Since theme, layout template, hook, and Liferay EXT plugins are not
+supported in the sandbox, they're excluded from this list. In addition, the
+following applications are explicitly excluded: 
 
-- Marketplace-portlet
-- Resource-importer-web
-- Spi-admin-portlet
-- Spi-provider-web
-- Wurfl-commercial-web
-- Wurfl-web
+- `marketplace-portlet`
+- `resource-importer-web`
+- `spi-admin-portlet`
+- `spi-provider-web`
+- `wurfl-commercial-web`
+- `wurfl-web`
+
+Next, we'll set the Java runtime resources for the SPI's JVM. 
 
 ##### Java Runtime
-
-![Figure 18.16: You can specify Java runtime options optimal for your SPI's apps.](../../images/sandboxing-configure-spi-java-runtime.png)
-
-**JVM Arguments** allows you to specific arguments to be passed to the Java
+**JVM Arguments** allows you to specify arguments to be passed to the Java
 Virtual Machine (JVM) running the SPI. These include memory settings, debugger
 options, etc. If you do not specify any values, the system will automatically
-use the values:
+use these values:
 
     -Xmx512m -XX:PermSize=200m
 
-It is highly recommend that you set these values based on your JVM performance
-tuning. You may also consult the Liferay Deployment Checklist for some
-guidelines on how to set the JVM arguments. 
+Consider the JVM's performance tuning recommendations when setting these
+arguments. You can also consult the [*Liferay Deployment Checklist*](https://www.liferay.com/marketplace/isvs?p_p_auth=VgLAX0A7&_101_assetEntryId=35608452&p_p_lifecycle=0&p_p_id=101&p_p_state=maximized&_101_struts_action=%2Fasset_publisher%2Fview_content&redirect=https%3A%2F%2Fwww.liferay.com%2Fdocumentation%2Fliferay-portal%2F6.2%2Fuser-guide%3Fp_p_id%3D3%26p_p_lifecycle%3D0%26p_p_state%3Dmaximized%26p_p_mode%3Dview%26_3_entryClassName%3Dcom.liferay.portlet.documentlibrary.model.DLFileEntry%26_3_modifiedselection%3D0%26_3_documentsSearchContainerPrimaryKeys%3D19_PORTLET_35946202%252C19_PORTLET_35722876%252C19_PORTLET_35809176%252C19_PORTLET_35954267%252C19_PORTLET_35824382%252C19_PORTLET_35857084%252C19_PORTLET_35782527%252C19_PORTLET_35810672%252C19_PORTLET_35958625%252C19_PORTLET_35746448%252C19_PORTLET_35972499%252C19_PORTLET_35799656%252C19_PORTLET_35845480%252C19_PORTLET_35773034%252C19_PORTLET_35880698%252C19_PORTLET_35987674%252C19_PORTLET_35866420%252C19_PORTLET_35916979%252C19_PORTLET_35915417%252C19_PORTLET_35815297%26_3_keywords%3DLiferay%2BDeployment%2BChecklist%26_3_format%3D%26_3_modifiedfrom%3D%26_3_formDate%3D1395500651344%26_3_modified%3D%26_3_assetCategoryTitles%3D%26_3_groupId%3D14%26_3_modifiedto%3D%26_3_cur%3D1%26_3_struts_action%3D%252Fsearch%252Fsearch%26_3_assetTagNames%3D&p_p_mode=view&_101_type=document)
+for guidance on setting the JVM arguments. 
 
 In development, you may also choose to add debug settings to the JVM arguments. 
 
+![Figure 18.16: You can specify Java runtime options optimal for your SPI's apps.](../../images/sandboxing-configure-spi-java-runtime.png)
+
+In the event that the SPI terminates unexpectedly, you may want to consider
+automatically restarting it and having the Sandboxing App send notifications to
+your and other stakeholders. 
+
 ##### Recovery Options
+
+The Sandboxing App lets you configure email notifications for when a SPI crashes
+and lets you configure for the app to automatically restart the SPI. 
 
 ![Figure 18.17: You can have the SPI notify you and others if the SPI's apps crash it. And you can configure the maximum number of times to automatically revive the SPI, before requiring manual intervention.](../../images/sandboxing-configure-spi-recovery.png)
 
 **Use Default Notification Options** allows you to specify whether to use the
 notification options defined globally in the SPI Admin console. 
 
-**Notification Recipients** allows you to specify a specific set of comma
-delimited email addresses that will be notified should the configured SPI fail.
-This option is disabled if you choose to **Use Default Notification Options**. 
+**Notification Recipients** allows you to specify a specific set of
+comma-delimited email addresses of people to be notified, should the configured
+SPI fail. This option is disabled if you choose to **Use Default Notification
+Options**. 
 
 **Use Default Restart Options** allows you to specify whether to use the restart
 options defined globally in the SPI Admin console. 
 
 **Maximum Restart Attempts** allows you to specify how many times to attempt
-restarting the SPI if it should fail. Once Liferay reaches the maximum number of
-restart attempts, it will no longer attempt to restart the SPI and manual
-operator intervention is required. This option is disabled if you choose
-*Use Default Restart Options*. 
+restarting the SPI, if it should fail. Once Liferay reaches the maximum number
+of restart attempts for the SPI, it refrains from restarting the SPI making
+manual operator intervention necessary for restarting it. This option is
+disabled if you choose *Use Default Restart Options*. 
 
 #### Advanced Configurations
 
@@ -1279,27 +1303,34 @@ that should rarely be modified.
 ##### Advanced SPI Runtime
 
 **Java Executable** allows you to specify the path to your JVM, specifically the
-java executable. This parameter is generally not modified assuming you have Java
-added to your operating system path. 
+`java` executable. This parameter is generally not modified, assuming your Java
+executable is in your system's `PATH`. 
 
-**SPI Ping Interval** allows you to modify the interval the SPI will ping back
-to the Portal to ensure the Portal is still alive. This will prevent SPIs from
-becoming zombie processes in the event of an unexpected Portal termination. 
+**SPI Ping Interval** allows you to modify the interval that the SPI pings back
+to the portal to ensure the portal is still alive. This prevents SPIs from
+becoming "zombie" processes, in the event that it's portal terminates
+unexpectedly. 
 
 **SPI Register Timeout** allows you to configure the time allotted for the SPI
-to initially startup. The default is for 300,000ms or 300s. This should be ample
-time for a SPI to startup. However, if you have a large number of applications
-in a sandbox or if there are insufficient CPU or memory resources on the server,
-you may need to increase this setting. 
+to initially startup. The default value is 300,000 milliseconds (300 seconds).
+This should be ample time for a SPI to startup. However, if you have a large
+number of applications in the sandbox, or if there are insufficient CPU or
+memory resources on the server, you may need to increase the amount of time. 
 
-**SPI Shutdown Timeout** allows you to configure the maximum amount of time a
-SPI will need to gracefully shutdown. As with the SPI Register Timeout, this may
-need to be increased on slower or overloaded machines.  
+**SPI Shutdown Timeout** allows you to configure the maximum amount of time the
+SPI should need to gracefully shutdown. As with the *SPI Register Timeout*, this
+value may need to be increased on slower or overloaded machines. 
 
 ##### SPI Core Applications
 
-You may also choose to allocate certain embedded Liferay functions (e.g. blogs,
-bookmarks, etc) to a SPI. This is generally not recommended.  
+You may also choose to allocate certain embedded Liferay functions (e.g., blogs,
+bookmarks, etc.) to a SPI. This is generally not recommended, but is made
+possible by the Sandboxing App. The *SPI Core Applications* panel lets you drag
+apps onto the SPI, in the same manner that the *SPI Applications* panel lets
+you. 
+
+Now that you know how to add a SPI and configure it properly, let's learn how to
+operate the SPI. 
 
 ### Staring, Stopping, and Modifying a SPI
 
@@ -1308,23 +1339,29 @@ new SPI, you must start it manually.
 
 ![Figure 18.18: When you first create a SPI, you'll need to start it manually. You can edit and delete SPIs that are not running.](../../images/sandboxing-start-stop-spi.png)
 
-Once successfully started, you can stop or restart the SPI. Note, you cannot
-delete a SPI that is running. You must first stop the SPI. 
+Once successfully started, you can stop or restart a SPI. Note, you can't delete
+a SPI that is running. You must first stop the SPI. 
 
 ![Figure 18.19: You can restart a SPI in order to activate modifications you've made to it.](../../images/sandboxing-restart-spi.png)
 
-You can edit a SPI's configuration. Configuration changes made to a running SPI
-take effect after it's restarted. 
+You can edit a SPI's configuration, too. Configuration changes made to a running
+SPI take effect after it's restarted. 
 
 ![Figure 18.20: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
+
+As you can see, operating SPIs is straightforward and easy to do. 
+
+If you have multiple SPIs, you may want to use global settings to configure the
+default options for them. Let's consider how to configure global settings for
+your SPIs, next. 
 
 ### Configure Global Settings
 
 The SPI Administration console allows you to configure a series of global
-settings. You can access them by clicking on the configuration icon as shown
-below. 
+settings. You can access them by clicking on the configuration gear icon as
+shown in the figure below. 
 
-![Figure 18.21: Click on the global settings gear icon, in the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
+![Figure 18.21: Click on the global settings gear icon, in the upper right corner of the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
 
 Once you've opened the configuration panel, the SPI Administration console
 enables you to configure global notification and set restart options for your
@@ -1335,6 +1372,8 @@ the global settings with respect to that SPI.
 
 ![Figure 18.22: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
 
+Let's look at the global notification options first. 
+
 #### Notification Options
 
 The notification options allow you to configure both the nofication email
@@ -1343,20 +1382,22 @@ used by all defined SPIs.
 
 ![Figure 18.23: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
 
-**Notification Email From Address** allows you to specify the origin email
-address for the notification email. 
+**Notification Email From Address** allows you to specify a default origin email
+address for the notification emails sent from the SPIs. 
 
-**Notification Email From Name** allows you to specify a name for the send of
-the notification email. 
+**Notification Email From Name** allows you to specify a default name for the
+sender of the notification emails. 
 
-**Notification Recipients** allows you to specify a comma delimited list of
-email address that will receive the notification email. 
+**Notification Recipients** allows you to specify a comma-delimited list of
+email addresses to receive the notification emails. 
 
-**Notification Email Subject** allows you to specify the subject of the
-notification email. 
+**Notification Email Subject** allows you to specify a subject template for the
+notification emails. 
 
-**Notification Email Body** allows you to specify the body of the notification
-email. 
+**Notification Email Body** allows you to specify a body template for the
+notification emails. 
+
+That's simple enough. Let's take a look at the restart options too. 
 
 #### Restart Options
 
