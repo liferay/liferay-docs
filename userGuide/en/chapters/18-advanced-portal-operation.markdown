@@ -1091,16 +1091,16 @@ those pesky portlets, next.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-The performance, health, and stability of your porlet modules deployed on your
-portal impacts that of your portal. If one portlet leaks memory or is extremely
-slow, your entire portal either crashes due to a dreaded `OutOfMemoryError` or
-slows to a crawl. 
+The performance, health, and stability of a portal deployment is heavily
+dependent upon the portlet modules deployed to it. If one portlet leaks memory
+or is extremely slow, your entire portal either crashes due to a dreaded
+`OutOfMemoryError` or slows to a crawl. 
 
 Liferay Portal 6.2 introduces a sandboxing feature that enables you to run new
 and troublesome portlets in their own container (or "sandbox"), reducing any
 adverse impact they may have on the health and stability of your portal. The
 feature is available in Liferay's Sandbox App. The app lets you create sandboxes
-to run portlets on a sandbox JVM, freeing your portal's JVM from the resource
+to run portlets in separate JVMs, freeing your portal's JVM from the resource
 consumption of those portlets. We refer to the portal's JVM instance as the
 *Master Portal Instance* (*MPI*) and the sandbox JVMs as *Slave Portal
 Instances* (*SPIs*). Since SPIs run on the same host as the MPI, communication
