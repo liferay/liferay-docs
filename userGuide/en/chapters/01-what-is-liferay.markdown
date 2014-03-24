@@ -1,9 +1,9 @@
 # What is Liferay? [](id=what-is-liferay-liferay-portal-6-2-user-guide-01-en)
 
-Let's attempt some mind reading: you're reading this book because you need to
+Let's attempt some mind reading: you are reading this book because you need to
 build a website. You're thinking about using Liferay Portal for your site, or
 you've already decided to use it and you want to learn all about it. Either
-way, you've come to the right place. What you'll find here is that Liferay
+way, you've come to the right place. What you will find here is that Liferay
 Portal is the right decision, and we'll be happy to tell you all the reasons
 why. But since you might be in a rush, we'll give you all the reasons in a
 nutshell right here, and then you can read the details in the rest of the
