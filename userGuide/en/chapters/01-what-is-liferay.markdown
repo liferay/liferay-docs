@@ -1,6 +1,6 @@
-# What is Liferay? [](id=what-is-liferay-liferay-portal-6-2-user-guide-01-en)
+# What is Liferay? You are gonna find out! [](id=what-is-liferay-liferay-portal-6-2-user-guide-01-en)
 
-Let's attempt some mind reading: you're reading this book because you need to
+Let us attempt some mind reading: you are reading this book because you need to
 build a website. You're thinking about using Liferay Portal for your site, or
 you've already decided to use it and you want to learn all about it. Either
 way, you've come to the right place. What you'll find here is that Liferay
