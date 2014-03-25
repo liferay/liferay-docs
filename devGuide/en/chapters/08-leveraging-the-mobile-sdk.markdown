@@ -147,7 +147,12 @@ app to access Liferay core web services.
 ![Note](../../images/tip-pen-paper.png) **Note:** The action for injecting
 Liferay Android Mobile SDK library JARs is only available for Android apps that
 were created using the ADT plugin for Eclipse. Therefore, if you build your
-Android app with Gradle or Maven, the action does not work.
+Android app with Gradle or Maven, the action does not work. For more information
+on building the SDK manually without Eclipse, visit the
+[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
+or
+[iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually)
+*README* instructions.
 
 ---
 
