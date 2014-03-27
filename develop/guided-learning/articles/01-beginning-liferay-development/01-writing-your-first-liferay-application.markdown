@@ -66,7 +66,7 @@ If you're running Liferay IDE, you need to perform some steps manually to
 register both your Liferay runtime and the Plugins SDK. Let's start with the
 runtime. 
 
-1. Use *Window* $rarr; *Open Perspective* $rarr; *Liferay* to switch to the
+1. Use *Window* &rarr; *Open Perspective* &rarr; *Liferay* to switch to the
 Liferay perspective. 
 
 2. The tab on the low left corner is labeled *Servers*. Click the link to create
@@ -99,7 +99,7 @@ password *liferay* does nicely), answer the security question, and you're done.
 
 Your runtime is now set up. Next, you need to register your Plugins SDK. 
 
-1. Select *Window* $rarr; *Preferences* $rarr; *Liferay* $rarr; *Installed Plugin
+1. Select *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
 SDKs. 
 
 2. Click *Add*. Browse to the folder where you unzipped the Plugins SDK and
@@ -115,7 +115,7 @@ Now that everything's configured, let's jump right in and create your first
 project. Applications in Liferay Portal are called *portlets*, so you'll create a
 portlet project. 
 
-1. Select *File* $rarr; *New* $rarr; *Liferay Plugin Project*. The dialog below
+1. Select *File* &rarr; *New* &rarr; *Liferay Plugin Project*. The dialog below
 appears. 
 
 ![Figure 1.x: Liferay IDE/Developer Studio's new project wizard makes it easy to create Liferay projects.](../../images/lds-new-liferay-plugin-project-1.png)
