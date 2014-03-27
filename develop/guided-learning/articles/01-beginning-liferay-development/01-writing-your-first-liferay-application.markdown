@@ -5,9 +5,9 @@ guide you through the process of creating your project and deploying your
 application step-by-step. Before you know it, you'll have Liferay serving your
 application next to the rest of the applications that come with Liferay. 
 
-[insert picture of completed app here]
+![Figure 1.x: You'll create this simple application.](../../images/my-first-app-mine.png)
 
-Our first application is simple: we'll build a portlet application that displays
+Your first application is simple: you'll build a portlet application that displays
 the venerable *Hello World* message. You'll be surprised at how easy this is. 
 
 ## Installing Liferay Developer Studio/IDE
@@ -38,7 +38,7 @@ Liferay IDE as a plugin on your existing installation of Eclipse.
 
 ---
 
-3. Install a [Liferay runtime](https://www.liferay.com/downloads/liferay-portal/available-releases)
+3. Install a [Liferay Tomcat runtime](https://www.liferay.com/downloads/liferay-portal/available-releases)
 you'll use in your development environment to run your applications. Liferay
 Developer Studio users with a license don't need to do this: a runtime is
 already included. This is just as easy as installing Liferay IDE: unzip it to
@@ -52,7 +52,7 @@ already included. This is just as easy as installing everything else: unzip it
 to your system. We recommend unzipping it next to the `bundles` folder you
 created in the last step. 
 
-[Diagram of directory structure so far goes here]
+![Figure 1.x: The directory structure for Liferay development is pretty simple.](../../images/developer-directory-structure.png)
 
 When you've finished installing everything, you should have a folder structure
 like the one above. Next, you need to get all these components talking to each
@@ -100,7 +100,7 @@ password *liferay* does nicely), answer the security question, and you're done.
 Your runtime is now set up. Next, you need to register your Plugins SDK. 
 
 1. Select *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
-SDKs. 
+SDKs*. 
 
 2. Click *Add*. Browse to the folder where you unzipped the Plugins SDK and
 click *OK*. 
@@ -121,11 +121,11 @@ appears.
 ![Figure 1.x: Liferay IDE/Developer Studio's new project wizard makes it easy to create Liferay projects.](../../images/lds-new-liferay-plugin-project-1.png)
 
 2. Fill in the Project Name and the Display Name. Make the project name
-*hello-portlet* and the display name *hello*. When done, click *Finish*. 
+*hello-portlet* and the display name *Hello*. When done, click *Finish*. 
 
 ---
 
-![tip](../../images/01-tip.png)The first time you create a project, make sure
+![tip](../../images/01-tip.png) The first time you create a project, make sure
 you're online. In the background, Liferay's Plugins SDK downloads several .jar
 files that it needs in order to operate. This keeps the initial download small,
 but makes it take a long time to create your first project (about four minutes).
@@ -160,9 +160,14 @@ to anything you want. You can use HTML tags to format your message.
 Now refresh your browser, and you'll see your new message. Now you've truly
 created your first app! 
 
+## Next Steps
+
 Obviously, you'll want to do far more interesting things than this. Here are
 some possible next steps: 
 
 [Write a data-driven application](http://www.liferay.com)
+
 [Use the Plugins SDK to develop Liferay applications](http://www.liferay.com)
+
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)
+
