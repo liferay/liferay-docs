@@ -38,7 +38,7 @@ summary text.
 
 ---
 
-![tip](../../images/01-tip.png) You can also add Sidebars to the text if there's
+![tip](guided-learning/images/01-tip.png) You can also add Sidebars to the text if there's
 background information that's helpful, but doesn't necessary fit into the task
 at hand. 
 
