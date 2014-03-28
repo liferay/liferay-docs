@@ -69,7 +69,7 @@ Liferay Mobile SDK to your Eclipse instance, following these steps:
 
 2. Copy the following link into the *Work with* field:
 
-        http://releases.liferay.com/tools/ide/latest/milestone/
+        http://releases.liferay.com/tools/ide/latest/stable/
 
     In the *Liferay* drop-down menu that appears, click the drop-down arrow and
     select *Liferay Mobile SDK*, and click *Next*.
