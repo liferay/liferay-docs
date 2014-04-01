@@ -35,7 +35,7 @@ topics:
 
 Let's get started by accessing Liferay from an Android app in Eclipse.
 
-## Setting Up the Mobile SDK
+## Setting Up the Mobile SDK [](id=setting-up-the-mobile-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 Liferay provides the *Liferay Mobile SDK Eclipse plugin* for you to use in
 developing your mobile apps. Its powerful *Mobile SDK Builder* generates
@@ -85,7 +85,7 @@ Terrific! You're ready to start developing Android apps that use Liferay!
 Next, let's create a *Liferay Android Sample Project* to learn how easy it is to
 create a mobile app that uses Liferay. 
 
-## Creating the Liferay Android Sample Project 
+## Creating the Liferay Android Sample Project [](id=creating-the-liferay-android-sample-proj-liferay-portal-6-2-dev-guide-08-en)
 
 The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries
@@ -156,7 +156,7 @@ The Mobile SDK enables you to use Liferay core services to get what you
 need from your portal. This is easy to do with Liferay's Mobile SDK Eclipse
 plugin. We'll show you how to use it next. 
 
-## Calling Liferay Services in your Android App
+## Calling Liferay Services in your Android App [](id=calling-liferay-services-in-your-android-liferay-portal-6-2-dev-guide-08-en)
 
 The Mobile SDK Eclipse plugin makes it easier than ever for you to call Liferay
 core services and utilities from your Android app. All you need to do is add the 
@@ -207,7 +207,7 @@ Does the Liferay Mobile SDK Eclipse plugin make that possible too? The answer is
 an emphatic *YES*. We'll show you how to configure your app to use custom
 portlet services next. 
 
-## Using Custom Portlet Services in your Android App 
+## Using Custom Portlet Services in your Android App [](id=using-custom-portlet-services-in-your-an-liferay-portal-6-2-dev-guide-08-en)
 
 The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with our Eclipse plugin
@@ -268,7 +268,7 @@ Now that your Android app has the access it needs to use Liferay and your custom
 portlets, let's take an in-depth look at using the Android SDK to invoke their
 services. 
 
-## Using the Android SDK 
+## Using the Android SDK [](id=using-the-android-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 Suppose you're creating an Android app, and you'd like to access some of
 Liferay's core services. All you need to do is download the SDK and put it in
@@ -283,7 +283,7 @@ SDK Eclipse plugin, you can skip the next section. Otherwise, continue onto the
 next section where we'll get started by downloading the Android SDK and
 configuring it in your Android environment! 
 
-### Manually Setting Up the Android SDK 
+### Manually Setting Up the Android SDK [](id=manually-setting-up-the-android-sdk-liferay-portal-6-2-dev-guide-08-en)
 
 As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
@@ -300,7 +300,7 @@ app to use.
 
 Great! Now let's start accessing Liferay services from your app. 
 
-### Invoking Liferay Services in Your Android App 
+### Invoking Liferay Services in Your Android App [](id=invoking-liferay-services-in-your-androi-liferay-portal-6-2-dev-guide-08-en)
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
 your Android project's classpath, let's consider how to access and invoke
