@@ -1,12 +1,12 @@
 # Creating Mobile Apps that Use Liferay [](id=mobile-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
 
-The Liferay Mobile SDK is a framework that provides the means for your native
-mobile apps to easily consume Liferay core web services, Liferay
-utilities, and custom portlet web services. It wraps Liferay JSON web services,
-making them accessible for mobile apps. It takes care of authentication, makes
+The Liferay Mobile SDK is a way to streamline consuming Liferay core web
+services, Liferay utilities, and custom portlet web services. It wraps Liferay
+JSON web services, making them easy to call in native mobile apps. It takes care
+of authentication, makes
 [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) requests
 (synchronously or asynchronously), parses JSON results, and handles server-side
-exceptions, so you can concentrate on *using* the services in your app. 
+exceptions so you can concentrate on *using* the services in your app. 
 
 The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later. The
 Liferay Android SDK and Liferay iOS SDK are ready for you to download and
@@ -17,61 +17,63 @@ forums for you to engage in mobile app development discussions.
 
 ![Figure 8.1: Liferay's Mobile SDK enables your native app to communicate with Liferay. You can even use the SDK from Eclipse via the Liferay Mobile SDK plugin..](../../images/mobile-sdk-diagram.png)
 
-The Liferay Mobile SDK plugin to Eclipse simplifies developing Android apps that
-use Liferay. And you can optionally configure the Mobile SDKs  manually to use
-with Android apps and iOS apps. Once conifugred, you can invoke Liferay
-services from your app. The Liferay Mobile SDK bridges your native app with
-Liferay services. 
+The Liferay Mobile SDK plugin for Eclipse simplifies developing Android apps that
+use Liferay. You can configure the Mobile SDKs manually to use with Android apps
+and/or iOS apps. Once configured, you can invoke Liferay services from your app.
+The Liferay Mobile SDK bridges your native app with Liferay services. 
 
 In this chapter, we'll demonstrate developing Android and iOS apps that
 communicate with Liferay via the Mobile SDK. Along the way, we'll discuss these
 topics: 
 
-- Accessing Liferay from Your Android App
+- Setting Up the Mobile SDK
+- Creating the Liferay Android Sample Project
+- Calling Liferay Services in your Android App
+- Using Custom Services in your Android App
 - Using the Android SDK
 - Using the iOS SDK
 
 Let's get started by accessing Liferay from an Android app in Eclipse.
 
-## Accessing Liferay from Your Android App [](id=using-the-eclipse-plugin-to-develop-andr-liferay-portal-6-2-dev-guide-08-en)
+## Setting Up the Mobile SDK
 
 Liferay provides the *Liferay Mobile SDK Eclipse plugin* for you to use in
-developing your mobile apps. It's powerful *Mobile SDK Builder* generate
+developing your mobile apps. Its powerful *Mobile SDK Builder* generates
 libraries that enable your app to communicate with Liferay Portal and with the
-custom portlet services deployed on your Liferay Poral instance. The plugin also
+custom portlet services deployed on your Liferay Portal instance. The plugin also
 comes with a *Liferay Android Sample Project* that you can use as a reference
-for building more Android apps of your own. Since, Eclipse only supports Android
-apps, so can't use the plugin to customize iOS apps. 
+for building more Android apps of your own. Since Eclipse only supports Android
+apps, you can't use the plugin to customize iOS apps. 
 
 The Liferay Mobile SDK plugin depends on the *Android SDK Tools* and *Android
-Development Tools (ADT)* Eclipse plugins. To satisfy this dependency, you 
-can either install these plugins onto an existing Eclipse instance, if you have one, or
-you can install Google's *Android Developer Tools SDK* bundle, which includes
-both of the plugins. Here are the instructions for each of these options:
+Development Tools (ADT)* Eclipse plugins. To satisfy these dependencies, you 
+can install these plugins onto an existing Eclipse instance, or you can
+install Google's *Android Developer Tools SDK* bundle which includes both of
+the plugins. Here are the instructions for each of these options:
 
 - **To install the *Android SDK Tools* and *ADT* plugins manually:** Follow the
 [Setting Up an Existing
-IDE](http://developer.android.com/sdk/installing/index.html) section on
-Android's site to download and install the [ADT
+IDE](http://developer.android.com/sdk/installing/index.html) section on the 
+Android developer site to download and install the [ADT
 Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html) plugin to your
 pre-existing Eclipse or Liferay Developer Studio/IDE installation. 
 
-- **Or to install the *Android Developer Tools SDK* bundle:** Follow the
+- **To install the *Android Developer Tools SDK* bundle:** Follow the
 [Setting Up the ADT
-Bundle](http://developer.android.com/sdk/installing/bundle.html) section on
-Android's site to download and install the ADT bundle, which is built on Eclipse
+Bundle](http://developer.android.com/sdk/installing/bundle.html) section on the 
+Android developer site to download and install the ADT bundle, which is built on Eclipse
 and which includes the required ADT plugins.
 
-Once you've installed the required Andriod plugins, you can install the
-Liferay Mobile SDK to your Eclipse instance, following these steps:
+Once you've installed the required Android plugins, you can install the
+Liferay Mobile SDK to your Eclipse instance by following these steps:
 
 1. Go to the *Help* &rarr; *Install New Software* menu.
 
-2. Copy the following link into the *Work with* field:
+2. Copy the following URL into the *Work with* field:
 
         http://releases.liferay.com/tools/ide/latest/stable/
 
-    In the *Liferay* drop-down menu that appears, click the drop-down arrow and
+    In the *Liferay* drop-down menu that appears, click the drop-down arrow, 
     select *Liferay Mobile SDK*, and click *Next*.
 
     ![Figure 8.2: Download the *Liferay Mobile SDK* plugin for Eclipse by navigating to the *Install New Software* menu.](../../images/download-mobile-sdk-plugin.png)
@@ -83,13 +85,13 @@ Terrific! You're ready to start developing Android apps that use Liferay!
 Next, let's create a *Liferay Android Sample Project* to learn how easy it is to
 create a mobile app that uses Liferay. 
 
-### Creating a Liferay Android Sample Project [](id=creating-a-liferay-android-sample-projec-liferay-portal-6-2-dev-guide-08-en)
+## Creating the Liferay Android Sample Project 
 
 The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries
-and sample app code. We call this sample project the *Liferay Android Sample
-Project*. You can refer to it to see how it connects with Liferay and invokes
-Liferay services. Let's create the sample project now! 
+and sample app code. We call this project the *Liferay Android Sample Project*.
+You can refer to it to see how it connects with Liferay and invokes Liferay
+services. Let's create the sample project now! 
 
 1. Go to *File* &rarr; *Project...* &rarr; *Liferay* &rarr; *Liferay Android
 Sample Project*.
@@ -118,8 +120,8 @@ the tutorial. Jim
 -->
 
 The Liferay Android Sample Project lists the portal's users as contacts, so that
-you can view their detailed information, including their name, email addresses,
-phone numbers, and birthdate. 
+you can view their detailed information, including their names, email addresses,
+phone numbers, and birth dates. 
 
 Just as evidence that this sample project is using the Liferay Mobile SDK
 libraries, open the sample app's `MainActivity` class from the
@@ -141,42 +143,43 @@ Let's run the sample app in Android's
 
 3. Go to the *Liferay Contacts* app. 
 
-The *Liferay Contacts* app lists your site's users. You can select each user's
-name to see their information. 
+The *Liferay Contacts* app lists your site's users. You can select users' 
+names to see their information. 
 
 ![Figure 8.5: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-contacts-app.png)
 
 Congratulations on creating a mobile app that uses Liferay! 
 
-Now, let's consider the Android apps you've been developing. Is there data or
+Now let's consider the Android apps you've been developing. Is there data or
 functionality that you'd like to leverage from your Liferay Portal instances?
-The Mobile SDK enables you to leverage Liferay core services to get what you
-need from your portal. And you can leverage these services with ease by using
-Liferay's Mobile SDK Eclipse plugin. We'll show you how to use it, next. 
+The Mobile SDK enables you to use Liferay core services to get what you
+need from your portal. This is easy to do with Liferay's Mobile SDK Eclipse
+plugin. We'll show you how to use it next. 
 
-### Configuring to Use Liferay in Your Android App [](id=configuring-to-use-liferay-in-your-andro-liferay-portal-6-2-dev-guide-08-en)
+## Calling Liferay Services in your Android App
 
 The Mobile SDK Eclipse plugin makes it easier than ever for you to call Liferay
-core services and utilities from your Android app. Your project simply needs the
-Liferay Android Mobile SDK libraries. The Liferay Mobile SDK Builder that comes
-with our Eclipse plugin enables you to generate these libraries. The Mobile SDK
-Eclipse plugin makes adding them as easy as clicking a button. 
+core services and utilities from your Android app. All you need to do is add the 
+Liferay Android Mobile SDK libraries to your project. The Liferay Mobile SDK
+Builder that comes with our Eclipse plugin enables you to generate these
+libraries. 
 
 ---
 
 ![Note](../../images/tip-pen-paper.png) **Note:** This configuration capability
 is only available for Android apps that were created using the ADT plugin for
-Eclipse. The action will not work for Android apps built with Gradle or Maven.
-For more information on manually configuring to use Liferay in your Android app,
-see the manual Liferay Mobile SDK setup instructions for
+Eclipse. The action will not work for Android apps built with Gradle or Maven,
+but you can still manually configure your project to use the Mobile SDK. For
+more information on this, see the manual Liferay Mobile SDK setup instructions
+for
 [Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
 or
 [iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually).
 
 ---
 
-Let's see how easy it is to
-set up the Liferay Android SDK in your Android app project. 
+Let's see how easy it is to set up the Liferay Android SDK in your Android app
+project. 
 
 1. In Eclipse, import your Android app into an Android application project. 
 
@@ -202,27 +205,27 @@ Great! Now you know how to set up your Android apps to use Liferay core web
 services and Liferay utilities. But how do you access custom portlet services?
 Does the Liferay Mobile SDK Eclipse plugin make that possible too? The answer is
 an emphatic *YES*. We'll show you how to configure your app to use custom
-portlet services, next. 
+portlet services next. 
 
-### Configuring to Use Custom Portlet Services in your Android App [](id=configuring-to-use-custom-portlet-servic-liferay-portal-6-2-dev-guide-08-en)
+## Using Custom Portlet Services in your Android App 
 
-The Liferay Mobile SDK gives you the ability to call your custom portlet
+The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with our Eclipse plugin
 generates libraries that enable you to access your custom portlet's remote JSON
 web services. 
 
 You can specify a running Liferay Portal instance in Eclipse, and Eclipse
-queries the server for all the remote APIs that are available to generate JAR
+queries the server for all the remote APIs that are available to generate `.jar`
 files to access your custom portlet services. The Liferay Mobile SDK Eclipse
 plugin finds your custom services for you to select the ones you want to use in
-your app. The Mobile SDK Builder generates a JAR file and resource files that
+your app. The Mobile SDK Builder generates a `.jar` file and resource files that
 let you access the services in from your Android app. 
 
 Now that you know the basic gist of how the Mobile SDK Eclipse plugin generates
 custom portlet service access libraries, let's actually generate them for an
 existing Android app. 
 
-Right-click your Android app project in the *Package Explorer* and select
+Right-click your Android app project in the Package Explorer and select
 *Configure* &rarr; *Generate services for Liferay custom portlets*. This opens a
 wizard where you'll specify your running portal server. 
 
@@ -232,14 +235,14 @@ Specify your server's *URL*, *Username*, and *Password*. Notice the *Status* and
 *Summary* fields; these fields indicate your running portal instance's status
 after clicking the *Check Status* button.
 
-Our Eclipse plugin saves previously configured server instance connection
-information in a listing at the bottom, so that you can configure your Android
-app to use any previously configured portal server. Each server's *URL* and
-*Last Available Summary* is displayed. 
+The plugin saves previously configured server instance connection information in
+a listing at the bottom so that you can configure your Android app to use any
+previously configured portal server. Each server's URL and Last Available
+Summary is displayed. 
 
-Once you've checked the status of your server, click *Next*. Our plugin queries
-the server you specified for all the remote APIs that are available to generate
-for your custom portlet services. 
+Once you've checked the status of your server, click *Next*. The plugin queries
+the server you specified for all the remote APIs that are available, and
+generates for your custom portlet services. 
 
 In the next menu, specify the Java package for the SDK source code that the
 builder generates. Then select the custom portlet APIs that you want to access. 
@@ -252,10 +255,10 @@ For demonstration purposes, we'll specify the Java package as
 
 ![Figure 8.9: The Mobile SDK Eclipse plugin injects the Android app with the appropriate `.jar` and `.properties` files to use in accessing the custom portlet APIs.](../../images/injected-jars-mobile-sdk.png)
 
-Notice that in the figure, we have the standard and custom `.jar` and
-`.properties` files. When generating custom services, Eclipse adds both the
-standard JAR file used for accessing Liferay core services and utilities, and a
-custom JAR file for accessing your custom portlet services. 
+Notice that you have the standard and custom `.jar` and `.properties` files. When
+generating custom services, Eclipse adds both the standard JAR file used for
+accessing Liferay core services and utilities and a custom JAR file for
+accessing your custom portlet services. 
 
 You've generated custom services for your Liferay portlets! Now your app can
 access Liferay core services, Liferay utilities, *and* your custom portlet
@@ -265,9 +268,9 @@ Now that your Android app has the access it needs to use Liferay and your custom
 portlets, let's take an in-depth look at using the Android SDK to invoke their
 services. 
 
-## Using the Android SDK [](id=use-the-android-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
+## Using the Android SDK 
 
-Suppose you're creating an Android app and you'd like to access some of
+Suppose you're creating an Android app, and you'd like to access some of
 Liferay's core services. All you need to do is download the SDK and put it in
 your classpath, and you can access the services immediately. If you want to
 invoke custom portlet web services, you'll need to generate client libraries
@@ -280,29 +283,24 @@ SDK Eclipse plugin, you can skip the next section. Otherwise, continue onto the
 next section where we'll get started by downloading the Android SDK and
 configuring it in your Android environment! 
 
-### Manually Setting Up the Android SDK [](id=setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en)
+### Manually Setting Up the Android SDK 
 
 As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
 code, you can download `liferay-android-sdk-sources.jar` and attach the source
 code to your IDE project. You can download these JAR files from the Liferay
-Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases/)
+Mobile SDK [Downloads](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
 page.
 
-<!-- Change link once Downloads page is available on liferay.com. Bruno informed
-me that the Downloads page would be within its community project page, which
-will be located at
-https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
-
-Once you've downloaded your JAR file, insert it into the `/libs` directory of
-your Android project. Android Developer Tools should automatically add this JAR
+Once you've downloaded your JAR file, copy it into the `/libs` directory of
+your Android project. Android Developer Tools should add this JAR automatically 
 to your classpath. If you're using a different IDE, make sure this JAR is added
 to the project classpath. Now, you'll be able to import the SDK classes for your
 app to use. 
 
 Great! Now let's start accessing Liferay services from your app. 
 
-### Invoking Liferay Services in Your Android App [](id=access-liferay-services-from-android-app-liferay-portal-6-2-dev-guide-en)
+### Invoking Liferay Services in Your Android App 
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
 your Android project's classpath, let's consider how to access and invoke
@@ -332,31 +330,33 @@ the session in the
 class as follows:
 
 	Session session = new SettingsUtil.getSession();
-  
+ 
 The `getSession()` method returns a `Session` instantiated like this: 
 
 	SessionImpl("http://10.0.2.2:8080", "test@liferay.com", "test");
 
 Here's an explanation of each of the session parameters:
 
-  - *Server:* The URL of the Liferay instance you're connecting to. If
-  you're running your app on an Android Emulator, the URL should point to your
-  local Liferay instance. In this particular case, `http://10.0.2.2:8080` is
-  equivalent to `http://localhost:8080`, which means the emulator and
-  Liferay are running on the same machine.
+**Server:** The URL of the Liferay instance you're connecting to. If you're
+running your app on an Android Emulator, the URL should point to your local
+Liferay instance. In this particular case, `http://10.0.2.2:8080` is equivalent
+to `http://localhost:8080`, which means the emulator and Liferay are running on
+the same machine.
 
-  - *Username:* Can either be the user's email address, screen name, or
-  user ID. Your session login user name must be consistent with the
-  authentication method your Liferay instance is using. Liferay's default
-  authentication method requires the user's email address.
+**Username:** Can either be the user's email address, screen name, or user ID.
+Your session login user name must be consistent with the authentication method
+your Liferay instance is using. Liferay's default authentication method requires
+the user's email address.
 
-  - *Password:* The user's password.
+**Password:** The user's password.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using these
+![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using 
 administrator credentials on a production Liferay instance, as you'll have
-permission to call any service. Make sure not to modify data accidentally. 
+permission to call any service. Make sure not to modify data accidentally. Of
+course, the default administrator credentials should be disabled on a production
+Liferay instance. 
 
 ---
 
@@ -432,17 +432,17 @@ Android doesn't allow making synchronous HTTP requests from the main UI thread.
 Synchronous HTTP requests must be made from threads other than the main UI
 thread. For example, they can be made from an `AsyncTask` instance. 
 
-The SDK can help you make asynchronous HTTP requests if you don't
-want to create an `AsyncTask` yourself. Simply implement a callback class,
-instantiate it, and set the callback instance on the session. When the SDK makes
-your service calls for that session, it makes them asynchronously. To make
-synchronous calls again, set `null` as the session's callback. 
+The SDK can help you make asynchronous HTTP requests if you don't want to create
+an `AsyncTask` yourself. Implement a callback class, instantiate it, and set the
+callback instance on the session. When the SDK makes your service calls for that
+session, it makes them asynchronously. To make synchronous calls again, set
+`null` as the session's callback. 
 
 The following steps outline how to implement asynchronous requests in your app: 
 
 1. Implement and instantiate your callback class.
 2. Set the callback on the session.
-5. Call Liferay services.
+3. Call Liferay services.
 
 The following code is an implementation of these steps: 
 
@@ -474,11 +474,11 @@ return type. Then it implements and instantiates the callback class. Lastly, it
 sets the callback on the session and calls the Liferay service.
 
 The `onFailure()` method is called if an exception occurs during the request.
-This could be triggered by either a connection exception (e.g., a request
-timeout) or a `ServerException`. If a `ServerException` occurs, it's because
-something went wrong on the server side. For instance, if you pass a `groupId`
-that doesn't exist, the portal complains about it and the SDK wraps the error
-message with a `ServerException`.
+This could be triggered by a connection exception (e.g., a request timeout) or a
+`ServerException`. If a `ServerException` occurs, it's because something went
+wrong on the server side. For instance, if you pass a `groupId` that doesn't
+exist, the portal complains about it, and the SDK wraps the error message with a
+`ServerException`.
 
 There are multiple `AsyncTaskCallback` implementations, one for each method
 return type: `JSONObjectAsyncTaskCallback`, `JSONArrayAsyncTackCallback`,
@@ -515,7 +515,7 @@ using batch processing. Let's learn about this next.
 
 The Mobile SDK also allows sending requests using batch processing, which can be
 much more efficient than sending separate requests. For example, suppose
-you want to delete 10 blog entries at the same time; instead of making one
+you want to delete ten blog entries at the same time; instead of making one
 request for each deletion, you can create a batch of calls and send them all
 together.
 
@@ -537,7 +537,7 @@ First, the `BatchSessionImpl` session is created. You can either pass
 credentials or pass another session to the constructor. Passing another session
 to the constructor is useful when you already have a `Session` object and want
 to reuse the same credentials. Then, it makes service calls as usual. With
-asynchronous calls, these methods would return a `null` object immediately. 
+asynchronous calls, these methods return a `null` object immediately. 
 
 Finally, it calls the `invoke()` method from the batch session object. It
 returns a `JSONArray` containing the results for each service call. Since there
@@ -568,11 +568,9 @@ Next, let's dive into using the iOS SDK to access Liferay services.
 
 You've just created a custom iOS app and now want your app to access Liferay
 services. How do you access Liferay services from an iOS mobile app? Use
-Liferay's iOS SDK, of course. All you'll need to do is download the SDK and
-you'll immediately be able to access them. If you'd like to invoke remote web
-services, you'll need to generate the client libraries. You can learn more about
-the SDK builder and how to generate client libraries by reading the
-Custom Portlet
+Liferay's iOS SDK, of course. If you'd like to invoke remote web services,
+you'll need to generate the client libraries. You can learn more about the SDK
+builder and how to generate client libraries by reading the Custom Portlet
 [Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
 section. 
 
@@ -583,14 +581,10 @@ environment!
 
 To install the iOS SDK to your machine, you'll need to download the latest
 version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
-Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases/)
-page. We'll be providing installation instructions assuming you're using the
-XCode developer tool provided by Apple, which can be downloaded from the [Mac
-App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
-
-<!-- Replace Downloads page with Official Downloads page on liferay.com when
-available:
-https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/ -->
+Mobile SDK [Downloads](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+page. These installation instructions assume you're using the XCode developer
+tool provided by Apple, which can be downloaded from the [Mac App
+Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
 
 After you've downloaded the Zip file, unzip it into your XCode project. Within
 XCode, right-click on your project and click *Add Files to <PROJECT_NAME>*.
@@ -606,7 +600,7 @@ steps:
 
 1. Create a session.
 2. Import the Liferay services for your app to use.
-3. Create a service object and call it's services.
+3. Create a service object and call its services.
 
 We'll demonstrate these steps by providing access to a sample Blogs app. Note
 that the following code snippets are written in the *Objective C* programming
@@ -622,13 +616,16 @@ To learn more about the session and its three parameters, refer to
 [Setting Up the Android
 SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en).
 
+<!-- We should provide this information here, customized for Apple people.
+They're a sensitive lot. :-) -Rich -->
+
 #### Step 2: Import the Liferay services for your app to use [](id=step-2-import-the-liferay-services-for-liferay-portal-6-2-dev-guide-08-en-0)
 
 For this sample app, we'll import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
 	#import "LRBlogsEntryService_v62.h"
 
-Note, the Liferay version (`.v62`) is used in the package namespacing.
+Note the Liferay version (`.v62`) is used in the package namespacing.
 Since the SDK is built for a specific Liferay version, service classes are
 separated by their package name. Our Mobile SDK classes use the `.v62`
 package, which means this SDK is compatible with Liferay 6.2. However, you can
@@ -650,8 +647,8 @@ this example, the `groupId` is `10184`.
 	NSArray *entries = [service getGroupEntriesWithGroupId:1084 status:0 start:-1 end:-1 error:&error];
 
 
-This is a basic example of a synchronous service call-- which means the
-method will only returns after the request is finished.
+This is a basic example of a synchronous service call, which means the
+method returns only after the request is finished.
 
 Service method return types can be `void`, `NSString`, `NSArray`,
 `NSDictionary`, `NSNumber`, and `BOOL`.
@@ -677,7 +674,7 @@ callback to the session object. You can set the callback to `nil` if you want to
 make synchronous requests again. 
 
 Let's continue our example with the blogs app. To configure asynchronous
-requests, the first thing we'll need to do is create a class that conforms to
+requests, the first thing we need to do is create a class that conforms to
 the `LRCallback` protocol.
 
     #import "LRCallback.h"
@@ -701,7 +698,7 @@ the `LRCallback` protocol.
 
     @end
 
-Then, set this callback to the session and call your service as usual:
+Then set this callback to the session and call your service as usual:
 
     BlogsEntriesCallback *callback = [[BlogsEntriesCallback alloc] init];
 
@@ -718,7 +715,7 @@ invoked with the results once the request has finished successfully.
 
 The `onSuccess` result parameter doesn't have a specific type. Therefore, you
 need to check the service method signature in order to figure out which type you
-can cast to safely. In this example, the `getGroupEntriesWithGroupId` method
+can cast it to safely. In this example, the `getGroupEntriesWithGroupId` method
 returns an `NSArray`; so you can cast to this type.
 
     - (void)onSuccess:(id)result {
@@ -728,8 +725,7 @@ returns an `NSArray`; so you can cast to this type.
 The `onSuccess` method is called on the main UI thread after the request has
 finished.
 
-Let's talk about another popular way to send your app's requests: batch
-processing.
+Let's talk about another way to send your app's requests: batch processing.
 
 ### Sending Your iOS App's Requests Using Batch Processing [](id=batch-ios-app-requests-to-liferay-portal-6-2-dev-guide-en)
 
