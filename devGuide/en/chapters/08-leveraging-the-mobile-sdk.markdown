@@ -3,10 +3,9 @@
 The Liferay Mobile SDK is a way to streamline consuming Liferay core web
 services, Liferay utilities, and custom portlet web services. It wraps Liferay
 JSON web services, making them easy to call in native mobile apps. It takes care
-of authentication, makes
-[RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) requests
-(synchronously or asynchronously), parses JSON results, and handles server-side
-exceptions so you can concentrate on *using* the services in your app. 
+of authentication, makes HTTP requests (synchronously or asynchronously), parses
+JSON results, and handles server-side exceptions so you can concentrate on
+*using* the services in your app. 
 
 The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later. The
 Liferay Android SDK and Liferay iOS SDK are ready for you to download and
