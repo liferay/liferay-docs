@@ -287,9 +287,10 @@ configuring it in your Android environment!
 As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
 code, you can download `liferay-android-sdk-sources.jar` and attach the source
-code to your IDE project. You can download these JAR files from the Liferay
-Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases)
-page.
+code to your IDE project. You can download these JAR files from the [Liferay
+Mobile
+SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+project page.
 
 Once you've downloaded your JAR file, copy it into the `/libs` directory of
 your Android project. Android Developer Tools should add this JAR automatically 
@@ -579,10 +580,11 @@ environment!
 ### Setting Up the iOS SDK [](id=setup-liferay-mobile-sdk-for-ios-liferay-portal-6-2-dev-guide-en)
 
 To install the iOS SDK to your machine, you'll need to download the latest
-version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
-Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases)
-page. These installation instructions assume you're using the XCode developer
-tool provided by Apple, which can be downloaded from the [Mac App
+version of `liferay-ios-sdk.zip`. You can download this file from the [Liferay
+Mobile
+SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+project page. These installation instructions assume you're using the XCode
+developer tool provided by Apple, which can be downloaded from the [Mac App
 Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
 
 After you've downloaded the Zip file, unzip it into your XCode project. Within
