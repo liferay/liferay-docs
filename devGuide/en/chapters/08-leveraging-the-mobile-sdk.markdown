@@ -288,7 +288,7 @@ As we stated earlier, you'll need to download the latest version of
 `liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
 code, you can download `liferay-android-sdk-sources.jar` and attach the source
 code to your IDE project. You can download these JAR files from the Liferay
-Mobile SDK [Downloads](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases)
 page.
 
 Once you've downloaded your JAR file, copy it into the `/libs` directory of
@@ -311,9 +311,9 @@ follow:
 3. Create a service object and call its service methods.
 
 We'll show how the [Liferay Mobile SDK Sample Android
-App](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/tree/1.0.0)
+App](https://github.com/brunofarache/liferay-android-sdk-sample)
 demonstrates these steps. In particular, we'll outline the steps that its
-[`UsersAsyncTask`](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+[`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class takes in accessing and calling Liferay services. In your app, you can
 follow these steps too. 
 
@@ -325,7 +325,7 @@ session to pass requests between your app and the Mobile SDK.
 
 The sample app establishes a session by means of user authentication. It creates
 the session in the
-[UsersAsyncTask](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+[UsersAsyncTask](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class as follows:
 
 	Session session = new SettingsUtil.getSession();
@@ -399,7 +399,7 @@ The sample app creates a `UserService` object and calls its
 
 Since the `userService.getGroupUsers(...)` method requires a site group ID, we
 invoke the method `getGuestGroupId(session)` of the sample app's
-[`UsersAsyncTask`](https://github.com/brunofarache/liferay-mobile-sdk-sample-android/blob/1.0.0/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
+[`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class to get the `Guest` site's group ID, and then we pass that group ID as
 the `groupId` parameter in the call `userService.getGroupUsers(groupId)`. 
 
@@ -580,7 +580,7 @@ environment!
 
 To install the iOS SDK to your machine, you'll need to download the latest
 version of `liferay-ios-sdk.zip`. You can download this file from the Liferay
-Mobile SDK [Downloads](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+Mobile SDK [Downloads](https://github.com/liferay/liferay-mobile-sdk/releases)
 page. These installation instructions assume you're using the XCode developer
 tool provided by Apple, which can be downloaded from the [Mac App
 Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
@@ -613,7 +613,7 @@ language. Let's begin!
 
 To learn more about the session and its three parameters, refer to
 [Setting Up the Android
-SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/setup-liferay-mobile-sdk-for-android-liferay-portal-6-2-dev-guide-en).
+SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/using-the-android-sdk-liferay-portal-6-2-dev-guide-08-en).
 
 <!-- We should provide this information here, customized for Apple people.
 They're a sensitive lot. :-) -Rich -->
