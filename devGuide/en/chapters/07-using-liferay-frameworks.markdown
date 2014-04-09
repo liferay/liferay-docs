@@ -1498,7 +1498,7 @@ One of the most common actions to complete in the portal is the deletion of an
 entity. However, many times the word *delete* is closely associated with the
 word *permanent*. This is no longer true with Liferay's Recycle Bin. 
 
-By configuring the Recycle Bin in your app, content can be temporarily stored in
+By implementing the Recycle Bin in your app, content can be temporarily stored in
 the Recycle Bin until it has reached the expiration date. This allows trashed
 content to be restored back to its original state. Many of Liferay's assets
 already support the Recycle Bin, including Web Content, Documents and Media,
@@ -1526,7 +1526,7 @@ app.
 
 - Moving Entries to the Recycle Bin
 - Restoring Entries from the Recycle Bin
-- Configuring the Undo Action
+- Implementing the Undo Action
 - Moving/Restoring Parent Entities
 - Resolving Conflicts
 
@@ -1802,7 +1802,7 @@ for the Jukebox portlet, which reuses an existing asset renderer:
 
 If you don't have an asset renderer, you'll need to create a trash renderer and
 implement the `getTrashRenderer()` method from your trash handler to instantiate
-it. For an example of calling the trash renderer from a trash handler, you can
+it. For an example of accessing the trash renderer from a trash handler, you can
 reference the
 [DLFileShortcutTrashHandler](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portlet/documentlibrary/trash/DLFileShortcutTrashHandler.java)
 class' `getTrashRenderer()` method.
@@ -1827,11 +1827,11 @@ to do this next.
 
 ### Restoring Entries from the Recycle Bin
 
-Now that you're able to move entries *to* the Recycle Bin, let's configure your
+Now that you're able to move entries *to* the Recycle Bin, let's develop your
 app to restore entries *from* the Recycle Bin. Besides, what's the point of
 having a Recycle Bin if you can't restore its entries?
 
-![Figure 7.2: By configuring the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
+![Figure 7.2: By implementing the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
 
 Entries are restored by returning their visibility in their original location,
 and removing them from the Recycle Bin. As we briefly discussed in the last
@@ -1886,12 +1886,26 @@ that restores song entries currently residing in the Recycle Bin:
         return song;
     }
 
-We update the entry's status by setting it to its original status before the
-entry was trashed. For instance, if the entry was originally a draft
-(`STATUS_DRAFT`), it's restored back to a draft. This status change is called
-by the following:
+First, we set the restored item's name to its original title and set its
+modified date to the current date.
+
+    song.setName(TrashUtil.getOriginalTitle(song.getName()));
+    song.setModifiedDate(serviceContext.getModifiedDate(now));
+
+Next, we update the entry's status by setting it to its original status before
+the entry was trashed. For instance, if the entry was originally a draft
+(`STATUS_DRAFT`), it's restored back to a draft. This status change is called by
+the following:
 
     song.setStatus(trashEntry.getStatus());
+
+There are also several other statuses we update, which include the status by
+user ID, user name, and date. These are used to indicate the user that restored
+the trash entry and the date the status was modified.
+
+    song.setStatusByUserId(user.getUserId());
+    song.setStatusByUserName(user.getFullName());
+    song.setStatusDate(serviceContext.getModifiedDate(now));
 
 Then we return the asset entry's visibility in its original location by running:
 
@@ -1922,35 +1936,40 @@ This restore method is located in the Jukebox portlet's
 [SongTrashHandler](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
 class. This method tells the *Restore* button what to do when it's clicked.
 
-Sometimes, conflicts can occur when restoring entries. For instance, suppose you
-create a file with the same name of a file that you've trashed. Although the
-file is in the Recycle Bin, it's still present in its original location, but
-with its status changed and visibility turned off. The resolution framework
-avoids these two files conflicting. We'll talk more about the resolution
-framework in the *Resolving Conflicts* section.
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Sometimes, conflicts can occur
+when restoring entries. For instance, suppose you create a file with the same
+name of a file that you've trashed. Although the file is in the Recycle Bin,
+it's still present in its original location, but with its status changed and
+visibility turned off. The resolution framework avoids these two files
+conflicting. We'll talk more about the resolution framework in the *Resolving
+Conflicts* section.
+
+---
 
 Your trash entries can now be restored from the Recycle Bin! Next, let's
-configure the *Undo* button.
+implement the *Undo* button.
 
-### Configuring the Undo Functionality
+### Implementing the Undo Functionality
 
 Sometimes, you may accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
 restore the item, just to navigate back to where you originally started, right?
-The Recycle Bin framework can be configured to have an *Undo* button, so you can
+The Recycle Bin framework is capable of supporting an *Undo* button, so you can
 conveniently undo the action of sending an entry to the Recycle Bin without
 leaving the page.
 
-![Figure 7.3: Configure the Undo button to allow a convenient way to undo the sending of entries to the Recycle Bin.](../../images/undo-rb.png)
+![Figure 7.3: Implement the Undo button to allow a convenient way to undo the sending of entries to the Recycle Bin.](../../images/undo-rb.png)
 
 Also, you're provided links to the trashed entry and Recycle Bin. Let's
-configure the Undo button and its related links!
+implement the Undo button and its related links!
 
-#### Configuring the Undo Functionality *Step 1*: Add the Undo Tag
+#### Implementing the Undo Functionality *Step 1*: Add the Undo Tag
 
 The first thing we'll need to do is add the `trash-undo` taglib. Also, we need
-to pass an action URL, which creates an action that restores the entry. Here's
-an example of completing this in the Jukebox portlet's
+to pass an action URL, which creates an action that restores the song entry.
+Here's an example of completing this in the Jukebox portlet's
 [view.jsp](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/html/songs/view.jsp):
 
     <portlet:actionURL name="restoreSong" var="undoTrashURL" />
@@ -1960,7 +1979,7 @@ an example of completing this in the Jukebox portlet's
 Now that we've added the taglib and action URL, let's call the action to restore
 the entry.
 
-#### Configuring the Undo Functionality *Step 2*: Call the Action for Restoration
+#### Implementing the Undo Functionality *Step 2*: Call the Action for Restoration
 
 Now you'll need to call the action to restore the entry. Here's an example of
 calling the action from the
@@ -1978,54 +1997,43 @@ class, which restores the song from the Recycle Bin:
         }
     }
 
+This method implements the `restoreSong` action that we named in the `view.jsp`.
+The action URL maps the trash-undo taglib to this method.
+
 The entry IDs are restored and passed through the `restoreSongFromTrash()`
 service method that we defined in the previous *Restoring Entries from the
 Recycle Bin* section.
 
 Next, let's display the taglib.
 
-#### Configuring the Undo Functionality *Step 3*: Display the Taglib
+#### Implementing the Undo Functionality *Step 3*: Display the Taglib
 
-The final step for configuring the Undo button is to display the taglib. In
+The final step for implementing the Undo button is to display the taglib. In
 order to display the taglib, we need to provide some information for the session
 messages so the session knows which elements we deleted. Once the session
 message knows which elements we deleted, our method can recover this information
-and restore the entry. The following code from the
+and restore the entry. The following if-statement from the `deleteSong()` method
+of the
 [JukeboxPortlet](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/portlet/JukeboxPortlet.java)
 class does this:
 
-    public void deleteSong(ActionRequest request, ActionResponse response)
-        throws Exception {
+    if (moveToTrash) {
+        Song song = SongServiceUtil.moveSongToTrash(songId);
 
-        long songId = ParamUtil.getLong(request, "songId");
+        Map<String, String[]> data = new HashMap<String, String[]>();
 
-        boolean moveToTrash = ParamUtil.getBoolean(request, "moveToTrash");
+        data.put("deleteEntryClassName",
+            new String[] {Song.class.getName()});
+        data.put("deleteEntryTitle",
+            new String[] {TrashUtil.getOriginalTitle(song.getName())});
+        data.put("restoreEntryIds",
+            new String[] {String.valueOf(songId)});
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-            Song.class.getName(), request);
+        SessionMessages.add(request, PortalUtil.getPortletId(request) +
+            SessionMessages.KEY_SUFFIX_DELETE_SUCCESS_DATA, data);
 
-        try {
-            if (moveToTrash) {
-                Song song = SongServiceUtil.moveSongToTrash(songId);
-
-                Map<String, String[]> data = new HashMap<String, String[]>();
-
-                data.put("deleteEntryClassName",
-                    new String[] {Song.class.getName()});
-                data.put("deleteEntryTitle",
-                    new String[] {TrashUtil.getOriginalTitle(song.getName())});
-                data.put("restoreEntryIds",
-                    new String[] {String.valueOf(songId)});
-
-                SessionMessages.add(request, PortalUtil.getPortletId(request) +
-                        SessionMessages.KEY_SUFFIX_DELETE_SUCCESS_DATA, data);
-
-                SessionMessages.add(request, PortalUtil.getPortletId(request) +
-                    SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_SUCCESS_MESSAGE);
-            }
-            ...
-        }
-        ...
+        SessionMessages.add(request, PortalUtil.getPortletId(request) +
+            SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_SUCCESS_MESSAGE);
     }
 
 We gather the three elements that we need to distinguish the song to restore.
@@ -2038,7 +2046,8 @@ These elements include the song's class name, title, and IDs.
     data.put("restoreEntryIds",
         new String[] {String.valueOf(songId)});
 
-Then we add these elements to the session messages.
+Then we add these elements to the session messages so the session knows which
+elements we deleted. 
 
     SessionMessages.add(request, PortalUtil.getPortletId(request) +
         SessionMessages.KEY_SUFFIX_DELETE_SUCCESS_DATA, data);
@@ -2073,15 +2082,21 @@ referenced in the Jukebox portlet's
 [service.xml](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/service.xml)
 file for the album entity.
 
+    <column name="albumId" type="long" primary="true" container-model="true" />
+
 By defining the entity's container model, several methods are generated that we
 can use to obtain the children entities of a parent, or in this case, songs of
 an album.
+
+<!-- TODO In what classes are these methods generated? Can you point out
+examples of these generated methods? Are they empty method stubs the developer
+needs to implement or are they already implemented? Jim -->
 
 Next, we'll define children entities of a parent for the Recycle Bin framework.
 
 #### Moving/Restoring Parent Entities *Step 2*: Manage Children Entities
 
-Configuring the moving/restoring of parent entities to/from the Recycle Bin is
+Implementing the moving/restoring of parent entities to/from the Recycle Bin is
 very similar to what we've already learned for single entities. However, because
 the parents hold children entities, we'll need to define them as well. In the
 case of the Jukebox portlet, after configuring the Recycle Bin for albums, we'll
@@ -2091,6 +2106,10 @@ For the Jukebox portlet, managing the album dependents is done in the
 [AlbumLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/AlbumLocalServiceImpl.java)
 class in the `moveDependentsToTrash()` and `restoreDependentsFromTrash()`
 methods.
+
+Both methods pass the primary key of the parent entity (album) and the list of
+dependents (songs) to move/restore as parameters. These parameters make the
+method aware of all entities that are being moved/restored.
 
 There are four major components of these methods. We'll step through each
 component of the `moveDependentsToTrash()` method:
@@ -2114,6 +2133,8 @@ below code snippet:
             trashVersionLocalService.addTrashVersion(trashEntryId,
                  Song.class.getName(), song.getSongId(), status, null);
 
+<!-- TODO Please explain what a trash version is. Jim -->
+
 3. Update the asset entry's visibility to *false*. We accomplished this in the
    `moveSongToTrash()` service method from the *Moving Entries to the Recycle
    Bin* section. This is done the exact same way, but for each individual song
@@ -2121,16 +2142,17 @@ below code snippet:
 
         assetEntryLocalService.updateVisible(Song.class.getName(), song.getSongId(), false);
 
-4. Reindex the new entity. Again, we accomplished this same goal in the
+4. Reindex the entity. Again, we accomplished this same goal in the
    `moveSongToTrash()` service method from the *Moving Entries to the Recycle
-   Bin* section. You must reindex each individual song in the album so they're
-   searchable. The code snippet for this is found below:
+   Bin* section. Since we've modified the visibility of the song entity, we must
+   reindex each individual song in the album so they're searchable. The code
+   snippet for this is found below:
 
         Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Song.class);
 
         indexer.reindex(song);
 
-Once these components are configured for the songs, you can click inside the
+Once these components are implemented for the songs, you can click inside the
 trashed album and view the trashed songs. You also have the option to restore
 and delete the songs. Notice that we didn't create this UI; it was all generated
 by the portal framework. You only need to tell the portal that the parent entity
@@ -2209,7 +2231,7 @@ The string we obtained from the `TrashUtil.getTrashTitle()` method in the last
 section is used to obtain the original title from the
 `TrashUtil.getOriginalTitle()` method. The song's original title is returned as
 an ID number from the database. Therefore, to get the original title for the
-proper locale, we'll need to configure the trash renderer or asset renderer to
+proper locale, we'll need to implement the trash renderer or asset renderer to
 return the name in our locale.
 
     @Override
@@ -2257,7 +2279,10 @@ name. After implementing these methods, you should always be able to resolve
 naming conflicts amongst your trashed entries.
 
 Congratulations! You've finished your journey through the Recycle Bin framework.
-The *dirty* work is complete and you now know how to configure the Recycle Bin
+You accomplished this feat by developing your app to move entries to the Recycle
+Bin, restore entries from the Recycle Bin, use the Undo action, move and restore
+parent entities, and use the Recycle Bin's Resolution Conflicts framework. The
+*dirty* work is complete and you now know how to implement the Recycle Bin
 framework to your app. Next, let's learn about Liferay's Message Bus. 
 
 ## Using Message Bus [](id=using-message-bus-liferay-portal-6-2-dev-guide-06-en)
