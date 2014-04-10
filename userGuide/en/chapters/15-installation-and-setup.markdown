@@ -213,7 +213,8 @@ Your server may be behind a firewall that prevents access to the Internet, or
 your security policy may not allow direct download and installation from the
 Internet. In these cases, you have 2 options:
 
-1. From an Internet-enabled computer, download the Marketplace plugin from here.
+1. From an Internet-enabled computer, download the Marketplace plugin from
+[here](https://www.liferay.com/marketplace/download).
 Then allow Liferay to auto deploy it by dropping the downloaded .lpkg file into
 the Liferay deploy folder. 
 
