@@ -404,7 +404,9 @@ Notifications icon displays how many unread notifications you have. You'll be
 notified upon receiving a private message, an invitation to join a site, a
 social connection request, or an event reminder. Alerts and announcements
 created via the Alerts or Announcements portlets are accessible via the
-Notifications icon.
+Notifications icon. Clicking *View All Notifications* lets you view further 
+details about each notification you've received, as well as set your preferences 
+for receiving notifications.
 
 ![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
 
@@ -482,7 +484,9 @@ yellow. The default scoping of the displayed announcements in Social Office
 depends on the site of the Announcements portlet. By default, the Announcements
 portlet on the Dashboard shows an aggregated view of all general announcements
 while an Announcements portlet on a Social Office site page also shows
-site-specific announcements.
+site-specific announcements. Read announcements also behave a bit differently 
+in Social Office. Clicking *Mark as Read* will completely hide the announcement 
+from view. Just click *Read Entries* to reveal them.
 
 ##### The Activities Portlet
 
@@ -556,25 +560,36 @@ allows users to create LinkedIn-style connections and Twitter-style followers.
 This enables users to customize who they share information about social
 activities with and whose activity they're interested in. The Contacts Center
 application displays a list of portal users. You can choose to display *All*,
-*Connections*, *Following*, or *My Contacts*. You can also display only the
-members of a particular site. There's also a search bar so you can search for
-specific users. To add a new contact, just click on the *Add Contact* button at
-the top of the Contacts Center. Select a user from the left-hand area of the
-Contacts Center portlet to view details about him or her. For each user, you'll
-have the following options:
+*Connections*, *Following*, or *My Contacts*. If you are a member of a site, 
+you can also choose to display only the members of that site. There's also a 
+search bar so you can search for specific users. The Contacts Center is also 
+capable of storing contacts that aren't portal users, making it a great one stop 
+shop for all of your contacts. To add a new external contact, just click on the 
+*Add Contact* button at the top of the Contacts Center.
 
-- *Add as Connection* sends a connection request to the selected user.
+To view details about a contact or user, select them from the left-hand area of 
+the Contacts Center portlet. For each user, you'll have the following options
+present as buttons across the top of their details:
+
+- *Connect/Disconnect* sends a connection request to or disconnects you from
+  the selected user.
 - *Follow/Unfollow* subscribes and unsubscribes you to the selected user's
   activities stream.
 - *Block/Unblock* allows you to block and unblock users from viewing your
   activities stream. Blocking a user only prevents that user from following you
   or adding you as a connection. A blocked user can still send messages to and
   view the public profile information of the blocking user. 
-- *Export vCard* lets you export a user's vCard and save it as a VCF file. vCard
+- *vCard* lets you export a user's vCard and save it as a VCF file. vCard
   is a file format standard for electronic business cards.
-- *Go to Profile* is a link to the selected user's public profile page.
+  
+Clicking the user's name takes you to their profile page.
 
 ![Figure 1.x: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center2.png)
+
+The Contacts Center also lets you select multiple users via the checkboxes to 
+the left of each user. Doing so presents you with the same buttons listed above. 
+This is a great time saver for when you want to manage your interactions with 
+several users at once.
 
 #### Microblogs
 
@@ -609,7 +624,8 @@ your name, would you?
 
 Social Office's private messaging system allows you to send email-like messages
 to other users within the portal. Its interface is similar to that of an email
-client. You can select messages to mark them as read or unread or mark them for
+client. Messages are aggregated by thread, with the most recent message shown. 
+You can select messages to mark them as read or unread or mark them for 
 deletion. Use the *New Message* button to compose a new message. Just like with
 email, you can enter a subject, a message body, and add attachments. Open the
 dropdown menu next to the *To* field to select a user or users to send your
@@ -648,7 +664,9 @@ portlet to filter tasks by tag or by site. Use the *Add Task* button at the top
 left to create new tasks. You can enter a description of the task, choose an
 assignee from your contacts (or assign to yourself), select a priority, and,
 optionally, enter a due date. It's also helpful, especially when there are large
-numbers of tasks, to tag your tasks. 
+numbers of tasks, to tag your tasks. To resolve a task, select it, then click 
+the *Resolve* button. A notification will then show up for the creator of the 
+task to let them know it has been resolved.
 
 ![Figure 1.x: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-julie.png)
 
@@ -703,7 +721,8 @@ updates from your private site.
 The public Contacts and Microblogs applications have their own public pages.
 These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
-Microblogs portlet allows users to comment on entries.
+Microblogs portlet allows users to comment on entries. The public Contacts 
+application shows those the user is connected to or following.
 
 ### Using Social Office Sites For Collaboration [](id=using-social-office-sites-for-collab-liferay-portal-3-0-social-office-01-en)
 
