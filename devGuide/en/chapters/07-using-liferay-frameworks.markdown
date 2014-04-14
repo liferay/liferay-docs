@@ -2088,9 +2088,17 @@ By defining the entity's container model, several methods are generated that we
 can use to obtain the children entities of a parent, or in this case, songs of
 an album.
 
-<!-- TODO In what classes are these methods generated? Can you point out
-examples of these generated methods? Are they empty method stubs the developer
-needs to implement or are they already implemented? Jim -->
+For this particular example, the `*Model.java`, `*ModelClp.java`, and
+`*ModelImpl.java` classes are generated, which implement the *ContainerModel*.
+These classes implement the following methods:
+
+- `getContainerModelId()`
+- `setContainerModelId()`
+- `getParentContainerModelId()`
+- `setParentContainerModelId()`
+- `getContainerModelName()`
+
+Now you have the ability to retrieve songs of an album!
 
 Next, we'll define children entities of a parent for the Recycle Bin framework.
 
@@ -2124,16 +2132,17 @@ component of the `moveDependentsToTrash()` method:
 
         songPersistence.update(song);
 
-2. Add the trash version entity. If you only create trash entries, they'll only
-appear in the first level of the Recycle Bin. Trash versions are viewable when
-navigating inside an entity. Adding a trash version can be done similar to the
-below code snippet:
+2. Add the trash version entity. When moving content with versions
+   to the Recycle Bin, the trash version entity stores the status of those
+   versions, since those statuses are set back to their original value when the
+   file is restored. When a folder with content is sent to the Recycle Bin, each
+   element in that folder also generates a trash version. You can view trash
+   versions by navigating inside a trash entry. Adding a trash version can be
+   done similar to the below code snippet:
 
         if (oldStatus != WorkflowConstants.STATUS_APPROVED) {
             trashVersionLocalService.addTrashVersion(trashEntryId,
                  Song.class.getName(), song.getSongId(), status, null);
-
-<!-- TODO Please explain what a trash version is. Jim -->
 
 3. Update the asset entry's visibility to *false*. We accomplished this in the
    `moveSongToTrash()` service method from the *Moving Entries to the Recycle
