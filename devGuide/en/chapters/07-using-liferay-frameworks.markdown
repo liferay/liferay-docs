@@ -1821,9 +1821,13 @@ This method is returning the constructor method for the
 class. This builds and returns the instance of the trash renderer class, which
 is now available for you to use.
 
-Congratulations! Your app can now move entries to the Recycle Bin. What about
-restoring entries from the Recycle Bin to their original state? Let's learn how
-to do this next.    
+Congratulations! Your app can now move entries to the Recycle Bin. You can test
+the Recycle Bin feature in the example Jukebox portlet by recycling songs.
+
+![Figure 7.2: To recycle songs in the Jukebox portlet, first click the *i* button, and then select *Move to the Recycle Bin*.](../../images/recycle-songs-steps.png)
+
+What about restoring entries from the Recycle Bin to their original state? Let's
+learn how to do this next.   
 
 ### Restoring Entries from the Recycle Bin
 
@@ -2286,6 +2290,15 @@ class. This method is called when the entry you're restoring needs its title
 updated, so it no longer conflicts with the pre-existing entry with the same
 name. After implementing these methods, you should always be able to resolve
 naming conflicts amongst your trashed entries.
+
+Fantastic! The Conflicts Resolution framework is implemented for your app. The
+figure below exemplifies a conflict resolution pop-up after trying to restore an
+identially named song that is already present in the Songs portlet.
+
+![Figure 7.4: The Recycle Bin handles conflicts by notifying the user with a pop-up message and options on how to solve the problem.](../../images/resolved-conflict-rb.png)
+
+Now you have a smarter, more efficient Recycle Bin that handles potential
+conflicts with ease.
 
 Congratulations! You've finished your journey through the Recycle Bin framework.
 You accomplished this feat by developing your app to move entries to the Recycle
