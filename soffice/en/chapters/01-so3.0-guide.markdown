@@ -539,8 +539,12 @@ more activities.
 
 The Upcoming Tasks portlet displays a list of tasks that have been created for
 you or that you've assigned to yourself. The Events portlet integrates with the
-Calendar portlet belonging to your scope to show upcoming events for the next
-few days.
+Calendar portlet belonging to your scope to show upcoming events. By default, 
+events appear only if you've accepted the event and it is scheduled to occur 
+within one day. You can set it to show events up to five days ahead, as well as 
+the maximum nuber of events to show, in the portlet configuration. Access the 
+configuration by clicking the gear icon at the top right of the portlet and then 
+selecting *Configuration*.
 
 ![Figure 1.x: Upcoming tasks and events shows you what's on your plate.](../../images/upcoming-task-events.png)
 
@@ -558,14 +562,24 @@ of Social Office users' personal sites.
 The Contacts Center is an important application for Social Office because it
 allows users to create LinkedIn-style connections and Twitter-style followers.
 This enables users to customize who they share information about social
-activities with and whose activity they're interested in. The Contacts Center
-application displays a list of portal users. You can choose to display *All*,
-*Connections*, *Following*, or *My Contacts*. If you are a member of a site, 
-you can also choose to display only the members of that site. There's also a 
-search bar so you can search for specific users. The Contacts Center is also 
-capable of storing contacts that aren't portal users, making it a great one stop 
-shop for all of your contacts. To add a new external contact, just click on the 
-*Add Contact* button at the top of the Contacts Center.
+activities with and whose activity they're interested in. Connecting and 
+following are similar but differ in a few ways. The main distinction is that a 
+connection is a two-way relationship, while following is only one-way. As a 
+simple example, if you're connected with a user then you will see each others 
+activities in your respective Activities feeds. As such, initiating a connection 
+requires approval from both users. If you're only following a user, then you 
+will still see their activities in your feed, but they will not see yours. Also, 
+connections are reflected in other portlets beyond the Activities feed. For 
+example, the Tasks and Chat portlets can be configured to only show those items 
+that belong to users you are connected with.
+
+The Contacts Center application displays a list of portal users. You can choose 
+to display *All*, *Connections*, *Following*, or *My Contacts*. If you are a 
+member of a site, you can also choose to display only the members of that site. 
+There's also a search bar so you can search for specific users. The Contacts 
+Center is also capable of storing contacts that aren't portal users, making it a 
+great one stop shop for all of your contacts. To add a new external contact, 
+just click on the *Add Contact* button at the top of the Contacts Center.
 
 To view details about a contact or user, select them from the left-hand area of 
 the Contacts Center portlet. For each user, you'll have the following options
@@ -666,12 +680,19 @@ assignee from your contacts (or assign to yourself), select a priority, and,
 optionally, enter a due date. It's also helpful, especially when there are large
 numbers of tasks, to tag your tasks. To resolve a task, select it, then click 
 the *Resolve* button. A notification will then show up for the creator of the 
-task to let them know it has been resolved.
+task to let them know it has been resolved. By default, only unresolved tasks 
+will appear in the Tasks portlet. Click the checkbox next to *Show Completed Tasks* 
+to view all tasks, regardless of the resolution status. The Permissions button 
+at the top left of the Tasks portlet lets you choose which roles grant permission 
+to add new tasks or edit existing ones. This button will only appear if you have 
+permission to set permissions for tasks.
 
 ![Figure 1.x: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-julie.png)
 
-The *Permissions* button at the top left of the Tasks portlet lets you choose
-which roles grant permission to add new tasks or edit existing ones.
+If you want to create tasks for a site, then a Tasks portlet will have to be 
+added to a page on that site. Tasks created through a Tasks portlet on a site 
+page will automatically be scoped to that site. The site will then be listed on 
+the task when you view it in the Tasks portlet.
 
 ### Using the Profile Page and Other Public Pages [](id=using-the-profile-page-and-other-pub-liferay-portal-3-0-social-office-01-en)
 
@@ -792,7 +813,9 @@ The Bookmarks portlet allows users to create a collection of useful links on
 your site and you can configure the RSS portlet to display an RSS feed of your
 choice. The Welcome portlet allows you to set up a custom welcome message for
 your site. It's really just a WYSIWYG portlet with its title changed to
-*Welcome*.
+*Welcome*. Click on the configuration icon of the portlet to bring up the 
+WYSIWYG editor. This is the same powerful editor that appears in Liferay Portal.  
+You can read about it in the user guide in [http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en](the section on managing content).
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet
 applications that are automatically scoped for the site. This means that these
