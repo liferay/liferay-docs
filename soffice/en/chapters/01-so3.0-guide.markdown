@@ -814,7 +814,7 @@ your site and you can configure the RSS portlet to display an RSS feed of your
 choice. The Welcome portlet allows you to set up a custom welcome message for
 your site. It's really just a WYSIWYG portlet with its title changed to
 *Welcome*. Click on the configuration icon of the portlet to bring up the 
-WYSIWYG editor. This is the same powerful editor that appears in Liferay Portal.  
+WYSIWYG editor. This is the same powerful editor that appears in Liferay Portal. 
 You can read about it in the user guide in [the section on managing content](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en).
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet
