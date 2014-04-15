@@ -1,13 +1,15 @@
-Put sample code in folders that map to the article and section to which it is related.
+Put sample code in a folder named the same as the folder of the article which
+references the code.
 
-For example, add the following folders for sample plugins that demonstrate using the User and Organization APIs:
+For example, plugins for *User and Organization* articles belong in a folder
+named `01-users-and-organizations/`. Their directory structure would look like
+this:
 
-- `platform/` - Note that the folder has no number prefix, unlike its related article Markdown file. 
-    - `users-and-organizations/`
-        - `sample-01/`
-            - `some-portlet/`
-                ...
-        - `[sample-02/]`
-            - `some-portlet/`
-                ...
+- ``01-users-and-organizations/`
+    - `sample-01/`
+        - `some-portlet/`
+            ...
+    - `[sample-02/]`
+        - `[some-portlet/]`
+            ...
                 
