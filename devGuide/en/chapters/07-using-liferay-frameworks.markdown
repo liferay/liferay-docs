@@ -1835,7 +1835,7 @@ Now that you're able to move entries *to* the Recycle Bin, let's develop your
 app to restore entries *from* the Recycle Bin. Besides, what's the point of
 having a Recycle Bin if you can't restore its entries?
 
-![Figure 7.2: By implementing the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
+![Figure 7.3: By implementing the *Restore* functionality, you'll be able to move Recycle Bin entries back to their original locations.](../../images/restore-entry-rb.png)
 
 Entries are restored by returning their visibility in their original location,
 and removing them from the Recycle Bin. As we briefly discussed in the last
@@ -1964,7 +1964,7 @@ The Recycle Bin framework is capable of supporting an *Undo* button, so you can
 conveniently undo the action of sending an entry to the Recycle Bin without
 leaving the page.
 
-![Figure 7.3: Implement the Undo button to allow a convenient way to undo the sending of entries to the Recycle Bin.](../../images/undo-rb.png)
+![Figure 7.4: Implement the Undo button to allow a convenient way to undo the sending of entries to the Recycle Bin.](../../images/undo-rb.png)
 
 Also, you're provided links to the trashed entry and Recycle Bin. Let's
 implement the Undo button and its related links!
@@ -2295,7 +2295,7 @@ Fantastic! The Conflicts Resolution framework is implemented for your app. The
 figure below exemplifies a conflict resolution pop-up after trying to restore an
 identially named song that is already present in the Songs portlet.
 
-![Figure 7.4: The Recycle Bin handles conflicts by notifying the user with a pop-up message and options on how to solve the problem.](../../images/resolved-conflict-rb.png)
+![Figure 7.5: The Recycle Bin handles conflicts by notifying the user with a pop-up message and options on how to solve the problem.](../../images/resolved-conflict-rb.png)
 
 Now you have a smarter, more efficient Recycle Bin that handles potential
 conflicts with ease.
@@ -2356,7 +2356,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 7.4: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 7.6: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -2459,7 +2459,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 7.5: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 7.7: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2770,7 +2770,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
 
-![Figure 7.6: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 7.8: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -2958,7 +2958,7 @@ there's no need for the company-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 7.7: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 7.9: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a parallel destination type in our `messaging-spring.xml`:
 
