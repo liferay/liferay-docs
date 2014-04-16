@@ -1937,11 +1937,13 @@ Next we need to clean up the entries for the JAR files that we deleted.
 We'll also delete some other files that can cause conflicts with Liferay when
 it's deployed.
 
-1.  Remove the following files from `$JBOSS_HOME/server/default/deploy`:
+1.  Remove the following directories and files from `$JBOSS_HOME/server/default/deploy`:
     - /messaging
-	- ejb2-container-jboss-beans.xml
+    - /profileservice-secured.jar
+    - /uuid-key-generator.sar
+    - ejb2-container-jboss-beans.xml
     - ejb2-timer-service.xml
-    - ejb3-connections-jboss-beans.xml
+    - ejb3-connectors-jboss-beans.xml
     - ejb3-container-jboss-beans.xml
     - ejb3-interceptors-aop.xml
     - ejb3-timerservice-jboss-beans.xml
@@ -1949,8 +1951,6 @@ it's deployed.
     - jms-ra.rar
     - mail-ra.rar
     - mail-service.xml
-    - profile-service-secured.jar
-    - uuid-key-generator.sar
 
 2. Delete the following in `$JBOSS_HOME/server/default/deployers`:
 
