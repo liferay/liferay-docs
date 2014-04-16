@@ -1937,7 +1937,7 @@ Next we need to clean up the entries for the JAR files that we deleted.
 We'll also delete some other files that can cause conflicts with Liferay when
 it's deployed.
 
-1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
+1.  Remove the following files from `$JBOSS_HOME/server/default/deploy`:
     - /messaging
 	- ejb2-container-jboss-beans.xml
     - ejb2-timer-service.xml
@@ -1952,7 +1952,7 @@ it's deployed.
     - profile-service-secured.jar
     - uuid-key-generator.sar
 
-2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
+2. Delete the following in `$JBOSS_HOME/server/default/deployers`:
 
         jboss-ejb3-endpoint-deployer.jar
         messaging-definitions-jboss-beans.xml
@@ -1962,13 +1962,13 @@ it's deployed.
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
 
-1. Navigate to `$JBOSS_HOME/../server/default/deploy/ROOT.war` and delete all
+1. Navigate to `$JBOSS_HOME/server/default/deploy/ROOT.war` and delete all
    the content of the folder.
 
 2. Extract the contents of the Liferay WAR file into this folder.
 
 3. Create a file named `jboss-classloading.xml` in the
-   `$JBOSS_HOME/../server/default/ROOT.war/WEB-INF` directory and add the
+   `$JBOSS_HOME/server/default/ROOT.war/WEB-INF` directory and add the
    following contents to it:
 
         <classloading xmlns="urn:jboss:classloading:1.0"
@@ -1992,7 +1992,7 @@ files, it's time to deploy Liferay.
         hibernate.validator.apply_to_ddl=false
         hibernate.validator.autoregister_listeners=false
 
-5.  Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
+5.  Delete the following files from the `$JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib`:
     - jaxrpc.jar
     - stax.jar
     - xercesImpl.jar
