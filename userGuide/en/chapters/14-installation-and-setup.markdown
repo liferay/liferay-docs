@@ -1986,19 +1986,19 @@ files, it's time to deploy Liferay.
     necessary to add a `jboss-classloading.xml` file to the `WEB-INF` folder of
     each Liferay plugin; see the *Deploying plugins* section below.
 
-4.  Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
+4. Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
     `$JBOSS_HOME`) and add the following properties:
 
         hibernate.validator.apply_to_ddl=false
         hibernate.validator.autoregister_listeners=false
 
-5.  Delete the following files from the `$JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib`:
+5. Delete the following files from the `$JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib`:
     - jaxrpc.jar
     - stax.jar
     - xercesImpl.jar
     - xml-apis.jar
 
-6.  Add the following lines to your `portal-ext.properties` file:
+6. Add the following lines to your `portal-ext.properties` file:
 
 	NOTE: The autodeploy folder must be set with the full name of the folder;
 	you can't use any variables to define the location.
@@ -2006,7 +2006,17 @@ files, it's time to deploy Liferay.
 		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
 		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
 
-7. Start the JBoss Application Server.
+7. Increase the memory given to the JVM
+
+    By deafult JBoss gives 512MB memory to the JVM. With this setting it is most
+    likely that you will face the following error at startup, runtime or shutdown:
+
+    java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+    To give the JVM more memory, edit `$JBOSS_HOME/bin/run.conf.bat` (`run.conf`
+    on *nix) and change `-Xmx512M` to `-Xmx1024M`.
+
+8. Start the JBoss Application Server.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
