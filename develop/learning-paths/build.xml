@@ -5,6 +5,5 @@
 	<import file="../build.xml" />
 
 	<property name="doc.dir" value="learning-paths"/>
-	
 
 </project>
