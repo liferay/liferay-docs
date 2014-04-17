@@ -2,8 +2,8 @@
 
 <project name="Use" default="echo-props" basedir=".">
 
-	<import file="../build-common.xml" />
+	<import file="../build-site-common.xml" />
 
-	<property name="doc.dir" value="use"/>
+	<property name="page.dir" value="use"/>
 
 </project>
