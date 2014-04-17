@@ -2,8 +2,8 @@
 
 <project name="Develop" default="echo-props" basedir=".">
 
-	<import file="../build-common.xml" />
+	<import file="../build-site-common.xml" />
 
-	<property name="doc.dir" value="develop"/>
+	<property name="page.dir" value="develop"/>
 
 </project>
