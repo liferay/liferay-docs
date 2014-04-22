@@ -29,7 +29,7 @@
 	<target name="article-to-html" depends="prepare" description="Converts single markdown article to an html file">
 		<echo message="... converting ${article} to html"/>
 		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-		<exec executable="${pandoc.app}" dir="${build.dir}">
+		<exec executable="${pandoc.app}">
 			<arg value="-f" />
 			<arg value="markdown"/>
 			<arg value="-t"/>
