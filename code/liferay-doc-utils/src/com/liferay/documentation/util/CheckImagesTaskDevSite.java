@@ -36,30 +36,33 @@ public class CheckImagesTaskDevSite extends Task {
 			throw new BuildException("docdir " + dir.getAbsolutePath() +
 				" is empty");
 		}
+		
+		File articleDir = new File(dir.getAbsolutePath() + "/articles");
+		File[] articles = articleDir.listFiles();
+		List<File> chFiles = new ArrayList<File>();
 
-		File langDir = null;
-		for (File file : files) {
-			if (file.isDirectory() && file.getName().equals(_lang)) {
-				langDir = file;
-				break;
-			}
+		if ((!articleDir.exists() || !articleDir.isDirectory())) {
+			throw new BuildException("Missing articles directory " +
+					articleDir.getAbsolutePath());
 		}
-
-		if (langDir == null) {
-			throw new BuildException("Missing language directory (" + _lang +
-				") within doc.dir " + _docdir);
-		}
-
+		
 		try {
-			File chDir = new File(langDir.getPath()+ "/chapters");
-			if (!chDir.exists() || !chDir.isDirectory()) {
-				throw new BuildException("Missing chapters directory " +
-						chDir.getAbsolutePath());
-			}
+			for (File article : articles) {
 
+				if (article.getName().contains(".")) {
+					continue;
+				}
+
+				File[] allFiles = article.listFiles();
+
+				for (File file : allFiles) {
+					chFiles.add(file);
+				}
+
+			}
 			boolean foundChapterFile = false;
 
-			for (File chFile : chDir.listFiles()) {
+			for (File chFile : chFiles) {
 				if (!chFile.getName().endsWith("markdown")) {
 					continue;
 				}
@@ -126,10 +129,6 @@ public class CheckImagesTaskDevSite extends Task {
 		_docdir = docdir;
 	}
 
-	public void setLang(String lang) {
-		_lang = lang;
-	}
-
 	private static List<String> _checkImgSrc(
 			String content, String file, int line) {
 
@@ -172,5 +171,4 @@ public class CheckImagesTaskDevSite extends Task {
 
 	private String _chapter;
 	private String _docdir;
-	private String _lang;
 }
