@@ -51,17 +51,27 @@ public class CheckImagesTaskDevSite extends Task {
 
 		if (_chapter != null) {
 			
-			if (!_chapter.contains("\\") || !_chapter.contains("articles") || 
+			if (!_chapter.contains("articles") ||
 					!_chapter.contains(".markdown")) {
 				throw new BuildException("Did not specify article directory "
 						+ "structure correctly: " + _chapter);
 			}
 			
-			int firstSlash = _chapter.indexOf("\\");
-			int secondSlash = _chapter.indexOf("\\", firstSlash + 1);
-			int dot = _chapter.indexOf(".");
+			if (_chapter.contains("\\")) {
+				int firstBackslash = _chapter.indexOf("\\");
+				int secondBackslash = _chapter.indexOf("\\", firstBackslash + 1);
+				int dot = _chapter.indexOf(".");
 
-			_chapter = _chapter.substring(secondSlash + 1, dot);
+				_chapter = _chapter.substring(secondBackslash + 1, dot);
+			}
+			
+			else if (_chapter.contains("/")) {
+				int firstSlash = _chapter.indexOf("/");
+				int secondSlash = _chapter.indexOf("/", firstSlash + 1);
+				int dot = _chapter.indexOf(".");
+
+				_chapter = _chapter.substring(secondSlash + 1, dot);
+			}
 		}
 		
 		try {
