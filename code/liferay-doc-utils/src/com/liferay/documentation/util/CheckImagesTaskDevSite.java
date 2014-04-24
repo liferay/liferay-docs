@@ -46,6 +46,24 @@ public class CheckImagesTaskDevSite extends Task {
 					articleDir.getAbsolutePath());
 		}
 		
+		// If there is an article limit, convert the limit from the article's
+		// directory structure to the exact article name.
+
+		if (_chapter != null) {
+			
+			if (!_chapter.contains("\\") || !_chapter.contains("articles") || 
+					!_chapter.contains(".markdown")) {
+				throw new BuildException("Did not specify article directory "
+						+ "structure correctly: " + _chapter);
+			}
+			
+			int firstSlash = _chapter.indexOf("\\");
+			int secondSlash = _chapter.indexOf("\\", firstSlash + 1);
+			int dot = _chapter.indexOf(".");
+
+			_chapter = _chapter.substring(secondSlash + 1, dot);
+		}
+		
 		try {
 			for (File article : articles) {
 
