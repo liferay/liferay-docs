@@ -16,6 +16,19 @@
 	<property name="build.dir" value="./build"/>
 	<property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
 
+	<!-- taskdefs -->
+
+	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<target name="prepare" description="Creates build directory">
 		<echo message="... creating build directory"/>
 		<mkdir dir="${project.dir}/${page.dir}/${doc.dir}/${build.dir}"/>
@@ -26,7 +39,7 @@
 		</copy>
 	</target>
 
-	<target name="article-to-html" depends="prepare" description="Converts single markdown article to an html file">
+	<target name="article-to-html" depends="prepare, check-images-site" description="Converts single markdown article to an html file">
 		<echo message="... converting ${article} to html"/>
 		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
 		<exec executable="${pandoc.app}">
@@ -41,7 +54,7 @@
 		</exec>
 	</target>
 
-	<target name="article-to-html-win" depends="prepare" description="Converts single markdown article to an html file on windows">
+	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts single markdown article to an html file on windows">
 		<echo message="... converting ${article} to html"/>
 		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
 		<exec executable="cmd">
@@ -56,6 +69,11 @@
 			<arg value="${project.dir}/${page.dir}/${doc.dir}/${build.dir}/${article}.html"/>
 			<arg value="${article}"/>
 		</exec>
+	</target>
+	
+	<target name="check-images-site" description="Verifies all images referenced in markdown files for a document or article">
+		<checkimgssite docdir="${doc.dir}" chapter="${article}">
+		</checkimgssite>
 	</target>
 
 </project>

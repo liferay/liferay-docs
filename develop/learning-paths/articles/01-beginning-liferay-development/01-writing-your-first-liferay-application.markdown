@@ -5,7 +5,7 @@ guide you through the process of creating your project and deploying your
 application step-by-step. Before you know it, you'll have Liferay serving your
 application next to the rest of the applications that come with Liferay. 
 
-![Figure 1.x: You'll create this simple application.](../../images/my-first-app-mine.png)
+![Figure 1.x: You'll create this simple application.](../../images/my-first-app.png)
 
 Your first application is simple: you'll build a portlet application that displays
 the venerable *Hello World* message. You'll be surprised at how easy this is. 
