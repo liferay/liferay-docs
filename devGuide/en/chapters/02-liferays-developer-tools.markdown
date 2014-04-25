@@ -3203,14 +3203,14 @@ that you can use for Liferay: hot deploy and auto deploy. These two deployment
 options work very differently and are not the same.
 
 How, you say? We'll give a brief synopsis for each deployment method in this
-section. Let's get started by explaining hot deploy.
+section. Let's get started by explaining the hot deployment method.
 
 ### Using Hot Deployment
 
 The first deployment method we'll explore is *hot* deployment. Many developers
 are familiar with hot deployment in the context of JEE application servers. In
 summary, you place an application artifact (WAR or EAR) file into a specifically
-configured directory, your application server (Tomcat, Websphere, Weblogic,
+configured directory, your application server (Tomcat, WebSphere, WebLogic,
 etc.) picks up that artifact, deploys it within the application server, and
 starts the application.
 
@@ -3224,15 +3224,15 @@ production using hot deployment include:
 - Ensuring the application deploys successfully across all nodes, simultaneously
 
 Most application servers solve these constraints by using a master/slave type of
-design: an admin server with multiple managed servers. When you hot deploy, you
-use the admin server's user interface, or vendor console tool like
+design: an admin server with multiple managed servers. When you hot deploy a
+plugin, you use the admin server's user interface, or vendor console tool like
 [Wsadmin](http://en.wikipedia.org/wiki/Wsadmin), to add the archive, select
 which managed servers should deploy it, and start the application. Application
 server vendors often have different names and tools for this:
 
 - JBoss "domain" mode
-- Weblogic "production" mode
-- Websphere deployment manager
+- WebLogic "production" mode
+- WebSphere deployment manager
 - Tomcat FarmWarDeployer
 
 These reside completely outside of Liferay Portal and are strictly in the
@@ -3246,9 +3246,9 @@ in 7.0, we will more cleanly separtate "hot deploy" and "application lifecycle"
 concepts."  We should keep these statements by Mike Han in mind for 7.0.-->
 
 There are some specific Liferay capabilities that won't work unless your
-application server has hot deploy capabilities. Specifically, the hot deployment
-of custom JSPs in hooks. Liferay's JSP hook overriding capabilities depend upon
-the application server's ability to:
+application server has hot deployment capabilities. Specifically, the hot
+deployment of custom JSPs in hooks. Liferay's JSP hook overriding capabilities
+depend upon the application server's ability to:
 
 - Deploy based on an exploded portal WAR
 - Load changes to JSP files at runtime
@@ -3267,17 +3267,56 @@ and deploy it using the application server's deployment tools. Of course, you'll
 still need to deploy your hook as well, but you no longer need to worry about
 the JSP overrides not being loaded by your application server.
 
-I hope we could whet your appetite on hot deployments. Next, let's explore what
+We hope we could whet your appetite on hot deployments. Next, let's explore what
 auto deployment accomplishes behind the scenes.
 
 ### Using Auto Deployment
 
+Instead of thinking of *auto* deployment as a completely separate process
+compared to hot deployment, it can be thought as a mostly optional feature that
+works in conjunction with the hot deployment capabilities of the application
+server.
 
+So how does auto deployment work with Liferay plugins? Here's a list of tasks
+completed using auto deployment.
 
+1. Picks up a Liferay recognized archive (e.g., `*-portlet.*`, `*-theme.*`,
+   `*-web.*`, `*.lpkg`)
+2. Injects required libraries (e.g., `util-java.jar`, `util-taglib.jar`)
+3. Injects dependent jars (specified in `liferay-plugins.properties`)
+4. Injects required taglib descriptors (e.g., `liferay-theme.tld`)
+5. Injects required deployment descriptors (e.g., app server specific
+   descriptors)
+6. Injects Liferay specific deployment descriptors if missing (e.g.,
+   `liferay-portlet.xml`)
 
+By completing these tasks automatically, the plugin developer saves time and
+does not have to learn all of Liferay's deployment descriptors. However, this
+feature is incompatible in an application server's farm or multi-node modes.
 
+So now you're probably wondering how to configure your application server in
+these modes? The answer is simple: Do not use the auto deployment method at
+runtime, use it at build time.
 
-Let's summarize what we learned in this chapter.
+The Liferay Plugins SDK allows you to preprocess your archives and inject all
+the required elements and, thus, bypassing the auto deployer at runtime. You
+simply need to call the following Ant task:
+
+    ant direct-deploy
+
+The `direct-deploy` Ant task creates an exploded WAR from which you can easily
+create a WAR file. The location of the exploded WAR depends upon what you have
+configured for the application server's deploy directory in your Plugins SDK's
+`build.[username].properties` file.
+
+If you choose not to use the Liferay Plugins SDK, then you can examine the
+`build-common.xml` file in the SDK to see how Liferay invokes the deployer
+tools.
+
+Terrific! You now know the differences between hot deploy and auto deploy.
+Understanding what's going on during the deployment of your plugins is crucial
+if anything ever goes wrong, or if you want to make your deployment process
+easier or more efficient. Let's summarize what we learned in this chapter.
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-02-en)
 
@@ -3293,6 +3332,9 @@ framework. You configured Maven locally, downloaded and installed the required
 Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
+
+Lastly, you learned about Liferay's deployment process, and the difference
+between hot deploy and auto deploy.
 
 Feeling confused by the number of features provided by Eclipse and Liferay IDE?
 You can easily come across difficult questions and run into very specific
