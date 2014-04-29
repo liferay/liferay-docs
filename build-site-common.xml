@@ -32,8 +32,8 @@
 
 	<target name="prepare" description="Creates build directory.">
 		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${page.dir}/${doc.dir}/${build.dir}"/>
-		<touch file="${project.dir}/${page.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
 		<mkdir dir="${build.dir}/images"/>
 		<copy todir="${build.dir}/images" overwrite="true">
 			<fileset dir="./images"/>
@@ -50,7 +50,7 @@
 			<arg value="html"/>
 			<arg value="-smart"/>
 			<arg value="-o"/>
-			<arg value="${project.dir}/${page.dir}/${doc.dir}/${build.dir}/${article}.html"/>
+			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
 			<arg value="${article}"/>
 		</exec>
 	</target>
@@ -67,7 +67,7 @@
 			<arg value="html"/>
 			<arg value="-smart"/>
 			<arg value="-o"/>
-			<arg value="${project.dir}/${page.dir}/${doc.dir}/${build.dir}/${article}.html"/>
+			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
 			<arg value="${article}"/>
 		</exec>
 	</target>
@@ -85,7 +85,7 @@
 	
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="./doc.properties" />
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${page.dir}-${doc.dir}.zip">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
 		</zip>

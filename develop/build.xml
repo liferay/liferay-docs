@@ -4,6 +4,6 @@
 
 	<import file="../build-site-common.xml" />
 
-	<property name="page.dir" value="develop"/>
+	<property name="purpose.dir" value="develop"/>
 
 </project>
