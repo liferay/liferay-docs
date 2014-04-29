@@ -145,7 +145,6 @@ aware that your specific implementation will look slightly different.
     Each of the methods in this class have a significant role in defining and
     implementing ADTs for your custom portlet. View the list below for a
     detailed explanation for each method defined specifically for ADTs:
-
     - **getClassName():** Defines the type of entry your portlet is rendering.
     - **getName():** Declares the name of your ADT type (typically, the name of
     the portlet).
