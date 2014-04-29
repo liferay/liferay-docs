@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="tutorials Conversion" default="echo-props" basedir=".">
+<project name="tutorials Conversion" basedir=".">
 
 	<import file="../build.xml" />
 

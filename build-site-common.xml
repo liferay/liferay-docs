@@ -1,6 +1,6 @@
 <?xml version="1.0"?> 
 
-<project name="Dev Site Documentation Management" default="echo-props" basedir=".">
+<project name="Dev Site Documentation Management" basedir=".">
 	<property name="project.dir" value="../.." />
 
 	<path id="lib.classpath">

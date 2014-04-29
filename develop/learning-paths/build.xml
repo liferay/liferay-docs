@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="learning-paths Conversion" default="echo-props" basedir=".">
+<project name="learning-paths Conversion" basedir=".">
 
 	<import file="../build.xml" />
 
