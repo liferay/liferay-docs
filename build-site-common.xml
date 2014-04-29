@@ -84,7 +84,7 @@
 	</target>
 	
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
-		<property file="./doc.properties" />
+		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
