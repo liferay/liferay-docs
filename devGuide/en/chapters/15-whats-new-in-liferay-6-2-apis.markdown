@@ -52,13 +52,13 @@ Application Display Templates API.
 A portlet's Display Settings (*Options* &rarr; *Configuration* &rarr; *Setup*
 &rarr; *Display Settings*) let you customize its display. They come built in
 with Liferay, so you don't have to do anything special to enable them for your
-custom portlets. But what if you need settings in addition to Liferay's display
-settings? You could develop a theme or hook with the display options you need,
-but it'd be nice if you could apply particular display options to specific
+custom portlets. But what if you need settings in addition to Liferay's default
+display settings? You could develop a theme or hook with the display options you
+need, but it'd be nice if you could apply particular display options to specific
 portlet instances without having to redeploy any plugins. Ideally, you should be
 able to provide authorized portal users the ability to apply custom display
-settings to portlets. This saves you from having to change portlet configuration
-code every time you need new settings. 
+settings to portlets. This would save you from having to change portlet
+configuration code every time you need new settings. 
 
 Be of good cheer! That's precisely what Application Display Templates (ADTs)
 provide-- the ability to add custom display settings to your portlets from the
@@ -142,12 +142,21 @@ aware that your specific implementation will look slightly different.
             }
         }
 
-<!--Need to explain LanguageUtil.get(locale, "locations")-->
+    Each of the methods in this class have a significant role in defining and
+    implementing ADTs for your custom portlet. View the list below for a
+    detailed explanation for each method defined specifically for ADTs:
+
+    - **getClassName():** Defines the type of entry your portlet is rendering.
+    - **getName():** Declares the name of your ADT type (typically, the name of
+    the portlet).
+    - **getResourceName():** Specifies which resource is using the ADT (e.g., a
+    portlet) for permission checking.
+    - **getTemplateVariableGroups():** Defines the variables exposed in the
+    template editor.
 
 2. Now that we've created the template handler, declare it with the
    `<template-handler>...</template-handler>` tags in the Location Listing
-   Portlet's `<portlet>` element of your `liferay-portlet.xml` file (if
-   necessary):
+   Portlet's `<portlet>` element of your `liferay-portlet.xml` file:
 
         <?xml version="1.0"?>
         <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
@@ -193,9 +202,9 @@ aware that your specific implementation will look slightly different.
 4. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the `liferay-ui:ddm-template-selector`
    taglib in the JSP file you're using to control your portlet's configuration
-   mode (e.g., `configuration.jsp` if you chose to have it created through
-   Liferay Developer Studio's New Portlet wizard), providing the required
-   information. We'll add the display settings to the Location Listing Portlet's
+   mode (e.g., `config.jsp` if you choose to have it created through Liferay
+   Developer Studio's New Portlet wizard), providing the required information.
+   We'll add the display settings to the Location Listing Portlet's
    `configuration.jsp` file:
  
         <%@ include file="../init.jsp" %>
@@ -222,7 +231,10 @@ aware that your specific implementation will look slightly different.
         ...
         </aui:form>
 
-<!--Discuss TemplateHandler templateHandler line and liferay-ui:ddm block-->
+    In this JSP, the `TemplateHandler` object is initialized. Then, we specify
+    the `liferay-ui:ddm-template-selector` taglib, which implements the Display
+    Template drop-down menu in the Location Listing Portlet's Configuration
+    menu.
 
 5. You're almost finished, but you still have to extend your view code to
    render your portlet with the selected ADT. Here is where you decide exactly
@@ -259,24 +271,22 @@ aware that your specific implementation will look slightly different.
             </c:otherwise>
         </c:choose>
 
-<!--Lines 20-25 of the original file are what we need to explain here. Explain
-important parts of code and what's going on. -Cody -->
+    In this code snippet, we initialized variables dealing with the display
+    settings (`displayStyle`, `displayStyleGroupId`, and
+    `portletDisplayDDMTemplateId`), and then used a do-otherwise statement to
+    choose between rendering the ADT, or displaying what was originally in the
+    `view.jsp`. If the `portletDisplayDDMTemplateId` exists, the locations list
+    is initialized and the ADT is rendered using the page context, template ID,
+    and locations.
 
-<!-- We need to point out where this code specifies the rendering based on the
-ADT. It's not obvious how it works. Jim --> 
+Now that our portlet supports ADTs, you can create your own scripts to change
+the display of your portlet. We'll experiment by adding our own custom ADT.
 
-6. Add your FreeMarker or Velocity template script.
-
-<!--Show the Quick List Template and describe it briefly-->
-
-    Now that our portlet supports ADTs, you can create your own scripts to
-    change the display of your portlet, and upload them from your portlet's
-    *Configuration* section in Liferay Portal. Freemarker and Velocity
-    template languages are supported. For the Location Listing Portlet, we've
-    created a basic Freemarker script that takes our *locations* from the default
-    table format and displays them and selected fields in a bullet list format.
-    Here's what our Freemarker script looks like:
-
+1. Navigate to *Admin* &rarr; *Configuration* &rarr; *Application Display
+   Templates*. Then select *Add* &rarr; *Locations Template*. Give your ADT a
+   name and insert the following FreeMarker code into the editor, and click
+   *Save*:
+   
         <#if entries?has_content>
             Quick List:
             <ul>
@@ -286,12 +296,21 @@ ADT. It's not obvious how it works. Jim -->
             </ul>
         </#if>
 
-    Once your script is uploaded into the portal (see our User Guide for the
-    details) and saved, users with the specified roles can select the template
-    when they're configuring the display settings of your portlet on a page. You
-    can visit the [Using Application Display
-    Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
-    section in the Using Liferay Portal for more details.
+2. Go back to your Location Listing Portlet and select *Options* &rarr;
+   *Configuration* and click the *Display Template* drop-down. Select the ADT
+   you created, and click *Save*.
+
+![Figure 15.1: The Quick List template gives your locations in a bullet list format.](../../images/quick-list-template.png)
+    
+For the Location Listing Portlet, we've created a basic FreeMarker script that
+takes our locations from the default table format and displays them and their
+selected fields in a bullet list format.
+    
+Once your script is uploaded into the portal and saved, users with the specified
+roles can select the template when they're configuring the display settings of
+your portlet on a page. You can visit the [Using Application Display
+Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+section in *Using Liferay Portal* for more details on using ADTs.
 
 Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
@@ -331,9 +350,14 @@ Display Templates efficient is to know your template context well, and
 understand what you can use from it. Fortunately, you don't need to memorize
 the context information, thanks to Liferay's advanced template editor!
 
-<!-- It's not clear what the template editor provides with respect to context
-info. It would be good to clarify what it provides and/or how it provides that
-info. Jim --> 
+The template editor provides fields, general variables, and util variables
+customized for which portlet you decide to create an ADT for. These variable
+references can be found on the left-side panel of the template editor. You can
+use them by simply placing your cursor where you'd like the variable placed, and
+clicking the desired variable to place it there. You can learn more about the
+template editor in the [Using Application Display
+Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+section of *Using Liferay Portal*.
 
 Finally, don't forget to run performance tests and tune the template cache
 options by overriding the following portal properties: 
@@ -341,8 +365,12 @@ options by overriding the following portal properties:
     freemarker.engine.resource.modification.check.interval 
     velocity.engine.resource.modification.check.interval
 
-<!-- Before transitioning into the next section, we should summarize what the
-reader has learned from this section about ADTs. Jim -->
+The cool thing about ADTs is the power they provide to your Liferay portlets,
+providing infinite ways of editing your portlet to provide new interfaces for
+your portal users. We stepped through how to configure ADTs for a custom portlet
+like the Location Listing Portlet, tried out a sample template, and ran through
+important recommendations for using ADTs, which included security and
+performance.
 
 Next, we'll show you some of the changes to consider in using AlloyUI 2.0 and
 Twitter&reg; Bootstrap. 
