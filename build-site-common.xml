@@ -15,6 +15,7 @@
 
 	<property name="build.dir" value="./build"/>
 	<property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
+	<property name="dist.dir" value="./dist"/>
 
 	<!-- taskdefs -->
 
@@ -75,5 +76,27 @@
 		<checkimgssite docdir="${doc.dir}" chapter="${article}">
 		</checkimgssite>
 	</target>
+	
+	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies -->
+	<target name="prepare-dist" depends="check-images-site" description="creates dist directory, copies images">
+        <echo message="... creating ${dist.dir} directory"/>
+        <mkdir dir="${dist.dir}"/>
+        <!-- <copy todir="${dist.dir}/images">
+            <fileset dir="images" includes="*.*"/>
+        </copy> -->
+    </target>
+	
+	<target name="dist" depends="prepare-dist" description="prepares document zip file for asset import">
+        <property file="./doc.properties" />
+		<!-- <copy todir="${dist.dir}/articles">
+            <fileset dir="articles" />
+        </copy> -->
+        <zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${page.dir}-${doc.dir}.zip">
+            <!-- <fileset dir="${dist.dir}" includes="images/*.*"/>
+            <fileset dir="${dist.dir}" includes="articles/"/> -->
+			<fileset dir="./" includes="articles/" />
+			<fileset dir="./" includes="images/" />
+        </zip>
+    </target>
 
 </project>
