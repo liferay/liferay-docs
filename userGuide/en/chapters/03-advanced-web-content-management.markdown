@@ -1041,8 +1041,19 @@ can and can't be changed in the translation process. For example, if you don't
 want images or content titles to be changed when the content is translated, you
 can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
-*Localizable* box checked appear within the translation window. Next, we'll
-discuss how to let users customize their site pages.
+*Localizable* box checked appear within the translation window.
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Localizable checkbox was removed
+ for 6.2 CE GA1 and GA2, and 6.2 EE GA1, SP1, and SP2. However, the Localizable
+ checkbox is now available for Liferay following these versions for web content
+ structure fields. You can view
+ [LPS-33161](https://issues.liferay.com/browse/LPS-33161) for more details.
+
+---
+
+Next, we'll discuss how to let users customize their site pages.
 
 ## Allowing Users to Customize Site Pages [](id=allowing-users-to-customize-site-pages-liferay-portal-6-2-user-guide-03-en)
 

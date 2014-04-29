@@ -1885,7 +1885,7 @@ learn how to install artifacts from Liferay's repository next.
 include "EE" in front of "Artifacts in the above heading. In addition, remove
 CE references from this section. Jim --> 
 
-If you'd like to access Liferay's CE or EE artifacts without downloading and
+If you'd like to access Liferay's CE artifacts without downloading and
 installing a `.zip` file, you can configure Maven to automatically
 download and install them from Liferay's own repository:
 [https://repository.liferay.com](https://repository.liferay.com). The first time
@@ -1903,9 +1903,9 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ee</id>
-		    <name>Liferay EE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ee</url>
+            <id>liferay-ce</id>
+		    <name>Liferay CE</name>
+		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
 		    <releases><enabled>true</enabled></releases>
 		    <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -1913,47 +1913,31 @@ First, specify the Liferay Repository's credentials in your project's parent
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-ee</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ee/</url>
+            <id>liferay-ce</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
 
-Note, if you're using artifacts for Liferay CE, replace `liferay-ee` with
-`liferay-ce` and rename the repository to `Liferay CE`. 
-
 ---
 
-![note](../../images/tip-pen-paper.png) **Important:** Do not have the Liferay
-repository configured when publishing artifacts to Maven Central. You'll need to
+![note](../../images/tip-pen-paper.png) **Important:** Do not leave the Liferay
+repository configured when publishing artifacts to Maven Central. You must
 comment out the Liferay Repository credentials when publishing your artifacts.
 
 --- 
 
 Next, when interacting with the Liferay Repository, you'll need to use
-specialized commands to access it.
+specialized commands to access it. Use the following command to access the CE
+repo:
 
-**Accessing the Liferay EE Maven Repository:**
-
-Since the Liferay EE repo is protected, you'll need to specify your username and
-password when referring to the URL for generating artifacts. The username and
-password are the same as your liferay.com credentials. The command is listed
-below: 
-
-    mvn archetype:generate -DarchetypeCatalog=https://USERNAME:PASSWORD@repository.liferay.com/nexus/content/groups/liferay-ee
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
 relying on the Liferay repo, we can remove the specialized command from the
 portlet archetype exercise and only specify this way here. -Cody -->
-
-**Accessing the Liferay CE Maven Repository:**
-
-Since the Liferay CE repo is public, there's no need to provide your username
-and password. Therefore, use the following command to access the CE repo:
-
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
 Liferay makes its artifacts available on Maven's Central Repository as well. As
 with using Liferay's Maven repository, the Maven's Central Repository enables
