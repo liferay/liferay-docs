@@ -57,8 +57,8 @@ display settings? You could develop a theme or hook with the display options you
 need, but it'd be nice if you could apply particular display options to specific
 portlet instances without having to redeploy any plugins. Ideally, you should be
 able to provide authorized portal users the ability to apply custom display
-settings to portlets. This would save you from having to change portlet
-configuration code every time you need new settings. 
+settings to portlets. This saves you from having to change portlet configuration
+code every time you need new settings. 
 
 Be of good cheer! That's precisely what Application Display Templates (ADTs)
 provide-- the ability to add custom display settings to your portlets from the
@@ -268,6 +268,7 @@ aware that your specific implementation will look slightly different.
                         total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
                     />
                 ...
+                </liferay-ui:search-container>
             </c:otherwise>
         </c:choose>
 
@@ -351,7 +352,7 @@ understand what you can use from it. Fortunately, you don't need to memorize
 the context information, thanks to Liferay's advanced template editor!
 
 The template editor provides fields, general variables, and util variables
-customized for which portlet you decide to create an ADT for. These variable
+customized for the portlet on which you decide to create an ADT. These variable
 references can be found on the left-side panel of the template editor. You can
 use them by simply placing your cursor where you'd like the variable placed, and
 clicking the desired variable to place it there. You can learn more about the
