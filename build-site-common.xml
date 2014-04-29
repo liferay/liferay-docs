@@ -40,7 +40,7 @@
 		</copy>
 	</target>
 
-	<target name="article-to-html" depends="prepare, check-images-site" description="Converts single Markdown article to an HTML file.">
+	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html"/>
 		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
 		<exec executable="${pandoc.app}">
@@ -55,7 +55,7 @@
 		</exec>
 	</target>
 
-	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts single Markdown article to an HTML file on Windows.">
+	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file on Windows.">
 		<echo message="... converting ${article} to html"/>
 		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
 		<exec executable="cmd">
@@ -72,13 +72,13 @@
 		</exec>
 	</target>
 
-	<target name="check-images-site" description="Verifies all images referenced in markdown files for a document or article.">
+	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
 		<checkimgssite docdir="${doc.dir}" chapter="${article}">
 		</checkimgssite>
 	</target>
 
 	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies. -->
-	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory">
+	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
