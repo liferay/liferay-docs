@@ -30,7 +30,7 @@
 		</classpath>
 	</taskdef>
 
-	<target name="prepare" description="Creates build directory">
+	<target name="prepare" description="Creates build directory.">
 		<echo message="... creating build directory"/>
 		<mkdir dir="${project.dir}/${page.dir}/${doc.dir}/${build.dir}"/>
 		<touch file="${project.dir}/${page.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
@@ -40,9 +40,9 @@
 		</copy>
 	</target>
 
-	<target name="article-to-html" depends="prepare, check-images-site" description="Converts single markdown article to an html file">
+	<target name="article-to-html" depends="prepare, check-images-site" description="Converts single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html"/>
-		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
+		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
 		<exec executable="${pandoc.app}">
 			<arg value="-f" />
 			<arg value="markdown"/>
@@ -55,9 +55,9 @@
 		</exec>
 	</target>
 
-	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts single markdown article to an html file on windows">
+	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts single Markdown article to an HTML file on Windows.">
 		<echo message="... converting ${article} to html"/>
-		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
+		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
 		<exec executable="cmd">
 			<arg value="/C" />
 			<arg value="pandoc"/>
@@ -71,32 +71,24 @@
 			<arg value="${article}"/>
 		</exec>
 	</target>
-	
-	<target name="check-images-site" description="Verifies all images referenced in markdown files for a document or article">
+
+	<target name="check-images-site" description="Verifies all images referenced in markdown files for a document or article.">
 		<checkimgssite docdir="${doc.dir}" chapter="${article}">
 		</checkimgssite>
 	</target>
+
+	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies. -->
+	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
 	
-	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies -->
-	<target name="prepare-dist" depends="check-images-site" description="creates dist directory, copies images">
-        <echo message="... creating ${dist.dir} directory"/>
-        <mkdir dir="${dist.dir}"/>
-        <!-- <copy todir="${dist.dir}/images">
-            <fileset dir="images" includes="*.*"/>
-        </copy> -->
-    </target>
-	
-	<target name="dist" depends="prepare-dist" description="prepares document zip file for asset import">
-        <property file="./doc.properties" />
-		<!-- <copy todir="${dist.dir}/articles">
-            <fileset dir="articles" />
-        </copy> -->
-        <zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${page.dir}-${doc.dir}.zip">
-            <!-- <fileset dir="${dist.dir}" includes="images/*.*"/>
-            <fileset dir="${dist.dir}" includes="articles/"/> -->
+	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
+		<property file="./doc.properties" />
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${page.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
-        </zip>
-    </target>
+		</zip>
+	</target>
 
 </project>
