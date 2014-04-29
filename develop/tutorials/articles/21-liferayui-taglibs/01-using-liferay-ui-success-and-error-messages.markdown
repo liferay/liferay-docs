@@ -7,13 +7,13 @@ success. Similarly, if the user supplied invalid input to the action, you can
 inform him and even describe why it's invalid or hint what might make it valid.
 This kind of feedback helps your portlet's users.  
 
-To facilitate such feedback, Liferay provides the means for you to
-pass an attribute to your JSPs to indicate an action's success or failure. In
-your portlet class, you simply set an attribute in the `actionRequest` that is
-then read from the JSP. What's more, the JSP immediately removes the attribute
-from the session so the message is only shown once. Liferay provides a helper
-class and taglibs to do this operation easily. The figure below, shows what a
-success message can look like in your portlet. 
+To facilitate such feedback, Liferay provides the means for you to pass an
+attribute to your JSPs to indicate an action's success or failure. In your
+portlet class, you simply set an attribute in the `actionRequest` that is then
+read from the JSP. What's more, the JSP immediately removes the attribute from
+the session so the message is only shown once. Liferay provides a helper class
+and taglibs to do this operation easily. Figure 1 shows what a success message
+can look like in your portlet. 
 
 ![Figure 1: Giving feedback on a user's success is easy using the `liferay-ui:success` tag and the `SessionMessage` helper class.](../../images/liferay-ui-success.png)
 
@@ -146,7 +146,15 @@ look like this:
 If an error occurs in processing the action request, your `view.jsp` shows
 the error message in your portlet. 
 
-![Figure 3: The sample "My Greeting" portlet shows an error message on failure to process the portlet action.](../../images/portlet-invalid-data.png)
+![Figure 3: The sample My Greeting portlet shows an error message on failure to process the portlet action.](../../images/portlet-invalid-data.png)
+
+The final My Greeting portlet implemented in this tutorial, including
+its
+[`MyGreetingPortlet.java`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages/end/my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/MyGreetingPortlet.java)
+and
+[`view.jsp`](https://github.com/jhinkey/liferay-docs/blob/dev-site/develop/tutorials/code/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages/end/my-greeting-portlet/docroot/view.jsp)
+files, is posted on GitHub 
+[here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages/end/my-greeting-portlet). 
 
 To sum things up, you've added a success message for confirming successful
 portlet action execution and you've added an error message for notifying when
