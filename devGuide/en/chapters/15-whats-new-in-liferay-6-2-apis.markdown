@@ -49,21 +49,21 @@ Application Display Templates API.
 
 ## Application Display Templates [](id=application-display-templates-liferay-portal-6-2-dev-guide-14-en)
 
-A portlet's Display Settings (*Configuration* &rarr; *Setup* &rarr; *Display
-Settings*) let you customize its display. They come built in with Liferay, so
-you don't have to do anything special to enable them for your custom portlets.
-But what if you need settings in addition to Liferay's display settings? You
-could develop a theme or hook with the display options you need, but it'd be
-nice if you could apply particular display options to specific portlet
-instances without having to redeploy any plugins. Ideally, you should be able
-to provide authorized portal users the ability to apply custom display settings
-to portlets. This would save portlet developers from having to change portlet
-configuration code every time you need new settings. 
+A portlet's Display Settings (*Options* &rarr; *Configuration* &rarr; *Setup*
+&rarr; *Display Settings*) let you customize its display. They come built in
+with Liferay, so you don't have to do anything special to enable them for your
+custom portlets. But what if you need settings in addition to Liferay's display
+settings? You could develop a theme or hook with the display options you need,
+but it'd be nice if you could apply particular display options to specific
+portlet instances without having to redeploy any plugins. Ideally, you should be
+able to provide authorized portal users the ability to apply custom display
+settings to portlets. This saves you from having to change portlet configuration
+code every time you need new settings. 
 
 Be of good cheer! That's precisely what Application Display Templates (ADTs)
 provide-- the ability to add custom display settings to your portlets from the
 portal. This isn't actually a new concept in Liferay. In some portlets (e.g.,
-*Web Content*, *Documents and Media*, and *Dynamic Data Lists*, you can already
+*Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can already
 add as many display options (or templates) as you want. Now you can add them to
 your custom portlets, too.
 
@@ -76,21 +76,18 @@ To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
 exposing the ADT functionality to users. We'll demonstrate these steps by
 enabling Application Display Templates for our Location Listing Portlet. Be
-aware that your specific implementation will loo0k slightly different.
+aware that your specific implementation will look slightly different.
 
-1.  First, you need to create and register your custom
-    `PortletDisplayTemplateHandler` class.
+1.  Create and register your custom `PortletDisplayTemplateHandler` class.
 
     To join the exclusive ADT club, your portlet must sign a contract,
     committing itself to fulfill all the necessary Application Display Template
     requirements. In other words, you have to create your own
     `PortletDisplayTemplateHandler` implementation by extending the
     `BasePortletDisplayTemplateHandler` methods. You can check the
-    `TemplateHandler` interface
-    [javadoc](http://docs.liferay.com/portal/6.2/javadocs/) to learn about each
-    method. Here's what our template handler class looks like for the Location
-    Listing portlet:
- 
+    [TemplateHandler](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/template/TemplateHandler.html)
+    interface Javadoc to learn about each method. Here's what our template
+    handler class looks like for the Location Listing portlet:
 
         package com.nosester.portlet.eventlisting.template;
 
@@ -145,39 +142,34 @@ aware that your specific implementation will loo0k slightly different.
             }
         }
 
+<!--Need to explain LanguageUtil.get(locale, "locations")-->
 
-<!--Need to explain LaguageUtil.get(locale, "locations")-->
+2. Now that we've created the template handler, declare it with the
+   `<template-handler>...</template-handler>` tags in the Location Listing
+   Portlet's `<portlet>` element of your `liferay-portlet.xml` file (if
+   necessary):
 
-    Now that we've created the template handler, we'll declare it in the
-    `<portlet>` element of our `liferay-portlet.xml`, like this:
+        <?xml version="1.0"?>
+        <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+        
+        <liferay-portlet-app>
+            ...
+            <portlet>
+                <portlet-name>locationlisting</portlet-name>
+                <icon>/icon.png</icon>
+                <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
+                <template-handler>com.nosester.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
+                <instanceable>false</instanceable>
+                ...
+            </portlet>
+            ...
+        </liferay-portlet-app>
 
-    <?xml version="1.0"?>
-    <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
-
-    <liferay-portlet-app>
-        ...
-        <portlet>
-            <portlet-name>locationlisting</portlet-name>
-            <icon>/icon.png</icon>
-            <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
-            <template-handler>com.nosester.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
-            <instanceable>false</instanceable>
-            <header-portlet-css>/css/main.css</header-portlet-css>
-            <footer-portlet-javascript>
-                /js/main.js
-            </footer-portlet-javascript>
-            <css-class-wrapper>locationlisting-portlet</css-class-wrapper>
-        </portlet>
-        ...
-    </liferay-portlet-app>
-
-2.  Declare permissions
-
-    Since the ability to add Application Display Templates is new to your
-    portlet, we need to configure permissions so that administrative users can grant
-    permissions to the roles that will be allowed to create and manage display
-    templates. Just add the action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your
-    portlet's `default.xml` file, like this:
+3. Since the ability to add ADTs is new to your portlet, we need to configure
+   permissions so that administrative users can grant permissions to the roles
+   that will be allowed to create and manage display templates. Just add the
+   action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your portlet's
+   `docroot/WEB-INF/src/resource-actions/default.xml` file:
 
         <?xml version="1.0"?>
         <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
@@ -192,37 +184,22 @@ aware that your specific implementation will loo0k slightly different.
                         <action-key>CONFIGURATION</action-key>
                         <action-key>VIEW</action-key>
                     </supports>
-                    <site-member-defaults>
-                        <action-key>VIEW</action-key>
-                    </site-member-defaults>
-                    <guest-defaults>
-                        <action-key>VIEW</action-key>
-                    </guest-defaults>
-                    <guest-unsupported />
+                ...
                 </permissions>
             </portlet-resource>
-            ...
+        ...
         </resource-action-mapping>
 	 
-3.  Add display settings to your portlet's `configuration.jsp`
-
-    Now that your portlet officially supports Application Display Templates,
-    you'll want to expose the ADT option to your users. Just include the
-    `liferay-ui:ddm-template-selector` taglib in the JSP file you're using to
-    control your portlet's configuration mode (e.g., `config.jsp` if you chose to
-    have it created through Liferay Developer Studio's New Portlet wizard),
-    providing the required information. Here's our Location Listing Portlet's
-    `configuration.jsp`:
+4. Now that your portlet officially supports ADTs, you'll want to expose the
+   ADT option to your users. Just include the `liferay-ui:ddm-template-selector`
+   taglib in the JSP file you're using to control your portlet's configuration
+   mode (e.g., `configuration.jsp` if you chose to have it created through
+   Liferay Developer Studio's New Portlet wizard), providing the required
+   information. We'll add the display settings to the Location Listing Portlet's
+   `configuration.jsp` file:
  
         <%@ include file="../init.jsp" %>
-
-        <%
-        String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
-        long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
-        %>
-
-        <liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
-
+        ...
         <aui:form action="<%= configurationURL %>" method="post" name="fm">
             <aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
 
@@ -242,48 +219,28 @@ aware that your specific implementation will loo0k slightly different.
                     />
                 </div>
             </aui:fieldset>
-
-            <aui:button-row>
-                <aui:button type="submit" />
-            </aui:button-row>
+        ...
         </aui:form>
 
 <!--Discuss TemplateHandler templateHandler line and liferay-ui:ddm block-->
 
-4.  Render Application Display Templates in your views
-
-    You're almost finished, but you still have to extend your view code to
-    render your portlet with the selected Application Display Template. Here is
-    where you decide exactly which part of your view will be rendered by the
-    Application Display Template and what will be available in the template
-    context. You'll be adding some code to whatever JSP file controls your
-    portlet's view mode. Here's what our Location Listing Portlet's `view.jsp`
-    looks like:
+5. You're almost finished, but you still have to extend your view code to
+   render your portlet with the selected ADT. Here is where you decide exactly
+   which part of your view will be rendered by the ADT and what will be
+   available in the template context. To do this, add the following code
+   outlined below to your Location Listing Portlet's `view.jsp` file:
  
-        <%@include file="/html/init.jsp" %>
+        <%@ include file="/html/init.jsp" %>
 
-        <%@ page import="com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateUtil" %>
-
-        This is the <b>Location Listing Portlet</b> portlet in View mode.
-
-        <%
-            String redirect = PortalUtil.getCurrentURL(renderRequest);
-        %>
-
-        <aui:button-row>
-            <portlet:renderURL var="addLocationURL">
-                <portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
-                <portlet:param name="redirect" value="<%= redirect %>" />
-            </portlet:renderURL>
-
-            <aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
-        </aui:button-row>
-
+        This is the <b>Location Listing Portlet</b> in View mode.
+        ...
         <%
         String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
         long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
 
         long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
+
+        boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
         %>
 
         <c:choose>
@@ -298,64 +255,23 @@ aware that your specific implementation will loo0k slightly different.
                         results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
                         total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
                     />
-                
-                    <liferay-ui:search-container-row
-                        className="com.nosester.portlet.eventlisting.model.Location"
-                        keyProperty="locationId"
-                        modelVar="location" escapedModel="<%= true %>"
-                    >
-                        <liferay-ui:search-container-column-text
-                            name="name"
-                            value="<%= location.getName() %>"
-                        />
-                
-                        <liferay-ui:search-container-column-text
-                            name="description"
-                            property="description"
-                        />
-
-                        <liferay-ui:search-container-column-text
-                            name="street-address"
-                            property="streetAddress"
-                        />
-
-                        <liferay-ui:search-container-column-text
-                            name="city"
-                            property="city"
-                        />
-
-                        <liferay-ui:search-container-column-text
-                            name="state-province"
-                            property="stateOrProvince"
-                        />
-                
-                        <liferay-ui:search-container-column-text
-                            name="country"
-                            property="country"
-                        />
-                
-                        <liferay-ui:search-container-column-jsp
-                            align="right"
-                            path="/html/locationlisting/location_actions.jsp"
-                        />
-                    </liferay-ui:search-container-row>
-                
-                    <liferay-ui:search-iterator />
-                </liferay-ui:search-container>
+                ...
             </c:otherwise>
         </c:choose>
 
-<!--Lines 20-25 of the original file are what we need to explain here.-->
+<!--Lines 20-25 of the original file are what we need to explain here. Explain
+important parts of code and what's going on. -Cody -->
 
 <!-- We need to point out where this code specifies the rendering based on the
 ADT. It's not obvious how it works. Jim --> 
 
-5.  Add your template script
+6. Add your FreeMarker or Velocity template script.
+
 <!--Show the Quick List Template and describe it briefly-->
 
     Now that our portlet supports ADTs, you can create your own scripts to
     change the display of your portlet, and upload them from your portlet's
-    *Configuration* section in Liferay Portal. Freemarker and Veolocity
+    *Configuration* section in Liferay Portal. Freemarker and Velocity
     template languages are supported. For the Location Listing Portlet, we've
     created a basic Freemarker script that takes our *locations* from the default
     table format and displays them and selected fields in a bullet list format.
@@ -370,11 +286,14 @@ ADT. It's not obvious how it works. Jim -->
             </ul>
         </#if>
 
-    
     Once your script is uploaded into the portal (see our User Guide for the
-    details) and saved, users with the specified roles can select the template when
-    they're configuring the display settings of your portlet on a page.
+    details) and saved, users with the specified roles can select the template
+    when they're configuring the display settings of your portlet on a page. You
+    can visit the [Using Application Display
+    Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+    section in the Using Liferay Portal for more details.
 
+Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
 ### Recommendations [](id=adt-recommendations-liferay-portal-6-2-dev-guide-14-en)
 
