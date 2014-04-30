@@ -1937,11 +1937,13 @@ Next we need to clean up the entries for the JAR files that we deleted.
 We'll also delete some other files that can cause conflicts with Liferay when
 it's deployed.
 
-1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
+1.  Remove the following directories and files from `$JBOSS_HOME/server/default/deploy`:
     - /messaging
-	- ejb2-container-jboss-beans.xml
+    - /profileservice-secured.jar
+    - /uuid-key-generator.sar
+    - ejb2-container-jboss-beans.xml
     - ejb2-timer-service.xml
-    - ejb3-connections-jboss-beans.xml
+    - ejb3-connectors-jboss-beans.xml
     - ejb3-container-jboss-beans.xml
     - ejb3-interceptors-aop.xml
     - ejb3-timerservice-jboss-beans.xml
@@ -1949,10 +1951,8 @@ it's deployed.
     - jms-ra.rar
     - mail-ra.rar
     - mail-service.xml
-    - profile-service-secured.jar
-    - uuid-key-generator.sar
 
-2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
+2. Delete the following in `$JBOSS_HOME/server/default/deployers`:
 
         jboss-ejb3-endpoint-deployer.jar
         messaging-definitions-jboss-beans.xml
@@ -1962,13 +1962,13 @@ it's deployed.
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
 
-1. Navigate to `$JBOSS_HOME/../server/default/deploy/ROOT.war` and delete all
+1. Navigate to `$JBOSS_HOME/server/default/deploy/ROOT.war` and delete all
    the content of the folder.
 
 2. Extract the contents of the Liferay WAR file into this folder.
 
 3. Create a file named `jboss-classloading.xml` in the
-   `$JBOSS_HOME/../server/default/ROOT.war/WEB-INF` directory and add the
+   `$JBOSS_HOME/server/default/ROOT.war/WEB-INF` directory and add the
    following contents to it:
 
         <classloading xmlns="urn:jboss:classloading:1.0"
@@ -1986,19 +1986,19 @@ files, it's time to deploy Liferay.
     necessary to add a `jboss-classloading.xml` file to the `WEB-INF` folder of
     each Liferay plugin; see the *Deploying plugins* section below.
 
-4.  Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
+4. Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
     `$JBOSS_HOME`) and add the following properties:
 
         hibernate.validator.apply_to_ddl=false
         hibernate.validator.autoregister_listeners=false
 
-5.  Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
+5. Delete the following files from the `$JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib`:
     - jaxrpc.jar
     - stax.jar
     - xercesImpl.jar
     - xml-apis.jar
 
-6.  Add the following lines to your `portal-ext.properties` file:
+6. Add the following lines to your `portal-ext.properties` file:
 
 	NOTE: The autodeploy folder must be set with the full name of the folder;
 	you can't use any variables to define the location.
@@ -2006,7 +2006,17 @@ files, it's time to deploy Liferay.
 		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
 		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
 
-7. Start the JBoss Application Server.
+7. Increase the memory given to the JVM
+
+    By deafult JBoss gives 512MB memory to the JVM. With this setting it is most
+    likely that you will face the following error at startup, runtime or shutdown:
+
+    java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+    To give the JVM more memory, edit `$JBOSS_HOME/bin/run.conf.bat` (`run.conf`
+    on *nix) and change `-Xmx512M` to `-Xmx1024M`.
+
+8. Start the JBoss Application Server.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
