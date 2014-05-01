@@ -131,29 +131,52 @@ value to be persisted, the input must follow the naming convention
 preference key named `showLocationAddress`. 
 
 You've probably noticed some JSP compile errors and warnings with respect to the
-code we've added. We'll address them by adding directives to the `init.jsp` that
-our configuration JSP includes. Adding the directives will allow the JSP to
+code we've added. We'll address them by adding directives to a `init.jsp` file
+that our configuration JSP includes. Adding the directives will allow the JSP to
 access the classes and taglibs we're using. 
 
-In your `init.jsp` file, add the following directives:
+Create an `init.jsp` file in the `docroot/html` directory, and add the following
+directives: 
 
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
     <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
     <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
     <%@ page import="com.liferay.portal.kernel.util.Constants" %>
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
     <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+    <%@ page import="com.liferay.portal.util.PortalUtil" %>
+
+    <%@ page import="com.liferay.samples.portlet.eventlisting.model.Location"%>
+    <%@ page import="com.liferay.samples.portlet.eventlisting.service.LocationLocalServiceUtil"%>
+
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
     <liferay-theme:defineObjects />
 
+    <portlet:defineObjects />
+
 The `tablib` directives access the JSP Standard Tag Library (JSTL), Liferay's
 theme taglib, and Liferay's portlet taglib. Then, we added directives for
-importing the classes we're using. Lastly, we inserted the
+importing the classes we're using. We also inserted the
 `<portlet:defineObjects />` tag to access implicit variables that we'll need. It
 provides useful portlet variables such as *renderRequest*, *portletConfig*, and
-*portletPreferences*. 
+*portletPreferences*. Lastly, we inserted the `<liferay-theme:defineObjects />`
+tag, which works similarly to the portlet version, unlocking Liferay theme
+variables required by the portlet.
+
+---
+
+  ![Note](../../images/tip-pen-paper.png) **Note:** In some cases, the Location
+  Listing portlet may have trouble finding the JSTL taglib. If so, download the
+  `jstl-api` and `jstl-impl` JARs from
+  [here](https://jstl.java.net/download.html) and insert them into the Location
+  Listing portlet's `docroot/WEB-INF/lib` directory. 
+
+---
 
 Your `configuration.jsp` is all set to display your portlet preference options.
 Let's implement a custom class to handle the configuration action. 
