@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <custom-sql>
-	<sql id="com.nosester.portlet.eventlisting.service.persistence.EventFinder.findByEventNameEventDescriptionLocationName">
+	<sql id="com.samples.portlet.eventlisting.service.persistence.EventFinder.findByEventNameEventDescriptionLocationName">
 		SELECT Event_Event.*
 		FROM Event_Event
 		INNER JOIN

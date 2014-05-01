@@ -1,4 +1,4 @@
-Liferay.Service.register("Liferay.Service.Event", "com.nosester.portlet.eventlisting.service", "event-listing-portlet");
+Liferay.Service.register("Liferay.Service.Event", "com.samples.portlet.eventlisting.service", "event-listing-portlet");
 
 Liferay.Service.registerClass(
 	Liferay.Service.Event, "Event",

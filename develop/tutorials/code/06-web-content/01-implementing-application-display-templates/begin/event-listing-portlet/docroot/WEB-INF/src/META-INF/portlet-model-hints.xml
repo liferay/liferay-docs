@@ -6,7 +6,7 @@
 		<hint name="display-width">500</hint>
 		<hint name="max-length">4000</hint>
 	</hint-collection>
-	<model name="com.nosester.portlet.eventlisting.model.Event">
+	<model name="com.samples.portlet.eventlisting.model.Event">
 		<field name="eventId" type="long" />
 		<field name="companyId" type="long" />
 		<field name="groupId" type="long" />
@@ -20,7 +20,7 @@
 		<field name="date" type="Date" />
 		<field name="locationId" type="long" />
 	</model>
-	<model name="com.nosester.portlet.eventlisting.model.Location">
+	<model name="com.samples.portlet.eventlisting.model.Location">
 		<field name="locationId" type="long" />
 		<field name="companyId" type="long" />
 		<field name="groupId" type="long" />

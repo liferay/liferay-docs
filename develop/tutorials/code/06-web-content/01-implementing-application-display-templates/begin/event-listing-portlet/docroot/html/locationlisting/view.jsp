@@ -26,7 +26,7 @@ boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getV
 		total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>" />
 
 	<liferay-ui:search-container-row
-		className="com.nosester.portlet.eventlisting.model.Location"
+		className="com.samples.portlet.eventlisting.model.Location"
 		keyProperty="locationId" modelVar="location"
 		escapedModel="<%= true %>">
 		<liferay-ui:search-container-column-text name="name"
