@@ -168,16 +168,6 @@ provides useful portlet variables such as *renderRequest*, *portletConfig*, and
 tag, which works similarly to the portlet version, unlocking Liferay theme
 variables required by the portlet.
 
----
-
-  ![Note](../../images/tip-pen-paper.png) **Note:** In some cases, the Location
-  Listing portlet may have trouble finding the JSTL taglib. If so, download the
-  `jstl-api` and `jstl-impl` JARs from
-  [here](https://jstl.java.net/download.html) and insert them into the Location
-  Listing portlet's `docroot/WEB-INF/lib` directory. 
-
----
-
 Your `configuration.jsp` is all set to display your portlet preference options.
 Let's implement a custom class to handle the configuration action. 
 
