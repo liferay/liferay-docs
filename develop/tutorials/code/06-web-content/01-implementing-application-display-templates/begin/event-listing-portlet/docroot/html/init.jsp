@@ -21,18 +21,18 @@ page import="com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTempl
 page import="com.liferay.portal.theme.ThemeDisplay" %><%@
 page import="com.liferay.portal.util.PortalUtil" %>
 
-<%@ page import="com.nosester.portlet.eventlisting.model.Event" %><%@
-page import="com.nosester.portlet.eventlisting.model.Location" %><%@
-page import="com.nosester.portlet.eventlisting.service.EventLocalServiceUtil" %><%@
-page import="com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil" %>
+<%@ page import="com.samples.portlet.eventlisting.model.Event" %><%@
+page import="com.samples.portlet.eventlisting.model.Location" %><%@
+page import="com.samples.portlet.eventlisting.service.EventLocalServiceUtil" %><%@
+page import="com.samples.portlet.eventlisting.service.LocationLocalServiceUtil" %>
 
 <%@ page import="java.text.SimpleDateFormat" %><%@
 page import="java.util.List" %>
 
-<%@ page import="com.nosester.portlet.eventlisting.model.Event"%><%@
-page import="com.nosester.portlet.eventlisting.model.Location"%><%@
-page import="com.nosester.portlet.eventlisting.service.EventLocalServiceUtil"%><%@
-page import="com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil"%>
+<%@ page import="com.samples.portlet.eventlisting.model.Event"%><%@
+page import="com.samples.portlet.eventlisting.model.Location"%><%@
+page import="com.samples.portlet.eventlisting.service.EventLocalServiceUtil"%><%@
+page import="com.samples.portlet.eventlisting.service.LocationLocalServiceUtil"%>
 
 <liferay-theme:defineObjects />
 

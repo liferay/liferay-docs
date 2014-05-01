@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
-	<import class="com.nosester.portlet.eventlisting.model.Event" />
-	<import class="com.nosester.portlet.eventlisting.model.Location" />
-	<class name="com.nosester.portlet.eventlisting.model.impl.EventImpl" table="Event_Event">
+	<import class="com.samples.portlet.eventlisting.model.Event" />
+	<import class="com.samples.portlet.eventlisting.model.Location" />
+	<class name="com.samples.portlet.eventlisting.model.impl.EventImpl" table="Event_Event">
 		<cache usage="read-write" />
 		<id name="eventId" type="long">
 			<generator class="assigned" />
@@ -19,7 +19,7 @@
 		<property name="date" type="org.hibernate.type.TimestampType" column="date_" />
 		<property name="locationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
-	<class name="com.nosester.portlet.eventlisting.model.impl.LocationImpl" table="Event_Location">
+	<class name="com.samples.portlet.eventlisting.model.impl.LocationImpl" table="Event_Location">
 		<cache usage="read-write" />
 		<id name="locationId" type="long">
 			<generator class="assigned" />

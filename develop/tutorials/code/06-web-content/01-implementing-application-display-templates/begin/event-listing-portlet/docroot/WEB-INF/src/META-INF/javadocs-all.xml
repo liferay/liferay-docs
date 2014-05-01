@@ -3,7 +3,7 @@
 <javadocs>
 	<javadoc>
 		<name>EventListingPortlet</name>
-		<type>com.nosester.portlet.eventlisting.EventListingPortlet</type>
+		<type>com.samples.portlet.eventlisting.EventListingPortlet</type>
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
 			<name>addEvent</name>
@@ -86,7 +86,7 @@
 	</javadoc>
 	<javadoc>
 		<name>LocationListingPortlet</name>
-		<type>com.nosester.portlet.eventlisting.LocationListingPortlet</type>
+		<type>com.samples.portlet.eventlisting.LocationListingPortlet</type>
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
 			<name>addLocation</name>
@@ -169,11 +169,11 @@
 	</javadoc>
 	<javadoc>
 		<name>EventImpl</name>
-		<type>com.nosester.portlet.eventlisting.model.impl.EventImpl</type>
+		<type>com.samples.portlet.eventlisting.model.impl.EventImpl</type>
 		<comment><![CDATA[The extended model implementation for the Event service. Represents a row in the &quot;Event_Event&quot; database table, with each column mapped to a property of this class.
 
 <p>
-Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.model.Event} interface.
+Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.model.Event} interface.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
@@ -182,11 +182,11 @@ Helper methods and all application logic should be put in this class. Whenever m
 	</javadoc>
 	<javadoc>
 		<name>LocationImpl</name>
-		<type>com.nosester.portlet.eventlisting.model.impl.LocationImpl</type>
+		<type>com.samples.portlet.eventlisting.model.impl.LocationImpl</type>
 		<comment><![CDATA[The extended model implementation for the Location service. Represents a row in the &quot;Event_Location&quot; database table, with each column mapped to a property of this class.
 
 <p>
-Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.model.Location} interface.
+Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.model.Location} interface.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
@@ -195,15 +195,15 @@ Helper methods and all application logic should be put in this class. Whenever m
 	</javadoc>
 	<javadoc>
 		<name>EventLocalServiceImpl</name>
-		<type>com.nosester.portlet.eventlisting.service.impl.EventLocalServiceImpl</type>
+		<type>com.samples.portlet.eventlisting.service.impl.EventLocalServiceImpl</type>
 		<comment><![CDATA[The implementation of the event local service.
 
 <p>
-All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.EventLocalService} interface. <p> This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.service.EventLocalService} interface. <p> This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.base.EventLocalServiceBaseImpl]]></see>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.EventLocalServiceUtil]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.base.EventLocalServiceBaseImpl]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.EventLocalServiceUtil]]></see>
 		<method>
 			<name>addEvent</name>
 			<param>
@@ -279,7 +279,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>addEventResources</name>
 			<param>
 				<name>event</name>
-				<type>com.nosester.portlet.eventlisting.model.Event</type>
+				<type>com.samples.portlet.eventlisting.model.Event</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -307,7 +307,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>addEventResources</name>
 			<param>
 				<name>event</name>
-				<type>com.nosester.portlet.eventlisting.model.Event</type>
+				<type>com.samples.portlet.eventlisting.model.Event</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -391,7 +391,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>deleteEvent</name>
 			<param>
 				<name>event</name>
-				<type>com.nosester.portlet.eventlisting.model.Event</type>
+				<type>com.samples.portlet.eventlisting.model.Event</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<return>
@@ -613,15 +613,15 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>EventServiceImpl</name>
-		<type>com.nosester.portlet.eventlisting.service.impl.EventServiceImpl</type>
+		<type>com.samples.portlet.eventlisting.service.impl.EventServiceImpl</type>
 		<comment><![CDATA[The implementation of the event remote service.
 
 <p>
-All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.EventService} interface. <p> This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.service.EventService} interface. <p> This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl]]></see>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.EventServiceUtil]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.base.EventServiceBaseImpl]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.EventServiceUtil]]></see>
 		<method>
 			<name>addEvent</name>
 			<param>
@@ -804,15 +804,15 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>LocationLocalServiceImpl</name>
-		<type>com.nosester.portlet.eventlisting.service.impl.LocationLocalServiceImpl</type>
+		<type>com.samples.portlet.eventlisting.service.impl.LocationLocalServiceImpl</type>
 		<comment><![CDATA[The implementation of the location local service.
 
 <p>
-All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationLocalService} interface. <p> This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.service.LocationLocalService} interface. <p> This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl]]></see>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.LocationLocalServiceUtil]]></see>
 		<method>
 			<name>addLocation</name>
 			<param>
@@ -878,7 +878,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>addLocationResources</name>
 			<param>
 				<name>location</name>
-				<type>com.nosester.portlet.eventlisting.model.Location</type>
+				<type>com.samples.portlet.eventlisting.model.Location</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -906,7 +906,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>addLocationResources</name>
 			<param>
 				<name>location</name>
-				<type>com.nosester.portlet.eventlisting.model.Location</type>
+				<type>com.samples.portlet.eventlisting.model.Location</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -990,7 +990,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			<name>deleteLocation</name>
 			<param>
 				<name>location</name>
-				<type>com.nosester.portlet.eventlisting.model.Location</type>
+				<type>com.samples.portlet.eventlisting.model.Location</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<return>
@@ -1140,15 +1140,15 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>LocationServiceImpl</name>
-		<type>com.nosester.portlet.eventlisting.service.impl.LocationServiceImpl</type>
+		<type>com.samples.portlet.eventlisting.service.impl.LocationServiceImpl</type>
 		<comment><![CDATA[The implementation of the location remote service.
 
 <p>
-All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.nosester.portlet.eventlisting.service.LocationService} interface. <p> This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.samples.portlet.eventlisting.service.LocationService} interface. <p> This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
 </p>]]></comment>
 		<author><![CDATA[Joe Bloggs]]></author>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl]]></see>
-		<see><![CDATA[com.nosester.portlet.eventlisting.service.LocationServiceUtil]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.base.LocationServiceBaseImpl]]></see>
+		<see><![CDATA[com.samples.portlet.eventlisting.service.LocationServiceUtil]]></see>
 		<method>
 			<name>addLocation</name>
 			<param>
@@ -1285,7 +1285,7 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>EventListingPermission</name>
-		<type>com.nosester.portlet.eventlisting.service.permission.EventListingPermission</type>
+		<type>com.samples.portlet.eventlisting.service.permission.EventListingPermission</type>
 		<author><![CDATA[Brian Wing Shun Chan]]></author>
 		<method>
 			<name>check</name>
@@ -1337,7 +1337,7 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>EventPermission</name>
-		<type>com.nosester.portlet.eventlisting.service.permission.EventPermission</type>
+		<type>com.samples.portlet.eventlisting.service.permission.EventPermission</type>
 		<author><![CDATA[Brian Wing Shun Chan]]></author>
 		<method>
 			<name>check</name>
@@ -1348,7 +1348,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			</param>
 			<param>
 				<name>event</name>
-				<type>com.nosester.portlet.eventlisting.model.Event</type>
+				<type>com.samples.portlet.eventlisting.model.Event</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -1399,7 +1399,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			</param>
 			<param>
 				<name>event</name>
-				<type>com.nosester.portlet.eventlisting.model.Event</type>
+				<type>com.samples.portlet.eventlisting.model.Event</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -1445,7 +1445,7 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>LocationPermission</name>
-		<type>com.nosester.portlet.eventlisting.service.permission.LocationPermission</type>
+		<type>com.samples.portlet.eventlisting.service.permission.LocationPermission</type>
 		<author><![CDATA[Brian Wing Shun Chan]]></author>
 		<method>
 			<name>check</name>
@@ -1456,7 +1456,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			</param>
 			<param>
 				<name>location</name>
-				<type>com.nosester.portlet.eventlisting.model.Location</type>
+				<type>com.samples.portlet.eventlisting.model.Location</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -1507,7 +1507,7 @@ All custom service methods should be put in this class. Whenever methods are add
 			</param>
 			<param>
 				<name>location</name>
-				<type>com.nosester.portlet.eventlisting.model.Location</type>
+				<type>com.samples.portlet.eventlisting.model.Location</type>
 				<comment><![CDATA[]]></comment>
 			</param>
 			<param>
@@ -1553,7 +1553,7 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>EventFinderImpl</name>
-		<type>com.nosester.portlet.eventlisting.service.persistence.EventFinderImpl</type>
+		<type>com.samples.portlet.eventlisting.service.persistence.EventFinderImpl</type>
 		<author><![CDATA[Joe Bloggs]]></author>
 		<method>
 			<name>findByEventNameEventDescriptionLocationName</name>
@@ -1592,7 +1592,7 @@ All custom service methods should be put in this class. Whenever methods are add
 	</javadoc>
 	<javadoc>
 		<name>EventListingActionKeys</name>
-		<type>com.nosester.portlet.eventlisting.util.EventListingActionKeys</type>
+		<type>com.samples.portlet.eventlisting.util.EventListingActionKeys</type>
 		<author><![CDATA[Brian Wing Shun Chan]]></author>
 		<field>
 			<name>ADD_EVENT</name>

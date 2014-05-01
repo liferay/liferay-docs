@@ -38,7 +38,7 @@ boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getV
 			/>
 
 			<liferay-ui:search-container-row
-				className="com.nosester.portlet.eventlisting.model.Location"
+				className="com.samples.portlet.eventlisting.model.Location"
 				keyProperty="locationId"
 				modelVar="location" escapedModel="<%= true %>"
 			>

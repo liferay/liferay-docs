@@ -7,7 +7,7 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<mapped-superclass class="com.nosester.portlet.eventlisting.model.impl.EventModelImpl">
+	<mapped-superclass class="com.samples.portlet.eventlisting.model.impl.EventModelImpl">
 		<attributes>
 			<id name="eventId" />
 			<basic name="companyId" />
@@ -32,7 +32,7 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="com.nosester.portlet.eventlisting.model.impl.LocationModelImpl">
+	<mapped-superclass class="com.samples.portlet.eventlisting.model.impl.LocationModelImpl">
 		<attributes>
 			<id name="locationId" />
 			<basic name="companyId" />
@@ -56,11 +56,11 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<entity class="com.nosester.portlet.eventlisting.model.impl.EventImpl" name="Event">
+	<entity class="com.samples.portlet.eventlisting.model.impl.EventImpl" name="Event">
 		<table name="Event_Event" />
 		<attributes />
 	</entity>
-	<entity class="com.nosester.portlet.eventlisting.model.impl.LocationImpl" name="Location">
+	<entity class="com.samples.portlet.eventlisting.model.impl.LocationImpl" name="Location">
 		<table name="Event_Location" />
 		<attributes />
 	</entity>
