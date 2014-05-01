@@ -23,7 +23,7 @@ This is the <b>Event Listing Portlet</b> in View mode.
 	/>
 
 	<liferay-ui:search-container-row
-		className="com.nosester.portlet.eventlisting.model.Event"
+		className="com.samples.portlet.eventlisting.model.Event"
 		keyProperty="eventId"
 		modelVar="event" escapedModel="<%= true %>"
 	>

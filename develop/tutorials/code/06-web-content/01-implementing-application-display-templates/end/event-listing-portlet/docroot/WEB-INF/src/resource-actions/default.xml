@@ -40,7 +40,7 @@
 		</permissions>
 	</portlet-resource>
 	<model-resource>
-		<model-name>com.nosester.portlet.eventlisting</model-name>
+		<model-name>com.samples.portlet.eventlisting</model-name>
 		<portlet-ref>
 			<portlet-name>eventlisting</portlet-name>
 		</portlet-ref>
@@ -56,7 +56,7 @@
 		</permissions>
 	</model-resource>
 	<model-resource>
-		<model-name>com.nosester.portlet.eventlisting.model.Event</model-name>
+		<model-name>com.samples.portlet.eventlisting.model.Event</model-name>
 		<portlet-ref>
 			<portlet-name>eventlisting</portlet-name>
 		</portlet-ref>
@@ -84,7 +84,7 @@
 		</permissions>
 	</model-resource>
 	<model-resource>
-		<model-name>com.nosester.portlet.eventlisting</model-name>
+		<model-name>com.samples.portlet.eventlisting</model-name>
 		<portlet-ref>
 			<portlet-name>locationlisting</portlet-name>
 		</portlet-ref>
@@ -100,7 +100,7 @@
 		</permissions>
 	</model-resource>
 	<model-resource>
-		<model-name>com.nosester.portlet.eventlisting.model.Location</model-name>
+		<model-name>com.samples.portlet.eventlisting.model.Location</model-name>
 		<portlet-ref>
 			<portlet-name>locationlisting</portlet-name>
 		</portlet-ref>

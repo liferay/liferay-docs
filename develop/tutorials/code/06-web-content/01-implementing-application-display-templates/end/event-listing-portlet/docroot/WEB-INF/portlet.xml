@@ -4,7 +4,7 @@
 	<portlet>
 		<portlet-name>eventlisting</portlet-name>
 		<display-name>Event Listing Portlet</display-name>
-		<portlet-class>com.nosester.portlet.eventlisting.EventListingPortlet</portlet-class>
+		<portlet-class>com.samples.portlet.eventlisting.EventListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/eventlisting/view.jsp</value>
@@ -36,7 +36,7 @@
 	<portlet>
 		<portlet-name>locationlisting</portlet-name>
 		<display-name>Location Listing Portlet</display-name>
-		<portlet-class>com.nosester.portlet.eventlisting.LocationListingPortlet</portlet-class>
+		<portlet-class>com.samples.portlet.eventlisting.LocationListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/locationlisting/view.jsp</value>
