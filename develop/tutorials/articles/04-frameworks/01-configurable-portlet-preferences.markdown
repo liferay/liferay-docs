@@ -164,7 +164,7 @@ Now let's create a custom configuration action class for accessing the portlet
 preference. We'll have it extend the
 `DefaultConfigurationAction` class.
    
-Create a package named `com.nosester.portlet.eventlisting.action` in the
+Create a package named `com.samples.portlet.eventlisting.action` in the
 portlet's `docroot/WEB-INF/src` directory. In the new package, create a class
 named `ConfigurationActionImpl`, and specify
 [`DefaultConfigurationAction`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html)
@@ -172,7 +172,7 @@ as its superclass.
 
 Replace the contents of `ConfigurationActionImpl.java` with the following code: 
 
-    package com.nosester.portlet.eventlisting.action;
+    package com.samples.portlet.eventlisting.action;
 
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
@@ -224,7 +224,7 @@ method from the `DefaultConfigurationAction` class we're extending.
 Lastly, let's specify our new custom configuration class in the
 `liferay-portlet.xml`. Replace the existing `<configuration-action-class>...</configuration-action-class>`
 with
-`<configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>`.
+`<configuration-action-class>com.samples.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>`.
 Here's a snippet to show you where it goes in the context of the
 `liferay-portlet.xml` file: 
 
@@ -232,7 +232,7 @@ Here's a snippet to show you where it goes in the context of the
     <portlet>
         <portlet-name>locationlisting</portlet-name>
         <icon>/icon.png</icon>
-        <configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
+        <configuration-action-class>com.samples.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
         <header-portlet-css>/css/main.css</header-portlet-css>
         <footer-portlet-javascript>
             /js/main.js
@@ -253,8 +253,8 @@ In the `view.jsp` file, we'll get the value of the `showLocationAddress` portlet
 preference key. If its value is `true`, we'll display all of the location
 fields, including the address fields; otherwise, we'll hide the address fields. 
 
-Below are the contents of the entire `view.jsp` file. We'll point out the code
-that handles the portlet preference, after this code listing: 
+Replace the current `view.jsp` code with the code listed below. We'll point out
+the code that handles the portlet preference, after this code listing: 
 
     <%@ include file="/html/init.jsp" %>
 
@@ -273,63 +273,47 @@ that handles the portlet preference, after this code listing:
         <aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
     </aui:button-row>
 
-    <%
+	<%
     boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
     %>
 
-    <liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
+    <liferay-ui:search-container
+        emptyResultsMessage="There are no locations to display">
         <liferay-ui:search-container-results
             results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
-            total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
-        />
+            total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>" />
 
-        <liferay-ui:search-container-row
-            className="com.nosester.portlet.eventlisting.model.Location"
-            keyProperty="locationId"
-            modelVar="location" escapedModel="<%= true %>"
-        >
-            <liferay-ui:search-container-column-text
-                name="name"
-                value="<%= location.getName() %>"
-            />
+	<liferay-ui:search-container-row
+		className="com.liferay.samples.portlet.eventlisting.model.Location"
+		keyProperty="locationId" modelVar="location"
+		escapedModel="<%= true %>">
+		<liferay-ui:search-container-column-text name="name"
+			value="<%= location.getName() %>" />
 
-            <liferay-ui:search-container-column-text
-                name="description"
-                property="description"
-            />
+		<liferay-ui:search-container-column-text name="description"
+			value="<%= location.getDescription() %>" />
 
-            <c:choose>
-                <c:when test="<%= showLocationAddress_view == true %>">
-                    <liferay-ui:search-container-column-text
-                        name="street-address"
-                        property="streetAddress"
-                    />
+		<c:choose>
+			<c:when test="<%= showLocationAddress_view == true %>">
 
-                    <liferay-ui:search-container-column-text
-                        name="city"
-                        property="city"
-                    />
+				<liferay-ui:search-container-column-text name="streetAddress"
+					value="<%= location.getStreetAddress() %>" />
 
-                    <liferay-ui:search-container-column-text
-                        name="state-province"
-                        property="stateOrProvince"
-                    />
+				<liferay-ui:search-container-column-text name="city"
+					value="<%= location.getCity() %>" />
 
-                    <liferay-ui:search-container-column-text
-                        name="country"
-                        property="country"
-                    />
-                </c:when>
-            </c:choose>
+				<liferay-ui:search-container-column-text name="stateOrProvince"
+					value="<%= location.getStateOrProvince() %>" />
 
-            <liferay-ui:search-container-column-jsp
-                align="right"
-                path="/html/locationlisting/location_actions.jsp"
-            />
+				<liferay-ui:search-container-column-text name="country"
+					value="<%= location.getCountry() %>" />
+			</c:when>
+		</c:choose>
+		<liferay-ui:search-container-column-jsp align="right"
+			path="/html/locationlisting/location_actions.jsp" />
         </liferay-ui:search-container-row>
 
         <liferay-ui:search-iterator />
-
     </liferay-ui:search-container>
 
 Let's breakdown the above code. We start by getting the value of the
