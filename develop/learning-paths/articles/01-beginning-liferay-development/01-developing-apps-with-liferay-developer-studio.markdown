@@ -30,7 +30,7 @@ this step. Note that after the wizard completes, you may need to copy
 your database's JDBC driver into the `lib/ext` folder of the Liferay bundle that
 ships with Developer Studio. When finished, click *Next*. 
 
-[Figure 1.x: The First Start wizard makes it easy to configure the runtime that ships with Liferay Developer Studio](../../images/lds-first-launch-3.png)
+![Figure 1.x: The First Start wizard makes it easy to configure the runtime that ships with Liferay Developer Studio](../../images/lds-first-launch-3.png)
 
 7. Next, you can connect Studio to Liferay's Javadocs and source, for code
 lookups and to help debugging. Browse to the Javadocs or paste in the URL to
@@ -38,7 +38,7 @@ where they're stored online (pictured). For source, you can point to a
 downloaded .zip of the source code or a version checked out from a code
 repository. Click *Finish*. 
 
-[Figure 1.x: Pointing Studio to the Javadocs and Liferay source can help with debugging your code.](../../images/lds-first-launch-4.png)
+![Figure 1.x: Pointing Studio to the Javadocs and Liferay source can help with debugging your code.](../../images/lds-first-launch-4.png)
 
 After this, the wizard completes, and you have a fully configured development
 environment, ready to begin work! 

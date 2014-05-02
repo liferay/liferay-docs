@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
-<project name="Develop" default="echo-props" basedir=".">
+<project name="Develop" basedir=".">
 
-	<import file="../build-common.xml" />
+	<import file="../build-site-common.xml" />
 
-	<property name="doc.dir" value="develop"/>
+	<property name="purpose.dir" value="develop"/>
 
 </project>

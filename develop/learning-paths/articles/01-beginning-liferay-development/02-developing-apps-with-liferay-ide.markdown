@@ -17,7 +17,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page. Copy
 the URL to the update site you're interested in (stable or milestone). 
 
-[Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
+![Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
 3. Go back to Eclipse and click the *Add* button to add a repository. 
 
