@@ -391,8 +391,7 @@ the `ConfigurationActionImpl.processAction(...)` method of the
 
 By unchecking the checkbox, the location addresses are hidden from view in the
 Location Listing Portlet.
-<!-- It's not a huge issue, but in the figure below, next to the Grand Canyon 
-Location, you spelled "hole" as "whole" -->
+
 ![Figure 4: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's configuration page.](../../images/portlet-preferences-modifying-view.png)
 
 Great job! You added a new Setup tab to the Location Listing portlet's
