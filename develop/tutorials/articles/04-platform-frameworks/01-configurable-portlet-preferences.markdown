@@ -24,7 +24,7 @@ preference.
 
 1. As a starting point, use the Location Listing portlet which is available in
    the <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/04-frameworks/01-configurable-portlet-preferences/begin/event-listing-portlet).
+   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/04-platform-frameworks/01-configurable-portlet-preferences/begin/event-listing-portlet).
    You'll need to clone the repository if you haven't already done so. Then copy
    the `event-listing-portlet` folder into the `portlets` folder of your Liferay
    Plugins SDK.
