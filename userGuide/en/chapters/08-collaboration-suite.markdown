@@ -1807,20 +1807,26 @@ minimized.
 
 ### Filtering Available Users
 
-By default, all online portal users appear in the Chat portlet. You can change 
-this by creating a `portlet-ext.properties` file to override some properties of 
-your Chat portlet's `portlet.properties` file. You could modify your chat 
-portlet's `portlet.properties` file directly, but it's a best practice to 
-override it instead. 
+By default, all online portal users appear in the Chat portlet. If you want to
+filter who appears in your contact list you can, but the configuration must be
+done by someone who has administrative access to the server. The configuration
+change must be made at the time the chat portlet is deployed. 
 
-If you haven't yet deployed your Chat portlet, you can create the 
-`portlet-ext.properties` file in the `chat-portlet/WEB-INF/src` directory. It 
-gets copied over to your `chat-portlet/WEB-INF/classes` directory upon 
-deployment. If you have already deployed the Chat portlet, create the 
-`portlet-ext.properties` file in the `chat-portlet/WEB-INF/classes` directory. 
+To filter users, create a `portlet-ext.properties` file to override some
+properties of your Chat portlet's `portlet.properties` file. You could modify
+your chat portlet's `portlet.properties` file directly, but it's a best practice
+to override it instead. 
 
-The property you need to set to refine the list of users that show up in the 
-Chat portlet is `buddy.list.strategy`. Some common values are listed here:
+Before you deploy your Chat portlet, extract it to your file system. You can
+create the `portlet-ext.properties` file in the `chat-portlet/WEB-INF/src`
+directory. It gets copied over to your `chat-portlet/WEB-INF/classes` directory
+upon deployment. When you're finished making changes to your
+`portlet-ext.properties` file, you'll zip the directory structure back into a
+.war file for deployment. Note that the Chat portlet must be redeployed for
+settings in properties files to take effect. 
+
+The property that refines the list of users that show up in the Chat portlet is
+`buddy.list.strategy`. Some common values are listed here:
 
 		buddy.list.strategy=all
 		buddy.list.strategy=sites
@@ -1844,17 +1850,15 @@ when `buddy.list.strategy` is set to `sites`. The site name to give for
 `buddy.list.site.excludes` is the value of the `name` column for the `Group` 
 table in your portal's database. It must be entered in the same case as it is in 
 the database. For example, if you want to exclude a site called Default, enter 
-`buddy.list.site.excludes=Default`. The Chat portlet must be redeployed for this 
-setting to take effect. That site is then ignored when determining the users to
-show in the Chat portlet. 
+`buddy.list.site.excludes=Default`. That site is then ignored when determining
+the users to show in the Chat portlet. 
 
 The `social` setting for `buddy.list.strategy` has further filtering options as 
 well. You can set the allowed types of social relationships through the property 
-`buddy.list.allowed.social.relation.types`. This property is given the setting 
-of `2,12` by default. Those values correspond, respectively, to the "Friend" and 
-"Connection" social relationship types. The values for some additional social 
-relationship types are listed here along with those of "Friend" and 
-"Connection":
+`buddy.list.allowed.social.relation.types`. By default this property is set to
+`2,12`. Those values correspond, respectively, to the *Friend* and *Connection*
+social relationship types. The values for some additional social relationship
+types are listed here along with those of *Friend* and *Connection*:
 
 		TYPE_BI_CONNECTION = 12
 		TYPE_BI_COWORKER = 1
