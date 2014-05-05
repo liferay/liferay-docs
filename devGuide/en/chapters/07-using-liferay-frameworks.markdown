@@ -1537,7 +1537,7 @@ app.
 - Moving/Restoring Parent Entities
 - Resolving Conflicts
 
-While discussing these capabilites, we'll refer to code snippets taken from
+While discussing these capabilities, we'll refer to code snippets taken from
 Liferay's [Jukebox Portlet](https://github.com/liferay-labs/jukebox-portlet) plugin.
 The plugin actually bundles three separate portlets: *Songs*,
 *Albums*, and *Artists*, which are 
@@ -1602,7 +1602,7 @@ You must create an implementation of the
 [TrashHandler](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
 interface for each trash-enabled entity. Recycle Bin trash handlers 
 manage the entries as the are moved into the Recycle Bin, viewed in the Recycle
-Bin, restored, or permantently deleted. As a convenience, Liferay provides
+Bin, restored, or permanently deleted. As a convenience, Liferay provides
 abstract class 
 [BaseTrashHandler](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/BaseTrashHandler.html) 
 that your trash handlers to extend. 
@@ -1666,7 +1666,7 @@ entity.
 
 For example, the Jukebox portlet's
 [SongLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java)
-class implements the following method to move song entities to the the Recycle
+class implements the following method to move song entities to the Recycle
 Bin: 
 
     @Indexable(type = IndexableType.REINDEX)
@@ -1793,7 +1793,7 @@ provides the  `deleteSong()` portlet action method for invoking the
         ...
     }
 
-Note that the `try` block contains logic for handling whether the the entry is
+Note that the `try` block contains logic for handling whether the entry is
 to be moved to the Recycle Bin or permanently deleted. 
 
 You can use a JSP to invoke your portlet action. Our Jukebox portlet's
@@ -1991,7 +1991,7 @@ Now that our service provides a method for restoring the entry, we must invoke i
 from our trash handler's `restoreTrashEntry()` method. The Recycle Bin framework
 calls this method when a user clicks the trash entry's *Restore* button. 
 
-The following `restoreTrashEntry()` method impementation is from the Jukebox portlet's
+The following `restoreTrashEntry()` method implementation is from the Jukebox portlet's
 [SongTrashHandler](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
 class. 
 
@@ -2068,7 +2068,7 @@ Now you'll need to create a portlet action method that invokes your service
 method to restore the entry. This is the same `restore*` service method we
 implemented in the previous section on restoring entities. 
 
-The following porlet action method from the
+The following portlet action method from the
 [JukeboxPortlet](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/portlet/JukeboxPortlet.java)
 class restores the song from the Recycle Bin:
 
@@ -2087,7 +2087,7 @@ This method implements the `restoreSong` action that we named in the `view.jsp`.
 The action URL maps the trash-undo taglib to this method.
 
 Note how it parses entry IDs from the request object. It restores all of these
-entries by calling the the `restore*`
+entries by calling the `restore*`
 service method we defined in the previous *Restoring Entries from the
 Recycle Bin* section.
 
@@ -2328,8 +2328,9 @@ entities in your service definition, you've provided a means to trash/restore a
 parent's child entities when trashing/restoring that parent, and you've learned
 how the powerful Recycle Bin UI lets you work with a parent's child entities.
 
-Have you wondered what would happen if there was a conflict when moving and
-restoring entries to and from the Recycle Bin? Let's learn how to deal with conflicts next.
+Have you wondered what would happen if there was a conflict when moving or
+restoring entries to and from the Recycle Bin? Let's learn how to deal with
+conflicts next.
 
 ### Resolving Conflicts
 
@@ -2344,15 +2345,15 @@ but with its status changed and visibility turned off.
 Let's learn how to implement the Resolution Conflicts framework so we can avoid
 Recycle Bin conflicts.
 
-#### Resolving Conflicts *Step 1*: Rename Trash When Sent to the Recycle Bin
+#### *Resolving Conflicts Step 1*: Rename Entities Sent to the Recycle Bin
 
 When an entry is sent to the Recycle Bin, the entry is actually duplicated.
 Because we're keeping the entry in its original location, the duplicate entry
 created in the Recycle Bin needs to have a different name to avoid collisions.
 When viewing the entry from the Recycle Bin UI, the name appears the same, but
-the portal needs a way to distinguish between the two entries. To do this, add
+the portal needs a way to distinguish between the two entries. To do this, you must add
 logic to your entity's service to have the framework generate a new name for the
-Recycle Bin entry:
+Recycle Bin entry. 
 
 When an entry is sent to the Recycle Bin, it's still located in its original
 location, but with a different status. Users may create an entity with a name,
@@ -2363,43 +2364,61 @@ for example, names for documents, titles for songs in an album, friendly URLs
 for pages, etc. On moving an entity to the Recycle Bin, we need to rename its fields
 that could generate conflicts to something unique. 
 
+    UnicodeProperties typeSettingsProperties = new UnicodeProperties();
+
+    typeSettingsProperties.put("title", song.getName());
+
     TrashEntry trashEntry = trashEntryLocalService.addTrashEntry(
         userId, song.getGroupId(), Song.class.getName(), song.getSongId(),
         song.getUuid(), null, oldStatus, null, typeSettingsProperties);
 
     song.setName(TrashUtil.getTrashTitle(trashEntry.getEntryId()));
 
-The code above provides a *typeSettings* map, in which you can store those
-values, and then replace them with something that doesn't conflict. We use the
+We create a `UnicodeProperties` instance to hold a mapping of each song's title.
+The mapping gets stored with the trash entry. We use the
 `TrashUtil.getTrashTitle(trashEntry.getEntryId())` method from the
 [SongLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java)
-class to obtain a string which will be different for each entity. 
+to set the name of the original song to a unique value that we can use to look up
+the trash entry associated with the song. Invoking
+`TrashUtil.getTrashTitle(trashEntry.getEntryId())` resets the name of the
+original song to a unique value--a slash followed by the ID of the song's trash
+entry. Since the song is now in the Recycle Bin, it is hidden from view in its
+original location; so you don't have to worry about this lookup value being
+visible to users. As you'll see shortly, unique names generated by
+`TrashUtil.getTrashTitle(...)` are used for looking up the names of the original
+entities on the event that they are restored from the Recycle Bin. 
 
-Next, we'll need to restore the entry's original name when it's restored from
-the Recycle Bin. 
+![Figure 7.5: The Recycle Bin allows you to manage trash entries, even if they share the same name.](../../images/trash-entries-with-same-name.png)
 
-#### Resolving Conflicts *Step 2*: Restore Trash Name When Restored From Recycle Bin
+Next, we'll consider how to restore the original name of each trashed entity
+when it's restored from the Recycle Bin. 
 
-Since you now rename an entry once it's moved to the Recycle Bin, you'll need a
-way to retrieve the old name once it's restored. The code snippet below, found
-in the Jukebox portlet's
-[SongLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java),
+#### *Resolving Conflicts Step 2*: Restore the Entity's Original Name When Restoring From Recycle Bin
+
+Since your entity is renamed, you'll need a
+way to retrieve its old name, in the case that the entity gets restored. The code snippet below, found
+in the `restoreSongFromTrash(long userId, long songId)` method of the Jukebox
+portlet's [SongLocalServiceImpl](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/SongLocalServiceImpl.java),
 portrays how this is done:
-
-    TrashEntry trashEntry = trashEntryLocalService.getEntry(Song.class.getName(), songId);
 
     Song song = songPersistence.findByPrimaryKey(songId);
 
     song.setName(TrashUtil.getOriginalTitle(song.getName()));
 
-The trashed song is retrieved, and the `getOriginalTitle()` method is called.
-The string we obtained from the `TrashUtil.getTrashTitle()` method in the last
-section is used to obtain the original title from the
-`TrashUtil.getOriginalTitle()` method. The song's original title is returned as
-an ID number from the database. Therefore, to get the original title for the
-proper locale, we'll need to implement the trash renderer or asset renderer to
-return the name in our locale.
+The original song is retrieved by its ID. Then the
+`TrashUtil.getOriginalTitle(...)` method is called to look up the song's original
+name. Remember that the song's current name is based on the trash entry's ID.
+`TrashUtil`'s `getTrashTitle()` method looks up the trash entry and returns the *title*
+value (the song's original name) previously mapped in the entry's type settings
+properties. And we set the original song name back to the song. 
 
+Lastly, whether an entity is in the Recycle Bin or not, it's always nice to
+render the entity with its original name. As an example of rendering a song's original title
+based on a locale, the Jukebox portlet's
+[SongAssetRenderer](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/asset/SongAssetRenderer.java)
+provides the following implementation:
+
+ 
     @Override
     public String getTitle(Locale locale) {
         if (!_song.isInTrash()) {
@@ -2409,17 +2428,14 @@ return the name in our locale.
         return TrashUtil.getOriginalTitle(_song.getName());
     }
 
-This code snippet, found in the
-[SongAssetRenderer](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/asset/SongAssetRenderer.java)
-class, checks if the song is in the Recycle Bin, and then returns the original
-song name based on its locale. You can refer to implementing a trash renderer or
-asset renderer in the *Moving Entries to the Recycle Bin* section of this
-chapter.
+If the song isn't in the Recycle Bin, the song's current name is returned.
+Otherwise, the method invokes `TrashUtil.getOriginalTitle(_song.getName())` to
+look up the song's original name and return it. 
 
 Lastly, we need to implement some required methods to finalize the Conflicts
 Resolution framework.
 
-#### Resolving Conflicts *Step 3*: Implement Methods in Trash Handler
+#### *Resolving Conflicts Step 3*: Implement Conflict Resolution Trash Handler Methods
 
 Your app can now uniquely rename entries on removal and return the original name
 when restored. What happens when the original entry is restored to its original
@@ -2427,11 +2443,11 @@ location where a new entry with the same already exists? This causes a naming
 conflict that needs to be resolved by the user.
 
 The Recycle Bin framework provides a UI for users to decide whether to overwrite
-the existing entry, or update the title of the entry they're restoring. Two
+the existing entry, or to keep both entries by updating the title of the entry they're restoring. Two
 methods need to be implemented in the trash handler to allow for the necessary
 checks and updates. The first method should check for duplicate trash entries.
 If an entry with the same name is detected in a directory, an exception should
-be thrown. You can reference the `checkDuplicateTrashEntry()` method in the
+be thrown. You can reference the `checkDuplicateTrashEntry()` method from
 [SongTrashHandler](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
 to see how this is done.
 
@@ -2440,25 +2456,25 @@ Jukebox portlet updates a song title by calling the `updateTitle()` method,
 which can also be found in the
 [SongTrashHandler](https://github.com/liferay-labs/jukebox-portlet/blob/master/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
 class. This method is called when the entry you're restoring needs its title
-updated, so it no longer conflicts with the pre-existing entry with the same
+updated, so it no longer conflicts with the preexisting entry with the same
 name. After implementing these methods, you should always be able to resolve
-naming conflicts amongst your trashed entries.
+naming conflicts between your trashed entries.
 
-Fantastic! The Conflicts Resolution framework is implemented for your app. The
-figure below exemplifies a conflict resolution pop-up after trying to restore an
-identially named song that is already present in the Songs portlet.
+The figure below exemplifies a conflict resolution pop-up on trying to restore a
+song for which an identically named song is already present in the Songs portlet.
 
-![Figure 7.5: The Recycle Bin handles conflicts by notifying the user with a pop-up message and options on how to solve the problem.](../../images/resolved-conflict-rb.png)
+![Figure 7.6: The Recycle Bin handles conflicts by notifying the user with a pop-up message and options on how to solve the problem.](../../images/resolved-conflict-rb.png)
 
-Now you have a smarter, more efficient Recycle Bin that handles potential
+Fantastic! By leveraging the Conflicts Resolution framework in your app, you'll
+be able to provide a smarter Recycle Bin that handles potential
 conflicts with ease.
 
 Congratulations! You've finished your journey through the Recycle Bin framework.
 You accomplished this feat by developing your app to move entries to the Recycle
 Bin, restore entries from the Recycle Bin, use the Undo action, move and restore
-parent entities, and use the Recycle Bin's Resolution Conflicts framework. The
+parent entities, and use the Recycle Bin's Resolution Conflicts framework. Your
 *dirty* work is complete and you now know how to implement the Recycle Bin
-framework to your app. Next, let's learn about Liferay's Message Bus. 
+framework in your app. Next, let's learn about Liferay's Message Bus. 
 
 ## Using Message Bus [](id=using-message-bus-liferay-portal-6-2-dev-guide-06-en)
 
@@ -2509,7 +2525,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 7.6: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 7.7: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -2612,7 +2628,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 7.7: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 7.8: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2923,7 +2939,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with serial dispatching of
 messages: 
 
-![Figure 7.8: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 7.9: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -3111,7 +3127,7 @@ there's no need for the company-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 7.9: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 7.10: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a parallel destination type in our `messaging-spring.xml`:
 
