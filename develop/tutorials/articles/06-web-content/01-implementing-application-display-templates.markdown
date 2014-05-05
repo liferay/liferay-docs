@@ -168,32 +168,48 @@ enabling Application Display Templates for the Location Listing Portlet.
 5. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the `liferay-ui:ddm-template-selector`
    taglib in the JSP file you're using to control your portlet's configuration
-   mode. We'll add the display settings to the Location Listing Portlet's
-   `docroot/html/locationlisting/configuration.jsp` file:
+   mode. Replace the contents of the 
+   `docroot/html/locationlisting/configuration.jsp` file with this code:
  
-        <%@ include file="../init.jsp" %>
-        ...
-        <aui:form action="<%= configurationURL %>" method="post" name="fm">
-            <aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
+        <%@ include file="/html/init.jsp" %>
 
-            <aui:fieldset>
-                <div class="display-template">
-
-                    <%
-                    TemplateHandler templateHandler = TemplateHandlerRegistryUtil.getTemplateHandler(Location.class.getName());
-                    %>
-
-                    <liferay-ui:ddm-template-selector
-                        classNameId="<%= PortalUtil.getClassNameId(templateHandler.getClassName()) %>"
-                        displayStyle="<%= displayStyle %>"
-                        displayStyleGroupId="<%= displayStyleGroupId %>"
-                        refreshURL="<%= PortalUtil.getCurrentURL(request) %>"
-                        showEmptyOption="<%= true %>"
-                    />
-                </div>
-            </aui:fieldset>
-        ...
-        </aui:form>
+		<%
+		String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
+		long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
+		%>
+			
+		<liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
+			
+		<aui:form action="<%= configurationURL %>" method="post" name="fm">
+			<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
+			
+			<aui:fieldset>
+				<div class="display-template">
+			
+					<%
+					TemplateHandler templateHandler = TemplateHandlerRegistryUtil.getTemplateHandler(Location.class.getName());
+					%>
+			
+					<liferay-ui:ddm-template-selector
+						classNameId="<%= PortalUtil.getClassNameId(templateHandler.getClassName()) %>"
+						displayStyle="<%= displayStyle %>"
+						displayStyleGroupId="<%= displayStyleGroupId %>"
+						refreshURL="<%= PortalUtil.getCurrentURL(request) %>"
+						showEmptyOption="<%= true %>"
+					/>
+				</div>
+			</aui:fieldset>
+			
+		<%
+		boolean showLocationAddress_cfg = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+		%>
+			
+			<aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress_cfg %>" />
+			
+			<aui:button-row>
+				<aui:button type="submit" />
+			</aui:button-row>
+		</aui:form>
 
     In this JSP, the `TemplateHandler` object is initialized. Then, we specify
     the `liferay-ui:ddm-template-selector` taglib, which implements the Display
@@ -203,47 +219,105 @@ enabling Application Display Templates for the Location Listing Portlet.
 6. You're almost finished, but you still have to extend your view code to
    render your portlet with the selected ADT. Here is where you decide exactly
    which part of your view will be rendered by the ADT and what will be
-   available in the template context. To do this, add the following code
-   outlined below to your Location Listing Portlet's
-   `docroot/html/locationlisting/view.jsp` file:
+   available in the template context. To do this, replace the contents of your 
+   `docroot/html/locationlisting/view.jsp` file with this code:
  
         <%@ include file="/html/init.jsp" %>
 
-        This is the <b>Location Listing Portlet</b> in View mode.
-        ...
-        <%
-        String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
-        long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
+		This is the <b>Location Listing Portlet</b> in View mode.
+		
+		<%
+			String redirect = PortalUtil.getCurrentURL(renderRequest);
+		%>
+		
+		<aui:button-row>
+			<portlet:renderURL var="addLocationURL">
+				<portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
+				<portlet:param name="redirect" value="<%= redirect %>" />
+			</portlet:renderURL>
+		
+			<aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
+		</aui:button-row>
+		
+		<%
+		String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
+		long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
+		
+		long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
+		
+		boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+		%>
+		
+		<c:choose>
+			<c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
+				<% List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId); %>
+		
+				<%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, locations) %>
+			</c:when>
+			<c:otherwise>
+				<liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
+					<liferay-ui:search-container-results
+						results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
+						total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
+					/>
+		
+					<liferay-ui:search-container-row
+						className="com.samples.portlet.eventlisting.model.Location"
+						keyProperty="locationId"
+						modelVar="location" escapedModel="<%= true %>"
+					>
+						<liferay-ui:search-container-column-text
+							name="name"
+							value="<%= location.getName() %>"
+						/>
+		
+						<liferay-ui:search-container-column-text
+							name="description"
+							property="description"
+						/>
+		
+						<c:choose>
+							<c:when test="<%= showLocationAddress_view == true %>">
+								<liferay-ui:search-container-column-text
+									name="street-address"
+									property="streetAddress"
+								/>
+		
+								<liferay-ui:search-container-column-text
+									name="city"
+									property="city"
+								/>
+		
+								<liferay-ui:search-container-column-text
+									name="state-province"
+									property="stateOrProvince"
+								/>
+		
+								<liferay-ui:search-container-column-text
+									name="country"
+									property="country"
+								/>
+							</c:when>
+						</c:choose>
+		
+						<liferay-ui:search-container-column-jsp
+							align="right"
+							path="/html/locationlisting/location_actions.jsp"
+						/>
+					</liferay-ui:search-container-row>
+		
+					<liferay-ui:search-iterator />
+		
+				</liferay-ui:search-container>
+			</c:otherwise>
+		</c:choose>
 
-        long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
-
-        boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
-        %>
-
-        <c:choose>
-            <c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
-                <% List<Location> locations = LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId); %>
-
-                <%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, locations) %>
-            </c:when>
-            <c:otherwise>
-                <liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
-                    <liferay-ui:search-container-results
-                        results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
-                        total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
-                    />
-                ...
-                </liferay-ui:search-container>
-            </c:otherwise>
-        </c:choose>
-
-    In this code snippet, we initialized variables dealing with the display
-    settings (`displayStyle`, `displayStyleGroupId`, and
-    `portletDisplayDDMTemplateId`), and then used a do-otherwise statement to
-    choose between rendering the ADT, or displaying what was originally in the
-    `view.jsp`. If the `portletDisplayDDMTemplateId` exists, the locations list
-    is initialized and the ADT is rendered using the page context, template ID,
-    and locations.
+    In this file, we initialized variables dealing with the display settings 
+    (`displayStyle`, `displayStyleGroupId`, and `portletDisplayDDMTemplateId`), 
+    and then used a do-otherwise statement to choose between rendering the ADT, 
+    or displaying what was originally in the `view.jsp`. If the 
+    `portletDisplayDDMTemplateId` exists, the locations list is initialized and 
+    the ADT is rendered using the page context, template ID, and locations.
 
 Now that our portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. We'll experiment by adding our own custom ADT.
