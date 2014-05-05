@@ -43,11 +43,11 @@ enabling Application Display Templates for the Location Listing Portlet.
 
 2. Create and register a custom `PortletDisplayTemplateHandler` class. To do
    this, create a new package called
-   `com.nosester.portlet.eventlisting.template`. Then create a new class in that
+   `com.samples.portlet.eventlisting.template`. Then create a new class in that
    package called `LocationListingPortletDisplayTemplateHandler` and copy the
    following code into that class:
 
-        package com.nosester.portlet.eventlisting.template;
+        package com.samples.portlet.eventlisting.template;
 
         import java.util.List;
         import java.util.Locale;
@@ -58,8 +58,8 @@ enabling Application Display Templates for the Location Listing Portlet.
         import com.liferay.portal.kernel.template.TemplateVariableGroup;
         import com.liferay.portal.kernel.util.StringPool;
         import com.liferay.portlet.portletdisplaytemplate.util.PortletDisplayTemplateConstants;
-        import com.nosester.portlet.eventlisting.model.Location;
-        import com.nosester.portlet.eventlisting.util.PortletKeys;
+        import com.samples.portlet.eventlisting.model.Location;
+        import com.samples.portlet.eventlisting.util.PortletKeys;
 
         public class LocationListingPortletDisplayTemplateHandler extends
                 BasePortletDisplayTemplateHandler {
@@ -132,8 +132,8 @@ enabling Application Display Templates for the Location Listing Portlet.
             <portlet>
                 <portlet-name>locationlisting</portlet-name>
                 <icon>/icon.png</icon>
-                <configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
-                <template-handler>com.nosester.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
+                <configuration-action-class>com.samples.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
+                <template-handler>com.samples.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
                 <instanceable>false</instanceable>
                 ...
             </portlet>
