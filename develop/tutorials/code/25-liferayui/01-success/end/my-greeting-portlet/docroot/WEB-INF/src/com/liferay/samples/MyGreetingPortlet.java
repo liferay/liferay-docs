@@ -16,6 +16,7 @@ package com.liferay.samples;
 
 import java.io.IOException;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.servlet.SessionErrors;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
@@ -24,20 +25,26 @@ import com.liferay.util.bridges.mvc.MVCPortlet;
 
 public class MyGreetingPortlet extends MVCPortlet {
 
-    @Override
-    public void processAction(
-        ActionRequest actionRequest, ActionResponse actionResponse)
-        throws IOException, PortletException {
-        PortletPreferences prefs = actionRequest.getPreferences();
-        String greeting = actionRequest.getParameter("greeting");
+	@Override
+	public void processAction(
+	    ActionRequest actionRequest, ActionResponse actionResponse)
+	    throws IOException, PortletException {
 
-        if (greeting != null) {
-            prefs.setValue("greeting", greeting);
-            prefs.store();
-        }
+	    PortletPreferences prefs = actionRequest.getPreferences();
+	    String greeting = actionRequest.getParameter("greeting");
 
-        SessionMessages.add(actionRequest, "success");
-        super.processAction(actionRequest, actionResponse);
-    }
+	    try {
+	        prefs.setValue("greeting", greeting);
+	        prefs.store();
+	        SessionMessages.add(actionRequest, "success");
+	    }
+	    catch(Exception e) {
+	        SessionErrors.add(actionRequest, "error");
+	    }
+
+	    SessionMessages.add(actionRequest, "success");
+	    super.processAction(actionRequest, actionResponse);
+	}
 
 }
+
