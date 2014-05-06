@@ -33,14 +33,15 @@ public class MyGreetingPortlet extends MVCPortlet {
 	    PortletPreferences prefs = actionRequest.getPreferences();
 	    String greeting = actionRequest.getParameter("greeting");
 
-	    try {
-	        prefs.setValue("greeting", greeting);
-	        prefs.store();
-	        SessionMessages.add(actionRequest, "success");
-	    }
-	    catch(Exception e) {
-	        SessionErrors.add(actionRequest, "error");
-	    }
+        if (greeting != null) {
+            try {
+                prefs.setValue("greeting", greeting);
+                prefs.store();
+            }
+            catch(Exception e) {
+                SessionErrors.add(actionRequest, "error");
+            }
+        }
 
 	    SessionMessages.add(actionRequest, "success");
 	    super.processAction(actionRequest, actionResponse);
