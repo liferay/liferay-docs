@@ -128,16 +128,22 @@ enabling Application Display Templates for the Location Listing Portlet.
         <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
         
         <liferay-portlet-app>
+        
             ...
+            
             <portlet>
                 <portlet-name>locationlisting</portlet-name>
                 <icon>/icon.png</icon>
                 <configuration-action-class>com.samples.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
                 <template-handler>com.samples.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
                 <instanceable>false</instanceable>
+                
                 ...
+                
             </portlet>
+            
             ...
+            
         </liferay-portlet-app>
 
 4. Since the ability to add ADTs is new to your portlet, we need to configure
@@ -149,7 +155,9 @@ enabling Application Display Templates for the Location Listing Portlet.
         <?xml version="1.0"?>
         <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
         <resource-action-mapping>
+        
             ...
+            
             <portlet-resource>
                 <portlet-name>locationlisting</portlet-name>
                 <permissions>
@@ -159,26 +167,26 @@ enabling Application Display Templates for the Location Listing Portlet.
                         <action-key>CONFIGURATION</action-key>
                         <action-key>VIEW</action-key>
                     </supports>
+                    
                 ...
+                
                 </permissions>
             </portlet-resource>
+            
         ...
+        
         </resource-action-mapping>
 	 
 5. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the `liferay-ui:ddm-template-selector`
    taglib in the JSP file you're using to control your portlet's configuration
-   mode. Replace the contents of the 
-   `docroot/html/locationlisting/configuration.jsp` file with this code:
+   mode. In the file `docroot/html/locationlisting/configuration.jsp`, insert 
+   the `aui:fieldset` immediately after the line with 
+   `<aui:input name="<%= Constants.CMD %>...`:
  
         <%@ include file="/html/init.jsp" %>
 
-		<%
-		String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
-		long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
-		%>
-			
-		<liferay-portlet:actionURL portletConfiguration="true" var="configurationURL" />
+		...
 			
 		<aui:form action="<%= configurationURL %>" method="post" name="fm">
 			<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
@@ -200,15 +208,8 @@ enabling Application Display Templates for the Location Listing Portlet.
 				</div>
 			</aui:fieldset>
 			
-		<%
-		boolean showLocationAddress_cfg = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
-		%>
-			
-			<aui:input name="preferences--showLocationAddress--" type="checkbox" value="<%= showLocationAddress_cfg %>" />
-			
-			<aui:button-row>
-				<aui:button type="submit" />
-			</aui:button-row>
+		...
+		
 		</aui:form>
 
     In this JSP, the `TemplateHandler` object is initialized. Then, we specify
@@ -219,24 +220,19 @@ enabling Application Display Templates for the Location Listing Portlet.
 6. You're almost finished, but you still have to extend your view code to
    render your portlet with the selected ADT. Here is where you decide exactly
    which part of your view will be rendered by the ADT and what will be
-   available in the template context. To do this, replace the contents of your 
-   `docroot/html/locationlisting/view.jsp` file with this code:
+   available in the template context. To do this, add the following pieces of 
+   code to your `docroot/html/locationlisting/view.jsp` file. First, add the 
+   Java initializations to the scriptlet below the closing `aui:button-row`. 
+   Then add the code for `choose` and `otherwise` above the existing 
+   `liferay-ui:search-container`. Remember to put in the closing `choose` and 
+   `otherwise` after the closing `liferay-ui:search-container`:
  
         <%@ include file="/html/init.jsp" %>
+        
+        This is the <b>Location Listing Portlet</b> in View mode.
 
-		This is the <b>Location Listing Portlet</b> in View mode.
+		...
 		
-		<%
-			String redirect = PortalUtil.getCurrentURL(renderRequest);
-		%>
-		
-		<aui:button-row>
-			<portlet:renderURL var="addLocationURL">
-				<portlet:param name="mvcPath" value="/html/locationlisting/edit_location.jsp" />
-				<portlet:param name="redirect" value="<%= redirect %>" />
-			</portlet:renderURL>
-		
-			<aui:button onClick="<%= addLocationURL.toString() %>" value="add-location" />
 		</aui:button-row>
 		
 		<%
@@ -256,57 +252,8 @@ enabling Application Display Templates for the Location Listing Portlet.
 			</c:when>
 			<c:otherwise>
 				<liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
-					<liferay-ui:search-container-results
-						results="<%= LocationLocalServiceUtil.getLocationsByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
-						total="<%= LocationLocalServiceUtil.getLocationsCountByGroupId(scopeGroupId) %>"
-					/>
-		
-					<liferay-ui:search-container-row
-						className="com.samples.portlet.eventlisting.model.Location"
-						keyProperty="locationId"
-						modelVar="location" escapedModel="<%= true %>"
-					>
-						<liferay-ui:search-container-column-text
-							name="name"
-							value="<%= location.getName() %>"
-						/>
-		
-						<liferay-ui:search-container-column-text
-							name="description"
-							property="description"
-						/>
-		
-						<c:choose>
-							<c:when test="<%= showLocationAddress_view == true %>">
-								<liferay-ui:search-container-column-text
-									name="street-address"
-									property="streetAddress"
-								/>
-		
-								<liferay-ui:search-container-column-text
-									name="city"
-									property="city"
-								/>
-		
-								<liferay-ui:search-container-column-text
-									name="state-province"
-									property="stateOrProvince"
-								/>
-		
-								<liferay-ui:search-container-column-text
-									name="country"
-									property="country"
-								/>
-							</c:when>
-						</c:choose>
-		
-						<liferay-ui:search-container-column-jsp
-							align="right"
-							path="/html/locationlisting/location_actions.jsp"
-						/>
-					</liferay-ui:search-container-row>
-		
-					<liferay-ui:search-iterator />
+					
+				...
 		
 				</liferay-ui:search-container>
 			</c:otherwise>
