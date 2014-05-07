@@ -168,81 +168,69 @@ enabling Application Display Templates for the Location Listing Portlet.
                         <action-key>VIEW</action-key>
                     </supports>
                     
-                ...
+                    ...
                 
                 </permissions>
             </portlet-resource>
             
-        ...
+            ...
         
         </resource-action-mapping>
 	 
-5. Now that your portlet officially supports ADTs, you'll want to expose the
-   ADT option to your users. Just include the `liferay-ui:ddm-template-selector`
-   taglib in the JSP file you're using to control your portlet's configuration
-   mode. In the file `docroot/html/locationlisting/configuration.jsp`, insert 
-   the `aui:fieldset` immediately after the line with 
-   `<aui:input name="<%= Constants.CMD %>...`:
+5.  Now that your portlet officially supports ADTs, you'll want to expose the
+    ADT option to your users. Just include the
+    `liferay-ui:ddm-template-selector` taglib in the JSP file you're using to
+    control your portlet's configuration mode.
+   
+    In the file `docroot/html/locationlisting/configuration.jsp`, insert the
+    following `aui:fieldset` within the `aui:form` immediately after the first `aui:input`:
  
-        <%@ include file="/html/init.jsp" %>
+        <aui:fieldset>
+            <div class="display-template">
 
-		...
-			
-		<aui:form action="<%= configurationURL %>" method="post" name="fm">
-			<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
-			
-			<aui:fieldset>
-				<div class="display-template">
-			
-					<%
-					TemplateHandler templateHandler = TemplateHandlerRegistryUtil.getTemplateHandler(Location.class.getName());
-					%>
-			
-					<liferay-ui:ddm-template-selector
-						classNameId="<%= PortalUtil.getClassNameId(templateHandler.getClassName()) %>"
-						displayStyle="<%= displayStyle %>"
-						displayStyleGroupId="<%= displayStyleGroupId %>"
-						refreshURL="<%= PortalUtil.getCurrentURL(request) %>"
-						showEmptyOption="<%= true %>"
-					/>
-				</div>
-			</aui:fieldset>
-			
-		...
-		
-		</aui:form>
-
-    In this JSP, the `TemplateHandler` object is initialized. Then, we specify
-    the `liferay-ui:ddm-template-selector` taglib, which implements the Display
-    Template drop-down menu in the Location Listing Portlet's Configuration
-    menu.
-
-6. You're almost finished, but you still have to extend your view code to
-   render your portlet with the selected ADT. Here is where you decide exactly
-   which part of your view will be rendered by the ADT and what will be
-   available in the template context. To do this, add the following pieces of 
-   code to your `docroot/html/locationlisting/view.jsp` file. First, add the 
-   Java initializations to the scriptlet below the closing `aui:button-row`. 
-   Then add the code for `choose` and `otherwise` above the existing 
-   `liferay-ui:search-container`. Remember to put in the closing `choose` and 
-   `otherwise` after the closing `liferay-ui:search-container`:
- 
-        <%@ include file="/html/init.jsp" %>
+                <%
+                TemplateHandler templateHandler = TemplateHandlerRegistryUtil.getTemplateHandler(Location.class.getName());
+                %>
         
-        This is the <b>Location Listing Portlet</b> in View mode.
+                <liferay-ui:ddm-template-selector
+                    classNameId="<%= PortalUtil.getClassNameId(templateHandler.getClassName()) %>"
+                    displayStyle="<%= displayStyle %>"
+                    displayStyleGroupId="<%= displayStyleGroupId %>"
+                    refreshURL="<%= PortalUtil.getCurrentURL(request) %>"
+                            showEmptyOption="<%= true %>"
+                />
+            </div>
+        </aui:fieldset>
 
-		...
-		
-		</aui:button-row>
-		
-		<%
-		String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
-		long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
-		
-		long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
-		
-		boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
-		%>
+    In this JSP, the `TemplateHandler` object is initialized for the `Location`
+    entity class. Then, the `liferay-ui:ddm-template-selector` taglib specifies
+    the Display Template drop-down menu to be used in the portlet's
+    Configuration menu. You can see the final `configuration.jsp` file 
+    [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/06-web-content/01-implementing-application-display-templates/end/event-listing-portlet/docroot/html/locationlisting/configuration.jsp). 
+
+6.  You're almost finished, but you still have to extend your view code to
+    render your portlet with the selected ADT. Here is where you decide exactly
+    which part of your view will be rendered by the ADT and what will be
+    available in the template context. To do this, you'll add several pieces of
+    code to your `docroot/html/locationlisting/view.jsp` file.
+
+    First, initialize the Java variables needed for the ADT in the scriptlet
+    below the closing `</aui:button-row>` tag, so that the scriptlet looks like
+    this: 
+
+        <%
+        String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
+        long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
+
+        long portletDisplayDDMTemplateId = PortletDisplayTemplateUtil.getPortletDisplayTemplateDDMTemplateId(displayStyleGroupId, displayStyle);
+
+        boolean showLocationAddress_view = GetterUtil.getBoolean(portletPreferences.getValue("showLocationAddress", StringPool.TRUE));
+        %>
+
+    Next, we'll add the first part of the conditional code that determines
+    whether to apply the template or to apply the `liferay-ui:search-container`
+    that existed in  originally in the JSP. So, insert the following conditional
+    code before the opening `liferay-ui:search-container` taglib:
 		
 		<c:choose>
 			<c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
@@ -251,20 +239,22 @@ enabling Application Display Templates for the Location Listing Portlet.
 				<%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, locations) %>
 			</c:when>
 			<c:otherwise>
-				<liferay-ui:search-container emptyResultsMessage="location-empty-results-message">
-					
-				...
-		
-				</liferay-ui:search-container>
-			</c:otherwise>
-		</c:choose>
 
-    In this file, we initialized variables dealing with the display settings 
+    Lastly, put in the closing `choose` and `otherwise` after the closing
+    `liferay-ui:search-container`: 
+
+            </c:otherwise>
+        </c:choose>
+
+    In this JSP, we initialized variables dealing with the display settings 
     (`displayStyle`, `displayStyleGroupId`, and `portletDisplayDDMTemplateId`), 
-    and then used a do-otherwise statement to choose between rendering the ADT, 
-    or displaying what was originally in the `view.jsp`. If the 
-    `portletDisplayDDMTemplateId` exists, the locations list is initialized and 
+    and then used conditional taglibs to choose between rendering the ADT, or
+    displaying the entities as we had been doing previously. If the
+    `portletDisplayDDMTemplateId` exists, the locations list is initialized and
     the ADT is rendered using the page context, template ID, and locations.
+    Otherwise, the locations list is displayed using the 
+    `liferay-ui:search-container` taglib. You can see the resulting `view.jsp`
+    file [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/06-web-content/01-implementing-application-display-templates/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 Now that our portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. We'll experiment by adding our own custom ADT.
