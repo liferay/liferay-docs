@@ -21,11 +21,7 @@ We'll cover the following topics:
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
 - Extending the Indexer Post Processor
-<<<<<<< HEAD
-- RTL Hook <!-- TODO update topic heading based on final topic heading -->
-=======
 - The RTL Hook 
->>>>>>> ae9b622246f1428d97de073a74a8cfd1861e2112
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
