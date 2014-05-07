@@ -48,11 +48,10 @@ custom portlet.
    Plugins SDK. Note that this My Greeting portlet is the finished portlet from
    the [Using liferay-ui:success and liferay:ui error
    Messages](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/25-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown)
-   tutorial.
+   tutorial. Deploy the portlet to your portal and then add it to a page.
 
-2. Add the `welcome` language key in front of our greeting in the `view.jsp`
-   file of the My Greeting portlet. Replace its current greeting paragraph with
-   this:
+2. To use the `welcome` language key in the portlet's UI, open the `view.jsp`
+   file and replace its greeting paragraph with this:
 
         <p><liferay-ui:message key="welcome" />! <%= greeting %></p>
 
