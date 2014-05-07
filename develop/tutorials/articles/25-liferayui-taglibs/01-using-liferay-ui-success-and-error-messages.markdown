@@ -1,11 +1,11 @@
 # Using liferay-ui:success and liferay-ui:error Messages
 
 As users perform different actions in your portlet, it's helpful for them to get
-feedback as to whether the portlet's actions are succeeding for failing. For
+feedback as to whether the portlet's actions are succeeding or failing. For
 example, on completing an action successfully, you can reassure the user of the
 success. Similarly, if the user supplied invalid input to the action, you can
-inform him and even describe why it's invalid or hint what might make it valid.
-This kind of feedback helps your portlet's users.  
+inform him and even describe why it's invalid or hint what might make it valid;
+this kind of feedback helps your portlet's users.  
 
 To facilitate such feedback, Liferay provides the means for you to pass an
 attribute to your JSPs to indicate an action's success or failure. In your
@@ -24,7 +24,7 @@ Let's do it.
 
 ## Confirming Success with liferay-ui:success
 
-It's good to let a user know when a portlet was able execute his action
+It's good to let a user know when a portlet was able to execute his action
 successfully. So, we'll demonstrate adding a success message for an action
 successfully completed in My Greeting portlet. 
 
@@ -38,7 +38,7 @@ Plugins SDK.
 
 2.  Open `MyGreetingPortlet.java`, found in package `com.liferay.samples`, and
 add the attribute value `"success"` to the `actionRequest` via the
-`SessionMessage` helper class. You can add it at the end of the `processAction`
+`SessionMessages` helper class. You can add it at the end of the `processAction`
 method, so that the method looks like this: 
 
     ```
@@ -59,6 +59,8 @@ method, so that the method looks like this:
         super.processAction(actionRequest, actionResponse);
     }
     ```
+    Make sure to import the `com.liferay.portal.kernel.servlet.SessionMessages` 
+    class. 
 
 3.  In `view.jsp`, add a `liferay-ui:success` JSP tag with a message for the
 user and add the `liferay-ui` taglib declaration, so that the JSP looks like
@@ -126,20 +128,24 @@ look like this:
 
         PortletPreferences prefs = actionRequest.getPreferences();
         String greeting = actionRequest.getParameter("greeting");
-        
-		try {
-			prefs.setValue("greeting", greeting);
-			prefs.store();
-			SessionMessages.add(actionRequest, "success");
-		}
-		catch(Exception e) {
-			SessionErrors.add(actionRequest, "error");
-		}
+
+        if (greeting != null) {
+            try {
+                prefs.setValue("greeting", greeting);
+                prefs.store();
+            }
+            catch(Exception e) {
+                SessionErrors.add(actionRequest, "error");
+            }
+        }
 
         SessionMessages.add(actionRequest, "success");
         super.processAction(actionRequest, actionResponse);
     }
     ```
+
+    Make sure to import the `com.liferay.portal.kernel.servlet.SessionErrors` 
+    class.
 
 3.  Redeploy the portlet. 
 
@@ -158,6 +164,6 @@ files, is posted on GitHub
 
 To sum things up, you've added a success message for confirming successful
 portlet action execution and you've added an error message for notifying when
-something's gone wrong. You can implement these messages in your portlets too.
+something's gone wrong; you can implement these messages in your portlets too.
 Your portlet users will be glad to get helpful feedback from your portlets. 
 

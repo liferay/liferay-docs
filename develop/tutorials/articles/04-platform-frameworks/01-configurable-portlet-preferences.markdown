@@ -159,7 +159,7 @@ directives:
 
     <portlet:defineObjects />
 
-The `tablib` directives access the JSP Standard Tag Library (JSTL), Liferay's
+The `taglib` directives access the JSP Standard Tag Library (JSTL), Liferay's
 theme taglib, and Liferay's portlet taglib. Then, we added directives for
 importing the classes we're using. We also inserted the
 `<portlet:defineObjects />` tag to access implicit variables that we'll need. It
