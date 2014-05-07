@@ -31,7 +31,7 @@
 greeting = (String)prefs.getValue(
     "greeting", "Hello! Welcome to our portal."); %>
 
-<liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>" /> <%= greeting %></p>
+<p><liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>" /> <%= greeting %></p>
 
 <portlet:renderURL var="editGreetingURL">
     <portlet:param name="mvcPath" value="/edit.jsp" />
