@@ -11,6 +11,8 @@ get translations for your default resource bundle.
 
 <!-- Insert image and transition -->
 
+We'll get started by doing the initial setup for the Bing Translator service.
+
 ## Translating Languages Using the Bing Translator
 
 The Plugins SDK uses the Bing Translator service
@@ -19,47 +21,93 @@ translate all of the resources in your Language.properties file to multiple
 languages. It provides a base translation for you to start with. To create base
 translations using the Bing Translator service, you'll need to do the following:
 
-1.  Sign up for an Azure Marketplace account and register your application. Be
-    sure to write down your client ID and client secret given to you for your
-    application.
+1. Sign up for an Azure Marketplace account and subscribe to the Microsoft 
+   Translator. It's listed in the *Data* section of the Azure Marketplace.
 
-2.  Make sure that you have a `build.[username].properties` file in your Plugins
-    SDK root directory. This `build.[username].properties` file should contain a
-    reference to a Liferay bundle. If you have a Liferay Tomcat bundle, for
-    example, your reference should look like this:
+2. Register your portlet in the Azure Marketplace. You can do this from the 
+   *Developers* tab in *My Account*. The client ID needs to match the project 
+   name of the portlet. For example, this tutorial uses the 
+   `event-listing-portlet` portlet project, so enter that as the client ID. 
+   Accept the default client secret. Be sure to save the client ID and client 
+   secret for later use.
 
-        app.server.dir=[Liferay Home]/tomcat-7.0.42
-        auto.deploy.dir=[Liferay Home]/deploy
+3. Make sure that you have a `build.[username].properties` file in your Plugins
+   SDK root directory. Create it if you do not. This 
+   `build.[username].properties` file should contain a reference to a Liferay 
+   bundle. If you have a Liferay Tomcat bundle, for example, your reference 
+   should look like this:
 
-    `[Liferay Home]` refers to your bundle's root directory.
+       app.server.dir=[Liferay Home]/tomcat-7.0.42
+       auto.deploy.dir=[Liferay Home]/deploy
 
-3.  Edit the `portal-ext.properties` file in your Liferay Home directory by
-    adding the following two lines replaced with your values:
+   `[Liferay Home]` refers to your bundle's root directory.
 
-        microsoft.translator.client.id=your-[client-id]
-        microsoft.translator.client.secret=your-[client-secret]
+4. Make sure that you have a `portal-ext.properties` file in your Liferay Home 
+   directory. Create it if you do not. Edit the `portal-ext.properties` file by 
+   adding the following two lines replaced with your values:
 
-    Liferay copies the `portal-ext.properties` file from your Liferay Home
-    directory to the `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory
-    upon startup. So either start Liferay or manually copy your
-    `portal-ext.properties` file from Liferay Home to this location.
+       microsoft.translator.client.id=[your-client-id]
+       microsoft.translator.client.secret=[your-client-secret]
 
-4.  Edit the `Language.properties` file of the plugin for which you'd like to
-    add properties to be translated. For example, if you have a `hello-world`
-    portlet in your Plugins SDK, you'd edit the following file:
+   Liferay copies the `portal-ext.properties` file from your Liferay Home
+   directory to the `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory
+   upon startup. So either start Liferay or manually copy your
+   `portal-ext.properties` file from Liferay Home to this location. If you opt 
+   for the automatic copy on startup, be sure to check the 
+   `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory for the 
+   `portal-ext.properties` file afterwards.
 
-        [Liferay Plugins SDK]/portlets/hello-world-portlet/docroot/WEB-INF/src/content/Language.properties
+Next, you'll make the necessary changes to your portlet so that it can make use 
+of the Bing Translator.
+   
+## Implementing Translations in Your Portlet
 
-    You can add properties, remove properties, or edit properties. However,
-    translations will *not* be generated for existing properties. 
+Now that you've done the initial setup for the Bing Translator, you're ready to 
+add support for translations to your portlet.
 
-5.  Run `ant build-lang` from the plugin directory of the plugin for which you'd
-    like to generate translations. For example, in the case of the `hello-world`
-    portlet example, you'd run `ant build-lang` from the `[Liferay Plugins
-    SDK]/portlets/hello-world-portlet` directory.
+1. As a starting point, use the `event-listing-portlet`, which is available in
+   the <https://github.com/liferay/liferay-docs> GitHub repository
+   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/04-platform-frameworks/01-configurable-portlet-preferences/begin/event-listing-portlet).
+   You'll need to clone the repository if you haven't already done so. Then copy
+   the `event-listing-portlet` folder into the `portlets` folder of your Liferay
+   Plugins SDK. Note that this portlet is also the beginning portlet for the
+   [Using Configurable Portlet
+   Preferences](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/04-platform-frameworks/01-configurable-portlet-preferences.markdown)
+   tutorial. Deploy the portlet and add the Location Listing portlet to a page 
+   of your portal.
 
-When the build completes, you'll find the generated files with all of the
-translations in the same folder as your `Language.properties` file.
+2. In the `docroot/WEB-INF/src/content/Language.properties` file, add the
+   following language key: 
+
+        you-know-it-is-the-best=You know it is the best
+   
+   Translations are generated for properties that you add or edit in this file. 
+   However, translations will *not* be generated for properties that already 
+   exist in your portlet.
+        
+3. Replace the view mode statement (e.g., *This is the \<b\>Location Listing
+   Portlet\</b\> in View mode.*) in the Location Listing portlet's `view.jsp` 
+   with the following: 
+
+        Liferay - <liferay-ui:message key="you-know-it-is-the-best" />!
+
+   This line brings your translated language key value into your JSP. 
+
+4. Run `ant build-lang` from the 
+   `[Liferay Plugins SDK]/portlets/event-listing-portlet` directory.
+
+   When the build completes, you'll find the generated files with all of the
+   translations in the same folder as your `Language.properties` file. Note that 
+   many of the language properties files don't contain translations. This is 
+   because they are intentionally disabled. We decided to do this because many 
+   of the translations are incorrect or offensive. The issue is described 
+   [here](https://issues.liferay.com/browse/LPS-29246).
+
+5. Switch your portal's locale to Spanish by adding `/es` after `localhost:8080` 
+   and refresh the page. Notice how the Location Listing portlet now shows your 
+   translated language key.
+   
+![Figure 1: Autogenerated translation for the Location Listing portlet.](../../images/portlet-localization-generated-translation.png)
 
 ---
 
@@ -89,8 +137,5 @@ often come across as rude or (unintentionally) humorous. Sometimes they are
 simply inaccurate. Someone fluent in each language should review the
 translations before the translations are deployed to a production environment. 
 
-Now that you know how to create a shared resource bundle and how to generate
-translations, let's consider why you may need to use separate resource bundles
-for each portlet. For example, to localize the title and description of each of
-your plugin's Control Panel-enabled portlets, you must use separate resource
-bundles. We'll show you how to implement them. 
+In this tutorial you learned to leverage the Plugins SDK to generate 
+translations for your portlets using the Bing Translator.
