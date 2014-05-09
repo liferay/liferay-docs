@@ -1614,7 +1614,7 @@ To create a plugin which extends another, follow these steps:
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
-## Creating a Plugin to Share Templates, Structures, and More
+## Creating a Plugin to Share Templates, Structures, and More [](id=creating-a-plugin-to-share-templates-str-liferay-portal-6-2-dev-guide-03-en)
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get a hold of the templates and structures
