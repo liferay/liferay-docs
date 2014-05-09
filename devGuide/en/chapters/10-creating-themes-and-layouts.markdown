@@ -792,6 +792,14 @@ install it on their portal, go to Sites or Site Templates in the Control Panel
 and immediately see their new theme in action. In this section, we discuss how
 to include resources with your theme.
 
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** The resources importer can be
+ used in any type of plugin project to import resources. Importing resources
+ within a theme plugin is just one of the more common use cases.
+
+---
+
 Liferay's welcome theme includes resources that the resources importer
 automatically deploys to the default site. (Note: The welcome theme is only
 applied out-of-the-box in Liferay CE.) The welcome theme and the pages and
