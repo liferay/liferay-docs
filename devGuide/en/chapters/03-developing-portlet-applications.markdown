@@ -2147,7 +2147,7 @@ instance.
 
 4. View your resources from within Liferay. Log in to portal as an
    administrator and check the Global site to make sure that your resources were
-   deployed correctly. Here's how you can usethe Control Panel to view your
+   deployed correctly. Here's how you can use the Control Panel to view your
    templates and structures: 
     1. Go to Sites in the Control Panel
     2. Select the *Global* site
@@ -2288,7 +2288,7 @@ folder.
   `templates-importer/templates/application_display/[your application display template type]/`. 
 - **Dynamic Data List:** Edit the template by clicking on Manage Data
   Definition. Click on *Manage Templates* from the Actions menu of the structure
-  that your template is linked to. Choose the template that you want export.
+  that your template is linked to. Choose the template that you want to export.
   Copy and paste its contents into a new FTL or VM file and place it in
   `templates-importer/templates/display_template/[structure name]/` or
   `templates-importer/templates/form_template/[structure name]/` 
@@ -2309,10 +2309,10 @@ makes it easy. Have fun distributing your templates and structures!
 
 You've covered a lot of ground learning Liferay Portlet development. You created
 a portlet project, studied its anatomy, and created the "My Greeting Portlet".
-You understood the Action phase and Render phase, and have have passed
-information between them in a portlet. You've enhanced a portlet with multiple
-actions and have mapped a friendly URL to it. Lastly, you've found how easy it
-is to start localizing your portlets. You're really on a roll! 
+You understood the Action phase and Render phase, and have passed information 
+between them in a portlet. You've enhanced a portlet with multiple actions and 
+have mapped a friendly URL to it. Lastly, you've found how easy it is to start 
+localizing your portlets. You're really on a roll! 
 
 Now that you know how to create portlets, you'll need to consider a few things,
 such as persisting your objects to a database, maintaining separatation between
