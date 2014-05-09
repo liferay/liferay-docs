@@ -210,13 +210,12 @@ application display templates.
 
 ## Using Application Display Templates [](id=using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
 
-Application display templates work similarly to site and page templates, but at
-the portlet level. The application display template (ADT) framework allows
-portal administrators to override the default display templates, removing
-limitations to the way your site's content is displayed. With ADTs, you can
-define custom display templates used to render asset-centric applications. For
-example, you may want to show blog entries horizontally instead of vertically,
-or list your assets in the asset publisher portlet in different sizes.
+The application display template (ADT) framework allows portal administrators to
+override the default display templates, removing limitations to the way your
+site's content is displayed. With ADTs, you can define custom display templates
+used to render asset-centric applications. For example, you may want to show
+blog entries horizontally instead of vertically, or list your assets in the
+asset publisher portlet in different sizes.
 
 Let's go through a simple use case to illustrate how creating a custom ADT can
 improve your site. Suppose you're customizing the Lunar Resort site and want to

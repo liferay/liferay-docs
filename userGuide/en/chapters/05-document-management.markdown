@@ -829,13 +829,13 @@ Liferay Sync is an add-on product for Liferay 6.1 GA2 CE and EE, and later
 versions, that synchronizes files between your Liferay server and users' desktop
 and mobile environments. With Liferay Sync, your users can publish and access
 shared documents and files from their native environments without using a
-browser.  Windows and Mac OS desktops and Android and iOS-based mobile platforms
+browser. Windows and Mac OS desktops and Android and iOS-based mobile platforms
 are currently supported, while Linux users have an unsupported beta they can
 use. As users add and collaborate on documents and files, Liferay Sync
 automatically synchronizes them across all configured Sync clients. Liferay Sync
 is fully integrated into the Liferay Platform so that features such as
 authentication, versioning, and social collaboration function in the supported
-environments.  Liferay Sync stores files locally so that they're always
+environments. Liferay Sync stores files locally so that they're always
 available, even when you're offline. It automatically synchronizes your files
 upon reconnection.
 
@@ -884,6 +884,18 @@ be named `liferay-sync-<version>-<date>.exe`. For Mac OS, it should be
 available. Follow the on-screen instructions of the installer wizard to
 configure your client to connect to an existing Liferay 6.1 deployment using
 your Liferay credentials.
+
+Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
+all the logic used by Liferay Sync. As of Liferay 6.2, Sync processing has been
+removed from the portal and been placed in a plugin. Make sure that the Sync
+plugin has been installed on your Liferay server before trying to connect to
+your portal via a Liferay Sync client. The Sync plugin's name is *sync-web* and
+is installed by default in Liferay Portal bundles. The Sync plugin is also
+available on Liferay Marketplace and can be downloaded and installed on your
+Liferay server just like any other Marketplace app. To find the app on
+Marketplace, search for *Sync CE* or *Sync EE*, depending on your portal
+version. To receive new features, optimizations, and bug fixes, make sure to the
+update your Sync app whenever a new version is available.
 
 #### Windows [](id=windows-liferay-portal-6-2-user-guide-05-en)
 

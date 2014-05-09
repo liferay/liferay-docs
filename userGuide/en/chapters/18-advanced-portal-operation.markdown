@@ -990,12 +990,9 @@ Let's look at upgrading a bundle, which is the easiest upgrade path.
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
-runtime. For example, the Liferay/Tomcat bundle for 6.0 used Tomcat 6 by
-default; the 6.1 bundle uses Tomcat 7. Though there is a Tomcat 6 bundle of
-Liferay 6.1, that bundle also uses a newer release of Tomcat than the one from
-6.0. This is the case for all runtimes Liferay supports. We generally recommend
-you use the latest version of your runtime bundle, as it will be supported the
-longest. 
+runtime. For example, the Liferay bundle for 6.1 uses a different version of
+Tomcat than the Liferay bundle for 6.2. We generally recommend you use the
+latest version of your runtime bundle, as it will be supported the longest. 
 
    1. Obtain the new bundle. Unzip the bundle to an appropriate location on your
       system.
@@ -1014,7 +1011,7 @@ longest.
 
    5. When the upgrade completes, install any plugins you were using in your old
       version of Liferay. Make sure you use the versions of those plugins that
-      are designed for Liferay 6.1. If you have your own plugins, your
+      are designed for Liferay 6.2. If you have your own plugins, your
       development team will need to migrate the code in these ahead of time and
       provide .war files for you.  
 
@@ -1036,7 +1033,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
    1. Verify your application server is supported by Liferay. You can do this by
       viewing the appropriate document on the Customer Portal (EE), in chapter
       14 (because there are installation instructions for it), or on liferay.com
-      (CE).  If your application server isn't supported by Liferay 6.1, *do not
+      (CE).  If your application server isn't supported by Liferay 6.2, *do not
       continue!* You'll need to upgrade or switch to a supported application
       server first. 
 
@@ -1060,7 +1057,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
       starts: it should upgrade the database automatically. Verify your portal
       is operating normally, and then install any plugins you were using in your
       old version of Liferay. Make sure you use the versions of those plugins
-      designed for Liferay 6.1. If you have your own plugins, your development
+      designed for Liferay 6.2. If you have your own plugins, your development
       team will need to migrate the code in these ahead of time and provide .war
       files to you. 
 

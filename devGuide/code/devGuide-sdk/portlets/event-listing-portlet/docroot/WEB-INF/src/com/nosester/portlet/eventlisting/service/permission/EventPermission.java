@@ -4,6 +4,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.security.auth.PrincipalException;
 import com.liferay.portal.security.permission.PermissionChecker;
+
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 
@@ -13,8 +14,7 @@ import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 public class EventPermission {
 
 	public static void check(
-			PermissionChecker permissionChecker, Event event,
-			String actionId)
+			PermissionChecker permissionChecker, Event event, String actionId)
 		throws PortalException {
 
 		if (!contains(permissionChecker, event, actionId)) {
@@ -32,12 +32,10 @@ public class EventPermission {
 	}
 
 	public static boolean contains(
-		PermissionChecker permissionChecker, Event event,
-		String actionId) {
-
+		PermissionChecker permissionChecker, Event event, String actionId) {
 		if (permissionChecker.hasOwnerPermission(
-				event.getCompanyId(), Event.class.getName(),
-				event.getEventId(), event.getUserId(), actionId)) {
+				event.getCompanyId(), Event.class.getName(), event.getEventId(),
+				event.getUserId(), actionId)) {
 
 			return true;
 		}
