@@ -31,7 +31,7 @@ successfully completed in My Greeting portlet.
 1.  As a starting point, use the My Greeting portlet which is available in the
 <https://github.com/liferay/liferay-docs> 
 GitHub repository 
-[here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/25-liferayui/01-success/begin/my-greeting-portlet).
+[here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/begin/my-greeting-portlet).
 You'll need to clone the repository if you haven't already done so. Then copy
 the `my-greeting-portlet` folder into the `portlets` folder of your Liferay
 Plugins SDK. 
@@ -156,11 +156,11 @@ the error message in your portlet.
 
 The final My Greeting portlet implemented in this tutorial, including
 its
-[`MyGreetingPortlet.java`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/25-liferayui/01-success/end/my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/MyGreetingPortlet.java)
+[`MyGreetingPortlet.java`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/MyGreetingPortlet.java)
 and
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/25-liferayui/01-success/end/my-greeting-portlet/docroot/view.jsp)
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet/docroot/view.jsp)
 files, is posted on GitHub 
-[here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/25-liferayui/01-success/end/my-greeting-portlet). 
+[here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet). 
 
 To sum things up, you've added a success message for confirming successful
 portlet action execution and you've added an error message for notifying when
