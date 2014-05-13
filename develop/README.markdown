@@ -27,8 +27,11 @@ relates to dev site documentation:
     - `develop/` (maps to the site's *Develop* tab)
         - `build.xml`
         - `tutorial-template.markdown` (template for tutorial articles)
-        - `learning-paths/` (*Learning Paths* document folder. Has the same
-        directory structure as the `tutorials/` document folder below.)  
+        - `learning-paths/` (*Learning Paths* document folder. Has a
+        directory structure similar to that of the `tutorials/` document
+        folder.)
+        - `new-articles/` (Submit new tutorial article Markdown files, images,
+        and code here)
         - `tutorials/` (*Tutorials* document folder)  
             - `build.xml`
             - `articles/` 
@@ -62,8 +65,10 @@ Now that you know the "lay of the land", let's learn how to add new articles.
 
 ## Contributing
 
-You can save your new article Markdown text, images, and code to the
-`develop/new-articles/` folder. 
+You can save your new tutorial article Markdown text, images, and code to the
+`develop/new-articles/` folder. We'll move your tutorial to a proper location
+under `learning-paths/` or `tutorials/`, review your tutorial, and publish it to
+the site. 
 
 Then send a pull request to user `liferay` on the appropriate branch.  
 
@@ -104,13 +109,13 @@ the `21-liferayui-taglibs` category folder.
     On Linux, execute:
 
     ```
-    ant article-to-html -Darticle=articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown
+    ant article-to-html -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
     
     On Windows, execute the target that has the `-win` suffix:
 
     ```
-    ant article-to-html-win -Darticle=articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown
+    ant article-to-html-win -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
 
     *Hint:* To leverage your terminal's auto-complete feature in typing out the
@@ -118,7 +123,7 @@ the `21-liferayui-taglibs` category folder.
     You can always remove the space before running the command. 
 
 3.  The HTML file is produced to the corresponding folder under `build/` (e.g.,
-`build/articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown.html`).
+`build/articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown.html`).
 
 It's just that easy!
 
