@@ -1084,7 +1084,7 @@ it be great if you could isolate them so they wouldn't affect the overall health
 of your portal? We'll show you how to use Liferay's Sandboxing feature to pen up
 those pesky portlets, next. 
 
-## Sandboxing Portlets to Ensure Portal Resiliency
+## Sandboxing Portlets to Ensure Portal Resiliency [](id=sandboxing-portlets-to-ensure-portal-re-liferay-portal-6-2-user-guide-18-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -1127,7 +1127,7 @@ and deploy the app as described in this guide's chapter on [Leveraging the Lifer
 Before creating and using sandboxes, we must enable the portal's resiliency
 functionality and optimize the database connection settings for your sandboxes. 
 
-### Configuring the Portal for Sandboxing
+### Configuring the Portal for Sandboxing [](id=configuring-the-portal-for-sandboxing-liferay-portal-6-2-user-guide-18-en)
 
 The two types of portal properties you must modify for your portal to use
 sandboxing are the [Portal Resiliency](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Portal%20Resiliency) 
@@ -1164,7 +1164,7 @@ link displayed in the *Configuration* section.
 Click the *SPI Administration* link to start creating SPIs for running new or
 troublesome portlets. 
 
-### Creating an SPI
+### Creating an SPI [](id=creating-an-spi-liferay-portal-6-2-user-guide-18-en)
 
 You can create and administer SPIs from the SPI Administration page accessible
 in the Configuration section of the Control Panel.
@@ -1275,7 +1275,7 @@ SPI. At that point, manual operator intervention is required to restart it.
 This option is disabled if the *Use Default Restart Options* checkbox is
 selected. 
 
-#### Advanced Configurations
+#### Advanced Configurations [](id=advanced-configurations-liferay-portal-6-2-user-guide-18-en)
 
 The Advanced Configurations section contains a series of optional parameters
 that should rarely be modified. 
@@ -1307,7 +1307,7 @@ apps onto the SPI in the same way you can with the SPI Applications panel.
 Now that you know how to add a SPI and configure it properly, let's learn how to
 operate the SPI. 
 
-### Starting, Stopping, and Modifying an SPI
+### Starting, Stopping, and Modifying an SPI [](id=starting-stopping-and-modifying-an-spi-liferay-portal-6-2-user-guide-18-en)
 
 The Portal automatically starts SPIs on startup. However, when you first add a
 new SPI, you must start it manually. 
@@ -1320,7 +1320,7 @@ delete an SPI that is running. You must first stop the SPI.
 You can edit an SPI's configuration too. Configuration changes made to a running
 SPI take effect after it's restarted. 
 
-![Figure 18.20: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
+![Figure 18.19: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
 
 As you can see, operating SPIs is straightforward and easy to do. 
 
@@ -1328,13 +1328,13 @@ If you have multiple SPIs, you may want to use global settings to configure the
 default options for them. Let's consider how to configure global settings for
 your SPIs next. 
 
-### Configure Global Settings
+### Configure Global Settings [](id=configure-global-settings-liferay-portal-6-2-user-guide-18-en)
 
 The SPI Administration console allows you to configure a series of global
 settings. You can access them by clicking on the configuration gear icon as
 shown in the figure below. 
 
-![Figure 18.21: Click on the global settings gear icon, in the upper right corner of the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
+![Figure 18.20: Click on the global settings gear icon, in the upper right corner of the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
 
 Once you've opened the configuration panel, the SPI Administration console
 enables you to configure global notification and set restart options for your
@@ -1343,7 +1343,7 @@ SPIs.
 Note that option values explicitly configured in an SPI take precedence over
 the global settings with respect to that SPI.
 
-![Figure 18.22: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
+![Figure 18.21: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
 
 Let's look at the global notification options first. 
 
@@ -1351,7 +1351,7 @@ The notification options allow you to configure both the notfication email
 content and specify the recipients of the notification email. These values are
 used by all defined SPIs. 
 
-![Figure 18.23: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
+![Figure 18.22: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
 
 **Notification Email From Address:** Enter a default origin email address to use
 for notification emails sent from the SPIs. 
@@ -1374,7 +1374,7 @@ is restarted in the event that it terminates unexpectedly. In the example
 below, all SPIs are restarted 3 times before requiring administrator
 intervention to restart them. 
 
-![Figure 18.24: You can set default restart options for your SPIs from the SPI Administration's global configuration panel.](../../images/sandboxing-global-restart-options.png)
+![Figure 18.23: You can set default restart options for your SPIs from the SPI Administration's global configuration panel.](../../images/sandboxing-global-restart-options.png)
 
 Let's recap what Liferay's Sandboxing App does for you. It lets you isolate
 portlets and web plugins that are known troublemakers or that you are simply
@@ -1428,7 +1428,7 @@ hosts portlets that are consumed by other portal servers (Liferay or
 non-Liferay) acting as WSRP consumers. The image below illustrates WSRP
 producers and consumers and how they interact.
 
-![Figure 18.25: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
+![Figure 18.24: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
 
 As we mentioned in the previous chapter, there are two main components of the
 WSRP process: producers and consumers. Let's go through the basic process of how
@@ -1483,7 +1483,7 @@ purposes, select the Hello World portlet and click the *Save* button. The portal
 generates a WSDL document to define your producer. To view the WSDL document,
 click the URL link provided.
 
-![Figure 18.26: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
+![Figure 18.25: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
 
 Now that we've created a producer, let's create a consumer on your second portal
 server. 
@@ -1548,7 +1548,7 @@ also for web services and JavaScript. This means that the method calls for
 storing and retrieving portal objects are all the same, and are generated in the
 same step.
 
-![Figure 18.27: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
+![Figure 18.26: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
@@ -1598,7 +1598,7 @@ If the machine on which the batch job is running has the IP address
 Liferay's web services and pass in user credentials to be used to upload the
 documents.
 
-![Figure 18.28: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
+![Figure 18.27: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
 
 The second layer of security is Liferay's security model that it uses for every
 object in the portal. The user account that accesses the services remotely must
