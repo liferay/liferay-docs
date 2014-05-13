@@ -42,12 +42,12 @@ custom portlet.
 
 1. As a starting point, use the My Greeting portlet which is available in the
    <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/25-liferayui/01-success/end/my-greeting-portlet).
+   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet).
    You'll need to clone the repository if you haven't already done so. Then copy
    the `my-greeting-portlet` folder into the `portlets` folder of your Liferay
    Plugins SDK. Note that this My Greeting portlet is the finished portlet from
    the [Using liferay-ui:success and liferay:ui error
-   Messages](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/25-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown)
+   Messages](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown)
    tutorial. Deploy the portlet to your portal and then add it to a page.
 
 2. To use the `welcome` language key in the portlet's UI, open the `view.jsp`

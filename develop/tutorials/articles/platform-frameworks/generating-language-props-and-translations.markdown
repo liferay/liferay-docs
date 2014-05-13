@@ -67,12 +67,12 @@ add support for translations to your portlet.
 
 1. As a starting point, use the `event-listing-portlet`, which is available in
    the <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/04-platform-frameworks/01-configurable-portlet-preferences/begin/event-listing-portlet).
+   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet).
    You'll need to clone the repository if you haven't already done so. Then copy
    the `event-listing-portlet` folder into the `portlets` folder of your Liferay
    Plugins SDK. Note that this portlet is also the beginning portlet for the
    [Using Configurable Portlet
-   Preferences](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/04-platform-frameworks/01-configurable-portlet-preferences.markdown)
+   Preferences](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/platform-frameworks/configurable-portlet-preferences.markdown)
    tutorial. Deploy the portlet and add the Location Listing portlet to a page 
    of your portal.
 

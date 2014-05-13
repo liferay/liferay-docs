@@ -34,7 +34,7 @@ enabling Application Display Templates for the Location Listing Portlet.
 
 1. As a starting point, use the Location Listing portlet which is available in
    the <https://github.com/liferay/liferay-docs> Github repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/implementing-application-display-templates/begin/event-listing-portlet).
+   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet).
    You'll need to clone the repository if you haven't already done so. Then copy
    the `event-listing-portlet` folder into the `portlets` folder of your Liferay
    Plugins SDK. Although the project is named `event-listing-portlet`, the
@@ -206,7 +206,7 @@ enabling Application Display Templates for the Location Listing Portlet.
     entity class. Then, the `liferay-ui:ddm-template-selector` taglib specifies
     the Display Template drop-down menu to be used in the portlet's
     Configuration menu. You can see the final `configuration.jsp` file 
-    [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/implementing-application-display-templates/end/event-listing-portlet/docroot/html/locationlisting/configuration.jsp). 
+    [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/configuration.jsp). 
 
 6.  You're almost finished, but you still have to extend your view code to
     render your portlet with the selected ADT. Here is where you decide exactly
@@ -254,7 +254,7 @@ enabling Application Display Templates for the Location Listing Portlet.
     the ADT is rendered using the page context, template ID, and locations.
     Otherwise, the locations list is displayed using the 
     `liferay-ui:search-container` taglib. You can see the resulting `view.jsp`
-    file [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/implementing-application-display-templates/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    file [here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 Now that our portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. We'll experiment by adding our own custom ADT.
