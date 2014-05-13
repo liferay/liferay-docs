@@ -309,9 +309,9 @@ location of the user's address in the Google Map gadget.
 
 4. To enable PubSub for the Portal Directory portlet, you'll need to edit its
    `addresses.jsp` file to configure it as a PubSub publisher. The portlet will
-   need to publish to the topic for which the Google Map is subscribed. Since
-   the Portal Directory portlet is a Liferay core portlet, we'll edit it using a
-   hook. The `portal-directory-hook` is available in the
+   need to publish the address to the channel for which the Google Map is
+   subscribed. Since the Portal Directory portlet is a Liferay core portlet,
+   we'll edit it using a hook. The `portal-directory-hook` is available in the
    <https://github.com/liferay/liferay-docs> GitHub repository
    [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/opensoc/sending-pubsub-messages-between-gadgets-and-portlets/portal-directory-hook).
    You'll need to clone the repository if you haven't already done so. Then copy
@@ -328,16 +328,18 @@ location of the user's address in the Google Map gadget.
 5. Deploy the Portal Directory hook into your portal instance. Then refresh the
    page. The *Show in Google Maps* link is available beneath the user's address.
 
+6. Click the *Show in Google Maps* link.
+
 ![Figure 3: The modified Portal Directory portlet sends the user's address to the *Google Map* gadget to display.](../../images/opensocial-27.png)
 
-The first thing we need to do is edit the portlet's `addresses.jsp` file to
-configure a Google Maps link.
+Great! Now you have portlet to gadget PubSub communication working successfully,
+but what did the hook edit in the `addresses.jsp` to make this possible?
 
 As you know from explanations given earlier, the *Google Map* gadget is
-distinguished as a subscriber. Therefore, the Portal Directory portlet needs to
-take on a publisher role to enable communication. To enable the Portal Directory
-portlet to publish to the topic on which the *Google Map* gadget is subscribed,
-we insert the following JavaScript into the `address.jsp` file:
+distinguished as a subscriber. Therefore, the Portal Directory portlet needed to
+take on the publisher role to enable communication. To enable the Portal
+Directory portlet to publish to the topic on which the *Google Map* gadget is
+subscribed, we inserted the following JavaScript into the `addresses.jsp` file:
 
 	<script type="text/javascript">
 		function publishAddress(address) {
@@ -353,8 +355,8 @@ portlet sends data to a gadget, there must be a `gadget:` prefix before the
 channel declaration. This distinguishes who the messages are intended for when
 they are broadcast across a channel. Notice that you don't need to change
 anything for your *Google Map* gadget, since it's already subscribed to that
-channel. You only needed to define the *Directory* portlet as a publisher to
-that channel.
+channel. You only needed to define the Portal Directory portlet as a publisher
+to that channel.
 
 ---
 
@@ -365,11 +367,16 @@ function.
 
 ---
 
-After editing the JSP, you can add the *Directory* Portlet and *Google Map*
-gadget to a Liferay page and test it out. Here is a snapshot of what the
-interaction would look like:
+Lastly, we needed a button that would initiate the publishing of the address to
+the topic in the Portal Directory portlet. To do this, we inserted the following
+into the `addresses.jsp` file:
 
-![Figure 3: The modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
+    <br />
+    <a href="javascript:void(0);" onclick='publishAddress("<%= street1 + ", " + zipCode + ", " + city %>")'>Show in Google Maps</a>
+
+If you'd like to study the updated `addresses.jsp` file for additional
+information, you can view it in the Portal Directory hook's
+`docroot/META-INF/custom_jsps/html/portlet/directory/user` directory.
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
