@@ -14,7 +14,7 @@ With the use of PubSub, the worlds of gadgets and portlets blend together,
 facilitating their ability to communicate and interact with each other.
 
 We'll run through a tutorial for gadget to gadget communication, and then show
-an example for using gadget to portlet communication. Both will integrate Google
+an example for using gadget to portlet communication; both will integrate Google
 Maps into Liferay Portal. After we've run through the exercises, we'll briefly
 analyze specific code fragments that made the PubSub messaging possible. Let's
 get started!
@@ -22,7 +22,7 @@ get started!
 ## Communicating Between Gadgets
 
 For gadget to gadget communication, two independent gadgets are placed on a page
-and configured with PubSub. These two gadgets are able to communicate with one
+and configured with PubSub; these two gadgets are able to communicate with one
 another and provide tools that the user could not otherwise produce. We'll
 complete a simple tutorial for gadget to gadget communication where two gadgets
 work together to display an address on Google Maps. The first gadget represents
@@ -153,10 +153,10 @@ with the following invocation:
 	gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
 
 When the user clicks the gadget's *Publish* button, the message is sent by the
-publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub
+publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`; PubSub
 broadcasts the message received on that topic to all subscribers, such as your
 Google Address gadget. Each subscriber receives and processes the message. In
-the case of your Google Map gadget, the message, containing an address, is
+the case of your Google Map gadget, the message containing an address is
 processed by the gadget to show the address location on its map.
 
 Next, we'll analyze the tutorial's *subscribing* gadget's source code specified
@@ -240,9 +240,9 @@ in  *GoogleMapsViewer.xml*:
 		</Content>
 	</Module>
 
-The subscriber source code is similar to that of the publisher. It mandates the
-`pubsub-2` feature for the gadget and specifies
-`com.liferay.opensocial.gmapsdemo` as one of its topics, as you would expect. Of
+The subscriber source code is similar to that of the publisher: it mandates the
+`pubsub-2` feature for the gadget and specifies 
+`com.liferay.opensocial.gmapsdemo` as one of its topics, as you would expect; of
 course, the only difference is the fact that this gadget subscribes to the
 topic, hence the attribute setting `subscribe="true"`.
 
@@ -254,14 +254,14 @@ The following JavaScript from the gadget's *content* registers a callback on the
         }
 
 The `gadgets.HubSettings.onConnect` function is called by the OpenSocial
-container once the gadget connects to the PubSub messaging hub. In our example, 
-the gadget subscribes to the previously mentioned topic. All subscribers to
+container, once the gadget connects to the PubSub messaging hub. In our example, 
+the gadget subscribes to the previously mentioned topic; all subscribers to
 this topic receive messages sent to it.
 
 When a message is received, the gadget's `callback()` function is executed. In
-this example, the callback method sends the received message (the address sent
-by the publisher) and calls `google.maps.Geocoder.geocode()` to get the
-locations. And finally, the locations are processed and displayed on the map.
+this example the callback method sends the received message (the address sent
+by the publisher), calls `google.maps.Geocoder.geocode()` to get the
+locations, and finally processes and displays the locations on the map.
 
 In summary, subscriber gadgets need to specify a topic and register a callback
 function on that topic to handle the messages they receive.
@@ -295,13 +295,13 @@ the Google Map gadget. For each user listed in the Portal Directory portlet,
 we'll create a *Show in Google Maps* link that, when selected, displays the
 location of the user's address in the Google Map gadget.
 
-1. Click your user's name in the dockbar and select *My Account*. Then select
+1. Click your user's name in the dockbar and select *My Account*. Then, select
    *Addresses* from the right menu, enter an address, and click *Save*.
 
-2. Navigate back to a site page and select *Add* &rarr; *Applications* and add
-   the Portal Directory portlet to the page. Also, make sure the Google Map
-   gadget from the previous tutorial is positioned near the Portal Directory
-   portlet.
+2. Navigate back to a site page and select *Add* &rarr; *Applications* &rarr; 
+   *Community* and add the Portal Directory portlet to the page. Also, make sure 
+   the Google Map gadget from the previous tutorial is positioned near the 
+   Portal Directory portlet.
 
 3. In the Portal Directory portlet, make sure you're in the Users tab and select
    the user you added an address for. Notice the address is displayed, but
@@ -352,10 +352,10 @@ click on the *Show in Google Maps* link. The function invokes the
 `Liferay.fire()` function, passing in the name of the channel receiving the
 message and the user's address as the message. One thing to note is that when a
 portlet sends data to a gadget, there must be a `gadget:` prefix before the
-channel declaration. This distinguishes who the messages are intended for when
+channel declaration; this distinguishes who the messages are intended for when
 they are broadcast across a channel. Notice that you don't need to change
 anything for your *Google Map* gadget, since it's already subscribed to that
-channel. You only needed to define the Portal Directory portlet as a publisher
+channel; you only needed to define the Portal Directory portlet as a publisher
 to that channel.
 
 ---
@@ -368,7 +368,7 @@ function.
 ---
 
 Lastly, we needed a button that would initiate the publishing of the address to
-the topic in the Portal Directory portlet. To do this, we inserted the following
+the topic in the Portal Directory portlet; to do this, we inserted the following
 into the `addresses.jsp` file:
 
     <br />
@@ -380,4 +380,4 @@ information, you can view it in the Portal Directory hook's
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
-users' experience. 
+user's experience. 
