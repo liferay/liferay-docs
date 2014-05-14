@@ -39,7 +39,7 @@ Let's begin the tutorial to localize the title and description for a portlet:
    *weight* value for determining where they're to be placed in the column with
    respect to the other portlets. These two configurations are specified within
    the `<control-panel-entry-category/>` and `<control-panel-entry-weight/>`
-   elements.
+   elements of your project's `liferay-portlet.xml`.
    
     For example, the following code specifies these elements for an
     `eventlisting` portlet:
@@ -113,7 +113,7 @@ Let's begin the tutorial to localize the title and description for a portlet:
         javax.portlet.title=Lista de Eventos
         javax.portlet.description=Enumera los proximos eventos importantes.
 
-9. Add `en` to your portal context in your URL to interface with the portal in
+9. Add `es` to your portal context in your URL to interface with the portal in
    Spanish. For example, your URL would start like this:
 
         http://localhost:8080/es/group/control_panel/...
@@ -137,7 +137,7 @@ You're becoming an expert localizer!
 
 ---
 
- ![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using Struts
+ ![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using a Struts 
  portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
  engages a different title and description algorithm. Titles and long titles are
  pulled using two different keys:
