@@ -19,5 +19,5 @@ properties/
 **/classes/**
 **/dist/**
 **nbproject**
-.ivy
+.ivy/**
 *#
