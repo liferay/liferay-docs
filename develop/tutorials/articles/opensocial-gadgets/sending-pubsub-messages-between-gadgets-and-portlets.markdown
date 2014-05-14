@@ -59,62 +59,9 @@ supported with gadgets on Liferay.
 ---
 
 We will now dive into the source code and analyze how this interaction is
-accomplished. First, we'll look at the contents of the Google Map XML file
-*GoogleMapsPublisher.xml*:
-
-	<?xml version="1.0" encoding="UTF-8" ?>
-
-	<Module>
-		<ModulePrefs title="Google Address">
-			<Require feature="pubsub-2">
-				<Param name="topics">
-					<![CDATA[
-					<Topic
-					    title="Google Map"
-					    name="com.liferay.opensocial.gmapsdemo" publish="true"
-					/>
-					]]>
-				</Param>
-			</Require>
-			<Require feature="dynamic-height" />
-		</ModulePrefs>
-
-		<Content type="html">
-			<![CDATA[
-			<table>
-				<tr>
-					<td>Address:</td>
-					<td>
-						<input
-						    type="text"
-						    id="address"
-						    name="address"
-						    size="40"
-						    value="1400 Montefino Ave, Diamond Bar, CA 91765"
-						>
-					</td>
-					<td>
-						<input
-						    type="button"
-						    value="Update"
-						    onclick="updateLoc()"
-						>
-					</td>
-				</tr>
-			</table>
-
-			<script type="text/javascript">
-				function updateLoc() {
-					var address = document.getElementById("address").value;
-					gadgets.Hub.publish(
-					    "com.liferay.opensocial.gmapsdemo", address);
-				}
-
-				gadgets.window.adjustHeight();
-			</script>
-			]]>
-		</Content>
-	</Module>
+accomplished. To view the full contents of the Google Map, visit the
+[GoogleMapsPublisher.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml)
+file.
 
 The following excerpt from the Google Map XML file enables the gadget to use
 PubSub and specifies the channel (topic) to which the gadget publishes:
@@ -143,7 +90,7 @@ with the following invocation:
 
 	gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
 
-When the user clicks the gadget's *Publish* button, the message is sent by the
+When the user clicks the gadget's *Update* button, the message is sent by the
 publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`; PubSub
 broadcasts the message received on that topic to all subscribers, such as your
 Google Address gadget. Each subscriber receives and processes the message. In
@@ -151,85 +98,9 @@ the case of your Google Map gadget, the message containing an address is
 processed by the gadget to show the address location on its map.
 
 Next, we'll analyze the tutorial's *subscribing* gadget's source code specified
-in  *GoogleMapsViewer.xml*:
-
-	<?xml version="1.0" encoding="UTF-8" ?>
-
-	<Module>
-		<ModulePrefs title="Google Map">
-			<Require feature="pubsub-2">
-				<Param name="topics">
-					<![CDATA[
-					<Topic
-					    title="Google Map"
-					    name="com.liferay.opensocial.gmapsdemo"
-					    subscribe="true"
-					/>
-					]]>
-				</Param>
-			</Require>
-			<Require feature="dynamic-height" />
-		</ModulePrefs>
-
-		<Content type="html">
-			<![CDATA[
-			<script
-				src="https://maps.googleapis.com/maps/api/js?sensor=false"
-			    type="text/javascript">
-			</script>
-
-			<div id="map" style="width:100%;height:100%"></div>
-
-			<script type="text/javascript">
-				gadgets.HubSettings.onConnect = function(hub, suc, err) {
-					gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
-				}
-
-				function callback(topic, data, subscriberData) {
-					geocoder.geocode( { 'address': data }, showAddress);
-				}
-
-				function showAddress(results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						while(overlays[0]) {
-							overlays.pop().setMap(null);
-						}
-
-						map.setCenter(results[0].geometry.location);
-
-						var marker = new google.maps.Marker(
-							{
-								map: map,
-								position: results[0].geometry.location
-							}
-						);
-
-						overlays.push(marker);
-					}
-					else {
-						alert('Failed to locate address. Reason: ' + status);
-					}
-
-					map.setZoom(12);
-				}
-
-				var overlays = [];
-
-				var geocoder = new google.maps.Geocoder();
-
-				var mapOptions = {
-					center: new google.maps.LatLng(43, -100),
-					zoom: 3,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				};
-
-				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-				gadgets.window.adjustHeight();
-			</script>
-			]]>
-		</Content>
-	</Module>
+in the
+[GoogleMapsViewer.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml)
+file.
 
 The subscriber source code is similar to that of the publisher: it mandates the
 `pubsub-2` feature for the gadget and specifies 
