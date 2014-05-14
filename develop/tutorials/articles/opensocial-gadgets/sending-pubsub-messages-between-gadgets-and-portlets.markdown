@@ -137,8 +137,8 @@ and gadgets.
 
 ## Communicating Between Portlets and Gadgets
 
-For this tutorial, we'll continue implementing the *Google Map* gadget on your
-site. If you have portlet applications that can take advantage of the
+For this tutorial, we'll continue exploring the *Google Map* gadget inside of
+Liferay. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
 for a user to allow communications between those gadgets and your portlets.
 
@@ -152,50 +152,25 @@ gadgets and will be supported on Liferay.
 
 ---
 
-As a demonstration, we'll send messages from the *Portal Directory* portlet to
-the Google Map gadget. For each user listed in the Portal Directory portlet,
-we'll create a *Show in Google Maps* link that, when selected, displays the
-location of the user's address in the Google Map gadget.
-
-1. Click your user's name in the dockbar and select *My Account*. Then, select
-   *Addresses* from the right menu, enter an address, and click *Save*.
-
-2. Navigate back to a site page and select *Add* &rarr; *Applications* &rarr; 
-   *Community* and add the Portal Directory portlet to the page. Also, make sure 
-   the Google Map gadget from the previous tutorial is positioned near the 
-   Portal Directory portlet.
-
-3. In the Portal Directory portlet, make sure you're in the Users tab and select
-   the user you added an address for. Notice the address is displayed, but
-   there's no way to map that address to our Google Map gadget.
-
-4. To enable PubSub for the Portal Directory portlet, you'll need to edit its
-   `addresses.jsp` file to configure it as a PubSub publisher. The portlet will
-   need to publish the address to the channel for which the Google Map is
-   subscribed. Since the Portal Directory portlet is a Liferay core portlet,
-   we'll edit it using a hook. The `portal-directory-hook` is available in the
-   <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/opensoc/sending-pubsub-messages-between-gadgets-and-portlets/portal-directory-hook).
-   You'll need to clone the repository if you haven't already done so. Then copy
-   the `portal-directory-hook` folder into the `hooks` folder of your Liferay
-   Plugins SDK.
-
-    <!-- Will probably need to edit Github URL to match new directory structure,
-    once finished. -Cody -->
-    
-    <!-- Once learning path/tutorials for hooks are complete, we should
-    reference how to create a hook and why it's important to do so when editing
-    Liferay core portlets. -Cody -->
-
-5. Deploy the Portal Directory hook into your portal instance. Then refresh the
-   page. The *Show in Google Maps* link is available beneath the user's address.
-
-6. Click the *Show in Google Maps* link.
+As a demonstration, we'll show a customized *Portal Directory* portlet that
+communicates to the Google Map gadget using PubSub. For each user listed in the
+Portal Directory portlet that has a specified address, a *Show in Google Maps*
+link is displayed beneath the user's address. When the link is selected, the
+location of the user's address is displayed in the Google Map gadget.
 
 ![Figure 3: The modified Portal Directory portlet sends the user's address to the *Google Map* gadget to display.](../../images/opensocial-27.png)
 
-Great! Now you have portlet to gadget PubSub communication working successfully,
-but what did the hook edit in the `addresses.jsp` to make this possible?
+The Portal Directory portlet's `addresses.jsp` file was edited to assign the
+portlet as a PubSub publisher, but what edits to the JSP file made this
+possible?
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** If you'd like to edit a
+Liferay core portlet, it's not recommended to edit its code directly. Always
+customize Liferay core portlets using Liferay hooks.
+
+---
 
 As you know from explanations given earlier, the *Google Map* gadget is
 distinguished as a subscriber. Therefore, the Portal Directory portlet needed to
@@ -215,10 +190,11 @@ click on the *Show in Google Maps* link. The function invokes the
 message and the user's address as the message. One thing to note is that when a
 portlet sends data to a gadget, there must be a `gadget:` prefix before the
 channel declaration; this distinguishes who the messages are intended for when
-they are broadcast across a channel. Notice that you don't need to change
-anything for your *Google Map* gadget, since it's already subscribed to that
-channel; you only needed to define the Portal Directory portlet as a publisher
-to that channel.
+they are broadcast across a channel.
+
+Notice that you don't need to change anything for your *Google Map* gadget,
+since it's already subscribed to that channel; you only needed to define the
+Portal Directory portlet as a publisher to that channel.
 
 ---
 
@@ -229,16 +205,11 @@ function.
 
 ---
 
-Lastly, we needed a button that would initiate the publishing of the address to
-the topic in the Portal Directory portlet; to do this, we inserted the following
+Lastly, a button is needed to initiate the publishing of the address to the
+topic in the Portal Directory portlet; to do this, we inserted the following
 into the `addresses.jsp` file:
 
-    <br />
     <a href="javascript:void(0);" onclick='publishAddress("<%= street1 + ", " + zipCode + ", " + city %>")'>Show in Google Maps</a>
-
-If you'd like to study the updated `addresses.jsp` file for additional
-information, you can view it in the Portal Directory hook's
-`docroot/META-INF/custom_jsps/html/portlet/directory/user` directory.
 
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
