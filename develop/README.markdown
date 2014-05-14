@@ -118,9 +118,8 @@ the `21-liferayui-taglibs` category folder.
     ant article-to-html-win -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
 
-    *Hint:* To leverage your terminal's auto-complete feature in typing out the
-    article path, leave a space between the `=` character and the article path.
-    You can always remove the space before running the command. 
+    *Hint:* You can leverage your terminal's auto-complete feature when
+    specifying the article path. 
 
 3.  The HTML file is produced to the corresponding folder under `build/` (e.g.,
 `build/articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown.html`).
