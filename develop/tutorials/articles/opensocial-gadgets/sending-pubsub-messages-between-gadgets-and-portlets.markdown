@@ -23,39 +23,30 @@ get started!
 
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub; these two gadgets are able to communicate with one
-another and provide tools that the user could not otherwise produce. We'll
-complete a simple tutorial for gadget to gadget communication where two gadgets
-work together to display an address on Google Maps. The first gadget represents
-a publisher that enables the user to input a specific address and publish the
-address. The second gadget represents the subscriber who receives the address, 
-displays the address, and locates the address on Google Maps. Follow the steps
-below:
+another and provide tools that the user could not otherwise produce. As an
+example, we'll demonstrate two Google Maps gadgets that publish and subscribe to
+the same channel. Using PubSub, these gadgets work together to display an
+address on a map. 
 
-1. Publish the *Google Address* and *Google Map* gadgets, as we had done
-   previously with other gadgets. The URLs are given below:
+<!-- Reference documentation that explains how to publish a gadget, either in
+the OpenSocial learning path or additional tutorial. -Cody -->
 
-    *Google Address URL*:
-    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml`
+The first gadget represents a publisher that enables the user to input a
+specific address and publish the address. The second gadget represents the
+subscriber who receives the address, displays the address, and locates the
+address on Google Maps.
 
-    *Google Map URL*:
-    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml`
+![Figure 1: Gadgets like Google's *Address* and *Map* gadgets are automatically synced to communicate with each other.](../../images/opensocial-25.png)
 
-2. Add both gadgets to a page.
+Once the Update button is selected in the Google Address gadget, the address is
+published to a specific channel. Since the Google Map gadget is subscribed to
+that same channel, it receives the address and then displays it in the map.
 
-    ![Figure 1: Gadgets are easy to publish and some gadgets, like Google's *Address* and *Map* gadgets, are automatically synced to communicate with each other.](../../images/opensocial-25.png)
+![Figure 2: After inputting a custom address in the Google Address gadget, you are able to see its physical location in the Google Map gadget.](../../images/opensocial-26.png)
 
-    Note: The address bar is already filled with an address. This default
-    address is specified in the *Google Address* gadget's source code. We will
-    edit this setting using Liferay's gadget editor later in the chapter.
-
-3. Input an address into the *Address* bar and then click *Update*. You should
-   now be able to see that address location displayed in the Google Map gadget.
-
-    ![Figure 2: After inputting a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/opensocial-26.png)
-
-Congratulations! Your gadgets are communicating well with each other. This
-simple tutorial demonstrates two gadgets communicating with each other using
-PubSub.
+That's all there is to it! The gadgets are communicating well with each other.
+This simple tutorial demonstrated two gadgets communicating with each other
+using PubSub. 
 
 ---
 
