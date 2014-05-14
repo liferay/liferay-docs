@@ -1,0 +1,27 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jalopy</groupId>
+  <artifactId>jalopy</artifactId>
+  <version>1.5rc3</version>
+  <packaging>jar</packaging>
+  <name>Jalopy</name>
+  <url>http://jalopy.sf.net</url>
+  <description>he source code beautifier originally built by Marco Hunsicker and enhanced for Java 5 by Steve Heyns.</description>
+  <licenses>
+    <license>
+      <name>BSD license</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://jalopy.cvs.sourceforge.net/jalopy/</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.8</version>
+    </dependency>
+  </dependencies>
+</project> 

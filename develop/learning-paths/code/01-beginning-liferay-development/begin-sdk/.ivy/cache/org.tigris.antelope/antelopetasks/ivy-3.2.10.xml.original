@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.tigris.antelope</groupId>
+  <artifactId>antelopetasks</artifactId>
+  <version>3.2.10</version>
+</project>

@@ -1,0 +1,27 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>javax.ccpp</groupId>
+	<artifactId>ccpp</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>CC/PP API</name>
+	<url>http://www.jcp.org/en/jsr/detail?id=188</url>
+	<licenses>
+    		<license>
+      			<name>Sun Microsystems, Inc. Binary Code License Agreement</name>
+	      		<url>http://java.sun.com/j2ee/ccpp</url>
+	   	</license>
+  	</licenses>
+  	<description>
+  		To enable interoperability between web servers and access mechanisms,
+  		and to facilitate development of device independent web applications,
+  		this specification will define a set of APIs for processing CC/PP information.
+  	</description>
+	<distributionManagement>
+		<downloadUrl>
+			http://jcp.org/aboutJava/communityprocess/final/jsr188/index.html
+		</downloadUrl>
+	</distributionManagement>
+	<dependencies>
+	</dependencies>
+</project>

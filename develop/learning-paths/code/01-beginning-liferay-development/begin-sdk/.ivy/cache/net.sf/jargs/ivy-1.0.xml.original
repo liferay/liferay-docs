@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+      <modelVersion>4.0.0</modelVersion>
+      <groupId>net.sf</groupId>
+      <artifactId>jargs</artifactId>
+      <version>1.0</version>
+    <licenses>
+        <license>
+          <name>jargs</name>
+          <url>http://jargs.cvs.sourceforge.net/jargs/jargs/LICENCE</url>
+          <distribution>repo</distribution>
+        </license>
+    </licenses>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+
+</project>

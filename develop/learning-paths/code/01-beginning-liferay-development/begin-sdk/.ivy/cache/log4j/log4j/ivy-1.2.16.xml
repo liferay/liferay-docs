@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="log4j"
+		module="log4j"
+		revision="1.2.16"
+		status="release"
+		publication="20100331002544"
+	>
+		<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt" />
+		<description homepage="http://logging.apache.org/log4j/1.2/">
+		Apache Log4j 1.2
+		</description>
+		<m:maven.plugins>org.apache.maven.plugins__maven-resources-plugin__null|null__maven-surefire-plugin__2.5|null__maven-compiler-plugin__2.1|null__maven-jar-plugin__2.3|null__maven-antrun-plugin__1.2|null__maven-assembly-plugin__2.2-beta-5|null__maven-javadoc-plugin__2.6.1|null__maven-release-plugin__2.0-beta-9|null__maven-source-plugin__2.1.1|org.codehaus.mojo__clirr-maven-plugin__2.2.2|org.codehaus.mojo__rat-maven-plugin__1.0-alpha-3|org.apache.felix__maven-bundle-plugin__2.0.1</m:maven.plugins>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="log4j" type="bundle" ext="jar" conf="master"/>
+		<artifact name="log4j" type="source" ext="jar" conf="sources" m:classifier="sources"/>
+		<artifact name="log4j" type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="javax.mail" name="mail" rev="1.4.1" force="true" conf="optional->compile(*),master(*)"/>
+		<dependency org="oro" name="oro" rev="2.0.8" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="junit" name="junit" rev="3.8.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.apache.geronimo.specs" name="geronimo-jms_1.1_spec" rev="1.0" force="true" conf="optional->compile(*),master(*)"/>
+	</dependencies>
+</ivy-module>

@@ -7,8 +7,8 @@ application next to the rest of the applications that come with Liferay.
 
 ![Figure 1.x: You'll create this simple application.](../../images/my-first-app.png)
 
-Your first application is simple: you'll build a portlet application that displays
-the venerable *Hello World* message. You'll be surprised at how easy this is. 
+Your first application is simple: you'll build a guest book application. You'll
+be surprised at how easy this is. 
 
 ## Creating Your First Liferay Application
 
@@ -22,7 +22,13 @@ appears.
 ![Figure 1.x: Liferay IDE/Developer Studio's new project wizard makes it easy to create Liferay projects.](../../images/lds-new-liferay-plugin-project-1.png)
 
 2. Fill in the Project Name and the Display Name. Make the project name
-*hello-portlet* and the display name *Hello*. When done, click *Finish*. 
+*guestbook-portlet* and the display name *Guestbook*. 
+
+3. Uncheck *Include Sample Code*. 
+
+4. Check *Launch New Portlet Wizard after project is created*. 
+
+5. When done, click *Finish*. 
 
 ---
 
@@ -34,32 +40,85 @@ After the initial download, it won't happen again.
 
 ---
 
-Your project now appears in the Package Explorer on the left. Believe it or not,
-you're done! To see your application, drag it from the Package Explorer and drop
-it on your server in the Servers tab below. 
+Your project now appears in the Package Explorer on the left. What you've just
+done is create a blank Liferay project. Projects can have any number of
+applications (called *portlets*) in them. Your next step is to create the
+portlet, which the New Portlet Wizard helps you to do. 
 
-![Figure 1.x: Deploying a project is as easy as drag and drop.](../../images/lds-deploy-project.png)
+1. For the Portlet class, enter the name `GuestbookPortlet`. 
 
-Once your application deploys, you can add it to a page. Applications by default
-show up in the *Sample* category in the *Add Applications* window. Find your app
-and add it to a page. 
+2. All classes in Java should be properly namespaced to avoid conflicts with
+other classes that could have similar names. For the Java package, enter
+`com.liferay.docs.guestbook.portlet`. 
 
-![Figure 1.x: Your first app displays a simple message.](../../images/my-first-app.png)
+3. Click *Finish*. 
 
-Okay, so maybe we cheated a little: when you create a new project, you have a
-working shell, but you didn't actually do anything, did you? Let's
-fix that by having you customize the message. 
+Liferay IDE/Developer Studio creates the portlet class in the proper package in
+the `src` folder and creates a new folder structure for your application's JSP
+files. It then opens your portlet class in an editor. 
 
-1. In Liferay IDE/Developer Studio, open `view.jsp`, which you'll find in the
-`docroot` folder of your project. 
+You are now ready to work. 
 
-2. The last line of the file says, "This is the Hello portlet." Change that line
-to anything you want. You can use HTML tags to format your message. 
+## What is a portlet? 
 
-3. Save the file. 
+When you access a web site, you interact with an application. That application
+may be simple: it may only show you information, such as an article. The
+application may be complex: you may be doing your taxes online, inputting lots
+of data into an application that calculates whether you owe or are due a refund.
+These applications run on a *platform* that provides application developers the
+building blocks they need to make applications. 
 
-Now refresh your browser, and you'll see your new message. Now you've truly
-created your first app! 
+![Figure 1.x: Many Liferay applications can run at the same time on the same page.](../../images/portlet-applications.png)
+
+Liferay Portal is a platform, and its applications are called *portlets*. One
+difference between a Liferay application and an application built on another
+platform is that Liferay Portal can serve many applications at the same time on
+the same page. Usually, a web application takes up the entire page, and if you
+want, you can do this with Liferay as well. But Liferay has the added benefit of
+being able to run many applications on the same page. For this reason, you'll
+find that the framework takes this into account at every step. We're saying this
+up front, because you'll be experiencing this soon, and we want you to know why
+certain things, like platform-generated URLs, are necessary. 
+
+With all of that said, the next thing to do is to jump in and create your
+Guestbook portlet. 
+
+## Adding Guestbook Entries
+
+A guestbook application is pretty simple, right? People come to your site, type
+their names and a brief message, and then post it for you. Users can read the
+entries that others posted, and they can post entries themselves. 
+
+The first thing, therefore, that we need is a landing page that displays entries
+and that has a button on it that allows users to add an entry. This page was
+created when you created your project: you'll find it in the
+`/docroot/html/guestbook` folder of your project. It's called `view.jsp`. Open
+this file. 
+
+You'll see there's some content in it already: Liferay IDE generates a fully
+functional sample portlet, but the only thing it does is display the message you
+see in the `view.jsp` file. Let's give it some functionality by adding a button
+that says *Add Entry*. 
+
+1. Open the *Snippets* tab on the right side of Liferay IDE, and expand the
+*Taglib Imports* category. 
+
+2. Drag the snippet labeled *Liferay AUI Taglib Import v6.1* from the snippet
+area to the line beneath the existing taglib import in `view.jsp`. Don't worry
+about the Liferay version number in the snippet title: the import was changed
+for version 6.1, and it is valid for Liferay versions going forward. The
+following code gets added to `view.jsp`: 
+
+    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+
+This declares that we want to use Liferay's AlloyUI tags. 
+
+3. Next, remove the default message in the JSP. 
+
+4. Open the *Liferay AUI Taglib* snippet category and drag the snippet labeled
+*button-row* onto the bottom of the page. A dialog box pops up asking for the
+`cssClass` attribute. Type `guestbook-buttons` for this value, hit Enter, and
+click *Insert*. 
 
 ## Next Steps
 
