@@ -36,18 +36,18 @@ steps below:
     *Sample PubSub Subscriber URL*:
     `http://svn.apache.org/repos/asf/shindig/trunk/content/gadgets/sample-pubsub-2-subscriber.xml`
 	
-3. Go back to a page on your site, navigate to *Add* &rarr; *Applications*, and
-   add your new gadgets to the page
+3. Go back to a page on your site, navigate to *Add* &rarr; *Applications* &rarr; 
+   *Gadgets*, and add your new gadgets to the page.
 
 4. Click *Publish a random number* on the PubSub Publisher gadget.  Notice that
-   it publishes a number; but the PubSub Subscriber gadget does not receive the
+   it publishes a number, but the PubSub Subscriber gadget does not receive the
    number.
 
     ![Figure 2: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/opensocial-23.png)
 
 5. Select *Subscribe* on the subscriber gadget.
 
-6. Click *Publish a random number* again from the publisher gadget. You now see
+6. Click *Publish a random number* again from the publisher gadget: you now see
    the random number received by the subscriber.
 
     ![Figure 3: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/opensocial-24.png)
@@ -60,10 +60,10 @@ As you would expect, the subscriber portlet no longer receives the random
 number.
 
 You probably also noticed that while publishing and subscribing with your
-gadgets, there was no need to refresh the page. This is because the gadgets use
-*AJAX (Asynchronous JavaScript and XML)*. This technology refreshes your
+gadgets, there was no need to refresh the page; this is because the gadgets use
+*AJAX (Asynchronous JavaScript and XML)*; this technology refreshes your
 applications automatically, allowing PubSub to work efficiently and effectively
 throughout your Liferay Portal.
 
-This simple example illustrates what PubSub does. It opens up a message channel
+This simple example illustrates what PubSub does: It opens up a message channel
 through which publishers and subscribers can interact. 

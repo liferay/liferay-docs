@@ -4,8 +4,8 @@ As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development
 environment for gadgets, providing syntax highlighting, preview functionality,
 undo/redo options, and built in tabs for working on multiple gadgets at the same
-time. You can also organize and manage gadgets easily using the editor's file
-manager. All of this gives you the convenience of creating and improving your
+time; you can also organize and manage gadgets easily using the editor's file
+manager; all of this gives you the convenience of creating and improving your
 gadgets right from within Liferay Portal.
 
 Within the editor, each gadget's XML file has a drop-down menu allowing you to
@@ -22,33 +22,33 @@ testing station for enhancing the gadgets on your sites.
 **Note:** When you publish a new gadget, remember that your Liferay Portal
 installation is the new host when specifying the gadget's URL.
 
-As a brief tutorial, we'll improve a *Google Address* gadget using the
-gadget editor. Let's get started!
-
+As a brief tutorial, we'll improve a *Google Address* gadget using the gadget 
+editor. Let's get started!
+ 
 ## Editing OpenSocial Gadgets
 
 For this tutorial, we'll edit the *Google Address* gadget. However, before
 editing the gadget, let's add it to a Liferay Portal page so we can see what it
-looks like. Navigate to the Control Panel and select *OpenSocial Gadget
-Publisher* from beneath the *Apps* heading. Select *Publish Gadget*, and copy
-and paste the following URL into the URL field and click *Save*.
+looks like. Navigate to the Control Panel and select *OpenSocial Gadget Publisher* 
+from beneath the *Apps* heading. Select *Publish Gadget*, and copy and paste the 
+following URL into the URL field and click *Save*.
 
     https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
 
 Add the gadget to a page by navigating back to a site page, and then selecting
-*Add* &rarr; *Applications* and dragging the *Google Address* gadget to the
-page.
+*Add* &rarr; *Applications* &rarr; *Gadgets* and dragging the *Google Address* 
+gadget to the page.
 
-By default, the Google Address gadget automatically displays the address *1400
-Montefino Avenue, Diamond Bar, CA 91765* in its text window. By using the
+By default, the Google Address gadget automatically displays the address 
+*1400 Montefino Ave, Diamond Bar, CA 91765* in its text window. By using the
 OpenSocial Gadget Editor, you can edit the XML file and specify a customized
 address or remove the default address entirely from the gadget's UI. For this
 tutorial, we'll remove the default address entirely from our gadget's text
 window.
 
-1. Copy the gadget XML contents into the gadget editor. Navigate to *OpenSocial
-   Gadget Publisher* from under the *Apps* heading and select the URL for
-   *Google Address*.
+1. Copy the gadget XML contents into the gadget editor. Navigate to 
+   *OpenSocial Gadget Publisher* from under the *Apps* heading and select the URL 
+   for *Google Address*.
 
 2. Copy the XML content onto your clipboard.
 
@@ -72,9 +72,9 @@ window.
 6. Close the Preview window and locate the following element in the gadget XML:
 
         <input type="text" id="address" name="address" size="40" value="1400
-        Montefino Avenue, Diamond Bar, CA 91765">
+        Montefino Ave, Diamond Bar, CA 91765">
 
-    Then, remove the `value="1400 Montefino Avenue, Diamond Bar, CA 91765"`
+    Then, remove the `value="1400 Montefino Ave, Diamond Bar, CA 91765"`
     setting and save the file.
 
 7. Select the editor's *Preview* mode again. As you would expect, the gadget's
