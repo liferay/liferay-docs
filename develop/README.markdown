@@ -27,22 +27,27 @@ relates to dev site documentation:
     - `develop/` (maps to the site's *Develop* tab)
         - `build.xml`
         - `tutorial-template.markdown` (template for tutorial articles)
-        - `learning-paths/` (*Learning Paths* document folder. Has the same
-        directory structure as the `tutorials/` document folder below.)  
+        - `learning-paths/` (*Learning Paths* document folder. Has a
+        directory structure similar to that of the `tutorials/` document
+        folder.)
+        - `new-articles/` (Submit new tutorial article Markdown files, images,
+        and code here)
         - `tutorials/` (*Tutorials* document folder)  
             - `build.xml`
             - `articles/` 
-                - `01-some-category/` (category folder named after the title of
+                - `some-category/` (category folder named after the title of
                 its dev site navigation) 
-                    - `01-some-article.markdown` (named after the article's `<h1>` heading)
-                    - `02-some-article.markdown`
+                    - `some-article.markdown` (named after the article's `<h1>` heading)
+                    - `another-article.markdown`
                     - ...
-                - `02-some-category/`
+                - `another-category/`
                 - ...
             - *build/* (generated when building articles locally)
             - `code/` (code examples mapped to the document's articles) 
-                - `01-some-category/`
-                    - `begin/`
+                - `some-category/` (use abbreviated category name to keep code
+                path short)
+                    - `begin/` (optional. Can refer to the start/end of another
+                    tutorial's code if it makes sense.)
                         - `some-portlet` (the plugin on starting the tutorial)
                     - `end/`
                         - `some-portlet` (the plugin on finishing the tutorial)
@@ -58,38 +63,19 @@ relates to dev site documentation:
 
 Now that you know the "lay of the land", let's learn how to add new articles.
 
-## Adding Articles
+## Contributing
 
-To add a new article to the dev site, follow these simple steps:
+You can save your new tutorial article Markdown text, images, and code to the
+`develop/new-articles/` folder. We'll move your tutorial to a proper location
+under `learning-paths/` or `tutorials/`, review your tutorial, and publish it to
+the site. 
 
-1.  Determine the *document* for your article: the *Learning Paths* document or
-the *Tutorials* document. If your article demonstrates using a particular API or
-framework, it's a Tutorials article. If in doubt, add your article as a
-Tutorials document article. We can always move your article to where it needs to
-be after you submit it. 
+Then send a pull request to user `liferay` on the appropriate branch.  
 
-2.  Determine the document's *category* for the article. Check the dev site's
-navigation tree nodes for a category that best fits your article's topic. The
-article categories folders under `learning-paths/articles/` and
-`tutorials/articles/` map to these dev site categories. 
+Here are the branches for the respective product releases:
 
-3.  Save your article to the category folder prefixing the file with the next
-available article number prefix. 
-
-    For example, if you want to add a new article to the
-    `tutorials/articles/01-users-and-organizations/` category folder and the
-    folder has existing article files prefixed from `01-` to 
-    `03-`, prefix your new article file with `04-`:
-
-    ```
-    01-users-and-organizations/
-        01-adding-users.markdown
-        02-updating-users.markdown
-        03-adding-organizations.markdown
-        04-[your-new-article].markdown
-    ```
-4.  Save each image file that your article references into the appropriate
-`images/` folder (e.g., `learning-paths/images/` or `tutorials/images/`). 
+- Liferay Portal 6.2 CE/EE - `master`
+- Liferay Portal 6.1 CE/EE - `6.1.x`
 
 As you write your article, make sure to follow the
 [Liferay Documentation Writer's Guidelines](https://github.com/liferay/liferay-docs/blob/master/guidelines/writers-guidelines.markdown)
@@ -104,10 +90,10 @@ Files](https://github.com/liferay/liferay-docs/blob/master/guidelines/liferay-do
 From time to time as you write your article, you'll probably want to see how it
 renders in HTML. Next we'll show you how to convert it from Markdown to HTML. 
 
-## Rendering Your Markdown Article Files as HTML Locally 
+## Rendering an Existing Markdown Article File Locally as HTML 
 
-To see what your article looks like converted to HTML, you can use our
-[Ant](http://ant.apache.org/bindownload.cgi) build targets and the
+To see what a local article looks like converted from Markdown to HTML, you can
+use our [Ant](http://ant.apache.org/bindownload.cgi) build targets and the
 [Pandoc](https://github.com/liferay/liferay-docs/blob/master/guidelines/liferay-documentation-tools.markdown#installing-pandoc)
 Markdown parsing application. 
 
@@ -123,13 +109,13 @@ the `21-liferayui-taglibs` category folder.
     On Linux, execute:
 
     ```
-    ant article-to-html -Darticle=articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown
+    ant article-to-html -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
     
     On Windows, execute the target that has the `-win` suffix:
 
     ```
-    ant article-to-html-win -Darticle=articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown
+    ant article-to-html-win -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
 
     *Hint:* To leverage your terminal's auto-complete feature in typing out the
@@ -137,19 +123,7 @@ the `21-liferayui-taglibs` category folder.
     You can always remove the space before running the command. 
 
 3.  The HTML file is produced to the corresponding folder under `build/` (e.g.,
-`build/articles/21-liferayui-taglibs/01-using-liferay-ui-success-and-error-messages.markdown.html`).
+`build/articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown.html`).
 
 It's just that easy!
-
-## Contributing Documentation
-
-To contribute new articles or bug fixes, please send pull requests to user
-`liferay` on the appropriate branch.  
-
-Here are the branches for the respective product releases:
-
-- Liferay Portal 6.2 CE/EE - `master`
-- Liferay Portal 6.1 CE/EE - `6.1.x`
-
-We look forward to your contributions!
 
