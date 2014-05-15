@@ -194,29 +194,29 @@ let's move onto something a little more challenging.
 
 We went over a simple example of using the `aui-char-counter` in an html file 
 and then showed you how to place it into a portlet. Now, we are going to kick 
-things up a notch and use something with a little more versatility: an image 
+things up a notch and use an AlloyUI component with a little more versatility: an image 
 carousel!
 
-Image carousels are often the first thing people see when they visit your site 
-and are an very effective means of communicating information to your users. The 
-`aui-carousel` makes it very easy to get an image carousel up and running in no 
-time flat. First we are going to go over setting up the basic portlet and 
+Image carousels are often the first thing people see when they visit sites.
+The provide an interactive way of cycling through visual elements
+and are a very effective means of communicating information to users. AlloyUI's 
+`aui-carousel` module makes it very easy to get an image carousel up and running in no 
+time flat. First we are going to go over setting up a basic portlet with the carousel and 
 discuss what is going on behind the scenes. Then we will have some real fun and 
 show you how to customize the carousel to suit your individual needs.
 
-Here is what the basic carousel looks like to give you an idea of where we're 
-heading:
+To give you an idea of where we're heading, here is what the basic carousel
+looks like:
 
 ![Figure 12.3: Image carousels can be a very handy tool to communicate information to users. Here is what the finished bare-bones portlet looks like.](../../images/alloyui-carousel-in-portlet.png)
 
-Alright, enough discussing what will be doing, let's get to work!
+Alright, enough discussing what we'll be doing, let's do the work!
 
-###Using Carousel in a Portlet
+### Adding a Carousel to a Portlet
 
-Let's get this puppy running!
+Let's get a carousel up and running in a portlet by following these steps:
 
-1. Create a JSP file called *view.jsp* in your `portlet-name/docroot/` 
-   directory and insert the following code:
+1. Insert the following code in your portlet's view JSP:
 
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
@@ -245,9 +245,9 @@ Let's get this puppy running!
 
 If you try to deploy the portlet now you will notice that no images are 
 displayed; this is because we need to write some CSS to tell the portlet how to 
-display itself.
+display the carousel.
 
-2. Create a *main.css* file in your `portlet-name/docroot/css/` directory and 
+2. Create a *main.css* file in your portlet's `docroot/css/` directory and 
    insert the following code:
 
         div.carousel-item 
