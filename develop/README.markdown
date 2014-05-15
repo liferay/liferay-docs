@@ -104,18 +104,10 @@ Here's how to build an HTML version of a *Tutorials* article from the terminal:
 2.  Execute the `article-to-html` target passing the article's relative path as the
 `article` property value. Below is an example of executing this command on the
 `01-using-liferay-ui-success-and-error-messages.markdown` file that resides in
-the `21-liferayui-taglibs` category folder. 
-
-    On Linux, execute:
+the `21-liferayui-taglibs` category folder.
 
     ```
     ant article-to-html -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
-    ```
-    
-    On Windows, execute the target that has the `-win` suffix:
-
-    ```
-    ant article-to-html-win -Darticle=articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown
     ```
 
     *Hint:* You can leverage your terminal's auto-complete feature when
