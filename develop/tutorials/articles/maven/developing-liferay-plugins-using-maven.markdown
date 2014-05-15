@@ -1,4 +1,4 @@
-# Developing Plugins Using Maven
+# Developing Liferay Plugins Using Maven
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
