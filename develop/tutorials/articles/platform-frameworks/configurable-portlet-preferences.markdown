@@ -1,5 +1,10 @@
 # Using Configurable Portlet Preferences
 
+<!-- The beginning and ending test portlets can be found at the following:
+https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
+https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/end/event-listing-portlet
+-->
+
 Portlet Preferences are properties for storing basic portlet configuration data.
 Preferences are often used by administrators to provide customized views of a
 portlet to subsets of users or even all of a portlet's users. Portlet
