@@ -5,12 +5,13 @@
 	<property name="build.dir" value="${project.dir}/classes" />
 	<property name="dist.dir" value="${project.dir}/dist" />
 	<property name="docs.lib.dir" value="${project.dir}/../../lib" />
+	<property name="jar.file" value="markdown-converter.jar" />
 	<property name="lib.dir" value="${project.dir}/lib" />
 	<property name="src.dir" value="${project.dir}/src" />
 
 	<path id="lib.classpath">
 		<fileset dir="${lib.dir}" includes="*.jar" />
-		<fileset dir="${docs.lib.dir}" excludes="properties-converter.jar" includes="*.jar" />
+		<fileset dir="${docs.lib.dir}" excludes="${jar.file}" includes="*.jar" />
 	</path>
 
 	<path id="project.classpath">
@@ -49,21 +50,20 @@
 	</target>
 
 	<target name="dist" depends="clean, compile"
-	description="calls clean and compile targets, and creates the properties-converter.jar">
+	description="calls clean and compile targets, and creates the ${jar.file}">
 		<mkdir dir="${dist.dir}" />
-		<jar destfile="${dist.dir}/properties-converter.jar"
+		<jar destfile="${dist.dir}/${jar.file}"
 			filesetmanifest="mergewithoutmain"
 			update="true">
 			<manifest>
-				<attribute name="Main-Class" value="com.liferay.portal.tools.propertiesconverter.PropertiesParser"/>
-				<attribute name="Class-Path" value="freemarker.jar"/>
+				<attribute name="Main-Class" value="com.liferay.documentation.markdown.MarkdownToHtmlMain"/>
 			</manifest>
 			<fileset dir="${build.dir}"/>
 		</jar>
 	</target>
 
 	<target name="deploy" depends="dist" description="deploys this project's JAR file to liferay-docs/lib">
-		<copy file="${dist.dir}/properties-converter.jar" tofile="../../lib/properties-converter.jar" />
+		<copy file="${dist.dir}/${jar.file}" tofile="../../lib/${jar.file}" />
 		<antcall target="clean" />
 	</target>
 
