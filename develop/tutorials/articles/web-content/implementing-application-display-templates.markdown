@@ -27,7 +27,7 @@ Template option looks like in a portlet Configuration menu.
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/adt-dropdown.png)
 
 In this tutorial, we'll demonstrate how to use the Application Display Templates
-API to a portlet. Let's get started learning how.
+API to add this new feature to a portlet. Let's get started learning how.
 
 ## Using the Application Display Templates API
 
@@ -36,7 +36,7 @@ steps involve registering your portlet to use ADTs, defining permissions, and
 exposing the ADT functionality to users. Let's walk through these steps:
 
 1. Create and register a custom `*PortletDisplayTemplateHandler` class. Liferay
-   provides [`BasePortletDisplayTemplateHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/portletdisplaytemplate/BasePortletDisplayTemplateHandler.html)
+   provides the [`BasePortletDisplayTemplateHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/portletdisplaytemplate/BasePortletDisplayTemplateHandler.html)
    as a base implementation for you to extend. You can check the
    [TemplateHandler](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/template/TemplateHandler.html)
    interface Javadoc to learn about each template handler method.
@@ -116,11 +116,11 @@ exposing the ADT functionality to users. Let's walk through these steps:
 	 
 4.  Now that your portlet officially supports ADTs, you'll want to expose the
     ADT option to your users. Just include the
-    `liferay-ui:ddm-template-selector` taglib in the JSP file you're using to
+    `<liferay-ui:ddm-template-selector>` taglib in the JSP file you're using to
     control your portlet's configuration.
    
-    For example, it may be helpful for you to insert an `aui:fieldset` like the
-    following one in your configuration JSP file:
+    For example, it may be helpful for you to insert an `<aui:fieldset>` like
+    the following one in your configuration JSP file:
  
         <aui:fieldset>
             <div class="display-template">
@@ -140,7 +140,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
         </aui:fieldset>
 
     In this JSP, the `TemplateHandler` object is initialized for the
-    `YourEntity` class. Then, the `liferay-ui:ddm-template-selector` taglib
+    `YourEntity` class. Then, the `<liferay-ui:ddm-template-selector>` taglib
     specifies the Display Template drop-down menu to be used in the portlet's
     Configuration menu.
     
@@ -191,12 +191,12 @@ exposing the ADT functionality to users. Let's walk through these steps:
     [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 Now that your portlet supports ADTs, you can create your own scripts to change
-the display of your portlet. You can experiment by adding our own custom ADT.
+the display of your portlet. You can experiment by adding your own custom ADT.
 
 1. Navigate to *Admin* &rarr; *Configuration* &rarr; *Application Display
-   Templates*. Then select *Add* &rarr; *Your Template*. Give your ADT a
-   name and insert FreeMarker code (like the following code) into the template
-   editor, and click *Save*:
+   Templates*. Then select *Add* &rarr; *Your Template*. Give your ADT a name
+   and insert FreeMarker (like the following code) or Velocity code into the
+   template editor, and click *Save*:
    
         <#if entries?has_content>
             Quick List:
@@ -207,9 +207,9 @@ the display of your portlet. You can experiment by adding our own custom ADT.
             </ul>
         </#if>
 
-2. When you go back to your portlet and select *Options* &rarr;
-   *Configuration* and click the *Display Template* drop-down. Select the ADT
-   you created, and click *Save*.
+2. Go back to your portlet and select *Options* &rarr; *Configuration* and click
+   the *Display Template* drop-down. Select the ADT you created, and click
+   *Save*.
 
 ![Figure 2: The example Quick List template displays entities in a bullet list format.](../../images/quick-list-template.png)
     
