@@ -243,9 +243,9 @@ Let's get a carousel up and running in a portlet by following these steps:
         );
         </aui:script>
 
-If you try to deploy the portlet now you will notice that no images are 
-displayed; this is because we need to write some CSS to tell the portlet how to 
-display the carousel.
+    If you try to deploy the portlet now you will notice that no images are 
+    displayed; this is because we need to write some CSS to tell the portlet how
+    to display the carousel.
 
 2. Create a *main.css* file in your portlet's `docroot/css/` directory and 
    insert the following code:
@@ -285,7 +285,7 @@ to give it your own flare.
 Now comes the really fun part: making the carousel your own!
 
 
-1.   Open the *view.jsp* file and replace the code with the following:
+1.  Open the *view.jsp* file and replace the code with the following:
         
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
@@ -324,17 +324,17 @@ Now comes the really fun part: making the carousel your own!
     the first image listed in the `view.jsp`. Now that we've laid the groundwork 
     for our carousel, we can go ahead and style it.
     
----
+    ---
 
- ![Note](../../images/tip.png) **Note:** These are only some of the attributes 
- that can be modified in the `view.jsp` of your portlet. If you choose not to 
- enter values for these attributes they will hold their default values. For a 
- full list of the attributes and their defaults, as well as further 
- documentation, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
+     ![Note](../../images/tip.png) **Note:** These are only some of the attributes 
+    that can be modified in the `view.jsp` of your portlet. If you choose not to 
+     enter values for these attributes they will hold their default values. For a 
+     full list of the attributes and their defaults, as well as further 
+     documentation, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
 
----
+    ---
         
-2.   Open the *main.css* file and replace the code with the following:
+2.  Open the *main.css* file and replace the code with the following:
        
         /* styling for the carousel body */
         div.carousel-item 
@@ -600,24 +600,24 @@ height carousel. The menu bar's width is scaled down to 26% the size of the
 carousel's width. To finish out the CSS, the list, which holds the menu
 buttons, is set to adjust to the size and shape of the menu bar. 
 
-        /* Menu Bar */
-        #myCarousel menu {
-           background: none repeat scroll 0 0 #0000C0;
-           border-bottom: 3px solid #00CCE0;
-           border-radius: 0 0 15px 15px;
-           bottom: auto;
-           display: table;
-           left: 518 px;
-           padding: 1% 0;
-           right: 0;
-           top: 250px;
-           width: 26%
-        }
+    /* Menu Bar */
+    #myCarousel menu {
+       background: none repeat scroll 0 0 #0000C0;
+       border-bottom: 3px solid #00CCE0;
+       border-radius: 0 0 15px 15px;
+       bottom: auto;
+       display: table;
+       left: 518 px;
+       padding: 1% 0;
+       right: 0;
+       top: 250px;
+       width: 26%
+    }
         
-        /* List of menu buttons */
-        #myCarousel menu li {
-           float: inherit;
-        }
+    /* List of menu buttons */
+    #myCarousel menu li {
+       float: inherit;
+    }
 
 Here is an example of a customized carousel using the configuration above:
 
