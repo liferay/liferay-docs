@@ -46,7 +46,7 @@ AlloyUI project, tutorials, examples, and API documentation, make sure to visit
 chapter by exploring the following topics: 
 
 - A simple AlloyUI example
-- A carousel AlloyUI example
+- Using an AlloyUI Carousel in Your Portlet
 - Working with the AlloyUI project
 
 To start things off right, let's go over a simple example using AlloyUI.
@@ -190,7 +190,7 @@ Voila! You're using AlloyUI in Liferay!
 Now that we've gone over using a simple `aui-char-counter` in your portlet, 
 let's move on to something a little more challenging.
 
-## A Carousel AlloyUI Example
+## Using an AlloyUI Carousel in Your Portlet
 
 We went over a simple example of using the `aui-char-counter` in an html file 
 and then showed you how to place it into a portlet. Now, we are going to kick 
