@@ -190,7 +190,7 @@ Voila! You're using AlloyUI in Liferay!
 Now that we've gone over using a simple `aui-char-counter` in your portlet, 
 let's move on to something a little more challenging.
 
-## Using an AlloyUI Carousel in Your Portlet
+## Using an AlloyUI Carousel in Your Portlet [](id=using-an-alloyui-carousel-in-your-portle-liferay-portal-6-2-dev-guide-12-en)
 
 We went over a simple example of using the `aui-char-counter` in an html file
 and then showed you how to place it into a portlet. Now, we are going to kick
@@ -212,7 +212,7 @@ looks like:
 
 Alright, enough discussing what we'll be doing, let's do the work!
 
-### Adding a Carousel to a Portlet
+### Adding a Carousel to a Portlet [](id=adding-a-carousel-to-a-portlet-liferay-portal-6-2-dev-guide-12-en)
 
 Let's get a carousel up and running in a portlet by following these steps:
 
@@ -280,7 +280,7 @@ them `width` and `height` property values to match the carousel's `width` and
 Next we'll take a look at how you can customize the carousel to give it your own
 flare.
 
-### Customizing the AUI-Carousel
+### Customizing the AUI-Carousel [](id=customizing-the-aui-carousel-liferay-portal-6-2-dev-guide-12-en)
 
 Now comes the really fun part: making the carousel your own!
 
