@@ -188,7 +188,7 @@ Voila! You're using AlloyUI in Liferay!
 ![Figure 12.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
 
 Now that we've gone over using a simple `aui-char-counter` in your portlet, 
-let's move onto something a little more challenging.
+let's move on to something a little more challenging.
 
 ## A Carousel AlloyUI Example
 
@@ -243,12 +243,12 @@ Let's get a carousel up and running in a portlet by following these steps:
         );
         </aui:script>
 
-    If you try to deploy the portlet now you will notice that no images are 
+    If you try to deploy the portlet now you'll notice that no images are 
     displayed; this is because we need to write some CSS to tell the portlet how
     to display the carousel.
 
-2. Create a *main.css* file in your portlet's `docroot/css/` directory and 
-   insert the following code:
+2. Create a `main.css` file in your portlet's `docroot/css/` directory and 
+   add the following code to it:
 
         div.carousel-item 
         {
@@ -256,36 +256,38 @@ Let's get a carousel up and running in a portlet by following these steps:
         height: 250px;
         }
 
-Now if you deploy your portlet to your portal, your images will display 
-correctly. Give yourself a pat on the back, you've just successfully used the 
-`aui-carousel` in a portlet! Next we will delve into the inner-workings of the
+3. Deploy your portlet to your portal.
+
+Your images display 
+correctly. Give yourself a pat on the back; you've just successfully used the 
+`aui-carousel` in a portlet! Next, let's delve into the inner-workings of the
 carousel and see what makes it tick.
 
-#### What's Happening behind the Scenes of the AUI-Carousel? 
+The JSP code you inserted in the portlet specified your carousel. You included
+directives for using the `java` and `aui` taglibs. Below them, you
+specified a div named `myCarousel`, to identify the carousel's images. This set
+the foundation for using the aui script. 
 
-First, a `view.jsp` file was created and code was inserted to tell the portlet 
-what to display. At the top of the code, the taglibs are referenced; in this 
-case we used the `java` and `aui` taglibs. Just below the taglibs a
-`#myCarousel` div was created with divs inside, to hold the images for the
-carousel.
-
-Once the foundation was set, an aui script was created that used the
-`aui-carousel` module; it was then given some basic attributes so that it knew
-where to display the carousel and what size to display it at. In this case we
+The script uses the
+`aui-carousel` module. We gave it some basic attributes to specify
+where to display the carousel and what size to display it at. In this case, we
 told the `aui-carousel` to display in the `myCarousel` div by placing the div's
-id as the value of the `contentBox` attribute and setting the `width` and 
-`height` attributes at the resolution of 700px X 250px. Finally, a `main.css` 
-file was created and given divs with the id `carousel-item` and a `width` and 
-`height` property with values that matched the `width` and `height` attributes 
-in the `view.jsp`. Next we'll take a look at how you can customize the carousel 
+ID as the value of the `contentBox` attribute. We also set the `width` and 
+`height` attributes at the resolution of 700px X 250px. 
+
+Finally, we used the `main.css` 
+file to style the `carousel-item` divs, giving them `width` and 
+`height` property values to match the carousel's `width` and `height` attributes,
+specified in the JSP. That wasn't so hard, was it?
+
+Next we'll take a look at how you can customize the carousel 
 to give it your own flare.
 
-## Customizing the AUI-Carousel
+### Customizing the AUI-Carousel
 
 Now comes the really fun part: making the carousel your own!
 
-
-1.  Open the *view.jsp* file and replace the code with the following:
+1.  Open the same view JSP file and replace its code with the following:
         
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
@@ -316,25 +318,25 @@ Now comes the really fun part: making the carousel your own!
         );
         </aui:script>
 
-    In the code above you will find the basic attributes that should be styled
-    to customize your portlet. The bounding box of the widget, used for 
-    positioning the carousel, is set to the div #myCarousel. The transition
-    between images is set to last for 0.5 seconds. The carousel is set to 
+    The code above has some basic attributes that can be styled
+    to customize the carousel widget. The bounding box of the widget, used for 
+    positioning the carousel, is set to the `#myCarousel` div. The transition
+    between images is set to last for 1 second. The carousel is set to 
     display each image for 2 seconds. Setting the `activeIndex` to 0 displays 
-    the first image listed in the `view.jsp`. Now that we've laid the groundwork 
+    the first image listed in the `#myCarousel` div as the first one to display. Now that we've laid the groundwork 
     for our carousel, we can go ahead and style it.
-    
+
     ---
 
-     ![Note](../../images/tip.png) **Note:** These are only some of the attributes 
-    that can be modified in the `view.jsp` of your portlet. If you choose not to 
-     enter values for these attributes they will hold their default values. For a 
+     ![Note](../../images/tip.png) **Note:** These are only a subset of the attributes 
+     that can be modified for a carousel. If you choose not to 
+     set values for these attributes their default values are used. For a 
      full list of the attributes and their defaults, as well as further 
-     documentation, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
+     documentation on the AUI-Carousel, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
 
     ---
-        
-2.  Open the *main.css* file and replace the code with the following:
+
+2.  Open the `main.css` file and replace its code with the following CSS, to style the carousel:
        
         /* styling for the carousel body */
         div.carousel-item 
@@ -447,8 +449,8 @@ Now comes the really fun part: making the carousel your own!
         }
                         
 Let's breakdown the CSS that styles the body of the carousel. The code starts 
-off by setting the width and height for the carousel body and giving it a 
-rounded edge with the `border-radius` property. 
+off by setting the width and height for the carousel body, and giving it 
+rounded edges with the `border-radius` property. 
 
         /*styling for the carousel body*/
         div.carousel-item 
@@ -458,8 +460,8 @@ rounded edge with the `border-radius` property.
            border-radius: 6px 6px 0 6px;
         }
                 
-Next, the carousel is centered in the middle of the portlet by setting the 
-`boundingBox`'s (#mycarousel in this case) `margin` property to `auto` for the 
+Next, the carousel is centered in the middle of the portlet by setting the
+`margin` property of the `boundingBox` element (`#mycarousel` in this case) to `auto` for the 
 left and right margins; the top margin is set to 0 while the bottom margin is 
 set to 40px to leave room for the menu controls.
                 
@@ -470,9 +472,9 @@ set to 40px to leave room for the menu controls.
            margin:0 auto 40px;
         }
 
-Next, the images of our carousel are set by pointing the `background-image` 
-properties of the corresponding divs to the location of the image files, which 
-were placed in a newly created `../img/` directory. 
+Next, the images of the carousel are set by pointing the `background-image` 
+properties of the corresponding divs to the location of each respective image file, which 
+reside in the `../img/` directory. 
 
         /* styling for div with id image1 */
         #image1
@@ -498,7 +500,7 @@ were placed in a newly created `../img/` directory.
            background-image: url("../img/spock");
         }
 
-Now that we have covered the styling for the carousel's body, it's time to 
+Now that we've covered the styling for the carousel's body, it's time to 
 breakdown the carousel menu's styling. Existing classes are referenced for the 
 menu controls. To understand how we determined the classes for the menu 
 controls, we need to breakdown the DOM tree:
@@ -516,24 +518,24 @@ controls, we need to breakdown the DOM tree:
         
 This is a simplified version of the DOM tree, but it gives you an idea of the 
 overall structure. We can see from the DOM tree that the carousel menu controls 
-lie within the div #myCarousel, inside a menu tag, inside a list tag, inside an 
+lie within the `#myCarousel` div, inside a menu tag, inside a list tag, inside an 
 anchor tag.
 
 ---
 
- ![Note](../../images/tip.png) **Note:** The DOM tree was found by 
- right-clicking the *next menu button* and inspecting the element in the 
+ ![Note](../../images/tip.png) **Note:** You can see the DOM tree by 
+ right-clicking the carousel's *next menu button* and inspecting the element in the 
  browser (Firefox in this case).
  
 ---
 
-Once the DOM tree is understood, we go ahead and place the styling for each of 
+Once you understand the DOM tree, you can go ahead and place the styling for each of 
 the menu buttons with their corresponding class. Each menu button has a 
-`background` property set to it's image location and a `border-radius` property 
-for the rounded edges; if you don't want a rounded edge you can omit the 
+`background` property set to its image location and a `border-radius` property 
+for rounding edges; if you don't want a rounded edge you can omit the 
 `border-radius` property from your styling. Another important property to note
-is the `background-position` property. An image sprite was used for the menu
-controls, and so a `background-position` property is configured to tell the
+is the `background-position` property. We used an image sprite for the menu
+controls, and so we configured a `background-position` property to tell the
 buttons where exactly on the image they are located. 
 
         /* Pause Button */
@@ -572,7 +574,7 @@ buttons where exactly on the image they are located.
            border-radius:90px; /* in this case I have a circular icon */
         }
 
-Next, the styling for the active and inactive index indicators is set. Once 
+Next, the we styled the active and inactive index indicators. Once 
 again, looking at the DOM tree we find existing classes that can be used for 
 styling. The images are set with the `background-image` and 
 `background-position` properties and given the proper height and width.
@@ -593,8 +595,8 @@ styling. The images are set with the `background-image` and
            height: 20px;
         }
 
-Finally, the menu controls and the menu bar, which holds the controls, are 
-styled. The left edge of the menu bar is set 518 px from the left. The top edge 
+Finally, we styled the menu controls and the menu bar, which holds the controls.
+The left edge of the menu bar is set 518 px from the left. The top edge 
 of the menu bar is set 250 px from the top, placing it just beneath the 250 px 
 height carousel. The menu bar's width is scaled down to 26% the size of the 
 carousel's width. To finish out the CSS, the list, which holds the menu
@@ -623,7 +625,7 @@ Here is an example of a customized carousel using the configuration above:
 
 ![Figure 12.4: Image carousels can be customized. Here is an example of a customized carousel, using the scripting above.](../../images/alloyui-customized-carousel-in-portlet.png)
 
-You can download a finished version of the customized portlet at 
+You can access a finished version of the customized portlet at 
 <https://github.com/liferay/liferay-docs/tree/master/code/12-working-with-alloyUI/customized-carousel-portlet>
 
 Now that you've gotten your feet wet using AlloyUI, let's go over setting up the 
