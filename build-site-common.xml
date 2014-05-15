@@ -1,0 +1,94 @@
+<?xml version="1.0"?> 
+
+<project name="Dev Site Documentation Management" basedir=".">
+	<property name="project.dir" value="../.." />
+
+	<path id="lib.classpath">
+		<fileset dir="${basedir}/lib" includes="*.jar" />
+		<fileset dir="${basedir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<pathelement path="${classpath}" />
+		<path refid="lib.classpath" />
+	</path>
+
+	<property name="build.dir" value="./build"/>
+	<property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
+	<property name="dist.dir" value="./dist"/>
+
+	<!-- taskdefs -->
+
+	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<target name="prepare" description="Creates build directory.">
+		<echo message="... creating build directory"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${build.dir}/images"/>
+		<copy todir="${build.dir}/images" overwrite="true">
+			<fileset dir="./images"/>
+		</copy>
+	</target>
+
+	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
+		<echo message="... converting ${article} to html"/>
+		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
+		<exec executable="${pandoc.app}">
+			<arg value="-f" />
+			<arg value="markdown"/>
+			<arg value="-t"/>
+			<arg value="html"/>
+			<arg value="-smart"/>
+			<arg value="-o"/>
+			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
+			<arg value="${article}"/>
+		</exec>
+	</target>
+
+	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file on Windows.">
+		<echo message="... converting ${article} to html"/>
+		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
+		<exec executable="cmd">
+			<arg value="/C" />
+			<arg value="pandoc"/>
+			<arg value="-f" />
+			<arg value="markdown"/>
+			<arg value="-t"/>
+			<arg value="html"/>
+			<arg value="-smart"/>
+			<arg value="-o"/>
+			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
+			<arg value="${article}"/>
+		</exec>
+	</target>
+
+	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
+		<checkimgssite docdir="${doc.dir}" chapter="${article}">
+		</checkimgssite>
+	</target>
+
+	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies. -->
+	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+	
+	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="./" includes="articles/" />
+			<fileset dir="./" includes="images/" />
+		</zip>
+	</target>
+
+</project>
