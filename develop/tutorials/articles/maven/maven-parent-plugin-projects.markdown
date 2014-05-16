@@ -210,4 +210,4 @@ environment properties, and the Liferay artifacts on which Liferay plugin
 projects depend, it's time to learn how to create a plugin project using
 Liferay's archetypes:
 
-[Creating Liferay Plugins With Maven](http://www.liferay.com)
+[Creating Liferay Maven Plugins from Liferay IDE](http://www.liferay.com)
