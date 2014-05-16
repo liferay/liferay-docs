@@ -27,7 +27,7 @@ Template option looks like in a portlet Configuration menu.
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/adt-dropdown.png)
 
 In this tutorial, we'll demonstrate how to use the Application Display Templates
-API to add this new feature to a portlet. Let's get started learning how.
+API to add an ADT to a portlet. Let's get started learning how.
 
 ## Using the Application Display Templates API
 
@@ -116,7 +116,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
 	 
 4.  Now that your portlet officially supports ADTs, you'll want to expose the
     ADT option to your users. Just include the
-    `<liferay-ui:ddm-template-selector>` taglib in the JSP file you're using to
+    `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
     control your portlet's configuration.
    
     For example, it may be helpful for you to insert an `<aui:fieldset>` like
@@ -140,7 +140,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
         </aui:fieldset>
 
     In this JSP, the `TemplateHandler` object is initialized for the
-    `YourEntity` class. Then, the `<liferay-ui:ddm-template-selector>` taglib
+    `YourEntity` class. Then, the `<liferay-ui:ddm-template-selector>` tag
     specifies the Display Template drop-down menu to be used in the portlet's
     Configuration menu.
     
@@ -181,7 +181,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
 
     In this step, we initialized variables dealing with the display settings 
     (`displayStyle`, `displayStyleGroupId`, and `portletDisplayDDMTemplateId`), 
-    and then used conditional taglibs to choose between rendering the ADT, or
+    and then used conditional tags to choose between rendering the ADT, or
     displaying the entities some other way. If the
     `portletDisplayDDMTemplateId` exists, the entity list is initialized and
     the ADT is rendered using the page context, template ID, and entities.
