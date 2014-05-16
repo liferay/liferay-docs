@@ -4,4 +4,10 @@
 
 <aui:button-row cssClass="guestbook-buttons">
 
+	<portlet:renderURL var="addEntryURL">
+		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
+	</portlet:renderURL>
+	
+	<aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+	
 </aui:button-row>
