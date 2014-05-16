@@ -1,12 +1,14 @@
-### Using Liferay IDE with Maven [](id=use-liferay-ide-with-maven-liferay-portal-6-2-dev-guide-02-en)
+# Using Maven From Liferay IDE
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 (`m2e-liferay`), or the added support of configuring Maven projects as full
-Liferay IDE projects. Let's explore what the Maven project configurator does,
-how to install it, and how to install its dependencies. 
+Liferay IDE projects. In this article, we'll discuss what the Maven project
+configurator does, how to install it, and how to install its dependencies. We'll
+also examine the structure of Liferay Maven projects and explore some
+configuration options.
 
-#### Installing Maven Plugins for Liferay IDE [](id=install-maven-plugins-for-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
+## Installing Maven Plugins for Liferay IDE
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -68,14 +70,15 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
 
-#### Configuring your Liferay Maven Project [](id=configure-liferay-maven-project-liferay-portal-6-2-dev-guide-02-en)
+## Configuring your Liferay Maven Project
 
-Now your Liferay IDE instance is Maven-ready and you have an existing Maven
-project. Let's investigate what is going on under the hood and configure your
-project. Note, if you'd like to learn how to create a new Maven project in the
-IDE, visit the *Creating Liferay Plugins with Maven* section. Furthermore, you
-can import an existing Maven project by navigating to *File* &rarr; *Import*
-&rarr; *Maven* and selecting the location of your Maven project source code. 
+Now your Liferay IDE instance is Maven-ready. Let's examine the anatomy of a
+Liferay Maven project. Note: you don't need to have an existing Liferay Maven
+project to continue. However, if you'd like to create a new Liferay Maven
+project in the IDE before proceeding, follow the instructions in the *Creating
+Liferay Plugins with Maven* article. Alternatively, you can import an existing
+Maven project by navigating to *File* &rarr; *Import* &rarr; *Maven* and
+selecting the location of your Maven project source code. 
 
 ---
 
@@ -190,5 +193,9 @@ interactive list of resolved dependencies.
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
 
-Next, we'll consider the benefits of using a Maven parent project with your
+## Next Steps
+
+Next, let's discuss the benefits of using a Maven parent project with your
 plugin projects. 
+
+[Using a Maven Parent Plugin Project](http://www.liferay.com)
