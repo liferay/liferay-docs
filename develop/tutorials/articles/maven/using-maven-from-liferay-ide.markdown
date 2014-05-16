@@ -72,13 +72,13 @@ to be mavenized! Next, let's learn how to configure an existing Maven project.
 
 ## Configuring your Liferay Maven Project
 
-Now your Liferay IDE instance is Maven-ready. Let's examine the anatomy of a
-Liferay Maven project. Note: you don't need to have an existing Liferay Maven
-project to continue. However, if you'd like to create a new Liferay Maven
-project in the IDE before proceeding, follow the instructions in the *Creating
-Liferay Plugins with Maven* article. Alternatively, you can import an existing
-Maven project by navigating to *File* &rarr; *Import* &rarr; *Maven* and
-selecting the location of your Maven project source code. 
+Now that your Liferay IDE is Maven-ready, let's examine the anatomy of a Liferay
+Maven project. Note: you don't need to have an existing Liferay Maven project to
+continue. However, if you'd like to create a new Liferay Maven project in the
+IDE before proceeding, follow the instructions in the *Creating Liferay Plugins
+with Maven* article. Alternatively, you can import an existing Maven project by
+navigating to *File* &rarr; *Import* &rarr; *Maven* and selecting the location
+of your Maven project source code. 
 
 ---
 
