@@ -21,7 +21,7 @@ We'll cover the following topics:
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
 - Extending the Indexer Post Processor
-- The RTL Hook 
+- Displaying Right-to-Left Content with the RTL Hook
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -993,30 +993,40 @@ As you can see, hooks serve to enhance the functionality of your portal and
 applications. Next, we will take a look at the RTL Hook and how it can enhance 
 both your portal and plugins.
 
-## The RTL (right-to-left) Hook
+## Displaying Right-to-Left Content with the RTL Hook
 
-Middle eastern languages such as Hebrew and Arabic are written predominantly 
-right-to-left. Languages written in left-to-right scripts are often mixed in, so 
-the complete document is bidirectional in nature: a mix of both right-to-left 
-(RTL) and left-to-right (LTR) writing; thus, sites written in the Hebrew and 
-Arabic languages are often referred to as bidirectional sites. 
+Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
+right-to-left (RTL). However, many sites written RTL also have left-to-right
+(LTR) content mixed in, making them bidirectional in nature. Conveniently,
+browsers use [language and
+direction](http://www.w3.org/TR/html401/struct/dirlang.html) information of HTML
+tags to automatically adapt and align page content. However, sites may consist
+of elements that are absolutely positioned on the page by a style sheet; these
+elements aren't automatically aligned by the browser. Rather, you must adapt
+your style sheets to handle such elements. Since style sheets are usually
+designed for LTR languages, the typical challenge is creating an alternative
+versions of the CSS for RTL languages. This can be an arduous task. 
 
-Since the html tag contains information [about the language and the direction of the content](http://www.w3.org/TR/html401/struct/dirlang.html)
-, browsers automatically adapt the page alignment. However, there may be some 
-elements on the page which are absolutely positioned by style and won't be 
-automatically mirrored by the browser; in this case, you must adapt your style 
-sheets to both directions. Usually, style sheets are designed for LTR languages, 
-so the challenge is to create an alternative version of the CSS for RTL languages.
+Thankfully, Liferay's RTL Hook automatically adapts Liferay Portal styles for
+RTL languages. You simply deploy it and it mirrors your site's content for RTL
+languages. 
 
-The RTL Hook is a Liferay Plugin that automatically adapts Liferay Portal styles 
-for RTL languages; simply deploy it and your site is mirrored for RTL languages.
+As a before-and-after example, the figure below shows a page displayed in
+English, an LTR language. 
 
-![Figure 11.6: Here is a view of the normal portal in English.](../../images/rtl-hook-001.png)
+![Figure 11.6: Here is a site displaying English content left-to-right.](../../images/rtl-hook-001.png)
 
-![Figure 11.7: Here is a view of the portal in Hebrew with the RTL Hook configured.](../../images/rtl-hook-002.png)
+Compare it to the following figure of a page displayed in Hebrew, an RTL
+language. 
 
-Now that you have an understanding of the need for the RTL Hook, let's explore
-how you can use it.
+![Figure 11.7: Here is a site displaying Hebrew content right-to-left using the RTL Hook.](../../images/rtl-hook-002.png)
+
+You get the point, right? The RTL Hook does the heavy lifting of rendering the
+RTL content appropriately!  
+
+Now that you've seen Liferay Portal and its apps rendered using the RTL Hook,
+have you wondered how you might leverage the RTL Hook in your custom plugins?
+You'll learn how to use the hook with your plugins, next. 
 
 ### Applying the RTL Hook to Custom Plugins
 
