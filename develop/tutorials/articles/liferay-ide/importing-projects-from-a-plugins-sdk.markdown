@@ -1,10 +1,15 @@
 # Importing Projects from a Plugins SDK
 
 Do you want to import one or more Liferay projects into your Liferay IDE
-workspace from a Liferay Plugins SDK? Liferay IDE makes it easy.  Don't worry
+workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry
 if the projects already contain `.project` or `.classpath` files, the process
-we'll show you will still import them into your workspace. 
+in this tutorial will still import them into your workspace.
 
+First, let's look at the steps for importing a single Liferay project from a
+Plugins SDK project into your workspace.
+
+<!-- To do: uncomment this note and add link to the new Plugins SDK tutorial once it exists -->
+<!--
 ---
 
  ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
@@ -13,12 +18,11 @@ we'll show you will still import them into your workspace.
  *Plugins SDK* section of this chapter; it comes right after this section. 
 
 ---
-
+-->
 ## Importing a Single Project
 
-First, let's look at the steps for importing a single Liferay project from a
-Plugins SDK project into your workspace. For these steps, we'll assume you
-haven't yet configured your Plugins SDK in Liferay IDE: 
+For these steps, we'll assume you haven't yet configured your Plugins SDK in 
+Liferay IDE: 
 
 1.  In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
     *Liferay* &rarr; *Liferay Project from Existing Source*. 
@@ -40,17 +44,18 @@ haven't yet configured your Plugins SDK in Liferay IDE:
     with an error. 
 
 4.  Select the *Liferay target runtime* for the plugin project. If you don't
-    have a Liferay Portal Runtime, use the *New...* button to create one now.  For
+    have a Liferay Portal Runtime, use the *New...* button to create one now. <!-- For
     more detailed instructions, see the section *Liferay Portal Runtime and Server
-    Setup*, found earlier in this chapter. 
+    Setup*, found earlier in this chapter. -->
+    <!-- To do: add link to portal runtime and server setup learning path article -->
 
 5.  Click *Finish* to complete the import. 
 
-Any time you import a project into Liferay IDE, you can verify that it was
+<!-- Any time you import a project into Liferay IDE, you can verify that it was
 successfully configured as a Liferay IDE project by using the process outlined
-in the section *Verifying Successful Project Import*, found later in this
-chapter. 
-
+in the tutorial *Verifying Successful Project Import*. 
+-->
+<!-- To do: Add link to Verifying Successful Project Import tutorial -->
 ## Importing Multiple Projects
 
 Next, let's import multiple projects from a Liferay Plugins SDK you've already
