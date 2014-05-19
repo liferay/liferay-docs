@@ -1031,42 +1031,40 @@ too; just follow these steps:
 3. Add or edit the WEB-INF/web.xml file of your theme project and add the 
    following lines before the `</web-app>` closing tag:
 
-        ```xml
         <filter>
-	        <filter-name>Dynamic CSS Filter</filter-name>
-	        <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
         </filter>
         <filter-mapping>
-	        <filter-name>Dynamic CSS Filter</filter-name>
-	        <url-pattern>*.css</url-pattern>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <url-pattern>*.css</url-pattern>
         </filter-mapping>
-        ```
+        
 
 4. Edit the build.xml file of your theme project and add the following lines 
    before the `</project>` closing tag:
 
-        ```xml
         <target name="build-css" depends="clean-rtl-css, build-common-theme.build-css, build-rtl-css" />
 
         <target name="build-rtl-css">
-	        <java
-		        classname="com.liferay.rtl.tools.RtlCssBuilder"
-		        classpathref="plugin.classpath"
-		        fork="true"
-		        newenvironment="true"
-	        >
-		        <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
-		        <arg value="sass.dir=/" />
-		        <arg value="sass.docroot.dir=${basedir}/docroot" />
-	        </java>
+            <java
+                classname="com.liferay.rtl.tools.RtlCssBuilder"
+                classpathref="plugin.classpath"
+                fork="true"
+                newenvironment="true"
+            >
+                <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+                <arg value="sass.dir=/" />
+                <arg value="sass.docroot.dir=${basedir}/docroot" />
+            </java>
         </target>
 
         <target name="clean-rtl-css">
-	        <delete failonerror="false" includeemptydirs="true">
-		        <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
-	        </delete>
+            <delete failonerror="false" includeemptydirs="true">
+                <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
+            </delete>
         </target>
-        ```
+
 5. Finally, deploy your theme through the `ant deploy` command in the root 
    folder of your theme project.
 
@@ -1084,28 +1082,27 @@ accordingly. Follow the same steps above, making these changes to step 4:
 4. Edit the build.xml file of your portlet project and add the following lines 
    before the `</project>` closing tag:
 
-        ```xml
         <target name="build-css" depends="clean-rtl-css, build-common-portlet.build-css, build-rtl-css" />
 
         <target name="build-rtl-css">
-	        <java
-		        classname="com.liferay.rtl.tools.RtlCssBuilder"
-		        classpathref="plugin.classpath"
-		        fork="true"
-		        newenvironment="true"
-	        >
-		        <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
-		        <arg value="sass.dir=/" />
-		        <arg value="sass.docroot.dir=${basedir}/docroot" />
-	        </java>
+            <java
+                classname="com.liferay.rtl.tools.RtlCssBuilder"
+                classpathref="plugin.classpath"
+                fork="true"
+                newenvironment="true"
+            >
+                <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+                <arg value="sass.dir=/" />
+                <arg value="sass.docroot.dir=${basedir}/docroot" />
+            </java>
         </target>
 
         <target name="clean-rtl-css">
-	        <delete failonerror="false" includeemptydirs="true">
-		        <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
-	        </delete>
+            <delete failonerror="false" includeemptydirs="true">
+                <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
+            </delete>
         </target>
-        ```
+
 Don't forget to replace `<import file="../build-common-theme.xml" />` with
 `<import file="../build-common-portlet.xml" />` at the top of your xml file.
 
