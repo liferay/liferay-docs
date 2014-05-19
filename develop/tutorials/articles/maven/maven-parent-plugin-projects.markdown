@@ -177,11 +177,11 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 		</liferay.auto.deploy.dir>
 
 		<liferay.maven.plugin.version>
-			6.2.0-GA1
+			6.2.0
 		</liferay.maven.plugin.version>
 
 		<liferay.version>
-			6.2.0-GA1
+			6.2.0
 		</liferay.version>
 	</properties>
 
