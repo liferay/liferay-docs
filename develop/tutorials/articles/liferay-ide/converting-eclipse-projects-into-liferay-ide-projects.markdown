@@ -21,8 +21,9 @@ importing a project into Liferay IDE.
     ![Note](../../images/tip-pen-paper.png) **Note:** If no convert action is
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
-    for it). For instructions on resolving these issues, see the tutorial
-    *Verifying Successful Project Import*.
+    for it). <!-- For instructions on resolving these issues, see the tutorial
+    *Verifying Successful Project Import*. -->
+    <!-- To do: add link to verification tutorial once it is ready -->
 
     ---
 
@@ -36,6 +37,11 @@ importing a project into Liferay IDE.
 
 5.  Click *Finish*. 
 
+Great! Now that you've imported and converted your project, you can work with it 
+just as you would any other Liferay project.
+<!-- To do: swap out this closing for the one below once we have the verification tutorial -->
+<!--
 Great! Now that you've imported and converted your project, you can verify that 
 those actions completed successfully in the next tutorial, 
 *Verifying Successful Project Import*.
+-->
