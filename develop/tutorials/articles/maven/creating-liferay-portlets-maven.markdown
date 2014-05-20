@@ -1,4 +1,4 @@
-# Creating a Portlet Plugin
+# Creating Liferay Portlets with Maven
 
 Let's discuss Liferay Maven portlet plugins. To learn how to create a Liferay
 portlet plugin project using Liferay IDE, please refer to the *Creating Liferay
