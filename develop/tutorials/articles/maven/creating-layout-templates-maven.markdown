@@ -78,4 +78,4 @@ You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! To learn how to use other Liferay-provided
 Maven archetypes, please refer to the following tutorial:
 
-[Additional Liferay Maven Archetypes](http://www.liferay.com)
+[Developing Liferay Plugins with Additional Maven Archetypes](http://www.liferay.com)
