@@ -650,9 +650,6 @@ binary and source patches. If your development team is extending Liferay, you'll
 want to provide the patches you install to your development team so they can
 patch their source tree. 
 
-**jdk.version:** Patches are compiled for both JDK 5 and JDK 6. Specify the one
-(either `jdk5` or `jdk6`) your application server is running against. 
-
 **patches.folder:** Specify the location where you'll copy your patches. By
 default, this is `./patches`. 
 
