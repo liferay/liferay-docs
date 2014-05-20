@@ -1,5 +1,10 @@
 # Localizing Site Administration Portlets
 
+<!-- The beginning and ending test portlets can be found at the following:
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/loc-sa-port/end/event-listing-portlet
+-->
+
 You may have noticed that your Site Administration portlets are missing that
 super-fancy, must-have portlet title and description in Site Administration. In
 addition, you may want to give your Site Administration portlets localized
@@ -17,7 +22,7 @@ Let's get started by running through a tutorial to learn how to do this!
 ## Changing Site Administration Portlet Titles and Descriptions
 
 For our tutorial, we'll configure your portlet project to display in Site
-Administration, and then localize its title and description. We'll need to
+Administration, and then localize its title and description. You'll need to
 create a resource bundle for each of them to specify their localized title and
 description values. 
 
@@ -35,17 +40,16 @@ description values.
 Let's begin the tutorial to localize the title and description for a portlet: 
 
 1. Configure the portlet to display in Site Administration. For this tutorial,
-   we'll display them in the *Content* portion and give them an arbitrary
+   you'll display them in the *Content* portion and give them an arbitrary
    *weight* value for determining where they're to be placed in the column with
    respect to the other portlets. These two configurations are specified within
    the `<control-panel-entry-category/>` and `<control-panel-entry-weight/>`
    elements of your project's `liferay-portlet.xml`.
    
-    For example, the following code specifies these elements for an
-    `eventlisting` portlet:
+    For example, the following code specifies these elements:
 
 		<portlet>
-			<portlet-name>eventlisting</portlet-name>
+			<portlet-name>yourportlet</portlet-name>
 			<icon>/icon.png</icon>
 			<control-panel-entry-category>site_administration.content</control-panel-entry-category>
 			<control-panel-entry-weight>1.5</control-panel-entry-weight>
@@ -62,27 +66,26 @@ Let's begin the tutorial to localize the title and description for a portlet:
    portlet.
    
     For example, you could create a resource bundler folder called
-    `docroot/WEB-INF/src/content/eventlisting` for an `eventlisting` portlet.
+    `docroot/WEB-INF/src/content/yourportlet` for an your portlet.
 
 3. Create a `Language.properties` file in the resource bundle folder you just
    created. Specify the `javax.portlet.title` and `javax.portlet.description`
    language key/values in each of these `Language.properties` files. 
 
-    For example, our example `eventlisting` portlet could have the following
-    key/value pairs in its `content/eventlisting/Language.properties` file:
+    For example, your portlet could have the following key/value pairs in its
+    `content/yourportlet/Language.properties` file:
 
-        javax.portlet.title=Event Listing Portlet
-        javax.portlet.description=Lists important upcoming events.
+        javax.portlet.title=Your Portlet
+        javax.portlet.description=Your portlet's description.
 
-4. Specify the resource bundle for the portlet within the `<resource-bundle>`
-   element in the portlet project's `portlet.xml` file. The example
-   `portlet.xml` file code snippet below demonstrates specifying the resource
-   bundle for the `eventlisting` portlet: 
+4. Specify the resource bundle for your portlet within the `<resource-bundle>`
+   element in the portlet project's `portlet.xml` file. The code snippet below
+   demonstrates specifying the resource bundle for your portlet: 
 
         <portlet>
-            <portlet-name>eventlisting</portlet-name>
+            <portlet-name>yourportlet</portlet-name>
             ...
-            <resource-bundle>content.eventlisting.Language</resource-bundle>
+            <resource-bundle>content.yourportlet.Language</resource-bundle>
             <portlet-info>...</portlet-info>
             ...
         </portlet>
@@ -106,12 +109,11 @@ Let's begin the tutorial to localize the title and description for a portlet:
 
 8. Now that you have the languages built, you can specify language keys for each
    of the supported language files that were generated. For example, the Spanish
-   translation for the `eventlisting` portlet's previous title and description
-   would be designated inside the `Language_es.properties` file as the
-   following:
+   translation for your portlet's previous title and description would be
+   designated inside the `Language_es.properties` file as the following:
 
-        javax.portlet.title=Lista de Eventos
-        javax.portlet.description=Enumera los proximos eventos importantes.
+        javax.portlet.title=Su portlet en Espanol
+        javax.portlet.description=Descripcion del portlet en Espanol.
 
 9. Add `es` to your portal context in your URL to interface with the portal in
    Spanish. For example, your URL would start like this:
