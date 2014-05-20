@@ -10,6 +10,7 @@
 
 	<path id="lib.classpath">
 		<fileset dir="${lib.dir}" includes="*.jar" />
+		<fileset dir="${docs.lib.dir}" excludes="properties-converter.jar" includes="*.jar" />
 	</path>
 
 	<path id="project.classpath">
@@ -61,7 +62,7 @@
 		</jar>
 	</target>
 
-	<target name="deploy" depends="dist" description="deploys the properties-converter.jar to liferay-docs/lib">
+	<target name="deploy" depends="dist" description="deploys this project's JAR file to liferay-docs/lib">
 		<copy file="${dist.dir}/properties-converter.jar" tofile="../../lib/properties-converter.jar" />
 		<antcall target="clean" />
 	</target>
