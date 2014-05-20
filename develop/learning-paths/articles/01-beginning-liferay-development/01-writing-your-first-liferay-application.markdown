@@ -226,7 +226,7 @@ psychology says that you've clicked it already. Don't worry; you didn't break
 anything. Next, you'll create the page that URL points to so the app doesn't
 break when you click that button. 
 
-### Making a Form Users Can Fill Out
+### Making a Page with a Form Users Can Fill Out
 
 In the same folder your `view.jsp` is in, create the `edit_entry.jsp`: 
 
@@ -290,7 +290,10 @@ your page.
 2. For the `action` attribute, supply *addEntryURL*, which is the action URL you
 just created. 
 
-3. For the `name` attribute, give your form the name *fm*. Click *Insert*. 
+3. For the `name` attribute, give your form the name *<portlet:namespace />fm*.
+Click *Insert*. The `<portlet:namespace />` tag inserts a unique runtime value
+for this portlet. This ensures that the form name in this portlet does not clash
+with a form name in another portlet that may be on the page. 
 
 4. Provide some space between your `<aui:form>` tags so you can add fields to
 your form. 
@@ -327,7 +330,7 @@ Your form is done! Save your JSP; it should look like this:
 
     <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
-    <aui:form action="<%= addEntryURL %>" name="fm">
+    <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
 
             <aui:fieldset>
 
@@ -347,10 +350,107 @@ Your form is done! Save your JSP; it should look like this:
 When you save the JSP, Liferay IDE re-deploys your application, and if you
 refresh the page and click the *Add Entry* button, your form appears. If you
 click the *Cancel* button, it works! Don't click the *Save* button yet, though:
-you haven't implemented the action that saves a guestbook entry, so it'll
+you haven't created the action that saves a guestbook entry, so it'll
 display an error. Implementing the action is your next task. 
 
 ### Implementing Portlet Actions 
+
+When users submit the form, your application needs to store the form data so it
+can be displayed in the guestbook. To keep this first application simple, you'll
+implement this using a part of the Portlet API called Portlet Preferences.
+Normally, of course, you'd use a database, and Liferay makes it very easy to
+work with databases using its Service Builder framework. For now, however, you
+can create the first iteration of your guestbook application using portlet
+preferences. 
+
+To make your portlet do anything other than re-render itself, you must implement
+portlet actions. An action defines some processing, usually based on user input,
+that the portlet must do before it renders itself. In the case of the guestbook
+portlet, the action you need to implement saves a guestbook entry that a user
+typed into the form, so it can be retrieved and displayed later. 
+
+Since you're using Liferay's MVC Portlet framework, you have an easy way to
+implement actions: in the portlet class, which acts as the controller. In the
+form you just created, you make an action URL, and you called it `addEntry`. To
+create a portlet action, you create a method in the portlet class with the same
+name, and `MVCPortlet` calls that method when a user triggers its matching URL. 
+
+1. Open `GuestbookPortlet.java`. Liferay IDE generated this class when you
+created the portlet. 
+
+2. Create a method with the following signature: 
+
+    public void addEntry(ActionRequest request, ActionResponse response) {
+
+    }
+
+3. Hover your mouse over `ActionRequest` and add the import. Do the same for
+`ActionResponse`. 
+
+You've now created a portlet action. It doesn't do anything, but at least you
+won't get an error now if you submit your form. Next, you should make the action
+save the form data. 
+
+Because of the limitations of the portlet preferences API, you need to store
+each guestbook entry as a `String` in a string array. Since you have two fields
+in your form, you need to have a delimiter so you can determine where the user
+name ends and the guestbook entry begins. The pipe symbol (|) makes a good
+delimiter because users are highly unlikely to use that symbol in a guestbook
+entry. 
+
+---
+
+![tip](../../images/01-tip.png)**Note:** Clearly, portlet preferences and string
+delimiters are not the best way to implement this. To learn about a proper
+implementation for saving data, follow the *Writing a Data-Driven Application*
+learning path. 
+
+---
+
+The following method implements adding a guestbook entry to a portlet preference
+called `guestbook-entries`: 
+
+	public void addEntry (ActionRequest request, ActionResponse response) {
+		
+		PortletPreferences prefs = request.getPreferences();
+
+		ArrayList<String> entries = new ArrayList<String>
+		   (Arrays.asList(prefs.getValues("guestbook-entries", new String[1])));
+
+		String userName = ParamUtil.getString(request, "name");
+		String message = ParamUtil.getString(request, "message");
+		String entry = userName + "|" + message;
+
+		entries.add(entry);
+
+		String[] array = entries.toArray(new String[entries.size()]);
+
+		try {
+			prefs.setValues("guestbook-entries", array);
+		} catch (ReadOnlyException e) {
+			System.out.println("Couldn't add entries.");
+		}
+		
+	}
+
+First, the preferences are retrieved, and then the `guestbook-entries`
+preference is retrieved and converted to an `ArrayList` so that you can add an
+entry reliably without going outside the bounds of the array. Next, the two
+fields from your form are retrieved. Note that Liferay's `ParamUtil` class makes
+this very easy to do. 
+
+Finally, the fields are combined into a `String` delimited by a pipe, and the
+new entry is added to the `ArrayList`, which is then converted back to an array
+so it can be stored as a preference. 
+
+This is not the normal way to use portlet preferences, but it provides a quick
+and easy way for you to store guestbook entries in this first version of your
+application. You'd also want to do proper logging in case of an error, rather
+than use `System.out.println`. These are things that can be corrected later. 
+
+The next and final feature to implement is a way to view guestbook entries. 
+
+## Viewing Guestbook Entries
 
 
 

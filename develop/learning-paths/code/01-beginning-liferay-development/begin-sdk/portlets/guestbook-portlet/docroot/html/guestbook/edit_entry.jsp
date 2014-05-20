@@ -8,7 +8,7 @@
 
 <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
-<aui:form action="<%= addEntryURL %>" name="fm">
+<aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
 
         <aui:fieldset>
 
