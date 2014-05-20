@@ -1,4 +1,4 @@
-# What is Service Builder?
+# Generating Liferay Services?
 
 <!--
 Not sure where this information fits but it seems important to provide an
