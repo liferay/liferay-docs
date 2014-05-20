@@ -1,5 +1,10 @@
 # Using Liferay's Language Keys
 
+<!-- The beginning and ending test portlets can be found at the following:
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/use-lang-keys/end/my-greeting-portlet
+-->
+
 Liferay specifies a host of language keys in its core `Language.properties` file
 found in the `content` folder of your `portal-impl.jar`, or
 `portal-impl/src/content` of your Liferay Portal source tree. Leveraging
@@ -9,12 +14,11 @@ better into Liferay's UI conventions.
 
 For this tutorial, we'll implement a custom greeting for a portal user. When
 we're finished with our tutorial, a user can view the following greeting in
-their custom My Greeting portlet:
+their custom portlet:
 
 ![Figure 1: The portal user's name is used in the `welcome` language key.](../../images/screen-name-greeting.png)
 
-Let's get started by implementing this functionality into the My Greeting
-portlet!
+Let's get started by implementing this functionality into your portlet!
 
 ## Implementing Language Keys for Your Portlet
 
@@ -40,23 +44,14 @@ user's locale. Here is the `welcome` language key from Liferay's
 Now that we know some basics, let's implement the `welcome` language key for a
 custom portlet.
 
-1. As a starting point, use the My Greeting portlet which is available in the
-   <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet).
-   You'll need to clone the repository if you haven't already done so. Then copy
-   the `my-greeting-portlet` folder into the `portlets` folder of your Liferay
-   Plugins SDK. Note that this My Greeting portlet is the finished portlet from
-   the [Using liferay-ui:success and liferay:ui error
-   Messages](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/liferayui-taglibs/using-liferay-ui-success-and-error-messages.markdown)
-   tutorial. Deploy the portlet to your portal and then add it to a page.
+1. Open your portlet's `view.jsp` file.
 
-2. To use the `welcome` language key in the portlet's UI, open the `view.jsp`
-   file and replace its greeting paragraph with this:
+2. To use the `welcome` language key in the portlet's UI, insert the following
+greeting paragraph:
 
         <p><liferay-ui:message key="welcome" />! <%= greeting %></p>
 
-Revisit the page to confirm that the word "Welcome", from `Language.properties`,
-now precedes your greeting!
+The word "Welcome", from `Language.properties`, now precedes your greeting!
 
 Note, in order to use the `<liferay-ui:message />` tag, or any of the
 `liferay-ui` tags, you must include the following line in your JSP. It imports
@@ -74,24 +69,27 @@ It references `{0}`, which denotes the first argument of the argument list. An
 arbitrary number of arguments can be passed in via a message tag, but only those
 arguments expected by the language key are used. The arguments are referenced in
 order as `{0}`, `{1}`, etc. Let's pass in the user's screen name as an argument
-to the `welcome-x` language key in the "My Greeting" portlet. 
+to the `welcome-x` language key in your portlet. You can compare your portlet's
+`view.jsp` to the completed
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/use-lang-keys/end/my-greeting-portlet/docroot/view.jsp)
+for reference after you've completed the following steps. 
 
-1. Open the `view.jsp` file and add the following lines near the top of the JSP,
-   just above the `<portlet:defineObjects />` tag. The first line imports the
-   `liferay-theme` tag library. The second line defines the library's objects,
-   providing access to the `user` object holding the user's screen name.
+1. Open the `view.jsp` file and add the following lines: 
 
         <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
 
         <liferay-theme:defineObjects />
+
+    The first line imports the `liferay-theme` tag library. The second line
+    defines the library's objects, providing access to the `user` object holding
+    the user's screen name.
 
 2. Replace the current welcome message tag and exclamation point,
    `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
 
         <liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>" />
 
-When you refresh your page, your "My Greeting" portlet greets you by your screen
-name!
+Your portlet now greets you by your screen name!
 
 ![Figure 2: By passing the user's screen name as an argument to Liferay's `welcome-x` language key, we're able to display a personalized greeting.](../../images/screen-name-greeting.png)
 
