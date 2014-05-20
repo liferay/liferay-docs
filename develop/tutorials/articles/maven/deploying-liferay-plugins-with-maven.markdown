@@ -137,6 +137,9 @@ you'll use when developing plugins with Maven:
 
 ---
 
+## Next Steps
+
 Now that you've deployed a plugin using Maven, let's consider the types of
 Liferay plugins you can develop with Liferay Maven archetypes. 
 
+[Creating Portlet Plugins with Maven](http://www.liferay.com)
