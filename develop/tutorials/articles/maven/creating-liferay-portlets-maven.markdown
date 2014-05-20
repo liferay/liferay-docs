@@ -74,3 +74,5 @@ For detailed information on creating portlet plugins, see
 
 Next, let's run through a brief example of developing a theme plugin using
 Maven.
+
+[Creating Theme Plugins with Maven](http://www.liferay.com)
