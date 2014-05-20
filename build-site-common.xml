@@ -71,4 +71,18 @@
 		</zip>
 	</target>
 
+	<target name="number-headers" description="numbers the headers of markdown files found in ${lang}/chapters/">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			fork="true"
+		>
+		    <arg value="${product.abbrev}"/>
+			<arg value="${product.version}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+
 </project>
