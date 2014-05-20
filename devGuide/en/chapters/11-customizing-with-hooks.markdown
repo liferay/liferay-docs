@@ -21,7 +21,7 @@ We'll cover the following topics:
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
 - Extending the Indexer Post Processor
-- The RTL Hook 
+- Displaying Right-to-Left Content with the RTL Hook
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -993,153 +993,133 @@ As you can see, hooks serve to enhance the functionality of your portal and
 applications. Next, we will take a look at the RTL Hook and how it can enhance 
 both your portal and plugins.
 
-## The RTL (right-to-left) Hook
+## Displaying Right-to-Left Content with the RTL Hook
 
-Middle eastern languages such as Hebrew and Arabic are written predominantly 
-right-to-left. Languages written in left-to-right scripts are often mixed in, so 
-the complete document is bidirectional in nature: a mix of both right-to-left 
-(RTL) and left-to-right (LTR) writing; thus, sites written in the Hebrew and 
-Arabic languages are often referred to as bidirectional sites. 
+Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
+right-to-left (RTL). However, many sites written RTL also have left-to-right
+(LTR) content mixed in, making them bidirectional in nature. Conveniently,
+browsers use [language and
+direction](http://www.w3.org/TR/html401/struct/dirlang.html) information of HTML
+tags to automatically adapt and align page content. However, sites may consist
+of elements that are absolutely positioned on the page by a style sheet; these
+elements aren't automatically aligned by the browser. Rather, you must adapt
+your style sheets to handle such elements. Since style sheets are usually
+designed for LTR languages, the typical challenge is creating an alternative
+versions of the CSS for RTL languages. This can be an arduous task. 
 
-Since the html tag contains information [about the language and the direction of the content](http://www.w3.org/TR/html401/struct/dirlang.html)
-, browsers automatically adapt the page alignment. However, there may be some 
-elements on the page which are absolutely positioned by style and won't be 
-automatically mirrored by the browser; in this case, you must adapt your style 
-sheets to both directions. Usually, style sheets are designed for LTR languages, 
-so the challenge is to create an alternative version of the CSS for RTL languages.
+Thankfully, Liferay's RTL Hook automatically adapts Liferay Portal styles for
+RTL languages. You simply deploy it and it mirrors your site's content for RTL
+languages. 
 
-The RTL Hook is a Liferay Plugin that automatically adapts Liferay Portal styles 
-for RTL languages; simply deploy it and your site is mirrored for RTL languages.
+As a before-and-after example, the figure below shows a page displayed in
+English, an LTR language. 
 
-![Figure 11.6: Here is a view of the normal portal in English.](../../images/rtl-hook-001.png)
+![Figure 11.6: Here is a site displaying English content left-to-right.](../../images/rtl-hook-001.png)
 
-![Figure 11.7: Here is a view of the portal in Hebrew with the RTL Hook configured.](../../images/rtl-hook-002.png)
+Compare it to the following figure of a page displayed in Hebrew, an RTL
+language. 
 
-Now that you have an understanding of the need for the RTL Hook, let's explore
-how you can use it.
+![Figure 11.7: Here is a site displaying Hebrew content right-to-left using the RTL Hook.](../../images/rtl-hook-002.png)
+
+You get the point, right? The RTL Hook does the heavy lifting of rendering the
+RTL content appropriately!  
+
+Now that you've seen Liferay Portal and its apps rendered using the RTL Hook,
+have you wondered how you might leverage the RTL Hook in your custom plugins?
+You'll learn how to use the hook with your plugins, next. 
 
 ### Applying the RTL Hook to Custom Plugins
 
-You can use the RTL Hook to provide support for RTL languages in your themes, 
-too; just follow these steps:
+You can use the RTL hook with any plugin type. Theme plugins are the most common
+type of plugins to make use of the RTL Hook. The following steps focus on using
+the hook in a custom theme, but they also mention what's needed to make similar
+changes to support using the hook in the other plugin types. 
 
-1. Make sure the RTL Hook is deployed in your application server.
+1. Deploy the RTL Hook to your application server.
 
 2. Copy all .jar files from WEB-INF/lib folder of the rtl-hook webapp of your 
    application server to the docroot/WEB-INF/lib folder of your theme project.
 
-3. Add or edit the WEB-INF/web.xml file of your theme project and add the 
-   following lines before the `</web-app>` closing tag:
+3. Add the following filtering elements before the closing `</web-app>` tag in
+   your project's `WEB-INF/web.xml` file. 
 
-        ```xml
         <filter>
-	        <filter-name>Dynamic CSS Filter</filter-name>
-	        <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
         </filter>
         <filter-mapping>
-	        <filter-name>Dynamic CSS Filter</filter-name>
-	        <url-pattern>*.css</url-pattern>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <url-pattern>*.css</url-pattern>
         </filter-mapping>
-        ```
+        
 
-4. Edit the build.xml file of your theme project and add the following lines 
-   before the `</project>` closing tag:
+4. Add the following targets to your project's `build.xml` file:
 
-        ```xml
         <target name="build-css" depends="clean-rtl-css, build-common-theme.build-css, build-rtl-css" />
 
         <target name="build-rtl-css">
-	        <java
-		        classname="com.liferay.rtl.tools.RtlCssBuilder"
-		        classpathref="plugin.classpath"
-		        fork="true"
-		        newenvironment="true"
-	        >
-		        <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
-		        <arg value="sass.dir=/" />
-		        <arg value="sass.docroot.dir=${basedir}/docroot" />
-	        </java>
+            <java
+                classname="com.liferay.rtl.tools.RtlCssBuilder"
+                classpathref="plugin.classpath"
+                fork="true"
+                newenvironment="true"
+            >
+                <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+                <arg value="sass.dir=/" />
+                <arg value="sass.docroot.dir=${basedir}/docroot" />
+            </java>
         </target>
 
         <target name="clean-rtl-css">
-	        <delete failonerror="false" includeemptydirs="true">
-		        <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
-	        </delete>
-        </target>
-        ```
-5. Finally, deploy your theme through the `ant deploy` command in the root 
-   folder of your theme project.
-
-If you check the log messages you'll notice that it now includes some 
-`Generated RTL cache for ...` lines. You will also find that there is a 
-*_rtl.css version for each *.css file inside the `css/.sass-cache` folder of 
-your plugin.
-
-If you want to provide support for RTL languages in your portlets, the steps are 
-exactly the same as above, except for the build.xml file, where the parent 
-project is different(build-common-portlet instead of build-common-theme);
-therefore, the dependencies of the build-css target need to be changed
-accordingly. Follow the same steps above, making these changes to step 4:  
-
-4. Edit the build.xml file of your portlet project and add the following lines 
-   before the `</project>` closing tag:
-
-        ```xml
-        <target name="build-css" depends="clean-rtl-css, build-common-portlet.build-css, build-rtl-css" />
-
-        <target name="build-rtl-css">
-	        <java
-		        classname="com.liferay.rtl.tools.RtlCssBuilder"
-		        classpathref="plugin.classpath"
-		        fork="true"
-		        newenvironment="true"
-	        >
-		        <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
-		        <arg value="sass.dir=/" />
-		        <arg value="sass.docroot.dir=${basedir}/docroot" />
-	        </java>
+            <delete failonerror="false" includeemptydirs="true">
+                <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
+            </delete>
         </target>
 
-        <target name="clean-rtl-css">
-	        <delete failonerror="false" includeemptydirs="true">
-		        <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
-	        </delete>
-        </target>
-        ```
-Don't forget to replace `<import file="../build-common-theme.xml" />` with
-`<import file="../build-common-portlet.xml" />` at the top of your xml file.
+    If you're using the RTL Hook with another type of plugin project, rename the
+    the `build-common-theme.build-css` dependency target reference
+    appropriately, based on your plugin type: 
+    - Portlet: `build-common-portlet.build-css` 
+    - Hook: `build-common-hook.build-css` 
+    - Ext: `build-common-ext.build-css` 
+    - Web App: `build-common-web.build-css` 
+    
+5. Finally, deploy your plugin to the portal. 
 
-So far, we have gone over how you can use the RTL Hook for your personal
-plugins. Next, we will explore how you can extend the RTL Hook by defining
-custom  CSS for for RTL languages.
+Ant echoes messages starting with `Generated RTL cache for ...` that mention the
+cache that the hook generates. And `*_rtl.css` versions of each of your `*.css`
+files are created in plugin's `css/.sass-cache` folder. 
 
-### Define custom CSS for RTL languages 
+You now know how to use the RTL Hook in your custom plugins. Now, it's time to
+explore how to learn how you can extend the RTL Hook by defining custom CSS for
+RTL languages. 
 
-Through the steps described in the previous section, the RTL Hook automatically 
-generates the RTL version of your CSS files by appliying some rules (e.g. change 
-from `margin-left` to `margin-right`). However, you may want to extend this 
-generated RTL version to define some custom styles for RTL languages. You can 
-achieve this by going through the following steps:
+### Defining Custom CSS for RTL Languages 
 
-1. Add a CSS file in the same location and with the same name as the original 
-   one but with the suffix `_rtl`. E.g. for a `main.css` file, create a 
-   `main_rtl.css` file.
+As your learned in the previous section, the RTL Hook automatically generates
+the RTL versions of your CSS files by applying rules, such as changing
+`margin-left` to `margin-right`. However, you may want to extend the generated
+CSS by defining your own custom styles for RTL languages. You can achieve this
+by following these steps:
 
-2. Edit the _rtl file and add **only** the lines that define your custom styles 
-   for RTL languages.
+1. Create a CSS file with the suffix `_rtl` in the same location as the original
+   CSS file that you want to extend. For example, create a file `main_rtl.css`
+   to extend an original file named `main.css`. 
 
-3. Deploy your plugin as explained in the previous section.
+2. Edit the `_rtl` file, adding *only* the lines that define your custom
+   styles for RTL languages.
 
-    If you check the `css/.sass-cache` folder of your plugin now you will notice 
-    that the generated _rtl.css file in this folder contains not only the 
+3. Deploy your plugin.
+
+    Check the `css/.sass-cache` folder of your plugin to see 
+    that the generated `_rtl.css` file in this folder contains not only the 
     automatically generated CSS from the original file, but also your custom CSS 
     code at the end. 
 
-4. Browse your plugin (e.g. add your portlet to a page or apply your theme to a 
-   site or page and go to it).
+4. In your browser, apply your plugin to your site. 
 
-5. Add the Language portlet to the page and change the current language to an RTL 
-   language (e.g. hebrew).
+5. Add the Language portlet to a page and change the current language to an RTL 
+   language (e.g., Hebrew).
 
 Your plugin styles are automatically adapted, as well as any other portal 
 element. In case you have defined any custom styles as described in the previous 
