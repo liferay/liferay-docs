@@ -294,4 +294,4 @@ create!
 Next, let's install the Liferay artifacts you'll need to create your plugins
 with Maven.
 
-[Installing Liferay Maven Artifacts](http://www.liferay.com)
+[Managing Liferay Maven Artifacts](http://www.liferay.com)
