@@ -998,14 +998,13 @@ both your portal and plugins.
 Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
 right-to-left (RTL). However, many sites written RTL also have left-to-right
 (LTR) content mixed in, making them bidirectional in nature. Conveniently,
-browsers use [language and
-direction](http://www.w3.org/TR/html401/struct/dirlang.html) information of HTML
-tags to automatically adapt and align page content. However, sites may consist
-of elements that are absolutely positioned on the page by a style sheet; these
-elements aren't automatically aligned by the browser. Rather, you must adapt
-your style sheets to handle such elements. Since style sheets are usually
-designed for LTR languages, the typical challenge is creating an alternative
-versions of the CSS for RTL languages. This can be an arduous task. 
+browsers use [language and direction](http://www.w3.org/TR/html401/struct/dirlang.html) 
+information of HTML tags to automatically adapt and align page content. However, 
+sites may consist of elements that are absolutely positioned on the page by a 
+style sheet; these elements aren't automatically aligned by the browser. Rather, 
+you must adapt your style sheets to handle such elements. Since style sheets are 
+usually designed for LTR languages, the typical challenge is creating an 
+alternative versions of the CSS for RTL languages. This can be an arduous task. 
 
 Thankfully, Liferay's RTL Hook automatically adapts Liferay Portal styles for
 RTL languages. You simply deploy it and it mirrors your site's content for RTL
@@ -1031,13 +1030,14 @@ You'll learn how to use the hook with your plugins, next.
 ### Applying the RTL Hook to Custom Plugins
 
 You can use the RTL hook with any plugin type. Theme plugins are the most common
-type of plugins to make use of the RTL Hook. The following steps focus on using
+type of plugins to make use of the RTL hook. The following steps focus on using
 the hook in a custom theme, but they also mention what's needed to make similar
 changes to support using the hook in the other plugin types. 
 
 1. Deploy the RTL Hook to your application server.
 
-2. Copy all .jar files from WEB-INF/lib folder of the rtl-hook webapp of your 
+2. Copy the rtl-hook.jar and its dependencies, ant.jar, jodd.jar, jruby.jar and 
+   rhino.jar, from the WEB-INF/lib folder of the rtl-hook webapp of your 
    application server to the docroot/WEB-INF/lib folder of your theme project.
 
 3. Add the following filtering elements before the closing `</web-app>` tag in
@@ -1121,13 +1121,13 @@ by following these steps:
 5. Add the Language portlet to a page and change the current language to an RTL 
    language (e.g., Hebrew).
 
-Your plugin styles are automatically adapted, as well as any other portal 
-element. In case you have defined any custom styles as described in the previous 
-section, they are also applied.
+Now your plugin styles are automatically adapted for RTL languages. In case you 
+have defined any custom styles as described in the previous section, they are 
+also applied.
 
-As you can see, the RTL Hook is the answer to your RTL language problems.
 Whether it is the portal itself, or your own plugin projects, the RTL Hook makes
-it simple and easy to offer your users the proper viewing experience.
+it simple and easy to offer your users the proper viewing experience for RTL
+languages.
 
 In the next section, we'll explore more hooks that allow for customizing
 Liferay's core features.
