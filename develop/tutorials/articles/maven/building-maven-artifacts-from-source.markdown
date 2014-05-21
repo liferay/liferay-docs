@@ -46,11 +46,13 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
 
         gpg.keyname=[GPG key name]
         gpg.passphrase=[GPG passphrase]
-        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots
-        lp.maven.repository.id=liferay-snapshots
+        lp.maven.release.repository.id=liferay-releases
+        lp.maven.release.repository.url=http://localhost:8081/nexus/content/repositories/liferay-releases
+        lp.maven.snapshot.repository.id=liferay-snapshots
+        lp.maven.snapshot.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots
 
-    Of course, replace the values specified above with your own GPG and Maven
-    repository credentials.
+    Of course, replace the values specified above with your own GPG credentials
+    and Maven repository information.
 
     If you don't have GPG installed and don't have a public/private GPG key, you
     should visit [http://www.gnupg.org](http://www.gnupg.org) and install GPG
@@ -73,14 +75,19 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
 
 6.  Deploy the Liferay artifacts to your Maven repository by running 
 
-        ant -f build-maven.xml deploy-artifacts
+        ant -f build-maven.xml deploy-release-artifacts
+
+    or
+
+        ant -f build-maven.xml deploy-snapshot-artifacts
 
     If you want the Liferay artifacts to be installed locally but don't have a
     remote Maven repository or don't want the artifacts to be remotely deployed,
-    you can run the install target instead of the deploy
-    target: `ant -f build-maven.xml install-artifacts`. The target installs the
-    Liferay artifacts you built to your local .m2 repository (e.g., to your
-    `[USER_HOME]/.m2/` directory). 
+    you can run the install target instead of the deploy target: `ant -f
+    build-maven.xml install-release-artifacts` or `ant -f build-maven.xml
+    install-snapshot-artifacts`. The target installs the Liferay artifacts you
+    built to your local .m2 repository (e.g., to your `[USER_HOME]/.m2/`
+    directory). 
 
 ---
 
