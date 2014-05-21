@@ -1,16 +1,15 @@
 # Customizing JSPs by Extending the Original
 
 Let's say you want to preserve your original JSP's content and functionality,
-but you want to add more to the JSP. And when you upgrade Liferay, you want to
-benefit from any changes made to that upgraded JSP. Well, you can; simply
-include the original JSP and then add more content to it. 
+add more to it, and benefit from any changes made to it when you upgrade Liferay. 
+Well, you can; simply include the original JSP and then add more content to it. 
 
 For this tutorial, you'll learn how to extend an original JSP using a hook.
 
 ## Extending an Original JSP
 
-In this demonstration, you'll customize a hook project to extend a desired
-unedited JSP. Let's get started! 
+In this demonstration, you'll customize a hook project to extend a JSP, while 
+leaving the orginal JSP untouched . Let's get started! 
 
 1. Open your hook's `liferay-hook.xml` file from your project's
    `docroot/WEB-INF` folder and select the file's *Overview* mode tab.
@@ -23,7 +22,7 @@ unedited JSP. Let's get started!
     ![Figure 1: Liferay IDE's Hook Configuration menu allows you to create a custom JSP.](../../images/custom-jsp-hook-config.png)
 
 3. Add to the listing of custom JSPs by clicking the plus icon and specifying
-   the JSP you'd like to extend. Hint, the browse icon on the right-hand side
+   the JSP you'd like to extend. Hint: the browse icon on the right-hand side
    within the custom JSP text field simplifies finding the JSP you want to
    customize. 
 
@@ -39,5 +38,5 @@ unedited JSP. Let's get started!
 
 The edits you made in the `custom_jsps/[Path_To-JSP]` are now visible in your
 Liferay Portal. The hook you created extends the original hook in portal with
-the version you created. You now no how to extend an original Liferay JSP using
-a hook!
+the version you created. You now know how to extend an original Liferay JSP 
+using a hook!
