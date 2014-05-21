@@ -20,4 +20,5 @@ properties/
 **/dist/**
 **nbproject**
 .ivy/**
+.sass-cache/**
 *#
