@@ -1,4 +1,4 @@
-## Using Portlet Model Hints
+## Customizing Model Entities With Model Hints
 
 If you've already used Service Builder to define your model entities and have
 implemented business logic for creating and modifying those entities, you might
