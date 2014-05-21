@@ -42,23 +42,29 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		//TODO Create a list of all the markdown files in all the subdirectories. Make sure to use the file's path, not just its name.
-
-		List<String> fileList = new ArrayList(); 
-
 		// Get listing of markdown files
-
-		String[] files = articlesDir.list(new FilenameFilter() {
+		
+		String articlesContents[] = articlesDir.list();
+		List<String> fileList = new ArrayList(); 
+		
+		for(int i=0; i < articlesContents.length; i++) {
+			
+			File parentDir = new File(articlesContents[i]);
+			
+			String[] files = parentDir.list(new FilenameFilter() {
 				String filePatternArg =
-					"([0-9]+)([^\\\\\\[\\]\\|:;%<>]+).markdown";
+					"([^\\\\\\[\\]\\|:;%<>]+).markdown";
 				Pattern fileNamePattern = Pattern.compile(filePatternArg);
 
 				public boolean accept(File file, String name) {
 					return (fileNamePattern.matcher(name).matches());
 				}
 			});
-
-		for (int i = 0; i < files.length; i++) {
-			fileList.add(files[i]);
+			
+			for (int j = 0; j < files.length; j++) {
+				fileList.add(files[j]);
+			}
+			
 		}
 
 		if (fileList.isEmpty()) {
@@ -68,7 +74,7 @@ public class NumberHeadersSiteMain extends Task {
 
 		//TODO process each file from fileList. Make sure to use the file's path, not just its name.
 
-		// Process each file
+		// Process each file... replace file with fileList...
 
 		for (int i = 0; i < files.length; i++) {
 			String filename = files[i];
