@@ -81,16 +81,16 @@ set up in Liferay IDE. You can use these steps:
 
 3.  Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
     Location* and *Liferay Plugin SDK Version* fields are automatically filled
-    in, as long as they're valid. Invalid entries are marked with an error. 
+    in, as long as they're valid; invalid entries are marked with an error. 
 
 4.  The list of projects that are available for import are displayed in a list.
     Any projects already in the workspace are disabled. Projects available for
-    import have an empty check box; select each project you'd like to import. 
+    import have an empty check box. Select each project you'd like to import. 
 
 5.  Select the Liferay runtime for the imported projects. If you don't have a
-    Liferay runtime, can add one now with the *New...* button.
+    Liferay runtime, you can add one now with the *New...* button.
 
 6.  Click *Finish*. 
 
 You've imported your plugins into your workspace! Next, we'll discuss a
-different scenario; converting existing Eclipse projects into Liferay projects.
+different scenario: converting existing Eclipse projects into Liferay projects.
