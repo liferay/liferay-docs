@@ -9,7 +9,7 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
     already have a local Liferay Portal CE source project on your machine, you
     can fork the Liferay Portal CE Github repository, found at
     [http://github.com/liferay/liferay-portal](http://github.com/liferay/liferay-portal),
-    and clone it your machine.
+    and clone it to your machine.
 
 2.  Create an `app.server.[user name].properties` file in your local Liferay
     Portal CE source project root directory. Specify the following properties in
