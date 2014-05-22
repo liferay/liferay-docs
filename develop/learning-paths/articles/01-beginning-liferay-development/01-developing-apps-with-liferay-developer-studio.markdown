@@ -1,11 +1,11 @@
-# Developing Applications with Liferay Developer Studio
+# Developing Applications with Liferay Developer Studio [](id=developing-applications-with-liferay-develope-lp-6-2-develop-learning-paths)
 
 To develop an application, you need a developer environment. Liferay provides a
 great environment with Liferay Developer Studio. 
 
 Let's get your Liferay development environment installed. 
 
-## Installing Liferay Developer Studio
+## Installing Liferay Developer Studio [](id=installing-liferay-developer-studio-lp-6-2-develop-learning-paths)
 
 1. Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
 you'll need it to run everything else. 
@@ -43,7 +43,7 @@ repository. Click *Finish*.
 After this, the wizard completes, and you have a fully configured development
 environment, ready to begin work! 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-learning-paths)
 
 Now that you have your development environment installed, you'll want to jump
 in and create an app: 

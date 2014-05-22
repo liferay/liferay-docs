@@ -1,4 +1,4 @@
-# Generating Liferay Services?
+# Generating Liferay Services? [](id=generating-liferay-services-lp-6-2-develop-learning-paths)
 
 <!--
 Not sure where this information fits but it seems important to provide an

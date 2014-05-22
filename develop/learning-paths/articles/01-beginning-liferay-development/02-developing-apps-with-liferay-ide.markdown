@@ -1,4 +1,4 @@
-# Developing Apps with Liferay IDE
+# Developing Apps with Liferay IDE [](id=developing-apps-with-liferay-ide-lp-6-2-develop-learning-paths)
 
 To develop an application, you need a development environment. Liferay
 provides a great environment with Liferay IDE. 
@@ -7,7 +7,7 @@ Liferay IDE is a plugin for Eclipse that brings many Liferay-specific
 features to the table. You can install it into your existing Eclipse
 environment, or Liferay provides a bundled version. 
 
-## Installing Liferay IDE into Eclipse
+## Installing Liferay IDE into Eclipse [](id=installing-liferay-ide-into-eclipse-lp-6-2-develop-learning-paths)
 
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Liferay IDE to your existing Eclipse installation. 
@@ -31,7 +31,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
    installed. Like other Eclipse plugins you'll have to restart Eclipse to
    enable it. 
 
-## Installing Liferay IDE into Eclipse from a Zip File
+## Installing Liferay IDE into Eclipse from a Zip File [](id=installing-liferay-ide-into-eclipse-from-a-zi-lp-6-2-develop-learning-paths)
 
 To install Liferay IDE into Eclipse from a `.zip` file, follow these steps: 
 
@@ -52,7 +52,7 @@ To install Liferay IDE into Eclipse from a `.zip` file, follow these steps:
    installed. Like other Eclipse plugins you'll have to restart Eclipse to
    enable it. 
 
-## Installing the Liferay IDE Bundle
+## Installing the Liferay IDE Bundle [](id=installing-the-liferay-ide-bundle-lp-6-2-develop-learning-paths)
 
 1. Download and install [Java](http://java.oracle.com). Liferay runs on
 Java, so you'll need it to run everything else. 
@@ -62,7 +62,7 @@ Installing it is easy: unzip it to a convenient location on your system.
 
 Congratulations! You've installed Liferay IDE! 
 
-## Setting up Liferay's Developer Tools
+## Setting up Liferay's Developer Tools [](id=setting-up-liferays-developer-tools-lp-6-2-develop-learning-paths)
 
 Liferay IDE needs a Liferay Portal runtime on which to run and debug code.
 Under the hood, it also works with Liferay's Plugins SDK, a barebones,
@@ -130,7 +130,7 @@ You've now registered your Plugins SDK, and you are ready to begin
 developing Liferay applications! 
 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-learning-paths-1)
 
 Nowt that you have your development environment installed, you'll want to jump
 in and create an app: 

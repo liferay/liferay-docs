@@ -1,4 +1,4 @@
-# Generating Services via an Object-Relational Mapping
+# Generating Services via an Object-Relational Mapping [](id=generating-services-via-an-object-relational--lp-6-2-develop-learning-paths)
 
 In this article, we'll explain how you can define an object-relational mapping
 for Service Builder so that it can generate services for your project. In order
@@ -104,7 +104,7 @@ Liferay IDE, which makes it easy. It'll only take seven steps to do it:
 Let's start creating our service by using Liferay IDE to create your
 `service.xml` file. 
 
-## Creating the `service.xml` File
+## Creating the `service.xml` File [](id=creating-the-service-xml-file-lp-6-2-develop-learning-paths)
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -137,7 +137,7 @@ service.
 
 Let's start filling out the global information for our service. 
 
-## Defining Global Service Information
+## Defining Global Service Information [](id=defining-global-service-information-lp-6-2-develop-learning-paths)
 
 A service's global information applies to all of its entities, so let's specify
 this information first. Select the *Service Builder* node in the upper left
@@ -186,7 +186,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, we'll
 add entities for your service's events and locations. 
 
-## Defining Service Entities
+## Defining Service Entities [](id=defining-service-entities-lp-6-2-develop-learning-paths)
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -252,7 +252,7 @@ entities, we'll set both local service and remote service to `true`.
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity *columns*. 
 
-## Defining the Columns (Attributes) for Each Service Entity
+## Defining the Columns (Attributes) for Each Service Entity [](id=defining-the-columns-attributes-for-each-serv-lp-6-2-develop-learning-paths)
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -351,7 +351,7 @@ Great! Our entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, we'll
 specify the relationship between our Event entity and Location entity. 
 
-## Defining Relationships Between Service Entities
+## Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entiti-lp-6-2-develop-learning-paths)
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
@@ -383,7 +383,7 @@ Location entity instance rereference:
 Now that our entity columns are in place, let's specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Defining Ordering of Service Entity Instances
+## Defining Ordering of Service Entity Instances [](id=defining-ordering-of-service-entity-instances-lp-6-2-develop-learning-paths)
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -406,7 +406,7 @@ entity instances, follow similar steps but specify *name* as the column and
 The last thing do is define the finder methods for retrieving their instances
 from the database. 
 
-## Defining Service Entity Finder Methods
+## Defining Service Entity Finder Methods [](id=defining-service-entity-finder-methods-lp-6-2-develop-learning-paths)
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -551,7 +551,7 @@ Now that you've specified the service for the Event Listing example project,
 let's *build* the service by running Service Builder. Then we'll look at the
 code Service Builder generates.
 
-## Generating Services
+## Generating Services [](id=generating-services-lp-6-2-develop-learning-paths)
 
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. Next, you'll generate the
