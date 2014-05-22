@@ -1003,12 +1003,17 @@ information of HTML tags to automatically adapt and align page content. However,
 sites may consist of elements that are absolutely positioned on the page by a 
 style sheet; these elements aren't automatically aligned by the browser. Rather, 
 you must adapt your style sheets to handle such elements. Since style sheets are 
-usually designed for LTR languages, the typical challenge is creating an 
+usually designed for LTR languages, the typical challenge is creating
 alternative versions of the CSS for RTL languages. This can be an arduous task. 
 
 Thankfully, Liferay's RTL hook automatically adapts Liferay Portal styles for
 RTL languages. You simply deploy it and it mirrors your site's content for RTL
-languages. 
+languages. The RTL hook app is available on the Liferay
+[Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
+and deploy the app as described in the
+[Leveraging the Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
+chapter of
+[Using Liferay Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/). 
 
 As a before-and-after example, the figure below shows a page displayed in
 English, an LTR language. 
@@ -1021,7 +1026,7 @@ language.
 ![Figure 11.7: Here is a site displaying Hebrew content right-to-left using the RTL hook.](../../images/rtl-hook-002.png)
 
 You get the point, right? The RTL hook does the heavy lifting of rendering the
-RTL content appropriately!  
+RTL content appropriately! 
 
 Now that you've seen Liferay Portal and its apps rendered using the RTL hook,
 have you wondered how you might leverage the RTL hook in your custom plugins?
@@ -1034,7 +1039,15 @@ type of plugins to make use of the RTL hook. The following steps focus on using
 the hook in a custom theme, but they also mention what's needed to make similar
 changes to support using the hook in the other plugin types. 
 
-1. Deploy the RTL hook to your application server. 
+1. Make sure to deploy the RTL hook to your application server. 
+
+    Note, since dynamic generation of CSS from SASS is not yet supported in the
+    context of this hook, the hook loads the current theme's merged CSS files,
+    disregarding whether
+    [theme CSS fast loading](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme)
+    is disabled. Disabling CSS fast load (i.e., setting
+    [`theme.css.fast.load=false`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme))
+    is commonly done while debugging for development. 
 
 2. Restart your application server. 
 
