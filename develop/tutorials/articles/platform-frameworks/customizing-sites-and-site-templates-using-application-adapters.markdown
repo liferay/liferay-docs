@@ -119,7 +119,7 @@ You can also apply Application Adapters to Site Templates.
 
 Suppose you want to make an Enterprise Resource Planning (ERP) solution for a
 company's departments. Your ERP solution requires an extension of Liferay's Wiki
-portlet so you implement that extension as an Application Adapter. Then you
+portlet, so you implement that extension as an Application Adapter. Then, you
 incorporate the Application Adapter in a Site Template (named *ERP site*) for
 the company's ERP sites. The company's administrative user creates the sites by
 going to *Control Panel* &rarr; *Sites* and adding sites based on the "ERP site"
