@@ -33,6 +33,7 @@ public class NumberHeadersSiteMain extends Task {
 		boolean foundDuplicateIds = false;
 
 		File articlesDir = new File("../" + docSet + "/articles");
+		File docSetDir = new File("../" + docSet);
 		System.out.println(
 			"Numbering headers for files in " + articlesDir.getPath() + " ...");
 
@@ -42,16 +43,24 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		//TODO Create a list of all the markdown files in all the subdirectories. Make sure to use the file's path, not just its name.
-		// Get listing of markdown files
 		
-		String articlesContents[] = articlesDir.list();
-		List<String> fileList = new ArrayList(); 
+		List<File> docSetDirFolders = new ArrayList();
+		File articlesDirContents[] = articlesDir.listFiles();
+		for(int i=0; i < articlesDirContents.length; i++) {
+			if(articlesDirContents[i].isDirectory()) {
+				docSetDirFolders.add(articlesDirContents[i]);
+			}
+		}
 		
-		for(int i=0; i < articlesContents.length; i++) {
+		docSetDirFolders.add(docSetDir);
+		
+		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
+		
+		List<String> fileList = new ArrayList();
+		
+		for(int i=0; i < docSetDirFoldersArray.length; i++) {
 			
-			File parentDir = new File(articlesContents[i]);
-			
-			String[] files = parentDir.list(new FilenameFilter() {
+			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
 				String filePatternArg =
 					"([^\\\\\\[\\]\\|:;%<>]+).markdown";
 				Pattern fileNamePattern = Pattern.compile(filePatternArg);
@@ -62,7 +71,7 @@ public class NumberHeadersSiteMain extends Task {
 			});
 			
 			for (int j = 0; j < files.length; j++) {
-				fileList.add(files[j]);
+				fileList.add(files[j].getPath());
 			}
 			
 		}
@@ -74,14 +83,10 @@ public class NumberHeadersSiteMain extends Task {
 
 		//TODO process each file from fileList. Make sure to use the file's path, not just its name.
 
-		// Process each file... replace file with fileList...
-
-		for (int i = 0; i < files.length; i++) {
-			String filename = files[i];
-			// String inFile = articlesDir.getPath() + "\\" + filename;
-			// String outFile = articlesDir.getPath() + "/" + filename;
-			File inFile = new File(articlesDir, filename);
-			File outFile = new File(articlesDir, filename);
+		for (int i = 0; i < fileList.size(); i++) {
+			String filename = fileList.get(i);
+			File inFile = new File(filename);
+			File outFile = new File(filename);
 			String outFileTmp = outFile + ".tmp";
 
 			try {
@@ -119,7 +124,7 @@ public class NumberHeadersSiteMain extends Task {
 
 				FileUtils.copyFile(
 					new File(outFileTmp),
-					new File(articlesDir.getPath() + "/" + filename));
+					new File(filename));
 
 				FileUtils.forceDelete(new File(outFileTmp));
 			} catch (IOException e) {
