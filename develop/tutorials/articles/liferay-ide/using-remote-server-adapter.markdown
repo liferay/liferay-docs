@@ -69,7 +69,7 @@ To configure the Remote Server Adapter, use the following steps:
     into the *Server's host name* field. For the *Server name*, enter
     *Liferay@\[IP address\]*, then click *Next*. 
 
-    ![Figure 2.17: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
+    ![Figure 1: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
 
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
@@ -104,7 +104,7 @@ To configure the Remote Server Adapter, use the following steps:
     Once you've purchased the application, navigate to the *Purchased* page of
     the Control Panel's Marketplace interface. 
 
-    ![Figure 2.18: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
+    ![Figure 2: Click *Purchased* in the Marketplace section of the Control Panel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
     Find your application in the list of purchased products. Then click on the
     buttons to download and install the application. Once it's been installed on
