@@ -7,75 +7,87 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Properties;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.tools.ant.Task;
 
-public class NumberHeadersTask {
-
-	public NumberHeadersTask() {
-		super();
-	}
+public class NumberHeadersSiteMain extends Task {
 
 	public static void main(String[] args) throws Exception {
-		if (args == null || args.length < 2) {
-			throw new IllegalArgumentException("Requires 2 arguments: doc.dir lang");
+		if (args == null || args.length < 4) {
+			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
 		}
 
-		NumberHeadersTask task = new NumberHeadersTask();
-		String docDir = args[0];
-		String lang = args[1];
+		String product = args[0];
+		String version = args[1];
+		String purpose = args[2];
+		String docType = args[3];
+		String docDir = args[4];
+
+		NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
+			version, purpose, docType);
 
 		boolean foundDuplicateIds = false;
 
-		File chDir = new File("../" + docDir + "/" + lang + "/chapters");
+		File articlesDir = new File("../" + docDir + "/articles");
+		File docSetDir = new File("../" + docDir);
 		System.out.println(
-			"Numbering headers for files in " + chDir.getPath() + " ...");
+			"Numbering headers for files in " + articlesDir.getPath() + " ...");
 
-		if (!chDir.exists() || !chDir.isDirectory()) {
+		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
 			throw new Exception(
-				"FAILURE - bad chapters directory " + chDir);
+				"FAILURE - bad articles directory " + articlesDir);
 		}
 
-		// Get listing of markdown files
-
-		String[] files = chDir.list(new FilenameFilter() {
+		//TODO Create a list of all the markdown files in all the subdirectories. Make sure to use the file's path, not just its name.
+		
+		List<File> docSetDirFolders = new ArrayList();
+		File articlesDirContents[] = articlesDir.listFiles();
+		for(int i=0; i < articlesDirContents.length; i++) {
+			if(articlesDirContents[i].isDirectory()) {
+				docSetDirFolders.add(articlesDirContents[i]);
+			}
+		}
+		
+		docSetDirFolders.add(docSetDir);
+		
+		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
+		
+		List<String> fileList = new ArrayList();
+		
+		for(int i=0; i < docSetDirFoldersArray.length; i++) {
+			
+			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
 				String filePatternArg =
-					"([0-9]+)([^\\\\\\[\\]\\|:;%<>]+).markdown";
+					"([^\\\\\\[\\]\\|:;%<>]+).markdown";
 				Pattern fileNamePattern = Pattern.compile(filePatternArg);
 
 				public boolean accept(File file, String name) {
 					return (fileNamePattern.matcher(name).matches());
 				}
 			});
+			
+			for (int j = 0; j < files.length; j++) {
+				fileList.add(files[j].getPath());
+			}
+			
+		}
 
-		if (files == null || files.length == 0) {
+		if (fileList.isEmpty()) {
 			throw new Exception(
-				"FAILURE - no markdown files found in " + chDir);
+				"FAILURE - no markdown files found in " + articlesDir);
 		}
 
-		File docPropsFile = new File("../" + docDir + "/" + DOC_PROPERTIES);
+		//TODO process each file from fileList. Make sure to use the file's path, not just its name.
 
-		// Load properties file
-
-		Properties props = new Properties();
-		try {
-			props.load(new FileReader(docPropsFile));
-		}
-		catch (IOException io) {
-			throw io;
-		}
-
-		// Process each file
-
-		for (int i = 0; i < files.length; i++) {
-			String filename = files[i];
-			// String inFile = chDir.getPath() + "\\" + filename;
-			// String outFile = chDir.getPath() + "/" + filename;
-			File inFile = new File(chDir, filename);
-			File outFile = new File(chDir, filename);
+		for (int i = 0; i < fileList.size(); i++) {
+			String filename = fileList.get(i);
+			File inFile = new File(filename);
+			File outFile = new File(filename);
 			String outFileTmp = outFile + ".tmp";
 
 			try {
@@ -91,8 +103,8 @@ public class NumberHeadersTask {
 						
 						line = line.trim();
 						
-						String newHeadingLine = handleHeaderLine(line, filename,
-							in.getLineNumber(), props, lang);
+						String newHeadingLine = processor.handleHeaderLine(line,
+							filename, in.getLineNumber());
 						if (newHeadingLine != null) {
 							line = newHeadingLine;
 						}
@@ -113,11 +125,11 @@ public class NumberHeadersTask {
 
 				FileUtils.copyFile(
 					new File(outFileTmp),
-					new File(chDir.getPath() + "/" + filename));
+					new File(filename));
 
 				FileUtils.forceDelete(new File(outFileTmp));
 			} catch (IOException e) {
-				throw e;
+				throw new Exception(e.getLocalizedMessage());
 			}
 		}
 
@@ -126,7 +138,26 @@ public class NumberHeadersTask {
 		}
 	}
 
-	private static  String extractHeading(String line, int indexOfFirstHeaderChar) {
+	public NumberHeadersSiteMain(String product, String version, String purpose,
+			String docType) {
+		super();
+
+		StringBuffer sb = new StringBuffer();
+
+		sb.append("-");
+		sb.append(product.toLowerCase().replace(' ', '-'));
+		sb.append("-");
+		sb.append(version.replace('.', '-'));
+		sb.append("-");
+		sb.append(purpose.replace(' ', '-'));
+		sb.append("-");
+		sb.append(docType.replace(' ', '-'));
+
+		_id_suffix = sb.toString();
+		_id_suffix_len = _id_suffix.length();
+	}
+
+	private String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
 		heading2 = heading2.trim();
 
@@ -152,24 +183,8 @@ public class NumberHeadersTask {
 		return heading2;
 	}
 
-	private static  String extractChapterNumber(String fileName) {
-
-		// Extract chapter number from filename
-
-		String chapter = "";
-		for (int i = 0; i < fileName.length(); i++) {
-			if (Character.isDigit(fileName.charAt(i))) {
-				chapter = chapter + fileName.charAt(i);
-			}
-			else {
-				break;
-			}
-		}
-		return chapter;
-	}
-
-	private static String handleHeaderLine(String line, String filename, int lineNum,
-		Properties props, String lang) throws Exception {
+	private String handleHeaderLine(String line, String filename,
+		int lineNum) throws Exception {
 
 		String newHeadingLine = null;
 
@@ -243,13 +258,11 @@ public class NumberHeadersTask {
 					lineNum + " is missing header text.");
 			}
 
-			String chapter = extractChapterNumber(filename);
-
 			int idCount = -1;
 			String newHeading = null;
 			while (true) {
 
-				newHeading = assembleId(heading, props, chapter, lang, idCount);
+				newHeading = assembleId(heading, idCount);
 
 				if (IDS.get(newHeading) == null) {
 
@@ -271,17 +284,14 @@ public class NumberHeadersTask {
 		return newHeadingLine;
 	}
 
-	private static String assembleId(String heading, Properties props,
-		String chapter, String lang, int idCount) {
-
-		String namespace = getNamespace(props, chapter, lang);
+	private String assembleId(String heading, int idCount) {
 
 		String count = "";
 		if (idCount > -1) {
 			count = "-" + idCount;
 		}
 
-		int idLength = heading.length() + namespace.length() + count.length();
+		int idLength = heading.length() + _id_suffix_len + count.length();
 		if (idLength >  MAX_ID_LEN) {
 			heading = heading.substring(
 				0,
@@ -289,37 +299,13 @@ public class NumberHeadersTask {
 		}
 
 		StringBuffer sb = new StringBuffer(heading);
-		sb.append(namespace);
+		sb.append(_id_suffix);
 		sb.append(count);
 
 		return sb.toString();
 	}
 
-	private static String getNamespace(Properties props, String chapter,
-			String lang) {
-		StringBuffer sb = new StringBuffer();
-
-		sb.append("-");
-		sb.append(props.getProperty(PRODUCT_NAME).toLowerCase().replace(' ', '-'));
-		sb.append("-");
-		sb.append(props.getProperty(PRODUCT_VERSION).replace('.', '-'));
-		sb.append("-");
-		sb.append(props.getProperty(DOC_NAME).toLowerCase().replace(' ', '-'));
-		sb.append("-");
-		sb.append(chapter);
-		sb.append("-");
-		sb.append(lang);
-
-		return sb.toString();
-	}
-
-	private static final String DOC_PROPERTIES = "doc.properties";
-
 	private static final int MAX_ID_LEN = 75;
-
-	private static final String DOC_NAME = "doc.name";
-	private static final String PRODUCT_NAME = "product.name";
-	private static final String PRODUCT_VERSION = "product.version";
 
 	private static HashMap<String, String> IDS = new HashMap<String, String>();
 
@@ -334,4 +320,8 @@ public class NumberHeadersTask {
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
+
+	private final String _id_suffix;
+	private final int _id_suffix_len;
+
 }

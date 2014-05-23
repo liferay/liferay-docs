@@ -20,3 +20,4 @@ properties/
 **/dist/**
 **nbproject**
 *#
+/bin
