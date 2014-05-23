@@ -171,7 +171,8 @@ To create a Maven repository using Nexus, first download Nexus from
 [http://www.sonatype.org/nexus/](http://www.sonatype.org/nexus/) and follow
 instructions at
 [http://www.sonatype.com/books/nexus-book/reference/\_installing\_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
-to install and start it. 
+to install and start it. If you're using Windows, you'll need to start Nexus 
+from a command prompt with administrator privileges.
 
 To create a repository using Nexus, follow these steps: 
 
@@ -294,4 +295,4 @@ create!
 Next, let's install the Liferay artifacts you'll need to create your plugins
 with Maven.
 
-[Installing Liferay Maven Artifacts](http://www.liferay.com)
+[Managing Liferay Maven Artifacts](http://www.liferay.com)

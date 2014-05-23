@@ -1,24 +1,27 @@
-#### Developing Liferay Theme Plugins with Maven [](id=develop-liferay-theme-plugins-with-maven-liferay-portal-6-2-dev-guide-02-en)
+# Developing Liferay Theme Plugins with Maven
 
-So you're sitting in your armchair next to the fire, just as we described in our
-chapter introduction; shadows dance on the tapestry-covered wall, and Lenore II
-(your cat) is purring atop the mantle. Yes, you're passing this cold winter's
-night in grand style (in front of your computer, of course). Now imagine
-yourself sitting on a cold hard wooden chair inside an off-white cubicle with
-empty walls (you're still in front of your computer, of course). These two
-descriptions paint two very different pictures, but both describe what you're
-doing (sitting and computing). Changing the "scenery" of your portal sets the
-mood for your users. We'll show you how to develop your own theme plugin (i.e.,
-your "scenery") using Maven so your portal has a lasting impression on anyone
-who visits. 
+So you're sitting in your armchair next to the fire, just as we described in the
+*Developing Liferay Plugins Using Maven* tutorial. Shadows dance on the
+tapestry-covered wall, and Lenore II (your cat) is purring atop the mantle. Yes,
+you're passing this cold winter's night in grand style (in front of your
+computer, of course). Now imagine yourself sitting on a cold hard metal chair
+inside an off-white cubicle with empty walls (you're still in front of your
+computer, of course). These two descriptions paint two very different pictures,
+but both describe what you're doing (sitting and computing). Changing the
+"scenery" of your portal sets the mood for your users. We'll show you how to
+develop your own theme plugin (i.e., your "scenery") using Maven so your portal
+has a lasting impression on anyone who visits. 
 
-##### Creating a Theme Plugin [](id=create-a-theme-plugin-maven-liferay-portal-6-2-dev-guide-02-en)
+## Creating a Theme Plugin
 
-Theme plugin creation is similar to portlet plugin creation. We'll start by
-assuming you already created the `sample-parent-project` and its `pom.xml`. 
+Theme plugin creation with Maven is similar to portlet plugin creation with
+Maven. If you don't already have a parent Maven project, please refer to the
+*Using Maven Parent Plugin Projects* tutorial. In that tutorial, we explain how
+to create a parent Maven project and its `pom.xml`. 
 
-To create your Liferay theme plugin project follow the *Creating Liferay Plugins
-with Maven* section, making sure to select *Theme* as the plugin type. 
+To create your Liferay theme plugin project, just follow the *Creating Liferay
+Plugins with Maven* tutorial, making sure to select *Theme* instead of *Portlet*
+as the plugin type. 
 
 ---
 
@@ -29,7 +32,7 @@ find the Liferay portlet archetypes.
 
 ---
 
-##### Anatomy [](id=theme-archetype-anatomy-liferay-portal-6-2-dev-guide-02-en-0)
+## Anatomy
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -57,10 +60,15 @@ directory structure:
                 - js/ \* Optionally add to hold JavaScript customizations
                 - templates/ \* Optionally add to hold template customizations
 
-The `src/main/webapp/` folder holds your theme's customizations. If you've ever
-created a theme plugin using Liferay IDE or the Plugins SDK, this folder is used
-the same way as the `docroot/_diffs/` folder. For example, `custom.css` should
-go in `src/main/webapp/css/custom.css`. 
+The `src/main/webapp/` folder holds your theme's customizations. This folder is
+used the same way that the `docroot/_diffs/` folder is used in themes developed
+via the Liferay Plugins SDK. If you're using the Plugins SDK, any of your
+theme's files that differ from the corresponding files of your theme's base
+theme go in the `docroot/_diffs/` folder. If you're using Maven, any of your
+theme's files that differ from the corresponding files of your theme's base
+theme go in the `src/main/webapp/` folder. For example, if you've modified
+`css/custom.css` in your theme, your `custom.css` file should go in the
+`src/main/webapp/css/` folder. 
 
 Here's a table describing the directory structure differences between themes
 created using Maven and themes created using the Plugins SDK: 
@@ -70,11 +78,10 @@ Location       | Maven project      | Plugins SDK project |
 customizations | `src/main/webapp/` | `docroot/_diffs/`   |
 
 To view the directory structure of a theme developed by Ant, visit the [Anatomy
-of a Theme
-Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
+of a Theme Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
 section in this guide.
 
-##### Theme POM [](id=theme-pom-liferay-portal-6-2-dev-guide-02-en)
+## Theme POM
 
 The theme plugin project POM has two additional properties: 
 
@@ -91,7 +98,7 @@ The theme plugin project POM has two additional properties:
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
 
-##### Deployment [](id=deployment-liferay-portal-6-2-dev-guide-02-en-0)
+## Deployment
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 Plugins with Maven* section. 
@@ -107,12 +114,14 @@ placed in the *target* directory. Its path is
 
 ---
 
-##### More Information [](id=more-information-liferay-portal-6-2-dev-guide-02-en-0)
+## More Information
 
-For more information on Liferay themes and its settings, see
-[Creating Liferay Themes and Layout
-Templates](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
+For more information on Liferay themes and its settings, please refer to the
+[Creating Themes and Layout Templates](www.liferay.com) tutorial. 
 
-You successfully developed a Liferay theme using Maven. Find out about
+## Next Steps
+
+You've successfully developed a Liferay theme using Maven! Find out about
 developing hook plugins next. 
 
+[Creating Hook Plugins with Maven](http://www.liferay.com)

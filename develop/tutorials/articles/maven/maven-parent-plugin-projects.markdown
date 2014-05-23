@@ -30,100 +30,100 @@ project's POM for sharing common information.
 2. Next, create a POM file named `pom.xml` in your `sample-parent-project`
    directory. Insert the following XML code into the POM:
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-		<modelVersion>4.0.0</modelVersion>
-
-		<groupId>com.liferay.sample</groupId>
-		<artifactId>sample-parent-project</artifactId>
-		<version>1.0-SNAPSHOT</version>
-		<packaging>pom</packaging>
-
-		<name>sample-parent-project</name>
-		<url>http://www.liferay.com</url>
-
-		<properties>
-			<liferay.app.server.deploy.dir>
-				${liferay.app.server.deploy.dir}
-			</liferay.app.server.deploy.dir>
-
-			<liferay.app.server.lib.global.dir>
-				${liferay.app.server.lib.global.dir}
-			</liferay.app.server.lib.global.dir>
-
-			<liferay.app.server.portal.dir>
-				${liferay.app.server.portal.dir}
-			</liferay.app.server.portal.dir>
-
-			<liferay.auto.deploy.dir>
-				${liferay.auto.deploy.dir}
-			</liferay.auto.deploy.dir>
-
-			<liferay.version>
-				${liferay.version}
-			</liferay.version>
-
-			<liferay.maven.plugin.version>
-				${liferay.maven.plugin.version}
-			</liferay.maven.plugin.version>
-		</properties>
-
-		<dependencies>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>portal-client</artifactId>
-				<version>6.2.0-GA1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>portal-impl</artifactId>
-				<version>6.2.0-GA1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>portal-pacl</artifactId>
-				<version>6.2.0-GA1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>portal-service</artifactId>
-				<version>6.2.0-GA1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>portal-web</artifactId>
-				<version>6.2.0-GA1</version>
-				<type>war</type>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>util-bridges</artifactId>
-				<version>6.2.0-GA1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>util-java</artifactId>
-				<version>6.2.0-GA1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>util-slf4j</artifactId>
-				<version>6.2.0-GA1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.liferay.portal</groupId>
-				<artifactId>util-taglib</artifactId>
-				<version>6.2.0-GA1</version>
-			</dependency>
-		</dependencies>
-
-	</project>
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+	
+			<groupId>com.liferay.sample</groupId>
+			<artifactId>sample-parent-project</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<packaging>pom</packaging>
+	
+			<name>sample-parent-project</name>
+			<url>http://www.liferay.com</url>
+	
+			<properties>
+				<liferay.app.server.deploy.dir>
+					${liferay.app.server.deploy.dir}
+				</liferay.app.server.deploy.dir>
+	
+				<liferay.app.server.lib.global.dir>
+					${liferay.app.server.lib.global.dir}
+				</liferay.app.server.lib.global.dir>
+	
+				<liferay.app.server.portal.dir>
+					${liferay.app.server.portal.dir}
+				</liferay.app.server.portal.dir>
+	
+				<liferay.auto.deploy.dir>
+					${liferay.auto.deploy.dir}
+				</liferay.auto.deploy.dir>
+	
+				<liferay.version>
+					${liferay.version}
+				</liferay.version>
+	
+				<liferay.maven.plugin.version>
+					${liferay.maven.plugin.version}
+				</liferay.maven.plugin.version>
+			</properties>
+	
+			<dependencies>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>portal-client</artifactId>
+					<version>6.2.0-GA1</version>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>portal-impl</artifactId>
+					<version>6.2.0-GA1</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>portal-pacl</artifactId>
+					<version>6.2.0-GA1</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>portal-service</artifactId>
+					<version>6.2.0-GA1</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>portal-web</artifactId>
+					<version>6.2.0-GA1</version>
+					<type>war</type>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>util-bridges</artifactId>
+					<version>6.2.0-GA1</version>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>util-java</artifactId>
+					<version>6.2.0-GA1</version>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>util-slf4j</artifactId>
+					<version>6.2.0-GA1</version>
+				</dependency>
+				<dependency>
+					<groupId>com.liferay.portal</groupId>
+					<artifactId>util-taglib</artifactId>
+					<version>6.2.0-GA1</version>
+				</dependency>
+			</dependencies>
+	
+		</project>
 
     The POM starts by specifying the model version that Maven supports, your
     project's [Maven
@@ -136,7 +136,7 @@ project's POM for sharing common information.
    leverage. A plugin project can override any of its parent's properties by
    specifying the desired property explicitly in the child plugin project's POM. 
 
-<!--Is the correct term not child project, but module?-->
+    <!--Is the correct term not child project, but module?-->
 
 4. Replace each Liferay property value (e.g., replace
    `${liferay.app.server.deploy.dir}` and other dereferenced `liferay.*`

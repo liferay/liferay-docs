@@ -11,7 +11,9 @@ detail below to generate Liferay plugin projects of any type.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
- and that its executable is in your `$PATH` environment variable. 
+ and that its executable is in your `$PATH` environment variable. Maven must 
+ also be fully configured. To configure Maven, follow the steps in the tutorial 
+ *Developing Liferay Plugins Using Maven*.
 
 ---
 
