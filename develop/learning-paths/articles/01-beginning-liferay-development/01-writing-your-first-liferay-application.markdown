@@ -1,4 +1,4 @@
-# Writing Your First Liferay Application [](id=writing-your-first-liferay-application-lp-6-2-develop-learning-paths)
+# Writing Your First Liferay Application
 
 Getting started with your first Liferay application takes only minutes. We'll
 guide you through the process of creating your project and deploying your
@@ -10,7 +10,7 @@ application next to the rest of the applications that come with Liferay.
 Your first application is simple: you'll build a portlet application that displays
 the venerable *Hello World* message. You'll be surprised at how easy this is. 
 
-## Creating Your First Liferay Application [](id=creating-your-first-liferay-application-lp-6-2-develop-learning-paths)
+## Creating Your First Liferay Application
 
 Now that everything's configured, let's jump right in and create your first
 project. Applications in Liferay Portal are called *portlets*, so you'll create a
@@ -61,7 +61,7 @@ to anything you want. You can use HTML tags to format your message.
 Now refresh your browser, and you'll see your new message. Now you've truly
 created your first app! 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-learning-paths-0)
+## Next Steps
 
 Obviously, you'll want to do far more interesting things than this. Here are
 some possible next steps: 
