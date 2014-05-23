@@ -25,7 +25,7 @@ portlet project.
 1. Select *File* &rarr; *New* &rarr; *Liferay Plugin Project*. The dialog below
 appears. 
 
-![Figure 1.x: Liferay IDE/Developer Studio's new project wizard makes it easy to create Liferay projects.](../../images/lds-new-liferay-plugin-project-1.png)
+    ![Figure 1.x: Liferay IDE/Developer Studio's new project wizard makes it easy to create Liferay projects.](../../images/lds-new-liferay-plugin-project-1.png)
 
 2. Fill in the Project Name and the Display Name. Make the project name
 *guestbook-portlet* and the display name *Guestbook*. 
@@ -106,25 +106,25 @@ functional sample portlet, but the only thing it does is display the message you
 see in the `view.jsp` file. Let's give it some functionality by adding a button
 that says *Add Entry*. 
 
-1. Open the *Snippets* tab on the right side of Liferay IDE, and expand the
-*Taglib Imports* category. 
+ 1. Open the *Snippets* tab on the right side of Liferay IDE, and expand the
+ *Taglib Imports* category. 
 
-2. Drag the snippet labeled *Liferay AUI Taglib Import v6.1* from the snippet
-area to the line beneath the existing taglib import in `view.jsp`. Don't worry
-about the Liferay version number in the snippet title: the import was changed
-for version 6.1, and it is valid for Liferay versions going forward. The
-following code gets added to `view.jsp`: 
+ 2. Drag the snippet labeled *Liferay AUI Taglib Import v6.1* from the snippet
+ area to the line beneath the existing taglib import in `view.jsp`. Don't worry
+ about the Liferay version number in the snippet title: the import was changed
+ for version 6.1, and it is valid for Liferay versions going forward. The
+ following code gets added to `view.jsp`: 
 
     <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 
-This declares that we want to use Liferay's AlloyUI tags. 
+ This declares that we want to use Liferay's AlloyUI tags. 
 
-3. Next, remove the default message in the JSP. 
+ 3. Next, remove the default message in the JSP. 
 
-4. Open the *Liferay AUI Taglib* snippet category and drag the snippet labeled
-*button-row* onto the bottom of the page. A dialog box pops up asking for the
-`cssClass` attribute. Type `guestbook-buttons` for this value, hit Enter, and
-click *Insert*. 
+ 4. Open the *Liferay AUI Taglib* snippet category and drag the snippet labeled
+ *button-row* onto the bottom of the page. A dialog box pops up asking for the
+ `cssClass` attribute. Type `guestbook-buttons` for this value, hit Enter, and
+ click *Insert*. 
 
 You're almost ready to add the button inside the button row, but as hinted above,
 we should talk about system generated URLs, because you need a URL to map to
