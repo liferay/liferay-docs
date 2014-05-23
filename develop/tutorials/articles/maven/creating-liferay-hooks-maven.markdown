@@ -7,8 +7,8 @@ with Maven. Let's take a look.
 ## Creating a Hook Plugin
 
 To create a Liferay hook plugin project, follow the steps outlined in the
-*Creating Liferay Plugins with Maven* section, making sure to select *Hook* as
-the plugin type. 
+[Creating Liferay Plugins with Maven](http://www.liferay.com) tutorial, making sure to select *Hook* 
+as the plugin type. 
 
 ---
 
@@ -53,18 +53,18 @@ Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
 To view the directory structure of a hook developed by Ant, please refer to the
-*Anatomy of the Hook* section of the [Creating a Hook](www.liferay.com)
+*Anatomy of the Hook* section of the [Creating a Hook](http://www.liferay.com)
 tutorial on creating hook plugins via the Liferay Plugins SDK. 
 
 ## Deployment
 
-To deploy your hook plugin, follow the instructions from the *Deploying Liferay
-Plugins with Maven* section. 
+To deploy your hook plugin, follow the instructions from the 
+[Deploying Liferay Plugins with Maven](http://www.liferay.com) tutorial. 
 
 ## More Information
 
 For detailed information on creating hooks, see the [Customizing and Extending
-Liferay Functionality with Hooks](www.liferay.com) tutorial.
+Liferay Functionality with Hooks](http://www.liferay.com) tutorial.
 
 ## Next Steps
 
