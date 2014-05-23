@@ -56,12 +56,17 @@
 		</checkimgssite>
 	</target>
 
-	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies. -->
-	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory.">
+    <target name="clean-dist" description="deletes dist directory">
+        <echo message="... deleting dist directory"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+	<!-- TODO: Create number images task to add to as target dependency. -->
+	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
-	
+
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
@@ -81,6 +86,7 @@
 		    <arg value="${product.abbrev}"/>
 			<arg value="${product.version}"/>
 			<arg value="${purpose.dir}"/>
+			<arg value="${doc.type}"/>
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>

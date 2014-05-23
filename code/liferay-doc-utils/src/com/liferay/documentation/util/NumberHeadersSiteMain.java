@@ -19,21 +19,22 @@ public class NumberHeadersSiteMain extends Task {
 
 	public static void main(String[] args) throws Exception {
 		if (args == null || args.length < 4) {
-			throw new IllegalArgumentException("Requires 2 arguments: product version purpose doc-set");
+			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
 		}
 
 		String product = args[0];
 		String version = args[1];
 		String purpose = args[2];
-		String docSet = args[3];
+		String docType = args[3];
+		String docDir = args[4];
 
 		NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
-			version, purpose, docSet);
+			version, purpose, docType);
 
 		boolean foundDuplicateIds = false;
 
-		File articlesDir = new File("../" + docSet + "/articles");
-		File docSetDir = new File("../" + docSet);
+		File articlesDir = new File("../" + docDir + "/articles");
+		File docSetDir = new File("../" + docDir);
 		System.out.println(
 			"Numbering headers for files in " + articlesDir.getPath() + " ...");
 
@@ -138,7 +139,7 @@ public class NumberHeadersSiteMain extends Task {
 	}
 
 	public NumberHeadersSiteMain(String product, String version, String purpose,
-			String docSet) {
+			String docType) {
 		super();
 
 		StringBuffer sb = new StringBuffer();
@@ -150,7 +151,7 @@ public class NumberHeadersSiteMain extends Task {
 		sb.append("-");
 		sb.append(purpose.replace(' ', '-'));
 		sb.append("-");
-		sb.append(docSet.replace(' ', '-'));
+		sb.append(docType.replace(' ', '-'));
 
 		_id_suffix = sb.toString();
 		_id_suffix_len = _id_suffix.length();
