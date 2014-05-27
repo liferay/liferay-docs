@@ -2,7 +2,8 @@
 
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. This verification is also useful for 
-non-Liferay projects that you've converted to Liferay inside of Liferay IDE. 
+Liferay projects from a Liferay Plugins SDK that you developed outside of 
+Liferay IDE. 
 
 ## Verifying Projects in Liferay IDE
 
@@ -23,6 +24,8 @@ Here's how you verify that your project is a Liferay project:
     the Liferay plugin facets are properly configured. 
 
     ![Figure 2: Make sure that your project's Liferay plugin facets are properly configured.](../../images/ide-project-facets.png)
+
+## Next Steps
 
 Great! You've confirmed that your import or conversion was successful; you can 
 now make revisions to your configured Liferay IDE project. 
