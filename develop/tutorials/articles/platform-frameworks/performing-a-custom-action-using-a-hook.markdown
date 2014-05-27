@@ -6,8 +6,8 @@ https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-
 
 Hooks are useful for triggering custom actions on common portal events, like
 user login or system startup. The actions for each of these events are defined
-in `portal.properties` so we need to extend this file to create a custom action.
-Hooks make this a simple task. Let's explore how to perform a custom action
+in `portal.properties`, so we need to extend this file to create a custom action;
+hooks make this a simple task. Let's explore how to perform a custom action
 using a hook by running through a tutorial!
 
 ## Triggering a Custom Action
@@ -37,7 +37,7 @@ your portal instance. Let's get started!
         login.events.pre=com.liferay.sample.hook.LoginAction
 
 3. Edit your `docroot/WEB-INF/liferay-hook.xml` file, adding the following line
-   inside the `<hook>...</hook> element`:
+   inside the `<hook>...</hook>` element:
 
         <portal-properties>portal.properties</portal-properties>
 
