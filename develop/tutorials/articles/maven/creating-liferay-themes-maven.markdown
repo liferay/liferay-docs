@@ -55,6 +55,7 @@ directory structure:
                 - WEB-INF/
                     - liferay-plugin-package.properties
                     - web.xml
+                    - liferay-look-and-feel.xml
                 - css/ \* Optionally add to hold CSS customizations
                 - images/ \* Optionally add to hold custom images
                 - js/ \* Optionally add to hold JavaScript customizations
