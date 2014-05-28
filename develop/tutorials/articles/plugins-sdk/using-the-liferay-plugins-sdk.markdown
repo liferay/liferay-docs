@@ -167,14 +167,14 @@ type. Here is the directory structure of the Plugins SDK:
 - `liferay-plugins-[version]/` - Plugins SDK root directory. 
     - `clients/` - client applications directory. 
     - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. See [Advanced Customization with Ext Plugins](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/advanced-customization-with-ext-plugins-liferay-portal-6-2-dev-guide-12-en). 
-    - `hooks/` - hook plugins directory. See [Customizing and Extending Functionality with Hooks](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/customize-and-extend-functionality-hooks-liferay-portal-6-2-dev-guide-en). 
-    - `layouttpl/` - layout templates directory. See [Creating Liferay Layout Templates](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-layout-templates-liferay-portal-6-2-dev-guide-09-en).  
+    - `ext/` - Ext plugins directory. See the [Ext Plugins tutorial](http://www.liferay.com) for details. 
+    - `hooks/` - hook plugins directory. See the [Hook Plugins tutorial](http://www.liferay.com) for details. 
+    - `layouttpl/` - layout templates directory. See the [Layout Templates tutorial](http://www.liferay.com) for details.  
     - `lib/` - commonly referenced libraries. 
     - `misc/` - development configuration files. Example, a source code
       formatting specification file. 
-    - `portlets/` - portlet plugins directory. See [Developing Portlet Applications](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en). 
-    - `themes/` - themes plugins directory. See [Creating Liferay Themes and Layout Templates](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-themes-and-layout-templates-liferay-portal-6-2-dev-guide-09-en). 
+    - `portlets/` - portlet plugins directory. See the [Portlets tutorial](http://www.liferay.com) for details. 
+    - `themes/` - themes plugins directory. See the [Themes tutorial](http://www.liferay.com) for details. 
     - `tools/` - plugin templates and utilities. 
     - `webs/` - web plugins directory. 
     - `build.properties` - default SDK properties. 
