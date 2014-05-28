@@ -17,7 +17,7 @@ topics along the way:
 - Developing Apps with Liferay IDE 
 - Leveraging the Plugins SDK 
 - Developing Plugins Using Maven 
-- Deploying Your Plugins: Hot Deploy vs Auto Deploy
+- Deploying Your Plugins: Hot Deploy vs. Auto Deploy
 
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
@@ -1050,7 +1050,7 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
  ![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
  the SDK is already installed and ready to use. Liferay Portal Enterprise
- Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
+ Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs. EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
  [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
  of Liferay Portal EE today. 
 
@@ -3191,16 +3191,16 @@ Portal.
 
 Are you wondering if we're going to make more terrible jokes that steal from
 classic poetry? Quoth the Maven, "Probably." Let's move on to exploring the
-differences between hot deploying your plugins, and auto deploying them.
+differences between hot deploy and auto deploy with respect to your plugins.
 
-## Deploying Your Plugins: Hot Deploy vs Auto Deploy
+## Deploying Your Plugins: Hot Deploy vs. Auto Deploy
 
-After you're finished developing plugins using Liferay's developer tools, you'll
-need to deploy them to you Liferay instance. However, the term "deploy" is a
-general term for introducing plugins to your Liferay instance that many
-developers lack a true understanding about. There are two deployment methods
-that you can use for Liferay: hot deploy and auto deploy. These two deployment
-options work very differently and are not the same.
+As you develop your plugins you'll want to deploy them to your test servers and
+as you finish developing plugins, you'll want to deploy them to your production
+servers. With respect to Liferay there are hot geploy and auto
+deploy options. Most people get the two concepts confused, believing them to be
+one and the same. In reality, Liferay has TWO completely separate and different
+concepts.
 
 How, you say? We'll give a brief synopsis for each deployment method in this
 section. Let's get started by explaining the hot deployment method.
@@ -3216,12 +3216,14 @@ starts the application.
 
 This model works really well for development purposes, since a server restart is
 not required to view updates from your code changes. This model also works for
-single node production deployments. However, hot deployment is not as desirable
-for a multi-node production deployment. Some of the constraints for multi-node
-production using hot deployment include:
+single node production deployments. 
 
-- Ensuring the application archive is available to all nodes
-- Ensuring the application deploys successfully across all nodes, simultaneously
+This model completely breaks down when you deploy to a multi-node production
+deployment. In a multi-node environment, you have many more constraints to deal
+with, which require you to: 
+
+- Ensure the application archive is available to all nodes
+- Ensure the application deploys successfully across all nodes, simultaneously
 
 Most application servers solve these constraints by using a master/slave type of
 design: an admin server with multiple managed servers. When you hot deploy a
@@ -3253,13 +3255,14 @@ depend upon the application server's ability to:
 - Deploy based on an exploded portal WAR
 - Load changes to JSP files at runtime
 
-Application servers running in their particular mode, domain, or manager during
-hot deployment cannot support this because in those deployment models, the
-servers often don't use exploded WARs, and if there are no exploded WARs, they
-cannot support JSP reloading/recompilation. Even for Tomcat, it's generally
-advisable to deactivate JSP reloading for production deployments.
+Application servers running in "production", "domain", etc modes cannot support
+these abilities, because in these deployment models, most servers don't use
+exploded WARs and, as such, they don't support JSP reloading/recompilation. Even
+for Tomcat, it's generally advisable to deactivate JSP reloading for production
+deployments. 
 
-So now you're probably wondering how to use hooks to override JSPs while using
+
+So what do you do if you use hooks to override Liferay JSPs AND you must use
 non-exploded WAR deployments? The answer is simple: inject a pre-processing
 stage as part of your build process. You can deploy the hooks, allowing them to
 make changes to the portal WAR file. Then you can rebundle the portal WAR file
@@ -3272,10 +3275,11 @@ auto deployment accomplishes behind the scenes.
 
 ### Using Auto Deployment
 
-Instead of thinking of *auto* deployment as a completely separate process
-compared to hot deployment, it can be thought as a mostly optional feature that
-works in conjunction with the hot deployment capabilities of the application
-server.
+The Liferay *auto* deployment feature is a mostly optional feature that works in
+conjunction with the hot deployment capabilities of the application server.
+Where Liferay's hot deploy leverages the hot deploy capabilities of an app
+server and performs additional initializations, auto deploy injects JAR files
+and descriptors required by a Liferay app into the app's archive. 
 
 So how does auto deployment work with Liferay plugins? Here's a list of tasks
 completed using auto deployment.
@@ -3300,14 +3304,21 @@ runtime, use it at build time.
 
 The Liferay Plugins SDK allows you to preprocess your archives and inject all
 the required elements and, thus, bypassing the auto deployer at runtime. You
-simply need to call the following Ant task:
+simply need to cpall the following Ant task:
 
     ant direct-deploy
 
 The `direct-deploy` Ant task creates an exploded WAR from which you can easily
-create a WAR file. The location of the exploded WAR depends upon what you have
-configured for the application server's deploy directory in your Plugins SDK's
-`build.[username].properties` file.
+create a WAR file. The location of the exploded WAR depends on the deployment
+directory of the application server you've configured in your Plugins SDK
+environment. See the Plugins SDK Configuration section of (Leveraging the
+Plugins
+SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
+for instructions on configuring the Plugins SDK for your app server. The Plugins
+SDK's `build.properties` provides default values for the deployment directories
+of each supported app server. But you can override the default value by
+specifying your desired value for `app.server.[type].deploy.dir` (replace
+`[type]` with your app server type) in your `build.[username].properties` file. 
 
 If you choose not to use the Liferay Plugins SDK, then you can examine the
 `build-common.xml` file in the SDK to see how Liferay invokes the deployer
