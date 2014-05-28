@@ -221,7 +221,7 @@ Navigate to the `portlets` folder of your Plugins SDK and follow these steps:
 
 1.  On Linux and Mac OS X, enter
 
-        ./create.sh [portlet name] "[portlet title]
+        ./create.sh [portlet name] "[portlet title]"
 
     For example,
 
@@ -229,7 +229,7 @@ Navigate to the `portlets` folder of your Plugins SDK and follow these steps:
 
 2.  On Windows, enter
 
-        create.bat [portlet name] "[portlet title]
+        create.bat [portlet name] "[portlet title]"
 
     For example,
 
