@@ -995,3 +995,19 @@ first log in to your portal as an administrator after installing Social Office
 to grant the Social Office User role to users. The Social Office User provides
 access to the Dashboard home page, the public Profile page, and all of their
 applications. You're now ready to use Social Office!
+
+## Upgrading from Social Office 3.0.0 to 3.0.1
+
+Before upgrading from Social Office 3.0.0 to 3.0.1, make sure to set
+`hot.undeploy.on.redeploy=true` in your `portal-ext.properties` file. This
+property makes Liferay completely undeploy a plugin before deploying a new
+version of the plugin. If you don't set `hot.undeploy.on.redeploy=true` before
+upgrading, the upgrade might not correctly handle activities. Setting
+`hot.undeploy.on.redeploy=true` ensures that activities are handled correctly.
+See the following issues for more details:
+
+[SOS-2158](https://issues.liferay.com/browse/SOS-2158)
+[SOS-2159](https://issues.liferay.com/browse/SOS-2159)
+[SOS-2160](https://issues.liferay.com/browse/SOS-2160)
+
+After installing the new version of Social Office, you're all set!
