@@ -19,7 +19,7 @@ properties/
 **/classes/**
 **/dist/**
 **nbproject**
-.ivy/**
-.sass-cache/**
+**/.ivy/*
+**/.sass-cache/**
 *#
 /bin
