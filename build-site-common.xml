@@ -4,12 +4,11 @@
 	<property name="project.dir" value="../.." />
 
 	<path id="lib.classpath">
-		<fileset dir="${basedir}/lib" includes="*.jar" />
-		<fileset dir="${basedir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 	</path>
 
 	<path id="project.classpath">
-		<pathelement path="${classpath}" />
 		<path refid="lib.classpath" />
 	</path>
 
@@ -41,35 +40,15 @@
 	</target>
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
-		<echo message="... converting ${article} to html"/>
-		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
-		<exec executable="${pandoc.app}">
-			<arg value="-f" />
-			<arg value="markdown"/>
-			<arg value="-t"/>
-			<arg value="html"/>
-			<arg value="-smart"/>
-			<arg value="-o"/>
-			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
+		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
+		<java
+			classname="com.liferay.documentation.markdown.MarkdownToHtmlMain"
+			classpathref="project.classpath"
+			fork="true"
+		>
 			<arg value="${article}"/>
-		</exec>
-	</target>
-
-	<target name="article-to-html-win" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file on Windows.">
-		<echo message="... converting ${article} to html"/>
-		<!-- pandoc -f markdown -t html -o build/articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown.html articles/01-beginning-liferay-development/01-writing-your-first-liferay-application.markdown -->
-		<exec executable="cmd">
-			<arg value="/C" />
-			<arg value="pandoc"/>
-			<arg value="-f" />
-			<arg value="markdown"/>
-			<arg value="-t"/>
-			<arg value="html"/>
-			<arg value="-smart"/>
-			<arg value="-o"/>
-			<arg value="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html"/>
-			<arg value="${article}"/>
-		</exec>
+			<arg value="${build.dir}/${article}.html"/>
+		</java>
 	</target>
 
 	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
@@ -77,18 +56,39 @@
 		</checkimgssite>
 	</target>
 
-	<!-- TODO: Create number-headers and number-images-dir tasks to add to the prepare-dist target dependencies. -->
-	<target name="prepare-dist" depends="check-images-site" description="Creates dist directory.">
+    <target name="clean-dist" description="deletes dist directory">
+        <echo message="... deleting dist directory"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+	<!-- TODO: Create number images task to add to as target dependency. -->
+	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
-	
+
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="landing-page.markdown" />
 		</zip>
+	</target>
+
+	<target name="number-headers" description="numbers the headers of markdown files found in ${lang}/chapters/">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			fork="true"
+		>
+		    <arg value="${product.abbrev}"/>
+			<arg value="${product.version}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${doc.type}"/>
+			<arg value="${doc.dir}"/>
+		</java>
 	</target>
 
 </project>
