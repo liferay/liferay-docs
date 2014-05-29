@@ -1040,7 +1040,11 @@ the hook in a custom theme, but they also mention what's needed to make similar
 changes to support using the hook in the other plugin types. 
 
 1. Make sure to deploy the RTL hook to your application server. 
-
+	
+	If upon initial deployment you don't notice any changes when switching to an
+	RTL language, reload the page to force a clean cache; you can do this by 
+	using Command + R (on Mac) or Ctrl + F5 (on Windows).
+	
     Note, since dynamic generation of CSS from SASS is not yet supported in the
     context of this hook, the hook loads the current theme's merged CSS files,
     disregarding whether
