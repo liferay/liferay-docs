@@ -993,7 +993,7 @@ As you can see, hooks serve to enhance the functionality of your portal and
 applications. Next, we will take a look at the RTL Hook and how it can enhance 
 both your portal and plugins.
 
-## Displaying Right-to-Left Content with the RTL Hook
+## Displaying Right-to-Left Content with the RTL Hook [](id=displaying-rtl-content-with-rtl-hook-liferay-portal-6-2-dev-guide-11-en)
 
 Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
 right-to-left (RTL). However, many sites written RTL also have left-to-right
@@ -1032,7 +1032,7 @@ Now that you've seen Liferay Portal and its apps rendered using the RTL hook,
 have you wondered how you might leverage the RTL hook in your custom plugins?
 You'll learn how to use the hook with your plugins, next. 
 
-### Applying the RTL Hook to Custom Plugins
+### Applying the RTL Hook to Custom Plugins [](id=applying-the-rtl-hook-to-custom-plugins-liferay-portal-6-2-dev-guide-11-en)
 
 You can use the RTL hook with any plugin type. Theme plugins are the most common
 type of plugins to make use of the RTL hook. The following steps focus on using
@@ -1117,7 +1117,7 @@ You now know how to use the RTL hook in your custom plugins. Now, it's time to
 learn how you can extend the RTL hook's style with your own custom CSS for RTL
 languages. 
 
-### Defining Custom CSS for RTL Languages 
+### Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
 
 As your learned in the previous section, the RTL hook automatically generates
 RTL versions of your CSS files by applying rules, such as changing
