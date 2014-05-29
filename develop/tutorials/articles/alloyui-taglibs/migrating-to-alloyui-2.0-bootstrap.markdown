@@ -216,21 +216,16 @@ GitHub and installing the project locally:
 
         git clone git@github.com:[username]/liferay-aui-upgrade-tool
 
-5.  Navigate into your new liferay-aui-upgrade-tool repository directory and
+4.  Navigate into your new liferay-aui-upgrade-tool repository directory and
     associate a remote branch to Liferay's liferay-aui-upgrade-tool repository
-    so you'll be able to fetch its latest changes form time to time:  
+    so you'll be able to fetch its latest changes from time to time:  
 
         cd liferay-aui-upgrade-tool
         git remote add upstream git@github.com:liferay/liferay-aui-upgrade-tool
 
-6.  Lastly, create your own branch named `2.0.x` based on Liferay's `2.0.x`
-    branch, by execute the following command:
-
-        git checkout -b 2.0.x upstream/2.0.x
-
 You now have all of the liferay-aui-upgrade-tool project's source code. The
 project's tool you use to upgrade plugins to AlloyUI 2.0 is called *laut*, which
-stands for Liferay AUI Upgrade Tool. You build the upgrade tool using
+stands for Liferay AUI Upgrade Tool. You can build the upgrade tool using
 [Node.js](http://nodejs.org), which is a platform for building applications. You
 can download it from [http://nodejs.org/](http://nodejs.org/). Linux, OS X, or
 UNIX users can download its source in a `.tar.gz` file, unzip it, un-tar it, and
@@ -287,10 +282,10 @@ same behavior as before. You must investigate if the deprecated module's
 behavior has changed. It's up to you as to when and how to start using a 2.0
 module. 
 
-In 2.0 many of the "aui-" prefixes were dropped and in some cases modules where
+In 2.0, many of the "aui-" prefixes were dropped and in some cases modules were
 completely renamed. For example, the upgrade tool modified the Microblogs
-portlet's `edit_microblogs_entry.jsp` replacing module reference
-`aui-helper-hidden` with its new 2.0 module named `hide`.  
+portlet's `edit_microblogs_entry.jsp`, replacing module reference
+`aui-helper-hidden` with its new 2.0 module named `hide`.
 
 Let's take a look at a different type of change done in the Microblogs portlet's
 `edit_microblogs_entry.jsp`. Notice that the "aui-" prefix is deleted from all
@@ -310,7 +305,7 @@ portlet's files.
 
 Lastly, consider the changes done to the Microblogs portlet's `main.js` file.
 The script now uses the `liferay-util-window` module in place of the old
-`aui-dialog` module. The upgrade tool took things a step further changing so
+`aui-dialog` module. The upgrade tool took things a step further by updating so
 that the script properly uses the `liferay-util-window` module to get pop-up
 windows for the portlet. Below are code snippets of what it like before and
 after running the upgrade tool.
