@@ -289,14 +289,27 @@ have to reboot the server as often in Developer Mode.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** If you're accessing your portal
- through a Developer Studio server (e.g., Liferay v6.2 CE Server), you already
- have Developer Mode enabled. When you start your Liferay server on Developer
- Studio for the first time, a `liferay-ide.properties` file is created in your
- Liferay Portal directory. Within this file, notice the following line:
- `include-and-override=portal-developer.properties`. This automatically
- enables Developer Mode while using Developer Studio.
- 
+![tip](../../images/tip-pen-paper.png) **Tip:** If you're using server lower than
+6.2 (e.g., Liferay v6.1 CE Server,Liferay v6.0 CE Server), you already have Developer
+Mode enabledwhen you start your Liferay server for the first time, a 
+`portal-ide.properties` file is created in your Liferay Portal directory. Within 
+this file, notice the following line:`include-and-override=portal-developer.properties`. 
+This automatically enables Developer Mode while using Developer Studio or IDE.
+
+For Liferay v6.2 CE Server or greater Developer Mode has been set "Standard" as default, 
+under `portal-ide.properties` file there will be no `include-and-override=
+portal-developer.properties` line.Manually change this property 
+could be overwritten by the initial states,so the only way you can switch to
+Develper Mode is to go to Studio or IDE and change the setting.As following:
+
+
+Setup a runtime in Studio or IDE, in the lower left corner double click the 
+server,in the "Liferay settings" section you can change "Server Mode" to "Standard" 
+or "Development(portal-developer.properties)" .Save the changes ,then start server 
+Server mode will be changed. Also you can check under `portal-ide.properties` file. 
+
+![](../../images/set-develop-mode.png)
+   
 ---
 
 Before you use Developer Mode, you'll have to add the
