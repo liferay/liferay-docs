@@ -103,7 +103,7 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
