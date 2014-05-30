@@ -1,5 +1,10 @@
 # Generating Language Properties File and Automated Translations
 
+<!-- The beginning and ending test portlets can be found at the following:
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet
+-->
+
 In this tutorial, we'll learn how Liferay facilitates generating language key
 files and translating the keys to languages you want to support. In order for a
 user to see a message in his own locale, the message value must be specified in
@@ -9,15 +14,13 @@ message property with key `welcome` must be present with a Spanish translation
 of the word "Welcome". Don't worry, the Plugins SDK provides a means for you to
 get translations for your default resource bundle.
 
-<!-- Insert image and transition -->
-
 We'll get started by doing the initial setup for the Bing Translator service.
 
 ## Translating Languages Using the Bing Translator
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
-translate all of the resources in your Language.properties file to multiple
+translate all of the resources in your `Language.properties` file to multiple
 languages. It provides a base translation for you to start with. To create base
 translations using the Bing Translator service, you'll need to do the following:
 
@@ -25,11 +28,9 @@ translations using the Bing Translator service, you'll need to do the following:
    Translator. It's listed in the *Data* section of the Azure Marketplace.
 
 2. Register your portlet in the Azure Marketplace. You can do this from the 
-   *Developers* tab in *My Account*. The client ID needs to match the project 
-   name of the portlet. For example, this tutorial uses the 
-   `event-listing-portlet` portlet project, so enter that as the client ID. 
-   Accept the default client secret. Be sure to save the client ID and client 
-   secret for later use.
+   *Developers* tab in *My Account*. The client ID needs to match the project
+   name of the portlet. Accept the default client secret. Be sure to save the
+   client ID and client secret for later use.
 
 3. Make sure that you have a `build.[username].properties` file in your Plugins
    SDK root directory. Create it if you do not. This 
@@ -37,10 +38,10 @@ translations using the Bing Translator service, you'll need to do the following:
    bundle. If you have a Liferay Tomcat bundle, for example, your reference 
    should look like this:
 
-       app.server.dir=[Liferay Home]/tomcat-7.0.42
-       auto.deploy.dir=[Liferay Home]/deploy
+        app.server.dir=[Liferay Home]/tomcat-7.0.42
+        auto.deploy.dir=[Liferay Home]/deploy
 
-   `[Liferay Home]` refers to your bundle's root directory.
+    `[Liferay Home]` refers to your bundle's root directory.
 
 4. Make sure that you have a `portal-ext.properties` file in your Liferay Home 
    directory. Create it if you do not. Edit the `portal-ext.properties` file by 
@@ -65,49 +66,39 @@ of the Bing Translator.
 Now that you've done the initial setup for the Bing Translator, you're ready to 
 add support for translations to your portlet.
 
-1. As a starting point, use the `event-listing-portlet`, which is available in
-   the <https://github.com/liferay/liferay-docs> GitHub repository
-   [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet).
-   You'll need to clone the repository if you haven't already done so. Then copy
-   the `event-listing-portlet` folder into the `portlets` folder of your Liferay
-   Plugins SDK. Note that this portlet is also the beginning portlet for the
-   [Using Configurable Portlet
-   Preferences](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/articles/platform-frameworks/configurable-portlet-preferences.markdown)
-   tutorial. Deploy the portlet and add the Location Listing portlet to a page 
-   of your portal.
-
-2. In the `docroot/WEB-INF/src/content/Language.properties` file, add the
+1. In your portlet's `docroot/WEB-INF/src/content/Language.properties` file, add the
    following language key: 
 
         you-know-it-is-the-best=You know it is the best
    
-   Translations are generated for properties that you add or edit in this file. 
-   However, translations will *not* be generated for properties that already 
-   exist in your portlet.
+    Translations are generated for properties that you add or edit in this file. 
+    However, translations will *not* be generated for properties that already 
+    exist in your portlet.
         
-3. Replace the view mode statement (e.g., *This is the \<b\>Location Listing
-   Portlet\</b\> in View mode.*) in the Location Listing portlet's `view.jsp` 
-   with the following: 
+2. Add the following statement to your portlet's `view.jsp`: 
 
         Liferay - <liferay-ui:message key="you-know-it-is-the-best" />!
 
-   This line brings your translated language key value into your JSP. 
+    This line brings your translated language key value into your JSP. You can
+    reference an example
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
+    to see where the Liferay UI message can be placed.
 
-4. Run `ant build-lang` from the 
+3. Run `ant build-lang` from the 
    `[Liferay Plugins SDK]/portlets/event-listing-portlet` directory.
 
-   When the build completes, you'll find the generated files with all of the
-   translations in the same folder as your `Language.properties` file. Note that 
-   many of the language properties files don't contain translations. This is 
-   because they are intentionally disabled. We decided to do this because many 
-   of the translations are incorrect or offensive. The issue is described 
-   [here](https://issues.liferay.com/browse/LPS-29246).
+    When the build completes, you'll find the generated files with all of the
+    translations in the same folder as your `Language.properties` file. Note
+    that many of the language properties files don't contain translations. This
+    is because they are intentionally disabled. We decided to do this because
+    many of the translations are incorrect or offensive. The issue is described
+    [here](https://issues.liferay.com/browse/LPS-29246).
 
 5. Switch your portal's locale to Spanish by adding `/es` after `localhost:8080` 
-   and refresh the page. Notice how the Location Listing portlet now shows your 
-   translated language key.
+   and refresh the page. Notice how your portlet now shows your translated
+   language key.
    
-![Figure 1: Autogenerated translation for the Location Listing portlet.](../../images/portlet-localization-generated-translation.PNG)
+![Figure 1: The autogenerated Spanish translation is now available in your portlet.](../../images/portlet-localization-generated-translation.PNG)
 
 ---
 
