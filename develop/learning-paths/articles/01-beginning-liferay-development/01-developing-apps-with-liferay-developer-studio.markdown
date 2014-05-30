@@ -45,7 +45,7 @@ environment, ready to begin work!
 
 ## Next Steps
 
-Nowt that you have your development environment installed, you'll want to jump
+Now that you have your development environment installed, you'll want to jump
 in and create an app: 
 
 [Writing Your First Liferay Application](http://www.liferay.com)

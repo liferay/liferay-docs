@@ -15,21 +15,42 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 1. Select *Help* &rarr; *Install New Software*. 
 
 2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page. Copy
-the URL to the update site you're interested in (stable or milestone). 
+   the URL to the update site you're interested in (stable or milestone). 
 
-![Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
+    ![Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
 3. Go back to Eclipse and click the *Add* button to add a repository. 
 
-4. Type *Liferay IDE* into the Name field and paste the URL into the
-Location field. 
+4. Type *Liferay IDE* into the Name field and paste the URL into the Location 
+   field. 
 
 5. You'll see the Liferay IDE components in the list below. Check them off and
-click *Next*. 
+   click *Next*. 
 
 6. Accept the terms of the agreements and click *Next*, and Liferay IDE is
-installed. Like other Eclipse plugins you'll have to restart Eclipse to
-enable it. 
+   installed. Like other Eclipse plugins you'll have to restart Eclipse to
+   enable it. 
+
+## Installing Liferay IDE into Eclipse from a Zip File
+
+To install Liferay IDE into Eclipse from a `.zip` file, follow these steps: 
+
+1. Download the IDE 2.1 `.zip` file from
+   [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+   GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
+   for your operating system. 
+
+2. In Eclipse, go to *Help* &rarr; *Install New Software...*. 
+
+3. In the *Add Site* dialog, click the *Archive* button and browse to the
+   location of the downloaded Liferay IDE `.zip` file.
+
+4. You'll see the Liferay IDE components in the list below. Check them off and
+   click *Next*. 
+
+5. Accept the terms of the agreements and click *Next*, and Liferay IDE is
+   installed. Like other Eclipse plugins you'll have to restart Eclipse to
+   enable it. 
 
 ## Installing the Liferay IDE Bundle
 
@@ -70,12 +91,12 @@ Liferay perspective.
 2. The tab on the low left corner is labeled *Servers*. Click the link to create
 a new server. 
 
-![Figure 1.x: The Servers tab has no servers by default.](../../images/lds-servers.png)
+	![Figure 1.x: The Servers tab has no servers by default.](../../images/lds-servers.png)
 
 3. In the dialog that appears, select the server that matches the runtime you
 downloaded and installed. Click *Next*. 
 
-![Figure 1.x: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
+	![Figure 1.x: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
 
 4. Browse to the Tomcat folder inside the runtime and click *Finish*. 
 
