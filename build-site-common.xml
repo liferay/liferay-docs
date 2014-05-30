@@ -29,15 +29,7 @@
 		</classpath>
 	</taskdef>
 
-	<target name="prepare" description="Creates build directory.">
-		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
-		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
-		<mkdir dir="${build.dir}/images"/>
-		<copy todir="${build.dir}/images" overwrite="true">
-			<fileset dir="./images"/>
-		</copy>
-	</target>
+	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
@@ -61,12 +53,6 @@
         <delete dir="${dist.dir}"/>
     </target>
 
-	<!-- TODO: Create number images task to add to as target dependency. -->
-	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
-		<echo message="... creating ${dist.dir} directory"/>
-		<mkdir dir="${dist.dir}"/>
-	</target>
-
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
@@ -89,6 +75,21 @@
 			<arg value="${doc.type}"/>
 			<arg value="${doc.dir}"/>
 		</java>
+	</target>
+
+	<target name="prepare" description="Creates build directory.">
+		<echo message="... creating build directory"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${build.dir}/images"/>
+		<copy todir="${build.dir}/images" overwrite="true">
+			<fileset dir="./images"/>
+		</copy>
+	</target>
+
+	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
 	</target>
 
 </project>
