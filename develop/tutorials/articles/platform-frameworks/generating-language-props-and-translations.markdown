@@ -87,8 +87,10 @@ add support for translations to your portlet.
     For example JSP code that references language keys, see
     [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
-3. Run `ant build-lang` from the 
-   `[Liferay Plugins SDK]/portlets/event-listing-portlet` directory.
+3. Build the language keys, by either right-clicking on the
+   `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in
+   Liferay IDE/Developer Studio or by running `ant build-lang` from your plugin
+   project's root directory in your terminal. 
 
     When the build completes, you'll find the generated files with all of the
     translations in `Language_*.properties` files in the same folder as your
@@ -106,18 +108,17 @@ add support for translations to your portlet.
    
 ![Figure 1: Liferay automatically translates your portlet's language properties to different languages.](../../images/portlet-localization-generated-translation.PNG)
 
----
-
- ![Note](../../images/tip-pen-paper.png) **Note:** Since translations aren't
- generated for existing properties, there are two steps you must follow to
- generate translations for the new values you have for the existing property
- keys. First, remove the each property (i.e., the entire key/value assignment)
- from the `Language.properties` and run `ant build-lang` to remove the
- properties from all the other resource bundles. Then re-add the properties with
- their new values to `Language.properties` and run `ant build-lang` again. The
- Bing Translator generates translations for your new property values. 
-
----
+After you've generated an initial translation for a language property (i.e.,
+key/value pair), the assumption is that you'll manually make any updates that
+those translated values require. On subsequent builds of the language
+properties, the language builder intentionally leaves existing language property
+translation values alone, so as to not overwrite any of your manual translation
+work. That said, if you want to generate new translations of an existing
+property you must first remove that property from `Language.properties`, build
+the languages (to remove the property from the `Language_*.properties` files),
+re-add that property and its new value to `Language.properties`, and build the
+languages again. At this point, Bing Translator generates translations based on
+your property's new value. 
 
 ---
 
