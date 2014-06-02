@@ -283,9 +283,29 @@ make your changes visible? Let's talk about Liferay Developer Mode to learn how.
 ## Using Developer Mode with Themes [](id=using-developer-mode-with-themes-liferay-portal-6-2-dev-guide-09-en)
 
 Do you want to develop Liferay resources without having to redeploy to see your
-portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
+portal modifications? Use Liferay Developer Mode! In Developer Mode, all caches
 are removed, so any changes you make are visible right away. Also, you won't
 have to reboot the server as often in Developer Mode.
+
+How does Developer Mode let you see your changes more quickly? In Developer
+Mode, there are several changes to the normal order of operations. Here is a
+list of Developer Mode's key behavior changes and the portal property override
+settings that trigger them:
+
+- CSS files are loaded individually rather than being combined and loaded as a
+  single CSS file (`theme.css.fast.load=false`).
+- Layout template caching is disabled (`layout.template.cache.enabled=false`).
+- The server does not launch a browser when starting up
+  (`browser.launcher.url=`).
+- FreeMarker Templates for themes and web content are not cached, so changes
+  are applied immediately
+  (`freemarker.engine.modification.check.interval=0`). 
+- Minification of CSS and JavaScript resources is disabled
+  (`minifier.enabled=false`).
+
+Individual file loading of your styling and behaviors, combined with disabled
+caching for layout and FreeMarker templates, lets you see your changes
+more quickly. 
 
 ---
 
@@ -344,28 +364,8 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
 
 ---
 
-How does Developer Mode let you see your changes more quickly? In Developer
-Mode, there are several changes to the normal order of operations. Some of these
-key behaviors are listed below, along with the portal property override
-settings that trigger them:
-
-- CSS files are loaded individually rather than being combined and loaded as a
-  single CSS file (`theme.css.fast.load=false`).
-- Layout template caching is disabled (`layout.template.cache.enabled=false`).
-- The server does not launch a browser when starting up
-  (`browser.launcher.url=`).
-- FreeMarker Templates for themes and web content are not cached, so changes
-  are applied immediately
-  (`freemarker.engine.modification.check.interval=0`). 
-- Minification of CSS and JavaScript resources is disabled
-  (`minifier.enabled=false`).
-
-Individual file loading of your styling and behaviors, combined with disabled
-caching for layout and FreeMarker templates, let's you see your changes
-more quickly. 
-
 Now, when you modify your theme's `custom.css` file directly in your Liferay
-Bundle, you can see your changes applied as you make them! Make sure you copy
+bundle, you can see your changes applied as you make them! Make sure you copy
 any changes you make back into your `_diffs` folder, or they'll be overwritten
 when you redeploy your theme. 
 
