@@ -48,7 +48,7 @@ following these steps:
    each portlet's category and weight values within the
    `<control-panel-entry-category/>` and `<control-panel-entry-weight/>`
    elements for each portlet in your project's `liferay-portlet.xml` file.  
-   
+
     For example, the following XML from a `liferay-portlet.xml` file, specifies
     *Content* as the portlet's category, so that the portlet is available in the
     Content section of the Site Administration menu. 
@@ -66,7 +66,7 @@ following these steps:
 2. Create a namespaced folder to hold each portlet's resource bundle. It's a
    best practice to name each resource bundle folder based on each portlet's
    name.
-   
+
     For example, you'd create a resource bundle folder
     `docroot/WEB-INF/src/content/yourportlet` if one of your project's portlet's
     names was *yourportlet*. 
@@ -96,9 +96,9 @@ following these steps:
 
 5. Redeploy your plugin project.
 
-6. Go to *Site Administration* &rarr; *Content* and select one of your portlets. Notice
-   that the portlet's title and description match what you specified in its
-   `Language.properties` file.
+6. Go to *Site Administration* &rarr; *Content* and select one of your portlets.
+   Notice that the portlet's title and description match what you specified in
+   its `Language.properties` file.
 
     ![Figure 3: Notice that your portlet title and description are visible in Site Administration.](../../images/portlet-title-and-description.png)
 
@@ -107,7 +107,7 @@ following these steps:
    portlet's `content/[PORTLET_NAME]/Language.properties` file and select
    *Liferay* &rarr; *Build Languages*. You can also accomplish the same thing
    from the terminal by executing `ant build-lang`.
-   
+
     **Note:** In order to automatically generate translations of resource
     bundles, you must configure your environment to use Microsoft's Bing
     Translator. Otherwise, Liferay's `build-lang` target simply generates a
@@ -120,10 +120,11 @@ following these steps:
 
     <!-- TODO set Bing Translator tutorial reference as a link -->
 
-8. Now that you have the languages built, you can specify language key values for each
-   of the supported language files that were generated. For example, the Spanish
-   translation for the title and description of a portlet named *yourportlet* could be
-   designated inside the `Language_es.properties` file as the following:
+8. Now that you have the languages built, you can specify language key values
+   for each of the supported language files that were generated. For example,
+   the Spanish translation for the title and description of a portlet named
+   *yourportlet* could be designated inside the `Language_es.properties` file as
+   the following: 
 
         javax.portlet.title=Su portlet en Espanol
         javax.portlet.description=Descripcion del portlet en Espanol.
@@ -164,8 +165,8 @@ You're becoming an expert localizer!
 
 ---
 
-Terrific! You've configured your plugin's portlets to display in the Site Administration
-page, created resource bundles specifically for each portlet, built your
-portlets' language translation files, and have verified your portlets' translated titles
-and descriptions!
+Terrific! You've configured your plugin's portlets to display in the Site
+Administration page, created resource bundles specifically for each portlet,
+built your portlets' language translation files, and have verified your
+portlets' translated titles and descriptions! 
 

@@ -71,10 +71,10 @@ add support for translations to your portlet.
    your language keys. For example, you may enter a key like this one: 
 
         you-know-it-is-the-best=You know it is the best
-   
+
     Translations are only generated for properties that have not been translated
     previously. 
-        
+
 2. Make use of your language keys in your JSPs. For example, you can specify
    language keys in `<liferay-ui:message>` tags, as demonstrated in the
    following JSP code:  
@@ -83,7 +83,7 @@ add support for translations to your portlet.
 
     Tags like the above `<liferay-ui:message>` tag will look up the value of the
     language key for the current locale and render it for the user.
-    
+
     For example JSP code that references language keys, see
     [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
@@ -105,7 +105,7 @@ add support for translations to your portlet.
    Spanish by adding `/es` after `localhost:8080` 
    and refreshing the page. Notice how your portlet shows your translated
    language keys.
-   
+
 ![Figure 1: Liferay automatically translates your portlet's language properties to different languages.](../../images/portlet-localization-generated-translation.PNG)
 
 After you've generated an initial translation for a language property (i.e.,
