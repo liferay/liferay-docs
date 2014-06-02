@@ -12,10 +12,6 @@ public class CheckIntrosTask extends Task {
 	@Override
 	public void execute() throws BuildException {
 
-		if (!_docdir.equals("learning-paths")) {
-			System.exit(0);
-		}
-
 		File dir = new File("../" + _docdir);
 		if (!dir.exists()) {
 			throw new BuildException("docdir " + dir.getAbsolutePath() +
