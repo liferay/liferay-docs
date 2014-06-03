@@ -158,6 +158,11 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		return EventFinderUtil.findByEventNameEventDescriptionLocationName(
 			eventName, eventDescription, locationName, begin, end);
 	}
+	
+	public List<Event> findByUserId(long userId) throws SystemException {
+
+		return EventFinderUtil.findByUserId(userId);
+	}
 
 	public Event getEvent(long eventId)
 		throws PortalException, SystemException {

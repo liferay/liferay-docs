@@ -1,17 +1,20 @@
 package com.nosester.portlet.eventlisting.service.persistence;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.QueryPos;
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
+import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.SQLQuery;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 import com.liferay.util.dao.orm.CustomSQLUtil;
-
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.model.impl.EventImpl;
-
-import java.util.List;
+import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 
 /**
  * @author Joe Bloggs
@@ -46,6 +49,32 @@ public class EventFinderImpl extends BasePersistenceImpl<Event> implements Event
 			closeSession(session);
 		}
 
+		return null;
+	}
+	
+	public List<Event> findByUserId(long userId) {
+		
+		Session session = null;
+		try {
+			session = openSession();
+			
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Event.class)
+					.add(RestrictionsFactoryUtil.eq("userId", userId));
+			
+			List<Event> events =  (List<Event>) EventLocalServiceUtil.dynamicQuery(dq);
+
+			return events;
+
+		} catch (Exception e) {
+			try {
+				throw new SystemException(e);
+			} catch (SystemException se) {
+				se.printStackTrace();
+			}
+		} finally {
+			closeSession(session);
+		}
+		
 		return null;
 	}
 

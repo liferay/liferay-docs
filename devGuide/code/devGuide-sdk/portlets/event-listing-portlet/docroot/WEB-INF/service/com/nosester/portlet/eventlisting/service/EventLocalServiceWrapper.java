@@ -342,6 +342,12 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	}
 
 	@Override
+	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByUserId(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.findByUserId(userId);
+	}
+
+	@Override
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> getEventsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
