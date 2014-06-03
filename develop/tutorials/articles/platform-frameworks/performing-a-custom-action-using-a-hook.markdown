@@ -93,4 +93,5 @@ for others, extend `com.liferay.portal.struts.SimpleAction`.
 
 Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
-hook in Liferay Portal.
+hook in Liferay Portal. Now you're ready to learn how to override and add Struts 
+actions using *Struts action hooks*.
