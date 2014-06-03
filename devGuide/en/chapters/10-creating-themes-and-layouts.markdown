@@ -320,15 +320,15 @@ Development Mode, select *Development(portal-developer.properties)* and save the
 runtime environment. The next time you start Liferay server that are based on
 this runtime environment, they start in Development Mode.  
 
-![Figure 10.x: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay Developer Studio/IDE](../../images/set-develop-mode.png)
+![Figure 10.4: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay Developer Studio/IDE](../../images/set-develop-mode.png)
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Warning:** Only change the Server Mode
- from within the runtime environment's Liferay settings section. On server
- startup, if Standard mode is set in Liferay Developer Studio/IDE the 
- `portal-developer.properties` file is not included for overriding portal
- properties. 
+![tip](../../images/tip-pen-paper.png) **Warning:** Only change the Server Mode
+from within the runtime environment's Liferay settings section. On server
+startup, if Standard mode is set in Liferay Developer Studio/IDE the 
+`portal-developer.properties` file is not included for overriding portal
+properties. 
 
 ---
 
@@ -356,10 +356,10 @@ options for your `CATALINA_OPTS` variable, in your `setenv.sh` file
 
 ---
 
- ![tip](../../images/tip.png) **Tip:** If you're already using the system
- property `external-properties` to load other properties files, add
- `portal-developer.properties` to the list and use a comma to separate it from
- other entries. 
+![tip](../../images/tip.png) **Tip:** If you're already using the system
+property `external-properties` to load other properties files, add
+`portal-developer.properties` to the list and use a comma to separate it from
+other entries. 
 
 ---
 
@@ -485,11 +485,11 @@ company's name in the footer of your site's pages:
 
     ---
 
-     ![note](../../images/tip-pen-paper.png) **Note:** Let's look more closely
-     at two theme setting variables appearing in the above logic. The
-     `display-slogan-footer` variable holds a boolean value indicating whether
-     to display the version of the footer that contains your slogan. The
-     `slogan` variable holds your slogan text.
+    ![note](../../images/tip-pen-paper.png) **Note:** Let's look more closely
+    at two theme setting variables appearing in the above logic. The
+    `display-slogan-footer` variable holds a boolean value indicating whether
+    to display the version of the footer that contains your slogan. The
+    `slogan` variable holds your slogan text.
 
     ---
 
@@ -512,10 +512,10 @@ company's name in the footer of your site's pages:
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
- up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
- For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd`. When
- referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
+![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
+up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
+For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd`. When
+referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
  
 ---
 
@@ -524,21 +524,21 @@ the *Look and Feel* section of the *Site Administration* &rarr; *Site Pages*
 panel (see the *Creating and Managing Pages* section of [Using Liferay
 Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-liferays-multi-site-capabili-liferay-portal-6-2-user-guide-02-en)).
 
-![Figure 10.4: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+![Figure 10.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
-![Figure 10.5: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+![Figure 10.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties
- hook to display configurable theme settings properly, like the slogan text area
- and footer checkbox from the previous example. For details, see the [Overriding
- a *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
- section found in the *Hooks* chapter of this guide.
+![note](../../images/tip-pen-paper.png) **Note:** Use a language properties
+hook to display configurable theme settings properly, like the slogan text area
+and footer checkbox from the previous example. For details, see the [Overriding
+a *Language.properties*
+File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
+section found in the *Hooks* chapter of this guide.
 
 ---
 
@@ -609,9 +609,9 @@ doctype for the following predefined settings to work correctly.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
- for individual portlets, you can modify the a portlet's `liferay-portlet.xml`
- file.
+![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
+for individual portlets, you can modify the a portlet's `liferay-portlet.xml`
+file.
 
 ---
 
@@ -692,7 +692,7 @@ site's name (i.e., title). But, if you are using a logo that mentions your
 company or site on each site page, you may find the default site name display
 distracting.
 
-![Figure 10.6: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+![Figure 10.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
 
 Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
 as a base theme, you have the following settings available for configuring site
@@ -806,9 +806,9 @@ to include resources with your theme.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** The resources importer can be
- used in any type of plugin project to import resources. Importing resources
- within a theme plugin is just one of the more common use cases.
+![Note](../../images/tip-pen-paper.png) **Note:** The resources importer can be
+used in any type of plugin project to import resources. Importing resources
+within a theme plugin is just one of the more common use cases.
 
 ---
 
@@ -818,7 +818,7 @@ applied out-of-the-box in Liferay CE.) The welcome theme and the pages and
 content that it imports to the default site provide a good example of the
 resources importer's functionality.
 
-![Figure 10.7: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
+![Figure 10.8: The welcome theme uses the resources importer to import pages and content to the default site of a fresh Liferay installation.](../../images/welcome-theme.png)
 
 If it's not already installed, you can download the resources importer
 application from Liferay Marketplace. Search for either *Resources Importer CE*
@@ -829,17 +829,17 @@ Marketplace app.
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
- Liferay Portal instance and don't have the resources importer already deployed,
- you might see a message like this:
+![Tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
+Liferay Portal instance and don't have the resources importer already deployed,
+you might see a message like this:
  
     19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queuing test-theme for deploy because it is missing resources-importer-web
 
- Such a message appears if the resources importer is declared as a dependency in
- your theme's `liferay-plugin-package.properties` file but is not deployed. You
- can deploy the resources importer application to satisfy the dependency or you
- can remove or comment out the dependency declaration if you're not going to use
- the resources importer with your theme (see below).
+Such a message appears if the resources importer is declared as a dependency in
+your theme's `liferay-plugin-package.properties` file but is not deployed. You
+can deploy the resources importer application to satisfy the dependency or you
+can remove or comment out the dependency declaration if you're not going to use
+the resources importer with your theme (see below).
 
 ---
 
@@ -874,12 +874,12 @@ into a site template, you can specify the following in your
 
 ---
 
- ![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
- themes for Liferay Marketplace, don't configure your theme to import resources
- directly into a site. Instead, use the default: import the resources into a
- site template. Do this by commenting out the
- `resources-importer-target-class-name` property. This way, it'll be much safer
- to deploy your theme to a production Liferay instance.
+![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
+themes for Liferay Marketplace, don't configure your theme to import resources
+directly into a site. Instead, use the default: import the resources into a
+site template. Do this by commenting out the
+`resources-importer-target-class-name` property. This way, it'll be much safer
+to deploy your theme to a production Liferay instance.
 
 ---
 
@@ -1248,7 +1248,7 @@ a layout template called *Columns 1 4 1*.
 
 5.  Click *Finish*. 
 
-![Figure 10.8: Creating a new layout template project is easy with Liferay Developer Studio.](../../images/layout-template-new-project.png)
+![Figure 10.9: Creating a new layout template project is easy with Liferay Developer Studio.](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
 and execute the *create* script in your terminal. Here's the generic version of
@@ -1308,7 +1308,7 @@ Let's see what each template file does:
   thumbnail image, but you can use the default PNG for layout templates as a
   starting point.
 
-![Figure 10.9: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
+![Figure 10.10: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
 
 Let's move on to Liferay configuration files.
 
@@ -1442,7 +1442,7 @@ Now that we've discussed how layout template TPL files are designed, let's
 convert the 1 2 1 column template that we presented above into our 1 4 1 column
 template.
 
-![Figure 10.10: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
+![Figure 10.11: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
 
 1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
    *columns-1-4-1*.
@@ -1515,7 +1515,7 @@ First, specify some attributes of the embedded portlet:
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
 
-![Figure 10.11: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure 10.12: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
 Here's a description of the portlets we're embedding in the layout:
 
@@ -1573,7 +1573,7 @@ What would a page using our *Columns 1 4 1* layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
 portals. 
 
-![Figure 10.12: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
+![Figure 10.13: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 See how simple it is to embed portlets in your pages? 
 
