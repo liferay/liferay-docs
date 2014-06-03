@@ -582,6 +582,7 @@ functionality, which it's currently inheriting from its parent class,
 1. Open `GuestbookPortlet.java` and place the following method below your
 `addEntry` method: 
 
+```
 	@Override
 	public void render (RenderRequest renderRequest, RenderResponse renderResponse) 
             throws PortletException, IOException {
@@ -600,13 +601,15 @@ functionality, which it's currently inheriting from its parent class,
 		super.render(renderRequest, renderResponse);
 		
 	}
+```
 
 This method retrieves the array of guestbook entries from portlet preferences,
 converts it to a `List` of `Entry` objects, and places that `List` into the
 request object. It then calls the parent class's `render` method. 
 
 2. Beneath the `render` method, place the following method that does the
-conversion of the array to a `List` of your model objects: 
+conversion of the array to a `List` of your model objects: .
+```
 
 	private List<Entry> parseEntries (String[] guestbookEntries) {
 		
@@ -620,6 +623,7 @@ conversion of the array to a `List` of your model objects:
 
 		return entries;
 	}
+```
 
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (^) character. 
@@ -661,10 +665,11 @@ tags.
 
 6. Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
-
+```
 	<liferay-ui:search-container-results
 		results="<%= entries %>"
 	/>
+```
 
 You're done! Save your work, deploy your application, and try adding some
 guestbook entries. 
