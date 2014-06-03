@@ -297,20 +297,20 @@ Now comes the really fun part: making the carousel your own!
         </div>
 
         <aui:script>
-         AUI().use(
-           'aui-carousel',
-           function(Y) {
-            new Y.Carousel(
-              {
-                contentBox: '#myCarousel',
-                height: 250,
-                width: 700,
-                intervalTime: 2,
-                animationTime: 1,
-                activeIndex: 0,
-                bounding box: '#myCarousel'  
-              }
-            ).render();
+        AUI().use(
+          'aui-carousel',
+          function(Y) {
+           new Y.Carousel(
+             {
+               contentBox: '#myCarousel',
+               height: 250,
+               width: 700,
+               intervalTime: 2,
+               animationTime: 1,
+               activeIndex: 0,
+               boundingBox: '#myCarousel'
+             }
+           ).render();
           }
         );
         </aui:script>
@@ -335,115 +335,111 @@ Now comes the really fun part: making the carousel your own!
 
 2.  Open the `main.css` file and replace its code with the following CSS, to
     style the carousel:
-       
+
         /* styling for the carousel body */
-        div.carousel-item 
-        {
-           width: 700px;
-           height: 250px;
-           border-radius: 6px 6px 0 6px;
+        div.carousel-item {
+            width: 700px;
+            height: 250px;
+            border-radius: 6px 6px 0 6px;
+            opacity: 100;
         }
-        
+
         /* styling for the boundingBox and ContentBox(in this case) */
-        #myCarousel
-        {
-           /* centers the carousel in the middle of the portlet */
-           margin:0 auto 40px;
+        #myCarousel {
+            margin: 0 auto 40px;
         }
-        
+
         /* styling for div with id image1 */
-        #image1
-        {
-           background-image: url("../img/moon");
+        #image1 {
+            background: url("../img/moon.jpg"); 
         }
-        
+
         /* styling for div with id image2 */
-        #image2
-        {
-           background-image: url("../img/thor");
+        #image2 {
+            background: url("../img/thor.jpg"); 
         }
-        
+
         /* styling for div with id image3 */
-        #image3
-        {
-           background-image: url("../img/toy");
+        #image3 {
+            background: url("../img/toy.jpg"); 
         }
-        
+
         /* styling for div with id image4 */
-        #image4
-        {
-           background-image: url("../img/spock");
+        #image4 {
+            background: url("../img/spock.jpg"); 
         }
-        
+
         /* Pause Button */
-        #myCarousel menu li a.carousel-menu-item.carousel-menu-pause{
-           background-image: url("../img/icons.png");
-           background-position: 0 43px;
-           height: 20px;
-           width: 20px;
-           border-radius:90px; /* in this case I have a circular icon */
+        #myCarousel menu li a.carousel-menu-item.carousel-menu-pause {
+            background-image: url("../img/icons.png");
+            background-position: 0 43px;
+            height: 20px;
+            width: 20px;
+            border-radius: 90px;
         }
-        
+
         /* Play Button */
-        #myCarousel menu li a.carousel-menu-item.carousel-menu-play{
-           background-image: url("../img/icons.png");
-           background-position: 20 43px;
-           height: 20px;
-           width: 20px;
-           border-radius:90px; /* in this case I have a circular icon */
+        #myCarousel menu li a.carousel-menu-item.carousel-menu-play {
+            background-image: url("../img/icons.png");
+            background-position: 20px 43px;
+            height: 20px;
+            width: 20px;
+            border-radius: 90px;
         }
-        
+
         /* Prev Button */
-        #myCarousel menu li a.carousel-menu-item.carousel-menu-prev{
-           background-image: url("../img/icons.png");
-           background-position: 0 64px;
-           height: 20px;
-           width: 20px;
-           border-radius:90px; /* in this case I have a circular icon */
+        #myCarousel menu li a.carousel-menu-item.carousel-menu-prev {
+            background-image: url("../img/icons.png");
+            background-position: 0 64px;
+            height: 20px;
+            width: 20px;
+            border-radius: 90px;
         }
-        
+
         /* Next Button */
-        #myCarousel menu li a.carousel-menu-item.carousel-menu-next{
-           background-image: url("../img/icons.png");
-           background-position: 21px 0;
-           height: 20px;
-           width: 20px;
-           border-radius:90px; /* in this case I have a circular icon */
+        #myCarousel menu li a.carousel-menu-item.carousel-menu-next {
+            background-image: url("../img/icons.png");
+            background-position: 21px 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 90px;
         }
-        
+
         /* active index indicator */
-        #myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index.carousel-menu-active{
-           background-image: url("../img/icons.png");
-           background-position: 21px 22px;
-           width: 20px;
-           height: 20px;
+        #myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index.carousel-menu-active {
+            background-image: url("../img/icons.png");
+            background-color: rgba(0,0,0,0); 
+            background-position: 21px 22px; 
+            width:20px;
+            height:20px;
         }
-        
+
         /* inactive index indicator */
         #myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index {
-           background-image: url("../img/icons.png");
-           background-position: 0 22px;
-           width: 20px;
-           height: 20px;
+            background-image: url("../img/icons.png");
+            background-color: rgba(0,0,0,0); 
+            background-position: 0px 22px; 
+            width:20px;
+            height:20px;
         }
-        
+
         /* Menu Bar */
         #myCarousel menu {
-           background: none repeat scroll 0 0 #0000C0;
-           border-bottom: 3px solid #00CCE0;
-           border-radius: 0 0 15px 15px;
-           bottom: auto;
-           display: table;
-           left: 518 px;
-           padding: 1% 0;
-           right: 0;
-           top: 250px;
-           width: 26%
+            background: none repeat scroll 0 0 #0000C0;
+            border-bottom: 3px solid #00CCE0;
+            border-radius: 0 0 15px 15px;
+            bottom: auto;
+            display: table;
+            left: 518px;
+            padding: 1% 0;
+            right: 0;
+            top: 250px;
+            width: 26%;
         }
-        
-        /* List of menu controls */
+
+        /* List of menu buttons */
         #myCarousel menu li {
-           float: inherit;
+            float: inherit;
         }
                         
 Let's breakdown the CSS that styles the body of the carousel. The code starts 
@@ -455,6 +451,7 @@ edges with the `border-radius` property.
         {
            width: 700px;
            height: 250px;
+           border-radius: 6px 6px 0 6px;
            border-radius: 6px 6px 0 6px;
         }
                 
@@ -477,25 +474,25 @@ file, which reside in the `../img/` directory.
         /* styling for div with id image1 */
         #image1
         {
-           background-image: url("../img/moon");
+           background-image: url("../img/moon.jpg");
         }
         
         /* styling for div with id image2 */
         #image2
         {
-           background-image: url("../img/thor");
+           background-image: url("../img/thor.jpg");
         }
         
         /* styling for div with id image3 */
         #image3
         {
-           background-image: url("../img/toy");
+           background-image: url("../img/toy.jpg");
         }
         
         /* styling for div with id image4 */
         #image4
         {
-           background-image: url("../img/spock");
+           background-image: url("../img/spock.jpg");
         }
 
 Now that we've covered the styling for the carousel's body, it's time to
@@ -557,6 +554,7 @@ buttons where exactly on the image they are located.
         /* Prev Button */
         #myCarousel menu li a.carousel-menu-item.carousel-menu-prev{
            background-image: url("../img/icons.png");
+           background-color: rgba(0,0,0,0); 
            background-position: 0 64px;
            height: 20px;
            width: 20px;
@@ -566,6 +564,7 @@ buttons where exactly on the image they are located.
         /* Next Button */
         #myCarousel menu li a.carousel-menu-item.carousel-menu-next{
            background-image: url("../img/icons.png");
+           background-color: rgba(0,0,0,0); 
            background-position: 21px 0;
            height: 20px;
            width: 20px;
@@ -624,7 +623,7 @@ Here is an example of a customized carousel using the configuration above:
 ![Figure 12.4: Image carousels can be customized. Here is an example of a customized carousel, using the scripting above.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the customized portlet at 
-<https://github.com/liferay/liferay-docs/tree/master/code/12-working-with-alloyUI/customized-carousel-portlet>
+<https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet>
 
 Now that you've gotten your feet wet using AlloyUI, let's go over setting up the 
 AlloyUI project for creating your own AlloyUI components. 
