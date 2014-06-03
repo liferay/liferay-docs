@@ -1,0 +1,105 @@
+/* styling for the carousel body */
+div.carousel-item {
+    border-radius: 6px 6px 0 6px;
+    height: 250px;
+    opacity: 100;
+    width: 700px;
+}
+
+/* styling for the boundingBox and ContentBox(in this case) */
+#myCarousel {
+    margin: 0 auto 40px;
+}
+
+/* styling for div with id image1 */
+#image1 {
+    background: url("../img/moon.jpg"); 
+}
+
+/* styling for div with id image2 */
+#image2 {
+    background: url("../img/thor.jpg"); 
+}
+
+/* styling for div with id image3 */
+#image3 {
+    background: url("../img/toy.jpg"); 
+}
+
+/* styling for div with id image4 */
+#image4 {
+    background: url("../img/spock.jpg"); 
+}
+
+/* Prev Button */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-prev {
+    background-image: url("../img/icons.png");
+    background-position: 0 64px;
+    height: 20px;
+    width: 20px;
+    border-radius: 90px;
+}
+
+/* Next Button */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-next {
+    background-image: url("../img/icons.png");
+    background-position: 21px 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 90px;
+}
+
+/* Pause Button */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-pause {
+    background-image: url("../img/icons.png");
+    background-position: 0 43px;
+    height: 20px;
+    width: 20px;
+    border-radius: 90px;
+}
+
+/* Play Button */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-play {
+    background-image: url("../img/icons.png");
+    background-position: 20px 43px;
+    height: 20px;
+    width: 20px;
+    border-radius: 90px;
+}
+
+/* active index indicator */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index.carousel-menu-active {
+    background-image: url("../img/icons.png");
+    background-color: rgba(0,0,0,0); 
+    background-position: 21px 22px; 
+    width:20px;
+    height:20px;
+}
+
+/* inactive index indicator */
+#myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index {
+    background-image: url("../img/icons.png");
+    background-color: rgba(0,0,0,0); 
+    background-position: 0px 22px; 
+    width:20px;
+    height:20px;
+}
+
+/* Menu Bar */
+#myCarousel menu {
+    background: none repeat scroll 0 0 #0000C0;
+    border-bottom: 3px solid #00CCE0;
+    border-radius: 0 0 15px 15px;
+    bottom: auto;
+    display: table;
+    left: 518px;
+    padding: 1% 0;
+    right: 0;
+    top: 250px;
+    width: 26%;
+}
+
+/* List of menu buttons */
+#myCarousel menu li {
+	float:inherit;
+}
