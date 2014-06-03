@@ -953,11 +953,8 @@ available for use. These include the following beans:
 - `userService`
 - `userPersistence`
 
-It's a best practice to use the injected class's `increment` method rather than
-calling Liferay's `CounterLocalService`'s `increment` method since using the
-injected class does not require an extra database transaction. Calling Liferay's
-`CounterLocalServiceUtil` class, on the other hand, does require an extra
-database transaction. 
+You can use either the injected class's `increment` method or you can call
+Liferay's `CounterLocalService`'s `increment` method directly.
 
     long eventId = counterLocalService.increment(Event.class.getName());
 
