@@ -6,7 +6,9 @@ you change how a core portlet of Liferay behaves without changing the portlet
 itself. Hook plugins are your best tool for leveraging this architecture to 
 customize portal service behavior. 
 
-This tutorial shows you how to implement a hook that modifies a portal service.
+This tutorial shows you how to modify a portal service using a hook. At the end, 
+you'll have a hook that overrides Liferay's `UserLocalService` to print out the 
+user Id.
 
 ## Implementing the Portal Service Override
 
@@ -34,13 +36,13 @@ then extend `BaseSanitizer`.
 Liferay generates dummy wrapper classes for all its services. For example,
 `UserLocalServiceWrapper` is created as a wrapper for `UserLocalService`, a
 service for adding, removing, and retrieving user accounts. To modify the
-functionality of `UserLocalService` from our hook, create a class that extends
+functionality of `UserLocalService` from your hook, create a class that extends
 `UserLocalServiceWrapper`, override the methods you want to modify, and instruct
 Liferay to use your service class instead of the original. 
 
-1.  Inside your example-hook project's
-    `/docroot/WEB-INF/src/com/liferay/sample/hook` folder, create a new file
-    called `MyUserLocalServiceImpl.java` with the following content:
+1.  In your hook project, create the directory
+    `/docroot/WEB-INF/src/com/liferay/sample/hook`. Inside that directory, 
+    create a file called `MyUserLocalServiceImpl.java` with this content:
 
         package com.liferay.sample.hook;
     
@@ -108,5 +110,5 @@ the *Javadocs* link.
 
 ## Next Steps
 
-Now that you know how to override a portal service, let's learn how to override
-a `Language.properties` file.
+Now that you know how to override a portal service, you're ready to learn how to 
+perform a custom action by extending a `Language.properties` file.
