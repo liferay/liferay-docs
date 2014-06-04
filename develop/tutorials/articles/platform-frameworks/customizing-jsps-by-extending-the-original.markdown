@@ -37,39 +37,42 @@ while leaving the original JSP untouched. Let's get started!
 6. Open the JSP file `docroot/META-INF/custom_jsps/[JSP_file's_path]` that
    Liferay IDE pulled into your project. 
 
-   Use the `<liferay-util:buffer>` tag, from Liferay's *util* taglib to include
-   the original Liferay JSP and assign the JSP's content to a buffer variable.
-   Assigning the content to a buffer variable enables you to manipulate the
-   original content as a string. 
+    Use the `<liferay-util:buffer>` tag, from Liferay's *util* taglib to include
+    the original Liferay JSP and assign the JSP's content to a buffer variable.
+    Assigning the content to a buffer variable enables you to manipulate the
+    original content as a string. 
 
     For example, you can assign the content of the Liferay JSP to a variable
     named `html`: 
 
         <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-		<%@ page import="com.liferay.portal.kernel.util.StringUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.StringUtil" %>
 
-		<liferay-util:buffer var="html">
-			<liferay-util:include page="/html/[JSP_file's_path]" />
-		</liferay-util:buffer>
+        <liferay-util:buffer var="html">
+            <liferay-util:include page="/html/[JSP_file's_path]" />
+        </liferay-util:buffer>
 
-   Add more content before and/or after the original JSP's content via the
-   buffer variable. For example, you can import Liferay's
-   [`StringUtil`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/StringUtil.html)
-   class and use it to prepend or append content to the buffer variable, like
-   this: 
+    If you use the buffer assignment from the snippet above, make sure to
+    replace `[JSP_file's_path]` with the Liferay JSP's path. 
 
-		<%
-		html = StringUtil.add(
-			"Stuff I'm adding BEFORE the original content",
-			html,
-			"\n");
+    Add more content before and/or after the original JSP's content via the
+    buffer variable. For example, you can import Liferay's
+    [`StringUtil`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/StringUtil.html)
+    class and use it to prepend or append content to the buffer variable, like
+    this: 
 
-		html = StringUtil.add(
-			html,
-			"Stuff I'm adding AFTER the original content",
-			"\n");
-		%>
+        <%
+        html = StringUtil.add(
+            "Stuff I'm adding BEFORE the original content",
+            html,
+            "\n");
+
+        html = StringUtil.add(
+            html,
+            "Stuff I'm adding AFTER the original content",
+            "\n");
+        %>
 
     After adding your desired content to the original content, evaluate the
     buffer variable as an expression. For example, to evaluate a buffer variable
