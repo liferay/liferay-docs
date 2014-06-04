@@ -1255,13 +1255,13 @@ dependencies, or both. Regardless, the project cannot be created and the dreaded
 
 There are two ways to resolve this problem:
 
-1. Get out from behind the proxy. This isn't always possible.
+1. Get out from behind the proxy. This isn't always possible or desirable.
 
 2. Download the Ivy cache manually from [this link](http://files.liferay.org.es/staged/public-files/liferay-ide/dependencies/files/ivy-cache.zip) and unzip it to your Plugins 
-   SDK. If there is an existing `.ivy` folder in your Plugins SDK, be sure that 
-   it gets replaced with the one you extract from `ivy-cache.zip`.
+   SDK. If there is an existing `.ivy` folder in your Plugins SDK, make sure
+   that it gets replaced with the one you extract from `ivy-cache.zip`.
 
-You should now be able to create Liferay projects. Next, let's create a plugin 
+You're now be able to create Liferay projects. Next, let's create a plugin 
 using the Plugins SDK from a terminal environment. 
 
 ### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
