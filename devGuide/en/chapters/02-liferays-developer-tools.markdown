@@ -157,7 +157,7 @@ After restarting Eclipse, you can verify that Liferay IDE is installed by going
 to *Help* &rarr; *About Eclipse* and finding the Liferay IDE icon badge. 
 
 You an also install both Liferay IDE and Eclipse from a single package 
-installer. To do so, just download the zip file for your operating system from 
+installer. To do so, just download the ZIP file for your operating system from 
 [http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/). 
 
 Let's set up Liferay IDE now that you have it installed. 
@@ -267,8 +267,8 @@ chapter of *Using Liferay Portal 6.2*.
 7.  If you haven't created a server, create one now from the *Servers* view in 
     Liferay IDE; then you can test the server. Note that you need to be in the 
     Liferay perspective of Eclipse to see the Servers view. You can get there by 
-    selecting Window &rarr; Open Perspective &rarr; Other... and then selecting 
-    Liferay from the list.
+    selecting *Window* &rarr; *Open Perspective* &rarr; *Other...* and then
+    selecting *Liferay* from the list.
 
     ![Figure 2.4: If you haven't created a Liferay server yet, you can do so from the *Servers* tab in Liferay IDE.](../../images/ide-add-new-server.png)
 
