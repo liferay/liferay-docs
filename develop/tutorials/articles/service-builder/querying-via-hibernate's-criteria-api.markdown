@@ -23,12 +23,14 @@ using Service Builder. To define a query via Liferay's Dynamic Query API, you
 need to take two steps:
 
 1. Define a custom `findBy...` finder method in `[Entity]FinderImpl.java` and
-   run Service Builder. This custom `findBy...` method is where you'll create
-   your dynamic query. For example, if your custom entity is called `Guestbook`,
-   then you'd define your your custom `findBy...` finder method in
+   run Service Builder. For example, if your custom entity is called
+   `Guestbook`, then you'd define your your custom `findBy...` finder method in
    `GuestbookFinderImpl.java` and then run Service Builder.
 
-2. Add a `findBy...` method to `[Entity]LocalServiceImpl.java` that calls the
+2. Create your dynamic query in your custom `findBy...` method using Liferay's
+   Dynamic Query API.
+
+3. Add a `findBy...` method to `[Entity]LocalServiceImpl.java` that calls the
    `findBy...` method that Service Builder generated in
    `[Entity]FinderUtil.java`. Since `[Entity]FinderUtil.java` is generated in
    the `persistence` package, it's a best practice not to call it directly but
