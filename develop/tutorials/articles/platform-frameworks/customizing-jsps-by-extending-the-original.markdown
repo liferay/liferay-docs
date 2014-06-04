@@ -1,5 +1,9 @@
 # Customizing JSPs by Extending the Original
 
+<!-- An ending test plugin can be found at:
+https://github.com/liferay/liferay-docs/develop/tutorials/code/plat-fws/extend-jsp/end/extend-original-jsp-hook
+-->
+
 Let's say you want to add more content to one of Liferay's JSPs, but you also
 want to benefit from any changes made to it as you upgrade Liferay. Rather
 than overwriting the JSP, you can simply create a new JSP in a hook and include
