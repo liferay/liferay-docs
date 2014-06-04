@@ -35,12 +35,12 @@ while leaving the original JSP untouched. Let's get started!
    the Liferay Portal JSP into your project so you can modify it. 
 
 6. Open the JSP file `docroot/META-INF/custom_jsps/[JSP_file's_path]` that
-   Liferay IDE pulled into your project. 
+   Liferay IDE pulled into your project and delete its content. 
 
     Use the `<liferay-util:buffer>` tag, from Liferay's *util* taglib to include
     the original Liferay JSP and assign the JSP's content to a buffer variable.
     Assigning the content to a buffer variable enables you to manipulate the
-    original content as a string. 
+    original Liferay JSP content as a string. 
 
     For example, you can assign the content of the Liferay JSP to a variable
     named `html`: 
@@ -54,7 +54,14 @@ while leaving the original JSP untouched. Let's get started!
         </liferay-util:buffer>
 
     If you use the buffer assignment from the snippet above, make sure to
-    replace `[JSP_file's_path]` with the Liferay JSP's path. 
+    replace `[JSP_file's_path]` with the Liferay JSP's path. Hint: In Liferay
+    IDE, the JSP file's path is listed as the value for the *Liferay Portal JSP*
+    in the Custom JSPs section of the Liferay Hook Configuration of
+    `liferay-hook.xml` in Overview mode. 
+
+    **Important:** Add `.portal` to the JSP file's name, before the `.jsp`
+    suffix. For example, if the original JSP's name is `search.jsp`, specify
+    `search.portal.jsp`. 
 
     Add more content before and/or after the original JSP's content via the
     buffer variable. For example, you can import Liferay's
