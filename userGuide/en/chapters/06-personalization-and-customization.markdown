@@ -67,8 +67,10 @@ will be automatically created for new users. There are number of portal
 properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the portlets that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
-the Default User Public Layouts and Default User Private Layouts sections of
-chapter 20 for details.
+the Default User Public Layouts and Default User Private Layouts sections of the
+`portal.properties` file for details. You can find an HTML version of the this
+file here:
+[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 
 ---
 
