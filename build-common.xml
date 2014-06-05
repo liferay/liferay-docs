@@ -16,12 +16,11 @@ English markdown, html, odt, and epub documents.
 	<property name="project.dir" value=".." />
 
 	<path id="lib.classpath">
-		<fileset dir="${basedir}/lib" includes="*.jar" />
-		<fileset dir="${basedir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 	</path>
 
 	<path id="project.classpath">
-		<pathelement path="${classpath}" />
 		<path refid="lib.classpath" />
 	</path>
 
@@ -66,17 +65,6 @@ English markdown, html, odt, and epub documents.
 	</taskdef>
 
 	<taskdef name="cleanimgs" classname="com.liferay.documentation.util.CleanImagesTask">
-		<classpath>
-			<fileset dir="${project.dir}/lib" includes="*.jar" />
-			<!-- Use below instead of above fileset when testing changes to classes
-			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
-			-->
-
-			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
-		</classpath>
-	</taskdef>
-
-	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -312,8 +300,14 @@ English markdown, html, odt, and epub documents.
     <target name="markdown-to-all-win" depends="markdown-to-html-win,markdown-to-odt-win,markdown-to-epub-win" description="converts markdown file to html, odt, and epub files on windows" />
 
 	<target name="number-headers" depends="check-doc-props" description="numbers the headers of markdown files found in ${lang}/chapters/">
-		<numberheaders lang="${lang}" docDir="${doc.dir}">
-		</numberheaders>
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="${lang}"/>
+		</java>
 	</target>
 
 	<target name="number-images-dir" description="numbers the images of markdown files found in ${lang}/chapters/">

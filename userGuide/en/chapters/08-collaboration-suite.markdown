@@ -1805,7 +1805,7 @@ The Chat portlet displays the number of your friends who are online. Click the
 You can have multiple chats open at a time, and can have one or more of them
 minimized.
 
-### Filtering Available Users
+### Filtering Available Users [](id=filtering-available-users-liferay-portal-6-2-user-guide-08-en)
 
 By default, all online portal users appear in the Chat portlet. If you want to
 filter who appears in your contact list you can, but the configuration must be

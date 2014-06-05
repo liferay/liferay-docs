@@ -641,12 +641,54 @@ Social Office's private messaging system allows you to send email-like messages
 to other users within the portal. Its interface is similar to that of an email
 client. Messages are aggregated by thread, with the most recent message
 displayed. You can select messages to mark them as read or unread or to delete
-them. Use the *New Message* button to compose a new message.  Just like with
-email, you can enter a subject, a message body, and add attachments.  Open the
+them. Use the *New Message* button to compose a new message. Just like with
+email, you can enter a subject, a message body, and add attachments. Open the
 dropdown menu next to the *To* field to select a user or users to send your
 message to. You can select any number of users.
 
 ![Figure 1.x: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messages-inbox.png)
+
+By default, all portal users are available in the *To* field of the Private
+Messaging portlet. You can filter the set of available users by social
+connection status or site membership. However, this configuration must be done
+by a server administrator since this configuration must be made to the Private
+Messaging portlet before it's deployed.
+
+To filter users, create a `portlet-ext.properties` file to override some
+properties of your Private Messaging portlet's `portlet.properties` file. Don't
+modify your Private Messaging portlet's `portlet.properties` file directly. It's
+a best practice to override it instead of modifying it.
+
+Before you deploy your Private Messaging portlet, extract it to a location of
+your choosing on your file system. Create the `portlet-ext.properties` file in
+the `private-messaging-portlet/WEB-INF/src` directory. It gets copied over to
+your `private-messaging-portlet/WEB-INF/classes` directory upon deployment. When
+you're finished making changes to your `portlet-ext.properties` file, zip the
+directory structure back into a `.war` file. Once, you've zipped the Private
+Messaging portlet back up, it's ready to be deployed. Note that the Private
+Messaging portlet must be redeployed in order for the settings in the
+`portlet-ext.properties` file to take effect. 
+
+The property that allows you to refine the users that appear in the *To* field
+of a message is `autocomplete.recipient.type`. The possible settings for this
+property are listed here:
+
+		autocomplete.recipient.type=all
+		autocomplete.recipient.type=connection
+		autocomplete.recipient.type=site
+
+The default value is `all`. To only make social connections available in the
+*To* field of a message, set the property to `connection`. Setting the property
+to `site` restricts the users available in the *To* field of a message to fellow
+site members. You can also further refine the `site` setting by using the
+property `autocomplete.recipient.site.excludes`. This property allows you to
+exclude specific sites in your portal from the
+`autocomplete.recipient.type=site` setting. This is especially useful if you
+have a default site that all portal users belong to, but you still want to
+filter the users available in the *To* field of a message by site. For example,
+if you want to exclude a site named *Default*, enter
+`autocomplete.recipient.site.excludes=Default`. That site is then ignored when
+determining the users that are available in the *To* field of a message.
 
 #### Private Document Library
 
@@ -995,3 +1037,19 @@ first log in to your portal as an administrator after installing Social Office
 to grant the Social Office User role to users. The Social Office User provides
 access to the Dashboard home page, the public Profile page, and all of their
 applications. You're now ready to use Social Office!
+
+## Upgrading from Social Office 3.0.0 to 3.0.1
+
+Before upgrading from Social Office 3.0.0 to 3.0.1, make sure to set
+`hot.undeploy.on.redeploy=true` in your `portal-ext.properties` file. This
+property makes Liferay completely undeploy a plugin before deploying a new
+version of the plugin. If you don't set `hot.undeploy.on.redeploy=true` before
+upgrading, the upgrade might not correctly handle activities. Setting
+`hot.undeploy.on.redeploy=true` ensures that activities are handled correctly.
+See the following issues for more details:
+
+[SOS-2158](https://issues.liferay.com/browse/SOS-2158)
+[SOS-2159](https://issues.liferay.com/browse/SOS-2159)
+[SOS-2160](https://issues.liferay.com/browse/SOS-2160)
+
+After installing the new version of Social Office, you're all set!
