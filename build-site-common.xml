@@ -72,7 +72,7 @@
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
-			<fileset dir="./" includes="landing-page.markdown" />
+			<fileset dir="./" includes="home.markdown" />
 		</zip>
 	</target>
 
