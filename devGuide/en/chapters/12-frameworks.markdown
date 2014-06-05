@@ -565,15 +565,15 @@ of this method:
             WebKeys.THEME_DISPLAY);
             long scopeGroupId = themeDisplay.getScopeGroupId();
 
-    -   `name`: The name of the resource as specified in the XML file of the
-        previous sections. 
-    -   `primKey`: The primary key of the resource. In this example the resource
-        doesn't exist as an entry in the database, so we use the `groupId`
-        again. If we were checking for a permission on a given blog entry, we'd
-        use the primary key of that blog entry instead. 
-    -   `actionId`: The name of the action as it appears in the XML file. To
-        simplify searching for usages, consider creating a helper class that has
-        constants for all the actions defined. 
+-   `name`: The name of the resource as specified in the XML file of the
+    previous sections. 
+-   `primKey`: The primary key of the resource. In this example the resource
+    doesn't exist as an entry in the database, so we use the `groupId` again. If
+    we were checking for a permission on a given blog entry, we'd use the
+    primary key of that blog entry instead. 
+-   `actionId`: The name of the action as it appears in the XML file. To
+    simplify searching for usages, consider creating a helper class that has
+    constants for all the actions defined. 
 
 In the examples above, we're assuming there's a variable called
 `permissionChecker` already available. Liferay automatically creates a
