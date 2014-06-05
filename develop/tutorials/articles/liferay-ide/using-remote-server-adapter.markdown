@@ -71,6 +71,10 @@ To configure the Remote Server Adapter, use the following steps:
 
     ![Figure 1: Configure the remote Liferay server's information.](../../images/remote_server_adapter_wizard_1.png)
 
+    <!-- TODO update screenshot to select remote 6.2 server type, enter an IP
+    address for host name, and an arbitrary server name like Liferay at IP as
+    you suggest to the reader --> 
+
 4.  The New Server wizard's next page directs you to define the Liferay
     Portal runtime stub. Doing so allows projects created for your remote server
     to use the runtime stub for satisfying JAR dependencies needed to compile
@@ -90,7 +94,10 @@ To configure the Remote Server Adapter, use the following steps:
     set to the defaults unless these values were changed for your remote Liferay
     Portal instance.  
 
-6.  Your remote Liferay Portal instance needs the Remote IDE Connector
+6.  <!-- Should add the remote IDE connector to remote server before configuring
+    connectivity to it. Jim --> 
+
+    Your remote Liferay Portal instance needs the Remote IDE Connector
     application installed; otherwise, Liferay IDE can't connect to it. If you
     haven't installed Liferay IDE Connector yet, click the *Remote IDE Connector*
     link in the wizard. If you already downloaded the Remote IDE Connector
@@ -135,6 +142,10 @@ server adapter!
 
 ## Using the Remote Server Adapter
 
+<!-- The content on deploying plugins to the server in IDE can be simplified to
+drag-and-drop and added/mentioned to the previous section. They just deploy the
+plugin as they normally would in IDE. Jim -->
+
 Once your remote Liferay Portal server is correctly configured and your local
 Liferay IDE is connected to it, you can begin publishing projects to it and
 using it as you would a local Liferay Portal server. 
@@ -157,7 +168,12 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
     immediately. If publication to the remote server was successful, your
     console displays a message that the plugin was successfully deployed!
 
-3.  As you make changes to your plugin project, republish them so they take
+3.  <!-- This content on the server's plugin deployment configuration should be
+    added to the previous section--see the current last step that mentions
+    plugin deployment on the server. But, in addition, please add a screenshot
+    of the server's configuration screen. Jim -->   
+
+    As you make changes to your plugin project, republish them so they take
     effect on the remote server. To set your remote server's publication
     behavior, double click your remote server in the *Servers* tab. You can
     choose to automatically publish resources after changes are made,
@@ -169,6 +185,8 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 Great! Now that you know how to use Liferay IDE to deploy plugin projects to 
 remote servers, you can more easily integrate your remote portal instances into 
 your testing workflow. 
+
+<!-- We're not using transitions between tutorials. Please remove. Jim -->
 
 ## Next Steps    
 
