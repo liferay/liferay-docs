@@ -893,6 +893,8 @@ Twitter field. Alternatively, from the Dockbar select *User* &rarr; *My Account*
 &rarr; *Social Network* and then enter your Twitter username in the Twitter 
 field.
 
+![Figure 9.x: Register your Twitter account.](../../images/social-network-accounts.png)
+
 It's important to note that your tweets are displayed *only* in an Activities 
 portlet. If you want your tweets to show up on a page, there must be an 
 Activities portlet on it. Also, you need to wait a few minutes after registering 
@@ -902,6 +904,8 @@ that you originally made them. Therefore, if you haven't tweeted in a while,
 then your tweets might be pushed off the Activities feed by more recent 
 activity. You can change the number of items shown in the Activities feed in the 
 portlet's Configuration.
+
+![Figure 9.x: Your tweets are displayed in an Activities portlet.](../../images/activities-feed-tweets.png)
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-09-en)
 
