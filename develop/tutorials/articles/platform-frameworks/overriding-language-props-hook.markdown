@@ -9,7 +9,12 @@ the messages you want to customize, then refer to that file from your
 
 This tutorial illustrates this process by showing you how to use a hook to 
 override the title of Liferay's Sign In portlet. First, it's useful to know 
-where you can find the default Language files and the messages they contain.
+where you can find the default Language files and the messages they contain. Go 
+ahead and get started!
+
+![Figure 1: The default Sign In portlet.](../../images/default-sign-in.png)
+
+![Figure 2: The overridden Sign In portlet.](../../images/override-sign-in-en.png)
 
 ## Locating the Default Language Keys
 
@@ -17,59 +22,60 @@ Liferay's default Language files are in the `WEB-INF/lib/portal-impl.jar/content
 folder of the Liferay Portal deployment on your app server. You can also view 
 these on [Github](https://github.com/liferay/liferay-portal). The Language files 
 contain Liferay's default language keys. Each file corresponds to a language 
-supported by Liferay. The specific language is indicated by the file name. For 
-example, `Language_en.properties` contains the English language keys, 
-`Language_es.properties` contains the Spanish language keys, 
+supported by Liferay. For example, `Language_en.properties` contains the English 
+language keys, `Language_es.properties` contains the Spanish language keys, 
 `Language_fr.properties` contains the French language keys, and so on.
 
 A common language key to override is `javax.portlet.title.58`. The value of this 
 language key is the title of the Sign In portlet. The next steps show you how to 
 use a hook to override it.
 
-## Creating Language.properties Files
+## Creating Language Files
 
 Once you have created a hook project, you need to create the Language files and 
 their contents. The steps here show you how to do this in Liferay IDE. If you're 
-developing from the command line, you can just use the information in steps 2 
-and 3 to manually create the Language files, the file path they reside in, and 
-their contents.
+developing from the command line, you can use the information in steps 2 and 3 
+to manually create the Language files, the file path they reside in, and their 
+contents.
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-	tutorial *Creating a Hook*.
+	*Creating a Hook* tutorial.
 
 2.  In Liferay IDE, right click your hook project and select 
 	*New* &rarr; *Liferay Hook Configuration*. In the window that appears, check 
 	the *Language properties* check box and click *Next*.
 	
-	![Insert Screenshot]()
+	![Figure 3: Language properties is checked in the Liferay Hook Configuration wizard.](../../images/new-hook-configuration-language.png)
 
-3.	Accept the default path for the content folder 
-	(`docroot/WEB-INF/src/content`). Click *Add* and add the files 
-	`Language.properties`, `Language_en.properties`, and 
-	`Language_es.properties`. Then click *Finish*.
+3.	Accept the default path of `docroot/WEB-INF/src/content` for the content 
+	folder. Click *Add* and add the files `Language.properties`, 
+	`Language_en.properties`, and `Language_es.properties`. Then click *Finish*.
 	
-	![Insert Screenshot]()
+	![Figure 4: Add the Language files in the Liferay Hook Configuration wizard.](../../images/new-hook-configuration-language-files.png)
 
-4.  Add `javax.portlet.title.58=Welcome` to the `Language.properties` and 
-	`Language_en.properties` files. Add `javax.portlet.title.58=Bienvenidos` to 
-	the `Language_es.properties` file.
+4.  Add `javax.portlet.title.58=Welcome` to the files `Language.properties` and 
+	`Language_en.properties`. Add `javax.portlet.title.58=Bienvenidos` to 
+	the file `Language_es.properties`.
 	
 5.  Deploy your hook and reload a page on your portal that has the Sign In 
 	portlet. To see the Spanish translation, add the Language portlet and click 
 	on the flag of Spain. To switch back to the English translation, click on 
 	the U.S. flag.
 	
-If you're using Liferay IDE, then you're finished and can skip the next section! 
-The Liferay Hook Configuration wizard in Liferay IDE automatically takes care of 
-inserting the proper references to your Language files in your `liferay-hook.xml` 
-file. If you need to add more Language files, simply run the wizard again.
+	![Figure 5: The Spanish translation.](../../images/override-sign-in-es.png)
+	
+If you followed these steps using Liferay IDE, then you're finished and can skip 
+the next section! The Liferay Hook Configuration wizard in Liferay IDE 
+automatically takes care of inserting the proper references to your Language 
+files in `liferay-hook.xml`. If you need to add more Language files, simply run 
+the wizard again.
 
 However, what if you created your Language files manually? What if you have an 
 inherent distrust of wizards? What if you're a veteran commander of the command 
 line? Don't fret! The next section shows you how to manually reference your 
 Language files in `liferay-hook.xml`.
 
-## Referring to Your Language.properties Files
+## Referring to Language Files
 
 Each reference to a Language file in `liferay-hook.xml` is defined by a set of 
 `language-properties` tags. For example, the three Language files you created 
@@ -83,12 +89,10 @@ earlier are referenced in `liferay-hook.xml` as:
         ...
     </hook>
 
-You can create these references manually in the source xml, or by using the 
+You can create these references manually in the source `xml`, or by using the 
 *Overview* mode in Liferay IDE. Overview mode provides an easy to use graphical 
-interface where you can add to and edit the xml without actually needing to 
-enter any raw xml.
-
-![Insert Screenshot]()
+interface where you can add to and edit the `xml` without actually needing to 
+enter any raw `xml`.
 
 Just follow these steps to use Overview mode in Liferay IDE to reference your 
 Language files.
@@ -104,9 +108,9 @@ Language files.
 	enter `content/Language_en.properties`. You can repeat this step for as many 
 	Language files as you want to reference.
 
-![Insert Screenshot]()
+![Figure 6: Overview mode of `liferay-hook.xml`, with added Language files.](../../images/overview-mode-language-props.png)
 	
-If you want to view the xml references that Liferay IDE has entered for you, 
+If you want to view the `xml` references that Liferay IDE has entered for you, 
 click on the *Source* tab of `liferay-hook.xml`.
 
 ---
