@@ -1073,7 +1073,6 @@ changes to support using RTL Support in the other plugin types.
             <filter-name>Dynamic CSS Filter</filter-name>
             <url-pattern>*.css</url-pattern>
         </filter-mapping>
-        
 
 5. Add targets for building and cleaning your plugin's RTL CSS files. 
 
@@ -1104,10 +1103,14 @@ changes to support using RTL Support in the other plugin types.
     If you're using the RTL hook with another type of plugin project, simply
     rename the `build-common-theme.build-css` dependency target reference
     appropriately  for your plugin type: 
-    - Portlet: `build-common-portlet.build-css` 
-    - Hook: `build-common-hook.build-css` 
-    - Ext: `build-common-ext.build-css` 
-    - Web App: `build-common-web.build-css` 
+
+    *Portlet:* `build-common-portlet.build-css`
+
+    *Hook:* `build-common-hook.build-css`
+
+    *Ext:* `build-common-ext.build-css`
+
+    *Web App:* `build-common-web.build-css` 
     
 6. Deploy your plugin to the portal. 
 
