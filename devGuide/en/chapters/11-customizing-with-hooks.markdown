@@ -21,7 +21,7 @@ We'll cover the following topics:
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
 - Extending the Indexer Post Processor
-- Displaying Right-to-Left Content with the RTL Hook
+- Supporting Right-to-Left Languages in Plugins
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -990,10 +990,10 @@ Then test out the indexer hook by searching for that job title.
 ![Figure 11.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
 
 As you can see, hooks serve to enhance the functionality of your portal and
-applications. Next, we will take a look at the RTL Hook and how it can enhance 
+applications. Next, we will take a look at Liferay's Right to Left Language Support and how it can enhance 
 both your portal and plugins.
 
-## Displaying Right-to-Left Content with the RTL Hook [](id=displaying-rtl-content-with-rtl-hook-liferay-portal-6-2-dev-guide-11-en)
+## Supporting Right-to-Left Languages in Plugins [](id=supporting-right-to-left-languages-in-pl-liferay-portal-6-2-dev-guide-11-en)
 
 Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
 right-to-left (RTL). However, many sites written RTL also have left-to-right
@@ -1006,9 +1006,9 @@ you must adapt your style sheets to handle such elements. Since style sheets are
 usually designed for LTR languages, the typical challenge is creating
 alternative versions of the CSS for RTL languages. This can be an arduous task. 
 
-Thankfully, Liferay's RTL hook automatically adapts Liferay Portal styles for
+Thankfully, Liferay's *Right to Left Language Support* app automatically adapts Liferay Portal styles for
 RTL languages. You simply deploy it and it mirrors your site's content for RTL
-languages. The RTL hook app is available on the Liferay
+languages. The app is available on the Liferay
 [Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
 and deploy the app as described in the
 [Leveraging the Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
@@ -1023,30 +1023,30 @@ English, an LTR language.
 Compare it to the following figure of a page displayed in Hebrew, an RTL
 language. 
 
-![Figure 11.7: Here is a site displaying Hebrew content right-to-left using the RTL hook.](../../images/rtl-hook-002.png)
+![Figure 11.7: Here is a site displaying Hebrew content right-to-left using Right to Left Language Support.](../../images/rtl-hook-002.png)
 
-You get the point, right? The RTL hook does the heavy lifting of rendering the
+You get the point, right? The Right to Left Language Support (RTL Support) app does the heavy lifting of rendering the
 RTL content appropriately! 
 
-Now that you've seen Liferay Portal and its apps rendered using the RTL hook,
-have you wondered how you might leverage the RTL hook in your custom plugins?
-You'll learn how to use the hook with your plugins, next. 
+Now that you've seen Liferay Portal and its apps rendered using RTL Support,
+have you wondered how you might leverage RTL Support in your custom plugins?
+You'll learn how to use RTL Support with your plugins, next. 
 
-### Applying the RTL Hook to Custom Plugins [](id=applying-the-rtl-hook-to-custom-plugins-liferay-portal-6-2-dev-guide-11-en)
+### Applying the RTL Support to Custom Plugins [](id=applying-the-rtl-hook-to-custom-plugins-liferay-portal-6-2-dev-guide-11-en)
 
-You can use the RTL hook with any plugin type. Theme plugins are the most common
-type of plugins to make use of the RTL hook. The following steps focus on using
-the hook in a custom theme, but they also mention what's needed to make similar
-changes to support using the hook in the other plugin types. 
+You can use RTL Support with any plugin type. Theme plugins are the most common
+type of plugins to make use of it. The following steps focus on using
+RTL Support in a custom theme, but they also mention what's needed to make similar
+changes to support using RTL Support in the other plugin types. 
 
-1. Make sure to deploy the RTL hook to your application server. 
+1. Make sure to deploy the Right to Left Language Support app to your application server. 
 	
 	If upon initial deployment you don't notice any changes when switching to an
 	RTL language, reload the page to force a clean cache; you can do this by 
 	using Command + R (on Mac) or Ctrl + F5 (on Windows).
 	
     Note, since dynamic generation of CSS from SASS is not yet supported in the
-    context of this hook, the hook loads the current theme's merged CSS files,
+    context of the RTL Support app, the hook loads the current theme's merged CSS files,
     disregarding whether
     [theme CSS fast loading](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme)
     is disabled. Disabling CSS fast load (i.e., setting
@@ -1113,13 +1113,13 @@ Ant echoes `Generated RTL cache for ...` messages that mention the cache that
 the RTL hook generates in your plugin. In your plugin's `css/.sass-cache`
 folder, the hook creates `*_rtl.css` versions of each of your `*.css` files. 
 
-You now know how to use the RTL hook in your custom plugins. Now, it's time to
-learn how you can extend the RTL hook's style with your own custom CSS for RTL
+You now know how to use the Right to Left Language Support app in your custom plugins. Now, it's time to
+learn how you can extend the Right to Left Language Support app's style with your own custom CSS for RTL
 languages. 
 
 ### Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
 
-As your learned in the previous section, the RTL hook automatically generates
+As your learned in the previous section, the Right to Left Language Support (RTL Support) app automatically generates
 RTL versions of your CSS files by applying rules, such as changing
 `margin-left` to `margin-right`. However, you may want to extend the generated
 CSS by defining your own custom styles for RTL languages. You can achieve this
@@ -1148,7 +1148,7 @@ Now your plugin styles are automatically adapted for RTL languages. In case you
 have defined any custom styles, they are also applied.
 
 Whether you want to adapt the portal and/or your custom plugins to RTL
-languages, the RTL hook makes it simple and easy to offer your users the ideal
+languages, the RTL Support app makes it simple and easy to offer your users the ideal
 viewing experience. 
 
 In the next section, we'll explore more hooks that allow for customizing
