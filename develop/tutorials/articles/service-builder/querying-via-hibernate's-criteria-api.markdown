@@ -40,11 +40,48 @@ method. Next, let's examine these steps in more detail.
 
 ### Step 1: Defining a Custom Finder Method
 
-To define a custom query, whether by specifying custom SQL or by defining a dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in the generated `[Plugin Package Path].service.persistence` package of your plugin's `docroot/WEB-INF/src` folder. Then define a custom `findBy...` finder
-method in this class. For example, if your custom
-entity was called `Guestbook`, you'd define your your custom `findBy...` finder
-method in `GuestbookFinderImpl.java` and then run Service Builder. Then run
-Service Builder. 
+To define a custom query, whether by specifying custom SQL or by defining a
+dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in
+the generated `[Plugin Package Path].service.persistence` package of your
+plugin's `docroot/WEB-INF/src` folder. Then define a custom `findBy...` finder
+method in this class. Make sure to add any required arguments to your finder
+method's method signature.
+
+For example, consider the Guestbook application that we discussed in the
+[Service Builder Learning Path](www.liferay.com). In that application, there are
+two entities: guestbooks and entries. Each entry belongs to a guestbook so the
+entry entity has a guestbookId field as a foreign key. Suppose you need to
+create a custom finder to search for guestbook entries by the entry name and the
+guestbook name. In this case, you'd add a custom finder method to
+`GuestbookFinderImpl` and name it something like `findByEntryNameGuestbookName`.
+The full method signature would appear as `findByEntryNameGuestbookName(String
+entryName, String guestbookName)`.
+
+<!--
+Add a paragraph here discussing the optional int begin, int start parameters
+that can be added to the custom finder method's method signature. - JR
+-->
+
+Once you've created a finder method with the appropriate method signature in
+your finder class, run Service Builder to generate the appropriate interface and
+utility class in the `[Plugin Package Path].service.persistence` package in your
+plugin's `docroot/WEB-INF/service` folder.
+
+For example, after adding `findByEntryNameGuestbookName(String entryName, String
+guestbookName)` to `GuestbookFinderImpl` and running Service Builder, the
+interface `com.liferay.docs.guestbook.service.persistence.GuestbookFinder` and
+the utility class
+`com.liferay.docs.guestbook.service.persistence.GuestbookFinderUtil` are
+generated.
+
+Once the finder interface has been generated, make sure that the finder class
+implements the interface. For example, the class declaration should look like
+this:
+
+    public class GuestbookFinderImpl extends BasePersistenceImpl<Guestbook> implements GuestbookFinder
+
+Our next step is to actually define our query in our custom finder method using
+the Dynamic Query API.
 
 ### Step 2: Implementing Your Custom Finder Method Using Dynamic Query
 
