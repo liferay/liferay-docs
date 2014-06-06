@@ -210,10 +210,6 @@ To give you an idea of what's next, here is what the basic carousel looks like:
 
 All right, enough discussing the future. Time to do the work!
 
-<!-- Notice the changes in the section above that focus the text not on what
-"we" are doing or what "we" will show the reader, but on what YOU will learn and
-the fun experience YOU will have. -Rich -->
-
 ### Adding a Carousel to a Portlet [](id=adding-a-carousel-to-a-portlet-liferay-portal-6-2-dev-guide-12-en)
 
 To add a carousel to a portlet, follow these step: 
@@ -322,9 +318,9 @@ Now comes the really fun part: making the carousel your own!
     carousel widget. The bounding box of the widget, used for positioning the
     carousel, is set to the `#myCarousel` div. The transition between images is
     set to last for one second. The carousel is set to display each image for
-    two seconds. Setting the `activeIndex` to 0 displays the first image listed in
-    the `#myCarousel` `<div>` as the first one to display. Now that you've laid the
-    groundwork for your carousel, you can go ahead and style it.
+    two seconds. Setting the `activeIndex` to 0 displays the first image listed
+    in the `#myCarousel` `<div>` as the first one to display. Now that you've
+    laid the groundwork for your carousel, you can go ahead and style it.
 
     ---
 
@@ -332,7 +328,8 @@ Now comes the really fun part: making the carousel your own!
      attributes that can be modified for a carousel. If you choose not to set
      values for these attributes, defaults are used. For a full list
      of the attributes and their defaults, as well as further documentation on
-     the AUI-Carousel, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
+     the AUI-Carousel, please visit
+     <http://alloyui.com/api/classes/A.Carousel.html>. 
 
     ---
 
@@ -471,8 +468,8 @@ bottom margin is set to `40px` to leave room for the menu controls.
         }
 
 Next, the carousel's images are set by pointing the `background-image`
-properties of the corresponding `<div>`s to the location of each respective image
-file, which reside in the `../img/` directory. 
+properties of the corresponding `<div>`s to the location of each respective
+image file, which reside in the `../img/` directory. 
 
         /* styling for div with id image1 */
         #image1
@@ -498,10 +495,10 @@ file, which reside in the `../img/` directory.
            background-image: url("../img/spock.jpg");
         }
 
-Now that you've seen how to style the carousel's body, it's time to
-break down the carousel menu's styling. Existing classes are referenced for the
-menu controls. To understand how to determine the classes for the menu
-controls, you need to understand the DOM tree:
+Now that you've seen how to style the carousel's body, it's time to break down
+the carousel menu's styling. Existing classes are referenced for the menu
+controls. To understand how to determine the classes for the menu controls, you
+need to understand the DOM tree:
         
         <div id="myCarousel">
          <menu>
@@ -516,14 +513,14 @@ controls, you need to understand the DOM tree:
  
 This is a simplified version of the DOM tree, but it gives you an idea of the
 overall structure. You can see from the DOM tree that the carousel menu controls
-lie within the `#myCarousel` `<div>`, inside a menu tag, inside a list tag, inside
-an anchor tag.
+lie within the `#myCarousel` `<div>`, inside a menu tag, inside a list tag,
+inside an anchor tag.
 
 ---
 
- ![Note](../../images/tip.png) **Note:** You can see the DOM tree by 
- right-clicking the carousel's *Next* menu button and inspecting the element in the 
- browser (Firefox in this case).
+![Note](../../images/tip.png) **Note:** You can see the DOM tree by 
+right-clicking the carousel's *Next* menu button and inspecting the element in
+the browser (Firefox in this case).
  
 ---
 
@@ -574,10 +571,10 @@ buttons where exactly on the image they are.
            border-radius:90px; /* in this case I have a circular icon */
         }
 
-Next, you styled the active and inactive index indicators. Once again,
-in the DOM tree there are existing classes that can be used for styling.
-The images are set with the `background-image` and `background-position`
-properties and given the proper height and width.
+Next, you styled the active and inactive index indicators. Once again, in the
+DOM tree there are existing classes that can be used for styling. The images are
+set with the `background-image` and `background-position` properties and given
+the proper height and width.
 
         /* active index indicator */
         #myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index.carousel-menu-active{
