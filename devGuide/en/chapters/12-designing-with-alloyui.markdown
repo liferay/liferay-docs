@@ -260,17 +260,15 @@ To add a carousel to a portlet, follow these step:
 
 3. Deploy your portlet to your portal.
 
-<!-- Aren't we missing something about using the default images provided by
-AlloyUI? -Rich -->
-
 Your images display correctly. Give yourself a pat on the back; you've just
 successfully used the `aui-carousel` in a portlet! Next, it's time to understand
 the inner-workings of the carousel and see what makes it tick.
 
 The JSP code you inserted in the portlet specified your carousel. You included
 directives for using the `java` and `aui` taglibs. Below them, you specified a
-`<div>` named `myCarousel`, to identify the carousel's images. This set the
-foundation for using the AUI script. 
+`<div>` named `myCarousel`, to identify the carousel's images. The default
+images are provided by [AlloyUI](http://alloyui.com). This set the foundation
+for using the AUI script. 
 
 The script uses the `aui-carousel` module. You gave it some basic attributes to
 specify where to display the carousel and the size it should be. You told the
