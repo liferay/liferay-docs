@@ -1,4 +1,4 @@
-# Localizing Site Administration Portlets
+# Localizing Site Administration Portlets [](id=localizing-site-administration-portlets-lp-6-2-develop-tutorial)
 
 You may have noticed that your Site Administration portlets are missing that
 super-fancy, must-have portlet title and description in Site Administration. In
@@ -14,7 +14,7 @@ following figure displays an example of localizing your portlets to Spanish:
 
 Let's get started by running through a tutorial to learn how to do this!
 
-## Changing Site Administration Portlet Titles and Descriptions
+## Changing Site Administration Portlet Titles and Descriptions [](id=changing-site-administration-portlet-titles-and-des-lp-6-2-develop-tutorial)
 
 For our tutorial, we'll configure your portlet project to display in Site
 Administration, and then localize its title and description. We'll need to

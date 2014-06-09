@@ -1,4 +1,4 @@
-# Implementing Application Display Templates
+# Implementing Application Display Templates [](id=implementing-application-display-templates-lp-6-2-develop-tutorial)
 
 <!-- You can test this tutorial using the following portlet project 
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
@@ -18,7 +18,7 @@ Template option looks like in a portlet Configuration menu.
 In this tutorial, we'll demonstrate how to use the Application Display Templates
 API to add an ADT to a portlet. Let's get started learning how.
 
-## Using the Application Display Templates API
+## Using the Application Display Templates API [](id=using-the-application-display-templates-api-lp-6-2-develop-tutorial)
 
 To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
@@ -214,7 +214,7 @@ of "Using Liferay Portal", once we have a section on ADTs that we can point to.
 
 Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
-## Recommendations for Using ADTs
+## Recommendations for Using ADTs [](id=recommendations-for-using-adts-lp-6-2-develop-tutorial)
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, let's

@@ -1,4 +1,4 @@
-# Sharing Language Keys Between Your Portlets
+# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
@@ -23,7 +23,7 @@ resource bundle looks like:
 
 Let's begin sharing a single resource bundle with multiple portlets! 
 
-## Sharing a Resource Bundle
+## Sharing a Resource Bundle [](id=sharing-a-resource-bundle-lp-6-2-develop-tutorial)
 
 For this tutorial, we'll assume that both portlets we're working with are
 contained in the same project. Let's add a resource bundle to your project and
