@@ -1,4 +1,4 @@
-# AlloyUI 2.0 / Bootstrap Migration
+# AlloyUI 2.0 TagLib and Bootstrap Migration
 
 Liferay 6.2 uses Twitter&reg; Bootstrap-based theming for a slick, vibrant look
 and feel with instant access to the Twitter&reg; Bootstrap (Bootstrap) theme
