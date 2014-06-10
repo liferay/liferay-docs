@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-<service-builder package-path="com.liferay.docs.guestbook.service">
+<service-builder package-path="com.liferay.docs.guestbook">
 	<author>Rich Sezov</author>
 	<namespace>GB</namespace>
 
@@ -22,7 +22,10 @@
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
         <column name="name" type="String"></column>
-        <finder name="GroupId" return-type="Collection"></finder>
+        <column name="entryId" type="long"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
 	</entity>
 	<entity name="Entry" local-service="true">
 
@@ -44,5 +47,10 @@
         <column name="name" type="String"></column>
         <column name="email" type="String"></column>
         <column name="entry" type="String"></column>
+        <column name="guestbookId" type="long"></column>
+        <finder name="G_G" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="guestbookId"></finder-column>
+        </finder>
 	</entity>
 </service-builder>
