@@ -1,16 +1,10 @@
 # Customizing the AUI-Carousel
 
 AlloyUI's carousel module has a lot to offer as it stands, but you can take it
-to the next level by customizing it and making it your own. In this tutorial
-you'll learn how to modify the UI of the standard `aui-carousel` module in a
-portlet.
-
-To learn how to setup the basic `aui-carousel` please refer to the tutorial here: 
-<!-- insert link to aui-carousel tutorial here -->
-
-It's time to go back, back to the carousel! and where you're going you don't
-need code; on the other hand yes, yes you do. Don't worry, there won't be many
-more puns to put up with.
+to the next level by customizing it and making it your own. If you need to learn 
+how to setup the basic `aui-carousel` please refer to the tutorial *Using 
+AlloyUI Carousel in Your Portlet*. In this tutorial you'll learn how to modify 
+the UI of the standard `aui-carousel` module in a portlet.
 
 There are a few key steps you'll have to follow to customize your carousel:
 
@@ -18,14 +12,13 @@ There are a few key steps you'll have to follow to customize your carousel:
 2.  Set the styles for the UI in your portlet's `main.css`.
 3.  Finally, deploy the portlet to your portal.
 
-With that out of the way it's time to kick this baby up to 88 mph and get the 
-ball rolling!
+With that out of the way, it's time to get this carousel moving!
 
-## Step 1: Configuring the Attributes of the `view.jsp`
+## Step 1: Configuring the Attributes of `view.jsp`
 
-First things first, you'll configure the attributes of the carousel to match the
-settings you desire. Here is example code for a possible configuration of the
-`view.jsp`:
+First things first, you need to configure the attributes of the carousel to 
+match the settings you desire. Here is example code for a possible configuration 
+of the `view.jsp`:
 
         ```
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -76,16 +69,16 @@ unique id for each image in the carousel.
 
 ---
  
-Now that you've laid the groundwork for the carousel, it's time to give it some 
+Now that you've layed the groundwork for the carousel, it's time to give it some 
 style.
 
-## Step 2: Styling the Carousel's UI
+## Step 2: Styling the Carousel's UI in `main.css`
 
 There are a lot of moving parts involved with the carousel's UI. To keep things
-organized, you'll customize your carousel's body and images first, menu controls 
-next, followed by the active and inactive index indicators, and then finish up 
-with the menu bar and list of controls. Below is a CSS map of the different 
-elements for you to refer to:
+organized, first customize your carousel's body and images. Then set the menu 
+controls, the active and inactive index indicators, and finally the menu bar and 
+list of controls. Below is a CSS map of the different elements for you to refer 
+to:
 
 ![Figure 1: Here is a CSS map of the different carousel elements.](../../images/alloyui-carousel-css-map.png)
 
@@ -158,7 +151,7 @@ carousel, it's time to make the menu controls shine!
 ### Styling the Carousel's Menu Controls
 
 Each menu control has an existing class that you need to identify in order to 
-style it. You can identify the classes for the controls by breaking down the 
+style it. You can identify the classes for the controls by viewing the 
 DOM(Document Object Model) tree for them. Below is a simplified version of the 
 DOM tree:
 
@@ -193,7 +186,7 @@ each of the menu buttons with their corresponding class. Each menu button has a
 `background` property set to its image location and a `border-radius` property
 for rounded edges; if you don't want a rounded edge you can omit the 
 `border-radius` property from your styling. Below is example code of possible 
-styling for the menu controls:
+styling for the menu controls in `main.css`:
 
         ```
         /* Pause Button */
@@ -230,13 +223,16 @@ styling for the menu controls:
         ```
 
 Once again, if you don't wish to have rounded edges you can skip the
-`border-radius` property. Onward to the active and inactive index indicators. 
+`border-radius` property. Also remember to place the images you want to use for 
+the menu controls in the `img` folder. Onward to the active and inactive index 
+indicators!
 
 ### Styling the Carousel's Active and Inactive Index Indicators
 
 As with the menu controls, the active and inactive index indicators are styled,
 using existing classes. Please refer to the DOM tree to see the layout for 
-yourself. Below is example code for the active and inactive index indicators:
+yourself. Below is example code for the active and inactive index indicators in 
+`main.css`:
 
         ```
         /* active index indicator */
@@ -258,13 +254,14 @@ yourself. Below is example code for the active and inactive index indicators:
 
 The images are set with the `background-image` property and given the proper 
 height and width. They are then assigned a color with the `background-color`
-property. Now that you've taken care of the index indicators, it's time for one 
-final style.
+property. Again, remember to place the images you want to use for these 
+indicators in the `img` folder. Now that you've taken care of the index 
+indicators, it's time for one final style.
 
 ### Styling the Carousel's Menu Bar and Menu Controls List
 
 As with the other styles, you can view the existing class for the menu bar and
-controls list in the DOM tree. Below is one example for the code:
+controls list in the DOM tree. Below is one example for the code in `main.css`:
 
         ```
         /* Menu Bar */
@@ -289,7 +286,7 @@ controls list in the DOM tree. Below is one example for the code:
  
 The left edge of the menu bar is set 518 px from the left. The top edge of the 
 menu bar is set 250 px from the top, placing it just beneath the 250 px height 
-carousel. The menu bar’s width is scaled down to 26% the size of the carousel’s 
+carousel. The menu bar's width is scaled down to 26% the size of the carousel's 
 width. To finish out the CSS, the list, which holds the menu controls, is set to 
 adjust to the size and shape of the menu bar.
 
@@ -298,18 +295,18 @@ has got some serious style! One final step to go!
 
 ## Step 3: Deploying the Portlet
 
-You've laid the foundation, wrote the script, and gave this carousel a fresh new
-look. Now that the hard part is over, go ahead and deploy your portlet to your
-portal instance and give yourself a pat on the back. If you are modifying an
-existing portlet that has already been deployed, you may need to undeploy and
+You've layed the foundation, written the script, and given this carousel a fresh 
+new look. Now that the hard part is over, go ahead and deploy your portlet to 
+your portal instance and give yourself a pat on the back. If you are modifying 
+an existing portlet that has already been deployed, you may need to undeploy and
 redeploy it in order for the changes to take full effect.
 
 ## Summary
 
 You learned how to take the basic `aui-carousel` module and modify it to suit 
 your needs: First, you learned how to set some basic attributes to run the 
-carousel to your liking; Next, you learned how to re-design the carousel by 
-setting the styles of the carousel's body and images; Finally, you learned how 
+carousel to your liking. Next, you learned how to re-design the carousel by 
+setting the styles of the carousel's body and images. Finally, you learned how 
 to style the carousel's menu and controls to match your taste.
 
 Excelsior! You have successfully learned how to give Alloy's Carousel your own 
