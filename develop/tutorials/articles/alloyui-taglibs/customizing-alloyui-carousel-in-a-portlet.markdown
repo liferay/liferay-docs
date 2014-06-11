@@ -6,13 +6,18 @@ how to setup the basic `aui-carousel` please refer to the tutorial *Using
 AlloyUI Carousel in Your Portlet*. In this tutorial you'll learn how to modify 
 the UI of the standard `aui-carousel` module in a portlet.
 
+It's time to go back, back to the carousel! Where you're going you don't
+need code; on the other hand yes, yes you do. Don't worry, there won't be many
+more puns to put up with.
+
 There are a few key steps you'll have to follow to customize your carousel:
 
 1.  Configure the attributes of your portlet's `view.jsp`.
 2.  Set the styles for the UI in your portlet's `main.css`.
 3.  Finally, deploy the portlet to your portal.
 
-With that out of the way, it's time to get this carousel moving!
+With that out of the way it's time to kick this baby up to 88 mph and get the 
+ball rolling!
 
 ## Step 1: Configuring the Attributes of `view.jsp`
 
@@ -319,4 +324,4 @@ Here is an example of a customized carousel using the configuration above:
 You can access a finished version of the customized portlet at 
 <https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet>
 
-Remember your carousel is whatever you make it, so make it a good one!
+Remember, your carousel is whatever you make it, so make it a good one!
