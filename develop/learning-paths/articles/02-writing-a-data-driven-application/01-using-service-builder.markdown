@@ -206,4 +206,36 @@ completes, check out your project's `src` folder.
 ![Figure 1.x: Service Builder generates a number of packages containing your model, service, and persistence layers.](../../images/lds-service-builder-packages.png)
 
 Note that your project now has errors. It's because the model class, `Entry`,
-that you created in the last tutorial, was replaced. 
+that you created in the last tutorial, was replaced. As noted above, Service
+Builder, using just that one `service.xml` file, generates your model, service,
+and persistence layers. Thankfully, the location of the error in the
+`GuestbookPortlet` class is in code that you'll replace, now that you have a
+proper service layer. 
+
+Speaking of that service layer, what exactly happened here? Why are there so
+many classes? We're glad you asked. Service Builder is based on a design
+philosophy called [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling). 
+At a macro level, you have three layers of your application: the model, the
+service, and the persistence layers. The application is designed in such a way
+that you can swap out the persistence layer with little to no change in the
+model and service layers. 
+
+![Figure 1.x: At a macro level, Service Builder generates three layers.](../../images/application-layers.png)
+
+At a micro level, each layer is implemented using Java Interfaces and various
+implementations of those interfaces. Rather than have one `Entry` class that
+represents your model, Service Builder has generated a system of classes that
+include an `Entry` interface, an `EntryBaseImpl` abstract class for Service
+Builder to manage, and an `EntryImpl` class that you can customize. This gives
+you the flexibility of being able to customize your model, while still allowing
+Service Builder to generate the code it needs. That's why Service Builder is a
+code generator for code generator haters: it generates the stuff you hate to
+write, while giving you the freedom to customize anything you want. 
+
+For further information about Service Builder, what it's built on, and how it
+works, please read the [What is Service Builder?](../../../tutorials/articles/service-builder/what-is-service-builder)
+tutorial. 
+
+Congratulations! You've now used Service Builder to generate a service and
+persistence framework for your application. Next, you'll integrate that
+framework into your application so you can use it. 
