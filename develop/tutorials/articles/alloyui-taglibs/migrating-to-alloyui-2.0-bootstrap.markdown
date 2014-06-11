@@ -385,7 +385,10 @@ And remember that the tool may not pick up all of the changes that need to be
 made to your plugin. But you'll be happy that the tool does a good bit of the
 monotonous conversion work for you. 
 
+## Next Steps
+
 No matter which Liferay APIs you're using, you'll need to understand Liferay's
 deprecation policy. That way you'll know when methods from our API's are
-deprecated, and you can make any necessary changes. We'll describe the
-deprecation policy next. 
+deprecated, and you can make any necessary changes. To learn about Liferay's
+release process and deprecation policy, please refer to the [Understanding
+Liferay's Releases and Deprecation Policy](www.liferay.com) tutorial.
