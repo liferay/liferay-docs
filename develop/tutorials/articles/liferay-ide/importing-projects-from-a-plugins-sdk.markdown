@@ -32,7 +32,7 @@ in Liferay IDE:
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *New* button and select *Liferay Project from Existing Source*.
 
-    ![Figure 2.12: Instead of clicking *File* &rarr; *New* to create a new Liferay project from an existing source, you can click the button shown above from Liferay IDE's shortcut bar.](../../images/ide-new-proj-existing-source.png)
+    ![Figure 2.12: As an alternative to clicking *File* &rarr; *New* to create a new Liferay project from an existing source, you can click the button shown above from Liferay IDE's shortcut bar.](../../images/ide-new-proj-existing-source.png)
 
 2.  In the *New Liferay Project* window, click the *Browse* button and navigate
     to the project folder of the plugin you'd like to import. The project folder
@@ -53,6 +53,8 @@ in Liferay IDE:
 
 5.  Click *Finish* to complete the import. 
 
+You've imported your Liferay project into your workspace!
+
 <!-- Any time you import a project into Liferay IDE, you can verify that it was
 successfully configured as a Liferay IDE project by using the process outlined
 in the tutorial *Verifying Successful Project Import*. 
@@ -70,7 +72,7 @@ you've already set up in Liferay IDE. Follow these steps:
 
     ![Figure 2.13: To import projects from a Plugins SDK, choose *Liferay Projects from Plugins SDK* from the Import menu.](../../images/ide-import-from-plugin-sdk.png)
 
-2.  In the *Import Liferay Projects* window, use the combo box to select the
+2.  In the *Import Liferay Projects* window, use the dropdown list to select the
     *Liferay Plugins SDK* from which you're importing plugins. 
 
     ---
@@ -85,7 +87,7 @@ you've already set up in Liferay IDE. Follow these steps:
 
     Liferay IDE automatically fills in the *Liferay Plugin SDK Location* and
     *Liferay Plugin SDK Version* fields, as long as they're valid; invalid
-    entries are marked with an error. 
+    entries are marked with errors. 
 
 5.  The list of projects that are available for import are displayed in a list.
     Any projects already in the workspace are disabled. Projects available for
@@ -96,5 +98,5 @@ you've already set up in Liferay IDE. Follow these steps:
 
 7.  Click *Finish*. 
 
-You've imported your plugins into your workspace! 
+Congratulations on importing *multiple* Liferay projects into your workspace! 
 
