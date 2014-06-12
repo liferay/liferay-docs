@@ -56,21 +56,21 @@ of the `view.jsp`:
         </aui:script>
         ```
 
-The code above has some basic attributes that can be styled to customize the
-carousel widget. The bounding box of the widget, used for positioning the
-carousel, is set to the `#myCarousel` div. The transition between images is set 
-to last for 1 second. The carousel is set to display each image for 2 seconds. 
+The code above has some attributes that can be styled to customize the carousel 
+widget. The bounding box of the widget, used for positioning the carousel, is 
+set to the `#myCarousel` `<div>`. The transition between images is set to last 
+for one second. The carousel is set to display each image for two seconds. 
 Setting the `activeIndex` to 0 displays the first image listed in the 
-`#myCarousel` div when the carousel starts. Finally, the divs are setup with a
-unique id for each image in the carousel.
+`#myCarousel` `<div>` when the carousel starts. Finally, the divs are setup with 
+a unique id for each image in the carousel.
 
 ---
 
- ![Note](../../images/tip.png) **Note:** These are only a subset of the
- attributes that can be modified for a carousel. If you choose not to set
- values for these attributes their default values are used. For a full list
- of the attributes and their defaults, as well as further documentation on
- the AUI-Carousel, please visit <http://alloyui.com/api/classes/A.Carousel.html>.
+ ![Note](../../images/tip.png) **Note:** This is only a subset of the
+ attributes that can be modified for a carousel. If you choose not to set values 
+ for these attributes, defaults are used. For a full list of the attributes and 
+ their defaults, as well as further documentation on the AUI-Carousel, please 
+ visit <http://alloyui.com/api/classes/A.Carousel.html>.
 
 ---
  
@@ -133,15 +133,15 @@ images in the `main.css`:
         }
         ```
 
-The code starts off by setting the width and height for the carousel body, and 
+The code starts off by setting the width and height for the carousel body,
 giving it rounded edges with the `border-radius` property. Next, the carousel is 
 centered in the middle of the portlet by setting the `margin` property of the 
 `boundingBox` element (`#mycarousel` in this case) to `auto` for the left and 
-right margins; the top margin is set to 0, while the bottom margin is set to 
-40px to leave room for the menu's controls; if you do not wish to change the 
+right margins. The top margin is set to `0`, while the bottom margin is set to 
+`40px` to leave room for the menu's controls. If you do not wish to change the 
 default border-radius and margins, you can omit these properties. Finally the
 images are given a `background-image` property that points to their 
-corresponding urls.
+respective urls.
 
 ---
 
@@ -155,10 +155,9 @@ carousel, it's time to make the menu controls shine!
 
 ### Styling the Carousel's Menu Controls
 
-Each menu control has an existing class that you need to identify in order to 
-style it. You can identify the classes for the controls by viewing the 
-DOM(Document Object Model) tree for them. Below is a simplified version of the 
-DOM tree:
+Each menu control has an existing class that you can reference. You can identify 
+the classes for the controls by viewing the DOM(Document Object Model) tree for 
+them. Below is a simplified version of the DOM tree:
 
         ```
         <div id="myCarousel">
@@ -175,13 +174,13 @@ DOM tree:
 
 Although this is a simplified version of the DOM tree, it gives you an idea of 
 the overall structure. You can see that the carousel menu controls lie within 
-the `#myCarousel` div, inside a menu tag, inside a list tag, inside an anchor 
-tag.
+the `#myCarousel` `<div>`, inside a menu tag, inside a list tag, inside an 
+anchor tag.
 
 ---
 
  ![Note](../../images/tip.png) **Note:** You can view the DOM tree by 
- right-clicking the carousel's *next menu button* and inspecting the element in 
+ right-clicking the carousel's *Next* menu button and inspecting the element in 
  the browser (Firefox in this case).
  
 ---
@@ -189,7 +188,7 @@ tag.
 Once you understand the DOM tree, you can go ahead and place the styling for
 each of the menu buttons with their corresponding class. Each menu button has a
 `background` property set to its image location and a `border-radius` property
-for rounded edges; if you don't want a rounded edge you can omit the 
+for rounded edges. If you don't want a rounded edge, you can omit the 
 `border-radius` property from your styling. Below is example code of possible 
 styling for the menu controls in `main.css`:
 
@@ -228,7 +227,7 @@ styling for the menu controls in `main.css`:
         ```
 
 Once again, if you don't wish to have rounded edges you can skip the
-`border-radius` property. Also remember to place the images you want to use for 
+`border-radius` property. Also, remember to place the images you want to use for 
 the menu controls in the `img` folder. Onward to the active and inactive index 
 indicators!
 
