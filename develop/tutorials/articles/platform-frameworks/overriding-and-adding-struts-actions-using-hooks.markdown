@@ -60,7 +60,9 @@ By following the steps below, you can override a portlet's Struts action:
 1. Navigate to the `your-hook/docroot/WEB-INF` folder and open
     `liferay-hook.xml`. 
 
-2. Insert the following code between the `<hook>...</hook>` tags:
+2. Insert the following code between the `<hook>...</hook>` tags. Be sure to 
+   replace `[action_path_to_override]` in `<struts-action-path>` with the Struts 
+   action path that you want to override:
 
         <struts-action>
             <struts-action-path>[action_path_to_override]</struts-action-path>
@@ -170,7 +172,9 @@ Struts action to your custom hook next.
 1. Navigate to the `your-hook/docroot/WEB-INF` folder and open
     `liferay-hook.xml`. 
 
-2. Insert the following code between the `<hook>...</hook>` tags:
+2. Insert the following code between the `<hook>...</hook>` tags. Be sure to 
+   replace `/custom/path` in `<struts-action-path>` with the Struts action path 
+   that you're adding:
 
         <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
         <struts-action>
@@ -193,12 +197,12 @@ Struts action to your custom hook next.
         %>
         Hello <%= name %>!
 
-5. If you'd like your Struts path to be public, add `/custom/path` to your
-   portal's list of paths that don't require authentication by copying your
-   existing `auth.public.paths` property assignment from your portal's
-   `portal.properties` into your `portal-ext.properties` file and adding
-   `/custom/path` to the end of the value list. It looks similar to the
-   assignment below: 
+5. If you'd like your Struts path to be public, add your Struts action path to 
+   your portal's list of paths that don't require authentication. Do this by 
+   copying your existing `auth.public.paths` property assignment from your 
+   portal's `portal.properties` into your `portal-ext.properties` file. Then add 
+   your Struts action path to the end of the value list. It looks similar to the
+   assignment below, with `/custom/path` representing your Struts action path: 
 
             auth.public.paths=\
                 /asset/get_categories,\
