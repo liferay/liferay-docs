@@ -62,9 +62,9 @@ value of the `<project>` element's `name` attribute with the name of your plugin
             <import file="../../build-common-osgi-plugin.xml" />
     </project>
 
-That's all the OSGi-specific configuration that's required! Once your `bnd.bnd`
-and `build.xml` files are in place, you're free to implement your plugin's
-functionality.
+Your `bnd.bnd` and `build.xml` files constitute all the OSGi-specific
+configuration that's required! With these files in place, you're ready to write
+the rest of your plugin.
 
 ## Packaging Liferay OSGi Plugins
 
@@ -77,11 +77,20 @@ folder.
 
 ## Deploying Liferay OSGi Plugins
 
-Liferay Portal scans the `[Liferay Home]/deploy` for OSGi bundles, as well as
-standard Liferay plugins. When it detects an OSGi bundle, it automatically
-deploys the bundle to `[Liferay Home]/data/osgi/modules`. Check your log for
-confirmation that Liferay found and deployed the bundle. You should see a
-message like this:
+When you're ready to deploy your OSGi bundle, make sure that you have the
+following properties set in your `build.[username].properties` file in your
+Plugins SDK's root folder:
+
+    liferay.home=[path-to-your-liferay-installation]
+    auto.deploy.dir=${liferay.home}/deploy
+
+Once these properties are set, run `ant deploy` from your plugin project's root
+folder. `ant deploy` both packages your bundle and copies it to `[Liferay
+Home]/deploy`. Liferay Portal scans the `[Liferay Home]/deploy` directory for
+OSGi bundles, as well as for standard Liferay plugins. When it detects an OSGi
+bundle, it automatically deploys the bundle to `[Liferay
+Home]/data/osgi/modules`. Check your log for confirmation that Liferay found and
+deployed the bundle. You should see a message like this:
 
 18:46:50,653 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:204] Processing my-osgi-liferay-plugin-shared-6.2.0.1.jar
 18:46:50,655 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][ModuleAutoDeployListener:63] Copied module for .../my-osgi-liferay-plugin-shared-6.2.0.1.jar
@@ -92,8 +101,13 @@ that your bundle was successfully deployed. To customize Liferay Portal's module
 framework, including the OSGi framework's auto deploy directories, please see
 the Module Framework sections of Liferay's `portal.properties` file:
 [Module Framework Properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Module%20Framework).
+For example, you can set a comma-delimited list of directories to scan for
+modules to deploy, specify how to often to scan the directories for changes,
+etc. Remember not to make customizations to the `portal.properties` file itself
+but to instead add customized properties to a `portal-ext.properties` file in
+your Liferay Home directory. 
 
 ## Next Steps
 
-For information on testing Liferay's OSGi framework via a test plugin, please
-see the OSGi Bundles section of [Using Liferay Portal](www.liferay.com/documentation).
+To learn how to test Liferay's OSGi framework via a test plugin, please see the
+OSGi Bundles section of [Using Liferay Portal](www.liferay.com/documentation).
