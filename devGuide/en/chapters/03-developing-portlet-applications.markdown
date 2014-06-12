@@ -45,8 +45,9 @@ Liferay:
 - Passing Information from the Action Phase to the Render Phase
 - Developing a Portlet with Multiple Actions 
 - Adding Friendly URL Mapping to the Portlet 
-- Localizing Your Portlet 
-- Creating a Plugin to Share Templates, Structures, and More
+- Localizing Your Portlet
+- Implementing Configurable Portlet Preferences
+- Creating Plugins to Share Templates, Structures, and More
 
 First, let's create the portlet that we'll use throughout this chapter. 
 
@@ -2007,7 +2008,7 @@ To create a plugin which extends another, follow these steps:
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
-## Creating a Plugin to Share Templates, Structures, and More
+## Creating Plugins to Share Templates, Structures, and More [](id=creating-a-plugin-to-share-templates-str-liferay-portal-6-2-dev-guide-03-en)
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get a hold of the templates and structures
@@ -2041,26 +2042,25 @@ and structures.
 3. Edit your `liferay-plugin-package.properties` file to include the following
 property settings:
 
-    ```
-    name=
-
-    required-deployment-contexts=\
-        resources-importer-web
-
-    resources-importer-developer-mode-enabled=true
-
-    module-incremental-version=1
-    ```
+		name=
+	
+		required-deployment-contexts=\
+			resources-importer-web
+	
+		resources-importer-developer-mode-enabled=true
+	
+		module-incremental-version=1
 
     Here's a summary of what we're accomplishing with these settings:
-    - We remove the plugin's `name` value to prevent the portal from displaying
-    the plugin as an available app.
-    - Since the Templates Importer feature resides in the Resources Importer web
-    plugin, we include it as a required context.
-    - By enabling developer mode, if the templates we're importing to the Global
-    site already exist on it, the Templates Importer conveniently overwrites them.
-    - Setting the module increment version to `1` is an appropriate version
-    starting point for the plugin. 
+        - We remove the plugin's `name` value to prevent the portal from
+        displaying the plugin as an available app.
+        - Since the Templates Importer feature resides in the Resources Importer
+        web plugin, we include it as a required context.
+        - By enabling developer mode, if the templates we're importing to the
+        Global site already exist on it, the Templates Importer conveniently
+        overwrites them. 
+        - Setting the module increment version to `1` is an appropriate version
+        starting point for the plugin. 
 
 4. Edit the portlet's `portlet.xml` file and delete the value of its
 `display-name` element to keep the portal from displaying the portlet as an
@@ -2079,7 +2079,7 @@ portal.
 Here's the directory structure to follow for specifying folders to contain your
 templates and structures: 
 
-- `templates-importer`
+- `templates-importer/`
     - `journal/`
         - `structures/` - contains structures (XML) and folders of child
           structures. Each folder name must match the file name of the
@@ -2134,16 +2134,13 @@ instance.
 
     The console output should be similar to this:
 
-    ```
-    INFO  [localhost-startStop-8][PortletHotDeployListener:343] Registering portlets for sample-templates-importer-portlet
-    INFO  [localhost-startStop-8][PortletHotDeployListener:490] 1 portlet for sample-templates-importer-portlet is available 
-    for use
-    INFO  [liferay/hot_deploy-1][ResourcesImporterHotDeployMessageListener:256] Importing resources from sample-templates-
-    importer-portlet to group 10194 takes 1294 ms
+        INFO  [localhost-startStop-8][PortletHotDeployListener:343] Registering portlets for sample-templates-importer-portlet
+        INFO  [localhost-startStop-8][PortletHotDeployListener:490] 1 portlet for sample-templates-importer-portlet is available 
+        for use
+        INFO  [liferay/hot_deploy-1][ResourcesImporterHotDeployMessageListener:256] Importing resources from sample-templates-
+        importer-portlet to group 10194 takes 1294 ms
+        ...
 
-    ...
-
-    ``` 
 
 4. View your resources from within Liferay. Log in to portal as an
    administrator and check the Global site to make sure that your resources were
@@ -2167,7 +2164,7 @@ instance.
 
 The figure below shows some of the ADTs that were imported.
 
-![Figure 3.13: The Templates Importer allows users to import all kinds of templates and structures, such as these application display templates.](../../images/templates-importer-adts.png)
+![Figure 3.16: The Templates Importer allows users to import all kinds of templates and structures, such as these application display templates.](../../images/templates-importer-adts.png)
 
 As you take a look around the folders and files within the plugin's
 `templates-importer` folder, notice the different kinds of templates and
@@ -2180,46 +2177,45 @@ that page template.
 
 Here's the contents of the `page_3.json` file: 
 
-```json
-{
-  "layoutTemplate": {
-    "columns": [
-      [
-        {
-          "portletId": "58"
-        }
-      ],
-      [
-        {
-          "portletId": "47"
-        },
-        {
-          "portletId": "118",
-          "portletPreferences": {
-            "columns": [
-              [
-                {
-                  "portletId": "3"
-                }
-              ],
-              [
-                {
-                  "portletId": "16"
-                }
-              ]
-            ],
-            "layoutTemplateId": "2_columns_i"
-          }
-        }
-      ]
-    ],
-    "friendlyURL": "/page-3",
-    "name": "Page 3",
-    "title": "Page 3"
-  },
-  "layoutTemplateId": "2_columns_ii"
-}
-```
+    {
+      "layoutTemplate": {
+        "columns": [
+          [
+            {
+              "portletId": "58"
+            }
+          ],
+          [
+            {
+              "portletId": "47"
+            },
+            {
+              "portletId": "118",
+              "portletPreferences": {
+                "columns": [
+                  [
+                    {
+                      "portletId": "3"
+                    }
+                  ],
+                  [
+                    {
+                      "portletId": "16"
+                    }
+                  ]
+                ],
+                "layoutTemplateId": "2_columns_i"
+              }
+            }
+          ]
+        ],
+        "friendlyURL": "/page-3",
+        "name": "Page 3",
+        "title": "Page 3"
+      },
+      "layoutTemplateId": "2_columns_ii"
+    }
+
 
 At the bottom of the JSON file, there are several important things specified for
 the page template. The `layoutTemplateId` references the layout template to
@@ -2253,7 +2249,7 @@ field.
 
 The figure below, shows a page created using the Page 3 template.
 
-![Figure 3.14: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
+![Figure 3.17: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
 
 Now that you've learned about the directory structure for your templates and the
 JSON file for the page templates, it's time to learn how to put template and

@@ -3223,7 +3223,7 @@ Are you wondering if we're going to make more terrible jokes that steal from
 classic poetry? Quoth the Maven, "Probably." Let's move on to exploring the
 differences between hot deploy and auto deploy, with respect to your plugins.
 
-## Deploying Your Plugins: Hot Deploy vs. Auto Deploy
+## Deploying Your Plugins: Hot Deploy vs. Auto Deploy [](id=hot-deploy-vs--auto-deploy-liferay-portal-6-2-dev-guide-02-en)
 
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
@@ -3235,7 +3235,7 @@ for them.
 How, you say? We'll give a brief synopsis of each deployment method in this
 section. Let's get started by explaining the hot deployment method.
 
-### Using Hot Deployment
+### Using Hot Deployment [](id=using-hot-deployment-liferay-portal-6-2-dev-guide-02-en)
 
 The first deployment method we'll explore is *hot* deployment. You may be
 familiar with hot deployment in the context of JEE application servers. In
@@ -3303,7 +3303,7 @@ overrides not being loaded by your application server.
 Hopefully this whets your appetite for doing hot deployments. Stay hungry, as
 it's time to explore auto deployment next. 
 
-### Using Auto Deployment
+### Using Auto Deployment [](id=using-auto-deployment-liferay-portal-6-2-dev-guide-02-en)
 
 The Liferay *auto* deployment feature is a mostly optional feature that works in
 conjunction with the hot deployment capabilities of your application server.
