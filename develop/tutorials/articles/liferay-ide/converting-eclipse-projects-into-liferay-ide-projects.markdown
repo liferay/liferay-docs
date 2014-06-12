@@ -4,12 +4,11 @@ Liferay IDE lets you import non-Liferay projects in your Eclipse workspace
 (i.e., you can see them in Eclipse's Project Explorer) and convert them to
 Liferay projects.
 
-This tutorial shows the steps required to accomplish this. Let's get started by 
-importing a project into Liferay IDE.
+This tutorial shows the steps required to accomplish this. 
 
-## Importing and Converting a Project
+## Importing and Converting a Non-Liferay Project
 
-1.  Move the project into a Liferay Plugins SDK if it is not already in one. 
+1.  Move the project into a Liferay Plugins SDK, if it is not already in one. 
     To import the project, select *File* &rarr; *Import...* and then follow the 
     import instructions that appear.
 
@@ -39,9 +38,4 @@ importing a project into Liferay IDE.
 
 Great! Now that you've imported and converted your project, you can work with it 
 just as you would any other Liferay project.
-<!-- To do: swap out this closing for the one below once we have the verification tutorial -->
-<!--
-Great! Now that you've imported and converted your project, you can verify that 
-those actions completed successfully in the next tutorial, 
-*Verifying Successful Project Import*.
--->
+
