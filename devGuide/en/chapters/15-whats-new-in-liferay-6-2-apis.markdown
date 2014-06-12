@@ -782,7 +782,7 @@ Liferay Portal 6.2.0 after 5.2.0 was a major release; whereas the release of
 6.2.0 after 6.1.30 was a minor release. Major and minor releases can have API
 deprecations. 
 
-APIs should not be deprecated between mainenance releases. Mainenance releases
+APIs should not be deprecated between maintenance releases. Maintenance releases
 are signified by a change in the third digit of the release number. For example,
 the release of Liferay Portal 6.1.30 after 6.1.20 was a maintenance release and
 therefore should have no API deprecations. 
