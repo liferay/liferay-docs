@@ -1,19 +1,20 @@
-### Liferay's Permission System 
+# Adding Permissions to Resources
 
-You can add permissions to your custom portlets using four easy steps (also
-known as DRAC): 
+Public bulletin boards are great. Anyone can inform others of just about 
+anything. On the other hand, *anyone* can post just about *anything* on the 
+bulletin board. Some of this content may not be relevant to the community, while 
+other content may even be lewd or inappropriate. Thus, you sometimes need a way 
+to restrict who can post or access content.
 
-1. **D**efine all resources and their permissions. 
+Fortunately, no matter what your portlet does, access to its content can be 
+controlled with permissions. This tutorial begins by describing Liferay's 
+permissions system. Then, the first step of adding permissions to your portlet 
+is described. Go ahead and get started learning about permissions!
 
-2. **R**egister all defined resources in the permissions system. This is also
-   known as *adding resources*. 
-
-3. **A**ssociate the necessary permissions with resources. 
-
-4. **C**heck permission before returning resources. 
+## Liferay's Permission System 
 
 Before you start adding permissions to a portlet, make sure you understand
-these two critical terms used throughout this section: 
+these two critical terms used throughout this tutorial: 
 
 - *Resource*: A generic term for any object represented in the portal.
   Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
@@ -25,8 +26,24 @@ respect to *viewing the calendar portlet* is defined as a permission in Liferay.
 
 It's important to know that permissions for *portlet* resources are implemented
 a little differently than for other resources like Java classes and files.
-Below, we'll describe permission implementation for the *portlet* resource
-first, followed by the model resource. 
+In the next section below, permission implementation is described for the 
+*portlet* resource first, followed by the model resource. 
+
+You can add permissions to your custom portlets using four easy steps (also
+known as DRAC): 
+
+1. **D**efine all resources and their permissions. This is the step presented 
+   in this tutorial.
+
+2. **R**egister all defined resources in the permissions system. This is also
+   known as *adding resources*. This step is discussed in the tutorial 
+   *Adding and Deleting Resources*.
+
+3. **A**ssociate the necessary permissions with resources. This step is 
+   discussed in the tutorial *Exposing the Permission Interface to Users*.
+
+4. **C**heck permission before returning resources. This step is described in 
+   the tutorial *Checking Permissions*.
 
 <!-- We definitely should not be using the Blogs portlet to illustrate this, as
 the patterns are different from what plugin developers would do. For example, in
@@ -34,115 +51,117 @@ a plugin, the convention is to create default.xml in the resource-actions folder
 of a plugin, and that's what developers reading this will do. We should find
 another portlet to serve as our example portlet. -Rich -->
 
+## Define All Resources and Permissions
+
 The first step is to define your resources and the actions that can be defined
-on them. Let's use the Blogs portlet to demonstrate. Open the `blogs.xml` file in
-`portal-impl/src/resource-actions` and you'll see the following mapping of
-resources to actions: 
+on them. The Blogs portlet is used here to demonstrate. Open the `blogs.xml` 
+file in `portal-impl/src/resource-actions` and you'll see the following mapping 
+of resources to actions: 
 
-    <?xml version="1.0"?>
-    <!DOCTYPE resource-action-mapping PUBLIC
-    "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
-    "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
-
-    <resource-action-mapping>
-            <portlet-resource>
-                    <portlet-name>33</portlet-name>
-                    <permissions>
-                            <supports>
-                                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
-                                    <action-key>ADD_TO_PAGE</action-key>
-                                    <action-key>CONFIGURATION</action-key>
-                                    <action-key>VIEW</action-key>
-                            </supports>
-                            <site-member-defaults>
-                                    <action-key>VIEW</action-key>
-                            </site-member-defaults>
-                            <guest-defaults>
-                                    <action-key>VIEW</action-key>
-                            </guest-defaults>
-                            <guest-unsupported>
-                                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
-                                    <action-key>CONFIGURATION</action-key>
-                            </guest-unsupported>
-                    </permissions>
-            </portlet-resource>
-            <portlet-resource>
-                    <portlet-name>161</portlet-name>
-                    <permissions>
-                            <supports>
-                                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                                    <action-key>CONFIGURATION</action-key>
-                                    <action-key>VIEW</action-key>
-                            </supports>
-                            <site-member-defaults>
-                                    <action-key>VIEW</action-key>
-                            </site-member-defaults>
-                            <guest-defaults>
-                                    <action-key>VIEW</action-key>
-                            </guest-defaults>
-                            <guest-unsupported>
-                                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                                    <action-key>CONFIGURATION</action-key>
-                            </guest-unsupported>
-                    </permissions>
-            </portlet-resource>
-            <model-resource>
-                    <model-name>com.liferay.portlet.blogs</model-name>
-                    <portlet-ref>
-                            <portlet-name>33</portlet-name>
-                            <portlet-name>161</portlet-name>
-                    </portlet-ref>
-                    <weight>1</weight>
-                    <permissions>
-                            <supports>
-                                    <action-key>ADD_ENTRY</action-key>
-                                    <action-key>PERMISSIONS</action-key>
-                                    <action-key>SUBSCRIBE</action-key>
-                            </supports>
-                            <site-member-defaults />
-                            <guest-defaults />
-                            <guest-unsupported>
-                                    <action-key>ADD_ENTRY</action-key>
-                                    <action-key>PERMISSIONS</action-key>
-                                    <action-key>SUBSCRIBE</action-key>
-                            </guest-unsupported>
-                    </permissions>
-            </model-resource>
-            <model-resource>
-                    <model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
-                    <portlet-ref>
-                            <portlet-name>33</portlet-name>
-                            <portlet-name>161</portlet-name>
-                    </portlet-ref>
-                    <weight>2</weight>
-                    <permissions>
-                            <supports>
-                                    <action-key>ADD_DISCUSSION</action-key>
-                                    <action-key>DELETE</action-key>
-                                    <action-key>DELETE_DISCUSSION</action-key>
-                                    <action-key>PERMISSIONS</action-key>
-                                    <action-key>UPDATE</action-key>
-                                    <action-key>UPDATE_DISCUSSION</action-key>
-                                    <action-key>VIEW</action-key>
-                            </supports>
-                            <site-member-defaults>
-                                    <action-key>ADD_DISCUSSION</action-key>
-                                    <action-key>VIEW</action-key>
-                            </site-member-defaults>
-                            <guest-defaults>
-                                    <action-key>ADD_DISCUSSION</action-key>
-                                    <action-key>VIEW</action-key>
-                            </guest-defaults>
-                            <guest-unsupported>
-                                    <action-key>DELETE</action-key>
-                                    <action-key>DELETE_DISCUSSION</action-key>
-                                    <action-key>PERMISSIONS</action-key>
-                                    <action-key>UPDATE</action-key>
-                                    <action-key>UPDATE_DISCUSSION</action-key>
-                            </guest-unsupported>
-                    </permissions>
-            </model-resource>
-    </resource-action-mapping>
+	<?xml version="1.0"?>
+	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" 
+	"http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
+	
+	<resource-action-mapping>
+		<portlet-resource>
+			<portlet-name>33</portlet-name>
+			<permissions>
+				<supports>
+					<action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+					<action-key>ADD_TO_PAGE</action-key>
+					<action-key>CONFIGURATION</action-key>
+					<action-key>VIEW</action-key>
+				</supports>
+				<site-member-defaults>
+					<action-key>VIEW</action-key>
+				</site-member-defaults>
+				<guest-defaults>
+					<action-key>VIEW</action-key>
+				</guest-defaults>
+				<guest-unsupported>
+					<action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+					<action-key>CONFIGURATION</action-key>
+				</guest-unsupported>
+			</permissions>
+		</portlet-resource>
+		<portlet-resource>
+			<portlet-name>161</portlet-name>
+			<permissions>
+				<supports>
+					<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+					<action-key>CONFIGURATION</action-key>
+					<action-key>VIEW</action-key>
+				</supports>
+				<site-member-defaults>
+					<action-key>VIEW</action-key>
+				</site-member-defaults>
+				<guest-defaults>
+					<action-key>VIEW</action-key>
+				</guest-defaults>
+				<guest-unsupported>
+					<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+					<action-key>CONFIGURATION</action-key>
+				</guest-unsupported>
+			</permissions>
+		</portlet-resource>
+		<model-resource>
+			<model-name>com.liferay.portlet.blogs</model-name>
+			<portlet-ref>
+				<portlet-name>33</portlet-name>
+				<portlet-name>161</portlet-name>
+			</portlet-ref>
+			<root>true</root>
+			<weight>1</weight>
+			<permissions>
+				<supports>
+					<action-key>ADD_ENTRY</action-key>
+					<action-key>PERMISSIONS</action-key>
+					<action-key>SUBSCRIBE</action-key>
+				</supports>
+				<site-member-defaults />
+				<guest-defaults />
+				<guest-unsupported>
+					<action-key>ADD_ENTRY</action-key>
+					<action-key>PERMISSIONS</action-key>
+					<action-key>SUBSCRIBE</action-key>
+				</guest-unsupported>
+			</permissions>
+		</model-resource>
+		<model-resource>
+			<model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
+			<portlet-ref>
+				<portlet-name>33</portlet-name>
+				<portlet-name>161</portlet-name>
+			</portlet-ref>
+			<weight>2</weight>
+			<permissions>
+				<supports>
+					<action-key>ADD_DISCUSSION</action-key>
+					<action-key>DELETE</action-key>
+					<action-key>DELETE_DISCUSSION</action-key>
+					<action-key>PERMISSIONS</action-key>
+					<action-key>UPDATE</action-key>
+					<action-key>UPDATE_DISCUSSION</action-key>
+					<action-key>VIEW</action-key>
+				</supports>
+				<site-member-defaults>
+					<action-key>ADD_DISCUSSION</action-key>
+					<action-key>VIEW</action-key>
+				</site-member-defaults>
+				<guest-defaults>
+					<action-key>ADD_DISCUSSION</action-key>
+					<action-key>VIEW</action-key>
+				</guest-defaults>
+				<guest-unsupported>
+					<action-key>DELETE</action-key>
+					<action-key>DELETE_DISCUSSION</action-key>
+					<action-key>PERMISSIONS</action-key>
+					<action-key>UPDATE</action-key>
+					<action-key>UPDATE_DISCUSSION</action-key>
+				</guest-unsupported>
+			</permissions>
+		</model-resource>
+	</resource-action-mapping>
 
 Permissions in the blogs portlet are defined at two different levels: the
 portlet level and the model level. The portlet level defines permissions on the
@@ -179,9 +198,9 @@ users. For example, a food site could have one blog open to posts from any site
 member, but also have a separate informational blog about the site itself
 restricted to posts from administrators. 
 
-After defining the portlet and portlet instance as resources, we need to define
+After defining the portlet and portlet instance as resources, you need to define
 permissions on the models in the portlet. The model resource is surrounded by
-the `<model-resource>` tag. Inside the tag, we first define the model name; the
+the `<model-resource>` tag. Inside the tag, first define the model name; the
 `<model-name>` isn't the name of a Java class, but the fully qualified name of
 the portlet's package (e.g. the blog portlet's package
 `com.liferay.portlet.blogs`). This is the recommended convention for permissions
@@ -241,20 +260,8 @@ this property specification might look like:
 
 Check out a copy of the Liferay source code from the Liferay Github
 [repository](https://github.com/liferay/liferay-portal) to see an example of a
-portlet that defines its resources and permissions as we just described; start
+portlet that defines its resources and permissions as just described; start
 by looking at the definition files found in the
 `portal-impl/src/resource-actions` directory. For an example of defining
 permissions in the context of a portlet plugin, check out `plugins/trunk` and
-look at the portlet `sample-permissions-portlet`. 
-
-Next, we'll show you how to add resources. 
-
-<!-- I didn't see any point to the permission algorithms section. It didn't seem
-to lead anywhere, and developers who have been approaching Liferay have been met
-with a default Algorithm 6 for two releases now. Algorithm 6 is now required for
-the proper operation of Liferay, so the only people who need to worry about the
-older algorithms are those who are upgrading, and we cover that in the upgrading
-section of the User Guide. The API described below works the same regardless of
-which permissions algorithm is used. For these reasons, I removed the whole
-section. It seems to improve the flow: we just left off talking about portal
-resources in the XML file, and now it goes right into the code. -Rich -->
+look at the portlet `sample-permissions-portlet`.
