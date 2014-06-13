@@ -705,7 +705,7 @@ is ignored. That's fine for our example.
 
 ---
 
- [Note](../../images/tip.png) **Best practice**: When overriding an existing
+ ![Note](../../images/tip.png) **Best practice**: When overriding an existing
  Struts action, it's usually best to override the method that takes the original
  Struts action handle as a parameter and execute that original Struts action.
  Think of the original action as a servlet filter or aspect. If you override the
@@ -754,7 +754,7 @@ When you actually log in, this message prints to your console:
 
 Both custom Struts actions are executed via your Struts action hook! 
 
-Try your new Struts path by accessing it from your browser (e.g.
+Try your new Struts path by accessing it from your browser (e.g.,
 `http://localhost:8080/c/portal/sample`). 
 
 ![Figure 11.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
@@ -861,10 +861,11 @@ requirements:
 - **LayoutLocalService:** Adds, deletes, retrieves and manages pages of sites,
   organizations and users. 
 
-For a complete list of available services and their methods, check the [Liferay Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/)
-or access the Javadocs for your version of Liferay at
+For a complete list of available services and their methods, check the [Liferay
+Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/) or access the
+Javadocs for your version of Liferay at
 [http://docs.liferay.com/portal](http://docs.liferay.com/portal) and click on
-the *Javadocs* link. 
+the *javadocs/* link. 
 
 Now that you know how to override a portal service, let's learn how to override
 a `Language.properties` file.
@@ -987,7 +988,7 @@ Navigate to the *Control Panel* &rarr; *Users and Organizations* and make sure a
 user has a job title, which can be added in any user's *My Account* interface.
 Then test out the indexer hook by searching for that job title.
 
-![Figure 11.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
+![Figure 11.5: In this example, searching for *Blogger* returns two users with the matching job title.](../../images/indexer-hook-search.png)
 
 As you can see, hooks serve to enhance the functionality of your portal and
 applications. Next, we will take a look at Liferay's Right to Left Language Support and how it can enhance 
@@ -1170,7 +1171,7 @@ Hook elements `servlet-filter` and `servlet-filter-mapping` have been added to
 `liferay-hook.xml` so you can configure your servlet filters. For a working
 example, see the
 [sample-servlet-filter-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-servlet-filter-hook)
-in the Plugin SDK. 
+in the Plugins SDK. 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-10-en)
 
