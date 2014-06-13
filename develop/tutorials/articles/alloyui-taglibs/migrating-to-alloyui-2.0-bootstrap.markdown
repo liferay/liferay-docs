@@ -385,7 +385,7 @@ And remember that the tool may not pick up all of the changes that need to be
 made to your plugin. But you'll be happy that the tool does a good bit of the
 monotonous conversion work for you. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-1)
 
 No matter which Liferay APIs you're using, you'll need to understand Liferay's
 deprecation policy. That way you'll know when methods from our API's are

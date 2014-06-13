@@ -284,7 +284,7 @@ the Ant scripts, but this process makes it possible to create plugins with the
 Plugins SDK while conforming to the strict standards some organizations have for
 their Java projects. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-10)
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-11)
 
 The Liferay Plugins SDK uses the Apache Ant build tool. If that makes you
 uncomfortable, consider using Liferay's Apache Maven archetypes to build your
