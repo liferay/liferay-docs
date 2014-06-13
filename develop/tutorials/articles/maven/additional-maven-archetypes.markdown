@@ -1,9 +1,8 @@
 # Developing Liferay Plugins with Additional Maven Archetypes [](id=developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
 
 Liferay provides more archetypes than just the ones for portlets, hooks, themes,
-and layout templates. The Liferay team has been busy expanding our archetype
-list, and we're proud to show you some additional plugins that you can create
-using Maven archetypes. 
+and layout templates. The Liferay team has been busy expanding the list of
+archetypes available for Liferay app development. 
 
 Check out these exciting archetypes that are available: 
 
@@ -51,7 +50,7 @@ Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial)
+<!-- Consider moving the content below into the Liferay IDE section intro. Jim
 
 Feeling confused by the number of features provided by Eclipse and Liferay IDE?
 You can easily come across difficult questions and run into very specific
@@ -61,3 +60,4 @@ question. So where would you go to find out? Don't reinvent the wheel, visit the
 On the *Forums* page, you can look up solutions to specific issues and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
+-->
