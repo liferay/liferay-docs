@@ -1,4 +1,4 @@
-# Generating Language Properties File and Automated Translations
+# Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
@@ -17,7 +17,7 @@ get translations for your default resource bundle.
 It's time to get started by doing the initial setup for the Bing Translator
 service for translating the language properties. 
 
-## Translating Languages Using the Bing Translator
+## Translating Languages Using the Bing Translator [](id=translating-languages-using-the-bing-translator-lp-6-2-develop-tutorial)
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
@@ -62,7 +62,7 @@ translations using the Bing Translator service, you'll need to do the following:
 Next, you'll make the necessary changes to your portlet so that it can leverage 
 the Bing Translator service.
    
-## Implementing Translations in Your Portlet
+## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet-lp-6-2-develop-tutorial)
 
 Now that you've done the initial setup for the Bing Translator, you're ready to 
 add support for translations to your portlet.

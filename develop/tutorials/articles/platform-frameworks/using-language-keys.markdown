@@ -1,4 +1,4 @@
-# Using Liferay's Language Keys
+# Using Liferay's Language Keys [](id=using-liferays-language-keys-lp-6-2-develop-tutorial)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet
@@ -20,7 +20,7 @@ their custom portlet:
 
 Let's get started by implementing this functionality into your portlet!
 
-## Implementing Language Keys for Your Portlet
+## Implementing Language Keys for Your Portlet [](id=implementing-language-keys-for-your-portlet-lp-6-2-develop-tutorial)
 
 Before we get started implementing our own language key, we'll step through the
 components of a Liferay UI language key.

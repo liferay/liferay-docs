@@ -1,4 +1,4 @@
-# Developing Liferay Layout Template Plugins with Maven
+# Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. In our introduction to themes, we
@@ -18,7 +18,7 @@ It shall clasp a sainted kitten whom the angels named Lenore II--"
 In memory of the late, now crispy Lenore II, let's create a layout template
 plugin with Maven. 
 
-## Creating a Layout Template Plugin
+## Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin-lp-6-2-develop-tutorial)
 
 To create a Liferay layout template plugin project follow the *Creating Liferay
 Plugins with Maven* section, making sure to select *Layout Template* as the
@@ -33,7 +33,7 @@ the Liferay layout template archetypes.
 
 ---
 
-## Anatomy
+## Anatomy [](id=anatomy-lp-6-2-develop-tutorial)
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -65,12 +65,12 @@ To view the directory structure of a layout template developed by Ant, visit the
 [Anatomy of a Layout Template Project](www.liferay.com)
 tutorial. 
 
-## Deployment
+## Deployment [](id=deployment-lp-6-2-develop-tutorial)
 
 To deploy your layout template plugin, follow the instructions detailed above in
 the *Deploying Liferay Plugins with Maven* section. 
 
-## More Information
+## More Information [](id=more-information-lp-6-2-develop-tutorial)
 
 For detailed information on creating layout templates, see the [Creating Liferay Themes and Layout Templates](www.liferay.com) tutorial.
 
