@@ -1,4 +1,11 @@
-### Adding Permissions 
+# Exposing the Permission Interface to Users 
+
+Imagine that you bought a really nice electric guitar. Now imagine that you 
+bought an even nicer amplifier to go along with it. You get them home, and much 
+to the chagrin of your neighbors, you get ready to rock! However, your 
+neighbors' hearing is saved. You forgot to get a cable to plug the guitar into 
+the amplifier; bummer. This is a lot like what happens when you add permissions 
+to your portlet but don't expose them to users.
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
@@ -6,6 +13,19 @@ permissions (supported actions) in your configuration file's `portlet-resource`
 tag, they're automatically added to a list of permissions in Liferay's
 permissions UI. What good, however, are permissions that are available but can't
 be set by users? 
+
+This tutorial covers exposing your portlet permissions to users. Get ready to 
+rock! 
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** The Liferay Blogs portlet is 
+  used in this tutorial to illustrate exposing permissions to users. You can 
+  find it in Liferay's source code on [Github](https://github.com/liferay/liferay-portal).
+
+---
+
+## Adding Permissions 
 
 To let a user set permissions on model resources, you must expose the permission
 interface to the user. Just add these two Liferay UI tags to your JSP:
@@ -17,7 +37,7 @@ interface to the user. Just add these two Liferay UI tags to your JSP:
     theme, and one of them (see below) is used for permissions. 
 
 This example demonstrates the use of both tags; it comes from the
-`view_entry_content.jspf` file. 
+`view_entry_content.jspf` file of Liferay's Blogs portlet. 
 
     <liferay-security:permissionsURL
         modelResource="<%= BlogsEntry.class.getName() %>"
@@ -42,6 +62,4 @@ For the first tag, specify the following attributes:
 
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
-users can configure the permission settings for model resources. 
-
-Next, we'll show you how to implement permissions checking. 
+users can configure the permission settings for model resources!
