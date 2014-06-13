@@ -1,7 +1,7 @@
 # Developing Liferay Theme Plugins with Maven
 
 So you're sitting in your armchair next to the fire, just as we described in the
-*Developing Liferay Plugins Using Maven* tutorial. Shadows dance on the
+[Developing Liferay Plugins Using Maven](http://www.liferay.com) tutorial. Shadows dance on the
 tapestry-covered wall, and Lenore II (your cat) is purring atop the mantle. Yes,
 you're passing this cold winter's night in grand style (in front of your
 computer, of course). Now imagine yourself sitting on a cold hard metal chair
@@ -16,11 +16,11 @@ has a lasting impression on anyone who visits.
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
-*Using Maven Parent Plugin Projects* tutorial. In that tutorial, we explain how
+[Using Maven Parent Plugin Projects](http://www.liferay.com) tutorial. In that tutorial, we explain how
 to create a parent Maven project and its `pom.xml`. 
 
-To create your Liferay theme plugin project, just follow the *Creating Liferay
-Plugins with Maven* tutorial, making sure to select *Theme* instead of *Portlet*
+To create your Liferay theme plugin project, just follow the [Creating Liferay
+Plugins with Maven](http://www.liferay.com) tutorial, making sure to select *Theme* instead of *Portlet*
 as the plugin type. 
 
 ---
@@ -55,6 +55,7 @@ directory structure:
                 - WEB-INF/
                     - liferay-plugin-package.properties
                     - web.xml
+                    - liferay-look-and-feel.xml
                 - css/ \* Optionally add to hold CSS customizations
                 - images/ \* Optionally add to hold custom images
                 - js/ \* Optionally add to hold JavaScript customizations
@@ -77,9 +78,8 @@ Location       | Maven project      | Plugins SDK project |
 -------------- | ------------------ | ------------------- |
 customizations | `src/main/webapp/` | `docroot/_diffs/`   |
 
-To view the directory structure of a theme developed by Ant, visit the [Anatomy
-of a Theme Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
-section in this guide.
+To view the directory structure of a theme developed by Ant, visit the *Anatomy
+of a Theme Project* section in the [Creating Liferay Themes](http://www.liferay.com) tutorial.
 
 ## Theme POM
 
@@ -117,7 +117,7 @@ placed in the *target* directory. Its path is
 ## More Information
 
 For more information on Liferay themes and its settings, please refer to the
-[Creating Themes and Layout Templates](www.liferay.com) tutorial. 
+[Creating Themes and Layout Templates](http://www.liferay.com) tutorial. 
 
 ## Next Steps
 
