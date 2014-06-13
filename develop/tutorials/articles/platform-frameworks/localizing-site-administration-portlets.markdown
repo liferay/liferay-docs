@@ -1,4 +1,4 @@
-# Localizing Site Administration Portlets
+# Localizing Site Administration Portlets [](id=localizing-site-administration-portlets-lp-6-2-develop-tutorial)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
@@ -21,7 +21,7 @@ following figure displays an example of localizing portlets to Spanish:
 
 You'll learn how to do this by running through the following tutorial!
 
-## Changing Site Administration Portlet Titles and Descriptions
+## Changing Site Administration Portlet Titles and Descriptions [](id=changing-site-administration-portlet-titles-and-des-lp-6-2-develop-tutorial)
 
 In this tutorial, you'll configure your project's portlets to display in Site
 Administration, and then you'll localize its title and description. You'll

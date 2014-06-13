@@ -1,4 +1,4 @@
-# Deploying Liferay Plugins with Maven
+# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. In this
 article, we explain the process. Just follow these steps: 
@@ -137,7 +137,7 @@ you'll use when developing plugins with Maven:
 
 ---
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-6)
 
 Now that you've learned how to deploy a plugin using Maven, let's consider the
 types of Liferay plugins you can develop with Liferay Maven archetypes. You can

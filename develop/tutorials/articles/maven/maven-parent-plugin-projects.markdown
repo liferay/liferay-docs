@@ -1,4 +1,4 @@
-# Using Maven Parent Plugin Projects
+# Using Maven Parent Plugin Projects [](id=using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties that child projects have in common. You can also create
@@ -203,7 +203,7 @@ through inheritance.
 
 ---
  
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-8)
 
 Now that you specified your project's general information, your Liferay
 environment properties, and the Liferay artifacts on which Liferay plugin
