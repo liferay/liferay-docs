@@ -1,14 +1,14 @@
 # Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
 So you're sitting in your armchair next to the fire, just as we described in the
-[Developing Liferay Plugins Using Maven](http://www.liferay.com) tutorial. Shadows dance on the
-tapestry-covered wall, and Lenore II (your cat) is purring atop the mantle. Yes,
-you're passing this cold winter's night in grand style (in front of your
-computer, of course). Now imagine yourself sitting on a cold hard metal chair
-inside an off-white cubicle with empty walls (you're still in front of your
-computer, of course). These two descriptions paint two very different pictures,
-but both describe what you're doing (sitting and computing). Changing the
-"scenery" of your portal sets the mood for your users. We'll show you how to
+[introduction](http://www.liferay.com) to the Maven section of tutorials.
+Shadows dance on the tapestry-covered wall, and Lenore II (your cat) is purring
+atop the mantle. Yes, you're passing this cold winter's night in grand style (in
+front of your computer, of course). Now imagine yourself sitting on a cold hard
+metal chair inside an off-white cubicle with empty walls (you're still in front
+of your computer, of course). These two descriptions paint two very different
+pictures, but both describe what you're doing (sitting and computing). Changing
+the "scenery" of your portal sets the mood for your users. We'll show you how to
 develop your own theme plugin (i.e., your "scenery") using Maven so your portal
 has a lasting impression on anyone who visits. 
 
@@ -16,12 +16,12 @@ has a lasting impression on anyone who visits.
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
-[Using Maven Parent Plugin Projects](http://www.liferay.com) tutorial. In that tutorial, we explain how
-to create a parent Maven project and its `pom.xml`. 
+[Using Maven Parent Plugin Projects](http://www.liferay.com) tutorial. That
+tutorial explains how to create a parent Maven project and its `pom.xml`. 
 
 To create your Liferay theme plugin project, just follow the [Creating Liferay
-Plugins with Maven](http://www.liferay.com) tutorial, making sure to select *Theme* instead of *Portlet*
-as the plugin type. 
+Maven Plugins from Liferay IDE](http://www.liferay.com) tutorial, making sure to
+select *Theme* instead of *Portlet* as the plugin type. 
 
 ---
 
@@ -53,9 +53,9 @@ directory structure:
                     - sitemap.json
             - webapp/
                 - WEB-INF/
+                    - liferay-look-and-feel.xml
                     - liferay-plugin-package.properties
                     - web.xml
-                    - liferay-look-and-feel.xml
                 - css/ \* Optionally add to hold CSS customizations
                 - images/ \* Optionally add to hold custom images
                 - js/ \* Optionally add to hold JavaScript customizations
@@ -78,8 +78,13 @@ Location       | Maven project      | Plugins SDK project |
 -------------- | ------------------ | ------------------- |
 customizations | `src/main/webapp/` | `docroot/_diffs/`   |
 
+<!-- Revisit adding this link after the themes tutorials are published
 To view the directory structure of a theme developed by Ant, visit the *Anatomy
 of a Theme Project* section in the [Creating Liferay Themes](http://www.liferay.com) tutorial.
+-->
+
+As with any Maven project's POM, you use the theme project's POM to define the
+project's artifacts and specify its dependencies. 
 
 ## Theme POM [](id=theme-pom-lp-6-2-develop-tutorial)
 
@@ -100,8 +105,8 @@ The theme plugin project POM has two additional properties:
 
 ## Deployment [](id=deployment-lp-6-2-develop-tutorial-2)
 
-To deploy your theme plugin, follow the instructions in the *Deploying Liferay
-Plugins with Maven* section. 
+To deploy your theme plugin, follow the instructions in the [Deploying Liferay
+Plugins with Maven](liferay.com) tutorial. 
 
 ---
 
@@ -114,14 +119,11 @@ placed in the *target* directory. Its path is
 
 ---
 
-## More Information [](id=more-information-lp-6-2-develop-tutorial-2)
+You now know how to create a theme plugin using Maven. You're familiar with
+its file structure and POM, and you know how to deploy the theme. Way to go!
 
+<!-- Revisit this link when the themes tutorial is published.
 For more information on Liferay themes and its settings, please refer to the
-[Creating Themes and Layout Templates](http://www.liferay.com) tutorial. 
+[Creating Themes](http://www.liferay.com) tutorial. 
+-->
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-5)
-
-You've successfully developed a Liferay theme using Maven! Find out about
-developing hook plugins next. 
-
-[Creating Hook Plugins with Maven](http://www.liferay.com)
