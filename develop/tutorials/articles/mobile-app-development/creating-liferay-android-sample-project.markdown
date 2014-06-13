@@ -1,24 +1,41 @@
-## Creating the Liferay Android Sample Project 
+# Creating the Liferay Android Sample Project 
 
 The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries
-and sample app code. We call this project the *Liferay Android Sample Project*.
-You can refer to it to see how it connects with Liferay and invokes Liferay
-services. Let's create the sample project now! 
+and sample app code. This project is called the *Liferay Android Sample Project*. 
 
-1. Go to *File* &rarr; *Project...* &rarr; *Liferay* &rarr; *Liferay Android
-Sample Project*.
+This tutorial walks you through the creation of the *Liferay Android Sample 
+Project*. When you're finished, you'll have a simple but functional Android app 
+that you can refer to in your future projects. Go ahead and get started! 
 
-2. Click *Next*. <!-- ... please describe the defaults we're accepting at this
-screen. -->
+## Creating the Project 
 
-3. Specify the *Project name*, *Location*, and *Target SDK*. Notice that you
-also have the option to choose a sample project template from the Mobile SDK
-preferences menu.
+1. First, go to *File* &rarr; *New* &rarr; *Project...*. Then select 
+   *Liferay* &rarr; *Liferay Android Sample Project* in the window that appears. 
+   Click *Next*.
+   
+    ![Figure 1: Creating the Liferay Android Sample Project.](../../images/liferay-android-sample-project.png)
 
-4. Click *Finish* to create the sample Android app.
+2. Specify the *Project name*, *Location*, and *Target SDK*. Notice that you
+   also have the option to choose a sample project template from the Mobile SDK
+   preferences menu.
 
-![Figure 8.3: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
+3. Click *Finish* to create the sample Android app.
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** If you get a console error 
+  that says `Unable to resolve target android-18`, or some other number, then 
+  you need to set your Android project's build target. Right click your project 
+  and select *Properties*. Next, click *Android* in the left side of the window 
+  that appears. Then check the box for your version of the Android SDK under 
+  *Project Build Target*. 
+
+---
+
+![Figure 2: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
+
+## Reviewing the Project's Content 
 
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
@@ -41,30 +58,35 @@ libraries, open the sample app's `MainActivity` class from the
 `src/com/liferay/mobile/sample/activity` directory. In Eclipse, scroll your
 mouse over the `Session` object instance within the `onListItemClick()` method. 
 
-![Figure 8.4: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+![Figure 3: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
 
 The `Session` interface is referenced from the
 `com.liferay.mobile.android.service` package. This app uses the Liferay Mobile
 SDK from the library JARs in this project.
 
-Let's run the sample app in Android's
-[emulator](http://developer.android.com/tools/devices/emulator.html).
+## Running the App 
+
+You're now ready to run the sample app in Android's [emulator](http://developer.android.com/tools/devices/emulator.html).
+To do so, you'll need to have an Android Virtual Device (AVD) set up in Eclipse. 
+You can set one up before running the app, or at runtime. Instructions for 
+setting up an AVD can be found in Android's [developer documentation](http://developer.android.com/tools/devices/managing-avds.html).
+
+Now that you have an AVD set up, you can run the app!
 
 1. Start a local portal instance on port `8080`, if one is not already running. 
 
 2. In Eclipse, go to *Run* &rarr; *Run As* &rarr; *Android Application*. 
 
-3. Go to the *Liferay Contacts* app. 
-
+3. Navigate to the *Liferay Contacts* app in the emulator if it doesn't come up 
+   automatically.
+   
+4. To go to the app's *Settings*, click the vertical bar in the upper right 
+   corner of the emulator. Enter your login credentials for your portal. When 
+   you go back to the app, your fellow Liferay site members should appear.
+   
 The *Liferay Contacts* app lists your site's users. You can select users' 
 names to see their information. 
 
-![Figure 8.5: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-contacts-app.png)
+![Figure 4: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-android-contacts.png)
 
 Congratulations on creating a mobile app that uses Liferay! 
-
-Now let's consider the Android apps you've been developing. Is there data or
-functionality that you'd like to leverage from your Liferay Portal instances?
-The Mobile SDK enables you to use Liferay core services to get what you
-need from your portal. This is easy to do with Liferay's Mobile SDK Eclipse
-plugin. We'll show you how to use it next. 
