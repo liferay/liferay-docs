@@ -5,8 +5,8 @@ article, we explain the process. Just follow these steps:
 
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
-    `pom.xml`. See this chapter's section *Using a Parent Plugin Project* for
-    descriptions of these Liferay properties. 
+    `pom.xml`. See the *Using Maven Parent Projects* tutorial for descriptions
+    of these Liferay properties. 
 
     Here's an example where we specified these *properties* for a Liferay
     instance bundled with Apache Tomcat in the directory
