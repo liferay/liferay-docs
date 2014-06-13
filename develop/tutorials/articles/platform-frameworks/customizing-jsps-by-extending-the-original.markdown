@@ -6,7 +6,7 @@ https://github.com/liferay/liferay-docs/develop/tutorials/code/plat-fws/extend-j
 
 Let's say you want to add more content to one of Liferay's JSPs, but you also
 want to benefit from any changes made to it as you upgrade Liferay. Rather
-than overwriting the JSP, you can simply create a new JSP in a hook and include
+than overwriting the JSP, you can instead create a new JSP in a hook and include
 the original JSP in the new JSP. 
 
 In this tutorial, you'll learn how to extend an original Liferay JSP using a
@@ -44,7 +44,7 @@ while leaving the original JSP untouched. Let's get started!
     Use the `<liferay-util:buffer>` tag, from Liferay's *util* taglib to include
     the original Liferay JSP and assign the JSP's content to a buffer variable.
     Assigning the content to a buffer variable enables you to manipulate the
-    original Liferay JSP content as a string. 
+    original Liferay JSP content as a `String`. 
 
     For example, you can assign the content of the Liferay JSP to a variable
     named `html`: 
@@ -57,15 +57,18 @@ while leaving the original JSP untouched. Let's get started!
             <liferay-util:include page="/html/[JSP_file's_path]" />
         </liferay-util:buffer>
 
-    If you use the buffer assignment from the snippet above, make sure to
+    If you use the buffer assignment from the snippet above, make sure you 
     replace `[JSP_file's_path]` with the Liferay JSP's path. Hint: In Liferay
-    IDE, the JSP file's path is listed as the value for the *Liferay Portal JSP*
-    in the Custom JSPs section of the Liferay Hook Configuration of
-    `liferay-hook.xml` in Overview mode. 
+    IDE, the JSP file's path is shown as the *Liferay Portal JSP*
+    in the Liferay Hook Configuration's Custom JSPs section in the
+    `liferay-hook.xml` editor. 
 
     **Important:** Add `.portal` to the JSP file's name, before the `.jsp`
     suffix. For example, if the original JSP's name is `search.jsp`, specify
-    `search.portal.jsp`. 
+    `search.portal.jsp`. When Liferay deploys your hook, the original JSP is
+    renamed to `[file name].portal.jsp`, and your JSP takes its place. If,
+    therefore, you want to reference the original, you have to reference its new
+    name. 
 
     Add more content before and/or after the original JSP's content via the
     buffer variable. For example, you can import Liferay's
