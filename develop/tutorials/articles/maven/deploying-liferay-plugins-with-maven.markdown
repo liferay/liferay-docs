@@ -1,7 +1,7 @@
 # Deploying Liferay Plugins with Maven
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. In this
-article, we explain the process. Just follow these steps: 
+tutorial, we explain the process. Just follow these steps: 
 
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)

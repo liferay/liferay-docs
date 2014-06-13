@@ -2,7 +2,7 @@
 
 If you'd like to learn how to use Liferay IDE to create Liferay Maven
 Plugin, please refer to the *Creating Liferay Maven Plugins from Liferay IDE*
-tutorial. In this article, we explain how to use Maven archetypes to generate a
+tutorial. In this tutorial, we explain how to use Maven archetypes to generate a
 Liferay plugin project using the command line.
 
 1.  Open the command prompt and navigate to the parent directory in which you

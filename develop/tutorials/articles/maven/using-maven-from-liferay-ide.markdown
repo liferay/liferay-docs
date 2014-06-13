@@ -3,7 +3,7 @@
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 (`m2e-liferay`), or the added support of configuring Maven projects as full
-Liferay IDE projects. In this article, we'll discuss what the Maven project
+Liferay IDE projects. In this tutorial, we'll discuss what the Maven project
 configurator does, how to install it, and how to install its dependencies. We'll
 also examine the structure of Liferay Maven projects and explore some
 configuration options.
@@ -76,7 +76,7 @@ Now that your Liferay IDE is Maven-ready, let's examine the anatomy of a Liferay
 Maven project. Note: you don't need to have an existing Liferay Maven project to
 continue. However, if you'd like to create a new Liferay Maven project in the
 IDE before proceeding, follow the instructions in the *Creating Liferay Plugins
-with Maven* article. Alternatively, you can import an existing Maven project by
+with Maven* tutorial. Alternatively, you can import an existing Maven project by
 navigating to *File* &rarr; *Import* &rarr; *Maven* and selecting the location
 of your Maven project source code. 
 

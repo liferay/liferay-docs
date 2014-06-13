@@ -4,7 +4,7 @@ Liferay offers many archetypes to help create Maven projects for multiple plugin
 types, including portlet, theme, hook, and layout template plugins. To make sure
 that you can find the archetypes you need, we provide archetypes for each of
 these plugin types for various versions of Liferay. *Archetype* is Maven's
-project templating toolkit. In this article, we explain how to use Archetype to
+project templating toolkit. In this tutorial, we explain how to use Archetype to
 create a Liferay portlet project. With Archetype, you can use the same steps we
 detail below to generate Liferay plugin projects of any type. 
 
