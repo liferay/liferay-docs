@@ -1242,7 +1242,7 @@ plugins:
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
 
-### Using the SDK Behind a Proxy
+### Using the SDK Behind a Proxy [](id=using-the-sdk-behind-a-proxy-liferay-portal-6-2-dev-guide-02-en)
 
 You may run into errors when you try to create a Liferay project if your 
 internet connection goes through a proxy first (you can skip this section if 
