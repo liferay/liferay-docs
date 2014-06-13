@@ -21,6 +21,7 @@ We'll cover the following topics:
 - Overriding a Portal Service
 - Overriding a *Language.properties* file
 - Extending the Indexer Post Processor
+- Supporting Right-to-Left Languages in Plugins
 - Other Hooks
 
 As with portlets, layout templates, and themes, the easiest way to create and
@@ -987,6 +988,173 @@ user has a job title, which can be added in any user's *My Account* interface.
 Then test out the indexer hook by searching for that job title.
 
 ![Figure 11.5: In this example, searching for *Nose Model* returns one user with the matching job title.](../../images/indexer-hook-search.png)
+
+As you can see, hooks serve to enhance the functionality of your portal and
+applications. Next, we will take a look at Liferay's Right to Left Language Support and how it can enhance 
+both your portal and plugins.
+
+## Supporting Right-to-Left Languages in Plugins [](id=displaying-rtl-content-with-rtl-hook-liferay-portal-6-2-dev-guide-11-en)
+
+Middle Eastern languages, such as Hebrew and Arabic, are written predominantly
+right-to-left (RTL). However, many sites written RTL also have left-to-right
+(LTR) content mixed in, making them bidirectional in nature. Conveniently,
+browsers use [language and
+direction](http://www.w3.org/TR/html401/struct/dirlang.html) information of HTML
+tags to automatically adapt and align page content. However, sites may consist
+of elements that are absolutely positioned on the page by a style sheet; these
+elements aren't automatically aligned by the browser. Rather, you must adapt
+your style sheets to handle such elements. Since style sheets are usually
+designed for LTR languages, the typical challenge is creating alternative
+versions of the CSS for RTL languages. This can be an arduous task. 
+
+Thankfully, Liferay's *Right to Left Language Support* app automatically adapts
+Liferay Portal styles for RTL languages. You simply deploy it and it mirrors
+your site's content for RTL languages. The app is available on the Liferay
+[Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
+and deploy the app as described in the [Leveraging the Liferay
+Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
+chapter of [Using Liferay
+Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/). 
+
+As a before-and-after example, the figure below shows a page displayed in
+English, an LTR language. 
+
+![Figure 11.6: Here is a site displaying English content left-to-right.](../../images/rtl-hook-001.png)
+
+Compare it to the following figure of a page displayed in Hebrew, an RTL
+language. 
+
+![Figure 11.7: Here is a site displaying Hebrew content right-to-left using Right to Left Language Support.](../../images/rtl-hook-002.png)
+
+You get the point, right? The Right to Left Language Support (RTL Support) app does the heavy lifting of rendering the
+RTL content appropriately! 
+
+Now that you've seen Liferay Portal and its apps rendered using RTL Support,
+have you wondered how you might leverage RTL Support in your custom plugins?
+You'll learn how to use RTL Support with your plugins, next. 
+
+### Applying the RTL Support to Custom Plugins [](id=applying-the-rtl-hook-to-custom-plugins-liferay-portal-6-2-dev-guide-11-en)
+
+You can use RTL Support with any plugin type. Theme plugins are the most common
+type of plugins to make use of it. The following steps focus on using RTL
+Support in a custom theme, but they also mention what's needed to make similar
+changes to support using RTL Support in the other plugin types. 
+
+1. Make sure to deploy the Right to Left Language Support app to your
+   application server. 
+	
+	If upon initial deployment you don't notice any changes when switching to an
+	RTL language, reload the page to force a clean cache; you can do this by 
+	using Command + R (on Mac) or Ctrl + F5 (on Windows).
+	
+    Note, since dynamic generation of CSS from SASS is not yet supported in the
+    context of the RTL Support app, the hook loads the current theme's merged
+    CSS files, disregarding whether
+    [theme CSS fast loading](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme)
+    is disabled. Disabling CSS fast load (i.e., setting
+    [`theme.css.fast.load=false`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme))
+    is commonly done while debugging for development. 
+
+2. Restart your application server. 
+
+3. Copy the `rtl-hook.jar` and its dependencies, `ant.jar`, `jodd.jar`,
+   `jruby.jar` and `rhino.jar`, from your RTL hook web app's `WEB-INF/lib`
+   folder on your application server. And paste them into the
+   `docroot/WEB-INF/lib` folder of your plugin project. 
+
+4. Add the following filtering elements before the closing `</web-app>` tag in
+   your project's `docroot/WEB-INF/web.xml` file. 
+
+        <filter>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
+        </filter>
+        <filter-mapping>
+            <filter-name>Dynamic CSS Filter</filter-name>
+            <url-pattern>*.css</url-pattern>
+        </filter-mapping>
+
+5. Add targets for building and cleaning your plugin's RTL CSS files. 
+
+    For example, here are the targets to add to the `build.xml` file of your
+    theme plugin project: 
+
+        <target name="build-css" depends="clean-rtl-css, build-common-theme.build-css, build-rtl-css" />
+
+        <target name="build-rtl-css">
+            <java
+                classname="com.liferay.rtl.tools.RtlCssBuilder"
+                classpathref="plugin.classpath"
+                fork="true"
+                newenvironment="true"
+            >
+                <jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+                <arg value="sass.dir=/" />
+                <arg value="sass.docroot.dir=${basedir}/docroot" />
+            </java>
+        </target>
+
+        <target name="clean-rtl-css">
+            <delete failonerror="false" includeemptydirs="true">
+                <fileset dir="${basedir}/docroot" includes="**/.sass-cache/*_rtl.*" />
+            </delete>
+        </target>
+
+    If you're using the RTL hook with another type of plugin project, simply
+    rename the `build-common-theme.build-css` dependency target reference
+    appropriately  for your plugin type: 
+
+    *Portlet:* `build-common-portlet.build-css`
+
+    *Hook:* `build-common-hook.build-css`
+
+    *Ext:* `build-common-ext.build-css`
+
+    *Web App:* `build-common-web.build-css` 
+    
+6. Deploy your plugin to the portal. 
+
+Ant echoes `Generated RTL cache for ...` messages that mention the cache that
+the RTL hook generates in your plugin. In your plugin's `css/.sass-cache`
+folder, the hook creates `*_rtl.css` versions of each of your `*.css` files. 
+
+You now know how to use the Right to Left Language Support app in your custom
+plugins. Now, it's time to learn how you can extend the Right to Left Language
+Support app's style with your own custom CSS for RTL languages. 
+
+### Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
+
+As your learned in the previous section, the Right to Left Language Support (RTL
+Support) app automatically generates RTL versions of your CSS files by applying
+rules, such as changing `margin-left` to `margin-right`. However, you may want
+to extend the generated CSS by defining your own custom styles for RTL
+languages. You can achieve this by following these steps:
+
+1. Create a CSS file with the suffix `_rtl` in the same location as a
+   CSS file that you want to extend. For example, create a file `main_rtl.css`
+   to extend a file named `main.css`. 
+
+2. Edit the `_rtl` file, adding *only* the lines that define your custom
+   styles for RTL languages.
+
+3. Deploy your plugin.
+
+    Check the `css/.sass-cache` folder of your plugin to see that the generated
+    `_rtl.css` file in this folder not only contains the automatically generated
+    CSS from the original file, but also contains your custom CSS code at the
+    end. 
+
+4. In your site, add the Language portlet to a page and change the current
+   language to an RTL language (e.g., Hebrew).
+
+   Notice your custom RTL styles applied to your site. 
+
+Now your plugin styles are automatically adapted for RTL languages. In case you 
+have defined any custom styles, they are also applied.
+
+Whether you want to adapt the portal and/or your custom plugins to RTL
+languages, the RTL Support app makes it simple and easy to offer your users the
+ideal viewing experience. 
 
 In the next section, we'll explore more hooks that allow for customizing
 Liferay's core features.
