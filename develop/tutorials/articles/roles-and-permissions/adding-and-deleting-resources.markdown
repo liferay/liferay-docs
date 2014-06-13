@@ -1,14 +1,15 @@
 # Adding and Deleting Resources 
 
 Liferay provides a system that allows you to implement permissions for your 
-custom portlets. The first step in this is to define all resources and their 
-permissions. Once you've done this, you're ready to register these resources in 
-the permissions system. This is also known as adding resources.
+custom portlets. The first step in implementing permissions is to define all 
+resources and their permissions. Once you've done this, you're ready to register 
+these resources in the permissions system. This is also known as adding 
+resources.
 
 This tutorial discusses both adding and deleting resources. Liferay's Blogs 
 portlet is used as an example. You can find it in Liferay's source code on 
-[Github](https://github.com/liferay/liferay-portal). Read on to find out how 
-you can add and delete resources!
+[Github](https://github.com/liferay/liferay-portal). Read on to find out how to 
+add and delete resources!
 
 ---
 
@@ -33,8 +34,8 @@ you can add and delete resources!
 Resources are added at the same time entities are added to the database. 
 Managing resources follows the same pattern you've seen throughout Liferay: 
 there's a service to use. Adding resources is as easy as calling the 
-`addResources(...)` method of the `ResourceLocalServiceUtil` class. Here's the
-signature of that method: 
+`addResources(...)` method of Liferay's `ResourceLocalServiceUtil` class. Here's 
+the signature of that method: 
 
     public void addResources(
         long companyId, long groupId, long userId, String name,
@@ -76,7 +77,7 @@ functionality. You just insert the tag into the appropriate JSP and the
 checkboxes appear on that page. Make sure that the tag is inside the
 appropriate `<form>` tags, and that's all there is to it. 
 
-## Deleting a Resource
+## Deleting a Resource 
 
 When you remove entities from the database, it's good practice to remove 
 permissions mapped directly to the entity. To prevent dead resources from
@@ -89,5 +90,4 @@ example of a blogs entry being removed:
         entry.getCompanyId(), BlogsEntry.class.getName(),
         ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
 
-Great! Now that you know how to work with resource permissions, we'll show you
-how to provide a user interface for managing resource permissions. 
+Great! Now you know how to work with resource permissions! 
