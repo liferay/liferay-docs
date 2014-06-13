@@ -1,4 +1,4 @@
-### Checking Permissions 
+# Checking Permissions 
 
 The last major step toward implementing permissions for your custom portlet is
 to ensure the configured permissions are enforced. You'll do this by adding
@@ -6,6 +6,16 @@ permission checks to your application. For example, your business layer can
 check for permission before deleting a resource, or your user interface can hide
 a button that adds an entity (e.g. a calendar event) if the user doesn't have
 permission.
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** The Liferay Blogs portlet is 
+  used in this tutorial to illustrate exposing permissions to users. You can 
+  find it in Liferay's source code on [Github](https://github.com/liferay/liferay-portal).
+
+---
+
+## Implementing Permissions Checking
 
 You need to implement checking of any custom permissions you defined in your
 `resource-actions` XML file. In the Blogs portlet, one supported custom action
@@ -39,8 +49,8 @@ is aborted:
 The `PermissionChecker` class has a method `hasPermission(...)` that checks
 whether a user making a resource request has the necessary access permission.
 If the user isn't signed in (guest user), it checks for guest permissions.
-Otherwise, it checks for user permissions. Let's quickly review the parameters
-of this method: 
+Otherwise, it checks for user permissions. Here's a quick review of the 
+parameters of this method: 
 
 -   `groupId`: Represents the scope where the permission check is performed. In
     Liferay, many scopes are available, including a specific site, organization,
@@ -70,11 +80,11 @@ of this method:
     simplify searching for usages, consider creating a helper class that has
     constants for all the actions defined. 
 
-In the examples above, we're assuming there's a variable called
-`permissionChecker` already available. Liferay automatically creates a
-`PermissionChecker` instance that has the necessary information from the user
-for every request. Liferay also caches the security checks to ensure good
-performance. There are several ways to obtain a permission checker: 
+The examples above assume there's a variable called `permissionChecker` already 
+available. Liferay automatically creates a `PermissionChecker` instance that has 
+the necessary information from the user for every request. Liferay also caches 
+the security checks to ensure good performance. There are several ways to obtain 
+a permission checker: 
 
 -   In a JSP that uses the `<theme:defineObjects/>` tag, there's an implicit
     variable called `permissionChecker`. 
@@ -88,10 +98,10 @@ performance. There are several ways to obtain a permission checker:
         PermissionChecker permissionChecker =
             themeDisplay.getPermissionChecker();
 
-Next, you'll optimize permission checking by creating helper classes to do most
-of the heavy lifting. 
+Next, you'll take a look at how helper classes are implemented. Helper classes 
+optimize permission checking and do most of the heavy lifting.
 
-### Creating Helper Classes for Permission Checking 
+## Helper Classes for Permission Checking 
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
@@ -107,7 +117,7 @@ your permission logic calls for checking multiple action types.
         }
     %>
 
-Now let's see how a `ServiceImpl` class, `BlogsEntryServiceImpl`, uses the
+Now take a look at how a `ServiceImpl` class, `BlogsEntryServiceImpl`, uses the
 `BlogsPermission` helper class. In the method
 `BlogsEntryServiceImpl.addEntry(...)`, a call is made to check whether the
 incoming request has permission to add an entry. The check is done using the
