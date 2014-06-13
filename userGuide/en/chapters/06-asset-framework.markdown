@@ -69,18 +69,18 @@ of the Control Panel. Here, site administrators can create new tags and edit any
 existing site tags. To create tags in the Control Panel, visit the site for 
 which you want to create tags and then click on *Admin* &rarr; *Content*. Then 
 click on *Tags* in the Content section on the left. From this screen, you can 
-view existing tags and create new ones. To create a new tag, simply click 
-*Add Tag* and enter a name for the tag.
+view existing tags and create new ones. To create a new tag, click *Add Tag* and
+enter a name for the tag.
 
-You can also customize a tag's permissions and properties. However, this 
-configuration must be done by a server administrator. To implement this 
-configuration, add a `portal-ext.properties` file to your Liferay Home directory 
-with the following contents, and then restart the server:
+You can also customize a tag's permissions and properties. This configuration,
+however, must be done by a server administrator. To implement this
+configuration, add a `portal-ext.properties` file to your Liferay Home directory
+with the following contents and then restart the server:
 
 	asset.tag.permissions.enabled=true
 	asset.tag.properties.enabled=true
 
-Once this is done, you can change the permissions on a tag make it viewable by 
+Once this is done, you can change the permissions on a tag to make it viewable by 
 guests, site members, or owner. You can also assign other permissions for 
 managing tags, including permission to delete the tag, edit the tag, or edit the 
 tag's permissions. You can also add properties to a tag. Properties are a way to 
