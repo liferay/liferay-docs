@@ -109,7 +109,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
 4.  In the *Work with* field, enter the update site URL
-    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0 GA1/updatesite/`
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0 GA1/updatesite/`
     and press *Enter*. 
 
 5.  Liferay IDE features should be detected. Select them and click *Next*. 
@@ -134,9 +134,9 @@ To install Liferay IDE from a `.zip` file, follow these steps:
 1.  Install Eclipse Kepler, Juno, or Indigo from the
     [Eclipse](http://www.eclipse.org) website. 
 
-2.  Download the IDE 2.0 `.zip` file from
-    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
-    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+2.  Download the IDE 2.1 `.zip` file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
     for your operating system. 
 
 3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
@@ -155,6 +155,10 @@ To install Liferay IDE from a `.zip` file, follow these steps:
 
 After restarting Eclipse, you can verify that Liferay IDE is installed by going
 to *Help* &rarr; *About Eclipse* and finding the Liferay IDE icon badge. 
+
+You an also install both Liferay IDE and Eclipse from a single package 
+installer. To do so, just download the ZIP file for your operating system from 
+[http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/). 
 
 Let's set up Liferay IDE now that you have it installed. 
 
@@ -246,7 +250,7 @@ chapter of *Using Liferay Portal 6.2*.
 2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
     under the *Liferay, Inc.* category and click *Next*.
 
-3.  Click *Browse* and select your `liferay-portal-6.2.x directory`. 
+3.  Click *Browse* and select your `liferay-portal-6.2.x/tomcat-7.x` directory. 
 
 4.  If you've selected the Liferay portal directory and a bundle JRE is present,
     it is automatically selected as the server's launch JRE. If no JRE bundle
@@ -256,12 +260,15 @@ chapter of *Using Liferay Portal 6.2*.
     ![Figure 2.3: If you have multiple JREs installed on your system, choose the one which should run Liferay.](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server* &rarr *Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr; *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
-7.  If you haven't created a server, create one now from the *Servers*
-    view in Liferay IDE; then you can test the server. 
+7.  If you haven't created a server, create one now from the *Servers* view in 
+    Liferay IDE; then you can test the server. Note that you need to be in the 
+    Liferay perspective of Eclipse to see the Servers view. You can get there by 
+    selecting *Window* &rarr; *Open Perspective* &rarr; *Other...* and then
+    selecting *Liferay* from the list.
 
     ![Figure 2.4: If you haven't created a Liferay server yet, you can do so from the *Servers* tab in Liferay IDE.](../../images/ide-add-new-server.png)
 
@@ -325,8 +332,8 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 	Listing*.
 	
 	2.2. Leave the *Use default location* checkbox checked. By default, the
-	default location is set to your current workspace. If you'd like to change
-	where your plugin project is saved in your file system, uncheck the box and
+	default location is set to your Plugins SDK. If you'd like to change where 
+	your plugin project is saved in your file system, uncheck the box and 
 	specify your alternate location.
 	
 	2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
@@ -342,10 +349,10 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
     2.5. Under *Plugin Type*, indicate which plugin type your project will hold
     by selecting one from the list. You can choose from *Portlet*, *Service
-    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, or *Ext*. Liferay IDE
-    provides handy wizards for creating new Liferay projects. Our demonstration
-    project will hold service builder portlets for the Nose-ster organization,
-    so make sure *Service Builder Portlet* is selected.
+    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, *Ext*, or *Web*. 
+    Liferay IDE provides handy wizards for creating new Liferay projects. Our 
+    demonstration project will hold service builder portlets for the Nose-ster 
+    organization, so make sure *Service Builder Portlet* is selected.
 
     ![Figure 2.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
@@ -392,6 +399,7 @@ IDE/Developer Studio:
             - `liferay-plugin-package.properties` **- Common project file**
             - `liferay-portlet.xml`
             - `portlet.xml`
+            - `service.xml`
             - `web.xml`
         - `icon.png`
         - `view.jsp`
@@ -538,13 +546,13 @@ Use the following steps to create the Location Listing portlet:
 
     ![Figure 2.8: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
 
-4.  This window lets you specify portlet deployment descriptor details that are
-    specific to Liferay. You can set the file paths of your portlet's custom
+4.  The next window lets you specify portlet deployment descriptor details that 
+    are specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. Next, you can also choose the category for your portlet (it's
     categorized under *Sample* by default), and choose whether or not to add it
     to the *Control Panel* of your Liferay Portal. Accept the default, leaving
-    the *Add to Control Panel* box unflagged. 
+    the *Add to Control Panel* box unflagged. Click *Next*.
 
 5.  The last step is to specify modifiers, interfaces, and method stubs to
     generate in the Portlet class. Accept the defaults and click *Finish*. 
@@ -652,7 +660,7 @@ Builder gives you three modes to work in:
 With Liferay IDE, generating your service layer is easy. First you'll create
 `service.xml`, by selecting your project in the Package Explorer and then
 selecting *File* &rarr; *New* &rarr; *Liferay Service Builder*. Service Builder
-creates a `service.xml` file in your `docroot/WEB-INF/src` folder and displays
+creates a `service.xml` file in your `docroot/WEB-INF` folder and displays
 the file in overview mode. If you're following along with the
 `event-listing-portlet`, you already have the `service.xml` file because we
 created service builder portlet project during setup.
@@ -789,6 +797,8 @@ Eclipse's project explorer) and convert it to a Liferay project. Just follow
 the steps below. 
 
 1.  Move the project into a Liferay Plugins SDK if it is not already in one. 
+    To import the project, select *File* &rarr; *Import...* and then follow the 
+    import instructions that appear.
 
 2.  In Eclipse's Project Explorer, right-click on the project and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
@@ -1232,7 +1242,27 @@ plugins:
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
 
-Next, let's create a plugin using Liferay SDK from a terminal environment. 
+### Using the SDK Behind a Proxy
+
+You may run into errors when you try to create a Liferay project if your 
+internet connection goes through a proxy first (you can skip this section if 
+you're not behind a proxy). When you create a Liferay project, the Plugins SDK 
+leverages Apache Ivy to take care of dependencies. Ivy is normally downloaded in 
+the background by the SDK. However, if you're behind a proxy this download often 
+fails. The error log shows connection errors, messages about failing to resolve 
+dependencies, or both. Regardless, the project cannot be created and the dreaded 
+`BUILD FAILED` message appears. 
+
+There are two ways to resolve this problem:
+
+1. Get out from behind the proxy. This isn't always possible or desirable.
+
+2. Download the Ivy cache manually from [this link](http://files.liferay.org.es/staged/public-files/liferay-ide/dependencies/files/ivy-cache.zip) and unzip it to your Plugins 
+   SDK. If there is an existing `.ivy` folder in your Plugins SDK, make sure
+   that it gets replaced with the one you extract from `ivy-cache.zip`.
+
+You're now be able to create Liferay projects. Next, let's create a plugin 
+using the Plugins SDK from a terminal environment. 
 
 ### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
 
