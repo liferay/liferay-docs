@@ -1206,6 +1206,46 @@ to the Configuration section of the Site Administration area of the Control
 Panel to create user segments and campaigns. Then we'll explain how to use each
 of Audience Targeting portlets.
 
+### Managing User Segments and Campaigns
+
+The *Audience Targeting* section of the Configuration section of the Site
+Administration area of the Control Panel allows you to create user segments and
+campaigns.
+
+![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns.](../../images/04-web-content-categorization.png)
+
+A user segment represents a subset of the total group of portal
+users. In order for a user segment to be useful, you need to configure one or
+more rules for it. Custom rules can be created by developers and deployed as
+OSGi plugins. See the [Creating Custom Audience Targeting Rules](www.liferay.com)
+tutorial for details. Click on *Site Administration* &rarr; *Configuration*
+&rarr; *Audience Targeting* &rarr; *New User Segment* and all the
+rules that have been deployed appear under the Rules heading. Drag a rule to the
+right to apply the rule to the user segment. Once a rule has been applied, you
+can adjust the rule's parameters. E.g., once the Gender rule has been applied,
+you can select *Male* or *Female*. Once the Age rule has been applied, you can
+select an *Older than* value and a *Younger than* value. Once you've customized
+the rules for the new user segment, entered a name, and, optionally, a
+description, click *Save* to actually create the user segment.
+
+A campaign represents an effort to expose a certain user segment to a certain
+set of assets within a specific period of time. To create a new campaign, you
+need to select a user segment to target, a start date and an end date, and a
+priority, as well as a name and, optionally, a description. You also have to
+indicate whether or not the campaign you create should be active or inactive.
+When you've entered the required information, click *Save*. The user segment you
+select when creating a campaign represents the portal users targeted by the
+campaign. For example, a suppose you wanted the ability to certain content
+(possibly advertisements) to male baseball fans during the months leading up to
+the World Series. To achieve this, you could use the Gender rule and the Score
+Points rule to define a user segment called *Mase Baseball Fans*. The Score
+points rule assigns 1 point to a user each time they visit a page or view an
+asset categorized under the name of the user segment: *Male Baseball Fans*. When
+a user accumulates a certain number of points (specified by the value of the
+Score Points rule's *Score Points Threshold* attribute), they're assigned to the
+user segment. After creating this user segment, you would create a new campaign
+targeting this segment.
+
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
