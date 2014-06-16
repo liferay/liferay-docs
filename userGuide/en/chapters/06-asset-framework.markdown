@@ -18,6 +18,7 @@ This chapter covers the following topics:
 - Using the Asset Publisher
 - Setting up display pages
 - Adding relationships between assets
+- Using the Audience Targeting application
 
 The Asset Publisher portlet is designed to display multiple assets. It has quite
 a few configuration options which we'll cover in this chapter. By default,
@@ -1176,6 +1177,34 @@ asset in the Asset Publisher.
 
 Once you select an asset, its related assets are displayed in the Related Assets
 portlet, as in the image above.
+
+## Using the Audience Targeting Application
+
+Liferay's Audience Targeting application allows your organization to configure
+different assets to be displayed to different categories of users. Maybe you'd
+like to display advertisements to users but you'd like to display one
+advertisement to males and another advertisement to females. Or maybe you'd like
+to display a set of news articles to users who are less than thirty years old
+and another set of news articles to users who are age thirty or older. Liferay's
+Audience Targeting app, available from [Liferay Marketplace](http://www.liferay.com/marketplace),
+allows you to create multiple user segments and to define multiple rules (such
+as the gender rule and age rule) for each one. The Audience Targeting app also
+allows you to create campaigns that target a specific user segment. Campaigns
+last for a fixed period of time. They allow you to configure different assets to
+be displayed at different periods of time to the targeted user segment. The
+Audience Targeting app adds an *Audience Targeting* section to the Configuration
+section of the Site Administration area of the Control Panel. The following four
+portlets are included with the Audience Targeting app that you can add to pages:
+
+- User Segment Content Display
+- User Segment Content List
+- Campaign Content Display
+- Content Targeting Simulator
+
+In the next section, we'll explain how to use the *Audience Targeting* section
+to the Configuration section of the Site Administration area of the Control
+Panel to create user segments and campaigns. Then we'll explain how to use each
+of Audience Targeting portlets.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
