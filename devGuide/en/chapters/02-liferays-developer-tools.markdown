@@ -1263,28 +1263,9 @@ plugins:
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
-
-### Using the SDK Behind a Proxy [](id=using-the-sdk-behind-a-proxy-liferay-portal-6-2-dev-guide-02-en)
-
-You may run into errors when you try to create a Liferay project if your 
-internet connection goes through a proxy first (you can skip this section if 
-you're not behind a proxy). When you create a Liferay project, the Plugins SDK 
-leverages Apache Ivy to take care of dependencies. Ivy is normally downloaded in 
-the background by the SDK. However, if you're behind a proxy this download often 
-fails. The error log shows connection errors, messages about failing to resolve 
-dependencies, or both. Regardless, the project cannot be created and the dreaded 
-`BUILD FAILED` message appears. 
-
-There are two ways to resolve this problem:
-
-1. Get out from behind the proxy. This isn't always possible or desirable.
-
-2. Download the Ivy cache manually from [this link](http://files.liferay.org.es/staged/public-files/liferay-ide/dependencies/files/ivy-cache.zip) and unzip it to your Plugins 
-   SDK. If there is an existing `.ivy` folder in your Plugins SDK, make sure
-   that it gets replaced with the one you extract from `ivy-cache.zip`.
-
-You're now be able to create Liferay projects. Next, let's create a plugin 
-using the Plugins SDK from a terminal environment. 
+  
+You're now familiar with the Plugins SDK's structure and Ant targets. Next,
+let's create a plugin using the Plugins SDK from a terminal environment. 
 
 ### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
 
