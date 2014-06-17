@@ -333,7 +333,7 @@ The results to the right are refined by the selected facets.
 Here, we've refined the search to only show documents. We've also selected one
 of the tags, *cool*, to refine the search. The facets we've selected, *Document*
 and *cool*, appear in a list at the top, and there's a red "X" next to it that
-lets us remove it from our filter as we work to refile our search.  Suppose that
+lets us remove it from our filter as we work to refile our search. Suppose that
 the two facets we selected weren't enough to filter our search into a small
 enough list to sort through. In this case, we could further refine the search by
 selecting another facet, as below. 
@@ -1232,9 +1232,12 @@ rules that have been deployed appear under the Rules heading. Drag a rule to the
 right to apply the rule to the user segment. Once a rule has been applied, you
 can adjust the rule's parameters. E.g., once the Gender rule has been applied,
 you can select *Male* or *Female*. Once the Age rule has been applied, you can
-select an *Older than* value and a *Younger than* value. Once you've customized
-the rules for the new user segment, entered a name, and, optionally, a
-description, click *Save* to actually create the user segment.
+select an *Older than* value and a *Younger than* value. For example, you could
+define a *Males Under Age 18* user segment by applying the Gender rule and
+selecting *Male* and applying the Age rule and setting the *Younger than*
+attribute to *18*. Once you've customized the rules for the new user segment,
+entered a name, and, optionally, a description, click *Save* to actually create
+the user segment.
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To create a new campaign, you
@@ -1243,16 +1246,70 @@ priority, as well as a name and, optionally, a description. You also have to
 indicate whether or not the campaign you create should be active or inactive.
 When you've entered the required information, click *Save*. The user segment you
 select when creating a campaign represents the portal users targeted by the
-campaign. For example, a suppose you wanted the ability to certain content
-(possibly advertisements) to male baseball fans during the months leading up to
-the World Series. To achieve this, you could use the Gender rule and the Score
-Points rule to define a user segment called *Mase Baseball Fans*. The Score
-points rule assigns 1 point to a user each time they visit a page or view an
-asset categorized under the name of the user segment: *Male Baseball Fans*. When
-a user accumulates a certain number of points (specified by the value of the
-Score Points rule's *Score Points Threshold* attribute), they're assigned to the
-user segment. After creating this user segment, you would create a new campaign
-targeting this segment.
+campaign. The start and end dates together specify the time period of the
+campaign. There can be multiple campaigns active at the same time that target
+the same user segment. In these situations, the priority attribute of the
+campaigns determines which campaign takes precedence. Finally, you can activate
+or deactivate a campaign via the active attribute of a campaign. Deactivating a
+campaign disables the effect of the campaign within the portal. Deactivating a
+campaign is like deleting the campaign except that a deactivated campaign can be
+reactivated later. It can be useful to deactivate a campaign if a problem is
+found with the way content is being displayed. Once the problem has been
+corrected, the campaign can be reactivated.
+
+For example, a suppose you wanted the ability to display certain content
+(for example, advertisements) to male baseball fans during the months leading up
+to the World Series. To achieve this, you could use the Gender rule and the
+Score Points rule to define a user segment called *Mase Baseball Fans*. The
+Score points rule assigns 1 point to a user each time they visit a page or view
+an asset categorized under the name of the user segment: *Male Baseball Fans*.
+When a user accumulates a certain number of points (specified by the value of
+the Score Points rule's *Score Points Threshold* attribute), they're assigned to
+the user segment. After creating this user segment, you would create a new
+campaign targeting this segment, select start and end dates, choose a priority,
+choose *Active*, and then click *Save*. Next, let's learn how to use user
+segment and campaigns in the Audience targeting portlets.
+
+### Using the Audience Targeting Portlets
+
+The Audience Targeting app not only adds the Audience Targeting portlet to the
+Site Administration area of the Control Panel, it also includes the following
+four instanceable portlets which can be added to any portal page:
+
+- User Segment Content Display
+- User Segment Content List
+- Campaign Content Display
+- Content Targeting Simulator
+
+The User Segment Content Display portlet allows administrators to specify
+exactly which content to display to a user based on the user segments that the
+user fits in. You can specify multiple rules according to the following format:
+
+- If the user \[belongs|does not belong\] to \[any|all\] of the following user
+  segments [specify a list of user segments], then display this content:
+  \[specify a specific asset\].
+
+Instead of specifying multiple rules, you can add an *otherwise* clause to an
+*if* clause:
+
+- If the user \[belongs|does not belong\] to \[any|all\] of the following user
+  segments [specify a list of user segments], then display this content:
+  \[specify a specific asset\]. Otherwise, display this content: \[specify a
+  specific asset\].
+
+![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-portlet-config.png)
+
+For example, you can add a User Segment Content Display portlet to a page and
+configure the following rule for it:
+
+- If the user *belongs* to *all* of the following user segments: *Males*, *Users
+  Under Age 30*, then display this content: *moon-bike.jpg*. Otherwise, display
+  this content: *moon.jpg*.
+
+Once a User Segment Content Display portlet has been added to a page and been
+configured this way, portal users who are both male and under age 30 will see a
+certain image in the portlet. Users who are female or are males over age 30 will
+see a different image in the portlet.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
