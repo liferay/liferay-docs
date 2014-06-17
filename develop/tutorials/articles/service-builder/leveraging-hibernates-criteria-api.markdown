@@ -27,9 +27,9 @@ generate model, persistence, and service layers for your application, you can
 create custom finders using Liferay's Dynamic Query API by following these
 steps:
 
-1. Create a custom `-FinderImpl` class and a define a `findBy-` finder method in
-   this class. Run Service Builder to generate the required interfaces and utility
-   classes.
+1. Create a custom `-FinderImpl` class and define a `findBy-` finder method in
+   this class. Run Service Builder to generate the required interfaces and
+   utility classes.
 
 2. Implement your finder method using Liferay's Dynamic Query API.
 
