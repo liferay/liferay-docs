@@ -116,6 +116,6 @@ explore other ways in which hooks can be useful. You can learn how to perform a
 custom action by extending a `Language.properties` file with a hook at the
 following tutorial:
 
-[Perform a Custom Action](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook)
+[Perform a Custom Action](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-language-props-hook)
 
 
