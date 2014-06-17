@@ -1292,14 +1292,12 @@ user fits in. You can specify multiple rules according to the following format:
 - If the user \[belongs|does not belong\] to \[any|all\] of the following user
   segments [specify a list of user segments], then display this content:
   \[specify a specific asset\].
-
-Instead of specifying multiple rules, you can add an *otherwise* clause to an
-*if* clause:
-
-- If the user \[belongs|does not belong\] to \[any|all\] of the following user
-  segments [specify a list of user segments], then display this content:
-  \[specify a specific asset\]. Otherwise, display this content: \[specify a
-  specific asset\].
+  
+You can specify any number of *if* clauses when configuring the User Segment
+Content Display portlet's rules. However, an *otherwise* clause always follows
+the last *if* clause so that the portlet knows what to display if the user
+doesn't match any user segments. *Don't display anything* is an option for the
+*otherwise* clause.
 
 ![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-config.png)
 
@@ -1315,6 +1313,8 @@ configured this way, portal users who are both male and under age 30 will see a
 certain image in the portlet. Users who are female or are males over age 30 will
 see a different image in the portlet.
 
+The Campaign Content Display portlet
+
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
@@ -1328,4 +1328,5 @@ more easily. We also learned about the Display Page attribute of web content,
 the Content Display Page page template, and canonical URLs for assets. Assets
 can have display page associated with them so that the full view of the asset is
 displayed on the display page. The display page of an asset is used in the
-asset's canonical URL.
+asset's canonical URL. Finally, we learned how to use the Audience Targeting app
+to display different portal assets to different users.
