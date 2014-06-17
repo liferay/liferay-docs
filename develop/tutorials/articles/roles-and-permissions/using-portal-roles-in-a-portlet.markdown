@@ -112,4 +112,4 @@ portlets. Liferay uses its own permission system directly to achieve more
 fine-grained security. We recommend using Liferay's permission system,
 because it offers a much more robust way of tailoring your application's
 permissions. You can read about Liferay's permission system in the tutorial 
-*Adding Permissions to Resources*.
+[Adding Permissions to Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/adding-permissions-to-resources-lp-6-2-develop-tutorial).
