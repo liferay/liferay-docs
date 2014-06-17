@@ -37,13 +37,13 @@ known as DRAC):
 
 2. **R**egister all defined resources in the permissions system. This is also
    known as *adding resources*. This step is discussed in the tutorial 
-   *Adding and Deleting Resources*.
+   [Adding and Deleting Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/adding-and-deleting-resources-lp-6-2-develop-tutorial).
 
 3. **A**ssociate the necessary permissions with resources. This step is 
-   discussed in the tutorial *Exposing the Permission Interface to Users*.
+   discussed in the tutorial [Exposing the Permission Interface to Users](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/exposing-the-permission-interface-lp-6-2-develop-tutorial).
 
 4. **C**heck permission before returning resources. This step is described in 
-   the tutorial *Checking Permissions*.
+   the tutorial [Checking Permissions](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/checking-permissions-lp-6-2-develop-tutorial).
 
 <!-- We definitely should not be using the Blogs portlet to illustrate this, as
 the patterns are different from what plugin developers would do. For example, in
