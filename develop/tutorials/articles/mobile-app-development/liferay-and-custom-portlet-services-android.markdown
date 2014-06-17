@@ -1,4 +1,37 @@
-## Calling Liferay Services in your Android App [](id=calling-liferay-services-in-your-android-liferay-portal-6-2-dev-guide-08-en)
+## Using the Android SDK 
+
+Suppose you're creating an Android app, and you'd like to access some of
+Liferay's core services. All you need to do is download the SDK and put it in
+your classpath, and you can access the services immediately. If you want to
+invoke custom portlet web services, you'll need to generate client libraries
+for them. You can learn more about generating these libraries by reading the
+[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
+section. 
+
+If you're developing in an Eclipse environment and are using the Liferay Mobile
+SDK Eclipse plugin, you can skip the next section. Otherwise, continue onto the
+next section where we'll get started by downloading the Android SDK and
+configuring it in your Android environment! 
+
+### Manually Setting Up the Android SDK 
+
+As we stated earlier, you'll need to download the latest version of
+`liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
+code, you can download `liferay-android-sdk-sources.jar` and attach the source
+code to your IDE project. You can download these JAR files from the [Liferay
+Mobile
+SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
+project page.
+
+Once you've downloaded your JAR file, copy it into the `/libs` directory of
+your Android project. Android Developer Tools should add this JAR automatically 
+to your classpath. If you're using a different IDE, make sure this JAR is added
+to the project classpath. Now, you'll be able to import the SDK classes for your
+app to use. 
+
+Great! Now let's start accessing Liferay services from your app. 
+
+## Calling Liferay Services in your Android App 
 
 The Mobile SDK Eclipse plugin makes it easier than ever for you to call Liferay
 core services and utilities from your Android app. All you need to do is add the 
@@ -49,7 +82,7 @@ Does the Liferay Mobile SDK Eclipse plugin make that possible too? The answer is
 an emphatic *YES*. We'll show you how to configure your app to use custom
 portlet services next. 
 
-## Using Custom Portlet Services in your Android App [](id=using-custom-portlet-services-in-your-an-liferay-portal-6-2-dev-guide-08-en)
+## Using Custom Portlet Services in your Android App 
 
 The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with our Eclipse plugin
@@ -109,66 +142,3 @@ services.
 Now that your Android app has the access it needs to use Liferay and your custom
 portlets, let's take an in-depth look at using the Android SDK to invoke their
 services. 
-
-## Using the Android SDK [](id=using-the-android-sdk-liferay-portal-6-2-dev-guide-08-en)
-
-Suppose you're creating an Android app, and you'd like to access some of
-Liferay's core services. All you need to do is download the SDK and put it in
-your classpath, and you can access the services immediately. If you want to
-invoke custom portlet web services, you'll need to generate client libraries
-for them. You can learn more about generating these libraries by reading the
-[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
-section. 
-
-If you're developing in an Eclipse environment and are using the Liferay Mobile
-SDK Eclipse plugin, you can skip the next section. Otherwise, continue onto the
-next section where we'll get started by downloading the Android SDK and
-configuring it in your Android environment! 
-
-### Manually Setting Up the Android SDK [](id=manually-setting-up-the-android-sdk-liferay-portal-6-2-dev-guide-08-en)
-
-As we stated earlier, you'll need to download the latest version of
-`liferay-android-sdk.jar`. In addition, if you want to debug the SDK source
-code, you can download `liferay-android-sdk-sources.jar` and attach the source
-code to your IDE project. You can download these JAR files from the [Liferay
-Mobile
-SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
-project page.
-
-Once you've downloaded your JAR file, copy it into the `/libs` directory of
-your Android project. Android Developer Tools should add this JAR automatically 
-to your classpath. If you're using a different IDE, make sure this JAR is added
-to the project classpath. Now, you'll be able to import the SDK classes for your
-app to use. 
-
-Great! Now let's start accessing Liferay services from your app. 
-
-## Using the iOS SDK [](id=use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en)
-
-You've just created a custom iOS app and now want your app to access Liferay
-services. How do you access Liferay services from an iOS mobile app? Use
-Liferay's iOS SDK, of course. If you'd like to invoke remote web services,
-you'll need to generate the client libraries. You can learn more about the SDK
-builder and how to generate client libraries by reading the Custom Portlet
-[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
-section. 
-
-Let's get started by downloading the iOS SDK and configuring it in your iOS
-environment! 
-
-### Setting Up the iOS SDK [](id=setup-liferay-mobile-sdk-for-ios-liferay-portal-6-2-dev-guide-en)
-
-To install the iOS SDK to your machine, you'll need to download the latest
-version of `liferay-ios-sdk.zip`. You can download this file from the [Liferay
-Mobile
-SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
-project page. These installation instructions assume you're using the XCode
-developer tool provided by Apple, which can be downloaded from the [Mac App
-Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
-
-After you've downloaded the Zip file, unzip it into your XCode project. Within
-XCode, right-click on your project and click *Add Files to <PROJECT_NAME>*.
-Then, add both `core` and `v62` folders. The `v62` folder name can change for
-each Liferay version. In this example, the Mobile SDK is built for Liferay 6.2.
-
-Awesome! Let's learn how to configure the SDK next.
