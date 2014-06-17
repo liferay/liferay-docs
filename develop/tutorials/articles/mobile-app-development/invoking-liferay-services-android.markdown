@@ -1,7 +1,7 @@
-### Invoking Liferay Services in Your Android App [](id=invoking-liferay-services-in-your-androi-liferay-portal-6-2-dev-guide-08-en)
+# Invoking Liferay Services in Your Android App 
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
-your Android project's classpath, let's consider how to access and invoke
+your Android project's classpath, you can consider how to access and invoke
 Liferay services from within an Android application. Here are the steps to
 follow: 
 
@@ -9,25 +9,29 @@ follow:
 2. Import the Liferay services for your app to use.
 3. Create a service object and call its service methods.
 
-We'll show how the [Liferay Mobile SDK Sample Android
+This tutorial shows how the [Liferay Mobile SDK Sample Android
 App](https://github.com/brunofarache/liferay-android-sdk-sample)
-demonstrates these steps. In particular, we'll outline the steps that its
+demonstrates these steps. In particular, the steps that its
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
-class takes in accessing and calling Liferay services. In your app, you can
-follow these steps too. 
+class takes in accessing and calling Liferay services are outlined. In your app, 
+you can follow these steps too. If you followed the steps in the tutorial 
+[Creating the Liferay Android Sample Project](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project-lp-6-2-develop-tutorial), 
+then you can find the `UsersAsyncTask` class in the 
+`src/com/liferay/mobile/sample/task` folder of your sample project. Now go ahead 
+and get started learning how to invoke Liferay services in your Android app!
 
-#### Step 1: Create a session [](id=create-a-session-android-liferay-portal-6-2-dev-guide-en)
+## Step 1: Create a session 
 
-The session is a conversion state between the client and server, which
-consists of multiple requests and responses between the two. We need a
-session to pass requests between your app and the Mobile SDK. 
+The session is a conversion state between the client and server, that consists 
+of multiple requests and responses between the two. You need a session to pass 
+requests between your app and the Mobile SDK. 
 
 The sample app establishes a session by means of user authentication. It creates
 the session in the
 [UsersAsyncTask](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class as follows:
 
-	Session session = new SettingsUtil.getSession();
+	Session session = SettingsUtil.getSession();
  
 The `getSession()` method returns a `Session` instantiated like this: 
 
@@ -58,7 +62,7 @@ Liferay instance.
 
 ---
 
-#### Step 2: Import the Liferay services for your app to use [](id=step-2-import-the-liferay-services-for-y-liferay-portal-6-2-dev-guide-08-en)
+## Step 2: Import the Liferay Services for Your App To Use 
 
 Being a contacts app, the sample app imports the Mobile SDK's `UserService`
 class to connect to Liferay Portal's
@@ -68,7 +72,7 @@ class to connect to Liferay Portal's
 
 Note, the Liferay version (`.v62`) is used in the package namespace. Since the
 SDK is built for a specific Liferay version, service classes are separated by
-their package name. In this example, our Mobile SDK classes use the `.v62`
+their package name. In this example, the Mobile SDK classes use the `.v62`
 package, which means this SDK is compatible with Liferay 6.2. But, you can use
 several SDKs in your classpath simultaneously to support different Liferay
 versions. 
@@ -77,7 +81,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and portlet services. 
 
-#### Step 3: Create a service object and call its service methods [](id=step-3-create-a-service-object-and-call--liferay-portal-6-2-dev-guide-08-en)
+## Step 3: Create a Service Object and Call its Service Methods 
 
 The sample app creates a `UserService` object and calls its
 `getGroupUsers(...)` method to fetch all of the `Guest` site's users:
@@ -96,10 +100,10 @@ The sample app creates a `UserService` object and calls its
 		users.add(new User(jsonObj));
 	}
 
-Since the `userService.getGroupUsers(...)` method requires a site group ID, we
+Since the `userService.getGroupUsers(...)` method requires a site group ID, you
 invoke the method `getGuestGroupId(session)` of the sample app's
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
-class to get the `Guest` site's group ID, and then we pass that group ID as
+class to get the `Guest` site's group ID, and then pass that group ID as
 the `groupId` parameter in the call `userService.getGroupUsers(groupId)`. 
 
 ---
@@ -120,6 +124,5 @@ Service method return types can be `void`, `String`, `JSONArray`, and
 `JSONObject`. Primitive type wrappers can be `Boolean`, `Integer`, `Long`,
 and `Double`. 
 
-So far, we've explained the basic process of accessing Liferay services through
-the Mobile SDK. Next, we'll explore making asynchronous HTTP requests to your
-portal's services. 
+Great! Now you're familiar with the basic process of accessing Liferay services 
+through the Mobile SDK! 
