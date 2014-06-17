@@ -1202,18 +1202,17 @@ last for a fixed period of time. They allow you to configure different assets to
 be displayed at different periods of time to the targeted user segment. The
 Audience Targeting app adds an *Audience Targeting* section to the Configuration
 section of the Site Administration area of the Control Panel. The following four
-portlets are also included with the Audience Targeting app. You can add these
-portlets to any portal page:
+portlets are also included with the Audience Targeting app:
 
 - User Segment Content Display
 - User Segment Content List
 - Campaign Content Display
 - Content Targeting Simulator
 
-In the next sections, we'll explain how to use the *Audience Targeting* section
-of the Configuration section of the Site Administration area of the Control
-Panel to create user segments and campaigns. Then we'll explain how to use each
-of Audience Targeting portlets.
+You can add these portlets to any portal page. In the next sections, we'll
+explain how to use the *Audience Targeting* section of the Configuration section
+of the Site Administration area of the Control Panel to create user segments and
+campaigns. Then we'll explain how to use each of Audience Targeting portlets.
 
 ### Managing User Segments and Campaigns
 
@@ -1259,7 +1258,7 @@ found with the way content is being displayed. Once the problem has been
 corrected, the campaign can be reactivated.
 
 For example, a suppose you wanted the ability to display certain content (for
-example, advertisements) to male baseball fans during the months leading up to
+example, advertisements) to female baseball fans during the months leading up to
 the World Series. To achieve this, you could use the Gender rule and the Score
 Points rule to define a user segment called *Female Baseball Fans*. The Score
 points rule assigns 1 point to a user each time they visit a page or view an
@@ -1357,21 +1356,22 @@ Content Display portlets. It has two tabs: *User Segments* and *Campaigns*. The
 User Segments tab displays a list of all the user segments matched by the
 current user and all the user segments not matched by the current user. The
 Content Targeting Simulator is especially useful when added to a page that
-already has some User Segment Content Display or Campaign Content Display
-portlets. In this case, clicking on *simulate* next to one or more of the *not
-matched* user segments renders the portal page the way it would appear to a
-member of the selected user segments. This can be very useful when configuring
-User Segment Content Display and Campaign Content Display portlets.
+already has some configured User Segment Content Display or Campaign Content
+Display portlets. In this case, clicking on *simulate* next to one or more of
+the *not matched* user segments renders the portal page the way it would appear
+to a member of the selected user segments. This can be very useful when
+configuring and testing the User Segment Content Display and Campaign Content
+Display portlets.
 
-The Campaigns tab of the Content Targeting Simulator simply displays matched
-campaigns and not matched campaigns but does not offer a *simulate* option.
-However, since campaigns target specific user segments, it's easy to simulate
-how the portal page would look if a different campaign were matched: Just click
-on the *User Segments* tab and select *simulate* next to the user segment that's
-targeted by the campaign that you'd like to simulate. If you have multiple user
-segments selected for simulation, click the *Clear simulated User Segments*
-button to remove the simulation and load the portal page using the user segments
-matched by the current user.
+The Campaigns tab of the Content Targeting Simulator simply displays all matched
+campaigns and all campaigns that are not matched. It does not offer a *simulate*
+option. However, since campaigns target specific user segments, it's easy to
+simulate how the portal page would look if a different campaign were matched:
+Just click on the *User Segments* tab and select *simulate* next to the user
+segment that's targeted by the campaign that you'd like to simulate. If you have
+multiple user segments selected for simulation, click the *Clear simulated User
+Segments* button to remove the simulation and load the portal page using the
+user segments matched by the current user.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
