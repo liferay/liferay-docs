@@ -1313,7 +1313,65 @@ configured this way, portal users who are both male and under age 30 will see a
 certain image in the portlet. Users who are female or are males over age 30 will
 see a different image in the portlet.
 
-The Campaign Content Display portlet
+The Campaign Content Display portlet is similar to the User Segment Content
+Display portlet except that instead of displaying an asset based on the user
+segments that fit a user, it displays an asset based on the campaigns that fit a
+user. However, the Campaign Content Display portlet's display rules are simpler
+than those of the User Segment Content Display portlet. You can specify multiple
+rules for the Campaign Content Display portlet according to the following
+format:
+
+- If the user belongs to this campaign: [select a campaign], then display this
+  content: \[specify a specific asset\].
+
+As with the User Segment Content Display portlet, you can specify any number of
+*if* clauses when configuring the Campaign Content Display portlet but an
+*otherwise* clause always follows the last *if* clause so the Campaign Content
+Display portlet knows what to display if the user doesn't match any campaigns.
+
+![Figure 6.x: The rules for configuring the Campaign Content Display portlet to
+display content are similar to the rules of the User Segment Content Display
+portlet, but simpler.](../../images/campaign-content-display-config.png)
+
+For example, suppose that you've created two campaigns called *World Cup* and
+*Stanley Cup*, designed to target users who are interested in the World Cup of
+soccer and the Stanley Cup of hockey. You could add a Campaign Content Display
+portlet to a page and configure it with the following rules:
+
+- If the user belongs to this campaign: *World Cup*, then display this content:
+  *soccer-jersey.jpg*. If the user belongs to this campaign: *Stanley Cup*, then
+  display this content: *hockey-jersey.jpg*. Otherwise, display this content:
+  *generic-sports-jersey.jpg*
+
+Once a Campaign Content Display portlet has been added to a page and been
+configured this way, portal users who belong to the user segment targeted by the
+World Cup campaign will see a certain image in the portlet. Users who belong to
+the user segment targeted by the Stanley cup will see a different image in the
+portlet. Users who don't belong to either user segment will see the default
+image. Of course, once the campaigns have ended, all users will see the default
+image.
+
+The Content Targeting Simulator portlet is useful when creating user segments
+and campaigns and when configuring User Segment Content Display and Campaign
+Content Display portlets. It has two tabs: *User Segments* and *Campaigns*. The
+User Segments tab displays a list of all the user segments matched by the
+current user and all the user segments not matched by the current user. The
+Content Targeting Simulator is especially useful when added to a page that
+already has some User Segment Content Display or Campaign Content Display
+portlets. In this case, clicking on *simulate* next to one or more of the *not
+matched* user segments renders the portal page the way it would appear to a
+member of the selected user segments. This can be very useful when configuring
+User Segment Content Display and Campaign Content Display portlets.
+
+The Campaigns tab of the Content Targeting Simulator simply displays matched
+campaigns and not matched campaigns but does not offer a *simulate* option.
+However, since campaigns target specific user segments, it's easy to simulate
+how the portal page would look if a different campaign were matched: Just click
+on the *User Segments* tab and select *simulate* next to the user segment that's
+targeted by the campaign that you'd like to simulate. If you have multiple user
+segments selected for simulation, click the *Clear simulated User Segments*
+button to remove the simulation and load the portal page using the user segments
+matched by the current user.
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-06-en-0)
 
