@@ -1,4 +1,4 @@
-# Building Maven Artifacts from Source
+# Building Maven Artifacts from Source [](id=building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
 
 You can simply download the Liferay Maven artifacts if you're just interested in
 using the artifacts for a specific release. However, if you'd like to use the
@@ -110,7 +110,7 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
 Great! You now know how to build Liferay CE artifacts from your local portal
 source code. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-0)
 
 After you've built the Liferay Maven artifacts and installed them your local
 Maven repository, you should learn how to manage your artifacts. Maybe you also

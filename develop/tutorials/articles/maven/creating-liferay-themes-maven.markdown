@@ -1,4 +1,4 @@
-# Developing Liferay Theme Plugins with Maven
+# Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
 So you're sitting in your armchair next to the fire, just as we described in the
 *Developing Liferay Plugins Using Maven* tutorial. Shadows dance on the
@@ -12,7 +12,7 @@ but both describe what you're doing (sitting and computing). Changing the
 develop your own theme plugin (i.e., your "scenery") using Maven so your portal
 has a lasting impression on anyone who visits. 
 
-## Creating a Theme Plugin
+## Creating a Theme Plugin [](id=creating-a-theme-plugin-lp-6-2-develop-tutorial)
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
@@ -32,7 +32,7 @@ find the Liferay portlet archetypes.
 
 ---
 
-## Anatomy
+## Anatomy [](id=anatomy-lp-6-2-develop-tutorial-2)
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -81,7 +81,7 @@ To view the directory structure of a theme developed by Ant, visit the [Anatomy
 of a Theme Project](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-liferay-themes-liferay-portal-6-2-dev-guide-09-en)
 section in this guide.
 
-## Theme POM
+## Theme POM [](id=theme-pom-lp-6-2-develop-tutorial)
 
 The theme plugin project POM has two additional properties: 
 
@@ -98,7 +98,7 @@ The theme plugin project POM has two additional properties:
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
 
-## Deployment
+## Deployment [](id=deployment-lp-6-2-develop-tutorial-2)
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 Plugins with Maven* section. 
@@ -114,12 +114,12 @@ placed in the *target* directory. Its path is
 
 ---
 
-## More Information
+## More Information [](id=more-information-lp-6-2-develop-tutorial-2)
 
 For more information on Liferay themes and its settings, please refer to the
 [Creating Themes and Layout Templates](www.liferay.com) tutorial. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-5)
 
 You've successfully developed a Liferay theme using Maven! Find out about
 developing hook plugins next. 
