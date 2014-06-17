@@ -39,7 +39,7 @@ to manually create the Language files, the file path they reside in, and their
 contents.
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-	*Creating a Hook* tutorial.
+	[Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
 
 2.  In Liferay IDE, right click your hook project and select 
 	*New* &rarr; *Liferay Hook Configuration*. In the window that appears, check 
