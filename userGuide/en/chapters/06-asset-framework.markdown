@@ -1202,15 +1202,16 @@ last for a fixed period of time. They allow you to configure different assets to
 be displayed at different periods of time to the targeted user segment. The
 Audience Targeting app adds an *Audience Targeting* section to the Configuration
 section of the Site Administration area of the Control Panel. The following four
-portlets are included with the Audience Targeting app that you can add to pages:
+portlets are also included with the Audience Targeting app. You can add these
+portlets to any portal page:
 
 - User Segment Content Display
 - User Segment Content List
 - Campaign Content Display
 - Content Targeting Simulator
 
-In the next section, we'll explain how to use the *Audience Targeting* section
-to the Configuration section of the Site Administration area of the Control
+In the next sections, we'll explain how to use the *Audience Targeting* section
+of the Configuration section of the Site Administration area of the Control
 Panel to create user segments and campaigns. Then we'll explain how to use each
 of Audience Targeting portlets.
 
@@ -1220,7 +1221,7 @@ The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to create user segments and
 campaigns.
 
-![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns.](../../images/04-web-content-categorization.png)
+![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns.](../../images/audience-targeting.png)
 
 A user segment represents a subset of the total group of portal
 users. In order for a user segment to be useful, you need to configure one or
@@ -1297,7 +1298,7 @@ Instead of specifying multiple rules, you can add an *otherwise* clause to an
   \[specify a specific asset\]. Otherwise, display this content: \[specify a
   specific asset\].
 
-![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-portlet-config.png)
+![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-config.png)
 
 For example, you can add a User Segment Content Display portlet to a page and
 configure the following rule for it:
