@@ -117,4 +117,4 @@ Maven repository, you should learn how to manage your artifacts. Maybe you also
 want to deploy the artifacts to a remote repository. To learn how, please refer
 to the following tutorial:
 
-[Managing Liferay Artifacts](www.liferay.com)
+[Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
