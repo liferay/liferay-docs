@@ -1,4 +1,4 @@
-# Customizing Liferay Portal
+# Customizing Liferay Portal [](id=customizing-liferay-portal-lp-6-2-develop-tutorial)
 
 Liferay Hooks are the best plugin for customizing Liferay's core features. If
 possible, use hooks whenever you need to override Liferay's core functionality.
@@ -13,7 +13,7 @@ We'll cover the following topics:
 
 - Creating a Hook
 - [Overriding Web Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
-- Customizing JSPs by Extending the Original
+- [Customizing JSPs by Extending the Original](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)
 - Customizing Sites and Site Templates with Application Adapters 
 - Performing a Custom Action 
 - Overriding and Adding Struts Actions 
