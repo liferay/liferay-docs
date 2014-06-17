@@ -13,7 +13,7 @@ the User Indexer so you can search for users by their Job Title.
 ## Implementing the Indexer Post Processor Hook
 
 1. If you don't yet have a hook project, create one following the steps in the 
-   *Creating a Hook* tutorial.
+   [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
 
 2. In your hook project, open `liferay-hook.xml` and insert the following lines 
    before the closing `</hook>` tag:
