@@ -1,4 +1,4 @@
-# Localization
+# Localization [](id=localization-lp-6-2-develop-tutorial)
 
 If your portlets target an international audience, you can localize your
 portlets' user interfaces. To localize a portlet, you need to create language
@@ -19,7 +19,7 @@ same resource bundle so that you can leverage Liferay's language building
 capabilities from Liferay IDE and the Plugins SDK. You'll learn how to
 localize your portlets in all of these scenarios.
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-0)
 
 A good way to start learning about app localization is by learning how to
 leverage the messages that Liferay Portal has already localized in its core set

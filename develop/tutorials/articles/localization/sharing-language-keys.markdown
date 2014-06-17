@@ -104,3 +104,16 @@ are accessible from either of the portlets.
 In this tutorial, you created a new language key, learned how to specify that
 language key in different languages, and shared the new language key with two
 different portlets. 
+
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-3)
+
+If you haven't done so already, you'll want to learn how to automatically
+generate initial translation values. See the following tutorial for details: 
+
+[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+
+As you develop site administration portlets, you should learn how to localize
+them be reading this tutorial:
+
+[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
+

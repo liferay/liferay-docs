@@ -140,3 +140,22 @@ translations before the translations are deployed to a production environment.
 
 In this tutorial you learned to leverage the Plugins SDK to generate 
 translations for your portlets using the Bing Translator.
+
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-1)
+
+If you haven't done so already, learn how to leverage the messages that Liferay
+Portal has already localized in its core set of language keys. The following
+tutorial explains how to do this: 
+
+[Using Liferay's Language Keys](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
+
+As you develop site administration portlets, you should learn how to localize
+them be reading this tutorial:
+
+[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
+
+You'll find that it's helpful to use the same language keys throughout your
+app's portlets. Learn how to do so by following this tutorial:
+
+[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+
