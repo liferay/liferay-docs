@@ -1,7 +1,7 @@
 # Overriding a Portal Service Using a Hook
 
 All the functionality provided by Liferay is enclosed in a layer of services
-that are accessed by the controller layer in portlets. This architecture lets 
+that are accessed by the controller layer in portlets; this architecture lets 
 you change how a core portlet of Liferay behaves without changing the portlet 
 itself. Hook plugins are your best tool for leveraging this architecture to 
 customize portal service behavior. 
@@ -72,13 +72,14 @@ Liferay to use your service class instead of the original.
 
     ![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
     (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's
-    class loader. That means it will have access to any other class included in
+    class loader, which means it will have access to any other class included in
     the same WAR file, but *not* the *internal* classes of Liferay.
 
     ---
 
 2.  Edit `liferay-hook.xml`, located in the `example-hook/docroot/WEB-INF`
-    directory, by adding the following after `</custom-jsp-dir>`:
+    directory, by adding the following after the `<hook>` or `</custom-jsp-dir>` 
+    tag, depending on which you have:
 
         <service>
             <service-type>
@@ -110,5 +111,11 @@ the *Javadocs* link.
 
 ## Next Steps
 
-Now that you know how to override a portal service, you're ready to learn how to 
-perform a custom action by extending a `Language.properties` file.
+Now that you know how to override a portal service using a hook, you may want to 
+explore other ways in which hooks can be useful. You can learn how to perform a 
+custom action by extending a `Language.properties` file with a hook at the
+following tutorial:
+
+[Perform a Custom Action](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook)
+
+
