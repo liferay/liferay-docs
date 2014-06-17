@@ -1228,17 +1228,17 @@ users. In order for a user segment to be useful, you need to configure one or
 more rules for it. Custom rules can be created by developers and deployed as
 OSGi plugins. See the [Creating Custom Audience Targeting Rules](www.liferay.com)
 tutorial for details. Click on *Site Administration* &rarr; *Configuration*
-&rarr; *Audience Targeting* &rarr; *New User Segment* and all the
-rules that have been deployed appear under the Rules heading. Drag a rule to the
-right to apply the rule to the user segment. Once a rule has been applied, you
-can adjust the rule's parameters. E.g., once the Gender rule has been applied,
-you can select *Male* or *Female*. Once the Age rule has been applied, you can
-select an *Older than* value and a *Younger than* value. For example, you could
-define a *Males Under Age 18* user segment by applying the Gender rule and
-selecting *Male* and applying the Age rule and setting the *Younger than*
-attribute to *18*. Once you've customized the rules for the new user segment,
-entered a name, and, optionally, a description, click *Save* to actually create
-the user segment.
+&rarr; *Audience Targeting* &rarr; *New User Segment* to add a new user segment.
+All the rules that have been deployed appear under the Rules heading. Drag a
+rule to the right to apply the rule to the user segment. Once a rule has been
+applied, you can adjust the rule's parameters. E.g., once the Gender rule has
+been applied, you can select *Male* or *Female*. Once the Age rule has been
+applied, you can select an *Older than* value and a *Younger than* value. For
+example, you could define a *Males Under Age 18* user segment by applying the
+Gender rule and selecting *Male* and applying the Age rule and setting the
+*Younger than* attribute to *18*. Once you've customized the rules for the new
+user segment, entered a name, and, optionally, a description, click *Save* to
+actually create the user segment.
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To create a new campaign, you
@@ -1247,29 +1247,32 @@ priority, as well as a name and, optionally, a description. You also have to
 indicate whether or not the campaign you create should be active or inactive.
 When you've entered the required information, click *Save*. The user segment you
 select when creating a campaign represents the portal users targeted by the
-campaign. The start and end dates together specify the time period of the
-campaign. There can be multiple campaigns active at the same time that target
-the same user segment. In these situations, the priority attribute of the
-campaigns determines which campaign takes precedence. Finally, you can activate
-or deactivate a campaign via the active attribute of a campaign. Deactivating a
+campaign. The start and end dates together specify the duration of the campaign.
+There can be multiple campaigns active at the same time that target the same
+user segment. In these situations, the priority attribute of the campaigns
+determines which campaign takes precedence. Finally, you can activate or
+deactivate a campaign via the active attribute of a campaign. Deactivating a
 campaign disables the effect of the campaign within the portal. Deactivating a
 campaign is like deleting the campaign except that a deactivated campaign can be
 reactivated later. It can be useful to deactivate a campaign if a problem is
 found with the way content is being displayed. Once the problem has been
 corrected, the campaign can be reactivated.
 
-For example, a suppose you wanted the ability to display certain content
-(for example, advertisements) to male baseball fans during the months leading up
-to the World Series. To achieve this, you could use the Gender rule and the
-Score Points rule to define a user segment called *Mase Baseball Fans*. The
-Score points rule assigns 1 point to a user each time they visit a page or view
-an asset categorized under the name of the user segment: *Male Baseball Fans*.
+For example, a suppose you wanted the ability to display certain content (for
+example, advertisements) to male baseball fans during the months leading up to
+the World Series. To achieve this, you could use the Gender rule and the Score
+Points rule to define a user segment called *Female Baseball Fans*. The Score
+points rule assigns 1 point to a user each time they visit a page or view an
+asset categorized under the name of the user segment: *Female Baseball Fans*.
 When a user accumulates a certain number of points (specified by the value of
 the Score Points rule's *Score Points Threshold* attribute), they're assigned to
 the user segment. After creating this user segment, you would create a new
 campaign targeting this segment, select start and end dates, choose a priority,
-choose *Active*, and then click *Save*. Next, let's learn how to use user
-segment and campaigns in the Audience targeting portlets.
+choose *Active*, and then click *Save*. To actually present content to the users
+belonging to the *Female Baseball Fans* user segment, you need to use the
+Campaign Content Display portlet or one of the other portlets provided by the
+Audience Targeting app. Next, let's learn how to use the Audience targeting
+portlets in conjunction with user segments and campaigns.
 
 ### Using the Audience Targeting Portlets
 
