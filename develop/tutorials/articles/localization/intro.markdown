@@ -16,7 +16,7 @@ to be available for administrative purposes in the Control Panel? If any of its
 portlets need to be in the Control Panel, you should create separate resource
 bundles for each of these portlets. Otherwise, your portlets should share the
 same resource bundle so that you can leverage Liferay's language building
-capabilities from Liferay IDE and the Plugins SDK. We'll show you how to
+capabilities from Liferay IDE and the Plugins SDK. You'll learn how to
 localize your portlets in all of these scenarios.
 
 ## Next Steps
