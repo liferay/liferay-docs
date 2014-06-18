@@ -111,5 +111,4 @@ your Liferay Home directory.
 
 ## Next Steps
 
-To learn how to test Liferay's OSGi framework via a test plugin, please see the
-OSGi Bundles section of [Using Liferay Portal](www.liferay.com/documentation).
+[Plugin Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en)
