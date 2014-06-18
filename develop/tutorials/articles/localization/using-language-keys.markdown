@@ -99,16 +99,15 @@ a Liferay portlet.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-4)
 
-Next, you should learn how to create your own language keys, use those keys in your other translations, and
-automatically generate initial translation values. To learn these things, see
-the following tutorial: 
+Next, you may want to consider learning how to create your own language keys, using those keys in your other translations, and
+automatically generating initial translation values. Here's a tutorial for those topics: 
 
 [Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
 Here are more tutorials to help you with more application localization
 scenarios: 
 
-- [Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
+[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
 
-- [Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 

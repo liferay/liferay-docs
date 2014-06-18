@@ -172,22 +172,11 @@ portlets' translated titles and descriptions!
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-2)
 
-If you haven't done so already, learn how to leverage the messages that Liferay
-Portal has already localized in its core set of language keys. The following
-tutorial explains how to do this: 
+Here are some possible next steps: 
+
+[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
 [Using Liferay's Language Keys](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
 
-You'll find that it's helpful to use the same language keys throughout your
-app's portlets. Learn how to do so by following this tutorial:
-
 [Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
-
-Lastly, you'll want to propagate your master language properties to the language
-properties files for each of the languages you're supporting. And you can get a
-leg up on doing the translations by using automation. Check out this
-tutorial to learn how to generate the properties files and automate initial
-translations: 
-
-[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
