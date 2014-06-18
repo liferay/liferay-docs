@@ -56,7 +56,7 @@ Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
 To view the full directory structure of a portlet developed by Ant, visit our
-[Anatomy of a Portlet](www.liferay.com) article. 
+[Anatomy of a Portlet](www.liferay.com) tutorial. 
 
 ## Deployment [](id=deployment-lp-6-2-develop-tutorial-1)
 
