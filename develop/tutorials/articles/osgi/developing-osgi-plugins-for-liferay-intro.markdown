@@ -17,19 +17,20 @@ custom OSGi plugins for Liferay.
 ---
 
  ![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
- experimental and unsupported.
+ experimental and unsupported. It should be considered a technology preview at
+ this time. 
 
 ---
 
 ## Creating Liferay OSGi Plugins
 
 OSGi web application bundles are usually distributed as JAR files. They're
-architecturally very similar to standard web application archives. However, OSGi
-web application bundles differ from standard web applications archives in that
-they must include additional metadata that's required for operating in an OSGi
-framework. The OSGi specification does not require a specific file extension for
-web application bundles but web application bundles typically have a `.jar`
-extension but a `.war` extension is also possible.
+architecturally similar to standard web application archives. OSGi web
+application bundles differ from standard web applications archives, however, in
+that they must include additional metadata that's required for operating in an
+OSGi framework. The OSGi specification does not require a specific file
+extension for web application bundles: web application bundles typically have
+a `.jar` extension but a `.war` extension is also possible.
 
 To create an OSGi plugin for Liferay, you need a Liferay Plugins SDK. You can
 download a Plugins SDK from
@@ -51,8 +52,9 @@ instructions about dependency management and how to create your OSGi bundle's
 JAR file.
 
 Your `build.xml` allows your project to take advantage of the Liferay Plugins
-SDK's OSGi plugin support. Add the following to your `build.xml`, replacing the
-value of the `<project>` element's `name` attribute with the name of your plugin:
+SDK's OSGi plugin support. Add the following code to your `build.xml`, replacing
+the value of the `<project>` element's `name` attribute with the name of your
+plugin:
 
     <?xml version="1.0"?>
 
@@ -70,10 +72,10 @@ the rest of your plugin.
 
 When you're ready to package your OSGi bundle, just run `ant jar` from your
 plugin project's root folder (the one with the `bnd.bnd` and `build.mxl` files
-that you created). Bnd reads the instructions in your `bnd.bnd` file and creates
-all the files required by OSGi, including the `META-INF/MANIFEST.MF`. Your
-plugin is packaged as a JAR file which is created in the Plugins SDK's `dist`
-folder.
+that you created). The bnd `.jar` in the Plugins SDK reads the instructions in
+your `bnd.bnd` file and creates all the files required by OSGi, including the
+`META-INF/MANIFEST.MF`. Your plugin is packaged as a JAR file which is created
+in the Plugins SDK's `dist` folder.
 
 ## Deploying Liferay OSGi Plugins
 
@@ -85,12 +87,12 @@ Plugins SDK's root folder:
     auto.deploy.dir=${liferay.home}/deploy
 
 Once these properties are set, run `ant deploy` from your plugin project's root
-folder. `ant deploy` both packages your bundle and copies it to `[Liferay
-Home]/deploy`. Liferay Portal scans the `[Liferay Home]/deploy` directory for
-OSGi bundles, as well as for standard Liferay plugins. When it detects an OSGi
-bundle, it automatically deploys the bundle to `[Liferay
-Home]/data/osgi/modules`. Check your log for confirmation that Liferay found and
-deployed the bundle. You should see a message like this:
+folder. This both packages your bundle and copies it to `[Liferay Home]/deploy`.
+Liferay Portal scans the `[Liferay Home]/deploy` directory for OSGi bundles, as
+well as for standard Liferay plugins. When it detects an OSGi bundle, it
+automatically deploys the bundle to `[Liferay Home]/data/osgi/modules`. Check
+your log for confirmation that Liferay found and deployed the bundle. You should
+see a message like this:
 
 18:46:50,653 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:204] Processing my-osgi-liferay-plugin-shared-6.2.0.1.jar
 18:46:50,655 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][ModuleAutoDeployListener:63] Copied module for .../my-osgi-liferay-plugin-shared-6.2.0.1.jar
