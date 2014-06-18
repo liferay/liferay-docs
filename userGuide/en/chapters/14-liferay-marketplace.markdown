@@ -568,7 +568,8 @@ specific file extension for web application bundles but they typically have a
 ---
 
  ![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
- experimental and unsupported.
+ experimental and unsupported. It should be considered a technology preview at
+ this time. 
 
 ---
 
