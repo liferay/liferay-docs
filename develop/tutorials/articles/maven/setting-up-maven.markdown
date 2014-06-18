@@ -1,9 +1,6 @@
 # Setting Up Maven [](id=setting-up-maven-lp-6-2-develop-tutorial)
 
-"Straight I wheeled a cushioned seat in front of computer desk once more;
-Then, upon the velvet falling, I betook to Maven installing..."
-
-In this article, we discuss installing and configuring Maven and Nexus. Nexus is
+This tutorial explains how to install and configure Maven and Nexus. Nexus is
 a Maven repository management server. Using Nexus for Maven repository
 management is convenient but not required. Once you've installed and configured
 Maven (and, optionally, Nexus) in your development environment, you'll be ready
@@ -13,12 +10,12 @@ plugins with Maven.
 ## Installing Maven [](id=installing-maven-lp-6-2-develop-tutorial)
 
 You can download Maven from
-[http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
-recommend putting your Maven installation's `bin` directory in your system's
-`$PATH`, so you can run the Maven executable (`mvn`) easily from your command
-prompt. 
+[http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi).
+Putting your Maven installation's `bin` directory in your system's `$PATH`
+facilitates running the Maven executable (`mvn`) from your command prompt. 
 
-Let's learn about the types of repositories you can use with Maven projects. 
+The following sections explain the types of repositories you can use with Maven
+projects and how to use them. 
 
 ## Understanding Maven Repositories [](id=understanding-maven-repositories-lp-6-2-develop-tutorial)
 
@@ -26,7 +23,7 @@ Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts both to local and
 remote repositories. This means that you can share Maven repositories privately
 with your team or with the public. Your *local* repository holds your downloaded
-artifacts and those artifacts you install to it. *Remote* repositories are for
+artifacts and the artifacts you install to it. *Remote* repositories are for
 sharing artifacts either privately (e.g., within your development team) or
 publicly. To learn more about using artifact repositories see
 [http://maven.apache.org/guides/introduction/introduction-to-repositories.html](http://maven.apache.org/guides/introduction/introduction-to-repositories.html). 
@@ -40,9 +37,9 @@ private repositories that hold only your private artifacts. If you're interested
 in running your repository behind a proxy, see
 [http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html](http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html). 
 
-Now that you've been introduced to Maven repositories and proxy servers, let's
-consider using a repository management server to create and manage your Maven
-repositories. 
+Now that you've been introduced to Maven repositories and proxy servers, you may
+want to consider using a repository management server to create and manage your
+Maven repositories. 
 
 ## Managing Maven Repositories [](id=managing-maven-repositories-lp-6-2-develop-tutorial)
 
@@ -59,8 +56,8 @@ To create a Maven repository using Nexus, first download Nexus from
 [http://www.sonatype.org/nexus/](http://www.sonatype.org/nexus/) and follow
 instructions at
 [http://www.sonatype.com/books/nexus-book/reference/\_installing\_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
-to install and start it. If you're using Windows, you'll need to start Nexus 
-from a command prompt with administrator privileges.
+to install and start it. If you're using Windows, you must start Nexus from a
+command prompt with administrator privileges.
 
 To create a repository using Nexus, follow these steps: 
 
@@ -76,10 +73,10 @@ To create a repository using Nexus, follow these steps:
     type of Nexus repository, read Sonatype's *Managing Repositories* at
     [http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html).
 
-3.  Enter repository properties appropriate to the access you'll provide its
-    artifacts. We're installing release version artifacts into this repository,
-    so specify *Release* as the repository policy. Below are examples of
-    repository property values: 
+3.  Enter repository properties appropriate for the type of artifacts it will
+    hold. If you're installing release version artifacts into the repository,
+    specify *Release* as the repository policy. Below are example repository
+    property values: 
     - **Repository ID:** *liferay-releases*
     - **Repository Name:** *Liferay Release Repository*
     - **Provider:** *Maven2*
@@ -92,7 +89,7 @@ server! Congratulations!
 
 It's also useful to create a Maven repository to hold snapshots of each Liferay
 plugin you create. Creating a *snapshot* repository is almost identical to
-creating a *release* repository. The only difference is that we'll specify
+creating a *release* repository. The only difference is that you specify
 *Snapshot* as its repository policy:
 
 1.  Go to your Nexus repository server in your web browser.
@@ -111,8 +108,8 @@ Voila! You not only have a repository for your Liferay releases (i.e.,
 `liferay-releases`), you also have a repository for your Liferay plugin
 snapshots (i.e., `liferay-snapshots`). 
 
-Let's configure your new repository servers in your Maven environment so you can
-install artifacts to them. 
+Next, you can configure your new repository servers in your Maven environment to
+enable you to install artifacts to them. 
 
 ## Configuring Local Maven Settings [](id=configuring-local-maven-settings-lp-6-2-develop-tutorial)
 
@@ -180,7 +177,7 @@ create!
 
 ## Next Steps
 
-Next, let's install the Liferay artifacts you'll need to create your plugins
+Next, you must install the Liferay artifacts you'll need to create your plugins
 with Maven.
 
-[Managing Liferay Maven Artifacts](http://www.liferay.com)
+[Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
