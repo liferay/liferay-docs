@@ -2,8 +2,8 @@
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
-provides them as Maven artifacts. This article explains how to install the Maven
-artifacts required for Liferay plugin development.
+provides them as Maven artifacts. This tutorial explains how to install the
+Maven artifacts required for Liferay plugin development.
 
 So how do you get the Liferay artifacts? The exact process depends on whether
 you're building plugins for Liferay EE or Liferay CE. If you're building plugins

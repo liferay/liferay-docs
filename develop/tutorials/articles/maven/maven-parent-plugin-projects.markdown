@@ -187,7 +187,7 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 
 You can also specify these key properties in your Global or User `settings.xml`
 file. To learn more about this method, visit the *Configuring Your Liferay Maven
-Project* section of the *Using Maven From Liferay IDE* article.
+Project* section of the *Using Maven From Liferay IDE* tutorial.
 
 The Liferay plugins you develop depend on several Liferay artifacts. We've
 included them in individual `dependency` elements within the POM's
