@@ -8,6 +8,14 @@ for each deletion, you can create a batch of calls and send them all together.
 This tutorial shows you how to implement this batch processing for your Android 
 app. Read on to find out how! 
 
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** This tutorial assumes that you 
+already know how to invoke Liferay services in your Android app. If you don't, 
+see the tutorial [Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
+
+---
+
 ## Implementing Batch Processing 
 
 Here's a code snippet from an app that deletes blog entries synchronously as a
