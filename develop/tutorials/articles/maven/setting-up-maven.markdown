@@ -176,5 +176,11 @@ update `settings.xml` with these changes.
 
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll
-create! 
+create!
 
+## Next Steps
+
+Next, let's install the Liferay artifacts you'll need to create your plugins
+with Maven.
+
+[Managing Liferay Maven Artifacts](http://www.liferay.com)

@@ -120,4 +120,4 @@ Then, upon the velvet falling, I betook to Maven installing..."
 Next, learn how to install Maven and how to manage Maven artifacts with a
 Maven repository manager.
 
-[Managing Maven Repositories](http://www.liferay.com)
+[Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
