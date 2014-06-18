@@ -1,65 +1,5 @@
 # Maven [](id=maven-lp-6-2-develop-tutorial)
 
-"Once upon a midnight dreary, while I pondered weak and weary..."
-
-Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,
-hot beverage in hand. Shadows dance on the tapestry-covered wall, and your cat
-*Lenore II* is purring softly from her favorite perch atop the mantle.
-
-"Ah, distinctly I remember it was in the bleak December..."
-
-At least you're passing this cold December night in grand style (in front of
-your computer customizing Liferay Portal, of course). 
-
-"Eagerly I wished the morrow;--vainly I had sought to borrow 
-From *Liferay* surcease of sorrow--sorrow for my last Lenore--" 
-
-We're sorry to hear your previous cat, the original *Lenore*, has passed away.
-Just take good care of Lenore II, would you? 
-
-"And the silken sad uncertain rustling of each purple curtain
-Thrilled me--filled me with *Ant*astic terrors never felt before;"
-
-Okay now you're being melodramatic; nobody can disdain *Apache Ant* that
-vehemently. What about customizing Liferay Portal using the Ant-based Plugins
-SDK could make you feel sadness and terror? 
-
-"Deep into that darkness peering, long I stood there wondering, fearing..."
-
-We get it! You don't want to use our Ant-based Plugins SDK. Give us surcease
-from the melodrama, okay? 
-
-"Open here I flung the shutter, when, with many a flirt and flutter,
-In there stepped a stately *Maven* of the saintly days of yore."
-
-So, you'd rather use Apache Maven to develop your Liferay plugins? 
-
-"But *Apache Maven* still beguiling all my sad soul into smiling..."
-
-Edgar Allen Poe liked Maven too, so you're in good company. Trust us; we know.
-But if your soul was made sad because you thought you had to use Liferay's
-Ant-based Plugins SDK to develop your plugins, Apache Maven will make your sad
-soul smile. And while you're at it, take care of Lenore II for all of us animal
-lovers, would you? 
-
-<!--
-The following info on our Maven coverage seems useful but we need to decide
-where it should go. Should it go in the first of a series of related tutorial
-articles? (But tutorial articles aren't arranged sequentially.) - JR
--->
-
-<!--
-Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
-
-- Installing Maven 
-- Using Maven Repositories
-- Installing Required Liferay Artifacts 
-- Using a Parent Plugin Project
-- Creating Liferay Plugins with Maven
-- Deploying Liferay Plugins with Maven
-- Liferay Plugin Types to Develop with Maven
--->
-
 As an alternative to developing plugins using the Plugins SDK, you can leverage
 the Apache Maven build management framework. Here's a list of some exciting
 Maven features: 
@@ -112,12 +52,15 @@ including Liferay portlets, themes, hooks, layout templates, web plugins, and
 more. You can also install and deploy Liferay artifacts to your repositories.
 You'll dive into these topics in the Maven tutorials.
 
-"Straight I wheeled a cushioned seat in front of computer desk once more;
-Then, upon the velvet falling, I betook to Maven installing..."
-
 ## Next Steps
 
-Next, learn how to install Maven and how to manage Maven artifacts with a
-Maven repository manager.
+If you haven't already installed Maven or if you want to learn how to manage
+Maven artifacts with a Maven repository manager, check out this tutorial:
 
 [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+
+Otherwise, you can get your hands on Liferay's Maven artifacts by following this
+tutorial: 
+
+[Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
+
