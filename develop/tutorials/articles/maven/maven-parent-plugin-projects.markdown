@@ -1,34 +1,37 @@
-# Using Maven Parent Plugin Projects [](id=using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+# Using Liferay Maven Parent Plugin Projects
 
 Maven supports project inheritance. You can create a *parent* project that
-contains properties that child projects have in common. You can also create
-*child* projects inherit those properties from the parent project. This saves
-time, since you don't need to specify those properties in each project. If you
-develop more than one project, it makes sense to leverage project inheritance so
-that all projects can share properties they have in common. 
+contains properties that *child* projects inherit. This saves time, since you
+don't need to specify those properties in each project. It also makes your
+projects easier to maintain since if you have to change the value of a property
+belonging to each of your projects, you only need to change it in the parent
+project. If you develop more than one project, it makes sense to leverage
+project inheritance so that all projects can share properties they have in
+common. 
 
 We'll demonstrate Maven inheritance with a Liferay Maven project that includes a
-parent/child relationship. Even if you're not going to leverage Maven's project
-inheritance capabilities when you build your Liferay plugins with Maven, the
-process is the same for creating any Liferay plugin with Maven's Liferay
+parent/child relationship. Whether or not you're going to leverage Maven's
+project inheritance capabilities when you build your Liferay plugins with Maven,
+the process is the same for creating any Liferay plugin with Maven's Liferay
 artifacts. For more information on project inheritance, see Maven's
 documentation at
 [http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance).
 
-We'll create our parent project and then specify the general settings needed to
-build your plugins for Liferay. The parent project is similar to the project
-root of the Liferay Plugins SDK. Its `pom.xml` file can specify information to
-be used by any plugin projects that refer to it. You can always specify
-information in each plugin's POM, but it's more convenient to use the parent
-project's POM for sharing common information. 
+If you'll be creating multiple Liferay plugins, you should create a parent
+project and then specify the general settings needed to build your plugins for
+Liferay. The parent project functions similarly to the project root of the
+Liferay Plugins SDK. Its `pom.xml` file specifies information to be used by any
+child plugin projects that refer to it. Of course, you can always specify
+information in each individual plugin's POM, but it's more convenient to use the
+parent project's POM for sharing common information. 
 
 1. Suppose you want to create a parent project named `sample-parent-project`.
-   Start by creating a new directory for your parent project. For this example,
-   we name the directory `sample-parent-project`. You can place the directory
-   anywhere on your file system. 
+   We'll use this name for our example. Start by creating a new directory for
+   your parent project. E.g., create the directory `sample-parent-project`. You
+   can place the directory anywhere on your file system. 
 
-2. Next, create a POM file named `pom.xml` in your `sample-parent-project`
-   directory. Insert the following XML code into the POM:
+2. Next, create a POM file named `pom.xml` in your parent plugin directory.
+   Insert the following XML code into the POM:
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -126,15 +129,15 @@ project's POM for sharing common information.
 		</project>
 
     The POM starts by specifying the model version that Maven supports, your
-    project's [Maven
-    coordinates](http://maven.apache.org/pom.html#Maven_Coordinates), your
-    project's name, and your company's URL. 
+    project's [Maven coordinates](http://maven.apache.org/pom.html#Maven_Coordinates),
+    your project's name, and your company's URL. 
 
 3. Next, the POM specifies some key Liferay property elements that your plugins
    require in order to be deployed to your Liferay portal. You can conveniently
-   specify these values in a parent project for all of your plugin projects to
-   leverage. A plugin project can override any of its parent's properties by
-   specifying the desired property explicitly in the child plugin project's POM. 
+   specify these values in a parent project for all of your child plugin
+   projects to leverage. A plugin project can override any of its parent's
+   properties by specifying the desired property explicitly in the child plugin
+   project's POM. 
 
     <!--Is the correct term not child project, but module?-->
 
@@ -149,7 +152,7 @@ project's POM for sharing common information.
     - `liferay.app.server.portal.dir`: The path to Liferay's deployment
       directory on the app server. 
     - `liferay.auto.deploy.dir`: The path of your Liferay bundle's hot-deploy
-      directory `deploy/`. By specifying your Liferay instance's deploy
+      directory `deploy`. By specifying your Liferay instance's deploy
       directory in the POM, you're telling Maven exactly where to deploy your
       plugin artifacts. 
     - `liferay.maven.plugin.version`: The version of the Liferay Maven Plugin
@@ -189,7 +192,7 @@ You can also specify these key properties in your Global or User `settings.xml`
 file. To learn more about this method, visit the *Configuring Your Liferay Maven
 Project* section of the *Using Maven From Liferay IDE* tutorial.
 
-The Liferay plugins you develop depend on several Liferay artifacts. We've
+The Liferay plugins that you develop depend on several Liferay artifacts. We've
 included them in individual `dependency` elements within the POM's
 `dependencies` element. All of your parent project's modules (i.e., projects
 that refer to this parent) can leverage these dependencies. 
