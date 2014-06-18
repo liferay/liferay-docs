@@ -1312,6 +1312,22 @@ configured this way, portal users who are both male and under age 30 will see a
 certain image in the portlet. Users who are female or are males over age 30 will
 see a different image in the portlet.
 
+The User Segment Content List portlet displays content that matches the user
+segments to which the current user belongs. It uses categories as the underlying
+mechanism that determines which assets to display. When a new user segment is
+created, a corresponding category (i.e., a category with the same name as the
+user segment) is also created. When creating or editing assets, content authors
+can apply any of the categories that correspond to existing user segments.
+
+![Figure 6.x: The User Segment Content List portlet displays content that matches the user segments which fit the current user. You can configure the User Segment Content List portlet to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
+
+By default, the User Segment Content List portlet is configured to display
+assets of any type that have been categorized with the category of a user
+segment that matches the current user. However, you can configure the User
+Segment Content List portlet to display only assets of specific types. For
+example, you can configure the User Segment Content List portlet to only display
+web content articles and documents.
+
 The Campaign Content Display portlet is similar to the User Segment Content
 Display portlet except that instead of displaying an asset based on the user
 segments that fit a user, it displays an asset based on the campaigns that fit a
