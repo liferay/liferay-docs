@@ -11,7 +11,7 @@ for Liferay EE, you'll have to install the Liferay Artifacts manually from a zip
 file. You can do the same if you're building plugins for Liferay CE, but there's
 a simpler option available: you can automatically install CE artifacts from the
 Central Repository. Alternatively for Liferay CE, if you absolutely must have
-the latest pre-release changes from our Liferay CE source repository, you can
+the latest pre-release changes from the Liferay CE source repository, you can
 build the Liferay CE artifacts yourself. 
 
 This tutorial demonstrates the following three ways of installing Liferay's
@@ -281,10 +281,10 @@ your development process see the following tutorial:
 IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
 
 As you work with Liferay artifacts you may encounter situations in which you
-absolutely must have the latest pre-release changes from our Liferay CE source
+absolutely must have the latest pre-release changes from the Liferay CE source
 repository. You can build the Liferay CE artifacts yourself by exercising the
 instructions in the following tutorial: 
 
-[Building Maven
+[Building Liferay Maven
 Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
 
