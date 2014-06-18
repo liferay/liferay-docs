@@ -110,4 +110,14 @@ Sonatype, Inc. at
 Liferay provides Maven archetypes to help you build plugins of various types,
 including Liferay portlets, themes, hooks, layout templates, web plugins, and
 more. You can also install and deploy Liferay artifacts to your repositories.
-We'll dive into all these topics in this section.
+You'll dive into these topics in the Maven tutorials.
+
+"Straight I wheeled a cushioned seat in front of computer desk once more;
+Then, upon the velvet falling, I betook to Maven installing..."
+
+## Next Steps
+
+Next, learn how to install Maven and how to manage Maven artifacts with a
+Maven repository manager.
+
+[Managing Maven Repositories](http://www.liferay.com)
