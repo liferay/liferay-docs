@@ -1,8 +1,8 @@
-# Creating Liferay Maven Plugins from the Command Line
+# Creating Liferay Maven Plugins from the Command Line [](id=creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 
 If you'd like to learn how to use Liferay IDE to create Liferay Maven
 Plugin, please refer to the *Creating Liferay Maven Plugins from Liferay IDE*
-tutorial. In this article, we explain how to use Maven archetypes to generate a
+tutorial. In this tutorial, we explain how to use Maven archetypes to generate a
 Liferay plugin project using the command line.
 
 1.  Open the command prompt and navigate to the parent directory in which you
@@ -195,7 +195,7 @@ When your plugin is created, you can package and deploy your project to a
 specified Liferay instance. You can even install and deploy the individual
 plugin to a remote repository. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-2)
 
 Next, we'll explain how to deploy your plugins to Liferay Portal using Maven:
 

@@ -6,8 +6,6 @@ Liferay projects.
 
 This tutorial shows the steps required to accomplish this. 
 
-## Importing and Converting a Non-Liferay Project
-
 1.  Move the project into a Liferay Plugins SDK, if it is not already in one. 
     To import the project, select *File* &rarr; *Import...* and then follow the 
     import instructions that appear.

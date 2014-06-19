@@ -30,16 +30,21 @@ public class CheckIntrosTask extends Task {
 			File[] allFiles = article.listFiles();
 
 			boolean containsIntro = false;
+			boolean containsTutorials = false;
 
 			for (File file : allFiles) {
 				if (file.getName().endsWith("introduction.markdown") ||
 						file.getName().endsWith("intro.markdown")) {
 
 					containsIntro = true;
+					break;
+				}
+				else if (file.getName().endsWith(".markdown")) {
+					containsTutorials = true;
 				}
 			}
 
-			if (!containsIntro) {
+			if (containsTutorials && !containsIntro) {
 				errorDirs.add(article);
 			}
 		}

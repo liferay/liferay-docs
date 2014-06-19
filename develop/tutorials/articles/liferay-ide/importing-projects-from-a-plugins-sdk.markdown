@@ -2,7 +2,7 @@
 
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
-the projects already contain `.project` or `.classpath` files, the process used
+the projects already contain `.project` or `.classpath` files: the process used
 in this tutorial assures they get imported into your workspace.
 
 First, consider the steps for importing a single Liferay project from a
@@ -11,14 +11,13 @@ Plugins SDK project into your workspace.
 <!-- To do: uncomment this note and add link to the new Plugins SDK tutorial once it exists -->
 
 <!--
----
+
 
  ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
  you've created projects with the Plugins SDK and are familiar with the
  directory structure used by the Plugins SDK. If you need to, check out the
  *Plugins SDK* section of this chapter; it comes right after this section. 
 
----
 -->
 
 ## Importing a Single Project
@@ -38,7 +37,7 @@ in Liferay IDE:
     to the project folder of the plugin you'd like to import. The project folder
     must be a subfolder of one of the SDK's plugin type folders (e.g.,
     `portlets`, `hooks`, `themes`, etc); otherwise, Liferay IDE reports an error
-    message stating that your Liferay project location is invalid.  
+    message stating that your Liferay project location is invalid. 
 
     On selecting the plugin project folder, the *Liferay plugin type* and
     *Liferay plugin SDK version* values are updated. If your Plugins SDK is
@@ -72,13 +71,13 @@ you've already set up in Liferay IDE. Follow these steps:
 
     ![Figure 2.13: To import projects from a Plugins SDK, choose *Liferay Projects from Plugins SDK* from the Import menu.](../../images/ide-import-from-plugin-sdk.png)
 
-2.  In the *Import Liferay Projects* window, use the dropdown list to select the
+2.  In the *Import Liferay Projects* window, use the drop down list to select the
     *Liferay Plugins SDK* from which you're importing plugins. 
 
     ---
 
     ![Note](../../images/tip-pen-paper.png) **Note:** If your Plugins SDK isn't
-    configured in Liferay IDE (i.e., it's not in the dropdown list of the
+    configured in Liferay IDE (i.e., it's not in the drop down list of the
     *Import Projects* window), use the *Configure* link to add one. To configure
     a Plugins SDK from the Installed SDKs window, just click *Add* and then
     browse to the Plugins SDK's root directory.

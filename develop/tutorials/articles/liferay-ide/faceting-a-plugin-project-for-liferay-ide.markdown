@@ -9,8 +9,6 @@ Web, Java, and Liferay Plugin facets. Don't worry, they're easy to configure.
 In this tutorial, you'll learn how to facet your plugin project into a bonafide
 Liferay IDE project in no time! 
 
-## Faceting a Liferay Plugin Project
-
 To facet your plugin project properly, follow these steps: 
 
 1.  In the *Package Explorer*, right click your project's name &rarr;
