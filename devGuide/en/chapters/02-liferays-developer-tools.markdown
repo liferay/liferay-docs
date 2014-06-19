@@ -76,85 +76,111 @@ Server*--Liferay IDE comes preconfigured in Developer Studio.
 
 ### Installing Liferay IDE [](id=installing-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
-Liferay IDE is an extension of Eclipse IDE; before you install Liferay IDE,
-let's make sure your Eclipse release can run Liferay IDE, and that you're using
-a supported version of Java. Then we'll show you the installation process--we
-give you two choices, depending on whether you want to enter an update site URL
-for your Eclipse release. 
+Liferay IDE is an extension of the Eclipse IDE. You can install Eclipse
+bundled with Liferay IDE or you can add it to an Eclipse instance. 
 
-#### Requirements [](id=liferay-ide-requirements-liferay-portal-6-2-dev-guide-02-en)
-
-Make sure you have a supported Java JRE and Eclipse release: 
+Liferay IDE requires the following software: 
 
 - Java 6.0 JRE or greater. 
-- Liferay IDE must be run in one of the following Eclipse releases: 
+- One of the following Eclipse releases: 
+    - Eclipse Kepler Java EE (4.3.x)
+    - Eclipse Juno Java EE (4.2.x)
+    - Eclipse Indigo Java EE (3.7.x)
 
-    Eclipse Kepler Java EE (4.3.x)
+If you don't already have Eclipse installed, you can install Liferay IDE bundled
+with Eclipse. You can alternatively install Liferay IDE onto an existing
+supported Eclipse installation. All Liferay IDE installation options are
+explained in this section. 
 
-    Eclipse Juno Java EE (4.2.x)
+#### Installing Liferay IDE Bundled with Eclipse 
 
-    Eclipse Indigo Java EE (3.7.x)
+Installing Liferay IDE and Eclipse from the same bundle is convenient and easy
+to do.  
 
-Next, we'll show you how to install Liferay IDE. 
+1.  Download a Liferay IDE Eclipse bundle from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
+    for your operating system.
 
-#### Installation Steps [](id=liferay-ide-installation-steps-liferay-portal-6-2-dev-guide-02-en)
+2.  Install Eclipse bundled with Liferay IDE by extracting its contents to a
+    local folder. 
+
+3.  To start Eclipse, execute the Eclipse executable file (e.g., `eclipse.exe`)
+    from the installation folder. 
+
+4.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
+
+You've installed Eclipse and Liferay IDE together! 
+
+You can alternatively install Liferay IDE onto an existing supported Eclipse
+installation. Supported versions of Eclipse are available from the
+[Eclipse](http://www.eclipse.org) website. 
+
+To install Liferay IDE onto Eclipse, you can either access the Liferay IDE
+update site from Eclipse or download a Liferay IDE archive file to access from
+Eclipse. Installing Liferay IDE from the update site is the easiest way to add
+it to Eclipse. 
+
+#### Installing Liferay IDE from the Update Site onto Eclipse
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Kepler, Juno, or Indigo from the
-    [Eclipse](http://www.eclipse.org) website. 
+1.  Start Eclipse.
 
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
-
-4.  In the *Work with* field, enter the update site URL
-    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0 GA1/updatesite/`
+3.  In the *Work with* field, enter the Liferay IDE update site URL
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0 GA1/updatesite/`
     and press *Enter*. 
 
-5.  Liferay IDE features should be detected. Select them and click *Next*. 
+4.  Make sure the Liferay IDE features are selected, then click *Next*. 
 
-6.  After calculating dependencies, click *Next*, accept the license agreement,
+5.  After calculating dependencies, click *Next*, accept the license agreement,
     and click *Finish* to complete the installation.
 
-7.  Restart Eclipse to verify that Liferay IDE is properly installed.
+6.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
-8.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
+7.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
     Liferay IDE icon badge as in the screenshot below, it's properly installed. 
 
 ![Figure 2.1: Once you've installed Liferay IDE, you can find the Liferay IDE logo in Eclipse by clicking *Help* &rarr; *About Eclipse*.](../../images/ide-about-eclipse-liferay.png)
 
-Next, we'll show you how to install Liferay IDE without specifying an Eclipse
-update URL. 
+8.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
 
-#### Alternative Installation [](id=liferay-ide-alternative-installation-liferay-portal-6-2-dev-guide-02-en)
+Alternatively, you can install Liferay IDE from a downloaded archive file. 
 
-To install Liferay IDE from a `.zip` file, follow these steps: 
+#### Installing Liferay IDE from an Archive File onto Eclipse
 
-1.  Install Eclipse Kepler, Juno, or Indigo from the
-    [Eclipse](http://www.eclipse.org) website. 
+To install Liferay IDE from an archive file, follow these steps: 
 
-2.  Download the IDE 2.0 `.zip` file from
-    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
-    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+1.  Download the IDE 2.1 archive file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
     for your operating system. 
 
-3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Start Eclipse.
 
-4.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-5.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded Liferay IDE `.zip` file.
+4.  In the *Add Site* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay IDE archive file.
 
-6.  Liferay IDE features should be detected. Select them and click *Next*. 
+5.  Make sure the Liferay IDE features are selected, then click *Next*. 
 
-7.  After calculating dependencies, click *Next*, accept the license agreement,
-    and click *Finish* to complete the installation.
+6.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation
 
-8.  Restart Eclipse to verify that Liferay IDE is properly installed.
+7.  Restart Eclipse to verify that Liferay IDE is properly installed.
+
+8.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
 
 After restarting Eclipse, you can verify that Liferay IDE is installed by going
 to *Help* &rarr; *About Eclipse* and finding the Liferay IDE icon badge. 
+
+Congratulations on installing Liferay IDE! 
 
 Let's set up Liferay IDE now that you have it installed. 
 
@@ -246,7 +272,7 @@ chapter of *Using Liferay Portal 6.2*.
 2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
     under the *Liferay, Inc.* category and click *Next*.
 
-3.  Click *Browse* and select your `liferay-portal-6.2.x directory`. 
+3.  Click *Browse* and select your `liferay-portal-6.2.x/tomcat-7.x` directory. 
 
 4.  If you've selected the Liferay portal directory and a bundle JRE is present,
     it is automatically selected as the server's launch JRE. If no JRE bundle
@@ -256,12 +282,15 @@ chapter of *Using Liferay Portal 6.2*.
     ![Figure 2.3: If you have multiple JREs installed on your system, choose the one which should run Liferay.](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server* &rarr *Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr; *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
-7.  If you haven't created a server, create one now from the *Servers*
-    view in Liferay IDE; then you can test the server. 
+7.  If you haven't created a server, create one now from the *Servers* view in 
+    Liferay IDE; then you can test the server. Note that you need to be in the 
+    Liferay perspective of Eclipse to see the Servers view. You can get there by 
+    selecting *Window* &rarr; *Open Perspective* &rarr; *Other...* and then
+    selecting *Liferay* from the list.
 
     ![Figure 2.4: If you haven't created a Liferay server yet, you can do so from the *Servers* tab in Liferay IDE.](../../images/ide-add-new-server.png)
 
@@ -325,8 +354,8 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 	Listing*.
 	
 	2.2. Leave the *Use default location* checkbox checked. By default, the
-	default location is set to your current workspace. If you'd like to change
-	where your plugin project is saved in your file system, uncheck the box and
+	default location is set to your Plugins SDK. If you'd like to change where 
+	your plugin project is saved in your file system, uncheck the box and 
 	specify your alternate location.
 	
 	2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
@@ -342,10 +371,10 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
     2.5. Under *Plugin Type*, indicate which plugin type your project will hold
     by selecting one from the list. You can choose from *Portlet*, *Service
-    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, or *Ext*. Liferay IDE
-    provides handy wizards for creating new Liferay projects. Our demonstration
-    project will hold service builder portlets for the Nose-ster organization,
-    so make sure *Service Builder Portlet* is selected.
+    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, *Ext*, or *Web*. 
+    Liferay IDE provides handy wizards for creating new Liferay projects. Our 
+    demonstration project will hold service builder portlets for the Nose-ster 
+    organization, so make sure *Service Builder Portlet* is selected.
 
     ![Figure 2.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
@@ -392,6 +421,7 @@ IDE/Developer Studio:
             - `liferay-plugin-package.properties` **- Common project file**
             - `liferay-portlet.xml`
             - `portlet.xml`
+            - `service.xml`
             - `web.xml`
         - `icon.png`
         - `view.jsp`
@@ -538,13 +568,13 @@ Use the following steps to create the Location Listing portlet:
 
     ![Figure 2.8: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
 
-4.  This window lets you specify portlet deployment descriptor details that are
-    specific to Liferay. You can set the file paths of your portlet's custom
+4.  The next window lets you specify portlet deployment descriptor details that 
+    are specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. Next, you can also choose the category for your portlet (it's
     categorized under *Sample* by default), and choose whether or not to add it
     to the *Control Panel* of your Liferay Portal. Accept the default, leaving
-    the *Add to Control Panel* box unflagged. 
+    the *Add to Control Panel* box unflagged. Click *Next*.
 
 5.  The last step is to specify modifiers, interfaces, and method stubs to
     generate in the Portlet class. Accept the defaults and click *Finish*. 
@@ -652,7 +682,7 @@ Builder gives you three modes to work in:
 With Liferay IDE, generating your service layer is easy. First you'll create
 `service.xml`, by selecting your project in the Package Explorer and then
 selecting *File* &rarr; *New* &rarr; *Liferay Service Builder*. Service Builder
-creates a `service.xml` file in your `docroot/WEB-INF/src` folder and displays
+creates a `service.xml` file in your `docroot/WEB-INF` folder and displays
 the file in overview mode. If you're following along with the
 `event-listing-portlet`, you already have the `service.xml` file because we
 created service builder portlet project during setup.
@@ -789,6 +819,8 @@ Eclipse's project explorer) and convert it to a Liferay project. Just follow
 the steps below. 
 
 1.  Move the project into a Liferay Plugins SDK if it is not already in one. 
+    To import the project, select *File* &rarr; *Import...* and then follow the 
+    import instructions that appear.
 
 2.  In Eclipse's Project Explorer, right-click on the project and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
@@ -1231,8 +1263,9 @@ plugins:
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
-
-Next, let's create a plugin using Liferay SDK from a terminal environment. 
+  
+You're now familiar with the Plugins SDK's structure and Ant targets. Next,
+let's create a plugin using the Plugins SDK from a terminal environment. 
 
 ### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
 
