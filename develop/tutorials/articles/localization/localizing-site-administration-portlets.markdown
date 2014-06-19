@@ -170,3 +170,13 @@ Administration page, created resource bundles specifically for each portlet,
 built your portlets' language translation files, and have verified your
 portlets' translated titles and descriptions! 
 
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-2)
+
+Here are some possible next steps: 
+
+[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+
+[Using Liferay's Language Keys](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
+
+[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+
