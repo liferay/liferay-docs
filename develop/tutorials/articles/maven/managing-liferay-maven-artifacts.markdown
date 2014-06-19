@@ -1,43 +1,41 @@
-# Managing Liferay Maven Artifacts [](id=managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
+# Installing and Managing Liferay Maven Artifacts [](id=managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
-provides them as Maven artifacts. In this tutorial, we explain how to install the
+provides them as Maven artifacts. This tutorial explains how to install the
 Maven artifacts required for Liferay plugin development.
 
 So how do you get the Liferay artifacts? The exact process depends on whether
 you're building plugins for Liferay EE or Liferay CE. If you're building plugins
 for Liferay EE, you'll have to install the Liferay Artifacts manually from a zip
 file. You can do the same if you're building plugins for Liferay CE, but there's
-a simpler option available: you can automatically install CE artifacts
-from the Central Repository. Alternatively for Liferay CE, if you absolutely
-must the latest pre-release changes from our Liferay CE source repository, you
-can build the Liferay CE artifacts yourself. We'll demonstrate each of these
-options. 
+a simpler option available: you can automatically install CE artifacts from the
+Central Repository. Alternatively for Liferay CE, if you absolutely must have
+the latest pre-release changes from the Liferay CE source repository, you can
+build the Liferay CE artifacts yourself. 
 
----
+This tutorial demonstrates the following three ways of installing Liferay's
+published artifacts: 
 
-![note](../../images/tip-pen-paper.png) **Note:** The EE and CE zip files are a
-means to *install* the artifacts to a Maven repository of your choice. In the
-next few sections, we'll demonstrate the zip file and Central Repository
-installation options. 
+- Installing Artifacts from a Zip File
 
----
+- Installing Artifacts from the Liferay Repository
 
-Let's look at the manual process first, by downloading and installing Liferay
+- Installing Artifacts from the Central Repository
+
+First, consider the manual process of downloading and installing Liferay
 artifacts from a zip file. 
 
 ## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-lp-6-2-develop-tutorial)
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
-artifacts by manually installing them from a zip file.
-
-Let's download the Liferay EE artifacts first.
+artifacts by manually installing them from a zip file. The zip files provide a
+means to *install* the artifacts to a Maven repository of your choice.
 
 **Downloading a Liferay EE Artifact Zip File:**
 
 You can download the Liferay EE artifacts package from Liferay's Customer
-Portal. Just follow these steps: 
+Portal by following these steps: 
 
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and sign in.
 
@@ -49,7 +47,7 @@ Portal. Just follow these steps:
 4.  Inside *Filter by:*, select the appropriate Liferay version in the first
     field and select the *For Developers* value in the second field.
 
-    ![Figure 2.21: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
+    ![Figure 1: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5.  Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
@@ -66,7 +64,7 @@ You can download Liferay CE artifacts from SourceForge by following these steps:
     if you need Maven artifacts for Liferay Portal 6.2.0 CE GA1, select version
     *6.2.0 GA1*. 
 
-    ![Figure 2.22: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
+    ![Figure 2: After selecting the Liferay version, select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3.  Select the appropriate zip file. The zip files use naming convention
     `liferay-portal-maven-[version]-[date].zip`. 
@@ -81,15 +79,17 @@ If you're using Liferay CE and you want the latest pre-release artifacts from
 the Liferay CE source repository, you can get them--but you'll have to build
 them yourself. Don't worry, it's easy. If you're interesting in building the
 artifacts from Liferay's source code, please see the [Building Maven Artifacts
-from Source](www.liferay.com) tutorial. 
+from Source](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
+tutorial. 
 
 Once you've downloaded Liferay release artifacts as a zip file or built them
-from source, you'll need to install them to your Maven repository. We'll show
-you how to do that next. 
+from source, you'll need to install them to your Maven repository. You'll learn
+how to do that next. 
 
 ## Installing Artifacts to a Repository [](id=installing-artifacts-to-a-repository-lp-6-2-develop-tutorial)
 
-Let's install the Liferay release artifacts to your local Maven repository. 
+Follow these steps to install the Liferay release artifacts to your local Maven
+repository: 
 
 1.  If you downloaded a Liferay artifacts zip file, navigate to the
     `liferay-portal-maven-[version]`directory. This is the root directory
@@ -120,12 +120,14 @@ Here's how you do it:
 
 1.  Make sure you've created a repository server to hold the Liferay Maven
     artifacts. If you haven't, see the *Managing Maven Repositories* section of
-    the *Developing Plugins Using Maven* tutorial for instructions. 
+    the [Setting Up Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial
+    for instructions. 
 
 2.  Make sure the repository that will hold your Liferay artifacts is specified
     as a server in Maven's `settings.xml` file. If it isn't, see the
-    *Configuring Local Maven Settings* section of the *Developing Plugins Using
-    Maven* tutorial for instructions on adding an entry for the server. 
+    *Configuring Local Maven Settings* section of the [Setting Up
+    Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial for instructions
+    on adding an entry for the server. 
 
     Here's an example setting for a repository server named *liferay-releases*: 
 
@@ -157,10 +159,11 @@ Here's how you do it:
         lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-releases
 
     Note: If you created a repository in Nexus, as demonstrated in the *Managing
-    Maven Repositories* section of the *Developing Plugins Using Maven* tutorial,
-    you can specify that repository's ID and URL.
+    Maven Repositories* section of the [Setting Up
+    Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial, you can specify
+    that repository's ID and URL. 
 
-5.  To deploy to your release repository server, execute
+5.  To deploy to your release repository server, execute the following command: 
 
         ant deploy
 
@@ -171,7 +174,7 @@ To verify your artifacts are deployed, navigate to the *Repositories* page of
 your Nexus server and select your repository. A window appears below displaying
 the Liferay artifacts now deployed to your repository.
 
-![Figure 2.23: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
+![Figure 3: Your repository server now provides access to your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
@@ -270,7 +273,18 @@ Liferay plugins.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-7)
 
-Now that we have our Maven artifacts set up, let's learn how to use Maven from
-Liferay IDE.
+Now that you've set up your Maven artifacts, you may want to use Maven from
+Liferay IDE as you develop apps. To learn how to use Liferay IDE and Maven in
+your development process see the following tutorial:
 
-[Using Maven from Liferay IDE](http://www.liferay.com)
+[Using Maven from Liferay 
+IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+
+As you work with Liferay artifacts you may encounter situations in which you
+absolutely must have the latest pre-release changes from the Liferay CE source
+repository. You can build the Liferay CE artifacts yourself by exercising the
+instructions in the following tutorial: 
+
+[Building Liferay Maven
+Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
+

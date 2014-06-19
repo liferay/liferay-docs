@@ -20,9 +20,8 @@ plugin with Maven.
 
 ## Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin-lp-6-2-develop-tutorial)
 
-To create a Liferay layout template plugin project follow the *Creating Liferay
-Plugins with Maven* section, making sure to select *Layout Template* as the
-plugin type. 
+To create a Liferay layout template plugin project, follow the [Creating Liferay Plugins with Maven](www.liferay.com)
+tutorial, making sure to select *Layout Template* as the plugin type. 
 
 ---
 
@@ -61,18 +60,20 @@ Location   | Maven project     | Plugins SDK project |
 ---------- | ----------------- | ------------------- |
 Web source | `src/main/webapp` | `docroot` |
 
-To view the directory structure of a layout template developed by Ant, visit the
-[Anatomy of a Layout Template Project](www.liferay.com)
-tutorial. 
+To view the directory structure of a layout template developed by Ant, visit the 
+[Anatomy of a Layout Template Project](http://www.liferay.com) tutorial. 
 
 ## Deployment [](id=deployment-lp-6-2-develop-tutorial)
 
-To deploy your layout template plugin, follow the instructions detailed above in
-the *Deploying Liferay Plugins with Maven* section. 
+To deploy your layout template plugin, follow the instructions detailed in the
+[Deploying Liferay Plugins with Maven](www.liferay.com) tutorial. 
 
 ## More Information [](id=more-information-lp-6-2-develop-tutorial)
 
-For detailed information on creating layout templates, see the [Creating Liferay Themes and Layout Templates](www.liferay.com) tutorial.
+For detailed information on creating layout templates, see the 
+[Creating Liferay Themes and Layout Templates](http://www.liferay.com) tutorial.
+
+## Next Steps
 
 You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! To learn how to use other Liferay-provided
