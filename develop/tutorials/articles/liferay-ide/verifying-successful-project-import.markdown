@@ -1,4 +1,4 @@
-# Verifying Successful Project Import
+# Verifying Successful Project Import [](id=verifying-successful-project-import-lp-6-2-develop-tutorial)
 
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. 
@@ -38,3 +38,11 @@ Here's how you verify that your project imported correctly as a Liferay project:
 
 Congratulations on verifying that your project imported properly! 
 
+## Next Steps 
+
+If you're interested in deploying your project to a test server, you may want to
+read this tutorial: 
+
+[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+
+<!-- TODO add link to other deployment tutorials as they become available. Jim -->
