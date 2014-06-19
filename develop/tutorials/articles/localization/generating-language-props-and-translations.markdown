@@ -11,7 +11,7 @@ user to see a message in his own locale, the message value must be specified in
 a resource bundle file with a name ending in his locale's two character code.
 For example, a resource bundle file named `Language_es.properties` containing a
 message property with key `welcome` must be present with a Spanish translation
-of the word "Welcome". Don't worry, the Plugins SDK provides a means for you to
+of the word "Welcome." Don't worry, the Plugins SDK provides a means for you to
 get translations for your default resource bundle.
 
 It's time to get started by doing the initial setup for the Bing Translator
@@ -21,9 +21,10 @@ service for translating the language properties.
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
-translate all of the resources in your `Language.properties` file to multiple
-languages. It provides a base translation for you to start with. To create base
-translations using the Bing Translator service, you'll need to do the following:
+translate all the resources in your `Language.properties` file to multiple
+languages. Since it's a machine-generated translation, you can use it as a base
+translation for you to start with. To create base translations using the Bing
+Translator service, you'll need to do the following:
 
 1. Sign up for an Azure Marketplace account and subscribe to the Microsoft 
    Translator. It's listed in the *Data* section of the Azure Marketplace.
@@ -51,17 +52,9 @@ translations using the Bing Translator service, you'll need to do the following:
         microsoft.translator.client.id=[your-client-id]
         microsoft.translator.client.secret=[your-client-secret]
 
-   Liferay copies the `portal-ext.properties` file from your Liferay Home
-   directory to the `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory
-   upon startup. So, you can either start Liferay to have it copy the file over
-   or you can manually copy it over yourself. If you opt  
-   for having Liferay automatically copy it on startup, make sure to check the 
-   `tomcat-[version]/webapps/ROOT/WEB-INF/classes` directory for the 
-   `portal-ext.properties` file afterward.
-
 Next, you'll make the necessary changes to your portlet so that it can leverage 
 the Bing Translator service.
-   
+ 
 ## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet-lp-6-2-develop-tutorial)
 
 Now that you've done the initial setup for the Bing Translator, you're ready to 
@@ -77,11 +70,11 @@ add support for translations to your portlet.
 
 2. Make use of your language keys in your JSPs. For example, you can specify
    language keys in `<liferay-ui:message>` tags, as demonstrated in the
-   following JSP code:  
+   following JSP code: 
 
         Liferay - <liferay-ui:message key="you-know-it-is-the-best" />!
 
-    Tags like the above `<liferay-ui:message>` tag will look up the value of the
+    Tags like the above `<liferay-ui:message>` tag look up the value of the
     language key for the current locale and render it for the user.
 
     For example JSP code that references language keys, see
@@ -90,15 +83,15 @@ add support for translations to your portlet.
 3. Build the language keys, by either right-clicking on the
    `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in
    Liferay IDE/Developer Studio or by running `ant build-lang` from your plugin
-   project's root directory in your terminal. 
+   project's directory in your terminal. 
 
-    When the build completes, you'll find the generated files with all of the
+    When the build completes, you'll find the generated files with all the
     translations in `Language_*.properties` files in the same folder as your
     `Language.properties` file. Note that many of the language properties files
     don't contain translations. This is because they are intentionally disabled.
-    We decided to do this because many of the translations are incorrect or
-    offensive. The issue is described
-    [here](https://issues.liferay.com/browse/LPS-29246). 
+    We decided to do this because several of the translations are "suboptimal,
+    rude, hilarious, or wrong," according to [this ticket](https://issues.liferay.com/browse/LPS-29246). 
+    You've been warned: it is a machine-generated translation. 
 
 4. Switch your portal's locale to the language for which you want to see the
    translated language properties. For example, you can switch to 
@@ -124,7 +117,7 @@ your property's new value.
 
  ![Note](../../images/tip-pen-paper.png) **Note:** If you're Mavenizing your
  portlet, you must manually copy the translations to your deployed application.
- You copy your `content` folder into your portlet's
+ Copy your `content` folder into your portlet's
  `src/main/webapp/WEB-INF/classes` folder. 
 
 ---
@@ -134,7 +127,7 @@ created translations synchronized with your default `Language.properties`. You
 can run it any time during development. It significantly reduces the time spent
 on the maintenance of translations. However, remember that a *machine*
 translation is generated by the Microsoft Translator. Machine translations can
-often come across as rude or (unintentionally) humorous. Sometimes they are
+often come across as odd, rude, or unintentionally humorous. Sometimes they are
 simply inaccurate. Someone fluent in each language should review the
 translations before the translations are deployed to a production environment. 
 
@@ -142,10 +135,6 @@ In this tutorial you learned to leverage the Plugins SDK to generate
 translations for your portlets using the Bing Translator.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-1)
-
-Now that you know how to generate language properties files and initial
-translation values, you may want to visit tutorials that address particular
-localization scenarios. Here are some next steps to consider: 
 
 [Using Liferay's Language Keys](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
 
