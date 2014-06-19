@@ -1,13 +1,13 @@
-# Creating Liferay Maven Plugins from the Command Line [](id=creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+# Creating Liferay Maven Plugins from the Command Line
 
-If you'd like to learn how to use Liferay IDE to create Liferay Maven
-Plugin, please refer to the *Creating Liferay Maven Plugins from Liferay IDE*
-tutorial. In this tutorial, we explain how to use Maven archetypes to generate a
-Liferay plugin project using the command line.
+To learn how to use Liferay IDE to create Liferay Maven plugins, please refer to
+the *Creating Liferay Maven Plugins from Liferay IDE* tutorial. In this
+tutorial, we explain how to use Maven archetypes to generate Liferay plugin
+projects using the command line.
 
-1.  Open the command prompt and navigate to the parent directory in which you
-    want to create the plugin project. Archetype will create a sub-directory for
-    the plugin project you create.
+1.  Open the command prompt or terminal and navigate to the parent directory in
+    which you want to create the plugin project. Archetype will create a
+    sub-directory for the plugin project you create.
 
     ---
 
@@ -164,7 +164,7 @@ the Liferay Repository, the newest archetype version is automatically selected.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.28: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 1.x: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -197,6 +197,7 @@ plugin to a remote repository.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-2)
 
-Next, we'll explain how to deploy your plugins to Liferay Portal using Maven:
+To learn how to deploy your Liferay Maven plugins to Liferay Portal, please
+refer to the following tutorial:
 
 [Deploying Liferay Plugins with Maven](http://www.liferay.com)
