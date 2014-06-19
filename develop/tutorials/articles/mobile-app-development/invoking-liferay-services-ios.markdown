@@ -8,21 +8,44 @@ Liferay services in your iOS app requires the following steps:
 2. Import the Liferay services for your app to use.
 3. Create a service object and call its services.
 
-This tutorial demonstrates these steps by providing access to a sample Blogs 
-app that invokes Liferay's `BlogsEntryService`. Note that the following code 
-snippets are written in the *Objective C* programming language. Let the 
-invoking begin! 
-
-<!-- Where is this sample bloggs app? -Nick -->
+This tutorial demonstrates these steps by invoking Liferay's `BlogsEntryService` 
+in an example of an app you might develop if you want to retrieve blogs from a 
+Liferay instance. Note that the following code snippets are written in the 
+*Objective C* programming language. Let the invoking begin! 
 
 ## Step 1: Create a Session 
+
+The session is a conversion state between the client and server, that consists 
+of multiple requests and responses between the two. You need a session to pass 
+requests between your app and the Mobile SDK. Here, you create a session with 
+user credentials of the Liferay instance you are connecting to.
 
 	#import "LRSession.h"
 
 	LRSession *session = [[LRSession alloc] init:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
 
-To learn more about the session and its three parameters, refer to the tutorial 
-[Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
+Here's an explanation of each of the session parameters:
+
+**Server:** The first parameter is the URL of the Liferay instance you are 
+connecting to. In this case, the emulator and Liferay are running in the same 
+machine.
+
+**Username:** The second parameter can either be the user's email address, 
+screen name, or user ID. Your session login user name must be consistent with 
+the authentication method your Liferay instance is using. Liferay's default 
+authentication method requires the user's email address.
+
+**Password:** The user's password.
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using 
+administrator credentials on a production Liferay instance, as you'll have
+permission to call any service. Make sure not to modify data accidentally. Of
+course, the default administrator credentials should be disabled on a production
+Liferay instance. 
+
+---
 
 <!-- We should provide this information here, customized for Apple people.
 They're a sensitive lot. :-) -Rich -->
