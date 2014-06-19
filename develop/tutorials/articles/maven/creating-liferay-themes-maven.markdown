@@ -16,12 +16,11 @@ has a lasting impression on anyone who visits.
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
-[Using Maven Parent Plugin Projects](http://www.liferay.com) tutorial. That
-tutorial explains how to create a parent Maven project and its `pom.xml`. 
+[Using Liferay Maven Parent Plugin Projects](http://www.liferay.com) tutorial.
+That tutorial explains how to create a parent Maven project and its `pom.xml`. 
 
-To create your Liferay theme plugin project, just follow the [Creating Liferay
-Maven Plugins from Liferay IDE](http://www.liferay.com) tutorial, making sure to
-select *Theme* instead of *Portlet* as the plugin type. 
+To create your Liferay theme plugin project, just follow the [Creating Liferay Maven Plugins from Liferay IDE](http://www.liferay.com)
+tutorial, making sure to select *Theme* instead of *Portlet* as the plugin type. 
 
 ---
 
@@ -78,9 +77,11 @@ Location       | Maven project      | Plugins SDK project |
 -------------- | ------------------ | ------------------- |
 customizations | `src/main/webapp/` | `docroot/_diffs/`   |
 
-<!-- Revisit adding this link after the themes tutorials are published
-To view the directory structure of a theme developed by Ant, visit the *Anatomy
-of a Theme Project* section in the [Creating Liferay Themes](http://www.liferay.com) tutorial.
+<!--
+Revisit adding this link after the themes tutorials are published To view the
+directory structure of a theme developed by the Liferay Plugins SDK, visit the
+*Anatomy of a Theme Project* section in the [Creating Liferay Themes](http://www.liferay.com)
+tutorial.
 -->
 
 As with any Maven project's POM, you use the theme project's POM to define the
@@ -105,8 +106,8 @@ The theme plugin project POM has two additional properties:
 
 ## Deployment [](id=deployment-lp-6-2-develop-tutorial-2)
 
-To deploy your theme plugin, follow the instructions in the [Deploying Liferay
-Plugins with Maven](liferay.com) tutorial. 
+To deploy your theme plugin, follow the instructions in the [Deploying Liferay Plugins with Maven](liferay.com)
+tutorial. 
 
 ---
 
@@ -123,7 +124,11 @@ You now know how to create a theme plugin using Maven. You're familiar with
 its file structure and POM, and you know how to deploy the theme. Way to go!
 
 <!-- Revisit this link when the themes tutorial is published.
-For more information on Liferay themes and its settings, please refer to the
+For more information on Liferay themes and their settings, please refer to the
 [Creating Themes](http://www.liferay.com) tutorial. 
 -->
 
+## Next Steps
+
+To learn how to create Liferay hook plugins with Maven, please refer to the
+[Developing Liferay Hook Plugins with Maven](www.liferay.com) tutorial.
