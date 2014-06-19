@@ -78,6 +78,6 @@ the Liferay service you invoked. However, synchronous service calls can be a
 bottleneck if your app is making a lot of them. Making service calls 
 *asynchronously* is described in the tutorial 
 [Invoking Services Asynchronously from Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-ios-lp-6-2-develop-tutorial). 
-You can also send service calls in batches instead of separately. This is 
-discussed in the tutorial 
+You can also speed things up by sending service calls in batches instead of 
+separately. This is discussed in the tutorial 
 [Sending Your iOS App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-ios-lp-6-2-develop-tutorial).
