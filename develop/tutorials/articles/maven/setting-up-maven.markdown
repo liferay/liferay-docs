@@ -3,12 +3,12 @@
 "Straight I wheeled a cushioned seat in front of computer desk once more;
 Then, upon the velvet falling, I betook to Maven installing..."
 
-In this article, we discuss installing and configuring Maven and Nexus. Nexus is
-a Maven repository management server. Using Nexus for Maven repository
-management is convenient but not required. Once you've installed and configured
-Maven (and, optionally, Nexus) in your development environment, you'll be ready
-to install the Liferay plugin artifacts which enable you to develop Liferay
-plugins with Maven.
+This tutorial explains how to install and configure Maven and Nexus. Nexus is a
+Maven repository management server. Using Nexus for Maven repository management
+is convenient but not required. Once you've installed and configured Maven (and,
+optionally, Nexus) in your development environment, you'll be ready to install
+the Liferay plugin artifacts which enable you to develop Liferay plugins with
+Maven. 
 
 ## Installing Maven [](id=installing-maven-lp-6-2-develop-tutorial)
 
