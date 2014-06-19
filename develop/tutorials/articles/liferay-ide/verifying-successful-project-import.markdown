@@ -3,8 +3,6 @@
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. 
 
-## Verifying Projects in Liferay IDE
-
 Here's how you verify that your project imported correctly as a Liferay project: 
 
 1.  Once the project is imported, you should see a new project inside Eclipse
