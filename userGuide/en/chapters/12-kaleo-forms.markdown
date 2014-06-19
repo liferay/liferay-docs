@@ -165,8 +165,8 @@ settings for the Assigned To field are shown in this screenshot.
 Since you don't need to change any of the field settings in this form, go ahead 
 and click *Save*. On the next screen, choose your new form from the *Actions* 
 button next to it. Now that you're familiar with the basics of form creation and 
-assignment, go ahead and create a form titled *Second Form* to use for the 
-update and review tasks. Give it the following fields: 
+assignment, create a form titled *Second Form* to use for the update and review
+tasks. Give it the following fields: 
 
 - Assigned To
 - Attachment
@@ -182,8 +182,6 @@ update and review tasks. Give it the following fields:
 Make sure you choose the new form for your update and review tasks. When you're 
 done assigning forms to tasks, click *Save*. Your new process is complete, and 
 is listed in the Kaleo Forms Admin portlet. Congratulations! 
-
-<!-- This sort of glosses over form creation. -Rich --> 
 
 ![Figure 12.x: Once created, your process is listed in Kaleo Forms Admin.](../../images/kaleo-forms-admin-process-complete.png)
 
@@ -232,7 +230,7 @@ workflows can be managed using the default configuration and GUI tools, while
 more complex workflows can be created to meet the workflow management needs of
 almost any portal. Through this chapter and the previous one, you've taken a
 look at the various elements of a workflow and been shown how to use those
-elements to create your own custom workflows. You've also seen how to properly 
+elements to create your own custom workflows. You've also seen how properly to 
 use the various elements of a workflow like Assignments and Notifications, as
 well as newer and more advanced features like Parallel Workflows, Timers, and
 Custom Scripts. 
