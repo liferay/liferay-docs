@@ -5,19 +5,18 @@ Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/cod
 End: https://github.com/codyhoag/liferay-docs/tree/master/develop/tutorials/code/plat-fws/share-lang-keys/end/event-listing-portlet
 -->
 
-It's likely that you'll have messages that you want to localize that aren't one
-of Liferay's core language keys. So you'll need to specify these language keys
-in one or more resource bundles in your plugin. If one of your portlets is going
-to be used in the Control Panel and you want to localize its title and
-description used in the Control Panel, then it's best to use a separate resource
-bundle for that portlet. If none of your portlets are going to be used in the
-Control Panel, then the portlets can share the same resource bundle. 
+It's likely that you'll have messages that you want to localize that aren't
+already implemented in one of Liferay's core language keys. You'll need to
+specify these language keys in one or more resource bundles in your plugin. If
+one of your portlets will be used in the Control Panel and you want to localize
+its title and description, it's best to use a separate resource bundle for that
+portlet. If none of your portlets will be used in the Control Panel, then the
+portlets can share the same resource bundle. 
 
-We'll show you how to share a resource bundle between portlets by adding a
-resource bundle to a sample project. This sample project has two separate
-portlets. At the end of this tutorial, both portlets will share the same
-resource bundle. Figure 1 below displays what two portlets sharing the same
-resource bundle looks like: 
+You can share a resource bundle between portlets by adding a resource bundle to
+a sample project. This sample project has two separate portlets. At the end of
+this tutorial, both portlets will share the same resource bundle. Figure 1 below
+displays what two portlets sharing the same resource bundle looks like: 
 
 ![Figure 1: Both portlets share the same resource bundle with the same language key. Thus, both portlets display the same message.](../../images/portlet-localization-shared-bundle.png)
 
@@ -25,9 +24,8 @@ Let's begin sharing a single resource bundle with multiple portlets!
 
 ## Sharing a Resource Bundle [](id=sharing-a-resource-bundle-lp-6-2-develop-tutorial)
 
-For this tutorial, we'll assume that both portlets we're working with are
-contained in the same project. Let's add a resource bundle to your project and
-have two portlets share it! 
+For this tutorial, assume that both portlets you're working with are contained
+in the same project. 
 
 1. In your project's `docroot/WEB-INF/src/content/Language.properties` file, add
    the following language key: 
@@ -40,7 +38,7 @@ have two portlets share it!
 
         you-know-it-is-the-best=Usted sabe que es la mejor
 
-3. Open the `view.jsp` file for both portlets and insert the following:  
+3. Open the `view.jsp` file for both portlets and insert the following code: 
 
         Liferay - <liferay-ui:message key="you-know-it-is-the-best" />!
 
@@ -48,13 +46,12 @@ have two portlets share it!
     reference a sample portlet's
     [`view.jsp`](https://github.com/codyhoag/liferay-docs/blob/master/develop/tutorials/code/plat-fws/share-lang-keys/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
     for an example of where this UI message can be placed within your JSP. Make
-    sure you've specified the required taglib we're using for our Liferay UI
-    message, as well: 
+    sure you've specified the required taglib as well: 
 
         <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
 
 4. Navigate to the `portlet.xml` file for your project. Make sure that both
-   portlets have the same `resource-bundle` specified. If both portlet's specify
+   portlets have the same `resource-bundle` specified. If both portlets specify
    the same resource bundle, this means that they are sharing it. The example
    code snippet below exemplifies what this may look like: 
 
@@ -106,8 +103,6 @@ language key in different languages, and shared the new language key with two
 different portlets. 
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-3)
-
-Here are some possible next steps: 
 
 [Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
