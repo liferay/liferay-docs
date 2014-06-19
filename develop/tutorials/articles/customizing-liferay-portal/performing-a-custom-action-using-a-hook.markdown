@@ -1,4 +1,4 @@
-# Performing a Custom Action Using a Hook
+# Performing a Custom Action Using a Hook [](id=performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
 
 <!-- The custom-action-hook project can be found here:
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/custom-action/end/custom-action-hook
@@ -10,7 +10,7 @@ in `portal.properties`, so you need to extend this file to create a custom
 action; hooks make this a simple task. It's time to explore how to perform a
 custom action using a hook! 
 
-## Triggering a Custom Action
+## Triggering a Custom Action [](id=triggering-a-custom-action-lp-6-2-develop-tutorial)
 
 In this tutorial, you'll create a custom hook that performs a custom action for
 user login. You could similarly create a custom action for other portal events

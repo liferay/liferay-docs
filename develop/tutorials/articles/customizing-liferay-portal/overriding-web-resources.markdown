@@ -19,7 +19,7 @@ files, JavaScript files, CSS files, and images.
 
 Replacing a portal JSP is a simple task with hooks. 
 
-## Replacing a Liferay Portal JSP
+## Replacing a Liferay Portal JSP [](id=replacing-a-liferay-portal-jsp-lp-6-2-develop-tutorial)
 
 Suppose you need to manually override one of Liferay Portal's JSPs, like its
 *Terms of Use* page. You can accomplish this by following these steps: 
