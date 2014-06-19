@@ -6,14 +6,14 @@ End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/
 -->
 
 Liferay specifies a host of language keys in its core `Language.properties` file
-found in the `content` folder of your `portal-impl.jar`, or
+found in the `content` folder of your `portal-impl.jar` or
 `portal-impl/src/content` of your Liferay Portal source tree. Leveraging
 Portal's core language keys saves you time, since these keys always have up to
 date translations for multiple languages. Additionally, your portlet blends
 better into Liferay's UI conventions. 
 
-For this tutorial, we'll implement a custom greeting for a portal user. When
-we're finished with our tutorial, a user can view the following greeting in
+For this tutorial, you'll implement a custom greeting for a portal user. When
+you're finished with this tutorial, a user can view the following greeting in
 their custom portlet:
 
 ![Figure 1: The portal user's name is used in the `welcome` language key.](../../images/screen-name-greeting.png)
@@ -22,8 +22,8 @@ Let's get started by implementing this functionality into your portlet!
 
 ## Implementing Language Keys for Your Portlet [](id=implementing-language-keys-for-your-portlet-lp-6-2-develop-tutorial)
 
-Before we get started implementing our own language key, we'll step through the
-components of a Liferay UI language key.
+Before you get started implementing our own language key, you'll want to learn
+the components of a Liferay UI language key.
 
 You can use a language key in your JSP via a `<liferay-ui:message />` tag. 
 
@@ -31,17 +31,17 @@ You can use a language key in your JSP via a `<liferay-ui:message />` tag.
 
 You specify the message key corresponding to the language key in the
 `Language.properties` file you want to display. For example, to welcome a user
-in their language, specify the message key named `welcome`.
+in his or her language, specify the message key named `welcome`.
 
     <liferay-ui:message key="welcome" />
 
-This key maps to the word "Welcome", in your translation of it to the
+This key maps to the word "Welcome" in your translation of it to the
 user's locale. Here is the `welcome` language key from Liferay's
 `Language.properties` file.
 
     welcome=Welcome
 
-Now that we know some basics, let's implement the `welcome` language key for a
+Now that you know some basics, it's time to implement the `welcome` language key for a
 custom portlet.
 
 1. Open your portlet's `view.jsp` file.
@@ -68,9 +68,9 @@ the `welcome-x` key from the `Language.properties` file:
 It references `{0}`, which denotes the first argument of the argument list. An
 arbitrary number of arguments can be passed in via a message tag, but only those
 arguments expected by the language key are used. The arguments are referenced in
-order as `{0}`, `{1}`, etc. Let's pass in the user's screen name as an argument
-to the `welcome-x` language key in your portlet. You can compare your portlet's
-`view.jsp` to the completed
+order as `{0}`, `{1}`, etc. Given this information, you now know how to pass in
+the user's screen name as an argument to the `welcome-x` language key in your
+portlet. You can compare your portlet's `view.jsp` to the completed
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/use-lang-keys/end/my-greeting-portlet/docroot/view.jsp)
 for reference after you've completed the following steps. 
 
@@ -85,7 +85,7 @@ for reference after you've completed the following steps.
     the user's screen name.
 
 2. Replace the current welcome message tag and exclamation point,
-   `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
+   `<liferay-ui:message key="welcome" />!`, in the JSP with the following code:
 
         <liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>" />
 
@@ -95,4 +95,14 @@ Your portlet now greets you by your screen name!
 
 That's all you need to do to leverage Liferay's core localization keys. In this
 tutorial, you learned about Liferay core language keys, and how to implement in
-a Liferay portlet.
+a Liferay portlet. 
+
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-4)
+
+[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+
+
+[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
+
+[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+
