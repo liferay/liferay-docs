@@ -554,7 +554,7 @@ Use the following steps to create the Location Listing portlet:
     There are also options for creating resources: you can specify the folder
     where JSP files will be created as well as whether or not a resource bundle
     file will be created. We'll leave the *Create JSP files* box flagged,
-    specify *html/locationlisting* as the JSP folder, and flag the *Create
+    specify *html/locationlisting* as the JSP folder and flag the *Create
     resource bundle file* box.
 
     Here are the portlet deployment descriptor details to specify for the
@@ -572,7 +572,7 @@ Use the following steps to create the Location Listing portlet:
     are specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. Next, you can also choose the category for your portlet (it's
-    categorized under *Sample* by default), and choose whether or not to add it
+    categorized under *Sample* by default) and choose whether or not to add it
     to the *Control Panel* of your Liferay Portal. Accept the default, leaving
     the *Add to Control Panel* box unflagged. Click *Next*.
 
@@ -613,7 +613,7 @@ Use the following steps to create the Event Listing portlet:
     specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. In the *Liferay Display* section, you can choose the category
-    for your portlet (it's categorized under *Sample* by default), and choose
+    for your portlet (it's categorized under *Sample* by default) and choose
     whether or not to add it to the *Control Panel* of your Liferay Portal.
     Accept the default, leaving the *Add to Control Panel* box unflagged and
     click *Next*. 
@@ -700,7 +700,7 @@ Our Service Builder chapter of this guide will lead you through filling out
 In the Service Builder chapter of this guide, we'll show you how our two custom
 portlets, the Events Listing Portlet and the Location Listing Portlet, can be
 developed more efficiently and modularly by using Service Builder. We'll
-describe the contents of `service.xml` in detail, and get you started using
+describe the contents of `service.xml` in detail and get you started using
 Service Builder to develop your custom applications using our code generation
 tool. And if *code generator* is a bad word to you, let us assure you that
 Liferay always gives you full control over all your code, including code
@@ -851,7 +851,7 @@ configured as Liferay IDE projects.
 ### Verifying Successful Project Import [](id=verifying-successful-project-import-liferay-portal-6-2-dev-guide-02-en)
 
 After importing projects into Liferay IDE, you'll want to verify that they
-imported successfully, and that they're properly configured as Liferay IDE
+imported successfully and that they're properly configured as Liferay IDE
 projects. Here's how you verify that your imports were successful: 
 
 1.  Once the project is imported, you should see a new project inside Eclipse
@@ -956,7 +956,7 @@ configure the Remote Server Adapter, use the following steps:
     to use the runtime stub for satisfying JAR dependencies needed to compile
     various Liferay projects. Select the *Liferay bundle type* based on the
     version of your local Liferay bundle, browse to the *Liferay bundle
-    directory*, and click *Next*. 
+    directory* and click *Next*. 
 
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance: 
@@ -1059,7 +1059,7 @@ Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
 that work best for you. If you don't want to use Liferay IDE, you can use
 Liferay's Plugins Software Development Kit (SDK) all by itself. The Plugins SDK
-is based on Apache Ant, and can be used along with any editor or Integrated
+is based on Apache Ant and can be used along with any editor or Integrated
 Development Environment (IDE). 
  
 In this section, we'll explain how to set up a Plugins SDK. We'll also discuss
