@@ -10,7 +10,7 @@ optionally, Nexus) in your development environment, you'll be ready to install
 the Liferay plugin artifacts which enable you to develop Liferay plugins with
 Maven. 
 
-## Installing Maven [](id=installing-maven-lp-6-2-develop-tutorial)
+## Installing Maven
 
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi).
@@ -20,7 +20,7 @@ facilitates running the Maven executable (`mvn`) from your command prompt.
 The following sections explain the types of repositories you can use with Maven
 projects and how to use them. 
 
-## Understanding Maven Repositories [](id=understanding-maven-repositories-lp-6-2-develop-tutorial)
+## Understanding Maven Repositories
 
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts both to local and
@@ -44,7 +44,7 @@ Now that you've been introduced to Maven repositories and proxy servers, you may
 want to consider using a repository management server to create and manage your
 Maven repositories. 
 
-## Managing Maven Repositories [](id=managing-maven-repositories-lp-6-2-develop-tutorial)
+## Managing Maven Repositories
 
 You'll frequently want to share Liferay artifacts and plugins with teammates, or
 manage your repositories using a GUI. You might find Sonatype Nexus to be a
@@ -114,7 +114,7 @@ snapshots (i.e., `liferay-snapshots`).
 Next, you can configure your new repository servers in your Maven environment to
 enable you to install artifacts to them. 
 
-## Configuring Local Maven Settings [](id=configuring-local-maven-settings-lp-6-2-develop-tutorial)
+## Configuring Local Maven Settings
 
 Before using your repository servers and/or any repository mirrors, you must
 specify them in your Maven environment settings. Your repository settings enable

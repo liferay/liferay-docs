@@ -137,7 +137,7 @@ you'll use when developing plugins with Maven:
 
 ---
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-6)
+## Next Steps
 
 Now that you've learned how to deploy a plugin using Maven, let's consider the
 types of Liferay plugins you can develop with Liferay Maven archetypes. You can

@@ -1,4 +1,4 @@
-# Using Liferay Maven Parent Plugin Projects
+# Using Liferay Maven Parent Plugin Projects [](id=using-liferay-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties that *child* projects inherit. This saves time, since you

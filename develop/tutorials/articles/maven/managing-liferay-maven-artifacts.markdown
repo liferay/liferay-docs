@@ -26,7 +26,7 @@ published artifacts:
 First, consider the manual process of downloading and installing Liferay
 artifacts from a zip file. 
 
-## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file-lp-6-2-develop-tutorial)
+## Installing Artifacts from a Zip File
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file. The zip files provide a
@@ -86,7 +86,7 @@ Once you've downloaded Liferay release artifacts as a zip file or built them
 from source, you'll need to install them to your Maven repository. You'll learn
 how to do that next. 
 
-## Installing Artifacts to a Repository [](id=installing-artifacts-to-a-repository-lp-6-2-develop-tutorial)
+## Installing Artifacts to a Repository
 
 Follow these steps to install the Liferay release artifacts to your local Maven
 repository: 
@@ -112,7 +112,7 @@ Liferay plugins. Wasn't that easy?
 If you want to share your Liferay artifacts with teammates, you'll have to
 deploy them to a release repository server. 
 
-## Deploying Artifacts to a Repository [](id=deploying-artifacts-to-a-repository-lp-6-2-develop-tutorial)
+## Deploying Artifacts to a Repository
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -183,7 +183,7 @@ sharing with teammates.
 Did you know that Liferay has its own Maven repository for artifacts? Let's
 learn how to install artifacts from Liferay's repository next.
 
-## Installing Artifacts from the Liferay Repository [](id=installing-artifacts-from-the-liferay-repository-lp-6-2-develop-tutorial)
+## Installing Artifacts from the Liferay Repository
 
 <!-- If/when the Liferay repository becomes an EE-only artifact repository,
 include "EE" in front of "Artifacts in the above heading. In addition, remove
@@ -248,7 +248,7 @@ with using Liferay's Maven repository, the Maven's Central Repository enables
 you to automatically download and install Liferay Maven artifacts. Let's see
 how. 
 
-## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository-lp-6-2-develop-tutorial)
+## Installing Artifacts from the Central Repository
 
 ---
 
@@ -271,7 +271,7 @@ your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
 Liferay plugins. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-7)
+## Next Steps
 
 Now that you've set up your Maven artifacts, you may want to use Maven from
 Liferay IDE as you develop apps. To learn how to use Liferay IDE and Maven in

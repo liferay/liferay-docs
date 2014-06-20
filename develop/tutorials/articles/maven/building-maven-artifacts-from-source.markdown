@@ -110,7 +110,7 @@ latest Liferay CE Maven artifacts from source, follow these steps:
 Great! You now know how to build Liferay CE artifacts from your local portal
 source code. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-0)
+## Next Steps
 
 After you've built the Liferay Maven artifacts and installed them your local
 Maven repository, you should learn how to manage your artifacts. Maybe you also

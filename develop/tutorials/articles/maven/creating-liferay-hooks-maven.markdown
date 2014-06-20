@@ -4,7 +4,7 @@ Hooks are the optimal plugin type for customizing Liferay's core features.
 Creating a hook plugin with Maven is very similar to creating a portlet plugin
 with Maven. Let's take a look. 
 
-## Creating a Hook Plugin [](id=creating-a-hook-plugin-lp-6-2-develop-tutorial)
+## Creating a Hook Plugin
 
 To create a Liferay hook plugin project, follow the steps outlined in the
 [Creating Liferay Plugins with Maven](http://www.liferay.com) tutorial, making
@@ -19,7 +19,7 @@ Liferay portlet archetypes.
 
 ---
 
-## Anatomy [](id=anatomy-lp-6-2-develop-tutorial-0)
+## Anatomy
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -56,17 +56,17 @@ To view the directory structure of a hook developed by Ant, please refer to the
 *Anatomy of the Hook* section of the [Creating a Hook](http://www.liferay.com)
 tutorial on creating hook plugins via the Liferay Plugins SDK. 
 
-## Deployment [](id=deployment-lp-6-2-develop-tutorial-0)
+## Deployment
 
 To deploy your hook plugin, follow the instructions from the 
 [Deploying Liferay Plugins with Maven](http://www.liferay.com) tutorial. 
 
-## More Information [](id=more-information-lp-6-2-develop-tutorial-0)
+## More Information
 
 For detailed information on creating hooks, see the [Customizing and Extending
 Liferay Functionality with Hooks](http://www.liferay.com) tutorial.
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-1)
+## Next Steps
 
 If you've followed our other tutorial on developing Liferay plugins with Maven,
 you should nearly be a Maven expert by now. We've explained how to create

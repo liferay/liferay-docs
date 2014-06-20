@@ -18,7 +18,7 @@ It shall clasp a sainted kitten whom the angels named Lenore II--"
 In memory of the late, now crispy Lenore II, let's create a layout template
 plugin with Maven. 
 
-## Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin-lp-6-2-develop-tutorial)
+## Creating a Layout Template Plugin
 
 To create a Liferay layout template plugin project, follow the [Creating Liferay Plugins with Maven](www.liferay.com)
 tutorial, making sure to select *Layout Template* as the plugin type. 
@@ -32,7 +32,7 @@ the Liferay layout template archetypes.
 
 ---
 
-## Anatomy [](id=anatomy-lp-6-2-develop-tutorial)
+## Anatomy
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -63,12 +63,12 @@ Web source | `src/main/webapp` | `docroot` |
 To view the directory structure of a layout template developed by Ant, visit the 
 [Anatomy of a Layout Template Project](http://www.liferay.com) tutorial. 
 
-## Deployment [](id=deployment-lp-6-2-develop-tutorial)
+## Deployment
 
 To deploy your layout template plugin, follow the instructions detailed in the
 [Deploying Liferay Plugins with Maven](www.liferay.com) tutorial. 
 
-## More Information [](id=more-information-lp-6-2-develop-tutorial)
+## More Information
 
 For detailed information on creating layout templates, see the 
 [Creating Liferay Themes and Layout Templates](http://www.liferay.com) tutorial.
