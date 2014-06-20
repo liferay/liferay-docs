@@ -22,28 +22,28 @@ Replacing a portal JSP is a simple task with hooks.
 ## Replacing a Liferay Portal JSP [](id=replacing-a-liferay-portal-jsp-lp-6-2-develop-tutorial)
 
 Suppose you need to manually override one of Liferay Portal's JSPs, like its
-*Terms of Use* page. You can accomplish this by following these steps: 
+Terms of Use page. You can accomplish this by following these steps: 
 
 1.  Use Liferay IDE to create a new hook project in your Liferay Plugins SDK. 
 
 2.  Open the `liferay-hook.xml` file from your project's `docroot/WEB-INF`
-    folder in Liferay IDE. By default, it opens in *Overview* mode. This mode,
+    folder in Liferay IDE. By default, it opens in Overview mode. This mode
     gives you a graphical user interface for developing your hook. You can
     toggle between Overview mode and Source mode via their respective tabs of
     the `liferay-hook.xml` file editor. 
 
 3.  Select the *Custom JSPs* folder from the outline to bring up the custom JSP
-    options. Select the checkbox *Customize Liferay Portal JSPs* and create
-    the default custom JSP folder `/META-INF/custom_jsps`, by clicking the icon
+    options. Select the check box *Customize Liferay Portal JSPs* and create
+    the default custom JSP folder `/META-INF/custom_jsps` by clicking the icon
     that has the three yellow diamonds. 
 
     ![Figure 1: Liferay IDE lets you specify a folder for the custom JSPs you're developing. Create the folder by clicking the icon that has the three yellow diamonds.](../../images/hook-create-custom-jsps-folder.png)
 
 4.  Add to the listing of custom JSPs by clicking the plus icon and specifying
-    the Liferay Portal JSP file that you want to override. Hint, the browse icon
-    on the right-hand side within the custom JSP text field simplifies finding
-    the JSP you want to customize. It lets you scroll through the JSPs that are
-    accessible and lets you specify key words to narrow your search. 
+    the Liferay Portal JSP file that you want to override. Hint: the browse icon
+    on the right-hand side in the custom JSP text field simplifies finding
+    the JSP you want to customize. It lets you scroll through the accessible
+    JSPs and lets you specify key words to narrow your search. 
 
     ![Figure 2: Liferay IDE simplifies adding a custom JSP to your hook by providing a powerful overview mode for editing your `liferay-hook.xml` file.](../../images/add-jsp-customization-with-hook.png)
 
@@ -58,7 +58,7 @@ Suppose you need to manually override one of Liferay Portal's JSPs, like its
 
     Modify the JSP file with your customization.
 
-    Note, lots of errors may show in the editor because the resources used in
+    Note: lots of errors may show in the editor because the resources used in
     the JSP (e.g., `PortalUtil`) are not available in the project; but they'll
     be available from the portal once the hook plugin is deployed to the portal
     server. 
@@ -67,7 +67,7 @@ Suppose you need to manually override one of Liferay Portal's JSPs, like its
 
 7.  Navigate to the custom JSP in Liferay and verify your customization.
 
-    For example, in the case of customizing the *Terms of Use* page, you'd
+    For example, in the case of customizing the Terms of Use page, you'd
     create a new user and log in to see your customization.
 
 Now there are two JSP files in Liferay deployed on your application server. One
@@ -82,11 +82,11 @@ is renamed `terms_of_use.portal.jsp`.
 To revert back to the original, undeploy your hook. Your replacement JSP is
 removed, and the `.portal.jsp` file is automatically renamed, taking its place.
 You can override any JSP in the Liferay core, while retaining thew ability to
-easily revert your changes. However, it's not possible to override the same JSP
-from multiple hooks; Liferay won't know which version to use. 
+revert your changes easily. Be careful not to override the same JSP in multiple
+hooks: you'll get whichever one happened to deploy last. 
 
-Note, we don't recommend changing Liferay's *Terms of Use* with a hook. You can
-replace the *Terms of Use* with a piece of web content simply by specifying
+Note: we don't recommend changing Liferay's Terms of Use with a hook. You can
+replace the Terms of Use with a piece of web content simply by specifying
 values for these two properties in `portal-ext.properties`:
 
     terms.of.use.journal.article.group.id=
@@ -99,4 +99,4 @@ Congratulations on overriding a Liferay Portal JSP!
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-10)
 
-Next, you should explore a different way to customize JSPs: [Customizing JSPs by Extending the Original](www.liferay.com)
+[Customizing JSPs by Extending the Original](www.liferay.com)
