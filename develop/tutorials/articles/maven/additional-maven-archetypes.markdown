@@ -37,16 +37,6 @@ Portal.
 Are you wondering if we're going to make more terrible jokes that steal from
 classic poetry? Quoth the Maven, "Probably."
 
-In the Liferay Maven tutorials, you learned about many of Liferay's most popular
-development strategies. You covered Liferay IDE, which serves as a workspace
-used for customizing your Liferay instance. You also learned that when Liferay
-IDE is paired with the Plugins SDK, you have a one stop development environment
-where you can develop Liferay plugins, build them, and deploy them to your
-Liferay instance.
-
-You also learned all about developing Liferay plugins with the Maven build
-framework. You configured Maven locally, downloaded and installed the required
-Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
 
@@ -61,3 +51,13 @@ On the *Forums* page, you can look up solutions to specific issues and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
 -->
+
+## Next Steps
+
+[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+
+[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
