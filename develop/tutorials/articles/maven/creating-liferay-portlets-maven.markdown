@@ -20,8 +20,8 @@ the group ID `liferay`, or even the group ID/artifact ID combination
 
 ---
 
-It's helpful to familiarize yourself with the Liferay portlet plugin project's
-anatomy. 
+Since it's helpful to familiarize yourself with the Liferay portlet plugin
+project's anatomy, that topic is covered next. 
 
 ## Anatomy
 
@@ -76,13 +76,7 @@ For detailed information on creating portlet plugins, see
 [Developing Portlet Applications](http://www.liferay.com).
 -->
 
-To deploy your plugin, follow the instructions detailed in the following
-tutorial:
-
 [Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
-
-To learn how to develop another type of Liferay plugin using Maven, read one of
-the following applicable tutorials: 
 
 [Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
 

@@ -1,17 +1,18 @@
 # Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
-So you're sitting in your armchair next to the fire, just as we described in the
+So you're sitting in your armchair next to the fire, as the Maven tutorials
+section
 [introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
-to the Maven section of tutorials.
-Shadows dance on the tapestry-covered wall, and Lenore II (your cat) is purring
-atop the mantle. Yes, you're passing this cold winter's night in grand style (in
-front of your computer, of course). Now imagine yourself sitting on a cold hard
-metal chair inside an off-white cubicle with empty walls (you're still in front
-of your computer, of course). These two descriptions paint two very different
-pictures, but both describe what you're doing (sitting and computing). Changing
-the "scenery" of your portal sets the mood for your users. We'll show you how to
-develop your own theme plugin (i.e., your "scenery") using Maven so your portal
-has a lasting impression on anyone who visits. 
+described. Shadows dance on the tapestry-covered wall, and Lenore II (your cat)
+is purring atop the mantle. Yes, you're passing this cold winter's night in
+grand style (in front of your computer, of course). Now imagine yourself sitting
+on a cold hard metal chair inside an off-white cubicle with empty walls (you're
+still in front of your computer, of course). These two descriptions paint two
+very different pictures, but both describe what you're doing (sitting and
+computing). Changing the "scenery" of your portal sets the mood for your users.
+This tutorial shows you how to develop your own theme plugin (i.e., your
+"scenery") using Maven so your portal has a lasting impression on anyone who
+visits. 
 
 ## Creating a Theme Plugin
 
@@ -35,6 +36,9 @@ group ID `liferay`, or even the group ID/artifact ID combination
 `liferay:theme`, to more easily find the Liferay portlet archetypes. 
 
 ---
+
+Since it's helpful to familiarize yourself with the Liferay theme plugin
+project's anatomy, that topic is covered next. 
 
 ## Anatomy
 
@@ -137,9 +141,6 @@ its file structure and POM, and you know how to deploy the theme. Way to go!
 For more information on Liferay themes and their settings, please refer to the
 [Creating Themes](http://www.liferay.com) tutorial. 
 -->
-
-To learn how to develop another type of Liferay plugin using Maven, read one of
-the following applicable tutorials: 
 
 [Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
