@@ -1,4 +1,4 @@
-# Creating Liferay Portlets with Maven [](id=creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+# Developing Liferay Portlets with Maven [](id=creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
 This tutorial explains how to create Liferay portlet plugins using Maven and the
 anatomy of the Liferay Maven portlet plugin project. 
