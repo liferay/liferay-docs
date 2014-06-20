@@ -1,0 +1,65 @@
+# Sending Your Android App's Requests Using Batch Processing 
+
+The Mobile SDK also allows sending requests using batch processing. This can be
+much more efficient than sending separate requests. For example, suppose you 
+want to delete ten blog entries at the same time. Instead of making one request 
+for each deletion, you can create a batch of calls and send them all together. 
+
+This tutorial shows you how to implement this batch processing for your Android 
+app. Read on to find out how! 
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** This tutorial assumes that you 
+already know how to invoke Liferay services in your Android app. If you don't, 
+see the tutorial [Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
+
+---
+
+## Implementing Batch Processing 
+
+Here's a code snippet from an app that deletes blog entries synchronously as a
+batch: 
+
+    import com.liferay.mobile.android.service.BatchSessionImpl;
+
+    BatchSessionImpl batch = new BatchSessionImpl(session);
+    BlogsEntryService service = new BlogsEntryService(batch);
+
+    service.deleteEntry(1);
+    service.deleteEntry(2);
+    service.deleteEntry(3);
+
+    JSONArray jsonArray = batch.invoke();
+
+So what's going on here? After the import, the `BatchSessionImpl` session is 
+created. The `BatchSessionImpl` constructor takes either credentials or another 
+session. Passing another session to the constructor is useful when you 
+already have a `Session` object and want to reuse the same credentials. Next, 
+the service calls are made as usual. If you use asynchronous calls, these 
+methods return a `null` object immediately. 
+
+Finally, the `invoke()` method is called from the batch session object. It
+returns a `JSONArray` containing the results for each service call. Since there
+are three `deleteEntry` calls, the `jsonArray` contains three objects. The order
+of the result matches the order of the service calls. 
+
+Great! But what if you want to make batch calls asynchronously? Just set the 
+callback as a `BatchAsyncTaskCallback` instance: 
+
+    import com.liferay.mobile.android.task.callback.BatchAsyncTaskCallback;
+
+    batch.setCallback(new BatchAsyncTaskCallback() {
+
+        public void onFailure(Exception exception) {
+        }
+
+        public void onSuccess(JSONArray results) {
+            // The result is always a JSONArray 
+        }
+
+    });
+
+This is similar to the procedure for making asynchronous calls described in the 
+tutorial [Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial). 
+It's just that easy to make efficient service calls in batch! 
