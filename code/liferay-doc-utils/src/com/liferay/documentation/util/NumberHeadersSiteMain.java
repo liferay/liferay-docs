@@ -99,7 +99,7 @@ public class NumberHeadersSiteMain extends Task {
 				String line;
 				while ((line = in.readLine()) != null) {
 
-					if (line.startsWith("#")) {
+					if (line.startsWith("# ")) {
 						
 						line = line.trim();
 						
