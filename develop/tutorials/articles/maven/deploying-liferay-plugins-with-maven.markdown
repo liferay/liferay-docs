@@ -137,17 +137,9 @@ you'll use when developing plugins with Maven:
 
 ---
 
-## Next Steps
+Congratulations on deployin your plugin to Liferay and to your repository! 
 
-Now that you've learned how to deploy a plugin using Maven, let's consider the
-types of Liferay plugins you can develop with Liferay Maven archetypes. You can
-develop any kind of Liferay plugin with Maven, including portlets, themes,
-layout templates, hooks, and Ext plugins. We offer tutorials which explain how
-to create each plugin type using Maven. In these tutorials, we point out where
-each plugin's directory structure differs from the directory structure you'd
-have if you had used the Plugins SDK. If you have questions about Maven, Liferay
-artifacts, or Liferay IDE's Maven integration, please refer to our other Liferay
-Maven tutorials.
+## Next Steps
 
 [Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 

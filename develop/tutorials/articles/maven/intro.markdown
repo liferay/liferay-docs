@@ -54,13 +54,7 @@ You'll dive into these topics in the Maven tutorials.
 
 ## Next Steps
 
-If you haven't already installed Maven or if you want to learn how to manage
-Maven artifacts with a Maven repository manager, check out this tutorial:
-
 [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
-
-Otherwise, you can get your hands on Liferay's Maven artifacts by following this
-tutorial: 
 
 [Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
 

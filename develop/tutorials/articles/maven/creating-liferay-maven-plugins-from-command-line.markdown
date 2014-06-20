@@ -204,13 +204,7 @@ plugin to a remote repository.
 
 ## Next Steps
 
-To learn how to deploy your Liferay Maven plugins to Liferay Portal, please
-refer to the following tutorial:
-
 [Deploying Liferay Plugins with Maven](http://www.liferay.com)
-
-If you're ready to start developing a Liferay plugin using Maven, learn how by
-reading one of the following applicable tutorials: 
 
 [Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 

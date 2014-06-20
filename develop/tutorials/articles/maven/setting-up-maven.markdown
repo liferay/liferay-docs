@@ -177,7 +177,4 @@ create!
 
 ## Next Steps
 
-Next, you must install the Liferay artifacts you'll need to create your plugins
-with Maven.
-
 [Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)

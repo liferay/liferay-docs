@@ -273,16 +273,7 @@ Liferay plugins.
 
 ## Next Steps
 
-Now that you've set up your Maven artifacts, you may want to use Maven from
-Liferay IDE as you develop apps. To learn how to use Liferay IDE and Maven in
-your development process see the following tutorial:
-
 [Using Maven from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
-
-As you work with Liferay artifacts you may encounter situations in which you
-absolutely must have the latest pre-release changes from the Liferay CE source
-repository. You can build the Liferay CE artifacts yourself by exercising the
-instructions in the following tutorial: 
 
 [Building Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
 
