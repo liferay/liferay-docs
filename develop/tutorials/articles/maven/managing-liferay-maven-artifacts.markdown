@@ -120,14 +120,14 @@ Here's how you do it:
 
 1.  Make sure you've created a repository server to hold the Liferay Maven
     artifacts. If you haven't, see the *Managing Maven Repositories* section of
-    the [Setting Up Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial
-    for instructions. 
+    the [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+    tutorial for instructions. 
 
 2.  Make sure the repository that will hold your Liferay artifacts is specified
     as a server in Maven's `settings.xml` file. If it isn't, see the
-    *Configuring Local Maven Settings* section of the [Setting Up
-    Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial for instructions
-    on adding an entry for the server. 
+    *Configuring Local Maven Settings* section of the 
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+    tutorial for instructions on adding an entry for the server. 
 
     Here's an example setting for a repository server named *liferay-releases*: 
 
@@ -159,8 +159,8 @@ Here's how you do it:
         lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-releases
 
     Note: If you created a repository in Nexus, as demonstrated in the *Managing
-    Maven Repositories* section of the [Setting Up
-    Maven](setting-up-maven-lp-6-2-develop-tutorial) tutorial, you can specify
+    Maven Repositories* section of the
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial) tutorial, you can specify
     that repository's ID and URL. 
 
 5.  To deploy to your release repository server, execute the following command: 
@@ -192,7 +192,7 @@ CE references from this section. Jim -->
 If you'd like to access Liferay's CE artifacts without downloading and
 installing a `.zip` file, you can configure Maven to automatically
 download and install them from Liferay's own repository:
-[https://repository.liferay.com](https://repository.liferay.com). The first time
+<https://repository.liferay.com>. The first time
 you use Maven to compile a Liferay plugin project, Maven automatically downloads
 the required artifacts from the Liferay Maven repository into your local
 repository, if they're not found in your local repository or any of your
@@ -262,8 +262,8 @@ Liferay's repository. (See the previous section for details.)
 
 Liferay offers an option for automatic download and installation of Liferay
 Maven artifacts publicly available on the *Central Repository*, located at
-[http://search.maven.org/#search|ga|1|liferay
-maven](http://search.maven.org/#search|ga|1|liferay%20maven). They are updated
+[http://search.maven.org/#search|ga|1|liferay maven](http://search.maven.org/#search|ga|1|liferay%20maven).
+They are updated
 with Liferay releases (e.g., 6.0.6, 6.1.1, 6.1.2, 6.1.20, 6.1.30, 6.2.0-RC5,
 etc.). The first time you use Maven to compile a Liferay plugin project, Maven
 automatically downloads the required artifacts from the Central Repository into
@@ -277,14 +277,12 @@ Now that you've set up your Maven artifacts, you may want to use Maven from
 Liferay IDE as you develop apps. To learn how to use Liferay IDE and Maven in
 your development process see the following tutorial:
 
-[Using Maven from Liferay 
-IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+[Using Maven from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
 
 As you work with Liferay artifacts you may encounter situations in which you
 absolutely must have the latest pre-release changes from the Liferay CE source
 repository. You can build the Liferay CE artifacts yourself by exercising the
 instructions in the following tutorial: 
 
-[Building Liferay Maven
-Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
+[Building Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
 

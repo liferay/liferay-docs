@@ -96,10 +96,24 @@ specification.
 ## Next Steps
 
 Great! You've successfully created a Liferay portlet project using Maven in
-Liferay IDE! Next, let's learn how to create Liferay Maven plugin projects using
-the command line. 
+Liferay IDE! Next, you may want to learn how to create Liferay Maven plugin
+projects using the command line. 
 
 [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 
-<!-- TODO list tutorials on creating the different plugins -->
+To learn how to deploy your Liferay Maven plugins to Liferay Portal, please
+refer to the following tutorial:
+
+[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+
+To learn how to develop a Liferay plugin using Maven, read one of the following
+applicable tutorials: 
+
+[Creating Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
 

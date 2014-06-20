@@ -14,8 +14,7 @@ includes a parent/child relationship. Whether or not you're going to leverage
 Maven's project inheritance capabilities when you build your Liferay plugins
 with Maven, the process is the same for creating any Liferay plugin with Maven's
 Liferay artifacts. For more information on project inheritance, see Maven's
-documentation at
-[http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance).
+documentation at <http://maven.apache.org/pom.html#Inheritance>.
 
 If you'll be creating multiple Liferay plugins, you should create a parent
 project and then specify the general settings needed to build your plugins for

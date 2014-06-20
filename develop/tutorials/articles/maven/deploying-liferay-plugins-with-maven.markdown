@@ -149,8 +149,12 @@ have if you had used the Plugins SDK. If you have questions about Maven, Liferay
 artifacts, or Liferay IDE's Maven integration, please refer to our other Liferay
 Maven tutorials.
 
-* [Creating Portlet Plugins with Maven](http://www.liferay.com) 
-* [Creating Theme Plugins with Maven](http://www.liferay.com) 
-* [Creating Hook Plugins with Maven](http://www.liferay.com) 
-* [Creating Layout Template Plugins with Maven](http://www.liferay.com)
+[Creating Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+
 
