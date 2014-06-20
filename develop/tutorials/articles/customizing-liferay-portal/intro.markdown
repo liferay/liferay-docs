@@ -6,12 +6,11 @@ functionality. It's possible to use Ext plugins for many of the same tasks, but
 hooks are hot-deployable and more forward compatible, so we urge you to use them
 preferentially. 
 
-In this section of tutorials, you'll learn how to create hooks and you'll
+In this section of tutorials, you'll learn how to create hooks, and you'll
 explore their most common uses.
 
 ## Next Steps [](id=next-steps-hooks-lp-6-2-develop-tutorial)
 
-Take your pick from a host of hook plugin tutorials: 
 
 <!--
 Creating a Hook
