@@ -144,7 +144,7 @@ Follow these steps to create a Liferay Maven parent plugin project:
 
     <!--Is the correct term not child project, but module?-->
 
-3.  If you use contents from the above example POM, make sure to replace
+    If you use contents from the above example POM, make sure to replace
     each Liferay property value (e.g., replace
    `${liferay.app.server.deploy.dir}` and other dereferenced `liferay.*`
     properties) with the appropriate value based on your Liferay environment.
@@ -199,7 +199,7 @@ Follow these steps to create a Liferay Maven parent plugin project:
     [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial) 
     tutorial. 
 
-4.  The Liferay plugins that you develop depend on several Liferay artifacts.
+    The Liferay plugins that you develop depend on several Liferay artifacts.
     You can include them in individual `dependency` elements within the POM's
     `dependencies` element. All of your parent project's modules (i.e., projects
     that refer to this parent) can leverage these dependencies. 
