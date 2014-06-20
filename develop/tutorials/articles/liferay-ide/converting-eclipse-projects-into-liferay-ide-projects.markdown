@@ -42,15 +42,9 @@ just as you would any other Liferay project.
 
 ## Next Steps 
 
-If you suspect that your project didn't import or convert successfully, read
-these tutorials:
-
 [Verifying Successful Project Import](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
 
 [Faceting a Plugin Project for Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
-
-If you're interested in deploying your project to a test server, you may want to
-read this tutorial: 
 
 [Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
 
