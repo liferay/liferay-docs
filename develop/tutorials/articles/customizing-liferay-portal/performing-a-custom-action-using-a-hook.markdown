@@ -7,7 +7,7 @@ https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-
 Hooks are useful for triggering custom actions on common portal events, like
 user login or system startup. The actions for each of these events are defined
 in `portal.properties`, so you need to extend this file to create a custom
-action; hooks make this a simple task. It's time to explore how to perform a
+action. Hooks make this a simple task. It's time to explore how to perform a
 custom action using a hook! 
 
 ## Triggering a Custom Action [](id=triggering-a-custom-action-lp-6-2-develop-tutorial)
@@ -18,7 +18,7 @@ defined in `portal.properties`. It's time to get started!
 
 1.  Determine the event on which you want to trigger your custom action. Look
     in the [`portal.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
-    online documentation to find the matching event property. Hint: the event properties
+    documentation to find the matching event property. Hint: the event properties
     have `.event` in their name. There are session, startup, shutdown, and
     portal event properties in the following sections of the `portal.properties`
     documentation: 
@@ -57,11 +57,10 @@ defined in `portal.properties`. It's time to get started!
 
     ---
 
-2.  Create a properties file, such as on named `portal.properties`, inside your
-    hook project's `docroot/WEB-INF/src` folder. Then add the name of the portal
-    event property that corresponds to the event on which you want to perform
-    your action. Specify your action class' fully qualified name as the
-    property's value. 
+2.  Create a properties file, `portal.properties`, inside your hook project's
+    `docroot/WEB-INF/src` folder. Then add the name of the portal event property
+    that corresponds to the event on which you want to perform your action. Specify
+    your action class' fully qualified name as the property's value. 
 
     For example, to perform a class' action just prior to the portal logging in
     a user, you'd specify the `login.events.pre` property with your action class
@@ -87,4 +86,6 @@ defined in `portal.properties`. It's time to get started!
 Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
 hook in Liferay Portal.
+
+<!-- This tutorial is missing Next Steps. -Rich -->
 
