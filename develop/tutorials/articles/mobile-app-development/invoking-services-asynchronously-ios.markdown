@@ -3,9 +3,10 @@
 The main drawback of using synchronous requests from your app is that each 
 request must terminate before another can begin. If you're sending a large  
 number of synchronous requests, performance suffers as a bottleneck forms while 
-each one is processed. Fortunately, Liferay's iOS SDK allows *asynchronous* HTTP 
-requests. All you need to do is set a callback to the session object. If you 
-want to make synchronous requests again, you can set the callback to `nil`. 
+each one waits to be processed. Fortunately, Liferay's iOS SDK allows 
+*asynchronous* HTTP requests. All you need to do is set a callback to the 
+session object. If you want to make synchronous requests again, you can set the 
+callback to `nil`. 
 
 This tutorial shows you how to make asynchronous requests from your iOS app. The 
 code used is an example of an app you might develop if you want to retrieve 
@@ -49,8 +50,9 @@ If a server side exception or a connection error occurs during the request, the
 the error.
 
 Since the request is asynchronous, the `getGroupEntriesWithGroupId` method
-returns immediately with `nil`. The `onSuccess` method of your callback is 
-invoked with the results once the request has finished successfully. 
+returns immediately with `nil`. Once the request has finished successfully, the 
+`onSuccess` method of your callback is invoked with the results on the main UI 
+thread. 
 
 Note that the `onSuccess` result parameter doesn't have a specific type. When 
 deciding what to cast it to, you need to check the type in the service method 
@@ -61,12 +63,11 @@ signature. In this example, the `getGroupEntriesWithGroupId` method returns an
         NSArray *entries = (NSArray *)result;
     }
 
-The `onSuccess` method is called on the main UI thread after the request has
-finished. 
+Super! Now you know how to implement asynchronous service requests in your iOS 
+apps. 
 
 ## Next Steps 
 
-Super! Now you know how to implement asynchronous service requests in your iOS 
-apps. Another way you can speed up your service requests is to send them in 
-batches. This is discussed in the tutorial 
+Another way you can speed up your service requests is to send them in batches. 
+This is discussed in the tutorial 
 [Sending Your iOS App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-ios-lp-6-2-develop-tutorial).
