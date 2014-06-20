@@ -893,7 +893,7 @@ You're now equipped to implement security in your custom Liferay portlets!
 
 Next, let's learn how to create and use portal and portlet URLs. 
 
-## Creating Portlet URLs
+## Creating Portlet URLs in JavaScript
 
 The `Liferay.PortletURL` JavaScript module allows developers to generate
 portlet URLs from their JavaScript code. This module has been updated since the
@@ -913,13 +913,13 @@ necessary. However, that behavior posed a security risk. Please see
 Liferay 6.2.0 M6, these methods have been updated so that they still work (i.e.,
 they still return appropriate URLs) but they no longer include the
 authentication tokens in the returned URLs. This update has been distributed to
-EE customers via fix pack.
+EE customers as a fix pack.
 
 If you experience problems using the above methods to generate URLs in Liferay
 6.2.0 M6 or later versions, you might need to update your plugins. If you're an
-EE customer and have applied all available fix pack, you might also need to
-update your plugins. To determine whether or not you need to update your
-plugins, use the following verification steps:
+EE customer and have applied all available fix packs, you might also need to
+update your plugins. If you'd like to determine whether or not you need to
+update your plugins, use the following verification steps:
 
 1. Search for `Liferay.PortletURL` or `/c/portal/portlet_url` in your code,
    portal content text and templates.
@@ -1031,7 +1031,7 @@ If you need to update your plugins, there are several ways to do it:
 
 3. Set the property `portlet.url.struts.action.enabled` to `false`. This ensures
    that everything works as in Liferay 6.2.0 M5 and previous versions of Liferay
-   but it represents a security risk.
+   but it represents a security risk. Avoid using this method, if possible.
 
 Next, let's learn how to use Liferay's asset framework. 
 
