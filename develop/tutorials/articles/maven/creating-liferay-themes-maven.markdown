@@ -97,8 +97,6 @@ Themes](http://www.liferay.com) tutorial.
 As with any Maven project's POM, you use the theme project's POM to define the
 project's artifacts and specify its dependencies. 
 
-## Theme POM
-
 The theme plugin project POM has two additional properties: 
 
 - `liferay.theme.parent`: Sets the parent theme. You can define almost any WAR
@@ -113,8 +111,6 @@ The theme plugin project POM has two additional properties:
             <liferay.theme.parent>_styled</liferay.theme.parent>
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
-
-## Deployment
 
 To deploy your theme plugin, follow the instructions in the
 [Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
