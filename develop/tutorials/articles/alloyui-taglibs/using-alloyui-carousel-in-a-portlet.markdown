@@ -110,5 +110,6 @@ is already deployed, you may need to undeploy and then redeploy it before your
 images show up. Give yourself a pat on the back. You've just successfully used 
 the `aui-carousel` in a portlet! 
 
-Excellent! If you want to explore AlloyUI's carousel in more depth, you can 
-check out the *AlloyUI Carousel Custimization* tutorial. 
+## Next Steps
+<!-- URL needs updated to proper one once it is added to LDN-->
+<!--[Customizing AlloyUI Carousel](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-alloyui-carousel-in-a-portlet)-->
