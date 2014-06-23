@@ -111,11 +111,6 @@ the *Javadocs* link.
 
 ## Next Steps
 
-Now that you know how to override a portal service using a hook, you may want to 
-explore other ways in which hooks can be useful. You can learn how to perform a 
-custom action by extending a `Language.properties` file with a hook at the
-following tutorial:
-
-[Perform a Custom Action](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-language-props-hook)
+[Override language.properties using a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-language-props-hook)
 
 
