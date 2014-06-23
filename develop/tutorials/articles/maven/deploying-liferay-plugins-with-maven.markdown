@@ -1,12 +1,12 @@
-# Deploying Liferay Plugins with Maven
+# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. In this
-article, we explain the process. Just follow these steps: 
+tutorial, we explain the process. Just follow these steps: 
 
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
-    `pom.xml`. See this chapter's section *Using a Parent Plugin Project* for
-    descriptions of these Liferay properties. 
+    `pom.xml`. See the *Using Maven Parent Projects* tutorial for descriptions
+    of these Liferay properties. 
 
     Here's an example where we specified these *properties* for a Liferay
     instance bundled with Apache Tomcat in the directory
@@ -137,7 +137,7 @@ you'll use when developing plugins with Maven:
 
 ---
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-6)
 
 Now that you've learned how to deploy a plugin using Maven, let's consider the
 types of Liferay plugins you can develop with Liferay Maven archetypes. You can

@@ -1,4 +1,4 @@
-# Using Portlet Namespacing
+# Using Portlet Namespacing [](id=using-portlet-namespacing-lp-6-2-develop-tutorial)
 
 Namespacing ensures that a given portlet's name is uniquely associated with
 elements in request parameters it sends to the portal. This prevents name

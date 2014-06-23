@@ -1,14 +1,14 @@
-# Using Maven From Liferay IDE
+# Using Maven From Liferay IDE [](id=using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 (`m2e-liferay`), or the added support of configuring Maven projects as full
-Liferay IDE projects. In this article, we'll discuss what the Maven project
+Liferay IDE projects. In this tutorial, we'll discuss what the Maven project
 configurator does, how to install it, and how to install its dependencies. We'll
 also examine the structure of Liferay Maven projects and explore some
 configuration options.
 
-## Installing Maven Plugins for Liferay IDE
+## Installing Maven Plugins for Liferay IDE [](id=installing-maven-plugins-for-liferay-ide-lp-6-2-develop-tutorial)
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -70,13 +70,13 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
 
-## Configuring your Liferay Maven Project
+## Configuring your Liferay Maven Project [](id=configuring-your-liferay-maven-project-lp-6-2-develop-tutorial)
 
 Now that your Liferay IDE is Maven-ready, let's examine the anatomy of a Liferay
 Maven project. Note: you don't need to have an existing Liferay Maven project to
 continue. However, if you'd like to create a new Liferay Maven project in the
 IDE before proceeding, follow the instructions in the *Creating Liferay Plugins
-with Maven* article. Alternatively, you can import an existing Maven project by
+with Maven* tutorial. Alternatively, you can import an existing Maven project by
 navigating to *File* &rarr; *Import* &rarr; *Maven* and selecting the location
 of your Maven project source code. 
 
@@ -193,7 +193,7 @@ interactive list of resolved dependencies.
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-9)
 
 Next, let's discuss the benefits of using a Maven parent project with your
 plugin projects. 

@@ -1,10 +1,10 @@
-# Creating Liferay Maven Plugins from Liferay IDE
+# Creating Liferay Maven Plugins from Liferay IDE [](id=creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types, including portlet, theme, hook, and layout template plugins. To make sure
 that you can find the archetypes you need, we provide archetypes for each of
 these plugin types for various versions of Liferay. *Archetype* is Maven's
-project templating toolkit. In this article, we explain how to use Archetype to
+project templating toolkit. In this tutorial, we explain how to use Archetype to
 create a Liferay portlet project. With Archetype, you can use the same steps we
 detail below to generate Liferay plugin projects of any type. 
 
@@ -75,7 +75,7 @@ to generate a Liferay plugin project using Liferay IDE:
 
 	![Figure 2.27: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-3)
 
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! Next, let's learn how to create Liferay Maven plugins using the

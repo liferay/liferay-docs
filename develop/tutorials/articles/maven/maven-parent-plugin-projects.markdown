@@ -1,4 +1,4 @@
-# Using Maven Parent Plugin Projects
+# Using Maven Parent Plugin Projects [](id=using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties that child projects have in common. You can also create
@@ -187,7 +187,7 @@ with Apache Tomcat in a directory `C:\liferay-portal-6.2`:
 
 You can also specify these key properties in your Global or User `settings.xml`
 file. To learn more about this method, visit the *Configuring Your Liferay Maven
-Project* section of the *Using Maven From Liferay IDE* article.
+Project* section of the *Using Maven From Liferay IDE* tutorial.
 
 The Liferay plugins you develop depend on several Liferay artifacts. We've
 included them in individual `dependency` elements within the POM's
@@ -203,7 +203,7 @@ through inheritance.
 
 ---
  
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-8)
 
 Now that you specified your project's general information, your Liferay
 environment properties, and the Liferay artifacts on which Liferay plugin
