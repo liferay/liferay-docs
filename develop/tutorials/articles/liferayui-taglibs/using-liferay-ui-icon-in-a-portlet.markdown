@@ -118,9 +118,6 @@ portlet!
 
 ## Next Steps
 
-Now that you know how to use the Liferay:UI taglib to add icons to your
-portlets, you can learn how to replace Liferay's default theme icons with your 
-ownin the tutorial here:
 <!--URl needs updated to correct one once it is added to LDN-->
-<!--[Replacing the Icons](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/replacing-the-default-icons-in-a-theme)-->
+<!--[Replacing the default theme icons](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/replacing-the-default-icons-in-a-theme)-->
 
