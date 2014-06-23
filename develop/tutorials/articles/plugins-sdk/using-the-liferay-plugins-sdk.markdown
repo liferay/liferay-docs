@@ -293,8 +293,4 @@ their Java projects.
 
 ## Next Steps
 
-The Liferay Plugins SDK uses the Apache Ant build tool. If that makes you
-uncomfortable, consider using Liferay's Apache Maven archetypes to build your
-custom Liferay plugins. To learn about developing Liferay plugins with Maven,
-and to have some fun with classic poetry while doing it, check out the
-[Developing Liferay Plugins Using Maven](http://www.liferay.com) tutorial.
+[Developing Liferay Plugins Using Maven](http://www.liferay.com)
