@@ -90,3 +90,7 @@ names to see their information.
 ![Figure 4: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-android-contacts.png)
 
 Congratulations on creating a mobile app that uses Liferay! 
+
+## Next Steps
+
+[Making Liferay and Custom Portlet Services Available in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-and-custom-portlet-services-android-lp-6-2-develop-tutorial)
