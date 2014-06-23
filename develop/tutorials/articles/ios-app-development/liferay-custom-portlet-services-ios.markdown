@@ -7,7 +7,7 @@ building and installing the SDK.
 
 This tutorial covers how to install a Liferay iOS SDK that you either download 
 from Liferay or build yourself. Compatibility with versions of Liferay and iOS 
-are also discussed. Let the installation begin!
+are also discussed. Let the installation begin! 
 
 ## Making Custom Portlet Services Available in Your iOS App 
 
@@ -24,7 +24,7 @@ These installation instructions assume you're using the XCode developer tool
 provided by Apple. You can dowload XCode from the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
 The iOS SDK can be installed either manually, or by using CocoaPods. The first 
 section here covers manual installation. The section that follows covers 
-installation using CocoaPods.
+installation using CocoaPods. 
 
 ### Manual Installation 
 
@@ -79,7 +79,7 @@ number. For example, service classes from versions 6.2.x and 7.0.x end in
 connecting to, use the `[LRPortalVersionUtil getPortalVersion:…]` method. 
 
 The Liferay iOS SDK is compatible with iOS versions 6.1 and up. Older versions 
-of iOS may work with the SDK, but they are untested. 
+of iOS may work with the SDK, but compatibility untested. 
 
 ## Next Steps 
 
