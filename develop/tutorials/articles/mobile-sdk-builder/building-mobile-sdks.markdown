@@ -90,41 +90,41 @@ below properties in the `gradle.properties` file.
 
 Here are the important properties to set.
 
-	* `url` - The URL to your Liferay instance.
+* `url` - The URL to your Liferay instance.
 
-	* `context` - Your portlet's web context. For example, you'd set the web 
-	context to `context=calendar-portlet` if you wanted to generate an SDK for 
-	Liferay's Calendar portlet. This is because the Calendar portlet is 
-	generally deployed to the `calendar-portlet` context. Under the hood, the 
-	SDK Builder will try to access 
-	`http://localhost:8080/calendar-portlet/api/jsonws?discover` to find
-	out which services are available for this portlet. Check in a browser to 
-	make sure this URL is working before running the SDK. If it's not running, 
-	you may have forgotten to build the WSDD for the portlet. 
+* `context` - Your portlet's web context. For example, you'd set the web 
+context to `context=calendar-portlet` if you wanted to generate an SDK for 
+Liferay's Calendar portlet. This is because the Calendar portlet is 
+generally deployed to the `calendar-portlet` context. Under the hood, the 
+SDK Builder will try to access 
+`http://localhost:8080/calendar-portlet/api/jsonws?discover` to find
+out which services are available for this portlet. Check in a browser to 
+make sure this URL is working before running the SDK. If it's not running, 
+you may have forgotten to build the WSDD for the portlet. 
 
-	* `filter` - Specifies your portlet's entities whose services to access. A
-	blank value specifies the services of all the portlet's entities. For 
-	example, the Calendar portlet has entities such as `CalendarBooking` and
-	`CalendarResource`. To generate an SDK for only the `CalendarBooking`
-	entity, set the filter `calendarbooking`. The SDK Builder sends requests to 
-	`http://localhost:8080/calendar-portlet/api/jsonws?discover=/calendarbooking/*`.
-	If you specify no filter value by setting `filter=`, the remote services of 
-	*all* the portlet's entities are made available to your mobile SDK. 
+* `filter` - Specifies your portlet's entities whose services to access. A
+blank value specifies the services of all the portlet's entities. For 
+example, the Calendar portlet has entities such as `CalendarBooking` and
+`CalendarResource`. To generate an SDK for only the `CalendarBooking`
+entity, set the filter `calendarbooking`. The SDK Builder sends requests to 
+`http://localhost:8080/calendar-portlet/api/jsonws?discover=/calendarbooking/*`.
+If you specify no filter value by setting `filter=`, the remote services of 
+*all* the portlet's entities are made available to your mobile SDK. 
 
-	* `package` - On Android, this is the package your SDK's classes are written 
-	to (iOS doesn't use packages). The Liferay Portal version is appended to the 
-	end of the package name by the SDK Builder. For example, if you specify 
-	`com.liferay.mobile.android` as your package, 
-	`com.liferay.mobile.android.v62` is the resulting package name. Appending 
-	the Liferay Portal version prevents collisions between classes with the same 
-	names written for different versions of Liferay Portal. 
+* `package` - On Android, this is the package your SDK's classes are written 
+to (iOS doesn't use packages). The Liferay Portal version is appended to the 
+end of the package name by the SDK Builder. For example, if you specify 
+`com.liferay.mobile.android` as your package, 
+`com.liferay.mobile.android.v62` is the resulting package name. Appending 
+the Liferay Portal version prevents collisions between classes with the same 
+names written for different versions of Liferay Portal. 
 
-	* `destination` - Specifies the root folder to save your generated files to.
-	The default locations for Android and iOS are `android/src/gen/java` and
-	`ios/src/gen`, respectively. 
+* `destination` - Specifies the root folder to save your generated files to.
+The default locations for Android and iOS are `android/src/gen/java` and
+`ios/src/gen`, respectively. 
 	
-	* `version` - The version number you specify here is appended to the jar and 
-	zip file names. 
+* `version` - The version number you specify here is appended to the jar and 
+zip file names. 
 
 Here's an example of these settings for a portlet with the web context value 
 `my-portlet`. 
