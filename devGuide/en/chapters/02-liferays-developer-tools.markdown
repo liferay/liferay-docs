@@ -92,7 +92,7 @@ with Eclipse. You can alternatively install Liferay IDE onto an existing
 supported Eclipse installation. All Liferay IDE installation options are
 explained in this section. 
 
-#### Installing Liferay IDE Bundled with Eclipse 
+#### Installing Liferay IDE Bundled with Eclipse [](id=installing-liferay-ide-bundled-with-ecli-liferay-portal-6-2-dev-guide-02-en)
 
 Installing Liferay IDE and Eclipse from the same bundle is convenient and easy
 to do.  
@@ -122,7 +122,7 @@ update site from Eclipse or download a Liferay IDE archive file to access from
 Eclipse. Installing Liferay IDE from the update site is the easiest way to add
 it to Eclipse. 
 
-#### Installing Liferay IDE from the Update Site onto Eclipse
+#### Installing Liferay IDE from the Update Site onto Eclipse [](id=installing-liferay-ide-from-the-update-s-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
@@ -151,7 +151,7 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 
 Alternatively, you can install Liferay IDE from a downloaded archive file. 
 
-#### Installing Liferay IDE from an Archive File onto Eclipse
+#### Installing Liferay IDE from an Archive File onto Eclipse [](id=installing-liferay-ide-from-an-archive-f-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE from an archive file, follow these steps: 
 
