@@ -286,8 +286,13 @@ their Java projects.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-11)
 
-The Liferay Plugins SDK uses the Apache Ant build tool. If that makes you
-uncomfortable, consider using Liferay's Apache Maven archetypes to build your
-custom Liferay plugins. To learn about developing Liferay plugins with Maven,
-and to have some fun with classic poetry while doing it, check out the
-[Developing Liferay Plugins Using Maven](http://www.liferay.com) tutorial.
+[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+<!--
+[OpenSocial Gadgets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+-->
