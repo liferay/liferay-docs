@@ -1729,7 +1729,7 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     Portal CE source project root directory. Specify the following properties in
     it:
 
-        app.server.type=[your application server's type. Lookup your app
+        app.server.type=[your application server's type. Look up your app
         server's type in the app.server.properties file in the same directory.]
         app.server.parent.dir=[your application server's parent directory]
         app.server.[type].dir=[your application server's directory]
