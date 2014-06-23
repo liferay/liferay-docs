@@ -52,3 +52,9 @@ Liferay Mobile SDK to your Eclipse instance by following these steps:
    complete installing the Liferay Mobile SDK plugin.
 
 Terrific! You're ready to start developing Android apps that use Liferay! 
+
+## Next Steps 
+
+[Creating the Liferay Android Sample Project](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project-lp-6-2-develop-tutorial)
+
+[Making Liferay and Custom Portlet Services Available in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-and-custom-portlet-services-android-lp-6-2-develop-tutorial)

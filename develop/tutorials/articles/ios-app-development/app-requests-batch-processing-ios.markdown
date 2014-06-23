@@ -50,8 +50,4 @@ requests.
 
 ## Next Steps 
 
-As you can see, it's very simple to make efficient service calls in batch using
-the iOS SDK! If you need to review synchronous requests, see the tutorial 
-[Invoking Liferay Services in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios-lp-6-2-develop-tutorial).
-Similarly, asynchronous requests are covered in the tutorial 
-[Invoking Services Asynchronously from Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-ios-lp-6-2-develop-tutorial). 
+[Service Builder Learning Path](http://www.liferay.com/)

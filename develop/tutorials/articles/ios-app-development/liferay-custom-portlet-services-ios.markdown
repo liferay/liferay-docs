@@ -83,6 +83,6 @@ of iOS may work with the SDK, but compatibility untested.
 
 ## Next Steps 
 
-Great! Now that you've made services available through the Liferay iOS SDK, you 
-probably want to get started invoking those services in your app. This is 
-covered in the tutorial [Invoking Liferay Services in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios-lp-6-2-develop-tutorial).
+[Building Mobile SDKs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-mobile-sdks-lp-6-2-develop-tutorial).
+
+[Invoking Liferay Services in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios-lp-6-2-develop-tutorial).

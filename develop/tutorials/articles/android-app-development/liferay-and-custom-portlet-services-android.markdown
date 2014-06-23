@@ -134,3 +134,7 @@ accessing your custom portlet services.
 Congratulations! You've generated custom services for your Liferay portlets! Now 
 your app can access Liferay core services, Liferay utilities, *and* your custom 
 portlet services. 
+
+## Next Steps 
+
+[Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial)

@@ -63,3 +63,7 @@ callback as a `BatchAsyncTaskCallback` instance:
 This is similar to the procedure for making asynchronous calls described in the 
 tutorial [Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial). 
 It's just that easy to make efficient service calls in batch! 
+
+## Next Steps
+
+[Service Builder Learning Path](http://www.liferay.com/)

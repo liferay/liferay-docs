@@ -102,6 +102,8 @@ returns a `null` object. The service delivers the service's real return value to
 the callback's `onSuccess()` method, instead. 
 
 Great! Now you know about invoking services asynchronously from your Android 
-app. You might also want to learn how to use batch processing to speed up 
-requests. You can read about this in the tutorial 
+app.
+
+## Next Steps
+
 [Sending Your Android App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-android-lp-6-2-develop-tutorial).

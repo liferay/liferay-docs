@@ -68,6 +68,4 @@ apps.
 
 ## Next Steps 
 
-Another way you can speed up your service requests is to send them in batches. 
-This is discussed in the tutorial 
-[Sending Your iOS App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-ios-lp-6-2-develop-tutorial).
+[Sending Your iOS App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-ios-lp-6-2-develop-tutorial)
