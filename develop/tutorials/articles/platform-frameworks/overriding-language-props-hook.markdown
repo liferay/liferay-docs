@@ -124,6 +124,4 @@ click on the *Source* tab of `liferay-hook.xml`.
 
 ## Next Steps
 
-Great! You now know how to customize language keys using a hook. If your craving 
-some more information on hooks, you can learn how to extend your Indexer Post 
-Processor in this tutorial: [Extending your Indexer Post Processor](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/extend-indexer-post-processor-hook)
+ [Extending your Indexer Post Processor Using a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/extend-indexer-post-processor-hook)
