@@ -1,20 +1,26 @@
 # Creating Liferay Maven Plugins from the Command Line [](id=creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 
-If you'd like to learn how to use Liferay IDE to create Liferay Maven
-Plugin, please refer to the *Creating Liferay Maven Plugins from Liferay IDE*
-tutorial. In this tutorial, we explain how to use Maven archetypes to generate a
-Liferay plugin project using the command line.
+To learn how to use Liferay IDE to create Liferay Maven plugins, please refer to
+the 
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+tutorial. This tutorial explains how to use Maven archetypes to generate
+Liferay plugin projects using the command line.
 
-1.  Open the command prompt and navigate to the parent directory in which you
-    want to create the plugin project. Archetype will create a sub-directory for
-    the plugin project you create.
+## Using the Maven Archetype Tool to Create a Liferay Plugin
+
+Follow these steps to create a Liferay plugin from the command line:
+
+1.  Open the command prompt or terminal and navigate to the parent directory in
+    which you want to create the plugin project. Archetype create a
+    sub-directory for each plugin project you create.
 
     ---
 
     ![note](../../images/tip-pen-paper.png) **Note:** If you haven't already
     created a parent project, you may want to consider creating one to share
-    common project information. See section *Using a Parent Plugin Project* for
-    details.
+    common project information. See the
+    [Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+    tutorial for details.
 
     ---
 
@@ -23,17 +29,18 @@ Liferay plugin project using the command line.
         mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
     ---
-    
+
     ![note](../../images/tip-pen-paper.png) **Important:** Sometimes, after a
-    new Liferay release, the Liferay CE and ee artifacts might only be available
+    new Liferay release, the Liferay CE and EE artifacts might only be available
     from [repository.liferay.com](repository.liferay.com). In this case, you
-    must use the `-DarchetypeCatalog=...` portion to access the Liferay
+    must use the `-DarchetypeCatalog=...` option to access the Liferay
     Repository.  You'll also need to configure a couple other files to ensure
     the generation command completes successfully. Please refer to the
-    *Installing Artifacts from the Liferay Repository* sections of the *Managing
-    Liferay Maven Artifacts Tutorial* to configure Maven to access the Liferay
-    Repository for Liferay CE and EE artifacts.
-    
+    *Installing Artifacts from the Liferay Repository* section of the
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+    tutorial to configure Maven to access the Liferay Repository for Liferay CE
+    and EE artifacts. 
+
     ---
 
     <!-- Edit archetype generate command and remove above note when GA1 artifacts
@@ -41,7 +48,7 @@ Liferay plugin project using the command line.
 
     Archetype starts and lists the archetypes available to you. You're prompted
     to *choose* an archetype or *filter* archetypes by group / artifact ID. The
-    output looks like the following: 
+    output looks like this: 
 
         ...
         6: https://repository.liferay.com/nexus/content/groups/liferay-ce -> 
@@ -83,7 +90,7 @@ Liferay plugin project using the command line.
 available on Maven Central/ZIP files. Add similar output back, when available
 -Cody -->
 
-3. Choose a Liferay portlet archetype by entering its number. Since we're using
+3. Choose a Liferay portlet archetype by entering its number. If you're using
 the Liferay Repository, the newest archetype version is automatically selected.
 
 <!--
@@ -164,7 +171,7 @@ the Liferay Repository, the newest archetype version is automatically selected.
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 2.28: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 1: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -195,8 +202,15 @@ When your plugin is created, you can package and deploy your project to a
 specified Liferay instance. You can even install and deploy the individual
 plugin to a remote repository. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-2)
-
-Next, we'll explain how to deploy your plugins to Liferay Portal using Maven:
+## Next Steps
 
 [Deploying Liferay Plugins with Maven](http://www.liferay.com)
+
+[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+

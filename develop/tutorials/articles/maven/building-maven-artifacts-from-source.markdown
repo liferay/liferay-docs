@@ -1,22 +1,20 @@
-# Building Maven Artifacts from Source [](id=building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
+# Building Liferay Maven Artifacts from Source [](id=building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
 
-You can simply download the Liferay Maven artifacts if you're just interested in
-using the artifacts for a specific release. However, if you'd like to use the
-very latest Liferay CE Maven artifacts, you can build them from source. To build
-the latest Liferay CE Maven artifacts from source, follow these steps:
+You can download the Liferay Maven artifacts if you're just interested in using
+the artifacts for a specific release. However, if you'd like to use the very
+latest Liferay CE Maven artifacts, you can build them from source. To build the
+latest Liferay CE Maven artifacts from source, follow these steps:
 
 1.  Navigate to your local Liferay Portal CE source project. If you don't
     already have a local Liferay Portal CE source project on your machine, you
     can fork the Liferay Portal CE Github repository, found at
-    [http://github.com/liferay/liferay-portal](http://github.com/liferay/liferay-portal),
-    and clone it to your machine.
+    <http://github.com/liferay/liferay-portal>, and clone it to your machine.
 
 2.  Create an `app.server.[user name].properties` file in your local Liferay
     Portal CE source project root directory. Specify the following properties in
     it:
 
-        app.server.type=[your application server's type. Lookup your app
-        server's type in the app.server.properties file in the same directory.]
+        app.server.type=[your application server's type. Lookup your app server's type in the app.server.properties file in the same directory.]
         app.server.parent.dir=[your application server's parent directory]
         app.server.[type].dir=[your application server's directory]
 
@@ -42,7 +40,9 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
         ant -f build-dist.xml unzip-tomcat
 
 4.  Create a `releases.[user name].properties` in your local Liferay Portal CE
-    source project root directory and specify the following properties:
+    source project root directory and specify your GPG credentials and Maven
+    repository information, similar to the properties in the following example
+    listing: 
 
         gpg.keyname=[GPG key name]
         gpg.passphrase=[GPG passphrase]
@@ -62,9 +62,9 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
     
     ---
 
-    ![note](../../images/tip-pen-paper.png) **Note**: The `releases.[user
-    name].properties` is not required if you only plan to install the Liferay
-    artifacts locally and not deploy them. 
+    ![note](../../images/tip-pen-paper.png) **Note**: If you only plan to
+    install the Liferay artifacts locally and not deploy them, the
+    `releases.[user name].properties` is not required 
 
     ---
 
@@ -83,7 +83,7 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
 
     If you want the Liferay artifacts to be installed locally but don't have a
     remote Maven repository or don't want the artifacts to be remotely deployed,
-    you can run the install target instead of the deploy target: `ant -f
+    you can run the installation target instead of the deploy target: `ant -f
     build-maven.xml install-release-artifacts` or `ant -f build-maven.xml
     install-snapshot-artifacts`. The target installs the Liferay artifacts you
     built to your local .m2 repository (e.g., to your `[USER_HOME]/.m2/`
@@ -110,11 +110,8 @@ the latest Liferay CE Maven artifacts from source, follow these steps:
 Great! You now know how to build Liferay CE artifacts from your local portal
 source code. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-0)
+## Next Steps
 
-After you've built the Liferay Maven artifacts and installed them your local
-Maven repository, you should learn how to manage your artifacts. Maybe you also
-want to deploy the artifacts to a remote repository. To learn how, please refer
-to the following tutorial:
+[Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
 
-[Managing Liferay Artifacts](www.liferay.com)
+[Using Maven from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
