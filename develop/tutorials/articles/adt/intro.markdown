@@ -19,3 +19,10 @@ the portal. This isn't actually a new concept in Liferay. In some portlets
 already add as many display options (or templates) as you want. Now you can add
 them to your custom portlets, too. 
 
+## Next Steps 
+
+[Implementing Application Display Templates](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/implementing-application-display-templates-lp-6-2-develop-tutorial)
+
+[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

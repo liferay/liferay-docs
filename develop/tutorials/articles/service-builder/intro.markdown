@@ -5,3 +5,6 @@ well on your way to creating apps that are easy to maintain and have powerful
 accessible services. This section's tutorials build on these basics and provide
 more details on Service Builder's features. 
 
+## Next Steps 
+
+[Customizing Model Entities With Model Hints](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial)

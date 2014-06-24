@@ -281,3 +281,8 @@ like the Location Listing portlet, tried out a sample template, and ran through
 important recommendations for using ADTs, which included security and
 performance.
 
+## Next Steps 
+
+[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
