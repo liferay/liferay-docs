@@ -1,7 +1,7 @@
 # Using AlloyUI Carousel in Your Portlet
 
-Image carousels are often the first thing people see when they visit sites; they
-provide an interactive way of cycling through visual elements and are a very
+Image carousels are often the first thing people see when they visit sites. They
+provide an interactive way of cycling through visual elements and are an
 effective means of communicating information to users. AlloyUI's `aui-carousel`
 module makes it very easy to get an image carousel up and running in no time
 flat.
@@ -27,8 +27,7 @@ Go ahead and configure your portlet's view.jsp first.
 ### Step 1: Configure Your Portlet's `view.jsp`
 
 First, you need to setup the `view.jsp` of your portlet to use the `aui-carousel`
-module. The following example code shows what the `view.jsp` looks like for a
-carousel that uses sample images:
+module. The following example code shows how the `view.jsp` could look:
 
         ```
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -57,11 +56,11 @@ carousel that uses sample images:
         </aui:script>
         ```
         
-The carousel automatically adjusts to the number of images in the `div`, so feel 
-free to add more. If you deploy the portlet now, you'll notice that no images 
-are displayed. This is because you need to write some CSS to tell the portlet 
-how to display the carousel. You also need to define the file paths to the 
-images defined by the image id's. These things are taken care of in the next 
+The carousel automatically adjusts to the number of images in the `<div>`, so 
+feel free to add more. If you deploy the portlet now, you'll notice that no 
+images are displayed. This is because you need to write some CSS to tell the 
+portlet how to display the carousel. You also need to define the file paths to 
+the images defined by the image id's. These things are taken care of in the next 
 step. 
 
 ### Step 2: Create A `main.css` File to Display Your Carousel
@@ -108,8 +107,9 @@ step.
 
 Upon deployment you can see that your images display correctly. If your portlet 
 is already deployed, you may need to undeploy and then redeploy it before your 
-images show up. Give yourself a pat on the back; you've just successfully used 
+images show up. Give yourself a pat on the back. You've just successfully used 
 the `aui-carousel` in a portlet! 
 
-Excellent! If you want to explore AlloyUI's carousel in more depth, you can 
-check out the *AlloyUI Carousel Custimization* tutorial. 
+## Next Steps
+<!-- URL needs updated to proper one once it is added to LDN-->
+<!--[Customizing AlloyUI Carousel](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-alloyui-carousel-in-a-portlet)-->
