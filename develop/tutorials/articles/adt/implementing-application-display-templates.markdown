@@ -283,6 +283,12 @@ performance.
 
 ## Next Steps 
 
+[Customizing Liferay Portal](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+
+[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+<!--
+[OpenSocial Gadgets](OpenSocial Gadgets intro header is for the dev guide... replace after this is fixed. -Nick)
+-->
 [AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
 [Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
