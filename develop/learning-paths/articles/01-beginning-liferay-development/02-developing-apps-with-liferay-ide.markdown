@@ -16,6 +16,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 
 2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page. Copy
    the URL to the update site you're interested in (stable or milestone). 
+    milestone). 
 
     ![Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
@@ -129,11 +130,7 @@ click *OK*.
 You've now registered your Plugins SDK, and you are ready to begin
 developing Liferay applications! 
 
-
 ## Next Steps
-
-Nowt that you have your development environment installed, you'll want to jump
-in and create an app: 
 
 [Writing Your First Liferay Application](http://www.liferay.com)
 

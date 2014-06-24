@@ -38,11 +38,11 @@ appears.
 
 ---
 
-![tip](../../images/01-tip.png) The first time you create a project, make sure
-you're online. In the background, Liferay's Plugins SDK downloads several .jar
-files that it needs in order to operate. This keeps the initial download small,
-but makes it take a long time to create your first project (about four minutes).
-After the initial download, it won't happen again. 
+![note](../../images/01-tip.png) **Note:** The first time you create a project,
+make sure you're online. In the background, Liferay's Plugins SDK downloads
+several `.jar` files that it needs in order to operate. This keeps the initial
+download small, but makes it take a long time to create your first project
+(about four minutes). After the initial download, it won't happen again. 
 
 ---
 
@@ -115,9 +115,9 @@ that says *Add Entry*.
  for version 6.1, and it is valid for Liferay versions going forward. The
  following code gets added to `view.jsp`: 
 
-    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+        <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 
- This declares that we want to use Liferay's AlloyUI tags. 
+    This declares that we want to use Liferay's AlloyUI tags. 
 
  3. Next, remove the default message in the JSP. 
 
@@ -386,9 +386,9 @@ created the portlet.
 
 2. Create a method with the following signature: 
 
-    public void addEntry(ActionRequest request, ActionResponse response) {
+        public void addEntry(ActionRequest request, ActionResponse response) {
 
-    }
+        }
 
 3. Hover your mouse over `ActionRequest` and add the import. Do the same for
 `ActionResponse`. 
@@ -406,7 +406,7 @@ entry.
 
 ---
 
-![tip](../../images/01-tip.png)**Note:** Clearly, portlet preferences and string
+![tip](../../images/01-tip.png) **Note:** Clearly, portlet preferences and string
 delimiters are not the best way to implement this. To learn about a proper
 implementation for saving data, follow the *Writing a Data-Driven Application*
 learning path. 
@@ -518,52 +518,52 @@ give it the fields you need to store entries.
 for the two fields, and one that takes the two fields as parameters and sets
 their values. Your completed class should look like this: 
 
-    package com.liferay.docs.guestbook.model;
+        package com.liferay.docs.guestbook.model;
 
-    public class Entry {
+        public class Entry {
 
-        private String name;
-        private String message;
+            private String name;
+            private String message;
         
-        public Entry() {
+            public Entry() {
 
-            this.name = null;
-            this.message = null;
+                this.name = null;
+                this.message = null;
 
-        }
+            }
         
-        public Entry (String name, String message) {
+            public Entry (String name, String message) {
             
-            setName(name);
-            setMessage(message);
+                setName(name);
+                setMessage(message);
 
-        }
+            }
         
-        public String getName() {
+            public String getName() {
 
-            return name;
+                return name;
 
-        }
+            }
 
-        public void setName(String name) {
+            public void setName(String name) {
 
-            this.name = name;
+                this.name = name;
 
-        }
+            }
 
-        public String getMessage() {
+            public String getMessage() {
 
-            return message;
+                return message;
 
-        }
+            }
 
-        public void setMessage(String message) {
+            public void setMessage(String message) {
 
-            this.message = message;
+                this.message = message;
 
-        }
+            }
         
-    }
+        }
 
 Now that you have your model, you have an easy way of encapsulating guestbook
 entries so that they can be processed by the controller layer and displayed by
@@ -579,51 +579,48 @@ users view the application, you need to customize your portlet's render
 functionality, which it's currently inheriting from its parent class,
 `MVCPortlet`. 
 
-1. Open `GuestbookPortlet.java` and place the following method below your
+1.  Open `GuestbookPortlet.java` and place the following method below your
 `addEntry` method: 
 
-```
-	@Override
-	public void render (RenderRequest renderRequest, RenderResponse renderResponse) 
-            throws PortletException, IOException {
-		
-		PortletPreferences prefs = renderRequest.getPreferences();
-		String[] guestbookEntries = prefs.getValues("guestbook-entries",
-				new String[1]);
+        @Override
+        public void render (RenderRequest renderRequest, RenderResponse renderResponse) 
+                throws PortletException, IOException {
 
-		if (guestbookEntries != null) {
+            PortletPreferences prefs = renderRequest.getPreferences();
+            String[] guestbookEntries = prefs.getValues("guestbook-entries",
+                    new String[1]);
 
-			List<Entry> entries = parseEntries(guestbookEntries);
+            if (guestbookEntries != null) {
 
-			renderRequest.setAttribute("entries", entries);
-		}
-		
-		super.render(renderRequest, renderResponse);
-		
-	}
-```
+                List<Entry> entries = parseEntries(guestbookEntries);
 
-This method retrieves the array of guestbook entries from portlet preferences,
-converts it to a `List` of `Entry` objects, and places that `List` into the
-request object. It then calls the parent class's `render` method. 
+                renderRequest.setAttribute("entries", entries);
+            }
 
-2. Beneath the `render` method, place the following method that does the
+            super.render(renderRequest, renderResponse);
+
+        }
+
+    This method retrieves the array of guestbook entries from portlet
+    preferences, converts it to a `List` of `Entry` objects, and places that
+    `List` into the request object. It then calls the parent class's `render`
+    method. 
+
+2.  Beneath the `render` method, place the following method that does the
 conversion of the array to a `List` of your model objects: .
-```
 
-	private List<Entry> parseEntries (String[] guestbookEntries) {
-		
-		ArrayList<Entry> entries = new ArrayList();
+        private List<Entry> parseEntries (String[] guestbookEntries) {
 
-		for (String entry : guestbookEntries) {
-			String[] parts = entry.split("\\^", 2);
-			Entry gbEntry = new Entry(parts[0], parts[1]);
-			entries.add(gbEntry);
-		}
+            ArrayList<Entry> entries = new ArrayList();
 
-		return entries;
-	}
-```
+            for (String entry : guestbookEntries) {
+                String[] parts = entry.split("\\^", 2);
+                Entry gbEntry = new Entry(parts[0], parts[1]);
+                entries.add(gbEntry);
+            }
+
+            return entries;
+        }
 
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (^) character. 
@@ -637,47 +634,43 @@ Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a component called the *Search Container*
 to make this happen. 
 
-1. Open the `docroot/html/guestbook/view.jsp` file. Below the
+1.  Open the `docroot/html/guestbook/view.jsp` file. Below the
 `<portlet:defineObjects />` tag, add the following tag: 
 
-    <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
+        <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
-This makes your list of `Entry` objects available to the page. 
+    This makes your list of `Entry` objects available to the page. 
 
-2. From the *Liferay UI Search Container* snippet category, drag the *Model
+2.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
-3. In the dialog that pops up, click the *Browse* button and then type *Entry*
+3.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
 your classpath. Choose the one you created in the
 `com.liferay.docs.guestbook.model` package and click *Ok*. 
 
-4. Your model class is parsed automatically, and now you can choose the property
+4.  Your model class is parsed automatically, and now you can choose the property
 columns you wish to display to the user. Check off the *message* and *name*
 columns. 
 
-5. The generated variable is `aEntry`. If you want something more grammatically
+5.  The generated variable is `aEntry`. If you want something more grammatically
 correct, change it to `entry`, and then click *Finish*. 
 
-The tag snippet assumes that you're using Liferay's persistence framework,
-Service Builder. Because you're not using that, you'll have to fix one of the
-tags. 
+    The tag snippet assumes that you're using Liferay's persistence framework,
+    Service Builder. Because you're not using that, you'll have to fix one of
+    the tags. 
 
-6. Modify the `<liferay-ui:search-container-results>` tag so that it uses your
+6.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
-```
-	<liferay-ui:search-container-results
-		results="<%= entries %>"
-	/>
-```
+
+        <liferay-ui:search-container-results
+            results="<%= entries %>"
+        />
 
 You're done! Save your work, deploy your application, and try adding some
 guestbook entries. 
 
-## Next Steps
-
-Obviously, you'll want to do far more interesting things than this. Here are
-some possible next steps: 
+## Next Steps 
 
 [Write a data-driven application](http://www.liferay.com)
 
