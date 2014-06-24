@@ -1,4 +1,4 @@
-# Leveraging Hibernate's Criteria API
+# Leveraging Hibernate's Criteria API [](id=leveraging-hibernates-criteria-api-lp-6-2-develop-tutorial)
 
 Liferay allows you to use custom SQL queries to retrieve data from the database.
 Sometimes, however, it's more convenient to build queries dynamically at
@@ -350,4 +350,6 @@ query in a custom finder and exposing it as a service for your portlet!
 
 [Developing Custom SQL queries](www.liferay.com) 
 
-[Configuring `service.properties`](www.liferay.com)
+[Configuring `service.properties`](www.liferay.com) 
+
+[Customizing Model Entities With Model Hints](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial) 
