@@ -24,7 +24,8 @@ plugin, portlet plugins are the most common type of plugin used for importing
 templates. Let's build a portlet plugin that imports some templates and
 structures. 
 
-1. Download, install, and activate the Resources Importer app from
+1. If the Resources Importer is not already installed on your portal, download,
+   install, and activate it. The Resources Importer app is available from
    [Liferay Marketplace](https://www.liferay.com/marketplace).
 
 2. Create a portlet plugin project with the name of your choice. For example,
@@ -44,14 +45,14 @@ structures.
 
     Here's a summary of what we're accomplishing with these settings:
         - We remove the plugin's `name` value to prevent the portal from
-        displaying the plugin as an available app.
+          displaying the plugin as an available app.
         - Since the Templates Importer feature resides in the Resources Importer
-        web plugin, we include it as a required context.
+          web plugin, we include it as a required context.
         - By enabling developer mode, if the templates we're importing to the
-        Global site already exist on it, the Templates Importer conveniently
-        overwrites them. 
+          Global site already exist on it, the Templates Importer conveniently
+          overwrites them. 
         - We set the module increment version to `1` since `1` is an appropriate
-          version starting point for the plugin. 
+          version starting point for the plugin's version. 
 
 4. Edit the portlet's `portlet.xml` file and delete the value of its
    `display-name` element to keep the portal from displaying the portlet as an
