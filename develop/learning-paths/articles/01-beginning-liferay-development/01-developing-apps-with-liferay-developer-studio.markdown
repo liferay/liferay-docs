@@ -1,4 +1,4 @@
-# Developing Applications with Liferay Developer Studio
+# Developing Applications with Liferay Developer Studio [](id=developing-applications-with-liferay-developer-stu-lp-6-2-develop-learnpath)
 
 To develop an application, you need a developer environment. Liferay provides a
 great environment with Liferay Developer Studio. 
@@ -45,5 +45,5 @@ environment, ready to begin work!
 
 ## Next Steps
 
-[Writing Your First Liferay Application](http://www.liferay.com)
+[Writing Your First Liferay Application](https://www-ldn.liferay.com/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath)
 

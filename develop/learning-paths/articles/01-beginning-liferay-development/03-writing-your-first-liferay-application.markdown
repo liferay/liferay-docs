@@ -1,4 +1,4 @@
-# Writing Your First Liferay Application
+# Writing Your First Liferay Application [](id=writing-your-first-liferay-application-lp-6-2-develop-learnpath)
 
 Getting started with your first Liferay application takes only minutes. We'll
 guide you through the process of creating your project and deploying your
