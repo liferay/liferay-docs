@@ -1,4 +1,4 @@
-### Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets-liferay-portal-6-2-dev-guide-06-en)
+# Adding, Updating, and Deleting Assets 
 
 Whenever you create a new entity, you need to let the asset framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -7,9 +7,12 @@ can keep track of the asset.
 
 Specifically, you should access these methods using either the static methods
 of `AssetLocalServiceUtil` or an instance of the `AssetEntryLocalService`
-injected by Spring. To simplify this section, we'll be using the static methods
-of `AssetLocalServiceUtil`, since it doesn't require any special setup in your
-application. 
+injected by Spring. This tutorial uses the latter approach.
+
+<!-- To simplify this section, you'll use the static methods of 
+`AssetLocalServiceUtil`, since it doesn't require any special setup in your 
+application.
+- Commenting out original sentence Rich's comment applies to -Nick -->
 
 <!-- This is wrong. We should show them the right way to do it, rather than the
 way that's easier to document. Remember that developers will be taking direction
@@ -19,8 +22,11 @@ the example below does just that (since it's Liferay's best practice), so the
 example code here doesn't even match what we just stated. We need to fix this.
 -Rich--> 
 
+## Adding and Updating Assets 
+
 The method to invoke when one of your custom content entries is added or
-updated is the same, and is called `updateEntry`. Here's the full signature: 
+updated is the same. This method is called `updateEntry`. Here's the full 
+signature: 
 
     AssetEntry updateEntry(
             long userId, long groupId, String className, long classPK,
@@ -67,7 +73,7 @@ Here's a quick summary of the most important parameters of this method:
 -   `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
     shouldn't show the content before a given publication date or after a given
     expiration date, respectively. 
--   All other fields are optional; it won't always make sense to include them.
+-   All other fields are optional. It won't always make sense to include them.
     The `sync` parameter should always be *false* unless you're doing something
     very advanced (feel free to look at the code if you're really curious). 
 
@@ -75,17 +81,20 @@ Here's a quick summary of the most important parameters of this method:
 Otherwise, it looks like we're holding back information for no apparent reason.
 -Rich -->
 
+## Deleting Assets 
+
 When one of your custom content entries is deleted, you should once again let
 the asset framework know. This way, it can clean up stored information and make
 sure that the Asset Publisher doesn't show any information for the content that
-has been deleted. The signature of method to delete an asset entry is: 
+has been deleted. The signature of the method to delete an asset entry is: 
 
     void deleteEntry(String className, long classPK)
 
-Here's an example invocation extracted again from the blogs portlet: 
+Here's an example invocation extracted from the blogs portlet: 
 
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
 
-Now that you can create, modify, and delete assets, let's learn how to
-categorize them. 
+## Next Steps 
+
+[Entering and Displaying Tags and Categories](http://www.liferay.com/)
