@@ -7,3 +7,14 @@ Plugins Software Development Kit (SDK) but you can use the Liferay Plugins SDK
 all by itself. The Plugins SDK leverages Apache Ant as its build tool and can be
 used along with any text editor or Integrated Development Environment (IDE). 
 
+## Next Steps 
+
+[Using the Plugins SDK](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
+
+[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
