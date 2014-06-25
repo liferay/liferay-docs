@@ -7,12 +7,14 @@ can keep track of the asset.
 
 Specifically, you should access these methods using either the static methods
 of `AssetLocalServiceUtil` or an instance of the `AssetEntryLocalService`
-injected by Spring. This tutorial uses the latter approach.
+injected by Spring. This tutorial uses the latter approach. Code from Liferay's 
+Blogs portlet is used as an example. You can find it in Liferay's source code 
+on [Github](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-impl/src/com/liferay/portlet/blogs).
 
 <!-- To simplify this section, you'll use the static methods of 
 `AssetLocalServiceUtil`, since it doesn't require any special setup in your 
 application.
-- Commenting out original sentence Rich's comment applies to -Nick -->
+- Commenting out this original sentence that Rich's comment applies to -Nick -->
 
 <!-- This is wrong. We should show them the right way to do it, rather than the
 way that's easier to document. Remember that developers will be taking direction
@@ -22,6 +24,8 @@ the example below does just that (since it's Liferay's best practice), so the
 example code here doesn't even match what we just stated. We need to fix this.
 -Rich--> 
 
+Now go ahead and get started by learning about adding and updating assets!
+
 ## Adding and Updating Assets 
 
 The method to invoke when one of your custom content entries is added or
@@ -29,24 +33,25 @@ updated is the same. This method is called `updateEntry`. Here's the full
 signature: 
 
     AssetEntry updateEntry(
-            long userId, long groupId, String className, long classPK,
-            String classUuid, long classTypeId, long[] categoryIds,
-            String[] tagNames, boolean visible, Date startDate, Date endDate,
-            Date publishDate, Date expirationDate, String mimeType,
-            String title, String description, String summary, String url,
-            String layoutUuid, int height, int width, Integer priority,
-            boolean sync)
-        throws PortalException, SystemException
+		long userId, long groupId, Date createDate, Date modifiedDate,
+		String className, long classPK, String classUuid, long classTypeId,
+		long[] categoryIds, String[] tagNames, boolean visible,
+		Date startDate, Date endDate, Date expirationDate, String mimeType,
+		String title, String description, String summary, String url,
+		String layoutUuid, int height, int width, Integer priority,
+		boolean sync)
+	throws PortalException, SystemException
 
 Here's an example of this method's invocation extracted from the built in
-blogs portlet: 
+Blogs portlet: 
 
     assetEntryLocalService.updateEntry(
-            userId, entry.getGroupId(), BlogsEntry.class.getName(),
-            entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
-            assetTagNames, visible, null, null, entry.getDisplayDate(), null,
-            ContentTypes.TEXT_HTML, entry.getTitle(), null, summary, null, null,
-            0, 0, null, false);
+		userId, entry.getGroupId(), entry.getCreateDate(),
+		entry.getModifiedDate(), BlogsEntry.class.getName(),
+		entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
+		assetTagNames, visible, null, null, null, ContentTypes.TEXT_HTML,
+		entry.getTitle(), entry.getDescription(), summary, null, null, 0, 0,
+		null, false);
 
 Here's a quick summary of the most important parameters of this method: 
 
@@ -94,6 +99,8 @@ Here's an example invocation extracted from the blogs portlet:
 
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
+
+Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Next Steps 
 
