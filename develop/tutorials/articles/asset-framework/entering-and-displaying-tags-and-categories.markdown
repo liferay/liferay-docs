@@ -1,12 +1,17 @@
-### Entering and Displaying Tags and Categories [](id=entering-and-displaying-tags-and-categories-liferay-portal-6-2-dev-guide-en)
+# Entering and Displaying Tags and Categories 
 
-In the last section, we let the asset framework know about the tags and
-categories that we associated with a given asset; but how does a content author
-specify the tags and categories? 
+Once you've let the asset framework know about the tags and categories you've 
+associated with a given asset, you might think your work is done. Vacation time, 
+right? Not quite yet. Content authors still can't specify the tags and 
+categories for their content in the UI. Don't fret! 
 
-Liferay provides a set of JSP tags you can use to make this task very easy. You
-can put the following Liferay UI tags in your forms to create content that can
-be associated with new or existing tags or predefined categories:
+Liferay provides a set of JSP tags you can use to make this task very easy. Go 
+ahead and get started! 
+
+## Implementing Tags and Categories in the UI 
+
+You can put the following Liferay UI tags in your forms to create content that 
+can be associated with new or existing tags or predefined categories: 
 
     <label>Tags</label>
     <liferay-ui:asset-tags-selector
@@ -20,8 +25,8 @@ be associated with new or existing tags or predefined categories:
             classPK="<%= entry.getPrimaryKey() %>"
     />
 
-These two taglibs create appropriate form controls that allow the user to
-search for a tag or create a new one or select an existing category. 
+These two taglibs create appropriate form controls that allow the user to 
+search for a tag, create a new one, or select an existing category. 
 
 ---
 
@@ -47,16 +52,22 @@ with the content of the asset. Here's how to display the tags and categories:
         classPK="<%= entry.getPrimaryKey() %>"
     />
 
-In both JSP tags, you can also specify a `portletURL` parameter; each tag that
-uses it will be a link containing the `portletURL` *and* `tag` or `categoryId`
-parameter value, respectively. This supports tags navigation and categories
-navigation within your portlet. You'll need to implement the look-up
-functionality in your portlet code; do this by reading the values of those two
-parameters and using the `AssetEntryService` to query the database for entries
-based on the specified tag or category. 
+You can also support navigation of tags and categories within your portlet by 
+specifying a `portletURL` parameter in the JSP tags. Each tag that uses this 
+parameter will be a link containing the `portletURL` *and* `tag` or `categoryId` 
+parameter value, respectively. To implement this, you need to implement the 
+look-up functionality in your portlet code. Do this by reading the values of 
+those two parameters and using `AssetEntryService` to query the database for 
+entries based on the specified tag or category. 
 
 <!-- An example of this would be really nice. -Rich -->
 
-Great job! You'll have no problem associating tags and categories with your
-assets. Before we go further with our example, let's take a look at more JSP
-tags you can use to leverage the asset framework's features. 
+Great! Now you know how to make tags and categories available to content authors 
+in your portlets. 
+
+## Next Steps 
+<!--
+[Rating Assets](http://www.liferay.com/)
+-->
+
+[Publishing Assets](http://www.liferay.com/)
