@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="using-liferay-portal Conversion" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="using-liferay-portal"/>
+	<property name="doc.type" value="useportal"/>
+
+</project>
