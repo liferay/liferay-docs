@@ -1,4 +1,4 @@
-# User Personal Sites 
+# User Personal Sites [](id=user-personal-sites-lp-6-2-use-useportal)
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.

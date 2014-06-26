@@ -1,4 +1,4 @@
-# Monitoring
+# Monitoring [](id=monitoring-lp-6-2-use-useportal)
 
 The last link in the Users section of the Control Panel is for monitoring. You
 can use the Monitoring page to view all of the live sessions in the portal. For

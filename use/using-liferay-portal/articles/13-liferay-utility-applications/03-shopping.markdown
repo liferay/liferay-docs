@@ -1,4 +1,4 @@
-# Shopping
+# Shopping [](id=shopping-lp-6-2-use-useportal)
 
 Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company

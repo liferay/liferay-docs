@@ -1,4 +1,4 @@
-# Page Customizations 
+# Page Customizations [](id=page-customizations-lp-6-2-use-useportal)
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a

@@ -1,4 +1,4 @@
-# Understanding Liferay's Releases
+# Understanding Liferay's Releases [](id=understanding-liferays-releases-lp-6-2-use-useportal)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version

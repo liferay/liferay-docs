@@ -1,4 +1,4 @@
-# Getting Started with the Documents and Media Portlet 
+# Getting Started with the Documents and Media Portlet [](id=getting-started-with-the-documents-and-media-portlet-lp-6-2-use-useportal)
 
 The Documents and Media portlet, like many other of Liferay's portlets, is
 non-instanceable. This means that each page on your portal can host at most one

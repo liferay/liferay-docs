@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-lp-6-2-use-useportal-11)
 
 In this chapter, we introduced Liferay Marketplace, your one-stop shop for
 browsing and downloading Liferay-compatible applications. We looked at how to

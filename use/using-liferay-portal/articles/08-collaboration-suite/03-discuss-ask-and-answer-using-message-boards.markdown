@@ -1,4 +1,4 @@
-# Discuss, Ask, and Answer Using the Message Boards 
+# Discuss, Ask, and Answer Using the Message Boards [](id=discuss-ask-and-answer-using-the-message-boards-lp-6-2-use-useportal)
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of

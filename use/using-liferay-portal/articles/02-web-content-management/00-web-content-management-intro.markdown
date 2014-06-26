@@ -1,4 +1,4 @@
-# Web Content Management 
+# Web Content Management [](id=web-content-management-lp-6-2-use-useportal)
 
 Liferay's Web Content Management system allows non-technical users to publish
 content to the web without having advanced knowledge of web technology or

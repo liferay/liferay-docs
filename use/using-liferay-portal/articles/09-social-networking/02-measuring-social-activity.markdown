@@ -1,4 +1,4 @@
-# Measuring Social Activity 
+# Measuring Social Activity [](id=measuring-social-activity-lp-6-2-use-useportal)
 
 When you have a lot of user interaction on your web site, it can be helpful to
 try to separate the signal from the noise. Liferay contains a lot of

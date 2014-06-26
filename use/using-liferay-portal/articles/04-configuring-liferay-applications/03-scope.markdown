@@ -1,4 +1,4 @@
-# Scope 
+# Scope [](id=scope-lp-6-2-use-useportal)
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message

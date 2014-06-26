@@ -1,4 +1,4 @@
-# User Groups
+# User Groups [](id=user-groups-lp-6-2-use-useportal)
 
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create

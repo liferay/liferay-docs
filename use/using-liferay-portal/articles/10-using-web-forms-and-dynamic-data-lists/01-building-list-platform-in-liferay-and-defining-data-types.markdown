@@ -1,4 +1,4 @@
-# Building a List Platform in Liferay and Defining Data Types 
+# Building a List Platform in Liferay and Defining Data Types [](id=building-a-list-platform-in-liferay-and-defining-data--lp-6-2-use-useportal)
 
 To expand and extend the social capabilities of our site, we want to build a
 new, radical platform on Liferay: custom-built lists that users can share and

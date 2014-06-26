@@ -1,4 +1,4 @@
-# Find out what others think or do using Polls 
+# Find out what others think or do using Polls [](id=find-out-what-others-think-or-do-using-polls-lp-6-2-use-useportal)
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of

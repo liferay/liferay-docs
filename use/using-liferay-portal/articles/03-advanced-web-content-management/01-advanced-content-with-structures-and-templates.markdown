@@ -1,4 +1,4 @@
-# Advanced Content with Structures and Templates 
+# Advanced Content with Structures and Templates [](id=advanced-content-with-structures-and-templates-lp-6-2-use-useportal)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of

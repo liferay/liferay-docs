@@ -1,4 +1,4 @@
-# Custom Java Tools in the Script Engine
+# Custom Java Tools in the Script Engine [](id=custom-java-tools-in-the-script-engine-lp-6-2-use-useportal)
 
 Users of the Script Engine face several challenges, including debugging and
 logging challenges. One approach to overcome these challenges is to develop

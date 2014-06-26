@@ -1,4 +1,4 @@
-# Using External Repositories 
+# Using External Repositories [](id=using-external-repositories-lp-6-2-use-useportal)
 
 Content Management Interoperability Services (CMIS) is a specification for
 improving interoperability between Enterprise Content Management systems.

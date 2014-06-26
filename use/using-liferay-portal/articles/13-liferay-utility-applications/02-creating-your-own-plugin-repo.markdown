@@ -1,4 +1,4 @@
-# Creating Your Own Plugin Repository
+# Creating Your Own Plugin Repository [](id=creating-your-own-plugin-repository-lp-6-2-use-useportal)
 
 As your enterprise builds its own library of portlets for internal use, you can
 create your own plugin repository to make it easy to install and upgrade

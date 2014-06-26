@@ -1,4 +1,4 @@
-# Integrating Existing Users into Liferay
+# Integrating Existing Users into Liferay [](id=integrating-existing-users-into-liferay-lp-6-2-use-useportal)
 
 Liferay provides a number of user authentication options. You can configure
 Liferay to connect to LDAP or NTLM servers so users from those environments can

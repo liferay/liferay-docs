@@ -1,4 +1,4 @@
-# Liferay Sync 
+# Liferay Sync [](id=liferay-sync-lp-6-2-use-useportal)
 
 Liferay Sync is an add-on product for Liferay 6.1 GA2 CE and EE, and later
 versions, that synchronizes files between your Liferay server and users' desktop

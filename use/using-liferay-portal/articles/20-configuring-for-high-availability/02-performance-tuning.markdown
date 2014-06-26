@@ -1,4 +1,4 @@
-# Performance Tuning
+# Performance Tuning [](id=performance-tuning-lp-6-2-use-useportal)
 
 Once you have your portal up and running, you may find a need to tune it for
 performance, especially if your site winds up generating more traffic than you'd

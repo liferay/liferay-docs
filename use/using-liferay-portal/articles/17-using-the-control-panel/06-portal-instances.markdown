@@ -1,4 +1,4 @@
-# Portal Instances
+# Portal Instances [](id=portal-instances-lp-6-2-use-useportal)
 
 Liferay Portal allows you to run more than one portal instance on a single
 server. The Portal Instances section of the Control Panel appears under the

@@ -1,4 +1,4 @@
-# Configuring Liferay for High Availability 
+# Configuring Liferay for High Availability [](id=configuring-liferay-for-high-availability-lp-6-2-use-useportal)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is
 fully ready to support mission-critical, enterprise applications in an

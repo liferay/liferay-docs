@@ -1,4 +1,4 @@
-# Working together with the Wiki 
+# Working together with the Wiki [](id=working-together-with-the-wiki-lp-6-2-use-useportal)
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured
 wiki application which has all of the features you would expect in a state of

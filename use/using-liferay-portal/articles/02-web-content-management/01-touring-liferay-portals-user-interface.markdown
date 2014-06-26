@@ -1,4 +1,4 @@
-# Touring Liferay Portal's User Interface 
+# Touring Liferay Portal's User Interface [](id=touring-liferay-portals-user-interface-lp-6-2-use-useportal)
 
 Liferay Portal's user interface is designed to be simple and intuitive. Across
 the top is what's known as the *Dockbar*, a series of links that appear based on

@@ -1,4 +1,4 @@
-# Social Networking 
+# Social Networking [](id=social-networking-lp-6-2-use-useportal)
 
 Since the first social networks rose to popularity, concepts such as *Friend*
 and later *Like*--previously reserved for direct human interaction--have taken

@@ -1,4 +1,4 @@
-# Make it Pretty: Creating Custom Displays 
+# Make it Pretty: Creating Custom Displays [](id=make-it-pretty-creating-custom-displays-lp-6-2-use-useportal)
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.

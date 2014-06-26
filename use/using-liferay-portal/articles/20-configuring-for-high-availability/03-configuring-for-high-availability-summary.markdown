@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-lp-6-2-use-useportal-17)
 
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled
 linearly to grow to whatever size you need to serve your users. Clustering is a

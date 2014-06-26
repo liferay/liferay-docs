@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-7)
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the
 chapter was about. | -->

@@ -1,4 +1,4 @@
-# Localization 
+# Localization [](id=localization-lp-6-2-use-useportal)
 
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language

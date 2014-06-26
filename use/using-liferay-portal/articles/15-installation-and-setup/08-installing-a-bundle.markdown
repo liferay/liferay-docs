@@ -1,4 +1,4 @@
-# Installing a bundle
+# Installing a bundle [](id=installing-a-bundle-lp-6-2-use-useportal)
 
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is

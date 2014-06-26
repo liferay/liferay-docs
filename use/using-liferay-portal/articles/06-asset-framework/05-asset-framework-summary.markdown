@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-4)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the

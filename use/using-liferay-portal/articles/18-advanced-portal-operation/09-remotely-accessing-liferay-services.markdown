@@ -1,4 +1,4 @@
-# Remotely Accessing Liferay Services
+# Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services-lp-6-2-use-useportal)
 
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal

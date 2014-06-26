@@ -1,4 +1,4 @@
-# Installing Liferay on Mulesoft Tcat
+# Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mulesoft-tcat-lp-6-2-use-useportal)
 
 For this section, we will refer to your Tcat server's installation location as
 `[TCAT_HOME]`. If you don't already have an existing Tcat server, we

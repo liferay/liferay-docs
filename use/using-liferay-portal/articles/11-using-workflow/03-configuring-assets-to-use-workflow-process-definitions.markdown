@@ -1,4 +1,4 @@
-# Configuring assets to use workflow process definitions
+# Configuring assets to use workflow process definitions [](id=configuring-assets-to-use-workflow-process-definitions-lp-6-2-use-useportal)
 
 All your global workflow configuration can be done via the control panel.
 Everything you need to do in the portal can be done through simple GUI

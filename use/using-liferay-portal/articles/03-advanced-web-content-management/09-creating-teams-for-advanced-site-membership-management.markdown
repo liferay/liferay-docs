@@ -1,4 +1,4 @@
-# Creating Teams for Advanced Site Membership Management 
+# Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-membership-management-lp-6-2-use-useportal)
 
 Teams allow site administrators a greater degree of flexibility than was
 possible using just user groups and roles. They allow site administrators to

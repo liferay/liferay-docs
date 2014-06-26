@@ -1,4 +1,4 @@
-# Installing Liferay on Tomcat 7
+# Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7-lp-6-2-use-useportal)
 
 *Liferay Home* is one folder above Tomcat's install location.
 

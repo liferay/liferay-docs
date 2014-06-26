@@ -1,4 +1,4 @@
-# Configuring the Documents and Media portlet 
+# Configuring the Documents and Media portlet [](id=configuring-the-documents-and-media-portlet-lp-6-2-use-useportal)
 
 To configure the Documents and Media portlet, click on the gear icon at the top
 of the portlet window and select *Configuration*. The portlet-specific

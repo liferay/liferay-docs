@@ -1,4 +1,4 @@
-# Look and Feel 
+# Look and Feel [](id=look-and-feel-lp-6-2-use-useportal)
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the gear icon at the top right corner of the portlet and

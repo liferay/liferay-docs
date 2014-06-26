@@ -1,4 +1,4 @@
-# The Users Section of the Control Panel
+# The Users Section of the Control Panel [](id=the-users-section-of-the-control-panel-lp-6-2-use-useportal)
 
 The Users section of the Control Panel is used for most administrative tasks
 involving user management. There, you'll find an interface for the creation and

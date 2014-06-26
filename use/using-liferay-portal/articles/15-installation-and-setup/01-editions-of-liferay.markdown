@@ -1,4 +1,4 @@
-# Editions of Liferay
+# Editions of Liferay [](id=editions-of-liferay-lp-6-2-use-useportal)
 
 Liferay ships in two editions: one for the community and one for enterprise
 subscribers. The community edition is the same Liferay Portal that has been

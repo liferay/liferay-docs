@@ -1,4 +1,4 @@
-# Installing Liferay on an existing application server
+# Installing Liferay on an existing application server [](id=installing-liferay-on-an-existing-application-server-lp-6-2-use-useportal)
 
 This section contains detailed instructions for installing Liferay Portal using
 its .war file distribution. This allows system administrators to deploy Liferay

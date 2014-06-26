@@ -1,4 +1,4 @@
-# Using Liferay's setup wizard
+# Using Liferay's setup wizard [](id=using-liferays-setup-wizard-lp-6-2-use-useportal)
 
 To make it easy to configure Liferay optimally for your use, the first thing you
 see when browsing to your newly installed Liferay bundle is a setup wizard. This

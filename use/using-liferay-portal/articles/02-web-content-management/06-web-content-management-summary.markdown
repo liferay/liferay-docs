@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-0)
 
 This chapter has provided an introduction to Liferay site management and web
 content management. We've learned how you can use Liferay to create multiple

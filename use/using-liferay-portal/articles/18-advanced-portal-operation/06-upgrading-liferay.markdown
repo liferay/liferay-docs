@@ -1,4 +1,4 @@
-# Upgrading Liferay
+# Upgrading Liferay [](id=upgrading-liferay-lp-6-2-use-useportal)
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all
 you need to follow to upgrade a standard Liferay installation. Things do get

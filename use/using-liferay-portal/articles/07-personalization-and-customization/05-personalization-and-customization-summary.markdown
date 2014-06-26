@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-5)
 
 In this chapter, we discussed personal sites for portal users. We showed how to
 enable or disable them, how to set whether or not pages should be automatically

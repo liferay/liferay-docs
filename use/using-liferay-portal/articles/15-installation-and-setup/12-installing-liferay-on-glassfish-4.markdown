@@ -1,4 +1,4 @@
-# Installing Liferay on GlassFish 4
+# Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-4-lp-6-2-use-useportal)
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 

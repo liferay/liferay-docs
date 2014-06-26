@@ -1,4 +1,4 @@
-# Server Administration
+# Server Administration [](id=server-administration-lp-6-2-use-useportal)
 
 The Server Administration page of the Control Panel lets you perform various
 tasks related to the portal server itself that aren't directly related to the

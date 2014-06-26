@@ -1,4 +1,4 @@
-# Using Application Display Templates 
+# Using Application Display Templates [](id=using-application-display-templates-lp-6-2-use-useportal)
 
 The application display template (ADT) framework allows portal administrators to
 override the default display templates, removing limitations to the way your

@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-8)
 
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our

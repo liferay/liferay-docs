@@ -1,4 +1,4 @@
-# Features of Liferay's WCM 
+# Features of Liferay's WCM [](id=features-of-liferays-wcm-lp-6-2-use-useportal)
 
 Liferay's WCM offers a host of features that makes managing the content of your
 site easier:

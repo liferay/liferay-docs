@@ -1,4 +1,4 @@
-# Allowing Users to Customize Site Pages 
+# Allowing Users to Customize Site Pages [](id=allowing-users-to-customize-site-pages-lp-6-2-use-useportal)
 
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management

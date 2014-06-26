@@ -1,4 +1,4 @@
-# Using Liferay as a web platform 
+# Using Liferay as a web platform [](id=using-liferay-as-a-web-platform-lp-6-2-use-useportal)
 
 We can't even begin to imagine what you're thinking of building, but whatever it
 is, you're going to put your heart and soul into it. Building it on Liferay's

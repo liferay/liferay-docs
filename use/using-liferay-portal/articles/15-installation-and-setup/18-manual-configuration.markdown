@@ -1,4 +1,4 @@
-# Manual Configuration
+# Manual Configuration [](id=manual-configuration-lp-6-2-use-useportal)
 
 You don't have to use the setup wizard to configure Liferay. The setup wizard
 behind the scenes creates a configuration file that you can create manually.

@@ -1,4 +1,4 @@
-# Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher)
+# Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher) [](id=installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h-lp-6-2-use-useportal)
 
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
 Since you're using Oracle WebLogic, you may be curious of Liferay's support of

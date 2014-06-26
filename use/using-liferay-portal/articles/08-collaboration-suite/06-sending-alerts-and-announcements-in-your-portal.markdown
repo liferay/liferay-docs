@@ -1,4 +1,4 @@
-# Sending Alerts and Announcements in Your Portal 
+# Sending Alerts and Announcements in Your Portal [](id=sending-alerts-and-announcements-in-your-portal-lp-6-2-use-useportal)
 
 Suppose you're running a portal with lots of users. Maybe you have thousands or
 tens of thousands of users (or more!). Wouldn't it be nice to have an easy way

@@ -1,4 +1,4 @@
-# Setting up the Lunar Resort Example Portal 
+# Setting up the Lunar Resort Example Portal [](id=setting-up-the-lunar-resort-example-portal-lp-6-2-use-useportal)
 
 Suppose that you've been assigned the task of building a web site for an
 innovative new company called Lunar Resort, Inc. You've decided to take

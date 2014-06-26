@@ -1,4 +1,4 @@
-# Archived Setups 
+# Archived Setups [](id=archived-setups-lp-6-2-use-useportal)
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a

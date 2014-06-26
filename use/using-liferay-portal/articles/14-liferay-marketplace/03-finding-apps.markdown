@@ -1,4 +1,4 @@
-# Finding Apps
+# Finding Apps [](id=finding-apps-lp-6-2-use-useportal)
 
 There are several ways to search for and find apps you are interested in.
 

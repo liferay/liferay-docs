@@ -1,4 +1,4 @@
-# Searching for Content in Liferay 
+# Searching for Content in Liferay [](id=searching-for-content-in-liferay-lp-6-2-use-useportal)
 
 To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a

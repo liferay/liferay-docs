@@ -1,4 +1,4 @@
-# Using the Asset Publisher 
+# Using the Asset Publisher [](id=using-the-asset-publisher-lp-6-2-use-useportal)
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.

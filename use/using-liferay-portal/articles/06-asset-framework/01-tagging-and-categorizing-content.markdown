@@ -1,4 +1,4 @@
-# Tagging and Categorizing Content 
+# Tagging and Categorizing Content [](id=tagging-and-categorizing-content-lp-6-2-use-useportal)
 
 Tags and categories are two important tools you can use to help organize
 information on your portal. These tools help users to easily find the content

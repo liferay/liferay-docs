@@ -1,4 +1,4 @@
-# Summary 
+# Summary [](id=summary-lp-6-2-use-useportal-6)
 
 We have explored many of the portlets in Liferay's collaboration suite. The
 Blogs and Blogs Aggregation portlets can be used to manage shared blogs or blogs

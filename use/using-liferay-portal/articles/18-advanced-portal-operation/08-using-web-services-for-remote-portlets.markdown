@@ -1,4 +1,4 @@
-# Using Web Services for Remote Portlets (WSRP)
+# Using Web Services for Remote Portlets (WSRP) [](id=using-web-services-for-remote-portlets-wsrp-lp-6-2-use-useportal)
 
 The Web Services for Remote Portlets (WSRP) specification defines a web service
 interface for accessing and interacting with presentation-oriented web services

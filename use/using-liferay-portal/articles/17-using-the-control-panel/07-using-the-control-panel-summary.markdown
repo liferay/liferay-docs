@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-lp-6-2-use-useportal-14)
 
 In this chapter, we examined how to configure Liferay's portal settings. We
 looked at the different authentication options provided by Liferay. You can

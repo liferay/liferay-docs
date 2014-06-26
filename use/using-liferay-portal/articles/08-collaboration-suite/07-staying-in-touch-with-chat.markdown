@@ -1,4 +1,4 @@
-# Staying in touch with the Chat 
+# Staying in touch with the Chat [](id=staying-in-touch-with-the-chat-lp-6-2-use-useportal)
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a

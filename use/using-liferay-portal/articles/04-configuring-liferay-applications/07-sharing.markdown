@@ -1,4 +1,4 @@
-# Sharing 
+# Sharing [](id=sharing-lp-6-2-use-useportal)
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the

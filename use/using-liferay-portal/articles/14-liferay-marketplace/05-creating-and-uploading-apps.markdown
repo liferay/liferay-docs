@@ -1,4 +1,4 @@
-# Creating and Uploading Apps
+# Creating and Uploading Apps [](id=creating-and-uploading-apps-lp-6-2-use-useportal)
  
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find
 out more information about creating your own Liferay apps, visit the 

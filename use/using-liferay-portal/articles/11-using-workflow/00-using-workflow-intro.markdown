@@ -1,4 +1,4 @@
-# Using Workflow 
+# Using Workflow [](id=using-workflow-lp-6-2-use-useportal)
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, Kaleo 
 means "called ones," which is appropriate for a workflow engine that calls users

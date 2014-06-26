@@ -1,4 +1,4 @@
-# What is Liferay? 
+# What is Liferay? [](id=what-is-liferay-lp-6-2-use-useportal)
 
 Let's attempt some mind reading: you're reading this book because you need to
 build a website. You're thinking about using Liferay Portal for your site, or
