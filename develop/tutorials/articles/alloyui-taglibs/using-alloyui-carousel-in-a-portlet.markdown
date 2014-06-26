@@ -1,44 +1,71 @@
 # Using AlloyUI Carousel in Your Portlet
 
-Image carousels are often the first thing people see when they visit sites. They
-provide an interactive way of cycling through visual elements and are an
-effective means of communicating information to users. AlloyUI's `aui-carousel`
-module makes it very easy to get an image carousel up and running in no time
-flat.
+Image carousels are often the first thing people see when they visit sites.
+Carousels provide an interactive way of cycling through visual elements and are
+an effective means of communicating information to users. AlloyUI's
+`aui-carousel` module makes it very easy to get an image carousel up and running
+in no time flat. 
 
-Here is an example of the carousel in a portlet:
+Here is an example of a
+[Carousel](http://alloyui.com/api/classes/A.Carousel.html) being used in a
+portlet: 
 
 ![Figure 1: Image carousels can be a very handy tool to communicate information to users. Here is an example of the carousel in a portlet.](../../images/alloyui-carousel-in-portlet.png)
 
 Now that you can see the appeal of adding a carousel to your design, it's time
 to get down to business!
 
+<!-- Activate this header when Next Steps is activated. Jim
 ## Adding A Carousel to A Portlet
+-->
 
 In order to get the carousel running in a portlet you have to do a few
 things:
 
-1.  Configure your portlet's `view.jsp`.
-2.  Create a CSS file to display your carousel.
-3.  Finally, deploy the portlet.
+- **Step 1:** Add Images to Your Portlet for Displaying in Your Carousel 
+- **Step 2:** Add a Carousel to Your View JSP
+- **Step 3:** Write CSS Code to Configure Your Carousel and to Map Images to the
+Carousel
 
-Go ahead and configure your portlet's view.jsp first.
+Walk through each of these steps to get a carousel up and running in your
+portlet. 
 
-### Step 1: Configure Your Portlet's `view.jsp`
+### Step 1: Add Images to Your Portlet for Displaying in Your Carousel 
 
-First, you need to setup the `view.jsp` of your portlet to use the `aui-carousel`
-module. The following example code shows how the `view.jsp` could look:
+Create a location in your portlet to store your carousel's images and then copy
+the images into that folder. For example, you could create a folder named `img`
+in your portlet's `docroot` folder and then put your image files in it. 
 
-        ```
-        <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+### Step 2: Add a Carousel to Your View JSP 
+
+1.  Open your view JSP. Create one if you don't already have one in your
+portlet. 
+
+2.  Add a directive to reference the `aui` taglib:
+
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+3.  Add a `<div>` element to reference all of the images that you want to
+include in your carousel. Within this `<div>`, nest a `<div>` for each of the
+carousel images. Make sure to assign a unique ID to the outer `<div>` element
+and each of the nested `<div>` elements. 
+
+    For example, the following HTML specifies an `<div>` named *myCarousel*
+    that holds references to an images named *image1* and *image2*:
 
         <div id="myCarousel">
           <div id="image1"></div>
           <div id="image2"></div>  
         </div>
-        
-        <portlet:defineObjects />
+
+4.  To create a [Carousel](http://alloyui.com/api/classes/A.Carousel.html) in
+which to display your images, you first add `<aui:script>...</aui:script>` tags
+at the bottom of your JSP. Within those tags, add code that instantiates the
+Carousel, passing a reference to the the outer `<div>` as the value for
+Carousel's `contentBox` element. 
+
+    For example, the following code creates a Carousel for a `<div>` named
+    *myCarousel*: 
 
         <aui:script>
          AUI().use(
@@ -54,62 +81,75 @@ module. The following example code shows how the `view.jsp` could look:
           }
         );
         </aui:script>
-        ```
-        
-The carousel automatically adjusts to the number of images in the `<div>`, so 
-feel free to add more. If you deploy the portlet now, you'll notice that no 
-images are displayed. This is because you need to write some CSS to tell the 
-portlet how to display the carousel. You also need to define the file paths to 
-the images defined by the image id's. These things are taken care of in the next 
-step. 
 
-### Step 2: Create A `main.css` File to Display Your Carousel
+    To create the Carousel, you get the `AUI` object to use the `aui-carousel`
+    module to create a Carousel component. You specify values for the new
+    Carousel's `contentBox`, `height`, and `width` attributes. 
 
-Create a `main.css` File in your portlet's `/docroot/css/` directory if it does 
-not exist. Here is example code of what the `main.css` file could look like: 
+    The Carousel that AlloyUI creates automatically adjusts to the number of
+    images in the `contentBox` element, letting you add as many as images as you
+    like. 
 
-        ```
-        /* styling for the carousel body */
+5.  Save the JSP file. 
+
+If you were to deploy your JSP's changes right now, however, no images would be
+displayed. This is because the display of the carousel's *items* is not
+configured and the carousel has no reference to the image files. Don't worry;
+you can use CSS to configure the items and map the image files to your JSP. The
+next step shows you how to take care of these requirements. 
+
+### Step 3: Write CSS Code to Configure Your Carousel and to Map Images to the Carousel 
+
+This step's instructions demonstrate using CSS to configure the carousel's
+items. 
+
+1.  Create a `main.css` file in your portlet's `/docroot/css/` folder, if it
+does not exist. Then, open the `main.css` file.
+
+2.  Specify the dimensions and opacity to use for each carousel item's `div`.
+The following example CSS specifies basic width, height, and opacity information
+for the divs using a class named `carousel-item`. As you use classes, make
+sure to keep the class names consistent between your JSP and the `main.css`
+file. 
+
         div.carousel-item 
-		{
-			width: 700px;
-			height: 250px;
-			opacity: 100;
-		}
-		
-		/* styling for div with id image1 */
+        {
+            width: 700px;
+            height: 250px;
+            opacity: 100;
+        }
+
+    If you wish, you can add more styling to the carousel items via the
+    `div.carousel-item` class.
+
+3.  Select the ID of each of your JSP's image `<div>` elements and apply a
+background image to each one. 
+
+    For example, if you have `<div>` elements with IDs *image1* and *image2*,
+    then you could map them to their respective image source files with code
+    that looks like this:
+
 		#image1
 		{
 			background-image: url("../img/YourImageFile1.jpg");
 		}
-		
-		/* styling for div with id image2 */
+
 		#image2
 		{
 			background-image: url("../img/YourImageFile2.jpg");
 		}
-        ```
-        
-The CSS is setup with some basic width, height, and opacity information for the 
-divs with the class `carousel-item`. If you decide to use a different class, 
-just be sure that the classes are the same in both the `view.jsp` and 
-`main.css`. 
 
-Also note that you need to replace `YourImageFile1.jpg` and `YourImageFile2.jpg` 
-with the file names of your images in the `/docroot/img/` directory. If you 
-don't yet have a `/docroot/img/` directory, create it and put your image files 
-in it. 
+    Of course, you can style each image `<div>` here as well. 
 
-Now that you have written the code to display the carousel, there is one last 
-step. 
+4.  Save the CSS file. 
 
-### Step 3: Deploy Your Portlet to Your Portal
+Now that you've written code to display your carousel, you can deploy your
+plugin and see your images in the carousel. Give yourself a pat on the back.
+You've just successfully used the `aui-carousel` in your portlet! 
 
-Upon deployment you can see that your images display correctly. If your portlet 
-is already deployed, you may need to undeploy and then redeploy it before your 
-images show up. Give yourself a pat on the back. You've just successfully used 
-the `aui-carousel` in a portlet! 
-
+<!--
 ## Next Steps
+-->
+
 <!-- URL needs updated to proper one once it is added to LDN-->
 <!--[Customizing AlloyUI Carousel](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-alloyui-carousel-in-a-portlet)-->
