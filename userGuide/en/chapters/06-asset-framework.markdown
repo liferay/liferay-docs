@@ -1222,22 +1222,22 @@ campaigns.
 
 ![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns.](../../images/audience-targeting.png)
 
-A user segment represents a subset of the total group of portal
-users. In order for a user segment to be useful, you need to configure one or
-more rules for it. Custom rules can be created by developers and deployed as
-OSGi plugins. See the [Creating Custom Audience Targeting Rules](www.liferay.com)
-tutorial for details. Click on *Site Administration* &rarr; *Configuration*
-&rarr; *Audience Targeting* &rarr; *New User Segment* to add a new user segment.
-All the rules that have been deployed appear under the Rules heading. Drag a
-rule to the right to apply the rule to the user segment. Once a rule has been
-applied, you can adjust the rule's parameters. E.g., once the Gender rule has
-been applied, you can select *Male* or *Female*. Once the Age rule has been
-applied, you can select an *Older than* value and a *Younger than* value. For
-example, you could define a *Males Under Age 18* user segment by applying the
-Gender rule and selecting *Male* and applying the Age rule and setting the
-*Younger than* attribute to *18*. Once you've customized the rules for the new
-user segment, entered a name, and, optionally, a description, click *Save* to
-actually create the user segment.
+A user segment represents a subset of the total group of portal users. In order
+for a user segment to be useful, you need to configure one or more rules for it.
+Custom rules can be created by developers and deployed as OSGi plugins. See the
+[Creating Custom Audience Targeting Rules](www.liferay.com) tutorial for
+details. Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience
+Targeting* &rarr; *New User Segment* to add a new user segment.  All the rules
+that have been deployed appear under the Rules heading. Drag a rule to the right
+to apply the rule to the user segment. Once a rule has been applied, you can
+adjust the rule's parameters. E.g., once the Gender rule has been applied, you
+can select *Male* or *Female*. Once the Age rule has been applied, you can
+select an *Older than* value and a *Younger than* value. For example, you could
+define a *Women over 30* user segment by applying the Gender rule and selecting
+*Female* and applying the Age rule and setting the *Older than* attribute to
+*30*. Once you've customized the rules for the new user segment, entered a name,
+and, optionally, a description, click *Save* to actually create the user
+segment.
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To create a new campaign, you
@@ -1323,16 +1323,23 @@ doesn't match any user segments. *Don't display anything* is an option for the
 ![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-config.png)
 
 For example, you can add a User Segment Content Display portlet to a page and
-configure the following rule for it:
+configure the following rules for it:
 
-- If the user *belongs* to *all* of the following user segments: *Males*, *Users
-  Under Age 30*, then display this content: *moon-bike.jpg*. Otherwise, display
-  this content: *moon.jpg*.
+- If the user *belongs* to *any* of the following user segments: *Males*, then
+  display this content: *tennis_site.jpg*.
+- If the user *belongs* to *any* of the following user segments: *Basket*, then
+  display this content: *basket_site_1.jpg*.
+- If the user *belongs* to *any* of the following user segments: *Biking*, then
+  display this content: *bike_site.jpg*.
+- Otherwise, *Don't display anything*.
 
 Once a User Segment Content Display portlet has been added to a page and been
-configured this way, portal users who are both male and under age 30 will see a
-certain image in the portlet. Users who are female or are males over age 30 will
-see a different image in the portlet.
+configured this way, portal users who are male will see a certain image in the
+portlet. Users who fit the Basket user segment will see a different image in the
+portlet. User who fit fit the Biking user segment will see yet another different
+image in the portlet. Users who don't match any of the user segments won't see
+anything in the portlet. If the portlet's borders are turned off, the portlet
+won't even be rendered on the page.
 
 The User Segment Content List portlet displays content that matches the user
 segments to which the current user belongs. It uses categories as the underlying
@@ -1376,9 +1383,10 @@ soccer and the Stanley Cup of hockey. You could add a Campaign Content Display
 portlet to a page and configure it with the following rules:
 
 - If the user belongs to this campaign: *World Cup*, then display this content:
-  *soccer-jersey.jpg*. If the user belongs to this campaign: *Stanley Cup*, then
-  display this content: *hockey-jersey.jpg*. Otherwise, display this content:
-  *generic-sports-jersey.jpg*
+  *soccer-jersey.jpg*.
+- If the user belongs to this campaign: *Stanley Cup*, then display this
+  content: *hockey-jersey.jpg*.
+- Otherwise, display this content: *generic-sports-jersey.jpg*
 
 Once a Campaign Content Display portlet has been added to a page and been
 configured this way, portal users who belong to the user segment targeted by the
