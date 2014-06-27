@@ -1270,8 +1270,30 @@ campaign targeting this segment, select start and end dates, choose a priority,
 choose *Active*, and then click *Save*. To actually present content to the users
 belonging to the *Female Baseball Fans* user segment, you need to use the
 Campaign Content Display portlet or one of the other portlets provided by the
-Audience Targeting app. Next, let's learn how to use the Audience targeting
-portlets in conjunction with user segments and campaigns.
+Audience Targeting app.
+
+When managing user segments and campaigns from the Configuration section of the
+Site Administration area, you can click *Actions* &rarr; *Reports* next to a
+user segment or campaign. The Audience targeting application tracks the total
+number of views of assets associated with a user segment or campaign by users
+who fit the user segment or campaign. (You can "associate" an asset with a user
+segment or campaign by configuring one of the Audience Targeting portlets to
+display the asset to users who fit the user segment or campaign; see the
+following section for details.) If no reports have been generated, a *No reports
+for [user segment|campaign] content were found* message appears. Click on the
+*Update Report* button to generate a report or update an existing report. The
+report displays a list of the assets that have been targeted to the user segment
+or campaign along with a graph that displays the number of views of each asset.
+
+![Figure 6.x: Site Administrators can generate reports that display the total number of views of each asset that has been targeted to a user segment or has been associated with a campaign.](../../images/user-segment-report.png)
+
+When you click *Actions* &rarr; *Reports* for a newly created user segment or
+campaign, a *No reports for user segment content were found* message appears.
+You need to associate specific assets with the user segment or campaign so that
+the Audience Targeting application knows which data to track and display in the
+reports. To select specific assets to display to different user segments or
+campaigns, use the Audience targeting portlets. In the next section, we explain
+how to use and configure these portlets.
 
 ### Using the Audience Targeting Portlets
 
