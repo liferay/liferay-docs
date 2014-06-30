@@ -2,6 +2,8 @@
 <project default="dist">
 	<property name="project.dir" value="." />
 
+	<property name="ant.build.javac.source" value="1.6" />
+	<property name="ant.build.javac.target" value="1.6" />
 	<property name="build.dir" value="${project.dir}/classes" />
 	<property name="dist.dir" value="${project.dir}/dist" />
 	<property name="docs.lib.dir" value="${project.dir}/../../lib" />
@@ -45,7 +47,9 @@
 			classpathref="${javac.classpathref}"
 			destdir="${javac.destdir}"
 			includeAntRuntime="false"
+			source="${ant.build.javac.source}"
 			srcdir="${javac.srcdir}"
+			target="${ant.build.javac.target}"
 		/>
 	</target>
 
