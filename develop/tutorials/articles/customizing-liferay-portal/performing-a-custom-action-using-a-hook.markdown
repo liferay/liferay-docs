@@ -10,6 +10,23 @@ in `portal.properties`, so you need to extend this file to create a custom
 action. Hooks make this a simple task. It's time to explore how to perform a
 custom action using a hook! 
 
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** Hooks support customizing a
+ specific list of predefined properties.  For a list of portal properties that
+ can be overridden via hook, see the
+ [liferay-hook_6_2_0.dtd](http://docs.liferay.com/portal/6.2/definitions). In
+ addition to defining custom actions, hooks can override portal properties to
+ define model listeners, validators, generators, and content sanitizers. If you
+ want to customize a property that's not found in this list, you must use an Ext
+ plugin (see [Advanced Customization with Ext Plugins](http://www.liferay.com)).
+ For more information about the properties themselves, you can view an online
+ version of Liferay's [portal
+ properties](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+ file.
+
+---
+
 ## Triggering a Custom Action [](id=triggering-a-custom-action-lp-6-2-develop-tutorial)
 
 In this tutorial, you'll create a custom hook that performs a custom action for
@@ -82,6 +99,19 @@ defined in `portal.properties`. It's time to get started!
 
 5.  Perform steps to trigger your action and verify that the action was
     executed. 
+
+---
+
+ ![Important](../../images/tip-pen-paper.png) **Important:** The 
+ `login.events.pre` portal property accepts *multiple* values, so your value was 
+ appended to the existing `login.events.pre` values. You can repeatedly modify 
+ the property from additional hooks because it accepts multiple values. Some 
+ portal properties only accept a *single* value, such as the 
+ `terms.of.use.required` property, which is either `true` or `false`. Only 
+ modify single value properties from a single hook plugin; otherwise Liferay 
+ won't know which value to use.
+
+---
 
 Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
