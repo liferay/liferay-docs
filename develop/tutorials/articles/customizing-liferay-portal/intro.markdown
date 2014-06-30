@@ -9,8 +9,7 @@ preferentially.
 In this section of tutorials, you'll learn how to create hooks, and you'll
 explore their most common uses.
 
-## Next Steps [](id=next-steps-hooks-lp-6-2-develop-tutorial)
-
+## Next Steps
 
 <!--
 Creating a Hook
@@ -32,11 +31,3 @@ Extending the Indexer Post Processor
 Supporting Right-to-Left Languages in Plugins
 -->
 
-<!-- Consider adding this text somewhere in the intro once we have more IDE
-stuff for hooks. Jim
-
-As with portlets, layout templates, and themes, the easiest way to create and
-manage hooks is via Liferay IDE or Developer Studio. However, if you don't want
-to use an IDE, you can use the terminal. This section of tutorials demonstrates
-how to create and deploy a hook using both Liferay IDE and the terminal.
--->
