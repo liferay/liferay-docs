@@ -58,59 +58,9 @@ command for your operating system:
 
 Now there's a blank theme in your `themes` folder, which the Plugins SDK
 automatically named by appending "-theme" to your project name. Right now your
-theme is empty. Your next step is to set a base theme that serves as the default
-for your theme. 
-
-## Setting a Base Theme
-
-All themes in Liferay are built on top of two base themes, named *_unstyled* and
-*_styled*. Your newly created theme is based on these by default, but they
-contain very limited styling. You can take advantage of an *existing* theme's
-styling by setting the theme of your choice as the base for your theme.
-
-Base themes are added in layers. First *_unstyled* is added, giving you the core
-of the theme, then *_styled*, providing the most basic elements. When you set a
-different base theme, it's added on top of *_styled* and overrides the default
-styling wherever there are differences. After the base themes are added, your
-own custom styling is added on top.
-
-By default, themes are based on the *_styled* theme, which provides only basic
-styling of portlets. If you open the `build.xml` file in your theme's directory,
-you see the following code:
-
-	<?xml version="1.0"?>
-	<!DOCTYPE project>
-
-	<project name="deep-blue-theme" basedir="." default="deploy">
-		<import file="../build-common-theme.xml" />
-
-		<property name="theme.parent" value="_styled" />
-	</project>
-
-The `theme.parent` property determines the theme your theme inherits its styling
-from. In addition to the *_styled* theme, you can choose to inherit from the
-*_unstyled* theme, which contains no styling. This makes more work for you, but
-offers full flexibility to design your CSS files from scratch. 
-
-You can also use the default Liferay theme **Classic** as a parent theme. You'll
-start with a look and feel that's already smooth and works well. But since so
-much is already done for you, there's less flexibility when building your
-design. It's a compromise between creating a theme as quickly as possible versus
-having full control of the result. It's your choice, and another example of the
-flexibility Liferay offers.
-
-To specify a base theme, edit the `build.xml` file for your theme and change
-*_styled* in `<property name="theme.parent" value="_styled>` to the name of any
-existing theme that's installed or in your Plugins SDK.
-
-Now that your base theme is set, go ahead and deploy it to your portal instance
-and give yourself a pat on the back. Next you can get a closer look at the
-anatomy of your newly created theme.
-
-## Anatomy of a Theme Project [](id=anatomy-of-a-theme-project-liferay-portal-6-2-dev-guide-09-en)
-
-Custom themes are created by layering your customizations on top of one of
-Liferay's built-in themes. 
+theme is empty. In future tutorials you'll learn how to change that. Custom 
+themes are created by layering your customizations on top of one of Liferay's 
+built-in themes. 
 
 The structure of a theme separates different types of resources into easily
 accessible folders. Here's the full structure of a theme called Deep Blue theme:
@@ -151,29 +101,6 @@ accessible folders. Here's the full structure of a theme called Deep Blue theme:
         - `WEB-INF/`
         	- `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
-
-The `_diffs` folder that's created inside the `docroot` directory of your theme
-is important; this is where you place your theme's code. The `_diffs` folder
-must mirror the parent theme's directory structure. Since you'll only customize
-the parts of your theme that differ from the parent theme, place only the
-folders and files you'll customize there. 
-
-The other folders inside `docroot` were copied over from the parent theme in
-your Liferay bundle when you deployed your theme. Use these files as the basis
-for your modifications. For example, to customize the navigation, copy
-`navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into the 
-`deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this
-folder first). You can then open this file and customize it to your liking. 
-
-For custom styles, create a folder named `css` inside your `_diffs` folder and
-place a single file there called `custom.css`. This is where you'll define all
-your new styles. Because `custom.css` is loaded last, styles defined here
-override any styles in the parent theme.
-
-It's a best practice to add your styles only to the `custom.css` file. This
-keeps all of your changes in one place and makes future upgrades easier, because
-you won't have to manually modify your templates to add support for new Liferay
-features. 
 
 Whenever you modify your theme, redeploy it. Wait a few seconds until the theme 
 deploys, then refresh your browser to see your changes. 
