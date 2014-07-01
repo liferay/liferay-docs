@@ -24,6 +24,11 @@ In addition, there are some Maven *goals* Liferay has provided:
 
 You now have plenty of archetypes at your disposal! 
 
+If you've been following our story that's dispersed throughout our Maven
+tutorials, you might be concerned for the cat we introduced, Lenore II. Alas,
+your concern is warranted. I'll let Edgar Allen Poe (from The Raven) break the
+news to you:
+
 "But the chair whose violet lining with the lamp-light gloating o'er,
 Lenore II shall press, ah, nevermore!"
 

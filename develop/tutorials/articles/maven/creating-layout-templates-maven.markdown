@@ -12,11 +12,12 @@ mantle--which is made of wood! Remember Lenore II, softly purring on the mantle?
 She's going to cook just like the original Lenore if you don't do something! But
 it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
-"Tell this soul with sorrow laden if, within the distant Aidenn,
-It shall clasp a sainted kitten whom the angels named Lenore II--"
+In the words of Edgar Allen Poe (adapted from The Raven): "Tell this soul with
+sorrow laden if, within the distant Aidenn, It shall clasp a sainted kitten whom
+the angels named Lenore II--"
 
 In memory of the late, now crispy Lenore II, it's time to create a layout
-template plugin with Maven. 
+template plugin with Maven.
 
 ## Creating a Layout Template Plugin
 
@@ -66,8 +67,8 @@ Location   | Maven project     | Plugins SDK project |
 ---------- | ----------------- | ------------------- |
 Web source | `src/main/webapp` | `docroot` |
 
-You've passed your trial by fire (the cat thanks you), developing yet another
-plugin type with Maven. Way to go!
+You've passed your trial by fire (your new cat, Lenore III, thanks you),
+developing yet another plugin type with Maven. Way to go!
 
 ## Next Steps
 
