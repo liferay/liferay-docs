@@ -55,9 +55,6 @@ Developer Studio's *New Project* wizard and the *create* scripts generate layout
 template projects in your Plugin SDK's `layouttpl` folder. Layout template
 project names must end with *-layouttpl* so when you enter *columns-1-4-1* for
 the project name, *-layouttpl* is automatically appended to the project name.
-Take a closer look at the anatomy of your layout template next.
-
-## Anatomy of a Layout Template Project
 
 Take a look at the directory structure of a layout template project below:
 
