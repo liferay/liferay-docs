@@ -104,7 +104,79 @@ To specify a base theme, edit the `build.xml` file for your theme and change
 existing theme that's installed or in your Plugins SDK.
 
 Now that your base theme is set, go ahead and deploy it to your portal instance
-and give yourself a pat on the back.
+and give yourself a pat on the back. Next you can get a closer look at the
+anatomy of your newly created theme.
+
+## Anatomy of a Theme Project [](id=anatomy-of-a-theme-project-liferay-portal-6-2-dev-guide-09-en)
+
+Custom themes are created by layering your customizations on top of one of
+Liferay's built-in themes. 
+
+The structure of a theme separates different types of resources into easily
+accessible folders. Here's the full structure of a theme called Deep Blue theme:
+
+- `deep-blue-theme/`
+    - `docroot/`
+        - `_diffs/` (subfolders not created by default)
+            - `css/`
+            - `images/`
+            - `js/`
+            - `templates/`
+        - `css/`
+        	- `aui`
+        		- (many directories)
+        	- `_aui_custom.scss`
+        	- `_aui_variables.scss`
+        	- `_liferay_custom.scss`
+            - `application.css`
+            - `aui.css`
+            - `base.css`
+            - `custom.css`
+            - `dockbar.css`
+            - `extras.css`
+            - `layout.css`
+            - `main.css`
+            - `navigation.css`
+            - `portlet.css`
+        - `images/`
+            -   (many directories)
+        - `js/`
+            - `main.js`
+        - `templates/`
+            - `init_custom.vm`
+            - `navigation.vm`
+            - `portal_normal.vm`
+            - `portal_pop_up.vm`
+            - `portlet.vm`
+        - `WEB-INF/`
+        	- `liferay-look-and-feel.xml`
+            - `liferay-plugin-package.properties`
+
+The `_diffs` folder that's created inside the `docroot` directory of your theme
+is important; this is where you place your theme's code. The `_diffs` folder
+must mirror the parent theme's directory structure. Since you'll only customize
+the parts of your theme that differ from the parent theme, place only the
+folders and files you'll customize there. 
+
+The other folders inside `docroot` were copied over from the parent theme in
+your Liferay bundle when you deployed your theme. Use these files as the basis
+for your modifications. For example, to customize the navigation, copy
+`navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into the 
+`deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this
+folder first). You can then open this file and customize it to your liking. 
+
+For custom styles, create a folder named `css` inside your `_diffs` folder and
+place a single file there called `custom.css`. This is where you'll define all
+your new styles. Because `custom.css` is loaded last, styles defined here
+override any styles in the parent theme.
+
+It's a best practice to add your styles only to the `custom.css` file. This
+keeps all of your changes in one place and makes future upgrades easier, because
+you won't have to manually modify your templates to add support for new Liferay
+features. 
+
+Whenever you modify your theme, redeploy it. Wait a few seconds until the theme 
+deploys, then refresh your browser to see your changes. 
 
 ## Next Steps
 
