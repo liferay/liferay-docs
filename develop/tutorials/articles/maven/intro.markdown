@@ -1,5 +1,11 @@
 # Maven [](id=maven-lp-6-2-develop-tutorial)
 
+I was recently reading the famous poem by Edgar Allen Poe, The Raven. So,
+naturally, I interwove our documentation on Maven with references to the poem,
+both accurately, at times, and adapted for my own narrative, at others.  I hope
+you enjoy reading it as much as I enjoyed writing it. Either way, you can let us
+know what you think by leaving a comment.
+
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
 Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,
