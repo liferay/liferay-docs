@@ -1,10 +1,12 @@
 # Maven [](id=maven-lp-6-2-develop-tutorial)
 
-I was recently reading the famous poem by Edgar Allen Poe, The Raven. So,
-naturally, I interwove our documentation on Maven with references to the poem,
-both accurately, at times, and adapted for my own narrative, at others.  I hope
-you enjoy reading it as much as I enjoyed writing it. Either way, you can let us
-know what you think by leaving a comment.
+I'm giving you fair warning. I was recently reading the famous poem by Edgar
+Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
+references to the poem, sometimes accurately, and other times adapted for my own
+narrative. I hope you enjoy reading it as much as I enjoyed writing it. Either
+way, you can let us know what you think by leaving a comment. If you want to
+find out how our fictional protagonists cat fares (introduced in a moment), read
+through our Maven tutorials and you'll discover her fate.
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
@@ -26,7 +28,7 @@ Just take good care of Lenore II, would you?
 "And the silken sad uncertain rustling of each purple curtain
 Thrilled me--filled me with *Ant*astic terrors never felt before;"
 
-Okay now you're being melodramatic; nobody can disdain *Apache Ant* that
+Okay, now you're being melodramatic; nobody can disdain *Apache Ant* that
 vehemently. What about customizing Liferay Portal using the Ant-based Plugins
 SDK could make you feel sadness and terror? 
 
