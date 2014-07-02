@@ -114,4 +114,60 @@ See how easy that was? Now that you've created a generic or modified JSF
 portlet, it's time to deploy your JSF portlet to the portal and see what it
 looks like. 
 
+## Deploying JSF Portlets
+
+Liferay provides a mechanism called auto-deploy that makes deploying portlets
+(and any other plugin types) a breeze. All you need to do is drop the plugin's
+`.war` file into the deploy directory, and the portal makes the necessary
+changes specific to Liferay and then deploys the plugin to the application
+server. This is a method of deployment used throughout this guide.
+
+---
+
+ ![Note](../../images/tip.png) **Note:** Liferay supports a wide
+ variety of application servers. Many, such as Tomcat and JBoss, provide a
+ simple way to deploy web applications by just copying a file into a folder and
+ Liferay's auto-deploy mechanism takes advantage of that ability. You should be
+ aware though, that some application servers, such as WebSphere or Weblogic,
+ require the use of specific tools to deploy web applications; Liferay's
+ auto-deploy process won't work for them. 
+
+---
+
+**Deploying in Developer Studio**: Drag your portlet project onto your
+server. When deploying your plugin, your server displays messages indicating
+that your plugin was read, registered and is now available for use. 
+
+    Reading plugin package for my-jsf-portlet
+    Registering portlets for my-jsf-portlet
+    1 portlet for my-jsf-portlet is available for use
+
+If at any time you need to redeploy your portlet while in Developer Studio,
+right-click your portlet located underneath your server and select *Redeploy*. 
+
+**Deploying in the terminal**: Open a terminal window in your
+`portlets/my-jsf-portlet` directory and enter
+
+    ant deploy
+
+A `BUILD SUCCESSFUL` message indicates your portlet is now being deployed. If
+you switch to the terminal window running Liferay, within a few seconds you
+should see the message `1 portlet for my-jsf-portlet is available for use`. If
+not, double-check your configuration. 
+
+In your web browser, log in to the portal. Click the Add button, which appears
+as a *Plus* symbol in the top right hand section of your browser. Then click
+*Applications*, find the My JSF portlet in the *Sample* category, and click
+*Add*. Your portlet appears on the page, but Liferay Faces lets you know when a
+UI component requires a page refresh to render the first time. 
+
+Refresh the page and the portal renders your portlet's calendar component. 
+
+![Figure 4.2: Powerful UI components, like this PrimeFaces calendar, are a snap to include in your portlet UI.](../../images/jsf-primefaces-portlet-with-calendar.png) 
+
+It's just that easy to create and deploy JSF portlet plugins! 
+
+Next, let's get familiar with the portlet deployment descriptor file
+(`portlet.xml`) and consider the descriptor requirements for JSF portlets. 
+
 ## Next Steps
