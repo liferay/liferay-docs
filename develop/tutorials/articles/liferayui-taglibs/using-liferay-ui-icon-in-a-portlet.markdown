@@ -22,8 +22,8 @@ Follow these steps and you'll be using them in no time:
 2. Reference the liferay-ui and portlet taglibs by adding the following lines 
    of code to the top of your `view.jsp` file:
     
-     <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
-     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+    `<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>`
+    `<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>`
     
 Now that you have the proper taglibs referenced, you can use `liferay-ui:icon` 
 in your `view.jsp` to add icons to your portlet.
