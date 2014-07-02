@@ -227,4 +227,4 @@ user's experience.
 
 ## Next Steps 
 
-[Using the Gadget Editor](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)
+[Using the Gadget Editor](/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)

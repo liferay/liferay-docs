@@ -169,6 +169,6 @@ Your portlet users will be glad to get helpful feedback from your portlets.
 
 ## Next Steps 
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Application Display Templates](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

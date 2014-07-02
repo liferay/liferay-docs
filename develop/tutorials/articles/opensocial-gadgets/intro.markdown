@@ -20,12 +20,12 @@ This section's tutorials include the following topics:
 
 ## Next Steps 
 
-[Sending PubSub Messages Between Gadgets and Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sending-pubsub-messages-between-gadgets-and-portlet-lp-6-2-develop-tutorial)
+[Sending PubSub Messages Between Gadgets and Portlets](/tutorials/-/knowledge_base/sending-pubsub-messages-between-gadgets-and-portlet-lp-6-2-develop-tutorial)
 
-[Using the Gadget Editor](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)
+[Using the Gadget Editor](/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)
 
-[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

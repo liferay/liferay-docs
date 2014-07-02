@@ -39,4 +39,4 @@ Liferay portlets.
 
 ## Next Steps
 
-[Using Configurable Portlet Preferences](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-configurable-portlet-preferences-lp-6-2-develop-tutorial)
+[Using Configurable Portlet Preferences](/tutorials/-/knowledge_base/using-configurable-portlet-preferences-lp-6-2-develop-tutorial)

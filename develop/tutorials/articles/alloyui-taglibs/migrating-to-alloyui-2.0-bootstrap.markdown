@@ -387,6 +387,6 @@ monotonous conversion work for you.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-1)
 
-[Understanding Liferay's Releases](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/understanding-liferays-releases-lp-6-2-develop-tutorial)
+[Understanding Liferay's Releases](/tutorials/-/knowledge_base/understanding-liferays-releases-lp-6-2-develop-tutorial)
 
-[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

@@ -7,8 +7,8 @@ terrific user experience that is stylish and responsive.
 
 ## Next Steps 
 
-[Using liferay-ui:success and liferay-ui:error Messages](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-uisuccess-and-liferay-uierror-message-lp-6-2-develop-tutorial)
+[Using liferay-ui:success and liferay-ui:error Messages](/tutorials/-/knowledge_base/using-liferay-uisuccess-and-liferay-uierror-message-lp-6-2-develop-tutorial)
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Application Display Templates](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

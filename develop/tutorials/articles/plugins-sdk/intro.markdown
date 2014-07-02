@@ -9,12 +9,12 @@ used along with any text editor or Integrated Development Environment (IDE).
 
 ## Next Steps 
 
-[Using the Plugins SDK](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
+[Using the Plugins SDK](/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
 
-[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
