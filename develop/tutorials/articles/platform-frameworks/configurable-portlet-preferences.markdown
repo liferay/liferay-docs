@@ -322,4 +322,4 @@ use Liferay's portlet preferences in the portlets you develop.
 
 ## Next Steps
 
-[Using Portlet Namespacing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)
+[Using Portlet Namespacing](/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)

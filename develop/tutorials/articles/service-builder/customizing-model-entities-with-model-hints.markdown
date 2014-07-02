@@ -247,4 +247,4 @@ how portlet data is displayed!
 
 ## Next Steps 
 
-[Leveraging Hibernate's Criteria API](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/leveraging-hibernates-criteria-api-lp-6-2-develop-tutorial)
+[Leveraging Hibernate's Criteria API](/tutorials/-/knowledge_base/leveraging-hibernates-criteria-api-lp-6-2-develop-tutorial)

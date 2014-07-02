@@ -352,4 +352,4 @@ query in a custom finder and exposing it as a service for your portlet!
 
 [Configuring `service.properties`](www.liferay.com) 
 
-[Customizing Model Entities With Model Hints](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial) 
+[Customizing Model Entities With Model Hints](/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial) 
