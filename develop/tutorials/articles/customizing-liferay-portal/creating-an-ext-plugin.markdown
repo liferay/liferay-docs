@@ -3,18 +3,18 @@
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 (see the tutorial on [Using the Plugins SDK](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)). 
-You also have the option to create an EXT plugin in a Liferay Maven project.
+You also have the option to create an Ext plugin in a Liferay Maven project.
 
-This tutorial covers how to create an EXT plugin in a Plugins SDK project, using
+This tutorial covers how to create an Ext plugin in a Plugins SDK project, using
 Liferay IDE and Ant, from the command line. To learn how to create Liferay Maven 
 projects, see the tutorial [Creating Liferay Maven plugins from IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
 or the tutorial [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
 
-First up, creating an EXT plugin using Developer Studio!
+First up, creating an Ext plugin using Developer Studio!
 
-## Using Developer Studio to Create an EXT Plugin
+## Using Developer Studio to Create an Ext Plugin
 
-Follow the steps below, replacing the name with your own, and you'll have an EXT 
+Follow the steps below, replacing the name with your own, and you'll have an Ext 
 plugin in no time flat:
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
@@ -86,7 +86,7 @@ The structure of your new EXT plugin should look similar to the one below:
 ![Figure 2: Here's the directory structure in the Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
 
 For a look at the `/docroot/WEB-INF/` subdirectories in more detail please refer
-to the [EXT Plugin Anatomy](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-an-ext-plugin-liferay-portal-6-2-dev-guide-12-en) 
+to the [Ext Plugin Anatomy](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/creating-an-ext-plugin-liferay-portal-6-2-dev-guide-12-en) 
 DevGuide section.
 
 ---
