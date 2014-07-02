@@ -7,11 +7,11 @@ tools: Ant in the Plugins SDK or Maven Archetype in Maven.
 In this tutorial, you'll learn how to create  MVC portlets in a Plugins SDK 
 project, using Liferay IDE and Ant, from the command line. To learn how to 
 create Liferay Maven projects, see the tutorial 
- [Creating Liferay Maven plugins from IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
-or the tutorial [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+ [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
+or the tutorial [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
 If you're completely new to Liferay, you can follow along with the 
 <!-- URL will need changed to proper one once the site is changed to dev.liferay.com -->
- [Beginning Liferay Development](https://www-ldn.liferay.com/develop/learning-paths/-/knowledge_base/beginning-liferay-development) 
+ [Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) 
 learning path.
 
 First up is creating a portlet with Develper Studio, so go ahead and get 
@@ -143,9 +143,9 @@ handy ways to create them in your bag O'trix!
 
 ## Next Steps
 
- [Creating Liferay Maven plugins from IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+ [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
  
- [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+ [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 
- [Beginning Liferay Development Learning Path](https://www-ldn.liferay.com/develop/learning-paths/-/knowledge_base/beginning-liferay-development)
+ [Beginning Liferay Development Learning Path](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
 
