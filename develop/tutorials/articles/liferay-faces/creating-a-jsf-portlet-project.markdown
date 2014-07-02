@@ -1,17 +1,29 @@
-# Creating a JSF Portlet Project
+# Creating and Deploying JSF Portlets
 
-We want to make it easy for you to implement portlets using JSF. And Liferay
-IDE, with its powerful portlet plugin wizard, provides you with a great
-environment to do just that. The wizard lets you select a component suite that's
-right for your project, including JSF's standard UI component suite, ICEfaces,
-Liferay Faces Alloy, PrimeFaces, and RichFaces. Of course, you can use any
-development environment you like for building JSF portlets, but Liferay IDE is
-hard to beat. 
+Liferay supports developing and deploying JSF portlets on Liferay Portal by
+using Liferay Faces Bridge. The bridge supports deploying JSF web applications
+as portlets on any JSR 286 (Portlet 2.0) compliant portlet container, like
+Liferay Portal 5.2, 6.0, 6.1, and 6.2. Liferay Faces Bridge makes developing JSF
+portlets as similar as possible to JSF web app development. In this tutorial,
+you'll learn the portlet development process and how to leverage Liferay Faces
+Bridge's full potential with your JSF portlets. This will make it easy for you
+to implement portlets using JSF. 
 
-You'll create a JSF portlet project using Liferay IDE/Developer Studio, so you
-can see just how easy it is. If you don't have it installed yet, see 
-[Chapter 2](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
-of this guide. If you do have it installed, launch it. 
+Liferay IDE, with its powerful portlet plugin wizard, provides you with a great
+environment to create a JSF portlet project. The wizard lets you select a
+component suite that's right for your project, including JSF's standard UI
+component suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces. Of
+course, you can use any development environment you like for building JSF
+portlets, but Liferay IDE is hard to beat. Next, you'll use Liferay IDE to
+create your JSF portlet project.
+
+## Creating a JSF Portlet Project
+
+In this tutorial, you'll create a JSF portlet project using Liferay
+IDE/Developer Studio, so you can see just how easy it is. If you don't have it
+installed yet, see the [Developing Apps with Liferay
+IDE](/learning-paths/-/knowledge_base/developing-apps-with-liferay-ide-lp-6-2-develop-learnpath)
+learning path for full details. If you do have it installed, launch it. 
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
@@ -26,20 +38,20 @@ of this guide. If you do have it installed, launch it.
     change where your plugin project is saved in your file system, uncheck
     the box and specify your alternate location. 
 
-    2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type.
-    If you'd like to use *Maven* for your build type, navigate to the
-    [Developing Plugins Using
-    Maven](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
-    section for details. 
+    2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
+    you'd like to use *Maven* for your build type, navigate to the [Using Maven
+    From Liferay
+    IDE](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
+    tutorial for details. 
 
-    2.3. Your configured SDK and Liferay Runtime should already be selected.
+    2.4. Your configured SDK and Liferay Runtime should already be selected.
     If you haven't yet pointed Liferay IDE to a Plugins SDK, click
     *Configure SDKs* to open the *Installed Plugin SDKs* management wizard.
     You can also access the *New Server Runtime Environment* wizard if you
     need to set up your runtime server; just click the *New Liferay Runtime*
     button next to the *Liferay Portal Runtime* dropdown menu. 
 
-    2.4. Select *Portlet* as your Plugin type and click *Next*. 
+    2.5. Select *Portlet* as your Plugin type and click *Next*. 
 
 3.  In this window, you'll select the portlet framework for your portlet and a
     UI component suite. 
@@ -51,7 +63,7 @@ of this guide. If you do have it installed, launch it.
     JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and
     RichFaces. 
 
-    3.2. Select the *PrimeFaces* UI component suite and click *Finish*. 
+    3.2. Select the UI component suite you'd like to use and click *Finish*. 
 
    <!-- Why do we pick PrimeFaces, when it's based on JQuery? Shouldn't we
     stick to JSF Standard? -Rich -->
@@ -64,18 +76,21 @@ portlets.
 <!-- As an alternative, we should explain how to download the JARs manually and
 install them. - Jim -->
 
-Let's make the portlet display a calendar. We'll replace the portlet's default
-"hello world" text output with a PrimeFaces calendar component. 
+Just for quick demonstration purposes, this tutorial shows how to transform the
+generic JSF portlet into a working calendar. This will prove just how easy it is
+to develop a JSF portlet for Liferay Portal. The portlet's default "hello world"
+text output will be replaced with a PrimeFaces calendar component (assuming the
+*PrimeFaces* component was selected). 
 
-Open the `view.xhtml` facelet file from the portlet project's `docroot/views`
-folder and replace the element `<h:outputText
-value="#{i18n['my-jsf-hello-world']}" />` with the following lines of code: 
+To do this, the following is added to the `view.xhtml` facelet file from the
+portlet project's `docroot/views` folder, replacing the element `<h:outputText
+value="#{i18n['my-jsf-hello-world']}" />` with: 
 
     <h:form>
        <p:calendar></p:calendar>
     </h:form>
 
-Your `view.xhtml` facelet should look like this:
+The `view.xhtml` facelet would look like this:
 
     <?xml version="1.0"?>
     
@@ -95,6 +110,8 @@ Your `view.xhtml` facelet should look like this:
         </h:body>
     </f:view>
 
-It's time to deploy your JSF portlet to the portal and see what it looks like. 
+See how easy that was? Now that you've created a generic or modified JSF
+portlet, it's time to deploy your JSF portlet to the portal and see what it
+looks like. 
 
 ## Next Steps
