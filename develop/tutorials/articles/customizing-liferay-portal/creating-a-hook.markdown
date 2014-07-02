@@ -8,8 +8,8 @@ In this tutorial, you'll learn how to create hooks in a Plugins SDK project,
 using Liferay IDE and Ant, from the command line. Regardless of whether you use 
 Liferay IDE or your terminal to create hooks, hooks projects are stored in the 
 Plugins SDK's `hooks` directory. To learn how to create Liferay Maven projects, 
-see the tutorial [Creating Liferay Maven plugins from IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
-or the tutorial [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+see the tutorial [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
+or the tutorial [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
 
 Go ahead and jump right in and start with Liferay IDE. 
 
@@ -129,8 +129,8 @@ get out there and create!
 
 ## Next Steps
 
- [Performing a Custom Action Using a Hook] (https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+ [Performing a Custom Action Using a Hook] (/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
 
- [Creating Liferay Maven plugins from IDE] (https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+ [Creating Liferay Maven plugins from IDE] (/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
 
- [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+ [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
