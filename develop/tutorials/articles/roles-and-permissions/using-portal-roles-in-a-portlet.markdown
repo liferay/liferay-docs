@@ -111,5 +111,16 @@ By default, Liferay doesn't use the `isUserInRole()` method in any built-in
 portlets. Liferay uses its own permission system directly to achieve more
 fine-grained security. We recommend using Liferay's permission system,
 because it offers a much more robust way of tailoring your application's
-permissions. You can read about Liferay's permission system in the tutorial 
-[Adding Permissions to Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/adding-permissions-to-resources-lp-6-2-develop-tutorial).
+permissions. 
+
+## Next Steps 
+
+<!--
+[Adding Permissions to Resources](/tutorials/-/knowledge_base/adding-permissions-to-resources-lp-6-2-develop-tutorial)
+-->
+
+<!-- Adding permissions link needs changed once it gets a header id -Nick -->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
