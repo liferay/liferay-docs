@@ -1,5 +1,9 @@
 # Creating and Deploying JSF Portlets
 
+<!-- The JSF calendar portlet using PrimeFaces can be found at the following:
+https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
+-->
+
 Liferay supports developing and deploying JSF portlets on Liferay Portal by
 using Liferay Faces Bridge. The bridge supports deploying JSF web applications
 as portlets on any JSR 286 (Portlet 2.0) compliant portlet container, like
@@ -77,8 +81,8 @@ portlets.
 install them. - Jim -->
 
 Just for quick demonstration purposes, this tutorial shows how to transform the
-generic JSF portlet into a working calendar. This will prove just how easy it is
-to develop a JSF portlet for Liferay Portal. The portlet's default "hello world"
+generic JSF portlet into a working calendar. This proves just how easy it is to
+develop a JSF portlet for Liferay Portal. The portlet's default "hello world"
 text output will be replaced with a PrimeFaces calendar component (assuming the
 *PrimeFaces* component was selected). 
 
