@@ -1,4 +1,4 @@
-# Sending PubSub Messages Between Gadgets and Portlets
+# Sending PubSub Messages Between Gadgets and Portlets [](id=sending-pubsub-messages-between-gadgets-and-portlet-lp-6-2-develop-tutorial)
 
 <!-- You can test the gadget-to-gadget tutorial using the following gadgets:
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
@@ -29,7 +29,7 @@ Maps into Liferay Portal. After we've run through the exercises, we'll briefly
 analyze specific code fragments that made the PubSub messaging possible. Let's
 get started!
 
-## Communicating Between Gadgets
+## Communicating Between Gadgets [](id=communicating-between-gadgets-lp-6-2-develop-tutorial)
 
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub; these two gadgets are able to communicate with one
@@ -145,7 +145,7 @@ Gadgets are not limited to only communicating with other gadgets. In the next
 section, we will demonstrate the capabilities of communication between portlets
 and gadgets.
 
-## Communicating Between Portlets and Gadgets
+## Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets-lp-6-2-develop-tutorial)
 
 For this tutorial, we'll continue exploring the *Google Map* gadget inside of
 Liferay. If you have portlet applications that can take advantage of the

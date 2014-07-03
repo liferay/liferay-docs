@@ -1,4 +1,4 @@
-# Using the Gadget Editor
+# Using the Gadget Editor [](id=using-the-gadget-editor-lp-6-2-develop-tutorial)
 
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development
@@ -25,7 +25,7 @@ installation is the new host when specifying the gadget's URL.
 As a brief tutorial, we'll demonstrate creating a new gadget and publishing the
 gadget to Liferay using the gadget editor. Let's get started!
  
-## Editing OpenSocial Gadgets
+## Editing OpenSocial Gadgets [](id=editing-opensocial-gadgets-lp-6-2-develop-tutorial)
 
 For this tutorial, we'll edit an OpenSocial gadget and publish the gadget to a
 Liferay page. We'll accomplish all of this using Liferay's OpenSocial Gadget
