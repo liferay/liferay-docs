@@ -101,12 +101,41 @@ accessible folders. Here's the full structure of a theme called Deep Blue theme:
         - `WEB-INF/`
         	- `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
+            
+The `_diffs` folder that's created inside the `docroot` directory of your theme
+is important; this is where you place your theme's code. The `_diffs` folder
+must mirror the parent theme's directory structure. Since you'll only customize
+the parts of your theme that differ from the parent theme, place only the
+folders and files you'll customize there. 
+
+The other folders inside `docroot` were copied over from the parent theme in
+your Liferay bundle when you deployed your theme. Use these files as the basis
+for your modifications. For example, to customize the navigation, copy
+`navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into the 
+`deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this
+folder first). You can then open this file and customize it to your liking. 
+
+For custom styles, create a folder named `css` inside your `_diffs` folder and
+place a single file there called `custom.css`. This is where you'll define all
+your new styles. Because `custom.css` is loaded last, styles defined here
+override any styles in the parent theme.
+
+It's a best practice to add your styles only to the `custom.css` file. This
+keeps all of your changes in one place and makes future upgrades easier, because
+you won't have to manually modify your templates to add support for new Liferay
+features. 
 
 Whenever you modify your theme, redeploy it. Wait a few seconds until the theme 
-deploys, then refresh your browser to see your changes. 
+deploys, then refresh your browser to see your changes.
+
+Congrats! Now you know how to create a theme!
 
 ## Next Steps
 
  [Creating Liferay Maven plugins from IDE] (/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
 
  [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+ <!-- URL will probably need updated when added to the new devsite-->
+ [Using Developer Mode with Themes](/tutorials/-/knowledge_base/using-developer-mode)
+
+ [Creating a Theme Thumbnail](/tutorials/-/knowledge_base/creating-a-theme-thumbnail)
