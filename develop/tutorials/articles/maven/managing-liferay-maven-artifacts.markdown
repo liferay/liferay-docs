@@ -273,7 +273,7 @@ Liferay plugins.
 
 ## Next Steps
 
-[Using Maven from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+[Using Maven from Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
 
-[Building Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial). 
+[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial) 
 
