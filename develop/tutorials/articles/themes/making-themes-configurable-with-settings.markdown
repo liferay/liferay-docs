@@ -48,11 +48,13 @@ be applied to any setting. Follow the steps below to see how it's done:
 2. Now, open your `_diffs/templates/portal_normal.vm` template and insert the 
    following:
 
-    #if ($theme.getSetting("header-type") == "detailed")
-        #parse ("$full_templates_path/header_detailed.vm")
-    #else
-        #parse ("$full_templates_path/header_brief.vm")
-    #end
+   ```
+      #if ($theme.getSetting("header-type") == "detailed")
+          #parse ("$full_templates_path/header_detailed.vm")
+      #else
+          #parse ("$full_templates_path/header_brief.vm")
+      #end
+    ```
 
     If you're following along with this example, you'll need to create the
     `header_detailed.vm` and `header_brief.vm` files and place them in the
@@ -62,16 +64,16 @@ be applied to any setting. Follow the steps below to see how it's done:
 3. Add two different entries in the `liferay-look-and-feel.xml` file that refer 
    to the same theme, but have different values for the header-type setting:
 
-    <theme id="deep-blue" name="Deep Blue">
-        <settings>
-            <setting key="header-type" value="detailed" />
-        </settings>
-    </theme>
-    <theme id="deep-blue-mini" name="Deep Blue Mini">
-        <settings>
-            <setting key="header-type" value="brief" />
-        </settings>
-    </theme>
+      <theme id="deep-blue" name="Deep Blue">
+          <settings>
+              <setting key="header-type" value="detailed" />
+          </settings>
+      </theme>
+      <theme id="deep-blue-mini" name="Deep Blue Mini">
+          <settings>
+              <setting key="header-type" value="brief" />
+          </settings>
+      </theme>
 
 Alternatively, you can make your settings configurable from within Liferay
 portal. Learn more about the process next.
