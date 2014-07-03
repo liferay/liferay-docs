@@ -19,3 +19,12 @@ This section's tutorials cover the following topics:
 
 - Checking Permissions
 
+## Next Steps 
+
+<!--
+[Using Portal Roles in a Portlet](add link once article receives header id)
+-->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
