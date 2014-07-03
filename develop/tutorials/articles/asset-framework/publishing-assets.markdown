@@ -87,8 +87,8 @@ enjoying the benefits of the asset framework in your custom portlets!
 
 ## Next Steps 
 
-[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[Customizing Liferay Portal](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

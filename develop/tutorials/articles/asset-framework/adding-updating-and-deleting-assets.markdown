@@ -104,4 +104,12 @@ Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Next Steps 
 
-[Entering and Displaying Tags and Categories](http://www.liferay.com/)
+<!-- Add link once header id's are generated -->
+
+<!-- 
+[Entering and Displaying Tags and Categories](http://www.liferay.com/) 
+-->
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)

@@ -66,8 +66,15 @@ Great! Now you know how to make tags and categories available to content authors
 in your portlets. 
 
 ## Next Steps 
+
+<!-- Add link once header id is generated -->
+
 <!--
 [Rating Assets](http://www.liferay.com/)
--->
 
 [Publishing Assets](http://www.liferay.com/)
+-->
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
