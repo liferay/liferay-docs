@@ -129,4 +129,14 @@ through the Mobile SDK!
 
 ## Next Steps 
 
-[Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial)
+<!--
+[Invoking Services Asynchronously from Your Android App](add link once header id is generated) 
+
+[Creating iOS Apps that Use Liferay](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)

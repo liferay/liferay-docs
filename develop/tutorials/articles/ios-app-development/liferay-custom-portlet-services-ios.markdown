@@ -13,10 +13,12 @@ are also discussed. Let the installation begin!
 
 If you want to invoke remote web services for your custom portlets, then you 
 need to generate the client libraries by building the SDK yourself. Building the 
-SDK is covered in the tutorial [Building Mobile SDKs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-mobile-sdks-lp-6-2-develop-tutorial).
+SDK is covered in the tutorial [Building Mobile SDKs](http://www.liferay.com/).
 Once you build the SDK to a `zip` file, you can install it using the manual 
 installation steps below. Just use your built `zip` file instead of downloading 
 Liferay's. 
+
+<!-- Fix link to Building Mobile SDK's above when the header id for that tutorial is generated -->
 
 ## Setting Up the iOS SDK 
 
@@ -83,6 +85,10 @@ of iOS may work with the SDK, but compatibility untested.
 
 ## Next Steps 
 
-[Building Mobile SDKs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-mobile-sdks-lp-6-2-develop-tutorial).
+<!--
+[Invoking Liferay Services in Your iOS App](add link once header id is generated) 
 
-[Invoking Liferay Services in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios-lp-6-2-develop-tutorial).
+[Liferay Mobile SDK Builder](add link once header id is generated) 
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial) 

@@ -68,4 +68,12 @@ apps.
 
 ## Next Steps 
 
-[Sending Your iOS App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-ios-lp-6-2-develop-tutorial)
+<!--
+[Sending Your iOS App's Requests Using Batch Processing](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+
+[Creating Android Apps that Use Liferay](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

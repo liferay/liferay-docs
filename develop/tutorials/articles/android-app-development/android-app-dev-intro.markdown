@@ -31,4 +31,16 @@ This section's tutorials include the following topics:
 
 You'll get started by setting up the Mobile SDK in Eclipse.
 
-[Setting Up the Mobile SDK in Eclipse](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-mobile-sdk-eclipse-lp-6-2-develop-tutorial)
+## Next Steps 
+
+<!-- 
+[Setting Up the Mobile SDK in Eclipse](add link once header id is generated)
+
+[Creating iOS Apps that Use Liferay](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)

@@ -96,4 +96,12 @@ to get a site group.
 
 ## Next Steps 
 
-[Invoking Services Asynchronously from Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-ios-lp-6-2-develop-tutorial)
+<!--
+[Invoking Services Asynchronously from Your iOS App](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+
+[Creating Android Apps that Use Liferay](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

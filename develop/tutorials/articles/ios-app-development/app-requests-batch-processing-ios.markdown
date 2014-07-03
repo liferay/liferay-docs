@@ -50,4 +50,12 @@ requests.
 
 ## Next Steps 
 
+<!--
 [Service Builder Learning Path](http://www.liferay.com/)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+
+[Creating Android Apps that Use Liferay](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

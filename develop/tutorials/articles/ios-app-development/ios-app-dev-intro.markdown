@@ -29,4 +29,14 @@ This section's tutorials include the following topics:
 You'll get started by making Liferay services available to your app. This is 
 accomplished by installing the iOS SDK.
 
-[Making Liferay and Custom Portlet Services Available in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-custom-portlet-services-ios-lp-6-2-develop-tutorial)
+## Next Steps 
+
+<!--
+[Making Liferay and Custom Portlet Services Available in Your iOS App](add link once header id is generated) 
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+
+[Creating Android Apps that Use Liferay](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

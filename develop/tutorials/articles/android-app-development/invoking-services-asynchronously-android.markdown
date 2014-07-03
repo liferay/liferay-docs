@@ -104,6 +104,16 @@ the callback's `onSuccess()` method, instead.
 Great! Now you know about invoking services asynchronously from your Android 
 app.
 
-## Next Steps
+## Next Steps 
 
-[Sending Your Android App's Requests Using Batch Processing](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/app-requests-batch-processing-android-lp-6-2-develop-tutorial).
+<!--
+[Sending Your Android App's Requests Using Batch Processing](add link once header id is generated) 
+
+[Creating iOS Apps that Use Liferay](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)

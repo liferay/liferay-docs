@@ -64,6 +64,16 @@ This is similar to the procedure for making asynchronous calls described in the
 tutorial [Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial). 
 It's just that easy to make efficient service calls in batch! 
 
-## Next Steps
+## Next Steps 
 
-[Service Builder Learning Path](http://www.liferay.com/)
+<!-- 
+[Creating iOS Apps that Use Liferay](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+-->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)

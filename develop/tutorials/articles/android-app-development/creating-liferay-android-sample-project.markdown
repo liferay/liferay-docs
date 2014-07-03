@@ -91,6 +91,16 @@ names to see their information.
 
 Congratulations on creating a mobile app that uses Liferay! 
 
-## Next Steps
+## Next Steps 
 
-[Making Liferay and Custom Portlet Services Available in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-and-custom-portlet-services-android-lp-6-2-develop-tutorial)
+<!-- 
+[Making Liferay and Custom Portlet Services Available in Your Android App](add link once header id is generated) 
+
+[Creating iOS Apps that Use Liferay](add link once header id is generated)
+
+[Liferay Mobile SDK Builder](add link once header id is generated)
+-->
+
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
