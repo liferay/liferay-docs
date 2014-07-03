@@ -1,4 +1,4 @@
-# Understanding Liferay's Releases
+# Understanding Liferay's Releases [](id=understanding-liferays-releases-lp-6-2-develop-tutorial)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
@@ -37,7 +37,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-## Release Process
+## Release Process [](id=release-process-lp-6-2-develop-tutorial)
 
 Each release of Liferay has a surname that specifies its expected quality. This
 is needed because pre-releases of Liferay look very much like maintenance
@@ -99,7 +99,7 @@ The strength of the Liferay community helps detect potential issues early that
 are then reported through the forums and are later fixed in a series of
 maintenance releases.
 
-## Liferay's Deprecation Policy
+## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-lp-6-2-develop-tutorial)
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major and minor releases of
@@ -114,7 +114,7 @@ are signified by a change in the third digit of the release number. For example,
 the release of Liferay Portal 6.1.30 after 6.1.20 was a maintenance release and
 therefore should have no API deprecations. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-0)
 
 If you haven't yet learned how to migrate plugins from Liferay 6.1 to 6.2,
 please refer to the [AlloyUI 2.0 / Bootstrap Migration](www.liferay.com)

@@ -95,8 +95,7 @@ services. Let's create the sample project now!
 1. Go to *File* &rarr; *Project...* &rarr; *Liferay* &rarr; *Liferay Android
 Sample Project*.
 
-2. Click *Next*. <!-- ... please describe the defaults we're accepting at this
-screen. -->
+2. Click *Next*. 
 
 3. Specify the *Project name*, *Location*, and *Target SDK*. Notice that you
 also have the option to choose a sample project template from the Mobile SDK

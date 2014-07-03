@@ -19,7 +19,8 @@ This chapter covers the following topics:
 
 - Plugins and Plugin Management
 
-- Plugin Types: Portlets, Themes, Layout Templates, Hooks, and Web Plugins
+- Plugin Types: Portlets, Themes, Layout Templates, Hooks, Web Plugins, and OSGi
+  Bundles
 
 - Installing Plugins from Repositories
 
@@ -552,6 +553,64 @@ Liferay supports integration with various Enterprise Service Bus (ESB)
 implementations, as well as Single Sign-On implementations, workflow engines,
 and so on. These are implemented as web modules used by Liferay portlets to
 provide functionality.
+
+### OSGi Bundles
+
+OSGi (Open Services Gateway initiative) is a framework for developing modular
+Java applications. Liferay 6.2 introduced support for the OSGi module framework.
+It hosts an OSGi runtime and allows administrators to deploy OSGi bundles to
+Liferay. OSGi web application bundles are very similar to standard web
+application archives except that they must include additional metadata so that
+they can operate in an OSGi framework. The OSGi specification does not require a
+specific file extension for web application bundles but they typically have a
+`.jar` file extension. Sometimes a `.war` file extension is used instead.
+
+---
+
+ ![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
+ experimental and unsupported. It should be considered a technology preview at
+ this time. 
+
+---
+
+Deploying an OSGi bundle to Liferay is easy: just copy the bundle to your
+`[Liferay Home]/data/osgi/modules` directory. Undeploying is just as easy: just
+remove the bundle from the `[Liferay Home]/data/osgi/modules` directory. Note:
+If you copy an OSGi bundle to your `[Liferay Home]/deploy` directory, Liferay
+automatically copies it to your `[Liferay Home]/data/osgi/modules` directory.
+
+To test Liferay's OSGi module framework and deploy mechanism, you can use the
+`test-module-framework-shared` bundle from Liferay's plugin repository on
+Github:
+[test-module-framework-shared](https://github.com/liferay/liferay-plugins/tree/master/shared/test-module-framework-shared).
+In order to deploy the module framework test plugin from a clone of the
+liferay-plugins repository, you should first add the following lines to your
+`build.[username].properties` file in your `liferay-plugins` directory. If this
+file doesn't exist yet, create it.
+
+    liferay.home=[path-to-your-liferay-installation]
+    auto.deploy.dir=${liferay.home}/deploy
+
+Then navigate to the `liferay-plugins/shared/test-module-framework-shared`
+directory in a terminal and run `ant deploy`. Of course, Apache Ant must be
+installed on your system for this to work. When the
+`test-module-framework-shared` bundle has been deployed, the following message
+appears in the console:
+
+    Activate Test Component
+
+When you remove the `test-module-framework-shared` bundle from the
+`${LIFERAY_HOME}/data/osgi/deploy` directory, another message appears:
+
+    Deactivate Test Component
+
+If you'd like to customize your Liferay Portal instance's module framework
+behavior, please refer to the Module Framework section of the
+`portal.properties` file.  For example, you can set a comma-delimited list of
+directories to scan for modules to deploy, specify how to often to scan the
+directories for changes, etc. Remember not to make customizations to the
+`portal.properties` file itself but to instead add customized properties to a
+`portal-ext.properties` file in your Liferay Home directory. 
 
 ### Configuring Plugins [](id=configuring-plugins-liferay-portal-6-2-user-guide-14-en)
 
