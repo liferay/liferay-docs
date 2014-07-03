@@ -57,4 +57,12 @@ here:
 
 ## Next Steps 
 
-[Adding, Updating, and Deleting Assets](http://www.liferay.com/)
+<!-- Add link once header id is generated -->
+
+<!-- 
+[Adding, Updating, and Deleting Assets](http://www.liferay.com/) 
+-->
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
