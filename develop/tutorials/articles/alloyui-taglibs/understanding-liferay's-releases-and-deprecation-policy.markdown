@@ -90,7 +90,7 @@ installation.
   work in Liferay 6.2 GA2 or a GA2 fix pack. 
 
 For more details on updating Liferay Portal, please refer to the Upgrading
-Liferay section of the [User Guide](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/upgrading-liferay-liferay-portal-6-2-user-guide-18-en).
+Liferay section of the [User Guide](/use/-/knowledge_base/upgrading-liferay-lp-6-2-use-useportal).
 
 Liferay Portal is a very flexible application that runs well on several
 different server environments. It's simple to install and follows a systematic
@@ -116,6 +116,4 @@ therefore should have no API deprecations.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-0)
 
-If you haven't yet learned how to migrate plugins from Liferay 6.1 to 6.2,
-please refer to the [AlloyUI 2.0 / Bootstrap Migration](www.liferay.com)
-tutorial.
+[AlloyUI 2.0 TagLib and Bootstrap Migration](/tutorials/-/knowledge_base/alloyui-2-0-taglib-and-bootstrap-migration-lp-6-2-develop-tutorial)
