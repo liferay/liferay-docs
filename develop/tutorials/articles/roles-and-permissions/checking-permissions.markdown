@@ -155,3 +155,15 @@ Likewise, you're encouraged to use custom portlet action keys.
 <!-- We're not ready for review yet. We haven't covered how to create the helper
 class, which is what the reader is expecting out of this section. Certainly I
 was. We've only seen how to use a helper class that already exists. -Rich --> 
+
+## Next Steps 
+
+<!-- Change link once header id is generated -->
+
+<!--
+[Checking Permissions](/tutorials/-/knowledge_base/checking-permissions-lp-6-2-develop-tutorial) 
+-->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
