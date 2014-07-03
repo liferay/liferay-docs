@@ -2338,17 +2338,17 @@ in your persistence layer and adds methods to your service layer that invoke the
 finder. But what if you'd like to do more complicated searches that incorporate
 attributes from multiple entities? 
 
-For example, consider the Nose-ster Event Listing Portlet you've been developing
-in this chapter. Suppose you want to find an event based on its name,
-description, and location name. If you recall, the event entity refers to its
-location by the location's ID, not its name. That is, the event entity table,
-`Event_Event`, refers to an event's location by its long integer ID in the
-table's `locationId` column. But you need to access the *name* of the event's
-location. Of course, with SQL you can join the event and location tables to
-include the location name. But how would you incorporate custom SQL into your
-portlet? And how would you invoke the SQL from your service? Service Builder
-lets you do this by specifying the SQL as *Liferay custom SQL* and invoking it
-in your service via a *custom finder method*.
+For example, consider the Event Listing Portlet you've been developing in this
+chapter. Suppose you want to find an event based on its name, description, and
+location name. If you recall, the event entity refers to its location by the
+location's ID, not its name. That is, the event entity table, `Event_Event`,
+refers to an event's location by its long integer ID in the table's `locationId`
+column. But you need to access the *name* of the event's location. Of course,
+with SQL you can join the event and location tables to include the location
+name. But how would you incorporate custom SQL into your portlet? And how would
+you invoke the SQL from your service? Service Builder lets you do this by
+specifying the SQL as *Liferay custom SQL* and invoking it in your service via
+a *custom finder method*.
 
 Liferay custom SQL is a Service Builder-supported method for performing complex
 and custom queries against the database. Invoking custom SQL from a finder

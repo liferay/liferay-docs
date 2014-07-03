@@ -21,5 +21,6 @@ properties/
 **nbproject**
 **/.ivy/*
 **/.sass-cache/**
+**/.DS_Store/*
 *#
 /bin
