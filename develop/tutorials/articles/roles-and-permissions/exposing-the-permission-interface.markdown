@@ -63,3 +63,15 @@ For the first tag, specify the following attributes:
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources!
+
+## Next Steps 
+
+<!-- Change link once header id is generated -->
+
+<!--
+[Checking Permissions](/tutorials/-/knowledge_base/checking-permissions-lp-6-2-develop-tutorial) 
+-->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
