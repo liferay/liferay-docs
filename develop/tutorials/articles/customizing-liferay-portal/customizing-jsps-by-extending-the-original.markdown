@@ -105,7 +105,7 @@ how to extend an original Liferay JSP using a hook!
 
 ## Next Steps
 
-[Overriding Web Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
+[Overriding Web Resources](/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
 
-[Performing a Custom Action Using a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+[Performing a Custom Action Using a Hook](/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
 

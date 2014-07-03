@@ -15,11 +15,11 @@ explore their most common uses.
 Creating a Hook
 -->
 
-[Overriding Web Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
+[Overriding Web Resources](/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
 
-[Customizing JSPs by Extending the Original](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)
+[Customizing JSPs by Extending the Original](/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)
 
-[Performing a Custom Action](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+[Performing a Custom Action](/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
 
 <!--
 Customizing Sites and Site Templates with Application Adapters 
