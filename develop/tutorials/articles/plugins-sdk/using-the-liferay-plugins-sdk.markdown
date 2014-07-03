@@ -153,11 +153,9 @@ foundational development tool: the Plugins SDK.
 
 ## Next Steps
 
-<!--
-[Beginning Liferay Development](http://www.liferay.com)
--->
+[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
 
-[Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
+[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
 
-[Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+[Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
 

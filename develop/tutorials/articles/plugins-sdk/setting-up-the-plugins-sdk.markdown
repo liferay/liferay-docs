@@ -7,7 +7,7 @@ its dependencies.
 
 The Plugins SDK requires Liferay Portal. If you haven't already installed a
 Liferay bundle, follow the instructions in the
-[Installation and Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
+[Installation and Setup](/use/-/knowledge_base/installation-and-setup-lp-6-2-use-useportal)
 chapter of *Using Liferay Portal 6.2*. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
@@ -15,13 +15,13 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
- the SDK is already installed and ready to use. Liferay Portal Enterprise
- Edition (EE) comes with Liferay Developer Studio and much more (see
- [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
- Download a
- [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
- of Liferay Portal EE today. 
+![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
+the SDK is already installed and ready to use. Liferay Portal Enterprise
+Edition (EE) comes with Liferay Developer Studio and much more (see
+[CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
+Download a
+[free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
+of Liferay Portal EE today. 
 
 ---
 
@@ -52,14 +52,14 @@ To install the Plugins SDK, follow these steps:
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
- Community Edition comes bundled with many plugins. It's common to remove them
- to optimize the server's startup time. Just navigate to the
- `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and remove
- any plugins that you don't need. Don't delete `ROOT` since `ROOT` is the
- Liferay application itself. Also, don't delete `marketplace-portlet` since you
- can use the Marketplace portlet to download any plugins that you decide to use
- in the future. 
+![Tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
+Community Edition comes bundled with many plugins. It's common to remove them to
+optimize the server's startup time. Just navigate to the
+`liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and remove
+any plugins that you don't need. Don't delete `ROOT` since `ROOT` is the Liferay
+application itself. Also, don't delete `marketplace-portlet` since you can use
+the Marketplace portlet to download any plugins that you decide to use in the
+future. 
 
 ---
 
@@ -151,5 +151,5 @@ You're set to start using your Liferay Plugins SDK!
 
 ## Next Steps
 
-[Using the Plugins SDK](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
+[Using the Plugins SDK](/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
 
