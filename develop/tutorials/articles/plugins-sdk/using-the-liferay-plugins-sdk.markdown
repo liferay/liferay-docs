@@ -1,11 +1,4 @@
-# Leveraging the Plugins SDK
-
-Java developers use a wide variety of tools and development environments.
-Liferay makes every effort to remain tool agnostic, so you can choose the tools
-that work best for you. For convenience, Liferay IDE includes a bundled Liferay
-Plugins Software Development Kit (SDK) but you can use the Liferay Plugins SDK
-all by itself. The Plugins SDK leverages Apache Ant as its build tool and can be
-used along with any text editor or Integrated Development Environment (IDE). 
+# Using the Plugins SDK [](id=using-the-plugins-sdk-lp-6-2-develop-tutorial)
  
 In this tutorial, we'll explain how to set up a Plugins SDK. We'll also discuss
 its file structure and available Ant targets and share some best practices to
@@ -13,7 +6,7 @@ help you get the most out of the Plugins SDK.
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
-## Installing the SDK
+## Installing the SDK [](id=installing-the-sdk-lp-6-2-develop-tutorial)
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
@@ -69,7 +62,7 @@ Installation steps:
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
-### Ant Configuration
+### Ant Configuration [](id=ant-configuration-lp-6-2-develop-tutorial)
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -124,7 +117,7 @@ referenced in your path.
 
 Now that Ant is configured, let's set up your Plugins SDK environment. 
 
-### Plugins SDK Configuration
+### Plugins SDK Configuration [](id=plugins-sdk-configuration-lp-6-2-develop-tutorial)
 
 Now we have the proper tools set up. Next, we need to configure our Plugins SDK.
 It needs to know the location of our Liferay installation so it can compile
@@ -159,7 +152,7 @@ matches your app server.
 
 Save the file. Next, let's consider the structure of the Plugins SDK. 
 
-## Structure of the SDK
+## Structure of the SDK [](id=structure-of-the-sdk-lp-6-2-develop-tutorial)
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
@@ -211,7 +204,7 @@ plugins:
 
 Next, let's create a plugin using Liferay SDK from a terminal environment. 
 
-## Creating Plugins with Liferay SDK
+## Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-lp-6-2-develop-tutorial)
 
 Liferay IDE makes it easy to create and deploy Liferay plugin projects since it
 includes a bundled Liferay SDK. If you don't want to use Eclipse, you can still
@@ -275,7 +268,7 @@ below.
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 
-## Best Practices
+## Best Practices [](id=best-practices-lp-6-2-develop-tutorial)
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
@@ -291,7 +284,7 @@ the Ant scripts, but this process makes it possible to create plugins with the
 Plugins SDK while conforming to the strict standards some organizations have for
 their Java projects. 
 
-## Next Steps
+## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-11)
 
 The Liferay Plugins SDK uses the Apache Ant build tool. If that makes you
 uncomfortable, consider using Liferay's Apache Maven archetypes to build your
