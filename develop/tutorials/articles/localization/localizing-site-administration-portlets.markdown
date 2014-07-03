@@ -21,7 +21,7 @@ example of localizing portlets to Spanish:
 
 You'll learn how to do this by running through the following tutorial!
 
-## Changing Site Administration Portlet Titles and Descriptions [](id=changing-site-administration-portlet-titles-and-des-lp-6-2-develop-tutorial)
+## Changing Site Administration Portlet Titles and Descriptions
 
 Next, you'll configure your project's portlets to display in Site
 Administration, and then you'll localize its title and description. You'll
@@ -29,12 +29,12 @@ create one resource bundle for the title and another one for the description.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If your project only has one
- portlet, it's best to put your resource bundle directly in the `content`
- folder. Specifying your bundle in the file `content/Language.properties` lets
- you leverage the Plugins SDK's language building capabilities, via
- right-clicking on the `Language.properties` file &rarr; *Liferay* &rarr; *Build
- Languages* in Developer Studio or executing `ant build-lang` from the terminal. 
+![Note](../../images/tip-pen-paper.png) **Note:** If your project only has one
+portlet, it's best to put your resource bundle directly in the `content`
+folder. Specifying your bundle in the file `content/Language.properties` lets
+you leverage the Plugins SDK's language building capabilities, via
+right-clicking on the `Language.properties` file &rarr; *Liferay* &rarr; *Build
+Languages* in Developer Studio or executing `ant build-lang` from the terminal. 
 
 ---
 
@@ -144,23 +144,23 @@ You're becoming an expert localizer!
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
- title is processed? If your portlet doesn't define a resource bundle or
- `javax.portlet.title`, the portal container next checks the `<portlet-info>`
- and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
- missing too, the `<portlet-name>` node value is rendered as the portlet title. 
+![Tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
+title is processed? If your portlet doesn't define a resource bundle or
+`javax.portlet.title`, the portal container next checks the `<portlet-info>`
+and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
+missing too, the `<portlet-name>` node value is rendered as the portlet title. 
 
 ---
 
 ---
 
- ![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using a Struts 
- portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
- engages a different title and description algorithm. Titles and long titles are
- pulled using the following respective keys:
+![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using a Struts 
+portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
+engages a different title and description algorithm. Titles and long titles are
+pulled using the following respective keys:
 
- - `javax.portlet.title`
- - `javax.portlet.long-title` 
+- `javax.portlet.title`
+- `javax.portlet.long-title` 
 
 ---
 
@@ -169,11 +169,11 @@ Administration page, created resource bundles specifically for each portlet,
 built your portlets' language translation files, and have verified your
 portlets' translated titles and descriptions! 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-2)
+## Next Steps
 
-[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+[Generating Language Properties File and Automated Translations](/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
-[Using Liferay's Language Keys](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
+[Using Liferay's Language Keys](/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
 
-[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+[Sharing Language Keys Between Your Portlets](/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 

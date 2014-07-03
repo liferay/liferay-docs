@@ -11,8 +11,8 @@ able to provide authorized portal users the ability to apply custom display
 settings to portlets. This saves you from having to change portlet configuration
 code every time you need new settings. 
 
-Be of good cheer! That's precisely what [Application Display
-Templates](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+Be of good cheer! That's precisely what
+[Application Display Templates](/use/-/knowledge_base/using-application-display-templates-lp-6-2-use-useportal)
 (ADTs) provide--the ability to add custom display settings to your portlets from
 the portal. This isn't actually a new concept in Liferay. In some portlets
 (e.g., *Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can
@@ -27,9 +27,7 @@ them to your custom portlets, too.
 
 [Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-<!--
-[OpenSocial Gadgets](OpenSocial Gadgets intro header is for the dev guide... replace after this is fixed. -Nick)
--->
+[OpenSocial Gadgets](/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
 [AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 

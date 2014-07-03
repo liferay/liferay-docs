@@ -4,8 +4,7 @@
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
 -->
 
-[Application Display
-Templates](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+[Application Display Templates](/use/-/knowledge_base/using-application-display-templates-lp-6-2-use-useportal)
 (ADTs) provide--the ability to add custom display settings to your portlets from
 the portal. This isn't actually a new concept in Liferay. In some portlets
 (e.g., *Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can
@@ -204,8 +203,8 @@ the display of your portlet. You can experiment by adding your own custom ADT.
     
 Once your script is uploaded into the portal and saved, users with the specified
 roles can select the template when they're configuring the display settings of
-your portlet on a page. You can visit the [Using Application Display
-Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+your portlet on a page. You can visit the
+[Using Application Display Templates](/use/-/knowledge_base/using-application-display-templates-lp-6-2-use-useportal)
 section in *Using Liferay Portal* for more details on using ADTs.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -259,8 +258,7 @@ customized for the portlet you chose. These variable references can be found on
 the left-side panel of the template editor. You can use them by simply placing
 your cursor where you'd like the variable placed, and clicking the desired
 variable to place it there. You can learn more about the template editor in the
-[Using Application Display
-Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+[Using Application Display Templates](/use/-/knowledge_base/using-application-display-templates-lp-6-2-use-useportal)
 section of *Using Liferay Portal*.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -287,9 +285,7 @@ performance.
 
 [Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-<!--
-[OpenSocial Gadgets](OpenSocial Gadgets intro header is for the dev guide... replace after this is fixed. -Nick)
--->
+[OpenSocial Gadgets](/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
 [AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 

@@ -13,10 +13,12 @@ simple, widely available, and easy to deploy.
 
 This section's tutorials include the following topics:
 
-- OpenSocial Gadget Basics
-- Accessing Third-Party Applications from Your Gadget
 - Gadget/Portlet Communication with PubSub
 - Liferay's Gadget Editing Environment
+<!--
+- OpenSocial Gadget Basics
+- Accessing Third-Party Applications from Your Gadget
+-->
 
 ## Next Steps 
 

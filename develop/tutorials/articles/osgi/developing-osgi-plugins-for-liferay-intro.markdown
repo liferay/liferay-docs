@@ -16,9 +16,9 @@ custom OSGi plugins for Liferay.
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
- experimental and unsupported. It should be considered a technology preview at
- this time. 
+![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
+experimental and unsupported. It should be considered a technology preview at
+this time. 
 
 ---
 
@@ -111,4 +111,4 @@ your Liferay Home directory.
 
 ## Next Steps
 
-[Plugin Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en)
+[Plugin Management](/use/-/knowledge_base/plugin-management-lp-6-2-use-useportal)

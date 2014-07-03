@@ -17,7 +17,8 @@ How's that for convenience!
 Of course, it's possible to install the Remote IDE Connector application on a
 production server, but it creates an unnecessary security risk, so we don't
 recommend it. On a production server, you shouldn't update, or hot-fix, plugins
-using the adapter; your portal system administrator should use normal [plugin management](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en)
+using the adapter; your portal system administrator should use normal
+[plugin management](/use/-/knowledge_base/plugin-management-lp-6-2-use-useportal)
 mechanism to apply plugin updates and fixes. 
 
 This tutorial uses the Remote Server Adapter on Liferay Portal bundled with
@@ -25,6 +26,8 @@ Apache Tomcat, but you can use the adapter with Liferay Portal running on any
 application server Liferay Portal supports. 
 
 Now you're ready to configure and use the Remote Server Adapter! 
+
+## Configuring and Using the Remote Server Adapter
 
 To configure and use the Remote Server Adapter, follow these steps: 
 
@@ -99,4 +102,11 @@ Great! Now that you know how to use Liferay IDE to deploy plugin projects to
 remote servers, you can more easily integrate your remote portal instances into 
 your testing workflow. 
 
+## Next Steps
+
 <!-- TODO Add link to other deployment tutorials. Jim -->
+
+[Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
+
+[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+

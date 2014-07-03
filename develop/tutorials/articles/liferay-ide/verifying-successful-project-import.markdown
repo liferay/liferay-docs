@@ -38,6 +38,6 @@ Congratulations on verifying that your project imported properly!
 
 ## Next Steps 
 
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
 
 <!-- TODO add link to other deployment tutorials as they become available. Jim -->

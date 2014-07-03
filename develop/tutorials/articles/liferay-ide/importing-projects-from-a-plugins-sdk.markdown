@@ -13,10 +13,10 @@ Plugins SDK project into your workspace.
 <!--
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
- you've created projects with the Plugins SDK and are familiar with the
- directory structure used by the Plugins SDK. If you need to, check out the
- *Plugins SDK* section of this chapter; it comes right after this section. 
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
+you've created projects with the Plugins SDK and are familiar with the
+directory structure used by the Plugins SDK. If you need to, check out the
+*Plugins SDK* section of this chapter; it comes right after this section. 
 
 ---
 -->
@@ -102,6 +102,6 @@ Congratulations on importing *multiple* Liferay projects into your workspace!
 
 ## Next Steps 
 
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
 
 <!-- TODO add link to other deployment tutorials as they become available. Jim -->
