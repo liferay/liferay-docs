@@ -91,3 +91,15 @@ example of a blogs entry being removed:
         ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
 
 Great! Now you know how to work with resource permissions! 
+
+## Next Steps 
+
+<!-- Change link once header id is generated -->
+
+<!--
+[Exposing the Permission Interface to Users](/tutorials/-/knowledge_base/exposing-the-permission-interface-lp-6-2-develop-tutorial) 
+-->
+
+[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
