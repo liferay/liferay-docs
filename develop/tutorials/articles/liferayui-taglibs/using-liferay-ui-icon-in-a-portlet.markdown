@@ -4,9 +4,10 @@ By using meaningful graphics as icons, you can draw your users' attention
 towards important parts of your portlet. Using either Liferay's icons or your 
 own custom icons also enhances your portlet's overall design. Think of it as 
 wrapping your portlet up in a nice, user-friendly bow. You can use icons in your 
-portlets by leveraging the `liferay-ui:icon` taglib. 
+portlets by leveraging the `liferay-ui:icon` taglib. See the figure below for an 
+example of icons being used in a portlet.
 
-<!-- Insert screenshot of icons in a portlet -->
+![Figure 1: Here's an example of a portlet that uses an icon.](../../images/liferay-ui-icon-01.png)
 
 Now it's time to go icon crazy! Get started by learning how to use Liferay's 
 icons in your portlets. 
@@ -49,14 +50,14 @@ something like this:
 
     <liferay-ui:icon image="add"/>
     ```
+The figure below shows what the add icon could look like in a portlet:
 
-<!-- Insert screenshot of what this results in -->
+![Figure 2: Here's what the add icon looks like in a portlet.](../../images/liferay-ui-icon-02.png)
 
 Congrats! You have successfully added a icon to a portlet! Note that the icon in 
-the above example appears near the top of the portlet. This is because 
-`liferay-ui:icon` is near the top of the portlet. The position of the icon in 
-the portlet is dictated by the position of `liferay-ui:icon` relative to other 
-items in `view.jsp`.
+the above example appears near the top of the portlet. The position of the icon 
+in the portlet is dictated by the position of `liferay-ui:icon` relative to 
+other items in `view.jsp`.
 
 There are a few more attributes for `liferay-ui:icon` that can take your design 
 to the next level. What if you want to link an icon to a site? No problem! Just 
@@ -75,6 +76,10 @@ icon. Doing so takes them to the Liferay home page.
 
     <liferay-ui:icon image="add" url="http://www.liferay.com" message="click here"/>
 
+Take a look at the figure below to see what that may look like:
+
+![Figure 3: Here's what the add icon looks like with the changes above when hovered over.](../../images/liferay-ui-icon-03.png)
+    
 Now that you have an understanding of how to use Liferay's icons in your
 portlet, it's time to use some of your own!
 
