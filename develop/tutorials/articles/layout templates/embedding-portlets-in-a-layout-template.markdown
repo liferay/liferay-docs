@@ -34,7 +34,7 @@ First, you'll need to specify some attributes of the embedded portlet:
 
 ![Figure 1: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
-Here's a description of the portlets we're embedding in the layout:
+Here's a description of the portlets embedded in the layout:
 
 | Portlet      | ID                         | Row | Column | Type   | Instanceable | Context |
 -------------- | -------------------------- | --- | ------ | ------ | ------------ | ------- |
