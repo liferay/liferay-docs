@@ -6,20 +6,20 @@ files, JavaScript files, CSS files, and images.
 
 ---
 
- ![Important](../../images/tip-pen-paper.png) **Important:** Some resources have
- additional requisites:
+![Important](../../images/tip-pen-paper.png) **Important:** Some resources have
+additional requisites:
 
- - ***JSPF:*** Changes won't take effect unless you modify the JSP that
-   includes it. 
- - ***CSS:*** When modifying a CSS file imported by another CSS file, the
- changes won't take effect unless you modify the parent CSS file (usually
- `main.css`). 
+- ***JSPF:*** Changes won't take effect unless you modify the JSP that
+  includes it. 
+- ***CSS:*** When modifying a CSS file imported by another CSS file, the
+  changes won't take effect unless you modify the parent CSS file (usually
+  `main.css`). 
 
 ---
 
 Replacing a portal JSP is a simple task with hooks. 
 
-## Replacing a Liferay Portal JSP [](id=replacing-a-liferay-portal-jsp-lp-6-2-develop-tutorial)
+## Replacing a Liferay Portal JSP
 
 Suppose you need to manually override one of Liferay Portal's JSPs, like its
 Terms of Use page. You can accomplish this by following these steps: 
@@ -99,4 +99,4 @@ Congratulations on overriding a Liferay Portal JSP!
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-10)
 
-[Customizing JSPs by Extending the Original](www.liferay.com)
+[Customizing JSPs by Extending the Original](/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)

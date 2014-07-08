@@ -12,7 +12,7 @@ the original JSP in the new JSP.
 In this tutorial, you'll learn how to extend an original Liferay JSP using a
 hook. 
 
-## Extending a Liferay JSP [](id=extending-a-liferay-jsp-lp-6-2-develop-tutorial)
+## Extending a Liferay JSP
 
 In this demonstration, you'll customize a hook project to extend a Liferay JSP,
 while leaving the original JSP untouched. Let's get started! 
@@ -102,4 +102,10 @@ The edits you made in the `custom_jsps/[JSP_file's_path]` are now visible in
 your Liferay Portal. In Liferay Portal, The hook you created extends the
 original JSP's content with the version of the content you created. You now know
 how to extend an original Liferay JSP using a hook! 
+
+## Next Steps
+
+[Overriding Web Resources](/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
+
+[Performing a Custom Action Using a Hook](/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
 
