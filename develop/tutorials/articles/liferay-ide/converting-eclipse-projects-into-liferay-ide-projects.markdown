@@ -20,9 +20,10 @@ This tutorial shows the steps required to accomplish this.
     ![Note](../../images/tip-pen-paper.png) **Note:** If no convert action is
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
-    for it). For instructions on resolving these issues, see the [Faceting a Plugin Project for Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+    for it). For instructions on resolving these issues, see the
+    [Faceting a Plugin Project for Liferay IDE](/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
     tutorial and the 
-    [Verifying Successful Project Import](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+    [Verifying Successful Project Import](/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
     tutorial. 
 
     ---
@@ -42,11 +43,11 @@ just as you would any other Liferay project.
 
 ## Next Steps 
 
-[Verifying Successful Project Import](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+[Verifying Successful Project Import](/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
 
-[Faceting a Plugin Project for Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+[Faceting a Plugin Project for Liferay IDE](/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
 
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
 
 <!-- TODO - add links to deployment tutorials. Jim -->
 

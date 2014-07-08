@@ -20,7 +20,7 @@ their custom portlet:
 
 Let's get started by implementing this functionality into your portlet!
 
-## Implementing Language Keys for Your Portlet [](id=implementing-language-keys-for-your-portlet-lp-6-2-develop-tutorial)
+## Implementing Language Keys for Your Portlet
 
 Before you get started implementing our own language key, you'll want to learn
 the components of a Liferay UI language key.
@@ -97,12 +97,11 @@ That's all you need to do to leverage Liferay's core localization keys. In this
 tutorial, you learned about Liferay core language keys, and how to implement in
 a Liferay portlet. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-4)
+## Next Steps
 
-[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+[Generating Language Properties File and Automated Translations](/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
 
+[Localizing Site Administration Portlets](/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
 
-[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
-
-[Sharing Language Keys Between Your Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+[Sharing Language Keys Between Your Portlets](/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 

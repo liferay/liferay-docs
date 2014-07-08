@@ -12,11 +12,12 @@ mantle--which is made of wood! Remember Lenore II, softly purring on the mantle?
 She's going to cook just like the original Lenore if you don't do something! But
 it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
-"Tell this soul with sorrow laden if, within the distant Aidenn,
-It shall clasp a sainted kitten whom the angels named Lenore II--"
+In the words of Edgar Allen Poe (adapted from The Raven): "Tell this soul with
+sorrow laden if, within the distant Aidenn, It shall clasp a sainted kitten whom
+the angels named Lenore II--"
 
 In memory of the late, now crispy Lenore II, it's time to create a layout
-template plugin with Maven. 
+template plugin with Maven.
 
 ## Creating a Layout Template Plugin
 
@@ -66,8 +67,8 @@ Location   | Maven project     | Plugins SDK project |
 ---------- | ----------------- | ------------------- |
 Web source | `src/main/webapp` | `docroot` |
 
-You've passed your trial by fire (the cat thanks you), developing yet another
-plugin type with Maven. Way to go!
+You've passed your trial by fire (your new cat, Lenore III, thanks you),
+developing yet another plugin type with Maven. Way to go!
 
 ## Next Steps
 
@@ -78,13 +79,13 @@ plugin type with Maven. Way to go!
 [Creating Liferay Themes and Layout Templates](http://www.liferay.com)
 -->
 
-[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Hook Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Theme Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Plugins with Additional Maven Archetypes](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
+[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
 

@@ -1,4 +1,4 @@
-# Developing Apps with Liferay IDE
+# Developing Apps with Liferay IDE [](id=developing-apps-with-liferay-ide-lp-6-2-develop-learnpath)
 
 To develop an application, you need a development environment. Liferay
 provides a great environment with Liferay IDE. 
@@ -16,8 +16,9 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 
 2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page. Copy
    the URL to the update site you're interested in (stable or milestone). 
+    milestone). 
 
-    ![Figure 1.x: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
+    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
 3. Go back to Eclipse and click the *Add* button to add a repository. 
 
@@ -79,7 +80,7 @@ that the IDE uses behind the scenes to manage your Liferay projects. This is jus
 to your system. We recommend unzipping it next to the `bundles` folder you
 created in the last step. 
 
-![Figure 1.x: The directory structure for Liferay development is pretty simple.](../../images/developer-directory-structure.png)
+![Figure 2: The directory structure for Liferay development is pretty simple.](../../images/developer-directory-structure.png)
 
 When you've finished installing everything, you should have a folder structure
 like the one above. Next, you need to get all these components talking to each
@@ -91,12 +92,12 @@ Liferay perspective.
 2. The tab on the low left corner is labeled *Servers*. Click the link to create
 a new server. 
 
-	![Figure 1.x: The Servers tab has no servers by default.](../../images/lds-servers.png)
+	![Figure 3: The Servers tab has no servers by default.](../../images/lds-servers.png)
 
 3. In the dialog that appears, select the server that matches the runtime you
 downloaded and installed. Click *Next*. 
 
-	![Figure 1.x: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
+	![Figure 4: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
 
 4. Browse to the Tomcat folder inside the runtime and click *Finish*. 
 
@@ -129,11 +130,7 @@ click *OK*.
 You've now registered your Plugins SDK, and you are ready to begin
 developing Liferay applications! 
 
-
 ## Next Steps
 
-Nowt that you have your development environment installed, you'll want to jump
-in and create an app: 
-
-[Writing Your First Liferay Application](http://www.liferay.com)
+[Writing Your First Liferay Application](https://www-ldn.liferay.com/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath)
 

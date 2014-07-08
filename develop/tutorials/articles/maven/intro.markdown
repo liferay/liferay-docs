@@ -1,5 +1,55 @@
 # Maven [](id=maven-lp-6-2-develop-tutorial)
 
+I'm giving you fair warning. I was recently reading the famous poem by Edgar
+Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
+references to the poem, sometimes accurately, and other times adapted for my own
+narrative. I hope you enjoy reading it as much as I enjoyed writing it. Either
+way, you can let us know what you think by leaving a comment. If you want to
+find out how our fictional protagonists cat fares (introduced in a moment), read
+through our Maven tutorials and you'll discover her fate.
+
+"Once upon a midnight dreary, while I pondered weak and weary..."
+
+Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,
+hot beverage in hand. Shadows dance on the tapestry-covered wall, and your cat
+*Lenore II* is purring softly from her favorite perch atop the mantle.
+
+"Ah, distinctly I remember it was in the bleak December..."
+
+At least you're passing this cold December night in grand style (in front of
+your computer customizing Liferay Portal, of course). 
+
+"Eagerly I wished the morrow;--vainly I had sought to borrow 
+From *Liferay* surcease of sorrow--sorrow for my last Lenore--" 
+
+We're sorry to hear your previous cat, the original *Lenore*, has passed away.
+Just take good care of Lenore II, would you? 
+
+"And the silken sad uncertain rustling of each purple curtain
+Thrilled me--filled me with *Ant*astic terrors never felt before;"
+
+Okay, now you're being melodramatic; nobody can disdain *Apache Ant* that
+vehemently. What about customizing Liferay Portal using the Ant-based Plugins
+SDK could make you feel sadness and terror? 
+
+"Deep into that darkness peering, long I stood there wondering, fearing..."
+
+We get it! You don't want to use our Ant-based Plugins SDK. Give us surcease
+from the melodrama, okay? 
+
+"Open here I flung the shutter, when, with many a flirt and flutter,
+In there stepped a stately *Maven* of the saintly days of yore."
+
+So, you'd rather use Apache Maven to develop your Liferay plugins? 
+
+"But *Apache Maven* still beguiling all my sad soul into smiling..."
+
+Edgar Allen Poe liked Maven too, so you're in good company. Trust us; we know.
+But if your soul was made sad because you thought you had to use Liferay's
+Ant-based Plugins SDK to develop your plugins, Apache Maven will make your sad
+soul smile. And while you're at it, take care of Lenore II for all of us animal
+lovers, would you? 
+
 As an alternative to developing plugins using the Plugins SDK, you can leverage
 the Apache Maven build management framework. Here's a list of some exciting
 Maven features: 
@@ -54,7 +104,7 @@ You'll dive into these topics in the Maven tutorials.
 
 ## Next Steps
 
-[Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+[Setting Up Maven](/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
 
-[Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
+[Installing and Managing Liferay Maven Artifacts](/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
 

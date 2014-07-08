@@ -1,18 +1,23 @@
 # Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
+Lets use the style of Egar Allen Poe's poem The Raven to help us explain Liferay
+theme development with Maven. To recap, since our narrative is a bit different
+than Poe's original, so far we have you and your cat, Lenore II, sitting by a
+fire on a cold winter evening.
+
 So you're sitting in your armchair next to the fire, as the Maven tutorials
 section
 [introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
 described. Shadows dance on the tapestry-covered wall, and Lenore II (your cat)
 is purring atop the mantle. Yes, you're passing this cold winter's night in
-grand style (in front of your computer, of course). Now imagine yourself sitting
-on a cold hard metal chair inside an off-white cubicle with empty walls (you're
-still in front of your computer, of course). These two descriptions paint two
-very different pictures, but both describe what you're doing (sitting and
-computing). Changing the "scenery" of your portal sets the mood for your users.
-This tutorial shows you how to develop your own theme plugin (i.e., your
-"scenery") using Maven so your portal has a lasting impression on anyone who
-visits. 
+grand style (in front of your computer, of course). Now imagine yourself
+sitting on a cold hard metal chair inside an off-white cubicle with empty walls
+(you're still in front of your computer, of course). These two descriptions
+paint two very different pictures, but both describe what you're doing (sitting
+and computing). Changing the "scenery" of your portal sets the mood for your
+users.  This tutorial shows you how to develop your own theme plugin (i.e.,
+your "scenery") using Maven so your portal has a lasting impression on anyone
+who visits. 
 
 ## Creating a Theme Plugin
 
@@ -138,10 +143,10 @@ For more information on Liferay themes and their settings, please refer to the
 [Creating Themes](http://www.liferay.com) tutorial. 
 -->
 
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Hook Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+[Developing Liferay Layout Template Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
 
-[Developing Liferay Plugins with Additional Maven Archetypes](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
+[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)

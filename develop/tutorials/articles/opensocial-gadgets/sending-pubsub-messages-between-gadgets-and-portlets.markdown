@@ -224,3 +224,7 @@ into the `addresses.jsp` file:
 Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your
 user's experience. 
+
+## Next Steps 
+
+[Using the Gadget Editor](/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)
