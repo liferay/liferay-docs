@@ -24,6 +24,11 @@ In addition, there are some Maven *goals* Liferay has provided:
 
 You now have plenty of archetypes at your disposal! 
 
+If you've been following our story that's dispersed throughout our Maven
+tutorials, you might be concerned for the cat we introduced, Lenore II. Alas,
+your concern is warranted. I'll let Edgar Allen Poe (from The Raven) break the
+news to you:
+
 "But the chair whose violet lining with the lamp-light gloating o'er,
 Lenore II shall press, ah, nevermore!"
 
@@ -54,10 +59,10 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 
 ## Next Steps
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
 
-[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
