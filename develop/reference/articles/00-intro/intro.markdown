@@ -34,8 +34,8 @@ at <http://docs.liferay.com/faces/>.
 Liferay provides definitions for its configuration files and deployment
 descriptors. 
 
-- [DTDs](http://docs.liferay.com/portal/6.2/definitions/) describe the XML files
-used in configuring Liferay apps, Liferay plugins, and Liferay Portal. 
+- [DTDs](http://docs.liferay.com/portal/6.2/definitions/) describes the XML
+files used in configuring Liferay apps, Liferay plugins, and Liferay Portal. 
 
 - [liferay-plugin-package_6_2_0.properties](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
 defines properties used for configuring deployment of Liferay plugins. It's
