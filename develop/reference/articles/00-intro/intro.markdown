@@ -1,18 +1,18 @@
 # Reference [](id=reference-lp-6-2-develop-reference)
 
-This page provides describes Liferay's reference documentation. They're here to
-help you configure portals, invoke Liferay services, leverage tag libraries, and
-package apps for Liferay Marketplace. 
+This page describes and provides access to Liferay's reference documentation.
+You can refer to this documentation as you configure portals, invoke Liferay
+services, leverage tag libraries, and package apps for Liferay Marketplace. 
 
 ## APIs
 
-API reference materials describe Liferay's Java API, JavaScript tag libraries,
-and JSF tags. 
+Liferay describes the Liferay Portal Java API, JavaScript tag libraries, and JSF
+tags. 
 
-- [Liferay Public Java API](http://docs.liferay.com/portal/6.2/javadocs/)
-describes packages and classes for you to use in your Liferay plugins. 
+- [Public Java API](http://docs.liferay.com/portal/6.2/javadocs/)
+describes Liferay packages and classes for you to use in your Liferay plugins. 
 
-- [Liferay's Internal Java API](http://docs.liferay.com/portal/6.2/javadocs-all/)
+- [Internal Java API](http://docs.liferay.com/portal/6.2/javadocs-all/)
 includes all the classes in the Liferay core, and is primarily intended for
 understanding Liferay or contributing to the Liferay core. Many of the classes
 referenced in this documentation should not be referenced directly from Liferay
@@ -34,8 +34,8 @@ at <http://docs.liferay.com/faces/>.
 Liferay provides definitions for its configuration files and deployment
 descriptors. 
 
-- [Liferay DTDs](http://docs.liferay.com/portal/6.2/definitions/) describe the 
-XML files used in configuring Liferay apps, Liferay plugins, and Liferay Portal. 
+- [DTDs](http://docs.liferay.com/portal/6.2/definitions/) describe the XML files
+used in configuring Liferay apps, Liferay plugins, and Liferay Portal. 
 
 - [liferay-plugin-package_6_2_0.properties](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
 defines properties used for configuring deployment of Liferay plugins. It's
