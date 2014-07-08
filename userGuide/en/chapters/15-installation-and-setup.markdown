@@ -226,10 +226,10 @@ Detailed instructions can be found under [Installing Plugins Manually](https://w
 ### Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-liferay-portal-6-2-user-guide-15-en)
 
 If your application server does not support hot deploy, you can't leverage
-Liferay’s auto deploy feature. You can, however, manually deploy the
+Liferay's auto deploy feature. You can, however, manually deploy the
 plugin in two steps:
 
-1. Use Liferay’s tools to “pre-deploy” the file.
+1. Use Liferay's tools to "pre-deploy" the file.
 
 2. Then use your app server's tools to do the actual deployment.
 
