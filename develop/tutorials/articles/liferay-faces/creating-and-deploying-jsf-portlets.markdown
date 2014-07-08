@@ -169,9 +169,8 @@ as a *Plus* symbol in the top right hand section of your browser. Then click
 *Add*. Your portlet appears on the page, but Liferay Faces lets you know when a
 UI component requires a page refresh to render the first time. 
 
-Refresh the page and the portal renders your JSF portlet. Now select the input 
-field and the calendar will pop-up, giving you a user-friendly ui to select a
-date.
+Refresh the page and the portal renders your JSF portlet. Once selecting the
+input field, the calendar displays a user-friendly UI to select a date.
 
 ![Figure 2: Deploying and rendering JSF portlet is a snap in Liferay Portal.](../../images/jsf-primefaces-portlet-with-calendar.png) 
 
