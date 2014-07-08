@@ -101,33 +101,13 @@ you specified doesn't end in "-portlet".
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
- control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
- good moment to do an initial check-in of your changes. After building the
- plugin for deployment, several additional files will be generated that should
- *not* be managed by a source control system. 
+![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
+good moment to do an initial check-in of your changes. After building the plugin
+for deployment, several additional files will be generated that should *not* be
+managed by a source control system. 
 
 ---
-
-Now you have a Liferay portlet project. You still need to deploy the project to
-your Liferay Server. Liferay IDE provides multiple options: you can drag and
-drop your project onto the server or right click the server and select *Add and
-Remove...*. It's almost as easy using an Ant target directly from the Plugins
-SDK. Simply open a terminal window, navigate to your `portlets/[portlet name]`
-directory in your Plugins SDK and enter
-
-    ant deploy
-
-A BUILD SUCCESSFUL message indicates that Ant built your portlet's WAR file and
-that it's now being deployed. If you switch to the terminal window running
-Liferay, within a few seconds you should see the message `1 portlet for
-[portlet name] is available for use`.  If not, double-check your configuration. 
-
-Adding your newly deployed portlet plugin from within Liferay Portal is easy. In
-your web browser, log in to the portal. Click on the *Add* icon on the left side
-of the page and select the *Applications* tab. Select your portlet's category
-(*Sample* is the default category), and then click *Add* next to *[portlet
-title]*. Your portlet appears in the page. 
 
 Lastly, consider some common practices used in developing plugins with the SDK.
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
@@ -153,9 +133,13 @@ foundational development tool: the Plugins SDK.
 
 ## Next Steps
 
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
+To deploy your plugins to the portal, you can follow the 
+[Deploying Plugins to a Local Portal Instance](/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance-lp-6-2-develop-tutorial)
+tutorial.
 
-[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
-
-[Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+If you're interested in exploring another command-line development environment
+instead of learning Liferay IDE, which is discussed in the next section of
+tutorials, check out the
+[Developing Plugins with Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+tutorial.
 
