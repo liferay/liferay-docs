@@ -406,7 +406,7 @@ entry.
 
 ---
 
-![tip](../../images/01-tip.png)**Note:** Clearly, portlet preferences and string
+![tip](../../images/01-tip.png) **Note:** Clearly, portlet preferences and string
 delimiters are not the best way to implement this. To learn about a proper
 implementation for saving data, follow the *Writing a Data-Driven Application*
 learning path. 
