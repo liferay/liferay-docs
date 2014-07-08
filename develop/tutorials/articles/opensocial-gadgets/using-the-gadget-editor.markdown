@@ -64,3 +64,7 @@ comfort of your own Liferay Portal instance. You can facilitate the social
 interactions on your sites and increase your portal content's popularity across
 your social network by leveraging the power of OpenSocial gadgets and the gadget
 editor.
+
+## Next Steps 
+
+[Sending PubSub Messages Between Gadgets and Portlets](/tutorials/-/knowledge_base/sending-pubsub-messages-between-gadgets-and-portlet-lp-6-2-develop-tutorial)

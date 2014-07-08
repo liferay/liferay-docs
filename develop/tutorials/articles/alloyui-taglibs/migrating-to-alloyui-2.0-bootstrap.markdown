@@ -387,8 +387,6 @@ monotonous conversion work for you.
 
 ## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-1)
 
-No matter which Liferay APIs you're using, you'll need to understand Liferay's
-deprecation policy. That way you'll know when methods from our API's are
-deprecated, and you can make any necessary changes. To learn about Liferay's
-release process and deprecation policy, please refer to the [Understanding
-Liferay's Releases and Deprecation Policy](www.liferay.com) tutorial.
+[Understanding Liferay's Releases](/tutorials/-/knowledge_base/understanding-liferays-releases-lp-6-2-develop-tutorial)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

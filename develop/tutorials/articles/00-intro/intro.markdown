@@ -1,4 +1,4 @@
-# Tutorials [](id=tutorials-lp-6-2-develop-tutorial)
+# Introduction [](id=tutorials-lp-6-2-develop-tutorial)
 
 Liferay's tutorials show you how to build powerful robust apps using the
 Liferay's frameworks and APIs. The tutorials compliment the fundamentals that
