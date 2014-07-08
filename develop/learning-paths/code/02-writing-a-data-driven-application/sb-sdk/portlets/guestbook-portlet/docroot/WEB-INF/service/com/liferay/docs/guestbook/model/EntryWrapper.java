@@ -14,6 +14,7 @@
 
 package com.liferay.docs.guestbook.model;
 
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
@@ -49,6 +50,7 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("entryId", getEntryId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -58,7 +60,7 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
 		attributes.put("email", getEmail());
-		attributes.put("entry", getEntry());
+		attributes.put("message", getMessage());
 		attributes.put("guestbookId", getGuestbookId());
 
 		return attributes;
@@ -66,6 +68,12 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long entryId = (Long)attributes.get("entryId");
 
 		if (entryId != null) {
@@ -120,10 +128,10 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 			setEmail(email);
 		}
 
-		String entry = (String)attributes.get("entry");
+		String message = (String)attributes.get("message");
 
-		if (entry != null) {
-			setEntry(entry);
+		if (message != null) {
+			setMessage(message);
 		}
 
 		Long guestbookId = (Long)attributes.get("guestbookId");
@@ -151,6 +159,26 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_entry.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the uuid of this entry.
+	*
+	* @return the uuid of this entry
+	*/
+	@Override
+	public java.lang.String getUuid() {
+		return _entry.getUuid();
+	}
+
+	/**
+	* Sets the uuid of this entry.
+	*
+	* @param uuid the uuid of this entry
+	*/
+	@Override
+	public void setUuid(java.lang.String uuid) {
+		_entry.setUuid(uuid);
 	}
 
 	/**
@@ -356,23 +384,23 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	}
 
 	/**
-	* Returns the entry of this entry.
+	* Returns the message of this entry.
 	*
-	* @return the entry of this entry
+	* @return the message of this entry
 	*/
 	@Override
-	public java.lang.String getEntry() {
-		return _entry.getEntry();
+	public java.lang.String getMessage() {
+		return _entry.getMessage();
 	}
 
 	/**
-	* Sets the entry of this entry.
+	* Sets the message of this entry.
 	*
-	* @param entry the entry of this entry
+	* @param message the message of this entry
 	*/
 	@Override
-	public void setEntry(java.lang.String entry) {
-		_entry.setEntry(entry);
+	public void setMessage(java.lang.String message) {
+		_entry.setMessage(message);
 	}
 
 	/**
@@ -516,6 +544,11 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		}
 
 		return false;
+	}
+
+	@Override
+	public StagedModelType getStagedModelType() {
+		return _entry.getStagedModelType();
 	}
 
 	/**

@@ -253,6 +253,23 @@ public class ClpSerializer {
 			return new SystemException();
 		}
 
+		if (className.equals("com.liferay.docs.guestbook.EntryEmailException")) {
+			return new com.liferay.docs.guestbook.EntryEmailException();
+		}
+
+		if (className.equals("com.liferay.docs.guestbook.EntryMessageException")) {
+			return new com.liferay.docs.guestbook.EntryMessageException();
+		}
+
+		if (className.equals("com.liferay.docs.guestbook.EntryNameException")) {
+			return new com.liferay.docs.guestbook.EntryNameException();
+		}
+
+		if (className.equals(
+					"com.liferay.docs.guestbook.GuestbookNameException")) {
+			return new com.liferay.docs.guestbook.GuestbookNameException();
+		}
+
 		if (className.equals("com.liferay.docs.guestbook.NoSuchEntryException")) {
 			return new com.liferay.docs.guestbook.NoSuchEntryException();
 		}

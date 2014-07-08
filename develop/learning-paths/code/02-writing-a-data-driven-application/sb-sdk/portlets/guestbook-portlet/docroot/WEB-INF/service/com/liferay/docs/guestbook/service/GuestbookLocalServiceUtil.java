@@ -188,6 +188,34 @@ public class GuestbookLocalServiceUtil {
 	}
 
 	/**
+	* Returns the guestbook with the matching UUID and company.
+	*
+	* @param uuid the guestbook's UUID
+	* @param companyId the primary key of the company
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchGuestbookByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fetchGuestbookByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the guestbook matching the UUID and group.
+	*
+	* @param uuid the guestbook's UUID
+	* @param groupId the primary key of the group
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchGuestbookByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fetchGuestbookByUuidAndGroupId(uuid, groupId);
+	}
+
+	/**
 	* Returns the guestbook with the primary key.
 	*
 	* @param guestbookId the primary key of the guestbook
@@ -207,6 +235,38 @@ public class GuestbookLocalServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService().getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns the guestbook with the matching UUID and company.
+	*
+	* @param uuid the guestbook's UUID
+	* @param companyId the primary key of the company
+	* @return the matching guestbook
+	* @throws PortalException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook getGuestbookByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getGuestbookByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the guestbook matching the UUID and group.
+	*
+	* @param uuid the guestbook's UUID
+	* @param groupId the primary key of the group
+	* @return the matching guestbook
+	* @throws PortalException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook getGuestbookByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getGuestbookByUuidAndGroupId(uuid, groupId);
 	}
 
 	/**
@@ -273,6 +333,26 @@ public class GuestbookLocalServiceUtil {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return getService().invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> getGuestbooks(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getGuestbooks(groupId);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> getGuestbooks(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getGuestbooks(groupId, start, end);
+	}
+
+	public static com.liferay.docs.guestbook.model.Guestbook addGuestbook(
+		long userId, java.lang.String name,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addGuestbook(userId, name, serviceContext);
 	}
 
 	public static void clearService() {

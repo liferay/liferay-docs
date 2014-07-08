@@ -169,6 +169,32 @@ public interface EntryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Returns the entry with the matching UUID and company.
+	*
+	* @param uuid the entry's UUID
+	* @param companyId the primary key of the company
+	* @return the matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.liferay.docs.guestbook.model.Entry fetchEntryByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the entry matching the UUID and group.
+	*
+	* @param uuid the entry's UUID
+	* @param groupId the primary key of the group
+	* @return the matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.liferay.docs.guestbook.model.Entry fetchEntryByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Returns the entry with the primary key.
 	*
 	* @param entryId the primary key of the entry
@@ -185,6 +211,36 @@ public interface EntryLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the entry with the matching UUID and company.
+	*
+	* @param uuid the entry's UUID
+	* @param companyId the primary key of the company
+	* @return the matching entry
+	* @throws PortalException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.liferay.docs.guestbook.model.Entry getEntryByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the entry matching the UUID and group.
+	*
+	* @param uuid the entry's UUID
+	* @param groupId the primary key of the group
+	* @return the matching entry
+	* @throws PortalException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.liferay.docs.guestbook.model.Entry getEntryByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
@@ -244,4 +300,25 @@ public interface EntryLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getEntriesCount(long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.liferay.docs.guestbook.model.Entry addEntry(long userId,
+		long guestbookId, java.lang.String name, java.lang.String email,
+		java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

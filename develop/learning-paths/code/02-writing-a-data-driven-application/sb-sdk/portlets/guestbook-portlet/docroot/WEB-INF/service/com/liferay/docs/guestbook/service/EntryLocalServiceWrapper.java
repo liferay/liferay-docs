@@ -186,6 +186,36 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 	}
 
 	/**
+	* Returns the entry with the matching UUID and company.
+	*
+	* @param uuid the entry's UUID
+	* @param companyId the primary key of the company
+	* @return the matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Entry fetchEntryByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.fetchEntryByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the entry matching the UUID and group.
+	*
+	* @param uuid the entry's UUID
+	* @param groupId the primary key of the group
+	* @return the matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Entry fetchEntryByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.fetchEntryByUuidAndGroupId(uuid, groupId);
+	}
+
+	/**
 	* Returns the entry with the primary key.
 	*
 	* @param entryId the primary key of the entry
@@ -206,6 +236,40 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _entryLocalService.getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns the entry with the matching UUID and company.
+	*
+	* @param uuid the entry's UUID
+	* @param companyId the primary key of the company
+	* @return the matching entry
+	* @throws PortalException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Entry getEntryByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntryByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the entry matching the UUID and group.
+	*
+	* @param uuid the entry's UUID
+	* @param groupId the primary key of the group
+	* @return the matching entry
+	* @throws PortalException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Entry getEntryByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntryByUuidAndGroupId(uuid, groupId);
 	}
 
 	/**
@@ -278,6 +342,37 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return _entryLocalService.invokeMethod(name, parameterTypes, arguments);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntries(groupId, guestbookId);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntries(groupId, guestbookId, start, end);
+	}
+
+	@Override
+	public int getEntriesCount(long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntriesCount(groupId, guestbookId);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Entry addEntry(long userId,
+		long guestbookId, java.lang.String name, java.lang.String email,
+		java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.addEntry(userId, guestbookId, name, email,
+			message, serviceContext);
 	}
 
 	/**

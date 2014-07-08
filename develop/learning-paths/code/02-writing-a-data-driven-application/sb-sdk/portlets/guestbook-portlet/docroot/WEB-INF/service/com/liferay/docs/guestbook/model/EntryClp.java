@@ -19,6 +19,7 @@ import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
@@ -74,6 +75,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("entryId", getEntryId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -83,7 +85,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
 		attributes.put("email", getEmail());
-		attributes.put("entry", getEntry());
+		attributes.put("message", getMessage());
 		attributes.put("guestbookId", getGuestbookId());
 
 		return attributes;
@@ -91,6 +93,12 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long entryId = (Long)attributes.get("entryId");
 
 		if (entryId != null) {
@@ -145,16 +153,39 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 			setEmail(email);
 		}
 
-		String entry = (String)attributes.get("entry");
+		String message = (String)attributes.get("message");
 
-		if (entry != null) {
-			setEntry(entry);
+		if (message != null) {
+			setMessage(message);
 		}
 
 		Long guestbookId = (Long)attributes.get("guestbookId");
 
 		if (guestbookId != null) {
 			setGuestbookId(guestbookId);
+		}
+	}
+
+	@Override
+	public String getUuid() {
+		return _uuid;
+	}
+
+	@Override
+	public void setUuid(String uuid) {
+		_uuid = uuid;
+
+		if (_entryRemoteModel != null) {
+			try {
+				Class<?> clazz = _entryRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUuid", String.class);
+
+				method.invoke(_entryRemoteModel, uuid);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
 		}
 	}
 
@@ -376,21 +407,21 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 	}
 
 	@Override
-	public String getEntry() {
-		return _entry;
+	public String getMessage() {
+		return _message;
 	}
 
 	@Override
-	public void setEntry(String entry) {
-		_entry = entry;
+	public void setMessage(String message) {
+		_message = message;
 
 		if (_entryRemoteModel != null) {
 			try {
 				Class<?> clazz = _entryRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEntry", String.class);
+				Method method = clazz.getMethod("setMessage", String.class);
 
-				method.invoke(_entryRemoteModel, entry);
+				method.invoke(_entryRemoteModel, message);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -419,6 +450,12 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 				throw new UnsupportedOperationException(e);
 			}
 		}
+	}
+
+	@Override
+	public StagedModelType getStagedModelType() {
+		return new StagedModelType(PortalUtil.getClassNameId(
+				Entry.class.getName()));
 	}
 
 	public BaseModel<?> getEntryRemoteModel() {
@@ -490,6 +527,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 	public Object clone() {
 		EntryClp clone = new EntryClp();
 
+		clone.setUuid(getUuid());
 		clone.setEntryId(getEntryId());
 		clone.setGroupId(getGroupId());
 		clone.setCompanyId(getCompanyId());
@@ -499,7 +537,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 		clone.setModifiedDate(getModifiedDate());
 		clone.setName(getName());
 		clone.setEmail(getEmail());
-		clone.setEntry(getEntry());
+		clone.setMessage(getMessage());
 		clone.setGuestbookId(getGuestbookId());
 
 		return clone;
@@ -549,9 +587,11 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(23);
+		StringBundler sb = new StringBundler(25);
 
-		sb.append("{entryId=");
+		sb.append("{uuid=");
+		sb.append(getUuid());
+		sb.append(", entryId=");
 		sb.append(getEntryId());
 		sb.append(", groupId=");
 		sb.append(getGroupId());
@@ -569,8 +609,8 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 		sb.append(getName());
 		sb.append(", email=");
 		sb.append(getEmail());
-		sb.append(", entry=");
-		sb.append(getEntry());
+		sb.append(", message=");
+		sb.append(getMessage());
 		sb.append(", guestbookId=");
 		sb.append(getGuestbookId());
 		sb.append("}");
@@ -580,12 +620,16 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(40);
 
 		sb.append("<model><model-name>");
 		sb.append("com.liferay.docs.guestbook.model.Entry");
 		sb.append("</model-name>");
 
+		sb.append(
+			"<column><column-name>uuid</column-name><column-value><![CDATA[");
+		sb.append(getUuid());
+		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>entryId</column-name><column-value><![CDATA[");
 		sb.append(getEntryId());
@@ -623,8 +667,8 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 		sb.append(getEmail());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>entry</column-name><column-value><![CDATA[");
-		sb.append(getEntry());
+			"<column><column-name>message</column-name><column-value><![CDATA[");
+		sb.append(getMessage());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>guestbookId</column-name><column-value><![CDATA[");
@@ -636,6 +680,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 		return sb.toString();
 	}
 
+	private String _uuid;
 	private long _entryId;
 	private long _groupId;
 	private long _companyId;
@@ -646,7 +691,7 @@ public class EntryClp extends BaseModelImpl<Entry> implements Entry {
 	private Date _modifiedDate;
 	private String _name;
 	private String _email;
-	private String _entry;
+	private String _message;
 	private long _guestbookId;
 	private BaseModel<?> _entryRemoteModel;
 }

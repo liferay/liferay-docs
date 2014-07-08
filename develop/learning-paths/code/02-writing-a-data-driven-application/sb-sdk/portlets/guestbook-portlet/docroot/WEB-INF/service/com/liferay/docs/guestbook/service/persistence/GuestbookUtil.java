@@ -111,6 +111,413 @@ public class GuestbookUtil {
 	}
 
 	/**
+	* Returns all the guestbooks where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @return the matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid(
+		java.lang.String uuid)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid(uuid);
+	}
+
+	/**
+	* Returns a range of all the guestbooks where uuid = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param uuid the uuid
+	* @param start the lower bound of the range of guestbooks
+	* @param end the upper bound of the range of guestbooks (not inclusive)
+	* @return the range of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid(
+		java.lang.String uuid, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid(uuid, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the guestbooks where uuid = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param uuid the uuid
+	* @param start the lower bound of the range of guestbooks
+	* @param end the upper bound of the range of guestbooks (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid(
+		java.lang.String uuid, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid(uuid, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first guestbook in the ordered set where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook findByUuid_First(
+		java.lang.String uuid,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid_First(uuid, orderByComparator);
+	}
+
+	/**
+	* Returns the first guestbook in the ordered set where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUuid_First(
+		java.lang.String uuid,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByUuid_First(uuid, orderByComparator);
+	}
+
+	/**
+	* Returns the last guestbook in the ordered set where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook findByUuid_Last(
+		java.lang.String uuid,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid_Last(uuid, orderByComparator);
+	}
+
+	/**
+	* Returns the last guestbook in the ordered set where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUuid_Last(
+		java.lang.String uuid,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByUuid_Last(uuid, orderByComparator);
+	}
+
+	/**
+	* Returns the guestbooks before and after the current guestbook in the ordered set where uuid = &#63;.
+	*
+	* @param guestbookId the primary key of the current guestbook
+	* @param uuid the uuid
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a guestbook with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook[] findByUuid_PrevAndNext(
+		long guestbookId, java.lang.String uuid,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByUuid_PrevAndNext(guestbookId, uuid, orderByComparator);
+	}
+
+	/**
+	* Removes all the guestbooks where uuid = &#63; from the database.
+	*
+	* @param uuid the uuid
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByUuid(java.lang.String uuid)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByUuid(uuid);
+	}
+
+	/**
+	* Returns the number of guestbooks where uuid = &#63;.
+	*
+	* @param uuid the uuid
+	* @return the number of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByUuid(java.lang.String uuid)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByUuid(uuid);
+	}
+
+	/**
+	* Returns the guestbook where uuid = &#63; and groupId = &#63; or throws a {@link com.liferay.docs.guestbook.NoSuchGuestbookException} if it could not be found.
+	*
+	* @param uuid the uuid
+	* @param groupId the group ID
+	* @return the matching guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook findByUUID_G(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUUID_G(uuid, groupId);
+	}
+
+	/**
+	* Returns the guestbook where uuid = &#63; and groupId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+	*
+	* @param uuid the uuid
+	* @param groupId the group ID
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUUID_G(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByUUID_G(uuid, groupId);
+	}
+
+	/**
+	* Returns the guestbook where uuid = &#63; and groupId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+	*
+	* @param uuid the uuid
+	* @param groupId the group ID
+	* @param retrieveFromCache whether to use the finder cache
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUUID_G(
+		java.lang.String uuid, long groupId, boolean retrieveFromCache)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByUUID_G(uuid, groupId, retrieveFromCache);
+	}
+
+	/**
+	* Removes the guestbook where uuid = &#63; and groupId = &#63; from the database.
+	*
+	* @param uuid the uuid
+	* @param groupId the group ID
+	* @return the guestbook that was removed
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook removeByUUID_G(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().removeByUUID_G(uuid, groupId);
+	}
+
+	/**
+	* Returns the number of guestbooks where uuid = &#63; and groupId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param groupId the group ID
+	* @return the number of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByUUID_G(java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByUUID_G(uuid, groupId);
+	}
+
+	/**
+	* Returns all the guestbooks where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @return the matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid_C(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid_C(uuid, companyId);
+	}
+
+	/**
+	* Returns a range of all the guestbooks where uuid = &#63; and companyId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param start the lower bound of the range of guestbooks
+	* @param end the upper bound of the range of guestbooks (not inclusive)
+	* @return the range of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid_C(
+		java.lang.String uuid, long companyId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByUuid_C(uuid, companyId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the guestbooks where uuid = &#63; and companyId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param start the lower bound of the range of guestbooks
+	* @param end the upper bound of the range of guestbooks (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Guestbook> findByUuid_C(
+		java.lang.String uuid, long companyId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByUuid_C(uuid, companyId, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first guestbook in the ordered set where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook findByUuid_C_First(
+		java.lang.String uuid, long companyId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByUuid_C_First(uuid, companyId, orderByComparator);
+	}
+
+	/**
+	* Returns the first guestbook in the ordered set where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUuid_C_First(
+		java.lang.String uuid, long companyId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByUuid_C_First(uuid, companyId, orderByComparator);
+	}
+
+	/**
+	* Returns the last guestbook in the ordered set where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook findByUuid_C_Last(
+		java.lang.String uuid, long companyId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByUuid_C_Last(uuid, companyId, orderByComparator);
+	}
+
+	/**
+	* Returns the last guestbook in the ordered set where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook fetchByUuid_C_Last(
+		java.lang.String uuid, long companyId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByUuid_C_Last(uuid, companyId, orderByComparator);
+	}
+
+	/**
+	* Returns the guestbooks before and after the current guestbook in the ordered set where uuid = &#63; and companyId = &#63;.
+	*
+	* @param guestbookId the primary key of the current guestbook
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next guestbook
+	* @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a guestbook with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Guestbook[] findByUuid_C_PrevAndNext(
+		long guestbookId, java.lang.String uuid, long companyId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByUuid_C_PrevAndNext(guestbookId, uuid, companyId,
+			orderByComparator);
+	}
+
+	/**
+	* Removes all the guestbooks where uuid = &#63; and companyId = &#63; from the database.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByUuid_C(java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByUuid_C(uuid, companyId);
+	}
+
+	/**
+	* Returns the number of guestbooks where uuid = &#63; and companyId = &#63;.
+	*
+	* @param uuid the uuid
+	* @param companyId the company ID
+	* @return the number of matching guestbooks
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByUuid_C(java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByUuid_C(uuid, companyId);
+	}
+
+	/**
 	* Returns all the guestbooks where groupId = &#63;.
 	*
 	* @param groupId the group ID

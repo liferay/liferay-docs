@@ -40,7 +40,9 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 	public String toString() {
 		StringBundler sb = new StringBundler(19);
 
-		sb.append("{guestbookId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", guestbookId=");
 		sb.append(guestbookId);
 		sb.append(", groupId=");
 		sb.append(groupId);
@@ -56,8 +58,6 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 		sb.append(modifiedDate);
 		sb.append(", name=");
 		sb.append(name);
-		sb.append(", entryId=");
-		sb.append(entryId);
 		sb.append("}");
 
 		return sb.toString();
@@ -66,6 +66,13 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 	@Override
 	public Guestbook toEntityModel() {
 		GuestbookImpl guestbookImpl = new GuestbookImpl();
+
+		if (uuid == null) {
+			guestbookImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			guestbookImpl.setUuid(uuid);
+		}
 
 		guestbookImpl.setGuestbookId(guestbookId);
 		guestbookImpl.setGroupId(groupId);
@@ -100,8 +107,6 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 			guestbookImpl.setName(name);
 		}
 
-		guestbookImpl.setEntryId(entryId);
-
 		guestbookImpl.resetOriginalValues();
 
 		return guestbookImpl;
@@ -109,6 +114,7 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		guestbookId = objectInput.readLong();
 		groupId = objectInput.readLong();
 		companyId = objectInput.readLong();
@@ -117,12 +123,18 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
 		name = objectInput.readUTF();
-		entryId = objectInput.readLong();
 	}
 
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(guestbookId);
 		objectOutput.writeLong(groupId);
 		objectOutput.writeLong(companyId);
@@ -144,10 +156,9 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 		else {
 			objectOutput.writeUTF(name);
 		}
-
-		objectOutput.writeLong(entryId);
 	}
 
+	public String uuid;
 	public long guestbookId;
 	public long groupId;
 	public long companyId;
@@ -156,5 +167,4 @@ public class GuestbookCacheModel implements CacheModel<Guestbook>,
 	public long createDate;
 	public long modifiedDate;
 	public String name;
-	public long entryId;
 }

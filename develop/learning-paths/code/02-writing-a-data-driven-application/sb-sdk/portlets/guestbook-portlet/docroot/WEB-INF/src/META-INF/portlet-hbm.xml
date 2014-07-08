@@ -9,6 +9,7 @@
 		<id name="entryId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -17,7 +18,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="entry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="guestbookId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="com.liferay.docs.guestbook.model.impl.GuestbookImpl" table="GB_Guestbook">
@@ -25,6 +26,7 @@
 		<id name="guestbookId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -32,6 +34,5 @@
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="entryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 </hibernate-mapping>

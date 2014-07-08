@@ -31,6 +31,7 @@ public class GuestbookSoap implements Serializable {
 	public static GuestbookSoap toSoapModel(Guestbook model) {
 		GuestbookSoap soapModel = new GuestbookSoap();
 
+		soapModel.setUuid(model.getUuid());
 		soapModel.setGuestbookId(model.getGuestbookId());
 		soapModel.setGroupId(model.getGroupId());
 		soapModel.setCompanyId(model.getCompanyId());
@@ -39,7 +40,6 @@ public class GuestbookSoap implements Serializable {
 		soapModel.setCreateDate(model.getCreateDate());
 		soapModel.setModifiedDate(model.getModifiedDate());
 		soapModel.setName(model.getName());
-		soapModel.setEntryId(model.getEntryId());
 
 		return soapModel;
 	}
@@ -90,6 +90,14 @@ public class GuestbookSoap implements Serializable {
 
 	public void setPrimaryKey(long pk) {
 		setGuestbookId(pk);
+	}
+
+	public String getUuid() {
+		return _uuid;
+	}
+
+	public void setUuid(String uuid) {
+		_uuid = uuid;
 	}
 
 	public long getGuestbookId() {
@@ -156,14 +164,7 @@ public class GuestbookSoap implements Serializable {
 		_name = name;
 	}
 
-	public long getEntryId() {
-		return _entryId;
-	}
-
-	public void setEntryId(long entryId) {
-		_entryId = entryId;
-	}
-
+	private String _uuid;
 	private long _guestbookId;
 	private long _groupId;
 	private long _companyId;
@@ -172,5 +173,4 @@ public class GuestbookSoap implements Serializable {
 	private Date _createDate;
 	private Date _modifiedDate;
 	private String _name;
-	private long _entryId;
 }

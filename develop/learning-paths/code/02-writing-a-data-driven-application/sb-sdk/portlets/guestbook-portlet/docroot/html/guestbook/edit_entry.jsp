@@ -12,8 +12,10 @@
 
         <aui:fieldset>
 
-            <aui:input name="name"></aui:input>
-            <aui:input name="message"></aui:input>
+            <aui:input name="name" />
+            <aui:input name="email" />
+            <aui:input name="message" />
+            <aui:input name="guestbookId" type="hidden" value="<%= ParamUtil.get %>"/>
 
         </aui:fieldset>
 

@@ -37,9 +37,11 @@ import java.util.Date;
 public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(23);
+		StringBundler sb = new StringBundler(25);
 
-		sb.append("{entryId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", entryId=");
 		sb.append(entryId);
 		sb.append(", groupId=");
 		sb.append(groupId);
@@ -57,8 +59,8 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		sb.append(name);
 		sb.append(", email=");
 		sb.append(email);
-		sb.append(", entry=");
-		sb.append(entry);
+		sb.append(", message=");
+		sb.append(message);
 		sb.append(", guestbookId=");
 		sb.append(guestbookId);
 		sb.append("}");
@@ -69,6 +71,13 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 	@Override
 	public Entry toEntityModel() {
 		EntryImpl entryImpl = new EntryImpl();
+
+		if (uuid == null) {
+			entryImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			entryImpl.setUuid(uuid);
+		}
 
 		entryImpl.setEntryId(entryId);
 		entryImpl.setGroupId(groupId);
@@ -110,11 +119,11 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 			entryImpl.setEmail(email);
 		}
 
-		if (entry == null) {
-			entryImpl.setEntry(StringPool.BLANK);
+		if (message == null) {
+			entryImpl.setMessage(StringPool.BLANK);
 		}
 		else {
-			entryImpl.setEntry(entry);
+			entryImpl.setMessage(message);
 		}
 
 		entryImpl.setGuestbookId(guestbookId);
@@ -126,6 +135,7 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		entryId = objectInput.readLong();
 		groupId = objectInput.readLong();
 		companyId = objectInput.readLong();
@@ -135,13 +145,20 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		modifiedDate = objectInput.readLong();
 		name = objectInput.readUTF();
 		email = objectInput.readUTF();
-		entry = objectInput.readUTF();
+		message = objectInput.readUTF();
 		guestbookId = objectInput.readLong();
 	}
 
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(entryId);
 		objectOutput.writeLong(groupId);
 		objectOutput.writeLong(companyId);
@@ -171,16 +188,17 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 			objectOutput.writeUTF(email);
 		}
 
-		if (entry == null) {
+		if (message == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
 		}
 		else {
-			objectOutput.writeUTF(entry);
+			objectOutput.writeUTF(message);
 		}
 
 		objectOutput.writeLong(guestbookId);
 	}
 
+	public String uuid;
 	public long entryId;
 	public long groupId;
 	public long companyId;
@@ -190,6 +208,6 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 	public long modifiedDate;
 	public String name;
 	public String email;
-	public String entry;
+	public String message;
 	public long guestbookId;
 }

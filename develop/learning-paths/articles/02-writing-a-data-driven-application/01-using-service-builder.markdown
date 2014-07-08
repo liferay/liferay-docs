@@ -80,15 +80,38 @@ and ready to go.
 18. Use the + button to add two more `String` columns: *email* and *entry*. 
 
 19. Use the + button to add a column of type *long* to hold the foreign key to
-the Guestbook entity. Call this column *guestbookId*. 
+    the Guestbook entity. Call this column *guestbookId*. 
 
-![Figure 1.x: When your entities have been defined, you should have a configuration like this one.](../../images/lds-sb-1.png)
+![Figure 1: When your entities have been defined, you should have a configuration like this one.](../../images/lds-sb-1.png)
 
 Excellent! You've now defined your entities. Since Service Builder is an
 object-relational mapper, at the same time you did that, you also defined your
-database tables in one shot. The next thing you have to do is define some
-queries for your app. For that, you'll need to understand some Liferay-specific
-concepts. 
+database tables in one shot. 
+
+Now you'll want to look at your entities carefully. When you build forms for
+them, you'll have to do validation on some of the fields. For example, some
+fields are requirements for filling out the form. Which fields from which
+entities are required? The first one that jumps to mind is the `name` field on
+both the `Guestbook` and the `Entry` entity. But the `Entry` entity also has
+some other required fields: what's the point of submitting a guestbook entry
+without the entry itself? And you may decide you want everyone to supply an
+email address and their name, to discourage abuse of your guestbook. Because of
+that, it's a good idea to make all these fields required. 
+
+Liferay has great facilities for field validation which are covered later; right
+now, you'll just prepare yourself to use them by defining custom `Exception`
+classes for your entities. 
+
+1. On the outline on the left, scroll down to the bottom. Click on *Exceptions*,
+   the second item from the bottom. 
+
+2. Click the *+* button to add an exception. Call it `GuestbookName`. 
+
+3. Use the same procedure to add `EntryName`, `EntryMessage`, and `EntryEmail`
+   exceptions. 
+
+Great! The next thing you have to do is define some queries for your app. For
+that, you'll need to understand some Liferay-specific concepts. 
 
 ### Understanding Liferay Portal Concepts 
 
@@ -109,7 +132,7 @@ sites, and its data would be different. In other words, it would be *scoped* to
 that site. You can change an application's scope to the page, and in that case,
 one site could host different wikis on different pages. 
 
-![Figure 1.x: Scope is important in Liferay Portal.](../../images/portal-scope.png)
+![Figure 2: Scope is important in Liferay Portal.](../../images/portal-scope.png)
 
 If you write your application to support this, Liferay handles all of it
 automatically for you. You've already taken steps to support scope in your
@@ -127,7 +150,7 @@ the Group ID. Generating queries, or *finders*, is what you'll do next.
 Assuming users add guestbook entries to your application, how should they be
 found? To determine that, you'll need to look at your data design. 
 
-![Figure 1.x: Your data design generally dictates the queries you can build.](../../images/guestbook-tables.png)
+![Figure 3: Your data design generally dictates the queries you can build.](../../images/guestbook-tables.png)
 
 As you can see, you have two tables. The first stores Guestbooks themselves:
 besides the default fields, it has only two: a primary key and a name. The
@@ -203,7 +226,7 @@ button, a tooltip pops up which says that this is the Build Services button.
 Click it. At this point, Liferay's Service Builder utility runs. When it
 completes, check out your project's `src` folder. 
 
-![Figure 1.x: Service Builder generates a number of packages containing your model, service, and persistence layers.](../../images/lds-service-builder-packages.png)
+![Figure 4: Service Builder generates a number of packages containing your model, service, and persistence layers.](../../images/lds-service-builder-packages.png)
 
 Note that your project now has errors. It's because the model class, `Entry`,
 that you created in the last tutorial, was replaced. As noted above, Service
@@ -220,7 +243,7 @@ service, and the persistence layers. The application is designed in such a way
 that you can swap out the persistence layer with little to no change in the
 model and service layers. 
 
-![Figure 1.x: At a macro level, Service Builder generates three layers.](../../images/application-layers.png)
+![Figure 5: At a macro level, Service Builder generates three layers.](../../images/application-layers.png)
 
 At a micro level, each layer is implemented using Java Interfaces and various
 implementations of those interfaces. Rather than have one `Entry` class that
@@ -229,8 +252,8 @@ include an `Entry` interface, an `EntryBaseImpl` abstract class for Service
 Builder to manage, and an `EntryImpl` class that you can customize. This gives
 you the flexibility of being able to customize your model, while still allowing
 Service Builder to generate the code it needs. That's why Service Builder is a
-code generator for code generator haters: it generates the stuff you hate to
-write, while giving you the freedom to customize anything you want. 
+code generator for code generator haters: it generates the stuff that's tedious
+to write, while giving you the freedom to customize anything you want. 
 
 For further information about Service Builder, what it's built on, and how it
 works, please read the [What is Service Builder?](../../../tutorials/articles/service-builder/what-is-service-builder)

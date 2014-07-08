@@ -31,6 +31,7 @@ public class EntrySoap implements Serializable {
 	public static EntrySoap toSoapModel(Entry model) {
 		EntrySoap soapModel = new EntrySoap();
 
+		soapModel.setUuid(model.getUuid());
 		soapModel.setEntryId(model.getEntryId());
 		soapModel.setGroupId(model.getGroupId());
 		soapModel.setCompanyId(model.getCompanyId());
@@ -40,7 +41,7 @@ public class EntrySoap implements Serializable {
 		soapModel.setModifiedDate(model.getModifiedDate());
 		soapModel.setName(model.getName());
 		soapModel.setEmail(model.getEmail());
-		soapModel.setEntry(model.getEntry());
+		soapModel.setMessage(model.getMessage());
 		soapModel.setGuestbookId(model.getGuestbookId());
 
 		return soapModel;
@@ -92,6 +93,14 @@ public class EntrySoap implements Serializable {
 
 	public void setPrimaryKey(long pk) {
 		setEntryId(pk);
+	}
+
+	public String getUuid() {
+		return _uuid;
+	}
+
+	public void setUuid(String uuid) {
+		_uuid = uuid;
 	}
 
 	public long getEntryId() {
@@ -166,12 +175,12 @@ public class EntrySoap implements Serializable {
 		_email = email;
 	}
 
-	public String getEntry() {
-		return _entry;
+	public String getMessage() {
+		return _message;
 	}
 
-	public void setEntry(String entry) {
-		_entry = entry;
+	public void setMessage(String message) {
+		_message = message;
 	}
 
 	public long getGuestbookId() {
@@ -182,6 +191,7 @@ public class EntrySoap implements Serializable {
 		_guestbookId = guestbookId;
 	}
 
+	private String _uuid;
 	private long _entryId;
 	private long _groupId;
 	private long _companyId;
@@ -191,6 +201,6 @@ public class EntrySoap implements Serializable {
 	private Date _modifiedDate;
 	private String _name;
 	private String _email;
-	private String _entry;
+	private String _message;
 	private long _guestbookId;
 }

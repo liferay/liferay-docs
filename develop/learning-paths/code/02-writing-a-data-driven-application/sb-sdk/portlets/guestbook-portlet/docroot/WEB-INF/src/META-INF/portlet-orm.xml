@@ -10,6 +10,9 @@
 	<mapped-superclass class="com.liferay.docs.guestbook.model.impl.EntryModelImpl">
 		<attributes>
 			<id name="entryId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="groupId" />
 			<basic name="companyId" />
 			<basic name="userId" />
@@ -22,7 +25,7 @@
 			</basic>
 			<basic name="name" />
 			<basic name="email" />
-			<basic name="entry" />
+			<basic name="message" />
 			<basic name="guestbookId" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
@@ -33,6 +36,9 @@
 	<mapped-superclass class="com.liferay.docs.guestbook.model.impl.GuestbookModelImpl">
 		<attributes>
 			<id name="guestbookId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="groupId" />
 			<basic name="companyId" />
 			<basic name="userId" />
@@ -44,7 +50,6 @@
 				<temporal>TIMESTAMP</temporal>
 			</basic>
 			<basic name="name" />
-			<basic name="entryId" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

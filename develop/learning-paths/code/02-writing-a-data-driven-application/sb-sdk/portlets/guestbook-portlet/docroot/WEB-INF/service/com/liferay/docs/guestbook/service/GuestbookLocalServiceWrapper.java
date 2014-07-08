@@ -190,6 +190,38 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 	}
 
 	/**
+	* Returns the guestbook with the matching UUID and company.
+	*
+	* @param uuid the guestbook's UUID
+	* @param companyId the primary key of the company
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook fetchGuestbookByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.fetchGuestbookByUuidAndCompanyId(uuid,
+			companyId);
+	}
+
+	/**
+	* Returns the guestbook matching the UUID and group.
+	*
+	* @param uuid the guestbook's UUID
+	* @param groupId the primary key of the group
+	* @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook fetchGuestbookByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.fetchGuestbookByUuidAndGroupId(uuid,
+			groupId);
+	}
+
+	/**
 	* Returns the guestbook with the primary key.
 	*
 	* @param guestbookId the primary key of the guestbook
@@ -211,6 +243,41 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _guestbookLocalService.getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns the guestbook with the matching UUID and company.
+	*
+	* @param uuid the guestbook's UUID
+	* @param companyId the primary key of the company
+	* @return the matching guestbook
+	* @throws PortalException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.getGuestbookByUuidAndCompanyId(uuid,
+			companyId);
+	}
+
+	/**
+	* Returns the guestbook matching the UUID and group.
+	*
+	* @param uuid the guestbook's UUID
+	* @param groupId the primary key of the group
+	* @return the matching guestbook
+	* @throws PortalException if a matching guestbook could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.getGuestbookByUuidAndGroupId(uuid, groupId);
 	}
 
 	/**
@@ -284,6 +351,29 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 		throws java.lang.Throwable {
 		return _guestbookLocalService.invokeMethod(name, parameterTypes,
 			arguments);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Guestbook> getGuestbooks(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.getGuestbooks(groupId);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Guestbook> getGuestbooks(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.getGuestbooks(groupId, start, end);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook addGuestbook(
+		long userId, java.lang.String name,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.addGuestbook(userId, name, serviceContext);
 	}
 
 	/**

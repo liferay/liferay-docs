@@ -217,6 +217,34 @@ public abstract class GuestbookLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the guestbook with the matching UUID and company.
+	 *
+	 * @param uuid the guestbook's UUID
+	 * @param  companyId the primary key of the company
+	 * @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook fetchGuestbookByUuidAndCompanyId(String uuid,
+		long companyId) throws SystemException {
+		return guestbookPersistence.fetchByUuid_C_First(uuid, companyId, null);
+	}
+
+	/**
+	 * Returns the guestbook matching the UUID and group.
+	 *
+	 * @param uuid the guestbook's UUID
+	 * @param groupId the primary key of the group
+	 * @return the matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook fetchGuestbookByUuidAndGroupId(String uuid, long groupId)
+		throws SystemException {
+		return guestbookPersistence.fetchByUUID_G(uuid, groupId);
+	}
+
+	/**
 	 * Returns the guestbook with the primary key.
 	 *
 	 * @param guestbookId the primary key of the guestbook
@@ -234,6 +262,36 @@ public abstract class GuestbookLocalServiceBaseImpl extends BaseLocalServiceImpl
 	public PersistedModel getPersistedModel(Serializable primaryKeyObj)
 		throws PortalException, SystemException {
 		return guestbookPersistence.findByPrimaryKey(primaryKeyObj);
+	}
+
+	/**
+	 * Returns the guestbook with the matching UUID and company.
+	 *
+	 * @param uuid the guestbook's UUID
+	 * @param  companyId the primary key of the company
+	 * @return the matching guestbook
+	 * @throws PortalException if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook getGuestbookByUuidAndCompanyId(String uuid, long companyId)
+		throws PortalException, SystemException {
+		return guestbookPersistence.findByUuid_C_First(uuid, companyId, null);
+	}
+
+	/**
+	 * Returns the guestbook matching the UUID and group.
+	 *
+	 * @param uuid the guestbook's UUID
+	 * @param groupId the primary key of the group
+	 * @return the matching guestbook
+	 * @throws PortalException if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook getGuestbookByUuidAndGroupId(String uuid, long groupId)
+		throws PortalException, SystemException {
+		return guestbookPersistence.findByUUID_G(uuid, groupId);
 	}
 
 	/**

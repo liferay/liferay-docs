@@ -14,6 +14,7 @@
 
 package com.liferay.docs.guestbook.model;
 
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
@@ -49,6 +50,7 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("guestbookId", getGuestbookId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -57,13 +59,18 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
-		attributes.put("entryId", getEntryId());
 
 		return attributes;
 	}
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long guestbookId = (Long)attributes.get("guestbookId");
 
 		if (guestbookId != null) {
@@ -111,12 +118,6 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		if (name != null) {
 			setName(name);
 		}
-
-		Long entryId = (Long)attributes.get("entryId");
-
-		if (entryId != null) {
-			setEntryId(entryId);
-		}
 	}
 
 	/**
@@ -137,6 +138,26 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_guestbook.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the uuid of this guestbook.
+	*
+	* @return the uuid of this guestbook
+	*/
+	@Override
+	public java.lang.String getUuid() {
+		return _guestbook.getUuid();
+	}
+
+	/**
+	* Sets the uuid of this guestbook.
+	*
+	* @param uuid the uuid of this guestbook
+	*/
+	@Override
+	public void setUuid(java.lang.String uuid) {
+		_guestbook.setUuid(uuid);
 	}
 
 	/**
@@ -321,26 +342,6 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		_guestbook.setName(name);
 	}
 
-	/**
-	* Returns the entry ID of this guestbook.
-	*
-	* @return the entry ID of this guestbook
-	*/
-	@Override
-	public long getEntryId() {
-		return _guestbook.getEntryId();
-	}
-
-	/**
-	* Sets the entry ID of this guestbook.
-	*
-	* @param entryId the entry ID of this guestbook
-	*/
-	@Override
-	public void setEntryId(long entryId) {
-		_guestbook.setEntryId(entryId);
-	}
-
 	@Override
 	public boolean isNew() {
 		return _guestbook.isNew();
@@ -405,7 +406,7 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	}
 
 	@Override
-	public int compareTo(Guestbook guestbook) {
+	public int compareTo(com.liferay.docs.guestbook.model.Guestbook guestbook) {
 		return _guestbook.compareTo(guestbook);
 	}
 
@@ -415,17 +416,17 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Guestbook> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.liferay.docs.guestbook.model.Guestbook> toCacheModel() {
 		return _guestbook.toCacheModel();
 	}
 
 	@Override
-	public Guestbook toEscapedModel() {
+	public com.liferay.docs.guestbook.model.Guestbook toEscapedModel() {
 		return new GuestbookWrapper(_guestbook.toEscapedModel());
 	}
 
 	@Override
-	public Guestbook toUnescapedModel() {
+	public com.liferay.docs.guestbook.model.Guestbook toUnescapedModel() {
 		return new GuestbookWrapper(_guestbook.toUnescapedModel());
 	}
 
@@ -462,6 +463,11 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		}
 
 		return false;
+	}
+
+	@Override
+	public StagedModelType getStagedModelType() {
+		return _guestbook.getStagedModelType();
 	}
 
 	/**

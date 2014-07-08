@@ -18,7 +18,7 @@ import com.liferay.portal.kernel.bean.AutoEscape;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
-import com.liferay.portal.model.GroupedModel;
+import com.liferay.portal.model.StagedGroupedModel;
 import com.liferay.portal.service.ServiceContext;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
@@ -40,7 +40,7 @@ import java.util.Date;
  * @see com.liferay.docs.guestbook.model.impl.GuestbookModelImpl
  * @generated
  */
-public interface GuestbookModel extends BaseModel<Guestbook>, GroupedModel {
+public interface GuestbookModel extends BaseModel<Guestbook>, StagedGroupedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
@@ -60,6 +60,23 @@ public interface GuestbookModel extends BaseModel<Guestbook>, GroupedModel {
 	 * @param primaryKey the primary key of this guestbook
 	 */
 	public void setPrimaryKey(long primaryKey);
+
+	/**
+	 * Returns the uuid of this guestbook.
+	 *
+	 * @return the uuid of this guestbook
+	 */
+	@AutoEscape
+	@Override
+	public String getUuid();
+
+	/**
+	 * Sets the uuid of this guestbook.
+	 *
+	 * @param uuid the uuid of this guestbook
+	 */
+	@Override
+	public void setUuid(String uuid);
 
 	/**
 	 * Returns the guestbook ID of this guestbook.
@@ -203,20 +220,6 @@ public interface GuestbookModel extends BaseModel<Guestbook>, GroupedModel {
 	 * @param name the name of this guestbook
 	 */
 	public void setName(String name);
-
-	/**
-	 * Returns the entry ID of this guestbook.
-	 *
-	 * @return the entry ID of this guestbook
-	 */
-	public long getEntryId();
-
-	/**
-	 * Sets the entry ID of this guestbook.
-	 *
-	 * @param entryId the entry ID of this guestbook
-	 */
-	public void setEntryId(long entryId);
 
 	@Override
 	public boolean isNew();
