@@ -1277,6 +1277,44 @@ from your local (staging) Liferay server to your remote (live) Liferay server.
 Liferay's Virtual LDAP Server application (EE-only), available on Liferay
 Marketplace, makes this easy.
 
+Next, you'll learn how to configure your portal to use IPv6 addresses and use
+them for Remote Live Staging. 
+
+#### Validating IPv6 Addresses
+
+Liferay Portal supports both the IPv4 and IPv6 address formats. However, by
+default, Liferay is set to use IPv4 addresses. To support IPv6 addresses, you'll
+need to configure Liferay to do so. If you'd like more information on the basics
+of these protocols, you can check out the
+[reason](http://www.google.com/intl/en/ipv6/) for using IPv6 addresses, and its
+[technical details](http://en.wikipedia.org/wiki/IPv6).
+
+To configure your portal to validate IPv6 addresses, you must complete a few
+simple steps. First, assuming you're using the Tomcat app server for your
+portal, navigate to the `${TOMCAT_HOME}/bin/setenv.bat` file and set
+`-Djava.net.preferIPv4Stack=false` in `CATALINA_OPTS`. Then, create a
+`portal-ext.properties` file in your portal's home directory (if necessary) and
+set the `tunnel.servlet.hosts.allowed` property to the target hosts you want to
+allow (e.g., *0:0:0:0:0:0:0:1*). 
+
+Now that your portal is set up to validate IPv6 addresses, you'll need to
+configure your Remote Live Connection Settings. Restart your Liferay instance
+and navigate back to the Staging page. Select the *Remote Live* radio selector
+and specify the fields for your remote site. The *Remote Host/IP* field should
+match the host you specified as your `tunnel.servlet.hosts.allowed` property in
+the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to
+include the brackets. Fill in the rest of the information relevant to your site
+and click *Save*. 
+
+To check if the remote site is running on an IPv6 address, add a new portlet to
+the staged site, and then select *Staging* &rarr; *Publish to Remote Live* from
+the Dockbar. The changes are published to your remote staged site. 
+
+Your portal instance now validates the IPv6 address you specified for your
+remote live site. Great job! 
+
+Next, you'll learn how to enable local live staging.
+
 ### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Let's create a Local Live staging environment for the Lunar Resort home page. Before
