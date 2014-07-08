@@ -672,9 +672,16 @@ guestbook entries.
 
 ## Next Steps 
 
-[Write a data-driven application](http://www.liferay.com)
+At this point, the next learning path on writing a data-driven application may
+interest you. 
 
-[Use the Plugins SDK to develop Liferay applications](http://www.liferay.com)
+Here are more tutorials that you may find interesting:
 
+[Developing Plugins with the Plugins SDK](/tutorials/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial)
+
+[Developing Plugins with Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+
+<!--
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)
+-->
 
