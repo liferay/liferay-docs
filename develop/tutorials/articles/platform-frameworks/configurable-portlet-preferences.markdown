@@ -320,3 +320,6 @@ Great job! You added a new Setup tab to your portlet's configuration page and
 you added a configurable portlet preference to that page. Now you know how to
 use Liferay's portlet preferences in the portlets you develop. 
 
+## Next Steps
+
+[Using Portlet Namespacing](/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)

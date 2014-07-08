@@ -167,3 +167,8 @@ portlet action execution and you've added an error message for notifying when
 something's gone wrong; you can implement these messages in your portlets too.
 Your portlet users will be glad to get helpful feedback from your portlets. 
 
+## Next Steps 
+
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+
+[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
