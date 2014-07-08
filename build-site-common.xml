@@ -45,7 +45,7 @@
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
-			classname="com.liferay.documentation.markdown.MarkdownToHtmlMain"
+			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
 			classpathref="project.classpath"
 			fork="true"
 		>

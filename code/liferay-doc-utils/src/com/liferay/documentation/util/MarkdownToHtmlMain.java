@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.documentation.markdown;
+package com.liferay.documentation.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,7 +20,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.liferay.documentation.pegdown.LiferayPegDownConverter;
+import com.liferay.markdown.converter.factory.MarkdownConverterFactoryUtil;
+import com.liferay.markdown.converter.MarkdownConverter;
 
 public class MarkdownToHtmlMain {
 
@@ -46,9 +47,9 @@ public class MarkdownToHtmlMain {
 
 	    br.close();
 
-	    MarkdownConverter converter = new LiferayPegDownConverter();
+	    MarkdownConverter converter = MarkdownConverterFactoryUtil.create();
 
-	    String html = converter.markdownToHtml(sb.toString());
+	    String html = converter.convert(sb.toString());
 
 		BufferedWriter out =
 			new BufferedWriter(new FileWriter(htmlFile));
