@@ -1,4 +1,4 @@
-# Deploying Plugins
+# Deploying Plugins [](id=deploying-plugins-lp-6-2-develop-tutorial)
 
 In order for a plugin to affect the portal it must be deployed to it. As you
 develop plugins you'll want to test them on a portal. Commonly, developers test
