@@ -1,6 +1,5 @@
-<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
-<%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-<portlet:defineObjects />
+
+<%@include file = "/html/init.jsp" %>
 
 <portlet:renderURL var="viewURL">
 	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
@@ -15,7 +14,7 @@
             <aui:input name="name" />
             <aui:input name="email" />
             <aui:input name="message" />
-            <aui:input name="guestbookId" type="hidden" value="<%= ParamUtil.get %>"/>
+            <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
 
         </aui:fieldset>
 

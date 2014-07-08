@@ -2,7 +2,7 @@
 
 <%
 
-	long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+	long guestbookId = Long.valueOf((Long)renderRequest.getAttribute("guestbookId"));
 
 %>
 
@@ -40,7 +40,7 @@
 	</portlet:renderURL>
 
 	<portlet:renderURL var="addEntryURL">
-		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
+		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
 		<portlet:param name="guestbookId" value="<%= String.valueOf(guestbookId) %>" />
 	</portlet:renderURL>
 	
