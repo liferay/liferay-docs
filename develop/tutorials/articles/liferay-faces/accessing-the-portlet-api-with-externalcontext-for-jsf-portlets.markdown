@@ -1,4 +1,4 @@
-# Accessing the Portlet API with ExternalContext for JSF Portlets [](id=accessing-the-portlet-api-with-externalcontext-for--lp-6-2-develop-tutorial)
+# Accessing the Portlet API with ExternalContext for JSF Portlets [](id=accessing-the-portlet-api-with-externalcontext-lp-6-2-develop-tutorial)
 
 Just as JSF *web app* developers rely on `ExternalContext` to access the Servlet
 API, JSF *portlet* developers rely on it to access the Portlet API. 
