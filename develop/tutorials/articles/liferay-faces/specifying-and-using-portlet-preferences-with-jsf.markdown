@@ -1,4 +1,4 @@
-# Specifying and Using Portlet Preferences with JSF
+# Specifying and Using Portlet Preferences with JSF [](id=specifying-and-using-portlet-preferences-with-jsf-lp-6-2-develop-tutorial)
 
 This tutorial explains how to specify the `portlet.xml` file for your JSF
 portlet. Then, this tutorial demonstrates using portlet preferences by defining

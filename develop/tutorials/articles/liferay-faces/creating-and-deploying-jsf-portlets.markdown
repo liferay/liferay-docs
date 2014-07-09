@@ -1,4 +1,4 @@
-# Creating and Deploying JSF Portlets
+# Creating and Deploying JSF Portlets [](id=creating-and-deploying-jsf-portlets-lp-6-2-develop-tutorial)
 
 <!-- The JSF calendar portlet using PrimeFaces can be found at the following:
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
