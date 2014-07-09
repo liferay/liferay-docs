@@ -46,9 +46,8 @@ learning path for full details. If you do have it installed, launch it.
 
     2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
     you'd like to use *Maven* for your build type, navigate to the
-    [Using Maven From Liferay IDE](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en)
-    tutorial for details. <!-- TODO - update the linke to Maven with Liferay IDE
-    -->
+    [Using Maven From Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+    tutorial for details. 
 
     2.4. Your configured SDK and Liferay Runtime should already be selected.
     If you haven't yet pointed Liferay IDE to a Plugins SDK, click
@@ -128,8 +127,8 @@ directory and enter the following command.
 
     ant deploy
 
-A BUILD SUCCESSFUL message indicates that Ant built your portlet's WAR file and
-that it's now being deployed. If you switch to the terminal window running
+A `BUILD SUCCESSFUL` message indicates that Ant built your portlet's WAR file
+and that it's now being deployed. If you switch to the terminal window running
 Liferay, within a few seconds you should see a message, like the following
 message, indicating that your plugin is available to use in the portal: 
 
