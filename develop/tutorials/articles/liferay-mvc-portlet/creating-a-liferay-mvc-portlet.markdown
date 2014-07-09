@@ -1,31 +1,30 @@
-# Creating a Liferay MVC Portlet Project
+# Creating a Liferay MVC Portlet Project [](id=creating-a-liferay-mvc-portlet-project-lp-6-2-develop-tutorial)
 
 Portlets can be created in a Plugins SDK project or a Liferay Maven 
 project. Liferay IDE lets you create either project type using command line 
 tools: Ant in the Plugins SDK or Maven Archetype in Maven. 
 
-In this tutorial, you'll learn how to create  MVC portlets in a Plugins SDK 
-project, using Liferay IDE and Ant, from the command line. To learn how to 
-create Liferay Maven projects, see the tutorial 
- [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
-or the tutorial [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
-If you're completely new to Liferay, you can follow along with the 
-<!-- URL will need changed to proper one once the site is changed to dev.liferay.com -->
- [Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) 
-learning path.
+In this tutorial, you'll learn how to create MVC portlets in a Plugins SDK
+project, using Liferay IDE and Ant. To learn how to create Liferay Maven
+projects, see the tutorial 
+[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
+or the tutorial
+[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+If you're completely new to Liferay, you may first want to go through the 
+[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) 
+learning path. 
 
-First up is creating a portlet with Develper Studio, so go ahead and get 
+First up is creating a portlet with Liferay IDE, so go ahead and get 
 started. 
 
-## Creating a MVC Portlet In Developer Studio
-
-Although the example below creates a portlet named *My Greeting*, the steps 
-apply to any newly created portlet:
+## Creating a Liferay MVC Portlet in Liferay IDE
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
-2.  Fill in the *Project name* and *Display name* with *my-greeting-portlet* and
-    *My Greeting*, respectively. 
+2.  Fill in the *Project name* and *Display name*. Project names must have no
+    spaces and it's a best practice to specify them in lowercase. The
+    *Display name*, however, can have spaces. You should specify the
+    portlet's *Display name* just as you want it displayed to the user. 
 
 3.  Leave the *Use default location* checkbox checked. By default, the
 	default location is set to your current workspace. If you'd like to change
@@ -50,27 +49,27 @@ apply to any newly created portlet:
 8. In the next window, make sure that the *Liferay MVC* framework is selected
    and click *Finish*. 
 
-With Developer Studio, you can create a new plugin project or if you already
-have a project, create a new plugin in an existing project. A single Liferay
-project can contain multiple plugins. Next you'll see how the same process is 
-done using the terminal.
+With Liferay IDE, you can create a new plugin project or if you already have a
+project, create a new plugin in an existing project. A single Liferay project
+can contain multiple plugins. Next you'll see how the same process is done using
+the terminal. 
 
-## Creating a MVC Portlet Using the Terminal 
+## Creating a Liferay MVC Portlet Using the Terminal 
 
 Navigate to the `portlets` directory in the terminal and enter the appropriate 
 command for your operating system:
 
 1.  In Linux and Mac OS X, enter
 
-        ./create.sh my-greeting "My Greeting"
+        ./create.sh [project-name] ["Portlet Display Name"]
 
 2.  In Windows, enter
 
-        create.bat my-greeting "My Greeting"
+        create.bat [project-name] ["Portlet Display Name"]
 
-You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new
-folder inside of the `portlets` folder in your Plugins SDK. This folder is your
-new portlet project. This is where you will be implementing your own
+You should get a `BUILD SUCCESSFUL` message from Ant, and there will now be a
+new folder inside of the `portlets` folder in your Plugins SDK. This folder is
+your new portlet project. This is where you will be implementing your own
 functionality. Notice that the Plugins SDK automatically appends "-portlet" to
 the project name when creating this folder.
 
@@ -90,11 +89,11 @@ SDK.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
- control system such as Subversion, CVS, Mercurial, Git, etc., this might be
- a good moment to do an initial check-in of your changes. After building the
- plugin for deployment, several additional files will be generated that should
- *not* be handled by the source control system. 
+![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+control system such as Subversion, CVS, Mercurial, Git, etc., this might be
+a good moment to do an initial check-in of your changes. After building the
+plugin for deployment, several additional files will be generated that should
+*not* be handled by the source control system. 
 
 ---
 
@@ -134,18 +133,58 @@ mode: each of the registered portlet modes has a corresponding JSP with the
 same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
 is for help mode.
 
+The *Java Source* is stored in the `docroot/WEB-INF/src` folder. 
+
+The *Configuration Files* are stored in the `docroot/WEB-INF` folder. Files
+stored here include the standard JSR-286 portlet configuration file
+`portlet.xml`, as well as three optional Liferay-specific configuration files.
+The Liferay-specific configuration files, while optional, are important if your
+portlets will be deployed on a Liferay Portal server. Here's a description of
+the Liferay-specific files:
+
+- `liferay-display.xml`- Describes the category the portlet appears under in the
+  *Add* menu of the Dockbar (the horizontal bar that appears at the top of the
+  page to all logged-in users). 
+- `liferay-plugin-package.properties`- Describes the plugin to Liferay's hot
+  deployer. You can configure Portal Access Control List (PACL) properties,
+  `.jar` dependencies, and more. 
+- `liferay-portlet.xml`- Describes Liferay-specific enhancements for JSR-286
+  portlets installed on a Liferay Portal server. For example, you can set
+  an image icon to represent the app, trigger a job for the scheduler, and much
+  more. A complete listing of this file's settings is in its DTD in the
+  `definitions` folder in the Liferay Portal source code. 
+
+*Client Side Files* are the `.jsp`, `.css`, and `.js` files that you write to
+implement your portlet's user interface. These files should go in the `docroot`
+folder; `.jsp` files can be placed in the root of the folder, while `.css` and
+`.js` files are given their own subfolders in `docroot`. Remember, with portlets
+you're only dealing with a portion of the HTML document that is getting returned
+to the browser. Any HTML code in your client side files must be free of global
+tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
+element IDs to prevent conflicts with other portlets. Liferay provides two
+tools, a taglib and API methods, to generate a namespace for you. See the
+[Using Portlet Namespacing](/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)
+tutorial to learn more about namespacing. 
+
+<!--
 For a more detailed description of the files generated and used in a portlet
 please refer to the [Anatomy of a Portlet] (https://www.liferay.com/documentation/liferay-portal/6.0/development/-/ai/anatomy-of-a-portlet)
 section in the DevGuide.
+-->
 
-Congrats! Now you understand the ins and outs of a MVC portlet and have two
-handy ways to create them in your bag O'trix!  
+Congrats! Now you understand the basic structure of Liferay MVC portlets and you
+have two handy ways to create them in your bag O'trix!  
 
 ## Next Steps
 
- [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
- 
- [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+If you're interested in creating Liferay MVC portlets from in a Maven project,
+follow the tutorials 
+[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+and
+[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
 
- [Beginning Liferay Development Learning Path](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
+Or you may want to dive into the learning path
+[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath).
+
+Otherwise, you can continue with this section's next tutorial. 
 
