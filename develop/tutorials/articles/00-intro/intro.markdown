@@ -11,7 +11,7 @@ tutorials cover the following three main areas.
 
 - Using Liferay Development Tools
 - Developing Liferay Applications
-- Developing Themes and Customizing Liferay
+- Styling and Customizing Liferay
 
 #### Using Liferay Development Tools
 
