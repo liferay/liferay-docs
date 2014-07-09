@@ -1,4 +1,4 @@
-# OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+# Creating and Integrating with OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and JavaScript. It was originally
@@ -26,8 +26,8 @@ This section's tutorials include the following topics:
 
 [Using the Gadget Editor](/tutorials/-/knowledge_base/using-the-gadget-editor-lp-6-2-develop-tutorial)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localizing Your Portlets](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

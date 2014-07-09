@@ -1,4 +1,4 @@
-# Localization [](id=localization-lp-6-2-develop-tutorial)
+# Localizing Your Portlets [](id=localization-lp-6-2-develop-tutorial)
 
 If your portlets target an international audience, you can localize your
 portlets' user interfaces. To localize a portlet, you need to create language

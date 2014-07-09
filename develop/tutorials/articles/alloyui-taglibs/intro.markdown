@@ -1,4 +1,4 @@
-# AlloyUI [](id=alloyui-lp-6-2-develop-tutorial)
+# Designing User Interfaces with AlloyUI [](id=alloyui-lp-6-2-develop-tutorial)
 
 AlloyUI gives you skinnable, scalable UI components, so you can provide a
 consistent look and feel for your application. It's a framework containing 

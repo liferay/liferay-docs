@@ -169,6 +169,6 @@ Your portlet users will be glad to get helpful feedback from your portlets.
 
 ## Next Steps 
 
-[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

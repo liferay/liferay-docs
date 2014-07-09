@@ -1,4 +1,4 @@
-# Maven [](id=maven-lp-6-2-develop-tutorial)
+# Developing Plugins with Maven [](id=maven-lp-6-2-develop-tutorial)
 
 I'm giving you fair warning. I was recently reading the famous poem by Edgar
 Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
