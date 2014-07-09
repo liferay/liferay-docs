@@ -39,11 +39,11 @@ response object from `externalContext.getResponse()` is cast to the
 The code listing above uses the singleton class `LiferayFacesContext`, which has
 methods `getPortletRequest()` and `getPortletResponse()`. You can leverage the
 `LiferayFacesContext` class in your JSF portlets on Liferay to get easy access
-to the portlet requests and responses. This class comes with Liferay Faces
+to the portlet requests and responses. <!-- This class comes with Liferay Faces
 Portal, which can be covered in the [Liferay Faces Portal](www.liferay.com)
 tutorial. 
 
-<!-- Replace above link once Liferay Faces Portal tutorials are available. -Cody
+Replace above link once Liferay Faces Portal tutorials are available. -Cody
 -->
 
 <!-- I think more explanation here is necessary. There's no indication in the
@@ -54,6 +54,6 @@ them because you were going for a more generic, portlet container-friendly
 implementation in this first example, but I (and the reader) am not sure of
 that. -Rich -->
 
-In this tutorial, you've explored sample code requesting objects from the
-portlet API using `ExternalContext`.
+In this tutorial, you've explored requesting objects from the portlet API using
+`ExternalContext`. 
 
