@@ -6,7 +6,7 @@ them in the `portlet.xml` file. By defining portlet preferences in your JSF
 portlet, end-users can personalize the portlet in ways they prefer. To start
 off, you'll learn how to specify the `portlet.xml` file for your JSF portlet. 
                                                                         
-## Specifying the `portlet.xml` for Your JSF Portlet
+## Specifying the portlet.xml for Your JSF Portlet
 
 Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor
 file. When creating a JSF portlet using Liferay IDE or the Plugins SDK, this
