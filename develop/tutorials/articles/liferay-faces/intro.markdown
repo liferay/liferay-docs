@@ -1,4 +1,4 @@
-# Liferay Faces - JSF Portlets [](id=liferay-faces-jsf-portlets-lp-6-2-develop-tutorial)
+# Developing JSF Portlets Using Liferay Faces [](id=liferay-faces-jsf-portlets-lp-6-2-develop-tutorial)
 
 ![ ](../../images/04-liferay-faces-logo.png)
 
