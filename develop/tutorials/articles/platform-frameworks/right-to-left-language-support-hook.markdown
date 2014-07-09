@@ -127,6 +127,14 @@ You now know how to use the Right to Left Language Support app in your custom
 plugins. Now it's time to learn how you can extend the Right to Left Language
 Support app's style with your own custom CSS for RTL languages. 
 
+--- 
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** You may need to run 
+ `ant deploy` from the command line for the `css/.sass-cache` folder and 
+ `*_rtl.css` files to be generated. 
+
+--- 
+
 ## Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
 
 As you learned in the previous section, the Right to Left Language Support (RTL
