@@ -37,6 +37,3 @@ We discussed a brief scenario using portlet namespacing for two different
 portlets. Lastly, we learned when and why to use unnamespaced parameters in your
 Liferay portlets.
 
-## Next Steps
-
-[Using Configurable Portlet Preferences](/tutorials/-/knowledge_base/using-configurable-portlet-preferences-lp-6-2-develop-tutorial)
