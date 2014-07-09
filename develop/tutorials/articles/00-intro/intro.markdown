@@ -96,7 +96,7 @@ discussed on this page.
 <td>
 <a href="/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a><br>
 <a href="/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a><br>
-Developing JSF Portlets Using Liferay Faces<br>
+<a href="/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a><br>
 <a href="/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
 </td>
 
