@@ -20,14 +20,9 @@ Throughout these tutorials, we'll show you how to develop plugins in three
 environments that use open source technologies 1) An Ant-based command-line
 environment that integrates with a wide variety of tools. 2) An easy-to-use IDE
 that minimizes your learning curve while giving you powerful development
-features. 3) An widely adopted project managmentment system called Maven. The
+features. 3) An widely adopted project management system called Maven. The
 Liferay Developer Network provides learning paths and tutorials that teach you
 how to use these three environments. 
-
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) (Learning Path)<br>
-[Developing Plugins with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial)<br>
-[Developing Plugins Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)<br>
-[Developing Plugins with Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)<br>
 
 If I don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA or other
 another IDE, there are many IDEs available, and each one has its strengths. You
@@ -38,50 +33,78 @@ can develop portal apps in whatever environment you like.
 As a developer wanting to run your own applications on top of Liferay Portal,
 you probably want to know *what's the best and quickest way to do it?* Liferay
 supports two main, standards-based technologies for incorporating your
-applications into Liferay: **Portlets** and **OpenSocial gadgets**. 
-
-Portlets can be written using any of the Java web frameworks that support
-portlet development, including Liferay's MVC Portlet framework and
-JavaServer&#8482; Faces (JSF).
-
-To start learning about developing portlets and OpenSocial gadgets, visit the
-following learning paths and tutorials: 
-
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) (Learning Path)<br>
-[Developing Portlets Using Liferay MVC](/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)<br>
-Developing JSF Portlets Using Liferay Faces<br>
-[Creating and Integrating with OpenSocial Gadgets](/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+applications into Liferay: **Portlets** and **OpenSocial gadgets**. Portlets can
+be written using any of the Java web frameworks that support portlet
+development, including Liferay's MVC Portlet framework and JavaServer&#8482;
+Faces (JSF).
 
 As you write apps you'll want to leverage powerful frameworks components that
 work seamlessly with Liferay. Liferay contains several frameworks that give you
 all the tools you need to perform various common tasks, such has handling
 permissions, letting users enter comments, categories, and tags, and other
-common tasks that Liferay doesn't make you have to write yourself. Here are just
+common tasks that Liferay doesn't make you have to write yourself.
+<!--Here are just
 a few of the framework topics the tutorials cover in detail.  
 
 [Generating Services with Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
 Implementing Roles and Permissions<br>
 Leveraging the Asset Framework<br>
 [Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+-->
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
-taglibs and snazzy UI components that AlloyuI and Liferay UI provide. Learn
-about them in the following tutorial section. 
-
-[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)<br>
-[Using Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+taglibs and snazzy UI components that
+[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial) and
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+provide.
 
 #### Styling and Customizing Liferay
 
-And what about the the look and feel you want to develop for your sites and
+And what about the look and feel you want to develop for your sites and
 customizations you want to do to Liferay's built-in features? Creating themes
-and customizations is easy in Liferay. Here are the tutorial sections that show
-you how to develop them. 
+and customizations is easy in Liferay. 
 
+Now that you're oriented with what Liferay Tutorials offers, it's time to
+discover new things as you develop sites in Liferay. 
+
+To get you started, here are links to topics in the three areas
+discussed on this page.
+
+<table>
+<tr>
+<td>
+<strong>Development Tools</strong>
+</td>
+
+<td>
+<strong>Developing Apps</strong>
+</td>
+
+<td>
+<strong>Styling and Customizing</strong>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a><br>
+<a href="/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a><br>
+<a href="/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a><br>
+<a href="/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a><br>
+</td>
+
+<td>
+<a href="/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a><br>
+<a href="/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a><br>
+Developing JSF Portlets Using Liferay Faces<br>
+<a href="/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
+</td>
+
+<td>
 Developing Themes<br>
 Developing Layout Templates<br>
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)<br>
-
-You've only scratched the surface. You now have plenty of new things to discover
-in the tutorials as you develop on Liferay. Enjoy! 
+<a href="/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a><br>
+</td>
+</tr>
+</table>
 
