@@ -289,4 +289,4 @@ performance.
 
 [Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Applying Liferay UI Taglibs to Your User Interface](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Using Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
