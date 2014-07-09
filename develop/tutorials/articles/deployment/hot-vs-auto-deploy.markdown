@@ -1,4 +1,4 @@
-# Deploying Your Plugins: Hot Deploy vs. Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs--auto-deploy-lp-6-2-develop-tutorial)
+# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy-lp-6-2-develop-tutorial)
 
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
