@@ -57,6 +57,3 @@ that. -Rich -->
 In this tutorial, you've explored sample code requesting objects from the
 portlet API using `ExternalContext`.
 
-## Next Steps
-
-<!-- Add once JSF tutorials are finished. -Cody -->

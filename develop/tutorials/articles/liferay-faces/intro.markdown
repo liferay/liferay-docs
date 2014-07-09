@@ -87,6 +87,3 @@ Liferay UI Components and Utilities in JSF applications, leverage AlloyUI
 components using Liferay Faces Alloy, migrate an existing project to Liferay
 Faces, and build Liferay Faces from source.
 
-## Next Steps
-
-<!-- Add once JSF tutorials are finished. -Cody -->

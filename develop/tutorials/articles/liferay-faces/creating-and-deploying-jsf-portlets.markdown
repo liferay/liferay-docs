@@ -176,5 +176,3 @@ input field, the calendar displays a user-friendly UI to select a date.
 
 It's just that easy to create and deploy JSF portlet plugins! 
 
-## Next Steps
-
