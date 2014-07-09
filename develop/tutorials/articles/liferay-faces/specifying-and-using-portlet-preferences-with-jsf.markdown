@@ -3,16 +3,14 @@
 This tutorial explains how to specify the `portlet.xml` file for your JSF
 portlet. Then, this tutorial demonstrates using portlet preferences by defining
 them in the `portlet.xml` file. By defining portlet preferences in your JSF
-portlet, end users using your portlet can personalize the portlet in ways they
-prefer. To start off, you'll learn how to specify the `portlet.xml` file for
-your JSF portlet. 
-
+portlet, end-users can personalize the portlet in ways they prefer. To start
+off, you'll learn how to specify the `portlet.xml` file for your JSF portlet. 
+                                                                        
 ## Specifying the `portlet.xml` for Your JSF Portlet
 
 Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor
 file. When creating a JSF portlet using Liferay IDE or the Plugins SDK, this
-file is created for you; but there are a couple unique requirements for JSF
-portlets with respect to their deployment descriptors. 
+file is created for you. JSF portlets require a couple deployment descriptors. 
 
 First, using JSF 2.x in a portlet requires specifying
 `javax.portlet.faces.GenericFacesPortlet` as the portlet's class. You specify
@@ -63,8 +61,8 @@ to the `/view.xhtml` facelet by the `<init-param>` element:
         <value>/view.xhtml</value>
     </init-param>
 
-Now that we've got `WEB-INF/portlet.xml` set up, let's move on to using portlet
-preferences. 
+You can set up your `portlet.xml` file similarly. Next, you'll start using
+portlet preferences. 
 
 ## Using Portlet Preferences with JSF
 
@@ -75,6 +73,8 @@ are defined in the `WEB-INF/portlet.xml` descriptor. Portal end-users start
 out interacting with the portlet user interface in portlet `VIEW` mode, but
 switch to portlet `EDIT` mode in order to select custom preference values. 
 
+Here's an example portlet preference descriptor that sets a date pattern: 
+
     <portlet-preferences>
         <preference>
             <name>datePattern</name>
@@ -83,30 +83,30 @@ switch to portlet `EDIT` mode in order to select custom preference values.
     </portlet-preferences>
 
 Additionally, Portlet 2.0 lets you specify support for `EDIT` mode in the
-`WEB-INF/portlet.xml` descriptor. 
+`WEB-INF/portlet.xml` descriptor file. You can add `EDIT` mode by specifying the
+element `<portlet-mode>edit</portlet-mode>` in your `portlet.xml` file's
+`<supports>` element. The following example snippet specifies `EDIT` mode in
+addition to the `VIEW` and `HELP` modes. 
 
     <supports>
         <mime-type>text/html</mime-type>
         <portlet-mode>view</portlet-mode>
         <portlet-mode>edit</portlet-mode>
+        <portlet-mode>help</portlet-mode>
     </supports>
 
 Although support for portlet `EDIT` mode has been specified, the portlet
-container does not necessarily know which JSF view should be rendered when the
+container doesn't necessarily know which JSF view should be rendered when the
 user enters portlet `EDIT` mode. JSF portlet developers must specify the
-Facelet view in the `WEB-INF/portlet.xml` descriptor that should be displayed
-for each supported portlet mode. 
+facelet view in the `WEB-INF/portlet.xml` descriptor that should be displayed
+for each supported portlet mode. The following example snippet specifies a
+facelet file `/preferences.xhtml` as the view, by mapping it to the
+`javax.portlet.faces.defaultViewId.edit` init parameter. 
 
     <init-param>
         <name>javax.portlet.faces.defaultViewId.edit</name>
-        <value>/edit.xhtml</value>
+        <value>/preferences.xhtml</value>
     </init-param>
-
-<!-- This example's mapping values are slightly different from that of the
-portlet in the previous section. Were they meant to be different? In the
-previous example descriptor we mapped EDIT mode to the /preferences.xhtml
-facelet, yet in this example we map EDIT mode to the /edit.xhtml facelet. This
-seems confusing. - Jim -->
 
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
