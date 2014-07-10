@@ -1,4 +1,4 @@
-# Updating Your Controller to Use Services
+# Updating Your Controller to Use Services [](id=updating-your-controller-to-use-services-lp-6-2-develop-learnpath)
 
 Now that you've created your service and persistence layers, it's time to update
 your controller so that it uses them to store and retrieve guestbooks and their
@@ -18,28 +18,28 @@ first.
 
 2. Add the following method to the class: 
 
-	public void addGuestbook(ActionRequest request, ActionResponse response)
-			throws PortalException, SystemException {
+    public void addGuestbook(ActionRequest request, ActionResponse response)
+            throws PortalException, SystemException {
 
-		ServiceContext serviceContext = ServiceContextFactory.getInstance(
-				Guestbook.class.getName(), request);
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+            Guestbook.class.getName(), request);
 
-		String name = ParamUtil.getString(request, "name");
+        String name = ParamUtil.getString(request, "name");
 
-		try {
-			GuestbookLocalServiceUtil.addGuestbook(serviceContext.getUserId(),
-					name, serviceContext);
+        try {
+            GuestbookLocalServiceUtil.addGuestbook(serviceContext.getUserId(),
+                    name, serviceContext);
 
-			SessionMessages.add(request, "guestbookAdded");
+            SessionMessages.add(request, "guestbookAdded");
 
-		} catch (Exception e) {
-			SessionErrors.add(request, e.getClass().getName());
+        } catch (Exception e) {
+            SessionErrors.add(request, e.getClass().getName());
 
-			response.setRenderParameter("mvcPath",
-					"/html/guestbook/edit_guestbook.jsp");
-		}
+            response.setRenderParameter("mvcPath",
+                "/html/guestbook/edit_guestbook.jsp");
+        }
 
-	}
+    }
 
 You can already see differences in this action from the other one you have in
 the class. First, you obtain a `ServiceContext` [object](https://dev.liferay.com/encyclopedia/-/wiki/Main/Service+Context) 
@@ -64,34 +64,34 @@ for your application.
 The next thing you have to do is replace your `addEntry` method with a
 service-enabled version: 
 
-	public void addEntry(ActionRequest request, ActionResponse response)
-			throws PortalException, SystemException {
+    public void addEntry(ActionRequest request, ActionResponse response)
+            throws PortalException, SystemException {
 
-		ServiceContext serviceContext = ServiceContextFactory.getInstance(
-				Entry.class.getName(), request);
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                Entry.class.getName(), request);
 
-		String userName = ParamUtil.getString(request, "name");
-		String email = ParamUtil.getString(request, "email");
-		String message = ParamUtil.getString(request, "message");
-		long guestbookId = ParamUtil.getLong(request, "guestbookId");
+        String userName = ParamUtil.getString(request, "name");
+        String email = ParamUtil.getString(request, "email");
+        String message = ParamUtil.getString(request, "message");
+        long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
-		try {
-			EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
-					guestbookId, userName, email, message, serviceContext);
+        try {
+            EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
+                    guestbookId, userName, email, message, serviceContext);
 
-			SessionMessages.add(request, "entryAdded");
+            SessionMessages.add(request, "entryAdded");
 
-			response.setRenderParameter("guestbookId",
-					Long.toString(guestbookId));
+            response.setRenderParameter("guestbookId",
+                    Long.toString(guestbookId));
 
-		} catch (Exception e) {
-			SessionErrors.add(request, e.getClass().getName());
+        } catch (Exception e) {
+            SessionErrors.add(request, e.getClass().getName());
 
-			response.setRenderParameter("mvcPath",
-					"/html/guestbook/edit_entry.jsp");
-		}
+            response.setRenderParameter("mvcPath",
+                    "/html/guestbook/edit_entry.jsp");
+        }
 
-	}
+    }
 
 As you can see, apart from having a few more fields to process, this method is
 much the same. 
@@ -102,43 +102,43 @@ Next, you'll replace the `render()` method with the service-enabled version.
 
 2. Replace the `render()` method with one that makes use of your services: 
 
-	@Override
-	public void render(RenderRequest renderRequest,
-			RenderResponse renderResponse) throws PortletException, IOException {
+    @Override
+    public void render(RenderRequest renderRequest,
+            RenderResponse renderResponse) throws PortletException, IOException {
 
-		try {
-			ServiceContext serviceContext = ServiceContextFactory.getInstance(
-					Guestbook.class.getName(), renderRequest);
+        try {
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    Guestbook.class.getName(), renderRequest);
 
-			long groupId = serviceContext.getScopeGroupId();
+            long groupId = serviceContext.getScopeGroupId();
 
-			long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+            long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
-			List<Guestbook> guestbooks = GuestbookLocalServiceUtil
-					.getGuestbooks(groupId);
+            List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+                    .getGuestbooks(groupId);
 
-			if (guestbooks.size() == 0) {
-				Guestbook guestbook = GuestbookLocalServiceUtil.addGuestbook(
-						serviceContext.getUserId(), "Main", serviceContext);
+            if (guestbooks.size() == 0) {
+                Guestbook guestbook = GuestbookLocalServiceUtil.addGuestbook(
+                        serviceContext.getUserId(), "Main", serviceContext);
 
-				guestbookId = guestbook.getGuestbookId();
+                guestbookId = guestbook.getGuestbookId();
 
-			}
+            }
 
-			if (!(guestbookId > 0)) {
-				guestbookId = guestbooks.get(0).getGuestbookId();
-			}
+            if (!(guestbookId > 0)) {
+                guestbookId = guestbooks.get(0).getGuestbookId();
+            }
 
-			renderRequest.setAttribute("guestbookId", guestbookId);
+            renderRequest.setAttribute("guestbookId", guestbookId);
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			throw new PortletException(e);
-		}
+            throw new PortletException(e);
+        }
 
-		super.render(renderRequest, renderResponse);
+        super.render(renderRequest, renderResponse);
 
-	}
+    }
 
 There's some logic going on here, but it's pretty straightforward. The main
 question you want to ask yourself when determining rendering logic is, *What do

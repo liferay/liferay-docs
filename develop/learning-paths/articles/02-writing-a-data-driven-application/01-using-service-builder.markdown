@@ -1,4 +1,4 @@
-# Using Service Builder to Generate a Persistence Framework
+# Using Service Builder to Generate a Persistence Framework [](id=using-service-builder-to-generate-a-persistence-fr-lp-6-2-develop-learnpath)
 
 In the last learning path, you built an application using Liferay's
 Model-View-Controller portlet framework. MVC is a great design pattern for web
