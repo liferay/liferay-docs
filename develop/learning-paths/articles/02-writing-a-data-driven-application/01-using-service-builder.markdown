@@ -77,7 +77,7 @@ and ready to go.
 
 17. Name your new column *name* and make it a `String`. 
 
-18. Use the + button to add two more `String` columns: *email* and *entry*. 
+18. Use the + button to add two more `String` columns: *email* and *message*. 
 
 19. Use the + button to add a column of type *long* to hold the foreign key to
     the Guestbook entity. Call this column *guestbookId*. 
@@ -94,9 +94,9 @@ fields are requirements for filling out the form. Which fields from which
 entities are required? The first one that jumps to mind is the `name` field on
 both the `Guestbook` and the `Entry` entity. But the `Entry` entity also has
 some other required fields: what's the point of submitting a guestbook entry
-without the entry itself? And you may decide you want everyone to supply an
-email address and their name, to discourage abuse of your guestbook. Because of
-that, it's a good idea to make all these fields required. 
+without the message? And you may decide you want everyone to supply an email
+address and their name, to discourage abuse of your guestbook. Because of that,
+it's a good idea to make all these fields required. 
 
 Liferay has great facilities for field validation which are covered later; right
 now, you'll just prepare yourself to use them by defining custom `Exception`
