@@ -3,8 +3,6 @@
 This tutorial explains how to install and configure the Liferay Plugins SDK and
 its dependencies. 
 
-## Installing the Plugins SDK
-
 The Plugins SDK requires Liferay Portal. If you haven't already installed a
 Liferay bundle, follow the instructions in the
 [Installation and Setup](/use/-/knowledge_base/installation-and-setup-lp-6-2-use-useportal)
@@ -114,8 +112,6 @@ referenced in your path.
 Now that you've installed the Plugins SDK and you've configured Ant, it's time
 to configure your Plugins SDK environment. 
 
-## Configuring the Plugins SDK
-
 Your Plugins SDK needs to know the location of our Liferay installation so it
 can compile plugins against Liferay's JAR files and deploy plugins to your
 Liferay instance. The Plugins SDK contains a `build.properties` file that
@@ -148,8 +144,4 @@ server property that matches your app server.
 Save your `build.[username].properties` file. 
 
 You're set to start using your Liferay Plugins SDK! 
-
-## Next Steps
-
-[Using the Plugins SDK](/tutorials/-/knowledge_base/using-the-plugins-sdk-lp-6-2-develop-tutorial)
 
