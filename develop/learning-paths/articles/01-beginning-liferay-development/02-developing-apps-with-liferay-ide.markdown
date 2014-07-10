@@ -130,7 +130,3 @@ click *OK*.
 You've now registered your Plugins SDK, and you are ready to begin
 developing Liferay applications! 
 
-## Next Steps
-
-[Writing Your First Liferay Application](https://www-ldn.liferay.com/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath)
-
