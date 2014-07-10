@@ -1,4 +1,4 @@
-# Developing Apps with Liferay IDE [](id=developing-apps-with-liferay-ide-lp-6-2-develop-learnpath)
+# Developing Applications with Liferay IDE [](id=developing-apps-with-liferay-ide-lp-6-2-develop-learnpath)
 
 To develop an application, you need a development environment. Liferay
 provides a great environment with Liferay IDE. 
