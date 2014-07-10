@@ -13,6 +13,8 @@ tutorials cover the following three main areas.
 - Developing Liferay Applications
 - Styling and Customizing Liferay
 
+First, consider the tools Liferay provides to make your job easier.
+
 #### Using Liferay Development Tools
 
 If you're a newcomer, the wide variety of tools available can be overwhelming.
