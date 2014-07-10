@@ -19,7 +19,7 @@ that by providing Service Builder, a framework for generating the model,
 service, and persistence layers of your application. 
 
 For more information about how Service Builder works, see the 
-[tutorial](../../../tutorials/articles/service-builder/xx-what-is-service- builder.markdown) 
+[tutorial](/tutorials/articles/service-builder/xx-what-is-service-builder.markdown) 
 on its design. For now, you'll jump right in and start 
 creating your application's service and persistence layers. 
 
@@ -27,7 +27,7 @@ creating your application's service and persistence layers.
 
 This learning path starts with the development environment and application you 
 created in the first learning path. If you haven't followed that path, you'll 
-need to create that application first, or download it from [here](somewhere). 
+need to create that application first, or download it from [here](https://github.com/liferay/liferay-docs/tree/master/develop/learning-paths/code/01-beginning-liferay-development/begin-sdk). 
 From here on, we'll assume you have Liferay IDE and your application all set up 
 and ready to go. 
 
@@ -137,9 +137,9 @@ one site could host different wikis on different pages.
 If you write your application to support this, Liferay handles all of it
 automatically for you. You've already taken steps to support scope in your
 application by adding the default columns to your entities. Those default
-columns included the [Company ID](http://www-ldn.liferay.com/encyclopedia/-/wiki/Main/Company+ID), 
-the [Group ID](http://www-ldn.liferay.com/encyclopedia/-/wiki/Main/Group+ID),
-the [User ID](http://www-ldn.liferay.com/encyclopedia/-/wiki/Main/User+ID), the
+columns included the [Company ID](/encyclopedia/-/wiki/Main/Company+ID), 
+the [Group ID](/encyclopedia/-/wiki/Main/Group+ID),
+the [User ID](/encyclopedia/-/wiki/Main/User+ID), the
 user name, and some metadata, such as the create and modify dates. 
 
 The next thing you have to do is make sure your application's queries filter by
@@ -256,7 +256,7 @@ code generator for code generator haters: it generates the stuff that's tedious
 to write, while giving you the freedom to customize anything you want. 
 
 For further information about Service Builder, what it's built on, and how it
-works, please read the [What is Service Builder?](../../../tutorials/articles/service-builder/what-is-service-builder)
+works, please read the [What is Service Builder?](/tutorials/articles/service-builder/what-is-service-builder)
 tutorial. 
 
 Congratulations! You've now used Service Builder to generate a service and
