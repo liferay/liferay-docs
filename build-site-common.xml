@@ -64,7 +64,7 @@
 		</checkintros>
 	</target>
 
-    <target name="clean-dist" description="deletes dist directory">
+    <target name="clean-dist" description="Deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
@@ -78,7 +78,7 @@
 		</zip>
 	</target>
 
-	<target name="number-headers" description="numbers the headers of markdown files found in ${lang}/chapters/">
+	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
 		<property file="${project.dir}/release-site.properties" />
 		<java
 			classname="com.liferay.documentation.util.NumberHeadersSiteMain"

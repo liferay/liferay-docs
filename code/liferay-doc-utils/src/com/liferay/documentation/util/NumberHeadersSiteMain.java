@@ -301,8 +301,14 @@ public class NumberHeadersSiteMain extends Task {
 		StringBuffer sb = new StringBuffer(heading);
 		sb.append(_id_suffix);
 		sb.append(count);
+	
+		String finalHeaderId = sb.toString();
+		
+		if (finalHeaderId.contains("--")) {
+			finalHeaderId = finalHeaderId.replaceAll("--", "-");
+		}
 
-		return sb.toString();
+		return finalHeaderId;
 	}
 
 	private static final int MAX_ID_LEN = 75;
