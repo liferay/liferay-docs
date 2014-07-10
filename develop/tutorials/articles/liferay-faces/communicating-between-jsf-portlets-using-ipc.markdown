@@ -77,7 +77,7 @@ implement and register a `bridgePublicRenderParameterHandler` for processing
 public render parameters. 
 
 For example, a `BridgePublicRenderParameterHandler` for processing public render
-params for the Bookings portlet's currently selected Customer could be
+params for the Bookings portlet's currently selected customer could be
 stubbed out like the following class code: 
 
     package com.liferay.faces.example.handler;
@@ -114,8 +114,8 @@ in the `WEB-INF/portlet.xml` descriptor:
  
 ---
 
-Now that you've explored Public Render Parameters for JSF in IPC, let's look at
-Events in IPC. 
+Now that you've explored Public Render Parameters for JSF in IPC, you'll learn
+about Events in IPC. 
 
 ## Handling Portlet 2.0 Events
 
