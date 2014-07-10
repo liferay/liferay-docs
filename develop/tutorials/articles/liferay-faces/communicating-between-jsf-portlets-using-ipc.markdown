@@ -4,17 +4,16 @@ Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
 using the JSR 329 approach for supporting Portlet 2.0 Events and Portlet 2.0
 Public Render Parameters. 
 
----
+You can visit the [Liferay Faces
+Demos](http://www.liferay.com/community/liferay-projects/liferay-faces/demos)
+home page to see portlets that demonstrate the IPC techniques described in this
+tutorial. At that location, you'll also find portlets that implement Ajax Push
+for IPC, using ICEfaces+ICEPush and PrimeFaces+PrimePush. 
 
- ![Note](../../images/tip.png) **Note:** Visit
- <http://www.liferay.com/community/liferay-projects/liferay-faces/demos> to see
- portlets that demonstrate the IPC techniques described in this section. At that
- location, you'll also find portlets that implement Ajax Push for IPC, using
- ICEfaces+ICEPush and PrimeFaces+PrimePush. 
+For the first tutorial, you'll learn how to use Portlet 2.0 Public Render
+Parameters.
 
----
-
-## Using Portlet 2.0 Public Render Parameters [](id=portlet-2-0-public-render-parameters-jsf-liferay-portal-6-2-dev-guide-en)
+## Using Portlet 2.0 Public Render Parameters
 
 The Public Render Parameters technique provides a way for portlets to share data
 by setting public/shared parameter names in a URL controlled by the portal.
@@ -48,8 +47,10 @@ public render parameters into the Model concern of the MVC design pattern (as in
 JSF model managed-beans) after the `RESTORE_VIEW` phase completes. This is
 accomplished by evaluating the EL expressions found in the
 `<model-el>...</model-el>` section of the `WEB-INF/faces-config.xml` descriptor.
-The `WEB-INF/faces-config.xml` descriptor excerpt below demonstrates using this
-mechanism in the example Customers portlet and Bookings portlet:
+The
+[`faces-config.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-pub-render-params-portlet/src/main/webapp/WEB-INF/faces-config.xml)
+descriptor excerpt below demonstrates using this mechanism for the example
+Customers and Bookings portlets:
 
     <faces-config>
         <application>
@@ -113,21 +114,21 @@ in the `WEB-INF/portlet.xml` descriptor:
  
 ---
 
-Now that we've discussed Public Render Parameters for JSF in IPC, let's look at
+Now that you've explored Public Render Parameters for JSF in IPC, let's look at
 Events in IPC. 
 
-## Handling Portlet 2.0 Events [](id=portlet-2-0-events-jsf-liferay-portal-6-2-dev-guide-en)
+## Handling Portlet 2.0 Events
 
 In Portlet 2.0, you can leverage a server-side events technique that uses an
 event-listener design to share data between portlets. When using this form of
-IPC, the portlet container acts as broker and distributes events and payload
+IPC, the portlet container acts as a broker and distributes events and payload
 (data) to portlets. One requirement of this approach is that the payload must
 implement the `java.io.Serializable` interface since it might be sent to a
 portlet in another WAR running in a different classloader. In addition, the
 Portlet 2.0 standard requires the events to be declared in the
 `WEB-INF/portlet.xml` descriptors of the involved portlets. 
 
-The following example `WEB-INF/portlet.xml` descriptor snippet defines an IPC
+The following example `WEB-INF/portlet.xml` descriptor snippets define an IPC
 event for when a Customer is edited in the example Bookings portlet. The
 `bookingsPortlet` portlet is registered as the event's publisher (or sender).
 The `customersPortlet` portlet, on the other hand, is registered as a processor
@@ -135,26 +136,47 @@ The `customersPortlet` portlet, on the other hand, is registered as a processor
 the `bookingsPortlet` portlet, that portlet publishes the event and the
 `customersPortlet` portlet is notified for processing the event. 
 
-Here's a snippet from the example's `WEB-INF/portlet.xml` descriptor:
+Here's a snippet from the Customers portlet's
+[`portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
+descriptor: 
 
     <portlet>
-        <portlet-name>customersPortlet</portlet-name>
+        <portlet-name>customers</portlet-name>
+
+        ...
+
         <supported-processing-event>
             <qname xmlns:x="http://liferay.com/events">x:ipc.customerEdited</qname>
         </supported-processing-event>
     </portlet>
+
+
+    ...
+
+    <event-definition>
+        <qname xmlns:x="http://liferay.com/events">x:ipc.customerEdited</qname>
+        <value-type>com.liferay.faces.demos.dto.Customer</value-type>
+    </event-definition>
+
+The snippet from the Bookings portlet's
+[`portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet/src/main/webapp/WEB-INF/portlet.xml)
+is similar, except it is specified as a publisher: 
+
     <portlet>
-        <portlet-name>bookingsPortlet</portlet-name>
+        <portlet-name>bookings</portlet-name>
+
+        ...
+
         <supported-publishing-event>
             <qname xmlns:x="http://liferay.com/events">x:ipc.customerEdited</qname>
         </supported-publishing-event>
     </portlet>
 
-    ....
+    ...
 
     <event-definition>
         <qname xmlns:x="http://liferay.com/events">x:ipc.customerEdited</qname>
-        <value-type>com.liferay.faces.example.dto.Customer</value-type>
+        <value-type>com.liferay.faces.demos.dto.Customer</value-type>
     </event-definition>
 
 Optionally, you can implement a `BridgeEventHandler` for an event type and
@@ -166,7 +188,8 @@ be invoked so that it can perform any event processing that might be necessary.
 When the customer's details (such as first name/last name) are edited in the
 Bookings portlet, the event named `ipc.customerEdited` is sent back to the
 Customers portlet and is processed by the following
-`CustomerEditedEventHandler` class: 
+[`CustomerEditedEventHandler`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/java/com/liferay/faces/demos/event/CustomerEditedEventHandler.java)
+class: 
 
     ...
 
@@ -179,7 +202,7 @@ Customers portlet and is processed by the following
 
     public class CustomerEditedEventHandler implements BridgeEventHandler {
 
-            ....
+            ...
 
             public EventNavigationResult handleEvent(FacesContext facesContext, Event event) {
                     EventNavigationResult eventNavigationResult = null;
@@ -192,13 +215,14 @@ Customers portlet and is processed by the following
                     return eventNavigationResult;
             }
 
-            ....
+            ...
     }
 
 And here's the descriptor for registering the `CustomerEditedEventHandler` class
-as a bridge event handler for the Customers portlet.  The following
+as a bridge event handler for the Customers portlet. The following
 `<init-param>` belongs in the Customers portlet's `<portlet>` element, in the
-`WEB-INF/portlet.xml` descriptor. 
+[`WEB-INF/portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
+descriptor. 
 
     <init-param>
         <name>javax.portlet.faces.bridgeEventHandler</name>
@@ -210,12 +234,13 @@ as a bridge event handler for the Customers portlet.  The following
  ![Note](../../images/tip.png) **Note:** 
  For a complete example demonstrating JSF 2 IPC events, see the [JSF2 IPC Events
  -
- Customers](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-events-customers-portlet)
+ Customers](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet)
  and [JSF2 IPC Events -
- Bookings](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-events-bookings-portlet)
+ Bookings](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet)
  demo portlets on GitHub. 
 
 ---
 
-Now that we've discussed some common basic JSF portlet development topics, let's
-consider how to use dependency injection in JSF portlets. 
+You've explored some common basic JSF portlet development topics dealing with
+IPC. These techniques should help launch you into development of your own JSF
+portlet development using IPC! 
