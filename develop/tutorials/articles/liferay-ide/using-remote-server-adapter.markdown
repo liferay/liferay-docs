@@ -108,5 +108,5 @@ your testing workflow.
 
 [Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
 
-[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
 
