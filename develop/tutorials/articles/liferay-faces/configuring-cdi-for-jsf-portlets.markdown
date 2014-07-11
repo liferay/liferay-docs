@@ -17,19 +17,17 @@ CDI to version 1.1 for Java EE 7. In addition, [JSR
 another component of Java EE 7, introduced a dependency on the CDI API for the
 `javax.faces.view.ViewScoped` annotation and for the Faces Flows feature. JBoss
 [Weld](http://seamframework.org/Weld) is the Reference Implementation (RI) for
-CDI and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open
+CDI, and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open
 source implementation. 
 
-In this section we'll cover the following topics: 
+Still wondering what CDI accomplishes? Visit the [CDI
+Specs](http://cdi-spec.org/) to learn about CDI and why it has become a popular
+component for JSF. 
 
-- Configuring CDI on Liferay Portal
-- Configuring the Liferay CDI Portlet Bridge
-- Understanding CDI in JSF Annotations
+In this tutorial you'll cover how to configure CDI on Liferay Portal. To do
+this, you'll configure Weld on Liferay Portal to leverage CDI with JSF portlets. 
 
-Let's look at configuring Weld on Liferay Portal for leveraging CDI with JSF
-portlets. 
-
-#### Configuring CDI on Liferay Portal [](id=configure-weld-cdi-with-liferay-portal-6-2-dev-guide-en)
+## Configuring CDI on Liferay Portal
 
 You must use one of the following portal/app-server combinations to use Weld
 with Liferay Portal: 
@@ -90,9 +88,9 @@ descriptor for JBoss:
 <!-- Recommend we take out all the app server configuration stuff below and
 bake it into the app server sections in the User Guide. -Rich -->
 
-Next, we'll cover Weld configuration on the app server. Their are some different
-configuration steps for different app servers. We'll look at the most common
-configuration steps first. 
+Next, you'll cover Weld configuration on the app server. There are some
+different configuration steps for different app servers. You'll learn about the
+most common configuration steps first. 
 
 For most app servers (excluding Resin), the portlet's `WEB-INF/web.xml`
 descriptor must include the following filter and filter mapping: 
@@ -116,13 +114,13 @@ implementation of CDI by default.
 The next section contains information about specifically configuring Tomcat, so
 developers running other application servers can skip it. 
 
-**Additional Weld Configuration for Tomcat**
+## Additional Weld Configuration for Tomcat
 
 If Weld is running in a Java EE application server like Oracle GlassFish or
-JBoss AS, then Weld is automatically included in the global classpath. But on
-Tomcat, it is necessary to include the `weld-servlet.jar` dependency in either
-the `tomcat/lib` global classpath, or directly in the `WEB-INF/lib` folder of a
-portlet: 
+JBoss AS, then Weld is automatically included in the global classpath. However,
+on Tomcat, it is necessary to include the `weld-servlet.jar` dependency in
+either the `tomcat/lib` global classpath, or directly in the `WEB-INF/lib`
+folder of a portlet: 
 
     <!-- Required only for Tomcat -->
     <dependency>    
@@ -142,4 +140,4 @@ descriptor:
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
     </listener>
 
-Next we'll discuss configuring the Liferay CDI Portlet Bridge. 
+As you can see, configuring CDI for your JSF portlets is a snap! 
