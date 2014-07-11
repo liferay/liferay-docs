@@ -21,11 +21,11 @@ CDI, and Apache [OpenWebBeans](http://openwebbeans.apache.org/) is another open
 source implementation. 
 
 Still wondering what CDI accomplishes? Visit the [CDI
-Specs](http://cdi-spec.org/) to learn about CDI and why it has become a popular
-component for JSF. 
+Specs](http://cdi-spec.org/) to learn more about CDI and why it has become a
+popular component for JSF. 
 
-In this tutorial you'll cover how to configure CDI on Liferay Portal. To do
-this, you'll configure Weld on Liferay Portal to leverage CDI with JSF portlets. 
+In this tutorial, you'll cover how to configure CDI on Liferay Portal. To do
+this, you'll configure Weld on Liferay Portal to leverage CDI with JSF portlets.
 
 ## Configuring CDI on Liferay Portal
 
