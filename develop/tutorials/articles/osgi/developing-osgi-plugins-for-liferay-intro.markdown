@@ -1,4 +1,4 @@
-# Developing OSGi Plugins for Liferay
+# Developing OSGi Plugins for Liferay [](id=developing-osgi-plugins-for-liferay-lp-6-2-develop-tutorial)
 
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. OSGi implements a complete and dynamic component model. OSGi
