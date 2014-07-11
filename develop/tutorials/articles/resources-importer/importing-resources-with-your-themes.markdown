@@ -427,7 +427,3 @@ have your theme's resources imported into a site template. For further examples,
 please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
-
-## Next Steps
-
-[Creating Plugins to Share Structures, Templates, and More](www.liferay.com)

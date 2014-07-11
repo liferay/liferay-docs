@@ -175,16 +175,13 @@ section in the DevGuide.
 Congrats! Now you understand the basic structure of Liferay MVC portlets and you
 have two handy ways to create them in your bag O'trix!  
 
-## Next Steps
+## Related Topics
 
-If you're interested in creating Liferay MVC portlets from in a Maven project,
-follow the tutorials 
-[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
-and
-[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
 
-Or you may want to dive into the learning path
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath).
+[Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
 
-Otherwise, you can continue with this section's next tutorial. 
+[Creating Liferay Maven Plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+
+[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 

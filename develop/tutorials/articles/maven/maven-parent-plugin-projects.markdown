@@ -24,8 +24,6 @@ child plugin projects that refer to it. Of course, you can always specify
 information in each individual plugin's POM, but it's more convenient to use the
 parent project's POM for sharing common information. 
 
-## Creating a Parent Plugin Project
-
 Follow these steps to create a Liferay Maven parent plugin project: 
 
 1.  Create a directory for your parent plugin project. 
@@ -214,8 +212,3 @@ Follow these steps to create a Liferay Maven parent plugin project:
     ---
 
 You've configured your parent plugin project. 
-
-## Next Steps
-
-[Creating Liferay Maven Plugins from Liferay IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
-

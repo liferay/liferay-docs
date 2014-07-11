@@ -135,18 +135,8 @@ placed in the *target* directory. Its path is
 You now know how to create a theme plugin using Maven. You're familiar with
 its file structure and POM, and you know how to deploy the theme. Way to go!
 
-## Next Steps
+## Related Topics
 
-<!-- Revisit this link when the themes tutorial is published. Jim
+[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-For more information on Liferay themes and their settings, please refer to the
-[Creating Themes](http://www.liferay.com) tutorial. 
--->
-
-[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-
-[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
+<!-- Add link to Themes section. Jim -->

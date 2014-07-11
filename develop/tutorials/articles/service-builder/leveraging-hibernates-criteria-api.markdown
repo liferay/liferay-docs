@@ -16,8 +16,6 @@ efficient queries. For information on Hibernate's Criteria API, please see
 In this tutorial, you'll learn how to create custom finders for Liferay plugins
 using Service Builder and Liferay's Dynamic Query API.
 
-## Using Dynamic Query
-
 To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
@@ -347,13 +345,3 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet! 
-
-## Next Steps
-
-<!-- Uncomment when they are available. Jim
-[Developing Custom SQL queries](www.liferay.com) 
-
-[Configuring `service.properties`](www.liferay.com) 
--->
-
-[Customizing Model Entities With Model Hints](/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial) 

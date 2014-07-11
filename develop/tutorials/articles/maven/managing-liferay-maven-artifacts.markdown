@@ -271,9 +271,7 @@ your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
 Liferay plugins. 
 
-## Next Steps
-
-[Using Maven from Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+## Related Topics
 
 [Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial) 
 

@@ -103,9 +103,7 @@ your Liferay Portal. In Liferay Portal, The hook you created extends the
 original JSP's content with the version of the content you created. You now know
 how to extend an original Liferay JSP using a hook! 
 
-## Next Steps
+## Related Topics 
 
-[Overriding Web Resources](/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
-
-[Performing a Custom Action Using a Hook](/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
 

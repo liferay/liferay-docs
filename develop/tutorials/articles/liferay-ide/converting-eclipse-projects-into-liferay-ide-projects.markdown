@@ -41,13 +41,9 @@ This tutorial shows the steps required to accomplish this.
 Great! Now that you've imported and converted your project, you can work with it 
 just as you would any other Liferay project.
 
-## Next Steps 
-
-[Verifying Successful Project Import](/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+## Related Topics 
 
 [Faceting a Plugin Project for Liferay IDE](/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
 
-[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
-
-<!-- TODO - add links to deployment tutorials. Jim -->
+[Deploying Plugins](/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 

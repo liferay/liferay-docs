@@ -96,9 +96,7 @@ specification.
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! 
 
-## Next Steps 
-
-[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+## Related Topics 
 
 [Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 

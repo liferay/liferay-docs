@@ -60,24 +60,9 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 You now know how to create Liferay hook plugins to customize Liferay. 
 
-## Next Steps
-
-<!-- Revisit adding links to these tutorials. Jim
-
-To view the directory structure of a hook developed by Ant, please refer to the
-*Anatomy of the Hook* section of the [Creating a Hook](http://www.liferay.com)
-tutorial on creating hook plugins via the Liferay Plugins SDK.
-
-For detailed information on creating hooks, see the [Customizing and Extending
-Liferay Functionality with Hooks](http://www.liferay.com) tutorial.
--->
+## Related Topics
 
 [Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[Developing Liferay Theme Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-
-[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)

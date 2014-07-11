@@ -109,6 +109,6 @@ etc. Remember not to make customizations to the `portal.properties` file itself
 but to instead add customized properties to a `portal-ext.properties` file in
 your Liferay Home directory. 
 
-## Next Steps
+## Related Topics
 
 [Plugin Management](/use/-/knowledge_base/plugin-management-lp-6-2-use-useportal)

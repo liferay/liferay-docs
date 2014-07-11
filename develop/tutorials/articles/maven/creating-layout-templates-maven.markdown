@@ -70,22 +70,8 @@ Web source | `src/main/webapp` | `docroot` |
 You've passed your trial by fire (your new cat, Lenore III, thanks you),
 developing yet another plugin type with Maven. Way to go!
 
-## Next Steps
-
-<!-- Revisit this after the content is available. Jim
-
-[Anatomy of a Layout Template Project](http://www.liferay.com) 
-
-[Creating Liferay Themes and Layout Templates](http://www.liferay.com)
--->
+## Related Topics
 
 [Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Theme Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
-
+<!-- Add link to Layout Templates tutorial. Jim -->

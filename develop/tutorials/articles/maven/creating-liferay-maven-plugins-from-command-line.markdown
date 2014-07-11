@@ -202,11 +202,9 @@ When your plugin is created, you can package and deploy your project to a
 specified Liferay instance. You can even install and deploy the individual
 plugin to a remote repository. 
 
-## Next Steps
+## Related Topics
 
 [Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
 [Developing Liferay Theme Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
 
