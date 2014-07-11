@@ -1,4 +1,4 @@
-# What is Service Builder? 
+# What is Service Builder? [](id=what-is-service-builder-lp-6-2-develop-tutorial)
 
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
