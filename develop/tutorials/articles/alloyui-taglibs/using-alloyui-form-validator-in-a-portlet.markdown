@@ -67,6 +67,7 @@ Validator's `boundingBox` element.
     In the example below, the code creates a Form Validator for a `<form>` named
     *myForm*:
 
+        ```
         <aui:script>
         AUI().use(
           'aui-form-validator',
@@ -83,6 +84,7 @@ Validator's `boundingBox` element.
        );
         </aui:script>
 
+        ```
     The code above creates the Form Validator by getting the `AUI` object to use
     the `aui-form-validator` module to create a Form Validator component. It
     specifies values for the new Form Validator's `boundingBox`.
@@ -154,6 +156,7 @@ it accordingly. (Default:false)
 To use a rule, add it to the `rules` attribute and give it a proper value. Here 
 is an example of a `firstname` field with a few rules applied to it:
 
+		```
         rules: {
           firstname: { /*field name taken from input tag's name value*/
             required: true, /*this field is required*/
@@ -161,7 +164,8 @@ is an example of a `firstname` field with a few rules applied to it:
             alpha: true /*this field can only contain alpha characters*/
           }
         }
-                
+           
+        ```
 The rules' name, in this case `firstname`, is taken from the `name` attribute of
 the `<input>` tags in your form; it is important to note that it is case 
 sensitive. Upon breaking one of your rules for validation, a message is 
@@ -171,11 +175,11 @@ want to display all the messages; to do this, you can add a `showAllMessages`
 attribute to the Form Validator; here it is shown in context:
 
 		```
-        ...new Y.FormValidator(
+        new Y.FormValidator(
              {
                boundingBox: '#myForm',
                showAllMessages: true,
-               rules: { ...
+               rules: {
         ```
 Once you have mastered the `rules` attribute, the `fieldStrings` attribute is an 
 easy transition; essentially it's a modification of the `rules` attribute. say 
@@ -200,7 +204,7 @@ should look like, after breaking the rules:
 
 ![Figure 1: Here is a look at the `aui-form-validator` in a portlet with the `fieldStrings` attribute configured and the `showAllMessages` attribute set to true.](../../images/alloyui-form-validator-in-a-portlet.png)
 
-As you can see, the `aui-form-validator` is a no-brainer when it comes to form
+As you can see, AUI Form Validator is a no-brainer when it comes to form
 validation!
 
 ## Next Steps
