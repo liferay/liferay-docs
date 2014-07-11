@@ -33,21 +33,21 @@ complete contents of `init.jsp` for you.
 
 2.  Paste the contents of the below snippet into this file: 
 
-    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
-    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
-    <%@ taglib uri="http://liferay.com/tld/theme" prefix="theme" %>
+        <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+        <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+        <%@ taglib uri="http://liferay.com/tld/theme" prefix="theme" %>
 
-    <%@ page import="java.util.List" %>
-    <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
-    <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
-    <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
-    <%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
-    <%@ page import="com.liferay.docs.guestbook.service.EntryLocalServiceUtil" %>
-    <%@ page import="com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil" %>
+        <%@ page import="java.util.List" %>
+        <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+        <%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
+        <%@ page import="com.liferay.docs.guestbook.service.EntryLocalServiceUtil" %>
+        <%@ page import="com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil" %>
 
-    <portlet:defineObjects />
-    <theme:defineObjects />
+        <portlet:defineObjects />
+        <theme:defineObjects />
 
 As you can see, this file contains only what you'd need to use in the logic of
 your other JSPs. Since there's not much interesting going on here, it's best to
@@ -68,16 +68,16 @@ on it step by step.
 
 2.  Add the following first line of code: 
 
-    <%@include file="/html/init.jsp"%>
+        <%@include file="/html/init.jsp"%>
 
     This includes the `init.jsp` file you just created. 
 
 3.  Next, add the following scriptlet: 
 
-    <%
-        long guestbookId = Long.valueOf((Long) renderRequest
-                .getAttribute("guestbookId"));
-    %>
+        <%
+            long guestbookId = Long.valueOf((Long) renderRequest
+                    .getAttribute("guestbookId"));
+        %>
 
     This retrieves the `guestbookId` that was added to the `RenderRequest` object
     in the `render()` method of the portlet class. 
@@ -86,35 +86,35 @@ on it step by step.
     form. You'll implement a tab bar across the top of your application that lets
     users select the guestbook to which they want to add and/or read entries. 
 
-    <aui:nav cssClass="nav-tabs">
+        <aui:nav cssClass="nav-tabs">
 
-        <%
-            List<Guestbook> guestbooks = GuestbookLocalServiceUtil
-                        .getGuestbooks(scopeGroupId);
-                for (int i = 0; i < guestbooks.size(); i++) {
-                    Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+            <%
+                List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+                            .getGuestbooks(scopeGroupId);
+                    for (int i = 0; i < guestbooks.size(); i++) {
+                        Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
 
-                    String cssClass = StringPool.BLANK;
+                        String cssClass = StringPool.BLANK;
 
-                    if (curGuestbook.getGuestbookId() == guestbookId) {
-                        cssClass = "active";
-                    }
-        %>
+                        if (curGuestbook.getGuestbookId() == guestbookId) {
+                            cssClass = "active";
+                        }
+            %>
 
-        <portlet:renderURL var="viewPageURL">
-            <portlet:param name="mvcPath" value="/html/guestbook/view.jsp" />
-            <portlet:param name="guestbookId"
-                value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
-        </portlet:renderURL>
+            <portlet:renderURL var="viewPageURL">
+                <portlet:param name="mvcPath" value="/html/guestbook/view.jsp" />
+                <portlet:param name="guestbookId"
+                    value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
+            </portlet:renderURL>
 
-        <aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
-            label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
+            <aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
+                label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 
-        <%
-            }
-        %>
+            <%
+                }
+            %>
 
-    </aui:nav>
+        </aui:nav>
 
     The first thing this does is declare that you're using a navigation element,
     and that you want it to use tabs. These are implemented as a CSS class in
@@ -130,24 +130,24 @@ on it step by step.
 5.  Next, you'll add the button row, which is almost the same as the one you had
     in the previous version of this portlet: 
 
-    <aui:button-row cssClass="guestbook-buttons">
+        <aui:button-row cssClass="guestbook-buttons">
 
-        <portlet:renderURL var="addGuestbookURL">
-            <portlet:param name="mvcPath"
-                value="/html/guestbook/edit_guestbook.jsp" />
-        </portlet:renderURL>
+            <portlet:renderURL var="addGuestbookURL">
+                <portlet:param name="mvcPath"
+                    value="/html/guestbook/edit_guestbook.jsp" />
+            </portlet:renderURL>
 
-        <portlet:renderURL var="addEntryURL">
-            <portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
-            <portlet:param name="guestbookId"
-                value="<%=String.valueOf(guestbookId)%>" />
-        </portlet:renderURL>
+            <portlet:renderURL var="addEntryURL">
+                <portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
+                <portlet:param name="guestbookId"
+                    value="<%=String.valueOf(guestbookId)%>" />
+            </portlet:renderURL>
 
-        <aui:button onClick="<%=addGuestbookURL.toString()%>"
-            value="Add Guestbook" />
-        <aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
+            <aui:button onClick="<%=addGuestbookURL.toString()%>"
+                value="Add Guestbook" />
+            <aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
 
-    </aui:button-row>
+        </aui:button-row>
 
     This is the same as the previous version of the button row, except for the
     additional *Add Guestbook* button. This points to a new JSP which you'll create
@@ -156,25 +156,25 @@ on it step by step.
 6.  The last thing to be added is the new Search Container that uses your service
     layer to retrieve guestbook entries: 
 
-    <liferay-ui:search-container>
-        <liferay-ui:search-container-results
-            results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
-                            guestbookId, searchContainer.getStart(),
-                            searchContainer.getEnd())%>"
-            total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
-                            guestbookId)%>" />
+        <liferay-ui:search-container>
+            <liferay-ui:search-container-results
+                results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
+                                guestbookId, searchContainer.getStart(),
+                                searchContainer.getEnd())%>"
+                total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
+                                guestbookId)%>" />
 
-        <liferay-ui:search-container-row
-            className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+            <liferay-ui:search-container-row
+                className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
 
-            <liferay-ui:search-container-column-text property="message" />
+                <liferay-ui:search-container-column-text property="message" />
 
-            <liferay-ui:search-container-column-text property="name" />
+                <liferay-ui:search-container-column-text property="name" />
 
-        </liferay-ui:search-container-row>
+            </liferay-ui:search-container-row>
 
-        <liferay-ui:search-iterator />
-    </liferay-ui:search-container>
+            <liferay-ui:search-iterator />
+        </liferay-ui:search-container>
 
     Again, this Search Container is almost the same as the previous version, except
     for the parameters in the `<liferay-ui:search-container-results />` tag. The
@@ -195,20 +195,20 @@ of replacing its contents, just edit what you have; it'll be easier.
 1.  Remove the tag library declarations and the `<portlet:defineObjects />` tag
     from the top of the file. Replace it with the `init.jsp` include: 
 
-    <%@include file="/html/init.jsp" />
+        <%@include file="/html/init.jsp" />
 
 2.  The only other things you need to add are the missing fields. Make your
     `<aui:fieldset>` look like this: 
 
-    <aui:fieldset>
+        <aui:fieldset>
 
-        <aui:input name="name" />
-        <aui:input name="email" />
-        <aui:input name="message" />
-        <aui:input name='guestbookId' type='hidden' 
-            value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+            <aui:input name="name" />
+            <aui:input name="email" />
+            <aui:input name="message" />
+            <aui:input name='guestbookId' type='hidden' 
+                value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
 
-    </aui:fieldset>
+        </aui:fieldset>
 
     The only thing of note here is the last field: remember that the action URL
     that gets the user here has a parameter that carries the `guestbookId`. This

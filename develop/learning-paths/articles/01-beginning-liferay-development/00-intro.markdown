@@ -12,9 +12,9 @@ a widely used open source IDE that may already be familiar to you.
 
 If you're a Liferay Enterprise Edition subscriber or interested in Liferay's
 premier development environment, begin with 
-[Developing Applications with Liferay Developer Studio](/learning-paths/-/knowledge_base/developing-applications-with-liferay-developer-stu-lp-6-2-develop-learnpath).
+[Developing Applications with Liferay Developer Studio](/develop/learning-paths/-/knowledge_base/developing-applications-with-liferay-developer-stu-lp-6-2-develop-learnpath).
 
 If you want to use Liferay's free development environment or want to leverage
 it on top of an existing Eclipse installation, skip over to 
-[Developing Applications with Liferay IDE](/learning-paths/-/knowledge_base/developing-apps-with-liferay-ide-lp-6-2-develop-learnpath). 
+[Developing Applications with Liferay IDE](/develop/learning-paths/-/knowledge_base/developing-apps-with-liferay-ide-lp-6-2-develop-learnpath). 
  

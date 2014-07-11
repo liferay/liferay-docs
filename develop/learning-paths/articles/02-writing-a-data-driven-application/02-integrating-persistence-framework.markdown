@@ -28,14 +28,14 @@ you'll implement one for your `Entry` entity.
     exposing methods from the persistence layer in your service layer. Add the
     following two methods to your class: 
 
-    public List<Guestbook> getGuestbooks (long groupId) throws SystemException {
-        return guestbookPersistence.findByGroupId(groupId);
-    }
-	
-    public List<Guestbook> getGuestbooks (long groupId, int start, int end)
-       throws SystemException {
-        return guestbookPersistence.findByGroupId(groupId, start, end);
-    }
+        public List<Guestbook> getGuestbooks (long groupId) throws SystemException {
+            return guestbookPersistence.findByGroupId(groupId);
+        }
+        
+        public List<Guestbook> getGuestbooks (long groupId, int start, int end)
+           throws SystemException {
+            return guestbookPersistence.findByGroupId(groupId, start, end);
+        }
 
     Notice that the work of actually going to the database and finding your
     `Guestbook` entities has already been done for you: all you're doing is calling
@@ -65,8 +65,8 @@ Now you're ready to create a method that adds `Guestbook`s to the database.
 
 1.  Add the following method signature: 
 
-    public Guestbook addGuestbook(long userId, String name, 
-        ServiceContext serviceContext) throws SystemException, PortalException {
+        public Guestbook addGuestbook(long userId, String name, 
+            ServiceContext serviceContext) throws SystemException, PortalException {
 
     Most of this makes sense at the moment: you know that you want the ID of the
     user who is adding the guestbook, along with its name. But what's this
@@ -147,35 +147,35 @@ to jump in and create a service API for guestbook entries.
     already created for `Guestbook` entities. Remember that the finder you created
     required two fields: a `groupId` and a `guestbookId`: 
 
-	public List<Entry> getEntries(long groupId, long guestbookId) throws SystemException {
-		
-		return entryPersistence.findByG_G(groupId, guestbookId);
-	}
-	
-    public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
-         throws SystemException {
+        public List<Entry> getEntries(long groupId, long guestbookId) throws SystemException {
+            
+            return entryPersistence.findByG_G(groupId, guestbookId);
+        }
+        
+        public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
+             throws SystemException {
 
-        return entryPersistence.findByG_G(groupId, guestbookId, start, end);
-	}
+            return entryPersistence.findByG_G(groupId, guestbookId, start, end);
+        }
 
 3.  Create a method for validating `Entry` objects. There are three required
     fields in an `Entry` object: name, email, and message. You can use Liferay's
     included `Validator` to validate these fields: 
 
-	protected void validate (String name, String email, String entry) 
-            throws PortalException {
-		if (Validator.isNull(name)) {
-			throw new EntryNameException();
-		}
-		
-		if (!Validator.isEmailAddress(email)) {
-			throw new EntryEmailException();
-		}
-		
-		if (Validator.isNull(entry)) {
-			throw new EntryMessageException();
-		}
-    }
+        protected void validate (String name, String email, String entry) 
+                throws PortalException {
+            if (Validator.isNull(name)) {
+                throw new EntryNameException();
+            }
+            
+            if (!Validator.isEmailAddress(email)) {
+                throw new EntryEmailException();
+            }
+            
+            if (Validator.isNull(entry)) {
+                throw new EntryMessageException();
+            }
+        }
 
     Notice that in addition to checking to make sure two `String` fields are not
     null, you're also using the `Validator` to make sure a given `String` is an
@@ -184,38 +184,38 @@ to jump in and create a service API for guestbook entries.
 4.  Create a method for adding guestbook entries. This method is similar to the
     method you created earlier for adding guestbooks: 
 
-	public Entry addEntry(long userId, long guestbookId, String name,
-			String email, String message, ServiceContext serviceContext)
-             throws PortalException, SystemException {
-		long groupId = serviceContext.getScopeGroupId();
-		
-		User user = userPersistence.findByPrimaryKey(userId);
-		
-		Date now = new Date();
-		
-		validate(name, email, message);
-		
-		long entryId = counterLocalService.increment();
-		
-		Entry entry = entryPersistence.create(entryId);
-		
-		entry.setUuid(serviceContext.getUuid());
-		entry.setGroupId(groupId);
-		entry.setCompanyId(user.getCompanyId());
-		entry.setUserName(user.getFullName());
-		entry.setCreateDate(serviceContext.getCreateDate(now));
-		entry.setModifiedDate(serviceContext.getModifiedDate(now));
-		entry.setExpandoBridgeAttributes(serviceContext);
-		entry.setGuestbookId(guestbookId);
-		entry.setName(name);
-		entry.setEmail(email);
-		entry.setMessage(message);
-		
-		entryPersistence.update(entry);
-		
-		return entry;
-		
-    }
+        public Entry addEntry(long userId, long guestbookId, String name,
+                String email, String message, ServiceContext serviceContext)
+                 throws PortalException, SystemException {
+            long groupId = serviceContext.getScopeGroupId();
+            
+            User user = userPersistence.findByPrimaryKey(userId);
+            
+            Date now = new Date();
+            
+            validate(name, email, message);
+            
+            long entryId = counterLocalService.increment();
+            
+            Entry entry = entryPersistence.create(entryId);
+            
+            entry.setUuid(serviceContext.getUuid());
+            entry.setGroupId(groupId);
+            entry.setCompanyId(user.getCompanyId());
+            entry.setUserName(user.getFullName());
+            entry.setCreateDate(serviceContext.getCreateDate(now));
+            entry.setModifiedDate(serviceContext.getModifiedDate(now));
+            entry.setExpandoBridgeAttributes(serviceContext);
+            entry.setGuestbookId(guestbookId);
+            entry.setName(name);
+            entry.setEmail(email);
+            entry.setMessage(message);
+            
+            entryPersistence.update(entry);
+            
+            return entry;
+            
+        }
 
 Excellent! You've now created a service API for both `Guestbook` and guestbook
 `Entry` entities. Now it's time to modify your controller and view layers to
