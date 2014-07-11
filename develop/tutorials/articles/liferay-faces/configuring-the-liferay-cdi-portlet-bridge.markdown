@@ -5,8 +5,7 @@ portlets on Liferay. Your JSF portlet projects must include the Liferay CDI
 Portlet Bridge as a dependency.
 
 For example, to specify the bridge dependency in a Maven project for Liferay
-6.2, you'd add the following `<dependency>` to your POM's `<dependencies>`
-element: 
+6.2, add the following `<dependency>` to your POM's `<dependencies>` element: 
 
     <dependency>    
         <groupId>com.liferay.cdi</groupId>    
@@ -31,7 +30,7 @@ markup:
     </filter-mapping>
 
 Additionally, the portlet's `WEB-INF/web.xml` descriptor must include the
-following markup: 
+following declarations: 
 
     <filter>
         <filter-name>CDICrossContextFilter</filter-name>
@@ -54,9 +53,16 @@ following markup:
  [jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
  demo (which is a variant of the
  [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
- demo). It's a good idea download and deploy the jsf2-cdi-portlet demo in your
- development environment in order to verify that CDI functions properly. 
+ demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in
+ your development environment in order to verify that CDI functions properly. 
 
 ---
 
-Now that everything is configured, you are ready to begin development with CDI.
+Configuring the Portlet Bridge for you JSF portlet is complete. <!--For other
+configuration options dealing with CDI, visit the [Configuring CDI for JSF
+Portlets](www.liferay.com) tutorial. -->
+
+<!-- Update above link once tutorials are available. -Cody -->
+
+Now that CDI is fully configured for your portlet, you're ready to begin
+development with CDI. 
