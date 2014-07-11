@@ -1,7 +1,11 @@
 # Understanding CDI in JSF Annotations
 
-When developing portlets with CDI, it is possible to annotate Java classes as
-CDI managed beans with
+For this tutorial, you'll explore CDI annotations and, then, a helpful table is
+provided defining equivalence between JSF and CDI annotations. Each CDI
+annotation provides a description and link that provides helpful documentation. 
+
+First, when developing portlets with CDI, it's possible to annotate Java classes
+as CDI managed beans with
 [`@Named`](http://docs.oracle.com/javaee/6/api/javax/inject/Named.html) with the
 following scopes: 
 
@@ -24,5 +28,9 @@ annotations and their equivalence to CDI annotations.
 | `javax.faces.SessionScoped` | [`javax.enterprise.context.SessionScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/SessionScoped.html) |
 | `javax.faces.ManagedProperty` (corresponding setter method required) | [`javax.inject.Inject`](http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html) (corresponding setter method not required) |
 
-Now that we have discussed JSF portlet development with CDI, let's take a
-look at some UI component tags included with Liferay Faces Bridge. 
+You should now have a keen understanding of CDI and JSF annotations.
+
+<!-- For more information on using CDI for JSF portlets, you can visit the []()
+and []() tutorials. -->
+
+<!-- Add links to other CDI tutorials, when they're available. -Cody -->
