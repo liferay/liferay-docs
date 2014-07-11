@@ -36,7 +36,7 @@ Here's how you verify that your project imported correctly as a Liferay project:
 
 Congratulations on verifying that your project imported properly! 
 
-## Related Topics 
+Here is a related topic. 
 
 [Deploying Plugins](/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 
