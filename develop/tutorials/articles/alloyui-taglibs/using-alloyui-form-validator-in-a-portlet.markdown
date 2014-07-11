@@ -81,7 +81,7 @@ Validator's `boundingBox` element.
              }
            )
          }
-       );
+        );
         </aui:script>
 
         ```
