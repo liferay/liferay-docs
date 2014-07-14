@@ -125,8 +125,8 @@ requirements to keep in mind.
       duplicate any other app's context (you will see a warning if you use a
       context name of any other app on the Marketplace).
 
-    - *plugin_type* - one of the following: `ext`, `hook`, `layouttpl`,
-      `portlet`, `theme`, or `web`.
+    - *plugin_type* - one of the following: `hook`, `layouttpl`,
+      `portlet`, `theme`, or `web`.                            
 
     - `A`.`B`.`C`.`D` - The 4 digit version of your WAR file.  4 digits must
        be used.
