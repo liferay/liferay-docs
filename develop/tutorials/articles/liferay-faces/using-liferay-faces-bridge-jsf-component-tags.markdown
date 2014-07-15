@@ -26,13 +26,13 @@ tags. The VDL documentation can be found at the following addresses:
 -->
 
 Liferay Faces Bridge provides the following UI component tags under the `bridge`
-and `portlet` namespaces for the Bridge and Portlet 2.0 tags respectively. Let's
-look at the Bridge tags first. 
+and `portlet` namespaces for the Bridge and Portlet 2.0 tags, respectively. In
+the first part of this tutorial, you'll look at the Bridge tags. 
 
-#### Bridge UIComponent Tags [](id=liferay-faces-bridge-uicomponent-tags-liferay-portal-6-2-dev-guide-en)
+## Bridge UIComponent Tags
 
-Liferay Faces Bridge provides the following bridge-specific `UIComponent` tags as
-part of its component suite. 
+Liferay Faces Bridge provides the following bridge-specific `UIComponent` tags
+as part of its component suite. 
 
 The `bridge:inputFile` tag renders an HTML `<input type="file"/>` tag, providing
 file upload capability. 
@@ -80,13 +80,13 @@ implements handling the file upload:
 
 ---
 
-Next, let's learn about the Portlet `UIComponent` tags available in Liferay Faces
-Bridge. 
+Next, you'll learn about the Portlet `UIComponent` tags available in Liferay
+Faces Bridge. 
 
-#### Portlet 2.0 UIComponent Tags [](id=faces-bridge-portlet-2-0-uicomponent-tags-liferay-portal-6-2-dev-guide-en)
+## Portlet 2.0 UIComponent Tags
 
-Liferay Faces Bridge provides the following Portlet 2.0 `UIComponent` tags as
-part of its component suite. 
+Liferay Faces Bridge provides several 2.0 `UIComponent` tags as part of its
+component suite. You'll explore a few of them in this section of the tutorial. 
 
 ---
 
@@ -96,7 +96,7 @@ part of its component suite.
 
 ---
 
-The first tag we'll look at is `portlet:actionURL`.
+The first tag you'll look at is `portlet:actionURL`.
 
 If the `var` attribute is present, the `portlet:actionURL` tag introduces an EL
 variable that contains a `javax.portlet.ActionURL`, adequate for postbacks.
@@ -140,7 +140,7 @@ namespace is written to the response.
         </h:body>
     </f:view>
 
-The `portlet:param` tag is up next.
+The next tag you'll explore is the `portlet:param` tag. 
 
 The `portlet:param` tag lets you add a request parameter name=value pair when
 nested inside `portlet:actionURL`, `portlet:renderURL`, or `portlet:resourceURL`
@@ -162,7 +162,7 @@ tags.
         </h:body>
     </f:view>
 
-The next tag we'll look at is the `portlet:renderURL` tag.
+The next tag you'll look at is the `portlet:renderURL` tag. 
 
 If the `var` attribute is present, the `portlet:renderURL` tag introduces an EL
 variable that contains a `javax.portlet.PortletURL`, adequate for rendering.
@@ -185,7 +185,7 @@ Otherwise, the URL is written to the response.
         </h:body>
     </f:view>
 
-Finally, we'll look at the `portlet:resourceURL` tag.
+Finally, you'll look at the `portlet:resourceURL` tag. 
 
 If the `var` attribute is present, the `portlet:resourceURL` tag introduces an
 EL variable that contains a `javax.portlet.ActionURL`, adequate for obtaining
@@ -208,5 +208,5 @@ resources. Otherwise, the URL is written to the response.
         </h:body>
     </f:view>
 
-Now that we've introduced you to some of Liferay Faces Bridge's `UIComponent`
-tags, let's explore how to dynamically add JSF portlets to portal pages. 
+Great! You've been introduced to some of Liferay Faces Bridge's `UIComponent`
+tags, and have can now implement them into your JSF portlet! 
