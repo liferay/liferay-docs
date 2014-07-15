@@ -52,8 +52,8 @@ messages. You'll start with the message sender first.
 
 So where should you put the message sender code? Great question! Simply place it 
 in the method of your application that you want it to be called with. For 
-example, by placing the following code in the method of `TasksPortlet.java` that 
-adds a new task, a synchronous message is sent each time the tour manager 
+example, by placing the following code in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
+that adds a new task, a synchronous message is sent each time the tour manager 
 adds a new task to the portlet.
 
     Message message = new Message();
@@ -103,8 +103,9 @@ next stop on the Message Bus--the message listener!
 Implementing the message listener is a bit more involved than implementing the 
 message sender, but not by much. To implement the listener you need to make a 
 class that implements Liferay's `MessageListener` interface. Here's the listener 
-for the messages sent from the tour manager's Tasks portlet. It's in the package 
-`com.tour.portlet.tasks.messaging.impl`.
+for the messages sent from the tour manager's Tasks portlet. You can find it 
+[here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+It's in the package `com.tour.portlet.tasks.messaging.impl`.
 
     public class SetupMessagingImpl implements MessageListener {
 
@@ -266,14 +267,16 @@ the closing `</web-app>` tag in the `web.xml` file:
 
 Save and redeploy your portlet. Your plugin should now send and receive messages 
 as you've configured it to. In the case of the tour manager, the tasks portlet 
-now displays the success message when a set up task is added!
+now displays the success message when a set up task is added.
 
 ![Figure 2: The response to the synchronous message is successful!](../../images/msg-bus-synch-tasks.png)
 
 Likewise, the roadies' Setup portlet now gets any new tasks added by the road 
-manager!
+manager.
 
 ![Figure 3: The task was created in the roadies' Setup portlet.](../../images/msg-bus-synch-setup.png)
+
+Congratulations! You've successfully made your first trip on the Message Bus! 
 
 ## Next Steps 
 
