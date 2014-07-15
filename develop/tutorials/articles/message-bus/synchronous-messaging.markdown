@@ -1,88 +1,114 @@
-### Synchronous Messaging [](id=synchronous-messaging-liferay-portal-6-2-dev-guide-06-en)
+# Implementing Synchronous Messaging 
 
-In our example, equipment purchases can't proceed without approval from Finance
-and Legal departments. Since special offers from the manufacturers often only
-last for a couple hours, Procurement makes it their top priority to get approval
-as soon as possible. Implementing their exchange using *synchronous* messaging
-makes the most sense. 
+Synchronous messaging occurs when the sender blocks, waiting for a response from 
+the recipient. During this block, the sender cannot process *any* additional 
+information. This means that the thread the message is sent from is effectively 
+locked until it receives a response. You should therefore use synchronous 
+messaging only in cases where it is absolutely necessary that a response is 
+received before moving on. You can think of this as a sort of high priority read 
+receipt for a message. This tutorial uses such a case to illustrate how you 
+might go about setting up and using synchronous messaging between two portlets 
+in a plugin project. 
 
-![Figure 7.8: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 1: Synchronous messaging.](../../images/msg-bus-sync-msg.png)
 
-The following table describes how we'll set things up: 
+Imagine the following scenario. A rock concert requires many, many things to be 
+set up before the show can go on. The amplifiers, sound system, lighting, and 
+any other stage effects have to be properly set up for the show to be 
+successful. Naturally, the tour manager has chosen Liferay Portal for managing 
+all these tasks. The manager has a custom Tasks portlet for submitting set up 
+tasks, which then need to go to the roadies' Setup portlet on a separate page. 
+The manager also needs confirmation, before moving on with other things, that 
+the roadies' Setup portlet has received each request. Synchronous messaging to 
+the rescue! 
 
- Destination Key | Type  | Sender | Receivers                                 |
----------------- | ----- | ------ | ----------------------------------------- |
- `jungle/finance/purchase`          | synchronous | Procurement | Finance |
- `jungle/finance/purchase/response` | synchronous | Finance | Procurement |
- `jungle/legal/purchase`            | synchronous | Procurement | Legal   |
- `jungle/legal/purchase/response`   | synchronous | Legal | Procurement   |
+<!-- 
+Note: Links to sample code referenced throughout will need to be changed once it 
+gets merged into master.
+-->
 
-We've set it up so Finance sends its response messages to a destination on which
-Procurement will listen. That way a full-bodied response message is sent back to
-Procurement in addition to the response object returned from sending the
-message. 
+## Deciding on Destination Keys 
 
-*The Procurement Department sends a purchase approval request:* 
+You first need to figure out what your destination keys will be. The destination 
+keys need to be included with the message and registered as destinations in 
+`WEB-INF/src/META-INF/messaging-spring.xml`. In this example, the destination 
+keys were chosen to reflect the package names of the two portlets. 
 
-<!--Where does this code go? messaging-spring.xml? If so is the code here
-simply added to the file? And the code in subsequent descriptions too?-->
+The following table shows the destination keys, senders, and receivers for the 
+Tasks and Setup portlets described above: 
 
-<!-- That's a very good question. This would generally be part of a portlet
-application. This doesn't look like an actual, working demo, and I think we need
-to talk to Jim about it. -Rich --> 
+ Destination Key | Sender | Receivers |
+-------------------- | ----- | ----- |
+ `tour/roadie/setup` | Tasks | Setup |
+ `tour/manager/task` | Setup | Tasks |
+
+The receiver sends its response messages to a destination on which the sender 
+listens. This way, a full-bodied response message is sent back to the sender 
+along with the response object. Now that you know what your destination keys 
+are, you can use them when writing the code that sends and receives the 
+messages. You'll start with the message sender first. 
+
+## Implementing the Message Sender 
+
+So where should you put the message sender code? Great question! Simply place it 
+in the method of your application that you want it to be called with. For 
+example, by placing the following code in the method of `TasksPortlet.java` that 
+adds a new task, a synchronous message is sent each time the tour manager 
+adds a new task to the portlet.
 
     Message message = new Message();
-    message.put("department", "Procurement");
-    message.put("partName", part.getName(Locale.US));
-
+    message.put("name", name);
+    message.put("description", description);
+    message.put("status", status);
     message.setResponseId("1111");
-    message.setResponseDestinationName("jungle/finance/purchase/response");
-
+    message.setResponseDestinationName("tour/manager/task");
+       
     try {
-        String financeResponse = (String) MessageBusUtil.sendSynchronousMessage(
-            "jungle/finance/purchase", message, 10000);
-
-        System.out.println(
-            "Procurement received Finance sync response to purchase approval for " +
-            part.getName(Locale.US) + ": " + financeResponse);
-
-        message.setResponseId("2222");
-        message.setResponseDestinationName("jungle/legal/purchase/response");
-
-        String legalResponse = (String) MessageBusUtil.sendSynchronousMessage(
-            "jungle/legal/purchase", message, 10000);
-
-        System.out.println(
-            "Procurement received Legal sync response to purchase approval for " +
-            part.getName(Locale.US) + ": " + legalResponse);
-
-        if (financeResponse.contains("yes") && legalResponse.contains("yes")) {
-            sendPurchaseNotification(part, userId);
+	   
+        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
+    	    "tour/roadie/setup", message, 10000);
+    	    
+    	    if (roadieResponse.equals("RECEIVED")) {
+    	      SessionMessages.add(request, "success");
+    	    }
+    	   
+        } catch (MessageBusException e) {
+    	    e.printStackTrace();
         }
-    }
-    catch (MessageBusException e) {
-        e.printStackTrace();
-    }
+    
+The sender takes the following steps: 
 
-This sender takes the following steps: 
+1. Creates the message using Liferay's `Message` class. 
 
-1. Creates the message using Liferay's `Message` class.
-
-2. Stuffs the message with key/value pairs.
+2. Stuffs the message with key/value pairs using `message.put`. The key/value 
+    pairs used here are specific to this example. Be sure to use your own when 
+    implementing a sender in your applications.
 
 3. Sets a response ID and response destination for listeners to use in replying
-   back.
+   back. 
 
 4. Sends the message to the destination with a timeout value of 10,000
-   milliseconds.
+   milliseconds. This is how long the sender blocks for while waiting for a 
+   response. If no response is received, then a `MessageBusException` is thrown.
+   
+5. Continues with any processing desired after receiving the message. Here, if 
+    the response from the roadies` Setup portlet is "RECEIVED", then 
+    `SessionMessages` is used to display a success message.
 
-5. Blocks waiting for the response.
+Now that you've got your message sender implemented, it's time to head to the 
+next stop on the Message Bus--the message listener! 
 
-*Finance Department listens for purchase approval requests and replies back:* 
+## Implementing the Message Listener 
 
-    public class FinanceMessagingImpl implements MessageListener {
+Implementing the message listener is a bit more involved than implementing the 
+message sender, but not by much. To implement the listener you need to make a 
+class that implements Liferay's `MessageListener` interface. Here's the listener 
+for the messages sent from the tour manager's Tasks portlet. It's in the package 
+`com.tour.portlet.tasks.messaging.impl`.
 
-        public void receive(Message message) {
+    public class SetupMessagingImpl implements MessageListener {
+
+	    public void receive(Message message) {
             try {
                 doReceive(message);
             }
@@ -93,204 +119,169 @@ This sender takes the following steps:
 
         protected void doReceive(Message message)
             throws Exception {
+    	
+    	    // Receives message...
 
-            String department = (String) message.get("department");
-            String partName = (String) message.get("partName");
+            String name = (String) message.get("name");
+            String description = (String) message.get("description");
+            String status = (String) message.get("status");
+        
+            // Additional processing...
+        
+            ServiceContext serviceContext = new ServiceContext();
+            SetupLocalServiceUtil.addSetup(name, description, status, serviceContext);
+        
+            // Response...
+        
+            Message responseMessage = MessageBusUtil.createResponseMessage(message);
 
-            System.out.println("Finance received purchase request for " +
-                partName + " from " + department);
+            responseMessage.put("name", name);
+            responseMessage.put("description", description);
+            responseMessage.setPayload("RECEIVED");
 
-            Message responseMessage = MessageBusUtil.createResponseMessage(
-                message);
-
-            responseMessage.put("department", "Finance");
-            responseMessage.put("partName", partName);
-            responseMessage.setPayload("yes");
-
-            MessageBusUtil.sendMessage(
-                responseMessage.getDestinationName(), responseMessage);
+            MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
+        
         }
 
-        private static Log _log =
-            LogFactoryUtil.getLog(FinanceMessagingImpl.class);
+        private static Log _log = LogFactoryUtil.getLog(SetupMessagingImpl.class);
+
     }
 
-This listener executes the following steps: 
+The listener executes the following steps: 
 
 1. Implements the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface. 
 
 2. Extracts values from the `Message` parameter by getting values associated
-   with known keys. 
+   with known keys. This example extracts the values from the keys added when 
+   the message was created.
+   
+3. Executes any additional processing steps that you want done after the message 
+   is received. Here, a new `Setup` entity is created for the roadies' Setup 
+   portlet based on the values in the message. It's important to note that you 
+   don't have to do any additional processing if you don't want to.
 
-3. Creates a `Message` based on the message received via the
-   `MessageBusUtil.createResponseMessage(message)` method, which accesses the
-   response destination name from the `message` variable and sets the destination
-   of the response message. 
+4. Creates a response `Message` object based on the message received via the
+   `MessageBusUtil.createResponseMessage(message)` method. This method accesses 
+   the response destination name from the `message` variable and sets the 
+   destination of the response message. 
 
-4. Sets the response message's payload. 
+4. Sets the response message's payload. Here, the payload is set to 
+   `"RECEIVED"`, which is in turn used by the original sender to display a 
+   success message.
 
 5. Sends the response `Message` to the response destination.
 
-You can implement the listener for the Legal Department similarly. Next we'll
-account for Legal Department-related classes in our configuration.
+Now you have both a sender and a listener implemented for your messages! There's 
+just one more thing to take care of before you're done.
 
-*Message Bus Configuration for the purchase approval request process:*
+## Configuring Message Bus 
 
-For Message Bus to direct messages from destinations to listeners, we must
-register the listeners by configuring the appropriate mappings in our plugin's
-`WEB-INF/src/META-INF/messaging-spring.xml` file (create this file if it's not
-already in your plugin). Here is the configuration: 
+For Message Bus to successfully direct messages from destinations to listeners, 
+you must register the listeners by configuring the appropriate mappings in your 
+plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file.
 
-<!--If the messaging-spring file potentially hasn't been created yet where has
-the reader been putting the code snippets from above? Should this statement go
-before the first code snippet?--> 
+---
 
-<!-- The above snippets go in the service layer. If you follow the message bus
-section in Liferay in Action, you'll see that the Java stuff goes in the service
-layer's -Impl class. It's generally a best practice to write the Java classes
-and then write the configuration file, because tools like Liferay IDE and
-Liferay Developer Studio try to deploy the plugin right away, and if you declare
-classes in the configuration file that don't exist yet, the whole plugin blows
-up. -Rich -->
+ ![Warning](../../images/tip.png) **Warning:** You should only do this *after* 
+implementing any senders and listeners you have. Tools like Liferay IDE and 
+Liferay Developer Studio try to deploy plugins automatically as you save 
+changes. If you declare sender or listener classes in the configuration file 
+that don't exist yet, your plugin will break. 
+
+---
+
+Create the `WEB-INF/src/META-INF/messaging-spring.xml` file if it's not already 
+in your plugin. Here's the configuration for the Tasks and Setup portlets 
+described above: 
 
     <?xml version="1.0"?>
 
     <beans
-        default-destroy-method="destroy"
-        default-init-method="afterPropertiesSet"
-        xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	    default-destroy-method="destroy"
+	    default-init-method="afterPropertiesSet"
+	    xmlns="http://www.springframework.org/schema/beans"
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
     >
 
         <!-- Listeners -->
 
-        <bean
-            id="messageListener.finance_listener"
-            class="com.liferay.training.parts.messaging.impl.FinanceMessagingImpl"
-        /> 
-        <bean
-            id="messageListener.legal_listener"
-            class="com.liferay.training.parts.messaging.impl.LegalMessagingImpl"
-        />
-        <bean
-            id="messageListener.procurement_listener"
-            class="com.liferay.training.parts.messaging.impl.ProcurementMessagingImpl"
-        />
+	    <bean id="messageListener.setup_listener" class="com.tour.portlet.tasks.messaging.impl.SetupMessagingImpl" />
 
+	
         <!-- Destinations -->
 
-        <bean
-            id="destination.finance.purchase"
-            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
-        >
-            <property name="name" value="jungle/finance/purchase" />
-        </bean>
+        <bean id="tour.roadie.setup" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+		    <property name="name" value="tour/roadie/setup" />
+	    </bean>
 
-        <bean
-            id="destination.finance.purchase.response"
-            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
-        >
-            <property name="name" value="jungle/finance/purchase/response" />
-        </bean>
+        <bean id="tour.manager.task" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+		    <property name="name" value="tour/manager/task" />
+	    </bean>
 
-        <bean
-            id="destination.legal.purchase"
-            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
-        >
-            <property name="name" value="jungle/legal/purchase" />
-        </bean>
-
-        <bean
-            id="destination.legal.purchase.response"
-            class="com.liferay.portal.kernel.messaging.SynchronousDestination"
-        >
-            <property name="name" value="jungle/legal/purchase/response" />
-        </bean>
 
         <!-- Configurator -->
 
-        <bean
-            id="messagingConfigurator"
-            class=
-                "com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator"
-        >
-            <property name="messageListeners">
-                <map key-type="java.lang.String" value-type="java.util.List">
-                    <entry key="jungle/finance/purchase">
-                        <list
-                            value-type=
-                                "com.liferay.portal.kernel.messaging.MessageListener"
-                        >
-                            <ref bean="messageListener.finance_listener" />
-                        </list>
-                    </entry>
-                    <entry key="jungle/finance/purchase/response">
-                        <list
-                            value-type=
-                                "com.liferay.portal.kernel.messaging.MessageListener"
-                        >
-                            <ref bean="messageListener.procurement_listener" />
-                        </list>
-                    </entry>
-                    <entry key="jungle/legal/purchase">
-                        <list
-                            value-type=
-                                "com.liferay.portal.kernel.messaging.MessageListener"
-                        >
-                            <ref bean="messageListener.legal_listener" />
-                        </list>
-                    </entry>
-                    <entry key="jungle/legal/purchase/response">
-                        <list
-                            value-type=
-                                "com.liferay.portal.kernel.messaging.MessageListener"
-                        >
-                            <ref bean="messageListener.procurement_listener" />
-                        </list>
-                    </entry>
-                </map>
-            </property>
+	    <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+		    <property name="messageListeners">
+			    <map key-type="java.lang.String" value-type="java.util.List">
+				    <entry key="tour/roadie/setup">
+					    <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+						    <ref bean="messageListener.setup_listener" />
+					    </list>
+				    </entry>
+			    </map>
+		    </property>
             <property name="destinations">
                 <list>
-                    <ref bean="destination.finance.purchase"/>
-                    <ref bean="destination.finance.purchase.response"/>
-                    <ref bean="destination.legal.purchase"/>
-                    <ref bean="destination.legal.purchase.response"/>
+                    <ref bean="tour.roadie.setup"/>
+                    <ref bean="tour.manager.task"/>
                 </list>
             </property>
-        </bean>
+	    </bean>
     </beans>
 
 The configuration above specifies the following beans: 
 
-- *Listener beans*: Specify classes to handle messages.
+- *Listener beans*: Specify the listener classes to handle messages.
 - *Destination beans*: Specify the class *type* and *key* names of the
    destinations.
 - *Configurator bean*: Maps listeners to their destinations.
 
-When Finance sends its purchase approval request message for a new three-story
-spiral slide, the console reports Finance's receipt of the message,
-Procurement's receipt of the callback response from Finance, and Procurement's
-receipt of the synchronous response returned from sending the message. Here's
-what the console message looks like: 
+Now you just need to register this `messaging-spring.xml` file in your 
+`docroot/WEB-INF/web.xml` file. To do so, place the following code just above 
+the closing `</web-app>` tag in the `web.xml` file:
 
-    Finance received purchase request for three-story spiral slide from Procurement
-    Procurement received Finance callback response to purchase approval for three-
-    story spiral slide: yes
-    Procurement received Finance sync response to purchase approval for three-story 
-    spiral slide: yes
-    Legal received purchase request for three-story spiral slide from Procurement
-    Procurement received Legal callback response to purchase approval for three-
-    story spiral slide: yes
-    Procurement received Legal sync response to purchase approval for three-story 
-    spiral slide: yes
+    ```
+    <listener>
+      <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+    </listener>
 
-Do you know what all those *yes* messages mean? Success! Jungle Gyms R-Us has
-the cash to purchase this cool new slide, and the Legal Department has no gripes
-about the slide's safety ratings! 
+    <context-param>
+      <param-name>portalContextConfigLocation</param-name>
+      <param-value>/WEB-INF/classes/META-INF/messaging-spring.xml</param-value>
+    </context-param>
+    ```
 
-Next let's have Procurement notify the Sales and Warehouse departments and
-solicit their feedback.
+Save and redeploy your portlet. Your plugin should now send and receive messages 
+as you've configured it to. In the case of the tour manager, the tasks portlet 
+now displays the success message when a set up task is added!
+
+![Figure 2: The response to the synchronous message is successful!](../../images/msg-bus-synch-tasks.png)
+
+Likewise, the roadies' Setup portlet now gets any new tasks added by the road 
+manager!
+
+![Figure 3: The task was created in the roadies' Setup portlet.](../../images/msg-bus-synch-setup.png)
+
+## Next Steps 
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+
+<!--
+
+[Asynchronous Messaging with Callbacks](http://www.liferay.com/)
+
+[Asynchronous Send and Forget Messaging](http://www.liferay.com/)
+-->
