@@ -281,11 +281,11 @@ performance.
 
 ## Related Topics 
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[User Interfaces with AlloyUI / Liferay UI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI / Liferay UI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[OpenSocial Gadgets](/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 

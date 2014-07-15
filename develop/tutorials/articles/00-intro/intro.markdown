@@ -4,7 +4,7 @@ Welcome to Liferay Tutorials!
 These tutorials show you how to build powerful robust apps using the
 Liferay's tools, frameworks and APIs. The tutorials compliment the fundamentals
 that you can master in Liferay's
-[Learning Paths](/learning-paths/-/knowledge_base/learning-paths-lp-6-2-develop-learnpath),
+[Learning Paths](/develop/learning-paths/-/knowledge_base/welcome-lp-6-2-develop-learnpath),
 giving you keen insight into development features for building top-notch apps,
 designing stylish themes, and customizing Liferay Portal to meet your needs. The
 tutorials cover the following three main areas. 
@@ -48,16 +48,16 @@ common tasks that Liferay doesn't make you have to write yourself.
 <!--Here are just
 a few of the framework topics the tutorials cover in detail.  
 
-[Service Builder and Services](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
 Implementing Roles and Permissions<br>
 Leveraging the Asset Framework<br>
-[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
 -->
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
 taglibs and snazzy UI components that
-[AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial) and
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial) and
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
 provide.
 
 #### Styling and Customizing Liferay

@@ -72,6 +72,6 @@ developing yet another plugin type with Maven. Way to go!
 
 ## Related Topics
 
-[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
 <!-- Add link to Layout Templates tutorial. Jim -->

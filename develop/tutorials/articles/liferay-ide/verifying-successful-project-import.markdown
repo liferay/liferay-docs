@@ -38,5 +38,5 @@ Congratulations on verifying that your project imported properly!
 
 Here is a related topic. 
 
-[Deploying Plugins](/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 

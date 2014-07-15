@@ -137,6 +137,6 @@ its file structure and POM, and you know how to deploy the theme. Way to go!
 
 ## Related Topics
 
-[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
 <!-- Add link to Themes section. Jim -->

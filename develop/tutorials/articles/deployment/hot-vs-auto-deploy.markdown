@@ -140,6 +140,6 @@ deployment process and make it more efficient.
 
 # Related Topics [](id=related-topics-lp-6-2-develop-tutorial)
 
-[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
