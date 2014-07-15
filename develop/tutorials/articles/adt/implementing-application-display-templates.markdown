@@ -283,7 +283,7 @@ performance.
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[User Interfaces with AlloyUI / Liferay UI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
 [Localization](/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
