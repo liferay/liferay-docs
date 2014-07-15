@@ -104,5 +104,5 @@ your testing workflow.
 
 ## Related Topics
 
-[Deploying Plugins](/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 

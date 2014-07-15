@@ -99,4 +99,4 @@ Congratulations on overriding a Liferay Portal JSP!
 
 ## Related Topics 
 
-[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Making Your Portlet ADT-Enabled](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

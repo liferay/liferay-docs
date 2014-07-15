@@ -102,7 +102,7 @@ Congratulations on importing *multiple* Liferay projects into your workspace!
 
 ## Related Topics
 
-[Verifying Successful Project Import](/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
 
-[Deploying Plugins](/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 

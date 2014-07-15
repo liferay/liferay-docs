@@ -677,9 +677,9 @@ interest you.
 
 Here are more tutorials that you may find interesting:
 
-[Developing Plugins with the Plugins SDK](/tutorials/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial)
+[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial)
 
-[Developing Plugins with Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
 
 <!--
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)
