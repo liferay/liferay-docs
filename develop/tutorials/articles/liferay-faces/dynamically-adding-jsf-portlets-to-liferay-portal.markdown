@@ -1,7 +1,7 @@
 # Dynamically Adding JSF Portlets to Liferay Portal
 
-Liferay Portal lets you add portlets dynamically to portal pages using several
-approaches: 
+For this tutorial, you'll learn how Liferay Portal lets you add portlets
+dynamically to portal pages. Here are several approaches to do this:  
 
 - Inside the FreeMarker template or [Velocity
   template](http://www.liferay.com/community/wiki/-/wiki/Main/Embedding+a+portlet+in+the+theme)
@@ -11,21 +11,21 @@ approaches:
 - Inside a JSP with `<liferay-portlet:runtime />` 
 
 Unfortunately, as described in
-[FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding  JSF
+[FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding JSF
 portlets doesn't work very well. It's actually not limited to JSF portlets--
 this problem happens with any portlet that needs to add JS/CSS resources to
 the `<head>`...`</head>` section of the portal page. Since JSF portlets require
 the `jsf.js` resource to perform Ajax requests, the `jsf.js` resource must be
 loaded when the portal page is initially rendered. 
 
-There are two workarounds:
+There are two workarounds: 
 
 1.  For plain JSF portlets, add a `<link />` element for the `jsf.js` resource
     in the `<head>`...`</head>` section of the `portal_normal.vm` or
     `portal_normal.ftl` file in the theme. The first few lines of `jsf.js`
     prevent double-instantiation in case it gets included multiple times on a
     page. This can occur when a JSF portlet is dynamically included and another
-    JSF portlet is added statically. Unfortunately this approach doesn't work
+    JSF portlet is added statically. Unfortunately, this approach doesn't work
     for PrimeFaces, since `primefaces.js` does not prevent double-instantiation.
 
 2.  Use an IFrame: 
@@ -75,5 +75,3 @@ ensures that JSF 2 is properly initialized. You specify the required
 
 Now, you know the options you have in dynamically adding your JSF portlets at
 runtime. 
-
-Next, we'll discuss extension of Liferay Faces Bridge with Factory Wrappers.
