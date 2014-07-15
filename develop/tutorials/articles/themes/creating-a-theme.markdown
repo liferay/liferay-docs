@@ -1,4 +1,4 @@
-# Creating a Theme Project
+# Creating a Theme Project [](id=creating-a-theme-project-lp-6-2-develop-tutorial)
 
 You can create themes in a Plugins SDK project or a Liferay Maven project.
 Liferay IDE lets you create either project type using command line tools: Ant in 

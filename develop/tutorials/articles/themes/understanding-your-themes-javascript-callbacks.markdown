@@ -1,4 +1,4 @@
-# Understanding Your Theme's JavaScript Callbacks in *main.js*
+# Understanding Your Theme's JavaScript Callbacks in *main.js* [](id=understanding-your-themes-javascript-callbacks-in-main-js)
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside

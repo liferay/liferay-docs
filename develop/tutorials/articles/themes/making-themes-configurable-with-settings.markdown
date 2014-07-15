@@ -1,4 +1,4 @@
-# Making Themes Configurable with Settings
+# Making Themes Configurable with Settings [](id=making-themes-configurable-with-settings)
 
 You can define settings to make your theme configurable. The process is easier 
 than you may think. Follow the steps below to get started.

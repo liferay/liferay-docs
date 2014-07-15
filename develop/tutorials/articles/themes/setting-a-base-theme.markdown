@@ -1,4 +1,4 @@
-# Setting a Base Theme
+# Setting a Base Theme [](id=setting-a-base-theme)
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they

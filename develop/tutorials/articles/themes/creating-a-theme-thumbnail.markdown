@@ -1,4 +1,4 @@
-# Creating a Theme Thumbnail
+# Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail-lp-6-2-develop-tutorial)
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's

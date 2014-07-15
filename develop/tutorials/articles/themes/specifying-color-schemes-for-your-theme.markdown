@@ -1,4 +1,4 @@
-# Specifying Color Schemes
+# Specifying Color Schemes [](id=specifying-color-schemes)
 
 One way to stretch the life of your theme is to create various color
 schemes for it. Color schemes allow you to keep the styles and overall
