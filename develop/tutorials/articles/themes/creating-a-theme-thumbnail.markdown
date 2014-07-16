@@ -1,33 +1,23 @@
 # Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail-lp-6-2-develop-tutorial)
 
-Now that your theme is available in Liferay, it's time to dress it up for a
-stylistic appeal. Currently in the *Look and Feel* settings, your theme's
-thumbnail is nonexistent. To remedy this, follow the steps below.
+Have you associated a thumbnail image with your theme? In the *Look and Feel*
+settings of your site pages in the Site Administration screen, notice that each
+available theme has a thumbnail image. It's time to dress up your theme with
+stylistic appeal by creating a thumbnail image for it. 
 
-## Step 1. Create a Thumbnail Image
+Here are the steps for setting up a thumbnail image for your theme:
 
-Create a 150 pixels wide by 120 pixels high image to use as your theme's 
-thumbnail. You may want to take a snapshot of your theme and re-size it to these 
-dimensions. It is very important to abide by these *exact* dimensions or your 
-image will not display properly as a thumbnail. Onward to step 2!
+1.  Create a thumbnail image. Make sure it's 150 pixels wide by 120 pixels high.
+    You may want to take a snapshot of your theme and re-size it to these
+    dimensions. It is very important to abide by these *exact* dimensions or
+    your image won't display properly as a thumbnail. 
 
-## Step 2. Save the image As a PNG
+2.  Save the image as a `.png` file named `thumbnail.png` and place it in your
+    theme's `docroot/_diffs/images` folder (create this folder if it
+    doesn't already exist). On redeployment, your `thumbnail.png` file
+    automatically displays as your theme's thumbnail.
 
-Save it as a `.png` file named `thumbnail.png` and place it in your theme's 
-`docroot/_diffs/images` directory (create this directory if it doesn't already 
-exist). On redeployment, your `thumbnail.png` file automatically displays as 
-your theme's thumbnail.
+Now, when you visit your the *Look and Feel* settings, your theme's thumbnail
+displays along with the thumbnail images of other themes available to your site.
 
-Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
-there, along with the *Classic* theme's thumbnail.
-
-Congrats, now you know how to create a thumbnail for your theme!
-
-## Next Steps
-
- <!-- URL will probably need updated when added to the new devsite-->
- [Using Developer Mode with Themes](/tutorials/-/knowledge_base/using-developer-mode)
- 
- [Making Themes Configurable with Settings](/tutorials/-/knowledge_base/making-themes-configurable)
-
- [Specifying Color Schemes for Your Themes](/tutorials/-/knowledge_base/specifying-color-schemes-for-your-theme)
+Congrats! Now you know how to create a thumbnail image for your theme!
