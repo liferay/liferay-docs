@@ -56,52 +56,40 @@ messages. You'll start with the message sender first.
 
 ## Implementing the Message Sender 
 
-So where should you put the message sender code? Great question! Simply place it 
-in the method of your application that you want it to be called with. For 
-example, by placing the following code in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
-that adds a new task, a synchronous message is sent each time the tour manager 
-adds a new task to the portlet.
+Now it's time to write the message sender code. So where should you put this 
+code? Great question! Simply place it in the method of your application that you 
+want it to be called with. For example, the message sender code for the tour 
+manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
+that adds a new task. This is because a synchronous message needs to be sent 
+each time the tour manager adds a new task to the portlet. 
 
-    Message message = new Message();
-    message.put("name", name);
-    message.put("description", description);
-    message.put("status", status);
-    message.setResponseId("1111");
-    message.setResponseDestinationName("tour/manager/task");
-       
-    try {
-	   
-        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
-    	    "tour/roadie/setup", message, 10000);
-    	    
-    	    if (roadieResponse.equals("RECEIVED")) {
-    	      SessionMessages.add(request, "success");
-    	    }
-    	   
-        } catch (MessageBusException e) {
-    	    e.printStackTrace();
-        }
-    
 The sender takes the following steps: 
 
 1. Creates the message using Liferay's `Message` class. 
 
-2. Stuffs the message with key/value pairs using `message.put`. The key/value 
-   pairs used here are specific to this example. Be sure to use your own when 
-   implementing a sender in your applications.
+    Message message = new Message();
+
+2. Stuffs the message with key/value pairs using the `put` method. In this 
+   example, key/value pairs of a Task entity are added. 
+   
+    message.put("name", name);
+    message.put("description", description);
+    message.put("status", status);
 
 3. Sets a response ID and response destination for listeners to use in replying
    back. 
+   
+    message.setResponseId("1111");
+    message.setResponseDestinationName("tour/manager/task");
 
 4. Sends the message to the destination with a timeout value of 10,000
    milliseconds. This is how long the sender blocks for while waiting for a 
    response. If no response is received, then a `MessageBusException` is thrown.
    
-5. Continues with any processing desired after receiving the message. Here, if 
-   the response from the roadies' Setup portlet is `"RECEIVED"`, then 
-   `SessionMessages` is used to display a success message. 
+    String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
+    	    "tour/roadie/setup", message, 10000);
 
-Be sure to add the following imports to your message sender file:
+Also be sure to add the following imports to your message sender file: 
 
     import com.liferay.portal.kernel.messaging.Message;
     import com.liferay.portal.kernel.messaging.MessageBusException;
@@ -114,80 +102,38 @@ next stop on the Message Bus--the message listener!
 
 Implementing the message listener is a bit more involved than implementing the 
 message sender, but not by much. To implement the listener you need to make a 
-class that implements Liferay's `MessageListener` interface. Here's the listener 
-for the messages sent from the tour manager's Tasks portlet. You can find it 
-[here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
-It's in the package `com.tour.portlet.tasks.messaging.impl`.
+class that implements Liferay's `MessageListener` interface. You can find the 
+listener of the tour manager's Tasks portlet [here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
-    public class SetupMessagingImpl implements MessageListener {
-
-	    public void receive(Message message) {
-            try {
-                doReceive(message);
-            }
-            catch (Exception e) {
-                _log.error("Unable to process message " + message, e);
-            }
-        }
-
-        protected void doReceive(Message message)
-            throws Exception {
-    	
-    	    // Receives message...
-
-            String name = (String) message.get("name");
-            String description = (String) message.get("description");
-            String status = (String) message.get("status");
-        
-            // Additional processing...
-        
-            ServiceContext serviceContext = new ServiceContext();
-            SetupLocalServiceUtil.addSetup(name, description, status, serviceContext);
-        
-            // Response...
-        
-            Message responseMessage = MessageBusUtil.createResponseMessage(message);
-
-            responseMessage.put("name", name);
-            responseMessage.put("description", description);
-            responseMessage.setPayload("RECEIVED");
-
-            MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
-        
-        }
-
-        private static Log _log = LogFactoryUtil.getLog(SetupMessagingImpl.class);
-
-    }
-
-The listener executes the following steps: 
+The listener class executes the following steps: 
 
 1. Implements the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface. 
 
 2. Extracts values from the `Message` parameter by getting values associated
-   with known keys. This example extracts the values from the keys that were 
-   added when the message was created.
+   with known keys. For example, this example gets the `"name"` key that was 
+   created by the sender. 
    
-3. Executes any additional processing steps that you want done after the message 
-   is received. Here, a new `Setup` instance is created for the roadies' Setup 
-   portlet based on the values in the message. It's important to note that you 
-   don't have to do any additional processing if you don't want to. For example, 
-   you could simply have the listener send a response upon receipt of the 
-   message.
+    String name = (String) message.get("name");
 
-4. Creates a response `Message` object based on the message received via the
-   `MessageBusUtil.createResponseMessage(message)` method. This method accesses 
-   the response destination name from the `message` variable and sets the 
-   destination of the response message. 
-
-5. Sets the response message's payload. Here, the payload is set to 
+3. Creates and sends a response `Message` object based on the message received 
+   via the `MessageBusUtil.createResponseMessage(message)` method. This method 
+   accesses the response destination name from the `message` variable and sets 
+   the destination of the response message. The `setPayload` method sets the 
+   response message's payload. In this example, the payload is set to 
    `"RECEIVED"`, which is in turn used by the original sender to display a 
-   success message.
+   success message. 
+   
+    Message responseMessage = MessageBusUtil.createResponseMessage(message);
+    ```
+    responseMessage.setPayload("RECEIVED");
 
-6. Sends the response `Message` to the response destination.
+4. Sends the response `Message` to the response destination. 
 
-Be sure to add the following imports to your message listener file: 
+    MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
+
+Also be sure to add the following imports to your message listener file: 
 
     import com.liferay.portal.kernel.messaging.Message;
     import com.liferay.portal.kernel.messaging.MessageBusUtil;
@@ -213,8 +159,8 @@ that don't exist yet, your plugin will break.
 ---
 
 Create the `WEB-INF/src/META-INF/messaging-spring.xml` file if it's not already 
-in your plugin. Here's the configuration for the Tasks and Setup portlets 
-described above: 
+in your plugin. For example, here's the configuration for the custom Tasks and 
+Setup portlets: 
 
     <?xml version="1.0"?>
 
