@@ -67,33 +67,33 @@ The sender takes the following steps:
 
 1. Creates the message using Liferay's `Message` class. 
 
-    Message message = new Message();
+        Message message = new Message();
 
 2. Stuffs the message with key/value pairs using the `put` method. In this 
    example, key/value pairs of a Task entity are added. 
    
-    message.put("name", name);
-    message.put("description", description);
-    message.put("status", status);
+        message.put("name", name);
+        message.put("description", description);
+        message.put("status", status);
 
 3. Sets a response ID and response destination for listeners to use in replying
    back. 
    
-    message.setResponseId("1111");
-    message.setResponseDestinationName("tour/manager/task");
+        message.setResponseId("1111");
+        message.setResponseDestinationName("tour/manager/task");
 
 4. Sends the message to the destination with a timeout value of 10,000
    milliseconds. This is how long the sender blocks for while waiting for a 
    response. If no response is received, then a `MessageBusException` is thrown.
    
-    String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
+        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
     	    "tour/roadie/setup", message, 10000);
 
 Also be sure to add the following imports to your message sender file: 
 
-    import com.liferay.portal.kernel.messaging.Message;
-    import com.liferay.portal.kernel.messaging.MessageBusException;
-    import com.liferay.portal.kernel.messaging.MessageBusUtil;
+        import com.liferay.portal.kernel.messaging.Message;
+        import com.liferay.portal.kernel.messaging.MessageBusException;
+        import com.liferay.portal.kernel.messaging.MessageBusUtil;
 
 Now that you've got your message sender implemented, it's time to head to the 
 next stop on the Message Bus--the message listener! 
@@ -115,7 +115,7 @@ The listener class executes the following steps:
    with known keys. For example, this example gets the `"name"` key that was 
    created by the sender. 
    
-    String name = (String) message.get("name");
+        String name = (String) message.get("name");
 
 3. Creates and sends a response `Message` object based on the message received 
    via the `MessageBusUtil.createResponseMessage(message)` method. This method 
@@ -125,13 +125,13 @@ The listener class executes the following steps:
    `"RECEIVED"`, which is in turn used by the original sender to display a 
    success message. 
    
-    Message responseMessage = MessageBusUtil.createResponseMessage(message);
-    ```
-    responseMessage.setPayload("RECEIVED");
+        Message responseMessage = MessageBusUtil.createResponseMessage(message);
+        ```
+        responseMessage.setPayload("RECEIVED");
 
 4. Sends the response `Message` to the response destination. 
 
-    MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
+        MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
 
 Also be sure to add the following imports to your message listener file: 
 
