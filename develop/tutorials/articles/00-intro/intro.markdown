@@ -72,41 +72,86 @@ discover new things as you develop sites in Liferay.
 To get you started, here are links to topics in the three areas
 discussed on this page.
 
-<table>
+<div id="wrapper">
+<table id="table">
+<tr>
+<th>
+<strong>Development Tools</strong>
+</th>
+
+<th>
+<strong>Developing Apps</strong>
+</th>
+
+<th>
+<strong>Styling and Customizing</strong>
+</th>
+</tr>
+
 <tr>
 <td>
-<strong>Development Tools</strong>
+<a href="/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a>
 </td>
-
 <td>
-<strong>Developing Apps</strong>
+<a href="/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a>
 </td>
-
 <td>
-<strong>Styling and Customizing</strong>
+Developing Themes
 </td>
 </tr>
 
 <tr>
 <td>
-<a href="/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a><br>
-<a href="/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a><br>
-<a href="/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a><br>
-<a href="/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a><br>
+<a href="/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a>
 </td>
-
 <td>
-<a href="/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a><br>
-<a href="/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a><br>
-<a href="/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a><br>
+<a href="/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a>
+</td>
+<td>
+Developing Layout Templates
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a>
+</td>
+<td>
+<a href="/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a>
+</td>
+<td>
+<a href="/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a>
+</td>
+<td>
 <a href="/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
-</td>
-
-<td>
-Developing Themes<br>
-Developing Layout Templates<br>
-<a href="/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a><br>
 </td>
 </tr>
 </table>
+</div>
 
+<style>
+table
+{
+width:860px;
+}
+th
+{
+text-align: left;
+}
+th, td
+{
+padding-left: 0.4em;
+padding-top: 0.3em;
+
+}
+#wrapper
+{
+margin-left: -0.4em;
+}
+</style>
