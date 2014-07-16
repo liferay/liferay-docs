@@ -6,9 +6,9 @@ information. This means that the thread the message is sent from is effectively
 locked until it receives a response. You should therefore use synchronous 
 messaging only in cases where it is absolutely necessary that a response is 
 received before moving on. You can think of this as a sort of high priority read 
-receipt for a message. This tutorial uses such a case to illustrate how you 
-might go about setting up and using synchronous messaging between two portlets 
-in a plugin project. 
+receipt for a message. This tutorial uses such a case to illustrate the steps 
+required to set up and use synchronous messaging between two portlets in a 
+plugin project. 
 
 ![Figure 1: Synchronous messaging.](../../images/msg-bus-sync-msg.png)
 
@@ -16,7 +16,7 @@ Imagine the following scenario. A rock concert requires many, many things to be
 set up before the show can go on. The amplifiers, sound system, lighting, and 
 any other stage effects have to be properly set up for the show to be 
 successful. Naturally, the tour manager has chosen Liferay Portal for managing 
-all these tasks. The manager has a custom Tasks portlet for submitting set up 
+all these tasks. The manager has a custom Tasks portlet for submitting setup 
 tasks, which then need to go to the roadies' Setup portlet on a separate page. 
 The manager also needs confirmation, before moving on with other things, that 
 the roadies' Setup portlet has received each request. Synchronous messaging to 
@@ -27,12 +27,18 @@ Note: Links to sample code referenced throughout will need to be changed once it
 gets merged into master.
 -->
 
+<!-- 
+QA: Contact Nick to get the starting portlet project.
+-->
+
 ## Deciding on Destination Keys 
 
-You first need to figure out what your destination keys will be. The destination 
-keys need to be included with the message and registered as destinations in 
+You first need to figure out what your destination keys will be. Destination 
+keys serve as the specific locations where messages are sent. You can think of 
+them as the mailing addresses of the Message Bus system. The destination keys 
+need to be included with the message and registered as destinations in 
 `WEB-INF/src/META-INF/messaging-spring.xml`. In this example, the destination 
-keys were chosen to reflect the package names of the two portlets. 
+keys are chosen to reflect the package names of the two portlets. 
 
 The following table shows the destination keys, senders, and receivers for the 
 Tasks and Setup portlets described above: 
@@ -81,8 +87,8 @@ The sender takes the following steps:
 1. Creates the message using Liferay's `Message` class. 
 
 2. Stuffs the message with key/value pairs using `message.put`. The key/value 
-    pairs used here are specific to this example. Be sure to use your own when 
-    implementing a sender in your applications.
+   pairs used here are specific to this example. Be sure to use your own when 
+   implementing a sender in your applications.
 
 3. Sets a response ID and response destination for listeners to use in replying
    back. 
@@ -92,8 +98,14 @@ The sender takes the following steps:
    response. If no response is received, then a `MessageBusException` is thrown.
    
 5. Continues with any processing desired after receiving the message. Here, if 
-    the response from the roadies` Setup portlet is "RECEIVED", then 
-    `SessionMessages` is used to display a success message.
+   the response from the roadies' Setup portlet is `"RECEIVED"`, then 
+   `SessionMessages` is used to display a success message. 
+
+Be sure to add the following imports to your message sender file:
+
+    import com.liferay.portal.kernel.messaging.Message;
+    import com.liferay.portal.kernel.messaging.MessageBusException;
+    import com.liferay.portal.kernel.messaging.MessageBusUtil;
 
 Now that you've got your message sender implemented, it's time to head to the 
 next stop on the Message Bus--the message listener! 
@@ -154,33 +166,41 @@ The listener executes the following steps:
    `com.liferay.portal.kernel.messaging.MessageListener` interface. 
 
 2. Extracts values from the `Message` parameter by getting values associated
-   with known keys. This example extracts the values from the keys added when 
-   the message was created.
+   with known keys. This example extracts the values from the keys that were 
+   added when the message was created.
    
 3. Executes any additional processing steps that you want done after the message 
-   is received. Here, a new `Setup` entity is created for the roadies' Setup 
+   is received. Here, a new `Setup` instance is created for the roadies' Setup 
    portlet based on the values in the message. It's important to note that you 
-   don't have to do any additional processing if you don't want to.
+   don't have to do any additional processing if you don't want to. For example, 
+   you could simply have the listener send a response upon receipt of the 
+   message.
 
 4. Creates a response `Message` object based on the message received via the
    `MessageBusUtil.createResponseMessage(message)` method. This method accesses 
    the response destination name from the `message` variable and sets the 
    destination of the response message. 
 
-4. Sets the response message's payload. Here, the payload is set to 
+5. Sets the response message's payload. Here, the payload is set to 
    `"RECEIVED"`, which is in turn used by the original sender to display a 
    success message.
 
-5. Sends the response `Message` to the response destination.
+6. Sends the response `Message` to the response destination.
+
+Be sure to add the following imports to your message listener file: 
+
+    import com.liferay.portal.kernel.messaging.Message;
+    import com.liferay.portal.kernel.messaging.MessageBusUtil;
+    import com.liferay.portal.kernel.messaging.MessageListener;
 
 Now you have both a sender and a listener implemented for your messages! There's 
-just one more thing to take care of before you're done.
+just one more thing to take care of before you're done. 
 
 ## Configuring Message Bus 
 
 For Message Bus to successfully direct messages from destinations to listeners, 
 you must register the listeners by configuring the appropriate mappings in your 
-plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file.
+plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. 
 
 ---
 
@@ -243,7 +263,7 @@ described above:
 	    </bean>
     </beans>
 
-The configuration above specifies the following beans: 
+This configuration specifies the following beans: 
 
 - *Listener beans*: Specify the listener classes to handle messages.
 - *Destination beans*: Specify the class *type* and *key* names of the
@@ -266,13 +286,13 @@ the closing `</web-app>` tag in the `web.xml` file:
     ```
 
 Save and redeploy your portlet. Your plugin should now send and receive messages 
-as you've configured it to. In the case of the tour manager, the tasks portlet 
-now displays the success message when a set up task is added.
+as you've configured it to. In the case of the tour manager, the Tasks portlet 
+now displays the success message when a setup task is added.
 
 ![Figure 2: The response to the synchronous message is successful!](../../images/msg-bus-synch-tasks.png)
 
 Likewise, the roadies' Setup portlet now gets any new tasks added by the road 
-manager.
+manager. 
 
 ![Figure 3: The task was created in the roadies' Setup portlet.](../../images/msg-bus-synch-setup.png)
 
