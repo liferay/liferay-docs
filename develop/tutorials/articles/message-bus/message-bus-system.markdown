@@ -40,21 +40,21 @@ The Message Bus supports *synchronous* and *asynchronous* messaging:
       the destination for the response message. The recipient (listener) then
       send a response message back to the sender via this response destination. 
     - **Send-and-Forget**: The sender includes no call-back information in the
-      message sent and continues with processing. 
+      message sent. 
 
-Configuration of Message Bus is done using the following files: 
+Configuring Message Bus is done using the following files: 
 
 - `WEB-INF/src/META-INF/messaging-spring.xml`: Specifies your destinations,
   listeners, and their mappings to each other. 
 - `WEB-INF/web.xml`: Holds a listing of deployment descriptors for your plugin.
-  Make sure you add `messaging-spring.xml` to your list of Spring configurations
+  You need to add `messaging-spring.xml` to your list of Spring configurations
   in this file. 
 
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** The internal file
 `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default
-Message Bus class, default asynchronous message sender class, and default
+Message Bus class, default asynchronous message sender class, and default 
 synchronous message sender class for Liferay. 
 
 ---
@@ -62,8 +62,8 @@ synchronous message sender class for Liferay.
 You can control your *Message Types* by using either the `Message` or
 `JSONObject` class. Liferay core services are typically serialized and
 deserialized in JSON. Both types of message classes are used in the following 
-tutorials. The following tutorials also show you how to implement both 
-synchronous and asynchronous messaging. 
+tutorials to show you how to implement both synchronous and asynchronous 
+messaging. 
 
 ## Next Steps 
 
