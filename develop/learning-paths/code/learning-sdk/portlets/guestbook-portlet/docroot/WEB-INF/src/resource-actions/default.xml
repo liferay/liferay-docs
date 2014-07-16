@@ -4,7 +4,7 @@
 
 <resource-action-mapping>
 	<portlet-resource>
-		<portlet-name>guestbook-portlet</portlet-name>
+		<portlet-name>guestbook</portlet-name>
 		<permissions>
 			<supports>
 				<action-key>ADD_TO_PAGE</action-key>
@@ -24,14 +24,16 @@
 	<model-resource>
 		<model-name>com.liferay.docs.guestbook.model</model-name>
 		<portlet-ref>
-			<portlet-name>guestbook-portlet</portlet-name>
+			<portlet-name>guestbook</portlet-name>
 		</portlet-ref>
 		<permissions>
 			<supports>
 				<action-key>ADD_GUESTBOOK</action-key>
 				<action-key>ADD_ENTRY</action-key>
 			</supports>
-			<site-member-defaults />
+			<site-member-defaults>
+				<action-key>ADD_ENTRY</action-key>
+			</site-member-defaults>
 			<guest-defaults />
 			<guest-unsupported>
 				<action-key>ADD_GUESTBOOK</action-key>
@@ -43,16 +45,18 @@
 	<model-resource>
 		<model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
 		<portlet-ref>
-			<portlet-name>guestbook-portlet</portlet-name>
+			<portlet-name>guestbook</portlet-name>
 		</portlet-ref>
 		<permissions>
 			<supports>
+				<action-key>ADD_ENTRY</action-key>
 				<action-key>DELETE</action-key>
 				<action-key>PERMISSIONS</action-key>
 				<action-key>UPDATE</action-key>
 				<action-key>VIEW</action-key>
 			</supports>
 			<site-member-defaults>
+				<action-key>ADD_ENTRY</action-key>
 				<action-key>VIEW</action-key>
 			</site-member-defaults>
 			<guest-defaults>
@@ -67,7 +71,7 @@
 	<model-resource>
 		<model-name>com.liferay.docs.guestbook.model.Entry</model-name>
 		<portlet-ref>
-			<portlet-name>guestbook-portlet</portlet-name>
+			<portlet-name>guestbook</portlet-name>
 		</portlet-ref>
 		<permissions>
 			<supports>
