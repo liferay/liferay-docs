@@ -8,8 +8,6 @@ serve as contracts for defining factories:
 - [BridgeContextFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
 - [BridgePhaseFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
 - [BridgeRequestScopeFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
-- [BridgeRequestScopeFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
-- [BridgeRequestScopeCacheFactory.java](https://github.com/liray/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
 - [BridgeRequestScopeCacheFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
 - [BridgeRequestScopeManagerFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeManagerFactory.java)
 - [BridgeWriteBehindSupportFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/application/view/BridgeWriteBehindSupportFactory.java)
