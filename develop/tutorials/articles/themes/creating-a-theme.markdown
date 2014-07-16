@@ -1,19 +1,20 @@
-# Creating a Theme Project [](id=creating-a-theme-project-lp-6-2-develop-tutorial)
+# Creating a Theme Project in a Plugins SDK [](id=creating-a-theme-project-in-a-plugins-sdk-lp-6-2-develop-tutorial)
 
 You can create themes in a Plugins SDK project or a Liferay Maven project.
-Liferay IDE lets you create either project type using command line tools: Ant in 
-the Plugins SDK or Maven Archetype in Maven. 
+You can create either type of project from Liferay IDE or from the command line.
+This tutorial, focuses on creating themes in a Plugins SDK project,
+using Liferay IDE and Ant, from the command line.
 
-In this tutorial, you'll learn how to create themes in a Plugins SDK project,
-using Liferay IDE and Ant, from the command line. To learn how to create Liferay 
-Maven projects, see the tutorial [Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
-or the tutorial [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
-Creating the theme using Liferay Developer Studio is covered first, followed by 
-creating a theme with the terminal. 
+To learn how to create Liferay Maven projects, see the tutorial
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
+or the tutorial
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
 
-## Creating a Theme Using Developer Studio 
+Creating the theme using Liferay IDE is easiest to learn first.
 
-Follow these steps to create a theme:
+## Creating a Theme Project from Liferay IDE
+
+Follow these steps to create a theme project in the IDE:
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Project*. 
 
@@ -37,35 +38,40 @@ Follow these steps to create a theme:
 
 8.  Click *Finish*.
 
-![Figure 1: Make sure to select the *Theme* plugin type for your theme.](../../images/theme-create-a-theme-project.png)
+![Figure 1: Make sure to select the *Theme* plugin type for your Liferay Plugin Project.](../../images/theme-create-a-theme-project.png)
 
-With Developer Studio, you can create a new plugin project, or if you already
-have a project, create a new plugin in an existing project. A single Liferay
-project can contain multiple plugins. 
+You've just created a theme project in which to implement your new look and
+feel. 
 
-## Using the terminal to Create a Theme
+Creating a theme from the command line using Ant is simple too.
 
-Navigate to the `themes` directory in your Plugins SDK and enter the appropriate 
-command for your operating system:
+## Creating a Theme Project from the Command Line
+
+Navigate to the
+`themes` directory in your Plugins SDK and enter the appropriate command for
+your operating system:
 
 1.  In Linux and Mac OS X, enter
 
-        ./create.sh example-theme "Example Theme"
+        ./create.sh [project-name] "Theme Display Name"
 
 2.  In Windows, enter
 
-        create.bat example-theme "Example Theme"
+        create.bat [project-name] "Theme Display Name"
 
-Now there's a blank theme in your `themes` folder, which the Plugins SDK
-automatically named by appending "-theme" to your project name. Right now your
-theme is empty. In future tutorials you'll learn how to change that. Custom 
-themes are created by layering your customizations on top of one of Liferay's 
-built-in themes. 
+Whether you created your theme project from the Liferay IDE or from the command
+line, you end up with the same project structure. Your theme project is a blank
+slate on which you you can exercise your creative talents. The Plugins SDK
+automatically appends "-theme" to your project name. Right now your theme is
+empty. Custom themes are created by layering your customizations on top of one
+of Liferay's built-in themes. In tutorials that follow, you'll
+learn how to populate your theme with your very own stylish look and feel. For
+now, take a look around your theme project. 
 
 The structure of a theme separates different types of resources into easily
-accessible folders. Here's the full structure of a theme called Deep Blue theme:
+accessible folders. Here's the full structure of a theme project:
 
-- `deep-blue-theme/`
+- `[theme-project-name]/`
     - `docroot/`
         - `_diffs/` (subfolders not created by default)
             - `css/`
@@ -102,18 +108,20 @@ accessible folders. Here's the full structure of a theme called Deep Blue theme:
         	- `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
             
-The `_diffs` folder that's created inside the `docroot` directory of your theme
+The `_diffs` folder that's created inside the `docroot` folder of your theme
 is important; this is where you place your theme's code. The `_diffs` folder
 must mirror the parent theme's directory structure. Since you'll only customize
 the parts of your theme that differ from the parent theme, place only the
 folders and files you'll customize there. 
 
-The other folders inside `docroot` were copied over from the parent theme in
-your Liferay bundle when you deployed your theme. Use these files as the basis
-for your modifications. For example, to customize the navigation, copy
-`navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into the 
-`deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this
-folder first). You can then open this file and customize it to your liking. 
+The other folders inside `docroot` are copied over from the parent theme in
+your Liferay bundle when you
+[deploy](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+your theme. Use these files as the basis for your modifications. For example, to
+customize the navigation, copy `navigation.vm` from
+`docroot/templates/navigation.vm` into the `docroot/_diffs/templates` folder
+(you may have to create this folder first). You can then open this file and
+customize it to your liking. 
 
 For custom styles, create a folder named `css` inside your `_diffs` folder and
 place a single file there called `custom.css`. This is where you'll define all
@@ -125,17 +133,16 @@ keeps all of your changes in one place and makes future upgrades easier, because
 you won't have to manually modify your templates to add support for new Liferay
 features. 
 
-Whenever you modify your theme, redeploy it. Wait a few seconds until the theme 
-deploys, then refresh your browser to see your changes.
+Whenever you modify your theme,
+[redeploy](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+it. Wait a few seconds until the theme deploys, then refresh your browser to see
+your changes. 
 
-Congrats! Now you know how to create a theme!
+Congrats! Now you know how to create a theme project and are familiar with its
+structure. 
 
-## Next Steps
+## Related Topics
 
- [Creating Liferay Maven plugins from IDE] (/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from Liferay IDE] (/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
 
- [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
- <!-- URL will probably need updated when added to the new devsite-->
- [Using Developer Mode with Themes](/tutorials/-/knowledge_base/using-developer-mode)
-
- [Creating a Theme Thumbnail](/tutorials/-/knowledge_base/creating-a-theme-thumbnail)
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
