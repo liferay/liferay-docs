@@ -1,28 +1,31 @@
-# Configuring Request Scoped Behavior for Liferay Faces Bridge 
+# Configuring Bridge Request Scope Behavior for JSF Portlets
+
+For this tutorial, you'll step through requirements, drawbacks, assumptions, and
+behaviors for configuring the Bridge Request Scope. 
 
 One of the key requirements in creating a JSF portlet bridge is managing JSF
 request-scoped data within the portlet lifecycle. This is normally referred to
 as the *Bridge Request Scope* by JSR 329. The lifespan of the Bridge Request
 Scope works like this: 
 
-1.  `ActionRequest`/`EventRequest`: `BridgeRequestScope` begins.
+1. `ActionRequest`/`EventRequest`: `BridgeRequestScope` begins.
 
-2.  `RenderRequest`: `BridgeRequestScope` is preserved.
+2. `RenderRequest`: `BridgeRequestScope` is preserved.
 
-3.  Subsequent `RenderRequest`: `BridgeRequestScope` is reused.
+3. Subsequent `RenderRequest`: `BridgeRequestScope` is reused.
 
-4.  Subsequent `ActionRequest`/`EventRequest`: `BridgeRequestScope` ends, and a
-    new `BridgeRequestScope` begins.
+4. Subsequent `ActionRequest`/`EventRequest`: `BridgeRequestScope` ends, and a
+   new `BridgeRequestScope` begins.
 
-5.  If the session expires or is invalidated, then similar to the
-    `PortletSession` scope, all `BridgeRequestScope` instances associated with
-    the session are made available for garbage collection by the JVM.
+5. If the session expires or is invalidated, then similar to the
+   `PortletSession` scope, all `BridgeRequestScope` instances associated with
+   the session are made available for garbage collection by the JVM.
 
 The main use-case for having the `BridgeRequestScope` preserved in Step 2
-(above) is for *re-rendering* portlets. Let's consider an example to help
+(above) is for *re-rendering* portlets. consider the following example to help
 illustrate this use-case. 
 
-Let's say two or more JSF portlets are placed on a portal page (Portlets X and
+Suppose two or more JSF portlets are placed on a portal page (Portlets X and
 Y), and those portlets are *not* using `f:ajax` for form submission. In such a
 case, if the user were to submit a form (via full `ActionRequest` postback) in
 Portlet X, and then submit a form in Portlet Y, then Portlet X should be
@@ -32,7 +35,7 @@ With the advent of JSF 2.x and Ajax, there were four drawbacks for continuing
 to support this use-case as the default behavior: 
 
 -   Request-scoped data is basically semi-session-scoped in nature, because the
-    `BridgeRequestScope` is preserved (even though the user might NEVER click
+    `BridgeRequestScope` is preserved (even though the user might *never* click
     the Submit button again). 
 -   `BridgeRequestScope` can't be stored in the `PortletSession` because the
     data is request-scoped in nature, and the data stored in the scope isn't
@@ -55,7 +58,7 @@ mind. The Liferay Faces Bridge makes the following assumptions:
     want to be forced to add anything to the `WEB-INF/web.xml` descriptor. 
 
 Consequently, the default behavior of Liferay Faces Bridge is to cause the
-`BridgeRequestScope` to end at the end of the `RenderRequest`.
+`BridgeRequestScope` to end at the end of the `RenderRequest`. 
 
 If you prefer the standard behavior over Liferay Faces Bridge's default
 behavior, then you can place the following option in your portlet's
@@ -86,3 +89,8 @@ behavior, then you can place the following option in your portlet's
 Alternatively, the `com.liferay.faces.bridge.bridgeRequestScopePreserved` value
 can be specified on a portlet-by-portlet basis in the `WEB-INF/portlet.xml`
 descriptor. 
+
+Now you know the two options for Bridge Request Scope behavior. By considering
+the assumptions and drawbacks that were outlined in this tutorial, you should be
+able to make an educated decision about how you'd like to implement the Bridge
+Request Scope behavior. 
