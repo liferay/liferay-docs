@@ -1,8 +1,9 @@
 # Extending Liferay Faces Bridge Using Factory Wrappers
 
-[Liferay Faces
+In this tutorial, you'll explore how to extend the [Liferay Faces
 Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
-has several abstract classes that serve as contracts for defining factories: 
+using factory wrappers. Liferay Faces Bridge has several abstract classes that
+serve as contracts for defining factories: 
 
 - [BridgeContextFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
 - [BridgePhaseFactory.java](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
@@ -20,7 +21,7 @@ has several abstract classes that serve as contracts for defining factories:
 
 These factories are defined using the standard JSF `<factory-extension>` element
 in `faces-config.xml`. The *default implementations* of these factories are
-defined in the [bridge's `META-INF/faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/resources/META-INF/faces-config.xml)
+defined in the bridge's [`META-INF/faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/resources/META-INF/faces-config.xml)
 file. 
 
 The bridge features an *extension mechanism* that enables you to decorate
@@ -28,19 +29,20 @@ any of these factories using a `META-INF/faces-config.xml` descriptor (inside a
 JAR), or a `WEB-INF/faces-config.xml` descriptor (inside a portlet WAR). This
 mechanism enables you to plug in your own factory implementations to decorate
 (wrap) the default implementations, using a
-[`FactoryWrapper`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/FactoryWrapper.java). 
+[`FactoryExtension`](https://github.com/liferay/liferay-faces/blob/master/util/src/main/java/com/liferay/faces/util/factory/FactoryExtension.java). 
 
-## Wrapping the BridgeContextFactory with a Custom BridgeContext [](id=wrap-bridgecontextfactory-liferay-portal-6-2-dev-guide-en)
+## Wrapping the BridgeContextFactory with a Custom BridgeContext
 
-This *tutorial* for [Liferay Faces Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
+This tutorial for [Liferay Faces
+Bridge](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
 shows you how to wrap the
 [`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
 class, so that it returns a custom
 [`BridgeContext`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContext.java)
-instance by overriding one of the methods to provide custom functionality.  
+instance by overriding one of the methods to provide custom functionality. 
 
-1.  Create a wrapper class for the `BridgeContext` that overrides the
-    `getResponseNamespace()` method: 
+1. Create a wrapper class for the `BridgeContext` that overrides the
+   `getResponseNamespace()` method: 
 
         package com.mycompany.myproject;
 
@@ -65,7 +67,7 @@ instance by overriding one of the methods to provide custom functionality.
             }
         }
 
-2.  Create a wrapper class for the `BridgeContextFactory`: 
+2. Create a wrapper class for the `BridgeContextFactory`: 
 
         package com.mycompany.myproject;
 
@@ -104,7 +106,7 @@ instance by overriding one of the methods to provide custom functionality.
             }
         }
 
-3.  In the portlet's `WEB-INF/faces-config.xml`, specify the custom factory: 
+3. In the portlet's `WEB-INF/faces-config.xml`, specify the custom factory: 
 
         <faces-config xmlns="http://java.sun.com/xml/ns/javaee"
         xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension"
@@ -120,10 +122,7 @@ instance by overriding one of the methods to provide custom functionality.
             </factory>
         </faces-config>
 
-4.  Rebuild and re-deploy the portlet. 
+4. Rebuild and re-deploy the portlet. 
 
 That's all you need to do to implement and deploy a `BridgeContextFactory`
 wrapper. 
-
-Next, we'll take a detailed look at how Liferay Faces Bridge satisfies the
-portlet bridge specifications and at some of the bridge's configuration options.
