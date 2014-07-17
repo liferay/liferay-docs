@@ -1,198 +1,128 @@
-### Asynchronous Messaging with Callbacks [](id=asynchronous-messaging-with-callbacks-liferay-portal-6-2-dev-guide-06-en)
+# Asynchronous Messaging with Callbacks 
 
 Asynchronous messaging consists of sending a message and then continuing with
-processing without blocking waiting for an immediate response. This allows the
-sender to continue with other tasks. It's often necessary, however, that the
-listener can respond to the sender. This can be done using a call-back.
+processing. The sender doesn't block and wait for an immediate response. This 
+allows the sender to continue with other tasks. Even so, it's often necessary 
+that the listener can respond to the sender. This can be done using a call-back. 
+The sender implements a call-back by stuffing the message with a destination key 
+that lets the listener know where to send its response. You can think of this 
+as a return address of sorts. This tutorial illustrates asynchronous messaging 
+with call-backs by showing you how to implement it between one sending and two 
+listening portlets in a plugin project. 
 
-Jungle Gyms R-Us's Procurement Department must notify the Sales and Warehouse
-departments of incoming equipment while simultaneously soliciting their
-feedback. To assure all three departments are up to speed, any responses from
-the Sales or Warehouse departments are posted to a shared destination. 
+Imagine the following scenario. A rock concert requires many, many things to be 
+done before the show can go on. The amplifiers, sound system, lighting, and any 
+other stage effects have to be properly set up for the show to be successful. 
+Naturally, the tour manager has chosen Liferay Portal for managing all these 
+tasks. The manager has a custom Tasks portlet for submitting items that need to 
+be set up. The tasks then need to go to the roadies' Setup portlet and the 
+inventory manager's Inventory portlet. The manager also wants a response from 
+these portlets. However, the manager is very busy. It wouldn't be practical to 
+put everything else on hold while waiting for responses from each setup task. 
+Asynchronous messaging with call-backs is the ideal solution. In addition, the 
+messages to the Setup and Inventory portlets in this example are sent in serial 
+instead of in parallel. Now it's time to hop on the Message Bus! 
 
-The following table describes how we'll set things up: 
+![Figure 1: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
-| Destination Key            | Type  | Sender | Receivers                     |
----------------------------- | ----- | ------ | ----------------------------- |
-  `jungle/purchase`          | async serial | Procurement |  Sales, Warehouse |
-  `jungle/purchase/response` | synchronous  | Sales, Warehouse | Procurement  |
+## Deciding on Destination Keys 
 
-The following image shows asynchronous messaging, with serial dispatching of
-messages: 
+You first need to figure out what your destination keys will be. Destination 
+keys serve as the specific locations where messages are sent. You can think of 
+them as the mailing addresses of the Message Bus system. The destination keys 
+need to be included with the message and registered as destinations in 
+`WEB-INF/src/META-INF/messaging-spring.xml`. In this example, the destination 
+keys are chosen to reflect the package names of the two portlets. 
 
-![Figure 7.9: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+The following table shows the destination keys, senders, and listeners for the 
+Tasks, Setup, and Inventory portlets described above: 
 
-Let's package the message as a `JSONObject` and send it to the destination: 
+ Destination Key | Sender | Listeners |
+-------------------- | ----- | ----- |
+ `tour/roadie/setup` | Tasks | Setup, Inventory |
+ `tour/manager/task` | Setup, Inventory | Tasks |
 
-    JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+Now that you know what your destination keys are, you can use them when writing 
+the code that sends and receives the messages. You'll start with the message 
+sender in the Tasks portlet first. 
 
-    jsonObject.put("department", "Procurement");
-    jsonObject.put("partName", part.getName(Locale.US));
-    jsonObject.put("responseDestinationName", "jungle/purchase/response");
+## Implementing the Initial Message Sender 
 
-    MessageBusUtil.sendMessage("jungle/purchase", jsonObject.toString());
+To get the wheels on the Message Bus rolling you need to start with the initial 
+sender. In this example the initial sender is inside the method of the Tasks 
+portlet that is responsible for adding new setup tasks. This is because the 
+messages need to be sent each time the tour manager adds a new setup task. You 
+should put your sender inside the method of your application that you want it to 
+be called with.
 
-Here's how the Warehouse Department listens for and handles messages: 
+A sender for an asynchronous message with a call-back takes the following steps:
 
-    public void receive(Message message) {
+1. Create a `JSONObject` to serve as the message:
 
-        try {
-            doReceive(message);
-        }
-        catch (Exception e)
-        {
-            _log.error("Unable to process message " + message, e);
-        }
-    }
+        JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-    protected void doReceive(Message message)
-        throws Exception {
+2. Use the `put` method to stuff the message with key/value pairs. In this 
+   example, some key/value pairs of a Task entity are added:
+
+        jsonObject.put("name", name);
+        jsonObject.put("description", description);
+        jsonObject.put("status", status);
+
+3. Add the call-back destination key:
+
+        jsonObject.put("responseDestinationName", "tour/manager/task");
+
+4. Send the message to the destination:
+
+        MessageBusUtil.sendMessage("tour/roadie/setup", jsonObject.toString());
+
+Now that you've implemented your initial sender, you can implement your 
+listeners.
+
+## Implementing the Message Listeners 
+
+You need to have message listeners implemented to receive messages from your 
+sender. Each listener is a class that implements Liferay's `MessageListener` 
+interface. 
+
+Asynchronous listeners with call-backs take the following steps: 
+
+1. Implements the `receive(Message message)` method of the
+   `com.liferay.portal.kernel.messaging.MessageListener` interface.
+
+2. Gets the message payload and cast it to a `String`.
 
         String payload = (String)message.getPayload();
 
+3. Creates a `JSONObject` from the payload string.
+
         JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
+        
+4. Gets values from the `JSONObject` using its getter methods. Note that the 
+   destination key from the sender is retrieved for use in the call-back.
 
-        String department = jsonObject.getString("department");
-        String partName = jsonObject.getString("partName");
-        String responseDestinationName = jsonObject.getString(
-            "responseDestinationName");
+    	String name = (String) jsonObject.getString("name");
+        String description = (String) jsonObject.getString("description");
+        String status = (String) jsonObject.getString("status");
+        String responseDestinationName = jsonObject.getString("responseDestinationName");
 
-        System.out.println("Warehouse received purchase notification for " +
-            partName + " from " + department);
+5. Creates a `JSONObject` to use as the response message.
 
         jsonObject = JSONFactoryUtil.createJSONObject();
 
-        jsonObject.put("department", "Warehouse");
-        jsonObject.put("partName", partName);
-        jsonObject.put("comment", "Ugh! We're running out of space!!");
+6. Stuffs the response message with key/value pairs.
 
-        MessageBusUtil.sendMessage(
-            responseDestinationName, jsonObject.toString());
-    }
+        jsonObject.put("roadieResponse", "Yes");
+        
+7. Sends the message back to the sender.
 
-Here's how this listener deserializes the `JSONObject` from the message: 
+        MessageBusUtil.sendMessage(responseDestinationName, jsonObject.toString());
 
-1. Gets the message payload and casts it to a `String`. 
-2. Creates a `JSONObject` from the payload string. 
-3. Gets values from the `JSONObject` using its getter methods. 
+Any other listeners you need can be implemented using the same steps. Next, 
+you'll configure your listeners and destinations. 
 
-The class also demonstrates how the Warehouse Department packages a response
-message and sends it back to the Procurement Department, using these steps: 
+## Configuring Message Bus 
 
-1. Create a `JSONObject`.  
-2. Stuff it with name-value pairs. 
-3. Send the response message to the original message's response destination. 
+## Next Steps
 
-The Sales department listener can be implemented the same way, substituting
-*Sales* as the department value; the comment would likely be different, too. 
 
-You just used the `JSONObject` message type to send an asynchronous response
-message using a call-back. 
-
-Remember, we want the Procurement, Sales, and Warehouse departments to be
-aware of any message regarding the new playground equipment purchasing process.
-Let's leverage our destination keys and department names in handling shared
-responses. 
-
-Here's how the Warehouse might handle messages it receives:
-
-    public void receive(Message message) {
-
-        try {
-            if (message.getDestinationName().equals("jungle/purchase"))
-            {
-                doReceive(message);
-            }
-            else if (
-                message.getDestinationName().equals("jungle/purchase/response"))
-            {
-                doReceiveResponse(message);
-            }
-        }
-        catch (Exception e)
-        {
-            _log.error("Unable to process message " + message, e);
-        }
-    }
-
-    protected void doReceiveResponse(Message message)
-        throws JSONException {
-
-        String payload = (String)message.getPayload();
-
-        JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
-
-        String department = jsonObject.getString("department");
-
-        if (!department.equals("Warehouse")) {
-            System.out.println(
-                "Warehouse is in the loop on response from " + department);
-        }
-    }
-
-Let's look at `receive(Message)` for a minute. We've set it up to handle
-messages differently depending on their destinations: messages to
-`jungle/purchase` are handled as Procurement's purchase notifications, while
-messages to `jungle/purchase/response` are treated as departmental responses to
-Procurement's purchase notifications.  The `doReceiveResponse(Message)` method
-performs an important task, checking that the response comes from a department
-other than itself, and printing an error if it doesn't. 
-
-Here are the configuration elements we added to the `messaging-spring.xml` from
-the previous section:
-
-*Listener beans*: 
-
-    <bean
-        id="messageListener.warehouse_listener"
-        class="com.liferay.training.parts.messaging.impl.WarehouseMessagingImpl"
-    />
-    <bean
-        id="messageListener.sales_listener"
-        class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl"
-    />
-
-*Destination beans*: The purchase notifications will be sent to a *serial*
-  destination and the responses will be sent to a *synchronous* destination. 
-
-    <bean
-        id="destination.purchase"
-        class="com.liferay.portal.kernel.messaging.SerialDestination"
-    >
-        <property name="name" value="jungle/purchase" />
-    </bean>
-
-    <bean
-        id="destination.purchase.response"
-        class="com.liferay.portal.kernel.messaging.SynchronousDestination"
-    >
-        <property name="name" value="jungle/purchase/response" />
-    </bean>
-
-*Configuration bean listener map entry*: Warehouse and Sales are registered
-  to listen for the notifications from Procurement. All three departments are
-registered to listen for inter-departmental responses.
-
-    <entry key="jungle/purchase">
-        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-            <ref bean="messageListener.warehouse_listener" />
-            <ref bean="messageListener.sales_listener" />
-        </list>
-    </entry>
-    <entry key="jungle/purchase/response">
-        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-            <ref bean="messageListener.procurement_listener" />
-            <ref bean="messageListener.warehouse_listener" />
-            <ref bean="messageListener.sales_listener" />
-        </list>
-    </entry>
-
-*Configuration bean destination list references*:
-
-    <ref bean="destination.purchase"/>
-    <ref bean="destination.purchase.response"/>
-
-Don't forget to send news of these new products to *all* Jungle Gyms R-Us
-employees.
-
-Next, let's explore the asynchronous *send and forget* model.
