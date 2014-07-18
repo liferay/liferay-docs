@@ -23,13 +23,7 @@ testing station for enhancing the gadgets on your sites.
 installation is the new host when specifying the gadget's URL.
 
 As a brief tutorial, we'll demonstrate creating a new gadget and publishing the
-gadget to Liferay using the gadget editor. Let's get started!
- 
-## Editing OpenSocial Gadgets [](id=editing-opensocial-gadgets-lp-6-2-develop-tutorial)
-
-For this tutorial, we'll edit an OpenSocial gadget and publish the gadget to a
-Liferay page. We'll accomplish all of this using Liferay's OpenSocial Gadget
-Editor. Let's get started!
+gadget to Liferay using the gadget editor. Let's get started! 
 
 1. Navigate to *Site Administration* &rarr; *Content* and select *OpenSocial
    Gadget Editor*.
@@ -64,7 +58,3 @@ comfort of your own Liferay Portal instance. You can facilitate the social
 interactions on your sites and increase your portal content's popularity across
 your social network by leveraging the power of OpenSocial gadgets and the gadget
 editor.
-
-## Next Steps 
-
-[Sending PubSub Messages Between Gadgets and Portlets](/tutorials/-/knowledge_base/sending-pubsub-messages-between-gadgets-and-portlet-lp-6-2-develop-tutorial)

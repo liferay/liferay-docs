@@ -76,9 +76,10 @@ resources importer, you can remove or comment out this entry. The second entry,
 `resources-importer-developer-mode-enabled=true`, is a convenience feature for
 theme developers. With this setting enabled, if the resources are to be imported
 to a site template that already exists, the site template is recreated and
-reapplied to sites using the site template. Otherwise, you have to manually
-delete the sites built using the resource importer's site template each time you
-change anything in your theme's `docroot/WEB-INF/src/resources-importer` folder.
+reapplied to sites that are based on the site template. Otherwise, you have to
+manually delete the sites built using the resource importer's site template each
+time you change anything in your theme's
+`docroot/WEB-INF/src/resources-importer` folder.
 
 If you'd like to import your theme's resources directly into a site, instead of
 into a site template, you can specify the following in your
@@ -86,7 +87,7 @@ into a site template, you can specify the following in your
 
     resources-importer-target-class-name=com.liferay.portal.model.Group
 
-    resources-importer-target-value=<site-name>
+    resources-importer-target-value=[site-name]
 
 ---
 
@@ -100,10 +101,10 @@ to deploy your theme to a production Liferay instance.
 ---
 
 All of the resources a theme uses with the resources importer go in the
-`<theme-name>/docroot/WEB-INF/src/resources-importer` folder. The assets to be
+`[theme-name]/docroot/WEB-INF/src/resources-importer` folder. The assets to be
 imported by your theme should be placed in the following directory structure:
 
-- `<theme-name>/docroot/WEB-INF/src/resources-importer/`
+- `[theme-name]/docroot/WEB-INF/src/resources-importer/`
     - `sitemap.json` - defines the pages, layout templates, and portlets
     - `assets.json` - (optional) specifies details on the assets
     - `document_library/`
@@ -136,17 +137,17 @@ file (described below). Alternatively, you can use an `archive.lar` file to
 package the resources you'd like your theme to deploy. To create such an
 `archive.lar`, just export the contents of a site from Liferay Portal using the
 site scope. Then place the `archive.lar` file in your theme's
-`<theme-name>/docroot/WEB-INF/src/resources-importer` folder. If you choose to
+`[theme-name]/docroot/WEB-INF/src/resources-importer` folder. If you choose to
 use an archive file to package all of your resources, you won't need a
 `sitemap.json` file or any other files in your
-`<theme-name>/docroot/WEB-INF/src/resources-importer` folder. Note, however, a
+`[theme-name]/docroot/WEB-INF/src/resources-importer` folder. Note, however, a
 LAR file is version-specific; it won't work on any version of Liferay other than
 the one from which it was exported. For this reason, using a `sitemap.json` file
 to specify resources is the most flexible approach. If you're developing themes
 for Liferay Marketplace, you should use the `sitemap.json` to specify resources
 to be imported with your theme.
 
-The `sitemap.json` in the `<theme-name>/docroot/WEB-INF/src/resources-importer`
+The `sitemap.json` in the `[theme-name]/docroot/WEB-INF/src/resources-importer`
 folder specifies the site pages, layout templates, web content, assets, and
 portlet configurations provided with the theme. This file describes the contents
 and hierarchy of the site for Liferay to import as a site or site template. Even
@@ -307,7 +308,7 @@ specifying their portlet IDs which can be found in Liferay's
 each portlet.
 
 Optionally, you can create an `assets.json` file in your
-`<theme-name>/docroot/WEB-INF/src/resources-importer` folder. While the
+`[theme-name]/docroot/WEB-INF/src/resources-importer` folder. While the
 `sitemap.json` file defines the pages of the site or site template to be
 imported, along with the layout templates, portlets, and portlet preferences of
 these pages, the `assets.json` file specifies details about the assets to be
@@ -375,7 +376,7 @@ resources:
 1.  Create your theme.
 
 2.  Add your resources under the
-   `<theme-name>/docroot/WEB-INF/src/resources-importer` folder and its
+   `[theme-name]/docroot/WEB-INF/src/resources-importer` folder and its
    subfolders.
 
 3.  Create a `sitemap.json` file in your `resources-importer/` folder. In this
@@ -427,7 +428,3 @@ have your theme's resources imported into a site template. For further examples,
 please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
-
-## Next Steps
-
-[Creating Plugins to Share Structures, Templates, and More](www.liferay.com)

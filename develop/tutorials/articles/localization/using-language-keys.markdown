@@ -18,10 +18,6 @@ their custom portlet:
 
 ![Figure 1: The portal user's name is used in the `welcome` language key.](../../images/screen-name-greeting.png)
 
-Let's get started by implementing this functionality into your portlet!
-
-## Implementing Language Keys for Your Portlet
-
 Before you get started implementing our own language key, you'll want to learn
 the components of a Liferay UI language key.
 
@@ -96,12 +92,4 @@ Your portlet now greets you by your screen name!
 That's all you need to do to leverage Liferay's core localization keys. In this
 tutorial, you learned about Liferay core language keys, and how to implement in
 a Liferay portlet. 
-
-## Next Steps
-
-[Generating Language Properties File and Automated Translations](/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
-
-[Localizing Site Administration Portlets](/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
-
-[Sharing Language Keys Between Your Portlets](/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 

@@ -263,6 +263,6 @@ want to add, some of which are listed below.
 
 ## Next Steps
 
-[Developing JSP Portlets using Liferay MVC](/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
+[Developing JSP Portlets using Liferay MVC](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
 
-[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[Designing User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)

@@ -19,10 +19,6 @@ example of localizing portlets to Spanish:
 
 ![Figure 1: You can localize portlets' titles and descriptions in Site Administration to any language, including Spanish.](../../images/portlet-title-and-description-es.png)
 
-You'll learn how to do this by running through the following tutorial!
-
-## Changing Site Administration Portlet Titles and Descriptions
-
 Next, you'll configure your project's portlets to display in Site
 Administration, and then you'll localize its title and description. You'll
 create one resource bundle for the title and another one for the description. 
@@ -168,12 +164,4 @@ Terrific! You've configured your plugin's portlets to show in the Site
 Administration page, created resource bundles specifically for each portlet,
 built your portlets' language translation files, and have verified your
 portlets' translated titles and descriptions! 
-
-## Next Steps
-
-[Generating Language Properties File and Automated Translations](/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
-
-[Using Liferay's Language Keys](/tutorials/-/knowledge_base/using-liferays-language-keys-lp-6-2-develop-tutorial)
-
-[Sharing Language Keys Between Your Portlets](/tutorials/-/knowledge_base/sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
 

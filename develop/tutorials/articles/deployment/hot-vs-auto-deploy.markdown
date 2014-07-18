@@ -137,3 +137,9 @@ Terrific! You now know the differences between hot deploy and auto deploy.
 Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
+
+# Related Topics [](id=related-topics-lp-6-2-develop-tutorial)
+
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)

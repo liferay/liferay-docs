@@ -114,6 +114,3 @@ are signified by a change in the third digit of the release number. For example,
 the release of Liferay Portal 6.1.30 after 6.1.20 was a maintenance release and
 therefore should have no API deprecations. 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-alloyui-taglibs-0)
-
-[AlloyUI 2.0 TagLib and Bootstrap Migration](/tutorials/-/knowledge_base/alloyui-2-0-taglib-and-bootstrap-migration-lp-6-2-develop-tutorial)
