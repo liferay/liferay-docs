@@ -283,9 +283,9 @@ performance.
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[User Interfaces with AlloyUI and Liferay UI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Localizing Your Portlets](/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Localization](/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[Creating and Integrating with OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 

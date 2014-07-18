@@ -48,10 +48,10 @@ common tasks that Liferay doesn't make you have to write yourself.
 <!--Here are just
 a few of the framework topics the tutorials cover in detail.  
 
-[Generating Services with Service Builder](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
 Implementing Roles and Permissions<br>
 Leveraging the Asset Framework<br>
-[Making Your Portlet ADT-Enabled](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
 -->
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
@@ -90,21 +90,20 @@ discussed on this page.
 <tr>
 <td>
 <a href="/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a><br>
-<a href="/develop/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a><br>
-<a href="/develop/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a><br>
-<a href="/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a><br>
+<a href="/develop/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing with the Plugins SDK</a><br>
+<a href="/develop/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing with Liferay IDE</a><br>
+<a href="/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing with Maven</a><br>
 </td>
 
 <td>
 <a href="/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a><br>
 <a href="/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a><br>
-<a href="/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a><br>
-<a href="/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
+<a href="/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Liferay Faces</a><br>
+<a href="/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >OpenSocial Gadgets</a>
 </td>
 
 <td>
-Developing Themes<br>
-Developing Layout Templates<br>
+Themes and Layout Templates<br>
 <a href="/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a><br>
 </td>
 </tr>

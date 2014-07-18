@@ -1,4 +1,4 @@
-# Generating Services with Service Builder [](id=service-builder-lp-6-2-develop-tutorial)
+# Service Builder and Services [](id=service-builder-lp-6-2-develop-tutorial)
 
 On going through the learning path
 [Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath),
