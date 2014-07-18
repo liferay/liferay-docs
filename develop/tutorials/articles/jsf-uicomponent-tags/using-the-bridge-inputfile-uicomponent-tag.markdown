@@ -1,7 +1,8 @@
 # Using the bridge:inputFile UIComponent tag
 
-Liferay Faces Bridge provides the following bridge-specific `UIComponent` tags
-as part of its component suite. 
+Liferay Faces Bridge provides bridge-specific `UIComponent` tags as part of its
+component suite. In this tutorial, you'll explore the `bridge:inputFile` tag and
+learn what it can do for your JSF portlet. 
 
 The `bridge:inputFile` tag renders an HTML `<input type="file"/>` tag, providing
 file upload capability. 
@@ -45,9 +46,8 @@ implements handling the file upload:
  ![Note](../../images/tip.png) **Note:** Usage of this tag requires the Apache
  `commons-fileupload` and `commons-io` dependencies. See the [Demo JSF2
  Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
- for more details.  
+ for more details.
 
 ---
 
-Next, you'll learn about the Portlet `UIComponent` tags available in Liferay
-Faces Bridge. 
+Fantastic! You can add another UIComponent to your repertoire! 
