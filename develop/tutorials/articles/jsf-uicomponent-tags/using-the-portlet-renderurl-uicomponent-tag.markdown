@@ -1,6 +1,8 @@
 # Using the portlet:renderURL UIComponent Tag
 
-The next tag you'll look at is the `portlet:renderURL` tag. 
+The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
+tags that are useful for JSF development. In this tutorial, you'll learn about
+the `portlet:renderURL` tag. 
 
 If the `var` attribute is present, the `portlet:renderURL` tag introduces an EL
 variable that contains a `javax.portlet.PortletURL`, adequate for rendering.
@@ -22,3 +24,5 @@ Otherwise, the URL is written to the response.
             </h:form>
         </h:body>
     </f:view>
+
+Fantastic! You can add another UIComponent to your repertoire! 
