@@ -123,6 +123,110 @@ you'll configure your listeners and destinations.
 
 ## Configuring Message Bus 
 
-## Next Steps
+Now that you've implemented your message senders and listeners, you need to 
+configure them in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` 
+file. Create this file if it doesn't yet exist. 
 
+---
+
+ ![Warning](../../images/tip.png) **Warning:** You should only do this *after* 
+implementing any senders and listeners you have. Tools like Liferay IDE and 
+Liferay Developer Studio try to deploy plugins automatically as you save 
+changes. If your sender or listener classes don't exist, and you declare them in 
+`messaging-spring.xml`, your plugin will break. 
+
+---
+
+For example, here's the configuration file for the custom Tasks, Setup, and 
+Inventory portlets: 
+
+    <?xml version="1.0"?>
+
+    <beans
+		default-destroy-method="destroy"
+		default-init-method="afterPropertiesSet"
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	>
+
+	<!-- Listeners -->
+
+	<bean id="messageListener.setup_listener" class="com.tour.portlet.tasks.messaging.impl.SetupMessagingImpl" />
+	<bean id="messageListener.inventory_listener" class="com.tour.portlet.tasks.messaging.impl.InventoryMessagingImpl" />
+	<bean id="messageListener.tasks_listener" class="com.tour.portlet.tasks.messaging.impl.TasksMessagingImpl" />
+
+	
+    <!-- Destinations -->
+
+    <bean id="tour.roadie.setup" class="com.liferay.portal.kernel.messaging.SerialDestination">
+		<property name="name" value="tour/roadie/setup" />
+	</bean>
+
+    <bean id="tour.manager.task" class="com.liferay.portal.kernel.messaging.SerialDestination">
+		<property name="name" value="tour/manager/task" />
+	</bean>
+
+
+    <!-- Configurator -->
+
+	<bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+		<property name="messageListeners">
+			<map key-type="java.lang.String" value-type="java.util.List">
+				<entry key="tour/roadie/setup">
+					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+						<ref bean="messageListener.setup_listener" />
+						<ref bean="messageListener.inventory_listener" />
+					</list>
+				</entry>
+				<entry key="tour/manager/task">
+					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+						<ref bean="messageListener.tasks_listener" />
+					</list>
+				</entry>
+			</map>
+		</property>
+        <property name="destinations">
+            <list>
+                <ref bean="tour.roadie.setup"/>
+                <ref bean="tour.manager.task"/>
+            </list>
+        </property>
+	</bean>
+	</beans>
+
+This configuration specifies the following beans: 
+
+- *Listener beans*: Specify the listener classes to handle messages.
+- *Destination beans*: Specify the class *type* and *key* names of the
+   destinations.
+- *Configurator bean*: Maps listeners to their destinations.
+
+Now you just need to register this `messaging-spring.xml` file in your 
+`docroot/WEB-INF/web.xml` file. To do so, place the following code just above 
+the closing `</web-app>` tag in the `web.xml` file: 
+
+    ```
+    <listener>
+      <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+    </listener>
+
+    <context-param>
+      <param-name>portalContextConfigLocation</param-name>
+      <param-value>/WEB-INF/classes/META-INF/messaging-spring.xml</param-value>
+    </context-param>
+    ```
+
+Save and redeploy your portlet. Your plugin should now send and receive messages 
+as you've configured it to.	In the case of the tour manager, the Tasks portlet 
+now shows replies from the Setup and Inventory portlets. 
+
+![Figure 2: Responses from the Setup and Inventory portlets show in the sending Tasks portlet.](../../images/msg-bus-async-callb-tasks.png)
+
+Great! Now you know how to use Message Bus to send asynchronous messages with 
+call-backs. 
+
+## Next Steps 
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
 
