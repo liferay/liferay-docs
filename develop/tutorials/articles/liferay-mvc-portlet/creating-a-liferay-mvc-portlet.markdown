@@ -7,11 +7,11 @@ tools: Ant in the Plugins SDK or Maven Archetype in Maven.
 In this tutorial, you'll learn how to create MVC portlets in a Plugins SDK
 project, using Liferay IDE and Ant. To learn how to create Liferay Maven
 projects, see the tutorial 
-[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
 If you're completely new to Liferay, you may first want to go through the 
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) 
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath) 
 learning path. 
 
 First up is creating a portlet with Liferay IDE, so go ahead and get 
@@ -163,7 +163,7 @@ to the browser. Any HTML code in your client side files must be free of global
 tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
 element IDs to prevent conflicts with other portlets. Liferay provides two
 tools, a taglib and API methods, to generate a namespace for you. See the
-[Using Portlet Namespacing](/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)
+[Using Portlet Namespacing](/develop/tutorials/-/knowledge_base/using-portlet-namespacing-lp-6-2-develop-tutorial)
 tutorial to learn more about namespacing. 
 
 <!--
@@ -175,16 +175,13 @@ section in the DevGuide.
 Congrats! Now you understand the basic structure of Liferay MVC portlets and you
 have two handy ways to create them in your bag O'trix!  
 
-## Next Steps
+## Related Topics
 
-If you're interested in creating Liferay MVC portlets from in a Maven project,
-follow the tutorials 
-[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
-and
-[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
 
-Or you may want to dive into the learning path
-[Beginning Liferay Development](/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath).
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
 
-Otherwise, you can continue with this section's next tutorial. 
+[Creating Liferay Maven Plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
 

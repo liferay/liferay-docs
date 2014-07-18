@@ -102,11 +102,7 @@ Great! Now that you know how to use Liferay IDE to deploy plugin projects to
 remote servers, you can more easily integrate your remote portal instances into 
 your testing workflow. 
 
-## Next Steps
+## Related Topics
 
-<!-- TODO Add link to other deployment tutorials. Jim -->
-
-[Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
-
-[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 

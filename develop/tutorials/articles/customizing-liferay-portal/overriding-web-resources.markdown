@@ -97,6 +97,6 @@ demonstrates how to override Liferay's JSP files.
 
 Congratulations on overriding a Liferay Portal JSP! 
 
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-10)
+## Related Topics 
 
-[Customizing JSPs by Extending the Original](/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)
+[Making Your Portlet ADT-Enabled](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

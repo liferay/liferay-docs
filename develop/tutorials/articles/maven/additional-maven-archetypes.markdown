@@ -57,12 +57,9 @@ questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
 -->
 
-## Next Steps
+Here are some related topics:
 
-[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[Developing JSF Portlets Using Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Generating Services with Service Builder](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
 
-[Localizing Your Portlets](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
-
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

@@ -32,8 +32,7 @@ To facet your plugin project properly, follow these steps:
 
 Your plugin project is now faceted for Liferay IDE!
 
-## Next Steps 
+## Related Topics 
 
-[Using Liferay IDE's Remote Server Adapter](/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 
-<!-- TODO add link to other deployment tutorials as they become available. Jim -->

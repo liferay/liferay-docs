@@ -65,24 +65,10 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 You now know how to create Liferay portlet plugins in Maven. 
 
-## Next Steps
+## Related Topics
 
-<!-- Add this back when a tutorial is available that explains the anatomy. - Jim
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-To view the full directory structure of a portlet developed via the Liferay
-Plugins SDK, visit our [Anatomy of a Portlet](www.liferay.com) tutorial.
+[Developing JSP Portlets Using Liferay MVC](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial
 
-For detailed information on creating portlet plugins, see 
-[Developing Portlet Applications](http://www.liferay.com).
--->
-
-[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Theme Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-
-[Developing Liferay Plugins with Additional Maven Archetypes](/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
-
+[Developing JSF Portlets Using Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial)

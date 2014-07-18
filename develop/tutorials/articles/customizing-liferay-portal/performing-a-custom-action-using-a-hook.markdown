@@ -10,8 +10,6 @@ in `portal.properties`, so you need to extend this file to create a custom
 action. Hooks make this a simple task. It's time to explore how to perform a
 custom action using a hook! 
 
-## Triggering a Custom Action
-
 In this tutorial, you'll create a custom hook that performs a custom action for
 user login. You could similarly create a custom action for other portal events
 defined in `portal.properties`. It's time to get started! 
@@ -100,8 +98,3 @@ Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
 hook in Liferay Portal.
 
-## Next Steps
-
-[Overriding Web Resources](/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
-
-[Customizing JSPs by Extending the Original](/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original-lp-6-2-develop-tutorial)
