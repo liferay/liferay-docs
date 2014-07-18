@@ -8,7 +8,8 @@ The sender implements a call-back by stuffing the message with a destination key
 that lets the listener know where to send its response. You can think of this 
 as a return address of sorts. This tutorial illustrates asynchronous messaging 
 with call-backs by showing you how to implement it between one sending and two 
-listening portlets in a plugin project. 
+listening portlets in a plugin project. You can find the code for this example 
+plugin project [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-callback/tasks-portlet).
 
 Imagine the following scenario. A rock concert requires many, many things to be 
 done before the show can go on. The amplifiers, sound system, lighting, and any 
@@ -49,41 +50,47 @@ sender in the Tasks portlet first.
 ## Implementing the Initial Message Sender 
 
 To get the wheels on the Message Bus rolling you need to start with the initial 
-sender. In this example the initial sender is inside the method of the Tasks 
+sender. In this example, the initial sender is inside the method of the Tasks 
 portlet that is responsible for adding new setup tasks. This is because the 
 messages need to be sent each time the tour manager adds a new setup task. You 
-should put your sender inside the method of your application that you want it to 
-be called with.
+can find this code in `TasksPortlet.java` [here on on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java). 
+You should put your sender inside the method of your application that you want 
+it to be called with. 
 
 A sender for an asynchronous message with a call-back takes the following steps:
 
-1. Create a `JSONObject` to serve as the message:
+1. Creates a `JSONObject` to serve as the message:
 
         JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-2. Use the `put` method to stuff the message with key/value pairs. In this 
+2. Uses the `put` method to stuff the message with key/value pairs. In this 
    example, some key/value pairs of a Task entity are added:
 
         jsonObject.put("name", name);
         jsonObject.put("description", description);
         jsonObject.put("status", status);
 
-3. Add the call-back destination key:
+3. Adds the call-back destination key:
 
         jsonObject.put("responseDestinationName", "tour/manager/task");
 
-4. Send the message to the destination:
+4. Sends the message to the destination:
 
         MessageBusUtil.sendMessage("tour/roadie/setup", jsonObject.toString());
+
+You also need to be sure that you add the following import:
+
+	import com.liferay.portal.kernel.messaging.MessageBusUtil;
 
 Now that you've implemented your initial sender, you can implement your 
 listeners.
 
 ## Implementing the Message Listeners 
 
-You need to have message listeners implemented to receive messages from your 
-sender. Each listener is a class that implements Liferay's `MessageListener` 
-interface. 
+You need to have one or more message listeners implemented to receive messages 
+from your sender. Each listener is a class that implements Liferay's 
+`MessageListener` interface. In this example there are three listeners, one for 
+each portlet. You can find the example listeners [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl).
 
 Asynchronous listeners with call-backs take the following steps: 
 
@@ -98,8 +105,9 @@ Asynchronous listeners with call-backs take the following steps:
 
         JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
         
-4. Gets values from the `JSONObject` using its getter methods. Note that the 
-   destination key from the sender is retrieved for use in the call-back.
+4. Gets values from the `JSONObject` using its getter methods. This example gets 
+   the values that were added by the sender. Also note that the destination key 
+   from the sender is retrieved for use in the call-back.
 
     	String name = (String) jsonObject.getString("name");
         String description = (String) jsonObject.getString("description");
@@ -118,8 +126,14 @@ Asynchronous listeners with call-backs take the following steps:
 
         MessageBusUtil.sendMessage(responseDestinationName, jsonObject.toString());
 
+Make sure that you add the following imports to your listener classes:
+
+	import com.liferay.portal.kernel.messaging.Message;
+	import com.liferay.portal.kernel.messaging.MessageBusUtil;
+	import com.liferay.portal.kernel.messaging.MessageListener;
+
 Any other listeners you need can be implemented using the same steps. Next, 
-you'll configure your listeners and destinations. 
+you'll configure your listeners and destinations for use with the Message Bus. 
 
 ## Configuring Message Bus 
 
@@ -132,7 +146,7 @@ file. Create this file if it doesn't yet exist.
  ![Warning](../../images/tip.png) **Warning:** You should only do this *after* 
 implementing any senders and listeners you have. Tools like Liferay IDE and 
 Liferay Developer Studio try to deploy plugins automatically as you save 
-changes. If your sender or listener classes don't exist, and you declare them in 
+changes. If your sender or listener classes don't exist and you declare them in 
 `messaging-spring.xml`, your plugin will break. 
 
 ---
@@ -221,7 +235,7 @@ Save and redeploy your portlet. Your plugin should now send and receive messages
 as you've configured it to.	In the case of the tour manager, the Tasks portlet 
 now shows replies from the Setup and Inventory portlets. 
 
-![Figure 2: Responses from the Setup and Inventory portlets show in the sending Tasks portlet.](../../images/msg-bus-async-callb-tasks.png)
+![Figure 2: Responses from the Setup and Inventory portlets show in the Tasks portlet.](../../images/msg-bus-async-callb-tasks.png)
 
 Great! Now you know how to use Message Bus to send asynchronous messages with 
 call-backs. 
