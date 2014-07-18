@@ -1,6 +1,8 @@
 # Using the portlet:param UIComponent Tag
 
-The next tag you'll explore is the `portlet:param` tag. 
+Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
+tags that are useful to JSF development. In this tutorial, you'll learn about
+the `portlet:param` tag.  
 
 The `portlet:param` tag lets you add a request parameter name=value pair when
 nested inside `portlet:actionURL`, `portlet:renderURL`, or `portlet:resourceURL`
@@ -21,3 +23,6 @@ tags.
             </h:form>
         </h:body>
     </f:view>
+
+Now you know a little bit about the `portlet:param` tag and have viewed a
+code snippet for context. 
