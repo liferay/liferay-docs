@@ -131,15 +131,9 @@ some organizations have for their Java projects.
 Now you know how to create all types of Liferay plugin projects using Liferay's
 foundational development tool: the Plugins SDK.
 
-## Next Steps
+## Related Topics
 
-To deploy your plugins to the portal, you can follow the 
-[Deploying Plugins to a Local Portal Instance](/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance-lp-6-2-develop-tutorial)
-tutorial.
+[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance-lp-6-2-develop-tutorial)
 
-If you're interested in exploring another command-line development environment
-instead of learning Liferay IDE, which is discussed in the next section of
-tutorials, check out the
-[Developing Plugins with Maven](/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
-tutorial.
+[Developing with Maven](/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
 

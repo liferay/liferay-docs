@@ -1,4 +1,4 @@
-# What is Service Builder? 
+# What is Service Builder? [](id=what-is-service-builder-lp-6-2-develop-tutorial)
 
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
@@ -36,10 +36,10 @@ order to make customizations to their applications and add business logic.
 
 ---
 
- ![Tip](../../images/tip-pen-paper.png) **Note:** You don't have to use Service
- Builder for plugin or portlet development. It's entirely possible to develop
- Liferay plugins by writing custom code for database persistence using your
- persistence framework of choice, such as JPA or Hibernate.
+![Tip](../../images/tip-pen-paper.png) **Note:** You don't have to use Service
+Builder for plugin or portlet development. It's entirely possible to develop
+Liferay plugins by writing custom code for database persistence using your
+persistence framework of choice, such as JPA or Hibernate.
 
 ---
 
@@ -103,10 +103,9 @@ Ehcache as an underlying cache provider for each of these cache levels but this
 is configurable via portal properties. All you have to do to enable entity and
 finder caching for an entity in your project is to set the `cache-enabled=true`
 attribute of your entity's `<entity>` element in your `service.xml`
-configuration file. Please refer to the [Liferay
-Clustering](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-
-/ai/liferay-clustering-liferay-portal-6-2-user-guide-20-en)
-section of *Using Liferay Portal 6.2* for more details about Liferay caching.
+configuration file. Please refer to 
+[Liferay Clustering](/use/-/knowledge_base/liferay-clustering-lp-6-2-use-useportal)
+for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
 associated with creating database persistence code but it doesn't prevent you

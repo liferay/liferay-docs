@@ -298,7 +298,3 @@ plugin to try importing different structures and templates. The final
 As you've seen for yourself, importing structures and templates with your plugin
 isn't difficult at all. The Resource Importer app's Templates Importer feature
 makes it easy. Have fun distributing your structures and templates!
-
-## Next Steps
-
-[Importing Resources with Your Themes](www.liferay.com)

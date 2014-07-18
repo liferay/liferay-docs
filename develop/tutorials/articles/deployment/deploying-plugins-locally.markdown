@@ -22,8 +22,9 @@ of the page and select the *Applications* tab. Select your portlet's category
 (*Sample* is the default category), and then click *Add* next to *[portlet
 title]*. Your portlet appears in the page.
 
-If you're developing plugins using Maven, you can learn how to deploy them by
-following the
-[Deploying Liferay Plugins with Maven](/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial) tutorial. Otherwise, you can continue onward with the next
-tutorial.
+Here are some related topics:
+
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
 

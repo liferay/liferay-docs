@@ -279,14 +279,13 @@ like the Location Listing portlet, tried out a sample template, and ran through
 important recommendations for using ADTs, which included security and
 performance.
 
-## Next Steps 
+## Related Topics 
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
-[Localizing Your Portlets](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
 
-[Creating and Integrating with OpenSocial Gadgets](/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+[Localization](/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
 
-[Designing User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 
-[Using Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)

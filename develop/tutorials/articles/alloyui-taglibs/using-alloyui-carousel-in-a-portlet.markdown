@@ -1,4 +1,4 @@
-# Using AlloyUI Carousel in Your Portlet
+# Using AlloyUI Carousel in Your Portlet [](id=using-alloyui-carousel-in-your-portlet-lp-6-2-develop-tutorial)
 
 Image carousels are often the first thing people see when they visit sites.
 Carousels provide an interactive way of cycling through visual elements and are
@@ -14,8 +14,6 @@ portlet:
 
 Now that you can see the appeal of adding a carousel to your design, it's time
 to get down to business!
-
-## Adding A Carousel to A Portlet
 
 In order to get the carousel running in a portlet you have to do a few
 things:
@@ -145,9 +143,3 @@ Now that you've written code to display your carousel, you can deploy your
 plugin and see your images in the carousel. Give yourself a pat on the back.
 You've just successfully used the `aui-carousel` in your portlet! 
 
-## Next Steps
-
-<!-- URL needs updated to proper one once it is added to LDN-->
-<!--[Customizing AlloyUI Carousel](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-alloyui-carousel-in-a-portlet)-->
-
-[Making Your Portlet ADT-Enabled](/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)

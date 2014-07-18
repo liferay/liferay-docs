@@ -1,4 +1,4 @@
-# Developing Plugins with Maven [](id=maven-lp-6-2-develop-tutorial)
+# Developing with Maven [](id=maven-lp-6-2-develop-tutorial)
 
 I'm giving you fair warning. I was recently reading the famous poem by Edgar
 Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
@@ -101,10 +101,3 @@ Liferay provides Maven archetypes to help you build plugins of various types,
 including Liferay portlets, themes, hooks, layout templates, web plugins, and
 more. You can also install and deploy Liferay artifacts to your repositories.
 You'll dive into these topics in the Maven tutorials.
-
-## Next Steps
-
-[Setting Up Maven](/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
-
-[Installing and Managing Liferay Maven Artifacts](/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
-

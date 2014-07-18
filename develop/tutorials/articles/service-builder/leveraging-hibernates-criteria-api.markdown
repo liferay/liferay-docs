@@ -16,13 +16,11 @@ efficient queries. For information on Hibernate's Criteria API, please see
 In this tutorial, you'll learn how to create custom finders for Liferay plugins
 using Service Builder and Liferay's Dynamic Query API.
 
-## Using Dynamic Query
-
 To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application.  See the
-[Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
 learning path for more information on using Service Builder. Once you've used
 Service Builder to generate model, persistence, and service layers for your
 application, you can create custom finders using Liferay's Dynamic Query API by
@@ -52,7 +50,7 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Writing a Data-Driven Application](/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath).
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath).
 learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to
@@ -347,13 +345,3 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet! 
-
-## Next Steps
-
-<!-- Uncomment when they are available. Jim
-[Developing Custom SQL queries](www.liferay.com) 
-
-[Configuring `service.properties`](www.liferay.com) 
--->
-
-[Customizing Model Entities With Model Hints](/tutorials/-/knowledge_base/customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial) 
