@@ -1,6 +1,8 @@
 # Using the portlet:namespace UIComponent Tag
 
-Next, we'll look at an example of the `portlet:namespace` tag.
+Liferay Faces Bridge provides many useful Portlet 2.0 `UIComponent` tags as part
+of its component suite. In this tutorial, you'll learn about the
+`portlet:namespace` tag. 
 
 If the `var` attribute is present, the `portlet:namespace` tag introduces
 an EL variable that contains the portlet namespace. Otherwise, the
@@ -20,3 +22,5 @@ namespace is written to the response.
             </h:form>
         </h:body>
     </f:view>
+
+Great! Another UIComponent tag to use for JSF development is in the books. 
