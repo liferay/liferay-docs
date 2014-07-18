@@ -59,7 +59,7 @@ messages. You'll start with the message sender first.
 Now it's time to write the message sender code. So where should you put this 
 code? Great question! Simply place it in the method of your application that you 
 want it to be called with. For example, the message sender code for the tour 
-manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
+manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
 that adds a new task. This is because a synchronous message needs to be sent 
 each time the tour manager adds a new task to the portlet. 
 
@@ -103,7 +103,7 @@ next stop on the Message Bus--the message listener!
 Implementing the message listener is a bit more involved than implementing the 
 message sender, but not by much. To implement the listener you need to make a 
 class that implements Liferay's `MessageListener` interface. You can find the 
-listener of the tour manager's Tasks portlet [here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+listener of the tour manager's Tasks portlet [here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
 It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
 The listener class executes the following steps: 
