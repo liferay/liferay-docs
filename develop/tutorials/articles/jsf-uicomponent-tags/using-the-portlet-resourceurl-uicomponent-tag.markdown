@@ -1,6 +1,8 @@
 # Using the portlet:resourceURL UIComponent Tag
 
-Finally, you'll look at the `portlet:resourceURL` tag. 
+The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
+tags that are useful for JSF development. In this tutorial, you'll learn about
+the `portlet:resourceURL` tag. 
 
 If the `var` attribute is present, the `portlet:resourceURL` tag introduces an
 EL variable that contains a `javax.portlet.ActionURL`, adequate for obtaining
@@ -23,5 +25,5 @@ resources. Otherwise, the URL is written to the response.
         </h:body>
     </f:view>
 
-Great! You've been introduced to some of Liferay Faces Bridge's `UIComponent`
-tags, and have can now implement them into your JSF portlet! 
+Great! You've been introduced to a new Liferay Faces Bridge `UIComponent` tag,
+and have can now implement it into your JSF portlet! 
