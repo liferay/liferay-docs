@@ -90,10 +90,10 @@ discussed on this page.
 
 <tr>
 <td>
-<a href="/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a>
+<a href="/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a>
 </td>
 <td>
-<a href="/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a>
+<a href="/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a>
 </td>
 <td>
 Developing Themes
@@ -102,10 +102,10 @@ Developing Themes
 
 <tr>
 <td>
-<a href="/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a>
+<a href="/develop/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing Plugins with the Plugins SDK</a>
 </td>
 <td>
-<a href="/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a>
+<a href="/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a>
 </td>
 <td>
 Developing Layout Templates
@@ -114,22 +114,22 @@ Developing Layout Templates
 
 <tr>
 <td>
-<a href="/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a>
+<a href="/develop/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing Plugins Liferay IDE</a>
 </td>
 <td>
-<a href="/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a>
+<a href="/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Developing JSF Portlets Using Liferay Faces</a>
 </td>
 <td>
-<a href="/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a>
+<a href="/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a>
 </td>
 </tr>
 
 <tr>
 <td>
-<a href="/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a>
+<a href="/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing Plugins with Maven</a>
 </td>
 <td>
-<a href="/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
+<a href="/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >Creating and Integrating with OpenSocial Gadgets</a>
 </td>
 </tr>
 </table>
