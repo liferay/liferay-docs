@@ -1,53 +1,36 @@
 # Using the portlet:actionURL UIComponent tag
 
-Liferay Faces Bridge provides bridge-specific `UIComponent` tags as part of its
-component suite. In this tutorial, you'll explore the `bridge:inputFile` tag and
-learn what it can do for your JSF portlet. 
+Liferay Faces Bridge provides several Portlet 2.0 `UIComponent` tags as part of
+its component suite. In this tutorial, you'll learn about the
+`portlet:actionURL` tag. 
 
-The `bridge:inputFile` tag renders an HTML `<input type="file"/>` tag, providing
-file upload capability. 
+---
+
+ ![Note](../../images/tip.png) **Note:** Although JSP tags are provided by the
+ portlet container implementation, Liferay Faces Bridge provides these tags in
+ order to support their usage within Facelets. 
+
+---
+
+If the `var` attribute is present, the `portlet:actionURL` tag introduces an EL
+variable that contains a `javax.portlet.ActionURL`, adequate for postbacks.
+Otherwise, the URL is written to the response. 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <f:view xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:bridge="http://liferay.com/faces/bridge"
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:portlet="http://java.sun.com/portlet_2_0"
         xmlns:ui="http://java.sun.com/jsf/facelets">
         <h:head />
-        <h:body>
+        <h:body">
             <h:form>
-                <bridge:inputFile fileUploadListener="#{backingBean.handleFileUpload}" multiple="multiple" />
-                <h:commandButton value="Submit" />
+                <portlet:actionURL var="myActionURL" >
+                    <portlet:param name="foo" value="1234" />
+                </portlet:actionURL>
+                <h:outputText var="actionURL=#{myActionURL}" />
             </h:form>
         </h:body>
     </f:view>
 
-Here's a code snippet from a class that imports the `FileUploadEvent` class and
-implements handling the file upload: 
-
-    import com.liferay.faces.bridge.event.FileUploadEvent;
-
-    ...
-
-    @ManagedBean(name = "backingBean")
-    @ViewScoped
-    public class ApplicantBackingBean implements Serializable {
-
-            public void handleFileUpload(FileUploadEvent fileUploadEvent)
-            throws Exception {
-                UploadedFile uploadedFile = fileUploadEvent.getUploadedFile();
-                System.err.println("Uploaded file:" + uploadedFile.getName());
-            }
-        }
-    }
-
----
-
- ![Note](../../images/tip.png) **Note:** Usage of this tag requires the Apache
- `commons-fileupload` and `commons-io` dependencies. See the [Demo JSF2
- Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
- for more details.
-
----
-
-Fantastic! You can add another UIComponent to your repertoire! 
+This knowledge adds just another component tag for your JSF portlet development.
