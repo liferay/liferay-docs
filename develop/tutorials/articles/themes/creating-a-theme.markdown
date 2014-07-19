@@ -1,9 +1,9 @@
-# Creating a Theme Project in a Plugins SDK [](id=creating-a-theme-project-in-a-plugins-sdk-lp-6-2-develop-tutorial)
+# Creating a Theme Project in the Plugins SDK
 
-You can create themes in a Plugins SDK project or a Liferay Maven project.
-You can create either type of project from Liferay IDE or from the command line.
-This tutorial, focuses on creating themes in a Plugins SDK project,
-using Liferay IDE and Ant, from the command line.
+You can create themes in a Plugins SDK project or a Liferay Maven project. You
+can create either type of project from Liferay IDE or from the command line.
+This tutorial focuses on creating themes in a Plugins SDK project, from Liferay
+IDE and from the command line. 
 
 To learn how to create Liferay Maven projects, see the tutorial
 [Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
@@ -47,17 +47,19 @@ Creating a theme from the command line using Ant is simple too.
 
 ## Creating a Theme Project from the Command Line
 
-Navigate to the
-`themes` directory in your Plugins SDK and enter the appropriate command for
-your operating system:
+From your command line terminal, navigate to your Plugins SDK's `themes` folder.
+To create a theme project you must execute the *create* script. Here's the
+format to follow in executing the script: 
 
-1.  In Linux and Mac OS X, enter
+    create.[sh|bat] [project-name] "[Theme Display Name]"
 
-        ./create.sh [project-name] "Theme Display Name"
+On Linux and Mac OS X, you'd enter a command similar to the one in this example:
 
-2.  In Windows, enter
+        ./create.sh my-theme "My Theme"
 
-        create.bat [project-name] "Theme Display Name"
+On WindowsX, you'd enter a command similar to the one in this example:
+
+        create.bat my-theme "My Theme"
 
 Whether you created your theme project from the Liferay IDE or from the command
 line, you end up with the same project structure. Your theme project is a blank
