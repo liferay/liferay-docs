@@ -138,7 +138,7 @@ you'll use when developing plugins with Maven:
 
 ---
 
-Congratulations on deployin your plugin to Liferay and to your repository! 
+Congratulations on deploying your plugin to Liferay and to your repository! 
 
 ## Next Steps
 

@@ -36,7 +36,7 @@ WSRP.
 
 In the below declaration located in `WEB-INF/web.xml`, the default value of the
 following `context-param` is false, meaning that Liferay Faces Bridge will
-invoke methods annotated with @PreDestroy over those annoated with
+invoke methods annotated with `@PreDestroy` over those annoated with
 `@BridgePreDestroy`: 
 
     <context-param>
@@ -45,7 +45,7 @@ invoke methods annotated with @PreDestroy over those annoated with
     </context-param>
 
 Setting the value of the `context-param` instructs Liferay Faces Bridge to
-prefer the `@BridgePreDestroy` annotation over the standard @PreDestroy
+prefer the `@BridgePreDestroy` annotation over the standard `@PreDestroy`
 annotation in order to support a WSRP remote portal environment. 
 
 The following listener in `WEB-INF/web.xml` is required to support the

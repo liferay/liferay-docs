@@ -1,4 +1,4 @@
-# Configuring the Portlet Container Abilities
+# Configuring the Portlet Container Abilities for Liferay Faces Bridge
 
 Liferay Faces Bridge can be run in a variety of portlet containers (Liferay,
 Pluto, etc.) and is aware of some of the abilities (or limitations) of these
