@@ -10,6 +10,15 @@ provides a way to use AlloyUI in a typical JSF development fashion. It provides
 a set of Facelet UIComponent and Facelet Composite Component tags as part of its
 component suite. 
 
+The Liferay Faces Alloy project provides a set of UI components that are JSF
+equivalents of the `aui:` JSP tag library provided by Liferay Portal:
+
+- Layout: `aui:panel`, `aui:button-row`, `aui:form`, `aui:fieldset`
+- UI Components: `aui:list`, `aui:list-item`, `aui:text-box-list`,
+  `aui:text-box-list-item`
+- Composite Components: `aui-cc:button`, `aui-cc:input`, `aui-cc:message`,
+  `aui-cc:messages`, `aui-cc:select`
+
 The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
@@ -18,6 +27,8 @@ versions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags. The VDL documentation can be found at the following addresses: 
+
+<!-- Replace version scheme URL once it's available as a tutorial -Cody -->
 
 - The VDL documentation for the Liferay Faces 2.1 can be found at
   <http://docs.liferay.com/faces/2.1/vdldoc/>.
@@ -35,5 +46,6 @@ these tags. The VDL documentation can be found at the following addresses:
 - The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
 
-To see a sample JSF porlet that uses Liferay Faces Alloy, check out the
-[JSF2 Registration Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/portal/jsf2-registration-portlet). 
+To see a sample JSF portlet that uses Liferay Faces Alloy, check out the [JSF2
+Registration
+Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/portal/jsf2-registration-portlet). 
