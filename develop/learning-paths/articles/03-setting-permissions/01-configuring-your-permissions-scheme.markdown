@@ -205,4 +205,40 @@ that.
     (permission to delete an entity), `UPDATE` (permission to modify an entity),
     `PERMISSIONS` (permission to change permissions of an entity), and `VIEW`
     (permission to view an entity). The `ADD_ENTRY` permission, however, is not
-    so straightforward, at least at first. 
+    so straightforward, at least at first. But think about it: do you have to
+    have permission to view a Guestbook in order to add an entry to it? Yes.
+    Therefore, the default permission configuration should reflect that. 
+
+5. Finally, place the permissions for the `Entry` entity in the file: 
+
+        <model-resource>
+            <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
+            <portlet-ref>
+                <portlet-name>guestbook</portlet-name>
+            </portlet-ref>
+            <permissions>
+                <supports>
+                    <action-key>DELETE</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>UPDATE</action-key>
+                    <action-key>VIEW</action-key>
+                </supports>
+                <site-member-defaults>
+                    <action-key>VIEW</action-key>
+                </site-member-defaults>
+                <guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
+                <guest-unsupported>
+                    <action-key>UPDATE</action-key>
+                </guest-unsupported>
+            </permissions>
+        </model-resource>
+
+    These permissions are the same as for the `Guestbook` entity, except for the
+    `ADD_ENTRY` permission. This completes your permission configuration. 
+
+Great job! You've now successfully designed and implemented a permissions scheme
+for your application. In the next part, you'll implement supporting Java code:
+code to support permissions (called *resources* on the back end) and helper
+classes for checking permissions. 
