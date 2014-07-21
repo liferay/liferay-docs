@@ -70,101 +70,51 @@ supports three rows of portlets, add three `<div>`s, and so on.
     You must apply *portlet-layout* and *row-fluid* CSS classes to each of these
     row `<div>`s: `<div class="portlet-layout row-fluid">`. 
 
-    <!-- Please continue these steps to teach the reader how to design their
-    template. Jim -->
+4.  Within each row `<div>`, you must specify one or more column `<div>`s, 
+depending on how many columns your row will have. As with the row `<div>`s, if 
+your row will hold one column, add one column `<div>`. If it will hold three 
+columns, add three column `<div>`s, and so on. Note that each column `<div>`
+will need a unique CSS ID. E.g., `id="column-1"`, `id="column-2"`, etc.
 
-A CSS class named after the layout template project must be applied to the root
-`<div>`: `class="columns-1-2-1"`. An ID of *main-content* and a role of *main*
-must also be applied to the root `<div>`.
+    For each column `<div>`, make sure to specify the *portlet-column* CSS class. 
+    If a column is the first, last, or only column in a row, you must specify 
+    another CSS class: *portlet-column-first*, *portlet-column-last*, or 
+    *portlet-column-only*.
+    
+5.  For each column `<div>`, you must also specify another CSS class called 
+*span[width]* where *width* is the numerator of a fraction over 12 representing 
+the width of the column. 
 
-Inside of the root `<div>`, you need to create `<div>`s for each row of your
-layout template. You must apply the *portlet-layout* and *row-fluid* CSS classes
-to these `<div>`s: `<div class="portlet-layout row-fluid">`.
+    For example, if you apply a *span8* CSS class to a column `<div>`, the 
+    column will take up `8/12 = 2/3` of the page width. Similarly, a *span3* CSS 
+    class means that the column will take up `1/4` of the page width and a 
+    *span12* CSS means that the column will take up the entire page width.
+    
+    ---
 
-Inside each row `<div>`, you must specify one or more column `<div>`s. For each
-column `<div>`, make sure to specify the *portlet-column* CSS class. If a column
-is the first, last, or only column in a row, you must specify another CSS class:
-*portlet-column-first*, *portlet-column-last*, or *portlet-column-only*.
+    ![Note](../../images/tip-pen-paper.png) **Note:** Liferay 6.2 themes use a fork 
+    of Twitter Bootstrap v2.3.2 called [Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap).
+    Alloy Bootstrap affects Liferay's layout templates as well as its themes.
+    Liferay 6.2 layout templates use Bootstrap's 12 column grid system:
+    <http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>. 
+    ---
 
-Liferay 6.2 themes use a fork of Twitter Bootstrap v2.3.2 called
-[Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap).
-Alloy Bootstrap affects Liferay's layout templates as well as its themes.
-Liferay 6.2 layout templates use Bootstrap's 12 column grid system:
-<http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>. For each column
-`<div>`, you must specify another CSS class called *span[width]* where *width*
-is the numerator of a fraction over 12 representing the width of the column. For
-example, if you apply a *span8* CSS class to a column `<div>`, the column will
-take up `8/12 = 2/3` of the page width. Similarly, a *span3* CSS class means
-that the column will take up `1/4` of the page width and a *span12* CSS means
-that the column will take up the entire page width.
-
-Next, for each column `<div>`, you need to specify a unique CSS ID. E.g.,
-`id="column-1"`, `id="column-2"`, etc.
-
-Finally, inside each column `<div>`, you need to include a Velocity template
+6.  Finally, inside each column `<div>`, you need to include a Velocity template
 directive. This directive is responsible for rendering the portlets that have
-been added to each column:
+been added to each column.
 
+    For example, for the first column of a row of a layout with only one column, 
+    the directive would look like this:
+    
     $processor.processColumn("column-1", "portlet-column-content portlet-column-content-only")
+    
+    The `processor.processColumn` function takes two arguments. The first is the 
+    CSS column ID and the second is a list of CSS classes. You always need to 
+    pass `"portlet-column-content"` in the second argument. If the column is the 
+    first, last, or only column in a row, you also have to pass both
+    `"portlet-column-content"` and `portlet-column-content-[first|last|only]` in 
+    the second argument, separated by a space.
 
-The `processor.processColumn` function takes two arguments. The first is the CSS
-column ID and the second is a list of CSS classes. You always need to pass
-`"portlet-column-content"` in the second argument. If the column is the first,
-last, or only column in a row, you also have to pass both
-`"portlet-column-content"` and `portlet-column-content-[first|last|only]` in the 
-second argument, separated by a space.
-
-Now that you've explored how layout template TPL files are designed, you can
-learn how to convert the 1 2 1 column template presented above into a 1 4 1 
-column template next.
-
-## Converting a Layout Template Design into a New One
-
-The example below creates a layout template named *Columns 1 4 1* because the 
-first row will have just one column, the second row will have 4 (equal width) 
-columns, and the third row will have just one column. Note that you can use the 
-same process to convert any layout template into a new one. Follow the steps 
-below to learn how:
-
-![Figure 1: You can edit your layout template with an HTML editor in Developer Studio.](../../images/layout-template-tpl-src-almost.png)
-
-1. Change the first CSS class of the root `<div>` from *columns-1-2-1* to
-   *columns-1-4-1*.
-
-2. You don't need to change the first row `<div>` since its already set up
-   with a single column. You do need to change the second row `<div>` since you
-   need to set up four equal width columns. Replace the second row `<div>` with
-   the following:
-
-        <div class="portlet-layout row-fluid">
-                <div class="portlet-column portlet-column-first span3" id="column-2">
-                        $processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
-                </div>
-
-                <div class="portlet-column portlet-column span3" id="column-3">
-                        $processor.processColumn("column-3", "portlet-column-content")
-                </div>
-                
-                <div class="portlet-column portlet-column span3" id="column-4">
-                        $processor.processColumn("column-4", "portlet-column-content")
-                </div>
-                
-                <div class="portlet-column portlet-column-last span3" id="column-5">
-                        $processor.processColumn("column-5", "portlet-column-content portlet-column-content-last")
-                </div>
-        </div>
-
-3. The final row `<div>` is set up with a single column so the only thing you 
-   need to change is its ID. Replace it with the following:
-
-        <div class="portlet-layout row-fluid">
-                <div class="portlet-column portlet-column-only span12" id="column-6">
-                        $processor.processColumn("column-6", "portlet-column-content portlet-column-content-only")
-                </div>
-        </div>
-
-Just like that, the rows and columns of the *Columns 1 4 1* layout template are
-arranged and sized to fit your needs. 
-
-Now you are the layout master! Go out there and generate some positive Feng Shui 
-with your designs!
+Note that you can also take an existing layout template and modify it to fit
+your needs. Now you are the layout master! Go out there and generate some 
+positive Feng Shui with your designs!
