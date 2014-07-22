@@ -1,4 +1,4 @@
-# Checking for Permissions in the UI
+# Checking for Permissions in the UI [](id=checking-for-permissions-in-the-ui-lp-6-2-develop-learnpath)
 
 Liferay's user interface can be wrapped in permission checks pretty easily. In
 this last step of this Learning Path, you'll learn how. 
