@@ -64,27 +64,27 @@ If you prefer the standard behavior over Liferay Faces Bridge's default
 behavior, then you can place the following option in your portlet's
 `WEB-INF/web.xml` descriptor: 
 
-    <!--
-    The default value of the following context-param is false, meaning that
-    Liferay Faces Bridge will cause the BridgeRequestScope to end after the
-    RENDER_PHASE of the portlet lifecycle. Setting the value to true will cause
-    Liferay Faces Bridge to cause the BridgeRequestScope to last until the next
-    ACTION_PHASE or EVENT_PHASE of the portlet lifecycle.
-    -->
     <context-param>
         <param-name>com.liferay.faces.bridge.bridgeRequestScopePreserved</param-name>
         <param-value>true</param-value>
     </context-param>
 
-    <!--
-    The default value of the following context-param is 100. It defines the
-    maximum number of BridgeRequestScope instances to keep in memory on the
-    server if the bridgeRequestScopePreserved option is true. 
-    -->
     <context-param>
         <param-name>javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES</param-name>
         <param-value>2000</param-value>
     </context-param>
+
+The default value of the `com.liferay.faces.bridge.bridgeRequestScopePreserved`
+param is `false`, meaning that Liferay Faces Bridge would cause the
+`BridgeRequestScope` to end after the `RENDER_PHASE` of the portlet lifecycle.
+Setting the value to `true` causes Liferay Faces Bridge to allow the
+`BridgeRequestScope` to last until the next `ACTION_PHASE` or `EVENT_PHASE` of
+the portlet lifecycle. 
+
+The default value of the `javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES` param
+is `100`. It defines the maximum number of `BridgeRequestScope` instances to
+keep in memory on the server if the `bridgeRequestScopePreserved` option is
+`true`. 
 
 Alternatively, the `com.liferay.faces.bridge.bridgeRequestScopePreserved` value
 can be specified on a portlet-by-portlet basis in the `WEB-INF/portlet.xml`

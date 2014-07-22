@@ -1,4 +1,4 @@
-# Configuring Portlet Namespace Optimization for Liferay Faces Bridge
+# Configuring Portlet Namespace Optimization with Liferay Faces Bridge
 
 For this tutorial, you'll learn about configuring your portlet's namespace to
 abide to the JSR 329 standard. 
@@ -36,9 +36,9 @@ leverage the default behavior specified by JSR 329, you must set this value to
         <param-value>false</param-value>
     </context-param>
 
-The default value of the following `context-param` is true, meaning that Liferay
-Faces Bridge will optimize the portlet namespace. Setting the value of the
-`context-param` to false disables the optimization. 
+The default value of the following `context-param` is `true`, meaning that
+Liferay Faces Bridge will optimize the portlet namespace. Setting the value of
+the `context-param` to `false` disables the optimization. 
 
 That's it! Now you have a better understanding for configuring your portlet for
 namespace optimization. 

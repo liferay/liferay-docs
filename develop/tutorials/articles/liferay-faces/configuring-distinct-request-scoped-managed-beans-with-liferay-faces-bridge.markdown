@@ -1,4 +1,4 @@
-# Configuring Distinct Request Scoped Managed Beans [](id=distinct-request-scoped-managed-beans-liferay-portal-6-2-dev-guide-en)
+# Configuring Distinct Request Scoped Managed Beans with Liferay Faces Bridge
 
 Liferay Portal gives you the ability to specify whether or not
 request attributes are shared among portlets, using the

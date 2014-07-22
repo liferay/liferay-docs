@@ -1,4 +1,4 @@
-# Using PreDestroy and BridgePreDestroy Annotations
+# Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge
 
 For this tutorial, you'll learn about the`PreDestroy` and `BridgePreDestroy`
 annotations and background to why they are used. 

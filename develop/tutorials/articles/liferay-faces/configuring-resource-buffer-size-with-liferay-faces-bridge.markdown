@@ -1,4 +1,4 @@
-# Configuring Resource Buffer Size for Liferay Faces Bridge
+# Configuring Resource Buffer Size with Liferay Faces Bridge
 
 Liferay Faces Bridge lets you set the size of the buffer used to load resources
 into memory as file contents are copied to the response. This tutorial

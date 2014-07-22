@@ -1,4 +1,4 @@
-# Configuring XML Entity Validation for Liferay Faces Bridge
+# Configuring XML Entity Validation with Liferay Faces Bridge
 
 <!-- Explain why this is helpful. - Jim -->
 
