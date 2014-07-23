@@ -21,21 +21,8 @@ public class NumberHeadersSiteMain extends Task {
 		if (args == null || args.length < 1) {
 			throw new IllegalArgumentException("Requires 1 argument: docDir");
 		}
-		
-		/*if (args == null || args.length < 4) {
-			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
-		}*/
 
-		/*String product = args[0];
-		String version = args[1];
-		String purpose = args[2];
-		String docType = args[3];
-		String docDir = args[4];*/
-		
 		String docDir = args[0];
-
-		/*NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
-			version, purpose, docType);*/
 
 		boolean foundDuplicateIds = false;
 
@@ -49,9 +36,7 @@ public class NumberHeadersSiteMain extends Task {
 				"FAILURE - bad articles directory " + articlesDir);
 		}
 
-		//TODO Create a list of all the markdown files in all the subdirectories. Make sure to use the file's path, not just its name.
-		
-		List<File> docSetDirFolders = new ArrayList();
+		List<File> docSetDirFolders = new ArrayList<File>();
 		File articlesDirContents[] = articlesDir.listFiles();
 		for(int i=0; i < articlesDirContents.length; i++) {
 			if(articlesDirContents[i].isDirectory()) {
@@ -63,8 +48,8 @@ public class NumberHeadersSiteMain extends Task {
 		
 		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
 		
-		List<String> fileList = new ArrayList();
-		
+		List<String> fileList = new ArrayList<String>();
+
 		for(int i=0; i < docSetDirFoldersArray.length; i++) {
 			
 			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
@@ -88,8 +73,6 @@ public class NumberHeadersSiteMain extends Task {
 				"FAILURE - no markdown files found in " + articlesDir);
 		}
 
-		//TODO process each file from fileList. Make sure to use the file's path, not just its name.
-
 		for (int i = 0; i < fileList.size(); i++) {
 			String filename = fileList.get(i);
 			File inFile = new File(filename);
@@ -108,9 +91,7 @@ public class NumberHeadersSiteMain extends Task {
 					if (line.startsWith("# ")) {
 						
 						line = line.trim();
-						
-						/*String newHeadingLine = processor.handleHeaderLine(line,
-							filename, in.getLineNumber());*/
+
 						String newHeadingLine = handleHeaderLine(line,
 								filename, in.getLineNumber());
 						if (newHeadingLine != null) {
@@ -145,25 +126,6 @@ public class NumberHeadersSiteMain extends Task {
 			throw new Exception("FAILURE - Duplicate header IDs exist");
 		}
 	}
-
-	/*public NumberHeadersSiteMain(String product, String version, String purpose,
-			String docType) {
-		super();
-
-		StringBuffer sb = new StringBuffer();
-
-		sb.append("-");
-		sb.append(product.toLowerCase().replace(' ', '-'));
-		sb.append("-");
-		sb.append(version.replace('.', '-'));
-		sb.append("-");
-		sb.append(purpose.replace(' ', '-'));
-		sb.append("-");
-		sb.append(docType.replace(' ', '-'));
-
-		_id_suffix = sb.toString();
-		_id_suffix_len = _id_suffix.length();
-	}*/
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
@@ -299,7 +261,6 @@ public class NumberHeadersSiteMain extends Task {
 			count = "-" + idCount;
 		}
 
-		//int idLength = heading.length() + _id_suffix_len + count.length();
 		int idLength = heading.length() + count.length();
 		if (idLength >  MAX_ID_LEN) {
 			heading = heading.substring(
@@ -308,7 +269,6 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		StringBuffer sb = new StringBuffer(heading);
-		//sb.append(_id_suffix);
 		sb.append(count);
 	
 		String finalHeaderId = sb.toString();
@@ -335,8 +295,5 @@ public class NumberHeadersSiteMain extends Task {
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
-
-	//private final String _id_suffix;
-	//private final int _id_suffix_len;
 
 }
