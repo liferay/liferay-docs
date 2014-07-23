@@ -18,15 +18,21 @@ import org.apache.tools.ant.Task;
 public class NumberHeadersSiteMain extends Task {
 
 	public static void main(String[] args) throws Exception {
-		if (args == null || args.length < 4) {
-			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
+		if (args == null || args.length < 1) {
+			throw new IllegalArgumentException("Requires 1 argument: docDir");
 		}
+		
+		/*if (args == null || args.length < 4) {
+			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
+		}*/
 
-		String product = args[0];
+		/*String product = args[0];
 		String version = args[1];
 		String purpose = args[2];
 		String docType = args[3];
-		String docDir = args[4];
+		String docDir = args[4];*/
+		
+		String docDir = args[0];
 
 		/*NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
 			version, purpose, docType);*/
@@ -140,7 +146,7 @@ public class NumberHeadersSiteMain extends Task {
 		}
 	}
 
-	public NumberHeadersSiteMain(String product, String version, String purpose,
+	/*public NumberHeadersSiteMain(String product, String version, String purpose,
 			String docType) {
 		super();
 
@@ -157,7 +163,7 @@ public class NumberHeadersSiteMain extends Task {
 
 		_id_suffix = sb.toString();
 		_id_suffix_len = _id_suffix.length();
-	}
+	}*/
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
@@ -330,7 +336,7 @@ public class NumberHeadersSiteMain extends Task {
 		headerIdPattern = Pattern.compile(patternArg);
 	}
 
-	private final String _id_suffix;
-	private final int _id_suffix_len;
+	//private final String _id_suffix;
+	//private final int _id_suffix_len;
 
 }
