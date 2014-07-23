@@ -76,6 +76,25 @@ A layout template project can contain multiple layout templates. The directory
 structure is the same, but you'll have a `.png`, `.tpl`, and `.wap.tpl` file for
 each layout template in the `docroot/` folder. The `liferay-*` files describe
 the layout templates for packaging and deployment. 
+Take a look and see what each template file does: 
+
+- `[project-name].tpl`: Generates the HTML structure of the template. 
+- `[project-name].wap.tpl`: Variant template for mobile devices. WAP stands for
+  wireless application protocol. 
+- `[project-name].png`: Thumbnail representation of the template that you see in
+  Liferay Portal from the Page Layout screen. You'll have to create a custom
+  thumbnail image to draw attention to your layout, but you can use the default
+  thumbnail PNG file as a starting point.
+
+![Figure 2: This is an example of a default layout template thumbnail.](../../images/blank_columns.png)
+
+In addition to the three template-specific files, a layout template project has
+two Liferay configuration files:
+
+- `liferay-layout-templates.xml`: Specifies the name of the layout templates and
+  the location of their TPL and PNG files. 
+- `liferay-plugin-package.properties`: Describes the plugin project to Liferay's
+  hot deployer. 
 
 Now that you're well-versed on the anatomy of a layout template project, go out
 and create some!
