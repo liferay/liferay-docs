@@ -18,18 +18,24 @@ import org.apache.tools.ant.Task;
 public class NumberHeadersSiteMain extends Task {
 
 	public static void main(String[] args) throws Exception {
-		if (args == null || args.length < 4) {
-			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
+		if (args == null || args.length < 1) {
+			throw new IllegalArgumentException("Requires 1 argument: docDir");
 		}
+		
+		/*if (args == null || args.length < 4) {
+			throw new IllegalArgumentException("Requires 2 arguments: product version purpose docType docDir");
+		}*/
 
-		String product = args[0];
+		/*String product = args[0];
 		String version = args[1];
 		String purpose = args[2];
 		String docType = args[3];
-		String docDir = args[4];
+		String docDir = args[4];*/
+		
+		String docDir = args[0];
 
-		NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
-			version, purpose, docType);
+		/*NumberHeadersSiteMain processor = new NumberHeadersSiteMain(product,
+			version, purpose, docType);*/
 
 		boolean foundDuplicateIds = false;
 
@@ -103,8 +109,10 @@ public class NumberHeadersSiteMain extends Task {
 						
 						line = line.trim();
 						
-						String newHeadingLine = processor.handleHeaderLine(line,
-							filename, in.getLineNumber());
+						/*String newHeadingLine = processor.handleHeaderLine(line,
+							filename, in.getLineNumber());*/
+						String newHeadingLine = handleHeaderLine(line,
+								filename, in.getLineNumber());
 						if (newHeadingLine != null) {
 							line = newHeadingLine;
 						}
@@ -138,7 +146,7 @@ public class NumberHeadersSiteMain extends Task {
 		}
 	}
 
-	public NumberHeadersSiteMain(String product, String version, String purpose,
+	/*public NumberHeadersSiteMain(String product, String version, String purpose,
 			String docType) {
 		super();
 
@@ -155,9 +163,9 @@ public class NumberHeadersSiteMain extends Task {
 
 		_id_suffix = sb.toString();
 		_id_suffix_len = _id_suffix.length();
-	}
+	}*/
 
-	private String extractHeading(String line, int indexOfFirstHeaderChar) {
+	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
 		heading2 = heading2.trim();
 
@@ -183,7 +191,7 @@ public class NumberHeadersSiteMain extends Task {
 		return heading2;
 	}
 
-	private String handleHeaderLine(String line, String filename,
+	private static String handleHeaderLine(String line, String filename,
 		int lineNum) throws Exception {
 
 		String newHeadingLine = null;
@@ -284,14 +292,15 @@ public class NumberHeadersSiteMain extends Task {
 		return newHeadingLine;
 	}
 
-	private String assembleId(String heading, int idCount) {
+	private static String assembleId(String heading, int idCount) {
 
 		String count = "";
 		if (idCount > -1) {
 			count = "-" + idCount;
 		}
 
-		int idLength = heading.length() + _id_suffix_len + count.length();
+		//int idLength = heading.length() + _id_suffix_len + count.length();
+		int idLength = heading.length() + count.length();
 		if (idLength >  MAX_ID_LEN) {
 			heading = heading.substring(
 				0,
@@ -299,7 +308,7 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		StringBuffer sb = new StringBuffer(heading);
-		sb.append(_id_suffix);
+		//sb.append(_id_suffix);
 		sb.append(count);
 	
 		String finalHeaderId = sb.toString();
@@ -327,7 +336,7 @@ public class NumberHeadersSiteMain extends Task {
 		headerIdPattern = Pattern.compile(patternArg);
 	}
 
-	private final String _id_suffix;
-	private final int _id_suffix_len;
+	//private final String _id_suffix;
+	//private final int _id_suffix_len;
 
 }
