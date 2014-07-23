@@ -1,4 +1,4 @@
-# Using Social Office 
+# Using Social Office [](id=using-social-office)
 
 Social Office adds functionality to Liferay Portal for a specific
 purpose: collaboration. We've designed it for work groups needing to collaborate
@@ -41,7 +41,7 @@ logged in (more on the user bar later).
 After installing Social Office to your Liferay instance, you'll be directed to
 the following screen when you log in as an administrator:
 
-![Figure 1.x: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../images/so-ee-configurations.png)
+![Figure 1.x: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
 
 This page allows you to assign the Social Office User role to users,
 organizations, or user groups. If you aren't immediately sure who should be
@@ -77,7 +77,7 @@ log in to the portal.
 When a user who has been assigned to the Social Office User role logs in, the 
 user bar appears and several changes are made to the Dockbar.
 
-![Figure 1.x: Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../images/user-bar-dockbar.png)
+![Figure 1.x: Social Office users receive a user bar that's accessible from all portal pages. The user bar appears above the Dockbar and allows for easy portal navigation, especially to the private pages of users' personal sites.](../../images/user-bar-dockbar.png)
 
 The *Dashboard* link appears as the
 left-most item of the user bar and links to the other private pages of the
@@ -106,7 +106,7 @@ team collaboration. The *Sites Directory* button opens a site directory dialog
 box which you can use to join, leave sites, or star sites. If you have the
 required permissions, you can also delete sites.
 
-![Figure 1.x: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../images/sites-portlet.png)
+![Figure 1.x: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
 Next, a *Notifications* icon is added to the right of the *Go to* menu. The
 Notifications icon displays how many unread notifications you have. You'll be
@@ -117,7 +117,7 @@ Notifications icon. Clicking *View All Notifications* lets you view further
 details about each notification you've received and lets you configure your
 preferences for receiving notifications.
 
-![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../images/so-notification.png)
+![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
 
 The *My Account* icon is also moved from the Dockbar to the user bar. When you
 click on your name or profile picture in the user bar, four options appear:
@@ -166,7 +166,7 @@ include:
 - My Documents
 - Tasks
 
-![Figure 1.x: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../images/dashboard-menu.png)
+![Figure 1.x: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
 
 ### The Dashboard
 
@@ -179,7 +179,7 @@ to date with various kinds of portal activity:
 - Events
 - Microblogs Status Update
 
-![Figure 1.x: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../images/dashboard-applications.png)
+![Figure 1.x: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
 #### The Announcements Portlet
 
@@ -243,7 +243,7 @@ feeds can quickly become heavily populated, users can simply scroll to the
 bottom of a page with the Activities portlet and the Activities portlet loads
 more activities.
 
-![Figure 1.x: The Activities portlet shows activities from the user, sites, and other users.](../images/activities-feed.png)
+![Figure 1.x: The Activities portlet shows activities from the user, sites, and other users.](../../images/activities-feed.png)
 
 #### The Upcoming Tasks, Events, and Microblogs Status Update Portlets
 
@@ -256,7 +256,7 @@ in the Calendar portlet configuration. You can also configure the maximum number
 of events to show. Access the configuration by clicking the gear icon at the top
 right of the portlet and then selecting *Configuration*.
 
-![Figure 1.x: Upcoming tasks and events shows you what's on your plate.](../images/upcoming-task-events.png)
+![Figure 1.x: Upcoming tasks and events shows you what's on your plate.](../../images/upcoming-task-events.png)
 
 There's also a Microblogs Status Update portlet on your Dashboard
 which lets you broadcast a Facebook-like status to the scope of your choice: to
@@ -308,7 +308,7 @@ options:
   
 Clicking the user's name takes you to their profile page.
 
-![Figure 1.x: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../images/contacts-center2.png)
+![Figure 1.x: The Contacts Center allows you to search for users, follow users Twitter-style, and set up Linked-In style connections.](../../images/contacts-center2.png)
 
 The Contacts Center also lets you select multiple users via the checkboxes to 
 the left of each user. Doing so presents you with the same buttons listed above. 
@@ -334,7 +334,7 @@ the Microblogs portlet chronologically displays all the status posts that you
 have permission to see. The Mentions tab displays all the posts in which you've
 been mentioned.
 
-![Figure 1.x: Microblogs allow users to broadcast their thoughts to a chosen audience.](../images/microblogs2.png)
+![Figure 1.x: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs2.png)
 
 Note that there are two different portlets for accessing the microblogs system:
 the Microblogs portlet and the Microblogs Status Update portlet. When placed on
@@ -355,7 +355,7 @@ email, you can enter a subject, a message body, and add attachments. Open the
 dropdown menu next to the *To* field to select a user or users to send your
 message to. You can select any number of users.
 
-![Figure 1.x: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../images/private-messages-inbox.png)
+![Figure 1.x: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messages-inbox.png)
 
 By default, all portal users are available in the *To* field of the Private
 Messaging portlet. You can filter the set of available users by social
@@ -408,7 +408,7 @@ exactly the same as the standard Documents and Media portlet that ships with
 Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
 information about document management.
 
-![Figure 1.x: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../images/so-document-library.png)
+![Figure 1.x: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
 With their private document libraries, each of your Social Office users can
 maintain a personal online repository of documents and files. Your users can use
@@ -439,7 +439,7 @@ left of the Tasks portlet lets you choose which roles grant permission to add
 new tasks or to edit existing ones. This button only appears if you have
 permission to set permissions for tasks.
 
-![Figure 1.x: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../images/tasks-julie.png)
+![Figure 1.x: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-julie.png)
 
 In order to create tasks for a site, a Tasks portlet must first be added to a
 page of that site. Tasks created through a Tasks portlet on a site page are
@@ -458,7 +458,7 @@ accessible from the left-column navigation menu:
 - Contacts
 - Microblogs
 
-![Figure 1.x: Users' Profile pages show relevant professional information, contacts, and status updates.](../images/nate-profile.png)
+![Figure 1.x: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/nate-profile.png)
 
 By default, the Profile page displays several pieces of information about
 a user: their profile and profile picture, their latest microblog status, their
@@ -542,7 +542,7 @@ no regular Liferay site equivalent. The default pages of an open Social Office
 site are public but those of restricted and private Social Office sites are
 private.
 
-![Figure 1.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../images/new-site-wizard1.png)
+![Figure 1.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
@@ -553,7 +553,7 @@ Membership* link for restricted sites. When users have requested membership for
 a restricted site, the *Request Membership* link is replaced by a *Membership
 Requested* notification to inform users that their request is pending.
 
-![Figure 1.x: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../images/join-site-link.png)
+![Figure 1.x: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
 ### Default Site Pages & Portlets
 
@@ -579,7 +579,7 @@ site they belong to. For more information about these applications, please refer
 to Liferay's user guide, *Using Liferay Portal*, available at
 [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.x: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../images/social-office-site.png)
+![Figure 1.x: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
 
 In addition to the Blogs portlet, the Blogs page contains a Recent Blogs
 portlet. These two portlets are designed to work together. The Blogs portlet

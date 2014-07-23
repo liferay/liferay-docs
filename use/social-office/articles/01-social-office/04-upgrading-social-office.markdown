@@ -1,4 +1,4 @@
-# Upgrading Social Office
+# Upgrading Social Office [](id=upgrading-social-office)
 
 There are a few steps and procedures that you need to follow if you're upgrading 
 to a newer version of Social Office. The sections below describe how to upgrade 
@@ -16,7 +16,7 @@ available fix packs before deploying your Social Office 3.x plugins.
 
 ---
 
-![Figure 1.x: Note](../images/tip.png) Note: There are a few known issues with
+![Figure 1.x: Note](../../images/tip.png) Note: There are a few known issues with
 the Social Office plugins that you might experience if you're running on JBoss.
 If the Go To menu is not initially visible after deploying the Social Office
 plugins or if you can't confirm a connection or site invitation after logging in

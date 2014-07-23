@@ -1,4 +1,4 @@
-# Installing Social Office 
+# Installing Social Office [](id=installing-social-office)
 
 Social Office 3.0 is available as an application that can be installed on
 Liferay Portal CE 6.2 GA1 or EE 6.2 GA1. Prior to version 2.0, Social Office was
@@ -89,7 +89,7 @@ section of Liferay's Control Panel.
 
 ---
 
-![Figure 1.x: Tip](../images/tip.png) **Warning:** When you start Liferay for
+![Figure 1.x: Tip](../../images/tip.png) **Warning:** When you start Liferay for
 the first time, you're presented with a setup wizard. The configuration you make
 in the setup wizard is saved in a `portal-setup-wizard.properties` file in your
 Liferay Home directory. However, if you specify a different Liferay Home
