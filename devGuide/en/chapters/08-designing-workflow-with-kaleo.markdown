@@ -97,9 +97,23 @@ concepts or want to know how to design your workflow within Liferay Portal.
 
 ---
 
-After downloading and installing the Kaleo Forms EE application, restart the
-Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
-the server instance in the Servers view of Developer Studio.
+After downloading and installing the Kaleo Forms EE application, you must
+restart the Liferay Server. For Studio 2.0 to connect to the Kaleo APIs to open
+workflow definitions in Portal 6.2, you must make sure to use a portal admin
+username and password in your server's settings. 
+
+1. Stop your 6.2 server
+
+2. Open the the server's configuration editor by double-clicking the server from
+within the Servers view in Studio.
+
+3. In the configuration editor under Liferay Settings add your portal admin
+username and password. Save the configuration changes. 
+
+4. Start the server
+
+A *Kaleo Workflows* folder automatically appears underneath the server instance
+in the Servers view of Developer Studio. 
 
 ![Figure 7.2: In Studio's *Servers* view, your server's Kaleo Workflows folder shows workflows published on your portal.](../../images/kaleo-1.png)
 
