@@ -263,6 +263,5 @@ want to add, some of which are listed below.
 
 ## Next Steps
 
-[Developing JSP Portlets using Liferay MVC](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions-lp-6-2-develop-learnpath)
 
-[Designing User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
