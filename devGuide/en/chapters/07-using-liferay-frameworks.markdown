@@ -899,9 +899,8 @@ The `Liferay.PortletURL` JavaScript module allows developers to generate
 portlet URLs from their JavaScript code. This module has been updated since the
 first released version of Liferay 6.2. In Liferay 6.2.0 M5 (a 
 [Milestone](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
-release) and prior versions, 
-developers could call this module to generate URLs from their JavaScript in the
-following ways:
+release) and prior versions, developers could call this module to generate URLs
+from their JavaScript in the following ways: 
 
 - `Liferay.PortletURL.createActionURL()`
 - `Liferay.PortletURL.createRenderURL()`
@@ -911,12 +910,12 @@ following ways:
 Each of these methods returned server generated URLs that included
 authentication tokens (the `p_auth` or `p_p_auth` URL parameters), whenever
 necessary. That behavior, however, posed a security risk. Please see
-[LPS-34098](https://issues.liferay.com/browse/LPS-34098) for details. In
-all Liferay EE 6.2 GA and CE 6.2 GA releases, and Milestone releases after
-Liferay 6.2.0 M5, these methods are updated so that they still work (i.e.,
-they still return appropriate URLs) but they no longer include the
-authentication tokens in the returned URLs. This update has been distributed to
-EE customers as a fix pack.
+[LPS-34098](https://issues.liferay.com/browse/LPS-34098) for details. In all
+Liferay EE 6.2 GA and CE 6.2 GA releases, and Milestone releases after Liferay
+6.2.0 M5, these methods are updated so that they still work (i.e., they still
+return appropriate URLs) but they no longer include the authentication tokens in
+the returned URLs. This update has been distributed to EE customers as a fix
+pack. 
 
 If you experience problems using the above methods to generate URLs in Liferay
 6.2.0 M6 or later versions, you might need to update your plugins. If you're an
