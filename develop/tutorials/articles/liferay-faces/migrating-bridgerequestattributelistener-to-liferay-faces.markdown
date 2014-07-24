@@ -21,7 +21,7 @@ migrate to the new class, you'll need to refactor to the new package namespace,
 as a deprecated class has not been provided. 
 
 As an example, the code snippet below conveys how the
-`BridgeRequestAttributeListener` was specified in PortletFaces Bridge:
+`BridgeRequestAttributeListener` was specified in PortletFaces Bridge: 
 
     <web-app>
         <listener>
@@ -33,8 +33,8 @@ As an example, the code snippet below conveys how the
         </listener>
     </web-app>
 
-That `listener-class` declaration is replaced by the Liferay Faces Bridge
-version, which is located in the `WEB-INF/web.xml` file:
+That `listener-class` declaration is replaced in the `WEB-INF/web.xml` by the
+Liferay Faces Bridge version of `BridgeRequestAttributeListener`: 
 
     <web-app>
         <listener>

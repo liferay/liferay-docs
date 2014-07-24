@@ -6,6 +6,9 @@ needed, visit the [Migrating BridgeRequestAttributeListener to Liferay
 Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
 tutorial. 
 
+<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
+to dev.liferay.com. -Cody -->
+
 The projects at portletfaces.org provided several UIComponents and Composite
 Components for use within Facelet views. The tag library documentation for these
 components has been migrated to VDL documentation for each version of the
