@@ -1,16 +1,20 @@
-# Giving Feedback to Users with Validation Messages [](id=liferay-faces-portal-validation-messages-liferay-portal-6-2-dev-guide-en)
+# Giving Feedback to Users with Validation Messages with Liferay Faces Portal
+
+For this tutorial, you'll learn about applying the JSR 286 standard class names
+required to give feedback to users with validation messages using Liferay Faces
+Portal. 
 
 Most of the standard JSF HTML component tags render themselves as HTML markup
-such as `<label />`, `<input />`, `<span />`, etc. and assume the current
+such as `<label />`, `<input />`, `<span />`, etc., and assume the current
 Liferay theme thanks to the power of CSS. However, the
-[`h:messages`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/messages.html)
-and
 [`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
-tag will not assume the current Liferay theme unless the following JSR 286
-standard CSS class names `portlet-msg-error`, `portlet-msg-info`, and
-`portlet-msg-warn` are applied: 
+and
+[`h:messages`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/messages.html)tag
+will not assume the current Liferay theme unless the `portlet-msg-error`,
+`portlet-msg-info`, and `portlet-msg-warn` JSR 286 standard CSS class names are
+applied: 
 
-        <h:messages errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" /> 
+    <h:messages errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" /> 
 
 <!-- Demonstrate using the liferay-ui:message tag for these message types.  - Jim -->
 
@@ -24,10 +28,10 @@ class names, as shown above.
 ---
 
  ![Note](../../images/tip.png) **Note:** When running as a portlet, the ICEfaces
- [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html) and
- [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html)
+ [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html) and
+ [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html)
  component tags automatically apply the JSR 286 standard class names too.
- Additionally, the 
+ Additionally, the
  [`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
  component tag applies the following JSR 286 standard class names for
  alternating table rows: 
@@ -37,5 +41,5 @@ class names, as shown above.
 
 ---
 
-Next, we'll look at using Liferay Faces Portal's language capabilities
-with JSF Portlets. 
+You're now equipped to give feedback to users with validation messages using
+Liferay Faces Portal. 
