@@ -1,4 +1,10 @@
-# Migrating Facelet Tag Library Namespaces [](id=migrate-facelet-tag-library-namespaces-liferay-portal-6-2-dev-guide-en)
+# Migrating Facelet Tag Library Namespaces to Liferay Faces
+
+In this tutorial, you'll learn how to migrate facelet tag library namespaces
+from PortletFaces to Liferay Faces. For further context as to why this is
+needed, visit the [Migrating BridgeRequestAttributeListener to Liferay
+Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+tutorial. 
 
 The projects at portletfaces.org provided several UIComponents and Composite
 Components for use within Facelet views. The tag library documentation for these
@@ -27,3 +33,6 @@ for that version of the Liferay Faces Bridge, so each VDL documentation link
 basically holds the entirety of the PortletFaces tag library documentation (with
 the exception of certain tags which are excluded from certain versions of the
 Lfieray Faces Bridge). 
+
+By using the VDL documentation, your migration of the facelet tag library
+namespaces from PortletFaces to Liferay Faces is a snap! 
