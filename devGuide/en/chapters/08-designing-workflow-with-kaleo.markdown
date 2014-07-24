@@ -244,6 +244,8 @@ use in your workflow:
   conditional logic of the node's script. 
 - *Fork*: Forks the workflow execution into two parallel threads. 
 - *Join*: Joins parallel workflow threads. 
+- *Join XOR*: Same as a Join, but only needs to receive workflow execution from 
+  one of its joining threads.
 - *State*: Represents a workflow state. 
 - *Task*: Represents a task that can be assigned. 
 
@@ -282,12 +284,12 @@ ticket process workflow now looks something like this:
 
 Why is there a red "X" in the bottom left of multiple nodes within our workflow?
 These are error markers! Errors indicate something is specified incorrectly or
-is missing from your nodes. Hover your pointer over each error marker; Developer
-Studio displays hints on resolving each problem. Don't worry, we'll address
-these error markers momentarily. 
+is missing from your nodes. If you click on an error marker, Developer Studio 
+displays hints on resolving the problem. Don't worry, we'll address these error 
+markers momentarily. 
 
-Hovering your pointer over a node brings up a floating palette; use it to make
-quick, convenient customizations to a node. 
+Clicking on a node brings up a floating palette; use it to make quick, 
+convenient customizations to a node. 
 
 The floating palette has several features you can use: 
 
@@ -606,7 +608,7 @@ To set up the workflow process we described above, we'll need to add a
     *Developer* node and the other to the *EndNode* state. We'll add the
     transition to the *Developer* node first. 
 
-    Click the green plus sign and select the transition icon from its menu. An
+    Click the green plus sign and select *Existing Node* from the menu. An
     entry for the transition appears in the named list of *Condition
     transitions*. 
 
@@ -634,6 +636,8 @@ workflow transitions:
   node.
 - Delete the transition that currently connects the *StartNode* state node to
   the *Developer* task node.
+- Delete the transition that currently connects the *Developer* task node to the 
+  *EndNode*.
 
 To add a transition from one node to another, do the following:
 
@@ -789,7 +793,9 @@ block of XML looks like, including the Java in our Goovy script:
 ---
 
 Here's a snapshot of our current ticket process workflow after inserting the
-condition node: 
+condition node. If your transition names don't match the ones in this 
+screenshot, you can change them by simply double clicking the transition names 
+and editing them. 
 
 ![Figure 8.15: The ticket process workflow after inserting the condition node.](../../images/kaleo-30.png)
 
@@ -968,7 +974,7 @@ simplest solution, but you can create Velocity templates just as easy by using
 the Velocity editor you installed. 
 
 Here's what the XML source looks like (with the embedded FreeMarker template)
-for the Poject Management task we created:
+for the Project Management task we created:
 
     <task>
         <name>project management</name>
@@ -1010,25 +1016,25 @@ for the Poject Management task we created:
         </transitions>
     </task>
 
-in the next section you'll see a list of workflow and service context content
+In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-### workflow context and service context variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
+### Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-vars-liferay-portal-6-2-dev-guide-en)
 
-a context variable provides a uniform variable to insert into your templates and
-scripts. when executed, a context variable is automatically deleted and replaced
-with the value pertaining to that key. when you create notifications for a
+A context variable provides a uniform variable to insert into your templates and
+scripts. When executed, a context variable is automatically deleted and replaced
+with the value pertaining to that key. When you create notifications for a
 workflow, assign liferay portal context variables for a cleaner and more
-efficient process. with context variables, your notifications become more
-customizable, rather than following the same format for every recipient. the
+efficient process. With context variables, your notifications become more
+customizable, rather than following the same format for every recipient. The
 context variables you declare in your notifications refer to your liferay
 instance and the values it holds for your declarations. 
 
 Below you'll see tables listing numerous context variables and service context
-content. the context variables are the first table, followed by the service
-context content for web content, blog entries, and message board messages. we've
+content. The context variables are the first table, followed by the service
+context content for web content, blog entries, and message board messages. We've
 separated service context content from the workflow context variables because
-service context keys depend on asset type, while context variables don't. also,
+service context keys depend on asset type, while context variables don't. Also,
 note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
