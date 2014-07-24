@@ -1,17 +1,26 @@
-# Migrating LiferayFacesContext [](id=migrate-liferayfacescontext-liferay-portal-6-2-dev-guide-en)
+# Migrating LiferayFacesContext to Liferay Faces
+
+In this tutorial, you'll learn how to migrate the `LiferayFacesContext` class
+from PortletFaces to Liferay Faces. For further context as to why this is
+needed, visit the [Migrating BridgeRequestAttributeListener to Liferay
+Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+tutorial. 
+
+<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
+to dev.liferay.com. -Cody -->
 
 PortletFaces provided a class named
-`org.portletfaces.liferay.faces.context.LiferayFacesContext` class but Liferay
+`org.portletfaces.liferay.faces.context.LiferayFacesContext` class, but Liferay
 Faces Portal uses the `com.liferay.faces.portal.context.LiferayFacesContext`
 class. In order to ease migration, the old class still exists in Liferay Faces
 Portal although it has been deprecated. It is recommended that the standard
 class name be used instead. 
 
-    // LiferayFaces package name:
-    import org.portletfaces.liferay.faces.context.LiferayFacesContext;
+For example, the following import statement must be converted to the new
+Liferay Faces namespace: 
 
-    // Liferay Faces Portal package name:
-    import com.liferay.faces.portal.context.LiferayFacesContext;
+`import org.portletfaces.liferay.faces.context.LiferayFacesContext;` &rarr;
+`import com.liferay.faces.portal.context.LiferayFacesContext;`
  
-The next section explains some of the changes in Logging between PortletFaces
-and Liferay Faces. 
+Once you've refactored to the new package namespace, you've completed the
+migrating process for `LiferayFacesContext`. 
