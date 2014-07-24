@@ -1,18 +1,18 @@
-# Understanding Your Theme's JavaScript Callbacks in *main.js* [](id=understanding-your-themes-javascript-callbacks-in-main-js)
+# Understanding Your Theme's JavaScript Callbacks in main.js [](id=understanding-your-themes-javascript-callbacks-in-main-js)
 
-Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
-YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
-your theme's `main.js` file, you'll find definitions for three JavaScript
-callbacks:
+Liferay has its own JavaScript library called 
+[AlloyUI](http://alloyui.com/), an extension to Yahoo's YUI3 framework. You can
+take advantage of AlloyUI or YUI3 in your themes. Inside your theme's `main.js`
+file, you'll find definitions for three JavaScript callbacks:
 
-- **AUI().ready(fn):** Executed after the HTML in the page has finished loading
-  (minus any portlets loaded via AJAX). 
-- **Liferay.Portlet.ready(fn):** Executed after each portlet on the page has
-  loaded. The callback receives two parameters: `portletId` and `node`.
-  `portletId` is the ID of the portlet that was just loaded. `node` is the Alloy
-  Node object of the same portlet. 
-- **Liferay.on('allPortletsReady', fn):** Executed after everything else
-  (including AJAX portlets) has finished loading. 
+- **AUI().ready(fn)** is executed after the HTML in the page finishes loading
+  (minus loading any portlets via AJAX). 
+- **Liferay.Portlet.ready(fn)** is executed for each of a page's portlets, after
+  each portlet loads. The callback receives two parameters: `portletId` and
+  `node`. The `portletId` parameter is the ID of the portlet that was just
+  loaded. The `node` parameter is the AlloyUI `Node` object of the same portlet. 
+- **Liferay.on('allPortletsReady', fn)** is executed after everything else
+  (including AJAX portlets) finishes loading. 
 
 The contents of the `main.js` file are listed below:
 
@@ -52,14 +52,12 @@ The contents of the `main.js` file are listed below:
 		}
 	);
 
-There you have it. Hopefully now you have a better understanding of the 
-JavaScript callbacks in your theme.
+There you have it. You can leverage these JavaScript callbacks in your theme by
+adding your own logic to the callbacks. 
 
-## Next Steps
-<!-- URL will probably need updated when added to the new devsite-->
- [Using Developer Mode with Themes](/tutorials/-/knowledge_base/using-developer-mode)
+## Related Topics
+
+ [Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
  
- [Making Themes Configurable with Settings](/tutorials/-/knowledge_base/making-themes-configurable)
-
- [Specifying Color Schemes for Your Themes](/tutorials/-/knowledge_base/specifying-color-schemes-for-your-theme)
+ [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
 
