@@ -1,20 +1,28 @@
-# Migrating BridgeRequestAttributeListener [](id=migrate-to-bridgerequestattributelistener-liferay-portal-6-2-dev-guide-en)
+# Migrating BridgeRequestAttributeListener to Liferay Faces
+
+The Liferay Faces project originated from the <http://portletfaces.org>
+community website. On April 3, 2012 Liferay announced that it would be assuming
+leadership for the portletfaces.org community. Consequently, projects at
+portletfaces.org were repackaged under the Liferay Faces umbrella project and
+underwent the following name changes: 
+
+- AlloyFaces &rarr; Liferay Faces Alloy 
+- PorltetFaces Bridge &rarr; Liferay Faces Bridge 
+- LiferayFaces &rarr; Liferay Faces Portal 
+
+In this tutorial, you'll cover the replacement for the
+`BridgeRequestAttributeListener`. 
 
 PortletFaces Bridge provided a class named
 `org.portletfaces.bridge.servlet.BridgeRequestAttributeListener` but Liferay
 Faces Bridge uses
 `com.liferay.faces.bridge.servlet.BridgeRequestAttributeListener`. In order to
-migrate to the new class, you will need to refactor to the new package
-namespace, as a deprecated class has not been provided. 
+migrate to the new class, you'll need to refactor to the new package namespace,
+as a deprecated class has not been provided. 
 
-<!--
-Mention this is from `WEB-INF/web.xml`.
-Modify code to possibly leave out the <web-app> tag.
-Clarify that we're replacing the PortletFaces one with Liferay Faces Bridge one.
-- Jim
--->
+As an example, the code snippet below conveys how the
+`BridgeRequestAttributeListener` was specified in PortletFaces Bridge:
 
-    <!-- PortletFaces Bridge BridgeRequestAttributeListener -->
     <web-app>
         <listener>
             ...
@@ -25,7 +33,9 @@ Clarify that we're replacing the PortletFaces one with Liferay Faces Bridge one.
         </listener>
     </web-app>
 
-    <!-- Liferay Faces Bridge GenericFacesPortlet -->
+That `listener-class` declaration is replaced by the Liferay Faces Bridge
+version, which is located in the `WEB-INF/web.xml` file:
+
     <web-app>
         <listener>
             ...
@@ -36,4 +46,5 @@ Clarify that we're replacing the PortletFaces one with Liferay Faces Bridge one.
         </listener>
     </web-app>
 
-Next, we'll look at the migration of configuration option names. 
+As you can see, migrating from PortletFaces Bridge to Liferay Faces Bridge is a
+snap! 
