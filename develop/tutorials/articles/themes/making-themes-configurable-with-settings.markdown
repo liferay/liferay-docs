@@ -113,27 +113,27 @@ your theme.
 
 1.  Make sure you have a `docroot/_diffs/templates` folder created.
 
-2.  Create a Velocity template for each of page style choices you want to make
-available to configure for the theme. 
+2.  Create a template for each of page style choices you want to make available
+to configure for the theme. 
 
     For example, if you want to provide a theme template option for a detailed
     header for the theme and a brief header option for the same theme, you can
     create separate template files for them and put them in the
     `docroot/_diffs/templates` folder. 
 
-3.  Copy the `docroot/templates/portal_normal.vm` file into that directory. It's
-a good rule of thumb to modify files for your new theme in the
+3.  Copy the `docroot/templates/portal_normal.[vm|ftl]` file into that
+directory. It's a good rule of thumb to modify files for your new theme in the
 `docroot/_diffs/templates` folder. 
 
-4.  Open your `docroot/_diffs/templates/portal_normal.vm` template file and add
-logic to use a particular template based on a theme setting.
+4.  Open your `docroot/_diffs/templates/portal_normal.[vm|ftl]` template file
+and add logic to use a particular template based on a theme setting.
 
-    For example, if you have a template called `header_detailed.vm` that
-    implements the theme using a detailed header and another template called
-    `header_brief.vm` that implements the theme using a brief header, you could
-    implement conditional logic that chooses between the templates based on the
-    value of a theme setting. The example Velocity code below uses the value of
-    a setting named `header-type` to select a theme template to apply. 
+    For example, if you have a Velocity template called `header_detailed.vm`
+    that implements the theme using a detailed header and another template
+    called `header_brief.vm` that implements the theme using a brief header, you
+    could implement conditional logic that chooses between the templates based
+    on the value of a theme setting. The example Velocity code below uses the
+    value of a setting named `header-type` to select a theme template to apply. 
 
         #if ($theme.getSetting("header-type") == "detailed")
             #parse ("$full_templates_path/header_detailed.vm")
@@ -161,9 +161,10 @@ each of the `<theme>` elements.
         </theme>
 
 Following this strategy allows the plugin to leverage the same
-`portal_normal.vm`, but apply templates based on the *theme* that the site
-administrator selects. 
+`portal_normal.[vm|ftl]` template, but apply templates based on the *theme* that
+the site administrator selects. 
 
 Congrats! Now you know how to create configurable settings for your theme and
-use multiple page templates from the same `portal_normal.vm` script! 
+use multiple page templates from the same `portal_normal.[vm|ftl]` template
+script! 
 

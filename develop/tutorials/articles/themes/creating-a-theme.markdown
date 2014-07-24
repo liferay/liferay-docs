@@ -101,11 +101,11 @@ accessible folders. Here's the full structure of a theme project:
         - `js/`
             - `main.js`
         - `templates/`
-            - `init_custom.vm`
-            - `navigation.vm`
-            - `portal_normal.vm`
-            - `portal_pop_up.vm`
-            - `portlet.vm`
+            - `init_custom.[vm|ftl]`
+            - `navigation.[vm|ftl]`
+            - `portal_normal.[vm|ftl]`
+            - `portal_pop_up.[vm|ftl]`
+            - `portlet.[vm|ftl]`
         - `WEB-INF/`
         	- `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
@@ -120,8 +120,8 @@ The other folders inside `docroot` are copied over from the parent theme in
 your Liferay bundle when you
 [deploy](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 your theme. Use these files as the basis for your modifications. For example, to
-customize the navigation, copy `navigation.vm` from
-`docroot/templates/navigation.vm` into the `docroot/_diffs/templates` folder
+customize the navigation, copy your `navigation.[vm|ftl]` file from
+`docroot/templates/navigation.[vm|ftl]` into the `docroot/_diffs/templates` folder
 (you may have to create this folder first). You can then open this file and
 customize it to your liking. 
 
