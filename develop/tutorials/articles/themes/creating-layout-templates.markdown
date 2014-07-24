@@ -1,4 +1,4 @@
-# Creating a Layout Template Project in the Plugins SDK
+# Creating a Layout Template Project in the Plugins SDK [](id=creating-a-layout-template-project-in-the-plugins-sdk)
 
 Are there times when you find yourself limited by Liferay's page layout options?
 Maybe your Feng Shui (pronounced *fung SHWAY*) senses are picking up on some

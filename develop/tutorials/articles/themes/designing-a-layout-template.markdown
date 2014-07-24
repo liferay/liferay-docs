@@ -1,4 +1,4 @@
-# Designing a Layout Template
+# Designing a Layout Template [](id=designing-a-layout-template)
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you can design a page layout template. If this seems overwhelming,

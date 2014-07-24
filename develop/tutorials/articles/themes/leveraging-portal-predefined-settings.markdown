@@ -1,4 +1,4 @@
-# Leveraging Portal Predefined Settings [](id=leveraging-portal-predefined-settings-in-your-theme)
+# Leveraging Portal Predefined Settings in Your Theme [](id=leveraging-portal-predefined-settings-in-your-theme)
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for

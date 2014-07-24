@@ -1,4 +1,4 @@
-# Variables Available to Layout Templates
+# Variables Available to Layout Templates [](id=variables-available-to-layout-templates)
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, they're all listed in the table below. 
