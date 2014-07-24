@@ -1,4 +1,13 @@
-# Migrating Configuration Option Names [](id=liferay-faces-configuration-option-names-liferay-portal-6-2-dev-guide-en)
+# Migrating Configuration Option Names to Liferay Faces
+
+In this tutorial, you'll learn how to migrate configuration option names from
+PortletFaces to Liferay Faces. For further context as to why this is needed,
+visit the [Migrating BridgeRequestAttributeListener to Liferay
+Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+tutorial. 
+
+<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
+to dev.liferay.com. -Cody -->
 
 PortletFaces Bridge provided several configuration options for use within the
 `WEB-INF/web.xml` and `WEB-INF/portlet.xml` descriptors. In order to ease
@@ -24,5 +33,5 @@ used, as shown in the following listing:
 - `org.portletfaces.bridge.resourceBufferSize` &rarr;
   `com.liferay.faces.bridge.resourceBufferSize`
 
-Next, we'll explain how file upload classes have changed between the PortletFaces
-Bridge and the Liferay Faces Bridge. 
+By making these changes, you're well on your way to migrating configuration
+option names to the Liferay Faces project. 
