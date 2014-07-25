@@ -2686,38 +2686,9 @@ server helps to make sure your system performs optimally.
 
 If, however, you want Liferay to share space on an application server with other
 applications, you can. In this instance, you may not want to make Liferay the
-default application in the root context of the server.
-
-There are two steps to modifying this behavior:
-
-1. Deploy Liferay in a context other than root (for example `/portal`).
-
-2. Modify the `portal-ext.properties` file to tell Liferay the context to which
-   it has been deployed.
-
-    To change the file, open it in a text editor. Place the `portal.ctx`
-    property at the top of the file:
-
-        portal.ctx=/
-
-This default setting defines Liferay Portal as the application that sits at the
-root context. If you change it to something else, say `/portal`, for example,
-you can then deploy Liferay in that context and it will live there instead of at
-the root context.
-
-A full discussion of the `portal-ext.properties` file appears in Chapter 20.
-
-**Note for WebLogic Users:** WebLogic also requires that you modify the
-`weblogic.xml` file which is included with Liferay. In this file are tags for
-the context root:
-
-    <context-root>/</context-root>
-
-Change this so it matches the path you set in your `portal-ext.properties` file.
-You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
-you deploy it. Extract the file from the `.war` file, modify it and then put it
-back in the `.war` file. Then deploy the modified Liferay `.war` file to the
-server in the proper context.
+default application in the root context of the server. If you want to install 
+Liferay in a context other than the root context, follow the instructions from 
+your app server vendor. No additional steps are necessary.
 
 Now that you have Liferay installed in the context you wish, you'll want to
 understand Liferay's releases and the process for keeping your installation up
