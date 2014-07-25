@@ -95,7 +95,7 @@ AlloyUI is easy to use. Let's demonstrate by using AlloyUI in an HTML file.
 AlloyUI's character counter reports the number of characters you can enter in
 the text field before reaching the 10 character limit. 
 
-![Figure 12.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 13.1: Using AlloyUI in HTML is easy. Try out AlloyUI's character counter in your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Let's look at how we did this with AlloyUI. First we added HTML that
 displays an HTML `<input/>` element with `id=some-input`. Then we referenced an
@@ -185,7 +185,7 @@ With all these simplifications, the AlloyUI code in your JSP looks like this:
 
 Voila! You're using AlloyUI in Liferay!
 
-![Figure 12.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
+![Figure 13.2: Using AlloyUI in your portlet JSPs is a snap. Try using the `aui-char-counter` from this example in your portlet's JSP.](../../images/alloyui-char-counter-in-portlet.png)
 
 Now that we've gone over using a simple `aui-char-counter` in your portlet, 
 let's move on to something a little more challenging.
@@ -206,7 +206,7 @@ customizing the carousel to suit your individual needs.
 
 To give you an idea of what's next, here is what the basic carousel looks like:
 
-![Figure 12.3: Image carousels can be a very handy tool to communicate information to users. Here is what the finished bare-bones portlet looks like.](../../images/alloyui-carousel-in-portlet.png)
+![Figure 13.3: Image carousels can be a very handy tool to communicate information to users. Here is what the finished bare-bones portlet looks like.](../../images/alloyui-carousel-in-portlet.png)
 
 All right, enough discussing the future. Time to do the work!
 
@@ -620,7 +620,7 @@ is set to adjust to the size and shape of the menu bar.
 
 Here is an example of a customized carousel using the configuration above:
 
-![Figure 12.4: Image carousels can be customized. Here is an example of a customized carousel, using the scripting above.](../../images/alloyui-customized-carousel-in-portlet.png)
+![Figure 13.4: Image carousels can be customized. Here is an example of a customized carousel, using the scripting above.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the customized portlet at 
 [https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet)
@@ -712,7 +712,7 @@ similar to this:
 
 The figure below shows what your web page should look like.
 
-![Figure 12.5: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter on your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
+![Figure 13.5: Using AlloyUI on any HTML page is easy. Try out AlloyUI's character counter on your own page using the code above.](../../images/alloyui-char-counter-in-html-file.png)
 
 Great! Now you know how to use a local set of the AlloyUI tag libraries. Next,
 we'll show you how to work with the AlloyUI source project. You'll learn how to
