@@ -1,4 +1,3 @@
-
 # Designing Workflow with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 Liferay Portal includes a workflow engine called *Kaleo*. Kaleo allows portal
@@ -27,10 +26,8 @@ editing Kaleo [Groovy](http://groovy.codehaus.org/Documentation) scripts. From
 the editor you can delegate workflow decisions to your custom business logic
 APIs or access any of the Liferay Portal APIs. In Developer Studio, you can
 leverage editors for Beanshell, Drl, JavaScript, Python, and Ruby scripting
-languages. You can leverage editors for
-[FreeMarker](http://freemarker.sourceforge.net/) and
-[Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
-template languages too. Kaleo Designer for Java gives you a rich tool set for
+languages. You can also leverage the editor for the [FreeMarker](http://freemarker.sourceforge.net/)
+template language. Kaleo Designer for Java gives you a rich tool set for
 creating/editing workflows, manipulating workflow nodes, and implementing
 business logic. But there's more!
 
@@ -431,13 +428,13 @@ process to the *QA* and *QA Manager* task nodes:
                 <target>QA</target>
             </transition>
             <transition>
-                <name>QA Manager</name>
-                <target>QA Manager</target>
+                <name>QA Management</name>
+                <target>QA Management</target>
             </transition>
         </transitions>
     </fork>
 
-Both the the QA-related task nodes are assigned to the user with screenname
+Both the the QA-related task nodes are assigned to the user with screen-name
 *joe*.
 
     <task>
@@ -451,13 +448,12 @@ Both the the QA-related task nodes are assigned to the user with screenname
             <transition>
                 <name>Pass to QA Join</name>
                 <target>Pass to QA Join</target>
-                <default>Pass to QA Join</default>
             </transition>
         </transitions>
     </task>
 
     <task>
-        <name>QA Manager</name>
+        <name>QA Management</name>
         <assignments>
             <user>
                 <screen-name>joe</screen-name>
@@ -666,13 +662,12 @@ following:
 - Right-click the node and select *Edit Script*. 
 
 We set our default script language to Groovy, so the Java/Groovy editor appears.
-To learn more about the Groovy editor, see the [Groovy User
-Guide](http://groovy.codehaus.org/User+Guide). If you set the script language to
-another language, the editor for that specific language appears. The editor runs
-in the context of editing the specific node you selected. Anything you type in
-the script editor for this condition node is written inside the
-`<script></script>` tags for the `<condition/>` element that represents our node
-in our workflow definition's XML file (in our case,
+To learn more about the Groovy editor, see the [Groovy User Guide](http://groovy.codehaus.org/User+Guide). 
+If you set the script language to another language, the editor for that specific 
+language appears. The editor runs in the context of editing the specific node 
+you selected. Anything you type in the script editor for this condition node is 
+written inside the `<script></script>` tags for the `<condition/>` element that 
+represents our node in our workflow definition's XML file (in our case,
 `ticket-process-definition.xml`). 
 
 ---
@@ -752,24 +747,25 @@ block of XML looks like, including the Java in our Goovy script:
         <script><![CDATA[import com.liferay.portal.kernel.util.GetterUtil;
             import com.liferay.portal.kernel.workflow.WorkflowConstants;
             import com.liferay.portal.service.ServiceContext;
+            import com.liferay.portlet.dynamicdatamapping.storage.Field;
             import com.liferay.portlet.dynamicdatalists.model.DDLRecord;
             import com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalServiceUtil;
-            import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
             long companyId = GetterUtil.getLong((String) workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
-            ServiceContext serviceConteimport com.liferay.portal.kernel.util.GetterUtil;
+            ServiceContext serviceContext = (ServiceContext) workflowContext.get(WorkflowConstants.CONTEXT_SERVICE_CONTEXT);
 
-            long ddlRecordId = GetterUtil.getLong(serviceContext.getAttribute("ddlRecordId"));
-            DDLRecord ddlRecord = DDLRecordLocalServiceUtil.getRecord(ddlRecordId);xt = (ServiceContext) workflowContext.get(WorkflowConstants.CONTEXT_SERVICE_CONTEXT);
+            long classPK = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+            DDLRecord ddlRecord = DDLRecordLocalServiceUtil.getRecord(classPK);
+
             Field field = ddlRecord.getField("status");
 
             String status = GetterUtil.getString(field.getValue());
             if (status.contains("not")) {
-                returnValue = "No"
+              returnValue = "No"
             }
             else {
-                returnValue = "Yes"
-        }]]></script>
+              returnValue = "Yes"
+            }]]></script>
         <script-language>groovy</script-language>
         <transitions>
             <transition>
@@ -810,49 +806,12 @@ template editor.
 
 ## Leveraging Template Editors for Notifications [](id=workflow-template-editors-notifications-liferay-portal-6-2-dev-guide-en)
 
-Designer lets you leverage FreeMarker and Velocity editors to customize
-templates for your workflow notifications. A FreeMarker editor comes bundled
-with Developer Studio. To edit Velocity templates, you'll need to install an
-editor. Don't worry, Developer Studio makes it easy, and we'll show you how. 
-
-### Add-on: Install Velocity Editor Support [](id=workflow-velocity-editor-support-liferay-portal-6-2-dev-guide-en)
-
-Liferay Developer Studio comes with additional add-on support for editing
-Velocity template notifications in the Kaleo Designer for Java. To use this
-feature go to the Developer Studio 1.6 customer page
-[http://www.liferay.com/group/customer/products/developer-studio/1.6](http://www.liferay.com/group/customer/products/developer-studio/1.6),
-navigate to the *Add-on: Install Velocity Editor Support* section, and download
-the Liferay Developer Studio Velocity update site zip file and install it. You
-can follow these steps: 
-
-1.  From Liferay Developer Studio, Click *Help* &rarr; *Install New Software...*
-
-2.  Click *Add...*
-
-3.  Click *Archive*.
-
-4.  Browse to the downloaded update site zip file and select it.
-
-5.  Click *OK* to close the *Add Repository* dialog.
-
-6.  Expand the added repository and check the *Liferay Developer Studio
-    Velocity* feature.
-
-7.  Uncheck the option *Contact all update sites...*
-
-8.  Click *Next* to progress through the wizard.
-
-9.  After reading and accepting the license agreement, click *Finish*.
-
-10. Restart Liferay Developer Studio to complete the install.
-
-When you edit a notification template set to the Velocity type, the template
-opens in the Velocity editor (a small "v" icon is in the left side of the
-editor's tab). 
+Designer lets you leverage the FreeMarker editor to customize templates for your 
+workflow notifications. A FreeMarker editor comes bundled with Developer Studio.
 
 ### Creating Notifications [](id=creating-workflow notifications-liferay-portal-6-2-dev-guide-07-en)
 
-To access the template editors, click on the node of your choice and select the
+To access the template editor, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
 clicking the green "plus" symbol. 
 
@@ -871,22 +830,19 @@ Click the pencil icon to open the editor associated with your notification's
 template language. Like the script editor, the template editor's *Palette* view
 lists entities that you can drag and drop onto your workflow diagram. 
 
-Because Developer Studio lets you leverage full featured template editors like
-FreeMarker or Velocity, content-assist is available for you to use right away.
-For example, if you are using the FreeMarker editor, content-assist suggests
-FreeMarker functions when you are editing your notification template. In
-addition, when you're doing a FreeMarker variable insertion, the editor gives
-you all the available variables that are a part of the Kaleo workflow. You can
-visit the documentation pages for [FreeMarker](http://freemarker.org/docs/) and
-[Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
-for more information on the variables and functions available in these template
-languages.
+Because Developer Studio lets you leverage a full featured FreeMarker template 
+editor, content-assist is available for you to use right away. For example, 
+content-assist suggests FreeMarker functions when you are editing your 
+notification template. In addition, when you're doing a FreeMarker variable 
+insertion, the editor gives you all the available variables that are a part of 
+the Kaleo workflow. You can visit the documentation pages for [FreeMarker](http://freemarker.org/docs/) 
+for more information on the variables and functions available.
 
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Similar to the bundled script
-editors, Developer Studio lets you use FreeMarker and Velocity template editors
-to customize notifications in your workflow definition.
+editors, Developer Studio lets you use the FreeMarker template editor to 
+customize notifications in your workflow definition.
 
 ---
 
@@ -970,8 +926,7 @@ it's all dressed up with somewhere to go).
 
 With template editors, customizing your notification templates is easier than
 ever. FreeMarker comes bundled with Developer Studio so it's obviously the
-simplest solution, but you can create Velocity templates just as easy by using
-the Velocity editor you installed. 
+simplest solution.
 
 Here's what the XML source looks like (with the embedded FreeMarker template)
 for the Project Management task we created:
@@ -1000,7 +955,7 @@ for the Project Management task we created:
                 </template>
                 <template-language>freemarker</template-language>
                 <notification-type>email</notification-type>
-                <execution-type>onentry</execution-type>
+                <execution-type>onEntry</execution-type>
             </notification>
         </actions>
         <assignments>
@@ -1010,8 +965,8 @@ for the Project Management task we created:
         </assignments>
         <transitions>
             <transition>
-                <name>completed</name>
-                <target>endnode</target>
+                <name>Completed</name>
+                <target>EndNode</target>
             </transition>
         </transitions>
     </task>
@@ -1177,8 +1132,7 @@ takes you to the XML, and you can easily switch contexts as you need.
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** *Using Liferay Portal* section
-[Creating New Workflow
-Definitions](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en)
+[Creating New Workflow Definitions](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en)
 explains how to define workflows via XML.
 
 ---
@@ -1263,8 +1217,7 @@ in *Using Liferay Portal*. We'll demonstrate how easy it is.
 ## Using Dynamic Data Lists (DDLs) with Workflows [](id=using-dynamic-data-lists-ddls-with-workflow-liferay-portal-6-2-dev-guide-en)
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
-more about DDLs, visit [Using Web Forms and Dynamic Data
-Lists](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en)
+more about DDLs, visit [Using Web Forms and Dynamic Data Lists](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en)
 in *Using Liferay Portal*.
 
 First we'll create a data definition that lets the user select a status value. 
@@ -1280,7 +1233,7 @@ First we'll create a data definition that lets the user select a status value.
     ![Figure 8.20: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
 4. In the *Settings* tab, double click the *Name* property to open the property
-   editor--enter *status* as the value. Then click *Save*.
+   editor--enter *status*, in lowercase, as the value. Then click *Save*.
 
 5. Edit the *Options* setting; give your *status* field option values of `fix`
    with label "Fix" and `not` with label "Do not fix". 
@@ -1304,8 +1257,9 @@ In our code, the `getField()` method ingests the value of our DDL field named
 `not`, the value *No* is returned and our workflow transitions to our EndNode
 state. Otherwise, the workflow transitions to our Developer task node. 
 
-After you create the data definition, make sure you select the ticket process
-workflow for our new Kaleo Forms process to use. *Save* the DDL. 
+After you create the data definition, create a DDL. Make sure you select the 
+ticket process workflow and the Status data definition when creating this DDL. 
+*Save* the DDL. 
 
 Now our DDL is set for use inside our ticket process workflow! Let's use the
 Kaleo Forms portlet to test our new workflow definition! 
@@ -1335,8 +1289,9 @@ After saving, select the *Summary* tab in Kaleo Forms, click the *Submit New*
 button, and select *Ticket Process*.
 
 Now you can interact with the DDL and progress throughout the ticket process
-using Kaleo Forms. Remember to sign in as Joe Bloggs to access the tasks
-assigned to him. Joe Bloggs should also receive an email when the Project
+using Kaleo Forms! Joe Bloggs is assigned the task once it ticket reaches the 
+QA and Pass to QA tasks. Remember to sign in as Joe Bloggs to access the tasks
+assigned to him. Mr. Bloggs should also receive an email when the Project
 Management node is activated. 
 
 You successfully created a workflow definition and created a workflow process
