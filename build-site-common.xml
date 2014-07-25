@@ -85,10 +85,6 @@
 			classpathref="project.classpath"
 			fork="true"
 		>
-		    <arg value="${product.abbrev}"/>
-			<arg value="${product.version}"/>
-			<arg value="${purpose.dir}"/>
-			<arg value="${doc.type}"/>
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>
