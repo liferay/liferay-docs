@@ -1,16 +1,31 @@
-# Migrating Logging [](id=migrate-to-liferay-faces-logging-liferay-portal-6-2-dev-guide-en)
+# Migrating Logging to Liferay Faces
+
+In this tutorial, you'll learn how to migrate logging from PortletFaces to
+Liferay Faces. For further context as to why this is needed, visit the
+[Migrating BridgeRequestAttributeListener to Liferay
+Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+tutorial. 
+
+<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
+to dev.liferay.com. -Cody -->
 
 The PortletFaces-Logging project at portletletfaces.org has been moved into the
 Liferay Faces Bridge codebase. In order to keep using this logging API in your
-portlets, you will need to refactor to the new package namespace, as deprecated
+portlets, you'll need to refactor to the new package namespace, as deprecated
 classes have not been provided. 
 
-    // PortletFaces-Logging package names:
-    import org.portletfaces.logging.LoggerFactory;
-    import org.portletfaces.logging.Logger;
+PortletFaces provided its own `org.portletfaces.logging.Logger` and
+`org.portletfaces.logging.LoggerFactory` classes, but the Liferay Faces Bridge
+uses the `com.liferay.faces.util.logging.Logger` and
+`com.liferay.faces.util.logging.LoggerFactory`. 
 
-    // Liferay Faces Bridge package names:
-    import com.liferay.faces.util.logging.LoggerFactory;
-    import com.liferay.faces.util.logging.Logger;
+For example, the following import statements must be converted to the new
+Liferay Faces namespace: 
 
-The last migration we'll look at is Portlet Preferences.
+- `import org.portletfaces.logging.LoggerFactory;` &rarr; `import
+com.liferay.faces.util.logging.LoggerFactory;` 
+
+- `import org.portletfaces.logging.Logger;` &rarr; `import
+com.liferay.faces.util.logging.Logger;` 
+
+Great! You've officially migrated logging to Liferay Faces. 
