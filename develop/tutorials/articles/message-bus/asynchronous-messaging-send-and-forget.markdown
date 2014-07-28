@@ -6,7 +6,8 @@ sender's messages don't contain any response information. Message listeners
 therefore can't reply to them. Think of it this way--if you got a letter in the 
 mail without any kind of return address or other information telling you who 
 sent it, who could you send a reply to? This tutorial shows you how to implement 
-messaging in this fashion between one sending and two receiving portlets.
+messaging in this fashion between one sending and two receiving portlets. You 
+can find the code for this example plugin project [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet).
 
 Even though there are many cases where you want to include some sort of response 
 information in your messages, there are times where leaving out a response 
@@ -21,8 +22,6 @@ series. This way, both messages go out at the same time. Without further ado,
 it's time to load up the Message Bus with insults!
 
 ![Figure 1: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
-
-<!-- Insert text references with links to portlets on Github -->
 
 ## Deciding on Destination Keys 
 
@@ -47,7 +46,7 @@ called with. There's also not much code involved. In this example, the message
 sender is placed inside the method of the insult writer portlet that is 
 responsible for adding a new insult to the database. Therefore a message is sent 
 out each time a new insult is written, which is precisely what the insult writer 
-wants to happen.
+wants to happen. You can find this code in `InsultWriterPortlet.java` [here on on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
 
 A sender for an asynchronous send and forget message takes the following steps:
 
@@ -79,7 +78,7 @@ you need.
 You need to have one or more message listeners implemented to receive messages 
 from your sender. Each listener is a class that implements Liferay's 
 `MessageListener` interface. In this example there are two listeners, one for 
-each receiving portlet.
+each receiving portlet. You can find the example listeners [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
 
 Asynchronous listeners for send and forget messages take the following steps: 
 
@@ -195,7 +194,7 @@ Save and redeploy your portlet. Your plugin should now send and receive messages
 as you've configured it to.	In the case of the insult writer, the insult log 
 and insulted portlets now show each insult. 
 
-<!-- Insert screenshots -->
+![Figure 2: Message Bus carries the insult to the receiving portlets.](../../images/msg-bus-insults.png)
 
 Great! Now you know how to use Message Bus to send asynchronous send and forget 
 messages. 
