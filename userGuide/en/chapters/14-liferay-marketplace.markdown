@@ -19,7 +19,8 @@ This chapter covers the following topics:
 
 - Plugins and Plugin Management
 
-- Plugin Types: Portlets, Themes, Layout Templates, Hooks, and Web Plugins
+- Plugin Types: Portlets, Themes, Layout Templates, Hooks, Web Plugins, and OSGi
+  Bundles
 
 - Installing Plugins from Repositories
 
@@ -130,7 +131,7 @@ register as a developer in Marketplace. Just go to
 [http://liferay.com/marketplace](http://liferay.com/marketplace) and click
 *Become a Developer* from the *Marketplace* menu.
  
-![Figure 14.x: Click on the *Become a Developer* link in the menu on the left side of the Liferay Marketplace homepage to register a developer's account, either as an individual or a company.](../../images/marketplace-registration.png) 
+![Figure 14.4: Click on the *Become a Developer* link in the menu on the left side of the Liferay Marketplace homepage to register a developer's account, either as an individual or a company.](../../images/marketplace-registration.png) 
 
 Once you register as a developer, your *liferay.com* homepage will
 have links for adding your apps to Marketplace, and managing them after they're
@@ -170,7 +171,7 @@ copy or have re-installed Liferay and wish to re-deploy the app).  This option
 is also useful for downloading apps and deploying them to offline instances of
 Liferay that do not have direct access to `liferay.com`.
 
-![Figure 14.4: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
+![Figure 14.5: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
 
 If possible, it's best to log into your portal instance and install purchased
 applications through the *Store* link in the Control Panel's *Apps* section.
@@ -186,7 +187,7 @@ price and other relevant information. Please see the
 [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
 for details on this topic.
  
-![Figure 14.5: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
+![Figure 14.6: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
  
 Clicking on *Add an App* allows you to upload a new app and make it available in
 the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
@@ -207,7 +208,7 @@ company's Marketplace account). Your company's Marketplace admin will then be
 able to add you to the company. If the company name you'd like to use is
 available, click the *Register Your Company* button to move on to the next step. 
 
-![Figure 14.6: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
+![Figure 14.7: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
 
 Your second step is to fill out your company's information. The public
 information you must provide includes a company logo, the company name, a
@@ -232,13 +233,13 @@ There are several ways to search for and find apps you are interested in.
    category, as well as a canonical listing of all apps. Also, on the right, are
    lists of the Most Viewed apps within that category.
 
-    ![Figure 14.7: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
+    ![Figure 14.8: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
 
 2. Searching: To search for an app, type in search criteria in the search box
    under the navigation menu on the left and click *Search*. Apps matching the
    specified search criteria are displayed.
 
-    ![Figure 14.8: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
+    ![Figure 14.9: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
 
 Next, let's talk about app versioning.
 
@@ -265,7 +266,7 @@ available also describes the range of Liferay Platform versions the app is
 compatible with. Make sure to choose a version of the app that is compatible
 with your Liferay Platform release.
 
-![Figure 14.9: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
+![Figure 14.10: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
 
 To check if an app is compatible with your version of Liferay, click on the App
 and then click on the *Version History* tab. The Version History tab displays
@@ -279,7 +280,7 @@ version of Liferay.
 Once you've found an app you wish to download and install, click on the name of
 the app to display its detailed information screen.
 
-![Figure 14.10: Click on an app to read a description and view additional details.](../../images/marketplace-app-information.png)
+![Figure 14.11: Click on an app to read a description and view additional details.](../../images/marketplace-app-information.png)
 
 This screen offers a number of items to help you learn more about the app. You
 can find the primary information about the app on the left side of the screen,
@@ -348,7 +349,7 @@ that you can log in as an administrator. Once you are logged in as an
 administrator, click the *Admin* menu from the Dockbar and choose *Control
 Panel*.
 
-![Figure 14.11: As an administrator, you can access the Marketplace interface from the Control Panel of a running Liferay portal.](../../images/marketplace-control-panel-entries.png)
+![Figure 14.12: As an administrator, you can access the Marketplace interface from the Control Panel of a running Liferay portal.](../../images/marketplace-control-panel-entries.png)
  
 Click on either the *Store* or the *Purchased* links beneath the Apps heading.
 Before you can access Marketplace via the Control Panel, you need to associate
@@ -356,7 +357,7 @@ your `liferay.com` login credentials with your local administrator account.
 Enter your `liferay.com` email address and password so your Liferay installation
 can connect to the `liferay.com` Marketplace.
 
-![Figure 14.12: Before you can access Marketplace via the Control Panel you need to link your `liferay.com` credentials with your Liferay instance's administrator account.](../../images/marketplace-login.png)
+![Figure 14.13: Before you can access Marketplace via the Control Panel you need to link your `liferay.com` credentials with your Liferay instance's administrator account.](../../images/marketplace-login.png)
 
 ---
  
@@ -386,7 +387,7 @@ You can view and manage all the apps you've purchased by clicking on the
 past, including apps you may have purchased/downloaded while using other Liferay
 installations.
 
-![Figure 14.13: Purchased Apps](../../images/marketplace-purchased-apps-control-panel.png)
+![Figure 14.14: Purchased Apps](../../images/marketplace-purchased-apps-control-panel.png)
  
 The apps which you downloaded and installed on the currently running instance of
 Liferay are listed as Installed. Apps which you have previously downloaded or
@@ -510,7 +511,7 @@ infrastructure that Liferay provides.
 
 ### Themes [](id=themes-liferay-portal-6-2-user-guide-14-en)
 
-![Figure 14.14: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
+![Figure 14.15: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
 Themes are hot deployable plugins which can completely transform the look and
 feel of the portal. Most organizations have their own look and feel standards
@@ -525,7 +526,7 @@ than starting a theme from scratch. You can learn more about theme development
 in [*Liferay in Action*](http://manning.com/sezov) or the [Liferay Development
 Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
-![Figure 14.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
+![Figure 14.16: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ### Layout Templates [](id=layout-templates-liferay-portal-6-2-user-guide-14-en)
 
@@ -552,6 +553,64 @@ Liferay supports integration with various Enterprise Service Bus (ESB)
 implementations, as well as Single Sign-On implementations, workflow engines,
 and so on. These are implemented as web modules used by Liferay portlets to
 provide functionality.
+
+### OSGi Bundles
+
+OSGi (Open Services Gateway initiative) is a framework for developing modular
+Java applications. Liferay 6.2 introduced support for the OSGi module framework.
+It hosts an OSGi runtime and allows administrators to deploy OSGi bundles to
+Liferay. OSGi web application bundles are very similar to standard web
+application archives except that they must include additional metadata so that
+they can operate in an OSGi framework. The OSGi specification does not require a
+specific file extension for web application bundles but they typically have a
+`.jar` file extension. Sometimes a `.war` file extension is used instead.
+
+---
+
+ ![Tip](../../images/tip.png) **Note:** Liferay 6.2's OSGi runtime is
+ experimental and unsupported. It should be considered a technology preview at
+ this time. 
+
+---
+
+Deploying an OSGi bundle to Liferay is easy: just copy the bundle to your
+`[Liferay Home]/data/osgi/modules` directory. Undeploying is just as easy: just
+remove the bundle from the `[Liferay Home]/data/osgi/modules` directory. Note:
+If you copy an OSGi bundle to your `[Liferay Home]/deploy` directory, Liferay
+automatically copies it to your `[Liferay Home]/data/osgi/modules` directory.
+
+To test Liferay's OSGi module framework and deploy mechanism, you can use the
+`test-module-framework-shared` bundle from Liferay's plugin repository on
+Github:
+[test-module-framework-shared](https://github.com/liferay/liferay-plugins/tree/master/shared/test-module-framework-shared).
+In order to deploy the module framework test plugin from a clone of the
+liferay-plugins repository, you should first add the following lines to your
+`build.[username].properties` file in your `liferay-plugins` directory. If this
+file doesn't exist yet, create it.
+
+    liferay.home=[path-to-your-liferay-installation]
+    auto.deploy.dir=${liferay.home}/deploy
+
+Then navigate to the `liferay-plugins/shared/test-module-framework-shared`
+directory in a terminal and run `ant deploy`. Of course, Apache Ant must be
+installed on your system for this to work. When the
+`test-module-framework-shared` bundle has been deployed, the following message
+appears in the console:
+
+    Activate Test Component
+
+When you remove the `test-module-framework-shared` bundle from the
+`${LIFERAY_HOME}/data/osgi/deploy` directory, another message appears:
+
+    Deactivate Test Component
+
+If you'd like to customize your Liferay Portal instance's module framework
+behavior, please refer to the Module Framework section of the
+`portal.properties` file.  For example, you can set a comma-delimited list of
+directories to scan for modules to deploy, specify how to often to scan the
+directories for changes, etc. Remember not to make customizations to the
+`portal.properties` file itself but to instead add customized properties to a
+`portal-ext.properties` file in your Liferay Home directory. 
 
 ### Configuring Plugins [](id=configuring-plugins-liferay-portal-6-2-user-guide-14-en)
 
@@ -581,7 +640,7 @@ templates: if a theme or layout template has been installed, then it's available
 for use. The Theme and Layout Template Plugins tabs of the Plugins Configuration
 section directly display which portal roles can access them.
 
-![Figure 14.16: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 14.17: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
 It's easy to browse through the lists of installed plugins since the plugins are
 listed alphabetically. You can also change the number of items per page and
@@ -627,7 +686,7 @@ plugin to your Liferay Portal. Use the *File Upload* option to browse to and
 install from a local `.lpkg` or `.war` file. Use the *URL* option to install
 from a remote `.lpkg` or `.war` file.
 
-![Figure 14.17: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 14.18: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
 That's all the information the App Manager needs in order to deploy your
 portlet, theme, layout template, hook, or web plugin. Click the *Install* button

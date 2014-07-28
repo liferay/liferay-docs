@@ -12,13 +12,22 @@ import java.util.Properties;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.Task;
 
-public class NumberHeadersTask extends Task {
+public class NumberHeadersTask {
 
-	@Override
-	public void execute() throws BuildException {
+	public NumberHeadersTask() {
+		super();
+	}
+
+	public static void main(String[] args) throws Exception {
+		if (args == null || args.length < 2) {
+			throw new IllegalArgumentException("Requires 2 arguments: doc.dir lang");
+		}
+
+		NumberHeadersTask task = new NumberHeadersTask();
+		String docDir = args[0];
+		String lang = args[1];
+
 		boolean foundDuplicateIds = false;
 
 		File chDir = new File("../" + docDir + "/" + lang + "/chapters");
@@ -26,7 +35,7 @@ public class NumberHeadersTask extends Task {
 			"Numbering headers for files in " + chDir.getPath() + " ...");
 
 		if (!chDir.exists() || !chDir.isDirectory()) {
-			throw new BuildException(
+			throw new Exception(
 				"FAILURE - bad chapters directory " + chDir);
 		}
 
@@ -43,7 +52,7 @@ public class NumberHeadersTask extends Task {
 			});
 
 		if (files == null || files.length == 0) {
-			throw new BuildException(
+			throw new Exception(
 				"FAILURE - no markdown files found in " + chDir);
 		}
 
@@ -56,7 +65,7 @@ public class NumberHeadersTask extends Task {
 			props.load(new FileReader(docPropsFile));
 		}
 		catch (IOException io) {
-			throw new BuildException(io);
+			throw io;
 		}
 
 		// Process each file
@@ -83,7 +92,7 @@ public class NumberHeadersTask extends Task {
 						line = line.trim();
 						
 						String newHeadingLine = handleHeaderLine(line, filename,
-							in.getLineNumber(), props);
+							in.getLineNumber(), props, lang);
 						if (newHeadingLine != null) {
 							line = newHeadingLine;
 						}
@@ -108,24 +117,16 @@ public class NumberHeadersTask extends Task {
 
 				FileUtils.forceDelete(new File(outFileTmp));
 			} catch (IOException e) {
-				throw new BuildException(e.getLocalizedMessage());
+				throw e;
 			}
 		}
 
 		if (foundDuplicateIds) {
-			throw new BuildException("FAILURE - Duplicate header IDs exist");
+			throw new Exception("FAILURE - Duplicate header IDs exist");
 		}
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-	}
-
-	public void setDocDir(String docDir) {
-		this.docDir = docDir;
-	}
-
-	private  String extractHeading(String line, int indexOfFirstHeaderChar) {
+	private static  String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
 		heading2 = heading2.trim();
 
@@ -151,7 +152,7 @@ public class NumberHeadersTask extends Task {
 		return heading2;
 	}
 
-	private  String extractChapterNumber(String fileName) {
+	private static  String extractChapterNumber(String fileName) {
 
 		// Extract chapter number from filename
 
@@ -167,8 +168,8 @@ public class NumberHeadersTask extends Task {
 		return chapter;
 	}
 
-	private  String handleHeaderLine(String line, String filename, int lineNum,
-		Properties props) throws BuildException {
+	private static String handleHeaderLine(String line, String filename, int lineNum,
+		Properties props, String lang) throws Exception {
 
 		String newHeadingLine = null;
 
@@ -194,7 +195,7 @@ public class NumberHeadersTask extends Task {
 				sb.append(filename);
 				sb.append(" - ");
 				sb.append(id);
-				throw new BuildException(sb.toString());
+				throw new Exception(sb.toString());
 			}
 			
 			// Check if the ID is already in use
@@ -238,7 +239,7 @@ public class NumberHeadersTask extends Task {
 				heading = extractHeading(line, indexOfFirstHeaderChar);
 			}
 			else {
-				throw new BuildException("WARNING - "  + filename + ":" +
+				throw new Exception("WARNING - "  + filename + ":" +
 					lineNum + " is missing header text.");
 			}
 
@@ -248,7 +249,7 @@ public class NumberHeadersTask extends Task {
 			String newHeading = null;
 			while (true) {
 
-				newHeading = assembleId(heading, props, chapter, idCount);
+				newHeading = assembleId(heading, props, chapter, lang, idCount);
 
 				if (IDS.get(newHeading) == null) {
 
@@ -270,10 +271,10 @@ public class NumberHeadersTask extends Task {
 		return newHeadingLine;
 	}
 
-	private String assembleId(String heading, Properties props, String chapter,
-			int idCount) {
+	private static String assembleId(String heading, Properties props,
+		String chapter, String lang, int idCount) {
 
-		String namespace = getNamespace(props, chapter);
+		String namespace = getNamespace(props, chapter, lang);
 
 		String count = "";
 		if (idCount > -1) {
@@ -294,7 +295,8 @@ public class NumberHeadersTask extends Task {
 		return sb.toString();
 	}
 
-	private String getNamespace(Properties props, String chapter) {
+	private static String getNamespace(Properties props, String chapter,
+			String lang) {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("-");
@@ -332,7 +334,4 @@ public class NumberHeadersTask extends Task {
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
-
-	private String lang;
-	private String docDir;
 }

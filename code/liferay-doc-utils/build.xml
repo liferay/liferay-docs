@@ -4,12 +4,15 @@
 
 	<property name="build.dir" value="${project.dir}/classes" />
 	<property name="dist.dir" value="${project.dir}/dist" />
+	<property name="docs.lib.dir" value="${project.dir}/../../lib" />
+	<property name="jar.file" value="liferay-doc-utils.jar" />
 	<property name="lib.dir" value="${project.dir}/lib" />
 	<property name="src.dir" value="${project.dir}/src" />
 	<property name="deploy.dir" value="${project.dir}/../../lib" />
 
 	<path id="lib.classpath">
 		<fileset dir="${lib.dir}" includes="*.jar" />
+		<fileset dir="${docs.lib.dir}" excludes="${jar.file}" includes="*.jar" />
 	</path>
 
 	<path id="project.classpath">
@@ -50,7 +53,7 @@
     <target name="dist" depends="clean, compile"
 	description="compiles the code and creates a runnable JAR file for the project">
 		<mkdir dir="${dist.dir}" />
-        <jar destfile="${dist.dir}/liferay-doc-utils.jar"
+        <jar destfile="${dist.dir}/${jar.file}"
 			filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="com.liferay.documentation.util.DocUtils"/>
@@ -61,8 +64,8 @@
         </jar>
     </target>
 
-	<target name="deploy" depends="dist" description="deploys liferay-doc-utils.jar to liferay-docs/lib">
-		<copy file="${dist.dir}/liferay-doc-utils.jar" tofile="${deploy.dir}/liferay-doc-utils.jar"/>
+	<target name="deploy" depends="dist" description="deploys this project's JAR file to liferay-docs/lib">
+		<copy file="${dist.dir}/${jar.file}" tofile="${deploy.dir}/${jar.file}"/>
 	</target>
 
 </project>

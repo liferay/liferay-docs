@@ -280,10 +280,11 @@ Next we'll change our newly created Ext plugin and deploy it.
 
 Our environment is set up and we're ready to start customizing. First let's look
 at a simple example that customizes the sections of a user profile. The
-configuration can be made through the `portal-ext.properties` configuration
-file, but a hook plugin won't let us modify the property we're customizing.
-Open the `docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and paste in
-the following contents: 
+following example can be done using a hook and the `users.form.add.main`
+property, but for demonstration purposes, we'll make the customization by
+overriding portal properties using an Ext plugin. Open the
+`docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and paste in the
+following contents: 
 
     users.form.update.main=details,password,organizations,sites,roles
 

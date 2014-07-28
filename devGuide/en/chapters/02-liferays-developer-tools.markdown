@@ -17,6 +17,7 @@ topics along the way:
 - Developing Apps with Liferay IDE 
 - Leveraging the Plugins SDK 
 - Developing Plugins Using Maven 
+- Deploying Your Plugins: Hot Deploy vs. Auto Deploy
 
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
@@ -75,85 +76,111 @@ Server*--Liferay IDE comes preconfigured in Developer Studio.
 
 ### Installing Liferay IDE [](id=installing-liferay-ide-liferay-portal-6-2-dev-guide-02-en)
 
-Liferay IDE is an extension of Eclipse IDE; before you install Liferay IDE,
-let's make sure your Eclipse release can run Liferay IDE, and that you're using
-a supported version of Java. Then we'll show you the installation process--we
-give you two choices, depending on whether you want to enter an update site URL
-for your Eclipse release. 
+Liferay IDE is an extension of the Eclipse IDE. You can install Eclipse
+bundled with Liferay IDE or you can add it to an Eclipse instance. 
 
-#### Requirements [](id=liferay-ide-requirements-liferay-portal-6-2-dev-guide-02-en)
-
-Make sure you have a supported Java JRE and Eclipse release: 
+Liferay IDE requires the following software: 
 
 - Java 6.0 JRE or greater. 
-- Liferay IDE must be run in one of the following Eclipse releases: 
+- One of the following Eclipse releases: 
+    - Eclipse Kepler Java EE (4.3.x)
+    - Eclipse Juno Java EE (4.2.x)
+    - Eclipse Indigo Java EE (3.7.x)
 
-    Eclipse Kepler Java EE (4.3.x)
+If you don't already have Eclipse installed, you can install Liferay IDE bundled
+with Eclipse. You can alternatively install Liferay IDE onto an existing
+supported Eclipse installation. All Liferay IDE installation options are
+explained in this section. 
 
-    Eclipse Juno Java EE (4.2.x)
+#### Installing Liferay IDE Bundled with Eclipse [](id=installing-liferay-ide-bundled-with-ecli-liferay-portal-6-2-dev-guide-02-en)
 
-    Eclipse Indigo Java EE (3.7.x)
+Installing Liferay IDE and Eclipse from the same bundle is convenient and easy
+to do.  
 
-Next, we'll show you how to install Liferay IDE. 
+1.  Download a Liferay IDE Eclipse bundle from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
+    for your operating system.
 
-#### Installation Steps [](id=liferay-ide-installation-steps-liferay-portal-6-2-dev-guide-02-en)
+2.  Install Eclipse bundled with Liferay IDE by extracting its contents to a
+    local folder. 
+
+3.  To start Eclipse, execute the Eclipse executable file (e.g., `eclipse.exe`)
+    from the installation folder. 
+
+4.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
+
+You've installed Eclipse and Liferay IDE together! 
+
+You can alternatively install Liferay IDE onto an existing supported Eclipse
+installation. Supported versions of Eclipse are available from the
+[Eclipse](http://www.eclipse.org) website. 
+
+To install Liferay IDE onto Eclipse, you can either access the Liferay IDE
+update site from Eclipse or download a Liferay IDE archive file to access from
+Eclipse. Installing Liferay IDE from the update site is the easiest way to add
+it to Eclipse. 
+
+#### Installing Liferay IDE from the Update Site onto Eclipse [](id=installing-liferay-ide-from-the-update-s-liferay-portal-6-2-dev-guide-02-en)
 
 To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
-1.  Install Eclipse Kepler, Juno, or Indigo from the
-    [Eclipse](http://www.eclipse.org) website. 
+1.  Start Eclipse.
 
-2.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
-
-4.  In the *Work with* field, enter the update site URL
-    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0 GA1/updatesite/`
+3.  In the *Work with* field, enter the Liferay IDE update site URL
+    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0 GA1/updatesite/`
     and press *Enter*. 
 
-5.  Liferay IDE features should be detected. Select them and click *Next*. 
+4.  Make sure the Liferay IDE features are selected, then click *Next*. 
 
-6.  After calculating dependencies, click *Next*, accept the license agreement,
+5.  After calculating dependencies, click *Next*, accept the license agreement,
     and click *Finish* to complete the installation.
 
-7.  Restart Eclipse to verify that Liferay IDE is properly installed.
+6.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
-8.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
+7.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
     Liferay IDE icon badge as in the screenshot below, it's properly installed. 
 
 ![Figure 2.1: Once you've installed Liferay IDE, you can find the Liferay IDE logo in Eclipse by clicking *Help* &rarr; *About Eclipse*.](../../images/ide-about-eclipse-liferay.png)
 
-Next, we'll show you how to install Liferay IDE without specifying an Eclipse
-update URL. 
+8.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
 
-#### Alternative Installation [](id=liferay-ide-alternative-installation-liferay-portal-6-2-dev-guide-02-en)
+Alternatively, you can install Liferay IDE from a downloaded archive file. 
 
-To install Liferay IDE from a `.zip` file, follow these steps: 
+#### Installing Liferay IDE from an Archive File onto Eclipse [](id=installing-liferay-ide-from-an-archive-f-liferay-portal-6-2-dev-guide-02-en)
 
-1.  Install Eclipse Kepler, Juno, or Indigo from the
-    [Eclipse](http://www.eclipse.org) website. 
+To install Liferay IDE from an archive file, follow these steps: 
 
-2.  Download the IDE 2.0 `.zip` file from
-    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.0.0
-    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.0.0%20GA1/)
+1.  Download the IDE 2.1 archive file from
+    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
+    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
     for your operating system. 
 
-3.  Run the Eclipse executable file (e.g., `eclipse.exe`).
+2.  Start Eclipse.
 
-4.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
+3.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-5.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded Liferay IDE `.zip` file.
+4.  In the *Add Site* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay IDE archive file.
 
-6.  Liferay IDE features should be detected. Select them and click *Next*. 
+5.  Make sure the Liferay IDE features are selected, then click *Next*. 
 
-7.  After calculating dependencies, click *Next*, accept the license agreement,
-    and click *Finish* to complete the installation.
+6.  After calculating dependencies, click *Next*, accept the license agreement,
+    and click *Finish* to complete the installation
 
-8.  Restart Eclipse to verify that Liferay IDE is properly installed.
+7.  Restart Eclipse to verify that Liferay IDE is properly installed.
+
+8.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+    *Liferay* to use Liferay IDE. 
 
 After restarting Eclipse, you can verify that Liferay IDE is installed by going
 to *Help* &rarr; *About Eclipse* and finding the Liferay IDE icon badge. 
+
+Congratulations on installing Liferay IDE! 
 
 Let's set up Liferay IDE now that you have it installed. 
 
@@ -245,7 +272,7 @@ chapter of *Using Liferay Portal 6.2*.
 2.  Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
     under the *Liferay, Inc.* category and click *Next*.
 
-3.  Click *Browse* and select your `liferay-portal-6.2.x directory`. 
+3.  Click *Browse* and select your `liferay-portal-6.2.x/tomcat-7.x` directory. 
 
 4.  If you've selected the Liferay portal directory and a bundle JRE is present,
     it is automatically selected as the server's launch JRE. If no JRE bundle
@@ -255,12 +282,15 @@ chapter of *Using Liferay Portal 6.2*.
     ![Figure 2.3: If you have multiple JREs installed on your system, choose the one which should run Liferay.](../../images/ide-server-jre.png)
 
 5.  Click *Finish*; you should see your Liferay portal runtime listed in
-    *Preferences* &rarr; *Server* &rarr *Runtime Environments*.
+    *Preferences* &rarr; *Server* &rarr; *Runtime Environments*.
 
 6.  Click *OK* to save your runtime preferences. 
 
-7.  If you haven't created a server, create one now from the *Servers*
-    view in Liferay IDE; then you can test the server. 
+7.  If you haven't created a server, create one now from the *Servers* view in 
+    Liferay IDE; then you can test the server. Note that you need to be in the 
+    Liferay perspective of Eclipse to see the Servers view. You can get there by 
+    selecting *Window* &rarr; *Open Perspective* &rarr; *Other...* and then
+    selecting *Liferay* from the list.
 
     ![Figure 2.4: If you haven't created a Liferay server yet, you can do so from the *Servers* tab in Liferay IDE.](../../images/ide-add-new-server.png)
 
@@ -324,8 +354,8 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 	Listing*.
 	
 	2.2. Leave the *Use default location* checkbox checked. By default, the
-	default location is set to your current workspace. If you'd like to change
-	where your plugin project is saved in your file system, uncheck the box and
+	default location is set to your Plugins SDK. If you'd like to change where 
+	your plugin project is saved in your file system, uncheck the box and 
 	specify your alternate location.
 	
 	2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
@@ -341,10 +371,10 @@ IDE. Now let's create a new Liferay plugin project in Liferay IDE.
 
     2.5. Under *Plugin Type*, indicate which plugin type your project will hold
     by selecting one from the list. You can choose from *Portlet*, *Service
-    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, or *Ext*. Liferay IDE
-    provides handy wizards for creating new Liferay projects. Our demonstration
-    project will hold service builder portlets for the Nose-ster organization,
-    so make sure *Service Builder Portlet* is selected.
+    Builder Portlet*, *Hook*, *Layout Template*, *Theme*, *Ext*, or *Web*. 
+    Liferay IDE provides handy wizards for creating new Liferay projects. Our 
+    demonstration project will hold service builder portlets for the Nose-ster 
+    organization, so make sure *Service Builder Portlet* is selected.
 
     ![Figure 2.5: The wizard for creating a new service builder portlet project uses the information you specify to customize various configuration files in the new project.](../../images/ide-new-liferay-project.png)
 
@@ -391,6 +421,7 @@ IDE/Developer Studio:
             - `liferay-plugin-package.properties` **- Common project file**
             - `liferay-portlet.xml`
             - `portlet.xml`
+            - `service.xml`
             - `web.xml`
         - `icon.png`
         - `view.jsp`
@@ -523,7 +554,7 @@ Use the following steps to create the Location Listing portlet:
     There are also options for creating resources: you can specify the folder
     where JSP files will be created as well as whether or not a resource bundle
     file will be created. We'll leave the *Create JSP files* box flagged,
-    specify *html/locationlisting* as the JSP folder, and flag the *Create
+    specify *html/locationlisting* as the JSP folder and flag the *Create
     resource bundle file* box.
 
     Here are the portlet deployment descriptor details to specify for the
@@ -537,13 +568,13 @@ Use the following steps to create the Location Listing portlet:
 
     ![Figure 2.8: Liferay IDE's portlet creation wizard let's you specify the deployment descriptors for your portlets.](../../images/ide-specify-portlet-deployment-descriptors.png)
 
-4.  This window lets you specify portlet deployment descriptor details that are
-    specific to Liferay. You can set the file paths of your portlet's custom
+4.  The next window lets you specify portlet deployment descriptor details that 
+    are specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. Next, you can also choose the category for your portlet (it's
-    categorized under *Sample* by default), and choose whether or not to add it
+    categorized under *Sample* by default) and choose whether or not to add it
     to the *Control Panel* of your Liferay Portal. Accept the default, leaving
-    the *Add to Control Panel* box unflagged. 
+    the *Add to Control Panel* box unflagged. Click *Next*.
 
 5.  The last step is to specify modifiers, interfaces, and method stubs to
     generate in the Portlet class. Accept the defaults and click *Finish*. 
@@ -582,7 +613,7 @@ Use the following steps to create the Event Listing portlet:
     specific to Liferay. You can set the file paths of your portlet's custom
     icon, main CSS file, and main JavaScript file. You can also specify a CSS
     class wrapper. In the *Liferay Display* section, you can choose the category
-    for your portlet (it's categorized under *Sample* by default), and choose
+    for your portlet (it's categorized under *Sample* by default) and choose
     whether or not to add it to the *Control Panel* of your Liferay Portal.
     Accept the default, leaving the *Add to Control Panel* box unflagged and
     click *Next*. 
@@ -651,7 +682,7 @@ Builder gives you three modes to work in:
 With Liferay IDE, generating your service layer is easy. First you'll create
 `service.xml`, by selecting your project in the Package Explorer and then
 selecting *File* &rarr; *New* &rarr; *Liferay Service Builder*. Service Builder
-creates a `service.xml` file in your `docroot/WEB-INF/src` folder and displays
+creates a `service.xml` file in your `docroot/WEB-INF` folder and displays
 the file in overview mode. If you're following along with the
 `event-listing-portlet`, you already have the `service.xml` file because we
 created service builder portlet project during setup.
@@ -669,7 +700,7 @@ Our Service Builder chapter of this guide will lead you through filling out
 In the Service Builder chapter of this guide, we'll show you how our two custom
 portlets, the Events Listing Portlet and the Location Listing Portlet, can be
 developed more efficiently and modularly by using Service Builder. We'll
-describe the contents of `service.xml` in detail, and get you started using
+describe the contents of `service.xml` in detail and get you started using
 Service Builder to develop your custom applications using our code generation
 tool. And if *code generator* is a bad word to you, let us assure you that
 Liferay always gives you full control over all your code, including code
@@ -788,6 +819,8 @@ Eclipse's project explorer) and convert it to a Liferay project. Just follow
 the steps below. 
 
 1.  Move the project into a Liferay Plugins SDK if it is not already in one. 
+    To import the project, select *File* &rarr; *Import...* and then follow the 
+    import instructions that appear.
 
 2.  In Eclipse's Project Explorer, right-click on the project and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
@@ -818,7 +851,7 @@ configured as Liferay IDE projects.
 ### Verifying Successful Project Import [](id=verifying-successful-project-import-liferay-portal-6-2-dev-guide-02-en)
 
 After importing projects into Liferay IDE, you'll want to verify that they
-imported successfully, and that they're properly configured as Liferay IDE
+imported successfully and that they're properly configured as Liferay IDE
 projects. Here's how you verify that your imports were successful: 
 
 1.  Once the project is imported, you should see a new project inside Eclipse
@@ -923,7 +956,7 @@ configure the Remote Server Adapter, use the following steps:
     to use the runtime stub for satisfying JAR dependencies needed to compile
     various Liferay projects. Select the *Liferay bundle type* based on the
     version of your local Liferay bundle, browse to the *Liferay bundle
-    directory*, and click *Next*. 
+    directory* and click *Next*. 
 
 5.  On the next page of the wizard, configure your connection to your remote
     Liferay instance: 
@@ -1026,7 +1059,7 @@ Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
 that work best for you. If you don't want to use Liferay IDE, you can use
 Liferay's Plugins Software Development Kit (SDK) all by itself. The Plugins SDK
-is based on Apache Ant, and can be used along with any editor or Integrated
+is based on Apache Ant and can be used along with any editor or Integrated
 Development Environment (IDE). 
  
 In this section, we'll explain how to set up a Plugins SDK. We'll also discuss
@@ -1049,7 +1082,7 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
  ![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
  the SDK is already installed and ready to use. Liferay Portal Enterprise
- Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
+ Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs. EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
  [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
  of Liferay Portal EE today. 
 
@@ -1230,8 +1263,9 @@ plugins:
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
-
-Next, let's create a plugin using Liferay SDK from a terminal environment. 
+  
+You're now familiar with the Plugins SDK's structure and Ant targets. Next,
+let's create a plugin using the Plugins SDK from a terminal environment. 
 
 ### Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk-liferay-portal-6-2-dev-guide-02-en)
 
@@ -1695,7 +1729,7 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     Portal CE source project root directory. Specify the following properties in
     it:
 
-        app.server.type=[your application server's type. Lookup your app
+        app.server.type=[your application server's type. Look up your app
         server's type in the app.server.properties file in the same directory.]
         app.server.parent.dir=[your application server's parent directory]
         app.server.[type].dir=[your application server's directory]
@@ -1885,7 +1919,7 @@ learn how to install artifacts from Liferay's repository next.
 include "EE" in front of "Artifacts in the above heading. In addition, remove
 CE references from this section. Jim --> 
 
-If you'd like to access Liferay's CE or EE artifacts without downloading and
+If you'd like to access Liferay's CE artifacts without downloading and
 installing a `.zip` file, you can configure Maven to automatically
 download and install them from Liferay's own repository:
 [https://repository.liferay.com](https://repository.liferay.com). The first time
@@ -1903,9 +1937,9 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ee</id>
-		    <name>Liferay EE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ee</url>
+            <id>liferay-ce</id>
+		    <name>Liferay CE</name>
+		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
 		    <releases><enabled>true</enabled></releases>
 		    <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -1913,47 +1947,31 @@ First, specify the Liferay Repository's credentials in your project's parent
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-ee</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ee/</url>
+            <id>liferay-ce</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
 
-Note, if you're using artifacts for Liferay CE, replace `liferay-ee` with
-`liferay-ce` and rename the repository to `Liferay CE`. 
-
 ---
 
-![note](../../images/tip-pen-paper.png) **Important:** Do not have the Liferay
-repository configured when publishing artifacts to Maven Central. You'll need to
+![note](../../images/tip-pen-paper.png) **Important:** Do not leave the Liferay
+repository configured when publishing artifacts to Maven Central. You must
 comment out the Liferay Repository credentials when publishing your artifacts.
 
 --- 
 
 Next, when interacting with the Liferay Repository, you'll need to use
-specialized commands to access it.
+specialized commands to access it. Use the following command to access the CE
+repo:
 
-**Accessing the Liferay EE Maven Repository:**
-
-Since the Liferay EE repo is protected, you'll need to specify your username and
-password when referring to the URL for generating artifacts. The username and
-password are the same as your liferay.com credentials. The command is listed
-below: 
-
-    mvn archetype:generate -DarchetypeCatalog=https://USERNAME:PASSWORD@repository.liferay.com/nexus/content/groups/liferay-ee
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
 relying on the Liferay repo, we can remove the specialized command from the
 portlet archetype exercise and only specify this way here. -Cody -->
-
-**Accessing the Liferay CE Maven Repository:**
-
-Since the Liferay CE repo is public, there's no need to provide your username
-and password. Therefore, use the following command to access the CE repo:
-
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
 Liferay makes its artifacts available on Maven's Central Repository as well. As
 with using Liferay's Maven repository, the Maven's Central Repository enables
@@ -3205,8 +3223,147 @@ develop plugins offers an easy and effective way to customize your Liferay
 Portal. 
 
 Are you wondering if we're going to make more terrible jokes that steal from
-classic poetry? Quoth the Maven, "Probably." Let's summarize what we learned in
-this chapter.
+classic poetry? Quoth the Maven, "Probably." Let's move on to exploring the
+differences between hot deploy and auto deploy, with respect to your plugins.
+
+## Deploying Your Plugins: Hot Deploy vs. Auto Deploy [](id=hot-deploy-vs--auto-deploy-liferay-portal-6-2-dev-guide-02-en)
+
+As you develop plugins you'll want to deploy them to your test servers and as
+you finish developing plugins you'll want to deploy them to your production
+servers. There are *hot* deploy and *auto* deploy options to use in deploying
+your plugins. Most people confuse the two concepts, believing them to be one and
+the same. In reality, Liferay has TWO completely separate and different concepts
+for them.
+
+How, you say? We'll give a brief synopsis of each deployment method in this
+section. Let's get started by explaining the hot deployment method.
+
+### Using Hot Deployment [](id=using-hot-deployment-liferay-portal-6-2-dev-guide-02-en)
+
+The first deployment method we'll explore is *hot* deployment. You may be
+familiar with hot deployment in the context of JEE application servers. In
+summary, you place an application artifact (WAR or EAR) file into a specifically
+configured directory, your application server (Tomcat, WebSphere, WebLogic,
+etc.) picks up that artifact, deploys it within the application server, and
+starts the application.
+
+This model works really well for development purposes, since a server restart is
+not required to view updates from your code changes. This model also works for
+single node production deployments. 
+
+This model completely breaks down when you deploy to a multi-node production
+deployment. In a multi-node environment, you have many more constraints to deal
+with, which require you to: 
+
+- Ensure the application archive is available to all nodes
+- Ensure the application deploys successfully across all nodes, simultaneously
+
+Most application servers solve these constraints by using a master/slave type of
+design: an admin server with multiple managed servers. When you hot deploy a
+plugin, you use the admin server's user interface, or vendor console tool like
+[Wsadmin](http://en.wikipedia.org/wiki/Wsadmin), to add the archive, select
+which managed servers should deploy it, and start the application. Application
+server vendors often have different names and tools for these modes and tools:
+
+- JBoss "domain" mode
+- WebLogic "production" mode
+- WebSphere deployment manager
+- Tomcat FarmWarDeployer
+
+These modes and tools reside completely outside of Liferay Portal and are
+strictly in the application server's realm. However, Liferay piggybacks off the
+application server's hot deploy capability and performs additional
+initialization after a given application starts (e.g., via
+`javax.servlet.ServletContextListener` mechanisms). 
+
+<!-- "This is considered more as an application lifecycle and inter-application
+dependency management as opposed to hot deploy. When Liferay moves fully to OSGi
+in 7.0, we will more cleanly separtate "hot deploy" and "application lifecycle"
+concepts."  We should keep these statements by Mike Han in mind for 7.0.-->
+
+There are some specific Liferay capabilities that won't work unless your
+application server has hot deployment capabilities. Specifically, hot deploying
+custom JSPs in hooks won't work, because Liferay's JSP hook overriding
+capabilities depend on the application server's ability to:
+
+- Deploy based on an exploded portal WAR
+- Load changes to JSP files at runtime
+
+Application servers running in "production" and "domain" modes cannot support
+these abilities, because in these deployment models, most servers don't use
+exploded WARs. As such, these application servers don't support JSP
+reloading/recompilation in these modes. Even for Tomcat, it's generally
+advisable to deactivate JSP reloading for production deployments. 
+
+So what do you do if you use hooks to override Liferay JSPs AND you must use
+non-exploded WAR deployments? The answer is simple: inject a pre-processing
+stage as part of your build process. You deploy the hooks, allowing them to make
+changes to the portal WAR file. Then you rebundle the portal WAR file and deploy
+it using the application server's deployment tools. Of course, you still need to
+deploy your hook as well, but you no longer need to worry about the JSP
+overrides not being loaded by your application server.
+
+Hopefully this whets your appetite for doing hot deployments. Stay hungry, as
+it's time to explore auto deployment next. 
+
+### Using Auto Deployment [](id=using-auto-deployment-liferay-portal-6-2-dev-guide-02-en)
+
+The Liferay *auto* deployment feature is a mostly optional feature that works in
+conjunction with the hot deployment capabilities of your application server.
+Where Liferay's hot deploy leverages the hot deploy capabilities of your app
+server and performs additional initializations, auto deploy injects required JAR
+files and descriptors into your application's archive file. Executing `ant
+deploy` invokes both hot deployment and auto deployment tasks for your plugin. 
+
+So how does auto deployment work with Liferay plugins? Auto deployment completes
+the following tasks:
+
+1. Picks up a Liferay recognized archive (e.g., `*-portlet.*`, `*-theme.*`,
+   `*-web.*`, `*.lpkg`)
+2. Injects required libraries (e.g., `util-java.jar`, `util-taglib.jar`)
+3. Injects dependent JAR files (specified in `liferay-plugins.properties`)
+4. Injects required taglib descriptors (e.g., `liferay-theme.tld`)
+5. Injects required deployment descriptors (e.g., app server specific
+   descriptors)
+6. Injects any missing Liferay specific deployment descriptors (e.g.,
+   `liferay-portlet.xml`)
+
+By relying on auto deployment to complete these tasks automatically, you save
+time and you don't even have to learn all of Liferay's deployment descriptors.
+However, this feature is incompatible with application server farms and
+multi-node modes. 
+
+So now you're probably wondering how to configure your application server in
+these situations? The answer is simple: Do not use the auto deployment method at
+runtime; use it at build time.
+
+The Liferay Plugins SDK allows you to preprocess your archives and inject all
+the required elements, thus, bypassing auto deployer at runtime. You simply need
+to call the following Ant task:
+
+    ant direct-deploy
+
+The `direct-deploy` Ant task creates an exploded WAR from which you can easily
+create a WAR file. The location of the exploded WAR depends on the deployment
+directory of the application server you've configured in your Plugins SDK
+environment. See the *Plugins SDK Configuration* section of [Leveraging the
+Plugins
+SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
+for instructions on configuring the Plugins SDK for your app server. The Plugins
+SDK's `build.properties` provides a default deployment directory value for each
+supported app server. But you can override the default value by specifying your
+desired value for the `app.server.[type].deploy.dir` (replace `[type]` with your
+app server type) in your `build.[username].properties` file. 
+
+If you choose not to use the Liferay Plugins SDK to do direct deployment, you
+can examine the `build-common.xml` file in the Plugins SDK to see how Liferay
+invokes the deployer tools.
+
+Terrific! You now know the differences between hot deploy and auto deploy.
+Understanding what's going on during the deployment of your plugins is crucial
+for troubleshooting anything that goes wrong, and can help you simplify your
+deployment process and make it more efficient. Let's summarize what we learned
+in this chapter.
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-02-en)
 
@@ -3222,6 +3379,9 @@ framework. You configured Maven locally, downloaded and installed the required
 Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
 You're ready to create all kinds of Liferay plugins based on Liferay's plugin
 archetypes. Just don't let Lenore III sleep near the fire this time. 
+
+Lastly, you learned about Liferay's deployment process, and the difference
+between hot deploy and auto deploy.
 
 Feeling confused by the number of features provided by Eclipse and Liferay IDE?
 You can easily come across difficult questions and run into very specific

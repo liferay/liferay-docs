@@ -62,25 +62,33 @@ administrative console in the Control Panel or on the fly as content is created.
 By default, tags can be created by regular users and users can apply them to any
 assets which they have permission to create or edit.
 
-![Figure 6.2: When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
-
-To create tags in the Control Panel, visit the site for which you want to create
-tags and then click on *Admin* &rarr; *Content*. Then click on *Tags* in the
-Content section on the left. From this screen, you can view existing tags and
-create new ones. To create a new tag, simply click *Add Tag* and enter a name
-for the tag. You can also customize a tag's permissions. For example, you can
-make the tag viewable by guests, site members, or owner. You can assign other
-permissions for managing tags, including permission to delete the tag, edit the
-tag, or edit the tag's permissions. You can also add properties to a tag.
-Properties are a way to add information to specific tags. You can think of tag
-properties as tags for your tags. Structurally, tag properties are key-value
-pairs associated with specific tags that provide information about the tags.
 While regular users can, by default, create new tags by applying them to any
 assets that they have permission to create or edit, only site administrators can
 access the *Tags* portlet in the Content section of the Site Administration area
 of the Control Panel. Here, site administrators can create new tags and edit any
-existing site tags. They can also change tag names, change the tags'
-permissions, delete tags, and add or edit tag properties.
+existing site tags. To create tags in the Control Panel, visit the site for 
+which you want to create tags and then click on *Admin* &rarr; *Content*. Then 
+click on *Tags* in the Content section on the left. From this screen, you can 
+view existing tags and create new ones. To create a new tag, click *Add Tag* and
+enter a name for the tag.
+
+You can also customize a tag's permissions and properties. This configuration,
+however, must be done by a server administrator. To implement this
+configuration, add a `portal-ext.properties` file to your Liferay Home directory
+with the following contents and then restart the server:
+
+	asset.tag.permissions.enabled=true
+	asset.tag.properties.enabled=true
+
+Once this is done, you can change the permissions on a tag to make it viewable by 
+guests, site members, or owner. You can also assign other permissions for 
+managing tags, including permission to delete the tag, edit the tag, or edit the 
+tag's permissions. You can also add properties to a tag. Properties are a way to 
+add information to specific tags. You can think of tag properties as tags for 
+your tags. Structurally, tag properties are key-value pairs associated with 
+specific tags that provide information about the tags.
+
+![Figure 6.2: The Add Tag interface with editing of tag properties and permissions enabled. When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
 
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
