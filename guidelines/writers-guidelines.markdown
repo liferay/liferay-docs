@@ -184,6 +184,19 @@ When you're telling the user to click on something in the UI, italicize it.
 
 **Example:** Click the *Save* button to continue. 
 
+If you're referring to a UI element, but there's no direction for the user,
+capitalize it, but *don't* italicize it. 
+
+**Example:** After clicking the button, the Configuration page appears. 
+
+To provide as much clarity on UI elements as possible, let's combine the above
+two rules: 
+
+**Example:** On the Configuration page, click the *Add* button. 
+
+As you can see, the UI element that contains direction for the user is
+italicized, but the UI element that has no direction is not. 
+
 ### Bold 
 
 Bold is used sparingly in the documentation. Why is this? Because too much bold

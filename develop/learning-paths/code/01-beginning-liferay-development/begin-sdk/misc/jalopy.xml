@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<jalopy>
+<internal>
+<version>6</version>
+</internal>
+<printer>
+<blanklines>
+<after>
+<header>1</header>
+<lastImport>1</lastImport>
+</after>
+</blanklines>
+<comments>
+<javadoc>
+<generate>
+<class>1</class>
+</generate>
+<templates>
+<class>/**
+ * @author $author$
+*/</class>
+<interface>/**
+ * @author $author$
+*/</interface>
+</templates>
+</javadoc>
+<remove>
+<singleline>true</singleline>
+</remove>
+</comments>
+<header>
+<text>/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */</text>
+<use>true</use>
+</header>
+<indentation>
+<sizes>
+<braceRightAfter>0</braceRightAfter>
+<tabs>4</tabs>
+</sizes>
+<tabs>
+<enable>true</enable>
+</tabs>
+</indentation>
+<misc>
+<insertTrailingNewline>false</insertTrailingNewline>
+</misc>
+<sorting>
+<declaration>
+<enable>false</enable>
+</declaration>
+</sorting>
+<whitespace>
+<after>
+<typeCast>false</typeCast>
+</after>
+</whitespace>
+<wrapping>
+<always>
+<after>
+<braceRight>true</braceRight>
+</after>
+</always>
+</wrapping>
+</printer>
+</jalopy>

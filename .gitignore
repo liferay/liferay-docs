@@ -19,4 +19,9 @@ properties/
 **/classes/**
 **/dist/**
 **nbproject**
+**/.ivy/*
+**/.sass-cache/**
+**/.DS_Store/*
 *#
+/bin
+/classes/

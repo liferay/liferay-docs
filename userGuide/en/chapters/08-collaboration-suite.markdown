@@ -1,4 +1,3 @@
-
 # Collaboration Suite [](id=collaboration-suite-liferay-portal-6-2-user-guide-08-en)
 
 Liferay Portal ships with a robust suite of collaboration applications which
@@ -188,11 +187,12 @@ interruption. You can also tag your entries using the same tagging mechanism
 found everywhere else in the portal.
 
 The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
-special links that let you notify another site that you linked to them. For
-example, if you wanted to write an entry in your blog and reference some other
-site's entry, you might put the URL to the other entry in the *Trackbacks to
-Send* field. If you have multiple URLs you want to send trackbacks to, separate
-them with spaces. 
+special links that let you notify another site that you explicitly linked to 
+them in the *Content* field. For example, if you wanted to write an entry in 
+your blog and reference some other site's entry, you might put the URL to the
+other entry in the *Content* field and the trackback URL in the *Trackbacks 
+Sent* field. If you have multiple URLs you want to send trackbacks to, 
+separate them with spaces. 
 
 If you want others who link to your blog to let you know about the link via
 trackbacks, leave the *Allow Trackbacks* box checked. This generates a URL that
@@ -1804,6 +1804,75 @@ The Chat portlet displays the number of your friends who are online. Click the
 *Online Friends* link and then click on a friend's name to open a chat window.
 You can have multiple chats open at a time, and can have one or more of them
 minimized.
+
+### Filtering Available Users [](id=filtering-available-users-liferay-portal-6-2-user-guide-08-en)
+
+By default, all online portal users appear in the Chat portlet. If you want to
+filter who appears in your contact list you can, but the configuration must be
+done by someone who has administrative access to the server. The configuration
+change must be made at the time the chat portlet is deployed. 
+
+To filter users, create a `portlet-ext.properties` file to override some
+properties of your Chat portlet's `portlet.properties` file. You could modify
+your chat portlet's `portlet.properties` file directly, but it's a best practice
+to override it instead. 
+
+Before you deploy your Chat portlet, extract it to your file system. You can
+create the `portlet-ext.properties` file in the `chat-portlet/WEB-INF/src`
+directory. It gets copied over to your `chat-portlet/WEB-INF/classes` directory
+upon deployment. When you're finished making changes to your
+`portlet-ext.properties` file, you'll zip the directory structure back into a
+.war file for deployment. Note that the Chat portlet must be redeployed for
+settings in properties files to take effect. 
+
+The property that refines the list of users that show up in the Chat portlet is
+`buddy.list.strategy`. Some common values are listed here:
+
+		buddy.list.strategy=all
+		buddy.list.strategy=sites
+		buddy.list.strategy=social
+		buddy.list.strategy=sites,social
+
+The default value is `all`. To show only other users of the sites a user belongs 
+to, set `buddy.list.strategy` to `sites`. Setting `buddy.list.strategy` to 
+`social` makes only a user's social connections available in the Chat portlet. 
+Note that you can also combine values by separating them with a comma. Combined 
+values behave like a logical AND statement. Thus, `sites,social` shows other 
+users of the sites a user belongs to, and the user's social connections. 
+
+You can also further refine the `sites` setting by using the property 
+`buddy.list.site.excludes`. This property allows you to exclude specific sites 
+in your portal from the `buddy.list.strategy=sites` setting. This is especially 
+useful if you have a default site that all portal users belong to, but you still 
+want to filter the users that appear in the Chat portlet by site. If this 
+default site isn't excluded, then all portal users show up in the chat portlet 
+when `buddy.list.strategy` is set to `sites`. The site name to give for 
+`buddy.list.site.excludes` is the value of the `name` column for the `Group` 
+table in your portal's database. It must be entered in the same case as it is in 
+the database. For example, if you want to exclude a site called Default, enter 
+`buddy.list.site.excludes=Default`. That site is then ignored when determining
+the users to show in the Chat portlet. 
+
+The `social` setting for `buddy.list.strategy` has further filtering options as 
+well. You can set the allowed types of social relationships through the property 
+`buddy.list.allowed.social.relation.types`. By default this property is set to
+`2,12`. Those values correspond, respectively, to the *Friend* and *Connection*
+social relationship types. The values for some additional social relationship
+types are listed here along with those of *Friend* and *Connection*:
+
+		TYPE_BI_CONNECTION = 12
+		TYPE_BI_COWORKER = 1
+		TYPE_BI_FRIEND = 2
+		TYPE_BI_ROMANTIC_PARTNER = 3
+		TYPE_BI_SIBLING = 4
+
+These are bidirectional social relationship types as defined in Liferay's social 
+API. It's important to note that these aren't available out-of-the-box. You must 
+install apps that make use of them before you can leverage them in your portal. 
+For example, Liferay's Social Networking app from the [Marketplace](http://www.liferay.com/marketplace) makes use of 
+the "Friend" social relationship type. Similarly, Liferay Social Office uses the 
+"Connection" social relationship type. Developers can make use of any of the 
+social relationship types available in the API.
 
 ### Jabber Server Integration [](id=jabber-server-integration-liferay-portal-6-2-user-guide-08-en)
 

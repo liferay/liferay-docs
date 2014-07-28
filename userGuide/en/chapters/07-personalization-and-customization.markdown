@@ -169,12 +169,12 @@ are only possible for instanceable portlets, whose portlet configuration only
 affects that one user.
 
 For example, suppose that you, as an administrator, selected the right column of
-the Welcome page of the Nose-ster site to be customizable. A member of the
-Nose-ster site could take the following steps to make a personal customization
-of the Welcome page:
+the Welcome page of the Lunar Resort site to be customizable. A member of the
+Lunar Resort site could take the following steps to make a personal
+customization of the Welcome page:
 
-1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Nose-ster* from
-   the Dockbar.
+1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Lunar Resort*
+   from the Dockbar.
 2. Remove the Hello World portlet from the right column of the page.
 3. Add the Language portlet to the right column of the page by clicking *Add*,
    clicking on *Applications*, searching for *Language*, and clicking *Add* next
@@ -210,17 +210,16 @@ application display templates.
 
 ## Using Application Display Templates [](id=using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
 
-Application display templates work similarly to site and page templates, but at
-the portlet level. The application display template (ADT) framework allows
-portal administrators to override the default display templates, removing
-limitations to the way your site's content is displayed. With ADTs, you can
-define custom display templates used to render asset-centric applications. For
-example, you may want to show blog entries horizontally instead of vertically,
-or list your assets in the asset publisher portlet in different sizes.
+The application display template (ADT) framework allows portal administrators to
+override the default display templates, removing limitations to the way your
+site's content is displayed. With ADTs, you can define custom display templates
+used to render asset-centric applications. For example, you may want to show
+blog entries horizontally instead of vertically, or list your assets in the
+asset publisher portlet in different sizes.
 
 Let's go through a simple use case to illustrate how creating a custom ADT can
-improve your site. Suppose you're customizing the Nose-ster site and want to
-allow users to spread their noses to other social networks. Specifically, you
+improve your site. Suppose you're customizing the Lunar Resort site and want to
+allow users to communicate with other interested travelers. Specifically, you
 want to configure the Wiki portlet for collaboration with Facebook or Twitter.
 With ADTs, you can launch a template editor, create a custom template, and
 configure your portlet host that template. Custom templates let you re-skin your
@@ -339,8 +338,8 @@ your portal.
 3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
    *Save* and close the popup.
 
-4. Click the *Add Multiple Media* link and select two custom photos to display.
-   Then click *Save*, and navigate back to the main portlet screen.
+4. Click the *Multiple Media* link and select two custom photos to display. Then
+   click *Save*, and navigate back to the main portlet screen.
 
 5. Notice the default format of the pictures. To change the display template for
    this portlet, navigate back to the *Options* gear and click *Configuration*.
@@ -352,9 +351,9 @@ your portal.
 
 	The Media Gallery portlet is transformed into a carousel slideshow. At this
 	time, it's perfectly natural to be experiencing "I can conquer the world"
-	feelings, just as the warrior nose exudes in the image above. ADTs have that
-	kind of power to transform your site into an enjoyable and convenient home
-	for users.
+	feelings, just as Liferay's mascot, Ray, exudes in the image above. ADTs
+	have that kind of power to transform your site into an enjoyable and
+	convenient home for users.
 
 Customizing the user interface of Liferay's bundled portlets provides the
 ultimate customization experience for Liferay users. Next, let's look at how to
@@ -413,8 +412,6 @@ Drools portlet is available through the Customer Portal.
 Let's examine the sample portlet to see how it works. 
 
 #### Configuring the Sample Drools Portlet [](id=configuring-the-sample-drools-portlet-liferay-portal-6-2-user-guide-07-en)
-
-<!-- | TODO: We need to Nose-ster-ize this. | --> 
 
 Begin by downloading and installing the Sample Drools portlet. The Sample Drools
 portlet is available to Liferay Enterprise Edition customers through the

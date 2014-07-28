@@ -91,7 +91,7 @@ Anything else you see on the page is provided by the theme that is installed.
 This includes site navigation and application windows, called *portlets*. Let's
 jump in and start creating the site we'll use for this book. 
 
-## Setting up the Lunar Resort Example Portal [](id=setting-up-the-lunar-resort-example-portal-liferay-portal-6-2-user-guide-02-en)
+## Setting up the Lunar Resort Example Portal [](id=setting-up-the-lunar-resort-example-por-liferay-portal-6-2-user-guide-02-en)
 
 Suppose that you've been assigned the task of building a web site for an
 innovative new company called Lunar Resort, Inc. You've decided to take
@@ -760,7 +760,7 @@ are, of course, more complicated layouts available and you can play around with
 them to get the layout you want.
 
 Sometimes a particular layout is *almost* what you want but not quite. In this
-case use the Nested Portlets portlet to embed a layout inside another layout.
+case, use the Nested Portlets portlet to embed a layout inside another layout.
 This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
@@ -1044,10 +1044,11 @@ portlet and Blogs Aggregator portlet to the Community page.
 
 ![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
-You'll find it's easy to make your pages look exactly the way you want them to.
-If the layout options provided aren't enough, you can even develop your own.
-More information about that can be found in Liferay's official guide to
-development, [*Liferay in Action*](http://manning.com/sezov).
+It's easy to make your pages look exactly the way you want them to. If the
+default layout options provided aren't enough, you can even develop your own.
+To find more information about developing custom layout templates, please refer
+to the Liferay Developer's guide:
+[https://www.liferay.com/documentation/liferay-portal/6.2/development](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
 #### Page Permissions [](id=page-permissions-liferay-portal-6-2-user-guide-02-en)
 
@@ -1221,10 +1222,10 @@ momentous achievement at the Lunar Resort, let's give our announcement some of
 the pomp and circumstance we think it deserves!
 
 Using the editor, select all the text and then change the style to *Heading 1*
-and the color to *Dark Green*. You could insert an image here or even more text
-with a different style, as demonstrated in the screenshot below. You can also
-add bullets, numbering, links to another site or custom images. You can even add
-an emoticon. Go ahead and add a smiley face to the end of your announcement.
+and the color to *Navy*. You could insert an image here or even more text with a
+different style, as demonstrated in the screenshot below. You can also add
+bullets, numbering, links to another site or custom images. You can even add an
+emoticon. Go ahead and add a smiley face to the end of your announcement.
 
 ![Figure 2.16: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
 
@@ -1508,7 +1509,7 @@ As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For the Lunar Resort's implementation we'll use
 the *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content [](id=defining-workflows-for-web-content-liferay-portal-6-2-user-guide-02-en)
+### Defining Workflows for Web Content [](id=defining-workflows-for-web-content-liferay-portal-6-2-user-guide-02-en)
 
 Let's set up Liferay's Workflow for the Lunar Resort web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear

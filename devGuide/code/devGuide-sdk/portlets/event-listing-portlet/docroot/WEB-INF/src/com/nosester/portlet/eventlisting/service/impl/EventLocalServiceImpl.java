@@ -14,19 +14,20 @@
 
 package com.nosester.portlet.eventlisting.service.impl;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.CalendarFactoryUtil;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
+
 import com.nosester.portlet.eventlisting.model.Event;
 import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventLocalServiceBaseImpl;
 import com.nosester.portlet.eventlisting.service.persistence.EventFinderUtil;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * The implementation of the event local service.
@@ -63,8 +64,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		event.setName(name);
 		event.setDescription(description);
 
-		Calendar dateCal = CalendarFactoryUtil.getCalendar(
-			user.getTimeZone());
+		Calendar dateCal = CalendarFactoryUtil.getCalendar(user.getTimeZone());
 		dateCal.set(year, month, day, hour, minute);
 		Date date = dateCal.getTime();
 		event.setDate(date);
@@ -109,8 +109,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	}
 
 	public void addEventResources(
-			Event event, String[] groupPermissions,
-			String[] guestPermissions)
+			Event event, String[] groupPermissions, String[] guestPermissions)
 		throws PortalException, SystemException {
 
 		resourceLocalService.addModelResources(
@@ -130,8 +129,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	}
 
 	public void addEventResources(
-			long eventId, String[] groupPermissions,
-			String[] guestPermissions)
+			long eventId, String[] groupPermissions, String[] guestPermissions)
 		throws PortalException, SystemException {
 
 		Event event = eventPersistence.findByPrimaryKey(eventId);
@@ -162,7 +160,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	}
 
 	public Event getEvent(long eventId)
-		throws SystemException, PortalException {
+		throws PortalException, SystemException {
 
 		return eventPersistence.findByPrimaryKey(eventId);
 	}
@@ -185,8 +183,8 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 
 	public Event updateEvent(
 			long userId, long eventId, String name, String description,
-			int month, int day, int year, int hour, int minute,
-			long locationId, ServiceContext serviceContext)
+			int month, int day, int year, int hour, int minute, long locationId,
+			ServiceContext serviceContext)
 		throws PortalException, SystemException {
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -199,8 +197,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		event.setName(name);
 		event.setDescription(description);
 
-		Calendar dateCal = CalendarFactoryUtil.getCalendar(
-			user.getTimeZone());
+		Calendar dateCal = CalendarFactoryUtil.getCalendar(user.getTimeZone());
 		dateCal.set(year, month, day, hour, minute);
 		Date date = dateCal.getTime();
 		event.setDate(date);

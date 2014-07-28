@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="learning-paths Conversion" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="learning-paths"/>
+	<property name="doc.type" value="learnpath"/>
+
+</project>
