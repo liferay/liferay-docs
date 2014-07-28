@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.liferay.sample">
+	<author>nickgaskill</author>
+	<namespace>SAMPLE</namespace>
+    <entity name="InsultWriter" local-service="true" remote-service="false">
+        <column name="insultWriterId" type="long" primary="true"></column>
+        <column name="insult" type="String"></column>
+        <column name="rating" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+    </entity>
+    <entity name="InsultLog" local-service="true" remote-service="false">
+        <column name="insultLogId" type="long" primary="true"></column>
+        <column name="insult" type="String"></column>
+        <column name="rating" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+    </entity>
+    <entity name="Insulted" local-service="true" remote-service="false">
+        <column name="insultedId" type="long" primary="true"></column>
+        <column name="insult" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+    </entity>
+</service-builder>
