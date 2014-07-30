@@ -29,20 +29,23 @@
 		</classpath>
 	</taskdef>
 
-	<target name="prepare" description="Creates build directory.">
-		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
-		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
-		<mkdir dir="${build.dir}/images"/>
-		<copy todir="${build.dir}/images" overwrite="true">
-			<fileset dir="./images"/>
-		</copy>
-	</target>
+	<taskdef name="checkintros" classname="com.liferay.documentation.util.CheckIntrosTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
-			classname="com.liferay.documentation.markdown.MarkdownToHtmlMain"
+			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
 			classpathref="project.classpath"
 			fork="true"
 		>
@@ -56,39 +59,49 @@
 		</checkimgssite>
 	</target>
 
-    <target name="clean-dist" description="deletes dist directory">
+	<target name="check-intros" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<checkintros docdir="${doc.dir}">
+		</checkintros>
+	</target>
+
+    <target name="clean-dist" description="Deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
-
-	<!-- TODO: Create number images task to add to as target dependency. -->
-	<target name="prepare-dist" depends="check-images-site, number-headers, clean-dist" description="Prepares the document for distribution.">
-		<echo message="... creating ${dist.dir} directory"/>
-		<mkdir dir="${dist.dir}"/>
-	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
-			<fileset dir="./" includes="landing-page.markdown" />
+			<fileset dir="./" includes="home.markdown" />
 		</zip>
 	</target>
 
-	<target name="number-headers" description="numbers the headers of markdown files found in ${lang}/chapters/">
+	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
 		<property file="${project.dir}/release-site.properties" />
 		<java
 			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
 			classpathref="project.classpath"
 			fork="true"
 		>
-		    <arg value="${product.abbrev}"/>
-			<arg value="${product.version}"/>
-			<arg value="${purpose.dir}"/>
-			<arg value="${doc.type}"/>
 			<arg value="${doc.dir}"/>
 		</java>
+	</target>
+
+	<target name="prepare" description="Creates build directory.">
+		<echo message="... creating build directory"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${build.dir}/images"/>
+		<copy todir="${build.dir}/images" overwrite="true">
+			<fileset dir="./images"/>
+		</copy>
+	</target>
+
+	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers" description="Prepares the document for distribution.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
 	</target>
 
 </project>

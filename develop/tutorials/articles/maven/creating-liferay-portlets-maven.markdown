@@ -1,19 +1,27 @@
-# Creating Liferay Portlets with Maven
+# Developing Liferay Portlets with Maven [](id=creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
 
-Let's discuss Liferay Maven portlet plugins. To learn how to create a Liferay
-portlet plugin project using Liferay IDE, please refer to the *Creating Liferay
-Maven Plugins from Liferay IDE* tutorial. For information on creating a Liferay
-portlet plugin project without Liferay IDE, please refer to the *Creating
-Liferay Maven Plugins from the Command Line* tutorial.
+This tutorial explains how to create Liferay portlet plugins using Maven and the
+anatomy of the Liferay Maven portlet plugin project. 
+
+## Creating a Portlet Plugin
+
+To create your Liferay theme plugin project, just follow the
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+tutorial or the
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+tutorial, making sure to select *Portlet* as the plugin type. 
+
+---
+
+![tip](../../images/tip-pen-paper.png) **Tip**: If you're using Maven's
+Archetype command line tool to generate your portlet project, you can filter on
+the group ID `liferay`, or even the group ID/artifact ID combination
+`liferay:portlet`, to find the Liferay portlet archetypes more easily. 
 
 ---
 
-![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
-tool to generate your portlet project, you can filter on group ID `liferay`, or
-even the group ID/artifact ID combination `liferay:portlet`, to 
-find the Liferay portlet archetypes more easily. 
-
----
+Since it's helpful to familiarize yourself with the Liferay portlet plugin
+project's anatomy, that topic is covered next. 
 
 ## Anatomy
 
@@ -47,32 +55,20 @@ portlet's Java source code (e.g., `com.liferay.sample.SamplePortlet.java`), and
 any portlet plugins using the Plugins SDK, you might have noted it uses a
 different directory structure. 
 
-The following table illustrates the differences in location of the Java source
-and web source code for a Maven project and a Plugins SDK project: 
+The following table illustrates the differences in the locations of the Java
+source code and web source code for a Maven project and a Plugins SDK project: 
 
 Location    | Maven project     | Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-To view the full directory structure of a portlet developed by Ant, visit our
-[Anatomy of a Portlet](www.liferay.com) article. 
+You now know how to create Liferay portlet plugins in Maven. 
 
-## Deployment
+## Related Topics
 
-To deploy your portlet plugin, follow the instructions detailed above in
-*Deploying Liferay Plugins with Maven*. 
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
 
-Congratulations! You successfully created a Liferay portlet plugin using Maven. 
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial
 
-## More Information
-
-For detailed information on creating portlet plugins, see
-[Developing Portlet Applications](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en). 
-
-## Next Steps
-
-Next, let's run through a brief example of developing a theme plugin using
-Maven.
-
-[Creating Theme Plugins with Maven](http://www.liferay.com)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial)

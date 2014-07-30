@@ -786,15 +786,15 @@ of this method:
                 request.getAttribute(WebKeys.THEME_DISPLAY);
             long scopeGroupId = themeDisplay.getScopeGroupId();
 
-    -   `name`: The name of the resource as specified in the XML file of the
-        previous sections. 
-    -   `primKey`: The primary key of the resource. In this example the resource
-        doesn't exist as an entry in the database, so we use the `groupId`
-        again. If we were checking for a permission on a given blog entry, we'd
-        use the primary key of that blog entry instead. 
-    -   `actionId`: The name of the action as it appears in the XML file. To
-        simplify searching for usages, consider creating a helper class that has
-        constants for all the actions defined. 
+-   `name`: The name of the resource as specified in the XML file of the
+    previous sections. 
+-   `primKey`: The primary key of the resource. In this example the resource
+    doesn't exist as an entry in the database, so we use the `groupId` again. If
+    we were checking for a permission on a given blog entry, we'd use the
+    primary key of that blog entry instead. 
+-   `actionId`: The name of the action as it appears in the XML file. To
+    simplify searching for usages, consider creating a helper class that has
+    constants for all the actions defined. 
 
 In the examples above, we're assuming there's a variable called
 `permissionChecker` already available. Liferay automatically creates a
@@ -1492,7 +1492,7 @@ your custom portlets!
 Next, we'll explore the Recycle Bin framework and its many benefits for your
 portal.
 
-## Implementing the Recycle Bin in Your App
+## Implementing the Recycle Bin in Your App [](id=implementing-the-recycle-bin-in-your-app-liferay-portal-6-2-dev-guide-07-en)
 
 How many times have you deleted something, only to realize it was a mistake and
 you need to restore it? Does the app you're working on have a delete function?
@@ -1545,7 +1545,7 @@ given capability of the Recycle Bin. By following the steps taken to implement
 the Recycle Bin in the Jukebox portlet, you can similarly implement the Recycle
 Bin in your app. Let's begin implementing the Recycle Bin framework!
 
-### Moving Entries to the Recycle Bin
+### Moving Entries to the Recycle Bin [](id=moving-entries-to-the-recycle-bin-liferay-portal-6-2-dev-guide-07-en)
 
 The first framework component to implement is the ability to move entries to the
 Recycle Bin. Once you implement this component, users can move entries to the
@@ -1564,7 +1564,7 @@ entries to the Recycle Bin:
 
 Let's begin implementing this component by configuring the app's service. 
 
-#### *Moving Entries Step 1*: Enable Trash for Service Entities
+#### *Moving Entries Step 1*: Enable Trash for Service Entities [](id=moving-entries-step-1-enable-trash-for-s-liferay-portal-6-2-dev-guide-07-en)
 
 You must enable the trash feature for each entity in your app that you want to
 use with the Recycle Bin. In your app's `service.xml` file, insert the
@@ -1580,7 +1580,7 @@ to generate back-end trash related classes for the trash-enabled entities.
 
 Next, you'll need to implement trash handlers for those entities.
 
-#### *Moving Entries Step 2*: Implement a Trash Handler for Each Trash-Enabled Entity
+#### *Moving Entries Step 2*: Implement a Trash Handler for Each Trash-Enabled Entity [](id=moving-entries-step-2-implement-a-trash--liferay-portal-6-2-dev-guide-07-en)
 
 As with many other Liferay frameworks--such as those for workflow, assets, and
 indexing--you must implement handler classes for that framework. The Recycle
@@ -1645,7 +1645,7 @@ Great! So we have trash handlers ready to manage our trash entries, but we still
 need a way to get the entries into the Recycle Bin. Let's create a service
 method to move entries there. 
 
-#### *Moving Entries Step 3*: Create a Service Method to Move Entries to the Recycle Bin
+#### *Moving Entries Step 3*: Create a Service Method to Move Entries to the Recycle Bin [](id=moving-entries-step-3-create-a-service-m-liferay-portal-6-2-dev-guide-07-en)
 
 We'll implement a local service method that actually moves entries to the
 Recycle Bin. This service method must implement the trash service for the
@@ -1738,7 +1738,7 @@ method to set the entry's *trash title*, which is an alternative reference to
 the entry. The trash title prevents duplicate entry name conflicts, which we'll
 discuss in more detail in the later section on resolving conflicts. 
 
-#### *Moving Entries Step 4*: Create a Portlet Action to Initiate Moving Entries to Recycle Bin
+#### *Moving Entries Step 4*: Create a Portlet Action to Initiate Moving Entries to Recycle Bin [](id=moving-entries-step-4-create-a-portlet-a-liferay-portal-6-2-dev-guide-07-en)
 
 Great! Now you must provide the means of invoking the service method from your
 portlet. We'll implement this using a portlet action that can be triggered from
@@ -1813,7 +1813,7 @@ Let's wrap up our objective of moving entries to the Recycle Bin by providing
 the means to render the trashed entries in the Recycle Bin. For this, we must
 implement a trash renderer for the trash-enabled entities. 
 
-#### *Moving Entries Step 5*: Implement a Trash Renderer for Each Trash-Enabled Entity
+#### *Moving Entries Step 5*: Implement a Trash Renderer for Each Trash-Enabled Entity [](id=moving-entries-step-5-implement-a-trash--liferay-portal-6-2-dev-guide-07-en)
 
 Now that we have the necessary classes and methods to accomplish moving entries
 to the Recycle Bin, let's implement the appropriate renderer so we can see our
@@ -1859,7 +1859,7 @@ about providing a way to restore them? Don't worry. Restoring entries from the
 Recycle Bin to their original state is straightforward. Let's learn how to do
 this next. 
 
-### Restoring Entries from the Recycle Bin
+### Restoring Entries from the Recycle Bin [](id=restoring-entries-from-the-recycle-bin-liferay-portal-6-2-dev-guide-07-en)
 
 Now that you're able to move entries *to* the Recycle Bin, we'll make sure your
 app can restore entries *from* the Recycle Bin. Besides, what's the point of
@@ -1885,7 +1885,7 @@ capability:
 We'll begin this process by creating a service method for the restoration
 process.
 
-#### *Restoring Entries Step 1*: Create a Service Method to Restore Entries from the Recycle Bin
+#### *Restoring Entries Step 1*: Create a Service Method to Restore Entries from the Recycle Bin [](id=restoring-entries-step-1-create-a-servic-liferay-portal-6-2-dev-guide-07-en)
 
 You'll need to create a service method that removes the trash entry from the
 Recycle Bin and makes the asset entry visible again in its original location. 
@@ -1969,7 +1969,7 @@ to generate the corresponding service interface and utility methods.
 To finish implementing the entry restoration process, let's invoke the service
 method from the entity's trash handler. 
 
-#### *Restoring Entries Step 2*: Invoke the Service Method from the Trash Handler
+#### *Restoring Entries Step 2*: Invoke the Service Method from the Trash Handler [](id=restoring-entries-step-2-invoke-the-serv-liferay-portal-6-2-dev-guide-07-en)
 
 Now that our service provides a method for restoring the entry, we must invoke
 it from our trash handler's `restoreTrashEntry()` method. The Recycle Bin
@@ -2007,7 +2007,7 @@ You now know how to provide the means for users to restore entries from the
 Recycle Bin! Next, let's implement the convenient *Undo* button so users don't
 have to visit the Recycle Bin to restore an item they just trashed. 
 
-### Implementing the Undo Functionality
+### Implementing the Undo Functionality [](id=implementing-the-undo-functionality-liferay-portal-6-2-dev-guide-07-en)
 
 Sometimes, you may accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
@@ -2028,7 +2028,7 @@ functionality:
 
 Let's implement the Undo button and its related links!
 
-#### *Implementing the Undo Functionality Step 1*: Add the Undo Tag
+#### *Implementing the Undo Functionality Step 1*: Add the Undo Tag [](id=implementing-the-undo-functionality-step-liferay-portal-6-2-dev-guide-07-en)
 
 The first thing you'll need to do is add the `<liferay-ui:trash-undo>` taglib in
 our JSP. Then, you need to set a portlet action URL and pass it to the
@@ -2046,7 +2046,7 @@ implements this:
 Now that we've added the taglib and action URL, let's implement the portlet
 action to restore the entry.
 
-#### *Implementing the Undo Functionality Step 2*: Create a Portlet Action to Initiate Restoration
+#### *Implementing the Undo Functionality Step 2*: Create a Portlet Action to Initiate Restoration [](id=implementing-the-undo-functionality-st-liferay-portal-6-2-dev-guide-07-en-0)
 
 You must create a portlet action method that invokes your service method to
 restore the entry. 
@@ -2076,7 +2076,7 @@ entries by calling the `restore*` service method we defined in the previous
 Are you wondering how this portlet action gets the ID of the entries to restore?
 We'll show you how to pass this data to the session next. 
 
-#### *Implementing the Undo Functionality Step 3*: Providing Trash Entry Data for the Taglib
+#### *Implementing the Undo Functionality Step 3*: Providing Trash Entry Data for the Taglib [](id=implementing-the-undo-functionality-st-liferay-portal-6-2-dev-guide-07-en-1)
 
 The final step for implementing the Undo button is to provide the trashed
 entry's information to the `<liferay-ui:trash-undo>` taglib. In order for the
@@ -2134,7 +2134,7 @@ how to implement the Undo functionality for your app's trash-enabled entities.
 Next, let's learn how to move and restore container entities to and from the
 Recycle Bin.
 
-### Moving/Restoring Parent Entities
+### Moving/Restoring Parent Entities [](id=moving-restoring-parent-entities-liferay-portal-6-2-dev-guide-07-en)
 
 To this point, we've only discussed how to move/restore single entities to/from
 the Recycle Bin. What happens if we need to trash a parent entity, such as a
@@ -2149,7 +2149,7 @@ learn how the Jukebox portlet is able to move/restore albums to/from the Recycle
 Bin so you can translate that knowledge to container entities in your personal
 app. 
 
-#### *Moving/Restoring Parent Entities Step 1*: Mark Container Model Service Entities
+#### *Moving/Restoring Parent Entities Step 1*: Mark Container Model Service Entities [](id=moving-restoring-parent-entities-step-1--liferay-portal-6-2-dev-guide-07-en)
 
 The first thing we'll need to do is define each container model as such in our
 service. To do this, open your app's `service.xml` file and add the
@@ -2175,7 +2175,7 @@ and use these models as container models.
 
 Next, we'll handle the child entities of the parent entity.
 
-#### *Moving/Restoring Parent Entities Step 2*: Manage Children Entities
+#### *Moving/Restoring Parent Entities Step 2*: Manage Children Entities [](id=moving-restoring-parent-entities-step-2--liferay-portal-6-2-dev-guide-07-en)
 
 Implementing the moving/restoring parent entities to/from the Recycle Bin is
 very similar to what we've already learned for single entities. However, because
@@ -2314,7 +2314,7 @@ Have you wondered what happens when there are conflicts moving and restoring
 entries to and from the Recycle Bin? Let's learn how to deal with conflicts
 next.
 
-### Resolving Conflicts
+### Resolving Conflicts [](id=resolving-conflicts-liferay-portal-6-2-dev-guide-07-en)
 
 The Conflict Resolution framework helps Liferay users identify and solve
 conflicts in the Recycle Bin. The most common conflict for the Recycle Bin is
@@ -2327,7 +2327,7 @@ but with its status changed and visibility turned off.
 Let's learn how to implement the Conflict Resolution framework so we can avoid
 Recycle Bin conflicts.
 
-#### *Resolving Conflicts Step 1*: Rename Entities Sent to the Recycle Bin
+#### *Resolving Conflicts Step 1*: Rename Entities Sent to the Recycle Bin [](id=resolving-conflicts-step-1-rename-entiti-liferay-portal-6-2-dev-guide-07-en)
 
 When an entry is sent to the Recycle Bin, it is essentially replicated. We keep
 the entity in its original location and create a similar entry in the Recycle
@@ -2374,7 +2374,7 @@ entities, on restoring those entities from the Recycle Bin.
 Next, we'll consider how to restore the original name of each trashed entity
 when it's restored from the Recycle Bin. 
 
-#### *Resolving Conflicts Step 2*: Restore the Entity's Original Name When Restoring From Recycle Bin
+#### *Resolving Conflicts Step 2*: Restore the Entity's Original Name When Restoring From Recycle Bin [](id=resolving-conflicts-step-2-restore-the-e-liferay-portal-6-2-dev-guide-07-en)
 
 Since your entity is renamed, you'll need a way to retrieve its old name, in the
 case that the entity gets restored. The code snippet below, found in the
@@ -2417,7 +2417,7 @@ return the song's original name.
 Lastly, we need to implement some required methods to finalize the Conflicts
 Resolution framework.
 
-#### *Resolving Conflicts Step 3*: Implement Conflict Resolution Trash Handler Methods
+#### *Resolving Conflicts Step 3*: Implement Conflict Resolution Trash Handler Methods [](id=resolving-conflicts-step-3-implement-con-liferay-portal-6-2-dev-guide-07-en)
 
 Your app can now uniquely rename entries on removal and reinstate their original
 names when restored. What happens when the original entry is restored to its

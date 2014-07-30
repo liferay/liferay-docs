@@ -44,7 +44,7 @@ at hand.
 
 ---
 
-## Next Steps
+## Related Topics
 
 At the bottom of the tutorial, let the reader know some other topics that flow
 naturally from the tutorial he or she has just read. This gives developers
