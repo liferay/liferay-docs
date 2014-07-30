@@ -1,4 +1,4 @@
-# Customizing Sites and Site Templates with Application Adapters
+# Customizing Sites and Site Templates with Application Adapters [](id=customizing-sites-and-site-templates-with-application-adapters)
 
 <!-- The ending example hook can be found here:
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/application-adap/end/example-hook
