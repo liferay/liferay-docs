@@ -28,14 +28,15 @@ and [httpmime-4.3.3.jar](http://search.maven.org/remotecontent?filepath=org/apac
 
 If your Android project is using Gradle as the build system, you can add the 
 Liferay Android SDK as a dependency to your project. All versions are available 
-at the JCenter and Maven Central repositories:
+at the JCenter and Maven Central repositories. Both repositories are listed 
+here, but you only need to have one in your app:
 
-    ```groovy
+    ```
     repositories {
       jcenter()
-	mavenCentral()
+	  mavenCentral()
     }
-	
+	```
     dependencies {
       compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.+'
     }
@@ -44,7 +45,7 @@ at the JCenter and Maven Central repositories:
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE`
 when building with Gradle, add this to your `build.gradle` file:
     
-    ```groovy
+    ```
     android {
     ```
     packagingOptions {
@@ -61,7 +62,7 @@ You can also add the Liferay Android SDK as a dependency to your project if
 you're using Maven as your build system. Just add the following code to your 
 `pom.xml` file:
 
-	```xml
+	```
 	<dependency>
 		<groupId>com.liferay.mobile</groupId>
 		<artifactId>liferay-android-sdk</artifactId>
