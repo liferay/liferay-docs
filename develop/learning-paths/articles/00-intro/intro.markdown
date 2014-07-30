@@ -1,4 +1,4 @@
-# Welcome [](id=welcome-lp-6-2-develop-learnpath)
+# Welcome [](id=welcome)
 
 This is the place to come for an in-depth, from-the-ground-up guide to using
 Liferay's development framework. Beginning with installing a Liferay development
