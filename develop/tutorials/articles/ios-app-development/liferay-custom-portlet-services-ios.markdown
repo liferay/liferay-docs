@@ -35,7 +35,7 @@ installation using CocoaPods.
 2. Unzip `liferay-ios-sdk.zip` into your XCode project. 
 
 3. Within XCode, right-click on your project and click 
-   *Add Files to <PROJECT_NAME>*. 
+   *Add Files to 'Project Name'*. 
    
 4. Add both `core` and `v62` folders. The `v62` folder name can change for each
    Liferay version. In this example, the SDK is built for Liferay 6.2. 
