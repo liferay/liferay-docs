@@ -1,4 +1,4 @@
-# Accessing the Liferay Marketplace [](id=accessing-the-liferay-marketplace-lp-6-2-use-useportal)
+# Accessing the Liferay Marketplace [](id=accessing-the-liferay-marketplace)
 
 There are two ways to access the Marketplace.
 

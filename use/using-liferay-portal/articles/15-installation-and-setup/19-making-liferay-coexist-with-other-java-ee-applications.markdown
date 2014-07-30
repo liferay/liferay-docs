@@ -1,4 +1,4 @@
-# Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications-lp-6-2-use-useportal)
+# Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
 
 Liferay Portal by default is configured to sit at the root (i.e., `/`) of your
 application server. Dedicating your application server to running only Liferay

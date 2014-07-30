@@ -1,4 +1,4 @@
-# Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-1-lp-6-2-use-useportal)
+# Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-1)
 
 **Liferay Home** is one folder above JBoss's install location.
 

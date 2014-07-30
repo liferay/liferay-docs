@@ -1,4 +1,4 @@
-# Akismet [](id=akismet-lp-6-2-use-useportal)
+# Akismet [](id=akismet)
 
 Akismet is a web-based spam detection service. The Akismet app, available from
 Liferay Marketplace, integrates Liferay with Akismet to provide spam detection

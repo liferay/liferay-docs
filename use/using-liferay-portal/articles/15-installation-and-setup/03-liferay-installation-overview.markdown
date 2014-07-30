@@ -1,4 +1,4 @@
-# Liferay installation overview [](id=liferay-installation-overview-lp-6-2-use-useportal)
+# Liferay installation overview [](id=liferay-installation-overview)
 
 Before we begin, it's important to go over the various facets of the
 installation. They are: 

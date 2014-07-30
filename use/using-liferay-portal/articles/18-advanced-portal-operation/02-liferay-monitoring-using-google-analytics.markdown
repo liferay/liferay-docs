@@ -1,4 +1,4 @@
-# Liferay Monitoring using Google Analytics [](id=liferay-monitoring-using-google-analytics-lp-6-2-use-useportal)
+# Liferay Monitoring using Google Analytics [](id=liferay-monitoring-using-google-analytics)
 
 Liferay includes built-in support for Google Analytics, allowing administrators
 to make use of Google's tool set for analyzing site traffic data. When you sign

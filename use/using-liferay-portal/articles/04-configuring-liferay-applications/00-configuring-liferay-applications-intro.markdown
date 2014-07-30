@@ -1,4 +1,4 @@
-# Configuring Liferay Applications [](id=configuring-liferay-applications-lp-6-2-use-useportal)
+# Configuring Liferay Applications [](id=configuring-liferay-applications)
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include

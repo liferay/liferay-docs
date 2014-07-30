@@ -1,4 +1,4 @@
-# Communication [](id=communication-lp-6-2-use-useportal)
+# Communication [](id=communication)
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.

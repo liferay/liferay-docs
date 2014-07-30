@@ -1,4 +1,4 @@
-# Integrating with Facebook [](id=integrating-with-facebook-lp-6-2-use-useportal)
+# Integrating with Facebook [](id=integrating-with-facebook)
 
 Facebook is currently the number one social network in the world with somewhere
 over 1 billion active users. If you're trying to build acommunity on your 

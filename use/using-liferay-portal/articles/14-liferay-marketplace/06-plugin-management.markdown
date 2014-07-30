@@ -1,4 +1,4 @@
-# Plugin Management [](id=plugin-management-lp-6-2-use-useportal)
+# Plugin Management [](id=plugin-management)
 
 One of the primary ways of extending the functionality of Liferay Portal is by
 the use of plugins. *Plugin* is an umbrella term for installable portlet, theme,

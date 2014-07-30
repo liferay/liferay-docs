@@ -1,4 +1,4 @@
-# Microsoft Office integration [](id=microsoft-office-integration-lp-6-2-use-useportal)
+# Microsoft Office integration [](id=microsoft-office-integration)
 
 Liferay lets you open Microsoft Office files that reside in
 Documents and Media. You can open the files from Microsoft Internet

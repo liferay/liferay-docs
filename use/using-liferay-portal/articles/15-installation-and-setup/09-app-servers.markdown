@@ -1,4 +1,4 @@
-# App Servers [](id=app-servers-lp-6-2-use-useportal)
+# App Servers [](id=app-servers)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many organizations can't do

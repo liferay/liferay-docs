@@ -1,4 +1,4 @@
-# Configuring Liferay Portal Security [](id=configuring-liferay-portal-security-lp-6-2-use-useportal)
+# Configuring Liferay Portal Security [](id=configuring-liferay-portal-security)
 
 As you probably know, Liferay Marketplace is an online store for obtaining
 applications that run on the Liferay Portal platform. These applications are

@@ -1,4 +1,4 @@
-# Liferay Marketplace [](id=liferay-marketplace-lp-6-2-use-useportal)
+# Liferay Marketplace [](id=liferay-marketplace)
 
 The Liferay Marketplace is an integral part of the Liferay Portal experience.
 Starting with Liferay Portal 6.2, the Marketplace plugin is required to be

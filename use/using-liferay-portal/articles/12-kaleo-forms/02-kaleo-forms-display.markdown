@@ -1,4 +1,4 @@
-# Kaleo Forms Display [](id=kaleo-forms-display-lp-6-2-use-useportal)
+# Kaleo Forms Display [](id=kaleo-forms-display)
 
 The Kaleo Forms Display portlet makes use of the workflow processes that you
 create in the Kaleo Forms Admin portlet. Add the Kaleo Forms Display portlet to
