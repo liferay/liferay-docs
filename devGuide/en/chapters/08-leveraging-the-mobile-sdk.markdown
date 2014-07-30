@@ -99,7 +99,13 @@ The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries
 and sample app code. We call this project the *Liferay Android Sample Project*.
 You can refer to it to see how it connects with Liferay and invokes Liferay
-services. Let's create the sample project now! 
+services.
+
+Alternatively, you can also browse and download the
+*Liferay Android Sample Project* source code in
+[GitHub](https://github.com/brunofarache/liferay-android-sdk-sample).
+
+Let's create the sample project now! 
 
 1. Go to *File* &rarr; *Project...* &rarr; *Liferay* &rarr; *Liferay Android
 Sample Project*.
@@ -117,14 +123,6 @@ preferences menu.
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
 instance. 
-
-<!-- You can learn more about the Android application standard architecture
-by visiting Android's *Getting Started* guide. It demonstrate standard
-architecture as well as activity classes, model classes, etc. 
-
-Removing this content as it's not necessary for the developer to continue with
-the tutorial. Jim
--->
 
 The Liferay Android Sample Project lists the portal's users as contacts, so that
 you can view their detailed information, including their names, email addresses,
