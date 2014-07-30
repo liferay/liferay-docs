@@ -1,4 +1,4 @@
-# Creating a Hook Project in the Plugins SDK
+# Creating a Hook Project in the Plugins SDK [](id=creating-a-hook-project-in-the-plugins-sdk)
 
 You can create hooks in a Plugins SDK project or a Liferay Maven project. You
 can create either type of project from Liferay IDE/Developer Studio or from the
