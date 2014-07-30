@@ -44,6 +44,15 @@ comes with a *Liferay Android Sample Project* that you can use as a reference
 for building more Android apps of your own. Since Eclipse only supports Android
 apps, you can't use the plugin to customize iOS apps. 
 
+If you want to use the Mobile SDK within an existing Android or iOS project, or 
+you are using a different IDE, like *Android Studio*, you can just drop it as a
+library or configure as a dependency to your project, using Maven or CocoaPods.
+For more information about this, read these instructions:
+
+[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
+or
+[iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually).
+
 The Liferay Mobile SDK plugin depends on the *Android SDK Tools* and *Android
 Development Tools (ADT)* Eclipse plugins. To satisfy these dependencies, you 
 can install these plugins onto an existing Eclipse instance, or you can
@@ -164,12 +173,10 @@ libraries.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This configuration capability
-is only available for Android apps that were created using the ADT plugin for
-Eclipse. The action will not work for Android apps built with Gradle or Maven,
-but you can still manually configure your project to use the Mobile SDK. For
-more information on this, see the manual Liferay Mobile SDK setup instructions
-for
+![Note](../../images/tip-pen-paper.png) **Note:** This section explains how to
+create Android apps with the Liferay Mobile SDK Eclipse plugin. If you just want
+to use the Mobile SDK in an existing Android or iOS project, see the manual
+Liferay Mobile SDK setup instructions for
 [Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
 or
 [iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually).
