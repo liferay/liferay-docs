@@ -42,7 +42,4 @@ Save the file and if Liferay is running, restart it. Your portal is now
 configured to check PACL-enabled Marketplace apps against their declared
 permissions. 
 
-Now that you understand all the prerequisites for installing Liferay Portal,
-let's go ahead and get it done! First we'll go over installing Liferay from a
-bundle, and after this we'll provide instructions for installing Liferay manually
-on all the application servers it supports.
+Next, you'll make sure Liferay is configured properly for your network. 
