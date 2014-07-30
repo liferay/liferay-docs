@@ -9,9 +9,10 @@ specific sites without propagating the customizations throughout the entire
 portal? You can! *Application Adapters* are special hooks that let you make
 changes at the site level. You use them to override JSPs. 
 
-There's a sample Application Adapter in the [Liferay Plugins Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook).
-Are you ready to build an Application Adapter of our own? 
-In this tutorial, you'll create your own Application Adapter hook.
+There's a sample Application Adapter in the
+[Liferay Plugins Repository](https://github.com/liferay/liferay-plugins/tree/6.2.x/hooks/sample-application-adapter-hook).
+Are you ready to build an Application Adapter of our own? In this tutorial,
+you'll create your own Application Adapter hook.
 
 Here's how to do it: 
 
@@ -31,20 +32,19 @@ Here's how to do it:
     selecting *Custom JSPs*. Then in the menu that appears, check the *Customize
     Liferay Portal JSPs* and click the button with three yellow diamonds. 
 
-3. In your project's `docroot/META-INF/custom_jsps/html/portlet/` folder, create
-   a folder named after the portlet whose JSP(s) you're overriding. In that new
-   folder create a JSP file named after the JSP file you're overriding. In this
-   new JSP, you implement application customizations. 
+3.  In your project's `docroot/META-INF/custom_jsps/html/portlet/` folder,
+    create a folder named after the portlet whose JSP(s) you're overriding. In
+    that new folder create a JSP file named after the JSP file you're
+    overriding. In this new JSP, you implement application customizations. 
 
-   It's 
-   recommended to include the original JSP (if possible) when overriding a JSP.
-   You can include an original JSP by using a `<liferay-util:include>` tag. For
-   example, if you wanted to include an original JSP named `view.jsp` from a portlet named
-   `yourportlet`, you could add a directive to include the `liferay-util` taglib
-   and specify a `<liferay-util:include>` tag to include the original JSP. You
-   can include content before or after the original content
-   The following example code snippet includes an original JSP named `view.jsp`
-   and adds custom content below it:
+    It's recommended to include the original JSP (if possible) when overriding a
+    JSP. You can include an original JSP by using a `<liferay-util:include>`
+    tag. For example, if you wanted to include an original JSP named `view.jsp`
+    from a portlet named `yourportlet`, you could add a directive to include the
+    `liferay-util` taglib and specify a `<liferay-util:include>` tag to include
+    the original JSP. You can include content before or after the original
+    content The following example code snippet includes an original JSP named
+    `view.jsp` and adds custom content below it:
 
         <%@ taglib uri="http://liferay.com/tld/util" 
         prefix="liferay-util" %>
@@ -61,12 +61,14 @@ Here's how to do it:
         </p>
 
     Within the `<liferay-util:include>` tag, you must specify the path of the
-    original JSP you're extending, and set the `useCustomPage` attribute to `false`. 
+    original JSP you're extending, and set the `useCustomPage` attribute to
+    `false`. 
 
-    **Note:** When extending an original JSP in a global hook, you must 
-    end the JSP file's name with the suffix `.portal.jsp` within the `<liferay-util:include>`
-    tag. However, when using an application adapter hook, you specify the
-    the JSP normally and set the `useCustomPage` attribute to `false`. 
+    **Note:** When extending an original JSP in a global hook, you must end the
+    JSP file's name with the suffix `.portal.jsp` within the
+    `<liferay-util:include>` tag. However, when using an application adapter
+    hook, you specify the the JSP normally and set the `useCustomPage` attribute
+    to `false`. 
 
 4. Deploy your application adapter hook plugin. Liferay installs the application
    adapter under the name of the hook. 
@@ -103,3 +105,4 @@ template. The added sites include your application adapter automatically.
 In this tutorial, you learned that application adapters are used to scope
 customizations to specific sites in your portal instance. Then you created one
 for yourself and learned best practices along the way. 
+
