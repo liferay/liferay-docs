@@ -182,7 +182,7 @@ software ticketing process. Are you ready to roll? Let's get started!
 
     When you're finished in this window click *Next*. 
     
-    ![Figure 8.5: The first step in the Create Kaleo Workflow form.](../../images/kaleo-new-workflow-01.png)
+    ![Figure 8.5: The Create Kaleo Workflow form in Liferay Developer Studio lets you select a script type and template type for your workflow.](../../images/kaleo-new-workflow-01.png)
 
     You'll be directed to the *Choose Assignment Type* window next. Here you'll
     provide an *Initial task name*, then choose an assignment type from the list
@@ -241,8 +241,8 @@ use in your workflow:
   conditional logic of the node's script. 
 - *Fork*: Forks the workflow execution into two parallel threads. 
 - *Join*: Joins parallel workflow threads. 
-- *Join XOR*: Same as a Join, but only needs to receive workflow execution from 
-  one of its joining threads.
+- *Join XOR*: Joins parallel workflow threads, but only needs to receive workflow execution from 
+  one of them.
 - *State*: Represents a workflow state. 
 - *Task*: Represents a task that can be assigned. 
 
@@ -434,7 +434,7 @@ process to the *QA* and *QA Manager* task nodes:
         </transitions>
     </fork>
 
-Both the the QA-related task nodes are assigned to the user with screen-name
+Both the the QA-related task nodes are assigned to the user with screen name
 *joe*.
 
     <task>
@@ -1289,7 +1289,7 @@ After saving, select the *Summary* tab in Kaleo Forms, click the *Submit New*
 button, and select *Ticket Process*.
 
 Now you can interact with the DDL and progress throughout the ticket process
-using Kaleo Forms! Joe Bloggs is assigned the task once it ticket reaches the 
+using Kaleo Forms! Joe Bloggs is assigned the task once the ticket reaches the 
 QA and Pass to QA tasks. Remember to sign in as Joe Bloggs to access the tasks
 assigned to him. Mr. Bloggs should also receive an email when the Project
 Management node is activated. 
