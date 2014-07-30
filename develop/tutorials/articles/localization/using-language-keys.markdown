@@ -1,4 +1,4 @@
-# Using Liferay's Language Keys [](id=using-liferays-language-keys-lp-6-2-develop-tutorial)
+# Using Liferay's Language Keys [](id=using-liferays-language-keys)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet

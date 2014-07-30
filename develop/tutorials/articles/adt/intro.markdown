@@ -1,4 +1,4 @@
-# Application Display Templates [](id=application-display-templates-lp-6-2-develop-tutorial)
+# Application Display Templates [](id=application-display-templates)
 
 A portlet's Display Settings (*Options* &rarr; *Configuration* &rarr; *Setup*
 &rarr; *Display Settings*) let you customize its display. They come built in

@@ -1,4 +1,4 @@
-# Modularization with OSGi Plugins [](id=developing-osgi-plugins-for-liferay-lp-6-2-develop-tutorial)
+# Modularization with OSGi Plugins [](id=developing-osgi-plugins-for-liferay)
 
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. OSGi implements a complete and dynamic component model. OSGi
