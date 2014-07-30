@@ -1,32 +1,11 @@
 # Making Liferay and Custom Portlet Services Available in Your Android App 
 
-Suppose you're creating an Android app, and you'd like to access some of
-Liferay's core services. All you need to do is download the SDK and put it in
-your classpath, and you can access the services immediately. If you want to
-invoke custom portlet web services, you'll need to generate client libraries
-for them. This tutorial shows you how to accomplish both of these things, in 
-addition to showing you how to setup the Android SDK manually.
-
-If you're developing in an Eclipse environment and are using the Liferay Mobile
-SDK Eclipse plugin, you can skip the first section. Otherwise, venture forth to 
-the first section where you'll get started by downloading the Android SDK and
-configuring it in your Android environment! 
-
-## Manually Setting Up the Android SDK 
-
-First, you'll need to download the latest version of `liferay-android-sdk.jar`. 
-In addition, if you want to debug the SDK source code, you can download 
-`liferay-android-sdk-sources.jar` and attach the source code to your IDE 
-project. You can download these JAR files from the [Liferay Mobile SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk)
-project page.
-
-Once you've downloaded your JAR file, copy it into the `/libs` directory of
-your Android project. Android Developer Tools should add this JAR automatically 
-to your classpath. If you're using a different IDE, make sure this JAR is added
-to the project classpath. Now, you'll be able to import the SDK classes for your
-app to use. 
-
-Great! Now you can get started accessing Liferay services from your app. 
+Suppose you'd like your Android app to access some of Liferay's core services. 
+After all, you undoubtedly have lots of cool stuff in your portal. This is where 
+the Liferay Mobile SDK comes in. The Liferay Mobile SDK lets you access 
+Liferay's core services so your Android app can get what it needs from your 
+portal. You can also use the Liferay Mobile SDK to invoke the web services of 
+your custom portlets. Read on to find out how!
 
 ## Calling Liferay Services in your Android App 
 
@@ -35,18 +14,18 @@ core services and utilities from your Android app. All you need to do is add the
 Liferay Android Mobile SDK libraries to your project. The Liferay Mobile SDK
 Builder that comes with our Eclipse plugin enables you to generate these
 libraries. 
+<!-- 
+Change the link in this Note to the tutorial: "Setting Up the Mobile SDK Manually" 
+once the header id's are generated.
+-->
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This configuration capability
-is only available for Android apps that were created using the ADT plugin for
-Eclipse. The action will not work for Android apps built with Gradle or Maven,
-but you can still manually configure your project to use the Mobile SDK. For
-more information on this, see the manual Liferay Mobile SDK setup instructions
-for
-[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
-or
-[iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually).
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you 
+created your Android project using the ADT plugin for Eclipse. If you have an 
+existing Android project that wasn't created using the ADT plugin for Eclipse, 
+or your Android project uses Gradle or Maven, see the 
+[manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
 
 ---
 
@@ -84,6 +63,18 @@ The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with your Eclipse plugin
 generates libraries that enable you to access your custom portlet's remote JSON
 web services. 
+<!-- 
+Change the link in this Note to the tutorial: "Building Mobile SDKs" once the 
+header id's are generated.
+-->
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** You can also use the Liferay 
+Mobile SDK Builder from the command line. See [these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md) 
+for more details.
+
+---
 
 You can specify a running Liferay Portal instance in Eclipse, and Eclipse
 queries the server for all the remote APIs that are available to generate `.jar`

@@ -1,10 +1,10 @@
 # Setting Up the Mobile SDK Manually
 
 If you want to use the Liferay Mobile SDK with an existing Android project, or 
-you're using a different IDE like Android Studio, you can download the latest 
+you're using a different IDE like *Android Studio*, you can download the latest 
 version of the Mobile SDK and manually add it to your project library. You can 
 also configure the Mobile SDK as a dependency to your project if you're using 
-Gradle or Maven. Gradle and Maven downloads all the necessary dependencies 
+Gradle or Maven. Gradle and Maven download all the necessary dependencies 
 before building your project. 
 
 ## Manual Setup

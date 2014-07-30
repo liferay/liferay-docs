@@ -7,6 +7,18 @@ custom portlet services deployed on your Liferay Portal instance. The plugin
 also comes with a *Liferay Android Sample Project* that you can use as a 
 reference for building more Android apps of your own. Since Eclipse only 
 supports Android apps, you can't use the plugin to customize iOS apps. 
+<!-- Change the link in the note to the tutorial once header id's are generated -->
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** If you want to use the Mobile
+SDK within an existing Android project, or you're using a different IDE,
+like *Android Studio*, you can download the latest version of the Mobile SDK and
+add it to your project library or configure it as a dependency to your project 
+using Gradle or Maven. For more information about this, see the tutorial 
+[Setting Up the Mobile SDK Manually](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually). 
+
+---
 
 ## Satisfying Dependencies 
 

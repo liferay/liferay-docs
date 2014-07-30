@@ -8,6 +8,13 @@ This tutorial walks you through the creation of the *Liferay Android Sample
 Project*. When you're finished, you'll have a simple but functional Android app 
 that you can refer to in your future projects. Go ahead and get started! 
 
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** Alternatively, you can also 
+browse and download the *Liferay Android Sample Project* source code in [GitHub](https://github.com/brunofarache/liferay-android-sdk-sample).
+
+---
+
 ## Creating the Project 
 
 1. First, go to *File* &rarr; *New* &rarr; *Project...*. Then select 
