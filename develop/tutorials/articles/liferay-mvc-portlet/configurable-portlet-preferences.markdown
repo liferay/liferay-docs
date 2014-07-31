@@ -6,19 +6,19 @@ https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-
 -->
 
 Portlet Preferences are properties for storing basic portlet configuration data.
-administrators often use preferences to provide a customized view of a portlet
+Administrators often use preferences to provide a customized view of a portlet
 to subsets of users or even all of a portlet's users. Portlet preference
 controls are sometimes made accessible to users themselves for configuring
 portlets just the way they like them. Liferay simplifies making portlet
 preferences configurable in portlet JSPs. In this tutorial, you'll learn how to
 create a default configuration JSP page and how to add a portlet preference
 control to it. Figure 1 shows what a configurable portlet preference looks like
-in a portlet's Configuration menu.
+in a portlet's Configuration menu. 
 
 ![Figure 1: Portlet preferences, such as this portlet's checkbox for showing location addresses, let you customize your portlet in many different ways.](../../images/show-location-address-pref.png)
 
 First, you'll learn how to create the default Setup tab for your portlet's
-configuration page.
+configuration page. 
 
 ## Creating a Default Setup Tab in the Portlet's Configuration Page [](id=creating-a-default-setup-tab-in-the-port-liferay-portal-6-2-dev-guide-03-en)
 
@@ -79,8 +79,8 @@ specify one for your portlet.
 
 Open the `portlet.xml` file and declare your initialization parameters with the
 `<init-param>...</init-param>` tags within your portlet's `<portlet>` element.
-Here's an example code snippet of that sets a portlet's configuration JSP path
-to `/html/yourportlet/configuration.jsp`: 
+Here's an example code snippet that sets a portlet's configuration JSP path to
+`/html/yourportlet/configuration.jsp`: 
 
     <portlet>
         <portlet-name>yourportlet</portlet-name>
@@ -96,7 +96,7 @@ to `/html/yourportlet/configuration.jsp`:
         ...
     </portlet>
 
-Next, you can create the configuration JSP file that you just specified.
+Next, you can create the configuration JSP file that you just specified. 
 
 ### Step 2: Create the Configuration JSP for Displaying the Portlet Preference Options [](id=step-2-create-the-configuration-jsp-for-displaying-)
 
@@ -164,13 +164,13 @@ directives in one of the JSPs that the configuration JSP includes.
 
 You may also need to declare the `<portlet:defineObjects />` tag to access
 implicit variables. This tag provides useful portlet variables such as
-*renderRequest*, *portletConfig*, and *portletPreferences*.
+*renderRequest*, *portletConfig*, and *portletPreferences*. 
 
 ---
 
 Your configuration JSP is all set to display your portlet preference options.
 You're ready to implement a custom class to handle the configuration action. If
-you don't need to use the portlet preference in your portlet's controller logic
+you don't need to use the portlet preference in your portlet's controller logic,
 then you can skip the next step. 
 
 ### Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value [](id=step-3-create-a-configuration-action-implementation)
@@ -181,9 +181,9 @@ must extend the
 [`DefaultConfigurationAction`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html)
 class.
 
-You can optionally override `DefaultConfigurationAction`s `processAction()`
+You can optionally override `DefaultConfigurationAction`'s `processAction()`
 method to add any processing logic for the portlet preference. For example, you
-could override the method and access your preference with code similar to this:
+could override the method and access your preference with code similar to this: 
 
     @Override
     public void processAction(
@@ -203,14 +203,14 @@ could override the method and access your preference with code similar to this:
 The super-class's `processAction()` method is responsible for reading the
 portlet preferences from the configuration form and storing them in the
 database. Usually, you'd add appropriate validation logic for the parameters
-received from the form.
+received from the form. 
 
 ---
 
 ![Note](../../images/tip-pen-paper.png) **Note:** You won't need to store
 portlet preferences by calling `preferences.store()` since they're automatically
 stored in the `DefaultConfigurationAction` class, which your configuration class
-extends.
+extends. 
 
 ---
 
@@ -271,7 +271,7 @@ it is false, then the address fields are omitted.
 ![Figure 3: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's configuration page.](../../images/portlet-preferences-modifying-view.png)
 
 That's it! You've created a custom configuration page and added a portlet
-preference to your portlet.
+preference to your portlet. 
 
 To see the configuration page and portlet preference in action! Navigate to your
 portlet's *Configuration* page to see the portlet preference control that you
