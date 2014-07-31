@@ -1322,9 +1322,10 @@ Liferay server; the configuration process is quick and easy. With all of its
 features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
 
-Similar to how workflows use human input and can be used to disseminate
-information to users, there is a breed of social applications called OpenSocial
-gadgets that lend themselves well to humans sharing information and application
-functionality within defined networks. They are light-weight and easy to write
-and distribute. We'll get into OpenSocial gadgets next. 
+Have you been wondering how your mobile apps can tap into the capabilities of
+you're workflows, Liferay's built-in apps, and your own custom apps? If this has
+been on your mind, the next chapter on using Liferay's Mobile SDK is for you.
+You'll learn how to leverage Liferay utilities, Liferay's services, and your
+custom app services from your Android and iOS apps. So, buckle up and grab your
+mobile devices as you integrate Liferay with your mobile apps. 
 
