@@ -1,4 +1,4 @@
-# Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+# Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-mav)
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. The introduction to the themes
@@ -22,9 +22,9 @@ template plugin with Maven.
 ## Creating a Layout Template Plugin
 
 To create a Liferay layout template plugin project, follow the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the 
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Layout Template* as the plugin type. 
 
 ---
@@ -72,6 +72,6 @@ developing yet another plugin type with Maven. Way to go!
 
 ## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
 
 <!-- Add link to Layout Templates tutorial. Jim -->

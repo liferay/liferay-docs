@@ -1,4 +1,4 @@
-# Understanding Liferay's Releases [](id=understanding-liferays-releases-lp-6-2-develop-tutorial)
+# Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
@@ -37,7 +37,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-## Release Process [](id=release-process-lp-6-2-develop-tutorial)
+## Release Process [](id=release-process)
 
 Each release of Liferay has a surname that specifies its expected quality. This
 is needed because pre-releases of Liferay look very much like maintenance
@@ -99,7 +99,7 @@ The strength of the Liferay community helps detect potential issues early that
 are then reported through the forums and are later fixed in a series of
 maintenance releases.
 
-## Liferay's Deprecation Policy [](id=liferays-deprecation-policy-lp-6-2-develop-tutorial)
+## Liferay's Deprecation Policy [](id=liferays-deprecation-policy)
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major and minor releases of

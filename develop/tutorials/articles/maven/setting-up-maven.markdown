@@ -1,4 +1,4 @@
-# Setting Up Maven [](id=setting-up-maven-lp-6-2-develop-tutorial)
+# Setting Up Maven [](id=setting-up-maven)
 
 This tutorial explains how to install and configure Maven and Nexus. Nexus is a
 Maven repository management server. Using Nexus for Maven repository management
