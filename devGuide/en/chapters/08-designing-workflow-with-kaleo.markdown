@@ -1323,9 +1323,9 @@ features, the Kaleo Designer for Java in Developer Studio is a powerful yet
 simple tool. 
 
 Have you been wondering how your mobile apps can tap into the capabilities of
-you're workflows, Liferay's built-in apps, and your own custom apps? If this has
-been on your mind, the next chapter on using Liferay's Mobile SDK is for you.
-You'll learn how to leverage Liferay utilities, Liferay's services, and your
-custom app services from your Android and iOS apps. So, buckle up and grab your
-mobile devices as you integrate Liferay with your mobile apps. 
+Liferay's built-in apps, and your own custom apps? If this has been on your
+mind, the next chapter on using Liferay's Mobile SDK is for you. You'll learn
+how to leverage Liferay utilities, Liferay's services, and your custom app
+services from your Android and iOS apps. So, buckle up and grab your mobile
+devices as you integrate Liferay with your mobile apps. 
 
