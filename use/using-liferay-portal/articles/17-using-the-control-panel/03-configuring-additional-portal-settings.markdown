@@ -1,4 +1,4 @@
-# Configuring Additional Portal Settings [](id=configuring-additional-portal-settings-lp-6-2-use-useportal)
+# Configuring Additional Portal Settings [](id=configuring-additional-portal-settings)
 
 Go back to the Control Panel, and click on *Portal Settings* under the
 *Configuration* heading. We've already looked at the options available from the

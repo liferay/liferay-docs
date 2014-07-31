@@ -1,4 +1,4 @@
-# Running Scripts from the Control Panel [](id=running-scripts-from-the-control-panel-lp-6-2-use-useportal)
+# Running Scripts from the Control Panel [](id=running-scripts-from-the-control-panel)
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server

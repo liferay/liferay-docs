@@ -1,4 +1,4 @@
-# Document Types and Metadata Sets [](id=document-types-and-metadata-sets-lp-6-2-use-useportal)
+# Document Types and Metadata Sets [](id=document-types-and-metadata-sets)
 
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages

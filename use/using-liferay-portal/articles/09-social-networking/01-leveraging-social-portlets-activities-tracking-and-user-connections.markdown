@@ -1,4 +1,4 @@
-# Leveraging Social Portlets, Activities Tracking, and User Connections [](id=leveraging-social-portlets-activities-tracking-and-use-lp-6-2-use-useportal)
+# Leveraging Social Portlets, Activities Tracking, and User Connections [](id=leveraging-social-portlets-activities-tracking-and-use)
 
 Liferay has many portlets available for social interaction and collaboration.
 Some of these portlets are designed to help you work together as a team, while

@@ -1,4 +1,4 @@
-# Expressing Yourself Using Blogs [](id=expressing-yourself-using-blogs-lp-6-2-use-useportal)
+# Expressing Yourself Using Blogs [](id=expressing-yourself-using-blogs)
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
 *log*. Blogs were first popularized by web sites such as Slashdot

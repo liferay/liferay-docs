@@ -1,4 +1,4 @@
-# Weather [](id=weather-lp-6-2-use-useportal)
+# Weather [](id=weather)
 
 Liferay's Weather portlet displays basic weather-related information
 (temperature, conditions) for multiple configurable locations. It's available as

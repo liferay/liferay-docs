@@ -1,4 +1,4 @@
-# Managing Events and Calendar Resources with Liferay's Calendar Portlet [](id=managing-events-and-calendar-resources-with-liferays-c-lp-6-2-use-useportal)
+# Managing Events and Calendar Resources with Liferay's Calendar Portlet [](id=managing-events-and-calendar-resources-with-liferays-c)
 
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new

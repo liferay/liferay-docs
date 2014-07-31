@@ -1,4 +1,4 @@
-#  Installation and Setup [](id=installation-and-setup-lp-6-2-use-useportal)
+#  Installation and Setup [](id=installation-and-setup)
 
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. It supports a wide variety of

@@ -1,4 +1,4 @@
-# Using Liferay's Workflow with WCM [](id=using-liferays-workflow-with-wcm-lp-6-2-use-useportal)
+# Using Liferay's Workflow with WCM [](id=using-liferays-workflow-with-wcm)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication

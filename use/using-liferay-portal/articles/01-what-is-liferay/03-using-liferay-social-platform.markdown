@@ -1,4 +1,4 @@
-# Using Liferay as a social platform [](id=using-liferay-as-a-social-platform-lp-6-2-use-useportal)
+# Using Liferay as a social platform [](id=using-liferay-as-a-social-platform)
 
 Whether you plan to build a social network or enable social applications as part
 of your overall user experience, Liferay Portal has the tools to make those

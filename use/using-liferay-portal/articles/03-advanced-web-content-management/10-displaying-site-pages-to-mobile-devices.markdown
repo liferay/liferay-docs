@@ -1,4 +1,4 @@
-# Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices-lp-6-2-use-useportal)
+# Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices)
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the portal based on the device being used to access Liferay. The

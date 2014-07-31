@@ -1,4 +1,4 @@
-# Personalization and Customization [](id=personalization-and-customization-lp-6-2-use-useportal)
+# Personalization and Customization [](id=personalization-and-customization)
 
 In this chapter, we discuss several ways Liferay users can customize pages,
 applications, and the way they use your portal. We'll cover the following

@@ -1,4 +1,4 @@
-# Exporting Portal Applications as Widgets and OpenSocial Gadgets [](id=exporting-portal-applications-as-widgets-and-opensocia-lp-6-2-use-useportal)
+# Exporting Portal Applications as Widgets and OpenSocial Gadgets [](id=exporting-portal-applications-as-widgets-and-opensocia)
 
 OpenSocial is a framework designed for the creation of socially themed
 application programming interfaces (APIs). OpenSocial applications, called

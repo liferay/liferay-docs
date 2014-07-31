@@ -1,4 +1,4 @@
-# Patching Liferay [](id=patching-liferay-lp-6-2-use-useportal)
+# Patching Liferay [](id=patching-liferay)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
