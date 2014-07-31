@@ -1,4 +1,4 @@
-# Writing Your First Liferay Application [](id=writing-your-first-liferay-application-lp-6-2-develop-learnpath)
+# Writing Your First Liferay Application [](id=writing-your-first-liferay-application)
 
 Getting started with your first Liferay application takes only minutes. We'll
 guide you through the process of creating your project and deploying your
@@ -677,9 +677,9 @@ interest you.
 
 Here are more tutorials that you may find interesting:
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial)
+[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/plugins-sdk)
 
-[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/maven)
 
 <!--
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)

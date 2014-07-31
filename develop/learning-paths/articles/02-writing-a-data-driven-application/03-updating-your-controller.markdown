@@ -1,4 +1,4 @@
-# Updating Your Controller to Use Services [](id=updating-your-controller-to-use-services-lp-6-2-develop-learnpath)
+# Updating Your Controller to Use Services [](id=updating-your-controller-to-use-services)
 
 Now that you've created your service and persistence layers, it's time to update
 your controller so that it uses them to store and retrieve guestbooks and their
