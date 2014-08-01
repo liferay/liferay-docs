@@ -1,4 +1,4 @@
-# Generating Reports in Liferay [](id=generating-reports-in-liferay-lp-6-2-use-useportal)
+# Generating Reports in Liferay [](id=generating-reports-in-liferay)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

@@ -1,4 +1,4 @@
-# Setting Permissions [](id=setting-permissions-lp-6-2-develop-learnpath)
+# Setting Permissions [](id=setting-permissions)
 
 Storing your data in a database is really only the first step in creating a
 full-blown, data-driven application. Once the data is there, most of the time

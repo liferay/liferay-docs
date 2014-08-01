@@ -1,4 +1,4 @@
-# Using AlloyUI Carousel in Your Portlet [](id=using-alloyui-carousel-in-your-portlet-lp-6-2-develop-tutorial)
+# Using AlloyUI Carousel in Your Portlet [](id=using-alloyui-carousel-in-your-portlet)
 
 Image carousels are often the first thing people see when they visit sites.
 Carousels provide an interactive way of cycling through visual elements and are

@@ -1,10 +1,10 @@
-# Introduction [](id=tutorials-lp-6-2-develop-tutorial)
+# Introduction [](id=tutorials)
 
 Welcome to Liferay Tutorials! 
 These tutorials show you how to build powerful robust apps using the
 Liferay's tools, frameworks and APIs. The tutorials compliment the fundamentals
 that you can master in Liferay's
-[Learning Paths](/develop/learning-paths/-/knowledge_base/welcome-lp-6-2-develop-learnpath),
+[Learning Paths](/develop/learning-paths/-/knowledge_base/welcome),
 giving you keen insight into development features for building top-notch apps,
 designing stylish themes, and customizing Liferay Portal to meet your needs. The
 tutorials cover the following three main areas. 
@@ -48,16 +48,16 @@ common tasks that Liferay doesn't make you have to write yourself.
 <!--Here are just
 a few of the framework topics the tutorials cover in detail.  
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)<br>
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)<br>
 Implementing Roles and Permissions<br>
 Leveraging the Asset Framework<br>
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
 -->
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
 taglibs and snazzy UI components that
-[AlloyUI](/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial) and
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[AlloyUI](/develop/tutorials/-/knowledge_base/alloyui) and
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs)
 provide.
 
 #### Styling and Customizing Liferay
@@ -72,40 +72,83 @@ discover new things as you develop sites in Liferay.
 To get you started, here are links to topics in the three areas
 discussed on this page.
 
-<table>
+<div id="wrapper">
+<table id="table">
+<tr>
+<th>
+<strong>Development Tools</strong>
+</th>
+
+<th>
+<strong>Developing Apps</strong>
+</th>
+
+<th>
+<strong>Styling and Customizing</strong>
+</th>
+</tr>
+
 <tr>
 <td>
-<strong>Development Tools</strong>
+<a href="/develop/learning-paths/-/knowledge_base/beginning-liferay-development" >Beginning Liferay Development</a>
 </td>
-
 <td>
-<strong>Developing Apps</strong>
+<a href="/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application" >Writing Your First Application</a>
 </td>
-
 <td>
-<strong>Styling and Customizing</strong>
+Themes and Layout Templates
 </td>
 </tr>
 
 <tr>
 <td>
-<a href="/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath" >Beginning Liferay Development</a><br>
-<a href="/develop/tutorials/-/knowledge_base/plugins-sdk-lp-6-2-develop-tutorial" >Developing with the Plugins SDK</a><br>
-<a href="/develop/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial" >Developing with Liferay IDE</a><br>
-<a href="/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial" >Developing with Maven</a><br>
+<a href="/develop/tutorials/-/knowledge_base/plugins-sdk" >Developing with the Plugins SDK</a>
 </td>
-
 <td>
-<a href="/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application-lp-6-2-develop-learnpath" >Writing Your First Application</a><br>
-<a href="/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial" >Developing Portlets Using Liferay MVC</a><br>
-<a href="/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial" >Liferay Faces</a><br>
+<a href="/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc" >Developing Portlets Using Liferay MVC</a>
+</td>
+<td>
+<a href="/develop/tutorials/-/knowledge_base/customizing-liferay-portal" >Customizing Liferay Portal</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="/develop/tutorials/-/knowledge_base/liferay-ide" >Developing with Liferay IDE</a>
+</td>
+<td>
+<a href="/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets" >Liferay Faces</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="/develop/tutorials/-/knowledge_base/maven" >Developing with Maven</a>
+</td>
+<td>
 <a href="/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >OpenSocial Gadgets</a>
-</td>
-
-<td>
-Themes and Layout Templates<br>
-<a href="/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial" >Customizing Liferay Portal</a><br>
 </td>
 </tr>
 </table>
+</div>
 
+<style>
+table
+{
+width:860px;
+}
+th
+{
+text-align: left;
+}
+th, td
+{
+padding-left: 0.4em;
+padding-top: 0.3em;
+
+}
+#wrapper
+{
+margin-left: -0.4em;
+}
+</style>

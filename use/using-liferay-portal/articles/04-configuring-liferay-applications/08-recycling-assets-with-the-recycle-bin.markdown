@@ -1,4 +1,4 @@
-# Recycling Assets with the Recycle Bin [](id=recycling-assets-with-the-recycle-bin-lp-6-2-use-useportal)
+# Recycling Assets with the Recycle Bin [](id=recycling-assets-with-the-recycle-bin)
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a

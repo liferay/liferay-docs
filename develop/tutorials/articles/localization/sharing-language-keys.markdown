@@ -1,4 +1,4 @@
-# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet

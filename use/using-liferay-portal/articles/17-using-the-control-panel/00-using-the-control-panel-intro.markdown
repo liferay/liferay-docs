@@ -1,4 +1,4 @@
-# Using the Control Panel [](id=using-the-control-panel-lp-6-2-use-useportal)
+# Using the Control Panel [](id=using-the-control-panel)
 
 In the previous chapter, we learned how to use the Control Panel for user
 management. We learned how to manage users, organizations, user group, roles,

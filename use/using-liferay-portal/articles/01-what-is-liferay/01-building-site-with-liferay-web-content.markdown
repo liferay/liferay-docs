@@ -1,4 +1,4 @@
-# Building a site with Liferay Web Content [](id=building-a-site-with-liferay-web-content-lp-6-2-use-useportal)
+# Building a site with Liferay Web Content [](id=building-a-site-with-liferay-web-content)
 
 When you log into Liferay and look at its default screen, one thing should jump
 out at you right away: it's built for all clients that access the web, not just

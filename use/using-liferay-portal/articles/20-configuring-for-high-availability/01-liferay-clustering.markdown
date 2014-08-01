@@ -1,4 +1,4 @@
-# Liferay Clustering [](id=liferay-clustering-lp-6-2-use-useportal)
+# Liferay Clustering [](id=liferay-clustering)
 
 Liferay Portal is designed to serve everything from the smallest to the largest
 web sites. Out of the box, it's configured optimally for a single server

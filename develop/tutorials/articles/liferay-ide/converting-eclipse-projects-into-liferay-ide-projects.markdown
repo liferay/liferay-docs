@@ -1,4 +1,4 @@
-# Converting Eclipse Projects into Liferay IDE Projects [](id=converting-eclipse-projects-into-liferay-ide-projec-lp-6-2-develop-tutorial)
+# Converting Eclipse Projects into Liferay IDE Projects [](id=converting-eclipse-projects-into-liferay-ide-projec)
 
 Liferay IDE lets you import non-Liferay projects in your Eclipse workspace
 (i.e., you can see them in Eclipse's Project Explorer) and convert them to
@@ -21,9 +21,9 @@ This tutorial shows the steps required to accomplish this.
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
     for it). For instructions on resolving these issues, see the
-    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
     tutorial and the 
-    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
     tutorial. 
 
     ---
@@ -43,7 +43,7 @@ just as you would any other Liferay project.
 
 ## Related Topics 
 
-[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 

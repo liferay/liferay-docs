@@ -1,4 +1,4 @@
-# Kaleo Forms: Defining Business Processes [](id=kaleo-forms-defining-business-processes-lp-6-2-use-useportal)
+# Kaleo Forms: Defining Business Processes [](id=kaleo-forms-defining-business-processes)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

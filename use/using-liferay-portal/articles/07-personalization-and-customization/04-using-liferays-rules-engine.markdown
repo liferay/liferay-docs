@@ -1,4 +1,4 @@
-# Using Liferay's rules engine [](id=using-liferays-rules-engine-lp-6-2-use-useportal)
+# Using Liferay's rules engine [](id=using-liferays-rules-engine)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

@@ -1,4 +1,4 @@
-# Setting Up the Plugins SDK [](id=setting-up-the-plugins-sdk-lp-6-2-develop-tutorial)
+# Setting Up the Plugins SDK [](id=setting-up-the-plugins-sdk)
 
 This tutorial explains how to install and configure the Liferay Plugins SDK and
 its dependencies. 

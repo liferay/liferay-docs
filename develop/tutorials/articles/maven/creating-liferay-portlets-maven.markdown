@@ -1,4 +1,4 @@
-# Developing Liferay Portlets with Maven [](id=creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+# Developing Liferay Portlets with Maven [](id=creating-liferay-portlets-with-maven)
 
 This tutorial explains how to create Liferay portlet plugins using Maven and the
 anatomy of the Liferay Maven portlet plugin project. 
@@ -6,9 +6,9 @@ anatomy of the Liferay Maven portlet plugin project.
 ## Creating a Portlet Plugin
 
 To create your Liferay theme plugin project, just follow the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type. 
 
 ---
@@ -67,8 +67,8 @@ You now know how to create Liferay portlet plugins in Maven.
 
 ## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets-lp-6-2-develop-tutorial)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)

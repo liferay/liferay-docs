@@ -1,4 +1,4 @@
-# Automatic Previews and metadata [](id=automatic-previews-and-metadata-lp-6-2-use-useportal)
+# Automatic Previews and metadata [](id=automatic-previews-and-metadata)
 
 Whenever possible, Liferay 6.2 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based

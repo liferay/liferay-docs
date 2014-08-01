@@ -1,4 +1,4 @@
-# Developing Liferay Plugins with Additional Maven Archetypes [](id=developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
+# Developing Liferay Plugins with Additional Maven Archetypes [](id=developing-liferay-plugins-with-additional-maven-ar)
 
 Liferay provides more archetypes than just the ones for portlets, hooks, themes,
 and layout templates. The Liferay team has been busy expanding the list of
@@ -59,7 +59,7 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 
 Here are some related topics:
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
