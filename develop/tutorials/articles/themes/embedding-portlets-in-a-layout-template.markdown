@@ -5,19 +5,18 @@ use the same layout template? Or perhaps you want to prevent users from moving
 portlets you've carefully placed, knowing that it disrupts the Feng Shui of your
 page layout's design? Well, there's a way you can maintain serene order in such
 pages. You can embed portlets in their layout templates to ensure that specified
-portlets always display in consistent locations on your pages. Users will be
-able to minimize the embedded portlets but won't be able to move them or remove
-them. Core portlets and custom portlets, whether instanceable or
-non-instanceable, that are created with the Plugins SDK can be embedded in
-layout templates. 
+portlets are always in consistent locations on your pages. Users can minimize
+the embedded portlets but can't move them or remove them. Core portlets and
+custom portlets, whether instanceable or non-instanceable, that are created with
+the Plugins SDK can be embedded in layout templates. 
 
-This tutorial example layout template demonstrates placing the *navigation
-portlet* and *search portlet* in the first and last columns of the layout
+This tutorial example layout template demonstrates placing the Navigation
+portlet and the Search portlet in the first and last columns of the layout
 template's middle row. Additionally, it embeds a custom portlet in the
 template's upper and lower rows. 
 
-Before you embed portlets in a template, you must find out certain portlet
-characteristics that the layout template requires. You'll learn what they are,
+Before you embed portlets in a template, you need to know some portlet
+characteristics that the layout template requires. You'll learn what they are
 next. 
 
 ## Specifying Attributes of the Embedded Portlet
@@ -31,8 +30,8 @@ First, you'll need to specify some attributes of the embedded portlet:
   a custom portlet. 
 - ***Instanceable:*** Specify whether multiple instances of the portlet can
   exist in the portal. 
-- ***Web Application Context:*** (required for *custom* portlets only) Log in to
-  your Liferay Portal. Go to the portlet's *Look and Feel* &rarr; *Advanced
+- ***Web Application Context:*** (required for plugins only) Log in to
+  Liferay Portal. Go to the portlet's *Look and Feel* &rarr; *Advanced
   Styling* to find the context in the Fully Qualified Portlet ID (FQPI). The
   context is the portion of the Portlet ID string that follows `WAR_`. The *Web
   Application Context* in the following figure is *myhelloworldportlet*. 
@@ -51,12 +50,12 @@ Here's a description of the portlets to be embedded in the example layout:
  Goodbye World | `my-goodbye-world-portlet` | 3   | 1      | custom | yes | myhelloworldportlet |
 ---
 
-Now, that the embedded portlet's characteristics have been acquired, you can
+Now that the embedded portlet's characteristics have been acquired, you can
 plug them into a layout template to embed the portlets. 
 
 ## Adding Portlets to the Layout Template Columns
 
-To embed a portlet, you must specify do the following things: 
+To embed a portlet, you must specify the following things: 
 
 1.  Add a `$processor.processPortlet(...)` directive within the column in which
 to embed the portlet. 
@@ -73,7 +72,7 @@ parameter to the `$processor.processPortlet(...)` directive.
     | [portletID]\_WAR\_[portletContext] |  Non-instanceable custom portlet |
     | [portletID]\_WAR\_[portletContext]\_INSTANCE\_[instanceID] |  Instanceable custom portlet |
 
-Here's the TPL that implements embedding the example portlets in an example
+Here's a template that implements embedding the example portlets in an example
 layout: 
 
     <div class="columns_1_4_1" id="main-content" role="main">
@@ -123,7 +122,7 @@ embedded portlets.
 ![Figure 2: Your embedded portlets are now available when viewing your customized layout template.](../../images/layout-template-embed-portlets-visual.png)
 
 Congrats, you now know how to embed portlets in your templates, but be careful. 
-If your Feng Shui skills become widely known,your friends may ask you to 
+If your Feng Shui skills become widely known, your friends may ask you to 
 re-arrange their living room furniture!
 
 ## Related Topics
