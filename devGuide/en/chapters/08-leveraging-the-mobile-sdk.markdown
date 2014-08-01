@@ -176,11 +176,11 @@ libraries.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This section explains how to
-create Android apps assuming you've used the Liferay Mobile SDK Eclipse plugin.
-If you have an existing Android project that wasn't created using the Eclipse
-plugin, see the [manual Liferay Mobile SDK setup instructions for
-Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually). 
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you 
+created your Android project using the ADT plugin for Eclipse. If you have an 
+existing Android project that wasn't created using the ADT plugin for Eclipse, 
+or your Android project uses Gradle or Maven, see the 
+[manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
 
 ---
 
