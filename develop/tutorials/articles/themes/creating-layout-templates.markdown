@@ -18,7 +18,7 @@ To learn how to create Liferay Maven projects, see the tutorial
 or the tutorial
 [Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
 
-Creating layout templates within Liferay IDE is easy. You can learn how, next. 
+Creating layout templates in Liferay IDE is easy. You can learn how next. 
 
 ## Creating a Layout Template Project from Liferay IDE
 
@@ -27,7 +27,7 @@ Follow these steps to create a layout template project in the IDE:
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
 2.  Fill in the Project name and Display name fields.
-    
+ 
 3.  Choose Ant for the build type and select the appropriate *Plugins SDK* and 
 	*Liferay runtime*. 
 
@@ -37,7 +37,7 @@ Follow these steps to create a layout template project in the IDE:
 
 ![Figure 1: Creating a new layout template project is easy with Liferay IDE.](../../images/layout-template-new-project.png)
 
-Next up, you can create a layout template from the command line using Ant.
+You can also create a layout template from the command line using Ant.
 
 ## Creating a Layout Template Project from the Command Line
 
@@ -57,9 +57,9 @@ On WindowsX, you'd enter a command similar to the one in this example:
 
 Liferay IDE's *New Project* wizard and the *create* scripts generate layout
 template projects in your Plugin SDK's `layouttpl` folder. The Plugins SDK
-automatically appends "-layouttpl" to your project name.  
+automatically appends "-layouttpl" to your project name. 
 
-Take a look at the directory structure of a layout template project below:
+Look at the directory structure of a layout template project below:
 
 - `[project-name]-layouttpl/`
 	- `docroot/`
@@ -73,14 +73,15 @@ Take a look at the directory structure of a layout template project below:
 	- `build.xml`
 
 A layout template project can contain multiple layout templates. The directory
-structure is the same, but you'll have a `.png`, `.tpl`, and `.wap.tpl` file for
+structure is the same, but there is a `.png`, `.tpl`, and `.wap.tpl` file for
 each layout template in the `docroot/` folder. The `liferay-*` files describe
 the layout templates for packaging and deployment. 
-Take a look and see what each template file does: 
+
+Check out what each template file does: 
 
 - `[project-name].tpl`: Generates the HTML structure of the template. 
 - `[project-name].wap.tpl`: Variant template for mobile devices. WAP stands for
-  wireless application protocol. 
+  Wireless Application Protocol. 
 - `[project-name].png`: Thumbnail representation of the template that you see in
   Liferay Portal from the Page Layout screen. You'll have to create a custom
   thumbnail image to draw attention to your layout, but you can use the default
