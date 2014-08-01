@@ -1,8 +1,8 @@
 # Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t)
 
 <!-- The beginning and ending test portlets can be found at the following:
-Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
-End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet
 -->
 
 In this tutorial, you'll learn how Liferay facilitates generating language key
