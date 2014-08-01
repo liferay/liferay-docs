@@ -51,8 +51,8 @@ simple input field setting, you can add a setting like this one:
     `$theme.getSetting("your-key")` method, where you'd specify your setting's
     key in place of *your-key*. 
 
-4.  To make a setting configurable from within the portal, you must add the
-attribute `configurable="true"` to the `<setting>` element. 
+4.  To make a setting configurable from the portal, you must add the attribute
+`configurable="true"` to the `<setting>` element. 
 
 		<setting configurable="true" key="your-key" value="your-value" />
 
@@ -75,12 +75,12 @@ place of the ones specified below.
             </theme>
         </look-and-feel>
 
-To define additional settings, add more `<setting>` elements within the
+To define additional settings, add more `<setting>` elements inside the
 `<settings></settings>` tags of your `liferay-look-and-feel.xml` file. To learn
 what other types of settings you can add to a theme, see the DTD file referenced
 at the beginning of this file's contents. This DTD and all of Liferay's
 definition files are available to view at 
-<https://github.com/liferay/liferay-portal/tree/master/definitions>. 
+[https://github.com/liferay/liferay-portal/tree/master/definitions](https://github.com/liferay/liferay-portal/tree/master/definitions). 
 
 Any configurable settings you've defined are visible and ready for the site
 administrator to modify. In the *Look and Feel* section of the *Site
@@ -114,7 +114,7 @@ your theme.
 1.  Make sure you have a `docroot/_diffs/templates` folder created.
 
 2.  Create a template for each of page style choices you want to make available
-to configure for the theme. 
+    to configure for the theme. 
 
     For example, if you want to provide a theme template option for a detailed
     header for the theme and a brief header option for the same theme, you can
@@ -122,11 +122,10 @@ to configure for the theme.
     `docroot/_diffs/templates` folder. 
 
 3.  Copy the `docroot/templates/portal_normal.[vm|ftl]` file into that
-directory. It's a good rule of thumb to modify files for your new theme in the
-`docroot/_diffs/templates` folder. 
+    directory. 
 
 4.  Open your `docroot/_diffs/templates/portal_normal.[vm|ftl]` template file
-and add logic to use a particular template based on a theme setting.
+    and add logic to use a particular template based on a theme setting.
 
     For example, if you have a Velocity template called `header_detailed.vm`
     that implements the theme using a detailed header and another template
