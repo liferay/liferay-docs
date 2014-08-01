@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.tour.portlet.tasks.service.InventoryLocalService" class="com.tour.portlet.tasks.service.impl.InventoryLocalServiceImpl" />
+	<bean id="com.tour.portlet.tasks.service.persistence.InventoryPersistence" class="com.tour.portlet.tasks.service.persistence.InventoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.tour.portlet.tasks.service.SetupLocalService" class="com.tour.portlet.tasks.service.impl.SetupLocalServiceImpl" />
+	<bean id="com.tour.portlet.tasks.service.persistence.SetupPersistence" class="com.tour.portlet.tasks.service.persistence.SetupPersistenceImpl" parent="basePersistence" />
+	<bean id="com.tour.portlet.tasks.service.TaskLocalService" class="com.tour.portlet.tasks.service.impl.TaskLocalServiceImpl" />
+	<bean id="com.tour.portlet.tasks.service.persistence.TaskPersistence" class="com.tour.portlet.tasks.service.persistence.TaskPersistenceImpl" parent="basePersistence" />
+</beans>

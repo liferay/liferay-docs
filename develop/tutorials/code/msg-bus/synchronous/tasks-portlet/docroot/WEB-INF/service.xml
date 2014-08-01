@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.tour.portlet.tasks">
+	<author>nickgaskill</author>
+	<namespace>Task</namespace>
+    <entity name="Task" local-service="true" remote-service="false">
+        <column name="taskId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+    </entity>
+    <entity name="Setup" local-service="true" remote-service="false">
+        <column name="setupId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+    </entity>
+</service-builder>

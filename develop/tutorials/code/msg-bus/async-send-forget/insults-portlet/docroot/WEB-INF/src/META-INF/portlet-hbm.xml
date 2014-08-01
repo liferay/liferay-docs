@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.liferay.sample.model.Insulted" />
+	<import class="com.liferay.sample.model.InsultLog" />
+	<import class="com.liferay.sample.model.InsultWriter" />
+	<class name="com.liferay.sample.model.impl.InsultedImpl" table="SAMPLE_Insulted">
+		<cache usage="read-write" />
+		<id name="insultedId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="insult" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.liferay.sample.model.impl.InsultLogImpl" table="SAMPLE_InsultLog">
+		<cache usage="read-write" />
+		<id name="insultLogId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="insult" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rating" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.liferay.sample.model.impl.InsultWriterImpl" table="SAMPLE_InsultWriter">
+		<cache usage="read-write" />
+		<id name="insultWriterId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="insult" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rating" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>
