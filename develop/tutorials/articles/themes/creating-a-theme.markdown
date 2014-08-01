@@ -47,9 +47,9 @@ Creating a theme from the command line using Ant is simple too.
 
 ## Creating a Theme Project from the Command Line
 
-From your command line terminal, navigate to your Plugins SDK's `themes` folder.
-To create a theme project you must execute the *create* script. Here's the
-format to follow in executing the script: 
+From your terminal window, navigate to your Plugins SDK's `themes` folder. To
+create a theme project, you must execute the *create* script. Here's the format
+to follow in executing the script: 
 
     create.[sh|bat] [project-name] "[Theme Display Name]"
 
@@ -57,7 +57,7 @@ On Linux and Mac OS X, you'd enter a command similar to the one in this example:
 
         ./create.sh my-theme "My Theme"
 
-On WindowsX, you'd enter a command similar to the one in this example:
+On Windows, you'd enter a command similar to the one in this example:
 
         create.bat my-theme "My Theme"
 
@@ -68,10 +68,10 @@ automatically appends "-theme" to your project name. Right now your theme is
 empty. Custom themes are created by layering your customizations on top of one
 of Liferay's built-in themes. In tutorials that follow, you'll
 learn how to populate your theme with your very own stylish look and feel. For
-now, take a look around your theme project. 
+now, examine your theme project. 
 
-The structure of a theme separates different types of resources into easily
-accessible folders. Here's the full structure of a theme project:
+The structure of a theme separates different types of resources into folders.
+Here's the full structure of a theme project:
 
 - `[theme-project-name]/`
     - `docroot/`
@@ -109,7 +109,7 @@ accessible folders. Here's the full structure of a theme project:
         - `WEB-INF/`
         	- `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
-            
+ 
 The `_diffs` folder that's created inside the `docroot` folder of your theme
 is important; this is where you place your theme's code. The `_diffs` folder
 must mirror the parent theme's directory structure. Since you'll only customize
@@ -120,10 +120,10 @@ The other folders inside `docroot` are copied over from the parent theme in
 your Liferay bundle when you
 [deploy](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
 your theme. Use these files as the basis for your modifications. For example, to
-customize the navigation, copy your `navigation.[vm|ftl]` file from
-`docroot/templates/navigation.[vm|ftl]` into the `docroot/_diffs/templates` folder
-(you may have to create this folder first). You can then open this file and
-customize it to your liking. 
+customize the navigation markup, copy the `navigation.[vm|ftl]` file from
+`docroot/templates/navigation.[vm|ftl]` into the `docroot/_diffs/templates`
+folder (you may have to create this folder first). You can then open this file
+from the `_diffs` folder and customize it to your liking. 
 
 For custom styles, create a folder named `css` inside your `_diffs` folder and
 place a single file there called `custom.css`. This is where you'll define all
