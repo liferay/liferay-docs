@@ -78,7 +78,7 @@ add support for translations to your portlet.
     language key for the current locale and render it for the user.
 
     For example JSP code that references language keys, see
-    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 3. Build the language keys, by either right-clicking on the
    `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in
