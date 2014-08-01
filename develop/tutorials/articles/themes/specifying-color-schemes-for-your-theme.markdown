@@ -1,12 +1,11 @@
 # Specifying Color Schemes [](id=specifying-color-schemes)
 
-One way to stretch the life of your theme is to create various color schemes for
-it. Color schemes allow you to keep the styles and overall design for your
-theme, while at the same time giving a new look for your users to enjoy. You
-specify color schemes with a CSS class name, which of course also lets you
-choose different background images, different border colors, and more. Take a
-look at how you can define your color schemes next.
-
+You can provide various "flavors" of your theme by creating color schemes for
+it. Color schemes let you keep the styles and overall design for your theme,
+while at the same time giving a new look for your users to enjoy. You specify
+color schemes with a CSS class name, which of course also lets you choose
+different background images, different border colors, and more.
+ 
 ![Figure 1: Liferay's Classic theme offers three color schemes. You too can offer eye-pleasing color schemes for your themes.](../../images/classic-theme-color-schemes.png)
 
 The example below shows defines a *Day* color scheme and a *Night* color scheme.
@@ -27,7 +26,7 @@ Here's the code as specified in the plugin's `liferay-look-and-feel.xml` file:
 In your theme's `_diffs/css` folder, you can create a `color_schemes` folder and
 place a `.css` file in it for each color scheme your theme supports. If you
 don't specify a `.css` file for a color scheme, the theme's default color scheme
-from it's styling is used. 
+is used. 
 
 To make the color schemes of the `.css` files available, import them into your
 `docroot/css/custom.css` file. The example's `day.css` and `night.css` files
@@ -37,8 +36,8 @@ could be specified in the `custom.css` file using these statements:
     @import url(color_schemes/night.css);
 
 The color scheme CSS class is placed on the page's `<body>` element, so you can
-use it to identify your styling. It's conventional to prefix all of your CSS
-styles. For example, the developer would prefix all of the styles with the word
+use it to identify your styling. It's conventional to prefix all your CSS
+styles. For example, the developer would prefix all the styles with the word
 *day* in a color scheme CSS file named `day.css`: 
 
     body.day { background-color: #ddf; }
