@@ -1,8 +1,8 @@
 # Setting a Base Theme [](id=setting-a-base-theme)
 
-All themes in Liferay are built on top of two base themes, named *_unstyled* and
-*_styled*. You can take advantage of an *existing* theme's styling by setting
-the theme of your choice as the base for your theme. 
+Liferay's themes are built on top of two base themes, named *_unstyled* and
+*_styled*. If you have another theme that you're rather base yours on, you can
+do that by setting the theme of your choice as the base for your theme. 
 
 Base themes are added in layers. First *_unstyled* is added, giving you the core
 of the theme, then *_styled*, providing the most basic elements. When you set a
@@ -14,7 +14,7 @@ In addition to the *_styled* theme, you can choose to inherit from the
 *_unstyled* theme, which contains no styling. This makes more work for you, but
 offers full flexibility to design your CSS files from scratch. 
 
-You can also use the default Liferay theme **Classic** as a parent theme. You'll
+You can also use the default Liferay theme *Classic* as a parent theme. You'll
 start with a look and feel that's already smooth and works well. But since so
 much is already done for you, there's less flexibility when building your
 design. It's a compromise between creating a theme as quickly as possible versus
