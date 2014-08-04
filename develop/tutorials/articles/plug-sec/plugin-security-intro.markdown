@@ -98,7 +98,7 @@ It's very easy to activate the security manager. Set the following
 
 Great! Now you know the basics of how Liferay plugin security works.
 
-## Next Steps
+## Related Topics
 
 [Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
 
