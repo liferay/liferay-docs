@@ -1,49 +1,71 @@
-### Develop Your Plugin [](id=develop-your-plugin-for-security-liferay-portal-6-2-dev-guide-en)
+# Building and Testing Your Plugin's PACL
 
-Start creating your plugin the way you normally would. Design your application,
-write code, unit test your code, and have users beta test your app. In essence,
-do everything you would normally do. Do all of this with the Plugin Security
+Liferay's Plugin Security Manager requires that a plugin specify in advance the 
+portal resources that it intends to access. If a plugin tries to access 
+something it hasn't told the Security Manager about, the Security Manager puts a 
+stop to it. A plugin's Portal Access Control List (PACL) is its way of telling 
+the Security Manager what it intends to access. 
+
+This tutorial shows you how to build and test your plugin's PACL through the 
+following steps:
+
+- Develop Your Plugin
+- Build Your Plugin's PACL
+- Test Your Plugin with the Security Manager Enabled
+- Using a Java Security Policy File
+- Convert PACL Absolute File Paths into Relative Paths
+- Portal Access Control List (PACL) Properties
+
+Now go ahead and get started--you don't want to run afoul of the Security 
+Manager!
+
+## Develop Your Plugin 
+
+Start by creating your plugin the way you normally do. Design your application,
+write the code, unit test your code, and have users beta test your app. In 
+essence, do everything you normally do. Do all of this with the Plugin Security
 Manager disabled via your plugin's `liferay-plugin-package.properties` file:
 
     security-manager-enabled=false
 
 Before the Plugin Security Manager is enabled, you must specify the resources
-your plugin accesses. Let's build a list of these resources in your plugin's
-PACL. 
+your plugin accesses. You do this by building a list of these resources in your 
+plugin's PACL. 
 
-### Build Your Plugin's PACL [](id=build-your-plugins-pacl-liferay-portal-6-2-dev-guide-11-en)
+## Build Your Plugin's PACL 
 
-Rather than tediously figuring out all of the resources your plugin accesses, on
-your own, let Liferay's PACL Policy Generation tool to give you a head start.
-The generation tool detects resources your plugin accesses and writes
+Rather than tediously figuring out all of the resources your plugin accesses on
+your own, let Liferay's PACL Policy Generation tool to give you a head start!
+The generation tool detects the resources your plugin accesses and writes the 
 corresponding PACL properties to a policy file. You can then merge the PACL
-properties from this policy file into your plugin's
+properties from this policy file into your plugin's 
 `liferay-plugin-package.properties` file. 
+<!-- Change the link in step 1 to the dev site user guide once it's back up. -->
 
-Here's how you generate a PACL policy for your plugin: 
+Here's how to generate a PACL policy for your plugin: 
 
 1.  Make sure your Liferay Portal instance has `liferay` set as its security
     manager strategy value and that the security manager was activated during
     application server startup. 
-
-    In your `portal-ext.properties` file, make sure Liferay Portal's security
-    manager strategy is specified as follows: 
+    
+    To set your portal's security manager strategy value to `liferay`, simply 
+    specify the following in your `portal-ext.properties` file:
 
         portal.security.manager.strategy=liferay
 
-    Your app server may require that certain startup arguments be used for
+    Your app server may require certain startup arguments to be used for
     activiting the security manager. Check the PACL and security manager
     instructions for your app server in the [Installation and
     Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
     chapter of *Using Liferay Portal 6.2*. Some app servers, like Tomcat, output
-    a terminal message, like "Using Security Manager", indicating that it's
+    a terminal message like "Using Security Manager", indicating that it's
     using the security manager. 
 
     Unless you already started Liferay with the security manager enabled and
     activated as described above, you must restart Liferay with these settings. 
 
 2.  Enable the security manager to generate a security policy for your plugin by
-    setting the following property in your plugin's
+    setting the following property in your plugin's 
     `liferay-plugin-package.properties` file: 
 
         security-manager-enabled=generate
@@ -55,14 +77,14 @@ Here's how you generate a PACL policy for your plugin:
 
         [liferay.home]/pacl-policy/[servletContextName].policy
 
-    On deploying your plugin and as you exercise your plugin's features, Liferay
-    Portal's security manager performs security checks on your plugin; but
-    rather than throwing errors on failed checks, the generator tool writes
-    suggested rules that specify access to the resources your plugin accesses. 
+    Liferay Portal's Security Manager performs security checks on your plugin at 
+    deployment time and as you exercise your plugin's features. Rather than 
+    throwing errors on failed checks, the generator tool writes suggested rules 
+    that specify access to the resources your plugin accesses. 
 
     Unless you've turned off logging for the generator tool, messages like the
     ones below are logged, reporting the various authorization properties that
-    the tool generated
+    the tool generated:
 
         DEBUG [localhost-startStop-2][GeneratingPACLPolicy:230] my-pacl-portlet
         generated authorization property {key=security-manager-properties-read,
@@ -88,7 +110,7 @@ Here's how you generate a PACL policy for your plugin:
  generation one more time and restart Liferay. This gives the security manager
  another opportunity to detect additional properties to satisfy your security
  policy. If you are still seeing security violations on deployment, you'll need
- to address them per instructions that follow in this chapter. Here are the
+ to address them per instructions that follow in this tutorial. Here are the
  work-around steps: Remove the previously generated
  `[servletContextName].policy` file, set `security-manager-enabled=generate` in
  your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
@@ -98,46 +120,47 @@ Here's how you generate a PACL policy for your plugin:
  
 ----
 
-Now that you've thoroughly specified the resources your plugin accesses, let's
+Now that you've thoroughly specified the resources your plugin accesses, you can 
 enable the security manager and do final testing of your PACL properties. 
 
-### Test the Plugin with the Security Manager Enabled [](id=test-the-plugin-with-security-manager-liferay-portal-6-2-dev-guide-en)
+## Test Your Plugin with the Security Manager Enabled 
 
-If you want to distribute plugins, either through the Liferay Marketplace or
-through your web site, you have to assume potential users will insist the
-Security Manager be enabled in your plugin. For this reason, you should enable
-it when testing your plugins. 
+If you want to distribute plugins, either through the Liferay Marketplace or 
+your web site, you have to assume potential users will insist that the Security 
+Manager be enabled in your plugin. For this reason, you should enable it when 
+testing your plugins. 
 
-To enable the Security Manger set the following
+To enable the Security Manger set the following 
 `liferay-plugin-package.properties` property to true: 
 
     security-manager-enabled=true
 
-Then, re-deploy your plugin and re-test it's functionality. The Security Manager
-throws Java security exceptions, if your plugin accesses resources that are not
+Then re-deploy your plugin and re-test its functionality. The Security Manager 
+throws Java security exceptions if your plugin accesses resources that are not
 specified in your plugin's security policy. As you test, keep track of these
-Java security exceptions, so you can authorize access to the respective
-resources in the PACL properties of your `liferay-plugin-package.properties`
-file. Save your changes to the file, re-deploy the plugin, and re-test. Make
-sure everything works. If not, there are more rules you must declare for your
-plugin. Refer to the online definition of the Portal Access Control List
-Properties for the `liferay-plugin-package.properties` file at 
-[http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-and in the PACL properties section of this chapter for additional details. 
+Java security exceptions so you can authorize access to the respective resources 
+in the PACL properties of your `liferay-plugin-package.properties` file. Save 
+your changes to the file, re-deploy the plugin, and re-test. Make sure 
+everything works. If it doesn't, there are more rules you must declare for your 
+plugin. For additional details, refer to the online definition of the Portal 
+Access Control List Properties for the `liferay-plugin-package.properties` file 
+at [http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html),
+and in the PACL properties section at the end of this tutorial. 
 
-If you are not finding an adequate way to specify a security rule with PACL, you
+If you're not finding an adequate way to specify a security rule with PACL, you
 can specify it in a Java Security Policy file. It's almost impossible for
 Liferay and PACL to be aware of every possible security implementation check,
 because developers, libraries, and the Java Security API can always call for new
-types of security checks. So, Liferay provides a fallback to PACL, that lets you
-specify operations permissible within the context of your app's plugins. 
+types of security checks. Therefore, Liferay provides a fallback to PACL. This 
+lets you specify operations permissible within the context of your app's 
+plugins. 
 
-In case you need it for your plugin, let's get familiar with the Java Security
-Policy file. 
+In case you need it for your plugin, go ahead and get familiar with the Java 
+Security Policy file. 
 
-### Using a Java Security Policy File [](id=using-a-java-security-policy-file-liferay-portal-6-2-dev-guide-11-en)
+## Using a Java Security Policy File 
 
-If you cannot find a way to specify PACL permissions for an operation that your
+If you can't find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
 file. You can create the policy file (`java.policy`) in your plugin's `WEB-INF`
 folder. The policy file must follow Policy File syntax as described in detail at
@@ -154,7 +177,7 @@ Here's a scenario that calls for using a Java Security Policy:
 
 Java has a security implementation called
 [http://docs.oracle.com/javase/7/docs/api/java/net/NetPermission.html](java.net.NetPermission).
-It checks a whole bunch of networking operations, that Liferay's implementation
+It checks a whole bunch of networking operations that Liferay's implementation
 doesn't check. In case you want to perform one of these operations, like using a
 custom Stream Handler, you can grant your plugin permission to do so in its
 `WEB-INF/java.policy` Java Security Policy file. Here's one way to specify that
@@ -166,7 +189,7 @@ rule:
 
 This `grant` entry defines permission for the plugin's code to access the
 `specifyStreamHandler` target operation of the `java.net.NetPermission` class.
-The `codebase` value, in this example, specifies the following:
+The `codeBase` value, in this example, specifies the following:
 
 - `file:` indicates the code resides on the server's file system. 
 - `${my-supercool-portlet}` represents the context path of a plugin named "My
@@ -177,10 +200,10 @@ The `codebase` value, in this example, specifies the following:
 - `-` matches files and folders, in this folder and below. 
 
 On reading this plugin's `.jar` file, the JVM creates a codebase for it. The
-codebase uses properties that Liferay sets for the plugin that say, in effect,
+codebase uses properties that Liferay sets for the plugin that in effect say,
 "If a file originates within the plugin, then this plugin can perform the
-`specifyStreamHandler` operation on it". The codebase narrows the scope for the
-permission. This plugin is permitted to perform the definited operation,
+`specifyStreamHandler` operation on it." The codebase narrows the scope for the
+permission. This plugin is permitted to perform the defined operation 
 `specifyStreamHandler`, as long as it is done within the scope the plugin. 
 
 How do you add more permissions to a codebase? Just define them on separate
@@ -191,45 +214,44 @@ lines in the grant entry:
         permission java.net.NetPermission "specifyStreamHandler";
     };
 
-In this example, we've granted the plugin permission to invoke native code
-that's in some library (`test_b.so`). This is another type of operation which
-Liferay's PACL does not support. So, it makes sense to specify permission for it
-in the Java Security Policy file. 
+In this example, the plugin is granted permission to invoke native code that's 
+in some library (`test_b.so`). This is another type of operation that Liferay's 
+PACL does not support. Therefore, it makes sense to specify permission for it in 
+the Java Security Policy file. 
 
 With Liferay's PACL policy and Java Security Policy files, you can precisely
-specify all of the resources your plugin needs to access! Next, let's revisit
-the file path values that the PACL Policy Generation Tool wrote to your
+specify all of the resources your plugin needs to access! Now it's time to 
+revisit the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-### Convert PACL Absolute File Paths into Relative Paths [](id=convert-pacl-file-paths-to-relative-paths-liferay-portal-6-2-dev-guide-en)
+## Convert PACL Absolute File Paths into Relative Paths 
 
-As mentioned earlier in this chapter, we recommend using the PACL generation
-tool to give you a head start on specifying your plugin's security rules. But
-The generator is only aware of file paths with respect to the current system,
-and therefore generates them as absolute file paths. In order to use your
-security policy in production, it must use only relative file paths. So, as a
-final step after testing the generated PACL, you must massage the generated file
-paths into appropriate relative file paths. For example, you can specify paths
-relative to your Liferay web portal directory:
+As mentioned earlier in this tutorial, using the PACL generation tool to give 
+you a head start on specifying your plugin's security rules is recommended. 
+However, the generator is only aware of file paths with respect to the current 
+system. The generated file paths are therefore absolute. To use your security 
+policy in production, it must use only relative file paths. As a final step 
+after testing the generated PACL, you must massage the generated file paths into 
+the appropriate relative file paths. For example, you can specify paths relative 
+to your Liferay web portal directory:
 
     security-manager-files-read=\
         ${liferay.web.portal.dir}/WEB-INF/tld/-,\
         ${liferay.web.portal.dir}/html/themes/-
 
-In this example, we used a dash (`-`) character at the end of the paths. We use
-this as a wildcard character. Oracle defines wildcards for for use with Java
-Security, and Liferay provides some too. Let's consider some helpful wildcards
-you can use in PACL properties and Java Security policies. 
+This example uses a dash (`-`) character at the end of the paths. It's used as 
+a wildcard character. Oracle defines wildcards for for use with Java Security, 
+and Liferay provides some too. You can leverage the following wildcard 
+characters for files and file paths:
 
-For files and file paths, you can leverage the following wildcard characters:
+- Dash (`-`) matches everything in the current directory and below, like you 
+  might expect with the normal GLOB operation in UNIX. The current directory 
+  isn't included in the match.
+- Star (`*`) matches every file (*not* directory) in the current directory. The
+  current directory and subdirectories are excluded from the match.
 
-- Dash (`-`) matches everything in the current folder and below, like you might
-  expect with the normal GLOB operation in UNIX. The current folder isn't
-  included in the match.
-- Star (`*`) matches every file (*not* folder) in the current folder. The
-  current folder and subfolders are excluded from the match.
-
-Let's say you want to match all of your theme files and folders, specify ...
+For example, if you want to match all of your theme files and directories, 
+specify...
 
 this:
 
@@ -242,7 +264,7 @@ NOT this:
         ${liferay.web.portal.dir}/html/themes/*
 
 The star means "every file in this single directory." The dash, however, matches
-everything in this folder and below. 
+everything in this directory and below. 
 
 One more note. This: 
 
@@ -252,10 +274,10 @@ does not include this:
 
     ${liferay.web.portal.dir}/html/themes
 
-The dash lets you read the *contents* of the folder, but not the folder itself.
-Also, when defining the folder, do not include a trailing slash, otherwise
-the folder itself will not be included. Below, we specify the `themes` folder
-and all of the contents under it: 
+The dash lets you read the *contents* of the directory, but not the directory 
+itself. Also, when defining the directory don't include a trailing 
+slash--otherwise the directory itself won't be included. For example, this 
+specifies the `themes` directory and all its contents: 
 
     security-manager-files-read=\
         ${liferay.web.portal.dir}/html/themes,\
@@ -263,7 +285,7 @@ and all of the contents under it:
 
 For file path separators, you can use the `${/}` alias.
 
-Example,
+For example:
 
     grant codeBase "file:${my-supercool-portlet}${/}-" {
         permission java.net.NetPermission "specifyStreamHandler";
@@ -272,18 +294,17 @@ Example,
 Congratulations! You now know how to specify your policy's file paths
 appropriately for deployment on any server. Once you've completed testing your
 plugin without getting any Java security exceptions, you can distribute it as an
-app on Liferay Marketplace. You can do so with confidence, because you've
+app on Liferay Marketplace. You can do so with confidence because you've
 specified all of the resources it uses in the application's PACL, and possibly
-its Java Security Policy, and your application satisfies Liferay Portal's
+its Java Security Policy. Therefore, your application satisfies Liferay Portal's
 Security Manager. 
 
-The sections that follow demonstrated how to enable the Security Manager (which
-you've already done) and provide descriptions for each type of PACL property. 
+Next, some additional details regarding PACL properties are discussed.
 
-## Portal Access Control List (PACL) Properties [](id=portal-access-control-list-pacl-properties-liferay-portal-6-2-dev-guide-en)
+## Portal Access Control List (PACL) Properties 
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
-attempts against the security manager properties specified in your plugin's
+attempts against the Security Manager properties specified in your plugin's
 `liferay-plugin-package.properties` file. If your plugin tries to access a
 portal resource that is not specified in these properties, the Plugin Security
 Manager prevents it from happening. Consider this a virtual finger waggin'. To
@@ -296,46 +317,61 @@ If you have the Liferay Portal source code, you can find the
 `liferay-plugin-package_6_2_0.properties` file in the
 `liferay-portal/definitions` folder. 
 
-Some of the properties accept wildcard characters that have special meaning.
-Let's investigate the wildcard characters you can use in your plugin's file
-security properties. 
+Some of the properties accept wildcard characters that have special meaning. The 
+following properties address file deletion, execution, reading, writing, and
+replacement operations.
 
-The following properties address file deletion, execution, reading, writing and
-replacement operations. The `*` character in a path name indicates all files in
-the current directory. The `-` character in a path name indicates all files in
-the current directory and in its subdirectories.
+- The `*` character in a path name indicates all files in the current directory.
+- The `-` character in a path name indicates all files in the current directory 
+  and in its subdirectories.
 
 Here's an example that uses the `-` character to specify that the plugin is
 permitted to delete files in the
 `../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp` directory and its
-subdirectories. 
+subdirectories:
 
     security-manager-files-delete=\
         ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
 
-Note, you can use a relative paths in the file security
-properties. 
+Note that you can use a relative paths in the file security properties. 
 
-You can use a mix of UNIX/Linux style paths and Windows style paths as
-demonstrated in the example below: 
+You can also use a mix of UNIX/Linux and Windows style paths, as demonstrated 
+here: 
 
     security-manager-files-execute=\
         /bin/bash,\
         C:\\WINDOWS\\system32\\ping.exe
 
-And the following example uses the `*` character to specify that the plugin is
-reads files in the `../webapps/chat-portlet/images` and
-`../webapps/chat-portlet/WEB-INF/*` directories, but not their subdirectories:
+The following example uses the `*` character to specify that the plugin reads 
+files in the `../webapps/chat-portlet/images` and
+`../webapps/chat-portlet/WEB-INF/*` directories, but not in their 
+subdirectories:
 
     security-manager-files-write=\
         ../webapps/chat-portlet/images/*,\
         ../webapps/chat-portlet/WEB-INF/*,\
         ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
-For socket security properties the `*` character represents any hostname. For
+For socket security properties, the `*` character represents any hostname. For
 example, `*.liferay.com` matches any host ending in `.liferay.com`, such as
-`docs.liferay.com` and `issues.liferay.com`. And `*:*` matches every socket and
-every port. 
+`docs.liferay.com` and `issues.liferay.com`. In addition, `*:*` matches every 
+socket and every port. 
 
 <!-- TODO insert section(s) explaining security with respect to core development
 -->
+
+Awesome! Now you know how to build and test your plugin's PACL. You also know 
+how to use a Java Security Policy file in cases where the PACL just isn't 
+cutting it. Armed with this knowledge, you can confidently build, test, and 
+deploy plugins that don't end up on the wrong side of Liferay's Plugin Security 
+Manager.
+
+## Related Topics
+
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+
+[Liferay Faces](/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
