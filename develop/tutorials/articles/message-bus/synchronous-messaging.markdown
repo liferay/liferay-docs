@@ -85,9 +85,12 @@ The sender takes the following steps:
 4. Sends the message to the destination with a timeout value of 10,000
    milliseconds. This is how long the sender blocks for while waiting for a 
    response. If no response is received, then a `MessageBusException` is thrown.
-   
-        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
-    	    "tour/roadie/setup", message, 10000);
+
+    try {
+        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage("tour/roadie/setup", message, 10000);
+    } catch (MessageBusException e) {
+	e.printStackTrace();
+	}
 
 Also be sure to add the following imports to your message sender file: 
 
