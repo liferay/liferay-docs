@@ -73,3 +73,25 @@ accordingly.
 
 3. Click *Finish*. 
 
+Awesome! You just created a JSF portlet! However, the current JSF portlet is
+very bare bones and needs some further development so it can serve a purpose.
+Just for kicks, deploy the JSF portlet to your Liferay Portal instance to see
+what it looks like.
+
+To deploy this portlet, simply drag the project from the Package Explorer onto
+your Liferay server. 
+
+![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
+
+You can now view the bare bones JSF guestbook by clicking the *Add* button (plus
+sign) and choosing *Applications*. Then, from the Sample category drag the JSF
+Guestbook onto the page. The portlet only has a default message, which comes
+by default when creating a Liferay portlet through IDE/Developer Studio.
+
+![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
+
+Remember reading briefly about how the Liferay Faces Bridge is used to keep JSF
+portlets compatible with Liferay Portal? You'll dive into the bridge and its
+usage next.
+
+## Using the Liferay Faces Bridge
