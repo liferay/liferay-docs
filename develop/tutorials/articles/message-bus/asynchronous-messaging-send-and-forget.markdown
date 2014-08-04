@@ -199,6 +199,6 @@ and insulted portlets now show each insult.
 Great! Now you know how to use Message Bus to send asynchronous send and forget 
 messages. 
 
-## Next Steps 
+## Related Topics
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)

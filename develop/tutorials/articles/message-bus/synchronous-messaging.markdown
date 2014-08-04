@@ -247,7 +247,7 @@ manager.
 
 Congratulations! You've successfully made your first trip on the Message Bus! 
 
-## Next Steps 
+## Related Topics 
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
 
