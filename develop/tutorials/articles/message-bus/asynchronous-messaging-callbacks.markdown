@@ -240,7 +240,7 @@ now shows replies from the Setup and Inventory portlets.
 Great! Now you know how to use Message Bus to send asynchronous messages with 
 call-backs. 
 
-## Next Steps 
+## Related Topics
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
 
