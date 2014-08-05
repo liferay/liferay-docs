@@ -27,10 +27,6 @@ Note: Links to sample code referenced throughout will need to be changed once it
 gets merged into master.
 -->
 
-<!-- 
-QA: Contact Nick to get the starting portlet project.
--->
-
 ## Deciding on Destination Keys 
 
 You first need to figure out what your destination keys will be. Destination 
@@ -249,11 +245,10 @@ Congratulations! You've successfully made your first trip on the Message Bus!
 
 ## Related Topics 
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
 
-<!--
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
 
-[Asynchronous Messaging with Callbacks](http://www.liferay.com/)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Asynchronous Send and Forget Messaging](http://www.liferay.com/)
--->
+[Developing with Maven](/tutorials/-/knowledge_base/maven)

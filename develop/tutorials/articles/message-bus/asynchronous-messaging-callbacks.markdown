@@ -242,5 +242,10 @@ call-backs.
 
 ## Related Topics
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
 
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+
+[Developing with Maven](/tutorials/-/knowledge_base/maven)
