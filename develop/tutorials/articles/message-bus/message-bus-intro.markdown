@@ -20,16 +20,12 @@ dispatching, and Java and JSON style messages formats.
 Before you get into those topics, you should first learn about the Message Bus 
 System's architecture. 
 
-## Next Steps 
+## Related Topics
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
 
-<!--
-[Liferay's Message Bus System](http://www.liferay.com/)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
 
-[Synchronous Messaging](http://www.liferay.com/)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Asynchronous Messaging with Callbacks](http://www.liferay.com/)
-
-[Asynchronous Send and Forget Messaging](http://www.liferay.com/)
--->
+[Developing with Maven](/tutorials/-/knowledge_base/maven)

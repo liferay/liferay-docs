@@ -65,14 +65,12 @@ deserialized in JSON. Both types of message classes are used in the following
 tutorials to show you how to implement both synchronous and asynchronous 
 messaging. 
 
-## Next Steps 
+## Related Topics
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
 
-<!--
-[Synchronous Messaging](http://www.liferay.com/)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
 
-[Asynchronous Messaging with Callbacks](http://www.liferay.com/)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Asynchronous Send and Forget Messaging](http://www.liferay.com/)
--->
+[Developing with Maven](/tutorials/-/knowledge_base/maven)
