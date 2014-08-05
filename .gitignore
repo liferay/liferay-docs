@@ -15,13 +15,11 @@ properties/
 /*.patch
 /build.*.properties
 
-**/build/**
-**/classes/**
-**/dist/**
+build/
+classes/
+dist/
 **nbproject**
-**/.ivy/*
-**/.sass-cache/**
-**/.DS_Store/*
+.ivy/
+.sass-cache/
+.DS_Store/
 *#
-/bin
-/classes/
