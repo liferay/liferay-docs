@@ -1136,7 +1136,7 @@ languages. You can achieve this by following these steps:
 
 3. Deploy your plugin.
 
-    Check the your plugin's `css/.sass-cache` folder to see that the generated
+    Check your plugin's `css/.sass-cache` folder to see that the generated
     `_rtl.css` file in this folder not only contains the automatically generated
     CSS from the original file, but also contains your custom CSS code at the
     end. 
