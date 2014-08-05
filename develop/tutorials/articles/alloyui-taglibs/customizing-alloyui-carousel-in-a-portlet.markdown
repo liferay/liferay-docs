@@ -1,15 +1,15 @@
 # Customizing the AUI-Carousel
 
-AlloyUI's carousel module has a lot to offer as is, but you can take it
-to the next level by customizing it and making it your own. If you need to learn 
-how to setup the basic `aui-carousel` please refer to the tutorial
+AlloyUI's carousel module has a lot to offer as is, but you can take it to the
+next level by customizing it and making it your own. If you need to learn how to
+setup the basic `aui-carousel` please refer to the tutorial
 [Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet).
-In this tutorial you'll learn how to modify 
-the UI of the standard `aui-carousel` module in a portlet.
+In this tutorial you'll learn how to modify the UI of the standard
+`aui-carousel` module in a portlet.
 
-It's time to go back, back to the carousel! Where you're going you don't
-need code; on the other hand yes, yes you do. Don't worry, there won't be many
-more puns to put up with.
+It's time to go back, back to the carousel! Where you're going you don't need
+code; on the other hand yes, yes you do. Don't worry, there won't be many more
+puns to put up with.
 
 There are a few key steps to follow as you customize your carousel:
 
@@ -17,17 +17,17 @@ There are a few key steps to follow as you customize your carousel:
 2.  Configure the carousel's attributes.
 3.  Style the carousel from the `main.css` file.
 
-Now that you know what lies ahead in this tutorial, it's time to get the ball rolling and kick this baby up
-to 88 mph (141 kph)! 
+Now that you know what lies ahead in this tutorial, it's time to get the ball
+rolling and kick this baby up to 88 mph (141 kph)! 
 
 ## Step 1: Assign an ID to the Carousel and Its Images
 
-First, you must add an ID value for the carousel's `<div>` element and each of its
-images. This was demonstrated in the tutorial
+First, you must add an ID value for the carousel's `<div>` element and each of
+its images. This was demonstrated in the tutorial
 [Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet), 
 
-For exmaple, if your carousel has four images, you might specify your carousel and its images in your
-JSP using `<div>` elements like these:
+For exmaple, if your carousel has four images, you might specify your carousel
+and its images in your JSP using `<div>` elements like these:
 
     <div id="myCarousel">
       <div id="image1"></div>
@@ -41,8 +41,9 @@ configuring and styling.
 
 ## Step 2: Configure the Carousel
 
-In addition to identifying your carousel and its images, you can configure the carousel's attributes.
-The following example JSP code configures a carousel named `myCarousel`:
+In addition to identifying your carousel and its images, you can configure the
+carousel's attributes. The following example JSP code configures a carousel
+named `myCarousel`:
 
     <aui:script>
     AUI().use(
@@ -64,19 +65,19 @@ The following example JSP code configures a carousel named `myCarousel`:
     </aui:script>
 
 There are some things worth pointing out about the above example carousel code.
-The `myCarousel` `<div>` is the carousel widget's bounding box used for positioning it. The carousel is set to display each image for two seconds.
-The transition between images is set to last 
-one second.  
-Setting the `activeIndex` to zero displays the first image listed in the 
-`myCarousel` `<div>` when the carousel starts. 
+The `myCarousel` `<div>` is the carousel widget's bounding box used for
+positioning it. The carousel is set to display each image for two seconds. The
+transition between images is set to last one second. Setting the `activeIndex`
+to zero displays the first image listed in the `myCarousel` `<div>` when the
+carousel starts. 
 
 ---
 
-![Note](../../images/tip.png) **Note:** This is only a subset of the
-carousel's modifiable attributes. If you choose not to set values 
-for these attributes, default values are used. For a full list of the carousel's attributes and 
-their defaults, as well as further documentation on it, please 
-visit <http://alloyui.com/api/classes/A.Carousel.html>.
+![Note](../../images/tip.png) **Note:** This is only a subset of the carousel's
+modifiable attributes. If you choose not to set values for these attributes,
+default values are used. For a full list of the carousel's attributes and their
+defaults, as well as further documentation on it, please visit
+<http://alloyui.com/api/classes/A.Carousel.html>.
 
 ---
  
@@ -85,11 +86,12 @@ style it.
 
 ## Step 3: Style the Carousel's UI from the main.css File
 
-The carousel's UI has a lot of moving parts that you can style. First, to keep things
-organized, you may want to customize your carousel's body and images. Then, you may want to style its menu 
-controls, its active and inactive index indicators, and its menu bar and its
-list of controls. You'll learn how to style all of these things. The figure below identifies different carousel elements that you can
-manipulate with CSS. 
+The carousel's UI has a lot of moving parts that you can style. First, to keep
+things organized, you may want to customize your carousel's body and images.
+Then, you may want to style its menu controls, its active and inactive index
+indicators, and its menu bar and its list of controls. You'll learn how to style
+all of these things. The figure below identifies different carousel elements
+that you can manipulate with CSS. 
 
 ![Figure 1: Here are the carousel's key elements that you can style.](../../images/alloyui-carousel-css-map.png)
 
@@ -98,9 +100,9 @@ carousel's body and images.
 
 ### Styling the Carousel's Body and Images
 
-You can specify your carousel's style in the `main.css` file in your portlet's `/docroot/css/` folder. 
-The example CSS code below is for styling a carousel's body and 
-images:
+You can specify your carousel's style in the `main.css` file in your portlet's
+`/docroot/css/` folder. The example CSS code below is for styling a carousel's
+body and images:
 
     /* styling for the carousel body */
     div.carousel-item {
@@ -135,23 +137,22 @@ images:
     }
 
 The code starts off by setting the width and height for the carousel body and
-then rounds the carousel's edges, with the `border-radius` property. Next, the carousel is 
-centered in the middle of the portlet by setting the `margin` property of the 
-`boundingBox` element (`mycarousel` in this case) to `auto` for the horizontal
-margins. The top margin is set to `0`, while the bottom margin is set to 
-`40px`, to leave room for the menu's controls. 
-Finally, each
-image is given a `background-image` property that points to its 
-respective URL.
+then rounds the carousel's edges, with the `border-radius` property. Next, the
+carousel is centered in the middle of the portlet by setting the `margin`
+property of the `boundingBox` element (`mycarousel` in this case) to `auto` for
+the horizontal margins. The top margin is set to `0`, while the bottom margin is
+set to `40px`, to leave room for the menu's controls. Finally, each image is
+given a `background-image` property that points to its respective URL.
 
-Now that you've styled your carousel's body and images,
-it's time to make its menu controls shine!
+Now that you've styled your carousel's body and images, it's time to make its
+menu controls shine!
 
 ### Styling the Carousel's Menu Controls
 
-Each menu control has an existing class that you can reference via CSS. You can identify 
-the classes for the controls by viewing the Document Object Model (DOM) tree for 
-them. To give you an idea of the tree's overall structure, below is a simplification of it:
+Each menu control has an existing class that you can reference via CSS. You can
+identify the classes for the controls by viewing the Document Object Model (DOM)
+tree for them. To give you an idea of the tree's overall structure, below is a
+simplification of it:
 
     <div id="myCarousel">
      <menu>
@@ -164,25 +165,25 @@ them. To give you an idea of the tree's overall structure, below is a simplifica
      </menu>
     </div>
 
-You can see that the carousel menu controls lie within 
-the `myCarousel` `<div>`, inside a menu tag, inside a list item tag, inside an 
-anchor tag. Your CSS code must traverse the DOM tree to select the carousel's
-elements and style them. 
+You can see that the carousel menu controls lie within the `myCarousel` `<div>`,
+inside a menu tag, inside a list item tag, inside an anchor tag. Your CSS code
+must traverse the DOM tree to select the carousel's elements and style them. 
 
 ---
 
-![Note](../../images/tip.png) **Note:** You can view the DOM tree by 
-right-clicking the carousel's *Next* menu button and inspecting its HTML code in 
+![Note](../../images/tip.png) **Note:** You can view the DOM tree by
+right-clicking the carousel's *Next* menu button and inspecting its HTML code in
 your browser.
 
 ---
 
-Once you understand the DOM tree for each element, you can go ahead and specify the styling for
-each of the menu buttons with their corresponding class. Each menu button has a
-`background` property that you can set to an image file location. Each button also has a `border-radius` property
-that lets you round its edges. If you don't want rounded edges, you can omit the 
-`border-radius` property from your styling. The `main.css` file example code
-below demonstrates styling carousel menu controls:
+Once you understand the DOM tree for each element, you can go ahead and specify
+the styling for each of the menu buttons with their corresponding class. Each
+menu button has a `background` property that you can set to an image file
+location. Each button also has a `border-radius` property that lets you round
+its edges. If you don't want rounded edges, you can omit the `border-radius`
+property from your styling. The `main.css` file example code below demonstrates
+styling carousel menu controls:
 
     /* Pause Button */
     #myCarousel menu li a.carousel-menu-item.carousel-menu-pause {
@@ -219,15 +220,14 @@ below demonstrates styling carousel menu controls:
 Make sure to place any custom background images for your menu controls in the
 folder you specify for the control's `background-image` `url`. Now that you've
 styled your carousel's menu controls, you can move onward to styling your
-carousel's active and inactive index 
-indicators!
+carousel's active and inactive index indicators!
 
 ### Styling the Carousel's Active and Inactive Index Indicators
 
-As with the menu controls, you style the carousel's active and inactive index indicators
-using existing classes. Please refer to your carousel's DOM tree to see its structure for 
-yourself. Below is example code for styling active and inactive index indicators
-in a `main.css` file:
+As with the menu controls, you style the carousel's active and inactive index
+indicators using existing classes. Please refer to your carousel's DOM tree to
+see its structure for yourself. Below is example code for styling active and
+inactive index indicators in a `main.css` file:
 
     /* active index indicator */
     #myCarousel menu li a.carousel-menu-item.carousel-menu-item.carousel-menu-index.carousel-menu-active {
@@ -245,12 +245,11 @@ in a `main.css` file:
         height:20px;
     }
 
-The indicator images are set with the `background-image` property.
-The indicators are then assigned a color with the `background-color`
-property.
+The indicator images are set with the `background-image` property. The
+indicators are then assigned a color with the `background-color` property.
 
-Now that you've taken care of the index 
-indicators, it's time to cover styling the carousel's menu bar and menu controls list.
+Now that you've taken care of the index indicators, it's time to cover styling
+the carousel's menu bar and menu controls list.
 
 ### Styling the Carousel's Menu Bar and Menu Controls List
 
@@ -276,22 +275,24 @@ controls list in the DOM tree. Below is one example from a `main.css` file:
         float: inherit;
     }
 
-The left edge of the menu bar is set 518 pixels from the carousel container's left edge. The top edge of the 
-menu bar is set 250 pixels from the container's top edge, placing it just beneath the carousel, which is 250 pixels high. 
-The menu bar's width is scaled down to 26% the size of the carousel's
-width. To finish out the CSS, the list, which holds the menu controls, is set to 
-adjust to the size and shape of the menu bar.
+The left edge of the menu bar is set 518 pixels from the carousel container's
+left edge. The top edge of the menu bar is set 250 pixels from the container's
+top edge, placing it just beneath the carousel, which is 250 pixels high. The
+menu bar's width is scaled down to 26% the size of the carousel's width. To
+finish out the CSS, the list, which holds the menu controls, is set to adjust to
+the size and shape of the menu bar.
 
-You've completed the CSS for your carousel to give it a fresh new look.
-Give yourself a pat on the back for adding some seriously awesome style to your carousel!
-When you're ready, go ahead and deploy your portlet to 
-your portal instance. If you've added the carousel to a portlet that has already been deployed, you may need to undeploy and
-redeploy the portlet in order for your changes to take full effect.
+You've completed the CSS for your carousel to give it a fresh new look. Give
+yourself a pat on the back for adding some seriously awesome style to your
+carousel! When you're ready, go ahead and deploy your portlet to your portal
+instance. If you've added the carousel to a portlet that has already been
+deployed, you may need to undeploy and redeploy the portlet in order for your
+changes to take full effect.
 
-In this tutorial, you've learned how to take the basic `aui-carousel` module and modify it to suit 
-your needs: First, you learned how to set some basic attributes to configure the 
-carousel. Then, you learned how to re-design the carousel by 
-setting the styles of the carousel's body and images. Finally, you 
+In this tutorial, you've learned how to take the basic `aui-carousel` module and
+modify it to suit your needs: First, you learned how to set some basic
+attributes to configure the carousel. Then, you learned how to re-design the
+carousel by setting the styles of the carousel's body and images. Finally, you
 styled your carousel's menu and controls to match your taste.
 
 Excelsior! You have successfully learned how to give AlloyUI's Carousel your own 
