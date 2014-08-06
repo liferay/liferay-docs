@@ -1,4 +1,4 @@
-# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets-lp-6-2-develop-tutorial)
+# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
@@ -21,8 +21,6 @@ displays what two portlets sharing the same resource bundle looks like:
 ![Figure 1: Both portlets share the same resource bundle with the same language key. Thus, both portlets display the same message.](../../images/portlet-localization-shared-bundle.png)
 
 Let's begin sharing a single resource bundle with multiple portlets! 
-
-## Sharing a Resource Bundle [](id=sharing-a-resource-bundle-lp-6-2-develop-tutorial)
 
 For this tutorial, assume that both portlets you're working with are contained
 in the same project. 
@@ -91,20 +89,14 @@ are accessible from either of the portlets.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** It's best to use the Liferay
- naming convention for the language bundle file and folder so your portlets can
- access the bundle and you can use the automatic language building capabilities
- of Liferay IDE and the Plugins SDK with the bundle. 
+![Note](../../images/tip-pen-paper.png) **Note:** It's best to use the Liferay
+naming convention for the language bundle file and folder so your portlets can
+access the bundle and you can use the automatic language building capabilities
+of Liferay IDE and the Plugins SDK with the bundle. 
 
 ---
 
 In this tutorial, you created a new language key, learned how to specify that
 language key in different languages, and shared the new language key with two
 different portlets. 
-
-## Next Steps [](id=next-steps-lp-6-2-develop-tutorial-l18n-3)
-
-[Generating Language Properties File and Automated Translations](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
-
-[Localizing Site Administration Portlets](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localizing-site-administration-portlets-lp-6-2-develop-tutorial)
 

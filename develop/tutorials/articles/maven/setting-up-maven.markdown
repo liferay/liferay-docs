@@ -1,7 +1,4 @@
-# Setting Up Maven [](id=setting-up-maven-lp-6-2-develop-tutorial)
-
-"Straight I wheeled a cushioned seat in front of computer desk once more;
-Then, upon the velvet falling, I betook to Maven installing..."
+# Setting Up Maven [](id=setting-up-maven)
 
 This tutorial explains how to install and configure Maven and Nexus. Nexus is a
 Maven repository management server. Using Nexus for Maven repository management
@@ -10,7 +7,15 @@ optionally, Nexus) in your development environment, you'll be ready to install
 the Liferay plugin artifacts which enable you to develop Liferay plugins with
 Maven. 
 
+You should be aware that one of our technical writers was recently reading Edgar
+Allen Poe's The Raven, and adapted some of his verses for our Maven
+documentation. Read all of the tutorials to follow the story of our fictional
+protagonist's cat, Lenore II, who was introduced in our introduction to Maven.
+
 ## Installing Maven
+
+"Straight I wheeled a cushioned seat in front of computer desk once more;
+Then, upon the velvet falling, I betook to Maven installing..."
 
 You can download Maven from <http://maven.apache.org/download.cgi>. Putting your
 Maven installation's `bin` directory in your system's `$PATH` facilitates
@@ -174,7 +179,3 @@ update `settings.xml` with these changes.
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll
 create!
-
-## Next Steps
-
-[Installing and Managing Liferay Maven Artifacts](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)

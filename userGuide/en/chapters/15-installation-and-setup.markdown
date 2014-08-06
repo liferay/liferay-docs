@@ -226,10 +226,10 @@ Detailed instructions can be found under [Installing Plugins Manually](https://w
 ### Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-liferay-portal-6-2-user-guide-15-en)
 
 If your application server does not support hot deploy, you can't leverage
-Liferay’s auto deploy feature. You can, however, manually deploy the
+Liferay's auto deploy feature. You can, however, manually deploy the
 plugin in two steps:
 
-1. Use Liferay’s tools to “pre-deploy” the file.
+1. Use Liferay's tools to "pre-deploy" the file.
 
 2. Then use your app server's tools to do the actual deployment.
 
@@ -339,6 +339,25 @@ your `portal-ext.properties` or `portal-setup-wizard.properties` file:
 Save the file and if Liferay is running, restart it. Your portal is now
 configured to check PACL-enabled Marketplace apps against their declared
 permissions. 
+
+Next, you'll make sure Liferay is configured properly for your network. 
+
+## Choosing IPv4 or IPv6
+
+Liferay Portal supports both the IPv4 and IPv6 address formats, though by
+default, Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll
+need to change the configuration. If you'd like more information on the basics
+of these protocols, you can check out the
+[reason](http://www.google.com/intl/en/ipv6/) for using IPv6 addresses, and its
+[technical details](http://en.wikipedia.org/wiki/IPv6).
+
+To configure your portal to validate IPv6 addresses, you must complete a few
+simple steps. First, assuming you're using the Tomcat app server for your
+portal, navigate to the `${TOMCAT_HOME}/bin/setenv.bat` file and set
+`-Djava.net.preferIPv4Stack=false` in `CATALINA_OPTS`. Then, create a
+`portal-ext.properties` file in your portal's home directory (if necessary) and
+set the `tunnel.servlet.hosts.allowed` property to the target hosts you want to
+allow (e.g., *0:0:0:0:0:0:0:1*). 
 
 Now that you understand all the prerequisites for installing Liferay Portal,
 let's go ahead and get it done! First we'll go over installing Liferay from a
@@ -2686,38 +2705,9 @@ server helps to make sure your system performs optimally.
 
 If, however, you want Liferay to share space on an application server with other
 applications, you can. In this instance, you may not want to make Liferay the
-default application in the root context of the server.
-
-There are two steps to modifying this behavior:
-
-1. Deploy Liferay in a context other than root (for example `/portal`).
-
-2. Modify the `portal-ext.properties` file to tell Liferay the context to which
-   it has been deployed.
-
-    To change the file, open it in a text editor. Place the `portal.ctx`
-    property at the top of the file:
-
-        portal.ctx=/
-
-This default setting defines Liferay Portal as the application that sits at the
-root context. If you change it to something else, say `/portal`, for example,
-you can then deploy Liferay in that context and it will live there instead of at
-the root context.
-
-A full discussion of the `portal-ext.properties` file appears in Chapter 20.
-
-**Note for WebLogic Users:** WebLogic also requires that you modify the
-`weblogic.xml` file which is included with Liferay. In this file are tags for
-the context root:
-
-    <context-root>/</context-root>
-
-Change this so it matches the path you set in your `portal-ext.properties` file.
-You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
-you deploy it. Extract the file from the `.war` file, modify it and then put it
-back in the `.war` file. Then deploy the modified Liferay `.war` file to the
-server in the proper context.
+default application in the root context of the server. If you want to install 
+Liferay in a context other than the root context, follow the instructions from 
+your app server vendor. No additional steps are necessary.
 
 Now that you have Liferay installed in the context you wish, you'll want to
 understand Liferay's releases and the process for keeping your installation up

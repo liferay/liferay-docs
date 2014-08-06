@@ -1,4 +1,4 @@
-# Using Maven From Liferay IDE [](id=using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+# Using Maven From Liferay IDE [](id=using-maven-from-liferay-ide)
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
@@ -73,7 +73,7 @@ Liferay Maven project. Note, you don't need to have an existing Liferay Maven
 project to continue. However, if you'd like to create a new Liferay Maven
 portlet project in the IDE before proceeding, you can do so by following
 instructions in the the tutorial [Creating Liferay Portlets with
-Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial).
+Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven).
 Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
@@ -99,7 +99,7 @@ project's properties. The configurator detects invalid properties and reports
 them as errors in the IDE's POM editor. There are a list of key properties that
 your project must specify in order for it to become a valid Liferay IDE project.
 The [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
 tutorial identifies these properties and explains how they are used. 
 
 You can specify these properties in either the Maven profile of the global
@@ -128,7 +128,7 @@ parent `pom.xml` overrides the user `settings.xml` file, and the user
 Note that if a *profile* is active from your user `settings.xml`, its values 
 override your properties in a POM. If you'd like to specify the properties in a
 POM, see the [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
 tutorial for more details. 
 
 Here's an example of what a Maven profile looks like inside the `settings.xml`
@@ -196,18 +196,3 @@ The figure below, shows the `pom.xml` file editor and its modes.
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
-
-## Next Steps
-
-[Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
-
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
-
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-

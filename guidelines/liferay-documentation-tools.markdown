@@ -129,21 +129,21 @@ unique URL. These IDs not only prevent documents from using the same URLs but
 they also help to preserve web content URLs despite changes to header text in
 revisions of the document.
 
-1. Edit your document's `liferay-docs/<document>/doc.properties` to specify the
-   product abbreviation, product version, and an abbreviation for your document.
-These property values help namespace the header IDs.
+1.  Edit your document's `liferay-docs/<document>/doc.properties` to specify the
+    product abbreviation, product version, and an abbreviation for your
+    document. These property values help namespace the header IDs.
 
-Example - `devGuide/doc.properties`: 
+    Example - `devGuide/doc.properties`: 
 
 
-    product.abbrev=lp
-    product.name=Liferay Portal
-    product.version=6.2
-    doc.name=Dev Guide
+        product.abbrev=lp
+        product.name=Liferay Portal
+        product.version=6.2
+        doc.name=Dev Guide
 
-2. Number the section headers of your document
+2.  Number the section headers of your document.
 
-	ant number-headers
+        ant number-headers
 
 It will fail if header IDs conflict.
 
