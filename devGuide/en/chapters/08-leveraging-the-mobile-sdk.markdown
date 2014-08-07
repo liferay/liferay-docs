@@ -46,11 +46,12 @@ apps, you can't use the plugin to customize iOS apps.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you want to use the Mobile
-SDK within an existing Android or iOS project, or you're using a different IDE,
-like *Android Studio*, you can download the latest version of the Mobile SDK and
-add it to your project library or configure it as a dependency to your project,
-using Maven or CocoaPods. For more information about this, read the
+![Note](../../images/tip.png) **Note:** If you want to use the Mobile SDK within
+an existing Android or iOS project or if you're using a different IDE, like
+*Android Studio*, you can download the latest version of the Mobile SDK and add
+it to your project library. If you want to use the Mobile SDK in a Maven or
+CocoaPods project, you can configure it as a dependency. For more information
+about these topics, read the
 [Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
 or
 [iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually)
@@ -176,10 +177,9 @@ libraries.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you 
-created your Android project using the ADT plugin for Eclipse. If you have an 
-existing Android project that wasn't created using the ADT plugin for Eclipse, 
-or your Android project uses Gradle or Maven, see the 
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you
+created your Android project using the ADT plugin for Eclipse. If you didn't
+create the project using the ADT plugin or if it uses Gradle or Maven, see the
 [manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
 
 ---
@@ -220,8 +220,8 @@ services. The Liferay Mobile SDK Builder that comes with our Eclipse plugin
 generates libraries that enable you to access your custom portlet's remote JSON
 web services.
 
-Alternatively, you can also use the Liferay Mobile SDK Builder via command line,
-read [these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md)
+You can also use the Liferay Mobile SDK Builder via command line. Read
+[these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md)
 for more details.
 
 You can specify a running Liferay Portal instance in Eclipse, and Eclipse
