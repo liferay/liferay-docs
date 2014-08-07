@@ -259,4 +259,14 @@ now begin developing the JSF guestbook portlet.
 
 ## Adding JSF Guestbook Entries
 
+## Understanding the Liferay Faces Version Scheme
 
+Liferay Faces has a specific versioning scheme it follows to keep releases
+concise and separate from other releases. A concise versioning scheme also makes
+it easier to differentiate between a Liferay Faces version's compatibility with
+other platforms. To learn more, visit the [Understanding the Liferay Faces
+Version
+Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-faces-version-scheme)
+tutorial. 
+
+<!-- Will probably need to merge this section in somewhere else. -Cody --> 
