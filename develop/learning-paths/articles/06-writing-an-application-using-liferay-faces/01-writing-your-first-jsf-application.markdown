@@ -17,9 +17,6 @@ compliant portlet container, like Liferay Portal 5.2, 6.0, 6.1, and 6.2. You'll
 explore more about the bridge later on, but you won't have to worry about it
 when creating your JSF application, since it's configured behind the scenes. 
 
-<!-- Check to see if bridge is automatically configured in a JSF portlet project
-when it's created using IDE/LDS. -Cody -->
-
 Ready to begin creating a JSF application for Liferay Portal? 
 
 ## Creating a JSF Portlet
@@ -65,8 +62,8 @@ can be filled with portlets. Your next step is to create the portlet that will
 live inside your portlet project. You'll do this in the New Liferay JSF Portlet
 wizard that is launched after the project is created. 
 
-1. Specify the Portlet class as
-`com.liferay.faces.bridge.GenericLiferayFacesPortlet`. Then click *Next*. 
+1. Specify the Portlet class as `javax.portlet.faces.GenericFacesPortlet` (if
+   necessary). Then click *Next*. 
 
 2. Enter `jsf-guestbook` for the portlet name. The following fields are edited
 accordingly. 
@@ -167,17 +164,40 @@ navigation rules. JSF portlet bridges ensure that URLs created by the portal
 comply with JSF navigation rules, so that a JSF portlet is able to switch to
 different views. 
 
-With the main aspects of JSF portlet bridges described, you'll now learn how
-your JSF guestbook is using a bridge. If you're curious of ways to configure
-Liferay Faces Bridge, you can run through in-depth
+The JSR 329 standard defines several configuration options prefixed with the
+`javax.portlet.faces` namespace. Liferay Faces Bridge defines addtional
+implementation-specific options prefixed with the `com.liferay.faces.bridge`
+namespace. If you're curious of ways to configure Liferay Faces Bridge using
+these configuration options, you can run through provided in-depth
 [tutorials](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets). 
 
-<!-- Maybe we should separate the Liferay Faces Bridge tutorials into a new
-module (liferay-faces-bridge), for better organization? -Cody -->
+With the main aspects of JSF portlet bridges described, you'll now learn how
+your JSF guestbook is using a bridge. 
 
 You may have noticed that you specified the
-[`GenericLiferayFacesPortlet`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/GenericLiferayFacesPortlet.java)
-class when setting up your JSF portlet. This class handles invocations to your
-JSF portlet. The `GenericLiferayFacesPortlet` extends the
 [`GenericFacesPortlet`](http://myfaces.apache.org/portlet-bridge/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
-class.
+class when setting up your JSF portlet. This class handles invocations to your
+JSF portlet and makes the portlet relying on the bridge easier to develop by
+acting as a turnkey implementation. 
+
+So where is the bridge in our new guestbook portlet?
+
+In your Package Explorer, navigate to the *Ivy* library and you'll discover
+there are a list of JARs that are related to JSF, including the bridge JARs.
+When using a Plugins SDK to build a Liferay portlet,
+[Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
+needed for your intended project. When creating a JSF portlet, the bridge JARs
+are automatically downloaded into the portlet project, along with several other
+dependency JARs. This is done behind the scenes so you never have to worry about
+it, but nonetheless, they are there. Other important JARs that are part of the
+Liferay Faces project are *Liferay Faces Alloy* and *Liferay Faces Portal*. 
+
+You'll explore what Liferay Faces Alloy can do for your JSF portlet, first. 
+
+## Understanding Liferay Faces Alloy
+
+## Understanding Liferay Faces Portal
+
+## Adding JSF Guestbook Entries
+
+
