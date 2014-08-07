@@ -183,7 +183,10 @@ acting as a turnkey implementation.
 So where is the bridge in our new guestbook portlet?
 
 In your Package Explorer, navigate to the *Ivy* library and you'll discover
-there are a list of JARs that are related to JSF, including the bridge JARs.
+there are a list of JARs that are related to JSF, including the bridge JARs. 
+
+![Figure 7: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
+
 When using a Plugins SDK to build a Liferay portlet,
 [Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
 needed for your intended project. When creating a JSF portlet, the bridge JARs
@@ -195,6 +198,38 @@ Liferay Faces project are *Liferay Faces Alloy* and *Liferay Faces Portal*.
 You'll explore what Liferay Faces Alloy can do for your JSF portlet, first. 
 
 ## Understanding Liferay Faces Alloy
+
+If you rewind back to selecting the JSF guestbook portlet's JSF Component Suite
+in Liferay IDE/Developer Studio, you may recall the option of choosing between
+the *JSF standard* (which was selected for the JSF guestbook portlet),
+[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
+[*PrimeFaces*](http://primefaces.org/),
+[*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy*. 
+
+Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
+their portlet WAR projects in order to utilize Alloy UI in a way that is
+consistent with JSF development. If you were to select the Liferay Faces Alloy
+JSF Component Suite during your portlet's setup, the JAR would be included in
+your portlet project using Ivy, the same way that was described in the previous
+section. 
+
+The Liferay Faces Alloy project provides a set of UI components that are JSF
+equivalents of the `aui:` JSP tag library provided by Liferay Portal: 
+
+- Layout: `aui:panel`, `aui:column`, `aui:button-row`, `aui:form`,
+`aui:fieldset`
+- UI Components: `aui:list`, `aui:list-item`, `aui:text-box-list`,
+`aui:text-box-list-item`
+- Composite Components: `aui-cc:button`, `aui-cc:input`, `aui-cc:message`,
+`aui-cc:messages`, `aui-cc:select`
+
+<!-- When JSF 2.2 is released, plans are to combine the `aui:` and `aui-cc:`
+namespaces into a single `aui:` namespace. Update when this is completed. -Cody
+-->
+
+If you want to utilize Liferay's Alloy UI technology based on YUI3, make sure to
+include the Liferay Faces Alloy JAR in your JSF portlet project. Next, you'll
+explore what Liferay Faces Portal accomplishes for your JSF portlet. 
 
 ## Understanding Liferay Faces Portal
 
