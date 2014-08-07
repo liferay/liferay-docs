@@ -44,6 +44,20 @@ comes with a *Liferay Android Sample Project* that you can use as a reference
 for building more Android apps of your own. Since Eclipse only supports Android
 apps, you can't use the plugin to customize iOS apps. 
 
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** If you want to use the Mobile
+SDK within an existing Android or iOS project, or you're using a different IDE,
+like *Android Studio*, you can download the latest version of the Mobile SDK and
+add it to your project library or configure it as a dependency to your project,
+using Maven or CocoaPods. For more information about this, read the
+[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
+or
+[iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually)
+instructions on manually setting up the Mobile SDK for an existing project. 
+
+---
+
 The Liferay Mobile SDK plugin depends on the *Android SDK Tools* and *Android
 Development Tools (ADT)* Eclipse plugins. To satisfy these dependencies, you 
 can install these plugins onto an existing Eclipse instance, or you can
@@ -90,7 +104,13 @@ The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries
 and sample app code. We call this project the *Liferay Android Sample Project*.
 You can refer to it to see how it connects with Liferay and invokes Liferay
-services. Let's create the sample project now! 
+services.
+
+Alternatively, you can also browse and download the
+*Liferay Android Sample Project* source code in
+[GitHub](https://github.com/brunofarache/liferay-android-sdk-sample).
+
+Let's create the sample project now! 
 
 1. Go to *File* &rarr; *Project...* &rarr; *Liferay* &rarr; *Liferay Android
 Sample Project*.
@@ -108,14 +128,6 @@ preferences menu.
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
 instance. 
-
-<!-- You can learn more about the Android application standard architecture
-by visiting Android's *Getting Started* guide. It demonstrate standard
-architecture as well as activity classes, model classes, etc. 
-
-Removing this content as it's not necessary for the developer to continue with
-the tutorial. Jim
--->
 
 The Liferay Android Sample Project lists the portal's users as contacts, so that
 you can view their detailed information, including their names, email addresses,
@@ -164,15 +176,11 @@ libraries.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This configuration capability
-is only available for Android apps that were created using the ADT plugin for
-Eclipse. The action will not work for Android apps built with Gradle or Maven,
-but you can still manually configure your project to use the Mobile SDK. For
-more information on this, see the manual Liferay Mobile SDK setup instructions
-for
-[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
-or
-[iOS](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/README.md#manually).
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you 
+created your Android project using the ADT plugin for Eclipse. If you have an 
+existing Android project that wasn't created using the ADT plugin for Eclipse, 
+or your Android project uses Gradle or Maven, see the 
+[manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
 
 ---
 
@@ -210,7 +218,11 @@ portlet services next.
 The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with our Eclipse plugin
 generates libraries that enable you to access your custom portlet's remote JSON
-web services. 
+web services.
+
+Alternatively, you can also use the Liferay Mobile SDK Builder via command line,
+read [these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md)
+for more details.
 
 You can specify a running Liferay Portal instance in Eclipse, and Eclipse
 queries the server for all the remote APIs that are available to generate `.jar`
@@ -273,7 +285,7 @@ Liferay's core services. All you need to do is download the SDK and put it in
 your classpath, and you can access the services immediately. If you want to
 invoke custom portlet web services, you'll need to generate client libraries
 for them. You can learn more about generating these libraries by reading the
-[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
+[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/using-custom-portlet-services-in-your-an-liferay-portal-6-2-dev-guide-08-en)
 section. 
 
 If you're developing in an Eclipse environment and are using the Liferay Mobile
@@ -570,7 +582,7 @@ services. How do you access Liferay services from an iOS mobile app? Use
 Liferay's iOS SDK, of course. If you'd like to invoke remote web services,
 you'll need to generate the client libraries. You can learn more about the SDK
 builder and how to generate client libraries by reading the Custom Portlet
-[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
+[Building an SDK for Custom Portlet Services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/using-custom-portlet-services-in-your-an-liferay-portal-6-2-dev-guide-08-en)
 section. 
 
 Let's get started by downloading the iOS SDK and configuring it in your iOS
@@ -767,178 +779,6 @@ The return type for batch calls is always an `NSArray`.
 As you can see, it's very simple to make efficient service calls in batch using
 the iOS SDK! 
 
-<!-- Commented out the SDK Builder content. Bruno advised that we've switched to
-Gradle (instead of Ant) for building the Mobile SDK, so we'll either need to
-overhaul this section, or remove it and point readers to Bruno's Github page.
-
-Maven can also be used for building the SDK. Coordinating with Bruno and Greg on
-this section and its value in the guide.
--Cody -->
-
-<!--
-Next, let's learn how to build your custom portlet SDK and generate client
-libraries. 
-
-## Building an SDK for Custom Portlet Services [](id=build-sdk-for-custom-portlet-services-liferay-portal-6-2-dev-guide-en)
-
-What if your app needs to access Liferay's remote services? You'll need to
-generate the client libraries to access them. You can accomplish this by 
-using the SDK Builder.
-
-The Liferay Mobile SDK comes with an SDK Builder that generates the Mobile SDK
-for the Android and iOS platforms. Think of it as a Service Builder on the
-client side; it generates code that allows your mobile app to access your
-portlet's custom services. It is template-based, making it easy to extend to
-various mobile platforms. The SDK Builder generates client libraries that allow
-your native mobile apps to invoke the remote web services of a portal instance
-and any of its custom portlets built with Liferay's [Service
-Builder](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en).
-
-Let's configure your portlet's remote services so we can build the SDK!
-
-### Configuring your Portlet's Remote Services [](id=configure-portlet-remote-services-liferay-portal-6-2-dev-guide-08-en)
-
-In order for the SDK Builder to discover a portlet's remote services, the
-portlet's services must be made available and be accompanied by a Web Service
-Deployment Descriptor (WSDD).
-
-If you're in the process of developing the portlet, see [Generating Your Service
-Layer](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/generating-your-service-layer-liferay-portal-6-2-dev-guide-04-en)
-for in-depth instructions on implementing remote services. For your convenience,
-the following steps outline how to implement remote services for your portlet
-and make them available for the SDK Builder to discover: 
-
-1. Set your entity's `remote-service="true"` in your portlet's `service.xml`
-file and run `ant build-service`.
-
-2. Implement your remote services in the generated `[Entity]ServiceImpl.java`
-source files and run `ant build-service` again. 
-
-3. Run `ant build-wsdd` to build your Web Service Deployment Descriptor (WSDD).
-The SDK Builder relies on the WSDD to discover your portlet's remote services;
-so make sure to run `ant build-wsdd` before deploying your portlet.
-
-4. Run `ant deploy` to deploy your portlet with its WSDD.
-
-Now you're ready to use the SDK Builder to generate a custom portlet SDK for
-developing your mobile app. You'll be able to invoke your service's methods,
-like `[Entity]Service.bar();`, from your mobile app. The Liferay Mobile SDK
-takes care of making JSON Web Service requests to your portlet.
-
-Next, let's configure the SDK builder for building your custom portlet SDK.
-
-### Configuring the SDK Builder [](id=configure-sdk-builder-liferay-portal-6-2-dev-guide-en)
-
-In order to use the SDK Builder, you'll need to have the Liferay Mobile SDK
-project on your local machine. If you haven't done so already, fork and clone
-the [Liferay Mobile SDK](https://github.com/liferay/liferay-mobile-sdk) project
-from GitHub. Follow the [Fork A
-Repo](https://help.github.com/articles/fork-a-repo) instructions for details.
-
-The SDK Builder is invoked using Ant, but before building an SDK, you must set
-some properties so that the SDK Builder can communicate with your portlet
-services and create an SDK specific to your mobile platform. Follow the steps
-below to set these properties:
-
-1. Create a file in the root folder called `build.${username}.properties`,
-where `${username}` is your computer user name.
-
-2. Here are the important properties to set:
-
-	* `url` - The URL to your Liferay instance.
-
-	* `context` - Your portlet's web context. For example, if you're generating
-	an SDK for Liferay's Calendar portlet, which is generally deployed to the
-	`calendar-portlet` context, then you should set your context value to
-	`context=calendar-portlet`. Under the hood, the SDK Builder tries to access
-	`http://localhost:8080/calendar-portlet/api/jsonws?discover` to find out
-	which services are available for this portlet. Check in a browser to ensure
-	this URL is working before running the SDK. If it's not running, you may
-	have forgotten to run `ant build-wsdd` on the portlet.
-
-	* `filter` - Specifies your portlet's entities whose services to access; a
-	blank value indicates the services of all of the portlet's entities. For
-	example, the Calendar portlet has entities such as `CalendarBooking` and
-	`CalendarResource`. To generate an SDK for only the `CalendarBooking`
-	entity, set the filter's value to `calendarbooking`, all in lowercase. The
-	SDK Builder then makes requests to
-	`http://localhost:8080/calendar-portlet/api/jsonws?discover=/calendarbooking/*`.
-	If you set `filter=`, specifying no filter value, the remote services of
-	*all* of the portlet's entities are made available to your Mobile SDK.
-
-	* `package` - On Android, this is the package to which your SDK's classes
-	are written. The iOS platform does not use packages. Note that the Liferay
-	Portal version is appended to the end of the package name. So, if you
-	specified `com.liferay.mobile.android` as your package, the SDK
-	Builder appends the Liferay Portal version (e.g., `v62`) to it, 
-	like `com.liferay.mobile.android.v62`. Appending the Liferay Portal version
-	prevents collisions between classes with the same names written for
-	different versions of Liferay Portal.
-
-	* `destination` - Specifies the root folder in which to save your generated
-	files. The default destination root folder is `gen`. On Android, the files
-	are saved to `[destination]/android/src`. On iOS, the files are saved to
-	`[destination]/ios`.
-
-Here's an example of configuring the SDK Builder to generate an Android mobile
-SDK for a portlet with the web context value `my-portlet`:
-
-    url=http://localhost:8080
-    context=my-portlet
-    filter=
-    package=com.mycompany.mobile.android
-    destination=gen
-
-Now that you've configured the SDK Builder, you're ready to build a platform
-specific SDK for your portlet's remote services. 
-
-### Building the Liferay Android SDK [](id=building-the-liferay-android-sdk-liferay-portal-6-2-dev-guide-08-en)
-
-To build the service related source files for your Liferay Android SDK, run the
-following command from the `liferay-mobile-sdk` project's root folder:
-
-    ant -f build-android.xml
-
-The source files are written to your `[destination]/android/src` folder.
-
-To build a `.jar` file containing the generated service and utility classes, run
-the following command:
-
-    ant -f build-android.xml jar
-
-The `liferay-android-sdk.jar` file is written to your `dist/android/` folder.
-After completing these commands, you're ready to use the
-`liferay-android-sdk.jar` in your Android project and have no external
-dependencies.
-
-To learn how to use the Liferay Android SDK in your mobile app, visit the
-[Using the Android SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-the-android-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
-
-### Building the Liferay iOS SDK [](id=building-the-liferay-ios-sdk-liferay-portal-6-2-dev-guide-08-en)
-
-To build the service related source files for your Liferay iOS SDK, run the
-following command from the `liferay-mobile-sdk` project's root folder:
-
-    ant -f build-ios.xml
-
-The source files are written to your `[destination]/ios` folder.
-
-To build a `.zip` file containing the generated service and utility classes, run
-the following command:
-
-    ant -f build-ios.xml zip
-
-The `liferay-ios-sdk.jar` file is written to your `dist/ios` folder. After
-completing these commands, you're ready to use the contents of your
-`liferay-ios-sdk.zip` file in your iOS project. Simply unzip its contents and
-add all of the files to your XCode project. The SDK is free of any external
-dependencies.
-
-To learn how to use the Liferay iOS SDK in your mobile app, see the
-[Using the iOS SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/use-ios-sdk-to-call-services-liferay-portal-6-2-dev-guide-en).
-
--->
-
 ## Summary [](id=mobile-sdk-summary-liferay-portal-6-2-dev-guide-08-en)
 
 In this chapter, we showed you how easy it is to download and configure
@@ -948,13 +788,6 @@ reference. Eclipse also gives you the option to create a sample Liferay Android
 project to familiarize yourself with a Liferay Android app using the Mobile SDK.
 Then, we explained the Android and iOS mobile platforms separately, giving you
 step-by-step examples for accessing Liferay services. 
-
-<!--
-Then, we explored the SDK Builder and how to generate client libraries to access
-your portlet's custom services. Of course, this was also broken down into
-separate Android and iOS sections so that building the SDK for either platform
-is easier than ever.
--->
 
 Did you know that there is a breed of social applications called OpenSocial
 gadgets that lend themselves well to humans sharing information and application
