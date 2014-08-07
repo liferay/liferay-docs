@@ -7,18 +7,13 @@ setup the basic `aui-carousel` please refer to the tutorial
 In this tutorial you'll learn how to modify the UI of the standard
 `aui-carousel` module in a portlet.
 
-It's time to go back, back to the carousel! Where you're going you don't need
-code; on the other hand yes, yes you do. Don't worry, there won't be many more
-puns to put up with.
-
 There are a few key steps to follow as you customize your carousel:
 
 1.  Assign an ID to the carousel and its images.
 2.  Configure the carousel's attributes.
 3.  Style the carousel from the `main.css` file.
 
-Now that you know what lies ahead in this tutorial, it's time to get the ball
-rolling and kick this baby up to 88 mph (141 kph)! 
+Now that you know what lies ahead in this tutorial, it's time to start rolling! 
 
 ## Step 1: Assign an ID to the Carousel and Its Images
 
@@ -303,7 +298,15 @@ Here is an example of a carousel that uses customizations from this tutorial:
 ![Figure 2: Here is an example of a customized carousel, that uses this tutorial's scripts.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the example customized portlet at 
-<https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet>
+<https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet>.
 
-Remember, your carousel is whatever you make it; so make it awesome!
+Enjoy making your carousel the best that it can be!
+
+## Related Topics
+
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/implementing-a-ui-with-liferay-taglibs)
+
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs)
+
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/themes-and-layout-templates)
 
