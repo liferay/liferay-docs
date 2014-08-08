@@ -8,21 +8,11 @@ learning
 path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
 for further details on JSF portlets and the Liferay Faces project. 
 
-This tutorial explains how to create Liferay Faces portlets using Maven and the
-anatomy of a JSF portlet. 
+This tutorial explains the Liferay Faces portlets generation process using
+Maven, and the anatomy of a JSF portlet. 
 
 <!-- Make sure the JSF learning path link above is updated once it has been
 created. -Cody -->
-
-Liferay Faces portlets can be built as a number of different portlets related to
-the JSF technology. When developing Liferay Faces portlets with Maven, you have
-a few different JSF frameworks you can choose to build your portlet with, which
-include: [*RichFaces*](http://richfaces.jboss.org/),
-[*PrimeFaces*](http://primefaces.org/), [*Liferay Faces
-Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
-[*JSF standard*](http://en.wikipedia.org/wiki/JavaServer_Faces), and
-[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
-portlets. 
 
 You'll begin creating a Liferay Faces portlet plugin next. 
 
@@ -34,7 +24,16 @@ IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-lif
 tutorial or the [Creating Liferay Maven Plugins from the Command
 Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type, and *JSF 2.x* as
-the portlet framework. 
+the portlet framework. Lastly, you'll be required to select a JSF framework. 
+
+Liferay Faces portlets can be built with a number of different JSF frameworks,
+which include: [*RichFaces*](http://richfaces.jboss.org/),
+[*PrimeFaces*](http://primefaces.org/), [*Liferay Faces
+Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
+[*JSF standard*](http://en.wikipedia.org/wiki/JavaServer_Faces), and
+[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
+portlets. Each JSF framework has an archetype that can be used during the
+creation process. 
 
 ---
 
@@ -92,14 +91,14 @@ Location    | Maven project     | Plugins SDK project   |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-Congratulations! You now have the necessary knowledge to create Liferay Faces
+Congratulations! You now have the knowledge necessary to create Liferay Faces
 portlets using several different JSF frameworks. 
 
 ## Related Topics
 
+[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+
 [Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
-
-[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
 
