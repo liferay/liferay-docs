@@ -22,7 +22,7 @@ portlets sharing the same resource bundle looks like:
 
 Let's begin sharing a single resource bundle with multiple portlets! 
 
-For this tutorial, assume that the portlets you're working with are contained
+For this tutorial, assume that both portlets you're working with are contained
 in the same project. 
 
 1. In your project's `docroot/WEB-INF/src/content/Language.properties` file, add
@@ -31,12 +31,16 @@ in the same project.
         you-know-it-is-the-best=You know it is the best
 
 2. Create another language key file in the `docroot/WEB-INF/src/content` folder
-   and add the equivalent `you-know-it-is-the-best` key translated to the
-   language of your choice. For example, if you were translating in Spanish, you
-   would create a `Language_es.properties` file and add the following language
-   key: 
+   and add the equivalent language key you specified previously, translated to
+   the language of your choice. For example, if you were translating in Spanish,
+   you would create a `Language_es.properties` file and add the following
+   language key: 
 
         you-know-it-is-the-best=Usted sabe que es la mejor
+
+    You can view Liferay's available locales in the [Language and Time
+    Zones](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+    section of Portal Properties. 
 
 3. Open the `view.jsp` file for both portlets and insert the
    `<liferay-ui:message>` tag specifying your language key: 
