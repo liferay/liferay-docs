@@ -20,3 +20,7 @@ With the help of `LiferayFacesContext`, you can take advantage of the JSF
 <!-- We need to get Liferay Faces HTML Javadoc generated and posted on
 docs.liferay.com so that we can provide links to it for classes like
 LiferayFacesContext. - Jim --> 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

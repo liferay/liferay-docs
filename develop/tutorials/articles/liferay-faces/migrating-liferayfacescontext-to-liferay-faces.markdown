@@ -24,3 +24,7 @@ Liferay Faces namespace:
  
 Once you've refactored to the new package namespace, you've completed the
 migrating process for `LiferayFacesContext`. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

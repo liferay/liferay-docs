@@ -90,4 +90,8 @@ how to do this:
 
 Internationalizing your portlets is especially easy to do using the options that
 Liferay Faces provides. Awesome! You now know how to internationalize your JSF
-portlet.
+portlet. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

@@ -66,3 +66,7 @@ Portlets](www.liferay.com) tutorial. -->
 
 Now that CDI is fully configured for your portlet, you're ready to begin
 development with CDI. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

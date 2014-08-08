@@ -15,3 +15,7 @@ The default value of this `context-param` is `1024` (1KB).
 
 Alternatively, you can specify the `com.liferay.faces.bridge.resourceBufferSize`
 value on a portlet-by-portlet basis in the `WEB-INF/portlet.xml` descriptor. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

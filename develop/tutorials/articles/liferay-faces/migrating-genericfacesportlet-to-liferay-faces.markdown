@@ -45,3 +45,7 @@ the Liferay Faces Bridge version of `GenericFacesPortlet`:
 
 After completing the above steps, you've officially migrated your
 `GenericFacesPortlet` class to Liferay Faces! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

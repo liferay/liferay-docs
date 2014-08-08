@@ -14,3 +14,7 @@ method.
 
 Now you're familiar with another key utility that you can access through Liferay
 Faces Portal. Awesome! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

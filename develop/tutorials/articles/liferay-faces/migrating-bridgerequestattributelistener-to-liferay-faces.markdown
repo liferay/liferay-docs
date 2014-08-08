@@ -48,3 +48,7 @@ Liferay Faces Bridge version of `BridgeRequestAttributeListener`:
 
 As you can see, migrating from PortletFaces Bridge to Liferay Faces Bridge is a
 snap! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

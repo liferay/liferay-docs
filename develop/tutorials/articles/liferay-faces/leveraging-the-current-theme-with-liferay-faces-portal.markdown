@@ -19,3 +19,7 @@ theme image icons.
 
 By using some of these features, you'll be able to access the current Liferay
 theme. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

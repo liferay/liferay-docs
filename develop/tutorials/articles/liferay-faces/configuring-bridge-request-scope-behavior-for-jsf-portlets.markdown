@@ -94,3 +94,7 @@ Now you know the two options for Bridge Request Scope behavior. By considering
 the assumptions and drawbacks that were outlined in this tutorial, you should be
 able to make an educated decision about how you'd like to implement the Bridge
 Request Scope behavior. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

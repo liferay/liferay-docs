@@ -39,3 +39,7 @@ Lfieray Faces Bridge).
 
 By using the VDL documentation, your migration of the facelet tag library
 namespaces from PortletFaces to Liferay Faces is a snap! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

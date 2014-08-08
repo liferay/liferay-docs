@@ -23,3 +23,7 @@ like `HttpServletResponse.SC_NOT_MODIFIED`.
 
 By configuring portlet container capabilities, you can take advantage of your
 portlet container's specific strengths while using Liferay Faces Bridge. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

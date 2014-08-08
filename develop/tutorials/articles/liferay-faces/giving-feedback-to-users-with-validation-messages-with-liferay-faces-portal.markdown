@@ -43,3 +43,7 @@ class names, as shown above.
 
 You're now equipped to give feedback to users with validation messages using
 Liferay Faces Portal. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

@@ -62,3 +62,7 @@ respect to the Liferay Faces 3.2, 4.1, and 4.2 releases:
 ---
 
 Excellent! You're now familiar with the AlloyUI related migration changes. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

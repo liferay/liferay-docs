@@ -75,3 +75,7 @@ ensures that JSF 2 is properly initialized. You specify the required
 
 Now, you know the options you have in dynamically adding your JSF portlets at
 runtime. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

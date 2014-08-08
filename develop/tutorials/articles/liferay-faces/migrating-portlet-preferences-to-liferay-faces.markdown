@@ -23,3 +23,7 @@ javax.portlet.faces.preference.Preference;`
 
 With the new converted namespace, you've migrated portlet preferences to Liferay
 Faces. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

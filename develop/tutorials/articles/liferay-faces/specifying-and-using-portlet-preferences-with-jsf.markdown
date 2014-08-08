@@ -111,7 +111,7 @@ seems confusing. - Jim -->
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
 
-## Next Steps
+## Related Topics
 
-<!-- Need to add tutorial links. -Cody -->
+<!-- Add once JSF tutorials are finished. -Cody -->
 

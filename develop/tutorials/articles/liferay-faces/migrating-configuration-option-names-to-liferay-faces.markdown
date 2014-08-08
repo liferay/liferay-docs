@@ -35,3 +35,7 @@ used, as shown in the following listing:
 
 By making these changes, you're well on your way to migrating configuration
 option names to the Liferay Faces project. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

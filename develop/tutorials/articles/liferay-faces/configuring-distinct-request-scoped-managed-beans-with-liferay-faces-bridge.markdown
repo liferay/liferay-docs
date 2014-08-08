@@ -43,3 +43,7 @@ value to `true`.
 
 Great! You can now configure distinct request scoped managed beans with Liferay
 Faces Bridge. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

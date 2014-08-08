@@ -244,3 +244,7 @@ descriptor.
 You've explored some common basic JSF portlet development topics dealing with
 IPC. These techniques should help launch you into development of your own JSF
 portlet development using IPC! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

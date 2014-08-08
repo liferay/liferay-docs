@@ -141,3 +141,7 @@ descriptor:
     </listener>
 
 As you can see, configuring CDI for your JSF portlets is a snap! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

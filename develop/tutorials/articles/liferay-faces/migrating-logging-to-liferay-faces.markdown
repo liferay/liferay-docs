@@ -29,3 +29,7 @@ com.liferay.faces.util.logging.LoggerFactory;`
 com.liferay.faces.util.logging.Logger;` 
 
 Great! You've officially migrated logging to Liferay Faces. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

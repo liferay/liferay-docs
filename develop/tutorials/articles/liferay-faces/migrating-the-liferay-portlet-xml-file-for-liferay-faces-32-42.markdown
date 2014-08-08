@@ -54,3 +54,7 @@ file.
 
 Your `liferay-portlet.xml` file is now migrated to Liferay Faces 3.2/4.2.
 Stupendous! 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

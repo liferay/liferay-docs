@@ -24,3 +24,7 @@ version of this feature, then this parameter should be set to `false`.
 
 Great! You've learned another JSF portlet bridge standard and Liferay Faces
 Bridge configuration option. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

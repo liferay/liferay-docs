@@ -62,3 +62,7 @@ specified on a portlet-by-portlet basis in the `WEB-INF/portlet.xml` descriptor.
 Be learning these requirements, you're able to perform cleanup on managed-beans
 before they are destroyed while abiding by section 6.8.1 of the JSR 329
 standard. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

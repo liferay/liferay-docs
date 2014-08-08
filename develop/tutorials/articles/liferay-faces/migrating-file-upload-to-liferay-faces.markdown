@@ -28,3 +28,7 @@ com.liferay.faces.bridge.component.UploadedFile;`
  
 Once you've refactored to the new package namespace, you've completed the
 migrating process for file uploading to Liferay Faces. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

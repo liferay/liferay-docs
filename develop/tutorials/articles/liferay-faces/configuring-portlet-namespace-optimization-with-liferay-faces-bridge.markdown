@@ -42,3 +42,7 @@ the `context-param` to `false` disables the optimization.
 
 That's it! Now you have a better understanding for configuring your portlet for
 namespace optimization. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

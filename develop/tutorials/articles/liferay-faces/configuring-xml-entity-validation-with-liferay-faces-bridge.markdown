@@ -17,3 +17,7 @@ By default, the validation is disabled. To enable XML validation for all
 
 Excellent! You now know how to enable XML entity validation using Liferay Faces
 Bridge. 
+
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->
