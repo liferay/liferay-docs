@@ -5,7 +5,9 @@
 *.swp
 *-tmp.html
 .project
+!/.project
 .classpath
+!/.classpath
 .settings
 nbbuild.xml
 properties/

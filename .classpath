@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="code/liferay-doc-utils/src"/>
+	<classpathentry kind="lib" path="code/liferay-doc-utils/lib/ant-1-8-2.jar"/>
+	<classpathentry kind="lib" path="code/liferay-doc-utils/lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/liferay-doc-utils.jar"/>
+	<classpathentry kind="lib" path="lib/properties-converter.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/portal-service.jar"/>
+	<classpathentry kind="lib" path="lib/asm-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-analysis-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-commons-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-tree-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-util-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-xml-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/parboiled-core-1.1.6.jar"/>
+	<classpathentry kind="lib" path="lib/parboiled-java-1.1.6.jar"/>
+	<classpathentry kind="lib" path="lib/pegdown-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/com.liferay.markdown.converter-1.0.0.jar"/>
+	<classpathentry kind="output" path="code/liferay-doc-utils/classes"/>
+</classpath>
