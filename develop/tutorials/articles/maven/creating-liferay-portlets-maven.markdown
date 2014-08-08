@@ -5,7 +5,7 @@ anatomy of the Liferay Maven portlet plugin project.
 
 ## Creating a Portlet Plugin
 
-To create your Liferay theme plugin project, just follow the
+To create your Liferay portlet plugin project, just follow the
 [Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
 [Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
