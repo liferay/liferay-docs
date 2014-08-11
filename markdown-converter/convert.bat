@@ -19,7 +19,7 @@ goto end
 :convert
 
 set htmlFile=%1
-set htmlFile=%markdownFile:markdown=html%
+set htmlFile=%htmlFile:markdown=html%
 
 java -cp .;..\lib\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %htmlFile%
 
