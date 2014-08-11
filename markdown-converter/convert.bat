@@ -1,7 +1,7 @@
 if "%1"=="" goto usage
 if "%2"=="" goto usage
 
-java.exe -cp .;..\lib\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %2
+java -cp .;..\lib\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %2
 
 goto end
 
