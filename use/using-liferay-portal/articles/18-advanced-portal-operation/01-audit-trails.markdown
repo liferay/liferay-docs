@@ -1,4 +1,4 @@
-# Audit Trails [](id=audit-trails-lp-6-2-use-useportal)
+# Audit Trails [](id=audit-trails)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

@@ -1,4 +1,4 @@
-# Accessing Liferay Services [](id=accessing-liferay-services-lp-6-2-use-useportal)
+# Accessing Liferay Services [](id=accessing-liferay-services)
 
 In many cases, you'll want to interact with one of Liferay's many services. This
 is possible from all of the scripting languages supported, but the syntax is a

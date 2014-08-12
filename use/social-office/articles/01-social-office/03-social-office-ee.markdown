@@ -64,7 +64,8 @@ Liferay Marketplace. These plugins integrate Liferay's Documents and Media
 functionality with Documentum and Sharepoint. They allow Documentum and
 Sharepoint repositories to be mounted within Liferay's Documents and Media
 system. Please refer to the Liferay Marketplace app descriptions and the
-Documents and Media section of the [Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/using-external-repositori-3)
+Documents and Media section of the
+[Liferay User Guide](/use/portal/-/knowledge_base/using-external-repositories)
 for information on properties and configuration.
 
 Other features provided by Social Office EE include auditing improvements to the

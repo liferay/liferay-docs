@@ -1,4 +1,4 @@
-# Summary [](id=summary-lp-6-2-use-useportal-2)
+# Summary [](id=summary-2)
 
 In this chapter, we explored the configuration options available for Liferay
 applications. We showed how to customize your applications, export/import

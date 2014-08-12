@@ -1,4 +1,4 @@
-# Liferay's database [](id=liferays-database-lp-6-2-use-useportal)
+# Liferay's database [](id=liferays-database)
 
 The recommended way of setting up your Liferay database also happens to be the
 simplest. Liferay Portal takes care of just about everything. The only thing you

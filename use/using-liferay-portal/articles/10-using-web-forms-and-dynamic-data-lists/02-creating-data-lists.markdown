@@ -1,4 +1,4 @@
-# Creating Data Lists [](id=creating-data-lists-lp-6-2-use-useportal)
+# Creating Data Lists [](id=creating-data-lists)
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the

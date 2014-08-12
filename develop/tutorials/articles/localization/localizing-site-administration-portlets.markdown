@@ -1,4 +1,4 @@
-# Localizing Site Administration Portlets [](id=localizing-site-administration-portlets-lp-6-2-develop-tutorial)
+# Localizing Site Administration Portlets [](id=localizing-site-administration-portlets)
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet

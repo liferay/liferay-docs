@@ -1,4 +1,4 @@
-# Custom Fields [](id=custom-fields-lp-6-2-use-useportal)
+# Custom Fields [](id=custom-fields)
 
 Custom fields appear beneath Portal Settings under the Configuration heading of
 the Control Panel. Custom fields are a way to add attributes to many types of

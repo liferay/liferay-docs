@@ -1,4 +1,4 @@
-# Export/Import [](id=export-import-lp-6-2-use-useportal)
+# Export/Import [](id=export-import)
 
 <!-- This section needs to be tested against the new AlloyUI -->
 

@@ -1,4 +1,4 @@
-# Integrating Your Persistence Framework into Your Application [](id=integrating-your-persistence-framework-into-your-a-lp-6-2-develop-learnpath)
+# Integrating Your Persistence Framework into Your Application [](id=integrating-your-persistence-framework-into-your-a)
 
 Once you've generated your persistence framework with Service Builder, your next
 task is to bring all that functionality into your application. On the

@@ -1,4 +1,4 @@
-# Using Page Templates [](id=using-page-templates-lp-6-2-use-useportal)
+# Using Page Templates [](id=using-page-templates)
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
