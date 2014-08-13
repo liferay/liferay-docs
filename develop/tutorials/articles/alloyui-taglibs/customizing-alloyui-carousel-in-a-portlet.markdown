@@ -2,16 +2,18 @@
 
 AlloyUI's carousel module has a lot to offer as is, but you can take it to the
 next level by customizing it and making it your own. If you need to learn how to
-setup the basic `aui-carousel` please refer to the tutorial
+set up the basic `aui-carousel`, please refer to the tutorial
 [Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet).
-In this tutorial you'll learn how to modify the UI of the standard
+In this tutorial, you'll learn how to modify the UI of the standard
 `aui-carousel` module in a portlet.
 
-There are a few key steps to follow as you customize your carousel:
+There are three key steps to follow as you customize your carousel:
 
 1.  Assign an ID to the carousel and its images.
-2.  Configure the carousel's attributes.
-3.  Style the carousel from the `main.css` file.
+
+2.  Configure the carousel's attributes. 
+
+3.  Style the carousel from the `main.css` file. 
 
 Now that you know what lies ahead in this tutorial, it's time to start rolling! 
 
@@ -21,7 +23,7 @@ First, you must add an ID value for the carousel's `<div>` element and each of
 its images. This was demonstrated in the tutorial
 [Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet), 
 
-For exmaple, if your carousel has four images, you might specify your carousel
+For example, if your carousel has four images, you might specify your carousel
 and its images in your JSP using `<div>` elements like these:
 
     <div id="myCarousel">
@@ -72,7 +74,7 @@ carousel starts.
 modifiable attributes. If you choose not to set values for these attributes,
 default values are used. For a full list of the carousel's attributes and their
 defaults, as well as further documentation on it, please visit
-<http://alloyui.com/api/classes/A.Carousel.html>.
+[http://alloyui.com/api/classes/A.Carousel.html](http://alloyui.com/api/classes/A.Carousel.html).
 
 ---
  
@@ -132,7 +134,7 @@ body and images:
     }
 
 The code starts off by setting the width and height for the carousel body and
-then rounds the carousel's edges, with the `border-radius` property. Next, the
+then rounds the carousel's edges with the `border-radius` property. Next, the
 carousel is centered in the middle of the portlet by setting the `margin`
 property of the `boundingBox` element (`mycarousel` in this case) to `auto` for
 the horizontal margins. The top margin is set to `0`, while the bottom margin is
@@ -285,12 +287,12 @@ deployed, you may need to undeploy and redeploy the portlet in order for your
 changes to take full effect.
 
 In this tutorial, you've learned how to take the basic `aui-carousel` module and
-modify it to suit your needs: First, you learned how to set some basic
+modify it to suit your needs. First, you learned how to set some basic
 attributes to configure the carousel. Then, you learned how to re-design the
 carousel by setting the styles of the carousel's body and images. Finally, you
 styled your carousel's menu and controls to match your taste.
 
-Excelsior! You have successfully learned how to give AlloyUI's Carousel your own 
+Excellent! You have successfully learned how to give AlloyUI's Carousel your own 
 flare and style!
 
 Here is an example of a carousel that uses customizations from this tutorial:
@@ -298,7 +300,7 @@ Here is an example of a carousel that uses customizations from this tutorial:
 ![Figure 2: Here is an example of a customized carousel, that uses this tutorial's scripts.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the example customized portlet at 
-<https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet>.
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet).
 
 Enjoy making your carousel the best that it can be!
 
