@@ -1,17 +1,22 @@
 # Creating a Hook Project in the Plugins SDK [](id=creating-a-hook-project-in-the-plugins-sdk)
 
-You can create hooks in a Plugins SDK project or a Liferay Maven project. You
-can create either type of project from Liferay IDE/Developer Studio or from the
-command line. This tutorial focuses on creating hooks in a Plugins SDK project,
-from Liferay IDE and from the command line. 
+Hook plugins are a special type of Liferay plugin that is designed for
+customizing Liferay in some way. You can do anything from customizing a service,
+to modifying a core JSP, to changing properties, to adding language keys, and
+more. 
+
+You can create hooks in a Plugins SDK project or a Liferay Maven project, using
+Liferay IDE/Developer Studio or the command line. This tutorial focuses on
+creating hooks in a Plugins SDK project from Liferay IDE and from the command
+line. 
 
 To learn how to create Liferay Maven projects, see the tutorial
 [Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial).  
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
 
 Creating a hook using Liferay IDE is easiest to learn first. So go ahead and
-jump right in with creating your hook project with Liferay IDE. 
+jump right in by creating your hook project with Liferay IDE. 
 
 ## Creating a Hook Project from Liferay IDE
 
@@ -20,7 +25,7 @@ Follow these steps to create a hook in IDE in no time:
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*.
 
 2.  Fill in the project name and display name fields.
-    
+ 
 3.  Choose Ant for the build type and select the appropriate *Plugins SDK* and 
 	*Liferay runtime*. 
 
@@ -36,14 +41,14 @@ hook plugin project.
 The Plugins SDK automatically names the hook by appending "-hook" to the project
 name. With Liferay IDE, you can create a hook in a completely new plugin project
 or create a hook in an existing plugin project. Use *File* &rarr; *New* &rarr;
-*Liferay Plugin Project* to create a new plugin project and *File* &rarr; 
+*Liferay Plugin Project* to create a new plugin project or *File* &rarr; 
 *New* &rarr; *Liferay Hook Configuration* to create a hook in an existing plugin 
 project.
 
 ## Creating a Hook Project from the Command Line
 
 From your command line terminal, navigate to your Plugins SDK's `hooks` folder.
-To create a hook project you must execute the *create* script. Here's the format
+To create a hook project, you must execute the *create* script. Here's the format
 to follow in executing the script: 
 
     create.[sh|bat] [project-name] "[Hook Display Name]"
@@ -61,8 +66,8 @@ projects in your Plugin SDK's `hooks` folder. The Plugins SDK automatically
 appends "-hook" to your project name. 
 
 Whether you created your hook project from the Liferay IDE or from the command
-line, you end up with the same project structure. To make your hook useful, you
-need to customize something in Liferay. You begin by mirroring the structure of
+line, you end up with the same project structure. Hooks are designed to
+customize something in Liferay. You begin by mirroring the structure of
 Liferay's code that you plan to customize. A hook plugin is built to contain
 this: 
 
@@ -81,7 +86,6 @@ this:
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook.
 
-<!-- Let's move this note into a deployment tutorial. Jim 
 ---
 
  ![Note](../../images/tip-pen-paper.png) **Note:** If the Liferay server
@@ -101,7 +105,7 @@ overriding with your hook.
 `liferay-plugins/hooks/portal-compat-hook`.
 
 ---
---> 
+
 
 ---
 
