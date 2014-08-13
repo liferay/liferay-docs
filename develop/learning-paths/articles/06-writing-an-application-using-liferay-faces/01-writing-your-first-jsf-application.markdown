@@ -45,16 +45,17 @@ to creating a JSF application. Applications in Liferay Portal are called
 
 4. Select *Portlet* for the Plugin type. 
 
-5. Make sure the *Include Sample Code* checkbox is checked and *Launch New Portlet Wizard after
-   project is created* checkbox is **not** checked (if necessary), and click *Next*. 
+5. Make sure the *Include Sample Code* checkbox is checked and the *Launch New
+   Portlet Wizard after project is created* checkbox is **not** checked (if
+   necessary), and click *Next*. 
 
 6. Since you'll be using the JSF portlet framework, select the *JSF 2.x* radio
    option and click *Next*. 
 
 7. The next screen in the wizard offers available JSF UI component suites. You
    can read each UI component suite's summary and learn what each can do for
-   you. For the guestbook portlet, you'll use the *JSF standard* UI component
-   suite, so select that radio option and click *Finish*. 
+   you. For the guestbook portlet, you'll use the *Liferay Faces Alloy* UI
+   component suite, so select that radio option and click *Finish*. 
 
     ![Figure 3: The list of component suites includes the JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces.](../../images/jsf-ui-component-suite-wizard.png)
 
@@ -206,10 +207,11 @@ You'll explore what Liferay Faces Alloy can do for your JSF portlet, first.
 
 If you rewind back to selecting the JSF guestbook portlet's JSF Component Suite
 in Liferay IDE/Developer Studio, you may recall the option of choosing between
-the *JSF standard* (which was selected for the JSF guestbook portlet),
+the *JSF standard*,
 [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
 [*PrimeFaces*](http://primefaces.org/),
-[*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy*. 
+[*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy* (which was
+selected for the JSF guestbook portlet). 
 
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
 their portlet WAR projects in order to utilize Alloy UI in a way that is
@@ -232,9 +234,11 @@ equivalents of the `aui:` JSP tag library provided by Liferay Portal:
 namespaces into a single `aui:` namespace. Update when this is completed. -Cody
 -->
 
-If you want to utilize Liferay's Alloy UI technology based on YUI3, make sure to
-include the Liferay Faces Alloy JAR in your JSF portlet project. Next, you'll
-explore what Liferay Faces Portal accomplishes for your JSF portlet. 
+If you want to utilize Liferay's Alloy UI technology based on YUI3, you'll need
+to include the Liferay Faces Alloy JAR in your JSF portlet project. For your JSF
+guestbook, you have Liferay Faces Alloy preconfigured in your project, so you're
+automatically able to use AUI tags. Next, you'll explore what Liferay Faces
+Portal accomplishes for your JSF portlet. 
 
 ## Understanding Liferay Faces Portal
 
@@ -262,8 +266,6 @@ internationalized messages.
 With the understanding of the provided JSF-related JARs under your belt, you'll
 now begin developing the JSF guestbook portlet. 
 
-## Adding JSF Guestbook Entries
-
 ## Understanding the Liferay Faces Version Scheme
 
 Liferay Faces has a specific versioning scheme it follows to keep releases
@@ -274,4 +276,6 @@ Version
 Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-faces-version-scheme)
 tutorial. 
 
-<!-- Will probably need to merge this section in somewhere else. -Cody --> 
+Now that you have the fundamentals of using JSF portlets in Liferay, you'll move
+on to generating a persistence layer for the JSF guestbook using Service
+Builder. 
