@@ -408,9 +408,11 @@ Notifications icon displays how many unread notifications and requests you have.
 You'll be notified upon receiving a private message, an invitation to join a 
 site, a social connection request, or an event reminder. Alerts and 
 announcements created via the Alerts or Announcements portlets are also 
-accessible via the Notifications icon. Clicking *Notifications* or *Requests* 
-lets you view further details about each item you've received and lets you 
-configure your preferences for receiving notifications and requests.
+accessible via the Notifications icon. Clicking *Mark as Read* clears 
+notifications from the list, but leaves each request for you to respond to 
+individually. Clicking *Notifications* or *Requests* lets you view further 
+details about each item you've received and lets you configure your preferences 
+for receiving notifications and requests.
 
 ![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
 
@@ -826,6 +828,15 @@ site are public, but those of restricted and private Social Office sites are
 private.
 
 ![Figure 1.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
+
+Administrators can control what types of sites, if any, can be created by Social 
+Office users. These settings can be accessed in the *General* tab of Social 
+Office Configurations, which is in the Configurations section of the Control 
+Panel. Unchecking the box *Social Office users can add sites* prevents Social 
+Office users from being able to add sites of any type. When this box is 
+unchecked, the *Add Site* button in the Sites portlet doesn't appear to users.
+
+!(Figure 1.x: Administrators can control the types of sites that Social Office users can create, as well as their ability to create sites at all.](../../images/so-site-restrictions.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
