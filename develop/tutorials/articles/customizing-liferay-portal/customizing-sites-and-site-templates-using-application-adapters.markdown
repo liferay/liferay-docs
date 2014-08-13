@@ -16,7 +16,7 @@ you'll create your own Application Adapter hook.
 
 Here's how to do it: 
 
-1. Create a hook plugin. 
+1. [Create a hook plugin](/develop/tutorials/-/knowledge_base/creating-a-hook-project-in-the-plugins-sdk). 
 
 2. Modify your hook's `liferay-hook.xml` to specify the location of your custom
    JSP and set the global custom JSP setting to `false`: 
@@ -27,15 +27,15 @@ Here's how to do it:
         </hook>
 
     You'll need to create the `docroot/META-INF/custom_jsps` folder in your
-    hook, if it does not exist. You can do this by either manually creating the
-    folder, or navigating to your `liferay-hook.xml` file's *Overview* tab and
-    selecting *Custom JSPs*. Then in the menu that appears, check the *Customize
-    Liferay Portal JSPs* and click the button with three yellow diamonds. 
+    hook if it does not exist. You can do this by creating the folder manually
+    or navigating to your `liferay-hook.xml` file's *Overview* tab and selecting
+    *Custom JSPs*. Then in the menu that appears, check the *Customize Liferay
+    Portal JSPs* and click the button with three yellow diamonds. 
 
 3.  In your project's `docroot/META-INF/custom_jsps/html/portlet/` folder,
-    create a folder named after the portlet whose JSP(s) you're overriding. In
-    that new folder create a JSP file named after the JSP file you're
-    overriding. In this new JSP, you implement application customizations. 
+    create a folder with the same name as the portlet you're overriding. In
+    the new folder, create a JSP file with the same name as the JSP file you're
+    overriding. In this new JSP, you'll implement application customizations. 
 
     It's recommended to include the original JSP (if possible) when overriding a
     JSP. You can include an original JSP by using a `<liferay-util:include>`
@@ -61,7 +61,7 @@ Here's how to do it:
         </p>
 
     Within the `<liferay-util:include>` tag, you must specify the path of the
-    original JSP you're extending, and set the `useCustomPage` attribute to
+    original JSP you're extending and set the `useCustomPage` attribute to
     `false`. 
 
     **Note:** When extending an original JSP in a global hook, you must end the
