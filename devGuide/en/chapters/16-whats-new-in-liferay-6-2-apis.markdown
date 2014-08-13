@@ -300,7 +300,7 @@ the display of your portlet. We'll experiment by adding our own custom ADT.
    *Configuration* and click the *Display Template* drop-down. Select the ADT
    you created, and click *Save*.
 
-![Figure 15.1: The Quick List template gives your locations in a bullet list format.](../../images/quick-list-template.png)
+![Figure 16.1: The Quick List template gives your locations in a bullet list format.](../../images/quick-list-template.png)
     
 For the Location Listing Portlet, we've created a basic FreeMarker script that
 takes our locations from the default table format and displays them and their
