@@ -739,7 +739,7 @@ pages, accessible from the left-column navigation menu:
 - Contacts
 - Microblogs
 
-![Figure 1.x: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/nate-profile.png)
+![Figure 1.x: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/joe-profile.png)
 
 By default, the Profile page displays several pieces of information about
 a user: their profile and profile picture, their latest microblog status, their
