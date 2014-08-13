@@ -484,6 +484,7 @@ Using the power of Liferay's Social API, the Activities portlet presents
 information about different categories of users' recent activities. Use the tabs
 to display portal activities from different scopes:
 
+- *All*: shows all activities.
 - *Connections*: shows a list of activities of users with which you have
   established a social connection.
 - *Following*: shows activities of users you're following.
@@ -514,14 +515,14 @@ message is displayed, like this:
 
 For assets that allow commenting, such as blog entries, wiki articles, calendar
 events, tasks, and documents and media files, the Activities portlet allows
-users to comment the assets directly in the activities feed. Such comments are
-translated directly as comments on the asset. Comments on *groups* of activities
-are not translated as comments on the individual assets; these comments appear
-only in the activities feed. Forum-related activities do not allow comments;
-users have to click the link to the thread to leave a response. Since activities
-feeds can quickly become heavily populated, users can simply scroll to the
-bottom of a page with the Activities portlet and the Activities portlet loads
-more activities.
+users to comment on the assets directly in the activities feed. Such comments 
+are translated directly as comments on the asset. Comments on *groups* of 
+activities are not translated as comments on the individual assets; these 
+comments appear only in the activities feed. Forum-related activities do not 
+allow comments; users have to click the link to the thread to leave a response. 
+Since activities feeds can quickly become heavily populated, users can simply 
+scroll to the bottom of a page with the Activities portlet and the Activities 
+portlet loads more activities.
 
 ![Figure 1.x: The Activities portlet shows activities from the user, sites, and other users.](../../images/activities-feed.png)
 
@@ -564,12 +565,12 @@ portlets beyond the Activities feed. For example, the Tasks and Chat portlets
 can be configured to only show those items that belong to your connections.
 
 The Contacts Center application displays a list of portal users. You can choose 
-to display *All*, *Connections*, *Following*, or *My Contacts*. If you are a 
-member of a site, you can also choose to display only the members of that site. 
-There's also a search bar so you can search for specific users. The Contacts
-Center can store contacts that aren't portal users, making it a great one stop
-shop for all of your contacts. To add a new external contact, just click on the
-*Add Contact* button at the top of the Contacts Center.
+to display *All*, *Connections*, *Following*, *Followers*, or *My Contacts*. If 
+you are a member of a site, you can also choose to display only the members of 
+that site. There's also a search bar so you can search for specific users. The 
+Contacts Center can store contacts that aren't portal users, making it a great 
+one stop shop for all of your contacts. To add a new external contact, just 
+click on the *Add Contact* button at the top of the Contacts Center.
 
 To view details about a contact or user, click on the user from the left-hand
 area of the Contacts Center portlet. For each user, you'll have the following
@@ -583,6 +584,7 @@ options:
   activities stream. Blocking a user only prevents that user from following you
   or adding you as a connection. A blocked user can still send messages to and
   view the public profile information of the blocking user. 
+- *Message* lets you send a private message to the user.
 - *vCard* lets you export a user's vCard and save it as a VCF file. vCard
   is a file format standard for electronic business cards.
   
@@ -599,7 +601,7 @@ several users at once.
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
-be viewable by *All*, *Connections*, or *Followers*. There are two special
+be viewable by *Everyone*, *Connections*, or *Followers*. There are two special
 symbols that you can use in your microblog posts. The hashtag symbol (`#`) turns
 the following word into a hashtag. When viewing a microblog post, hashtags
 appear as links. You can click on any hashtag to view a list of microblog posts
@@ -631,8 +633,8 @@ to other users within the portal. Its interface is similar to that of an email
 client. Messages are aggregated by thread, with the most recent message
 displayed. You can select messages to mark them as read or unread or to delete
 them. Use the *New Message* button to compose a new message. Just like with
-email, you can enter a subject, a message body, and add attachments. Open the
-dropdown menu next to the *To* field to select a user or users to send your
+email, you can enter a subject, a message body, and add attachments. Click in 
+the *To* field and a list of users appears that lets you select who to send your 
 message to. You can select any number of users.
 
 ![Figure 1.x: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messages-inbox.png)
@@ -685,21 +687,20 @@ Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
 navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
-Liferay Portal. Please refer to the [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
+Liferay Portal. Please refer to [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
 information about document management.
 
 ![Figure 1.x: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
 With their private document libraries, each of your Social Office users can
 maintain a personal online repository of documents and files. Your users can use
-all the features of Liferay 6.1's revamped document library, including document
-previews, document types, metadata sets, and version history. However, your
-users can simplify the way they access their document repositories by installing
-Liferay Sync. Liferay Sync allows users to view and edit documents offline using
-their regular desktop or mobile environments. Users' documents are synced with
-your Liferay server at periodic intervals. You can read more about Liferay Sync
-in chapter 4 of Liferay's User Guide here: [Liferay
-Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
+all the features of Liferay's document library, including document previews, 
+document types, metadata sets, and version history. However, your users can 
+simplify the way they access their document repositories by installing Liferay 
+Sync. Liferay Sync allows users to view and edit documents offline using their 
+regular desktop or mobile environments. Users' documents are synced with your 
+Liferay server at periodic intervals. You can read more about Liferay Sync in 
+Liferay's User Guide here: [Liferay Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
 
 #### The Tasks Portlet
 
@@ -728,11 +729,11 @@ its site is displayed.
 
 ### Using the Profile Page and Other Public Pages [](id=using-the-profile-page-and-other-pub-liferay-portal-3-0-social-office-01-en)
 
-You can access your public Profile page from the Dashboard by clicking on your
-name, which appears above the page navigation menu in the left column. Your
-public pages are laid out and styled the same way as the Dashboard and the rest
-of the private pages. Users' default public sites contain three pages,
-accessible from the left-column navigation menu:
+You can access your public Profile page from the Dashboard by clicking on your 
+profile picture, which appears above the page navigation menu in the left 
+column. Your public pages are laid out and styled the same way as the Dashboard 
+and the rest of the private pages. Users' default public sites contain three 
+pages, accessible from the left-column navigation menu:
 
 - Profile
 - Contacts
@@ -758,24 +759,26 @@ a user. A completed profile includes the following pieces of information:
 There's also a button which allows you to export the user's vCard. Once you've
 been granted a Social Office account, you need to access your own profile page
 and fill out your profile information. If you're viewing your own Profile page,
-there's an *Edit Profile* button which opens up your *My Account* page of the
-control panel in a dialog box. Currently, you need to access your *My Account*
-page of the control panel to update your profile picture.
+clicking in the space to the right of your name and email address brings up the 
+*Details* pop-up. Here you can change your screen name, email address, first 
+name, middle name, last name, job title, and profile picture. You can also 
+change your profile picture by clicking the *Change* button that appears when 
+you mouse-over your picture on your profile page.
 
-If you're viewing another user's Profile page, the *Edit Profile* button is
-replaced with buttons for adding or removing the user as a connection, following
-or unfollowing a user, and blocking or unblocking a user. In addition to the
-Profile, Microblogs Status Update, and Activities portlets, the Profile page also
-contains Sites and Tags portlets to help with navigation. Note that when placed
-on a public page, the Microblogs Status Update portlet does not allow you to
-make updates--it just shows the latest status update. You have to make status
-updates from your private site.
+If you're viewing another user's Profile page, you get additional buttons for 
+adding or removing the user as a connection, following or unfollowing the user, 
+and blocking or unblocking the user. In addition to the Profile, Microblogs 
+Status Update, and Activities portlets, the Profile page also contains Sites and 
+Tags portlets to help with navigation. Note that when placed on a public page, 
+the Microblogs Status Update portlet does not allow you to make updates--it just 
+shows the latest status update. You have to make status updates from your 
+private site.
 
 The public Contacts and Microblogs applications have their own public pages.
 These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
-Microblogs portlet allows users to comment on entries. The public Contacts
-application shows users that the current user is connected to or following.
+Microblogs portlet allows users to comment on and repost entries. The public 
+Contacts application shows users that the current user is connected to.
 
 ### Using Social Office Sites For Collaboration [](id=using-social-office-sites-for-collab-liferay-portal-3-0-social-office-01-en)
 
@@ -818,15 +821,15 @@ slightly different than those of regular Liferay sites. Regular Liferay sites
 have only three available membership types: Open, Restricted, and Private. A
 Restricted Liferay site has the same membership type as a private restricted
 Social Office site. The Public Restricted Social Office site membership type has
-no regular Liferay site equivalent. The default pages of an open Social Office
-site are public but those of restricted and private Social Office sites are
+no regular Liferay site equivalent. The default pages of an Open Social Office
+site are public, but those of restricted and private Social Office sites are
 private.
 
 ![Figure 1.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
-on the Dashboard, makes it very easy for Social Office users to manage their
+on the user bar, makes it very easy for Social Office users to manage their
 site memberships. This, in turn, helps them keep abreast of the activities and
 content that they're interested in. The *Join* link is replaced by a *Request
 Membership* link for restricted sites. When users have requested membership for
@@ -845,11 +848,12 @@ The Bookmarks portlet allows users to create a collection of useful links on
 your site and you can configure the RSS portlet to display an RSS feed of your
 choice. The Welcome portlet allows you to set up a custom welcome message for
 your site. It's really just a WYSIWYG portlet with its title changed to
-*Welcome*. Click on the configuration icon of the portlet to bring up the 
-WYSIWYG editor. This is the same powerful editor that appears in Liferay Portal. 
-You can read about it in the user guide in [the section on managing content](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en).
+*Welcome*. Click on the gear icon of the portlet and then select *Configuration* 
+to bring up the WYSIWYG editor. This is the same powerful editor that appears in 
+Liferay Portal. You can read about it in the user guide 
+[section on managing content](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en).
 
-The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet
+The Calendar, Documents, Forums, Blogs, and Wiki pages contain portlet
 applications that are automatically scoped for the site. This means that these
 applications will each use a single data set to serve requests from multiple
 members. So, while each Social Office member receives a personal Calendar
@@ -865,33 +869,34 @@ In addition to the Blogs portlet, the Blogs page contains a Recent Blogs
 portlet. These two portlets are designed to work together. The Blogs portlet
 allows users with the appropriate permissions to publish new blog posts. By
 default, it also displays the full content of 5 recent posts. The Recent Blogs
-portlet, on the other hands, displays a list of recently published blog posts.
+portlet, on the other hand, displays a list of recently published blog posts.
 The Recent Blogs portlet doesn't show the full content of each post. Instead,
-clicking on a post's title or on the *Read More* link in the Recent opens the
-full content of the post in the Blogs portlet.
+clicking on a post's title or on the *Read More* link in the Recent Blogs 
+portlet opens the full content of the post in the Blogs portlet.
 
-Prior to Social Office 2.0, Social Office provide a Related Assets portlet on
-the Blogs page. This portlet is no longer provided on the Blogs page by default
-but can easily be added: just click *Add* &rarr; *More* from the Dockbar, search
-for *Related Assets*, and click *Add* next to its name to add it to the page.
-Whenever the Blogs portlet displays the full content of a blog post, the Related
-Assets portlet lists any of the post's related assets. Click on the name of any
-related asset to view the asset. If there are no related assets, the Related
-Assets portlet won't appear at all.
+Prior to Social Office 2.0, Social Office provided a Related Assets portlet on
+the Blogs page. This portlet is no longer provided on the Blogs page by default,
+but can easily be added. Open the left menu by clicking the gear icon to the 
+right of the search bar, then click *Add* &rarr; *Applications*. Search
+for *Related Assets* and then click *Add* next to its name to add it to the 
+page. Whenever the Blogs portlet displays the full content of a blog post, the 
+Related Assets portlet lists any of the post's related assets. Click on the name 
+of any related asset to view the asset. If there are no related assets, the 
+Related Assets portlet won't appear at all.
 
-The Members page contains a Members portlet and an Invitation portlet. By
-default, the Members portlet displays a list of all the members of the site.
-Using the Members portlet's dropdown selector, users can filter the set of
-displayed site members. The available filters include *All*, *Administrators*,
-*Connections*, and *Following*. The *Administrators* filter provides site
-members with an easy way to display entries for site owners and site
-administrators. This is useful for site members who need to contact site
-administrators. To view a user's details, including their email address, click
-on the user in the Members portlet. After clicking on a user, you can send them
-connections requests, follow them, block them, send them private messages, or
-download their vCards. Please refer to the section on the Contacts portlet for
-more details. The Invitation portlet is only visible to site administrators. It
-allows administrators to send invitations to users to join the site.
+The Members page contains a Members portlet and an Invitation portlet. The 
+Invitation portlet is only visible to site administrators. It allows 
+administrators to send invitations to users to join the site. By default, the 
+Members portlet displays a list of all the members of the site. Using the 
+Members portlet's dropdown selector, users can filter the set of displayed site 
+members. The available filters include *All*, *Administrators*, *Connections*, 
+and *Following*. The *Administrators* filter provides site members with an easy 
+way to display entries for site owners and site administrators. This is useful 
+for site members who need to contact site administrators. To view a user's 
+details, including their email address, click on the user in the Members 
+portlet. After clicking on a user, you can send them connections requests, 
+follow them, block them, send them private messages, or download their vCards. 
+Please refer to the section on the Contacts portlet for more details. 
 
 #### A Case Study: The Sales Team
 
@@ -918,10 +923,10 @@ several useful features in addition to the ones provided by Social Office CE.
 These additional features include the following:
 
 - Enhanced auditing tools for the Documents and Media library
-- The ability to mount Documentum and Sharepoint repositories to the Documents
-  and Media library.
+- The ability to mount Sharepoint repositories to the Documents and Media 
+  library
 - The ability for Liferay Sync users to sync with multiple Social Office sites
-- Bug fixes and usability improvements since Social Office 2.0 CE GA2
+- Bug fixes and usability improvements since Social Office 3.0 CE
 - Access to Liferay Support
 
 ### Installing Social Office EE [](id=installing-social-office-ee-liferay-portal-3-0-social-office-01-en)
@@ -950,34 +955,31 @@ fulfill your order.
 
 Once you've obtained a Social Office EE license (trial or otherwise), you should
 deploy the license to your Liferay instance. To do so, first click on *License
-Manager* at the bottom of the Server Administration section of the Control
-Panel. Then enter your order id into the field provided, click *Query*, and
-select *Social Office EE*. Now you're able to install Social Office EE! Note: If
-you already downloaded Social Office EE and attempted to install it before
-deploying your order id license, you'll need to restart your Liferay server
-after deploying the license in order for Social Office EE to deploy.
+Manager* in the Apps section of the Control Panel. Then enter your order id into 
+the field provided, click *Query*, and select *Social Office EE*. Now you're 
+able to install Social Office EE! Note: If you already downloaded Social Office 
+EE and attempted to install it before deploying your order id license, you'll 
+need to restart your Liferay server after deploying the license in order for 
+Social Office EE to deploy.
 
 After installing (or uninstalling) Social Office EE, you should
 confirm that these plugins, in addition to the ones included with Social Office 
 CE, have been successfully deployed (or removed). Your server's console log 
-should indicate whether or each plugin has been successfully deployed.
+should indicate whether or not each plugin has been successfully deployed.
 
 **EE Plugins:**
 
-- documentum-hook
 - sharepoint-hook
 
 ### Social Office EE Features [](id=social-office-ee-features-liferay-portal-3-0-social-office-01-en)
 
-The Documentum and Sharepoint plugins that are included in Social Office EE are
-the same plugins as those provided by the [Documentum Connector EE](https://www.liferay.com/marketplace/-/mp/application/15098914) and
-[Sharepoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537) apps on
-Liferay Marketplace. These plugins integrate Liferay's Documents and Media
-functionality with Documentum and Sharepoint. They allow Documentum and
-Sharepoint repositories to be mounted within Liferay's Documents and Media
-system. Please refer to the Liferay Marketplace app descriptions and the
-Documents and Media section of the [Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/using-external-repositori-3)
-for information on properties and configuration.
+The Sharepoint plugin that is included in Social Office EE is the same plugin as 
+provided by the [Sharepoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537) app on
+Liferay Marketplace. This plugin integrates Liferay's Documents and Media 
+functionality with Sharepoint. It allows Sharepoint repositories to be mounted 
+within Liferay's Documents and Media system. Please refer to the Liferay 
+Marketplace app description and the Documents and Media section of the 
+[Liferay User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/using-external-repositori-3) for information on properties and configuration.
 
 Other features provided by Social Office EE include auditing improvements to the
 Documents and Media library. Once you've installed Social Office EE, you'll find
