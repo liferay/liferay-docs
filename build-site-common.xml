@@ -47,6 +47,7 @@
 		<java
 			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
 			classpathref="project.classpath"
+			failonerror="true"
 			fork="true"
 		>
 			<arg value="${article}"/>
@@ -83,6 +84,7 @@
 		<java
 			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
 			classpathref="project.classpath"
+			failonerror="true"
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>

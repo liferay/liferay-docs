@@ -46,7 +46,7 @@ If your application server does not support hot deploy, you can't leverage
 Liferay’s auto deploy feature. You can, however, manually deploy the
 plugin in two steps:
 
-1. Use Liferay’s tools to “pre-deploy�? the file.
+1. Use Liferay's tools to pre-deploy the file.
 
 2. Then use your app server's tools to do the actual deployment.
 

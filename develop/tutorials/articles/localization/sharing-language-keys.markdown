@@ -1,8 +1,8 @@
 # Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets)
 
 <!-- The beginning and ending test portlets can be found at the following:
-Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
-End: https://github.com/codyhoag/liferay-docs/tree/master/develop/tutorials/code/plat-fws/share-lang-keys/end/event-listing-portlet
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+End: https://github.com/codyhoag/liferay-docs/tree/master/develop/tutorials/code/loc/share-lang-keys/end/event-listing-portlet
 -->
 
 It's likely that you'll have messages that you want to localize that aren't
@@ -42,7 +42,7 @@ in the same project.
 
     This line brings your translated language key value into your JSP. You can
     reference a sample portlet's
-    [`view.jsp`](https://github.com/codyhoag/liferay-docs/blob/master/develop/tutorials/code/plat-fws/share-lang-keys/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
+    [`view.jsp`](https://github.com/codyhoag/liferay-docs/blob/master/develop/tutorials/code/loc/share-lang-keys/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
     for an example of where this UI message can be placed within your JSP. Make
     sure you've specified the required taglib as well: 
 
