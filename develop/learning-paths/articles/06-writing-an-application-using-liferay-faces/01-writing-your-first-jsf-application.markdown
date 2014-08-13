@@ -6,9 +6,7 @@ particular, you'll develop a guestbook application which users can use to add
 messages to a page. When you're finished, the final guestbook application will
 look like this: 
 
-<!--
-![Figure 1: Insert final JSF application when it's fully developed (change current image).](../../images/my-first-app.png)
--->
+![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../images/my-first-jsf-app.png)
 
 You may be wondering how and why JSF is so easy to deploy to Liferay. Isn't JSF
 a separtate technology? JSF portlets use *Liferay Faces Bridge*, which supports
@@ -33,18 +31,22 @@ to creating a JSF application. Applications in Liferay Portal are called
 
     ![Figure 2: Liferay IDE/Developer Studio's new plugin project wizard makes it very easy to create a portlet project.](../../images/lds-new-jsf-plugin-project.png)
 
-2. Fill in the *Project name* and *Display name* as *jsf-guestbook-portlet* and
-   *JSF Guestbook*, respectively. 
+2. Fill in the *Project name* and *Display name* as *guestbook-jsf-portlet* and
+   *Guestbook*, respectively. 
 
 3. Leave the *Use default location* checkbox checked. By default, the default
    location is set to your current Plugins SDK. Select the *Ant
    (liferay-plugins-sdk)* option for your build type, and the appropriate
-   Plugins SDK and Liferay runtime. 
+   Plugins SDK and Liferay runtime. You also have the option of choosing the
+   *Maven* build type, which is also popular with JSF portlets. You can visit
+   the [Maven
+   tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/maven)
+   to learn how to build plugins using Maven. 
 
 4. Select *Portlet* for the Plugin type. 
 
-5. Make sure the *Include Sample Code* and *Launch New Portlet Wizard after
-   project is created* are unchecked (if necessary), and click *Next*. 
+5. Make sure the *Include Sample Code* checkbox is checked and *Launch New Portlet Wizard after
+   project is created* checkbox is **not** checked (if necessary), and click *Next*. 
 
 6. Since you'll be using the JSF portlet framework, select the *JSF 2.x* radio
    option and click *Next*. 
@@ -65,10 +67,13 @@ wizard that is launched after the project is created.
 1. Specify the Portlet class as `javax.portlet.faces.GenericFacesPortlet` (if
    necessary). Then click *Next*. 
 
-2. Enter `jsf-guestbook` for the portlet name. The following fields are edited
-accordingly. 
+2. Enter `guestbook-jsf` for the portlet name. The following fields are edited
+   accordingly. 
 
-3. Click *Finish*. 
+3. Uncheck the *Create view files* checkbox. You'll create your own view files
+   manually. 
+
+4. Click *Finish*. 
 
 Awesome! You just created a JSF portlet! However, the current JSF portlet is
 very bare bones and needs some further development so it can serve a purpose.
