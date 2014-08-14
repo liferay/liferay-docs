@@ -1,13 +1,11 @@
-Put sample code in folders that map to the article and section to which it is related.
+The code in the Learning Paths section has three different SDKs: 
 
-For example, add the following folders for sample plugins that demonstrate using the User and Organization APIs:
+1.  The first learning path has its own SDK because its non- Service Builder
+    implementation requires that it be stored separately. 
 
-- `platform/` - Note that the folder has no number prefix, unlike its related article Markdown file. 
-    - `users-and-organizations/`
-        - `sample-01/`
-            - `some-portlet/`
-                ...
-        - `[sample-02/]`
-            - `some-portlet/`
-                ...
-                
+2.  The second learning path is the starting point for the rest, so it is stored
+    separately. 
+
+3.  The `learning-sdk` that you see here contains the code for the rest of the
+    learning paths. This is to make the code easier to maintain, and to provide
+    a complete example for people to download. 

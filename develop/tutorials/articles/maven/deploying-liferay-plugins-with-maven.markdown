@@ -1,4 +1,4 @@
-# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven)
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. This
 tutorial explain the process. Just follow these steps: 
@@ -6,7 +6,7 @@ tutorial explain the process. Just follow these steps:
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
     `pom.xml`. See the 
-    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
     tutorial for descriptions of these Liferay properties. 
 
     Here's an example where these *properties* are specified for a Liferay
@@ -140,14 +140,7 @@ you'll use when developing plugins with Maven:
 
 Congratulations on deploying your plugin to Liferay and to your repository! 
 
-## Next Steps
+## Related Topics
 
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 

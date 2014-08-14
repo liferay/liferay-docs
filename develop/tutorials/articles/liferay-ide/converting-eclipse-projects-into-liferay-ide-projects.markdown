@@ -1,4 +1,4 @@
-# Converting Eclipse Projects into Liferay IDE Projects [](id=converting-eclipse-projects-into-liferay-ide-projec-lp-6-2-develop-tutorial)
+# Converting Eclipse Projects into Liferay IDE Projects [](id=converting-eclipse-projects-into-liferay-ide-projec)
 
 Liferay IDE lets you import non-Liferay projects in your Eclipse workspace
 (i.e., you can see them in Eclipse's Project Explorer) and convert them to
@@ -20,9 +20,10 @@ This tutorial shows the steps required to accomplish this.
     ![Note](../../images/tip-pen-paper.png) **Note:** If no convert action is
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
-    for it). For instructions on resolving these issues, see the [Faceting a Plugin Project for Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+    for it). For instructions on resolving these issues, see the
+    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
     tutorial and the 
-    [Verifying Successful Project Import](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
     tutorial. 
 
     ---
@@ -40,13 +41,9 @@ This tutorial shows the steps required to accomplish this.
 Great! Now that you've imported and converted your project, you can work with it 
 just as you would any other Liferay project.
 
-## Next Steps 
+## Related Topics 
 
-[Verifying Successful Project Import](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
 
-[Faceting a Plugin Project for Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
-
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
-
-<!-- TODO - add links to deployment tutorials. Jim -->
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 

@@ -1,4 +1,4 @@
-# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk-lp-6-2-develop-tutorial)
+# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk)
 
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
@@ -13,10 +13,10 @@ Plugins SDK project into your workspace.
 <!--
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
- you've created projects with the Plugins SDK and are familiar with the
- directory structure used by the Plugins SDK. If you need to, check out the
- *Plugins SDK* section of this chapter; it comes right after this section. 
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
+you've created projects with the Plugins SDK and are familiar with the
+directory structure used by the Plugins SDK. If you need to, check out the
+*Plugins SDK* section of this chapter; it comes right after this section. 
 
 ---
 -->
@@ -100,8 +100,9 @@ you've already set up in Liferay IDE. Follow these steps:
 
 Congratulations on importing *multiple* Liferay projects into your workspace! 
 
-## Next Steps 
+## Related Topics
 
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
 
-<!-- TODO add link to other deployment tutorials as they become available. Jim -->
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+

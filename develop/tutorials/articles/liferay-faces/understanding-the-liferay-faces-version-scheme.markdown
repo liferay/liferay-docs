@@ -1,4 +1,4 @@
-# Understanding the Liferay Faces Version Scheme
+# Understanding the Liferay Faces Version Scheme [](id=understanding-the-liferay-faces-version-scheme)
 
 In this tutorial, you'll explore the Liferay Faces versioning scheme, and what
 each component of a version means. [Liferay
@@ -72,8 +72,6 @@ starting with the [Migrating BridgeRequestAttributeListener to Liferay Faces]()
 tutorial. -->
 
 With the knowledge of the Liferay Faces versioning scheme under your belt, you
-can now depict what the version supports. 
+can now recognize what each version supports. 
 
-## Related Topics
-
-<!-- Add once JSF tutorials are finished. -Cody -->
+<!-- Add Related Topics section once JSF tutorials are finished. -Cody -->

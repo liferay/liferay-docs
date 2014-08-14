@@ -1,4 +1,4 @@
-# Using the LiferayFacesContext with Liferay Faces Portal
+# Using the LiferayFacesContext with Liferay Faces Portal [](id=using-the-liferayfacescontext-with-liferay-faces-portal)
 
 In this tutorial, you'll get introduced to the `LiferayFacesContext` class and
 how it can help you when developing with Liferay Faces Portal. 
