@@ -72,8 +72,6 @@ starting with the [Migrating BridgeRequestAttributeListener to Liferay Faces]()
 tutorial. -->
 
 With the knowledge of the Liferay Faces versioning scheme under your belt, you
-can now depict what the version supports. 
+can now recognize what each version supports. 
 
-## Related Topics
-
-<!-- Add once JSF tutorials are finished. -Cody -->
+<!-- Add Related Topics section once JSF tutorials are finished. -Cody -->
