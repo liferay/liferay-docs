@@ -22,15 +22,17 @@ To create your Liferay Faces portlet plugin project, just follow the
 tutorial or the
 [Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type, and *JSF 2.x* as
-the portlet framework. Lastly, you'll be required to select a JSF component suite. 
+the portlet framework. Lastly, you'll be required to select a JSF component
+suite. 
 
-A Liferay Faces portlet can be built to use one of several different JSF component suites,
+A Liferay Faces portlet can be built to use one of several different JSF
+component suites, 
 including [*RichFaces*](http://richfaces.jboss.org/),
 [*PrimeFaces*](http://primefaces.org/),
 [*Liferay Faces Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
 the [*JSF Standard*](http://en.wikipedia.org/wiki/JavaServer_Faces) suite, and
-[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf).
-Each JSF component suite has an archetype that is used in creating the portlet.
+[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf). Each
+JSF component suite has an archetype that is used in creating the portlet. 
 
 ---
 
@@ -88,8 +90,8 @@ Location    | Maven project     | Plugins SDK project   |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-Congratulations! You now know how to create Liferay Faces
-portlets that can leverage one of several powerful JSF frameworks. 
+Congratulations! You now know how to create Liferay Faces portlets that can
+leverage one of several powerful JSF frameworks. 
 
 ## Related Topics
 
