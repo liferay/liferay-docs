@@ -1,4 +1,4 @@
-# Installing and Managing Liferay Maven Artifacts [](id=managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
+# Installing and Managing Liferay Maven Artifacts [](id=managing-liferay-maven-artifacts)
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
@@ -79,7 +79,7 @@ If you're using Liferay CE and you want the latest pre-release artifacts from
 the Liferay CE source repository, you can get them--but you'll have to build
 them yourself. Don't worry, it's easy. If you're interesting in building the
 artifacts from Liferay's source code, please see the [Building Maven Artifacts
-from Source](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
+from Source](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source)
 tutorial. 
 
 Once you've downloaded Liferay release artifacts as a zip file or built them
@@ -120,13 +120,13 @@ Here's how you do it:
 
 1.  Make sure you've created a repository server to hold the Liferay Maven
     artifacts. If you haven't, see the *Managing Maven Repositories* section of
-    the [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+    the [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven)
     tutorial for instructions. 
 
 2.  Make sure the repository that will hold your Liferay artifacts is specified
     as a server in Maven's `settings.xml` file. If it isn't, see the
     *Configuring Local Maven Settings* section of the 
-    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven)
     tutorial for instructions on adding an entry for the server. 
 
     Here's an example setting for a repository server named *liferay-releases*: 
@@ -160,7 +160,7 @@ Here's how you do it:
 
     Note: If you created a repository in Nexus, as demonstrated in the *Managing
     Maven Repositories* section of the
-    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial) tutorial, you can specify
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven) tutorial, you can specify
     that repository's ID and URL. 
 
 5.  To deploy to your release repository server, execute the following command: 
@@ -273,5 +273,5 @@ Liferay plugins.
 
 ## Related Topics
 
-[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/building-maven-artifacts-from-source-lp-6-2-develop-tutorial) 
+[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/building-maven-artifacts-from-source) 
 

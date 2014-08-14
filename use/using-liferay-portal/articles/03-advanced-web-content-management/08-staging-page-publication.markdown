@@ -1,4 +1,4 @@
-# Staging Page Publication [](id=staging-page-publication-lp-6-2-use-useportal)
+# Staging Page Publication [](id=staging-page-publication)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your

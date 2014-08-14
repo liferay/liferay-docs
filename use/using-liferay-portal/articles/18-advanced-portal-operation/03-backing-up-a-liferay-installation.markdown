@@ -1,4 +1,4 @@
-# Backing up a Liferay Installation [](id=backing-up-a-liferay-installation-lp-6-2-use-useportal)
+# Backing up a Liferay Installation [](id=backing-up-a-liferay-installation)
 
 Once you have an installation of Liferay Portal running, you'll want to have
 proper backup procedures in place in case of a catastrophic hardware failure of

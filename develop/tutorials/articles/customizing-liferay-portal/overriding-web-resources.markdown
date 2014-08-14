@@ -1,4 +1,4 @@
-# Overriding Web Resources [](id=overriding-web-resources-lp-6-2-develop-tutorial)
+# Overriding Web Resources [](id=overriding-web-resources)
 
 Hooks are commonly used to override web resources, found in the `portal-web`
 directory of Liferay's source. You can use a hook to override JSP files, JSPF
@@ -99,4 +99,4 @@ Congratulations on overriding a Liferay Portal JSP!
 
 ## Related Topics 
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)

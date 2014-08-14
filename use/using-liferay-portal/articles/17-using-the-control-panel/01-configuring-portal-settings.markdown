@@ -1,4 +1,4 @@
-# Configuring Portal Settings [](id=configuring-portal-settings-lp-6-2-use-useportal)
+# Configuring Portal Settings [](id=configuring-portal-settings)
 
 Most global portal settings can be configured from the Portal Settings section
 of the Control Panel. The Configuration heading contains the following links:

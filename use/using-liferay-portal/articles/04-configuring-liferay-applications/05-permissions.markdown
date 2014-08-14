@@ -1,4 +1,4 @@
-# Permissions [](id=permissions-lp-6-2-use-useportal)
+# Permissions [](id=permissions)
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab

@@ -1,4 +1,4 @@
-# Roles and Permissions [](id=roles-and-permissions-lp-6-2-use-useportal)
+# Roles and Permissions [](id=roles-and-permissions)
 
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to

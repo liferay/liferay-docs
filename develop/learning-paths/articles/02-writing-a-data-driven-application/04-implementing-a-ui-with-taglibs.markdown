@@ -1,4 +1,4 @@
-# Implementing a UI with Liferay Taglibs [](id=implementing-a-ui-with-liferay-taglibs-lp-6-2-develop-learnpath)
+# Implementing a UI with Liferay Taglibs [](id=implementing-a-ui-with-liferay-taglibs)
 
 Clearly, now that you've implemented all the other layers of your application,
 you need a user interface that's a bit more organized and extensible than the
@@ -263,5 +263,5 @@ want to add, some of which are listed below.
 
 ## Next Steps
 
-[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions-lp-6-2-develop-learnpath)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
 

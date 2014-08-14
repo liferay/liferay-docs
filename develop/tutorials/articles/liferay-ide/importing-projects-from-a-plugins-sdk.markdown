@@ -1,4 +1,4 @@
-# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk-lp-6-2-develop-tutorial)
+# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk)
 
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
@@ -102,7 +102,7 @@ Congratulations on importing *multiple* Liferay projects into your workspace!
 
 ## Related Topics
 
-[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 

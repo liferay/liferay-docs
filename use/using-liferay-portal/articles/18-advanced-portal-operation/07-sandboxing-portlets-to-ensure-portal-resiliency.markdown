@@ -1,4 +1,4 @@
-# Sandboxing Portlets to Ensure Portal Resiliency [](id=sandboxing-portlets-to-ensure-portal-resiliency-lp-6-2-use-useportal)
+# Sandboxing Portlets to Ensure Portal Resiliency [](id=sandboxing-portlets-to-ensure-portal-resiliency)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

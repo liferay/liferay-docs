@@ -1,4 +1,4 @@
-# Writing Permissions Java Code [](id=writing-permissions-java-code-lp-6-2-develop-learnpath)
+# Writing Permissions Java Code [](id=writing-permissions-java-code)
 
 As you've seen, permissions in Liferay Portal are defined using a configuration
 file. The permissions themselves, however, must be stored in the database in

@@ -1,4 +1,4 @@
-# Building Liferay Maven Artifacts from Source [](id=building-maven-artifacts-from-source-lp-6-2-develop-tutorial)
+# Building Liferay Maven Artifacts from Source [](id=building-maven-artifacts-from-source)
 
 You can download the Liferay Maven artifacts if you're just interested in using
 the artifacts for a specific release. However, if you'd like to use the very
@@ -112,6 +112,6 @@ source code.
 
 Here are some related topics:
 
-[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts-lp-6-2-develop-tutorial)
+[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts)
 
-[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide)

@@ -1,4 +1,4 @@
-# MVC Portlets [](id=developing-jsp-portlets-using-liferay-mvc-lp-6-2-develop-tutorial)
+# MVC Portlets [](id=developing-jsp-portlets-using-liferay-mvc)
 
 Portlets are the most basic, most commonly used type of Liferay plugin you'll
 develop. Think of your Liferay portal as a pizza crust (sit down, you can go

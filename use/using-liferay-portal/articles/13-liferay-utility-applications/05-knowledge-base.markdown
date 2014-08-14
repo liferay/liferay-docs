@@ -1,4 +1,4 @@
-# Knowledge Base [](id=knowledge-base-lp-6-2-use-useportal)
+# Knowledge Base [](id=knowledge-base)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

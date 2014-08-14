@@ -1,4 +1,4 @@
-# Using Site Templates [](id=using-site-templates-lp-6-2-use-useportal)
+# Using Site Templates [](id=using-site-templates)
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and

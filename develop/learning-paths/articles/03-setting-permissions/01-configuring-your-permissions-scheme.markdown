@@ -1,4 +1,4 @@
-# Configuring Your Permissions Scheme [](id=configuring-your-permissions-scheme-lp-6-2-develop-learnpath)
+# Configuring Your Permissions Scheme [](id=configuring-your-permissions-scheme)
 
 Liferay's permissions system is composed of several components. The main
 component is a configuration file that really could have any name, but by

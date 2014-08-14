@@ -1,4 +1,4 @@
-# Summary [](id=summary-lp-6-2-use-useportal-16)
+# Summary [](id=summary-16)
 
 In this chapter, we saw how Liferay's script engine opens up many exciting
 possibilities for working with Liferay. You can write and execute scripts from

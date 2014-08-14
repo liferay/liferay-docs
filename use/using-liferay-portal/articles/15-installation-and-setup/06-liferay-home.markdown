@@ -1,4 +1,4 @@
-# Liferay Home [](id=liferay-home-lp-6-2-use-useportal)
+# Liferay Home [](id=liferay-home)
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
 usually one folder higher than the location of the application server itself.

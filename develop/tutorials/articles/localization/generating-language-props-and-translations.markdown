@@ -1,8 +1,8 @@
-# Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t-lp-6-2-develop-tutorial)
+# Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t)
 
 <!-- The beginning and ending test portlets can be found at the following:
-Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
-End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet
 -->
 
 In this tutorial, you'll learn how Liferay facilitates generating language key
@@ -17,7 +17,7 @@ get translations for your default resource bundle.
 It's time to get started by doing the initial setup for the Bing Translator
 service for translating the language properties. 
 
-## Translating Languages Using the Bing Translator [](id=translating-languages-using-the-bing-translator-lp-6-2-develop-tutorial)
+## Translating Languages Using the Bing Translator [](id=translating-languages-using-the-bing-translator)
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
@@ -55,7 +55,7 @@ Translator service, you'll need to do the following:
 Next, you'll make the necessary changes to your portlet so that it can leverage 
 the Bing Translator service.
  
-## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet-lp-6-2-develop-tutorial)
+## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet)
 
 Now that you've done the initial setup for the Bing Translator, you're ready to 
 add support for translations to your portlet.
@@ -78,7 +78,7 @@ add support for translations to your portlet.
     language key for the current locale and render it for the user.
 
     For example JSP code that references language keys, see
-    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 3. Build the language keys, by either right-clicking on the
    `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in

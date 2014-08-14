@@ -429,7 +429,7 @@ upper-right corner of the screen. After you've registered, you can visit the
 Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
 The Marketplace home page is shown below:
 
-![Figure 12.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
+![Figure 14.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. Since you'll visit here often during the course of
@@ -451,7 +451,7 @@ your published apps are available to you from your User Profile. Let's go there
 now. In the upper right corner on <http://www.liferay.com> select your picture
 &rarr; *User Profile*. 
 
-![Figure 12.2: Select your picture &rarr; *User Profile* on liferay.com to access your app development pages.](../../images/liferay-dot-com-user-profile.png) 
+![Figure 14.2: Select your picture &rarr; *User Profile* on liferay.com to access your app development pages.](../../images/liferay-dot-com-user-profile.png) 
 
 In the left side navigation panel of your profile page, there are links to pages
 related to using apps and developing apps. Links to *Apps* and *App Metrics*
@@ -460,7 +460,7 @@ these links heavily during development; so you may want to bookmark this page
 too. Click *Apps* from within the *Development* section to access your app
 development page. 
 
-![Figure 12.3: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
+![Figure 14.3: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
 Now that you know how to get to your app development page, let's publish an app!  
 
@@ -473,7 +473,7 @@ appears, allowing you to fill in your app's details.
 
 The first step is to enter the basic details about your app. 
 
-![Figure 12.4: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../images/marketplace-add-app-details.png) 
+![Figure 14.4: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
 
@@ -594,7 +594,7 @@ automatically begin uploading and their compatibility information is scanned
 (read the previous sections in this chapter to understand what compatibility
 information is read from your plugins). 
 
-![Figure 12.5: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+![Figure 14.5: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
 As a more complicated example, let's consider an app that consists of a hook and
 a portlet. The portlet works across all Liferay releases, but the hook is built
@@ -618,7 +618,7 @@ cannot be changed.
 
 **Choose a license term:**
 
-![Figure 12.7: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
+![Figure 14.6: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
 
 Choosing *Perpetual* allows the app to continue running without expiration,
 whereas choosing *Non-Perpetual** expires the app's license one year from the
@@ -630,7 +630,7 @@ available. You cannot change your app's license terms once the app is approved.
 
 **Creating license options:**
 
-![Figure 12.8: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
+![Figure 14.7: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
 
 Creating license options allows you to design license bundles and to specify
 discounts for customers who purchase more Liferay Instances for your app (a
@@ -652,7 +652,7 @@ next page to determine the app's pricing and availability.
 
 **Pricing:**
 
-![Figure 12.9: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
+![Figure 14.8: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
 
 Based on your selections from the previous page, you'll have price fields for
 each license option and for any support option you offered. 
@@ -682,7 +682,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at the *App Preview* screen. This allows you to preview your app
 as it will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 12.10: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 14.9: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
@@ -852,7 +852,7 @@ the developer of your app, to get detailed reports about the number of views,
 downloads, and purchases of your app(s). To access these metrics, navigate
 to *Home* &rarr; *Metrics* (under *Development*). 
 
-![Figure 12.11: The App Performance view in Marketplace lets you see how many times your apps has been viewed, downloaded, and purchased over a time interval.](../../images/marketplace-app-metrics-over-time.png) 
+![Figure 14.10: The App Performance view in Marketplace lets you see how many times your apps has been viewed, downloaded, and purchased over a time interval.](../../images/marketplace-app-metrics-over-time.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Purchases*).

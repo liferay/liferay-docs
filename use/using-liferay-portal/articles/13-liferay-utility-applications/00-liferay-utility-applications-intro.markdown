@@ -1,4 +1,4 @@
-# Liferay Utility Applications [](id=liferay-utility-applications-lp-6-2-use-useportal)
+# Liferay Utility Applications [](id=liferay-utility-applications)
 
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog has been replaced by Liferay Marketplace

@@ -1,4 +1,4 @@
-# Using Service Builder to Generate a Persistence Framework [](id=using-service-builder-to-generate-a-persistence-fr-lp-6-2-develop-learnpath)
+# Using Service Builder to Generate a Persistence Framework [](id=using-service-builder-to-generate-a-persistence-fr)
 
 In the last learning path, you built an application using Liferay's
 Model-View-Controller portlet framework. MVC is a great design pattern for web
@@ -19,7 +19,7 @@ that by providing Service Builder, a framework for generating the model,
 service, and persistence layers of your application. 
 
 For more information about how Service Builder works, see the 
-[tutorial](/develop/tutorials/-/knowledge_base/what-is-service-builder-lp-6-2-develop-tutorial) 
+[tutorial](/develop/tutorials/-/knowledge_base/what-is-service-builder) 
 on its design. For now, you'll jump right in and start 
 creating your application's service and persistence layers. 
 
@@ -256,7 +256,7 @@ code generator for code generator haters: it generates the stuff that's tedious
 to write, while giving you the freedom to customize anything you want. 
 
 For further information about Service Builder, what it's built on, and how it
-works, please read the [What is Service Builder?](/develop/tutorials/-/knowledge_base/what-is-service-builder-lp-6-2-develop-tutorial)
+works, please read the [What is Service Builder?](/develop/tutorials/-/knowledge_base/what-is-service-builder)
 tutorial. 
 
 Congratulations! You've now used Service Builder to generate a service and

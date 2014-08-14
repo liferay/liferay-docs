@@ -1,7 +1,7 @@
-# Performing a Custom Action Using a Hook [](id=performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+# Performing a Custom Action Using a Hook [](id=performing-a-custom-action-using-a-hook)
 
 <!-- The custom-action-hook project can be found here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/custom-action/end/custom-action-hook
+https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/cust/custom-action/end/custom-action-hook
 -->
 
 Hooks are useful for triggering custom actions on common portal events, like
