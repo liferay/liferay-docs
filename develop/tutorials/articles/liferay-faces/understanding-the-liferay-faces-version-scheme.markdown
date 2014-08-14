@@ -1,4 +1,4 @@
-# Understanding the Liferay Faces Version Scheme
+# Understanding the Liferay Faces Version Scheme [](id=understanding-the-liferay-faces-version-scheme)
 
 In this tutorial, you'll explore the Liferay Faces versioning scheme, and what
 each component of a version means. [Liferay
