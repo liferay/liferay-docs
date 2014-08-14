@@ -145,3 +145,7 @@ portal renders your JSF portlet.
 
 It's just that easy to create and deploy JSF portlet plugins! 
 
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->
+
