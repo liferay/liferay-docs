@@ -24,16 +24,15 @@ IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-lif
 tutorial or the [Creating Liferay Maven Plugins from the Command
 Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type, and *JSF 2.x* as
-the portlet framework. Lastly, you'll be required to select a JSF framework. 
+the portlet framework. Lastly, you'll be required to select a JSF component suite. 
 
-Liferay Faces portlets can be built with a number of different JSF frameworks,
-which include: [*RichFaces*](http://richfaces.jboss.org/),
+A Liferay Faces portlet can be built to use one of several different JSF component suites,
+including [*RichFaces*](http://richfaces.jboss.org/),
 [*PrimeFaces*](http://primefaces.org/), [*Liferay Faces
 Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
-[*JSF standard*](http://en.wikipedia.org/wiki/JavaServer_Faces), and
-[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
-portlets. Each JSF framework has an archetype that can be used during the
-creation process. 
+the [*JSF Standard*](http://en.wikipedia.org/wiki/JavaServer_Faces) suite, and
+[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf).
+Each JSF component suite has an archetype that is used in creating the portlet.
 
 ---
 
@@ -45,7 +44,7 @@ the group ID `liferay`, or even the group ID/artifact ID combination
 ---
 
 It's very helpful to familiarize yourself with a Liferay Faces's portlet plugin
-project's directory structure, so you'll explore its anatomy next. 
+project's directory structure. You can explore its anatomy next. 
 
 ## Anatomy
 
@@ -91,8 +90,8 @@ Location    | Maven project     | Plugins SDK project   |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-Congratulations! You now have the knowledge necessary to create Liferay Faces
-portlets using several different JSF frameworks. 
+Congratulations! You now know how to create Liferay Faces
+portlets that can leverage one of several powerful JSF frameworks. 
 
 ## Related Topics
 
