@@ -37,23 +37,64 @@ public class GuestbookPortlet extends MVCPortlet {
 		String email = ParamUtil.getString(request, "email");
 		String message = ParamUtil.getString(request, "message");
 		long guestbookId = ParamUtil.getLong(request, "guestbookId");
+		long entryId = ParamUtil.getLong(request, "entryId");
 
-		try {
-			EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
-					guestbookId, userName, email, message, serviceContext);
+		if (entryId > 0) {
 
-			SessionMessages.add(request, "entryAdded");
+			try {
 
-			response.setRenderParameter("guestbookId",
-					Long.toString(guestbookId));
+				EntryLocalServiceUtil.updateEntry(serviceContext.getUserId(),
+						guestbookId, entryId, userName, email, message,
+						serviceContext);
 
-		} catch (Exception e) {
-			SessionErrors.add(request, e.getClass().getName());
+				SessionMessages.add(request, "entryAdded");
 
-			response.setRenderParameter("mvcPath",
-					"/html/guestbook/edit_entry.jsp");
+				response.setRenderParameter("guestbookId",
+						Long.toString(guestbookId));
+
+			} catch (Exception e) {
+
+				SessionErrors.add(request, e.getClass().getName());
+
+				response.setRenderParameter("mvcPath",
+						"/html/guestbook/edit_entry.jsp");
+			}
+
+		} else {
+
+			try {
+				EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
+						guestbookId, userName, email, message, serviceContext);
+
+				SessionMessages.add(request, "entryAdded");
+
+				response.setRenderParameter("guestbookId",
+						Long.toString(guestbookId));
+
+			} catch (Exception e) {
+				SessionErrors.add(request, e.getClass().getName());
+
+				response.setRenderParameter("mvcPath",
+						"/html/guestbook/edit_entry.jsp");
+			}
 		}
 
+	}
+	
+	public void deleteEntry (ActionRequest request, ActionResponse response) {
+		
+		long entryId = ParamUtil.getLong(request, "entryId");
+		
+		try {
+
+			Entry entry = EntryLocalServiceUtil.getEntry(entryId);
+			
+			entry = EntryLocalServiceUtil.deleteEntry(entry);
+			
+		} catch (Exception e) {
+			
+			SessionErrors.add(request, e.getClass().getName());
+		}
 	}
 
 	public void addGuestbook(ActionRequest request, ActionResponse response)

@@ -105,6 +105,39 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		
 	}
 	
+	public Entry updateEntry(long userId, long guestbookId, long entryId,
+			String name, String email, String message,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
+		long groupId = serviceContext.getScopeGroupId();
+
+		User user = userPersistence.findByPrimaryKey(userId);
+
+		Date now = new Date();
+
+		validate(name, email, message);
+
+		Entry entry = getEntry(entryId);
+
+		entry.setUserId(userId);
+		entry.setName(user.getFullName());
+		entry.setName(name);
+		entry.setEmail(email);
+		entry.setMessage(message);
+		entry.setModifiedDate(serviceContext.getModifiedDate(now));
+		entry.setExpandoBridgeAttributes(serviceContext);
+
+		entryPersistence.update(entry);
+
+		resourceLocalService.updateResources(user.getCompanyId(), groupId,
+				Entry.class.getName(), entryId,
+				serviceContext.getGroupPermissions(),
+				serviceContext.getGuestPermissions());
+
+		return entry;
+
+	}
+	
 	protected void validate (String name, String email, String entry) throws PortalException {
 		if (Validator.isNull(name)) {
 			throw new EntryNameException();
