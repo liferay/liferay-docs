@@ -13,21 +13,21 @@
  */
 package com.liferay.docs.guestbook.bean;
 
+import com.liferay.docs.guestbook.model.Entry;
+import com.liferay.docs.guestbook.model.Guestbook;
+import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
+import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
+import com.liferay.faces.portal.context.LiferayFacesContext;
+import com.liferay.faces.util.logging.Logger;
+import com.liferay.faces.util.logging.LoggerFactory;
+
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import com.liferay.docs.guestbook.model.Entry;
-import com.liferay.docs.guestbook.model.Guestbook;
-import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
-
-import com.liferay.faces.portal.context.LiferayFacesContext;
-import com.liferay.faces.util.logging.Logger;
-import com.liferay.faces.util.logging.LoggerFactory;
-
-import com.liferay.portal.kernel.exception.SystemException;
+import org.omg.CORBA.SystemException;
 
 
 /**
@@ -35,7 +35,9 @@ import com.liferay.portal.kernel.exception.SystemException;
  */
 @ManagedBean
 @ViewScoped
-public class GuestbookModelBean {
+public class GuestbookModelBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private static final Logger logger = LoggerFactory.getLogger(GuestbookModelBean.class);
 
