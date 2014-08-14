@@ -3,9 +3,8 @@
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
 Faces (JSF) standard within Liferay Portal. Thus, Liferay Faces portlets and JSF
-portlets are very closely related with each other. Visit the [JSF-related
-learning
-path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
+portlets are very closely related with each other. Visit the 
+[JSF-related learning path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
 for further details on JSF portlets and the Liferay Faces project. 
 
 This tutorial explains the Liferay Faces portlets generation process using
@@ -18,18 +17,17 @@ You'll begin creating a Liferay Faces portlet plugin next.
 
 ## Creating a Liferay Faces Portlet Plugin
 
-To create your Liferay Faces portlet plugin project, just follow the [Creating
-Liferay Maven Plugins from Liferay
-IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
-tutorial or the [Creating Liferay Maven Plugins from the Command
-Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+To create your Liferay Faces portlet plugin project, just follow the 
+[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+tutorial or the
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type, and *JSF 2.x* as
 the portlet framework. Lastly, you'll be required to select a JSF component suite. 
 
 A Liferay Faces portlet can be built to use one of several different JSF component suites,
 including [*RichFaces*](http://richfaces.jboss.org/),
-[*PrimeFaces*](http://primefaces.org/), [*Liferay Faces
-Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
+[*PrimeFaces*](http://primefaces.org/),
+[*Liferay Faces Alloy*](https://www.liferay.com/community/liferay-projects/liferay-faces/alloy),
 the [*JSF Standard*](http://en.wikipedia.org/wiki/JavaServer_Faces) suite, and
 [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf).
 Each JSF component suite has an archetype that is used in creating the portlet.
