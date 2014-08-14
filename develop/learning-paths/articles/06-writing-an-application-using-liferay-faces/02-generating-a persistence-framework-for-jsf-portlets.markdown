@@ -110,22 +110,59 @@ following two methods to `GuestbookLocalServiceImpl`:
 
         public Guestbook getFirstGuestbookByName(long groupId, String name) throws SystemException {
             Guestbook guestbook = null;
-		
+
             List<Guestbook> guestbooks = guestbookPersistence.findByName(groupId, name);
             if (guestbooks != null && guestbooks.size() > 0) {
                 guestbook = guestbooks.get(0);
             }
-		
+
             return guestbook;
         }
 
 Awesome! You’ve successfully created a service API to retrieve and add
 `Guestbook`s. To enable it, you must run Service Builder again. When you do,
 it’ll generate the methods you just created in your service layer’s Interface
-classes.  
+classes. 
 
 Next, you'll create similar methods to add guestbook entries. 
 
 ### Writing a Service API for Guestbook Entries
 
+Now that you've written a service API for guestbooks, you'll need to do the same
+thing for your guestbook entries. 
 
+1. Open the `EntryLocalServiceImpl` class, which is located in the
+   `com.liferay.docs.guestbook.service.impl` package. 
+
+2. Create two methods for finding guestbook entries. Remember that the finder
+   you created required two fields: a `groupId` and a `guestbookId`: 
+
+        public List<Entry> getEntries(long groupId, long guestbookId) throws SystemException {
+            return entryPersistence.findByG_G(groupId, guestbookId);
+        }
+
+        public List<Entry> getEntries(long groupId, long guestbookId, int start, int end) throws SystemException {
+            return entryPersistence.findByG_G(groupId, guestbookId, start, end);
+        }
+
+3. Create a method for adding guestbook entries. This method is similar to the
+   method you created earlier for adding guestbooks. 
+
+        @Override
+        public Entry addEntry(Entry entry) throws SystemException {
+            long entryId = counterLocalService.increment(Entry.class.getName());
+            entry.setEntryId(entryId);
+
+            return super.addEntry(entry);
+        }
+
+4. Create a method for returning the number of guestbook entries that you've
+   stored:
+
+        public int getEntriesCount(long groupId, long guestbookId) throws SystemException {
+            return entryPersistence.countByG_G(groupId, guestbookId);
+        }
+
+Terrific! You now have a fully funcitonal service API for the `Guestbook` and
+`Entry` entities. The next step is creating managed beans which will make use of
+your new service API. 
