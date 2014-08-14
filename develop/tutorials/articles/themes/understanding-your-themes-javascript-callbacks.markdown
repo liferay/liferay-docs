@@ -58,7 +58,7 @@ adding your own logic to the callbacks.
 
 ## Related Topics
 
- [Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+ [Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
  
- [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+ [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal)
 
