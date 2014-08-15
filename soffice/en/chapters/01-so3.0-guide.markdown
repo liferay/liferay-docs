@@ -386,7 +386,11 @@ The Sites portlet is an improved version of the basic My Sites portlet. It
 allows you to star various sites to customize your sites list. You can select
 *All Sites* to display all the sites in the portal, *My Sites* to display all
 the sites you belong to, or *My Favorites* to display your custom list of
-starred sites. The option to star sites is very useful for large Social Office
+starred sites. The Sites portlet remembers your selection, which is very useful 
+if you frequently use one of the selections. For example, if you have a favorite 
+group of sites that you have starred, selecting *My Favorites* will make that  
+the default selection in the Sites portlet as you navigate through Social 
+Office. The option to star sites is also very useful for large Social Office 
 instances with web applications and content hosted across many different sites.
 There's also a search bar which you can use to display sites related to your
 search query. If you have permission to add sites, you'll see an *Add Site*
@@ -541,14 +545,21 @@ right of the portlet and then selecting *Configuration*.
 
 ![Figure 1.x: Upcoming tasks and events shows you what's on your plate.](../../images/upcoming-task-events.png)
 
-There's also a Microblogs Status Update portlet on your Dashboard
-which lets you broadcast a Facebook-like status to the scope of your choice: to
-everyone, to your connections, or to your followers. Users can interact with
-microblogs status updates wherever they're displayed, such as in an Activities
-portlet. There are a few possible microblogs interactions: you can click a link
-to view the full microblog post, comment on the post, or repost the microblog.
-Next, let's take a look at the applications provided on the other private pages
-of Social Office users' personal sites.
+There's also a Microblogs Status Update portlet on your Dashboard that lets you 
+broadcast a Facebook-like status to the scope of your choice: to everyone, to 
+your connections, or to your followers. You can also control whether or not your 
+latest status update appears on your Dashboard. To do so, first make sure the 
+Edit Controls are turned on by clicking the *Gear* icon next to the search bar 
+and toggling on the Edit Controls in the bar that appears on the left side of 
+your screen. Then mouse over the Microblogs Status Update portlet, click the 
+*Wrench* icon, and select *Configuration* from the drop-down menu. Check the box 
+for *Display Most Recent Status* if you want your most recent status update to 
+appear on your dashboard. Also, users can interact with microblogs status 
+updates wherever they're displayed, such as in an Activities portlet. There are 
+a few possible microblogs interactions: you can click a link to view the full 
+microblog post, comment on the post, or repost the microblog. Next, let's take a 
+look at the applications provided on the other private pages of Social Office 
+users' personal sites.
 
 #### The Contacts Center
 
@@ -897,11 +908,14 @@ Related Assets portlet won't appear at all.
 
 The Members page contains a Members portlet and an Invitation portlet. The 
 Invitation portlet is only visible to site administrators. It allows 
-administrators to send invitations to users to join the site. By default, the 
-Members portlet displays a list of all the members of the site. Using the 
-Members portlet's dropdown selector, users can filter the set of displayed site 
-members. The available filters include *All*, *Administrators*, *Connections*, 
-and *Following*. The *Administrators* filter provides site members with an easy 
+administrators to send invitations to users to join the site. Clicking the 
+*Invite members to this site* button brings up the interface for sending out 
+invitations. To avoid duplicate requests, users that have already been invited 
+but have not yet responded are marked as such. By default, the Members portlet 
+displays a list of all the members of the site. Using the Members portlet's 
+dropdown selector, users can filter the set of displayed site members. The 
+available filters include *All*, *Administrators*, *Connections*, and 
+*Following*. The *Administrators* filter provides site members with an easy 
 way to display entries for site owners and site administrators. This is useful 
 for site members who need to contact site administrators. To view a user's 
 details, including their email address, click on the user in the Members 
