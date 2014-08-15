@@ -31,7 +31,9 @@ model.
 - **Controller Managed Bean:** This type of managed bean serves the *Controller*
 concern of the MVC design pattern. This bean executes business logic and returns
 a navigation outcome to the JSF navigation handler. Controller managed beans
-typically have JSF action methods. 
+typically have JSF action methods. For the sake of this learning path, the
+controller bean will be referred to as the *view* bean, since it controls a
+portlet's views. 
 
 - **Model Managed Bean:** This type of managed bean serves the *Model* concern
 of the MVC design pattern. The JSF model bean uses the getter/setter design
@@ -89,8 +91,8 @@ Now you're ready to create your backing beans. You'll first create the
     
     Are you wondering what these beans are and where they're coming from? The
     good news is you haven't missed anything; you haven't created those managed
-    beans yet. Those will be your model and controller beans, which you'll
-    create later on. 
+    beans yet. Those will be your model and view beans, which you'll create
+    later on. 
     
     Lastly, to make the dependency injection successful, the injected properties
     must be set in a setter method. You'll do that next. 
@@ -130,10 +132,126 @@ Great! That covers your abstract backing bean. Now its time to create the
 backing beans specific to each of your entities. You'll start with creating the
 guestbook backing bean. 
 
-<!-- Add remaining backing beans -->
+1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
+   &rarr; *Class*. 
 
-## Using Controller Beans to Facilitate Navigation
+2. Name the class `GuestbookBackingBean` and, for the Superclass field, browse
+   for the `AbstractBackingBean` you just created. Then click *Finish*. 
 
+3. In this backing bean, you'll provide action methods that your guestbook
+portlet needs to function, which include: add, cancel, delete, edit, save, and
+select. Add the following methods into your `GuestbookBackingBean` class: 
+
+        public void add() {
+            Guestbook guestbook = GuestbookUtil.create(0L);
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            guestbook.setGroupId(liferayFacesContext.getScopeGroupId());
+            guestbookModelBean.setSelectedGuestbook(guestbook);
+            viewBean.guestbook();
+        }
+
+        @Override
+        public void cancel() {
+
+            guestbookModelBean.setSelectedGuestbook(null);
+            super.cancel();
+        }
+
+        public void delete(Guestbook guestbook) {
+
+            try {
+                GuestbookLocalServiceUtil.deleteGuestbook(guestbook.getGuestbookId());
+                addGlobalSuccessInfoMessage();
+            }
+            catch (Exception e) {
+                addGlobalUnexpectedErrorMessage();
+                logger.error(e);
+            }
+
+            guestbookModelBean.forceGuestbooksReload();
+            guestbookModelBean.forceEntriesReload();
+            viewBean.master();
+        }
+
+        public void edit(Guestbook guestbook) {
+            guestbookModelBean.setSelectedGuestbook(guestbook);
+            viewBean.guestbook();
+        }
+
+        public void save() {
+            Guestbook guestbook = guestbookModelBean.getSelectedGuestbook();
+
+            try {
+
+                if (guestbook.getGuestbookId() == 0) {
+                    guestbook = GuestbookLocalServiceUtil.addGuestbook(guestbook);
+                }
+                else {
+                    guestbook = GuestbookLocalServiceUtil.updateGuestbook(guestbook);
+                }
+
+                addGlobalSuccessInfoMessage();
+            }
+            catch (Exception e) {
+                addGlobalUnexpectedErrorMessage();
+                logger.error(e);
+            }
+
+            guestbookModelBean.forceGuestbooksReload();
+            guestbookModelBean.forceEntriesReload();
+            viewBean.master();
+        }
+
+        public void select(Guestbook guestbook) {
+            guestbookModelBean.setSelectedGuestbook(guestbook);
+            guestbookModelBean.forceEntriesReload();
+            viewBean.master();
+        }
+
+    Each method accomplishes
+
+This `GuestbookBackingBean` is request scoped, which means that it is only
+created when a request is being made. JSF creates the bean, uses the bean as
+requested, and then it is removed and available for garbage collection. The
+request to create an instance of the `GuestbookBackingBean` is submitted from
+XHTML files, or *views*. You'll create the views later on in the learning path. 
+
+Because this bean is request scoped, after finishing its request, it sets what
+was requested using a setter method on the model bean. Since you're setting
+requests on the model bean, intuition tells you that the model bean can't be
+request scoped. The model bean is view scoped, but you'll learn about that when
+creating the model bean in the next section. 
+
+A good example of the processing of a request in this backing bean can be
+explained by examining the `add()` method:
+
+    public void add() {
+        Guestbook guestbook = GuestbookUtil.create(0L);
+        LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+        guestbook.setGroupId(liferayFacesContext.getScopeGroupId());
+        guestbookModelBean.setSelectedGuestbook(guestbook);
+        viewBean.guestbook();
+    }
+
+Suppose a user clicks the *Add Guestbook* button. A request from the guestbook
+view creates an instance of the `GuestbookBackingBean` and calls its `add()`
+method. The `add()` method creates an empty guestbook with a `groupId`. Next,
+that guestbook is set on the model bean by calling
+`guestbookModelBean.setSelectedGuestbook(guestbook);`. Lastly, the view bean's
+`guestbook()` method is called, which directs the portlet in opening the correct
+page for the user to create their guestbook. When reaching the end of the
+method, the instance of the backing bean is removed from the server. Pretty
+cool, right? 
+
+Next, you'll create the entry backing bean, which follows the same fundamental
+process. 
+
+1. 
+
+## Using Controller (View) Beans to Facilitate Navigation
+
+2. Give it the name `ViewBean`. Then click *Add* next to the
+   Interfaces field and type *Serializable*. Click *OK* and *Finish*. 
 
 ## Using Model Beans to Encapsulate Properties
 
