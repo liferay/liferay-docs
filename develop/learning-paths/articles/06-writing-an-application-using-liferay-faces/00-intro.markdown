@@ -7,7 +7,7 @@ implemented in a Liferay portlet. You'll begin by creating your own JSF portlet
 from scratch, deploying it, and developing it into a Guestbook portlet. 
 
 Before beginning, make sure you have a Liferay development environment
-installed. You can learn how to install Liferay IDE or Lifeary Developer Studio
+installed. You can learn how to install Liferay IDE or Liferay Developer Studio
 in the [Beginning Liferay
 Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development-lp-6-2-develop-learnpath)
 learning path. Though you can use the command line or any Java IDE that's

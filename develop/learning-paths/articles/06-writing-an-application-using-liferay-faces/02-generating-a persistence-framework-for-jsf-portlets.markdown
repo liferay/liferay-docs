@@ -31,7 +31,7 @@ between your controller and your persistence layer.
 
 Before you get started defining the service layer, there's one additional thing
 you'll need to add to your `service.xml` file. The JSF guestbook will have a
-slightly different implemenation of its service layer compared to the MVC
+slightly different implementation of its service layer compared to the MVC
 portlet, so we'll need to account for that slight change in the way your
 services are built. 
 
@@ -41,7 +41,7 @@ Overview tab.
 2. Expand the Guestbook entity and click on *Finders*. 
 
 3. Click the *+* button to the right of the list of finders and name the new
-   finder *Name* and give it the the return type *Collection*. 
+   finder *Name* and give it the return type *Collection*. 
 
 4. Click the *Build Services* button from the top right of the screen. By doing
 this, you'll rebuild the services you built previously. 
@@ -163,6 +163,6 @@ thing for your guestbook entries.
             return entryPersistence.countByG_G(groupId, guestbookId);
         }
 
-Terrific! You now have a fully funcitonal service API for the `Guestbook` and
+Terrific! You now have a fully functional service API for the `Guestbook` and
 `Entry` entities. The next step is creating managed beans which will make use of
 your new service API. 
