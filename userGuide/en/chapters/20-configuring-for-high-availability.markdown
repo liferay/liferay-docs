@@ -58,7 +58,7 @@ or distributed across a node.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** To use LCS, you must be 
+![Note](../../images/01-tip.png) **Note:** To use LCS, you must be 
 running Liferay Portal 6.1 GA 3, or 6.2 GA 1 and above. Using LCS to apply fix 
 packs and other updates is an EE only feature. The monitoring features of LCS 
 are available to both Liferay CE and EE.
@@ -105,7 +105,7 @@ The following roles are available:
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** It's possible that the LCS 
+![Note](../../images/01-tip.png) **Note:** It's possible that the LCS 
 team already gave you the correct permissions as part of the account creation 
 process. In this case, you won't see the *Make me a Project Administrator* 
 button, and can proceed to the next step.
