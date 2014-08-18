@@ -59,22 +59,31 @@ or distributed across a node.
 ---
 
 ![Note](../../images/01-tip.png) **Note:** To use LCS, you must be 
-running Liferay Portal 6.1 GA 3, or 6.2 GA 1 and above. Using LCS to apply fix 
+running Liferay Portal 6.1 GA 3, or 6.2 GA 1 or above. Using LCS to apply fix 
 packs and other updates is an EE only feature. The monitoring features of LCS 
 are available to both Liferay CE and EE.
+
+---
+
+---
+
+![Note](../../images/01-tip.png) **Note:** In order to offer the best service 
+possible, we store the following information about your servers on the LCS 
+servers: patches installed on each server, `portal.properties` (except sensitive 
+data), JVM metrics, portal and portlet metrics, cache and server metrics.
 
 ---
 
 Before going any further, take a moment to consider the following terms used 
 throughout this guide:
 
-- Project: Represents a group of users belonging to a company or organization. 
+- *Project*: Represents a group of users belonging to a company or organization. 
   For example, a project can consist of all the users from a project team or 
   business unit, or it can include the entire company.
-- Environment: Represents a physical cluster of servers, or a virtual or logical 
-  aggregation of servers.
-- Server: Describes a concrete portal instance. It can be a standalone server or 
-  a cluster node.
+- *Environment*: Represents a physical cluster of servers, or a virtual or 
+  logical aggregation of servers.
+- *Server*: Describes a concrete portal instance. It can be a standalone server 
+  or a cluster node.
   
 As you go through this guide, you'll cover the following sections on LCS:
 
@@ -115,8 +124,11 @@ button, and can proceed to the next step.
 ### Preconfiguring Your Portal for LCS
 
 <!-- Is this property and setting correct? What about the other properties in Jim's file? -->
-If you are running Liferay 6.1 GA3, then you need to update the `spring.configs` 
-property in your `portal-ext.properties` file before using LCS. 
+If you're running Liferay 6.2, then you can skip this step. However, if you are 
+running Liferay 6.1 GA3, then there's a small preconfiguration step that you 
+need to take before using LCS--you need to update the `spring.configs` property 
+in your `portal-ext.properties` file. Add the following to your 
+`portal-ext.properties` file:
 
     spring.configs=\
         META-INF/base-spring.xml,\
@@ -162,8 +174,8 @@ property in your `portal-ext.properties` file before using LCS.
         \
         META-INF/ext-spring.xml
 
-A server restart is required after updating `portal-ext.properties`. Now you're 
-ready to configure the patching tool.
+A server restart is required after updating `portal-ext.properties`. Next, you 
+need to configure the patching tool.
 
 ### Configuring the Patching Tool 
 
@@ -174,8 +186,8 @@ you already have the patching tool installed. If you're not running a bundle,
 then please see the [user guide section on how to install the patching tool](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/patching-liferay-liferay-portal-6-2-user-guide-18-en). 
 Once you have the patching tool installed, there are a few things you need to 
 take care of before LCS can use it. Note that the commands below apply to Linux, 
-Unix, and Mac systems. If you're on Windows, simply drop the `.sh` from each 
-command.
+Unix, and Mac systems. If you're running Windows, simply drop the `.sh` from 
+each command.
 
 1. Navigate to the `patching-tool` directory on the command line. It's typically 
    located on the same level as the app server directory.
@@ -200,36 +212,37 @@ Great! Now you're all set to deploy and configure the LCS client portlet.
 
 ### Configuring the LCS Client
 
-Once you deploy the LCS client portlet, you need to register it with your LCS 
-account. Access the portlet by clicking on *Cloud Services* under the *Apps* 
-section of the *Control Panel*.
+Once you deploy the LCS client portlet, you can use it to register your server 
+with your LCS account. Access the portlet by clicking on *Cloud Services* under 
+the *Apps* section of the *Control Panel*.
 
 <!-- Insert screenshot -->
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
-to the LCS website. Login with your credentials and then click *Grant Access*.
+to the LCS website. Log in with your credentials and then click *Grant Access*.
 
 <!-- Insert screenshot -->
 
 Next, you need to register your server with LCS. Fill out the following fields 
 on this screen:
 
-1. *Cloud Services Project*: Choose your project from the dropdown menu. 
+1. Cloud Services Project: Choose your project from the dropdown menu. 
 
-2. *Environment*: Select an environment from the dropdown menu, or create a new 
+2. Environment: Select an environment from the dropdown menu, or create a new 
    one by clicking the *Add New Environment* button. An environment should be a 
    logical group of servers. A group of development servers or a cluster are 
    good examples of environments. If you elect to create a new environment, a 
    popup asks you to enter its *Name*, *Location*, and *Description*.
     <!-- Insert screenshot -->
    
-3. *Server Name*: Type in a name for your server.
+3. Server Name: Give your server a name that you can use to distinguish it in 
+   your LCS account.
 
-4. *Server Location*: This can be a city, location inside of an office building, 
-   or anywhere else that lets you know where the server is physically located.
+4. Server Location: This can be a city, location in an office building, or 
+   anywhere else that lets you know where the server is physically located.
    
-5. *Server Description*: Type in any description that you want to give your 
-   server. You can use this field to help differentiate the instances you are 
+5. Server Description: Type in any description that you want to give your 
+   server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
 <!-- Insert screenshot -->
@@ -241,21 +254,22 @@ any change in status after 20 seconds, try refreshing the page. If you see a
 red symbol indicating no data is being transmitted, please contact the Liferay 
 team for support. Once a successful connection is established, some statistics 
 and links are displayed. Here's a description of what's displayed:
+<!-- For Message Task Interval, what else are messages for? -->
 
 - Heartbeat Interval: The communication interval with LCS. For example, if this 
   value is `00:01:00`, then the portlet communicates with LCS once every minute.
 - Message Task Interval: The message interval with LCS. Messages received from 
-  LCS let the portlet know about any available updates. <!-- What else are messages for? -->
+  LCS let the portlet know about any available updates. 
 - Metrics Task Interval: The interval that server statistics and metrics are 
   taken at.
 - Project Link: Takes you to the project this server is registered with on LCS.
 - Environment Link: Takes you to the environment this server is registered with 
   on LCS.
 - Server: Takes you to the server on LCS.
-- *Disconnect* Button: Disconnects this Liferay instance from LCS.
-- *Reset Credentials* Button: Removes the authorizing account from registration 
-  with LCS. It's important to note that your credentials are not human readable 
-  in the portal instance. This is because OAuth, which uses tokens, is used for 
+- Disconnect: Disconnects this Liferay instance from LCS.
+- Reset Credentials: Removes the authorizing account from registration with LCS. 
+  It's important to note that your credentials are not human readable in the 
+  portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
   
 <!-- Insert screenshot -->
