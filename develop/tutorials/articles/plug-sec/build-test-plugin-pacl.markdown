@@ -1,4 +1,4 @@
-# Building and Testing Your Plugin's PACL
+# Building and Testing Your Plugin's PACL [](id=building-and-testing-your-plugins-pacl)
 
 Liferay's Plugin Security Manager requires that a plugin specify in advance the 
 portal resources that it intends to access. If a plugin tries to access 
@@ -12,9 +12,11 @@ following steps:
 - Develop Your Plugin
 - Build Your Plugin's PACL
 - Test Your Plugin with the Security Manager Enabled
-- Using a Java Security Policy File
+- Use a Java Security Policy File, if Necessary
 - Convert PACL Absolute File Paths into Relative Paths
-- Portal Access Control List (PACL) Properties
+
+Lastly, this tutorial explains some of the subtle details about the PACL
+properties. 
 
 Now go ahead and get started--you don't want to run afoul of the Security 
 Manager!
@@ -55,9 +57,9 @@ Here's how to generate a PACL policy for your plugin:
 
     Your app server may require certain startup arguments to be used for
     activiting the security manager. Check the PACL and security manager
-    instructions for your app server in the [Installation and
-    Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
-    chapter of *Using Liferay Portal 6.2*. Some app servers, like Tomcat, output
+    instructions for your app server in the
+    [Installation and Setup](/use/portal/-/knowledge_base/installation-and-setup)
+    chapter of *Using Liferay Portal*. Some app servers, like Tomcat, output
     a terminal message like "Using Security Manager", indicating that it's
     using the security manager. 
 
@@ -143,22 +145,21 @@ in the PACL properties of your `liferay-plugin-package.properties` file. Save
 your changes to the file, re-deploy the plugin, and re-test. Make sure 
 everything works. If it doesn't, there are more rules you must declare for your 
 plugin. For additional details, refer to the online definition of the Portal 
-Access Control List Properties for the `liferay-plugin-package.properties` file 
-at [http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html),
-and in the PACL properties section at the end of this tutorial. 
+Access Control List Properties for the [liferay-plugin-package.properties](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
+file and refer to the PACL properties section at the end of this tutorial. 
 
 If you're not finding an adequate way to specify a security rule with PACL, you
 can specify it in a Java Security Policy file. It's almost impossible for
 Liferay and PACL to be aware of every possible security implementation check,
 because developers, libraries, and the Java Security API can always call for new
-types of security checks. Therefore, Liferay provides a fallback to PACL. This 
-lets you specify operations permissible within the context of your app's 
-plugins. 
+types of security checks. Liferay, therefore, provides a Java Security Policy
+file as fallback to PACL . The policy file lets you specify operations
+permissible within the context of your app's plugins. 
 
 In case you need it for your plugin, go ahead and get familiar with the Java 
 Security Policy file. 
 
-## Using a Java Security Policy File 
+## Use a Java Security Policy File, if Necessary
 
 If you can't find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -214,10 +215,10 @@ lines in the grant entry:
         permission java.net.NetPermission "specifyStreamHandler";
     };
 
-In this example, the plugin is granted permission to invoke native code that's 
-in some library (`test_b.so`). This is another type of operation that Liferay's 
-PACL does not support. Therefore, it makes sense to specify permission for it in 
-the Java Security Policy file. 
+In this example, the plugin is granted permission to invoke native code that's
+in some library (`test_b.so`). This is another type of operation that Liferay's
+PACL does not support. It, therefore, makes sense to specify permission for it
+in the Java Security Policy file. 
 
 With Liferay's PACL policy and Java Security Policy files, you can precisely
 specify all of the resources your plugin needs to access! Now it's time to 
@@ -226,27 +227,27 @@ revisit the file path values that the PACL Policy Generation Tool wrote to your
 
 ## Convert PACL Absolute File Paths into Relative Paths 
 
-As mentioned earlier in this tutorial, using the PACL generation tool to give 
-you a head start on specifying your plugin's security rules is recommended. 
-However, the generator is only aware of file paths with respect to the current 
-system. The generated file paths are therefore absolute. To use your security 
-policy in production, it must use only relative file paths. As a final step 
-after testing the generated PACL, you must massage the generated file paths into 
-the appropriate relative file paths. For example, you can specify paths relative 
-to your Liferay web portal directory:
+As mentioned earlier in this tutorial, using the PACL generation tool to give
+you a head start on specifying your plugin's security rules is recommended. The
+generator, however, is only aware of file paths with respect to the current
+system. The file paths it genereates are absolute paths. To use your security
+policy in production, the policy should use only relative file paths. As a final
+step after testing the generated PACL, you must massage the generated file paths
+into the appropriate relative file paths. For example, you can specify paths
+relative to your Liferay web portal directory:
 
     security-manager-files-read=\
         ${liferay.web.portal.dir}/WEB-INF/tld/-,\
         ${liferay.web.portal.dir}/html/themes/-
 
 This example uses a dash (`-`) character at the end of the paths. It's used as 
-a wildcard character. Oracle defines wildcards for for use with Java Security, 
+a wildcard character. Oracle defines wildcards to use with Java Security, 
 and Liferay provides some too. You can leverage the following wildcard 
 characters for files and file paths:
 
 - Dash (`-`) matches everything in the current directory and below, like you 
-  might expect with the normal GLOB operation in UNIX. The current directory 
-  isn't included in the match.
+  might expect with the normal GLOB operation in UNIX. The current directory is
+  excluded from the match. 
 - Star (`*`) matches every file (*not* directory) in the current directory. The
   current directory and subdirectories are excluded from the match.
 
@@ -296,12 +297,12 @@ appropriately for deployment on any server. Once you've completed testing your
 plugin without getting any Java security exceptions, you can distribute it as an
 app on Liferay Marketplace. You can do so with confidence because you've
 specified all of the resources it uses in the application's PACL, and possibly
-its Java Security Policy. Therefore, your application satisfies Liferay Portal's
-Security Manager. 
+its Java Security Policy. Your application satisfies Liferay Portal's Security
+Manager. 
 
-Next, some additional details regarding PACL properties are discussed.
+The next section provides some additional details regarding PACL properties. 
 
-## Portal Access Control List (PACL) Properties 
+## Portal Access Control List (PACL) Details 
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the Security Manager properties specified in your plugin's
@@ -333,7 +334,7 @@ subdirectories:
     security-manager-files-delete=\
         ../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/temp/-
 
-Note that you can use a relative paths in the file security properties. 
+Note that you can use relative paths in the file security properties. 
 
 You can also use a mix of UNIX/Linux and Windows style paths, as demonstrated 
 here: 
@@ -368,10 +369,14 @@ Manager.
 
 ## Related Topics
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
+
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
 
 [Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
 
 [Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
 
-[Liferay Faces](/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)

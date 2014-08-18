@@ -1,4 +1,4 @@
-# Plugin Security and PACL 
+# Plugin Security and PACL [](id=plugin-security-and-pacl)
 
 Everyone wishes that cyberspace were free of malicious software and unwanted 
 bugs. Since it isn't, you need to guard yourself and your portal from these 
@@ -16,7 +16,7 @@ to:
 Still not sold on the need to use Liferay's Plugin Security Manager? The 
 scenarios in the following section might change your mind.
 
-## The Need for Security
+## Understanding the Need for Plugin Security
 
 Consider the following scenarios:
 
@@ -37,7 +37,7 @@ These are just a few situations that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
 in protecting your portal, system, and network.
 
-## The PACL
+## Controlling Portal Access
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
@@ -90,9 +90,9 @@ If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume that users will insist the Security Manager is 
 enabled in your plugin. For this reason, you should enable it when testing your 
 plugins and packaging them for distribution. 
-<!-- What file should this property be set in? -->
+
 It's very easy to activate the security manager. Set the following
-`liferay-plugin-package.properties` property to true: 
+property to true in your plugin's `liferay-plugin-package.properties` file. 
 
     security-manager-enabled=true
 
@@ -100,10 +100,7 @@ Great! Now you know the basics of how Liferay plugin security works.
 
 ## Related Topics
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Common Plugin Security Pitfalls](/develop/tutorials/-/knowledge_base/common-plugin-security-pitfalls)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
-
-[Liferay Faces](/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)

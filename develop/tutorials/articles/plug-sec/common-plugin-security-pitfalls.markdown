@@ -1,4 +1,4 @@
-# Common Plugin Security Pitfalls 
+# Common Plugin Security Pitfalls [](id=common-plugin-security-pitfalls)
 
 As you develop your plugin, you need to anticipate your plugin's actions in 
 light of Liferay's secured environment. Liferay's Plugin Security Manager 
@@ -33,23 +33,22 @@ require your code to handle them. However, since methods that throw security
 exceptions are declared as throwing them, you should check their signatures
 while you're designing your plugin. If the methods your plugin uses throw 
 security exceptions, handle them appropriately with try/catch blocks. Keep in 
-mind that you need to handle security exceptions regardless of whether a method 
-is invoked directly or indirectly by your plugin.
+mind that you must handle a method's security exception regardless of whether
+your plugin invokes the method directly or indirectly. 
 
 For example, you may be using a file utility that calls the `canRead` method of 
 `java.io.File`. Since the `canRead` method can throw a `SecurityException`,
 your plugin will violate security if it invokes the utility on a file that
 you're not authorized to access. It's therefore important that you're aware of 
-all the security exceptions thrown by methods in your plugin, regardless of how 
-they're called.
-<!-- Replace link at end of this section once header id is generated -->
+all the security exceptions thrown by methods that your plugin invokes, regardless of
+whether it invokes the methods directly or indirectly. 
 
 Operations involving reflection and similar activities can typically throw 
 security exceptions. The Java SE Security documentation explains how to deal 
 with them. In many cases, you can declare your plugin's permissions to avoid
 running into these exceptions. Configuring your plugin's permissions and
 security policies is covered in the tutorial 
-[Building and Testing Your Plugin's PACL](http://www.liferay.com/). 
+[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl). 
 
 ## Accessing Classloaders 
 
@@ -140,15 +139,10 @@ With regards to both of the use cases illustrated in this tutorial, the main
 point is that you must be aware of the how the libraries you use behave with 
 respect to your secured environment. The better you understand Java SE Security 
 and Liferay's Plugin Security Management, the easier it is for you to write 
-security-aware plugins. Keeping this in mind, you can now proceed confidently 
-when creating your plugins!
+security-aware plugins. Keeping this in mind, you can now confidently proceed
+to create plugins! 
 
 ## Related Topics
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
-
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
-
-[Liferay Faces](/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
