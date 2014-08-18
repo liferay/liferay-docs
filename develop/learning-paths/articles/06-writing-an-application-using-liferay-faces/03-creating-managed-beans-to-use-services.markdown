@@ -33,7 +33,7 @@ concern of the MVC design pattern. This bean executes business logic and returns
 a navigation outcome to the JSF navigation handler. Controller managed beans
 typically have JSF action methods. For the sake of this learning path, the
 controller bean will be referred to as the *view* bean, since it controls a
-portlet's views. 
+portlet's views (pages). 
 
 - **Model Managed Bean:** This type of managed bean serves the *Model* concern
 of the MVC design pattern. The JSF model bean uses the getter/setter design
@@ -87,7 +87,7 @@ Now you're ready to create your backing beans. You'll first create the
     success/error messaging. Then, notice the `@ManagedProperty` tags. These
     annotations are used to inject dependencies from one managed bean into
     another. Thus, the `GuestbookModelBean` and `ViewBean`'s dependencies are
-    injected into the `guestbookModelBean` and `viewBean` properties.
+    injected into the `guestbookModelBean` and `viewBean` properties. 
     
     Are you wondering what these beans are and where they're coming from? The
     good news is you haven't missed anything; you haven't created those managed
@@ -238,7 +238,7 @@ scoped:
     ...
 
 Now that you've finished the `GuestbookBackingBean` class, you'll examine the
-`add()` method, and what is happening when this method is called: 
+`add()` method, and learn what is happening when this method is called: 
 
     public void add() {
         Guestbook guestbook = GuestbookUtil.create(0L);
@@ -336,10 +336,157 @@ and how it works with backing beans. Now it's time to create it!
 
 ## Using a View Bean to Facilitate Navigation
 
-1. 
+You've already learned a little about how a view bean works and its purpose in
+your guestbook app. In summary, the view bean controls a portlet's views
+(pages). It received requests via the backing beans and displays the correct
+view to a user. Pretty simple, right? You'll begin creating one for your
+guestbook portlet next. 
 
-2. Give it the name `ViewBean`. Then click *Add* next to the
-   Interfaces field and type *Serializable*. Click *OK* and *Finish*. 
+1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
+   &rarr; *Class*. 
+
+2. Give it the name `ViewBean`. Then click *Add* next to the Interfaces field
+   and type *Serializable*. Click *OK* and *Finish*. 
+
+    It is common practice to have JSF managed beans implement the `Serializable`
+    class if the bean is `@ViewScoped`.
+    [Serialization](http://en.wikipedia.org/wiki/Serialization) translates the
+    bean's state into a format that can be stored and rebuilt on your local
+    machine or across a network to other computer environments. Likewise, you'll
+    learn more about the view scope in the next step. 
+
+3. Hover your mouse over the `ViewBean` class name and you'll notice a few
+   options appear. Select the *Add generated serial version ID*. The following
+   variable is added to your class: 
+
+        private static final long serialVersionUID = 1L;
+
+    This line is used to keep track of different versions of this class so the
+    it can perform valid serialization of objects. 
+
+4. Add the `@ManagedBean` and `@ViewScoped` tags above the public class
+   declaration like the following: 
+
+        ...
+
+        @ManagedBean(name = "viewBean")
+        @ViewScoped
+        public class ViewBean implements Serializable {
+
+        ...
+
+    Notice that the `@ManagedBean` tag is slightly different then the managed
+    bean tags you created for your backing beans. You may recall the `viewBean`
+    name you specified here is used in the `AbstractBackingBean` class during
+    dependency injection.
+
+        @ManagedProperty(name = "viewBean", value = "#{viewBean}")
+
+    This class' dependencies are injected into the `viewBean` property in your
+    backing beans by using the name specified in your `@ManagedBean` tag. 
+    
+    Another important tag to understand is the `@ViewScoped` tag. You may
+    remember learning about the `@RequestScoped` tag, which was used for the
+    backing beans that were only created on request and then removed from the
+    server. The `@ViewScoped` tag means the bean will be kept on the server and
+    have a known state as long as the portlet's view is being used by the user.
+    Therefore, the general process for your guestbook is to store the content
+    created from your request scoped backing beans on your view scoped beans
+    before the backing beans are removed from the server.
+    
+    The other view scoped bean you'll use is the model bean, which encapsulates
+    your guestbook's entities and properties. You'll create the model bean once
+    you're finished creating the view bean. 
+
+5. Add the following properties to the view bean:
+
+        protected static final Logger logger = LoggerFactory.getLogger(ViewBean.class);
+
+        public static final String DEFAULT_GUESTBOOK_NAME = "Main";
+
+        private boolean editingGuestbook;
+        private boolean editingEntry;
+
+    First, you've created a logger for aiding in your portlet's logging. Next,
+    you've set your default guestbook name, which will appear as your first
+    guestbook if none are specified. Lastly, you've declared two boolean
+    variables, which will be used to distinguish which view to display. 
+
+6. Add the following methods to your view bean:
+
+        public void entry() {
+            editingEntry = true;
+            editingGuestbook = false;
+        }
+
+        public void guestbook() {
+            editingEntry = false;
+            editingGuestbook = true;
+        }
+
+        public void master() {
+            editingEntry = false;
+            editingGuestbook = false;
+        }
+
+    These methods use the boolean variables you specified in the previous step
+    to distinguish which view to display. You haven't created your views yet,
+    but you'll have four of them: `view` (default page), `entry`, `guestbook`,
+    and `master`. 
+
+7. Finish up the view bean by creating the following methods: 
+
+        @PostConstruct
+        public void postConstruct() {
+
+            try {
+
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+
+                Guestbook defaultGuestbook = GuestbookLocalServiceUtil.getFirstGuestbookByName(scopeGroupId,
+                    DEFAULT_GUESTBOOK_NAME);
+
+                if (defaultGuestbook == null) {
+                    logger.info("postConstruct: creating a default guestbook named " + DEFAULT_GUESTBOOK_NAME + " ...");
+
+                    Guestbook guestbook = GuestbookUtil.create(0L);
+                    guestbook.setName(DEFAULT_GUESTBOOK_NAME);
+                    guestbook.setGroupId(scopeGroupId);
+                    guestbook.setCompanyId(liferayFacesContext.getCompanyId());
+                    guestbook.setUserId(liferayFacesContext.getUserId());
+                    GuestbookLocalServiceUtil.addGuestbook(guestbook);
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void setEditingEntry(boolean editingEntry) {
+            this.editingEntry = editingEntry;
+        }
+
+        public void setEditingGuestbook(boolean editingGuestbook) {
+            this.editingGuestbook = editingGuestbook;
+        }
+
+        public boolean isEditingGuestbook() {
+            return editingGuestbook;
+        }
+
+        public boolean isEditingEntry() {
+            return editingEntry;
+        }
+
+    The `postConstruct()` method uses
+    [`LiferayFacesContext`](/develop/tutorials/-/knowledge_base/using-the-liferayfacescontext-with-liferay-faces-portal)
+    to initialize the guestbook portlet when first added to a page. Then, you
+    created a couple setters and boolean methods to manage your `editingEntry`
+    and `editingGuestbook` variables, which aid in the navigation between views.
+
+Excellent! You've successfully created your view bean! The last bean to create
+is your model bean. You'll dive into that next. 
 
 ## Using a Model Bean to Encapsulate Properties
 
