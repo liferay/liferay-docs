@@ -5,13 +5,13 @@ enterprise. Previously released as a separate product that was based on Liferay
 Portal, it's now available as an application that can be installed on Liferay.
 We are excited to bring both Social Office and this guide to you, in the hope
 that you'll be able to use each to enable your teams to work together more
-efficiently. This guide is for those who are setting up and administering an instance of
-Liferay Portal using Social Office. From installing Social Office to introducing
-you to its entire feature set, we'll discuss all of the things you can do with
-Social Office to help your team. We hope you'll use it as a tool to get Social
-Office up, running, and integrated into your enterprise. You can find much more
-information about installation and administration in *Using Liferay Portal*
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+efficiently. This guide is for those who are setting up and administering an 
+instance of Liferay Portal using Social Office. From installing Social Office to 
+introducing you to its entire feature set, we'll discuss all of the things you 
+can do with Social Office to help your team. We hope you'll use it as a tool to 
+get Social Office up, running, and integrated into your enterprise. You can find 
+much more information about installation and administration in 
+*Using Liferay Portal* [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
 
 "Help!"
 
@@ -23,20 +23,22 @@ B replies with some edits. Person C replies with additional edits at the same
 time Person A replies with the corrections from Person B. Person D takes this
 and rewrites a whole section of the document while Person B and C respond to
 Person A's update. Pretty soon, it becomes very difficult to determine which
-document is the latest document. The same scenario plays itself out when working in shared folders,
-except there's no trail of email messages to figure out who did what and when.
+document is the latest document. The same scenario plays itself out when working 
+in shared folders, except there's no trail of email messages to figure out who 
+did what and when.
 
 The Social Office plugin for Liferay Portal is designed to answer this call for
-help. Social Office is a dynamic team collaboration solution for the enterprise that's
-designed to streamline communication, save time, and raise productivity.
+help. Social Office is a dynamic team collaboration solution for the enterprise 
+that's designed to streamline communication, save time, and raise productivity.
 Organizations and groups can use Social Office to share resources, collaborate
-on projects, and raise the visibility of important activity. We created the product 
-to provide a simple, out of the box solution for team collaboration. Social Office provides
-you with a fantastic array of features that you don't need to spend a lot of
-time configuring. It's ready to use right out of the box. Once installed, a 
-quick setup wizard will help you set up a team collaboration site so you can begin working 
-immediately. In fact, you can have a full production environment set up in
-less time than it takes to brew a pot of coffee.
+on projects, and raise the visibility of important activity. We created the 
+product to provide a simple, out of the box solution for team collaboration. 
+Social Office provides you with a fantastic array of features that you don't 
+need to spend a lot of time configuring. It's ready to use right out of the box. 
+Once installed, a quick setup wizard will help you set up a team collaboration 
+site so you can begin working immediately. In fact, you can have a full 
+production environment set up in less time than it takes to brew a pot of 
+coffee.
 
 If you need any assistance beyond what's covered in this book, Liferay, Inc.
 offers training, consulting, and support services to fill any need that you
@@ -51,17 +53,17 @@ using Social Office the best it can be.
 
 ## Installing Social Office [](id=installing-social-office-liferay-portal-3-0-social-office-01-en)
 
-Social Office 3.0 is available as an application that can be installed on
-Liferay Portal CE 6.2 GA1 or EE 6.2 GA1. Prior to version 2.0, Social Office was
-provided as an standalone product that was essentially a customized version of
-Liferay Portal. Liferay applications, or apps, are packages of Liferay plugins
-that are grouped together with descriptions, version information, and other
-metadata. You can identify downloaded Liferay apps by their `.lpkg` file
+Social Office 3.1 is available as an application that can be installed on 
+Liferay Portal CE 6.2 GA1+ or EE 6.2 GA1+. Prior to version 2.0, Social Office 
+was provided as an standalone product that was essentially a customized version 
+of Liferay Portal. Liferay applications, or apps, are packages of Liferay 
+plugins that are grouped together with descriptions, version information, and 
+other metadata. You can identify downloaded Liferay apps by their `.lpkg` file
 extensions. Individual Liferay plugins have the standard `.war` file extensions.
 
-This section begins with a quick set of instructions on installing Social Office.
-In the majority of cases, this is all you'll need. The parts after this present 
-additional details for specific configurations and use cases.
+This section begins with a quick set of instructions on installing Social 
+Office. In the majority of cases, this is all you'll need. The parts after this 
+present additional details for specific configurations and use cases.
 
 - Social Office Quick Install
 - Pre-installation Configuration
@@ -73,7 +75,8 @@ additional details for specific configurations and use cases.
 
 There are two ways to install Social Office: you can download and
 install Social Office directly from your Liferay instance's Control Panel
-Marketplace interface (this is simplest) or you can deploy the `.lpkg` file manually.
+Marketplace interface (this is simplest) or you can deploy the `.lpkg` file 
+manually.
 
 To install Social Office via the Control Panel, navigate to the Control Panel
 and click on *Marketplace* &rarr; *Purchased*. If you've already purchased
@@ -140,7 +143,7 @@ section of Liferay's Control Panel.
 
 ---
 
-![Figure 1.x: Tip](../../images/tip.png) **Warning:** When you start Liferay for
+![tip](../../images/tip.png) **Warning:** When you start Liferay for
 the first time, you're presented with a setup wizard. The configuration you make
 in the setup wizard is saved in a `portal-setup-wizard.properties` file in your
 Liferay Home directory. However, if you specify a different Liferay Home
@@ -180,7 +183,7 @@ installed or uninstalled.
 
 ### Validating a Social Office Installation [](id=validating-a-social-office-installat-liferay-portal-3-0-social-office-01-en)
 
-The Social Office 3.0 `.lpkg` file is hot-deployable and includes the following
+The Social Office 3.1 `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
 confirm that these plugins have been successfully deployed (or removed). Your
 server's console log should indicate whether or each plugin has been
@@ -284,8 +287,8 @@ Uninstalling Social Office reverts users' Profile and Dashboard pages to the
 default Liferay public and private pages and reverts Social Office sites to
 non-Social Office sites. However, no data will be deleted. Uninstalling only
 uninstalls the plugins included in Social Office, the Social Office role, and
-the site templates. After uninstalling, make sure that the components listed above
-in the section on validating your installation are no longer available.
+the site templates. After uninstalling, make sure that the components listed 
+above in the section on validating your installation are no longer available.
 
 Next, let's discuss how Social Office can facilitate team collaboration.
 
@@ -386,20 +389,20 @@ The Sites portlet is an improved version of the basic My Sites portlet. It
 allows you to star various sites to customize your sites list. You can select
 *All Sites* to display all the sites in the portal, *My Sites* to display all
 the sites you belong to, or *My Favorites* to display your custom list of
-starred sites. The Sites portlet remembers your selection, which is very useful 
-if you frequently use one of the selections. For example, if you have a favorite 
-group of sites that you have starred, selecting *My Favorites* will make that  
-the default selection in the Sites portlet as you navigate through Social 
-Office. The option to star sites is also very useful for large Social Office 
-instances with web applications and content hosted across many different sites.
-There's also a search bar which you can use to display sites related to your
-search query. If you have permission to add sites, you'll see an *Add Site*
-button which opens a wizard to guide you through the site creation process. This
-wizard will create a new site based on the *Default Social Office Site*
-template. This site comes pre-built with pages and applications designed for
-team collaboration. The *Sites Directory* button opens a site directory dialog
-box which you can use to join, leave sites, or star sites. If you have the
-required permissions, you can also delete sites.
+starred sites. Beginning in Social Office 3.1, the Sites portlet also remembers 
+your selection. This is very useful if you frequently use one of the selections. 
+For example, if you have a favorite group of sites that you have starred, 
+selecting *My Favorites* will make that the default selection in the Sites 
+portlet as you navigate through Social Office. The option to star sites is also 
+very useful for large Social Office instances with web applications and content 
+hosted across many different sites. There's also a search bar which you can use 
+to display sites related to your search query. If you have permission to add 
+sites, you'll see an *Add Site* button which opens a wizard to guide you through 
+the site creation process. This wizard will create a new site based on the 
+*Default Social Office Site* template. This site comes pre-built with pages and 
+applications designed for team collaboration. The *Sites Directory* button opens 
+a site directory dialog box which you can use to join, leave sites, or star 
+sites. If you have the required permissions, you can also delete sites.
 
 ![Figure 1.x: To access the Sites portlet, just click on *Go to* from the user oar. The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
@@ -417,6 +420,13 @@ notifications from the list, but leaves each request for you to respond to
 individually. Clicking *Notifications* or *Requests* lets you view further 
 details about each item you've received and lets you configure your preferences 
 for receiving notifications and requests.
+
+---
+
+![note](../../images/tip.png) **Note:** In versions of Social Office 
+prior to 3.1, requests are not handled separately from notifications.
+
+---
 
 ![Figure 1.x: You'll receive a Social Office notification upon receiving a private message, an invitation to join a site, a social connection request, or an event reminder.](../../images/so-notification.png)
 
@@ -547,19 +557,19 @@ right of the portlet and then selecting *Configuration*.
 
 There's also a Microblogs Status Update portlet on your Dashboard that lets you 
 broadcast a Facebook-like status to the scope of your choice: to everyone, to 
-your connections, or to your followers. You can also control whether or not your 
-latest status update appears on your Dashboard. To do so, first make sure the 
-Edit Controls are turned on by clicking the *Gear* icon next to the search bar 
-and toggling on the Edit Controls in the bar that appears on the left side of 
-your screen. Then mouse over the Microblogs Status Update portlet, click the 
-*Wrench* icon, and select *Configuration* from the drop-down menu. Check the box 
-for *Display Most Recent Status* if you want your most recent status update to 
-appear on your dashboard. Also, users can interact with microblogs status 
-updates wherever they're displayed, such as in an Activities portlet. There are 
-a few possible microblogs interactions: you can click a link to view the full 
-microblog post, comment on the post, or repost the microblog. Next, let's take a 
-look at the applications provided on the other private pages of Social Office 
-users' personal sites.
+your connections, or to your followers. Beginning with Social Offce 3.1, you can 
+also control whether or not your latest status update appears on your Dashboard. 
+To do so, first make sure the Edit Controls are turned on by clicking the *Gear* 
+icon next to the search bar and toggling on the Edit Controls in the bar that 
+appears on the left side of your screen. Then mouse over the Microblogs Status 
+Update portlet, click the *Wrench* icon, and select *Configuration* from the 
+drop-down menu. Uncheck the box for *Display Most Recent Status* if you want 
+your most recent status update to be hidden on your dashboard. Also, users can 
+interact with microblogs status updates wherever they're displayed, such as in 
+an Activities portlet. There are a few possible microblogs interactions: you can 
+click a link to view the full microblog post, comment on the post, or repost the 
+microblog. Next, let's take a look at the applications provided on the other 
+private pages of Social Office users' personal sites.
 
 #### The Contacts Center
 
@@ -584,6 +594,14 @@ that site. There's also a search bar so you can search for specific users. The
 Contacts Center can store contacts that aren't portal users, making it a great 
 one stop shop for all of your contacts. To add a new external contact, just 
 click on the *Add Contact* button at the top of the Contacts Center.
+
+---
+
+![note](../../images/tip.png) **Note:** The option to view your followers in the 
+Contacts Center was introduced in version 3.1 of Social Office. Earlier versions 
+do not have this option.
+
+---
 
 To view details about a contact or user, click on the user from the left-hand
 area of the Contacts Center portlet. For each user, you'll have the following
@@ -840,14 +858,16 @@ private.
 
 ![Figure 1.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration. You can choose a site template to use to create your site's default pages, choose which template pages to include, and choose the type of your new site.](../../images/new-site-wizard1.png)
 
-Administrators can control what types of sites, if any, can be created by Social 
-Office users. These settings can be accessed in the *General* tab of Social 
-Office Configurations, which is in the Configurations section of the Control 
-Panel. Unchecking the box *Social Office users can add sites* prevents Social 
-Office users from being able to add sites of any type. When this box is 
-unchecked, the *Add Site* button in the Sites portlet doesn't appear to users.
+Social Office 3.1 gives administrators more control over site creation by users. 
+Administrators can control the types of sites that can be created by Social 
+Office users, or whether users can create sites at all. These settings can be 
+accessed in the *General* tab of Social Office Configurations, which is in the 
+Configurations section of the Control Panel. Unchecking the box 
+*Social Office users can add sites* prevents Social Office users from being able 
+to add sites of any type. When this box is unchecked, the *Add Site* button in 
+the Sites portlet doesn't appear to users.
 
-!(Figure 1.x: Administrators can control the types of sites that Social Office users can create, as well as their ability to create sites at all.](../../images/so-site-restrictions.png)
+![Figure 1.x: Administrators can control the types of sites that Social Office users can create, as well as their ability to create sites at all.](../../images/so-site-restrictions.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
@@ -910,11 +930,11 @@ The Members page contains a Members portlet and an Invitation portlet. The
 Invitation portlet is only visible to site administrators. It allows 
 administrators to send invitations to users to join the site. Clicking the 
 *Invite members to this site* button brings up the interface for sending out 
-invitations. To avoid duplicate requests, users that have already been invited 
-but have not yet responded are marked as such. By default, the Members portlet 
-displays a list of all the members of the site. Using the Members portlet's 
-dropdown selector, users can filter the set of displayed site members. The 
-available filters include *All*, *Administrators*, *Connections*, and 
+invitations. Beginning in Social Office 3.1, users that have already been 
+invited but have not yet responded are marked as such. By default, the Members 
+portlet displays a list of all the members of the site. Using the Members 
+portlet's dropdown selector, users can filter the set of displayed site members. 
+The available filters include *All*, *Administrators*, *Connections*, and 
 *Following*. The *Administrators* filter provides site members with an easy 
 way to display entries for site owners and site administrators. This is useful 
 for site members who need to contact site administrators. To view a user's 
@@ -992,6 +1012,13 @@ confirm that these plugins, in addition to the ones included with Social Office
 CE, have been successfully deployed (or removed). Your server's console log 
 should indicate whether or not each plugin has been successfully deployed.
 
+---
+
+![note](../../images/tip.png) **Note:** Beginning with Social Office EE 3.1, the 
+Documentum plugin is no longer included.
+
+---
+
 **EE Plugins:**
 
 - sharepoint-hook
@@ -1038,9 +1065,9 @@ available fix packs before deploying your Social Office 3.x plugins.
 
 ---
 
-![Figure 1.x: Note](../../images/tip.png) Note: There are a few known issues with
-the Social Office plugins that you might experience if you're running on JBoss.
-If the Go To menu is not initially visible after deploying the Social Office
+![note](../../images/tip.png) **Note:** There are a few known issues with the 
+Social Office plugins that you might experience if you're running on JBoss. If 
+the Go To menu is not initially visible after deploying the Social Office 
 plugins or if you can't confirm a connection or site invitation after logging in
 as the default administrator user, clear the `/temp` folder and then restart the
 server to resolve the issue.
