@@ -1,4 +1,4 @@
-# Modifying Your Service Layer
+# Modifying Your Service Layer [](id=modifying-your-service-layer)
 
 You want to add three new functions to your portlet: modifying guestbook
 entries, deleting guestbook entries, and setting permissions for guestbook

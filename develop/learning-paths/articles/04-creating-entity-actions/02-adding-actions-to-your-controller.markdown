@@ -1,4 +1,4 @@
-# Adding Actions to Your Controller
+# Adding Actions to Your Controller [](id=adding-actions-to-your-controller)
 
 Remember that the controller layer of your application is like a traffic
 director. The user tells your application what he or she wants to do, and the

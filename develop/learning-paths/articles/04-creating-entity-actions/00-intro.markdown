@@ -1,4 +1,4 @@
-# Creating Entity Actions
+# Creating Entity Actions [](id=creating-entity-actions)
 
 So far, you've created a Guestbook application that uses a database to store its
 entries. This application is integrated with Liferay's permissions mechanism,
