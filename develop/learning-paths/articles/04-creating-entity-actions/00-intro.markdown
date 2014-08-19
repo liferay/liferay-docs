@@ -15,8 +15,3 @@ you'll give your users total control over their own guestbook entries.
 ![Figure 1: You'll add actions for managing guestbook entries in this learning path.](../../images/entity-actions.png)
 
 
-1. *File* &rarr; *New* &rarr; *File*, `guestbook_actions.jsp`. 
-
-2. Make a util package; stick WebKeys.java in there. 
-
-3. 

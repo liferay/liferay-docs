@@ -50,9 +50,7 @@ just include the same JSP over and over with different parameters.
 
 2.  Place the following code in the file: 
 
-
         <%@include file="/html/init.jsp"%>
-
 
         <%
         String mvcPath = ParamUtil.getString(request, "mvcPath");
@@ -65,10 +63,10 @@ just include the same JSP over and over with different parameters.
     First, you include `init.jsp`, and then you have a small scriptlet. The
     first line retrieves the path of the current JSP. The second retrieves the
     result from the current search container row. The third casts that row object
-    into an `Entry` object. 
+    into an `Entry` object. Notice the call to `WebKeys`? The constant you're
+    using here is inherited from the parent class. 
 
 3.  Next, you'll add the first entry, *Edit*, in your action button: 
-
 
         <liferay-ui:icon-menu>
 
@@ -94,10 +92,8 @@ just include the same JSP over and over with different parameters.
 
 4.  Next, add the entry for the permissions button: 
 
-
         <c:if
             test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
-
 
             <liferay-security:permissionsURL
                 modelResource="<%= Entry.class.getName() %>"
@@ -211,3 +207,7 @@ publish guestbook entries as *activities* that can appear on users' profile
 pages. Or you might want to add tags, categories, or even comments to guestbook
 entries. To make any of these features work, you must asset-enable your
 application. The next learning path covers that. 
+
+## Next Steps
+
+Add link to asset learning path when written. 

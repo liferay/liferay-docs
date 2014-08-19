@@ -150,7 +150,3 @@ using these variables just yet, but you will be using one that's inherited from
 the interface you implemented. This is done in the next step of this learning
 path: the user interface. 
 
-
-
-
-

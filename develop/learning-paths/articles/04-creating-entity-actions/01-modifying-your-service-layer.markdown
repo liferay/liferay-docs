@@ -10,7 +10,7 @@ this functionality.
 It's time to jump back into your service layer to enable deleting and updating
 guestbook entries. 
 
-# Adding Methods to the Service Layer
+## Adding Methods to the Service Layer
 
 Remember: with Service Builder, you work in reverse. Instead of modifying the
 interface and then implementing it, all you need to do is add the method you
@@ -40,7 +40,7 @@ that's the easiest one to implement.
 
     	}
 
-In the last step, you added resources to your entities. This means when you
+In the last step, you added resources to your entities. This means that when you
 delete your entities, you have to delete the resource also. Since your entities
 are owned by a single user, you delete the resource using the individual scope.
 Once you've deleted the resource, you can delete the entry itself, using a
