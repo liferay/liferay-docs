@@ -65,7 +65,7 @@ functionality with Documentum and Sharepoint. They allow Documentum and
 Sharepoint repositories to be mounted within Liferay's Documents and Media
 system. Please refer to the Liferay Marketplace app descriptions and the
 Documents and Media section of the
-[Liferay User Guide](/use/portal/-/knowledge_base/using-external-repositories)
+[Liferay User Guide](/discover/portal/-/knowledge_base/using-external-repositories)
 for information on properties and configuration.
 
 Other features provided by Social Office EE include auditing improvements to the
