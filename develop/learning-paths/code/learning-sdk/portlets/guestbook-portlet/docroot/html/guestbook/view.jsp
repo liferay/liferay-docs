@@ -78,6 +78,11 @@
 		<liferay-ui:search-container-column-text property="message" />
 
 		<liferay-ui:search-container-column-text property="name" />
+		
+		
+<liferay-ui:search-container-column-jsp
+            path="/html/guestbook/guestbook_actions.jsp"
+            align="right" />
 
 	</liferay-ui:search-container-row>
 
