@@ -172,7 +172,7 @@ the portlet.
 7.  Save the `.tpl` file. 
 
 Believe it or not, you've just created a layout template! You can
-[deploy](https://dev.liferay.com/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[deploy](https://dev.liferay.com/develop/tutorials/-/knowledge_base/deploying-plugins)
 it to your portal and apply it to your portal's pages. 
 
 If you want to see more examples of layout templates, check out the Page Layouts

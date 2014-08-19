@@ -127,8 +127,8 @@ re-arrange their living room furniture!
 
 ## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
 
-[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook)
 
 

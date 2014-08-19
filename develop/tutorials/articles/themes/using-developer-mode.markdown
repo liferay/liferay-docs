@@ -1,4 +1,4 @@
-# Using Developer Mode with Themes [](id=using-developer-mode-with-themes-lp-6-2-develop-tutorial)
+# Using Developer Mode with Themes [](id=using-developer-mode-with-themes)
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer Mode, all caches
