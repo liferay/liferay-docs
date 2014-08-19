@@ -51,7 +51,7 @@ to understand how the app versions relate to one another.
 Keep in mind that the version of your app is completely up to you to specify,
 but the releases of Liferay with which your app works must be specified using
 Liferay's versioning scheme, as explained in
-[Understanding Liferay's Releases](/use/portal/-/knowledge_base/understanding-liferays-releases).
+[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 
@@ -77,7 +77,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, portal administrator, and company, and the ramifications
 of publishing apps as an individual versus publishing apps as part of a company,
 see the
-[Leveraging the Marketplace](/use/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+[Leveraging the Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
 chapter of Using Liferay Portal.
 
 ## What Are the Requirements for Publishing Apps?
@@ -240,7 +240,7 @@ your app works with.
 
  ![Note](../../images/tip.png) **Note:** If you haven't yet done so,
  make sure to read the chapter
- [Leveraging the Marketplace](/use/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+ [Leveraging the Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
  from *Using Liferay Portal*! 
 
 ---

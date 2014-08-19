@@ -38,7 +38,7 @@ compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found in the section
-[Understading Liferay's Releases](https://dev.liferay.com/use/portal/-/knowledge_base/understanding-liferays-releases)
+[Understading Liferay's Releases](/discover/portal/-/knowledge_base/understanding-liferays-releases)
 in *Using Liferay Portal*. Accordingly, Liferay 6.2 CE GA1 is designated as
 version `6.2.0`. CE GA2 is then `6.2.1`, and so on. Liferay 6.2 EE GA1 is
 designated as `6.2.10`. EE versioning follows a slightly different policy given
