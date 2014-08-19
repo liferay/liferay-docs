@@ -7,11 +7,14 @@ your users.
 You may be wondering what a managed bean is and what it accomplishes in a JSF
 portlet. 
 
-Managed beans are Java beans that are managed by the JSF framework. They are
-usually associated with components used in a particular page displayed by a JSF
-portlet. There are many Managed Bean types that you can use for a JSF portlet,
-but you'll learn about the most popular ones and create them for your guestbook
-portlet. 
+Managed beans are Java beans that are managed by the JSF framework. Therefore,
+managed beans are responsible for storing the state of a web page, and JSF
+*manages* these beans by creating and removing the bean object from the server.
+Managed beans can also be associated with components used in a particular page
+displayed by a JSF portlet. 
+
+There are many Managed Bean types that you can use for a JSF portlet, but you'll
+learn about the most popular ones and create them for your guestbook portlet. 
 
 If you're familiar with the MVC design pattern, you'll notice that each managed
 bean satisfies a
@@ -28,21 +31,22 @@ relationship with a JSF view. They typically have properties associated with
 getters/setters, but these properties are of the view, not the underlying data
 model. 
 
-- **Controller Managed Bean:** This type of managed bean serves the *Controller*
-concern of the MVC design pattern. This bean executes business logic and returns
-a navigation outcome to the JSF navigation handler. Controller managed beans
-typically have JSF action methods. For the sake of this learning path, the
-controller bean will be referred to as the *view* bean, since it controls a
-portlet's views (pages). 
+- **Controller (View) Managed Bean:** This type of managed bean serves the
+*Controller* concern of the MVC design pattern. This bean executes business
+logic and returns a navigation outcome to the JSF navigation handler. Controller
+managed beans typically have JSF action methods. For the sake of this learning
+path, the controller bean will be referred to as the *view* bean, since it
+controls a portlet's views (pages). 
 
 - **Model Managed Bean:** This type of managed bean serves the *Model* concern
 of the MVC design pattern. The JSF model bean uses the getter/setter design
 pattern, which encapsulates properties. The most common usage for a model bean
 is to be a database entity, which is why it's sometimes referred to as a data
-model.
+model. 
 
-Now that you have some background information on popular JSF managed beans,
-you'll begin creating your guestbook's managed beans next. 
+You will use all three of these bean types in your guestbook portlet. Now that
+you have some background information on popular JSF managed beans, you'll begin
+creating your guestbook's managed beans next. 
 
 ## Using Backing Beans to Facilitate UI Logic
 
@@ -212,6 +216,15 @@ select. Add the following methods into your `GuestbookBackingBean` class:
 
 4. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
 
+---
+
+![note](../../images/01-tip.png) **Note:** You'll notice while creating some of
+your managed beans that Liferay IDE/Developer Studio gives you error markers in
+some of your classes. Don't worry about these error markers, you'll rebuild your
+services at the end of this document and these errors will be resolved. 
+
+---
+
 This `GuestbookBackingBean` is *request scoped*, which means that it is only
 created when a request is being made. JSF creates the bean, uses the bean as
 requested, and then it is removed and available for garbage collection. The
@@ -369,30 +382,28 @@ guestbook portlet next.
 
         ...
 
-        @ManagedBean(name = "viewBean")
+        @ManagedBean
         @ViewScoped
         public class ViewBean implements Serializable {
 
         ...
 
-    Notice that the `@ManagedBean` tag is slightly different then the managed
-    bean tags you created for your backing beans. You may recall the `viewBean`
-    name you specified here is used in the `AbstractBackingBean` class during
-    dependency injection.
+    You may recall the `viewBean` name that was specified in the
+    `AbstractBackingBean` class during dependency injection: 
 
         @ManagedProperty(name = "viewBean", value = "#{viewBean}")
 
-    This class' dependencies are injected into the `viewBean` property in your
-    backing beans by using the name specified in your `@ManagedBean` tag. 
+    Now that you've specified this class as a managed bean, its dependencies can
+    now be injected into the `viewBean` property in your backing beans. 
     
     Another important tag to understand is the `@ViewScoped` tag. You may
     remember learning about the `@RequestScoped` tag, which was used for the
     backing beans that were only created on request and then removed from the
-    server. The `@ViewScoped` tag means the bean will be kept on the server and
-    have a known state as long as the portlet's view is being used by the user.
-    Therefore, the general process for your guestbook is to store the content
-    created from your request scoped backing beans on your view scoped beans
-    before the backing beans are removed from the server.
+    server. The `@ViewScoped` declares that the bean will be kept on the server
+    and have a known state as long as the portlet's view is being used by the
+    user. Therefore, the general process for your guestbook is to store the
+    content created from your request scoped backing beans on your view scoped
+    beans before the backing beans are removed from the server. 
     
     The other view scoped bean you'll use is the model bean, which encapsulates
     your guestbook's entities and properties. You'll create the model bean once
@@ -485,9 +496,146 @@ guestbook portlet next.
     created a couple setters and boolean methods to manage your `editingEntry`
     and `editingGuestbook` variables, which aid in the navigation between views.
 
+8. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
+
 Excellent! You've successfully created your view bean! The last bean to create
 is your model bean. You'll dive into that next. 
 
 ## Using a Model Bean to Encapsulate Properties
 
-You will use all three of these beans in your guestbook portlet. 
+The last managed bean you'll create for your JSF guestbook portlet is the model
+bean. You've already learned that the model bean is used to encapsulate
+properties and store data in the database. Thus, it primarily contains getters
+and setters. The model bean is also view scoped, which means it stays on the
+server as long as the portlet view (page) is open. 
+
+Now that you have an idea of what the model bean accomplishes for your guestbook
+portlet, it's time to create it! 
+
+1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
+   &rarr; *Class*. 
+
+2. Name your class `GuestbookModelBean`. Then click *Add* next to the Interfaces
+   field and type *Serializable*. Click *OK* and *Finish*. 
+
+3. 3. Hover your mouse over the `ViewBean` class name and you'll notice a few
+   options appear. Select the *Add generated serial version ID*. 
+
+4. Add the `@ManagedBean` and `@ViewScoped` tags above the public class
+   declaration like the following: 
+
+        ...
+
+        @ManagedBean
+        @ViewScoped
+        public class GuestbookModelBean implements Serializable {
+
+        ...
+
+    Just like the view bean, the `@ManagedBean` specifies the class as a managed
+    bean, and allows for dependency injection in the `AbstractBackingBean`.
+    Likewise, the `@ViewScoped` tag allows this managed bean object to be kept
+    on the server as long as the view page is open. 
+
+5. Add the following properties to the model bean class: 
+
+        private static final Logger logger = LoggerFactory.getLogger(GuestbookModelBean.class);
+
+        private Guestbook selectedGuestbook;
+        private List<Guestbook> guestbooks;
+
+        private Entry selectedEntry;
+        private List<Entry> entries;
+
+    These properties are used for the getter/setter methods you'll add next.
+    Thus, these variables will aid in storing your guestbooks and entries in
+    the database. 
+
+5. Add the following getter/setter methods: 
+
+        public void forceEntriesReload() {
+            setEntries(null);
+        }
+
+        public void forceGuestbooksReload() {
+            setGuestbooks(null);
+        }
+
+        public List<Entry> getEntries() {
+
+            if (entries == null) {
+                long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
+                Guestbook selectedGuestbook = getSelectedGuestbook();
+
+                try {
+                    entries = EntryLocalServiceUtil.getEntries(scopeGroupId, selectedGuestbook.getGuestbookId());
+                }
+                catch (SystemException e) {
+                    logger.error(e);
+                }
+            }
+
+            return entries;
+        }
+
+        public void setEntries(List<Entry> entries) {
+            this.entries = entries;
+        }
+
+        public List<Guestbook> getGuestbooks() {
+
+            if (guestbooks == null) {
+                long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
+
+                try {
+                    guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId);
+                }
+                catch (SystemException e) {
+                    logger.error(e);
+                }
+            }
+
+            return guestbooks;
+        }
+
+        public void setGuestbooks(List<Guestbook> guestbooks) {
+            this.guestbooks = guestbooks;
+        }
+
+        public Entry getSelectedEntry() {
+            return selectedEntry;
+        }
+
+        public void setSelectedEntry(Entry selectedEntry) {
+            this.selectedEntry = selectedEntry;
+        }
+
+        public Guestbook getSelectedGuestbook() {
+
+            if (selectedGuestbook == null) {
+                long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
+
+                try {
+                    selectedGuestbook = GuestbookLocalServiceUtil.getFirstGuestbookByName(scopeGroupId,
+                        ViewBean.DEFAULT_GUESTBOOK_NAME);
+                }
+                catch (SystemException e) {
+                    logger.error(e);
+                }
+            }
+
+            return selectedGuestbook;
+        }
+
+        public void setSelectedGuestbook(Guestbook selectedGuestbook) {
+            this.selectedGuestbook = selectedGuestbook;
+        }
+
+    You may remember from your backing beans that these setter methods are
+    called to encapsulate what the backing beans created before their state is
+    removed from the server. To summarize, the setter methods save your
+    guestbook's properties to the database, and are retrieved by calling the
+    getter methods. 
+
+You've created all of your managed beans and are now ready to create your
+portlet's views. Proceed to the next section to learn how. 
