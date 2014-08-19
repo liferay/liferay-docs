@@ -144,5 +144,15 @@ to create plugins!
 
 ## Related Topics
 
-[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
+
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
 

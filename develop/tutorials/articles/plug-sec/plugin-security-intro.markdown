@@ -100,7 +100,15 @@ Great! Now you know the basics of how Liferay plugin security works.
 
 ## Related Topics
 
-[Common Plugin Security Pitfalls](/develop/tutorials/-/knowledge_base/common-plugin-security-pitfalls)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
 
-[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
 
