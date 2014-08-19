@@ -1,4 +1,4 @@
-# Tracking App Performance
+# Tracking App Performance [](id=tracking-app-performance)
 
 One of the main reasons for developing and publishing apps into the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
@@ -6,7 +6,7 @@ the developer of your app, to get detailed reports about the number of views,
 downloads, and purchases of your app(s). To access these metrics, navigate
 to *Home* &rarr; *Metrics* (under *Development*). 
 
-![Figure 14.10: The App Performance view in Marketplace lets you see how many times your apps has been viewed, downloaded, and purchased over a time interval.](../../images/marketplace-app-metrics-over-time.png) 
+![Figure 1: The App Performance view in Marketplace lets you see how many times your apps has been viewed, downloaded, and purchased over a time interval.](../../images/marketplace-app-metrics-over-time.png) 
 
 The view shown above is the default metrics view for a single app. Across the
 top is a list of data series options (*Views*, *Downloads*, or *Purchases*).

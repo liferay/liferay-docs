@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary)
 
 In this chapter, we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
@@ -12,21 +12,27 @@ Next, we showed how you can publish a sample app on the Marketplace and how you
 can modify it as the app evolves. Finally, we looked at how to track the
 adoption of apps using view, download, and install metrics. 
 
-Regarding plugin security management, we discussed why plugin security
-management is necessary, how the Plugin Security Manager checks each plugin
-against its portal access control list (PACL), and how to specify PACL
-properties for the plugins you create and deploy. We also explained Liferay's
-support of the Java Security Policy, in case you need to specify rules above and
-beyond what PACL properties support.
+In addition to providing application consumers with Marketplace, Liferay
+provides a Plugin Security Manager to help protect a consumer's portal from
+potentially negative side-affects that can possibly be caused by an app. The
+Plugin Security Manager's job is to only allow an app to use resources that the
+app has specified up-front in its Portal Access Control List (PACL). As such,
+you'll want to know how to create PACLs for the apps you develop. You can learn
+more about Liferay Plugin Security and PACLs in the
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl)
+tutorials. 
 
-Now you have a better understanding of how plugin security works and can use
-Liferay Portal's Plugin Security Manager effectively to specify exactly what
-services your plugin needs in order to function. Anyone running Liferay Portal
-with Security Manager turned on will know you're a "law abiding" citizen,
-because you've specified what services your applications need to access in order
-to function. We hope this information helps you understand how to develop safe
-and powerful Liferay apps. 
+Related Topics:
 
-Next, we'll talk about using Ext plugins to make customizations that you can't
-make with any other Liferay plugin type. 
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl)
+
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+
+[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+
+[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
 

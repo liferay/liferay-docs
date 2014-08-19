@@ -1,4 +1,4 @@
-# Making Changes to Published Apps
+# Making Changes to Published Apps [](id=making-changes-to-published-apps)
 
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:

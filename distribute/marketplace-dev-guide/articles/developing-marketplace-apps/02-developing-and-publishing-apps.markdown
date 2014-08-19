@@ -1,4 +1,4 @@
-# Developing and Publishing Apps
+# Developing and Publishing Apps [](id=developing-and-publishing-apps)
 
 Let's jump right in with an example. In this section, we'll walk you through the
 creation and publication steps (but we won't actually publish the app on the
@@ -11,8 +11,8 @@ Before you can publish anything, you first have to create (develop) an app!
 Since apps are nothing more than collections of individual plugins, your first
 step in developing a Marketplace app is to develop the functionality in the form
 of one or more Liferay plugins. To create a sample app that contains a single
-portlet, follow the detailed instructions in [Developing Portlet
-Applications](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en).
+portlet, you can follow the detailed instructions from the learning path
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development).
 After creating and deploying your sample app, return here to continue.
 
 In the real world, apps usually consist of multiple components (e.g., multiple
@@ -20,7 +20,7 @@ In the real world, apps usually consist of multiple components (e.g., multiple
 non-trivial functionality which in many cases requires some configuration. How
 these advanced tasks are dealt with is out of scope for this section, but some
 tips and considerations for Marketplace development can be found in the sections
-that follow.]
+that follow.
 
 ## Specify App Packaging Directives
 
@@ -37,9 +37,9 @@ is compatible. In order to specify which release of Liferay your app is
 compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
-can be found in the chapter [Understading Liferay
-Releases](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
-in *Using Liferay Portal 6.2*. Accordingly, Liferay 6.2 CE GA1 is designated as
+can be found in the section
+[Understading Liferay's Releases](https://dev.liferay.com/use/portal/-/knowledge_base/understanding-liferays-releases)
+in *Using Liferay Portal*. Accordingly, Liferay 6.2 CE GA1 is designated as
 version `6.2.0`. CE GA2 is then `6.2.1`, and so on. Liferay 6.2 EE GA1 is
 designated as `6.2.10`. EE versioning follows a slightly different policy given
 then presence of fix packs and service packs, so 6.2 EE GA2 will be `6.2.20`.
@@ -56,7 +56,7 @@ using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE` are
 replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If your app is compatible
+ ![Note](../../images/tip.png) **Note:** If your app is compatible
  with both CE and EE, you must specify a set of versions for both CE and EE
  releases. If you only specify compatibility with CE, then your app will not be
  compatible with (and will fail to deploy to) any EE release.
@@ -72,7 +72,7 @@ and 6.1 EE release starting with EE GA3. Marketplace will create two packages,
 one that is compatible with the 6.1 CE GA3 release and *later*, and another that
 is compatible with 6.1 EE GA3 release and *later*.
 
- ![Note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
+ ![Note](../../images/tip.png)**Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
  the `+` symbol.  This ensures that your app will be deployable onto future
  versions of Liferay (but does not guarantee your app will work in future
@@ -142,12 +142,11 @@ time to get it to the Marketplace!
 
 Before you can publish anything to the Marketplace, you must first have an
 account on [liferay.com](http://liferay.com). If you do not have an account,
-visit [http://liferay.com](http://liferay.com) and click *Register* in the
-upper-right corner of the screen. After you've registered, you can visit the
-Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
-The Marketplace home page is shown below:
+visit <http://liferay.com> and click *Register* in the upper-right corner of the
+screen. After you've registered, you can visit the Marketplace at
+<http://liferay.com/marketplace>. The Marketplace home page is shown below:
 
-![Figure 14.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
+![Figure 1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
 This is the front page of the Marketplace and is where users go to find new and
 interesting apps. Since you'll visit here often during the course of
@@ -155,8 +154,8 @@ development, you may want to bookmark it now.
 
 You can publish Marketplace apps as an individual or as part of a company.
 Before you can submit apps to the Marketplace, you must register yourself as an
-app developer. It's easy. Simply click [*Become a
-Developer*](https://www.liferay.com/marketplace/become-a-developer) in the
+app developer. It's easy. Simply click
+[*Become a Developer*](https://www.liferay.com/marketplace/become-a-developer) in the
 *MARKETPLACE* column on the left. You're now in the Marketplace registration
 wizard. If you're registering with a company and the company is already
 registered, you can search for it from these Marketplace registration screens
@@ -169,7 +168,7 @@ your published apps are available to you from your User Profile. Let's go there
 now. In the upper right corner on <http://www.liferay.com> select your picture
 &rarr; *User Profile*. 
 
-![Figure 14.2: Select your picture &rarr; *User Profile* on liferay.com to access your app development pages.](../../images/liferay-dot-com-user-profile.png) 
+![Figure 2: Select your picture &rarr; *User Profile* on liferay.com to access your app development pages.](../../images/liferay-dot-com-user-profile.png) 
 
 In the left side navigation panel of your profile page, there are links to pages
 related to using apps and developing apps. Links to *Apps* and *App Metrics*
@@ -178,7 +177,7 @@ these links heavily during development; so you may want to bookmark this page
 too. Click *Apps* from within the *Development* section to access your app
 development page. 
 
-![Figure 14.3: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
+![Figure 3: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
 Now that you know how to get to your app development page, let's publish an app!  
 
@@ -191,7 +190,7 @@ appears, allowing you to fill in your app's details.
 
 The first step is to enter the basic details about your app. 
 
-![Figure 14.4: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../images/marketplace-add-app-details.png) 
+![Figure 4: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
 
@@ -273,7 +272,8 @@ do so here.
 **Security:** If your app does *not* use Liferay's PACL Security Manager, flag
 the appropriate box. Otherwise, make sure to enable the security manager in your
 app by including the setting `security-manager-enabled=true` in your
-`liferay-plugin-package.properties` file. 
+[`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
+file. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
@@ -312,7 +312,7 @@ automatically begin uploading and their compatibility information is scanned
 (read the previous sections in this chapter to understand what compatibility
 information is read from your plugins). 
 
-![Figure 14.5: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+![Figure 5: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
 As a more complicated example, let's consider an app that consists of a hook and
 a portlet. The portlet works across all Liferay releases, but the hook is built
@@ -336,7 +336,7 @@ cannot be changed.
 
 **Choose a license term:**
 
-![Figure 14.6: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
+![Figure 6: Choosing license terms for Marketplace apps is easy.](../../images/marketplace-configure-app-license.png)
 
 Choosing *Perpetual* allows the app to continue running without expiration,
 whereas choosing *Non-Perpetual** expires the app's license one year from the
@@ -348,7 +348,7 @@ available. You cannot change your app's license terms once the app is approved.
 
 **Creating license options:**
 
-![Figure 14.7: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
+![Figure 7: You can create multiple license options for your Marketpalce apps.](../../images/marketplace-create-license-types.png)
 
 Creating license options allows you to design license bundles and to specify
 discounts for customers who purchase more Liferay Instances for your app (a
@@ -370,7 +370,7 @@ next page to determine the app's pricing and availability.
 
 **Pricing:**
 
-![Figure 14.8: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
+![Figure 8: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../images/marketplace-app-pricing.png) 
 
 Based on your selections from the previous page, you'll have price fields for
 each license option and for any support option you offered. 
@@ -400,7 +400,7 @@ Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at the *App Preview* screen. This allows you to preview your app
 as it will appear in the Marketplace, so you can confirm your changes.
 
-![Figure 14.9: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 9: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.

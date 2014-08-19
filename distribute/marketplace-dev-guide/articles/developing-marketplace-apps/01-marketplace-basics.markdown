@@ -1,4 +1,4 @@
-# Marketplace Basics
+# Marketplace Basics [](id=marketplace-basics)
 
 Before diving into the details of developing for the Marketplace, it is
 important that you have a good grasp of the concepts introduced in the
@@ -7,9 +7,8 @@ Marketplace. The following sections discuss these concepts.
 ## What is an App?
 
 As a Liferay developer, you're undoubtedly already be familiar with the concept
-of plugins (portlets, hooks, themes, etc). If not, see [Developing Applications
-for
-Liferay](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-applications-for-liferay-liferay-portal-6-2-dev-guide-01-en).
+of plugins (portlets, hooks, themes, etc). If not, see the
+[Tutorials Introduction](/develop/tutorials/-/knowledge_base/tutorials).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
@@ -51,8 +50,8 @@ to understand how the app versions relate to one another.
 
 Keep in mind that the version of your app is completely up to you to specify,
 but the releases of Liferay with which your app works must be specified using
-Liferay's versioning scheme, as explained in [Understanding Liferay's
-Releases](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en).
+Liferay's versioning scheme, as explained in
+[Understanding Liferay's Releases](/use/portal/-/knowledge_base/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 
@@ -77,15 +76,19 @@ individual) or a *company* with which you are associated. The selection you make
 determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, portal administrator, and company, and the ramifications
 of publishing apps as an individual versus publishing apps as part of a company,
-see the [Leveraging the Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
-chapter of Using Liferay Portal 6.2.
+see the
+[Leveraging the Marketplace](/use/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+chapter of Using Liferay Portal.
 
 ## What Are the Requirements for Publishing Apps?
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
-other Liferay plugins, as explained in [Developing Portlet
-Applications](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-portlet-applications-liferay-portal-6-2-dev-guide-03-en).
+other Liferay plugins, as explained in the tutorials on creating
+[MVC Portlets](/develop/tutorials/-/knowledge_base/creating-a-liferay-mvc-portlet-project)
+and creating
+[JSF Portlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/creating-and-deploying-jsf-portlets).
+
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
 
@@ -136,10 +139,10 @@ keep in mind:
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Important:** If you're developing a
+ ![Note](../../images/tip.png) **Important:** If you're developing a
  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
- see the section [Understanding Plugin Security
- Management](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en),
+ see the tutorial
+ [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl),
  for details. Give yourself adequate time to develop your app's PACL and time to
  test your app thoroughly with the security manager enabled. 
 
@@ -152,10 +155,10 @@ prepare your app for them.
 ## Things You Need Before You Can Publish
 
 You must first develop your app using your preferred development tool. For
-example, using [Liferay IDE or Liferay Developer
-Studio](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en),
-or the [Plugins
-SDK](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en).
+example, using
+[Liferay IDE or Liferay Developer Studio](/develop/tutorials/-/knowledge_base/liferay-ide),
+the [Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk),
+or [Maven](/develop/tutorials/-/knowledge_base/maven).
 Your app will consist of one or more Liferay plugins. Ensure your app is
 designed to work with Liferay 6.1 or later. If you wish to target multiple
 versions of Liferay (for example, you may wish to support 6.2 EE SP1, 6.2 CE
@@ -235,10 +238,10 @@ your app works with.
 
 ---
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If you haven't yet done so,
- make sure to read the [Leveraging the
- Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
- chapter of *Using Liferay Portal 6.2*! 
+ ![Note](../../images/tip.png) **Note:** If you haven't yet done so,
+ make sure to read the chapter
+ [Leveraging the Marketplace](/use/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+ from *Using Liferay Portal*! 
 
 ---
 
