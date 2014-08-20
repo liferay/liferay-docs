@@ -123,7 +123,6 @@ button, and can proceed to the next step.
 
 ### Preconfiguring Your Portal for LCS
 
-<!-- Is this property and setting correct? What about the other properties in Jim's file? -->
 If you're running Liferay 6.2, then you can skip this step. However, if you are 
 running Liferay 6.1 GA3, then there's a small preconfiguration step that you 
 need to take before using LCS--you need to update the `spring.configs` property 
@@ -216,12 +215,12 @@ Once you deploy the LCS client portlet, you can use it to register your server
 with your LCS account. Access the portlet by clicking on *Cloud Services* under 
 the *Apps* section of the *Control Panel*.
 
-<!-- Insert screenshot -->
+![Figure 20.1: LCS appears in your Control Panel as Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
 
-<!-- Insert screenshot -->
+![Figure 20.2: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
 
 Next, you need to register your server with LCS. Fill out the following fields 
 on this screen:
@@ -233,7 +232,8 @@ on this screen:
    logical group of servers. A group of development servers or a cluster are 
    good examples of environments. If you elect to create a new environment, a 
    popup asks you to enter its *Name*, *Location*, and *Description*.
-    <!-- Insert screenshot -->
+   
+    ![Figure 20.3: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
    
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -245,16 +245,19 @@ on this screen:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-<!-- Insert screenshot -->
+![Figure 20.4: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client portlet shows your connection status. 
 Note that it can take up to 10 or 20 seconds to perform the initial handshake 
 with LCS and send the first batch of information to the cloud. If you don't see 
 any change in status after 20 seconds, try refreshing the page. If you see a 
 red symbol indicating no data is being transmitted, please contact the Liferay 
-team for support. Once a successful connection is established, some statistics 
+team for support.
+
+![Figure 20.5: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
+
+Once a successful connection is established, some statistics 
 and links are displayed. Here's a description of what's displayed:
-<!-- For Message Task Interval, what else are messages for? -->
 
 - Heartbeat Interval: The communication interval with LCS. For example, if this 
   value is `00:01:00`, then the portlet communicates with LCS once every minute.
@@ -272,7 +275,7 @@ and links are displayed. Here's a description of what's displayed:
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
   
-<!-- Insert screenshot -->
+![Figure 20.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 ### Updating the LCS Client
 
@@ -312,7 +315,7 @@ installs any downloaded fix packs. It's important to note that this even applies
 to a cluster. LCS downloads and installs fix packs simultaneously across all 
 nodes--you don't have to handle each one individually. 
 
-<!-- Insert screenshot -->
+![Figure 20.7: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 In addition to displaying fix pack messages, the Alerts table also displays 
 many other kinds of messages. For example, an alert will appear whenever a 
@@ -320,18 +323,15 @@ server is offline. Since this is a very important message, it appears with a red
 dot next to it. Other alerts appear when monitoring is unavailable, the patching 
 tool is unavailable, or other issues are detected.
 
-<!-- Insert screenshot -->
-
 To the left of the fix packs and alerts are the environments in your project. 
 You can also create new environments here by clicking the blue plus icon. If you 
 look at the icons next to each environment, you'll notice that they're not all 
 the same. In fact, the color and type of the icon tells you something about that 
 environment:
-<!-- These icon descriptions need updated once the new icon design is finished. -->
 
 - Red icon: Indicates that there is some sort of problem or issue with one or 
   more servers in that environment.
-- Gray icon: Indicates that the servers in that environment are operating 
+- Green icon: Indicates that the servers in that environment are operating 
   properly.
 - Icon with a circle: Indicates that the servers in that environment are in a 
   cluster.
@@ -352,7 +352,7 @@ edit or delete the environment. To the left of the fix packs is the list of
 servers in the environment. Clicking on one of the servers takes you to the 
 server view for that server.
 
-<!-- Insert screenshot -->
+![Figure 20.8: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 ##### Using the Server View
 
@@ -367,7 +367,7 @@ down into those that are available for installation and those that are already
 installed. You can access these through the *Available* and *Installed* tabs at 
 the top of the fix packs table. 
 
-<!-- Insert screenshot -->
+![Figure 20.9: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
 
 To view metrics and statistics of your server's performance, click the *Metrics* 
 button near the top of the page. The metrics are broken down into three main 
@@ -381,7 +381,7 @@ Application:
 - Portlets: Frequency and average load time.
 - Cache: Liferay Single VM metrics and Hibernate metrics.
 
-<!-- Insert screenshot -->
+![Figure 20.10: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 JVM:
 
@@ -389,16 +389,16 @@ JVM:
 - Memory metrics: Code cache, par eden space, par survivor space, perm gen, 
   tenured gen.
 
-<!-- Insert screenshot -->
+![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server:
 
 - Current Threads
 - JDBC Connection Pools
 
-<!-- Insert screenshot -->
+![Figure 20.12: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
-You can also view the settings for a server by clicking on the *Settings* 
+You can also view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
 Settings button is *LCS Server Settings*. This lets you view or edit your 
 server's name, description, and location. You can also unregister your server 
@@ -407,7 +407,7 @@ provides general information about your Liferay instance and hardware. This
 information is useful to the Liferay support team in the event that you need 
 their assistance.
 
-<!-- Insert screenshot -->
+![Figure 20.13: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
 
 As you can see, the LCS Dashboard is a formidable tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -424,7 +424,7 @@ presented with a table of the users on your project. To the right of each is the
 *Manage* button. Clicking *Manage* lets you assign or revoke LCS roles for that 
 user.
 
-<!-- Insert screenshot -->
+![Figure 20.14: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, just click on the *Invite* button. The 
 *Invite External Users* popup lets you invite anyone with a valid email address. 
@@ -432,7 +432,7 @@ You can also search for users of Liferay.com to invite. Once you've chosen who
 to invite, the *Role* dropdown lets you pre-assign LCS roles in the event they 
 accept your invitation.
 
-<!-- Insert screenshot -->
+![Figure 20.15: The Users tab lets you manage the LCS users in your project.](../../images/lcs-invite-users.png)
 
 ## Liferay Clustering [](id=liferay-clustering-liferay-portal-6-2-user-guide-20-en)
 
@@ -441,7 +441,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 20.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
+![Figure 20.16: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -627,7 +627,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 20.2: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
+![Figure 20.17: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
 
 The last thing you need to do is modify the `spring.configs` section of your
 `portal-ext.properties` file to enable the sharding configuration, which by
@@ -723,7 +723,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like the figure below. 
 
-![Figure 20.3: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
+![Figure 20.18: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
 The actual folder path that is used by Liferay for storing documents is this:
 
@@ -764,7 +764,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 20.4: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 20.19: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -1156,7 +1156,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 20.5: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+![Figure 20.20: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
 the application(s) running), consider the stack memory footprint of those 100+
@@ -1171,7 +1171,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 20.6: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 20.21: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
@@ -1625,7 +1625,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 20.7: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 20.22: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
