@@ -88,12 +88,12 @@ throughout this guide:
   or a cluster node.
   
 As you go through this guide, you'll cover the following sections on LCS:
+<!-- Add bullet point on Updating LCS Client, once Igor gives us the info for that section. -->
 
 - LCS Account Setup
 - Portal Preconfiguration (Liferay 6.1 GA3 only)
 - Patching Tool Configuration (EE only)
 - LCS Client Configuration
-<!-- - Updating the LCS Client -->
 - Using LCS
 
 Now go ahead and get started by setting up your LCS account.
