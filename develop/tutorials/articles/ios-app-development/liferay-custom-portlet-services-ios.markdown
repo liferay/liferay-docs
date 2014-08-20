@@ -28,7 +28,7 @@ The iOS SDK can be installed either manually, or by using CocoaPods. The first
 section here covers manual installation. The section that follows covers 
 installation using CocoaPods. 
 
-### Manual Installation 
+### Installing the SDK Manually 
 
 1. [Download](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk) the latest version of `liferay-ios-sdk.zip`. 
 
@@ -43,15 +43,14 @@ installation using CocoaPods.
 5. The iOS SDK requires [AFNetworking 2.2.4](https://github.com/AFNetworking/AFNetworking/releases/tag/2.2.4).
    Make sure its source code is added to your project.
 
-### Installation Using CocoaPods 
+### Installing the SDK Using CocoaPods 
 
 1. Make sure you have CocoaPods installed.
 
 2. Create a file called `Podfile` in your project and add the following line:
 
-	```ruby
-	pod 'Liferay-iOS-SDK'
-	```
+        ruby
+        pod 'Liferay-iOS-SDK'
 
 3. Run `$ pod install`. This will download the latest version of the SDK and 
    create a `.xcworkspace` file. CocoaPods will also download all the necessary 
@@ -61,7 +60,7 @@ installation using CocoaPods.
 
 For more information on how CocoaPods works, see their [documentation](http://guides.cocoapods.org/using/index.html).
 
-## Liferay and iOS Compatibility 
+## Understanding Liferay and iOS Compatibility 
 
 Each Liferay Mobile SDK is designed to work with a specific Liferay Portal 
 version. Because of this, the Liferay Mobile SDK version scheme reflects the 
@@ -83,7 +82,7 @@ connecting to, use the `[LRPortalVersionUtil getPortalVersion:…]` method.
 The Liferay iOS SDK is compatible with iOS versions 6.1 and up. Older versions 
 of iOS may work with the SDK, but compatibility untested. 
 
-## Next Steps 
+## Related Topics
 
 <!--
 [Invoking Liferay Services in Your iOS App](add link once header id is generated) 

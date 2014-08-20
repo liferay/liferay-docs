@@ -12,7 +12,7 @@ the Mobile SDK builder, and then build a Liferay Android SDK and a Liferay iOS
 SDK. Doing these things makes your custom portlet's services available to your 
 mobile apps. 
 
-## Next Steps 
+Related Topics:
 
 <!-- 
 [Building Mobile SDKs](add link once header id is generated)

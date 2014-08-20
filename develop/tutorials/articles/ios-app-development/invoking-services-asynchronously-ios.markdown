@@ -66,7 +66,7 @@ signature. In this example, the `getGroupEntriesWithGroupId` method returns an
 Super! Now you know how to implement asynchronous service requests in your iOS 
 apps. 
 
-## Next Steps 
+## Related Topics 
 
 <!--
 [Sending Your iOS App's Requests Using Batch Processing](add link once header id is generated)

@@ -104,7 +104,7 @@ the callback's `onSuccess()` method, instead.
 Great! Now you know about invoking services asynchronously from your Android 
 app.
 
-## Next Steps 
+## Related Topics
 
 <!--
 [Sending Your Android App's Requests Using Batch Processing](add link once header id is generated) 

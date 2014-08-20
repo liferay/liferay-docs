@@ -48,7 +48,7 @@ If you want to make batch calls asynchronously, set the callback to the session.
 Great! Now you know how to utilize batch processing to speed up your app's 
 requests.
 
-## Next Steps 
+## Related Topics 
 
 <!--
 [Service Builder Learning Path](http://www.liferay.com/)

@@ -138,7 +138,12 @@ Here's an example of these settings for a portlet with the web context value
 Now that you've configured the SDK Builder, you're ready to build a platform
 specific SDK for your portlet's remote services. 
 
-## Building a Liferay Android SDK 
+## Building Platform-Specific Mobile SDKs
+
+With the SDK Builder, you can generate Mobile SDK `jar` files for Android and
+iOS apps to use. You can provide the best of both worlds!  
+
+### Building a Liferay Android SDK 
 
 To build the service related source files for your Liferay Android SDK, run the
 following command from the `android/` folder. 
@@ -156,7 +161,7 @@ The `liferay-android-sdk-[version].jar` file is written to your
 You're now ready to use the `jar` file in your Android project! There are no 
 external dependencies.
 
-## Building a Liferay iOS SDK 
+### Building a Liferay iOS SDK 
 
 To build the service related source files for your Liferay iOS SDK, run the
 following command from the `ios/` folder. 
@@ -175,7 +180,7 @@ contents of your `liferay-ios-sdk-[version].zip` file in your iOS project!
 Simply unzip its contents and add all of the files to your XCode project. The 
 SDK is free of any external dependencies.
 
-## Next Steps
+## Related Topics
 
 [Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial)
 

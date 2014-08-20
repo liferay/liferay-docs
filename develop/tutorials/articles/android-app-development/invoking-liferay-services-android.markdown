@@ -9,18 +9,22 @@ follow:
 2. Import the Liferay services for your app to use.
 3. Create a service object and call its service methods.
 
-This tutorial shows how the [Liferay Mobile SDK Sample Android
-App](https://github.com/brunofarache/liferay-android-sdk-sample)
-demonstrates these steps. In particular, the steps that its
+This tutorial shows how the
+[Liferay Mobile SDK Sample Android App](https://github.com/brunofarache/liferay-android-sdk-sample)
+demonstrates these steps.
+
+## Tutorial: Invoking Liferay Services in Android
+
+In particular, this tutorial outlines the steps that the sample app's
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
-class takes in accessing and calling Liferay services are outlined. In your app, 
+class takes in accessing and calling Liferay services. In your app, 
 you can follow these steps too. If you followed the steps in the tutorial 
 [Creating the Liferay Android Sample Project](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project-lp-6-2-develop-tutorial), 
 then you can find the `UsersAsyncTask` class in the 
 `src/com/liferay/mobile/sample/task` folder of your sample project. Now go ahead 
 and get started learning how to invoke Liferay services in your Android app!
 
-## Step 1: Create a session 
+### Step 1: Create a session 
 
 The session is a conversion state between the client and server, that consists 
 of multiple requests and responses between the two. You need a session to pass 
@@ -62,7 +66,7 @@ Liferay instance.
 
 ---
 
-## Step 2: Import the Liferay Services for Your App To Use 
+### Step 2: Import the Liferay Services for Your App To Use 
 
 Being a contacts app, the sample app imports the Mobile SDK's `UserService`
 class to connect to Liferay Portal's
@@ -81,7 +85,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and portlet services. 
 
-## Step 3: Create a Service Object and Call its Service Methods 
+### Step 3: Create a Service Object and Call its Service Methods 
 
 The sample app creates a `UserService` object and calls its
 `getGroupUsers(...)` method to fetch all of the `Guest` site's users:
@@ -127,7 +131,7 @@ and `Double`.
 Great! Now you're familiar with the basic process of accessing Liferay services 
 through the Mobile SDK! 
 
-## Next Steps 
+## Related Topics
 
 <!--
 [Invoking Services Asynchronously from Your Android App](add link once header id is generated) 

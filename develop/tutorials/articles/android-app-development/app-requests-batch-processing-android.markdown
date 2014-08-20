@@ -5,16 +5,11 @@ much more efficient than sending separate requests. For example, suppose you
 want to delete ten blog entries at the same time. Instead of making one request 
 for each deletion, you can create a batch of calls and send them all together. 
 
-This tutorial shows you how to implement this batch processing for your Android 
-app. Read on to find out how! 
-
----
-
-![note](../../images/tip-pen-paper.png) **Note:** This tutorial assumes that you 
-already know how to invoke Liferay services in your Android app. If you don't, 
-see the tutorial [Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
-
----
+This tutorial shows you how to implement batch processing for your Android app.
+It's assumed that you already know how to invoke Liferay services in your
+Android app. If you don't, see the tutorial
+[Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
+Read on to learn how to setup your batch of service calls. 
 
 ## Implementing Batch Processing 
 
@@ -64,7 +59,7 @@ This is similar to the procedure for making asynchronous calls described in the
 tutorial [Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial). 
 It's just that easy to make efficient service calls in batch! 
 
-## Next Steps 
+## Related Topics 
 
 <!-- 
 [Creating iOS Apps that Use Liferay](add link once header id is generated)

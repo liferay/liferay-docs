@@ -126,7 +126,7 @@ Congratulations! You've generated custom services for your Liferay portlets! Now
 your app can access Liferay core services, Liferay utilities, *and* your custom 
 portlet services. 
 
-## Next Steps 
+## Related Topics
 
 <!-- 
 [Invoking Liferay Services in Your Android App](add link once header id is generated) 

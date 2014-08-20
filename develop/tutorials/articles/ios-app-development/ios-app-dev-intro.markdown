@@ -29,7 +29,7 @@ This section's tutorials include the following topics:
 You'll get started by making Liferay services available to your app. This is 
 accomplished by installing the iOS SDK.
 
-## Next Steps 
+Related Topics:
 
 <!--
 [Making Liferay and Custom Portlet Services Available in Your iOS App](add link once header id is generated) 

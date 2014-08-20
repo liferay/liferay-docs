@@ -31,7 +31,7 @@ This section's tutorials include the following topics:
 
 You'll get started by setting up the Mobile SDK in Eclipse.
 
-## Next Steps 
+Related Topics: 
 
 <!-- 
 [Setting Up the Mobile SDK in Eclipse](add link once header id is generated)
