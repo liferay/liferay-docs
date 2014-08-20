@@ -423,8 +423,9 @@ for receiving notifications and requests.
 
 ---
 
-![note](../../images/tip.png) **Note:** In versions of Social Office 
-prior to 3.1, requests are not handled separately from notifications.
+![note](../../images/tip.png) **Note:** Prior to Social Office 3.1, requests and
+notifications were handled together. As of Social Office 3.1, they are handled
+separately.
 
 ---
 
