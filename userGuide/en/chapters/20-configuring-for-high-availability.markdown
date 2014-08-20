@@ -180,18 +180,17 @@ need to configure the patching tool.
 
 ### Configuring the Patching Tool 
 
-Liferay EE's patching tool can be used to apply the latest updates from 
-Liferay's support team to EE portal instances. In fact, LCS leverages the 
-patching tool to apply its updates. If you're running a Liferay EE bundle, then 
-you already have the patching tool installed. If you're not running a bundle, 
-then please see the [user guide section on how to install the patching tool](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/patching-liferay-liferay-portal-6-2-user-guide-18-en). 
-Once you have the patching tool installed, there are a few things you need to 
+Liferay EE's patching tool is leveraged by LCS to apply its updates. If you're 
+running a Liferay EE bundle, then you already have the patching tool installed. 
+If you're not running a bundle, then please see the user guide section on 
+[how to install the patching tool](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/patching-liferay-liferay-portal-6-2-user-guide-18-en). 
+Once you have the patching tool installed, there are a few steps you need to 
 take care of before LCS can use it. Note that the commands below apply to Linux, 
 Unix, and Mac systems. If you're running Windows, simply drop the `.sh` from 
-each command.
+each command that has it.
 
 1. Navigate to the `patching-tool` directory on the command line. It's typically 
-   located on the same level as the app server directory.
+   located in the Liferay Home folder.
 
 2. Make sure that you have version 10 or higher of the patching tool. To 
    display the version of your patching tool, run `patching-tool.sh info`.
@@ -202,12 +201,13 @@ each command.
 
 5. Configure the patching tool by running `patching-tool.sh setup`.
 
-<!-- 
-Copy patching tool folder into app server first? (Igor)
-Delete default.properties? (KC)
-Set -javaagent property? (Igor)
-... these steps differ between KC and Igor's instructions
--->
+6. Patches downloaded through LCS are installed by the patching tool agent on 
+   server startup. For the agent to start with your server, you need to set the 
+   `javaagent` property in the JVM options. Make sure that you specify the 
+   correct file path to the `patching-tool-agent.jar`. Here's an example of 
+   setting the `javaagent` property:
+
+        -javaagent:../../patching-tool/lib/patching-tool-agent.jar
 
 Great! Now you're all set to deploy and configure the LCS client portlet.
 
@@ -322,6 +322,14 @@ the download is finished and to restart your server. Restarting your server
 installs any downloaded fix packs. It's important to note that this even applies 
 to a cluster. LCS downloads and installs fix packs simultaneously across all 
 nodes--you don't have to handle each one individually. 
+
+---
+
+![Note](../../images/01-tip.png) **Note:** Make sure that you restart your 
+server with administrative privileges to install any fix packs. The patching 
+tool agent requires administrative access to install patches.
+
+---
 
 ![Figure 20.7: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
