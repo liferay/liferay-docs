@@ -547,7 +547,7 @@ portlet loads more activities.
 The Upcoming Tasks portlet displays a list of tasks that have been created for
 you or that you've assigned to yourself. The Events portlet integrates with the
 Calendar portlet belonging to your scope to show upcoming events. By default, an
-event appears only if you've accepted the event and it is scheduled to occur
+event appears only ef you've accepted the event and it is scheduled to occur
 within one day. You can configure events to be displayed up to five days ahead
 in the Calendar portlet configuration. You can also configure the maximum number
 of events to show. Access the configuration by clicking the gear icon at the top
@@ -789,21 +789,20 @@ a user. A completed profile includes the following pieces of information:
 
 There's also a button which allows you to export the user's vCard. Once you've
 been granted a Social Office account, you need to access your own profile page
-and fill out your profile information. If you're viewing your own Profile page,
-clicking in the space to the right of your name and email address brings up the 
-*Details* pop-up. Here you can change your screen name, email address, first 
-name, middle name, last name, job title, and profile picture. You can also 
-change your profile picture by clicking the *Change* button that appears when 
-you mouse-over your picture on your profile page.
+and fill out your profile information. On your own Profile page, clicking on the
+area to the right of your name and email address brings up the *Details* pop-up.
+Here you can change your screen name, email address, first name, middle name,
+last name, job title, and profile picture. You can also change your profile
+picture by clicking the *Change* button that appears when you mouse-over your
+picture on your profile page.
 
-If you're viewing another user's Profile page, you get additional buttons for 
-adding or removing the user as a connection, following or unfollowing the user, 
-and blocking or unblocking the user. In addition to the Profile, Microblogs 
-Status Update, and Activities portlets, the Profile page also contains Sites and 
-Tags portlets to help with navigation. Note that when placed on a public page, 
-the Microblogs Status Update portlet does not allow you to make updates--it just 
-shows the latest status update. You have to make status updates from your 
-private site.
+When viewing another user's Profile page, different options appear. You can add
+or remove the user as a connection, follow or unfollow the user, and block or
+unblock the user. In addition to the Profile, Microblogs Status Update, and
+Activities portlets, the Profile page also contains Sites and Tags portlets to
+help with navigation. Note that when placed on a public page, the Microblogs
+Status Update portlet does not allow you to make updates--it just shows the
+latest status update. You have to make status updates from your private site.
 
 The public Contacts and Microblogs applications have their own public pages.
 These function the same way as the ones in a user's private site except that
@@ -852,7 +851,7 @@ slightly different than those of regular Liferay sites. Regular Liferay sites
 have only three available membership types: Open, Restricted, and Private. A
 Restricted Liferay site has the same membership type as a private restricted
 Social Office site. The Public Restricted Social Office site membership type has
-no regular Liferay site equivalent. The default pages of an Open Social Office
+no regular Liferay site equivalent. The default pages of an open Social Office
 site are public, but those of restricted and private Social Office sites are
 private.
 
