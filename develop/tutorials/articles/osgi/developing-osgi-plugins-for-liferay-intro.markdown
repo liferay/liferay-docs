@@ -111,4 +111,4 @@ your Liferay Home directory.
 
 ## Related Topics
 
-[Plugin Management](/use/-/knowledge_base/plugin-management-lp-6-2-use-useportal)
+[Plugin Management](/discover/portal/-/knowledge_base/plugin-management-lp-6-2-use-useportal)

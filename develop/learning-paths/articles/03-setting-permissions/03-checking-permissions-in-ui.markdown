@@ -146,5 +146,5 @@ Ready to move on? The next Learning Path covers action buttons.
 
 ## Next Steps
 
-add link to action buttons here
+[Creating Entity Actions](/develop/learning-paths/-/knowledge_base/creating-entity-actions)
 

@@ -267,12 +267,8 @@ for Eclipse that extends its functionality to facilitate developing all types of
 Liferay plugins. Liferay IDE uses the Plugins SDK underneath, but you don't need
 to know the SDK unless you're performing an advanced operation not directly
 supported by Liferay IDE. To develop applications for Liferay Portal Enterprise
-Edition (EE), use Liferay Developer Studio which extends Liferay IDE. 
-
-<!-- Re-add this sentence ending once the plugin is available. - Jim
-, providing
+Edition (EE), use Liferay Developer Studio which extends Liferay IDE, providing
 additional integration plugins such as the Kaleo Designer for Java. 
--->
 
 This guide shows you how to develop for Liferay using both the Plugins SDK and
 Liferay IDE, to benefit you and other developers even if you don't like IDEs or

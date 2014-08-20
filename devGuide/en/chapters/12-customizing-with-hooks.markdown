@@ -77,9 +77,9 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
 
 5.  Click *Finish*. 
 
-Figure 11.1 shows the values you specified for the hook plugin.
+Figure 12.1 shows the values you specified for the hook plugin.
 
-![Figure 11.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a build type, Plugins SDK, and Liferay Runtime, select *Hook*, and then click *Finish*.](../../images/hooks-create-hook-project-with-sdk.png)
+![Figure 12.1: Creating a hook plugin is easy with Liferay IDE. Just click *File* &rarr; *New* &rarr; *Liferay Project*, enter a project name and display name, select a build type, Plugins SDK, and Liferay Runtime, select *Hook*, and then click *Finish*.](../../images/hooks-create-hook-project-with-sdk.png)
 
 The Plugins SDK automatically names the hook by appending "-hook" to the project
 name. With Liferay IDE, you can create a hook in a completely new plugin project
@@ -174,7 +174,7 @@ plugin is built to contain this:
 In Liferay IDE's *Package Explorer*, here's what the hook structure looks
 like:
 
-![Figure 11.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/hooks-file-structure.png)
+![Figure 12.2: In Liferay IDE, the folder structure of a newly created hook plugin looks like this.](../../images/hooks-file-structure.png)
 
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook. We'll start by making one of the most common hook
@@ -215,7 +215,7 @@ hook to modify your portal's *Terms of Use* page.
     the default custom JSP folder `/META-INF/custom_jsps`, by clicking the icon
     that has the three yellow diamonds. 
 
-    ![Figure 7.3: Liferay IDE lets you specify a folder for the custom JSPs you're developing. Create the folder by clicking the icon that has the three yellow diamonds.](../../images/hook-create-custom-jsps-folder.png)
+    ![Figure 12.3: Liferay IDE lets you specify a folder for the custom JSPs you're developing. Create the folder by clicking the icon that has the three yellow diamonds.](../../images/hook-create-custom-jsps-folder.png)
 
 4.  Add to the listing of custom JSPs by clicking the plus icon and specifying
     Portal's `html/portal/terms_of_use.jsp` file. Hint, the browse icon on the
@@ -223,7 +223,7 @@ hook to modify your portal's *Terms of Use* page.
     you want to customize. It lets you scroll through the JSPs that are
     accessible and lets you specify key words to narrow your search. 
 
-    ![Figure 7.4: Liferay IDE simplifies adding a custom JSP to your hook by providing a powerful overview mode for editing your `liferay-hook.xml` file.](../../images/add-jsp-customization-with-hook.png)
+    ![Figure 12.4: Liferay IDE simplifies adding a custom JSP to your hook by providing a powerful overview mode for editing your `liferay-hook.xml` file.](../../images/add-jsp-customization-with-hook.png)
 
     <!-- We'll need to retake this Figure's screenshot as the ability to add a custom 
     JSP using the graphical editor is broken. Jim -->
@@ -428,7 +428,7 @@ Here's how we do it:
     the Site Administration interface. From the *Application Adapter* field's
     drop-down selector menu, select *Example*. Then click *Save*. 
 
-    ![Figure 11.3: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 12.5: Your *Application Adapters* are easily accessible from the Site Settings section of the Site Administration interface.](../../images/06-hooks-select-site-app-adapter.png)
 
 6.  Navigate to your site's pages, add the Navigation portlet to a page, and
     make sure that the modification message from your Application Adapter hook
@@ -757,7 +757,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.,
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 11.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 12.6: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
@@ -988,7 +988,7 @@ Navigate to the *Control Panel* &rarr; *Users and Organizations* and make sure a
 user has a job title, which can be added in any user's *My Account* interface.
 Then test out the indexer hook by searching for that job title.
 
-![Figure 11.5: In this example, searching for *Blogger* returns two users with the matching job title.](../../images/indexer-hook-search.png)
+![Figure 12.7: In this example, searching for *Blogger* returns two users with the matching job title.](../../images/indexer-hook-search.png)
 
 As you can see, hooks serve to enhance the functionality of your portal and
 applications. Next, we will take a look at Liferay's Right to Left Language Support and how it can enhance 
@@ -1016,12 +1016,12 @@ chapter of [Using Liferay Portal](https://www.liferay.com/documentation/liferay-
 As a before-and-after example, the figure below shows a page displayed in
 English, an LTR language. 
 
-![Figure 11.6: Here is a site displaying English content left-to-right.](../../images/rtl-hook-001.png)
+![Figure 12.8: Here is a site displaying English content left-to-right.](../../images/rtl-hook-001.png)
 
 Compare it to the following figure of a page displayed in Hebrew, an RTL
 language. 
 
-![Figure 11.7: Here is a site displaying Hebrew content right-to-left using Right to Left Language Support.](../../images/rtl-hook-002.png)
+![Figure 12.9: Here is a site displaying Hebrew content right-to-left using Right to Left Language Support.](../../images/rtl-hook-002.png)
 
 You get the point, right? The Right to Left Language Support (RTL Support) app
 does the heavy lifting of rendering the RTL content appropriately! 

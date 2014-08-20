@@ -142,10 +142,23 @@ public class EntryLocalServiceClpInvoker {
 
 		_methodParameterTypes52 = new String[] { "long", "long" };
 
-		_methodName53 = "addEntry";
+		_methodName53 = "deleteEntry";
 
 		_methodParameterTypes53 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName54 = "addEntry";
+
+		_methodParameterTypes54 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName55 = "updateEntry";
+
+		_methodParameterTypes55 = new String[] {
+				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -297,11 +310,27 @@ public class EntryLocalServiceClpInvoker {
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+			return EntryLocalServiceUtil.deleteEntry(((Long)arguments[0]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[1]);
+		}
+
+		if (_methodName54.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
 			return EntryLocalServiceUtil.addEntry(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
 				(java.lang.String)arguments[4],
 				(com.liferay.portal.service.ServiceContext)arguments[5]);
+		}
+
+		if (_methodName55.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
+			return EntryLocalServiceUtil.updateEntry(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue(),
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5],
+				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -359,4 +388,8 @@ public class EntryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes52;
 	private String _methodName53;
 	private String[] _methodParameterTypes53;
+	private String _methodName54;
+	private String[] _methodParameterTypes54;
+	private String _methodName55;
+	private String[] _methodParameterTypes55;
 }

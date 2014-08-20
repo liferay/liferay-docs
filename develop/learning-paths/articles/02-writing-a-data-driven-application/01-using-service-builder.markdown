@@ -185,11 +185,12 @@ learning path.
 1. In the Entry entity, click the *Finders* link. 
 
 2. On the right side of the screen, click the *+* button to create a new Finder.
-Call it *G_G*. Why in the world would you want to call it that? It's a Liferay
-convention. If you're creating a finder that uses two (or more) columns, it's
-named for the first letter of each column separated by underscore characters.
-This way, you can easily tell which fields the finder works on, and the method
-name Service Builder generates stays small. 
+Call it *G_G* and specify its return type as *Collection*. Why in the world
+would you want to call it G_G? It's a Liferay convention. If you're creating a
+finder that uses two (or more) columns, it's named for the first letter of each
+column separated by underscore characters. This way, you can easily tell which
+fields the finder works on, and the method name Service Builder generates stays
+small. 
 
 3. Notice that a new G_G node has now been created under Finders on the left.
 Expand it to reveal the nodes beneath it. 
