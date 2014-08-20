@@ -18,6 +18,8 @@ kinds of things.
 This chapter explains how to configure Liferay for a number of advanced
 scenarios, such as
 
+- Managing Liferay with Liferay Cloud Services
+
 - Clustering 
 
 - Distributed Caching
@@ -91,7 +93,7 @@ As you go through this guide, you'll cover the following sections on LCS:
 - Portal Preconfiguration (Liferay 6.1 GA3 only)
 - Patching Tool Configuration (EE only)
 - LCS Client Configuration
-- Updating the LCS Client
+<!-- - Updating the LCS Client -->
 - Using LCS
 
 Now go ahead and get started by setting up your LCS account.
@@ -222,8 +224,8 @@ to the LCS website. Log in with your credentials and then click *Grant Access*.
 
 ![Figure 20.2: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
 
-Next, you need to register your server with LCS. Fill out the following fields 
-on this screen:
+Next, you need to register your server with LCS by filling out the following 
+fields:
 
 1. Cloud Services Project: Choose your project from the dropdown menu. 
 
@@ -265,10 +267,11 @@ and links are displayed. Here's a description of what's displayed:
   LCS let the portlet know about any available updates. 
 - Metrics Task Interval: The interval that server statistics and metrics are 
   taken at.
-- Project Link: Takes you to the project this server is registered with on LCS.
-- Environment Link: Takes you to the environment this server is registered with 
-  on LCS.
-- Server: Takes you to the server on LCS.
+- Project: Clicking this link takes you to the project this server is registered 
+  with on LCS.
+- Environment: Clicking this link takes you to the environment this server is 
+  registered with on LCS.
+- Server: Clicking this link takes you to the server on LCS.
 - Disconnect: Disconnects this Liferay instance from LCS.
 - Reset Credentials: Removes the authorizing account from registration with LCS. 
   It's important to note that your credentials are not human readable in the 
@@ -277,9 +280,14 @@ and links are displayed. Here's a description of what's displayed:
   
 ![Figure 20.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
+Great! Now that you've registered your server with your LCS account, you can dig 
+in to the features of LCS.
+
+<!--
 ### Updating the LCS Client
 
-<!-- Instructions coming from Igor -->
+pending instructions from Igor 
+ -->
 
 ### Using LCS
 
@@ -296,7 +304,7 @@ The Dashboard is a fundamental part of LCS. It lets you view and manage your
 project, environments, and servers. If you're not already at the Dashboard, 
 click it near the upper left-hand corner of your LCS site. Clicking *Dashboard* 
 takes you to the *project view*. From there, you can get to the 
-*environments view*, and the *servers view*. Each of these views gives you a 
+*environment view*, and the *server view*. Each of these views gives you a 
 different look into certain aspects of your LCS project. You'll start with the 
 project view.
 
@@ -347,10 +355,10 @@ information about an environment in your LCS project. As with the project view,
 fix packs and alerts are displayed on the center of the screen. In fact, they 
 behave exactly the same here as they do in the project view. The only difference 
 is that they show fix packs and alerts for the environment, instead of the 
-project as a whole. Located above the fix packs, the *Settings* button lets you 
-edit or delete the environment. To the left of the fix packs is the list of 
-servers in the environment. Clicking on one of the servers takes you to the 
-server view for that server.
+project as a whole. Located above the fix packs, the *Environment Details* 
+button lets you edit or delete the environment. To the left of the fix packs is 
+the list of servers in the environment. Clicking on one of the servers takes you 
+to the server view for that server.
 
 ![Figure 20.8: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
@@ -360,7 +368,7 @@ The server view provides you with detailed information about a server, including
 statistics and performance metrics. You can get to the server view either by 
 clicking a server in the environment view, or by clicking a server in the fix 
 pack or alerts tables. Fix packs and alerts are the first thing 
-you see here, as the *Fix Pack Alerts* button is selected by default when you 
+you see here, as the *Fix Packs Alerts* button is selected by default when you 
 enter server view. While the alerts table functions the same as it does in the 
 other views, the fix packs table behaves a bit differently. Fix packs are broken 
 down into those that are available for installation and those that are already 
@@ -385,8 +393,8 @@ Application:
 
 JVM:
 
-- Garbage Collector metrics: Name, runs, total time, and average time.
-- Memory metrics: Code cache, par eden space, par survivor space, perm gen, 
+- Garbage Collector Metrics: Name, runs, total time, and average time.
+- Memory Metrics: Code cache, par eden space, par survivor space, perm gen, 
   tenured gen.
 
 ![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
@@ -416,9 +424,9 @@ project.
 
 #### Managing LCS Users in Your Project
 
-The Users tab of LCS is where you manage the LCS users that are part of your 
+The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS roles, or invite others that 
-aren't yet part of your project. To manage users, first click the *Users* tab 
+aren't yet part of your project. To manage users, first click the *Users* icon 
 just below the *Dashboard* icon on the upper-left of your screen. You're 
 presented with a table of the users on your project. To the right of each is the 
 *Manage* button. Clicking *Manage* lets you assign or revoke LCS roles for that 
@@ -432,7 +440,10 @@ You can also search for users of Liferay.com to invite. Once you've chosen who
 to invite, the *Role* dropdown lets you pre-assign LCS roles in the event they 
 accept your invitation.
 
-![Figure 20.15: The Users tab lets you manage the LCS users in your project.](../../images/lcs-invite-users.png)
+![Figure 20.15: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+
+As you've seen, LCS is a powerful tool that simplifies the management of your 
+Liferay servers. Next, you'll learn about Liferay clustering.
 
 ## Liferay Clustering [](id=liferay-clustering-liferay-portal-6-2-user-guide-20-en)
 
