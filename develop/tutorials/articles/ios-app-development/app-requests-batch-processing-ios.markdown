@@ -58,4 +58,4 @@ requests.
 [Creating Android Apps that Use Liferay](add link once header id is generated)
 -->
 
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)

@@ -19,7 +19,7 @@ In particular, this tutorial outlines the steps that the sample app's
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class takes in accessing and calling Liferay services. In your app, 
 you can follow these steps too. If you followed the steps in the tutorial 
-[Creating the Liferay Android Sample Project](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project-lp-6-2-develop-tutorial), 
+[Creating the Liferay Android Sample Project](/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project), 
 then you can find the `UsersAsyncTask` class in the 
 `src/com/liferay/mobile/sample/task` folder of your sample project. Now go ahead 
 and get started learning how to invoke Liferay services in your Android app!
@@ -141,6 +141,6 @@ through the Mobile SDK!
 [Liferay Mobile SDK Builder](add link once header id is generated)
 -->
 
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
 
-[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

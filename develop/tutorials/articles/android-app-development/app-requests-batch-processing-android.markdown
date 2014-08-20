@@ -8,7 +8,7 @@ for each deletion, you can create a batch of calls and send them all together.
 This tutorial shows you how to implement batch processing for your Android app.
 It's assumed that you already know how to invoke Liferay services in your
 Android app. If you don't, see the tutorial
-[Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial).
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-android).
 Read on to learn how to setup your batch of service calls. 
 
 ## Implementing Batch Processing 
@@ -56,7 +56,7 @@ callback as a `BatchAsyncTaskCallback` instance:
     });
 
 This is similar to the procedure for making asynchronous calls described in the 
-tutorial [Invoking Services Asynchronously from Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android-lp-6-2-develop-tutorial). 
+tutorial [Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android). 
 It's just that easy to make efficient service calls in batch! 
 
 ## Related Topics 
@@ -67,8 +67,8 @@ It's just that easy to make efficient service calls in batch!
 [Liferay Mobile SDK Builder](add link once header id is generated)
 -->
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Service Builder](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
 
-[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

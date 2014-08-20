@@ -69,6 +69,6 @@ you're using Maven as your build system. Just add the following code to your
 
 <!-- Drop suffix from these links once the site no longer requires them -->
 
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
 
-[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

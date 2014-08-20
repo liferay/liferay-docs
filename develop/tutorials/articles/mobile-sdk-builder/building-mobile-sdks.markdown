@@ -182,6 +182,6 @@ SDK is free of any external dependencies.
 
 ## Related Topics
 
-[Invoking Liferay Services in Your Android App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-android-lp-6-2-develop-tutorial)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-android)
 
-[Invoking Liferay Services in Your iOS App](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios-lp-6-2-develop-tutorial)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-ios)

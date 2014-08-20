@@ -78,6 +78,6 @@ Terrific! You're ready to start developing Android apps that use Liferay!
 [Liferay Mobile SDK Builder](add link once header id is generated)
 -->
 
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
 
-[Liferay IDE](/tutorials/-/knowledge_base/liferay-ide-lp-6-2-develop-tutorial)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
