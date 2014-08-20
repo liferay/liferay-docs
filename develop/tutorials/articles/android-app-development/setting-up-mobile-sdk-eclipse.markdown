@@ -11,12 +11,14 @@ supports Android apps, you can't use the plugin to customize iOS apps.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you want to use the Mobile
-SDK within an existing Android project, or you're using a different IDE,
-like *Android Studio*, you can download the latest version of the Mobile SDK and
-add it to your project library or configure it as a dependency to your project 
-using Gradle or Maven. For more information about this, see the tutorial 
-[Setting Up the Mobile SDK Manually](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually). 
+![Note](../../images/tip.png) **Note:** If you want to use the Mobile SDK within
+an existing Android project or if you're using a different IDE, like *Android
+Studio*, you can download the latest version of the Mobile SDK and add it to
+your project library. If you want to use the Mobile SDK in a Maven project, you
+can configure it as a dependency. For more information about these topics, read
+the
+[Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually)
+instructions on manually setting up the Mobile SDK for an existing project. 
 
 ---
 

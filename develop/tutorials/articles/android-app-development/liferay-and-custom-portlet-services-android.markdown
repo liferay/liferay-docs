@@ -21,10 +21,9 @@ once the header id's are generated.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you 
-created your Android project using the ADT plugin for Eclipse. If you have an 
-existing Android project that wasn't created using the ADT plugin for Eclipse, 
-or your Android project uses Gradle or Maven, see the 
+![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you
+created your Android project using the ADT plugin for Eclipse. If you didn't
+create the project using the ADT plugin or if it uses Gradle or Maven, see the
 [manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
 
 ---
@@ -70,8 +69,9 @@ header id's are generated.
 
 ---
 
-![Note](../../images/tip-pen-paper.png) **Note:** You can also use the Liferay 
-Mobile SDK Builder from the command line. See [these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md) 
+![Note](../../images/tip-pen-paper.png) **Note:** You can also use the Liferay
+Mobile SDK Builder via command line. Read
+[these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md)
 for more details.
 
 ---
