@@ -1,4 +1,4 @@
-# Creating iOS Apps that Use Liferay 
+# Creating iOS Apps that Use Liferay [](id=creating-ios-apps-that-use-liferay)
 
 The Liferay Mobile SDK is a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay

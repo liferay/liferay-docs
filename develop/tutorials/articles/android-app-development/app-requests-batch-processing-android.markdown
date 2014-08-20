@@ -1,4 +1,4 @@
-# Sending Your Android App's Requests Using Batch Processing 
+# Sending Your Android App's Requests Using Batch Processing [](id=sending-your-android-apps-requests-using-batch-processing)
 
 The Mobile SDK also allows sending requests using batch processing. This can be
 much more efficient than sending separate requests. For example, suppose you 

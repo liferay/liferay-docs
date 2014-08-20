@@ -1,4 +1,4 @@
-# Setting Up the Mobile SDK in Eclipse 
+# Setting Up the Mobile SDK in Eclipse [](id=setting-up-the-mobile-sdk-in-eclipse)
 
 Liferay provides the *Liferay Mobile SDK Eclipse plugin* for you to use in
 developing your mobile apps. Its powerful *Mobile SDK Builder* generates

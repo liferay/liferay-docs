@@ -1,4 +1,4 @@
-# Making Liferay and Custom Portlet Services Available in Your Android App 
+# Making Liferay and Custom Portlet Services Available in Your Android App [](id=making-liferay-and-custom-portlet-services-available-in-your-android-app)
 
 Suppose you'd like your Android app to access some of Liferay's core services. 
 After all, you undoubtedly have lots of cool stuff in your portal. This is where 

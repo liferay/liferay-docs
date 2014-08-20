@@ -1,4 +1,4 @@
-# Invoking Liferay Services in Your iOS App 
+# Invoking Liferay Services in Your iOS App [](id=invoking-liferay-services-in-your-ios-app)
 
 If you have data or functionality in your portal that you want to use in your 
 iOS app, you need to invoke Liferay services using Liferay's iOS SDK. Invoking 

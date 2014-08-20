@@ -1,4 +1,4 @@
-# Sending Your iOS App's Requests Using Batch Processing 
+# Sending Your iOS App's Requests Using Batch Processing [](id=sending-your-ios-apps-requests-using-batch-processing)
 
 If your app is making a large number of requests to your Liferay instance, 
 performance can suffer if the requests are processed one at a time. Requests 

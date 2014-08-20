@@ -1,4 +1,4 @@
-# Creating Android Apps that Use Liferay 
+# Creating Android Apps that Use Liferay [](id=creating-android-apps-that-use-liferay)
 
 The Liferay Mobile SDK is a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay

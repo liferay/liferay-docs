@@ -1,4 +1,4 @@
-# Setting Up the Mobile SDK Manually
+# Setting Up the Mobile SDK Manually [](id=setting-up-the-mobile-sdk-manually)
 
 If you want to use the Liferay Mobile SDK with an existing Android project, or 
 you're using a different IDE like *Android Studio*, you can download the latest 

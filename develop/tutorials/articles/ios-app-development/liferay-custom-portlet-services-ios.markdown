@@ -1,4 +1,4 @@
-# Making Liferay and Custom Portlet Services Available in Your iOS App 
+# Making Liferay and Custom Portlet Services Available in Your iOS App [](id=making-liferay-and-custom-portlet-services-available-in-your-ios-app)
 
 Your iOS app is no doubt pretty great, or at least off to a great start. Now you 
 want it to access Liferay services. How do you accomplish this? Use Liferay's 

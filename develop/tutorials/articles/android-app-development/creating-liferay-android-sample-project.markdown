@@ -1,4 +1,4 @@
-# Creating the Liferay Android Sample Project 
+# Creating the Liferay Android Sample Project [](id=creating-the-liferay-android-sample-project)
 
 The Mobile SDK Eclipse plugin offers the ability to create a new sample Android
 project from scratch. The sample project includes Liferay Mobile SDK libraries

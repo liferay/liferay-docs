@@ -1,4 +1,4 @@
-# Invoking Liferay Services in Your Android App 
+# Invoking Liferay Services in Your Android App [](id=invoking-liferay-services-in-your-android-app)
 
 Now that you've downloaded the Liferay Mobile SDK for Android and placed it in
 your Android project's classpath, you can consider how to access and invoke

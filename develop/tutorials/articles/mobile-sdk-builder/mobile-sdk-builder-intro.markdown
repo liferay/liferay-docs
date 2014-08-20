@@ -1,4 +1,4 @@
-# Liferay Mobile SDK Builder 
+# Liferay Mobile SDK Builder [](id=liferay-mobile-sdk-builder)
 
 The Liferay Mobile SDK is great for letting you connect your mobile apps to a 
 Liferay instance. By accessing Liferay services through a Liferay Mobile SDK, 

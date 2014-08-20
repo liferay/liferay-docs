@@ -1,4 +1,4 @@
-# Building Mobile SDKs 
+# Building Mobile SDKs [](id=building-mobile-sdks)
 
 The Liferay Mobile SDK project comes with an SDK Builder that generates the 
 Liferay Mobile SDK for the Android and iOS platforms. Think of it as a Service
