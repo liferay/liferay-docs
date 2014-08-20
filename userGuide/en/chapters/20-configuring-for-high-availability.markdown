@@ -58,26 +58,12 @@ memory usage, JVM performance, and much more. Even better, the features of LCS
 work regardless of whether your Liferay instance is on a single discreet server, 
 or distributed across a node. 
 
----
+Before going any further, you should make sure that your Liferay instances meet 
+the requirements for LCS--you must be running Liferay Portal 6.1 GA 3, or 6.2 GA
+1 or above. Using LCS to apply fix packs and other updates is an EE only 
+feature. The monitoring features of LCS are available to both Liferay CE and EE.
 
-![Note](../../images/01-tip.png) **Note:** To use LCS, you must be 
-running Liferay Portal 6.1 GA 3, or 6.2 GA 1 or above. Using LCS to apply fix 
-packs and other updates is an EE only feature. The monitoring features of LCS 
-are available to both Liferay CE and EE.
-
----
-
----
-
-![Note](../../images/01-tip.png) **Note:** In order to offer the best service 
-possible, we store the following information about your servers on the LCS 
-servers: patches installed on each server, `portal.properties` (except sensitive 
-data), JVM metrics, portal and portlet metrics, cache and server metrics.
-
----
-
-Before going any further, take a moment to consider the following terms used 
-throughout this guide:
+Also, you should take note of a few key terms used throughout this guide: 
 
 - *Project*: Represents a group of users belonging to a company or organization. 
   For example, a project can consist of all the users from a project team or 
@@ -86,7 +72,7 @@ throughout this guide:
   logical aggregation of servers.
 - *Server*: Describes a concrete portal instance. It can be a standalone server 
   or a cluster node.
-  
+
 As you go through this guide, you'll cover the following sections on LCS:
 <!-- Add bullet point on Updating LCS Client, once Igor gives us the info for that section. -->
 
@@ -296,17 +282,24 @@ the business that LCS was designed for--managing and monitoring your Liferay
 instance. If you're not already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
 view server metrics, manage environments, invite external users to your project, 
-and more. Most of this is done on the Dashboard.
+and more. 
+
+At this point, you might be wondering what information about your servers is 
+stored on the LCS servers. Great question! In order to offer the best service 
+possible, we store the following information about your servers on the LCS 
+servers: patches installed on each server, `portal.properties` (except sensitive 
+data), JVM metrics, portal and portlet metrics, and cache and server metrics.
+
+Now it's time to get to the heart of LCS--the *Dashboard*.
 
 #### Using the Dashboard
 
-The Dashboard is a fundamental part of LCS. It lets you view and manage your 
-project, environments, and servers. If you're not already at the Dashboard, 
-click it near the upper left-hand corner of your LCS site. Clicking *Dashboard* 
-takes you to the *project view*. From there, you can get to the 
-*environment view*, and the *server view*. Each of these views gives you a 
-different look into certain aspects of your LCS project. You'll start with the 
-project view.
+The LCS Dashboard lets you view and manage your project, environments, and 
+servers. If you're not already at the Dashboard, click it near the upper 
+left-hand corner of your LCS site. Clicking *Dashboard* takes you to the 
+*project view*. From there, you can get to the *environment view*, and the 
+*server view*. Each of these views gives you a different look into certain 
+aspects of your LCS project. You'll start with the project view.
 
 ##### Using the Project View
 
@@ -319,17 +312,13 @@ fix pack. If the fix pack is available, you can download it by clicking the
 *Download* button to its right. Once a fix pack is finished downloading, an 
 alert appears in the *Alerts* table below the fix packs table, that tells you 
 the download is finished and to restart your server. Restarting your server 
-installs any downloaded fix packs. It's important to note that this even applies 
-to a cluster. LCS downloads and installs fix packs simultaneously across all 
+installs any downloaded fix packs. Note that you must start your server with 
+administrative privileges. This is because the patching tool agent requires 
+administrative access to install any patches.
+
+But what about using LCS to install fix packs across a cluster? Just follow the 
+same procedure! LCS downloads and installs fix packs simultaneously across all 
 nodes--you don't have to handle each one individually. 
-
----
-
-![Note](../../images/01-tip.png) **Note:** Make sure that you restart your 
-server with administrative privileges to install any fix packs. The patching 
-tool agent requires administrative access to install patches.
-
----
 
 ![Figure 20.7: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
@@ -388,29 +377,26 @@ the top of the fix packs table.
 To view metrics and statistics of your server's performance, click the *Metrics* 
 button near the top of the page. The metrics are broken down into three main 
 categories--*Application*, *JVM*, and *Server*. Application is selected by 
-default when you click the Metrics button. The metrics and statistics available 
-within each of these three main categories are listed here.
+default when you click the Metrics button. 
 
-Application:
-
-- Pages: Frequency and average load time.
-- Portlets: Frequency and average load time.
-- Cache: Liferay Single VM metrics and Hibernate metrics.
+The Application category also has three other categories within it--*Pages*, 
+*Portlets*, and *Cache*. Pages lists the frequency with which specific pages are 
+loaded, along with their average load time. Portlets lists the same statistics, 
+but for specific portlets in your server. The Cache category lists Liferay 
+Single VM metrics and Hibernate metrics. In the following screenshot, the 
+statistics in the Portlet category are shown.
 
 ![Figure 20.10: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
-JVM:
-
-- Garbage Collector Metrics: Name, runs, total time, and average time.
-- Memory Metrics: Code cache, par eden space, par survivor space, perm gen, 
-  tenured gen.
+The JVM category, as its name indicates, shows statistics about the JVM running 
+on your server. This includes data on the garbage collector and memory. Here, 
+the specific data points are shown for each.
 
 ![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
-Server:
-
-- Current Threads
-- JDBC Connection Pools
+Server, the third category, shows additional information about how your server 
+is running. The number of current threads as well as JDBC connection pools are 
+shown here.
 
 ![Figure 20.12: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
