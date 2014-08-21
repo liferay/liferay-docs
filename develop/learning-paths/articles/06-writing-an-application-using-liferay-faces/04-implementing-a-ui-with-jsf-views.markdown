@@ -123,4 +123,105 @@ following code between the `<faces-config>...</faces-config>` tags:
 Your guestbook portlet is now equipped with all of its language keys. Now it's
 time to begin creating your portlet's views. 
 
+## Creating Your Guestbook View
 
+The `guestbook` view will serve as the view that is displayed when a user clicks
+the *Add Guestbook* button. 
+
+1. Right-click on your guestbook portlet's `docroot/views` folder and select
+*New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
+
+    ![Figure 1: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/guestbook-view-wizard.png)
+
+2. Add the following `<f:view>` element to your `guestbook` view:
+
+        <?xml version="1.0"?>
+
+        <f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:aui="http://liferay.com/faces/aui"
+            xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+            xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+        </f:view>
+
+    The
+    [`<f:view>`](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_view.html)
+    tag is the container for all JSF component tags used on your guestbook page.
+    You've specified the libraries you'll use in this container. 
+
+3. Next, add the following choose-when statement within the
+   `<f:view>...</f:view>` tags: 
+
+        <h:form>
+            <c:choose>
+                <c:when test="#{empty guestbookModelBean.selectedGuestbook.name}">
+                    <h3>#{i18n['new-guestbook']}</h3>
+                </c:when>
+                <c:otherwise>
+                    <h3>#{i18n['editing']} #{guestbookModelBean.selectedGuestbook.name}</h3>
+                </c:otherwise>
+            </c:choose>
+
+    When there's no guestbook name stored on your model bean, the
+    `new-guestbook` language key is displayed on the page. In your portlet, your
+    selected guestbook is always empty when you've first arrived to the
+    guestbook view, right after selecting the *Add Guestbook* button. 
+    
+    Otherwise, if the selected guestbook has a name, the `editing` language key
+    displays, which means you've given the new guestbook a name and you're
+    viewing the transition page between clicking *Save* and your guestbook
+    appearing on the main default page. You'll add the necessary fields and
+    buttons in the next step. 
+    
+    You can examine Figure 2 at the end of this section to visualize what has
+    been explained above. 
+
+4. Now you'll need to create the fields and buttons that should be displayed for
+   this view. Add the code snippet below right after the `</c:choose>` tag. 
+
+            <aui:fieldset>
+                <aui:field id="guestbookNameField" label="#{i18n['name']}">
+                    <h:message for="guestbookName" />
+                    <h:inputText id="guestbookName" required="true" value="#{guestbookModelBean.selectedGuestbook.name}">
+                        <f:ajax render="guestbookNameField" />
+                    </h:inputText>
+                </aui:field>
+            </aui:fieldset>
+            <h:commandButton action="#{guestbookBackingBean.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+                <f:ajax execute="@form" render="@all" />
+            </h:commandButton>
+            <h:commandButton action="#{guestbookBackingBean.cancel}" styleClass="btn btn-default" value="#{i18n['cancel']}">
+                <f:ajax render="@all" />
+            </h:commandButton>
+        </h:form>
+
+    First, you used AUI tags to create the guestbook name field. Remember,
+    you're able to do this because you specified your portlet's JSF component
+    suite as being Liferay Faces Alloy. Therefore, your portlet has access to
+    the AUI library from the `liferay-faces-alloy.jar` file, located in your
+    guestbook portlet's `docroot/WEB-INF/lib` directory.
+
+    Next, you created two buttons named *Save* and *Cancel*. These buttons'
+    actions are available by calling the guestbook backing bean's `save()` and
+    `cancel()` methods. 
+
+    Lastly, notice that the AUI field and both buttons use AJAX. If you're
+    unfamiliar with AJAX, you can read an AJAX general overview
+    [here](http://en.wikipedia.org/wiki/Ajax_\(programming\)). In summary, it
+    provides asynchronous sending and receiving of data to/from a server. This
+    allows for much quicker response time in your portlet. You can also learn
+    more about the `<f:ajax>` tag specifically, by visiting
+    [this](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_ajax.html)
+    site. 
+
+5. Add the following `<h:outputScript>` declaration right after the `</h:form>`
+   tag: 
+
+        <h:outputScript>AUI().one('input[id$=:guestbookName]').focus();</h:outputScript>
+
+    This tag places your cursor in the guestbook name field when the `guestbook`
+    view is rendered. 
+
+Terrific! You `guestbook` view is complete! Now it's time to create the `entry`
+view for when a user would like to add a guestbook entry. 
+
+## Creating Your Guestbook Entry View
