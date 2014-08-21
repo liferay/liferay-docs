@@ -14,10 +14,6 @@ core services and utilities from your Android app. All you need to do is add the
 Liferay Android Mobile SDK libraries to your project. The Liferay Mobile SDK
 Builder that comes with our Eclipse plugin enables you to generate these
 libraries. 
-<!-- 
-Change the link in this Note to the tutorial: "Setting Up the Mobile SDK Manually" 
-once the header id's are generated.
--->
 
 ---
 
@@ -72,7 +68,7 @@ header id's are generated.
 
 ![Note](../../images/tip-pen-paper.png) **Note:** You can also use the Liferay
 Mobile SDK Builder via command line. Read
-[these instructions](https://github.com/liferay/liferay-mobile-sdk/blob/master/builder/README.md)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks)
 for more details.
 
 ---
@@ -135,4 +131,4 @@ portlet services.
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

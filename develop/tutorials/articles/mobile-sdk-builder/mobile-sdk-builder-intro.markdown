@@ -9,8 +9,8 @@ build your own Mobile SDK to access the services of the custom portlets.
 
 This section describes how to configure your portlet's remote services, set up 
 the Mobile SDK builder, and then build a Liferay Android SDK and a Liferay iOS 
-SDK. Doing these things makes your custom portlet's services available to your 
-mobile apps. 
+SDK. Once you've built your SDKs, you'll be able to use them just as you would
+the pre-built Liferay Android SDK and Liferay iOS SDK. 
 
 Related Topics:
 

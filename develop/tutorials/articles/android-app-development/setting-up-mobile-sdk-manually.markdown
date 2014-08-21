@@ -75,4 +75,4 @@ you're using Maven as your build system. Just add the following code to your
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

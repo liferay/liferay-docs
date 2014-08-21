@@ -2,8 +2,9 @@
 
 Your iOS app is no doubt pretty great, or at least off to a great start. Now you 
 want it to access Liferay services. How do you accomplish this? Use Liferay's 
-iOS SDK, of course! You can also make your custom portlet services available by 
-building and installing the SDK. 
+iOS SDK, of course! You can also make your custom portlet services available to
+your app by building a Liferay iOS SDK that exposes them and by then installing
+that SDK in your app project. 
 
 This tutorial covers how to install a Liferay iOS SDK that you either download 
 from Liferay or build yourself. Compatibility with versions of Liferay and iOS 
@@ -13,12 +14,11 @@ are also discussed. Let the installation begin!
 
 If you want to invoke remote web services for your custom portlets, then you 
 need to generate the client libraries by building the SDK yourself. Building the 
-SDK is covered in the tutorial [Building Mobile SDKs](http://www.liferay.com/).
+SDK is covered in the tutorial
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks).
 Once you build the SDK to a `zip` file, you can install it using the manual 
-installation steps below. Just use your built `zip` file instead of downloading 
-Liferay's. 
-
-<!-- Fix link to Building Mobile SDK's above when the header id for that tutorial is generated -->
+installation steps below. Just make sure to use your built `zip` file instead of
+downloading Liferay's iOS Mobile SDK `zip` file. 
 
 ## Setting Up the iOS SDK 
 

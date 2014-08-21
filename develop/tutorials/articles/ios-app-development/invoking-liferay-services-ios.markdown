@@ -35,7 +35,7 @@ screen name, or user ID. Your session login user name must be consistent with
 the authentication method your Liferay instance is using. Liferay's default 
 authentication method requires the user's email address.
 
-**Password:** The user's password.
+**Password:** This is the user's password.
 
 ---
 
@@ -87,10 +87,10 @@ Service method return types can be `void`, `NSString`, `NSArray`,
 
 ![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
 require a group ID as a parameter. 
-You can call `[LRGroupService_v62 getUserSitesGroups:&error]`, which uses
-Liferay Portal's
-[`GroupService.getUserSitesGroups`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html#getUserSitesGroups()),
-to get a site group. 
+You can call `[LRGroupService_v62 getUserSitesGroups:&error]`, which uses the
+`getUserSitesGroups()` method from Liferay Portal's
+[`GroupService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html)
+class to get a site group. 
 
 ---
 

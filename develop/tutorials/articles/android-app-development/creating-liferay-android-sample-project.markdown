@@ -103,4 +103,4 @@ Congratulations on creating a mobile app that uses Liferay!
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

@@ -67,4 +67,4 @@ It's just that easy to make efficient service calls in batch!
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

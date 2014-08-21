@@ -1,6 +1,6 @@
 # Creating Android Apps that Use Liferay [](id=creating-android-apps-that-use-liferay)
 
-The Liferay Mobile SDK is a way to streamline consuming Liferay core web 
+The Liferay Mobile SDK provides a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay
 JSON web services, making them easy to call in native mobile apps. It takes care
 of authentication, makes HTTP requests (synchronously or asynchronously), parses
@@ -8,8 +8,8 @@ JSON results, and handles server-side exceptions so you can concentrate on
 *using* the services in your app. 
 
 The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later. It comes 
-with both the Liferay Android SDK and the Liferay iOS SDK. The Liferay Mobile 
-SDK is ready for you to download and use. The official project [page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
+with the Liferay Android SDK and 
+is ready for you to download and use. The official project [page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
 gives you access to the SDK releases, provides the latest SDK news, and has 
 forums for you to engage in mobile app development discussions.
 
@@ -29,7 +29,7 @@ This section's tutorials include the following topics:
 - Invoking Services Asynchronously from Your Android App
 - Sending Your Android App's Requests Using Batch Processing
 
-You'll get started by setting up the Mobile SDK in Eclipse.
+A great way to start is by setting up the Mobile SDK in Eclipse.
 
 Related Topics: 
 
@@ -43,4 +43,4 @@ Related Topics:
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

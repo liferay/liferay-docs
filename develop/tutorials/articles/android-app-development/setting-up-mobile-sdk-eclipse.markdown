@@ -8,14 +8,12 @@ also comes with a *Liferay Android Sample Project* that you can use as a
 reference for building more Android apps of your own. Since Eclipse only 
 supports Android apps, you can't use the plugin to customize iOS apps. 
 
-<!-- Change the link in the note to the tutorial once header id's are generated -->
-
 If you want to use the Mobile SDK within an existing Android project or if
 you're using a different IDE, like *Android Studio*, you can download the latest
 version of the Mobile SDK and add it to your project library. If you want to use
 the Mobile SDK in a Maven project, you can configure it as a dependency. For
 more information about these topics, read the
-[Setting Up the Mobile SDK Manually](http://www.liferay.com). 
+[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/setting-up-the-mobile-sdk-manually). 
 
 This tutorial starts by making sure that your environment has the software on
 which the Mobile SDK depends. Then you'll learn how to install the SDK following
@@ -78,4 +76,4 @@ Terrific! You're ready to start developing Android apps that use Liferay!
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
