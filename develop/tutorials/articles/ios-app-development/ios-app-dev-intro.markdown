@@ -31,12 +31,10 @@ accomplished by installing the iOS SDK.
 
 Related Topics:
 
-<!--
-[Making Liferay and Custom Portlet Services Available in Your iOS App](add link once header id is generated) 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-in-your-ios-app)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Creating Android Apps that Use Liferay](add link once header id is generated)
--->
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)

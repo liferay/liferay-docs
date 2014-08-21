@@ -24,7 +24,8 @@ once the header id's are generated.
 ![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you
 created your Android project using the ADT plugin for Eclipse. If you didn't
 create the project using the ADT plugin or if it uses Gradle or Maven, see the
-[manual Liferay Mobile SDK setup instructions for Android](https://github.com/liferay/liferay-mobile-sdk/tree/master/android#manually).
+instructions for
+[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/setting-up-the-mobile-sdk-manually).
 
 ---
 
@@ -128,14 +129,10 @@ portlet services.
 
 ## Related Topics
 
-<!-- 
-[Invoking Liferay Services in Your Android App](add link once header id is generated) 
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](add link once header id is generated)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
--->
-
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

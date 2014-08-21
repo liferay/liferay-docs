@@ -14,13 +14,9 @@ mobile apps.
 
 Related Topics:
 
-<!-- 
-[Building Mobile SDKs](add link once header id is generated)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
-[Creating Android Apps that Use Liferay](add link once header id is generated)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](add link once header id is generated)
---> 
-
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks) 
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 

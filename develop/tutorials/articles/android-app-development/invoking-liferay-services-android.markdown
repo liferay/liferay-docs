@@ -133,14 +133,10 @@ through the Mobile SDK!
 
 ## Related Topics
 
-<!--
-[Invoking Services Asynchronously from Your Android App](add link once header id is generated) 
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](add link once header id is generated)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
--->
-
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

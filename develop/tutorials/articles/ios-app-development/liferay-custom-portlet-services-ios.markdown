@@ -84,10 +84,9 @@ of iOS may work with the SDK, but compatibility untested.
 
 ## Related Topics
 
-<!--
-[Invoking Liferay Services in Your iOS App](add link once header id is generated) 
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Liferay Mobile SDK Builder](add link once header id is generated) 
--->
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks) 
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
+

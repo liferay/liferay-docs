@@ -68,16 +68,14 @@ Terrific! You're ready to start developing Android apps that use Liferay!
 
 ## Related Topics
 
-<!-- 
 [Creating the Liferay Android Sample Project](add link once header id is generated)
 
 [Making Liferay and Custom Portlet Services Available in Your Android App](add link once header id is generated)
 
-[Creating iOS Apps that Use Liferay](add link once header id is generated)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
--->
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)

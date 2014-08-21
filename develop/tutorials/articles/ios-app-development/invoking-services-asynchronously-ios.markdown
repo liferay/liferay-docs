@@ -68,12 +68,9 @@ apps.
 
 ## Related Topics 
 
-<!--
-[Sending Your iOS App's Requests Using Batch Processing](add link once header id is generated)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Creating Android Apps that Use Liferay](add link once header id is generated)
--->
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)

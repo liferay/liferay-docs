@@ -61,14 +61,10 @@ It's just that easy to make efficient service calls in batch!
 
 ## Related Topics 
 
-<!-- 
-[Creating iOS Apps that Use Liferay](add link once header id is generated)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](add link once header id is generated)
--->
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/service-builder)
-
-[Platform Frameworks](/develop/tutorials/-/knowledge_base/platform-frameworks)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
