@@ -1,6 +1,6 @@
 # Creating iOS Apps that Use Liferay [](id=creating-ios-apps-that-use-liferay)
 
-The Liferay Mobile SDK is a way to streamline consuming Liferay core web 
+The Liferay Mobile SDK provides a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay
 JSON web services, making them easy to call in native mobile apps. It takes care
 of authentication, makes HTTP requests (synchronously or asynchronously), parses
@@ -13,7 +13,7 @@ SDK is ready for you to download and use. The official project [page](https://ww
 gives you access to the SDK releases, provides the latest SDK news, and has 
 forums for you to engage in mobile app development discussions.
 
-![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../images/mobile-sdk-diagram.png)
+![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../images/mobile-sdk-diagram-ios.png)
 
 The Liferay iOS SDK bridges your native app with Liferay services. Once you've 
 installed and configured the Liferay iOS SDK, you can invoke Liferay services 
@@ -26,7 +26,7 @@ This section's tutorials include the following topics:
 - Invoking Services Asynchronously from Your iOS App
 - Sending Your iOS App's Requests Using Batch Processing
 
-You'll get started by making Liferay services available to your app. This is 
+You can get started by making Liferay services available to your app. This is 
 accomplished by installing the iOS SDK.
 
 Related Topics:
