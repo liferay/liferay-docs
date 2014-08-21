@@ -90,7 +90,10 @@ Now go ahead and get started by setting up your LCS account.
 If you are the first user on your project, you need to create and sign in to 
 your LCS account at [lcs.liferay.com](https://lcs.liferay.com). On your first 
 login, click the button *Make me a Project Administrator*. This gives you the 
-LCS Administrator role. As LCS Administrator, you can assign roles to the rest 
+LCS Administrator role. Note that it's possible that the LCS team already gave 
+you the correct permissions as part of the account creation process. In this 
+case, you won't see the *Make me a Project Administrator* button, and can 
+proceed to the next step. As LCS Administrator, you can assign roles to the rest 
 of the users in your project. Each user of LCS needs to have an assigned role. 
 The following roles are available: 
 
@@ -100,14 +103,8 @@ The following roles are available:
   an environment, with the exception of managing other users.
 - LCS Environment Viewer: Has read-only access in the scope of an environment.
 
----
-
-![Note](../../images/01-tip.png) **Note:** It's possible that the LCS 
-team already gave you the correct permissions as part of the account creation 
-process. In this case, you won't see the *Make me a Project Administrator* 
-button, and can proceed to the next step.
-
----
+Now that your LCS account has been set up and you have an understanding of the 
+LCS roles, you can get your portal ready for LCS.
 
 ### Preconfiguring Your Portal for LCS
 
@@ -194,6 +191,13 @@ each command that has it.
    setting the `javaagent` property:
 
         -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+
+If your patching tool is installed in a location other than the Liferay Home 
+folder, you must specify the path of the `patching-tool` folder as a JVM 
+argument for the app server. This is done with the `patching.tool.home` 
+property. For example:
+
+        -Dpatching.tool.home=/home/bzz/workspace/fixpacks/test-agent/liferay-portal-6.1.20-ee-ga2/patching-tool/
 
 Great! Now you're all set to deploy and configure the LCS client portlet.
 
@@ -389,14 +393,19 @@ statistics in the Portlet category are shown.
 ![Figure 20.10: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
-on your server. This includes data on the garbage collector and memory. Here, 
-the specific data points are shown for each.
+on your server. This includes data on the garbage collector and memory. The 
+number of runs, total time, and average time is listed for each garbage 
+collector item. The memory metrics are presented in a bar chart that shows the 
+usage of the Code Cache, PS Eden Space, PS Old Gen, PS Perm Gen, and PS Survivor 
+Space.
 
 ![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
-Server, the third category, shows additional information about how your server 
-is running. The number of current threads as well as JDBC connection pools are 
-shown here.
+Server is the third category within the Application category. The Server 
+category shows additional information about how your server is running. For 
+example, a horizontal bar graph shows the number of current threads that are 
+running on your server. Similarly, horizontal bar graphs are used to represent 
+the JDBC connection pools.
 
 ![Figure 20.12: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
@@ -431,13 +440,19 @@ user.
 To invite external users to your project, just click on the *Invite* button. The 
 *Invite External Users* popup lets you invite anyone with a valid email address. 
 You can also search for users of Liferay.com to invite. Once you've chosen who 
-to invite, the *Role* dropdown lets you pre-assign LCS roles in the event they 
+to invite, the *Role* dropdown lets you preassign LCS roles in the event they 
 accept your invitation.
 
 ![Figure 20.15: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
 
-As you've seen, LCS is a powerful tool that simplifies the management of your 
-Liferay servers. Next, you'll learn about Liferay clustering.
+As you've now seen, LCS is a powerful tool that simplifies the management of 
+your Liferay servers. You can apply fix packs with just a single click and a 
+server restart--a process that even works across a cluster. You also get a one 
+stop shop for monitoring the performance of your Liferay servers. Metrics like 
+JVM performance, Liferay page and portlet load times, and number of current 
+threads give you an inside look at how your server is running. What's more is 
+that you can do all this collaboratively by inviting others to your project and 
+giving them specific roles in LCS. Next, you'll learn about Liferay clustering.
 
 ## Liferay Clustering [](id=liferay-clustering-liferay-portal-6-2-user-guide-20-en)
 
