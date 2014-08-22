@@ -8,6 +8,8 @@ look like this:
 
 ![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../images/my-first-jsf-app.png)
 
+<!-- Update Figure 1 with an updated JSF guestbook. -Cody -->
+
 You may be wondering how and why JSF is so easy to deploy to Liferay. Isn't JSF
 a separate technology? JSF portlets use *Liferay Faces Bridge*, which supports
 deploying JSF web applications as portlets on any JSR 286 (Portlet 2.0)

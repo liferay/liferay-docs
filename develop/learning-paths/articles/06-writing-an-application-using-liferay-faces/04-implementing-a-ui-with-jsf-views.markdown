@@ -126,10 +126,13 @@ time to begin creating your portlet's views.
 ## Creating Your Guestbook View
 
 The `guestbook` view will serve as the view that is displayed when a user clicks
-the *Add Guestbook* button. 
+the *Add Guestbook* button. The final `guestbook` view will appear in guestbook
+portlet like the figure below: 
+
+![Figure 2: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
-*New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
+   *New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
 
     ![Figure 1: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/guestbook-view-wizard.png)
 
@@ -213,15 +216,131 @@ the *Add Guestbook* button.
     [this](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_ajax.html)
     site. 
 
-5. Add the following `<h:outputScript>` declaration right after the `</h:form>`
-   tag: 
+5. Add the following `<h:outputScript>` tag right after the `</h:form>` tag: 
 
         <h:outputScript>AUI().one('input[id$=:guestbookName]').focus();</h:outputScript>
 
     This tag places your cursor in the guestbook name field when the `guestbook`
     view is rendered. 
 
-Terrific! You `guestbook` view is complete! Now it's time to create the `entry`
-view for when a user would like to add a guestbook entry. 
+Terrific! You `guestbook` view is complete! Take a look in Figure 2 to see what
+the `guestbook` view looks like in your guestbook portlet. 
+
+Now it's time to create the `entry` view for when a user would like to add a
+guestbook entry. 
 
 ## Creating Your Guestbook Entry View
+
+Now that you can add guestbooks, it's time to create the view that allows users
+to create guestbook entries. The `entry` view will display when clicking on the
+*Add Entry* button. 
+
+![Figure 3: The `entry` view displays three text fields, a button to save the entry, and a button to cancel out of the view.](../../images/entry-view.png)
+
+1. Right-click on your guestbook portlet's `docroot/views` folder and select
+   *New* &rarr; *File*. Give it the name `entry.xhtml` and click *Finish*. 
+
+2. Add the following XML version and `<f:view>...</f:view>` tags: 
+
+        <?xml version="1.0"?>
+
+        <f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:aui="http://liferay.com/faces/aui"
+            xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+            xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+        </f:view>
+
+    This `<f:view>` tag is identical to your `guestbook` view's `<f:view>` tag. 
+
+3. Next, add the following choose-when statement within the
+   `<f:view>...</f:view>` tags: 
+
+        <h:form>
+            <c:choose>
+                <c:when test="#{empty guestbookModelBean.selectedEntry.name}">
+                    <h3>#{i18n['new-entry']}</h3>
+                </c:when>
+                <c:otherwise>
+                    <h3>#{i18n['editing']} #{guestbookModelBean.selectedEntry.name}</h3>
+                </c:otherwise>
+            </c:choose>
+
+    This choose when statement is very similar to the one used previously in
+    `guestbook.xhtml`. When the selected entry stored on the model bean is
+    empty, the `new-entry` language key is displayed on the page. If the
+    selected entry is empty, this means you've clicked the *Add Entry* button
+    and have just arrived at the `entry` view. 
+    
+    If the selected entry is not empty, you've submitted the entry--meaning the
+    `editing` language key is displayed. 
+
+4. Create your `entry` view's text fields by adding the following code right after the `<c:choose>` tag: 
+
+        <aui:fieldset>
+            <aui:field id="entryNameField" label="#{i18n['name']}">
+                <h:message for="entryName" />
+                <h:inputText id="entryName" required="true" value="#{guestbookModelBean.selectedEntry.name}">
+                    <f:ajax render="entryNameField" />
+                </h:inputText>
+            </aui:field>
+            <aui:field id="entryEmailField" label="#{i18n['email']}">
+                <h:message for="entryEmail" />
+                <h:inputText id="entryEmail" required="true" validatorMessage="#{i18n['please-enter-a-valid-email-address']}"
+                    value="#{guestbookModelBean.selectedEntry.email}">
+                    <f:validateRegex pattern=".+[@].+[.].+" />
+                    <f:ajax render="entryEmailField" />
+                </h:inputText>
+            </aui:field>
+            <aui:field id="entryMessageField" label="#{i18n['message']}">
+                <h:message for="entryMessage" />
+                <h:inputTextarea id="entryMessage" required="true" value="#{guestbookModelBean.selectedEntry.message}">
+                    <f:ajax render="entryMessageField" />
+                </h:inputTextarea>
+            </aui:field>
+        </aui:fieldset>
+
+    Like the `guestbook` view, your `entry` view uses AUI to create its text
+    fields. You've created three text fields: *Name*, *Email*, and *Message*. 
+
+    A cool feature about the JSF guestbook portlet is how quickly it can
+    validate your inputs. For instance, you'll notice the following tag for the
+    `entryEmail`: 
+
+        <f:validateRegex pattern=".+[@].+[.].+" />
+
+    The inputted email address is validated to ensure that it follows standard
+    email syntax protocol. The use of AJAX quickly checks the inputted email
+    once the user removes the cursor from the `entryEmail` field. This quick
+    validation prevents incorrect syntax from even reaching your setter methods.
+
+    In turn, when using JSF, you have an extra layer of protection from your
+    database, safeguarding against malicious content, or even syntactically
+    incorrect text like the guestbook's Email field. 
+
+    ![Figure 4: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../images/email-validation-jsf.png)
+
+5. Create your `entry` view's buttons by adding the following code: 
+
+            <h:commandButton action="#{entryBackingBean.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+                <f:ajax execute="@form" render="@all" />
+            </h:commandButton>
+            <h:commandButton action="#{entryBackingBean.cancel}" immediate="true" styleClass="btn btn-default" value="#{i18n['cancel']}">
+                <f:ajax render="@all" />
+            </h:commandButton>
+        </h:form>
+
+    These buttons are almost identical to your `guestbook` view's Save and
+    Cancel button. The only differences are, of course, you're calling the
+    `save()` and `cancel()` methods from the `EntryBackingBean`. 
+
+6. Add the following `<h:outputScript>...</h:outputScript>` tag right after the
+   `<h:form>` tag: 
+
+        <h:outputScript>AUI().one('input[id$=:entryName]').focus();</h:outputScript>
+
+    Just like in the `guestbook` entry, this tag places your cursor in the Name
+    text field when the `entry` view is displayed. 
+
+Your `entry` view is now complete!
+
+
