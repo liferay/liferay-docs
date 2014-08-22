@@ -9,29 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.Task;
-import org.apache.tools.ant.taskdefs.Execute;
+public class CheckHeadersTask {
 
-public class CheckHeadersTask extends Task {
-	@Override
-	public void execute() throws BuildException {
-	
-	}
-	
-	
-	
 	public static void main(String[] args) throws Exception {
 		if (args == null || args.length < 1) {
-			throw new IllegalArgumentException("Requires 1 argument: docDir");
+			throw new IllegalArgumentException("Requires 1 argument: ${doc.dir}");
 		}
 		
 		String docDir = args[0];
 
 		File articlesDir = new File("../" + docDir + "/articles");
 		File docSetDir = new File("../" + docDir);
-		System.out.println(
-			"Checking headers for files in " + articlesDir.getPath() + " ...");
 
 		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
 			throw new Exception(
