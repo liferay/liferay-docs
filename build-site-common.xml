@@ -40,17 +40,6 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="checkheaders" classname="com.liferay.documentation.util.CheckHeadersTask">
-		<classpath>
-			<fileset dir="${project.dir}/lib" includes="*.jar" />
-			<!-- Use below instead of above fileset when testing changes to classes
-			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
-			-->
-
-			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
-		</classpath>
-	</taskdef>
-
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -82,7 +71,6 @@
     </target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<property file="${project.dir}/release-site.properties" />
 		<java
 			classname="com.liferay.documentation.util.CheckHeadersTask"
 			classpathref="project.classpath"
@@ -92,7 +80,6 @@
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>
-
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
