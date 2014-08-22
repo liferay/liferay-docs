@@ -45,6 +45,11 @@ to creating a JSF application. Applications in Liferay Portal are called
    tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/maven)
    to learn how to build plugins using Maven. 
 
+    If you'd like to use Maven to build your guestbook portlet and continue
+    following along in this learning path, visit the [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-faces-portlets-with-maven)
+    tutorial to update yourself on the key differences between using the Plugins
+    SDK and using Maven. 
+
 4. Select *Portlet* for the Plugin type. 
 
 5. Make sure the *Include Sample Code* checkbox is checked and the *Launch New
@@ -87,6 +92,22 @@ To deploy this portlet, simply drag the project from the Package Explorer onto
 your Liferay server. 
 
 ![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
+
+---
+
+![note](../../images/01-tip.png) **Note:** Notice in your Console that there are
+many *DEBUG* messages. By default, your portlet has been configured to print
+everything in your console in debug mode. If you'd like to not run your portlet
+in debug mode, navigate to your portlet's `docroot/WEB-INF/faces-config.xml`
+file and remove the following code: 
+
+    <lifecycle>
+        <phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
+    </lifecycle>
+
+Throughout this learning path, debug mode will be kept on. 
+
+---
 
 You can now view the bare bones JSF guestbook by clicking the *Add* button (plus
 sign) and choosing *Applications*. Then, from the Sample category drag the JSF
