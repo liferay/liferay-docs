@@ -55,6 +55,17 @@
 		</java>
 	</target>
 
+	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+
 	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
 		<checkimgssite docdir="${doc.dir}" chapter="${article}">
 		</checkimgssite>
@@ -69,17 +80,6 @@
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
-
-	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<java
-			classname="com.liferay.documentation.util.CheckHeadersTask"
-			classpathref="project.classpath"
-			fork="true"
-			failonerror="true"
-		>
-			<arg value="${doc.dir}"/>
-		</java>
-	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
