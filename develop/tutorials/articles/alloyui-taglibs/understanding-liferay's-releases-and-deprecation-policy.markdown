@@ -90,7 +90,7 @@ installation.
   work in Liferay 6.2 GA2 or a GA2 fix pack. 
 
 For more details on updating Liferay Portal, please refer to the Upgrading
-Liferay section of the [User Guide](/discover/portal/-/knowledge_base/upgrading-liferay-lp-6-2-use-useportal).
+Liferay section of the [User Guide](/discover/portal/-/knowledge_base/upgrading-liferay).
 
 Liferay Portal is a very flexible application that runs well on several
 different server environments. It's simple to install and follows a systematic
