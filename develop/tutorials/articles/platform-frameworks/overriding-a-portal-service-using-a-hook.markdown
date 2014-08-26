@@ -1,9 +1,9 @@
 # Overriding a Portal Service Using a Hook
 
 All the functionality provided by Liferay is enclosed in a layer of services
-that are accessed by the controller layer in its portlets; this architecture lets 
-you change how a Liferay core portlet behaves without changing the portlet 
-itself. Hook plugins are the best tool for leveraging this architecture to 
+that are accessed by the controller layer in its portlets; this architecture
+lets you change how a Liferay core portlet behaves without changing the portlet
+itself. Hook plugins are the best tool for leveraging this architecture to
 customize portal service behavior. 
 
 This tutorial shows you how to modify a portal service using a hook. By the end
@@ -15,10 +15,11 @@ When extending Liferay Portal with hooks, you should try to avoid implementing
 the portal's interfaces directly. In some cases, patches are added to the
 interfaces in fix packs to fix an issue (e.g., adding a new method to a
 service). If you implement the API directly, a patch can break your
-customization. If you, instead, extend the base implementation of a portal interface, a patch to the interface won't
-break your customization. The best practice to override a portal service, therefore, is to extend the Liferay
-Portal base implementation of that server. For example, if you'd like to modify the
-implementation of the `UserLocalService` interface, then extend
+customization. If you, instead, extend the base implementation of a portal
+interface, a patch to the interface won't break your customization. The best
+practice to override a portal service, therefore, is to extend the Liferay
+Portal base implementation of that server. For example, if you'd like to modify
+the implementation of the `UserLocalService` interface, then extend
 `UserLocalServiceWrapper`. If you'd like to modify the `SanitizerUtil` class,
 then extend `BaseSanitizer`. 
 
@@ -32,13 +33,14 @@ then extend `BaseSanitizer`.
 
 ---
 
-Liferay generates dummy wrapper classes for all its service interfaces. For example,
-`UserLocalServiceWrapper` is created as a wrapper for `UserLocalService`, a
-service interface for adding, removing, and retrieving user accounts. To modify the
-functionality of `UserLocalService` from a hook, you'd create a class that extends
-`UserLocalServiceWrapper`, override the methods you want to modify, and instruct
-Liferay to use your service class instead of the original. You can follow the
-steps described below to override any Liferay service from your own hook plugin.
+Liferay generates dummy wrapper classes for all its service interfaces. For
+example, `UserLocalServiceWrapper` is created as a wrapper for
+`UserLocalService`, a service interface for adding, removing, and retrieving
+user accounts. To modify the functionality of `UserLocalService` from a hook,
+you'd create a class that extends `UserLocalServiceWrapper`, override the
+methods you want to modify, and instruct Liferay to use your service class
+instead of the original. You can follow the these steps to override any Liferay
+service from your own hook plugin.
 
 1.  Create a Liferay Hook plugin project in a
     [Liferay Plugins SDK project](/develop/tutorials/-/knowledge_base/creating-a-hook-project-in-the-plugins-sdk)
@@ -94,17 +96,17 @@ steps described below to override any Liferay service from your own hook plugin.
     ---
 
     ![tip](../../images/tip-pen-paper.png) **Note:** On deployment, the wrapper
-    class extension is loaded in the hook's 
-    class loader, which means the extension can access any other class included in
-    the same WAR file, but it *cannot* access Liferay's *internal* classes.
+    class extension is loaded in the hook's class loader, which means the
+    extension can access any other class included in the same WAR file, but it
+    *cannot* access Liferay's *internal* classes.
 
     ---
 
-2.  You must specify your custom service implementation in your
-    `liferay-hook.xml` file. On creating wrapper extension classes using
-    Liferay IDE's Hook Configuration editor, Liferay IDE automatically specifies
-    the service implementation in the `liferay-hook.xml` file. If you create
-    your wrapper extension class manually, you must manually specify the service
+2.  You must specify your custom service implementation in your 
+    `liferay-hook.xml` file. On creating wrapper extension classes using Liferay
+    IDE's Hook Configuration editor, Liferay IDE automatically specifies the
+    service implementation in the `liferay-hook.xml` file. If you create your
+    wrapper extension class manually, you must manually specify the service
     implementation in a `<service></service>` element within the `<hook></hook>`
     element. See the file's
     [DTD](http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd) for details.  
@@ -135,7 +137,8 @@ requirements. Here are just a few services that you may want to customize:
 - **LayoutLocalService:** Adds, deletes, retrieves and manages pages of sites,
   organizations and users. 
 
-For a complete list of available services and their methods, check the [Liferay Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/)
+For a complete list of available services and their methods, check the
+[Liferay Portal 6.2 Javadocs](http://docs.liferay.com/portal/6.2/javadocs/)
 or access the Javadocs for your version of Liferay at
 [http://docs.liferay.com/portal](http://docs.liferay.com/portal) and click on
 the *Javadocs* link. 
