@@ -1,4 +1,12 @@
-# Maven [](id=maven-lp-6-2-develop-tutorial)
+# Developing with Maven [](id=maven)
+
+I'm giving you fair warning. I was recently reading the famous poem by Edgar
+Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
+references to the poem, sometimes accurately, and other times adapted for my own
+narrative. I hope you enjoy reading it as much as I enjoyed writing it. Either
+way, you can let us know what you think by leaving a comment. If you want to
+find out how our fictional protagonists cat fares (introduced in a moment), read
+through our Maven tutorials and you'll discover her fate.
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
@@ -20,7 +28,7 @@ Just take good care of Lenore II, would you?
 "And the silken sad uncertain rustling of each purple curtain
 Thrilled me--filled me with *Ant*astic terrors never felt before;"
 
-Okay now you're being melodramatic; nobody can disdain *Apache Ant* that
+Okay, now you're being melodramatic; nobody can disdain *Apache Ant* that
 vehemently. What about customizing Liferay Portal using the Ant-based Plugins
 SDK could make you feel sadness and terror? 
 
@@ -41,24 +49,6 @@ But if your soul was made sad because you thought you had to use Liferay's
 Ant-based Plugins SDK to develop your plugins, Apache Maven will make your sad
 soul smile. And while you're at it, take care of Lenore II for all of us animal
 lovers, would you? 
-
-<!--
-The following info on our Maven coverage seems useful but we need to decide
-where it should go. Should it go in the first of a series of related tutorial
-articles? (But tutorial articles aren't arranged sequentially.) - JR
--->
-
-<!--
-Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
-
-- Installing Maven 
-- Using Maven Repositories
-- Installing Required Liferay Artifacts 
-- Using a Parent Plugin Project
-- Creating Liferay Plugins with Maven
-- Deploying Liferay Plugins with Maven
-- Liferay Plugin Types to Develop with Maven
--->
 
 As an alternative to developing plugins using the Plugins SDK, you can leverage
 the Apache Maven build management framework. Here's a list of some exciting
@@ -110,4 +100,4 @@ Sonatype, Inc. at
 Liferay provides Maven archetypes to help you build plugins of various types,
 including Liferay portlets, themes, hooks, layout templates, web plugins, and
 more. You can also install and deploy Liferay artifacts to your repositories.
-We'll dive into all these topics in this section.
+You'll dive into these topics in the Maven tutorials.

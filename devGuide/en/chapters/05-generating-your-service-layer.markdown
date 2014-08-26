@@ -2208,16 +2208,16 @@ Each remote service method performs security checks to determine whether the
 caller has permission to add/update/delete events. Notice that the methods use
 three new classes:
 
-- [`EventListingActionKeys`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/util/EventListingActionKeys.java)
+- [`EventListingActionKeys`](https://raw.githubusercontent.com/liferay/liferay-docs/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/util/EventListingActionKeys.java)
   is an extension of the [`ActionKeys`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/security/permission/ActionKeys.html)
   class, providing constants specifying the types of actions your
   plugin's portlets perform. 
 
-- [`EventPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventPermission.java)
+- [`EventPermission`](https://raw.githubusercontent.com/liferay/liferay-docs/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventPermission.java)
   is a helper class for checking whether the user is authorized to perform
   specific actions on the Event entity. 
 
-- [`EventListingPermission`](https://raw2.github.com/jhinkey/liferay-docs/eventlisting-adt/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventListingPermission.java)
+- [`EventListingPermission`](https://raw.githubusercontent.com/liferay/liferay-docs/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventListingPermission.java)
   is a helper class for checking whether the user is authorized to add the
   instances of the plugin's specific entity types. 
 

@@ -1,4 +1,4 @@
-# Leveraging Hibernate's Criteria API
+# Leveraging Hibernate's Criteria API [](id=leveraging-hibernates-criteria-api)
 
 Liferay allows you to use custom SQL queries to retrieve data from the database.
 Sometimes, however, it's more convenient to build queries dynamically at
@@ -16,16 +16,15 @@ efficient queries. For information on Hibernate's Criteria API, please see
 In this tutorial, you'll learn how to create custom finders for Liferay plugins
 using Service Builder and Liferay's Dynamic Query API.
 
-## Using Dynamic Query
-
 To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
-application.  See the [Service Builder Learning Path](www.liferay.com) for more
-information on using Service Builder. Once you've used Service Builder to
-generate model, persistence, and service layers for your application, you can
-create custom finders using Liferay's Dynamic Query API by following these
-steps:
+application.  See the
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+learning path for more information on using Service Builder. Once you've used
+Service Builder to generate model, persistence, and service layers for your
+application, you can create custom finders using Liferay's Dynamic Query API by
+following these steps:
 
 1. Create a custom `-FinderImpl` class and define a `findBy-` finder method in
    this class. Run Service Builder to generate the required interfaces and
@@ -51,7 +50,8 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Service Builder Learning Path](www.liferay.com). In that application, there are
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application).
+learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to
 create a custom finder to search for guestbook entries by the entry name and the
@@ -345,9 +345,3 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet! 
-
-## Next Steps
-
-[Developing Custom SQL queries](www.liferay.com) 
-
-[Configuring `service.properties`](www.liferay.com)

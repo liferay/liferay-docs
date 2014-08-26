@@ -303,6 +303,7 @@ English markdown, html, odt, and epub documents.
 		<java
 			classname="com.liferay.documentation.util.NumberHeadersTask"
 			classpathref="project.classpath"
+			failonerror="true"
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>

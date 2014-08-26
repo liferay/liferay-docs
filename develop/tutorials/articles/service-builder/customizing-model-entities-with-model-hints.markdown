@@ -1,4 +1,4 @@
-# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial)
+# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
 
 If you've already used Service Builder to define your model entities and have
 implemented business logic for creating and modifying those entities, you might
