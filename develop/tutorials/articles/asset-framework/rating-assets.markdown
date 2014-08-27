@@ -12,7 +12,7 @@ enabled, implementing ratings is a snap.
 This tutorial shows you how to add ratings to an asset enabled portlet by using 
 code from a custom Insults portlet as an example. After all, a truly 
 distinguished writer of insults needs to know how good his or her insults really 
-are. You can find both the beginning and ending Insults portlet here on Github.
+are. You can find both the beginning and ending Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
@@ -65,8 +65,9 @@ it looks like this:
         </portlet:renderURL>
     ```
 
-Next, add the `href` attribute with the value `"<%=rowURL %>"` to the first 
-search container column. For example, in the Insults portlet it looks like this:
+Next, add the `href` attribute to the first search container column with the 
+value of the URL you just created in the `portlet:renderURL` tag. For example, 
+the value of `href` in the Insults portlet is `"<%=rowURL %>"`:
 
     ```
     <liferay-ui:search-container-column-text
@@ -75,13 +76,15 @@ search container column. For example, in the Insults portlet it looks like this:
         href="<%=rowURL %>"
     />
     ```
-    
+
 Now just redeploy your portlet and refresh the page so that the `view.jsp` of 
 your plugin reloads. Each entity in the portlet should now be a link. Click on 
 one to view the new JSP that you made in the first step of this tutorial. The 
 ratings should appear at the bottom of the page.
 
-<!-- insert screenshot -->
+![Figure 1: Entities in portlets appear as links after implementing ratings.](../../images/asset-fw-ratings-link.jpg)
+
+![Figure 2: The new JSP lets users rate content in your portlet.](../../images/asset-fw-ratings.jpg)
 
 ## Related Topics
 
