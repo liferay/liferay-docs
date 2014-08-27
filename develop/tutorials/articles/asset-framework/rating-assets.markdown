@@ -86,6 +86,10 @@ ratings should appear at the bottom of the page.
 
 ![Figure 2: The new JSP lets users rate content in your portlet.](../../images/asset-fw-ratings.jpg)
 
+Great! Now you know how to add ratings for content in your asset enabled 
+portlets. Remember, you just follow two simple steps--make a new JSP for the 
+ratings, and then create a URL to that JSP so that your users can get to it. 
+
 ## Related Topics
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
