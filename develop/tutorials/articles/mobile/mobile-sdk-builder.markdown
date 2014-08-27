@@ -7,10 +7,10 @@ happens when the services you need to use aren't built-in Liferay services? What
 if they're custom portlet services? No problem! In this case, you just need to 
 build your own Mobile SDK to access the services of the custom portlets. 
 
-This section describes how to configure your portlet's remote services, set up 
-the Mobile SDK builder, and then build a Liferay Android SDK and a Liferay iOS 
-SDK. Once you've built your SDKs, you'll be able to use them just as you would
-the pre-built Liferay Android SDK and Liferay iOS SDK. 
+The Mobile SDK Builder tutorials describe how to configure your portlet's remote
+services, set up the Mobile SDK Builder, and then build a Liferay Android SDK
+and a Liferay iOS SDK. Once you've built your SDKs, you'll be able to use them
+just as you would the pre-built Liferay Android SDK and Liferay iOS SDK. 
 
 Related Topics:
 
