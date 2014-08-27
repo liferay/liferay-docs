@@ -13,7 +13,7 @@ are problems inherent with this approach. Fix packs later added to the product
 may modify the interface (e.g., adding a new method to the service). If you've
 implemented the API directly, your implementation may not account for the
 modified interface. As a result, the patch could break your customization
-plugin. Don't worry--Liferay's provided a safe way to customize its services. 
+plugin. Don't worry--Liferay has provided a safe way to customize its services. 
 
 All the functionality provided by Liferay is enclosed in a layer of services
 that are accessed by the controller layer in its portlets; this architecture
@@ -185,7 +185,8 @@ property to the fully qualified name of your implementation class.
 
 ---
 
-You've done well learning how to properly customize Liferay services. 
+You've done well learning how to properly customize Liferay services. Now get 
+out there and put your newfound skills to use!
 
 ## Related Topics
 
