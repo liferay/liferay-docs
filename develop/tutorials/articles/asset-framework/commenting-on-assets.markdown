@@ -11,7 +11,8 @@ create a URL for the new JSP in your existing `view.jsp`. That's it.
 This tutorial shows you how to enable commenting on content posted in an asset 
 enabled portlet. A custom Insults portlet is used as an example--a community 
 discussion will definitely help to bring about insults of the highest quality! 
-<!-- Add link to starting and finishing portlets on Github -->
+You can find the beginning Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/comments/end).
 
 Without any further ado, go ahead and get started enabling comments in your 
 portlet!
@@ -86,7 +87,14 @@ Now just redeploy your portlet and refresh the page so that the `view.jsp` of
 your plugin reloads. Each entity in the portlet should now be a link. Click on 
 one to view the new JSP that you made in the first step of this tutorial. The 
 comments section should appear at the bottom of the page.
-<!-- Insert screenshots and conclusion -->
+
+![Figure 1: Entities in portlets appear as links after implementing comments.](../../images/asset-fw-comments-link.jpg)
+
+![Figure 2: The new JSP lets users comment on content in your portlet.](../../images/asset-fw-comments.jpg)
+
+Great! Now you know how to let users comment on content in your asset enabled 
+portlets. Remember, you just follow two simple steps--make a new JSP for the 
+comments, and then create a URL to that JSP so that your users can get to it.
 
 ## Related Topics
 

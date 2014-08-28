@@ -12,7 +12,8 @@ enabled, implementing ratings is a snap.
 This tutorial shows you how to add ratings to an asset enabled portlet by using 
 code from a custom Insults portlet as an example. After all, a truly 
 distinguished writer of insults needs to know how good his or her insults really 
-are. You can find both the beginning and ending Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings).
+are. You can find the beginning Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings/end).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
