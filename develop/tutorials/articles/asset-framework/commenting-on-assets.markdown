@@ -28,16 +28,54 @@ two activities. Also, you probably don't want users to be able to edit content
 that someone else produced.
 
 Create this JSP in the same directory as your portlet's `view.jsp`. For example, 
-in the Insults portlet this JSP is `docroot/html/insults/view_insult.jsp`. Since 
-this JSP is accessed each time an entity in the portlet is clicked, you need to 
-add code to the JSP that gets the object for that entity. This object is what 
-you use to get the fields that you want the JSP to display, in addition to 
-letting your users comment on that entity. To implement commenting, add the 
-`portlet:actionURL` and `liferay-ui:discussion` tags to the bottom of the JSP. 
-For example, these tags for the Insults portlet look like this:
+in the Insults portlet this JSP is `docroot/html/insults/view_insult.jsp`. The 
+rest of this section uses `view_insult.jsp` as an example. The first thing you 
+want to do is make sure that your users have a way of getting back to `view.jsp` 
+after clicking on an entity. This is handled by the `portlet:renderURL` and 
+`liferay-ui:header` tags:
 
     ```
+    <portlet:renderURL windowState="normal" var="backURL">
+        <portlet:param name="mvcPath" value="/html/insults/view.jsp"></portlet:param>
+    </portlet:renderURL>
+
+    <liferay-ui:header backURL="<%=backURL%>" title="insult" />
+    ```
+    
+You also want to show the entity in the JSP when a user clicks on it. To do 
+this, use `ParamUtil` to get the id of the entity from the `renderRequest`. Then 
+create an object using your `*LocalServiceUtil`. Here, this is done to create an 
+`Insult` object:
+
+    ```
+    <%
+    long insultId = ParamUtil.getLong(renderRequest, "insultId");
+    Insult ins = InsultLocalServiceUtil.getInsult(insultId);
+    ```
+    %>
+    ```
+    
+Next, you need to create a URL for the actual discussion. This is done with the 
+`portlet:actionURL` tag, as shown here:
+    
+    ```
     <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+    ```
+
+You also need to get the current URL from the `request` object, so that your 
+user can return to the JSP after adding a comment. This is done with 
+`PortalUtil`:
+    
+    ```
+    <%
+    String currentUrl = PortalUtil.getCurrentURL(request);
+    %>
+    ```
+
+Last, but certainly not least, is the implementation of the discussion itself 
+with the `liferay-ui:discussion` tag. Note that the URLs that you created are 
+used here, as well as the entity object:
+    
     ```
     <liferay-ui:discussion className="<%=Insult.class.getName()%>"
         classPK="<%=ins.getInsultId()%>"
