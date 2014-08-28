@@ -143,8 +143,8 @@ guestbook backing bean.
    for the `AbstractBackingBean` you just created. Then click *Finish*. 
 
 3. In this backing bean, you'll provide action methods that your guestbook
-portlet needs to function, which include: add, cancel, delete, edit, save, and
-select. Add the following methods into your `GuestbookBackingBean` class: 
+   portlet needs to function, which include: add, cancel, save, and select. Add
+   the following methods into your `GuestbookBackingBean` class:
 
         public void add() {
             Guestbook guestbook = GuestbookUtil.create(0L);
@@ -159,27 +159,6 @@ select. Add the following methods into your `GuestbookBackingBean` class:
 
             guestbookModelBean.setSelectedGuestbook(null);
             super.cancel();
-        }
-
-        public void delete(Guestbook guestbook) {
-
-            try {
-                GuestbookLocalServiceUtil.deleteGuestbook(guestbook.getGuestbookId());
-                addGlobalSuccessInfoMessage();
-            }
-            catch (Exception e) {
-                addGlobalUnexpectedErrorMessage();
-                logger.error(e);
-            }
-
-            guestbookModelBean.forceGuestbooksReload();
-            guestbookModelBean.forceEntriesReload();
-            viewBean.master();
-        }
-
-        public void edit(Guestbook guestbook) {
-            guestbookModelBean.setSelectedGuestbook(guestbook);
-            viewBean.guestbook();
         }
 
         public void save() {
@@ -288,26 +267,6 @@ specified in the `GuestbookBackingBean`:
             LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
             entry.setGroupId(liferayFacesContext.getScopeGroupId());
             entry.setGuestbookId(guestbookModelBean.getSelectedGuestbook().getGuestbookId());
-            guestbookModelBean.setSelectedEntry(entry);
-            viewBean.entry();
-        }
-
-        public void delete(Entry entry) {
-
-            try {
-                EntryLocalServiceUtil.deleteEntry(entry.getEntryId());
-                addGlobalSuccessInfoMessage();
-            }
-            catch (Exception e) {
-                addGlobalUnexpectedErrorMessage();
-                logger.error(e);
-            }
-
-            guestbookModelBean.forceEntriesReload();
-            viewBean.master();
-        }
-
-        public void edit(Entry entry) {
             guestbookModelBean.setSelectedEntry(entry);
             viewBean.entry();
         }

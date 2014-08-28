@@ -123,6 +123,8 @@ following code between the `<faces-config>...</faces-config>` tags:
 Your guestbook portlet is now equipped with all of its language keys. Now it's
 time to begin creating your portlet's views. 
 
+## Creating Your Guestbook's Master View
+
 ## Creating Your Guestbook View
 
 The `guestbook` view will serve as the view that is displayed when a user clicks
