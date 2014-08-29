@@ -25,7 +25,7 @@ it's time to dive in and create them!
 
 Currently, your guestbook only has the default view, which has some filler text.
 The `view.xhtml` file located in your portlet's `docroot/views` directory is
-going to serve as the default navigation view. This means that everytime a
+going to serve as the default navigation view. This means that every time a
 button is clicked or a page is rendered, it will be processed through your
 `view.xhtml` file. Therefore, this view is very bare bones, and only points to
 the view that should be rendered. 
@@ -42,7 +42,7 @@ guestbook portlet, you'll keep your default view set to the `view.xhtml` file.
 
 As was mentioned earlier, there are three additional views, so you'll use a
 choose-when conditional statement to select the appropriate view to be rendered.
-Replace the code between the `<f:view>...</f:view>` tags with the follwoing: 
+Replace the code between the `<f:view>...</f:view>` tags with the following: 
 
     <h:head />
     <h:body>
@@ -221,10 +221,10 @@ Follow the steps below to create the `master` view for your guestbook portlet.
         <br />		
         <br />
 
-    Each button calls the the guestbook or entry entity's backing bean, which
-    opens a request to add a new entity. The instance of the entity is stored on
-    the model bean, and the view bean is called, which navigates the portlet
-    to the appropriate view to display. 
+    Each button calls the guestbook or entry entity's backing bean, which opens
+    a request to add a new entity. The instance of the entity is stored on the
+    model bean, and the view bean is called, which navigates the portlet to the
+    appropriate view to display. 
 
 5. Lastly, add the following choose-when statement after the last `<br />` tag,
    which displays your guestbook entries: 
@@ -470,6 +470,9 @@ to create guestbook entries. The `entry` view will display when clicking on the
     Just like in the `guestbook` entry, this tag places your cursor in the Name
     text field when the `entry` view is displayed. 
 
-Your `entry` view is now complete!
+Your `entry` view is now complete! 
 
-
+You now have a fully functional guestbook, which can be used to add guestbooks
+and guestbook entries. However, what if you want to restrict access to adding or
+viewing certain entries? You can learn how to implement permissions for your JSF
+guestbook portlet in the next learning path. 

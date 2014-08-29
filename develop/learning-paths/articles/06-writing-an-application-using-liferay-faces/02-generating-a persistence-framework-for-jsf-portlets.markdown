@@ -163,6 +163,10 @@ thing for your guestbook entries.
             return entryPersistence.countByG_G(groupId, guestbookId);
         }
 
+Once again, you'll need to run Service Builder to generate the methods you just
+created in your `EntryLocalServiceImpl` class, for your service layer's
+Interface classes. 
+
 Terrific! You now have a fully functional service API for the `Guestbook` and
 `Entry` entities. The next step is creating managed beans which will make use of
 your new service API. 

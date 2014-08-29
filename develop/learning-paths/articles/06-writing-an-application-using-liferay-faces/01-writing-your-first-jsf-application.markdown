@@ -238,13 +238,14 @@ selected for the JSF guestbook portlet).
 
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
 their portlet WAR projects in order to utilize Alloy UI in a way that is
-consistent with JSF development. If you were to select the Liferay Faces Alloy
-JSF Component Suite during your portlet's setup, the JAR would be included in
-your portlet project using Ivy, the same way that was described in the previous
+consistent with JSF development. Since you selected the Liferay Faces Alloy JSF
+Component Suite during your portlet's setup, the JAR is be included in your
+portlet project using Ivy, the same way that was described in the previous
 section. 
 
 The Liferay Faces Alloy project provides a set of UI components that are JSF
-equivalents of the `aui:` JSP tag library provided by Liferay Portal: 
+equivalents of the `aui:` JSP tag library provided by Liferay Portal. For
+example, a brief list of some of the supported `aui:` tags are listed below: 
 
 - Layout: `aui:panel`, `aui:column`, `aui:button-row`, `aui:form`,
 `aui:fieldset`
@@ -286,8 +287,9 @@ learn more about the `LiferayFacesContext` by visiting its dedicated
 Liferay-specific info, and `i18n` for integration with out-of-the-box Liferay
 internationalized messages. 
 
-With the understanding of the provided JSF-related JARs under your belt, you'll
-now begin developing the JSF guestbook portlet. 
+With the understanding of the provided JSF-related JARs under your belt, you now
+have a deeper understanding of how useful Liferay Faces is for developers that
+want to deploy JSF portlets to Liferay Portal. 
 
 ## Understanding the Liferay Faces Version Scheme
 
@@ -300,5 +302,5 @@ Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-face
 tutorial. 
 
 Now that you have the fundamentals of using JSF portlets in Liferay, you'll move
-on to generating a persistence layer for the JSF guestbook using Service
-Builder. 
+on to creating your JSF guestbook portlet. First, you'll generate a persistence
+layer for the JSF guestbook using Service Builder. 
