@@ -7,12 +7,8 @@
 <liferay-ui:header backURL="<%=backURL%>" title="insult" />
 
 <%
-	long insultId = ParamUtil.getLong(renderRequest,
-			"insultId");
-	Insult ins = InsultLocalServiceUtil
-			.getInsult(insultId);
-	AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
-			Insult.class.getName(), ins.getInsultId());
+	long insultId = ParamUtil.getLong(renderRequest, "insultId");
+	Insult ins = InsultLocalServiceUtil.getInsult(insultId);
 %>
 
 <h1><%=ins.getInsultString()%></h1>

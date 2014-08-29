@@ -17,10 +17,6 @@
 
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
 
-<%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
-<%@ page import="com.liferay.portlet.asset.model.AssetEntry" %>
-<%@ page import="com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil" %>
-
 <liferay-theme:defineObjects />
 
 <portlet:defineObjects />
