@@ -60,7 +60,7 @@ Replace the code between the `<f:view>...</f:view>` tags with the follwoing:
     </h:body>
 
 If you look back at your `ViewBean` class, you'll recall that you had boolean
-varaibles `editingGuestbook` and `editingEntry`. The `view.xhtml` calls those
+variables `editingGuestbook` and `editingEntry`. The `view.xhtml` calls those
 variables in the view bean to check if they're `true`. For instance, if the
 `editingGuestbook` variable is `true`, the `view.xhtml` renders the `guestbook`
 view. A similar process is completed for the `editingEntry` variable and `entry`
@@ -125,20 +125,156 @@ time to begin creating your portlet's views.
 
 ## Creating Your Guestbook's Master View
 
+Now that you have your navigation view and language keys configured, it's time
+to create the actual pages your portlet's users will see.
+
+As was mentioned earlier, when the boolean variables `editingGuestbook` and
+`editingEntry` in your view bean are `false`, the `master` view is rendered.
+When these two variables are false, it means that the user has not yet selected
+to edit the guestbook or a guestbook entry, so the master page should be
+displayed. Therefore, the `master` view must offer a way for the user to
+navigate to your `guestbook` and `entry` views. It should also display your
+created guestbooks and their entries. 
+
+The final `master` view will appear in your guestbook portlet similar to the
+figure below: 
+
+![Figure 1: The `master` view provides the *Add Guestbook* and *Add Entry* buttons, allowing a user to navigate to the `guestbook` and `entry` views.](../../images/jsf-master-view.png)
+
+Follow the steps below to create the `master` view for your guestbook portlet. 
+
+1. Right-click on your guestbook's `docroot/WEB-INF` folder and select *New*
+   &rarr; *File*. Name the file `master.xhtml` and click *Finish*. 
+
+    ![Figure 3: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/master-view-wizard.png)
+
+2. Add the following XML version and `<f:view>...</f:view>` tags: 
+
+        <?xml version="1.0"?>
+
+        <f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+            xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" 
+            xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+        </f:view>
+
+    The
+    [`<f:view>`](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_view.html)
+    tag is the container for all JSF component tags used on your guestbook page.
+    You've specified the libraries you'll use in this container. 
+
+3. Next add the following code within the `<f:view>...</f:view>` tags, which
+   creates the guestbook tabs: 
+
+        <h:form>
+            <h:messages globalOnly="true" layout="table" />
+            <br />
+                <span class="guestbook_tab">
+                    <h:outputText value=" " />
+                </span>
+                <ui:repeat value="#{guestbookModelBean.guestbooks}" var="guestbook">
+                    <span class="#{(guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
+                        <h:outputText rendered="#{guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
+                        <h:commandLink action="#{guestbookBackingBean.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
+                            <f:ajax render="@all" />
+                        </h:commandLink>
+                    </span>
+                </ui:repeat>
+                <span class="guestbook_tab">
+                    <h:outputText value=" " />
+                </span>
+            <br />
+            <br />
+
+    This code snippet creates the guestbook tabs by grabbing the list of
+    guestbooks stored on the model bean. Then each guestbook is assigned a tab
+    and rendered using its unique `guestbookId`. 
+    
+    You'll also notice a call to the guestbook backing bean within the
+    `<h:commandLink>...</h:commandLink>` tags. This is used when a new guestbook
+    has been submitted from the `guestbook` view, and a new tab for the
+    guestbook must be created. Here, the backing bean's `select(guestbook)`
+    method is called, which sets the new selected guestbook on the model bean
+    for storage, and forces a reload of all the guestbooks stored on the model
+    bean. Once the list of guestbooks on the model bean are reloaded, all the
+    guestbooks you've created can be accurately displayed as guestbook tabs. 
+    
+    Lastly, notice that the `<h:commandLink>` tag uses AJAX. If you're
+    unfamiliar with AJAX, you can read an AJAX general overview
+    [here](http://en.wikipedia.org/wiki/Ajax_\(programming\)). In summary, it
+    provides asynchronous sending and receiving of data to/from a server. This
+    allows for much quicker response time in your portlet. You can also learn
+    more about the `<f:ajax>` tag specifically, by visiting
+    [this](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_ajax.html)
+    site. 
+
+4. Now you'll add the buttons that provide access to your `guestbook` and
+   `entry` views, which will be created in later sections. Add the following
+   code after the last `<br />` tag: 
+
+        <h:commandButton action="#{guestbookBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
+            <f:ajax render="@all" />
+        </h:commandButton>
+        <h:commandButton action="#{entryBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
+            <f:ajax render="@all" />
+        </h:commandButton>
+        <br />		
+        <br />
+
+    Each button calls the the guestbook or entry entity's backing bean, which
+    opens a request to add a new entity. The instance of the entity is stored on
+    the model bean, and the view bean is called, which navigates the portlet
+    to the appropriate view to display. 
+
+5. Lastly, add the following choose-when statement after the last `<br />` tag,
+   which displays your guestbook entries: 
+
+            <c:choose>
+                <c:when test="#{empty guestbookModelBean.entries}">
+                    <h:outputText value="#{i18n['no-entries-yet']}" />
+                </c:when>
+                <c:otherwise>
+                    <h:dataTable styleClass="table table-bordered table-hover table-striped" rowClasses="table-cell "
+                        value="#{guestbookModelBean.entries}" var="entry">
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="#{i18n['message']}" /></f:facet>
+                            <h:outputText value="#{entry.message}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="#{i18n['name']}" /></f:facet>
+                            <h:outputText value="#{entry.name}" />
+                        </h:column>
+                   </h:dataTable>
+               </c:otherwise>
+           </c:choose>
+        </h:form>
+
+    When a guestbook has no entries, the `no-entries-yet` language key that you
+    specified in `Language_en_US.properties` is displayed. Otherwise, a data
+    table is created displaying inputted entries for the currently selected
+    guestbook. 
+
+That's it! Your guestbook portlet's `master` view is complete. It displays your
+created guestbooks in interactive tabs, lists your guestbook entries in a data
+table, and gives you two buttons that navigate you to the `guestbook` and
+`entry` views. 
+
+Next, you'll create the remaining views so you can create new guestbooks and
+entries. 
+
 ## Creating Your Guestbook View
 
 The `guestbook` view will serve as the view that is displayed when a user clicks
-the *Add Guestbook* button. The final `guestbook` view will appear in guestbook
-portlet like the figure below: 
+the *Add Guestbook* button. The final `guestbook` view will appear in your
+guestbook portlet like the figure below: 
 
 ![Figure 2: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
    *New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
 
-    ![Figure 1: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/guestbook-view-wizard.png)
-
-2. Add the following `<f:view>` element to your `guestbook` view:
+2. Add the following XML version and `<f:view>` element to your `guestbook`
+   view:
 
         <?xml version="1.0"?>
 
@@ -148,10 +284,7 @@ portlet like the figure below:
 
         </f:view>
 
-    The
-    [`<f:view>`](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_view.html)
-    tag is the container for all JSF component tags used on your guestbook page.
-    You've specified the libraries you'll use in this container. 
+    This `<f:view>` tag is identical to your `master` view's `<f:view>` tag. 
 
 3. Next, add the following choose-when statement within the
    `<f:view>...</f:view>` tags: 
@@ -209,14 +342,9 @@ portlet like the figure below:
     actions are available by calling the guestbook backing bean's `save()` and
     `cancel()` methods. 
 
-    Lastly, notice that the AUI field and both buttons use AJAX. If you're
-    unfamiliar with AJAX, you can read an AJAX general overview
-    [here](http://en.wikipedia.org/wiki/Ajax_\(programming\)). In summary, it
-    provides asynchronous sending and receiving of data to/from a server. This
-    allows for much quicker response time in your portlet. You can also learn
-    more about the `<f:ajax>` tag specifically, by visiting
-    [this](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_ajax.html)
-    site. 
+    Lastly, notice that the AUI field and both buttons use AJAX. As we discussed
+    earlier, this provides much quicker response time for these portlet actions
+    because of asynchronous communication with the server. 
 
 5. Add the following `<h:outputScript>` tag right after the `</h:form>` tag: 
 
@@ -225,8 +353,7 @@ portlet like the figure below:
     This tag places your cursor in the guestbook name field when the `guestbook`
     view is rendered. 
 
-Terrific! You `guestbook` view is complete! Take a look in Figure 2 to see what
-the `guestbook` view looks like in your guestbook portlet. 
+Terrific! Your `guestbook` view is complete! 
 
 Now it's time to create the `entry` view for when a user would like to add a
 guestbook entry. 
@@ -237,7 +364,7 @@ Now that you can add guestbooks, it's time to create the view that allows users
 to create guestbook entries. The `entry` view will display when clicking on the
 *Add Entry* button. 
 
-![Figure 3: The `entry` view displays three text fields, a button to save the entry, and a button to cancel out of the view.](../../images/entry-view.png)
+![Figure 4: The `entry` view displays three text fields, a button to save the entry, and a button to cancel out of the view.](../../images/entry-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
    *New* &rarr; *File*. Give it the name `entry.xhtml` and click *Finish*. 
@@ -252,7 +379,7 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
         </f:view>
 
-    This `<f:view>` tag is identical to your `guestbook` view's `<f:view>` tag. 
+    This `<f:view>` tag is the same as your other views' `<f:view>` tags. 
 
 3. Next, add the following choose-when statement within the
    `<f:view>...</f:view>` tags: 
@@ -319,7 +446,7 @@ to create guestbook entries. The `entry` view will display when clicking on the
     database, safeguarding against malicious content, or even syntactically
     incorrect text like the guestbook's Email field. 
 
-    ![Figure 4: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../images/email-validation-jsf.png)
+    ![Figure 5: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../images/email-validation-jsf.png)
 
 5. Create your `entry` view's buttons by adding the following code: 
 

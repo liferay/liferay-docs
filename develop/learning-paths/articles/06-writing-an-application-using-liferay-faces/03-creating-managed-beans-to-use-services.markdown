@@ -31,9 +31,9 @@ relationship with a JSF view. They typically have properties associated with
 getters/setters, but these properties are of the view, not the underlying data
 model. 
 
-- **Controller (View) Managed Bean:** This type of managed bean serves the
+- **View (Controller) Managed Bean:** This type of managed bean serves the
 *Controller* concern of the MVC design pattern. This bean executes business
-logic and returns a navigation outcome to the JSF navigation handler. Controller
+logic and returns a navigation outcome to the JSF navigation handler. View
 managed beans typically have JSF action methods. For the sake of this learning
 path, the controller bean will be referred to as the *view* bean, since it
 controls a portlet's views (pages). 
