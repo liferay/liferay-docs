@@ -107,9 +107,9 @@ your plugin reloads. Each entity in the portlet should now be a link. Click on
 one to view the new JSP that you made in the first step of this tutorial. The 
 ratings should appear at the bottom of the page.
 
-![Figure 1: Entities in portlets appear as links after implementing ratings.](../../images/asset-fw-ratings-link.jpg)
+![Figure 1: Entities in portlets appear as links after implementing ratings.](../../images/asset-fw-ratings-link.png)
 
-![Figure 2: The new JSP lets users rate content in your portlet.](../../images/asset-fw-ratings.jpg)
+![Figure 2: The new JSP lets users rate content in your portlet.](../../images/asset-fw-ratings.png)
 
 Great! Now you know how to add ratings for content in your asset enabled 
 portlets. Remember, you just follow two simple steps--make a new JSP for the 

@@ -125,9 +125,9 @@ your plugin reloads. Each entity in the portlet should now be a link. Click on
 one to view the new JSP that you made in the first step of this tutorial. The 
 share buttons should appear at the bottom of the page.
 
-![Figure 1: Entities in portlets appear as links after implementing social bookmarks.](../../images/asset-fw-social-bookmarks-link.png)
+![Figure 2: Entities in portlets appear as links after implementing social bookmarks.](../../images/asset-fw-social-bookmarks-link.png)
 
-![Figure 2: The new JSP lets users share content in your portlet.](../../images/asset-fw-social-bookmarks.png)
+![Figure 3: The new JSP lets users share content in your portlet.](../../images/asset-fw-social-bookmarks.png)
 
 Great! Now you know how to let users share content in your asset enabled 
 portlets. Remember, you just follow two simple steps--make a new JSP for the 

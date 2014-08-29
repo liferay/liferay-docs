@@ -126,9 +126,9 @@ your plugin reloads. Each entity in the portlet should now be a link. Click on
 one to view the new JSP that you made in the first step of this tutorial. The 
 comments section should appear at the bottom of the page.
 
-![Figure 1: Entities in portlets appear as links after implementing comments.](../../images/asset-fw-comments-link.jpg)
+![Figure 1: Entities in portlets appear as links after implementing comments.](../../images/asset-fw-comments-link.png)
 
-![Figure 2: The new JSP lets users comment on content in your portlet.](../../images/asset-fw-comments.jpg)
+![Figure 2: The new JSP lets users comment on content in your portlet.](../../images/asset-fw-comments.png)
 
 Great! Now you know how to let users comment on content in your asset enabled 
 portlets. Remember, you just follow two simple steps--make a new JSP for the 
