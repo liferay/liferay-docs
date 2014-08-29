@@ -7,12 +7,8 @@
 <liferay-ui:header backURL="<%=backURL%>" title="insult" />
 
 <%
-	long insultId = ParamUtil.getLong(renderRequest,
-			"insultId");
-	Insult ins = InsultLocalServiceUtil
-			.getInsult(insultId);
-	AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
-			Insult.class.getName(), ins.getInsultId());
+	long insultId = ParamUtil.getLong(renderRequest, "insultId");
+	Insult ins = InsultLocalServiceUtil.getInsult(insultId);
 %>
 
 <h1><%=ins.getInsultString()%></h1>
@@ -45,12 +41,6 @@
 	            ratingsEnabled="<%=true%>" redirect="<%=currentUrl%>"
 	            subject="<%=ins.getInsultString()%>"
 	            userId="<%=ins.getUserId()%>" />
-
-			<liferay-ui:asset-links
-				assetEntryId="<%=(assetEntry != null) ? assetEntry
-								.getEntryId() : 0%>"
-				className="<%=Insult.class.getName()%>"
-				classPK="<%=ins.getInsultId()%>" />
 
 		</liferay-ui:panel>
 	
