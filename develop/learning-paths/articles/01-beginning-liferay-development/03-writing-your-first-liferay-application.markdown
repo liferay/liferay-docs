@@ -5,7 +5,7 @@ guide you through the step-by-step process of creating your project and
 deploying your application to Liferay. Before you know it, you'll have your
 application deployed alongside of the applications that come with Liferay. 
 
-Your first application is simple: you'll build a guest book application that
+Your first application is simple: you'll build a guestbook application that
 looks like this: 
 
 ![Figure 1: You'll create this simple application.](../../images/my-first-app.png)
