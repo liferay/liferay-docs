@@ -21,8 +21,9 @@ flagging in your portlet--add a JSP for implementing the flags and then create a
 URL for the new JSP in your existing `view.jsp`. This tutorial shows you these 
 steps using a custom Insults portlet. Coming up with great insults is a natural 
 part of comedy, but sometimes things can go too far. It's for these situations 
-that flagging inappropriate content is useful.
-<!-- Add links to begin and end portlets -Nick -->
+that flagging inappropriate content is useful. You can find the beginning 
+Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/flags/end).
 
 Now it's time to get on with the flagging!
 
