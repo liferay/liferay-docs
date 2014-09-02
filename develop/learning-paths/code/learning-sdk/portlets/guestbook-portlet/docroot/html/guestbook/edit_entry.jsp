@@ -17,20 +17,16 @@
 	}
 	
 	long guestbookId = ParamUtil.getLong(request, "guestbookId");
-	
-	String redirect = ParamUtil.getString(request, "redirect");
 %>
 
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
 		<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
 		
         <aui:fieldset>
-		    <aui:input type="hidden" name="redirect" value="<%= redirect %>" />
             <aui:input name="name" />
             <aui:input name="email" />
             <aui:input name="message" />
-            <aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>
-            
+            <aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>       
             <aui:input name="entryId" type="hidden" />
         </aui:fieldset>
 

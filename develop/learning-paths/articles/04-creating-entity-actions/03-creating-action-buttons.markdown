@@ -74,12 +74,12 @@ just include the same JSP over and over with different parameters.
                 test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
                 <portlet:renderURL var="editURL">
                     <portlet:param name="entryId"
-                        value="<%=String.valueOf(entry.getEntryId()) %>" />
+                        value="<%= String.valueOf(entry.getEntryId()) %>" />
                     <portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
                 </portlet:renderURL>
 
                 <liferay-ui:icon image="edit" message="Edit"
-                    url="<%=editURL.toString() %>" />
+                    url="<% =editURL.toString() %>" />
             </c:if>
 
     The first tag creates the action button. Next is a permissions check just
@@ -117,24 +117,27 @@ just include the same JSP over and over with different parameters.
 
 5.  Finally, add the entry for the delete button: 
 
-        <c:if
-            test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
+            <c:if
+                test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
 
-            <portlet:actionURL name="deleteEntry" var="deleteURL">
-                <portlet:param name="entryId"
-                    value="<%= String.valueOf(entry.getEntryId()) %>" />
-            </portlet:actionURL>
+                <portlet:actionURL name="deleteEntry" var="deleteURL">
+                    <portlet:param name="entryId"
+                        value="<%= String.valueOf(entry.getEntryId()) %>" />
+                    <portlet:param name="guestbookId"
+                        value="<%= String.valueOf(entry.getGuestbookId()) %>" />
+                </portlet:actionURL>
 
-            <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+                <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+            </c:if>
 
-        </c:if>
-
-    </liferay-ui:icon-menu>
+        </liferay-ui:icon-menu>
 
     The permission check that wraps this action is, of course the *delete*
-    permission. The portlet URL you create here is an action URL that calls your new
-    `deleteEntry()` method in your controller. You supply the `entryId` for the
-    current entry, which is the one you want to delete. 
+    permission. The portlet URL you create here is an action URL that calls your
+    new `deleteEntry()` method in your controller. You supply the `entryId` for
+    the current entry, which is the one you want to delete. The `guestbookId`
+    parameter is used so that the correct guestbook is displayed the portlet
+    after the user has deleted an entry from a guestbook.
 
     The tag used to create the action link is the `<liferay-ui:icon-delete />`
     tag. This tag differs from the regular `<liferay-ui:icon />` tag in that when
@@ -169,6 +172,7 @@ need to make to `edit_entry.jsp` to make it handle editing entries.
             
         }
 
+        long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
         %>
 
     This scriptlet gets the `entryId` out of the request (remember, you just
@@ -176,15 +180,18 @@ need to make to `edit_entry.jsp` to make it handle editing entries.
     the `entryId` as a parameter). It then checks its value: if it's `0`, which
     `ParamUtil` supplies if it doesn't find a value for this parameter, nothing
     happens. If, however, it has a value, the corresponding entry is retrieved and
-    placed into the `entry` variable. 
+    placed into the `entry` variable. This scriplet also gets the `guestbookId`
+    out of the request. If a new guestbook entry is being created, the
+    `guestbookId` from the request is used. If a guestbook entry is being
+    edited, the entry's `guestbookId` is used instead.
 
-3.  Add the following tag below the `<aui:fieldset>` tag: 
+3.  Add the following tag inside of the `<aui:form>` tag: 
 
         <aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
 
     This tag sets a particular bean (in this case our `Entry` bean) as the
-    context for an AUI form. This causes the AUI tags that define the form fields to
-    show the value from the bean. 
+    context for an AUI form. This causes the AUI tags that define the form
+    fields to show the value from the bean. 
 
 4.  Finally, add one field to hold the `entryId`, so your update functionality
     knows which entry to update when the form is submitted: 
@@ -194,6 +201,11 @@ need to make to `edit_entry.jsp` to make it handle editing entries.
     You keep the field hidden, of course, because users don't need to know or
     worry about the primary key from the database, and it should definitely not be
     editable. 
+
+    Also add a hidden input field for the `guestbookId` parameter that we
+    defined in the scriptlet:
+
+        <aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>
 
 5.  Save the file. 
 
