@@ -1,9 +1,17 @@
-# Overriding a *Language.properties* File Using a Hook
+# Overriding Language Properties Using a Hook
 
-Hooks let you change any of the messages displayed by Liferay to suit your
-needs. For example, you may want to change the title of a portlet, the message 
-Liferay displays when a request completes successfully, or some other bit of 
-text in the UI. To do so, you need to create a *Language* file for the locale of 
+Hooks let you change Liferay Portal's messages to suit your
+needs. For example, you may want to change a Liferay portlet's title, the message 
+Liferay displays on successfully completing a request, or some other bit of 
+text in the UI. You can override Liferay Portal's messages using a language
+properties Liferay hook plugin. 
+
+![Figure 1: You can override portlet titles, like the Sign In portlet's default title "Welcome", with a new title from a language properties Liferay hook plugin.](../../images/override-sign-in-en.png)
+
+This tutorial shows you how to you how to override Liferay's messages with
+messages that you want to use. 
+
+To do so, you need to create a *Language* file for the locale of 
 the messages you want to customize, then refer to that file from your 
 `liferay-hook.xml` file. 
 
@@ -12,9 +20,11 @@ override the title of Liferay's Sign In portlet. First, it's useful to know
 where you can find the default Language files and the messages they contain. Go 
 ahead and get started!
 
-![Figure 1: The default Sign In portlet.](../../images/default-sign-in.png)
-
-![Figure 2: The overridden Sign In portlet.](../../images/override-sign-in-en.png)
+1. Determine the language keys that you want to change.
+    - locate Liferay's language properties files.
+    - find the key you want to change.
+    - how to determine a portlet's ID
+2. 
 
 ## Locating the Default Language Keys
 
@@ -22,7 +32,7 @@ Liferay's default Language files are in the `WEB-INF/lib/portal-impl.jar/content
 folder of the Liferay Portal deployment on your app server. You can also view 
 these on [Github](https://github.com/liferay/liferay-portal). The Language files 
 contain Liferay's default language keys. Each file corresponds to a language 
-supported by Liferay. For example, `Language_en.properties` contains the English 
+that Liferay supports. For example, `Language_en.properties` contains the English 
 language keys, `Language_es.properties` contains the Spanish language keys, 
 `Language_fr.properties` contains the French language keys, and so on.
 
