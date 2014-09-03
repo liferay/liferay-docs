@@ -40,6 +40,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="compare" classname="com.liferay.documentation.util.GitCompareTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -80,6 +91,11 @@
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
+
+	<target name="compare-with-master" description="Compares the import and master branches on the liferay-docs repo.">
+		<compare docdir="${doc.dir}">
+		</compare>
+	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
