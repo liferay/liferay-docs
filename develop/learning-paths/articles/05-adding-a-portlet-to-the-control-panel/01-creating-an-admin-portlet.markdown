@@ -3,12 +3,12 @@
 To create the Guestbook Admin portlet, you'll use the New Liferay Portlet
 wizard. You used this wizard in an earlier learning path when you created the
 Guestbook portlet. The New Liferay Portlet wizard creates various required
-configuration files such as `portlet.xml`, `liferay-portlet.xml`,
-`liferay-display.xml`, and `liferay-plugin-package.properties` and adds
-appropriate entries to them. The information that you specify in the wizard is
-added to various elements and attributes in these configuration files and also
-determines the names and locations of other required files such as the portlet
-class and the location of the portlet's JSP files.
+configuration files such as `portlet.xml`, `liferay-portlet.xml`, and
+`liferay-display.xml` and adds appropriate entries to them. The information that
+you specify in the wizard is added to various elements and attributes in these
+configuration files and also determines the names and locations of other
+required files such as the portlet class and the location of the portlet's JSP
+files.
 
 ## Using the New Liferay Portlet Wizard
 
@@ -81,12 +81,12 @@ The `<portlet-name>` subelement of the `<portlet>` element in
 The `<control-panel-entry-category>` element determines the section of the
 Control Panel to which the Guestbook Admin portlet is added. Remember that
 Liferay's Control Panel is divided into two main sections: the Site
-Administration area (navigable via *Admin* &rarr; *Site Administration* from the
-Dockbar) and the Control Panel proper (navigable via *Admin* &rarr; *Control
-Panel* from the Dockbar). Notice that the value of the
+Administration area (accessible via *Admin* &rarr; *Site Administration* from
+the Dockbar) and the Control Panel proper (accessible via *Admin* &rarr;
+*Control Panel* from the Dockbar). Notice that the value of the
 `<control-panel-entry-category>` is *site_administration.content* which means
 that you have to navigate to *Admin* &rarr; *Content* from the Dockbar to view
-our portlet, as you specified in the wizard. The `<control-panel-entry-weight>`
+your portlet, as you specified in the wizard. The `<control-panel-entry-weight>`
 value determines where the Guestbook portlet appears in the list of portlets in
 the Content section of the Site Administration area of the Control Panel. You
 can use decimals to make your portlet appear after one portlet in the list but
@@ -106,13 +106,13 @@ on the *Add* button at the left side of the Dockbar (the plus symbol) and select
 can add to a page. For example, the *Highlighted* category contains commonly
 used portlets such as Web Content Display, Asset Publisher, and Navigation. By
 specifying *category.hidden* as the category of the Guestbook Admin portlet, you
-disallow it from being added to a portal page. This is fine since we've already
-added it to the Content section of the Site Administration area of the Control
-Panel. If you didn't set the Guestbook Admin portlet's category to
-*category.hidden* in `liferay-display.xml`, a site administrator could add the
-portlet a portal page. If you want a portlet to accessible via the Control Panel
-and *only* via the Control Panel, remember to specify its category as
-*category.hidden* in `liferay-display.xml`.
+ensure that it can't be added to a portal page via the Dockbar. This is fine
+since we've already added it to the Content section of the Site Administration
+area of the Control Panel. If you didn't set the Guestbook Admin portlet's
+category to *category.hidden* in `liferay-display.xml`, a site administrator
+could add the portlet a portal page. If you want a portlet to be accessible via
+the Control Panel and *only* via the Control Panel, remember to specify its
+category as *category.hidden* in `liferay-display.xml`.
 
 Notice also that the New Liferay Portlet wizard created a
 `GuestbookAdminPortlet.java` file for you in the
@@ -122,8 +122,8 @@ folder, as you specified. The `GuestbookAdminPortlet` class extends Liferay's
 of the Guestbook Admin portlet's `<portlet>` element in `portlet.xml` points to
 the `GuestbookAdminPortlet.java` file's location. The New Liferay Portlet wizard
 also created a `docroot/html/guestbookadmin` with a sample `view.jsp` file, as
-you specified. Now that you've created our Guestbook Admin portlet in the
-guestbook-portlet project, you need to add our desired functionality to it: the
+you specified. Now that you've created your Guestbook Admin portlet in the
+guestbook-portlet project, you need to add your desired functionality to it: the
 abilities to add, edit, and delete guestbooks and to configure their
 permissions. You'll start by adding some custom services to
 `GuestbookLocalServiceImpl`, then you'll add the necessary action methods to
