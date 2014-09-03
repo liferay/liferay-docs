@@ -8,8 +8,6 @@
 	if (guestbookId > 0) {
 		guestbook = GuestbookLocalServiceUtil.getGuestbook(guestbookId);
 	}
-
-	String redirect = ParamUtil.getString(request, "redirect");
 %>
 
 <portlet:renderURL var="viewURL">

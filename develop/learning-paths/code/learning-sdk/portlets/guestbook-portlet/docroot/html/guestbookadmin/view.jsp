@@ -1,9 +1,5 @@
 <%@include file="/html/init.jsp"%>
 
-<%
-	String redirect = PortalUtil.getCurrentURL(renderRequest);
-%>
-
 <aui:button-row cssClass="guestbook-admin-buttons">
 	<c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
 		<portlet:renderURL var="addGuestbookURL">
