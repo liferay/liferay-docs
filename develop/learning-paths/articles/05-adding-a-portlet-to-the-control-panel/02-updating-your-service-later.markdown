@@ -4,8 +4,8 @@ In an earlier learning path, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`. The `addGuestbook` method of `GuestbookPortlet`
 calls this service method. You can reuse the `addGuestbook` method of
 `GuestbookLocalServiceImpl` by calling it from `GuestbookAdminPortlet` too.
-However, we need to add a new service method for updating a guestbook and a new
-service method for deleting a guestbook. We also need to add a service method
+However, you need to add a new service method for updating a guestbook and a new
+service method for deleting a guestbook. You also need to add a service method
 that returns the number of guestbooks in a site. You'll use this service method
 when you're implementing your user interface since you'll use a Liferay taglib
 construct called Search Container. Your search container needs to know how many
