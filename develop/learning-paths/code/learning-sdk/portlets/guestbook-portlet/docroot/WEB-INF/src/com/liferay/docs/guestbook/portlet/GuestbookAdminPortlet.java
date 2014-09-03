@@ -30,14 +30,14 @@ public class GuestbookAdminPortlet extends MVCPortlet {
 		try {
 			GuestbookLocalServiceUtil.addGuestbook(serviceContext.getUserId(),
 					name, serviceContext);
+			
+			SessionMessages.add(request, "guestbookAdded");
 		} catch (PortalException e) {
 			SessionErrors.add(request, e.getClass().getName());
 
 			response.setRenderParameter("mvcPath",
 					"/html/guestbookadmin/edit_guestbook.jsp");
 		}
-
-		SessionMessages.add(request, "guestbookAdded");
 	}
 
 	public void updateGuestbook(ActionRequest request, ActionResponse response)
@@ -52,14 +52,14 @@ public class GuestbookAdminPortlet extends MVCPortlet {
 		try {
 			GuestbookLocalServiceUtil.updateGuestbook(guestbookId, name,
 					serviceContext);
+			
+			SessionMessages.add(request, "guestbookUpdated");
 		} catch (PortalException pe) {
 			SessionErrors.add(request, pe.getClass().getName());
 
 			response.setRenderParameter("mvcPath",
 					"/html/guestbookadmin/edit_guestbook.jsp");
 		}
-
-		SessionMessages.add(request, "guestbookUpdated");
 	}
 
 	public void deleteGuestbook(ActionRequest request, ActionResponse response)
@@ -72,11 +72,11 @@ public class GuestbookAdminPortlet extends MVCPortlet {
 		
 		try {
 			GuestbookLocalServiceUtil.deleteGuestbook(guestbookId, serviceContext);
+			
+			SessionMessages.add(request, "guestbookDeleted");
 		} catch (PortalException pe) {
 			SessionErrors.add(request, pe.getClass().getName());
 		}
-
-		SessionMessages.add(request, "guestbookDeleted");
 	}
 
 }
