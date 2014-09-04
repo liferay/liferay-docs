@@ -1,9 +1,14 @@
 package com.liferay.documentation.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
@@ -21,9 +26,7 @@ public class DistDiffTask extends Task {
 		}
 
 		String absDir = dir.getAbsolutePath();
-		absDir = absDir.replace("\\", "/");
 		List<String> diffs = null;
-
 		File modifiedList = new File(absDir + "/git-modified-list.txt");
 
 		try {
@@ -32,24 +35,37 @@ public class DistDiffTask extends Task {
 			e.printStackTrace();
 		}
 
-		String txtPath = _purposedir + "/" + _docdir;	
-		
-		List<File> allFiles = new ArrayList<File>();
-		
+		String txtPath = _purposedir + "/" + _docdir + "/";	
+		int i = txtPath.length();
+		List<String> files = new ArrayList<String>();
+
 		for (String diff : diffs) {
 			if (diff.startsWith("DiffEntry")) {
 				int x = diff.indexOf(txtPath);
-				int y = diff.indexOf("]", x);
-				int z = absDir.indexOf(txtPath);
-				String endModifiedFileDir = diff.substring(x, y);
-				String begModifiedFileDir = absDir.substring(0, z);
+				int y = x + i;
+				int z = diff.indexOf("]", x);
+				String file = diff.substring(y, z);
 
-				File file = new File(begModifiedFileDir + endModifiedFileDir);
-				allFiles.add(file);			
+				files.add(file);
 			}
 		}
 
-		System.out.println(allFiles);
+		try {
+			FileOutputStream fileOutputStream = new FileOutputStream("dist/diffs.zip");
+			ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+
+			for (String modFile : files) {
+				addToZipFile(modFile, zipOutputStream);
+			}
+
+			zipOutputStream.close();
+			fileOutputStream.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void setDocdir(String docdir) {
@@ -58,6 +74,26 @@ public class DistDiffTask extends Task {
 
 	public void setPurposedir(String purposedir) {
 		_purposedir = purposedir;
+	}
+
+	private static void addToZipFile(String modFile, ZipOutputStream zipOutputStream)
+			throws FileNotFoundException, IOException {
+
+		System.out.println("Adding " + modFile + " to zip file");
+
+		File file = new File(modFile);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		ZipEntry zipEntry = new ZipEntry(modFile);
+		zipOutputStream.putNextEntry(zipEntry);
+
+		byte[] bytes = new byte[1024];
+		int len;
+		while ((len = fileInputStream.read(bytes)) >= 0) {
+			zipOutputStream.write(bytes, 0, len);
+		}
+
+		zipOutputStream.closeEntry();
+		fileInputStream.close();
 	}
 
 	private String _docdir;

@@ -115,6 +115,7 @@
 	</target>
 
 	<target name="dist-diffs" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
 		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
 		</distdiff>
 	</target>
