@@ -131,7 +131,7 @@ create portlet actions to meet the first three requirements by opening
     parameter to point to a particular JSP if there was a problem with the
     `deleteGuestbook` service call.
 
-You now have our service methods and our portlet action methods in place. Your
+You now have your service methods and your portlet action methods in place. Your
 last task is to implement a user interface for the Guestbook Admin portlet.
 Along the way, you'll learn how to create an interface for configuring Guestbook
 permissions.
