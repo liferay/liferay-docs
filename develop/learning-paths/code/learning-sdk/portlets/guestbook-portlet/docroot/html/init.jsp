@@ -12,7 +12,6 @@
 <%@ page import="com.liferay.portal.kernel.dao.search.SearchEntry" %>
 <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
 <%@ page import="com.liferay.portal.security.permission.ActionKeys" %>
-<%@ page import="com.liferay.portal.util.PortalUtil" %>
 <%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
 <%@ page import="com.liferay.docs.guestbook.model.Entry" %>
 <%@ page import="com.liferay.docs.guestbook.util.WebKeys" %>
