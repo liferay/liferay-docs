@@ -1,4 +1,4 @@
-# Reference [](id=reference-lp-6-2-develop-reference)
+# Reference [](id=reference)
 
 This page describes and provides access to Liferay's reference documentation.
 You can refer to this documentation as you configure portals, invoke Liferay

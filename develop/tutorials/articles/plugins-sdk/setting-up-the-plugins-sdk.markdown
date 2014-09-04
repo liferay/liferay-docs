@@ -5,8 +5,8 @@ its dependencies.
 
 The Plugins SDK requires Liferay Portal. If you haven't already installed a
 Liferay bundle, follow the instructions in the
-[Installation and Setup](/discover/portal/-/knowledge_base/installation-and-setup-lp-6-2-use-useportal)
-chapter of *Using Liferay Portal 6.2*. Many people use the Tomcat bundle for
+[Installation and Setup](/discover/deployment/-/knowledge_base/installation-and-setup)
+chapter of the *Deployment* guide. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
