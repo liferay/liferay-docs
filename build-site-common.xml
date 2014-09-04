@@ -40,6 +40,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -101,6 +112,11 @@
 			<fileset dir="./" includes="images/" />
 			<fileset dir="./" includes="home.markdown" />
 		</zip>
+	</target>
+
+	<target name="dist-diffs" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
