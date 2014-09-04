@@ -1,7 +1,7 @@
 package com.liferay.documentation.util;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import org.apache.tools.ant.BuildException;
@@ -31,10 +31,17 @@ public class GitCompareTask extends Task {
 			try {
 				List<DiffEntry> diff = new Git(repo).diff().setOldTree(masterTreeParser).setNewTree(importTreeParser).call();
 
+				PrintWriter writer = new PrintWriter("git-modified-list.txt", "UTF-8");
+
 				for (DiffEntry entry : diff) {
-					System.out.println("Entry: " + entry);
+					String stringEntry = entry.toString();
+
+					if (stringEntry.contains(_purposedir + "/" + _docdir)) {
+						writer.println(stringEntry);
+					}
 				}
 
+				writer.close();
 				repo.close();
 
 			} catch (GitAPIException e) {
@@ -45,13 +52,14 @@ public class GitCompareTask extends Task {
 			e.printStackTrace();
 		}
 
-
-		File dir = new File("../" + _docdir);
-
 	}
 
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
+	}
+
+	public void setPurposedir(String purposedir) {
+		_purposedir = purposedir;
 	}
 
 	private static Repository openGitRepository() throws IOException {
@@ -82,4 +90,5 @@ public class GitCompareTask extends Task {
 	}
 
 	private String _docdir;
+	private String _purposedir;
 }
