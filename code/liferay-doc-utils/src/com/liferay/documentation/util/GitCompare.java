@@ -2,6 +2,7 @@ package com.liferay.documentation.util;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.List;
 
 import org.eclipse.jgit.api.Git;
@@ -21,7 +22,7 @@ public class GitCompare {
 
 	public static void main(String[] args) throws GitAPIException, IOException  {
 		if (args == null || args.length < 3) {
-			throw new IllegalArgumentException("Requires 2 arguments: markdownFile htmlFile");
+			throw new IllegalArgumentException("Requires 3 arguments: importBranch docdir purposedir");
 		}
 
 		String importBranch = args[0];
@@ -35,6 +36,8 @@ public class GitCompare {
 		List<DiffEntry> diff = new Git(repo).diff().setOldTree(masterTreeParser).setNewTree(importTreeParser).call();
 
 		PrintWriter writer = new PrintWriter("git-modified-list.txt", "UTF-8");
+		addTimeStamp("Comparing your " + importBranch + " branch to your master branch\n"
+				+ "Generated on", writer);
 
 		for (DiffEntry entry : diff) {
 			String stringEntry = entry.toString();
@@ -75,4 +78,9 @@ public class GitCompare {
 		revWalk.dispose();
 		return masterTreeParser;
 	}
+
+	private static void addTimeStamp(String message, PrintWriter writer) {
+	    Calendar calendar = Calendar.getInstance();
+	    writer.printf("%s %tc\n\n", message, calendar);
+	  }
 }

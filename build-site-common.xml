@@ -81,7 +81,7 @@
         <delete dir="${dist.dir}"/>
     </target>
 
-	<target name="compare-with-master" description="Compares the import and master branches on the liferay-docs repo.">
+	<target name="compare-with-master" description="Compares an import branch with your master branch on the liferay-docs repo.">
 		<java
 			classname="com.liferay.documentation.util.GitCompare"
 			classpathref="project.classpath"
