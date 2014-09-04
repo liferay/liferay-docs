@@ -20,17 +20,13 @@
 
 <aui:form action="<%= editGuestbookURL %>" name="<portlet:namespace />fm">
         <aui:fieldset>
-
-		<aui:input type="hidden" name="guestbookId"
-			value='<%= guestbook == null ? "" : guestbook.getGuestbookId() %>' />
-		<aui:input name="name" />
-
+			<aui:input type="hidden" name="guestbookId"
+				value='<%= guestbook == null ? "" : guestbook.getGuestbookId() %>' />
+			<aui:input name="name" />
         </aui:fieldset>
 
         <aui:button-row>
-
 			<aui:button type="submit"></aui:button>
 			<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
-
         </aui:button-row>
 </aui:form>
