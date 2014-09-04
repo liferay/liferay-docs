@@ -93,7 +93,7 @@ create portlet actions to meet the first three requirements by opening
     `updateGuestbook` method also retrieves the `guestbookId` so that it can
     specify which guestbook to update in the service call. If there's a problem
     with the service call, the Guestbook Admin portlet displays the Edit
-    Guestbook form:
+    Guestbook form again so that the user can edit the form and resubmit:
 
         response.setRenderParameter("mvcPath",
                 "/html/guestbookadmin/edit_guestbook.jsp");
