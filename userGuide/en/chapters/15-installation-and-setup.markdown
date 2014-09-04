@@ -1277,7 +1277,8 @@ Let's work with the dependency jar files first.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver.
+    driver.  If you are using a different database, replace the mysql jar with
+    the driver jar for your database.
 
 4. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
@@ -1443,13 +1444,13 @@ Make the following edits as applicable to your operating system:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 - On Unix, merge the following values into your settings for `JAVA_OPTS`
   replacing any matching attributes with the ones found in the assignment
   below:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
     directory. You'll notice we've added some Java security options. We'll
@@ -1532,7 +1533,7 @@ Modify `standalone.xml` adding your data source and driver within the
    `<datasources>` element.
 
         <drivers>
-            <driver name="mysql" module="com.liferay.portal.main"/>
+            <driver name="mysql" module="com.liferay.portal"/>
         </drivers>
 
 Your final data sources subsystem should look something like this:
@@ -1548,7 +1549,7 @@ Your final data sources subsystem should look something like this:
                     </security>
                 </datasource>
                 <drivers>
-                    <driver name="mysql" module="com.liferay.portal.main"/>
+                    <driver name="mysql" module="com.liferay.portal"/>
                 </drivers>
             </datasources>
         </subsystem>
