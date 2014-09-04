@@ -76,9 +76,9 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     sub-tags need to be added inside of it:
     `<liferay-ui:search-container-results>`,
     `<liferay-ui:search-container-row>`, and `<liferay-ui:search-iterator>`. The
-    `<liferay-ui:search-container-results>`'s `results` attribute uses a service
-    call to retrieve a list of all the guestbooks from the current site. The
-    `total` attribute uses another service call to get the total number of
+    `<liferay-ui:search-container-results>` tag's `results` attribute uses a
+    service call to retrieve a list of all the guestbooks from the current site.
+    The `total` attribute uses another service call to get the total number of
     guestbooks in the current site.
 
     The `<liferay-ui:search-container-row>` tag determines the structure of each
@@ -275,7 +275,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 
         <aui:form action="<%= editGuestbookURL %>" name="<portlet:namespace />fm">
 
-    When the form is submitted, the `editGuestbookURL` is invoked, which call
+    When the form is submitted, the `editGuestbookURL` is invoked, which calls
     the Guestbook Admin portlet's `addGuestbook` or `updateGuestbook` method, as
     discussed above. The name of the form is prefixed with by the
     `<portlet:namespace>` tag which results in a unique name for each portlet
@@ -296,9 +296,9 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     Guestbook Admin portlet. The *Cancel* button invokes the `viewURL` which
     displays the default view of the Guestbook Admin portlet.
 
-    Excellent! You've now finished creating the Guestbook Admin portlet. Test it
-    out by adding new guestbooks and by editing guestbooks, configuring
-    guestbook permissions, and deleting guestbooks.
+Excellent! You've now finished creating the Guestbook Admin portlet. Test it
+out! Try adding new guestbooks, editing guestbooks, configuring guestbook
+permissions, and deleting guestbooks.
 
 ## Next Steps
 
