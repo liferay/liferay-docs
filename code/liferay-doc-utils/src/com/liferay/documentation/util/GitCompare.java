@@ -35,29 +35,37 @@ public class GitCompare {
 
 		List<DiffEntry> diff = new Git(repo).diff().setOldTree(masterTreeParser).setNewTree(importTreeParser).call();
 
+		System.out.println("Creating ../git-modified-list.txt file");
 		PrintWriter writer = new PrintWriter("git-modified-list.txt", "UTF-8");
 		addTimeStamp("Comparing your " + importBranch + " branch to your master branch\n"
 				+ "Generated on", writer);
+
+		boolean newDiff = false;
 
 		for (DiffEntry entry : diff) {
 			String stringEntry = entry.toString();
 
 			if (stringEntry.contains(purposedir + "/" + docdir)) {
 				writer.println(stringEntry);
+				System.out.println(stringEntry);
+				newDiff = true;
 			}
+		}
+		
+		if (!newDiff) {
+			System.out.println("There are no additions/modifications in .../" + purposedir + "/" + docdir);
+			writer.println("There are no new additions/modifications to report");
 		}
 
 		writer.close();
 		repo.close();
-
 	}
 
-	private static Repository openGitRepository() throws IOException {
-		FileRepositoryBuilder repoBuilder = new FileRepositoryBuilder();
-		Repository repo = repoBuilder.readEnvironment().findGitDir().build();
+	private static void addTimeStamp(String message, PrintWriter writer) {
 
-		return repo;
-	}
+	    Calendar calendar = Calendar.getInstance();
+	    writer.printf("%s %tc\n\n", message, calendar);
+	  }
 
 	private static AbstractTreeIterator gitTreeParser(Repository repo, String ref)
 			throws IOException {
@@ -79,8 +87,11 @@ public class GitCompare {
 		return masterTreeParser;
 	}
 
-	private static void addTimeStamp(String message, PrintWriter writer) {
-	    Calendar calendar = Calendar.getInstance();
-	    writer.printf("%s %tc\n\n", message, calendar);
-	  }
+	private static Repository openGitRepository() throws IOException {
+
+		FileRepositoryBuilder repoBuilder = new FileRepositoryBuilder();
+		Repository repo = repoBuilder.readEnvironment().findGitDir().build();
+
+		return repo;
+	}
 }

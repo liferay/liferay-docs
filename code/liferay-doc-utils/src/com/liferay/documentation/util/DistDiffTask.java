@@ -51,6 +51,7 @@ public class DistDiffTask extends Task {
 		}
 
 		try {
+			System.out.println("Creating ../dist/diffs.zip file");
 			FileOutputStream fileOutputStream = new FileOutputStream("dist/diffs.zip");
 			ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
 
