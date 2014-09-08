@@ -1,4 +1,4 @@
-# Using liferay-ui:tabs and liferay-ui:sections
+# Using liferay-ui:tabs and liferay-ui:sections [](id=using-liferay-uitabs-and-liferay-uisections)
 
 Tabs are a good way to keep your portlet's UI clean and organized. Liferay 
 provides a simple and easy to use solution to make this possible in their 
