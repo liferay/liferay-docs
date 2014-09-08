@@ -28,7 +28,7 @@ time!
 
 2. Add a directive to reference the liferay-ui taglib:
 
-    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
     
 With the first step out of the way you are now able to use liferay-ui
 tags in your portlet. Next up step 2!
