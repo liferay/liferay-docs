@@ -61,9 +61,9 @@ your tabs. The list below shows the available attributes to configure.
 
 **onClick:** Sets a function to be called on users clicking the tabs.
 
-**param:** Sets the parameters for the tabs component.
+**param:** Sets the variable to refer to the tabs component.
 
-**portletURL:** ?
+**portletURL:** Sets a URL to reference the portlet itself.
 
 **refresh:** Whether the page refreshes when a tab is clicked. (Default: true)
 
