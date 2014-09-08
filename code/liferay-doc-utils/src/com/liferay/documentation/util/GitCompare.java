@@ -21,15 +21,12 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 public class GitCompare {
 
 	public static void main(String[] args) throws GitAPIException, IOException  {
-		if (args == null || args.length < 3) {
-			throw new IllegalArgumentException("Requires 3 arguments: importBranch docdir purposedir");
-		}
 
-		String importBranch = args[0];
-		String docdir = args[1];
-		String purposedir = args[2];
+		String docdir = args[0];
+		String purposedir = args[1];
 		
 		Repository repo = openGitRepository();
+		String importBranch = repo.getBranch();
 		AbstractTreeIterator masterTreeParser = gitTreeParser(repo, "refs/heads/master");
 		AbstractTreeIterator importTreeParser = gitTreeParser(repo, "refs/heads/" + importBranch);
 
@@ -53,7 +50,7 @@ public class GitCompare {
 		}
 		
 		if (!newDiff) {
-			System.out.println("There are no additions/modifications in .../" + purposedir + "/" + docdir);
+			System.out.println("There are no additions/modifications in ../" + purposedir + "/" + docdir);
 			writer.println("There are no new additions/modifications to report");
 		}
 

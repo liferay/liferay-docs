@@ -40,7 +40,7 @@ public class DistDiffTask extends Task {
 		int i = txtPath.length();
 		List<String> files = new ArrayList<String>();
 		Iterator<String> it = diffs.iterator();
-		
+
 		while (it.hasNext()) {
 			String s = it.next();
 
@@ -50,30 +50,35 @@ public class DistDiffTask extends Task {
 		}
 
 		for (String diff : diffs) {
-				int x = diff.indexOf(txtPath);
-				int y = x + i;
-				int z = diff.indexOf("]", x);
-				String file = diff.substring(y, z);
+			int x = diff.indexOf(txtPath);
+			int y = x + i;
+			int z = diff.indexOf("]", x);
+			String file = diff.substring(y, z);
 
-				files.add(file);
+			files.add(file);
 		}
 
-		try {
-			System.out.println("Creating ../dist/diffs.zip file");
-			FileOutputStream fileOutputStream = new FileOutputStream("dist/diffs.zip");
-			ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+		if (files.isEmpty()) {
+			System.out.println("No zip file was produced because there are no available diffs");
+		}
+		else {
+			try {
+				System.out.println("Creating ../dist/diffs.zip file");
+				FileOutputStream fileOutputStream = new FileOutputStream("dist/diffs.zip");
+				ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
 
-			for (String modFile : files) {
-				addToZipFile(modFile, zipOutputStream);
+				for (String modFile : files) {
+					addToZipFile(modFile, zipOutputStream);
+				}
+
+				zipOutputStream.close();
+				fileOutputStream.close();
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-
-			zipOutputStream.close();
-			fileOutputStream.close();
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
