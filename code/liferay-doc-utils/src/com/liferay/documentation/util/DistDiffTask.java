@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -38,16 +39,23 @@ public class DistDiffTask extends Task {
 		String txtPath = _purposedir + "/" + _docdir + "/";	
 		int i = txtPath.length();
 		List<String> files = new ArrayList<String>();
+		Iterator<String> it = diffs.iterator();
+		
+		while (it.hasNext()) {
+			String s = it.next();
+
+			if (!s.contains("DiffEntry") || s.contains("DiffEntry[DELETE")) {
+				it.remove();
+			}
+		}
 
 		for (String diff : diffs) {
-			if (diff.startsWith("DiffEntry")) {
 				int x = diff.indexOf(txtPath);
 				int y = x + i;
 				int z = diff.indexOf("]", x);
 				String file = diff.substring(y, z);
 
 				files.add(file);
-			}
 		}
 
 		try {
