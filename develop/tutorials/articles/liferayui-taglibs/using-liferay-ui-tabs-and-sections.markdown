@@ -15,14 +15,14 @@ Using the liferay-ui:tabs tag is a fairly simple process. The examples below
 show how to add and use the `liferay-ui:tabs` tag with the `liferay-ui:section`
 tag in the `view.jsp` of a portlet:
 
-- **Step 1:** Reference the liferay-ui Taglib.
-- **Step 2:** Insert and Configure the LiferayUI Tabs Tag in the View JSP.
-- **Step 3:** Insert and Configure the LiferayUI section Tags in the View JSP. 
+- **Step 1:** Reference the liferay UI Taglib.
+- **Step 2:** Insert and Configure the Liferay UI Tabs Tag in the View JSP.
+- **Step 3:** Insert and Configure the Liferay UI section Tags in the View JSP. 
  	
 Follow these steps and you'll have a well organized UI for your portlet in no 
 time!
 
-## Step 1: Reference the Liferay-UI Taglib
+## Step 1: Reference the Liferay UI Taglib
 
 1. Open the `view.jsp` of your portlet. Create one if it does not already exist.
 
@@ -30,10 +30,10 @@ time!
 
     <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
     
-    With the first step out of the way you are now able to use liferay-ui
-    tags in your portlet. Next up step 2!
+With the first step out of the way you are now able to use liferay-ui
+tags in your portlet. Next up step 2!
     
-## Step 2: Insert and Configure the Liferay-UI Tabs Tag in the View JSP
+## Step 2: Insert and Configure the Liferay UI Tabs Tag in the View JSP
 
 This step is where the UI comes into play. Everything you do in this step will
 determine how your UI functions and looks. 
@@ -83,7 +83,7 @@ No matter which tab is selected, the tab given for the value will remain active.
 Now that you know what attributes you have available to you, You can move on to
 step 3!
 
-## Step 3: Insert and Configure the Liferay-UI Section Tags in the View JSP
+## Step 3: Insert and Configure the Liferay UI Section Tags in the View JSP
 
 Still inside the `view.jsp` replace your previous liferay-ui:tabs tag with the
 following:
