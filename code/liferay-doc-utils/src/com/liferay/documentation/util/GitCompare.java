@@ -36,6 +36,7 @@ public class GitCompare {
 		PrintWriter writer = new PrintWriter("git-modified-list.txt", "UTF-8");
 		addTimeStamp("Comparing your " + importBranch + " branch to your master branch\n"
 				+ "Generated on", writer);
+		System.out.println("Comparing your " + importBranch + " branch to your master branch...");
 
 		boolean newDiff = false;
 

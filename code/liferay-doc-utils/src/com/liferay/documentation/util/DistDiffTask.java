@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -108,6 +109,46 @@ public class DistDiffTask extends Task {
 
 		zipOutputStream.closeEntry();
 		fileInputStream.close();
+	}
+
+	private static void findMarkdownFiles(File dir, List<File> chFiles) {
+
+		File articleDir = new File(dir.getAbsolutePath() + "/articles");
+		File[] articles = articleDir.listFiles();
+
+		for (File article : articles) {
+
+			if (article.getName().contains(".")) {
+				continue;
+			}
+
+			File[] allFiles = article.listFiles();
+
+			for (File file : allFiles) {
+				chFiles.add(file);
+			}
+		}
+	}
+
+	private static void scanMarkdownForImage(String img, List<File> chFiles) {
+		for (File file : chFiles) {
+
+			Scanner scanner = null;
+			try {
+				scanner = new Scanner(file);
+
+				while (scanner.hasNextLine()) {
+					String lineFromFile = scanner.nextLine();
+
+					if (lineFromFile.contains(img)) { 
+						System.out.println(img + " found in file " + file.getName());
+					}
+				} 
+			}
+			catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private String _docdir;
