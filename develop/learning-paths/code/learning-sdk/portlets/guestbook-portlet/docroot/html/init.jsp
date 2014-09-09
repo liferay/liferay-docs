@@ -43,3 +43,6 @@
 <%@ page import="com.liferay.portal.kernel.log.Log" %>
 <%@ page import="com.liferay.portal.kernel.log.LogFactoryUtil" %>
 <%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
+
+<%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
+<%@ page import="com.liferay.portal.kernel.exception.SystemException" %>

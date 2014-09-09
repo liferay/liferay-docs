@@ -3,8 +3,6 @@
 <%
 	long guestbookId = Long.valueOf((Long) renderRequest
 			.getAttribute("guestbookId"));
-
-	String redirect = PortalUtil.getCurrentURL(renderRequest);
 %>
 
 <liferay-portlet:renderURL varImpl="searchURL">
@@ -13,7 +11,7 @@
 
 <aui:form action="<%= searchURL %>" method="get" name="fm">
     <liferay-portlet:renderURLParams varImpl="searchURL" />
-    <aui:input name="redirect" type="hidden" value="<%= redirect %>" />
+    
     <aui:input name="groupId" type="hidden" value="<%= String.valueOf(scopeGroupId) %>" />
 
     <div class="search-form">
