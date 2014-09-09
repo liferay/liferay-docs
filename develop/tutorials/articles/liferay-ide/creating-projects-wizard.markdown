@@ -66,11 +66,13 @@ or theme, click *Next* to move on to the next step in the New Project Wizard.
 
 The only two plugin types that require additional steps in the New Project 
 Wizard are portlet and theme. If you're creating a portlet, the second step of 
-the wizard is where you select the portlet's framework, name, and display name. 
-You can select Liferay MVC, JSF 2.x, or Vaadin for the portlet's framework. If 
-you select JSF 2.x here, you must then click *Next* to go to the third step in 
-the wizard where you select the JSF component suite to use. You can choose from 
-JSF standard, ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces.
+the wizard is where you select the portlet's framework. If you selected the 
+Include Sample Code checkbox on the first step of the wizard, then the second 
+step also lets you enter the portlet's name and display name. For the portlet's 
+framework, you can select Liferay MVC, JSF 2.x, or Vaadin. If you select JSF 2.x 
+here, you must then click *Next* to go to the third step of the wizard where you 
+select the JSF component suite to use. You can choose from JSF standard, 
+ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces.
 
 ![Figure 6: When creating a portlet, step two of the New Project Wizard lets you select the portlet framework to use.](../../images/liferay-ide-new-plugin-portlet-fw.png)
 
