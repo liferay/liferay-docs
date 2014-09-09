@@ -81,6 +81,14 @@
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
 
+<%
+	if (Validator.isNotNull(keywords)) {
+		String currentURL = PortalUtil.getCurrentURL(request);
+		PortalUtil.addPortletBreadcrumbEntry(request, LanguageUtil.get(
+				pageContext, "search") + ": " + keywords, currentURL);
+	}
+%>
+
 <%!
-private static Log _log = LogFactoryUtil.getLog("docroot.html.guestbook.view_search_jsp");
+	private static Log _log = LogFactoryUtil.getLog("docroot.html.guestbook.view_search_jsp");
 %>
