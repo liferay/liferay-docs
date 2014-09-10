@@ -2,9 +2,8 @@
 
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
-Faces (JSF) standard within Liferay Portal. Thus, Liferay Faces portlets and JSF
-portlets are very closely related with each other. Visit the 
-[JSF-related learning path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
+Faces (JSF) standard in Liferay Portal. Thus, Liferay Faces portlets and JSF
+portlets are closely related. Visit the [JSF-related learning path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
 for further details on JSF portlets and the Liferay Faces project. 
 
 This tutorial explains the Liferay Faces portlets generation process using
@@ -17,11 +16,11 @@ You'll begin creating a Liferay Faces portlet plugin next.
 
 ## Creating a Liferay Faces Portlet Plugin
 
-To create your Liferay Faces portlet plugin project, just follow the 
+To create your Liferay Faces portlet plugin project, follow the 
 [Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
 [Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
-tutorial, making sure to select *Portlet* as the plugin type, and *JSF 2.x* as
+tutorial, making sure to select *Portlet* as the plugin type and *JSF 2.x* as
 the portlet framework. Lastly, you'll be required to select a JSF component
 suite. 
 
@@ -43,7 +42,7 @@ the group ID `liferay`, or even the group ID/artifact ID combination
 
 ---
 
-It's very helpful to familiarize yourself with a Liferay Faces's portlet plugin
+It's helpful to familiarize yourself with a Liferay Faces portlet plugin
 project's directory structure. You can explore its anatomy next. 
 
 ## Anatomy
