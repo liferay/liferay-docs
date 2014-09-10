@@ -14,11 +14,11 @@ portlet. If none of your portlets will be used in the Control Panel, then the
 portlets can share the same resource bundle. 
 
 You can share a resource bundle between portlets by adding a resource bundle to
-a sample project. This sample project has two separate portlets. At the end of
-this tutorial, both portlets will share the same resource bundle. Figure 1 below
-displays what two portlets sharing the same resource bundle looks like: 
+the portlets' project. At the end of this tutorial, two of your project's
+portlets will share the same resource bundle. Figure 1 below displays what two
+portlets sharing the same resource bundle looks like: 
 
-![Figure 1: Both portlets share the same resource bundle with the same language key. Thus, both portlets display the same message.](../../images/portlet-localization-shared-bundle.png)
+![Figure 1: When portlets share the same resource bundle with the same language key, they display the same message.](../../images/portlet-localization-shared-bundle.png)
 
 Let's begin sharing a single resource bundle with multiple portlets! 
 
@@ -26,17 +26,24 @@ For this tutorial, assume that both portlets you're working with are contained
 in the same project. 
 
 1. In your project's `docroot/WEB-INF/src/content/Language.properties` file, add
-   the following language key: 
+   your desired language key. For example: 
 
         you-know-it-is-the-best=You know it is the best
 
-2. Create another language key file `Language_es.properties` in the
-   `docroot/WEB-INF/src/content` folder and add the equivalent
-   `you-know-it-is-the-best` key translated to Spanish:
+2. Create another language key file in the `docroot/WEB-INF/src/content` folder
+   and add the equivalent language key you specified previously, translated to
+   the language of your choice. For example, if you were translating in Spanish,
+   you would create a `Language_es.properties` file and add the following
+   language key: 
 
         you-know-it-is-the-best=Usted sabe que es la mejor
 
-3. Open the `view.jsp` file for both portlets and insert the following code: 
+    You can view Liferay's available locales in the [Language and Time
+    Zones](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+    section of Portal Properties. 
+
+3. Open the `view.jsp` file for both portlets and insert the
+   `<liferay-ui:message>` tag specifying your language key: 
 
         Liferay - <liferay-ui:message key="you-know-it-is-the-best" />!
 
@@ -75,14 +82,18 @@ in the same project.
     for details. 
 
 5. Redeploy the project and place both portlets on a Liferay site page, if you
-   haven't already done so. Verify that they display the same message: *Liferay
-   \- You know it is the best!*. 
+   haven't already done so. Verify that they display the same message. 
 
-6. Switch your portal's locale to Spanish by adding `/es` after
-   `localhost:8080` and refresh the page. Notice how both portlets display your
-   translated language key. 
+6. Switch your portal's locale to the alternate language you chose by adding its
+   two letter abbreviation after `localhost:8080` and refreshing the page. For
+   example, if you were translating to Spanish, your URL would look like the
+   following:
 
-![Figure 2: Sharing resource bundles between multiple portlets helps you leverage common translated text.](../../images/portlet-localization-shared-bundle-spanish.png)
+        localhost:8080/es
+
+    Notice how both portlets display your translated language key. 
+
+![Figure 2: This figure displays two portlets sharing a Spanish language key from the same resource bundle. Sharing resource bundles between multiple portlets helps you leverage common translated text.](../../images/portlet-localization-shared-bundle-spanish.png)
 
 At this point, any language keys you specify in the `Language.properties` files
 are accessible from either of the portlets. 
