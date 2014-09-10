@@ -16,6 +16,22 @@ follow these three steps:
 In this section, you'll follow the first step: creating and registering an
 indexer. You'll follow the last two steps in subsequent sections.
 
+## Understanding Search and Indexing with Lucene
+
+Under the hood, Liferay uses Lucene, a Java search library, to implement its
+search and indexing functionality. Lucene is a Java search library which works
+by converting searchable entities into *documents*. Lucene documents are not
+documents in the ordinary English sense of the word. Rather, they are Lucene
+constructs that correspond to searchable entities. After we implement an indexer
+for guestbook entries, a document will be created for each guestbook entry. When
+you implement the guestbook entry indexer, you'll specify which guestbook entry
+fields should be added to each guestbook entry document. All the guestbook entry
+documents are added to an index. When a Lucene index is searched, a *hits*
+object is returned that contains pointers to the documents that match the search
+query. Searching for guestbook entries via an index is faster than searching for
+entities directly since a direct search requires database queries that an index
+search avoids.
+
 ## Creating an Entry Indexer
 
 Create a new package in your guestbook-project's `docroot/WEB-INF/src` folder
@@ -193,7 +209,58 @@ Next comes the `EntryIndexer` constructor. This constructor calls
 `setPermissionAware(true)` so that the indexer takes permissions into account
 when returning search results. Without this call, the indexer would return *all*
 guestbook entries that match a search query, regardless of the guestbook entry
-permissions. 
+permissions.
+
+Next, since we're extending the `BaseIndexer` abstract class which, in turn,
+implements the `Indexer` interface, we need to override or provide
+implementations for the following methods:
+
+- `public String[] getClassNames()`
+
+- `public String getPortletId()`
+
+- `protected void doDelete(Object obj)`
+
+- `protected Document doGetDocument(Object obj)`
+
+- `protected Summary doGetSummary(Document document, Locale locale,
+        String snippet, PortletURL portletURL)`
+
+- `protected void doReindex(Object obj)`
+
+- `protected void doReindex(String className, long classPK) `
+
+- `protected void doReindex(String[] ids)`
+
+- `protected String getPortletId(SearchContext searchContext)`
+
+`getClassNames` and `getPortletId` are easy to implement: you just return the
+`CLASS_NAMES` and `PORTLET_ID` constants that you defined earlier.
+
+`hasPermission` is also easy to implement: you call the `contains` method of the
+`GuestbookPermission` helper class that you created in an earlier learning path.
+
+`doDelete` is responsible for deleting the document that corresponds to the
+object parameter. To implement it, you have to cast the object to a guestbook
+entry and then call the `deleteDocument` method of `BaseIndexer`, passing the
+entry's company ID and entry ID as parameters.
+
+`doGetDocument` is the method where you specify which fields to add to the
+Lucene document corresponding to a guestbook entry. First, you cast the object
+parameter to a guestbook entry. Then you call the `getBaseModelDocument` method
+of `BaseIndexer` to get the base document corresponding to the entry. Then you
+add all the entry fields that you'd like to be indexed to the document. You have
+to use the appropriate method for adding fields to be indexed. E.g., use
+`document.addDate` to add a date field to the document, use `document.addText`
+to add a text field to the document, etc.
+
+$$$+
+
+$$$
+
+Note that `doReindex` is overloaded and you need to provide implementations for
+each method.
 
 ## Registering an Entry Indexer
+
 
