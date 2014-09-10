@@ -1,4 +1,4 @@
-# Creating Projects Using the New Project Wizard
+# Creating Projects Using the New Project Wizard [](id=creating-projects-using-the-new-project-wizard)
 
 If you want to create new plugin projects for Liferay Portal, then Liferay IDE
 is your new best friend. The *New Project Wizard* in Liferay IDE/Developer
