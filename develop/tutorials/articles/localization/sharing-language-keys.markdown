@@ -70,8 +70,8 @@ in the same project.
 
 4. Navigate to the `portlet.xml` file for your project. Make sure that all the
    portlets have the same `resource-bundle` specified. If the portlets specify
-   the same resource bundle, they're sharing it. The `portlet.xml` file
-   code snippet below exemplifies what this can look like for two portlets: 
+   the same resource bundle, they're sharing it. The `portlet.xml` file code
+   snippet below exemplifies what this can look like for two portlets: 
 
         <portlet>
             <portlet-name>yourportlet1</portlet-name>
@@ -94,14 +94,16 @@ in the same project.
     [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
     for details. 
 
-5. Redeploy the plugin project and place the portlets on a Liferay site page, if you
-   haven't already done so. Verify that they display the same intended messages
-   based on your resource bundle. 
+5. Redeploy the plugin project and place the portlets on a Liferay site page, if
+   you haven't already done so. Verify that they display the same intended
+   messages based on your resource bundle. 
 
 6. Switch your portal's locale to the alternate language by adding the
-   language's two letter abbreviation in the context of the URL and refreshing the page. For
-   example, to display the portlets in a Spanish context on `localhost:8080`,
-   your URL would look like this:
+   language's two letter abbreviation in the context of the URL and refreshing
+   the page.
+
+    For example, to display the portlets in a Spanish context on
+    `localhost:8080`, your URL would look like this:
 
         localhost:8080/es
 
@@ -115,9 +117,9 @@ are accessible from all of your plugin project's portlets.
 ---
 
 ![Note](../../images/tip-pen-paper.png) **Note:** It's best to use the Liferay
-naming convention for the language resource bundle file and folder so that your portlets can
-access the bundle and so that you can use the automatic language building capabilities
-of Liferay IDE and the Plugins SDK with the bundle. 
+naming convention for the language resource bundle file and folder so that your
+portlets can access the bundle and so that you can use the automatic language
+building capabilities of Liferay IDE and the Plugins SDK with the bundle. 
 
 ---
 
