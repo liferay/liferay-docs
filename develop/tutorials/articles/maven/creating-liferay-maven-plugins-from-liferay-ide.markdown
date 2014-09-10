@@ -1,12 +1,12 @@
 # Creating Liferay Maven Plugins from Liferay IDE [](id=creating-liferay-maven-plugins-from-liferay-ide)
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
-types. These types include portlet, theme, hook, and layout template plugins. To make sure
-that you can find the archetypes you need, Liferay provides archetypes for each of
-these plugin types for various versions of Liferay. *Archetype* is Maven's
-project templating toolkit. This tutorial explains how to use Archetype to
-create a Liferay portlet project. With Archetype, you can use the same steps we
-detail below to generate Liferay plugin projects of any type. 
+types. These types include portlet, theme, hook, and layout template plugins. To 
+make sure that you can find the archetypes you need, Liferay provides archetypes 
+for each of these plugin types for various versions of Liferay. *Archetype* is 
+Maven's project templating toolkit. This tutorial explains how to use Archetype 
+to create a Liferay portlet project. With Archetype, you can use the same steps 
+detailed below to generate Liferay plugin projects of any type. 
 
 As a prerequisite to running Archetype, make sure Maven is installed and that
 its executable is in your `$PATH` environment variable. Maven must also be fully
@@ -28,13 +28,13 @@ Liferay plugin project using Liferay IDE:
 2.  Assign a project name and display name.
 
     As you enter the project name, the wizard helps you by filling in the
-    display name based on it. For example, if you specified *sample-portlet*  as
+    display name based on it. For example, if you specified *sample-portlet* as
     the project name, the wizard conveniently inserts *Sample* in grayed-out
     text as the portlet's default display name. The wizard derives the default
     display name from the project name, starts it in upper-case, and leaves off
     the plugin type suffix (e.g., *Portlet*) because the plugin type is
     automatically appended to the display name in Liferay Portal. The IDE saves
-    the you from repetitively appending the plugin type to the display name; in
+    you from repetitively appending the plugin type to the display name; in 
     fact, the IDE ignores any plugin type suffix if you happen to append it to
     the display name. 
 
@@ -50,7 +50,7 @@ Liferay plugin project using Liferay IDE:
     tutorial for details. 
 
 4.  Specify the *Artifact version*. For example, you can specify `1.0-SNAPSHOT`
-    to indicate that your project's artifact will be a snapshot.
+    to indicate that your project's artifact will be a snapshot. 
 
 5.  Specify the *Group id*. For example, you can specify your project's root
     Java package, like `com.liferay.sample`. 
@@ -59,41 +59,75 @@ Liferay plugin project using Liferay IDE:
     use. 
 
     If you don't remember your active profile or haven't created one, click
-    the *Select Active Profiles ...* icon immediately to the right of the text
+    the *Select Active Profiles* icon immediately to the right of the text
     field. Any active profiles you have are listed in the menu on the left. To
     select an existing profile, highlight its profile ID and select the
     illuminated *right arrow* button to transfer it to the menu on the right. If
     you don't have any existing profile, click on the green *addition* button to
     create a profile and give it an ID. 
+    
+    ![Figure 1: Liferay IDE lets you select the active profiles to use for your Maven plugin projects.](../../images/maven-ide-select-active-profiles.png)
 
     If you're specifying a new profile, the wizard will still create your
     plugin, but your project will need further attention before it is
     deployable. You'll need to specify the necessary properties within the new
-    profile; we'll demonstrate specifying these properties in the *Configuring
+    profile; specifying these properties is demonstrated in the *Configuring
     Your Liferay Maven Project* section of the 
     [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide)
     tutorial. 
 
     You also have the option to create a profile based on a Liferay runtime. To
     do this, select the *Create New Maven Profile Based on Liferay Runtime*
-    button to the far right of the *Active profiles* text field. Specify the
-    *Liferay runtime*, *New profile id*, and *Liferay version*. For the new
-    profile location you can choose to specify your profile in the
+    button to the far right of the *Active profiles* text field.
+    
+    ![Figure 2: You can create new profiles in the New Plugin Project wizard.](../../images/maven-ide-new-profile.png)
+    
+    Specify the *Liferay runtime*, *New profile id*, and *Liferay version*. For 
+    the new profile location you can choose to specify your profile in the
     `settings.xml` (recommended) or your project's `pom.xml`. When creating your
     Maven profile based on a Liferay runtime, the IDE automatically populates
     the new profile with the required properties and no additional profile 
     configuration is needed for the plugin. 
 
-7.  Select your project's plugin type.
+7.  Select your project's plugin type from the dropdown menu of that name. The 
+    New Project Wizard gives you some additional options if you select Portlet 
+    or Service Builder Portlet. With both portlet types, you can use the Include 
+    Sample Code checkbox to instruct the New Project Wizard to add some basic 
+    sample code to your portlet. If you select Portlet, then you also get a 
+    checkbox for instructing the wizard to launch the New Portlet Wizard after 
+    the project is created. The New Portlet Wizard guides you in the creation of 
+    a custom portlet class.
 
-8.  Click *Finish*.
+8.  Unless you're creating a portlet or theme, you're done--just click *Finish* 
+    and get started developing your plugin in Liferay IDE! If you're creating a 
+    portlet or theme, click *Next*. 
+    
+    If you're creating a portlet, the second screen of the wizard is where you 
+    select the portlet's framework. If you selected the Include Sample Code 
+    checkbox on the first screen of the wizard, then the second screen also lets 
+    you enter the portlet's name and display name. For the portlet's framework, 
+    you can select Liferay MVC, JSF 2.x, or Vaadin. If you select JSF 2.x here, 
+    you must then click *Next* to go to the third screen of the wizard where you 
+    select the JSF component suite to use. You can choose from JSF standard, 
+    ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces. 
+    
+    ![Figure 3: Select the portlet framework to use for your new portlet.](../../images/maven-ide-portlet-framework.png)
+    
+    ![Figure 4: If you're using JSF as your portlet framework, then you need to select the JSF component suite to use.](../../images/maven-ide-jsf-suite.png)
+    
+    If you're creating a theme, the second screen of the New Project Wizard is 
+    for selecting the theme parent and theme framework. The Theme Parent 
+    dropdown lets you choose from `_unstyled`, `_styled`, or `classic`. The 
+    Theme Framework dropdown lets you choose from Velocity, Freemarker, or JSP. 
+    
+    ![Figure 5: If you're creating a theme, select the theme parent and theme framework.](../../images/maven-ide-theme.png)
 
-    ![Figure 1: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
+    ![Figure 6: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png) 
 
-The Liferay Plugin Project wizard creates your new plugin project to your
-specification. 
+Now just click *Finish* and you're all set! The Liferay New Project wizard 
+creates your new plugin project to your specification. 
 
-Great! You've successfully created a Liferay portlet project using Maven in
+Great! You've successfully created a Liferay plugin project using Maven in 
 Liferay IDE! 
 
 ## Related Topics 
