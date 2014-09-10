@@ -554,7 +554,7 @@ implementations, as well as Single Sign-On implementations, workflow engines,
 and so on. These are implemented as web modules used by Liferay portlets to
 provide functionality.
 
-### OSGi Bundles
+### OSGi Bundles [](id=osgi-bundles-liferay-portal-6-2-user-guide-14-en)
 
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. Liferay 6.2 introduced support for the OSGi module framework.
