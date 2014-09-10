@@ -19,7 +19,7 @@ started.
 
 ## Creating a Liferay MVC Portlet in Liferay IDE
 
-1.  Go to File &rarr; New &rarr; Liferay Project. 
+1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
 2.  Fill in the *Project name* and *Display name*. Project names must have no
     spaces and it's a best practice to specify them in lowercase. The
@@ -27,8 +27,8 @@ started.
     portlet's *Display name* just as you want it displayed to the user. 
 
 3.  Leave the *Use default location* checkbox checked. By default, the
-	default location is set to your current workspace. If you'd like to change
-	where your plugin project is saved in your file system, uncheck the box and
+	default location is set to your Plugins SDK. If you'd like to change where 
+	your plugin project is saved in your file system, uncheck the box and 
 	specify your alternate location. 
 
     ![Figure 1: Creating portlet projects with Liferay IDE is easy.](../../images/03-new-portlet-project.png)
@@ -36,18 +36,26 @@ started.
 4.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
 
 5.  Your configured SDK and Liferay Runtime should already be selected. If you
-    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
-    open the *Installed Plugin SDKs* management wizard. You can also access the
+    haven't yet pointed Liferay IDE to a Plugins SDK, click the *Configure SDKs* 
+    button to the right of the *Plugins SDK* dropdown menu to open the 
+    *Installed Plugin SDKs* management wizard. You can also access the
     *New Server Runtime Environment* wizard if you need to set up your runtime
     server; just click the *New Liferay Runtime* button next to the *Liferay
     Portal Runtime* dropdown menu. 
 
-6.  Select *Portlet* as your Plugin type. 
+6.  Select *Portlet* as your plugin type. Alternatively, you can select 
+    *Service Builder Portlet* if you know you want to use Liferay IDE's service 
+    builder for your portlet.
+    
+7.  If you want to launch the New Portlet Wizard after your project is created, 
+    select the checkbox of that name. The New Portlet Wizard guides you in the 
+    creation of a custom portlet class.
 
-7.  Click *Next*. 
+8.  Click *Next* if you selected Portlet as your plugin type. If you selected 
+    Service Builder Portlet as your plugin type, then click *Finish*. 
 
-8. In the next window, make sure that the *Liferay MVC* framework is selected
-   and click *Finish*. 
+9.  If you selected Portlet as your plugin type, make sure that the *Liferay MVC* 
+    framework is selected in the next window and click *Finish*. 
 
 With Liferay IDE, you can create a new plugin project or if you already have a
 project, create a new plugin in an existing project. A single Liferay project
