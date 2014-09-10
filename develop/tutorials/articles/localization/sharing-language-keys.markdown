@@ -127,3 +127,10 @@ In this tutorial, you created language keys, specified the language key values
 in different languages translations, and shared the new language keys among
 your plugin project's portlets. 
 
+Related topics: 
+
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs)
+
+[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal)
