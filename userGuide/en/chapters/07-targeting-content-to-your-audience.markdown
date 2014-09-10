@@ -1,4 +1,4 @@
-## Using the Audience Targeting Application
+## Targeting Content To Your Audience
 
 Liferay's Audience Targeting application allows your organization to configure
 different assets to be displayed to different categories of users. Maybe you'd
