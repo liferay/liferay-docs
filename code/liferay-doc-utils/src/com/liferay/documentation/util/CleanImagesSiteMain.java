@@ -27,18 +27,20 @@ public class CleanImagesSiteMain {
 
 		for (File file : artDirs) {
 			if (file.isDirectory()) {
-
+				
 				File[] files = file.listFiles();
+				
+				System.out.println("checking" + file.getPath());
 
 				// 3. This abominable code should get me the image names into an
 				// array (not surprisingly, named imageNames, instantiated
-				// above). It extracts the imageNames using a private static
+				// above). It extracts the imageNames from line using a private static
 				// method, defined below the Main method.
 
 				for (File mkdFile : files) {
-					mkdFile.getPath();
+					
 					System.out.println(mkdFile.getPath());
-					if (mkdFile.getName().endsWith("markdown")) {
+					if (!mkdFile.getName().endsWith("markdown")) {
 						continue;
 					}
 					LineNumberReader in = new LineNumberReader(new FileReader(
@@ -52,8 +54,6 @@ public class CleanImagesSiteMain {
 					}
 					in.close();
 				}
-
-				System.out.println("checking" + file.getPath());
 			}
 			// 4. For each directory, loop through all the files
 			// (printing out which files are being checked), and store the
