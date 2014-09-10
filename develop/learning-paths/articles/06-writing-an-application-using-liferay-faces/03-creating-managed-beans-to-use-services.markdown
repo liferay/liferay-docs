@@ -477,7 +477,7 @@ portlet, it's time to create it!
 2. Name your class `GuestbookModelBean`. Then click *Add* next to the Interfaces
    field and type *Serializable*. Click *OK* and *Finish*. 
 
-3. 3. Hover your mouse over the `ViewBean` class name and you'll notice a few
+3. Hover your mouse over the `ViewBean` class name and you'll notice a few
    options appear. Select the *Add generated serial version ID*. 
 
 4. Add the `@ManagedBean` and `@ViewScoped` tags above the public class

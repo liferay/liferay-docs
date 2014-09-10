@@ -239,7 +239,7 @@ selected for the JSF guestbook portlet).
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
 their portlet WAR projects in order to utilize Alloy UI in a way that is
 consistent with JSF development. Since you selected the Liferay Faces Alloy JSF
-Component Suite during your portlet's setup, the JAR is be included in your
+Component Suite during your portlet's setup, the JAR is included in your
 portlet project using Ivy, the same way that was described in the previous
 section. 
 
