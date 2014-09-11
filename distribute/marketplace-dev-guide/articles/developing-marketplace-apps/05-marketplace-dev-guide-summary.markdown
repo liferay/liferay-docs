@@ -4,8 +4,8 @@ In this chapter, we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. 
 
 We looked at how to create, publish, maintain, and track Liferay Marketplace
-apps. You can do this through the App Manager that's available on your personal
-[liferay.com](http://liferay.com) home page ([liferay.com](http://liferay.com)
+apps. You can do this through the App Manager that's available on your profile
+[liferay.com](http://liferay.com) page ([liferay.com](http://liferay.com)
 account required!). Then, we covered the requirements for publishing apps, which
 did not differ significantly from requirements for general Liferay development.
 Next, we showed how you can publish a sample app on the Marketplace and how you
