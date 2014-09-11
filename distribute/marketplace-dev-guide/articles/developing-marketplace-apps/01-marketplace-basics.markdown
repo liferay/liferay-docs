@@ -6,40 +6,40 @@ Marketplace. The following sections discuss these concepts.
 
 ## What is an App?
 
-As a Liferay developer, you're undoubtedly already be familiar with the concept
+As a Liferay developer, you're undoubtedly already familiar with the concept
 of plugins (portlets, hooks, themes, etc). If not, see the
 [Tutorials Introduction](/develop/tutorials/-/knowledge_base/tutorials).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
-an app, apps have metadata such as names, descriptions, versions, and other
+an app, apps have meta-data such as names, descriptions, versions, and other
 ancillary information used to describe and track the app throughout its
-lifecycle.
+life cycle.
 
 Much like standard Liferay plugins, Liferay apps are also *hot-deployable*. On
-downloading an app from the Marketplace, you find that it is a special file type
-with a `.lpkg` extension. This file can be dropped into Liferay's hot-deploy
-folder (`liferay-portal-[version]/deploy`), like any other plugin, to deploy it
-into that running instance of Liferay Portal.
+downloading an app from the Marketplace, you'll find that it is a special file
+type with a `.lpkg` extension. This file can be dropped into Liferay's
+hot-deploy folder (`liferay-portal-[version]/deploy`) like any other plugin, to
+deploy it into that running instance of Liferay Portal.
 
-As an app developer, you're not required to create the actual Liferay app files.
+As an app developer, you're not required to create the `.lpkg` files.
 Instead, your app's individual plugins (`.war` files) are uploaded as part of
 the publication process, along with information (name, description, version,
-icon, etc) that identifies the app. The publication process is described in
+icon, etc.) that identifies the app. The publication process is described in
 detail later.
 
 ## What is a Version?
 
-The concept of versioning is well known in software, and it is no different
+The concept of versions is well known in software, and it is no different
 here. A version of an app represents the functionality of the app at a given
 point in time. When you first create an app, you give it an initial version
 (e.g., `1.0`). On updating the app, you increment its version (e.g., from `1.0`
-to `1.1`) and you upload new files representing that version of the app. In some
+to `1.1`), and you upload new files representing that version of the app. In some
 cases, you may want to specify additional qualifiers in order to convey a
 special meaning. For example, you may declare that the version of your app is
 always in x.y.z format (where you've clearly defined the significance of each x,
-y, and z). Liferay Portal versions and official Liferay app versions, resemble
-this format.
+y, and z). Liferay Portal versions and official Liferay app versions use this
+format.
 
 In any case, you have complete freedom in how you wish to assign version
 designators to your app. It is highly recommended that you stick to a well known
@@ -71,7 +71,7 @@ as files that make up your app.
 
 ## How Do Apps Relate to Users and Companies?
 
-When publishing an app, it is possible to publish it *on behalf of* yourself (an
+When publishing an app, it is possible to publish it on behalf of yourself (an
 individual) or a *company* with which you are associated. The selection you make
 determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, portal administrator, and company, and the ramifications
@@ -92,7 +92,7 @@ and creating
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
 
-- *Target the Java 6 JRE*: Your app's byte code must be compatible with Java 6
+- *Target the Java 6 JRE*: Your app's bytecode must be compatible with Java 6
   (i.e., Java 1.6). Liferay's Plugins SDK already targets Java 6 via the
   `build.properties` setting `ant.build.javac.target=1.6`; so don't override
   this setting. Your app will be rejected if its byte code is not compatible
@@ -103,19 +103,19 @@ keep in mind:
     - WAR file names must not contain any commas.
     - WAR file names must conform to the following naming convention:
     
-      *context_name*`-` *plugin_type* `-A.B.C.D.war`
+      *context_name*`-`*plugin_type*`-A.B.C.D.war`
 
       Where:
 
-    - *context_name* - Alpha-numeric (including `-` and `_`) short name of
+    - *context_name*: Alpha-numeric (including `-` and `_`) short name of
       your app.  This name is used as the deployment context, and must not
       duplicate any other app's context (you'll be warned if you use a
       context name of any other app on the Marketplace).
 
-    - *plugin_type* - one of the following: `hook`, `layouttpl`,
+    - *plugin_type*: one of the following: `hook`, `layouttpl`,
       `portlet`, `theme`, or `web`.
 
-    - `A.B.C.D` - The 4 digit version of your WAR file.  4 digits must
+    - `A.B.C.D`: The 4 digit version of your WAR file.  4 digits must
        be used.
 
       Example: `myapp-portlet-1.0.0.0.war`
@@ -149,7 +149,7 @@ keep in mind:
 ---
 
 Now that you've learned the packaging and deployment requirements for your app,
-let's consider the versions of Liferay you're targetting for your app and how to
+let's consider the versions of Liferay you're targeting for your app and how to
 prepare your app for them. 
 
 ## Things You Need Before You Can Publish
@@ -170,14 +170,14 @@ family, so your users can rest assured that your app will work with the minor
 release that you specify, along with all future maintenance releases of that
 minor release. 
 
-Next, think of a good name and description of your app, along with a versioning
+Next, think of a good name and description of your app, along with the version
 scheme you wish to use. Take some screenshots, design an icon, create web sites
 for your app (if they do not already exist), and have a support plan in place.
 
 ## Image and Naming Requirements
 
 **Icons** for your app *must be* exactly 90 pixels in both height and width and
-must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb. Animated
+must be in PNG, JPG, or GIF format. The image size cannot exceed 512KB. Animated
 images are prohibited.
 
 **Screenshots** for your app *must not exceed* 1080 pixels in width x 678 pixels
@@ -188,11 +188,11 @@ it is preferable if they are named sequentially, for example
 `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
 
 **Titles of Apps**: In some views with Marketplace, titles of applications
-longer than 18 characters will be shortened with ellipsis. In the Marketplace,
+longer than 18 characters are shortened using an ellipsis. In the Marketplace,
 titles *must not be* longer than 50 characters.
 
 **Description, Tags, Websites and Version Numbers**: Descriptions, web sites and
-version numbers are to be as reflective to the product as possible. Please do
+version numbers are to be as reflective of the product as possible. Please do
 not use misleading names, information, or icons. A tags suggestion tool has been
 provided to aid with tagging your asset. Descriptions should be as concise as
 possible. Ensure your icons, images, descriptions, and tags are free of
@@ -204,7 +204,7 @@ publishing apps.
 
 ## What Kind of Validations Are Performed by Liferay?
 
-Liferay ensures that apps meet a minimum set of requirements, by performing the
+Liferay ensures that apps meet a minimum set of requirements by performing the
 following activities:
 
 - Running basic anti-virus checks
@@ -230,11 +230,11 @@ Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 or
 later. That's not to say that they can't work with prior versions. However, only
 Liferay 6.1 and later versions provide support for installing apps directly from
 the Marketplace and provide safeguards against malicious apps. If you wish to
-use an app for an earlier version, consult the documentation for that app, as it
-may or may not be supported on earlier versions of Liferay.
+use an app with an earlier version of Liferay, consult the documentation for
+that app, as it may or may not be supported.
 
-Read the section below for details on how to specify the versions of Liferay
-your app works with. 
+Read the section below for details on how to specify support for specific
+versions of Liferay. 
 
 ---
 
