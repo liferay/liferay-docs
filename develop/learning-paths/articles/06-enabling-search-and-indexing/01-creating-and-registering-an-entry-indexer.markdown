@@ -254,12 +254,46 @@ to use the appropriate method for adding fields to be indexed. E.g., use
 `document.addDate` to add a date field to the document, use `document.addText`
 to add a text field to the document, etc.
 
-$$$+
++$$$
+
+**Note:** By default, only three document fields are searched by Liferay's
+`LuceneIndexerSearcher`: "content", "description", and "title". If you want
+other fields to be searched, you can add a custom facet to your `SearchContext`.
+Please see the [Faceted Search in Liferay]() tutorial for more details.
 
 $$$
 
-Note that `doReindex` is overloaded and you need to provide implementations for
-each method.
+`doGetSummary` must also be implemented. It's easy to implement since you can
+call the `createSummary` method of `BaseIndexer`. You also limit the maximum
+size of the summary content using `summary.setMaxContentLength` method since the
+maximum content length is not set by the `Summary` constructor.
+
+`doReindex` is overloaded and you need to provide implementations for each
+overloaded method. The first `doReindex` method takes a single object argument.
+You cast it to a guestbook entry and then retrieve Lucene document corresponding
+to the entry using the `getDocument` method of `BaseIndexer` which takes an
+object argument. Then you invoke the `updateDocument` method of
+`SearchEngineUtil` to update (reindex) the document.
+
+The second `doReindex` method takes a `className` string argument and a
+`classPK` long argument. To implement this method, you retrieve the guestbook
+entry corresponding to the primary key by calling the `getEntry` method of
+`EntryLocalServiceUtil`, passing in the `classPK` parameter. Once you've
+retrieved the guestbook entry, you can invoke the first `doReindex` method that
+you implemented, passing the entry as a parameter.
+
+The third `doReindex` method takes an array of strings, `ids`, as an argument.
+`ids` is a string array so you need to convert individual IDs from strings to
+longs. You retrieve the `companyId` from the first ID and pass it as an argument
+to the `reindexEntries` helper method. You use an actionable dynamic query in
+the `reindexEntries` helper method to retrieve all the guestbook entries in the
+specified company. Each entry's Lucene document is added to a collection.
+Finally, you call the `updateDocuments` method of `SearchEngineUtil` to update
+(reindex) all the documents.
+
+The last method you have to implement is the `getPortletId` method that takes a
+`SearchContext` parameter. The portlet ID is always `guestbook-portlet`, so you
+just return `PORTLET_ID`.
 
 ## Registering an Entry Indexer
 

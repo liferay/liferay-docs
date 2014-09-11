@@ -18,8 +18,9 @@ other benefits. In a later learning path, you'll asset-enable both guestbook
 entries and guestbooks themselves. For performance reasons, Liferay's Asset
 Publisher portlet queries for assets to display via search indexes instead of
 via database queries. In order to fully asset-enable an entity, it must have an
-indexer. You'll create a guestbook indexer in this learning path since it's a
-prerequisite for asset-enabling guestbooks.
+indexer. In this learning path, you'll create a guestbook indexer and update the
+guestbook service layer to use it since it's a prerequisite for asset-enabling
+guestbooks.
 
 ![Figure 1: You'll add a search bar to the Guestbook portlet so that users can search for guestbook entries. If a guestbook entry's message or name matches the search query, it's displayed in the search results.](../../images/guestbook-portlet-search.png)
 
