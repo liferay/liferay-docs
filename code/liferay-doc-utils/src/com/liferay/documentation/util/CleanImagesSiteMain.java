@@ -12,34 +12,34 @@ public class CleanImagesSiteMain {
 		System.out.println("Start checking for unused images ...");
 
 		// 1. Store the list of the target directory's files (really
-		// directories) in an array (named files in Jesse's code).
+		// directories) in an array.
 
 		String docDir = args[0];
 
-		File artDir = new File("../" + docDir + "/articles");
+		File articleDir = new File("../" + docDir + "/articles");
 
-		File[] artDirs = artDir.listFiles();
+		File[] articleDirs = articleDir.listFiles();
 
 		// 2. Loop through the array, and store the name of each directory in a
 		// File Array.
 
 		ArrayList<String> imageNames = new ArrayList<String>();
 
-		for (File file : artDirs) {
-			if (file.isDirectory()) {
+		for (File topicDir : articleDirs) {
+			if (topicDir.isDirectory()) {
 				
-				File[] files = file.listFiles();
+				File[] topicDirs = topicDir.listFiles();
 				
-				System.out.println("checking" + file.getPath());
+				System.out.println("checking " + topicDir.getPath());
 
-				// 3. This abominable code should get me the image names into an
-				// array (not surprisingly, named imageNames, instantiated
+				// 3. This gets me the image names into an
+				// array list (not surprisingly, named imageNames, instantiated
 				// above). It extracts the imageNames from line using a private static
 				// method, defined below the Main method.
 
-				for (File mkdFile : files) {
+				for (File mkdFile : topicDirs) {
 					
-					System.out.println(mkdFile.getPath());
+					System.out.println(" " + mkdFile.getName());
 					if (!mkdFile.getName().endsWith("markdown")) {
 						continue;
 					}
@@ -55,11 +55,11 @@ public class CleanImagesSiteMain {
 					in.close();
 				}
 			}
-			// 4. For each directory, loop through all the files
-			// (printing out which files are being checked), and store the
-			// imageNames.
-
 		}
+		// 4. Save the image files (in the images directory of the docDir) in an
+		// array so we can check the imageNames array against them. Delete
+		// any imageFile that is not found in the imageNames array. 
+		
 		File imagesDir = new File("../" + docDir + "/images");
 		File[] imageFiles = imagesDir.listFiles();
 
@@ -72,6 +72,9 @@ public class CleanImagesSiteMain {
 		}
 	}
 
+	// 5. Below is the method we're using to extract the image Name from the line
+	// containing image references in the markdown file.
+	
 	private static String extractImageName(String line) {
 
 		String imageName = line.substring(
@@ -79,3 +82,4 @@ public class CleanImagesSiteMain {
 		return imageName;
 	}
 }
+

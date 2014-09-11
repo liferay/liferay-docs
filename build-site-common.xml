@@ -80,7 +80,17 @@
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
-
+    
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles">
+			<java
+				classname="com.liferay.documentation.util.CleanImagesSiteMain"
+				classpathref="project.classpath"
+				failonerror="true"
+				fork="true"
+			>
+				<arg value="${doc.dir}"/>
+			</java>
+	</target>
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
