@@ -1,6 +1,6 @@
 # Tracking App Performance [](id=tracking-app-performance)
 
-One of the main reasons for developing and publishing apps into the Marketplace
+One of the main reasons for developing and publishing apps on the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
 the developer of your app, to get detailed reports about the number of views,
 downloads, and purchases of your app(s). To access these metrics, navigate
