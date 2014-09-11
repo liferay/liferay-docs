@@ -22,15 +22,15 @@ Under the hood, Liferay uses Lucene, a Java search library, to implement its
 search and indexing functionality. Lucene is a Java search library which works
 by converting searchable entities into *documents*. Lucene documents are not
 documents in the ordinary English sense of the word. Rather, they are Lucene
-constructs that correspond to searchable entities. After we implement an indexer
-for guestbook entries, a document will be created for each guestbook entry. When
-you implement the guestbook entry indexer, you'll specify which guestbook entry
-fields should be added to each guestbook entry document. All the guestbook entry
-documents are added to an index. When a Lucene index is searched, a *hits*
-object is returned that contains pointers to the documents that match the search
-query. Searching for guestbook entries via an index is faster than searching for
-entities directly since a direct search requires database queries that an index
-search avoids.
+constructs that correspond to searchable entities. After you implement an
+indexer for guestbook entries, a document will be created for each guestbook
+entry. When you implement the guestbook entry indexer, you'll specify which
+guestbook entry fields should be added to each guestbook entry document. All the
+guestbook entry documents are added to an index. When a Lucene index is
+searched, a *hits* object is returned that contains pointers to the documents
+that match the search query. Searching for guestbook entries via an index is
+faster than searching for entities directly since a direct search requires
+database queries that an index search avoids.
 
 ## Creating an Entry Indexer
 
@@ -211,8 +211,8 @@ when returning search results. Without this call, the indexer would return *all*
 guestbook entries that match a search query, regardless of the guestbook entry
 permissions.
 
-Next, since we're extending the `BaseIndexer` abstract class which, in turn,
-implements the `Indexer` interface, we need to override or provide
+Next, since you're extending the `BaseIndexer` abstract class which, in turn,
+implements the `Indexer` interface, you need to override or provide
 implementations for the following methods:
 
 - `public String[] getClassNames()`
@@ -297,4 +297,15 @@ just return `PORTLET_ID`.
 
 ## Registering an Entry Indexer
 
+Now that you've created an entry indexer, you need to register it with the
+Guestbook portlet in `liferay-portlet.xml`. Add the following line to your
+guestbook-portlet project's `docroot/WEB-INF/liferay-portlet.xml` file inside of
+the `<portlet>` element for the Guestbook portlet, after the
+`<icon>/icon.png</icon>` element:
 
+    <indexer-class>com.liferay.docs.guestbook.search.EntryIndexer</indexer-class>
+
+Liferay reads `liferay-portlet.xml` at deploy time. When it finds the
+`<indexer-class>` element, it registers the specified indexer with your portlet.
+Great! Now that you've registered your indexer, it's time to update the
+Guestbook Entry service layer to use the indexer.
