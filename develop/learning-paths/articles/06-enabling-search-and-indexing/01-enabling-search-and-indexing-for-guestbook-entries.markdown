@@ -3,18 +3,23 @@
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these three steps:
 
-1. Create a `GuestbookIndexer` class and register it in the guestbook-portlet
-   project's `liferay-portlet.xml` file.
+1. Create a `GuestbookIndexer` class that extends Liferay's `BaseIndexer`
+   abstract class.
 
-2. Update the `addEntry`, `updateEntry`, and `deleteEntry` methods of
+2. Register the `GuestbookIndexer` in the guestbook-portlet project's
+   `liferay-portlet.xml` file.
+
+3. Update the `addEntry`, `updateEntry`, and `deleteEntry` methods of
    `GuestbookLocalServiceImpl` to invoke the guestbook entry indexer.
 
-3. Update the Guestbook portlet's user interface to display a search bar into
-   which users can enter search terms and to display search results when the
+4. Update the Guestbook portlet's user interface to display a search bar into
+   which users can enter search terms and to display search results after the
    search terms are submitted.
 
-In this section, you'll follow the first step: creating and registering an
-indexer. You'll follow the last two steps in subsequent sections.
+In this section, you'll follow the first three steps: creating an indexer,
+registering an indexer, and updating the service layer to invoke the indexer.
+You'll follow the last step, updating the Guestbook portlet's user interface, in
+the next section.
 
 ## Understanding Search and Indexing with Lucene
 
@@ -257,22 +262,22 @@ to add a text field to the document, etc.
 +$$$
 
 **Note:** By default, only three document fields are searched by Liferay's
-`LuceneIndexerSearcher`: "content", "description", and "title". If you want
-other fields to be searched, you can add a custom facet to your `SearchContext`.
+`LuceneIndexSearcher`: `content`, `description`, and `title`. If you want other
+fields to be searched, you can add a custom facet to your `SearchContext`.
 Please see the [Faceted Search in Liferay]() tutorial for more details.
 
 $$$
 
 `doGetSummary` must also be implemented. It's easy to implement since you can
 call the `createSummary` method of `BaseIndexer`. You also limit the maximum
-size of the summary content using `summary.setMaxContentLength` method since the
+size of the summary content using `summary.setMaxContentLength` since the
 maximum content length is not set by the `Summary` constructor.
 
 `doReindex` is overloaded and you need to provide implementations for each
 overloaded method. The first `doReindex` method takes a single object argument.
-You cast it to a guestbook entry and then retrieve Lucene document corresponding
-to the entry using the `getDocument` method of `BaseIndexer` which takes an
-object argument. Then you invoke the `updateDocument` method of
+You cast it to a guestbook entry and then retrieve the Lucene document
+corresponding to the entry using the `getDocument` method of `BaseIndexer` which
+takes an object argument. Then you invoke the `updateDocument` method of
 `SearchEngineUtil` to update (reindex) the document.
 
 The second `doReindex` method takes a `className` string argument and a
@@ -288,8 +293,8 @@ longs. You retrieve the `companyId` from the first ID and pass it as an argument
 to the `reindexEntries` helper method. You use an actionable dynamic query in
 the `reindexEntries` helper method to retrieve all the guestbook entries in the
 specified company. Each entry's Lucene document is added to a collection.
-Finally, you call the `updateDocuments` method of `SearchEngineUtil` to update
-(reindex) all the documents.
+Finally, you call the `updateDocuments` method of `SearchEngineUtil`, passing
+the document collection as an argument, to update (reindex) all the documents.
 
 The last method you have to implement is the `getPortletId` method that takes a
 `SearchContext` parameter. The portlet ID is always `guestbook-portlet`, so you
@@ -309,3 +314,5 @@ Liferay reads `liferay-portlet.xml` at deploy time. When it finds the
 `<indexer-class>` element, it registers the specified indexer with your portlet.
 Great! Now that you've registered your indexer, it's time to update the
 Guestbook Entry service layer to use the indexer.
+
+## Updating the 
