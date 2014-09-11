@@ -329,13 +329,14 @@ before the `return` statement:
 
     indexer.reindex(entry);
 
-Here, you're retrieving an instance of the `EntryIndexer` that you created
-earlier. How do you know that you're obtaining an instance of the correct
-indexer? Since you registered `EntryIndexer` in your guestbook-portlet project's
-`liferay-portlet.xml` file, `EntryIndexer` is associated with the
-guestbook-portlet. Furthermore, you're supplying `Entry.class` as an argument to
-the `IndexerRegistryUtil.nullSafeGetIndexer` method. Your `EntryIndexer` class
-has a `getClassNames` method which returns a string array containing
+Use *Ctrl-Shift-T* to organize imports. Here, you're retrieving an instance of
+the `EntryIndexer` that you created earlier. How do you know that you're
+obtaining an instance of the correct indexer? Since you registered
+`EntryIndexer` in your guestbook-portlet project's `liferay-portlet.xml` file,
+`EntryIndexer` is associated with the guestbook-portlet. Furthermore, you're
+supplying `Entry.class` as an argument to the
+`IndexerRegistryUtil.nullSafeGetIndexer` method. Your `EntryIndexer` class has a
+`getClassNames` method which returns a string array containing
 `Entry.class.getName()` as its only element. So
 `IndexerRegistryUtil.nullSafeGetIndexer(Entry.class)` unambiguously specifies
 your indexer.
