@@ -64,18 +64,15 @@
 
 	<liferay-ui:search-container-row
 		className="com.liferay.docs.guestbook.model.Entry"
-		keyProperty="entryId"
 		modelVar="searchEntry"
 	>
-		<liferay-ui:search-container-column-text
-			name="message"
-			value="<%= searchEntry.getMessage() %>"
-		/>
+		<liferay-ui:search-container-column-text property="message" />
 
-		<liferay-ui:search-container-column-text
-			name="name"
-			value="<%= searchEntry.getName() %>"
-		/>
+		<liferay-ui:search-container-column-text property="name" />
+		
+		<liferay-ui:search-container-column-jsp
+            path="/html/guestbook/guestbook_actions.jsp"
+            align="right" />
 	</liferay-ui:search-container-row>
 
 	<liferay-ui:search-iterator />
