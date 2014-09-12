@@ -10,7 +10,7 @@
 			<span class="guestbook_tab">
 				<h:outputText value=" " />
 			</span>
-			<ui:repeat value="#{guestbookModelBean.guestbooks}" var="guestbook">
+			<ui:repeat rendered="#{guestbookBackingBean.hasViewPermission}" value="#{guestbookModelBean.guestbooks}" var="guestbook">
 				<span class="#{(guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
 					<h:outputText rendered="#{guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
 					<h:commandLink action="#{guestbookBackingBean.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
@@ -24,10 +24,10 @@
 		<br />
 		
 		<br />
-			<h:commandButton action="#{guestbookBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
+			<h:commandButton action="#{guestbookBackingBean.add}" rendered="#{guestbookBackingBean.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
 				<f:ajax render="@all" />
 			</h:commandButton>
-			<h:commandButton action="#{entryBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
+			<h:commandButton action="#{entryBackingBean.add}" rendered="#{entryBackingBean.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
 				<f:ajax render="@all" />
 			</h:commandButton>
 		<br />

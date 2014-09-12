@@ -29,6 +29,9 @@ import com.liferay.faces.portal.context.LiferayFacesContext;
 @ManagedBean
 @RequestScoped
 public class GuestbookBackingBean extends AbstractBackingBean {
+
+	private Boolean hasAddPermission;
+	private Boolean hasViewPermission;
 	
 	public void add() {
 		Guestbook guestbook = GuestbookUtil.create(0L);
@@ -65,6 +68,40 @@ public class GuestbookBackingBean extends AbstractBackingBean {
 	public void edit(Guestbook guestbook) {
 		guestbookModelBean.setSelectedGuestbook(guestbook);
 		viewBean.guestbook();
+	}
+	
+	public Boolean getHasAddPermission() {
+
+		if (hasAddPermission == null) {
+			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+			long scopeGroupId = liferayFacesContext.getScopeGroupId();
+			hasAddPermission = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(
+					scopeGroupId, "com.liferay.docs.guestbook.model", scopeGroupId, "ADD_GUESTBOOK"
+					);
+		}
+
+		return hasAddPermission;
+	}
+	
+	public void setHasAddPermission(Boolean hasAddPermission) {
+		this.hasAddPermission = hasAddPermission;
+	}
+	
+	public Boolean getHasViewPermission() {
+
+		if (hasViewPermission == null) {
+			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+			long scopeGroupId = liferayFacesContext.getScopeGroupId();
+			hasViewPermission = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(
+					scopeGroupId, "com.liferay.docs.guestbook.model.Guestbook", scopeGroupId, "VIEW"
+					);
+		}
+
+		return hasViewPermission;
+	}
+	
+	public void setHasViewPermission(Boolean hasViewPermission) {
+		this.hasViewPermission = hasViewPermission;
 	}
 
 	public void save() {

@@ -21,6 +21,8 @@ import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
 import com.liferay.docs.guestbook.service.persistence.EntryUtil;
 import com.liferay.faces.portal.context.LiferayFacesContext;
 
+import java.io.IOException;
+
 
 /**
  * @author  Vernon Singleton
@@ -28,6 +30,8 @@ import com.liferay.faces.portal.context.LiferayFacesContext;
 @ManagedBean
 @RequestScoped
 public class EntryBackingBean extends AbstractBackingBean {
+	
+	private Boolean hasAddPermission;
 
 	public void add() {
 		Entry entry = EntryUtil.create(0L);
@@ -56,6 +60,23 @@ public class EntryBackingBean extends AbstractBackingBean {
 	public void edit(Entry entry) {
 		guestbookModelBean.setSelectedEntry(entry);
 		viewBean.entry();
+	}
+	
+	public Boolean getHasAddPermission() {
+
+		if (hasAddPermission == null) {
+			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+			long scopeGroupId = liferayFacesContext.getScopeGroupId();
+			hasAddPermission = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(
+					scopeGroupId, "com.liferay.docs.guestbook.model", scopeGroupId, "ADD_ENTRY"
+					);
+		}
+
+		return hasAddPermission;
+	}
+	
+	public void setHasAddPermission(Boolean hasAddPermission) {
+		this.hasAddPermission = hasAddPermission;
 	}
 
 	public void save() {
