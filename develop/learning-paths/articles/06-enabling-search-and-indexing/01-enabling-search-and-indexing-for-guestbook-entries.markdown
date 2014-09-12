@@ -315,4 +315,71 @@ Liferay reads `liferay-portlet.xml` at deploy time. When it finds the
 Great! Now that you've registered your indexer, it's time to update the
 Guestbook Entry service layer to use the indexer.
 
-## Updating the 
+## Handling Indexing in the Entry Service Layer
+
+Whenever a guestbook entry is added, updated, or deleted, the guestbook entry
+index should also be updated. To accomplish this, you'll update each of the
+`addEntry`, `updateEntry`, and `deleteEntry` service methods for guestbook
+entries. Open `EntryLocalServiceImpl` and add the following lines to the
+`addEntry` method, after the call to `resourceLocalService.addResources` but
+before the `return` statement:
+
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+                    Entry.class);
+
+    indexer.reindex(entry);
+
+Use *Ctrl-Shift-T* to organize imports. Here, you're retrieving an instance of
+the `EntryIndexer` that you created earlier. How do you know that you're
+obtaining an instance of the correct indexer? Since you registered
+`EntryIndexer` in your guestbook-portlet project's `liferay-portlet.xml` file,
+`EntryIndexer` is associated with the guestbook-portlet. Furthermore, you're
+supplying `Entry.class` as an argument to the
+`IndexerRegistryUtil.nullSafeGetIndexer` method. Your `EntryIndexer` class has a
+`getClassNames` method which returns a string array containing
+`Entry.class.getName()` as its only element. So
+`IndexerRegistryUtil.nullSafeGetIndexer(Entry.class)` unambiguously specifies
+your indexer.
+
+Why do you call `IndexerRegistryUtil.nullSafeGetIndexer` instead of
+`IndexerRegistryUtil.getIndexer`? `IndexerRegistryUtil.nullSafeGetIndexer`
+returns a dummy indexer if no indexer matching the `Entry.class` argument could
+be found. Returning a dummy indexer is safer than returning `null` since
+returning `null` would throw exceptions that could render your portlet unusable.
+
+Once you've obtained the correct indexer, calling `indexer.reindex(entry)`
+updates the document in the index that corresponds to the updated guestbook
+entry. Note that the `indexer.reindex(entry)` call occurs after the call to
+`entryPersistence.update(entry)` since you want all of the entry's fields to
+have been updated before the entry is indexed (or reindexed).
+
+Next, add the following lines to the `updateEntry` method, after the call to
+`resourceLocalServiceUtil.updateResources` but before the `return` statement.
+
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+                    Entry.class);
+
+    indexer.reindex(entry);
+
+These are the same two lines that you added to `addEntry` and the rationale for
+adding them is the same.
+
+Finally, add the following lines to `deleteEntry`, after `entry =
+deleteEntry(entryId)` but before the `return` statement.
+
+
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+                    Entry.class);
+
+    indexer.delete(entry);
+
+Here, you get the `EntryIndexer` the same way as in the `addEntry` and
+`updateEntry` methods. The difference is that you want to remove the entry
+instead or indexing (or reindexing) it. So you call `indexer.delete(entry)`
+instead of `indexer.reindex(entry)`.
+
+That's all there is to updating your service layer to handle indexing! Since you
+didn't add or remove any methods in `EntryLocalServiceImpl` or update any
+method signatures, you don't need to re-run Service Builder. Your final step to
+implementing search for Guestbook entries in the Guestbook portlet is to update
+the user interface.
