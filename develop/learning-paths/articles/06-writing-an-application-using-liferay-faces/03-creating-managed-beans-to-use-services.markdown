@@ -7,11 +7,13 @@ your users.
 You may be wondering what a managed bean is and what it accomplishes in a JSF
 portlet. 
 
-Managed beans are Java beans that are managed by the JSF framework. Therefore,
-managed beans are responsible for storing the state of a web page, and JSF
+Managed beans are Java beans that are managed by the JSF framework. For example,
+*Model* managed beans are typically annotated with `@ViewScoped` and store
+stateful model data. EL expressions are used to bind declarative XHTML to model
+bean properties. *Backing* managed beans are typically annotated with
+`@RequestScoped` and are responsible for handling actions and listeners. JSF
 *manages* these beans by creating and removing the bean object from the server.
-Managed beans can also be associated with components used in a particular page
-displayed by a JSF portlet. 
+You'll learn about these annotations and types later on. 
 
 There are many Managed Bean types that you can use for a JSF portlet, but you'll
 learn about the most popular ones and create them for your guestbook portlet. 
@@ -25,24 +27,24 @@ Application](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/wri
 learning path to learn about it, if you're interested. Below is a list of some
 commonly used managed beans and their descriptions: 
 
-- **Backing Managed Bean:** This type of managed bean serves the *View* concern
-of the MVC design pattern. Backing beans support UI logic, and have a one to one
-relationship with a JSF view. They typically have properties associated with
-getters/setters, but these properties are of the view, not the underlying data
-model. 
+- **View/Backing Managed Bean:** This type of managed bean serves the *View*
+concern of the MVC design pattern. Backing beans support UI logic, and have a
+one to one relationship with a JSF view. They typically have properties
+associated with getters/setters, but these properties are of the view, not the
+underlying data model. 
 
-- **View (Controller) Managed Bean:** This type of managed bean serves the
-*Controller* concern of the MVC design pattern. This bean executes business
-logic and returns a navigation outcome to the JSF navigation handler. View
-managed beans typically have JSF action methods. For the sake of this learning
-path, the controller bean will be referred to as the *view* bean, since it
-controls a portlet's views (pages). 
+- **Controller Managed Bean:** This type of managed bean serves the *Controller*
+concern of the MVC design pattern. This bean executes business logic and returns
+a navigation outcome to the JSF navigation handler. View managed beans typically
+have JSF action methods. For the sake of this learning path, the controller bean
+will be referred to as the *view* bean, since it controls a portlet's views
+(pages). 
 
 - **Model Managed Bean:** This type of managed bean serves the *Model* concern
 of the MVC design pattern. The JSF model bean uses the getter/setter design
 pattern, which encapsulates properties. The most common usage for a model bean
-is to be a database entity, which is why it's sometimes referred to as a data
-model. 
+is to have a property for a database entity POJO, such as
+`getSelectedGuestbook()`. 
 
 You will use all three of these bean types in your guestbook portlet. Now that
 you have some background information on popular JSF managed beans, you'll begin

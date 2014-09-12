@@ -159,7 +159,7 @@ Follow the steps below to create the `master` view for your guestbook portlet.
         </f:view>
 
     The
-    [`<f:view>`](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_view.html)
+    [`<f:view>`](https://javaserverfaces.java.net/nonav/docs/2.2/vdldocs/facelets/f/view.html)
     tag is the container for all JSF component tags used on your guestbook page.
     You've specified the libraries you'll use in this container. 
 
@@ -204,9 +204,8 @@ Follow the steps below to create the `master` view for your guestbook portlet.
     [here](http://en.wikipedia.org/wiki/Ajax_\(programming\)). In summary, it
     provides asynchronous sending and receiving of data to/from a server. This
     allows for much quicker response time in your portlet. You can also learn
-    more about the `<f:ajax>` tag specifically, by visiting
-    [this](http://www.jsftoolbox.com/documentation/help/12-TagReference/core/f_ajax.html)
-    site. 
+    more about the `<f:ajax>` tag specifically by visiting its
+    [VDL docs](https://javaserverfaces.java.net/nonav/docs/2.2/vdldocs/facelets/f/ajax.html). 
 
 4. Now you'll add the buttons that provide access to your `guestbook` and
    `entry` views, which will be created in later sections. Add the following

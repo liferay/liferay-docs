@@ -6,9 +6,7 @@ In particular, you'll develop a guestbook application which users can use to add
 messages to a page. When you're finished, the final guestbook application will
 look like this: 
 
-![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../images/my-first-jsf-app.png)
-
-<!-- Update Figure 1 with an updated JSF guestbook. -Cody -->
+![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../images/final-jsf-guestbook.png)
 
 You may be wondering how and why JSF is so easy to deploy to Liferay. Isn't JSF
 a separate technology? JSF portlets use *Liferay Faces Bridge*, which supports
@@ -116,6 +114,17 @@ by default when creating a Liferay portlet through IDE/Developer Studio.
 
 ![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
 
+---
+
+![note](../../images/01-tip.png) **Note:** Liferay Faces has a specific
+versioning scheme it follows to keep releases concise and separate from other
+releases. A concise versioning scheme also makes it easier to differentiate
+between a Liferay Faces version's compatibility with other platforms. To learn
+more, visit the [Understanding the Liferay Faces Version Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-faces-version-scheme)
+tutorial. 
+
+---
+
 Remember reading briefly about how the Liferay Faces Bridge is used to keep JSF
 portlets compatible with Liferay Portal? You'll dive into the bridge and its
 usage next. 
@@ -162,12 +171,9 @@ Portlet Bridge 2.0 ([JSR 329](http://www.jcp.org/en/jsr/detail?id=329)) EG. JSR
 
 After the [JSR 314](http://www.jcp.org/en/jsr/detail?id=314) EG released JSF 2.0
 in 2009 and JSF 2.1 in 2010, it became evident that a Portlet Bridge 3.0
-standard would be beneficial. At the time of this writing, the JCP has not
-formed such an EG. In the meantime, Liferay developed *Liferay Faces Bridge*,
-which targets Portlet 2.0 and JSF 1.2/2.1/2.2. 
-
-<!-- The "At the time of this writing ..." text should probably be reworded.
-Need to ask Neil if this can be updated. -Cody --> 
+standard would be beneficial. Currently, the JCP has not formed such an EG. In
+the meantime, Liferay developed *Liferay Faces Bridge*, which targets Portlet
+2.0 and JSF 1.2/2.1/2.2. 
 
 Liferay Faces Bridge is an implementation of the JSR 329 Portlet Bridge
 Standard. It also contains innovative features that make it possible to leverage
@@ -237,7 +243,7 @@ the *JSF standard*,
 selected for the JSF guestbook portlet). 
 
 Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
-their portlet WAR projects in order to utilize Alloy UI in a way that is
+their portlet WAR projects in order to utilize AlloyUI in a way that is
 consistent with JSF development. Since you selected the Liferay Faces Alloy JSF
 Component Suite during your portlet's setup, the JAR is included in your
 portlet project using Ivy, the same way that was described in the previous
@@ -254,15 +260,18 @@ example, a brief list of some of the supported `aui:` tags are listed below:
 - Composite Components: `aui-cc:button`, `aui-cc:input`, `aui-cc:message`,
 `aui-cc:messages`, `aui-cc:select`
 
-<!-- When JSF 2.2 is released, plans are to combine the `aui:` and `aui-cc:`
-namespaces into a single `aui:` namespace. Update when this is completed. -Cody
+<!-- When new Liferay Faces is released, the `aui:` and `aui-cc:` components
+will be replaced by `alloy:` components. Update when this is completed. -Cody
 -->
 
-If you want to utilize Liferay's Alloy UI technology based on YUI3, you'll need
+If you want to utilize Liferay's AlloyUI technology based on YUI3, you'll need
 to include the Liferay Faces Alloy JAR in your JSF portlet project. For your JSF
 guestbook, you have Liferay Faces Alloy preconfigured in your project, so you're
 automatically able to use AUI tags. Next, you'll explore what Liferay Faces
 Portal accomplishes for your JSF portlet. 
+
+<!-- The first sentence of the above paragraph will only be true once the new
+version of Liferay Faces is released (very soon). -Cody -->
 
 ## Understanding Liferay Faces Portal
 
@@ -283,23 +292,13 @@ learn more about the `LiferayFacesContext` by visiting its dedicated
 - Facelet Composite Components: Provides a set of JSF equivalents for
 `liferay-ui:captcha`, `liferay-ui:icon`, `liferay-ui:input-editor`, etc. 
 
+<!-- The `liferay-ui` tags are being deprecated on the next release of Liferay
+Faces and will be replaced by `portal:` components. Make sure to replaces the
+above bullet once it is released. -Cody -->
+
 - Expression Language: Adds a set of EL keywords such as `liferay` for getting
 Liferay-specific info, and `i18n` for integration with out-of-the-box Liferay
 internationalized messages. 
-
-With the understanding of the provided JSF-related JARs under your belt, you now
-have a deeper understanding of how useful Liferay Faces is for developers that
-want to deploy JSF portlets to Liferay Portal. 
-
-## Understanding the Liferay Faces Version Scheme
-
-Liferay Faces has a specific versioning scheme it follows to keep releases
-concise and separate from other releases. A concise versioning scheme also makes
-it easier to differentiate between a Liferay Faces version's compatibility with
-other platforms. To learn more, visit the [Understanding the Liferay Faces
-Version
-Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-faces-version-scheme)
-tutorial. 
 
 Now that you have the fundamentals of using JSF portlets in Liferay, you'll move
 on to creating your JSF guestbook portlet. First, you'll generate a persistence
