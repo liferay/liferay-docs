@@ -11,8 +11,6 @@
 
 <aui:form action="<%= searchURL %>" method="get" name="fm">
     <liferay-portlet:renderURLParams varImpl="searchURL" />
-    
-    <aui:input name="groupId" type="hidden" value="<%= String.valueOf(scopeGroupId) %>" />
 
     <div class="search-form">
             <span class="aui-search-bar">
