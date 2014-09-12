@@ -253,6 +253,38 @@ Follow the steps below to create the `master` view for your guestbook portlet.
     table is created displaying inputted entries for the currently selected
     guestbook. 
 
+Your `master` view is complete! There is one last thing you'll need to do to
+make your view stylistically pleasing: styling. 
+
+The guestbook portlet should look professional, as many users will be looking at
+it for various events. Luckily, JSF portlets allow for CSS files, which help
+style the portlet. You'll need to add some styling to the guestbook tabs, as
+they are not very good looking, by default. 
+
+When you first created the guestbook portlet, a blank `docroot/css/main.css`
+file was created, by default. Add the following code to improve your guestbook
+tabs visually in your UI: 
+
+    .guestbook_tab,.guestbook_tab_active {
+        line-height: 20px;
+        padding: 8px 12px 3px 12px;
+        }
+
+    .guestbook_tab {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .guestbook_tab_active {
+        border-left: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        font-weight: bold;
+    }
+
 That's it! Your guestbook portlet's `master` view is complete. It displays your
 created guestbooks in interactive tabs, lists your guestbook entries in a data
 table, and gives you two buttons that navigate you to the `guestbook` and
