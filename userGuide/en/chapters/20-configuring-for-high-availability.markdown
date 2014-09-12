@@ -108,11 +108,14 @@ LCS roles, you can get your portal ready for LCS.
 
 ### Preconfiguring Your Portal for LCS
 
-If you're running Liferay 6.2, then you can skip this step. However, if you are 
-running Liferay 6.1 GA3, then there's a small preconfiguration step that you 
-need to take before using LCS--you need to update the `spring.configs` property 
-in your `portal-ext.properties` file. Add the following to your 
+If you're running Liferay 6.2, then you can skip this step. If, however, you are 
+running Liferay 6.1 GA3, then there's a small pre-configuration step that you 
+need to take before using LCS: you need to update the `spring.configs` property 
+in your `portal-ext.properties` file. Add the following configuration to your 
 `portal-ext.properties` file:
+
+<!-- From the configuration below, it's not clear what has been added. Can you
+describe what exactly you're asking the user to do here? -Rich -->
 
     spring.configs=\
         META-INF/base-spring.xml,\
@@ -168,7 +171,7 @@ running a Liferay EE bundle, then you already have the patching tool installed.
 If you're not running a bundle, then please see the user guide section on 
 [how to install the patching tool](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/patching-liferay-liferay-portal-6-2-user-guide-18-en). 
 Once you have the patching tool installed, there are a few steps you need to 
-take care of before LCS can use it. Note that the commands below apply to Linux, 
+complete before LCS can use it. Note that the commands below apply to Linux, 
 Unix, and Mac systems. If you're running Windows, simply drop the `.sh` from 
 each command that has it.
 
@@ -217,22 +220,22 @@ to the LCS website. Log in with your credentials and then click *Grant Access*.
 Next, you need to register your server with LCS by filling out the following 
 fields:
 
-1. Cloud Services Project: Choose your project from the dropdown menu. 
+1. Cloud Services Project: Choose your project from the menu. 
 
-2. Environment: Select an environment from the dropdown menu, or create a new 
-   one by clicking the *Add New Environment* button. An environment should be a 
-   logical group of servers. A group of development servers or a cluster are 
-   good examples of environments. If you elect to create a new environment, a 
-   popup asks you to enter its *Name*, *Location*, and *Description*.
+2. Environment: Select an environment from the menu or create a new one by
+   clicking the *Add New Environment* button. An environment should be a logical
+   group of servers. A group of development servers or a cluster are good examples
+   of environments. If you elect to create a new environment, a popup asks you to
+   enter its *Name*, *Location*, and *Description*.
    
     ![Figure 20.3: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
-   
+
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
 
 4. Server Location: This can be a city, location in an office building, or 
    anywhere else that lets you know where the server is physically located.
-   
+
 5. Server Description: Type in any description that you want to give your 
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
@@ -248,26 +251,25 @@ team for support.
 
 ![Figure 20.5: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
-Once a successful connection is established, some statistics 
-and links are displayed. Here's a description of what's displayed:
+Once a successful connection is established, some statistics and links are
+displayed. Here's a description of what's displayed:
 
 - Heartbeat Interval: The communication interval with LCS. For example, if this 
   value is `00:01:00`, then the portlet communicates with LCS once every minute.
 - Message Task Interval: The message interval with LCS. Messages received from 
   LCS let the portlet know about any available updates. 
-- Metrics Task Interval: The interval that server statistics and metrics are 
-  taken at.
-- Project: Clicking this link takes you to the project this server is registered 
-  with on LCS.
-- Environment: Clicking this link takes you to the environment this server is 
-  registered with on LCS.
+- Metrics Task Interval: The interval at which server statistics and metrics are 
+  taken.
+- Project: Clicking this link takes you to this server's registered project.
+- Environment: Clicking this link takes you to this server's registered
+  environment.
 - Server: Clicking this link takes you to the server on LCS.
 - Disconnect: Disconnects this Liferay instance from LCS.
 - Reset Credentials: Removes the authorizing account from registration with LCS. 
   It's important to note that your credentials are not human readable in the 
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
-  
+ 
 ![Figure 20.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Great! Now that you've registered your server with your LCS account, you can dig 
@@ -278,6 +280,8 @@ in to the features of LCS.
 
 pending instructions from Igor 
  -->
+
+<!-- Hopefully we'll get these instructions before publication. :-) -Rich -->
 
 ### Using LCS
 
@@ -290,9 +294,14 @@ and more.
 
 At this point, you might be wondering what information about your servers is 
 stored on the LCS servers. Great question! In order to offer the best service 
-possible, we store the following information about your servers on the LCS 
-servers: patches installed on each server, `portal.properties` (except sensitive 
-data), JVM metrics, portal and portlet metrics, and cache and server metrics.
+possible, we store the following information about your servers: patches
+installed on each server, `portal.properties` (except sensitive data), JVM
+metrics, portal and portlet metrics, and cache and server metrics.
+
+<!-- Sensitive data being database URLs, user names, and passwords? What about
+Documents & Media repository information? I think we should spell out exactly
+what sensitive data is *not* stored in order to give people peace of mind. -Rich
+--> 
 
 Now it's time to get to the heart of LCS--the *Dashboard*.
 
@@ -301,24 +310,31 @@ Now it's time to get to the heart of LCS--the *Dashboard*.
 The LCS Dashboard lets you view and manage your project, environments, and 
 servers. If you're not already at the Dashboard, click it near the upper 
 left-hand corner of your LCS site. Clicking *Dashboard* takes you to the 
-*project view*. From there, you can get to the *environment view*, and the 
-*server view*. Each of these views gives you a different look into certain 
+project view. From there, you can get to the environment view and the 
+server view. Each of these views gives you a different look into certain 
 aspects of your LCS project. You'll start with the project view.
 
 ##### Using the Project View
 
-You can get to the project view at any time by clicking the *Dashboard* tab 
+You can get to the project view at any time by clicking the Dashboard tab 
 near the upper left-hand corner of your LCS site. The project view provides you 
 with an overview of your LCS project, including fix packs, alerts, environments, 
 and servers. Fix packs are displayed prominently in a table on the middle of the 
-page. Note that the status, environment, server, and location is listed for each 
+page. Note that the status, environment, server, and location are listed for each 
 fix pack. If the fix pack is available, you can download it by clicking the 
-*Download* button to its right. Once a fix pack is finished downloading, an 
-alert appears in the *Alerts* table below the fix packs table, that tells you 
-the download is finished and to restart your server. Restarting your server 
-installs any downloaded fix packs. Note that you must start your server with 
-administrative privileges. This is because the patching tool agent requires 
+Download button to its right. Once a fix pack is finished downloading, an 
+alert appears in the Alerts table below the fix packs table. This notification
+tells you the download is finished and to restart your server. Restarting your
+server installs any downloaded fix packs. Note that you must start your server
+with administrative privileges. This is because the patching tool agent requires
 administrative access to install any patches.
+
+<!-- This is unclear. Administrative access to what? In fact, what is
+administrative access, as mentioned here? I assume you're talking about
+permissions at the operating system level, but beyond that, I'm not sure what
+permissions are needed exactly. Most people won't run their servers as root, as
+that's a bad practice, so they'll want to know exactly what permissions are
+necessary. -Rich -->
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -327,8 +343,8 @@ nodes--you don't have to handle each one individually.
 ![Figure 20.7: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 In addition to displaying fix pack messages, the Alerts table also displays 
-many other kinds of messages. For example, an alert will appear whenever a 
-server is offline. Since this is a very important message, it appears with a red 
+many other kinds of messages. For example, an alert appears whenever a 
+server is offline. Since this is an important message, it appears with a red 
 dot next to it. Other alerts appear when monitoring is unavailable, the patching 
 tool is unavailable, or other issues are detected.
 
@@ -355,8 +371,8 @@ the environment view. The environment view, as its name implies, gives you more
 information about an environment in your LCS project. As with the project view, 
 fix packs and alerts are displayed on the center of the screen. In fact, they 
 behave exactly the same here as they do in the project view. The only difference 
-is that they show fix packs and alerts for the environment, instead of the 
-project as a whole. Located above the fix packs, the *Environment Details* 
+is that they show fix packs and alerts for the environment instead of the 
+project as a whole. Located above the fix packs, the Environment Details 
 button lets you edit or delete the environment. To the left of the fix packs is 
 the list of servers in the environment. Clicking on one of the servers takes you 
 to the server view for that server.
@@ -366,15 +382,15 @@ to the server view for that server.
 ##### Using the Server View
 
 The server view provides you with detailed information about a server, including 
-statistics and performance metrics. You can get to the server view either by 
-clicking a server in the environment view, or by clicking a server in the fix 
-pack or alerts tables. Fix packs and alerts are the first thing 
-you see here, as the *Fix Packs Alerts* button is selected by default when you 
-enter server view. While the alerts table functions the same as it does in the 
-other views, the fix packs table behaves a bit differently. Fix packs are broken 
-down into those that are available for installation and those that are already 
-installed. You can access these through the *Available* and *Installed* tabs at 
-the top of the fix packs table. 
+statistics and performance metrics. You can get to the server view by clicking a
+server in the environment view or by clicking a server in the fix pack or alerts
+tables. Fix packs and alerts are the first thing you see here, as the Fix Packs
+Alerts button is selected by default when you enter server view. While the
+alerts table functions the same as it does in the other views, the fix packs
+table behaves a bit differently. Fix packs are broken down into those that are
+available for installation and those that are already installed. You can access
+these through the *Available* and *Installed* tabs at the top of the fix packs
+table. 
 
 ![Figure 20.9: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
 
@@ -394,18 +410,18 @@ statistics in the Portlet category are shown.
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
-number of runs, total time, and average time is listed for each garbage 
+number of runs, total time, and average time are listed for each garbage 
 collector item. The memory metrics are presented in a bar chart that shows the 
 usage of the Code Cache, PS Eden Space, PS Old Gen, PS Perm Gen, and PS Survivor 
 Space.
 
 ![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
-Server is the third category within the Application category. The Server 
-category shows additional information about how your server is running. For 
-example, a horizontal bar graph shows the number of current threads that are 
-running on your server. Similarly, horizontal bar graphs are used to represent 
-the JDBC connection pools.
+Server is the third category in the Application category. The Server category
+shows additional information about how your server is running. For example, a
+horizontal bar graph shows the number of current threads that are running on
+your server. Similarly, horizontal bar graphs are used to represent the JDBC
+connection pools.
 
 ![Figure 20.12: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
@@ -420,27 +436,54 @@ their assistance.
 
 ![Figure 20.13: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
 
-As you can see, the LCS Dashboard is a formidable tool that greatly simplifies 
+As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
+<!-- You had "the LCS Dashboard is a formidable tool...." That struck me as
+possibly close to what you wanted, but having a negative connotation, and indeed
+the dictionary definition has four definitions: 
+
+1.  causing fear, apprehension, or dread:
+a formidable opponent.
+2.  of discouraging or awesome strength, size, difficulty, etc.; intimidating:
+a formidable problem.
+3.  arousing feelings of awe or admiration because of grandeur, strength, etc.
+4.  of great strength; forceful; powerful:
+formidable opposition to the proposal.
+
+Synonyms
+1. dreadful, appalling, threatening, menacing, fearful, frightful, horrible.
+Antonyms
+1. pleasant.
+
+I'm sure you meant definition three, but I'm guessing many readers will assume
+the negative connotations of definitions one and two, as they're the more common
+definitions (which the synonyms list makes clear). For that reason, I changed
+"formidable" to "powerful." 
+
+Just 'splaining. :-)
+
+-Rich
+--> 
+
 #### Managing LCS Users in Your Project
 
 The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles, or invite others that 
+project. It's here that you can grant or revoke LCS roles or invite others that 
 aren't yet part of your project. To manage users, first click the *Users* icon 
-just below the *Dashboard* icon on the upper-left of your screen. You're 
+just below the Dashboard icon on the upper-left of your screen. You're 
 presented with a table of the users on your project. To the right of each is the 
-*Manage* button. Clicking *Manage* lets you assign or revoke LCS roles for that 
+Manage button. Clicking *Manage* lets you assign or revoke LCS roles for that 
 user.
 
 ![Figure 20.14: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
-To invite external users to your project, just click on the *Invite* button. The 
-*Invite External Users* popup lets you invite anyone with a valid email address. 
-You can also search for users of Liferay.com to invite. Once you've chosen who 
-to invite, the *Role* dropdown lets you preassign LCS roles in the event they 
+To invite external users to your project, click on the *Invite* button. The
+*Invite External Users* pop up lets you invite anyone with a valid email address.
+You can also search for users of Liferay.com to invite. Once you've chosen who
+to invite, the *Role* selection box lets you preassign LCS roles for when they
 accept your invitation.
 
 ![Figure 20.15: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
@@ -452,7 +495,9 @@ stop shop for monitoring the performance of your Liferay servers. Metrics like
 JVM performance, Liferay page and portlet load times, and number of current 
 threads give you an inside look at how your server is running. What's more is 
 that you can do all this collaboratively by inviting others to your project and 
-giving them specific roles in LCS. Next, you'll learn about Liferay clustering.
+giving them specific roles in LCS. 
+
+Next, you'll learn about Liferay clustering.
 
 ## Liferay Clustering [](id=liferay-clustering-liferay-portal-6-2-user-guide-20-en)
 
