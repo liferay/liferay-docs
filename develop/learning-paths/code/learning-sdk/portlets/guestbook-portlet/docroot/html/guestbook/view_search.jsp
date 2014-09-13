@@ -72,7 +72,6 @@
 
 	<liferay-ui:search-container-row
 		className="com.liferay.docs.guestbook.model.Entry"
-		modelVar="searchEntry"
 	>
 		<liferay-ui:search-container-column-text property="message" />
 
