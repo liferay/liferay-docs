@@ -101,11 +101,11 @@ Create a new file called `view_search.jsp` in your guestbook-portlet project's
         />
         
         <div class="search-form">
-                    <span class="aui-search-bar">
-                        <aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-entries" type="text" />
-                    
-                        <aui:button type="submit" value="search" />
-                    </span>
+            <span class="aui-search-bar">
+                <aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-entries" type="text" />
+            
+                <aui:button type="submit" value="search" />
+            </span>
         </div>
     </aui:form>
 
@@ -152,7 +152,6 @@ Create a new file called `view_search.jsp` in your guestbook-portlet project's
 
             <liferay-ui:search-container-row
                     className="com.liferay.docs.guestbook.model.Entry"
-                    modelVar="searchEntry"
             >
                     <liferay-ui:search-container-column-text property="message" />
 
@@ -214,4 +213,85 @@ Liferay MVC portlet. `searchURL` points to the current JSP: `view_search.jsp`.
 URLs are used in the AUI form that follows.
 
 This AUI form is identical to the one that you added to the Guestbook portlet's
-`view.jsp` except that this one contains a `liferay-ui:header>` tag. 
+`view.jsp` except that this one contains a `liferay-ui:header>` tag. The
+`<liferay-ui:header>` tag displays the *Back* icon next to the word "Search".
+Note how the `backURL` attribute uses the `viewURL` that you defined above. The
+result of the AUI form displays the search form and invokes the `searchURL` with
+the search query entered by the user added to the URL in the `keywords`
+parameter.
+
+After the AUI form comes a scriplet. In this scriptlet, you use the `keywords`
+URL parameter to actually run a search and retrieve the corresponding guestbook
+entries. To execute a search in Liferay, you need a `SearchContext` object.
+Liferay's `SearchContextFactory` allows you to create a `SearchContext` from the
+request object. You need to add the search query entered by the user to the
+`SearchContext`. This is done by the following line:
+
+    searchContext.setKeywords(keywords);
+
+The subsequent three lines specify details about pagination and how the search
+results should be displayed.
+
+Once your `SearchContext` has been prepared, you need to obtain an indexer to
+run a search. This is done by the following line:
+
+    Indexer indexer = IndexerRegistryUtil.getIndexer(Entry.class);
+
+Indexers in Liferay's indexer registry are stored in a map and can be retrieved
+by specifying the indexer's class or class name. After you've retrieved the
+guestbook entry indexer, you use it, along with your search context, to run a
+search. The search results are returned as a `Hits` object which contains
+pointers to documents that correspond to guestbook entries.
+
+    Hits hits = indexer.search(searchContext);
+
+In the last part of the scriptlet, you loop through the hit documents, retrieve
+the corresponding guestbook entries, and add them to a list. That's how easy it
+is to obtain search results! Your next task is to display the search results.
+
+To display the search results, you use the search container construct from
+Liferay's `<liferay-ui>` tag library. You've used the search container twice
+already in earlier learning paths: once in the Guestbook portlet's default view
+JSP and again in the Guestbook Admin portlet's default view JSP. This is the
+third time.
+
+You specify two attributes for the `<liferay-ui:search-container>` tag:
+`delta="10"` specifies that at most 10 entries can appear per page. The
+`emptyResultsMessage` attributes specifies the message that appears when there
+are no results. The `<liferay-ui:search-container>` tag contains three subtags:
+`<liferay-ui:search-container-results>`, `<liferay-ui:search-container-row>`,
+and `<liferay-ui:search-iterator>`. You have to specify the search results and
+the number of search results in the `results` and `total` attributes of the
+`<liferay-ui:search-container-results>` tag. This is easy since you stored the
+entries resulting from the search in the `entries` list. For the
+`<liferay-ui:search-container-row>`, you just have to specify the name of the
+class for which properties will displayed in each row. You use the `className`
+attribute for this. Inside of the `<liferay-ui:search-container-row>` tag, you
+specify the three columns to display: the guestbook entry's message, name, and
+the actions JSP. Finally, you use the `<liferay-ui:search-iterator>` tag to
+iterate through the search results and handle the pagination so the results are
+displayed properly.
+
+The last two elements on the `view_search.jsp` page are a scriplet and a
+declaration. The scriplet checks to see if the search query entered by the user
+is not null. If it's not null, it calls the
+`PortalUtil.addPortletBreadCrumbEntry` method to add the search query to the
+portlet breadcrumb. The breadcrumb looks like this:
+
+![Figure 2: You can customize the portlet breadcrumb so that it displays the search query entered by the user.](../../images/guestbook-portlet-search-breadcrumb.png)
+
+The declaration at the bottom of `view_search.jsp` declares a `Log` object for
+the JSP. You used this log in the `catch` clauses of the `try` clause that calls
+the `EntryLocalServiceUtil.getEntry` method to retrieve the guestbook entries.
+If this service call throws an exception, it's best to log the error so a server
+administrator can review the information to try to determine what went wrong.
+Liferay's convention is to declare custom logs for individual classes or JSPs at
+the bottom of the file.
+
+Good work! Your Guestbook portlet now supports search! In the next section,
+you'll implement back-end search and indexing support for guestbook entities
+themselves. You don't anticipate needing to search for guestbooks but you'll
+create a indexer for guestbooks so that they can take advantage of Liferay's
+asset framework. Liferay's asset framework provides sets of functionality that
+are common to different types of content such as blog posts, message board
+posts, wiki articles, etc.
