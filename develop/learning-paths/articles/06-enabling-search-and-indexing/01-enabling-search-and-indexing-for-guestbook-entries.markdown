@@ -3,14 +3,14 @@
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these three steps:
 
-1. Create a `GuestbookIndexer` class that extends Liferay's `BaseIndexer`
-   abstract class.
+1. Create an `EntryIndexer` class that extends Liferay's `BaseIndexer` abstract
+   class.
 
-2. Register the `GuestbookIndexer` in the guestbook-portlet project's
+2. Register the `EntryIndexer` in the guestbook-portlet project's
    `liferay-portlet.xml` file.
 
 3. Update the `addEntry`, `updateEntry`, and `deleteEntry` methods of
-   `GuestbookLocalServiceImpl` to invoke the guestbook entry indexer.
+   `EntryLocalServiceImpl` to invoke the guestbook entry indexer.
 
 4. Update the Guestbook portlet's user interface to display a search bar into
    which users can enter search terms and to display search results after the
