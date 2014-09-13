@@ -329,9 +329,9 @@ before the return statement:
 
     indexer.reindex(entry);
 
-Use *Ctrl-Shift-T* to organize imports. Here, you're retrieving an instance of
-the `EntryIndexer` that you created earlier. How do you know that you're
-obtaining an instance of the correct indexer? Since you registered
+Use *Ctrl-Shift-T* to add and organize imports. Here, you're retrieving an
+instance of the `EntryIndexer` that you created earlier. How do you know that
+you're obtaining an instance of the correct indexer? Since you registered
 `EntryIndexer` in your guestbook-portlet project's `liferay-portlet.xml` file,
 `EntryIndexer` is associated with the guestbook-portlet. Furthermore, you're
 supplying `Entry.class` as an argument to the
