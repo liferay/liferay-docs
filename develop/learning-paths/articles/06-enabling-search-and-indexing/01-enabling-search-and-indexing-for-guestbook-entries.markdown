@@ -322,7 +322,7 @@ index should also be updated. To accomplish this, you'll update each of the
 `addEntry`, `updateEntry`, and `deleteEntry` service methods for guestbook
 entries. Open `EntryLocalServiceImpl` and add the following lines to the
 `addEntry` method, after the call to `resourceLocalService.addResources` but
-before the `return` statement:
+before the return statement:
 
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
                     Entry.class);
@@ -354,7 +354,7 @@ entry. Note that the `indexer.reindex(entry)` call occurs after the call to
 have been updated before the entry is indexed (or reindexed).
 
 Next, add the following lines to the `updateEntry` method, after the call to
-`resourceLocalServiceUtil.updateResources` but before the `return` statement.
+`resourceLocalServiceUtil.updateResources` but before the return statement:
 
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
                     Entry.class);
@@ -365,8 +365,7 @@ These are the same two lines that you added to `addEntry` and the rationale for
 adding them is the same.
 
 Finally, add the following lines to `deleteEntry`, after `entry =
-deleteEntry(entryId)` but before the `return` statement.
-
+deleteEntry(entryId)` but before the return statement:
 
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
                     Entry.class);
