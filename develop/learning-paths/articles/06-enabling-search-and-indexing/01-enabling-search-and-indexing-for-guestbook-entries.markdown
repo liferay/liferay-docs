@@ -1,4 +1,4 @@
-# Creating and Registering an Entry Indexer
+# Enabling Search and Indexing for Guestbook Entries
 
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these three steps:
