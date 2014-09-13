@@ -1,7 +1,7 @@
 # Enabling Search and Indexing for Guestbook Entries
 
 To enable search in the Guestbook portlet for guestbook entries, you need to
-follow these three steps:
+follow these four steps:
 
 1. Create an `EntryIndexer` class that extends Liferay's `BaseIndexer` abstract
    class.
