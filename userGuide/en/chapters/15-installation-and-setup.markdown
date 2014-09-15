@@ -342,7 +342,7 @@ permissions.
 
 Next, you'll make sure Liferay is configured properly for your network. 
 
-## Choosing IPv4 or IPv6
+## Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6-liferay-portal-6-2-user-guide-15-en)
 
 Liferay Portal supports both the IPv4 and IPv6 address formats, though by
 default, Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll
@@ -1277,7 +1277,8 @@ Let's work with the dependency jar files first.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver.
+    driver. If you are using a different database, replace the MySQL jar with
+    the driver jar for your database.
 
 4. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
@@ -1285,7 +1286,7 @@ the source into a temporary folder. We'll refer to the location of the Liferay
 source as `$LIFERAY_SOURCE`.
 
 5. Currently, there are bugs in the
-`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-[$JBOSS_VERSION].Final.jar`
 file regarding the IBM JVM
 ([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
 [JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
@@ -1294,7 +1295,7 @@ you'll need to update the `ServerDependenciesProcessor.class` file in the
 `jboss-as-<$JBOSS_VERSION>.Final.jar` file to specify the IBM JDK. The steps to
 insert the patch can be referenced below.
 
-    1. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file from
+    1. Cut and paste the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
     `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
     `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
     
@@ -1305,12 +1306,12 @@ insert the patch can be referenced below.
             jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
 
         This command inserts the `ServerDependenciesProcessor.class` file into
-        the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+        the `jboss-as-[$JBOSS_VERSION].Final.jar` file's
         `org/jboss/as/server/deployment/module` folder. You can reference the
         official documentation for updating a JAR file at
         [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
-    3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
+    3. Cut and paste the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its
     original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
 
 Great! You have your `.jar` files ready for your domain.
@@ -1420,9 +1421,9 @@ default-virtual-server="default-host" native="false">`.
         <configuration>
             <jsp-configuration development="true" />
         </configuration>
-        
+ 
 Now it's time for some changes to your configuration and startup scripts.
-        
+ 
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
@@ -1443,13 +1444,13 @@ Make the following edits as applicable to your operating system:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 - On Unix, merge the following values into your settings for `JAVA_OPTS`
   replacing any matching attributes with the ones found in the assignment
   below:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
     directory. You'll notice we've added some Java security options. We'll
@@ -1532,10 +1533,10 @@ Modify `standalone.xml` adding your data source and driver within the
    `<datasources>` element.
 
         <drivers>
-            <driver name="mysql" module="com.liferay.portal.main"/>
+            <driver name="mysql" module="com.liferay.portal"/>
         </drivers>
 
-Your final data sources subsystem should look something like this:
+Your final data sources subsystem should look like this:
 
         <subsystem xmlns="urn:jboss:domain:datasources:1.0">
             <datasources>
@@ -1548,7 +1549,7 @@ Your final data sources subsystem should look something like this:
                     </security>
                 </datasource>
                 <drivers>
-                    <driver name="mysql" module="com.liferay.portal.main"/>
+                    <driver name="mysql" module="com.liferay.portal"/>
                 </drivers>
             </datasources>
         </subsystem>
