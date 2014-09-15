@@ -90,9 +90,10 @@ shown here:
 
 **acceptFiles:** Specifies that the field can contain only the file types given. 
 Each file extension must be separated by a comma. For example: 
-`<aui:validator name="acceptFiles">'jpg,png,tif,gif'</aui:validator>`
 
-**alpha:** Specifies that a field can contain only alpha characters. 
+    <aui:validator name="acceptFiles">'jpg,png,tif,gif'</aui:validator>
+
+**alpha:** Specifies that a field can contain only alphabetic characters. 
 
 **alphanum:** Specifies that a field can contain only alphanumeric characters.
 
@@ -100,25 +101,27 @@ Each file extension must be separated by a comma. For example:
 
 **digits:** Specifies that a field can contain only digits.
 
-**email:** Specifies that a field can contain only email appropriate syntax.
+**email:** Specifies that a field can contain only an email address.
 
-**equalTo:** Evaluates whether a field's contents are equal to the specified 
+**equalTo:** Determines if a field's contents are equal to the specified 
 field id given. The id is declared inside of the opening and closing validator 
-tags.  For example:
-`<aui:validator name="equalTo">'#<portlet:namespace />password'</aui:validator>`
+tags. For example:
 
-**max:** Determines if an integer value is greater than the value written. For 
-example, a `max` value of `20` is specified here:
-`<aui:validator name="max">20</aui:validator>` 
+    <aui:validator name="equalTo">'#<portlet:namespace />password'</aui:validator>
 
-**maxLength:** Evaluates whether a field's characters are greater than the 
-maximum length of characters specified. The syntax follows the same as max.
+**max:** Determines if the integer value the field contains is greater than the 
+specified value. For example, a `max` value of `20` is specified here:
 
-**min:** Determines if an integer value is less than the value written. The 
-syntax follows the same as max.
+    <aui:validator name="max">20</aui:validator> 
+
+**maxLength:** Determines if the length of a field's characters is greater than 
+the maximum length of characters specified. The syntax is the same as `max`.
+
+**min:** Determines if the length of a field's characters is less than the 
+maximum length of characters specified. The syntax is the same as `max`.
 
 **minLength:** Evaluates whether a field's characters are less than the minimum 
-length of characters specified. The syntax follows the same as max.
+length of characters specified. The syntax is the same as `max`.
 
 **number:** Specifies that the field can contain only numerical values.
 
