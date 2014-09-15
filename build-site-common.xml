@@ -90,7 +90,7 @@
         <delete dir="${dist.dir}"/>
     </target>
 
-	<target name="create-metadata-file" depends="prepare" description="Builds a metadata file.">
+	<target name="create-metadata-file" description="Builds a metadata file.">
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
