@@ -8,7 +8,6 @@ module that incorporates much of what is covered in this tutorial. See the
 [AlloyUI Form Validator](dev.liferay.com) tutorial to learn more about it. Now 
 that you know that the `aui:validator` tag is a versatile tool, it's time to 
 learn how to use it. 
-
 <!-- alloyui form validator tutorial will need to be created and given a link -->
 
 ## Setting Up the AlloyUI Validator Tag 
@@ -100,10 +99,18 @@ There are several validation rules that you can implement for your input fields.
 As shown in the previous example, this is done by choosing different values for 
 the `name` attribute of the `aui:validator` tag. The full list of values is 
 shown here: 
+<!-- 
+These need more explanation. For example, with name=acceptFiles, how does
+one specify the list of accepted file types? For boolean values, how does one 
+specify true or false? For example, in name=alphanum, how/where does one give 
+true? I suspect that these additional values are set in the same manner as the 
+max example that follows this list, but this needs to be explained, along with 
+the possible settings for these values. -Nick
+-->
 
 **acceptFiles:** List of accepted file types. (Default:empty)
 
-**alpha:** Evaluates whether a field can contain only alpha characters. 
+**alpha:** Specifies that a field can contain only alpha characters. 
 (Default:none)
 
 **alphanum:** A boolean value that determines whether a field is supposed to
@@ -142,18 +149,22 @@ only numeric values. (Default:false)
 **required:** Determines if the field is required before submission. 
 (Default:false)
 
-**url:** A boolean value that determines if a field contains a URL. 
+**url:** A boolean value that determines if the field should contain a URL. 
 (Default:false)
 
-For attributes that have a max or min and require a value, you need to specify 
-it in the `aui:validator` tag. For example:
+If you're using `max` or `min`, the value is specified in the `aui:validator` 
+tag. For example, a `max` value of `20` is specified here:
 
         ```
         <aui:validator name="max">20</aui:validator>
        
         ```
 
-Here is an example `view.jsp` for a finished AUI validator portlet:
+Next is an example of the `view.jsp` for a finished AUI validator portlet that 
+uses several of the items discussed above. The `"Name"` input field is required 
+and restricted to alphabetic characters. A custom error message that informs the 
+user of this is also specified. Additionally, the `"Email"` field is required 
+and must be in the form of an email address:
 
 		```
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -178,10 +189,15 @@ Here is an example `view.jsp` for a finished AUI validator portlet:
 Below is a figure of what the finished portlet could look like with the error 
 messages triggered:
 
-![Figure 2: Here's an example of a finished portlet that uses the code above.](../../images/aui-validator-01.png)
+![Figure 2: Here's an example of a finished portlet that uses the above code.](../../images/aui-validator-01.png)
 
-Congrats, now you know how to use the `aui:validator` tag! 
+Congrats, now you know how to use the `aui:validator` tag! As you can see, it 
+gives you a lot of control over what your users can enter in input fields.
 
-## Next Steps 
+## Related Topics 
 
-[Liferay UI](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+
+[Themes and Layout Templates](/tutorials/-/knowledge_base/themes-and-layout-templates)
+
+[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates)
