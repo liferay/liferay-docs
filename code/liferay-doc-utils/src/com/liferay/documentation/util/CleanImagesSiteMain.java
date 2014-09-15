@@ -28,10 +28,12 @@ public class CleanImagesSiteMain {
 
 				for (File mkdFile : topicDirs) {
 
-					System.out.println(" " + mkdFile.getName());
-					if (!mkdFile.getName().endsWith("markdown")) {
+					if (!mkdFile.getName().endsWith(".markdown")) {
 						continue;
 					}
+
+					System.out.println(" " + mkdFile.getName());
+
 					LineNumberReader in = new LineNumberReader(new FileReader(
 							mkdFile));
 					String line = null;
