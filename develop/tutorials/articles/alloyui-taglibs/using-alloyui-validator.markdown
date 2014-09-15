@@ -8,7 +8,7 @@ module that incorporates much of what is covered in this tutorial. See the
 [AlloyUI Form Validator](dev.liferay.com) tutorial to learn more about it. Now 
 that you know that the `aui:validator` tag is a versatile tool, it's time to 
 learn how to use it. 
-<!-- alloyui form validator tutorial will need to be created and given a link -->
+<!-- alloyui form validator tutorial will need to be given a link -->
 
 ## Setting Up the AlloyUI Validator Tag 
 
@@ -29,10 +29,7 @@ If you're already using AlloyUI tags in your JSP, then you can skip this step.
 If you're not, open the `view.jsp` of your portlet or create it if it doesn't 
 already exist. Add the directive to reference the `aui` taglib:
 
-        ```
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
-    
-        ```
         
 Just like that you're ready to use the AUI tags in your portlet. Onwards to the 
 next step! 
@@ -43,14 +40,11 @@ If you don't yet have an AlloyUI form with input fields then you need to create
 one. Add the `aui:form` tag at the bottom of the `view.jsp` and place your input 
 fields inside. It should look similar to the example here:
 
-        ```
         <aui:form name="myForm" action="" method="post">
              <aui:input name="Name" value="" label="Name">
              
              </aui:input>
         </aui:form>
-    
-        ```
 
 Repeat this step to add as many input fields as you need for your form. You're 
 almost done! Onwards to the last step! 
@@ -64,14 +58,11 @@ to validate. The following code illustrates the basic structure of the
 `aui:validator` tag. While only a single validation rule is implemented here, 
 you can add several if you wish:
 
-        ```
         <aui:form name="myForm" action="" method="post">
              <aui:input name="Name" value="" label="Name">
                   <aui:validator name="required" />
              </aui:input>
         </aui:form>
-    
-        ```
 
 In this example the `name` attribute of the `aui:validator` tag marks the 
 surrounding input field as required. If you deploy your portlet and try to leave 
@@ -83,10 +74,7 @@ required." The figure here shows what this error message looks like.
 If you want to override the default error message, you have to add an 
 `errorMessage` attribute to the `aui:validator` tag. For example:
 
-		```
 		<aui:validator name="alpha" errorMessage="Enter characters that exist in the alphabet next time, please." />
-        
-		```
 
 As you can see, you can have a lot of fun customizing your error messages. Note 
 that `"alpha"` is used as the validation rule to restrict users to alphabetic 
@@ -98,75 +86,52 @@ available for the `name` attribute of the `aui:validator` tag.
 There are several validation rules that you can implement for your input fields. 
 As shown in the previous example, this is done by choosing different values for 
 the `name` attribute of the `aui:validator` tag. The full list of values is 
-shown here: 
-<!-- 
-These need more explanation. For example, with name=acceptFiles, how does
-one specify the list of accepted file types? For boolean values, how does one 
-specify true or false? For example, in name=alphanum, how/where does one give 
-true? I suspect that these additional values are set in the same manner as the 
-max example that follows this list, but this needs to be explained, along with 
-the possible settings for these values. -Nick
--->
+shown here:
 
-**acceptFiles:** List of accepted file types. (Default:empty)
+**acceptFiles:** Specifies that the field can contain only the file types given. 
+Each file extension must be separated by a comma. For example: 
+`<aui:validator name="acceptFiles">'jpg,png,tif,gif'</aui:validator>`
 
 **alpha:** Specifies that a field can contain only alpha characters. 
-(Default:none)
 
-**alphanum:** A boolean value that determines whether a field is supposed to
-contain only alphanumeric characters. (Default:false)
+**alphanum:** Specifies that a field can contain only alphanumeric characters.
 
-**date:** A boolean value that determines whether a field contains a date. 
-(Default:false)
+**date:** Specifies that a field can contain only a date.
 
-**digits:** A boolean value that determines whether a field is supposed to
-contain only digits. (Default:false)
+**digits:** Specifies that a field can contain only digits.
 
-**email:** A boolean value that determines whether a field is supoosed to 
-contain an email address. (Default:false)
+**email:** Specifies that a field can contain only email appropriate syntax.
 
 **equalTo:** Evaluates whether a field's contents are equal to the specified 
-value. (Default:empty)
+field id given. The id is declared inside of the opening and closing validator 
+tags.  For example:
+`<aui:validator name="equalTo">'#<portlet:namespace />password'</aui:validator>`
 
-**iri:** A boolean value that determines if a field contains an IRI. 
-(Default:false)
+**max:** Determines if an integer value is greater than the value written. For 
+example, a `max` value of `20` is specified here:
+`<aui:validator name="max">20</aui:validator>` 
 
-**max:** Determines if an integer value is greater than the value written. 
-(Default:none)
+**maxLength:** Evaluates whether a field's characters are greater than the 
+maximum length of characters specified. The syntax follows the same as max.
 
-**maxLength:** Determines if a field's contents are greater than the maximum 
-length of characters specified. (Default:empty)
+**min:** Determines if an integer value is less than the value written. The 
+syntax follows the same as max.
 
-**min:** Determines if an integer's value is less than the value written. 
-(Default:none)
+**minLength:** Evaluates whether a field's characters are less than the minimum 
+length of characters specified. The syntax follows the same as max.
 
-**minLength:** Determines if a field's contents are less than the minimum length 
-of characters specified. (Default:empty)
+**number:** Specifies that the field can contain only numerical values.
 
-**number:** A Boolean value that determines if a field is supposed to contain 
-only numeric values. (Default:false)
+**required:** Specifies that the field is required before submission.
 
-**required:** Determines if the field is required before submission. 
-(Default:false)
-
-**url:** A boolean value that determines if the field should contain a URL. 
-(Default:false)
-
-If you're using `max` or `min`, the value is specified in the `aui:validator` 
-tag. For example, a `max` value of `20` is specified here:
-
-        ```
-        <aui:validator name="max">20</aui:validator>
-       
-        ```
+**url:** Specifies that the field can contain only a URL.
 
 Next is an example of the `view.jsp` for a finished AUI validator portlet that 
-uses several of the items discussed above. The `"Name"` input field is required 
-and restricted to alphabetic characters. A custom error message that informs the 
-user of this is also specified. Additionally, the `"Email"` field is required 
-and must be in the form of an email address:
+uses several of the validation methods discussed above. The `"Name"` input field 
+is required and restricted to alphabetic characters. A custom error message that 
+informs the user of this is also specified. Additionally, the `"Email"` field is 
+required and must be in the form of an email address:
 
-		```
         <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
@@ -183,8 +148,7 @@ and must be in the form of an email address:
              </aui:input>
         <aui:button type="submit" name="submit" value="submit" />
         </aui:form>
-        
-        ```
+
 
 Below is a figure of what the finished portlet could look like with the error 
 messages triggered:
