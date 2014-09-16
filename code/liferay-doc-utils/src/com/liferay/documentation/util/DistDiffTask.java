@@ -40,10 +40,11 @@ public class DistDiffTask extends Task {
 		}
 
 		String txtPath = _purposedir + "/" + _docdir + "/";	
-		int i = txtPath.length();
-		List<String> files = new ArrayList<String>();
+		Set<String> files = new HashSet<String>();
 		Iterator<String> it = diffs.iterator();
 
+		// Remove lines in the .txt file that are not related to diff entries,
+		// or are diff entry deletions
 		while (it.hasNext()) {
 			String s = it.next();
 
@@ -55,18 +56,26 @@ public class DistDiffTask extends Task {
 		// Grab readable directory paths and add them to list of strings
 		for (String diff : diffs) {
 			int x = diff.indexOf(txtPath);
-			int y = x + i;
+			int y = x + txtPath.length();
 			int z = diff.indexOf("]", x);
-			String file = diff.substring(y, z);
+			String fileDir = diff.substring(y, z);
 
-			files.add(file);
+			files.add(fileDir);
 		}
 
-		List<String> images = new ArrayList<String>();
-		
+		Set<String> images = new HashSet<String>();
+		Set<String> markdownArticles = new HashSet<String>();
+
+		// Separate modified/new MD files and images
 		for (String file : files) {
 			if (file.endsWith(".png")) {
 				images.add(file);
+			}
+			else if (file.endsWith(".markdown") || file.endsWith(".md")) {
+				markdownArticles.add(file);
+			}
+			else {
+				continue;
 			}
 		}
 
@@ -75,12 +84,13 @@ public class DistDiffTask extends Task {
 		List<String> filesWithImageString = new ArrayList<String>();
 		List<String> filesWithImagePath = new ArrayList<String>();
 
+		// Find all MD files in directory
 		findMarkdownFiles(dir, chFiles);
 
 		for (String img : images) {
 
+			// Scan directory's MD files for modified/new image
 			Set<File> filesWithImage = new HashSet<File>();
-
 			scanMarkdownForImage(img, chFiles, filesWithImage);
 
 			// Add the set of MD files that contain the image to a master set
@@ -95,13 +105,51 @@ public class DistDiffTask extends Task {
 			filesWithImageString.add(file.toString());
 		}
 
-		// Convert the list of file strings (the modified images' MD files) to
-		//readable directory paths
+		// Convert the list of MD files (the modified images' MD files) to
+		// readable directory paths
 		for (String file : filesWithImageString) {
 			int x = file.indexOf(_docdir, file.indexOf(_docdir) + 1);
 			int y = x + _docdir.length() + 1;
 			String filePath = file.substring(y, file.length());
 			filesWithImagePath.add(filePath);
+		}
+
+		markdownArticles.addAll(filesWithImagePath);
+
+		Set<String> markdownArticlesFinal = new HashSet<String>();
+
+		// Make sure all dashes are the same, so MD sets are unique
+		for (String article : markdownArticles) {
+			article = article.replace("\\", "/");
+			markdownArticlesFinal.add(article);
+		}
+
+		Set<File> markdownImages = new HashSet<File>();
+		Set<File> markdownFiles = new HashSet<File>();
+		Set<String> markdownImagesString = new HashSet<String>();
+
+		// Convert list of MD String files to regular files so we can scan for images
+		for (String file : markdownArticles) {
+			File markdownFile = new File(file);
+			markdownFiles.add(markdownFile);				
+		}
+
+		// Scan each MD file for remainder of images to include in ZIP file. When
+		// re-importing a new MD file, all of its images must also be re-imported.
+		scanMarkdownForAllImages(markdownFiles, markdownImages);
+
+		for (File markdownImage : markdownImages) {
+			markdownImagesString.add(markdownImage.toString());
+		}
+
+		markdownImagesString.addAll(images);
+
+		Set<String> markdownImagesFinal = new HashSet<String>();
+
+		// Make sure all dashes are the same, so image sets are unique
+		for (String image : markdownImagesString) {
+			image = image.replace("\\", "/");
+			markdownImagesFinal.add(image);
 		}
 
 		if (files.isEmpty()) {
@@ -113,11 +161,11 @@ public class DistDiffTask extends Task {
 				FileOutputStream fileOutputStream = new FileOutputStream("dist/diffs.zip");
 				ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
 
-				for (String modFile : files) {
-					addToZipFile(modFile, zipOutputStream);
+				for (String markdown : markdownArticlesFinal) {
+					addToZipFile(markdown, zipOutputStream);
 				}
-				for (String imgMarkdown : filesWithImagePath) {
-					addToZipFile(imgMarkdown, zipOutputStream);
+				for (String image : markdownImagesFinal) {
+					addToZipFile(image, zipOutputStream);
 				}
 
 				zipOutputStream.close();
@@ -182,7 +230,36 @@ public class DistDiffTask extends Task {
 			}
 		}
 	}
-	
+
+	private static void scanMarkdownForAllImages(Set<File> modifiedMarkdownFiles, Set<File> markdownImages) {
+		for (File file : modifiedMarkdownFiles) {
+
+			Scanner scanner = null;
+			try {
+				scanner = new Scanner(file);
+
+				while (scanner.hasNextLine()) {
+					String lineFromFile = scanner.nextLine();
+
+					if (lineFromFile.contains(".png")) { 
+						int w = lineFromFile.indexOf(".png");
+						int x = w + 4;
+						int y = lineFromFile.indexOf("../images");
+						int z = y + 3;
+						String img = lineFromFile.substring(z, x);
+
+						File markdownImage = new File(img);
+
+						markdownImages.add(markdownImage);
+					}
+				}
+			}
+			catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	private static void scanMarkdownForImage(String img, Set<File> chFiles, Set<File> filesWithImage) {
 		for (File file : chFiles) {
 
