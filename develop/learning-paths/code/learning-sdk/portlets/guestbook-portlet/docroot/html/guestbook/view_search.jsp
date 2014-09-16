@@ -62,6 +62,14 @@
 		
 		entries.add(entry);
 	}
+	
+	List<Guestbook> guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId);
+	
+	Map<String, String> guestbookMap = new HashMap<String, String>();
+	
+	for (Guestbook guestbook : guestbooks) {
+		guestbookMap.put(Long.toString(guestbook.getGuestbookId()), guestbook.getName());
+	}
 %>
 
 <liferay-ui:search-container delta="10" emptyResultsMessage="no-entries-were-found">
@@ -72,14 +80,16 @@
 
 	<liferay-ui:search-container-row
 		className="com.liferay.docs.guestbook.model.Entry"
-	>
+		keyProperty="entryId" modelVar="entry" escapedModel="<%=true%>">
+		<liferay-ui:search-container-column-text name="guestbook"
+			value="<%=guestbookMap.get(Long.toString(entry.getGuestbookId()))%>" />
+		
 		<liferay-ui:search-container-column-text property="message" />
 
 		<liferay-ui:search-container-column-text property="name" />
-		
+
 		<liferay-ui:search-container-column-jsp
-            path="/html/guestbook/guestbook_actions.jsp"
-            align="right" />
+			path="/html/guestbook/guestbook_actions.jsp" align="right" />
 	</liferay-ui:search-container-row>
 
 	<liferay-ui:search-iterator />
