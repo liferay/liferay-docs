@@ -6,9 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -50,6 +52,7 @@ public class DistDiffTask extends Task {
 			}
 		}
 
+		// Grab readable directory paths and add them to list of strings
 		for (String diff : diffs) {
 			int x = diff.indexOf(txtPath);
 			int y = x + i;
@@ -57,6 +60,48 @@ public class DistDiffTask extends Task {
 			String file = diff.substring(y, z);
 
 			files.add(file);
+		}
+
+		List<String> images = new ArrayList<String>();
+		
+		for (String file : files) {
+			if (file.endsWith(".png")) {
+				images.add(file);
+			}
+		}
+
+		Set<File> chFiles = new HashSet<File>();
+		Set<File> filesWithImageFinal = new HashSet<File>();
+		List<String> filesWithImageString = new ArrayList<String>();
+		List<String> filesWithImagePath = new ArrayList<String>();
+
+		findMarkdownFiles(dir, chFiles);
+
+		for (String img : images) {
+
+			Set<File> filesWithImage = new HashSet<File>();
+
+			scanMarkdownForImage(img, chFiles, filesWithImage);
+
+			// Add the set of MD files that contain the image to a master set
+			for (File file : filesWithImage) {
+				filesWithImageFinal.add(file);
+				System.out.println("New image " + img + " found in file " + file.getName());			
+			}
+		}
+
+		// Convert the set of MD files to a list of strings
+		for (File file : filesWithImageFinal) {
+			filesWithImageString.add(file.toString());
+		}
+
+		// Convert the list of file strings (the modified images' MD files) to
+		//readable directory paths
+		for (String file : filesWithImageString) {
+			int x = file.indexOf(_docdir, file.indexOf(_docdir) + 1);
+			int y = x + _docdir.length() + 1;
+			String filePath = file.substring(y, file.length());
+			filesWithImagePath.add(filePath);
 		}
 
 		if (files.isEmpty()) {
@@ -70,6 +115,9 @@ public class DistDiffTask extends Task {
 
 				for (String modFile : files) {
 					addToZipFile(modFile, zipOutputStream);
+				}
+				for (String imgMarkdown : filesWithImagePath) {
+					addToZipFile(imgMarkdown, zipOutputStream);
 				}
 
 				zipOutputStream.close();
@@ -111,7 +159,7 @@ public class DistDiffTask extends Task {
 		fileInputStream.close();
 	}
 
-	private static void findMarkdownFiles(File dir, List<File> chFiles) {
+	private static void findMarkdownFiles(File dir, Set<File> chFiles) {
 
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
 		File[] articles = articleDir.listFiles();
@@ -125,12 +173,17 @@ public class DistDiffTask extends Task {
 			File[] allFiles = article.listFiles();
 
 			for (File file : allFiles) {
+
+				if (!file.toString().endsWith("markdown") && !file.toString().endsWith("md")) {
+					continue;
+				}
+
 				chFiles.add(file);
 			}
 		}
 	}
-
-	private static void scanMarkdownForImage(String img, List<File> chFiles) {
+	
+	private static void scanMarkdownForImage(String img, Set<File> chFiles, Set<File> filesWithImage) {
 		for (File file : chFiles) {
 
 			Scanner scanner = null;
@@ -141,9 +194,9 @@ public class DistDiffTask extends Task {
 					String lineFromFile = scanner.nextLine();
 
 					if (lineFromFile.contains(img)) { 
-						System.out.println(img + " found in file " + file.getName());
+						filesWithImage.add(file);
 					}
-				} 
+				}
 			}
 			catch (FileNotFoundException e) {
 				e.printStackTrace();
