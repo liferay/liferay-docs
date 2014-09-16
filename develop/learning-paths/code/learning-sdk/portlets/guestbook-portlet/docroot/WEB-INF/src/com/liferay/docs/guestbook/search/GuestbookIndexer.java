@@ -10,6 +10,7 @@ import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
 import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
 import com.liferay.docs.guestbook.service.persistence.GuestbookActionableDynamicQuery;
+import com.liferay.docs.guestbook.util.PortletKeys;
 import com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -28,7 +29,7 @@ public class GuestbookIndexer extends BaseIndexer {
 	
 	public static final String[] CLASS_NAMES = { Guestbook.class.getName() };
 	
-	public static final String PORTLET_ID = "guestbook-portlet";
+	public static final String PORTLET_ID = PortletKeys.GUESTBOOK_ADMIN;
 	
 	public GuestbookIndexer() {
 		
