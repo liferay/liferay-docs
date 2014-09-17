@@ -24,8 +24,8 @@ clicking the icon to the right of the Location field.
 
 ![Figure 1: The first section of the initial new project wizard screen lets you specify your project's name, display name, and location on the file system.](../../images/liferay-ide-new-plugin-name-loc.png)
 
-The next section of this intial screen lets you choose the build type for your
-new plugin. You can select either Ant or Maven from the Build Type dropdown. The
+The next section of this initial screen lets you choose the build type for your
+new plugin. You can select either Ant or Maven from the Build Type selector. The
 rest of the fields in this section depend on the build type that you choose. If
 you select Ant, then you need to select a Liferay Plugins SDK and Liferay
 runtime instance to use. If you select Maven, then you need to enter the
@@ -40,22 +40,22 @@ project's `pom.xml` file.
 
 The third section of the New Project Wizard contains settings for the specific
 type of plugin project that you're creating. First select the plugin type from
-the dropdown of that name. You can select Portlet, Service Builder Portlet,
+the selector of that name. You can select Portlet, Service Builder Portlet,
 Hook, Layout Template, Theme, Ext, or Web. 
 
-![Figure 4: The Plugin Type dropdown lets you specify the type of plugin project to create.](../../images/liferay-ide-new-plugin-type.png)
+![Figure 4: The Plugin Type selector lets you specify the type of plugin project to create.](../../images/liferay-ide-new-plugin-type.png)
 
 The New Project Wizard gives you some additional options if you select the
 Portlet or Service Builder Portlet plugin type. With both portlet types, you can
-use the Include Sample Code checkbox to instruct the New Project Wizard to add
+use the Include Sample Code check box to instruct the New Project Wizard to add
 some basic sample code to your plugin. If you select Portlet, then you also get
-a checkbox for instructing the wizard to launch the New Portlet Wizard after the
+a check box for instructing the wizard to launch the New Portlet Wizard after the
 project is created. The New Portlet Wizard guides you in the creation of a
 custom portlet class. The final option in this section of the initial New
-Project Wizard screen is a checkbox that lets you add your project to an Eclipse
+Project Wizard screen is a check box that lets you add your project to an Eclipse
 working set.
 
-![Figure 5: When Portlet is selected from the dropdown, options for including sample code and launching a New Portlet Wizard appear.](../../images/liferay-ide-new-plugin-portlet.png)
+![Figure 5: When Portlet is selected from the selector, options for including sample code and launching a New Portlet Wizard appear.](../../images/liferay-ide-new-plugin-portlet.png)
 
 Unless you're creating a portlet or theme, you're done--just click *Finish* and 
 get started developing your plugin in Liferay IDE! If you're creating a portlet 
@@ -66,27 +66,27 @@ or theme, click *Next* to move on to the next step in the New Project Wizard.
 The only two plugin types that require additional steps in the New Project
 Wizard are portlet and theme plugin types. If you're creating a portlet, the
 second step of the wizard is where you select the portlet's framework. If you
-selected the Include Sample Code checkbox on the first step of the wizard, then
+selected the Include Sample Code check box on the first step of the wizard, then
 the second step also lets you enter the portlet's name and display name. For the
 portlet's framework, you can select Liferay MVC, JSF 2.x, or Vaadin. If you
 select JSF 2.x here, you must then click *Next* to go to the third step of the
 wizard where you select a JSF component suite to use. You can choose the JSF
-standard, ICEfaces, Liferay Faces Alloy, PrimeFaces, or RichFaces component
+standard, ICEFaces, Liferay Faces Alloy, PrimeFaces, or RichFaces component
 suite.
 
 ![Figure 6: When creating a portlet, step two of the New Project Wizard lets you select a portlet framework to use in the project.](../../images/liferay-ide-new-plugin-portlet-fw.png)
 
-![Figure 7: You can develop JSF 2.x portlets using one of several popular component suites.](../../images/liferay-ide-new-plugin-jsf.png)
+![Figure 7: You can develop JSF 2.x portlets using several popular component suites.](../../images/liferay-ide-new-plugin-jsf.png)
 
 If you're creating a theme, the second step of the New Project Wizard is for
-selecting the theme parent and theme framework. The Theme Parent dropdown lets
+selecting the theme parent and theme framework. The Theme Parent selector lets
 you choose the `_unstyled`, `_styled`, or `classic` theme as the parent. The
-Theme Framework dropdown lets you choose Velocity, Freemarker, or JSP template
+Theme Framework selector lets you choose Velocity, Freemarker, or JSP template
 frameworks to use in your theme. 
 
 ![Figure 8: When creating a theme, step two of the New Project Wizard lets you select the theme's parent and framework.](../../images/liferay-ide-new-plugin-theme-fw.png)
 
-Once you've completed the above selections for your portlet or theme, just click
+Once you've completed the above selections for your portlet or theme, click
 *Finish* and get started developing your plugin in Liferay IDE! As you've seen,
 the New Project Wizard isn't so scary after all. Now you know how to use it
 anytime you want to create new plugin projects for your Liferay Portal.
