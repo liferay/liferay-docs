@@ -90,6 +90,17 @@
         <delete dir="${dist.dir}"/>
     </target>
 
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles">
+			<java
+				classname="com.liferay.documentation.util.CleanImagesSiteMain"
+				classpathref="project.classpath"
+				failonerror="true"
+				fork="true"
+			>
+				<arg value="${doc.dir}"/>
+			</java>
+	</target>
+
 	<target name="create-metadata-file" description="Builds a metadata file.">
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
