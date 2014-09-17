@@ -111,8 +111,10 @@ LCS roles, you can get your portal ready for LCS.
 If you're running Liferay 6.2, then you can skip this step. If, however, you are 
 running Liferay 6.1 GA3, then there's a small pre-configuration step that you 
 need to take before using LCS: you need to update the `spring.configs` property 
-in your `portal-ext.properties` file. Add the following configuration to your 
-`portal-ext.properties` file:
+in your `portal-ext.properties` file. This is a workaround for a bug in Liferay 
+6.1 GA3, where the values for this property are listed in the wrong order. This 
+causes the metrics service in LCS to not be initialized. To fix this, add the 
+following configuration to your `portal-ext.properties` file:
 
 <!-- From the configuration below, it's not clear what has been added. Can you
 describe what exactly you're asking the user to do here? -Rich -->
@@ -296,7 +298,8 @@ At this point, you might be wondering what information about your servers is
 stored on the LCS servers. Great question! In order to offer the best service 
 possible, we store the following information about your servers: patches
 installed on each server, `portal.properties` (except sensitive data), JVM
-metrics, portal and portlet metrics, and cache and server metrics.
+metrics, portal and portlet metrics, and cache and server metrics. Sensitive 
+data is defined as any key-value pair that contains usernames or passwords.
 
 <!-- Sensitive data being database URLs, user names, and passwords? What about
 Documents & Media repository information? I think we should spell out exactly
@@ -326,8 +329,8 @@ Download button to its right. Once a fix pack is finished downloading, an
 alert appears in the Alerts table below the fix packs table. This notification
 tells you the download is finished and to restart your server. Restarting your
 server installs any downloaded fix packs. Note that you must start your server
-with administrative privileges. This is because the patching tool agent requires
-administrative access to install any patches.
+with the privileges required to write to the disk location where patches are 
+stored and processed (the `patching-tool` folder). 
 
 <!-- This is unclear. Administrative access to what? In fact, what is
 administrative access, as mentioned here? I assume you're talking about
