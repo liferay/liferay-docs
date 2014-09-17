@@ -1,7 +1,7 @@
 # Defining Portlet Actions 
 
 You need to add action methods to the Guestbook Admin portlet for adding,
-updating, and deleting guestbooks. The portlet action methods will call the
+updating, and deleting guestbooks. The portlet action methods call the
 corresponding service methods. Using Service Builder in your guestbook-portlet
 project has provided your project with a service-oriented architecture. Note
 that due to Liferay's service-oriented architecture, different portlets or web
@@ -99,10 +99,14 @@ create portlet actions to meet the first three requirements by opening
                 "/html/guestbookadmin/edit_guestbook.jsp");
 
     Note that the Edit Guestbook form uses the same JSP as the Add Guestbook
-    form. The basic reason for this is to avoid duplication of code. When you're
+    form. The reason for this is to avoid duplication of code. When you're
     creating the Guestbook Admin portlet user interface, you'll see how to
     distinguish between adding a guestbook and editing a guestbook in
-    `edit_guestbook.jsp`.
+    `edit_guestbook.jsp`. Note also that while you could have reused the
+    `edit_guestbook.jsp` from the Guestbook portlet, you created another one, with
+    almost the same functionality. Why? Because later, you'll be adding
+    functionality to the Guestbook Admin portlet that will not be available to
+    regular users adding guestbooks. 
 
 3. Add the following portlet method for deleting a guestbook:
 
@@ -125,8 +129,8 @@ create portlet actions to meet the first three requirements by opening
 
     This method is similar to the `addGuestbook` and `updateGuestbook` methods
     that you added above. Its service call requires only the `serviceContext`
-    and the `guestbookId` so these are retrieved from the request. Since the
-    `deleteGuestbook` action will be invoked from the default view of the
+    and the `guestbookId`, so these are retrieved from the request. Since the
+    `deleteGuestbook` action is invoked from the default view of the
     Guestbook Admin portlet, there's no need to set the `mvcPath` render
     parameter to point to a particular JSP if there was a problem with the
     `deleteGuestbook` service call.
