@@ -1,4 +1,4 @@
-# Defining Portlet Actions 
+# Defining Portlet Actions [](id=defining-portlet-actions)
 
 You need to add action methods to the Guestbook Admin portlet for adding,
 updating, and deleting guestbooks. The portlet action methods call the

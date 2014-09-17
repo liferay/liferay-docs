@@ -1,4 +1,4 @@
-# Updating Your Service Layer
+# Updating Your Service Layer [](id=updating-your-service-layer)
 
 In an earlier learning path, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`. The `addGuestbook` method of `GuestbookPortlet`

@@ -1,4 +1,4 @@
-# Creating an Admin Portlet
+# Creating an Admin Portlet [](id=creating-an-admin-portlet)
 
 To create the Guestbook Admin portlet, you'll use the New Liferay Portlet
 wizard. You used this wizard in an earlier learning path when you created the

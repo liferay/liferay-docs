@@ -1,4 +1,4 @@
-# Adding a Portlet to the Control Panel
+# Adding a Portlet to the Control Panel [](id=adding-a-portlet-to-the-control-panel)
 
 Up to this point, you've created a fully-functional Guestbook portlet. You've
 written a `service.xml` file to define your application's data model and used

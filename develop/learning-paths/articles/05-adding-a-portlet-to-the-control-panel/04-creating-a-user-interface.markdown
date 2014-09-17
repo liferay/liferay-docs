@@ -1,4 +1,4 @@
-# Creating a User Interface
+# Creating a User Interface [](id=creating-a-user-interface)
 
 It's time to create the Guestbook Admin portlet's user interface. The default
 view of the portlet should have a button for adding new guestbooks. It should
