@@ -7,9 +7,9 @@ calls this service method. You can reuse the `addGuestbook` method of
 However, you need to add a new service method for updating a guestbook and a new
 service method for deleting a guestbook. You also need to add a service method
 that returns the number of guestbooks in a site. You'll use this service method
-when you're implementing your user interface since you'll use a Liferay taglib
-construct called Search Container. Your search container needs to know how many
-guestbooks to display.
+when you're implementing your user interface since you'll use a Liferay tag
+library construct called Search Container. Your search container needs to know
+how many guestbooks to display.
 
 ## Adding Guestbook Service Methods
 
@@ -48,9 +48,9 @@ Use the following steps to add the required Guestbook service methods:
                 return guestbook;
         }
 
-    The `updateGuestbook` service method is very similar to the `updateEntry`
+    The `updateGuestbook` service method is similar to the `updateEntry`
     service method in `EntryLocalServiceImpl`. As with guestbook entries, you
-    not only have to update the guestbook model itself, you also have to update
+    not only must update the guestbook model itself, but also must update
     the guestbook's resources. If your `updateGuestbook` service method didn't
     update a guestbook's resources, permissions updates for guestbooks would not
     be possible.
@@ -82,7 +82,7 @@ Use the following steps to add the required Guestbook service methods:
 
     It's important to consider what should happen if you delete a guestbook for
     which there are existing entries. If you just deleted the guestbook, the
-    guestbook's entries would still exist in the database but they would be
+    guestbook's entries would still exist in the database, but they would be
     orphaned. Your `deleteGuestbook` service method makes a service call to
     delete all the entries associated with a guestbook before deleting the
     guestbook itself. This way, guestbook entries are never orphaned.
