@@ -1,16 +1,16 @@
 # Writing Your First Liferay Application [](id=writing-your-first-liferay-application)
 
 Getting started with your first Liferay application takes only minutes. We'll
-guide you through the process of creating your project and deploying your
-application step-by-step. Before you know it, you'll have Liferay serving your
-application next to the rest of the applications that come with Liferay. 
+guide you through the step-by-step process of creating your project and
+deploying your application to Liferay. Before you know it, you'll have your
+application deployed alongside of the applications that come with Liferay. 
 
 Your first application is simple: you'll build a guest book application that
 looks like this: 
 
 ![Figure 1: You'll create this simple application.](../../images/my-first-app.png)
 
-By default, it shows guestbook messages that various users leave on your
+By default, it shows guestbook messages that various users have left on your
 website. To add a message, you click the *Add Entry* button to show a form you
 can use to enter and save a message. 
 
@@ -40,9 +40,9 @@ appears.
 
 ![note](../../images/01-tip.png) **Note:** The first time you create a project,
 make sure you're online. In the background, Liferay's Plugins SDK downloads
-several `.jar` files that it needs in order to operate. This keeps the initial
-download small, but makes it take a long time to create your first project
-(about four minutes). After the initial download, it won't happen again. 
+several JAR files that it needs in order to operate. This keeps the initial
+Plugins SDK download small but means that it may take several minutes to create
+your first project. Subsequent projects are created almost instantly.
 
 ---
 
@@ -140,7 +140,7 @@ simple example should explain.
 
 Say you've written a Calendar application that a user has placed on the same
 page as a Blog application. The Calendar allows the user to add and delete
-events.  The Blog allows the user to add and delete blog entries. To implement
+events. The Blog allows the user to add and delete blog entries. To implement
 the functionality for deleting, both application developers elected to append
 the *del* parameter to the URL, and give it a primary key value so the
 application can go look up the calendar event or the blog entry and delete it. 
