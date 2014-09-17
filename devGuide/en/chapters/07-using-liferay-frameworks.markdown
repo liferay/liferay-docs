@@ -986,7 +986,7 @@ If you need to update your plugins, there are several ways to do it:
             );
         }
 
-    In example 1, the code is uses the `portletULRFactory` to create a
+    In example 1, the code uses the `portletULRFactory` to create a
     `LiferayPortletURL` object, instead of using the `Liferay.PortletURL` object
     to create it. 
 
