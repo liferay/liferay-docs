@@ -16,23 +16,24 @@
 
 <%@include file="/html/init.jsp"%>
 
-
 <%
-String mvcPath = ParamUtil.getString(request, "mvcPath");
+	String mvcPath = ParamUtil.getString(request, "mvcPath");
 
-ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+	ResultRow row = (ResultRow) request
+			.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 
-Entry entry = (Entry)row.getObject(); 
+	Guestbook guestbook = (Guestbook) row.getObject();
 %>
 
 <liferay-ui:icon-menu>
-
 	<c:if
-		test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
+		test="<%=GuestbookPermission.contains(permissionChecker,
+							guestbook.getGuestbookId(), ActionKeys.UPDATE)%>">
 		<portlet:renderURL var="editURL">
-			<portlet:param name="entryId"
-				value="<%=String.valueOf(entry.getEntryId()) %>" />
-			<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
+			<portlet:param name="guestbookId"
+				value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
+			<portlet:param name="mvcPath"
+				value="/html/guestbookadmin/edit_guestbook.jsp" />
 		</portlet:renderURL>
 
 		<liferay-ui:icon image="edit" message="Edit"
@@ -40,31 +41,25 @@ Entry entry = (Entry)row.getObject();
 	</c:if>
 
 	<c:if
-		test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
-
-
+		test="<%=GuestbookPermission.contains(permissionChecker,
+							guestbook.getGuestbookId(), ActionKeys.PERMISSIONS)%>">
 		<liferay-security:permissionsURL
-			modelResource="<%= Entry.class.getName() %>"
-			modelResourceDescription="<%= entry.getMessage() %>"
-			resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+			modelResource="<%= Guestbook.class.getName() %>"
+			modelResourceDescription="<%= guestbook.getName() %>"
+			resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
 			var="permissionsURL" />
 
 		<liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
-
 	</c:if>
 
 	<c:if
-		test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
-
-		<portlet:actionURL name="deleteEntry" var="deleteURL">
-			<portlet:param name="entryId"
-				value="<%= String.valueOf(entry.getEntryId()) %>" />
+		test="<%=GuestbookPermission.contains(permissionChecker,
+							guestbook.getGuestbookId(), ActionKeys.DELETE)%>">
+		<portlet:actionURL name="deleteGuestbook" var="deleteURL">
 			<portlet:param name="guestbookId"
-				value="<%= String.valueOf(entry.getGuestbookId()) %>" />
+				value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
 		</portlet:actionURL>
 
 		<liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
-
 	</c:if>
-
 </liferay-ui:icon-menu>

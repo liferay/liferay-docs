@@ -60,11 +60,14 @@ Open `GuestbookPortlet.java`. Replace the `addEntry` method with this code:
 
 				SessionErrors.add(request, e.getClass().getName());
 
+                                PortalUtil.copyRequestParameters(request, response);
+
 				response.setRenderParameter("mvcPath",
 						"/html/guestbook/edit_entry.jsp");
 			}
 
-		} else {
+		}
+                else {
 
 			try {
 				EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
@@ -77,6 +80,8 @@ Open `GuestbookPortlet.java`. Replace the `addEntry` method with this code:
 
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
+
+                                PortalUtil.copyRequestParameters(request, response);
 
 				response.setRenderParameter("mvcPath",
 						"/html/guestbook/edit_entry.jsp");
@@ -96,11 +101,14 @@ Next, you'll add an action that lets users delete guestbook entries:
 	public void deleteEntry (ActionRequest request, ActionResponse response) {
 		
 		long entryId = ParamUtil.getLong(request, "entryId");
+		long guestbookId = ParamUtil.getLong(request, "guestbookId");
 		
 		try {
 
 			ServiceContext serviceContext = ServiceContextFactory.getInstance(
 				Entry.class.getName(), request);
+
+                        response.setRenderParameter("guestbookId", Long.toString(guestbookId);
 
 			EntryLocalServiceUtil.deleteEntry(entryId, serviceContext);
 			
