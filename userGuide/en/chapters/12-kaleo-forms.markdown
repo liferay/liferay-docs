@@ -38,7 +38,7 @@ be any, so create one. Click *Add*. You'll see the screen below. This is
 the first step in the *New Process Wizard*. For this example, give your process 
 the name *Lunar Resort News Content*, add a description, and then click *Next*.
 
-![Figure 12.x: The first step of the New Process Wizard.](../../images/kaleo-forms-admin-wizard-1.png)
+![Figure 12.1: The first step of the New Process Wizard.](../../images/kaleo-forms-admin-wizard-1.png)
 
 The second step in the New Process Wizard lets you define the fields that 
 can appear in your forms. To the right of the To Do field, click the *Actions* 
@@ -46,7 +46,7 @@ button and select *Choose*. Now that you've chosen a field definition for your
 forms, you can move on to the next step in the wizard to add or define a 
 workflow for those forms. Click *Next*.
 
-![Figure 12.x: The second step of the New Process Wizard. This is where you define and choose the fields for your forms.](../../images/kaleo-forms-admin-wizard-2.png)
+![Figure 12.2: The second step of the New Process Wizard. This is where you define and choose the fields for your forms.](../../images/kaleo-forms-admin-wizard-2.png)
 
 The third step in the New Process Wizard is really where the meat and potatoes 
 of Kaleo Forms Admin is. This is where you choose or define a workflow to use 
@@ -55,7 +55,7 @@ look at how it's defined, click *Actions* and then *Edit*. The graphical
 interface for editing or defining a workflow appears below the Details section 
 of the Single Approver edit screen. 
 
-![Figure 12.x: The graphical view for editing or defining a workflow.](../../images/kaleo-forms-graphical-editor.png)
+![Figure 12.3: The graphical view for editing or defining a workflow.](../../images/kaleo-forms-graphical-editor.png)
 
 This graphical view is where Kaleo Forms Admin can help you build a workflow 
 without having to write any XML. There are eight types of nodes you can add to a 
@@ -74,7 +74,7 @@ transition to another node. If you stop before reaching the edge of the next
 node, a pop-up displays node types you can create and connect to on-the-fly. To
 connect with an existing node, continue dragging the connector to that node. 
 
-![Figure 12.x: Create transitions to existing or new nodes. The connector pop-up let's you create and connect to new nodes on-the-fly.](../../images/kaleo-connector.png)
+![Figure 12.4: Create transitions to existing or new nodes. The connector pop-up let's you create and connect to new nodes on-the-fly.](../../images/kaleo-connector.png)
 
 To get a feel for how the designer works, go ahead and use the workflow designer 
 to duplicate the default workflow definition. Go back to the previous step and 
@@ -85,27 +85,27 @@ transitions.
 
 First add two tasks, then use the edit icon to name them *Review* and *Update*. 
 
-![Figure 12.x: Edit a node by clicking on its node icon and modifying its settings.](../../images/kaleo-rename-node.png)
+![Figure 12.5: Edit a node by clicking on its node icon and modifying its settings.](../../images/kaleo-rename-node.png)
 
 Next, connect the nodes so Review has four nodes, as follows: one receiving the
 transition from **StartNode**, one sending a transition to **Update**, one
 receiving a transition from **Update**, and one sending a transition to
 **EndNode**. 
 
-![Figure 12.x: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
+![Figure 12.6: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, you want to add the correct assignments and notifications. Click on
 *Review*. The box on the left shows all the properties of the Review node. In
 the *Assignments* category, set the *Assignment Type* to *Role Type*, the 
 *Role Type* to *Regular*, and the *Role Name* to *Portal Content Reviewer*
 
-![Figure 12.x: Assignment settings for the Review node.](../../images/kaleo-forms-review-node-assignments.png)
+![Figure 12.7: Assignment settings for the Review node.](../../images/kaleo-forms-review-node-assignments.png)
 
 Now set the notifications. Double-click on *Notifications* and create a 
 notification with the Notification Type set to *User Notification* and the 
 Execution Type set to *On Assignment*.
 
-![Figure 12.x: Notification settings for the Review node.](../../images/kaleo-forms-review-node-notification.png)
+![Figure 12.8: Notification settings for the Review node.](../../images/kaleo-forms-review-node-notification.png)
 
 Together, the assignment and notification settings specify that a user receives 
 a notification in their Dockbar when assigned a form in this workflow. Now move 
@@ -124,7 +124,7 @@ false. Set the name of the Review to Update transition to *Reject* and the
 Update to Review transition to *Resubmit*. Lastly, set the name of the Review to
 Endnode transition to *Approve*.
 
-![Figure 12.x: Your completed workflow should look like this.](../../images/kaleo-designer-basic-workflow-complete.png)
+![Figure 12.9: Your completed workflow should look like this.](../../images/kaleo-designer-basic-workflow-complete.png)
 
 Now look at the generated XML. It should look a lot like the default workflow,
 only a tiny bit messier, as the nodes are written in the order they were
@@ -140,7 +140,7 @@ with its form (if it has been assigned one) and a button that lets you assign a
 form. Therefore, you have *create*, *update*, and *review* listed as your 
 tasks.
 
-![Figure 12.x: The fourth step in the New Process wizard lets you assign a form to each task.](../../images/kaleo-forms-admin-wizard-4.png)
+![Figure 12.10: The fourth step in the New Process wizard lets you assign a form to each task.](../../images/kaleo-forms-admin-wizard-4.png)
 
 Go ahead and click on the *Assign Form* button next to the created task. On the 
 next page, click the *Add Form* button. The screen that appears lets you create 
@@ -151,7 +151,7 @@ delete a field, mouse over it and click the *Trash* icon that appears. Go ahead
 and delete all but the *Assigned To*, *Severity*, *Start Date*, *Status*, and 
 *Title* fields. Your form should now look like the one in the screenshot here.
 
-![Figure 12.x: Basic form creation.](../../images/kaleo-forms-admin-form-creation-1.png)
+![Figure 12.11: Basic form creation.](../../images/kaleo-forms-admin-form-creation-1.png)
 
 If you delete a field by accident or simply want to add another field to your 
 form, you can do so by dragging and dropping its icon from the *Fields* tab on 
@@ -160,7 +160,7 @@ appear on it only once are grayed out. You can also edit the settings of a field
 in the form by mousing over it and clicking the wrench icon. For example, the 
 settings for the Assigned To field are shown in this screenshot. 
 
-![Figure 12.x: Settings available for a field in a form.](../../images/kaleo-forms-admin-form-creation-2.png)
+![Figure 12.12: Settings available for a field in a form.](../../images/kaleo-forms-admin-form-creation-2.png)
 
 Since you don't need to change any of the field settings in this form, go ahead 
 and click *Save*. On the next screen, choose your new form from the *Actions* 
@@ -183,12 +183,12 @@ Make sure you choose the new form for your update and review tasks. When you're
 done assigning forms to tasks, click *Save*. Your new process is complete, and 
 is listed in the Kaleo Forms Admin portlet. Congratulations! 
 
-![Figure 12.x: Once created, your process is listed in Kaleo Forms Admin.](../../images/kaleo-forms-admin-process-complete.png)
+![Figure 12.13: Once created, your process is listed in Kaleo Forms Admin.](../../images/kaleo-forms-admin-process-complete.png)
 
 Now it's time to look at how to use workflow processes in the Kaleo Forms 
 Display portlet. 
 
-## Kaleo Forms Display 
+## Kaleo Forms Display [](id=kaleo-forms-display-liferay-portal-6-2-user-guide-12-en)
 
 The Kaleo Forms Display portlet makes use of the workflow processes that you
 create in the Kaleo Forms Admin portlet. Add the Kaleo Forms Display portlet to
@@ -196,7 +196,7 @@ a page if you haven't done so yet. Any forms available for processing through
 the workflow can be initiated through the *Submit New* button, as the below
 image indicates. 
 
-![Figure 12.x: The Kaleo Forms Display portlet.](../../images/kaleo-forms-display.png)
+![Figure 12.14: The Kaleo Forms Display portlet.](../../images/kaleo-forms-display.png)
 
 To initiate a process in the workflow, click *Submit New* &rarr; *Lunar Resort 
 News Content*. The portlet now displays the form you assigned to the first task 
@@ -208,7 +208,7 @@ better, more imaginative name. Consider integrating this with the Lunar Resort
 site mentioned in other chapters. In fact, this might be the way you can expand
 coverage of the forms application. -Rich -->
 
-![Figure 12.x: Submitting a new process.](../../images/kaleo-forms-display-submit-new.png)
+![Figure 12.15: Submitting a new process.](../../images/kaleo-forms-display-submit-new.png)
 
 The workflow now automatically guides the form on to the next step. For example, 
 if you submit a new process using the Single Approver process created in the 
@@ -218,7 +218,7 @@ If you are a Portal Content Reviewer, the task then appears in the
 receive a notification in your Dockbar. You can then assign it to yourself using 
 the portlet and complete the task.
 
-![Figure 12.x: The workflow automatically assigns the task to a specific role.](../../images/kaleo-forms-display-assigned-role.png)
+![Figure 12.16: The workflow automatically assigns the task to a specific role.](../../images/kaleo-forms-display-assigned-role.png)
 
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-12-en)
 
