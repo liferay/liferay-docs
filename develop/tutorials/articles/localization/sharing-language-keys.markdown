@@ -16,7 +16,7 @@ portlets can share the same resource bundle.
 You can share a resource bundle between portlets by adding a resource bundle to
 the portlets' project. By the end of this tutorial, you'll know how to share a
 resource bundle between multiple portlets in your project. Figure 1 below
-displays two portlets displaying the same language key from a shared resource
+shows two portlets displaying the same language key from a shared resource
 bundle: 
 
 ![Figure 1: When portlets share the same resource bundle they can display the same textual elements, based on language keys from that resource bundle.](../../images/portlet-localization-shared-bundle.png)
@@ -34,13 +34,13 @@ in the same project.
         you-know-it-is-the-best=You know it is the best
 
 2. In your project's `docroot/WEB-INF/src/content` folder, create another
-   translation of the language key file, for a language of your choice, and add
+   translation of the language key file for a language of your choice, and add
    the same language keys translated to that language.
 
-    For example, if you were translating in Spanish, you would create a file
-    `Language_es.properties` in the `docroot/WEB-INF/src/content` folder and
-    enter the same language keys as you did in your `Language.properties` file,
-    but with Spanish values. Here's the example language key from step 1
+    For example, if you were translating to Spanish, you would create a file
+    `Language_es.properties` in the `docroot/WEB-INF/src/content` folder. Here, 
+    you'd enter the same language keys as you did in your `Language.properties` file,
+    but with Spanish values. Here's the example language key from step one 
     translated to Spansish:
 
         you-know-it-is-the-best=Usted sabe que es la mejor
@@ -49,7 +49,7 @@ in the same project.
     Zones](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
     section of the Portal Properties. 
 
-3.  For all of the portlets that are to share the language keys, edit their view
+3.  For all the portlets that are to share the language keys, edit their view
     JSP files to use the language keys. 
 
     For example, to use a language key named `you-know-it-is-the-best` in a
@@ -94,7 +94,7 @@ in the same project.
     [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
     for details. 
 
-5. Redeploy the plugin project and place the portlets on a Liferay site page, if
+5. Redeploy the plugin project and place the portlets on a page, if
    you haven't already done so. Verify that they display the same intended
    messages based on your resource bundle. 
 
@@ -114,14 +114,14 @@ in the same project.
 At this point, any language keys you specify in the language properties files
 are accessible from all of your plugin project's portlets. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** It's best to use the Liferay
+**Note:** It's best to use the Liferay
 naming convention for the language resource bundle file and folder so that your
 portlets can access the bundle and so that you can use the automatic language
 building capabilities of Liferay IDE and the Plugins SDK with the bundle. 
 
----
+$$$
 
 In this tutorial, you created language keys, specified the language key values
 in different languages translations, and shared the new language keys among
