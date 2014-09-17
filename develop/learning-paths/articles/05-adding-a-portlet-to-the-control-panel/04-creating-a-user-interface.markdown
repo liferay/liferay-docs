@@ -13,7 +13,7 @@ permissions, or deleting it.
 
 ## Creating JSPs for the Guestbook Admin Portlet's User Interface
 
-You'll use three JSPs to construct the Guestbook Admin portlets user interface:
+You'll use three JSPs to construct the Guestbook Admin portlet's user interface:
 one for the default view, one for the Actions button, and one for the form for
 adding or editing a guestbook.
 
@@ -25,7 +25,8 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
         <%@include file="/html/init.jsp"%>
 
         <aui:button-row cssClass="guestbook-admin-buttons">
-                <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
+                <c:if test='<%= GuestbookModelPermission.contains(permissionChecker,
+                     scopeGroupId, "ADD_GUESTBOOK") %>'>
                         <portlet:renderURL var="addGuestbookURL">
                                 <portlet:param name="mvcPath"
                                         value="/html/guestbookadmin/edit_guestbook.jsp" />
@@ -67,7 +68,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     does not have permission to add new guestbooks, the button does not appear.
     If the user does have permission, the `<portlet:renderURL>` tag is used to
     construct a URL that points to the `edit_guestbook.jsp`. You haven't created
-    this JSP yet but you'll use it for both adding a new guestbook and editing an
+    this JSP yet, but you'll use it for both adding a new guestbook and editing an
     existing one.
 
     The final part of the `view.jsp` file contains the Liferay search container
@@ -87,12 +88,12 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     `className="com.liferay.docs.guestbook.model.Guestbook"`. You also have to
     declare a variable to represent your Guestbook model:
     `modelVar="guestbook"`. Within the search container row, you are defining
-    two columns with two subtags. The two subtags are different since they're
+    two columns with two subtags. The two subtags are different, since they're
     defining different types of columns. The
     `<liferay-ui:search-container-column-text property="name" />` tag specifies
     the first column. This tag is used for displaying text. Its
     `property="name"` attribute specifies that the text to be displayed is the
-    name attribute of the current guestbook object. The
+    `name` attribute of the current guestbook object. The
     `<liferay-ui:search-container-column-jsp`
     `path="/html/guestbookadmin/guestbook_actions.jsp" align="right" />` tag
     specifies the second, and last, column. This tag is used for displaying
@@ -165,11 +166,11 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     In `guestbook_actions.jsp`, you are displaying a list of possible actions
     that can be performed on a guestbook: editing it, configuring its
     permsisions, or deleting it. As with all of your portlet's JSPs, you need to
-    include `init.jsp` since your following the pattern of adding all JSP
+    include `init.jsp`, since you're following the pattern of adding all JSP
     imports to one file. In order to get the particular guestbook selected by
     the user, you have to use the search container result row selected by the
     user. This is what you're doing in the initial scriptlet at the top of the
-    file. You also need the `mvcPath` URL parameter for the edit guestbook
+    file. You also need the `mvcPath` URL parameter for the *edit guestbook*
     action so the portlet knows the path to the form to display for editing a
     guestbook: `edit_guestbook.jsp`. Creating this JSP will be your last step.
 
@@ -185,7 +186,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     The `editURL` variable is created via the `<portlet:renderURL
     var="editURL">` tag with two parameters: `guestbookId` and `mvcPath`. The
     `guestbookId` parameter specifies the guestbook to edit (it's the one from
-    the selected search container result row) and the `mvcPath` parameter
+    the selected search container result row), and the `mvcPath` parameter
     specifies the path the the Edit Guestbook form.
 
     The Permissions menu item displays the Permissions icon and the default
@@ -196,7 +197,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     The `permissionsURL` variable is created via the
     `<liferay-security:permissionsURL>` tag. You supply the model resource class
     name and the primary key of the specific resource for which you'd like to
-    display the permissions configuration menu and the tag does the rest.
+    display the permissions configuration menu, and the tag does the rest.
     Another benefit of using Service Builder and defining your guestbook
     permissions in `docroot/WEB-INF/src/resource-actions/default.xml` is that
     your application seamlessly integrates with Liferay's permissions system.
@@ -253,7 +254,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 
     You begin, of course, by importing `init.jsp`. Then you declare a `null`
     guestbook variable. If there's a `guestbookId` parameter in the request,
-    then you know that you're editing an existing guestbook and you use the
+    then you know that you're editing an existing guestbook, and you use the
     `guestbookId` to retrieve the corresponding guestbook via a service call.
     Otherwise, you know that you're adding a new guestbook.
 
@@ -266,7 +267,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     with the required parameter: the guestbook's `guestbookId`.
 
     If a guestbook is being edited, the current guestbook's name should appear
-    in the name field of the form. You use the following tag to create a model
+    in the name field of the form. You use the following tag to define a model
     of the guestbook that can be used in the AlloyUI form:
 
         <aui:model-context bean="<%= guestbook %>" model="<%= Guestbook.class %>" />
@@ -277,13 +278,13 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 
     When the form is submitted, the `editGuestbookURL` is invoked, which calls
     the Guestbook Admin portlet's `addGuestbook` or `updateGuestbook` method, as
-    discussed above. The name of the form is prefixed with by the
-    `<portlet:namespace>` tag which results in a unique name for each portlet
-    (or portlet instance). This guarantees that the form name will always be
+    discussed above. The name of the form is prefixed by the
+    `<portlet:namespace>` tag, which results in a unique name for each portlet
+    (or portlet instance). This guarantees that the form name is always 
     unique, regardless of the page to which it's been added.
     
     The `guestbookId` needs to appear on the form so that it can be submitted.
-    However, the user doesn't need to see it. Thus, you specify `type="hidden"`:
+    The user, however, doesn't need to see it. Thus, you specify `type="hidden"`:
 
         <aui:input type="hidden" name="guestbookId"
                 value='<%= guestbook == null ? "" : guestbook.getGuestbookId() %>' />
