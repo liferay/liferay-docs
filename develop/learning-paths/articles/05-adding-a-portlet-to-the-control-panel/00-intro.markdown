@@ -10,7 +10,7 @@ methods that call the corresponding service methods. And you've created a user
 interface using JSPs and Liferay's tag libraries, including the AlloyUI tag
 library.
 
-However, you're missing some functionality. Although, as an administrator, you
+However, you're missing some functionality. Although as an administrator, you
 can can use the Guestbook portlet to add new guestbooks, there's no way to
 delete them. There's also no way to update a guestbook's name or to configure a
 guestbook's permissions. In this learning path, you'll add this functionality to

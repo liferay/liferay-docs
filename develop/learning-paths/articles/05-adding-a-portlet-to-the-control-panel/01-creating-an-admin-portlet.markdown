@@ -6,7 +6,7 @@ Guestbook portlet. The New Liferay Portlet wizard creates various required
 configuration files such as `portlet.xml`, `liferay-portlet.xml`, and
 `liferay-display.xml` and adds appropriate entries to them. The information that
 you specify in the wizard is added to various elements and attributes in these
-configuration files and also determines the names and locations of other
+configuration files. It also determines the names and locations of other
 required files such as the portlet class and the location of the portlet's JSP
 files.
 
@@ -23,11 +23,11 @@ To create the Guestbook Admin portlet, follow these steps:
 5. Under Portlet Info, enter *guestbook-admin* for the Name and *Guestbook
    Admin* for the Display name and Title.
 6. Under Resources, make sure that *Create JSP files* is checked and enter
-   */html/guestbookadmin* for the JSP folder, then click *Next*.
+   */html/guestbookadmin* for the JSP folder. Click *Next*.
 7. Under Liferay Display, select *category.hidden*.
 8. Check the *Add to Control Panel* button.
 9. For the Entry Category, select *Site Administration - Content*.
-10. For the Entry Weight, leave the default of *1.5*, then click *Finish*.
+10. For the Entry Weight, leave the default of *1.5*. Click *Finish*.
 
 What did the New Liferay Portlet wizard do behind the scenes? To start
 reviewing the changes, first check your project's `portlet.xml` file. The wizard
@@ -56,7 +56,7 @@ Note the value of the `<portlet-name>` element: *guestbook-admin*.
 
 Next, check your project's `liferay-portlet.xml` file. While the `portlet.xml`
 file defines portlet attributes specified by the JSR-286 portlet specification,
-the `liferay-portlet.xml` file defines Liferay-specific portlet attributes.  The
+the `liferay-portlet.xml` file defines Liferay-specific portlet attributes. The
 wizard added a new `<portlet>` element in `liferay-portlet.xml` for the
 Guestbook Admin portlet, just like it did in `portlet.xml`:
 
@@ -84,11 +84,11 @@ Liferay's Control Panel is divided into two main sections: the Site
 Administration area (accessible via *Admin* &rarr; *Site Administration* from
 the Dockbar) and the Control Panel proper (accessible via *Admin* &rarr;
 *Control Panel* from the Dockbar). Notice that the value of the
-`<control-panel-entry-category>` is *site_administration.content* which means
+`<control-panel-entry-category>` is *site_administration.content*, which means
 that you have to navigate to *Admin* &rarr; *Content* from the Dockbar to view
 your portlet, as you specified in the wizard. The `<control-panel-entry-weight>`
 value determines where the Guestbook portlet appears in the list of portlets in
-the Content section of the Site Administration area of the Control Panel. You
+the Site Administration area's Content section in the Control Panel. You
 can use decimals to make your portlet appear after one portlet in the list but
 before another portlet in the list.
 
@@ -118,13 +118,13 @@ Notice also that the New Liferay Portlet wizard created a
 `GuestbookAdminPortlet.java` file for you in the
 `com.liferay.docs.guestbook.portlet` package of the `docroot/WEB-INF/src`
 folder, as you specified. The `GuestbookAdminPortlet` class extends Liferay's
-`MVCPortlet` class so it works out-of-the-box. The `<portlet-class>` subelement
+`MVCPortlet` class, so it works out-of-the-box. The `<portlet-class>` subelement
 of the Guestbook Admin portlet's `<portlet>` element in `portlet.xml` points to
 the `GuestbookAdminPortlet.java` file's location. The New Liferay Portlet wizard
 also created a `docroot/html/guestbookadmin` with a sample `view.jsp` file, as
 you specified. Now that you've created your Guestbook Admin portlet in the
 guestbook-portlet project, you need to add your desired functionality to it: the
-abilities to add, edit, and delete guestbooks and to configure their
+abilities to add, edit, and delete `guestbook`s and to configure their
 permissions. You'll start by adding some custom services to
 `GuestbookLocalServiceImpl`, then you'll add the necessary action methods to
 `GuestbookAdminPortlet`, and lastly you'll create the user interface for the
