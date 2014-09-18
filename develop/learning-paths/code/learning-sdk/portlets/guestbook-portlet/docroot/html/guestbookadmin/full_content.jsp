@@ -6,4 +6,7 @@ Guestbook guestbook = (Guestbook)request.getAttribute("gb_guestbook");
 guestbook = guestbook.toEscapedModel();
 %>
 
-<h1><%= guestbook.getName() %></h1>
+<dl>
+	<dt>Name</dt>
+	<dd><%= guestbook.getName() %></dd>
+</dl>

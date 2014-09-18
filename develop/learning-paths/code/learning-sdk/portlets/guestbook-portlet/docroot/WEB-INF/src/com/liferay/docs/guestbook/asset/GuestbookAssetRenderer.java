@@ -109,7 +109,7 @@ public class GuestbookAssetRenderer extends BaseAssetRenderer {
 		if (template.equals(TEMPLATE_FULL_CONTENT)) {
 			renderRequest.setAttribute("gb_guestbook", _guestbook);
 
-			return "/html/guestbookadmin/asset/" + template + ".jsp";
+			return "/html/guestbookadmin/" + template + ".jsp";
 		}
 		else {
 			return null;

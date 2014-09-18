@@ -109,7 +109,7 @@ public class EntryAssetRenderer extends BaseAssetRenderer {
 		if (template.equals(TEMPLATE_FULL_CONTENT)) {
 			renderRequest.setAttribute("gb_entry", _entry);
 
-			return "/html/guestbook/asset/" + template + ".jsp";
+			return "/html/guestbook/" + template + ".jsp";
 		}
 		else {
 			return null;
