@@ -17,14 +17,14 @@ updating the user interface of either the Guestbook portlet or the Guestbook
 Admin portlet. You're only adding back-end functionality that will allow
 guestbooks to take advantage of Liferay's asset framework. You'll explore the
 sets of functionality provided by Liferay's asset framework in the next learning
-path and you'll update your guestbook-portlet project to use some of them.
+path, and you'll update your guestbook-portlet project to use some of them.
 
 ## Creating a Guestbook Indexer
 
 In the `com.liferay.docs.guestbook.search` package of your guestbook-project's
 `docroot/WEB-INF/src` folder, create a new class called `GuestbookIndexer` that
 extends `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default
-contents of `GuestbookIndexer.java` with the following:
+contents of `GuestbookIndexer.java` with the following code:
 
     package com.liferay.docs.guestbook.search;
 
