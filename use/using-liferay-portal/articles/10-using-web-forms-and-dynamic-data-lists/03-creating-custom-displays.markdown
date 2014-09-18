@@ -26,12 +26,12 @@ Template*, you're presented with the same kind of graphical, drag-and-drop
 interface used for creating the data definition. Move items around, delete
 unwanted fields from view and save when ready.
 
----
++$$$
 
- ![Tip](../../images/tip.png) Note: Form templates were called *detail
+Note: Form templates were called *detail
  templates* prior to Liferay 6.2.
 
----
+$$$
 
 Note that data definitions can have multiple templates. You can choose the
 template you want to use for display in either a dynamic data list display or a
@@ -62,12 +62,12 @@ carousel preview of all the attendees of the party. This would complement your
 other displays and be another bragging right on `list.it`. Display templates
 give you the power to do all this and more.
 
----
++$$$
 
- ![Tip](../../images/tip.png) Note: Display templates were called *list
+Note: Display templates were called *list
  templates* prior to Liferay 6.2.
 
----
+$$$
 
 Just like form templates, display templates are found in the Manage Templates
 section of a data definition. With display templates you can customize the

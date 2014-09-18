@@ -75,14 +75,14 @@ must, however, tell the builder how to communicate with your portlet and how to
 create an SDK specific to your mobile platform. You do this by setting the below
 properties in the `gradle.properties` file.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If you don't want to change 
+**Note:** If you don't want to change 
   `gradle.properties` directly, you can also copy it to `~/.gradle` and modify 
   it there. Alternatively, you can also edit the `gradle.properties` inside each 
   platform folder (`ios/` or `android/`).
 
----
+$$$
 
 Here are the important properties to set.
 

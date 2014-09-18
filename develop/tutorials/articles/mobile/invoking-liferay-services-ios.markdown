@@ -37,15 +37,15 @@ authentication method requires the user's email address.
 
 **Password:** This is the user's password.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using 
+**Warning:** Take care when using 
 administrator credentials on a production Liferay instance, as you'll have
 permission to call any service. Make sure not to modify data accidentally. Of
 course, the default administrator credentials should be disabled on a production
 Liferay instance. 
 
----
+$$$
 
 <!-- We should provide this information here, customized for Apple people.
 They're a sensitive lot. :-) -Rich -->
@@ -83,16 +83,16 @@ synchronous service call returns only after the request is finished.
 Service method return types can be `void`, `NSString`, `NSArray`,
 `NSDictionary`, `NSNumber`, or `BOOL`.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+**Note:** Many service methods
 require a group ID as a parameter. 
 You can call `[LRGroupService_v62 getUserSitesGroups:&error]`, which uses the
 `getUserSitesGroups()` method from Liferay Portal's
 [`GroupService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html)
 class to get a site group. 
 
----
+$$$
 
 ## Related Topics
 

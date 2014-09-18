@@ -286,14 +286,14 @@ We'll call our new site template *Social Layout*. Click *Save*.
 
 ![Figure 9.8: You can give your site template a custom name and description and also specify several configuration settings..](../../images/social-networking-site-template.png)
 
----
++$$$
 
-![tip](../../images/01-tip.png) Tip: Unchecking *Allow Site Administrators to
+Tip: Unchecking *Allow Site Administrators to
 Modify the Pages Associated with this Site Template* only prevents users from
 modifying the specific pages contained in the template but does not disable a
 user's ability to add or modify additional pages.
 
----
+$$$
 
 Once you've created the template, choose *Actions &rarr; View Pages*. Let's
 change the name of the page from the default to *My Profile* and add some

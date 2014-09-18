@@ -86,15 +86,15 @@ It's also possible to use a generic `AsyncTaskCallback` implementation called
 `GenericAsyncTaskCallback`. For this implementation, you must implement a
 transform method and handle JSON parsing yourself. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you still don't want to use
+**Note:** If you still don't want to use
 any of these callbacks, you can implement `AsyncTaskCallback` directly, but be
 careful. You should always get the first element of the `JSONArray` passed as a
 parameter to the `onPostExecute(JSONArray jsonArray)` method (i.e.,
 `jsonArray.get(0)`).
 
----
+$$$
 
 After the request has finished, the `onSuccess()` method is called on the main
 UI thread. Since the request is asynchronous, the service call immediately

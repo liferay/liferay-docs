@@ -90,12 +90,12 @@ see information on your app's performance, use the *Metrics* link in the
 Development menu. If you submit an app, it will be reviewed before appearing on
 the `liferay.com` Marketplace.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) Your `liferay.com` Home page is a private page.
+Your `liferay.com` Home page is a private page.
  It's distinct from your public `liferay.com` Profile page.
 
----
+$$$
 
 ## Managing Apps
 

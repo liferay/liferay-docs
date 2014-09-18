@@ -96,9 +96,9 @@ necessary changes specific to Liferay and then deploys the plugin to the
 application server. This is a common method of deployment used throughout the
 Liferay community. 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** Liferay supports a wide variety of
+**Note:** Liferay supports a wide variety of
 application servers. Many, such as Tomcat and JBoss, provide a simple way to
 deploy web applications by just copying a file into a folder and Liferay's
 auto-deploy mechanism takes advantage of that ability. You should be aware
@@ -106,7 +106,7 @@ though, that some application servers, such as WebSphere or Weblogic, require
 the use of specific tools to deploy web applications; Liferay's auto-deploy
 process won't work for them. 
 
----
+$$$
 
 For this part of the tutorial, you'll learn how to deploy a JSF portlet using
 IDE/Developer Studio and the terminal.

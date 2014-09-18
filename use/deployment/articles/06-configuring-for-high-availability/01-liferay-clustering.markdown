@@ -44,9 +44,9 @@ It's a best practice to copy the relevant section you want to modify from
 `portal.properties` into your `portal-ext.properties` file, and then modify the
 values there.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png)**Note:** This chapter documents a
+**Note:** This chapter documents a
  Liferay-specific cluster configuration, without getting into specific
  implementations of third party software, such as Java EE application servers,
  HTTP servers, and load balancers. Please consult your documentation for those
@@ -54,7 +54,7 @@ values there.
  configuring Liferay in a cluster configuration, make sure your OS is not
  defining the hostname of your box to the local network at 127.0.0.1.
 
----
+$$$
 
 We'll discuss each of the points above one by one to present a clear picture of
 how to cluster Liferay. 
@@ -299,9 +299,9 @@ document resides. The third folder name is the numeric file entry name of the
 document itself. Finally, the fourth name is a version number which is used for
 storing multiple versions of the document.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png)**Note:** The numeric file entry name of a
+**Note:** The numeric file entry name of a
  document is distinct from the document ID; be careful not to confuse the two!
  Each has an independent counter. The numeric file entry name of a document is
  used in the folder path for storing the document but the document ID is not.
@@ -309,7 +309,7 @@ storing multiple versions of the document.
  the `DLFileEntry` table in Liferay's database; the document ID can be found in
  the `fileEntryId` column of the same table.
 
----
+$$$
 
 As you can see, the File System Store binds your documents very closely to
 Liferay, and may not be exactly what you want. But if you've been using the
@@ -1060,15 +1060,15 @@ on this is not very good. Your DBAs may be able to tweak the database indexes a
 bit to improve performance. For better performance, you should consider using a
 separate search server or syncing the indexes on the nodes' file systems.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
+**Note:** MySQL users need to modify their JDBC
  connection string for this to work. Add the following parameter to your
  connection string:
 
     emulateLocators=true
 
----
+$$$
 
 Alternatively, you can leave the configuration alone, and each node will have
 its own index. This ensures against collisions when multiple nodes update the

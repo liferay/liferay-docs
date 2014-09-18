@@ -87,15 +87,15 @@ necessary to build your newly created portlet project. This is not a recommended
 configuration, and it is encouraged that you keep your projects in the Plugins 
 SDK. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+**Tip**: If you are using a source
 control system such as Subversion, CVS, Mercurial, Git, etc., this might be
 a good moment to do an initial check-in of your changes. After building the
 plugin for deployment, several additional files will be generated that should
 *not* be handled by the source control system. 
 
----
+$$$
 
 A portlet project is made up of at least three components:
 

@@ -341,13 +341,13 @@ upper left corner of the [Associates
 Central](https://affiliate-program.amazon.com/gp/associates/network/main.html)
 page.
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Tip:** Make sure to create your affiliate
+**Tip:** Make sure to create your affiliate
 program before generating an access key; otherwise, the access key will not be
 linked to your affiliate program. 
 
----
+$$$
 
 If your Amazon Web Services key is set improperly, you can't add books to your
 Shopping portlet.

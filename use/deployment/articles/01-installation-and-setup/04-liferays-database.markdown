@@ -26,16 +26,16 @@ the best way to set up your Liferay installation.
 If you'll be setting up Liferay's database with the recommended permissions, you
 can skip to the next section.
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Note:** The below instructions are not the
+**Note:** The below instructions are not the
 recommended set up for Liferay installations, but the procedure is documented
 here so enterprises with more restrictive standards can install Liferay with
 more strict--but suboptimal--database settings. If it's at all possible,
 Liferay recommends that you use the automatic method as documented above instead
 of the procedure outlined below.
 
----
+$$$
 
 Even though Liferay can create its database automatically, some enterprises
 prefer *not* to allow the user ID configured in an application server to have

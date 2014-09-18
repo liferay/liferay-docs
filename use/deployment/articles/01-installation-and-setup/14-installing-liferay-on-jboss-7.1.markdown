@@ -113,16 +113,16 @@ location. Other plugins, such as service or action hooks, should still work
 properly since they don't require JBoss to access anything (such as JSP files)
 from an exploded `.war` file on the file system. 
 
----
++$$$
 
-![tip](../../images/01-tip.png) **Note:** This does not prevent Liferay from
+**Note:** This does not prevent Liferay from
 running in a clustered environment on multiple JBoss servers. You can set up a
 cluster of Liferay instances running on JBoss 7.1 servers running in standalone
 mode. Please refer to the chapter of this guide on [Configuring Liferay for High
 Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
 for information on setting up a Liferay cluster.
 
----
+$$$
 
 For multi-server production environments, the choice of running a managed domain
 versus standalone servers comes down to whether you want to use the centralized

@@ -66,9 +66,9 @@ Now that you know a little bit about the WSRP process, let's begin configuring
 WSRP on Liferay Portal. For this demonstration, we'll assume you have two portal
 servers.
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Tip**: If you're following along with this
+**Tip**: If you're following along with this
  example and don't have an additional portal server, you can download another
  instance of Liferay Portal and have it running at the same time as your current
  Liferay instance to simulate an additional portal server. Remember, typical use
@@ -81,7 +81,7 @@ servers.
  `browser.launcher.url=http://localhost:18080` to your portal's
  `portal-ext.properties` file.
 
----
+$$$
 
 To create a producer, go to the *Producers* tab and click *Add Producer*. Give
 your producer a name and choose the appropriate version of WSRP to use. Liferay

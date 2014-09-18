@@ -83,9 +83,9 @@ candidate for an open and independent site. Similarly, the home page for a
 corporate intranet should probably be placed in an open independent site so any
 member of the portal can access it.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, there were two
+**Tip:** Prior to Liferay 6.1, there were two
  ways of creating sites: organizations and communities. This has been simplified
  to provide more ease of use and allow for more flexibility. The main role of
  organizations is still to organize the users of the portal in a hierarchy but
@@ -93,7 +93,7 @@ member of the portal can access it.
  independent sites but the new name reflects the fact that sites can be used for
  many different purposes besides communities.
 
----
+$$$
 
 For other kinds of web sites, you may want to use independent sites to bring
 users together who share a common interest. If you were building a photo sharing
@@ -120,9 +120,9 @@ Control Panel to manage site templates and page templates. For information about
 the Apps, Users, and Configuration sections of the Control Panel, please see
 chapters 14, 16, and 17 of this guide.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.2, the Control Panel
+**Tip:** Prior to Liferay 6.2, the Control Panel
  included interfaces both for site administration and for portal administration.
  In Liferay 6.2, these interfaces have been separated. If you're signed in as an
  administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
@@ -131,7 +131,7 @@ chapters 14, 16, and 17 of this guide.
  &rarr; *Site Administration*. The Site Administration interface allows to
  configure site settings and manage the pages, content, and users of the site.
 
----
+$$$
 
 To add a site, click on *Sites* under the Sites section of the Control Panel and
 then click *Add*. If there is at least one site template available, a dropdown
@@ -174,9 +174,9 @@ unavailable. To activate the *Users* functionality for your organization site,
 you'll need to check *Allow Manual Membership Management* after creating the
 organization site by navigating to its *Site Settings* menu.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) It's possible for site memberships to be
+It's possible for site memberships to be
  handled automatically by a membership policy. The membership policy can check
  various pieces of information from each user, such as their first names, last
  names, birthdays, job titles, organizations, and user groups. Using this
@@ -187,7 +187,7 @@ organization site by navigating to its *Site Settings* menu.
  Administration* (Site Memberships and Site Teams) is hidden, even from
  administrators.
 
----
+$$$
 
 <!--See the (TBD) chapter of the Developer's Guide for information about
 creating site membership policies. -JR -->
@@ -375,15 +375,15 @@ until there's no collision. This behavior takes place for friendly URL
 translations as well. Similarly, if importing a LAR into a site causes a
 category name collision, Liferay renames the imported categories.
 
----
++$$$
 
- ![Note](../../images/01-tip.png) **Note:** LAR files are version dependent. You
+**Note:** LAR files are version dependent. You
  can't import a LAR file that was exported from one version of Liferay into
  a Liferay server that's running a different version of Liferay. Also,
  note that periodically exporting LARs is *not* a complete backup solution;
  please refer to chapter 18 of this guide for information on backing up Liferay.
 
----
+$$$
 
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `lunarresortv1.lar`. Use the check
@@ -548,9 +548,9 @@ Liferay generate canonical links by language. If you want to set some of these
 settings for the entire site, you can specify them from the Sitemaps and Robots
 tabs of the Manage Site Settings dialog box (see below).
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) In previous versions of Liferay, it was
+In previous versions of Liferay, it was
  possible that a single page could be indexed multiple times. In Liferay 6.1,
  all URLs that direct to the same page will only create one entry in the index.
  Previously, the simple URL
@@ -562,7 +562,7 @@ tabs of the Manage Site Settings dialog box (see below).
  variations of a specific URL will all be considered references to the same
  page.] 
 
----
+$$$
 
 **Look and Feel:** lets you set a page-specific theme.
 
@@ -599,16 +599,16 @@ content article, and select the article in the web content display portlet. Once
 you've selected the new web content article, the embedded portlet appears on the
 page.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) Usually, you don't want the web content display
+Usually, you don't want the web content display
  portlet that you're using to embed a portlet to be visible. To make the web
  content display portlet invisible, click on the gear icon of the web content
  display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
  *Save*. Once you've refreshed the page, only the embedded portlet will be
  visible.
 
----
+$$$
 
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
@@ -837,16 +837,16 @@ managed, including web content.
 
 For details about Liferay's social collaboration suite, see chapter 10.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Note:** The *Web Content List* and *Recent
+**Note:** The *Web Content List* and *Recent
  Content* plugins were deprecated in Liferay 6.2 and are disabled by default. To
  activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
  Configuration* and scroll through the list of portlets until you find the
  plugin. Select the plugins name and click the *Active* checkbox. Then click
  *Save*.
 
----
+$$$
 
 Next, let's learn more details about creating pages.
 

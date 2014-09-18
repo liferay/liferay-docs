@@ -197,14 +197,14 @@ Liferay.
 			/>
 		</Context>
 	
-    ---
++$$$
 
-    ![note](../../images/01-tip.png) **Note:** The above resource definition
+**Note:** The above resource definition
     assumes your database name is *lportal* and your MySQL username and password
     are both *root*. You'll have to update these values with your own database name
     and credentials.
 
-    ---
+$$$
 
 Your Tomcat managed data source is now configured. Let's move on to your mail
 session.

@@ -214,9 +214,9 @@ Similarly, a generic web content instance would be displayed in the Asset
 Publisher of its configured display page. See the section below on display pages
 for more information.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** When the Asset Publisher displays web
+**Tip:** When the Asset Publisher displays web
  content instances that have an associated small image, the small image becomes a
  link to the full instance.  To use this feature, add or edit a web content
  instance that the Asset Publisher should display. Before clicking *Publish*,
@@ -224,7 +224,7 @@ for more information.
  *Publish*. Once your web content instance appears in the Asset Publisher's list,
  clicking the small image takes you to the full instance.
 
----
+$$$
 
 **Number of Items to Display**: Here, you can select the maximum number of
 assets that can be displayed by the Asset Publisher. However, if pagination is
@@ -288,15 +288,15 @@ enable/disable the following options for displayed assets:
     corresponding social features to the view full of the asset in the Asset
     Publisher.
 
-    ---
++$$$
 
-     ![Tip](../../images/01-tip.png) **Tip:** An alternate way to add comments
+**Tip:** An alternate way to add comments
      and ratings to a page is through the *Page Comments* and *Page Ratings*
      portlets.  Just add the portlets in the appropriate location near the asset
      you'd like to have feedback for. Note that starting in Liferay 6.2, these
      portlets can no longer be exported.
      
-    ---
+$$$
 
 <!-- TODO
 **Display Style**:
@@ -384,16 +384,16 @@ its configuration window. Then check the *Set as the Default Asset Publisher for
 This Page* box. Also, for its display settings, set the Display Style to
 *Abstracts* and the Asset Link Behavior to *View in Context*.
 
----
++$$$
 
- ![Note](../../images/01-tip.png) **Note:** Web content linked in the Asset
+**Note:** Web content linked in the Asset
  Publisher can be viewed by clicking their asset links. With the *View in
 Context* behavior checked, the link displays the Web Content in its
 configured display page. If the web content does not have a configured display
 page, it is displayed in the web content display portlet to which the
 asset belongs.
 
----
+$$$
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole

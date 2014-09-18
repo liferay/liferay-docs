@@ -14,23 +14,23 @@ Follow these steps to create a Liferay plugin from the command line:
     which you want to create the plugin project. Archetype create a
     sub-directory for each plugin project you create.
 
-    ---
++$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If you haven't already
+**Note:** If you haven't already
     created a parent project, you may want to consider creating one to share
     common project information. See the
     [Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects)
     tutorial for details.
 
-    ---
+$$$
 
 2.  Execute the command
 
         mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
-    ---
++$$$
 
-    ![note](../../images/tip-pen-paper.png) **Important:** Sometimes, after a
+**Important:** Sometimes, after a
     new Liferay release, the Liferay CE and EE artifacts might only be available
     from [repository.liferay.com](repository.liferay.com). In this case, you
     must use the `-DarchetypeCatalog=...` option to access the Liferay
@@ -41,7 +41,7 @@ Follow these steps to create a Liferay plugin from the command line:
     tutorial to configure Maven to access the Liferay Repository for Liferay CE
     and EE artifacts. 
 
-    ---
+$$$
 
     <!-- Edit archetype generate command and remove above note when GA1 artifacts
     are available from Maven Central. -Cody -->
@@ -181,15 +181,15 @@ the Liferay Repository, the newest archetype version is automatically selected.
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The archetype file is
+**Note:** The archetype file is
 downloaded and installed automatically to your local repository (e.g.,
 `.m2/repository/com/liferay/maven/archetypes/[archetype]`). If you
 configured a mirror pointing to your public repository on Nexus, the
 plugin is installed there. 
 
----
+$$$
 
 Following these steps, you can use Archetype to generate all your Liferay plugin
 projects! 

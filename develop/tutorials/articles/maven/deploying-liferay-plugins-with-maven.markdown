@@ -76,9 +76,9 @@ tutorial explain the process. Just follow these steps:
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for s
         ample-portlet
 
-    ---
+$$$
  
-    ![note](../../images/tip-pen-paper.png) **Note:** If you get the following
+    **Note:** If you get the following
     error after executing `mvn liferay:deploy`, make sure you're executing the
     command from your plugin's directory (e.g., `sample-portlet`)--not your
     parent project's directory. 
@@ -88,7 +88,7 @@ tutorial explain the process. Just follow these steps:
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
-    ---
+$$$
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your
@@ -124,9 +124,9 @@ tutorial explain the process. Just follow these steps:
 
 Your plugin is now available in your Nexus repository!
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** There are three build phases
+**Note:** There are three build phases
 you'll use when developing plugins with Maven: 
 
 - In Maven's *compile* phase, explicit dependencies are downloaded to your
@@ -136,7 +136,7 @@ you'll use when developing plugins with Maven:
 - In Maven's *install* phase, your plugin is installed to your local
   repository. 
 
----
+$$$
 
 Congratulations on deployin your plugin to Liferay and to your repository! 
 

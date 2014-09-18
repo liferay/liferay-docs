@@ -33,14 +33,14 @@ the [*JSF Standard*](http://en.wikipedia.org/wiki/JavaServer_Faces) suite, and
 [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf). Each
 JSF component suite has an archetype that is used in creating the portlet. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: If you're using Maven's
+**Tip**: If you're using Maven's
 Archetype command line tool to generate your portlet project, you can filter on
 the group ID `liferay`, or even the group ID/artifact ID combination
 `liferay:portlet`, to find the Liferay portlet archetypes more easily. 
 
----
+$$$
 
 It's helpful to familiarize yourself with a Liferay Faces portlet plugin
 project's directory structure. You can explore its anatomy next. 
@@ -88,6 +88,7 @@ Location    | Maven project     | Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
+---
 
 Congratulations! You now know how to create Liferay Faces portlets that can
 leverage one of several powerful JSF frameworks. 

@@ -17,13 +17,13 @@ properties to your `portal-ext.properties` file:
     layout.user.public.layouts.enabled=false
     layout.user.private.layouts.enabled=false
     
----
++$$$
 
- ![Tip](../../images/tip.png) Note that the public and private page sets of
+Note that the public and private page sets of
  personal sites are handled separately. You can leave one page set enabled while
  disabling the other.
 
----
+$$$
 
 What if you initially had user personal sites enabled for your portal but then
 disabled them? Each existing user's personal site remains on your portal until
@@ -51,9 +51,9 @@ the Default User Public Layouts and Default User Private Layouts sections of
 the `portal.properties` file for details. You can find an HTML version of the
 this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 
----
++$$$
 
- ![Tip](../../images/tip.png) Prior to Liferay 6.1, administrators could
+Prior to Liferay 6.1, administrators could
  disallow users from being able to modify the pages and portlets of their
  personal sites by setting the following properties:
 
@@ -65,7 +65,7 @@ modifiable portions of personal sites through Liferay's permissions system by
 removing permissions from roles. To disallow all portal users from modifying
 something, remove the relevant permission from the User role.
 
----
+$$$
 
 Historically (prior to Liferay 5.1), only power users received personal sites.
 Back then, they were called personal communities. If you'd like only power users

@@ -24,15 +24,15 @@ properties separate from core properties like your database and mail server
 configurations.  All the possible properties that can
 be placed in this file are documented in [our reference documentation](http://docs.liferay.com/portal/6.2/propertiesdoc). 
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Note:** To avoid using the setup wizard so you
+**Note:** To avoid using the setup wizard so you
 can configure everything manually from a `portal-ext.properties` file, you must
 disable the Setup Wizard by specifying `setup.wizard.enabled=false` in the
 `portal-ext.properties`. Also, note that property values in
 `portal-setup-wizard.properties` (the file created in Liferay Home by the Setup
 Wizard) override property values in `portal-ext.properties`. 
 
----
+$$$
 
 Let's move on and discuss Liferay Portal security.

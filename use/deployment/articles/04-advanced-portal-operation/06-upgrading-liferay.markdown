@@ -67,9 +67,9 @@ different permission algorithm than the one that's available in Liferay Portal
 6.1. Permission algorithms 1-5 were deprecated in Liferay Portal 6.0 and
 were removed in 6.1, which means you must migrate *before* you upgrade.
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Important**: Before upgrading a Liferay instance
+**Important**: Before upgrading a Liferay instance
  that's using one of permissions algorithms 1-5, you *must* migrate to
  permissions algorithm 6 before attempting to upgrade to Liferay 6.2. You can't
  use the seamless upgrade feature to upgrade directly to 6.2 because Liferay's
@@ -77,7 +77,7 @@ were removed in 6.1, which means you must migrate *before* you upgrade.
  instructions in this section to migrate to permissions algorithm 6 before
  continuing with your upgrade.
 
----
+$$$
 
 If you're on Liferay 5.2 or below, you must upgrade to the latest available
 release of Liferay 6.0 first. Please follow the instructions in the [*Liferay

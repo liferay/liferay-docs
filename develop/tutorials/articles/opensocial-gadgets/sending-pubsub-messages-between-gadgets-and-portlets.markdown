@@ -58,15 +58,15 @@ That's all there is to it! The gadgets are communicating well with each other.
 This simple tutorial demonstrated two gadgets communicating with each other
 using PubSub. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** Gadget-to-gadget communication
+**Note:** Gadget-to-gadget communication
 using the publish-subscribe framework has been deprecated for Google gadgets:
 [https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
 However, PubSub is still the primary communication for gadgets and will be
 supported with gadgets on Liferay.
 
----
+$$$
 
 We will now dive into the source code and analyze how this interaction is
 accomplished. To view the full contents of the Google Map, visit the
@@ -152,15 +152,15 @@ Liferay. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
 for a user to allow communications between those gadgets and your portlets.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** The publish-subscribe
+**Note:** The publish-subscribe
 framework has been deprecated for Google gadgets:
 [https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
 However, PubSub is still a primary communication mechanism between portlets and
 gadgets and will be supported on Liferay.
 
----
+$$$
 
 As a demonstration, we'll show a customized *Portal Directory* portlet that
 communicates to the Google Map gadget using PubSub. For each user listed in the
@@ -174,13 +174,13 @@ The Portal Directory portlet's `addresses.jsp` file was edited to assign the
 portlet as a PubSub publisher, but what edits to the JSP file made this
 possible?
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you'd like to edit a
+**Note:** If you'd like to edit a
 Liferay core portlet, it's not recommended to edit its code directly. Always
 customize Liferay core portlets using Liferay hooks.
 
----
+$$$
 
 As you know from explanations given earlier, the *Google Map* gadget is
 distinguished as a subscriber. Therefore, the Portal Directory portlet needed to
@@ -206,14 +206,14 @@ Notice that you don't need to change anything for your *Google Map* gadget,
 since it's already subscribed to that channel; you only needed to define the
 Portal Directory portlet as a publisher to that channel.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you would like to broadcast
+**Note:** If you would like to broadcast
 messages to portlets, follow the same guidelines, but don't use the `gadget:`
 prefix in your topic parameter value for the call to the `Liferay.fire()`
 function.
 
----
+$$$
 
 Lastly, a button is needed to initiate the publishing of the address to the
 topic in the Portal Directory portlet; to do this, we inserted the following

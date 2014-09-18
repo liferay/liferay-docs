@@ -56,15 +56,15 @@ the user's email address.
 
 **Password:** The user's password.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using 
+**Warning:** Take care when using 
 administrator credentials on a production Liferay instance, as you'll have
 permission to call any service. Make sure not to modify data accidentally. Of
 course, the default administrator credentials should be disabled on a production
 Liferay instance. 
 
----
+$$$
 
 ### Step 2: Import the Liferay Services for Your App To Use 
 
@@ -110,15 +110,15 @@ invoke the method `getGuestGroupId(session)` of the sample app's
 class to get the `Guest` site's group ID, and then pass that group ID as
 the `groupId` parameter in the call `userService.getGroupUsers(groupId)`. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+**Note:** Many service methods
 require a group ID as a parameter. The SDK's `GroupService` class, which uses
 Liferay Portal's
 [`GroupService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html),
 provides methods for getting a site's `Group` and other scope groups. 
 
----
+$$$
 
 The call `JSONArray jsonArray = userService.getGroupUsers(groupId)`
 demonstrates making a basic synchronous service call; the method only

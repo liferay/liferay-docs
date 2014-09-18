@@ -87,9 +87,9 @@ avoid restarting, you should at least re-index Liferay's search indexes and
 database cache. These options are available from the Server Administration
 section of Liferay's Control Panel.
 
----
++$$$
 
-![Figure 1.x: Tip](../../images/tip.png) **Warning:** When you start Liferay for
+**Warning:** When you start Liferay for
 the first time, you're presented with a setup wizard. The configuration you make
 in the setup wizard is saved in a `portal-setup-wizard.properties` file in your
 Liferay Home directory. However, if you specify a different Liferay Home
@@ -110,7 +110,7 @@ Dashboard button on the Dockbar won't show up. If you manually navigate to the
 dashboard URL, you see the pages but they'll be unthemed and the portlets will
 be greyed out with a message stating that they've been undeployed. 
 
----
+$$$
 
 ### Installation Peculiarities of Specific App Servers 
 
