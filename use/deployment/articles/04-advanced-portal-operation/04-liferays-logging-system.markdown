@@ -1,8 +1,9 @@
 # Liferay's Logging System [](id=liferays-logging-system)
 
-Liferay uses Log4j extensively to implement logging for nearly every class in
-the portal. If you need to debug something specific while the system is running,
-you can use the control panel to set logging levels by class dynamically.
+Liferay's logging system uses Log4j extensively to implement logging for nearly
+every class in the portal. If you need to debug something specific while the
+system is running, you can use the control panel to set logging levels by class
+dynamically.
 
 To view the log levels, go to the control panel, click *Server Administration*
 in the Server section, and then click the *Log Levels* tab.
@@ -61,3 +62,12 @@ file.
 Logs are great for figuring out issues in production. But what if Liferay
 contacts you via its support channel with a bug fix or a security enhancement?
 Read on to learn how to patch Liferay.
+
++$$$
+
+**Note**: Logging changes within the control panel don't persist across
+restarts. If you want to make your changes persistent, you can create a
+`META-INF/portal-log4j-ext.xml` file and deploy it, using the `portal-log4j.xml`
+file from Liferay's source as a guide. 
+
+$$$
