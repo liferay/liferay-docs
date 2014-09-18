@@ -114,7 +114,7 @@ guestbook and omits it if the user does not.
 Next, you'll add permission checks to the Add Guestbook and Add Entry buttons. 
 
 1.  Scroll down in the file to the line that reads `<aui:button-row
-    cssClass="guestbook-buttons">`. Just below this like, add the following
+    cssClass="guestbook-buttons">`. Just below this line, add the following
     permissions check:
 
         <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>

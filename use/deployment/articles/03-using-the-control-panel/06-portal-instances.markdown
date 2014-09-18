@@ -2,7 +2,7 @@
 
 Liferay Portal allows you to run more than one portal instance on a single
 server. The Portal Instances section of the Control Panel appears under the
-Configuration heading. This sectin lets you manage multiple portal instances
+Configuration heading. This section lets you manage multiple portal instances
 from a single Liferay installation. Each portal instance's data is kept separate
 from every other portal instance's data. All portal data, however, is kept in
 the same database.
