@@ -224,13 +224,13 @@ First, specify the Liferay Repository's credentials in your project's parent
         </pluginRepository>
     </pluginRepositories>
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Important:** Do not leave the Liferay
+**Important:** Do not leave the Liferay
 repository configured when publishing artifacts to Maven Central. You must
 comment out the Liferay Repository credentials when publishing your artifacts.
 
---- 
+$$$
 
 Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
@@ -250,15 +250,15 @@ how.
 
 ## Installing Artifacts from the Central Repository
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Sometimes, the Liferay Maven
+**Note:** Sometimes, the Liferay Maven
 artifacts for a release are not immediately available on Maven's Central
 Repository. The Central Repository might still be synced to a previous release
 of Liferay. If this occurs, just download the Liferay Maven artifacts from
 Liferay's repository. (See the previous section for details.)
 
----
+$$$
 
 Liferay offers an option for automatic download and installation of Liferay
 Maven artifacts publicly available on the *Central Repository*, located at

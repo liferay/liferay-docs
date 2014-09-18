@@ -66,9 +66,9 @@ Congratulations! You've just installed Liferay Portal! The next thing you need
 to do is set up your mail configuration, so Liferay can send email notifications
 to users. This is covered in the Manual Configuration section below. 
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Tip:** The wizard is an extremely helpful tool,
+**Tip:** The wizard is an extremely helpful tool,
 especially if you're setting up Liferay for the first time or creating a
 completely fresh portal instance. If you're a Liferay veteran and you already
 have your database information and various properties set up, you can skip the
@@ -76,14 +76,14 @@ wizard by adding this line to your *portal-ext.properties* file:
 
     setup.wizard.enabled=false
 
----
+$$$
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Tip:** In Liferay 6.2, the admin user test@liferay.com
+**Tip:** In Liferay 6.2, the admin user test@liferay.com
 is created by the setup wizard even when a different user is specified. This
 means that two admin users are created: test@liferay.com and the specified user.
 Unless you're just installing Liferay for testing purposes, you should
 deactivate the test@liferay.com user after your database has been created.
 
----
+$$$

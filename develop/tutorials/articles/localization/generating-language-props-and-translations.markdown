@@ -113,14 +113,14 @@ re-add that property and its new value to `Language.properties`, and build the
 languages again. At this point, Bing Translator generates translations based on
 your property's new value. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you're Mavenizing your
+**Note:** If you're Mavenizing your
 portlet, you must manually copy the translations to your deployed application.
 Copy your `content` folder into your portlet's
 `src/main/webapp/WEB-INF/classes` folder. 
 
----
+$$$
 
 By using the Plugins SDK's language building capability, you can keep all
 created translations synchronized with your default `Language.properties`. You

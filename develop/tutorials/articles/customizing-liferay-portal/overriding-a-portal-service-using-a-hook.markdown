@@ -167,7 +167,7 @@ Liferay Portal version, and click on the *Javadocs* link.
 
 +$$$
 
-![Note](../../images/tip.png) **Note:** To modify a portal utility class, you can extend
+**Note:** To modify a portal utility class, you can extend
 the utility's base implementation in a hook. But first, check Liferay's
 [`portal.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
 file to see if there's an option for specifying an extension to the utility. For

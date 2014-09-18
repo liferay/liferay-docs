@@ -115,9 +115,9 @@ your structure, you can access the WebDAV URL by re-opening the structure or
 template and clicking the *Details* section. If you'd like the see WebDAV in
 action, visit the *Document Management* chapter's *WebDAV access* chapter.
 
----
++$$$
 
- ![Note](../../images/01-tip.png) **Note:** Some operating systems require a
+**Note:** Some operating systems require a
  WebDAV server to be class level 2 before (i.e., to support file locking) before
  allowing files to be read or written. For Liferay 6.2, the Documents and Media
  library was upgraded to class level 2 but Web Content structures and templates
@@ -127,7 +127,7 @@ action, visit the *Document Management* chapter's *WebDAV access* chapter.
  possible to avoid the restriction by using third-party WebDAV clients (e.g.,
  [Cyberduck](http://cyberduck.ch).
 
----
+$$$
 
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the

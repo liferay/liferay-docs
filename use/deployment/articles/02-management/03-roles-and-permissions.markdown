@@ -112,9 +112,9 @@ some of Liferay's out-of-the-box roles:
   portal, including global portal settings and individual sites, organizations,
   and users.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** It's easy to overlook the differences between
+**Tip:** It's easy to overlook the differences between
  site and organization owners and site and organization administrators. Remember
  that site and organization administrators *cannot* delete the membership of or
  remove the administrator or owner role from any other administrator or owner.
@@ -124,7 +124,7 @@ some of Liferay's out-of-the-box roles:
  administrators. They *can* appoint other users as site or organization
  administrators or owners.
 
----
+$$$
 
 Next, let's examine how to configure the permissions granted by different roles.
 
@@ -351,9 +351,9 @@ regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom
 permissions for the role. 
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users
+Note: Prior to Liferay version 6.0, Power Users
  and Users did *not* have the same default permissions. So if are using Liferay
  5.2 or a previous version, it's dangerous to remove the Power Users role from
  the default user associations: this could remove certain permissions you expect
@@ -362,7 +362,7 @@ permissions for the role.
  permissions on certain portlets to make them accessible to all users. To do
  this, see the section on Plugins Configuration below.
 
----
+$$$
 
 Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's learn how to configure portal

@@ -11,9 +11,9 @@ development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
+**Note:** In Liferay Developer Studio,
 the SDK is already installed and ready to use. Liferay Portal Enterprise
 Edition (EE) comes with Liferay Developer Studio and much more (see
 [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
@@ -21,7 +21,7 @@ Download a
 [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
 of Liferay Portal EE today. 
 
----
+$$$
 
 To install the Plugins SDK, follow these steps:
 
@@ -48,9 +48,9 @@ To install the Plugins SDK, follow these steps:
     your `C:\` drive in order for Service Builder to be able to run
     successfully. 
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
+**Tip**: By default, Liferay Portal
 Community Edition comes bundled with many plugins. It's common to remove them to
 optimize the server's startup time. Just navigate to the
 `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and remove
@@ -59,7 +59,7 @@ application itself. Also, don't delete `marketplace-portlet` since you can use
 the Marketplace portlet to download any plugins that you decide to use in the
 future. 
 
----
+$$$
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from

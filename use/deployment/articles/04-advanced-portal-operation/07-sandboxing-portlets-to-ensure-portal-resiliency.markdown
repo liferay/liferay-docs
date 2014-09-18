@@ -114,15 +114,15 @@ from Liferay Portal. Each SPI runs on an embedded Apache Tomcat server instance.
 Each of the portal's SPIs must use a unique port and you must ensure that no
 other processes are using that port. 
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note**: The SPIs and MPI serialize parameters
+**Note**: The SPIs and MPI serialize parameters
  and return values passed between them. The sandboxing feature uses an IPC
  framework called
  [Intraband](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Intraband),
  to support communication between the MPI and SPIs. 
 
----
+$$$
 
 Next, we'll pull those troublesome apps into the SPI. 
 

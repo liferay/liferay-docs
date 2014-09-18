@@ -164,16 +164,16 @@ already been added to the group, those changes only take effect if the *Enable
 propagation of changes from the site template* box for the user group was
 checked.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, pages from
+**Tip:** Prior to Liferay 6.1, pages from
  different user groups could be combined on users' personal sites by using a
  naming convention. Liferay 6.1 simplifies the way user groups' sites work by
  disallowing page combination. Set the property
  *user.groups.copy.layouts.to.user.personal.site* to true if you want to
  preserve the page combination functionality.
 
----
+$$$
 
 You can create a user group's site manually or base it on a site template. To
 create a user group's site manually, use the *Actions* menu mentioned above and

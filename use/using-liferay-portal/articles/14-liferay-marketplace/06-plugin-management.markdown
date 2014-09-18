@@ -17,15 +17,15 @@ the set of portlets that are to appear on any particular page. This means the
 core doesn't contain application code. Instead, all of the features and
 functionality of your portal application must reside in its portlets.
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Tip:** Liferay 4.4.2 and below support the
+**Tip:** Liferay 4.4.2 and below support the
  Portlet 1.0 standard: JSR-168. Liferay 5.0 and above support the Portlet 2.0
  standard: JSR-286. You cannot run Portlet 2.0 portlets in Liferay 4.4.2, but
  because the Portlet 2.0 standard is backwards-compatible, portlets written to
  the 1.0 standard still run in Liferay 5.x and above.
 
----
+$$$
 
 Portlet applications, like servlet applications, have become a Java standard
 which various portal server vendors have implemented. The JSR-168 standard
@@ -135,13 +135,13 @@ they can operate in an OSGi framework. The OSGi specification does not require a
 specific file extension for web application bundles but they typically have a
 `.jar` file extension. Sometimes a `.war` file extension is used instead.
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Note:** Liferay 6.2's OSGi runtime is
+**Note:** Liferay 6.2's OSGi runtime is
  experimental and unsupported. It should be considered a technology preview at
  this time. 
 
----
+$$$
 
 Deploying an OSGi bundle to Liferay is easy: just copy the bundle to your
 `[Liferay Home]/data/osgi/modules` directory. Undeploying is just as easy: just
@@ -360,15 +360,15 @@ Let's take a look at each of these factors.
 
 ### Liferay Configuration Issues
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Tip:** This applies to Liferay versions prior to
+**Tip:** This applies to Liferay versions prior to
  version 4.3.5. Liferay versions above 4.3.5 are able to auto detect the type of
  server it is running on, which makes things a lot easier. If you are running a
  newer version of Liferay, you can skip this section. If you are upgrading from
  one of these versions, continue reading.
 
----
+$$$
 
 Liferay by default comes as a bundle or as a `.war` file. Though every effort
 has been made to make the `.war` file as generic as possible, sometimes the

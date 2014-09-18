@@ -86,9 +86,9 @@ this:
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If the Liferay server
+**Note:** If the Liferay server
  prints the following message to your console, the *Marketplace Portlet* and 
  *Portal Compatibility Hook* must not already be deployed on your server.
 
@@ -104,17 +104,17 @@ overriding with your hook.
 - *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
 `liferay-plugins/hooks/portal-compat-hook`.
 
----
+$$$
 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** When you created portlets and themes,
+**Note:** When you created portlets and themes,
 they were fully functional upon deployment. Hooks aren't like that because
 they're Liferay customizations. The default customization is the original
 implementation! 
 
----
+$$$
 
 Now that you know how to create a hook using Liferay IDE and Ant, it's time to 
 get out there and create your customizations!

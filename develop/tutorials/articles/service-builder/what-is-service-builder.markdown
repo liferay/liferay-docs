@@ -34,14 +34,14 @@ development time. Although the number of files Service Builder generates can
 seem intimidating at first, developers only need to work with a few files in
 order to make customizations to their applications and add business logic.
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Note:** You don't have to use Service
+**Note:** You don't have to use Service
 Builder for plugin or portlet development. It's entirely possible to develop
 Liferay plugins by writing custom code for database persistence using your
 persistence framework of choice, such as JPA or Hibernate.
 
----
+$$$
 
 One of the main ways Service Builder saves development time is by completely
 eliminating the need to write and maintain database access code. To generate a

@@ -137,16 +137,16 @@ keep in mind:
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
----
++$$$
 
- ![Note](../../images/tip.png) **Important:** If you're developing a
+**Important:** If you're developing a
  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
  see the tutorial
  [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl),
  for details. Give yourself adequate time to develop your app's PACL and time to
  test your app thoroughly with the security manager enabled. 
 
----
+$$$
 
 Now that you've learned the packaging and deployment requirements for your app,
 let's consider the versions of Liferay you're targeting for your app and how to
@@ -236,14 +236,14 @@ that app, as it may or may not be supported.
 Read the section below for details on how to specify support for specific
 versions of Liferay. 
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** If you haven't yet done so,
+**Note:** If you haven't yet done so,
  make sure to read the chapter
  [Leveraging the Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
  from *Using Liferay Portal*! 
 
----
+$$$
 
 Now that we've covered the basics, you're armed with knowledge to start
 creating apps on the Marketplace, so let's see what that looks like in the next

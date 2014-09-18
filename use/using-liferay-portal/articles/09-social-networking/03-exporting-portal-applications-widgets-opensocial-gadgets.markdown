@@ -115,15 +115,15 @@ iGoogle lets users customize their own page and add gadgets to their page. Your
 Liferay Portal users can share their portlets and other OpenSocial gadgets on
 iGoogle or any other OpenSocial-compatible site. Let's try this now.
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Warning:** The iGoogle site will be removed
+**Warning:** The iGoogle site will be removed
 completely from Google on November 1, 2013:
 [https://support.google.com/websearch/answer/2664197](https://support.google.com/websearch/answer/2664197).
 Therefore, after the specified date, sharing your Liferay OpenSocial gadgets to
 iGoogle will no longer be possible.
 
----
+$$$
 
 <!-- Since Google has discontinued iGoogle (see
 http://googlesystem.blogspot.com/2012/07/igoogle-will-be-discontinued.html),

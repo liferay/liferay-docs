@@ -101,9 +101,9 @@ Here's how to generate a PACL policy for your plugin:
     `liferay-plugin-package.properties` file. It's just a matter of merging the
     properties that start with the "security-manager-" prefix. 
 
-----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
+**Note:** There is a known issue
  [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
  need to be restarted after deploying your plugin, in order for the security
  manager to detect and write out the complete set of policies for a plugin. If
@@ -120,7 +120,7 @@ Here's how to generate a PACL policy for your plugin:
  `[servletContextName].policy` file into your
  `liferay-plugin-package.properties` file. 
  
-----
+$$$
 
 Now that you've thoroughly specified the resources your plugin accesses, you can 
 enable the security manager and do final testing of your PACL properties. 

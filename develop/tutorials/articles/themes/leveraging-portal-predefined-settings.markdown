@@ -118,13 +118,13 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
 With these settings configurable, site administrators can control site name
 display from the each site's *Look and Feel* screen. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
+**Note:** To override default behavior
 for individual portlets, you can modify the portlet's `liferay-portlet.xml`
 file.
 
----
+$$$
 
 Now that you know how to use the predefined settings available to you in Liferay
 Portal, the sky's the limit!

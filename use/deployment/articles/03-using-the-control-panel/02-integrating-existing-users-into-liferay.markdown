@@ -732,16 +732,16 @@ already set up one Liferay instance as a SAML Identity Provider, use a
 If you'd like to configure Liferay's SAML Service Provider Settings, navigate to
 the Service Provider tab of the SAML Admin Control Panel portlet.
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** The previous two sections explained how
+**Note:** The previous two sections explained how
  to use the SAML portlet's Control Panel interface to configure Liferay as an
  Identity Provider and as a Service Provider. It's possible to configure Liferay
  as an Identity Provider or as a Service Provider entirely through the
  `portal-ext.properties` file. However, we recommend using the Control Panel
  SAML interface because it specifies required fields and validates some fields.
 
----
+$$$
 
 Suppose that you have two Liferay instances running on ports 8080 and 9080 of
 your host. Suppose further that you've configured the Liferay running on port

@@ -193,14 +193,14 @@ ImageMagick 6.7.7, and Xuggler 5.4 work with Liferay 6.2. You need to install
 LibreOffice and ImageMagick manually but you can install Xuggler from Liferay's
 Server Administration Control Panel interface.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** If you're running Liferay on a Linux
+**Tip:** If you're running Liferay on a Linux
  server and experience a problem enabling Xuggler, check your server's glibc
  version. You might have to update glibc to version 2.6 or later in order for
  Xuggler to work.
 
----
+$$$
 
 Once you've installed these tools, you can use the External Services tab of the
 Control Panel to configure Liferay to use them.

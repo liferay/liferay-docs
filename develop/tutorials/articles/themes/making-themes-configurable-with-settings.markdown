@@ -89,15 +89,15 @@ once the site administrator selects the theme and clicks *Save*.
 
 ![Figure 1: Here are examples of configurable settings for the site admin to enter a slogan and display the theme's footer. Themes and their settings are available in the *Look and Feel* of a site's page settings.](../../images/themes-custom-configurable-setting.png)
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Use a language properties
+**Note:** Use a language properties
 hook to properly display configurable theme settings, like the slogan text area
 and footer checkbox from the previous example. For details, see the 
  [Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
 section in the *Hooks* chapter of the DevGuide.
 
----
+$$$
 
 Now that you know how to add settings, you can move on to learning how to add
 logic to enable different templates for a theme. 

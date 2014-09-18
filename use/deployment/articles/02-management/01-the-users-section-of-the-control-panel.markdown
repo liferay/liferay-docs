@@ -232,9 +232,9 @@ location cannot have any suborganizations.
 parent of the organization you are creating. Click the *Remove* button to remove
 the currently configured parent.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** By creating an organization, you
+**Tip:** By creating an organization, you
  automatically become both a member and receive the Organization Owner role,
  which gives you full administrative rights within the organization. This means
  that you can, for example, appoint other users to be organization
@@ -245,7 +245,7 @@ the currently configured parent.
  administrators can't make these role assignments and can't manage the
  memberships of other Organization Administrators or Owners.
 
----
+$$$
 
 Fill out the information for your organization and click *Save*. As when
 creating a new user, after you click *Save* to submit the form, a success

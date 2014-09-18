@@ -35,13 +35,13 @@ Recycle Bin until its permanent deletion (default is 30 days).
 
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
----
++$$$
 
- ![note](../../images/tip.png) **Note:** If you disable the Recycle Bin while
+**Note:** If you disable the Recycle Bin while
  it's still holding recycled items, the recycled items reappear in the Recycle
  Bin if it is re-enabled.
 
----
+$$$
 
 You can also configure the Recycle Bin via properties in the `portal.properties`
 file. Remember that it's a best practice not to edit the `portal.properties`
@@ -233,13 +233,13 @@ options provided by the RB when publishing to Live aren't final. Need to
 check-up on progress periodically. (Bug in LP build, need to test when snapshot
 appears the same as in LPS-26266.) -->
 
----
++$$$
 
- ![note](../../images/tip.png)**Note:** The Staging Recycle Bin saves its
+**Note:** The Staging Recycle Bin saves its
 contents until the staged material has been published to live. This means that
 you can turn the staging mode on and off without losing your recycled material.
 
----
+$$$
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring

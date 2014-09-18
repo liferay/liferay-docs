@@ -15,15 +15,15 @@ Liferay Android Mobile SDK libraries to your project. The Liferay Mobile SDK
 Builder that comes with our Eclipse plugin enables you to generate these
 libraries. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that you
+**Note:** This section assumes that you
 created your Android project using the ADT plugin for Eclipse. If you didn't
 create the project using the ADT plugin or if it uses Gradle or Maven, see the
 instructions for
 [Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/setting-up-the-mobile-sdk-manually).
 
----
+$$$
 
 Use these steps to set up the Liferay Android SDK in your Android app project. 
 
@@ -64,14 +64,14 @@ Change the link in this Note to the tutorial: "Building Mobile SDKs" once the
 header id's are generated.
 -->
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** You can also use the Liferay
+**Note:** You can also use the Liferay
 Mobile SDK Builder via command line. Read
 [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks)
 for more details.
 
----
+$$$
 
 You can specify a running Liferay Portal instance in Eclipse, and Eclipse
 queries the server for all the remote APIs that are available to generate `.jar`
