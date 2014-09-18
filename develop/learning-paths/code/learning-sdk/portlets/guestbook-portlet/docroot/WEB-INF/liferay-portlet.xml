@@ -6,6 +6,7 @@
 	<portlet>
 		<portlet-name>guestbook</portlet-name>
 		<icon>/icon.png</icon>
+		<indexer-class>com.liferay.docs.guestbook.search.EntryIndexer</indexer-class>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js
@@ -15,6 +16,7 @@
 	<portlet>
 		<portlet-name>guestbook-admin</portlet-name>
 		<icon>/icon.png</icon>
+		<indexer-class>com.liferay.docs.guestbook.search.GuestbookIndexer</indexer-class>
 		<control-panel-entry-category>
 			site_administration.content
 		</control-panel-entry-category>
