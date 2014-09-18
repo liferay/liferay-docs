@@ -14,6 +14,9 @@
 
 package com.liferay.docs.guestbook.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import com.liferay.docs.guestbook.GuestbookNameException;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.model.Guestbook;
@@ -23,13 +26,11 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.IndexerRegistryUtil;
+import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * The implementation of the guestbook local service.
@@ -100,6 +101,12 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 				Guestbook.class.getName(), guestbookId, false, true, true);
+
+		assetEntryLocalService.updateEntry(userId, groupId,
+				guestbook.getCreateDate(), guestbook.getModifiedDate(),
+				Guestbook.class.getName(), guestbookId, guestbook.getUuid(), 0,
+				null, null, true, null, null, null, ContentTypes.TEXT_HTML,
+				guestbook.getName(), null, null, null, null, 0, 0, null, false);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
@@ -131,6 +138,13 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 				serviceContext.getGroupPermissions(),
 				serviceContext.getGuestPermissions());
 		
+		assetEntryLocalService.updateEntry(guestbook.getUserId(),
+				guestbook.getGroupId(), guestbook.getCreateDate(),
+				guestbook.getModifiedDate(), Guestbook.class.getName(),
+				guestbookId, guestbook.getUuid(), 0, null, null, true, null,
+				null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null,
+				null, null, null, 0, 0, null, false);
+		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
 
@@ -156,6 +170,8 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		resourceLocalService.deleteResource(serviceContext.getCompanyId(),
 				Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
 				guestbookId);
+		
+		assetEntryLocalService.deleteEntry(Guestbook.class.getName(), guestbookId);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
