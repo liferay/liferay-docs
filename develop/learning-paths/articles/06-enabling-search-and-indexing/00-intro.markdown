@@ -2,14 +2,14 @@
 
 Now you have a working Guestbook portlet as well as a completed Guestbook Admin
 portlet. The Guestbook portlet allows users to create guestbooks and to add,
-edit, configure permissions for, or delete guestbook entries. The Guestbook
-Admin portlet allows site administrators to create guestbooks and to edit,
-configure permissions for, or delete guestbooks. To increase the usability of
-the Guestbook portlet, especially for situations where many entries have been
-added to one or more guestbooks, you're going to make guestbook entries
-searchable. When you're done, users will be able to enter search queries into a
-search bar on the Guestbook portlet. If a search query matches an entry's
-message or name, the entry will appear in the search results.
+edit, configure permissions for, and delete guestbook entries. The Guestbook
+Admin portlet allows site administrators to create, edit, configure permissions
+for, and delete guestbooks. To increase the usability of the Guestbook portlet,
+especially for situations where many entries have been added to one or more
+guestbooks, you'll next make guestbook entries searchable. When you're done,
+users will be able to enter search queries into a search bar on the Guestbook
+portlet. If a search query matches an entry's message or name, the entry will
+appear in the search results.
 
 You'll not only add an indexer for guestbook entries, but also for guestbooks
 themselves. Although you don't anticipate having so many guestbooks in a single
