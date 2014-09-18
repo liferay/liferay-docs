@@ -3,7 +3,7 @@
 Updating the Guestbook portlet's user interface for search involves two steps:
 
 1. Updating the Guestbook portlet's default view JSP to display a search bar
-   which allows users to submit queries.
+   that allows users to submit queries.
 
 2. Creating a new JSP for the Guestbook portlet that reads the search query
    entered by the user and uses it to retrieve and display search results.
@@ -32,13 +32,13 @@ grabs the `guestbookId` from the request:
         </div>
     </aui:form>
 
-Add the following import to `docroot/html/init.jsp`:
+Add the following tag library declaration to `docroot/html/init.jsp`:
 
     <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 
 Your first step in creating a search bar is to create a render URL that points
 to the `docroot/html/guestbook/view_search.jsp`. You haven't created this file
-yet but you're constructing the URL that points to it now because you have to
+yet, but you're constructing the URL that points to it now because you have to
 specify what happens when the user submits a search query. Note that you're
 using the `mvcPath` parameter since the Guestbook portlet is a Liferay MVC
 portlet.
@@ -229,10 +229,9 @@ URLs are used in the AUI form that follows.
 This AUI form is identical to the one that you added to the Guestbook portlet's
 `view.jsp` except that this one contains a `liferay-ui:header>` tag. The
 `<liferay-ui:header>` tag displays the *Back* icon next to the word "Search".
-Note how the `backURL` attribute uses the `viewURL` that you defined above. The
-result of the AUI form displays the search form and invokes the `searchURL` with
-the search query entered by the user added to the URL in the `keywords`
-parameter.
+Note how the `backURL` attribute uses the `viewURL` that you defined above.
+Submitting the form invokes the `searchURL` with the search query entered by the
+user added to the URL in the `keywords` parameter.
 
 After the AUI form comes a scriplet. In this scriptlet, you use the `keywords`
 URL parameter to actually run a search and retrieve the corresponding guestbook
@@ -254,12 +253,12 @@ run a search. This is done by the following line:
 Indexers in Liferay's indexer registry are stored in a map and can be retrieved
 by specifying the indexer's class or class name. After you've retrieved the
 guestbook entry indexer, you use it, along with your search context, to run a
-search. The search results are returned as a `Hits` object which contains
-pointers to documents that correspond to guestbook entries.
+search. The search results are returned as `Hits` objects containing pointers to
+documents that correspond to guestbook entries.
 
     Hits hits = indexer.search(searchContext);
 
-Towards the end of the scriptlet, you loop through the hit documents, retrieve
+Toward the end of the scriptlet, you loop through the hit documents, retrieve
 the corresponding guestbook entries, and add them to a list. That's how easy it
 is to obtain search results!
 
@@ -294,7 +293,7 @@ key attribute of the entity. The `modelVar` property specifies the name of the
 been escaped (sanitized). This prevents potential hacks that could occur if
 users submitted malicious code into the Add Guestbook form, for example.
 
-Inside of the `<liferay-ui:search-container-row>` tag, you specify the four
+Inside the `<liferay-ui:search-container-row>` tag, you specify the four
 columns to display: the guestbook entry's guestbook name, message, entry name,
 and the actions JSP. The guestbook name is retrieved from the map created in the
 scriptlet. Finally, you use the `<liferay-ui:search-iterator>` tag to iterate
@@ -323,4 +322,4 @@ themselves. You don't anticipate needing to search for guestbooks but you'll
 create a indexer for guestbooks so that they can take advantage of Liferay's
 asset framework. Liferay's asset framework provides sets of functionality that
 are common to different types of content such as blog posts, message board
-posts, wiki articles, etc.
+posts, wiki articles, and more.
