@@ -12,9 +12,9 @@ follow these four steps:
 3. Update the `addEntry`, `updateEntry`, and `deleteEntry` methods of
    `EntryLocalServiceImpl` to invoke the guestbook entry indexer.
 
-4. Update the Guestbook portlet's user interface to display a search bar into
-   which users can enter search terms and to display search results after the
-   search terms are submitted.
+4.  Update the Guestbook portlet's user interface to display a search bar into
+    which users can enter search terms and a JSP to display search results after
+    the search terms are submitted.
 
 In this section, you'll follow the first three steps: creating an indexer,
 registering an indexer, and updating the service layer to invoke the indexer.
@@ -24,18 +24,17 @@ the next section.
 ## Understanding Search and Indexing with Lucene
 
 Under the hood, Liferay uses Lucene, a Java search library, to implement its
-search and indexing functionality. Lucene is a Java search library which works
-by converting searchable entities into *documents*. Lucene documents are not
-documents in the ordinary English sense of the word. Rather, they are Lucene
-constructs that correspond to searchable entities. After you implement an
-indexer for guestbook entries, a document will be created for each guestbook
-entry. When you implement the guestbook entry indexer, you'll specify which
-guestbook entry fields should be added to each guestbook entry document. All the
-guestbook entry documents are added to an index. When a Lucene index is
-searched, a *hits* object is returned that contains pointers to the documents
-that match the search query. Searching for guestbook entries via an index is
-faster than searching for entities directly since a direct search requires
-database queries that an index search avoids.
+search and indexing functionality. Lucene works by converting searchable
+entities into *documents*. Lucene documents are not documents in the ordinary
+English sense of the word. Rather, they are Lucene constructs that correspond to
+searchable entities. After you implement an indexer for guestbook entries, a
+document will be created for each guestbook entry. When you implement the
+guestbook entry indexer, you'll specify which guestbook entry fields should be
+added to each guestbook entry document. All the guestbook entry documents are
+added to an index. When a Lucene index is searched, a *hits* object is returned
+that contains pointers to the documents that match the search query. Searching
+for guestbook entries via an index is faster than searching for entities
+in the database.
 
 ## Creating an Entry Indexer
 
@@ -43,7 +42,7 @@ Create a new package in your guestbook-project's `docroot/WEB-INF/src` folder
 called `com.liferay.docs.guestbook.search`. In this package, create a new class
 called `EntryIndexer` that extends
 `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default contents of
-`EntryIndexer.java` with the following:
+`EntryIndexer.java` with the following code:
 
     package com.liferay.docs.guestbook.search;
 
@@ -280,21 +279,24 @@ corresponding to the entry using the `getDocument` method of `BaseIndexer` which
 takes an object argument. Then you invoke the `updateDocument` method of
 `SearchEngineUtil` to update (reindex) the document.
 
-The second `doReindex` method takes a `className` string argument and a
-`classPK` long argument. To implement this method, you retrieve the guestbook
+The second `doReindex` method takes a `className` `String` argument and a
+`classPK` `long` argument. To implement this method, you retrieve the guestbook
 entry corresponding to the primary key by calling the `getEntry` method of
 `EntryLocalServiceUtil`, passing in the `classPK` parameter. Once you've
 retrieved the guestbook entry, you can invoke the first `doReindex` method that
 you implemented, passing the entry as a parameter.
 
-The third `doReindex` method takes an array of strings, `ids`, as an argument.
-`ids` is a string array so you need to convert individual IDs from strings to
-longs. You retrieve the `companyId` from the first ID and pass it as an argument
+The third `doReindex` method takes an array of `String`s, `ids`, as an argument.
+`ids` is a `String` array, so you need to convert individual IDs from `String`s to
+`long`s. You retrieve the `companyId` from the first ID and pass it as an argument
 to the `reindexEntries` helper method. You use an actionable dynamic query in
 the `reindexEntries` helper method to retrieve all the guestbook entries in the
 specified company. Each entry's Lucene document is added to a collection.
 Finally, you call the `updateDocuments` method of `SearchEngineUtil`, passing
 the document collection as an argument, to update (reindex) all the documents.
+
+<!-- Unfortunately, actionable dynamic queries have not been explained yet in
+any learning path, so you'll have to explain what that is here. -Rich -->
 
 The last method you have to implement is the `getPortletId` method that takes a
 `SearchContext` parameter. The portlet ID is always `guestbook-portlet`, so you
@@ -304,7 +306,7 @@ just return `PORTLET_ID`.
 
 Now that you've created an entry indexer, you need to register it with the
 Guestbook portlet in `liferay-portlet.xml`. Add the following line to your
-guestbook-portlet project's `docroot/WEB-INF/liferay-portlet.xml` file inside of
+guestbook-portlet project's `docroot/WEB-INF/liferay-portlet.xml` file inside 
 the `<portlet>` element for the Guestbook portlet, after the
 `<icon>/icon.png</icon>` element:
 
@@ -336,7 +338,7 @@ you're obtaining an instance of the correct indexer? Since you registered
 `EntryIndexer` is associated with the guestbook-portlet. Furthermore, you're
 supplying `Entry.class` as an argument to the
 `IndexerRegistryUtil.nullSafeGetIndexer` method. Your `EntryIndexer` class has a
-`getClassNames` method which returns a string array containing
+`getClassNames` method which returns a `String` array containing
 `Entry.class.getName()` as its only element. So
 `IndexerRegistryUtil.nullSafeGetIndexer(Entry.class)` unambiguously specifies
 your indexer.
@@ -361,7 +363,7 @@ Next, add the following lines to the `updateEntry` method, after the call to
 
     indexer.reindex(entry);
 
-These are the same two lines that you added to `addEntry` and the rationale for
+These are the same two lines that you added to `addEntry`, and the rationale for
 adding them is the same.
 
 Finally, add the following lines to `deleteEntry`, after `entry =
@@ -373,9 +375,8 @@ deleteEntry(entryId)` but before the return statement:
     indexer.delete(entry);
 
 Here, you get the `EntryIndexer` the same way as in the `addEntry` and
-`updateEntry` methods. The difference is that you want to remove the entry
-instead or indexing (or reindexing) it. So you call `indexer.delete(entry)`
-instead of `indexer.reindex(entry)`.
+`updateEntry` methods. The difference is that you want to remove the entry. So
+you call `indexer.delete(entry)` instead of `indexer.reindex(entry)`.
 
 That's all there is to updating your service layer to handle indexing! Since you
 didn't add or remove any methods in `EntryLocalServiceImpl` or update any
