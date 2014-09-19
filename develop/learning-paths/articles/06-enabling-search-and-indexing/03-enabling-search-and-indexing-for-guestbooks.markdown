@@ -1,4 +1,4 @@
-# Enabling Search and Indexing for Guestbooks
+# Enabling Search and Indexing for Guestbooks [](id=enabling-search-and-indexing-for-guestbooks)
 
 To enable search and indexing for guestbook entities, you need to follow these
 three steps:
