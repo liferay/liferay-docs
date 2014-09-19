@@ -26,6 +26,8 @@ scenarios, such as
 
 - Performance Testing and Tuning
 
+- Content Delivery Network
+
 During the discussion, we'll mention a number of other open source products upon
 which Liferay relies for much of this functionality. These products all have
 their own documentation which should be consulted for a fuller view of what

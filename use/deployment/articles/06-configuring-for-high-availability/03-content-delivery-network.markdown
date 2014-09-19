@@ -65,7 +65,7 @@ to CDN:
 - *CDN Host HTTPS* 
 - *CDN Dynamic Resources Enabled*
 
-![Figure 1: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
+![Figure 2: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
 
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the CDN section of the Properties

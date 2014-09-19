@@ -210,4 +210,7 @@ may be that a performance issue comes from a custom-built application that's
 doing something it shouldn't do. Always load test your system before putting it
 into production: that's the best way of finding out potential performance
 problems, and that way, you'll find them during performance testing, and not
-when your system is in production.
+when your system is in production. 
+
+Next, you'll learn how to configure a Content Delivery Network, which can also
+help with your portal's performance. 
