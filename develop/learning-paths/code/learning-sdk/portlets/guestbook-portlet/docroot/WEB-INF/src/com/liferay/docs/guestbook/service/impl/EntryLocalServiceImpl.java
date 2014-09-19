@@ -32,6 +32,8 @@ import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portlet.asset.model.AssetEntry;
+import com.liferay.portlet.asset.model.AssetLinkConstants;
 
 /**
  * The implementation of the entry local service.
@@ -84,7 +86,12 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 				Entry.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
 				entryId);
 		
-		assetEntryLocalService.deleteEntry(Entry.class.getName(), entryId);
+		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+				Entry.class.getName(), entryId);
+
+		assetEntryLocalService.deleteEntry(assetEntry);
+
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 		
 		entry = deleteEntry(entryId);
 		
@@ -128,11 +135,17 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 				Entry.class.getName(), entryId, false, true, true);
 		
-		assetEntryLocalService.updateEntry(userId, groupId,
-				entry.getCreateDate(), entry.getModifiedDate(),
-				Entry.class.getName(), entryId, entry.getUuid(), 0, null, null,
-				true, null, null, null, ContentTypes.TEXT_HTML,
-				entry.getMessage(), null, null, null, null, 0, 0, null, false);
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+				groupId, entry.getCreateDate(), entry.getModifiedDate(),
+				Entry.class.getName(), entryId, entry.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, entry.getMessage(), null, null, null,
+				null, 0, 0, null, false);
+		
+		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+				serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Entry.class);
@@ -172,11 +185,17 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 				serviceContext.getGroupPermissions(),
 				serviceContext.getGuestPermissions());
 		
-		assetEntryLocalService.updateEntry(userId, groupId,
-				entry.getCreateDate(), entry.getModifiedDate(),
-				Entry.class.getName(), entryId, entry.getUuid(), 0, null, null,
-				true, null, null, null, ContentTypes.TEXT_HTML,
-				entry.getMessage(), null, null, null, null, 0, 0, null, false);
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+				groupId, entry.getCreateDate(), entry.getModifiedDate(),
+				Entry.class.getName(), entryId, entry.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, entry.getMessage(), null, null, null,
+				null, 0, 0, null, false);
+		
+		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+				serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Entry.class);
