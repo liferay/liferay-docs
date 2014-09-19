@@ -13,8 +13,7 @@ mind the adage about tuning: load test and profile, tune, repeat.
 
 Configuring a Content Delivery Network is also very advantageous when looking to
 increase your portal's performance. By accessing static resources from a local
-server, request latencies and your application server's load are drastically
-reduced.
+server, latency time and your application server's load are drastically reduced.
 
 In all, Liferay Portal gives you all the options you need to build a
 high-performance, robust environment that supports your enterprise.

@@ -21,12 +21,12 @@ retrieved by a server nearest to the location of the user.
 The CDN basically functions as a caching proxy, meaning that once static content
 is generated onto a local server, it is stored in a cache for quick and easy
 retrieval, without having to communicate with another server that is not close
-in proximity. This drastically improves request latencies for your users because
-your portal can download static resources from a local server down the street,
+in proximity. This drastically improves latency time for your users because your
+portal can download static resources from a local server down the street,
 instead of halfway around the world. A user's request to the CDN for content is
 directed to a server machine using an algorithm. That algorithm attempts to use
 a server closest to the user. Take a look at the figure below for a visual
-representation of using geographical proximity to improve request latencies. 
+representation of using geographical proximity to improve latency. 
 
 ![Figure 1: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
 
@@ -74,4 +74,4 @@ Once you're finished, click *Save* and your old host is replaced with your new
 CDN host. 
 
 As you can see, configuring a CDN is extremely easy, and can drastically reduce
-request latencies and improve your portal's performance. 
+latency time and improve your portal's performance. 
