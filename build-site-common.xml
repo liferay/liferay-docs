@@ -49,6 +49,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -105,6 +116,18 @@
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
+    </target>
+
+	<target name="compare-with-master" description="Compares an import branch with your master branch on the liferay-docs repo.">
+		<java
+			classname="com.liferay.documentation.util.GitCompare"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="${purpose.dir}"/>		
+		</java>
 	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
@@ -115,6 +138,12 @@
 			<fileset dir="./" includes="home.markdown" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
+	</target>
+
+	<target name="dist-diffs" depends="compare-with-master" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
