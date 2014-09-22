@@ -76,8 +76,8 @@ create portlet actions to meet the first three requirements by opening
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
                 try {
-                        GuestbookLocalServiceUtil.updateGuestbook(guestbookId, name,
-                                        serviceContext);
+                        GuestbookLocalServiceUtil.updateGuestbook(serviceContext.getUserId(), 
+                                guestbookId, name, serviceContext);
                         
                         SessionMessages.add(request, "guestbookUpdated");
                 } catch (PortalException pe) {
