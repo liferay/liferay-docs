@@ -152,7 +152,7 @@ public class GuestbookLocalServiceClpInvoker {
 		_methodName64 = "updateGuestbook";
 
 		_methodParameterTypes64 = new String[] {
-				"long", "java.lang.String",
+				"long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -315,8 +315,9 @@ public class GuestbookLocalServiceClpInvoker {
 		if (_methodName64.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
 			return GuestbookLocalServiceUtil.updateGuestbook(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1],
-				(com.liferay.portal.service.ServiceContext)arguments[2]);
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2],
+				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
 		if (_methodName65.equals(name) &&

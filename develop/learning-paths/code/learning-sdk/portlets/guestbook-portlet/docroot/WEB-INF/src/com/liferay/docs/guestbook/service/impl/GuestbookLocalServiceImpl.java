@@ -31,6 +31,9 @@ import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portlet.asset.model.AssetEntry;
+import com.liferay.portlet.asset.model.AssetLinkConstants;
 
 /**
  * The implementation of the guestbook local service.
@@ -89,6 +92,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		Guestbook guestbook = guestbookPersistence.create(guestbookId);
 
 		guestbook.setUuid(serviceContext.getUuid());
+		guestbook.setUserId(userId);
 		guestbook.setGroupId(groupId);
 		guestbook.setCompanyId(user.getCompanyId());
 		guestbook.setUserName(user.getFullName());
@@ -101,12 +105,19 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 				Guestbook.class.getName(), guestbookId, false, true, true);
-
-		assetEntryLocalService.updateEntry(userId, groupId,
-				guestbook.getCreateDate(), guestbook.getModifiedDate(),
-				Guestbook.class.getName(), guestbookId, guestbook.getUuid(), 0,
-				null, null, true, null, null, null, ContentTypes.TEXT_HTML,
-				guestbook.getName(), null, null, null, null, 0, 0, null, false);
+		
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+				groupId, guestbook.getCreateDate(),
+				guestbook.getModifiedDate(), Guestbook.class.getName(),
+				guestbookId, guestbook.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
+				null, 0, 0, null, false);
+		
+		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+				serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
@@ -117,8 +128,8 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 	}
 
-	public Guestbook updateGuestbook(long guestbookId, String name,
-			ServiceContext serviceContext) throws PortalException,
+	public Guestbook updateGuestbook(long userId, long guestbookId,
+			String name, ServiceContext serviceContext) throws PortalException,
 			SystemException {
 
 		Date now = new Date();
@@ -126,7 +137,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		validate(name);
 
 		Guestbook guestbook = getGuestbook(guestbookId);
+		
+		User user = UserLocalServiceUtil.getUser(userId);
 
+		guestbook.setUserId(userId);
+		guestbook.setUserName(user.getFullName());
 		guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
 		guestbook.setName(name);
 		guestbook.setExpandoBridgeAttributes(serviceContext);
@@ -138,12 +153,18 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 				serviceContext.getGroupPermissions(),
 				serviceContext.getGuestPermissions());
 		
-		assetEntryLocalService.updateEntry(guestbook.getUserId(),
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
 				guestbook.getGroupId(), guestbook.getCreateDate(),
 				guestbook.getModifiedDate(), Guestbook.class.getName(),
-				guestbookId, guestbook.getUuid(), 0, null, null, true, null,
-				null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null,
-				null, null, null, 0, 0, null, false);
+				guestbookId, guestbook.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
+				null, 0, 0, null, false);
+		
+		assetLinkLocalService.updateLinks(serviceContext.getUserId(),
+				assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
@@ -171,14 +192,19 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 				Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
 				guestbookId);
 		
-		assetEntryLocalService.deleteEntry(Guestbook.class.getName(), guestbookId);
+		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+				Guestbook.class.getName(), guestbookId);
+
+		assetEntryLocalService.deleteEntry(assetEntry);
+
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);
 
 		indexer.delete(guestbook);
-
-		guestbook = deleteGuestbook(guestbook);
+		
+		guestbook = deleteGuestbook(guestbookId);
 
 		return guestbook;
 	}

@@ -93,12 +93,12 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 		
-		entry = deleteEntry(entryId);
-		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Entry.class);
 
 		indexer.delete(entry);
+		
+		entry = deleteEntry(entryId);
 
 		return entry;
 
@@ -119,6 +119,7 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		Entry entry = entryPersistence.create(entryId);
 		
 		entry.setUuid(serviceContext.getUuid());
+		entry.setUserId(userId);
 		entry.setGroupId(groupId);
 		entry.setCompanyId(user.getCompanyId());
 		entry.setUserName(user.getFullName());

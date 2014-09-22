@@ -152,7 +152,7 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 		_methodName27 = "updateGuestbook";
 
 		_methodParameterTypes27 = new String[] {
-				"long", "java.lang.String",
+				"long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -974,7 +974,7 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 
 	@Override
 	public com.liferay.docs.guestbook.model.Guestbook updateGuestbook(
-		long guestbookId, java.lang.String name,
+		long userId, long guestbookId, java.lang.String name,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
@@ -984,7 +984,9 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 			returnObj = _invokableLocalService.invokeMethod(_methodName27,
 					_methodParameterTypes27,
 					new Object[] {
-						guestbookId,
+						userId,
+						
+					guestbookId,
 						
 					ClpSerializer.translateInput(name),
 						
