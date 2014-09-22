@@ -247,7 +247,7 @@ public class DistDiffTask extends Task {
 						int y = lineFromFile.indexOf("../../images");
 
 						if (y < 0) {
-							break;
+							continue;
 						}
 
 						int z = y + 6;
