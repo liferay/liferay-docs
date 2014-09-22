@@ -244,8 +244,13 @@ public class DistDiffTask extends Task {
 					if (lineFromFile.contains(".png")) { 
 						int w = lineFromFile.indexOf(".png");
 						int x = w + 4;
-						int y = lineFromFile.indexOf("../images");
-						int z = y + 3;
+						int y = lineFromFile.indexOf("../../images");
+
+						if (y < 0) {
+							break;
+						}
+
+						int z = y + 6;
 						String img = lineFromFile.substring(z, x);
 
 						File markdownImage = new File(img);
