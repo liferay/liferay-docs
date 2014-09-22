@@ -112,13 +112,7 @@
 			</java>
 	</target>
 
-	<target name="create-metadata-file" description="Builds a metadata file.">
-		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
-		<delete file="${metadata.file}" failonerror="false"/>
-		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
-    </target>
-
-	<target name="compare-with-master" description="Compares an import branch with your master branch on the liferay-docs repo.">
+	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
 		<java
 			classname="com.liferay.documentation.util.GitCompare"
 			classpathref="project.classpath"
@@ -126,8 +120,15 @@
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>
-			<arg value="${purpose.dir}"/>		
+			<arg value="${purpose.dir}"/>
+			<arg value="${older.branch}"/>
 		</java>
+	</target>
+
+	<target name="create-metadata-file" description="Builds a metadata file.">
+		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
+		<delete file="${metadata.file}" failonerror="false"/>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
 	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">

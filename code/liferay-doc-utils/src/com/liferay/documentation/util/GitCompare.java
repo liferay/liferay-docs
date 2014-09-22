@@ -24,19 +24,20 @@ public class GitCompare {
 
 		String docdir = args[0];
 		String purposedir = args[1];
+		String olderBranch = args[2];
 		
 		Repository repo = openGitRepository();
 		String importBranch = repo.getBranch();
-		AbstractTreeIterator masterTreeParser = gitTreeParser(repo, "refs/heads/master");
+		AbstractTreeIterator oldTreeParser = gitTreeParser(repo, "refs/heads/" + olderBranch);
 		AbstractTreeIterator importTreeParser = gitTreeParser(repo, "refs/heads/" + importBranch);
 
-		List<DiffEntry> diff = new Git(repo).diff().setOldTree(masterTreeParser).setNewTree(importTreeParser).call();
+		List<DiffEntry> diff = new Git(repo).diff().setOldTree(oldTreeParser).setNewTree(importTreeParser).call();
 
 		System.out.println("Creating ../git-modified-list.txt file");
 		PrintWriter writer = new PrintWriter("git-modified-list.txt", "UTF-8");
-		addTimeStamp("Comparing your " + importBranch + " branch to your master branch\n"
-				+ "Generated on", writer);
-		System.out.println("Comparing your " + importBranch + " branch to your master branch...");
+		addTimeStamp("Comparing your " + importBranch + " branch to your older branch "
+				+ olderBranch + " .\nGenerated on", writer);
+		System.out.println("Comparing your " + importBranch + " branch to your older branch "+ olderBranch);
 
 		boolean newDiff = false;
 
@@ -72,17 +73,17 @@ public class GitCompare {
 		RevWalk revWalk = new RevWalk(repo);
 		RevCommit gitCommit = revWalk.parseCommit(gitHead.getObjectId());
 		RevTree gitTree = revWalk.parseTree(gitCommit.getTree().getId());
-		CanonicalTreeParser masterTreeParser = new CanonicalTreeParser();
-		ObjectReader masterReader = repo.newObjectReader();
+		CanonicalTreeParser treeParser = new CanonicalTreeParser();
+		ObjectReader newObjectReader = repo.newObjectReader();
 
 		try {
-			masterTreeParser.reset(masterReader, gitTree.getId());
+			treeParser.reset(newObjectReader, gitTree.getId());
 		}
 		finally {
-			masterReader.release();
+			newObjectReader.release();
 		}
 		revWalk.dispose();
-		return masterTreeParser;
+		return treeParser;
 	}
 
 	private static Repository openGitRepository() throws IOException {
