@@ -149,6 +149,7 @@
         <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
 		<zip destfile="${dist.dir}/diffs.zip" update="true">
 			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
 	</target>
 
