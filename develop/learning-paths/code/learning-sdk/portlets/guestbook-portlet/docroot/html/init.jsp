@@ -43,6 +43,14 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %>
 
+<%@ page import="com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil" %>
+<%@ page import="com.liferay.portlet.asset.service.AssetTagLocalServiceUtil" %>
+
+<%@ page import="com.liferay.portlet.asset.model.AssetEntry" %>
+<%@ page import="com.liferay.portlet.asset.model.AssetTag" %>
+
+<%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
+
 <%@ page import="javax.portlet.PortletURL" %>
 
 <portlet:defineObjects />
