@@ -138,15 +138,15 @@ portlets which you have permission to access. By default, you can find links to
 your personal Documents and Media repository as well as links to the Documents
 and Media repositories of all the other sites you belong to. 
 
----
++$$$
 
-![Tip](../../images/tip.png) Note for administrators: If you don't have a
+Note for administrators: If you don't have a
 Documents and Media portlet anywhere on a site that's been selected for syncing,
 you'll have to add the portlet. Otherwise, users will get a *The requested
 resource was not found* error when they try to use the *Open Website* link from
 their Sync menus.
 
----
+$$$
 
 *Recent Files* shows a list of recently created or modified files from all the
 repositories you can access.

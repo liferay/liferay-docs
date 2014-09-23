@@ -234,16 +234,16 @@ portlet to display other portlets: the Search and Currency Converter portlets.
 Lastly, you can also specify portlet preferences for each portlet using the
 `portletPreferences` field. 
 
----
++$$$
 
- ![tip](../../images/tip.png) **Tip**: You can also import resources, such as
+**Tip**: You can also import resources, such as
  web content articles, using the Resources Importer. For example, it's very
  useful to import web content articles along with a page template that
  references the articles, in a nested Web Content Display portlet. For more
  information on importing resources, see
  [Importing Resources with Your Themes](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en).
 
----
+$$$
 
 The figure below, shows a page created using the Page 3 template.
 

@@ -99,15 +99,15 @@ you specified doesn't end in "-portlet".
 
 ![Figure 1: The Plugins SDK's Ant targets enable you to create a new plugin project with a single command.](../../images/plugins-sdk-create-project.png)
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+**Tip**: If you are using a source
 control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
 good moment to do an initial check-in of your changes. After building the plugin
 for deployment, several additional files will be generated that should *not* be
 managed by a source control system. 
 
----
+$$$
 
 Lastly, consider some common practices used in developing plugins with the SDK.
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you

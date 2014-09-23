@@ -133,9 +133,9 @@ Finally, it's best to check the *Use a Secure Network Connection* field to use
 HTTPS for the publication of pages from your local (staging) Liferay server to
 your remote (live) Liferay server.
 
----
++$$$
 
- ![Tip](../../images/01-tip.png) **Tip:** In general, remote staging should be
+**Tip:** In general, remote staging should be
  enabled for a site as early as possible. It's generally *not* a good idea to
  add gigabytes of data into Liferay's CMS and then decide to turn on remote
  staging.  There's an existing issue that limits Liferay to less than 2G of data
@@ -144,7 +144,7 @@ your remote (live) Liferay server.
  You can check this issue to see if it's been resolved and to find out which
  versions of Liferay it affects.
 
----
+$$$
 
 That's all you need to do to enable Remote Live Staging! Note that if you fail
 to set the tunneling servlet shared secret or the values of these properties on

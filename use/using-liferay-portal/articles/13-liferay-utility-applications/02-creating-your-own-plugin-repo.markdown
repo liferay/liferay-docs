@@ -42,15 +42,15 @@ You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
 creating the `liferay-plugin-repository.xml` file yourself.
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Tip:** The Software Catalog plugin was
+**Tip:** The Software Catalog plugin was
 deprecated in Liferay 6.2 and is disabled by default. To activate it, navigate
 to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
 of portlets until you find *Software Catalog*. Select *Software Catalog* and
 click the *Active* checkbox. Then click *Save*.
 
----
+$$$
 
 You can add the Software Catalog portlet to your page by navigating to *Add*
 &rarr; *Applications* and selecting it from the *Tools* category.

@@ -78,14 +78,14 @@ Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
+**Note:** Due to the lifecycle mapping
 of Eclipse and Maven, it is unsafe to manually insert or overwrite the
 `.classpath` file, `.project` file, and `.settings` folder. IDE automatically
 generates these files when a project is imported and updates them appropriately.
 
----
+$$$
 
 The `m2e-core` plugin delegates your Liferay Maven plugin's project
 configuration to the `m2e-liferay` project configurator. The `m2e-wtp` project

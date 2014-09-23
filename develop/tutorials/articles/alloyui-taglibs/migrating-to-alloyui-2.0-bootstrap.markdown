@@ -232,14 +232,14 @@ UNIX users can download its source in a `.tar.gz` file, unzip it, un-tar it, and
 build it per the instructions in its `README.md` file. Windows users can
 download the `.msi` installer file and run it. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** On Windows, only install to
+**Warning:** On Windows, only install to
  locations that have UNIX-friendly paths. Paths like `C:\Program Files (x86)`
  that contain space characters and parentheses can prevent software from working
  properly. 
 
----
+$$$
 
 To build the upgrade tool with NodeJS, execute the following command (exclude
 `[sudo]` on Windows): 
@@ -294,14 +294,14 @@ AlloyUI class names, replacing `aui-button-holder`, `aui-button-disabled`, and
 `button-submit`, respectively. Keep this type of change throughout your
 portlet's files. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** Make sure to add the `.aui`
+**Warning:** Make sure to add the `.aui`
  parent class reference in front of a classname if you're extending the
  styling of a class that Bootstrap already styles. See the previous section on
  *Removal of the aui- Prefix from All Classes* for details. 
 
----
+$$$
 
 Lastly, consider the changes done to the Microblogs portlet's `main.js` file.
 The script now uses the `liferay-util-window` module in place of the old

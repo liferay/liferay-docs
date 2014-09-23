@@ -41,15 +41,15 @@ this runtime environment, it starts in Development Mode.
 
 ![Figure 1: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay IDE](../../images/set-develop-mode.png)
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Warning:** Only change the Server Mode
+**Warning:** Only change the Server Mode
 from the runtime environment's Liferay settings section. On server
 startup, if Standard mode is set in Liferay IDE, the
 `portal-developer.properties` file is not included for overriding portal
 properties. 
 
----
+$$$
 
 For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE
 Server, Liferay v6.0 CE Server), Liferay IDE enables Developer Mode by
@@ -73,14 +73,14 @@ you'd add `-Dexternal-properties=portal-developer.properties` to the list of
 options for your `CATALINA_OPTS` variable, in your `setenv.sh` file
 (`setenv.bat` in Windows). 
 
----
++$$$
 
-![tip](../../images/tip.png) **Tip:** If you're already using the system
+**Tip:** If you're already using the system
 property `external-properties` to load other properties files, add
 `portal-developer.properties` to the list and use a comma to separate it from
 other entries. 
 
----
+$$$
 
 Great! You've set up your Liferay server for Developer Mode. Now, when you
 modify your theme's `custom.css` file directly in your Liferay bundle, you can

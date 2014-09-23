@@ -15,16 +15,16 @@ Remember to undeploy your Social Office 2.x plugins before upgrading your portal
 to 6.2. If you have a Liferay Portal EE subscription, make sure to apply any
 available fix packs before deploying your Social Office 3.x plugins.
 
----
++$$$
 
-![Figure 1.x: Note](../../images/tip.png) Note: There are a few known issues with
+Note: There are a few known issues with
 the Social Office plugins that you might experience if you're running on JBoss.
 If the Go To menu is not initially visible after deploying the Social Office
 plugins or if you can't confirm a connection or site invitation after logging in
 as the default administrator user, clear the `/temp` folder and then restart the
 server to resolve the issue.
 
----
+$$$
 
 Once your 6.2 portal is ready, deploy your Social Office 3.x plugins. When you
 first log in to your portal as an administrator after installing Social Office

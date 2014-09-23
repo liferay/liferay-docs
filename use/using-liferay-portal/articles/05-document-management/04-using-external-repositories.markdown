@@ -224,9 +224,9 @@ following information:
 The left navigation panel of your Documents and Media portlet now lists your
 new repository.
 
----
++$$$
 
-![Tip](../../images/tip.png) **Tip:** In the site path example below, notice how the
+**Tip:** In the site path example below, notice how the
 repository path has a folder `Shared Documents` consisting of two words.
 
 		http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
@@ -239,7 +239,7 @@ so the site path value now looks like this:
 
 This should be done for any multi-word repository name.
 
----
+$$$
 
 Remember that connecting to an external SharePoint server and adding it as a
 Documents and Media repository is a great way to give users flexibility for

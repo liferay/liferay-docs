@@ -15,9 +15,9 @@ This tutorial shows the steps required to accomplish this.
 2.  In Eclipse's Project Explorer, right-click on the project and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
-    ---
++$$$
 
-    ![Note](../../images/tip-pen-paper.png) **Note:** If no convert action is
+**Note:** If no convert action is
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
     for it). For instructions on resolving these issues, see the
@@ -26,7 +26,7 @@ This tutorial shows the steps required to accomplish this.
     [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
     tutorial. 
 
-    ---
+$$$
 
 3.  In the *Convert Project* wizard, your project is selected and the SDK
     location and SDK version of your project are displayed.
