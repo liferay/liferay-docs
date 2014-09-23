@@ -49,6 +49,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -101,6 +112,19 @@
 			</java>
 	</target>
 
+	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
+		<java
+			classname="com.liferay.documentation.util.GitCompare"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${older.branch}"/>
+		</java>
+	</target>
+
 	<target name="create-metadata-file" description="Builds a metadata file.">
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
@@ -113,6 +137,18 @@
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
 			<fileset dir="./" includes="home.markdown" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="dist-diffs" depends="prepare-dist" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
+
+        <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
+		<zip destfile="${dist.dir}/diffs.zip" update="true">
+			<fileset dir="./" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
 	</target>

@@ -1,4 +1,4 @@
-# Updating Your User Interface For Search
+# Updating Your User Interface For Search [](id=updating-your-user-interface-for-search)
 
 Updating the Guestbook portlet's user interface for search involves two steps:
 
