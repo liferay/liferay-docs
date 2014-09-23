@@ -1,4 +1,4 @@
-# Organizing Icons With the Liferay UI Icon Tag 
+# Organizing Icons With the Liferay UI Icon Menu Tag 
 
 Icons can be very helpful tools to aid your users as they navigate your site. As
 you begin to design your site, it's important to conserve screen space wherever
