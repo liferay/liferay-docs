@@ -296,6 +296,10 @@ your sidebar text with a begin sidebar token (`+$$$`) and an end sidebar token
 Sidebars are only rendered on [dev.liferay.com](https://dev.liferay.com). They
 are not rendered on Github.
 
+Here's what a sidebar on [dev.liferay.com](https://dev.liferay.com) looks like:
+
+![liferay-sidebar image](./images/ldn-sidebar.png)
+
 There's no need to include images in your sidebars. Images for sidebars are
 handled by Liferay's [dev.liferay.com](https://dev.liferay.com) theme.
 
