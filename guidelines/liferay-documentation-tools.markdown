@@ -333,7 +333,10 @@ is disrupted and the step that follows restarts at `1`.
 
         +$$$
 
-        A sidebar note.
+        **Note:** A sidebar note. Text is placed in sidebars if it deserves
+        special attention or if it contains ancillary information that doesn't
+        quite belong in the main text. For example, notes, tips, and warnings
+        are often placed in sidebars. 
 
         $$$
 
@@ -356,11 +359,7 @@ is disrupted and the step that follows restarts at `1`.
 
 3. Third step.
 
-    +$$$
-
-    A sidebar note.
-
-    $$$
+    ![liferay-sidebar image](./images/ldn-sidebar.png)
 
 4. Finally! The fourth and final step. Code must be indented 4 spaces more.
 Let's see a good code block ...
@@ -387,8 +386,8 @@ example--the *Bad steps*.
     3. Third step.
 
     +$$$
-    This note disrupts continuous numbering. It also won't be rendered as a
-    sidebar.
+    **Note:** This note disrupts continuous numbering. It also won't be rendered
+    as a sidebar.
     $$$
 
     4. Finally! The fourth and final step. But the code is not monospace as it
@@ -411,9 +410,9 @@ This paragraph is not indented 4 spaces from the step number.
 3. Third step. 
 
 +$$$
-This sidebar note disrupts continuous numbering because it is not indented four
-spaces. It also is not rendered as a sidebar because there are no blank lines
-below the begin sidebar token or above the end sidebar token.
+**Note:** This sidebar note disrupts continuous numbering because it is not
+indented four spaces. It also is not rendered as a sidebar because there are no
+blank lines below the begin sidebar token or above the end sidebar token.
 $$$
 
 4. Finally! The fourth and final step. But the code is not monospace as it
