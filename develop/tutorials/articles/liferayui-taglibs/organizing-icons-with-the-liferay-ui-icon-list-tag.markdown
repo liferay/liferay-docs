@@ -76,7 +76,7 @@ below:
 
 ![Figure 1: With the configuration above your icon list should look like this.](../../images/icon-list-01.png)
 
-The figure below shows how Liferay Portal uses the Icon List tag to create a 
+The figure below shows how Liferay Portal uses an icon list to create a 
 navigation menu for the sign in portlet:
 
 ![Figure 2: The Liferay UI Icon List tag allows you to create a basic navigation with ease.](../../images/icon-list-02.png)
