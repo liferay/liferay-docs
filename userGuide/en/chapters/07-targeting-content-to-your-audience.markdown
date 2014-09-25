@@ -22,16 +22,16 @@ allows you to create multiple user segments which are defined by multiple rules
 based on session attributes, profile attributes, behavior, and information from
 social networks. Developers can easily create additional rules and rule types
 with minimal coding efforts. The Audience Targeting App also allows you to
-create campaigns that target a specific user segment. Campaigns last for a fixed
-period of time and each campaign has a priority. If you are running several
+create campaigns that target a specific user segment. Campaigns last for fixed
+periods of time and each campaign has a priority. If you are running several
 campaigns on your website at the same time, the priority field determines which
 campaign takes precedence. Campaigns allow you to configure different assets to
 be displayed at different periods of time to the targeted user segment.
  
 The Audience Targeting App adds an *Audience Targeting* section to the
-Configuration section of the Site Administration area of the Control Panel and a
-Simulator UI to the dockbar of your site. The following three applications are
-also included with the Audience Targeting app:
+Configuration section of the Site Administration area of the Control Panel and
+an Audience Targeting Simulator to the Dockbar. The following three applications
+are also included with the Audience Targeting app:
 
 - User Segment Content Display
 - User Segment Content List
@@ -41,7 +41,7 @@ You can add these applications to any portal page. In the next sections, we'll
 explain how to use the *Audience Targeting* section of the Configuration section
 of the Site Administration area of the Control Panel to manage user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting
-applications.
+applications and the Audience Targeting Simulator.
 
 ### Managing User Segments
 
@@ -80,7 +80,7 @@ available to all of its child sites.
 #### User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating Custom Audience Targeting Rules](www.liferay.com) tutorial for
+[Creating Custom Audience Targeting Rules](https://www.liferay.com) tutorial for
 details.
  
 These are some of the rules that are included with the app by default:
