@@ -27,8 +27,6 @@ Liferay supports just about all the leading databases today:
 
 * DB2
 
-* Informix
-
 * MySQL
 
 * Oracle
