@@ -1,4 +1,4 @@
-## Targeting Content To Your Audience
+# Targeting Content To Your Audience
 
 Liferay's Audience Targeting app allows you to divide your audience into user
 segments, target specific content to different user segments, and create
@@ -43,7 +43,7 @@ of the Site Administration area of the Control Panel to manage user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting
 applications and the Audience Targeting Simulator.
 
-### Managing User Segments
+## Managing User Segments
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
@@ -77,7 +77,7 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-#### User Segment Rules
+### User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating Custom Audience Targeting Rules](https://www.liferay.com) tutorial for
@@ -123,7 +123,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-#### Categorizing Pages and Content for User Segments
+### Categorizing Pages and Content for User Segments
 
 Each new user segment that's created can be used to categorize pages or content.
 
@@ -150,7 +150,7 @@ segments are distinct from regular vocabularies. The Categorization section of
 pages and assets contains distinct select buttons for user segments and regular
 vocabularies.
 
-#### Managing User Segment Reports
+### Managing User Segment Reports
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click
@@ -167,7 +167,7 @@ tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update Report* button in the top right corner.
 
-### Managing Campaigns
+## Managing Campaigns
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,
@@ -210,7 +210,7 @@ To configure permissions for creating, editing, and deleting campaigns, visit
 the Roles section of the Control Panel and search for *Audience Targeting
 Resources*.
 
-#### Managing Campaign Priority
+### Managing Campaign Priorities
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display
@@ -225,7 +225,7 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-#### Defining Tracking Actions
+### Defining Tracking Actions
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
@@ -265,7 +265,7 @@ Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
 users) can be a very heavy load for your server. Therefore, it's best to disable
 the tracking of any actions about which you don't need information.
 
-#### Campaign Reports
+### Campaign Reports
 
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be
@@ -295,7 +295,7 @@ registration form, etc. This information helps you measure the effectiveness of
 your campaign. You can use this information to evaluate whether or not the users
 are following the engagement path you had prepared.
 
-### Using the Audience Targeting Applications
+## Using the Audience Targeting Applications
 
 The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
@@ -310,7 +310,7 @@ site administrators can customize the look and feel of the application. Any of
 Liferay Portal's out-of-the-box Asset Publisher ADTs can actually be re-used for
 these Audience Targeting applications.
 
-#### User Segment Content Display
+### User Segment Content Display
 
 The User Segment Content Display application allows administrators to specify
 exactly which content to display to a user based on the user segments that the
@@ -351,7 +351,7 @@ The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
 different user segments.
 
-#### User Segment Content List
+### User Segment Content List
 
 The User Segment Content List application displays content that has been
 categorized for the user segments that match the user segments to which the
@@ -372,7 +372,7 @@ application to display only assets of specific types. For example, you can
 configure the User Segment Content List application to only display web content
 articles and documents.
 
-#### Campaign Content Display
+### Campaign Content Display
 
 The Campaign Content Display application is similar to the User Segment Content
 Display application except that instead of displaying an asset based on the user
@@ -418,7 +418,7 @@ The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
 
-### Simulating User Segments and Campaigns
+## Simulating User Segments and Campaigns
 
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
