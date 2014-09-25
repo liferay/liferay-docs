@@ -410,8 +410,8 @@ Once a Campaign Content Display application has been added to a page and been
 configured this way, portal users who match the World Cup campaign will see a
 certain image in the application. Users who match the Stanley cup campaign will
 see a different image in the application. Users who don't match either campaign
-will see the default image. Of course, once a campaigns has ended, no user will
-match that campaign and once all campaigns have ended, all users will see the
+will see the default image. Of course, once a campaign has ended, no users will
+match that campaign. Once all campaigns have ended, all users will see the
 default image.
 
 The Campaign Content Display application, like the User Segment Content Display
@@ -435,7 +435,9 @@ Simulator.
 
 Permissions pertaining to the Audience Targeting Simulator and other features of
 the Audience Targeting app can be granted via the Roles section of the Control
-Panel.
+Panel. When defining permissions for a role, go to *Site Administration* &rarr;
+*Configuration* to find the *Audience Targeting*, *Audience Targeting Resources,
+and *Audience Targeting Simulator* sections.
 
 $$$
 
@@ -447,7 +449,7 @@ simulate how the website would appear to different users. Clicking on the
 *Simulate* button makes your website appear to you the way it would appear to
 the selected user segments. The simulation continues until you click the *Stop
 Simulation* button. This allows site administrators to navigate around their
-site as if they were a user that matched different user segments or campaigns.
+site as if they were a user that matched the selected user segments.
 
 ![Figure 6.x: Audience Targeting Simulator](../../images/07-audience-targeting-simulator.png)
 
