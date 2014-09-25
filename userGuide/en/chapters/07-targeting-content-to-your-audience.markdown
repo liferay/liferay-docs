@@ -107,20 +107,21 @@ or content that's been categorized under the user segment to which the rule has
 been applied. Once a user exceeds the configured threshold, the user matches
 this rule. For example, suppose that your website is about sports and you have
 pages and content about basketball, tennis, and soccer. You would like to divide
-your audience into three user segments (Basketball fans, Tennis fans and Soccer
+your audience into three user segments (Basketball fans, Tennis fans, and Soccer
 fans) in order to display the most relevant content to them on your site's front
 page. After creating these three user segments using the Score Points rule with
 a threshold of, say, 20, you should appropriately categorize the content which
 would be most relevant to each user segment. E.g., apply the *Basketball fans*
-user segment to content about basketball, etc. Now, every time a user (even a
-guest user) visits a page or views a piece of content categorized for a user
-segment to which the Score Points rule has been applied, the user will start
-accumulating points. Once the user has accumulated enough points, the user will
-belong to the user segment. After a user has visited more than 20 pages or
-pieces of content related to basketball, the user will belong to the Basketball
-fans user segment. Once the user belongs to a user segment, you can use that
-information to direct more relevant information to the user in your website
-using the User Segment Content Display application.
+user segment to content about basketball, apply the *Tennis fans* user segment
+to content about tennis, etc. Now, every time a user (even a guest user) visits
+a page or views a piece of content categorized for a user segment to which the
+Score Points rule has been applied, the user will start accumulating points.
+Once the user has accumulated enough points, the user will belong to the user
+segment. After a user has visited more than 20 pages or pieces of content
+related to basketball, the user will belong to the Basketball fans user segment.
+Once the user belongs to a user segment, you can use that information to direct
+more relevant information to the user in your website using the User Segment
+Content Display application.
 
 #### Categorizing Pages and Content for User Segments
 
@@ -129,7 +130,7 @@ Each new user segment that's created can be used to categorize pages or content.
 +$$$
 
 **Note:** Page categorization is a feature added by the Audience Targeting app.
-In a regular Liferay Portal instance without the Audience Targeting app
+In a regular Liferay Portal 6.2 instance without the Audience Targeting app
 installed, pages cannot be categorized.
 
 $$$
@@ -139,8 +140,8 @@ of pages and assets: *User Segment* and *User Segment (Global)*. These buttons
 allow you to assign one or more site-scoped or global user segments to the
 content. This categorization has mainly two purposes:
 
-- Showing dynamic lists of content in the User Segment Content List application
 - Assigning points to users using the Score Points rule
+- Showing dynamic lists of content in the User Segment Content List application
 
 ![Figure 6.x: Pages and content can be categorized for user segments.](../../images/07-audience-targeting-categorization.png)
 
@@ -153,7 +154,7 @@ vocabularies.
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click
-*Actions* &rarr; *View Report* to view the report or *Actions* &rrar; *Update
+*Actions* &rarr; *View Report* to view the report or *Actions* &rarr; *Update
 Report* to generate a new report. Reports display a summary of interesting
 information related to each user segment. For example, the Content Views report
 shows the asset that's been most viewed by users that belong to the user segment.
