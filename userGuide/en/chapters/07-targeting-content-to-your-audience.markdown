@@ -162,10 +162,10 @@ shows the asset that's been most viewed by users that belong to the user segment
 ![Figure 6.x: the Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images/07-audience-targeting-user-segment-report.png)
 
 Additional reports can be created by developers and deployed as OSGI plugins.
-See the [Creating Custom Audience Targeting Reports](www.liferay.com) tutorial
-for details. Reports are generated daily by default. However, you can generate a
-report at any time. To generate a new report when currently viewing a report,
-click on the *Update Report* button in the top right corner.
+See the [Creating Custom Audience Targeting Reports](http://www.liferay.com)
+tutorial for details. Reports are generated daily by default. However, you can
+generate a report at any time. To generate a new report when currently viewing a
+report, click on the *Update Report* button in the top right corner.
 
 ### Managing Campaigns
 
@@ -192,19 +192,19 @@ reactivated.
 ![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images/07-audience-targeting-user-campaigns.png)
 
 For example, suppose you wanted the ability to display certain content (for
-example, advertisements about your new Android app) to female baseball
-fans during the months leading up to the World Series. To achieve this, you 
-could use the Gender rule (configured to female), the Device Rule (configured
-for Android devices) and the Score Points rule to define a user segment 
-called *Female Baseball Fans*. The Score points rule assigns 1 point to a user 
-each time they visit a page or view an asset categorized under the
-user segment *Female Baseball Fans*. When a user accumulates a certain number of
-points (specified by the value of the Score Points rule's *Score Points
-Threshold* attribute), they will match this rule. After creating this user
-segment, you would create a new campaign targeting this segment, select start
-and end dates, choose a priority, choose *Active*, and then click *Save*. To
-actually present content to the users belonging to the *Female Baseball Fans*
-user segment, you need to use the Campaign Content Display application.
+example, advertisements about your new Android app) to female baseball fans
+during the months leading up to the World Series. To achieve this, you could use
+the Gender rule (configured to female), the Device Rule (configured for Android
+devices) and the Score Points rule to define a user segment called *Female
+Baseball Fans*. The Score points rule assigns 1 point to a user each time the
+user visits a page or views an asset categorized under the user segment *Female
+Baseball Fans*. When a user accumulates a certain number of points (specified by
+the value of the Score Points rule's *Score Points Threshold* attribute), the
+user matches this rule. After creating this user segment, you would create a new
+campaign targeting this segment, select start and end dates, choose a priority,
+choose *Active*, and then click *Save*. To actually present content to the users
+belonging to the *Female Baseball Fans* user segment, you need to use the
+Campaign Content Display application.
 
 To configure permissions for creating, editing, and deleting campaigns, visit
 the Roles section of the Control Panel and search for *Audience Targeting
@@ -212,11 +212,11 @@ Resources*.
 
 #### Managing Campaign Priority
 
-The priority of your campaigns becomes important when multiples are running at
-the same time on your website. The Campaign Content Display application can be
-configured to display content based on the campaign your users match. When a
-user matches multiple campaigns, the one with the highest priority takes
-precedence. 
+The priority of your campaigns becomes important when multiple campaigns are
+running at the same time on your website. The Campaign Content Display
+application can be configured to display content based on the campaign your
+users match. When a user matches multiple campaigns, the one with the highest
+priority takes precedence. 
  
 If you have several Campaign Content Display applications around your website
 configured to display different content per campaign, changing the priority of
@@ -231,15 +231,15 @@ One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
 real feedback from users. When creating a campaign, you can define the user
 actions that you want to track. The Audience Targeting app can display reports
-of how those actions are executed. For example, suppose you want to run a
+of how often those actions are triggered. For example, suppose you want to run a
 campaign for an event that your company is hosting next month. For this event,
 imagine that you have created a main page for the event which contains a Youtube
-video and a banner which says "Register Now". Then you have a blog entry about
-the event displayed in several different pages of your website and a Register
-page which contains the form to pay for the event. In this campaign, your goal
-is to get as many people to register as possible, but you will probably be
-interested in tracking all this information to see if there is something not
-working as your team expected:
+video and a banner which says "Register Now". Imagine also that you have a blog
+entry about the event displayed on several different pages of your website and a
+Register page which contains the form to pay for the event. In this campaign,
+your goal is to get as many people to register as possible. However, you will
+probably be interested in tracking the following information to see if there is
+something not working as your team expected:
 
  - Visits to the main page of the event
  - Clicks to view the video
@@ -252,9 +252,9 @@ working as your team expected:
 
 ![Figure 6.x: Drag and drop tracking actions to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
  
-You could drag and drop the "tracking actions" from the palette to track all the
-actions mentioned above. More types of "tracking actions" can be created by
-developers and deployed as OSGI plugins. See the [Creating Custom Audience Targeting Tracking Actions](www.liferay.com)
+You could drag and drop *tracking actions* from the palette to track all the
+actions mentioned above. More types of tracking actions can be created by
+developers and deployed as OSGI plugins. See the [Creating Custom Audience Targeting Tracking Actions](https://www.liferay.com)
 tutorial for details.
 
 The tracking actions use an analytics engine called *Audience Targeting
@@ -263,14 +263,14 @@ the analytics engine per site, go to *Site Administration* &rarr; *Site
 Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
 *Portal Configuration*. Tracking all the actions of all your users (even guest
 users) can be a very heavy load for your server. Therefore, it's best to disable
-the tracking of any actions that aren't necessary to track.
+the tracking of any actions about which you don't need information.
 
 #### Campaign Reports
 
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be
 created by developers and deployed as OSGI plugins. See the
-[Creating Custom Audience Targeting Reports](www.liferay.com)
+[Creating Custom Audience Targeting Reports](https://www.liferay.com)
 tutorial for details. 
 
 The Content Views report shows the number of times that different assets have
