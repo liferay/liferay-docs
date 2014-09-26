@@ -96,7 +96,7 @@ discussed on this page.
 <a href="/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application" >Writing Your First Application</a>
 </td>
 <td>
-Themes and Layout Templates
+<a href="/develop/tutorials/-/knowledge_base/themes-and-layout-templates" >Themes and Layout Templates</a>
 </td>
 </tr>
 
