@@ -101,7 +101,6 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		entry = deleteEntry(entryId);
 
 		return entry;
-
 	}
 
 	public Entry addEntry(long userId, long guestbookId, String name,
@@ -154,7 +153,6 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		indexer.reindex(entry);
 		
 		return entry;
-		
 	}
 	
 	public Entry updateEntry(long userId, long guestbookId, long entryId,
@@ -204,7 +202,6 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		indexer.reindex(entry);
 
 		return entry;
-
 	}
 	
 	protected void validate (String name, String email, String entry) throws PortalException {
