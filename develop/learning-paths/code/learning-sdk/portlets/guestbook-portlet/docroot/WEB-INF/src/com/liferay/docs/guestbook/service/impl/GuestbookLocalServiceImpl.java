@@ -194,10 +194,10 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		
 		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
 				Guestbook.class.getName(), guestbookId);
+		
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 
 		assetEntryLocalService.deleteEntry(assetEntry);
-
-		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Guestbook.class);

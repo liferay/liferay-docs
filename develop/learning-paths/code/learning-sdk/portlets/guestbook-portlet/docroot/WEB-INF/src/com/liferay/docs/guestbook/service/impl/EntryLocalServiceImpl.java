@@ -88,10 +88,10 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		
 		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
 				Entry.class.getName(), entryId);
+		
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 
 		assetEntryLocalService.deleteEntry(assetEntry);
-
-		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 		
 		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
 				Entry.class);
