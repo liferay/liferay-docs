@@ -985,7 +985,7 @@ should also have installed your database driver.
 
 1. Navigate to the folder that corresponds to the domain in which you'll be
    installing Liferay. Inside this folder is a sub-folder named `lib` (e.g.
-   `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/lib`).
+   `/glassfish-4.0-web/glassfish4/glassfish/domains/domain1/lib`).
 
     Unzip the Liferay dependencies archive so that its `.jar` files are extracted
     into this `lib` folder.
@@ -1016,7 +1016,7 @@ following:
 - Increase the default amount of memory available.
 
 Modify
-`glassfish4/glassfish/domains/domain1/config/domain.xml`,
+`glassfish-4.0-web/glassfish4/glassfish/domain1/config/domain.xml`,
 merging in the following JVM options into the current lists of JVM options
 within any `<java-config>` element in the file: 
 
@@ -1029,7 +1029,7 @@ within any `<java-config>` element in the file:
 
 There may be multiple lists of JVM options in your `domain.xml` file. For
 example, by default, GlassFish's
-`glassfish4/glassfish/domains/domain1/config/domain.xml` file contains two lists
+`glassfish-4.0-web/glassfish4/domains/domain1/config/domain.xml` file contains two lists
 of JVM options. There's one list inside of the `<config name="server-config">`
 element's `<java-config>` element and another inside of the `<config
 name="default-config">` element's `<java-config>` element. In both lists of JVM
@@ -1047,7 +1047,7 @@ with this:
 
     <jvm-options>-Xmx1024m</jvm-options>
 
-Edit your `domain1/config/config/server-policy.xml` and append the following
+Edit your `domain1/config/server.policy` and append the following
 lines to the end of the file:
 
     grant {
