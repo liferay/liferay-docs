@@ -1016,7 +1016,7 @@ following:
 - Increase the default amount of memory available.
 
 Modify
-`glassfish-4.0-web/glassfish4/glassfish/domain1/config/domain.xml`,
+`glassfish-4.0-web/glassfish4/glassfish/domains/domain1/config/domain.xml`,
 merging in the following JVM options into the current lists of JVM options
 within any `<java-config>` element in the file: 
 
