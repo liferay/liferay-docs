@@ -352,5 +352,5 @@ Finally, replace the `deleteEntry` method with the following one:
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
 the service layer. Your next step is to implement asset renderers for these
 entities so that they can be fully integrated into Liferay's asset framework.
-Every Liferay asset needs an asset renderer class so that Liferay knows how to
-display the asset in the Asset Publisher portlet.
+Every Liferay asset needs an asset renderer class so that it can be displayed by
+the Asset Publisher portlet.
