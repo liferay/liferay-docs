@@ -12,6 +12,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.security.permission.ActionKeys;
 import com.liferay.portal.security.permission.PermissionChecker;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.asset.model.BaseAssetRenderer;
 
 public class EntryAssetRenderer extends BaseAssetRenderer {
@@ -114,6 +115,14 @@ public class EntryAssetRenderer extends BaseAssetRenderer {
 		else {
 			return null;
 		}
+	}
+	
+	@Override
+	protected String getIconPath(ThemeDisplay themeDisplay) {
+
+		return themeDisplay.getURLPortal()
+				+ "/guestbook-portlet/entry.png";
+
 	}
 	
 	private Log _log;
