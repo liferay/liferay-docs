@@ -464,6 +464,14 @@ To do so, just open your project's `liferay-portlet.xml`, and update the paths
 inside of the `<icon>` elements inside of the `<portlet>` elements corresponding
 to the Guestbook and Guestbook Admin portlets.
 
++$$$
+
+*Note:** The recommended size for your portlet icons is 16 by 16 pixels.
+If your portlet icons are a different size, they might not be displayed
+correctly.
+
+$$$
+
 Here is a sample icon for the Guestbook portlet that's intended to represent a
 guestbook entry. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
