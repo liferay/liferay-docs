@@ -74,7 +74,6 @@ Also, you should take note of a few key terms used throughout this guide:
   or a cluster node.
 
 As you go through this guide, you'll cover the following sections on LCS:
-<!-- Add bullet point on Updating LCS Client, once Igor gives us the info for that section. -->
 
 - LCS Account Setup
 - Portal Preconfiguration (Liferay 6.1 GA3 only)
@@ -277,14 +276,6 @@ displayed. Here's a description of what's displayed:
 Great! Now that you've registered your server with your LCS account, you can dig 
 in to the features of LCS.
 
-<!--
-### Updating the LCS Client
-
-pending instructions from Igor 
- -->
-
-<!-- Hopefully we'll get these instructions before publication. :-) -Rich -->
-
 ### Using LCS
 
 Once your LCS client is registered with your LCS account, you can get down to 
@@ -299,14 +290,36 @@ stored on the LCS servers. Great question! In order to offer the best service
 possible, we store the following information about your servers: patches
 installed on each server, `portal.properties` (except sensitive data), JVM
 metrics, portal and portlet metrics, and cache and server metrics. Sensitive 
-data is defined as any key-value pair that contains usernames or passwords.
+data is defined as any key-value pair that contains usernames or passwords. For 
+example, the following properties are considered sensitive and are not stored on 
+the LCS servers:
+
+    omniadmin.users
+    ldap.security.credentials.0, ldap.security.credentials.1, ldap.security.credentials.2 ...
+    facebook.connect.app.secret
+    auth.token.shared.secret
+    auth.mac.shared.key
+    captcha.engine.recaptcha.key.private
+    amazon.secret.access.key
+    tunneling.servlet.shared.secret
+    microsoft.translator.client.secret
+    dl.store.s3.secret.key
+    auto.deploy.glassfish.jee.dm.passwd
+
+Also, any properties that end in `.password` and are not stored, with the 
+exception of the following non-sensitive properties:
+
+    portal.jaas.plain.password
+    portal.jaas.strict.password
+    login.create.account.allow.custom.password
 
 <!-- Sensitive data being database URLs, user names, and passwords? What about
 Documents & Media repository information? I think we should spell out exactly
 what sensitive data is *not* stored in order to give people peace of mind. -Rich
 --> 
 
-Now it's time to get to the heart of LCS--the *Dashboard*.
+Now that you know what information is stored on the LCS servers, it's time to 
+get to the heart of LCS--the *Dashboard*.
 
 #### Using the Dashboard
 
