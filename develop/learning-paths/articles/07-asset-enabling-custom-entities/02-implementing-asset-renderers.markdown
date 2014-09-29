@@ -474,7 +474,7 @@ Here is a sample icon for the Guestbook Admin portlet that's intended to
 represent a guestbook. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
 
-![Figure x: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../images/entry.png)
+![Figure x: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../images/guestbook.png)
 
 The default contents of each `<icon>` element is `/icon.png`. Change this path
 to `/entry.png` for the Guestbook portlet's `<icon>` element and to
@@ -510,4 +510,5 @@ guestbook and guestbook entry assets.
 ![Figure x: After you've implemented the `getIconPath` method in your `*AssetRenderer` classes, your custom icons are displayed with your custom assets in the Asset Publisher.](../../images/custom-icons-custom-entities-asset-publisher.png)
 
 Great! In the next section, you'll update your portlets' user interfaces to use
-several features of Liferay's asset framework.
+several features of Liferay's asset framework: comments, ratings, tags,
+categories, and related assets.
