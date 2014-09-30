@@ -1,4 +1,4 @@
-# Using Portal Roles in a Portlet
+# Using Portal Roles in a Portlet [](id=using-portal-roles-in-a-portlet)
 
 "A role, a role, my portal for a role!" Don't worry, using portal roles in your 
 portlets isn't that difficult. Roles in Liferay Portal are the key means for 
@@ -113,14 +113,14 @@ fine-grained security. We recommend using Liferay's permission system,
 because it offers a much more robust way of tailoring your application's
 permissions. 
 
-## Next Steps 
+## Related Topics
 
-<!--
-[Adding Permissions to Resources](/tutorials/-/knowledge_base/adding-permissions-to-resources-lp-6-2-develop-tutorial)
--->
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-<!-- Adding permissions link needs changed once it gets a header id -Nick -->
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
