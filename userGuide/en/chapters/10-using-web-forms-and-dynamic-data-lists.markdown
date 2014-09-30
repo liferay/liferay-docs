@@ -107,8 +107,9 @@ current locale.
 **Decimal:** similar to *Number*, except that it requires a decimal point (`.`)
 be present.
 
-**Documents and Media:** select an existing uploaded document to attach to the
-data record. Also has the ability to upload documents into the Document Library.
+**Documents and Media:** select an existing uploaded document or image to attach
+to the data record. Also has the ability to upload documents and images into the
+Document Library.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 

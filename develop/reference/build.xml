@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="Reference Materials" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="reference"/>
+	<property name="doc.type" value="reference"/>
+
+</project>

@@ -1,4 +1,4 @@
-# Developing Liferay Plugins with Additional Maven Archetypes [](id=developing-liferay-plugins-with-additional-maven-ar-lp-6-2-develop-tutorial)
+# Developing Liferay Plugins with Additional Maven Archetypes [](id=developing-liferay-plugins-with-additional-maven-ar)
 
 Liferay provides more archetypes than just the ones for portlets, hooks, themes,
 and layout templates. The Liferay team has been busy expanding the list of
@@ -23,6 +23,11 @@ In addition, there are some Maven *goals* Liferay has provided:
   goal has been added to theme archetype. 
 
 You now have plenty of archetypes at your disposal! 
+
+If you've been following our story that's dispersed throughout our Maven
+tutorials, you might be concerned for the cat we introduced, Lenore II. Alas,
+your concern is warranted. I'll let Edgar Allen Poe (from The Raven) break the
+news to you:
 
 "But the chair whose violet lining with the lamp-light gloating o'er,
 Lenore II shall press, ah, nevermore!"
@@ -52,12 +57,9 @@ questions. Be sure to fully describe any problems you have to ensure you get a
 working answer. You can even track known issues from the *Issue Tracker* page. 
 -->
 
-## Next Steps
+Here are some related topics:
 
-[AlloyUI](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/alloyui-lp-6-2-develop-tutorial)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay UI Taglibs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
 
-[Localization](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
-
-[Platform Frameworks](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)

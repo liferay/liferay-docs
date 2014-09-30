@@ -1,4 +1,4 @@
-# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints-lp-6-2-develop-tutorial)
+# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
 
 If you've already used Service Builder to define your model entities and have
 implemented business logic for creating and modifying those entities, you might
@@ -132,6 +132,7 @@ Name                | Value Type | Description | Default
 `year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
 `year-range-future` | boolean | sets whether to include future dates | true
 `year-range-past`   | boolean | sets whether to include past dates | true
+---
 
 <!--
 I wanted to get a complete list of model hints used in portal. I found the
