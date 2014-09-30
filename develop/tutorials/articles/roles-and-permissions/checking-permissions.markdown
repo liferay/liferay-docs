@@ -1,4 +1,4 @@
-# Checking Permissions 
+# Checking Permissions [](id=checking-permissions)
 
 The last major step toward implementing permissions for your custom portlet is
 to ensure the configured permissions are enforced. You'll do this by adding
@@ -156,14 +156,14 @@ Likewise, you're encouraged to use custom portlet action keys.
 class, which is what the reader is expecting out of this section. Certainly I
 was. We've only seen how to use a helper class that already exists. -Rich --> 
 
-## Next Steps 
+## Related Topics
 
-<!-- Change link once header id is generated -->
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-<!--
-[Checking Permissions](/tutorials/-/knowledge_base/checking-permissions-lp-6-2-develop-tutorial) 
--->
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
