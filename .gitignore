@@ -4,9 +4,11 @@
 *.iml
 *.swp
 *-tmp.html
+.METADATA
 .project
 .classpath
 .settings
+git-modified-list.txt
 nbbuild.xml
 properties/
 
@@ -24,3 +26,4 @@ properties/
 **/.DS_Store/*
 *#
 /bin
+/classes/

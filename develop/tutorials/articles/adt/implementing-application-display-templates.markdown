@@ -1,11 +1,10 @@
-# Implementing Application Display Templates [](id=implementing-application-display-templates-lp-6-2-develop-tutorial)
+# Implementing Application Display Templates [](id=implementing-application-display-templates)
 
 <!-- You can test this tutorial using the following portlet project 
 https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
 -->
 
-[Application Display
-Templates](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+[Application Display Templates](/discover/portal/-/knowledge_base/using-application-display-templates)
 (ADTs) provide--the ability to add custom display settings to your portlets from
 the portal. This isn't actually a new concept in Liferay. In some portlets
 (e.g., *Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can
@@ -18,7 +17,7 @@ Template option looks like in a portlet Configuration menu.
 In this tutorial, we'll demonstrate how to use the Application Display Templates
 API to add an ADT to a portlet. Let's get started learning how.
 
-## Using the Application Display Templates API [](id=using-the-application-display-templates-api-lp-6-2-develop-tutorial)
+## Using the Application Display Templates API [](id=using-the-application-display-templates-api)
 
 To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
@@ -204,8 +203,8 @@ the display of your portlet. You can experiment by adding your own custom ADT.
     
 Once your script is uploaded into the portal and saved, users with the specified
 roles can select the template when they're configuring the display settings of
-your portlet on a page. You can visit the [Using Application Display
-Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+your portlet on a page. You can visit the
+[Using Application Display Templates](/discover/portal/-/knowledge_base/using-application-display-templates)
 section in *Using Liferay Portal* for more details on using ADTs.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -214,7 +213,7 @@ of "Using Liferay Portal", once we have a section on ADTs that we can point to.
 
 Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
-## Recommendations for Using ADTs [](id=recommendations-for-using-adts-lp-6-2-develop-tutorial)
+## Recommendations for Using ADTs [](id=recommendations-for-using-adts)
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, let's
@@ -259,8 +258,7 @@ customized for the portlet you chose. These variable references can be found on
 the left-side panel of the template editor. You can use them by simply placing
 your cursor where you'd like the variable placed, and clicking the desired
 variable to place it there. You can learn more about the template editor in the
-[Using Application Display
-Templates](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-application-display-templates-liferay-portal-6-2-user-guide-07-en)
+[Using Application Display Templates](/discover/portal/-/knowledge_base/using-application-display-templates)
 section of *Using Liferay Portal*.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -280,4 +278,14 @@ your portal users. We stepped through how to configure ADTs for a custom portlet
 like the Location Listing portlet, tried out a sample template, and ran through
 important recommendations for using ADTs, which included security and
 performance.
+
+## Related Topics 
+
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal)
+
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui)
+
+[Localization](/develop/tutorials/-/knowledge_base/localization)
+
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
 

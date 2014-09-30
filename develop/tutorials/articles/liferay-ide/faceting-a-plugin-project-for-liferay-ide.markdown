@@ -1,4 +1,4 @@
-# Faceting a Plugin Project for Liferay IDE [](id=faceting-a-plugin-project-for-liferay-ide-lp-6-2-develop-tutorial)
+# Faceting a Plugin Project for Liferay IDE [](id=faceting-a-plugin-project-for-liferay-ide)
 
 When you drag your plugin project onto your Liferay server in Liferay IDE, is
 the plugin not deploying? Is there no "L" overlay image on your project's icon
@@ -32,8 +32,7 @@ To facet your plugin project properly, follow these steps:
 
 Your plugin project is now faceted for Liferay IDE!
 
-## Next Steps 
+## Related Topics 
 
-[Using Liferay IDE's Remote Server Adapter](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 
-<!-- TODO add link to other deployment tutorials as they become available. Jim -->
