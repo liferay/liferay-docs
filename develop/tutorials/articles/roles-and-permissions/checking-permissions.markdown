@@ -7,13 +7,13 @@ check for permission before deleting a resource, or your user interface can hide
 a button that adds an entity (e.g. a calendar event) if the user doesn't have
 permission.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** The Liferay Blogs portlet is 
-  used in this tutorial to illustrate exposing permissions to users. You can 
-  find it in Liferay's source code on [Github](https://github.com/liferay/liferay-portal).
+ **Note:** The Liferay Blogs portlet is used in this tutorial to illustrate 
+ exposing permissions to users. You can find it in Liferay's source code on 
+ [Github](https://github.com/liferay/liferay-portal).
 
----
+$$$
 
 ## Implementing Permissions Checking
 
