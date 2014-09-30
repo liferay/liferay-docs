@@ -1,4 +1,4 @@
-# Adding and Deleting Resources 
+# Adding and Deleting Resources [](id=adding-and-deleting-resources)
 
 Liferay provides a system that allows you to implement permissions for your 
 custom portlets. The first step in implementing permissions is to define all 
@@ -92,14 +92,14 @@ example of a blogs entry being removed:
 
 Great! Now you know how to work with resource permissions! 
 
-## Next Steps 
+## Related Topics
 
-<!-- Change link once header id is generated -->
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-<!--
-[Exposing the Permission Interface to Users](/tutorials/-/knowledge_base/exposing-the-permission-interface-lp-6-2-develop-tutorial) 
--->
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
