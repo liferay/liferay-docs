@@ -1,4 +1,4 @@
-# Exposing the Permission Interface to Users 
+# Exposing the Permission Interface to Users [](id=exposing-the-permission-interface-to-users)
 
 Imagine that you bought a really nice electric guitar. Now imagine that you 
 bought an even nicer amplifier to go along with it. You get them home, and much 
@@ -64,14 +64,14 @@ There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources!
 
-## Next Steps 
+## Related Topics
 
-<!-- Change link once header id is generated -->
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-<!--
-[Checking Permissions](/tutorials/-/knowledge_base/checking-permissions-lp-6-2-develop-tutorial) 
--->
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
