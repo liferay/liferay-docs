@@ -8,6 +8,24 @@ for guestbook entries. All of the back-end support for these features is
 provided by Liferay. Your only task is to update your applications' user
 interfaces to use these features.
 
+In this section, you'll be creating several new JSPs that require new imports.
+Add the following imports to your guestbook-portlet project's
+`docroot/html/init.jsp` file:
+
+    <%@ page import="java.util.Map" %>
+    <%@ page import="java.util.HashMap" %>
+
+    <%@ page import="com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil" %>
+    <%@ page import="com.liferay.portlet.asset.service.AssetTagLocalServiceUtil" %>
+
+    <%@ page import="com.liferay.portlet.asset.model.AssetEntry" %>
+    <%@ page import="com.liferay.portlet.asset.model.AssetTag" %>
+
+    <%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
+
+It's simpler to add these imports now (rather than as you go) so that you don't
+run into errors as you're working through this section.
+
 ## Creating JSPs for Displaying Custom Assets in the Asset Publisher
 
 Before you proceed, you need to tie up one loose end from the previous section.
@@ -328,9 +346,23 @@ the `<liferay-ui:ratings>` tag. The comments tag is implemented via the
 requires an action URL to be supplied for its `formAction` attribute. The
 `invokeTaglibDiscussion` action URL is responsible for actually adding the
 comment after the user clicks *Add Comment*, enters a comment, and clicks
-*Reply*. Note that the whole panel container is wrapped in a `<c:if>` tag.
-You're restricting access to comments and ratings to users who have signed in
-with a portal account. You're checking this with the following expression:
+*Reply*.
+
++$$$
+
+**Note:** Discussions (comments) are implemented as message board messages in
+Liferay. In Liferay's `MBMessage` table, there's a `classPK` column. This
+`classPK` represents the `guestbookId` of the guestbook to which the comment was
+added. Ratings are stored in Liferay's `RatingsEntry` table. The `RatingsEntry`
+table contains a `classPK` column where the `classPK` represents the
+`guestbookId` of the guestbook to which the rating was added. This is a common
+pattern that's used throughout Liferay.
+
+$$$
+
+Note that the whole panel container is wrapped in a `<c:if>` tag.  You're
+restricting access to comments and ratings to users who have signed in with a
+portal account. You're checking this with the following expression:
 
     <%= themeDisplay.isSignedIn() %>
 
