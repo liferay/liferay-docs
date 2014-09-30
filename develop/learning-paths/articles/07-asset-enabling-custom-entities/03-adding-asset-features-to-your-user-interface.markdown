@@ -217,6 +217,129 @@ the assets that you linked together.
 
 ## Enabling Comments and Ratings for Guestbooks
 
+Liferay's asset framework allows users to comment on and rate assets. As with
+tags, categories, and related assets, since you already asset-enabled guestbooks
+in the service layer, your only remaining task is to update your user interface
+to allow access to these features. It's best to separate the page where users
+comment on and rate assets from the page where users actually edit the assets
+themselves. If you added the commenting and rating functionality to the
+Guestbook Admin portlet's `edit_guestbook.jsp` page, you would be confusing
+collaboration fields with content fields. It's easy to imagine scenarios where
+users should be able to view, comment on, and rate assets without being able to
+actually edit the assets.
+
+Create a new file called `view_guestbook.jsp` in your guestbook-portlet
+project's `docroot/WEB-INF/html/guestbookadmin` folder. Add the following
+contents to it:
+
+    <%@include file = "/html/init.jsp" %>
+
+    <portlet:renderURL var="viewURL">
+            <portlet:param name="mvcPath" value="/html/guestbookadmin/view.jsp"></portlet:param>
+    </portlet:renderURL>
+
+    <liferay-ui:header backURL="<%= viewURL %>" title="guestbook" />
+
+    <%
+            long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+            Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbook(guestbookId);
+            guestbook = guestbook.toEscapedModel();
+            
+            AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
+                            Guestbook.class.getName(), guestbook.getGuestbookId());
+
+            String currentURL = PortalUtil.getCurrentURL(request);
+
+            PortalUtil.addPortletBreadcrumbEntry(request, guestbook.getName(),
+                            currentURL);
+
+            PortalUtil.setPageSubtitle(guestbook.getName(), request);
+            PortalUtil.setPageDescription(guestbook.getName(), request);
+
+            List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
+                            Guestbook.class.getName(), guestbook.getGuestbookId());
+            PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
+                            request);
+    %>
+
+    <dl>
+            <dt>Name</dt>
+            <dd><%= guestbook.getName() %></dd>
+    </dl>
+
+    <c:if test="<%= themeDisplay.isSignedIn() %>">
+            <liferay-ui:panel-container extended="<%= false %>"
+                    id="guestbookCollaborationPanelContainer" persistState="<%= true %>">
+                    <liferay-ui:panel collapsible="<%= true %>" extended="<%= true %>"
+                    id="guestbookCollaborationPanel" persistState="<%= true %>"
+                    title='<%= LanguageUtil.get(pageContext, "collaboration") %>'>
+                            <liferay-ui:ratings className="<%= Guestbook.class.getName() %>"
+                                    classPK="<%= guestbook.getGuestbookId() %>" type="stars" />
+                            
+                            <br />
+
+                            <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+            
+                            <liferay-ui:discussion className="<%= Guestbook.class.getName() %>"
+                        classPK="<%= guestbook.getGuestbookId() %>"
+                        formAction="<%= discussionURL %>" formName="fm2"
+                        ratingsEnabled="<%= true %>" redirect="<%= currentURL %>"
+                        subject="<%= guestbook.getName() %>"
+                        userId="<%= guestbook.getUserId() %>" />
+
+                    </liferay-ui:panel>
+            </liferay-ui:panel-container>
+    </c:if>
+
+    <liferay-ui:asset-links
+            assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
+            className="<%= Guestbook.class.getName() %>"
+            classPK="<%= guestbook.getGuestbookId() %>" />
+
+Here, you start by creating a URL to the Guestbook portlet's default view. You
+use this URL for your page's *Back* icon that appears in the header that's
+created by the `<liferay-ui:header>` tag.
+
+In the scriptlet, you use the `guestbookId` request attribute to get a guestbook
+object. You convert it to an escaped model for security reasons, as discussed
+earlier. Next, you update your portlet's breadcrumb entry with the name of the
+current guestbook. Since the Guestbook Admin portlet lives in the Control Panel,
+the portlet breadcrumb is not visible. However, it would be visible if you added
+the portlet to a regular portal page. (The Breadcrumb portlet appears on regular
+portal pages, by default.)
+
+![Figure x: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../images/portlet-breadcrumb.png)
+
+At the end of the scriptlet, you add the names of the existing asset tags for
+the current guestbook as keywords to the portal page. These tag names appear in
+a `<meta content="[tag names here]" lang="en-US" name="keywords" />` element in
+the `<head>` section of your portal page. These keywords can help search engines
+find more easily find and index your page.
+
+After the scriptlet, you define the main content of your page. You're simply
+displaying your guestbook's name with `<dl>`, `<dt>`, and `<dd>` tags the same
+way you did in `docroot/WEB-INF/html/guestbookadmin/full_content.jsp`.
+
+Next, you use  `<liferay-ui:panel-container>` tag to create a panel container.
+Inside this tag, you use a `<liferay-ui:panel>` tag to create a panel containing
+the comments and ratings components. The ratings component is implemented via
+the `<liferay-ui:ratings>` tag. The comments tag is implemented via the
+`<liferay-ui:discussion>` tag. Note that the `<liferay-ui:discussion>` tag
+requires an action URL to be supplied for its `formAction` attribute. The
+`invokeTaglibDiscussion` action URL is responsible for actually adding the
+comment after the user clicks *Add Comment*, enters a comment, and clicks
+*Reply*. Note that the whole panel container is wrapped in a `<c:if>` tag.
+You're restricting access to comments and ratings to users who have signed in
+with a portal account. You're checking this with the following expression:
+
+    <%= themeDisplay.isSignedIn() %>
+
+At the end of the page, you're displaying the related assets of the current
+guestbook. Note that you're using the `<liferay-ui:asset-links>` tag to
+displayed related assets. This tag is distinct from the
+`<liferay-ui:input-asset-links>` that you used in `edit_guestbook.jsp` that
+allowed the user to select related assets.
+
 ## Enabling Tags, Categories, and Related Assets for Guestbook Entries
 
 ## Enabling Comments and Ratings for Guestbook Entries
