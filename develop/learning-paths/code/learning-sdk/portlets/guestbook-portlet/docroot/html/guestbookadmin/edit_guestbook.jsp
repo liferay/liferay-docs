@@ -25,7 +25,7 @@
 			<aui:input name="name" />
         </aui:fieldset>
         
-        <liferay-ui:asset-categories-error />
+		<liferay-ui:asset-categories-error />
 		<liferay-ui:asset-tags-error />
 	    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="guestbookCategorizationPanel" persistState="<%= true %>" title="categorization">
 			<aui:fieldset>
