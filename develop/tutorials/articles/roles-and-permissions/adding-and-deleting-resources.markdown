@@ -11,23 +11,22 @@ portlet is used as an example. You can find it in Liferay's source code on
 [Github](https://github.com/liferay/liferay-portal). Read on to find out how to 
 add and delete resources!
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** *Resource* is a generic term 
-  for any object represented in the portal. Examples of resources include 
-  portlets (e.g. Message Boards, Calendar, etc.), Java classes (e.g. Message 
-  Board Topics, Calendar Events, etc.), and files (e.g.  documents, images, 
-  etc.). 
+ **Note:** *Resource* is a generic term for any object represented in the 
+ portal. Examples of resources include portlets (e.g. Message Boards, Calendar, 
+ etc.), Java classes (e.g. Message Board Topics, Calendar Events, etc.), and 
+ files (e.g.  documents, images, etc.). 
 
----
+$$$
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** *Permission* is an action on 
-  a resource. For example, the *view* action with respect to *viewing the 
-  calendar portlet* is defined as a permission in Liferay.
+ **Note:** *Permission* is an action on a resource. For example, the *view* 
+ action with respect to *viewing the calendar portlet* is defined as a 
+ permission in Liferay.
 
----
+$$$
 
 ## Adding a Resource 
 
