@@ -14,6 +14,11 @@
 <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
 <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
 <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
+<%@ page import="com.liferay.portlet.asset.model.AssetEntry" %>
+<%@ page import="com.liferay.portlet.asset.model.AssetTag" %>
+<%@ page import="com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil" %>
+<%@ page import="com.liferay.portlet.asset.service.AssetTagLocalServiceUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
@@ -42,14 +47,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %>
-
-<%@ page import="com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil" %>
-<%@ page import="com.liferay.portlet.asset.service.AssetTagLocalServiceUtil" %>
-
-<%@ page import="com.liferay.portlet.asset.model.AssetEntry" %>
-<%@ page import="com.liferay.portlet.asset.model.AssetTag" %>
-
-<%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
 
 <%@ page import="javax.portlet.PortletURL" %>
 
