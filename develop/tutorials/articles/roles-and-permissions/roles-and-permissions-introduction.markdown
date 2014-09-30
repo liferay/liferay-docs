@@ -19,12 +19,16 @@ This section's tutorials cover the following topics:
 
 - Checking Permissions
 
-## Next Steps 
+- Creating a Custom Action Key
 
-<!--
-[Using Portal Roles in a Portlet](add link once article receives header id)
--->
+## Related Topics
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
+
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
