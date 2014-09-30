@@ -1,4 +1,4 @@
-# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven)
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. This
 tutorial explain the process. Just follow these steps: 
@@ -6,7 +6,7 @@ tutorial explain the process. Just follow these steps:
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
     `pom.xml`. See the 
-    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
     tutorial for descriptions of these Liferay properties. 
 
     Here's an example where these *properties* are specified for a Liferay
@@ -76,9 +76,9 @@ tutorial explain the process. Just follow these steps:
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for s
         ample-portlet
 
-    ---
+$$$
  
-    ![note](../../images/tip-pen-paper.png) **Note:** If you get the following
+    **Note:** If you get the following
     error after executing `mvn liferay:deploy`, make sure you're executing the
     command from your plugin's directory (e.g., `sample-portlet`)--not your
     parent project's directory. 
@@ -88,7 +88,7 @@ tutorial explain the process. Just follow these steps:
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
-    ---
+$$$
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your
@@ -124,9 +124,9 @@ tutorial explain the process. Just follow these steps:
 
 Your plugin is now available in your Nexus repository!
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** There are three build phases
+**Note:** There are three build phases
 you'll use when developing plugins with Maven: 
 
 - In Maven's *compile* phase, explicit dependencies are downloaded to your
@@ -136,18 +136,11 @@ you'll use when developing plugins with Maven:
 - In Maven's *install* phase, your plugin is installed to your local
   repository. 
 
----
+$$$
 
 Congratulations on deployin your plugin to Liferay and to your repository! 
 
-## Next Steps
+## Related Topics
 
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
-
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
 
