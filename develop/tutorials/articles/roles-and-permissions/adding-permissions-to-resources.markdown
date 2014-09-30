@@ -1,4 +1,4 @@
-# Adding Permissions to Resources
+# Adding Permissions to Resources [](id=adding-permissions-to-resources)
 
 Public bulletin boards are great. Anyone can inform others of just about 
 anything. On the other hand, *anyone* can post just about *anything* on the 
@@ -268,14 +268,14 @@ by looking at the definition files found in the
 permissions in the context of a portlet plugin, check out `plugins/trunk` and
 look at the portlet `sample-permissions-portlet`.
 
-## Next Steps 
+## Related Topics
 
-<!-- Change link once header id is generated -->
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
 
-<!--
-[Adding and Deleting Resources](/tutorials/-/knowledge_base/adding-and-deleting-resources-lp-6-2-develop-tutorial) 
--->
+[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
 
-[Service Builder](/tutorials/-/knowledge_base/service-builder-lp-6-2-develop-tutorial)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
