@@ -13,11 +13,11 @@ Simulator.
 
 +$$$
 
-Permissions pertaining to the Audience Targeting Simulator and other features of
-the Audience Targeting app can be granted via the Roles section of the Control
-Panel. When defining permissions for a role, go to *Site Administration* &rarr;
-*Configuration* to find the *Audience Targeting*, *Audience Targeting Resources,
-and *Audience Targeting Simulator* sections.
+**Note:** Permissions pertaining to the Audience Targeting Simulator and other
+features of the Audience Targeting app can be granted via the Roles section of
+the Control Panel. When defining permissions for a role, go to *Site
+Administration* &rarr; *Configuration* to find the *Audience Targeting*,
+*Audience Targeting Resources*, and *Audience Targeting Simulator* sections.
 
 $$$
 
