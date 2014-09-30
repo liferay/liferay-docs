@@ -36,15 +36,15 @@ next major task. This is called a segue.
 Each major task has the same structure: introductory text, numbered steps, and
 summary text. 
 
----
++$$$
 
-![tip](guided-learning/images/01-tip.png) You can also add Sidebars to the text if there's
+You can also add Sidebars to the text if there's
 background information that's helpful, but doesn't necessary fit into the task
 at hand. 
 
----
+$$$
 
-## Next Steps
+## Related Topics
 
 At the bottom of the tutorial, let the reader know some other topics that flow
 naturally from the tutorial he or she has just read. This gives developers

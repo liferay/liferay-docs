@@ -1,4 +1,4 @@
-# Using Liferay Maven Parent Plugin Projects [](id=using-liferay-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+# Using Liferay Maven Parent Plugin Projects [](id=using-liferay-maven-parent-plugin-projects)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties that *child* projects inherit. This saves time, since you
@@ -23,8 +23,6 @@ Liferay Plugins SDK. Its `pom.xml` file specifies information to be used by any
 child plugin projects that refer to it. Of course, you can always specify
 information in each individual plugin's POM, but it's more convenient to use the
 parent project's POM for sharing common information. 
-
-## Creating a Parent Plugin Project
 
 Follow these steps to create a Liferay Maven parent plugin project: 
 
@@ -196,7 +194,7 @@ Follow these steps to create a Liferay Maven parent plugin project:
     You can also specify these key properties in your global or user
     `settings.xml` file. To learn more about this method, visit the *Configuring
     Your Liferay Maven Project* section of the
-    [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial) 
+    [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide) 
     tutorial. 
 
     The Liferay plugins that you develop depend on several Liferay artifacts.
@@ -204,18 +202,13 @@ Follow these steps to create a Liferay Maven parent plugin project:
     `dependencies` element. All of your parent project's modules (i.e., projects
     that refer to this parent) can leverage these dependencies. 
 
-    ---
++$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** You could just as easily
+**Note:** You could just as easily
     include such dependencies in the POM of each of your plugin projects, but
     specifying them in a parent project makes them accessible to child projects
     through inheritance. 
 
-    ---
+$$$
 
 You've configured your parent plugin project. 
-
-## Next Steps
-
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
-

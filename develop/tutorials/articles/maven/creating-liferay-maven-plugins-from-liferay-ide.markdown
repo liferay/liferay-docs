@@ -1,4 +1,4 @@
-# Creating Liferay Maven Plugins from Liferay IDE [](id=creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+# Creating Liferay Maven Plugins from Liferay IDE [](id=creating-liferay-maven-plugins-from-liferay-ide)
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types. These types include portlet, theme, hook, and layout template plugins. To make sure
@@ -11,7 +11,7 @@ detail below to generate Liferay plugin projects of any type.
 As a prerequisite to running Archetype, make sure Maven is installed and that
 its executable is in your `$PATH` environment variable. Maven must also be fully
 configured. To configure Maven, follow the steps in the
-[Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven-lp-6-2-develop-tutorial)
+[Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven)
 tutorial.
 
 There are two ways of creating Liferay plugins with Maven: using Liferay
@@ -46,7 +46,7 @@ Liferay plugin project using Liferay IDE:
     the plugin project, specify the parent plugin project directory for the
     Location. It's a best practice to create a parent project for your Maven
     plugins, so they can all share common project information. See the
-    [Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects-lp-6-2-develop-tutorial)
+    [Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects)
     tutorial for details. 
 
 4.  Specify the *Artifact version*. For example, you can specify `1.0-SNAPSHOT`
@@ -71,7 +71,7 @@ Liferay plugin project using Liferay IDE:
     deployable. You'll need to specify the necessary properties within the new
     profile; we'll demonstrate specifying these properties in the *Configuring
     Your Liferay Maven Project* section of the 
-    [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide-lp-6-2-develop-tutorial)
+    [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide)
     tutorial. 
 
     You also have the option to create a profile based on a Liferay runtime. To
@@ -96,17 +96,15 @@ specification.
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! 
 
-## Next Steps 
+## Related Topics 
 
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
 
-[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Portlets with Maven](/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven)
 
-[Developing Liferay Portlets with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Hook Plugins with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven)
 
-[Developing Liferay Hook Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven-lp-6-2-develop-tutorial)
+[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven)
 
-[Developing Liferay Theme Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-theme-plugins-with-maven-lp-6-2-develop-tutorial)
-
-[Developing Liferay Layout Template Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+[Developing Liferay Layout Template Plugins with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-layout-template-plugins-with-mav)
 
