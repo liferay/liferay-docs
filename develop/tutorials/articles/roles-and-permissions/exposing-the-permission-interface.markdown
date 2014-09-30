@@ -17,13 +17,13 @@ be set by users?
 This tutorial covers exposing your portlet permissions to users. Get ready to 
 rock! 
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** The Liferay Blogs portlet is 
-  used in this tutorial to illustrate exposing permissions to users. You can 
-  find it in Liferay's source code on [Github](https://github.com/liferay/liferay-portal).
+ **Note:** The Liferay Blogs portlet is used in this tutorial to illustrate 
+ exposing permissions to users. You can find it in Liferay's source code on 
+ [Github](https://github.com/liferay/liferay-portal).
 
----
+$$$
 
 ## Adding Permissions 
 
