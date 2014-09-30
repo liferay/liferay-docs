@@ -11,6 +11,8 @@ tables of the entities themselves (e.g., they are not columns in the
 `GB_Guestbook` table in the case of your guestbook entities). Rather, they are
 are stored in the `AssetEntry` table.
 
+## Implementing a Guestbook Asset Renderer
+
 Create a new package called `com.liferay.docs.guestbook.asset` in your
 guestbook-portlet project's `docroot/WEB-INF/src` folder. In this package,
 create a `GuestbookAssetRenderer` class that extends Liferay's
@@ -243,6 +245,8 @@ This entry should go just below the `<control-panel-entry-weight>` element and
 just above the `<header-portlet-css>` element. Good! Now your asset renderer
 factory will be registered the next time you re-deploy your plugin.
 
+## Implementing an Entry Asset Renderer
+
 Next, we need to implement an asset renderer and an asset renderer factory for
 guestbook entries. In the `com.liferay.docs.guestbook.asset` package, create an
 `EntryAssetRenderer` class that extends Liferay's `BaseAssetRenderer` class.
@@ -454,10 +458,14 @@ functionality that you added, add the Asset Publisher portlet to a page of your
 locally running Liferay Portal instance. Then add a few guestbooks and guestbook
 entries. Edit a few of them too. Then check the Asset Publisher portlet. By
 default, the Asset Publisher is configured to dynamically display assets of any
-kind from the current site. Confirm that the Asset Publisher is displaying the
-guestbooks and guestbook entries that you added.
+kind from the current site.
 
 ![Figure x: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../images/custom-entities-asset-publisher.png)
+
+Confirm that the Asset Publisher is displaying the guestbooks and guestbook
+entries that you added.
+
+## Adding Custom Icons to Portlets and Asset Renderers
 
 You can configure custom icons for your Guestbook and Guestbook Admin portlets.
 To do so, just open your project's `liferay-portlet.xml`, and update the paths
