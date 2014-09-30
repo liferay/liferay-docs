@@ -226,10 +226,10 @@ Detailed instructions can be found under [Installing Plugins Manually](https://w
 ### Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-liferay-portal-6-2-user-guide-15-en)
 
 If your application server does not support hot deploy, you can't leverage
-Liferay’s auto deploy feature. You can, however, manually deploy the
+Liferay's auto deploy feature. You can, however, manually deploy the
 plugin in two steps:
 
-1. Use Liferay’s tools to “pre-deploy” the file.
+1. Use Liferay's tools to "pre-deploy" the file.
 
 2. Then use your app server's tools to do the actual deployment.
 
@@ -339,6 +339,25 @@ your `portal-ext.properties` or `portal-setup-wizard.properties` file:
 Save the file and if Liferay is running, restart it. Your portal is now
 configured to check PACL-enabled Marketplace apps against their declared
 permissions. 
+
+Next, you'll make sure Liferay is configured properly for your network. 
+
+## Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6-liferay-portal-6-2-user-guide-15-en)
+
+Liferay Portal supports both the IPv4 and IPv6 address formats, though by
+default, Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll
+need to change the configuration. If you'd like more information on the basics
+of these protocols, you can check out the
+[reason](http://www.google.com/intl/en/ipv6/) for using IPv6 addresses, and its
+[technical details](http://en.wikipedia.org/wiki/IPv6).
+
+To configure your portal to validate IPv6 addresses, you must complete a few
+simple steps. First, assuming you're using the Tomcat app server for your
+portal, navigate to the `${TOMCAT_HOME}/bin/setenv.bat` file and set
+`-Djava.net.preferIPv4Stack=false` in `CATALINA_OPTS`. Then, create a
+`portal-ext.properties` file in your portal's home directory (if necessary) and
+set the `tunnel.servlet.hosts.allowed` property to the target hosts you want to
+allow (e.g., *0:0:0:0:0:0:0:1*). 
 
 Now that you understand all the prerequisites for installing Liferay Portal,
 let's go ahead and get it done! First we'll go over installing Liferay from a
@@ -1258,7 +1277,8 @@ Let's work with the dependency jar files first.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver.
+    driver. If you are using a different database, replace the MySQL jar with
+    the driver jar for your database.
 
 4. Next, you'll need to include a patch from Liferay's source code for one of
 JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
@@ -1266,7 +1286,7 @@ the source into a temporary folder. We'll refer to the location of the Liferay
 source as `$LIFERAY_SOURCE`.
 
 5. Currently, there are bugs in the
-`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-[$JBOSS_VERSION].Final.jar`
 file regarding the IBM JVM
 ([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
 [JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
@@ -1275,7 +1295,7 @@ you'll need to update the `ServerDependenciesProcessor.class` file in the
 `jboss-as-<$JBOSS_VERSION>.Final.jar` file to specify the IBM JDK. The steps to
 insert the patch can be referenced below.
 
-    1. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file from
+    1. Cut and paste the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
     `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
     `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
     
@@ -1286,12 +1306,12 @@ insert the patch can be referenced below.
             jar uf jboss-as-server-<$JBOSS_VERSION>.Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
 
         This command inserts the `ServerDependenciesProcessor.class` file into
-        the `jboss-as-<$JBOSS_VERSION>.Final.jar` file's
+        the `jboss-as-[$JBOSS_VERSION].Final.jar` file's
         `org/jboss/as/server/deployment/module` folder. You can reference the
         official documentation for updating a JAR file at
         [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
 
-    3. Cut and paste the `jboss-as-<$JBOSS_VERSION>.Final.jar` file back to its
+    3. Cut and paste the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its
     original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
 
 Great! You have your `.jar` files ready for your domain.
@@ -1401,9 +1421,9 @@ default-virtual-server="default-host" native="false">`.
         <configuration>
             <jsp-configuration development="true" />
         </configuration>
-        
+ 
 Now it's time for some changes to your configuration and startup scripts.
-        
+ 
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
@@ -1424,13 +1444,13 @@ Make the following edits as applicable to your operating system:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 - On Unix, merge the following values into your settings for `JAVA_OPTS`
   replacing any matching attributes with the ones found in the assignment
   below:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy==$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 
     Make sure you replace the `$JBOSS_HOME` references with the appropriate
     directory. You'll notice we've added some Java security options. We'll
@@ -1513,10 +1533,10 @@ Modify `standalone.xml` adding your data source and driver within the
    `<datasources>` element.
 
         <drivers>
-            <driver name="mysql" module="com.liferay.portal.main"/>
+            <driver name="mysql" module="com.liferay.portal"/>
         </drivers>
 
-Your final data sources subsystem should look something like this:
+Your final data sources subsystem should look like this:
 
         <subsystem xmlns="urn:jboss:domain:datasources:1.0">
             <datasources>
@@ -1529,7 +1549,7 @@ Your final data sources subsystem should look something like this:
                     </security>
                 </datasource>
                 <drivers>
-                    <driver name="mysql" module="com.liferay.portal.main"/>
+                    <driver name="mysql" module="com.liferay.portal"/>
                 </drivers>
             </datasources>
         </subsystem>
@@ -2546,8 +2566,6 @@ Liferay supports just about all the leading databases today:
 
 * DB2
 
-* Informix
-
 * MySQL
 
 * Oracle
@@ -2686,38 +2704,9 @@ server helps to make sure your system performs optimally.
 
 If, however, you want Liferay to share space on an application server with other
 applications, you can. In this instance, you may not want to make Liferay the
-default application in the root context of the server.
-
-There are two steps to modifying this behavior:
-
-1. Deploy Liferay in a context other than root (for example `/portal`).
-
-2. Modify the `portal-ext.properties` file to tell Liferay the context to which
-   it has been deployed.
-
-    To change the file, open it in a text editor. Place the `portal.ctx`
-    property at the top of the file:
-
-        portal.ctx=/
-
-This default setting defines Liferay Portal as the application that sits at the
-root context. If you change it to something else, say `/portal`, for example,
-you can then deploy Liferay in that context and it will live there instead of at
-the root context.
-
-A full discussion of the `portal-ext.properties` file appears in Chapter 20.
-
-**Note for WebLogic Users:** WebLogic also requires that you modify the
-`weblogic.xml` file which is included with Liferay. In this file are tags for
-the context root:
-
-    <context-root>/</context-root>
-
-Change this so it matches the path you set in your `portal-ext.properties` file.
-You will have to modify the `weblogic.xml` file inside the Liferay `.war` before
-you deploy it. Extract the file from the `.war` file, modify it and then put it
-back in the `.war` file. Then deploy the modified Liferay `.war` file to the
-server in the proper context.
+default application in the root context of the server. If you want to install 
+Liferay in a context other than the root context, follow the instructions from 
+your app server vendor. No additional steps are necessary.
 
 Now that you have Liferay installed in the context you wish, you'll want to
 understand Liferay's releases and the process for keeping your installation up

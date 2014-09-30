@@ -1,4 +1,4 @@
-# Developing OSGi Plugins for Liferay
+# Modularization with OSGi Plugins [](id=developing-osgi-plugins-for-liferay)
 
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. OSGi implements a complete and dynamic component model. OSGi
@@ -14,13 +14,13 @@ services are available to Liferay's OSGi runtime and can be invoked from Liferay
 OSGi plugins. In this tutorial, we explain how to create, package, and deploy
 custom OSGi plugins for Liferay. 
 
----
++$$$
 
- ![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
- experimental and unsupported. It should be considered a technology preview at
- this time. 
+**Note:** Liferay 6.2's OSGi runtime is
+experimental and unsupported. It should be considered a technology preview at
+this time. 
 
----
+$$$
 
 ## Creating Liferay OSGi Plugins
 
@@ -109,6 +109,6 @@ etc. Remember not to make customizations to the `portal.properties` file itself
 but to instead add customized properties to a `portal-ext.properties` file in
 your Liferay Home directory. 
 
-## Next Steps
+## Related Topics
 
-[Plugin Management](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en)
+[Plugin Management](/discover/portal/-/knowledge_base/plugin-management)
