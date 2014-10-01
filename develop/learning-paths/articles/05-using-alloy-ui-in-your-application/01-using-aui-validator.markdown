@@ -24,6 +24,7 @@ input fields a bit.
 
     To keep things simple, replace the contents between the `<aui:fieldset>` and
     `<aui:fieldset/>` tags with the following code:
+
         <aui:input name="name" >
              <aui:validator name="required"/>
         </aui:input>
