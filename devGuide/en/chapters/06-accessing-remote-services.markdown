@@ -1566,6 +1566,8 @@ that both services include "skinny" in their name. The previous section on
 [JSON Web Services](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/json-web-services-liferay-portal-6-2-dev-guide-05-en)
 provides details on how JSON web services work in Liferay.
 
+![Figure 6.x: You can access Skinny JSON web services from JavaScript, cURL, URLs in your browser, and from Liferay's trusty JSONWS API browser interface.](../../images/jsonws-api-services-01.png)
+
 You can keep these service names in mind, as you'll see the services in action
 later in this section. But before invoking them, you'll want to understand how
 to use the Skinny JSON Provider anonymously and in a CSRF protected environment.
