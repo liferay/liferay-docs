@@ -22,5 +22,5 @@ In this learning path, you'll integrate the guestbook and guestbook entry
 entities with Liferay's asset framework. You'll implement tags, categories,
 comments, ratings, and related assets for guestbooks and guestbook entries.
 You'll also learn how asset-enabled guestbooks and guestbook entries integrate
-with Liferay core portlets including the Asset Publisher, Search, Tags
-Navigation, Tag Cloud, and Categories Navigation portlets.
+with Liferay core portlets including the Asset Publisher, Tags Navigation, Tag
+Cloud, and Categories Navigation portlets.

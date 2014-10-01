@@ -247,11 +247,10 @@ factory will be registered the next time you re-deploy your plugin.
 
 ## Implementing an Entry Asset Renderer
 
-Next, we need to implement an asset renderer and an asset renderer factory for
+Next, you need to implement an asset renderer and an asset renderer factory for
 guestbook entries. In the `com.liferay.docs.guestbook.asset` package, create an
 `EntryAssetRenderer` class that extends Liferay's `BaseAssetRenderer` class.
-Replace the contents of your `EntryAssetRenderer` class with the following
-code:
+Replace the contents of your `EntryAssetRenderer` class with the following code:
 
     package com.liferay.docs.guestbook.asset;
 
@@ -474,9 +473,8 @@ to the Guestbook and Guestbook Admin portlets.
 
 +$$$
 
-*Note:** The recommended size for your portlet icons is 16 by 16 pixels.
-If your portlet icons are a different size, they might not be displayed
-correctly.
+**Note:** The recommended size for your portlet icons is 16 by 16 pixels. If
+your portlet icons are a different size, they might not be displayed correctly.
 
 $$$
 
