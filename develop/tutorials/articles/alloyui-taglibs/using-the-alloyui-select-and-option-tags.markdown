@@ -184,8 +184,8 @@ section.
 
 $$$
     
-    Now that you have your variables taken care of, you can write your function
-    next.
+Now that you have your variables taken care of, you can write your function 
+next.
     
 4.  Add the following function below the variables you just declared:
 
