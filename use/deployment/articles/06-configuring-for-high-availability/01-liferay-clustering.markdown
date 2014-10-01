@@ -959,7 +959,7 @@ consider five different scenarios.
   configuration files (i.e., does not override
   `ehcache.single.vm.config.location`, `ehcache.multi.vm.config.location`, or
   `net.sf.ehcache.configurationResourceName`) but does set
-  `cluster.link.enabled=true` and `ehcache.cluster.link.replication=true`. This
+  `cluster.link.enabled=true` and `ehcache.cluster.link.replication.enabled=true`. This
   is the recommended configuration for a Liferay cluster, as long as the Ehcache
   Cluster EE app, available from Liferay Marketplace, has been installed.
   **Important**: The Ehcache Cluster EE app must be installed or cache
@@ -984,7 +984,7 @@ consider five different scenarios.
 
 - Scenario 4: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` and
-  `ehcache.cluster.link.replication=true`. In this case, Liferay uses Cluster
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses Cluster
   Link based replication for any caches configured with the
   LiferayCacheEventListenerFactory classs. If the portal administrator
   configured a different CacheEventListener class for a specific cache (e.g.,
@@ -995,14 +995,14 @@ consider five different scenarios.
 
 - Scenario 5: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` but does not set
-  `ehcache.cluster.link.replication=true`. In this case, Liferay uses the cache
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses the cache
   configurations specified in the custom cache configuration files. This is the
   recommended configuration when overriding the default cache configuration
   files.
 
 As a general rule, we recommend that portal administrators *not* set custom
 cache configuration files but to set `cluster.link.enabled=true` and
-`ehcache.cluster.link.replication=true` (i.e., we recommend that portal
+`ehcache.cluster.link.replication.enabled=true` (i.e., we recommend that portal
 administrators set up the configuration in scenario 1). If it's necessary to
 tune the cache configurations, it's better to do it via a plugin than to do it
 directly. We explained how to do this in the section above called "Modifying the
