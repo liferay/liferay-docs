@@ -186,8 +186,9 @@ submitted on the form. Next comes a `<liferay-ui:panel>` tag with several
 attributes set. The `<liferay-ui:panel>` tag generates a collapsible section
 inside which you add the input fields for tags and categories.
 
-When using AUI, it's a best practice to add input fields inside of an
-`<aui:fieldset>` tag. You do this with the following two tags:
+When using AUI, you can group related input field together with an
+`<aui:fieldset>` tag. You add the following two tags inside of an
+`aui:fieldset>` tag:
 
     <aui:input name="categories" type="assetCategories" />
     <aui:input name="tags" type="assetTags" />
@@ -247,8 +248,10 @@ users should be able to view, comment on, and rate assets without being able to
 actually edit the assets.
 
 Create a new file called `view_guestbook.jsp` in your guestbook-portlet
-project's `docroot/WEB-INF/html/guestbookadmin` folder. Add the following
-contents to it:
+project's `docroot/WEB-INF/html/guestbookadmin` folder. You'll edit the
+`docroot/WEB-INF/html/guestbookadmin/view.jsp` file to make the guestbook names
+into links pointing to the new `view_guestbook.jsp` file. Add the following
+contents to `view_guestbook.jsp`:
 
     <%@include file = "/html/init.jsp" %>
 
@@ -372,6 +375,188 @@ displayed related assets. This tag is distinct from the
 `<liferay-ui:input-asset-links>` that you used in `edit_guestbook.jsp` that
 allowed the user to select related assets.
 
+Your `view_guestbook.jsp` page is currently orphaned. Fix this by making the
+guestbook names that appear in the search container of the default view into
+links. Open your `docroot/WEB-INF/guestbookadmin/view.jsp` and find the
+following line:
+
+    <liferay-ui:search-container-column-text property="name" />
+
+Replace this line with the following lines:
+
+    <portlet:renderURL var="viewGuestbook">
+            <portlet:param name="mvcPath" value="/html/guestbookadmin/view_guestbook.jsp" />
+            <portlet:param name="guestbookId" value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
+    </portlet:renderURL>
+
+    <liferay-ui:search-container-column-text property="name" href="<%= viewGuestbook %>" />
+
+Here, you're simply creating a URL that points to the `view_guestbook.jsp` that
+you created and adding an `href` attribute that points to this URL. Test this
+link by clicking on an existing guestbook. Then test that comments and ratings
+work as expected.
+
 ## Enabling Tags, Categories, and Related Assets for Guestbook Entries
 
+Enabling tags, categories, and related assets for guestbook entries is very
+similar to enabling them for guestbooks. As with guestbooks, you'll separate the
+page where users comment on and rate guestbook entries from the page where users
+actually edit the guestbook entries. 
+
+Open your guestbook-portlet project's `docroot/html/guestbook/edit_entry.jsp`
+file. Replace the existing contents with the following contents:
+
+    <%@include file = "/html/init.jsp" %>
+
+    <portlet:renderURL var="viewURL">
+            <portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+    </portlet:renderURL>
+
+    <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
+
+    <%
+            long entryId = ParamUtil.getLong(renderRequest, "entryId");
+
+            Entry entry = null;
+
+            if (entryId > 0) {
+                    entry = EntryLocalServiceUtil.getEntry(entryId);
+            }
+            
+            long guestbookId = ParamUtil.getLong(request, "guestbookId");
+    %>
+
+    <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+                    <aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
+                    
+            <aui:fieldset>
+                <aui:input name="name" />
+                <aui:input name="email" />
+                <aui:input name="message" />
+                <aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>       
+                <aui:input name="entryId" type="hidden" />
+            </aui:fieldset>
+            
+            <liferay-ui:asset-categories-error />
+                    <liferay-ui:asset-tags-error />
+                <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
+                            <aui:fieldset>
+                                    <aui:input name="categories" type="assetCategories" />
+
+                                    <aui:input name="tags" type="assetTags" />
+                            </aui:fieldset>
+                    </liferay-ui:panel>
+
+                    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+                            <aui:fieldset>
+                                    <liferay-ui:input-asset-links
+                                            className="<%= Entry.class.getName() %>"
+                                            classPK="<%= entryId %>"
+                                    />
+                            </aui:fieldset>
+                    </liferay-ui:panel>
+
+            <aui:button-row>
+                            <aui:button type="submit"></aui:button>
+                            <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+            </aui:button-row>
+    </aui:form>
+
+Test your JSP by using the Guestbook portlet to add and update Guestbook
+entries. Try add and removing tags, categories, and related assets. All these
+operations should work.
+
 ## Enabling Comments and Ratings for Guestbook Entries
+
+Create a new file called `view_entry.jsp` in your guestbook-portlet project's
+`docroot/WEB-INF/html/guestbook` folder. Add the following contents to it:
+
+    <%@include file = "/html/init.jsp" %>
+
+    <portlet:renderURL var="viewURL">
+            <portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+    </portlet:renderURL>
+
+    <liferay-ui:header backURL="<%= viewURL %>" title="entry" />
+
+    <%
+            long entryId = ParamUtil.getLong(renderRequest, "entryId");
+            Entry entry = EntryLocalServiceUtil.getEntry(entryId);
+            entry = entry.toEscapedModel();
+            
+            AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
+            Entry.class.getName(), entry.getEntryId());
+            
+            String currentURL = PortalUtil.getCurrentURL(request);
+
+            PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
+                            currentURL);
+
+            PortalUtil.setPageSubtitle(entry.getMessage(), request);
+            PortalUtil.setPageDescription(entry.getMessage(), request);
+
+            List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
+                            Entry.class.getName(), entry.getEntryId());
+            PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
+                            request);
+    %>
+
+    <dl>
+            <dt>Guestbook</dt>
+            <dd><%= GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName() %></dd>
+            <dt>Name</dt>
+            <dd><%= entry.getName() %></dd>
+            <dt>Message</dt>
+            <dd><%= entry.getMessage() %></dd>
+    </dl>
+
+    <c:if test="<%= themeDisplay.isSignedIn() %>">
+            <liferay-ui:panel-container extended="<%= false %>"
+                    id="entryCollaborationPanelContainer" persistState="<%= true %>">
+                    <liferay-ui:panel collapsible="<%= true %>" extended="<%= true %>"
+                    id="entryCollaborationPanel" persistState="<%= true %>"
+                    title='<%= LanguageUtil.get(pageContext, "collaboration") %>'>
+                            <liferay-ui:ratings className="<%= Entry.class.getName() %>"
+                                    classPK="<%= entry.getEntryId() %>" type="stars" />
+                            
+                            <br />
+
+                            <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+            
+                            <liferay-ui:discussion className="<%= Entry.class.getName() %>"
+                        classPK="<%= entry.getEntryId() %>"
+                        formAction="<%= discussionURL %>" formName="fm2"
+                        ratingsEnabled="<%= true %>" redirect="<%= currentURL %>"
+                        subject="<%= entry.getMessage() %>"
+                        userId="<%= entry.getUserId() %>" />
+
+                    </liferay-ui:panel>
+            </liferay-ui:panel-container>
+    </c:if>
+
+    <liferay-ui:asset-links
+            assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
+            className="<%= Entry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>" />
+
+This JSP is currently orphaned. Open your project's
+`docroot/WEB-INF/html/guestbook/view.jsp` file to create a link to it. Find the
+following line:
+
+    <liferay-ui:search-container-column-text property="message" />
+
+Replace it with the following line:
+
+    <portlet:renderURL var="viewEntry">
+            <portlet:param name="mvcPath" value="/html/guestbook/view_entry.jsp" />
+            <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
+    </portlet:renderURL>
+
+    <liferay-ui:search-container-column-text property="message" href="<%= viewEntry %>"/>
+
+Test your Guestbook portlet and check that the links works correctly. Then test
+that you can add comments and ratings to guestbook entries. Excellent! You've
+asset-enabled your guestbook and guestbook entry entities! And you've enabled
+tags, categories, related assets, comments, and ratings for both entities.
+
+## Next Steps
