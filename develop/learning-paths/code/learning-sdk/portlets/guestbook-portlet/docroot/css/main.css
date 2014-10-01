@@ -1,0 +1,33 @@
+#phrase
+{
+	font-size:200%;
+	line-height:120%;
+}
+#phraseTitle
+{
+	font-size:35px;
+	line-height:120%;
+}
+
+.message
+{
+	resize:none;
+}
+
+#counterContainer
+{
+	margin-top:-30px;
+}
+#cbox
+{
+	float:left;
+}
+#ttip
+{
+	float:left;
+	margin-left:10px;
+}
+#silly
+{
+	display:none;
+}
