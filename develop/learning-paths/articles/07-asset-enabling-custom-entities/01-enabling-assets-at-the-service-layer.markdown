@@ -98,11 +98,10 @@ Liferay's [Javadocs](http://docs.liferay.com/portal/6.2/javadocs) for
 `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
 overloaded. Why did you use a version of this method with such a long message
 signature? There's only one version of the `updateEntry` method that takes a
-`title` parameter (to set the asset entry's title). You want the asset entry's
-title field to be set so that's the version of the method you have to use. In
-your call to `AssetEntryLocalServiceUtil.updateEntry`, you're setting the asset
-entry's title to `guestbook.getName()`, i.e., to the name of the guestbook
-entity.
+`title` parameter (to set the asset entry's title). Since you want to set the
+asset title, that's the version you use. In your call to
+`AssetEntryLocalServiceUtil.updateEntry`, you're setting the asset entry's title
+to `guestbook.getName()`, i.e., to the name of the guestbook entity.
 
 Later in this learning path, you'll update the Guestbook Admin portlet's form
 for adding guestbooks to allow related assets to be selected. Related assets are
@@ -163,9 +162,9 @@ the following one:
             return guestbook;
     }
 
-Here, you're using using `assetEntryLocalService.updateEntry` to update an
-existing asset entry and `assetLinkLocalService.updateLinks` to add or update
-that entry's asset links (related assets). As mentioned above, you can use the
+Here, you're using `assetEntryLocalService.updateEntry` to update an existing
+asset entry and `assetLinkLocalService.updateLinks` to add or update that
+entry's asset links (related assets). As mentioned above, you can use the
 `updateEntry` method of `AssetEntryLocalServiceImpl` for both adding and
 updating asset entries. `assetLinkLocalService.updateLinks` works the same way.
 

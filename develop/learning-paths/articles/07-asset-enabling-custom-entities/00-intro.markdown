@@ -4,8 +4,8 @@ Liferay's asset framework provides a set of features that are common to many
 different types of content. Web content articles, blog posts, wiki articles, and
 documents are a few examples of Liferay assets. Developers can define custom
 asset types so that they don't have to independently implement functionality
-that Liferay already provides. The features provided by Liferay's asset
-framework include the following sets of functionality:
+that Liferay already provides. Liferay's asset framework includes the following
+features:
 
 - Tags and categories
 - Comments and ratings
