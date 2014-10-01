@@ -573,3 +573,5 @@ asset-enabled your guestbook and guestbook entry entities! And you've enabled
 tags, categories, related assets, comments, and ratings for both entities.
 
 ## Next Steps
+
+[Enhancing Your User Interface with AlloyUI](/develop/learning-paths/-/knowledge_base/enhancing-your-user-interface-with-alloyui)
