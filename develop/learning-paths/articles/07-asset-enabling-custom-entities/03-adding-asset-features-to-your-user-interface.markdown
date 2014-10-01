@@ -242,9 +242,9 @@ tutorial for details about creating language hooks.
 
 $$$
 
-Asset links represent a reciprocal relationship so if one asset is a related
-asset of a second, the second is a related asset of the first. Check this for
-the assets that you linked together.
+Asset links represent a reciprocal relationship. If one asset is a related asset
+of a second, the second is a related asset of the first. Check this for the
+assets that you linked together.
 
 ## Enabling Comments and Ratings for Guestbooks
 
@@ -254,10 +254,10 @@ in the service layer, your only remaining task is to update your user interface
 to allow access to these features. It's best to separate the page where users
 comment on and rate assets from the page where users actually edit the assets
 themselves. If you added the commenting and rating functionality to the
-Guestbook Admin portlet's `edit_guestbook.jsp` page, you would be confusing
-collaboration fields with content fields. It's easy to imagine scenarios where
-users should be able to view, comment on, and rate assets without being able to
-actually edit the assets.
+Guestbook Admin portlet's `edit_guestbook.jsp` page, users might confuse the
+collaboration fields with the content fields. It's easy to imagine scenarios
+where users should be able to view, comment on, and rate assets without being
+able to actually edit the assets.
 
 Create a new file called `view_guestbook.jsp` in your guestbook-portlet
 project's `docroot/WEB-INF/html/guestbookadmin` folder. You'll edit the
@@ -370,8 +370,9 @@ Liferay. In Liferay's `MBMessage` table, there's a `classPK` column. This
 `classPK` represents the `guestbookId` of the guestbook to which the comment was
 added. Ratings are stored in Liferay's `RatingsEntry` table. The `RatingsEntry`
 table contains a `classPK` column where the `classPK` represents the
-`guestbookId` of the guestbook to which the rating was added. This is a common
-pattern that's used throughout Liferay.
+`guestbookId` of the guestbook to which the rating was added. Using a `classPK`
+foreign key in one table to represent the primary key of another table is a
+common pattern that's used throughout Liferay.
 
 $$$
 
