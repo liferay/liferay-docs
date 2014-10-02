@@ -1,24 +1,29 @@
 # Using AlloyUI to Validate Forms in Your Application [](id=using-alloyui-to-validate-forms-in-your-application)
 
-In the previous learning paths, you created a form for the user to fill out
-to populate the guestbook. This serves as a good starting point for what you'll
-do next. 
+In a previous learning path, you created a form for users to submit when adding
+an entry to a guestbook. You implemented a token form of back-end validation
+(checking the entry name, email address, and message for `null` values) in the
+service layer, but did not provide front-end validation in the form itself.
+Before users submit your form, you should make sure that they have filled out
+all of the required fields. Your front-end form validation should indicate which
+fields are required and should highlight the required fields if the user tries
+to submit the form with required fields left empty. Your form validation should
+also allow you to restrict the number of characters that can be entered into a
+field. The number of remaining characters for the field should be displayed to
+the user. With AlloyUI, it's easy to implement all of these form validation
+features. Once you've implemented form validation, users' attempts to submit
+invalid forms will be caught before an HTTP request is sent to your Liferay
+server.
 
-You probably noticed that you validated the entities on the back end, but did
-not provide front end validation in the form itself. Before users submit your
-form, you want to make sure they have filled it out exactly as you had intended. 
-You need to let them know which fields are required, if there is a limit on the 
-number of characters, or if they left any fields empty. AlloyUI makes form 
-validation a easy process.
+You'll implement form validation with AlloyUI in two steps. First, you'll use
+the AlloyUI validator tag to specify required fields. Next, you'll use the
+AlloyUI Character Counter module to limit the number of characters that comprise
+a guestbook entry message.
 
-You'll learn how to do this in two steps: 1) using the AlloyUI validator tag
-and 2) using the AlloyUI Character Counter module. The first step is to use the 
-AlloyUI validator tag.
+## Using the AUI Validator Tag
 
-## Using the AUI:Validator Tag
-
-Most of the work is already done at this point. You just need to modify the form
-input fields a bit.
+Validating AUI input fields is very easy. You just have to add an
+`<aui:validator>` tag with the appropriate attributes specified.
 
 1.  Open `edit_entry.jsp`.
 
@@ -33,7 +38,7 @@ input fields a bit.
              <aui:validator name="required"/>
         </aui:input>
         <aui:input id="message" cssClass="message" type="textarea" name="message">
-             <aui:validator name="required" errorMessage="Leave a message please." />
+             <aui:validator name="required" errorMessage="Please enter a message." />
         </aui:input>
         <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
         <aui:input name="entryId" type="hidden" />
