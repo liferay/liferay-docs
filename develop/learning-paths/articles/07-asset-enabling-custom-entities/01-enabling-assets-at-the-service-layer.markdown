@@ -1,4 +1,4 @@
-# Enabling Assets at the Service Layer
+# Enabling Assets at the Service Layer [](id=enabling-assets-at-the-service-layer)
 
 Every Liferay asset is represented by a row in the `AssetEntry` table of
 Liferay's database. Each row in this table has an `entryId` primary key and

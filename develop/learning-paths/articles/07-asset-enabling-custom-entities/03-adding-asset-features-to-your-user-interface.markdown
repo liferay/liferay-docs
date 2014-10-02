@@ -1,4 +1,4 @@
-# Adding Asset Features to Your User Interface
+# Adding Asset Features to Your User Interface [](id=adding-asset-features-to-your-user-interface)
 
 Now that your guestbook and guestbook entry entities have been asset-enabled,
 you're ready to use Liferay's asset functionality in your application. You'll
