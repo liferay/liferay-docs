@@ -384,12 +384,12 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 
 	@Override
 	public com.liferay.docs.guestbook.model.Guestbook updateGuestbook(
-		long guestbookId, java.lang.String name,
+		long userId, long guestbookId, java.lang.String name,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _guestbookLocalService.updateGuestbook(guestbookId, name,
-			serviceContext);
+		return _guestbookLocalService.updateGuestbook(userId, guestbookId,
+			name, serviceContext);
 	}
 
 	@Override
