@@ -104,6 +104,25 @@ if (entryId > 0) {
             <div id="ttip"><liferay-ui:icon-help message="Check the box to create a silly phrase or uncheck it to hide the form. Fill out the fields below with the correct parts of speech to generate a unique and silly phrase."/></div>
             </div>
         </aui:fieldset>
+        
+        <liferay-ui:asset-categories-error />
+		<liferay-ui:asset-tags-error />
+	    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
+			<aui:fieldset>
+				<aui:input name="categories" type="assetCategories" />
+
+				<aui:input name="tags" type="assetTags" />
+			</aui:fieldset>
+		</liferay-ui:panel>
+
+		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+			<aui:fieldset>
+				<liferay-ui:input-asset-links
+					className="<%= Entry.class.getName() %>"
+					classPK="<%= entryId %>"
+				/>
+			</aui:fieldset>
+		</liferay-ui:panel>
 
         <aui:button-row>
 
@@ -112,6 +131,7 @@ if (entryId > 0) {
 
         </aui:button-row>
 </aui:form>
+
 <div id="silly">
 <p id="phraseTitle">Silly Phrase Generator</p>
 <div id="container"></div>

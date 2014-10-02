@@ -326,7 +326,7 @@ public interface GuestbookLocalService extends BaseLocalService,
 			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.liferay.docs.guestbook.model.Guestbook updateGuestbook(
-		long guestbookId, java.lang.String name,
+		long userId, long guestbookId, java.lang.String name,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;

@@ -24,8 +24,8 @@ Use the following steps to add the required Guestbook service methods:
 1. Open `GuestbookLocalServiceImpl.java` and add the following method for
    updating a guestbook:
 
-        public Guestbook updateGuestbook(long guestbookId, String name,
-                        ServiceContext serviceContext) throws PortalException,
+        public Guestbook updateGuestbook(long userId, long guestbookId,
+        String name, ServiceContext serviceContext) throws PortalException,
                         SystemException {
 
                 Date now = new Date();
@@ -34,6 +34,10 @@ Use the following steps to add the required Guestbook service methods:
 
                 Guestbook guestbook = getGuestbook(guestbookId);
 
+                User user = UserLocalServiceUtil.getUser(userId);
+
+                guestbook.setUserId(userId);
+                guestbook.setUserName(user.getFullName());
                 guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
                 guestbook.setName(name);
                 guestbook.setExpandoBridgeAttributes(serviceContext);
