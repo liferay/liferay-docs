@@ -157,18 +157,18 @@ the reference to the new JSP:
 
     <portlet:defineObjects />
 
-    <liferay-ui:tabs names="tab1, tab2, tab3" refresh="false">
-  		<liferay-ui:section>
-		    Text for Tab 1.
-	    </liferay-ui:section>
-	    <liferay-ui:section>
-		    Text for Tab 2.
-	    </liferay-ui:section>
-	    <liferay-ui:section>
-		    <%@ include file="html/sample.jsp" %>
-		</liferay-ui:section>
+    <liferay-ui:tabs names="tab1,tab2,tab3" refresh="false" tabsValues="tab1,tab2,tab3">
+        <liferay-ui:section>
+            Text for Tab 1.
+        </liferay-ui:section>
+        <liferay-ui:section>
+            Text for Tab 2.
+        </liferay-ui:section>
+        <liferay-ui:section>
+             <%@ include file="sample.jsp" %>
+        </liferay-ui:section>
     </liferay-ui:tabs>
-	
+
 With this configuration your portlet should look similar to the screenshot here:
 
 ![Figure 3: Here's what the newly configured tabs look like.](../../images/tabs-02.png)
