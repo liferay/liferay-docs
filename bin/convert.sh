@@ -1,7 +1,6 @@
 #!/bin/sh
 
-workingDir=$(pwd)
-classpathDir=$(echo "$workingDir" | sed 's/liferay\-docs.*/liferay\-docs\/lib/')
+classpathDir=$(pwd | sed 's/liferay\-docs.*/liferay\-docs\/lib/')
 
 if [ $# -lt 1 ]; then
 	echo
