@@ -1,13 +1,13 @@
-# Using Alloy UI in your Application [](id=using-alloy-ui-in-your-application)
+# Using AlloyUI in your Application [](id=using-alloy-ui-in-your-application)
 
 AlloyUI is Liferay's user interface framework. While you can use any framework
 to develop a user interface for your application, AlloyUI is an excellent choice
-since Liferay is already using it. Using AlloyUI minimizes the amount of extra
-JavaScript code that you need to add to your application. This, in turn,
+since it's already used by the portal. Using AlloyUI minimizes the amount of
+extra JavaScript code that you need to add to your application. This, in turn,
 minimizes the impact your application has on page load time. AlloyUI is an
 easy-to-use framework with a uniform API that's based on YUI. Since Liferay is
-already using AlloyUI, choosing AlloyUI for your application allows your user
-interface and look and feel to closely match Liferay's. For more information
+already using AlloyUI, choosing AlloyUI for your application allows your
+application's look and feel to closely match Liferay's. For more information
 about AlloyUI, please visit the [http://alloyui.com](http://alloyui.com).
 
 In an earlier learning path, you created a Guestbook application, used Service
