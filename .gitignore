@@ -8,6 +8,7 @@
 .project
 .classpath
 .settings
+git-modified-list.txt
 nbbuild.xml
 properties/
 

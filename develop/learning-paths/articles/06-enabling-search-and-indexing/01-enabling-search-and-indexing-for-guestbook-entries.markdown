@@ -1,4 +1,4 @@
-# Enabling Search and Indexing for Guestbook Entries
+# Enabling Search and Indexing for Guestbook Entries [](id=enabling-search-and-indexing-for-guestbook-entries)
 
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these four steps:

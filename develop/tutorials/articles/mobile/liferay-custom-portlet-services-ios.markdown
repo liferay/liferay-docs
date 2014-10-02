@@ -77,7 +77,7 @@ though. You can add both versions 6.2.0.1 and 7.0.0.1 to your project. These
 don't conflict because service class names are suffixed with their version 
 number. For example, service classes from versions 6.2.x and 7.0.x end in 
 `_v62.m` and `_v7.m`, respectively. To find out which Liferay versions you are 
-connecting to, use the `[LRPortalVersionUtil getPortalVersion:…]` method. 
+connecting to, use the `[LRPortalVersionUtil getPortalVersion:ï¿½]` method. 
 
 The Liferay iOS SDK is compatible with iOS versions 6.1 and up. Older versions 
 of iOS may work with the SDK, but compatibility untested. 
