@@ -1,3 +1,7 @@
+#btnWrapper
+{
+	padding-top:-20px;
+}
 #phrase
 {
 	font-size:200%;
@@ -14,9 +18,18 @@
 	resize:none;
 }
 
+#messages
+{
+	display:inline;
+	white-space:nowrap;
+}
+#con, #con2, #con3
+{
+	display:inline;
+}
 #counterContainer
 {
-	margin-top:-30px;
+	
 }
 #cbox
 {
