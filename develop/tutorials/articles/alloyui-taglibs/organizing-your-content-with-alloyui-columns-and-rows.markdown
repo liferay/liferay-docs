@@ -166,4 +166,4 @@ now you know how!
 
 ## Related Topics
 
- [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/6-2/knowledge_base/using-liferay-ui-tabs-and-sections)
