@@ -33,11 +33,12 @@ Go through each of these steps to get your select field up and running.
 
         <%@ taglib prefix="aui" uri="http://alloy.liferay.com/tld/aui" %>
 
-You can now use the aui tags in your portlet! Continue onward to step 2.
+Alright! You can now use the aui tags in your JSP. Onward to step 2.
 
 ### Step 2: Configure the Select Tag in the View JSP
 
-Inside the `view.jsp` of your portlet add the `aui:select` tags at the bottom:
+Inside the `view.jsp` of your portlet add an `<aui:select>` tag and give it a 
+`name`:
 
         <aui:select name="select-example">
 
@@ -59,8 +60,8 @@ Still inside the `view.jsp` nest the `aui:option` tags inside of the
 
 Repeat the step above to add as many options as you need. There you have it! Now
 you know how to create a select field and populate it with options using 
-AlloyUI's tags. You could stop there, but the configuration above only skims the 
-surface of the power of the Select tag.  
+AlloyUI's tags. The configuration above only skims the surface of the power of 
+the Select tag.  
 
 What makes AlloyUI's tag library so robust is that each tag has a set of 
 configurable attributes that allow for quite a bit of flexability to accommodate 
@@ -119,7 +120,8 @@ example below will be referenced throughout the rest of the tutorial:
 
     <aui:form>
     <aui:fieldset>
-    <aui:select label="Select Option:" id="options" name="selectField1" required="true" showEmptyOption="true">
+    <aui:select label="Select Option:" id="options" name="selectField1" 
+    required="true" showEmptyOption="true">
         <aui:option value="Option 1">Option 1</aui:option>
         <aui:option value="Option 2">Option 2</aui:option>
         <aui:option value="Option 3">Option 3</aui:option>
@@ -128,23 +130,23 @@ example below will be referenced throughout the rest of the tutorial:
     </aui:fieldset>
     </aui:form>
 
-
 As stated in the beginning of this tutorial, there are a couple methods you can 
-use to retrieve the value of the selected option. The first method uses an
-`<aui:script>` and the aui `event` and `node` packages to grab the button node
-and retrieve the value using an on click function. The second method uses the 
-`onClick` attribute of the button to call a JavaScript function to retrieve the 
-value; both methods are viable solutions and achieve the same goal. There may be
-other solutions to retrieve the value of the option selected, but the steps
-below will cover the two methods discussed.
+use to retrieve the value of the selected option. The first method shows how you 
+can retrieve the selected option inside of a JSP. The second method shows how 
+you can retrieve the selected option inside of the `main.js` of your portlet; 
+both methods are viable solutions and achieve the same goal. The steps below 
+will cover the two methods discussed.
 
-### Retrieving the Value Using AlloyUI
+### Retrieving the Option Inside of a JSP
 
-One way to retrieve the value of the option selected is to use an `aui:script`.
-Go through the steps below to learn the process.
+One way to retrieve the value of the option selected is to use an `aui:script` 
+inside of your JSP. 
 
-1.  Add the `<aui:script>` tags to the top of your `view.jsp`, just above your
-    `aui:select` tags:
+The example below shows how to attach an `onclick` event to a button node to 
+alert the selected option to the user. Follow the steps below to learn the 
+process.
+
+1.  Add the `<aui:script>` in your `view.jsp` and configure the `use` attribute.
 
         <aui:script use="node, event">
         
@@ -154,7 +156,8 @@ Go through the steps below to learn the process.
     since you will be grabbing your button node and attaching an event to it.
     Now that the foundation is set you can move onto the next step.
     
-2.  Add a variable inside of the `aui:script` tag to represent your button node:
+2.  Add a variable inside of the `aui:script` tag to represent the node that the
+    event will be attached to. The example below grabs a button node.
 
         var btn = A.one('#btnSubmit');
         
@@ -163,41 +166,45 @@ Go through the steps below to learn the process.
     id given as the parameter. Now that you have a variable for your button, you
     can create one for your select field next.
     
-3.  Add a variable just below the `btn` variable to stand for your select field:
+3.  Add a variable inside of your aui script to stand for your select field
+    node.
 
         var select = A.one('#<portlet:namespace/>options')
         
     Like the previous step, the select field has been referenced using its id. 
     One important difference to note is that the `<portlet:namespace/>` tag has 
     been added to the beginning of the id. Namespacing is a key topic that will 
-    be addressed throughout the remainder of the tutorial. The `aui:select` tag
-    automatically appends a unique namespace to the beginning of the id given,
-    to avoid potential conflicts between other elements and portlets on the same 
-    page. The `<portlet:namespace/>` tag adds the unique namespace to the id to 
-    complete it.
+    be addressed throughout the remainder of the tutorial. The `<aui:select>` 
+    tag automatically appends a unique namespace to the beginning of the id 
+    given, to avoid potential conflicts between other elements and portlets on 
+    the same page. The `<portlet:namespace/>` tag adds the unique namespace to 
+    the id to complete it.
 
-+$$$
+    +$$$
 
-**Note:** You can read more about namespacing in the DevGuide 
-[Using Portlet Namespacing](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/passing-info-from-action-to-render-phase-liferay-portal-6-2-dev-guide-en/)
-section.
+    **Note:** You can read more about namespacing in the DevGuide 
+    [Using Portlet Namespacing](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/passing-info-from-action-to-render-phase-liferay-portal-6-2-dev-guide-en/)
+    section.
 
-$$$
+    $$$
     
-Now that you have your variables taken care of, you can write your function 
-next.
+    Now that you have your variables taken care of, you can write your function 
+    next.
     
-4.  Add the following function below the variables you just declared:
+4.  Attach a function to the node that will get the option and add it below the 
+    variables you just declared. The example belows attaches a click event to 
+    the button node.
 
         btn.on('click', function(event){
         
         });
         
-    An onclick event is attached to the button which you just set to the `btn`
+    An onclick event is attached to the button which was just set to the `btn`
     variable. With the function set, you can add the code for it next. For now,
     you can alert the value to the user.
     
-5.  Add the `alert()` method inside of the onclick function:
+5.  Retrieve the option selected by calling the `val()` method for your select 
+    field node. The example below alerts the value to the user.
 
         alert(option.val());
         
@@ -219,8 +226,8 @@ next.
     
         option.attr('label', 'Selector:');
         
-    Using the AlloyUI method to retrieve the selected option, your finished
-    script should look like the following code:
+    Using the example above, your finished script should look like the following 
+    code:
     
         <aui:script use="event, node">
             
@@ -229,117 +236,105 @@ next.
 
             btn.on('click', function(event){
                 alert(option.val());
-                alert('first');
             });
             
         </aui:script>
     
-6.  Redeploy the portlet, *select* and option, and *click* Submit to alert the
-    option.
+6.  Redeploy the portlet, *select* an option, and call your script. If you're 
+    following the example, *click* Submit to alert the option.
     
 There you go! As you can see, it does not take a lot to retrieve the selected 
-option using AlloyUI. Next you can learn how to achieve the same results using 
-JavaScript.
+option inside of a JSP. Next you can learn how to achieve the same results in
+your `main.js` file.
 
-## Retrieving the Value Using JavaScript
+## Retrieving the Option Selected Inside of your Main.js
 
-In addition to using AlloyUI, JavaScript can be used to retrieve the selected
-option. Instead of attaching an onclick function to the button node as was done 
-previously, you can configure the button's `onClick` attribute to call a 
-function. The AlloyUI method that was illustrated earlier used the 
-`<portlet:namespace/>` tag to complete the id for the select field; the 
-JavaScript process is a bit different. Best practice is to place the JavaScript 
-in the `main.js` file that was generated with the portlet in the `docroot/js/`
-directory. Since the JavaScript will be called outside of the JSP, the
-`<portlet:namespace/>` tag can't be used. The `main.js` file gets rendered after 
-the JSP, and therefore the `<portlet:namespace/>` tag will be converted and 
-rendered as the namespace at that point. Instead, the namespace will need to be 
-passed to `main.js` as a variable before it gets rendered. Follow the steps 
-below to learn how to retrieve the selected option.
+In addition to retrieving the option in your JSP, you can also retrieve the 
+selected option in your `main.js`. Because the `main.js` file is loaded after 
+the JSP, you have to pass the `portlet:namespace` to the `main.js` file. The 
+example below shows how to pass the `portlet:namespace` to your `main.js` so you 
+can retrieve the option selected.
 
-1.  Configure your `<aui:button>` tag inside the `view.jsp` so that it looks 
-    like the code below:
+1.  Open the `main.js` file in your portlet's `docroot/js/` directory.
 
-        <aui:button value="Submit" onClick="get()" id="btnSubmit"/>
+2.  Add a function to get the portlet namespace. The example below uses an 
+    `init()` function to get the portlet namespace:
 
-    In addition to the `onClick` attribute, an id has been added so that it can
-    be referenced later on. The `onClick` attribute is set to call the `get()`
-    function which doesn't currently exist. You'll write that next.
-    
-2.  Remove the `<aui:script>` tags and all of the code between them if you
-    haven't already. Add the `<script>` tags in their place:
-    
-        <script>
-            function get(){
+    AUI().use(
+        'aui-base',
+        function (A){
+            Liferay.namespace('your-portlet-name');
             
+            Liferay.yourportletname = {
+                init: function(config){
+                    var instance = this;
+                    
+                    instance._namespace = config.namespace;
+            },
+            
+        };
+    }
+    );
+    
+    The `init()` function is attached as a method to `Liferay.yourportletname`. 
+    The namespace is setup to be passed in as the argument for the config 
+    parameter and set to the `instance._namespace` variable. Now that the 
+    namespace is passed in the `init()` method, you can call it in your 
+    portlet's JSP. Before you do that though, you will need to add the function 
+    that will alert the option chosen by your user.
+    
+3.  Add a function inside of the `AUI.use` sandbox to get the value of the
+    option selected. The example below alerts the value to the user:
+
+        get: function(){
+            var instance = this;
+            var option = A.one('#' + instance._namespace + 'options');
+            alert(option.attr('value'));
+            },
+            
+    The `get()` function uses the `instance._namespace` variable to add the 
+    `portlet:namespace` to the select field's id. Note that the `instance` 
+    variable is declared inside of the `get()` function as well and set to the 
+    `this` keyword. Now that your functions are written, you can call them 
+    in your portlet's JSP.
+    
+4.  Open one of your portlet's JSPs and add an `<aui:script>` to call the 
+    functions you just wrote and configure the `use` attribute to use the
+    `aui-base`, `event`, and `node` packages.
+    
+        <aui:script use="aui-base, event, node">
+        var btn = A.one('#btnSubmit');
+        
+        Liferay.yourportletname.init(
+            {
+                namespace: '<portlet:namespace/>'
             }
-        </script>
-
-    With the script foundation written, you can add the code next.
-
-3.  Add a variable inside the `get()` function to stand for the namespace of the 
-    portlet:
-
-        var name = `<portlet:namespace/>`;
-
-    Now that you have a variable set to the namespace, you can access it in
-    `main.js`. First you'll need to pass it as an argument for the function to 
-    be called in `main.js` when the button is clicked.
-    
-4.  Add the following code to the `get()` function to call a new function:
-
-        init(space);
-
-    The `space` variable which is set to the portlet namespace has been passed
-    as an argument for the `init()` function. You can write the `init()`
-    function next.
-    
-5.  Open the `main.js` file and add the following code:
-
-        function init(config){
-
+        );
+        
+        get = function(){
+        Liferay.yourportletname.get();
         }
-
-    The `init()` function has been given `config` as a parameter. Since the
-    namespace was passed as an argument for the `init()` function in the 
-    previous step, it will take the place of the `config` variable.
-    
-6.  Add the following code to the `init()` function:
-
-        var option = document.getElementById(config + 'options');
-        var value = option.options[option.selectedIndex].text;
         
-    The select field is assigned the `option` variable and referenced by its
-    id. The `config` variable is added to the id to append the namespace that 
-    was passed earlier in the `view.jsp` and complete it. Next, the value of
-    the selected option text is assigned the `value` variable. One last step to
-    go.
+    The `init()` function is called inside of the JSP and sets the namespace 
+    to the `<portlet:namespace/>`. The get variable is set to the `get()` 
+    method that was created in the `main.js`. One last step to go!
     
-7.  Add the `alert()` to the `init()` function:
+5.  Attach the function that will retrieve the option to the node that will call 
+    it. The example below sets the `get()` method to a `<aui:button>`'s 
+    `onClick` attribute:
 
-        alert(value);
-        
-    For now, the value of the option selected is alerted to the user to
-    illustrate the method in the example above. Your finished `init()` function
-    should look like the following code:
-    
-        function init(config){
-	
-            var option = document.getElementById(config + 'options');
-            var value = option.options[option.selectedIndex].text;
-	
-            alert(value);
-        } 
+                <aui:button value="Submit" onClick="get()" id="btnSubmit"/>
 
-8.  Redeploy the portlet, *select* an option, and *click* Submit to see your
-    option alerted to you.
+8.  Redeploy the portlet, *select* an option, and call the method. If you're 
+    following along with the example, *click* Submit to see your option alerted 
+    to you.
     
 Congratulations! Now you know how to retrieve the selected option. As you can 
 see, AlloyUI provides some pretty powerful tags to help make your UI creation a 
-smooth process. You can add two new methods to your developer toolkit!
+smooth process.
 
 ## Related Topics
 
- [Using AlloyUI Carousel in a Portlet](http://dev.liferay.com/tutorials/-/knowledge_base/using-alloyui-carousel-in-a-portlet)
+ [Using AlloyUI Carousel in a Portlet](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
  
- [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
