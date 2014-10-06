@@ -1,0 +1,183 @@
+<?xml version="1.0"?> 
+
+<project name="Dev Site Documentation Management" basedir=".">
+	<property name="project.dir" value="../.." />
+
+	<path id="lib.classpath">
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<path refid="lib.classpath" />
+	</path>
+
+	<property environment="env" />
+
+	<property file="../../build.${USERNAME}.properties" />
+	<property file="../../build.${user.name}.properties" />
+	<property file="../../build.${env.COMPUTERNAME}.properties" />
+	<property file="../../build.${env.HOST}.properties" />
+	<property file="../../build.${env.HOSTNAME}.properties" />
+	<property file="../../build.properties" />
+
+	<property name="build.dir" value="./build"/>
+	<property name="dist.dir" value="./dist"/>
+	<property name="metadata.filename" value=".METADATA"/>
+
+	<!-- taskdefs -->
+
+	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="checkintros" classname="com.liferay.documentation.util.CheckIntrosTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- targets -->
+
+	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
+		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
+		<java
+			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${build.dir}/${article}.html"/>
+		</java>
+	</target>
+
+	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+
+	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
+		<checkimgssite docdir="${doc.dir}" chapter="${article}">
+		</checkimgssite>
+	</target>
+
+	<target name="check-intros" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<checkintros docdir="${doc.dir}">
+		</checkintros>
+	</target>
+
+    <target name="clean-dist" description="Deletes dist directory">
+        <echo message="... deleting dist directory"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles">
+			<java
+				classname="com.liferay.documentation.util.CleanImagesSiteMain"
+				classpathref="project.classpath"
+				failonerror="true"
+				fork="true"
+			>
+				<arg value="${doc.dir}"/>
+			</java>
+	</target>
+
+	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
+		<java
+			classname="com.liferay.documentation.util.GitCompare"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${older.branch}"/>
+		</java>
+	</target>
+
+	<target name="create-metadata-file" description="Builds a metadata file.">
+		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
+		<delete file="${metadata.file}" failonerror="false"/>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
+	</target>
+
+	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="./" includes="articles/" />
+			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="home.markdown" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="dist-diffs" depends="prepare-dist" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
+
+        <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
+		<zip destfile="${dist.dir}/diffs.zip" update="true">
+			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+
+	<target name="prepare" description="Creates build directory.">
+		<echo message="... creating build directory"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${build.dir}/images"/>
+		<copy todir="${build.dir}/images" overwrite="true">
+			<fileset dir="./images"/>
+		</copy>
+	</target>
+
+	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, check-headers, create-metadata-file" description="Prepares the document for distribution.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+</project>

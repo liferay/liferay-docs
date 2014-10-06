@@ -4,10 +4,13 @@
 *.iml
 *.swp
 *-tmp.html
+.METADATA
 .project
 .classpath
 .settings
+git-modified-list.txt
 nbbuild.xml
+properties/
 
 /*.ipr
 /*.iws
@@ -18,4 +21,9 @@ nbbuild.xml
 **/classes/**
 **/dist/**
 **nbproject**
+**/.ivy/*
+**/.sass-cache/**
+**/.DS_Store/*
 *#
+/bin
+/classes/
