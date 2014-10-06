@@ -3,7 +3,7 @@
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
 Faces (JSF) standard in Liferay Portal. Thus, Liferay Faces portlets and JSF
-portlets are closely related. Visit the [JSF-related learning path](/develop/learning-paths/-/knowledge_base/writing-your-first-jsf-application)
+portlets are closely related. Visit the [JSF-related learning path](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-jsf-application)
 for further details on JSF portlets and the Liferay Faces project. 
 
 This tutorial explains the Liferay Faces portlets generation process using
@@ -17,9 +17,9 @@ You'll begin creating a Liferay Faces portlet plugin next.
 ## Creating a Liferay Faces Portlet Plugin
 
 To create your Liferay Faces portlet plugin project, follow the 
-[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type and *JSF 2.x* as
 the portlet framework. Lastly, you'll be required to select a JSF component
 suite. 
@@ -95,9 +95,9 @@ leverage one of several powerful JSF frameworks.
 
 ## Related Topics
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/developing-liferay-plugins-with-additional-maven-ar)
+[Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-plugins-with-additional-maven-ar)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

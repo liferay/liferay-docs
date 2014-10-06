@@ -301,4 +301,4 @@ learning path.
 
 ## Next Steps
 
-[Asset-Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/asset-enabling-custom-entities)
+[Asset-Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)

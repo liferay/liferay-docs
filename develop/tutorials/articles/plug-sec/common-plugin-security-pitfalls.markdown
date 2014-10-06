@@ -48,7 +48,7 @@ security exceptions. The Java SE Security documentation explains how to deal
 with them. In many cases, you can declare your plugin's permissions to avoid
 running into these exceptions. Configuring your plugin's permissions and
 security policies is covered in the tutorial 
-[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/building-and-testing-your-plugins-pacl). 
+[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/6-2/building-and-testing-your-plugins-pacl). 
 
 ## Accessing Classloaders 
 
@@ -144,15 +144,15 @@ to create plugins!
 
 ## Related Topics
 
-[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/6-2/setting-permissions)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
 

@@ -105,5 +105,5 @@ how to extend an original Liferay JSP using a hook!
 
 ## Related Topics 
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 

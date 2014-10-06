@@ -53,7 +53,7 @@ example above you could use the folders `_diffs/images/color_schemes/day` and
 `_diffs/images/color_schemes/night`. In each of your color scheme's folders,
 place a `thumbnail.png` and `screenshot.png` file. Make sure your thumbnail
 images follow the specifications defined in the
-[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/creating-a-theme-thumbnail)
+[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/6-2/creating-a-theme-thumbnail)
 tutorial. 
 
 There you have it. Now you can go color scheme crazy with your themes!

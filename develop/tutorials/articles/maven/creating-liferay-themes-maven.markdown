@@ -7,7 +7,7 @@ fire on a cold winter evening.
 
 So you're sitting in your armchair next to the fire, as the Maven tutorials
 section
-[introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/maven)
+[introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/maven)
 described. Shadows dance on the tapestry-covered wall, and Lenore II (your cat)
 is purring atop the mantle. Yes, you're passing this cold winter's night in
 grand style (in front of your computer, of course). Now imagine yourself
@@ -23,14 +23,14 @@ who visits.
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
-[Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects)
+[Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
 tutorial. That tutorial explains how to create a parent Maven project and its
 `pom.xml`. 
 
 To create your Liferay theme plugin project, just follow the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Theme* instead of *Portlet* as the plugin type. 
 
 +$$$
@@ -119,7 +119,7 @@ The theme plugin project POM has two additional properties:
         </properties>
 
 To deploy your theme plugin, follow the instructions in the
-[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 tutorial. 
 
 +$$$
@@ -138,6 +138,6 @@ its file structure and POM, and you know how to deploy the theme. Way to go!
 
 ## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
 <!-- Add link to Themes section. Jim -->

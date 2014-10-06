@@ -40,9 +40,9 @@ You can follow these steps to override any Liferay service from your own
 hook plugin: 
 
 1.  Create a Liferay Hook plugin project in a
-    [Liferay Plugins SDK project](/develop/tutorials/-/knowledge_base/creating-a-hook-project-in-the-plugins-sdk)
+    [Liferay Plugins SDK project](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
     or
-    [Maven project](/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven). 
+    [Maven project](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven). 
 
 2.  Create a class that extends the wrapper class of the service interface you
     want to override. 
@@ -139,7 +139,7 @@ hook plugin:
 			</service>
 		</hook>
 
-3.  [Deploy](/develop/tutorials/-/knowledge_base/deploying-plugins) your hook to
+3.  [Deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins) your hook to
     your portal. 
 
 Your hook substitutes the service's default behavior with the behavior of your
@@ -187,12 +187,12 @@ out there and put your newfound skills to use!
 ## Related Topics
 
 <!-- Uncomment when the tutorial is available. Jim
-[Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/overriding-language-props-hook)
+[Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-props-hook)
 -->
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+[Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Liferay Hook Plugins with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-hook-plugins-with-maven)
+[Developing Liferay Hook Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 

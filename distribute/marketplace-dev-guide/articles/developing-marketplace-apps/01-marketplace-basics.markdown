@@ -8,7 +8,7 @@ Marketplace. The following sections discuss these concepts.
 
 As a Liferay developer, you're undoubtedly already familiar with the concept
 of plugins (portlets, hooks, themes, etc). If not, see the
-[Tutorials Introduction](/develop/tutorials/-/knowledge_base/tutorials).
+[Tutorials Introduction](/develop/tutorials/-/knowledge_base/6-2/tutorials).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
@@ -51,7 +51,7 @@ to understand how the app versions relate to one another.
 Keep in mind that the version of your app is completely up to you to specify,
 but the releases of Liferay with which your app works must be specified using
 Liferay's versioning scheme, as explained in
-[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/understanding-liferays-releases).
+[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 
@@ -77,7 +77,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, portal administrator, and company, and the ramifications
 of publishing apps as an individual versus publishing apps as part of a company,
 see the
-[Leveraging the Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+[Leveraging the Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)
 chapter of Using Liferay Portal.
 
 ## What Are the Requirements for Publishing Apps?
@@ -85,9 +85,9 @@ chapter of Using Liferay Portal.
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
-[MVC Portlets](/develop/tutorials/-/knowledge_base/creating-a-liferay-mvc-portlet-project)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-a-liferay-mvc-portlet-project)
 and creating
-[JSF Portlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/creating-and-deploying-jsf-portlets).
+[JSF Portlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
@@ -142,7 +142,7 @@ keep in mind:
 **Important:** If you're developing a
  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
  see the tutorial
- [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl),
+ [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
  for details. Give yourself adequate time to develop your app's PACL and time to
  test your app thoroughly with the security manager enabled. 
 
@@ -156,9 +156,9 @@ prepare your app for them.
 
 You must first develop your app using your preferred development tool. For
 example, using
-[Liferay IDE or Liferay Developer Studio](/develop/tutorials/-/knowledge_base/liferay-ide),
-the [Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk),
-or [Maven](/develop/tutorials/-/knowledge_base/maven).
+[Liferay IDE or Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/liferay-ide),
+the [Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk),
+or [Maven](/develop/tutorials/-/knowledge_base/6-2/maven).
 Your app will consist of one or more Liferay plugins. Ensure your app is
 designed to work with Liferay 6.1 or later. If you wish to target multiple
 versions of Liferay (for example, you may wish to support 6.2 EE SP1, 6.2 CE
@@ -240,7 +240,7 @@ versions of Liferay.
 
 **Note:** If you haven't yet done so,
  make sure to read the chapter
- [Leveraging the Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+ [Leveraging the Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)
  from *Using Liferay Portal*! 
 
 $$$

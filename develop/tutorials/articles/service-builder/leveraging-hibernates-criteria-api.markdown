@@ -20,7 +20,7 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application.  See the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 learning path for more information on using Service Builder. Once you've used
 Service Builder to generate model, persistence, and service layers for your
 application, you can create custom finders using Liferay's Dynamic Query API by
@@ -50,7 +50,7 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application).
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application).
 learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to

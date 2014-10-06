@@ -133,7 +133,7 @@ foundational development tool: the Plugins SDK.
 
 ## Related Topics
 
-[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance)
+[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
