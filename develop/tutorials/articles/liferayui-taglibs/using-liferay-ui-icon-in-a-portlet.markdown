@@ -129,9 +129,9 @@ The `view.jsp` could look something like this:
 Deploy your portlet and your new icon appears inside of it. Congrats, you have 
 learned how to use your own custom icons in a portlet!
 
-## Next Steps 
+## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs-lp-6-2-develop-tutorial)
 
 <!--URl needs updated to correct one once it is added to LDN-->
 <!--[Replacing the default theme icons](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/replacing-the-default-icons-in-a-theme)-->
