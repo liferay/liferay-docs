@@ -16,7 +16,7 @@ First, you'll start with installing the liferay-faces project.
 
 It's important to install the version of Liferay Faces that you want. So, it's a
 good idea to check the [Liferay Faces Version
-Scheme](/develop/tutorials/-/knowledge_base/understanding-the-liferay-faces-version-scheme)
+Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 to confirm the version of Liferay Faces. 
 
 <!-- Verify above link is correct, once Liferay Faces tutorials are published to

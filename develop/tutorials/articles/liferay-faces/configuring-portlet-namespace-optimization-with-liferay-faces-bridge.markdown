@@ -3,13 +3,13 @@
 For this tutorial, you'll learn about configuring your portlet's namespace to
 abide to the JSR 329 standard. 
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** Due to strict namespacing requirements
- introduced in Liferay Portal 6.2, the namespace optimization feature only works
- in Liferay Portal 5.2, 6.0, and 6.1. 
+**Note:** Due to strict namespacing requirements introduced in Liferay Portal
+6.2, the namespace optimization feature only works in Liferay Portal 5.2, 6.0,
+and 6.1. 
 
----
+$$$
 
 The JSR 329 standard requires the bridge implementation to prepend the portlet
 namespace to every JSF view component's `id` attribute. This distinguishes the

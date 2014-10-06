@@ -3,11 +3,8 @@
 In this tutorial, you'll learn how to migrate logging from PortletFaces to
 Liferay Faces. For further context as to why this is needed, visit the
 [Migrating BridgeRequestAttributeListener to Liferay
-Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+Faces](/develop/tutorials/-/knowledge_base/6-2/migrating-bridgerequestattributelistener-to-liferay-faces)
 tutorial. 
-
-<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
-to dev.liferay.com. -Cody -->
 
 The PortletFaces-Logging project at portletletfaces.org has been moved into the
 Liferay Faces Bridge codebase. In order to keep using this logging API in your

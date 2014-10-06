@@ -3,11 +3,8 @@
 In this tutorial, you'll learn how to migrate file uploading classes from the
 PortletFaces project to the Liferay Faces project. For further context as to why
 this is needed, visit the [Migrating BridgeRequestAttributeListener to Liferay
-Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
-tutorial.
-
-<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
-to dev.liferay.com. -Cody -->
+Faces](/develop/tutorials/-/knowledge_base/6-2/migrating-bridgerequestattributelistener-to-liferay-faces)
+tutorial. 
 
 PortletFaces Bridge provided classes named
 `org.portletfaces.bridge.component.HtmlInputFile` and

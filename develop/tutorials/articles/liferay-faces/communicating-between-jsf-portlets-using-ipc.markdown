@@ -105,14 +105,14 @@ in the `WEB-INF/portlet.xml` descriptor:
         <value>com.liferay.faces.example.handler.CustomerSelectedHandler</value>
     </init-param>
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** For a complete example demonstrating
- public render parameters and a `bridgePublicRenderParameterHandler`, see the
- [JSF2 IPC Public Render Parameters Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-pub-render-params-portlet)
- demo on GitHub.
+**Note:** For a complete example demonstrating public render parameters and a
+`bridgePublicRenderParameterHandler`, see the [JSF2 IPC Public Render Parameters
+Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-pub-render-params-portlet)
+demo on GitHub.
  
----
+$$$
 
 Now that you've explored Public Render Parameters for JSF in IPC, you'll learn
 about Events in IPC. 
@@ -229,17 +229,16 @@ descriptor.
         <value>com.liferay.faces.example.event.CustomerEditedEventHandler</value>
     </init-param>
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** 
- For a complete example demonstrating JSF 2 IPC events, see the [JSF2 IPC Events
- -
- Customers](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet)
- and [JSF2 IPC Events -
- Bookings](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet)
- demo portlets on GitHub. 
+**Note:** For a complete example demonstrating JSF 2 IPC events, see the [JSF2
+IPC Events -
+Customers](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet)
+and [JSF2 IPC Events -
+Bookings](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet)
+demo portlets on GitHub. 
 
----
+$$$
 
 You've explored some common basic JSF portlet development topics dealing with
 IPC. These techniques should help launch you into development of your own JSF

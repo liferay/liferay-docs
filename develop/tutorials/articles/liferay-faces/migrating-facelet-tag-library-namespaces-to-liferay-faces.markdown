@@ -3,11 +3,8 @@
 In this tutorial, you'll learn how to migrate facelet tag library namespaces
 from PortletFaces to Liferay Faces. For further context as to why this is
 needed, visit the [Migrating BridgeRequestAttributeListener to Liferay
-Faces](/develop/tutorials/-/knowledge_base/migrating-bridgerequestattributelistener-to-liferay-faces)
+Faces](/develop/tutorials/-/knowledge_base/6-2/migrating-bridgerequestattributelistener-to-liferay-faces)
 tutorial. 
-
-<!-- Make sure above link is correct when Liferay Faces tutorials are uploaded
-to dev.liferay.com. -Cody -->
 
 The projects at portletfaces.org provided several UIComponents and Composite
 Components for use within Facelet views. The tag library documentation for these

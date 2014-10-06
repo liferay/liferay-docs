@@ -25,21 +25,21 @@ Facelet composite component tag that encapsulates the
 tag. The `liferay-ui:message` tag automatically applies the JSR 286 standard
 class names, as shown above. 
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** When running as a portlet, the ICEfaces
- [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html) and
- [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html)
- component tags automatically apply the JSR 286 standard class names too.
- Additionally, the
- [`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
- component tag applies the following JSR 286 standard class names for
- alternating table rows: 
+**Note:** When running as a portlet, the ICEfaces
+[`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html) and
+[`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html)
+component tags automatically apply the JSR 286 standard class names too.
+Additionally, the
+[`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
+component tag applies the following JSR 286 standard class names for alternating
+table rows: 
 
- - `portlet-section-alternate`
- - `portlet-section-body`
+- `portlet-section-alternate`
+- `portlet-section-body`
 
----
+$$$
 
 You're now equipped to give feedback to users with validation messages using
 Liferay Faces Portal. 

@@ -23,12 +23,10 @@ The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
 Because Liferay Faces has several [active
-versions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-faces-version-scheme-liferay-portal-6-2-dev-guide-04-en)
+versions](/develop/learning-paths/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags. The VDL documentation can be found at the following addresses: 
-
-<!-- Replace version scheme URL once it's available as a tutorial -Cody -->
 
 - The VDL documentation for the Liferay Faces 2.1 can be found at
   <http://docs.liferay.com/faces/2.1/vdldoc/>.

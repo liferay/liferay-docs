@@ -47,22 +47,21 @@ following declarations:
         <listener-class>com.liferay.cdi.portlet.bridge.CDIContextListener</listener-class>
     </listener>
 
----
++$$$
 
- ![Tip](../../images/tip.png) **Tip:** The Liferay Faces Project features the
- [jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
- demo (which is a variant of the
- [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
- demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in
- your development environment in order to verify that CDI functions properly. 
+**Tip:** The Liferay Faces Project features the
+[jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
+demo (which is a variant of the
+[jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in your
+development environment in order to verify that CDI functions properly. 
 
----
+$$$
 
-Configuring the Portlet Bridge for you JSF portlet is complete. <!--For other
+Configuring the Portlet Bridge for you JSF portlet is complete. For other
 configuration options dealing with CDI, visit the [Configuring CDI for JSF
-Portlets](www.liferay.com) tutorial. -->
-
-<!-- Update above link once tutorials are available. -Cody -->
+Portlets](/develop/learning-paths/-/knowledge_base/6-2/configuring-cdi-for-jsf-portlets)
+tutorial. 
 
 Now that CDI is fully configured for your portlet, you're ready to begin
 development with CDI. 

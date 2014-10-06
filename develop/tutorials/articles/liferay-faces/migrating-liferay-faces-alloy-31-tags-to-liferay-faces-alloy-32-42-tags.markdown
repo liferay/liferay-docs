@@ -22,17 +22,17 @@ each tag's replacement, if a replacement exists.
 | `aui:column` | [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) and  [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/col.html) |
 | `aui:layout` | No Replacement |
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** The `aui:column` tag must be replaced
- by an `aui:col` tag that is nested within an `aui:row` tag. 
+**Note:** The `aui:column` tag must be replaced by an `aui:col` tag that is
+nested within an `aui:row` tag.
 
- Also, because `aui:col` has completely different attributes than `aui:column`,
- you must account for the `aui:col` attributes. For more information on the
- `aui:col` tag, see the
- [VDLdocs for Liferay Faces 3.2](http://docs.liferay.com/faces/3.2/vdldoc/).
+Also, because `aui:col` has completely different attributes than `aui:column`,
+you must account for the `aui:col` attributes. For more information on the
+`aui:col` tag, see the [VDLdocs for Liferay Faces
+3.2](http://docs.liferay.com/faces/3.2/vdldoc/). 
 
----
+$$$
 
 Next, you'll look at the changes to the tags in the `aui-cc` namespace. 
 
@@ -51,15 +51,14 @@ respect to the Liferay Faces 3.2, 4.1, and 4.2 releases:
 | `aui-cc:message` (**REMOVED in 4.1/4.2**) |
 | `aui-cc:messages` (**REMOVED in 4.1/4.2**) |
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** The `aui-cc:message` and
- `aui-cc:messages` tags have been completely removed in 4.1/4.2 because no
- analogous tags in Liferay Portal exist for them and their functionality is
- already implemented in the bridge's `h:message` and `h:messages` tags,
- respectively. 
+**Note:** The `aui-cc:message` and `aui-cc:messages` tags have been completely
+removed in 4.1/4.2 because no analogous tags in Liferay Portal exist for them
+and their functionality is already implemented in the bridge's `h:message` and
+`h:messages` tags, respectively. 
 
----
+$$$
 
 Excellent! You're now familiar with the AlloyUI related migration changes. 
 

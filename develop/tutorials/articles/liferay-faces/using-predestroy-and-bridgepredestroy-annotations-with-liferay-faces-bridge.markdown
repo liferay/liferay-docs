@@ -9,12 +9,12 @@ destroyed, they typically annotate a method inside the bean with the
 discusses the need for the `@BridgePreDestroy` and
 `@BridgeRequestScopeAttributeAdded` annotations in the bridge API. 
 
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** For an in-depth discussion of this
- issue, please refer to <http://issues.liferay.com/browse/FACES-146>. 
+**Note:** For an in-depth discussion of this issue, please refer to
+<http://issues.liferay.com/browse/FACES-146>. 
 
----
+$$$
 
 In order to explain this requirement, it is necessary to make a distinction
 between *local* portals and *remote* portals. Local portals invoke portlets that

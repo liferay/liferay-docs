@@ -36,13 +36,13 @@ does not support Portlet 1.0)*
 - `3.1.0-ga1`: First GA release for JSF 2.0/2.1 for use with Liferay 6.1.x 
 - `3.1.1-ga2`: Second GA release for JSF 2.0/2.1 for use with Liferay 6.1.x 
  
----
++$$$
 
- ![Note](../../images/tip.png) **Note:** Some permutations of this
- versioning scheme are not supported, see table below for specific information
- on supported versions of JSF and Liferay Portal. 
+**Note:** Some permutations of this versioning scheme are not supported, see
+table below for specific information on supported versions of JSF and Liferay
+Portal. 
 
----
+$$$
 
 The following table displays the Liferay Faces version and its compatible
 Liferay Portal and JSF versions: 
@@ -74,4 +74,6 @@ tutorial. -->
 With the knowledge of the Liferay Faces versioning scheme under your belt, you
 can now recognize what each version supports. 
 
-<!-- Add Related Topics section once JSF tutorials are finished. -Cody -->
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->
