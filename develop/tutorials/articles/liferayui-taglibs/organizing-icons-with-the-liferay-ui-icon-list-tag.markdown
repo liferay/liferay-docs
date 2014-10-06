@@ -15,7 +15,7 @@ allowing you to organize your icons with ease: `liferay-ui:icon-list` tag.
 The Liferay UI Icon List tag allows you to, as the name suggests, create an
 unordered list of your icons. Liferay UI also provides the `liferay-ui:icon-menu`
 tag for organizing your icons in a drop-down menu which you can read more about
- [here](http://dev.liferay.com/tutorials/-/knowledge_base/organizing-icons-with-the-liferay-ui-icon-menu-tag). 
+ [here](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-menu-tag). 
 
 This tutorial covers how to configure and use the `liferay-ui:icon-list` tag.
 
@@ -86,6 +86,6 @@ your sites icon layout.
 
 ## Related Topics
 
- [Organizing Icons with the Liferay UI Icon Menu Tag](http://dev.liferay.com/tutorials/-/knowledge_base/organizing-icons-with-the-liferay-ui-icon-menu-tag)
+ [Organizing Icons with the Liferay UI Icon Menu Tag](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-menu-tag)
 
- [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
