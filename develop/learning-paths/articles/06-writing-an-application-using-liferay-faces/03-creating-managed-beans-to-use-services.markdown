@@ -23,7 +23,7 @@ bean satisfies a
 [*concern*](http://en.wikipedia.org/wiki/Separation_of_concerns) used in the MVC
 framework. If you're not familiar with the MVC design pattern, you can visit the
 [Writing a Data-Driven
-Application](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 learning path to learn about it, if you're interested. Below is a list of some
 commonly used managed beans and their descriptions: 
 
@@ -197,14 +197,14 @@ guestbook backing bean.
 
 4. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
 
----
++$$$
 
-![note](../../images/01-tip.png) **Note:** You'll notice while creating some of
-your managed beans that Liferay IDE/Developer Studio gives you error markers in
-some of your classes. Don't worry about these error markers, you'll rebuild your
-services at the end of this document and these errors will be resolved. 
+**Note:** You'll notice while creating some of your managed beans that Liferay
+IDE/Developer Studio gives you error markers in some of your classes. Don't
+worry about these error markers, you'll rebuild your services at the end of this
+document and these errors will be resolved. 
 
----
+$$$
 
 This `GuestbookBackingBean` is *request scoped*, which means that it is only
 created when a request is being made. JSF creates the bean, uses the bean as
@@ -452,7 +452,7 @@ guestbook portlet next.
         }
 
     The `postConstruct()` method uses
-    [`LiferayFacesContext`](/develop/tutorials/-/knowledge_base/using-the-liferayfacescontext-with-liferay-faces-portal)
+    [`LiferayFacesContext`](/develop/tutorials/-/knowledge_base/6-2/using-the-liferayfacescontext-with-liferay-faces-portal)
     to initialize the guestbook portlet when first added to a page. Then, you
     created a couple setters and boolean methods to manage your `editingEntry`
     and `editingGuestbook` variables, which aid in the navigation between views.

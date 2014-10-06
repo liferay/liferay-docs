@@ -40,11 +40,11 @@ to creating a JSF application. Applications in Liferay Portal are called
    Plugins SDK and Liferay runtime. You also have the option of choosing the
    *Maven* build type, which is also popular with JSF portlets. You can visit
    the [Maven
-   tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/maven)
+   tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/maven)
    to learn how to build plugins using Maven. 
 
     If you'd like to use Maven to build your guestbook portlet and continue
-    following along in this learning path, visit the [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/developing-liferay-faces-portlets-with-maven)
+    following along in this learning path, visit the [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
     tutorial to update yourself on the key differences between using the Plugins
     SDK and using Maven. 
 
@@ -91,13 +91,13 @@ your Liferay server.
 
 ![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
 
----
++$$$
 
-![note](../../images/01-tip.png) **Note:** Notice in your Console that there are
-many *DEBUG* messages. By default, your portlet has been configured to print
-everything in your console in debug mode. If you'd like to not run your portlet
-in debug mode, navigate to your portlet's `docroot/WEB-INF/faces-config.xml`
-file and remove the following code: 
+**Note:** Notice in your Console that there are many *DEBUG* messages. By
+default, your portlet has been configured to print everything in your console in
+debug mode. If you'd like to not run your portlet in debug mode, navigate to
+your portlet's `docroot/WEB-INF/faces-config.xml` file and remove the following
+code: 
 
     <lifecycle>
         <phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
@@ -105,7 +105,7 @@ file and remove the following code:
 
 Throughout this learning path, debug mode will be kept on. 
 
----
+$$$
 
 You can now view the bare bones JSF guestbook by clicking the *Add* button (plus
 sign) and choosing *Applications*. Then, from the Sample category drag the JSF
@@ -114,16 +114,18 @@ by default when creating a Liferay portlet through IDE/Developer Studio.
 
 ![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
 
----
 
-![note](../../images/01-tip.png) **Note:** Liferay Faces has a specific
-versioning scheme it follows to keep releases concise and separate from other
-releases. A concise versioning scheme also makes it easier to differentiate
-between a Liferay Faces version's compatibility with other platforms. To learn
-more, visit the [Understanding the Liferay Faces Version Scheme](/develop/tutorials/articles/liferay-faces/understanding-the-liferay-faces-version-scheme)
++$$$
+
+**Note:** Liferay Faces has a specific versioning scheme it follows to keep
+releases concise and separate from other releases. A concise versioning scheme
+also makes it easier to differentiate between a Liferay Faces version's
+compatibility with other platforms. To learn more, visit the [Understanding the
+Liferay Faces Version
+Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 tutorial. 
 
----
+$$$
 
 Remember reading briefly about how the Liferay Faces Bridge is used to keep JSF
 portlets compatible with Liferay Portal? You'll dive into the bridge and its
@@ -204,7 +206,7 @@ The JSR 329 standard defines several configuration options prefixed with the
 implementation-specific options prefixed with the `com.liferay.faces.bridge`
 namespace. If you're curious of ways to configure Liferay Faces Bridge using
 these configuration options, you can run through provided in-depth
-[tutorials](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets). 
+[tutorials](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets). 
 
 With the main aspects of JSF portlet bridges described, you'll now learn how
 your JSF guestbook is using a bridge. 
@@ -287,7 +289,7 @@ components. Some of the features included in Liferay Faces Portal are:
 - Utilities: Provides the `LiferayFacesContext` which extends the `FacesContext`
 with a variety of Portlet-API and Liferay-specific convenience methods. You can
 learn more about the `LiferayFacesContext` by visiting its dedicated
-[tutorial](/develop/tutorials/articles/liferay-faces/using-the-liferayfacescontext-with-liferay-faces-portal). 
+[tutorial](/develop/tutorials/-/knowledge_base/6-2/using-the-liferayfacescontext-with-liferay-faces-portal). 
 
 - Facelet Composite Components: Provides a set of JSF equivalents for
 `liferay-ui:captcha`, `liferay-ui:icon`, `liferay-ui:input-editor`, etc. 

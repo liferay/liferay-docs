@@ -30,15 +30,15 @@ button is clicked or a page is rendered, it will be processed through your
 `view.xhtml` file. Therefore, this view is very bare bones, and only points to
 the view that should be rendered. 
 
----
++$$$
 
-![note](../../images/01-tip.png) **Note:** You can change your default
-view by editing your portlet's `docroot/WEB-INF/portlet.xml` file. Find the
-`<init-param>` element with the name `javax.portlet.faces.defaultViewId.view`,
-and change the `<value>` element to your new default view's path. For the
-guestbook portlet, you'll keep your default view set to the `view.xhtml` file. 
+**Note:** You can change your default view by editing your portlet's
+`docroot/WEB-INF/portlet.xml` file. Find the `<init-param>` element with the
+name `javax.portlet.faces.defaultViewId.view`, and change the `<value>` element
+to your new default view's path. For the guestbook portlet, you'll keep your
+default view set to the `view.xhtml` file. 
 
----
+$$$
 
 As was mentioned earlier, there are three additional views, so you'll use a
 choose-when conditional statement to select the appropriate view to be rendered.
