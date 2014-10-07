@@ -18,7 +18,9 @@ import java.util.List;
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.base.GuestbookLocalServiceBaseImpl;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.ResourceConstants;
 
 
 /**
@@ -43,21 +45,36 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 	 */
 
 	@Override
-	public Guestbook addGuestbook(Guestbook guestbook) throws SystemException {
+	public Guestbook addGuestbook(Guestbook guestbook, long userId) throws PortalException, SystemException {
 		long guestbookId = counterLocalService.increment(Guestbook.class.getName());
 		guestbook.setGuestbookId(guestbookId);
 
-		return super.addGuestbook(guestbook);
+		guestbook = super.addGuestbook(guestbook);
+
+		resourceLocalService.addResources(guestbook.getCompanyId(), guestbook.getGroupId(), userId,
+			Guestbook.class.getName(), guestbookId, false, true, true);
+
+		return guestbook;
 	}
-	
+
+	@Override
+	public Guestbook deleteGuestbook(Guestbook guestbook) throws PortalException, SystemException {
+
+		resourceLocalService.deleteResource(guestbook.getCompanyId(), Guestbook.class.getName(),
+			ResourceConstants.SCOPE_INDIVIDUAL, guestbook.getPrimaryKey());
+
+		return super.deleteGuestbook(guestbook);
+	}
+
 	public Guestbook getFirstGuestbookByName(long groupId, String name) throws SystemException {
 		Guestbook guestbook = null;
-		
+
 		List<Guestbook> guestbooks = guestbookPersistence.findByName(groupId, name);
-		if (guestbooks != null && guestbooks.size() > 0) {
+
+		if ((guestbooks != null) && (guestbooks.size() > 0)) {
 			guestbook = guestbooks.get(0);
 		}
-		
+
 		return guestbook;
 	}
 
