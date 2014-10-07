@@ -8,9 +8,8 @@
 
 <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
-<aui:script>
+<aui:script use="aui-char-counter">
 AUI().use(
-  'aui-char-counter',
   function(A) {
     new A.CharCounter(
       {
