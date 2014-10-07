@@ -1,4 +1,4 @@
-# Adding Properties to a Maven Project in Liferay IDE
+# Adding Properties to a Maven Project in Liferay IDE [](id=adding-properties-to-a-maven-project-in-liferay-ide)
 
 When working with Maven projects in Liferay IDE, you may encounter situations
 where your project is missing [required Maven
