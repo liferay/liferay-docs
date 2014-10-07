@@ -44,12 +44,12 @@ started.
     Portal Runtime* dropdown menu. 
 
 6.  Select *Portlet* as your plugin type. Alternatively, you can select 
-    *Service Builder Portlet* if you know you want to use Liferay IDE's service 
+    *Service Builder Portlet* if you know you want to use Liferay's service 
     builder for your portlet.
-    
+
 7.  If you want to launch the New Portlet Wizard after your project is created, 
-    select the checkbox of that name. The New Portlet Wizard guides you in the 
-    creation of a custom portlet class.
+    select the checkbox of that name. The New Portlet Wizard guides you in
+    creating a custom portlet class.
 
 8.  Click *Next* if you selected Portlet as your plugin type. If you selected 
     Service Builder Portlet as your plugin type, then click *Finish*. 
