@@ -23,13 +23,12 @@ AUI().use(
 <aui:script use="node, event">
 var button = A.one('#generateMessageButton');
 var messageDiv = A.one('#messages');
-var use = A.one('#use');
 var message = A.one('#<portlet:namespace/>message');
 
 button.on('click', function(event) {
-	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" id="use" onclick="set();"/><br>');
-	messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" id="use" onclick="set2();"/><br>');
-	messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" id="use" onclick="set3();"/><br>');
+	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" onclick="set();"/>');
+	messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" onclick="set2();"/>');
+	messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" onclick="set3();"/>');
 });
 
 set = function(){
@@ -71,15 +70,15 @@ if (entryId > 0) {
             <aui:input id="message" cssClass="message" type="textarea" name="message">
             	<aui:validator name="required" errorMessage="Leave a message please." />
             </aui:input>
-            <div id="messages"></div>
+            <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
+
             <div id="buttonWrapper">
-            <aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button>
+            	<p><aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button></p>
             </div>
+            <div id="messages"></div>
+            
             <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
             <aui:input name="entryId" type="hidden" />
-			<div id="counterContainer">
-            <span id="counter"></span> character(s) remaining
-            </div>
         </aui:fieldset>
         
         <liferay-ui:asset-categories-error />
