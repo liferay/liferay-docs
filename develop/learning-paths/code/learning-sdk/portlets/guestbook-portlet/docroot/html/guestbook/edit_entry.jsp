@@ -21,7 +21,7 @@ AUI().use(
 </aui:script>
 
 <aui:script use="node, event">
-var button = A.one('#genMess');
+var button = A.one('#generateMessageButton');
 var messageDiv = A.one('#messages');
 var use = A.one('#use');
 var message = A.one('#<portlet:namespace/>message');
@@ -73,7 +73,7 @@ if (entryId > 0) {
             </aui:input>
             <div id="messages"></div>
             <div id="buttonWrapper">
-            <aui:button id="genMess" value="generate sample messages"></aui:button>
+            <aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button>
             </div>
             <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
             <aui:input name="entryId" type="hidden" />
@@ -102,9 +102,7 @@ if (entryId > 0) {
 		</liferay-ui:panel>
 
         <aui:button-row>
-
 			<aui:button type="submit" id="save"></aui:button>
 			<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
-
         </aui:button-row>
 </aui:form>
