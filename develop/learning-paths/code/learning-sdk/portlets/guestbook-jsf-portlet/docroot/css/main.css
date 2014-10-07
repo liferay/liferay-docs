@@ -17,3 +17,11 @@
 	border-top-right-radius: 4px;
 	font-weight: bold;
 }
+
+.aui a.btn, .aui input[type="submit"] {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 11px;
+	margin-top: 6px;
+	font-weight: normal;
+}
