@@ -15,7 +15,7 @@ are also discussed. Let the installation begin!
 If you want to invoke remote web services for your custom portlets, then you 
 need to generate the client libraries by building the SDK yourself. Building the 
 SDK is covered in the tutorial
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks).
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks).
 Once you build the SDK to a `zip` file, you can install it using the manual 
 installation steps below. Just make sure to use your built `zip` file instead of
 downloading Liferay's iOS Mobile SDK `zip` file. 
@@ -77,16 +77,16 @@ though. You can add both versions 6.2.0.1 and 7.0.0.1 to your project. These
 don't conflict because service class names are suffixed with their version 
 number. For example, service classes from versions 6.2.x and 7.0.x end in 
 `_v62.m` and `_v7.m`, respectively. To find out which Liferay versions you are 
-connecting to, use the `[LRPortalVersionUtil getPortalVersion:…]` method. 
+connecting to, use the `[LRPortalVersionUtil getPortalVersion:ï¿½]` method. 
 
 The Liferay iOS SDK is compatible with iOS versions 6.1 and up. Older versions 
 of iOS may work with the SDK, but compatibility untested. 
 
 ## Related Topics
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 

@@ -21,9 +21,9 @@ This tutorial shows the steps required to accomplish this.
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
     for it). For instructions on resolving these issues, see the
-    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
+    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/faceting-a-plugin-project-for-liferay-ide)
     tutorial and the 
-    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
+    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
     tutorial. 
 
 $$$
@@ -43,7 +43,7 @@ just as you would any other Liferay project.
 
 ## Related Topics 
 
-[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
+[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/faceting-a-plugin-project-for-liferay-ide)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

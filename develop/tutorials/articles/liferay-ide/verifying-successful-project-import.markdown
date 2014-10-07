@@ -38,5 +38,5 @@ Congratulations on verifying that your project imported properly!
 
 Here is a related topic. 
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

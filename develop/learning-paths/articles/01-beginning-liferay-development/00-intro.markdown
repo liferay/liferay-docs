@@ -12,11 +12,11 @@ a widely used open source IDE.
 
 If you're a Liferay Enterprise Edition subscriber or interested in Liferay's
 premier development environment, begin with 
-[Developing Applications with Liferay Developer Studio](/develop/learning-paths/-/knowledge_base/developing-applications-with-liferay-developer-stu).
+[Developing Applications with Liferay Developer Studio](/develop/learning-paths/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu).
 
 If you want to use Liferay's free development environment or want to leverage
 it on top of an existing Eclipse installation, skip over to 
-[Developing Applications with Liferay IDE](/develop/learning-paths/-/knowledge_base/developing-apps-with-liferay-ide). 
+[Developing Applications with Liferay IDE](/develop/learning-paths/-/knowledge_base/6-2/developing-apps-with-liferay-ide). 
  
 Note: To follow Liferay's learning paths, you must have a Liferay Portal 6.2
 instance installed. You must also have the Java 7 JDK installed.

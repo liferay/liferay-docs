@@ -19,7 +19,7 @@ In particular, this tutorial outlines the steps that the sample app's
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
 class takes in accessing and calling Liferay services. In your app, 
 you can follow these steps too. If you followed the steps in the tutorial 
-[Creating the Liferay Android Sample Project](/develop/tutorials/-/knowledge_base/creating-liferay-android-sample-project), 
+[Creating the Liferay Android Sample Project](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-android-sample-project), 
 then you can find the `UsersAsyncTask` class in the 
 `src/com/liferay/mobile/sample/task` folder of your sample project. Now go ahead 
 and get started learning how to invoke Liferay services in your Android app!
@@ -133,10 +133,10 @@ through the Mobile SDK!
 
 ## Related Topics
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
