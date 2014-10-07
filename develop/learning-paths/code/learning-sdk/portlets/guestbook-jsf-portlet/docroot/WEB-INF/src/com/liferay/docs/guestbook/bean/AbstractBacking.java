@@ -13,26 +13,18 @@
  */
 package com.liferay.docs.guestbook.bean;
 
-import javax.faces.bean.ManagedProperty;
-
 import com.liferay.faces.portal.context.LiferayFacesContext;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 
 
-abstract class AbstractBackingBean {
+abstract class AbstractBacking {
 
 	// Logger
-	protected static final Logger logger = LoggerFactory.getLogger(AbstractBackingBean.class);
+	protected static final Logger logger = LoggerFactory.getLogger(AbstractBacking.class);
 
 	protected static final String UNEXPECTED_ERROR_MSG_ID = "an-unexpected-error-occurred";
 	protected static final String SUCCESS_INFO_MSG_ID = "your-request-processed-successfully";
-
-	@ManagedProperty(name = "guestbookModelBean", value = "#{guestbookModelBean}")
-	protected GuestbookModelBean guestbookModelBean;
-
-	@ManagedProperty(name = "viewBean", value = "#{viewBean}")
-	protected ViewBean viewBean;
 
 	public void addGlobalSuccessInfoMessage() {
 		LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
@@ -42,18 +34,6 @@ abstract class AbstractBackingBean {
 	public void addGlobalUnexpectedErrorMessage() {
 		LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 		liferayFacesContext.addGlobalUnexpectedErrorMessage();
-	}
-
-	public void cancel() {
-		viewBean.master();
-	}
-
-	public void setGuestbookModelBean(GuestbookModelBean guestbookModelBean) {
-		this.guestbookModelBean = guestbookModelBean;
-	}
-
-	public void setViewBean(ViewBean viewBean) {
-		this.viewBean = viewBean;
 	}
 
 }
