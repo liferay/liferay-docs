@@ -52,7 +52,7 @@ property hook plugin for overriding Liferay's default text values with your own
 custom values. 
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-    [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
+    [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
 
 2.  In Liferay IDE, right click your hook project and select *New* &rarr;
 *Liferay Hook Configuration*. In the window that appears, select the *Language
@@ -154,9 +154,9 @@ your new titles, labels, and message strings in your portal.
 
 ## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
 <!-- TODO Activate topic link when the tutorial is available.
-[Extending your Indexer Post Processor Using a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/extend-indexer-post-processor-hook)
+[Extending your Indexer Post Processor Using a Hook](/develop/tutorials/-/knowledge_base/6-2/extend-indexer-post-processor-hook)
 -->
 
