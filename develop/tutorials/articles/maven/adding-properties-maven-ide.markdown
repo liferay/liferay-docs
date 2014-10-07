@@ -2,7 +2,7 @@
 
 When working with Maven projects in Liferay IDE, you may encounter situations
 where your project is missing [required Maven
-properties](/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects).
+properties](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects).
 Maven properties go missing when a Maven profile ID isn't associated with the
 project. A project's creator may neglect to add a Maven profile ID to the
 project or unintentionally delete the profile ID from the project. Regardless,
@@ -84,12 +84,12 @@ helps you create or find properties for your Maven project.
 
 ## Related Topics
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[MVC Portlets](/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Deploying Plugins](/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
