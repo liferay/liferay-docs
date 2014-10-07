@@ -1,5 +1,3 @@
-
-
 <%@include file = "/html/init.jsp" %>
 
 <portlet:renderURL var="viewURL">
@@ -21,21 +19,19 @@ AUI().use(
   }
 );
 </aui:script>
+
 <aui:script use="node, event">
 var button = A.one('#genMess');
 var messageDiv = A.one('#messages');
 var use = A.one('#use');
 var message = A.one('#<portlet:namespace/>message');
 
-
 button.on('click', function(event) {
-
-messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" id="use" onclick="set();"/><br>');
-messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" id="use" onclick="set2();"/><br>');
-messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" id="use" onclick="set3();"/><br>');
-
-
+	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" id="use" onclick="set();"/><br>');
+	messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" id="use" onclick="set2();"/><br>');
+	messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" id="use" onclick="set3();"/><br>');
 });
+
 set = function(){
 	message.val(messageDiv.one('#con').html());
 
@@ -48,8 +44,8 @@ set3 = function(){
 	message.val(messageDiv.one('#con3').html());
 
 };
-
 </aui:script>
+
 <%
 long entryId = ParamUtil.getLong(renderRequest, "entryId");
 
@@ -60,7 +56,6 @@ if (entryId > 0) {
 	entry = EntryLocalServiceUtil.getEntry(entryId);
 	
 }
-
 %>
 
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
