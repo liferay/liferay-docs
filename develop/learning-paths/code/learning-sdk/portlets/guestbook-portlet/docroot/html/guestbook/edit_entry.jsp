@@ -23,30 +23,30 @@ AUI().use(
 );
 </aui:script>
 <aui:script use="node, event">
-var btn = A.one('#genMess');
-var messDiv = A.one('#messages');
+var button = A.one('#genMess');
+var messageDiv = A.one('#messages');
 var use = A.one('#use');
 var message = A.one('#<portlet:namespace/>message');
 
 
-btn.on('click', function(event) {
+button.on('click', function(event) {
 
-messDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" id="use" onclick="set();"/><br>');
-messDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" id="use" onclick="set2();"/><br>');
-messDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" id="use" onclick="set3();"/><br>');
+messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" id="use" onclick="set();"/><br>');
+messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" id="use" onclick="set2();"/><br>');
+messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" id="use" onclick="set3();"/><br>');
 
 
 });
 set = function(){
-	message.val(messDiv.one('#con').html());
+	message.val(messageDiv.one('#con').html());
 
 };
 set2 = function(){
-	message.val(messDiv.one('#con2').html());
+	message.val(messageDiv.one('#con2').html());
 
 };
 set3 = function(){
-	message.val(messDiv.one('#con3').html());
+	message.val(messageDiv.one('#con3').html());
 
 };
 
@@ -78,7 +78,7 @@ if (entryId > 0) {
             	<aui:validator name="required" errorMessage="Leave a message please." />
             </aui:input>
             <div id="messages"></div>
-            <div id="btnWrapper">
+            <div id="buttonWrapper">
             <aui:button id="genMess" value="generate sample messages"></aui:button>
             </div>
             <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
