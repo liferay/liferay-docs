@@ -37,7 +37,7 @@ Liferay plugin project using Liferay IDE:
     you from repetitively appending the plugin type to the display name; in 
     fact, the IDE ignores any plugin type suffix if you happen to append it to
     the display name. 
-    
+
     ![Figure 1: You can build a Liferay Plugin Project using Maven by completing the setup wizard.](../../images/create-wizard-maven-ide.png)
 
 3.  Select *Maven (liferay-maven-plugin)* for the build type. Notice that some
@@ -67,7 +67,7 @@ Liferay plugin project using Liferay IDE:
     illuminated *right arrow* button to transfer it to the menu on the right. If
     you don't have any existing profile, click on the green *addition* button to
     create a profile and give it an ID. 
-    
+
     ![Figure 2: Liferay IDE lets you select active profiles to use with your Maven plugin projects.](../../images/maven-ide-select-active-profiles.png)
 
     If you're specifying a new profile, the wizard will still create your
@@ -81,9 +81,9 @@ Liferay plugin project using Liferay IDE:
     You also have the option to create a profile based on a Liferay runtime. To
     do this, select the *Create New Maven Profile Based on Liferay Runtime*
     button to the far right of the *Active profiles* text field.
-    
+
     ![Figure 3: You can create new profiles in the New Plugin Project wizard.](../../images/maven-ide-new-profile.png)
-    
+
     Specify the *Liferay runtime*, *New profile id*, and *Liferay version*. For 
     the new profile location you can specify your profile in the
     `settings.xml` (recommended) or your project's `pom.xml`. When creating your
@@ -103,7 +103,7 @@ Liferay plugin project using Liferay IDE:
 8.  Unless you're creating a portlet or theme, you're done--just click *Finish* 
     and start developing your plugin in Liferay IDE! If you're creating a 
     portlet or theme, click *Next*. 
-    
+
     If you're creating a portlet, the second screen of the wizard is where you 
     select the portlet's framework. If you selected the Include Sample Code 
     checkbox on the first screen of the wizard, then the second screen also lets 
@@ -112,20 +112,20 @@ Liferay plugin project using Liferay IDE:
     you must then click *Next* to go to the third screen of the wizard where you 
     select the JSF component suite to use. You can choose from JSF standard, 
     ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces component suites. 
-    
+
     ![Figure 4: Select a portlet framework to use for your new portlet.](../../images/maven-ide-portlet-framework.png)
-    
+
     ![Figure 5: If you're using JSF as your portlet framework, then you need to select the JSF component suite to use.](../../images/maven-ide-jsf-suite.png)
-    
+
     If you're creating a theme, the second screen of the New Project Wizard lets 
     you select a theme parent and theme framework. The Theme Parent 
     dropdown lets you choose the `_unstyled`, `_styled`, or `classic` parent theme. The 
     Theme Framework dropdown lets you choose Velocity, Freemarker, or JSP as
     your theme framework. 
-    
+
     ![Figure 6: If you're creating a theme, select the theme parent and theme framework.](../../images/maven-ide-theme.png) 
 
-Now just click *Finish* and you're all set! The Liferay New Project wizard 
+Now, just click *Finish* and you're all set! The Liferay New Project wizard 
 creates your new plugin project to your specification. 
 
 Great! You've successfully created a Liferay plugin project using Maven in 
