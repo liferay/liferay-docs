@@ -27,9 +27,9 @@ started.
     portlet's *Display name* just as you want it displayed to the user. 
 
 3.  Leave the *Use default location* checkbox checked. By default, the
-	default location is set to your Plugins SDK. If you'd like to change where 
-	your plugin project is saved in your file system, uncheck the box and 
-	specify your alternate location. 
+    default location is set to your Plugins SDK. If you'd like to change where 
+    your plugin project is saved in your file system, uncheck the box and 
+    specify your alternate location. 
 
     ![Figure 1: Creating portlet projects with Liferay IDE is easy.](../../images/03-new-portlet-project.png)
 
@@ -54,8 +54,8 @@ started.
 8.  Click *Next* if you selected Portlet as your plugin type. If you selected 
     Service Builder Portlet as your plugin type, then click *Finish*. 
 
-9.  If you selected Portlet as your plugin type, make sure that the *Liferay MVC* 
-    framework is selected in the next window and click *Finish*. 
+9.  If you selected Portlet as your plugin type, make sure that the *Liferay
+    MVC* framework is selected in the next window and click *Finish*. 
 
 With Liferay IDE, you can create a new plugin project or if you already have a
 project, create a new plugin in an existing project. A single Liferay project
