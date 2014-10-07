@@ -74,12 +74,14 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 	*
 	* @param entry the entry
 	* @return the entry that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
 	public com.liferay.docs.guestbook.model.Entry deleteEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return _entryLocalService.deleteEntry(entry);
 	}
 
@@ -342,6 +344,14 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return _entryLocalService.invokeMethod(name, parameterTypes, arguments);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Entry addEntry(
+		com.liferay.docs.guestbook.model.Entry entry, long userId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.addEntry(entry, userId);
 	}
 
 	@Override

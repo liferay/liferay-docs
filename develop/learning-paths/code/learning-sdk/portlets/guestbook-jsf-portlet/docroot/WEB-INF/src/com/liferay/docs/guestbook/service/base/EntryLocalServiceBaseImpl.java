@@ -108,11 +108,13 @@ public abstract class EntryLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 *
 	 * @param entry the entry
 	 * @return the entry that was removed
+	 * @throws PortalException
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Indexable(type = IndexableType.DELETE)
 	@Override
-	public Entry deleteEntry(Entry entry) throws SystemException {
+	public Entry deleteEntry(Entry entry)
+		throws PortalException, SystemException {
 		return entryPersistence.remove(entry);
 	}
 

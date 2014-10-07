@@ -77,12 +77,14 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 	*
 	* @param guestbook the guestbook
 	* @return the guestbook that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
 	public com.liferay.docs.guestbook.model.Guestbook deleteGuestbook(
 		com.liferay.docs.guestbook.model.Guestbook guestbook)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return _guestbookLocalService.deleteGuestbook(guestbook);
 	}
 
@@ -351,6 +353,14 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 		throws java.lang.Throwable {
 		return _guestbookLocalService.invokeMethod(name, parameterTypes,
 			arguments);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Guestbook addGuestbook(
+		com.liferay.docs.guestbook.model.Guestbook guestbook, long userId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.addGuestbook(guestbook, userId);
 	}
 
 	@Override

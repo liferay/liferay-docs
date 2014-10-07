@@ -83,11 +83,13 @@ public class GuestbookLocalServiceUtil {
 	*
 	* @param guestbook the guestbook
 	* @return the guestbook that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.liferay.docs.guestbook.model.Guestbook deleteGuestbook(
 		com.liferay.docs.guestbook.model.Guestbook guestbook)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService().deleteGuestbook(guestbook);
 	}
 
@@ -333,6 +335,13 @@ public class GuestbookLocalServiceUtil {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return getService().invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public static com.liferay.docs.guestbook.model.Guestbook addGuestbook(
+		com.liferay.docs.guestbook.model.Guestbook guestbook, long userId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addGuestbook(guestbook, userId);
 	}
 
 	public static com.liferay.docs.guestbook.model.Guestbook getFirstGuestbookByName(

@@ -109,12 +109,13 @@ public abstract class GuestbookLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 *
 	 * @param guestbook the guestbook
 	 * @return the guestbook that was removed
+	 * @throws PortalException
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Indexable(type = IndexableType.DELETE)
 	@Override
 	public Guestbook deleteGuestbook(Guestbook guestbook)
-		throws SystemException {
+		throws PortalException, SystemException {
 		return guestbookPersistence.remove(guestbook);
 	}
 

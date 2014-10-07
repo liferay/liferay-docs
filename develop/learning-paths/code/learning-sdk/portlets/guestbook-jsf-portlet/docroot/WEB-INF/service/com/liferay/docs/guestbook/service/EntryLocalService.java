@@ -81,11 +81,13 @@ public interface EntryLocalService extends BaseLocalService,
 	*
 	* @param entry the entry
 	* @return the entry that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
 	public com.liferay.docs.guestbook.model.Entry deleteEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery();
 
@@ -300,6 +302,11 @@ public interface EntryLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public com.liferay.docs.guestbook.model.Entry addEntry(
+		com.liferay.docs.guestbook.model.Entry entry, long userId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(

@@ -83,11 +83,13 @@ public class EntryLocalServiceUtil {
 	*
 	* @param entry the entry
 	* @return the entry that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.liferay.docs.guestbook.model.Entry deleteEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
-		throws com.liferay.portal.kernel.exception.SystemException {
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
 		return getService().deleteEntry(entry);
 	}
 
@@ -332,6 +334,13 @@ public class EntryLocalServiceUtil {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return getService().invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public static com.liferay.docs.guestbook.model.Entry addEntry(
+		com.liferay.docs.guestbook.model.Entry entry, long userId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addEntry(entry, userId);
 	}
 
 	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
