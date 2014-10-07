@@ -68,15 +68,15 @@ Liferay plugin project using Liferay IDE:
     you don't have any existing profile, click on the green *addition* button to
     create a profile and give it an ID. 
     
-    ![Figure 2: Liferay IDE lets you select the active profiles to use for your Maven plugin projects.](../../images/maven-ide-select-active-profiles.png)
+    ![Figure 2: Liferay IDE lets you select active profiles to use with your Maven plugin projects.](../../images/maven-ide-select-active-profiles.png)
 
     If you're specifying a new profile, the wizard will still create your
     plugin, but your project will need further attention before it is
     deployable. You'll need to specify the necessary properties within the new
-    profile; specifying these properties is demonstrated in the *Configuring
+    profile; the *Configuring
     Your Liferay Maven Project* section of the 
     [Using Maven From Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide)
-    tutorial. 
+    tutorial demonstrates specifying these properties. 
 
     You also have the option to create a profile based on a Liferay runtime. To
     do this, select the *Create New Maven Profile Based on Liferay Runtime*
@@ -85,7 +85,7 @@ Liferay plugin project using Liferay IDE:
     ![Figure 3: You can create new profiles in the New Plugin Project wizard.](../../images/maven-ide-new-profile.png)
     
     Specify the *Liferay runtime*, *New profile id*, and *Liferay version*. For 
-    the new profile location you can choose to specify your profile in the
+    the new profile location you can specify your profile in the
     `settings.xml` (recommended) or your project's `pom.xml`. When creating your
     Maven profile based on a Liferay runtime, the IDE automatically populates
     the new profile with the required properties and no additional profile 
@@ -94,14 +94,14 @@ Liferay plugin project using Liferay IDE:
 7.  Select your project's plugin type from the dropdown menu of that name. The 
     New Project Wizard gives you some additional options if you select Portlet 
     or Service Builder Portlet. With both portlet types, you can use the Include 
-    Sample Code checkbox to instruct the New Project Wizard to add some basic 
+    Sample Code checkbox to instruct the New Project Wizard to add basic 
     sample code to your portlet. If you select Portlet, then you also get a 
     checkbox for instructing the wizard to launch the New Portlet Wizard after 
-    the project is created. The New Portlet Wizard guides you in the creation of 
-    a custom portlet class.
+    the project is created. The New Portlet Wizard guides you in creating 
+    custom portlet classes.
 
 8.  Unless you're creating a portlet or theme, you're done--just click *Finish* 
-    and get started developing your plugin in Liferay IDE! If you're creating a 
+    and start developing your plugin in Liferay IDE! If you're creating a 
     portlet or theme, click *Next*. 
     
     If you're creating a portlet, the second screen of the wizard is where you 
@@ -111,16 +111,17 @@ Liferay plugin project using Liferay IDE:
     you can select Liferay MVC, JSF 2.x, or Vaadin. If you select JSF 2.x here, 
     you must then click *Next* to go to the third screen of the wizard where you 
     select the JSF component suite to use. You can choose from JSF standard, 
-    ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces. 
+    ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces component suites. 
     
-    ![Figure 4: Select the portlet framework to use for your new portlet.](../../images/maven-ide-portlet-framework.png)
+    ![Figure 4: Select a portlet framework to use for your new portlet.](../../images/maven-ide-portlet-framework.png)
     
     ![Figure 5: If you're using JSF as your portlet framework, then you need to select the JSF component suite to use.](../../images/maven-ide-jsf-suite.png)
     
-    If you're creating a theme, the second screen of the New Project Wizard is 
-    for selecting the theme parent and theme framework. The Theme Parent 
-    dropdown lets you choose from `_unstyled`, `_styled`, or `classic`. The 
-    Theme Framework dropdown lets you choose from Velocity, Freemarker, or JSP. 
+    If you're creating a theme, the second screen of the New Project Wizard lets 
+    you select a theme parent and theme framework. The Theme Parent 
+    dropdown lets you choose the `_unstyled`, `_styled`, or `classic` parent theme. The 
+    Theme Framework dropdown lets you choose Velocity, Freemarker, or JSP as
+    your theme framework. 
     
     ![Figure 6: If you're creating a theme, select the theme parent and theme framework.](../../images/maven-ide-theme.png) 
 
