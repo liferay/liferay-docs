@@ -5,41 +5,68 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<h:form>
+	
 		<h:messages globalOnly="true" layout="table" />
-		<br />
-			<span class="guestbook_tab">
-				<h:outputText value=" " />
-			</span>
-			<ui:repeat rendered="#{guestbookBackingBean.hasViewPermission}" value="#{guestbookModelBean.guestbooks}" var="guestbook">
-				<span class="#{(guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
-					<h:outputText rendered="#{guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
-					<h:commandLink action="#{guestbookBackingBean.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
-						<f:ajax render="@all" />
-					</h:commandLink>
-				</span>
-			</ui:repeat>
-			<span class="guestbook_tab">
-				<h:outputText value=" " />
-			</span>
+		<h:panelGroup rendered="#{guestbookBacking.hasPermissions}">
+			<h:outputLink styleClass="btn btn-default" value="#{guestbookBacking.permissionsUrl}">
+				<h:outputText value=" #{i18n['permissions']} " />
+			</h:outputLink><br />
+		</h:panelGroup>
 		<br />
 		
-		<br />
-			<h:commandButton action="#{guestbookBackingBean.add}" rendered="#{guestbookBackingBean.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
-				<f:ajax render="@all" />
-			</h:commandButton>
-			<h:commandButton action="#{entryBackingBean.add}" rendered="#{entryBackingBean.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
-				<f:ajax render="@all" />
-			</h:commandButton>
+		<span class="guestbook_tab">
+			<h:outputText value=" " />
+		</span>
+		<ui:repeat value="#{guestbookBacking.guestbooks}" var="guestbook">
+			<h:panelGroup rendered="#{guestbook.viewable}">
+			<span class="#{(guestbook.guestbookId == guestbookBacking.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
+				<h:outputText rendered="#{guestbook.guestbookId == guestbookBacking.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
+				<h:commandLink action="#{guestbookBacking.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookBacking.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
+					<f:ajax render="@all" />
+				</h:commandLink>
+			</span>
+			</h:panelGroup>
+		</ui:repeat>
+		<span class="guestbook_tab">
+			<h:outputText value=" " />
+		</span>
 		<br />
 		
+		<div id="guestbook_buttons" style="display: inline-block">
+			<h:commandButton action="#{guestbookBacking.add}" rendered="#{guestbookBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
+				<f:ajax render="@all" />
+			</h:commandButton>
+			<h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.updateable}">
+				<h:commandButton action="#{guestbookBacking.edit(guestbookBacking.selectedGuestbook)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
+					<f:ajax render="@all" />
+				</h:commandButton>
+			</h:panelGroup>
+			<h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.deleteable}">
+				<h:commandButton action="#{guestbookBacking.delete(guestbookBacking.selectedGuestbook)}" styleClass="btn btn-default" value=" #{i18n['delete']} "
+					onclick="if (! confirm('#{i18n['are-you-sure-you-want-to-delete-this']}')) {return false;}" >
+					<f:ajax render="@all" />
+				</h:commandButton>
+			</h:panelGroup>
+			<h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.permissible}">
+				<h:outputLink styleClass="btn btn-default" value="#{guestbookBacking.selectedGuestbook.permissionsUrl}">
+					<h:outputText value=" #{i18n['permissions']} " />
+				</h:outputLink>
+			</h:panelGroup>
+		</div>
 		<br />
+		
+		<h:commandButton action="#{entryBacking.add}" rendered="#{entryBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
+			<f:ajax render="@all" />
+		</h:commandButton>
+		<br />
+		
 		<c:choose>
-			<c:when test="#{empty guestbookModelBean.entries}">
+			<c:when test="#{empty guestbookBacking.entries}">
 				<h:outputText value="#{i18n['no-entries-yet']}" />
 			</c:when>
 			<c:otherwise>
 				<h:dataTable styleClass="table table-bordered table-hover table-striped" rowClasses="table-cell "
-					value="#{guestbookModelBean.entries}" var="entry">
+					value="#{guestbookBacking.entries}" var="entry">
 					<h:column>
 						<f:facet name="header"><h:outputText value="#{i18n['message']}" /></f:facet>
 						<h:outputText value="#{entry.message}" />
@@ -50,13 +77,22 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header"><h:outputText value=" " /></f:facet>
-						<h:commandButton action="#{entryBackingBean.edit(entry)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
-							<f:ajax render="@all" />
-						</h:commandButton>
-						<h:commandButton action="#{entryBackingBean.delete(entry)}" styleClass="btn btn-default" value=" #{i18n['delete']} "
-							onclick="if (! confirm('#{i18n['are-you-sure-you-want-to-delete-this']}')) {return false;}" >
-							<f:ajax render="@all" />
-						</h:commandButton>
+						<h:panelGroup rendered="#{entry.updateable}">
+							<h:commandButton action="#{entryBacking.edit(entry)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
+								<f:ajax render="@all" />
+							</h:commandButton>
+						</h:panelGroup>
+						<h:panelGroup rendered="#{entry.deleteable}">
+							<h:commandButton action="#{entryBacking.delete(entry)}" styleClass="btn btn-default" value=" #{i18n['delete']} "
+								onclick="if (! confirm('#{i18n['are-you-sure-you-want-to-delete-this']}')) {return false;}" >
+								<f:ajax render="@all" />
+							</h:commandButton>
+						</h:panelGroup>
+						<h:panelGroup rendered="#{entry.permissible}">
+							<h:outputLink styleClass="btn btn-default" value="#{entry.permissionsUrl}">
+								<h:outputText value=" #{i18n['permissions']} " />
+							</h:outputLink>
+						</h:panelGroup>
 					</h:column>
 				</h:dataTable>
 			</c:otherwise>

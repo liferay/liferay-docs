@@ -7,10 +7,10 @@
 	<h:head />
 	<h:body>
 		<c:choose>
-			<c:when test="#{viewBean.editingGuestbook}">
+			<c:when test="#{guestbookBacking.editingGuestbook}">
 				<ui:include src="/views/guestbook.xhtml" />
 			</c:when>
-			<c:when test="#{viewBean.editingEntry}">
+			<c:when test="#{guestbookBacking.editingEntry}">
 				<ui:include src="/views/entry.xhtml" />
 			</c:when>
 			<c:otherwise>

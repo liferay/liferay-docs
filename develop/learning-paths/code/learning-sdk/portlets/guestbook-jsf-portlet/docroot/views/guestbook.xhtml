@@ -6,25 +6,25 @@
 
 	<h:form>
 		<c:choose>
-			<c:when test="#{empty guestbookModelBean.selectedGuestbook.name}">
+			<c:when test="#{empty guestbookBacking.selectedGuestbook.name}">
 				<h3>#{i18n['new-guestbook']}</h3>
 			</c:when>
 			<c:otherwise>
-				<h3>#{i18n['editing']} #{guestbookModelBean.selectedGuestbook.name}</h3>
+				<h3>#{i18n['editing']} #{guestbookBacking.selectedGuestbook.name}</h3>
 			</c:otherwise>
 		</c:choose>
 		<aui:fieldset>
 			<aui:field id="guestbookNameField" label="#{i18n['name']}">
 				<h:message for="guestbookName" />
-				<h:inputText id="guestbookName" required="true" value="#{guestbookModelBean.selectedGuestbook.name}">
+				<h:inputText id="guestbookName" required="true" value="#{guestbookBacking.selectedGuestbook.name}">
 					<f:ajax render="guestbookNameField" />
 				</h:inputText>
 			</aui:field>
 		</aui:fieldset>
-		<h:commandButton action="#{guestbookBackingBean.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+		<h:commandButton action="#{guestbookBacking.save}" styleClass="btn btn-default" value="#{i18n['save']}">
 			<f:ajax execute="@form" render="@all" />
 		</h:commandButton>
-		<h:commandButton action="#{guestbookBackingBean.cancel}" styleClass="btn btn-default" value="#{i18n['cancel']}">
+		<h:commandButton action="#{guestbookBacking.cancel}" styleClass="btn btn-default" value="#{i18n['cancel']}">
 			<f:ajax render="@all" />
 		</h:commandButton>
 	</h:form>
