@@ -26,20 +26,20 @@ var messageDiv = A.one('#messages');
 var message = A.one('#<portlet:namespace/>message');
 
 button.on('click', function(event) {
-	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="use" onclick="set();"/>');
-	messageDiv.append('<p id="con2">Best Wishes!</p><input type="button" value="use" onclick="set2();"/>');
-	messageDiv.append('<p id="con3">Had a lot of fun!</p><input type="button" value="use" onclick="set3();"/>');
+	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="Use" onclick="set();"/>');
+	messageDiv.append('<p id="con2">Best wishes!</p><input type="button" value="Use" onclick="set2();"/>');
+	messageDiv.append('<p id="con3">Have lots of fun!</p><input type="button" value="Use" onclick="set3();"/>');
 });
 
-set = function(){
+set = function() {
 	message.val(messageDiv.one('#con').html());
 
 };
-set2 = function(){
+set2 = function() {
 	message.val(messageDiv.one('#con2').html());
 
 };
-set3 = function(){
+set3 = function() {
 	message.val(messageDiv.one('#con3').html());
 
 };
