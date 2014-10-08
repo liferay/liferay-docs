@@ -119,7 +119,7 @@ password *liferay* does nicely), answer the security question, and you're done.
 
 Your runtime is now set up. Next, you need to register your Plugins SDK. 
 
-1. Select *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
+1. Select *Eclipse* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
 SDKs*. 
 
 2. Click *Add*. Browse to the folder where you unzipped the Plugins SDK and
