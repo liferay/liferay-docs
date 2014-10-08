@@ -33,15 +33,14 @@ button.on('click', function(event) {
 
 set = function() {
 	message.val(messageDiv.one('#con').html());
-
 };
+
 set2 = function() {
 	message.val(messageDiv.one('#con2').html());
-
 };
+
 set3 = function() {
 	message.val(messageDiv.one('#con3').html());
-
 };
 </aui:script>
 
