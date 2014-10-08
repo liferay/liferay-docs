@@ -26,9 +26,9 @@ var messageDiv = A.one('#messages');
 var message = A.one('#<portlet:namespace/>message');
 
 button.on('click', function(event) {
-	messageDiv.append('<p id="con">Congratulations!</p><input type="button" value="Use" onclick="set();"/>');
-	messageDiv.append('<p id="con2">Best wishes!</p><input type="button" value="Use" onclick="set2();"/>');
-	messageDiv.append('<p id="con3">Have lots of fun!</p><input type="button" value="Use" onclick="set3();"/>');
+	messageDiv.append('<p id="con">Congratulations!</p><p><input type="button" value="Use" onclick="set();"/></p>');
+	messageDiv.append('<p id="con2">Best wishes!</p><p><input type="button" value="Use" onclick="set2();"/></p>');
+	messageDiv.append('<p id="con3">Have lots of fun!</p><p><input type="button" value="Use" onclick="set3();"/></p>');
 });
 
 set = function() {
@@ -63,21 +63,23 @@ if (entryId > 0) {
             <aui:input name="name" >
             	<aui:validator name="required"/>
             </aui:input>
+            
             <aui:input name="email" >
             	<aui:validator name="email"/>
             	<aui:validator name="required"/>
             </aui:input>
-            <aui:input id="message" cssClass="message" type="textarea" name="message">
-            	<aui:validator name="required" errorMessage="Leave a message please." />
-            </aui:input>
+            
             <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
-
-            <div id="buttonWrapper">
-            	<p><aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button></p>
-            </div>
+            <aui:input id="message" cssClass="message" type="textarea" name="message">
+            	<aui:validator name="required" errorMessage="Please enter a message." />
+            </aui:input>
+            
+            <div id="buttonWrapper"><p><aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button></p></div>
+            
             <div id="messages"></div>
             
             <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+            
             <aui:input name="entryId" type="hidden" />
         </aui:fieldset>
         
@@ -102,6 +104,7 @@ if (entryId > 0) {
 
         <aui:button-row>
 			<aui:button type="submit" id="save"></aui:button>
+			
 			<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
         </aui:button-row>
 </aui:form>
