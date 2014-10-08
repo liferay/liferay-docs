@@ -21,17 +21,29 @@ AUI().use(
 </aui:script>
 
 <aui:script use="node, event">
-var generateButton = A.one('#generateMessageButton');
-var messageDiv = A.one('#messages');
-var message1Div = A.one('#message1');
-var message2Div = A.one('#message2');
-var message3Div = A.one('#message3');
+var generateButton = A.one('#generateMessagesButton');
+var hideButton = A.one('#hideMessagesButton');
+
+var message1Div = A.one('#message1Div');
+var message2Div = A.one('#message2Div');
+var message3Div = A.one('#message3Div');
+
+var message1 = A.one('#message1');
+var message2 = A.one('#message2');
+var message3 = A.one('#message3');
+
 var message = A.one('#<portlet:namespace/>message');
 
 generateButton.on('click', function(event) {
-	message1Div.append('<p class="message" id="message1">Congratulations!</p><p><input onclick="set1();" class="use-message" type="button" value="Use" /></p>');
-	message2Div.append('<p class="message" id="message2">Best wishes!</p><p><input onclick="set2();" class="use-message" type="button" value="Use" /></p>');
-	message3Div.append('<p class="message" id="message3">Have lots of fun!</p><p><input onclick="set3();" class="use-message" type="button" value="Use" /></p>');
+	message1Div.replaceChild('<p class="message" id="message1">Congratulations!</p><p><input onclick="set1();" class="use-message" type="button" value="Use" /></p>', message1);
+	message2Div.replaceChild('<p class="message" id="message2">Best wishes!</p><p><input onclick="set2();" class="use-message" type="button" value="Use" /></p>', message2);
+	message3Div.replaceChild('<p class="message" id="message3">Have lots of fun!</p><p><input onclick="set3();" class="use-message" type="button" value="Use" /></p>', message3);
+});
+
+hideButton.on('click', function(event) {
+	message1Div.replaceChild('<p class="message" id="message1"></p>', message1);
+	message2Div.replaceChild('<p class="message" id="message2"></p>', message2);
+	message3Div.replaceChild('<p class="message" id="message3"></p>', message3);
 });
 
 set1 = function() {
@@ -75,10 +87,10 @@ if (entryId > 0) {
             <aui:input id="message" cssClass="message" type="textarea" name="message">
             	<aui:validator name="required" errorMessage="Please enter a message." />
             </aui:input>
-            
+           
             <div id="buttonWrapper">
 	            <aui:button-row>
-	            	<aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button>
+	            	<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
 	            	<aui:button id="hideMessagesButton" value="Hide Sample Messages"></aui:button>
 	            </aui:button-row>
             </div>
@@ -86,15 +98,15 @@ if (entryId > 0) {
             <div id="messages">
 	            <aui:layout>
 		            <aui:column>
-		            	<div id="message1"></div>
+		            	<div id="message1Div"><p class="message" id="message1">Congratulations!</p></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		           		<div id="message2"></div>
+		           		<div id="message2Div"><p class="message" id="message2">Best wishes!</p></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		            	<div id="message3"></div>
+		            	<div id="message3Div"><p class="message" id="message3">Have lots of fun!</p></div>
 		            </aui:column>
 	            </aui:layout>
             </div>
