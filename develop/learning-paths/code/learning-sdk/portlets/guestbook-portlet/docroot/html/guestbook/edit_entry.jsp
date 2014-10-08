@@ -21,26 +21,29 @@ AUI().use(
 </aui:script>
 
 <aui:script use="node, event">
-var button = A.one('#generateMessageButton');
+var generateButton = A.one('#generateMessageButton');
 var messageDiv = A.one('#messages');
+var message1Div = A.one('#message1');
+var message2Div = A.one('#message2');
+var message3Div = A.one('#message3');
 var message = A.one('#<portlet:namespace/>message');
 
-button.on('click', function(event) {
-	messageDiv.append('<p id="con">Congratulations!</p><p><input type="button" value="Use" onclick="set();"/></p>');
-	messageDiv.append('<p id="con2">Best wishes!</p><p><input type="button" value="Use" onclick="set2();"/></p>');
-	messageDiv.append('<p id="con3">Have lots of fun!</p><p><input type="button" value="Use" onclick="set3();"/></p>');
+generateButton.on('click', function(event) {
+	message1Div.append('<p class="message" id="message1">Congratulations!</p><p><input onclick="set1();" class="use-message" type="button" value="Use" /></p>');
+	message2Div.append('<p class="message" id="message2">Best wishes!</p><p><input onclick="set2();" class="use-message" type="button" value="Use" /></p>');
+	message3Div.append('<p class="message" id="message3">Have lots of fun!</p><p><input onclick="set3();" class="use-message" type="button" value="Use" /></p>');
 });
 
-set = function() {
-	message.val(messageDiv.one('#con').html());
+set1 = function() {
+	message.val(message1Div.one('#message1').html());
 };
 
 set2 = function() {
-	message.val(messageDiv.one('#con2').html());
+	message.val(message2Div.one('#message2').html());
 };
 
 set3 = function() {
-	message.val(messageDiv.one('#con3').html());
+	message.val(message3Div.one('#message3').html());
 };
 </aui:script>
 
@@ -73,9 +76,28 @@ if (entryId > 0) {
             	<aui:validator name="required" errorMessage="Please enter a message." />
             </aui:input>
             
-            <div id="buttonWrapper"><p><aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button></p></div>
+            <div id="buttonWrapper">
+	            <aui:button-row>
+	            	<aui:button id="generateMessageButton" value="Generate Sample Messages"></aui:button>
+	            	<aui:button id="hideMessagesButton" value="Hide Sample Messages"></aui:button>
+	            </aui:button-row>
+            </div>
             
-            <div id="messages"></div>
+            <div id="messages">
+	            <aui:layout>
+		            <aui:column>
+		            	<div id="message1"></div>
+		            </aui:column>
+		            
+		            <aui:column>
+		           		<div id="message2"></div>
+		            </aui:column>
+		            
+		            <aui:column>
+		            	<div id="message3"></div>
+		            </aui:column>
+	            </aui:layout>
+            </div>
             
             <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
             
