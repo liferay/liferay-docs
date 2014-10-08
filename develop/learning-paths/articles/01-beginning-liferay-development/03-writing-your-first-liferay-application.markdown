@@ -667,7 +667,47 @@ correct, change it to `entry`, and then click *Finish*.
             results="<%= entries %>"
         />
 
-You're done! Save your work, deploy your application, and try adding some
+7.   Open the Snippets tab on the right side of Liferay IDE, and expand the Taglib Imports category.
+
+8.   Drag the snippet labeled Liferay UI Taglib Import from the snippet area to the line beneath the existing taglib import in view.jsp. The following code gets added to view.jsp:
+
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+	This declares that we want to use Liferay’s UI tags and will correct the hghlighted missing taglib warnings that you 		are seeing on the page.
+
+You're done! it should look like this:
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+    <portlet:defineObjects />
+    <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
+
+    <liferay-ui:search-container>
+    	<liferay-ui:search-container-results
+		results="<%= entries %>"
+	/>
+	
+	<liferay-ui:search-container-row
+		className="com.liferay.docs.guestbook.model.Entry"
+		modelVar="entry"
+	>
+	
+	</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+    
+    <aui:button-row cssClass="guestbook-buttons">
+	<portlet:renderURL var="addEntryURL">
+		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
+	</portlet:renderURL>
+	
+	<aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+    </aui:button-row>
+
+
+Save your work, deploy your application, and try adding some
 guestbook entries. 
 
 ## Next Steps 
