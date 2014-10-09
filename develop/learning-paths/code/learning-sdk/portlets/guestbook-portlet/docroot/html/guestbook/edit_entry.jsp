@@ -40,29 +40,30 @@ generateMessagesButton.on('click', function(event) {
 		'You did it!',
 		"Wow!"
 	];
+
+	if (message1Div.hasChildNodes()) {
+		message1Div.get('children').remove(true);
+	}
 	
 	var rand1 = Math.floor(Math.random() * entryMessages.length);
-
-	if (!message1Div.hasChildNodes()) {	
-		message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
-	}
-	
+	message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
 	entryMessages.splice(rand1, 1);
 	
-	var rand2 = Math.floor(Math.random() * entryMessages.length);
-	
-	if (!message2Div.hasChildNodes()) {
-		message2Div.append('<p class="message" id="message2">' + entryMessages[rand2] + '</p><p id="use-message2"><input class="btn" onclick="useMessage2();" type="button" value="Use Message" /></p>');
+	if (message2Div.hasChildNodes()) {
+		message2Div.get('children').remove(true);
 	}
 	
+	var rand2 = Math.floor(Math.random() * entryMessages.length);
+	message2Div.append('<p class="message" id="message2">' + entryMessages[rand2] + '</p><p id="use-message2"><input class="btn" onclick="useMessage2();" type="button" value="Use Message" /></p>');
 	entryMessages.splice(rand2, 1);
 	
-	var rand3 = Math.floor(Math.random() * entryMessages.length);
-	
-	if (!message3Div.hasChildNodes()) {
-		message3Div.append('<p class="message" id="message3">' + entryMessages[rand3] + '</p><p id="use-message3"><input class="btn" onclick="useMessage3();" type="button" value="Use Message" /></p>');
+	if (message3Div.hasChildNodes()) {
+		message3Div.get('children').remove(true);
 	}
 	
+	var rand3 = Math.floor(Math.random() * entryMessages.length);
+	message3Div.append('<p class="message" id="message3">' + entryMessages[rand3] + '</p><p id="use-message3"><input class="btn" onclick="useMessage3();" type="button" value="Use Message" /></p>');
+
 	var buttonHolder = A.one('.button-holder');
 
 	if (A.one('#buttonWrapper').contains(buttonHolder)) {
