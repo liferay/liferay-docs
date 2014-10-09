@@ -24,49 +24,45 @@ AUI().use(
 var generateButton = A.one('#generateMessagesButton');
 var hideButton = A.one('#hideMessagesButton');
 
-var message1Div = A.one('#message1Div');
-var message2Div = A.one('#message2Div');
-var message3Div = A.one('#message3Div');
-
-var message1 = A.one('#message1');
-var message2 = A.one('#message2');
-var message3 = A.one('#message3');
+var message1Div = A.one('#message1-div');
+var message2Div = A.one('#message2-div');
+var message3Div = A.one('#message3-div');
 
 var message = A.one('#<portlet:namespace/>message');
 
 generateButton.on('click', function(event) {
 	if(!message1Div.hasChildNodes()) {
-		message1Div.append('<p class="message" id="message1">Congratulations!</p><p class="use-message" id="use-message1"><input onclick="set1();" type="button" value="Use" /></p>');
+		message1Div.append('<p class="message" id="message1">Congratulations!</p><p class="use-message" id="use-message1"><input onclick="set1();" type="button" value="Use Message" /></p>');
 	}
 	
 	if(!message2Div.hasChildNodes()) {
-		message2Div.append('<p class="message" id="message2">Best wishes!</p><p class="use-message" id="use-message2"><input onclick="set2();" type="button" value="Use" /></p>');
+		message2Div.append('<p class="message" id="message2">Best wishes!</p><p class="use-message" id="use-message2"><input onclick="set2();" type="button" value="Use Message" /></p>');
 	}
 	
 	if(!message3Div.hasChildNodes()) {
-		message3Div.append('<p class="message" id="message3">Have lots of fun!</p><p class="use-message" id="use-message3"><input onclick="set3();" type="button" value="Use" /></p>');
+		message3Div.append('<p class="message" id="message3">Have fun!</p><p class="use-message" id="use-message3"><input onclick="set3();" type="button" value="Use Message" /></p>');
 	}
 });
 
 hideButton.on('click', function(event) {
-	A.one('#message1Div').removeChild(A.one('#message1'));
-	A.one('#message1Div').removeChild(A.one('#use-message1'));
-	A.one('#message2Div').removeChild(A.one('#message2'));
-	A.one('#message2Div').removeChild(A.one('#use-message2'));
-	A.one('#message3Div').removeChild(A.one('#message3'));
-	A.one('#message3Div').removeChild(A.one('#use-message3'));
+	A.one('#message1-div').removeChild(A.one('#message1'));
+	A.one('#message1-div').removeChild(A.one('#use-message1'));
+	A.one('#message2-div').removeChild(A.one('#message2'));
+	A.one('#message2-div').removeChild(A.one('#use-message2'));
+	A.one('#message3-div').removeChild(A.one('#message3'));
+	A.one('#message3-div').removeChild(A.one('#use-message3'));
 });
 
 set1 = function() {
-	message.val(A.one('#message1Div').one('#message1').html());
+	message.val(A.one('#message1-div').one('#message1').html());
 };
 
 set2 = function() {
-	message.val(A.one('#message2Div').one('#message2').html());
+	message.val(A.one('#message2-div').one('#message2').html());
 };
 
 set3 = function() {
-	message.val(A.one('#message3Div').one('#message3').html());
+	message.val(A.one('#message3-div').one('#message3').html());
 };
 </aui:script>
 
@@ -109,15 +105,15 @@ if (entryId > 0) {
             <div id="messages">
 	            <aui:layout>
 		            <aui:column>
-		            	<div id="message1Div"></div>
+		            	<div id="message1-div"></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		           		<div id="message2Div"></div>
+		           		<div id="message2-div"></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		            	<div id="message3Div"></div>
+		            	<div id="message3-div"></div>
 		            </aui:column>
 	            </aui:layout>
             </div>
