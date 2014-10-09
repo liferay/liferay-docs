@@ -287,5 +287,5 @@ performance.
 
 [Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
 
-[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/6-2/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets)
 

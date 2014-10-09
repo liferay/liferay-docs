@@ -1,4 +1,4 @@
-# OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en)
+# OpenSocial Gadgets [](id=opensocial-gadgets)
 
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and JavaScript. It was originally

@@ -126,7 +126,7 @@ discussed on this page.
 <a href="/develop/tutorials/-/knowledge_base/6-2/maven" >Developing with Maven</a>
 </td>
 <td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/creating-and-integrating-with-opensocial-liferay-portal-6-2-dev-guide-08-en" >OpenSocial Gadgets</a>
+<a href="/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets" >OpenSocial Gadgets</a>
 </td>
 </tr>
 </table>
