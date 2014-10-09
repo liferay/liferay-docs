@@ -1186,7 +1186,7 @@ asset in the Asset Publisher.
 Once you select an asset, its related assets are displayed in the Related Assets
 portlet, as in the image above.
 
-## Using the Audience Targeting Application
+## Using the Audience Targeting Application [](id=using-the-audience-targeting-applicatio-liferay-portal-6-2-user-guide-06-en)
 
 Liferay's Audience Targeting application allows your organization to configure
 different assets to be displayed to different categories of users. Maybe you'd
@@ -1214,13 +1214,11 @@ explain how to use the *Audience Targeting* section of the Configuration section
 of the Site Administration area of the Control Panel to create user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting portlets.
 
-### Managing User Segments and Campaigns
+### Managing User Segments and Campaigns [](id=managing-user-segments-and-campaigns-liferay-portal-6-2-user-guide-06-en)
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to create user segments and
 campaigns.
-
-![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns.](../../images/audience-targeting.png)
 
 A user segment represents a subset of the total group of portal users. In order
 for a user segment to be useful, you need to configure one or more rules for it.
@@ -1285,7 +1283,7 @@ for [user segment|campaign] content were found* message appears. Click on the
 report displays a list of the assets that have been targeted to the user segment
 or campaign along with a graph that displays the number of views of each asset.
 
-![Figure 6.x: Site Administrators can generate reports that display the total number of views of each asset that has been targeted to a user segment or has been associated with a campaign.](../../images/user-segment-report.png)
+![Figure 6.20: Site Administrators can generate reports that display the total number of views of each asset that has been targeted to a user segment or has been associated with a campaign.](../../images/user-segment-report.png)
 
 When you click *Actions* &rarr; *Reports* for a newly created user segment or
 campaign, a *No reports for user segment content were found* message appears.
@@ -1295,7 +1293,7 @@ reports. To select specific assets to display to different user segments or
 campaigns, use the Audience targeting portlets. In the next section, we explain
 how to use and configure these portlets.
 
-### Using the Audience Targeting Portlets
+### Using the Audience Targeting Portlets [](id=using-the-audience-targeting-portlets-liferay-portal-6-2-user-guide-06-en)
 
 The Audience Targeting app not only adds the Audience Targeting portlet to the
 Site Administration area of the Control Panel, it also includes the following
@@ -1320,7 +1318,7 @@ the last *if* clause so that the portlet knows what to display if the user
 doesn't match any user segments. *Don't display anything* is an option for the
 *otherwise* clause.
 
-![Figure 6.x: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-config.png)
+![Figure 6.21: You can configure the User Segment Content Display portlet to display content according to rules that you define in the portlet's configuration window.](../../images/user-segment-content-display-config.png)
 
 For example, you can add a User Segment Content Display portlet to a page and
 configure the following rules for it:
@@ -1348,7 +1346,7 @@ created, a corresponding category (i.e., a category with the same name as the
 user segment) is also created. When creating or editing assets, content authors
 can apply any of the categories that correspond to existing user segments.
 
-![Figure 6.x: The User Segment Content List portlet displays content that matches the user segments which fit the current user. You can configure the User Segment Content List portlet to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
+![Figure 6.22: The User Segment Content List portlet displays content that matches the user segments which fit the current user. You can configure the User Segment Content List portlet to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
 
 By default, the User Segment Content List portlet is configured to display
 assets of any type that have been categorized with the category of a user
@@ -1373,7 +1371,7 @@ As with the User Segment Content Display portlet, you can specify any number of
 *otherwise* clause always follows the last *if* clause so the Campaign Content
 Display portlet knows what to display if the user doesn't match any campaigns.
 
-![Figure 6.x: The rules for configuring the Campaign Content Display portlet to
+![Figure 6.23: The rules for configuring the Campaign Content Display portlet to
 display content are similar to the rules of the User Segment Content Display
 portlet, but simpler.](../../images/campaign-content-display-config.png)
 

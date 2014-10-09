@@ -1,4 +1,4 @@
-# Targeting Content To Your Audience
+# Targeting Content To Your Audience [](id=targeting-content-to-your-audience-liferay-portal-6-2-user-guide-07-en)
 
 Liferay's Audience Targeting app allows you to divide your audience into user
 segments, target specific content to different user segments, and create
@@ -43,7 +43,7 @@ of the Site Administration area of the Control Panel to manage user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting
 applications and the Audience Targeting Simulator.
 
-## Managing User Segments
+## Managing User Segments [](id=managing-user-segments-liferay-portal-6-2-user-guide-07-en)
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
@@ -77,7 +77,7 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-### User Segment Rules
+### User Segment Rules [](id=user-segment-rules-liferay-portal-6-2-user-guide-07-en)
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating Custom Audience Targeting Rules](https://www.liferay.com) tutorial for
@@ -123,7 +123,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-### Categorizing Pages and Content for User Segments
+### Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-liferay-portal-6-2-user-guide-07-en)
 
 Each new user segment that's created can be used to categorize pages or content.
 
@@ -150,7 +150,7 @@ segments are distinct from regular vocabularies. The Categorization section of
 pages and assets contains distinct select buttons for user segments and regular
 vocabularies.
 
-### Managing User Segment Reports
+### Managing User Segment Reports [](id=managing-user-segment-reports-liferay-portal-6-2-user-guide-07-en)
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click
@@ -167,7 +167,7 @@ tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update Report* button in the top right corner.
 
-## Managing Campaigns
+## Managing Campaigns [](id=managing-campaigns-liferay-portal-6-2-user-guide-07-en)
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,
@@ -210,7 +210,7 @@ To configure permissions for creating, editing, and deleting campaigns, visit
 the Roles section of the Control Panel and search for *Audience Targeting
 Resources*.
 
-### Managing Campaign Priorities
+### Managing Campaign Priorities [](id=managing-campaign-priorities-liferay-portal-6-2-user-guide-07-en)
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display
@@ -225,7 +225,7 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-### Defining Tracking Actions
+### Defining Tracking Actions [](id=defining-tracking-actions-liferay-portal-6-2-user-guide-07-en)
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
@@ -265,7 +265,7 @@ Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
 users) can be a very heavy load for your server. Therefore, it's best to disable
 the tracking of any actions about which you don't need information.
 
-### Campaign Reports
+### Campaign Reports [](id=campaign-reports-liferay-portal-6-2-user-guide-07-en)
 
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be
@@ -295,7 +295,7 @@ registration form, etc. This information helps you measure the effectiveness of
 your campaign. You can use this information to evaluate whether or not the users
 are following the engagement path you had prepared.
 
-## Using the Audience Targeting Applications
+## Using the Audience Targeting Applications [](id=using-the-audience-targeting-applicatio-liferay-portal-6-2-user-guide-07-en)
 
 The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
@@ -310,7 +310,7 @@ site administrators can customize the look and feel of the application. Any of
 Liferay Portal's out-of-the-box Asset Publisher ADTs can actually be re-used for
 these Audience Targeting applications.
 
-### User Segment Content Display
+### User Segment Content Display [](id=user-segment-content-display-liferay-portal-6-2-user-guide-07-en)
 
 The User Segment Content Display application allows administrators to specify
 exactly which content to display to a user based on the user segments that the
@@ -351,7 +351,7 @@ The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
 different user segments.
 
-### User Segment Content List
+### User Segment Content List [](id=user-segment-content-list-liferay-portal-6-2-user-guide-07-en)
 
 The User Segment Content List application displays content that has been
 categorized for the user segments that match the user segments to which the
@@ -372,7 +372,7 @@ application to display only assets of specific types. For example, you can
 configure the User Segment Content List application to only display web content
 articles and documents.
 
-### Campaign Content Display
+### Campaign Content Display [](id=campaign-content-display-liferay-portal-6-2-user-guide-07-en)
 
 The Campaign Content Display application is similar to the User Segment Content
 Display application except that instead of displaying an asset based on the user
@@ -418,7 +418,7 @@ The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
 
-## Simulating User Segments and Campaigns
+## Simulating User Segments and Campaigns [](id=simulating-user-segments-and-campaigns-liferay-portal-6-2-user-guide-07-en)
 
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
@@ -458,7 +458,7 @@ campaigns and all unmatched campaigns. It does not offer a *Simulate* option
 yet. However, since campaigns target specific user segments, it's easy to
 simulate how your site would look if certain campaigns were matched.
 
-## Liferay Audience Targeting Rules Reference
+## Liferay Audience Targeting Rules Reference [](id=liferay-audience-targeting-rules-refere-liferay-portal-6-2-user-guide-07-en)
 
 Rules enable Audience Targeting administrators to define how users are
 classified into the user segments they create.
@@ -468,7 +468,7 @@ conditions. Rules can be configured and combined differently for each user
 segment to create a very specific classification algorithm. A user must match
 all rules in a user segment to be classified into it.
 
-### Behavior Rules
+### Behavior Rules [](id=behavior-rules-liferay-portal-6-2-user-guide-07-en)
 
 These rules allow to classify users based on their navigation behavior.
 
@@ -478,20 +478,20 @@ Audience Targeting Analytics (for portal level configuration) or in
 Control Panel > Site Settings > Audience Targeting Analytics (for site level
 configuration).
 
-#### Content Visited
+#### Content Visited [](id=content-visited-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has visited the selected content.
 
-#### Page Visited
+#### Page Visited [](id=page-visited-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has visited the selected page.
 
-#### Score Points
+#### Score Points [](id=score-points-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has visited any page or content categorized under this
 user segment a number of times equals or higher than the configured threshold.
 
-### Social Rules
+### Social Rules [](id=social-rules-liferay-portal-6-2-user-guide-07-en)
 
 These rules allow to classify users based on their profiles in social networks
 (e.g. Facebook).
@@ -520,79 +520,79 @@ Read the [Liferay User Guide]
 (https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/integrating-existing-users-into-liferay-liferay-portal-6-2-user-guide-17-en)
 for more information.
 
-#### Facebook Age
+#### Facebook Age [](id=facebook-age-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the age in the user's Facebook profile is in the configured range.
 
-#### Facebook City
+#### Facebook City [](id=facebook-city-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the city in the user's Facebook profile matches the configured
 value.
 
-#### Facebook Education
+#### Facebook Education [](id=facebook-education-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the education in the user's Facebook profile matches the configured
 values.
 
-#### Facebook Friends
+#### Facebook Friends [](id=facebook-friends-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has more or less friends in Facebook than the selected
 value.
 
-#### Facebook Gender
+#### Facebook Gender [](id=facebook-gender-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the gender in the user's Facebook profile matches the selected
 value.
 
-#### Facebook Page Like
+#### Facebook Page Like [](id=facebook-page-like-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user likes the configured Facebook page.
 
-### User Attributes Rules
+### User Attributes Rules [](id=user-attributes-rules-liferay-portal-6-2-user-guide-07-en)
 
 These rules allow to classify users based on the attributes.
 
 These rules will not work properly if the corresponding attributes are not
 available. Follow the given instructions for each rules in such cases.
 
-#### Age
+#### Age [](id=age-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the age in the user's profile is in the configured range.
 
-#### Gender
+#### Gender [](id=gender-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the gender in the user's profile matches the selected value.
 
-#### Regular Role
+#### Regular Role [](id=regular-role-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has the selected regular role assigned.
 
-#### Site Member
+#### Site Member [](id=site-member-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is member of the selected site.
 
-#### Site Role
+#### Site Role [](id=site-role-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has the selected role assigned in the selected site.
 
-#### Organization Member
+#### Organization Member [](id=organization-member-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is member of the selected organization.
 
-#### Organization Role
+#### Organization Role [](id=organization-role-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user has the selected role assigned in the selected
 organization.
 
-#### User Group Member
+#### User Group Member [](id=user-group-member-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is member of the selected user group.
 
-#### User Signed In
+#### User Signed In [](id=user-signed-in-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is signed in in the portal.
 
-### Session Attributes Rules
+### Session Attributes Rules [](id=session-attributes-rules-liferay-portal-6-2-user-guide-07-en)
 
 These rules allow to classify users based on their session attributes. Session
 attributes usually refer to the context in which the user accesses.
@@ -601,27 +601,27 @@ These rules will not work properly if the corresponding session attributes
 are retrieved through any tools that are not currently available or properly
 configured. Follow the given instructions for each rules in such cases.
 
-#### Browser
+#### Browser [](id=browser-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is accessing with the selected browser.
 
-#### Device
+#### Device [](id=device-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is accessing with the selected device.
 
 This rule is based on the existing Device Families. To manage Device Families go
 to Site Administration > Configuration > Mobile Device Families.
 
-#### Location
+#### Location [](id=location-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is accessing from a country and region that match the
 configured values.
 
-#### Operating System
+#### Operating System [](id=operating-system-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is accessing with the selected Operating System.
 
-#### Time
+#### Time [](id=time-liferay-portal-6-2-user-guide-07-en)
 
 Evaluates if the user is accessing at a time that is within the configured
 range.
