@@ -22,13 +22,13 @@ Throughout these tutorials, we'll show you how to develop plugins in three
 environments that use open source technologies 1) An Ant-based command-line
 environment that integrates with a wide variety of tools. 2) An easy-to-use IDE
 that minimizes your learning curve while giving you powerful development
-features. 3) An widely adopted project management system called Maven. The
+features. 3) A widely adopted project management system called Maven. The
 Liferay Developer Network provides learning paths and tutorials that teach you
 how to use these three environments. 
 
-If I don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA or other
-another IDE, there are many IDEs available, and each one has its strengths. You
-can develop portal apps in whatever environment you like. 
+If you don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA, or another
+IDE, there are many IDEs available, and each one has its strengths. You can
+develop portal apps in whatever environment you like. 
 
 #### Developing Liferay Applications
 
