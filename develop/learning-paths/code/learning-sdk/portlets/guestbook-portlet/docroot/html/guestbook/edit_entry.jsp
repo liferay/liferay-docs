@@ -35,27 +35,38 @@ var message3 = A.one('#message3');
 var message = A.one('#<portlet:namespace/>message');
 
 generateButton.on('click', function(event) {
-	message1Div.replaceChild('<p class="message" id="message1">Congratulations!</p><p><input onclick="set1();" class="use-message" type="button" value="Use" /></p>', message1);
-	message2Div.replaceChild('<p class="message" id="message2">Best wishes!</p><p><input onclick="set2();" class="use-message" type="button" value="Use" /></p>', message2);
-	message3Div.replaceChild('<p class="message" id="message3">Have lots of fun!</p><p><input onclick="set3();" class="use-message" type="button" value="Use" /></p>', message3);
+	if(!message1Div.hasChildNodes()) {
+		message1Div.append('<p class="message" id="message1">Congratulations!</p><p class="use-message" id="use-message1"><input onclick="set1();" type="button" value="Use" /></p>');
+	}
+	
+	if(!message2Div.hasChildNodes()) {
+		message2Div.append('<p class="message" id="message2">Best wishes!</p><p class="use-message" id="use-message2"><input onclick="set2();" type="button" value="Use" /></p>');
+	}
+	
+	if(!message3Div.hasChildNodes()) {
+		message3Div.append('<p class="message" id="message3">Have lots of fun!</p><p class="use-message" id="use-message3"><input onclick="set3();" type="button" value="Use" /></p>');
+	}
 });
 
 hideButton.on('click', function(event) {
-	message1Div.replaceChild('<p class="message" id="message1"></p>', message1);
-	message2Div.replaceChild('<p class="message" id="message2"></p>', message2);
-	message3Div.replaceChild('<p class="message" id="message3"></p>', message3);
+	A.one('#message1Div').removeChild(A.one('#message1'));
+	A.one('#message1Div').removeChild(A.one('#use-message1'));
+	A.one('#message2Div').removeChild(A.one('#message2'));
+	A.one('#message2Div').removeChild(A.one('#use-message2'));
+	A.one('#message3Div').removeChild(A.one('#message3'));
+	A.one('#message3Div').removeChild(A.one('#use-message3'));
 });
 
 set1 = function() {
-	message.val(message1Div.one('#message1').html());
+	message.val(A.one('#message1Div').one('#message1').html());
 };
 
 set2 = function() {
-	message.val(message2Div.one('#message2').html());
+	message.val(A.one('#message2Div').one('#message2').html());
 };
 
 set3 = function() {
-	message.val(message3Div.one('#message3').html());
+	message.val(A.one('#message3Div').one('#message3').html());
 };
 </aui:script>
 
@@ -98,15 +109,15 @@ if (entryId > 0) {
             <div id="messages">
 	            <aui:layout>
 		            <aui:column>
-		            	<div id="message1Div"><p class="message" id="message1">Congratulations!</p></div>
+		            	<div id="message1Div"></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		           		<div id="message2Div"><p class="message" id="message2">Best wishes!</p></div>
+		           		<div id="message2Div"></div>
 		            </aui:column>
 		            
 		            <aui:column>
-		            	<div id="message3Div"><p class="message" id="message3">Have lots of fun!</p></div>
+		            	<div id="message3Div"></div>
 		            </aui:column>
 	            </aui:layout>
             </div>
