@@ -22,7 +22,6 @@ AUI().use(
 
 <aui:script use="node, event">
 var generateButton = A.one('#generateMessagesButton');
-var hideButton = A.one('#hideMessagesButton');
 
 var message1Div = A.one('#message1-div');
 var message2Div = A.one('#message2-div');
@@ -31,26 +30,42 @@ var message3Div = A.one('#message3-div');
 var message = A.one('#<portlet:namespace/>message');
 
 generateButton.on('click', function(event) {
-	if(!message1Div.hasChildNodes()) {
+	if (!message1Div.hasChildNodes()) {
 		message1Div.append('<p class="message" id="message1">Congratulations!</p><p id="use-message1"><input class="btn" onclick="set1();" type="button" value="Use Message" /></p>');
 	}
 	
-	if(!message2Div.hasChildNodes()) {
+	if (!message2Div.hasChildNodes()) {
 		message2Div.append('<p class="message" id="message2">Best wishes!</p><p id="use-message2"><input class="btn" onclick="set2();" type="button" value="Use Message" /></p>');
 	}
 	
-	if(!message3Div.hasChildNodes()) {
+	if (!message3Div.hasChildNodes()) {
 		message3Div.append('<p class="message" id="message3">Have fun!</p><p id="use-message3"><input class="btn" onclick="set3();" type="button" value="Use Message" /></p>');
 	}
-});
+	
+	var buttonHolder = A.one('.button-holder');
 
-hideButton.on('click', function(event) {
-	A.one('#message1-div').removeChild(A.one('#message1'));
-	A.one('#message1-div').removeChild(A.one('#use-message1'));
-	A.one('#message2-div').removeChild(A.one('#message2'));
-	A.one('#message2-div').removeChild(A.one('#use-message2'));
-	A.one('#message3-div').removeChild(A.one('#message3'));
-	A.one('#message3-div').removeChild(A.one('#use-message3'));
+	if (A.one('#buttonWrapper').contains(buttonHolder)) {
+		if (buttonHolder.get('children').size() < 2) {
+			buttonHolder.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
+		}
+	}
+	
+	var hideButton = A.one('#hideMessagesButton');
+	
+	hideButton.on('click', function(event) {
+		A.one('#message1-div').removeChild(A.one('#message1'));
+		A.one('#message1-div').removeChild(A.one('#use-message1'));
+		A.one('#message2-div').removeChild(A.one('#message2'));
+		A.one('#message2-div').removeChild(A.one('#use-message2'));
+		A.one('#message3-div').removeChild(A.one('#message3'));
+		A.one('#message3-div').removeChild(A.one('#use-message3'));
+		
+		buttonHolder = A.one('.button-holder');
+		
+		if (A.one('#buttonWrapper').contains(buttonHolder)) {
+			buttonHolder.removeChild(A.one('#hideMessagesButton'));
+		}
+	});
 });
 
 set1 = function() {
@@ -72,9 +87,7 @@ long entryId = ParamUtil.getLong(renderRequest, "entryId");
 Entry entry = null;
 
 if (entryId > 0) {
-	
 	entry = EntryLocalServiceUtil.getEntry(entryId);
-	
 }
 %>
 
@@ -98,7 +111,6 @@ if (entryId > 0) {
             <div id="buttonWrapper">
 	            <aui:button-row>
 	            	<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-	            	<aui:button id="hideMessagesButton" value="Hide Sample Messages"></aui:button>
 	            </aui:button-row>
             </div>
             
