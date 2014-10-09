@@ -177,15 +177,15 @@ for your app (if they do not already exist), and have a support plan in place.
 ## Image and Naming Requirements
 
 **Icons** for your app *must be* exactly 90 pixels in both height and width and
-must be in PNG, JPG, or GIF format. The image size cannot exceed 512KB. Animated
-images are prohibited.
+must be in GIF, JPEG/JPG, or PNG format. The image size cannot exceed 512KB.
+Animated images are prohibited. 
 
 **Screenshots** for your app *must not exceed* 1080 pixels in width x 678 pixels
-in height and must be in the JPG format. The file size of each screenshot *must
-not exceed* 384KB. Each screenshot should preferably be the same size (each will
-be automatically scaled to match the aspect ratio of the above dimensions), and
-it is preferable if they are named sequentially, for example
-`fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
+in height and must be in  GIF, JPEG/JPG, or PNG format. The file size of each
+screenshot *must not exceed* 384KB. Each screenshot should preferably be the
+same size (each will be automatically scaled to match the aspect ratio of the
+above dimensions), and it is preferable if they are named sequentially, for
+example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on. 
 
 **Titles of Apps**: In some views with Marketplace, titles of applications
 longer than 18 characters are shortened using an ellipsis. In the Marketplace,
