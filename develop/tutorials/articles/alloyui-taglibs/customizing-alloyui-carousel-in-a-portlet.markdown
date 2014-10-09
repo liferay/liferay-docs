@@ -1,9 +1,9 @@
-# Customizing the AUI-Carousel
+# Customizing the AUI-Carousel [](id=customizing-the-aui-carousel)
 
 AlloyUI's carousel module has a lot to offer as is, but you can take it to the
 next level by customizing it and making it your own. If you need to learn how to
 set up the basic `aui-carousel`, please refer to the tutorial
-[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet).
+[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet).
 In this tutorial, you'll learn how to modify the UI of the standard
 `aui-carousel` module in a portlet.
 
@@ -21,7 +21,7 @@ Now that you know what lies ahead in this tutorial, it's time to start rolling!
 
 First, you must add an ID value for the carousel's `<div>` element and each of
 its images. This was demonstrated in the tutorial
-[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet), 
+[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet), 
 
 For example, if your carousel has four images, you might specify your carousel
 and its images in your JSP using `<div>` elements like these:
@@ -68,15 +68,15 @@ transition between images is set to last one second. Setting the `activeIndex`
 to zero displays the first image listed in the `myCarousel` `<div>` when the
 carousel starts. 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** This is only a subset of the carousel's
+**Note:** This is only a subset of the carousel's
 modifiable attributes. If you choose not to set values for these attributes,
 default values are used. For a full list of the carousel's attributes and their
 defaults, as well as further documentation on it, please visit
 [http://alloyui.com/api/classes/A.Carousel.html](http://alloyui.com/api/classes/A.Carousel.html).
 
----
+$$$
  
 Now that you've laid the configuration groundwork for the carousel, it's time to
 style it.
@@ -166,13 +166,13 @@ You can see that the carousel menu controls lie within the `myCarousel` `<div>`,
 inside a menu tag, inside a list item tag, inside an anchor tag. Your CSS code
 must traverse the DOM tree to select the carousel's elements and style them. 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** You can view the DOM tree by
+**Note:** You can view the DOM tree by
 right-clicking the carousel's *Next* menu button and inspecting its HTML code in
 your browser.
 
----
+$$$
 
 Once you understand the DOM tree for each element, you can go ahead and specify
 the styling for each of the menu buttons with their corresponding class. Each
@@ -306,9 +306,9 @@ Enjoy making your carousel the best that it can be!
 
 ## Related Topics
 
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 

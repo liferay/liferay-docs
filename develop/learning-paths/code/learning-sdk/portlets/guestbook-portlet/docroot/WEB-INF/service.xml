@@ -22,9 +22,13 @@
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
         <column name="name" type="String"></column>
+        
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
+        
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 	</entity>
 	<entity name="Entry" local-service="true" uuid="true">
 
@@ -47,10 +51,14 @@
         <column name="email" type="String"></column>
         <column name="message" type="String"></column>
         <column name="guestbookId" type="long"></column>
+        
         <finder name="G_G" return-type="Collection">
             <finder-column name="groupId"></finder-column>
             <finder-column name="guestbookId"></finder-column>
         </finder>
+        
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 	</entity>
     <exceptions>
         <exception>GuestbookName</exception>

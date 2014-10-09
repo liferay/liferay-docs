@@ -23,16 +23,16 @@ Next, you'll configure your project's portlets to display in Site
 Administration, and then you'll localize its title and description. You'll
 create one resource bundle for the title and another one for the description. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If your project only has one
+**Note:** If your project only has one
 portlet, it's best to put your resource bundle directly in the `content`
 folder. Specifying your bundle in the file `content/Language.properties` lets
 you leverage the Plugins SDK's language building capabilities, via
 right-clicking on the `Language.properties` file &rarr; *Liferay* &rarr; *Build
 Languages* in Developer Studio or executing `ant build-lang` from the terminal. 
 
----
+$$$
 
 Specify and localize a title and description for each of your project's portlets
 by following these steps: 
@@ -138,19 +138,19 @@ by following these steps:
 
 You're becoming an expert localizer!
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
+**Tip:** Do you know how your portlet
 title is processed? If your portlet doesn't define a resource bundle or
 `javax.portlet.title`, the portal container next checks the `<portlet-info>`
 and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
 missing too, the `<portlet-name>` node value is rendered as the portlet title. 
 
----
+$$$
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using a Struts 
+**Note:** Be aware that using a Struts 
 portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
 engages a different title and description algorithm. Titles and long titles are
 pulled using the following respective keys:
@@ -158,7 +158,7 @@ pulled using the following respective keys:
 - `javax.portlet.title`
 - `javax.portlet.long-title` 
 
----
+$$$
 
 Terrific! You've configured your plugin's portlets to show in the Site
 Administration page, created resource bundles specifically for each portlet,

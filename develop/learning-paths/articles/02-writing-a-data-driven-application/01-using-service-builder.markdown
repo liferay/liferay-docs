@@ -19,7 +19,7 @@ that by providing Service Builder, a framework for generating the model,
 service, and persistence layers of your application. 
 
 For more information about how Service Builder works, see the 
-[tutorial](/develop/tutorials/-/knowledge_base/what-is-service-builder) 
+[tutorial](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) 
 on its design. For now, you'll jump right in and start 
 creating your application's service and persistence layers. 
 
@@ -31,7 +31,7 @@ need to create that application first, or download it from [here](https://github
 From here on, we'll assume you have Liferay IDE and your application all set up 
 and ready to go. 
 
-1. Right-click on your project and select New &rarr; Liferay Service Builder. 
+1. Right-click on your project and select *New* &rarr; *Liferay Service Builder*. 
 
 2. For the package path, use the package `com.liferay.docs.guestbook`. 
 
@@ -40,9 +40,9 @@ and ready to go.
 
 4. Uncheck the *Include sample entity in new file* box and click *Finish*. 
 
-5. You'll now see a form for configuring your services. Open the *Entities* item on
-   the left and select the first, blank element. You'll see the Entity form on the
-   right. Give it the name *Guestbook*. 
+5. You'll now see a form for configuring your services. Open the *Entities* item
+   on the left and select the first, blank element. You'll see the Entity form
+   on the right. Name the entity *Guestbook*. 
 
 6. Check the *Local service* check box. 
 
@@ -116,8 +116,8 @@ that, you'll need to understand some Liferay-specific concepts.
 ### Understanding Liferay Portal Concepts 
 
 When you write a Liferay application, you can make it fit into Liferay's overall
-framework by giving it context. All of Liferay's built in applications take
-advantage of this context. For example, if you add a Wiki to two different
+framework by providing a context for it. All of Liferay's built in applications
+take advantage of this context. For example, if you add a Wiki to two different
 sites, the data in each wiki is different for each site. In other words, one
 site doesn't have access to another site's wiki, yet the application they both
 use is the same. This is what Liferay calls *scope*. 
@@ -257,7 +257,7 @@ code generator for code generator haters: it generates the stuff that's tedious
 to write, while giving you the freedom to customize anything you want. 
 
 For further information about Service Builder, what it's built on, and how it
-works, please read the [What is Service Builder?](/develop/tutorials/-/knowledge_base/what-is-service-builder)
+works, please read the [What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 tutorial. 
 
 Congratulations! You've now used Service Builder to generate a service and

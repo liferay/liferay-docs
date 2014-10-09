@@ -58,7 +58,7 @@ Here's how to generate a PACL policy for your plugin:
     Your app server may require certain startup arguments to be used for
     activiting the security manager. Check the PACL and security manager
     instructions for your app server in the
-    [Installation and Setup](/discover/portal/-/knowledge_base/installation-and-setup)
+    [Installation and Setup](/discover/portal/-/knowledge_base/6-2/installation-and-setup)
     chapter of *Using Liferay Portal*. Some app servers, like Tomcat, output
     a terminal message like "Using Security Manager", indicating that it's
     using the security manager. 
@@ -101,9 +101,9 @@ Here's how to generate a PACL policy for your plugin:
     `liferay-plugin-package.properties` file. It's just a matter of merging the
     properties that start with the "security-manager-" prefix. 
 
-----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** There is a known issue
+**Note:** There is a known issue
  [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
  need to be restarted after deploying your plugin, in order for the security
  manager to detect and write out the complete set of policies for a plugin. If
@@ -120,7 +120,7 @@ Here's how to generate a PACL policy for your plugin:
  `[servletContextName].policy` file into your
  `liferay-plugin-package.properties` file. 
  
-----
+$$$
 
 Now that you've thoroughly specified the resources your plugin accesses, you can 
 enable the security manager and do final testing of your PACL properties. 
@@ -369,14 +369,14 @@ Manager.
 
 ## Related Topics
 
-[Setting Permissions](/develop/learning-paths/-/knowledge_base/setting-permissions)
+[Setting Permissions](/develop/learning-paths/-/knowledge_base/6-2/setting-permissions)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)

@@ -4,10 +4,9 @@ Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
 it, you're in the right place. This guide assumes you already know
 what a portal is and how to use Liferay from an end-user perspective. If you
-don't, please read the [What is a
-Portal?](http://www.liferay.com/products/what-is-a-portal) article on
-liferay.com and the [What is
-Liferay?](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/what-is-liferay-liferay-portal-6-2-user-guide-01-en)
+don't, please read the [What is a Portal?](http://www.liferay.com/products/what-is-a-portal)
+article on liferay.com and the
+[What is Liferay?](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/what-is-liferay-liferay-portal-6-2-user-guide-01-en)
 chapter in [*Using Liferay Portal 6.2*](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-liferay-portal-6-3). 
 
 This chapter summarizes how to to develop applications for Liferay and how to
@@ -273,7 +272,7 @@ additional integration plugins such as the Kaleo Designer for Java.
 This guide shows you how to develop for Liferay using both the Plugins SDK and
 Liferay IDE, to benefit you and other developers even if you don't like IDEs or
 don't use Eclipse. If you use Eclipse, you'll be happy to know that we'll show
-you how to develop apps using Liferay IDE in the next chapter.  
+you how to develop apps using Liferay IDE in the next chapter.
 
 **What about if I don't like Apache Ant and I prefer to use Maven?** Many
 developers prefer other command-line alternatives to Apache Ant. The most

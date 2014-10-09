@@ -5,8 +5,8 @@ great environment with Liferay Developer Studio.
 
 Let's get your Liferay development environment installed. 
 
-1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
-you'll need it to run everything else. 
+1.  Download and install the [Java 7 JDK](http://java.oracle.com). Liferay runs
+    on Java, so you need to install it before everything else. 
 
 2.  Download [Liferay Developer Studio](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
 Installing it is easy: unzip it to a convenient location on your system.
@@ -44,5 +44,5 @@ environment, ready to begin work!
 If you don't have a Liferay enterprise edition license or if you want to use an
 existing installation of Eclipse, continue with the next tutorial on developing
 apps with Liferay IDE. You can otherwise start
-[Writing Your First Liferay Application](/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application).
+[Writing Your First Liferay Application](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application).
 
