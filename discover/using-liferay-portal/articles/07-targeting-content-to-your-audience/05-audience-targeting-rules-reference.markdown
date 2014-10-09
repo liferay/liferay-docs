@@ -1,4 +1,4 @@
-# Liferay Audience Targeting Rules
+# Liferay Audience Targeting Rules [](id=liferay-audience-targeting-rules)
 
 Rules enable Audience Targeting administrators to define how users are
 classified into the user segments they create.

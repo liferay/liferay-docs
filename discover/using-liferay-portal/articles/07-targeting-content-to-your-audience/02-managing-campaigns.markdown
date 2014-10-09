@@ -1,4 +1,4 @@
-# Managing Campaigns
+# Managing Campaigns [](id=managing-campaigns)
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,

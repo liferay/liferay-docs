@@ -1,4 +1,4 @@
-# Managing User Segments
+# Managing User Segments [](id=managing-user-segments)
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
