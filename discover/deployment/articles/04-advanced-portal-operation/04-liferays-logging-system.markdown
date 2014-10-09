@@ -35,18 +35,25 @@ the one you were looking for, and causes the server to do more work writing
 messages to the log. 
 
 If you want to set the log level for one of your own classes in a deployed
-plugin, you can register that class with Liferay to can control the log levels
-more easily, so long as your class uses Log4J to do its logging.
+plugin, you can register that class with Liferay to control the log levels
+more easily, so long as your class uses Liferay's logging system to do its
+logging.
 
-You will first need to implement Log4J logging in your class, with a statement
-such as the following (taken from Liferay's `JCRStore` class):
+You will first need to import interfaces and implement logging in your
+class, with statements such as these (taken from Liferay's `S3Store`
+class):
 
-	private static Log _log = LogFactory.getLog(JCRStore.class);
+	import com.liferay.portal.kernel.log.Log;
+	import com.liferay.portal.kernel.log.LogFactoryUtil;
+	
+	...
 
-You would then use this `_log` variable to create log messages in your code for
-the various logging levels:
+	private static Log _log = LogFactory.getLog(S3Store.class);
 
-	_log.error("Reindexing " + node.getName(), e1);
+You would then use this `_log` variable to create log messages in your code
+for the various logging levels:
+
+	_log.error(s3se.getMessage());
 
 To enable your logging messages to appear in your server's log file via the
 control panel, click the *Add Category* tab on the same *Log Levels* page.

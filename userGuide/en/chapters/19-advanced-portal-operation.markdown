@@ -428,10 +428,11 @@ messages to the log.
 
 If you want to set the log level for one of your own classes in a deployed
 plugin, you can register that class with Liferay to control the log levels
-more easily, so long as your class uses Liferay logging system to do its logging.
+more easily, so long as your class uses Liferay's logging system to do its
+logging.
 
 You will first need to import interfaces and implement logging in your
-class, with statements such as the following (taken from Liferay's \`S3Store\`
+class, with statements such as these (taken from Liferay's `S3Store`
 class):
 
 	import com.liferay.portal.kernel.log.Log;
@@ -441,7 +442,7 @@ class):
 
 	private static Log _log = LogFactory.getLog(S3Store.class);
 
-You would then use this \`_log\` variable to create log messages in your code
+You would then use this `_log` variable to create log messages in your code
 for the various logging levels:
 
 	_log.error(s3se.getMessage());
