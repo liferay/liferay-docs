@@ -11,9 +11,9 @@ times under half a second and maximum throughput of more than 79 logins per
 second. We've seen some tips for tuning Liferay Portal, and we have to keep in
 mind the adage about tuning: load test and profile, tune, repeat.
 
-Configuring a Content Delivery Network is also very advantageous when looking to
-increase your portal's performance. By accessing static resources from a local
-server, latency time and your application server's load are drastically reduced.
+Configuring a Content Delivery Network is also advantageous when you want to 
+increase your portal's performace. By accessing static resources from a local 
+server, latency time and your application server's load are drastically reduced. 
 
 In all, Liferay Portal gives you all the options you need to build a
 high-performance, robust environment that supports your enterprise.
