@@ -32,15 +32,15 @@ var message = A.one('#<portlet:namespace/>message');
 
 generateButton.on('click', function(event) {
 	if(!message1Div.hasChildNodes()) {
-		message1Div.append('<p class="message" id="message1">Congratulations!</p><p class="use-message" id="use-message1"><input onclick="set1();" type="button" value="Use Message" /></p>');
+		message1Div.append('<p class="message" id="message1">Congratulations!</p><p id="use-message1"><input class="btn" onclick="set1();" type="button" value="Use Message" /></p>');
 	}
 	
 	if(!message2Div.hasChildNodes()) {
-		message2Div.append('<p class="message" id="message2">Best wishes!</p><p class="use-message" id="use-message2"><input onclick="set2();" type="button" value="Use Message" /></p>');
+		message2Div.append('<p class="message" id="message2">Best wishes!</p><p id="use-message2"><input class="btn" onclick="set2();" type="button" value="Use Message" /></p>');
 	}
 	
 	if(!message3Div.hasChildNodes()) {
-		message3Div.append('<p class="message" id="message3">Have fun!</p><p class="use-message" id="use-message3"><input onclick="set3();" type="button" value="Use Message" /></p>');
+		message3Div.append('<p class="message" id="message3">Have fun!</p><p id="use-message3"><input class="btn" onclick="set3();" type="button" value="Use Message" /></p>');
 	}
 });
 
