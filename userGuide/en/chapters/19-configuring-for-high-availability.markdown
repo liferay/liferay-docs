@@ -208,8 +208,8 @@ Great! Now you're all set to deploy and configure the LCS client portlet.
 ### Configuring the LCS Client
 
 Once you deploy the LCS client portlet, you can use it to register your server 
-with your LCS account. Access the portlet by clicking on *Cloud Services* under 
-the *Apps* section of the *Control Panel*.
+with your LCS account. Access the portlet by clicking on 
+*Liferay Cloud Services* under the *Server* section of the *Control Panel*.
 
 ![Figure 19.1: LCS appears in your Control Panel as Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
