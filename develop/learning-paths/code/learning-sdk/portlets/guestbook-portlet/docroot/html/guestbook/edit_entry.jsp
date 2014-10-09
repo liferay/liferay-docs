@@ -21,25 +21,46 @@ AUI().use(
 </aui:script>
 
 <aui:script use="node, event">
-var generateButton = A.one('#generateMessagesButton');
+var generateMessagesButton = A.one('#generateMessagesButton');
 
 var message1Div = A.one('#message1-div');
 var message2Div = A.one('#message2-div');
 var message3Div = A.one('#message3-div');
 
-var message = A.one('#<portlet:namespace/>message');
+generateMessagesButton.on('click', function(event) {
+	var entryMessages = [
+		'Amazing!',
+		'Be careful!',
+		'Best wishes!',
+		'Bravo!',
+		'Congratulations!',
+		'Great job!',
+		'Have fun!',
+		"How's it going?",
+		'You did it!',
+		"Wow!"
+	];
+	
+	var rand1 = Math.floor(Math.random() * entryMessages.length);
 
-generateButton.on('click', function(event) {
-	if (!message1Div.hasChildNodes()) {
-		message1Div.append('<p class="message" id="message1">Congratulations!</p><p id="use-message1"><input class="btn" onclick="set1();" type="button" value="Use Message" /></p>');
+	if (!message1Div.hasChildNodes()) {	
+		message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
 	}
+	
+	entryMessages.splice(rand1, 1);
+	
+	var rand2 = Math.floor(Math.random() * entryMessages.length);
 	
 	if (!message2Div.hasChildNodes()) {
-		message2Div.append('<p class="message" id="message2">Best wishes!</p><p id="use-message2"><input class="btn" onclick="set2();" type="button" value="Use Message" /></p>');
+		message2Div.append('<p class="message" id="message2">' + entryMessages[rand2] + '</p><p id="use-message2"><input class="btn" onclick="useMessage2();" type="button" value="Use Message" /></p>');
 	}
 	
+	entryMessages.splice(rand2, 1);
+	
+	var rand3 = Math.floor(Math.random() * entryMessages.length);
+	
 	if (!message3Div.hasChildNodes()) {
-		message3Div.append('<p class="message" id="message3">Have fun!</p><p id="use-message3"><input class="btn" onclick="set3();" type="button" value="Use Message" /></p>');
+		message3Div.append('<p class="message" id="message3">' + entryMessages[rand3] + '</p><p id="use-message3"><input class="btn" onclick="useMessage3();" type="button" value="Use Message" /></p>');
 	}
 	
 	var buttonHolder = A.one('.button-holder');
@@ -68,15 +89,17 @@ generateButton.on('click', function(event) {
 	});
 });
 
-set1 = function() {
+var message = A.one('#<portlet:namespace/>message');
+
+useMessage1 = function() {
 	message.val(A.one('#message1-div').one('#message1').html());
 };
 
-set2 = function() {
+useMessage2 = function() {
 	message.val(A.one('#message2-div').one('#message2').html());
 };
 
-set3 = function() {
+useMessage3 = function() {
 	message.val(A.one('#message3-div').one('#message3').html());
 };
 </aui:script>
