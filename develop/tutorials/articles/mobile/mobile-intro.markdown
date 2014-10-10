@@ -31,15 +31,15 @@ This section of tutorials covers Android app development, iOS app development,
 and building mobile SDKs. The following tutorials introduce each of these topics
 and are followed by in-depth tutorials about each of them:
 
-- [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/tutorials/creating-android-apps-that-use-liferay)
-- [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/tutorials/creating-ios-apps-that-use-liferay)
-- [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/tutorials/liferay-mobile-sdk-builder)
+- [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+- [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+- [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
 Fasten your seatbelt, because it's time to go mobile with Liferay's Mobile SDK! 
 
 **Related Topics:**
 
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

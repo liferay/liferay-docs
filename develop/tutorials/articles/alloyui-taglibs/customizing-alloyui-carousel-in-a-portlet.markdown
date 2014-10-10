@@ -3,7 +3,7 @@
 AlloyUI's carousel module has a lot to offer as is, but you can take it to the
 next level by customizing it and making it your own. If you need to learn how to
 set up the basic `aui-carousel`, please refer to the tutorial
-[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet).
+[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet).
 In this tutorial, you'll learn how to modify the UI of the standard
 `aui-carousel` module in a portlet.
 
@@ -21,7 +21,7 @@ Now that you know what lies ahead in this tutorial, it's time to start rolling!
 
 First, you must add an ID value for the carousel's `<div>` element and each of
 its images. This was demonstrated in the tutorial
-[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/using-alloyui-carousel-in-your-portlet), 
+[Using AlloyUI Carousel in Your Portlet](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet), 
 
 For example, if your carousel has four images, you might specify your carousel
 and its images in your JSP using `<div>` elements like these:
@@ -306,9 +306,9 @@ Enjoy making your carousel the best that it can be!
 
 ## Related Topics
 
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 

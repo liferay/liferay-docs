@@ -169,5 +169,5 @@ Your portlet users will be glad to get helpful feedback from your portlets.
 
 ## Related Topics
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
 

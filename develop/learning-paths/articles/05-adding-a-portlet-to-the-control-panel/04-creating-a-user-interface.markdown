@@ -303,4 +303,4 @@ permissions, and deleting guestbooks.
 
 ## Next Steps
 
-[Creating Entity Indexers](/develop/learning-paths/-/knowledge_base/creating-entity-indexers)
+[Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/creating-entity-indexers)

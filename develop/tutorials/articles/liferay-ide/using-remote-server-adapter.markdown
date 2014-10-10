@@ -18,7 +18,7 @@ Of course, it's possible to install the Remote IDE Connector application on a
 production server, but it creates an unnecessary security risk, so we don't
 recommend it. On a production server, you shouldn't update, or hot-fix, plugins
 using the adapter; your portal system administrator should use normal
-[plugin management](/discover/portal/-/knowledge_base/plugin-management)
+[plugin management](/discover/portal/-/knowledge_base/6-2/plugin-management)
 mechanism to apply plugin updates and fixes. 
 
 This tutorial uses the Remote Server Adapter on Liferay Portal bundled with
@@ -104,5 +104,5 @@ your testing workflow.
 
 ## Related Topics
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

@@ -37,7 +37,7 @@ Several of Liferay's core portlets use bullets, and you may have custom portlets
 in your portal that use bullets too. Any portlet can be configured to use any
 bullet styles inherited by your theme or implemented in your theme. For example,
 if your theme uses Liferay's Classic theme as its base parent (see
-[Setting a Base Theme](/develop/tutorials/-/knowledge_base/setting-a-base-theme)),
+[Setting a Base Theme](/develop/tutorials/-/knowledge_base/6-2/setting-a-base-theme)),
 you can leverage the Classic theme's *arrows* bullet style.
 
 The sample code below demonstrates the arrow bullet style class applied from the

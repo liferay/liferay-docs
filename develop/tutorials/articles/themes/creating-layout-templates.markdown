@@ -14,9 +14,9 @@ Liferay IDE, or from the command line. This tutorial focuses on creating layout
 templates in a Plugins SDK project, from Liferay IDE and from the command line. 
 
 To learn how to create Liferay Maven projects, see the tutorial 
-[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+[Creating Liferay Maven plugins from IDE](/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin). 
+[Creating Liferay Maven Plugins from the Command Line](/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin). 
 
 Creating layout templates in Liferay IDE is easy. You can learn how next. 
 
@@ -102,7 +102,7 @@ and create some!
 
 ## Related Topics
 
-[Creating Liferay Maven Plugins from IDE] (/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from IDE] (/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 

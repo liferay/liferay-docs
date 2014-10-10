@@ -1126,7 +1126,7 @@ developing your plugins.
 
 #### Ant Configuration [](id=ant-configuration-liferay-portal-6-2-dev-guide-02-en)
 
-Building projects in the Plugins SDK requires that you install Ant (version 1.7
+Building projects in the Plugins SDK requires that you install Ant (version 1.8
 or higher) on your machine. Download the latest version of Ant from
 [http://ant.apache.org/](http://ant.apache.org/). Extract the archive's contents
 into a folder of your choosing. 
