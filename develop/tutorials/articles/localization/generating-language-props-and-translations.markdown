@@ -17,7 +17,7 @@ get translations for your default resource bundle.
 It's time to get started by doing the initial setup for the Bing Translator
 service for translating the language properties. 
 
-## Translating Languages Using the Bing Translator [](id=translating-languages-using-the-bing-translator)
+## Translating Languages Using the Bing Translator
 
 The Plugins SDK uses the Bing Translator service
 [http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
@@ -55,7 +55,7 @@ Translator service, you'll need to do the following:
 Next, you'll make the necessary changes to your portlet so that it can leverage 
 the Bing Translator service.
  
-## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet)
+## Implementing Translations in Your Portlet
 
 Now that you've done the initial setup for the Bing Translator, you're ready to 
 add support for translations to your portlet.

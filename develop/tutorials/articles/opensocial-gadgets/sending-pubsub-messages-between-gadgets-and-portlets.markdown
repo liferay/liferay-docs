@@ -29,7 +29,7 @@ Maps into Liferay Portal. After we've run through the exercises, we'll briefly
 analyze specific code fragments that made the PubSub messaging possible. Let's
 get started!
 
-## Communicating Between Gadgets [](id=communicating-between-gadgets)
+## Communicating Between Gadgets
 
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub; these two gadgets are able to communicate with one
@@ -145,7 +145,7 @@ Gadgets are not limited to only communicating with other gadgets. In the next
 section, we will demonstrate the capabilities of communication between portlets
 and gadgets.
 
-## Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets)
+## Communicating Between Portlets and Gadgets
 
 For this tutorial, we'll continue exploring the *Google Map* gadget inside of
 Liferay. If you have portlet applications that can take advantage of the

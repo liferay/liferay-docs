@@ -138,7 +138,7 @@ Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
 
-# Related Topics [](id=related-topics)
+# Related Topics
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

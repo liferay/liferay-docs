@@ -22,7 +22,7 @@ In this tutorial, we'll show you how to use session messages and the
 sample portlet called the My Greeting portlet. Are you ready to give it a try?
 Let's do it. 
 
-## Confirming Success with liferay-ui:success [](id=confirming-success-with-liferay-uisuccess)
+## Confirming Success with liferay-ui:success
 
 It's good to let a user know when a portlet was able to execute his action
 successfully. So, we'll demonstrate adding a success message for an action
@@ -99,7 +99,7 @@ That was easy enough! Now that we've provided the user some positive feedback,
 let's provide a way to inform him when his action failed to complete
 successfully. 
 
-## Flagging Errors with liferay-ui:error [](id=flagging-errors-with-liferay-uierror)
+## Flagging Errors with liferay-ui:error
 
 Error notification operates similarly to success notification. There's an
 equivalent utility class to `SessionMessages` called `SessionErrors`, to use for
