@@ -50,8 +50,8 @@ requests.
 
 ## Related Topics 
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay))

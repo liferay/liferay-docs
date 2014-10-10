@@ -222,4 +222,4 @@ application. The next learning path covers that.
 
 ## Next Steps
 
-[Adding a Portlet to the Control Panel](/develop/learning-paths/-/knowledge_base/adding-a-portlet-to-the-control-panel)
+[Adding a Portlet to the Control Panel](/develop/learning-paths/-/knowledge_base/6-2/adding-a-portlet-to-the-control-panel)

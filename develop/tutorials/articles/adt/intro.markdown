@@ -12,7 +12,7 @@ settings to portlets. This saves you from having to change portlet configuration
 code every time you need new settings. 
 
 Be of good cheer! That's precisely what
-[Application Display Templates](/discover/portal/-/knowledge_base/using-application-display-templates)
+[Application Display Templates](/discover/portal/-/knowledge_base/6-2/using-application-display-templates)
 (ADTs) provide--the ability to add custom display settings to your portlets from
 the portal. This isn't actually a new concept in Liferay. In some portlets
 (e.g., *Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can

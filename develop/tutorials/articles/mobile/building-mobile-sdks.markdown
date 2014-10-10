@@ -16,7 +16,7 @@ For the SDK Builder to discover a portlet's remote services, the services must
 be available and accompanied by a Web Service Deployment Descriptor (WSDD). 
 
 If you're in the process of developing the portlet, see
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 for in-depth instructions on implementing remote services.
 
 The following steps outline how to implement remote services for your portlet 
@@ -182,7 +182,7 @@ apps to call your custom portlet services. You're a mobile app rock star!
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

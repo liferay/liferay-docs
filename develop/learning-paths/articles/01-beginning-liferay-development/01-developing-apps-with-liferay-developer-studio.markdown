@@ -44,5 +44,5 @@ environment, ready to begin work!
 If you don't have a Liferay enterprise edition license or if you want to use an
 existing installation of Eclipse, continue with the next tutorial on developing
 apps with Liferay IDE. You can otherwise start
-[Writing Your First Liferay Application](/develop/learning-paths/-/knowledge_base/writing-your-first-liferay-application).
+[Writing Your First Liferay Application](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application).
 
