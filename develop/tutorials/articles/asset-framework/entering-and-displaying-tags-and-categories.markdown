@@ -28,14 +28,14 @@ can be associated with new or existing tags or predefined categories:
 These two taglibs create appropriate form controls that allow the user to 
 search for a tag, create a new one, or select an existing category. 
 
----
++$$$
 
- ![Tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's
- AlloyUI Form taglibs, creating fields to enter tags and categories is even
- simpler. You just use `<aui:input name="tags" type="assetTags" />` and
- `<aui:input name="categories" type="assetCategories" />`, respectively. 
+**Tip:** If you're using Liferay's AlloyUI Form taglibs, creating fields to 
+enter tags and categories is even simpler. You just use 
+`<aui:input name="tags" type="assetTags" />` and
+`<aui:input name="categories" type="assetCategories" />`, respectively. 
 
----
+$$$
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 
@@ -65,16 +65,8 @@ entries based on the specified tag or category.
 Great! Now you know how to make tags and categories available to content authors 
 in your portlets. 
 
-## Next Steps 
+## Related Topics
 
-<!-- Add link once header id is generated -->
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-<!--
-[Rating Assets](http://www.liferay.com/)
-
-[Publishing Assets](http://www.liferay.com/)
--->
-
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
-
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)

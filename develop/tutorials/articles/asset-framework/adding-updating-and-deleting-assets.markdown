@@ -102,14 +102,8 @@ Here's an example invocation extracted from the blogs portlet:
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
-## Next Steps 
+## Related Topics
 
-<!-- Add link once header id's are generated -->
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-<!-- 
-[Entering and Displaying Tags and Categories](http://www.liferay.com/) 
--->
-
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
-
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)

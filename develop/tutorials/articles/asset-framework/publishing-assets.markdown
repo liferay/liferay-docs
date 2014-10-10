@@ -12,7 +12,7 @@ assets. This tutorial describes how to provide all this to the Asset Publisher
 by extending Liferay's base implementations of `AssetRendererFactory` and 
 `AssetRenderer`. Let the extensions begin! 
 
-## `AssetRendererFactory` 
+## AssetRendererFactory
 
 The `AssetRendererFactory` class knows how to retrieve specific assets from 
 persistent storage using the `classPK`. The `classPK` is typically the asset's 
@@ -30,7 +30,7 @@ updated to accomodate future changes to the interface, extending it instead of
 implementing `AssetRendererFactory` yourself makes your code more robust. An 
 example of this can be seen in the [code of Liferay's Blogs portlet on Github](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portlet/blogs/asset/BlogsEntryAssetRendererFactory.java).
 
-## `AssetRenderer` 
+## AssetRenderer
 
 The `AssetRenderer` is an interface that provides metadata information
 about one specific asset. It checks whether the current user has permission
@@ -85,10 +85,8 @@ documentation. -Rich -->
 That's about it! It wasn't that hard, right? Now get out there and start 
 enjoying the benefits of the asset framework in your custom portlets! 
 
-## Next Steps 
+## Related Topics
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal-lp-6-2-develop-tutorial)
-
-[Platform Frameworks](/tutorials/-/knowledge_base/platform-frameworks-lp-6-2-develop-tutorial)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
