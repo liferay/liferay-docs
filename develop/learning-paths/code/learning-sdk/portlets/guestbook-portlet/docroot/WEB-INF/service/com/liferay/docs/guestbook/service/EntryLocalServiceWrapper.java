@@ -365,6 +365,14 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 	}
 
 	@Override
+	public com.liferay.docs.guestbook.model.Entry deleteEntry(long entryId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.deleteEntry(entryId, serviceContext);
+	}
+
+	@Override
 	public com.liferay.docs.guestbook.model.Entry addEntry(long userId,
 		long guestbookId, java.lang.String name, java.lang.String email,
 		java.lang.String message,
@@ -373,6 +381,17 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _entryLocalService.addEntry(userId, guestbookId, name, email,
 			message, serviceContext);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Entry updateEntry(long userId,
+		long guestbookId, long entryId, java.lang.String name,
+		java.lang.String email, java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.updateEntry(userId, guestbookId, entryId,
+			name, email, message, serviceContext);
 	}
 
 	/**

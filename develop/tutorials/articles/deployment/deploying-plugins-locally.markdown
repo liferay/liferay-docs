@@ -24,7 +24,7 @@ title]*. Your portlet appears in the page.
 
 Here are some related topics:
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)
 

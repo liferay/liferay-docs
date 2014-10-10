@@ -75,7 +75,7 @@ To create a repository using Nexus, follow these steps:
 
     ![Figure 2.20: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
-    ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
+    **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
     <http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html>.
 
@@ -124,9 +124,9 @@ specify them in your Maven environment settings. Your repository settings enable
 Maven to find the repository and get access to it for retrieving and installing
 artifacts. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** You only need to configure a
+**Note:** You only need to configure a
 repository server if you're installing downloaded Liferay CE/EE artifacts from
 a zip file or if you want to share artifacts (e.g., Liferay artifacts and/or
 your plugins) with others. If you're automatically installing Liferay CE
@@ -137,7 +137,7 @@ However, configuring a mirror in your Maven settings is recommended as a best
 practice. Get more information on mirrors and their purpose in Maven's guide on
 mirrors at <http://maven.apache.org/guides/mini/guide-mirror-settings.html>. 
 
----
+$$$
 
 To configure your Maven environment to access your `liferay-releases` repository
 server, do the following:
@@ -167,14 +167,14 @@ server, do the following:
             </servers>
         </settings>
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The username `admin` and
+**Note:** The username `admin` and
 password `admin123` are the credentials of the default Nexus OSS administrator
 account. If you changed these credentials for your Nexus server, make sure to
 update `settings.xml` with these changes.
 
----
+$$$
 
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll

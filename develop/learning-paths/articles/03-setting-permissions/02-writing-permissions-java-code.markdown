@@ -182,7 +182,6 @@ primary key of the `Entry` entity.
 
 2.  Place the following code in this class: 
 
-
         package com.liferay.docs.guestbook.service.permission;
 
         import com.liferay.docs.guestbook.model.Entry;

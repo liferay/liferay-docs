@@ -4,11 +4,13 @@
 *.iml
 *.swp
 *-tmp.html
+.METADATA
 .project
 !/.project
 .classpath
 !/.classpath
 .settings
+git-modified-list.txt
 nbbuild.xml
 properties/
 

@@ -282,6 +282,9 @@ public interface EventLocalService extends BaseLocalService,
 		java.lang.String locationName, int begin, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByUserId(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> getEventsByGroupId(
 		long groupId)

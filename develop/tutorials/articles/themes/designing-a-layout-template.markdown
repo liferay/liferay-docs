@@ -140,16 +140,16 @@ add two column `<div>`s, and so on.
 
     You're getting the hang of specifying columns, right?
 
-    ---
+$$$
     
-    ![note](../../images/tip.png) **Note:** Liferay 6.2 themes use a fork of
+    **Note:** Liferay 6.2 themes use a fork of
     Twitter Bootstrap v2.3.2 called 
     [Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap). Alloy
     Bootstrap affects Liferay's layout templates as well as its themes. Liferay
     6.2 layout templates use Bootstrap's 12 column grid system: 
     <http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>.
 
-    ---
+$$$
 
 6.  Finally, with each column `<div>...</div>`, you must include a Velocity
 template directive to render each column's portlets. As a user adds a portlet to
@@ -172,7 +172,7 @@ the portlet.
 7.  Save the `.tpl` file. 
 
 Believe it or not, you've just created a layout template! You can
-[deploy](https://dev.liferay.com/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[deploy](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 it to your portal and apply it to your portal's pages. 
 
 If you want to see more examples of layout templates, check out the Page Layouts
