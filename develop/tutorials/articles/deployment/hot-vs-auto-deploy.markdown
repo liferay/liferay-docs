@@ -120,14 +120,13 @@ simply need to call the following Ant task:
 The `direct-deploy` Ant task creates an exploded WAR from which you can easily
 create a WAR file. The location of the exploded WAR depends on the deployment
 directory of the application server you've configured in your Plugins SDK
-environment. See the *Plugins SDK Configuration* section of [Leveraging the
-Plugins
-SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
-for instructions on configuring the Plugins SDK for your app server. The Plugins
-SDK's `build.properties` provides a default deployment directory value for each
-supported app server. But you can override the default value by specifying your
-desired value for the `app.server.[type].deploy.dir` (replace `[type]` with your
-app server type) in your `build.[username].properties` file. 
+environment. See the
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+tutorials for instructions on configuring the Plugins SDK for your app server.
+The Plugins SDK's `build.properties` provides a default deployment directory
+value for each supported app server. But you can override the default value by
+specifying your desired value for the `app.server.[type].deploy.dir` (replace
+`[type]` with your app server type) in your `build.[username].properties` file. 
 
 If you choose not to use the Liferay Plugins SDK to do direct deployment, you
 can examine the `build-common.xml` file in the Plugins SDK to see how Liferay
@@ -138,7 +137,7 @@ Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
 
-# Related Topics
+## Related Topics
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
