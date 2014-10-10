@@ -1,8 +1,8 @@
 # Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t)
 
 <!-- The beginning and ending test portlets can be found at the following:
-Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/prefs/begin/event-listing-portlet
-End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet
+Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet
 -->
 
 In this tutorial, you'll learn how Liferay facilitates generating language key
@@ -78,7 +78,7 @@ add support for translations to your portlet.
     language key for the current locale and render it for the user.
 
     For example JSP code that references language keys, see
-    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 3. Build the language keys, by either right-clicking on the
    `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in
@@ -113,14 +113,14 @@ re-add that property and its new value to `Language.properties`, and build the
 languages again. At this point, Bing Translator generates translations based on
 your property's new value. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you're Mavenizing your
+**Note:** If you're Mavenizing your
 portlet, you must manually copy the translations to your deployed application.
 Copy your `content` folder into your portlet's
 `src/main/webapp/WEB-INF/classes` folder. 
 
----
+$$$
 
 By using the Plugins SDK's language building capability, you can keep all
 created translations synchronized with your default `Language.properties`. You

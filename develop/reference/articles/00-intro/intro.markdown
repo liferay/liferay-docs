@@ -1,4 +1,4 @@
-# Reference [](id=reference-lp-6-2-develop-reference)
+# Reference [](id=reference)
 
 This page describes and provides access to Liferay's reference documentation.
 You can refer to this documentation as you configure portals, invoke Liferay
@@ -52,3 +52,17 @@ describes the configuration defaults for Liferay Portal.
 - [system.properties](http://docs.liferay.com/portal/6.2/propertiesdoc/system.properties.html)
 describes the system configuration defaults for Liferay Portal. 
 
+## Liferay's Deprecation Policy
+
+Methods in Liferay's APIs are deprecated when they're no longer called by
+Liferay internally. Method deprecation occurs during major and minor releases of
+Liferay. A change in the first or second digits of consecutive Liferay releases
+indicates a major or minor release, respectively. For example, the release of
+Liferay Portal 6.2.0 after 5.2.0 was a major release; whereas the release of
+6.2.0 after 6.1.30 was a minor release. Major and minor releases can have API
+deprecations. 
+
+APIs should not be deprecated between maintenance releases. Maintenance releases
+are signified by a change in the third digit of the release number. For example,
+the release of Liferay Portal 6.1.30 after 6.1.20 was a maintenance release and
+therefore should have no API deprecations. 
