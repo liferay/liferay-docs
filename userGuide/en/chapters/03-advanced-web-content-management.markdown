@@ -1280,7 +1280,7 @@ Marketplace, makes this easy.
 Next, you'll learn how to configure your portal to use IPv6 addresses and use
 them for Remote Live Staging. 
 
-#### Validating IPv6 Addresses
+#### Validating IPv6 Addresses [](id=validating-ipv6-addresses-liferay-portal-6-2-user-guide-03-en)
 
 If your portal is set up to validate IPv6 addresses, you'll need to configure
 your Remote Live Connection Settings. Restart your Liferay instance and navigate
