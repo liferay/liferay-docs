@@ -1,4 +1,4 @@
-# Managing Liferay with Liferay Cloud Services
+# Managing Liferay with Liferay Cloud Services [](id=managing-liferay-with-liferay-cloud-services)
 
 Liferay Cloud Services (LCS) is a set of tools and services that lets you manage 
 and monitor your Liferay installations. While Liferay's patching tool lets you 
