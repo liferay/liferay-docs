@@ -84,12 +84,13 @@ public class CheckDocPropsTask extends Task {
 			// Check for missing properties
 
 			List<String> missingProps = new ArrayList<String>();
+			checkProperty(missingProps, props, DOC_NAME);
 			checkProperty(missingProps, props, PRODUCT_ABBREV);
+			checkProperty(missingProps, props, PRODUCT_NAME);
 			checkProperty(missingProps, props, PRODUCT_VERSION);
-			checkProperty(missingProps, props, DOC_ABBREV);
 
-			String prod = props.getProperty(PRODUCT_ABBREV);
-			String doc = props.getProperty(DOC_ABBREV);
+			String prod = props.getProperty(PRODUCT_NAME);
+			String doc = props.getProperty(DOC_NAME);
 			if (prod != null && doc != null) {
 				String prodDoc = prod + " " + doc;
 				if (prodDocSet.contains(prodDoc)) {
@@ -102,7 +103,7 @@ public class CheckDocPropsTask extends Task {
 					sb.append(DOC_PROPERTIES);
 					sb.append(" conflicts with that of another doc dir's ");
 					sb.append(DOC_PROPERTIES);
-					sb.append(". Resolve by deconflicting the doc.abbrev property of the offending doc dirs.");
+					sb.append(". Resolve by deconflicting the doc.name property of the offending doc dirs.");
 					throw new BuildException(sb.toString());
 				}
 				else {
@@ -158,8 +159,9 @@ public class CheckDocPropsTask extends Task {
 
 	private static final String DOC_PROPERTIES = "doc.properties";
 
-	private static final String DOC_ABBREV = "doc.abbrev";
+	private static final String DOC_NAME = "doc.name";
 	private static final String PRODUCT_ABBREV = "product.abbrev";
+	private static final String PRODUCT_NAME = "product.name";
 	private static final String PRODUCT_VERSION = "product.version";
 
 	private String _basedir;
