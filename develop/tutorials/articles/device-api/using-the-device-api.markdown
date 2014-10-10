@@ -54,8 +54,8 @@ grandma's gnarly tablet and your cousin's awesome new mobile phone can make
 requests to your portal and receive identical content. This will make everyone 
 happy! 
 
-## Next Steps
+## Related Topics
 
-<!-- Remove suffix from link below, once this feature gets turned on -->
+[Mobile](/tutorials/-/knowledge_base/6-2/mobile)
 
-[Localization](/tutorials/-/knowledge_base/localization-lp-6-2-develop-tutorial)
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

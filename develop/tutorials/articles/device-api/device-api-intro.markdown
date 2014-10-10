@@ -24,3 +24,9 @@ capabilities of your device. Visit the WURFL website for more information at
 You can create your own plugin that makes use of your device's database. The 
 tutorial in this section presents some simple uses of the Device Detection API 
 and talks about its capabilities. 
+
+## Related Topics
+
+[Mobile](/tutorials/-/knowledge_base/6-2/mobile)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
