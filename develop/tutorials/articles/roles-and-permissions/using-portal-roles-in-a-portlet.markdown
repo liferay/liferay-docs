@@ -114,12 +114,12 @@ permissions.
 
 ## Related Topics
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Plugin Security and PACL](/tutorials/-/knowledge_base/plugin-security-and-pacl)
+[Plugin Security and PACL](/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/alloyui)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
