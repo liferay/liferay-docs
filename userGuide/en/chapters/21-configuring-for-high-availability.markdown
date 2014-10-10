@@ -87,16 +87,40 @@ Now go ahead and get started by setting up your LCS account.
 
 ### Setting up Your LCS Account
 
-<!-- More info needed on account creation -->
-If you are the first user on your project, you need to create and sign in to 
-your LCS account at [lcs.liferay.com](https://lcs.liferay.com). On your first 
-login, click the button *Make me a Project Administrator*. This gives you the 
-LCS Administrator role. Note that it's possible that the LCS team already gave 
-you the correct permissions as part of the account creation process. In this 
-case, you won't see the *Make me a Project Administrator* button, and can 
-proceed to the next step. As LCS Administrator, you can assign roles to the rest 
-of the users in your project. Each user of LCS needs to have an assigned role. 
-The following roles are available: 
+To use LCS, you first need to set up an account at [lcs.liferay.com](https://lcs.liferay.com). 
+When creating an account, you're taken through the steps of accepting the 
+terms of service, setting your password, and setting your password reminder. 
+You're then taken to the *Projects* screen where you can join an existing 
+project or create a new one.
+
+![Figure 20.1: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
+
+The list of existing projects, if present, is the list of projects associated 
+with the domain of your email address. This is typically the company your email 
+address is associated with. For example, if your email address is 
+`joebloggs@janesblogfactory.com`, you're then presented with a list of existing 
+projects registered to users with the `@janesblogfactory.com` domain. This lets 
+you quickly and easily join the LCS projects that are associated with your 
+company. To request access to a project, simply check its checkbox and click 
+*Save*. Your request is then sent to the project administrator for approval. 
+Note that it's possible for the project administrator to pre-assign you a role 
+in a project (more on LCS roles in a moment). In this case, you won't have to 
+wait for approval. For more information on user management in LCS, please see 
+the *Managing LCS Users in Your Project* section of this guide.
+
+Alternatively, you can create a new project and make yourself its administrator. 
+To do so, click the checkbox next to 
+*Create a project and become an administrator* in the New Project section of the 
+Projects screen. The section then expands to let you name the project and choose 
+to go to directly to the project's *Dashboard* (more on the Dashboard later). 
+Give your project a name and then click *Save*. 
+
+![Figure 20.2: You can also create a new project from the Projects screen.](../../images/lcs-new-project.png)
+
+So what exactly can an LCS Administrator do? Fantastic question! As LCS 
+Administrator, you can assign roles to the rest of the users in your project. 
+Each user of LCS needs to have an assigned role. The following roles are 
+available: 
 
 - LCS Administrator: All LCS functionality is available to administrators. This 
   is the only role that can manage the roles of other users.
@@ -213,12 +237,12 @@ Once you deploy the LCS client portlet, you can use it to register your server
 with your LCS account. Access the portlet by clicking on *Cloud Services* under 
 the *Apps* section of the *Control Panel*.
 
-![Figure 20.1: LCS appears in your Control Panel as Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 20.3: LCS appears in your Control Panel as Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
 
-![Figure 20.2: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 20.4: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
 
 Next, you need to register your server with LCS by filling out the following 
 fields:
@@ -231,7 +255,7 @@ fields:
    of environments. If you elect to create a new environment, a popup asks you to
    enter its *Name*, *Location*, and *Description*.
    
-    ![Figure 20.3: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+    ![Figure 20.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -243,7 +267,7 @@ fields:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-![Figure 20.4: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 20.6: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client portlet shows your connection status. 
 Note that it can take up to 10 or 20 seconds to perform the initial handshake 
@@ -252,7 +276,7 @@ any change in status after 20 seconds, try refreshing the page. If you see a
 red symbol indicating no data is being transmitted, please contact the Liferay 
 team for support.
 
-![Figure 20.5: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
+![Figure 20.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
@@ -273,7 +297,7 @@ displayed. Here's a description of what's displayed:
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
  
-![Figure 20.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 20.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Great! Now that you've registered your server with your LCS account, you can dig 
 in to the features of LCS.
@@ -358,7 +382,7 @@ But what about using LCS to install fix packs across a cluster? Just follow the
 same procedure! LCS downloads and installs fix packs simultaneously across all 
 nodes--you don't have to handle each one individually. 
 
-![Figure 20.7: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
+![Figure 20.9: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 In addition to displaying fix pack messages, the Alerts table also displays 
 many other kinds of messages. For example, an alert appears whenever a 
@@ -395,7 +419,7 @@ button lets you edit or delete the environment. To the left of the fix packs is
 the list of servers in the environment. Clicking on one of the servers takes you 
 to the server view for that server.
 
-![Figure 20.8: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
+![Figure 20.10: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 ##### Using the Server View
 
@@ -410,7 +434,7 @@ available for installation and those that are already installed. You can access
 these through the *Available* and *Installed* tabs at the top of the fix packs
 table. 
 
-![Figure 20.9: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
+![Figure 20.11: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
 
 To view metrics and statistics of your server's performance, click the *Metrics* 
 button near the top of the page. The metrics are broken down into three main 
@@ -424,7 +448,7 @@ but for specific portlets in your server. The Cache category lists Liferay
 Single VM metrics and Hibernate metrics. In the following screenshot, the 
 statistics in the Portlet category are shown.
 
-![Figure 20.10: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
+![Figure 20.12: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -433,7 +457,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the Code Cache, PS Eden Space, PS Old Gen, PS Perm Gen, and PS Survivor 
 Space.
 
-![Figure 20.11: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
+![Figure 20.13: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server is the third category in the Application category. The Server category
 shows additional information about how your server is running. For example, a
@@ -441,7 +465,7 @@ horizontal bar graph shows the number of current threads that are running on
 your server. Similarly, horizontal bar graphs are used to represent the JDBC
 connection pools.
 
-![Figure 20.12: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+![Figure 20.14: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
 You can also view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
@@ -452,7 +476,7 @@ provides general information about your Liferay instance and hardware. This
 information is useful to the Liferay support team in the event that you need 
 their assistance.
 
-![Figure 20.13: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
+![Figure 20.15: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -496,7 +520,7 @@ presented with a table of the users on your project. To the right of each is the
 Manage button. Clicking *Manage* lets you assign or revoke LCS roles for that 
 user.
 
-![Figure 20.14: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
+![Figure 20.16: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
 *Invite External Users* pop up lets you invite anyone with a valid email address.
@@ -504,7 +528,7 @@ You can also search for users of Liferay.com to invite. Once you've chosen who
 to invite, the *Role* selection box lets you preassign LCS roles for when they
 accept your invitation.
 
-![Figure 20.15: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 20.17: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
@@ -524,7 +548,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 20.16: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
+![Figure 20.18: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -710,7 +734,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 20.17: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
+![Figure 20.19: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
 
 The last thing you need to do is modify the `spring.configs` section of your
 `portal-ext.properties` file to enable the sharding configuration, which by
@@ -806,7 +830,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like the figure below. 
 
-![Figure 20.18: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
+![Figure 20.20: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
 The actual folder path that is used by Liferay for storing documents is this:
 
@@ -847,7 +871,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 20.19: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 20.21: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -1239,7 +1263,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 20.20: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+![Figure 20.22: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
 the application(s) running), consider the stack memory footprint of those 100+
@@ -1254,7 +1278,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 20.21: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 20.23: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
@@ -1708,7 +1732,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 20.22: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 20.24: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
@@ -1874,7 +1898,7 @@ a server machine using an algorithm. That algorithm attempts to use a server
 closest to the user. The figure below shows a visual representation of using
 geographical proximity to improve latency. 
 
-![Figure 1: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
+![Figure 20.25: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
 
 Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's performance.
@@ -1913,7 +1937,7 @@ to CDNs:
 - *CDN Host HTTPS* 
 - *CDN Dynamic Resources Enabled*
 
-![Figure 2: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
+![Figure 20.26: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
 
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the CDN section of the Properties
