@@ -1,4 +1,4 @@
-# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk-lp-6-2-develop-tutorial)
+# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk)
 
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
@@ -11,14 +11,14 @@ Plugins SDK project into your workspace.
 <!-- To do: uncomment this note and add link to the new Plugins SDK tutorial once it exists -->
 
 <!--
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** This section assumes that
+**Note:** This section assumes that
 you've created projects with the Plugins SDK and are familiar with the
 directory structure used by the Plugins SDK. If you need to, check out the
 *Plugins SDK* section of this chapter; it comes right after this section. 
 
----
+$$$
 -->
 
 ## Importing a Single Project
@@ -75,15 +75,15 @@ you've already set up in Liferay IDE. Follow these steps:
 2.  In the *Import Liferay Projects* window, use the dropdown list to select the
     *Liferay Plugins SDK* from which you're importing plugins. 
 
-    ---
++$$$
 
-    ![Note](../../images/tip-pen-paper.png) **Note:** If your Plugins SDK isn't
+**Note:** If your Plugins SDK isn't
     configured in Liferay IDE (i.e., it's not in the dropdown list of the
     *Import Projects* window), use the *Configure* link to add one. To configure
     a Plugins SDK from the Installed SDKs window, just click *Add* and then
     browse to the Plugins SDK's root directory.
 
-    ---
+$$$
 
     Liferay IDE automatically fills in the *Liferay Plugin SDK Location* and
     *Liferay Plugin SDK Version* fields, as long as they're valid; invalid
@@ -102,7 +102,7 @@ Congratulations on importing *multiple* Liferay projects into your workspace!
 
 ## Related Topics
 
-[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import-lp-6-2-develop-tutorial)
+[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

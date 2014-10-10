@@ -1,4 +1,4 @@
-# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy-lp-6-2-develop-tutorial)
+# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy)
 
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
@@ -138,8 +138,8 @@ Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
 
-# Related Topics [](id=related-topics-lp-6-2-develop-tutorial)
+# Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)

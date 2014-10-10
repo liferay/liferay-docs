@@ -1,4 +1,4 @@
-# Leveraging Hibernate's Criteria API [](id=leveraging-hibernates-criteria-api-lp-6-2-develop-tutorial)
+# Leveraging Hibernate's Criteria API [](id=leveraging-hibernates-criteria-api)
 
 Liferay allows you to use custom SQL queries to retrieve data from the database.
 Sometimes, however, it's more convenient to build queries dynamically at
@@ -20,15 +20,15 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application.  See the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 learning path for more information on using Service Builder. Once you've used
 Service Builder to generate model, persistence, and service layers for your
 application, you can create custom finders using Liferay's Dynamic Query API by
 following these steps:
 
-1. Create a custom `-FinderImpl` class and a define a `findBy-` finder method in
-   this class. Run Service Builder to generate the required interfaces and utility
-   classes.
+1. Create a custom `-FinderImpl` class and define a `findBy-` finder method in
+   this class. Run Service Builder to generate the required interfaces and
+   utility classes.
 
 2. Implement your finder method using Liferay's Dynamic Query API.
 
@@ -50,7 +50,7 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application-lp-6-2-develop-learnpath).
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application).
 learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to

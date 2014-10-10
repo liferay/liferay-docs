@@ -1,4 +1,4 @@
-# AlloyUI 2.0 TagLib and Bootstrap Migration [](id=alloyui-2-0-taglib-and-bootstrap-migration-lp-6-2-develop-tutorial)
+# AlloyUI 2.0 TagLib and Bootstrap Migration [](id=alloyui-2-0-taglib-and-bootstrap-migration)
 
 Liferay 6.2 uses Twitter&reg; Bootstrap-based theming for a slick, vibrant look
 and feel with instant access to the Twitter&reg; Bootstrap (Bootstrap) theme
@@ -23,7 +23,7 @@ before we show you that tool, we'll explain the impact of each of these AlloyUI
 changes with respect to Liferay 6.1 plugins. First, let's look at the removal of
 the "aui-" class name prefix. 
 
-## Removal of the "aui-" Prefix from All Classes [](id=removal-of-the-aui--prefix-from-all-classes-lp-6-2-develop-tutorial)
+## Removal of the "aui-" Prefix from All Classes [](id=removal-of-the-aui--prefix-from-all-classes)
 
 The "aui-" class prefix was hindering developers from copying and pasting
 examples from Bootstrap's site into their Liferay plugin code. So we've removed
@@ -59,7 +59,7 @@ file for the HTML tags that Bootstrap styles.
 
 Next, let's consider the modules that have been deprecated in AlloyUI 2.0. 
 
-## AlloyUI Module Deprecations [](id=alloyui-module-deprecations-lp-6-2-develop-tutorial)
+## AlloyUI Module Deprecations [](id=alloyui-module-deprecations)
 
 Because extensive changes were needed for a number of AlloyUI modules, many of
 the original modules were deprecated. In some cases the original modules were
@@ -142,7 +142,7 @@ portal-web/docroot/html/css/portal/preview.css as was done for
 https://issues.liferay.com/browse/LPS-34974 ? Jim -->
 
 
-## CSS Classes Replaced with Bootstrap Equivalents [](id=css-classes-replaced-with-bootstrap-equivalents-lp-6-2-develop-tutorial)
+## CSS Classes Replaced with Bootstrap Equivalents [](id=css-classes-replaced-with-bootstrap-equivalents)
 
 Many of the CSS classes used in AlloyUI 1.5 were replaced with Bootstrap classes
 or were removed because they didn't blend well with Bootstrap. You may find this
@@ -152,7 +152,7 @@ Bootstrap's CSS classes. See
 
 Next, let's consider the component output and markup changes in AlloyUI 2.0. 
 
-## Component Output and Markup Changes [](id=component-output-and-markup-changes-lp-6-2-develop-tutorial)
+## Component Output and Markup Changes [](id=component-output-and-markup-changes)
 
 AlloyUI 2.0 introduces appealing new changes in its output and some practical
 changes to its markup. These changes help facilitate building UIs with a
@@ -175,7 +175,7 @@ And remember that the Liferay AlloyUI Upgrade Tool--that we'll introduce
 shortly--will help you out as well. Next, let's consider the changes in the
 icons available. 
 
-## Icon Removals, in Favor of Using Bootstrap Icons [](id=icon-removals-in-favor-of-using-bootstrap-icons-lp-6-2-develop-tutorial)
+## Icon Removals, in Favor of Using Bootstrap Icons [](id=icon-removals-in-favor-of-using-bootstrap-icons)
 
 We replaced many icons with those provided by Bootstrap. We also added icons
 from the Font Awesome project. These icons look great and provide a consistent
@@ -192,7 +192,7 @@ really jump-start your migration process, we'll show you Liferay's AlloyUI
 Upgrade Tool. So, put on your work gloves and get ready to power through
 migrating your plugins! 
 
-## Upgrading Plugins with the Liferay AlloyUI Upgrade Tool [](id=upgrading-plugins-with-the-liferay-alloyui-upgrade--lp-6-2-develop-tutorial)
+## Upgrading Plugins with the Liferay AlloyUI Upgrade Tool [](id=upgrading-plugins-with-the-liferay-alloyui-upgrade-)
 
 To access the liferay-aui-upgrade-tool project and install it locally, you'll
 need an account on GitHub and the Git tool on your machine. Visit
@@ -232,14 +232,14 @@ UNIX users can download its source in a `.tar.gz` file, unzip it, un-tar it, and
 build it per the instructions in its `README.md` file. Windows users can
 download the `.msi` installer file and run it. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** On Windows, only install to
+**Warning:** On Windows, only install to
  locations that have UNIX-friendly paths. Paths like `C:\Program Files (x86)`
  that contain space characters and parentheses can prevent software from working
  properly. 
 
----
+$$$
 
 To build the upgrade tool with NodeJS, execute the following command (exclude
 `[sudo]` on Windows): 
@@ -259,7 +259,7 @@ with the default extensions.
 
     laut -f some-directory
 
-## Example: Upgrading the Microblogs Portlet to AlloyUI 2.0 [](id=example-upgrading-the-microblogs-portlet-to-alloyui-lp-6-2-develop-tutorial)
+## Example: Upgrading the Microblogs Portlet to AlloyUI 2.0 [](id=example-upgrading-the-microblogs-portlet-to-alloyui)
 
 Let's use the upgrade tool to upgrade Liferay's CE 6.1 Microblogs portlet from
 using AlloyUI version 1.5 to using AlloyUI 2.0. Here's how to run it on the
@@ -294,14 +294,14 @@ AlloyUI class names, replacing `aui-button-holder`, `aui-button-disabled`, and
 `button-submit`, respectively. Keep this type of change throughout your
 portlet's files. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** Make sure to add the `.aui`
+**Warning:** Make sure to add the `.aui`
  parent class reference in front of a classname if you're extending the
  styling of a class that Bootstrap already styles. See the previous section on
  *Removal of the aui- Prefix from All Classes* for details. 
 
----
+$$$
 
 Lastly, consider the changes done to the Microblogs portlet's `main.js` file.
 The script now uses the `liferay-util-window` module in place of the old

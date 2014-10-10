@@ -1,4 +1,4 @@
-# Developing Plugins with Liferay IDE [](id=liferay-ide-lp-6-2-develop-tutorial)
+# Developing Plugins with Liferay IDE [](id=liferay-ide)
 
 The best Liferay-specific development tool is Liferay IDE, a fully featured
 Integrated Development Environment (IDE) based on Eclipse. Even if you're a
@@ -13,8 +13,11 @@ projects for the Liferay Portal platform. You can install Liferay IDE bundled
 with Eclipse or as a set of Eclipse plugins from an update site. The latest
 version of Liferay IDE supports development of portlets, hooks, layout
 templates, themes, and Ext plugins. To use Liferay IDE, you need the Eclipse
-Java EE developer package using Indigo or a later version. 
+Java EE developer package using Indigo or a later version. You can read the
+learning path article
+[Developing Applications with Liferay IDE](/learning-paths/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+for instructions on installing and setting up Liferay IDE. 
 
-In this section's tutorials we'll show you how to install Liferay IDE, set up
-projects for your applications, and deploy them to your portal. 
+In this section's tutorials you'll learn how to set up projects for your
+applications and deploy them to your portal.
 

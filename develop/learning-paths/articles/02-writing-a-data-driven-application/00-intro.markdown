@@ -1,4 +1,4 @@
-# Writing a Data-Driven Application [](id=writing-a-data-driven-application-lp-6-2-develop-learnpath)
+# Writing a Data-Driven Application [](id=writing-a-data-driven-application)
 
 One of the most common ways to store data in an application is to use a
 database. If you've followed the introductory learning path, you learned how to

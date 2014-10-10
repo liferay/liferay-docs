@@ -1,4 +1,4 @@
-# Using the Plugins SDK [](id=using-the-plugins-sdk-lp-6-2-develop-tutorial)
+# Using the Plugins SDK [](id=using-the-plugins-sdk)
 
 This tutorial describes the Plugins SDK's directory structure and project Ant
 targets, demonstrates how to create plugin projects, and shows how to deploy
@@ -99,15 +99,15 @@ you specified doesn't end in "-portlet".
 
 ![Figure 1: The Plugins SDK's Ant targets enable you to create a new plugin project with a single command.](../../images/plugins-sdk-create-project.png)
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+**Tip**: If you are using a source
 control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
 good moment to do an initial check-in of your changes. After building the plugin
 for deployment, several additional files will be generated that should *not* be
 managed by a source control system. 
 
----
+$$$
 
 Lastly, consider some common practices used in developing plugins with the SDK.
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
@@ -133,7 +133,7 @@ foundational development tool: the Plugins SDK.
 
 ## Related Topics
 
-[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance-lp-6-2-develop-tutorial)
+[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven-lp-6-2-develop-tutorial)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 

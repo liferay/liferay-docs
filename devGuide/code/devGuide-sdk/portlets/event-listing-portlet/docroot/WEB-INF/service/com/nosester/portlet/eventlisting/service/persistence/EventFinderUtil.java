@@ -29,6 +29,11 @@ public class EventFinderUtil {
 			eventDescription, locationName, begin, end);
 	}
 
+	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> findByUserId(
+		long userId) {
+		return getFinder().findByUserId(userId);
+	}
+
 	public static EventFinder getFinder() {
 		if (_finder == null) {
 			_finder = (EventFinder)PortletBeanLocatorUtil.locate(com.nosester.portlet.eventlisting.service.ClpSerializer.getServletContextName(),

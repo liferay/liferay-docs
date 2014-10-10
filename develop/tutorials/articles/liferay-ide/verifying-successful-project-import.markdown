@@ -1,4 +1,4 @@
-# Verifying Successful Project Import [](id=verifying-successful-project-import-lp-6-2-develop-tutorial)
+# Verifying Successful Project Import [](id=verifying-successful-project-import)
 
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. 
@@ -38,5 +38,5 @@ Congratulations on verifying that your project imported properly!
 
 Here is a related topic. 
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins-lp-6-2-develop-tutorial)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

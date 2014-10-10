@@ -1,4 +1,4 @@
-# Writing Permissions Java Code [](id=writing-permissions-java-code-lp-6-2-develop-learnpath)
+# Writing Permissions Java Code [](id=writing-permissions-java-code)
 
 As you've seen, permissions in Liferay Portal are defined using a configuration
 file. The permissions themselves, however, must be stored in the database in
@@ -181,7 +181,6 @@ primary key of the `Entry` entity.
 1.  Create a class in the same package called `EntryPermission.java`. 
 
 2.  Place the following code in this class: 
-
 
         package com.liferay.docs.guestbook.service.permission;
 
