@@ -11,9 +11,9 @@ creating hooks in a Plugins SDK project from Liferay IDE and from the command
 line. 
 
 To learn how to create Liferay Maven projects, see the tutorial
-[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin). 
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin). 
 
 Creating a hook using Liferay IDE is easiest to learn first. So go ahead and
 jump right in by creating your hook project with Liferay IDE. 

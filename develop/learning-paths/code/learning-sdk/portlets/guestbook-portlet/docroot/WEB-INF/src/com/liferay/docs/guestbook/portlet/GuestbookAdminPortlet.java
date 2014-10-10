@@ -50,8 +50,8 @@ public class GuestbookAdminPortlet extends MVCPortlet {
 		long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
 		try {
-			GuestbookLocalServiceUtil.updateGuestbook(guestbookId, name,
-					serviceContext);
+			GuestbookLocalServiceUtil.updateGuestbook(serviceContext.getUserId(), guestbookId,
+					name, serviceContext);
 			
 			SessionMessages.add(request, "guestbookUpdated");
 		} catch (PortalException pe) {

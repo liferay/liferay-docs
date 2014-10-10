@@ -298,3 +298,7 @@ updated, or deleted, their indexes are updated. With your indexers in place,
 your guestbook and guestbook entry entities are all set to take advantage of
 Liferay's asset framework. We'll explore Liferay's asset framework in the next
 learning path.
+
+## Next Steps
+
+[Asset-Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)

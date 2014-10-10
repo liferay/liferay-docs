@@ -2,11 +2,11 @@
 <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
 
 <liferay-portlet-app>
-	
 	<portlet>
 		<portlet-name>guestbook</portlet-name>
-		<icon>/icon.png</icon>
+		<icon>/entry.png</icon>
 		<indexer-class>com.liferay.docs.guestbook.search.EntryIndexer</indexer-class>
+		<asset-renderer-factory>com.liferay.docs.guestbook.asset.EntryAssetRendererFactory</asset-renderer-factory>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js
@@ -15,12 +15,13 @@
 	</portlet>
 	<portlet>
 		<portlet-name>guestbook-admin</portlet-name>
-		<icon>/icon.png</icon>
+		<icon>/guestbook.png</icon>
 		<indexer-class>com.liferay.docs.guestbook.search.GuestbookIndexer</indexer-class>
 		<control-panel-entry-category>
 			site_administration.content
 		</control-panel-entry-category>
 		<control-panel-entry-weight>1.5</control-panel-entry-weight>
+		<asset-renderer-factory>com.liferay.docs.guestbook.asset.GuestbookAssetRendererFactory</asset-renderer-factory>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js

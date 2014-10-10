@@ -1,14 +1,19 @@
 @echo off
+
+set CLASSPATH=%~dp0\..\lib
+
 if "%1"=="" goto usage
 if "%2"=="" goto convert
 
-java -cp .;..\lib\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %2
+java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %2
 
 goto end
 
 :usage
 
 echo Usage: convert.bat [Markdown file to convert] or convert.bat [Markdown file to convert] [HTML file to be written]
+echo.
+echo Run the convert.bat script from any directory.
 echo.
 echo The first argument is the path to the Markdown file to convert to HTML.
 echo.
@@ -21,6 +26,6 @@ goto end
 set htmlFile=%1
 set htmlFile=%htmlFile:markdown=html%
 
-java -cp .;..\lib\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %htmlFile%
+java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %htmlFile%
 
 :end

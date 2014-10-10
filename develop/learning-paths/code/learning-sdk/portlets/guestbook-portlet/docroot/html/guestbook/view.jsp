@@ -90,8 +90,13 @@
 
 	<liferay-ui:search-container-row
 		className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+		
+		<portlet:renderURL var="viewEntry">
+			<portlet:param name="mvcPath" value="/html/guestbook/view_entry.jsp" />
+			<portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
+		</portlet:renderURL>
 
-		<liferay-ui:search-container-column-text property="message" />
+		<liferay-ui:search-container-column-text property="message" href="<%= viewEntry %>"/>
 
 		<liferay-ui:search-container-column-text property="name" />
 		

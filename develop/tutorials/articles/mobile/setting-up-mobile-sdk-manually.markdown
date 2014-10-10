@@ -67,12 +67,12 @@ you're using Maven as your build system. Just add the following code to your
 	
 ## Related Topics
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

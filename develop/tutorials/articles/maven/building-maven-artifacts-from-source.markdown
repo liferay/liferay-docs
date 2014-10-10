@@ -112,6 +112,6 @@ source code.
 
 Here are some related topics:
 
-[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts)
+[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/6-2/managing-liferay-maven-artifacts)
 
-[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide)
+[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide)

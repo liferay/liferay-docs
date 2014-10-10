@@ -12,7 +12,7 @@ Since apps are nothing more than collections of individual plugins, your first
 step in developing a Marketplace app is to develop the functionality in the form
 of one or more Liferay plugins. To create a sample app that contains a single
 portlet, you can follow the detailed instructions from the learning path
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development).
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
 After creating and deploying your sample app, return here to continue.
 
 In the real world, apps usually consist of multiple components (e.g., multiple
@@ -38,7 +38,7 @@ compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found in 
-[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/understanding-liferays-releases). 
+[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases). 
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 `6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions 
 follow a slightly different policy given the presence of fix packs and service
