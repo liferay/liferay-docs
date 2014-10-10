@@ -50,14 +50,13 @@ Configuring Message Bus is done using the following files:
   You need to add `messaging-spring.xml` to your list of Spring configurations
   in this file. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The internal file
-`META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default
-Message Bus class, default asynchronous message sender class, and default 
-synchronous message sender class for Liferay. 
+**Note:** The internal file `META-INF/messaging-core-spring.xml` of 
+`portal-impl.jar` specifies the default Message Bus class, default asynchronous 
+message sender class, and default synchronous message sender class for Liferay. 
 
----
+$$$
 
 You can control your *Message Types* by using either the `Message` or
 `JSONObject` class. Liferay core services are typically serialized and
@@ -67,10 +66,10 @@ messaging.
 
 ## Related Topics
 
-[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/tutorials/-/knowledge_base/6-2/maven)

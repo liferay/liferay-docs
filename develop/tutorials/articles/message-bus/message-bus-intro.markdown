@@ -22,10 +22,10 @@ System's architecture.
 
 ## Related Topics
 
-[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/tutorials/-/knowledge_base/6-2/maven)

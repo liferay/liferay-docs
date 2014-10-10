@@ -141,15 +141,15 @@ Now that you've implemented your message senders and listeners, you need to
 configure them in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` 
 file. Create this file if it doesn't yet exist. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** You should only do this *after* 
-implementing any senders and listeners you have. Tools like Liferay IDE and 
-Liferay Developer Studio try to deploy plugins automatically as you save 
-changes. If your sender or listener classes don't exist and you declare them in 
-`messaging-spring.xml`, your plugin will break. 
+**Warning:** You should only do this *after* implementing any senders and 
+listeners you have. Tools like Liferay IDE and Liferay Developer Studio try to 
+deploy plugins automatically as you save changes. If your sender or listener 
+classes don't exist and you declare them in `messaging-spring.xml`, your plugin 
+will break. 
 
----
+$$$
 
 For example, here's the configuration file for the custom Tasks, Setup, and 
 Inventory portlets: 
@@ -242,10 +242,10 @@ call-backs.
 
 ## Related Topics
 
-[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/tutorials/-/knowledge_base/6-2/maven)

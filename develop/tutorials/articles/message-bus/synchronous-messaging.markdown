@@ -147,15 +147,15 @@ For Message Bus to successfully direct messages from destinations to listeners,
 you must register the listeners by configuring the appropriate mappings in your 
 plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. 
 
----
++$$$
 
- ![Warning](../../images/tip.png) **Warning:** You should only do this *after* 
-implementing any senders and listeners you have. Tools like Liferay IDE and 
-Liferay Developer Studio try to deploy plugins automatically as you save 
-changes. If you declare sender or listener classes in the configuration file 
-that don't exist yet, your plugin will break. 
+**Warning:** You should only do this *after* implementing any senders and 
+listeners you have. Tools like Liferay IDE and Liferay Developer Studio try to 
+deploy plugins automatically as you save changes. If you declare sender or 
+listener classes in the configuration file that don't exist yet, your plugin 
+will break. 
 
----
+$$$
 
 Create the `WEB-INF/src/META-INF/messaging-spring.xml` file if it's not already 
 in your plugin. For example, here's the configuration for the custom Tasks and 
@@ -245,10 +245,10 @@ Congratulations! You've successfully made your first trip on the Message Bus!
 
 ## Related Topics 
 
-[Service Builder and Services](/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing with the Plugins SDK](/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/tutorials/-/knowledge_base/6-2/maven)
