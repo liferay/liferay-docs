@@ -6,6 +6,36 @@
 
 <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
+<c:if test="<%= themeDisplay.isSignedIn() %>">
+<%
+String fullName = user.getFullName();
+
+String emailAddress = user.getEmailAddress();
+%>
+
+<aui:script use="node, event">
+var fullName = '<%= fullName %>';
+
+var useNameButton = A.one('#useNameButton');
+
+useNameButton.on('click', function(event) {
+	var name = A.one('#<portlet:namespace/>name');
+	
+	name.val(fullName);
+});
+
+var emailAddress = '<%= emailAddress %>';
+
+var useEmailButton = A.one('#useEmailButton');
+
+useEmailButton.on('click', function(event) {
+	var email = A.one('#<portlet:namespace/>email');
+	
+	email.val(emailAddress);
+});
+</aui:script>
+</c:if>
+
 <aui:script use="aui-char-counter">
 AUI().use(
   function(A) {
@@ -64,17 +94,15 @@ generateMessagesButton.on('click', function(event) {
 	var rand3 = Math.floor(Math.random() * entryMessages.length);
 	message3Div.append('<p class="message" id="message3">' + entryMessages[rand3] + '</p><p id="use-message3"><input class="btn" onclick="useMessage3();" type="button" value="Use Message" /></p>');
 
-	var buttonHolder = A.one('.button-holder');
+	var parentNode = generateMessagesButton.get('parentNode');
 
-	if (A.one('#buttonWrapper').contains(buttonHolder)) {
-		if (buttonHolder.get('children').size() < 2) {
-			buttonHolder.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
-		}
+	if (parentNode.get('children').size() < 2) {
+		parentNode.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
 	}
 	
-	var hideButton = A.one('#hideMessagesButton');
+	var hideMessagesButton = A.one('#hideMessagesButton');
 	
-	hideButton.on('click', function(event) {
+	hideMessagesButton.on('click', function(event) {
 		A.one('#message1-div').removeChild(A.one('#message1'));
 		A.one('#message1-div').removeChild(A.one('#use-message1'));
 		A.one('#message2-div').removeChild(A.one('#message2'));
@@ -82,10 +110,8 @@ generateMessagesButton.on('click', function(event) {
 		A.one('#message3-div').removeChild(A.one('#message3'));
 		A.one('#message3-div').removeChild(A.one('#use-message3'));
 		
-		buttonHolder = A.one('.button-holder');
-		
-		if (A.one('#buttonWrapper').contains(buttonHolder)) {
-			buttonHolder.removeChild(A.one('#hideMessagesButton'));
+		if (parentNode.contains(hideMessagesButton)) {
+			parentNode.removeChild(A.one('#hideMessagesButton'));
 		}
 	});
 });
@@ -122,17 +148,33 @@ if (entryId > 0) {
             	<aui:validator name="required"/>
             </aui:input>
             
+			<c:if test="<%= themeDisplay.isSignedIn() %>">
+	            <div id="useNameButtonWrapper">
+		            <aui:button-row>
+		            	<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+		            </aui:button-row>
+	            </div>
+			</c:if>
+            
             <aui:input name="email" >
             	<aui:validator name="email"/>
             	<aui:validator name="required"/>
             </aui:input>
+            
+			<c:if test="<%= themeDisplay.isSignedIn() %>">
+	            <div id="useEmailButtonWrapper">
+		            <aui:button-row>
+		            	<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+		            </aui:button-row>
+	            </div>
+			</c:if>
             
             <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
             <aui:input id="message" cssClass="message" type="textarea" name="message">
             	<aui:validator name="required" errorMessage="Please enter a message." />
             </aui:input>
            
-            <div id="buttonWrapper">
+            <div id="generateButtonWrapper">
 	            <aui:button-row>
 	            	<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
 	            </aui:button-row>
