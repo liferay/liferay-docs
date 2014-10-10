@@ -1,8 +1,12 @@
 #!/bin/sh
 
+classpathDir=$(pwd | sed 's/liferay\-docs.*/liferay\-docs\/lib/')
+
 if [ $# -lt 1 ]; then
 	echo
 	echo Usage: ./convert.sh \[Markdown file to convert\] or ./convert.sh \[Markdown file to convert\] \[HTML file to be written\]
+	echo
+	echo Run the convert.sh script from the liferay-docs directory or any subdirectory.
 	echo
 	echo The first argument is the path to the Markdown file to convert to HTML.
 	echo
@@ -13,9 +17,9 @@ elif [ $# -lt 2 ]; then
 	htmlFile=$1
 	htmlFile=$(echo "${htmlFile}" | sed 's/[^.]*$//')
 	htmlFile=${htmlFile}html
-	java -cp "../lib/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 ${htmlFile}
+	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 ${htmlFile}
 	exit 0
 else
-	java -cp "../lib/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 $2
+	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 $2
 	exit 0
 fi
