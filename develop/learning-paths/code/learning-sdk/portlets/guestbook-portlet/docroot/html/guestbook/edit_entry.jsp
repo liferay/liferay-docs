@@ -111,7 +111,7 @@ generateMessagesButton.on('click', function(event) {
 		A.one('#message3-div').removeChild(A.one('#use-message3'));
 		
 		if (parentNode.contains(hideMessagesButton)) {
-			parentNode.removeChild(A.one('#hideMessagesButton'));
+			parentNode.removeChild(hideMessagesButton);
 		}
 	});
 });
