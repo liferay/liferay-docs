@@ -106,10 +106,10 @@ app.
 
 ## Related Topics
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

@@ -7,11 +7,11 @@ tools: Ant in the Plugins SDK or Maven Archetype in Maven.
 In this tutorial, you'll learn how to create MVC portlets in a Plugins SDK
 project, using Liferay IDE and Ant. To learn how to create Liferay Maven
 projects, see the tutorial 
-[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin).
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin).
 If you're completely new to Liferay, you may first want to go through the 
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development) 
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
 learning path. 
 
 First up is creating a portlet with Liferay IDE, so go ahead and get 
@@ -163,7 +163,7 @@ to the browser. Any HTML code in your client side files must be free of global
 tags like `<html>` or `<head>`. Additionally, namespace all CSS classes and
 element IDs to prevent conflicts with other portlets. Liferay provides two
 tools, a taglib and API methods, to generate a namespace for you. See the
-[Using Portlet Namespacing](/develop/tutorials/-/knowledge_base/using-portlet-namespacing)
+[Using Portlet Namespacing](/develop/tutorials/-/knowledge_base/6-2/using-portlet-namespacing)
 tutorial to learn more about namespacing. 
 
 <!--
@@ -177,11 +177,11 @@ have two handy ways to create them in your bag O'trix!
 
 ## Related Topics
 
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development)
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development)
 
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 
-[Creating Liferay Maven Plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 

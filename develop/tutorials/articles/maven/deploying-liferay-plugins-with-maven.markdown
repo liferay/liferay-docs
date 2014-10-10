@@ -6,7 +6,7 @@ tutorial explain the process. Just follow these steps:
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
     `pom.xml`. See the 
-    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
+    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
     tutorial for descriptions of these Liferay properties. 
 
     Here's an example where these *properties* are specified for a Liferay
@@ -142,5 +142,5 @@ Congratulations on deployin your plugin to Liferay and to your repository!
 
 ## Related Topics
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

@@ -18,7 +18,7 @@ for the Liferay Marketplace:
 
 These tutorials focus on Liferay developer topics. It is highly recommended that
 you first read the
-[Leveraging Liferay Marketplace](/discover/portal/-/knowledge_base/leveraging-the-liferay-marketplace)
+[Leveraging Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)
 chapter of *Using Liferay Portal*, which contains detailed information
 about the Marketplace from an end-user's perspective.
 

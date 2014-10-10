@@ -6,9 +6,9 @@ command line. This tutorial focuses on creating themes in a Plugins SDK project,
 from Liferay IDE and from the command line. 
 
 To learn how to create Liferay Maven projects, see the tutorial
-[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin). 
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin). 
 
 Creating the theme using Liferay IDE is easiest to learn first.
 
@@ -118,7 +118,7 @@ folders and files you'll customize there.
 
 The other folders inside `docroot` are copied over from the parent theme in
 your Liferay bundle when you
-[deploy](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 your theme. Use these files as the basis for your modifications. For example, to
 customize the navigation markup, copy the `navigation.[vm|ftl]` file from
 `docroot/templates/navigation.[vm|ftl]` into the `docroot/_diffs/templates`
@@ -136,7 +136,7 @@ you won't have to manually modify your templates to add support for new Liferay
 features. 
 
 Whenever you modify your theme,
-[redeploy](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[redeploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 it. Wait a few seconds until the theme deploys, then refresh your browser to see
 your changes. 
 
@@ -145,6 +145,6 @@ structure.
 
 ## Related Topics
 
-[Creating Liferay Maven Plugins from Liferay IDE] (/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE] (/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
