@@ -241,7 +241,7 @@ Lastly, you can also specify portlet preferences for each portlet using the
  useful to import web content articles along with a page template that
  references the articles, in a nested Web Content Display portlet. For more
  information on importing resources, see
- [Importing Resources with Your Themes](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes).
+ [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
 $$$
 
