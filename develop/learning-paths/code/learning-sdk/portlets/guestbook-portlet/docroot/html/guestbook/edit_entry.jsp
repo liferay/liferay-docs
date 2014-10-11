@@ -6,6 +6,100 @@
 
 <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
+<%
+long entryId = ParamUtil.getLong(renderRequest, "entryId");
+
+Entry entry = null;
+
+if (entryId > 0) {
+	entry = EntryLocalServiceUtil.getEntry(entryId);
+}
+%>
+
+<aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
+	<aui:fieldset>
+	    <aui:input name="name" >
+	    	<aui:validator name="required"/>
+	    </aui:input>
+
+		<c:if test="<%= themeDisplay.isSignedIn() %>">
+			<div id="useNameButtonWrapper">
+				<aui:button-row>
+					<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+				</aui:button-row>
+			</div>
+		</c:if>
+
+		<aui:input name="email" >
+			<aui:validator name="email"/>
+			<aui:validator name="required"/>
+		</aui:input>
+
+		<c:if test="<%= themeDisplay.isSignedIn() %>">
+			<div id="useEmailButtonWrapper">
+				<aui:button-row>
+					<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+				</aui:button-row>
+			</div>
+		</c:if>
+
+		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
+		<aui:input id="message" cssClass="message" type="textarea" name="message">
+			<aui:validator name="required" errorMessage="Please enter a message." />
+		</aui:input>
+
+		<div id="generateButtonWrapper">
+			<aui:button-row>
+				<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+			</aui:button-row>
+		</div>
+
+		<div id="messages">
+			<aui:layout>
+				<aui:column>
+					<div id="message1-div"></div>
+				</aui:column>
+				
+				<aui:column>
+					<div id="message2-div"></div>
+				</aui:column>
+				
+				<aui:column>
+					<div id="message3-div"></div>
+				</aui:column>
+			</aui:layout>
+		</div>
+
+	    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+
+	    <aui:input name="entryId" type="hidden" />
+	</aui:fieldset>
+	
+	<liferay-ui:asset-categories-error />
+	<liferay-ui:asset-tags-error />
+	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
+		<aui:fieldset>
+			<aui:input name="categories" type="assetCategories" />
+			
+			<aui:input name="tags" type="assetTags" />
+		</aui:fieldset>
+	</liferay-ui:panel>
+	
+	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+		<aui:fieldset>
+			<liferay-ui:input-asset-links className="<%= Entry.class.getName() %>" classPK="<%= entryId %>"
+			/>
+		</aui:fieldset>
+	</liferay-ui:panel>
+	
+	<aui:button-row>
+		<aui:button type="submit" id="save"></aui:button>
+		
+		<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+	</aui:button-row>
+</aui:form>
+
 <c:if test="<%= themeDisplay.isSignedIn() %>">
 <%
 String fullName = user.getFullName();
@@ -103,12 +197,9 @@ generateMessagesButton.on('click', function(event) {
 	var hideMessagesButton = A.one('#hideMessagesButton');
 	
 	hideMessagesButton.on('click', function(event) {
-		A.one('#message1-div').removeChild(A.one('#message1'));
-		A.one('#message1-div').removeChild(A.one('#use-message1'));
-		A.one('#message2-div').removeChild(A.one('#message2'));
-		A.one('#message2-div').removeChild(A.one('#use-message2'));
-		A.one('#message3-div').removeChild(A.one('#message3'));
-		A.one('#message3-div').removeChild(A.one('#use-message3'));
+		A.one('#message1-div').get('children').remove(true);
+		A.one('#message2-div').get('children').remove(true);
+		A.one('#message3-div').get('children').remove(true);
 		
 		if (parentNode.contains(hideMessagesButton)) {
 			parentNode.removeChild(hideMessagesButton);
@@ -130,99 +221,3 @@ useMessage3 = function() {
 	message.val(A.one('#message3-div').one('#message3').html());
 };
 </aui:script>
-
-<%
-long entryId = ParamUtil.getLong(renderRequest, "entryId");
-
-Entry entry = null;
-
-if (entryId > 0) {
-	entry = EntryLocalServiceUtil.getEntry(entryId);
-}
-%>
-
-<aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
-<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
-        <aui:fieldset>
-            <aui:input name="name" >
-            	<aui:validator name="required"/>
-            </aui:input>
-            
-			<c:if test="<%= themeDisplay.isSignedIn() %>">
-	            <div id="useNameButtonWrapper">
-		            <aui:button-row>
-		            	<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
-		            </aui:button-row>
-	            </div>
-			</c:if>
-            
-            <aui:input name="email" >
-            	<aui:validator name="email"/>
-            	<aui:validator name="required"/>
-            </aui:input>
-            
-			<c:if test="<%= themeDisplay.isSignedIn() %>">
-	            <div id="useEmailButtonWrapper">
-		            <aui:button-row>
-		            	<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
-		            </aui:button-row>
-	            </div>
-			</c:if>
-            
-            <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
-            <aui:input id="message" cssClass="message" type="textarea" name="message">
-            	<aui:validator name="required" errorMessage="Please enter a message." />
-            </aui:input>
-           
-            <div id="generateButtonWrapper">
-	            <aui:button-row>
-	            	<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-	            </aui:button-row>
-            </div>
-            
-            <div id="messages">
-	            <aui:layout>
-		            <aui:column>
-		            	<div id="message1-div"></div>
-		            </aui:column>
-		            
-		            <aui:column>
-		           		<div id="message2-div"></div>
-		            </aui:column>
-		            
-		            <aui:column>
-		            	<div id="message3-div"></div>
-		            </aui:column>
-	            </aui:layout>
-            </div>
-            
-            <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
-            
-            <aui:input name="entryId" type="hidden" />
-        </aui:fieldset>
-        
-        <liferay-ui:asset-categories-error />
-		<liferay-ui:asset-tags-error />
-	    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
-			<aui:fieldset>
-				<aui:input name="categories" type="assetCategories" />
-
-				<aui:input name="tags" type="assetTags" />
-			</aui:fieldset>
-		</liferay-ui:panel>
-
-		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
-			<aui:fieldset>
-				<liferay-ui:input-asset-links
-					className="<%= Entry.class.getName() %>"
-					classPK="<%= entryId %>"
-				/>
-			</aui:fieldset>
-		</liferay-ui:panel>
-
-        <aui:button-row>
-			<aui:button type="submit" id="save"></aui:button>
-			
-			<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
-        </aui:button-row>
-</aui:form>
