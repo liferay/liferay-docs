@@ -7,18 +7,20 @@ service layer, but did not provide front-end validation in the form itself.
 Before users submit your form, you should make sure that they have filled out
 all of the required fields. Your front-end form validation should indicate which
 fields are required and should highlight the required fields if the user tries
-to submit the form with required fields left empty. Your form validation should
-also allow you to restrict the number of characters that can be entered into a
-field. The number of remaining characters for the field should be displayed to
-the user. With AlloyUI, it's easy to implement all of these form validation
-features. Once you've implemented form validation, users' attempts to submit
-invalid forms will be caught before an HTTP request is sent to your Liferay
-server.
+to submit the form with required fields left empty. For email addresses, your
+form validation should check that the user entered a valid address. Your form
+validation should also allow you to restrict the number of characters that can
+be entered into a field. The number of remaining characters for the field should
+be displayed to the user. With AlloyUI, it's easy to implement all of these form
+validation features. Once you've implemented form validation, users' attempts to
+submit invalid forms will be caught before an HTTP request is sent to your
+Liferay server.
 
 You'll implement form validation with AlloyUI in two steps. First, you'll use
-the AlloyUI validator tag to specify required fields. Next, you'll use the
-AlloyUI Character Counter module to limit the number of characters that comprise
-a guestbook entry message.
+the AlloyUI validator tag to specify required fields and fields that require a
+special format (e.g., the email address field). Then you'll use the AlloyUI
+Character Counter module to limit the number of characters that comprise a
+guestbook entry message.
 
 ## Using the AUI Validator Tag
 
@@ -31,68 +33,55 @@ Validating AUI input fields is very easy. You just have to add an
     `<aui:fieldset/>` tags with the following code:
 
         <aui:input name="name" >
-             <aui:validator name="required"/>
+             <aui:validator name="required" />
         </aui:input>
+
         <aui:input name="email" >
-             <aui:validator name="email"/>
-             <aui:validator name="required"/>
+             <aui:validator name="email" />
+             <aui:validator name="required "/>
         </aui:input>
-        <aui:input id="message" cssClass="message" type="textarea" name="message">
+
+        <aui:input id="message" type="textarea" name="message">
              <aui:validator name="required" errorMessage="Please enter a message." />
         </aui:input>
+
         <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+
         <aui:input name="entryId" type="hidden" />
 
-    The main difference in this code is the presence of the `<aui:validator>`
-    tag inside the `<aui:input>` tags. This tag is a quick and easy solution to
-    validating your fields. The first thing to note is that the `<aui:validator/>`
-    tag is placed inside the `<aui:input>` tags for the field you wish to
-    validate. The next step is to give the `name` attribute a value of the type of
-    validation you want to use on the field. All the fields are marked with a
-    `required` attribute. For the email field, you've added a `email` validation 
-    in order to assure that a legitimate email is entered. 
+    Save this update and redeploy your app.
 
-    The message field has been modified into a textarea input field to give your
-    users more space. The textarea has been given a `cssClass` attribute to 
-    allow for styling later; it has been marked as a required field like the 
-    others. The last thing to note is the `errormessage` attribute in the 
-    message field. The `errormessage` attribute replaces the default error 
-    message. In your code, you replaced the default "this field is required" 
-    message field with a custom "Leave a message please" message. One last thing
-    you can do is give some styling to the message field to prevent users from
-    resizing the field.
+    You've added `<aui:validator>` tags inside of some of the `<aui:input>`
+    tags. This tag allows you to quickly and easily validate your fields. First,
+    note that you add a `<aui:validator/>` tag inside of the `<aui:input>` tags
+    for the field you wish to validate. Next, note that you have to specify a
+    value for the `name` attribute. The value of the `name` attribute determines
+    the type of validation to apply to the field. You added an `aui:validator
+    name="required" />` tag to all of the non-hidden form fields. For the email
+    field, you've added a `email` validation in order to ensure that a
+    legitimate email address is entered. 
+
+    You also changed the message filed from a text input field to a textarea
+    input field. This provides more space for users to enter guestbook message.
+    It allows allows them to resize the field. Note the `errorMessage` attribute
+    of the message field's `<aui:validator>` tag. This attribute specifies a
+    message that replaces the default error message. You've replaced the default
+    error message (*This field is required*) field with a custom message:
+    *Please enter a message.*
+
+2.  Click on *Add Entry* in the Guestbook portlet to view the form that you
+    updated. Notice that all the input fields are now marked as *Required*,
+    thanks to your `<aui:validator>` tags. 
+
+3.  Attempt to save a guestbook message with all of the fields left empty.
     
-    There are a few ways you can style your elements: 1)External style sheet; 
-    2)Internal styles(written in between `<style>` tags); 3)Inline styles
-    (written inside of the element's tag). The preferred method is to add 
-    it to an external style sheet. When the portlet was created, a `main.css` 
-    file was generated in the `docroot/css/` directory of your portlet. You will 
-    add all of your styling to the `main.css` file.
-    
-2.  Add the styling for the message field to the `main.css`:
+    Check that the default error messages, along with your custom error message,
+    are displayed. Your Add Entry form should look like this: 
 
-        .message
-        {
-            resize:none;
-        }
-        
-    The `cssClass` attribute value specified for the message field has been 
-    referenced for the styling. With the styling added, you can move on to the 
-    next step.
+![Figure 1: Leave the Add Entry input fields empty and attempt to submit the form. It should look like this.](../../images/guestbook-form-validation.png)
 
-2.  Save the changes you made and redeploy your app.
-
-3.  Add a new entry to a guestbook and save it with all the fields left empty.
-    
-    All the default error messages, along with your custom error message are
-    displayed. You'll also notice that all the input fields now have an added
-    "Required" label. Your add entry page should reflect the figure below: 
-
-![Figure 1: With the input fields left empty and the form submitted your form should look like this one.](../../images/guestbook-form-validation.png)
-
-Now that you've added validation to your form using AUI's validator tag,
-you can do something a little more advanced: keep everyone's message to a
-reasonable length.
+You've implemented form validation using AUI's validator tag. Next, you'll learn
+how to limit the length of the guestbook entry messages.
 
 ## Using the AUI Character Counter Module
 
