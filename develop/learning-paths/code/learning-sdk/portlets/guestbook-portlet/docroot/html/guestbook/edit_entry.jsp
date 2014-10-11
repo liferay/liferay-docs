@@ -20,7 +20,7 @@ if (entryId > 0) {
 	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
 	<aui:fieldset>
 	    <aui:input name="name" >
-	    	<aui:validator name="required"/>
+	    	<aui:validator name="required" />
 	    </aui:input>
 
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
@@ -32,8 +32,8 @@ if (entryId > 0) {
 		</c:if>
 
 		<aui:input name="email" >
-			<aui:validator name="email"/>
-			<aui:validator name="required"/>
+			<aui:validator name="email" />
+			<aui:validator name="required" />
 		</aui:input>
 
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
@@ -45,7 +45,7 @@ if (entryId > 0) {
 		</c:if>
 
 		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
-		<aui:input id="message" cssClass="message" type="textarea" name="message">
+		<aui:input id="message" type="textarea" name="message">
 			<aui:validator name="required" errorMessage="Please enter a message." />
 		</aui:input>
 
