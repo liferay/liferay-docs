@@ -8,7 +8,7 @@ minimizes the impact your application has on page load time. AlloyUI is an
 easy-to-use framework with a uniform API that's based on YUI. Since Liferay is
 already using AlloyUI, choosing AlloyUI for your application allows your
 application's look and feel to closely match Liferay's. For more information
-about AlloyUI, please visit the [http://alloyui.com](http://alloyui.com).
+about AlloyUI, please visit [http://alloyui.com](http://alloyui.com).
 
 In an earlier learning path, you created a Guestbook application, used Service
 Builder to generate a data model along with service and persistence layers,
@@ -17,5 +17,6 @@ portlet actions, and a created a user interface for your application. You also
 created a Guestbook Admin Control Panel portlet, implemented search and indexing
 for your application, and integrated your application with Liferay's asset
 framework. In this learning path, you'll explore a few AlloyUI modules and learn
-how to use AlloyUI to implement form validation. You'll continue the user
+how to use AlloyUI to implement form validation. You'll also learn how to use
+AlloyUI to handle events and manipulate DOM nodes. You'll continue the user
 interface development of the Guestbook application in this learning path. 
