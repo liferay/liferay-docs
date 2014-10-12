@@ -20,7 +20,7 @@ in a portlet's Configuration menu.
 First, you'll learn how to create the default Setup tab for your portlet's
 configuration page. 
 
-## Creating a Default Setup Tab in the Portlet's Configuration Page
+## Creating a Default Setup Tab in the Portlet's Configuration Page [](id=creating-a-default-setup-tab-in-the-port-liferay-portal-6-2-dev-guide-03-en)
 
 Before you can begin adding configurable portlet preferences, you must first
 create a place for them to reside in your portlet's Configuration menu. The
@@ -54,7 +54,7 @@ page, you'll find the new Setup tab.
 The Setup tab is empty for now, but you can add a portlet preference control to
 it, next. 
 
-## Implementing a Configurable Portlet Preference
+## Implementing a Configurable Portlet Preference [](id=implementing-a-configurable-portlet-preference)
 
 Now that you have your Setup tab in the Configuration menu, you can add a custom
 option to it. 
@@ -70,7 +70,7 @@ Portlet Preference Value
 
 You can specify a configuration JSP file, first. 
 
-### Step 1: Specify a Configuration JSP in the portlet.xml
+### Step 1: Specify a Configuration JSP in the portlet.xml [](id=step-1-specify-a-configuration-jsp-in-the-portlet-x)
 
 Your portlet needs a way to display configuration options to the user. Liferay
 checks to see if your portlet specifies a configuration JSP via a
@@ -98,7 +98,7 @@ Here's an example code snippet that sets a portlet's configuration JSP path to
 
 Next, you can create the configuration JSP file that you just specified. 
 
-### Step 2: Create the Configuration JSP for Displaying the Portlet Preference Options
+### Step 2: Create the Configuration JSP for Displaying the Portlet Preference Options [](id=step-2-create-the-configuration-jsp-for-displaying-)
 
 You must create a configuration JSP file and write JavaScript to let the user
 control the portlet preference. 
@@ -173,7 +173,7 @@ You're ready to implement a custom class to handle the configuration action. If
 you don't need to use the portlet preference in your portlet's controller logic,
 then you can skip the next step. 
 
-### Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value
+### Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value [](id=step-3-create-a-configuration-action-implementation)
 
 You can create a custom configuration action class for accessing the portlet
 preference and invoking any preference handling logic that you want. The class
@@ -247,7 +247,7 @@ Since your configuration action implementation is ready to process your portlet
 preference, you can update your portlet's view JSP to respond to the portlet
 preference. 
 
-### Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value
+### Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value [](id=step-4-modify-the-view-jsp-to-respond-to-the-curren)
 
 In your view JSP, you can implement logic to display your portlet based on its
 configured preferences. You can access portlet preferences via the implicit
