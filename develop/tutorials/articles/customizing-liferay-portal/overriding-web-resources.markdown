@@ -99,4 +99,4 @@ Congratulations on overriding a Liferay Portal JSP!
 
 ## Related Topics 
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)

@@ -34,5 +34,5 @@ Your plugin project is now faceted for Liferay IDE!
 
 ## Related Topics 
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

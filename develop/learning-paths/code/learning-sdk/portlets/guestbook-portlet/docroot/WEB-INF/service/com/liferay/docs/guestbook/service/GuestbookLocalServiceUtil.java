@@ -361,11 +361,12 @@ public class GuestbookLocalServiceUtil {
 	}
 
 	public static com.liferay.docs.guestbook.model.Guestbook updateGuestbook(
-		long guestbookId, java.lang.String name,
+		long userId, long guestbookId, java.lang.String name,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return getService().updateGuestbook(guestbookId, name, serviceContext);
+		return getService()
+				   .updateGuestbook(userId, guestbookId, name, serviceContext);
 	}
 
 	public static com.liferay.docs.guestbook.model.Guestbook deleteGuestbook(
