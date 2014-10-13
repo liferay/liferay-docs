@@ -91,6 +91,7 @@ Now you're ready to create a method that adds `Guestbook`s to the database.
 		Guestbook guestbook = guestbookPersistence.create(guestbookId);
 		
 		guestbook.setUuid(serviceContext.getUuid());
+		guestbook.setUserId(userId);
 		guestbook.setGroupId(groupId);
 		guestbook.setCompanyId(user.getCompanyId());
 		guestbook.setUserName(user.getFullName());
@@ -200,6 +201,7 @@ to jump in and create a service API for guestbook entries.
             Entry entry = entryPersistence.create(entryId);
             
             entry.setUuid(serviceContext.getUuid());
+            entry.setUserId(userId);
             entry.setGroupId(groupId);
             entry.setCompanyId(user.getCompanyId());
             entry.setUserName(user.getFullName());

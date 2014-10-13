@@ -21,7 +21,7 @@ libraries.
 created your Android project using the ADT plugin for Eclipse. If you didn't
 create the project using the ADT plugin or if it uses Gradle or Maven, see the
 instructions for
-[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/setting-up-the-mobile-sdk-manually).
+[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-mobile-sdk-manually).
 
 $$$
 
@@ -68,7 +68,7 @@ header id's are generated.
 
 **Note:** You can also use the Liferay
 Mobile SDK Builder via command line. Read
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
 for more details.
 
 $$$
@@ -125,10 +125,10 @@ portlet services.
 
 ## Related Topics
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

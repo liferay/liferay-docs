@@ -19,20 +19,20 @@ Plugin Security Manager's job is to only allow an app to use resources that the
 app has specified up-front in its Portal Access Control List (PACL). As such,
 you'll want to know how to create PACLs for the apps you develop. You can learn
 more about Liferay Plugin Security and PACLs in the
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl)
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 tutorials. 
 
 Related Topics:
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/plugin-security-and-pacl)
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/liferay-faces-jsf-portlets)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
 
