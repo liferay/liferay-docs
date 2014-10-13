@@ -38,7 +38,7 @@ As you go through this guide, you'll cover the following sections on LCS:
 
 Now go ahead and get started by setting up your LCS account.
 
-### Setting up Your LCS Account
+## Setting up Your LCS Account
 
 To use LCS, you first need to set up an account at [lcs.liferay.com](https://lcs.liferay.com). 
 When creating an account, you're taken through the steps of accepting the 
@@ -300,8 +300,6 @@ what sensitive data is *not* stored in order to give people peace of mind. -Rich
 Now that you know what information is stored on the LCS servers, it's time to 
 get to the heart of LCS--the *Dashboard*.
 
-### Using the Dashboard
-
 The LCS Dashboard lets you view and manage your project, environments, and 
 servers. If you're not already at the Dashboard, click it near the upper 
 left-hand corner of your LCS site. Clicking *Dashboard* takes you to the 
@@ -309,7 +307,7 @@ project view. From there, you can get to the environment view and the
 server view. Each of these views gives you a different look into certain 
 aspects of your LCS project. You'll start with the project view.
 
-#### Using the Project View
+### Using the Project View
 
 You can get to the project view at any time by clicking the Dashboard tab 
 near the upper left-hand corner of your LCS site. The project view provides you 
@@ -359,7 +357,7 @@ environment:
 You can get more information about a specific environment by clicking it. This 
 takes you to the environment view.
 
-#### Using the Environment View
+### Using the Environment View
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view, as its name implies, gives you more 
@@ -374,7 +372,7 @@ to the server view for that server.
 
 ![Figure 6.10: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
-#### Using the Server View
+### Using the Server View
 
 The server view provides you with detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
