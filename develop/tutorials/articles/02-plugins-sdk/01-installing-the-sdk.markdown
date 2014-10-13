@@ -54,7 +54,7 @@ Installation steps:
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
-## Ant Configuration [](id=lp-6-1-dgen02-ant-configuration-0)
+## Ant Configuration
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -111,7 +111,7 @@ referenced in your path.
 
 Now that Ant is configured, let's set up your Plugins SDK environment. 
 
-## Plugins SDK Configuration [](id=lp-6-1-dgen02-plugins-sdk-configuration-0)
+## Plugins SDK Configuration
 
 Now we have the proper tools, but we need to configure the Plugins SDK to deploy
 into your Liferay instance. The Plugins SDK contains a `build.properties` file

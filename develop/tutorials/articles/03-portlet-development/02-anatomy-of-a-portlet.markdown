@@ -67,7 +67,7 @@ or `<head>`.  Additionally, namespace all CSS classes and element IDs to prevent
 conflicts with other portlets. Liferay provides two tools, a taglib and API
 methods, to generate a namespace for you. 
 
-## A Closer Look at the My Greeting Portlet [](id=lp-6-1-dgen03-a-closer-look-at-the-my-greeting-portlet-0)
+## A Closer Look at the My Greeting Portlet
 
 If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 

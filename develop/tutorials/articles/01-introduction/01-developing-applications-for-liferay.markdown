@@ -61,7 +61,7 @@ Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
-## Reusing existing web applications [](id=lp-6-1-dgen01-reusing-existing-web-applications--0)
+## Reusing existing web applications
 
 What if you already have an existing application that has not been implemented
 as a portlet or OpenSocial gadget? You have many options, including:
@@ -84,7 +84,7 @@ of the scope of this guide; however, the above options are worth considering.
 
 Next let's consider some of the technology frameworks Liferay supports. 
 
-## Supported technology frameworks [](id=lp-6-1-dgen01-supported-technologies--0)
+## Supported technology frameworks
 
 Liferay, as a platform, strives to provide compatibility with any Java
 technology you may want to use to develop your applications. Thanks to the

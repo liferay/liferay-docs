@@ -64,7 +64,7 @@ Portlet Preference Value
 
 Let's specify a configuration JSP file, first. 
 
-## Step 1: Specify a Configuration JSP in the `portlet.xml`
+## Step 1: Specify a Configuration JSP in the portlet.xml
 
 Your portlet will need a way to display configuration options to the user.
 Liferay checks to see if your portlet specifies a configuration JSP via a

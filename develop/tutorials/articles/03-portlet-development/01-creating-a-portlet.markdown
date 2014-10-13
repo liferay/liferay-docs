@@ -89,7 +89,7 @@ configuration, and we encourage you to keep your projects in the Plugins SDK.
 
 ---
 
-## Deploying the Portlet [](id=lp-6-1-dgen03-deploying-the-portlet-0)
+## Deploying the Portlet
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets
 (and any other plugin types) a breeze. All you need to do is drop the plugin's
