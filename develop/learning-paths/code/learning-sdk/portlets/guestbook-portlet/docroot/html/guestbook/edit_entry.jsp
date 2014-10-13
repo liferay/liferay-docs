@@ -137,7 +137,7 @@ AUI().use(
       {
         counter: '#counter',
         input: '#<portlet:namespace />message',
-        maxLength: 70
+        maxLength: 140
       }
     );
   }
