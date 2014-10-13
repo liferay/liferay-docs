@@ -6,8 +6,18 @@ Col and Row tags transform the daunting organization process into a simple
 task.
 
 This tutorial will cover how to use the aui:col and aui:row tags in your 
-portlet. No longer will you experience those sleepless nights, tossing and 
-turning, worrying about how you'll organize the content in your portlets.
+portlet. 
+
++$$$
+
+**Note:** The aui:column and aui:layout tags that were previously used to create 
+columns and layouts has since been deprecated. The aui:col tag is now the
+preferred method.
+
+$$$
+
+No longer will you experience those sleepless nights, tossing and turning, 
+worrying about how you'll organize the content in your portlets.
 
 ## Setting Up the AlloyUI Col and Row Tags
 
