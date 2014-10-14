@@ -50,7 +50,7 @@ these steps:
         INFO  [pool-2-thread-2][HotDeployImpl:178] Deploying sample-portlet from queue
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for sample-portlet
 
-    $$$
+    +$$$
  
     **Note:** If you get the following error after executing `mvn
     liferay:deploy`, make sure you're executing the command from your plugin's

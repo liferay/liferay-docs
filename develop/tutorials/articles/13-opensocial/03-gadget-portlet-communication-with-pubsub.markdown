@@ -105,10 +105,10 @@ below:
     previously with other gadgets. The URLs are given below:
 
     *Google Address URL*:
-    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsPublisher.xml`
+    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml`
 
     *Google Map URL*:
-    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsViewer.xml`
+    `https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml`
 
 2.  Add both gadgets to a page.
 
