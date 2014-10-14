@@ -33,51 +33,51 @@ if (entryId > 0) {
 		</aui:input>
 		<div id="counterContainer"><p>Message: <span id="counter"></span> character(s) remaining</p></div>
 
-		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
-			<c:if test="<%= themeDisplay.isSignedIn() %>">
-				<div id="useNameButtonWrapper">
-					<aui:button-row>
-						<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
-					</aui:button-row>
-				</div>
-			</c:if>
-			
-			<c:if test="<%= themeDisplay.isSignedIn() %>">
-				<div id="useEmailButtonWrapper">
-					<aui:button-row>
-						<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
-					</aui:button-row>
-				</div>
-			</c:if>
-			
-			<div id="generateButtonWrapper">
-				<aui:button-row>
-					<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-				</aui:button-row>
-			</div>
-	
-			<div id="messages">
-				<aui:layout>
-					<aui:column>
-						<div id="message1-div"></div>
-					</aui:column>
-					
-					<aui:column>
-						<div id="message2-div"></div>
-					</aui:column>
-					
-					<aui:column>
-						<div id="message3-div"></div>
-					</aui:column>
-				</aui:layout>
-			</div>
-		</liferay-ui:panel>
-
 	    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
 
 	    <aui:input name="entryId" type="hidden" />
 	</aui:fieldset>
-	
+
+	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+		<c:if test="<%= themeDisplay.isSignedIn() %>">
+			<div id="useNameButtonWrapper">
+				<aui:button-row>
+					<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+				</aui:button-row>
+			</div>
+		</c:if>
+		
+		<c:if test="<%= themeDisplay.isSignedIn() %>">
+			<div id="useEmailButtonWrapper">
+				<aui:button-row>
+					<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+				</aui:button-row>
+			</div>
+		</c:if>
+		
+		<div id="generateButtonWrapper">
+			<aui:button-row>
+				<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+			</aui:button-row>
+		</div>
+
+		<div id="messages">
+			<aui:layout>
+				<aui:column>
+					<div id="message1-div"></div>
+				</aui:column>
+				
+				<aui:column>
+					<div id="message2-div"></div>
+				</aui:column>
+				
+				<aui:column>
+					<div id="message3-div"></div>
+				</aui:column>
+			</aui:layout>
+		</div>
+	</liferay-ui:panel>
+
 	<liferay-ui:asset-categories-error />
 	<liferay-ui:asset-tags-error />
 	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
