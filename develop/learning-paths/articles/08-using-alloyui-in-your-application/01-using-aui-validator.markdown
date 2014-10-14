@@ -81,7 +81,7 @@ displayed. Your Add Entry form should look like this:
 ![Figure 1: Leave the Add Entry input fields empty and attempt to submit the form. It should look like this.](../../images/guestbook-form-validation.png)
 
 Good! You've implemented form validation using AUI's validator tag. Next, you'll
-learn how to limit the length of the guestbook entry messages.
+learn how to limit the length of guestbook entry messages.
 
 ## Using the AUI Character Counter Module
 
@@ -102,7 +102,7 @@ Open the `edit_entry.jsp` file and add find the following section:
         <aui:validator name="required" errorMessage="Please enter a message." />
     </aui:input>
 
-Add the following line just above this section:
+Add the following line just below this section:
 
     <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 
@@ -130,9 +130,9 @@ Here, you're specifying that the `<span id="counter"></span>` element should
 be used for the counter, that the characters entered inside of the text area
 created by the `<aui:input id="message" type="textarea" name="message">`
 element should be counted, and that the maximum number of characters that
-can be entered is `140`. See the
+can be entered is `140`. Please refer to the
 [AlloyUI Char Counter tutorial](http://alloyui.com/tutorials/char-counter)
-tutorial for more information about the module.
+tutorial for more information about the character counter module.
 
 +$$$
 
@@ -161,8 +161,7 @@ instance of the character counter:
     );
 
 To configure this instance of the character counter module that you loaded,
-you specify the following few attributes in the character counter
-constructor:
+you specify the following attributes in the character counter constructor:
 
     counter: '#counter',
     input: '#<portlet:namespace />message',
@@ -173,23 +172,23 @@ This creates a fully functioning character counter. Specifying `counter:
 `counter` ID. Specifying `input: '#<portlet:namespace />message'` selects
 the input field (actually a text area in this case) whose characters are to
 be counted. The `input` attribute is set to the message input element that
-you created with the `message` ID. Note that since you're using an
-`<aui:input>` tag to create text area, the CSS ID of the text area is not
-actually `message`, it's `_guestbook_WAR_guestbookportlet_message`.  You
-don't have to remember the prefix: just use the `<portlet:namespace />` tag
-to retrieve it.
+you created with the `message` ID. Since you're using an `<aui:input>` tag to
+create the text area, the CSS ID of the text area is not actually `message`,
+it's `_guestbook_WAR_guestbookportlet_message`. You don't have to remember the
+prefix: just use the `<portlet:namespace />` tag to retrieve it.
 
-Using the prefix supplied by the `<portlet:namespace />` tag ensures that
-there won't be naming conflicts with other elements on the page. You have to
-design your portlet so that it will work regardless of other portlets that
-have been added to the page. There's no guarantee that another portlet won't
-use CSS classnames or IDs that you assumed would be unique. Finally, by
-specifying `maxLength: 140`, you limit the number of characters that can be
-entered into the input field to `140`.
+Remember that when designing a portlet, you make to make sure that it will work
+regardless of other portlets that may have been added to the page. There's no
+guarantee that another portlet won't use CSS classnames or IDs that you assumed
+would be unique. Using the prefix supplied by the `<portlet:namespace />` tag
+ensures that there won't be naming conflicts with other elements on the page.
+Finally, by specifying `maxLength: 140`, you limit the number of characters that
+can be entered into the input field to `140`.
 
-Now click on the Guestbook portlet's *Add Entry* button test out the guestbook
-entry form. Confirm that your fancy new character counter displays the number of
-remaining characters for your message. Your form should look like the one below:
+Now click on the Guestbook portlet's *Add Entry* button to test out the
+guestbook entry form. Complete the form and check that your fancy new character
+counter displays the number of remaining characters for your message. Your form
+should look like the one below:
  
 ![Figure 2: With your new character counter, your form should look like this one.](../../images/guestbook-char-counter.png)
 
