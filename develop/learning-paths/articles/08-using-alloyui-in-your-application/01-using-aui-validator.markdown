@@ -27,162 +27,170 @@ guestbook entry message.
 Validating AUI input fields is very easy. You just have to add an
 `<aui:validator>` tag with the appropriate attributes specified.
 
-1.  Open `edit_entry.jsp`.
+Open your project's `docroot/html/guestbook/edit_entry.jsp` file.
 
-    To keep things simple, replace the contents between the `<aui:fieldset>` and
-    `<aui:fieldset/>` tags with the following code:
+To keep things simple, replace the contents between the `<aui:fieldset>` and
+`<aui:fieldset/>` tags with the following code:
 
-        <aui:input name="name" >
-             <aui:validator name="required" />
-        </aui:input>
+    <aui:input name="name" >
+         <aui:validator name="required" />
+    </aui:input>
 
-        <aui:input name="email" >
-             <aui:validator name="email" />
-             <aui:validator name="required "/>
-        </aui:input>
+    <aui:input name="email" >
+         <aui:validator name="email" />
+         <aui:validator name="required "/>
+    </aui:input>
 
-        <aui:input id="message" type="textarea" name="message">
-             <aui:validator name="required" errorMessage="Please enter a message." />
-        </aui:input>
+    <aui:input id="message" type="textarea" name="message">
+         <aui:validator name="required" errorMessage="Please enter a message." />
+    </aui:input>
 
-        <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
 
-        <aui:input name="entryId" type="hidden" />
+    <aui:input name="entryId" type="hidden" />
 
-    Save this update and redeploy your app.
+Save this update and redeploy your app.
 
-    You've added `<aui:validator>` tags inside of some of the `<aui:input>`
-    tags. This tag allows you to quickly and easily validate your fields. First,
-    note that you add a `<aui:validator/>` tag inside of the `<aui:input>` tags
-    for the field you wish to validate. Next, note that you have to specify a
-    value for the `name` attribute. The value of the `name` attribute determines
-    the type of validation to apply to the field. You added an `aui:validator
-    name="required" />` tag to all of the non-hidden form fields. For the email
-    field, you've added a `email` validation in order to ensure that a
-    legitimate email address is entered. 
+You've added `<aui:validator>` tags inside of some of the `<aui:input>`
+tags. This tag allows you to quickly and easily validate your fields. First,
+note that you add a `<aui:validator/>` tag inside of the `<aui:input>` tags
+for the field you wish to validate. Next, note that you have to specify a
+value for the `name` attribute. The value of the `name` attribute determines
+the type of validation to apply to the field. You added an `aui:validator
+name="required" />` tag to all of the non-hidden form fields. For the email
+field, you've added a `email` validation in order to ensure that a
+legitimate email address is entered. 
 
-    You also changed the message filed from a text input field to a textarea
-    input field. This provides more space for users to enter guestbook message.
-    It allows allows them to resize the field. Note the `errorMessage` attribute
-    of the message field's `<aui:validator>` tag. This attribute specifies a
-    message that replaces the default error message. You've replaced the default
-    error message (*This field is required*) field with a custom message:
-    *Please enter a message.*
+You also changed the message filed from a text input field to a textarea input
+field. This provides more space for users to enter their guestbook messages.  It
+allows allows them to resize the field. Note the `errorMessage` attribute of the
+message field's `<aui:validator>` tag. This attribute specifies a message that
+replaces the default error message. You've replaced the default error message
+(*This field is required*) field with a custom message: *Please enter a
+message.*
 
-2.  Click on *Add Entry* in the Guestbook portlet to view the form that you
-    updated. Notice that all the input fields are now marked as *Required*,
-    thanks to your `<aui:validator>` tags. 
+Now click on *Add Entry* in the Guestbook portlet to view the form that you
+updated.  Notice that all the input fields are now marked as *Required*, thanks
+to your `<aui:validator>` tags. 
 
-3.  Attempt to save a guestbook message with all of the fields left empty.
-    
-    Check that the default error messages, along with your custom error message,
-    are displayed. Your Add Entry form should look like this: 
+Attempt to save a guestbook message with all of the fields left empty. Check
+that the default error messages, along with your custom error message, are
+displayed. Your Add Entry form should look like this: 
 
 ![Figure 1: Leave the Add Entry input fields empty and attempt to submit the form. It should look like this.](../../images/guestbook-form-validation.png)
 
-You've implemented form validation using AUI's validator tag. Next, you'll learn
-how to limit the length of the guestbook entry messages.
+Good! You've implemented form validation using AUI's validator tag. Next, you'll
+learn how to limit the length of the guestbook entry messages.
 
 ## Using the AUI Character Counter Module
 
-AUI modules are small, powerful building blocks of UI functionality. There are
-many different modules to choose from, depending on the particular problem you
-need to solve. In this case, you want to limit the amount of characters users
-can type for their messages. You can do this with the AUI Validator tag, but then
-users must know how many characters they have typed. As you can guess, this is
-not a good solution. A much better option is the `aui-char-counter` module:
-not only does it allow you to limit the amount of characters to a number you
-specify, it also is capable of notifying the user how may characters are left.
-Go ahead and get started. 
+AUI modules are small, powerful building blocks of UI functionality. Each module
+provides a unique set of functionality that's designed to solve a particular
+problem. In your case, you want to limit the number of characters that users can
+enter into the message field of the Add Entry form. If you used the AUI
+validator tag to limit the number of characters, users would have to know how
+the character limit. They'd also have to remember how many characters they've
+already entered. A much better solution is to use the AUI Character Counter
+module. You can use this module not only to specify a limit on the number of
+characters that can be entered, but also to display the number of remaining
+characters.
 
-1.  Open `edit_entry.jsp` and drag the snippet labeled *script* from the 
-    *Liferay AUI Taglib* category. Add it just above the `<%` opening tag for 
-    `long entryId = ...`. You'll be placing all code inside these tags.
+Open the `edit_entry.jsp` file and add find the following section:
 
-    The first thing you need to do is load the `aui-char-counter` module.
+    <aui:input id="message" type="textarea" name="message">
+        <aui:validator name="required" errorMessage="Please enter a message." />
+    </aui:input>
 
-2.  Inside the `<aui:script>` tag, add the code below:
+Add the following line just above this section:
 
-        AUI().use(
-          'aui-char-counter',
-          function(A) {
-  
-          }
-        );
+    <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 
-    Now that you've loaded the character counter module, you need to create a 
-    new instance of the character counter to use.
- 
-3.  Add the code below inside the `function(A)` brackets to create an instance 
-    of the character counter:
+This `<div>` will display the number of remaining characters. To make it
+work, we need to create an AUI script that uses the character counter to
+populate the `<span id="counter"></span>` element.
 
+Add the following code to the bottom the page:
+
+    <aui:script use="aui-char-counter">
+    AUI().use(
+      function(A) {
         new A.CharCounter(
           {
-           
+            counter: '#counter',
+            input: '#<portlet:namespace />message',
+            maxLength: 140
           }
         );
+      }
+    );
+    </aui:script>   
 
-    Now that you've created an instance of the module you loaded, you'll next 
-    configure the character counter by setting values for the counter's
-    attributes.
- 
-4.  Add the attributes below inside the character counter instance you just
-    created:
+Here, you're specifying that the `<span id="counter"></span>` element should
+be used for the counter, that the characters entered inside of the text area
+created by the `<aui:input id="message" type="textarea" name="message">`
+element should be counted, and that the maximum number of characters that
+can be entered is `140`. See the
+[AlloyUI Char Counter tutorial](http://alloyui.com/tutorials/char-counter)
+tutorial for more information about the module.
 
-        counter: '#counter',
-        input: '#<portlet:namespace />message',
-        maxLength: 70
-    
-    Now you have a fully functioning character counter. The values above set the
-    counter to display in the element with the id `counter`. The input attribute 
-    is set to the message input element you created with the `message` id. To 
-    ensure that there are no naming conflicts with other elements or existing 
-    portlets on the page, a <portlet:namespace/> tag is added before the 
-    `message` id. Finally, the number of characters allowed in the input field 
-    are limited to 70.
-    
-    Don't be so fast to redeploy just yet though. Although, you've configured
-    the character counter module, you still have one last step to make your 
-    effort worth it: create an element to display the counter. You set the 
-    counter attribute of the character counter to a element with the id 
-    `counter`, but you don't currently have any elements with that id, so you'll 
-    need to create one.
- 
-5.  Create a `<span>` element just above the closing `</aui:fieldset>` tag: 
++$$$
 
-        <span id="counter"></span> character(s) remaining
-   
-    There you have it! Now you can redeploy and test out the guestbook entry
-    form. You'll now see your fancy new character counter keeps track of how many
-    characters you have left in your message. To make your form a little more 
-    visually appealing, you'll nest the `<span>` tag inside a `<div>` and style 
-    it, so that the counter text is not so far away from the message input field.
- 
-6.  Nest your `<span>` tag in between two `<div>` tags so that your code looks
-    like this:
+**Note:** Liferay IDE provides a *script* snippet that's available from the
+Liferay AUI Taglib category of the Snippets tab. You can use this snippet
+whenever you need to add an `<aui:script>` tag to a JSP page.
 
-        <div id="counterContainer">
-            <span id="counter"></span> character(s) remaining
-        </div>
-        
-    Next, you can reference the id for styling.
-    
-7.  Add the styling below to the `main.css`:
+$$$
 
-        #counterContainer
-        {
-            margin-top:-30px;
-        }
+The following code loads the `aui-char-counter` module:
 
-With updated visuals, your form should look like the one below:
+    AUI().use(
+      'aui-char-counter',
+      function(A) {
+
+      }
+    );
+
+Adding the code below inside of the `function(A)` brackets creates an
+instance of the character counter:
+
+    new A.CharCounter(
+      {
+       
+      }
+    );
+
+To configure this instance of the character counter module that you loaded,
+you specify the following few attributes in the character counter
+constructor:
+
+    counter: '#counter',
+    input: '#<portlet:namespace />message',
+    maxLength: 140
+
+This creates a fully functioning character counter. Specifying `counter:
+'#counter'` configures the counter to display in the HTML element with the
+`counter` ID. Specifying `input: '#<portlet:namespace />message'` selects
+the input field (actually a text area in this case) whose characters are to
+be counted. The `input` attribute is set to the message input element that
+you created with the `message` ID. Note that since you're using an
+`<aui:input>` tag to create text area, the CSS ID of the text area is not
+actually `message`, it's `_guestbook_WAR_guestbookportlet_message`.  You
+don't have to remember the prefix: just use the `<portlet:namespace />` tag
+to retrieve it.
+
+Using the prefix supplied by the `<portlet:namespace />` tag ensures that
+there won't be naming conflicts with other elements on the page. You have to
+design your portlet so that it will work regardless of other portlets that
+have been added to the page. There's no guarantee that another portlet won't
+use CSS classnames or IDs that you assumed would be unique. Finally, by
+specifying `maxLength: 140`, you limit the number of characters that can be
+entered into the input field to `140`.
+
+Now click on the Guestbook portlet's *Add Entry* button test out the guestbook
+entry form. Confirm that your fancy new character counter displays the number of
+remaining characters for your message. Your form should look like the one below:
  
 ![Figure 2: With your new character counter, your form should look like this one.](../../images/guestbook-char-counter.png)
 
-You can take a look at the updated `edit_entry.jsp` [here](https://github.com/liferay/liferay-docs/blob/master/develop/learning-paths/code/learning-sdk/portlets/guestbook-portlet/docroot/html/guestbook/edit_entry.jsp).
-
-Your front-end form validation is done! Save your changes and deploy your
-application. 
-
-## Next Steps
-
- [Traversing the Dom with AlloyUI](/develop/learning-paths/-/knowledge_base/traversing-the-dom-with-alloyui)
+Excellent! Your front-end form validation is now complete! Next, you'll learn
+how to manipulate the DOM with AlloyUI.
