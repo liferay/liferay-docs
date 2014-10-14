@@ -1,4 +1,4 @@
-# Using AlloyUI to Validate Forms in Your Application [](id=using-alloyui-to-validate-forms-in-your-application)
+# Using AlloyUI Form Validation
 
 In a previous learning path, you created a form for users to submit when adding
 an entry to a guestbook. You implemented a token form of back-end validation
