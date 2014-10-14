@@ -23,6 +23,16 @@ if (entryId > 0) {
 	    	<aui:validator name="required" />
 	    </aui:input>
 
+		<aui:input name="email" >
+			<aui:validator name="email" />
+			<aui:validator name="required" />
+		</aui:input>
+
+		<aui:input id="message" type="textarea" name="message">
+			<aui:validator name="required" errorMessage="Please enter a message." />
+		</aui:input>
+		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
+		
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
 			<div id="useNameButtonWrapper">
 				<aui:button-row>
@@ -30,12 +40,7 @@ if (entryId > 0) {
 				</aui:button-row>
 			</div>
 		</c:if>
-
-		<aui:input name="email" >
-			<aui:validator name="email" />
-			<aui:validator name="required" />
-		</aui:input>
-
+		
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
 			<div id="useEmailButtonWrapper">
 				<aui:button-row>
@@ -43,11 +48,6 @@ if (entryId > 0) {
 				</aui:button-row>
 			</div>
 		</c:if>
-
-		<aui:input id="message" type="textarea" name="message">
-			<aui:validator name="required" errorMessage="Please enter a message." />
-		</aui:input>
-		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 
 		<div id="generateButtonWrapper">
 			<aui:button-row>
