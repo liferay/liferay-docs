@@ -49,20 +49,18 @@ Liferay Developer Studio.
 enough about how it works from a development perspective; The above might be
 perfectly clear to a developer, but it's not to me. -Russ -->
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The *Kaleo Forms EE* app comes
-with an existing workflow designer that's used *within* Liferay Portal. It's
-used to design workflow configuration and is described in the [Kaleo Forms:
-Defining Business
-Processes](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
-chapter of *Using Liferay Portal*. Refer to the [Using
-Workflow](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
-chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo
-workflow concepts or want to know how to design your workflow within Liferay
-Portal. 
+**Note:** The *Kaleo Forms EE* app comes with an existing workflow designer
+that's used *within* Liferay Portal. It's used to design workflow configuration
+and is described in the
+[Kaleo Forms: Defining Business Processes](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
+chapter of *Using Liferay Portal*. Refer to the
+[Using Workflow](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
+chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo workflow
+concepts or want to know how to design your workflow within Liferay Portal. 
 
----
+$$$
 
 To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
 Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
@@ -94,14 +92,14 @@ To open a workflow, double click it in the Kaleo Workflows folder. This
 retrieves the workflow definition from the Liferay server so you can edit it in
 Developer Studio. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** When you open a workflow,
-you'll be prompted to choose whether to switch to the Kaleo designer
-perspective. Clicking *Yes* lets you use the perspective's helpful features,
-including the palette toolbar, properties view, and outline view. 
+**Note:** When you open a workflow, you'll be prompted to choose whether to
+switch to the Kaleo designer perspective. Clicking *Yes* lets you use the
+perspective's helpful features, including the palette toolbar, properties view,
+and outline view. 
 
----
+$$$
 
 Next, let's get into the flow (pun intended) by creating our own workflow using
 the Kaleo Workflow Designer for Java. 
@@ -164,12 +162,12 @@ software ticketing process. Are you ready to roll? Let's get started!
 
     ![Figure 10.21: When choosing an assignment type for a task node, you are given multiple options.](../../images/kaleo-4.png)
 
-    ---
+    +$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** You must specify a Liferay
-    project as a home for the workflow definitions you create. 
+    **Note:** You must specify a Liferay project as a home for the workflow
+    definitions you create. 
 
-    ---
+    $$$
 
 3.  Click *Finish* to complete the initial setup of our workflow definition. 
 
@@ -490,13 +488,12 @@ the script editor for this condition node is written inside the
 in our workflow definition's XML file (in our case,
 `ticket-process-definition.xml`). 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Developer Studio lets you use
-multiple script editors even while modifying the same workflow definition XML
-file. 
+**Note:** Developer Studio lets you use multiple script editors even while
+modifying the same workflow definition XML file. 
 
----
+$$$
 
 The *Palette* view is much different from when you were working in the workflow
 diagram; it's associated with your Java/Groovy script editor now and includes
@@ -563,15 +560,15 @@ Now the script accurately implements the condition logic we want. As a reminder,
 all of the code was injected into our workflow's XML file within the
 `<condition/>` element that represents our condition node. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** Make sure you correctly name
- the transitions stemming from the condition node. The "No" transition should
- point to the EndNode, while the "Yes" transition should point to the Developer.
- If the condition script's return values don't match the transition names, the
- workflow engine won't know which transition to use. 
+**Note:** Make sure you correctly name the transitions stemming from the
+condition node. The "No" transition should point to the EndNode, while the "Yes"
+transition should point to the Developer. If the condition script's return
+values don't match the transition names, the workflow engine won't know which
+transition to use. 
 
----
+$$$
 
 Here's a snapshot of our current ticket process workflow after inserting the
 condition node: 
@@ -663,13 +660,13 @@ visit the documentation pages for [FreeMarker](http://freemarker.org/docs/) and
 for more information on the variables and functions available in these template
 languages.
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Similar to the bundled script
-editors, Developer Studio lets you use FreeMarker and Velocity template editors
-to customize notifications in your workflow definition.
+**Note:** Similar to the bundled script editors, Developer Studio lets you use
+FreeMarker and Velocity template editors to customize notifications in your
+workflow definition.
 
----
+$$$
 
 Let's continue editing our ticket process workflow. After completion of the QA
 task assignments, our Project Management team should be notified. To set up a
@@ -914,14 +911,13 @@ takes you to the XML, and you can easily switch contexts as you need.
   edit code. When you're inserting variables, it also lists all available
   variables that are a part of the Kaleo workflow. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** *Using Liferay Portal* section
-[Creating new workflow
-definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1)
+**Note:** *Using Liferay Portal* section
+[Creating new workflow definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1)
 explains how to define workflows via XML.
 
----
+$$$
 
 With the *Source* view, you can keep track of your edits while using Developer
 Studio's powerful graphical features. 
@@ -946,14 +942,14 @@ To publish your `ticket process` workflow definition:
 Alternatively, you can publish your new workflow XML file by dragging it from
 your *Package Explorer* view onto your Liferay server in your *Servers* view. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** To update your Kaleo Workflows
-folder with the latest workflow versions created or modified in Liferay Portal
-using Kaleo Workflow Designer from the *Kaleo Forms* portlet, right click *Kaleo
-Workflows* under your server and select *Refresh*. 
+**Note:** To update your Kaleo Workflows folder with the latest workflow
+versions created or modified in Liferay Portal using Kaleo Workflow Designer
+from the *Kaleo Forms* portlet, right click *Kaleo Workflows* under your server
+and select *Refresh*. 
 
----
+$$$
 
 You probably understand why it's necessary to publish new workflow definitions
 onto the Liferay server; it might be less clear why you need to republish

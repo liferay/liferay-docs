@@ -181,14 +181,14 @@ be associated with new or existing tags or predefined categories:
 These two taglibs create appropriate form controls that allow the user to
 search for a tag or create a new one or select an existing category. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip:** If you're using Liferay's Alloy
-UI Form taglibs, creating fields to enter tags and categories is even simpler.
-You just use `<aui:input name="tags" type="assetTags" />` and `<aui:input
-name="categories" type="assetCategories" />`, respectively. 
+**Tip:** If you're using Liferay's Alloy UI Form taglibs, creating fields to
+enter tags and categories is even simpler. You just use `<aui:input name="tags"
+type="assetTags" />` and `<aui:input name="categories" type="assetCategories"
+/>`, respectively. 
 
----
+$$$
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 

@@ -53,16 +53,16 @@ negatively effect existing funcitonality. Even though Ext plugins are deployed
 as plugins, the server must be restarted for their customizations to take
 effect. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you have developed for
- Liferay 5.2 or prior releases, you may be familiar with what was known as the
- *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace
- the extension environment in order to simplify development. For instructions on
- converting an existing Extension Environment into a plugin, see the section
- on migrating old extension environments in Chapter 8.
+**Note:** If you have developed for Liferay 5.2 or prior releases, you may be
+familiar with what was known as the *Extension Environment*. Ext plugins were
+introduced in Liferay 6.0 to replace the extension environment in order to
+simplify development. For instructions on converting an existing Extension
+Environment into a plugin, see the section on migrating old extension
+environments in Chapter 8.
 
----
+$$$
 
 Now that you're familiar with the best options for developing applications on
 Liferay and customizing Liferay, let's consider some of the tools you'll be

@@ -326,14 +326,13 @@ they are broadcast across a channel. Notice that you don't need to change anythi
 for your *Google Map* gadget, since it's already subscribed to that channel. You
 only needed to define the *Directory* portlet as a publisher to that channel.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png)**Note:** If you would like to broadcast
-messages to portlets, follow the same guidelines, but don't use the `gadget:`
-prefix in your topic parameter value for the call to the `Liferay.fire()`
-function.
+**Note:** If you would like to broadcast messages to portlets, follow the same
+guidelines, but don't use the `gadget:` prefix in your topic parameter value for
+the call to the `Liferay.fire()` function.
 
----
+$$$
 
 After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the

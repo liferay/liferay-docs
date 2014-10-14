@@ -6,13 +6,12 @@ portlet borders, bullet styles, and the site name, but more settings may be
 added in the future. Modify these settings from the `liferay-look-and-feel.xml`
 file.
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
- for individual portlets, you can modify the a portlet's `liferay-portlet.xml`
- file.
+**Note:** To override default behavior for individual portlets, you can modify
+the a portlet's `liferay-portlet.xml` file.
 
----
+$$$
 
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 

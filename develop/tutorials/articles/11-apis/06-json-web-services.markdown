@@ -657,12 +657,12 @@ executed.
 Inner parameters aren't counted as regular parameters for matching methods
 and are ignored during matching. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip:** Use inner parameters with object
-parameters to set inner content of created parameter instances! 
+**Tip:** Use inner parameters with object parameters to set inner content of
+created parameter instances! 
 
----
+$$$
 
 Next let's see what values are returned when a JSON seb service is invoked. 
 
@@ -878,13 +878,12 @@ request to make the above nested service call:
 - Lastly, the Invoker injected the contact object referenced by `$contact`
   into the user object's property named `contact`. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** You must *flag* parameters that
-take values from existing variables. To flag a parameter, insert the `@` prefix
-before the parameter name. 
+**Note:** You must *flag* parameters that take values from existing variables.
+To flag a parameter, insert the `@` prefix before the parameter name. 
 
----
+$$$
 
 Next let's talk about filtering object properties so only those you
 need are returned when you invoke a service. 

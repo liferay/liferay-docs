@@ -24,14 +24,14 @@ organization.
 This JSP code invokes the static method `getOrganizationStatsUsers()` from the
 `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Permission checks are not
-performed when you invoke services locally (i.e., from the same JVM that's
-Liferay Portal runs on). To ensure permission checks are performed, use the
-remote variant of the API, even from a local context. 
+**Note:** Permission checks are not performed when you invoke services locally
+(i.e., from the same JVM that's Liferay Portal runs on). To ensure permission
+checks are performed, use the remote variant of the API, even from a local
+context. 
 
----
+$$$
 
 <!-- I don't believe the above tip is true anymore. If the -ServiceUtil class
 uses the filterFindBy implementation, permission checks are performed. -Rich --> 

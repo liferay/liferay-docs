@@ -16,16 +16,15 @@ section of [Using Liferay Portal
 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in
 the `portal.properties` file. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Hooks support customizing a
-specific list of predefined properties. This list is found in
-`liferay-hook-[liferay version].dtd`, in the `definitions` folder of the Liferay
-source code. In addition to defining custom actions, hooks can override portal
-properties to define model listeners, validators, generators, and
-content sanitizers. If you want to customize a property that's not found in this
-list, you must use an Ext plugin (Chapter 8). 
+**Note:** Hooks support customizing a specific list of predefined properties.
+This list is found in `liferay-hook-[liferay version].dtd`, in the `definitions`
+folder of the Liferay source code. In addition to defining custom actions, hooks
+can override portal properties to define model listeners, validators,
+generators, and content sanitizers. If you want to customize a property that's
+not found in this list, you must use an Ext plugin (Chapter 8). 
 
----
+$$$
 
 Now let's look at overriding and adding Struts actions from a hook plugin. 

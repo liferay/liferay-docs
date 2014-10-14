@@ -14,14 +14,13 @@ must the latest pre-release changes from our Liferay CE source repository, you
 can build the Liferay CE artifacts yourself. We'll demonstrate each of these
 options. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The EE and CE zip files are a
-means to *install* the artifacts to a Maven repository of your choice. In the
-next few sections, we'll demonstrate the zip file and Central Repository
-installation options. 
+**Note:** The EE and CE zip files are a means to *install* the artifacts to a
+Maven repository of your choice. In the next few sections, we'll demonstrate the
+zip file and Central Repository installation options. 
 
----
+$$$
 
 Let's look at the manual process first, by downloading and installing Liferay
 artifacts from a zip file. 
@@ -164,12 +163,11 @@ Maven artifacts from source, follow these steps:
     in your Local Liferay Portal CE source project's root directory (e.g.,
     `liferay-portal/20121105174417071`).
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Warning:** During the process of
- packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
- may experience sluggish performance or an insufficient amount of Java heap space.
- There are two solutions to this problem:
+**Warning:** During the process of packaging up the `javadoc.jar` files for your
+Liferay artifacts, your machine may experience sluggish performance or an
+insufficient amount of Java heap space. There are two solutions to this problem:
  
 - **Increase the memory available for the Javadoc packaging process:**
   Navigate to `[Liferay home]/build.xml` and search for the `javadoc` target.
@@ -180,7 +178,7 @@ Maven artifacts from source, follow these steps:
 
 		<!-- <antcall target="jar-javadoc" /> -->
 		
----
+$$$
 
 Next, we'll show you how to install the required Liferay release artifacts to
 your repositories. These steps are applicable for installing artifacts that you

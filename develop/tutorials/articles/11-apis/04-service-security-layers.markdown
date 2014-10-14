@@ -26,17 +26,17 @@ services, pass in the appropriate user credentials, and upload the documents.
 
 ![Figure 11.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The `portal.properties` file
-resides on the portal host machine and is controlled by the portal
-administrator. Portal administrators can configure security settings for the
-Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
-Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Properties
-Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+**Note:** The `portal.properties` file resides on the portal host machine and is
+controlled by the portal administrator. Portal administrators can configure
+security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring
+Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV
+Servlet. The
+[Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
 chapter of *Using Liferay Portal* describes these properties. 
 
----
+$$$
 
 Liferay's security model is the second layer of security that's triggered
 when services are remotely invoked, and it's used for every object in the
@@ -74,13 +74,13 @@ can get Organization data with the following URL:
 
     http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Older Liferay versions let you
-access services with `http://localhost:8080/tunnel-web/axis`. This path has
-changed in Liferay 6.1; if you enter it, you'll be redirected to the new one. 
+**Note:** Older Liferay versions let you access services with
+`http://localhost:8080/tunnel-web/axis`. This path has changed in Liferay 6.1;
+if you enter it, you'll be redirected to the new one. 
 
----
+$$$
 
 The authentication type specified for your Liferay Portal instance dictates the
 authentication type you'll use to access your web service. The portal

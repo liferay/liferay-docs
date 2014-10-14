@@ -10,15 +10,14 @@ throughout this chapter. The project resides in the
 awkward, and we were going to focus just on showing how it's done in IDE? -Rich
 -->
 
----
++$$$
 
- ![Tip](../../images/tip-pen-paper.png) **Note:** On Windows, your Liferay
- Portal instance and your Plugins SDK must be on the same drive in order to
- build services. E.g., if your Liferay Portal instance is on your `C:\` drive,
- your Plugins SDK must also be on your `C:\` drive in order for Service Builder
- to be able to run successfully.
+**Note:** On Windows, your Liferay Portal instance and your Plugins SDK must be
+on the same drive in order to build services. E.g., if your Liferay Portal
+instance is on your `C:\` drive, your Plugins SDK must also be on your `C:\`
+drive in order for Service Builder to be able to run successfully.
 
----
+$$$
 
 ***Using Liferay IDE or Developer Studio:*** From the Package Explorer, open
 the `service.xml` file from your `event-listing-portlet/docroot/WEB-INF` folder.

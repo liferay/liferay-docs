@@ -14,13 +14,13 @@ automatically displays as your theme's thumbnail.
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** To achieve the 1080x864
- resolution in a new browser window, use the button provided in the Resize
- Browser web content article displayed on the Welcome page.
+**Tip:** To achieve the 1080x864 resolution in a new browser window, use the
+button provided in the Resize Browser web content article displayed on the
+Welcome page.
 
----
+$$$
  
 <!-- This tip comes verbatim from the ADDING A SCREENSHOT/THUMBNAIL slide in the
 Themes course's 02-building-a-theme.fodp slideshow -->

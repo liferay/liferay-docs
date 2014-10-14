@@ -50,7 +50,7 @@ these steps:
         INFO  [pool-2-thread-2][HotDeployImpl:178] Deploying sample-portlet from queue
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for sample-portlet
 
-    ---
+$$$
  
     ![note](../../images/tip-pen-paper.png) **Note:** If you get the following
     error after executing `mvn liferay:deploy`, make sure you're executing the
@@ -61,7 +61,7 @@ these steps:
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
-    ---
+$$$
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your
@@ -95,10 +95,10 @@ these steps:
 
 		mvn deploy
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** There are three build phases
-you'll use when developing plugins with Maven: 
+**Note:** There are three build phases you'll use when developing plugins with
+Maven: 
 
 - In Maven's *compile* phase, explicit dependencies are downloaded to your
   local repository (i.e., `.m2/repository/com/liferay/portal`).
@@ -107,7 +107,7 @@ you'll use when developing plugins with Maven:
 - In Maven's *install* phase, your plugin is installed to your local
   repository. 
 
----
+$$$
 
 Now that you've deployed a plugin using Maven, let's consider the types of
 Liferay plugins you can develop with Liferay Maven archetypes. 

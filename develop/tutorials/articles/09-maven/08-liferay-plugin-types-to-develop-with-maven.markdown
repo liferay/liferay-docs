@@ -17,14 +17,13 @@ Let's start with portlet plugins.
 To create a Liferay portlet plugin project, follow the *Creating Liferay Plugins
 with Maven* section. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
-tool to generate your portlet project, you can filter on group ID `liferay`, or
-even the group ID/artifact ID combination `liferay:portlet`, to 
-find the Liferay portlet archetypes more easily. 
+**Tip**: As you use Maven's Archetype tool to generate your portlet project, you
+can filter on group ID `liferay`, or even the group ID/artifact ID combination
+`liferay:portlet`, to find the Liferay portlet archetypes more easily. 
 
----
+$$$
 
 ### Anatomy
 
@@ -109,14 +108,13 @@ assuming you already created the `sample-parent-project` and its `pom.xml`.
 To create your Liferay theme plugin project follow the *Creating Liferay Plugins
 with Maven* section, making sure to select *Theme* as the plugin type. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
-tool to generate your theme project, you can filter on group ID `liferay`, or
-even the group ID/artifact ID combination `liferay:portlet`, to more easily
-find the Liferay portlet archetypes. 
+**Tip**: As you use Maven's Archetype tool to generate your theme project, you
+can filter on group ID `liferay`, or even the group ID/artifact ID combination
+`liferay:portlet`, to more easily find the Liferay portlet archetypes. 
 
----
+$$$
 
 ### Anatomy
 
@@ -187,16 +185,15 @@ The theme plugin project POM has two additional properties:
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 Plugins with Maven* section. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** When you execute the *package*
-goal, a WAR file is created; it's just like the Maven WAR type project.
-Simultaneously, the parent theme is downloaded and copied, and your theme's
-customizations are overlaid last. A thumbnail image of the theme is created and
-placed in the *target* directory. Its path is
+**Note:** When you execute the *package* goal, a WAR file is created; it's just
+like the Maven WAR type project. Simultaneously, the parent theme is downloaded
+and copied, and your theme's customizations are overlaid last. A thumbnail image
+of the theme is created and placed in the *target* directory. Its path is
 `target/<theme>/images/screenshot.png` in your theme project. 
 
----
+$$$
 
 ### More Information
 
@@ -219,14 +216,13 @@ To create a Liferay hook plugin project, follow the steps outlined in the
 *Creating Liferay Plugins with Maven* section, making sure to select *Hook* as
 the plugin type. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
-tool to generate your hook you can filter on group ID `liferay`, or even the
-group ID/artifact ID combination `liferay:portlet`, to more easily find the
-Liferay portlet archetypes. 
+**Tip**: As you use Maven's Archetype tool to generate your hook you can filter
+on group ID `liferay`, or even the group ID/artifact ID combination
+`liferay:portlet`, to more easily find the Liferay portlet archetypes. 
 
----
+$$$
 
 ### Anatomy
 
@@ -303,14 +299,13 @@ To create a Liferay layout template plugin project follow the *Creating Liferay
 Plugins with Maven* section, making sure to select *Layout Template* as the
 plugin type.
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
-tool to generate your layout template project, you can filter on group ID
-`liferay`, or even group ID / artifact ID combination `liferay:layout`, to find
-the Liferay layout template archetypes.
+**Tip**: As you use Maven's Archetype tool to generate your layout template
+project, you can filter on group ID `liferay`, or even group ID / artifact ID
+combination `liferay:layout`, to find the Liferay layout template archetypes.
 
----
+$$$
 
 ### Anatomy
 

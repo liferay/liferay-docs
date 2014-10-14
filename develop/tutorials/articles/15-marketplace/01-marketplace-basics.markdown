@@ -125,15 +125,14 @@ requirements to keep in mind.
     - Liferay reserves the right to replace WAR files of app plugins that have
       the same deployment context as plugins built by Liferay.
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Important:** If you're developing a
- paid app or want your free app to satisfy Liferay's Plugin Security Manager,
- Chapter 13 on Plugin Security Management for details. Give yourself adequate
- time to develop your app's PACL and time to test your app thoroughly with the
- security manager enabled. 
+**Important:** If you're developing a paid app or want your free app to satisfy
+Liferay's Plugin Security Manager, Chapter 13 on Plugin Security Management for
+details. Give yourself adequate time to develop your app's PACL and time to test
+your app thoroughly with the security manager enabled. 
 
----
+$$$
 
 Now that you've learned the packaging and deployment requirements for your app,
 let's consider the versions of Liferay you're targetting for your app and how to
@@ -215,13 +214,13 @@ versions of Liferay.
 Read the *Specify App Compatibility* section below for details on how to specify
 which versions of Liferay your app works with.
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be
- sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
- chapter of *Using Liferay Portal*! 
+**Note:** If you haven't yet done so, be sure to read the
+[Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+chapter of *Using Liferay Portal*! 
 
----
+$$$
 
 Now that we have covered the basics, you're armed with enough knowledge to start
 creating apps on the Marketplace, so let's see what that looks like in the next

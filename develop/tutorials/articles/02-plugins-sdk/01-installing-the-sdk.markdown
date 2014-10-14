@@ -8,16 +8,17 @@ development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio,
- the SDK is already installed and ready to use. Liferay Portal Enterprise
- Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs
- EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
- [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
- of Liferay Portal EE today. 
+**Note:** In Liferay Developer Studio, the SDK is already installed and ready to
+use. Liferay Portal Enterprise Edition (EE) comes with Liferay Developer Studio
+and much more (see
+[CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
+Download a
+[free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
+of Liferay Portal EE today. 
 
----
+$$$
 
 Installation steps:
 
@@ -41,15 +42,14 @@ Installation steps:
     Plugins SDK must also be on your `C:\` drive in order for Service Builder to
     be able to run successfully.
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: By default, Liferay Portal
- Community Edition comes bundled with many plugins. It's common to remove them
- to speed up the server start-up. Just navigate to the
- `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
- all its subdirectories except for `ROOT` and `tunnel-web`. 
+**Tip**: By default, Liferay Portal Community Edition comes bundled with many
+plugins. It's common to remove them to speed up the server start-up. Just
+navigate to the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
+directory and delete all its subdirectories except for `ROOT` and `tunnel-web`. 
 
----
+$$$
 
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 

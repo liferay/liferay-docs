@@ -101,15 +101,15 @@ a custom greeting.
 ![Figure 3.6: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.png)
 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed
- successfully, but you don't see any changes in your browser after refreshing
- the page, Tomcat may have failed to rebuild your JSPs. To fix this, delete the
-`work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh
-the page again to force them to be rebuilt. 
+**Tip:** If your portlet deployed successfully, but you don't see any changes in
+your browser after refreshing the page, Tomcat may have failed to rebuild your
+JSPs. To fix this, delete the `work` folder in
+`liferay-portal-[version]/tomcat-[tomcat-version]` and refresh the page again to
+force them to be rebuilt. 
 
----
+$$$
 
 There are a few important details to note concerning this implementation. First,
 the links between pages are created using the `<portlet:renderURL>` tag, which

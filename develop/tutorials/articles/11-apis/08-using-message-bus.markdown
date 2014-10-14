@@ -71,14 +71,13 @@ Configuration of Message Bus is done using the following files:
   Make sure you add `messaging-spring.xml` to your list of Spring configurations
   in this file.
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The internal file
-`META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default
-Message Bus class, default asynchronous message sender class, and default
-synchronous message sender class for Liferay. 
+**Note:** The internal file `META-INF/messaging-core-spring.xml` of
+`portal-impl.jar` specifies the default Message Bus class, default asynchronous
+message sender class, and default synchronous message sender class for Liferay. 
 
----
+$$$
 
 You can control your *Message Types* by using either the `Message` or
 `JSONObject` class. Liferay core services are typically serialized and

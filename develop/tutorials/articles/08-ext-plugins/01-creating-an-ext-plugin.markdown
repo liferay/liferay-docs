@@ -136,16 +136,15 @@ significant:
     - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
       customize the struts actions used by Liferay's core portlets. 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** After creating an Ext plugin,
- remove the files you don't need to customize from
- `docroot/WEB-INF/ext-web/docroot/WEB-INF`. Liferay keeps track of the files
- deployed by each Ext plugin and won't let you deploy multiple Ext plugins that
- override the same file. If you remove unnecessary (uncustomized) files, you'll
- avoid collisions with Ext plugins deployed alongside yours. 
+**Tip:** After creating an Ext plugin, remove the files you don't need to
+customize from `docroot/WEB-INF/ext-web/docroot/WEB-INF`. Liferay keeps track of
+the files deployed by each Ext plugin and won't let you deploy multiple Ext
+plugins that override the same file. If you remove unnecessary (uncustomized)
+files, you'll avoid collisions with Ext plugins deployed alongside yours. 
 
----
+$$$
 
 You've now created an Ext plugin and are familiar with its directory structure
 and its most significant files. Let's use your Ext plugin to customize Liferay

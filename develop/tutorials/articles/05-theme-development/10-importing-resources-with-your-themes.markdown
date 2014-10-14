@@ -34,22 +34,21 @@ download the latest version. Install and deploy the resources importer to your
 Liferay instance the same way you would deploy any other Liferay plugin or
 Marketplace app.
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
- Liferay Portal instance and don't have the resources importer already deployed,
- you might see a message like this:
+**Tip:** If you deploy a theme to your Liferay Portal instance and don't have
+the resources importer already deployed, you might see a message like this:
  
     19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
         for deploy because it is missing resources-importer-web
 
- Such a message appears if the resources importer is declared as a dependency in
- your theme's `liferay-plugin-package.properties` file but is not deployed. You
- can deploy the resources importer application to satisfy the dependency or you
- can remove or comment out the dependency declaration if you're not going to use
- the resources importer with your theme (see below).
+Such a message appears if the resources importer is declared as a dependency in
+your theme's `liferay-plugin-package.properties` file but is not deployed. You
+can deploy the resources importer application to satisfy the dependency or you
+can remove or comment out the dependency declaration if you're not going to use
+the resources importer with your theme (see below).
 
----
+$$$
 
 When you create a new theme project using the Liferay Plugins SDK, check your
 theme's `docroot/WEB-INF/liferay-plugin-package.properties` file for two entries
@@ -80,16 +79,15 @@ into a site template, you can specify the following in your
 
     resources-importer-target-value=<site-name>
 
----
++$$$
 
- ![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
- themes for Liferay Marketplace, don't configure your theme to import resources
- directly into a site. Instead, use the default: import the resources into a
- site template. Do this by commenting out the
- `resources-importer-target-class-name` property. This way, it'll be much safer
- to deploy your theme to a production Liferay instance.
+**Warning:** If you're developing themes for Liferay Marketplace, don't
+configure your theme to import resources directly into a site. Instead, use the
+default: import the resources into a site template. Do this by commenting out
+the `resources-importer-target-class-name` property. This way, it'll be much
+safer to deploy your theme to a production Liferay instance.
 
----
+$$$
 
 All of the resources a theme uses with the resources importer go in the
 `<theme-name>/docroot/WEB-INF/src/resources-importer` folder. The assets to be

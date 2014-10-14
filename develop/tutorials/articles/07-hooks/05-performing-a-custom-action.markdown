@@ -40,18 +40,17 @@ custom actions for other events, too. For actions that require access to the
 `HttpServletRequest`, extend `com.liferay.portal.kernel.events.Action`; for
 others, extend `com.liferay.portal.struts.SimpleAction`. 
 
----
++$$$
 
- ![important](../../images/tip-pen-paper.png) **Important:** For better forward
- compatibility, use hooks to customize Struts actions rather than Ext plugins.
- For more information, see the [Properties
- Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
- chapter of *Using Liferay Portal* or find the `portal.properties` configuration
- file for your version of Liferay in the [Portal
- Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
- wiki page. 
+**Important:** For better forward compatibility, use hooks to customize Struts
+actions rather than Ext plugins. For more information, see the
+[Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+chapter of *Using Liferay Portal* or find the `portal.properties` configuration
+file for your version of Liferay in the
+[Portal Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
+wiki page. 
 
----
+$$$
 
 Extending and overriding portal properties is just as easy, so let's do that
 next.

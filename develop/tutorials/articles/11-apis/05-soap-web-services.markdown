@@ -54,14 +54,13 @@ Here's the list of *secure* web services for `UserGroup`:
     - `unsetTeamUserGroups`
     - `updateUserGroup`
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use a tool
-called *Service Builder* to expose their services via SOAP automatically. If
-you're interested in using Service Builder, check out the *Service Builder*
-chapter in this guide. 
+**Note:** Liferay's developers use a tool called *Service Builder* to expose
+their services via SOAP automatically. If you're interested in using Service
+Builder, check out the *Service Builder* chapter in this guide. 
 
----
+$$$
 
 Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and

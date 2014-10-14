@@ -19,13 +19,12 @@ You've seen two powerful tools you can use to develop your Liferay plugins. In
 addition to these, there's Liferay IDE and Liferay Developer Studio! Let's look
 at Liferay IDE in the next chapter. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Are you wondering if we're
- going to make more terrible jokes that steal from classic poetry? Quoth the
- Maven, "Probably." 
+**Note:** Are you wondering if we're going to make more terrible jokes that
+steal from classic poetry? Quoth the Maven, "Probably." 
 
----
+$$$
 
 <!-- I thought Lenore II did make it through the chapter. Did you forget to kill
 her off? --> 

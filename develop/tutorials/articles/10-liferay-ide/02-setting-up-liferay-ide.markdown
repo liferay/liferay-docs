@@ -24,12 +24,12 @@ these requirements before proceeding:
     and the Liferay IDE extension--see the *Installation* section if you haven't
     already done this. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
- (e.g., 5.2.x) are not supported by Liferay IDE. 
+**Note:** Earlier versions of Liferay (e.g., 5.2.x) are not supported by Liferay
+IDE. 
 
----
+$$$
 
 Let's set up your Liferay Plugins SDK. 
 
@@ -59,13 +59,12 @@ from Liferay IDE.
 4.  Select *OK* and verify that your SDK was added to the list of *Installed
     Liferay Plugin SDKs*. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
- your preferences. Set one as the default SDK by checking its box in the list of
- *Installed Liferay Plugin SDKs*. 
+**Note:** You can have Multiple SDKs in your preferences. Set one as the default
+SDK by checking its box in the list of *Installed Liferay Plugin SDKs*. 
 
----
+$$$
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 

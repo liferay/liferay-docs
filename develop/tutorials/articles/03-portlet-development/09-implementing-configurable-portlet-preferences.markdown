@@ -201,14 +201,13 @@ Another common method to include in a custom configuration action class is a
 configuration icon. For this example, we'll stick with the original render
 method from the `DefaultConfigurationAction` class we're extending.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** You won't need to store
- portlet preferences by calling `preferences.store()` since they're
- automatically stored in the `DefaultConfigurationAction` class, which your
- configuration class extends.
+**Note:** You won't need to store portlet preferences by calling
+`preferences.store()` since they're automatically stored in the
+`DefaultConfigurationAction` class, which your configuration class extends.
 
----
+$$$
 
 Lastly, let's specify our new custom configuration class in the
 `liferay-portlet.xml`. Replace the existing `<configuration-action-class>...</configuration-action-class>`

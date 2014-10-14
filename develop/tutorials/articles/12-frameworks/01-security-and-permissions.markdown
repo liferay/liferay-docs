@@ -48,12 +48,12 @@ Your `portlet.xml` roles need to be mapped to specific roles in the portal.
 That way the portal can resolve conflicts between roles with the same name that
 are from different portlets (e.g. portlets from different developers). 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Each role named in a portlet's
-`<security-role-ref>` element is given permission to add the portlet to a page. 
+**Note:** Each role named in a portlet's `<security-role-ref>` element is given
+permission to add the portlet to a page. 
 
----
+$$$
 
 To map the roles to the portal, you'll have to use a Liferay-specific
 configuration file called `liferay-portlet.xml`. For an example, see the mapping

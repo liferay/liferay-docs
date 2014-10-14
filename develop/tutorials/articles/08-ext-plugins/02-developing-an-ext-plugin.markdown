@@ -63,17 +63,16 @@ the application server *within* our Liferay bundle `.zip` file is
 `C:/work/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40` as our `app.server.dir`
 property value. 
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** Some Liferay bundles come
- installed with a sample website. It's useful for showcasing certain features of
- Liferay, but if you removed it, you likely don't want it reinstalled each time
- your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip your
- bundle, delete the
- `[work]/liferay-portal-[version]/[app-server]-[version]/webapps/welcome-theme`
- folder, then re-zip your bundle. 
+**Note:** Some Liferay bundles come installed with a sample website. It's useful
+for showcasing certain features of Liferay, but if you removed it, you likely
+don't want it reinstalled each time your bundle is unzipped. To prevent the
+reinstallation of 7-Cogs, unzip your bundle, delete the
+`[work]/liferay-portal-[version]/[app-server]-[version]/webapps/welcome-theme`
+folder, then re-zip your bundle. 
 
----
+$$$
 
 Next we'll change our newly created Ext plugin and deploy it. 
 
@@ -666,15 +665,15 @@ conflicts when merging with a new portal version:
 This strategy will help you determine what you'll need to merge when a new
 version of Liferay is released. 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** This is an advanced technique;
- it may have a large impact on the maintainability of your code, especially if
- abused. Seek alternatives, and if you're sure this is your only option, think
- of it as a short term solution. Contact Liferay's developers about applying the
- necessary changes to the product's source code. 
+**Tip:** This is an advanced technique; it may have a large impact on the
+maintainability of your code, especially if abused. Seek alternatives, and if
+you're sure this is your only option, think of it as a short term solution.
+Contact Liferay's developers about applying the necessary changes to the
+product's source code. 
 
----
+$$$
 
 That's it for advanced customization techniques. Let's talk about deploying in
 porudction next. 

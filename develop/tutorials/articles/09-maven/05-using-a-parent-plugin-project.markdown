@@ -125,14 +125,13 @@ Your parent project now specifies common dependencies on required Liferay Maven
 artifacts. All your parent project's modules (i.e., projects that refer to this
 parent) can leverage these dependencies. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** You could just as easily
-include such dependencies in the POM of each of your plugin projects, but
-specifying them in a parent project makes them accessible to child projects
-through inheritance. 
+**Note:** You could just as easily include such dependencies in the POM of each
+of your plugin projects, but specifying them in a parent project makes them
+accessible to child projects through inheritance. 
 
----
+$$$
  
 Now you're able to specify dependencies on required Liferay artifacts; let's
 create a Liferay plugin project using the archetypes provided by Liferay. 

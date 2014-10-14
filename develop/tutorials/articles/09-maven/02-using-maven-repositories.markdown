@@ -102,21 +102,21 @@ specify them in your Maven environment settings. Your repository settings enable
 Maven to find the repository and get access to it for retrieving and installing
 artifacts. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** You only need to configure a
-repository server if you're installing downloaded Liferay CE/EE artifacts from
-a zip file or if you want to share artifacts (e.g., Liferay artifacts and/or
-your plugins) with others. If you're automatically installing Liferay CE
-artifacts from the Central Repository and aren't interested in sharing
-artifacts, you don't need a repository server specified in your Maven settings.
+**Note:** You only need to configure a repository server if you're installing
+downloaded Liferay CE/EE artifacts from a zip file or if you want to share
+artifacts (e.g., Liferay artifacts and/or your plugins) with others. If you're
+automatically installing Liferay CE artifacts from the Central Repository and
+aren't interested in sharing artifacts, you don't need a repository server
+specified in your Maven settings.
 
 However, configuring a mirror in your Maven settings is recommended as a best
 practice. Get more information on mirrors and their purpose in Maven's guide on
 mirrors at
 [http://maven.apache.org/guides/mini/guide-mirror-settings.html](http://maven.apache.org/guides/mini/guide-mirror-settings.html). 
 
----
+$$$
 
 To configure your Maven environment to access your `liferay-releases` repository
 server, do the following:
@@ -145,14 +145,13 @@ server, do the following:
             </servers>
         </settings>
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** The username `admin` and
-password `admin123` are the credentials of the default Nexus OSS administrator
-account. If you changed these credentials for your Nexus server, make sure to
-update `settings.xml` with these changes.
+**Note:** The username `admin` and password `admin123` are the credentials of
+the default Nexus OSS administrator account. If you changed these credentials
+for your Nexus server, make sure to update `settings.xml` with these changes.
 
----
+$$$
     
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll

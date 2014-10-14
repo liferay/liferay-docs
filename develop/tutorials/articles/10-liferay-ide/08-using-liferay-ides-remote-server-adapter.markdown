@@ -40,14 +40,13 @@ machine before using the Remote Server Adapter, so that you can compile plugins
 for deployment. Follow the instructions earlier in the chapter to get your
 Liferay IDE or Liferay Developer Studio environment up and running. 
 
----
++$$$
 
-![important](../../images/tip-pen-paper.png) **Important:** Keep a record of
-your portal administrator login credentials (e.g., username/password) for your
-remote Liferay server; you'll need them to configure your connection from
-Liferay IDE to the remote Liferay server. 
+**Important:** Keep a record of your portal administrator login credentials
+(e.g., username/password) for your remote Liferay server; you'll need them to
+configure your connection from Liferay IDE to the remote Liferay server. 
 
----
+$$$
 
 Let's start by configuring the Remote Server Adapter. 
 
@@ -146,13 +145,13 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
 1.  Right click on the server and choose *Add and Remove...*. 
 
-    ---
+    +$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** Make sure you have available
-    projects configured in Liferay IDE. If not, you'll get an error message
-    indicating there are no available resources to add or remove from the server. 
+    **Note:** Make sure you have available projects configured in Liferay IDE.
+    If not, you'll get an error message indicating there are no available
+    resources to add or remove from the server. 
 
-    ---
+    $$$
 
 2.  Select the Liferay projects to publish to your remote server; click *Add* to
     add them to your remote server, then click *Finish*. Deployment begins

@@ -22,13 +22,13 @@ in your Liferay IDE Eclipse workspace. These projects might already have
 `.project` or `.classpath` files in them; regardless, we'll use the same
 procedure to import them.
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** The next two sections assume
- that you've created projects with the Plugins SDK and are familiar with the
- directory structure used by the Plugins SDK. 
+**Note:** The next two sections assume that you've created projects with the
+Plugins SDK and are familiar with the directory structure used by the Plugins
+SDK. 
 
----
+$$$
 
 First let's look at the import process for creating a single Liferay IDE project
 from a Plugins SDK project. Follow these steps:
@@ -78,15 +78,15 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 2.  In the *Import Projects* window, use the combo box to select the *Liferay
     Plugins SDK* you're importing plugins from. 
 
-    ---
+    +$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
-    configured in Liferay IDE (i.e., it's not in the dropdown list of the
-    *Import Projects* window), use the *Configure* link to add one. To
-    configure a Plugins SDK on the Installed SDKs on the pref page just click
-    *Add* and then Browse to the directory of the Plugins SDK root directory.
+    **Note:** If your SDK isn't configured in Liferay IDE (i.e., it's not in the
+    dropdown list of the *Import Projects* window), use the *Configure* link to
+    add one. To configure a Plugins SDK on the Installed SDKs on the pref page
+    just click *Add* and then Browse to the directory of the Plugins SDK root
+    directory.
 
-    ---
+    $$$
 
 3.  Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
     Location* and *Liferay Plugin SDK Version* fields are automatically filled
@@ -116,14 +116,14 @@ convert your project.
 1.  In Eclipse, right-click the project in your Project Explorer, and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
-    ---
+    +$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
-    action available it means either that the project is already a Liferay IDE
-    project, or that it is not faceted (i.e., Java and Dynamic Web project facets
-    are not yet configured). Configure accordingly before moving on. 
+    **Note:** If you don't have a convert action available it means either that
+    the project is already a Liferay IDE project, or that it is not faceted
+    (i.e., Java and Dynamic Web project facets are not yet configured).
+    Configure accordingly before moving on. 
 
-    ---
+    $$$
 
 2.  In the *Convert Project* wizard, your project should be selected and the SDK
     location and SDK version should be detected automatically. If they aren't
@@ -156,10 +156,10 @@ anymore? Here's how you can import it into your current workspace:
 
 5.  Click *Finish*. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** There are two common errors
-that occur when importing existing Liferay IDE projects into your workspace:
+**Note:** There are two common errors that occur when importing existing Liferay
+IDE projects into your workspace:
 
 - The SDK name used in that project doesn't exist in your new workspace. 
 
@@ -169,7 +169,7 @@ You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
 window; you can modify the targeted runtime in the *Project properties* &rarr;
 *Targeted Runtimes* dialog window. 
 
----
+$$$
 
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 

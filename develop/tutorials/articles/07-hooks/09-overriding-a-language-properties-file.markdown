@@ -15,13 +15,13 @@ like so:
         ...
     </hook>
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip:** Check the DTD of each Liferay
-XML file you modify for the elements and attributes that can be included in the
-XML and the specified order for those elements. 
+**Tip:** Check the DTD of each Liferay XML file you modify for the elements and
+attributes that can be included in the XML and the specified order for those
+elements. 
 
----
+$$$
 
 Great! You now know how to customize language keys. Next, let's discuss
 extending your Indexer Post Processor.

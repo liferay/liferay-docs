@@ -80,15 +80,14 @@ company's name in the footer of your site's pages:
             </p>
         </footer>
 
-    ---
++$$$
 
-     ![note](../../images/tip-pen-paper.png) **Note:** Let's look more closely
-     at two theme setting variables appearing in the above logic. The
-     `display-slogan-footer` variable holds a boolean value indicating whether
-     to display the version of the footer that contains your slogan. The
-     `slogan` variable holds your slogan text.
+**Note:** Let's look more closely at two theme setting variables appearing in
+the above logic. The `display-slogan-footer` variable holds a boolean value
+indicating whether to display the version of the footer that contains your
+slogan. The `slogan` variable holds your slogan text.
 
-    ---
+$$$
 
 2.  Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
     located in your theme's `WEB-INF` folder:
@@ -107,14 +106,14 @@ company's name in the footer of your site's pages:
             />
         </settings>
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Warning:** Make sure you have an
- up-to-date DTD version specified for your `liferay-look-and-feel.xml` file.
- For example, `http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd`. When
- referencing older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
+**Warning:** Make sure you have an up-to-date DTD version specified for your
+`liferay-look-and-feel.xml` file. For example,
+`http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd`. When referencing
+older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
  
----
+$$$
 
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
@@ -128,15 +127,14 @@ footer, including the slogan.
 
  ![Figure 5.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties hook
- to display configurable theme settings properly, like the slogan text area and
- footer checkbox from the previous example. For details, see the [Overriding a
- *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
- section found in the *Hooks* chapter of this guide.
+**Note:** Use a language properties hook to display configurable theme settings
+properly, like the slogan text area and footer checkbox from the previous
+example. For details, see the
+[Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
+section found in the *Hooks* chapter of this guide.
 
----
+$$$
 
 Next, let's customize your theme's color scheme. 

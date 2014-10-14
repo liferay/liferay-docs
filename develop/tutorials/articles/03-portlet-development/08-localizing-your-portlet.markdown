@@ -207,13 +207,12 @@ translations, in the same folder as your `Language.properties` file.
 
 
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If you're mavenizing your
- portlet, make sure to copy your `content` folder into your portlet's
- `src/main/webapp/WEB-INF/classes` folder. 
+**Note:** If you're mavenizing your portlet, make sure to copy your `content`
+folder into your portlet's `src/main/webapp/WEB-INF/classes` folder. 
 
----
+$$$
 
 By using Studio's language building capability, you can keep all created
 translations synchronized with your default `Language.properties`. You can run
@@ -241,16 +240,16 @@ For demonstration purposes, let's consider a project that has one portlet named
 a resource bundle for each of them to specify their localized title and
 description values. 
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If your project only has one
- portlet, it's best to put your resource bundle directly in the `content`
- folder. Specifying your bundle in file `content/Language.properties` lets you
- leverage the Plugins SDK's language building capabilities, via right-clicking
- on the `Language.properties` file &rarr; Liferay &rarr; Build Languages in
- Developer Studio or executing `ant build-lang` from the terminal. 
+**Note:** If your project only has one portlet, it's best to put your resource
+bundle directly in the `content` folder. Specifying your bundle in file
+`content/Language.properties` lets you leverage the Plugins SDK's language
+building capabilities, via right-clicking on the `Language.properties` file
+&rarr; Liferay &rarr; Build Languages in Developer Studio or executing `ant
+build-lang` from the terminal. 
 
----
+$$$
 
 Here's what you'd do to localize the title and description for each portlet in
 the project: 
@@ -336,27 +335,26 @@ Portal's Control Panel displays your portlet's localized title and description.
 
 You're becoming an expert localizer!
 
----
++$$$
 
- ![Tip](../../images/tip-pen-paper.png)**Tip:** Do you know how your portlet
- title is processed? If your portlet doesn't define a resource bundle or
- `javax.portlet.title`, the portal container next checks the `<portlet-info>`
- and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
- missing too, the `<portlet-name>` node value is rendered as portlet title. 
+**Tip:** Do you know how your portlet title is processed? If your portlet
+doesn't define a resource bundle or `javax.portlet.title`, the portal container
+next checks the `<portlet-info>` and inner `<portlet-title>` node in the
+`portlet.xml` descriptor. If they're missing too, the `<portlet-name>` node
+value is rendered as portlet title. 
 
----
+$$$
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png)**Note:** Be aware that using Struts
- portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
- engages a different title and description algorithm. Titles and long titles are
- pulled using two different keys:
+**Note:** Be aware that using Struts portlet and referring to a `StrutsResource`
+bundle in your `portlet.xml` engages a different title and description
+algorithm. Titles and long titles are pulled using two different keys:
 
- - `javax.portlet.long-title` 
- - `javax.portlet.title`
+- `javax.portlet.long-title` 
+- `javax.portlet.title`
 
----
+$$$
 
 Now that you're comfortable localizing portlet content, you may want to learn
 how to make translations available throughout the portal or how to override an

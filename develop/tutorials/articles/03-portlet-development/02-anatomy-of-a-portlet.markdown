@@ -153,15 +153,15 @@ Here's a basic summary of what each element represents:
     specifying your default values and specify the localized values in separate
     resource bundles.
 
-    ---
+    +$$$
     
-    ![note](../../images/tip-pen-paper.png) **Note:** You should not specify
-    values for a portlet's title, short title, and keywords in both a portlet's 
-    `<portlet-info>` element in `portlet.xml` and in a resource bundle. But if
-    by accident you do, the values in the resource bundle take precedence over
-    the values in the `<portlet-info>` element.
+    **Note:** You should not specify values for a portlet's title, short title,
+    and keywords in both a portlet's `<portlet-info>` element in `portlet.xml`
+    and in a resource bundle. But if by accident you do, the values in the
+    resource bundle take precedence over the values in the `<portlet-info>`
+    element.
 
-    ---
+    $$$
 
     Specifying *localized* values for your portlet's title, short title, and
     keywords in resource bundles is easy. For example, if you're supporting

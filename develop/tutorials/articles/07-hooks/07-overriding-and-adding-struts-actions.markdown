@@ -175,16 +175,14 @@ executed. If you override the `execute` method that *does not take* the original
 action as a parameter, you are ignoring the original action and it won't be
 executed.
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Warning:** There's a
-classloading bug that manifests under certain conditions when executing
-an original Struts action. The issue is fixed in
-[LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't
-have the fix pack for this bug, set the context classloader to the
-portal classloader and execute the original action in a `try` block.
-Then, in a corresponding `finally` block, reset the classloader back to
-the original classloader. 
+**Warning:** There's a classloading bug that manifests under certain conditions
+when executing an original Struts action. The issue is fixed in
+[LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't have the
+fix pack for this bug, set the context classloader to the portal classloader and
+execute the original action in a `try` block. Then, in a corresponding `finally`
+block, reset the classloader back to the original classloader. 
 
 Here's an example for the temporary workaround:
 
@@ -216,7 +214,7 @@ Here's an example for the temporary workaround:
 
         }
 
----
+$$$
 
 That's it for overriding the Struts actions! Now Let's get our new Struts
 path working. 

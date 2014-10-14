@@ -17,19 +17,19 @@ the `processAction` method). In order to pass parameter values to the render
 phase you must read them from the `actionRequest` and then invoke the
 `setRenderParameter` method for each parameter needed. 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient
- extension to the portlet specification through the `MVCPortlet` class to copy
- all action parameters directly as render parameters. You can achieve this by
- setting the following `init-param` in your `portlet.xml`:
+**Tip:** Liferay offers a convenient extension to the portlet specification
+through the `MVCPortlet` class to copy all action parameters directly as render
+parameters. You can achieve this by setting the following `init-param` in your
+`portlet.xml`:
 
     <init-param>
         <name>copy-request-parameters</name>
         <value>true</value>
     </init-param>
 
----
+$$$
 
 One final note about render parameters: the portal remembers them for all later
 executions of the portlet until the portlet is invoked with *different*

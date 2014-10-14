@@ -41,14 +41,14 @@ Liferay to use your service class instead of the original.
             }
         }
 
-    ---
+    +$$$
 
-    ![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
-    (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's class
-    loader. That means it will have access to any other class included in the
-    same WAR file, but *not* the *internal* classes of Liferay. 
+    **Note:** The wrapper class (`MyUserLocalServiceImpl` in this example) will
+    be loaded in the hook's class loader. That means it will have access to any
+    other class included in the same WAR file, but *not* the *internal* classes
+    of Liferay. 
 
-    ---
+    $$$
 
 2.  Edit `liferay-hook.xml`, located in the `example-hook/docroot/WEB-INF`
     directory, by adding the following after `</custom-jsp-dir>`:

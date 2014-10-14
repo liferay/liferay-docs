@@ -79,15 +79,14 @@ necessary to build your newly created portlet project. This is not a recommended
 configuration, and we encourage you to keep your projects in the Plugins SDK. 
 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: If you are using a source
- control system such as Subversion, CVS, Mercurial, Git, etc., this might be
- a good moment to do an initial check-in of your changes. After building the
- plugin for deployment, several additional files will be generated that should
- *not* be handled by the source control system. 
+**Tip**: If you are using a source control system such as Subversion, CVS,
+Mercurial, Git, etc., this might be a good moment to do an initial check-in of
+your changes. After building the plugin for deployment, several additional files
+will be generated that should *not* be handled by the source control system. 
 
----
+$$$
 
 ## Deploying the Portlet
 
@@ -97,17 +96,16 @@ WAR file into the deploy directory, and the portal makes the necessary changes
 specific to Liferay and then deploys the plugin to the application server. This
 is a method of deployment used throughout this guide.
 
----
++$$$
 
- ![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide
- variety of application servers. Many, such as Tomcat and Jboss, provide a
- simple way to deploy web applications by just copying a file into a folder and
- Liferay's auto-deploy mechanism takes advantage of that ability. You should be
- aware though, that some application servers, such as Websphere or Weblogic,
- require the use of specific tools to deploy web applications; Liferay's
- auto-deploy process won't work for them. 
+**Note:** Liferay supports a wide variety of application servers. Many, such as
+Tomcat and Jboss, provide a simple way to deploy web applications by just
+copying a file into a folder and Liferay's auto-deploy mechanism takes advantage
+of that ability. You should be aware though, that some application servers, such
+as Websphere or Weblogic, require the use of specific tools to deploy web
+applications; Liferay's auto-deploy process won't work for them. 
 
----
+$$$
 
 ***Deploying in Developer Studio***: Drag your portlet project onto your
 server. When deploying your plugin, your server displays messages indicating

@@ -5,16 +5,15 @@ Liferay 5.2 and earlier, you might need to migrate your extension environment
 into Ext plugins when upgrading Liferay. If you need to do this, we have good
 news; migrating is automated and relatively easy. 
 
----
++$$$
 
- ![tip](../../images/tip-pen-paper.png) **Tip:** When migrating an extension
- environment, first consider whether any of the extension environment's features
- can be moved into other types of plugins. Portlets and hooks are designed to
- meet specific needs and they're easier to learn. Additionally, they're easier
- to maintain since they often require fewer changes when upgrading to a new
- version of Liferay. 
+**Tip:** When migrating an extension environment, first consider whether any of
+the extension environment's features can be moved into other types of plugins.
+Portlets and hooks are designed to meet specific needs and they're easier to
+learn. Additionally, they're easier to maintain since they often require fewer
+changes when upgrading to a new version of Liferay. 
 
----
+$$$
 
 To successfully migrate, execute an Ant target within the `ext` directory of the
 Plugins SDK, pointing to the old extension environment and naming the new
