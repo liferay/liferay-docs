@@ -31,45 +31,47 @@ if (entryId > 0) {
 		<aui:input id="message" type="textarea" name="message">
 			<aui:validator name="required" errorMessage="Please enter a message." />
 		</aui:input>
-		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
-		
-		<c:if test="<%= themeDisplay.isSignedIn() %>">
-			<div id="useNameButtonWrapper">
+		<div id="counterContainer"><p>Message: <span id="counter"></span> character(s) remaining</p></div>
+
+		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+			<c:if test="<%= themeDisplay.isSignedIn() %>">
+				<div id="useNameButtonWrapper">
+					<aui:button-row>
+						<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+					</aui:button-row>
+				</div>
+			</c:if>
+			
+			<c:if test="<%= themeDisplay.isSignedIn() %>">
+				<div id="useEmailButtonWrapper">
+					<aui:button-row>
+						<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+					</aui:button-row>
+				</div>
+			</c:if>
+			
+			<div id="generateButtonWrapper">
 				<aui:button-row>
-					<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+					<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
 				</aui:button-row>
 			</div>
-		</c:if>
-		
-		<c:if test="<%= themeDisplay.isSignedIn() %>">
-			<div id="useEmailButtonWrapper">
-				<aui:button-row>
-					<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
-				</aui:button-row>
+	
+			<div id="messages">
+				<aui:layout>
+					<aui:column>
+						<div id="message1-div"></div>
+					</aui:column>
+					
+					<aui:column>
+						<div id="message2-div"></div>
+					</aui:column>
+					
+					<aui:column>
+						<div id="message3-div"></div>
+					</aui:column>
+				</aui:layout>
 			</div>
-		</c:if>
-
-		<div id="generateButtonWrapper">
-			<aui:button-row>
-				<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-			</aui:button-row>
-		</div>
-
-		<div id="messages">
-			<aui:layout>
-				<aui:column>
-					<div id="message1-div"></div>
-				</aui:column>
-				
-				<aui:column>
-					<div id="message2-div"></div>
-				</aui:column>
-				
-				<aui:column>
-					<div id="message3-div"></div>
-				</aui:column>
-			</aui:layout>
-		</div>
+		</liferay-ui:panel>
 
 	    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
 
