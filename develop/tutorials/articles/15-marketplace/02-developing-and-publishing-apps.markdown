@@ -56,10 +56,14 @@ using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
 are replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
- ![note](../../images/tip-pen-paper.png)**Note:** If your app is compatible with
- both CE and EE, you must specify a set of versions for both CE and EE releases.
- If you only specify compatibility with CE, then your app will not be compatible
- with (and will fail to deploy to) any EE release.
++$$$
+
+**Note:** If your app is compatible with both CE and EE, you must specify a set
+of versions for both CE and EE releases. If you only specify compatibility with
+CE, then your app will not be compatible with (and will fail to deploy to) any
+EE release.
+ 
+$$$
 
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
@@ -72,16 +76,18 @@ and 6.1 EE release starting with EE GA3. Marketplace will create two packages,
 one that is compatible with the 6.1 CE GA3 release and *later*, and another that
 is compatible with 6.1 EE GA3 release and *later*.
 
- ![note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
- include in your packaging directives *must* be terminated with a version using
- the `+` symbol.  This ensures that your app will be deployable onto future
- versions of Liferay (but does not guarantee your app will work in future
- versions).  So, `liferay-versions=6.1.1,6.1.2` will not work, but
- `liferay-versions=6.1.1,6.1.2+` will work.  Similarly,
- `liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
- not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
- work.
++$$$
 
+**Note:** Any CE or EE versions you include in your packaging directives *must*
+be terminated with a version using the `+` symbol. This ensures that your app
+will be deployable onto future versions of Liferay (but does not guarantee your
+app will work in future versions). So, `liferay-versions=6.1.1,6.1.2` will not
+work, but `liferay-versions=6.1.1,6.1.2+` will work. Similarly,
+`liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
+not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
+work.
+
+$$$
 
 Here are some additional examples:
 

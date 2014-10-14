@@ -48,10 +48,14 @@ To create a repository using Nexus, follow these steps:
 
     ![Figure 9.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
-    ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
-    type of Nexus repository, read Sonatype's *Managing Repositories* at
+    +$$$
+    
+    **Note:** To learn more about each type of Nexus repository, read Sonatype's
+    *Managing Repositories* at
     [http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html).
 
+    $$$
+    
 3.  Enter repository properties appropriate to the access you'll provide its
     artifacts. We're installing release version artifacts into this repository,
     so specify *Release* as the repository policy. Below are examples of

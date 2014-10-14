@@ -50,18 +50,18 @@ these steps:
         INFO  [pool-2-thread-2][HotDeployImpl:178] Deploying sample-portlet from queue
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for sample-portlet
 
-$$$
+    $$$
  
-    ![note](../../images/tip-pen-paper.png) **Note:** If you get the following
-    error after executing `mvn liferay:deploy`, make sure you're executing the
-    command from your plugin's directory (e.g., `sample-portlet`). 
+    **Note:** If you get the following error after executing `mvn
+    liferay:deploy`, make sure you're executing the command from your plugin's
+    directory (e.g., `sample-portlet`). 
  
      `[ERROR] No plugin found for prefix 'liferay' in the current project and in
      the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
-$$$
+    $$$
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your

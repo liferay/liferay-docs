@@ -92,10 +92,15 @@ A BUILD SUCCESSFUL message indicates your hook is now being deployed. If you
 switch to the terminal window running Liferay, in a few seconds you
 should see the message "Hook for example-hook is available for use". 
 
- ![note](../../images/tip-pen-paper.png) **Note:** When we created portlets and
- themes, they were fully functional upon deployment. Hooks aren't like that,
-because they're Liferay customizations, and the default customization is the
-original implementation! 
++$$$
+
+**Note:** When we created portlets and themes, they were fully functional upon
+deployment. Hooks aren't like that, because they're Liferay customizations, and
+the default customization is the original implementation! 
+
+$$$
+
+Next, let's look at the anatomy of a Liferay hook. 
 
 ## Anatomy of the Hook [](id=anatomy-of-the-hook)
 
