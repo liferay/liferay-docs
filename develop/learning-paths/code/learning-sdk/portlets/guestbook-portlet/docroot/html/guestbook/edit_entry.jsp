@@ -20,7 +20,7 @@ if (entryId > 0) {
 	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
 	<aui:fieldset>
 	    <aui:input name="name" >
-	    	<aui:validator name="required" />
+	    	<aui:validator name="required" errorMessage="Please enter your name." />
 	    </aui:input>
 
 		<aui:input name="email" >
