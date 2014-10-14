@@ -1,4 +1,4 @@
-# Traversing the DOM with AlloyUI [](id=traversing-the-dom-with-alloyui)
+# Manipulating the DOM with AlloyUI
 
 In the last portion of the learning path, you learned how AlloyUI can be applied
 to your application. In this section, you'll learn how you can use AlloyUI to
