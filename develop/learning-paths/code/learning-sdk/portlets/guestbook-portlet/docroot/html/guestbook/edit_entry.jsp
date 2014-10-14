@@ -44,10 +44,10 @@ if (entryId > 0) {
 			</div>
 		</c:if>
 
-		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 		<aui:input id="message" type="textarea" name="message">
 			<aui:validator name="required" errorMessage="Please enter a message." />
 		</aui:input>
+		<div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 
 		<div id="generateButtonWrapper">
 			<aui:button-row>
