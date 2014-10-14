@@ -40,19 +40,15 @@ if (entryId > 0) {
 
 	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
-			<div id="useNameButtonWrapper">
-				<aui:button-row>
-					<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
-				</aui:button-row>
-			</div>
+			<aui:button-row>
+				<aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+			</aui:button-row>
 		</c:if>
 		
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
-			<div id="useEmailButtonWrapper">
-				<aui:button-row>
-					<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
-				</aui:button-row>
-			</div>
+			<aui:button-row>
+				<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+			</aui:button-row>
 		</c:if>
 		
 		<div id="generateButtonWrapper">
