@@ -7,14 +7,14 @@ service layer, but did not provide front-end validation in the form itself.
 Before users submit your form, you should make sure that they have filled out
 all of the required fields. Your front-end form validation should indicate which
 fields are required and should highlight the required fields if the user tries
-to submit the form with required fields left empty. For email addresses, your
-form validation should check that the user entered a valid address. Your form
-validation should also allow you to restrict the number of characters that can
-be entered into a field. The number of remaining characters for the field should
-be displayed to the user. With AlloyUI, it's easy to implement all of these form
-validation features. Once you've implemented form validation, users' attempts to
-submit invalid forms will be caught before an HTTP request is sent to your
-Liferay server.
+to submit the form with one or more of the required fields left blank. For email
+addresses, your form validation should check that the user entered a valid
+address. Your form validation should also allow you to restrict the number of
+characters that can be entered into a field. The number of remaining characters
+for the field should be displayed to the user. With AlloyUI, it's easy to
+implement all of these form validation features. Once you've implemented form
+validation, users' attempts to submit invalid forms will be caught by the
+browser, before a request is sent to your Liferay server.
 
 You'll implement form validation with AlloyUI in two steps. First, you'll use
 the AlloyUI validator tag to specify required fields and fields that require a
@@ -25,7 +25,7 @@ guestbook entry message.
 ## Using the AUI Validator Tag
 
 Validating AUI input fields is very easy. You just have to add an
-`<aui:validator>` tag with the appropriate attributes specified.
+`<aui:validator>` tag and specify the appropriate attributes.
 
 Open your project's `docroot/html/guestbook/edit_entry.jsp` file.
 
@@ -33,7 +33,7 @@ To keep things simple, replace the contents between the `<aui:fieldset>` and
 `<aui:fieldset/>` tags with the following code:
 
     <aui:input name="name" >
-         <aui:validator name="required" />
+         <aui:validator name="required" errorMessage="Please enter your name." />
     </aui:input>
 
     <aui:input name="email" >
@@ -51,26 +51,27 @@ To keep things simple, replace the contents between the `<aui:fieldset>` and
 
 Save this update and redeploy your app.
 
-You've added `<aui:validator>` tags inside of some of the `<aui:input>`
-tags. This tag allows you to quickly and easily validate your fields. First,
-note that you add a `<aui:validator/>` tag inside of the `<aui:input>` tags
-for the field you wish to validate. Next, note that you have to specify a
-value for the `name` attribute. The value of the `name` attribute determines
-the type of validation to apply to the field. You added an `aui:validator
-name="required" />` tag to all of the non-hidden form fields. For the email
-field, you've added a `email` validation in order to ensure that a
-legitimate email address is entered. 
+You've added `<aui:validator>` tags inside of the `<aui:input>` tags
+corresponding to the name, email, and message fields. The `<aui:validator>` tag
+allows you to quickly and easily validate your fields. First, note that you must
+add an `<aui:validator/>` tag inside of the `<aui:input>` tag for each field you
+wish to validate. Next, note that you have to specify a value for the `name`
+attribute. The value of the `name` attribute determines the type of validation
+to apply to the field. You added an `aui:validator name="required" />` tag to
+all of the non-hidden form fields. This prevents blank empty fields from being
+submitted. For the email field, you've added an `aui:validator name="required"
+/>` tag. This ensures that only valid email addresses can be submitted. 
 
-You also changed the message filed from a text input field to a textarea input
-field. This provides more space for users to enter their guestbook messages.  It
-allows allows them to resize the field. Note the `errorMessage` attribute of the
-message field's `<aui:validator>` tag. This attribute specifies a message that
-replaces the default error message. You've replaced the default error message
-(*This field is required*) field with a custom message: *Please enter a
-message.*
+In the code above, you also changed the message field from a text input field to
+a textarea input field. This provides more space for users to enter guestbook
+messages. It allows allows them to resize the field. Note the `errorMessage`
+attributes of the `<aui:validator>` tags of the name and message fields. These
+attributes specify messages that replace the default error message. You're
+replacing the default error message (*This field is required*) field with custom
+messages: *Please enter a name.* and *Please enter a message.*
 
 Now click on *Add Entry* in the Guestbook portlet to view the form that you
-updated.  Notice that all the input fields are now marked as *Required*, thanks
+updated. Notice that all the input fields are now marked as *Required*, thanks
 to your `<aui:validator>` tags. 
 
 Attempt to save a guestbook message with all of the fields left empty. Check
