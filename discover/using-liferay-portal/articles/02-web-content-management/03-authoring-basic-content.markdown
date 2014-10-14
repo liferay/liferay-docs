@@ -1,4 +1,4 @@
-# Authoring (Basic) Content
+# Authoring Basic Content
 
 You've been assigned the task to build a web site for an innovative new social
 networking site called Nose-ster. You've decided to take advantage of Liferay

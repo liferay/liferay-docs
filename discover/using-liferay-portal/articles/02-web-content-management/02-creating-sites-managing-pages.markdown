@@ -322,9 +322,9 @@ Liferay generate canonical links by language. If you want to set some of these
 settings for the entire site, you can specify them from the Sitemaps and Robots
 tabs of the Manage Site Settings dialog box (see below).
 
----
++$$$
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible
+**Tip:** In previous versions of Liferay, it was possible
 that a single page could be indexed multiple times. In Liferay 6.1, all URLs
 that direct to the same page will only create one entry in the index.
 Previously, the simple URL
@@ -335,7 +335,7 @@ article, blog entry, etc.) has a unique URL. From the search engine's point of
 view, this will make your pages rank higher since any references to variations
 of a specific URL will all be considered references to the same page.] 
 
----
+$$$
 
 **Look and Feel:** lets you set a page-specific theme. 
 
