@@ -11,10 +11,8 @@ which value to use.
 
 To find out which properties accept multiple values, look in the [Configuring
 Liferay's
-Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties)
-section of [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in
-the `portal.properties` file. 
+Properties](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
+document. 
 
 +$$$
 

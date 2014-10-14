@@ -15,10 +15,6 @@ Guide SDK* which you can browse at
 The project is in the SDK's
 [portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
 folder.
-<!-- download as a `.zip` file from our Developer's Guide
-page. 
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development)
--->
 
 +$$$
 
@@ -28,7 +24,7 @@ described in this section is only intended to demonstrate how to use Service
 Builder. The Calendar portlet provides many more features than the simple
 example application described here. For information about the Calendar portlet,
 please refer to the chapter on Liferay's collaboration suite in
-[Using Liferay Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+[Using Liferay Portal](/discover/portal/-/knowledge_base/6-1/organizing-and-sharing-events-with-the-calendar).
 
 $$$
 
@@ -46,13 +42,12 @@ a new portlet plugin project called the Event Listing portlet project:
 
 1.  Create the Event Listing portlet project in your Liferay Plugins SDK using
     Liferay IDE or Developer Studio, following the example in the [Creating New
-    Liferay Projects](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-new-liferay-projec-4)
+    Liferay Projects](/develop/tutorials/-/knowledge_base/6-1/creating-new-liferay-projects)
     section. 
 
 2.  Create the the Location Listng portlet and Event Listing portlet in the
     project you just created by following the example in the [Creating
-    Plugins](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/create-plugins-liferay-portal-6-1-dev-guide-en) 
-    section. 
+    Plugins](/develop/tutorials/-/knowledge_base/6-1/creating-plugins) section. 
 
 Now that you've finished creating the example project and portlets, expand your
 project's `docroot/WEB-INF/src` folder and the
@@ -456,10 +451,7 @@ project available in the *Dev Guide SDK* which you can browse at
 The project is in the SDK's
 [portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.1.x/devGuide/code/devGuide-sdk/portlets/event-listing-portlet).
 folder.
-<!-- download from our
-Developer's Guide page at
-[http://www.liferay.com/documentation/liferay-portal/6.1/development](http://www.liferay.com/documentation/liferay-portal/6.1/development).
--->
+
 We've also listed the `service.xml` content here for your convenience. We've
 added some comments to highlight the service's various elements. Other than
 that, your `service.xml` file's contents should look similar to this: 

@@ -67,8 +67,8 @@ command from your layout template project directory:
         ant deploy
 
     If you're using Maven, please refer to this guide's
-    [section](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/deploying-liferay-plugins-with-maven)
-    on deploying  Liferay plugins with Maven.
+    [section](/develop/tutorials/-/knowledge_base/6-1/deploying-liferay-plugins-with-maven)
+    on deploying Liferay plugins with Maven.
 
 When deploying your plugin, the server displays messages indicating that your
 plugin was read, registered, and is now available for use. 

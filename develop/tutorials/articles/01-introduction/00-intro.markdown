@@ -7,7 +7,7 @@ what a portal is and how to use Liferay from an end-user perspective. If you
 don't, please read the [What is a
 Portal?](http://www.liferay.com/products/what-is-a-portal) article on
 liferay.com and the [What is
-Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/what-is-lifera-1)
+Liferay](/discover/portal/-/knowledge_base/6-1/what-is-liferay)
 chapter in *Using Liferay Portal*. 
 
 This chapter summarizes how to to develop applications for Liferay and how to

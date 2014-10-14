@@ -17,6 +17,7 @@ including:
 - Tracking app Performance
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
-highly recommended that you first read the [Liferay Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+highly recommended that you first read the
+[Liferay Marketplace](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace)
 chapter of *Using Liferay Portal*, where you will find detailed information about the
 Marketplace from an end user's perspective.

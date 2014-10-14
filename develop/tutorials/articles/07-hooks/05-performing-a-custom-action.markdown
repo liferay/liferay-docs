@@ -44,11 +44,8 @@ others, extend `com.liferay.portal.struts.SimpleAction`.
 
 **Important:** For better forward compatibility, use hooks to customize Struts
 actions rather than Ext plugins. For more information, see the
-[Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
-chapter of *Using Liferay Portal* or find the `portal.properties` configuration
-file for your version of Liferay in the
-[Portal Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
-wiki page. 
+[Properties Reference](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
+document. 
 
 $$$
 

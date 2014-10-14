@@ -40,11 +40,11 @@ Plugins SDK and/or Maven installation and Liferay Portal must be installed and
 configured in your Liferay IDE. If you're thinking, "Wait a second, buster! I
 thought the Plugins SDK and Maven could be used without Liferay IDE!", then
 you're right. In the [The Plugins
-SDK](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/the-plugins-s-3)
+SDK](/develop/tutorials/-/knowledge_base/6-1/the-plugins-sdk)
 chapter, we'll explain how to use the Plugins SDK on its own, with a text
 editor. Also, we'll explain how to use Maven on its own in the [Developing
 plugins using
-Maven](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/developing-plugins-using-maven)
+Maven](/develop/tutorials/-/knowledge_base/6-1/developing-plugins-using-maven)
 chapter. Here, we explain the easiest way to use the Plugins SDK: by running it
 from Liferay IDE. 
 

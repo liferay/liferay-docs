@@ -11,7 +11,7 @@ it.
 
 We'll use the Location Listing Portlet we developed in the [Generating Your
 Service
-Layer](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-builder-liferay-portal-6-1-dev-guide-en)
+Layer](/develop/tutorials/-/knowledge_base/6-1/generating-your-service-layer)
 chapter. We'll create a configuration page and add a custom option to it,
 allowing administrators to hide the address portion of the locations. Let's dive
 into portlet preferences by running through an example of creating a

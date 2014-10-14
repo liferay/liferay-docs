@@ -217,7 +217,7 @@ which versions of Liferay your app works with.
 +$$$
 
 **Note:** If you haven't yet done so, be sure to read the
-[Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+[Marketplace](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace)
 chapter of *Using Liferay Portal*! 
 
 $$$

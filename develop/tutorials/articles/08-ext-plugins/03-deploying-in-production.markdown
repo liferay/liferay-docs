@@ -40,7 +40,7 @@ changes from all your Ext plugins. Before you deploy the Liferay `.war` file,
 copy the dependency `.jar` files for Liferay and all Ext plugins to the global
 application server class loader in the production server. The precise location
 varies from server to server; see [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) to get
+6.1](/discover/portal/-/knowledge_base/6-1/installation-and-setup) to get
 the details for your application server. 
 
 The first step in creating the aggregated `.war` file is to deploy your Ext

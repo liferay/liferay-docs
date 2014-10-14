@@ -91,7 +91,7 @@ administrator can set the portal's authentication type to any of the following:
 - *email address*
 
 Your Liferay Portal Password Policies (see chapter
-[Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
+[User Management](/discover/portal/-/knowledge_base/6-1/user-management)
 of *Using Liferay Portal*) should be reviewed, since they'll be enforced on your
 administrative ID as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an

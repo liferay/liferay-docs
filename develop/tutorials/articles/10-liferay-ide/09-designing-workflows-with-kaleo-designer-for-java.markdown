@@ -54,9 +54,9 @@ perfectly clear to a developer, but it's not to me. -Russ -->
 **Note:** The *Kaleo Forms EE* app comes with an existing workflow designer
 that's used *within* Liferay Portal. It's used to design workflow configuration
 and is described in the
-[Kaleo Forms: Defining Business Processes](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
+[Kaleo Forms: Defining Business Processes](/discover/portal/-/knowledge_base/6-1/kaleo-forms-defining-business-processes)
 chapter of *Using Liferay Portal*. Refer to the
-[Using Workflow](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
+[Using Workflow](/discover/portal/-/knowledge_base/6-1/using-workflow)
 chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo workflow
 concepts or want to know how to design your workflow within Liferay Portal. 
 
@@ -213,7 +213,7 @@ use in your workflow:
 Drag and drop any nodes you need onto your workflow diagram. Each node type
 supports execution of scripted actions and sending notifications that can use
 templates. For additional information on the node types, refer to the [Kaleo
-Designer](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-designer-0)
+Designer](/discover/portal/-/knowledge_base/6-1/kaleo-designer)
 section of *Using Liferay Portal*. 
 
 For our `ticket-process-definition` workflow diagram, we have a simple
@@ -284,7 +284,7 @@ tasks to the same user. If you have a user in mind, specify that user.
 Otherwise, create a user named "Joe Bloggs" with screen name "joe". For the user
 to receive emails, he must be registered within Liferay Portal. If you haven't
 registered Joe Bloggs ("joe") already, see the [Adding
-users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0)
+users](/discover/portal/-/knowledge_base/6-1/adding-users)
 section of *Using Liferay Portal* for instructions. To configure the user's
 email, login to the user's account and visit *Control Panel* &rarr; *Server
 Administration* &rarr; *Mail* for setup options. 
@@ -520,8 +520,8 @@ editor you can invoke code-assist and access built in Kaleo workflow variables.
 Let's get the DDL record that's being worked on in our workflow process. We'll
 need the `serviceContext` entity, under `Context Variables` in the palette. To
 learn more about Service Context and its parameters, see the [Service
-Context](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
-section of this guide.
+Context](/develop/tutorials/-/knowledge_base/6-1/service-context)
+section of this guide. 
 
 Let's use Designer's palette features in conjunction with our Java/Groovy editor
 to implement our condition: 
@@ -914,7 +914,7 @@ takes you to the XML, and you can easily switch contexts as you need.
 +$$$
 
 **Note:** *Using Liferay Portal* section
-[Creating new workflow definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1)
+[Creating new workflow definitions](/discover/portal/-/knowledge_base/6-1/creating-new-workflow-definitions)
 explains how to define workflows via XML.
 
 $$$
@@ -983,16 +983,15 @@ the *Definitions* tab, click on the *Actions* button and select *Activate*.
 A workflow definition can be associated with publication of an asset or DDL
 record. Let's associate our ticket process workflow definition with a DDL record
 that lets a developer indicate whether she'll fix a ticket's issue. You can
-find detailed instructions for creating a DDL by visiting the section [Defining
-data
-types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
+find detailed instructions for creating a DDL by visiting the section
+[Defining data types](/discover/portal/-/knowledge_base/6-1/defining-data-types)
 in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
 ## Using DDLs with workflows [](id=using-ddls-with-workflows)
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
 more about DDLs, visit [Using Web Forms and Dynamic Data
-Lists](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1)
+Lists](/discover/portal/-/knowledge_base/6-1/using-web-forms-and-dynamic-data-lists)
 in *Using Liferay Portal*. 
 
 First we'll create a data definition that lets the user select a status value. 
@@ -1041,7 +1040,7 @@ Kaleo Forms portlet to test our new workflow definition!
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
 You can learn how to use Kaleo Forms in the [Kaleo
-Forms](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-forms-0)
+Forms](/discover/portal/-/knowledge_base/6-1/kaleo-forms)
 section of *Using Liferay Portal*; we'll demonstrate its use here by using it
 with our ticket process workflow. 
 

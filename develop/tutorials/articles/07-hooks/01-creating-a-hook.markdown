@@ -28,7 +28,7 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
     If you select the Maven build type, you'll be prompted to enter an artifact
     version, group ID, and active profile for your project. See [Using Liferay
 	IDE with
-	Maven](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/use-liferay-ide-with-maven-liferay-portal-6-1-dev-guide-en)
+	Maven](/develop/tutorials/-/knowledge_base/6-1/using-liferay-ide-with-maven)
     for more information. Otherwise, select the Ant build type, a Plugins SDK
     and a Liferay runtime.  
 
@@ -39,9 +39,9 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
     - **Liferay runtime:** `[a configured Liferay runtime]`
     
     For more information, see sections [Installing the
-    SDK](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/installing-the-sdk)
+    SDK](/develop/tutorials/-/knowledge_base/6-1/installing-the-sdk)
     and [Setting Up Liferay
-    IDE](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/setting-up-liferay-ide).
+    IDE](/develop/tutorials/-/knowledge_base/6-1/setting-up-liferay-ide).
 
 4.  Select the *Hook* Plugin Type. 
 

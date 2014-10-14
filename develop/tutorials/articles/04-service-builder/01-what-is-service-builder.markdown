@@ -104,7 +104,7 @@ is configurable via portal properties. All you have to do to enable entity and
 finder caching for an entity in your project is to set the `cache-enabled=true`
 attribute of your entity's `<entity>` element in your `service.xml`
 configuration file. Please refer to the [Liferay User
-Guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-clusteri-2)
+Guide](/discover/portal/-/knowledge_base/6-1/liferay-clustering)
 for more details about Liferay caching.
 
 <!-- Is the Clustering chapter of the User Guide the only place where we discuss

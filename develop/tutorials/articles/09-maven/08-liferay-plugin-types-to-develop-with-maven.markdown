@@ -67,8 +67,7 @@ Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
 To view the full directory structure of a portlet developed by Ant, visit our
-[Anatomy of a
-Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
+[Anatomy of a Portlet](/develop/tutorials/-/knowledge_base/6-1/anatomy-of-a-portlet)
 section in this guide. 
 
 ### Deployment [](id=deployment)
@@ -81,7 +80,7 @@ Congratulations! You successfully created a Liferay portlet plugin using Maven.
 ### More Information [](id=more-information)
 
 For detailed information on creating portlet plugins, see Chapter 3, 
-[Portlet Development](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3). 
+[Portlet Development](/develop/tutorials/-/knowledge_base/6-1/portlet-development). 
 
 Next, let's run through a brief example for developing a theme plugin using
 Maven.
@@ -160,7 +159,7 @@ customizations | `src/main/webapp` | `docroot/_diffs`    |
 
 To view the directory structure of a theme developed by Ant, visit the [Anatomy
 of a
-Theme](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
+Theme](/develop/tutorials/-/knowledge_base/6-1/anatomy-of-a-theme)
 section in this guide. 
 
 ### Theme POM [](id=theme-pom)
@@ -199,7 +198,7 @@ $$$
 
 For more information on Liferay themes and its settings, see Chapter 5,
 [Creating Liferay
-Themes](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7).
+Themes](/develop/tutorials/-/knowledge_base/6-1/creating-a-theme).
 
 You successfully developed a Liferay theme using Maven. Find out about
 developing hook plugins next. 
@@ -257,7 +256,7 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 To view the directory structure of a hook developed by Ant, visit the *Anatomy
 of a Hook* section of the [Creating a
-Hook](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
+Hook](/develop/tutorials/-/knowledge_base/6-1/anatomy-of-the-hook)
 section in this guide. 
 
 ### Deployment [](id=deployment-1)
@@ -268,7 +267,7 @@ Plugins with Maven* section.
 ### More Information [](id=more-information-1)
 
 For detailed information on creating hooks, see Chapter 7,
-[Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4). 
+[Hooks](/develop/tutorials/-/knowledge_base/6-1/creating-a-hook). 
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
@@ -337,7 +336,7 @@ Web source | `src/main/webapp` | `docroot` |
 
 To view the directory structure of a layout template developed by Ant, visit the
 [Anatomy of a Layout Template
-Project](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
+Project](/develop/tutorials/-/knowledge_base/6-1/anatomy-of-a-layout-template-project)
 section in this guide. 
 
 ### Deployment [](id=deployment-2)
@@ -349,7 +348,7 @@ the *Deploying Liferay Plugins with Maven* section.
 
 For detailed information on creating layout templates, see Chapter 6, [Creating
 Liferay Layout
-Templates](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0). 
+Templates](/develop/tutorials/-/knowledge_base/6-1/creating-liferay-layout-templates). 
 
 You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! In the next section we'll cover other
