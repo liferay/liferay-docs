@@ -1,4 +1,4 @@
-# Deploying New Liferay Projects to Liferay Server
+# Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-server)
 
 You have a plugin project, but you need to deploy it onto your Liferay
 Server. Let's do it now. There are two ways to do it, and the first is very

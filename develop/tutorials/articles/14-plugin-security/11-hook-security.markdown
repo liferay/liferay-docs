@@ -1,4 +1,4 @@
-# Hook Security
+# Hook Security [](id=hook-security)
 
 Set to `true` if the hook plugin is permitted use custom JSPs. By default, the
 hook plugin is not permitted to use custom JSPs. 

@@ -1,4 +1,4 @@
-# How plugin security works
+# How plugin security works [](id=how-plugin-security-works)
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the

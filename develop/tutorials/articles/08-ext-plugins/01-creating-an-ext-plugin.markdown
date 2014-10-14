@@ -1,10 +1,10 @@
-# Creating an Ext plugin
+# Creating an Ext plugin [](id=creating-an-ext-plugin)
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 (see Chapter 2, The Plugins SDK). 
 
-## Using Developer Studio
+## Using Developer Studio [](id=using-developer-studio)
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
@@ -38,7 +38,7 @@ The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create
 a completely new plugin or add a new plugin to an existing plugin project. 
 
-## Using the terminal
+## Using the terminal [](id=using-the-terminal)
 
 Navigate to the *ext* directory in the Liferay Plugins SDK and enter the
 appropriate command for your operating system to create a new Ext plugin: 
@@ -55,7 +55,7 @@ A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder named
 `example-ext` inside the `ext` folder in your Plugins SDK. The Plugins SDK
 automatically named the EXT by appending `-ext` to the project name. 
 
-## Anatomy of the Ext Plugin
+## Anatomy of the Ext Plugin [](id=anatomy-of-the-ext-plugin)
 
 The structure of your new `example-ext` folder looks like this: 
 

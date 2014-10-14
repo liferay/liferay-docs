@@ -1,4 +1,4 @@
-# Portlet Bag Pool Security
+# Portlet Bag Pool Security [](id=portlet-bag-pool-security)
 
 Specify regular expression patterns used to match any portlet IDs that the
 plugin is permitted to access from the portlet bag pool. 

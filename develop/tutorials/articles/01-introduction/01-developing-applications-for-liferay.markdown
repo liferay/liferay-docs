@@ -1,4 +1,4 @@
-# Developing applications for Liferay
+# Developing applications for Liferay [](id=developing-applications-for-liferay)
 
 According to Wikipedia "A web application is an application that is accessed
 over a network such as the Internet or an intranet." A portal application is a
@@ -11,7 +11,7 @@ you probably want to know *what's the best and quickest way to do it?* Liferay
 supports two main, standards-based technologies for incorporating your
 applications into Liferay: **Portlets** and **OpenSocial gadgets**. 
 
-## Portlets
+## Portlets [](id=portlets)
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they
@@ -29,7 +29,7 @@ frameworks: MVC Portlet and Alloy Portlet. Portlets can be used to build complex
 applications since they can leverage the full suite of technologies and
 libraries for the Java platform.
 
-## OpenSocial Gadgets
+## OpenSocial Gadgets [](id=opensocial-gadgets)
 
 OpenSocial gadgets are usually small applications, written using browser-side
 technologies such as HTML and JavaScript. Like portlets, OpenSocial gadgets
@@ -61,7 +61,7 @@ Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
-## Reusing existing web applications
+## Reusing existing web applications [](id=reusing-existing-web-applications)
 
 What if you already have an existing application that has not been implemented
 as a portlet or OpenSocial gadget? You have many options, including:
@@ -84,7 +84,7 @@ of the scope of this guide; however, the above options are worth considering.
 
 Next let's consider some of the technology frameworks Liferay supports. 
 
-## Supported technology frameworks
+## Supported technology frameworks [](id=supported-technology-frameworks)
 
 Liferay, as a platform, strives to provide compatibility with any Java
 technology you may want to use to develop your applications. Thanks to the

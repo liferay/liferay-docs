@@ -1,4 +1,4 @@
-# Customizing Sites and Site Templates with Application Adapters
+# Customizing Sites and Site Templates with Application Adapters [](id=customizing-sites-and-site-templates-with-application-adapters)
 
 All the hooks we've demonstrated so far are scoped to the portal. What if you
 need to customize specific sites without propagating the customizations
@@ -23,7 +23,7 @@ becomes available to sites and site templates under the name *Foo Hook*.
 
 Now, let's discuss the perks of including the original JSP when overriding it.
 
-## Including an original JSP
+## Including an original JSP [](id=including-an-original-jsp)
 
 If you override a JSP from the portal, we recommend you include the original
 JSP (when possible). 
@@ -53,7 +53,7 @@ hooks.
 
 In the next section, we'll create and test an application adapter. 
 
-## Creating an Application Adapter
+## Creating an Application Adapter [](id=creating-an-application-adapter)
 
 Let's create an Application Adapter hook named `example-hook`. It will override
 the Navigation portlet's `view.jsp`, while including the original Navigation

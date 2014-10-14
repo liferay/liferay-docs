@@ -1,4 +1,4 @@
-# Using Message Bus
+# Using Message Bus [](id=using-message-bus)
 
 The *Message Bus* is a service level API used to exchange messages within
 Liferay. The Message Bus is a mechanism for sending message payloads to
@@ -29,7 +29,7 @@ System's architecture.
 "subtopics" list, so I left his change and also changed the subtopics list into
 a paragraph. Russ--> 
 
-## The Message Bus System
+## The Message Bus System [](id=the-message-bus-system)
 
 The Message Bus system contains the following components: 
 
@@ -89,7 +89,7 @@ destinations, senders, listeners, and approaches to sending messages. Next we'll
 show you how easy it is to create your destinations, register listeners, and
 send your messages. To demonstrate, we'll implement a business use case.
 
-## Example Use Case--Procurement process
+## Example Use Case--Procurement process [](id=example-use-case-procurement-process)
 
 Our use case will consider Jungle Gyms R-Us and its distribution of playground
 equipment, buying the equipment from manufacturers and selling the equipment to
@@ -141,7 +141,7 @@ Here are the inter-department message exchanges we'll accommodate:
 
 Let's implement Procurement's request to Finance first. 
 
-## Synchronous messaging
+## Synchronous messaging [](id=synchronous-messaging)
 
 In our example, equipment purchases can't proceed without approval from Finance
 and Legal departments. Since special offers from the manufacturers often only
@@ -400,7 +400,7 @@ about the slide's safety ratings!
 Next let's have Procurement notify the Sales and Warehouse departments and
 solicit their feedback.
 
-## Asynchronous messaging with callbacks
+## Asynchronous messaging with callbacks [](id=asynchronous-messaging-with-callbacks)
 
 Asynchronous messaging consists of sending a message and then continuing with
 processing without blocking waiting for an immediate response. This allows the
@@ -588,7 +588,7 @@ employees.
 
 <!-- Missing transition. --> 
 
-## Asynchronous "Send and Forget"
+## Asynchronous "Send and Forget" [](id=asynchronous-send-and-forget)
 
 In the *send and forget* model, the sender sends messages and continues
 processing. We'll apply this behavior to Jungle Gym's company-wide new product

@@ -1,4 +1,4 @@
-# Overriding and Adding Struts Actions
+# Overriding and Adding Struts Actions [](id=overriding-and-adding-struts-actions)
 
 Do you want to add a new Struts action to Liferay portal or override existing
 Struts actions? *Struts action hooks* let you do just that. 

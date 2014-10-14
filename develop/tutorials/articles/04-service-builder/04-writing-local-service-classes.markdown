@@ -1,4 +1,4 @@
-# Writing Local Service Classes
+# Writing Local Service Classes [](id=writing-local-service-classes)
 
 The heart of your service is its `-LocalServiceImpl` class, where you put core
 business logic for working with your model. Throughout this chapter, you've been

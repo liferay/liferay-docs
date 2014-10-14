@@ -1,4 +1,4 @@
-# Setting Up Liferay IDE
+# Setting Up Liferay IDE [](id=setting-up-liferay-ide)
 
 Now that you have Liferay IDE installed, either from a downloaded zip file or
 from the update site appropriate for your Eclipse version, you need to perform
@@ -8,7 +8,7 @@ develop your Liferay portal and test your customizations.
 Before setting up Liferay IDE, let's make sure you have all the appropriate
 software packages installed. 
 
-## Requirements
+## Requirements [](id=requirements)
 
 Before setting up Liferay IDE, you need to have appropriate versions of Liferay
 Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy
@@ -33,7 +33,7 @@ $$$
 
 Let's set up your Liferay Plugins SDK. 
 
-## Registering the Liferay Plugins SDK with Liferay IDE
+## Registering the Liferay Plugins SDK with Liferay IDE [](id=registering-the-liferay-plugins-sdk-with-liferay-ide)
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and/or Maven installation and Liferay Portal must be installed and
@@ -68,7 +68,7 @@ $$$
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 
-## Liferay Portal Tomcat Runtime and Server Setup
+## Liferay Portal Tomcat Runtime and Server Setup [](id=liferay-portal-tomcat-runtime-and-server-setup)
 
 1.  In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
     *Runtime Environments*. 

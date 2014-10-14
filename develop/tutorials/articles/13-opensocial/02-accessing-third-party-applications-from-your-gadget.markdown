@@ -1,4 +1,4 @@
-# Accessing third-party applications from your gadget
+# Accessing third-party applications from your gadget [](id=accessing-third-party-applications-from-your-gadget)
 
 Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket,
 Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd

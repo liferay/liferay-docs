@@ -1,4 +1,4 @@
-# Settings
+# Settings [](id=settings)
 
 You can define settings to make your theme configurable. Create a file named
 `liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following

@@ -1,4 +1,4 @@
-# Understanding the Two phases of Portlet Execution
+# Understanding the Two phases of Portlet Execution [](id=understanding-the-two-phases-of-portlet-execution)
 
 Our portlet needs two execution phases, the action phase and the render phase.
 Multiple execution phases can be confusing to developers used to regular servlet

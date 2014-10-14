@@ -1,4 +1,4 @@
-# Invoking the API Locally
+# Invoking the API Locally [](id=invoking-the-api-locally)
 
 Each service provides a local interface to clients running in the same JVM as
 Liferay Portal. There are two ways to invoke a service API's methods: 

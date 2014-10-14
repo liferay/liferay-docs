@@ -1,4 +1,4 @@
-# Conclusions
+# Conclusions [](id=conclusions)
 
 Liferay Portal is a very flexible platform that allows creating a wide variety
 of portals and websites. It is the developer through custom applications and

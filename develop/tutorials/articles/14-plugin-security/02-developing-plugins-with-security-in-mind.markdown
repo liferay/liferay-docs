@@ -1,4 +1,4 @@
-# Developing Plugins with security in mind
+# Developing Plugins with security in mind [](id=developing-plugins-with-security-in-mind)
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
@@ -24,7 +24,7 @@ Here is the suggested approach for developing secure plugins:
 
 Let's go over each part of this approach. 
 
-## Consider Common Security Pitfalls
+## Consider Common Security Pitfalls [](id=consider-common-security-pitfalls)
 
 As you develop your plugin, you need to anticipate your plugin's actions in
 light of Liferay's secured environment. The security manager leverages the Java
@@ -162,7 +162,7 @@ Security and Liferay's Plugin Security Management, the easier it will be for you
 to write security-aware plugins. Keeping this in mind, you can proceed
 confidently creating your plugin.
 
-## Develop your plugin
+## Develop your plugin [](id=develop-your-plugin)
 
 Start creating your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
@@ -175,7 +175,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. Let's build a list of these resources in your plugin's
 PACL. 
 
-## Build Your Plugin's PACL
+## Build Your Plugin's PACL [](id=build-your-plugins-pacl)
 
 Rather than tediously figuring out all of the resources your plugin accesses, on
 your own, let Liferay's PACL Policy Generation tool to give you a head start.
@@ -244,7 +244,7 @@ Now that your plugin has a thoroughly specified list of resources it accesses,
 let's enable the security manager and do final testing of your PACL properties.
 We cover enabling the security manager in the next section. 
 
-## Test the Plugin with the Security Manager Enabled
+## Test the Plugin with the Security Manager Enabled [](id=test-the-plugin-with-the-security-manager-enabled)
 
 If you want to distribute plugins, either through the Liferay Marketplace or
 through your web site, you have to assume potential users will insist the
@@ -278,7 +278,7 @@ plugins.
 In case you need it for your plugin, let's get familiar with the Java Security
 Policy file. 
 
-## Using a Java Security Policy File
+## Using a Java Security Policy File [](id=using-a-java-security-policy-file)
 
 If you cannot find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -344,7 +344,7 @@ specify all of the resources your plugin needs to access! Next, let's revisit
 the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-## Convert PACL Absolute File Paths into Relative Paths
+## Convert PACL Absolute File Paths into Relative Paths [](id=convert-pacl-absolute-file-paths-into-relative-paths)
 
 As mentioned earlier in this chapter, we recommend using the PACL generation
 tool to give you a head start on specifying your plugin's security rules. But

@@ -1,4 +1,4 @@
-# Developer Mode
+# Developer Mode [](id=developer-mode)
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches

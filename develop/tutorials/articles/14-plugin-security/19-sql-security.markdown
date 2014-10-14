@@ -1,4 +1,4 @@
-# SQL Security
+# SQL Security [](id=sql-security)
 
 Specify tables in the Liferay database on which the plugin is permitted to
 perform the applicable operations. These property names use the following

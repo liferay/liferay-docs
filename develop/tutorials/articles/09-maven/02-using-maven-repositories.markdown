@@ -1,4 +1,4 @@
-# Using Maven repositories
+# Using Maven repositories [](id=using-maven-repositories)
 
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts to your machine's
@@ -23,7 +23,7 @@ Now that you've been introduced to Maven repositories and proxy servers, let's
 consider using a repository management server to create and manage your Maven
 repositories. 
 
-## Managing Maven Repositories
+## Managing Maven Repositories [](id=managing-maven-repositories)
 
 You'll frequently want to share Liferay artifacts and plugins with teammates, or
 manage your repositories using a GUI. For this, you'll want Nexus OSS. It's a
@@ -95,7 +95,7 @@ snapshots (i.e., `liferay-snapshots`).
 Let's configure your new repository servers in your Maven environment so you can
 install artifacts to the them. 
 
-## Configuring Local Maven Settings
+## Configuring Local Maven Settings [](id=configuring-local-maven-settings)
 
 Before using your repository servers and/or any repository mirrors, you must
 specify them in your Maven environment settings. Your repository settings enable

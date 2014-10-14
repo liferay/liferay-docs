@@ -1,4 +1,4 @@
-# Creating New Liferay Projects
+# Creating New Liferay Projects [](id=creating-new-liferay-projects)
 
 Creating Liferay projects is a straightforward process, similar to creating
 other Eclipse project types. Plugins for Liferay Portal must be created inside

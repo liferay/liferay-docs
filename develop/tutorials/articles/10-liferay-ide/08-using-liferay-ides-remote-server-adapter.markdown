@@ -1,4 +1,4 @@
-# Using Liferay IDE's Remote Server Adapter
+# Using Liferay IDE's Remote Server Adapter [](id=using-liferay-ides-remote-server-adapter)
 
 The Remote Server Adapter is a feature that lets you deploy your Liferay
 projects to a remote Liferay Portal server. If you need to work with a 
@@ -50,7 +50,7 @@ $$$
 
 Let's start by configuring the Remote Server Adapter. 
 
-## Configuring the Remote Server Adapter
+## Configuring the Remote Server Adapter [](id=configuring-the-remote-server-adapter)
 
 You can use Liferay IDE's Remote Server wizard to configure the Remote
 Server Adapter and install the Remote IDE Connector to your Liferay instance.
@@ -135,7 +135,7 @@ Server Adapter, use the following steps:
 Now that your remote Liferay Portal server is configured, let's test the remote
 server adapter!
 
-## Using the Remote Server Adapter
+## Using the Remote Server Adapter [](id=using-the-remote-server-adapter)
 
 Once your remote Liferay Portal server is correctly configured and Liferay IDE
 is connected to it, you can begin publishing projects to it and using it as you

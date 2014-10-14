@@ -1,4 +1,4 @@
-# Portlet Development
+# Portlet Development [](id=portlet-development)
 
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and

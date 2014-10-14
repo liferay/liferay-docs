@@ -1,4 +1,4 @@
-# Other hooks
+# Other hooks [](id=other-hooks)
 
 Since hooks are the preferred plugin type for customizing Liferay's core
 features, the Liferay team is happy to keep providing you new hooks. This

@@ -1,4 +1,4 @@
-# Embedding portlets in a layout template
+# Embedding portlets in a layout template [](id=embedding-portlets-in-a-layout-template)
 
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting

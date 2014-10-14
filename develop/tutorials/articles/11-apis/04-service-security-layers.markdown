@@ -1,4 +1,4 @@
-# Service Security Layers
+# Service Security Layers [](id=service-security-layers)
 
 Liferay's remote services sit behind a layer of security that by default allows
 only local connections. Access to the remote APIs must be enabled as a separate

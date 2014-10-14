@@ -1,4 +1,4 @@
-# Liferay Plugin Types to Develop with Maven
+# Liferay Plugin Types to Develop with Maven [](id=liferay-plugin-types-to-develop-with-maven)
 
 You can develop all Liferay plugin types with Maven: portlets, themes,
 layout templates, hooks, and Ext. Next, you'll learn how to create each plugin
@@ -12,7 +12,7 @@ develop each type of plugin regardless of development environment.
 Let's start with portlet plugins. 
 
 
-## Creating a Portlet Plugin
+## Creating a Portlet Plugin [](id=creating-a-portlet-plugin)
 
 To create a Liferay portlet plugin project, follow the *Creating Liferay Plugins
 with Maven* section. 
@@ -25,7 +25,7 @@ can filter on group ID `liferay`, or even the group ID/artifact ID combination
 
 $$$
 
-### Anatomy
+### Anatomy [](id=anatomy)
 
 A portlet project created from the
 `com.liferay.maven.archetypes:liferay-portlet-archetype` has the following
@@ -71,14 +71,14 @@ To view the full directory structure of a portlet developed by Ant, visit our
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
 section in this guide. 
 
-### Deployment
+### Deployment [](id=deployment)
 
 To deploy your portlet plugin, follow the instructions detailed above in
 *Deploying Liferay Plugins with Maven*. 
 
 Congratulations! You successfully created a Liferay portlet plugin using Maven. 
 
-### More Information
+### More Information [](id=more-information)
 
 For detailed information on creating portlet plugins, see Chapter 3, 
 [Portlet Development](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3). 
@@ -86,7 +86,7 @@ For detailed information on creating portlet plugins, see Chapter 3,
 Next, let's run through a brief example for developing a theme plugin using
 Maven.
 
-## Developing Liferay Theme Plugins with Maven
+## Developing Liferay Theme Plugins with Maven [](id=developing-liferay-theme-plugins-with-maven)
 
 So you're sitting in your armchair next to the fire, just as we described in our
 chapter introduction; shadows dance on the tapestry-covered wall, and Lenore II
@@ -100,7 +100,7 @@ mood for your users. We'll show you how to develop your own theme plugin (i.e.,
 your "scenery") using Maven so your portal has a lasting impression on anyone
 who visits. 
 
-### Creating a Theme Plugin
+### Creating a Theme Plugin [](id=creating-a-theme-plugin)
 
 Theme plugin creation is similar to portlet plugin creation. We'll start by
 assuming you already created the `sample-parent-project` and its `pom.xml`. 
@@ -116,7 +116,7 @@ can filter on group ID `liferay`, or even the group ID/artifact ID combination
 
 $$$
 
-### Anatomy
+### Anatomy [](id=anatomy-0)
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -163,7 +163,7 @@ of a
 Theme](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
 section in this guide. 
 
-### Theme POM
+### Theme POM [](id=theme-pom)
 
 The theme plugin project POM has two additional properties: 
 
@@ -180,7 +180,7 @@ The theme plugin project POM has two additional properties:
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
 
-### Deployment
+### Deployment [](id=deployment-0)
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 Plugins with Maven* section. 
@@ -195,7 +195,7 @@ of the theme is created and placed in the *target* directory. Its path is
 
 $$$
 
-### More Information
+### More Information [](id=more-information-0)
 
 For more information on Liferay themes and its settings, see Chapter 5,
 [Creating Liferay
@@ -204,13 +204,13 @@ Themes](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai
 You successfully developed a Liferay theme using Maven. Find out about
 developing hook plugins next. 
 
-## Developing Liferay Hook Plugins with Maven
+## Developing Liferay Hook Plugins with Maven [](id=developing-liferay-hook-plugins-with-maven)
 
 Hooks are the optimal plugin type for customizing Liferay's core features.
 Creating a hook is almost identical to portlet plugin creation in Maven. Let's
 take a look. 
 
-### Creating a Hook Plugin
+### Creating a Hook Plugin [](id=creating-a-hook-plugin)
 
 To create a Liferay hook plugin project, follow the steps outlined in the
 *Creating Liferay Plugins with Maven* section, making sure to select *Hook* as
@@ -224,7 +224,7 @@ on group ID `liferay`, or even the group ID/artifact ID combination
 
 $$$
 
-### Anatomy
+### Anatomy [](id=anatomy-1)
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -260,12 +260,12 @@ of a Hook* section of the [Creating a
 Hook](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
 section in this guide. 
 
-### Deployment
+### Deployment [](id=deployment-1)
 
 To deploy your hook plugin, follow the instructions from the *Deploying Liferay
 Plugins with Maven* section. 
 
-### More Information
+### More Information [](id=more-information-1)
 
 For detailed information on creating hooks, see Chapter 7,
 [Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4). 
@@ -273,7 +273,7 @@ For detailed information on creating hooks, see Chapter 7,
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
 
-## Developing Liferay Layout Template Plugins with Maven
+## Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-maven)
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. In our introduction to themes, we
@@ -293,7 +293,7 @@ It shall clasp a sainted kitten whom the angels named Lenore II--"
 In memory of the late, now cripsy Lenore II, let's create a layout template
 plugin with Maven. 
 
-### Creating a Layout Template Plugin
+### Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin)
 
 To create a Liferay layout template plugin project follow the *Creating Liferay
 Plugins with Maven* section, making sure to select *Layout Template* as the
@@ -307,7 +307,7 @@ combination `liferay:layout`, to find the Liferay layout template archetypes.
 
 $$$
 
-### Anatomy
+### Anatomy [](id=anatomy-2)
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -340,12 +340,12 @@ To view the directory structure of a layout template developed by Ant, visit the
 Project](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
 section in this guide. 
 
-### Deployment
+### Deployment [](id=deployment-2)
 
 To deploy your layout template plugin, follow the instructions detailed above in
 the *Deploying Liferay Plugins with Maven* section. 
 
-### More Information
+### More Information [](id=more-information-2)
 
 For detailed information on creating layout templates, see Chapter 6, [Creating
 Liferay Layout
@@ -355,7 +355,7 @@ You've passed your trial by fire (the cat thanks you), developing yet another
 plugin type with Maven. Way to go! In the next section we'll cover other
 Liferay-provided Maven archetypes. 
 
-## Developing More Liferay Plugins with Maven
+## Developing More Liferay Plugins with Maven [](id=developing-more-liferay-plugins-with-maven)
 
 Did you think we covered all the available archetypes for developing Liferay
 plugins? The Liferay team has been busy expanding our archetype list, and we're

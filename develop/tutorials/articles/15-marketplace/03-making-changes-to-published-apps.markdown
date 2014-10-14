@@ -1,4 +1,4 @@
-# Making changes to published apps
+# Making changes to published apps [](id=making-changes-to-published-apps)
 
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
@@ -10,7 +10,7 @@ or more of these kinds of changes during the life of the app:
 
 Liferay Marketplace supports all of the above operations as described below.
 
-## Editing your app details
+## Editing your app details [](id=editing-your-app-details)
 
 App details include the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
@@ -30,7 +30,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-## Adding support for new versions of Liferay Portal
+## Adding support for new versions of Liferay Portal [](id=adding-support-for-new-versions-of-liferay-portal)
 
 If you need to add files in support of another Liferay release, the process is
 similar. Navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the
@@ -55,7 +55,7 @@ bottom of the preview screen. Click *Submit for Review* to submit your requested
 change (adding of files). The files will be reviewed by Liferay, and once
 approved, the new package is available for download in the Marketplace.
 
-## Releasing a new version of your app
+## Releasing a new version of your app [](id=releasing-a-new-version-of-your-app)
 
 After time passes, you may wish to add new functionality to your app or fix a
 batch of bugs. This can be accomplished by releasing a new version of your app.
@@ -92,7 +92,7 @@ with the new version of the app. For a new version of the app, you must upload
 all files for all supported Liferay versions again, even if they have not
 changed since the last version.
 
-## Deactivating your app
+## Deactivating your app [](id=deactivating-your-app)
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app causes the app to no longer be downloadable from the Marketplace for new

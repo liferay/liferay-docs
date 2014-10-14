@@ -1,4 +1,4 @@
-# Anatomy of a Theme
+# Anatomy of a Theme [](id=anatomy-of-a-theme)
 
 Custom themes are created by layering your customizations on top of one of
 Liferay's built-in themes. 

@@ -1,4 +1,4 @@
-# Generating Services
+# Generating Services [](id=generating-services)
 
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. Next, you'll generate the

@@ -1,11 +1,11 @@
-# Marketplace basics
+# Marketplace basics [](id=marketplace-basics)
 
 Before diving into the details of developing for the Marketplace, it is
 important to have a good grasp of new concepts introduced in the Marketplace.
 The following list of questions will help in understanding the concepts that you
 will use over and over again as a Marketplace developer.
 
-## What is an app?
+## What is an app? [](id=what-is-an-app)
 
 As a Liferay Developer, you will undoubtedly already be familiar with the
 concept of plugins (portlets, hooks, themes, etc). If not, review chapter 1 of
@@ -27,7 +27,7 @@ your app's individual plugins (`.war` files) are uploaded as part of the publish
 process, along with identifying information (name, description, version, icon,
 etc). This is described in detail later on in this chapter.
 
-## What is a version?
+## What is a version? [](id=what-is-a-version)
 
 The concept of versioning is well known in software, and it is no different
 here. A version of an app represents the functionality of the app at a given
@@ -52,7 +52,7 @@ the Liferay versioning scheme. See the *Specify App Packaging Directives*
 section below for details on how to specify the releases of Liferay for which
 your app is designed.
 
-## What is a package?
+## What is a package? [](id=what-is-a-package)
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you wish to publish version 1.0 of your app, which you're
@@ -66,7 +66,7 @@ packages that you can upload in support of different versions of Liferay, as you
 will see in a later section. In this guide, packages are sometimes referred to
 as files that make up your app.
 
-## How do apps relate to users and companies?
+## How do apps relate to users and companies? [](id=how-do-apps-relate-to-users-and-companies)
 
 When publishing an app, it is possible to publish it *on behalf of* yourself (an
 individual) or a *company* with which you are associated. The selection you make
@@ -74,7 +74,7 @@ determines who has access to the app, once published. To understand the concepts
 of a Marketplace user, admin, and company, and the ramifications of choosing one
 vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
 
-## What are the requirements for publishing apps?
+## What are the requirements for publishing apps? [](id=what-are-the-requirements-for-publishing-apps)
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -138,7 +138,7 @@ Now that you've learned the packaging and deployment requirements for your app,
 let's consider the versions of Liferay you're targetting for your app and how to
 prepare your app for them. 
 
-## Things you need before you can publish
+## Things you need before you can publish [](id=things-you-need-before-you-can-publish)
 
 You must first develop your app using your preferred development tool (for
 example, using Liferay Developer Studio or the Plugins SDK). Your app will
@@ -156,7 +156,7 @@ Next, think of a good name and description of your app, along with a versioning
 scheme you wish to use. Take some screenshots, design an icon, create web sites
 for your app (if they do not already exist), and have a support plan in place.
 
-## Image and Naming Requirements
+## Image and Naming Requirements [](id=image-and-naming-requirements)
 
 **Icons** for your app *must be* exactly 90 pixels in both height and width and
 must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb. Animated
@@ -181,7 +181,7 @@ Above and beyond these basics of creating apps in the form of Liferay plugins,
 there are additional considerations to take into account when designing and
 publishing apps.
 
-## What kind of validations are performed by Liferay?
+## What kind of validations are performed by Liferay? [](id=what-kind-of-validations-are-performed-by-liferay)
 
 Liferay will ensure that apps meet a minimum set of requirements, such as:
 
@@ -195,7 +195,7 @@ the Marketplace. For details regarding this, consult the *Liferay Marketplace
 User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
 *End User License Agreements* associated with each app.
  
-## What versions of Liferay should I target?
+## What versions of Liferay should I target? [](id=what-versions-of-liferay-should-i-target)
 
 Of course, targeting the widest possible range of versions will ensure you a
 larger audience. However, there are certain features in specific versions of

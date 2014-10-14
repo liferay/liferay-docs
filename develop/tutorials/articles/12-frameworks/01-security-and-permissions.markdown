@@ -1,4 +1,4 @@
-# Security and Permissions
+# Security and Permissions [](id=security-and-permissions)
 
 The Java portlet standard defines a simple security scheme using portlet roles and
 their mapping to portal roles. On top of that, Liferay provides a fine-grained
@@ -6,7 +6,7 @@ permissions system you can use to implement access security in your custom
 portlets. Here we'll give an overview of the standard Java security system,
 Liferay's permission system, and how to use them in your own portlets. 
 
-## JSR Portlet Security
+## JSR Portlet Security [](id=jsr-portlet-security)
 
 The JSR specification defines a means to specify roles used by portlets in their
 `portlet.xml` definitions. The role names themselves, however, are not
@@ -103,7 +103,7 @@ how to use it in your portlets. We recommend using Liferay's permission system,
 because it offers a much more robust way of tailoring your application's
 permissions. 
 
-## Liferay's Permission System
+## Liferay's Permission System [](id=liferays-permission-system)
 
 You can add permissions to your custom portlets using four easy steps (also
 known as DRAC): 
@@ -353,7 +353,7 @@ which permissions algorithm is used. For these reasons, I removed the whole
 section. It seems to improve the flow: we just left off talking about portal
 resources in the XML file, and now it goes right into the code. -Rich -->
 
-## Adding a Resource
+## Adding a Resource [](id=adding-a-resource)
 
 After defining resources and actions, it's time to add resources into the
 permissions system. Resources are added at the same time entities are added to
@@ -416,7 +416,7 @@ example of a blogs entry being removed:
 Great! Now that you know how to work with resource permissions, we'll show you
 how to provide a user interface for managing resource permissions. 
 
-## Adding Permission
+## Adding Permission [](id=adding-permission)
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
@@ -464,7 +464,7 @@ users can configure the permission settings for model resources.
 
 Next we'll show you how to implement permissions checking. 
 
-## Checking Permissions
+## Checking Permissions [](id=checking-permissions)
 
 The last major step toward implementing permissions for your custom portlet is
 to ensure the configured permissions are enforced. You'll do this by adding

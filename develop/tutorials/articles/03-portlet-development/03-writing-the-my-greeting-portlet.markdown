@@ -1,4 +1,4 @@
-# Writing the My Greeting Portlet
+# Writing the My Greeting Portlet [](id=writing-the-my-greeting-portlet)
 
 Let's make our portlet do something useful. First, we'll give it two pages:
 

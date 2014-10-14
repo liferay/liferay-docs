@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-11)
 
 In this chapter, we've discussed the reasons for plugin security management, how
 the Plugin Security Manager checks each plugin against its portal access control

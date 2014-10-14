@@ -1,4 +1,4 @@
-# AWT Security
+# AWT Security [](id=awt-security)
 
 Specify the AWT operations the plugin is permitted to access. 
 

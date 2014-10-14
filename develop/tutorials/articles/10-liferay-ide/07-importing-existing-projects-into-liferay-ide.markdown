@@ -1,4 +1,4 @@
-# Importing Existing Projects into Liferay IDE
+# Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-ide)
 
 What if you have existing projects that you want to work on in Liferay IDE?
 You can import your existing projects into Liferay IDE to take advantage of
@@ -65,7 +65,7 @@ multiple Liferay IDE projects from a single Plugins SDK.
 Next we'll show you how to import all your Plugins SDK projects into Liferay
 IDE. 
 
-## Batch Importing Multiple Projects into Liferay IDE
+## Batch Importing Multiple Projects into Liferay IDE [](id=batch-importing-multiple-projects-into-liferay-ide)
 
 Does your Plugins SDK contain multiple plugins? You can easily batch import each
 plugin in your Plugins SDK as its own Liferay IDE project. 
@@ -106,7 +106,7 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 Your plugins are imported! Next, we'll talk about importing existing Eclipse
 projects into Liferay IDE. 
 
-## Importing Existing Eclipse Projects into Liferay IDE
+## Importing Existing Eclipse Projects into Liferay IDE [](id=importing-existing-eclipse-projects-into-liferay-ide)
 
 The steps we outlined above let you import projects that have never been opened
 in Eclipse. If you've been using Eclipse without Liferay IDE, you may already
@@ -140,7 +140,7 @@ Remember to verify that your import was successful and that your project was
 configured correctly as a Liferay IDE project. We have one more import scenario
 to cover--importing existing Liferay IDE projects into your Liferay IDE. 
 
-## Importing an existing Liferay IDE project
+## Importing an existing Liferay IDE project [](id=importing-an-existing-liferay-ide-project)
 
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
@@ -174,7 +174,7 @@ $$$
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-## Verifying that the import has succeeded
+## Verifying that the import has succeeded [](id=verifying-that-the-import-has-succeeded)
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE

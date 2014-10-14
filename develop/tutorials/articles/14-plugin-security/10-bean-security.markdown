@@ -1,4 +1,4 @@
-# Bean Security
+# Bean Security [](id=bean-security)
 
 Specify bean properties the plugin is permitted to acquire. 
 

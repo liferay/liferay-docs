@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-7)
 
 In this chapter we explored Liferay IDE, an extension of Eclipse IDE. You
 learned to to install and set up Liferay IDE, then to create and deploy Liferay

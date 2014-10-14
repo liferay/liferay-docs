@@ -1,4 +1,4 @@
-# Creating a Hook
+# Creating a Hook [](id=creating-a-hook)
 
 Regardless of whether you use the Plugins SDK or your terminal to create hooks,
 hooks projects are stored in the Plugins SDK's `hooks` directory. 
@@ -70,7 +70,7 @@ automatically named the hook by appending "-hook" to the project name.
 
 Now that you've created a hook, let's go ahead and deploy it.
 
-## Deploying the Hook
+## Deploying the Hook [](id=deploying-the-hook)
 
 ***Using Developer Studio:*** Click and drag your hook project onto your server.
 Upon deployment, your server displays messages indicating that your hook was
@@ -97,7 +97,7 @@ should see the message "Hook for example-hook is available for use".
 because they're Liferay customizations, and the default customization is the
 original implementation! 
 
-## Anatomy of the Hook
+## Anatomy of the Hook [](id=anatomy-of-the-hook)
 
 To make your hook useful, you need to customize something in Liferay. You begin
 by mirroring the structure of Liferay's code that you plan to customize. A hook

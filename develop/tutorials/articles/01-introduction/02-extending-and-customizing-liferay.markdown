@@ -1,4 +1,4 @@
-# Extending and customizing Liferay
+# Extending and customizing Liferay [](id=extending-and-customizing-liferay)
 
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
@@ -10,7 +10,7 @@ Liferay is designed to be customized. Multiple plugins and plugin types can be
 combined into a single WAR file. Let's take a look at these plugin types and how
 they can be used. 
 
-## Customizing the look and feel: Themes
+## Customizing the look and feel: Themes [](id=customizing-the-look-and-feel-themes)
 
 Themes let you dictate your site's look and feel. You can specify color schemes
 and commonly used images. You'll apply styling for UI elements such as fonts,
@@ -22,7 +22,7 @@ widths of your users' desktop, tablet, and mobile devices. Most importantly,
 themes let you focus on designing your site's UI, while leaving its
 functionality to the portlets. 
 
-## Adding new predefined page layouts: Layout Templates
+## Adding new predefined page layouts: Layout Templates [](id=adding-new-predefined-page-layouts-layout-templates)
 
 Layouts are similar to themes, except they specify the *arrangement* of portlets
 on a page rather than their look and feel. You can create custom layout
@@ -30,7 +30,7 @@ templates to arrange portlets just the way you like them. And you can even embed
 commonly used portlets. Like themes, layout templates are also written in
 Velocity and are hot-deployable. 
 
-## Customizing or extending the out-of-box functionality: Hook plugins
+## Customizing or extending the out-of-box functionality: Hook plugins [](id=customizing-or-extending-the-out-of-box-functionality-hook-plugins)
 
 Hook plugins are how you customize the core functionality of Liferay at many
 predefined extension points. Hook plugins are used to modify portal properties
@@ -40,7 +40,7 @@ replace any of the core Liferay services with a custom implementation. Hook
 plugins can also replace the JSP templates used by any of the default portlets.
 Best of all, hooks are hot-deployable plugins just like portlets. 
 
-## Advanced customization: Ext plugins
+## Advanced customization: Ext plugins [](id=advanced-customization-ext-plugins)
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay
 core, allowing you to replace essentially any class with a custom

@@ -1,4 +1,4 @@
-# Using a Parent Plugin Project
+# Using a Parent Plugin Project [](id=using-a-parent-plugin-project)
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties child projects have in common, and *child* projects

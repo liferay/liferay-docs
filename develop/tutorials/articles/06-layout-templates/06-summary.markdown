@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-3)
 
 In this chapter we created layout templates, arranged their rows and columns,
 and embedded portlets in them. Congratulations on mastering the fundamentals of

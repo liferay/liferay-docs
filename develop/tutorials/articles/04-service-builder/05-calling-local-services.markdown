@@ -1,4 +1,4 @@
-# Calling Local Services
+# Calling Local Services [](id=calling-local-services)
 
 Once Service Builder has generated your portlet project's services, you can call
 them in our project's `-Portlet` classes. You can call any methods in your

@@ -1,4 +1,4 @@
-# Writing Remote Service Classes
+# Writing Remote Service Classes [](id=writing-remote-service-classes)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -120,7 +120,7 @@ your service's Web Services Definition Language (WSDL) available after you've
 built its WSDD and deployed your portlet project. Let's learn how to call your
 remote services next. 
 
-## Calling Remote Services
+## Calling Remote Services [](id=calling-remote-services)
 
 Service Builder can expose your project's remote web services both via a JSON
 API and via SOAP. By default, running Service Builder with `remote-service` set

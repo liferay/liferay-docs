@@ -1,4 +1,4 @@
-# Developing Custom SQL Queries
+# Developing Custom SQL Queries [](id=developing-custom-sql-queries)
 
 Service Builder's finder methods facilitate searching for entities by their
 attributes--their column values. Add the column as a parameter for the finder in
@@ -34,7 +34,7 @@ these steps:
 Next, you'll do exactly this to create and invoke custom SQL in your Event
 Listing portlet. 
 
-## Step 1: Specify Your Custom SQL
+## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
 
 After you've tested your SQL, you must specify it in a particular file for
 Liferay to access it. Liferay's `CustomSQLUtil` class looks up custom SQL from a
@@ -93,7 +93,7 @@ Now that you've specified some custom SQL, the next step is to implement the
 finder method. The method name for the finder should match the ID you just
 specified for the `sql` element. 
 
-## Step 2: Implement Your Finder Method
+## Step 2: Implement Your Finder Method [](id=step-2-implement-your-finder-method)
 
 It's time to implement the finder method to invoke the custom SQL query. This
 should be done in the service's persistence layer, since it's SQL invoked on a
@@ -192,7 +192,7 @@ the name of the finder method (`findByEventNameEventDescriptionLocationName`).
 Awesome! Custom SQL is in place and your finder method is implemented. Next,
 you'll call the finder method from your service. 
 
-## Step 3: Access Your Finder Method from Your Service
+## Step 3: Access Your Finder Method from Your Service [](id=step-3-access-your-finder-method-from-your-service)
 
 So far, you created a `-FinderImpl` class and generated a `-FinderUtil`
 utility class. However, your portlet class should not use the finder utility

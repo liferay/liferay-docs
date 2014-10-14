@@ -1,4 +1,4 @@
-# Developing a Portlet with Multiple Actions
+# Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actions)
 
 Right now our portlet only has two views: the default view and edit view. Adding
 more views is easy, and you can link to them using the `mvcPath` parameter in

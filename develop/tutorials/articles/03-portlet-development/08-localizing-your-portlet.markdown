@@ -1,4 +1,4 @@
-# Localizing your Portlet
+# Localizing your Portlet [](id=localizing-your-portlet)
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
@@ -100,7 +100,7 @@ That's all you need to do to leverage Liferay's core localization keys. If you
 need to add localization keys, follow the instructions below to deliver locally
 tailored portlets to your customers. 
 
-## Your Localization Plan
+## Your Localization Plan [](id=your-localization-plan)
 
 First consider some questions that will make our life easier as we develop your
 localization:
@@ -116,7 +116,7 @@ localization:
 
 We'll cover these different cases in the following sections. 
 
-## Create Resource Bundles
+## Create Resource Bundles [](id=create-resource-bundles)
 
 First, let's create a resource bundle for providing textual translations of
 three related fictional portlets named My Finances, Asset Ticker and Portfolio
@@ -226,7 +226,7 @@ in which you must use separate resource bundles for each portlet. In order to
 localize messages used in the Control Panel for a Control Panel-enabled portlet,
 you must use separate resource bundles. We'll show you how to implement them. 
 
-## Portlet Title and Description In Control Panel
+## Portlet Title and Description In Control Panel [](id=portlet-title-and-description-in-control-panel)
 
 You may have noticed that your Control Panel-enabled portlets are missing that
 super-fancy must-have portlet title and description in the Control Panel. To

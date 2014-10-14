@@ -1,4 +1,4 @@
-# Device Detection
+# Device Detection [](id=device-detection)
 
 As you know, Internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile Internet
@@ -27,7 +27,7 @@ You can create your own plugin to use your device's database. Let's look at
 some simple uses of the Device Detection API and talk about its
 capabilities. 
 
-## Using the Device API
+## Using the Device API [](id=using-the-device-api)
 
 Let's look at a couple of code snippets to get you started. You can obtain the
 object `Device` from the `themeDisplay` object like this:
@@ -49,7 +49,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. You can refer to the Device Javadocs mentioned
 above for assistance.  Let's look at some device capabilities next.
 
-## Device capabilities
+## Device capabilities [](id=device-capabilities)
 
 Most of the capabilities of a device can be detected, depending on the device
 detection implementation you're using. The Device Recognition plugin's device

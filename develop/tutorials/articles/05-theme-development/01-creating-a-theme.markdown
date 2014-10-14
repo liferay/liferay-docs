@@ -1,4 +1,4 @@
-# Creating a Theme
+# Creating a Theme [](id=creating-a-theme)
 
 The theme creation process is nearly identical to the portlet creation process
 that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
@@ -74,7 +74,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-## Setting a base Theme
+## Setting a base Theme [](id=setting-a-base-theme)
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -92,7 +92,7 @@ To specify a base theme, edit the `build.xml` file for your theme and change
 existing theme that's installed or in your Plugins SDK. Now that your base theme
 is set, let's deploy the theme to your portal instance.
 
-## Deploying the Theme
+## Deploying the Theme [](id=deploying-the-theme)
 
 If you're already familiar with portlet deployment from reading Chapter 3, theme
 deployment will be a piece of cake! You can deploy your theme in Developer

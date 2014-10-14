@@ -1,4 +1,4 @@
-# Extending and Overriding portal.properties
+# Extending and Overriding portal.properties [](id=extending-and-overriding-portal-properties)
 
 In our hook that created a custom login action, we modified the
 `login.events.pre` portal property. This property accepts *multiple* values, so

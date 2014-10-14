@@ -1,4 +1,4 @@
-# Tracking app performance
+# Tracking app performance [](id=tracking-app-performance)
 
 One of the main reasons for developing and publishing apps into the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
@@ -16,7 +16,7 @@ data within the date range. Finally, the same data that is graphed is also shown
 in tabular format, in case you want to know the exact values making up the
 graph. The different types of data available to view are described below.
 
-## Views
+## Views [](id=views)
 
 When someone searches or browses the Marketplace, they click on apps to see
 detailed views of the apps they're interested in. When this occurs for your app,
@@ -25,13 +25,13 @@ Metrics screen when *Views* is selected at the top. *Views* is also the default
 view, as shown above. The number of recorded views per day per user is
 unlimited.
 
-## Downloads
+## Downloads [](id=downloads)
 
 A download is recorded for your app when someone downloads a specific package of
 a specific version of your app. The number of recorded downloads per day per
 user is unlimited.
 
-## Installations
+## Installations [](id=installations)
 
 The Marketplace does a best effort in recording installations of your app on
 Liferay instances. When a Liferay Administrator installs your app via the

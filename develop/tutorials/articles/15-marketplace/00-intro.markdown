@@ -1,4 +1,4 @@
-# Liferay Marketplace
+# Liferay Marketplace [](id=liferay-marketplace)
 
 The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to

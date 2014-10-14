@@ -1,4 +1,4 @@
-# Portlet Service Security
+# Portlet Service Security [](id=portlet-service-security)
 
 For each portlet the plugin accesses, replicate this property substituting
 `some-portlet` in the `[` square brackets `]` with the name of the accessible

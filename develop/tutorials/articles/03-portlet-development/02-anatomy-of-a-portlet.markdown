@@ -1,4 +1,4 @@
-# Anatomy of a Portlet
+# Anatomy of a Portlet [](id=anatomy-of-a-portlet)
 
 A portlet project is made up of at least three components:
 
@@ -67,7 +67,7 @@ or `<head>`.  Additionally, namespace all CSS classes and element IDs to prevent
 conflicts with other portlets. Liferay provides two tools, a taglib and API
 methods, to generate a namespace for you. 
 
-## A Closer Look at the My Greeting Portlet
+## A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet)
 
 If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 

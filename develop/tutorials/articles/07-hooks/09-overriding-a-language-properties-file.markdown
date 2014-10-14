@@ -1,4 +1,4 @@
-# Overriding a Language.properties File
+# Overriding a Language.properties File [](id=overriding-a-language-properties-file)
 
 Hooks let you change any of the messages displayed by Liferay, to suit your
 needs. To do so, create a *Language* file for the locale of the messages you

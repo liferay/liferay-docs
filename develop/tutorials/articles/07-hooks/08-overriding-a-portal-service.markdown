@@ -1,4 +1,4 @@
-# Overriding a Portal Service
+# Overriding a Portal Service [](id=overriding-a-portal-service)
 
 All the functionality provided by Liferay is enclosed in a layer of services
 that are accessed by the controller layer in portlets. This is a standard

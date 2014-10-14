@@ -1,4 +1,4 @@
-# The Plugins SDK
+# The Plugins SDK [](id=the-plugins-sdk)
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools

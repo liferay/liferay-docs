@@ -1,4 +1,4 @@
-# Creating a Portlet
+# Creating a Portlet [](id=creating-a-portlet)
 
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
@@ -88,7 +88,7 @@ will be generated that should *not* be handled by the source control system.
 
 $$$
 
-## Deploying the Portlet
+## Deploying the Portlet [](id=deploying-the-portlet)
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets
 (and any other plugin types) a breeze. All you need to do is drop the plugin's

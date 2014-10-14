@@ -1,4 +1,4 @@
-# Class Loader Security
+# Class Loader Security [](id=class-loader-security)
 
 Specify the reference IDs of plugins for this plugin to access.
 

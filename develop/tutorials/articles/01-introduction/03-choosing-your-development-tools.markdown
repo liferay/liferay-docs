@@ -1,4 +1,4 @@
-# Choosing your development tools
+# Choosing your development tools [](id=choosing-your-development-tools)
 
 The Java ecosystem is known for providing a variety of options for almost any
 type of software development. This is advantageous because you can find the tool

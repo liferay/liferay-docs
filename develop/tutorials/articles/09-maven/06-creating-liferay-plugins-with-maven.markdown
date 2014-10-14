@@ -1,4 +1,4 @@
-# Creating Liferay Plugins with Maven
+# Creating Liferay Plugins with Maven [](id=creating-liferay-plugins-with-maven)
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types, including portlet, theme, hook, and layout template plugins. We provide

@@ -1,4 +1,4 @@
-# Thumbnails
+# Thumbnails [](id=thumbnails)
 
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's

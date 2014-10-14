@@ -1,4 +1,4 @@
-# Defining Your Object-Relational Map
+# Defining Your Object-Relational Map [](id=defining-your-object-relational-map)
 
 In order to demonstrate how to use Service Builder, let's create an example
 portlet project that Nose-ster, a fictitious organization, can use to schedule
@@ -113,7 +113,7 @@ Liferay IDE, which makes it easy. It'll only take seven steps to do it:
 Let's start creating our service by using Liferay IDE to create your
 `service.xml` file. 
 
-## Create the service.xml File
+## Create the service.xml File [](id=create-the-service-xml-file)
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -140,7 +140,7 @@ service.
 
 Let's start filling out the global information for our service. 
 
-## Define Global Service Information
+## Define Global Service Information [](id=define-global-service-information)
 
 A service's global information applies to all of its entities, so let's specify
 this information first. Select the *Service Builder* node in the upper left
@@ -189,7 +189,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, we'll
 add entities for your service's events and locations. 
 
-## Define Service Entities
+## Define Service Entities [](id=define-service-entities)
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -264,7 +264,7 @@ http://java-source.net/open-source/persistence
 Now that we've created our Event and Location entities, let's describe their
 attributes using entity *columns*. 
 
-## Defining the Columns (Attributes) for Each Service Entity
+## Defining the Columns (Attributes) for Each Service Entity [](id=defining-the-columns-attributes-for-each-service-entity)
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -354,7 +354,7 @@ Great! Our entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, we'll
 specify the relationship between our Event entity and Location entity. 
 
-## Defining Relationships Between Service Entities
+## Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entities)
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
@@ -386,7 +386,7 @@ instance related to the Event:
 Now that our entity columns are in place, let's specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Defining Ordering of Service Entity Instances
+## Defining Ordering of Service Entity Instances [](id=defining-ordering-of-service-entity-instances)
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -409,7 +409,7 @@ entity instances, follow similar steps but specify *name* as the column and
 The last thing do is define the finder methods for retrieving their instances
 from the database. 
 
-## Defining Service Entity Finder Methods
+## Defining Service Entity Finder Methods [](id=defining-service-entity-finder-methods)
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each

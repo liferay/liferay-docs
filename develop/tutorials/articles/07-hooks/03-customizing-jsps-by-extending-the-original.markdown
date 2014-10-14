@@ -1,4 +1,4 @@
-# Customizing JSPs by Extending the Original
+# Customizing JSPs by Extending the Original [](id=customizing-jsps-by-extending-the-original)
 
 If we can replace a JSP with a hook plugin, why learn another way to accomplish
 the same thing? Good question. Let's say you want to preserve the original JSP's

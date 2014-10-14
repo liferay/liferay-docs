@@ -1,4 +1,4 @@
-# JNDI Security
+# JNDI Security [](id=jndi-security)
 
 Specify which services the plugin can look up. You can use regular expressions
 to make this dynamic. 

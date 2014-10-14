@@ -1,4 +1,4 @@
-# Calling Liferay Services
+# Calling Liferay Services [](id=calling-liferay-services)
 
 Every service provides a local interface to clients running in the same JVM as
 Liferay Portal. These are called by use of the  -`ServiceUtil` classes. These

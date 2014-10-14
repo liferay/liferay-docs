@@ -1,4 +1,4 @@
-# Installing Maven
+# Installing Maven [](id=installing-maven)
 
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We

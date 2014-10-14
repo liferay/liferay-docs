@@ -1,4 +1,4 @@
-# Developing an Ext Plugin
+# Developing an Ext Plugin [](id=developing-an-ext-plugin)
 
 An Ext plugin changes Liferay itself when deployed; it's not a separate
 component that can be easily removed at any time. For this reason, the Ext
@@ -31,7 +31,7 @@ customization techniques.
 
 Now let's look at each step of the development proces in more detail. 
 
-## Set up
+## Set up [](id=set-up)
 
 Before deploying an Ext plugin, you must edit the `build.[username].properties`
 file in the root folder of your Plugins SDK. If the file doesn't yet exist,
@@ -76,7 +76,7 @@ $$$
 
 Next we'll change our newly created Ext plugin and deploy it. 
 
-## Initial deployment
+## Initial deployment [](id=initial-deployment)
 
 Our environment is set up and we're ready to start customizing. First let's look
 at a simple example that customizes the sections of a user profile. The
@@ -93,7 +93,7 @@ our portal.
 
 Now we're ready to deploy. 
 
-### Deploy the plugin
+### Deploy the plugin [](id=deploy-the-plugin)
 
 You can deploy your plugin from Liferay Developer Studio or the terminal. 
 
@@ -138,7 +138,7 @@ appropriate destinations inside the deployed and running Liferay application.
 Restart your application server, and let's find out about *publishing* your
 changes. 
 
-### Publish the plugin
+### Publish the plugin [](id=publish-the-plugin)
 
 To complete the deployment process, your Ext plugin must be published to the
 Liferay server. As with deployment, you can publish using Liferay Developer
@@ -306,7 +306,7 @@ for the key named *basic* is already included in Liferay's language bundle.
 
 Let's redeploy our Ext plugin to review the changes we made. 
 
-## Redeployment
+## Redeployment [](id=redeployment)
 
 So far, Ext plugin development has been similar to the development of other
 plugin types. You've now reached the point of divergence. When the plugin is
@@ -390,7 +390,7 @@ After your `example-ext` plugin is published to Liferay Portal, check out your
 That completes the development process. Let's learn how you can package your Ext
 plugin for distribution and production. 
 
-## Distribution
+## Distribution [](id=distribution)
 
 Once you're finished developing the plugin, you can package it in a `.war` file
 for distribution and production deployment. 
@@ -413,7 +413,7 @@ next section covers JBoss 7 requirements for packaging up an Ext plugin
 containing a new taglib. If this doesn't apply to you, feel free to skip over
 it and to start reading about advanced customization techniques. 
 
-## Ext Plugin Packaging Requirements for JBoss 7
+## Ext Plugin Packaging Requirements for JBoss 7 [](id=ext-plugin-packaging-requirements-for-jboss-7)
 
 If you're developing an Ext plugin that defines a new taglib, you need to take
 JBoss's classloading behavior into account. Before packaging this kind of Ext
@@ -455,7 +455,7 @@ Now that you've learned the basics of Ext plugin development have covered this
 requirement for JBoss customizations, let's look at some advanced customizations
 that you can do.
 
-## Advanced customization techniques
+## Advanced customization techniques [](id=advanced-customization-techniques)
 
 With Ext plugins, you can change almost everything in Liferay. Let's look at
 some additional customization techniques made possible by Ext plugins. As
@@ -477,7 +477,7 @@ In the following subsections, we'll cover these topics:
 
 Let's learn to use advanced configuration files next. 
 
-### Using advanced configuration files
+### Using advanced configuration files [](id=using-advanced-configuration-files)
 
 Liferay uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks Liferay
@@ -551,7 +551,7 @@ the original file in Liferay Portal:
 
 Let's learn how to configure a Lucene Analyzer next. 
 
-### Configuring Lucene Analyzers
+### Configuring Lucene Analyzers [](id=configuring-lucene-analyzers)
 
 Liferay uses Lucene to facilitate search and indexing within the portal. In old
 versions of Liferay, you could configure Lucene analyzers from
@@ -612,7 +612,7 @@ You can define custom analyzers for any fields, including custom fields.
 
 Let's learn to change the API of a core service next. 
 
-### Changing the API of a core service
+### Changing the API of a core service [](id=changing-the-api-of-a-core-service)
 
 Sometimes you might need to change the API of a method provided by one of
 Liferay's services (e.g., `UserLocalService`). This is an advanced customization
@@ -644,7 +644,7 @@ bean: your new implementation.
 You can also replace core classes in `portal-impl`. Keep reading to find out
 how. 
 
-### Replacing core classes in portal-impl
+### Replacing core classes in portal-impl [](id=replacing-core-classes-in-portal-impl)
 
 If you're sure you need to change a core portal-impl class, and certain it can't
 be replaced in a configuration file, here's the best way to do it while avoiding

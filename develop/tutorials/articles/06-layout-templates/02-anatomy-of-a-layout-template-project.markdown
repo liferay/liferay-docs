@@ -1,4 +1,4 @@
-# Anatomy of a Layout Template Project
+# Anatomy of a Layout Template Project [](id=anatomy-of-a-layout-template-project)
 
 Let's look at the directory structure of a layout template project and learn
 about its various files: 
@@ -23,7 +23,7 @@ layout templates for packaging and deployment.
 Now that you're well-versed on the anatomy of a layout template, let's explore
 the layout template files.
 
-## Layout template files
+## Layout template files [](id=layout-template-files)
 
 One or more layout template plugins can reside in a layout template project.
 Let's see what each template file does: 
@@ -40,7 +40,7 @@ Let's see what each template file does:
 
 Let's move on to Liferay configuration files.
 
-## Liferay configuration files
+## Liferay configuration files [](id=liferay-configuration-files)
 
 In addition to the three template-specific files, a layout template project has
 two Liferay configuration files:
@@ -53,7 +53,7 @@ two Liferay configuration files:
 Now that you're familiar with the layout template's files and directory
 structure, let's deploy a layout template on the server. 
 
-## Deploying Layout Templates
+## Deploying Layout Templates [](id=deploying-layout-templates)
 
 If you've ever deployed a theme or portlet, you already know how to deploy
 layout templates! Use Developer Studio or the terminal to deploy your layout

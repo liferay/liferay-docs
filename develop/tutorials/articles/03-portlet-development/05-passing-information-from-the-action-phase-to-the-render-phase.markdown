@@ -1,4 +1,4 @@
-# Passing Information from the Action Phase to the Render Phase
+# Passing Information from the Action Phase to the Render Phase [](id=passing-information-from-the-action-phase-to-the-render-phase)
 
 There are two ways to pass information from the action phase to the render
 phase. The first way is through render parameters. In the `processAction` method

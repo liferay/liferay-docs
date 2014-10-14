@@ -1,4 +1,4 @@
-#  Installing Required Liferay Artifacts
+#  Installing Required Liferay Artifacts [](id=installing-required-liferay-artifacts)
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
@@ -25,7 +25,7 @@ $$$
 Let's look at the manual process first, by downloading and installing Liferay
 artifacts from a zip file. 
 
-## Installing EE/CE Artifacts from a Zip File
+## Installing EE/CE Artifacts from a Zip File [](id=installing-ee-ce-artifacts-from-a-zip-file)
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file. Let's download the
@@ -74,7 +74,7 @@ the Liferay CE source repository, you can get them--but you'll have to build
 them yourself. Don't worry, it's easy. We'll show you how to build the artifacts
 from Liferay's source code next. 
 
-## Building CE Maven Artifacts from Source
+## Building CE Maven Artifacts from Source [](id=building-ce-maven-artifacts-from-source)
 
 Downloading the Liferay Maven artifacts from Liferay's customer portal (EE) or
 from Sourceforge (CE) is useful if you're interested in using the artifacts for
@@ -185,7 +185,7 @@ your repositories. These steps are applicable for installing artifacts that you
 downloaded and extracted from a zip file, and for installing artifacts that you
 built from source. 
 
-### Installing Artifacts to a Repository
+### Installing Artifacts to a Repository [](id=installing-artifacts-to-a-repository)
 
 Let's install the Liferay release artifacts to your local Maven repository for
 sharing with your team.
@@ -211,7 +211,7 @@ Liferay plugins. Wasn't that easy?
 If you want to share your Liferay artifacts with teammates, you'll have to
 deploy them to a release repository server. 
 
-### Deploying Artifacts to a Repository
+### Deploying Artifacts to a Repository [](id=deploying-artifacts-to-a-repository)
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -284,7 +284,7 @@ If you're working with Liferay CE, there's an alternative method of obtaining
 the necessary Liferay Maven artifacts: you can let Maven download them
 automatically. Let's see how. 
 
-## Installing CE Artifacts from the Central Repository
+## Installing CE Artifacts from the Central Repository [](id=installing-ce-artifacts-from-the-central-repository)
 
 Liferay offers an option for automatic download and installation of Liferay CE
 Maven artifacts. They're publicly available on the *Central Repository*, located

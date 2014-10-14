@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-10)
 
 OpenSocial gadgets offer a plethora of new features to Liferay that present new
 opportunities for your portal customization. You've learned the anatomy of a
