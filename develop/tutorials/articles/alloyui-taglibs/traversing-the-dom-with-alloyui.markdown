@@ -343,5 +343,5 @@ methods covered in this tutorial, along with many others in the
 
 ## Related Topics
 
- [Using AlloyUI Carousel](/tutorials/-/6-2/knowledge_base/using-alloyui-carousel-in-a-portlet)
+ [Using AlloyUI Carousel](/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
 
