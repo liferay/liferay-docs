@@ -7,7 +7,14 @@ the example, you can get the code [here](../../code/alloy/silly-phrase-generator
 
 Follow this tutorial and you'll be a master of AlloyUI DOM traversal in no time.
 
-## Grabbing Element Nodes
+## Working with Node Objects
+
+There are many ways you can manipulate element node objects using AlloyUI.
+Several methods are provided to suite your needs. Before you can get started,
+you need to grab the node object of the element you wish to manipulate. You'll
+do that next.
+
+### Grabbing Element Nodes
 
 In order to manipulate HTML elements, you must first have access to the node 
 object of the HTML elements.
@@ -20,7 +27,7 @@ Follow these steps to get started:
 
 Go ahead and dive right in.
 
-### Step 1: Reference the AUI Taglib 
+#### Step 1: Reference the AUI Taglib 
 
 First you need to make sure that you've referenced the `aui` taglib in your JSP. 
 If you're already using AlloyUI tags in your JSP, then you can skip this step. 
@@ -32,7 +39,7 @@ already exist. Add the directive to reference the `aui` taglib:
 Just like that you're ready to use the AUI tags in your portlet. Onwards to the 
 next step!
 
-### Step 2: Insert and Configure the AUI Script in the View JSP
+#### Step 2: Insert and Configure the AUI Script in the View JSP
 
 Next, you will need to add an `<aui:script>` to hold the scripts you will use to 
 grab and edit your element nodes. You will also need to configure the 
@@ -47,7 +54,7 @@ like the following code:
         
 Now that your script is configured, you can grab your element node next.
 
-### Step 3: Reference the Element Node
+#### Step 3: Reference the Element Node
 
 You can use the `A.one()` method to return the first node that matches the 
 selector or the `A.all()` method to grab all the elements that match the 
@@ -111,7 +118,7 @@ form by its id and assigns it to the variable `btnSubmit`.
 All variables have been declared, so you can attach a click event to your button 
 node next.
     
-## Subscribing to Events of Node Objects
+### Subscribing to Events of Node Objects
 
 Now that you have referenced your element nodes you can subscribe to events for 
 them. Subscribing to events of your element nodes is a quick and easy process. 
@@ -137,7 +144,7 @@ node, which is set to the variable `btnSubmit`.
 
 Next, you need to declare variables for the value of your input fields. 
 
-## Getting and Setting Attributes for Node Objects
+### Getting and Setting Attributes for Node Objects
 
 There are a couple methods that you can use to get and set attributes for your
 node objects: the `val()` method; and the `attr()` method; both of these methods 
@@ -163,7 +170,7 @@ Next, you'll add an element to display your silly phrase. To do this, you'll
 append a `<p>` element to the container `<div>` and give it a unique id to grab 
 in the steps to follow.
 
-## Appending Elements to Node Objects
+### Appending Elements to Node Objects
 
 Once you have your elements referenced you can append(add) other elements to 
 them using the `append()` method of the node object. You can append a brand new 
@@ -189,7 +196,7 @@ All right! The framework is set; now you need to write the code for the phrase.
 To do this, you'll set the HTML of the `<p>` element which you just assigned to 
 the phrase variable.
 
-## Setting the HTML of Node Objects
+### Setting the HTML of Node Objects
 
 AlloyUI provides the `html()` method to set and get the HTML of a node object.
 To get the HTML of a node object simply pass no arguments in the method. To set
@@ -224,7 +231,7 @@ read: "Walk your left-footed platypus gingerly in the warehouse."
 Now that your silly phrase generator is working properly, there are a couple 
 more things you can add to it.
 
-## Setting the CSS of Node Objects
+### Setting the CSS of Node Objects
 
 AlloyUI provides a few methods for dealing with CSS. Below is a list of some of
 the available methods:
@@ -274,7 +281,7 @@ Now if you generate a silly phrase, you should see your new styles added! There
 is one last thing you can add to your silly phrase generator to reinforce
 everything you have learned so far.
 
-## Hiding and Showing Node Objects
+### Hiding and Showing Node Objects
 
 Are you tired of staring at the same elements on your page? Do you wish you 
 could get rid of them? Lucky for you, AlloyUI has a method for that. The 
