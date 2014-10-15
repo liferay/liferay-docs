@@ -18,12 +18,11 @@ the dependencies file should be called
 These instructions assume you have already configured a domain and server and
 that you have access to the WebLogic console.
 
----
++$$$
 
-![Note](../../images/tip.png) WebLogic 10.0 supports JDK 1.5 but does *not*
-support JDK 1.6.
+**Note:** WebLogic 10.0 supports JDK 1.5 but does *not* support JDK 1.6.
 
----
+$$$
 
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on WebLogic.
@@ -181,13 +180,12 @@ To start the server without triggering the setup wizard, specify
 The `portal-setup-wizard.properties` file the setup wizard creates has
 `setup.wizard.enabled=false` conveniently specified for you.
 
----
++$$$
 
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
+**Note:** Property values in `portal-setup-wizard.properties` override property 
+values in `portal-ext.properties`.
 
----
+$$$
 
 Now that you have enabled or disabled the setup wizard, let's move on to
 deployment of Liferay Portal.

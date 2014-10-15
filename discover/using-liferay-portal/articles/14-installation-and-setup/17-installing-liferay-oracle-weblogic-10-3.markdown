@@ -22,14 +22,13 @@ that you have access to the WebLogic console.
 
 If you still have the `mainWebApp` module installed, remove it first.
 
----
++$$$
 
-![Note](../../images/tip.png) There is a known issue with the Sun and JRockit
-JVMs bundled with WebLogic 10.3.2 (see
-[http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). To resolve, use Sun
-JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
+**Note:** There is a known issue with the Sun and JRockit JVMs bundled with 
+WebLogic 10.3.2 (see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). 
+To resolve this, use Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
 
----
+$$$
 
 Let's get started by installing the JAR files Liferay needs.
 
@@ -183,13 +182,12 @@ wizard.
   The `portal-setup-wizard.properties` file the setup wizard creates has
   `setup.wizard.enabled=false` conveniently specified for you.
 
----
++$$$
 
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
+**Note:** Property values in `portal-setup-wizard.properties` override property 
+values in `portal-ext.properties`.
 
----
+$$$
 
 Now, let's deploy Liferay Portal.
 
@@ -221,17 +219,17 @@ Now, let's deploy Liferay Portal.
 
 Please see the section above for how to use the setup wizard. 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** After Liferay is installed, you may see
-an error initializing the Web Proxy portlet. Because the XSL parser configured
-by default within WebLogic cannot compile a style sheet in this portlet, Liferay
-disables it by default. To re-enable this portlet, extract `xalan.jar` and
-`serializer.jar` from the Liferay `.war` archive and copy them to your JDK's
-endorsed folder for libraries. If you are using JRockit, this folder may be
+**Note:** After Liferay is installed, you may see an error initializing the Web 
+Proxy portlet. Because the XSL parser configured by default within WebLogic 
+cannot compile a style sheet in this portlet, Liferay disables it by default. To 
+re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the 
+Liferay `.war` archive and copy them to your JDK's endorsed folder for 
+libraries. If you are using JRockit, this folder may be
 `[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this
 folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
 
----
+$$$
 
 Congratulations! You are now running Liferay on Oracle WebLogic.

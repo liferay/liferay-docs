@@ -1,8 +1,8 @@
 # Installing Liferay on WebSphere 8.0
 
-![Tip](../../images/02-tip.png) **Tip:** Throughout this installation and
-configuration process, WebSphere prompts you to Click Save to apply changes to
-Master Configuration. Do so intermittently to save your changes.
+**Tip:** Throughout this installation and configuration process, WebSphere 
+prompts you to Click Save to apply changes to Master Configuration. Do so 
+intermittently to save your changes.
 
 **Liferay Home** is in a folder called `liferay` in the home folder of the user
 ID that is running WebSphere.

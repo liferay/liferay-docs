@@ -297,13 +297,12 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
-    ---
+    +$$$
 
-    ![Note](../../images/tip.png) Property values in
-    `portal-setup-wizard.properties` override property values in
-    `portal-ext.properties`.
+    **Note:** Property values in `portal-setup-wizard.properties` override 
+    property values in `portal-ext.properties`.
 
-    ---
+    $$$
 
     Now its time to launch Liferay Portal!
 

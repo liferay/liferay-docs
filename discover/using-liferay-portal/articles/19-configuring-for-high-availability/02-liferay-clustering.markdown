@@ -42,17 +42,17 @@ this file can be found in the Liferay source code or can be extracted from the
 copy the relevant section you want to modify from `portal.properties` into your
 `portal-ext.properties` file, and then modify the values there.
 
----
++$$$
 
-![Tip](../../images/01-tip.png)**Note:** This chapter documents a
-Liferay-specific cluster configuration, without getting into specific
-implementations of third party software, such as Java EE application servers,
-HTTP servers, and load balancers. Please consult your documentation for those
-components of your cluster for specific details of those components. Before
-configuring Liferay in a cluster configuration, make sure your OS is not
-defining the hostname of your box to the local network at 127.0.0.1.
+**Note:** This chapter documents a Liferay-specific cluster configuration, 
+without getting into specific implementations of third party software, such as 
+Java EE application servers, HTTP servers, and load balancers. Please consult 
+your documentation for those components of your cluster for specific details of 
+those components. Before configuring Liferay in a cluster configuration, make 
+sure your OS is not defining the hostname of your box to the local network at 
+127.0.0.1.
 
----
+$$$
 
 We'll take each of the points above one by one to present a clear picture of how
 to cluster Liferay. 
@@ -984,15 +984,14 @@ on this is not very good. Your DBAs may be able to tweak the database indexes a
 bit to improve performance. For better performance, you should consider using a
 separate search server or syncing the indexes on the nodes' file systems.
 
----
++$$$
 
-![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
-connection string for this to work. Add the following parameter to your
-connection string:
+**Note:** MySQL users need to modify their JDBC connection string for this to 
+work. Add the following parameter to your connection string:
 
     emulateLocators=true
 
----
+$$$
 
 Alternatively, you can leave the configuration alone, and each node will have
 its own index. This ensures against collisions when multiple nodes update the

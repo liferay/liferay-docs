@@ -239,13 +239,12 @@ To startup the server without triggering the setup wizard, specify
 Once you run the setup wizard, the `portal-setup-wizard.properties` file it
 creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
----
++$$$
 
-![Note](../../images/tip.png) Property values in
-`portal-setup-wizard.properties` override property values in
-`portal-ext.properties`.
+**Note:** Property values in `portal-setup-wizard.properties` override property 
+values in `portal-ext.properties`.
 
----
+$$$
 
 1. Start your domain's application server.
 

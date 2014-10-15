@@ -38,16 +38,15 @@ The following instructions assume an installation on a local machine. When
 installing to a remote server, substitute `localhost` with the host name or IP
 of the server.
 
----
++$$$
 
-![Tip](../../images/02-tip.png) **Tip:** Note that Liferay *requires* JDK 5 or
-greater. Do not attempt to install Liferay 6.x on an application server that
-runs under Java 1.4 or lower; it will not work. If you are running an
-application server that ships with a JDK and that JDK is 1.4 or lower, you'll
-need to upgrade your application server to run current versions of Liferay
-Portal.
+**Tip:** Note that Liferay *requires* JDK 5 or greater. Do not attempt to 
+install Liferay 6.x on an application server that runs under Java 1.4 or lower; 
+it will not work. If you are running an application server that ships with a JDK 
+and that JDK is 1.4 or lower, you'll need to upgrade your application server to 
+run current versions of Liferay Portal.
 
----
+$$$
 
 Without further ado, let's get to the application servers. The first one we'll
 cover is Mule Tcat. If you don't have an application server preference, and you

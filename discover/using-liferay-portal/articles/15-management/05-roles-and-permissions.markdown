@@ -190,18 +190,18 @@ regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom
 permissions for the role. 
 
----
++$$$
 
-![tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users
-and Users did *not* have the same default permissions. So if are using Liferay
-5.2 or a previous version, it's dangerous to remove the Power Users role from
-the default user associations: this could remove certain permissions you expect
-to apply to all users. If you decide to remove the Power Users role from the
-default user associations anyway, you will probably want to modify the
-permissions on certain portlets to make them accessible to all users. To do
-this, see the section on Plugins Configuration below.
+**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the 
+same default permissions. So if are using Liferay 5.2 or a previous version, 
+it's dangerous to remove the Power Users role from the default user 
+associations: this could remove certain permissions you expect to apply to all 
+users. If you decide to remove the Power Users role from the default user 
+associations anyway, you will probably want to modify the permissions on certain 
+portlets to make them accessible to all users. To do this, see the section on 
+Plugins Configuration below.
 
----
+$$$
 
 Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal

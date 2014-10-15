@@ -153,15 +153,14 @@ location cannot have any suborganizations.
 parent of the organization you are creating. Click the *Remove* button to remove
 the currently configured parent.
 
----
++$$$
 
-![Tip](../../images/01-tip.png) **Tip:** Note that you're already a member of
-any organizations you create. By creating an organization, you become both a
-member and receive the Organization Owner role, which gives you full rights to
-the organization. You can, of course, add other users to this role to make them
-Organization Owners. 
+**Tip:** Note that you're already a member of any organizations you create. By 
+creating an organization, you become both a member and receive the Organization 
+Owner role, which gives you full rights to the organization. You can, of course, 
+add other users to this role to make them Organization Owners. 
 
----
+$$$
 
 Fill out the information for your organization and click *Save*. As before with
 users, the form reappears and you can enter more information about the
