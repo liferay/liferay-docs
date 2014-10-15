@@ -33,7 +33,7 @@ in the section.
 Now that we've discussed the general philosophy of upgrading, let's outline the
 procedure for upgrading to Liferay 6.2.
 
-## Preparing for an Upgrade
+## Preparing for an Upgrade [](id=preparing-for-an-upgrade)
 
 The first thing you need to do is size up your situation. You can do this by
 asking yourself a few questions from the chart below. First: What version of
@@ -60,7 +60,7 @@ the upgrade in a non-production environment before upgrading your production
 Liferay instance. Let's look at the preparatory tasks you should perform one by
 one. 
 
-## Migrate to Algorithm 6
+## Migrate to Algorithm 6 [](id=migrate-to-algorithm-6)
 
 If your Liferay installation has existed for a while, you might be on a
 different permission algorithm than the one that's available in Liferay Portal
@@ -124,7 +124,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 might need to explicitly set your Image Gallery storage option. 
 
-## Migrate Your Image Gallery Images
+## Migrate Your Image Gallery Images [](id=migrate-your-image-gallery-images)
 
 Liferay 6.1 introduced a major change to how Liferay handles files. Liferay 6.0
 and previous versions had a separate Document Library and Image Gallery. In
@@ -154,7 +154,7 @@ likely already in your `portal-ext.properties` file.
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
-## Review the Liferay 6.2 Properties Defaults
+## Review the Liferay 6.2 Properties Defaults [](id=review-the-liferay-6-2-properties-defaults)
 
 The next thing you'll need to look at are the defaults that have changed between
 your old Liferay instance's version and Liferay 6.2. These are preserved in a
@@ -268,7 +268,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-## Catalog All Installed Plugins
+## Catalog All Installed Plugins [](id=catalog-all-installed-plugins)
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -289,7 +289,7 @@ Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
 
-## Upgrade Choices: Upgrade a Bundle or Upgrade Manually
+## Upgrade Choices: Upgrade a Bundle or Upgrade Manually [](id=upgrade-choices-upgrade-a-bundle-or-upgrade-manually)
 
 There are two different procedures to upgrade Liferay. The first one, upgrading
 a Liferay bundle, is the most common. The second procedure is for manually
@@ -305,7 +305,7 @@ we'll run the risk of overly repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-### Upgrading a Bundle
+### Upgrading a Bundle [](id=upgrading-a-bundle)
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
@@ -345,7 +345,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-### Upgrading Manually
+### Upgrading Manually [](id=upgrading-manually)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -387,7 +387,7 @@ That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
 
-## Post-Upgrade Tasks
+## Post-Upgrade Tasks [](id=post-upgrade-tasks)
 
 After upgrading to Liferay 6.2, you should reindex your portal's search indexes.
 Liferay 6.2 indexes new information in many places, including Documents and

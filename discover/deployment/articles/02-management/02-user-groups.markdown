@@ -76,7 +76,7 @@ Actions menu. Clicking one of these links opens the user group's site in a new
 browser window. Any changes you make to the site are saved automatically. You
 can safely close the browser window when you're done.
 
-## Creating and Editing a User Group
+## Creating and Editing a User Group [](id=creating-and-editing-a-user-group)
 
 A user group's site can be administered from the Control Panel. Click on *User
 Groups* from the Control Panel to see a list of existing user groups. To edit a
@@ -95,7 +95,7 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-## Assigning Members to a User Group
+## Assigning Members to a User Group [](id=assigning-members-to-a-user-group)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the Control Panel and click *Actions*
@@ -111,7 +111,7 @@ you can add all those users at once as members of a site in one step from the
 assigning a role to users from the roles management UI. The next section
 explains how to use user group sites.
 
-## User Group Sites
+## User Group Sites [](id=user-group-sites)
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their

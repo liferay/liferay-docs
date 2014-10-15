@@ -5,7 +5,7 @@ Go back to the Control Panel, and click on *Portal Settings* under the
 *General* and *Authentication* links. Now let's examine the other portal
 settings options.
 
-## Users
+## Users [](id=users)
 
 If you click on *Users* from the Portal Settings screen, you'll find three tabs:
 Fields, Reserved Credentials and Default User Associations.
@@ -39,14 +39,14 @@ defined site templates in certain user groups to pre-populate end users' private
 pages. If there is a particular configuration you want everyone to have, you may
 want to enter those user groups here.
 
-## Mail Host Names
+## Mail Host Names [](id=mail-host-names)
 
 Mail Host Names appears after Authentication and Users on the Portal Settings
 screen of the Control Panel. You can enter other mail host names (one per line)
 besides the one you configured on the General tab. This lets the portal know
 which mail host names are owned by your organization.
 
-## Email Notifications
+## Email Notifications [](id=email-notifications)
 
 There are five tabs under the Email Notifications page of Portal Settings. The
 Sender tab allows you to set the portal's administrative name and email address.
@@ -67,7 +67,7 @@ A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-## Content Sharing
+## Content Sharing [](id=content-sharing)
 
 The Content Sharing section of the Portal Settings area of the Control Panel
 allows you to choose whether or or not site administrators can display content
@@ -90,14 +90,14 @@ parent sites by default but this can be enabled by a site administrator.
 **Disabled**: This means that subsites cannot display content from parent sites
 and this behavior cannot be changed by a site administrator.
 
-## Identification
+## Identification [](id=identification)
 
 The identification section has several links for addresses, phone numbers and
 other information you can configure in your portal. This allows you to set up
 contact information for the organization that owns the portal. Developers can
 query for this information in their applications.
 
-## Miscellaneous: Display Settings
+## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
 
 This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of

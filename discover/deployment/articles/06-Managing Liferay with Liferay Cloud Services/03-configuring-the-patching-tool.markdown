@@ -1,4 +1,4 @@
-# Configuring the Patching Tool 
+# Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
 Liferay EE's patching tool is leveraged by LCS to apply its updates. If you're 
 running a Liferay EE bundle, then you already have the patching tool installed. 

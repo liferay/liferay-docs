@@ -6,7 +6,7 @@ in existing application server installations. It is recommended that you have a
 good understanding of how to deploy Java EE applications in your application
 server of choice.
 
-## Installing Liferay in five easy steps
+## Installing Liferay in five easy steps [](id=installing-liferay-in-five-easy-steps)
 
 There are five generic steps to installing Liferay on an existing application
 server:

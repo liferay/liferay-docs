@@ -1,4 +1,4 @@
-# Configuring the LCS Client
+# Configuring the LCS Client [](id=configuring-the-lcs-client)
 
 Once you deploy the LCS client portlet, you can use it to register your server 
 with your LCS account. Access the portlet by clicking on *Cloud Services* under 

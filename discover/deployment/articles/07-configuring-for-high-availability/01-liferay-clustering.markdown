@@ -59,7 +59,7 @@ $$$
 We'll discuss each of the points above one by one to present a clear picture of
 how to cluster Liferay. 
 
-## All Nodes Should Point to the Same Liferay Database
+## All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-liferay-database)
 
 This is pretty self-explanatory. Each node should be configured with a data
 source that points to one Liferay database (or a database cluster) that all the
@@ -73,7 +73,7 @@ Beyond a database cluster, there are two more advanced options you can use to
 optimize your database configuration: a read-writer database configuration, and
 sharding. 
 
-### Read-Writer Database Configuration
+### Read-Writer Database Configuration [](id=read-writer-database-configuration)
 
 Liferay allows you to use two different data sources for reading and writing.
 This enables you to split your database infrastructure into two sets: one that
@@ -131,7 +131,7 @@ before starting Liferay.
 
 Next, we'll look at database sharding. 
 
-### Database Sharding
+### Database Sharding [](id=database-sharding)
 
 Liferay, starting with version 5.2.3, supports database sharding for different
 portal instances. Sharding is a term used to describe an extremely high
@@ -245,7 +245,7 @@ That's all there is to it. Your system is now set up for sharding. Now that
 you've got your database set up and optimized for a large installation, let's
 turn to clustering the Documents and Media Library. 
 
-## Documents and Media Library Clustering
+## Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
 
 Beginning with Liferay 6.1, Liferay's Documents and Media Library is capable of
 mounting several repositories at a time while presenting a unified interface to
@@ -268,7 +268,7 @@ Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`
 property. Let's consider the ramifications of the various store options. 
 
-### Using the File System Store
+### Using the File System Store [](id=using-the-file-system-store)
 
 This is the default store. It's a simple file storage implementation that uses a
 local folder to store files. You can use the file system for your clustered
@@ -321,7 +321,7 @@ easily from one store implementation to another.
 Speaking of other store implementations, let's look at some others Liferay
 provides. 
 
-### Using the Advanced File System Store
+### Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
 
 Liferay's advanced file system store is similar to the default file system
 store. Like that store, it saves files to the local file system--which, of
@@ -351,7 +351,7 @@ the documents and media library. In addition to this, you can also redefine the
 Liferay store to use one of three other supported protocols. We'll look at these
 next. 
 
-### Using the CMIS Store
+### Using the CMIS Store [](id=using-the-cmis-store)
 
 Though you can mount as many different CMIS (Content Management Interoperability
 Services) repositories as you like in the Documents and Media library, you may
@@ -376,7 +376,7 @@ multiple simultaneous file access from causing data corruption.
 
 From here, we'll move on to the JCR store. 
 
-### Using the JCR Store
+### Using the JCR Store [](id=using-the-jcr-store)
 
 Liferay Portal supports as a store the Java Content Repository standard. Under
 the hood, Liferay uses Jackrabbit, a project from Apache, as its JSR-170
@@ -446,7 +446,7 @@ store, because you're storing documents in a database instead of on the file
 system. But it does have the benefit of clustering well. Next, we'll look at
 Amazon's S3 store. 
 
-#### Using Amazon Simple Storage Service
+#### Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
 
 Amazon's simple storage service (S3) is a cloud-based storage solution which you
 can use with Liferay. All you need is an account, and you can store your
@@ -470,7 +470,7 @@ Amazon's service.
 
 We have one more store to go over: the Documentum store. 
 
-#### Using the Documentum Store
+#### Using the Documentum Store [](id=using-the-documentum-store)
 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
@@ -495,14 +495,14 @@ higher performance.
 Now that we've covered the available ways you can configure Documents and Media
 for clustering, let's move on to configuring search. 
 
-## Clustering Search
+## Clustering Search [](id=clustering-search)
 
 You can configure search for clustering in one of two ways: you can use pluggable
 enterprise search (recommended) or you can configure Lucene so indexes replicate
 across the individual file systems of the nodes in the cluster. We'll look at
 both ways to do this. 
 
-### Using Pluggable Enterprise Search
+### Using Pluggable Enterprise Search [](id=using-pluggable-enterprise-search)
 
 As an alternative to using Lucene, Liferay supports pluggable search engines.
 The first implementation of this uses the open source search engine *Solr*, but
@@ -524,7 +524,7 @@ army of robots ready and willing to do your bidding.
 First, you'll need to configure your Solr server, and then you need to install
 Liferay's Solr plugin to redirect searches over to it. 
 
-#### Configuring the Solr Search Server
+#### Configuring the Solr Search Server [](id=configuring-the-solr-search-server)
 
 Since Solr is a standalone search engine, you'll need to download it and install
 it first according to the instructions on the Solr web site
@@ -562,7 +562,7 @@ This takes care of telling Solr where to store its search index. After you have
 Solr installed and the configuration finished, shut it down, as there is some
 more configuration to do.
 
-#### Installing the Solr Liferay Plugin
+#### Installing the Solr Liferay Plugin [](id=installing-the-solr-liferay-plugin)
 
 Next, you have a choice. If you have installed Solr on the same system upon
 which Liferay is running (not recommended), you can simply go to the Liferay
@@ -632,7 +632,7 @@ independently of all your nodes. If, however, you don't have the server hardware
 upon which to install a separate search server, you can sync the search indexes
 between all your nodes, as is described next. 
 
-### Clustering Lucene Indexes on All Nodes
+### Clustering Lucene Indexes on All Nodes [](id=clustering-lucene-indexes-on-all-nodes)
 
 Lucene, the search indexer which Liferay uses, can be configured to sync indexes
 across each cluster node. This is the easiest configuration to implement, though
@@ -664,7 +664,7 @@ easy, right? Of course, if you have existing indexes, you'll want to reindex as
 described in the previous section once you have Cluster Link enabled on all your
 nodes. 
 
-## Distributed Caching
+## Distributed Caching [](id=distributed-caching)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -704,7 +704,7 @@ use a plugin to do it. Either way, the settings you change are the same. Next,
 we'll discuss a special EE-only optimization that can be made to the cache.
 After that, we'll explain how to configure Liferay's caching settings.
 
-### Enhanced Distributed Cache Algorithm
+### Enhanced Distributed Cache Algorithm [](id=enhanced-distributed-cache-algorithm)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -765,7 +765,7 @@ to use the default Ehcache settings just by enabling Cluster Link. If you need
 to tweak the cache for your site, you have two options: you can modify Ehcache
 settings with a plugin or you can modify them directly.
 
-### Modifying the Ehcache Settings With a Plugin
+### Modifying the Ehcache Settings With a Plugin [](id=modifying-the-ehcache-settings-with-a-plugin)
 
 A benefit of working with plugins is that you can quickly install a plugin on
 each node of your cluster without taking down the cluster. Modifying the Ehcache
@@ -839,7 +839,7 @@ There is, of course, another way to do this if you don't want to create a
 plugin. It requires you to restart the server to enable the new cache settings,
 but you don't have to work with any developer tools to do it. 
 
-### Modifying the Ehcache Settings Directly
+### Modifying the Ehcache Settings Directly [](id=modifying-the-ehcache-settings-directly)
 
 This method is pretty similar to the plugin method, except that you have to
 modify the Liferay installation directly. You'll still need to extract Liferay's
@@ -873,7 +873,7 @@ files in your custom folder. For example:
 You can now take a look at the settings in these files and tune them to fit your
 environment and application. Let's examine how to do that next. 
 
-### Customizing Hibernate Cache Settings
+### Customizing Hibernate Cache Settings [](id=customizing-hibernate-cache-settings)
 
 By default, Hibernate (Liferay's database persistence layer) is configured to
 use Ehcache as its cache provider. This is the recommended setting. If you're
@@ -950,7 +950,7 @@ experiment with the memory settings on your JVM as well as the cache settings
 above. You can find the specifics about these settings in the documentation for
 Ehcache.
 
-### Configuring Liferay's Caching Settings
+### Configuring Liferay's Caching Settings [](id=configuring-liferays-caching-settings)
 
 To understand how Liferay behaves with various cache configurations, let's
 consider five different scenarios.
@@ -1014,7 +1014,7 @@ systems), but for completeness, we'll go ahead and tell you how to do it anyway.
 But you've been forewarned: it's far better to use one of the other methods of
 clustering your search index. 
 
-### Sharing a Search Index (not recommended unless you have a file locking-aware SAN)
+### Sharing a Search Index (not recommended unless you have a file locking-aware SAN) [](id=sharing-a-search-index-not-recommended-unless-you-have-a-file-locking-aware)
 
 If you wish to have a shared index (and we really hope you don't), you'll need
 to either share the index on the file system or in the database. This requires
@@ -1079,7 +1079,7 @@ use a separate search server (see the section on Solr above).
 
 Now we can look at the last consideration when clustering Liferay: hot deploy. 
 
-## Hot Deploy
+## Hot Deploy [](id=hot-deploy)
 
 Plugins which are hot deployed will need to be deployed separately to all the
 Liferay nodes. The best way to do this is to configure your application server

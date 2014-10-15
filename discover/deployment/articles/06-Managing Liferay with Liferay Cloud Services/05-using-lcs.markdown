@@ -1,4 +1,4 @@
-# Using LCS
+# Using LCS [](id=using-lcs)
 
 Once your LCS client is registered with your LCS account, you can get down to 
 the business that LCS was designed for--managing and monitoring your Liferay 
@@ -45,7 +45,7 @@ project view. From there, you can get to the environment view and the
 server view. Each of these views gives you a different look into certain 
 aspects of your LCS project. You'll start with the project view.
 
-## Using the Project View
+## Using the Project View [](id=using-the-project-view)
 
 You can get to the project view at any time by clicking the Dashboard tab 
 near the upper left-hand corner of your LCS site. The project view provides you 
@@ -88,7 +88,7 @@ environment:
 You can get more information about a specific environment by clicking it. This 
 takes you to the environment view.
 
-## Using the Environment View
+## Using the Environment View [](id=using-the-environment-view)
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view, as its name implies, gives you more 
@@ -103,7 +103,7 @@ to the server view for that server.
 
 ![Figure 6.10: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
-## Using the Server View
+## Using the Server View [](id=using-the-server-view)
 
 The server view provides you with detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
@@ -165,7 +165,7 @@ the update process and also gives you extensive information on how your servers
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
-## Managing LCS Users in Your Project
+## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS roles or invite others that 

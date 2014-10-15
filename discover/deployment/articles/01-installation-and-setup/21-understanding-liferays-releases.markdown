@@ -38,7 +38,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-## Release Process
+## Release Process [](id=release-process)
 
 Each release of Liferay has a surname that specifies its expected quality.  This
 is needed because pre-releases of Liferay look very much like maintenance

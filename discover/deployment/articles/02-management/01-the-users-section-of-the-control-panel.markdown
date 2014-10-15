@@ -20,7 +20,7 @@ administrator role, which is a portal scoped role, have permission to view the
 Control Panel. You can, of course, grant permissions to view one or more
 sections, such as the Users section, to custom roles.
 
-## Adding and Editing Users
+## Adding and Editing Users [](id=adding-and-editing-users)
 
 Are you using Liferay's default administrative user, Test Test
 (test@liferay.com)? If so, let's add a user account for yourself and configure
@@ -75,7 +75,7 @@ You are now a portal administrator. Log out of the portal and then log back in
 with your own user account. Next, let's look at some other aspects of user
 management. 
 
-## User Management
+## User Management [](id=user-management)
 
 If you click on *Users and Organizations* in the Control Panel, you should now
 see your user account in the list of users. If you want to change something
@@ -101,7 +101,7 @@ above functions because you have administrative access.
 
 Next, let's look at how to manage organizations.
 
-## Organizations
+## Organizations [](id=organizations)
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and

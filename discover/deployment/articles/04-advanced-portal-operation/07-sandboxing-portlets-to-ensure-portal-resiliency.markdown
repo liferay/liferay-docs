@@ -41,7 +41,7 @@ and deploy the app as described in this guide's chapter on [Leveraging the Lifer
 Before creating and using sandboxes, we must enable the portal's resiliency
 functionality and optimize the database connection settings for your sandboxes. 
 
-## Configuring the Portal for Sandboxing
+## Configuring the Portal for Sandboxing [](id=configuring-the-portal-for-sandboxing)
 
 The two types of portal properties you must modify for your portal to use
 sandboxing are the [Portal Resiliency](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Portal%20Resiliency) 
@@ -78,7 +78,7 @@ link displayed in the *Configuration* section.
 Click the *SPI Administration* link to start creating SPIs for running new or
 troublesome portlets. 
 
-## Creating an SPI
+## Creating an SPI [](id=creating-an-spi)
 
 You can create and administer SPIs from the SPI Administration page accessible
 in the Configuration section of the Control Panel.
@@ -189,7 +189,7 @@ SPI. At that point, manual operator intervention is required to restart it.
 This option is disabled if the *Use Default Restart Options* checkbox is
 selected. 
 
-### Advanced Configurations
+### Advanced Configurations [](id=advanced-configurations)
 
 The Advanced Configurations section contains a series of optional parameters
 that should rarely be modified. 
@@ -221,7 +221,7 @@ apps onto the SPI in the same way you can with the SPI Applications panel.
 Now that you know how to add a SPI and configure it properly, let's learn how to
 operate the SPI. 
 
-## Starting, Stopping, and Modifying an SPI
+## Starting, Stopping, and Modifying an SPI [](id=starting-stopping-and-modifying-an-spi)
 
 The Portal automatically starts SPIs on startup. However, when you first add a
 new SPI, you must start it manually. 
@@ -242,7 +242,7 @@ If you have multiple SPIs, you may want to use global settings to configure the
 default options for them. Let's consider how to configure global settings for
 your SPIs next. 
 
-## Configure Global Settings
+## Configure Global Settings [](id=configure-global-settings)
 
 The SPI Administration console allows you to configure a series of global
 settings. You can access them by clicking on the configuration gear icon as

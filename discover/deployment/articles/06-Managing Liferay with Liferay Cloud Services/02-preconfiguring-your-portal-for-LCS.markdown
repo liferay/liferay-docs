@@ -1,4 +1,4 @@
-# Preconfiguring Your Portal for LCS
+# Preconfiguring Your Portal for LCS [](id=preconfiguring-your-portal-for-lcs)
 
 If you're running Liferay 6.2, then you can skip this step. If, however, you are 
 running Liferay 6.1 GA3, then there's a small pre-configuration step that you 

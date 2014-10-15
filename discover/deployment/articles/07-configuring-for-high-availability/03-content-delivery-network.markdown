@@ -11,7 +11,7 @@ general guidelines for using a CDN in your Liferay Portal instance. Then, you'll
 learn the steps to configure a CDN for your portal. It's time to expand your
 Liferay content around the world! 
 
-## Using CDN for Performance Enhancements
+## Using CDN for Performance Enhancements [](id=using-cdn-for-performance-enhancements)
 
 A CDN serves static content to users in a Liferay Portal instance. These static
 resources (images, CSS, JavaScript, etc.) from the portal are stored on multiple
@@ -41,7 +41,7 @@ The CDN must fetch the content itself.
 There are several properties in Liferay that enable you to configure your CDN
 and tweak it to your portal's needs. You'll cover how to do this next.
 
-## Configuring Liferay to Use a CDN
+## Configuring Liferay to Use a CDN [](id=configuring-liferay-to-use-a-cdn)
 
 Now that you have a general understanding of what a CDN accomplishes and how
 it's used in Liferay, it's time to set one up for yourself. You can set your CDN

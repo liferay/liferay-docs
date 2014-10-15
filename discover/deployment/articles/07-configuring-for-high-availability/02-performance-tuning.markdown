@@ -5,7 +5,7 @@ performance, especially if your site winds up generating more traffic than you'd
 anticipated. There are some definite steps you can take with regard to improving
 Liferay's performance.
 
-## Memory
+## Memory [](id=memory)
 
 Memory is one of the first things to look at when you want to optimize
 performance. If you have any disk swapping, you want to avoid it at all costs:
@@ -54,7 +54,7 @@ performance). Hibernate--which Liferay uses extensively--has been known to make
 use of PermGen space. If you increase the amount of memory available to the JVM,
 you may want to increase the amount of PermGen space accordingly.
 
-## Garbage Collection
+## Garbage Collection [](id=garbage-collection)
 
 As the system runs, various Java objects are created. Some of these objects are
 long-lived, and some are not. The ones that are not become *de-referenced*,
@@ -155,7 +155,7 @@ testing under load, then adjusting again. Every system is different and these
 are general guidelines to follow. Next, we'll see some modifications we can make
 to Liferay's properties to help increase performance. 
 
-## Properties File Changes
+## Properties File Changes [](id=properties-file-changes)
 
 There are also some changes you can make to your `portal-ext.properties` file
 once you are in a production environment.
@@ -186,7 +186,7 @@ properties.
 Let's look at one final, general way of increasing Liferay's performance:
 disabling unused servlet filters. 
 
-## Disabling Unused Servlet Filters
+## Disabling Unused Servlet Filters [](id=disabling-unused-servlet-filters)
 
 Liferay comes by default with a number of servlet filters enabled and running.
 It is likely that for your installation, you don't need them all. Since servlet

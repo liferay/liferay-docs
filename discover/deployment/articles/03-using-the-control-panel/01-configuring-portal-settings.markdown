@@ -37,7 +37,7 @@ their parent sites.
 
 Let's discuss these settings in more detail.
 
-## General
+## General [](id=general)
 
 The General link takes you to a screen with three headings: Main Configuration,
 Navigation, and Additional Information. Under the Main Configuration heading,
@@ -51,7 +51,7 @@ default landing and logout pages. Under the Additional Information heading, you
 can specify a Legal name, ID, company type, SIC code, ticker symbol, industry
 and industry type.
 
-## Authentication
+## Authentication [](id=authentication)
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM,
 OpenID, Open SSO and SiteMinder. You can use any of these authentication methods

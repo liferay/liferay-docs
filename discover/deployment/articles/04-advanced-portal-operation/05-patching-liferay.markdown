@@ -24,7 +24,7 @@ always going to want to patch.
 
 Now that you know what patching is all about, let's check out the tool. 
 
-## Installing the patching tool
+## Installing the patching tool [](id=installing-the-patching-tool)
 
 If you're using a Liferay bundle, congratulations! The patching tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
@@ -75,7 +75,7 @@ you'd issue this command:
 In all, this is pretty simple. Now let's see how to use the patching tool to get
 your patches installed. 
 
-## Installing patches
+## Installing patches [](id=installing-patches)
 
 The absolute first thing you must do when installing one or more patches is to
 shut down your server. On Windows operating systems, files that are in use are
@@ -125,7 +125,7 @@ Once your patches have been installed, you can verify them by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
 installed patches. Next, let's look now at how to manage your patches. 
 
-### Handling hot fixes and patches
+### Handling hot fixes and patches [](id=handling-hot-fixes-and-patches)
 
 As stated above, hot fixes are short term fixes provided as quickly as possible
 and fix packs are larger bundles of hot fixes provided to all customers at
@@ -140,7 +140,7 @@ If a new version of a fix pack is released, you can use the patching tool to
 install it. The patching tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Fix pack dependencies
+### Fix pack dependencies [](id=fix-pack-dependencies)
 
 Some fix packs require other fix packs to be installed first. If you attempt to
 install a fix pack that depends on another fix pack, the patching tool will
@@ -150,7 +150,7 @@ folder, the patching tool will install them.
 
 The patching tool can also remove patches. 
 
-## Removing or reverting patches
+## Removing or reverting patches [](id=removing-or-reverting-patches)
 
 Have you noticed that the patching tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -166,7 +166,7 @@ What we've described so far is the simplest way to use the patching tool, but
 you can also use the patching tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
-## Using profiles with the patching tool
+## Using profiles with the patching tool [](id=using-profiles-with-the-patching-tool)
 
 When you ran the auto-discovery task after installing the patching tool, it
 created a default profile that points to the application server it discovered.

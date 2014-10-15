@@ -66,7 +66,7 @@ role.
 Next, let's learn about the difference between the (portal/site/organization)
 administrator and owner roles that Liferay provides out-of-the-box.
 
-## Out-of-the-box Liferay Roles
+## Out-of-the-box Liferay Roles [](id=out-of-the-box-liferay-roles)
 
 If you navigate to the Control Panel and click on *Roles*, you'll see a list of
 all the roles that have been created in your portal. This list includes roles
@@ -128,7 +128,7 @@ $$$
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-## Defining Permissions on a Role
+## Defining Permissions on a Role [](id=defining-permissions-on-a-role)
 
 Roles serve as repositories of permissions. When a roles is assigned to a user,
 the user receives all the permissions defined by the role. So, to use a role,
@@ -303,7 +303,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-## Permission for Delegating Social Activities Configuration
+## Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activities-configuration)
 
 As of Liferay 6.2, there's a permission that allows site administrators to
 delegate responsibility for configuring social activities to other users. To
@@ -322,7 +322,7 @@ of the permissions and then click *Save*:
 Once these permissions have been assigned to the chosen role, any users assigned
 to the role will be able to manage your site's Social Activities configuration.
 
-## Note About Permissions for Deleting Containers
+## Note About Permissions for Deleting Containers [](id=note-about-permissions-for-deleting-containers)
 
 Liferay Portal contains many types of portal resources upon which permissions
 can be defined. These include both assets and asset containers. The term *asset*
@@ -342,7 +342,7 @@ of the contained assets is *not* a common use case. Nevertheless, it's important
 to note that assets in a container can be indirectly deleted if their asset
 container is deleted.
 
-## Note About the Power Users Role
+## Note About the Power Users Role [](id=note-about-the-power-users-role)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -368,7 +368,7 @@ Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's learn how to configure portal
 password policies.
 
-## Password Policies
+## Password Policies [](id=password-policies)
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration, user
