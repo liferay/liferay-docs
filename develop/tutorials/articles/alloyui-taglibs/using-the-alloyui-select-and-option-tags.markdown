@@ -335,6 +335,6 @@ smooth process.
 
 ## Related Topics
 
- [Using AlloyUI Carousel in a Portlet](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
+ [Using AlloyUI Carousel in a Portlet](/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
  
- [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
