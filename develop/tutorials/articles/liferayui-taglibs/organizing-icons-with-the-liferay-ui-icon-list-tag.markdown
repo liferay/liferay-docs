@@ -86,6 +86,6 @@ your sites icon layout.
 
 ## Related Topics
 
- [Organizing Icons with the Liferay UI Icon Menu Tag](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-menu-tag)
+ [Organizing Icons with the Liferay UI Icon Menu Tag](/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-menu-tag)
 
- [Using Liferay UI Tabs and Sections](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
