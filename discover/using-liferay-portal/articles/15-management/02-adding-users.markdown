@@ -1,4 +1,4 @@
-# Adding Users 
+# Adding Users [](id=adding-users)
 
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the

@@ -1,4 +1,4 @@
-# Audit Trails
+# Audit Trails [](id=audit-trails)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -53,7 +53,7 @@ We'll come back to Tom, Dick and Harry's story later in the chapter. For now,
 let's look at how to install Liferay's audit plugins so you can do the same
 thing Harry's about to do. 
 
-## Installing and Configuring the Audit Plugins
+## Installing and Configuring the Audit Plugins [](id=installing-and-configuring-the-audit-plugins)
 
 Liferay's audit functionality is composed of two parts: a back-end piece that
 hooks into Liferay events and a front-end piece that gives you an interface to
@@ -79,7 +79,7 @@ above, place them in your `portal-ext.properties` file and restart your Liferay
 server. Once it comes up, audit events are captured by Liferay, and you'll be
 able to use them to see what's happening in your portal. 
 
-## Using Audit Events
+## Using Audit Events [](id=using-audit-events)
 
 Now that you're capturing audit events, it's easy to use them to view activities
 in your portal. Navigate to the control panel and you'll find a new entry in the
@@ -113,7 +113,7 @@ which will definitely be the most often triggered event in your portal.
 Now that you know how to browse and view audit events, let's look at searching
 for specific events. 
 
-## Viewing Audit Reports
+## Viewing Audit Reports [](id=viewing-audit-reports)
 
 Finding what you want in a big list of events is, to use the expression, like
 searching for a needle in a haystack. This is why the audit portlet gives you a
@@ -186,7 +186,7 @@ happening in your portal. You can use this information to troubleshoot problems,
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
 
-## Conclusion of the Story
+## Conclusion of the Story [](id=conclusion-of-the-story)
 
 "Okay," says Harry, "let's fire up Liferay's audit system and see if we can
 figure out what happened." 

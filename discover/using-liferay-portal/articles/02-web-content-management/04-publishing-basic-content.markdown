@@ -1,4 +1,4 @@
-# Publishing Basic Content
+# Publishing Basic Content [](id=publishing-basic-content)
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
@@ -74,7 +74,7 @@ where the content will later be displayed. Liferay WCM supports both processes.
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools. 
 
-## Editing Content
+## Editing Content [](id=editing-content)
 
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web

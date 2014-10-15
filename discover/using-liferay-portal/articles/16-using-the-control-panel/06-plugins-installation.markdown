@@ -1,4 +1,4 @@
-# Plugins Installation
+# Plugins Installation [](id=plugins-installation)
 
 The *Plugins Installation* page of the control panel shows all of the plugins
 currently installed. These are divided into tabs for portlets, themes, layout

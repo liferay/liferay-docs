@@ -1,4 +1,4 @@
-# Leveraging Liferay's Multi-Site Capabilities
+# Leveraging Liferay's Multi-Site Capabilities [](id=leveraging-liferays-multi-site-capabilities)
 
 As stated in chapter 1, a site is a set of pages that can be used to publish
 content or applications. Sites can be independent or they can be associated with

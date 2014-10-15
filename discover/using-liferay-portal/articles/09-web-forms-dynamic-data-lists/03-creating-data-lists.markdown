@@ -1,4 +1,4 @@
-# Creating Data Lists
+# Creating Data Lists [](id=creating-data-lists)
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
@@ -38,7 +38,7 @@ But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
 questions bring us to the mecca that is the display side of this equation.
 
-## Using Data List Forms
+## Using Data List Forms [](id=using-data-list-forms)
 
 A nice way to enable people to use your forms is the Dynamic Data List Forms
 portlet. This portlet is tailored to entering new records. When you deploy that
@@ -65,7 +65,7 @@ Liferay Marketplace, grab it and install it.
 You can publish your lists anywhere in your portal too. Read on to find out more
 about that. 
 
-## Using Default Displays
+## Using Default Displays [](id=using-default-displays)
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:

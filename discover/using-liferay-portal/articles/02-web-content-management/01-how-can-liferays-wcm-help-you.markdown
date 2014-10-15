@@ -1,4 +1,4 @@
-# How Can Liferay's WCM Help You?
+# How Can Liferay's WCM Help You? [](id=how-can-liferays-wcm-help-you)
 
 With Liferay's WCM you have the ability to create, edit, stage, publish and
 approve content with easy to learn yet powerful tools. Liferay's WCM streamlines
@@ -19,7 +19,7 @@ Liferay WCM makes this possible include:
 Once you get familiar with Liferay WCM you'll wonder how you ever got along
 without it.  
 
-## What Features Does Liferay WCM Have?
+## What Features Does Liferay WCM Have? [](id=what-features-does-liferay-wcm-have)
 
 Liferay's WCM has a host of features the makes managing the content of your site
 easier.

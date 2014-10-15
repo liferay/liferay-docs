@@ -1,4 +1,4 @@
-# Displaying Site Pages to Mobile Devices
+# Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices)
 
 Mobile device rules allow you to configure sets of rules to alter the behavior
 of the portal based on the device being used to access Liferay. The proportion

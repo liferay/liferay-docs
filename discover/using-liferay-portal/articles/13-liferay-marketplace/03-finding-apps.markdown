@@ -1,4 +1,4 @@
-# Finding Apps
+# Finding Apps [](id=finding-apps)
 
 There are several ways to search for and find apps you are interested in.
 
@@ -18,7 +18,7 @@ There are several ways to search for and find apps you are interested in.
 
 Next, let's talk about app versioning.
 
-## Versions
+## Versions [](id=versions)
 
 Apps are often updated to include new features or fix bugs. Each time an app is
 updated, its version number is changed. The version number is specified by the
@@ -32,7 +32,7 @@ available, depending on the app. Usually, you will want to download and install
 the latest available app for the version of Liferay you are using (See
 Compatibility below).
  
-## Compatibility
+## Compatibility [](id=compatibility)
 
 Some apps are written to work across a wide range of Liferay Platform releases.
 Others are dependent on a specific Liferay Platform release (or a handful of

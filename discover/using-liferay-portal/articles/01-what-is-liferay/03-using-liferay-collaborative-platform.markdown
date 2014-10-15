@@ -1,4 +1,4 @@
-# Using Liferay Portal as a Collaborative Platform
+# Using Liferay Portal as a Collaborative Platform [](id=using-liferay-portal-as-a-collaborative-platform)
 
 Many sites have grown organically. You may have grown your community by using
 separate tools: first a forums application, and then a wiki for collaborative

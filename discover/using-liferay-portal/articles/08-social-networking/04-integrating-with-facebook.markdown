@@ -1,4 +1,4 @@
-# Integrating with Facebook
+# Integrating with Facebook [](id=integrating-with-facebook)
 
 Facebook is currently the number one social network in the world with somewhere
 in the neighborhood of 750 million active users. If you're trying to build a
@@ -6,14 +6,14 @@ community on your portal, you don't want to neglect a bridge to nearly a billion
 possible users. With that in mind, Liferay provides a few easy ways for you to
 integrate your portal with Facebook.
 
-## Facebook Sign On
+## Facebook Sign On [](id=facebook-sign-on)
 
 Like many web sites you may visit, any portal running on Liferay can be set up
 to use Facebook for sign in. This makes it easier for users to sign in to your
 site, since they won't need to remember another user name and password, For more
 information on setting up Facebook sign on, see chapter 15.
 
-## Using Your Portlets as Facebook Applications
+## Using Your Portlets as Facebook Applications [](id=using-your-portlets-as-facebook-applications)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the

@@ -1,4 +1,4 @@
-# Plugin Management
+# Plugin Management [](id=plugin-management)
 
 One of the primary ways of extending the functionality of Liferay Portal is by
 the use of plugins. *Plugin* is an umbrella term for installable portlet, theme,
@@ -7,7 +7,7 @@ comes bundled with a number of functional portlets, themes, layout templates,
 hooks and web modules, plugins provide a means of extending Liferay to be able
 to do almost anything.
 
-## Portlets
+## Portlets [](id=portlets)
 
 Portlets are small web applications that run in a portion of a web page. The
 heart of any portal implementation is its portlets, because all of the
@@ -79,7 +79,7 @@ It is a straightforward task to migrate these applications into Liferay, then
 they can take advantage of the layout, security and administration
 infrastructure that Liferay provides.
 
-## Themes
+## Themes [](id=themes)
 
 ![Figure 13.15: Envision Theme from Liferay's Theme
 Repository](../../images/marketplace-envision-theme.png)
@@ -99,7 +99,7 @@ in [*Liferay in Action*](http://manning.com/sezov).
 ![Figure 13.16: Murali Theme from Liferay's Theme
 Repository](../../images/marketplace-murali-theme.png)
 
-## Layout Templates
+## Layout Templates [](id=layout-templates)
 
 Layout Templates are ways of choosing how your portlets will be arranged on a
 page. They make up the body of your page, the large area into which you can drag
@@ -108,7 +108,7 @@ If you have a complex page layout (especially for your home page), you may wish
 to create a custom layout template of your own. This is covered in [*Liferay in
 Action*](http://manning.com/sezov).
 
-## Hook Plugins
+## Hook Plugins [](id=hook-plugins)
 
 Hook plugins were introduced with Liferay 5.2. As the name implies, they allow
 "hooking" into Liferay's core functionality. This means they enable developers
@@ -118,7 +118,7 @@ also override Liferay's core JSPs with your own. Hooks are very powerful and
 have been designed to replace most of the reasons for using the extension
 environment with something that is easier to use and hot deployable.
 
-## Web Plugins
+## Web Plugins [](id=web-plugins)
 
 Web plugins are regular Java EE web modules designed to work with Liferay.
 Liferay supports integration with various Enterprise Service Bus (ESB)
@@ -126,7 +126,7 @@ implementations, as well as Single Sign-On implementations, workflow engines and
 so on. These are implemented as web modules used by Liferay portlets to provide
 functionality.
 
-## Installing Plugins from Repositories
+## Installing Plugins from Repositories [](id=installing-plugins-from-repositories)
 
 Liferay Portal has a section of the control panel called Plugins Installation,
 which you can find under the Server heading. This section not only allows you to
@@ -201,7 +201,7 @@ when you click on the details of a particular theme) are shown in the list.
 After clicking on the *Install* button for a theme, the theme becomes available
 on the *Look and Feel* tab of any page.
 
-## Installing Plugins Manually
+## Installing Plugins Manually [](id=installing-plugins-manually)
 
 Installing plugins manually is almost as easy as installing plugins via the
 Plugin Installer. There are several scenarios in which you would need to install
@@ -311,7 +311,7 @@ watching the Liferay console, you should see messages like the following:
 The *available for use* message means your plugin was installed correctly and is
 available for use in the portal.
 
-## Plugin Troubleshooting
+## Plugin Troubleshooting [](id=plugin-troubleshooting)
 
 Sometimes plugins fail to install. There can be different reasons for
 installation failure based on several factors, including
@@ -333,7 +333,7 @@ above.
 
 Let's take a look at each of these factors.
 
-### Liferay Configuration Issues
+### Liferay Configuration Issues [](id=liferay-configuration-issues)
 
 +$$$
 
@@ -434,7 +434,7 @@ exists but is blank. Add the property to your `portal-ext.properties` file and
 set its value to the fully qualified path to the auto deploy folder configured
 in your application server.
 
-### Deploy Issues for Specific Containers
+### Deploy Issues for Specific Containers [](id=deploy-issues-for-specific-containers)
 
 Some containers, such as WebSphere®, don't have a hot deploy feature.
 Unfortunately, these containers do not work with Liferay's hot deploy system.
@@ -461,7 +461,7 @@ Now you can deploy plugins using the Plugin Installer portlet or by dropping
 modify them and then copy the result into the destination directory you have
 configured. You may then deploy them from here to your application server.
 
-#### Example: WebSphere &#174; Application Server
+#### Example: WebSphere &#174; Application Server [](id=example-websphere-174-application-server)
 
 1.  If you don't have one already, create a `portal-ext.properties` file in the
     Liferay Home folder of your Liferay installation. Add the following
@@ -519,7 +519,7 @@ Experienced WebSphere system administrators can further automate this by writing
 a script which watches the `websphere-deploy` directory and uses `wsadmin`
 commands to then deploy plugins automatically.
 
-### Changing the Configuration Options in Multiple Places
+### Changing the Configuration Options in Multiple Places [](id=changing-the-configuration-options-in-multiple-places)
 
 Sometimes, especially during development when several people have administrative
 access to the server at the same time, the auto deploy folder location may

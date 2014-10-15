@@ -1,4 +1,4 @@
-# App Servers
+# App Servers [](id=app-servers)
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many enterprises can't do
@@ -11,7 +11,7 @@ Liferay Home folder, databases and Liferay's main configuration file. These were
 touched on in the section on bundles above but we'll look at them in more detail
 now. 
 
-## Liferay Home
+## Liferay Home [](id=liferay-home)
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
 one folder higher than the location of the application server itself. This is
@@ -41,7 +41,7 @@ $$$
 
 Let's move on to examining the database. 
 
-## Liferay's Database
+## Liferay's Database [](id=liferays-database)
 
 As stated above, if you create your database and grant a user ID full access to
 it, Liferay can use that user ID to create its indexes and tables automatically.
@@ -93,7 +93,7 @@ you attempt to install them.
 
 Once you have your database ready, you can install Liferay on your server. 
 
-## Liferay Installation Overview
+## Liferay Installation Overview [](id=liferay-installation-overview)
 
 Before we begin, it's important to go over the various facets of the
 installation. They are: 
@@ -120,7 +120,7 @@ the instructions for your application server. This method uses the setup wizard
 to create a working configuration. We'll go through the steps in order, so first
 we'll look at the options for data sources. 
 
-### Using Data Sources
+### Using Data Sources [](id=using-data-sources)
 
 Liferay comes bundled with its own built-in data source. It's configured by a
 number of properties which are set in a properties file. By default, the setup
@@ -141,7 +141,7 @@ such a big deal.
 Since mail sessions are configured in a similar way to data sources, we'll look
 at them next. 
 
-### Using Mail Sessions
+### Using Mail Sessions [](id=using-mail-sessions)
 
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay's running and it tries to send mail via SMTP to this server. If
@@ -164,7 +164,7 @@ Let's look next at this configuration file and, if you're choosing not to use
 the setup wizard, show you how to get Liferay connected to your database and
 your mail server. 
 
-### The portal-ext.properties File
+### The portal-ext.properties File [](id=the-portal-ext-properties-file)
 
 Liferay's properties files differ from the configuration files of most other
 products in that changing the default configuration file is discouraged. In

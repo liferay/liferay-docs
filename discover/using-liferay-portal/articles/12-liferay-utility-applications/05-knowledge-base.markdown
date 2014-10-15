@@ -1,4 +1,4 @@
-# Knowledge Base
+# Knowledge Base [](id=knowledge-base)
 
 Liferay's Knowledge Base portlet provides a means for creating and organizing
 articles within a site. The knowledge base is perfect for creating and
@@ -13,7 +13,7 @@ organized hierarchically to form complete books or guides. The Knowledge Base
 portlet is available as an app from Liferay Marketplace. Please see chapter 2
 for installation instructions.
 
-## Knowledge Base Display Portlet
+## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
 site pages as well as one that adds a page to the Control Panel. The four
@@ -80,7 +80,7 @@ what a user can do with the Knowledge Base display portlet on a page while the
 admin permissions define what a user can do on the Knowledge Base page of the
 Control Panel.
 
-## Knowledge Base Page of the Control Panel
+## Knowledge Base Page of the Control Panel [](id=knowledge-base-page-of-the-control-panel)
 
 The Knowledge Base page of the Control Panel has two tabs: one for articles and
 one for templates. The articles tab shows all the articles in the knowledge base
@@ -142,7 +142,7 @@ To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
 
-## Knowledge Base Article Portlet
+## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
 article. When you first place this portlet on a page it displays the message
@@ -158,7 +158,7 @@ article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
 view the history of the article or print the article.
 
-## Knowledge Base Section Portlet
+## Knowledge Base Section Portlet [](id=knowledge-base-section-portlet)
 
 The Knowledge Base Section portlet allows administrators to selectively show
 articles associated with a specific section. For example, a news site might have
@@ -185,7 +185,7 @@ an administrator to select a display style (title or abstract), an article
 window state (maximized or normal), how to order the articles, how many articles
 to display per page and whether or not to show pagination.
 
-## Knowledge Base Navigation
+## Knowledge Base Navigation [](id=knowledge-base-navigation)
 
 Wikis often have deeply nested articles that can be hard to find by browsing.
 Liferay's knowledge base's ability to selectively display articles makes it

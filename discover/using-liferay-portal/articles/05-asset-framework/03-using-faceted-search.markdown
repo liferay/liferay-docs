@@ -1,4 +1,4 @@
-# Using Faceted Search
+# Using Faceted Search [](id=using-faceted-search)
 
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
@@ -22,7 +22,7 @@ powerful, faceted search function, which means you can drill down through the
 different types of content, tags, and categories to refine your search and find
 what you want. Let's see how to use it. 
 
-## Searching for Portal Content
+## Searching for Portal Content [](id=searching-for-portal-content)
 
 To get started, drop the Search portlet on a page and search for something.
 You'll see a page with results on the right and a collection of *facets* on the
@@ -55,7 +55,7 @@ could be many more as a result of a particular search. We'll look at the
 configuration options later in the chapter. For now, let's see how drilling down
 works. 
 
-## Drilling Down to the Data You Want
+## Drilling Down to the Data You Want [](id=drilling-down-to-the-data-you-want)
 
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
@@ -79,7 +79,7 @@ dramatically reduced. In this way, you can interactively tweak the search
 results to narrow them down, making it easier to find that proverbial needle
 within the haystack. 
 
-### Asset Types
+### Asset Types [](id=asset-types)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -95,7 +95,7 @@ wish to tweak the `frequency threshold` and the `max terms` settings to increase
 the number of asset types displayed past the default of 10. This is covered in
 the section below on search options. 
 
-### Asset Tags
+### Asset Tags [](id=asset-tags)
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -104,7 +104,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting `max terms` property.
 
-### Asset Categories
+### Asset Categories [](id=asset-categories)
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
@@ -113,7 +113,7 @@ you're still reading.
 
 Let's move on to advanced searching. 
 
-## Advanced Searching
+## Advanced Searching [](id=advanced-searching)
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -176,7 +176,7 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-## Setting Search Options
+## Setting Search Options [](id=setting-search-options)
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
@@ -434,7 +434,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see,
 it's not as hard as it looks initially.
 
-## Summary
+## Summary [](id=summary)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable

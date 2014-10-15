@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-2)
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
 and customizable virtual shared drive. Liferay 6.1 introduced the ability to

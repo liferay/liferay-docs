@@ -1,4 +1,4 @@
-# Liferay Utility Applications
+# Liferay Utility Applications [](id=liferay-utility-applications)
 
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog is currently packaged with Liferay but will

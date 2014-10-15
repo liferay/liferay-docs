@@ -1,6 +1,6 @@
-# Integrating Liferay Users into Your Enterprise
+# Integrating Liferay Users into Your Enterprise [](id=integrating-liferay-users-into-your-enterprise)
 
-## LDAP
+## LDAP [](id=ldap)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
 LDAP directory. There are two places for you to configure the LDAP settings:
@@ -72,7 +72,7 @@ for setting this. See below for instructions describing how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-### Adding LDAP Servers
+### Adding LDAP Servers [](id=adding-ldap-servers)
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
 If you have more than one, you can arrange the servers by order of preference
@@ -236,7 +236,7 @@ Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-### LDAP Options Not Available in the GUI
+### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui)
 
 Although most of the LDAP configuration can be done from the control panel,
 there are several configuration parameters that are only available by editing
@@ -293,7 +293,7 @@ don't, you can replace the values of these properties with phrases from your
 server's error messages. This will enable Liferay to recognize them. Next, let's
 look at the Single Sign-On solutions Liferay supports.
 
-## SSO
+## SSO [](id=sso)
 
 Single Sign-On solutions allow you to provide a single login credential for
 multiple systems. This allows you to have people authenticate to the Single
@@ -306,7 +306,7 @@ the extension environment. Alternatively, your organization can choose to
 sponsor support for it. Please contact `sales@liferay.com` for more information
 about this.
 
-## Authentication: Central Authentication Service (CAS)
+## Authentication: Central Authentication Service (CAS) [](id=authentication-central-authentication-service-cas)
 
 CAS is an authentication system originally created at Yale University. It is a
 widely-used open source single sign-on solution and was the first SSO product to
@@ -368,7 +368,7 @@ The rest of the settings are various URLs, with defaults included. Change
 finished, click *Save*. After this, when users click the *Sign In* link, they
 will be directed to the CAS server to sign in to Liferay.
 
-## Authentication: Facebook
+## Authentication: Facebook [](id=authentication-facebook)
 
 Liferay Portal also enables users to log in using their Facebook accounts. To
 enable this feature, you simply need to select the *Enable* box and enter the
@@ -381,7 +381,7 @@ Liferay to add a user from Facebook. Once selected, a new user is created by
 retrieving four fields from Facebook (first name, last name, email address and
 gender).
 
-## Authentication: NTLM
+## Authentication: NTLM [](id=authentication-ntlm)
 
 NTLM is a Microsoft protocol that can be used for authentication through
 Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
@@ -401,7 +401,7 @@ will be a computer account, not a user account.
 
 **Service Password:** Enter the password for the service account.
 
-## Authentication: OpenID
+## Authentication: OpenID [](id=authentication-openid)
 
 OpenID is a new single sign-on standard which is implemented by multiple
 vendors. The idea is multiple vendors can implement the standard and then users
@@ -433,7 +433,7 @@ to implement the feature.
 
 OpenID is enabled by default in Liferay but can be disabled here.
 
-## Atlassian Crowd
+## Atlassian Crowd [](id=atlassian-crowd)
 
 Atlassian Crowd is a web-based Single Sign-On product similar to CAS. Crowd can
 be used to manage authentication to many different web applications and
@@ -443,7 +443,7 @@ Because Atlassian Crowd implements an OpenID producer, Liferay works and has
 been tested with it. Simply use the OpenID authentication feature in Liferay to
 log in using Crowd.
 
-## Authentication: OpenSSO
+## Authentication: OpenSSO [](id=authentication-opensso)
 
 OpenSSO is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. Liferay integrates with OpenSSO,
@@ -469,7 +469,7 @@ your OpenSSO server (i.e., only modify the host name portion of the URLs), click
 the *Enabled* check box and then click *Save*. Liferay will then redirect users
 to OpenSSO when they click the *Sign In* link.
 
-## Authentication: SiteMinder
+## Authentication: SiteMinder [](id=authentication-siteminder)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay
 5.2 introduced built-in integration with SiteMinder. SiteMinder uses a custom
@@ -487,7 +487,7 @@ your installation, enter the custom value here.
 When you are finished, click *Save*. Next, let's learn about the SAML 2.0
 Provider EE plugin.
 
-## SAML
+## SAML [](id=saml)
 
 ![EE-only](../../images/ee-feature-web.png)
 
@@ -506,7 +506,7 @@ provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
 Provider.
 
-### Setting up Liferay as a SAML Identity Provider
+### Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
 In order to set Liferay up to act as a SAML Identity Provider, use the following
 steps:
@@ -574,7 +574,7 @@ back to this Liferay instance's Control Panel and add the Service Provider:
 *Control Panel* &rarr; *SAML Admin* &rrar; *Service Provider Connections* &rarr;
 *Add Service Provider*.
 
-### Setting up Liferay as a SAML Service Provider
+### Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
 
 In order to set Liferay up to act as a SAML Service Provider, use the following
 steps. Many of the steps are similar to the ones for setting Liferay up to act
@@ -673,7 +673,7 @@ port 9080 and click *Sign In*, navigate to
 try to access a protected resource URL such as a Control Panel URL. Next, let's 
 examine how to configure portal-wide user settings.
 
-## Users
+## Users [](id=users)
 
 The Users page of Portal Settings has three tabs: Fields, Reserved Credentials
 and Default User Associations.

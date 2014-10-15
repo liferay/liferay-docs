@@ -1,4 +1,4 @@
-# Custom Fields
+# Custom Fields [](id=custom-fields)
 
 Custom fields appear beneath Portal Settings in the Portal section of the
 control panel. Custom fields are a way to add attributes to many types of assets

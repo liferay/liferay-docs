@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary)
 
 So what is Liferay? As you can see, it's hard to describe, because it does so
 much. What we've essentially done is say it's a totally awesome content and

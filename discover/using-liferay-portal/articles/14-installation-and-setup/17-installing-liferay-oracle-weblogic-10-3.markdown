@@ -1,4 +1,4 @@
-# Installing Liferay on Oracle WebLogic 10.3
+# Installing Liferay on Oracle WebLogic 10.3 [](id=installing-liferay-on-oracle-weblogic-10-3)
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay.
@@ -32,7 +32,7 @@ $$$
 
 Let's get started by installing the JAR files Liferay needs.
 
-## Dependency Jars
+## Dependency Jars [](id=dependency-jars)
 
 Liferay needs the JAR files contained in the Liferay Dependencies Archive and
 the driver JAR file applicable for your database.
@@ -50,7 +50,7 @@ So far so good. Your JAR files are in place and ready for Liferay.
 Start Oracle WebLogic if you want to configure your database and/or mail session
 within Oracle WebLogic.
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -90,7 +90,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -107,7 +107,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-## Domain Configuration - Continued
+## Domain Configuration - Continued [](id=domain-configuration-continued)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -149,7 +149,7 @@ data source and mail session from Liferay Portal.
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 This section provides instructions for deploying Liferay to your application
 server domain.

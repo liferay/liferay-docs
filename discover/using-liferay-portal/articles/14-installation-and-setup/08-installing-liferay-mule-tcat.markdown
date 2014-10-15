@@ -1,4 +1,4 @@
-# Installing Liferay on Mule Tcat
+# Installing Liferay on Mule Tcat [](id=installing-liferay-on-mule-tcat)
 
 Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
 source portal, and Tcat Server, an enterprise grade administration console for
@@ -63,7 +63,7 @@ Solaris and Linux (32 and 64-bit) as well as a manual installation zip.
 After obtaining the software bundles, you can proceed with installation and
 configuration of the Administration Console.
 
-## Installing the Administration Console on Windows
+## Installing the Administration Console on Windows [](id=installing-the-administration-console-on-windows)
 
 For Windows, Tcat comes with an installer to assist with installation and
 configuration. After downloading, execute the installer, accepting the
@@ -135,7 +135,7 @@ You may choose to customize the shortcut location or accept the default.
 After configuring the shortcuts, the Tcat Server Windows installer performs the
 installation as previously configured.
 
-## Installing the Administraton Console on Linux (Ubuntu)
+## Installing the Administraton Console on Linux (Ubuntu) [](id=installing-the-administraton-console-on-linux-ubuntu)
 
 For Linux, Tcat comes with an installer to assist with installation and
 configuration. After downloading, execute the installer, accepting the
@@ -233,7 +233,7 @@ and you may choose to not create the symbolic link.
 
 Now that Tcat is installed, you can add Liferay to it. 
 
-## Adding Liferay Portal Packages
+## Adding Liferay Portal Packages [](id=adding-liferay-portal-packages)
 
 After completing the TcatServer Administration Console installation, you can
 configure the Liferay Portal packages for Tcat.
@@ -282,7 +282,7 @@ during the installation process.
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
 
-## Tcat Server Managed Server Installation
+## Tcat Server Managed Server Installation [](id=tcat-server-managed-server-installation)
 
 The steps to install the Tcat Server managed server are quite similar to those
 for installing the Tcat Server Administration Console.
@@ -343,7 +343,7 @@ To:
 By modifying the `common.loader` property, you instruct Tcat Server to load
 everything in the `lib/ext` folder as part of the classpath.
 
-## Registering the Managed Server
+## Registering the Managed Server [](id=registering-the-managed-server)
 
 After completing the installation process and starting the appropriate
 TcatServer processes, open a browser to `[SERVER NAME]:[PORT]/console`. Using
@@ -414,7 +414,7 @@ More information is available at
 -   [Setting Security on Repository
     Artifacts](http://www.mulesoft.org/documentation/display/TCAT/Setting+Security)
 
-## Deploying Liferay Portal
+## Deploying Liferay Portal [](id=deploying-liferay-portal)
 
 As part of the installation process, the current version of Liferay Portal and a
 number of Liferay Plugins have been provisioned into the Tcat repository. You
@@ -508,7 +508,7 @@ access Liferay Portal on the target Tomcat instance.
 
 ![Figure 14.35: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
 
-## Deploying Liferay Plugins on Mule Tcat
+## Deploying Liferay Plugins on Mule Tcat [](id=deploying-liferay-plugins-on-mule-tcat)
 
 Liferay Portal Tcat Edition works with all the appropriate Liferay EE Plugins,
 including:

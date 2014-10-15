@@ -1,4 +1,4 @@
-# Targeted Vocabularies
+# Targeted Vocabularies [](id=targeted-vocabularies)
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -17,7 +17,7 @@ vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
 
-## Single and Multi-valued Vocabularies
+## Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies)
 
 You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
@@ -32,7 +32,7 @@ Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
 single value vocabularies or use the default option to set multi-value
 vocabularies.
 
-## Separated Widgets
+## Separated Widgets [](id=separated-widgets)
 
 The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and

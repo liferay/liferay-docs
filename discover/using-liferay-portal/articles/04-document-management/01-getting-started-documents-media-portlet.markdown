@@ -1,4 +1,4 @@
-# Getting Started with the Documents and Media Portlet
+# Getting Started with the Documents and Media Portlet [](id=getting-started-with-the-documents-and-media-portlet)
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
@@ -23,7 +23,7 @@ portlet window shows only documents that belong to the selected document type.
 When you add custom document types, which we discuss below, they are added to
 the filter list. Next, let's look at how to navigate around Documents and Media. 
 
-## Navigating the Documents and Media Portlet
+## Navigating the Documents and Media Portlet [](id=navigating-the-documents-and-media-portlet)
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -71,7 +71,7 @@ at once, you can use the navigation tool at the bottom of the portlet window to
 either switch your view to another page or configure the page to display more
 documents per page. 
 
-### Actions
+### Actions [](id=actions)
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -94,7 +94,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 **Delete:** allows you to remove a document or folder from the portlet. You can
 delete multiple documents and folders at the same time.
 
-### Add
+### Add [](id=add)
 
 From the Add button, you can add documents, folders and shortcuts just like on
 your local file system.
@@ -134,7 +134,7 @@ upload, you can select that document type from the Add menu. This will associate
 the metadata fields associated with the document type to your document and you
 will be asked to fill out the fields.
 
-### Sort
+### Sort [](id=sort)
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the Sort By menu. You can sort by title, create date, modified
@@ -151,7 +151,7 @@ downloaded.
 
 **Size:** lets you sort documents by how much disk space they use.
 
-### Manage
+### Manage [](id=manage)
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.

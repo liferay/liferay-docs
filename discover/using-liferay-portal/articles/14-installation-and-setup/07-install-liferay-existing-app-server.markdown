@@ -1,4 +1,4 @@
-# Installing Liferay on an Existing Application Server
+# Installing Liferay on an Existing Application Server [](id=installing-liferay-on-an-existing-application-server)
 
 This section contains detailed instructions for installing Liferay Portal using
 its .war file distribution. This allows system administrators to deploy Liferay
@@ -6,7 +6,7 @@ in existing application server installations. It is recommended that you have a
 good understanding of how to deploy Java EE applications in your application
 server of choice.
 
-## Installing Liferay in Five Easy Steps
+## Installing Liferay in Five Easy Steps [](id=installing-liferay-in-five-easy-steps)
 
 There are five generic steps to installing Liferay on an existing application
 server:

@@ -1,4 +1,4 @@
-# Configuring Assets to Use Workflow Process Definitions
+# Configuring Assets to Use Workflow Process Definitions [](id=configuring-assets-to-use-workflow-process-definitions)
 
 Most of your workflow configuration is done via the control panel. Everything
 you need to do in the portal can be done through simple GUI controls.
@@ -26,7 +26,7 @@ individually through the *Workflow Configuration* page.
 Clicking on *Submissions* will let you view any currently pending assets or any
 assets which were previously approved.
 
-## Configuring Workflow
+## Configuring Workflow [](id=configuring-workflow)
 
 After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Workflow Configuration* and tweak the definitions
@@ -40,7 +40,7 @@ any site in the portal. All the options under that heading, including Workflow
 Configuration, now apply to that particular site. Using workflow is just as
 easy. 
 
-## My Workflow Tasks
+## My Workflow Tasks [](id=my-workflow-tasks)
 
 My Workflow Tasks is a personalized version of the Workflow Tasks and it's found
 in your personal section of the control panel. Here are specific tasks which
@@ -53,7 +53,7 @@ It's here workflow users review and approve content. By clicking on the actions
 next to a piece of content, a user can view the content, then choose to approve
 or reject it and add comments. 
 
-## My Submissions
+## My Submissions [](id=my-submissions)
 
 My Submissions is found under your user's personal information in the control
 panel. From this screen you can view any assets  you have submitted to review.
@@ -66,7 +66,7 @@ Page](../../images/kaleo-workflow-my-submissions.png)
 Besides viewing your work, you can also withdraw a submission from the review
 process by clicking on *Withdraw Submission* from the *Pending* tab.
 
-## Using Kaleo Workflow Processes in Liferay Portal
+## Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
 
 Before workflow can be used, you must define which types of assets on the portal
 are workflow-enabled. If you have created additional definitions, you must also

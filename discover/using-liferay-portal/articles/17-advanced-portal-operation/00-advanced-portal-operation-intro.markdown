@@ -1,4 +1,4 @@
-# Advanced Portal Operation
+# Advanced Portal Operation [](id=advanced-portal-operation)
 
 In this chapter we discuss several advanced features of Liferay Portal,
 including audit trails and portal maintainence, backup, and logging. Audit

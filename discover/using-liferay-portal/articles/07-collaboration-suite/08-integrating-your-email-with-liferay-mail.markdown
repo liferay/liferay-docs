@@ -1,4 +1,4 @@
-# Integrating Your Email with Liferay Mail
+# Integrating Your Email with Liferay Mail [](id=integrating-your-email-with-liferay-mail)
 
 Liferay's Mail portlet enables your users to interact with their email using an
 easy to use, ubiquitous web interface. If your mail system supports the IMAP

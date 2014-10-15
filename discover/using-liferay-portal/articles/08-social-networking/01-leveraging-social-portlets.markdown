@@ -1,4 +1,4 @@
-# Leveraging Social Portlets, Activities Tracking and User Connections
+# Leveraging Social Portlets, Activities Tracking and User Connections [](id=leveraging-social-portlets-activities-tracking-and-user-connections)
 
 Liferay has many portlets available for social interaction and collaboration.
 Some of these portlets are designed to help you work together as a team, while
@@ -18,7 +18,7 @@ the portlet to other web sites. They do not have any way to change options like
 feed length or display styles. Some styling changes, however, can be made
 through custom CSS.
 
-## Installing the Social Portlets
+## Installing the Social Portlets [](id=installing-the-social-portlets)
 
 The social portlets are all included with the Liferay Community Edition
 distribution, but need to be installed separately for Enterprise Edition. If
@@ -33,7 +33,7 @@ select the latest version of the Social Networking Portlet and click *Install*.
 Once the install process finishes, you can start using the social networking
 portlets. 
 
-## Using Social Networking on Public Pages
+## Using Social Networking on Public Pages [](id=using-social-networking-on-public-pages)
 
 There are several social portlets that are designed for use on public portal
 pages. The goal of these is to use social connections to help a group work
@@ -126,7 +126,7 @@ using the GeoLite City database, use the following steps:
 Next, let's look at the social networking portlets designed for use on personal
 pages.
 
-## Using Social Networking on Personal Pages
+## Using Social Networking on Personal Pages [](id=using-social-networking-on-personal-pages)
 
 In addition to the portlets available for general use, there are a handful that
 can only be used on personal pages. These include the Summary, Wall, Friends,
@@ -162,7 +162,7 @@ Now that we've discussed the functions of the suite of social networking
 portlets that ships with Liferay, let's put them all together and make a social
 web site.
 
-## Liferay's Social Tools in Action
+## Liferay's Social Tools in Action [](id=liferays-social-tools-in-action)
 
 To get started with Liferay's social features, let's set up the public pages of
 our users' personal sites to include social apps. Because of Liferay's flexible
@@ -170,7 +170,7 @@ page layout options, we have a large number of options for how to set the pages
 up. For simplicity's sake, we'll make something that's fairly similar to the
 original Facebook layout.
 
-### Setting Up Users' Personal Pages
+### Setting Up Users' Personal Pages [](id=setting-up-users-personal-pages)
 
 Before we start adding portlets to pages, we should configure Liferay so that
 everyone (or some subset of everyone) has the same social features. We have two
@@ -237,7 +237,7 @@ User Groups section. Now all users on the portal get a Social Profile page. Now
 the question is, how do we encourage users to visit each others fancy new
 profile pages?
 
-### Connecting Users Through Collaboration
+### Connecting Users Through Collaboration [](id=connecting-users-through-collaboration)
 
 There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can

@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-10)
 
 In this chapter, we examined two Liferay utility applications: the Software
 Catalog and the Knowledge Base. The Software Catalog allows you to define a set

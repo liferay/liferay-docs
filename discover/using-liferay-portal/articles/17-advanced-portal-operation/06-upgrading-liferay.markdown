@@ -1,4 +1,4 @@
-# Upgrading Liferay
+# Upgrading Liferay [](id=upgrading-liferay)
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all
 you need to follow to upgrade a standard Liferay installation. Things do get
@@ -28,7 +28,7 @@ a 6.1 installation. If you're running a previous version of Liferay and need to
 upgrade to 6.0 first, please see the instructions in the previous version of
 this document. 
 
-## Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1
+## Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 [](id=preparing-to-upgrade-liferay-portal-6-0-to-liferay-portal-6-1)
 
 There are a few things you should prepare before you actually perform the
 upgrade. Specifically, you need to make sure you've migrated to permission
@@ -37,7 +37,7 @@ defaults, and cataloged all the plugins you have installed. After you've
 performed these three tasks, you're ready to upgrade. Let's look at them one by
 one. 
 
-## Migrate to Algorithm 6
+## Migrate to Algorithm 6 [](id=migrate-to-algorithm-6)
 
 If your Liferay installation has existed for a while, you may be on a different
 permission algorithm than the one that's available in Liferay Portal 6.1.
@@ -90,7 +90,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 you'll need to explicitly set your Image Gallery storage option. 
 
-## Migrate Your Image Gallery Images
+## Migrate Your Image Gallery Images [](id=migrate-your-image-gallery-images)
 
 Liferay 6.1 introduces a major change to how Liferay handles files. No longer do
 we have a separate Document Library and Image Gallery; instead, these have been
@@ -120,7 +120,7 @@ likely already in your `portal-ext.properties` file.
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
-## Review the New 6.1 Properties Defaults
+## Review the New 6.1 Properties Defaults [](id=review-the-new-6-1-properties-defaults)
 
 The next thing you'll need to look at are the defaults that have changed from
 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source.
@@ -154,7 +154,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-## Catalog All the Plugins You Have Installed
+## Catalog All the Plugins You Have Installed [](id=catalog-all-the-plugins-you-have-installed)
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -181,7 +181,7 @@ repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-### Upgrading a Bundle
+### Upgrading a Bundle [](id=upgrading-a-bundle)
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
@@ -222,7 +222,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server. 
 
-### Upgrading Using a .war File
+### Upgrading Using a .war File [](id=upgrading-using-a-war-file)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 

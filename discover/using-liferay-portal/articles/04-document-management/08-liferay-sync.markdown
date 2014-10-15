@@ -1,4 +1,4 @@
-# Liferay Sync
+# Liferay Sync [](id=liferay-sync)
 
 Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
 GA2 CE and EE that synchronizes files between your Liferay server and users'
@@ -13,7 +13,7 @@ supported environments. Liferay Sync stores files locally so that they're always
 available, even when you're offline. It automatically synchronizes your files
 upon reconnection.
 
-## How Does it Work?
+## How Does it Work? [](id=how-does-it-work)
 
 Liferay Sync manages documents and site information through Liferay 6.1's
 built-in web services. Clients securely communicate to Liferay using
@@ -47,7 +47,7 @@ you've installed Social Office CE on Liferay Portal EE, then you can sync any
 site from Portal, but only one from Social Office. If you've installed Social
 Office EE on Liferay Portal EE, then you can sync any and all sites.
 
-## Installing Liferay Sync
+## Installing Liferay Sync [](id=installing-liferay-sync)
 
 For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 Page](http://www.liferay.com/products/liferay-sync/features), and click *Get it
@@ -59,7 +59,7 @@ available. Follow the on-screen instructions of the installer wizard to
 configure your client to connect to an existing Liferay 6.1 deployment using
 your Liferay credentials.
 
-### Windows
+### Windows [](id=windows)
 
 Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
@@ -81,7 +81,7 @@ server's URL and the account credentials with which it should authenticate.
 
 The options for the Mac OS application installer are similar.
 
-### Mac OS
+### Mac OS [](id=mac-os)
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image, and opens a window showing the contents of the image. To
@@ -103,7 +103,7 @@ you wish to change any of your settings, click the icon to open the Liferay Sync
 menu and click on *Preferences*. Note that on Windows, the Sync menu says
 *Properties*, not *Preferences*.
 
-### Mobile
+### Mobile [](id=mobile)
 
 For iOS, visit the App Store, search for Liferay, and install the Liferay Sync
 App.
@@ -113,7 +113,7 @@ App.
 
 Once the mobile apps are installed, follow the on-screen instructions as below.
 
-## Using Liferay Sync on the Desktop
+## Using Liferay Sync on the Desktop [](id=using-liferay-sync-on-the-desktop)
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's
 running. A green checkmark means Liferay Sync has a working connection to your
@@ -188,7 +188,7 @@ link to Liferay's home page.
 from [liferay.com](http://www.liferay.com) and allows you to set whether or not
 Liferay Sync should automatically check for updates.
 
-### Using Your Sync Folder
+### Using Your Sync Folder [](id=using-your-sync-folder)
 
 Once Liferay Sync has been configured and is running, any files you add to or
 modify in your Sync folder are automatically detected and uploaded to your
@@ -231,7 +231,7 @@ You'll see that it now says *second test*--your edit was uploaded to the server.
 You can be confident that this edit was also downloaded by all other Liferay
 Sync clients connected to your site. 
 
-### Demonstrating Liferay Sync Permissions
+### Demonstrating Liferay Sync Permissions [](id=demonstrating-liferay-sync-permissions)
 
 Liferay Sync uses the default Liferay permissions to determine which files and
 folders are synced to the user's machine. This means that whatever files a user
@@ -263,14 +263,14 @@ credentials of another user who doesn't belong to the *Secret Site*, the
 a Liferay Sync folder that can only be accessed by the *secretagent* user and
 your administrators.
 
-## Using Liferay Sync Mobile
+## Using Liferay Sync Mobile [](id=using-liferay-sync-mobile)
 
 Once you've installed Liferay Sync on your Android or iOS mobile environment,
 you'll be able to access the same functionality that's available when using Sync
 on a desktop environment. However, the interface differs from that of the Sync
 desktop clients.
 
-### Android
+### Android [](id=android)
 
 After installing Liferay Sync for Android, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
@@ -394,7 +394,7 @@ you quick offline access to them. You can view the contents of items in the
 
 Next, let's look at the iOS Sync app.
 
-### iOS
+### iOS [](id=ios)
 
 After installing Liferay Sync for iOS, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.

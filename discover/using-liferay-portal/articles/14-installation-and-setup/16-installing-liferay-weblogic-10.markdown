@@ -1,4 +1,4 @@
-# Installing Liferay on WebLogic 10
+# Installing Liferay on WebLogic 10 [](id=installing-liferay-on-weblogic-10)
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay. For example, if your domain location is
@@ -27,7 +27,7 @@ $$$
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on WebLogic.
 
-## Dependency Jars
+## Dependency Jars [](id=dependency-jars)
 
 Liferay requires several `.jar` files including the Liferay Dependency JARs and
 a JAR file for your database driver. The following steps describe how to install
@@ -52,7 +52,7 @@ these `.jar` files properly.
 Now that you have your WebLogic installation is loaded up with JAR files for
 Liferay to use, let's consider how to configure your database.
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -89,7 +89,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 Great work! Your data source can now be managed from within WebLogic. Next,
 let's consider the mail session for your domain.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -116,7 +116,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now you have your mail session specified and ready for Liferay to use. 
 
-## Domain Configuration - Continued
+## Domain Configuration - Continued [](id=domain-configuration-continued)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -148,7 +148,7 @@ data source and mail session from Liferay Portal.
 Liferay can now communicate with your data source and mail session. It's now
 time to deploy Liferay!
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 Follow the instructions in this section to deploy Liferay Portal to your domain.
 

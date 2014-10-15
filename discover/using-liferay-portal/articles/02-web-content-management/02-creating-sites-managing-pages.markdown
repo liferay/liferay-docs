@@ -1,4 +1,4 @@
-# Creating Sites and Managing Pages
+# Creating Sites and Managing Pages [](id=creating-sites-and-managing-pages)
 
 With most products, you would learn what the software can do in terms of setting
 up your users and security model and then start building your system. You'd
@@ -48,7 +48,7 @@ You can also customize the logo in the top left corner of every page by
 selecting *Display Settings* under the *Miscellaneous* tab on the panel to the
 right. Once you've made the changes, we can begin creating pages.
 
-## Creating and Managing Pages
+## Creating and Managing Pages [](id=creating-and-managing-pages)
 
 You have a few options for accessing the page creation interface. To simplify
 this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are
@@ -94,7 +94,7 @@ members and members of the organization.
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
 
-### More Page Management Tools
+### More Page Management Tools [](id=more-page-management-tools)
 
 From the Manage Site Pages dialog box, you can add a page to the site by
 clicking the *Add Page* button. Because *Public Pages* is selected on the left,
@@ -151,7 +151,7 @@ example.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
-#### Backing Up and Restoring Pages
+#### Backing Up and Restoring Pages [](id=backing-up-and-restoring-pages)
 
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
 labeled *Export* and *Import*. The Export button exports the pages you create
@@ -189,7 +189,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel. 
 
-#### Customizing the Look and Feel
+#### Customizing the Look and Feel [](id=customizing-the-look-and-feel)
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
 tab. On this tab, you're presented with an interface that allows you to choose a
@@ -229,7 +229,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-#### Using a Custom Logo
+#### Using a Custom Logo [](id=using-a-custom-logo)
 
 If you want to use your own logo for a specific site, use the Logo tab. Adding a
 custom logo is easy: select the Logo tab and browse to the location of your
@@ -246,7 +246,7 @@ own logo* option is disabled in *Portal Settings*. It is also not available for
 the default site -- only newly created sites and user pages have the option to
 have the name display.
 
-#### JavaScript
+#### JavaScript [](id=javascript)
 
 If you click on *JavaScript* from the Site Pages interface for a page set
 (either Public Pages or Private Pages), you'll find a window where you can enter
@@ -263,7 +263,7 @@ and you can add some dynamic features to your site's pages.
 Next, let's look at an advanced feature of the Site Pages interface: merging the
 current site's pages with the pages of the default site.
 
-#### Advanced
+#### Advanced [](id=advanced)
 
 If you click on *Advanced* from the Site Pages interface for a public page set,
 you'll find an option to merge the public pages of your portal's default site
@@ -304,7 +304,7 @@ enabled, no additional pages are added to the default site's navigation menu.
 
 Next, let's examine how to configure individual pages.
 
-### Changing Options for Individual Pages
+### Changing Options for Individual Pages [](id=changing-options-for-individual-pages)
 
 When you select a single page, some different options appear. Let's look at what
 these do. 
@@ -369,7 +369,7 @@ users to be able to customize.
 Note that the *Manage &rarr; Page Layout* menu directs you to the same Layout
 tab that's in *Manage &rarr; Page*. 
 
-### Modifying Page Layouts
+### Modifying Page Layouts [](id=modifying-page-layouts)
 
 Page layouts allow you to arrange your pages so the content appears the way you
 want it to. Liferay comes with many layouts already defined. Developers can
@@ -394,7 +394,7 @@ you virtually unlimited options for laying out your pages.
 
 The next option in the *Manage* menu is page customizations.  
 
-### Page Customizations
+### Page Customizations [](id=page-customizations)
 
 Page Customizations are a new feature in Liferay 6.1. With page customizations,
 any user with the appropriate permissions can create personalized versions of
@@ -420,7 +420,7 @@ section of chapter 6.
 Now that you know how to enable page customizations, let's look at the settings
 for the site as a whole.
 
-### Configuring Site Settings
+### Configuring Site Settings [](id=configuring-site-settings)
 
 As with Site Pages, you can access Site Settings through the Control Panel or
 directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
@@ -529,7 +529,7 @@ can provide the most relevant content to your users.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-### Page Templates and Site Templates
+### Page Templates and Site Templates [](id=page-templates-and-site-templates)
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
 pages on larger portals. As you continue to add pages to sites in your portal,
@@ -540,7 +540,7 @@ site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
 a full explanation of Page Templates and Site Templates, see chapter 3. 
 
-### Site Content
+### Site Content [](id=site-content)
 
 Liferay 6.1 makes it easier to access Web Content management without using the
 Control Panel. You can now click *Manage* and then *Site Content* to access the
@@ -568,7 +568,7 @@ You can manage the following kinds of content:
 
 For details about Liferay's social collaboration suite, see chapter 10. 
 
-## Creating the Nose-ster Pages
+## Creating the Nose-ster Pages [](id=creating-the-nose-ster-pages)
 
 There are a lot of other things you can do beyond placing portlets on a page. So
 let's start working on the Nose-ster site. You can do this by going up to the
@@ -604,7 +604,7 @@ hierarchy. Some examples of that are in Liferay's plugin repositories.
 For now, click *Return to full page*. You should be able to define and manage
 pages in Liferay at this point so let's look at what you'd put on a page. 
 
-### Portlets
+### Portlets [](id=portlets)
 
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets.
@@ -631,7 +631,7 @@ If the layout options provided aren't enough, you can even develop your own.
 More information about that can be found in Liferay's official guide to
 development, [*Liferay in Action*](http://manning.com/sezov).
 
-### Page Permissions
+### Page Permissions [](id=page-permissions)
 
 By default, public pages are just that: public. They can be viewed by anybody,
 logged in or not logged in. And private pages are really only private from

@@ -1,4 +1,4 @@
-# Using Liferay Portal as a Content Management System
+# Using Liferay Portal as a Content Management System [](id=using-liferay-portal-as-a-content-management-system)
 
 One of the most common uses of Liferay Portal is as a content management system.
 In fact, many use Liferay Portal just for content management, whether it be web
@@ -12,7 +12,7 @@ So what can it do? We'll answer that question, but take it in two parts. First,
 we'll look at Liferay Portal's role as a web content management system, and then
 we'll see how Liferay Portal excels at file-based content management. 
 
-## Effectively Building a Site with Liferay WCM
+## Effectively Building a Site with Liferay WCM [](id=effectively-building-a-site-with-liferay-wcm)
 
 The first thing you'll want to understand about Liferay WCM is that it scales to
 work for the tiniest of sites all the way up to the largest of sites. For
@@ -114,7 +114,7 @@ related assets, and more.
 This is just the web content portion of Liferay's content management system.
 Liferay Portal is also great at managing file-based content. 
 
-## Keeping Track of Documents, Images, Video, and More
+## Keeping Track of Documents, Images, Video, and More [](id=keeping-track-of-documents-images-video-and-more)
 
 It's rare to find in an open source project a full-featured content management
 system. Most of the time, you'll find web content management systems and

@@ -1,4 +1,4 @@
-# Advanced Content with Structures and Templates
+# Advanced Content with Structures and Templates [](id=advanced-content-with-structures-and-templates)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -21,7 +21,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-## Using Structures
+## Using Structures [](id=using-structures)
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -56,7 +56,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-### Editing a Structure
+### Editing a Structure [](id=editing-a-structure)
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -133,7 +133,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at the form elements.
 
-### Editing Form Elements
+### Editing Form Elements [](id=editing-form-elements)
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -188,7 +188,7 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-#### Structure Default Values
+#### Structure Default Values [](id=structure-default-values)
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
@@ -225,7 +225,7 @@ settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted.
 
-### Assigning Permissions
+### Assigning Permissions [](id=assigning-permissions)
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -243,7 +243,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-## Using Templates
+## Using Templates [](id=using-templates)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -257,7 +257,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-### Template Types (VM, XSL, FTL and CSS)
+### Template Types (VM, XSL, FTL and CSS) [](id=template-types-vm-xsl-ftl-and-css)
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -289,7 +289,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-### Adding Templates
+### Adding Templates [](id=adding-templates)
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -370,7 +370,7 @@ When this template is rendered, it looks something like this:
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
 
-## Assigning Template Permissions
+## Assigning Template Permissions [](id=assigning-template-permissions)
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.

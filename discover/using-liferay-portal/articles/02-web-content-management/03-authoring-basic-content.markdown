@@ -1,4 +1,4 @@
-# Authoring Basic Content
+# Authoring Basic Content [](id=authoring-basic-content)
 
 You've been assigned the task to build a web site for an innovative new social
 networking site called Nose-ster. You've decided to take advantage of Liferay
@@ -12,7 +12,7 @@ We'll then take advantage of Liferay's robust structure editor. We'll use
 templates to display the content and then explore some of the advanced
 publishing features such as the built-in workflow and Asset Publisher.
 
-## Creating Content the Simple Way
+## Creating Content the Simple Way [](id=creating-content-the-simple-way)
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has
 made it easier than ever to get content published to your site. Because Liferay
@@ -37,7 +37,7 @@ working on. This heading is called the *context menu selector*: you can change
 the scope of where you'd like to view, edit or create content by using the
 drop-down selector attached to the heading. 
 
-## Rich, WYSIWYG Editing
+## Rich, WYSIWYG Editing [](id=rich-wysiwyg-editing)
 
 Once you have the Nose-ster site selected, click on the *Web Content* link in
 the Control Panel. Next, click the *Add* button under the *Web Content* tab.
@@ -122,7 +122,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-### Creating a Display Page
+### Creating a Display Page [](id=creating-a-display-page)
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can

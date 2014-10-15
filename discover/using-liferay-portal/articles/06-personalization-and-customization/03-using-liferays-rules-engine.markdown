@@ -1,4 +1,4 @@
-# Using Liferay's Rules Engine
+# Using Liferay's Rules Engine [](id=using-liferays-rules-engine)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -6,7 +6,7 @@ Liferay Portal Enterprise Edition provides an implementation of a JSR-94
 compliant rules engine. This rules engine is provided as a Web Plugin and is
 based on the popular open source Drools project. 
 
-## Why Use a Rules Engine?
+## Why Use a Rules Engine? [](id=why-use-a-rules-engine)
 
 If you are not familiar with rules engines, you may be wondering why you would
 want to use one. In most applications, complex rule processing often takes the
@@ -35,7 +35,7 @@ significant amount of money.
 After all this, you may be interested in using Liferay's rules engine, so let's
 get started with it. 
 
-## Installation
+## Installation [](id=installation)
 
 The Drools Web Plugin is available to Liferay Enterprise Edition customers
 through Liferay Marketplace. Its name is `Drools EE`, and you'll find it
@@ -50,7 +50,7 @@ Drools Portlet is available through the Customer Portal.
 
 Let's examine the sample portlet to see how it works. 
 
-## Configuring the Sample Drools Portlet
+## Configuring the Sample Drools Portlet [](id=configuring-the-sample-drools-portlet)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
@@ -102,7 +102,7 @@ Drools Portlet added to the page.
 Now that you can see how it works in practice, let's look closer at the rules
 themselves. 
 
-## Rules Definitions
+## Rules Definitions [](id=rules-definitions)
 
 Rule definitions can be written using Drools' declarative language. Rule files
 are text files that often have a .drl extension. A rule file can contain

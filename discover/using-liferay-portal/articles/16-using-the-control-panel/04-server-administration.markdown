@@ -1,11 +1,11 @@
-# Server Administration
+# Server Administration [](id=server-administration)
 
 The Server Administration page of the control panel lets you perform various
 tasks related to the portal server itself, as opposed to the resources in the
 portal. Clicking the link makes this clear: you're immediately presented with a
 graph showing the resources available in the JVM.
 
-## Resources
+## Resources [](id=resources)
 
 The first tab is called *Resources* . This tab contains the aforementioned graph
 plus several server wide actions that an administrator can execute. These are:
@@ -44,7 +44,7 @@ the Guest and User roles for all portlets. Likewise the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
 
-## Log Levels
+## Log Levels [](id=log-levels)
 
 The Log Levels tab of the Server Administration page allows you to dynamically
 modify the log levels for any class hierarchy in the portal. If you have custom
@@ -55,7 +55,7 @@ log levels changed. If you are testing something specific, it is much better to
 be as specific as you can when you change log levels. Modifying them too high in
 the hierarchy generates a lot more log messages than you need.
 
-## Properties
+## Properties [](id=properties)
 
 Liferay and the JVM contain many settings which are defined as properties. There
 are two subtabs of the properties tab of the Server Administration page: one
@@ -72,7 +72,7 @@ properties in chapter 20. If you need to check the current value of a particular
 property, it can be viewed from this screen without having to shut down the
 portal or open any properties files.
 
-## Captcha
+## Captcha [](id=captcha)
 
 By default, Liferay ships with its own simple captcha service which is designed
 to thwart bots from registering for accounts on sites powered by Liferay. If you
@@ -83,7 +83,7 @@ Simply check the *Enable ReCaptcha* box and enter your public and private keys
 into the provided fields, then click *Save*. Liferay Portal will then use
 reCaptcha instead of simple captcha.
 
-## Data Migration
+## Data Migration [](id=data-migration)
 
 If you are upgrading from a previous release of Liferay Portal or if you need to
 migrate your data from one system to another, the Data Migration tab helps you
@@ -109,7 +109,7 @@ and then restart.
 
 Similarly, you can migrate images from the Image Gallery in the same manner.
 
-## File Uploads
+## File Uploads [](id=file-uploads)
 
 Since Liferay allows users to upload files in various places, you may want to
 lock down the type of files and the size of files users are allowed to upload.
@@ -119,7 +119,7 @@ Liferay. You can limit the allowed file extensions generally or by application.
 You have a lot of flexibility as to how you want files to be managed within your
 portal.
 
-## Mail
+## Mail [](id=mail)
 
 Rather than using the `portal-ext.properties` file as we did in the installation
 chapter, you can configure a mail server from the Mail tab of the Server
@@ -131,7 +131,7 @@ can connect to an SMTP server here as well and this is highly recommended.
 Note that if you add your mail server settings here, they will override anything
 in your `portal-ext.properties` file.
 
-## External Services
+## External Services [](id=external-services)
 
 Liferay Portal enables users to upload and share content via the Documents and
 Media library, a customizable and permissionable online repository. Users can
@@ -169,7 +169,7 @@ install it from the binaries:
 Once you've installed these tools, you can use the External Services tab of the
 control panel to configure Liferay to use them.
 
-### OpenOffice/LibreOffice Configuration
+### OpenOffice/LibreOffice Configuration [](id=openoffice-libreoffice-configuration)
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents but they can also be run in "server" mode.
@@ -220,7 +220,7 @@ both in the command to start OpenOffice/LibreOffice in server mode and on the
 control panel's External Services configuration page. When you are finished,
 click *Save*. Now Liferay can perform many types of document conversions.
 
-### ImageMagick Configuration
+### ImageMagick Configuration [](id=imagemagick-configuration)
 
 Once you've installed the correct version of
 [*ImageMagick*](http://www.imagemagick.org) for your operating system, which
@@ -251,7 +251,7 @@ See
 for information on efforts to identify incompatible application versions with
 Liferay.
 
-### Xuggler Configuration
+### Xuggler Configuration [](id=xuggler-configuration)
 
 Once you've installed the correct version of
 [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need
@@ -275,7 +275,7 @@ To configure Liferay to use Xuggler in the control panel, navigate to the
 That's it! You've successfully configured the Documents and Media library to use
 Xuggler for audio and video files.
 
-## Script
+## Script [](id=script)
 
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
@@ -283,7 +283,7 @@ including JavaScript, Groovy, Python, Ruby and Beanshell. For further
 information about Liferay's APIs, see the JavaDoc or [*Liferay in
 Action*](http://manning.com/sezov).
 
-## Shutdown
+## Shutdown [](id=shutdown)
 
 If you ever need to shut down your Liferay Portal server while users are logged
 in, you can use the Shutdown tab to inform your logged-in users of the impending

@@ -1,4 +1,4 @@
-# Accessing Liferay Services
+# Accessing Liferay Services [](id=accessing-liferay-services)
 
 In many cases, you'll want to interact with one of Liferay's many services. This
 is possible from all of the scripting languages supported, but the syntax is a
@@ -29,7 +29,7 @@ example in Java pseudo-code.
 				
 Let's see first how this would work in Beanshell, which is very similar to Java. 
 				
-## Beanshell
+## Beanshell [](id=beanshell)
 
 Beanshell is a Java scripting language that's designed to run Java code with
 little or no changes. In this example, we only have one small change to make
@@ -49,7 +49,7 @@ because Beanshell doesn't support the use of Java Generics.
 Next, we'll show the same thing in Groovy, another scripting language designed
 to be similar to Java. 
 
-## Groovy
+## Groovy [](id=groovy)
 
 Groovy is also based on Java and is perhaps a little easier than Beanshell
 because literally any code written in Java also runs in Groovy. This means we
@@ -81,7 +81,7 @@ The script engine supports more than just Java-like languages. Despite the name,
 you should be aware that Javascript bears little resemblance to Java, but you
 can still use it in Liferay's script engine. 
 
-## JavaScript
+## JavaScript [](id=javascript)
 
 Liferay uses the Rhino Javascript Engine to provide Javascript support in the
 script engine. The following code provides a Javascript version of our original
@@ -98,7 +98,7 @@ Java program.
 	
 You can see the Javascript example is compact. Ruby is even more compact. 
 
-## Ruby
+## Ruby [](id=ruby)
 
 Ruby is supported throgh the use of JRuby and our previous example could be
 implemented in Ruby as follows: 
@@ -109,7 +109,7 @@ implemented in Ruby as follows:
 	
 Python users aren't left out either. 
 
-## Python
+## Python [](id=python)
 
 Lastly, Liferay provides Python support based on Jython and the previous example
 could be implemented with the following code. 

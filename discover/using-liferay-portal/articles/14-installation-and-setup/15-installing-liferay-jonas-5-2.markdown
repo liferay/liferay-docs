@@ -1,4 +1,4 @@
-# Installing Liferay on JOnAS 5.2
+# Installing Liferay on JOnAS 5.2 [](id=installing-liferay-on-jonas-5-2)
 
 JOnAS is somewhat unique among the open-source application servers for two
 reasons: it is built entirely on an OSGi core, allowing for dynamic deployment
@@ -15,7 +15,7 @@ Given the unique nature of the server, there are a few steps to consider in the
 configuration stage. Otherwise, installing on JOnAS follows much the same
 pattern as other servers: configure, copy dependencies and deploy.
 
-## Configuring JOnAS for Liferay
+## Configuring JOnAS for Liferay [](id=configuring-jonas-for-liferay)
 
 A pristine JOnAS installation comes with a number of samples, tutorials and
 template configuration files. A lot of this is unnecessary and irrelevant for
@@ -136,7 +136,7 @@ To turn of HSQL and other JOnAS-level services:
 
 This allows JOnAS to startup appropriately with Liferay installed.
             
-## Configuring Containers in JOnAS
+## Configuring Containers in JOnAS [](id=configuring-containers-in-jonas)
 
 Now that the application server has all extraneous services and applications
 disabled, you can now tweak the configuration of the containers within JOnAS:
@@ -178,7 +178,7 @@ the loader:
 	      
     To ensure the required packages are loaded.
       
-## Starting JOnAS
+## Starting JOnAS [](id=starting-jonas)
 
 Once you have the required configuration in place, all that is left is to copy
 the portal dependencies and the Liferay `.war` file and start the server. JOnAS

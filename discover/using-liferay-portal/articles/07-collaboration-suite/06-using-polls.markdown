@@ -1,4 +1,4 @@
-# Find Out What Others Think or do Using Polls
+# Find Out What Others Think or do Using Polls [](id=find-out-what-others-think-or-do-using-polls)
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of
@@ -28,7 +28,7 @@ several questions inside a nested portlet to create a survey.
 
 We'll begin by creating a poll in the Control Panel.
 
-## Creating a Poll
+## Creating a Poll [](id=creating-a-poll)
 
 In the Control Panel, navigate to the *Polls* link under Content. Click the
 *Add Question* button. A form appears that allows you to fill out all the
@@ -72,7 +72,7 @@ further information about permissions, please see chapters 15 and 16.
 As you can see, creating a poll is fairly straightforward. Next, let's complete
 the two-step process and put your poll on a page.
 
-## Adding a Poll to a Page
+## Adding a Poll to a Page [](id=adding-a-poll-to-a-page)
 
 Now that you have created your poll question, it's time to present it to your
 users. Navigate to your portal and add the Polls Display portlet to a page. It
@@ -121,7 +121,7 @@ You can also manage the Polls Display portlet by clicking the wrench symbol in
 the upper right corner of the portlet's title bar. Now let's see the poll
 results.
 
-## Viewing the Poll Results
+## Viewing the Poll Results [](id=viewing-the-poll-results)
 
 When you create a poll question, it appears in a list in the Control Panel.
 After users vote in the poll, the data is collected here. If you select it, the

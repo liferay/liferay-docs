@@ -1,4 +1,4 @@
-# Editions of Liferay
+# Editions of Liferay [](id=editions-of-liferay)
 
 Liferay ships in two different editions: Liferay Portal Community Edition (CE)
 and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that
@@ -28,7 +28,7 @@ them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
 
-## Liferay's Versioning Schema
+## Liferay's Versioning Schema [](id=liferays-versioning-schema)
 
 Liferay's release process follows a prescribed structure that is consistent from
 one release to the next. Each release has a specific number sequence attached to
@@ -45,7 +45,7 @@ are organized in a straightforward numerical system consisting of a three digit
 number. For example, 6.1.2. These numbers represent the type of the release:
 Major.Minor.Maintenance.
 
-### Major Release
+### Major Release [](id=major-release)
 
 A change in the first digit of the version (e.g., 6.x to 7.x) is a major
 release. This means that:
@@ -56,7 +56,7 @@ release. This means that:
 - There are architectural changes, changes to APIs (as part of the deprecation
   process), or changes to internal schema.
 
-### Minor Release
+### Minor Release [](id=minor-release)
 
 A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor
 release. This means that:
@@ -67,7 +67,7 @@ release. This means that:
 
 - Customers should leverage the upgrade tools and documentation.
 
-### Maintenance Release
+### Maintenance Release [](id=maintenance-release)
 
 A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
 maintenance release. This means that:
@@ -82,7 +82,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-### Release Process
+### Release Process [](id=release-process)
 
 Each version of Liferay has a surname that specifies the expected quality of
 that release. This is needed because pre-releases of Liferay look very much like
@@ -110,7 +110,7 @@ and what it means:
   testers. These releases are stable and are made available via Liferay's
   Downloads page for CE and on the Customer Portal for EE. 
 
-### Comments and Recommendations
+### Comments and Recommendations [](id=comments-and-recommendations)
 
 At this point you might be asking yourself questions like, which version
 should I use? What if I was using a previous version? Will the update to a new

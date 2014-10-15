@@ -1,4 +1,4 @@
-# Plugins Configuration
+# Plugins Configuration [](id=plugins-configuration)
 
 The Plugins Configuration page contains tabs for three types of plugins:
 portlets, themes and layouts. You can use these tabs to view which roles can add

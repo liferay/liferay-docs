@@ -1,4 +1,4 @@
-# Accessing the Liferay Marketplace
+# Accessing the Liferay Marketplace [](id=accessing-the-liferay-marketplace)
 
 There are two ways to access the Marketplace.
 
@@ -9,7 +9,7 @@ There are two ways to access the Marketplace.
 2. Via Liferay--If you have a site up and running based on Liferay, you can use
    the Marketplace section of the control panel to access Marketplace content.
 
-## The Basics
+## The Basics [](id=the-basics)
 
 No matter which method you choose, you will see the same content and apps.
  
@@ -61,7 +61,7 @@ Below the navigation menu is the search bar. This allows you to search for apps
 with specific titles. Type in search terms and click *Search* to perform the
 search.
  
-## Logging In
+## Logging In [](id=logging-in)
 
 You do not need a `liferay.com` account in order to browse the Marketplace.
 However, if you wish to purchase and download an app (or if you are a developer
@@ -71,7 +71,7 @@ and wish to create and upload new apps), you will need to establish a
 click *Sign In*, then *Create Account*, and sign up! Once you are signed in, you
 will be able to fully utilize the Marketplace to find and use Marketplace apps.
  
-## Marketplace Profile
+## Marketplace Profile [](id=marketplace-profile)
 
 On your existing `liferay.com` Home page, you'll notice a new link entitled *App
 Manager*. The App Manager allows you to access information about the apps you've
@@ -86,7 +86,7 @@ public `liferay.com` Profile page.
 
 $$$
 
-## Managing Apps
+## Managing Apps [](id=managing-apps)
 
 The App Manager shows you relevant information related to your usage of
 Marketplace. You'll find three tabs to help you manage your Marketplace apps:
@@ -117,7 +117,7 @@ Clicking on *Add an App* allows you to upload a new app and make it available in
 the marketplace. Please see the Marketplace Developer Guide for more detail on
 authoring your own app.
 
-## Creating a Company
+## Creating a Company [](id=creating-a-company)
 
 To create and register a company with Liferay Marketplace, click the *Create a
 Company* link in the left-hand navigation menu. Your first step is to see if

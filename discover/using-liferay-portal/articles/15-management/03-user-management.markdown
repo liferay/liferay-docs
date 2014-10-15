@@ -1,4 +1,4 @@
-# User Management
+# User Management [](id=user-management)
 
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
@@ -23,7 +23,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-## Organizations 
+## Organizations [](id=organizations)
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and

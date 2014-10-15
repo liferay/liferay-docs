@@ -1,11 +1,11 @@
-# Using Workflow with Other Applications
+# Using Workflow with Other Applications [](id=using-workflow-with-other-applications)
 
 We saw an example of how to use workflow with Liferay web content in chapter 2.
 In this section, we'll discuss how to use workflow with other applications.
 First, we'll look at using workflow with Documents and Media. After that, we'll
 look at using workflow with Blogs, Wikis, and Message Boards.
 
-## Documents and Media
+## Documents and Media [](id=documents-and-media)
 
 You can enable workflow for most portal resources, including page revisions for
 staging, web content, and collaborative applications, from the Control Panel.
@@ -50,7 +50,7 @@ document. Then click *Actions* &rarr; *Approve* next to the document when it
 appears in the *Assigned to Me* category. That's it--your document has passed
 through the workflow!
 
-## Collaboration
+## Collaboration [](id=collaboration)
 
 To enable workflow for collaborative applications, first navigate to the Control
 Panel and select a scope in the context menu selector. You can enable workflow

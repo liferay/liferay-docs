@@ -1,4 +1,4 @@
-# Management 
+# Management [](id=management)
 
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever

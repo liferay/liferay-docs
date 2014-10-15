@@ -1,4 +1,4 @@
-# Using the Asset Publisher
+# Using the Asset Publisher [](id=using-the-asset-publisher)
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
@@ -10,7 +10,7 @@ in creating a more dynamic web site: you can place user-created wiki entries,
 blog posts or message board messages in context with your content. Let's look at
 some of its features.
 
-## Querying for Content
+## Querying for Content [](id=querying-for-content)
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -30,7 +30,7 @@ tags and categories.
 Let's first look at how we might select content manually. You'll see that it's
 very similar to the Web Content Display portlet.
 
-### Selecting Assets Manually
+### Selecting Assets Manually [](id=selecting-assets-manually)
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
@@ -58,7 +58,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-### Selecting Assets Dynamically
+### Selecting Assets Dynamically [](id=selecting-assets-dynamically)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so

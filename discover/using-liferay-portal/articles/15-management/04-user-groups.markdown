@@ -1,4 +1,4 @@
-# User Groups
+# User Groups [](id=user-groups)
 
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create
@@ -75,7 +75,7 @@ group's Actions menu. Clicking one of these links opens the user group's site in
 a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
-## Creating and Editing a User Group
+## Creating and Editing a User Group [](id=creating-and-editing-a-user-group)
 
 A user group's site can be administered from the control panel. Select *User
 Groups* from the control panel to see a list of existing user groups. To edit a
@@ -94,7 +94,7 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-## Assigning Members to a User Group
+## Assigning Members to a User Group [](id=assigning-members-to-a-user-group)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the control panel and click *Actions*
@@ -120,7 +120,7 @@ assigning a role to users from the roles management UI.
 The next section describes a more advanced usage of user groups: User Group
 Sites.
 
-## User Group Sites
+## User Group Sites [](id=user-group-sites)
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their

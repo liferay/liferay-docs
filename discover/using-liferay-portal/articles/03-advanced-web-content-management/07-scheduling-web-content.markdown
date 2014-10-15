@@ -1,4 +1,4 @@
-# Scheduling Web Content
+# Scheduling Web Content [](id=scheduling-web-content)
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way

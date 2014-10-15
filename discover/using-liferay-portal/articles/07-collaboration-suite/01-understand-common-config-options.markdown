@@ -1,4 +1,4 @@
-# Understanding Liferay's Common Configuration Options
+# Understanding Liferay's Common Configuration Options [](id=understanding-liferays-common-configuration-options)
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
@@ -7,7 +7,7 @@ configurations, and exporting/importing portlet data. So before we get into the
 nitty gritty of the applications themselves, it's best to cover these common
 features first, starting with the look and feel configuration options.
 
-## Look and Feel
+## Look and Feel [](id=look-and-feel)
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
@@ -130,7 +130,7 @@ specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
-## Export/Import
+## Export/Import [](id=export-import)
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
@@ -176,7 +176,7 @@ portlets on others pages may be referencing this data.
 
 Next, let's discuss the concept of a portlet's scope.
 
-## Scope
+## Scope [](id=scope)
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
@@ -237,7 +237,7 @@ site as you want, provided they are all added to separate pages.
 
 Another useful feature of Liferay's portlets is Archived Setups.  
 
-## Archived Setups
+## Archived Setups [](id=archived-setups)
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a
@@ -262,7 +262,7 @@ configuration options, such as the Message Boards portlet.
 
 Next, we'll see how permissions apply to Liferay portlets in general. 
 
-## Permissions
+## Permissions [](id=permissions)
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
@@ -280,7 +280,7 @@ blogs portlet. We'll go over permissions for specific applications in the
 sections for those applications. For now, let's move on to sharing
 applications.
 
-## Communication
+## Communication [](id=communication)
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
@@ -319,7 +319,7 @@ This can be achieved by setting the value of the title parameter of the Wiki
 portlet to be read from the country parameter of the administration portlet.
 Cool, isn't it?
 
-## Sharing
+## Sharing [](id=sharing)
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
@@ -346,14 +346,14 @@ from the portlet's title bar and select the *Sharing* tab. There are five
 subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
 Friends.
 
-### Any Web Site
+### Any Web Site [](id=any-web-site)
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the portlet as a widget. That's all you need to do. When
 a user loads the page on the other web site, the code will pull the relevant
 portlet from your site and display it.
 
-### Facebook
+### Facebook [](id=facebook)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -369,7 +369,7 @@ Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
 Action*](http://manning.com/sezov) for more details. 
 
-### OpenSocial Gadget
+### OpenSocial Gadget [](id=opensocial-gadget)
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -390,7 +390,7 @@ portal at a glance, using asset publishers or custom RSS feeds. You could also
 use Liferay's API to build your own portlet and provide the URL for users to
 place on their iGoogle pages.
 
-### Netvibes
+### Netvibes [](id=netvibes)
 
 Netvibes offers a similar service to iGoogle--users can log in, create their
 own personal portal, called a *dashboard*, and add customizable widgets to the
@@ -399,7 +399,7 @@ portlet, check the *Allow users to add [portlet-name] to Netvibes pages* box.
 You can then use the provided URL to create a custom Netvibes widget based on
 the instance of the portlet that you're using.
 
-### Friends
+### Friends [](id=friends)
 
 The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a
 single check box that allows you to give your friends permission to add the

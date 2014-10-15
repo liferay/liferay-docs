@@ -1,4 +1,4 @@
-# Using Liferay as a Web Platform
+# Using Liferay as a Web Platform [](id=using-liferay-as-a-web-platform)
 
 We can't even begin to imagine what you're thinking of building, but whatever it
 is, you're going to put your heart and soul into it. Building it on Liferay's
@@ -7,7 +7,7 @@ support your application, so you can concentrate solely on what *you're*
 building, and not the rest of the features your users expect will come along
 with it. 
 
-## Liferay as an Application Development Platform
+## Liferay as an Application Development Platform [](id=liferay-as-an-application-development-platform)
 
 Imagine your application for a moment. Does it require users to register with
 your site? Will they be able to comment on content contained within your
@@ -34,7 +34,7 @@ You get all this--not to mention the automatic Facebook and OpenSocial
 integration mentioned above--simply by using Liferay's development platform.
 It's a very powerful platform, and certainly worth your investigation. 
 
-## A Great Integration Platform
+## A Great Integration Platform [](id=a-great-integration-platform)
 
 If you're building an enterprise system, portals were designed in the first
 place to be a single point of entry to your users' applications and content.
@@ -50,7 +50,7 @@ use of any APIs provided by other systems to integrate their data into an
 application window in Liferay. And applications you create with Liferay's
 Service Builder API are web service-enabled from the start. 
 
-## Hosting Multiple Sites on Liferay Portal
+## Hosting Multiple Sites on Liferay Portal [](id=hosting-multiple-sites-on-liferay-portal)
 
 Liferay Portal excels as a multi-site hosting platform. You can use it to host
 multiple sites under the same overall architecture (like Facebook, MySpace, or

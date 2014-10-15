@@ -1,4 +1,4 @@
-# Discuss, Ask and Answer Using the Message Boards
+# Discuss, Ask and Answer Using the Message Boards [](id=discuss-ask-and-answer-using-the-message-boards)
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -23,7 +23,7 @@ title bar and click *Configuration*. There are two rows of tabs. The first tab
 in the top row is titled *Setup*. This is where you can configure the
 application the way you want it to behave on your site.
 
-## General
+## General [](id=general)
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
@@ -68,7 +68,7 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-## Email From
+## Email From [](id=email-from)
 
 This tab allows you to configure the name and email address from which message
 board email notifications are sent. The default name and email address are those
@@ -76,7 +76,7 @@ of the default administrator account: The name is `Test Test` and the email
 address is `test@liferay.com`. Make sure to update this email address to a valid
 one that can be dedicated to notifications.
 
-## Message Added Email
+## Message Added Email [](id=message-added-email)
 
 This tab allows you to customize the email message that users receive when a
 message is added to a topic to which they are subscribed.
@@ -100,13 +100,13 @@ certain variables which you can use in the fields above to customize the email
 message. Some of these variables are for the message board category name, the
 site name, and more.
 
-## Message Updated Email
+## Message Updated Email [](id=message-updated-email)
 
 The Message Updated Email tab is identical to the Message Added Email tab,
 except it defines the email message that users receive whenever a topic is
 updated.
 
-## Thread Priorities
+## Thread Priorities [](id=thread-priorities)
 
 You can define custom priorities for message threads on this tab. These allow
 administrators to tag certain threads with certain priorities in order to
@@ -119,7 +119,7 @@ There is also a field on this form that allows you to select a localized
 language for your priorities. If you need to do this, you can select the
 language from the selection box.
 
-## User Ranks
+## User Ranks [](id=user-ranks)
 
 On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
@@ -154,7 +154,7 @@ rank.
 As with thread priorities, on this tab you can define whether your ranks are
 localized in a particular language.
 
-## RSS
+## RSS [](id=rss)
 
 Message board threads can be published as RSS feeds. This tab allows you to
 define how the feeds are generated.
@@ -167,7 +167,7 @@ an abstract, or just the title of a thread.
 
 **Format:** allows you to choose the format: RSS 1.0, RSS 2.0, or Atom 1.0.
 
-## Permissions
+## Permissions [](id=permissions)
 
 The default page that the Message Boards portlet displays has three buttons on
 it. Click the one labeled *Permissions*. This allows you to define which roles
@@ -175,7 +175,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Submit*.
 
-## Adding Categories
+## Adding Categories [](id=adding-categories)
 
 You are now ready to add categories to your message boards. Click the *Add
 Category* button. You may merge with a Parent Category by enabling the *Merge
@@ -214,7 +214,7 @@ Liferay's Message Boards portlet supports two different
 mechanisms for sending email notifications: user subscriptions and mailing
 lists. Let's discuss user subscriptions first and then mailing lists.
 
-## User Subscriptions and Mailing Lists
+## User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
 The first mechanism Liferay uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
@@ -369,7 +369,7 @@ if your server supports it.
 When you're finished configuring the mailing list for your category, click
 *Save*. 
 
-## Using the Message Boards
+## Using the Message Boards [](id=using-the-message-boards)
 
 Upon seeing Liferay's Message Boards portlet, your users will immediately
 recognize that the interface is similar to many other implementations they've
@@ -394,7 +394,7 @@ has a list of who the top posters to your message boards are. The Banned Users
 tab shows all of the users who have been banned from posting on the message
 boards.
 
-### Posting New Threads
+### Posting New Threads [](id=posting-new-threads)
 
 To post a new thread simply select the *Post New Thread* button. You will see a
 message editing form. The body field on this form is different from that of the
@@ -452,7 +452,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-### Message Board Administrative Functions
+### Message Board Administrative Functions [](id=message-board-administrative-functions)
 
 The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
@@ -480,7 +480,7 @@ permissions. Message Board administrators can perform all of the functions we
 have already presented, including creating and deleting categories and posting
 threads. In addition to these, a number of other functions are available.
 
-#### Moving Threads
+#### Moving Threads [](id=moving-threads)
 
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
@@ -493,7 +493,7 @@ allows you to post a message explaining why the thread was moved. This message
 will be posted as a reply to the thread you are moving. When finished, click
 the *Move Thread* button and the thread will be moved.
 
-#### Deleting Threads
+#### Deleting Threads [](id=deleting-threads)
 
 Users with administrative access to the message boards can delete threads.
 Sometimes users begin discussing topics that are inappropriate or that reveal
@@ -503,7 +503,7 @@ to every thread is an *Actions* button. Click *Actions &rarr; Delete* to delete
 the thread. This does not prevent users from re-posting the information, so you
 may need to be vigilant in deleting threads or consider the next option.
 
-#### Banning Users
+#### Banning Users [](id=banning-users)
 
 Unfortunately, sometimes certain users become abusive. If you wind up with a
 user like this, you can certainly make attempts to warn him or her that the
@@ -520,7 +520,7 @@ abusive behavior, you can choose to reinstate the user. To do this, click the
 list of all banned users. Find the user in the list and select *Unban this
 User*.
 
-#### Splitting Threads
+#### Splitting Threads [](id=splitting-threads)
 
 Sometimes a thread will go on for a while and the discussion completely changes
 into something else. In this case, you can split the thread where the
@@ -529,14 +529,14 @@ Administrative users will see a *Split Thread* link on each post. To split the
 thread, click the link. You will be brought to a form which allows you to add
 an explanation post to the split thread. Click *Ok* to split the thread.
 
-#### Editing Posts
+#### Editing Posts [](id=editing-posts)
 
 Administrative users can edit anyone's posts, not just their own. Sometimes
 users will post links to copyrighted material or unsuitable pictures. You can
 edit these posts, which allows you to redact information that should not be
 posted or to censor profanity that is not allowed on your message boards.
 
-#### Permissions
+#### Permissions [](id=permissions-0)
 
 Permissions can be set not only on threads, but also on individual posts. You
 can choose to limit a particular conversation or a post to only a select group

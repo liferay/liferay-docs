@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-0)
 
 This chapter has provided an introduction to Liferay Web Content Management.
 We've seen how to create and manage pages within a site in Liferay. We've also

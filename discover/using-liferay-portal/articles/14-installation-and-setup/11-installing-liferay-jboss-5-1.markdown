@@ -1,4 +1,4 @@
-# Installing Liferay on JBoss 5.1
+# Installing Liferay on JBoss 5.1 [](id=installing-liferay-on-jboss-5-1)
 
 Note: Java 7 deprecated some classes used by JBoss 5.1. Use Java 5 or Java 6 to
 run JBoss 5.1.
@@ -15,7 +15,7 @@ run JBoss 5.1.
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-## Configuring Dependencies
+## Configuring Dependencies [](id=configuring-dependencies)
 
 First we'll take care of dependencies and potential conflicts.
 
@@ -64,7 +64,7 @@ it's deployed.
         jboss-ejb3-endpoint-deployer.jar
         messaging-definitions-jboss-beans.xml
 
-## Deploying Liferay
+## Deploying Liferay [](id=deploying-liferay)
 
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
@@ -127,7 +127,7 @@ files, it's time to deploy Liferay.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
-## Deploying Plugins
+## Deploying Plugins [](id=deploying-plugins)
 
 Add a `jboss-classloading.xml` to the `WEB-INF` folder of each plugin, with the
 following content:

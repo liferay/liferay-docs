@@ -1,4 +1,4 @@
-# Organizing and Sharing Events with the Calendar
+# Organizing and Sharing Events with the Calendar [](id=organizing-and-sharing-events-with-the-calendar)
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule
 any number of events of different types, receive alarms via email or text
@@ -13,7 +13,7 @@ In a similar way to the Blogs portlet, you can use the Calendar portlet as a
 shared calendar on a web site or as a personal calendar -- or both. Let's look
 at how to configure it. 
 
-## Configuring the Calendar Portlet
+## Configuring the Calendar Portlet [](id=configuring-the-calendar-portlet)
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
 The Setup tab allows you to configure three different options in subtabs:
@@ -46,7 +46,7 @@ ratings.
 
 Now that you've successfully set up your calendar, let's look at how to use it. 
 
-## Using the Calendar Portlet
+## Using the Calendar Portlet [](id=using-the-calendar-portlet)
 
 The Calendar portlet inherits its interface from the rest of Liferay's portlet
 library, so you should find shared features in the same place that you find

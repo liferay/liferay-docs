@@ -1,4 +1,4 @@
-# Using Site Templates
+# Using Site Templates [](id=using-site-templates)
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
@@ -67,7 +67,7 @@ To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
 navigated or managed like a regular site.
 
-## Site Templates Example
+## Site Templates Example [](id=site-templates-example)
 
 Suppose we need to create the following three sites for Nose-ster's internal
 use: Engineering, Marketing, and Legal. These should be private sites that are
@@ -128,7 +128,7 @@ and share content within the sites. Also, site administrators can add new pages,
 portlets, and content to their sites, further differentiating each department's
 site from the others.
 
-## Propagating Changes From Site Templates to Sites
+## Propagating Changes From Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose

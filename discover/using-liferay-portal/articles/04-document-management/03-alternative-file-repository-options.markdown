@@ -1,4 +1,4 @@
-# Alternative File Repository Options
+# Alternative File Repository Options [](id=alternative-file-repository-options)
 
 By default, Liferay stores documents and media files on the file system of the
 server where it's running. You can choose a specific location for the document

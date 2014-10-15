@@ -1,4 +1,4 @@
-# Kaleo Forms
+# Kaleo Forms [](id=kaleo-forms)
 
 Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
 *Summary* tab displays similar information to what you might see in the *My

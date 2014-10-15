@@ -1,4 +1,4 @@
-# Kaleo Designer
+# Kaleo Designer [](id=kaleo-designer)
 
 Kaleo Designer provides a drag and drop interface for users to create custom
 workflows. It's an incredibly powerful tool for managing workflow definitions.

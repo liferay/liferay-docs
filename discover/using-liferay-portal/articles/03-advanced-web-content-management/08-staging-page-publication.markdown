@@ -1,4 +1,4 @@
-# Staging Page Publication
+# Staging Page Publication [](id=staging-page-publication)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -52,7 +52,7 @@ several different versions of sites and pages to be developed at the same time.
 Variations can be created, merged, and published using a Git-like versioning
 system. Let's jump in to see how to use staging.
 
-## Enabling Local Live Staging
+## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Site administrators can enable Staging for a site via the Site Settings UI. To
 reach this interface via the Control Panel, select a site in the context menu
@@ -67,7 +67,7 @@ neither. Page versioning allows you to work in parallel on different versions of
 pages and maintains a history of all page modifications. We discuss page
 versioning in more detail below.
 
-## Enabling Remote Live Staging
+## Enabling Remote Live Staging [](id=enabling-remote-live-staging)
 
 When you enable Remote Live staging, the remote site becomes the live
 environment and the current site becomes the staging environment. The remote
@@ -138,7 +138,7 @@ use LDAP to copy selected user accounts from your local (staging) Liferay server
 to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
 (EE-only), available on Liferay Marketplace, makes this easy.
 
-## Example: Enabling Local Live Staging
+## Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging)
 
 Let's create a Local Live staging environment for Nose-ster's home page. Before
 we begin, let's add a new page. Click *Add &rarr; Page* from the toolbar in the
@@ -166,7 +166,7 @@ for remote staging. Either way, once you make a selection (either *Local Live*
 or *Remote Live*), more options become available for page versioning and staged
 portlets.
 
-## Enabling Page Versioning and Staged Portlets
+## Enabling Page Versioning and Staged Portlets [](id=enabling-page-versioning-and-staged-portlets)
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -195,7 +195,7 @@ site. But portlets like the Message Boards or Wiki would likely benefit from
 you enable staging and accept the defaults, staging is *not* enabled for the
 collaborative portlets.
 
-## Using the Staging Environment
+## Using the Staging Environment [](id=using-the-staging-environment)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice a colored bar with some new menus just below the Dockbar when you
@@ -260,7 +260,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-## Using Site Pages Variations
+## Using Site Pages Variations [](id=using-site-pages-variations)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -372,7 +372,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-## Wrapping up Staging
+## Wrapping up Staging [](id=wrapping-up-staging)
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
