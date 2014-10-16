@@ -28,7 +28,7 @@ future patches to the interface.
 This tutorial shows you how to modify a portal service using a hook. By the end
 of this tutorial, you'll have a hook plugin that overrides a Liferay service. 
 
-## Implementing the Portal Service Override
+## Implementing the Portal Service Override [](id=implementing-the-portal-service-override)
 
 Hook plugins are the best tool for leveraging this architecture to customize
 portal service behavior. To modify the functionality of a service from a hook,
@@ -184,7 +184,7 @@ $$$
 You've done well learning how to properly customize Liferay services. Now get 
 out there and put your newfound skills to use!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 <!-- Uncomment when the tutorial is available. Jim
 [Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-props-hook)

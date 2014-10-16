@@ -19,7 +19,7 @@ the angels named Lenore II--"
 In memory of the late, now crispy Lenore II, it's time to create a layout
 template plugin with Maven.
 
-## Creating a Layout Template Plugin
+## Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin)
 
 To create a Liferay layout template plugin project, follow the
 [Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
@@ -39,7 +39,7 @@ $$$
 Since it's helpful to familiarize yourself with the Liferay layout template
 plugin project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -71,7 +71,7 @@ Web source | `src/main/webapp` | `docroot` |
 You've passed your trial by fire (your new cat, Lenore III, thanks you),
 developing yet another plugin type with Maven. Way to go!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

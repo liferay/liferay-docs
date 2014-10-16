@@ -19,7 +19,7 @@ $$$
 
 Replacing a portal JSP is a simple task with hooks. 
 
-## Replacing a Liferay Portal JSP
+## Replacing a Liferay Portal JSP [](id=replacing-a-liferay-portal-jsp)
 
 Suppose you need to manually override one of Liferay Portal's JSPs, like its
 Terms of Use page. You can accomplish this by following these steps: 
@@ -97,6 +97,6 @@ demonstrates how to override Liferay's JSP files.
 
 Congratulations on overriding a Liferay Portal JSP! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)

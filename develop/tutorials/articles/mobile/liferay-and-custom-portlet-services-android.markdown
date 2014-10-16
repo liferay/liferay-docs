@@ -7,7 +7,7 @@ Liferay's core services so your Android app can get what it needs from your
 portal. You can also use the Liferay Mobile SDK to invoke the web services of 
 your custom portlets. Read on to find out how!
 
-## Calling Liferay Services in your Android App 
+## Calling Liferay Services in your Android App [](id=calling-liferay-services-in-your-android-app)
 
 The Mobile SDK Eclipse plugin makes it easier than ever for you to call Liferay
 core services and utilities from your Android app. All you need to do is add the 
@@ -53,7 +53,7 @@ Does the Liferay Mobile SDK Eclipse plugin make that possible too? The answer is
 an emphatic *YES*. You'll learn how to configure your app to use custom portlet 
 services next. 
 
-## Using Custom Portlet Services in your Android App 
+## Using Custom Portlet Services in your Android App [](id=using-custom-portlet-services-in-your-android-app)
 
 The Liferay Mobile SDK makes it easier to call your custom portlet
 services. The Liferay Mobile SDK Builder that comes with your Eclipse plugin
@@ -123,7 +123,7 @@ Congratulations! You've generated custom services for your Liferay portlets! Now
 your app can access Liferay core services, Liferay utilities, *and* your custom 
 portlet services. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 

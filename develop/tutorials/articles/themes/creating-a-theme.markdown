@@ -12,7 +12,7 @@ or the tutorial
 
 Creating the theme using Liferay IDE is easiest to learn first.
 
-## Creating a Theme Project from Liferay IDE
+## Creating a Theme Project from Liferay IDE [](id=creating-a-theme-project-from-liferay-ide)
 
 Follow these steps to create a theme project in the IDE:
 
@@ -45,7 +45,7 @@ feel.
 
 Creating a theme from the command line using Ant is simple too.
 
-## Creating a Theme Project from the Command Line
+## Creating a Theme Project from the Command Line [](id=creating-a-theme-project-from-the-command-line)
 
 From your terminal window, navigate to your Plugins SDK's `themes` folder. To
 create a theme project, you must execute the *create* script. Here's the format
@@ -143,7 +143,7 @@ your changes.
 Congrats! Now you know how to create a theme project and are familiar with its
 structure. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Liferay Maven Plugins from Liferay IDE] (/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 

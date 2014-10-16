@@ -5,7 +5,7 @@ Creating a hook plugin with Maven is very similar to creating a portlet plugin
 with Maven. This tutorial explains how to create a hook plugin and explains
 the Liferay Maven hook plugin project's anatomy. 
 
-## Creating a Hook Plugin
+## Creating a Hook Plugin [](id=creating-a-hook-plugin)
 
 To create a Liferay hook plugin project, follow the steps outlined in the
 [Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
@@ -25,7 +25,7 @@ $$$
 Since it's helpful to familiarize yourself with the Liferay hook plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -61,7 +61,7 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 You now know how to create Liferay hook plugins to customize Liferay. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

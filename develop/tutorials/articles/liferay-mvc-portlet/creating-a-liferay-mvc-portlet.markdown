@@ -17,7 +17,7 @@ learning path.
 First up is creating a portlet with Liferay IDE, so go ahead and get 
 started. 
 
-## Creating a Liferay MVC Portlet in Liferay IDE
+## Creating a Liferay MVC Portlet in Liferay IDE [](id=creating-a-liferay-mvc-portlet-in-liferay-ide)
 
 1.  Go to File &rarr; New &rarr; Liferay Project. 
 
@@ -54,7 +54,7 @@ project, create a new plugin in an existing project. A single Liferay project
 can contain multiple plugins. Next you'll see how the same process is done using
 the terminal. 
 
-## Creating a Liferay MVC Portlet Using the Terminal 
+## Creating a Liferay MVC Portlet Using the Terminal [](id=creating-a-liferay-mvc-portlet-using-the-terminal)
 
 Navigate to the `portlets` directory in the terminal and enter the appropriate 
 command for your operating system:
@@ -175,7 +175,7 @@ section in the DevGuide.
 Congrats! Now you understand the basic structure of Liferay MVC portlets and you
 have two handy ways to create them in your bag O'trix!  
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development)
 

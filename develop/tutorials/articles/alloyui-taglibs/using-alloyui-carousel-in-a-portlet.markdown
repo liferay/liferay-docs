@@ -26,13 +26,13 @@ Carousel
 Walk through each of these steps to get a carousel up and running in your
 portlet. 
 
-### Step 1: Add Images to Your Portlet for Displaying in Your Carousel 
+### Step 1: Add Images to Your Portlet for Displaying in Your Carousel [](id=step-1-add-images-to-your-portlet-for-displaying-in-your-carousel)
 
 Create a location in your portlet to store your carousel's images and then copy
 the images into that folder. For example, you could create a folder named `img`
 in your portlet's `docroot` folder and then put your image files in it. 
 
-### Step 2: Add a Carousel to Your View JSP 
+### Step 2: Add a Carousel to Your View JSP [](id=step-2-add-a-carousel-to-your-view-jsp)
 
 1.  Open your view JSP. Create one if you don't already have one in your
 portlet. 
@@ -94,7 +94,7 @@ configured and the carousel has no reference to the image files. Don't worry;
 you can use CSS to configure the items and map the image files to your JSP. The
 next step shows you how to take care of these requirements. 
 
-### Step 3: Write CSS Code to Configure Your Carousel and to Map Images to the Carousel 
+### Step 3: Write CSS Code to Configure Your Carousel and to Map Images to the Carousel [](id=step-3-write-css-code-to-configure-your-carousel-and-to-map-images-to-the-c)
 
 This step's instructions demonstrate using CSS to configure the carousel's
 items. 

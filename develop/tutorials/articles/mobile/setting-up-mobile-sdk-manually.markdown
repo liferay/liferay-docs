@@ -7,7 +7,7 @@ also configure the Mobile SDK as a dependency to your project if you're using
 Gradle or Maven. Gradle and Maven download all the necessary dependencies 
 before building your project. 
 
-## Manually Adding the SDK to Your Android Project
+## Manually Adding the SDK to Your Android Project [](id=manually-adding-the-sdk-to-your-android-project)
 
 Use the following steps to download and set up the Mobile SDK manually in your 
 Android project:
@@ -24,7 +24,7 @@ and [httpmime-4.3.3.jar](http://search.maven.org/remotecontent?filepath=org/apac
 
 4. Start using it!
 
-## Adding the SDK to Gradle Project 
+## Adding the SDK to Gradle Project [](id=adding-the-sdk-to-gradle-project)
 
 If your Android project is using Gradle as the build system, you can add the 
 Liferay Android SDK as a dependency to your project. All versions are available 
@@ -53,7 +53,7 @@ when building with Gradle, add this to your `build.gradle` file:
     }
 
     
-## Adding the SDK to Your Maven Project
+## Adding the SDK to Your Maven Project [](id=adding-the-sdk-to-your-maven-project)
 
 You can also add the Liferay Android SDK as a dependency to your project if 
 you're using Maven as your build system. Just add the following code to your 
@@ -65,7 +65,7 @@ you're using Maven as your build system. Just add the following code to your
         <version>LATEST</version>
     </dependency>
 	
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 

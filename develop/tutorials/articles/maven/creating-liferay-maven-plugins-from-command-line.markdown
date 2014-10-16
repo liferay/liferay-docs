@@ -6,7 +6,7 @@ the
 tutorial. This tutorial explains how to use Maven archetypes to generate
 Liferay plugin projects using the command line.
 
-## Using the Maven Archetype Tool to Create a Liferay Plugin
+## Using the Maven Archetype Tool to Create a Liferay Plugin [](id=using-the-maven-archetype-tool-to-create-a-liferay-plugin)
 
 Follow these steps to create a Liferay plugin from the command line:
 
@@ -202,7 +202,7 @@ When your plugin is created, you can package and deploy your project to a
 specified Liferay instance. You can even install and deploy the individual
 plugin to a remote repository. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

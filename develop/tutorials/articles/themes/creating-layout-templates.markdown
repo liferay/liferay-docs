@@ -20,7 +20,7 @@ or the tutorial
 
 Creating layout templates in Liferay IDE is easy. You can learn how next. 
 
-## Creating a Layout Template Project from Liferay IDE
+## Creating a Layout Template Project from Liferay IDE [](id=creating-a-layout-template-project-from-liferay-ide)
 
 Follow these steps to create a layout template project in the IDE:
 
@@ -39,7 +39,7 @@ Follow these steps to create a layout template project in the IDE:
 
 You can also create a layout template from the command line using Ant.
 
-## Creating a Layout Template Project from the Command Line
+## Creating a Layout Template Project from the Command Line [](id=creating-a-layout-template-project-from-the-command-line)
 
 From your command line terminal, navigate to your Plugins SDK's `layouttpl`
 folder. To create a layout template project you must execute the *create* 
@@ -100,7 +100,7 @@ two Liferay configuration files:
 Now that you're well-versed on the anatomy of a layout template project, go out
 and create some!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Liferay Maven Plugins from IDE] (/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 
