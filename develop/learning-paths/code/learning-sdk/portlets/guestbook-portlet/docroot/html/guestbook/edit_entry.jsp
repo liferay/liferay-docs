@@ -50,12 +50,10 @@ if (entryId > 0) {
 				<aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
 			</aui:button-row>
 		</c:if>
-		
-		<div id="generateButtonWrapper">
-			<aui:button-row>
-				<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-			</aui:button-row>
-		</div>
+	
+		<aui:button-row>
+			<aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+		</aui:button-row>
 
 		<div id="messages">
 			<aui:layout>
