@@ -1,3 +1,0 @@
-New Blogs on New Portal
-
-This is my first blog entry. Everybody who is registered on the portal can have a blog. It is easy: just add the Blogs portlet to a page in your personal community, and start adding entries! Because we have the Recent Bloggers portlet configured on the Community page, you will be able to see at a glance all the recent bloggers, and your blog entries will appear there! Isn't this cool?
