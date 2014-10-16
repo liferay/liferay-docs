@@ -1,10 +1,29 @@
 *~
 *.bak
+*.class
 *.iml
 *.swp
+*-tmp.html
+.METADATA
+.project
+.classpath
+.settings
+git-modified-list.txt
+nbbuild.xml
+properties/
 
 /*.ipr
 /*.iws
 /*.patch
 /build.*.properties
 
+**/build/**
+**/classes/**
+**/dist/**
+**nbproject**
+**/.ivy/*
+**/.sass-cache/**
+**/.DS_Store/*
+*#
+/bin
+/classes/
