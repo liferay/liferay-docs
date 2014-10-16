@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deploy">
+	<property name="project.dir" value="." />
+
+	<property name="build.dir" value="${project.dir}/classes" />
+	<property name="docs.lib.dir" value="${project.dir}/../../lib" />
+	<property name="jar.file" value="liferay-doc-utils.jar" />
+	<property name="lib.dir" value="${project.dir}/lib" />
+	<property name="src.dir" value="${project.dir}/src" />
+	<property name="deploy.dir" value="${project.dir}/../../lib" />
+
+	<path id="lib.classpath">
+		<fileset dir="${lib.dir}" includes="*.jar" />
+		<fileset dir="${docs.lib.dir}" excludes="${jar.file}" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<pathelement path="${classpath}" />
+		<path refid="lib.classpath" />
+	</path>
+
+	<!-- targets -->
+
+	<target name="clean" description="cleans up the classes" >
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="compile" description="compiles the code">
+		<mkdir dir="${build.dir}" />
+
+		<antcall target="compile-java">
+			<param name="javac.classpathref" value="project.classpath" />
+			<param name="javac.destdir" value="${build.dir}" />
+			<param name="javac.srcdir" value="${src.dir}" />
+		</antcall>
+	</target>
+
+	<target name="compile-java">
+		<copy todir="${javac.destdir}">
+			<fileset dir="${javac.srcdir}" excludes="**/*.java" />
+		</copy>
+
+		<javac
+			classpathref="${javac.classpathref}"
+			destdir="${javac.destdir}"
+			includeAntRuntime="false"
+			srcdir="${javac.srcdir}"
+		/>
+	</target>
+
+	<target name="deploy" depends="clean, compile" description="compiles the
+    code, creates a runnable JAR file, and deploys it to liferay-docs/lib">
+		<mkdir dir="${deploy.dir}" />
+        <jar destfile="${deploy.dir}/${jar.file}"
+			filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.liferay.documentation.util.DocUtils"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${build.dir}"/>
+            <zipfileset excludes="META-INF/*.SF" src="${lib.dir}/commons-io-2.0.1.jar"/>
+        </jar>
+	</target>
+
+</project>
