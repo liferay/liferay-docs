@@ -411,6 +411,12 @@ of each of the sample message `<div>`s and you remove them all. The event
 handler for the *Hide Sample Messages* button should also remove the *Hide
 Sample Messages* button itself. It wouldn't make sense for this button to appear when there weren't any sample messages to hide! To remove the *Hide Sample Messages* button, you use `parentNode.removeChild(hideMessagesButton)`.
 
+Check out the new functionality of the Guestbook portlet's Add Entry form. Click
+on the *Generate Sample Messages* button. Click on it multiple times. Click on
+some of the *Use Message* buttons. Test the *Hide Sample Messages* button.
+
+![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../images/guestbook-autopopulate-all-buttons.png)
+
 Great job! You've added a handy Autopopulate panel with useful buttons for
 autopopulating the fields of the Add Entry form. You've used AUI's node and
 event modules and node and node list APIs to dynamically manipulate the DOM when
