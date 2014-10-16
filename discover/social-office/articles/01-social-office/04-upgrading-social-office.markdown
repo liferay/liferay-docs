@@ -9,20 +9,18 @@ from Social Office 2.x to 3.x, and from Social Office 3.0.0 to 3.0.1.
 Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
 from Social Office 2.x to to 3.x, you first need to upgrade your portal from
 Liferay 6.1 to Liferay 6.2. For information on upgrading Liferay, please refer
-to the
-[Liferay User Guide](/discover/portal/-/knowledge_base/6-2/upgrading-liferay).
+to the [Liferay User Guide](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/upgrading-liferay-liferay-portal-6-2-user-guide-18-en).
 Remember to undeploy your Social Office 2.x plugins before upgrading your portal
 to 6.2. If you have a Liferay Portal EE subscription, make sure to apply any
 available fix packs before deploying your Social Office 3.x plugins.
 
 +$$$
 
-Note: There are a few known issues with
-the Social Office plugins that you might experience if you're running on JBoss.
-If the Go To menu is not initially visible after deploying the Social Office
-plugins or if you can't confirm a connection or site invitation after logging in
-as the default administrator user, clear the `/temp` folder and then restart the
-server to resolve the issue.
+**Note:** There are a few known issues with the Social Office plugins that you 
+might experience if you're running on JBoss. If the Go To menu is not initially 
+visible after deploying the Social Office plugins or if you can't confirm a 
+connection or site invitation after logging in as the default administrator 
+user, clear the `/temp` folder and then restart the server to resolve the issue.
 
 $$$
 

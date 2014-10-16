@@ -1,16 +1,16 @@
 # Installing Social Office [](id=installing-social-office)
 
-Social Office 3.0 is available as an application that can be installed on
-Liferay Portal CE 6.2 GA1 or EE 6.2 GA1. Prior to version 2.0, Social Office was
-provided as an standalone product that was essentially a customized version of
-Liferay Portal. Liferay applications, or apps, are packages of Liferay plugins
-that are grouped together with descriptions, version information, and other
-metadata. You can identify downloaded Liferay apps by their `.lpkg` file
+Social Office 3.1 is available as an application that can be installed on 
+Liferay Portal CE 6.2 GA1+ or EE 6.2 GA1+. Prior to version 2.0, Social Office 
+was provided as an standalone product that was essentially a customized version 
+of Liferay Portal. Liferay applications, or apps, are packages of Liferay 
+plugins that are grouped together with descriptions, version information, and 
+other metadata. You can identify downloaded Liferay apps by their `.lpkg` file
 extensions. Individual Liferay plugins have the standard `.war` file extensions.
 
-This section begins with a quick set of instructions on installing Social Office.
-In the majority of cases, this is all you'll need. The parts after this present 
-additional details for specific configurations and use cases.
+This section begins with a quick set of instructions on installing Social 
+Office. In the majority of cases, this is all you'll need. The parts after this 
+present additional details for specific configurations and use cases.
 
 - Social Office Quick Install
 - Pre-installation Configuration
@@ -22,7 +22,8 @@ additional details for specific configurations and use cases.
 
 There are two ways to install Social Office: you can download and
 install Social Office directly from your Liferay instance's Control Panel
-Marketplace interface (this is simplest) or you can deploy the `.lpkg` file manually.
+Marketplace interface (this is simplest) or you can deploy the `.lpkg` file 
+manually.
 
 To install Social Office via the Control Panel, navigate to the Control Panel
 and click on *Marketplace* &rarr; *Purchased*. If you've already purchased
@@ -89,13 +90,12 @@ section of Liferay's Control Panel.
 
 +$$$
 
-**Warning:** When you start Liferay for
-the first time, you're presented with a setup wizard. The configuration you make
-in the setup wizard is saved in a `portal-setup-wizard.properties` file in your
-Liferay Home directory. However, if you specify a different Liferay Home
-directory than the default in the setup wizard, the
-`portal-setup-wizard.properties` file that's saved there will not be read upon
-restarting your server. To have Liferay read your
+**Warning:** When you start Liferay for the first time, you're presented with a 
+setup wizard. The configuration you make in the setup wizard is saved in a 
+`portal-setup-wizard.properties` file in your Liferay Home directory. However, 
+if you specify a different Liferay Home directory than the default in the setup 
+wizard, the `portal-setup-wizard.properties` file that's saved there will not be 
+read upon restarting your server. To have Liferay read your
 `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
 your new Liferay Home directory and add the following line to it, where
 `${liferay.home}` is the new Liferay Home directory that you chose:
@@ -129,7 +129,7 @@ installed or uninstalled.
 
 ## Validating a Social Office Installation 
 
-The Social Office 3.0 `.lpkg` file is hot-deployable and includes the following
+The Social Office 3.1 `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
 confirm that these plugins have been successfully deployed (or removed). Your
 server's console log should indicate whether or each plugin has been
@@ -233,7 +233,7 @@ Uninstalling Social Office reverts users' Profile and Dashboard pages to the
 default Liferay public and private pages and reverts Social Office sites to
 non-Social Office sites. However, no data will be deleted. Uninstalling only
 uninstalls the plugins included in Social Office, the Social Office role, and
-the site templates. After uninstalling, make sure that the components listed above
-in the section on validating your installation are no longer available.
+the site templates. After uninstalling, make sure that the components listed 
+above in the section on validating your installation are no longer available.
 
 Next, let's discuss how Social Office can facilitate team collaboration.
