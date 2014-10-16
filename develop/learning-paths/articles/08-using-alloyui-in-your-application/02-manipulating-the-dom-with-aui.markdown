@@ -124,9 +124,11 @@ The `A.one(...)` function returns the first DOM node that matches the selector
 argument. For more information on the `A.one(...)` function and a comparison
 between jQuery, YUI, and AUI, please refer to
 [http://alloyui.com/rosetta-stone](http://alloyui.com/rosetta-stone). For more
-information on YUI's node API (which AUI extends), please refer to
-[http://yuilibrary.com/yui/docs/node](http://yuilibrary.com/yui/docs/node) and
-[http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/Node.html).
+information on YUI's node API (which AUI extends), please refer to the following
+documentation:
+
+- [http://yuilibrary.com/yui/docs/node](http://yuilibrary.com/yui/docs/node)
+- [http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/Node.html)
 
 Once you've obtained the *Use My Full Name* button node, you define a listener
 on it:
@@ -157,19 +159,53 @@ The process of creating an event listener to populate the email input field when
 the *Use My Email Address* button is clicked is virtually identical to the one
 for the *Use My Full Name* button.
 
-Next, you'll develop a more complex example that involves both removing and
-adding nodes.
+Next, you'll develop a more complex example that uses AUI to add and remove DOM
+nodes.
 
 ## Creating Autopopulate Buttons for the Message Field
 
-Add the following lines inside of the autopopulate panel that you added, just
-above the `</liferay-ui:panel>` tag:
+So far, users of the Guestbook portlet can click on *Add Entry* to access the
+Add Entry form which allows them to enter and save a guestbook entry. A
+guestbook entry consists of a name, email address, and message. In the last
+section, you implemented *Use My Full Name* and *Use My Email Address* buttons
+that autopopulate the name and email fields of the Add Entry form. Now it's time
+to implement a *Generate Sample Messages* button. Here are your requirements for
+the *Generate Sample Messages* button:
 
-    <div id="generateButtonWrapper">
-            <aui:button-row>
-                    <aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
-            </aui:button-row>
-    </div>
+- Clicking on the *Generate Sample Messages* button should randomly display
+  three sample messages from a pool of ten possible messages.
+- A *Use Message* button should appear next to each of the sample messages that
+  are displayed.
+- Clicking on the *Use Message* button should autopopulate the message field of
+  the Add Entry form with the corresponding sample message.
+- Repeatedly clicking on the *Generate Sample Messages* button should replace
+  the three currently displayed sample messages with three new random selections
+  from the pool of ten.
+- Whenever sample messages are displayed (i.e., whenever the *Generate Sample
+  Messages* button has been clicked at least once), a *Hide Sample Messages*
+  button should also be displayed.
+- Clicking on the *Hide Sample Messages* button should remove the displayed
+  sample messages so that the Add Entry form appears the way it did before the
+  *Generate Sample Messages* button was first clicked.
+
+AlloyUI makes it easy to implement a *Generate Sample Messages* button that
+fulfils these requirements. In fact, you already used the required AUI modules
+in the previous section: node and event. In the last section, you learned how to
+use `A.one(...)` to retrieve specific nodes. You also learned how to use
+`[node].on(...)` to create event listeners. In this section, you'll learn how to
+use AUI to add and remove DOM nodes. You'll also make further use of the YUI/AUI
+node API and use the YUI/AUI node list API:
+
+- [http://yuilibrary.com/yui/docs/node](http://yuilibrary.com/yui/docs/node) and
+- [http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/Node.html)
+
+Your first task is to create the *Generate Sample Messages* button. Add the
+following lines inside of the Autopopulate panel that you added, just above the
+`</liferay-ui:panel>` tag:
+
+    <aui:button-row>
+            <aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+    </aui:button-row>
 
     <div id="messages">
             <aui:layout>
@@ -187,7 +223,22 @@ above the `</liferay-ui:panel>` tag:
             </aui:layout>
     </div>
 
-Add the following lines to the bottom of `edit_entry.jsp`:
+Here, you create the *Generate Sample Messages* button using the
+`<aui:button-row>` and `<aui:button>` tags for styling. You also create an empty
+container `<div>` for the sample messages. Inside of this `<div>`, you use the
+`<aui:layout>` and `<aui:column>` tags to create three columns, each of which
+contains a `<div>` for one of the sample messages. Basically, `<aui:layout>`
+creates a row and `<aui:column>` creates a column. It's possible to specify a
+percentage value for the `columnWidth` attribute for each `<aui:column>` but
+it's not necessary. The default works fine for your case.
+
+Note that the `<div>` for sample messages is empty by default. You could have
+added the `<div id="messages">` dynamically when the *Generate Sample Messages*
+button was clicked but then you wouldn't have been able to use the
+`<aui:layout>` and `<aui:column>` tags.
+
+Now it's time to implement your button functionality. Add the following AUI
+script to the bottom of `edit_entry.jsp`:
 
     <aui:script use="node, event">
     var generateMessagesButton = A.one('#generateMessagesButton');
@@ -266,3 +317,323 @@ Add the following lines to the bottom of `edit_entry.jsp`:
             message.val(A.one('#message3-div').one('#message3').html());
     };
     </aui:script>
+
+Your first order of business is to capture the nodes corresponding to the
+*Generate Sample Messages* button and to the `<div>` elements for the sample
+messages. Then you define the event handler for the *Generate Sample Messages*
+button.
+
+You begin by defining `entryMessages`, the array of the ten possible sample
+messages. Then you check if the `<div>` for the first sample message has any
+child nodes. If it does, this means that the *Generate Sample Messages* button
+has already been clicked and the `<div>` for the first sample message need to be
+removed so that it can be replaced:
+
+    if (message1Div.hasChildNodes()) {
+            message1Div.get('children').remove(true);
+    }
+
+Once the child nodes of the `<div>` for the first sample message has been
+removed (or the *Generate Sample Messages* button is being clicked for the first
+time), you need add a new sample message to the `<div>`. To do so, you pick a
+random selection from the `entryMessages` array, add the message to the `<div>`,
+and remove the selected message from `entryMessages` so that it's not selected
+for the second or third sample message:
+
+    var rand1 = Math.floor(Math.random() * entryMessages.length);
+    message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
+    entryMessages.splice(rand1, 1);
+
+Notice the `onclick="useMessage1();" attribute. `useMessage1`, `useMessage2`,
+and `useMessage3` are functions that you define below the *Generate Sample
+Messages* button event handler:
+
+    var message = A.one('#<portlet:namespace/>message');
+
+    useMessage1 = function() {
+            message.val(A.one('#message1-div').one('#message1').html());
+    };
+
+    useMessage2 = function() {
+            message.val(A.one('#message2-div').one('#message2').html());
+    };
+
+    useMessage3 = function() {
+            message.val(A.one('#message3-div').one('#message3').html());
+    };
+
+Basically, each of these functions autopopulates the message field of the Add
+Entry form with one of the displayed sample messages. The handling of the
+`<div>`s for the second and third sample messages works the same way as for the
+first sample message. Each `<div>` populated with a random sample message, just
+like the first sample message `<div>` was.
+
+Now you just need to implement the *Hide Sample Messages* button. You need to
+add this button dynamically because it doesn't exist on the page by default. If
+the *Generate Sample Messages* button has not yet been clicked, then it will
+have no siblings, i.e., its parent node will only have one child node. You use
+this fact to add the *Hide Sample Messages* button only if it hasn't already
+been added to the page:
+
+    var parentNode = generateMessagesButton.get('parentNode');
+
+    if (parentNode.get('children').size() < 2) {
+            parentNode.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
+    }
+
+This adds the *Hide Sample Messages* button inside of the same button row as the
+*Generate Sample Messages* button. Specifying `class="btn"` styles the button
+the same way as the *Generate Sample Messages* button. Once the *Hide Sample
+Messages* button has been added (or you've confirmed that it has already been
+added), you need to define an event handler for it:
+
+    var hideMessagesButton = A.one('#hideMessagesButton');
+
+    hideMessagesButton.on('click', function(event) {
+            A.one('#message1-div').get('children').remove(true);
+            A.one('#message2-div').get('children').remove(true);
+            A.one('#message3-div').get('children').remove(true);
+            
+            if (parentNode.contains(hideMessagesButton)) {
+                    parentNode.removeChild(hideMessagesButton);
+            }
+    });
+
+Here, you use AUI to grab the *Hide Sample Message* button and define an event
+hander. The event handler should remove all of the sample messages. You use
+`[node].get('children')` to get node lists representing all of the child nodes
+of each of the sample message `<div>`s and you remove them all. The event
+handler for the *Hide Sample Messages* button should also remove the *Hide
+Sample Messages* button itself. It wouldn't make sense for this button to appear when there weren't any sample messages to hide! To remove the *Hide Sample Messages* button, you use `parentNode.removeChild(hideMessagesButton)`.
+
+Great job! You've added a handy Autopopulate panel with useful buttons for
+autopopulating the fields of the Add Entry form. You've used AUI's node and
+event modules and node and node list APIs to dynamically manipulate the DOM when
+the various buttons are clicked.
+
+For reference, this is how your `edit_entry.jsp` should appear at this point in
+the learning path:
+
+    <%@include file = "/html/init.jsp" %>
+
+    <portlet:renderURL var="viewURL">
+            <portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+    </portlet:renderURL>
+
+    <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
+
+    <%
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+
+    Entry entry = null;
+
+    if (entryId > 0) {
+            entry = EntryLocalServiceUtil.getEntry(entryId);
+    }
+    %>
+
+    <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+            <aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
+            <aui:fieldset>
+                <aui:input name="name" >
+                    <aui:validator name="required" errorMessage="Please enter your name." />
+                </aui:input>
+
+                    <aui:input name="email" >
+                            <aui:validator name="email" />
+                            <aui:validator name="required" />
+                    </aui:input>
+
+                    <aui:input id="message" type="textarea" name="message">
+                            <aui:validator name="required" errorMessage="Please enter a message." />
+                    </aui:input>
+                    <div id="counterContainer"><p>Message: <span id="counter"></span> character(s) remaining</p></div>
+
+                <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+
+                <aui:input name="entryId" type="hidden" />
+            </aui:fieldset>
+
+            <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+                    <c:if test="<%= themeDisplay.isSignedIn() %>">
+                            <aui:button-row>
+                                    <aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+                            </aui:button-row>
+                    </c:if>
+                    
+                    <c:if test="<%= themeDisplay.isSignedIn() %>">
+                            <aui:button-row>
+                                    <aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+                            </aui:button-row>
+                    </c:if>
+            
+                    <aui:button-row>
+                            <aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+                    </aui:button-row>
+
+                    <div id="messages">
+                            <aui:layout>
+                                    <aui:column>
+                                            <div id="message1-div"></div>
+                                    </aui:column>
+                                    
+                                    <aui:column>
+                                            <div id="message2-div"></div>
+                                    </aui:column>
+                                    
+                                    <aui:column>
+                                            <div id="message3-div"></div>
+                                    </aui:column>
+                            </aui:layout>
+                    </div>
+            </liferay-ui:panel>
+
+            <liferay-ui:asset-categories-error />
+            <liferay-ui:asset-tags-error />
+            <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
+                    <aui:fieldset>
+                            <aui:input name="categories" type="assetCategories" />
+                            
+                            <aui:input name="tags" type="assetTags" />
+                    </aui:fieldset>
+            </liferay-ui:panel>
+            
+            <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+                    <aui:fieldset>
+                            <liferay-ui:input-asset-links className="<%= Entry.class.getName() %>" classPK="<%= entryId %>"
+                            />
+                    </aui:fieldset>
+            </liferay-ui:panel>
+            
+            <aui:button-row>
+                    <aui:button type="submit" id="save"></aui:button>
+                    
+                    <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+            </aui:button-row>
+    </aui:form>
+
+    <c:if test="<%= themeDisplay.isSignedIn() %>">
+    <%
+    String fullName = user.getFullName();
+
+    String emailAddress = user.getEmailAddress();
+    %>
+
+    <aui:script use="node, event">
+    var fullName = '<%= fullName %>';
+
+    var useNameButton = A.one('#useNameButton');
+
+    useNameButton.on('click', function(event) {
+            var name = A.one('#<portlet:namespace/>name');
+            
+            name.val(fullName);
+    });
+
+    var emailAddress = '<%= emailAddress %>';
+
+    var useEmailButton = A.one('#useEmailButton');
+
+    useEmailButton.on('click', function(event) {
+            var email = A.one('#<portlet:namespace/>email');
+            
+            email.val(emailAddress);
+    });
+    </aui:script>
+    </c:if>
+
+    <aui:script use="aui-char-counter">
+    AUI().use(
+      function(A) {
+        new A.CharCounter(
+          {
+            counter: '#counter',
+            input: '#<portlet:namespace />message',
+            maxLength: 140
+          }
+        );
+      }
+    );
+    </aui:script>
+
+    <aui:script use="node, event">
+    var generateMessagesButton = A.one('#generateMessagesButton');
+
+    var message1Div = A.one('#message1-div');
+    var message2Div = A.one('#message2-div');
+    var message3Div = A.one('#message3-div');
+
+    generateMessagesButton.on('click', function(event) {
+            var entryMessages = [
+                    'Amazing!',
+                    'Be careful!',
+                    'Best wishes!',
+                    'Bravo!',
+                    'Congratulations!',
+                    'Great job!',
+                    'Have fun!',
+                    "How's it going?",
+                    'You did it!',
+                    "Wow!"
+            ];
+
+            if (message1Div.hasChildNodes()) {
+                    message1Div.get('children').remove(true);
+            }
+            
+            var rand1 = Math.floor(Math.random() * entryMessages.length);
+            message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
+            entryMessages.splice(rand1, 1);
+            
+            if (message2Div.hasChildNodes()) {
+                    message2Div.get('children').remove(true);
+            }
+            
+            var rand2 = Math.floor(Math.random() * entryMessages.length);
+            message2Div.append('<p class="message" id="message2">' + entryMessages[rand2] + '</p><p id="use-message2"><input class="btn" onclick="useMessage2();" type="button" value="Use Message" /></p>');
+            entryMessages.splice(rand2, 1);
+            
+            if (message3Div.hasChildNodes()) {
+                    message3Div.get('children').remove(true);
+            }
+            
+            var rand3 = Math.floor(Math.random() * entryMessages.length);
+            message3Div.append('<p class="message" id="message3">' + entryMessages[rand3] + '</p><p id="use-message3"><input class="btn" onclick="useMessage3();" type="button" value="Use Message" /></p>');
+
+            var parentNode = generateMessagesButton.get('parentNode');
+
+            if (parentNode.get('children').size() < 2) {
+                    parentNode.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
+            }
+            
+            var hideMessagesButton = A.one('#hideMessagesButton');
+            
+            hideMessagesButton.on('click', function(event) {
+                    A.one('#message1-div').get('children').remove(true);
+                    A.one('#message2-div').get('children').remove(true);
+                    A.one('#message3-div').get('children').remove(true);
+                    
+                    if (parentNode.contains(hideMessagesButton)) {
+                            parentNode.removeChild(hideMessagesButton);
+                    }
+            });
+    });
+
+    var message = A.one('#<portlet:namespace/>message');
+
+    useMessage1 = function() {
+            message.val(A.one('#message1-div').one('#message1').html());
+    };
+
+    useMessage2 = function() {
+            message.val(A.one('#message2-div').one('#message2').html());
+    };
+
+    useMessage3 = function() {
+            message.val(A.one('#message3-div').one('#message3').html());
+    };
+    </aui:script>
+
+## Next Steps
+
+[Making URLs Friendly](/develop/learning-paths/-/knowledge_base/making-urls-friendly)
