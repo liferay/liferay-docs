@@ -63,6 +63,8 @@ Confirm that the panel appears, that its title is *Autopopulate*, and that the
 *Use My Full Name* and *Use My Email Address* buttons appear when you're signed
 in.
 
+![Figure 1: This is how the Add Entry form should appear with the Autopopulate panel expanded.](../../images/guestbook-autopopulate-use-buttons.png)
+
 Now it's time to make the buttons work. Add the following lines near the bottom
 of `edit_entry.jsp`, just above the `aui:script use="aui-char-counter">` tag:
 
@@ -119,10 +121,11 @@ with AlloyUI in mind.)
 
 Inside of the script tag, you capture the string value of the Java `fullName`
 variable in a JavaScript `fullName` variable. Then you capture the *Use My Full
-Name* DOM node via the following AUI function call: `A.one('#useNameButton')`.
-The `A.one(...)` function returns the first DOM node that matches the selector
-argument. For more information on the `A.one(...)` function and a comparison
-between jQuery, YUI, and AUI, please refer to
+Name* node via the following AUI function call: `A.one('#useNameButton')`. The
+`A.one(...)` function returns the first node that matches the selector argument.
+YUI and AUI nodes are wrapper classes for manipulating DOM nodes. For more
+information on the `A.one(...)` function and a comparison between jQuery, YUI,
+and AUI, please refer to
 [http://alloyui.com/rosetta-stone](http://alloyui.com/rosetta-stone). For more
 information on YUI's node API (which AUI extends), please refer to the following
 documentation:
@@ -194,10 +197,10 @@ in the previous section: node and event. In the last section, you learned how to
 use `A.one(...)` to retrieve specific nodes. You also learned how to use
 `[node].on(...)` to create event listeners. In this section, you'll learn how to
 use AUI to add and remove DOM nodes. You'll also make further use of the YUI/AUI
-node API and use the YUI/AUI node list API:
+node API and you'll use the YUI/AUI node list API:
 
-- [http://yuilibrary.com/yui/docs/node](http://yuilibrary.com/yui/docs/node) and
 - [http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/Node.html)
+- [http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/NodeList.html)
 
 Your first task is to create the *Generate Sample Messages* button. Add the
 following lines inside of the Autopopulate panel that you added, just above the
@@ -234,8 +237,10 @@ it's not necessary. The default works fine for your case.
 
 Note that the `<div>` for sample messages is empty by default. You could have
 added the `<div id="messages">` dynamically when the *Generate Sample Messages*
-button was clicked but then you wouldn't have been able to use the
-`<aui:layout>` and `<aui:column>` tags.
+button was clicked, but it's easier to create the `<div>`s for the sample
+messages inside the `<aui:layout>` and `<aui:column>` tags from the outset. The
+whole messages `<div>` is invisible on the Add Entry form before the *Generate
+Sample Messages* is clicked.
 
 Now it's time to implement your button functionality. Add the following AUI
 script to the bottom of `edit_entry.jsp`:
@@ -362,15 +367,15 @@ Messages* button event handler:
             message.val(A.one('#message3-div').one('#message3').html());
     };
 
-Basically, each of these functions autopopulates the message field of the Add
-Entry form with one of the displayed sample messages. The handling of the
-`<div>`s for the second and third sample messages works the same way as for the
-first sample message. Each `<div>` populated with a random sample message, just
-like the first sample message `<div>` was.
+Each of these functions autopopulates the message field of the Add Entry form
+with one of the displayed sample messages. The handling of the `<div>`s for the
+second and third sample messages works the same way as for the first sample
+message. Each `<div>` populated with a random sample message, just like the
+first sample message `<div>` was.
 
 Now you just need to implement the *Hide Sample Messages* button. You need to
-add this button dynamically because it doesn't exist on the page by default. If
-the *Generate Sample Messages* button has not yet been clicked, then it will
+add this button dynamically because it shouldn't exist on the page by default.
+If the *Generate Sample Messages* button has not yet been clicked, then it will
 have no siblings, i.e., its parent node will only have one child node. You use
 this fact to add the *Hide Sample Messages* button only if it hasn't already
 been added to the page:
@@ -411,8 +416,8 @@ autopopulating the fields of the Add Entry form. You've used AUI's node and
 event modules and node and node list APIs to dynamically manipulate the DOM when
 the various buttons are clicked.
 
-For reference, this is how your `edit_entry.jsp` should appear at this point in
-the learning path:
+For reference, this is how your `edit_entry.jsp` should appear after you've
+completed this section:
 
     <%@include file = "/html/init.jsp" %>
 
