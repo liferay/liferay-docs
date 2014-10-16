@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<project name="QuickstartGuide Conversion" default="echo-props" basedir=".">
-
-	<import file="../build-common.xml" />
-
-	<property name="doc.dir" value="QuickstartGuide"/>
-
-</project>
