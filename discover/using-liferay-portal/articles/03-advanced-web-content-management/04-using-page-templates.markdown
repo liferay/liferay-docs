@@ -81,7 +81,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-## Exporting and Importing Site Templates and Page Templates 
+## Exporting and Importing Site Templates and Page Templates [](id=exporting-and-importing-site-templates-and-page-templates)
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be

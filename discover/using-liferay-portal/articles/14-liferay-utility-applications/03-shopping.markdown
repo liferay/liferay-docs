@@ -16,7 +16,7 @@ transactions are processed.
 
 Before we start printing money, let's first create an online store.
 
-## Setting up shop
+## Setting up shop [](id=setting-up-shop)
 
 To begin setting up a store, place the Shopping application on a page in your
 site. Like the Message Boards portlet, the Shopping portlet takes up a lot of
@@ -50,7 +50,7 @@ Below the tabs are breadcrumbs for navigating between the categories and
 subcategories you create. In fact, this would be a good time to start creating
 some categories.
 
-### Creating Categories
+### Creating Categories [](id=creating-categories)
 
 It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
@@ -70,7 +70,7 @@ any category. Notice as you add categories and subcategories, navigational
 breadcrumbs appear in the portlet. Use these to move through the store
 inventory.
 
-### Creating Items
+### Creating Items [](id=creating-items)
 
 When you select a category, you'll see its items appear. You create items the
 same way you create categories. Use the *Add Item* button to open the new item
@@ -108,14 +108,14 @@ item is easy, using the *Search* function.
 That's how you create an item for the store. Now let's examine some of the
 shopping portlet's configuration options.
 
-## Configuration
+## Configuration [](id=configuration)
 
 By selecting the *gear* icon in the top right of the portlet, you can manage
 the configuration options of the shopping application. In the Setup view, there
 are tabs for Payment Settings, Shipping Calculation, Insurance Calculation, and
 Emails.
 
-### Payment Settings
+### Payment Settings [](id=payment-settings)
 
 The payment settings section is where you configure all the functions related to
 transactions for your store.
@@ -147,7 +147,7 @@ This rate is added as a sales tax charge to orders.
 
 **Minimum Order:** sets the minimum amount required for a sale.
 
-### Shipping and Insurance Calculation
+### Shipping and Insurance Calculation [](id=shipping-and-insurance-calculation)
 
 Both the Shipping and Insurance forms have identical options.
 
@@ -158,7 +158,7 @@ on a percentage of the total amount spent.
 **Values:** sets the shipping and insurance fees based on a range of figures
 that the total order amount falls under.
 
-### Emails
+### Emails [](id=emails)
 
 This form sets the addresses for customer email notifications. Use the list of
 term definitions below to customize the correspondence with your customers.
@@ -179,7 +179,7 @@ items for your store, set up payment options, and configured customer
 communication options. These are the basics required to get your store up and
 running. Now let's review the buying process.
 
-## Using the shopping cart
+## Using the shopping cart [](id=using-the-shopping-cart)
 
 Logged in users are given a shopping cart to store the items they wish to buy.
 Customers can manage items and their quantities directly from the cart, allowing
@@ -235,7 +235,7 @@ the order summary. After reviewing the summary, click *Finished* and you are
 given confirmation the order has been placed, along with the order number. Use
 this number to search for the order history and keep track of its status.
 
-### Customizing the shopping cart with a hook
+### Customizing the shopping cart with a hook [](id=customizing-the-shopping-cart-with-a-hook)
 
 If you think the shopping cart looks a little basic for your purposes, you can
 customize it by using a hook. To learn more about changing the appearance of the
@@ -247,7 +247,7 @@ Now your online store is set up, you have inventory, you have a payment system,
 and you have sales rolling in. All is good. Some day there will be customers
 with questions about their orders. Let's go over the orders next.
 
-## Managing Orders
+## Managing Orders [](id=managing-orders)
 
 On the Orders tab, there are fields for finding specific orders. Search for
 orders using the order number, order status, first or last name on the order, or
@@ -277,7 +277,7 @@ follow the delivery process.
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
-## Managing Coupons
+## Managing Coupons [](id=managing-coupons)
 
 The Coupons view of the Shopping application lets you provide coupon codes for
 special sale events or other discounts. You can determine the type of discount
@@ -300,7 +300,7 @@ a percentage, a fixed amount, free shipping, or a tax free sale. The Limits
 section lets you set coupon restrictions based on a list of categories and/or
 SKU numbers.
 
-### Integrating the Amazon Rankings portlet
+### Integrating the Amazon Rankings portlet [](id=integrating-the-amazon-rankings-portlet)
 
 If your store sells books, you can use Liferay's Amazon Rankings application to
 display them alongside the main shopping portlet. Both of these are found in the
@@ -310,7 +310,7 @@ outside of the typical category structure. Books are arranged in ascending order
 according to Amazon's Best Sellers Rank. Book cover images displayed in the
 portlet come from the images in the product's description.
 
-#### Setting up your Amazon Web Services account
+#### Setting up your Amazon Web Services account [](id=setting-up-your-amazon-web-services-account)
 
 To use Amazon rankings, you must first setup an Amazon Associates Program
 account. This gives you the *associate ID tag* you need to enter in your
@@ -352,7 +352,7 @@ $$$
 If your Amazon Web Services key is set improperly, you can't add books to your
 Shopping portlet.
 
-#### Setting up the Amazon Rankings portlet
+#### Setting up the Amazon Rankings portlet [](id=setting-up-the-amazon-rankings-portlet)
 
 After setting up your Amazon Web Services account, choose the books to display
 in your store. Select *Configuration* from the Amazon Rankings portlet in the

@@ -31,7 +31,7 @@ entries from multiple users' blogs and put them all in one larger list. We will
 go over how to use both of these portlets to create a blogging site for your
 users.
 
-## The Blogs Portlet 
+## The Blogs Portlet [](id=the-blogs-portlet)
 
 The Blogs portlet is available from the *Collaboration* section of the *Add
 &rarr; Applications* menu. Notice that it is an instanceable portlet, meaning
@@ -52,7 +52,7 @@ empty. There are several display options to let you configure it to look the
 way you want it to look. Before we start adding entries, let's configure the
 portlet so that it displays entries the way you want them.
 
-### Configuring the Blogs Portlet 
+### Configuring the Blogs Portlet [](id=configuring-the-blogs-portlet)
 
 The Blogs portlet is easy to configure. Click on the *Options* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
@@ -124,7 +124,7 @@ options work just like the ones above for blog entries.
 Now that you have the Blogs portlet looking the way you want it, you'll want to
 review permissions for it--especially if you're working on a shared blog. 
 
-### Permissions 
+### Permissions [](id=permissions)
 
 If you have a personal blog, the default permissions should work well for you.
 If you have a shared blog, you may want to modify the permissions on the blog.
@@ -143,7 +143,7 @@ blog.
 
 Now that everyone's able to post, let's look at how posts work. 
 
-### Adding Blog Entries 
+### Adding Blog Entries [](id=adding-blog-entries)
 
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
@@ -223,7 +223,7 @@ information from multiple places. For that reason, it also includes the Blogs
 Aggregator portlet so that you can "bubble up" blog entries from multiple users
 and highlight them on your site. Let's look next at how that works. 
 
-## Aggregating Blog Entries 
+## Aggregating Blog Entries [](id=aggregating-blog-entries)
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator portlet allows you to publish entries from multiple bloggers on one
@@ -270,7 +270,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-## The Blogs Administrator Portlet 
+## The Blogs Administrator Portlet [](id=the-blogs-administrator-portlet)
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your

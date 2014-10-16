@@ -25,7 +25,7 @@ The Chat portlet displays the number of your friends who are online. Click the
 You can have multiple chats open at a time, and can have one or more of them
 minimized.
 
-## Filtering Available Users 
+## Filtering Available Users [](id=filtering-available-users)
 
 By default, all online portal users appear in the Chat portlet. If you want to
 filter who appears in your contact list you can, but the configuration must be
@@ -94,7 +94,7 @@ the "Friend" social relationship type. Similarly, Liferay Social Office uses the
 "Connection" social relationship type. Developers can make use of any of the 
 social relationship types available in the API.
 
-## Jabber Server Integration 
+## Jabber Server Integration [](id=jabber-server-integration)
 
 Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet.
 Jabber is the original name of the XMPP (Extensible Messaging and Presence
@@ -111,7 +111,7 @@ override some properties of your Chat portlet's `portlet.properties` file. You
 could modify your Chat portlet's `portlet.properties` file directly, but it's a
 best practice to override it instead.
 
-### Installation Steps 
+### Installation Steps [](id=installation-steps)
 
 You can use any chat server that supports Jabber. The Chat portlet's Jabber
 server integration feature was tested with versions 3.7.0 and 3.7.1 of
@@ -156,7 +156,7 @@ chat server on a remote machine or chose to not use the default port, change
 3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1
 or higher.
 
-### Single Sign On 
+### Single Sign On [](id=single-sign-on)
 
 If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet
 will import the user automatically to Jabber after he logs in to the portal.

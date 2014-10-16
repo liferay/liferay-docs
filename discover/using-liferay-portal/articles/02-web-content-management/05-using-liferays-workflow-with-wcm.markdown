@@ -37,7 +37,7 @@ As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For the Lunar Resort's implementation we'll use
 the *Single Approver* workflow which ships with the product.
 
-## Defining Workflows for Web Content 
+## Defining Workflows for Web Content [](id=defining-workflows-for-web-content)
 
 Let's set up Liferay's Workflow for the Lunar Resort web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear

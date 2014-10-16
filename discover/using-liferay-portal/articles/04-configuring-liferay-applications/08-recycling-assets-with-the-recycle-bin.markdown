@@ -10,7 +10,7 @@ be restored back to its original state. Recycled items can expire after a
 certain period of time, resulting in their permanent deletion. Before diving
 into how the Recycle Bin works, let's look at how to configure it.
 
-## Configuring the Recycle Bin 
+## Configuring the Recycle Bin [](id=configuring-the-recycle-bin)
 
 To begin using the Recycle Bin, you must enable it where you plan to use it. The
 Recycle Bin supports portal-wide scope or site-specific scope. The portal-wide
@@ -75,7 +75,7 @@ recycled can restore the document.
 Now that you've successfully configured the Recycle Bin, let's look at how to
 use it.
 
-## Using the Recycle Bin 
+## Using the Recycle Bin [](id=using-the-recycle-bin)
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 the portal. Instead of offering a specific Recycle Bin for each asset type,
@@ -157,7 +157,7 @@ Recycle Bin* button located at the top of the Recycle Bin screen. This
 permanently deletes all the files from the Recycle Bin. Next, let's discuss how
 to use the drag and drop feature.
 
-### Drag and Drop 
+### Drag and Drop [](id=drag-and-drop)
 
 A quick and easy way to dispose of your unwanted assets is to drag and drop them
 into the Recycle Bin. While you're in the Control Panel, you can simply select
@@ -173,7 +173,7 @@ original location and transferred to the Recycle Bin.
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
 
-### Recycle Bin intelligence and support 
+### Recycle Bin intelligence and support [](id=recycle-bin-intelligence-and-support)
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the

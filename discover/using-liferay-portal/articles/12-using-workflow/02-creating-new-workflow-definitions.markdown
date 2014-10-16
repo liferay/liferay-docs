@@ -40,7 +40,7 @@ and it triggers a different transition to the Approved state.
 Let's learn about the Single Approver Workflow's components and look in detail
 at how you'd create a workflow using a single approver. 
 
-## Starting a workflow definition
+## Starting a workflow definition [](id=starting-a-workflow-definition)
 
 Below is a diagram of a single approver workflow definition. It has only two
 tasks (Update and Review) and two states (Initial State and Approved). 
@@ -68,7 +68,7 @@ control panel when users choose and configure workflows.
 
 After that, you define your initial state. 
 
-## Creating an initial state
+## Creating an initial state [](id=creating-an-initial-state)
 
 In this case, the state is simply that the asset has been created. States can
 contain actions and transitions. Actions can contain scripts. You can specify
@@ -98,7 +98,7 @@ is blocked so the asset can be reviewed.
 
 The next step is to create a task. 
 
-## Creating tasks
+## Creating tasks [](id=creating-tasks)
 
 The task has several parts and is the most complex part of the definition. Tasks
 are linked with roles in order to choose who should complete the task. Roles are
@@ -198,7 +198,7 @@ content creators any time a new item is submitted. Regardless of who you're
 notifying, you definitely want to send a notification to anyone who is
 responsible for approving content.
 
-## Sending notifications
+## Sending notifications [](id=sending-notifications)
 
 Notifications need an `execution-type` which can be `onAssignment`, `onEntry` or
 `onExit`.
@@ -278,7 +278,7 @@ define a role-type scoped at the portal level?-->
 
 Once the content is approved you'll want to transition to a new state. 
 
-## Using transitions
+## Using transitions [](id=using-transitions)
 
 In this case, you only need a single approver, then the transition goes to the
 final approved state. In more complex workflows, you might transition to a
@@ -344,7 +344,7 @@ transition to the *approved* state.
 
 You can also use *forks* and *joins* to create more complex workflows.
 
-## Using forks and joins
+## Using forks and joins [](id=using-forks-and-joins)
 
 Forks and joins are used for parallel processing. For example, say you have a
 new offer you'd like to put up on your site but it needs to go through both the
@@ -404,7 +404,7 @@ of making them wait in line, timers allow you to add some urgency to the
 process.
 	
 <!-- | TODO I accidentally removed this one too -->
-## Timers
+## Timers [](id=timers)
 
 *Timers* help make sure important tasks in a workflow aren't forgotten or left
 undone because of an oversight or the absence of someone on the critical path.
@@ -513,7 +513,7 @@ having multiple bottlenecks through the process. Using timers in conjunction
 with other workflow features can help you create powerful workflows for your
 organization.
 
-## Putting it all together
+## Putting it all together [](id=putting-it-all-together)
 
 The Kaleo workflow engine is deeply integrated with Liferay Portal. It can
 generate roles scoped for organizations, sites and for the whole portal based on
