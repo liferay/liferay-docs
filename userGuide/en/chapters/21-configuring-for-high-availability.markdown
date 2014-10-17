@@ -1527,8 +1527,8 @@ consider five different scenarios.
 
 - Scenario 4: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` and
-  `ehcache.cluster.link.replication=true`. In this case, Liferay uses Cluster
-  Link based replication for any caches configured with the
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses
+  Cluster Link based replication for any caches configured with the
   LiferayCacheEventListenerFactory classs. If the portal administrator
   configured a different CacheEventListener class for a specific cache (e.g.,
   JGroups), then Liferay uses that listener class. This a basically a hybrid
