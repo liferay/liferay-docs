@@ -450,7 +450,7 @@ English markdown, html, odt, and epub documents.
 	<java jar="../lib/liferay-doc-utils.jar" fork="true">
 	    <arg value="ResetImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown"/>
-            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
     </target>
 
@@ -461,7 +461,7 @@ English markdown, html, odt, and epub documents.
             <!-- <arg value="${build.dir}/${chapter}.markdown"/> -->
 	    <arg value="NumberImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown" />
-            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
     </target>
 
