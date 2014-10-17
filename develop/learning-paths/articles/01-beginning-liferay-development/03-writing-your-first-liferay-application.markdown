@@ -641,6 +641,8 @@ to make this happen.
 
     This makes your list of `Entry` objects available to the page. 
 
+2.  From the *Taglib imports* snippet category, drag the *Liferay UI Taglib Import* snippet and drop it beneath the existing tablib import.
+
 2.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
