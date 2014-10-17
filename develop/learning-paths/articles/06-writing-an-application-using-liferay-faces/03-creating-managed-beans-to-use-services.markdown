@@ -7,48 +7,251 @@ your users.
 You may be wondering what a managed bean is and what it accomplishes in a JSF
 portlet. 
 
-Managed beans are Java beans that are managed by the JSF framework. For example,
-*Model* managed beans are typically annotated with `@ViewScoped` and store
-stateful model data. EL expressions are used to bind declarative XHTML to model
-bean properties. *Backing* managed beans are typically annotated with
-`@RequestScoped` and are responsible for handling actions and listeners. JSF
-*manages* these beans by creating and removing the bean object from the server.
-You'll learn about these annotations and types later on. 
+Managed beans are Java beans that are managed by the JSF framework. There are
+two types of managed beans you'll use in this learning path: *View Scoped* and
+*Request Scoped*. Managed beans annotated with `@ViewScoped` store stateful data
+and remain on the server as long as the user interacts with the current view. EL
+expressions are used to bind declarative XHTML to bean properties. Managed beans
+annotated with `@RequestScoped` are usually responsible for handling actions and
+listeners. JSF *manages* these beans by creating and removing the bean object
+from the server. You'll learn about these annotations and types later on. 
 
-There are many Managed Bean types that you can use for a JSF portlet, but you'll
-learn about the most popular ones and create them for your guestbook portlet. 
+In this learning path, you'll create three managed beans. Two of the managed
+beans will represent the *Guestbook* and *Entry* entities. These beans will
+facilitate adding guestbooks and guestbook entries to your Guestbook portlet,
+respectively. The third managed bean will represent an abstract bean, or a bean
+specifying administrative type information that both Guestbook and Entry related
+beans will use. 
 
-If you're familiar with the MVC design pattern, you'll notice that each managed
-bean satisfies a
-[*concern*](http://en.wikipedia.org/wiki/Separation_of_concerns) used in the MVC
-framework. If you're not familiar with the MVC design pattern, you can visit the
-[Writing a Data-Driven
-Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
-learning path to learn about it, if you're interested. Below is a list of some
-commonly used managed beans and their descriptions: 
+Now that you have some background information on how JSF managed beans work and
+what managed beans you'll create for the Guestbook portlet, it's time to begin
+creating your guestbook's managed beans. 
 
-- **View/Backing Managed Bean:** This type of managed bean serves the *View*
-concern of the MVC design pattern. Backing beans support UI logic, and have a
-one to one relationship with a JSF view. They typically have properties
-associated with getters/setters, but these properties are of the view, not the
-underlying data model. 
+## Creating the Abstract Managed Bean
 
-- **Controller Managed Bean:** This type of managed bean serves the *Controller*
-concern of the MVC design pattern. This bean executes business logic and returns
-a navigation outcome to the JSF navigation handler. View managed beans typically
-have JSF action methods. For the sake of this learning path, the controller bean
-will be referred to as the *view* bean, since it controls a portlet's views
-(pages). 
+The first managed bean you'll create in your guestbook is the *Abstract* bean.
+As mentioned earlier, the abstract bean will hold properties and methods
+required for both the guestbook and entry beans.
 
-- **Model Managed Bean:** This type of managed bean serves the *Model* concern
-of the MVC design pattern. The JSF model bean uses the getter/setter design
-pattern, which encapsulates properties. The most common usage for a model bean
-is to have a property for a database entity POJO, such as
-`getSelectedGuestbook()`. 
+Before you begin creating managed beans, you'll need to have a package dedicated
+to hold them. To do this, right-click your `docroot/WEB-INF/src` directory and
+select *New* &rarr; *Package*. Give it the name
+`com.liferay.docs.guestbook.bean` and click *Finish*.
 
-You will use all three of these bean types in your guestbook portlet. Now that
-you have some background information on popular JSF managed beans, you'll begin
-creating your guestbook's managed beans next. 
+Now you're ready to create  the `AbstractBacking` class. 
+
+1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
+   &rarr; *Class*. 
+
+2. Give it the name `AbstractBacking` and select the *package* and *abstract*
+   modifier checkboxes. Then click *Finish*. 
+
+3. Add the following properties to your class: 
+
+        protected static final Logger logger = LoggerFactory.getLogger(AbstractBacking.class);
+
+        protected static final String UNEXPECTED_ERROR_MSG_ID = "an-unexpected-error-occurred";
+        protected static final String SUCCESS_INFO_MSG_ID = "your-request-processed-successfully";
+
+    You declared some general properties that help with logging and
+    success/error messaging.
+
+4. Add the following methods to your class: 
+
+        public void addGlobalSuccessInfoMessage() {
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            liferayFacesContext.addGlobalSuccessInfoMessage();
+        }
+
+        public void addGlobalUnexpectedErrorMessage() {
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            liferayFacesContext.addGlobalUnexpectedErrorMessage();
+        }
+
+    These two methods deal with the success and error messaging of your
+    guestbook portlet. They both create an instance of
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    and add the success/error messaging to it. You'll use the
+    `LiferayFacesContext` throughout your Guestbook and Entry beans, and now
+    it'll be equipped with success/error messaging. 
+
+5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports.
+
+Now that you've successfully created your `AbstractBacking` bean, it's time to
+move on to creating the guestbook managed bean. 
+
+## Creating the Guestbook and Entry Managed Beans
+
+Now that you've created the `AbstractBacking` bean, it's time to create the
+managed beans specific to each of your entities. You'll start with creating the
+guestbook bean class. 
+
+1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
+   &rarr; *Class*. 
+
+2. Name the class `GuestbookBacking` and, for the Superclass field, browse
+   for the `AbstractBacking` class you just created. Then click *Finish*. 
+
+Excellent! Your guestbook bean is now extending the abstract bean. Next, you'll
+create the entry bean class following a similar process: 
+
+1. Right-click on the `com.liferay.docs.guestbook.bean` package again and select
+   *New* &rarr; *Class*. 
+
+2. Assign `EntryBacking` as the class name and browse for the `AbstractBacking`
+   class for this bean's Superclass field. Then click *Finish*. 
+
+All the managed beans you'll use throughout this learning path are now created.
+However, to this point, they're both empty. The first thing you'll need to do is
+ensure the beans can work together to create guestbooks and guestbook entries in
+your portlet. You'll do this next by learning about bean scoping and dependency
+injection. 
+
+### Setting Managed Bean Scoping and Dependency Injection
+
+Recall that you briefly learned about *view scoped* and *request scoped* managed
+beans. The guestbook bean's scope will be of the view, meaning it will stay
+active on the server and have a known state as long as the portlet's view is
+being used by the user. View scoped beans must be characterized by adding the
+`@ViewScoped` tag at the beginning of the class, which you'll do when creating
+the guestbook bean.  
+
+Likewise, the entry bean will be request scoped, which is set by adding the
+`@RequestScoped` tag. This means that the entry bean instance is only created
+when a request is being made. JSF creates the bean, uses the bean as requested,
+and then it is removed and available for garbage collection. The request to
+create an instance of the entry bean is submitted from XHTML files, or *views*.
+You'll create the views later on in the learning path.
+
+Therefore, the general process for your guestbook is to store the content
+created from your request scoped beans on your view scoped beans before the
+request scoped beans are removed from the server. 
+
+ 
+
+Since the entry bean is trashed once the request is finished, the guestbook bean
+will have to encapsulate entities and properties generated during the entry bean
+request.
+
+Now that you have an understanding of how the managed beans will interact and
+rely on each other, it's time to characterize the `GuestbookBacking` class as a
+managed, view scoped bean, and then add properties and methods to its body.
+
+1. Directly above the public class declaration, insert the `@ManagedBean` and
+   `@ViewScoped` tags. Your class declaration should look like the following: 
+
+    ...
+
+    @ManagedBean
+    @ViewScoped
+    public class GuestbookBacking extends AbstractBacking {
+
+    ...
+
+2. Add the following properties in the class body: 
+
+        public static final String DEFAULT_GUESTBOOK_NAME = "Main";
+
+        // Private Data Members
+        private Guestbook originalGuestbook;
+
+        private Guestbook selectedGuestbook;
+        private List<Guestbook> guestbooks;
+
+        private Entry selectedEntry;
+        private List<Entry> entries;
+
+        private boolean editingGuestbook;
+        private boolean editingEntry;
+
+    These will be the properties used throughout the guestbook bean, and
+    referenced in the guestbook portlet's views. 
+
+3. In this bean, you'll first provide action methods that your guestbook
+   portlet needs to function, which includes: `add`, `cancel`, `save`, and
+   `select`. Add the following methods into your `GuestbookBacking` class: 
+
+        public void add() {
+            setOriginalGuestbook(getSelectedGuestbook());
+
+            Guestbook guestbook = GuestbookUtil.create(0L);
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            guestbook.setGroupId(liferayFacesContext.getScopeGroupId());
+            setSelectedGuestbook(guestbook);
+            editGuestbook();
+        }
+
+        public void cancel() {
+            select(getOriginalGuestbook());
+        }
+
+        public void save() {
+            Guestbook guestbook = getSelectedGuestbook();
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            guestbook.setCompanyId(liferayFacesContext.getCompanyId());
+            guestbook.setUserId(liferayFacesContext.getUserId());
+
+            try {
+
+                if (guestbook.getGuestbookId() == 0) {
+                    guestbook = GuestbookLocalServiceUtil.addGuestbook(guestbook);
+                }
+                else {
+                    guestbook = GuestbookLocalServiceUtil.updateGuestbook(guestbook);
+                }
+
+                addGlobalSuccessInfoMessage();
+            }
+            catch (Exception e) {
+                addGlobalUnexpectedErrorMessage();
+                logger.error(e);
+            }
+
+            // go back to master view
+            select(guestbook);
+        }
+
+        public void select(Guestbook guestbook) {
+
+            if (guestbook == null) {
+                setSelectedGuestbook(null);
+            }
+            else {
+                setSelectedGuestbook(guestbook);
+            }
+
+            // force Guestbooks and Entries to reload
+            setGuestbooks(null);
+            setEntries(null);
+
+            editingEntry = false;
+            editingGuestbook = false;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+   
 
 ## Using Backing Beans to Facilitate UI Logic
 
@@ -202,7 +405,7 @@ guestbook backing bean.
 **Note:** You'll notice while creating some of your managed beans that Liferay
 IDE/Developer Studio gives you error markers in some of your classes. Don't
 worry about these error markers, you'll rebuild your services at the end of this
-document and these errors will be resolved. 
+learning path and these errors will be resolved. 
 
 $$$
 
