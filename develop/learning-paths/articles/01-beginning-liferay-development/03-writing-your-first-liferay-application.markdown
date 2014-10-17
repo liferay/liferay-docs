@@ -321,7 +321,7 @@ attribute, enter *submit*. Click *Insert*.
 
 10. Beneath the Submit button you just created, drag another *button* snippet.
 For the `type` attribute, enter *cancel*. For the `onClick` attribute, enter
-`<%= viewURL %>`. This supplies the render URL you created that goes back to the
+`<%= viewURL.toString() %>`. This supplies the render URL you created that goes back to the
 `view.jsp` page.
 
 Your form is done! Save your JSP; it should look like this:
@@ -348,7 +348,7 @@ Your form is done! Save your JSP; it should look like this:
             <aui:button-row>
 
                 <aui:button type="submit"></aui:button>
-                <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+                <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
 
             </aui:button-row>
     </aui:form>
