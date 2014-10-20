@@ -859,21 +859,21 @@ use the resources importer with your theme and don't want to deploy the
 resources importer, you can remove or comment out this entry.
 
 The second entry, `resources-importer-developer-mode-enabled=true`, is a
-convenience feature for theme developers. With this setting enabled, if the
-resources are to be imported to a site or site template that already exists, the
-site or site template is recreated. If the resources are imported into a site
-template, the site template is reapplied to the sites that are based on the site
-template. Without `resources-importer-developer-mode-enabled=true`, you have to
-manually delete the sites or site templates built by the resources importer each
-time you change anything in your theme's
-`docroot/WEB-INF/src/resources-importer` folder.
+convenience feature for theme developers. With this setting enabled, importing
+resources to a site or site template that already exists, recreates the site or
+site template. Importing resources into a site template reapplies the site
+template and its resources to the sites that are based on the site template.
+Without `resources-importer-developer-mode-enabled=true`, you have to manually
+delete the sites or site templates built by the resources importer, each time
+you want to apply changes from your theme's
+`docroot/WEB-INF/src/resources-importer` folder. 
 
 ---
 
-![warning](../../images/tip-pen-paper.png) **Warning:**
-`resources-importer-developer-mode-enabled=true` is a dangerous setting since it
-involves *deleting* (and re-creating) a site or site template. It's only
-intended to be used during development. Never use it in production.
+![warning](../../images/tip-pen-paper.png) **Warning:** the
+`resources-importer-developer-mode-enabled=true` setting can be dangerous since
+it involves *deleting* (and re-creating) the affected site or site template.
+It's only intended to be used during development. Never use it in production. 
 
 ---
 
