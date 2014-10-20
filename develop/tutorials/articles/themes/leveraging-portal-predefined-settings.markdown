@@ -9,7 +9,7 @@ added in the future. You can modify these settings from your theme's
 Time to get on with learning how to customize predefining settings using themes.
 The first thing to cover is settings for portlet borders.
 
-## Portlet Borders
+## Portlet Borders [](id=portlet-borders)
 
 By default, the theme turns on portlet borderst. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false`, in your theme's
@@ -31,13 +31,13 @@ behavior of showing the borders:
 Now that you've learned how to configure portlet borders, you can learn how to 
 configure bullet styles used in your sites, next. 
 
-## Bullet Styles
+## Bullet Styles [](id=bullet-styles)
 
 Several of Liferay's core portlets use bullets, and you may have custom portlets
 in your portal that use bullets too. Any portlet can be configured to use any
 bullet styles inherited by your theme or implemented in your theme. For example,
 if your theme uses Liferay's Classic theme as its base parent (see
-[Setting a Base Theme](/develop/tutorials/-/knowledge_base/setting-a-base-theme)),
+[Setting a Base Theme](/develop/tutorials/-/knowledge_base/6-2/setting-a-base-theme)),
 you can leverage the Classic theme's *arrows* bullet style.
 
 The sample code below demonstrates the arrow bullet style class applied from the
@@ -80,7 +80,7 @@ Using CSS and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want. Next, take a look at how to configure
 displaying your site's name. 
 
-## Site Names
+## Site Names [](id=site-names)
 
 The site name settings let site administrators decide whether to display a
 site's name. If you're using a logo that mentions your company or site on each
@@ -118,13 +118,13 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
 With these settings configurable, site administrators can control site name
 display from the each site's *Look and Feel* screen. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
+**Note:** To override default behavior
 for individual portlets, you can modify the portlet's `liferay-portlet.xml`
 file.
 
----
+$$$
 
 Now that you know how to use the predefined settings available to you in Liferay
 Portal, the sky's the limit!

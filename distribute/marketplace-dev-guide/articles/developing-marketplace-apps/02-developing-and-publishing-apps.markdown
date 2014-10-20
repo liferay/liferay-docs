@@ -12,7 +12,7 @@ Since apps are nothing more than collections of individual plugins, your first
 step in developing a Marketplace app is to develop the functionality in the form
 of one or more Liferay plugins. To create a sample app that contains a single
 portlet, you can follow the detailed instructions from the learning path
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/beginning-liferay-development).
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
 After creating and deploying your sample app, return here to continue.
 
 In the real world, apps usually consist of multiple components (e.g., multiple
@@ -38,7 +38,7 @@ compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found in 
-[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/understanding-liferays-releases). 
+[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases). 
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 `6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions 
 follow a slightly different policy given the presence of fix packs and service
@@ -55,11 +55,15 @@ specify CE versions first, followed by EE versions, using this form:
 `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE` are replaced with
 the corresponding Liferay Releases with which your app is compatible).
 
- ![Note](../../images/tip.png) **Note:** If your app is compatible
++$$$
+
+**Note:** If your app is compatible
  with both CE and EE, you must specify a set of versions for both CE and EE
  releases. If you only specify compatibility with CE, then your app will not be
  compatible with (and will fail to deploy to) any EE release.
 
+$$$
+ 
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
 your `liferay-plugin-packages.properties` file:
@@ -71,7 +75,9 @@ and 6.1 EE releases starting with EE GA3. Marketplace creates two packages:
 one that is compatible with the 6.1 CE GA3 release and *later*, and another that
 is compatible with 6.1 EE GA3 release and *later*.
 
- ![Note](../../images/tip.png)**Note:** Any CE or EE versions you
++$$$
+
+**Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
  the `+` symbol.  This ensures that your app will be deployable onto future
  versions of Liferay (but does not guarantee your app will work in future
@@ -79,6 +85,8 @@ is compatible with 6.1 EE GA3 release and *later*.
  `liferay-versions=6.1.1,6.1.2+` does. Similarly,
  `liferay-versions=6.1.2+,6.1.30,6.1.31` doesn't work (as the EE versions are
  not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` does.
+
+$$$
 
 Here are some additional examples:
 

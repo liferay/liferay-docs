@@ -12,7 +12,7 @@ even download the *Liferay Android Sample Project* source code in
 creating the app is fun and is the quickest way to get it into your environment.
 Go ahead and get started! 
 
-## Creating the Project 
+## Creating the Project [](id=creating-the-project)
 
 1. First, go to *File* &rarr; *New* &rarr; *Project...*. Then select 
    *Liferay* &rarr; *Liferay Android Sample Project* in the window that appears. 
@@ -26,18 +26,16 @@ Go ahead and get started!
 
 3. Click *Finish* to create the sample Android app.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If you get a console error 
+**Note:** If you get a console error 
   that says `Unable to resolve target android-18`, or some other number, then 
   you need to set your Android project's build target. Right click your project 
   and select *Properties*. Next, click *Android* in the left side of the window 
   that appears. Then check the box for your version of the Android SDK under 
   *Project Build Target*. 
 
----
-
-![Figure 2: The Liferay Android Sample Project wizard gives you several options to customize your sample app.](../../images/mobile-sdk-sample-project-wizard.png)
++$$$
 
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
@@ -66,7 +64,7 @@ The `Session` interface is referenced from the
 `com.liferay.mobile.android.service` package. This app uses the Liferay Mobile
 SDK from the library JARs in this project.
 
-## Running the App 
+## Running the App [](id=running-the-app)
 
 You're now ready to run the sample app in Android's [emulator](http://developer.android.com/tools/devices/emulator.html).
 To do so, you'll need to have an Android Virtual Device (AVD) set up in Eclipse. 
@@ -93,14 +91,14 @@ names to see their information.
 
 Congratulations on creating a mobile app that uses Liferay! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

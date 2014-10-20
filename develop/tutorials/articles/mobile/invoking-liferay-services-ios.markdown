@@ -13,7 +13,7 @@ in an example of an app you might develop if you want to retrieve blogs from a
 Liferay instance. Note that the following code snippets are written in the 
 *Objective C* programming language. Let the invoking begin! 
 
-## Step 1: Create a Session 
+## Step 1: Create a Session [](id=step-1-create-a-session)
 
 The session is a conversion state between the client and server, that consists 
 of multiple requests and responses between the two. You need a session to pass 
@@ -37,20 +37,20 @@ authentication method requires the user's email address.
 
 **Password:** This is the user's password.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Warning:** Take care when using 
+**Warning:** Take care when using 
 administrator credentials on a production Liferay instance, as you'll have
 permission to call any service. Make sure not to modify data accidentally. Of
 course, the default administrator credentials should be disabled on a production
 Liferay instance. 
 
----
+$$$
 
 <!-- We should provide this information here, customized for Apple people.
 They're a sensitive lot. :-) -Rich -->
 
-## Step 2: Import the Liferay Services for Your App to Use 
+## Step 2: Import the Liferay Services for Your App to Use [](id=step-2-import-the-liferay-services-for-your-app-to-use)
 
 For this sample app, import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
@@ -66,7 +66,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal and plugin services. 
 
-## Step 3: Create a Service Object and Call its Services 
+## Step 3: Create a Service Object and Call its Services [](id=step-3-create-a-service-object-and-call-its-services)
 
 This sample app creates an `LRBlogsEntryService_v62` object and makes a service 
 call that fetches all blog entries from the *Guest* site. In this example, the 
@@ -83,22 +83,22 @@ synchronous service call returns only after the request is finished.
 Service method return types can be `void`, `NSString`, `NSArray`,
 `NSDictionary`, `NSNumber`, or `BOOL`.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** Many service methods
+**Note:** Many service methods
 require a group ID as a parameter. 
 You can call `[LRGroupService_v62 getUserSitesGroups:&error]`, which uses the
 `getUserSitesGroups()` method from Liferay Portal's
 [`GroupService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/GroupService.html)
 class to get a site group. 
 
----
+$$$
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 

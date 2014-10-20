@@ -7,7 +7,7 @@ fire on a cold winter evening.
 
 So you're sitting in your armchair next to the fire, as the Maven tutorials
 section
-[introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/maven)
+[introduction](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/maven)
 described. Shadows dance on the tapestry-covered wall, and Lenore II (your cat)
 is purring atop the mantle. Yes, you're passing this cold winter's night in
 grand style (in front of your computer, of course). Now imagine yourself
@@ -19,33 +19,33 @@ users.  This tutorial shows you how to develop your own theme plugin (i.e.,
 your "scenery") using Maven so your portal has a lasting impression on anyone
 who visits. 
 
-## Creating a Theme Plugin
+## Creating a Theme Plugin [](id=creating-a-theme-plugin)
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
-[Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-liferay-maven-parent-plugin-projects)
+[Using Liferay Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
 tutorial. That tutorial explains how to create a parent Maven project and its
 `pom.xml`. 
 
 To create your Liferay theme plugin project, just follow the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Theme* instead of *Portlet* as the plugin type. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: If you're using Maven's
+**Tip**: If you're using Maven's
 Archetype command line tool to generate your theme project, you can filter on
 group ID `liferay`, or even the group ID/artifact ID combination
 `liferay:theme`, to more easily find the Liferay portlet archetypes. 
 
----
+$$$
 
 Since it's helpful to familiarize yourself with the Liferay theme plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -90,6 +90,7 @@ created using Maven and themes created using the Plugins SDK:
 Location       | Maven project      | Plugins SDK project |
 -------------- | ------------------ | ------------------- |
 customizations | `src/main/webapp/` | `docroot/_diffs/`   |
+---
 
 <!--
 Revisit adding this link after the themes tutorials are published.
@@ -118,25 +119,25 @@ The theme plugin project POM has two additional properties:
         </properties>
 
 To deploy your theme plugin, follow the instructions in the
-[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 tutorial. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** When you execute the *package*
+**Note:** When you execute the *package*
 goal, a WAR file is created; it's just like the Maven WAR type project.
 Simultaneously, the parent theme is downloaded and copied, and your theme's
 customizations are overlaid last. A thumbnail image of the theme is created and
 placed in the *target* directory. Its path is
 `target/[theme]/images/screenshot.png` in your theme project. 
 
----
+$$$
 
 You now know how to create a theme plugin using Maven. You're familiar with
 its file structure and POM, and you know how to deploy the theme. Way to go!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
 <!-- Add link to Themes section. Jim -->

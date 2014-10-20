@@ -6,4 +6,7 @@
 	<category name="category.sample">
 		<portlet id="guestbook"></portlet>
 	</category>
+	<category name="category.hidden">
+		<portlet id="guestbook-admin"></portlet>
+	</category>
 </display>

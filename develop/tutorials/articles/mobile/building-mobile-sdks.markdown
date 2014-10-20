@@ -10,13 +10,13 @@ This tutorial covers how to build a Liferay Mobile SDK for Android and iOS.
 You'll begin by making sure the remote services are configured for any custom 
 portlets you have. Go ahead and get started! 
 
-## Configuring your Portlet's Remote Services 
+## Configuring your Portlet's Remote Services [](id=configuring-your-portlets-remote-services)
 
 For the SDK Builder to discover a portlet's remote services, the services must 
 be available and accompanied by a Web Service Deployment Descriptor (WSDD). 
 
 If you're in the process of developing the portlet, see
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 for in-depth instructions on implementing remote services.
 
 The following steps outline how to implement remote services for your portlet 
@@ -37,13 +37,13 @@ and make them available for the SDK Builder to discover.
 Now you're ready to use the SDK Builder to generate a custom portlet SDK for 
 your mobile app! 
 
-## Setting Up the SDK Builder  
+## Setting Up the SDK Builder [](id=setting-up-the-sdk-builder)
 
 The Liferay Mobile SDK takes care of making JSON Web Services 
 requests to your portlet. In this section you'll configure the SDK builder for 
 building your custom portlet SDK. 
 
-### Download the Liferay Mobile SDK Project 
+### Download the Liferay Mobile SDK Project [](id=download-the-liferay-mobile-sdk-project)
 
 You need to have the [Liferay Mobile SDK project](https://github.com/liferay/liferay-mobile-sdk) on your local machine to use 
 the SDK Builder. If you haven't done so already, download the Mobile SDK project 
@@ -65,7 +65,7 @@ to see how this class can be called from the command line.
 
 Now you're ready to configure the SDK builder! 
 
-### Configure the SDK Builder 
+### Configure the SDK Builder [](id=configure-the-sdk-builder)
 
 After you've downloaded the Liferay Mobile SDK project, you need to set a few
 properties before actually running a build. The Liferay Mobile SDK uses a build
@@ -75,14 +75,14 @@ must, however, tell the builder how to communicate with your portlet and how to
 create an SDK specific to your mobile platform. You do this by setting the below
 properties in the `gradle.properties` file.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If you don't want to change 
+**Note:** If you don't want to change 
   `gradle.properties` directly, you can also copy it to `~/.gradle` and modify 
   it there. Alternatively, you can also edit the `gradle.properties` inside each 
   platform folder (`ios/` or `android/`).
 
----
+$$$
 
 Here are the important properties to set.
 
@@ -133,12 +133,12 @@ Here's an example of these settings for a portlet with the web context value
 Now that you've configured the SDK Builder, you're ready to build a
 platform-specific SDK for your portlet's remote services. 
 
-## Building Platform-Specific Mobile SDKs
+## Building Platform-Specific Mobile SDKs [](id=building-platform-specific-mobile-sdks)
 
 With the SDK Builder, you can generate Mobile SDK `jar` files for Android and
 iOS apps to use. You can provide the best of both worlds!  
 
-### Building a Liferay Android SDK 
+### Building a Liferay Android SDK [](id=building-a-liferay-android-sdk)
 
 To build the service related source files for your Liferay Android SDK, run the
 following command from the `android/` folder. 
@@ -156,7 +156,7 @@ The `liferay-android-sdk-[version].jar` file is written to your
 You're now ready to use the `jar` file in your Android project! There are no 
 external dependencies.
 
-### Building a Liferay iOS SDK 
+### Building a Liferay iOS SDK [](id=building-a-liferay-ios-sdk)
 
 To build the service related source files for your Liferay iOS SDK, run the
 following command from the `ios/` folder. 
@@ -178,11 +178,11 @@ SDK is free of any external dependencies.
 You've just built a Liferay Android SDK and a Liferay iOS SDK for your mobile
 apps to call your custom portlet services. You're a mobile app rock star! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

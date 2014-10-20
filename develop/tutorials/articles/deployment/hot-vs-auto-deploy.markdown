@@ -11,7 +11,7 @@ How, you say? We're glad you asked! This tutorial gives you a brief synopsis of
 each deployment method. Go ahead and get started by learning about the hot 
 deployment method.
 
-## Using Hot Deployment 
+## Using Hot Deployment [](id=using-hot-deployment)
 
 The first deployment method you'll explore is *hot* deployment. You may be
 familiar with hot deployment in the context of Java EE application servers. In
@@ -79,7 +79,7 @@ overrides not being loaded by your application server.
 Hopefully this whets your appetite for doing hot deployments. Stay hungry, as
 it's time to explore auto deployment next. 
 
-## Using Auto Deployment 
+## Using Auto Deployment [](id=using-auto-deployment)
 
 The Liferay *auto* deployment feature is a mostly optional feature that works in
 conjunction with the hot deployment capabilities of your application server.
@@ -140,6 +140,6 @@ deployment process and make it more efficient.
 
 # Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)

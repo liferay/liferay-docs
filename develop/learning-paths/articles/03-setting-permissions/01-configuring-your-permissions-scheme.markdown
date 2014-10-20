@@ -59,7 +59,7 @@ Next, you'll create the file itself:
     	"http://www.liferay.com/dtd/liferay-resource-action- mapping_6_2_0.dtd">
 
 If you have a copy of Liferay's source code, you'll find the DTD for this file
-in the `defnitions` folder. The DTD is fully documented and explains every tag
+in the `definitions` folder. The DTD is fully documented and explains every tag
 you can place in this file. If you want a complete reference for every option,
 please look at the DTD. Here, you'll create a configuration that works for the
 guestbook application. Before you place anything in the file, however, you

@@ -8,10 +8,10 @@ for each deletion, you can create a batch of calls and send them all together.
 This tutorial shows you how to implement batch processing for your Android app.
 It's assumed that you already know how to invoke Liferay services in your
 Android app. If you don't, see the tutorial
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/invoking-liferay-services-android).
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-android).
 Read on to learn how to setup your batch of service calls. 
 
-## Implementing Batch Processing 
+## Implementing Batch Processing [](id=implementing-batch-processing)
 
 Here's a code snippet from an app that deletes blog entries synchronously as a
 batch: 
@@ -56,15 +56,15 @@ callback as a `BatchAsyncTaskCallback` instance:
     });
 
 This is similar to the procedure for making asynchronous calls described in the 
-tutorial [Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/invoking-services-asynchronously-android). 
+tutorial [Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-services-asynchronously-android). 
 It's just that easy to make efficient service calls in batch! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

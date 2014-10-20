@@ -8,7 +8,7 @@ configurator does, how to install it, and how to install its dependencies. As
 you read through it, you'll examine the structure of Liferay Maven projects and
 explore some configuration options.
 
-## Installing Maven Plugins for Liferay IDE
+## Installing Maven Plugins for Liferay IDE [](id=installing-maven-plugins-for-liferay-ide)
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -66,26 +66,26 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, you'll learn how to configure an existing Maven project.
 
-## Configuring Your Liferay Maven Project
+## Configuring Your Liferay Maven Project [](id=configuring-your-liferay-maven-project)
 
 Now that your Liferay IDE is Maven-ready, you can examine the anatomy of a
 Liferay Maven project. Note, you don't need to have an existing Liferay Maven
 project to continue. However, if you'd like to create a new Liferay Maven
 portlet project in the IDE before proceeding, you can do so by following
 instructions in the the tutorial [Creating Liferay Portlets with
-Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven).
+Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven).
 Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
+**Note:** Due to the lifecycle mapping
 of Eclipse and Maven, it is unsafe to manually insert or overwrite the
 `.classpath` file, `.project` file, and `.settings` folder. IDE automatically
 generates these files when a project is imported and updates them appropriately.
 
----
+$$$
 
 The `m2e-core` plugin delegates your Liferay Maven plugin's project
 configuration to the `m2e-liferay` project configurator. The `m2e-wtp` project
@@ -99,7 +99,7 @@ project's properties. The configurator detects invalid properties and reports
 them as errors in the IDE's POM editor. There are a list of key properties that
 your project must specify in order for it to become a valid Liferay IDE project.
 The [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
+Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
 tutorial identifies these properties and explains how they are used. 
 
 You can specify these properties in either the Maven profile of the global
@@ -128,7 +128,7 @@ parent `pom.xml` overrides the user `settings.xml` file, and the user
 Note that if a *profile* is active from your user `settings.xml`, its values 
 override your properties in a POM. If you'd like to specify the properties in a
 POM, see the [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
+Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
 tutorial for more details. 
 
 Here's an example of what a Maven profile looks like inside the `settings.xml`

@@ -13,13 +13,13 @@ you're using a different IDE, like *Android Studio*, you can download the latest
 version of the Mobile SDK and add it to your project library. If you want to use
 the Mobile SDK in a Maven project, you can configure it as a dependency. For
 more information about these topics, read the
-[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/setting-up-the-mobile-sdk-manually). 
+[Setting Up the Mobile SDK Manually](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-mobile-sdk-manually). 
 
 This tutorial starts by making sure that your environment has the software on
 which the Mobile SDK depends. Then you'll learn how to install the SDK following
 a few simple steps. 
 
-## Satisfying Dependencies 
+## Satisfying Dependencies [](id=satisfying-dependencies)
 
 The Liferay Mobile SDK plugin depends on the *Android SDK Tools* and *Android
 Development Tools (ADT)* Eclipse plugins. To satisfy these dependencies, you 
@@ -40,7 +40,7 @@ Bundle](http://developer.android.com/sdk/installing/bundle.html) section on the
 Android developer site to download and install the ADT bundle, which is built on Eclipse
 and which includes the required ADT plugins.
 
-## Installing the Liferay Mobile SDK 
+## Installing the Liferay Mobile SDK [](id=installing-the-liferay-mobile-sdk)
 
 Once you've installed the required Android plugins, you can install the
 Liferay Mobile SDK to your Eclipse instance by following these steps:
@@ -64,16 +64,16 @@ Liferay Mobile SDK to your Eclipse instance by following these steps:
 
 Terrific! You're ready to start developing Android apps that use Liferay! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating the Liferay Android Sample Project](add link once header id is generated)
 
 [Making Liferay and Custom Portlet Services Available in Your Android App](add link once header id is generated)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

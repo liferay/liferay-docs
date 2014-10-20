@@ -5,27 +5,27 @@ Creating a hook plugin with Maven is very similar to creating a portlet plugin
 with Maven. This tutorial explains how to create a hook plugin and explains
 the Liferay Maven hook plugin project's anatomy. 
 
-## Creating a Hook Plugin
+## Creating a Hook Plugin [](id=creating-a-hook-plugin)
 
 To create a Liferay hook plugin project, follow the steps outlined in the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Hook* as the plugin type. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: If you're using Maven's
+**Tip**: If you're using Maven's
 Archetype command line tool to generate your hook you can filter on group ID
 `liferay`, or even the group ID/artifact ID combination `liferay:hook`, to more
 easily find the Liferay portlet archetypes. 
 
----
+$$$
 
 Since it's helpful to familiarize yourself with the Liferay hook plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -57,12 +57,13 @@ Location    | Maven project     | Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
+---
 
 You now know how to create Liferay hook plugins to customize Liferay. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

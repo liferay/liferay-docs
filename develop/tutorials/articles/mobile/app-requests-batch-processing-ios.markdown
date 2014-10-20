@@ -11,7 +11,7 @@ iOS app. The code used is an example of an app you might develop if you want to
 retrieve blogs from a Liferay instance. Now it's time to get started whipping up 
 a fresh batch of requests!
 
-## Implementing Batch Processing of Requests 
+## Implementing Batch Processing of Requests [](id=implementing-batch-processing-of-requests)
 
 Suppose you want to delete 10 blog entries at the same time. Instead of making 
 one request for each delete call, you can create a batch of delete calls and 
@@ -48,10 +48,10 @@ If you want to make batch calls asynchronously, set the callback to the session.
 Great! Now you know how to utilize batch processing to speed up your app's 
 requests.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay))

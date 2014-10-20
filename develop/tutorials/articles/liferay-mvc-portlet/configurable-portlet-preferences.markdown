@@ -156,9 +156,9 @@ the name of your portlet preference.
 
         <aui:input name="preferences--somePreferenceKey--" type="checkbox" value="<%= somePreferenceKey_cfg %>" />
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** Make sure to declare
+**Note:** Make sure to declare
 directives for any taglibs your configuration JSP requires, or declare the
 directives in one of the JSPs that the configuration JSP includes. 
 
@@ -166,7 +166,7 @@ You may also need to declare the `<portlet:defineObjects />` tag to access
 implicit variables. This tag provides useful portlet variables such as
 *renderRequest*, *portletConfig*, and *portletPreferences*. 
 
----
+$$$
 
 Your configuration JSP is all set to display your portlet preference options.
 You're ready to implement a custom class to handle the configuration action. If
@@ -205,14 +205,14 @@ portlet preferences from the configuration form and storing them in the
 database. Usually, you'd add appropriate validation logic for the parameters
 received from the form. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** You won't need to store
+**Note:** You won't need to store
 portlet preferences by calling `preferences.store()` since they're automatically
 stored in the `DefaultConfigurationAction` class, which your configuration class
 extends. 
 
----
+$$$
 
 Another common method to override in a custom configuration action class is the
 [`DefaultConfigurationAction`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html)'s

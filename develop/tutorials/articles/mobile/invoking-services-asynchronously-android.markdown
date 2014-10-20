@@ -13,7 +13,7 @@ session, it makes them asynchronously. To make synchronous calls again, set
 This tutorial shows you how to implement asynchronous requests in your Android 
 app. Go ahead and get started!
 
-## Implementing Asynchronous Requests in Your Android App 
+## Implementing Asynchronous Requests in Your Android App [](id=implementing-asynchronous-requests-in-your-android-app)
 
 The following steps outline how to implement asynchronous requests in your app: 
 
@@ -86,15 +86,15 @@ It's also possible to use a generic `AsyncTaskCallback` implementation called
 `GenericAsyncTaskCallback`. For this implementation, you must implement a
 transform method and handle JSON parsing yourself. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** If you still don't want to use
+**Note:** If you still don't want to use
 any of these callbacks, you can implement `AsyncTaskCallback` directly, but be
 careful. You should always get the first element of the `JSONArray` passed as a
 parameter to the `onPostExecute(JSONArray jsonArray)` method (i.e.,
 `jsonArray.get(0)`).
 
----
+$$$
 
 After the request has finished, the `onSuccess()` method is called on the main
 UI thread. Since the request is asynchronous, the service call immediately
@@ -104,12 +104,12 @@ the callback's `onSuccess()` method, instead.
 Great! Now you know about invoking services asynchronously from your Android 
 app.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)

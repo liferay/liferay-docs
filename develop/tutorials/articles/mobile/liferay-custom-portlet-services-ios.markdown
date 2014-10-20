@@ -10,17 +10,17 @@ This tutorial covers how to install a Liferay iOS SDK that you either download
 from Liferay or build yourself. Compatibility with versions of Liferay and iOS 
 are also discussed. Let the installation begin! 
 
-## Making Custom Portlet Services Available in Your iOS App 
+## Making Custom Portlet Services Available in Your iOS App [](id=making-custom-portlet-services-available-in-your-ios-app)
 
 If you want to invoke remote web services for your custom portlets, then you 
 need to generate the client libraries by building the SDK yourself. Building the 
 SDK is covered in the tutorial
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/building-mobile-sdks).
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks).
 Once you build the SDK to a `zip` file, you can install it using the manual 
 installation steps below. Just make sure to use your built `zip` file instead of
 downloading Liferay's iOS Mobile SDK `zip` file. 
 
-## Setting Up the iOS SDK 
+## Setting Up the iOS SDK [](id=setting-up-the-ios-sdk)
 
 These installation instructions assume you're using the XCode developer tool 
 provided by Apple. You can dowload XCode from the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).
@@ -28,7 +28,7 @@ The iOS SDK can be installed either manually, or by using CocoaPods. The first
 section here covers manual installation. The section that follows covers 
 installation using CocoaPods. 
 
-### Installing the SDK Manually 
+### Installing the SDK Manually [](id=installing-the-sdk-manually)
 
 1. [Download](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk) the latest version of `liferay-ios-sdk.zip`. 
 
@@ -43,7 +43,7 @@ installation using CocoaPods.
 5. The iOS SDK requires [AFNetworking 2.2.4](https://github.com/AFNetworking/AFNetworking/releases/tag/2.2.4).
    Make sure its source code is added to your project.
 
-### Installing the SDK Using CocoaPods 
+### Installing the SDK Using CocoaPods [](id=installing-the-sdk-using-cocoapods)
 
 1. Make sure you have CocoaPods installed.
 
@@ -60,7 +60,7 @@ installation using CocoaPods.
 
 For more information on how CocoaPods works, see their [documentation](http://guides.cocoapods.org/using/index.html).
 
-## Understanding Liferay and iOS Compatibility 
+## Understanding Liferay and iOS Compatibility [](id=understanding-liferay-and-ios-compatibility)
 
 Each Liferay Mobile SDK is designed to work with a specific Liferay Portal 
 version. Because of this, the Liferay Mobile SDK version scheme reflects the 
@@ -77,16 +77,16 @@ though. You can add both versions 6.2.0.1 and 7.0.0.1 to your project. These
 don't conflict because service class names are suffixed with their version 
 number. For example, service classes from versions 6.2.x and 7.0.x end in 
 `_v62.m` and `_v7.m`, respectively. To find out which Liferay versions you are 
-connecting to, use the `[LRPortalVersionUtil getPortalVersion:…]` method. 
+connecting to, use the `[LRPortalVersionUtil getPortalVersion:ï¿½]` method. 
 
 The Liferay iOS SDK is compatible with iOS versions 6.1 and up. Older versions 
 of iOS may work with the SDK, but compatibility untested. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/liferay-mobile-sdk-builder)
+[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
