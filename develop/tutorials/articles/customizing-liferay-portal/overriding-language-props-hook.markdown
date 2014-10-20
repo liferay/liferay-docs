@@ -1,10 +1,10 @@
 # Overriding Language Properties Using a Hook [](id=overriding-language-properties-using-a-hook)
 
-A language properties hook lets you change Liferay Portal's text to suit your
-needs. For example, you may want to change the title of a Liferay core portlet,
-a message Liferay displays on successfully completing a request, or some other
-bit of text in the UI. You can override all of these strings using a language
-properties Liferay hook plugin. 
+A language properties hook lets you change Liferay Portal's messages and labels
+to suit your needs. For example, you may want to change the title of a Liferay
+core portlet, a message Liferay displays on successfully completing a request,
+or some other bit of text in the UI. You can override all these strings using
+a language properties Liferay hook plugin. 
 
 ![Figure 1: You can override portlet titles, like the Sign In portlet's default title *Sign In*, with new titles from a language properties hook plugin.](../../images/override-sign-in-en.png)
 
@@ -14,9 +14,9 @@ Customizing Liferay's default textual content involves the following two steps:
 want to replace.
 2. Specifying new custom text values using a Liferay language properties hook.
 
-This tutorial illustrates this process and as an example, it shows you how to
-use a hook to override the title of Liferay's Sign In portlet. You can apply the
-same process to customizing any of Liferay's language properties. 
+This tutorial illustrates this process, and it shows you how to use a hook to
+override the title of Liferay's Sign In portlet. You can apply the same process
+to customizing any of Liferay's language properties. 
 
 First, you'll learn how to find the language key properties that specify
 Liferay's default text values. It's time to get started and locate the default
@@ -91,22 +91,21 @@ properties* check box and click *Next*.
 
     ![Figure 5: Here's a Spanish translation of the Sign In portlet's title.](../../images/override-sign-in-es.png)
 
-If you created the language properties hook using Liferay IDE, then you're
-finished and can skip the next section. The Liferay Hook Configuration wizard in
-Liferay IDE automatically takes care of inserting the proper references in the
+If you created the language properties hook using Liferay IDE, you're finished
+and can skip the next section. The Liferay Hook Configuration wizard in Liferay
+IDE automatically takes care of inserting the proper references in the
 `liferay-hook.xml` file to your language files. If you need to add more language
 files, simply run the wizard again. 
 
-However, what if you created your language files manually? What if you have an 
-inherent distrust of wizards? What if you're a veteran commander of the command 
-line? Don't fret! The next section shows you how to manually reference your 
-language files in your hook plugin's `liferay-hook.xml` file.
+If you created your language files manually, however, the next section shows you
+how to manually reference your language files in your hook plugin's
+`liferay-hook.xml` file.
 
 ## Referencing Custom Language Files in the liferay-hook.xml File
 
 Each reference to a language file in `liferay-hook.xml` is defined in a
 `language-properties` tag. For example, you could reference custom language
-files for English, Spanish, and the default language properties file, by
+files for English, Spanish, and the default language properties file by
 specifying them in the `liferay-hook.xml` file like this:
 
     <hook>
@@ -137,7 +136,7 @@ language files.
     language files as you want to reference.
 
 ![Figure 6: Liferay IDE's Overview mode for editing `liferay-hook.xml` facilitates specifying custom language files.](../../images/overview-mode-language-props.png)
-    
+ 
 If you want to view the XML references that Liferay IDE generated for you, click
 on the *Source* tab of `liferay-hook.xml` editor.
 
