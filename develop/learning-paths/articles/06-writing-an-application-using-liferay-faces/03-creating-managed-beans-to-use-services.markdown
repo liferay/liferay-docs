@@ -11,10 +11,12 @@ Managed beans are Java beans that are managed by the JSF framework. There are
 two types of managed beans you'll use in this learning path: *View Scoped* and
 *Request Scoped*. Managed beans annotated with `@ViewScoped` store stateful data
 and remain on the server as long as the user interacts with the current view. EL
-expressions are used to bind declarative XHTML to bean properties. Managed beans
-annotated with `@RequestScoped` are usually responsible for handling actions and
-listeners. JSF *manages* these beans by creating and removing the bean object
-from the server. You'll learn about these annotations and types later on. 
+expressions are used to bind declarative XHTML to bean properties.
+
+Managed beans annotated with `@RequestScoped` are usually responsible for
+handling actions and listeners. JSF *manages* these beans by creating and
+removing the bean object from the server. You'll learn about these annotations
+and types later on. 
 
 In this learning path, you'll create three managed beans. Two of the managed
 beans will represent the *Guestbook* and *Entry* entities. These beans will
@@ -75,10 +77,10 @@ Now you're ready to create  the `AbstractBacking` class.
     `LiferayFacesContext` throughout your Guestbook and Entry beans, and now
     it'll be equipped with success/error messaging. 
 
-5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports.
+5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
 
 Now that you've successfully created your `AbstractBacking` bean, it's time to
-move on to creating the guestbook managed bean. 
+move on to creating the guestbook and entry managed beans. 
 
 ## Creating the Guestbook and Entry Managed Beans
 
@@ -102,42 +104,41 @@ create the entry bean class following a similar process:
    class for this bean's Superclass field. Then click *Finish*. 
 
 All the managed beans you'll use throughout this learning path are now created.
-However, to this point, they're both empty. The first thing you'll need to do is
-ensure the beans can work together to create guestbooks and guestbook entries in
-your portlet. You'll do this next by learning about bean scoping and dependency
-injection. 
+However, to this point, the guestbook and entry beans are empty. The first thing
+you'll need to do is ensure these beans can work together to create guestbooks
+and guestbook entries in your portlet. You'll do this next by learning about
+bean scoping and dependency injection. 
 
 ### Setting Managed Bean Scoping and Dependency Injection
 
 Recall that you briefly learned about *view scoped* and *request scoped* managed
-beans. The guestbook bean's scope will be of the view, meaning it will stay
-active on the server and have a known state as long as the portlet's view is
-being used by the user. View scoped beans must be characterized by adding the
-`@ViewScoped` tag at the beginning of the class, which you'll do when creating
-the guestbook bean.  
+beans in the previous section. The guestbook bean's scope will be of the view,
+meaning it will stay active on the server and have a known state as long as the
+portlet's view is being used by the user. View scoped beans must be
+characterized by adding the `@ViewScoped` tag at the beginning of the class,
+which you'll do when creating the guestbook bean.  
 
 Likewise, the entry bean will be request scoped, which is set by adding the
 `@RequestScoped` tag. This means that the entry bean instance is only created
-when a request is being made. JSF creates the bean, uses the bean as requested,
-and then it is removed and available for garbage collection. The request to
-create an instance of the entry bean is submitted from XHTML files, or *views*.
-You'll create the views later on in the learning path.
+when a request is being made. The request to create an instance of the entry bean is submitted from XHTML
+files, or *views*. You'll create the views later on in the learning path.
 
-Therefore, the general process for your guestbook is to store the content
-created from your request scoped beans on your view scoped beans before the
-request scoped beans are removed from the server. 
+JSF creates the request scoped bean, uses it as requested, and then removes it
+and makes it available for garbage collection.
 
- 
-
-Since the entry bean is trashed once the request is finished, the guestbook bean
-will have to encapsulate entities and properties generated during the entry bean
-request.
+Thus, the general process for your guestbook is to store the content created
+from your request scoped beans on your view scoped beans before the request
+scoped beans are removed from the server. Therefore, since the entry bean is
+trashed once the request is finished, the guestbook bean will have to
+encapsulate entities and properties generated during the entry bean request. 
 
 Now that you have an understanding of how the managed beans will interact and
-rely on each other, it's time to characterize the `GuestbookBacking` class as a
-managed, view scoped bean, and then add properties and methods to its body.
+rely on each other, it's time to characterize the beans as managed and
+view/reqeust scoped. 
 
-1. Directly above the public class declaration, insert the `@ManagedBean` and
+1. Open the `GuestbookBacking` bean class. 
+
+2. Directly above the public class declaration, insert the `@ManagedBean` and
    `@ViewScoped` tags. Your class declaration should look like the following: 
 
     ...
@@ -148,11 +149,61 @@ managed, view scoped bean, and then add properties and methods to its body.
 
     ...
 
-2. Add the following properties in the class body: 
+3. Open the `EntryBacking` bean class. 
+
+4. Directly above the public class declaration, insert the `@ManagedBean` and
+   `@RequestScoped` tags. Your class declaration should look like the following: 
+
+    ...
+
+    @ManagedBean
+    @RequestScoped
+    public class EntryBacking extends AbstractBacking {
+
+    ...
+
+5. Press *Ctrl-Shift-O* to add the necessary imports related to these tags. 
+
+Your managed beans are now scoped! Since the properties and entities created
+using the request scoped entry bean are temporary, they'll need to be stored on
+the view scoped guestbook bean. 
+
+To do this, you'll need to insert another tag into the `EntryBacking` bean.
+Directly below the class declaration, add the following tag and property: 
+
+    @ManagedProperty(name = "guestbookBacking", value = "#{guestbookBacking}")
+    protected GuestbookBacking guestbookBacking;
+
+The `@ManagedProperty` annotation is used to inject dependencies from one
+managed bean into another. Thus, the `GuestbookBacking`'s dependencies are
+injected into the `guestbookBacking` property, making the `GuestbookBacking`
+bean's properties and methods available throughout the `EntryBacking` bean.  
+    
+Lastly, to make the dependency injection successful, the injected properties
+must be set in a setter method. Copy in the following method: 
+
+    public void setGuestbookBacking(GuestbookBacking guestbookBacking) {
+        this.guestbookBacking = guestbookBacking;
+    }
+    
+Excellent! You've successfully configured your managed beans' scoping and
+dependency injection. You may be wondering how the properties and entities of
+the request scoped entry bean are stored on the guestbook bean. This is done
+using getter and setter methods to encapsulate data in the guestbook bean.
+You'll add these in soon, but first, you'll add in the methods necessary to
+perform actions in the Guestbook portlet. 
+
+### Creating Action Methods for Managed Beans
+
+Now that you've finished the set up portion of your managed beans, it's time to
+begin adding substance in your bean class bodies. The first thing you'll do is
+add action methods that are necessary for each bean. To start, you'll add action
+methods to the guestbook bean. 
+
+1. Add the following properties in the `GuestbookBacking` class body: 
 
         public static final String DEFAULT_GUESTBOOK_NAME = "Main";
 
-        // Private Data Members
         private Guestbook originalGuestbook;
 
         private Guestbook selectedGuestbook;
@@ -164,12 +215,11 @@ managed, view scoped bean, and then add properties and methods to its body.
         private boolean editingGuestbook;
         private boolean editingEntry;
 
-    These will be the properties used throughout the guestbook bean, and
-    referenced in the guestbook portlet's views. 
+    These will be the properties used throughout the guestbook and entry beans,
+    and referenced in the Guestbook portlet views. 
 
-3. In this bean, you'll first provide action methods that your guestbook
-   portlet needs to function, which includes: `add`, `cancel`, `save`, and
-   `select`. Add the following methods into your `GuestbookBacking` class: 
+2. Add the following action methods to your guestbook bean, directly below the
+   properties: 
 
         public void add() {
             setOriginalGuestbook(getSelectedGuestbook());
@@ -207,7 +257,7 @@ managed, view scoped bean, and then add properties and methods to its body.
                 logger.error(e);
             }
 
-            // go back to master view
+            // Go back to master view
             select(guestbook);
         }
 
@@ -228,265 +278,89 @@ managed, view scoped bean, and then add properties and methods to its body.
             editingGuestbook = false;
         }
 
+    These methods deal directly with the `Guestbook` entities, and are triggered
+    from the views, which you'll create later. Notice the `add()` and `save()`
+    methods use
+    [LiferayFacesContext](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    to set certain parameters. You can visit the
+    [Using the LiferayFacesContext with Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/using-the-liferayfacescontext-with-liferay-faces-portal)
+    tutorial for more information on how the `LiferayFacesContext` can be used.
+    You'll also notice these methods have many error markings. This is because
+    they're referencing setter methods use to encapsulate data. You'll create
+    these methods later, as well. 
 
+3. The next two methods you'll add are called during the Guestbook portlet's
+   start-up, which creates the default *Main* guestbook. Add the following
+   method directly below the `cancel()` method: 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-   
-
-## Using Backing Beans to Facilitate UI Logic
-
-The first beans you'll create in your guestbook are backing beans. As mentioned
-earlier, backing beans support UI logic, so you'll need to create a backing bean
-for guestbooks and for the guestbook's entries. Each bean will facilitate adding
-a `Guestbook` or `Entry` entity.
-
-Besides those two backing beans, you'll also create an abstract backing bean,
-which will hold properties and methods required for both the guestbook and entry
-backing beans. Therefore, both the guestbook and entry backing beans will extend
-the abstract backing bean. 
-
-Before you begin creating backing beans, you'll need to have a package dedicated
-to hold all of your managed beans. To do this, right-click your
-`docroot/WEB-INF/src` directory and select *New* &rarr; *Package*. Give it the
-name `com.liferay.docs.guestbook.bean` and click *Finish*. 
-
-Now you're ready to create your backing beans. You'll first create the
-`AbstractBackingBean`. 
-
-1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
-   &rarr; *Class*. 
-
-2. Give it the name `AbstractBackingBean` and select the *package* and
-   *abstract* modifier checkboxes. Then click *Finish*. 
-
-3. Add the following properties to your class:
-
-        protected static final Logger logger = LoggerFactory.getLogger(AbstractBackingBean.class);
-
-        protected static final String UNEXPECTED_ERROR_MSG_ID = "an-unexpected-error-occurred";
-        protected static final String SUCCESS_INFO_MSG_ID = "your-request-processed-successfully";
-
-        @ManagedProperty(name = "guestbookModelBean", value = "#{guestbookModelBean}")
-        protected GuestbookModelBean guestbookModelBean;
-
-        @ManagedProperty(name = "viewBean", value = "#{viewBean}")
-        protected ViewBean viewBean;
-
-    Notice you first declared some general properties that help with logging and
-    success/error messaging. Then, notice the `@ManagedProperty` tags. These
-    annotations are used to inject dependencies from one managed bean into
-    another. Thus, the `GuestbookModelBean` and `ViewBean`'s dependencies are
-    injected into the `guestbookModelBean` and `viewBean` properties. 
-    
-    Are you wondering what these beans are and where they're coming from? The
-    good news is you haven't missed anything; you haven't created those managed
-    beans yet. Those will be your model and view beans, which you'll create
-    later on. 
-    
-    Lastly, to make the dependency injection successful, the injected properties
-    must be set in a setter method. You'll do that next. 
-
-4. Add the following methods to your class:
-
-        public void addGlobalSuccessInfoMessage() {
-            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-            liferayFacesContext.addGlobalSuccessInfoMessage();
-        }
-
-        public void addGlobalUnexpectedErrorMessage() {
-            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-            liferayFacesContext.addGlobalUnexpectedErrorMessage();
-        }
-
-        public void cancel() {
-            viewBean.master();
-        }
-
-        public void setGuestbookModelBean(GuestbookModelBean guestbookModelBean) {
-            this.guestbookModelBean = guestbookModelBean;
-        }
-
-        public void setViewBean(ViewBean viewBean) {
-            this.viewBean = viewBean;
-        }
-
-    As was specified previously, the setter methods for the `guestbookModelBean`
-    and `viewBean` are created to finalize dependency injection. You also
-    created methods that facilitate cancellation, and the addition of success
-    and error messages. 
-
-5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
-
-Great! That covers your abstract backing bean. Now its time to create the
-backing beans specific to each of your entities. You'll start with creating the
-guestbook backing bean. 
-
-1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
-   &rarr; *Class*. 
-
-2. Name the class `GuestbookBackingBean` and, for the Superclass field, browse
-   for the `AbstractBackingBean` you just created. Then click *Finish*. 
-
-3. In this backing bean, you'll provide action methods that your guestbook
-   portlet needs to function, which include: add, cancel, save, and select. Add
-   the following methods into your `GuestbookBackingBean` class:
-
-        public void add() {
-            Guestbook guestbook = GuestbookUtil.create(0L);
-            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-            guestbook.setGroupId(liferayFacesContext.getScopeGroupId());
-            guestbookModelBean.setSelectedGuestbook(guestbook);
-            viewBean.guestbook();
-        }
-
-        @Override
-        public void cancel() {
-
-            guestbookModelBean.setSelectedGuestbook(null);
-            super.cancel();
-        }
-
-        public void save() {
-            Guestbook guestbook = guestbookModelBean.getSelectedGuestbook();
+        public void createMainGuestbook() {
 
             try {
 
-                if (guestbook.getGuestbookId() == 0) {
-                    guestbook = GuestbookLocalServiceUtil.addGuestbook(guestbook);
-                }
-                else {
-                    guestbook = GuestbookLocalServiceUtil.updateGuestbook(guestbook);
-                }
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
 
-                addGlobalSuccessInfoMessage();
+                Guestbook defaultGuestbook = (Guestbook)
+                    GuestbookLocalServiceUtil.getFirstGuestbookByName(scopeGroupId, DEFAULT_GUESTBOOK_NAME);
+
+                // Create the default guestbook if it does not exist in the database
+                if (defaultGuestbook == null) {
+                    logger.info("postConstruct: creating a default guestbook named " + DEFAULT_GUESTBOOK_NAME + " ...");
+
+                    Guestbook guestbook = GuestbookUtil.create(0L);
+                    guestbook.setName(DEFAULT_GUESTBOOK_NAME);
+                    guestbook.setGroupId(scopeGroupId);
+                    guestbook.setCompanyId(liferayFacesContext.getCompanyId());
+                    guestbook.setUserId(liferayFacesContext.getUserId());
+                    GuestbookLocalServiceUtil.addGuestbook(guestbook);
+                }
             }
             catch (Exception e) {
-                addGlobalUnexpectedErrorMessage();
-                logger.error(e);
+                e.printStackTrace();
             }
-
-            guestbookModelBean.forceGuestbooksReload();
-            guestbookModelBean.forceEntriesReload();
-            viewBean.master();
         }
 
-        public void select(Guestbook guestbook) {
-            guestbookModelBean.setSelectedGuestbook(guestbook);
-            guestbookModelBean.forceEntriesReload();
-            viewBean.master();
+        @PostConstruct
+        public void postConstruct() {
+            createMainGuestbook();
         }
 
-    Each method accomplishes
+    The `@PostConstruct` annotation forces the `postConstruct()` method to be
+    called directly after the bean's construction and dependency injection have
+    completed. Once the `postConstruct()` method is called, the
+    `createMainGuestbook()` method is called, which creates the default
+    guestbook displayed when the Guestbook portlet is placed on a page. 
 
-4. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
-
-+$$$
-
-**Note:** You'll notice while creating some of your managed beans that Liferay
-IDE/Developer Studio gives you error markers in some of your classes. Don't
-worry about these error markers, you'll rebuild your services at the end of this
-learning path and these errors will be resolved. 
-
-$$$
-
-This `GuestbookBackingBean` is *request scoped*, which means that it is only
-created when a request is being made. JSF creates the bean, uses the bean as
-requested, and then it is removed and available for garbage collection. The
-request to create an instance of the `GuestbookBackingBean` is submitted from
-XHTML files, or *views*. You'll create the views later on in the learning path. 
-
-Because this bean is request scoped, after finishing its request, it sets what
-was requested using a setter method on the model bean. Since you're setting
-requests on the model bean, your intuition probably tells you that the model
-bean can't be request scoped. The model bean is *view scoped*, but you'll learn
-about that when creating the model bean in the next section. 
-
-Since this backing bean is request scoped, you'll need to add the appropriate
-tags to declare this in the class. Directly above the public class declaration,
-insert the `@ManagedBean` and `@RequestScoped` tags. Your class is now request
-scoped: 
-
-    ...
-
-    @ManagedBean
-    @RequestScoped
-    public class GuestbookBackingBean extends AbstractBackingBean {
-
-    ...
-
-Now that you've finished the `GuestbookBackingBean` class, you'll examine the
-`add()` method, and learn what is happening when this method is called: 
-
-    public void add() {
-        Guestbook guestbook = GuestbookUtil.create(0L);
-        LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-        guestbook.setGroupId(liferayFacesContext.getScopeGroupId());
-        guestbookModelBean.setSelectedGuestbook(guestbook);
-        viewBean.guestbook();
-    }
-
-Suppose a user clicks the *Add Guestbook* button. A request from the guestbook
-view (XHTML) creates an instance of the `GuestbookBackingBean` and calls its
-`add()` method. The `add()` method creates an empty guestbook with a `groupId`.
-Next, that guestbook is set on the model bean by calling
-`guestbookModelBean.setSelectedGuestbook(guestbook);`. Lastly, the view bean's
-`guestbook()` method is called, which directs the portlet in opening the correct
-page for the user to create their guestbook. When reaching the end of the
-method, the instance of the backing bean is removed from the server. Pretty
-cool, right? 
-
-Next, you'll create the entry backing bean, which follows the same fundamental
-process. 
-
-1. Right-click on the `com.liferay.docs.guestbook.bean` package and select *New*
-   &rarr; *Class*. 
-
-2. Name the class `EntryBackingBean` and, for the Superclass field, browse
-   for the `AbstractBackingBean` you just created. Then click *Finish*. 
-
-3. For the `EntryBackingBean`, you'll create action methods similar to those you
-specified in the `GuestbookBackingBean`: 
+4. Open the `EntryBacking` bean and insert the following action methods into the
+   class body, directly after the `guestbookBacking` property initialization: 
 
         public void add() {
             Entry entry = EntryUtil.create(0L);
             LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
             entry.setGroupId(liferayFacesContext.getScopeGroupId());
-            entry.setGuestbookId(guestbookModelBean.getSelectedGuestbook().getGuestbookId());
-            guestbookModelBean.setSelectedEntry(entry);
-            viewBean.entry();
+            entry.setGuestbookId(guestbookBacking.getSelectedGuestbook().getGuestbookId());
+            guestbookBacking.setSelectedEntry(entry);
+            guestbookBacking.editEntry();
+        }
+
+        public void cancel() {
+            guestbookBacking.select(guestbookBacking.getSelectedGuestbook());
         }
 
         public void save() {
 
-            Entry entry = guestbookModelBean.getSelectedEntry();
+            Entry entry = guestbookBacking.getSelectedEntry();
+            LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+            entry.setCompanyId(liferayFacesContext.getCompanyId());
+            entry.setUserId(liferayFacesContext.getUserId());
 
             try {
 
                 if (entry.getEntryId() == 0) {
-                    entry = EntryLocalServiceUtil.addEntry(entry);
+                    EntryLocalServiceUtil.addEntry(entry);
                 }
                 else {
-                    entry = EntryLocalServiceUtil.updateEntry(entry);
+                    EntryLocalServiceUtil.updateEntry(entry);
                 }
 
                 addGlobalSuccessInfoMessage();
@@ -496,20 +370,140 @@ specified in the `GuestbookBackingBean`:
                 logger.error(e);
             }
 
-            guestbookModelBean.forceEntriesReload();
-            viewBean.master();
+            guestbookBacking.select(guestbookBacking.getSelectedGuestbook());
         }
 
-    These action methods function similarly to the `add()` method you explored
-    previously in the guestbook backing bean. 
+    These action methods are similar to the guestbook's action methods, but they
+    perform action on the guestbook entries. 
 
-4. Add the `@ManagedBean` and `@RequestScoped` tags above the public class
-   declaration. 
+Awesome! You've successfully added action methods to your managed beans!
 
-5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
+To understand how an action method will function in your Guestbook portlet,
+you'll examine the `add()` method you created previously in the entry bean: 
 
-Your backing beans are complete! You've learned quite a bit about the view bean
-and how it works with backing beans. Now it's time to create it! 
+    public void add() {
+        Entry entry = EntryUtil.create(0L);
+        LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+        entry.setGroupId(liferayFacesContext.getScopeGroupId());
+        entry.setGuestbookId(guestbookBacking.getSelectedGuestbook().getGuestbookId());
+        guestbookBacking.setSelectedEntry(entry);
+        guestbookBacking.editEntry();
+    }
+
+Suppose a user clicks the *Add Entry* button. A request from the entry view
+(XHTML) creates an instance of the `EntryBacking` bean and calls its `add()`
+method. The `add()` method creates a guestbook entry, and then encapsulates that
+entry in the guestbook bean. Then, once reaching the end of the method, the
+instance of the bean is removed from the server. Pretty cool, right? 
+
+If you're still a bit unsure of how the process is working to trigger these
+action methods, there's no need to worry; as you begin creating the Guestbook
+portlet's views, it'll be easier to visualize what's going on. 
+
+Next, you'll begin adding getter and setter methods in the guestbook bean to
+enable the encapsulation of properties. 
+
+### Creating Methods to Encapsulate Properties
+
+Now that you've created your action methods needed to create guestbooks and
+entries, you'll need a way to save your data. This is essential because the
+entry bean is request scoped, meaning that once its request is finished, the
+bean is deleted from the server. Whatever data was requested must be saved, so
+the portlet can reference it when another request is made. 
+
+Since the guestbook bean is view scoped, and is kept on the server, you'll add
+the getter/setter methods there. 
+
+1. Add the following getter/setter methods below the `select(Guestbook)` method:
+
+        public List<Entry> getEntries() {
+
+            if (entries == null) {
+                long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
+                Guestbook selectedGuestbook = getSelectedGuestbook();
+
+                try {
+                    entries = new ArrayList<Entry>();
+
+                    if (selectedGuestbook == null) {
+                        logger.info("getEntries: selectedGuestbook == null ... ");
+                    }
+                    else {
+                        List<com.liferay.docs.guestbook.model.Entry> list = EntryLocalServiceUtil.getEntries(scopeGroupId,
+                            selectedGuestbook.getGuestbookId());
+
+                        for (com.liferay.docs.guestbook.model.Entry entry : list) {
+                            entries.add(entry);
+                        }
+                    }
+
+                }
+                catch (SystemException e) {
+                    logger.error(e);
+                }
+            }
+
+            return entries;
+        }
+
+        public void setEntries(List<Entry> entries) {
+            this.entries = entries;
+        }
+
+        public List<Guestbook> getGuestbooks() {
+
+            if (guestbooks == null) {
+                long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
+
+                try {
+                    guestbooks = new ArrayList<Guestbook>();
+
+                    List<Guestbook> list = GuestbookLocalServiceUtil.getGuestbooks(
+                        scopeGroupId);
+
+                    for (Guestbook guestbook : list) {
+                        guestbooks.add(guestbook);
+                    }
+                }
+                catch (SystemException e) {
+                    logger.error(e);
+                }
+            }
+
+            logger.info("getGuestbooks: guestbooks.size() = " + guestbooks.size());
+
+            return guestbooks;
+        }
+
+        public void setGuestbooks(List<Guestbook> guestbooks) {
+            this.guestbooks = guestbooks;
+        }
+
+    These getter/setter methods encapsulate
+
+
+
+
+
+
+
+
+
+
+
+
+### Creating Methods to Facilitate Portlet Navigation
+
+
+
+
+
+
+
+
+
+
+
 
 ## Using a View Bean to Facilitate Navigation
 
