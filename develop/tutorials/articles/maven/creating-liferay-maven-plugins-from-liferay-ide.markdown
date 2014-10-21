@@ -91,12 +91,12 @@ Liferay plugin project using Liferay IDE:
     the new profile with the required properties and no additional profile 
     configuration is needed for the plugin. 
 
-7.  Select your project's plugin type from the dropdown menu of that name. The 
+7.  Select your project's plugin type from the selection box of that name. The 
     New Project Wizard gives you some additional options if you select Portlet 
     or Service Builder Portlet. With both portlet types, you can use the Include 
     Sample Code checkbox to instruct the New Project Wizard to add basic 
-    sample code to your portlet. If you select Portlet, then you also get a 
-    checkbox for instructing the wizard to launch the New Portlet Wizard after 
+    sample code to your portlet. If you select Portlet, you also get a checkbox
+    for instructing the wizard to launch the New Portlet Wizard after 
     the project is created. The New Portlet Wizard guides you in creating 
     custom portlet classes.
 
@@ -125,7 +125,7 @@ Liferay plugin project using Liferay IDE:
 
     ![Figure 6: If you're creating a theme, select the theme parent and theme framework.](../../images/maven-ide-theme.png) 
 
-Now, just click *Finish* and you're all set! The Liferay New Project wizard 
+Next, click *Finish*, and you're all set! The Liferay New Project wizard 
 creates your new plugin project to your specification. 
 
 Great! You've successfully created a Liferay plugin project using Maven in 
