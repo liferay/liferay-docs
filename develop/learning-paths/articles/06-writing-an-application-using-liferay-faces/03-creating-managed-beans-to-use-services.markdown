@@ -29,14 +29,14 @@ Now that you have some background information on how JSF managed beans work and
 what managed beans you'll create for the Guestbook portlet, it's time to begin
 creating your guestbook's managed beans. 
 
-## Creating the Abstract Managed Bean
+## Creating the Abstract Bean
 
-The first managed bean you'll create in your guestbook is the *Abstract* bean.
-As mentioned earlier, the abstract bean will hold properties and methods
-required for both the guestbook and entry beans.
+The first bean you'll create in your guestbook is the *Abstract* bean. As
+mentioned earlier, the abstract bean will hold properties and methods required
+for both the guestbook and entry managed beans.
 
-Before you begin creating managed beans, you'll need to have a package dedicated
-to hold them. To do this, right-click your `docroot/WEB-INF/src` directory and
+Before you begin creating JSF beans, you'll need to have a package dedicated to
+hold them. To do this, right-click your `docroot/WEB-INF/src` directory and
 select *New* &rarr; *Package*. Give it the name
 `com.liferay.docs.guestbook.bean` and click *Finish*.
 
@@ -271,7 +271,7 @@ methods to the guestbook bean.
                 setSelectedGuestbook(guestbook);
             }
 
-            // force Guestbooks and Entries to reload
+            // Force Guestbooks and Entries to reload
             setGuestbooks(null);
             setEntries(null);
 

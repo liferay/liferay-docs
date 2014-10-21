@@ -14,9 +14,9 @@ and running.
 Each view represents a page in your guestbook. For instance, if you were to
 click an *Add Guestbook* button, the rendered page to add a guestbook would be
 the `guestbook` view. The same concept applies for the `entry` view. The
-`master` view represents all the pages a user views that is not related to
-creating a new guestbook or entry entity. Lastly, the default `view`
-communicates with your view bean, and handles the navigation between views. 
+`master` view represents the default page a user views that is not related to
+creating a new guestbook or entry entity. Lastly, the `view` communicates with
+your guestbook bean, and handles the navigation between views. 
 
 Now that you have a fundamental understanding of the views and what they do,
 it's time to dive in and create them! 
@@ -59,16 +59,16 @@ Replace the code between the `<f:view>...</f:view>` tags with the following:
         </c:choose>
     </h:body>
 
-If you look back at your `ViewBean` class, you'll recall that you had boolean
-variables `editingGuestbook` and `editingEntry`. The `view.xhtml` calls those
-variables in the view bean to check if they're `true`. For instance, if the
-`editingGuestbook` variable is `true`, the `view.xhtml` renders the `guestbook`
-view. A similar process is completed for the `editingEntry` variable and `entry`
-view, if the `editingGuestbook` variable was `false`. If both are `false`, the
-`view.xhtml` renders the `master` view. 
+If you look back at your `GuestbookBacking` class, you'll recall that you had
+boolean variables `editingGuestbook` and `editingEntry`. The `view.xhtml` calls
+those variables in the view bean to check if they're `true`. For instance, if
+the `editingGuestbook` variable is `true`, the `view.xhtml` renders the
+`guestbook` view. A similar process is completed for the `editingEntry` variable
+and `entry` view, if the `editingGuestbook` variable was `false`. If both are
+`false`, the `view.xhtml` renders the `master` view. 
 
-Awesome! Your default navigation view is complete. It's almost time to create the
-views to navigate to, but first, you'll create your language keys. 
+Awesome! Your default navigation view is complete. It's almost time to create
+the views to navigate to, but first, you'll create your language keys. 
 
 ## Specifying Your Language Keys
 
@@ -77,8 +77,8 @@ specifying language keys, you can reuse phrases in any of your views. You can
 also create multiple language properties files, or resource bundles, to offer
 translations. If you'd like to learn more information about language keys and
 localization, visit the
-[Localization](/develop/tutorials/-/knowledge_base/localization) module, which
-offers several useful tutorials on this subject. 
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization) module,
+which offers several useful tutorials on this subject. 
 
 For the JSF guestbook, you'll stick to providing language keys for English. 
 
@@ -112,9 +112,9 @@ language keys.
         javax.faces.converter.DateTimeConverter.DATE=Invalid date format
 
 6. For your portlet to recognize this new properties file as a language resource
-bundle, you'll need to specify it in your `faces-config.xml` file. Open your
-guestbook portlet's `docroot/WEB-INF/faces-config.xml` file and add the
-following code between the `<faces-config>...</faces-config>` tags: 
+   bundle, you'll need to specify it in your `faces-config.xml` file. Open your
+   guestbook portlet's `docroot/WEB-INF/faces-config.xml` file and add the
+   following code between the `<faces-config>...</faces-config>` tags: 
 
         <application>
             <message-bundle>i18nFaces</message-bundle>
@@ -129,10 +129,10 @@ Now that you have your navigation view and language keys configured, it's time
 to create the actual pages your portlet's users will see.
 
 As was mentioned earlier, when the boolean variables `editingGuestbook` and
-`editingEntry` in your view bean are `false`, the `master` view is rendered.
-When these two variables are false, it means that the user has not yet selected
-to edit the guestbook or a guestbook entry, so the master page should be
-displayed. Therefore, the `master` view must offer a way for the user to
+`editingEntry` in your guestbook bean are `false`, the `master` view is
+rendered. When these two variables are false, it means that the user has not yet
+selected to edit the guestbook or a guestbook entry, so the master page should
+be displayed. Therefore, the `master` view must offer a way for the user to
 navigate to your `guestbook` and `entry` views. It should also display your
 created guestbooks and their entries. 
 
@@ -143,10 +143,10 @@ figure below:
 
 Follow the steps below to create the `master` view for your guestbook portlet. 
 
-1. Right-click on your guestbook's `docroot/WEB-INF` folder and select *New*
+1. Right-click on your guestbook's `docroot/views` folder and select *New*
    &rarr; *File*. Name the file `master.xhtml` and click *Finish*. 
 
-    ![Figure 3: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/master-view-wizard.png)
+    ![Figure 2: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/master-view-wizard.png)
 
 2. Add the following XML version and `<f:view>...</f:view>` tags: 
 
@@ -172,10 +172,10 @@ Follow the steps below to create the `master` view for your guestbook portlet.
                 <span class="guestbook_tab">
                     <h:outputText value=" " />
                 </span>
-                <ui:repeat value="#{guestbookModelBean.guestbooks}" var="guestbook">
-                    <span class="#{(guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
-                        <h:outputText rendered="#{guestbook.guestbookId == guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
-                        <h:commandLink action="#{guestbookBackingBean.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookModelBean.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
+                <ui:repeat value="#{guestbookBacking.guestbooks}" var="guestbook">
+                    <span class="#{(guestbook.guestbookId == guestbookBacking.selectedGuestbook.guestbookId) ? 'guestbook_tab_active' : 'guestbook_tab'}">
+                        <h:outputText rendered="#{guestbook.guestbookId == guestbookBacking.selectedGuestbook.guestbookId}" value="#{guestbook.name}" />
+                        <h:commandLink action="#{guestbookBacking.select(guestbook)}" immediate="true" rendered="#{guestbook.guestbookId != guestbookBacking.selectedGuestbook.guestbookId}" value="#{guestbook.name}">
                             <f:ajax render="@all" />
                         </h:commandLink>
                     </span>
@@ -187,17 +187,17 @@ Follow the steps below to create the `master` view for your guestbook portlet.
             <br />
 
     This code snippet creates the guestbook tabs by grabbing the list of
-    guestbooks stored on the model bean. Then each guestbook is assigned a tab
-    and rendered using its unique `guestbookId`. 
+    guestbooks stored on the view scoped guestbook bean. Then each guestbook is
+    assigned a tab and rendered using its unique `guestbookId`. 
     
-    You'll also notice a call to the guestbook backing bean within the
+    You'll also notice another call to the guestbook bean within the
     `<h:commandLink>...</h:commandLink>` tags. This is used when a new guestbook
     has been submitted from the `guestbook` view, and a new tab for the
-    guestbook must be created. Here, the backing bean's `select(guestbook)`
-    method is called, which sets the new selected guestbook on the model bean
-    for storage, and forces a reload of all the guestbooks stored on the model
-    bean. Once the list of guestbooks on the model bean are reloaded, all the
-    guestbooks you've created can be accurately displayed as guestbook tabs. 
+    guestbook must be created. Here, the bean's `select(guestbook)` method is
+    called, which sets the new selected guestbook on the guestbook bean for
+    storage, and forces a reload of all the guestbooks stored on the bean. Once
+    the list of guestbooks on the bean are reloaded, all the guestbooks you've
+    created can be accurately displayed as guestbook tabs. 
     
     Lastly, notice that the `<h:commandLink>` tag uses AJAX. If you're
     unfamiliar with AJAX, you can read an AJAX general overview
@@ -211,30 +211,30 @@ Follow the steps below to create the `master` view for your guestbook portlet.
    `entry` views, which will be created in later sections. Add the following
    code after the last `<br />` tag: 
 
-        <h:commandButton action="#{guestbookBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
+        <h:commandButton action="#{guestbookBacking.add}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
             <f:ajax render="@all" />
         </h:commandButton>
-        <h:commandButton action="#{entryBackingBean.add}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
+        <h:commandButton action="#{entryBacking.add}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
             <f:ajax render="@all" />
         </h:commandButton>
         <br />		
         <br />
 
-    Each button calls the guestbook or entry entity's backing bean, which opens
+    Each button calls the guestbook or entry entity's bean, which opens
     a request to add a new entity. The instance of the entity is stored on the
-    model bean, and the view bean is called, which navigates the portlet to the
+    guestbook bean, and when the bean is called, it navigates the portlet to the
     appropriate view to display. 
 
 5. Lastly, add the following choose-when statement after the last `<br />` tag,
    which displays your guestbook entries: 
 
             <c:choose>
-                <c:when test="#{empty guestbookModelBean.entries}">
+                <c:when test="#{empty guestbookBacking.entries}">
                     <h:outputText value="#{i18n['no-entries-yet']}" />
                 </c:when>
                 <c:otherwise>
                     <h:dataTable styleClass="table table-bordered table-hover table-striped" rowClasses="table-cell "
-                        value="#{guestbookModelBean.entries}" var="entry">
+                        value="#{guestbookBacking.entries}" var="entry">
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{i18n['message']}" /></f:facet>
                             <h:outputText value="#{entry.message}" />
@@ -299,7 +299,7 @@ The `guestbook` view will serve as the view that is displayed when a user clicks
 the *Add Guestbook* button. The final `guestbook` view will appear in your
 guestbook portlet like the figure below: 
 
-![Figure 2: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
+![Figure 3: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
    *New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
@@ -322,15 +322,15 @@ guestbook portlet like the figure below:
 
         <h:form>
             <c:choose>
-                <c:when test="#{empty guestbookModelBean.selectedGuestbook.name}">
+                <c:when test="#{empty guestbookBacking.selectedGuestbook.name}">
                     <h3>#{i18n['new-guestbook']}</h3>
                 </c:when>
                 <c:otherwise>
-                    <h3>#{i18n['editing']} #{guestbookModelBean.selectedGuestbook.name}</h3>
+                    <h3>#{i18n['editing']} #{guestbookBacking.selectedGuestbook.name}</h3>
                 </c:otherwise>
             </c:choose>
 
-    When there's no guestbook name stored on your model bean, the
+    When there's no guestbook name stored on your guestbook bean, the
     `new-guestbook` language key is displayed on the page. In your portlet, your
     selected guestbook is always empty when you've first arrived to the
     guestbook view, right after selecting the *Add Guestbook* button. 
@@ -340,25 +340,22 @@ guestbook portlet like the figure below:
     viewing the transition page between clicking *Save* and your guestbook
     appearing on the main default page. You'll add the necessary fields and
     buttons in the next step. 
-    
-    You can examine Figure 2 at the end of this section to visualize what has
-    been explained above. 
 
 4. Now you'll need to create the fields and buttons that should be displayed for
-   this view. Add the code snippet below right after the `</c:choose>` tag. 
+   this view. Add the code snippet right after the `</c:choose>` tag. 
 
             <aui:fieldset>
                 <aui:field id="guestbookNameField" label="#{i18n['name']}">
                     <h:message for="guestbookName" />
-                    <h:inputText id="guestbookName" required="true" value="#{guestbookModelBean.selectedGuestbook.name}">
+                    <h:inputText id="guestbookName" required="true" value="#{guestbookBacking.selectedGuestbook.name}">
                         <f:ajax render="guestbookNameField" />
                     </h:inputText>
                 </aui:field>
             </aui:fieldset>
-            <h:commandButton action="#{guestbookBackingBean.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+            <h:commandButton action="#{guestbookBacking.save}" styleClass="btn btn-default" value="#{i18n['save']}">
                 <f:ajax execute="@form" render="@all" />
             </h:commandButton>
-            <h:commandButton action="#{guestbookBackingBean.cancel}" styleClass="btn btn-default" value="#{i18n['cancel']}">
+            <h:commandButton action="#{guestbookBacking.cancel}" styleClass="btn btn-default" value="#{i18n['cancel']}">
                 <f:ajax render="@all" />
             </h:commandButton>
         </h:form>
@@ -376,13 +373,6 @@ guestbook portlet like the figure below:
     Lastly, notice that the AUI field and both buttons use AJAX. As we discussed
     earlier, this provides much quicker response time for these portlet actions
     because of asynchronous communication with the server. 
-
-5. Add the following `<h:outputScript>` tag right after the `</h:form>` tag: 
-
-        <h:outputScript>AUI().one('input[id$=:guestbookName]').focus();</h:outputScript>
-
-    This tag places your cursor in the guestbook name field when the `guestbook`
-    view is rendered. 
 
 Terrific! Your `guestbook` view is complete! 
 
@@ -417,16 +407,16 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
         <h:form>
             <c:choose>
-                <c:when test="#{empty guestbookModelBean.selectedEntry.name}">
+                <c:when test="#{empty guestbookBacking.selectedEntry.name}">
                     <h3>#{i18n['new-entry']}</h3>
                 </c:when>
                 <c:otherwise>
-                    <h3>#{i18n['editing']} #{guestbookModelBean.selectedEntry.name}</h3>
+                    <h3>#{i18n['editing']} #{guestbookBacking.selectedEntry.name}</h3>
                 </c:otherwise>
             </c:choose>
 
     This choose when statement is very similar to the one used previously in
-    `guestbook.xhtml`. When the selected entry stored on the model bean is
+    `guestbook.xhtml`. When the selected entry stored on the guestbook bean is
     empty, the `new-entry` language key is displayed on the page. If the
     selected entry is empty, this means you've clicked the *Add Entry* button
     and have just arrived at the `entry` view. 
@@ -439,21 +429,21 @@ to create guestbook entries. The `entry` view will display when clicking on the
         <aui:fieldset>
             <aui:field id="entryNameField" label="#{i18n['name']}">
                 <h:message for="entryName" />
-                <h:inputText id="entryName" required="true" value="#{guestbookModelBean.selectedEntry.name}">
+                <h:inputText id="entryName" required="true" value="#{guestbookBacking.selectedEntry.name}">
                     <f:ajax render="entryNameField" />
                 </h:inputText>
             </aui:field>
             <aui:field id="entryEmailField" label="#{i18n['email']}">
                 <h:message for="entryEmail" />
                 <h:inputText id="entryEmail" required="true" validatorMessage="#{i18n['please-enter-a-valid-email-address']}"
-                    value="#{guestbookModelBean.selectedEntry.email}">
+                    value="#{guestbookBacking.selectedEntry.email}">
                     <f:validateRegex pattern=".+[@].+[.].+" />
                     <f:ajax render="entryEmailField" />
                 </h:inputText>
             </aui:field>
             <aui:field id="entryMessageField" label="#{i18n['message']}">
                 <h:message for="entryMessage" />
-                <h:inputTextarea id="entryMessage" required="true" value="#{guestbookModelBean.selectedEntry.message}">
+                <h:inputTextarea id="entryMessage" required="true" value="#{guestbookBacking.selectedEntry.message}">
                     <f:ajax render="entryMessageField" />
                 </h:inputTextarea>
             </aui:field>
@@ -481,25 +471,17 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
 5. Create your `entry` view's buttons by adding the following code: 
 
-            <h:commandButton action="#{entryBackingBean.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+            <h:commandButton action="#{entryBacking.save}" styleClass="btn btn-default" value="#{i18n['save']}">
                 <f:ajax execute="@form" render="@all" />
             </h:commandButton>
-            <h:commandButton action="#{entryBackingBean.cancel}" immediate="true" styleClass="btn btn-default" value="#{i18n['cancel']}">
+            <h:commandButton action="#{entryBacking.cancel}" immediate="true" styleClass="btn btn-default" value="#{i18n['cancel']}">
                 <f:ajax render="@all" />
             </h:commandButton>
         </h:form>
 
     These buttons are almost identical to your `guestbook` view's Save and
     Cancel button. The only differences are, of course, you're calling the
-    `save()` and `cancel()` methods from the `EntryBackingBean`. 
-
-6. Add the following `<h:outputScript>...</h:outputScript>` tag right after the
-   `<h:form>` tag: 
-
-        <h:outputScript>AUI().one('input[id$=:entryName]').focus();</h:outputScript>
-
-    Just like in the `guestbook` entry, this tag places your cursor in the Name
-    text field when the `entry` view is displayed. 
+    `save()` and `cancel()` methods from the `EntryBackingBean`.  
 
 Your `entry` view is now complete! 
 
