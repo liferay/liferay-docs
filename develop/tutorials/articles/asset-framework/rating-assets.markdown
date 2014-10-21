@@ -115,6 +115,12 @@ Great! Now you know how to add ratings for content in your asset enabled
 portlets. Remember, you just follow two simple steps--make a new JSP for the 
 ratings, and then create a URL to that JSP so that your users can get to it. 
 
+Another thing you might want to do is perform permissions checks to control 
+access to the JSP your ratings are in. For example, the Add Insult and 
+Permissions buttons of the Insults portlet are wrapped in a permissions check in 
+the `view.jsp`. For more information on this, see the learning path 
+[Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+
 ## Related Topics
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
