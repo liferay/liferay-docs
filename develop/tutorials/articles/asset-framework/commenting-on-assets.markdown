@@ -54,35 +54,43 @@ create an object using your `*LocalServiceUtil`. Here, this is done to create an
     ```
     %>
     ```
-    
-Next, you need to create a URL for the actual discussion. This is done with the 
-`portlet:actionURL` tag, as shown here:
-    
-    ```
-    <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
-    ```
 
-You also need to get the current URL from the `request` object, so that your 
-user can return to the JSP after adding a comment. This is done with 
-`PortalUtil`:
-    
-    ```
-    <%
-    String currentUrl = PortalUtil.getCurrentURL(request);
-    %>
-    ```
+Next, you need to add the code that handles the discussion. First you'll create 
+a collapsible panel to put the discusison in. This is done with the 
+`liferay-ui:panel-container` and `liferay-ui:panel` tags. Collapsible panels are 
+a nice feature of Liferay UI that lets your users obscure any potentially long 
+content on a page. Now that this panel is in place, you need to create a URL for 
+the discussion. This is done with the `portlet:actionURL` tag. You also need to 
+get the current URL from the `request` object, so that your user can return to 
+the JSP after adding a comment. This is done with `PortalUtil`. Last, but 
+certainly not least, is the implementation of the discussion itself with the 
+`liferay-ui:discussion` tag. Note that the URLs you created are used here, as 
+well as the entity object. The following block of code shows the collapsible 
+panel, URLs, and the discussion:
 
-Last, but certainly not least, is the implementation of the discussion itself 
-with the `liferay-ui:discussion` tag. Note that the URLs that you created are 
-used here, as well as the entity object:
-    
     ```
-    <liferay-ui:discussion className="<%=Insult.class.getName()%>"
-        classPK="<%=ins.getInsultId()%>"
-        formAction="<%=discussionURL%>" formName="fm2"
-        ratingsEnabled="<%=true%>" redirect="<%=currentUrl%>"
-        subject="<%=ins.getInsultString()%>"
-        userId="<%=ins.getUserId()%>" />
+    <liferay-ui:panel-container extended="<%=false%>"
+        id="insultCommentsPanelContainer" persistState="<%=true%>">
+	
+        <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
+            id="insultCommentsPanel" persistState="<%=true%>"
+            title='<%=LanguageUtil.get(pageContext, "comments")%>'>
+	
+            <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+			
+            <%
+            String currentUrl = PortalUtil.getCurrentURL(request);
+            %>
+	
+            <liferay-ui:discussion className="<%=Insult.class.getName()%>"
+                classPK="<%=ins.getInsultId()%>"
+                formAction="<%=discussionURL%>" formName="fm2"
+                ratingsEnabled="<%=true%>" redirect="<%=currentUrl%>"
+                subject="<%=ins.getInsultString()%>"
+                userId="<%=ins.getUserId()%>" />
+
+        </liferay-ui:panel>
+    </liferay-ui:panel-container>
     ```
 
 Awesome! Now you have a JSP that lets your users comment on content in your 
@@ -104,7 +112,7 @@ portlet it looks like this:
     >
     
         <portlet:renderURL windowState="maximized" var="rowURL">
-            <portlet:param name="mvcPath" value="/html/insults/view_insult.jsp" />
+            <portlet:param name="mvcPath" value="/html/insult/view_insult.jsp" />
             <portlet:param name="insultId" value="<%= String.valueOf(insult.getInsultId()) %>" />
         </portlet:renderURL>
     ```
@@ -133,6 +141,20 @@ comments section should appear at the bottom of the page.
 Great! Now you know how to let users comment on content in your asset enabled 
 portlets. Remember, you just follow two simple steps--make a new JSP for the 
 comments, and then create a URL to that JSP so that your users can get to it.
+
+Before moving on, another thing you might want to do is perform permissions 
+checks to control who can access the discussion. For example, the collapsible 
+panel in the `view_insult.jsp` of the Insults portlet is surrounded by `c:if` 
+tags that only reveal their contents to users that are signed in to the portal:
+
+    <c:if test="<%=themeDisplay.isSignedIn()%>">
+    ```
+    </c:if>
+
+This is just one way of controlling access to the discussion. For example, you 
+can also do so by performing more specific permissions checks, as the Insults 
+portlet does for the Add Insults and Permissions buttons in its `view.jsp`. For 
+more information, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 ## Related Topics
 
