@@ -36,7 +36,7 @@ running on an instance of Liferay.
 We will first look at creating a plugin repository using the Software Catalog in
 the Control Panel.
 
-## Software Catalog
+## Software Catalog [](id=software-catalog)
 
 You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
@@ -229,7 +229,7 @@ When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-### Generating the Software Catalog
+### Generating the Software Catalog [](id=generating-the-software-catalog)
 
 The Software Catalog works by generating an XML document which the Plugin
 Installer reads. Using the data from this XML document, the Plugin Installer
@@ -302,7 +302,7 @@ your HTTP server. You can then give out the URL to the directory which holds
 this file on your web site and anyone with an instance of Liferay will be able
 to point their Plugin Installer portlets to it.
 
-### Benefits of the Software Catalog
+### Benefits of the Software Catalog [](id=benefits-of-the-software-catalog)
 
 As you can see, the Software Catalog makes it easy for you to create a
 repository of your software. Users of Liferay can configure their Plugin
@@ -323,7 +323,7 @@ How can you do this? The Software Catalog is also available as a portlet. You
 can add it to any page on your web site through the *Add* &rarr; *Applications*
 menu. You can find the portlet in the *Tools* category.
 
-## Manually Creating A Software Catalog
+## Manually Creating A Software Catalog [](id=manually-creating-a-software-catalog)
 
 If you do not wish to use the Control Panel to create your software catalog, you
 can create it manually by manually typing out the XML file that the Software
@@ -344,7 +344,7 @@ Liferay source. It is a file called `liferay-plugin-package_6_2_0.dtd`. Use this
 DTD with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
-## Connecting to a Software Catalog
+## Connecting to a Software Catalog [](id=connecting-to-a-software-catalog)
 
 If there is a software catalog of plugins you would like to point your instance
 of Liferay to, all you need is the URL to the catalog. Once you have the URL, go

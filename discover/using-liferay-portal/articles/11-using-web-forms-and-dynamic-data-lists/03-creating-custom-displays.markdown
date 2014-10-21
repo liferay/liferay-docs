@@ -10,7 +10,7 @@ to customize: form templates and display templates. This covers the forms of
 lists (*form templates*), as well as the display of the list contents (*display
 templates*). 
 
-## Form Templates 
+## Form Templates [](id=form-templates)
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
@@ -49,7 +49,7 @@ few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-## Display Templates 
+## Display Templates [](id=display-templates)
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
@@ -203,7 +203,7 @@ environment that requires approval from other users, then it's not enough to
 just create the list and display a form. What you need is a real integration
 with workflow. Workflow integrates smoothly with Dynamic Data Lists.
 
-## Using Workflow 
+## Using Workflow [](id=using-workflow)
 
 Liferay integrates the powerful features of workflow and the data capabilities
 of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic
@@ -226,7 +226,7 @@ Choose the workflow you'd like to use. This requires that every record must pass
 through the workflow process. Now if you need to preview or edit entries as
 they're coming in, it's easy to integrate it into your daily workflow.
 
-### Creating a Kaleo Form 
+### Creating a Kaleo Form [](id=creating-a-kaleo-form)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -247,7 +247,7 @@ Kaleo Forms, users can create lists that follow a workflow, called a *process*,
 or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
-### Starting a New Process 
+### Starting a New Process [](id=starting-a-new-process)
 
 Defining processes that must be followed in data collection and entry is a
 fundamental part of business. Historically, this hasn't been fun or easy but
@@ -283,7 +283,7 @@ While the form looks complicated, it's easy to complete. There are a few pieces
 that make up a process and when you click on one, you can browse a list and
 select the appropriate piece to insert.
 
-#### Selecting an Entry Definition 
+#### Selecting an Entry Definition [](id=selecting-an-entry-definition)
 
 The first part of a new Kaleo process is also the simplest one: the entry
 definition. This is just another way to refer to a data definition. All of the
@@ -291,7 +291,7 @@ available data definitions can be chosen, including our awesome "Volunteer
 Sign-Up List." Just as with normal data lists, you can always create a new entry
 definition from the list view by clicking *Add*.
 
-#### Selecting an Initial Form 
+#### Selecting an Initial Form [](id=selecting-an-initial-form)
 
 One of the advantages of using Kaleo forms to present your list as a process is
 that it grants you complete control over the form template. You can always use a
@@ -315,7 +315,7 @@ Once you have chosen an initial display template (it must be a create mode
 template, not an edit template), all that's left to do is configure the workflow
 for your process.
 
-#### Selecting a Workflow 
+#### Selecting a Workflow [](id=selecting-a-workflow)
 
 You can now select a workflow to apply to your new list-defined process. Any of
 the available workflows can be chosen. You can also create new ones from the
@@ -329,7 +329,7 @@ We'll keep ours simple; just choose *Single Approver Definition*. This gives us
 a starting point (entry creation) and a *review* task, which we can use to add
 additional information in a secondary form.
 
-#### Assigning Workflow Task Forms 
+#### Assigning Workflow Task Forms [](id=assigning-workflow-task-forms)
 
 Many workflows offer the option of having multiple editorial and review stages.
 During these stages, you might want to offer different forms that allow the user
@@ -354,7 +354,7 @@ You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
 Kaleo Forms.
 
-### Using a Kaleo Form 
+### Using a Kaleo Form [](id=using-a-kaleo-form)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

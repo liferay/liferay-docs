@@ -12,7 +12,7 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
 see how to create RSS feeds in Liferay.
 
-## Managing RSS Feeds from the Control Panel 
+## Managing RSS Feeds from the Control Panel [](id=managing-rss-feeds-from-the-control-panel)
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
@@ -101,7 +101,7 @@ set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
-## Using the RSS Portlet 
+## Using the RSS Portlet [](id=using-the-rss-portlet)
 
 The RSS portlet allows you to display any number of RSS feeds and configure how
 they are displayed. If you're looking for a web-based RSS reader, look no

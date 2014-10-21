@@ -102,7 +102,7 @@ related assets, and more.
 This is just the web content portion of Liferay's content management system.
 Liferay Portal is also great at managing file-based content. 
 
-## Keeping track of documents, images, video, and more 
+## Keeping track of documents, images, video, and more [](id=keeping-track-of-documents-images-video-and-more)
 
 It's rare to find in an open source project a full-featured content management
 system. Most of the time, you'll find web content management systems and

@@ -52,7 +52,7 @@ falls back to a Flash player.
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-## Automatic extraction of RAW Metadata 
+## Automatic extraction of RAW Metadata [](id=automatic-extraction-of-raw-metadata)
 
 When adding new documents or viewing existing documents, a process is triggered
 automatically that extracts the file's metadata. The library used by this
@@ -61,7 +61,7 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-## Document type restrictions and workflow per folder 
+## Document type restrictions and workflow per folder [](id=document-type-restrictions-and-workflow-per-folder)
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
@@ -78,7 +78,7 @@ Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access
 documents stored in Liferay's Documents and Media repositories. 
 
-## WebDAV access 
+## WebDAV access [](id=webdav-access)
 
 Wouldn't it be great if you could access documents and folders belonging to
 Liferay's Documents and Media library from your own machine's file manager? You

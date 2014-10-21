@@ -9,7 +9,7 @@ creation of your new plugin project. You're able to choose the plugin's type,
 build system, location, and much more. This tutorial shows you how to create new
 projects in Liferay IDE using this wizard. Ready your wands!
 
-## Using the New Project Wizard
+## Using the New Project Wizard [](id=using-the-new-project-wizard)
 
 To create a new Liferay plugin with the New Project Wizard, select *File* &rarr;
 *New* &rarr; *Liferay Plugin Project*. The first screen of the wizard contains
@@ -61,7 +61,7 @@ Unless you're creating a portlet or theme, you're done--just click *Finish* and
 get started developing your plugin in Liferay IDE! If you're creating a portlet 
 or theme, click *Next* to move on to the next step in the New Project Wizard.
 
-## Additional Steps in the New Project Wizard
+## Additional Steps in the New Project Wizard [](id=additional-steps-in-the-new-project-wizard)
 
 The only two plugin types that require additional steps in the New Project
 Wizard are portlet and theme plugin types. If you're creating a portlet, the
@@ -91,7 +91,7 @@ Once you've completed the above selections for your portlet or theme, click
 the New Project Wizard isn't so scary after all. Now you know how to use it
 anytime you want to create new plugin projects for your Liferay Portal.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 

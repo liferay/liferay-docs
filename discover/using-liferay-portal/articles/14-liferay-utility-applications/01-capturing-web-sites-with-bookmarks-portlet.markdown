@@ -11,7 +11,7 @@ links to access regularly visited web sites. Administrators can publish links
 tailored to specific groups of users. Both internal pages as well as external
 sites can be bookmarked.
 
-## Adding and Using Bookmarks
+## Adding and Using Bookmarks [](id=adding-and-using-bookmarks)
 
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *Applications*. The portlet looks like this by default:
@@ -57,7 +57,7 @@ Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
 
-## Organizing Bookmarks by Folder
+## Organizing Bookmarks by Folder [](id=organizing-bookmarks-by-folder)
 
 You can store all your important links in one place and you can manage this data
 easily using folders. You can create, edit, and delete bookmark folders. You get
@@ -82,7 +82,7 @@ As your collection of links grows, you may need to add more subfolders to keep
 things in order. Should you decide a link needs to move from one folder to
 another, you can manage this using the Edit option for that link. 
 
-### Moving a Link
+### Moving a Link [](id=moving-a-link)
 
 Just for fun, let's move a link from the main bookmarks folder into a subfolder
 one level down. We'll move the Liferay link into the Trivia subfolder in the

@@ -29,7 +29,7 @@ As you're developing your theme plugin, you can use Developer Mode regardless of
 whether you're developing it in Liferay IDE. First, you can explore how it's
 done in IDE. 
 
-## Setting Developer Mode for Your Server in Liferay IDE 
+## Setting Developer Mode for Your Server in Liferay IDE [](id=setting-developer-mode-for-your-server-in-liferay-ide)
 
 For Liferay Portal servers of version 6.2 or greater, the *Liferay settings*
 section of the server runtime environment creation wizard lets you select either
@@ -59,7 +59,7 @@ file has the property setting:
 `include-and-override=portal-developer.properties`, which enables Developer
 Mode. Next you can take a look at how you can set Developer Mode outside of IDE.
 
-## Setting Developer Mode for Your Server Using portal-developer.properties
+## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
 If you're not using Liferay IDE, you must add the `portal-developer.properties`
 file to your application server's configuration file in order to enable

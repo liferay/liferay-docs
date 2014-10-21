@@ -6,7 +6,7 @@ use for your web content articles and wikis? If so, you can bundle these up in a
 Liferay plugin to distribute to them. You can even put them in a Marketplace app
 for them to purchase. When they install your plugin, its templates and
 structures are automatically imported into their portal's global site. How is
-this possible? The Templates Importer feature of the Resources Importer app
+this possible? The Templates Importer feature of the [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) app
 makes it happen! The Resources Importer is available from
 [Liferay Marketplace](https://www.liferay.com/marketplace).
 
@@ -25,7 +25,7 @@ plugin, they're especially useful for Liferay themes. When developers
 upload themes to [Liferay Marketplace](https://www.liferay.com/marketplace),
 it's very convenient for them to be able to bundle sample content with the theme
 so that the theme can be viewed in an appropriate context. Please refer to the
-[Importing Resources with Your Themes](www.liferay.com) tutorial for
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en) tutorial for
 instructions on using the Resources Importer with theme plugins. Behind themes,
 portlet plugins are the most common type of plugin used for importing templates.
 Let's build a portlet plugin that imports some web content structures and

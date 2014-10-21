@@ -17,7 +17,7 @@ There are three key steps to follow as you customize your carousel:
 
 Now that you know what lies ahead in this tutorial, it's time to start rolling! 
 
-## Step 1: Assign an ID to the Carousel and Its Images
+## Step 1: Assign an ID to the Carousel and Its Images [](id=step-1-assign-an-id-to-the-carousel-and-its-images)
 
 First, you must add an ID value for the carousel's `<div>` element and each of
 its images. This was demonstrated in the tutorial
@@ -36,7 +36,7 @@ and its images in your JSP using `<div>` elements like these:
 Your carousel and its images are now identifiable, making them ready for
 configuring and styling. 
 
-## Step 2: Configure the Carousel
+## Step 2: Configure the Carousel [](id=step-2-configure-the-carousel)
 
 In addition to identifying your carousel and its images, you can configure the
 carousel's attributes. The following example JSP code configures a carousel
@@ -81,7 +81,7 @@ $$$
 Now that you've laid the configuration groundwork for the carousel, it's time to
 style it.
 
-## Step 3: Style the Carousel's UI from the main.css File
+## Step 3: Style the Carousel's UI from the main.css File [](id=step-3-style-the-carousels-ui-from-the-main-css-file)
 
 The carousel's UI has a lot of moving parts that you can style. First, to keep
 things organized, you may want to customize your carousel's body and images.
@@ -95,7 +95,7 @@ that you can manipulate with CSS.
 Now that you're familiar with the carousel's elements, you can start styling the
 carousel's body and images.
 
-### Styling the Carousel's Body and Images
+### Styling the Carousel's Body and Images [](id=styling-the-carousels-body-and-images)
 
 You can specify your carousel's style in the `main.css` file in your portlet's
 `/docroot/css/` folder. The example CSS code below is for styling a carousel's
@@ -144,7 +144,7 @@ given a `background-image` property that points to its respective URL.
 Now that you've styled your carousel's body and images, it's time to make its
 menu controls shine!
 
-### Styling the Carousel's Menu Controls
+### Styling the Carousel's Menu Controls [](id=styling-the-carousels-menu-controls)
 
 Each menu control has an existing class that you can reference via CSS. You can
 identify the classes for the controls by viewing the Document Object Model (DOM)
@@ -219,7 +219,7 @@ folder you specify for the control's `background-image` `url`. Now that you've
 styled your carousel's menu controls, you can move onward to styling your
 carousel's active and inactive index indicators!
 
-### Styling the Carousel's Active and Inactive Index Indicators
+### Styling the Carousel's Active and Inactive Index Indicators [](id=styling-the-carousels-active-and-inactive-index-indicators)
 
 As with the menu controls, you style the carousel's active and inactive index
 indicators using existing classes. Please refer to your carousel's DOM tree to
@@ -248,7 +248,7 @@ indicators are then assigned a color with the `background-color` property.
 Now that you've taken care of the index indicators, it's time to cover styling
 the carousel's menu bar and menu controls list.
 
-### Styling the Carousel's Menu Bar and Menu Controls List
+### Styling the Carousel's Menu Bar and Menu Controls List [](id=styling-the-carousels-menu-bar-and-menu-controls-list)
 
 As with the other styles, you can view the existing class for the menu bar and
 controls list in the DOM tree. Below is one example from a `main.css` file:
@@ -304,7 +304,7 @@ You can access a finished version of the example customized portlet at
 
 Enjoy making your carousel the best that it can be!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 

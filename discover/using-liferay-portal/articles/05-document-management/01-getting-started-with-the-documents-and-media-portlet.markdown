@@ -24,7 +24,7 @@ window shows only documents that belong to the selected document type. When you
 add custom document types, which we discuss below, they are added to the filter
 list. Next, let's look at how to navigate around Documents and Media.
 
-## Navigating the Documents and Media Portlet 
+## Navigating the Documents and Media Portlet [](id=navigating-the-documents-and-media-portlet)
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -79,7 +79,7 @@ subscribes you to the folder you're currently viewing so that you'll receive
 email notifications. You'll be notified about any actions that take place in the
 folder such as file additions, edits, or deletions.
 
-### Actions 
+### Actions [](id=actions)
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -103,7 +103,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 portlet. You can move multiple documents and folders to the Recycle Bin at the
 same time.
 
-### Add 
+### Add [](id=add)
 
 From the Add button, you can add documents, folders, and shortcuts just like on
 your local file system.
@@ -154,7 +154,7 @@ uploaded and available instantly.
 
 Let's move on and discuss the Sort action.
 
-### Sort 
+### Sort [](id=sort)
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the *Sort By* menu. You can sort by title, create date, modified
@@ -173,7 +173,7 @@ downloaded.
 
 Let's dive into the Manage action next!
 
-### Manage 
+### Manage [](id=manage)
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.

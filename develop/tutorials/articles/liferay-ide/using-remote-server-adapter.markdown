@@ -27,7 +27,7 @@ application server Liferay Portal supports.
 
 Now you're ready to configure and use the Remote Server Adapter! 
 
-## Configuring and Using the Remote Server Adapter
+## Configuring and Using the Remote Server Adapter [](id=configuring-and-using-the-remote-server-adapter)
 
 To configure and use the Remote Server Adapter, follow these steps: 
 
@@ -102,7 +102,7 @@ Great! Now that you know how to use Liferay IDE to deploy plugin projects to
 remote servers, you can more easily integrate your remote portal instances into 
 your testing workflow. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 
