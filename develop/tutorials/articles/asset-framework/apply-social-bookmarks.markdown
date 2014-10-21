@@ -32,7 +32,7 @@ want users to be able to edit content, that someone else produced, when sharing.
 The internet is wild enough without bestowing that kind of power on users.
 
 Create this JSP in the same directory as your portlet's `view.jsp`. For example, 
-in the Insults portlet this JSP is `docroot/html/insults/view_insult.jsp`. The 
+in the Insults portlet this JSP is `docroot/html/insult/view_insult.jsp`. The 
 rest of this section uses `view_insult.jsp` as an example. The first thing you 
 want to do is make sure that your users have a way of getting back to `view.jsp` 
 after clicking on an entity. This is handled by the `portlet:renderURL` and 
@@ -40,7 +40,7 @@ after clicking on an entity. This is handled by the `portlet:renderURL` and
 
     ```
     <portlet:renderURL windowState="normal" var="backURL">
-        <portlet:param name="mvcPath" value="/html/insults/view.jsp"></portlet:param>
+        <portlet:param name="mvcPath" value="/html/insult/view.jsp"></portlet:param>
     </portlet:renderURL>
 
     <liferay-ui:header backURL="<%=backURL%>" title="insult" />
@@ -103,7 +103,7 @@ Insults portlet it looks like this:
     >
     
         <portlet:renderURL windowState="maximized" var="rowURL">
-            <portlet:param name="mvcPath" value="/html/insults/view_insult.jsp" />
+            <portlet:param name="mvcPath" value="/html/insult/view_insult.jsp" />
             <portlet:param name="insultId" value="<%= String.valueOf(insult.getInsultId()) %>" />
         </portlet:renderURL>
     ```
@@ -133,6 +133,12 @@ Great! Now you know how to let users share content in your asset enabled
 portlets. Remember, you just follow two simple steps--make a new JSP for the 
 social bookmarks, and then create a URL to that JSP so that your users can get 
 to it.
+
+Another thing you might want to do is perform permissions checks to control 
+access to the JSP your ratings are in. For example, the Add Insult and 
+Permissions buttons of the Insults portlet are wrapped in a permissions check in 
+the `view.jsp`. For more information on this, see the learning path 
+[Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 ## Related Topics
 
