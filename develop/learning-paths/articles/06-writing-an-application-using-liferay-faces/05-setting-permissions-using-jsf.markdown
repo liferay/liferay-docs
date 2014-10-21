@@ -1,23 +1,30 @@
 # Setting Permissions Using JSF
 
 To this point, your guestbook application is able to create guestbooks and
-guestbook entries and store them as data to you database. However, everyone that
+guestbook entries and store them as data to the database. However, everyone that
 visits your site has the ability to do this, which could present problems as an
 administrator. Most of the time, you'll want some of the data in your guestbook
 application protected from random users on the web. For instance, you may want
 to enable some users to add guestbook entries, while preventing others from
 doing so. 
 
-In this learning path, you'll learn how to implement Liferay's permissions
-system in your guestbook portlet following JSF best practices. The default
-permissions scheme will allow users to view guestbooks and enter guestbook
-entries, while preventing anonymous web-browsing users from doing either. Also,
-regular users should not be allowed to add guestbooks, so you'll implement
-permissions that only give administrators the ability to create new guestbooks.
-You'll learn just how easy it is to implement security for a JSF application in
-Liferay Portal, and transfer permissioning into your own applications. 
+In the first half of this learning path, you'll learn how to implement Liferay's
+permissions system in your guestbook portlet following JSF best practices. The
+default permissions scheme will allow users to view guestbooks and enter
+guestbook entries, while preventing anonymous web-browsing users from doing
+either. Also, regular users should not be allowed to add guestbooks, so you'll
+implement permissions that only give administrators the ability to create new
+guestbooks.
 
-## Configuring Your Permissions Scheme with JSF
+In the second half of this learning path, you'll dive further into permissioning
+with JSF portlets by extending a user's permissions options by creating new Java
+wrapper classes. 
+
+Overall, you'll learn just how easy it is to implement security for a JSF
+application in Liferay Portal, and transfer permissioning into your own
+applications. Time to get started! 
+
+## Configuring a Basic Permissions Scheme with JSF
 
 The first thing you need to do is create a configuration file that defines
 permissions you want inside your application. This main configuration file can
@@ -25,8 +32,6 @@ have any name, but as a best practice, is named `default.xml`. This file is the
 engine that runs your permissions scheme. All the permission checks that you'll
 use in your guestbook application derive their permission definitions from this
 file. 
-
-### Defining Permissions for Your JSF Application
 
 Conveniently, the process of creating your application's `default.xml` file is
 identical to the MVC portlet's process. Therefore, you can refer to the learning
@@ -56,18 +61,18 @@ Before beginning, review what permission checks you'll implement:
   have limited who can see them. 
 
 Since these three checks are related to the UI logic of the `Guestbook` and
-`Entry` entities, you'll add your permission logic in the backing beans. Time to
+`Entry` entities, you'll add your permission logic in the managed beans. Time to
 get started! 
 
-1. Open the `EntryBackingBean` and create the following property at the
-   beginning of the class: 
+1. Open the `EntryBacking` and create the following property at the beginning of
+   the class: 
 
         private Boolean hasAddPermission;
 
     This property will be used to check if a user has permissions to add an
     entry. 
 
-2. Insert the following two methods directly after the `edit(...)` method: 
+2. Insert the following two methods directly after the `save()` method: 
 
         public Boolean getHasAddPermission() {
 
@@ -75,7 +80,7 @@ get started!
                 LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
                 long scopeGroupId = liferayFacesContext.getScopeGroupId();
                 hasAddPermission = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(
-                    scopeGroupId, "com.liferay.docs.guestbook.model", scopeGroupId, "ADD_ENTRY"
+                    scopeGroupId, GuestbookBacking.MODEL, scopeGroupId, "ADD_ENTRY"
                     );
             }
 
@@ -94,16 +99,19 @@ get started!
     members are allowed to add an entry. 
 
 3. Now it's time to configure permissioning in regards to Guestbook interaction.
-   Open the `GuestbookBackingBean` and create the following two properties at
+   Open the `GuestbookBacking` bean and create the following two properties at
    the top of the class: 
 
+        public static final String MODEL = "com.liferay.docs.guestbook.model";
+   
         private Boolean hasAddPermission;
         private Boolean hasViewPermission;
 
-    These two properties will be used to check if a user has permission to add a
+    The first property assigns the model resource path to a variable. The last
+    two properties will be used to check if a user has permission to add a
     guestbook and view Guestbook tabs, respectively. 
 
-4. Insert the following four methods directly after the `edit(...)` method: 
+4. Insert the following four methods into the `GuestbookBacking` bean: 
 
         public Boolean getHasAddPermission() {
 
@@ -111,7 +119,7 @@ get started!
                 LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
                 long scopeGroupId = liferayFacesContext.getScopeGroupId();
                 hasAddPermission = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(
-                    scopeGroupId, "com.liferay.docs.guestbook.model", scopeGroupId, "ADD_GUESTBOOK"
+                    scopeGroupId, MODEL, scopeGroupId, "ADD_GUESTBOOK"
                     );
             }
 
@@ -139,9 +147,9 @@ get started!
             this.hasViewPermission = hasViewPermission;
         }
 
-    Similar to the getter you added to the entry backing bean, the
-    `getHasAddPermission` checks the `default.xml` file to see if the user's role has permission to add a
-    guestbook. In this case, only administrators have this permission. 
+    Similar to the getter you added to the entry bean, the `getHasAddPermission`
+    checks the `default.xml` file to see if the user's role has permission to
+    add a guestbook. In this case, only administrators have this permission. 
     
     The `getHasViewPermission()` method checks a different permission, but its
     permission check is done very similarly to the previous two permission
@@ -152,7 +160,7 @@ get started!
 Excellent! Now it's time to check for the boolean properties in the guestbook
 portlet's UI. You'll do that next. 
 
-## Checking for Permissions in JSF Views
+### Checking for Basic Permissions in JSF Views
 
 You've successfully created methods that can be called to return boolean
 properties that distinguish whether or not a user has permissions to view or add
@@ -164,24 +172,23 @@ portlets data is protected from unwanted viewers.
    tags for the Add Guestbook and Add Entry buttons. 
 
 2. For the `<h:commandButton>` tag specifying the Add Guestbook button, add the
-   `rendered="#{guestbookBackingBean.hasAddPermission}"` attribute. The edited
-   tag should look like the following: 
+   `rendered="#{guestbookBacking.hasAddPermission}"` attribute. The edited tag
+   should look like the following: 
 
-        <h:commandButton action="#{guestbookBackingBean.add}" rendered="#{guestbookBackingBean.hasAddPermission}"
+        <h:commandButton action="#{guestbookBacking.add}" rendered="#{guestbookBacking.hasAddPermission}"
             styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
                 <f:ajax render="@all" />
         </h:commandButton>
 
     The `rendered` attribute forces the button to only render when its boolean
-    value is true. The guestbook backing bean's `hadAddPermission` property is
-    called, which specifies whether has user has permission to view the button
-    or not. 
+    value is true. The guestbook bean's `hadAddPermission` property is called,
+    which specifies whether the user has permission to view the button or not. 
 
 3. For the other `<h:commandButton>` tag specifying the Add Entry button, add
-   the `rendered="#{entryBackingBean.hasAddPermission}"` attribute. The edited
+   the `rendered="#{entryBacking.hasAddPermission}"` attribute. The edited
    tag should look like the following: 
 
-        <h:commandButton action="#{entryBackingBean.add}" rendered="#{entryBackingBean.hasAddPermission}"
+        <h:commandButton action="#{entryBacking.add}" rendered="#{entryBacking.hasAddPermission}"
             styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
                 <f:ajax render="@all" />
         </h:commandButton>
@@ -191,20 +198,31 @@ portlets data is protected from unwanted viewers.
 
 4. The last permission check you'll need to implement is for the Guestbook tabs.
    In the `docroot/views/master.xhtml` file, add the
-   `rendered="#{guestbookBackingBean.hasViewPermission}"` attribute to the
+   `rendered="#{guestbookBacking.hasViewPermission}"` attribute to the
    `<ui:repeat>` tag. The edited tag should look like the following: 
 
-        <ui:repeat rendered="#{guestbookBackingBean.hasViewPermission}" value="#{guestbookModelBean.guestbooks}" var="guestbook">
+        <ui:repeat rendered="#{guestbookBacking.hasViewPermission}" value="#{guestbookBacking.guestbooks}" var="guestbook">
             ...
         </ui:repeat>
 
     This permission check calls the `hasViewPermission` property from the
-    guestbook backing bean. The Guestbook tabs are only rendered if the user has
-    the `VIEW` permission. 
+    guestbook bean. The Guestbook tabs are only rendered if the user has the
+    `VIEW` permission. 
 
 Great! You've implemented all the permission checks in your application. You can
 test the permissions by logging in as different users. Remember, administrative
 users see all the buttons, regular users see the Add Entry button, and guests
 see no buttons. 
 
-Ready to keep learning about JSF portlets? Next, you'll create action buttons. 
+In the next section, you'll extend this basic permissions scheme. 
+
+## Extending Your Permissions Scheme with Further Options
+
+### Adding Permissions Resources to Your JSF Portlet's Service Layer
+
+### Extending the Permissions Scheme with Wrapper Classes
+
+### Updating the Portlet's UI with Extended Permissions Scheme
+
+Ready to keep learning about JSF portlets? Next, you'll create action buttons
+for guestbooks and entris. 

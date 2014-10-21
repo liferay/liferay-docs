@@ -485,7 +485,9 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
 Your `entry` view is now complete! 
 
-You now have a fully functional guestbook, which can be used to add guestbooks
-and guestbook entries. However, what if you want to restrict access to adding or
-viewing certain entries? You can learn how to implement permissions for your JSF
-guestbook portlet in the next learning path. 
+Re-deploy the Guestbook portlet and test out your new portlet by adding
+guestbooks and guestbook entries. You now have a fully functional JSF guestbook,
+which can be used to add guestbooks and guestbook entries. However, what if you
+want to restrict access to adding or viewing certain entries? You can learn how
+to implement permissions for your JSF guestbook portlet in the next learning
+path. 
