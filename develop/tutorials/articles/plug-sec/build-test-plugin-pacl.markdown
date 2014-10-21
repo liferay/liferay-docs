@@ -21,7 +21,7 @@ properties.
 Now go ahead and get started--you don't want to run afoul of the Security 
 Manager!
 
-## Develop Your Plugin 
+## Develop Your Plugin [](id=develop-your-plugin)
 
 Start by creating your plugin the way you normally do. Design your application,
 write the code, unit test your code, and have users beta test your app. In 
@@ -34,7 +34,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. You do this by building a list of these resources in your 
 plugin's PACL. 
 
-## Build Your Plugin's PACL 
+## Build Your Plugin's PACL [](id=build-your-plugins-pacl)
 
 Rather than tediously figuring out all of the resources your plugin accesses on
 your own, let Liferay's PACL Policy Generation tool to give you a head start!
@@ -125,7 +125,7 @@ $$$
 Now that you've thoroughly specified the resources your plugin accesses, you can 
 enable the security manager and do final testing of your PACL properties. 
 
-## Test Your Plugin with the Security Manager Enabled 
+## Test Your Plugin with the Security Manager Enabled [](id=test-your-plugin-with-the-security-manager-enabled)
 
 If you want to distribute plugins, either through the Liferay Marketplace or 
 your web site, you have to assume potential users will insist that the Security 
@@ -159,7 +159,7 @@ permissible within the context of your app's plugins.
 In case you need it for your plugin, go ahead and get familiar with the Java 
 Security Policy file. 
 
-## Use a Java Security Policy File, if Necessary
+## Use a Java Security Policy File, if Necessary [](id=use-a-java-security-policy-file-if-necessary)
 
 If you can't find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -225,7 +225,7 @@ specify all of the resources your plugin needs to access! Now it's time to
 revisit the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-## Convert PACL Absolute File Paths into Relative Paths 
+## Convert PACL Absolute File Paths into Relative Paths [](id=convert-pacl-absolute-file-paths-into-relative-paths)
 
 As mentioned earlier in this tutorial, using the PACL generation tool to give
 you a head start on specifying your plugin's security rules is recommended. The
@@ -302,7 +302,7 @@ Manager.
 
 The next section provides some additional details regarding PACL properties. 
 
-## Portal Access Control List (PACL) Details 
+## Portal Access Control List (PACL) Details [](id=portal-access-control-list-pacl-details)
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the Security Manager properties specified in your plugin's
@@ -367,7 +367,7 @@ cutting it. Armed with this knowledge, you can confidently build, test, and
 deploy plugins that don't end up on the wrong side of Liferay's Plugin Security 
 Manager.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Setting Permissions](/develop/learning-paths/-/knowledge_base/6-2/setting-permissions)
 

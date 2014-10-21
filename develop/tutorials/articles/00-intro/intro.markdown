@@ -15,7 +15,7 @@ tutorials cover the following three main areas.
 
 First, consider the tools Liferay provides to make your job easier.
 
-#### Using Liferay Development Tools
+#### Using Liferay Development Tools [](id=using-liferay-development-tools)
 
 If you're a newcomer, the wide variety of tools available can be overwhelming.
 Throughout these tutorials, we'll show you how to develop plugins in three
@@ -30,7 +30,7 @@ If you don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA, or another
 IDE, there are many IDEs available, and each one has its strengths. You can
 develop portal apps in whatever environment you like. 
 
-#### Developing Liferay Applications
+#### Developing Liferay Applications [](id=developing-liferay-applications)
 
 As a developer wanting to run your own applications on top of Liferay Portal,
 you probably want to know *what's the best and quickest way to do it?* Liferay
@@ -60,7 +60,7 @@ taglibs and snazzy UI components that
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 provide.
 
-#### Styling and Customizing Liferay
+#### Styling and Customizing Liferay [](id=styling-and-customizing-liferay)
 
 And what about the look and feel you want to develop for your sites and
 customizations you want to do to Liferay's built-in features? Creating themes
@@ -147,7 +147,7 @@ padding-left: 0.4em;
 padding-top: 0.3em;
 
 }
-#wrapper
+#wrapper [](id=wrapper)
 {
 margin-left: -0.4em;
 }

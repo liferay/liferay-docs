@@ -279,7 +279,7 @@ like the Location Listing portlet, tried out a sample template, and ran through
 important recommendations for using ADTs, which included security and
 performance.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

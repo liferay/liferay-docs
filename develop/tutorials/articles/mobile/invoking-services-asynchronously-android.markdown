@@ -13,7 +13,7 @@ session, it makes them asynchronously. To make synchronous calls again, set
 This tutorial shows you how to implement asynchronous requests in your Android 
 app. Go ahead and get started!
 
-## Implementing Asynchronous Requests in Your Android App 
+## Implementing Asynchronous Requests in Your Android App [](id=implementing-asynchronous-requests-in-your-android-app)
 
 The following steps outline how to implement asynchronous requests in your app: 
 
@@ -104,7 +104,7 @@ the callback's `onSuccess()` method, instead.
 Great! Now you know about invoking services asynchronously from your Android 
 app.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 

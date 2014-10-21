@@ -19,7 +19,7 @@ instance's Control Panel interface or you can navigate to
 browser, purchase and download the app, and copy the `.lpkg` file to your
 Liferay instance's `/deploy` folder.
 
-## Knowledge Base Display Portlet
+## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
 site pages as well as one that adds a page to Site Administration. The four
@@ -84,7 +84,7 @@ display permissions define what a user can do with the Knowledge Base Display
 portlet on a page while the admin permissions define what a user can do on the
 Knowledge Base page of Site Administration.
 
-## Knowledge Base Page of Site Administration
+## Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-site-administration)
 
 The Knowledge Base page of the Site Administration interface has two tabs: one
 for articles and one for templates. The *Articles* tab shows all the articles in
@@ -146,7 +146,7 @@ To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
 
-## Knowledge Base Article Portlet
+## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
 article. When you first place this portlet on a page, it displays the message
@@ -162,7 +162,7 @@ article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
 view the history of the article, or print the article.
 
-## Knowledge Base Section Portlet
+## Knowledge Base Section Portlet [](id=knowledge-base-section-portlet)
 
 The Knowledge Base Section portlet allows administrators to selectively show
 articles associated with a specific section. For example, a news site might have
@@ -189,7 +189,7 @@ an administrator to select a display style (title or abstract), an article
 window state (maximized or normal), how to order the articles, how many articles
 to display per page, and whether or not to show pagination.
 
-## Knowledge Base Navigation
+## Knowledge Base Navigation [](id=knowledge-base-navigation)
 
 Wikis often have deeply nested articles that can be hard to find by browsing.
 Liferay's knowledge base's ability to selectively display articles makes it

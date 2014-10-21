@@ -32,7 +32,7 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-## User Segment Rules
+## User Segment Rules [](id=user-segment-rules)
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating Custom Audience Targeting Rules](https://www.liferay.com) tutorial for
@@ -78,7 +78,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-## Categorizing Pages and Content for User Segments
+## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
 
 Each new user segment that's created can be used to categorize pages or content.
 
@@ -105,7 +105,7 @@ segments are distinct from regular vocabularies. The Categorization section of
 pages and assets contains distinct select buttons for user segments and regular
 vocabularies.
 
-## Managing User Segment Reports
+## Managing User Segment Reports [](id=managing-user-segment-reports)
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click

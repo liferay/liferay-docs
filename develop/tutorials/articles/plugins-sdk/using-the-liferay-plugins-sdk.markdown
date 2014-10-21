@@ -8,7 +8,7 @@ By learning the SDK's directory structure, you'll know where to initiate
 creating the different project types, know its build files, and know where
 plugins archives are held for distribution. The Plugins SDK tour is up next. 
 
-## Understanding the SDK's Structure
+## Understanding the SDK's Structure [](id=understanding-the-sdks-structure)
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
@@ -66,7 +66,7 @@ plugins:
 Next, you'll learn how to create a plugin using Liferay SDK from a terminal
 environment. 
 
-## Creating Plugins with Liferay SDK
+## Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk)
 
 Liferay IDE makes it easy to create and deploy Liferay plugin projects since it
 includes a bundled Liferay SDK. If you don't want to use Eclipse, you can still
@@ -131,7 +131,7 @@ some organizations have for their Java projects.
 Now you know how to create all types of Liferay plugin projects using Liferay's
 foundational development tool: the Plugins SDK.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
 

@@ -12,7 +12,7 @@
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-## Dependency Jars
+## Dependency Jars [](id=dependency-jars)
 
 Let's work with the dependency jar files first.
 
@@ -90,7 +90,7 @@ insert the patch can be referenced below.
 
 Great! You have your `.jar` files ready for your domain.
 
-## Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode
+## Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-1-in-standalone-mode-vs-domain-mode)
 
 JBoss 7.1 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -139,7 +139,7 @@ can be found here:
 https://support.liferay.com/secure/attachment/72257/JBoss%20AS7%20Domain%20Mode.pdf
 -->
 
-## Configuring JBoss
+## Configuring JBoss [](id=configuring-jboss)
 
 Let's make some adjustments in your configuration to support using Liferay.
 
@@ -280,7 +280,7 @@ the following path names inside the &lt;paths&gt;...<\/paths> element:
 
 Next we'll consider the database and mail configuration. 
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want JBoss to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -331,7 +331,7 @@ Your final data sources subsystem should look like this:
 Now that you've configured your data source, let's go over how to configure your
 mail session within JBoss.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want JBoss to manage your mail session, use the following instructions.
 If you want to use the built-in Liferay mail session, you can skip this section.
@@ -362,7 +362,7 @@ Specify your mail subsystem  in `standalone.xml` as in the following example:
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
-## Configuring data sources and mail sessions
+## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -396,7 +396,7 @@ Before we deploy Liferay Portal on your JBoss app server, we'll teach you how to
 enable and configure Java security so you can begin using Liferay's plugin
 security manager with your downloaded Liferay applications.
 
-## Security Configuration
+## Security Configuration [](id=security-configuration)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your portal and your JBoss server from security threats. To do
@@ -428,7 +428,7 @@ access to resources.
 
 Now you're ready to deploy Liferay Portal.
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in
    your JBoss installation, delete all of its subfolders and files. Otherwise,

@@ -56,7 +56,7 @@ The contents of the `main.js` file are listed below:
 There you have it. You can leverage these JavaScript callbacks in your theme by
 adding your own logic to the callbacks. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
  [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
  

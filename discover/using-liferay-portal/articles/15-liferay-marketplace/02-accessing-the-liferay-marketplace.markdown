@@ -9,7 +9,7 @@ There are two ways to access the Marketplace.
 2. Via Liferay: If you have a Liferay portal up and running, you can use the
    Apps section of the Control Panel to access Marketplace content.
 
-## The Basics
+## The Basics [](id=the-basics)
 
 No matter which method you choose, you will see the same content and apps.
  
@@ -57,7 +57,7 @@ once, click the *Apps* link and then the *See All* link in the Apps portlet.
 Below the navigation menu is the search bar. This search checks the titles and
 descriptions of apps against your search terms.
 
-## Logging In
+## Logging In [](id=logging-in)
 
 You do not need a `liferay.com` account in order to browse the Marketplace.
 However, if you wish to purchase and download an app, you need to establish a
@@ -77,7 +77,7 @@ Once you register as a developer, your *liferay.com* homepage will
 have links for adding your apps to Marketplace, and managing them after they're
 uploaded. 
 
-## Marketplace Profile
+## Marketplace Profile [](id=marketplace-profile)
 
 Once you register a developer account with your `liferay.com` account, your
 existing `liferay.com` Home page will contain a new section in the left
@@ -97,7 +97,7 @@ Your `liferay.com` Home page is a private page.
 
 $$$
 
-## Managing Apps
+## Managing Apps [](id=managing-apps)
 
 The *Develoment* menu in your `liferay.com` home page is where you'll go to
 manage and monitor your own marketplace apps, and the *Apps* link in your main
@@ -133,7 +133,7 @@ Clicking on *Add an App* allows you to upload a new app and make it available in
 the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
 for more detail on authoring your own app.
 
-## Creating a Company
+## Creating a Company [](id=creating-a-company)
 
 To create and register a company with Liferay Marketplace, click the *Become a
 Developer* link in the left-hand navigation menu of the Marketplace home page.

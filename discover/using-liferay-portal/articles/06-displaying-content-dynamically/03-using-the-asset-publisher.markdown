@@ -9,7 +9,7 @@ This helps in creating a more dynamic web site: you can place user-created wiki
 entries, blog posts, or message board messages in context with your content.
 Let's examine some of its features.
 
-## Querying for Content 
+## Querying for Content [](id=querying-for-content)
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -50,7 +50,7 @@ start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display portlet except that you can select assets of
 any type, not just web content instances.
 
-### Selecting Assets Manually 
+### Selecting Assets Manually [](id=selecting-assets-manually)
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can configure
@@ -93,7 +93,7 @@ different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
 
-### Selecting Assets Dynamically 
+### Selecting Assets Dynamically [](id=selecting-assets-dynamically)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
@@ -166,7 +166,7 @@ Note that grouping and ordering rules are only one mechanism to control how your
 content will be displayed. You can refine the display through many other display
 settings which we'll examine next.
 
-## Configuring Display Settings 
+## Configuring Display Settings [](id=configuring-display-settings)
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
 Configuration window. Here, you can configure many more settings that control
@@ -319,7 +319,7 @@ adjust the ones that apply to your situation. You'll want to use the Asset
 Publisher to query for different kinds of assets in the portal that contain
 relevant information for your users.
 
-## Configuring Asset Publisher Subscriptions 
+## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
 
 The Asset Publisher portlet supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, open the Asset
@@ -359,7 +359,7 @@ to your `portal-ext.properties` file and change the number:
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-## Content Display Pages 
+## Content Display Pages [](id=content-display-pages)
 
 If you've been using Liferay for a while, you might have noticed something about
 how Liferay handles web content--content is never tied directly to a page. While

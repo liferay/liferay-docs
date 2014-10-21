@@ -140,7 +140,7 @@ $$$
 
 Congratulations on deployin your plugin to Liferay and to your repository! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

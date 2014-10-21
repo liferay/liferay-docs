@@ -10,7 +10,7 @@ But before we get started, we need to go over a few concepts; namely, data
 sources and mail sessions. These were touched on in the section on bundles above
 but we'll look at them in more detail now. 
 
-## Using data sources
+## Using data sources [](id=using-data-sources)
 
 Liferay comes bundled with its own built-in data source. It's configured by a
 number of properties that are set in a properties file. By default, the setup
@@ -32,7 +32,7 @@ application servers.
 Since mail sessions are configured in a similar way to data sources, we'll look
 at them next. 
 
-## Using mail sessions
+## Using mail sessions [](id=using-mail-sessions)
 
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay's running and it tries to send mail via SMTP to this server. If

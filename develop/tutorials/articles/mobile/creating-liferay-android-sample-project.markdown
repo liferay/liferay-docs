@@ -12,7 +12,7 @@ even download the *Liferay Android Sample Project* source code in
 creating the app is fun and is the quickest way to get it into your environment.
 Go ahead and get started! 
 
-## Creating the Project 
+## Creating the Project [](id=creating-the-project)
 
 1. First, go to *File* &rarr; *New* &rarr; *Project...*. Then select 
    *Liferay* &rarr; *Liferay Android Sample Project* in the window that appears. 
@@ -64,7 +64,7 @@ The `Session` interface is referenced from the
 `com.liferay.mobile.android.service` package. This app uses the Liferay Mobile
 SDK from the library JARs in this project.
 
-## Running the App 
+## Running the App [](id=running-the-app)
 
 You're now ready to run the sample app in Android's [emulator](http://developer.android.com/tools/devices/emulator.html).
 To do so, you'll need to have an Android Virtual Device (AVD) set up in Eclipse. 
@@ -91,7 +91,7 @@ names to see their information.
 
 Congratulations on creating a mobile app that uses Liferay! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 

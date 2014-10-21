@@ -29,7 +29,7 @@ If you still have the `mainWebApp` module installed, remove it first.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
-## Dependency Jars
+## Dependency Jars [](id=dependency-jars)
 
 Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
 the driver `.jar` file applicable for your database. We'll put them on your
@@ -47,7 +47,7 @@ So far so good. Your `.jar` files are in place and ready for Liferay.
 
 Let's proceed with configuring WebLogic.
 
-## Configuring WebLogic
+## Configuring WebLogic [](id=configuring-weblogic)
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
@@ -115,7 +115,7 @@ Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
 Next, if you want to configure your database and/or mail session within
 WebLogic, start your WebLogic server.
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -154,7 +154,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -169,7 +169,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-## Domain Configuration - Continued
+## Domain Configuration - Continued [](id=domain-configuration-continued)
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -213,7 +213,7 @@ Before we deploy Liferay, we'll teach you how to enable and configure Java
 Security so that you can start using Liferay's plugin security manager with
 the Liferay apps you download and install. 
 
-## Security Configuration
+## Security Configuration [](id=security-configuration)
 
 When you are ready to start using other people's apps from Marketplace, you'll
 want to protect your portal and your WebLogic server from security threats. To
@@ -251,7 +251,7 @@ access to resources.
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 This section provides instructions for deploying Liferay to your application
 server domain.

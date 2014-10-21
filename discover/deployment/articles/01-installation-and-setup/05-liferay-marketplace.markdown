@@ -24,7 +24,7 @@ deploy the Marketplace plugin manually. Depending on your environment’s
 restrictions, you may need to follow one or more of the steps below to 
 install the Marketplace plugin properly. 
 
-## Server is Firewalled without Access to the Internet
+## Server is Firewalled without Access to the Internet [](id=server-is-firewalled-without-access-to-the-internet)
 
 Your server may be behind a firewall that prevents access to the Internet, or
 your security policy may not allow direct download and installation from the
@@ -40,7 +40,7 @@ the Liferay App Manager to deploy the plugin.
 
 Detailed instructions can be found under [Installing Plugins Manually](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en). 
 
-## Application Server Does Not Support Hot Deploy
+## Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-deploy)
 
 If your application server does not support hot deploy, you can't leverage
 Liferay’s auto deploy feature. You can, however, manually deploy the
@@ -54,7 +54,7 @@ This is because Liferay makes deployment-time modifications to the plugins right
 before they are actually deployed to the application server. Detailed
 instructions can be found under [Deploy Issues for Specific Containers](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en). 
 
-## Limited Database Access
+## Limited Database Access [](id=limited-database-access)
 
 Some production environments do not have the necessary database permissions for
 Liferay and its plugins to maintain their tables. In these cases:

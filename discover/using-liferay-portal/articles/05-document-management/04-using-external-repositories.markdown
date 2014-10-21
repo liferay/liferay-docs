@@ -30,7 +30,7 @@ Documentum are available through Liferay's Marketplace.
 
 Let's go through those steps, starting with setting our portal properties.
 
-## Adjusting portal properties 
+## Adjusting portal properties [](id=adjusting-portal-properties)
 
 The admin must ensure that the same credentials and authentication are being
 used in Liferay and in the external repository. This is normally synchronized
@@ -50,7 +50,7 @@ names, so in `portal-ext.properties` add the following:
 Alternatively, configure these properties in the Control Panel under *Portal 
 Settings* &rarr; *Authentication*.
 
-## Adding required repository users 
+## Adding required repository users [](id=adding-required-repository-users)
 
 Once these properties are set, you must create a user in Liferay with a
 screen name and password matching the administrative user of your external
@@ -58,7 +58,7 @@ repository. Be sure to assign appropriate roles (e.g. Administrator) to that
 user. Sign out of Liferay and sign in again as that new user. See sections of
 the *Management* chapter on adding and managing users.
 
-## Adding the repository 
+## Adding the repository [](id=adding-the-repository)
 
 You can add new repositories from the UI by clicking the *Add* button from the
 Home folder. Repositories can only be mounted in the Home folder.
@@ -75,7 +75,7 @@ previously, there are several repositories that work well with Liferay using
 CMIS. One that is familiar to many users is SharePoint. In the exercise below,
 we'll set up SharePoint as a Documents and Media repository.
 
-## Example Repository Setup: SharePoint 
+## Example Repository Setup: SharePoint [](id=example-repository-setup-sharepoint)
 
 <!-- Sharepoint currently does not work on Liferay. We're monitoring the
 Sharepoint status and will update when it's working. Thus, Sharepoint repository
@@ -108,7 +108,7 @@ Before you can use SharePoint as an external repository with Liferay portal, you
 must verify that SharePoint is properly configured. Several services must be
 set up on the SharePoint server before synchronizing with Liferay.
 
-### Configuring the CMIS Connector on SharePoint 
+### Configuring the CMIS Connector on SharePoint [](id=configuring-the-cmis-connector-on-sharepoint)
 
 SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
 Liferay Portal. The Connector is installed with the SharePoint Administrator
@@ -123,7 +123,7 @@ deploy that file. When deployment completes, Solution Properties shows the
 solution is successfully deployed to all target sites. Now it's time to
 configure the CMIS Producer.
 
-### Activating a SharePoint site as a CMIS Producer 
+### Activating a SharePoint site as a CMIS Producer [](id=activating-a-sharepoint-site-as-a-cmis-producer)
 
 The Producer makes SharePoint repositories available through the CMIS Connector.
 Choose the SharePoint site containing the document libraries to be used as
@@ -138,7 +138,7 @@ Now any document library created under this site is CMIS enabled. Before we
 leave our SharePoint console, let's take note of our SharePoint document
 library's repository ID.
 
-### Acquiring the SharePoint document library's repository ID 
+### Acquiring the SharePoint document library's repository ID [](id=acquiring-the-sharepoint-document-librarys-repository-id)
 
 Acquiring your SharePoint document library's repository ID, or list ID, is
 important as it must be specified in the AtomPub URL Liferay uses to connect
@@ -170,7 +170,7 @@ Be sure to copy down this URL so you can use it to configure SharePoint as a
 repository in Documents and Media. Next, let's enable Basic Authentication on
 the SharePoint host.
 
-### Enabling Basic Authentication on the SharePoint host 
+### Enabling Basic Authentication on the SharePoint host [](id=enabling-basic-authentication-on-the-sharepoint-host)
 
 For the CMIS connector and producer to work, Basic Authentication on IIS must be
 enabled. This lets Liferay's SharePoint hook authenticate against the SharePoint
@@ -178,7 +178,7 @@ web services. Enable Basic Authentication on your SharePoint host.
 
 You are now prepared to mount SharePoint as an external repository.
 
-### Adding SharePoint as a Liferay Documents and Media repository 
+### Adding SharePoint as a Liferay Documents and Media repository [](id=adding-sharepoint-as-a-liferay-documents-and-media-repository)
 
 With the SharePoint server configured, we now turn our attention to Liferay. As
 mentioned in the common steps for adding an external repository, be sure to

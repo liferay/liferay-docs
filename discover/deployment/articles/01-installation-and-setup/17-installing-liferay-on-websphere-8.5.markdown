@@ -18,7 +18,7 @@ can find more information about this patch
 Please also note that the WebSphere Application Liberty Profile is not supported
 by Liferay. 
 
-## Preparing WebSphere for Liferay
+## Preparing WebSphere for Liferay [](id=preparing-websphere-for-liferay)
 
 When the application server binaries have been installed, start the **Profile
 Management Tool** to create a profile appropriate for Liferay. 
@@ -82,7 +82,7 @@ Management Tool** to create a profile appropriate for Liferay.
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. You're now ready to install Liferay! 
 
-## Copying portal dependencies
+## Copying portal dependencies [](id=copying-portal-dependencies)
 
 Liferay ships with dependency .jars it needs to have on the global classpath.
 These should be copied to WebSphere's global folder provided for this purpose: 
@@ -93,7 +93,7 @@ If you have a JDBC database driver .jar, copy it to this location as well.
 Once you've copied the .jars, start the server profile you created for
 Liferay. Once it starts, you're ready to configure your database. 
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want WebSphere to manage the database connections, follow the
 instructions below. Note this is not necessary if you're planning on using
@@ -161,7 +161,7 @@ install.
 
 Once you've set up your database, you can set up your mail session. 
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section. 
@@ -181,7 +181,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Great! Now you're ready to deploy Liferay. 
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 1. Click *Applications* &rarr; *New Application* &rarr; *New Enterprise
    Application*.
@@ -202,7 +202,7 @@ Great! Now you're ready to deploy Liferay.
 You've now installed Liferay, but don't start it yet. If you wish to use PACL,
 you have one more thing to configure. 
 
-## Enabling Security for Portal Access Control Lists
+## Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-control-lists)
 
 In the administrative console, go to *Security* $rarr; *Global Security*.  Check
 the box to enable Java 2 security, and click *Apply*. Save to the master
@@ -236,7 +236,7 @@ the file:
 Save the file. You should now stop the profile and restart it. Once it comes up,
 you're ready to start Liferay. 
 
-## Start Liferay
+## Start Liferay [](id=start-liferay)
 
 1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
    to use WebSphere's data source and mail session, create a file called

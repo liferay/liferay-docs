@@ -3,7 +3,7 @@
 This tutorial explains how to create Liferay portlet plugins using Maven and the
 anatomy of the Liferay Maven portlet plugin project. 
 
-## Creating a Portlet Plugin
+## Creating a Portlet Plugin [](id=creating-a-portlet-plugin)
 
 To create your Liferay portlet plugin project, just follow the
 [Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
@@ -23,7 +23,7 @@ $$$
 Since it's helpful to familiarize yourself with the Liferay portlet plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A portlet project created from the
 `com.liferay.maven.archetypes:liferay-portlet-archetype` has the following
@@ -66,7 +66,7 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 You now know how to create Liferay portlet plugins in Maven. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

@@ -12,7 +12,7 @@ Allen Poe's The Raven, and adapted some of his verses for our Maven
 documentation. Read all of the tutorials to follow the story of our fictional
 protagonist's cat, Lenore II, who was introduced in our introduction to Maven.
 
-## Installing Maven
+## Installing Maven [](id=installing-maven)
 
 "Straight I wheeled a cushioned seat in front of computer desk once more;
 Then, upon the velvet falling, I betook to Maven installing..."
@@ -24,7 +24,7 @@ running the Maven executable (`mvn`) from your command prompt.
 The following sections explain the types of repositories you can use with Maven
 projects and how to use them. 
 
-## Understanding Maven Repositories
+## Understanding Maven Repositories [](id=understanding-maven-repositories)
 
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts both to local and
@@ -48,7 +48,7 @@ Now that you've been introduced to Maven repositories and proxy servers, you may
 want to consider using a repository management server to create and manage your
 Maven repositories. 
 
-## Managing Maven Repositories
+## Managing Maven Repositories [](id=managing-maven-repositories)
 
 You'll frequently want to share Liferay artifacts and plugins with teammates, or
 manage your repositories using a GUI. You might find Sonatype Nexus to be a
@@ -117,7 +117,7 @@ snapshots (i.e., `liferay-snapshots`).
 Next, you can configure your new repository servers in your Maven environment to
 enable you to install artifacts to them. 
 
-## Configuring Local Maven Settings
+## Configuring Local Maven Settings [](id=configuring-local-maven-settings)
 
 Before using your repository servers and/or any repository mirrors, you must
 specify them in your Maven environment settings. Your repository settings enable

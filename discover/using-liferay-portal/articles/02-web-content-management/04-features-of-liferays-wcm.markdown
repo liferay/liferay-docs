@@ -40,7 +40,7 @@ etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see chapter 5 for more information on Liferay's asset framework.
 
-## Creating (Basic) Content 
+## Creating (Basic) Content [](id=creating-basic-content)
 
 As we've already discussed, content is the reason web sites exist. Liferay
 Portal has made it easier than ever to get content published to your site.
@@ -90,7 +90,7 @@ view the web content templates associated with a structure or add a new
 template to a structure. In the next chapter, we'll cover advanced features such
 as structures, templates, and content scheduling in detail. 
 
-### Rich, WYSIWYG Editing 
+### Rich, WYSIWYG Editing [](id=rich-wysiwyg-editing)
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
 customizable form that by default has two fields: a title and a powerful WYSIWYG
@@ -192,7 +192,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-### Creating a Display Page 
+### Creating a Display Page [](id=creating-a-display-page)
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -260,7 +260,7 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-## Publishing (Basic) Content 
+## Publishing (Basic) Content [](id=publishing-basic-content)
 
 Now that we've created and published our first piece of web content for
 the Lunar Resort, it's time to display it. First, add the *Web Content Display*
@@ -333,7 +333,7 @@ both processes.
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools. 
 
-## Editing Content 
+## Editing Content [](id=editing-content)
 
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web

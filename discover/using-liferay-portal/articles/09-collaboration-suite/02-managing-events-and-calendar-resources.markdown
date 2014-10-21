@@ -16,7 +16,7 @@ user, the concept of calendar resources, and event invitations.
 that it's available from Marketplace. Briefly describe the differences between
 the CE and EE versions of the new Calendar portlet. -->
 
-## Configuring the Calendar Portlet 
+## Configuring the Calendar Portlet [](id=configuring-the-calendar-portlet)
 
 Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the gear icon in the portlet's title bar and
@@ -46,7 +46,7 @@ These options are explained in more detail in the Blogs section.
 
 Next, let's look at how to use the new Calendar portlet.
 
-## Using the Calendar Portlet 
+## Using the Calendar Portlet [](id=using-the-calendar-portlet)
 
 The first thing you'll notice about Liferay's new Calendar portlet is its
 revamped look and feel. There's a monthly mini-calendar which provides you with
@@ -58,7 +58,7 @@ divided into hours and half-hours. The month view displays a traditional
 calendar view with days represented as boxes. In the previous section, we saw
 how to configure the default display view of the calendar.
 
-### Adding New Calendars 
+### Adding New Calendars [](id=adding-new-calendars)
 
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To add a new
@@ -92,7 +92,7 @@ change the calendar's default calendar status and flag or unflag the *Enable
 Comments* and *Enable Ratings* checkboxes to enable or disable comments and
 ratings for a calendar's events.
 
-### Adding Events to a Calendar 
+### Adding Events to a Calendar [](id=adding-events-to-a-calendar)
 
 It's very easy to add events to a calendar: just click on any day of the
 calendar and you'll see an event creation popup appear. If you've selected the
@@ -214,7 +214,7 @@ notification emails contain links to their corresponding events. This allows
 users easy access to events in the Calendar portlet so they can respond to event
 invitations.
 
-### Adding and Using Calendar Resources 
+### Adding and Using Calendar Resources [](id=adding-and-using-calendar-resources)
 
 You might be wondering, "It makes sense to invite users and organizations to an
 event, but what about other calendar resources? What are they used for? How can
@@ -249,7 +249,7 @@ and users can have multiple calendars, calendar events can include calendar
 resources and calendar resources have their own schedules of availability. We
 hope this flexible system meets the needs of your organization.
 
-### Exporting and Importing Calendar Data 
+### Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data)
 
 Liferay's Calendar portlet allows data to be exported or imported as LAR files.
 Both calendar events and resources can be exported or imported. As with all LAR
@@ -307,7 +307,7 @@ You must also specify an option for assigning ownership of the imported data:
 - *Use the Current User as Author* means that the current user will be assigned
   as the author of the imported content regardless of the original author.
 
-## Upgrading the Calendar Portlet 
+## Upgrading the Calendar Portlet [](id=upgrading-the-calendar-portlet)
 
 In Liferay 6.1 and previous versions, an older version of the Calendar portlet
 was included as one of the core portlets. If you're upgrading from Liferay 6.1

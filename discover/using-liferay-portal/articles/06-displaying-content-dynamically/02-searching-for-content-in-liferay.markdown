@@ -24,7 +24,7 @@ content, tags, and categories to refine your search. Let's look at the search
 features Liferay provides for specific kinds of content and then examine how to
 use Liferay's faceted search.
 
-## Searching for Specific Types of Content 
+## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
 Liferay provides several applications that allow users and administrators to
 search for content. First, there's the Search portlet. The Search portlet can be
@@ -69,7 +69,7 @@ tool that allows users to include or not include specific types of assets in a
 search. However, the Search portlet does not return comments or attachments as
 search results.
 
-## Searching for Portal Content Using Facets 
+## Searching for Portal Content Using Facets [](id=searching-for-portal-content-using-facets)
 
 To get started using faceted search, drop the Search portlet on a page and
 search for something. You'll see a page with results on the right and a
@@ -133,7 +133,7 @@ hits on the right. In this way, you can interactively tweak the search results
 to narrow them down, making it easier to find that proverbial needle within the
 haystack. 
 
-### Asset Types 
+### Asset Types [](id=asset-types)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -149,7 +149,7 @@ If this is the case, you might want to tweak the `frequencyThreshold` and the
 `maxTerms` settings to increase the number of asset types displayed past the
 default of 10. This is covered in the section below on search options.
 
-### Asset Tags 
+### Asset Tags [](id=asset-tags)
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -158,7 +158,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting the `max terms` property.
 
-### Asset Categories 
+### Asset Categories [](id=asset-categories)
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
@@ -167,7 +167,7 @@ listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
-## Advanced Searching 
+## Advanced Searching [](id=advanced-searching)
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -230,7 +230,7 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-## Setting Search Options 
+## Setting Search Options [](id=setting-search-options)
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
@@ -488,7 +488,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see,
 it's not as hard as it looks initially.
 
-## Summary 
+## Summary [](id=summary)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable

@@ -36,14 +36,14 @@ version of the Liferay Platform, you may need to download a specific version of
 this app that is compatible with the version of the Liferay Platform you are
 using).
 
-## Downloading and Installing
+## Downloading and Installing [](id=downloading-and-installing)
 
 You've chosen an app, read the reviews and want to download and use the app!
 There are two ways to install the app. Ultimately, both methods result in the
 same outcome: the app you've chosen is installed onto your local running Liferay
 instance.
 
-## Liferay Hot Deploy
+## Liferay Hot Deploy [](id=liferay-hot-deploy)
 
 Apps on the Liferay Marketplace consist of individual Liferay Plugins (for
 example: a portlet, a hook, or a collection of multiple plugins). Ultimately,
@@ -64,7 +64,7 @@ Please see the later section *Installing Plugins Manually* to learn more about
 hot deploy, its behavior on various app servers, and how to manually deploy
 Marketplace apps in situations where hot deploy cannot be used.
 
-## Installing through the Control Panel
+## Installing through the Control Panel [](id=installing-through-the-control-panel)
 
 The easiest way to install an app is to do so from your Liferay Control Panel.
 This requires that you have already installed Liferay on your local machine and
@@ -119,7 +119,7 @@ are listed as Not Compatible. You need to re-download/re-install the appropriate
 version of these apps if you wish to use them on your running instance of
 Liferay.
  
-## Downloading through liferay.com
+## Downloading through liferay.com [](id=downloading-through-liferay-com)
 
 The second way to install an app is to download it first, then in a separate
 step, deploy it to your running Liferay instance. This is especially useful in
