@@ -10,8 +10,7 @@ to navigate.
 
 This tutorial shows you how to use the `liferay-ui:tabs` tag and
 `liferay-ui:section` tag to implement a tabbed interface in your portlet. When
-you're done you'll be able to ["keep tabs
-on"](http://idioms.thefreedictionary.com/keep+tabs+on) anything!
+you're done you'll be able to ["keep tabs on"](http://idioms.thefreedictionary.com/keep+tabs+on) anything!
 
 ## Setting Up the liferay-ui:tabs Tag
 
@@ -19,7 +18,7 @@ The `liferay-ui:tabs` tag is easy to use. The examples below show how to add and
 use the `liferay-ui:tabs` tag with the `liferay-ui:section` tag in your
 portlet's view. There are three basic steps to accomplish this:
 
-- **Step 1:** Reference the Liferay UI taglib.
+- **Step 1:** Reference the Liferay UI tag library.
 - **Step 2:** Insert and configure the Liferay UI tabs tag in your view JSP.
 - **Step 3:** Insert and configure the Liferay UI section tags in your view JSP. 
 
@@ -30,7 +29,8 @@ time. Now, onward to building a tabbed interface!
 
 1. Open one of your portlet's view JSPs. Create one if it doesn't already exist.
 
-2. Add a directive at the top of the file to reference the `liferay-ui` taglib:
+2. Add a directive at the top of the file to reference the `liferay-ui` tag
+library:
 
         <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
@@ -97,8 +97,8 @@ your tabs!
 ### Step 3: Insert and Configure the Liferay UI Section Tags in Your View JSP
 
 Before you start adding attributes, you should create a *section* for each of
-your tabs. The sections allow you to associate content with each tab. Within
-your `liferay-ui:tabs` tag, you can add a `liferay-ui:section` tag for each of
+your tabs. The sections allow you to associate content with each tab. Inside 
+your `liferay-ui:tabs` tag you can add a `liferay-ui:section` tag for each of
 the tabs you named in the `names` attribute of your `liferay-ui:tabs` tag.
 Within each section, you can add HTML content or add content indirectly by
 including content from another JSP. 
@@ -127,9 +127,9 @@ like. Your portlet's tabs and sections may look similar to it.
 There you have it! The `liferay-ui:tabs` and `liferay-ui:section` tags work
 together to produce a clean, well-organized UI for your app. If you're only
 using text, however, your tabs may not seem very exciting. But you can add any
-HTML content you want. While it's possible to add content directly inside of the
-`liferay-ui:section` tags, it may be better to place content in seperate JSPs
-and simply reference them from the sections, by adding an `<%@ include
+HTML content you want. While it's possible to add content directly inside the
+`liferay-ui:section` tags, it may be better to place content in separate JSPs
+and reference them from the sections by adding an `<%@ include
 file="filepath"%>` directive as the `liferay-ui:section` tag's content. The code
 below demonstrates how to configure JSPs in this manner. 
 
