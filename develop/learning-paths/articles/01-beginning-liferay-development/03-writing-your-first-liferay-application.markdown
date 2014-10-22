@@ -639,28 +639,32 @@ to make this happen.
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
-    This makes your list of `Entry` objects available to the page. 
+    This makes your list of `Entry` objects available to the page.
+    
+2.  From the *Taglib imports* snippet category, drag the *Liferay UI Taglib Import* 
+snippet and drop it near the top of the page, under the taglib import for AUI. This 
+will let you use the Search Container, which is a Liferay UI component.
 
-2.  From the *Liferay UI Search Container* snippet category, drag the *Model
+3.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
-3.  In the dialog that pops up, click the *Browse* button and then type *Entry*
+4.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
 your classpath. Choose the one you created in the
 `com.liferay.docs.guestbook.model` package and click *Ok*. 
 
-4.  Your model class is parsed automatically, and now you can choose the property
+5.  Your model class is parsed automatically, and now you can choose the property
 columns you wish to display to the user. Check off the *message* and *name*
 columns. 
 
-5.  The generated variable is `aEntry`. If you want something more grammatically
+6.  The generated variable is `aEntry`. If you want something more grammatically
 correct, change it to `entry`, and then click *Finish*. 
 
     The tag snippet assumes that you're using Liferay's persistence framework,
     Service Builder. Because you're not using that, you'll have to fix one of
     the tags. 
 
-6.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
+7.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
 
         <liferay-ui:search-container-results
