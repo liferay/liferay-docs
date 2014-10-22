@@ -23,11 +23,17 @@
 			<h:outputText value=" " />
 		</span>
 		<br />
+		<br />
+		
+		<h:commandButton action="#{guestbookBacking.add}" rendered="#{guestbookBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
+			<f:ajax render="@all" />
+		</h:commandButton>
+		<h:commandButton action="#{entryBacking.add}" rendered="#{entryBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
+			<f:ajax render="@all" />
+		</h:commandButton>
+		<br />
 		
 		<div id="guestbook_buttons" style="display: inline-block">
-			<h:commandButton action="#{guestbookBacking.add}" rendered="#{guestbookBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-guestbook']} ">
-				<f:ajax render="@all" />
-			</h:commandButton>
 			<h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.updateable}">
 				<h:commandButton action="#{guestbookBacking.edit(guestbookBacking.selectedGuestbook)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
 					<f:ajax render="@all" />
@@ -45,11 +51,6 @@
 				</h:outputLink>
 			</h:panelGroup>
 		</div>
-		<br />
-		
-		<h:commandButton action="#{entryBacking.add}" rendered="#{entryBacking.hasAddPermission}" styleClass="btn btn-default" value=" #{i18n['add-entry']} ">
-			<f:ajax render="@all" />
-		</h:commandButton>
 		<br />
 		
 		<c:choose>

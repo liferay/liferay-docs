@@ -17,14 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.el.ELContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.ExternalContext;
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import com.liferay.docs.guestbook.wrappers.Entry;
 import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
@@ -34,14 +28,8 @@ import com.liferay.docs.guestbook.service.persistence.GuestbookUtil;
 import com.liferay.docs.guestbook.wrappers.Guestbook;
 
 import com.liferay.faces.portal.context.LiferayFacesContext;
-import com.liferay.faces.util.jsp.PageContextAdapter;
-import com.liferay.faces.util.jsp.StringJspWriter;
 
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.security.permission.ActionKeys;
-import com.liferay.portal.util.PortalUtil;
-
-import com.liferay.taglib.security.PermissionsURLTag;
 
 
 /**
@@ -55,7 +43,6 @@ public class GuestbookBacking extends AbstractBacking {
 	public static final String MODEL = "com.liferay.docs.guestbook.model";
 
 	private Boolean hasAddPermission;
-	private Boolean hasPermissions;
 
 	// Private Data Members
 	private Guestbook originalGuestbook;
@@ -68,8 +55,6 @@ public class GuestbookBacking extends AbstractBacking {
 
 	private boolean editingGuestbook;
 	private boolean editingEntry;
-
-	private String permissionsUrl;
 
 	public void add() {
 		setOriginalGuestbook(getSelectedGuestbook());
