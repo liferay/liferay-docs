@@ -14,10 +14,11 @@ default permissions scheme will allow users to view guestbooks and enter
 guestbook entries, while preventing anonymous web-browsing users from doing
 either. Also, regular users should not be allowed to add guestbooks, so you'll
 implement permissions that only give administrators the ability to create new
-guestbooks.
+guestbooks. 
 
 In the second half of this learning path, you'll dive further into permissioning
-with JSF portlets by extending a user's permissions options by creating new Java
+with JSF portlets by bolstering a user's permissions options. This will include
+adding resources to the Guestbook portlet's service layer and creating new Java
 wrapper classes. 
 
 Overall, you'll learn just how easy it is to implement security for a JSF
@@ -55,8 +56,8 @@ methods encapsulating permission properties using Liferay's
 
 Before beginning, review what permission checks you'll implement: 
 
-- The Add Entry button should only be available to site members. 
-- The Add Guestbook button should only be available to administrators. 
+- The *Add Entry* button should only be available to site members. 
+- The *Add Guestbook* button should only be available to administrators. 
 - The Guestbook tabs should be filtered by permissions in case administrators
   have limited who can see them. 
 
@@ -214,15 +215,225 @@ test the permissions by logging in as different users. Remember, administrative
 users see all the buttons, regular users see the Add Entry button, and guests
 see no buttons. 
 
-In the next section, you'll extend this basic permissions scheme. 
+In the next section, you'll extend this basic permissions scheme by adding
+permissions resources to your service layer and creating new wrapper classes. 
 
 ## Extending Your Permissions Scheme with Further Options
 
+Up to this point, you've successfully configured permissions checking for your
+Guestbook portlet. However, you're portlet is not currently able to store
+permissions to the database. This means, in the future, if you'd like to
+configure permissions for each of your portlet's entities, you'll need to add
+permissions resources to your service layer when these entries are created. 
+
+Also, wouldn't it be nice if site administrators could define permissions for
+the *Add Entry* and *Add Guestbook* buttons without editing any code? You'll
+create a permissions button that allows administrators to control permissions
+for these buttons.
+
+Lastly, you'll extend the permissions scheme by adding methods into new wrapper
+classes, as this is a JSF portlet best practice. 
+
+You'll begin this section by adding permissions resources to the Guestbook
+portlet's service layer. 
+
 ### Adding Permissions Resources to Your JSF Portlet's Service Layer
 
+In Liferay's back end, permissions are referred to as *resources*. Liferay
+provides an API for managing resources, which you can take advantage of. Since
+you're using Service Builder for your portlet already, this API is already
+injected into your implementation classes automatically. Now all you need to do
+is use it. 
+
+1. In your `GuestbookLocalServiceImpl` class, find and replace the
+   `addGuestbook` method with the following new method: 
+
+        @Override
+        public Guestbook addGuestbook(Guestbook guestbook, long userId) throws PortalException, SystemException {
+            long guestbookId = counterLocalService.increment(Guestbook.class.getName());
+            guestbook.setGuestbookId(guestbookId);
+
+            guestbook = super.addGuestbook(guestbook);
+
+            resourceLocalService.addResources(guestbook.getCompanyId(), guestbook.getGroupId(), userId,
+                Guestbook.class.getName(), guestbookId, false, true, true);
+
+            return guestbook;
+        }
+
+2. In your `EntryLocalServiceImpl` class, find and replace the `addEntry` method
+   with the following new method: 
+
+        @Override
+        public Entry addEntry(Entry entry, long userId) throws PortalException, SystemException {
+            long entryId = counterLocalService.increment(Entry.class.getName());
+            entry.setEntryId(entryId);
+
+            entry = super.addEntry(entry);
+
+            resourceLocalService.addResources(entry.getCompanyId(), entry.getGroupId(), userId, Entry.class.getName(),
+                entryId, false, true, true);
+
+            return entry;
+        }
+
+You'll notice in both of these updated methods, you call the `addResources(...)`
+method from the `resourceLocalService` class. Visit the
+[Adding Permissions Resources to Your Service Layer](/develop/learning-paths/-/knowledge_base/6-2/adding-permissions-resources-to-your-service-layer)
+section of the MVC portlet-based learning path for more information on this new
+method call, and adding resources to your service layer. 
+
++$$$
+
+**Note:** Your `*LocalServiceImpl` classes now have errors showing. To take care
+of these errors, and propogate these changes to your service layer, re-build
+your services by right-clicking your project and selecting *Liferay* &rarr;
+*Build Services*. 
+
+$$$
+
+Now you'll need to edit your managed beans where these two updated methods are
+referenced, since a new `userId` parameter was added to the method signatures
+for the `addGuestbook` and `addEntry` methods. 
+
+Open the `GuestbookBacking` bean and, in the `save()` method, replace the
+`guestbook = GuestbookLocalServiceUtil.addGuestbook(guestbook);` code with the
+following: 
+
+    guestbook = GuestbookLocalServiceUtil.addGuestbook(guestbook,
+        liferayFacesContext.getUserId());
+
+Similarly, open the `EntryBacking` bean and, in the `save()` method, replace the
+`EntryLocalServiceUtil.addEntry(entry);` code with the following: 
+
+    EntryLocalServiceUtil.addEntry(entry, liferayFacesContext.getUserId());
+
+If you decide to check permissions for your portlet's created entities, you'll
+now be able to do so. In the next learning path for creating action buttons,
+accessing permissions for an individual entity relies on adding resources in
+your portlet's service layer. 
+
+Next, you'll learn how to extend your permissions scheme to wrapper classes. 
+
 ### Extending the Permissions Scheme with Wrapper Classes
+
+When extending a portlet's permissions scheme, it's best practice to create
+wrapper classes that extend your model entity wrappers. This gives your
+permissions methods a unique place to reside. 
+
+You may have noticed when you were creating your guestbook and entry managed
+beans that the `com.liferay.docs.guestbook.model.Guestbook` and
+`com.liferay.docs.guestbook.model.Entry` objects were used to create and manage
+your guestbook and entry entities. The wrapper classes you create in this
+section will replace those classes, making permissions resources available in
+your managed beans. Before updating our managed beans, you'll need to create the
+wrapper classes first. You'll start with creating the `Guestbook` class. 
+
+1. In the Guestbook portlet's `docroot/WEB-INF/src` directory, add a new package
+   named `com.liferay.docs.guestbook.wrappers`. 
+
+2. Right-click the `com.liferay.docs.guestbook.wrappers` package and select
+   *New* &rarr; *Class*. Give it the name `Guestbook` and in the *Superclass*
+   field, browse for the `GuestbookWrapper` class. Then click *Finish*. 
+
+3. You'll need to define an explicit constructor since the implicit super
+   constructor `GuestbookWrapper()` is undefined for the default constructor.
+   Add the following constructor: 
+
+        public Guestbook(com.liferay.docs.guestbook.model.Guestbook guestbook) {
+            super(guestbook);
+        }
+
+4. Hover your mouse over the `Guestbook` class name and you'll notice a few
+   options appear. Select the *Add generated serial version ID*. The following
+   variable with a similar ID is added to your class: 
+
+        private static final long serialVersionUID = -420986486105631030L;
+
+    Since this class is *Serializable*, it's best practice to create a serial
+    version ID. [Serialization](http://en.wikipedia.org/wiki/Serialization)
+    translates the class' state into a format that can be stored and rebuilt on
+    your local machine or across a network to other computer environments. 
+
+Your `Guestbook` wrapper class is created. Although it is very bare bones at the
+moment, this class gives a good starting place for additional
+permissions-related methods to reside. Since you now want your guestbook bean to
+use the `Guestbook` wrapper class instead of the `Guestbook` model class, you'll
+need to make a few adjustments in your managed bean. 
+
+1. In the `GuestbookBacking` bean, replace the `import
+com.liferay.docs.guestbook.model.Guestbook;` statement with `import
+com.liferay.docs.guestbook.wrappers.Guestbook;`. 
+
+    You'll notice error markings appear throughout the class. Some error
+    markings in your class are related to using a `*Util` class. These code
+    statements need to be adjusted to work with your new wrapper class, which
+    you'll do next. 
+
+2. Wrap each error marked `*Util` call with `new Guestbook(...)`. For example,
+   `GuestbookUtil.create(0L);` should look like `new
+   Guestbook(GuestbookUtil.create(0L));`. 
+   
+    There are still a few error markings left; you'll need to do a similar
+    process to fix the rest of the errors. 
+
+3. In the `getGuestbooks()` method, replace `guestbooks.add(guestbook);` with 
+   `guestbooks.add(new Guestbook(guestbook));`. 
+
+4. In the `getSelectedGuestbook()` method, replace the following: 
+
+        selectedGuestbook = firstGuestbookByName;
+
+    with:
+
+        selectedGuestbook = new Guestbook(firstGuestbookByName);
+
+Awesome! Your guestbook bean is now using your new `Guestbook` wrapper class!
+
+Next, you'll create the `Entry` wrapper class, which will accomplish the same
+things as the `Guestbook` wrapper class, but for entries. 
+
+1. Right-click the `com.liferay.docs.guestbook.wrappers` package and select
+   *New* &rarr; *Class*. Give it the name `Entry` and in the *Superclass*
+   field, browse for the `EntryWrapper` class. Then click *Finish*. 
+
+2. Define the explicit constructor, similarly to what you did in the `Guestbook`
+   class: 
+
+        public Entry(com.liferay.docs.guestbook.model.Entry entry) {
+            super(entry);
+        }
+
+3. Generate the `serialVersionUID` by hovering your mouse over the class name
+   and selecting *Add generated serial version ID*. 
+
+4. Open the `EntryBacking` bean and replace the `import
+   com.liferay.docs.guestbook.model.Entry;` statement with `import
+   com.liferay.docs.guestbook.wrappers.Entry;`. Repeat this step for the
+   `GuestbookBacking` bean, as well. 
+
+5. Just as you did previously, you'll need to modify a few code statements to
+   resolve errors dealing with switching to the `Entry` wrapper class from the
+   model class. First, in the `EntryBacking` bean's `add()` method, replace
+   `Entry entry = EntryUtil.create(0L);` with the following: 
+
+        Entry entry = new Entry(EntryUtil.create(0L));
+
+6. In the `getEntries()` method, replace `entries.add(entry);` with
+`entries.add(new Entry(entry));`. 
+
+<!--
+7. Open the `GuestbookBacking` bean and, in the `setSelectedEntry(Entry)`
+   method, replace `this.selectedEntry = selectedEntry;` with the following: 
+
+        this.selectedEntry = new Entry(selectedEntry);
+-->
+
+You've successfully migrated your backing beans from using the model `Guestbook`
+to a wrapper `Guestbook`! 
+
 
 ### Updating the Portlet's UI with Extended Permissions Scheme
 
 Ready to keep learning about JSF portlets? Next, you'll create action buttons
-for guestbooks and entris. 
+for guestbooks and entries. 

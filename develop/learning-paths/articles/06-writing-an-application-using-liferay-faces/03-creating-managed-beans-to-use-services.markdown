@@ -301,7 +301,7 @@ methods to the guestbook bean.
                 LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
                 long scopeGroupId = liferayFacesContext.getScopeGroupId();
 
-                Guestbook defaultGuestbook = (Guestbook)
+                com.liferay.docs.guestbook.model.Guestbook defaultGuestbook = (com.liferay.docs.guestbook.model.Guestbook)
                     GuestbookLocalServiceUtil.getFirstGuestbookByName(scopeGroupId, DEFAULT_GUESTBOOK_NAME);
 
                 // Create the default guestbook if it does not exist in the database
@@ -469,10 +469,10 @@ the getter/setter methods there.
                 try {
                     guestbooks = new ArrayList<Guestbook>();
 
-                    List<Guestbook> list = GuestbookLocalServiceUtil.getGuestbooks(
+                    List<com.liferay.docs.guestbook.model.Guestbook> list = GuestbookLocalServiceUtil.getGuestbooks(
                         scopeGroupId);
 
-                    for (Guestbook guestbook : list) {
+                    for (com.liferay.docs.guestbook.model.Guestbook guestbook : list) {
                         guestbooks.add(guestbook);
                     }
                 }
@@ -511,8 +511,8 @@ the getter/setter methods there.
                 long scopeGroupId = LiferayFacesContext.getInstance().getScopeGroupId();
 
                 try {
-                    Guestbook firstGuestbookByName =
-                        (Guestbook) GuestbookLocalServiceUtil.getFirstGuestbookByName(
+                    com.liferay.docs.guestbook.model.Guestbook firstGuestbookByName =
+                        (com.liferay.docs.guestbook.model.Guestbook) GuestbookLocalServiceUtil.getFirstGuestbookByName(
                             scopeGroupId, DEFAULT_GUESTBOOK_NAME);
 
                     if (firstGuestbookByName == null) {
